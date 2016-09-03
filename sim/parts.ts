@@ -28,9 +28,9 @@ namespace pxsim.newdefinitions {
     }
     export type XY = {x: number, y: number}
     export interface PartPinDefinition {
-        type: PinType, // e.g.: "ground", "MISO", etc.
-        style: PinStyle, // e.g.: "male", "female", "solder"
-        orientation: PinOrientation, // e.g.: "+X", "-Z", etc.
+        type: PinType, // e.g.: "ground", "MISO", etc.; see PinType
+        style: PinStyle, // e.g.: "male", "female", "solder"; see PinStyle
+        orientation: PinOrientation, // e.g.: "+X", "-Z", etc.; see PinOrientation
     }
     export type PinType = (
           "ground"
