@@ -1,21 +1,30 @@
 namespace pxsim.newdefinitions {
      export interface AllocatorOpts {
         boardDef: BoardDefinition,
-        cmpDefs: Map<PartDefinition>,
+        partDefs: Map<PartDefinition>,
         fnArgs: any,
+        // Used for finding the nearest available power pins
         getBBCoord: (loc: BBRowCol) => visuals.Coord,
-        cmpList: string[]
+        partsList: string[]
     };
     export interface AllocatorResult {
         powerWires: WireInst[],
-        components: CmpAndWireInst[]
+        parts: PartAndWiresInst[],
     }
-
-    export interface CmpAndWireInst {
-        component: CmpInst,
-        wires: WireInst[]
+    export interface PartAndWiresInst {
+        part?: PartInst,
+        wires?: WireInst[]
     }
-    export interface CmpInst {
+    interface PartVisualInst extends visuals.SVGElAndSize {
+        el: SVGElement,
+        w: number,
+        h: number,
+        x: number,
+        y: number,
+        pinDist: number,
+        getPinBBLocs: (topLeftPinLoc: BBRowCol) => BBRowCol[],
+    }
+    export interface PartInst {
         name: string,
         breadboardStartColumn: number,
         breadboardStartRow: string,
@@ -30,27 +39,25 @@ namespace pxsim.newdefinitions {
         color: string,
         assemblyStep: number
     };
-    interface PartialCmpAlloc {
+    interface PartIR {
         name: string,
         def: PartDefinition,
         pinsAssigned: string[],
-        pinsNeeded: number | number[],
-        breadboardColumnsNeeded: number,
         otherArgs?: string[],
     }
 
     interface AllocLocOpts {
         nearestBBPin?: BBRowCol,
         startColumn?: number,
-        cmpGPIOPins?: string[],
+        partGPIOPins?: string[],
     };
     interface AllocWireOpts {
         startColumn: number,
-        cmpGPIOPins: string[],
+        partGPIOPins: string[],
     }
     interface AllocBlock {
-        cmpIdx: number,
-        cmpBlkIdx: number,
+        partIdx: number,
+        partBlkIdx: number,
         gpioNeeded: number,
         gpioAssigned: string[]
     }
@@ -209,9 +216,9 @@ namespace pxsim.newdefinitions {
                 let col = (<number>location[2] + opts.startColumn).toString();
                 return {type: "breadboard", rowCol: [row, col]}
             } else if (location[0] === "GPIO") {
-                U.assert(!!opts.cmpGPIOPins);
+                U.assert(!!opts.partGPIOPins);
                 let idx = <number>location[1];
-                let pin = opts.cmpGPIOPins[idx];
+                let pin = opts.partGPIOPins[idx];
                 return {type: "dalboard", pin: pin};
             } else if (location === "MOSI" || location === "MISO" || location === "SCK") {
                 if (!this.opts.boardDef.spiPins)
@@ -326,17 +333,17 @@ namespace pxsim.newdefinitions {
                 let l = this.allocateLocation(ends[idx], {
                     nearestBBPin: locInst.rowCol,
                     startColumn: opts.startColumn,
-                    cmpGPIOPins: opts.cmpGPIOPins,
+                    partGPIOPins: opts.partGPIOPins,
                 });
                 return l;
             });
             return {start: endInsts[0], end: endInsts[1], color: wireDef.color, assemblyStep: wireDef.assemblyStep};
         }
-        private allocatePartialCmps(): PartialCmpAlloc[] {
-            let cmpNmAndDefs = this.opts.cmpList.map(cmpName => <[string, PartDefinition]>[cmpName, this.opts.cmpDefs[cmpName]]).filter(d => !!d[1]);
+        private allocatePartIRs(): PartIR[] {
+            let cmpNmAndDefs = this.opts.partsList.map(cmpName => <[string, PartDefinition]>[cmpName, this.opts.partDefs[cmpName]]).filter(d => !!d[1]);
             let cmpNmsList = cmpNmAndDefs.map(p => p[0]);
             let cmpDefsList = cmpNmAndDefs.map(p => p[1]);
-            let partialCmps: PartialCmpAlloc[] = [];
+            let partialCmps: PartIR[] = [];
             cmpDefsList.forEach((def, idx) => {
                 let nm = cmpNmsList[idx];
                 if (def.pinAllocation.type === "predefined") {
@@ -403,7 +410,7 @@ namespace pxsim.newdefinitions {
             });
             return partialCmps;
         }
-        private allocateGPIOPins(partialCmps: PartialCmpAlloc[]): string[][] {
+        private allocateGPIOPins(partialCmps: PartIR[]): string[][] {
             let availableGPIOBlocks = copyDoubleArray(this.opts.boardDef.gpioPinBlocks);
             let sortAvailableGPIOBlocks = () => availableGPIOBlocks.sort((a, b) => a.length - b.length); //smallest blocks first
             // determine blocks needed
@@ -412,21 +419,21 @@ namespace pxsim.newdefinitions {
             partialCmps.forEach((cmp, idx) => {
                 if (cmp.pinsAssigned && cmp.pinsAssigned.length) {
                     //already assigned
-                    blockAssignments.push({cmpIdx: idx, cmpBlkIdx: 0, gpioNeeded: 0, gpioAssigned: cmp.pinsAssigned});
+                    blockAssignments.push({partIdx: idx, partBlkIdx: 0, gpioNeeded: 0, gpioAssigned: cmp.pinsAssigned});
                     preassignedPins = preassignedPins.concat(cmp.pinsAssigned);
                 } else if (cmp.pinsNeeded) {
                     if (typeof cmp.pinsNeeded === "number") {
                         //individual pins
                         for (let i = 0; i < cmp.pinsNeeded; i++) {
                             blockAssignments.push(
-                                {cmpIdx: idx, cmpBlkIdx: 0, gpioNeeded: 1, gpioAssigned: []});
+                                {partIdx: idx, partBlkIdx: 0, gpioNeeded: 1, gpioAssigned: []});
                         }
                     } else {
                         //blocks of pins
                         let blocks = <number[]>cmp.pinsNeeded;
                         blocks.forEach((numNeeded, blkIdx) => {
                             blockAssignments.push(
-                                {cmpIdx: idx, cmpBlkIdx: blkIdx, gpioNeeded: numNeeded, gpioAssigned: []});
+                                {partIdx: idx, partBlkIdx: blkIdx, gpioNeeded: numNeeded, gpioAssigned: []});
                         });
                     }
                 }
@@ -474,11 +481,11 @@ namespace pxsim.newdefinitions {
             let cmpGPIOPinBlocks: string[][][] = partialCmps.map((def, cmpIdx) => {
                 if (!def)
                     return null;
-                let assignments = blockAssignments.filter(a => a.cmpIdx === cmpIdx);
+                let assignments = blockAssignments.filter(a => a.partIdx === cmpIdx);
                 let gpioPins: string[][] = [];
                 for (let i = 0; i < assignments.length; i++) {
                     let a = assignments[i];
-                    let blk = gpioPins[a.cmpBlkIdx] || (gpioPins[a.cmpBlkIdx] = []);
+                    let blk = gpioPins[a.partBlkIdx] || (gpioPins[a.partBlkIdx] = []);
                     a.gpioAssigned.forEach(p => blk.push(p));
                 }
                 return gpioPins;
@@ -486,7 +493,7 @@ namespace pxsim.newdefinitions {
             let cmpGPIOPins = cmpGPIOPinBlocks.map(blks => blks.reduce((p, n) => p.concat(n), []));
             return cmpGPIOPins;
         }
-        private allocateColumns(partialCmps: PartialCmpAlloc[]): number[] {
+        private allocateColumns(partialCmps: PartIR[]): number[] {
             let componentsCount = partialCmps.length;
             let totalAvailableSpace = 30; //TODO allow multiple breadboards
             let totalSpaceNeeded = partialCmps.map(d => d.breadboardColumnsNeeded).reduce((p, n) => p + n, 0);
@@ -508,7 +515,7 @@ namespace pxsim.newdefinitions {
             });
             return cmpStartCol;
         }
-        private allocateComponent(partialCmp: PartialCmpAlloc, startColumn: number, microbitPins: string[]): CmpInst {
+        private allocateComponent(partialCmp: PartIR, startColumn: number, microbitPins: string[]): PartInst {
             return {
                 name: partialCmp.name,
                 breadboardStartColumn: startColumn,
@@ -520,11 +527,11 @@ namespace pxsim.newdefinitions {
             };
         }
         public allocateAll(): AllocatorResult {
-            let cmpList = this.opts.cmpList;
+            let cmpList = this.opts.partsList;
             let basicWires: WireInst[] = [];
-            let cmpsAndWires: CmpAndWireInst[] = [];
+            let cmpsAndWires: PartAndWiresInst[] = [];
             if (cmpList.length > 0) {
-                let partialCmps = this.allocatePartialCmps();
+                let partialCmps = this.allocatePartIRs();
                 let allWireDefs = partialCmps.map(p => p.def.wires).reduce((p, n) => p.concat(n), []);
                 let allPowerUsage = allWireDefs.map(w => computePowerUsage(w));
                 this.powerUsage = mergePowerUsage(allPowerUsage);
@@ -535,7 +542,7 @@ namespace pxsim.newdefinitions {
                 let cmpStartCol = this.allocateColumns(partialCmps);
                 let cmps = partialCmps.map((c, idx) => this.allocateComponent(c, cmpStartCol[idx], cmpMicrobitPins[idx]));
                 let wires = partialCmps.map((c, idx) => c.def.wires.map(d => this.allocateWire(d, {
-                    cmpGPIOPins: cmpGPIOPins[idx],
+                    partGPIOPins: cmpGPIOPins[idx],
                     startColumn: cmpStartCol[idx],
                 })));
                 cmpsAndWires = cmps.map((c, idx) => {
@@ -544,7 +551,7 @@ namespace pxsim.newdefinitions {
             }
             return {
                 powerWires: basicWires,
-                components: cmpsAndWires
+                parts: cmpsAndWires
             };
         }
     }
