@@ -60,6 +60,57 @@ namespace pxsim {
         topThreeVolt: boolean,
         bottomGround: boolean,
         bottomThreeVolt: boolean,
+        singleGround: boolean,
+        singleThreeVolt: boolean,
+    }
+    function isOnBreadboardBottom(location: WireLocationDefinition) {
+        let isBot = false;
+        if (location[0] === "breadboard") {
+            let row = <string>location[1];
+            isBot = 0 <= ["a", "b", "c", "d", "e"].indexOf(row);
+        }
+        return isBot;
+    }
+    const arrCount = (a: boolean[]) => a.reduce((p, n) => p + (n ? 1 : 0), 0);
+    const arrAny = (a: boolean[]) => arrCount(a) > 0;
+    function computePowerUsage(wireDef: WireDefinition): PowerUsage {
+        let ends = [wireDef.start, wireDef.end];
+        let endIsGround = ends.map(e => e === "ground");
+        let endIsThreeVolt = ends.map(e => e === "threeVolt");
+        let endIsBot = ends.map(e => isOnBreadboardBottom(e));
+        let hasGround = arrAny(endIsGround);
+        let hasThreeVolt = arrAny(endIsThreeVolt);
+        let hasBot = arrAny(endIsBot);
+        return {
+            topGround: hasGround && !hasBot,
+            topThreeVolt: hasThreeVolt && !hasBot,
+            bottomGround: hasGround && hasBot,
+            bottomThreeVolt: hasThreeVolt && hasBot,
+            singleGround: hasGround,
+            singleThreeVolt: hasThreeVolt
+        };
+    }
+    function mergePowerUsage(powerUsages: PowerUsage[]) {
+        let finalPowerUsage = powerUsages.reduce((p, n) => ({
+                topGround: p.topGround || n.topGround,
+                topThreeVolt: p.topThreeVolt || n.topThreeVolt,
+                bottomGround: p.bottomGround || n.bottomGround,
+                bottomThreeVolt: p.bottomThreeVolt || n.bottomThreeVolt,
+                singleGround: n.singleGround ? p.singleGround === null : p.singleGround,
+                singleThreeVolt: n.singleThreeVolt ? p.singleThreeVolt === null : p.singleThreeVolt,
+            }), {
+                topGround: false,
+                topThreeVolt: false,
+                bottomGround: false,
+                bottomThreeVolt: false,
+                singleGround: null,
+                singleThreeVolt: null,
+            });
+        if (finalPowerUsage.singleGround)
+            finalPowerUsage.topGround = finalPowerUsage.bottomGround = false;
+        if (finalPowerUsage.singleThreeVolt)
+            finalPowerUsage.topThreeVolt = finalPowerUsage.bottomThreeVolt = false;
+        return finalPowerUsage;
     }
     function copyDoubleArray(a: string[][]) {
          return a.map(b => b.map(p => p));
@@ -96,6 +147,7 @@ namespace pxsim {
                 ground: mkRange(1, 26).map(n => <BBRowCol>["-", `${n}`]),
             },
         };
+        private powerUsage: PowerUsage;
 
         constructor(opts: AllocatorOpts) {
             this.opts = opts;
@@ -103,6 +155,15 @@ namespace pxsim {
 
         private allocateLocation(location: WireLocationDefinition, opts: AllocLocOpts): Loc {
             if (location === "ground" || location === "threeVolt") {
+                //special case if there is only a single ground or three volt pin in the whole build
+                if (location === "ground" && this.powerUsage.singleGround) {
+                    let boardGroundPin = this.getBoardGroundPin();
+                    return {type: "dalboard", pin: boardGroundPin};
+                } else if (location === "threeVolt" && this.powerUsage.singleThreeVolt) {
+                    let boardThreeVoltPin = this.getBoardThreeVoltPin();
+                    return {type: "dalboard", pin: boardThreeVoltPin};
+                }
+
                 U.assert(!!opts.nearestBBPin);
                 let nearestCoord = this.opts.getBBCoord(opts.nearestBBPin);
                 let firstTopAndBot = [
@@ -169,17 +230,25 @@ namespace pxsim {
                 return null;
             }
         }
-        private allocatePowerWires(powerUsage: PowerUsage): WireInst[] {
+        private getBoardGroundPin() {
             let boardGround = this.opts.boardDef.groundPins[0] || null;
             if (!boardGround) {
                 console.log("No available ground pin on board!");
                 //TODO
             }
+            return boardGround;
+        }
+        private getBoardThreeVoltPin() {
             let threeVoltPin = this.opts.boardDef.threeVoltPins[0] || null;
             if (!threeVoltPin) {
                 console.log("No available 3.3V pin on board!");
                 //TODO
             }
+            return threeVoltPin;
+        }
+        private allocatePowerWires(powerUsage: PowerUsage): WireInst[] {
+            let boardGroundPin = this.getBoardGroundPin();
+            let threeVoltPin = this.getBoardThreeVoltPin();
             let topLeft: BBRowCol = ["-", "26"];
             let botLeft: BBRowCol = ["-", "1"];
             let topRight: BBRowCol = ["-", "50"];
@@ -209,14 +278,14 @@ namespace pxsim {
                 //board - <==> bb top -
                 wires.push({
                     start: this.allocateLocation("ground", {nearestBBPin: top}),
-                    end: {type: "dalboard", pin: boardGround},
+                    end: {type: "dalboard", pin: boardGroundPin},
                     color: GROUND_COLOR, assemblyStep: groundStep
                 });
             } else if (powerUsage.bottomGround) {
                 //board - <==> bb bot -
                 wires.push({
                     start: this.allocateLocation("ground", {nearestBBPin: bot}),
-                    end: {type: "dalboard", pin: boardGround},
+                    end: {type: "dalboard", pin: boardGroundPin},
                     color: GROUND_COLOR, assemblyStep: groundStep
                 });
             }
@@ -244,30 +313,6 @@ namespace pxsim {
                 });
             }
             return wires;
-        }
-        private isOnBreadboardBottom(location: WireLocationDefinition) {
-            let isBot = false;
-            if (location[0] === "breadboard") {
-                let row = <string>location[1];
-                isBot = 0 <= ["a", "b", "c", "d", "e"].indexOf(row);
-            }
-            return isBot;
-        }
-        private computePowerUsage(wireDef: WireDefinition): PowerUsage {
-            let arrAny = (a: boolean[]) => a.reduce((p, n) => p || n, false);
-            let ends = [wireDef.start, wireDef.end];
-            let endIsGround = ends.map(e => e === "ground");
-            let endIsThreeVolt = ends.map(e => e === "threeVolt");
-            let endIsBot = ends.map(e => this.isOnBreadboardBottom(e));
-            let hasGround = arrAny(endIsGround);
-            let hasThreeVolt = arrAny(endIsThreeVolt);
-            let hasBot = arrAny(endIsBot);
-            return {
-                topGround: hasGround && !hasBot,
-                topThreeVolt: hasThreeVolt && !hasBot,
-                bottomGround: hasGround && hasBot,
-                bottomThreeVolt: hasThreeVolt && hasBot
-            };
         }
         private allocateWire(wireDef: WireDefinition, opts: AllocWireOpts): WireInst {
             let ends = [wireDef.start, wireDef.end];
@@ -482,19 +527,9 @@ namespace pxsim {
             if (cmpList.length > 0) {
                 let partialCmps = this.allocatePartialCmps();
                 let allWireDefs = partialCmps.map(p => p.def.wires).reduce((p, n) => p.concat(n), []);
-                let wirePowerUsage = allWireDefs.map(w => this.computePowerUsage(w));
-                let powerUsage = wirePowerUsage.reduce((p, n) => ({
-                        topGround: p.topGround || n.topGround,
-                        topThreeVolt: p.topThreeVolt || n.topThreeVolt,
-                        bottomGround: p.bottomGround || n.bottomGround,
-                        bottomThreeVolt: p.bottomThreeVolt || n.bottomThreeVolt
-                    }), {
-                        topGround: false,
-                        topThreeVolt: false,
-                        bottomGround: false,
-                        bottomThreeVolt: false,
-                    });
-                basicWires = this.allocatePowerWires(powerUsage);
+                let allPowerUsage = allWireDefs.map(w => computePowerUsage(w));
+                this.powerUsage = mergePowerUsage(allPowerUsage);
+                basicWires = this.allocatePowerWires(this.powerUsage);
                 let cmpGPIOPins = this.allocateGPIOPins(partialCmps);
                 let reverseMap = mkReverseMap(this.opts.boardDef.gpioPinMap);
                 let cmpMicrobitPins = cmpGPIOPins.map(pins => pins.map(p => reverseMap[p]));
