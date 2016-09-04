@@ -47,8 +47,8 @@ namespace pxsim.newdefinitions {
     }
     interface PinIR {
         def: PartPinDefinition,
-        dalPin?: DALPin,
-        boardPin?: string,
+        dalPin: DALPin,
+        boardPin: string,
     }
 
     interface AllocLocOpts {
@@ -345,16 +345,18 @@ namespace pxsim.newdefinitions {
             return {start: endInsts[0], end: endInsts[1], color: wireDef.color, assemblyStep: wireDef.assemblyStep};
         }
         private allocPartIRs(): PartIR[] {
-            let cmpNmAndDefs = this.opts.partsList.map(cmpName => <[string, PartDefinition]>[cmpName, this.opts.partDefs[cmpName]]).filter(d => !!d[1]);
-            let cmpNmsList = cmpNmAndDefs.map(p => p[0]);
-            let cmpDefsList = cmpNmAndDefs.map(p => p[1]);
-            let partialCmps: PartIR[] = [];
-            cmpDefsList.forEach((def, idx) => {
-                let nm = cmpNmsList[idx];
+            let partNmAndDefs = this.opts.partsList
+                .map(partName => <[string, PartDefinition]>[partName, this.opts.partDefs[partName]])
+                .filter(d => !!d[1]);
+            let partNmsList = partNmAndDefs.map(p => p[0]);
+            let partDefsList = partNmAndDefs.map(p => p[1]);
+            let partialParts: PartIR[] = [];
+            partDefsList.forEach((def, idx) => {
+                let nm = partNmsList[idx];
                 if (def.pinAllocation.type === "predefined") {
                     let mbPins = (<PredefinedPinAlloc>def.pinAllocation).pins;
                     let pinsAssigned = mbPins.map(p => this.opts.boardDef.gpioPinMap[p]);
-                    partialCmps.push({
+                    partialParts.push({
                         name: nm,
                         def: def,
                         pinsAssigned: pinsAssigned,
@@ -381,7 +383,7 @@ namespace pxsim.newdefinitions {
                                 otherArgs.push(fnArgsSplit[i]);
                             });
                             let pinsAssigned = mbPins.map(p => this.opts.boardDef.gpioPinMap[p]);
-                            partialCmps.push({
+                            partialParts.push({
                                 name: nm,
                                 def: def,
                                 pinsAssigned: pinsAssigned,
@@ -394,7 +396,7 @@ namespace pxsim.newdefinitions {
                         // failed to find pin allocation from callsites
                         console.debug("Failed to read pin(s) from callsite for: " + fnNm);
                         let pinsNeeded = fnPinAlloc.pinArgPositions.length;
-                        partialCmps.push({
+                        partialParts.push({
                             name: nm,
                             def: def,
                             pinsAssigned: [],
@@ -404,7 +406,7 @@ namespace pxsim.newdefinitions {
                     }
                 } else if (def.pinAllocation.type === "auto") {
                     let pinsNeeded = (<AutoPinAlloc>def.pinAllocation).gpioPinsNeeded;
-                    partialCmps.push({
+                    partialParts.push({
                         name: nm,
                         def: def,
                         pinsAssigned: [],
@@ -413,29 +415,29 @@ namespace pxsim.newdefinitions {
                     });
                 }
             });
-            return partialCmps;
+            return partialParts;
         }
-        private allocGPIOPins(partialCmps: PartIR[]): string[][] {
+        private allocGPIOPins(partialParts: PartIR[]): string[][] {
             let availableGPIOBlocks = copyDoubleArray(this.opts.boardDef.gpioPinBlocks);
             let sortAvailableGPIOBlocks = () => availableGPIOBlocks.sort((a, b) => a.length - b.length); //smallest blocks first
             // determine blocks needed
             let blockAssignments: AllocBlock[] = [];
             let preassignedPins: string[] = [];
-            partialCmps.forEach((cmp, idx) => {
-                if (cmp.pinsAssigned && cmp.pinsAssigned.length) {
+            partialParts.forEach((part, idx) => {
+                if (part.pinsAssigned && part.pinsAssigned.length) {
                     //already assigned
-                    blockAssignments.push({partIdx: idx, partBlkIdx: 0, gpioNeeded: 0, gpioAssigned: cmp.pinsAssigned});
-                    preassignedPins = preassignedPins.concat(cmp.pinsAssigned);
-                } else if (cmp.pinsNeeded) {
-                    if (typeof cmp.pinsNeeded === "number") {
+                    blockAssignments.push({partIdx: idx, partBlkIdx: 0, gpioNeeded: 0, gpioAssigned: part.pinsAssigned});
+                    preassignedPins = preassignedPins.concat(part.pinsAssigned);
+                } else if (part.pinsNeeded) {
+                    if (typeof part.pinsNeeded === "number") {
                         //individual pins
-                        for (let i = 0; i < cmp.pinsNeeded; i++) {
+                        for (let i = 0; i < part.pinsNeeded; i++) {
                             blockAssignments.push(
                                 {partIdx: idx, partBlkIdx: 0, gpioNeeded: 1, gpioAssigned: []});
                         }
                     } else {
                         //blocks of pins
-                        let blocks = <number[]>cmp.pinsNeeded;
+                        let blocks = <number[]>part.pinsNeeded;
                         blocks.forEach((numNeeded, blkIdx) => {
                             blockAssignments.push(
                                 {partIdx: idx, partBlkIdx: blkIdx, gpioNeeded: numNeeded, gpioAssigned: []});
@@ -483,10 +485,10 @@ namespace pxsim.newdefinitions {
                 console.debug("Not enough GPIO pins!");
                 return null;
             }
-            let cmpGPIOPinBlocks: string[][][] = partialCmps.map((def, cmpIdx) => {
+            let partGPIOPinBlocks: string[][][] = partialParts.map((def, partIdx) => {
                 if (!def)
                     return null;
-                let assignments = blockAssignments.filter(a => a.partIdx === cmpIdx);
+                let assignments = blockAssignments.filter(a => a.partIdx === partIdx);
                 let gpioPins: string[][] = [];
                 for (let i = 0; i < assignments.length; i++) {
                     let a = assignments[i];
@@ -495,68 +497,68 @@ namespace pxsim.newdefinitions {
                 }
                 return gpioPins;
             });
-            let cmpGPIOPins = cmpGPIOPinBlocks.map(blks => blks.reduce((p, n) => p.concat(n), []));
-            return cmpGPIOPins;
+            let partGPIOPins = partGPIOPinBlocks.map(blks => blks.reduce((p, n) => p.concat(n), []));
+            return partGPIOPins;
         }
-        private allocColumns(partialCmps: PartIR[]): number[] {
-            let componentsCount = partialCmps.length;
+        private allocColumns(partialParts: PartIR[]): number[] {
+            let partsCount = partialParts.length;
             let totalAvailableSpace = 30; //TODO allow multiple breadboards
-            let totalSpaceNeeded = partialCmps.map(d => d.breadboardColumnsNeeded).reduce((p, n) => p + n, 0);
+            let totalSpaceNeeded = partialParts.map(d => d.breadboardColumnsNeeded).reduce((p, n) => p + n, 0);
             let extraSpace = totalAvailableSpace - totalSpaceNeeded;
             if (extraSpace <= 0) {
                 console.log("Not enough breadboard space!");
                 //TODO
             }
-            let padding = Math.floor(extraSpace / (componentsCount - 1 + 2));
-            let componentSpacing = padding; //Math.floor(extraSpace/(componentsCount-1));
-            let totalCmpPadding = extraSpace - componentSpacing * (componentsCount - 1);
-            let leftPadding = Math.floor(totalCmpPadding / 2);
-            let rightPadding = Math.ceil(totalCmpPadding / 2);
+            let padding = Math.floor(extraSpace / (partsCount - 1 + 2));
+            let partSpacing = padding; //Math.floor(extraSpace/(partsCount-1));
+            let totalPartPadding = extraSpace - partSpacing * (partsCount - 1);
+            let leftPadding = Math.floor(totalPartPadding / 2);
+            let rightPadding = Math.ceil(totalPartPadding / 2);
             let nextAvailableCol = 1 + leftPadding;
-            let cmpStartCol = partialCmps.map(cmp => {
+            let partStartCol = partialParts.map(part => {
                 let col = nextAvailableCol;
-                nextAvailableCol += cmp.breadboardColumnsNeeded + componentSpacing;
+                nextAvailableCol += part.breadboardColumnsNeeded + partSpacing;
                 return col;
             });
-            return cmpStartCol;
+            return partStartCol;
         }
-        private allocComponent(partialCmp: PartIR, startColumn: number, microbitPins: string[]): PartInst {
+        private allocPart(partialPart: PartIR, startColumn: number, microbitPins: string[]): PartInst {
             return {
-                name: partialCmp.name,
+                name: partialPart.name,
                 breadboardStartColumn: startColumn,
-                breadboardStartRow: partialCmp.def.breadboardStartRow,
-                assemblyStep: partialCmp.def.assemblyStep,
-                visual: partialCmp.def.visual,
+                breadboardStartRow: partialPart.def.breadboardStartRow,
+                assemblyStep: partialPart.def.assemblyStep,
+                visual: partialPart.def.visual,
                 microbitPins: microbitPins,
-                otherArgs: partialCmp.otherArgs,
+                otherArgs: partialPart.otherArgs,
             };
         }
         public allocAll(): AllocatorResult {
-            let cmpList = this.opts.partsList;
+            let partList = this.opts.partsList;
             let basicWires: WireInst[] = [];
-            let cmpsAndWires: PartAndWiresInst[] = [];
-            if (cmpList.length > 0) {
-                let partialCmps = this.allocPartIRs();
-                let allWireDefs = partialCmps.map(p => p.def.wires).reduce((p, n) => p.concat(n), []);
+            let partsAndWires: PartAndWiresInst[] = [];
+            if (partList.length > 0) {
+                let partialParts = this.allocPartIRs();
+                let allWireDefs = partialParts.map(p => p.def.wires).reduce((p, n) => p.concat(n), []);
                 let allPowerUsage = allWireDefs.map(w => computePowerUsage(w));
                 this.powerUsage = mergePowerUsage(allPowerUsage);
                 basicWires = this.allocPowerWires(this.powerUsage);
-                let cmpGPIOPins = this.allocGPIOPins(partialCmps);
+                let partGPIOPins = this.allocGPIOPins(partialParts);
                 let reverseMap = mkReverseMap(this.opts.boardDef.gpioPinMap);
-                let cmpMicrobitPins = cmpGPIOPins.map(pins => pins.map(p => reverseMap[p]));
-                let cmpStartCol = this.allocColumns(partialCmps);
-                let cmps = partialCmps.map((c, idx) => this.allocComponent(c, cmpStartCol[idx], cmpMicrobitPins[idx]));
-                let wires = partialCmps.map((c, idx) => c.def.wires.map(d => this.allocWire(d, {
-                    partGPIOPins: cmpGPIOPins[idx],
-                    startColumn: cmpStartCol[idx],
+                let partMicrobitPins = partGPIOPins.map(pins => pins.map(p => reverseMap[p]));
+                let partStartCol = this.allocColumns(partialParts);
+                let parts = partialParts.map((c, idx) => this.allocPart(c, partStartCol[idx], partMicrobitPins[idx]));
+                let wires = partialParts.map((c, idx) => c.def.wires.map(d => this.allocWire(d, {
+                    partGPIOPins: partGPIOPins[idx],
+                    startColumn: partStartCol[idx],
                 })));
-                cmpsAndWires = cmps.map((c, idx) => {
-                    return {component: c, wires: wires[idx]}
+                partsAndWires = parts.map((c, idx) => {
+                    return {part: c, wires: wires[idx]}
                 });
             }
             return {
                 powerWires: basicWires,
-                parts: cmpsAndWires
+                parts: partsAndWires
             };
         }
     }
