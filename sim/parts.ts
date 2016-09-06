@@ -28,17 +28,17 @@ namespace pxsim.newdefinitions {
     }
     export type XY = {x: number, y: number}
     export interface PartPinDefinition {
-        type: PinType, // e.g.: "ground", "MISO", etc.; see PinType
+        target: UninstantiatedPinTarget, // e.g.: "ground", "MISO", etc.; see PinType
         style: PinStyle, // e.g.: "male", "female", "solder"; see PinStyle
         orientation: PinOrientation, // e.g.: "+X", "-Z", etc.; see PinOrientation
     }
-    export type PinType = (
+    export type UninstantiatedPinTarget = PinTarget | PinInstantiationIdx;
+    export type PinTarget = (
           "ground"
         | "threeVolt"
         | DALPin
         | SPIPin
-        | I2CPin
-        | PinInstantiationIdx);
+        | I2CPin);
     // a hard-coded pin index; used by parts that are pre-built on the microbit: led matrix, buttons, etc.
     export type DALPin = (
         "P0" | "P1" | "P2" | "P3" | "P4" | "P5" | "P6" | "P7" | "P8" | "P9"
@@ -85,10 +85,10 @@ namespace pxsim.newdefinitions {
             "visual": "buttonpair",
             "numberOfPins": 4,
             "pinDefinitions": [
-                {"type": "P14", "style": "male", "orientation": "-Z"},
-                {"type": "ground", "style": "male", "orientation": "-Z"},
-                {"type": "P15", "style": "male", "orientation": "-Z"},
-                {"type": "ground", "style": "male", "orientation": "-Z"},
+                {"target": "P14", "style": "male", "orientation": "-Z"},
+                {"target": "ground", "style": "male", "orientation": "-Z"},
+                {"target": "P15", "style": "male", "orientation": "-Z"},
+                {"target": "ground", "style": "male", "orientation": "-Z"},
             ],
             "instantiation": {
                 "kind": "singleton"
@@ -114,9 +114,9 @@ namespace pxsim.newdefinitions {
             },
             "numberOfPins": 3,
             "pinDefinitions": [
-                {"type": "ground", "style": "solder", "orientation": "+Z"},
-                {"type": "threeVolt", "style": "solder", "orientation": "+Z"},
-                {"type": {"pinInstantiationIdx": 0}, "style": "solder", "orientation": "+Z"}
+                {"target": "ground", "style": "solder", "orientation": "+Z"},
+                {"target": "threeVolt", "style": "solder", "orientation": "+Z"},
+                {"target": {"pinInstantiationIdx": 0}, "style": "solder", "orientation": "+Z"}
             ],
             "instantiation": {
                 "kind": "function",
@@ -137,16 +137,16 @@ namespace pxsim.newdefinitions {
             "numberOfPins": 10,
             "instantiation": {"kind": "singleton"},
             "pinDefinitions": [
-                {"type": "P4", "style": "male", "orientation": "-Z"},
-                {"type": "P5", "style": "male", "orientation": "-Z"},
-                {"type": "P6", "style": "male", "orientation": "-Z"},
-                {"type": "P7", "style": "male", "orientation": "-Z"},
-                {"type": "P8", "style": "male", "orientation": "-Z"},
-                {"type": "P9", "style": "male", "orientation": "-Z"},
-                {"type": "P10", "style": "male", "orientation": "-Z"},
-                {"type": "P11", "style": "male", "orientation": "-Z"},
-                {"type": "P12", "style": "male", "orientation": "-Z"},
-                {"type": "P13", "style": "male", "orientation": "-Z"}
+                {"target": "P4", "style": "male", "orientation": "-Z"},
+                {"target": "P5", "style": "male", "orientation": "-Z"},
+                {"target": "P6", "style": "male", "orientation": "-Z"},
+                {"target": "P7", "style": "male", "orientation": "-Z"},
+                {"target": "P8", "style": "male", "orientation": "-Z"},
+                {"target": "P9", "style": "male", "orientation": "-Z"},
+                {"target": "P10", "style": "male", "orientation": "-Z"},
+                {"target": "P11", "style": "male", "orientation": "-Z"},
+                {"target": "P12", "style": "male", "orientation": "-Z"},
+                {"target": "P13", "style": "male", "orientation": "-Z"}
             ],
             "assembly": [
                 {"part": true},
@@ -177,11 +177,11 @@ namespace pxsim.newdefinitions {
                 ]
             },
             "pinDefinitions": [
-                {"type": "SCK", "style": "male", "orientation": "+Y" },
-                {"type": {"pinInstantiationIdx": 0}, "style": "male", "orientation": "+Y" },
-                {"type": "MISO", "style": "male", "orientation": "+Y" },
-                {"type": "ground", "style": "male", "orientation": "+Y" },
-                {"type": "threeVolt", "style": "male", "orientation": "+Y" },
+                {"target": "SCK", "style": "male", "orientation": "+Y" },
+                {"target": {"pinInstantiationIdx": 0}, "style": "male", "orientation": "+Y" },
+                {"target": "MISO", "style": "male", "orientation": "+Y" },
+                {"target": "ground", "style": "male", "orientation": "+Y" },
+                {"target": "threeVolt", "style": "male", "orientation": "+Y" },
             ],
             "assembly": [
                 {"part": true, "pinIndices": [3]},
@@ -201,8 +201,8 @@ namespace pxsim.newdefinitions {
                 ],
             },
             "pinDefinitions": [
-                {"type": "P0", "style": "male", "orientation": "-Z"},
-                {"type": "ground", "style": "male", "orientation": "-Z"},
+                {"target": "P0", "style": "male", "orientation": "-Z"},
+                {"target": "ground", "style": "male", "orientation": "-Z"},
             ],
             "instantiation": {"kind": "singleton"},
             "assembly": [

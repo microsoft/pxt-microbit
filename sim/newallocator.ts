@@ -47,10 +47,8 @@ namespace pxsim.newdefinitions {
     }
     interface PinIR {
         def: PartPinDefinition,
-        dalPin: DALPin,
-        boardPin: string,
+        target: PinTarget,
     }
-
     interface AllocLocOpts {
         nearestBBPin?: BBRowCol,
         startColumn?: number,
@@ -126,10 +124,10 @@ namespace pxsim.newdefinitions {
     function copyDoubleArray(a: string[][]) {
          return a.map(b => b.map(p => p));
     }
-    function readPin(arg: string): string {
+    function readPin(arg: string): DALPin {
         U.assert(!!arg, "Invalid pin: " + arg);
         let pin = arg.split("DigitalPin.")[1];
-        return pin;
+        return <DALPin>pin;
     }
     function mkReverseMap(map: {[key: string]: string}) {
         let origKeys: string[] = [];
@@ -350,72 +348,63 @@ namespace pxsim.newdefinitions {
                 .filter(d => !!d[1]);
             let partNmsList = partNmAndDefs.map(p => p[0]);
             let partDefsList = partNmAndDefs.map(p => p[1]);
-            let partialParts: PartIR[] = [];
+            let partIRs: PartIR[] = [];
+            let mkIR = (def: PartDefinition, nm: string, instPins: PinTarget[], partParams: string[]): PartIR => {
+                let pinIRs: PinIR[] = [];
+                for (let i = 0; i < def.numberOfPins; i++) {
+                    let pinDef = def.pinDefinitions[i];
+                    U.assert(typeof pinDef.target === "string", "Invalid pin target for singleton part: " + nm); 
+                    let pinTarget: PinTarget;
+                    if (typeof pinDef.target === "string") {
+                        pinTarget = <PinTarget>pinDef.target;
+                    } else {
+                        let instIdx = (<PinInstantiationIdx>pinDef.target).pinInstantiationIdx;
+                        pinTarget = instPins[instIdx];
+                    }
+                    pinIRs.push({
+                        def: pinDef,
+                        target: pinTarget
+                    });
+                }
+                return {
+                    name: nm,
+                    def: def,
+                    pins: pinIRs,
+                    partParams: partParams
+                };
+            };
+            //const parse = () => TODO:
             partDefsList.forEach((def, idx) => {
                 let nm = partNmsList[idx];
-                if (def.pinAllocation.type === "predefined") {
-                    let mbPins = (<PredefinedPinAlloc>def.pinAllocation).pins;
-                    let pinsAssigned = mbPins.map(p => this.opts.boardDef.gpioPinMap[p]);
-                    partialParts.push({
-                        name: nm,
-                        def: def,
-                        pinsAssigned: pinsAssigned,
-                        pinsNeeded: 0,
-                        breadboardColumnsNeeded: def.breadboardColumnsNeeded,
-                    });
-                } else if (def.pinAllocation.type === "factoryfunction") {
-                    let fnPinAlloc = (<FactoryFunctionPinAlloc>def.pinAllocation);
-                    let fnNm = fnPinAlloc.functionName;
-                    let fnsAndArgs = <string[]>this.opts.fnArgs[fnNm];
-                    let success = false;
-                    if (fnsAndArgs && fnsAndArgs.length) {
-                        let pinArgPoses = fnPinAlloc.pinArgPositions;
-                        let otherArgPoses = fnPinAlloc.otherArgPositions || [];
-                        fnsAndArgs.forEach(fnArgsStr => {
-                            let fnArgsSplit = fnArgsStr.split(",");
-                            let pinArgs: string[] = [];
-                            pinArgPoses.forEach(i => {
-                                pinArgs.push(fnArgsSplit[i]);
-                            });
-                            let mbPins = pinArgs.map(arg => readPin(arg));
-                            let otherArgs: string[] = [];
-                            otherArgPoses.forEach(i => {
-                                otherArgs.push(fnArgsSplit[i]);
-                            });
-                            let pinsAssigned = mbPins.map(p => this.opts.boardDef.gpioPinMap[p]);
-                            partialParts.push({
-                                name: nm,
-                                def: def,
-                                pinsAssigned: pinsAssigned,
-                                pinsNeeded: 0,
-                                breadboardColumnsNeeded: def.breadboardColumnsNeeded,
-                                otherArgs: otherArgs.length ? otherArgs : null,
-                            });
+                if (def.instantiation.kind === "singleton") {
+                    partIRs.push(mkIR(def, nm, []));
+                } else if (def.instantiation.kind === "function") {
+                    let fnAlloc = def.instantiation as PartFunctionDefinition;
+                    let fnNm = fnAlloc.fullyQualifiedName;
+                    let callsitesTrackedArgs = <string[]>this.opts.fnArgs[fnNm];
+                    U.assert(!!callsitesTrackedArgs && !!callsitesTrackedArgs.length, "Failed to read pin(s) from callsite for: " + fnNm);
+                    callsitesTrackedArgs.forEach(fnArgsStr => {
+                        let fnArgsSplit = fnArgsStr.split(",");
+                        U.assert(fnArgsSplit.length === fnAlloc.argumentRoles.length,
+                            `Mismatch between number of arguments at callsite (function name: ${fnNm}) vs number of argument roles in part definition (part: ${nm}).`);
+                        let instPins: PinTarget[] = [];
+                        let paramArgs: string[] = [];
+                        fnArgsSplit.forEach((arg, idx) => {
+                            let role = fnAlloc.argumentRoles[idx];
+                            if (role === "ignored") {
+                            } else if (role === "partParameter") {
+                                paramArgs.push(arg);
+                            } else {
+                                let instIdx = (<PinInstantiationIdx>role).pinInstantiationIdx;
+                                let pin = readPin(arg);
+                                instPins[instIdx] = pin;
+                            }
                         });
-                    } else {
-                        // failed to find pin allocation from callsites
-                        console.debug("Failed to read pin(s) from callsite for: " + fnNm);
-                        let pinsNeeded = fnPinAlloc.pinArgPositions.length;
-                        partialParts.push({
-                            name: nm,
-                            def: def,
-                            pinsAssigned: [],
-                            pinsNeeded: pinsNeeded,
-                            breadboardColumnsNeeded: def.breadboardColumnsNeeded,
-                        });
-                    }
-                } else if (def.pinAllocation.type === "auto") {
-                    let pinsNeeded = (<AutoPinAlloc>def.pinAllocation).gpioPinsNeeded;
-                    partialParts.push({
-                        name: nm,
-                        def: def,
-                        pinsAssigned: [],
-                        pinsNeeded: pinsNeeded,
-                        breadboardColumnsNeeded: def.breadboardColumnsNeeded,
+                        partIRs.push(mkIR(def, nm, instPins));
                     });
                 }
             });
-            return partialParts;
+            return partIRs;
         }
         private allocGPIOPins(partialParts: PartIR[]): string[][] {
             let availableGPIOBlocks = copyDoubleArray(this.opts.boardDef.gpioPinBlocks);
