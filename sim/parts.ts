@@ -5,7 +5,7 @@ namespace pxsim.newdefinitions {
         // total number of power + GPIO + other pins
         numberOfPins: number,
         // visual description or built-in visual name 
-        visual: PartVisualDefinition | string,
+        visual: PartVisualDefinition,
         // metadata for each pin
         pinDefinitions: PartPinDefinition[],
         // description of how part is instantiated
@@ -13,12 +13,12 @@ namespace pxsim.newdefinitions {
         // list describing number and order of assembly instruction steps; the length is how many steps this part needs 
         assembly: AssemblyStep[],
     }
-    export interface PartVisualDefinition extends PartDimensions {
+    export interface PartVisualDefinition {
         // URL to image asset
-        image: string,
-    }
-    // description of a parts visual; units don't matter but must be internally consistent
-    export interface PartDimensions {
+        image?: string,
+        // or name of built-in part visual
+        builtIn?: string,
+        // description of a parts visual; units don't matter but must be internally consistent
         width: number,
         height: number,
         // the distance between the centers of two adjecent pins; used to scale part for breadboard
@@ -82,7 +82,18 @@ namespace pxsim.newdefinitions {
     export const EXAMPLE_NEW_PART_DEFINITIONS: Map<PartDefinition> = {
         "buttonpair": {
             "simulationBehavior": "buttonpair",
-            "visual": "buttonpair",
+            "visual": {
+                "builtIn": "buttonpair",
+                "width": 75,
+                "height": 45,
+                "pinDistance": 15,
+                "pinLocations": [
+                    {"x": 0, "y": 0},
+                    {"x": 30, "y": 45},
+                    {"x": 45, "y": 0},
+                    {"x": 75, "y": 45},
+                ],
+            },
             "numberOfPins": 4,
             "pinDefinitions": [
                 {"target": "P14", "style": "male", "orientation": "-Z"},
@@ -108,8 +119,8 @@ namespace pxsim.newdefinitions {
                 "pinDistance": 15,
                 "pinLocations": [
                     {"x": 13.5, "y": 11},
-                    {"x": 13.5, "y": 26},
-                    {"x": 13.5, "y": 41},
+                    {"x": 28.5, "y": 11},
+                    {"x": 43.5, "y": 11},
                 ],
             },
             "numberOfPins": 3,
@@ -132,7 +143,24 @@ namespace pxsim.newdefinitions {
             ],
         },
         "ledmatrix": {
-            "visual": "ledmatrix",
+            "visual": {
+                "builtIn": "ledmatrix",
+                "width": 105,
+                "height": 105,
+                "pinDistance": 15,
+                "pinLocations": [
+                    {"x": 0, "y": 0},
+                    {"x": 15, "y": 0},
+                    {"x": 30, "y": 0},
+                    {"x": 45, "y": 0},
+                    {"x": 105, "y": 105},
+                    {"x": 0, "y": 105},
+                    {"x": 15, "y": 105},
+                    {"x": 30, "y": 105},
+                    {"x": 45, "y": 105},
+                    {"x": 60, "y": 0},
+                ],
+            },
             "simulationBehavior": "ledmatrix",
             "numberOfPins": 10,
             "instantiation": {"kind": "singleton"},

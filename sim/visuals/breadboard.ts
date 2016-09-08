@@ -106,10 +106,10 @@ namespace pxsim.visuals {
         }
         `
     // Pin rows and coluns
-    const MID_ROWS = 10;
+    export const BREADBOARD_MID_ROWS = 10;
+    export const BREADBOARD_MID_COLS = 30;
     const MID_ROW_GAPS = [4, 4];
-    const MID_ROW_AND_GAPS = MID_ROWS + MID_ROW_GAPS.length;
-    const MID_COLS = 30;
+    const MID_ROW_AND_GAPS = BREADBOARD_MID_ROWS + MID_ROW_GAPS.length;
     const BAR_ROWS = 2;
     const BAR_COLS = 25;
     const POWER_ROWS = BAR_ROWS * 2;
@@ -117,14 +117,14 @@ namespace pxsim.visuals {
     const BAR_COL_GAPS = [4, 9, 14, 19];
     const BAR_COL_AND_GAPS = BAR_COLS + BAR_COL_GAPS.length;
     // Essential dimensions
-    const WIDTH = PIN_DIST * (MID_COLS + 3);
+    const WIDTH = PIN_DIST * (BREADBOARD_MID_COLS + 3);
     const HEIGHT = PIN_DIST * (MID_ROW_AND_GAPS + POWER_ROWS + 5.5);
     const MID_RATIO = 2.0 / 3.0;
     const BAR_RATIO = (1.0 - MID_RATIO) * 0.5;
     const MID_HEIGHT = HEIGHT * MID_RATIO;
     const BAR_HEIGHT = HEIGHT * BAR_RATIO;
     // Pin grids
-    const MID_GRID_WIDTH = (MID_COLS - 1) * PIN_DIST;
+    const MID_GRID_WIDTH = (BREADBOARD_MID_COLS - 1) * PIN_DIST;
     const MID_GRID_HEIGHT = (MID_ROW_AND_GAPS - 1) * PIN_DIST;
     const MID_GRID_X = (WIDTH - MID_GRID_WIDTH) / 2.0;
     const MID_GRID_Y = BAR_HEIGHT + (MID_HEIGHT - MID_GRID_HEIGHT) / 2.0;
@@ -151,6 +151,10 @@ namespace pxsim.visuals {
     const SMALL_CHANNEL_HEIGHT = PIN_DIST * 0.05;
     // Background
     const BACKGROUND_ROUNDING = PIN_DIST * 0.3;
+    // Row and column helpers
+    const alphabet = "abcdefghij".split("").reverse();
+    export function getColumnName(colIdx: number): string { return `${colIdx + 1}` };
+    export function getRowName(rowIdx: number): string { return alphabet[rowIdx] };
 
     export interface GridPin {
         el: SVGElement,
@@ -370,14 +374,11 @@ namespace pxsim.visuals {
             mkChannel(BAR_HEIGHT + MID_HEIGHT, SMALL_CHANNEL_HEIGHT);
 
             //-----pins
-            const getMidTopOrBot = (rowIdx: number) => rowIdx < MID_ROWS / 2.0 ? "b" : "t";
+            const getMidTopOrBot = (rowIdx: number) => rowIdx < BREADBOARD_MID_ROWS / 2.0 ? "b" : "t";
             const getBarTopOrBot = (colIdx: number) => colIdx < POWER_COLS / 2.0 ? "b" : "t";
-            const alphabet = "abcdefghij".split("").reverse();
-            const getColName = (colIdx: number) => `${colIdx + 1}`;
-            const getMidRowName = (rowIdx: number) => alphabet[rowIdx];
             const getMidGroupName = (rowIdx: number, colIdx: number) => {
                 let botOrTop = getMidTopOrBot(rowIdx);
-                let colNm = getColName(colIdx);
+                let colNm = getColumnName(colIdx);
                 return `${botOrTop}${colNm}`;
             };
             const getBarRowName = (rowIdx: number) => rowIdx === 0 ? "-" : "+";
@@ -391,13 +392,13 @@ namespace pxsim.visuals {
             let midGridRes = mkGrid({
                 xOffset: MID_GRID_X,
                 yOffset: MID_GRID_Y,
-                rowCount: MID_ROWS,
-                colCount: MID_COLS,
+                rowCount: BREADBOARD_MID_ROWS,
+                colCount: BREADBOARD_MID_COLS,
                 pinDist: PIN_DIST,
                 mkPin: mkBBPin,
                 mkHoverPin: mkBBHoverPin,
-                getRowName: getMidRowName,
-                getColName: getColName,
+                getRowName: getRowName,
+                getColName: getColumnName,
                 getGroupName: getMidGroupName,
                 rowIdxsWithGap: MID_ROW_GAPS,
             });
@@ -414,7 +415,7 @@ namespace pxsim.visuals {
                 mkPin: mkBBPin,
                 mkHoverPin: mkBBHoverPin,
                 getRowName: getBarRowName,
-                getColName: getColName,
+                getColName: getColumnName,
                 getGroupName: getBarGroupName,
                 colIdxsWithGap: BAR_COL_GAPS,
             });
@@ -432,7 +433,7 @@ namespace pxsim.visuals {
                 mkPin: mkBBPin,
                 mkHoverPin: mkBBHoverPin,
                 getRowName: getBarRowName,
-                getColName: getColName,
+                getColName: getColumnName,
                 getGroupName: getBarGroupName,
                 colIdxsWithGap: BAR_COL_GAPS.map(g => g + BAR_COLS),
             });
@@ -466,32 +467,32 @@ namespace pxsim.visuals {
             }
 
             //columns
-            for (let colIdx = 0; colIdx < MID_COLS; colIdx++) {
-                let colNm = getColName(colIdx);
+            for (let colIdx = 0; colIdx < BREADBOARD_MID_COLS; colIdx++) {
+                let colNm = getColumnName(colIdx);
                 //top
                 let rowTIdx = 0;
-                let rowTNm = getMidRowName(rowTIdx);
+                let rowTNm = getRowName(rowTIdx);
                 let groupT = getMidGroupName(rowTIdx, colIdx);
                 let lblT = mkBBLabelAtPin(rowTNm, colNm, 0, -PIN_DIST, colNm, groupT);
                 this.allLabels.push(lblT);
                 //bottom
-                let rowBIdx = MID_ROWS - 1;
-                let rowBNm = getMidRowName(rowBIdx);
+                let rowBIdx = BREADBOARD_MID_ROWS - 1;
+                let rowBNm = getRowName(rowBIdx);
                 let groupB = getMidGroupName(rowBIdx, colIdx);
                 let lblB = mkBBLabelAtPin(rowBNm, colNm, 0, +PIN_DIST, colNm, groupB);
                 this.allLabels.push(lblB);
             }
             //rows
-            for (let rowIdx = 0; rowIdx < MID_ROWS; rowIdx++) {
-                let rowNm = getMidRowName(rowIdx);
+            for (let rowIdx = 0; rowIdx < BREADBOARD_MID_ROWS; rowIdx++) {
+                let rowNm = getRowName(rowIdx);
                 //top
                 let colTIdx = 0;
-                let colTNm = getColName(colTIdx);
+                let colTNm = getColumnName(colTIdx);
                 let lblT = mkBBLabelAtPin(rowNm, colTNm, -PIN_DIST, 0, rowNm);
                 this.allLabels.push(lblT);
                 //top
-                let colBIdx = MID_COLS - 1;
-                let colBNm = getColName(colBIdx);
+                let colBIdx = BREADBOARD_MID_COLS - 1;
+                let colBNm = getColumnName(colBIdx);
                 let lblB = mkBBLabelAtPin(rowNm, colBNm, +PIN_DIST, 0, rowNm);
                 this.allLabels.push(lblB);
             }
