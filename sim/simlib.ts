@@ -234,7 +234,7 @@ namespace pxsim.visuals {
 
     export type WireColor =
         "black" | "white" | "gray" | "purple" | "blue" | "green" | "yellow" | "orange" | "red" | "brown" | "pink";
-    export const GPIO_WIRE_COLORS = ["purple", "green", "yellow", "orange", "pink"];
+    export const GPIO_WIRE_COLORS = ["pink", "green", "purple", "orange", "yellow"];
     export const WIRE_COLOR_MAP: Map<string> = {
         black: "#514f4d",
         white: "#fcfdfc",

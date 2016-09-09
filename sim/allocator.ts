@@ -388,7 +388,7 @@ namespace pxsim {
                     color = GROUND_COLOR;
                 } else if (end === "threeVolt") {
                     color = POWER_COLOR;
-                } else if (pin.def.colorGroup) {
+                } else if (typeof pin.def.colorGroup === "number") {
                     if (groupToColor[pin.def.colorGroup]) {
                         color = groupToColor[pin.def.colorGroup];
                     } else {
