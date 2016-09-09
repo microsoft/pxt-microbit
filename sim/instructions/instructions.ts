@@ -20,7 +20,7 @@ namespace pxsim.instructions {
     const LBL_LEFT_PAD = 5;
     const REQ_WIRE_HEIGHT = 45;
     const REQ_CMP_HEIGHT = 55;
-    const REQ_CMP_SCALE = 0.5 * 4;
+    const REQ_CMP_SCALE = 0.5 * 3;
     type Orientation = "landscape" | "portrait";
     const ORIENTATION: Orientation = "portrait";
     const PPI = 96.0;
@@ -284,18 +284,18 @@ namespace pxsim.instructions {
         div.appendChild(svgEl);
         return div;
     }
-    function mkCmpDiv(cmp: "wire" | string | PartVisualDefinition, opts: mkCmpDivOpts): HTMLElement {
+    function mkCmpDiv(cmp: "wire" | PartVisualDefinition, opts: mkCmpDivOpts): HTMLElement {
         let el: visuals.SVGElAndSize;
         if (cmp == "wire") {
-            //TODO: support non-croc wire parts
             el = visuals.mkWirePart([0, 0], opts.wireClr || "red", opts.crocClips);
-        } else if (typeof cmp == "string") {
-            let builtinVis = <string>cmp;
-            let cnstr = builtinComponentPartVisual[builtinVis];
-            el = cnstr([0, 0]);
         } else {
             let partVis = <PartVisualDefinition>cmp;
-            el = visuals.mkGenericPartSVG(partVis);
+            if (typeof partVis.builtIn == "string") {
+                let cnstr = builtinComponentPartVisual[partVis.builtIn];
+                el = cnstr([0, 0]);
+            } else {
+                el = visuals.mkGenericPartSVG(partVis);
+            }
         }
         return wrapSvg(el, opts);
     }
@@ -323,12 +323,13 @@ namespace pxsim.instructions {
             cAndWs.assembly.forEach((step, idx) => {
                 if (step.part && part)
                     stepToCmps[stepOffset + idx] = [part]
-                if (step.wireIndices && wires)
-                    stepToWires[stepOffset + idx] = wires
+                if (step.wireIndices && step.wireIndices.length > 0 && wires)
+                    stepToWires[stepOffset + idx] = step.wireIndices.map(i => wires[i])
             })
             stepOffset += cAndWs.assembly.length;
         });
-        let lastStep = stepOffset;
+        let numSteps = stepOffset;
+        let lastStep = numSteps - 1;
         let allCmps = allocRes.partsAndWires.map(r => r.part).filter(p => !!p);
         let allWires = allocRes.partsAndWires.map(r => r.wires || []).reduce((p, n) => p.concat(n), []);
         let colorToWires: Map<WireInst[]> = {}
@@ -389,6 +390,19 @@ namespace pxsim.instructions {
         }
 
         for (let i = 0; i <= step; i++) {
+            let cmps = props.stepToCmps[i];
+            if (cmps) {
+                cmps.forEach(partInst => {
+                    let cmp = board.addPart(partInst)
+                    //last step
+                    if (i === step) {
+                        //highlight locations pins
+                        partInst.breadboardConnections.forEach(bbLoc => board.highlightBreadboardPin(bbLoc));
+                        svg.addClass(cmp.element, "notgrayed");
+                    }
+                });
+            }
+
             let wires = props.stepToWires[i];
             if (wires) {
                 wires.forEach(w => {
@@ -408,18 +422,6 @@ namespace pxsim.instructions {
                         }
                         //highlight wire
                         board.highlightWire(wire);
-                    }
-                });
-            }
-            let cmps = props.stepToCmps[i];
-            if (cmps) {
-                cmps.forEach(partInst => {
-                    let cmp = board.addPart(partInst)
-                    //last step
-                    if (i === step) {
-                        //highlight locations pins
-                        partInst.breadboardConnections.forEach(bbLoc => board.highlightBreadboardPin(bbLoc));
-                        svg.addClass(cmp.element, "notgrayed");
                     }
                 });
             }

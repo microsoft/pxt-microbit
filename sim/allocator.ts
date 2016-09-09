@@ -363,6 +363,8 @@ namespace pxsim {
                 let colIdx = part.startColumnIdx + pin.bbFit.partRelativeColIdx;
                 let colName = visuals.getColumnName(colIdx);
                 let pinRowIdx = part.startRowIdx + pin.bbFit.partRelativeRowIdx;
+                if (pinRowIdx >= 7) //account for middle gap
+                    pinRowIdx -= 2;
                 if (isConnectedToBB(pin.def)) {
                     //make a wire from bb top or bottom to target
                     let connectedToTop = pinRowIdx < 5;
@@ -590,6 +592,8 @@ namespace pxsim {
                 .filter(p => isConnectedToBB(p.def))
                 .map(p => {
                     let rowIdx = ir.startRowIdx + p.bbFit.partRelativeRowIdx;
+                    if (rowIdx >= 7) //account for middle gap
+                        rowIdx -= 2;
                     let rowName = visuals.getRowName(rowIdx);
                     let colIdx = ir.startColumnIdx + p.bbFit.partRelativeColIdx;
                     let colName = visuals.getColumnName(colIdx);
