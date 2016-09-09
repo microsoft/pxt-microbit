@@ -211,7 +211,8 @@ namespace pxsim.visuals {
     }
 
     export type WireColor =
-        "black" | "white" | "gray" | "purple" | "blue" | "green" | "yellow" | "orange" | "red" | "brown";
+        "black" | "white" | "gray" | "purple" | "blue" | "green" | "yellow" | "orange" | "red" | "brown" | "pink";
+    export const GPIO_WIRE_COLORS = ["purple", "green", "yellow", "orange", "pink"];
     export const WIRE_COLOR_MAP: Map<string> = {
         black: "#514f4d",
         white: "#fcfdfc",
@@ -223,6 +224,7 @@ namespace pxsim.visuals {
         orange: "#fdb262",
         red: "#f44f43",
         brown: "#c89764",
+        pink: "#ff80fa"
     }
     export function mapWireColor(clr: WireColor | string): string {
         return WIRE_COLOR_MAP[clr] || clr;

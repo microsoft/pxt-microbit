@@ -176,6 +176,7 @@ namespace pxsim.newdefinitions {
         return pin.orientation === "-Z" && pin.style === "male";
     }
     class Allocator {
+        //TODO: better handling of allocation errors
         private opts: AllocatorOpts;
         private availablePowerPins = {
             top: {
@@ -188,15 +189,11 @@ namespace pxsim.newdefinitions {
             },
         };
         private powerUsage: PowerUsage;
+        private availableWireColors: string[];
 
         constructor(opts: AllocatorOpts) {
             this.opts = opts;
         }
-
-        //TODO: standardize allocation errors
-        // private err(condition: boolean, msg: string) {
-        //     U.assert(condition, `[Part(s) allocation error]: ${msg}`);
-        // }
 
         private allocPartIRs(def: PartDefinition, name: string, bbFit: PartBBFit): PartIR[] {
             let partIRs: PartIR[] = [];
@@ -346,7 +343,14 @@ namespace pxsim.newdefinitions {
             });
             return placements;
         }
+        private nextColor(): string {
+            if (!this.availableWireColors || this.availableWireColors.length <= 0) {
+                this.availableWireColors = visuals.GPIO_WIRE_COLORS.map(c => c);
+            }
+            return this.availableWireColors.pop();
+        }
         private allocWireIRs(part: PartPlacement): PartAndWireIRs {
+            let groupToColor: string[] = [];
             let wires: WireIR[] = part.pins.map((pin, pinIdx) => {
                 let end = pin.target;
                 let start: WireIRLoc;
@@ -373,7 +377,16 @@ namespace pxsim.newdefinitions {
                         yOffset: pin.bbFit.yOffset
                     }
                 }
-                let color = "red"; //TODO
+                let color: string;
+                if (pin.def.colorGroup) {
+                    if (groupToColor[pin.def.colorGroup]) {
+                        color = groupToColor[pin.def.colorGroup];
+                    } else {
+                        color = groupToColor[pin.def.colorGroup] = this.nextColor();
+                    }
+                } else {
+                    color = this.nextColor()
+                }
                 return {
                     start: start,
                     end: end,

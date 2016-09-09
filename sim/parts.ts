@@ -31,6 +31,7 @@ namespace pxsim.newdefinitions {
         target: UninstantiatedPinTarget, // e.g.: "ground", "MISO", etc.; see PinType
         style: PinStyle, // e.g.: "male", "female", "solder"; see PinStyle
         orientation: PinOrientation, // e.g.: "+X", "-Z", etc.; see PinOrientation
+        colorGroup?: number, // if set, the allocator while try to give pins for this part in the same group the same color 
     }
     export type UninstantiatedPinTarget = PinTarget | PinInstantiationIdx;
     export type PinTarget = (
@@ -315,7 +316,7 @@ namespace pxsim.newdefinitions {
             },
             "assemblyStep": 0,
             "wires": [
-                {"start": ["breadboard", "j", 1], "end": ["GPIO", 0], "color": "#ff80fa", "assemblyStep": 1},
+                {"start": ["breadboard", "j", 1], "end": ["GPIO", 0], "color": "pink", "assemblyStep": 1},
                 {"start": ["breadboard", "j", 3], "end": "ground", "color": "blue", "assemblyStep": 1}
             ]
         },
