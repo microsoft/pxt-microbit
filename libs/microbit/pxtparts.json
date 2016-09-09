@@ -33,13 +33,13 @@
         "simulationBehavior": "neopixel",
         "visual": {
             "builtIn": "neopixel",
-            "width": 87.5,
-            "height": 190,
-            "pinDistance": 15,
+            "width": 58,
+            "height": 113,
+            "pinDistance": 9,
             "pinLocations": [
-                {"x": 13.5, "y": 11},
-                {"x": 28.5, "y": 11},
-                {"x": 43.5, "y": 11}
+                {"x": 10, "y": 0},
+                {"x": 19, "y": 0},
+                {"x": 28, "y": 0}
             ]
         },
         "numberOfPins": 3,

@@ -178,9 +178,8 @@ namespace pxsim.visuals {
             let rowIdx = partInst.startRowIdx;
             let row = getRowName(rowIdx);
             let col = getColumnName(colIdx);
-            let scalarFn = mkScaleFn(partInst.visual.pinDistance, PIN_DIST);
-            let xOffset = scalarFn(partInst.bbFit.xOffset);
-            let yOffset = scalarFn(partInst.bbFit.yOffset);
+            let xOffset = partInst.bbFit.xOffset / partInst.visual.pinDistance;
+            let yOffset = partInst.bbFit.yOffset  / partInst.visual.pinDistance;
             let rowCol = <BBLoc>{
                 type: "breadboard",
                 row: row,

@@ -220,7 +220,7 @@ namespace pxsim {
                     let relativeYOffset = adjustedY - relativeRowIdx * def.visual.pinDistance;
                     let adjustedX = bbFit.xOffset + pinLoc.x;
                     let relativeColIdx = Math.round(adjustedX / def.visual.pinDistance);
-                    let relativeXOffset = adjustedX = relativeColIdx * def.visual.pinDistance;
+                    let relativeXOffset = adjustedX - relativeColIdx * def.visual.pinDistance;
                     let pinBBFit: PinBBFit = {
                         partRelativeRowIdx: relativeRowIdx,
                         partRelativeColIdx: relativeColIdx,
@@ -379,8 +379,8 @@ namespace pxsim {
                         type: "breadboard",
                         row: rowName,
                         col: colName,
-                        xOffset: pin.bbFit.xOffset,
-                        yOffset: pin.bbFit.yOffset
+                        xOffset: pin.bbFit.xOffset / part.def.visual.pinDistance,
+                        yOffset: pin.bbFit.yOffset / part.def.visual.pinDistance
                     }
                 }
                 let color: string;
