@@ -148,13 +148,13 @@ namespace pxsim.visuals {
         }
 
         public addPart(partInst: PartInst): IBoardPart<any> {
-            //TODO: port
             let part: IBoardPart<any> = null;
             let colOffset = 0;
-            if (partInst.visual.builtIn) {
-                let builtinVisual = partInst.visual.builtIn;
-                let cnstr = builtinComponentSimVisual[builtinVisual];
-                let stateFn = builtinComponentSimState[builtinVisual];
+            if (partInst.simulationBehavior) {
+                //TODO: seperate simulation behavior from builtin visual
+                let builtinBehavior = partInst.simulationBehavior;
+                let cnstr = builtinComponentSimVisual[builtinBehavior];
+                let stateFn = builtinComponentSimState[builtinBehavior];
                 part = cnstr();
                 part.init(this.state.bus, stateFn(this.state), this.view, partInst.params);
             } else {

@@ -12,6 +12,7 @@ namespace pxsim {
     }
     export interface PartInst {
         name: string,
+        simulationBehavior?: string,
         visual: PartVisualDefinition,
         bbFit: PartBBFit,
         startColumnIdx: number,
@@ -69,7 +70,7 @@ namespace pxsim {
         end: WireIRLoc,
         color: string,
     }
-    interface PartAndWireIRs extends PartPlacement {
+    interface PartIRAndWireIRs extends PartPlacement {
         wires: WireIR[],
     };
     interface PowerUsage {
@@ -146,7 +147,7 @@ namespace pxsim {
         for (let aKey in a)
             res[aKey] = (<any>a)[aKey];
         for (let bKey in b)
-            res[bKey] = (<any>a)[bKey];
+            res[bKey] = (<any>b)[bKey];
         return <A & B>res;
     }
     function merge3<A, B, C>(a: A, b: B, c: C): A & B & C {
@@ -201,7 +202,6 @@ namespace pxsim {
                 let pinIRs: PinIR[] = [];
                 for (let i = 0; i < def.numberOfPins; i++) {
                     let pinDef = def.pinDefinitions[i];
-                    U.assert(typeof pinDef.target === "string", "Invalid pin target for singleton part: " + name); 
                     let pinTarget: PinTarget;
                     if (typeof pinDef.target === "string") {
                         pinTarget = <PinTarget>pinDef.target;
@@ -332,9 +332,12 @@ namespace pxsim {
             let startRowIndicies = parts.map(p => {
                 let extraRows = totalRowsCount - p.bbFit.rowCount;
                 let topPad = Math.floor(extraRows / 2);
-                if (topPad > 4)
-                    topPad = 4;
-                return topPad;
+                let startIdx = topPad;
+                if (startIdx > 4)
+                    startIdx = 4;
+                if (startIdx < 1)
+                    startIdx = 1;
+                return startIdx;
             });
             let placements = parts.map((p, idx) => {
                 let row = startRowIndicies[idx];
@@ -349,7 +352,7 @@ namespace pxsim {
             }
             return this.availableWireColors.pop();
         }
-        private allocWireIRs(part: PartPlacement): PartAndWireIRs {
+        private allocWireIRs(part: PartPlacement): PartIRAndWireIRs {
             let groupToColor: string[] = [];
             let wires: WireIR[] = part.pins.map((pin, pinIdx) => {
                 let end = pin.target;
@@ -610,7 +613,7 @@ namespace pxsim {
                 let partNmsList = partNmAndDefs.map(p => p.name);
                 let partDefsList = partNmAndDefs.map(p => p.def);
                 let dimensions = partNmAndDefs.map(nmAndPart => this.computePartDimensions(nmAndPart.def, nmAndPart.name));
-                let partIRs: PartIR[];
+                let partIRs: PartIR[] = [];
                 partNmAndDefs.forEach((nmAndDef, idx) => {
                     let dims = dimensions[idx];
                     let irs = this.allocPartIRs(nmAndDef.def, nmAndDef.name, dims);

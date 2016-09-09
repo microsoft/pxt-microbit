@@ -283,6 +283,7 @@ namespace pxsim.visuals {
         }
         private updateStripLoc() {
             let [x, y] = this.lastLocation;
+            U.assert(typeof x === "number" && typeof y === "number", "invalid x,y for NeoPixel strip");
             this.canvas.setLoc([x + CANVAS_LEFT, y + CANVAS_TOP]);
             svg.hydrate(this.part.el, { transform: `translate(${x} ${y})` }); //TODO: update part's l,h, etc.
         }

@@ -329,7 +329,7 @@ namespace pxsim.visuals {
             let pin = this.getPin(row, col);
             if (!pin)
                 return null;
-            return [pin.cx + xOffset, pin.cy + yOffset];
+            return [pin.cx + (xOffset || 0), pin.cy + (yOffset || 0)];
         }
 
         public getPinDist() {
