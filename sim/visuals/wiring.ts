@@ -455,7 +455,7 @@ namespace pxsim.visuals {
             let wireEls: Wire;
             if (withCrocs && end.type == "dalboard") {
                 let boardPin = (<BoardLoc>end).pin;
-                if (boardPin == "P0" || boardPin == "P1" || boardPin == "P0" || boardPin == "GND" || boardPin == "+3v3" ) {
+                if (boardPin == "P0" || boardPin == "P1" || boardPin == "P2" || boardPin == "GND" || boardPin == "+3v3" ) {
                     //HACK
                     wireEls = this.drawWireWithCrocs(startLoc, endLoc, color);
                 } else {
