@@ -32,7 +32,7 @@
     "neopixel": {
         "simulationBehavior": "neopixel",
         "visual": {
-            "image": "part/neopixel.svg",
+            "builtIn": "neopixel",
             "width": 87.5,
             "height": 190,
             "pinDistance": 15,

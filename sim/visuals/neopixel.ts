@@ -228,7 +228,7 @@ namespace pxsim.visuals {
         return mode;
     }
 
-    export class NeoPixelView implements IBoardComponent<NeoPixelState> {
+    export class NeoPixelView implements IBoardPart<NeoPixelState> {
         public style: string = `
             .sim-neopixel-canvas {
             }

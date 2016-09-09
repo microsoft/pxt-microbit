@@ -84,8 +84,8 @@ namespace pxsim {
             let viewHost = new visuals.BoardHost({
                 state: this,
                 boardDef: boardDef,
-                cmpsList: cmpsList,
-                cmpDefs: cmpDefs,
+                partsList: cmpsList,
+                partDefs: cmpDefs,
                 fnArgs: fnArgs,
                 maxWidth: "100%",
                 maxHeight: "100%",

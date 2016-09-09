@@ -2,8 +2,8 @@ namespace pxsim.visuals {
     export interface BoardHostOpts {
         state: DalBoard,
         boardDef: BoardDefinition,
-        cmpsList?: string[],
-        cmpDefs: Map<PartDefinition>,
+        partsList?: string[],
+        partDefs: Map<PartDefinition>,
         fnArgs: any,
         forceBreadboard?: boolean,
         maxWidth?: string,
@@ -11,7 +11,7 @@ namespace pxsim.visuals {
         wireframe?: boolean
     }
     export class BoardHost {
-        private components: IBoardComponent<any>[] = [];
+        private parts: IBoardPart<any>[] = [];
         private wireFactory: WireFactory;
         private breadboard: Breadboard;
         private fromBBCoord: (xy: Coord) => Coord;
@@ -26,7 +26,7 @@ namespace pxsim.visuals {
         constructor(opts: BoardHostOpts) {
             this.state = opts.state;
             let onboardCmps = opts.boardDef.onboardComponents || [];
-            let activeComponents = (opts.cmpsList || []).filter(c => onboardCmps.indexOf(c) < 0);
+            let activeComponents = (opts.partsList || []).filter(c => onboardCmps.indexOf(c) < 0);
             activeComponents.sort();
             this.useCrocClips = opts.boardDef.useCrocClips;
 
@@ -76,10 +76,10 @@ namespace pxsim.visuals {
 
                 let allocRes = allocateDefinitions({
                     boardDef: opts.boardDef,
-                    cmpDefs: opts.cmpDefs,
+                    partDefs: opts.partDefs,
                     fnArgs: opts.fnArgs,
                     getBBCoord: this.breadboard.getCoord.bind(this.breadboard),
-                    cmpList: activeComponents,
+                    partsList: activeComponents,
                 });
 
                 this.addAll(allocRes);
@@ -120,7 +120,7 @@ namespace pxsim.visuals {
         }
 
         private updateState() {
-            this.components.forEach(c => c.updateState());
+            this.parts.forEach(c => c.updateState());
         }
 
         private getBBCoord(rowCol: BBLoc) {
@@ -147,48 +147,61 @@ namespace pxsim.visuals {
             return coord;
         }
 
-        public addComponent(cmpDesc: CmpInst): IBoardComponent<any> {
+        public addPart(partInst: PartInst): IBoardPart<any> {
             //TODO: port
-            let cmp: IBoardComponent<any> = null;
+            let part: IBoardPart<any> = null;
             let colOffset = 0;
-            if (typeof cmpDesc.visual === "string") {
-                let builtinVisual = cmpDesc.visual as string;
+            if (partInst.visual.builtIn) {
+                let builtinVisual = partInst.visual.builtIn;
                 let cnstr = builtinComponentSimVisual[builtinVisual];
                 let stateFn = builtinComponentSimState[builtinVisual];
-                cmp = cnstr();
-                cmp.init(this.state.bus, stateFn(this.state), this.view, cmpDesc.params);
+                part = cnstr();
+                part.init(this.state.bus, stateFn(this.state), this.view, partInst.params);
             } else {
-                let vis = cmpDesc.visual as PartVisualDefinition;
-                cmp = new GenericPart(vis);
-                colOffset = vis.extraColumnOffset || 0;
+                let vis = partInst.visual as PartVisualDefinition;
+                part = new GenericPart(vis);
             }
-            this.components.push(cmp);
-            this.view.appendChild(cmp.element);
-            if (cmp.defs)
-                cmp.defs.forEach(d => this.defs.appendChild(d));
-            this.style.textContent += cmp.style || "";
-            let rowCol = <BBRowCol>[`${cmpDesc.breadboardStartRow}`, `${colOffset + cmpDesc.breadboardStartColumn}`];
+            this.parts.push(part);
+            this.view.appendChild(part.element);
+            if (part.defs)
+                part.defs.forEach(d => this.defs.appendChild(d));
+            this.style.textContent += part.style || "";
+            let colIdx = partInst.startColumnIdx;
+            let rowIdx = partInst.startRowIdx;
+            let row = getRowName(rowIdx);
+            let col = getColumnName(colIdx);
+            let scalarFn = mkScaleFn(partInst.visual.pinDistance, PIN_DIST);
+            let xOffset = scalarFn(partInst.bbFit.xOffset);
+            let yOffset = scalarFn(partInst.bbFit.yOffset);
+            let rowCol = <BBLoc>{
+                type: "breadboard",
+                row: row,
+                col: col,
+                xOffset: xOffset,
+                yOffset: yOffset
+            };
             let coord = this.getBBCoord(rowCol);
-            cmp.moveToCoord(coord);
+            part.moveToCoord(coord);
             let getCmpClass = (type: string) => `sim-${type}-cmp`;
             let cls = getCmpClass(name);
-            svg.addClass(cmp.element, cls);
-            svg.addClass(cmp.element, "sim-cmp");
-            cmp.updateTheme();
-            cmp.updateState();
-            return cmp;
+            svg.addClass(part.element, cls);
+            svg.addClass(part.element, "sim-cmp");
+            part.updateTheme();
+            part.updateState();
+            return part;
         }
         public addWire(inst: WireInst): Wire {
             return this.wireFactory.addWire(inst.start, inst.end, inst.color, this.useCrocClips);
         }
-        public addAll(basicWiresAndCmpsAndWires: AllocatorResult) {
-            let {powerWires, components} = basicWiresAndCmpsAndWires;
-            powerWires.forEach(w => this.addWire(w));
-            components.forEach((cAndWs, idx) => {
-                let {component, wires} = cAndWs;
-                wires.forEach(w => this.addWire(w));
-                this.addComponent(component);
-            });
+        public addAll(allocRes: AllocatorResult) {
+            allocRes.partsAndWires.forEach(pAndWs => {
+                let wires = pAndWs.wires;
+                if (wires)
+                    wires.forEach(w => this.addWire(w));
+                let part = pAndWs.part;
+                if (part)
+                    this.addPart(part)
+            })
         }
     }
 }

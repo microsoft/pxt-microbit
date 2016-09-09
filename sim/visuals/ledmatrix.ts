@@ -68,7 +68,7 @@ namespace pxsim.visuals {
             }
             `
 
-    export class LedMatrixView implements IBoardComponent<LedMatrixState> {
+    export class LedMatrixView implements IBoardPart<LedMatrixState> {
         private background: SVGElement;
         private ledsOuter: SVGElement[];
         private leds: SVGElement[];

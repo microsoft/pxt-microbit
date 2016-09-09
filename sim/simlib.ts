@@ -186,7 +186,7 @@ namespace pxsim.visuals {
         return minIdx;
     }
 
-    export interface IBoardComponent<T> {
+    export interface IBoardPart<T> {
         style: string,
         element: SVGElement,
         defs: SVGElement[],

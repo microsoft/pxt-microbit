@@ -304,9 +304,9 @@ namespace pxsim.instructions {
         fnArgs: any,
         allAlloc: AllocatorResult,
         stepToWires: WireInst[][],
-        stepToCmps: CmpInst[][]
+        stepToCmps: PartInst[][]
         allWires: WireInst[],
-        allCmps: CmpInst[],
+        allCmps: PartInst[],
         lastStep: number,
         colorToWires: Map<WireInst[]>,
         allWireColors: string[],
@@ -315,7 +315,7 @@ namespace pxsim.instructions {
         let allocRes = allocateDefinitions(allocOpts);
         let {powerWires, components} = allocRes;
         let stepToWires: WireInst[][] = [];
-        let stepToCmps: CmpInst[][] = [];
+        let stepToCmps: PartInst[][] = [];
         powerWires.forEach(w => {
             let step = w.assemblyStep + 1;
             (stepToWires[step] || (stepToWires[step] = [])).push(w)
@@ -367,7 +367,7 @@ namespace pxsim.instructions {
             state: state, 
             boardDef: boardDef, 
             forceBreadboard: true,
-            cmpDefs: cmpDefs, 
+            partDefs: cmpDefs, 
             maxWidth: `${width}px`,
             fnArgs: fnArgs,
             wireframe: buildMode,
@@ -420,16 +420,16 @@ namespace pxsim.instructions {
             }
             let cmps = props.stepToCmps[i];
             if (cmps) {
-                cmps.forEach(cmpInst => {
-                    let cmp = board.addComponent(cmpInst)
-                    let colOffset = (<any>cmpInst.visual).breadboardStartColIdx || 0;
-                    let rowCol: BBRowCol = [`${cmpInst.breadboardStartRow}`, `${colOffset + cmpInst.breadboardStartColumn}`];
+                cmps.forEach(PartInst => {
+                    let cmp = board.addPart(PartInst)
+                    let colOffset = (<any>PartInst.visual).breadboardStartColIdx || 0;
+                    let rowCol: BBRowCol = [`${PartInst.breadboardStartRow}`, `${colOffset + PartInst.breadboardStartColumn}`];
                     //last step
                     if (i === step) {
                         board.highlightBreadboardPin(rowCol);
-                        if (cmpInst.visual === "buttonpair") {
+                        if (PartInst.visual === "buttonpair") {
                             //TODO: don't specialize this
-                            let rowCol2: BBRowCol = [`${cmpInst.breadboardStartRow}`, `${cmpInst.breadboardStartColumn + 3}`];
+                            let rowCol2: BBRowCol = [`${PartInst.breadboardStartRow}`, `${PartInst.breadboardStartColumn + 3}`];
                             board.highlightBreadboardPin(rowCol2);
                         }
                         svg.addClass(cmp.element, "notgrayed");

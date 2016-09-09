@@ -53,7 +53,7 @@ namespace pxsim {
         marginWhenBreadboarding: [0, 0, 80, 0],
     }
 
-    export const builtinComponentSimVisual: Map<() => visuals.IBoardComponent<any>> = {
+    export const builtinComponentSimVisual: Map<() => visuals.IBoardPart<any>> = {
         "buttonpair": () => new visuals.ButtonPairView(),
         "ledmatrix": () => new visuals.LedMatrixView(),
         "neopixel": () => new visuals.NeoPixelView(),
