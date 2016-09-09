@@ -107,13 +107,12 @@ namespace pxsim.visuals {
         public cy: number;
 
         constructor(xy: Coord = [0, 0]) {
-            let circle = <SVGElement>svg.elt("rect");
+            let el = <SVGElement>svg.elt("rect");
             let r = PIXEL_RADIUS;
             let [cx, cy] = xy;
             let y = cy - r;
-            let x = 0;
-            svg.hydrate(circle, { x: "-50%", y: y, width: "100%", height: r*2, class: "sim-neopixel" });
-            this.el = circle;
+            svg.hydrate(el, { x: "-50%", y: y, width: "100%", height: r * 2, class: "sim-neopixel" });
+            this.el = el;
             this.cy = cy;
         }
 
