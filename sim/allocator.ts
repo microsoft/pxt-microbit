@@ -1,4 +1,7 @@
 namespace pxsim {
+    const GROUND_COLOR = "blue";
+    const POWER_COLOR = "red";
+
      export interface AllocatorOpts {
         boardDef: BoardDefinition,
         partDefs: Map<PartDefinition>,
@@ -381,7 +384,11 @@ namespace pxsim {
                     }
                 }
                 let color: string;
-                if (pin.def.colorGroup) {
+                if (end === "ground") {
+                    color = GROUND_COLOR;
+                } else if (end === "threeVolt") {
+                    color = POWER_COLOR;
+                } else if (pin.def.colorGroup) {
                     if (groupToColor[pin.def.colorGroup]) {
                         color = groupToColor[pin.def.colorGroup];
                     } else {
@@ -502,8 +509,6 @@ namespace pxsim {
                 top = topLeft;
                 bot = botLeft;
             }
-            const GROUND_COLOR = "blue";
-            const POWER_COLOR = "red";
             let groundWires: WireInst[] = [];
             let threeVoltWires: WireInst[] = [];
             if (powerUsage.bottomGround && powerUsage.topGround) {
