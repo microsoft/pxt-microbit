@@ -11,7 +11,7 @@ namespace pxsim.newdefinitions {
         // description of how part is instantiated
         instantiation: PartSingletonDefinition | PartFunctionDefinition,
         // list describing number and order of assembly instruction steps; the length is how many steps this part needs 
-        assembly: AssemblyStep[],
+        assembly: AssemblyStepDefinition[],
     }
     export interface PartVisualDefinition {
         // URL to image asset
@@ -76,7 +76,7 @@ namespace pxsim.newdefinitions {
         pinInstantiationIdx: number
     };
     // describes a single step for the assembly instructions
-    export interface AssemblyStep {
+    export interface AssemblyStepDefinition {
         part?: boolean, // if true, the part itself should be assembled during this step
         pinIndices?: number[], // the indices (ranging from 0 to "numberOfPins") of pins that should be wired for this step 
     }

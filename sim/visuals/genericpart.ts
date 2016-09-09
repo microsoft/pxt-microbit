@@ -33,7 +33,7 @@ namespace pxsim.visuals {
         }
 
         //unused
-        init(bus: EventBus, state: any, svgEl: SVGSVGElement, gpioPins: string[], otherArgs: string[]): void { }
+        init(bus: EventBus, state: any, svgEl: SVGSVGElement): void { }
         updateState(): void { }
         updateTheme(): void { }
     }

@@ -201,8 +201,14 @@ namespace pxsim.visuals {
     };
 
     function digitalPinToPinNumber(gpioPin: string): number {
-        let pinNumStr = gpioPin.split("DigitalPin.P")[1];
-        let pinNum = Number(pinNumStr) + 7 /*MICROBIT_ID_IO_P0; TODO: don't hardcode this, import enums.d.ts*/;
+        const MICROBIT_ID_IO_P0 = 7; //TODO: don't hardcode this, import enums.d.ts
+        if (gpioPin == "*") {
+            return MICROBIT_ID_IO_P0;
+        }
+        let pinSplit = gpioPin.split("DigitalPin.P");
+        U.assert(pinSplit.length === 2, "Unknown format for pin (for NeoPixel): " + gpioPin);
+        let pinNumStr = pinSplit[1];
+        let pinNum = Number(pinNumStr) + MICROBIT_ID_IO_P0;
         return pinNum
     }
     function parseNeoPixelMode(modeStr: string): NeoPixelMode {
