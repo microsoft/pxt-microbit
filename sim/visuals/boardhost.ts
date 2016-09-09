@@ -18,6 +18,8 @@ namespace pxsim.visuals {
         private fromMBCoord: (xy: Coord) => Coord;
         private boardView: BoardView;
         private view: SVGSVGElement;
+        private partGroup: SVGGElement;
+        private partOverGroup: SVGGElement;
         private style: SVGStyleElement;
         private defs: SVGDefsElement;
         private state: DalBoard;
@@ -68,6 +70,8 @@ namespace pxsim.visuals {
                 this.fromMBCoord = composition.toHostCoord1;
                 this.fromBBCoord = composition.toHostCoord2;
                 let pinDist = composition.scaleUnit;
+                this.partGroup = over;
+                this.partOverGroup = <SVGGElement>svg.child(this.view, "g");
 
                 this.style = <SVGStyleElement>svg.child(this.view, "style", {});
                 this.defs = <SVGDefsElement>svg.child(this.view, "defs", {});
@@ -86,6 +90,8 @@ namespace pxsim.visuals {
             } else {
                 let el = this.boardView.getView().el;
                 this.view = el;
+                this.partGroup = <SVGGElement>svg.child(this.view, "g");
+                this.partOverGroup = <SVGGElement>svg.child(this.view, "g");
                 if (opts.maxWidth)
                     svg.hydrate(this.view, { width: opts.maxWidth });
                 if (opts.maxHeight)
@@ -162,7 +168,9 @@ namespace pxsim.visuals {
                 part = new GenericPart(vis);
             }
             this.parts.push(part);
-            this.view.appendChild(part.element);
+            this.partGroup.appendChild(part.element);
+            if (part.overElement)
+                this.partOverGroup.appendChild(part.overElement);
             if (part.defs)
                 part.defs.forEach(d => this.defs.appendChild(d));
             this.style.textContent += part.style || "";
@@ -183,7 +191,7 @@ namespace pxsim.visuals {
             let coord = this.getBBCoord(rowCol);
             part.moveToCoord(coord);
             let getCmpClass = (type: string) => `sim-${type}-cmp`;
-            let cls = getCmpClass(name);
+            let cls = getCmpClass(partInst.name);
             svg.addClass(part.element, cls);
             svg.addClass(part.element, "sim-cmp");
             part.updateTheme();
@@ -195,12 +203,12 @@ namespace pxsim.visuals {
         }
         public addAll(allocRes: AllocatorResult) {
             allocRes.partsAndWires.forEach(pAndWs => {
-                let wires = pAndWs.wires;
-                if (wires)
-                    wires.forEach(w => this.addWire(w));
                 let part = pAndWs.part;
                 if (part)
                     this.addPart(part)
+                let wires = pAndWs.wires;
+                if (wires)
+                    wires.forEach(w => this.addWire(w));
             })
         }
     }

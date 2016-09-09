@@ -607,6 +607,7 @@ namespace pxsim {
                 startRowIdx: ir.startRowIdx,
                 breadboardConnections: bbConnections,
                 params: ir.partParams,
+                simulationBehavior: ir.def.simulationBehavior
             }
             return part;
         }

@@ -246,6 +246,7 @@ namespace pxsim.visuals {
             }
         `;
         public element: SVGElement;
+        public overElement: SVGElement;
         public defs: SVGElement[];
         private state: NeoPixelState;
         private canvas: NeoPixelCanvas;
@@ -271,7 +272,8 @@ namespace pxsim.visuals {
             this.stripGroup.appendChild(part.el);
             let canvas = new NeoPixelCanvas(this.pin);
             this.canvas = canvas;
-            let canvasG = svg.child(this.stripGroup, "g", { class: "sim-neopixel-canvas-parent" });
+            let canvasG = svg.elt("g", { class: "sim-neopixel-canvas-parent" });
+            this.overElement = canvasG;
             canvasG.appendChild(canvas.canvas);
             this.updateStripLoc();
         }

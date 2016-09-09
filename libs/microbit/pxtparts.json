@@ -44,9 +44,9 @@
         },
         "numberOfPins": 3,
         "pinDefinitions": [
-            {"target": "ground", "style": "solder", "orientation": "+Z"},
+            {"target": {"pinInstantiationIdx": 0}, "style": "solder", "orientation": "+Z"},
             {"target": "threeVolt", "style": "solder", "orientation": "+Z"},
-            {"target": {"pinInstantiationIdx": 0}, "style": "solder", "orientation": "+Z"}
+            {"target": "ground", "style": "solder", "orientation": "+Z"}
         ],
         "instantiation": {
             "kind": "function",
@@ -104,7 +104,7 @@
     "speaker": {
         "numberOfPins": 2,
         "visual": {
-            "image": "/static/hardware/speaker.svg",
+            "image": "/parts/speaker.svg",
             "width": 500,
             "height": 500,
             "pinDistance": 70,

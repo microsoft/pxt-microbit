@@ -189,6 +189,7 @@ namespace pxsim.visuals {
     export interface IBoardPart<T> {
         style: string,
         element: SVGElement,
+        overElement?: SVGElement,
         defs: SVGElement[],
         init(bus: EventBus, state: T, svgEl: SVGSVGElement, otherParams: Map<string>): void, //NOTE: constructors not supported in interfaces
         moveToCoord(xy: Coord): void,
