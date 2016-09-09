@@ -99,7 +99,7 @@ namespace pxsim.visuals {
             this.boardView.highlightPin(pinNm);
         }
 
-        public highlightBreadboardPin(rowCol: BBRowCol) {
+        public highlightBreadboardPin(rowCol: BBLoc) {
             this.breadboard.highlightLoc(rowCol);
         }
 
@@ -123,7 +123,7 @@ namespace pxsim.visuals {
             this.components.forEach(c => c.updateState());
         }
 
-        private getBBCoord(rowCol: BBRowCol) {
+        private getBBCoord(rowCol: BBLoc) {
             let bbCoord = this.breadboard.getCoord(rowCol);
             return this.fromBBCoord(bbCoord);
         }
@@ -134,7 +134,7 @@ namespace pxsim.visuals {
         public getLocCoord(loc: Loc): Coord {
             let coord: Coord;
             if (loc.type === "breadboard") {
-                let rowCol = (<BBLoc>loc).rowCol;
+                let rowCol = (<BBLoc>loc);
                 coord = this.getBBCoord(rowCol);
             } else {
                 let pinNm = (<BoardLoc>loc).pin;
@@ -148,6 +148,7 @@ namespace pxsim.visuals {
         }
 
         public addComponent(cmpDesc: CmpInst): IBoardComponent<any> {
+            //TODO: port
             let cmp: IBoardComponent<any> = null;
             let colOffset = 0;
             if (typeof cmpDesc.visual === "string") {
@@ -155,7 +156,7 @@ namespace pxsim.visuals {
                 let cnstr = builtinComponentSimVisual[builtinVisual];
                 let stateFn = builtinComponentSimState[builtinVisual];
                 cmp = cnstr();
-                cmp.init(this.state.bus, stateFn(this.state), this.view, cmpDesc.microbitPins, cmpDesc.otherArgs);
+                cmp.init(this.state.bus, stateFn(this.state), this.view, cmpDesc.params);
             } else {
                 let vis = cmpDesc.visual as PartVisualDefinition;
                 cmp = new GenericPart(vis);

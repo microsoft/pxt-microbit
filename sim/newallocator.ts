@@ -8,53 +8,53 @@ namespace pxsim.newdefinitions {
         getBBCoord: (loc: BBRowCol) => visuals.Coord,
     };
     export interface AllocatorResult {
-        powerWires: WireInst[],
-        parts: PartAndWiresInst[],
-    }
-    export interface PartAndWiresInst {
-        part?: PartInst,
-        wires?: WireInst[]
-    }
-    interface PartVisualInst extends visuals.SVGElAndSize {
-        el: SVGElement,
-        w: number,
-        h: number,
-        x: number,
-        y: number,
-        pinDist: number,
-        getPinBBLocs: (topLeftPinLoc: BBRowCol) => BBRowCol[],
+        parts: PartInst[],
+        wires: WireInst[],
     }
     export interface PartInst {
         name: string,
-        // breadboardStartColumn: number,
-        // breadboardStartRow: string,
-        // assemblyStep: number,
-        visual: string | PartVisualDefinition,
-        microbitPins: string[],
-        otherArgs?: string[],
+        assemblyStep: number,
+        visual: PartVisualDefinition,
+        bbFit: PartBBFit,
+        startColumnIdx: number,
+        startRowIdx: number,
+        breadboardConnections: BBRowCol[],
+        params: Map<string>,
     }
     export interface WireInst {
         start: Loc,
         end: Loc,
         color: string,
-        assemblyStep: number
+        AssemblyStep: number,
     };
-
-    interface PartDimensions {
+    export interface PartBBFit {
         xOffset: number,
         yOffset: number,
         rowCount: number,
         colCount: number,
     }
+    interface PinBBFit {
+        partRelativeColIdx: number,
+        partRelativeRowIdx: number,
+        xOffset: number,
+        yOffset: number,
+    }
+    interface PinIR {
+        loc: XY,
+        def: PartPinDefinition,
+        target: PinTarget,
+        bbFit: PinBBFit,
+    }
     interface PartIR {
         name: string,
         def: PartDefinition,
-        partParams: string[],
-        pinTargets: PinTarget[],
-        dimensions: PartDimensions,
+        partParams: Map<string>,
+        pins: PinIR[],
+        bbFit: PartBBFit,
     };
     interface PartPlacement extends PartIR {
-        topLeft: BBRowCol
+        startColumnIdx: number,
+        startRowIdx: number,
     };
     type WireIRLoc = PinTarget | BBLoc;
     interface WireIR {
@@ -65,21 +65,6 @@ namespace pxsim.newdefinitions {
     interface PartAndWires extends PartPlacement {
         wires: WireIR[],
     };
-    interface AllocLocOpts {
-        nearestBBPin?: BBRowCol,
-        startColumn?: number,
-        partGPIOPins?: string[],
-    };
-    interface AllocWireOpts {
-        startColumn: number,
-        partGPIOPins: string[],
-    }
-    interface AllocBlock {
-        partIdx: number,
-        partBlkIdx: number,
-        gpioNeeded: number,
-        gpioAssigned: string[]
-    }
     interface PowerUsage {
         topGround: boolean,
         topThreeVolt: boolean,
@@ -87,6 +72,17 @@ namespace pxsim.newdefinitions {
         bottomThreeVolt: boolean,
         singleGround: boolean,
         singleThreeVolt: boolean,
+    }
+    interface AllocLocOpts {
+        //TODO: port
+        nearestBBPin?: BBRowCol,
+        startColumn?: number,
+        partGPIOPins?: string[],
+    };
+    interface AllocWireOpts {
+        //TODO: port
+        startColumn: number,
+        partGPIOPins: string[],
     }
     function isOnBreadboardBottom(location: WireIRLoc) {
         let isBot = false;
@@ -152,10 +148,10 @@ namespace pxsim.newdefinitions {
     function merge3<A, B, C>(a: A, b: B, c: C): A & B & C {
         return merge2(merge2(a, b), c);
     }
-    function readPin(arg: string): DALPin {
+    function readPin(arg: string): MicrobitPin {
         U.assert(!!arg, "Invalid pin: " + arg);
         let pin = arg.split("DigitalPin.")[1];
-        return <DALPin>pin;
+        return <MicrobitPin>pin;
     }
     function mkReverseMap(map: {[key: string]: string}) {
         let origKeys: string[] = [];
@@ -173,7 +169,7 @@ namespace pxsim.newdefinitions {
         return newMap;
     }
     function isConnectedToBB(pin: PartPinDefinition): boolean {
-        return pin.orientation === "-Z";
+        return pin.orientation === "-Z" && pin.style === "male";
     }
     class Allocator {
         private opts: AllocatorOpts;
@@ -198,10 +194,10 @@ namespace pxsim.newdefinitions {
         //     U.assert(condition, `[Part(s) allocation error]: ${msg}`);
         // }
 
-        private allocPartIRs(def: PartDefinition, name: string, placement: PartDimensions): PartIR[] {
+        private allocPartIRs(def: PartDefinition, name: string, bbFit: PartBBFit): PartIR[] {
             let partIRs: PartIR[] = [];
-            let mkIR = (def: PartDefinition, name: string, instPins?: PinTarget[], partParams?: string[]): PartIR => {
-                let pinTargets: PinTarget[] = [];
+            let mkIR = (def: PartDefinition, name: string, instPins?: PinTarget[], partParams?: Map<string>): PartIR => {
+                let pinIRs: PinIR[] = [];
                 for (let i = 0; i < def.numberOfPins; i++) {
                     let pinDef = def.pinDefinitions[i];
                     U.assert(typeof pinDef.target === "string", "Invalid pin target for singleton part: " + name); 
@@ -214,14 +210,32 @@ namespace pxsim.newdefinitions {
                             `No pin found for PinInstantiationIdx: ${instIdx}. (Is the part missing an ArguementRole or "trackArgs=" annotations?)`);
                         pinTarget = instPins[instIdx];
                     }
-                    pinTargets.push(pinTarget);
+                    let pinLoc = def.visual.pinLocations[i];
+                    let adjustedY = bbFit.yOffset + pinLoc.y;
+                    let relativeRowIdx = Math.round(adjustedY / def.visual.pinDistance);
+                    let relativeYOffset = adjustedY - relativeRowIdx * def.visual.pinDistance;
+                    let adjustedX = bbFit.xOffset + pinLoc.x;
+                    let relativeColIdx = Math.round(adjustedX / def.visual.pinDistance);
+                    let relativeXOffset = adjustedX = relativeColIdx * def.visual.pinDistance;
+                    let pinBBFit: PinBBFit = {
+                        partRelativeRowIdx: relativeRowIdx,
+                        partRelativeColIdx: relativeColIdx,
+                        xOffset: relativeXOffset,
+                        yOffset: relativeYOffset
+                    };
+                    pinIRs.push({
+                        def: pinDef,
+                        loc: pinLoc,
+                        target: pinTarget,
+                        bbFit: pinBBFit,
+                    });
                 }
                 return {
                     name: name,
                     def: def,
-                    pinTargets: pinTargets,
-                    partParams: partParams,
-                    dimensions: placement
+                    pins: pinIRs,
+                    partParams: partParams || {},
+                    bbFit: bbFit
                 };
             };
             if (def.instantiation.kind === "singleton") {
@@ -236,14 +250,14 @@ namespace pxsim.newdefinitions {
                     U.assert(fnArgsSplit.length === fnAlloc.argumentRoles.length,
                         `Mismatch between number of arguments at callsite (function name: ${fnNm}) vs number of argument roles in part definition (part: ${name}).`);
                     let instPins: PinTarget[] = [];
-                    let paramArgs: string[] = [];
+                    let paramArgs: Map<string> = {};
                     fnArgsSplit.forEach((arg, idx) => {
                         let role = fnAlloc.argumentRoles[idx];
-                        if (role === "ignored") {
-                        } else if (role === "partParameter") {
-                            paramArgs.push(arg);
-                        } else {
-                            let instIdx = (<PinInstantiationIdx>role).pinInstantiationIdx;
+                        if (role.partParameter !== undefined) {
+                            paramArgs[role.partParameter] = arg;
+                        }
+                        if (role.pinInstantiationIdx !== undefined) {
+                            let instIdx = role.pinInstantiationIdx;
                             let pin = readPin(arg);
                             instPins[instIdx] = pin;
                         }
@@ -253,7 +267,7 @@ namespace pxsim.newdefinitions {
             }
             return partIRs;
         }
-        private computePartDimensions(def: PartDefinition, name: string): PartDimensions {
+        private computePartDimensions(def: PartDefinition, name: string): PartBBFit {
             let pinLocs = def.visual.pinLocations;
             let pinDefs = def.pinDefinitions;
             let numPins = def.numberOfPins;
@@ -313,72 +327,60 @@ namespace pxsim.newdefinitions {
         }
         private placeParts(parts: PartIR[]): PartPlacement[] {
             const totalRowsCount = visuals.BREADBOARD_MID_ROWS + 2; // 10 letters + 2 for the middle gap
-            let startColumnIndices = this.allocColumns(parts.map(p => p.dimensions));
+            let startColumnIndices = this.allocColumns(parts.map(p => p.bbFit));
             let startRowIndicies = parts.map(p => {
-                let extraRows = totalRowsCount - p.dimensions.rowCount;
+                let extraRows = totalRowsCount - p.bbFit.rowCount;
                 let topPad = Math.floor(extraRows / 2);
                 if (topPad > 4)
                     topPad = 4;
                 return topPad;
             });
             let placements = parts.map((p, idx) => {
-                let row = visuals.getRowName(startRowIndicies[idx]);
-                let col = visuals.getColumnName(startColumnIndices[idx]);
-                let startRowCol = <BBRowCol>[row, col];
-                return merge2({topLeft: startRowCol}, p);
+                let row = startRowIndicies[idx];
+                let col = startColumnIndices[idx];
+                return merge2({startColumnIdx: col, startRowIdx: row}, p);
             });
             return placements;
         }
         private allocWireIRs(part: PartPlacement): PartAndWires {
-            let wires: WireIR[] = [];
-            //TODO
-            U.assert(false, "not implemented: allocWires()");
+            let wires: WireIR[] = part.pins.map(pin => {
+                let end = pin.target;
+                let start: WireIRLoc;
+                let colIdx = part.startColumnIdx + pin.bbFit.partRelativeColIdx;
+                let colName = visuals.getColumnName(colIdx);
+                let pinRowIdx = part.startRowIdx + pin.bbFit.partRelativeRowIdx;
+                if (isConnectedToBB(pin.def)) {
+                    //make a wire from bb top or bottom to target
+                    let connectedToTop = pinRowIdx < 5;
+                    let rowName = connectedToTop ? "j" : "a";
+                    start = {
+                        type: "breadboard",
+                        row: rowName,
+                        col: colName,
+                    };
+                } else {
+                    //make a wire directly from pin to target
+                    let rowName = visuals.getRowName(pinRowIdx);
+                    start = {
+                        type: "breadboard",
+                        row: rowName,
+                        col: colName,
+                        xOffset: pin.bbFit.xOffset,
+                        yOffset: pin.bbFit.yOffset
+                    }
+                }
+                let color = "red"; //TODO
+                return {
+                    start: start,
+                    end: end,
+                    color: color
+                }
+            });
             return merge2(part, {wires: wires});
         }
-        public allocAll(): AllocatorResult {
-            let partList = this.opts.partsList;
-            let basicWires: WireInst[] = [];
-            let partsAndWires: PartAndWiresInst[] = [];
-            if (partList.length > 0) {
-                let partNmAndDefs = this.opts.partsList
-                    .map(partName => {return {name: partName, def: this.opts.partDefs[partName]}})
-                    .filter(d => !!d.def);
-                let partNmsList = partNmAndDefs.map(p => p.name);
-                let partDefsList = partNmAndDefs.map(p => p.def);
-                let dimensions = partNmAndDefs.map(nmAndPart => this.computePartDimensions(nmAndPart.def, nmAndPart.name));
-                let partIRs: PartIR[];
-                partNmAndDefs.forEach((nmAndDef, idx) => {
-                    let dims = dimensions[idx];
-                    let irs = this.allocPartIRs(nmAndDef.def, nmAndDef.name, dims);
-                    partIRs = partIRs.concat(irs);
-                })
-                let partPlacements = this.placeParts(partIRs);
-                let partsAndWires = partPlacements.map(p => this.allocWireIRs(p));
-                let allWireIRs = partsAndWires.map(p => p.wires).reduce((p, n) => p.concat(n), []);
-                let allPowerUsage = allWireIRs.map(w => computePowerUsage(w));
-                this.powerUsage = mergePowerUsage(allPowerUsage);
-                basicWires = this.allocPowerWires(this.powerUsage);
-                let partGPIOPins = this.allocGPIOPins(partIRs);
-                let reverseMap = mkReverseMap(this.opts.boardDef.gpioPinMap);
-                let partMicrobitPins = partGPIOPins.map(pins => pins.map(p => reverseMap[p]));
-                let partStartCol = this.allocColumns(partIRs);
-                let parts = partIRs.map((c, idx) => this.allocPart(c, partStartCol[idx], partMicrobitPins[idx]));
-                let wires = partIRs.map((c, idx) => c.def.wires.map(d => this.allocWire(d, {
-                    partGPIOPins: partGPIOPins[idx],
-                    startColumn: partStartCol[idx],
-                })));
-                partsAndWires = parts.map((c, idx) => {
-                    return {part: c, wires: wires[idx]}
-                });
-            }
-            return {
-                powerWires: basicWires,
-                parts: partsAndWires
-            };
-        }
 
-        //TODO: old allocation; refactor or discard
-        private allocLocation(location: WireLocationDefinition, opts: AllocLocOpts): Loc {
+        private allocLocation(location: WireIRLoc, opts: AllocLocOpts): Loc {
+            //TODO: PORT
             if (location === "ground" || location === "threeVolt") {
                 //special case if there is only a single ground or three volt pin in the whole build
                 if (location === "ground" && this.powerUsage.singleGround) {
@@ -455,7 +457,7 @@ namespace pxsim.newdefinitions {
                 return null;
             }
         }
-        private getBoardGroundPin() {
+        private getBoardGroundPin(): string {
             let boardGround = this.opts.boardDef.groundPins[0] || null;
             if (!boardGround) {
                 console.log("No available ground pin on board!");
@@ -463,7 +465,7 @@ namespace pxsim.newdefinitions {
             }
             return boardGround;
         }
-        private getBoardThreeVoltPin() {
+        private getBoardThreeVoltPin(): string {
             let threeVoltPin = this.opts.boardDef.threeVoltPins[0] || null;
             if (!threeVoltPin) {
                 console.log("No available 3.3V pin on board!");
@@ -472,6 +474,7 @@ namespace pxsim.newdefinitions {
             return threeVoltPin;
         }
         private allocPowerWires(powerUsage: PowerUsage): WireInst[] {
+            //TODO: PORT
             let boardGroundPin = this.getBoardGroundPin();
             let threeVoltPin = this.getBoardThreeVoltPin();
             let topLeft: BBRowCol = ["-", "26"];
@@ -540,6 +543,7 @@ namespace pxsim.newdefinitions {
             return wires;
         }
         private allocWire(wireDef: WireIR, opts: AllocWireOpts): WireInst {
+            //TODO: PORT
             let ends = [wireDef.start, wireDef.end];
             let endIsPower = ends.map(e => e === "ground" || e === "threeVolt");
             //allocate non-power first so we know the nearest pin for the power end
@@ -559,6 +563,7 @@ namespace pxsim.newdefinitions {
             return {start: endInsts[0], end: endInsts[1], color: wireDef.color, assemblyStep: wireDef.assemblyStep};
         }
         private allocPart(partialPart: PartIR, startColumn: number, microbitPins: string[]): PartInst {
+            //TODO: PORT
             return {
                 name: partialPart.name,
                 breadboardStartColumn: startColumn,
@@ -567,6 +572,47 @@ namespace pxsim.newdefinitions {
                 visual: partialPart.def.visual,
                 microbitPins: microbitPins,
                 otherArgs: partialPart.otherArgs,
+            };
+        }
+        public allocAll(): AllocatorResult {
+            let partList = this.opts.partsList;
+            if (partList.length > 0) {
+                let partNmAndDefs = this.opts.partsList
+                    .map(partName => {return {name: partName, def: this.opts.partDefs[partName]}})
+                    .filter(d => !!d.def);
+                let partNmsList = partNmAndDefs.map(p => p.name);
+                let partDefsList = partNmAndDefs.map(p => p.def);
+                let dimensions = partNmAndDefs.map(nmAndPart => this.computePartDimensions(nmAndPart.def, nmAndPart.name));
+                let partIRs: PartIR[];
+                partNmAndDefs.forEach((nmAndDef, idx) => {
+                    let dims = dimensions[idx];
+                    let irs = this.allocPartIRs(nmAndDef.def, nmAndDef.name, dims);
+                    partIRs = partIRs.concat(irs);
+                })
+                let partPlacements = this.placeParts(partIRs);
+                let partsAndWires = partPlacements.map(p => this.allocWireIRs(p));
+                let allWireIRs = partsAndWires.map(p => p.wires).reduce((p, n) => p.concat(n), []);
+                let allPowerUsage = allWireIRs.map(w => computePowerUsage(w));
+                this.powerUsage = mergePowerUsage(allPowerUsage);
+
+                let basicWires = this.allocPowerWires(this.powerUsage);
+
+                let partGPIOPins = this.allocGPIOPins(partIRs);
+                let reverseMap = mkReverseMap(this.opts.boardDef.gpioPinMap);
+                let partMicrobitPins = partGPIOPins.map(pins => pins.map(p => reverseMap[p]));
+                let partStartCol = this.allocColumns(partIRs);
+                let parts = partIRs.map((c, idx) => this.allocPart(c, partStartCol[idx], partMicrobitPins[idx]));
+                let wires = partIRs.map((c, idx) => c.def.wires.map(d => this.allocWire(d, {
+                    partGPIOPins: partGPIOPins[idx],
+                    startColumn: partStartCol[idx],
+                })));
+                partsAndWires = parts.map((c, idx) => {
+                    return {part: c, wires: wires[idx]}
+                });
+            }
+            return {
+                powerWires: basicWires,
+                parts: partsAndWires
             };
         }
     }

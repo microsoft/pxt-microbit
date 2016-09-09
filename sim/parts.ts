@@ -36,11 +36,11 @@ namespace pxsim.newdefinitions {
     export type PinTarget = (
           "ground"
         | "threeVolt"
-        | DALPin
+        | MicrobitPin
         | SPIPin
         | I2CPin);
     // a hard-coded pin index; used by parts that are pre-built on the microbit: led matrix, buttons, etc.
-    export type DALPin = (
+    export type MicrobitPin = (
         "P0" | "P1" | "P2" | "P3" | "P4" | "P5" | "P6" | "P7" | "P8" | "P9"
         | "P10" | "P11" | "P12" | "P13" | "P14" | "P15" | "P16" | "P19" | "P20");
     export type SPIPin = "MOSI" | "MISO" | "SCK";
@@ -64,15 +64,17 @@ namespace pxsim.newdefinitions {
         //  argument is treated during part instantiation
         argumentRoles: ArgumentRole[],
     }
-    export type ArgumentRole = (
-        "ignored"
+    export interface ArgumentRole {
         // argument is to be passed to the part during initialization. 
         //  E.g. NeoPixel uses this to know if the strip is "RGB" or "RGBW" style 
-        | "partParameter"
+        partParameter?: string;
         // argument is a "DigitalPin" enum value that is used as a pin value for this part 
         //  E.g. neopixel.create(..)'s first argument is the pin which the NeoPixel is connected to 
-        | PinInstantiationIdx);
-    export type PinInstantiationIdx = {pinInstantiationIdx: number};
+        pinInstantiationIdx?: number;
+    }
+    export interface PinInstantiationIdx {
+        pinInstantiationIdx: number
+    };
     // describes a single step for the assembly instructions
     export interface AssemblyStep {
         part?: boolean, // if true, the part itself should be assembled during this step
@@ -133,8 +135,8 @@ namespace pxsim.newdefinitions {
                 "kind": "function",
                 "fullyQualifiedName": "neopixel.create",
                 "argumentRoles": [
-                    {"pinInstantiationIdx": 0},
-                    "partParameter",
+                    {"pinInstantiationIdx": 0, "partParameter": "pin"},
+                    {"partParameter": "mode"},
                 ]
             },
             "assembly": [

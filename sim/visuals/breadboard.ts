@@ -324,12 +324,12 @@ namespace pxsim.visuals {
                 return null;
             return pin;
         }
-        public getCoord(rowCol: BBRowCol): Coord {
-            let [row, col] = rowCol;
+        public getCoord(rowCol: BBLoc): Coord {
+            let {row, col, xOffset, yOffset} = rowCol;
             let pin = this.getPin(row, col);
             if (!pin)
                 return null;
-            return [pin.cx, pin.cy];
+            return [pin.cx + xOffset, pin.cy + yOffset];
         }
 
         public getPinDist() {
@@ -460,7 +460,7 @@ namespace pxsim.visuals {
             const mkBBLabelAtPin = (row: string, col: string, xOffset: number, yOffset: number, txt: string, group?: string): GridLabel => {
                 let size = PIN_LBL_SIZE;
                 let rotation = LBL_ROTATION;
-                let loc = this.getCoord([row, col]);
+                let loc = this.getCoord({type: "breadboard", row: row, col: col});
                 let [cx, cy] = loc;
                 let t = mkBBLabel(cx + xOffset, cy + yOffset, size, rotation, txt, group);
                 return t;
@@ -635,8 +635,8 @@ namespace pxsim.visuals {
             return {el: this.bb, y: 0, x: 0, w: WIDTH, h: HEIGHT};
         }
 
-        public highlightLoc(rowCol: BBRowCol) {
-            let [row, col] = rowCol;
+        public highlightLoc(rowCol: BBLoc) {
+            let {row, col} = rowCol;
             let pin = this.rowColToPin[row][col];
             let {cx, cy} = pin;
             let lbls = this.rowColToLbls[row][col];

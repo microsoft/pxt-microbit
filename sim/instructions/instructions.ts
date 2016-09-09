@@ -404,13 +404,12 @@ namespace pxsim.instructions {
                     if (i === step) {
                         //location highlights
                         if (w.start.type == "breadboard") {
-                            let lbls = board.highlightBreadboardPin((<BBLoc>w.start).rowCol);
+                            let lbls = board.highlightBreadboardPin((<BBLoc>w.start));
                         } else {
                             board.highlightBoardPin((<BoardLoc>w.start).pin);
                         }
                         if (w.end.type == "breadboard") {
-                            let [row, col] = (<BBLoc>w.end).rowCol;
-                            let lbls = board.highlightBreadboardPin((<BBLoc>w.end).rowCol);
+                            let lbls = board.highlightBreadboardPin((<BBLoc>w.end));
                         } else {
                             board.highlightBoardPin((<BoardLoc>w.end).pin);
                         }

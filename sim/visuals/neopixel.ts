@@ -200,8 +200,8 @@ namespace pxsim.visuals {
         }
     };
 
-    function gpioPinToPinNumber(gpioPin: string): number {
-        let pinNumStr = gpioPin.split("P")[1];
+    function digitalPinToPinNumber(gpioPin: string): number {
+        let pinNumStr = gpioPin.split("DigitalPin.P")[1];
         let pinNum = Number(pinNumStr) + 7 /*MICROBIT_ID_IO_P0; TODO: don't hardcode this, import enums.d.ts*/;
         return pinNum
     }
@@ -249,15 +249,16 @@ namespace pxsim.visuals {
         private pin: number;
         private mode: NeoPixelMode;
 
-        public init(bus: EventBus, state: NeoPixelState, svgEl: SVGSVGElement, gpioPins: string[], otherArgs: string[]): void {
-            U.assert(otherArgs.length === 1, "NeoPixels assumes a RGB vs RGBW mode is passed to it");
-            let modeStr = otherArgs[0];
+        public init(bus: EventBus, state: NeoPixelState, svgEl: SVGSVGElement, otherParams: Map<string>): void {
+            U.assert(!!otherParams["mode"], "NeoPixels assumes a RGB vs RGBW mode is passed to it");
+            U.assert(!!otherParams["pin"], "NeoPixels assumes a pin is passed to it");
+            let modeStr = otherParams["mode"];
             this.mode = parseNeoPixelMode(modeStr);
             this.state = state;
             this.stripGroup = <SVGGElement>svg.elt("g");
             this.element = this.stripGroup;
-            let pinStr = gpioPins[0];
-            this.pin = gpioPinToPinNumber(pinStr);
+            let pinStr = otherParams["pin"];
+            this.pin = digitalPinToPinNumber(pinStr);
             this.lastLocation = [0, 0];
             let part = mkNeoPixelPart();
             this.part = part;

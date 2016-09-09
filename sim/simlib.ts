@@ -3,10 +3,18 @@
 /// <reference path="../libs/microbit/dal.d.ts"/>
 
 namespace pxsim {
-    export type BBRowCol = [/*row*/string, /*column*/string];
     export type BoardPin = string;
-    export interface BBLoc {type: "breadboard", rowCol: BBRowCol};
-    export interface BoardLoc {type: "dalboard", pin: BoardPin};
+    export interface BBLoc {
+        type: "breadboard",
+        row: string,
+        col: string
+        xOffset?: number,
+        yOffset?: number
+    };
+    export interface BoardLoc {
+        type: "dalboard",
+        pin: BoardPin
+    };
     export type Loc = BBLoc | BoardLoc;
 
     export function initRuntimeWithDalBoard() {
@@ -182,7 +190,7 @@ namespace pxsim.visuals {
         style: string,
         element: SVGElement,
         defs: SVGElement[],
-        init(bus: EventBus, state: T, svgEl: SVGSVGElement, gpioPins: string[], otherArgs: string[]): void, //NOTE: constructors not supported in interfaces
+        init(bus: EventBus, state: T, svgEl: SVGSVGElement, otherParams: Map<string>): void, //NOTE: constructors not supported in interfaces
         moveToCoord(xy: Coord): void,
         updateState(): void,
         updateTheme(): void,
