@@ -313,31 +313,23 @@ namespace pxsim.instructions {
     };
     function mkBoardProps(allocOpts: AllocatorOpts): BoardProps {
         let allocRes = allocateDefinitions(allocOpts);
-        let {powerWires, components} = allocRes;
         let stepToWires: WireInst[][] = [];
         let stepToCmps: PartInst[][] = [];
-        powerWires.forEach(w => {
-            let step = w.assemblyStep + 1;
-            (stepToWires[step] || (stepToWires[step] = [])).push(w)
-        });
-        let getMaxStep = (ns: {assemblyStep: number}[]) => ns.reduce((m, n) => Math.max(m, n.assemblyStep), 0);
-        let stepOffset = powerWires.length > 0 ? getMaxStep(powerWires) + 2 : 1;
-        components.forEach(cAndWs => {
-            let {component, wires} = cAndWs;
-            let cStep = component.assemblyStep + stepOffset;
-            let arr = stepToCmps[cStep] || (stepToCmps[cStep] = []);
-            arr.push(component);
-            let wSteps = wires.map(w => w.assemblyStep + stepOffset);
-            wires.forEach((w, i) => {
-                let wStep = wSteps[i];
-                let arr = stepToWires[wStep] || (stepToWires[wStep] = []);
-                arr.push(w);
+        let stepOffset = 0;
+        allocRes.partsAndWires.forEach(cAndWs => {
+            let part = cAndWs.part;
+            let wires = cAndWs.wires;
+            cAndWs.assembly.forEach((step, idx) => {
+                if (step.part && part)
+                    stepToCmps[stepOffset + idx] = [part]
+                if (step.wireIndices && wires)
+                    stepToWires[stepOffset + idx] = wires
             })
-            stepOffset = Math.max(cStep, wSteps.reduce((m, n) => Math.max(m, n), 0)) + 1;
+            stepOffset += cAndWs.assembly.length;
         });
-        let lastStep = stepOffset - 1;
-        let allCmps = components.map(p => p.component);
-        let allWires = powerWires.concat(components.map(p => p.wires).reduce((p, n) => p.concat(n), []));
+        let lastStep = stepOffset;
+        let allCmps = allocRes.partsAndWires.map(r => r.part).filter(p => !!p);
+        let allWires = allocRes.partsAndWires.map(r => r.wires || []).reduce((p, n) => p.concat(n), []);
         let colorToWires: Map<WireInst[]> = {}
         let allWireColors: string[] = [];
         allWires.forEach(w => {
@@ -349,7 +341,7 @@ namespace pxsim.instructions {
         });
         return {
             boardDef: allocOpts.boardDef,
-            cmpDefs: allocOpts.cmpDefs,
+            cmpDefs: allocOpts.partDefs,
             fnArgs: allocOpts.fnArgs,
             allAlloc: allocRes,
             stepToWires: stepToWires,
@@ -420,18 +412,12 @@ namespace pxsim.instructions {
             }
             let cmps = props.stepToCmps[i];
             if (cmps) {
-                cmps.forEach(PartInst => {
-                    let cmp = board.addPart(PartInst)
-                    let colOffset = (<any>PartInst.visual).breadboardStartColIdx || 0;
-                    let rowCol: BBRowCol = [`${PartInst.breadboardStartRow}`, `${colOffset + PartInst.breadboardStartColumn}`];
+                cmps.forEach(partInst => {
+                    let cmp = board.addPart(partInst)
                     //last step
                     if (i === step) {
-                        board.highlightBreadboardPin(rowCol);
-                        if (PartInst.visual === "buttonpair") {
-                            //TODO: don't specialize this
-                            let rowCol2: BBRowCol = [`${PartInst.breadboardStartRow}`, `${PartInst.breadboardStartColumn + 3}`];
-                            board.highlightBreadboardPin(rowCol2);
-                        }
+                        //highlight locations pins
+                        partInst.breadboardConnections.forEach(bbLoc => board.highlightBreadboardPin(bbLoc));
                         svg.addClass(cmp.element, "notgrayed");
                     }
                 });
@@ -461,7 +447,7 @@ namespace pxsim.instructions {
         cmps.forEach(c => {
             let quant = 1;
             // TODO: don't special case this
-            if (c.visual === "buttonpair") {
+            if (c.visual.builtIn === "buttonpair") {
                 quant = 2;
             }
             let cmp = mkCmpDiv(c.visual, {
@@ -513,7 +499,7 @@ namespace pxsim.instructions {
         let wires = (props.stepToWires[step] || []);
         let mkLabel = (loc: Loc) => {
             if (loc.type === "breadboard") {
-                let [row, col] = (<BBLoc>loc).rowCol;
+                let {row, col} = (<BBLoc>loc);
                 return `(${row},${col})`
             } else
                 return (<BoardLoc>loc).pin;
@@ -532,17 +518,23 @@ namespace pxsim.instructions {
         });
         let cmps = (props.stepToCmps[step] || []);
         cmps.forEach(c => {
-            let l: BBRowCol = [`${c.breadboardStartRow}`, `${c.breadboardStartColumn}`];
-            let locs = [l];
-            if (c.visual === "buttonpair") {
+            let locs: BBLoc[];
+            if (c.visual.builtIn === "buttonpair") {
                 //TODO: don't special case this
-                let l2: BBRowCol = [`${c.breadboardStartRow}`, `${c.breadboardStartColumn + 3}`];
-                locs.push(l2);
+                locs = [c.breadboardConnections[0], c.breadboardConnections[2]]
+            } else {
+                locs = [c.breadboardConnections[0]];
             }
             locs.forEach((l, i) => {
-                let [row, col] = l;
+                let topLbl: string;
+                if (l) {
+                    let {row, col} = l;
+                    topLbl = `(${row},${col})`;
+                } else {
+                    topLbl = "";
+                }
                 let cmp = mkCmpDiv(c.visual, {
-                    top: `(${row},${col})`,
+                    top: topLbl,
                     topSize: LOC_LBL_SIZE,
                     cmpHeight: REQ_CMP_HEIGHT,
                     cmpScale: REQ_CMP_SCALE
@@ -652,8 +644,8 @@ ${tsPackage}
         activeComponents.sort();
         let props = mkBoardProps({
             boardDef: boardDef,
-            cmpDefs: cmpDefs,
-            cmpList: activeComponents,
+            partDefs: cmpDefs,
+            partsList: activeComponents,
             fnArgs: fnArgs,
             getBBCoord: dummyBreadboard.getCoord.bind(dummyBreadboard)
         });
