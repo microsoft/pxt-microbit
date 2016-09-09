@@ -195,26 +195,24 @@ namespace pxsim.images {
 
 namespace pxsim.ImageMethods {
     export function showImage(leds: Image, offset: number) {
-        if (!leds) panic(PanicCode.MICROBIT_NULL_DEREFERENCE);
-
+        pxtrt.nullCheck(leds)
         leds.copyTo(offset, 5, board().ledMatrixState.image, 0)
         runtime.queueDisplayUpdate()
     }
 
     export function plotImage(leds: Image, offset: number): void {
-        if (!leds) panic(PanicCode.MICROBIT_NULL_DEREFERENCE);
-
+        pxtrt.nullCheck(leds)
         leds.copyTo(offset, 5, board().ledMatrixState.image, 0)
         runtime.queueDisplayUpdate()
     }
 
     export function height(leds: Image): number {
-        if (!leds) panic(PanicCode.MICROBIT_NULL_DEREFERENCE);
+        pxtrt.nullCheck(leds)
         return Image.height;
     }
 
     export function width(leds: Image): number {
-        if (!leds) panic(PanicCode.MICROBIT_NULL_DEREFERENCE);
+        pxtrt.nullCheck(leds)
         return leds.width;
     }
 
@@ -227,35 +225,32 @@ namespace pxsim.ImageMethods {
     }
 
     export function pixel(leds: Image, x: number, y: number): number {
-        if (!leds) panic(PanicCode.MICROBIT_NULL_DEREFERENCE);
+        pxtrt.nullCheck(leds)
         return leds.get(x, y);
     }
 
     export function setPixel(leds: Image, x: number, y: number, v: number) {
-        if (!leds) panic(PanicCode.MICROBIT_NULL_DEREFERENCE);
+        pxtrt.nullCheck(leds)
         leds.set(x, y, v);
     }
 
     export function clear(leds: Image) {
-        if (!leds) panic(PanicCode.MICROBIT_NULL_DEREFERENCE);
-
+        pxtrt.nullCheck(leds)
         leds.clear();
     }
 
     export function setPixelBrightness(i: Image, x: number, y: number, b: number) {
-        if (!i) panic(PanicCode.MICROBIT_NULL_DEREFERENCE);
-
+        pxtrt.nullCheck(i)
         i.set(x, y, b);
     }
 
     export function pixelBrightness(i: Image, x: number, y: number): number {
-        if (!i) panic(PanicCode.MICROBIT_NULL_DEREFERENCE);
-
+        pxtrt.nullCheck(i)
         return i.get(x, y);
     }
 
     export function scrollImage(leds: Image, stride: number, interval: number): void {
-        if (!leds) panic(PanicCode.MICROBIT_NULL_DEREFERENCE);
+        pxtrt.nullCheck(leds)
         if (stride == 0) stride = 1;
 
         let cb = getResume();

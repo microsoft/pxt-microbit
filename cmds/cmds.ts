@@ -28,7 +28,7 @@ export function deployCoreAsync(res: ts.pxtc.CompileResult) {
 
 function getBitDrivesAsync(): Promise<string[]> {
     if (process.platform == "win32") {
-        let rx = new RegExp("^([A-Z]:).* " + pxt.appTarget.compile.deployDrives)
+        const rx = new RegExp("^([A-Z]:).* " + pxt.appTarget.compile.deployDrives)
         return execAsync("wmic PATH Win32_LogicalDisk get DeviceID, VolumeName, FileSystem")
             .then(buf => {
                 let res: string[] = []
@@ -42,9 +42,14 @@ function getBitDrivesAsync(): Promise<string[]> {
             })
     }
     else if (process.platform == "darwin") {
-        let rx = new RegExp(pxt.appTarget.compile.deployDrives)
+        const rx = new RegExp(pxt.appTarget.compile.deployDrives)
         return readDirAsync("/Volumes")
             .then(lst => lst.filter(s => rx.test(s)).map(s => "/Volumes/" + s + "/"))
+    } else if (process.platform == "linux") {
+        const rx = new RegExp(pxt.appTarget.compile.deployDrives)
+        const user = process.env["USER"]
+        return readDirAsync(`/media/${user}`)
+            .then(lst => lst.filter(s => rx.test(s)).map(s => `/media/${user}/${s}/`))
     } else {
         return Promise.resolve([])
     }

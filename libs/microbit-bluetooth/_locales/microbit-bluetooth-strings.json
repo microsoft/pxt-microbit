@@ -7,6 +7,7 @@
   "bluetooth.startLEDService|block": "bluetooth led service",
   "bluetooth.startMagnetometerService|block": "bluetooth magnetometer service",
   "bluetooth.startTemperatureService|block": "bluetooth temperature service",
+  "bluetooth.startUartService|block": "bluetooth uart service",
   "bluetooth.uartRead|block": "bluetooth uart read %del=bluetooth_uart_delimiter_conv",
   "bluetooth.uartWrite|block": "bluetooth uart write %data",
   "bluetooth|block": "bluetooth"

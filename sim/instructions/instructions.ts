@@ -59,7 +59,7 @@ namespace pxsim.instructions {
                 border-color: ${BORDER_COLOR};
                 border-style: solid;
                 border-radius: ${BORDER_RADIUS}px;
-                display: block;
+                display: inline-block;
                 width: ${PANEL_WIDTH}px;
                 height: ${PANEL_HEIGHT}px;
                 position: relative;
@@ -131,7 +131,8 @@ namespace pxsim.instructions {
         wireClr?: string,
         cmpWidth?: number,
         cmpHeight?: number,
-        cmpScale?: number
+        cmpScale?: number,
+        crocClips?: boolean
     };
     function mkBoardImgSvg(def: string | BoardImageDefinition): visuals.SVGElAndSize {
         let boardView: visuals.BoardView;
@@ -154,7 +155,7 @@ namespace pxsim.instructions {
         //TODO: Refactor this function; it is too complicated. There is a lot of error-prone math being done
         // to scale and place all elements which could be simplified with more forethought.
         let svgEl = <SVGSVGElement>document.createElementNS("http://www.w3.org/2000/svg", "svg");
-        let dims = {l: 0, t: 0, w: 0, h: 0};
+        let dims = { l: 0, t: 0, w: 0, h: 0 };
 
         let cmpSvgEl = <SVGSVGElement>document.createElementNS("http://www.w3.org/2000/svg", "svg");
         svgEl.appendChild(cmpSvgEl);
@@ -181,7 +182,7 @@ namespace pxsim.instructions {
             scale(opts.cmpHeight / dims.h)
         }
         svg.hydrate(cmpSvgEl, cmpSvgAtts);
-        let elDims = {l: dims.l, t: dims.t, w: dims.w, h: dims.h};
+        let elDims = { l: dims.l, t: dims.t, w: dims.w, h: dims.h };
 
         let updateL = (newL: number) => {
             if (newL < dims.l) {
@@ -287,13 +288,13 @@ namespace pxsim.instructions {
         let el: visuals.SVGElAndSize;
         if (cmp == "wire") {
             //TODO: support non-croc wire parts
-            el = visuals.mkWirePart([0, 0], opts.wireClr || "red", true);
+            el = visuals.mkWirePart([0, 0], opts.wireClr || "red", opts.crocClips);
         } else if (typeof cmp == "string") {
             let builtinVis = <string>cmp;
             let cnstr = builtinComponentPartVisual[builtinVis];
             el = cnstr([0, 0]);
         } else {
-            let partVis = <PartVisualDefinition> cmp;
+            let partVis = <PartVisualDefinition>cmp;
             el = visuals.mkGenericPartSVG(partVis);
         }
         return wrapSvg(el, opts);
@@ -356,10 +357,10 @@ namespace pxsim.instructions {
     function mkBlankBoardAndBreadboard(boardDef: BoardDefinition, cmpDefs: Map<PartDefinition>, fnArgs: any, width: number, buildMode: boolean = false): visuals.BoardHost {
         let state = runtime.board as pxsim.DalBoard;
         let boardHost = new visuals.BoardHost({
-            state: state, 
-            boardDef: boardDef, 
+            state: state,
+            boardDef: boardDef,
             forceBreadboard: true,
-            partDefs: cmpDefs, 
+            partDefs: cmpDefs,
             maxWidth: `${width}px`,
             fnArgs: fnArgs,
             wireframe: buildMode,
@@ -436,10 +437,10 @@ namespace pxsim.instructions {
 
         // board and breadboard
         let boardImg = mkBoardImgSvg(props.boardDef.visual);
-        let board = wrapSvg(boardImg, {left: QUANT_LBL(1), leftSize: QUANT_LBL_SIZE, cmpScale: PARTS_BOARD_SCALE});
+        let board = wrapSvg(boardImg, { left: QUANT_LBL(1), leftSize: QUANT_LBL_SIZE, cmpScale: PARTS_BOARD_SCALE });
         panel.appendChild(board);
         let bbRaw = mkBBSvg();
-        let bb = wrapSvg(bbRaw, {left: QUANT_LBL(1), leftSize: QUANT_LBL_SIZE, cmpScale: PARTS_BB_SCALE});
+        let bb = wrapSvg(bbRaw, { left: QUANT_LBL(1), leftSize: QUANT_LBL_SIZE, cmpScale: PARTS_BB_SCALE });
         panel.appendChild(bb);
 
         // components
@@ -466,7 +467,8 @@ namespace pxsim.instructions {
                 left: QUANT_LBL(quant),
                 leftSize: WIRE_QUANT_LBL_SIZE,
                 wireClr: clr,
-                cmpScale: PARTS_WIRE_SCALE
+                cmpScale: PARTS_WIRE_SCALE,
+                crocClips: props.boardDef.useCrocClips
             })
             addClass(cmp, "partslist-wire");
             panel.appendChild(cmp);
@@ -511,7 +513,8 @@ namespace pxsim.instructions {
                 bot: mkLabel(w.start),
                 botSize: LOC_LBL_SIZE,
                 wireClr: w.color,
-                cmpHeight: REQ_WIRE_HEIGHT
+                cmpHeight: REQ_WIRE_HEIGHT,
+                crocClips: props.boardDef.useCrocClips
             })
             addClass(cmp, "cmp-div");
             reqsDiv.appendChild(cmp);
@@ -582,8 +585,8 @@ namespace pxsim.instructions {
         if (tsCode) {
             //we use the docs renderer to decompile the code to blocks and render it
             //TODO: render the blocks code directly
-            let md = 
-`\`\`\`blocks
+            let md =
+                `\`\`\`blocks
 ${tsCode}
 \`\`\`
 \`\`\`package
@@ -591,9 +594,9 @@ ${tsPackage}
 \`\`\`
 `
 
-            pxtdocs.requireMarked = function() { return (<any>window).marked; }
+            pxtdocs.requireMarked = function () { return (<any>window).marked; }
             pxtrunner.renderMarkdownAsync(codeContainerDiv, md)
-                .done(function() {
+                .done(function () {
                     let codeSvg = $("#proj-code-container svg");
                     if (codeSvg.length > 0) {
                         //code rendered successfully as blocks

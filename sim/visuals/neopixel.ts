@@ -102,26 +102,18 @@ namespace pxsim.visuals {
         });
         return { el: img, x: l, y: t, w: w, h: h };
     }
-    export class NeoPixel implements SVGAndSize<SVGCircleElement> {
-        public el: SVGCircleElement;
-        public w: number;
-        public h: number;
-        public x: number;
-        public y: number;
-        public cx: number;
+    export class NeoPixel {
+        public el: SVGElement;
         public cy: number;
 
         constructor(xy: Coord = [0, 0]) {
-            let circle = <SVGCircleElement>svg.elt("circle");
+            let circle = <SVGElement>svg.elt("rect");
             let r = PIXEL_RADIUS;
             let [cx, cy] = xy;
-            svg.hydrate(circle, { cx: cx, cy: cy, r: r, class: "sim-neopixel" });
+            let y = cy - r;
+            let x = 0;
+            svg.hydrate(circle, { x: "-50%", y: y, width: "100%", height: r*2, class: "sim-neopixel" });
             this.el = circle;
-            this.w = r * 2;
-            this.h = r * 2;
-            this.x = cx - r;
-            this.y = cy - r;
-            this.cx = cx;
             this.cy = cy;
         }
 

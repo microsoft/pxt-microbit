@@ -91,7 +91,7 @@
         "yottaTarget": "bbc-microbit-classic-gcc",
         "yottaCorePackage": "pxt-microbit-core",
         "githubCorePackage": "microsoft/pxt-microbit-core",
-        "gittag": "v0.4.2",
+        "gittag": "v0.4.4",
         "serviceId": "ws"
     },
     "serial": {
@@ -113,6 +113,7 @@
         "embedUrl": "https://codethemicrobit.com/",
         "privacyUrl": "https://go.microsoft.com/fwlink/?LinkId=521839",
         "termsOfUseUrl": "https://go.microsoft.com/fwlink/?LinkID=206977",
+        "githubUrl": "https://github.com/Microsoft/pxt-microbit",
         "boardName": "BBC micro:bit",
         "docMenu": [
             {

@@ -21,6 +21,25 @@ namespace pxsim {
         U.assert(!runtime.board);
         let b = new DalBoard();
         runtime.board = b;
+        runtime.postError = (e) => {
+            led.setBrightness(255);
+            let img = board().ledMatrixState.image;
+            img.clear();
+            img.set(0, 4, 255);
+            img.set(1, 3, 255);
+            img.set(2, 3, 255);
+            img.set(3, 3, 255);
+            img.set(4, 4, 255);
+            img.set(0, 0, 255);
+            img.set(1, 0, 255);
+            img.set(0, 1, 255);
+            img.set(1, 1, 255);
+            img.set(3, 0, 255);
+            img.set(4, 0, 255);
+            img.set(3, 1, 255);
+            img.set(4, 1, 255);
+            runtime.updateDisplay();
+        }
     }
     if (!pxsim.initCurrentRuntime) {
         pxsim.initCurrentRuntime = initRuntimeWithDalBoard;
@@ -58,15 +77,15 @@ namespace pxsim.visuals {
         move: "pointermove",
         leave: "pointerleave"
     } : {
-        up: "mouseup",
-        down: "mousedown",
-        move: "mousemove",
-        leave: "mouseleave"
-    };
+            up: "mouseup",
+            down: "mousedown",
+            move: "mousemove",
+            leave: "mouseleave"
+        };
 
     export function translateEl(el: SVGElement, xy: [number, number]) {
         //TODO append translation instead of replacing the full transform
-        svg.hydrate(el, {transform: `translate(${xy[0]} ${xy[1]})`});
+        svg.hydrate(el, { transform: `translate(${xy[0]} ${xy[1]})` });
     }
 
     export interface ComposeOpts {
@@ -91,14 +110,14 @@ namespace pxsim.visuals {
     export function composeSVG(opts: ComposeOpts): ComposeResult {
         let [a, b] = [opts.el1, opts.el2];
         U.assert(a.x == 0 && a.y == 0 && b.x == 0 && b.y == 0, "el1 and el2 x,y offsets not supported");
-        let setXY = (e: SVGSVGElement, x: number, y: number) => svg.hydrate(e, {x: x, y: y});
+        let setXY = (e: SVGSVGElement, x: number, y: number) => svg.hydrate(e, { x: x, y: y });
         let setWH = (e: SVGSVGElement, w: string, h: string) => {
             if (w)
-                svg.hydrate(e, {width: w});
+                svg.hydrate(e, { width: w });
             if (h)
-                svg.hydrate(e, {height: h});
+                svg.hydrate(e, { height: h });
         }
-        let setWHpx = (e: SVGSVGElement, w: number, h: number) => svg.hydrate(e, {width: `${w}px`, height: `${h}px`});
+        let setWHpx = (e: SVGSVGElement, w: number, h: number) => svg.hydrate(e, { width: `${w}px`, height: `${h}px` });
         let scaleUnit = opts.scaleUnit2;
         let aScalar = opts.scaleUnit2 / opts.scaleUnit1;
         let bScalar = 1.0;
@@ -165,11 +184,11 @@ namespace pxsim.visuals {
         let w = scaleFn(opts.width);
         let h = scaleFn(opts.height);
         let img = <SVGImageElement>svg.elt("image", {
-                width: w,
-                height: h,
-                "href": `${opts.image}`
-            });
-        return {el: img, w: w, h: h, x: 0, y: 0};
+            width: w,
+            height: h,
+            "href": `${opts.image}`
+        });
+        return { el: img, w: w, h: h, x: 0, y: 0 };
     }
 
     export type Coord = [number, number];
@@ -199,13 +218,15 @@ namespace pxsim.visuals {
 
     export function mkTxt(cx: number, cy: number, size: number, rot: number, txt: string, txtXOffFactor?: number, txtYOffFactor?: number): SVGTextElement {
         let el = <SVGTextElement>svg.elt("text")
-         //HACK: these constants (txtXOffFactor, txtYOffFactor) tweak the way this algorithm knows how to center the text
+        //HACK: these constants (txtXOffFactor, txtYOffFactor) tweak the way this algorithm knows how to center the text
         txtXOffFactor = txtXOffFactor || -0.33333;
         txtYOffFactor = txtYOffFactor || 0.3;
         const xOff = txtXOffFactor * size * txt.length;
         const yOff = txtYOffFactor * size;
-        svg.hydrate(el, {style: `font-size:${size}px;`,
-            transform: `translate(${cx} ${cy}) rotate(${rot}) translate(${xOff} ${yOff})` });
+        svg.hydrate(el, {
+            style: `font-size:${size}px;`,
+            transform: `translate(${cx} ${cy}) rotate(${rot}) translate(${xOff} ${yOff})`
+        });
         svg.addClass(el, "noselect");
         el.textContent = txt;
         return el;

@@ -80,7 +80,8 @@ namespace pxsim.visuals {
             fill: #BBB;
         }
         .grayed .sim-bb-pin {
-            fill: #BBB;
+            fill:none;
+            stroke: #BBB;
         }
         .grayed .sim-bb-label {
             fill: #BBB;

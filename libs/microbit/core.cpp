@@ -308,6 +308,72 @@ namespace pxtrt {
     }
   }
 
+  //%
+  RefMap *mkMap() {
+    return new RefMap();
+  }
+
+  //%
+  uint32_t mapGet(RefMap *map, uint32_t key) {
+    int i = map->findIdx(key);
+    if (i < 0) {
+      map->unref();
+      return 0;
+    }
+    uint32_t r = map->data[i].val;
+    map->unref();
+    return r;
+  }
+
+  //%
+  uint32_t mapGetRef(RefMap *map, uint32_t key) {
+    int i = map->findIdx(key);
+    if (i < 0) {
+      map->unref();
+      return 0;
+    }
+    uint32_t r = incr(map->data[i].val);
+    map->unref();
+    return r;
+  }
+
+  //%
+  void mapSet(RefMap *map, uint32_t key, uint32_t val) {
+    int i = map->findIdx(key);
+    if (i < 0) {
+      map->data.push_back({
+        key << 1,
+        val
+      });
+    } else {
+      if (map->data[i].key & 1) {
+        decr(map->data[i].val);
+        map->data[i].key = key << 1;
+      }
+      map->data[i].val = val;
+    }
+    map->unref();
+  }
+
+  //%
+  void mapSetRef(RefMap *map, uint32_t key, uint32_t val) {
+    int i = map->findIdx(key);
+    if (i < 0) {
+      map->data.push_back({
+        (key << 1) | 1,
+        val
+      });
+    } else {
+      if (map->data[i].key & 1) {
+        decr(map->data[i].val);
+      } else {
+        map->data[i].key = (key << 1) | 1;
+      }
+      map->data[i].val = val;
+    }
+    map->unref();      
+  }
+
   //
   // Debugger
   //
