@@ -1,4 +1,4 @@
-namespace pxsim.newdefinitions {
+namespace pxsim {
      export interface AllocatorOpts {
         boardDef: BoardDefinition,
         partDefs: Map<PartDefinition>,

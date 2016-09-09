@@ -1,78 +1,126 @@
 { 
-    "ledmatrix": {
-        "visual": "ledmatrix",
-        "breadboardColumnsNeeded": 8,
-        "breadboardStartRow": "h",
-        "pinAllocation": {
-            "type": "auto",
-            "gpioPinsNeeded": [5, 5]
+     "buttonpair": {
+        "simulationBehavior": "buttonpair",
+        "visual": {
+            "builtIn": "buttonpair",
+            "width": 75,
+            "height": 45,
+            "pinDistance": 15,
+            "pinLocations": [
+                {"x": 0, "y": 0},
+                {"x": 30, "y": 45},
+                {"x": 45, "y": 0},
+                {"x": 75, "y": 45}
+            ]
         },
-        "assemblyStep": 0,
-        "wires": [
-            {"start": ["breadboard", "j", 0], "end": ["GPIO", 5], "color": "purple", "assemblyStep": 1},
-            {"start": ["breadboard", "j", 1], "end": ["GPIO", 6], "color": "purple", "assemblyStep": 1},
-            {"start": ["breadboard", "j", 2], "end": ["GPIO", 7], "color": "purple", "assemblyStep": 1},
-            {"start": ["breadboard", "j", 3], "end": ["GPIO", 8], "color": "purple", "assemblyStep": 1},
-            {"start": ["breadboard", "a", 7], "end": ["GPIO", 9], "color": "purple", "assemblyStep": 1},
-            {"start": ["breadboard", "a", 0], "end": ["GPIO", 0], "color": "green", "assemblyStep": 2},
-            {"start": ["breadboard", "a", 1], "end": ["GPIO", 1], "color": "green", "assemblyStep": 2},
-            {"start": ["breadboard", "a", 2], "end": ["GPIO", 2], "color": "green", "assemblyStep": 2},
-            {"start": ["breadboard", "a", 3], "end": ["GPIO", 3], "color": "green", "assemblyStep": 2},
-            {"start": ["breadboard", "j", 4], "end": ["GPIO", 4], "color": "green", "assemblyStep": 2}
-        ]
-    },
-    "buttonpair": {
-        "visual": "buttonpair",
-        "breadboardColumnsNeeded": 6,
-        "breadboardStartRow": "f",
-        "pinAllocation": {
-            "type": "predefined",
-            "pins": ["P13", "P12"]
+        "numberOfPins": 4,
+        "pinDefinitions": [
+            {"target": "P14", "style": "male", "orientation": "-Z"},
+            {"target": "ground", "style": "male", "orientation": "-Z"},
+            {"target": "P15", "style": "male", "orientation": "-Z"},
+            {"target": "ground", "style": "male", "orientation": "-Z"}
+        ],
+        "instantiation": {
+            "kind": "singleton"
         },
-        "assemblyStep": 0,
-        "wires": [
-            {"start": ["breadboard", "j", 0], "end": ["GPIO", 0], "color": "yellow", "assemblyStep": 1},
-            {"start": ["breadboard", "a", 2], "end": "ground", "color": "blue", "assemblyStep": 1},
-            {"start": ["breadboard", "j", 3], "end": ["GPIO", 1], "color": "orange", "assemblyStep": 2},
-            {"start": ["breadboard", "a", 5], "end": "ground", "color": "blue", "assemblyStep": 2}
+        "assembly": [
+            {"part": true},
+            {"pinIndices": [0, 1]},
+            {"pinIndices": [2, 3]}
         ]
     },
     "neopixel": {
-        "visual": "neopixel",
-        "breadboardColumnsNeeded": 5,
-        "breadboardStartRow": "h",
-        "pinAllocation": {
-            "type": "factoryfunction",
-            "functionName": "neopixel.create",
-            "pinArgPositions": [0],
-            "otherArgPositions": [1]
+        "simulationBehavior": "neopixel",
+        "visual": {
+            "image": "part/neopixel.svg",
+            "width": 87.5,
+            "height": 190,
+            "pinDistance": 15,
+            "pinLocations": [
+                {"x": 13.5, "y": 11},
+                {"x": 28.5, "y": 11},
+                {"x": 43.5, "y": 11}
+            ]
         },
-        "assemblyStep": 0,
-        "wires": [
-            {"start": ["breadboard", "j", 1], "end": "ground", "color": "blue", "assemblyStep": 1},
-            {"start": ["breadboard", "j", 2], "end": "threeVolt", "color": "red", "assemblyStep": 2},
-            {"start": ["breadboard", "j", 3], "end": ["GPIO", 0], "color": "green", "assemblyStep": 2}
+        "numberOfPins": 3,
+        "pinDefinitions": [
+            {"target": "ground", "style": "solder", "orientation": "+Z"},
+            {"target": "threeVolt", "style": "solder", "orientation": "+Z"},
+            {"target": {"pinInstantiationIdx": 0}, "style": "solder", "orientation": "+Z"}
+        ],
+        "instantiation": {
+            "kind": "function",
+            "fullyQualifiedName": "neopixel.create",
+            "argumentRoles": [
+                {"pinInstantiationIdx": 0, "partParameter": "pin"},
+                {"partParameter": "mode"}
+            ]
+        },
+        "assembly": [
+            {"part": true, "pinIndices": [0]},
+            {"pinIndices": [1, 2]}
+        ]
+    },
+    "ledmatrix": {
+        "visual": {
+            "builtIn": "ledmatrix",
+            "width": 105,
+            "height": 105,
+            "pinDistance": 15,
+            "pinLocations": [
+                {"x": 0, "y": 0},
+                {"x": 15, "y": 0},
+                {"x": 30, "y": 0},
+                {"x": 45, "y": 0},
+                {"x": 105, "y": 105},
+                {"x": 0, "y": 105},
+                {"x": 15, "y": 105},
+                {"x": 30, "y": 105},
+                {"x": 45, "y": 105},
+                {"x": 60, "y": 0}
+            ]
+        },
+        "simulationBehavior": "ledmatrix",
+        "numberOfPins": 10,
+        "instantiation": {"kind": "singleton"},
+        "pinDefinitions": [
+            {"target": "P4", "style": "male", "orientation": "-Z"},
+            {"target": "P5", "style": "male", "orientation": "-Z"},
+            {"target": "P6", "style": "male", "orientation": "-Z"},
+            {"target": "P7", "style": "male", "orientation": "-Z"},
+            {"target": "P8", "style": "male", "orientation": "-Z"},
+            {"target": "P9", "style": "male", "orientation": "-Z"},
+            {"target": "P10", "style": "male", "orientation": "-Z"},
+            {"target": "P11", "style": "male", "orientation": "-Z"},
+            {"target": "P12", "style": "male", "orientation": "-Z"},
+            {"target": "P13", "style": "male", "orientation": "-Z"}
+        ],
+        "assembly": [
+            {"part": true},
+            {"pinIndices": [0, 1, 2, 3, 4]},
+            {"pinIndices": [5, 6, 7, 8, 0]}
         ]
     },
     "speaker": {
+        "numberOfPins": 2,
         "visual": {
-            "image": "/parts/speaker.svg",
+            "image": "/static/hardware/speaker.svg",
             "width": 500,
             "height": 500,
-            "firstPin": [180, 135],
-            "pinDist": 70,
-            "extraColumnOffset": 1
+            "pinDistance": 70,
+            "pinLocations": [
+                {"x": 180, "y": 135},
+                {"x": 320, "y": 135}
+            ]
         },
-        "breadboardColumnsNeeded": 5,
-        "breadboardStartRow": "f",
-        "pinAllocation": {
-            "type": "auto",
-            "gpioPinsNeeded": 1
-        },
-        "assemblyStep": 0,
-        "wires": [
-            {"start": ["breadboard", "j", 1], "end": ["GPIO", 0], "color": "#ff80fa", "assemblyStep": 1},
-            {"start": ["breadboard", "j", 3], "end": "ground", "color": "blue", "assemblyStep": 1}
+        "pinDefinitions": [
+            {"target": "P0", "style": "male", "orientation": "-Z"},
+            {"target": "ground", "style": "male", "orientation": "-Z"}
+        ],
+        "instantiation": {"kind": "singleton"},
+        "assembly": [
+            {"part": true, "pinIndices": [0]},
+            {"pinIndices": [1]}
         ]
     }
 }
