@@ -149,6 +149,10 @@ By copying the script onto the `MICROBIT` drive, you have programmed it into the
 flash memory on the micro:bit, which means even after you unplug the micro:bit,
 your program will still run if the micro:bit is powered by battery.
 
+If you want to save time, you can use the [micro:bit uploader](/uploader) to
+automatically deploy hex files to your micro:bit. It works on Windows and is
+compatible with any browser.
+
 ## Troubleshooting
 
 You can’t drag and drop more than one hex file at once onto your micro:bit. If
