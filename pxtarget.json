@@ -144,6 +144,7 @@
             }
         ],
         "sideDoc": "getting-started",
+        "usbDocs": "/device/usb",
         "usbHelp": [
             {
                 "name": "connection",
