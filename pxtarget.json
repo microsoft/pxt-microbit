@@ -144,8 +144,20 @@
             }
         ],
         "sideDoc": "getting-started",
-        "usbPC": "/static/mb/device/usb-generic.jpg",
-        "usbMac": "/static/mb/device/usb-mac.jpg"
+        "usbHelp": [
+            {
+                "name": "connection",
+                "os": "*",
+                "browser": "*",
+                "path": "/static/mb/device/usb-generic.jpg"
+            },
+            {
+                "name": "connection",
+                "os": "mac",
+                "browser": "*",
+                "path": "/static/mb/device/usb-mac.jpg"
+            }
+        ]
     },
     "analytics": {
         "userVoiceApiKey": "WEkkIGaj1WtJnSUF59iwaA",
