@@ -143,7 +143,9 @@
                 "path": "/device"
             }
         ],
-        "sideDoc": "getting-started"
+        "sideDoc": "getting-started",
+        "usbPC": "/static/mb/device/usb-generic.jpg",
+        "usbMac": "/static/mb/device/usb-mac.jpg"
     },
     "analytics": {
         "userVoiceApiKey": "WEkkIGaj1WtJnSUF59iwaA",
