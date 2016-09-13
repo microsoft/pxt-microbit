@@ -1,57 +1,66 @@
-#Unsupported configuration
+# Unsupported configuration
 
-[codethemicrobit.com](https://codethemicrobit.com) doesn't currently support your browser or operating system. The following configurations are supported:
+[codethemicrobit.com](https://codethemicrobit.com) doesn't currently support
+your browser or operating system. The following configurations are supported:
 
-##Windows
+## Windows
 
-You need one of these browsers running on Windows 7, Windows 8, Windows 8.1, or Windows 10:
+You need one of these browsers running on Windows 7, Windows 8, Windows 8.1, or
+Windows 10:
 
 * Internet Explorer 11
 * Microsoft Edge
 * Google Chrome
 * Mozilla Firefox
 
-##Mac
+## Mac
 
-You need one of these browsers running on OS X 10.9 Mavericks, OS X 10.10 Yosemite, OS X 10.11 El Capitan, or macOS 10.12 Sierra:
+You need one of these browsers running on OS X 10.9 Mavericks, OS X 10.10
+Yosemite, OS X 10.11 El Capitan, or macOS 10.12 Sierra:
 
 * Safari
 * Google Chrome
 * Mozilla Firefox
 
-##Linux
+## Linux
 
-You need to be running a Linux distribution recent enough to run the most recent version of one of the following:
+If you're using a Raspberry Pi, please see [the documentation
+here](/raspberry-pi).
+
+You need to be running a Linux distribution recent enough to run the most recent
+version of one of the following:
 
 * Google Chrome, or Chromium
-* Mozilla Firefox, or Seamonkey
+* Mozilla Firefox, Iceweasel, or Seamonkey
 
-##How to check your OS or browser
+## How to check your OS or browser
 
-###Windows
+### Windows
 
 * Click on the Start menu
 * Type 'System'
 * Click on the app called 'System'
 * The version of Windows you are using will be displayed:
 
-![/static/configurations/windows-version.png]()
+![](/static/configurations/windows-version.png)
 
-###Mac
+### Mac
 
 * Click on the Apple icon in the top left
 * Click on 'About this Mac'
 * This window will be displayed:
 
-###Internet Explorer
+![](/static/configurations/osx-version.png)
+
+### Internet Explorer
 
 * Click on the Settings icon in the top right
 * Click 'About Internet Explorer'
 * This window will be displayed:
 
-![/static/configurations/ie-version.png]()
+![](/static/configurations/ie-version.png)
 
-###Edge
+### Edge
 
 Edge automatically updates, so you should always be using the latest version
 
@@ -59,9 +68,9 @@ Edge automatically updates, so you should always be using the latest version
 * Scroll to the bottom
 * Information similar to the following will be displayed:
 
-![/static/configurations/edge-version.png]()
+![](/static/configurations/edge-version.png)
 
-###Google Chrome
+### Google Chrome
 
 Google Chrome automatically updates, so you should always be using the latest version
 
@@ -69,9 +78,9 @@ Google Chrome automatically updates, so you should always be using the latest ve
 * Click Help, and About Google Chrome
 * Information similar to the following will be displayed:
 
-![/static/configurations/chrome-version.png]()
+![](/static/configurations/chrome-version.png)
 
-###Firefox
+### Firefox
 
 Firefox automatically updates, so you should always be using the latest version
 
@@ -79,11 +88,14 @@ Firefox automatically updates, so you should always be using the latest version
 * Click the question mark icon (help button)
 * Click 'About Firefox'
 
-![/static/configurations/firefox-version.png]()
+![](/static/configurations/firefox-version.png)
 
-###Safari
+### Safari
 
-Safari updates when your operating system updates, so if you are using the latest version of OS X then you'll be using the latest version of Safari.
+Safari updates when your operating system updates, so if you are using the
+latest version of OS X then you'll be using the latest version of Safari.
 
 * Click on the Safari menu in the top left
 * Click 'About Safari'
+
+![](/static/configurations/safari-version.png)
