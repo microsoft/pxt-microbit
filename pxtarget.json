@@ -116,6 +116,7 @@
         "privacyUrl": "https://go.microsoft.com/fwlink/?LinkId=521839",
         "termsOfUseUrl": "https://go.microsoft.com/fwlink/?LinkID=206977",
         "githubUrl": "https://github.com/Microsoft/pxt-microbit",
+        "unsupportedBrowserURL": "/unsupported",
         "boardName": "BBC micro:bit",
         "docMenu": [
             {
