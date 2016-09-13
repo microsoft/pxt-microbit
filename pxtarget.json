@@ -116,7 +116,33 @@
         "privacyUrl": "https://go.microsoft.com/fwlink/?LinkId=521839",
         "termsOfUseUrl": "https://go.microsoft.com/fwlink/?LinkID=206977",
         "githubUrl": "https://github.com/Microsoft/pxt-microbit",
-        "unsupportedBrowserUrl": "/browsers",
+        "browserSupport": [
+            {
+                "name": "unsupported",
+                "os": "*",
+                "path": "/browsers"
+            },
+            {
+                "name": "unsupported",
+                "os": "mac",
+                "path": "/browsers/mac"
+            },
+            {
+                "name": "unsupported",
+                "os": "linux",
+                "path": "browsers/linux"
+            },
+            {
+                "name": "unsupported",
+                "os": "rpi",
+                "path": "/raspberry-pi"
+            },
+            {
+                "name": "unsupported",
+                "os": "windows",
+                "path": "/browsers/windows"
+            }
+        ],
         "boardName": "BBC micro:bit",
         "docMenu": [
             {
