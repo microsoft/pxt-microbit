@@ -1,11 +1,3 @@
-//
-//  AppDelegate.m
-//  Microbit Uploader
-//
-//  Created by Thomas Denney on 12/09/2016.
-//  Copyright © 2016 thomasdenney. All rights reserved.
-//
-
 #import "AppDelegate.h"
 #import "DirectoryWatcher.h"
 #import "Uploader.h"

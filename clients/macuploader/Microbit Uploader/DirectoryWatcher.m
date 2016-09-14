@@ -1,11 +1,3 @@
-//
-//  DirectoryWatcher.m
-//  Microbit Uploader
-//
-//  Created by Thomas Denney on 14/09/2016.
-//  Copyright © 2016 thomasdenney. All rights reserved.
-//
-
 #import "DirectoryWatcher.h"
 #import <CoreServices/CoreServices.h>
 
