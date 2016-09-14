@@ -8,6 +8,12 @@ the app runs in your menu bar and will automatically deploy any HEX files to
 your `micro:bit`. Like the Windows version, it is compatible with any browser
 that can run [codethemicrobit.com](http://codethemicrobit.com).
 
+## Install the built version
+
+1. Download the latest `.zip` release from the `Release` directory
+2. Unzip it
+3. Drag `Microbit Uploader` to your Applications folder and launch it
+
 ## Building
 
 To build the project you'll need a copy of OS X 10.11 or higher and Xcode 8 or
