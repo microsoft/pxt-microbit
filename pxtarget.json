@@ -266,61 +266,61 @@
                 "name": "connection",
                 "os": "*",
                 "browser": "*",
-                "path": "/static/mb/device/usb-generic.jpg"
+                "path": "/doccdn/static/mb/device/usb-generic.jpg"
             },
             {
                 "name": "connection",
                 "os": "mac",
                 "browser": "*",
-                "path": "/static/mb/device/usb-mac.jpg"
+                "path": "/doccdn/static/mb/device/usb-mac.jpg"
             },
             {
                 "name": "save",
                 "os": "windows",
                 "browser": "firefox",
-                "path": "/static/mb/device/usb-windows-firefox-1.png"
+                "path": "/doccdn/static/mb/device/usb-windows-firefox-1.png"
             },
             {
                 "name": "save",
                 "os": "mac",
                 "browser": "firefox",
-                "path": "/static/mb/device/usb-osx-firefox-1.png"
+                "path": "/doccdn/static/mb/device/usb-osx-firefox-1.png"
             },
             {
                 "name": "save",
                 "os": "mac",
                 "browser": "chrome",
-                "path": "/static/mb/device/usb-osx-chrome.png"
+                "path": "/doccdn/static/mb/device/usb-osx-chrome.png"
             },
             {
                 "name": "save",
                 "os": "windows",
                 "browser": "edge",
-                "path": "/static/mb/device/usb-windows-edge-1.png"
+                "path": "/doccdn/static/mb/device/usb-windows-edge-1.png"
             },
             {
                 "name": "save",
                 "os": "windows",
                 "browser": "ie",
-                "path": "/static/mb/device/usb-windows-ie11-1.png"
+                "path": "/doccdn/static/mb/device/usb-windows-ie11-1.png"
             },
             {
                 "name": "save",
                 "os": "windows",
                 "browser": "chrome",
-                "path": "/static/mb/device/usb-windows-chrome.png"
+                "path": "/doccdn/static/mb/device/usb-windows-chrome.png"
             },
             {
                 "name": "copy",
                 "os": "mac",
                 "browser": "*",
-                "path": "/static/mb/device/usb-osx-dnd.png"
+                "path": "/doccdn/static/mb/device/usb-osx-dnd.png"
             },
             {
                 "name": "copy",
                 "os": "windows",
                 "browser": "*",
-                "path": "/static/mb/device/usb-windows-sendto.jpg"
+                "path": "/doccdn/static/mb/device/usb-windows-sendto.jpg"
             }
         ]
     },
