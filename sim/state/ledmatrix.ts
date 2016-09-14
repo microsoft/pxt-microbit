@@ -271,6 +271,7 @@ namespace pxsim.led {
 
     export function stopAnimation(): void {
         board().ledMatrixState.animationQ.cancelAll();
+        board().ledMatrixState.image.clear();
     }
 
     export function setDisplayMode(mode: DisplayMode): void {
