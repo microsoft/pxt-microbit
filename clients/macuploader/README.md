@@ -26,8 +26,9 @@ and run `Microbit Uploader.xcodeproj`.
 4. You will then have the option of either signing or not-signing the
    application:
 
-   a) If you have an Apple developer account, select 'Export a Developer
-      ID-signed Application'
-   b) If you don't have a developer ID, select 'Export as a macOS App'
+    a) If you have an Apple developer account, select 'Export a Developer
+       ID-signed Application'
+
+    b) If you don't have a developer ID, select 'Export as a macOS App'
 
 5. Zip the produced app and upload to CDN or equivalent
