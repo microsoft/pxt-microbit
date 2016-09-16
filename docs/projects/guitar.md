@@ -1,37 +1,96 @@
-
+# Guitar project
 
 * make the basic guitar
 * basics of micro:bit
-** display and buttons
-** sound
-* add sound to the guitar
-** sequencing, events
+* display and buttons
 
-https://codethemicrobit.com/jmdjiqbgpk
+```blocks
+input.onButtonPressed(Button.A, () => {
+    basic.showLeds(`
+        . # . # .
+        . . . . .
+        . # # # .
+        . # . # .
+        . # # # .
+        `)
+})
+input.onButtonPressed(Button.B, () => {
+    basic.showLeds(`
+        . # . # .
+        . . . . .
+        . . . . .
+        # . . . #
+        . # # # .
+        `)
+})
+```
+
+* add sound to the guitar
+
+```blocks
+input.onButtonPressed(Button.A, () => {
+    basic.showLeds(`
+        . # . # .
+        . . . . .
+        . # # # .
+        . # . # .
+        . # # # .
+        `)
+    music.playTone(Note.A, music.beat(BeatFraction.Whole))
+})
+input.onButtonPressed(Button.B, () => {
+    basic.showLeds(`
+        . # . # .
+        . . . . .
+        . . . . .
+        # . . . #
+        . # # # .
+        `)
+    music.playTone(Note.G, music.beat(BeatFraction.Whole))
+})
+```
 
 * light sensor
-** plot bar graph
+
+```blocks
+basic.forever(() => {
+    led.plotBarGraph(input.lightLevel(), 255)
+})
+```
+
+
 ** mapping to frequency
 ** forever loop play tone
     - math, arithmetic
 
-```
-led.setBrightness(220)
-basic.forever(() => {
-    led.plotBarGraph(input.acceleration(Dimension.Y), 512)
-})
-```
-
-```
+```blocks
 basic.forever(() => {
     music.playTone(input.lightLevel() * 25, music.beat(BeatFraction.Quater))
 })
 ```
 
 * accelerometer
-** plot bar graph
-** mapping to beat
-** update forever
+
+
+```blocks
+basic.forever(() => {
+    led.plotBarGraph(input.acceleration(Dimension.Y), 1023)
+})
+```
+
+* mapping to beat
+
+```blocks
+basic.forever(() => {
+        music.setTempo(pins.map(Math.abs(input.acceleration(Dimension.Y)),
+            0, 1023,
+            60, 320))
+        music.playTone(
+            input.lightLevel() * 25,
+            music.beat(BeatFraction.Quater)
+        );
+})
+```
 
 * on pin is pressed
 ** try on the micro:bit with smiley - match maker
@@ -40,7 +99,7 @@ basic.forever(() => {
 ** global variable on/off - onpinpressed to turn and off
     - global variable, conditional, logic, pins
 
-```
+```blocks
 input.onPinPressed(TouchPin.P0, () => {
     basic.showNumber(0)
 })
@@ -55,7 +114,6 @@ input.onPinPressed(TouchPin.P2, () => {
 ```blocks
 var on = false
 basic.forever(() => {
-    led.plotBarGraph(input.acceleration(Dimension.Y), 1023)
     if (on) {
         music.setTempo(pins.map(Math.abs(input.acceleration(Dimension.Y)),
             0, 1023,
