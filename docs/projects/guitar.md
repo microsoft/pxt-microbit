@@ -1,7 +1,8 @@
 # Guitar project
 
-* make the basic guitar
+* [Making the guitar](/projects/guitar/making)
 * basics of micro:bit
+
 * display and buttons
 
 ```blocks
@@ -27,6 +28,8 @@ input.onButtonPressed(Button.B, () => {
 
 * add sound to the guitar
 
+CROC-CLIP video
+
 ```blocks
 input.onButtonPressed(Button.A, () => {
     basic.showLeds(`
@@ -50,6 +53,8 @@ input.onButtonPressed(Button.B, () => {
 })
 ```
 
+GUITAR BUTTON VIDEO
+
 * light sensor
 
 ```blocks
@@ -57,7 +62,7 @@ basic.forever(() => {
     led.plotBarGraph(input.lightLevel(), 255)
 })
 ```
-
+LIGHT SENSOR VIDEO
 
 ** mapping to frequency
 ** forever loop play tone
@@ -69,14 +74,17 @@ basic.forever(() => {
 })
 ```
 
-* accelerometer
+LIGHT GUITAR VIDEO
 
+* accelerometer
 
 ```blocks
 basic.forever(() => {
     led.plotBarGraph(input.acceleration(Dimension.Y), 1023)
 })
 ```
+
+ACC PLOT VIDEO
 
 * mapping to beat
 
@@ -91,6 +99,8 @@ basic.forever(() => {
         );
 })
 ```
+
+LIGHT+ACC VIDEO
 
 * on pin is pressed
 ** try on the micro:bit with smiley - match maker
@@ -111,6 +121,9 @@ input.onPinPressed(TouchPin.P2, () => {
 })
 ```
 
+PIN PRESSED DEMO VIDEO
+
+Final code
 ```blocks
 var on = false
 basic.forever(() => {
@@ -130,3 +143,4 @@ input.onPinPressed(TouchPin.P1, () => {
     on = !on;
 })
 ```
+FINAL VIDEO
