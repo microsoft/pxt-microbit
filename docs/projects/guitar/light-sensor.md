@@ -51,15 +51,19 @@ music.playTone(261, music.beat(BeatFraction.Half))
 #### Multiply Frequency using Math blocks
 7) create a **play tone** block using a **Math** section, **multiplication** block to set *tone*
 8) Download the code to the micro:bit and test the sound of multiples of the 261Hz **C** frequency  
-(*Tip: create a **B** button block that uses a different multiplier to set tone*)
+(*Tip: also create a **B** button block that uses a different multiplier to set tone*)
  ```blocks
 input.onButtonPressed(Button.A, () => {
     music.playTone(261 * 2, music.beat(BeatFraction.Half))
 })
 ```
-
+#### Control the Frequency with the light input
 9) Create a **forever loop** with a **play tone** block
-10) 
+10) Use a **Math** multiplication block to set tone, with light level input multiplied by 25 
+(or experiment)
+11) Test on the guitar by covering the LEDs with your hand to vary the light that is measured 
+and controls the tone
+
 ```blocks
 basic.forever(() => {
     music.playTone(input.lightLevel() * 25, music.beat(BeatFraction.Quater))

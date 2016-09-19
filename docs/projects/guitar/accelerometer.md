@@ -12,9 +12,20 @@ Use the Accelerometer to control guitar tempo
      * Tempo
      * Beat
      * Graphing
+* **Resources:**
+  * [micro:bit Acceleration input block](/reference/input/acceleration)
 ### ~
-VIDEO: ACCELEROMETER PLOT
+![VIDEO: ACCELEROMETER PLOT]()
+### Measuring Acceleration along different coordinates (X, Y, Z axis)
+The acceleration block measures with **milli-g**, which is 1/1000 of a **g** or the 
+acceleration of gravity.  
 
+Whenever the micro:bit changes direct there is an acceleration (change in velocity).  
+The acceleration can be in different directions for the micro:bit, moving along a line:
+- **face** to **back**
+- **A** to **B** button
+- **plugs** to **pins**
+-moving 
 ```blocks
 basic.forever(() => {
     led.plotBarGraph(input.acceleration(Dimension.Y), 1023)
