@@ -1,146 +1,27 @@
-# Guitar project
+# Guitar
+![](/static/mb/projects/guitar.png)
+### @description A beginner-intermediate maker activity, building a guitar with the micro:bit  
 
-* [Making the guitar](/projects/guitar/making)
-* basics of micro:bit
+### ~avatar avatar
+Make a micro:bit guitar with this guided tutorial! 
+* **Duration:**  
+5 Activities, approx 30-45 min each based on familiarity with the coding concepts  
+* **Materials**
+  * Cardboard large pieces (recycle!)
+  * Tape (masking, duct Tape, and/or packing tape)
+  * Markers and/or paint
+  * Foil
+  * Scissors that can cut cardboard  
+  * 1 micro:bit
+  * 4-5 Crocodile clips
+  * Headphones
+### ~
+![VIDEO OF THE FINISHED  PROJECT]()
 
-* display and buttons
-
-```blocks
-input.onButtonPressed(Button.A, () => {
-    basic.showLeds(`
-        . # . # .
-        . . . . .
-        . # # # .
-        . # . # .
-        . # # # .
-        `)
-})
-input.onButtonPressed(Button.B, () => {
-    basic.showLeds(`
-        . # . # .
-        . . . . .
-        . . . . .
-        # . . . #
-        . # # # .
-        `)
-})
-```
-
-* add sound to the guitar
-
-CROC-CLIP video
-
-```blocks
-input.onButtonPressed(Button.A, () => {
-    basic.showLeds(`
-        . # . # .
-        . . . . .
-        . # # # .
-        . # . # .
-        . # # # .
-        `)
-    music.playTone(Note.A, music.beat(BeatFraction.Whole))
-})
-input.onButtonPressed(Button.B, () => {
-    basic.showLeds(`
-        . # . # .
-        . . . . .
-        . . . . .
-        # . . . #
-        . # # # .
-        `)
-    music.playTone(Note.G, music.beat(BeatFraction.Whole))
-})
-```
-
-GUITAR BUTTON VIDEO
-
-* light sensor
-
-```blocks
-basic.forever(() => {
-    led.plotBarGraph(input.lightLevel(), 255)
-})
-```
-LIGHT SENSOR VIDEO
-
-** mapping to frequency
-** forever loop play tone
-    - math, arithmetic
-
-```blocks
-basic.forever(() => {
-    music.playTone(input.lightLevel() * 25, music.beat(BeatFraction.Quater))
-})
-```
-
-LIGHT GUITAR VIDEO
-
-* accelerometer
-
-```blocks
-basic.forever(() => {
-    led.plotBarGraph(input.acceleration(Dimension.Y), 1023)
-})
-```
-
-ACC PLOT VIDEO
-
-* mapping to beat
-
-```blocks
-basic.forever(() => {
-        music.setTempo(pins.map(Math.abs(input.acceleration(Dimension.Y)),
-            0, 1023,
-            60, 320))
-        music.playTone(
-            input.lightLevel() * 25,
-            music.beat(BeatFraction.Quater)
-        );
-})
-```
-
-LIGHT+ACC VIDEO
-
-* on pin is pressed
-** try on the micro:bit with smiley - match maker
-** build the circuit
-** try on the guitar
-** global variable on/off - onpinpressed to turn and off
-    - global variable, conditional, logic, pins
-
-```blocks
-input.onPinPressed(TouchPin.P0, () => {
-    basic.showNumber(0)
-})
-input.onPinPressed(TouchPin.P1, () => {
-    basic.showNumber(1)
-})
-input.onPinPressed(TouchPin.P2, () => {
-    basic.showNumber(2)
-})
-```
-
-PIN PRESSED DEMO VIDEO
-
-Final code
-```blocks
-var on = false
-basic.forever(() => {
-    if (on) {
-        music.setTempo(pins.map(Math.abs(input.acceleration(Dimension.Y)),
-            0, 1023,
-            60, 320))
-        music.playTone(
-            input.lightLevel() * 25,
-            music.beat(BeatFraction.Quater)
-        );
-    } else {
-        music.rest(music.beat())
-    }
-})
-input.onPinPressed(TouchPin.P1, () => {
-    on = !on;
-})
-```
-FINAL VIDEO
+## Detailed Project Activities  
+* [Making the Guitar Body](/projects/guitar/making)
+* [Buttons, Display & Sound](/projects/guitar/display-buttons)
+* [Light Sensor Tone control](projects/guitar/light-sensor)
+* [Accelerometer Beat control](projects/guitar/accelerometer)
+* [Light Sensor + Accelerometer](projects/guitar/light-accelerometer)
+* [Pin Press Switch](projects/guitar/pin-press)  
