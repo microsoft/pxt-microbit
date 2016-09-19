@@ -2,7 +2,7 @@
 ### @description Maker Project for Guitar Body for micro:bit  
 
 ### ~avatar avatar
-Make a Guitar Body for your micro:bit guitar
+Make the Guitar Body for your micro:bit Guitar
 * **Duration:** ~45 minutes
 * **Materials**
   * Cardboard large pieces (recycle!)
@@ -12,9 +12,9 @@ Make a Guitar Body for your micro:bit guitar
 
 ### ~
 ![TRACING VIDEO + PICTURES OF THE GUITAR MAKING]()
-## Design and Make the Guitar body and neck
+## Design and Make the Guitar body
 * Search for [Guitar Silhouette](https://www.bing.com/images/search?q=Guitar+Silhouettes) design ideas and customize
-a guitar shape
+the shape of your guitar
 * Trace the design on a flat piece of cardboard (40-80 cm is best)
    * *Tip:* avoid small details that are difficult to cut into cardboard
    * *Tip:* unfolding a box gives longer pieces of cardboard, and creases can be reinforced
