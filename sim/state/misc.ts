@@ -116,6 +116,12 @@ namespace pxsim.pins {
     }
 }
 
+namespace pxsim.devices {
+    export function onGamepadButton(button: number, body: RefAction) {
+
+    }
+}
+
 namespace pxsim.bluetooth {
     export function startIOPinService(): void {
         // TODO
