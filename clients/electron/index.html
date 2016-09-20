@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>code the micro:bit</title>
+  </head>
+  <body>
+    <webview id="webview" style="position:absolute; left:0; top:0; right:0; bottom:0"/>
+    <script>
+      const webview = document.getElementById("webview")
+      const url = `http://localhost:3232/${window.location.hash}`
+      webview.src = url
+    </script>
+  </body>
+</html>
