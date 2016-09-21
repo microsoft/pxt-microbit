@@ -32,6 +32,7 @@ basic.forever(() => {
 })
 ```
 VIDEO: ACCELEROMETER - MAP TO BEAT
+```blocks
 basic.forever(() => {
         music.setTempo(pins.map(Math.abs(input.acceleration(Dimension.Y)),
             0, 1023,
@@ -41,6 +42,7 @@ basic.forever(() => {
             music.beat(BeatFraction.Quater)
         );
 })
+```
 
 LIGHT SENSOR + ACCELEROMETER VIDEO
 
