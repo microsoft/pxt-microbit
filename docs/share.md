@@ -1,24 +1,39 @@
 # Sharing your project
 
-Once you have a cool project, it is possible to save it in the cloud and share it or embed it to your web site.
+Once you've made your project, you can save it the cloud, share it, or embed it on another website.
 
-### Instructions
+* Click **More...**, then **Embed Project**:
 
-* Click on **More...** then click **Embed Project...**
-* Click on the **Publish** button
+![Asks to embed](/static/embed/publish.png)
 
-The embed dialog will provide you with various options to embed your project in your web site.
+* Click **Publish project**. This will make the project publicly available
+* You will then see this information:
 
-### Project URL
+![Embedding information](/static/embed/embed-info.png)
 
-This URL will point to a web page that contains that project.
+## Sharing the URL
 
-* see the "happy" project: https://codethemicrobit.com/pyirlbpsei
+You can share the URL for the project ([https://codethemicrobit.com/httuftrbtg](https://codethemicrobit.com/httuftrbtg) above) with other people, and they will be able to visit that page to see your project, download it, or edit it:
 
-### Embedding into a blog or web site
+![Project page](/static/embed/project-page.png)
 
-* Copy the HTML and paste it into your HTML source.
+## Embedding into a blog or web site
 
+Rather than just sharing the link, you can also embed the project so that your visitors can use the simulator, edit blocks or code, or download the project without having to leave your site.
+
+### General instructions
+
+* Copy the HTML for embedding the page from the publish dialog. It will look like the following:
+
+```html
+<div class="ui card sim"><div class="ui content"><div style="position:relative;height:0;padding-bottom:70%;overflow:hidden;"><iframe style="position:absolute;top:0;left:0;width:100%;height:100%;" src="https://codethemicrobit.com/?sandbox=1#pub:httuftrbtg" allowfullscreen="allowfullscreen" frameborder="0"></iframe></div></div></div>
+```
+
+* Open the HTML editor for your blog or website and paste it with your content
+
+### Embedding in Markdown documents
+
+[Markdown](https://daringfireball.net/projects/markdown/) is a popular text format supported by many blog editors. As Markdown supports embedded HTML, you should be able to paste the HTML into the document, although some sites may prevent you from doing this.
 
 ### ~hint
 
