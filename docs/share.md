@@ -48,6 +48,15 @@ If you self host a Wordpress blog you can install the [iframe-plugin][] and then
 
 ![Blogger](/static/embed/blogger.png)
 
+### Squarespace
+
+[Squarespace][] allows you to embed HTML code inside a blog post or page. In the editor, click to add a new block:
+
+![Squarespace block insertion](/static/embed/squarespace-insert.png)
+
+Scroll to **More** and select **Code**. Paste the embed HTML and click **Apply**:
+
+![Squarespace code insertion](/static/embed/squarespace-code.png)
 
 ### Embedding in Markdown documents
 
@@ -62,4 +71,5 @@ If you self host a Wordpress blog you can install the [iframe-plugin][] and then
 [wordpress.com]: https://wordpress.com
 [wordpress-vip]: https://vip.wordpress.com/documentation/embedding-rich-media-from-around-the-web-with-protected-embeds/#scripts-iframes-and-objects
 [iframe-plugin]: https://wordpress.org/plugins/iframe/
+[squarespace]: https://squarespace.com
 [Markdown]: https://daringfireball.net/projects/markdown/
