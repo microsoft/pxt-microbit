@@ -58,6 +58,10 @@ Scroll to **More** and select **Code**. Paste the embed HTML and click **Apply**
 
 ![Squarespace code insertion](/static/embed/squarespace-code.png)
 
+### Google Sites
+
+Google Sites doesn't currently [support iframes in custom HTML][google-sites-iframes], so you'll have to insert a link to your project's URL instead.
+
 ### Embedding in Markdown documents
 
 [Markdown][] is a popular text format supported by many blog editors. As Markdown supports embedded HTML, you should be able to paste the HTML into the document, although some sites may prevent you from doing this.
@@ -72,4 +76,5 @@ Scroll to **More** and select **Code**. Paste the embed HTML and click **Apply**
 [wordpress-vip]: https://vip.wordpress.com/documentation/embedding-rich-media-from-around-the-web-with-protected-embeds/#scripts-iframes-and-objects
 [iframe-plugin]: https://wordpress.org/plugins/iframe/
 [squarespace]: https://squarespace.com
+[google-sites-iframes]: https://support.google.com/sites/answer/2500646?hl=en
 [Markdown]: https://daringfireball.net/projects/markdown/
