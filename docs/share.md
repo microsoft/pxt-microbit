@@ -66,6 +66,10 @@ Google Sites doesn't currently [support iframes in custom HTML][google-sites-ifr
 
 [Markdown][] is a popular text format supported by many blog editors. As Markdown supports embedded HTML, you should be able to paste the HTML into the document, although some sites may prevent you from doing this.
 
+### Office Sway
+
+[Microsoft Office Sway][sway] only allows iframes from [certain websites][sway-restricted], so you'll need to insert a link to your project instead.
+
 ### ~hint
 
 **Developers:** This page supports OEmbed as well 
@@ -77,4 +81,6 @@ Google Sites doesn't currently [support iframes in custom HTML][google-sites-ifr
 [iframe-plugin]: https://wordpress.org/plugins/iframe/
 [squarespace]: https://squarespace.com
 [google-sites-iframes]: https://support.google.com/sites/answer/2500646?hl=en
+[sway]: https://sway.com/my
+[sway-restricted]: https://support.office.com/en-us/article/Embed-content-in-your-Sway-1e1ab12a-f961-4a26-8afc-77a15f892b1d
 [Markdown]: https://daringfireball.net/projects/markdown/
