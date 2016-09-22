@@ -41,6 +41,14 @@ If you self host a Wordpress blog you can install the [iframe-plugin][] and then
 [iframe src="https://codethemicrobit.com/?sandbox=1#pub:httuftrbtg"]
 ```
 
+### Blogger
+
+* Create a new post
+* Click the 'HTML' button next to 'Compose' and paste in the HTML
+
+![Blogger](/static/embed/blogger.png)
+
+
 ### Embedding in Markdown documents
 
 [Markdown][] is a popular text format supported by many blog editors. As Markdown supports embedded HTML, you should be able to paste the HTML into the document, although some sites may prevent you from doing this.
@@ -50,6 +58,7 @@ If you self host a Wordpress blog you can install the [iframe-plugin][] and then
 **Developers:** This page supports OEmbed as well 
 
 ### ~
+
 [wordpress.com]: https://wordpress.com
 [wordpress-vip]: https://vip.wordpress.com/documentation/embedding-rich-media-from-around-the-web-with-protected-embeds/#scripts-iframes-and-objects
 [iframe-plugin]: https://wordpress.org/plugins/iframe/
