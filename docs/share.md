@@ -31,12 +31,26 @@ Rather than just sharing the link, you can also embed the project so that your v
 
 * Open the HTML editor for your blog or website and paste it with your content
 
+### Wordpress
+
+[wordpress.com][] blogs do not support embedding content from most websites, so you will need to link to your project instead. Alternatively, if you have a Wordpress VIP account you can follow [these instructions][wordpress-vip] to embed an `iframe` into your blog. The URL that you need to add is like `https://codethemicrobit.com/?sandbox=1#pub:httuftrbtg`, but replace `httuftrbtg` with your project's unique identifier.
+
+If you self host a Wordpress blog you can install the [iframe-plugin][] and then write the following in your blog-post (again, replacing the `httuftrbtg` with your project's identifier):
+
+```
+[iframe src="https://codethemicrobit.com/?sandbox=1#pub:httuftrbtg"]
+```
+
 ### Embedding in Markdown documents
 
-[Markdown](https://daringfireball.net/projects/markdown/) is a popular text format supported by many blog editors. As Markdown supports embedded HTML, you should be able to paste the HTML into the document, although some sites may prevent you from doing this.
+[Markdown][] is a popular text format supported by many blog editors. As Markdown supports embedded HTML, you should be able to paste the HTML into the document, although some sites may prevent you from doing this.
 
 ### ~hint
 
 **Developers:** This page supports OEmbed as well 
 
 ### ~
+[wordpress.com]: https://wordpress.com
+[wordpress-vip]: https://vip.wordpress.com/documentation/embedding-rich-media-from-around-the-web-with-protected-embeds/#scripts-iframes-and-objects
+[iframe-plugin]: https://wordpress.org/plugins/iframe/
+[Markdown]: https://daringfireball.net/projects/markdown/
