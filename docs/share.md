@@ -62,13 +62,12 @@ Scroll to **More** and select **Code**. Paste the embed HTML and click **Apply**
 
 Google Sites doesn't currently [support iframes in custom HTML][google-sites-iframes], so you'll have to insert a link to your project's URL instead.
 
-### Embedding in Markdown documents
-
-[Markdown][] is a popular text format supported by many blog editors. As Markdown supports embedded HTML, you should be able to paste the HTML into the document, although some sites may prevent you from doing this.
-
 ### Office Sway
 
 [Microsoft Office Sway][sway] only allows iframes from [certain websites][sway-restricted], so you'll need to insert a link to your project instead.
+### Embedding in Markdown documents
+
+[Markdown][] is a popular text format supported by many blog editors. As Markdown supports embedded HTML, you should be able to paste the HTML into the document, although some sites may prevent you from doing this.
 
 ### ~hint
 
