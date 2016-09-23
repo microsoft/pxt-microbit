@@ -3,22 +3,16 @@
 
 ### ~avatar avatar
 Use Button Events to control LED Display and play Sound  
-* **Duration:** 30 - 45 minutes
-* **Materials:**
-  * Micro:bit (USB cable to attach micro:bit to computer)
-  * Headphones (ear buds work great)
-  * 2 Crocodile cables  
 * **Concepts:**
      * Events
      * Tone/Note
      * Sequence
-* **Resources:**
-  * [Smiley Buttons tutorial](/projects/smiley-buttons)
-  * [Hack your headphones](/projects/hack-your-headphones)
 
 ### ~
 
 ![SMILEY VIDEO]()
+
+## Duration: 30 - 45 minutes
 
 ## Materials
 
@@ -176,6 +170,12 @@ input.onButtonPressed(Button.B, () => {
 ### Congratulations on completing the basic guitar!   
 **Challenge:** Create Samples of longer music to play for each button instead of the single tone.
   - *Tip*: Search for "ABC music notation" or "Easy Music Notes" + the name of a song
+
+## Extra
+
+  * [Smiley Buttons tutorial](/projects/smiley-buttons)
+  * [Hack your headphones](/projects/hack-your-headphones)
+
 
 ### ~button /projects/guitar/light-sensor
 NEXT: Light Sensor Tone Control

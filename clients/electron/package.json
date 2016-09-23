@@ -1,19 +1,14 @@
 {
-  "name": "codethemicrobit",
-  "version": "0.1.0",
-  "description": "A Blocks / JavaScript editor for the micro:bit",
-  "main": "main.js",
-  "scripts": {
-    "start": "electron ."
-  },
+  "name"    : "code-the-microbit",
+  "version" : "1.0.0",
+  "description": "Blocks / Javascript editor",
   "author": "Microsoft",
-  "license": "MIT",
-  "devDependencies": {
-    "electron-prebuilt": "^1.2.0"
+  "main"    : "main.js",
+  "scripts": {
+      "start": "node_modules/.bin/electron ."
   },
-  "dependencies": {
-    "typescript": "1.8.7",
-    "pxt-core": "*",
-    "pxt-microbit": "*"
+  "devDependencies": {
+      "electron": "*",
+      "pxt-microbit": "*"
   }
 }

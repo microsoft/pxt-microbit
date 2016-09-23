@@ -44,7 +44,7 @@ let hero = game.createSprite(2, 2);
 let food = game.createSprite(4, 4);
 let ghost = game.createSprite(0, 0);
 ghost.change(LedSpriteProperty.Blink, 100);
-food = led.brightness() == 8;
+food.set(LedSpriteProperty.Brightness, 8);
 
 ```
 
@@ -56,7 +56,7 @@ let hero = game.createSprite(2, 2);
 let food = game.createSprite(4, 4);
 let ghost = game.createSprite(0, 0);
 ghost.change(LedSpriteProperty.Blink, 100);
-food = led.brightness() == 8;
+food.set(LedSpriteProperty.Brightness, 8);
 while (true) {
     basic.pause(400);
 }
@@ -73,7 +73,7 @@ let hero = game.createSprite(2, 2);
 let food = game.createSprite(4, 4);
 let ghost = game.createSprite(0, 0);
 ghost.change(LedSpriteProperty.Blink, 100);
-food = led.brightness() == 8;
+food.set(LedSpriteProperty.Brightness, 8);
 while (true) {
     basic.pause(400);
     if (ghost.get(LedSpriteProperty.X) < hero.get(LedSpriteProperty.X)) {
@@ -99,7 +99,7 @@ let hero = game.createSprite(2, 2);
 let food = game.createSprite(4, 4);
 let ghost = game.createSprite(0, 0);
 ghost.change(LedSpriteProperty.Blink, 100);
-food = led.brightness() == 8;
+food.set(LedSpriteProperty.Brightness, 8);
 while (true) {
     basic.pause(400);
     if (ghost.get(LedSpriteProperty.X) < hero.get(LedSpriteProperty.X)) {
@@ -127,7 +127,7 @@ let hero = game.createSprite(2, 2);
 let food = game.createSprite(4, 4);
 let ghost = game.createSprite(0, 0);
 ghost.change(LedSpriteProperty.Blink, 100);
-food = led.brightness() == 8;
+food.set(LedSpriteProperty.Brightness, 8);
 while (true) {
     basic.pause(400);
     if (ghost.get(LedSpriteProperty.X) < hero.get(LedSpriteProperty.X)) {
@@ -164,7 +164,7 @@ let hero = game.createSprite(2, 2);
 let food = game.createSprite(4, 4);
 let ghost = game.createSprite(0, 0);
 ghost.change(LedSpriteProperty.Blink, 100);
-food = led.brightness() == 8;
+food.set(LedSpriteProperty.Brightness, 8);
 while (true) {
     basic.pause(400);
     if (ghost.get(LedSpriteProperty.X) < hero.get(LedSpriteProperty.X)) {
@@ -212,7 +212,7 @@ let hero = game.createSprite(2, 2);
 let food = game.createSprite(4, 4);
 let ghost = game.createSprite(0, 0);
 ghost.change(LedSpriteProperty.Blink, 100);
-food = led.brightness() == 8;
+food.set(LedSpriteProperty.Brightness, 8);
 while (true) {
     basic.pause(400);
     if (ghost.get(LedSpriteProperty.X) < hero.get(LedSpriteProperty.X)) {
