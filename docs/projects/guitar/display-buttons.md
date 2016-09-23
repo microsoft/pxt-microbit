@@ -67,7 +67,7 @@ music.beat(BeatFraction.Quater)
         . # # # .
         `);
 ```  
-* Connect your microbit to your compiler and click ``Download``. Follow the instructions to move the code to your microbit.
+* Connect your micro"bit to your compiler and click ``Download``. Follow the instructions to move the code to your micro:bit.
 
 ![](/static/mb/projects/guitar/connectmicrobit.jpg)
 
