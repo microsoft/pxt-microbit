@@ -18,10 +18,26 @@ Use Button Events to control LED Display and play Sound
 ### ~
 ![SMILEY VIDEO]()
 
+## Materials
+
+* A micro:bit, battery pack and 2 x AAA batteries
+
+![](/static/mb/projects/guitar/microbit.jpg)
+
+* 2 to 4 crocodile clips
+
+![](/static/mb/projects/guitar/crocclips.jpg)
+
+* Headphones
+
+![](/static/mb/projects/guitar/headphones.jpg)
+
 ### Make a Smiley
-1) Open the [block editor](https://codethemicrobit.com) 
+
+1) Open [codethemicrobit.com](https://codethemicrobit.com) in your web browser
 2) Under **Basics**, drag a **show leds** block into the coding area
 3) Create a face with leds  
+
 ```blocks
     basic.showLeds(`
         . # . # .
@@ -31,12 +47,18 @@ Use Button Events to control LED Display and play Sound
         . # # # .
         `);
 ```  
+* Connect your microbit to your compiler and click ``Download``. Follow the instructions to move the code to your microbit.
+
+![](/static/mb/projects/guitar/connectmicrobit.jpg)
+
 ![GUITAR BUTTON VIDEO]()
+
 ### Add Smiley LED Button Events  
 4) Under **Input**, drag an **on button 'A' pressed** block into the coding area
 5) Snap the LED face into the block
 6) Create a 'B' button block with a different LED face 
 7) Download the code to your micro:bit and try the A & B buttons
+
 ```blocks
 input.onButtonPressed(Button.A, () => {
     basic.showLeds(`
@@ -59,11 +81,23 @@ input.onButtonPressed(Button.B, () => {
 ```
 
 ![CROC-CLIP VIDEO]() 
+
 ### Add Headphone Speakers using Crocodile clips
+
+
+![](/static/mb/projects/guitar/crocclipintoboard.jpg)
+
 8) Connect **pin 0** to the **tip of the headphone jack** with a crocodile clip
 9) Connect **GND** to the **base of the headphone jack** using a second crocodile clip (usually black) 
+
+
+![](/static/mb/projects/guitar/jacktocrocs.jpg)
+
 10) Connect the battery Power Supply to the micro:bit (or connect via USB)
+
+
 ### Add Tone Playing Events for Buttons A & B
+
 The **play tone** block allows a range letter note tones from **C** to **B5**.  Songs are played using a sequence of these notes.
   Like the beginning of a birthday song (C, C, D, C, F, E).
 ```blocks
