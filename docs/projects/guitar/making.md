@@ -4,25 +4,24 @@
 ### ~avatar avatar
 Make the Guitar Body for your micro:bit Guitar
 * **Duration:** ~45 minutes
-* **Materials**
+
+### ~
+
+## Materials
   * Cardboard large pieces (recycle!)
   * Tape (masking, duct Tape, and/or packing tape)
   * Scissors that can cut cardboard  
   * Markers and/or paint  
 
-### ~
-
-
 ![](/static/mb/projects/guitar/materials.jpg)
-
-
-![TRACING VIDEO + PICTURES OF THE GUITAR MAKING]()
 
 ## Design and Make the Guitar body
 
 * Search for [Guitar Silhouette](https://www.bing.com/images/search?q=Guitar+Silhouettes) design ideas and customize
 the shape of your guitar
 * Trace the design on a flat piece of cardboard (40-80 cm is best)
+
+![TRACING VIDEO]()
 
 ### ~hint
 
@@ -31,24 +30,27 @@ the shape of your guitar
 
 ### ~
 
-![CUTTING VIDEO]()
+
+https://youtu.be/aUQkrFoEank
+
 
 ## Personalize the Guitar
 
-* Strengthen the guitar and create unique styling using tape
+Create unique styling using tape, markers, paint and other available materials (*calling all artist!*) 
 
-![TAPE VIDEO]()
+https://youtu.be/zNAZTJeSxY8
 
-* Finish design using markers, paint and other available materials (*calling all artist!*) 
+Everyone can come up with its own design!
 
 ![](/static/mb/projects/guitar/otherdesigns.jpg)
 
 
 ## Further improvements
 
-* Strengthen the guitar next with an angled cardboard strip (*optional*)  
+Strengthen the guitar next with an angled cardboard strip (*optional*).
 
-![HARDENNING VIDEO]()
+https://youtu.be/q0GkQdJmxjE
+
 
 ### ~button /projects/guitar/display-buttons
 NEXT: Buttons, Display and Sound

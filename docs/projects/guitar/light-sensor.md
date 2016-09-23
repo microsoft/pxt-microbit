@@ -16,7 +16,9 @@ Use the Light Sensor to control guitar Tone
 
 ### ~
 
-![LIGHT SENSOR VIDEO]()
+https://youtu.be/pqU7bTcfQ_s
+
+https://youtu.be/2cKg9pokVC4
 
 ### The micro:bit LEDs Light Sensors 
 

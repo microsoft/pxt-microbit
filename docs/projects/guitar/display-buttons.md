@@ -107,18 +107,17 @@ input.onButtonPressed(Button.B, () => {
 
 ### Add Headphone Speakers using Crocodile clips
 
-
 ![](/static/mb/projects/guitar/crocclipintoboard.jpg)  
 
-1) Connect **pin 0** to the **tip of the headphone jack** with a crocodile clip  
-
-2) Connect **GND** to the **base of the headphone jack** using a second crocodile clip (usually black)  
-
+1) Connect **GND** to the **base of the headphone jack** using a second crocodile clip (usually black)  
+2) Connect **pin 0** to the **tip of the headphone jack** with a crocodile clip  
 
 ![](/static/mb/projects/guitar/jacktocrocs.jpg)
 
 3) Connect the battery Power Supply to the micro:bit (or connect via USB)  
 
+https://youtu.be/zwRTmpKIaVU
+https://youtu.be/ewyEW_U5G9M
 
 ### Add Tone Playing Events for Buttons A & B
 

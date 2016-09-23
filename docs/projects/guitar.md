@@ -16,7 +16,8 @@ Make a micro:bit guitar with this guided tutorial!
   * 4-5 Crocodile clips
   * Headphones
 ### ~
-![VIDEO OF THE FINISHED  PROJECT]()
+
+https://youtu.be/GYmdTFvxz80
 
 ## Detailed Project Activities  
 * [Making the Guitar Body](/projects/guitar/making)
