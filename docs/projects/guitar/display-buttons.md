@@ -13,8 +13,8 @@ Use Button Events to control LED Display and play Sound
      * Tone/Note
      * Sequence
 * **Resources:**
-  * [Smiley Buttons tutorial](docs/projects/smiley-buttons)
-  * [Hack your headphones](docs/projects/hack-your-headphones)
+  * [Smiley Buttons tutorial](/projects/smiley-buttons)
+  * [Hack your headphones](/projects/hack-your-headphones)
 
 ### ~
 
