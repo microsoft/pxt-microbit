@@ -3,6 +3,7 @@
 ### @description micro:bit guitar: using accelerometer to control tempo
 
 ### ~avatar avatar
+
 Use the Accelerometer to control guitar tempo
 * Duration: 30 - 45 minutes
 * Concepts:
@@ -12,11 +13,22 @@ Use the Accelerometer to control guitar tempo
      * Tempo
      * Beat
      * Graphing
-* **Resources:**
-  * [micro:bit Acceleration input block](/reference/input/acceleration)
+
 ### ~
+
 ![VIDEO: ACCELEROMETER PLOT]()
+
+### Blocks
+
+```cards
+input.acceleration(Dimension.Y)
+music.setTempo(120)
+pins.map(0, 0, 1023,60, 320)
+Math.abs(1)            
+```
+
 ### Measuring Acceleration along different coordinates (X, Y, Z axis)
+
 The acceleration block measures with **milli-g**, which is 1/1000 of a **g** or the 
 acceleration of gravity.  
 
@@ -26,10 +38,12 @@ The acceleration can be in different directions for the micro:bit, moving along 
 - **A** to **B** button
 - **plugs** to **pins**
 -moving 
+
 ```blocks
 basic.forever(() => {
     led.plotBarGraph(input.acceleration(Dimension.Y), 1023)
 })
+
 ```
 VIDEO: ACCELEROMETER - MAP TO BEAT
 ```blocks

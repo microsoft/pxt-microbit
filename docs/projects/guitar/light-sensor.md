@@ -3,6 +3,7 @@
 ### @description micro:bit guitar: using light sensor to control tone
 
 ### ~avatar avatar
+
 Use the Light Sensor to control guitar Tone
 * **Duration:** 30 - 45 minutes
 * **Concepts:**
@@ -12,19 +13,32 @@ Use the Light Sensor to control guitar Tone
      * Ratio Mapping
      * Forever Loop
      * Math (multiplication) with code properties  
-* **Resources:**
-  * [micro:bit Light Level input block](/reference/input/light-level)
-  * [micro:bit Frequency & Tone blocks](/reference/music/play-tone)
-  * [Forever Loop blocks](/reference/basic/forever)
+
 ### ~
+
 ![LIGHT SENSOR VIDEO]()
+
 ### The micro:bit LEDs Light Sensors 
+
 - the micro:bit can detect external light level intensity reaching the LEDs 
 - the light level block reports a reading of values 0 (*dark*) to 255 (*bright*)
 - a **Forever Loop** is required to continually use the current light level input value 
+
 ### Forever Loop
+
 The forever loop really does run forever.  The forever loop is useful when there is a need to continually check for an event or use a changing value in code.
+
+### Blocks
+
+```cards
+basic.forever(() => {})
+input.lightLevel()
+led.plotBarGraph(0, 255)
+music.playTone(Note.C, music.beat(BeatFraction.Quater))
+```
+
 ### Create a light level detector
+
 1) Under **Basic** drag a **forever loop** block into the coding area
 2) Under **Led** drag a **plot bar graph** block into the **forever loop**
 3) Under **Input** drag a **light level** block into **plot bar graph *of*** 

@@ -15,7 +15,9 @@ Use Button Events to control LED Display and play Sound
 * **Resources:**
   * [Smiley Buttons tutorial](docs/projects/smiley-buttons)
   * [Hack your headphones](docs/projects/hack-your-headphones)
+
 ### ~
+
 ![SMILEY VIDEO]()
 
 ## Materials
@@ -31,6 +33,22 @@ Use Button Events to control LED Display and play Sound
 * Headphones
 
 ![](/static/mb/projects/guitar/headphones.jpg)
+
+### Blocks
+
+```cards
+    basic.showLeds(`
+        . # . # .
+        . . . . .
+        . # # # .
+        . # . # .
+        . # # # .
+        `);
+input.onButtonPressed(Button.A, () => {});
+music.playTone(Note.C, music.beat(BeatFraction.Quater))
+music.rest(music.beat(BeatFraction.Whole))
+music.beat(BeatFraction.Quater)
+```
 
 ### Make a Smiley
 

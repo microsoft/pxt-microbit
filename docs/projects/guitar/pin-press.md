@@ -16,6 +16,16 @@ Use pin press to switch guitar play on/off
 
 ![PIN PRESSED DEMO VIDEO]()
 
+
+### Blocks
+
+```cards
+var on = false
+on;
+if (on) { } else {}
+input.onPinPressed(TouchPin.P1, () => {})
+```
+
 Final code
 ```blocks
 var on = false
