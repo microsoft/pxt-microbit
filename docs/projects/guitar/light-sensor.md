@@ -13,6 +13,8 @@ Use the Light Sensor to control guitar Tone
      * Ratio Mapping
      * Forever Loop
      * Math (multiplication) with code properties  
+* **Resources:**
+     * This guitar is inspired by the [Theremin](https://en.wikipedia.org/wiki/Theremin)
 
 ### ~
 

@@ -14,7 +14,7 @@ Use pin press to switch guitar play on/off
     * Conditional: **`if`**, **`else`**  
 ### ~
 
-https://youtu.be/PAIU-vHqyGU
+https://youtu.be/PAIU-vHqyGU TODO: fix link - broken in emulator
 
 https://youtu.be/NX0ECcpXFes
 
