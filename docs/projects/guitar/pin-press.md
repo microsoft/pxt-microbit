@@ -15,7 +15,11 @@ Use pin press to switch guitar play on/off
 ### ~
 
 ![PIN PRESSED DEMO VIDEO]()
+### Circuits & Switches
+* **Circuits** need a power supply (battery), a resister (like an LED) and a conductor (metal, water, or...?)
+* **Switches** turn electric power on by closing the connection with a conductor so power can flow.   
 
+Metal foil and wires make excellent conductors. In this activity we will turn the guitar ON using **you** to conduct electricity to close the circuit!
 
 ### Blocks
 
