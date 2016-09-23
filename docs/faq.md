@@ -18,7 +18,8 @@ to reopen your latest project. You can also open previous project stored locally
 
 The project source is also stored in each compiled ``.hex`` file. Drag and drop the ``.hex`` file into the web editor to load the project.
 
-To share your project with others, you can use the **Embed** feature. It stores your project in the cloud and creates a URL that you can share with others.
+To share your project with others, you can use the [Embed Project...](/share). 
+It stores your project in the cloud and creates a URL that you can share with others.
 
 If you are using [Visual Studio Code](/code), all your programs are stored as files on your computer and you can use your favorite source control system as needed.
 

@@ -1,67 +1,39 @@
-const electron = require('electron')
-// Module to control application life.
-const app = electron.app
-// Module to create native browser window.
-const BrowserWindow = electron.BrowserWindow
-// pxt toolchain
+const {app, BrowserWindow, Menu} = require('electron')
 const pxt = require('pxt-core')
+const path = require('path')
 
-// Keep a global reference of the window object, if you don't, the window will
-// be closed automatically when the JavaScript object is garbage collected.
-let mainWindow
+let win
 
-function createWindow() {
-  console.log('starting app...')
-  // Create the browser window.
-  mainWindow = new BrowserWindow({
-    width: 800, height: 600,
-    webPreferences: {
-      nodeIntegration: false,
-    }
+const cliPath = path.join(process.cwd(), "node_modules/pxt-microbit") 
+
+function startServerAndCreateWindow() {
+  pxt.mainCli(cliPath, ["serve", "-no-browser"])
+  createWindow()
+}
+
+function createWindow () {
+  win = new BrowserWindow({
+    width: 800,
+    height: 600,
+    title: "code the micro:bit"
   })
-
-  ts.pxt.Util.debug = true;
-  pxt.mainCli("C:/gh/pxt-microbit/clients/electron/node_modules/pxt-microbit", ["serve", "-just"]);
-  
-  // no menu
-  mainWindow.setMenu(null);
-
-  // and load the index.html of the app.
-  mainWindow.loadURL(`http://localhost:3232/#local_token=08ba9b8f-6ccb-4202-296d-28fac7a553d9`)
-
-  // Open the DevTools.
-  mainWindow.webContents.openDevTools()
-
-  // Emitted when the window is closed.
-  mainWindow.on('closed', function () {
-    // Dereference the window object, usually you would store windows
-    // in an array if your app supports multi windows, this is the time
-    // when you should delete the corresponding element.
-    mainWindow = null
+  Menu.setApplicationMenu(null)
+  win.loadURL(`file://${__dirname}/index.html#local_token=${pxt.globalConfig.localToken}`)
+  win.on('closed', () => {
+    win = null
   })
 }
 
-// This method will be called when Electron has finished
-// initialization and is ready to create browser windows.
-// Some APIs can only be used after this event occurs.
-app.on('ready', createWindow)
+app.on('ready', startServerAndCreateWindow)
 
-// Quit when all windows are closed.
-app.on('window-all-closed', function () {
-  // On OS X it is common for applications and their menu bar
-  // to stay active until the user quits explicitly with Cmd + Q
+app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
     app.quit()
   }
 })
 
-app.on('activate', function () {
-  // On OS X it's common to re-create a window in the app when the
-  // dock icon is clicked and there are no other windows open.
-  if (mainWindow === null) {
+app.on('activate', () => {
+  if (win === null) {
     createWindow()
   }
 })
-
-// In this file you can include the rest of your app's specific main process
-// code. You can also put them in separate files and require them here.

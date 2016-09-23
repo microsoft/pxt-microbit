@@ -21,6 +21,7 @@
 ### More questions?
 
 * [Frequently Asked Question](/faq)
+* [Embedding project](/share)
 * [Help Translate](/translate)
 * [Release notes](/release-notes)
 

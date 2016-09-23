@@ -99,3 +99,6 @@ latest version of OS X then you'll be using the latest version of Safari.
 * Click 'About Safari'
 
 ![](/static/configurations/safari-version.png)
+
+IT administrators should check which browser versions are supported
+[here](/browsers/technical).
