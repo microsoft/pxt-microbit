@@ -16,7 +16,9 @@ Use the Accelerometer to control guitar tempo
 
 ### ~
 
-![VIDEO: ACCELEROMETER PLOT]()
+https://youtu.be/0SULoTKmkhI
+
+https://youtu.be/h_gPkBaVkoo
 
 ### Blocks
 
