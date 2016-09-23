@@ -14,8 +14,11 @@ Use pin press to switch guitar play on/off
     * Conditional: **`if`**, **`else`**  
 ### ~
 
-![PIN PRESSED DEMO VIDEO]()
+https://youtu.be/PAIU-vHqyGU
 
+https://youtu.be/NX0ECcpXFes
+
+https://youtu.be/YkymZGNmkrE
 
 ### Blocks
 
