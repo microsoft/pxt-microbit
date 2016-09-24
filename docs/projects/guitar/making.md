@@ -19,11 +19,11 @@ Make the Guitar Body for your micro:bit Guitar
 
 ## Step 1: Design the body
 
+https://youtu.be/xMSrWaOZkFg
+
 * Search for [Guitar Silhouette](https://www.bing.com/images/search?q=Guitar+Silhouettes) design ideas and customize
 the shape of your guitar
 * Trace the design on a flat piece of cardboard (40-80 cm is best)
-
-![TRACING VIDEO]()
 
 ### ~hint
 
@@ -47,13 +47,11 @@ Everyone can come up with its own design!
 
 ![](/static/mb/projects/guitar/otherdesigns.jpg)
 
-
 ## Extra!
-
-Strengthen the guitar next with an angled cardboard strip (*optional*).
 
 https://youtu.be/q0GkQdJmxjE
 
+Strengthen the guitar next with an angled cardboard strip (*optional*).
 
 ### ~button /projects/guitar/display-buttons
 NEXT: Buttons, Display and Sound
