@@ -12,6 +12,7 @@ Use the Accelerometer to control guitar tempo
      * X, Y, Z coordinates
      * Tempo
      * Beat
+     * Mapping
      * Graphing
 
 ### ~
@@ -35,10 +36,8 @@ The acceleration block measures with **milli-g**, which is 1/1000 of a **g** or 
 acceleration of gravity.  
 
 Whenever the micro:bit changes direct there is an acceleration (change in velocity).  
-The acceleration can be in different directions for the micro:bit, moving along a line:
-- **face** to **back**
-- **A** to **B** button
-- **plugs** to **pins**
+The acceleration can be in different directions for the micro:bit, moving in 3 dimensions
+![micro:bit x, y, z axis image](/static/mb/projects/guitar/accelleration_axis.png)
 -moving 
 
 ```blocks

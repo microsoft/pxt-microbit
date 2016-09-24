@@ -24,13 +24,12 @@ https://youtu.be/GYmdTFvxz80
 * 4-5 Crocodile clips
 * Headphones
 
-## Activites
-
-* [Making the Guitar Body](/projects/guitar/making)
-* [Buttons, Display & Sound](/projects/guitar/display-buttons)
-* [Light Sensor Tone control](projects/guitar/light-sensor)
-* [Accelerometer Beat control](projects/guitar/accelerometer)
-* [Light Sensor + Accelerometer](projects/guitar/light-accelerometer)
+## Activities
+* [Making the Guitar Body](/projects/guitar/making)  
+* [Buttons, Display & Sound](/projects/guitar/display-buttons)  
+* [Light Sensor Tone control](projects/guitar/light-sensor)  
+* [Accelerometer Beat control](projects/guitar/accelerometer)  
+* [Light Sensor and Accelerometer](projects/guitar/light-accelerometer)  
 * [Pin Press Switch](projects/guitar/pin-press)  
 
 ### ~button /projects/guitar/making
