@@ -115,7 +115,7 @@ enum BeatFraction {
     //% block="1/2"
     Half = 2,
     //% block="1/4"
-    Quater = 4,
+    Quarter = 4,
     //% block="1/8"
     Eighth = 8,
     //% block="1/16"
@@ -192,7 +192,7 @@ namespace music {
         let beat = 60000 / beatsPerMinute;
         if (fraction == BeatFraction.Whole) return beat;
         else if (fraction == BeatFraction.Half) return beat / 2;
-        else if (fraction == BeatFraction.Quater) return beat / 4
+        else if (fraction == BeatFraction.Quarter) return beat / 4
         else if (fraction == BeatFraction.Eighth) return beat / 8;
         else return beat / 16;
     }
