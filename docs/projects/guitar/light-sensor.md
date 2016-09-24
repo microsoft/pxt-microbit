@@ -43,12 +43,19 @@ music.playTone(Note.C, music.beat(BeatFraction.Quater))
 
 ### Create a light level detector
 
-1) Under **Basic** drag a **forever loop** block into the coding area
-2) Under **Led** drag a **plot bar graph** block into the **forever loop**
-3) Under **Input** drag a **light level** block into **plot bar graph *of*** 
-4) Set **plot bar graph *up to*** value at **255**
-5) Test the bar graph height by blocking and shining more light
-6) Experiment to see the effect on graph height when the **plot bar graph *up to*** value is changed (try numbers smaller than 255). Find a value that allow the graph to show each of the light levels.
+1) Under **Basic** drag a **forever loop** block into the coding area  
+
+2) Under **Led** drag a **plot bar graph** block into the **forever loop**  
+
+3) Under **Input** drag a **light level** block into **plot bar graph *of***  
+
+4) Set **plot bar graph *up to*** value at **255**  
+
+5) Test the bar graph height by blocking and shining more light  
+
+6) Experiment to see the effect on graph height when the **plot bar graph *up to*** value is changed (try numbers smaller than 255). 
+Find a value that allow the graph to show each of the light levels.  
+
 ```blocks
 basic.forever(() => {
     led.plotBarGraph(input.lightLevel(), 255)
@@ -67,8 +74,10 @@ A healthy human ear can detect frequencies in the range of 20Hz to 20,000Hz.
 music.playTone(261, music.beat(BeatFraction.Half))
 ```
 #### Multiply Frequency using Math blocks
-7) create a **play tone** block using a **Math** section, **multiplication** block to set *tone*
-8) Download the code to the micro:bit and test the sound of multiples of the 261Hz **C** frequency  
+1) create a **play tone** block using a **Math** section, **multiplication** block to set *tone*  
+
+2) Download the code to the micro:bit and test the sound of multiples of the 261Hz **C** frequency  
+
 (*Tip: also create a **B** button block that uses a different multiplier to set tone*)
  ```blocks
 input.onButtonPressed(Button.A, () => {
@@ -76,11 +85,13 @@ input.onButtonPressed(Button.A, () => {
 })
 ```
 #### Control the Frequency with the light input
-9) Create a **forever loop** with a **play tone** block
-10) Use a **Math** multiplication block to set tone, with light level input multiplied by 25 
-(or experiment)
-11) Test on the guitar by covering the LEDs with your hand to vary the light that is measured 
-and controls the tone
+1) Create a **forever loop** with a **play tone** block  
+
+2) Use a **Math** multiplication block to set tone, with light level input multiplied by 25 
+(or experiment)  
+
+3) Test on the guitar by covering the LEDs with your hand to vary the light that is measured 
+and controls the tone  
 
 ```blocks
 basic.forever(() => {
