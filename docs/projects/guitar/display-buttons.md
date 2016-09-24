@@ -156,9 +156,11 @@ From **Music**, drag **play tone *C* for *1* beat** block under the **show leds*
   * modify **tone** by choosing a note (*letter*) and experiment with high and low pitches  
   * set **beat** to 1  
    
-Repeat for **Button B** event  
+**Repeat** for **Button B** event  
   
-Download the code to the micro:bit. Try the A & B buttons with headphones and power connected.  
+**Load the code** to the micro:bit  
+
+**Try the A & B buttons** with headphones and power connected
   
 ## Congratulations on completing the basic guitar!   
 **Challenge:** Create Samples of longer music to play for each button instead of the single tone

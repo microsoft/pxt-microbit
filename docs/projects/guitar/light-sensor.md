@@ -52,54 +52,64 @@ basic.forever(() => {
   * From **Led** drag a **plot bar graph** block into the **forever loop**  
   * From **Input** drag a **light level** block into **plot bar graph *of***  
   
-Set the **plot bar graph** value ***up to*** = **255**  
+**Set the *plot bar graph* value *up to* = *255* **  
 
 ## Step 2: Test the light required to move the bar graph height   
 https://youtu.be/pqU7bTcfQ_s  
 Experiment to see the effect on graph height when the **plot bar graph** value ***up to*** is changed  
 
-**255 is the maximum light input reading**, try numbers smaller than 255 to **find a value** that allows the graph to show 1 - 5 bars.  
+**255 is the maximum light input reading**, try numbers smaller than 255 
+**Find a value** that allows the graph to show 1 - 5 bars  
+
 ### ~hint
 ### Frequency  
 **Frequency** measured in Hz  which are cycles per second or vibrations per second  
   * A healthy human ear can detect frequencies in the range of 20Hz to 20,000Hz.  
-  * The micro:bit + headphones reliably produce detectable output ~50Hz - 6,000Hz.
+  * The micro:bit + headphones reliably produce detectable output ~50Hz - 6,000Hz.  
 
-**play tone** blocks can specify a specific **Frequency** by replacing the letter note  
-with a **number** block located under **Math**)  
-### ~  
-  
-## Step 3: Create a light controlled guitar Frequency tuner using Math blocks
-  
-261Hz represents a C note
+**261Hz** represents a C note
 ```blocks
 music.playTone(261, music.beat(BeatFraction.Half))
 ```
-### Multiply Frequency using Math blocks
+**play tone** blocks can specify a specific numeric  **Frequency**   
+by replacing the letter note 261Hz represents a **C** note with a **number** block
+```blocks
+music.playTone(261, music.beat(BeatFraction.Half))
+```
+### ~  
+
+## Step 3: Multiply Frequency using Math blocks
  ```blocks
 input.onButtonPressed(Button.A, () => {
     music.playTone(261 * 2, music.beat(BeatFraction.Half))
 })
 ```  
 create a **play tone** block using a **Math** section, **multiplication** block to set *tone*   
-(*Tip: also create a **B** button block that uses a different multiplier to set tone*)  
+
+### Next  
+**Add** a **B** button block that multiplies the **261** tone by a number other than 2 to set tone 
   
-Download the code to the micro:bit and test the sound of multiples of the 261Hz **C** frequency  
+**Load the code to the micro:bit**  
   
-## Control the Frequency with the light input
+  **Test the sound for multiples of the 261Hz *C* frequency**  
+  
+## Step 4: Control the Frequency with the light input
 ```blocks
 basic.forever(() => {
     music.playTone(input.lightLevel() * 25, music.beat(BeatFraction.Quater))
 })
 ```
-Create a **forever loop** with a **play tone** block  
+**Create a *forever loop* containing a *play tone* block**  
   
-Use a **Math** multiplication block to set tone, with light level input multiplied by 25 
+**Set *tone*, using *Math* multiplication block that multiplies *light level* input by 25** 
 (or experiment)  
   
-Test on the guitar by covering the LEDs with your hand to vary the light that is measured 
-and controls the tone  
-  
+**Test light tone control on the guitar**  
+Cover the LEDs with your hand to vary light detected to control the tone  
+
+## Good work, this guitar is sounding good!
+**Challenge:** Create a variable for the light level multiplier that you can change using buttons (optional)  
+
 ### ~button /projects/guitar/accelerometer  
 NEXT: Accelerometer Beat control  
 ### ~
