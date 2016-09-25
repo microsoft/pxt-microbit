@@ -90,8 +90,8 @@ create a **play tone** block using a **Math** section, **multiplication** block 
 **Add** a **B** button block that multiplies the **261** tone by a number other than 2 to set tone 
   
 **Load the code to the micro:bit**  
-  
-  **Test the sound for multiples of the 261Hz *C* frequency**  
+
+**Test the sound for multiples of the 261Hz *C* frequency**  
   
 ## Step 4: Control the Frequency with the light input
 ```blocks
@@ -101,8 +101,8 @@ basic.forever(() => {
 ```
 **Create a *forever loop* containing a *play tone* block**  
   
-**Set *tone*, using *Math* multiplication block that multiplies *light level* input by 25** 
-(or experiment)  
+**Set *tone*, using *Math* multiplication block that multiplies *light level* input by 25**  
+or experiment with multipliers larger and smaller than 25  
   
 **Test light tone control on the guitar**  
 Cover the LEDs with your hand to vary light detected to control the tone  
