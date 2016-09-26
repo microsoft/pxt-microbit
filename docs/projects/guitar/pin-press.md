@@ -15,7 +15,7 @@ Use pin press to switch guitar play on/off
     * Boolean: **`True`/`False`**
 ### ~
 
-### Blocks
+## Blocks
 
 ```cards
 var on = false
@@ -26,17 +26,19 @@ input.onPinPressed(TouchPin.P1, () => {})
 
 
 
-
-### Circuits & Switches
+### ~hint
+## Circuits & Switches
 * **Circuits** need a power supply (battery), a resister (like a LED) & a conductor (metal, water, hand)  
-* **Switches** turn electric power on by closing (completing) a circuit with a conductor so power can flow.   
+* **Switches** turn electric power on by closing (completing) a circuit with a conductor so power can flow  
 
-### Pin Press  
-Metal foil and wires make excellent conductors. In this activity we will turn the guitar ON using **you** to conduct electricity to close the circuit!  
+**Metal foil and wires make excellent conductors**  
 
-1) Create the pin-press code and load the code on the micro:bit  
-  
-*Pin Press Code*
+**In this activity we use YOU to conduct electricity**  
+**to close the circuit that switches the guitar ON and OFF!**  
+### ~
+
+## Step 1: Pin Press Test  
+
 ```blocks
 input.onPinPressed(TouchPin.P0, () => {
     basic.showNumber(0)
@@ -48,30 +50,34 @@ input.onPinPressed(TouchPin.P2, () => {
     basic.showNumber(2)
 })
 ```  
-2) Hold the micro:bit touching The GND pin with one hand  
+**Create the pin-press code**  
 
-3) With the other hand alternately touch the O, 1 and 2 pins  
-https://youtu.be/PAIU-vHqyGU TODO: fix link - broken in emulator  
+**load the code on the micro:bit**  
 
-The electric signal traveled between your hands and the micro:bit detected the electric signals to the pins!  
+https://youtu.be/PAIU-vHqyGU  
+TODO: fix link, displays broken in pxt emulator (due to dash?)  
+
+**Hold the micro:bit touching The GND pin with one hand**  
+**with the other hand alternately touch the 0, 1 and 2 pins**  
   
-### Installing conductive foil on the guitar  
-Make the pins easy to touch by connecting the pins to pieces of foil attached to the guitar body and neck  
-1) Add foil to the guitar body where it is easy to touch while playing 
-
-2) Connect the foil to GND using a crocodile clip  
+### ~hint
+**The electric signal traveled from pins, between your hands to `GND` and the micro:bit detected the electric signal!**  
+### ~  
+  
+## Step 2: Installing conductive foil on the guitar  
 https://youtu.be/NX0ECcpXFes  
-  
-3) Add foil to the guitar neck  
-  
-4) Connect the foil to P0 using a crocodile clip  
+**Add foil to the guitar body where it is easy to touch while playing**   
+
+**Connect the foil to `GND` using a crocodile clip**  
+
 https://youtu.be/YkymZGNmkrE  
+**Add foil to the guitar neck**  
+  
+**Connect the foil to `pin 1` using a crocodile clip**  
 
-### Adding a switch to turn the guitar ON and OFF  
-* Using the **`on`** global variable we can switch the message on the micro:bit  
-between ON and OFF  
-
-1) Create the ON/OFF switch code and load the code on the micro:bit 
+## Step 3: Add a switch to turn the guitar ON and OFF  
+**Using the `on` global variable we can switch the message on the micro:bit**   
+**between ON and OFF**  
 ```blocks
 let on = false
 basic.forever(() => {
@@ -88,8 +94,12 @@ input.onPinPressed(TouchPin.P1, () => {
         on = true
     }
 })
-```  
+``` 
+**Create the ON/OFF switch code**  
 
+**load the code on the micro:bit**   
+ 
+**Test by touching `P1` to toggle the LED message between ON and OFF**
 
 *Final code*
 TODO: do we want to use `on = !on;` or be more direct in flipping the switch? `on = true; on = false;`
@@ -112,8 +122,8 @@ input.onPinPressed(TouchPin.P1, () => {
     on = !on;
 })
 ```  
-### now JAM! 
-Turn the guitar ON and OFF with a pin press  
-* Touch both pieces of foil at the same time to connect the switches  
+## Now Play! 
+**Turn the guitar ON and OFF with a pin press on the connected foil**  
+**touching both pieces of foil at the same time to connect the switches**  
   
 https://youtu.be/GYmdTFvxz80  

@@ -50,9 +50,9 @@ basic.forever(() => {
     led.plotBarGraph(input.acceleration(Dimension.Y), 1023)
 })
 ```
-**Create the code that measures the change in the Y axis acceleration as a graph on the LEDs**  
+**Create the code** that measures the change in the Y axis acceleration as a graph on the LEDs  
   
-**Load the code to the micro:bit on the guitar**  
+**Load the code** to the micro:bit 
   
 **Test the movements that move the graph from 1 to 5 bars on the LEDs** 
 
@@ -73,9 +73,9 @@ basic.forever(() => {
          music.playTone(Note.C, music.beat(BeatFraction.Quater));
 })
 ```  
-**Create the code that *Maps*  Y axis acceleration as *tempo***  
+**Create the code** that *Maps*  Y axis acceleration as *tempo*  
   
-**Load the code to the micro:bit on the guitar**  
+**Load the code** to the micro:bit on the guitar  
   
 **Test the movements that speed and slow the tempo**  
 
@@ -93,9 +93,9 @@ basic.forever(() => {
         );
 })
 ```  
-**Combine the code above with the light sensor tone control code from the previous activity*  
+**Combine the code above with the light sensor tone control code from the previous activity**  
   
-**Load the code to the micro:bit on the guitar**  
+**Load the code** to the micro:bit on the guitar    
 
 ##  Now play the guitar adjusting tone and tempo using the light sensor and accelerometer!
 
