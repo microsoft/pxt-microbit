@@ -106,7 +106,9 @@ namespace pxsim {
                 maxWidth: "100%",
                 maxHeight: "100%",
             };
-            const viewHost = new visuals.BoardHost(pxsim.visuals.mkBoardView(opts), opts);
+            const viewHost = new visuals.BoardHost(pxsim.visuals.mkBoardView({
+                visual: boardDef.visual
+            }), opts);
 
             document.body.innerHTML = ""; // clear children
             document.body.appendChild(viewHost.getView());

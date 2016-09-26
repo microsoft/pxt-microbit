@@ -122,7 +122,7 @@ namespace input {
     }
 
     /**
-     * Attaches code to run when the screen is facing up.
+     * Do something when when a gesture is done (like shaking the micro:bit).
      * @param body TODO
      */
     //% help=input/on-gesture weight=84 blockGap=8
@@ -199,7 +199,7 @@ namespace input {
     }
 
     /**
-     * Get the current compass compass heading in degrees.
+     * Get the current compass heading in degrees.
      */
     //% help=input/compass-heading 
     //% weight=56 icon="\uf14e"
@@ -257,7 +257,7 @@ namespace input {
     }
 
     /**
-     * The pitch of the device, rotation along the ``x-axis``, in degrees.
+     * The pitch or roll of the device, rotation along the ``x-axis`` or ``y-axis``, in degrees.
      * @param kind TODO
      */
     //% help=input/rotation weight=52
