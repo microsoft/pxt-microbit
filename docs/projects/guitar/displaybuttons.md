@@ -158,7 +158,7 @@ From **Music**, drag **play tone *C* for *1* beat** block under the **show leds*
    
 **Repeat** for **Button B** event  
   
-**Load the code** to the micro:bit  
+**Download the code** to the micro:bit  
 
 **Try the A & B buttons** with headphones and power connected
   
