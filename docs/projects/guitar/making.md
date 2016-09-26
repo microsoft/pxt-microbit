@@ -53,6 +53,6 @@ https://youtu.be/q0GkQdJmxjE
 
 Strengthen the guitar next with an angled cardboard strip (*optional*).
 
-### ~button /projects/guitar/display-buttons
+### ~button /projects/guitar/displaybuttons
 NEXT: Buttons, Display and Sound
 ### ~

@@ -99,6 +99,6 @@ basic.forever(() => {
 
 ##  Now play the guitar adjusting tone and tempo using the light sensor and accelerometer!
 
-### ~button /projects/guitar/pin-press
+### ~button /projects/guitar/pinpress
 NEXT: Pin Press on/off
 ### ~

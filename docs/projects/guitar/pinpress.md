@@ -52,7 +52,7 @@ input.onPinPressed(TouchPin.P2, () => {
 ```  
 **Create the pin-press code**  
 
-**load the code on the micro:bit**  
+**load the code** on the micro:bit 
 
 https://youtu.be/PAIU-vHqyGU  
 TODO: fix link, displays broken in pxt emulator (due to dash?)  
