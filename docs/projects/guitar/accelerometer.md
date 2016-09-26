@@ -81,7 +81,7 @@ basic.forever(() => {
 ### ~hint 
 
 **It is common to map one standard to another - such as with temperature**  
-![fahrenheit to celsius](/static/mb/projects/guitar/map_analogy.png)  
+![Fahrenheit to Celsius](/static/mb/projects/guitar/map_analogy.png "Fahrenheit to Celsius")  
 
 ### ~
 
@@ -105,7 +105,7 @@ basic.forever(() => {
         );
 })
 ```  
-**Combine the code above with the light sensor tone control code from the previous activity**  
+**Combine the code above with the light sensor tone control code from the previous activity**
   
 **Download the code** to the micro:bit on the guitar    
 
