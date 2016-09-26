@@ -67,13 +67,10 @@ basic.forever(() => {
 Try graphing the acceleration along the **X** and **Z** axis. Can you explain the differences?
 
 ### ~hint  
-<<<<<<< HEAD
 ## Mapping  
 **It is common to map one standard to another - such as with temperature**  
 ![fahrenheit to celsius](/static/mb/projects/guitar/map_analogy.png)  
 =======
->>>>>>> origin/guitar
-
 
 ### Step 2: Mapping acceleration to Beat
 **micro:bit sensors produce signal values between 0 to 1023. The *[map block](/reference/pins/map)* converts the signal to a desired range.**    
@@ -85,11 +82,6 @@ basic.forever(() => {
          music.playTone(Note.C, music.beat(BeatFraction.Quater));
 })
 ```  
-
-## Mapping  
-**It is common to map one standard to another - such as with temperature**  
-![fahrenheit to celsius](/static/mb/projects/guitar/map_analogy.png)  
-
 ### ~
 
 **Create the code** that *Maps*  Y axis acceleration as *tempo*  
