@@ -52,10 +52,9 @@ input.onPinPressed(TouchPin.P2, () => {
 ```  
 **Create the pin-press code**  
 
-**load the code** on the micro:bit 
+**Download the code** on the micro:bit 
 
 https://youtu.be/PAIU-vHqyGU  
-TODO: fix link, displays broken in pxt emulator (due to dash?)  
 
 **Hold the micro:bit touching The GND pin with one hand**  
 **with the other hand alternately touch the 0, 1 and 2 pins**  
@@ -97,7 +96,7 @@ input.onPinPressed(TouchPin.P1, () => {
 ``` 
 **Create the ON/OFF switch code**  
 
-**load the code on the micro:bit**   
+**Download the code on the micro:bit**   
  
 **Test by touching `P1` to toggle the LED message between ON and OFF**
 

@@ -90,7 +90,7 @@ create a **play tone** block using a **Math** section, **multiplication** block 
 ### Next  
 **Add** a **B** button block that multiplies the **261** tone by a number other than 2 to set tone 
   
-**Load the code to the micro:bit**  
+**Download the code to the micro:bit**  
 
 **Test the sound for multiples of the 261Hz *C* frequency**  
   

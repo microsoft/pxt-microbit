@@ -30,21 +30,27 @@ pins.map(0, 0, 1023,60, 320)
 Math.abs(1)            
 ```
 
-### ~hint  
-## Gravity  
+## Accelerometer, gravity and tilting!
 
-https://youtu.be/0SULoTKmkhI  
-The acceleration block approximately measures **milli-g**, which is 1/1000 of a **g** or the 
-acceleration of gravity. 
+The micro:bit contains an **accelerometer** sensor that is able to measure forces applied to the board.
+On earth, we are subject to the **gravity force** which pulls us to the ground!
+
+https://youtu.be/0SULoTKmkhI
+
+When the micro:bit is flat on a table, with the screen pointing up, the gravity force is aligned
+with the **Z** axis of the micro:bit. 
+
+![micro:bit x, y, z axis image](/static/mb/projects/guitar/accelleration_axis.png)  
+
+If you tilt it up and down, the force will align with the **Y** axis -- this is how we can detect tilting!!!
+If the force along **Y** grows, the micro:bit is tilting more and more vertically!
 
 ## Measuring Acceleration along different coordinates (X, Y, Z axis)  
 
-Whenever the micro:bit changes direct there is an acceleration (change in velocity).  
-The acceleration can be in different directions for the micro:bit, moving in 3 dimensions
-![micro:bit x, y, z axis image](/static/mb/projects/guitar/accelleration_axis.png)  
-### ~  
+The acceleration block approximately measures **milli-g**, which is 1/1000 of a **g** or the 
+acceleration of gravity. 
 
-## Step 1: Graphing acceleration 
+### Step 1: Graphing acceleration 
 ```blocks
 basic.forever(() => {
     led.plotBarGraph(input.acceleration(Dimension.Y), 1023)
@@ -52,18 +58,24 @@ basic.forever(() => {
 ```
 **Create the code** that measures the change in the Y axis acceleration as a graph on the LEDs  
   
-**Load the code** to the micro:bit 
+**Dowload the code** to the micro:bit 
   
 **Test the movements that move the graph from 1 to 5 bars on the LEDs** 
 
+### Extra
+
+Try graphing the acceleration along the **X** and **Z** axis. Can you explain the differences?
+
 ### ~hint  
+<<<<<<< HEAD
 ## Mapping  
 **It is common to map one standard to another - such as with temperature**  
 ![fahrenheit to celsius](/static/mb/projects/guitar/map_analogy.png)  
+=======
+>>>>>>> origin/guitar
 
-### ~
 
-## Step 3: Mapping acceleration to Beat
+### Step 2: Mapping acceleration to Beat
 **micro:bit sensors produce signal values between 0 to 1023. The *[map block](/reference/pins/map)* converts the signal to a desired range.**    
 ```blocks
 basic.forever(() => {
@@ -73,13 +85,20 @@ basic.forever(() => {
          music.playTone(Note.C, music.beat(BeatFraction.Quater));
 })
 ```  
+
+## Mapping  
+**It is common to map one standard to another - such as with temperature**  
+![fahrenheit to celsius](/static/mb/projects/guitar/map_analogy.png)  
+
+### ~
+
 **Create the code** that *Maps*  Y axis acceleration as *tempo*  
   
-**Load the code** to the micro:bit on the guitar  
+**Download the code** to the micro:bit on the guitar  
   
 **Test the movements that speed and slow the tempo**  
 
-## Step 4: Combine with light sensor tone control  
+### Step 3: Combine with light sensor tone control  
 **Put it all together!**
 
 ```blocks
@@ -95,9 +114,9 @@ basic.forever(() => {
 ```  
 **Combine the code above with the light sensor tone control code from the previous activity**  
   
-**Load the code** to the micro:bit on the guitar    
+**Download the code** to the micro:bit on the guitar    
 
-##  Now play the guitar adjusting tone and tempo using the light sensor and accelerometer!
+###  Now play the guitar adjusting tone and tempo using the light sensor and accelerometer!
 
 ### ~button /projects/guitar/pinpress
 NEXT: Pin Press on/off
