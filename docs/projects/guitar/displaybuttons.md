@@ -16,15 +16,15 @@ Use Button Events to control LED Display and play Sound
 
 A micro:bit, battery pack and 2 x AAA batteries
 
-![](/static/mb/projects/guitar/microbit.jpg)
+![battery pack and micro:bit](/static/mb/projects/guitar/microbit.jpg)
 
 2 to 4 crocodile clips
 
-![](/static/mb/projects/guitar/crocclips.jpg)
+![crocodile clips](/static/mb/projects/guitar/crocclips.jpg)
 
-*Headphones
+Headphones
 
-![](/static/mb/projects/guitar/headphones.jpg)
+![earbud headphones](/static/mb/projects/guitar/headphones.jpg)
 
 ## Blocks
 
@@ -93,16 +93,18 @@ From **Input**, drag an **on button 'A' pressed** block into the coding area
 
 ## Step 3: Add Headphone Speakers using Crocodile clips
 
-![](/static/mb/projects/guitar/crocclipintoboard.jpg)  
+![crocodile clips attached to pins 0 and GND](/static/mb/projects/guitar/crocclipintoboard.jpg)  
 
-![](/static/mb/projects/guitar/jacktocrocs.jpg)  
+![crocodile clips attached to headphone jack](/static/mb/projects/guitar/jacktocrocs.jpg)  
 Connect **GND** to the **base of the headphone jack** using a second crocodile clip (usually black)  
 
 Connect **pin 0** to the **tip of the headphone jack** with a crocodile clip  
 
+*attaching batteries and micro:bit*  
 https://youtu.be/zwRTmpKIaVU  
 Attach the micro:bit & battery-pack to the guitar body  
 
+*connecting headphone speaker*  
 https://youtu.be/ewyEW_U5G9M  
 Connect the headphones with crocodile clips    
   

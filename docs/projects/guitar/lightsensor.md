@@ -16,10 +16,9 @@ Use the Light Sensor to control guitar Tone
 * **Resources:**
      * This guitar is inspired by the [Theremin](https://en.wikipedia.org/wiki/Theremin)
 
-### ~
+### ~  
 
-
-
+*playing tones with light sensor*  
 https://youtu.be/2cKg9pokVC4
 
 ## The micro:bit LEDs Light Sensors 
@@ -54,7 +53,9 @@ basic.forever(() => {
   
 **Set the *plot bar graph* value *up to* = *255* **  
 
-## Step 2: Test the light required to move the bar graph height   
+## Step 2: Test the light required to move the bar graph height  
+
+*graphing light input*  
 https://youtu.be/pqU7bTcfQ_s  
 Experiment to see the effect on graph height when the **plot bar graph** value ***up to*** is changed  
 

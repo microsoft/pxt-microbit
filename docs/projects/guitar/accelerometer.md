@@ -16,9 +16,9 @@ Use the Accelerometer to control guitar tempo
      * Graphing
      * Absolute value
 
-### ~
+### ~  
 
-
+*accelerometer controlled tempo*  
 https://youtu.be/h_gPkBaVkoo
 TODO: add sound to video
 ## Blocks
@@ -59,7 +59,7 @@ basic.forever(() => {
 ### ~hint  
 ## Mapping  
 **It is common to map one standard to another - such as with temperature**  
-![fahrenheit to celsius](/static/mb/projects/guitar/mapanalogy.jpg)  
+![fahrenheit to celsius](/static/mb/projects/guitar/map_analogy.png)  
 
 ### ~
 
