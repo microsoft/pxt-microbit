@@ -37,7 +37,7 @@ The forever loop really does run forever.  The forever loop is useful when there
 basic.forever(() => {})
 input.lightLevel()
 led.plotBarGraph(0, 255)
-music.playTone(Note.C, music.beat(BeatFraction.Quater))
+music.playTone(Note.C, music.beat(BeatFraction.Quarter))
 ```
 
 ## Step 1: Create a light level detector
@@ -97,7 +97,7 @@ create a **play tone** block using a **Math** section, **multiplication** block 
 ## Step 4: Control the Frequency with the light input
 ```blocks
 basic.forever(() => {
-    music.playTone(input.lightLevel() * 25, music.beat(BeatFraction.Quater))
+    music.playTone(input.lightLevel() * 25, music.beat(BeatFraction.Quarter))
 })
 ```
 **Create a *forever loop* containing a *play tone* block**  

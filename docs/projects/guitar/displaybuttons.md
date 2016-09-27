@@ -37,9 +37,9 @@ Headphones
         . # # # .
         `);
 input.onButtonPressed(Button.A, () => {});
-music.playTone(Note.C, music.beat(BeatFraction.Quater))
+music.playTone(Note.C, music.beat(BeatFraction.Quarter))
 music.rest(music.beat(BeatFraction.Whole))
-music.beat(BeatFraction.Quater)
+music.beat(BeatFraction.Quarter)
 ```
 
 ## Step 1: Make a Smiley 
@@ -115,13 +115,13 @@ The **play tone** block allows a range letter note tones from **C** to **B5**.
 Songs are played using sequences notes.   Like the beginning of a birthday song (C, C, D, C, F, E).
 ```blocks
 input.onButtonPressed(Button.A, () => {
-    music.playTone(Note.C, music.beat(BeatFraction.Quater))
+    music.playTone(Note.C, music.beat(BeatFraction.Quarter))
     music.rest(music.beat(BeatFraction.Whole))
-    music.playTone(Note.C, music.beat(BeatFraction.Quater))
+    music.playTone(Note.C, music.beat(BeatFraction.Quarter))
     music.rest(music.beat(BeatFraction.Whole))
-    music.playTone(Note.D, music.beat(BeatFraction.Quater))
+    music.playTone(Note.D, music.beat(BeatFraction.Quarter))
     music.rest(music.beat(BeatFraction.Whole))
-    music.playTone(Note.C, music.beat(BeatFraction.Quater))
+    music.playTone(Note.C, music.beat(BeatFraction.Quarter))
     music.rest(music.beat(BeatFraction.Whole))
     music.rest(music.beat(BeatFraction.Whole))
     music.playTone(Note.F, music.beat(BeatFraction.Half))

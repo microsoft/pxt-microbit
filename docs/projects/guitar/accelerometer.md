@@ -79,7 +79,7 @@ basic.forever(() => {
         music.setTempo(pins.map(Math.abs(input.acceleration(Dimension.Y)),
             0, 1023,
             60, 320))
-         music.playTone(Note.C, music.beat(BeatFraction.Quater));
+         music.playTone(Note.C, music.beat(BeatFraction.Quarter));
 })
 ```  
 
@@ -99,7 +99,7 @@ basic.forever(() => {
             60, 320))
         music.playTone(
             input.lightLevel() * 25,
-            music.beat(BeatFraction.Quater)
+            music.beat(BeatFraction.Quarter)
         );
 })
 ```  

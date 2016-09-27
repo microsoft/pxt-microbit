@@ -111,7 +111,7 @@ basic.forever(() => {
             60, 320))
         music.playTone(
             input.lightLevel() * 25,
-            music.beat(BeatFraction.Quater)
+            music.beat(BeatFraction.Quarter)
         );
     } else {
         music.rest(music.beat())
