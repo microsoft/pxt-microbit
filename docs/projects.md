@@ -5,10 +5,6 @@ Here are some cool projects that you can build with your micro:bit!
 
 ```codecard
 [{
-  "name": "Electric Guitar",
-  "url": "/projects/guitar",
-  "imageUrl": "/static/mb/projects/guitar.png"
-},{
   "name": "Flashing Heart",
   "url":"/projects/flashing-heart",
   "imageUrl": "/static/mb/projects/a1-display.png"
