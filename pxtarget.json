@@ -320,9 +320,5 @@
                 "path": "/static/mb/device/usb-windows-sendto.jpg"
             }
         ]
-    },
-    "analytics": {
-        "userVoiceApiKey": "WEkkIGaj1WtJnSUF59iwaA",
-        "userVoiceForumId": 402381
     }
 }

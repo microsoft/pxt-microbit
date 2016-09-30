@@ -2,17 +2,34 @@
 
 In ths project, we will build a timing gate, a system that can measure the speed of a car.
 
-The timing gate is made of two sensors that can detect the moving car.
-When the car goes through the gate, it triggers each sensor and the micro:bit 
-records the times. The speed is then computed by dividing the distance between the sensors 
-by the time between each sensor trigger.
-
 ### ~hint
 
 This lesson explains the principles of timing gates using household materials. To build high performance gates, 
 you will need better sensors such as [Hall Effect sensors](https://en.wikipedia.org/wiki/Hall_effect_sensor).
 
 ### ~
+
+## How does it work?
+
+The two gates are connected to the micro:bit and can detect a car passing through.
+
+![](/static/mb/projects/timing-gates/sketchgates.jpg "Sketch of the gates")
+
+As the car passes through the gate ``0``, it sends an event to the micro:bit through the [on pin pressed](/reference/input/on-pin-pressed) block.
+The micro:bit records the time in a variable ``t0``.
+
+![](/static/mb/projects/timing-gates/sketchgate1.jpg "Sketch first gate")
+
+As the car passes through the gate ``1``, it sends an event to the micro:bit through the [on pin pressed](/reference/input/on-pin-pressed) block.
+The micro:bit records the time in a variable ``t1``.
+
+![](/static/mb/projects/timing-gates/sketchgate2.jpg "Sketch first gate")
+
+The rest is a bit of math and physics. The time taken to cross the gates is computed as the difference of ``t1 - t0``.
+By dividing the distance between the gates by the duration, we get the speed of the car!
+
+![](/static/mb/projects/timing-gates/sketchmath.jpg "Sketch math")
+
 
 ## Materials
 
