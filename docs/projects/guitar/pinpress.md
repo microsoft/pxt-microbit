@@ -4,16 +4,18 @@
 
 ### ~avatar avatar
 Use pin press to switch guitar play on/off
-* **Duration:** approximately 45 minutes
-* **Materials:**
-   * 2-3 Crocodile clips
 * Concepts:
     * Circuit  
     * Conductor 
     * Variable/Global-Variable  
     * Conditional: **`if`**, **`else`**  
     * Boolean: **`True`/`False`**
-### ~
+### ~  
+
+## Duration: approximately 45 minutes  
+
+## Materials:  
+2-3 Crocodile clips
 
 ## Blocks
 

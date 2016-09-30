@@ -4,8 +4,7 @@
 
 ### ~avatar avatar
 
-Use the Light Sensor to control guitar Tone
-* **Duration:** 30 - 45 minutes
+Use the Light Sensor to the control  tone for this [Theremin](https://en.wikipedia.org/wiki/Theremin) inspired guitar
 * **Concepts:**
      * Inputs
      * Light Intensity
@@ -13,10 +12,11 @@ Use the Light Sensor to control guitar Tone
      * Ratio Mapping
      * Forever Loop
      * Math (multiplication) with code properties  
-* **Resources:**
-     * This guitar is inspired by the [Theremin](https://en.wikipedia.org/wiki/Theremin)
 
 ### ~  
+
+## Duration: 30 - 45 minutes  
+  
 
 *playing tones with light sensor*  
 https://youtu.be/2cKg9pokVC4
