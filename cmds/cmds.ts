@@ -13,7 +13,7 @@ export function deployCoreAsync(res: ts.pxtc.CompileResult) {
     return getBitDrivesAsync()
         .then(drives => {
             if (drives.length == 0) {
-                var msg = "cannot find any drives to deploy to";
+                let msg = "cannot find any drives to deploy to";
                 console.log(msg);
                 return Promise.reject(new Error(msg));
             }
