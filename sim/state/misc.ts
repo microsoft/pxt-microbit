@@ -114,6 +114,11 @@ namespace pxsim.pins {
     export function i2cWriteBuffer(address: number, buf: RefBuffer, repeat?: boolean): void {
         // fake - noop
     }
+
+    // this likely shouldn't be called
+    export function getPinAddress(name: number) {
+        return getPin(name)
+    }
 }
 
 namespace pxsim.devices {

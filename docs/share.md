@@ -23,13 +23,16 @@ Rather than just sharing the link, you can also embed the project so that your v
 
 ### General instructions
 
-* Copy the HTML for embedding the page from the publish dialog. It will look like the following:
+Select the kind of embedding you would like.
 
-```html
-<div class="ui card sim"><div class="ui content"><div style="position:relative;height:0;padding-bottom:70%;overflow:hidden;"><iframe style="position:absolute;top:0;left:0;width:100%;height:100%;" src="https://codethemicrobit.com/?sandbox=1#pub:httuftrbtg" allowfullscreen="allowfullscreen" frameborder="0"></iframe></div></div></div>
-```
+* **Screenshot** - a lightweight screenshot of the blocks that links to the snippet
+* **Editor** - embedded editor with minimal UI
+* **Simulator** - embedded simulator only
+* **Command line** - specific instructions to unpack the project using the [command line](/cli) tools
 
-* Open the HTML editor for your blog or website and paste it with your content
+Copy the HTML for embedding the page from the publish dialog. It will look like the following:
+
+Open the HTML editor for your blog or website and paste it with your content
 
 ### Wordpress
 

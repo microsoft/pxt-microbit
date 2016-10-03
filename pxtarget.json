@@ -79,15 +79,6 @@
         "aspectRatio": 1.22,
         "parts": true,
         "partsAspectRatio": 0.69,
-        "builtinParts": {
-            "accelerometer": true,
-            "buttonpair": true,
-            "ledmatrix": true,
-            "speaker": true,
-            "bluetooth": true,
-            "thermometer": true,
-            "compass": true
-        },
         "boardDefinition": {
             "visual": "microbit",
             "gpioPinBlocks": [
@@ -165,9 +156,13 @@
             ],
             "attachPowerOnRight": true,
             "onboardComponents": [
+                "accelerometer",
                 "buttonpair",
                 "ledmatrix",
-                "speaker"
+                "speaker",
+                "bluetooth",
+                "thermometer",
+                "compass"
             ],
             "useCrocClips": true,
             "marginWhenBreadboarding": [
@@ -199,6 +194,8 @@
         "footerLogo": "./static/microbit.simplified.svg",
         "cardLogo": "https://az851932.vo.msecnd.net/pub/drbwxcth",
         "appLogo": "https://az851932.vo.msecnd.net/pub/tbhemtig",
+        "organization": "Microsoft",
+        "organizationUrl": "https://codethemicrobit.com/",
         "organizationLogo": "./static/Microsoft-logo_rgb_c-gray.png",
         "homeUrl": "https://codethemicrobit.com/",
         "embedUrl": "https://codethemicrobit.com/",
@@ -323,9 +320,5 @@
                 "path": "/static/mb/device/usb-windows-sendto.jpg"
             }
         ]
-    },
-    "analytics": {
-        "userVoiceApiKey": "WEkkIGaj1WtJnSUF59iwaA",
-        "userVoiceForumId": 402381
     }
 }

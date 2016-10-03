@@ -19,7 +19,6 @@ Use the Accelerometer to control guitar tempo
 
 ## Duration: 30 - 45 minutes  
   
-  
 *accelerometer controlled tempo*  
 https://youtu.be/h_gPkBaVkoo
 TODO: add sound to video

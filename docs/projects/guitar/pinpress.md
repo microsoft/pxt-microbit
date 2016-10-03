@@ -4,6 +4,7 @@
 
 ### ~avatar avatar
 Use pin press to switch guitar play on/off
+
 * Concepts:
     * Circuit  
     * Conductor 

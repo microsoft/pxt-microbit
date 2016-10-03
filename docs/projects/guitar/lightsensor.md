@@ -5,6 +5,7 @@
 ### ~avatar avatar
 
 Use the Light Sensor to the control  tone for this [Theremin](https://en.wikipedia.org/wiki/Theremin) inspired guitar
+
 * **Concepts:**
      * Inputs
      * Light Intensity
@@ -12,12 +13,10 @@ Use the Light Sensor to the control  tone for this [Theremin](https://en.wikiped
      * Ratio Mapping
      * Forever Loop
      * Math (multiplication) with code properties  
-
 ### ~  
 
 ## Duration: 30 - 45 minutes  
   
-
 *playing tones with light sensor*  
 https://youtu.be/2cKg9pokVC4
 
