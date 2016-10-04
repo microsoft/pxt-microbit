@@ -13,20 +13,19 @@ export function deployCoreAsync(res: ts.pxtc.CompileResult) {
     return getBitDrivesAsync()
         .then(drives => {
             if (drives.length == 0) {
-                let msg = "cannot find any drives to deploy to";
-                console.log(msg);
-                return Promise.reject(new Error(msg));
+                console.log("cannot find any drives to deploy to");
+                return Promise.resolve(0);
             }
 
-            console.log(`copy ${ts.pxtc.BINARY_HEX} to ` + drives.join(", "))
+            console.log(`copy ${ts.pxtc.BINARY_HEX} to ` + drives.join(", "));
 
             return Promise.map(drives, d =>
                 writeFileAsync(d + ts.pxtc.BINARY_HEX, res.outfiles[ts.pxtc.BINARY_HEX])
                     .then(() => {
-                        console.log("wrote hex file to " + d)
+                        console.log("wrote hex file to " + d);
                     }))
-        })
-        .then(() => { })
+                .then(() => drives.length);
+        });
 }
 
 function getBitDrivesAsync(): Promise<string[]> {
