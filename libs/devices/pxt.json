@@ -1,5 +1,5 @@
 {
-    "name": "microbit-devices",
+    "name": "devices",
     "description": "The BLE specific services",
     "files": [
         "README.md",
@@ -9,7 +9,7 @@
     ],
     "public": true,
     "dependencies": {
-        "microbit": "file:../microbit"
+        "core": "file:../core"
     },
     "yotta": {
         "config": {
