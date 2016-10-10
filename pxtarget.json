@@ -14,8 +14,8 @@
     "cloud": {
         "workspace": false,
         "packages": true,
-        "sharing": true,
-        "publish": true,
+        "sharing": false,
+        "publish": false,
         "preferredPackages": [
             "Microsoft/pxt-neopixel",
             "Microsoft/pxt-sonar",

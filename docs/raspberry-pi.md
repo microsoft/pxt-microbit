@@ -1,20 +1,11 @@
 # Raspberry Pi and Raspbian
 
-It is possible to run the web editor or [command line interface](/cli) from Raspbian on Raspberry Pi 2 or 3.
+It is possible to run the web editor or [command line interface](/cli) from Raspbian on Raspberry Pi 2 or 3 
+with [Raspbian Jessie with Pixel](https://www.raspberrypi.org/downloads/raspbian/).
 
 ## Web editor
 
-The web editor requires to install IceWeasel (Firefox) as the built-in browser cannot handle it.
-
-```
-sudo apt-get install iceweasel
-```
-
-Once installed simply navigate to https://codethemicrobit.com or type
-
-```
-firefox https://codethemicrobit.com
-``` 
+Starting with **Raspbian Pixel**, Raspbian comes with Chromium. Simply open [](https://codethemicrobit.com).
 
 ## Command line
 
