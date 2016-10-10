@@ -1,0 +1,24 @@
+{
+    "name": "fs",
+    "description": "File system",
+    "files": [
+        "README.md",
+        "enums.d.ts",
+        "shims.d.ts",
+        "fs.cpp",
+        "fs.ts"
+    ],
+    "public": true,
+    "dependencies": {
+        "microbit": "file:../microbit"
+    },
+    "yotta": {
+        "config": {
+            "microbit-dal": {
+                "interface": {
+                    "fs": 1
+                }
+           }
+        }
+    }
+}
