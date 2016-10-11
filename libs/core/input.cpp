@@ -143,7 +143,6 @@ namespace input {
      */
     //% help=input/on-pin-pressed weight=83
     //% blockId=device_pin_event block="on pin %NAME|pressed" icon="\uf094"
-    //% advanced=true
     void onPinPressed(TouchPin name, Action body) {
         auto pin = getPin((int)name);
         if (!pin) return;
@@ -173,7 +172,7 @@ namespace input {
     /**
      * Get the button state (pressed or not) for ``A`` and ``B``.
      */
-    //% help=input/button-is-pressed weight=57
+    //% help=input/button-is-pressed weight=60
     //% block="button|%NAME|is pressed"
     //% blockId=device_get_button2
     //% icon="\uf192" blockGap=8
@@ -192,13 +191,46 @@ namespace input {
      * Get the pin state (pressed or not). Requires to hold the ground to close the circuit.
      * @param name pin used to detect the touch
      */
-    //% help=input/pin-is-pressed weight=56
+    //% help=input/pin-is-pressed weight=58
     //% blockId="device_pin_is_pressed" block="pin %NAME|is pressed" icon="\uf094"
     //% blockGap=8
-    //% advanced=true
     bool pinIsPressed(TouchPin name) {
         auto pin = getPin((int)name);
         return pin && pin->isTouched();
+    }
+
+    int getAccelerationStrength() {
+        double x = uBit.accelerometer.getX();
+        double y = uBit.accelerometer.getY();
+        double z = uBit.accelerometer.getZ();
+        return (int)sqrt(x*x+y*y+z*z);
+    }    
+
+    /**
+     * Get the acceleration value in milli-gravitys (when the board is laying flat with the screen up, x=0, y=0 and z=-1024)
+     * @param dimension TODO
+     */
+    //% help=input/acceleration weight=58 icon="\uf135"
+    //% blockId=device_acceleration block="acceleration (mg)|%NAME" blockGap=8
+    //% parts="accelerometer"
+    int acceleration(Dimension dimension) {
+      switch (dimension) {
+      case Dimension::X: return uBit.accelerometer.getX();
+      case Dimension::Y: return uBit.accelerometer.getY();
+      case Dimension::Z: return uBit.accelerometer.getZ();
+      case Dimension::Strength: return getAccelerationStrength();
+      }
+      return 0;
+    }
+
+    /**
+     * Reads the light level applied to the LED screen in a range from ``0`` (dark) to ``255`` bright.
+     */
+    //% help=input/light-level weight=57
+    //% blockId=device_get_light_level block="light level" blockGap=8 icon="\uf185"
+    //% parts="ledmatrix"
+    int lightLevel() {
+        return uBit.display.readLightLevel();
     }
 
     /**
@@ -224,48 +256,13 @@ namespace input {
         return uBit.thermometer.getTemperature();
     }
 
-    int getAccelerationStrength() {
-        double x = uBit.accelerometer.getX();
-        double y = uBit.accelerometer.getY();
-        double z = uBit.accelerometer.getZ();
-        return (int)sqrt(x*x+y*y+z*z);
-    }
-
-    /**
-     * Get the acceleration value in milli-gravitys (when the board is laying flat with the screen up, x=0, y=0 and z=-1024)
-     * @param dimension TODO
-     */
-    //% help=input/acceleration weight=54 icon="\uf135"
-    //% blockId=device_acceleration block="acceleration (mg)|%NAME" blockGap=8
-    //% parts="accelerometer"
-    int acceleration(Dimension dimension) {
-      switch (dimension) {
-      case Dimension::X: return uBit.accelerometer.getX();
-      case Dimension::Y: return uBit.accelerometer.getY();
-      case Dimension::Z: return uBit.accelerometer.getZ();
-      case Dimension::Strength: return getAccelerationStrength();
-      }
-      return 0;
-    }
-
-
-    /**
-     * Reads the light level applied to the LED screen in a range from ``0`` (dark) to ``255`` bright.
-     */
-    //% help=input/light-level weight=53
-    //% blockId=device_get_light_level block="light level" blockGap=8 icon="\uf185"
-    //% parts="ledmatrix"
-    int lightLevel() {
-        return uBit.display.readLightLevel();
-    }
-
     /**
      * The pitch or roll of the device, rotation along the ``x-axis`` or ``y-axis``, in degrees.
      * @param kind TODO
      */
     //% help=input/rotation weight=52
     //% blockId=device_get_rotation block="rotation (°)|%NAME" blockGap=8 icon="\uf197"
-    //% parts="accelerometer"
+    //% parts="accelerometer" advanced=true
     int rotation(Rotation kind) {
       switch (kind) {
       case Rotation::Pitch: return uBit.accelerometer.getPitch();

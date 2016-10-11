@@ -10,6 +10,10 @@ input.onButtonPressed(Button.A, () => {
 music.playTone(0, 0);
 led.plot(0, 0);
 radio.sendNumber(0);
+```
+## Advanced
+
+```namespaces
 game.addScore(1);
 images.createImage(`
 . . . . .
@@ -24,7 +28,8 @@ control.inBackground(() => {
     
 });
 ```
-## Advanced
+
+## Bluetooth
   
 ```namespaces
 devices.tellCameraTo(MesCameraEvent.TakePhoto);

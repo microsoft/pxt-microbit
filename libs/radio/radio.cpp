@@ -210,7 +210,7 @@ namespace radio {
      * @ param id the group id between ``0`` and ``255``, 1 eg
      */
     //% help=radio/set-group
-    //% weight=10 blockGap=8
+    //% weight=10 blockGap=8 advanced=true
     //% blockId=radio_set_group block="radio set group %ID"
     void setGroup(int id) {
         if (radioEnable() != MICROBIT_OK) return;
@@ -232,6 +232,7 @@ namespace radio {
 
     /**
     * Set the radio to transmit the serial number in each message.
+    * @param transmit value indicating if the serial number is transmitted, eg: true
     */
     //% help=radio/set-transmit-serial-number
     //% weight=8 blockGap=8

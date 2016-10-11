@@ -239,8 +239,7 @@ declare namespace input {
      * @param body the code to run when the pin is pressed
      */
     //% help=input/on-pin-pressed weight=83
-    //% blockId=device_pin_event block="on pin %NAME|pressed" icon="\uf094"
-    //% advanced=true shim=input::onPinPressed
+    //% blockId=device_pin_event block="on pin %NAME|pressed" icon="\uf094" shim=input::onPinPressed
     function onPinPressed(name: TouchPin, body: () => void): void;
 
     /**
@@ -256,7 +255,7 @@ declare namespace input {
     /**
      * Get the button state (pressed or not) for ``A`` and ``B``.
      */
-    //% help=input/button-is-pressed weight=57
+    //% help=input/button-is-pressed weight=60
     //% block="button|%NAME|is pressed"
     //% blockId=device_get_button2
     //% icon="\uf192" blockGap=8
@@ -267,11 +266,27 @@ declare namespace input {
      * Get the pin state (pressed or not). Requires to hold the ground to close the circuit.
      * @param name pin used to detect the touch
      */
-    //% help=input/pin-is-pressed weight=56
+    //% help=input/pin-is-pressed weight=58
     //% blockId="device_pin_is_pressed" block="pin %NAME|is pressed" icon="\uf094"
-    //% blockGap=8
-    //% advanced=true shim=input::pinIsPressed
+    //% blockGap=8 shim=input::pinIsPressed
     function pinIsPressed(name: TouchPin): boolean;
+
+    /**
+     * Get the acceleration value in milli-gravitys (when the board is laying flat with the screen up, x=0, y=0 and z=-1024)
+     * @param dimension TODO
+     */
+    //% help=input/acceleration weight=58 icon="\uf135"
+    //% blockId=device_acceleration block="acceleration (mg)|%NAME" blockGap=8
+    //% parts="accelerometer" shim=input::acceleration
+    function acceleration(dimension: Dimension): number;
+
+    /**
+     * Reads the light level applied to the LED screen in a range from ``0`` (dark) to ``255`` bright.
+     */
+    //% help=input/light-level weight=57
+    //% blockId=device_get_light_level block="light level" blockGap=8 icon="\uf185"
+    //% parts="ledmatrix" shim=input::lightLevel
+    function lightLevel(): number;
 
     /**
      * Get the current compass heading in degrees.
@@ -292,29 +307,12 @@ declare namespace input {
     function temperature(): number;
 
     /**
-     * Get the acceleration value in milli-gravitys (when the board is laying flat with the screen up, x=0, y=0 and z=-1024)
-     * @param dimension TODO
-     */
-    //% help=input/acceleration weight=54 icon="\uf135"
-    //% blockId=device_acceleration block="acceleration (mg)|%NAME" blockGap=8
-    //% parts="accelerometer" shim=input::acceleration
-    function acceleration(dimension: Dimension): number;
-
-    /**
-     * Reads the light level applied to the LED screen in a range from ``0`` (dark) to ``255`` bright.
-     */
-    //% help=input/light-level weight=53
-    //% blockId=device_get_light_level block="light level" blockGap=8 icon="\uf185"
-    //% parts="ledmatrix" shim=input::lightLevel
-    function lightLevel(): number;
-
-    /**
      * The pitch or roll of the device, rotation along the ``x-axis`` or ``y-axis``, in degrees.
      * @param kind TODO
      */
     //% help=input/rotation weight=52
     //% blockId=device_get_rotation block="rotation (°)|%NAME" blockGap=8 icon="\uf197"
-    //% parts="accelerometer" shim=input::rotation
+    //% parts="accelerometer" advanced=true shim=input::rotation
     function rotation(kind: Rotation): number;
 
     /**
