@@ -4,6 +4,7 @@
 * Creation, manipulation and display of LED images.
 */
 //% color=#5C2D91 weight=31
+//% advanced=true
 namespace images {
     /**
      * Creates an image that fits on the LED screen.
@@ -29,7 +30,7 @@ namespace images {
 namespace ImageMethods {
     /**
      * Plots the image at a given column to the screen
-     */            
+     */
     //% help=images/plot-image
     //% parts="ledmatrix"
     void plotImage(Image i, int xOffset = 0) {
@@ -46,7 +47,7 @@ namespace ImageMethods {
     void showImage(Image sprite, int xOffset) {
       uBit.display.print(MicroBitImage(sprite), -xOffset, 0, 0);
     }
-    
+
     /**
      * Draws the ``index``-th frame of the image on the screen.
      * @param xOffset column index to start displaying the image
@@ -57,7 +58,7 @@ namespace ImageMethods {
       // TODO showImage() used in original implementation
       plotImage(i, xOffset * 5);
     }
-    
+
     /**
      * Scrolls an image .
      * @param frameOffset x offset moved on each animation step, eg: 5, 1, -1

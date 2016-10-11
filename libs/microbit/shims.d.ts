@@ -5,6 +5,7 @@
      * Creation, manipulation and display of LED images.
      */
     //% color=#5C2D91 weight=31
+    //% advanced=true
 declare namespace images {
 
     /**
@@ -238,7 +239,8 @@ declare namespace input {
      * @param body the code to run when the pin is pressed
      */
     //% help=input/on-pin-pressed weight=83
-    //% blockId=device_pin_event block="on pin %NAME|pressed" icon="\uf094" shim=input::onPinPressed
+    //% blockId=device_pin_event block="on pin %NAME|pressed" icon="\uf094"
+    //% advanced=true shim=input::onPinPressed
     function onPinPressed(name: TouchPin, body: () => void): void;
 
     /**
@@ -247,7 +249,8 @@ declare namespace input {
      * @param body the code to run when the pin is released
      */
     //% help=input/on-pin-released weight=6 blockGap=8
-    //% blockId=device_pin_released block="on pin %NAME|released" icon="\uf094" shim=input::onPinReleased
+    //% blockId=device_pin_released block="on pin %NAME|released" icon="\uf094"
+    //% advanced=true shim=input::onPinReleased
     function onPinReleased(name: TouchPin, body: () => void): void;
 
     /**
@@ -266,13 +269,14 @@ declare namespace input {
      */
     //% help=input/pin-is-pressed weight=56
     //% blockId="device_pin_is_pressed" block="pin %NAME|is pressed" icon="\uf094"
-    //% blockGap=8 shim=input::pinIsPressed
+    //% blockGap=8
+    //% advanced=true shim=input::pinIsPressed
     function pinIsPressed(name: TouchPin): boolean;
 
     /**
      * Get the current compass heading in degrees.
      */
-    //% help=input/compass-heading 
+    //% help=input/compass-heading
     //% weight=56 icon="\uf14e"
     //% blockId=device_heading block="compass heading (°)" blockGap=8
     //% parts="compass" shim=input::compassHeading
@@ -319,14 +323,16 @@ declare namespace input {
      */
     //% help=input/magnetic-force weight=51
     //% blockId=device_get_magnetic_force block="magnetic force (µT)|%NAME" blockGap=8 icon="\uf076"
-    //% parts="compass" shim=input::magneticForce
+    //% parts="compass"
+    //% advanced=true shim=input::magneticForce
     function magneticForce(dimension: Dimension): number;
 
     /**
      * Gets the number of milliseconds elapsed since power on.
      */
     //% help=input/running-time weight=50
-    //% blockId=device_get_running_time block="running time (ms)" icon="\uf017" shim=input::runningTime
+    //% blockId=device_get_running_time block="running time (ms)" icon="\uf017"
+    //% advanced=true shim=input::runningTime
     function runningTime(): number;
 
     /**
@@ -342,13 +348,15 @@ declare namespace input {
     //% help=input/set-accelerometer-range
     //% blockId=device_set_accelerometer_range block="set accelerometer|range %range" icon="\uf135"
     //% weight=5
-    //% parts="accelerometer" shim=input::setAccelerometerRange
+    //% parts="accelerometer"
+    //% advanced=true shim=input::setAccelerometerRange
     function setAccelerometerRange(range: AcceleratorRange): void;
 }
 
 
 
     //% weight=1 color="#333333"
+    //% advanced=true
 declare namespace control {
 
     /**
@@ -386,7 +394,7 @@ declare namespace control {
     /**
      * Raises an event in the event bus.
      */
-    //% weight=20 blockGap=8 blockId="control_on_event" block="on event|from %src=control_event_source_id|with value %value=control_event_value_id" 
+    //% weight=20 blockGap=8 blockId="control_on_event" block="on event|from %src=control_event_source_id|with value %value=control_event_value_id"
     //% blockExternalInputs=1 shim=control::onEvent
     function onEvent(src: number, value: number, handler: () => void): void;
 
@@ -457,7 +465,8 @@ declare namespace led {
      */
     //% help=led/brightness weight=60
     //% blockId=device_get_brightness block="brightness" icon="\uf042" blockGap=8
-    //% parts="ledmatrix" shim=led::brightness
+    //% parts="ledmatrix"
+    //% advanced=true shim=led::brightness
     function brightness(): number;
 
     /**
@@ -466,7 +475,8 @@ declare namespace led {
      */
     //% help=led/set-brightness weight=59
     //% blockId=device_set_brightness block="set brightness %value" icon="\uf042"
-    //% parts="ledmatrix" shim=led::setBrightness
+    //% parts="ledmatrix"
+    //% advanced=true shim=led::setBrightness
     function setBrightness(value: number): void;
 
     /**
@@ -474,7 +484,8 @@ declare namespace led {
      */
     //% weight=50 help=led/stop-animation
     //% blockId=device_stop_animation block="stop animation" icon="\uf04d"
-    //% parts="ledmatrix" shim=led::stopAnimation
+    //% parts="ledmatrix"
+    //% advanced=true shim=led::stopAnimation
     function stopAnimation(): void;
 
     /**
@@ -636,6 +647,7 @@ declare namespace pins {
 
 
     //% weight=2 color=30
+    //% advanced=true
 declare namespace serial {
 
     /**

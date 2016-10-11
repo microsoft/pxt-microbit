@@ -20,9 +20,10 @@ enum class BaudRate {
 };
 
 //% weight=2 color=30
+//% advanced=true
 namespace serial {
     // note that at least one // followed by % is needed per declaration!
-    
+
     /**
      * Reads a line of text from the serial port.
      */
@@ -39,10 +40,10 @@ namespace serial {
     //% help=serial/write-string
     //% weight=87
     //% blockId=serial_writestring block="serial write string %text"
-    void writeString(StringData *text) { 
+    void writeString(StringData *text) {
       uBit.serial.send(ManagedString(text));
     }
-    
+
     /**
     * Registers an event to be fired when one of the delimiter is matched
     * @param delimiters the characters to match received characters against. eg:"\n"
@@ -53,7 +54,7 @@ namespace serial {
       uBit.serial.eventOn(ManagedString(delimiters));
       registerWithDal(MICROBIT_ID_SERIAL, MICROBIT_SERIAL_EVT_DELIM_MATCH, body);
     }
-    
+
     /**
     * Dynamically configuring the serial instance to use pins other than USBTX and USBRX.
     * @param tx the new transmission pins

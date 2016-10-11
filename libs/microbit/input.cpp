@@ -89,7 +89,7 @@ enum class Gesture {
      * Raised when the screen is pointing right
      */
     //% block="tilt right"
-    TiltRight = MICROBIT_ACCELEROMETER_EVT_TILT_RIGHT,    
+    TiltRight = MICROBIT_ACCELEROMETER_EVT_TILT_RIGHT,
     /**
      * Raised when the board is falling!
      */
@@ -132,7 +132,7 @@ namespace input {
         if ((int)gesture == MICROBIT_ACCELEROMETER_EVT_3G && uBit.accelerometer.getRange() < 3)
             uBit.accelerometer.setRange(4);
         else if ((int)gesture == MICROBIT_ACCELEROMETER_EVT_6G && uBit.accelerometer.getRange() < 6)
-            uBit.accelerometer.setRange(8);            
+            uBit.accelerometer.setRange(8);
         registerWithDal(MICROBIT_ID_GESTURE, (int)gesture, body);
     }
 
@@ -143,6 +143,7 @@ namespace input {
      */
     //% help=input/on-pin-pressed weight=83
     //% blockId=device_pin_event block="on pin %NAME|pressed" icon="\uf094"
+    //% advanced=true
     void onPinPressed(TouchPin name, Action body) {
         auto pin = getPin((int)name);
         if (!pin) return;
@@ -159,6 +160,7 @@ namespace input {
      */
     //% help=input/on-pin-released weight=6 blockGap=8
     //% blockId=device_pin_released block="on pin %NAME|released" icon="\uf094"
+    //% advanced=true
     void onPinReleased(TouchPin name, Action body) {
         auto pin = getPin((int)name);
         if (!pin) return;
@@ -193,6 +195,7 @@ namespace input {
     //% help=input/pin-is-pressed weight=56
     //% blockId="device_pin_is_pressed" block="pin %NAME|is pressed" icon="\uf094"
     //% blockGap=8
+    //% advanced=true
     bool pinIsPressed(TouchPin name) {
         auto pin = getPin((int)name);
         return pin && pin->isTouched();
@@ -201,7 +204,7 @@ namespace input {
     /**
      * Get the current compass heading in degrees.
      */
-    //% help=input/compass-heading 
+    //% help=input/compass-heading
     //% weight=56 icon="\uf14e"
     //% blockId=device_heading block="compass heading (°)" blockGap=8
     //% parts="compass"
@@ -268,7 +271,7 @@ namespace input {
       case Rotation::Pitch: return uBit.accelerometer.getPitch();
       case Rotation::Roll: return uBit.accelerometer.getRoll();
       }
-      return 0;        
+      return 0;
     }
 
     /**
@@ -278,6 +281,7 @@ namespace input {
     //% help=input/magnetic-force weight=51
     //% blockId=device_get_magnetic_force block="magnetic force (µT)|%NAME" blockGap=8 icon="\uf076"
     //% parts="compass"
+    //% advanced=true
     int magneticForce(Dimension dimension) {
       if (!uBit.compass.isCalibrated())
         uBit.compass.calibrate();
@@ -296,6 +300,7 @@ namespace input {
      */
     //% help=input/running-time weight=50
     //% blockId=device_get_running_time block="running time (ms)" icon="\uf017"
+    //% advanced=true
     int runningTime() {
         return system_timer_current_time();
     }
@@ -314,6 +319,7 @@ namespace input {
     //% blockId=device_set_accelerometer_range block="set accelerometer|range %range" icon="\uf135"
     //% weight=5
     //% parts="accelerometer"
+    //% advanced=true
     void setAccelerometerRange(AcceleratorRange range) {
         uBit.accelerometer.setRange((int)range);
     }

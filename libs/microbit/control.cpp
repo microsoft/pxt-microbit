@@ -110,6 +110,7 @@ enum EventBusValue {
 };
 
 //% weight=1 color="#333333"
+//% advanced=true
 namespace control {
     void fiberDone(void *a)
     {
@@ -131,7 +132,7 @@ namespace control {
      */
     //% weight=30 async help=control/reset blockGap=8
     //% blockId="control_reset" block="reset"
-    void reset() { 
+    void reset() {
       microbit_reset();
     }
 
@@ -153,16 +154,16 @@ namespace control {
      */
     //% weight=21 blockGap=12 blockId="control_raise_event" block="raise event|from source %src=control_event_source_id|with value %value=control_event_value_id" blockExternalInputs=1
     //% mode.defl=CREATE_AND_FIRE
-    void raiseEvent(int src, int value, EventCreationMode mode) { 
-        MicroBitEvent evt(src, value, (MicroBitEventLaunchMode)mode); 
+    void raiseEvent(int src, int value, EventCreationMode mode) {
+        MicroBitEvent evt(src, value, (MicroBitEventLaunchMode)mode);
     }
 
     /**
      * Raises an event in the event bus.
      */
-    //% weight=20 blockGap=8 blockId="control_on_event" block="on event|from %src=control_event_source_id|with value %value=control_event_value_id" 
+    //% weight=20 blockGap=8 blockId="control_on_event" block="on event|from %src=control_event_source_id|with value %value=control_event_value_id"
     //% blockExternalInputs=1
-    void onEvent(int src, int value, Action handler) { 
+    void onEvent(int src, int value, Action handler) {
         registerWithDal(src, value, handler);
     }
 
@@ -174,7 +175,7 @@ namespace control {
     int eventValue() {
         return pxt::lastEvent.value;
     }
-    
+
     /**
     * Gets the timestamp of the last event executed on the bus
     */
@@ -183,15 +184,15 @@ namespace control {
     int eventTimestamp() {
         return pxt::lastEvent.timestamp;
     }
-    
+
     /**
      * Gets a friendly name for the device derived from the its serial number
      */
     //% blockId="control_device_name" block="device name" weight=10 blockGap=8
     StringData* deviceName() {
-        return ManagedString(microbit_friendly_name()).leakData();        
+        return ManagedString(microbit_friendly_name()).leakData();
     }
-    
+
     /**
     * Derive a unique, consistent serial number of this device from internal data.
     */

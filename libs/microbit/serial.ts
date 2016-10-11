@@ -2,6 +2,7 @@
  * Reading and writing data over a serial connection.
  */
 //% weight=2 color=#002050
+//% advanced=true
 namespace serial {
     /**
      * Prints a line of text to the serial
