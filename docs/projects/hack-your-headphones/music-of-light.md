@@ -1,6 +1,4 @@
-# hack your headphones challenges
-
-Control sound with the light level. 
+# hack your headphones - music of light
 
 ### ~avatar avatar
 
@@ -70,7 +68,3 @@ input.onButtonPressed(Button.A, () => {
 ```
 
 * click **Download** and run your code on the micro:bit.
-
-### ~button /projects/banana-keyboard
-NEXT: Banana Keyboard
-### ~

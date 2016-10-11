@@ -6,8 +6,8 @@
     ],
     "public": true,
     "dependencies": {
-        "microbit": "*",
-        "microbit-radio": "*"
+        "core": "*",
+        "radio": "*"
     },
     "installedVersion": "file:."
 }

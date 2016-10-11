@@ -1,10 +1,4 @@
-# banana keyboard blocks challenges
-
-control images with variables. 
-
-## Before we get started
-
-Control images with variables. 
+# banana keyboard - beat box
 
 Have you ever tried to making beat box sounds? Let's try making a beatbox with code!
 
@@ -35,7 +29,7 @@ input.onPinPressed(TouchPin.P1, () => {
 ```
 
 
-* click *run* to see if the code works as expected.
+* click *Download* to see if the code works as expected.
 
 
 
@@ -57,8 +51,4 @@ input.onPinPressed(TouchPin.P2, () => {
 })
 ```
 
-* click *run* to see if the code works as expected.
-
-### ~button /projects/telegraph
-NEXT: Telegraph
-### ~
+* click *Download* to see if the code works as expected.

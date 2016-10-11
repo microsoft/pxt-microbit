@@ -1,32 +1,36 @@
 {
     "id": "microbit",
+    "nickname": "microbit",
     "name": "code the micro:bit",
     "title": "code the micro:bit - Blocks / Javascript editor",
     "description": "A Blocks / JavaScript code editor for the micro:bit.",
-    "corepkg": "microbit",
+    "corepkg": "core",
     "bundleddirs": [
-        "libs/microbit",
-        "libs/microbit-radio",
-        "libs/microbit-devices",
-        "libs/microbit-bluetooth"
+        "libs/core",
+        "libs/radio",
+        "libs/devices",
+        "libs/bluetooth"
     ],
     "cloud": {
         "workspace": false,
         "packages": true,
+        "sharing": false,
+        "publish": false,
         "preferredPackages": [
             "Microsoft/pxt-neopixel",
             "Microsoft/pxt-sonar",
             "Microsoft/pxt-max6675",
             "Microsoft/pxt-i2c-fram"
-        ]
+        ],
+        "githubPackages": true
     },
     "blocksprj": {
         "id": "blocksprj",
         "config": {
             "name": "{0} block",
             "dependencies": {
-                "microbit": "*",
-                "microbit-radio": "*"
+                "core": "*",
+                "radio": "*"
             },
             "description": "",
             "files": [
@@ -46,8 +50,8 @@
         "config": {
             "name": "{0} bit",
             "dependencies": {
-                "microbit": "*",
-                "microbit-radio": "*"
+                "core": "*",
+                "radio": "*"
             },
             "description": "",
             "files": [
@@ -65,7 +69,23 @@
         "hasHex": true,
         "deployDrives": "(MICROBIT|MBED)",
         "driveName": "MICROBIT",
-        "hexMimeType": "application/x-microbit-hex"
+        "hexMimeType": "application/x-microbit-hex",
+        "upgrades": [
+            {
+                "type": "package",
+                "map": {
+                    "microbit": "core",
+                    "microbit-bluetooth": "bluetooth",
+                    "microbit-radio": "radio",
+                    "microbit-devices": "devices",
+                    "microbit-led": "",
+                    "microbit-music": "",
+                    "microbit-game": "",
+                    "microbit-pins": "",
+                    "microbit-serial": ""
+                }
+            }
+        ]
     },
     "runtime": {
         "mathBlocks": true,

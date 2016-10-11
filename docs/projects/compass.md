@@ -103,7 +103,3 @@ basic.forever(() => {
     }
 });
 ```
-
-### ~button /projects/hack-your-headphones
-NEXT: Hack Your Headphones
-### ~

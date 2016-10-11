@@ -67,7 +67,3 @@ input.onButtonPressed(Button.B, () => {
     . # # # .`);
 });
 ```
-
-### ~button /projects/love-meter
-NEXT: Love Meter
-### ~

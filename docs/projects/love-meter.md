@@ -48,7 +48,3 @@ input.onPinPressed(TouchPin.P2, () => {
         `);
 });
 ```
-
-### ~button /projects/rock-paper-scissors
-NEXT: Rock Paper Scissors
-### ~

@@ -89,10 +89,6 @@ Have fun reviewing your simulation and analyze the acceleration by chart the Exc
 * Review and analyze the actual micro:bit device acceleration data on Excel
 * Display acceleration with y or z using plot bar graph by changing acceleration from "x" to "y" or "z" 
 
-### ~button /projects/the-watch
-NEXT: The Watch
-### ~
-
 ```package
 microbit-radio
 ```

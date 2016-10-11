@@ -113,7 +113,3 @@ basic.clearScreen();
 basic.pause(500);
 })
 ```
-
-### ~button /projects/smiley-buttons
-NEXT: Smiley Buttons
-### ~
