@@ -1,7 +1,7 @@
 /// <reference path="../../node_modules/pxt-core/built/pxtsim.d.ts"/>
-/// <reference path="../../libs/microbit/dal.d.ts"/>
-/// <reference path="../../libs/microbit/shims.d.ts"/>
-/// <reference path="../../libs/microbit/enums.d.ts"/>
+/// <reference path="../../libs/core/dal.d.ts"/>
+/// <reference path="../../libs/core/shims.d.ts"/>
+/// <reference path="../../libs/core/enums.d.ts"/>
 
 namespace pxsim.visuals {
     const PIXEL_SPACING = PIN_DIST * 3;
