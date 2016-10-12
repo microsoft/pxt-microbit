@@ -19,11 +19,12 @@ export function deployCoreAsync(res: ts.pxtc.CompileResult) {
 
             console.log(`copy ${ts.pxtc.BINARY_HEX} to ` + drives.join(", "));
 
-            return Promise.map(drives, d =>
-                writeFileAsync(d + ts.pxtc.BINARY_HEX, res.outfiles[ts.pxtc.BINARY_HEX])
-                    .then(() => {
-                        console.log("wrote hex file to " + d);
-                    }))
+            let writeHexFile = (filename: string) => {
+                return writeFileAsync(filename + ts.pxtc.BINARY_HEX, res.outfiles[ts.pxtc.BINARY_HEX])
+                    .then(() => console.log("wrote hex file to " + filename));
+            };
+
+            return Promise.map(drives, d => writeHexFile(d))
                 .then(() => drives.length);
         });
 }
