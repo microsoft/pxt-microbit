@@ -1,4 +1,4 @@
-# UART Write 
+# UART Write Number
 
 ### ~hint
 ![](/static/bluetooth/Bluetooth_SIG.png)
@@ -7,36 +7,13 @@ For another device like a smartphone to use any of the Bluetooth "services" whic
 
 ### ~
 
-The [Bluetooth UART service](start-uart-service.md) allows another device such as a smartphone to exchange any data it wants to with the micro:bit, in small chunks. 
+The [Bluetooth UART service](/reference/bluetooth/start-uart-service.md) allows another device such as a smartphone to exchange any data it wants to with the micro:bit, in small chunks. 
 
 With the Bluetooth UART service running, this block allows a micro:bit to send data to a Bluetooth connected device.
 
 ```sig
-bluetooth.uartWrite("");
+bluetooth.uartWriteNumber(42);
 ```
-
-### Example: Starting the Bluetooth UART service and then sending "HELLO" whenever button A is pressed and another device has connected over Bluetooth
-
-```blocks
-let connected = 0;
-bluetooth.onBluetoothConnected(() => {
-    basic.showString("C");
-    connected = 1;
-});
-bluetooth.onBluetoothDisconnected(() => {
-    basic.showString("D");
-    connected = 0;
-});
-input.onButtonPressed(Button.A, () => {
-    if (connected == 1) {
-        bluetooth.uartWrite("HELLO");
-    }
-});
-```
-
-### Video - UART service guessing game
-
-https://www.youtube.com/watch?v=PgGeWddMAZ0
 
 ### Advanced
  

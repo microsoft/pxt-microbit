@@ -102,7 +102,7 @@ namespace bluetooth {
     }
     
     //%
-    void uartWrite(StringData *data) {
+    void uartWriteString(StringData *data) {
         startUartService();
     	uart->send(ManagedString(data));
     }    
@@ -133,7 +133,5 @@ namespace bluetooth {
     //% parts="bluetooth"
     void onBluetoothDisconnected(Action body) {
         registerWithDal(MICROBIT_ID_BLE, MICROBIT_BLE_EVT_DISCONNECTED, body);
-    }    
-  
-  
+    }  
 }
