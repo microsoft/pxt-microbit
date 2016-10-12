@@ -4,22 +4,6 @@
 
 using namespace pxt;
 
-enum Delimiters {
-    //% block="new line"
-    NewLine = 1,
-    //% block=","
-    Comma = 2,
-    //% block="$"
-    Dollar = 3,
-    //% block=":"
-    Colon = 4,
-    //% block="."
-    Fullstop = 5,
-    //% block="#"
-    Hash = 6,
-};
-
-
 /**
  * Support for additional Bluetooth services.
  */
@@ -27,12 +11,33 @@ enum Delimiters {
 namespace bluetooth {
     MicroBitUARTService *uart = NULL;
 
+
+    /**
+    *  Starts the Bluetooth accelerometer service
+    */
+    //% help=bluetooth/start-accelerometer-service
+    //% blockId=bluetooth_start_accelerometer_service block="bluetooth accelerometer service"
+    //% parts="bluetooth" weight=90 blockGap=8
+    void startAccelerometerService() {
+        new MicroBitAccelerometerService(*uBit.ble, uBit.accelerometer);        
+    }   
+
+    /**
+    *  Starts the Bluetooth button service
+    */
+    //% help=bluetooth/start-button-service
+    //% blockId=bluetooth_start_button_service block="bluetooth button service" blockGap=8
+    //% parts="bluetooth" weight=89
+    void startButtonService() {
+        new MicroBitButtonService(*uBit.ble);      
+    }
+
     /**
     *  Starts the Bluetooth IO pin service.
     */
     //% help=bluetooth/start-io-pin-service
     //% blockId=bluetooth_start_io_pin_service block="bluetooth io pin service" blockGap=8
-    //% parts="bluetooth"
+    //% parts="bluetooth" weight=88
     void startIOPinService() {
         new MicroBitIOPinService(*uBit.ble, uBit.io);
     }
@@ -42,7 +47,7 @@ namespace bluetooth {
     */
     //% help=bluetooth/start-led-service
     //% blockId=bluetooth_start_led_service block="bluetooth led service" blockGap=8
-    //% parts="bluetooth"
+    //% parts="bluetooth" weight=87
     void startLEDService() {
         new MicroBitLEDService(*uBit.ble, uBit.display);
     }
@@ -52,7 +57,7 @@ namespace bluetooth {
     */
     //% help=bluetooth/start-temperature-service
     //% blockId=bluetooth_start_temperature_service block="bluetooth temperature service" blockGap=8
-    //% parts="bluetooth"
+    //% parts="bluetooth" weight=86
     void startTemperatureService() {    
         new MicroBitTemperatureService(*uBit.ble, uBit.thermometer);        
     }
@@ -61,38 +66,19 @@ namespace bluetooth {
     *  Starts the Bluetooth magnetometer service
     */
     //% help=bluetooth/start-magnetometer-service
-    //% blockId=bluetooth_start_magnetometer_service block="bluetooth magnetometer service" blockGap=8
-    //% parts="bluetooth"
+    //% blockId=bluetooth_start_magnetometer_service block="bluetooth magnetometer service"
+    //% parts="bluetooth" weight=85
     void startMagnetometerService() {    
         new MicroBitMagnetometerService(*uBit.ble, uBit.compass); 
     }
 
-    /**
-    *  Starts the Bluetooth accelerometer service
-    */
-    //% help=bluetooth/start-accelerometer-service
-    //% blockId=bluetooth_start_accelerometer_service block="bluetooth accelerometer service" blockGap=8
-    //% parts="bluetooth"
-    void startAccelerometerService() {
-        new MicroBitAccelerometerService(*uBit.ble, uBit.accelerometer);        
-    }
-
-    /**
-    *  Starts the Bluetooth button service
-    */
-    //% help=bluetooth/start-button-service
-    //% blockId=bluetooth_start_button_service block="bluetooth button service" blockGap=8
-    //% parts="bluetooth"
-    void startButtonService() {
-        new MicroBitButtonService(*uBit.ble);      
-    }
 
     /**
     *  Starts the Bluetooth UART service
     */
     //% help=bluetooth/start-uart-service
-    //% blockId=bluetooth_start_uart_service block="bluetooth uart service" blockGap=8
-    //% parts="bluetooth"
+    //% blockId=bluetooth_start_uart_service block="bluetooth uart service"
+    //% parts="bluetooth" advanced=true
     void startUartService() {
         if (uart) return;
         // 61 octet buffer size is 3 x (MTU - 3) + 1
@@ -108,7 +94,7 @@ namespace bluetooth {
     }    
 
     //%
-    StringData* uartRead(StringData *del) {
+    StringData* uartReadUntil(StringData *del) {
         startUartService();
         return uart->readUntil(ManagedString(del)).leakData();
     }    

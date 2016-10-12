@@ -46,4 +46,24 @@ namespace serial {
     export function onLineReceived(body: Action): void {
        // serial.onDataReceived("\n", body);
     }
+
+    /**
+     * Returns the delimiter corresponding string
+     */
+    //% blockId="serial_delimiter_conv" block="%del"
+    //% weight=1
+    export function delimiters(del: Delimiters): string {
+        // even though it might not look like, this is more
+        // (memory) efficient than the C++ implementation, because the
+        // strings are statically allocated and take no RAM 
+        switch (del) {
+            case Delimiters.NewLine: return "\n"
+            case Delimiters.Comma: return ","
+            case Delimiters.Dollar: return "$"
+            case Delimiters.Colon: return ":"
+            case Delimiters.Fullstop: return "."
+            case Delimiters.Hash: return "#"
+            default: return "\n"
+        }
+    }
 }

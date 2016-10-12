@@ -1,6 +1,6 @@
 #include "ksbit.h"
 
-enum class SerialPin {
+enum SerialPin {
     P0 = MICROBIT_ID_IO_P0,
     P1 = MICROBIT_ID_IO_P1,
     P2 = MICROBIT_ID_IO_P2,
@@ -12,11 +12,26 @@ enum class SerialPin {
     P16 = MICROBIT_ID_IO_P16
 };
 
-enum class BaudRate {
+enum BaudRate {
   //% block=115200
   BaudRate115200 = 115200,
   //% block=9600
   BaudRate9600 = 9600
+};
+
+enum Delimiters {
+    //% block="new line"
+    NewLine = 1,
+    //% block=","
+    Comma = 2,
+    //% block="$"
+    Dollar = 3,
+    //% block=":"
+    Colon = 4,
+    //% block="."
+    Fullstop = 5,
+    //% block="#"
+    Hash = 6,
 };
 
 //% weight=2 color=30
@@ -25,23 +40,24 @@ namespace serial {
     // note that at least one // followed by % is needed per declaration!
 
     /**
-     * Reads a line of text from the serial port.
+     * Reads a line of text from the serial port and returns the buffer when the delimiter is met.
+     * @param delimiter text delimiter that separates each text chunk
      */
-    //% help=serial/read-line
-    //% blockId=serial_read_line block="serial read line"
-    //% weight=20
-    StringData* readLine() {
-      return uBit.serial.readUntil(ManagedString("\n")).leakData();
+    //% help=serial/read-until
+    //% blockId=serial_read_until block="serial|read until %delimiter=serial_delimiter_conv"
+    //% weight=19
+    StringData* readUntil(StringData* delimiter) {
+      return uBit.serial.readUntil(ManagedString(delimiter)).leakData();
     }
 
     /**
-     * Sends a piece of text through Serial connection.
+     * Reads a line of text from the serial port.
      */
-    //% help=serial/write-string
-    //% weight=87
-    //% blockId=serial_writestring block="serial write string %text"
-    void writeString(StringData *text) {
-      uBit.serial.send(ManagedString(text));
+    //% help=serial/read-line
+    //% blockId=serial_read_line block="serial|read line"
+    //% weight=20 blockGap=8
+    StringData* readLine() {
+      return readUntil(ManagedString("\n").leakData());
     }
 
     /**
@@ -49,10 +65,20 @@ namespace serial {
     * @param delimiters the characters to match received characters against. eg:"\n"
     */
     // help=serial/on-data-received
-    // weight=19
+    // weight=18
     void onDataReceived(StringData* delimiters, Action body) {
       uBit.serial.eventOn(ManagedString(delimiters));
       registerWithDal(MICROBIT_ID_SERIAL, MICROBIT_SERIAL_EVT_DELIM_MATCH, body);
+    }
+
+    /**
+     * Sends a piece of text through Serial connection.
+     */
+    //% help=serial/write-string
+    //% weight=87
+    //% blockId=serial_writestring block="serial|write string %text"
+    void writeString(StringData *text) {
+      uBit.serial.send(ManagedString(text));
     }
 
     /**
@@ -63,7 +89,7 @@ namespace serial {
     */
     //% weight=10
     //% help=serial/redirect-to
-    //% blockId=serial_redirect block="serial redirect to|TX %tx|RX %rx|at baud rate %rate"
+    //% blockId=serial_redirect block="serial|redirect to|TX %tx|RX %rx|at baud rate %rate"
     //% blockExternalInputs=1
     void redirect(SerialPin tx, SerialPin rx, BaudRate rate) {
       uBit.serial.redirect((PinName)tx, (PinName)rx);

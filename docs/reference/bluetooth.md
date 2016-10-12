@@ -25,7 +25,7 @@ bluetooth.onBluetoothDisconnected(() => {});
 
 ```cards
 bluetooth.startUartService();
-bluetooth.uartRead("");
+bluetooth.uartReadUntil("");
 bluetooth.uartWriteString("");
 bluetooth.uartWriteNumber(0);
 bluetooth.uartWriteValue("", 0);
@@ -43,7 +43,7 @@ For more advanced information on the micro:bit Bluetooth UART service including 
 
 [startAccelerometerService](/reference/bluetooth/start-accelerometer-service), [startButtonService](/reference/bluetooth/start-button-service), [startIOPinService](/reference/bluetooth/start-io-pin-service), [startLEDService](/reference/bluetooth/start-led-service), [startMagnetometerService](/reference/bluetooth/start-magnetometer-service), [startTemperatureService](/reference/bluetooth/start-temperature-service), 
 [startUartService](/reference/bluetooth/start-uart-service),
-[uartRead](/reference/bluetooth/uart-read), 
+[uartReadUntil](/reference/bluetooth/uart-read-until), 
 [uartWriteString](/reference/bluetooth/uart-write-string), 
 [uartWriteNumber](/reference/bluetooth/uart-write-number), 
 [uartWriteValue](/reference/bluetooth/uart-write-value), 

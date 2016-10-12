@@ -12,7 +12,7 @@ The [Bluetooth UART service](start-uart-service.md) allows another device such a
 With the Bluetooth UART service running, this block allows a micro:bit to read data which has been received from a Bluetooth connected device, terminating reading and returning the value obtained as soon as a specified delimiter character is encountered. This means that connected devices can send data to the micro:bit and indicate that the complete message has been sent by appending the message with the delimiter character.
 
 ```sig
-bluetooth.uartRead("");
+bluetooth.uartReadUntil("");
 ```
 
 ### Example: Starting the Bluetooth UART service and then reading data received from another device which is terminated by ":" character and then displaying it
@@ -25,7 +25,7 @@ bluetooth.onBluetoothConnected(() => {
     basic.showString("C");
     connected = 1;
     while (connected == 1) {
-        uartData = bluetooth.uartRead(":");
+        uartData = bluetooth.uartReadUntil(":");
         basic.showString(uartData);
     }
 });
