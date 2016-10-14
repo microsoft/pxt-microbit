@@ -154,6 +154,25 @@ namespace radio {
     }
 
     /**
+     * Reads a string received in a packet received by ``receive number``. Not supported in simulator.
+     */
+    //% help=radio/received-value-name
+    //% weight=45 debug=true
+    StringData* receivedValueName() {
+        if (packet.length() > 12) {
+            uint8_t* bytes = packet.getBytes();
+            uint8_t len = min(MAX_FIELD_NAME_LENGTH, bytes[12]);
+            if (len) {
+                char name[MAX_FIELD_NAME_LENGTH+1];
+                memcpy(name, bytes + 13, len);
+                name[len] = 0;
+                return ManagedString(name).leakData();
+            }
+        }
+        return ManagedString().leakData();
+    }
+
+    /**
      * Reads the next packet as a number from the radio queue.
      */
     //% help=radio/receive-number

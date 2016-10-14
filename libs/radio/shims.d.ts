@@ -51,6 +51,13 @@ declare namespace radio {
     function receivedNumberAt(index: number): number;
 
     /**
+     * Reads a string received in a packet received by ``receive number``. Not supported in simulator.
+     */
+    //% help=radio/received-value-name
+    //% weight=45 debug=true shim=radio::receivedValueName
+    function receivedValueName(): string;
+
+    /**
      * Reads the next packet as a number from the radio queue.
      */
     //% help=radio/receive-number
