@@ -30,7 +30,8 @@
         "pxtparts.json",
         "parts/speaker.svg",
         "parts/headphone.svg",
-        "_locales/fr/microbit-jsdoc-strings.json"
+        "_locales/de/core-strings.json",
+        "_locales/de/core-jsdoc-strings.json"
     ],
     "public": true,
     "dependencies": {},
