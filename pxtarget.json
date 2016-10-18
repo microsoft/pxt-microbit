@@ -88,9 +88,6 @@
             {
                 "type": "api",
                 "map": {
-                    "serial\\.writeNumber\\((.*?)\\)" : "bluetooth.uartWriteNumber($1)",
-                    "serial\\.writeString\\((.*?)\\)" : "bluetooth.uartWriteString($1)",
-                    "serial\\.writeValue\\((.*?)\\)" : "bluetooth.WriteValue($1)",
                     "bluetooth\\.uartRead\\((.*?)\\)" : "bluetooth.uartReadUntil($1)",
                     "bluetooth\\.uartWrite\\((.*?)\\)" : "bluetooth.uartWriteUntil($1)"
                 }
