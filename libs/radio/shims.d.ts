@@ -62,7 +62,8 @@ declare namespace radio {
      */
     //% help=radio/receive-number
     //% weight=46
-    //% blockId=radio_datagram_receive block="radio receive number" blockGap=8 shim=radio::receiveNumber
+    //% blockId=radio_datagram_receive block="radio receive number" blockGap=8
+    //% advanced=true shim=radio::receiveNumber
     function receiveNumber(): number;
 
     /**
