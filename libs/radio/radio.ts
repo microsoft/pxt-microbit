@@ -6,14 +6,14 @@ namespace radio {
     export class Packet {
         public sentNumber: number;
         public time: number;
-        public serial: number;
-        public name: string;
-        public rssi: number;
+        public serialNumber: number;
+        public sentName: string;
+        public signalStrength: number;
     }
 
     //% mutate=true
     //% mutateText=Packet
-    //% mutateDefaults="sentNumber;sentNumber,name"
+    //% mutateDefaults="sentNumber;sentNumber,sentName"
     //% blockId=radio_on_packet block="on radio received" blockGap=8
     export function onDataPacketReceived(cb: (packet: Packet) => void) {
         onDataReceived(() => {
@@ -21,9 +21,9 @@ namespace radio {
             const packet = new Packet();
             packet.sentNumber = receivedNumberAt(0);
             packet.time = receivedNumberAt(1);
-            packet.serial = receivedNumberAt(2);
-            packet.name = receivedValueName();
-            packet.rssi = receivedSignalStrength();
+            packet.serialNumber = receivedNumberAt(2);
+            packet.sentName = receivedValueName();
+            packet.signalStrength = receivedSignalStrength();
             cb(packet)
         });
     }
