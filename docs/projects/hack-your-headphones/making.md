@@ -6,6 +6,12 @@ Did you know you could attach your headhpones to the micro:bit to generate sound
 
 ### ~
 
+# ~hint
+
+**No crocodile clips!?!?!** Use wires or Aluminium foil! [Read more...](/device/foil-circuits)
+
+# ~
+
 ### Step 1
 
 ![](/static/mb/lessons/banana-keyboard-1.png)

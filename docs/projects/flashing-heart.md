@@ -7,11 +7,12 @@
 ```sim
 basic.forever(() => {
 basic.showLeds(`
-. # . # .
-# # # # #
-# # # # #
-. # # # .
-. . # . .`);
+    . # . # .
+    # # # # #
+    # # # # #
+    . # # # .
+    . . # . .`
+    );
 basic.pause(500);
 basic.clearScreen();
 basic.pause(500);
@@ -29,11 +30,12 @@ Use [show leds](/reference/basic/show-leds) and make your code look like this:
 
 ```blocks
 basic.showLeds(`
-. # . # .
-# # # # #
-# # # # #
-. # # # .
-. . # . .`);
+    . # . # .
+    # # # # #
+    # # # # #
+    . # # # .
+    . . # . .`
+    );
 ```
 
 ## Step 2
@@ -42,11 +44,11 @@ Add a [pause](/reference/basic/pause) to wait and [clear screen](/reference/basi
 
 ```blocks
 basic.showLeds(`
-. # . # .
-# # # # #
-# # # # #
-. # # # .
-. . # . .`);
+    . # . # .
+    # # # # #
+    # # # # #
+    . # # # .
+    . . # . .`);
 basic.pause(500);
 basic.clearScreen();
 ```
@@ -58,11 +60,12 @@ Put a [forever loop](/reference/basic/forever) around it.
 ```blocks
 basic.forever(() => {
 basic.showLeds(`
-. # . # .
-# # # # #
-# # # # #
-. # # # .
-. . # . .`);
+    . # . # .
+    # # # # #
+    # # # # #
+    . # # # .
+    . . # . .`
+    );
 basic.pause(500);
 basic.clearScreen();
 })
@@ -75,11 +78,12 @@ Add a [pause](/reference/basic/pause) to wait after clearing the screen.
 ```blocks
 basic.forever(() => {
 basic.showLeds(`
-. # . # .
-# # # # #
-# # # # #
-. # # # .
-. . # . .`);
+    . # . # .
+    # # # # #
+    # # # # #
+    . # # # .
+    . . # . .`
+    );
 basic.pause(500);
 basic.clearScreen();
 basic.pause(500);
@@ -94,20 +98,22 @@ Add a second image of a broken heart.
 ```blocks
 basic.forever(() => {
 basic.showLeds(`
-. # . # .
-# # # # #
-# # # # #
-. # # # .
-. . # . .`);
+    . # . # .
+    # # # # #
+    # # # # #
+    . # # # .
+    . . # . .`
+    );
 basic.pause(500);
 basic.clearScreen();
 basic.pause(500);
 basic.showLeds(`
-. # . # .
-# . # # #
-# . . . #
-. # # # .
-. . # . .`);
+    . # . # .
+    # . # # #
+    # . . . #
+    . # # # .
+    . . # . .`
+    );
 basic.pause(500);
 basic.clearScreen();
 basic.pause(500);

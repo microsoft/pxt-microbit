@@ -1,7 +1,5 @@
 # Error codes
 
-The micro:bit error codes
-
 Your micro:bit may encounter a situation that prevents it from running your code. When this happens, a frowny face will appear on your micro:bit screen (see picture) followed by an error number.
 
 Below is a list of error numbers and what they mean:

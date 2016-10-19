@@ -24,6 +24,12 @@ Build your own music player micro:bit from headphones.
 * [Connect your headphone](/projects/hack-your-headphone/making)
 * [Play sounds!]()
 
+# ~hint
+
+**No crocodile clips!?!?!** Use wires or Aluminium foil! [Read more...](/device/foil-circuits)
+
+# ~
+
 ### ~button /projects/hack-your-headphones/making
 
 Let's get started!

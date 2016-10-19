@@ -10,11 +10,12 @@ Use [show leds](/reference/basic/show-leds) to make a smiley face:
 
 ```blocks
 basic.showLeds(`
-. # . # .
-. # . # .
-. . . . .
-# . . . #
-. # # # .`);
+    . # . # .
+    . # . # .
+    . . . . .
+    # . . . #
+    . # # # .`
+    );
 ```
 
 ## Step 2
@@ -24,18 +25,20 @@ frowny face inside it:
 
 ```blocks
 basic.showLeds(`
-. # . # .
-. # . # .
-. . . . .
-# . . . #
-. # # # .`);
-input.onButtonPressed(Button.A, () => { 
-    basic.showLeds(`
     . # . # .
     . # . # .
     . . . . .
-    . # # # .
-    # . . . #`);
+    # . . . #
+    . # # # .`
+    );
+input.onButtonPressed(Button.A, () => { 
+    basic.showLeds(`
+        . # . # .
+        . # . # .
+        . . . . .
+        . # # # .
+        # . . . #`
+        );
 });
 ```
 
@@ -45,25 +48,28 @@ Now add blocks so that when [button B is pressed](/reference/input/button-is-pre
 
 ```blocks
 basic.showLeds(`
-. # . # .
-. # . # .
-. . . . .
-# . . . #
-. # # # .`);
-input.onButtonPressed(Button.A, () => { 
-    basic.showLeds(`
-    . # . # .
-    . # . # .
-    . . . . .
-    . # # # .
-    # . . . #`);
-});
-input.onButtonPressed(Button.B, () => { 
-    basic.showLeds(`
     . # . # .
     . # . # .
     . . . . .
     # . . . #
-    . # # # .`);
+    . # # # .`
+    );
+input.onButtonPressed(Button.A, () => { 
+    basic.showLeds(`
+        . # . # .
+        . # . # .
+        . . . . .
+        . # # # .
+        # . . . #`
+        );
+});
+input.onButtonPressed(Button.B, () => { 
+    basic.showLeds(`
+        . # . # .
+        . # . # .
+        . . . . .
+        # . . . #
+        . # # # .`
+        );
 });
 ```

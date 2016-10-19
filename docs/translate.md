@@ -16,13 +16,9 @@ You will find two files in that project:
 
 ## Translating the blocks and reference documentation
 
-The project below contains the resources from the blocks and functions using in the https://codethemicrobit.com.
+You will find package files under ``/microbit`` , one for the block definition and one for the descriptions:
 
-* [https://crowdin.com/project/pxt-microbit](https://crowdin.com/project/pxt-microbit)
-
-You will find two files for each package available in the micro:bit, one for the block definition and one for the descriptions:
-
-* ``microbit-strings.json``: contains the block definitions
-* ``microbit-jsdoc-strings.json``: contains the descriptions
+* ``core-strings.json``: contains the block definitions
+* ``core-jsdoc-strings.json``: contains the descriptions
 
 The block definition should be carefully translated using the [block definition syntax](https://www.pxt.io/defining-blocks).

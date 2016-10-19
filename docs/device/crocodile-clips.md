@@ -1,11 +1,40 @@
 # crocodile clips
 
-The large holes at the bottom of the board are designed to attach alligator/crocodile clips.
-Register an event that will execute whenever the user attaches one side of the crocodile clip to the `GND` pin, then connects and disconnects the unattached side of the crocodile clip to pin `0`, `1`, or `2`.
+The large holes at the bottom of the board are designed to attach alligator/crocodile clips 
+to create electrical circuit with other components.
 
-### Example: on pin pressed with random numbers
+# ~hint
 
-This example displays a random number every time the crocodile clip holds  `GND` then connects and disconnects the `P0` pin. Each time the crocodile clip is firmly connected and disconnected from pin `P0`, the micro:bit will return a random Number between 0 and the parameter limit
+**No crocodile clips!?!?!** Use wires or Aluminium foil! [Read more...](/device/foil-circuits)
+
+# ~
+
+
+## Connecting Crocodile Clips
+
+The hole for ``P0`` and ``GND`` allow to grab the board on the side which makes for a great grip.
+
+![](/static/mb/device/croc-clips/crocclipsclamped.jpg)
+
+Pass one jaw in the hole and grab the side of the board with the other jaw.
+
+![](/static/mb/device/croc-clips/sideclamp.jpg)
+
+For the center holes, ``P1`` and ``P2``, you can also grab the bottom of the board but they are a bit harder to grip.
+
+You can also grip the board between the jaws. In which case, you will want to make sure to avoid overlapping the jaws 
+with the other pins as it will create short-circuit in the board.
+
+![](/static/mb/device/croc-clips/badclamp.jpg)
+
+Adding a little tape helps keeping the crocodile clips in place.
+
+![](/static/mb/device/croc-clips/frontclamp.jpg)
+
+## Example: on pin pressed with random numbers
+
+This example displays a random number every time the crocodile clip holds  `GND` then connects and disconnects the `P0` pin. 
+Each time the crocodile clip is firmly connected and disconnected from pin `P0`, the micro:bit will return a random Number between 0 and the parameter limit.
 
 ```blocks
 input.onPinPressed(TouchPin.P0, () => {
@@ -13,11 +42,6 @@ input.onPinPressed(TouchPin.P0, () => {
 })
 ```
 
-### Connecting Crocodile Clips
+## See also
 
-![](/static/mb/crocodile-clips-2.jpg)
-
-### See also
-
-[micro:bit pins](/device/pins), [pin is pressed](/reference/input/pin-is-pressed), [analog read pin](/reference/pins/analog-read-pin), [analog write pin](/reference/pins/analog-write-pin), [digital read pin](/reference/pins/digital-read-pin), [digital write pin](/reference/pins/digital-write-pin)
-
+[micro:bit pins](/device/pins)

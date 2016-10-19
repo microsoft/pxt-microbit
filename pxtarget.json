@@ -14,7 +14,7 @@
     "cloud": {
         "workspace": false,
         "packages": true,
-        "sharing": false,
+        "sharing": true,
         "publish": false,
         "preferredPackages": [
             "Microsoft/pxt-neopixel",
@@ -249,7 +249,7 @@
                 "path": "/browsers/windows"
             }
         ],
-        "boardName": "BBC micro:bit",
+        "boardName": "micro:bit",
         "docMenu": [
             {
                 "name": "Getting Started",
