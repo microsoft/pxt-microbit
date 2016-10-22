@@ -37,7 +37,7 @@ input.onButtonPressed(Button.B, () => {
 
 ## step 1: measuring magnetic force
 
-We will use the micro:bit's compass to detect the magnet. Compass's tell us what direction we are pointing by detecting the Earth's magnetic field but they can also detect any other magnet nearby. We will use that to check if our magnet is next to the micro:bit by using the 'magnetic force' block found in the input menu's 'more' section. As we only want to measure the strength we change the drop down to select 'strength':
+We will use the micro:bit's compass to detect the magnet. Compass's tell us what direction we are pointing by detecting the Earth's magnetic field but they can also detect any other magnet nearby. We will use that to check if our magnet is next to the micro:bit by using the [magnetic force](reference/input/magnetic-force) block found in the input menu's 'more' section. As we only want to measure the strength we change the drop down to select 'strength':
 
 ```blocks
 input.magneticForce(Dimension.Strength)
@@ -56,10 +56,10 @@ var isSwitched = Math.abs(input.magneticForce(Dimension.Strength)) > 100
 ```
 ## step 3: running our 'magnet nearby' check all the time
 
-At the moment our code to detect the magnet being nearby will only run once so we need to put it into a 'foreever' block so that it keeps getting run again and again checking for the magnet to come near to the micro:bit. We should also make sure 'isSwitched' is false when our program starts.
+At the moment our code to detect the magnet being nearby will only run once so we need to put it into a [foreever](/reference/basic/forever) block so that it keeps getting run again and again checking for the magnet to come near to the micro:bit. We should also make sure 'isSwitched' is false when our program starts.
 
 ```blocks
-var isSwitched = false;
+let isSwitched = false;
 basic.forever(() => {
 	var isSwitched = Math.abs(input.magneticForce(Dimension.Strength)) > 100
 })
@@ -67,24 +67,24 @@ basic.forever(() => {
 
 ## step 4: swapping the buttons when we know the magnet is nearby
 
-Now we can check the value of our variable 'isChecked' whenever we want and we will know that the magnet is nearby if it's value is 'true'. Let's use that to change how the buttons work and complete the code for our trick. We will add an 'if, else' block to each button's code and check if we should swap over what each button displays because 'isSwitched' is equal to true:
+Now we can check the value of our variable 'isSwitched' whenever we want and we will know that the magnet is nearby if it's value is 'true'. Let's use that to change how the buttons work and complete the code for our trick. We will add an 'if, else' block to each button's code and check if we should swap over what each button displays because 'isSwitched' is equal to true:
 
 ```blocks
 
-var isSwitched = false;
+let isSwitched = false;
 basic.forever(() => {
     isSwitched = Math.abs(input.magneticForce(Dimension.Strength)) > 100
 })
 
 input.onButtonPressed(Button.A, () => {
-    if (isSwitched == true) {
+    if (isSwitched) {
         basic.showString("B")
     } else {
         basic.showString("A")
     }
 })
 input.onButtonPressed(Button.B, () => {
-    if (isSwitched == true) {
+    if (isSwitched) {
         basic.showString("A")
     } else {
         basic.showString("B")
@@ -95,3 +95,7 @@ input.onButtonPressed(Button.B, () => {
 
 ## step 5: practice your performance
 Now you just need to program your own micro:bit and practice the trick a few times before performing to friends. Try asking your friends to click the buttons after you have switched the labels and the trick won't work for them as they don't have a hidden magnet in their hand.
+
+
+## about the authors
+This project was contributed by Brian and Jasmine Norman, aka [@MicroMonstersUK](https://twitter.com/MicroMonstersUK). You can chekout their [micro:bit tutorials chanel on youtube](https://www.youtube.com/channel/UCK2DviDexh_Er2QYZerZyZQ) for more projects.

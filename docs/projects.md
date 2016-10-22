@@ -67,12 +67,21 @@ Fun games to build with your micro:bit.
   "name": "Radio",
   "url":"/projects/radio",
   "imageUrl":"/static/mb/projects/a9-radio.png"
-},{
+}]
+```
+
+## From the community
+
+Projects contributed by the micro:bit community
+
+```codecard
+[{
   "name": "Magic Button Trick",
   "url":"/projects/magic-button-trick",
   "imageUrl":"/static/mb/projects/magic-button-trick.png"
 }]
 ```
+
 
 ### See Also
 
