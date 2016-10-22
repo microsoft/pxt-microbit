@@ -13,7 +13,7 @@ https://youtu.be/-9KvmPopov8
 
 ## how the trick works
 
-Unfortunately, the only magic here is in the code. This trick actually uses a magnet, hidden in your hand, to tell the micro:bit to swap over the buttons so that when the magnet is near the microbit the **A** button starts working likethe **B** button and the **B** button starts working like the **A** button.
+Unfortunately, the only magic here is in the code. This trick uses a magnet, hidden in your hand, to tell the micro:bit to swap over the buttons so that when the magnet is near the microbit the **A** button starts working like the **B** button and the **B** button starts working like the **A** button.
 
 ## what you need
 
@@ -37,7 +37,7 @@ input.onButtonPressed(Button.B, () => {
 
 ## step 1: measuring magnetic force
 
-We will use the micro:bit's compass to detect the magnet. Compass's tell us what direction we are pointing by detecting the Earth's magnetic field but they can also detect any other magnet nearby, we will use that to check if our magnet is next to the micro:bit by using the magnetic force block in the input menu. As we only want strength we change the drop down to select 'strength':
+We will use the micro:bit's compass to detect the magnet. Compass's tell us what direction we are pointing by detecting the Earth's magnetic field but they can also detect any other magnet nearby. We will use that to check if our magnet is next to the micro:bit by using the 'magnetic force' block found in the input menu's 'more' section. As we only want to measure the strength we change the drop down to select 'strength':
 
 ```blocks
 input.magneticForce(Dimension.Strength)
@@ -45,9 +45,9 @@ input.magneticForce(Dimension.Strength)
 
 ## step 2: checking if the magnetic is nearby
 
-Now we can measure the magnetic force near the microbit, we can check if the value we measure is so big that it means there must be a strong magnet nearby. If you have ever played with magnet's you know they have two ends, often called a north and south 'pole'. 
+Now we can measure the magnetic force near the microbit, we can check if the value we measure is so big that it means there must be a strong magnet nearby. 
 
-Depending on which end of the magnet is pointing at the microbit the magnetic force measurement will either be a negative number like -100 or a positive number like 100. We just want to know if the strength is at least 100 we don't care if its negative or positive so we also use the 'absolute value of' block from the maths menu to tell our code to ignore the negative sign and just treat -100 as if its 100.
+If you have ever played with magnets you know they have two ends, often called a north and south 'pole'. Depending on which end of the magnet is pointing at the microbit the magnetic force measurement will either be a negative number like -100 or a positive number like 100. We just want to know if the strength is at least 100 we don't care if its negative or positive so we also use the 'absolute value of' block from the maths menu to tell our code to ignore the negative sign and just treat -100 as if its 100.
 
 So in the code below we will check if the absolute value of our magnetic field strength reading is more than 100 and save the result of that check in a new variable called 'isSwitched':
 
@@ -70,6 +70,12 @@ basic.forever(() => {
 Now we can check the value of our variable 'isChecked' whenever we want and we will know that the magnet is nearby if it's value is 'true'. Let's use that to change how the buttons work and complete the code for our trick. We will add an 'if, else' block to each button's code and check if we should swap over what each button displays because 'isSwitched' is equal to true:
 
 ```blocks
+
+var isSwitched = false;
+basic.forever(() => {
+    isSwitched = Math.abs(input.magneticForce(Dimension.Strength)) > 100
+})
+
 input.onButtonPressed(Button.A, () => {
     if (isSwitched == true) {
         basic.showString("B")
@@ -85,10 +91,7 @@ input.onButtonPressed(Button.B, () => {
     }
 })
 
-var isSwitched = false;
-basic.forever(() => {
-    isSwitched = Math.abs(input.magneticForce(Dimension.Strength)) > 100
-})
-
-
 ```
+
+## step 5: practice your performance
+Now you just need to program your own micro:bit and practice the trick a few times before performing to friends. Try asking your friends to click the buttons after you have switched the labels and the trick won't work for them as they don't have a hidden magnet in their hand.
