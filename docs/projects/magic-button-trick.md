@@ -52,7 +52,7 @@ If you have ever played with magnets you know they have two ends, often called a
 So in the code below we will check if the absolute value of our magnetic field strength reading is more than 100 and save the result of that check in a new variable called 'isSwitched':
 
 ```blocks
-var isSwitched = Math.abs(input.magneticForce(Dimension.Strength)) > 100
+let isSwitched = Math.abs(input.magneticForce(Dimension.Strength)) > 100
 ```
 ## step 3: running our 'magnet nearby' check all the time
 
@@ -61,7 +61,7 @@ At the moment our code to detect the magnet being nearby will only run once so w
 ```blocks
 let isSwitched = false;
 basic.forever(() => {
-	var isSwitched = Math.abs(input.magneticForce(Dimension.Strength)) > 100
+	let isSwitched = Math.abs(input.magneticForce(Dimension.Strength)) > 100
 })
 ```
 
