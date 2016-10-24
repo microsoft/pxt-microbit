@@ -44,5 +44,5 @@ radio.onDataReceived(() => { })
 * learn how to pause your code for the specified number of milliseconds
 
 ```package
-microbit-radio
+radio
 ```

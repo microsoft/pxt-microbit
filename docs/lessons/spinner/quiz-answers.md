@@ -25,8 +25,9 @@ let randomArrow = Math.random(4)
 <br/>
 
 ```blocks
+let randomArrow = Math.random(4);
 if (randomArrow == 1) {
-    basic.plotImage(`
+    basic.showLeds(`
 . . # . .
 . . # . .
 # # # # #
@@ -43,8 +44,9 @@ if (randomArrow == 1) {
 <br />
 
 ```blocks
+let randomArrow = Math.random(4);
 if (randomArrow == 2) {
-    basic.plotImage(`
+    basic.showLeds(`
 . . # . .
 . . # # .
 # # # # #

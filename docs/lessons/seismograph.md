@@ -35,5 +35,5 @@ radio.receiveNumber();
 * learn how to read the connector value as analog as a value comprised between 0 and 1023
 
 ```package
-microbit-radio
+radio
 ```

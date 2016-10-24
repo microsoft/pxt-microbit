@@ -11,8 +11,8 @@
   "author": "Microsoft Corporation",
   "short_name": "code the micro:bit",
 
-  "description": "Extension for https://codethemicrobit.com.",
-  "homepage_url": "https://codethemicrobit.com",
+  "description": "Extension for https://pxt.microbit.org.",
+  "homepage_url": "https://pxt.microbit.org",
   "offline_enabled": "true",
   "icons": {
     "48": "logo48.png",
@@ -25,6 +25,6 @@
   ],
 
   "externally_connectable": {
-    "matches": [ "*://localhost/*", "https://codethemicrobit.com/*", "https://*.codethemicrobit.com/*" ]
+    "matches": [ "*://localhost/*", "https://pxt.microbit.org/*", "https://*.microbit.org/*" ]
   }
 }

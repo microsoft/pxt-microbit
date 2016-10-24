@@ -73,5 +73,5 @@ devices.tellCameraTo("stop video mode")
 [tell remote control to](/reference/devices/tell-remote-control-to), [raise alert to](/reference/devices/raise-alert-to)
 
 ```package
-microbit-devices
+devices
 ```

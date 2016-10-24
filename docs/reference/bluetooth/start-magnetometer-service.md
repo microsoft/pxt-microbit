@@ -39,5 +39,5 @@ For more advanced information on the micro:bit Bluetooth magnetometer service in
 
 
 ```package
-microbit-bluetooth
+bluetooth
 ```

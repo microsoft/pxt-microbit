@@ -2,7 +2,6 @@
   "radio.onDataReceived|block": "radio on data received",
   "radio.receiveNumber|block": "radio receive number",
   "radio.receiveString|block": "radio receive string",
-  "radio.receivedNumberAt|block": "radio receive number|at %VALUE",
   "radio.receivedSignalStrength|block": "radio received signal strength",
   "radio.sendNumber|block": "radio send number %value",
   "radio.sendString|block": "radio send string %msg",
@@ -11,5 +10,6 @@
   "radio.setTransmitPower|block": "radio set transmit power %power",
   "radio.setTransmitSerialNumber|block": "radio set transmit serial number %transmit",
   "radio.writeValueToSerial|block": "radio write value to serial",
-  "radio|block": "radio"
+  "radio|block": "radio",
+  "{id:category}Radio": "Radio"
 }

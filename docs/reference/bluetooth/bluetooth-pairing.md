@@ -96,5 +96,5 @@ If you do find yourself needing to pair again you will first need to remove the 
 
 
 ```package
-microbit-bluetooth
+bluetooth
 ```

@@ -164,5 +164,5 @@ Connect the second micro:bit to your computer using your USB cable and run the p
 The first person and second person take turns jumping in the “y” direction while the other player uses the micro:bit to track the results on the micro:bit!
 
 ```package
-microbit-radio
+radio
 ```

@@ -61,5 +61,5 @@ radio.onDataReceived(() => {
 
 
 ```package
-microbit-radio
+radio
 ```

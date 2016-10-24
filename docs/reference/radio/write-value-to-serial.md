@@ -53,5 +53,5 @@ Sample output to serial when ``A`` button pressed:
 [on data received](/reference/radio/on-data-received)
 
 ```package
-microbit-radio
+radio
 ```

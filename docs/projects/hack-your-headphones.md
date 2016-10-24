@@ -21,7 +21,7 @@ Build your own music player micro:bit from headphones.
 
 ## Activities
 
-* [Connect your headphone](/projects/hack-your-headphone/making)
+* [Connect your headphone](/projects/hack-your-headphones/making)
 * [Play sounds!]()
 
 # ~hint

@@ -24,3 +24,5 @@ clients/electron/projects
 *.db
 *.suo
 *.log
+.vscode/.BROWSE.VC.DB-shm
+.vscode/.BROWSE.VC.DB-wal

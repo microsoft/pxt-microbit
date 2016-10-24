@@ -22,7 +22,7 @@ change
 
 change-score-by
 
-change-tempo
+change-tempo-by
 
 change-var
 

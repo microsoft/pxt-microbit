@@ -13,7 +13,7 @@ Once you've made your project, you can save it the cloud, share it, or embed it 
 
 ## Sharing the URL
 
-You can share the URL for the project ([https://codethemicrobit.com/httuftrbtg](https://codethemicrobit.com/httuftrbtg) above) with other people, and they will be able to visit that page to see your project, download it, or edit it:
+You can share the URL for the project ([https://pxt.microbit.org/httuftrbtg](https://pxt.microbit.org/httuftrbtg) above) with other people, and they will be able to visit that page to see your project, download it, or edit it:
 
 ![Project page](/static/embed/project-page.png)
 
@@ -36,12 +36,12 @@ Open the HTML editor for your blog or website and paste it with your content
 
 ### Wordpress
 
-[wordpress.com][] blogs do not support embedding content from most websites, so you will need to link to your project instead. Alternatively, if you have a Wordpress VIP account you can follow [these instructions][wordpress-vip] to embed an `iframe` into your blog. The URL that you need to add is like `https://codethemicrobit.com/?sandbox=1#pub:httuftrbtg`, but replace `httuftrbtg` with your project's unique identifier.
+[wordpress.com][] blogs do not support embedding content from most websites, so you will need to link to your project instead. Alternatively, if you have a Wordpress VIP account you can follow [these instructions][wordpress-vip] to embed an `iframe` into your blog. The URL that you need to add is like `https://pxt.microbit.org/?sandbox=1#pub:httuftrbtg`, but replace `httuftrbtg` with your project's unique identifier.
 
 If you self host a Wordpress blog you can install the [iframe-plugin][] and then write the following in your blog-post (again, replacing the `httuftrbtg` with your project's identifier):
 
 ```
-[iframe src="https://codethemicrobit.com/?sandbox=1#pub:httuftrbtg"]
+[iframe src="https://pxt.microbit.org/?sandbox=1#pub:httuftrbtg"]
 ```
 
 ### Blogger

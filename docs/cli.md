@@ -6,7 +6,7 @@ basic.forever(() => {
 })
 ```
 
-It is possible to use the codethemicrobit tools from a command line interface (CLI). The PXT CLI allows to 
+It is possible to use the tools from a command line interface (CLI). The PXT CLI allows to 
 * edit, compile or deploy JavaScript programs
 * can easily be integrated in most IDEs. It comes with built-in support for [Visual Studio Code](/code)!
 * run a local web server for the web editor

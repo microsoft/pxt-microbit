@@ -2,7 +2,7 @@
 
 ## Web application
 
-**https://codethemicrobit.com is an HTML5 web application** that automatically gets cached locally by your browser. 
+**https://pxt.microbit.org is an HTML5 web application** that automatically gets cached locally by your browser. 
 Once the web app is loaded and you have compiled at least once, you will have all the code needed to work without an internet connection.
 
 ## Command line interface

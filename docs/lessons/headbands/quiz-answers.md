@@ -29,6 +29,7 @@ Write the line of code that will display the string "puppy" using `data->coll`.
 <br/>
 
 ```blocks
+let coll: string[] = []
 basic.showString(coll[0], 150)
 ```
 
@@ -46,6 +47,7 @@ Write the line of code that will display the string "cat" using `data->coll`.
 <br/>
 
 ```blocks
+let coll: string[] = []
 basic.showString(coll[2], 150)
 ```
 

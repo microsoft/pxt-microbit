@@ -37,9 +37,9 @@ bluetooth.onBluetoothConnected(() => {});
 ```
   
 ```package
-microbit-radio
-microbit-devices
-microbit-bluetooth
+radio
+devices
+bluetooth
 ```
 
 ### See Also

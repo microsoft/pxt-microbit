@@ -5,7 +5,8 @@
 ### Things to do
 
 * **[Getting Started](/getting-started)**
-* [Ten projects](/projects)
+* [Projects](/projects)
+* [Lessons](/lessons)
 
 ### Micro:bit reference
 
@@ -16,16 +17,15 @@
 
 * [Blocks language](/blocks)
 * [JavaScript language](/javascript)
-* [Streaming data](/streaming)
 
 ### More questions?
 
 * [Frequently Asked Question](/faq)
-* [Embedding project](/share)
 * [Help Translate](/translate)
-* [Release notes](/release-notes)
+* [Embedding project](/share)
 
 ### Developers
 
 * [Command Line Interface](/cli)
 * Learn about [packages](/packages)
+* [Release notes](/release-notes)

@@ -649,11 +649,20 @@ declare namespace pins {
 declare namespace serial {
 
     /**
+     * Reads a line of text from the serial port and returns the buffer when the delimiter is met.
+     * @param delimiter text delimiter that separates each text chunk
+     */
+    //% help=serial/read-until
+    //% blockId=serial_read_until block="serial|read until %delimiter=serial_delimiter_conv"
+    //% weight=19 shim=serial::readUntil
+    function readUntil(delimiter: string): string;
+
+    /**
      * Reads a line of text from the serial port.
      */
     //% help=serial/read-line
-    //% blockId=serial_read_line block="serial read line"
-    //% weight=20 shim=serial::readLine
+    //% blockId=serial_read_line block="serial|read line"
+    //% weight=20 blockGap=8 shim=serial::readLine
     function readLine(): string;
 
     /**
@@ -661,7 +670,7 @@ declare namespace serial {
      */
     //% help=serial/write-string
     //% weight=87
-    //% blockId=serial_writestring block="serial write string %text" shim=serial::writeString
+    //% blockId=serial_writestring block="serial|write string %text" shim=serial::writeString
     function writeString(text: string): void;
 
     /**
@@ -672,7 +681,7 @@ declare namespace serial {
      */
     //% weight=10
     //% help=serial/redirect-to
-    //% blockId=serial_redirect block="serial redirect to|TX %tx|RX %rx|at baud rate %rate"
+    //% blockId=serial_redirect block="serial|redirect to|TX %tx|RX %rx|at baud rate %rate"
     //% blockExternalInputs=1 shim=serial::redirect
     function redirect(tx: SerialPin, rx: SerialPin, rate: BaudRate): void;
 }

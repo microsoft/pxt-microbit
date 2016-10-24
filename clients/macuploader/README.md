@@ -3,10 +3,10 @@
 ![](Microbit Uploader/Assets.xcassets/AppIcon.appiconset/icon_256x256.png)
 
 This project is a clone of the [Windows
-uploader](https://codethemicrobit.com/uploader), but for OS X. Once launched,
+uploader](https://pxt.microbit.org/uploader), but for OS X. Once launched,
 the app runs in your menu bar and will automatically deploy any HEX files to
 your `micro:bit`. Like the Windows version, it is compatible with any browser
-that can run [codethemicrobit.com](http://codethemicrobit.com).
+that can run [pxt.microbit.org](http://pxt.microbit.org).
 
 ## Install the built version
 

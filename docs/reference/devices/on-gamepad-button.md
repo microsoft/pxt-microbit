@@ -23,5 +23,5 @@ devices.onGamepadButton(MesDpadButtonInfo.ADown, () => {})
 [tell remote control to](/reference/devices/tell-remote-control-to), [raise alert to](/reference/devices/raise-alert-to), [signal strength](/reference/devices/signal-strength), [on signal strength changed](/reference/devices/on-signal-strength-changed)
 
 ```package
-microbit-devices
+devices
 ```

@@ -90,5 +90,5 @@ Have fun reviewing your simulation and analyze the acceleration by chart the Exc
 * Display acceleration with y or z using plot bar graph by changing acceleration from "x" to "y" or "z" 
 
 ```package
-microbit-radio
+radio
 ```

@@ -91,5 +91,5 @@ radio.onDataReceived(() => {
 [send string](/reference/radio/send-string), [on data received](/reference/radio/on-data-received)
 
 ```package
-microbit-radio
+radio
 ```

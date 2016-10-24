@@ -19,7 +19,7 @@ devices.onSignalStrengthChanged(() => {
 ```
 
 ```package
-microbit-devices
+devices
 ```
 
 ### See Also

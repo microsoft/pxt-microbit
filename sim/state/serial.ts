@@ -43,6 +43,10 @@ namespace pxsim.serial {
         return board().serialState.readSerial();
     }
 
+    export function readUntil(del: string): string {
+        return readLine();
+    }
+
     export function onDataReceived(delimiters: string, handler: RefAction) {
         let b = board();
         b.bus.listen(DAL.MICROBIT_ID_SERIAL, DAL.MICROBIT_SERIAL_EVT_DELIM_MATCH, handler);

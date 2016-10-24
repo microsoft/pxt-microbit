@@ -39,6 +39,6 @@ For more advanced information on the micro:bit Bluetooth temperature service inc
 
 
 ```package
-microbit-bluetooth
+bluetooth
 ```
 

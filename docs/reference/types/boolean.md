@@ -13,4 +13,4 @@ false;
 
 ### See Also
 
-[boolean (blocks)](/blocks/logic/boolean.md)
+[boolean (blocks)](/blocks/logic/boolean)

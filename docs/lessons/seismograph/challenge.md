@@ -196,5 +196,5 @@ Let's select Style 10 as an example.
 * Review and analyze the actual micro:bit device acceleration data on Excel
 
 ```package
-microbit-radio
+radio
 ```

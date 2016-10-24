@@ -5,13 +5,13 @@ and you can volunteer to translate parts of the web site.
 
 ## Translating the editor interface
 
-The project below contains the resources from https://www.pxt.io and the menu items of https://codethemicrobit.com.
+The project below contains the resources from https://www.pxt.io and the menu items of https://pxt.microbit.org.
 
 * [https://crowdin.com/project/kindscript](https://crowdin.com/project/kindscript)
 
 You will find two files in that project:
 
-* ``string.json``: text contained in the menu items of https://codethemicrobit.com
+* ``string.json``: text contained in the menu items of https://pxt.microbit.org
 * ``website.json``: text contained in the pages served by https://www.pxt.io 
 
 ## Translating the blocks and reference documentation

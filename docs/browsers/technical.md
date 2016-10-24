@@ -1,12 +1,12 @@
 # Technical information about browser support
 
-[codethemicrobit.com][] requires that you use a recent version of a modern
+[pxt.microbit.org][] requires that you use a recent version of a modern
 browser, such as Microsoft Edge, Google Chrome, Mozilla Firefox, Safari, Opera,
 or IE11.  This is because the editor uses modern web technologies such as [web
 workers][] to enable compiling [TypeScript][] in the browser, or the using the
 same [Monaco][] editor that powers [Visual Studio Code][].
 
-[codethemicrobit.com]: https://codethemicrobit.com
+[pxt.microbit.org]: https://pxt.microbit.org
 [web workers]: http://www.w3.org/TR/workers/
 [typescript]: http://www.typescriptlang.org
 [monaco]: https://microsoft.github.io/monaco-editor/

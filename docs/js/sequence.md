@@ -41,8 +41,8 @@ In JavaScript, there is the concept of an *empty statement*, which is whitespace
 a semicolon in the context where a statement is expected.
 So, the following code is an infinite loop
 followed by a call to `showNumber` that will never execute:
-```typescript
-while(true) ;  
+```typescript-ignore
+while(true) ;
 basic.showNumber(1);
 ```
 

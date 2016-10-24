@@ -86,5 +86,5 @@ devices.tellRemoteControlTo("volume down")
 
 
 ```package
-microbit-devices
+devices
 ```

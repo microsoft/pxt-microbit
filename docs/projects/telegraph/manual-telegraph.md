@@ -8,7 +8,6 @@ We now need to digitally write to pin ``P0`` as **high** (1).
 
 ```blocks
 pins.digitalWritePin(DigitalPin.P0, 1)
-
 ```
 
 ### Step 2
@@ -19,7 +18,6 @@ So insert the appropriate LED plot x, y.
 ```blocks
 pins.digitalWritePin(DigitalPin.P0, 1)
 led.plot(2, 2)
-
 ```
 
 ### Step 3
@@ -31,9 +29,7 @@ Then add a condition that occurs if we do not turn on a LED with plot x, y. We a
 if (input.buttonIsPressed(Button.A)) {
     pins.digitalWritePin(DigitalPin.P0, 1)
     led.plot(2, 2)
-} else {
-
-}
+} else { }
 ```
 
 
@@ -63,7 +59,8 @@ basic.forever(() => {
     } else {
         pins.digitalWritePin(DigitalPin.P0, 0)
         led.unplot(2, 2)
-    })
+    }
+})
 ```
 
 ### Step 6
@@ -87,9 +84,6 @@ basic.forever(() => {
         basic.clearScreen();
     }
 });
-
-
-
 ```
 
 Your telegraph is ready!

@@ -15,5 +15,6 @@
   "radio.setTransmitPower": "Change the output power level of the transmitter to the given value.",
   "radio.setTransmitPower|param|power": "a value in the range 0..7, where 0 is the lowest power and 7 is the highest. eg: 7",
   "radio.setTransmitSerialNumber": "Set the radio to transmit the serial number in each message.",
+  "radio.setTransmitSerialNumber|param|transmit": "value indicating if the serial number is transmitted, eg: true",
   "radio.writeValueToSerial": "Reads a value sent with `stream value` and writes it\nto the serial stream as JSON"
 }

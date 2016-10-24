@@ -3,7 +3,7 @@
 This target allow to program a [BBC micro:bit](https://www.microbit.co.uk/) using 
 PXT ([Microsoft Programming Experience Toolkit](https://github.com/Microsoft/pxt)).
 
-* [Try it live](https://codethemicrobit.com)
+* [Try it live](https://pxt.microbit.org)
 
 [![Build Status](https://travis-ci.org/Microsoft/pxt-microbit.svg?branch=master)](https://travis-ci.org/Microsoft/pxt-microbit)
 
@@ -52,11 +52,6 @@ pxt update
 ```
 
 More instructions at https://github.com/Microsoft/pxt#running-a-target-from-localhost 
-
-### Building
-
-* Install Visual Studio 2015 Update 2 or higher. Make sure the Windows 10 templates are installed.
-* open the ``win10/app.sln`` solution and launch the ``codethemicrobit`` project.
 
 ## Testing
 

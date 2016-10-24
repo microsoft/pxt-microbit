@@ -33,5 +33,5 @@ devices.onSignalStrengthChanged(() => {
 [tell remote control to](/reference/devices/tell-remote-control-to), [raise alert to](/reference/devices/raise-alert-to), [on signal strength changed](/reference/devices/on-signal-strength-changed)
 
 ```package
-microbit-devices
+devices
 ```

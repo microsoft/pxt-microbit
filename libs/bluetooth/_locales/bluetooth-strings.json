@@ -8,7 +8,10 @@
   "bluetooth.startMagnetometerService|block": "bluetooth magnetometer service",
   "bluetooth.startTemperatureService|block": "bluetooth temperature service",
   "bluetooth.startUartService|block": "bluetooth uart service",
-  "bluetooth.uartRead|block": "bluetooth uart read %del=bluetooth_uart_delimiter_conv",
-  "bluetooth.uartWrite|block": "bluetooth uart write %data",
-  "bluetooth|block": "bluetooth"
+  "bluetooth.uartReadUntil|block": "bluetooth uart|read until %del=serial_delimiter_conv",
+  "bluetooth.uartWriteNumber|block": "bluetooth uart|write number %value",
+  "bluetooth.uartWriteString|block": "bluetooth uart|write string %data",
+  "bluetooth.uartWriteValue|block": "bluetooth uart|write value %name|= %value",
+  "bluetooth|block": "bluetooth",
+  "{id:category}Bluetooth": "Bluetooth"
 }

@@ -87,7 +87,7 @@ The gate is ready to use! Your circuit should look like the picture below:
 
 ## Detecting the car with code
 
-The micro:bit provides an event [on pin pressed](/reference/pins/on-pin-pressed) 
+The micro:bit provides an event [on pin pressed](/reference/input/on-pin-pressed) 
 that is raised when a circuit between ``GND`` and a pin is detected. The circuit conductor could be a wire or even your body!
 We will attach a foil to the bottom of the car. When it passes over the gate, it connect both foil strips, close the circuit and trigger the event. 
 
@@ -146,7 +146,7 @@ Connect the crocodile plugs to the ``GND`` and ``P1`` pins on the micro:bit.
 
 ## Detecting the second gate
 
-Since the second gate is connected to pin ``P1``, we add a second [on pin pressed](/reference/pins/on-pin-pressed) event
+Since the second gate is connected to pin ``P1``, we add a second [on pin pressed](/reference/input/on-pin-pressed) event
 that display 2 columns of LEDs.
 
 ```blocks

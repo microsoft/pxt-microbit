@@ -62,5 +62,5 @@ devices.raiseAlertTo("ring alarm")
 [tell remote control to](/reference/devices/tell-remote-control-to), [tell camera to](/reference/devices/tell-camera-to)
 
 ```package
-microbit-devices
+devices
 ```

@@ -168,7 +168,7 @@ namespace pxsim.bluetooth {
     export function uartWrite(s : string): void {
         // TODO
     }
-    export function uartRead(): string {
+    export function uartReadUntil(del: string): string {
         // TODO
         return ""
     }

@@ -1,6 +1,6 @@
 # Unsupported configuration
 
-[codethemicrobit.com](https://codethemicrobit.com) doesn't currently support
+[pxt.microbit.org](https://pxt.microbit.org) doesn't currently support
 your browser or operating system. The following configurations are supported:
 
 ## Windows

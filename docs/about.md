@@ -79,7 +79,7 @@ When code is compiled to ARM machine code, the calls to JavaScript micro:bit fun
 
 ## [Command Line Tools](/cli)
 
-Looking to use codethemicrobit.com in your favorite editor? Install the [command line tools](/cli) and get rolling!
+Looking to use pxt.microbit.org in your favorite editor? Install the [command line tools](/cli) and get rolling!
 
 ## [Packages](/packages)
 

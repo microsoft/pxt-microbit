@@ -6,5 +6,6 @@
   "devices.signalStrength|block": "signal strength",
   "devices.tellCameraTo|block": "tell camera to|%property",
   "devices.tellRemoteControlTo|block": "tell remote control to|%property",
-  "devices|block": "devices"
+  "devices|block": "devices",
+  "{id:category}Devices": "Devices"
 }

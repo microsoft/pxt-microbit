@@ -43,7 +43,7 @@ music.beat(BeatFraction.Quarter)
 ```
 
 ## Step 1: Make a Smiley
-Open [codethemicrobit.com](https://codethemicrobit.com) in your web browser
+Open [pxt.microbit.org](https://pxt.microbit.org) in your web browser
 ```blocks
     basic.showLeds(`
         . # . # .
