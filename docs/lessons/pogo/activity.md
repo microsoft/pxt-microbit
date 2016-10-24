@@ -1,6 +1,6 @@
 # pogo activity
 
-Construct a counter that uses acceleration. 
+Construct a counter that uses acceleration.
 
 Welcome! This activity will teach how to construct a pendulum that glows using acceleration. Let's get started!
 
@@ -120,8 +120,8 @@ input.onButtonPressed(Button.AB, () => {
     let jumps = 0
     basic.showNumber(jumps)
 })
-radio.onDataReceived(() => {
-    basic.showNumber(radio.receiveNumber())
+radio.onDataPacketReceived(({ receivedNumber }) => {
+    basic.showNumber(receivedNumber)
 })
 
 ```
@@ -151,8 +151,8 @@ input.onButtonPressed(Button.AB, () => {
     let jumps = 0
     basic.showNumber(jumps)
 })
-radio.onDataReceived(() => {
-    basic.showNumber(radio.receiveNumber())
+radio.onDataPacketReceived(({ receivedNumber }) => {
+    basic.showNumber(receivedNumber)
     led.stopAnimation()
 })
 

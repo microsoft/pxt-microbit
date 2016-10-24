@@ -244,7 +244,7 @@ namespace radio {
     //% help=radio/receive-number
     //% weight=46
     //% blockId=radio_datagram_receive block="radio receive number" blockGap=8
-    //% advanced=true
+    //% deprecated=true
     int receiveNumber()
     {
         if (radioEnable() != MICROBIT_OK) return 0;
@@ -258,7 +258,7 @@ namespace radio {
     //% help=radio/on-data-received
     //% weight=50
     //% blockId=radio_datagram_received_event block="radio on data received" blockGap=8
-    //% advanced=true
+    //% deprecated=true
     void onDataReceived(Action body) {
         if (radioEnable() != MICROBIT_OK) return;
         registerWithDal(MICROBIT_ID_RADIO, MICROBIT_RADIO_EVT_DATAGRAM, body);
@@ -274,7 +274,7 @@ namespace radio {
     //% blockId=radio_datagram_receive_string block="radio receive string" blockGap=8
     //% weight=44
     //% help=radio/receive-string
-    //% advanced=true
+    //% deprecated=true
     StringData* receiveString() {
         if (radioEnable() != MICROBIT_OK) return ManagedString().leakData();
         receivePacket(false);
@@ -289,7 +289,7 @@ namespace radio {
     //% help=radio/received-signal-strength
     //% weight=40
     //% blockId=radio_datagram_rssi block="radio received signal strength"
-    //% advanced=true
+    //% deprecated=true
     int receivedSignalStrength() {
         if (radioEnable() != MICROBIT_OK) return 0;
         return packet.getRSSI();

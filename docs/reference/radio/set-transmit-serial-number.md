@@ -10,10 +10,6 @@ radio.setTransmitSerialNumber(true);
 
 * ``transmit`` is a [boolean](/reference/types/boolean) that represents whether the serial number needs to be transmitted.
 
-### Simulator
-
-This function only works on the micro:bit, not in browsers.
-
 ### Example
 
 This program makes the ``radio`` send the serial number in each packet.
@@ -24,7 +20,10 @@ radio.setTransmitSerialNumber(true);
 
 ### See also
 
-[receive number](/reference/radio/receive-number), [send number](/reference/radio/send-number), [on data received](/reference/radio/on-data-received)
+[on data packet received](/reference/radio/on-data-packet-received),
+[send number](/reference/radio/send-number),
+[send value](/reference/radio/send-value),
+[send string](/reference/radio/send-string)
 
 ```package
 radio

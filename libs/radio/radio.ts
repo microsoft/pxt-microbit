@@ -32,6 +32,7 @@ namespace radio {
      * Registers code to run when the radio receives a packet. Also takes the
      * received packet from the radio queue.
      */
+    //% help=radio/on-data-packet-received
     //% mutate=true
     //% mutateText=Packet
     //% mutateDefaults="receivedNumber;text,receivedNumber;text"

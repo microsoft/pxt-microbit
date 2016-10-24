@@ -1,5 +1,7 @@
 # Receive String
 
+> Note: This API has been deprecated! Use [on data packet received](/reference/radio/on-data-packet-received) instead.
+
 Find the next string sent by `radio` from another micro:bit.
 
 ```sig
@@ -10,10 +12,6 @@ radio.receiveString()
 
 * the first [string](/reference/types/string) that was sent. If no
   string was sent, then this function returns an empty (blank) string.
-
-### Simulator
-
-This function only works on the micro:bit, not in browsers.
 
 ### Example: Simple receiver
 

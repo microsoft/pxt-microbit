@@ -7,9 +7,9 @@ Create a charting app for simulating and measuring the acceleration applied to t
 Acceleration
 
 ## Quick Links
-* [activity](/lessons/charting/activity) 
-* [challenge](/lessons/charting/challenge) 
-* [quiz](/lessons/charting/quiz) 
+* [activity](/lessons/charting/activity)
+* [challenge](/lessons/charting/challenge)
+* [quiz](/lessons/charting/quiz)
 * [answers](/lessons/charting/quiz-answers)
 
 ## Prior learning/place of lesson in scheme of work
@@ -22,9 +22,8 @@ Learn the functions of **on data received**, **send number** and **receive numbe
 input.acceleration(Dimension.X)
 led.plotBarGraph(0, 1023)
 basic.showNumber(0)
-radio.onDataReceived(() => {})
+radio.onDataPacketReceived(() => {})
 radio.sendNumber(0)
-radio.receiveNumber()
 ```
 
 ## Objectives

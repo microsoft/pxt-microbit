@@ -1,14 +1,16 @@
-# On Data Received
-
-> Note: This API has been deprecated! Use [on data packet received](/reference/radio/on-data-packet-received) instead.
+# On Data Packet Received
 
 Run part of a program when the micro:bit receives a
 [number](/reference/types/number) or [string](/reference/types/string) over ``radio``.
 
 
 ```sig
-radio.onDataReceived(() => { });
+radio.onDataPacketReceived((packet: Packet) => { });
 ```
+
+### Callback Parameters
+
+* ``packet`` - the [packet](/reference/radio/packet) that was received by the radio
 
 ### Example
 
@@ -21,15 +23,17 @@ thing from nearby micro:bits. It shows these numbers as a
 basic.forever(() => {
     radio.sendNumber(input.acceleration(Dimension.X));
 })
-radio.onDataReceived(() => {
-    led.plotBarGraph(radio.receiveNumber(), 1023);
+radio.onDataPacketReceived(({ receivedNumber }) => {
+    led.plotBarGraph(receivedNumber, 1023);
 })
 ```
 
 ### See also
 
-[on data packet received](/reference/radio/on-data-packet-received),
-[send number](/reference/radio/send-number), [set group](/reference/radio/set-group)
+[send number](/reference/radio/send-number),
+[send string](/reference/radio/send-string),
+[send value](/reference/radio/send-value),
+[set group](/reference/radio/set-group)
 
 ```package
 radio

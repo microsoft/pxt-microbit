@@ -16,13 +16,13 @@ input.onButtonPressed(Button.A, () => {
 
 ## Step 2
 
-Use [radio on data received](/reference/radio/on-data-received) display "YO" when the number ``0`` is received
+Use [radio on data packet received](/reference/radio/on-data-packet-received) display "YO" when the number ``0`` is received
 by radio.
 
 ```blocks
 let message = 0;
-radio.onDataReceived(() => {
-    message = radio.receiveNumber();
+radio.onDataPacketReceived(({ receivedNumber }) => {
+    message = receivedNumber;
     if (message == 0) {
         basic.showString("YO")
     }
@@ -43,13 +43,13 @@ input.onButtonPressed(Button.B, () => {
 
 ## Step 4
 
-Add blocks in [radio on data received](/reference/radio/on-data-received) to display "BYE" when the number ``1`` is received
+Add blocks in [radio on data packet received](/reference/radio/on-data-packet-received) to display "BYE" when the number ``1`` is received
 by radio.
 
 ```blocks
 let message = 0;
-radio.onDataReceived(() => {
-    message = radio.receiveNumber();
+radio.onDataPacketReceived(({ receivedNumber }) => {
+    message = receivedNumber;
     if (message == 0) {
         basic.showString("YO")
     }
