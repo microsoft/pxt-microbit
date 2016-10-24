@@ -23,16 +23,16 @@ input.magneticForce(Dimension.X);
 input.runningTime();
 input.setAccelerometerRange(AcceleratorRange.OneG);
 input.calibrate();
-input.onLogoDown(() => {
+input.onGesture(Gesture.LogoDown,  () => {
     
 });
-input.onLogoUp(() => {
+input.onGesture(Gesture.LogoUp, () => {
     
 });
-input.onScreenDown(() => {
+input.onGesture(Gesture.ScreenDown, () => {
     
 });
-input.onScreenUp(() => {
+input.onGesture(Gesture.ScreenUp, () => {
     
 });
 input.onShake(() => {

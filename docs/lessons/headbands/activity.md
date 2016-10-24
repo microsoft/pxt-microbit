@@ -11,12 +11,12 @@ coll.push("clock")
 coll.push("night")
 coll.push("cat")
 coll.push("cow")
-input.onLogoUp(() => {
+input.onGesture(Gesture.LogoUp, () => {
     let index = Math.random(coll.length)
     let word = coll[index]
     basic.showString(word, 150)
 })
-input.onScreenDown(() => {
+input.onGesture(Gesture.ScreenDown, () => {
     game.addScore(1)
 })
 game.startCountdown(30000)
@@ -33,12 +33,12 @@ coll.push("clock")
 coll.push("night")
 coll.push("cat")
 coll.push("cow")
-input.onLogoUp(() => {
+input.onGesture(Gesture.LogoUp, () => {
     let index = Math.random(coll.length)
     let word = coll[index]
     basic.showString(word, 150)
 })
-input.onScreenDown(() => {
+input.onGesture(Gesture.ScreenDown, () => {
     game.addScore(1)
 })
 
@@ -63,12 +63,12 @@ coll.push("telephone")
 coll.push("sun") 
 coll.push("car") 
 coll.push("ant") 
-input.onLogoUp(() => {
+input.onGesture(Gesture.LogoUp, () => {
     let index = Math.random(coll.length)
     let word = coll[index]
     basic.showString(word, 150)
 })
-input.onScreenDown(() => {
+input.onGesture(Gesture.ScreenDown, () => {
     game.addScore(1)
 })
 game.startCountdown(30000)

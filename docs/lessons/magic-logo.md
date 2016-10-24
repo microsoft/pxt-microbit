@@ -21,8 +21,7 @@ Learn how to plot image **on logo up**, `on logo up` to run code when the micro:
 
 ## Documentation
 ```cards
-input.onLogoUp(() => {})
-input.onLogoDown(() => {})
+input.onGesture(Gesture.LogoUp, () => {})
 basic.showLeds(`
     . . . . .
     . . . . .

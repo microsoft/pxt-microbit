@@ -48,7 +48,7 @@ if (action == 1) {
 ## 5. Write the code that increments the score if the BBC micro:bit logo is tilted down when the global variable called 'action' is equal to 1
 
 ```blocks
-input.onLogoDown(() => {
+input.onGesture(Gesture.LogoDown,  () => {
     let action = Math.random(3)
     if (action == 1) {
         game.addScore(1)
@@ -68,7 +68,7 @@ if (action == 2) {
 ## 7. Write the code that increments the score if the BBC micro:bit is shaken when the global variable called 'action' is equal to 2
 
 ```blocks
-input.onLogoDown(() => {
+input.onGesture(Gesture.LogoDown,  () => {
     let action = Math.random(3)
     if (action == 1) {
         game.addScore(1)
