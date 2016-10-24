@@ -3,6 +3,26 @@
 using namespace pxt;
 
 #define MAX_FIELD_NAME_LENGTH 12
+#define MAX_PAYLOAD_LENGTH 20
+#define PACKET_PREFIX_LENGTH 9
+#define VALUE_PACKET_NAME_LEN_OFFSET 13
+
+
+// Packet Spec:
+// | 0              | 1 ... 4       | 5 ... 8           | 9 ... 28
+// ----------------------------------------------------------------
+// | packet type    | system time   | serial number     | payload
+//
+// Serial number defaults to 0 unless enabled by user
+
+// payload: number (9 ... 12)
+#define PACKET_TYPE_NUMBER 0
+
+// payload: number (9 ... 12), name length (13), name (14 ... 26)
+#define PACKET_TYPE_VALUE 1
+
+// payload: string length (9), string (10 ... 28)
+#define PACKET_TYPE_STRING 2
 
 //% color=270 weight=34
 namespace radio {
@@ -14,6 +34,12 @@ namespace radio {
     bool transmitSerialNumber = false;
 
     PacketBuffer packet;
+
+    uint8_t type;
+    uint32_t time;
+    uint32_t serial;
+    int value;
+    StringData* msg;
 
     int radioEnable() {
         int r = uBit.radio.enable();
@@ -38,6 +64,105 @@ namespace radio {
         registerWithDal(MES_BROADCAST_GENERAL_ID, message, f);
     }
 
+    void setPacketPrefix(uint8_t* buf, int type) {
+        // prefix: type (0), time (1..4), serial (5..8)
+        uint32_t t = system_timer_current_time();
+        uint32_t sn = transmitSerialNumber ? microbit_serial_number() : 0;
+
+        buf[0] = (uint8_t) type;
+        memcpy(buf + 1, &t, 4);
+        memcpy(buf + 5, &sn, 4);
+    }
+
+    uint8_t copyStringValue(uint8_t* buf, StringData* data, uint8_t maxLength) {
+        ManagedString s(data);
+        uint8_t len = min(maxLength, s.length());
+
+        // One byte for length of the string
+        buf[0] = len;
+
+        if (len > 0) {
+            memcpy(buf + 1, s.toCharArray(), len);
+        }
+        return len + 1;
+    }
+
+    StringData* getStringValue(uint8_t* buf, uint8_t maxLength) {
+        // First byte is the string length
+        uint8_t len = min(maxLength, buf[0]);
+
+        if (len) {
+            char name[maxLength + 1];
+            memcpy(name, buf + 1, len);
+            name[len] = 0;
+            return ManagedString(name).leakData();
+        }
+        return ManagedString().leakData();
+    }
+
+    /**
+     * Takes a packet from the micro:bit radio queue.
+     * @param writeToSerial if true, write the received packet to serial without updating the global packet;
+                            if false, update the global packet instead
+     */
+    void receivePacket(bool writeToSerial) {
+        PacketBuffer p = uBit.radio.datagram.recv();
+
+        uint8_t* buf = p.getBytes();
+        uint8_t tp;
+        int t;
+        int s;
+        int v;
+        StringData* m;
+
+
+        memcpy(&tp, buf, 1);
+        memcpy(&t, buf + 1, 4);
+        memcpy(&s, buf + 5, 4);
+
+        if (tp == PACKET_TYPE_STRING) {
+            v = 0;
+            m = getStringValue(buf + PACKET_PREFIX_LENGTH, MAX_PAYLOAD_LENGTH - 1);
+        }
+        else {
+            memcpy(&v, buf + 9, 4);
+            if (tp == PACKET_TYPE_VALUE) {
+                m = getStringValue(buf + VALUE_PACKET_NAME_LEN_OFFSET, MAX_FIELD_NAME_LENGTH);
+            }
+            else {
+                m = ManagedString().leakData();
+            }
+        }
+
+        if (!writeToSerial) {
+            // Refresh global packet
+            packet = p;
+            type = tp;
+            time = t;
+            serial = s;
+            value = v;
+            msg = m;
+        }
+        else {
+            // Convert the packet to JSON and send over serial
+            uBit.serial.send("{");
+            uBit.serial.send("\"t\":");
+            uBit.serial.send(t);
+            uBit.serial.send(",\"s\":");
+            uBit.serial.send(s);
+            if (tp == PACKET_TYPE_STRING || tp == PACKET_TYPE_VALUE) {
+                uBit.serial.send(",\"n\":\"");
+                uBit.serial.send(m);
+                uBit.serial.send("\"");
+            }
+            if (tp == PACKET_TYPE_NUMBER || tp == PACKET_TYPE_VALUE) {
+                uBit.serial.send(",\"v\":");
+                uBit.serial.send(v);
+            }
+            uBit.serial.send("}\r\n");
+        }
+    }
+
     /**
      * Broadcasts a number over radio to any connected micro:bit in the group.
      */
@@ -46,10 +171,14 @@ namespace radio {
     //% blockId=radio_datagram_send block="radio send number %value" blockGap=8
     void sendNumber(int value) {
         if (radioEnable() != MICROBIT_OK) return;
-        uint32_t t = system_timer_current_time();
-        uint32_t sn = transmitSerialNumber ? microbit_serial_number() : 0;
-        uint32_t buf[] = { (uint32_t)value, t, sn };
-        uBit.radio.datagram.send((uint8_t*)buf, 3*sizeof(uint32_t));
+        uint8_t length = PACKET_PREFIX_LENGTH + sizeof(uint32_t);
+        uint8_t buf[length];
+        memset(buf, 0, length);
+
+        setPacketPrefix(buf, PACKET_TYPE_NUMBER);
+        memcpy(buf + PACKET_PREFIX_LENGTH, &value, 4);
+
+        uBit.radio.datagram.send(buf, length);
     }
 
     /**
@@ -65,24 +194,20 @@ namespace radio {
         if (radioEnable() != MICROBIT_OK) return;
 
         ManagedString n(name);
-        uint32_t t = system_timer_current_time();
-        uint32_t sn = transmitSerialNumber ? microbit_serial_number() : 0;
         uint8_t buf[32];
-        uint32_t* buf32 = (uint32_t*)buf;
         memset(buf, 0, 32);
-        buf32[0] = value;                      // 4 bytes: value
-        buf32[1] = t; // 4 bytes: running time
-        buf32[2] = sn; // 4 bytes: serial number
-        uint8_t len = min(MAX_FIELD_NAME_LENGTH, n.length());          // 1 byte: string length
-        if (len > 0) {
-            buf[12] = len;                          //
-            memcpy(buf + 13, n.toCharArray(), len); // 13-25: field name
-        }
-        uBit.radio.datagram.send(buf, 13 + len);
+
+        setPacketPrefix(buf, PACKET_TYPE_VALUE);
+        memcpy(buf + PACKET_PREFIX_LENGTH, &value, 4);
+
+        int stringLen = copyStringValue(buf + VALUE_PACKET_NAME_LEN_OFFSET, name, MAX_FIELD_NAME_LENGTH);
+
+        uBit.radio.datagram.send(buf, VALUE_PACKET_NAME_LEN_OFFSET + stringLen);
     }
 
     /**
-     * Broadcasts a number over radio to any connected micro:bit in the group.
+     * Broadcasts a string along with the device serial number
+     * and running time to any connected micro:bit in the group.
      */
     //% help=radio/send-string
     //% weight=58
@@ -90,16 +215,18 @@ namespace radio {
     void sendString(StringData* msg) {
         if (radioEnable() != MICROBIT_OK) return;
 
-        ManagedString s(msg);
-        if (s.length() > MICROBIT_RADIO_MAX_PACKET_SIZE)
-            s = s.substring(0, MICROBIT_RADIO_MAX_PACKET_SIZE);
+        uint8_t buf[32];
+        memset(buf, 0, 32);
 
-        uBit.radio.datagram.send(s);
+        setPacketPrefix(buf, PACKET_TYPE_STRING);
+        int stringLen = copyStringValue(buf + PACKET_PREFIX_LENGTH, msg, MAX_PAYLOAD_LENGTH - 1);
+
+        uBit.radio.datagram.send(buf, PACKET_PREFIX_LENGTH + stringLen);
     }
 
     /**
-    * Reads a value sent with `stream value` and writes it
-    * to the serial stream as JSON
+    * Reads the next packet from the radio queue and and writes it to serial
+    * as JSON.
     */
     //% help=radio/write-value-to-serial
     //% weight=3
@@ -107,73 +234,12 @@ namespace radio {
     //% advanced=true
     void writeValueToSerial() {
         if (radioEnable() != MICROBIT_OK) return;
-        PacketBuffer p = uBit.radio.datagram.recv();
-        int length = p.length();
-        uint8_t* bytes = p.getBytes();
-        int value;
-
-        uBit.serial.send("{");
-        if (length >= 4) {
-            memcpy(&value, bytes, 4);
-            uBit.serial.send("\"v\":"); uBit.serial.send(value);
-            if(length >= 8) {
-                memcpy(&value, bytes + 4, 4);
-                uBit.serial.send(",\"t\":"); uBit.serial.send(value);
-                if (length >= 12) {
-                    memcpy(&value, bytes + 8, 4);
-                    uBit.serial.send(",\"s\":"); uBit.serial.send(value);
-                    if (length >= 13) {
-                        char name[MAX_FIELD_NAME_LENGTH+1];
-                        uint8_t len = min(MAX_FIELD_NAME_LENGTH, bytes[12]);
-                        memcpy(name, bytes + 13, len);
-                        name[len] = 0;
-                        uBit.serial.send(",\"n\":\""); uBit.serial.send(name); uBit.serial.send("\"");
-                    }
-                }
-            }
-        }
-        uBit.serial.send("}\r\n");
-    }
-
-
-    /**
-     * Reads a number at a given index, between ``0`` and ``3``, from the packet received by ``receive number``. Not supported in simulator.
-     * @param index index of the number to read from 0 to 3. 1 eg
-     */
-    //% help=radio/received-number-at
-    //% weight=45 debug=true
-    int receivedNumberAt(int index) {
-        if (radioEnable() != MICROBIT_OK) return 0;
-        if (0 <= index && index < packet.length() / 4) {
-            // packet.getBytes() is not aligned
-            int r;
-            memcpy(&r, packet.getBytes() + index * 4, 4);
-            return r;
-        }
-        return 0;
+        receivePacket(true);
     }
 
     /**
-     * Reads a string received in a packet received by ``receive number``. Not supported in simulator.
-     */
-    //% help=radio/received-value-name
-    //% weight=45 debug=true
-    StringData* receivedValueName() {
-        if (packet.length() > 12) {
-            uint8_t* bytes = packet.getBytes();
-            uint8_t len = min(MAX_FIELD_NAME_LENGTH, bytes[12]);
-            if (len) {
-                char name[MAX_FIELD_NAME_LENGTH+1];
-                memcpy(name, bytes + 13, len);
-                name[len] = 0;
-                return ManagedString(name).leakData();
-            }
-        }
-        return ManagedString().leakData();
-    }
-
-    /**
-     * Reads the next packet as a number from the radio queue.
+     * Reads the next packet from the radio queue and returns the packet's number
+     * payload or 0 if the packet did not contain a number.
      */
     //% help=radio/receive-number
     //% weight=46
@@ -182,8 +248,8 @@ namespace radio {
     int receiveNumber()
     {
         if (radioEnable() != MICROBIT_OK) return 0;
-        packet = uBit.radio.datagram.recv();
-        return receivedNumberAt(0);
+        receivePacket(false);
+        return value;
     }
 
     /**
@@ -192,28 +258,32 @@ namespace radio {
     //% help=radio/on-data-received
     //% weight=50
     //% blockId=radio_datagram_received_event block="radio on data received" blockGap=8
+    //% advanced=true
     void onDataReceived(Action body) {
         if (radioEnable() != MICROBIT_OK) return;
         registerWithDal(MICROBIT_ID_RADIO, MICROBIT_RADIO_EVT_DATAGRAM, body);
-        // make the the receive buffer has a free spot
+        // make sure the receive buffer has a free spot
         receiveNumber();
     }
 
 
     /**
-    * Reads the next packet as a string and returns it.
-    */
+     * Reads the next packet from the radio queue and returns the packet's string
+     * payload or the empty string if the packet did not contain a string.
+     */
     //% blockId=radio_datagram_receive_string block="radio receive string" blockGap=8
     //% weight=44
     //% help=radio/receive-string
+    //% advanced=true
     StringData* receiveString() {
         if (radioEnable() != MICROBIT_OK) return ManagedString().leakData();
-        packet = uBit.radio.datagram.recv();
-        return ManagedString(packet).leakData();
+        receivePacket(false);
+        return msg;
     }
 
     /**
-     * Gets the received signal strength indicator (RSSI) from the packet received by ``receive number``. Not supported in simulator.
+     * Gets the received signal strength indicator (RSSI) from the last packet taken
+     * from the radio queue (via ``receiveNumber``, ``receiveString``, etc). Not supported in simulator.
      * namespace=radio
      */
     //% help=radio/received-signal-strength
@@ -261,5 +331,49 @@ namespace radio {
     void setTransmitSerialNumber(bool transmit) {
         if (radioEnable() != MICROBIT_OK) return;
         transmitSerialNumber = transmit;
+    }
+
+    /**
+     * Returns the number payload from the last packet taken from the radio queue
+     * (via ``receiveNumber``, ``receiveString``, etc) or 0 if that packet did not
+     * contain a number.
+     */
+    //% help=radio/received-number
+    int receivedNumber() {
+        if (radioEnable() != MICROBIT_OK) return 0;
+        return value;
+    }
+
+    /**
+     * Returns the serial number of the sender micro:bit from the last packet taken
+     * from the radio queue (via ``receiveNumber``, ``receiveString``, etc) or 0 if
+     * that packet did not send a serial number.
+     */
+    //% help=radio/received-serial
+    uint32_t receivedSerial() {
+        if (radioEnable() != MICROBIT_OK) return 0;
+        return serial;
+    }
+
+    /**
+     * Returns the string payload from the last packet taken from the radio queue
+     * (via ``receiveNumber``, ``receiveString``, etc) or the empty string if that
+     * packet did not contain a string.
+     */
+    //% help=radio/received-string
+    StringData* receivedString() {
+        if (radioEnable() != MICROBIT_OK) return ManagedString().leakData();
+        return msg;
+    }
+
+    /**
+     * Returns the system time of the sender micro:bit at the moment when it sent the
+     * last packet taken from the radio queue (via ``receiveNumber``,
+     * ``receiveString``, etc).
+     */
+    //% help=radio/received-time
+    uint32_t receivedTime() {
+        if (radioEnable() != MICROBIT_OK) return 0;
+        return time;
     }
 }
