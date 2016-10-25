@@ -20,11 +20,11 @@
     "built/*.js",
     "built/*.json",
     "built/*.d.ts",
+    "built/hexcache",
     "sim/public",
     "docs/*.md",
     "docs/*/*.md",
-    "docs/*/*/*.md",
-    "hexcache/*.hex"
+    "docs/*/*/*.md"
   ],
   "devDependencies": {
     "typescript": "^1.8.7"
