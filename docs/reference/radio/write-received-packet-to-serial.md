@@ -1,11 +1,11 @@
-# Write Value To Serial
+# Write Received Packet To Serial
 
-> Note: This API has been deprecated! Use [write received packet to serial](/reference/radio/write-received-packet-to-serial) instead.
-
-Writes the data received by ``radio`` to serial in JSON format.
+Writes the last packet received by the ``radio`` to serial in JSON format.
+Should be called within a callback to
+[on data packet received](/reference/radio/on-data-packet-received).
 
 ```sig
-radio.writeValueToSerial();
+radio.writeReceivedPacketToSerial();
 ```
 
 ### Data received format
@@ -26,8 +26,8 @@ serial.
 input.onButtonPressed(Button.A, () => {
     radio.sendNumber(input.temperature());
 });
-radio.onDataReceived(() => {
-    radio.writeValueToSerial();
+radio.onDataPacketReceived(() => {
+    radio.writeReceivedPacketToSerial();
 });
 ```
 Sample output to serial when ``A`` button pressed:

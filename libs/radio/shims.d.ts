@@ -40,8 +40,18 @@ declare namespace radio {
     //% help=radio/write-value-to-serial
     //% weight=3
     //% blockId=radio_write_value_serial block="radio write value to serial"
-    //% advanced=true shim=radio::writeValueToSerial
+    //% deprecated=true shim=radio::writeValueToSerial
     function writeValueToSerial(): void;
+
+    /**
+     * Writes the last received packet to serial as JSON. This should be called
+     * within an ``onDataPacketReceived`` callback.
+     */
+    //% help=radio/write-received-packet-to-serial
+    //% weight=3
+    //% blockId=radio_write_packet_serial block="radio write received packet to serial"
+    //% advanced=true shim=radio::writeReceivedPacketToSerial
+    function writeReceivedPacketToSerial(): void;
 
     /**
      * Reads the next packet from the radio queue and returns the packet's number

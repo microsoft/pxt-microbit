@@ -12,7 +12,7 @@ radio.onDataPacketReceived(() => {
 radio.setGroup(0);
 radio.setTransmitPower(7);
 radio.setTransmitSerialNumber(false);
-radio.writeValueToSerial();
+radio.writeReceivedPacketToSerial();
 ```
 
 ```package
@@ -28,4 +28,4 @@ radio
 [setGroup](/reference/radio/set-group),
 [setTransmitPower](/reference/radio/set-transmit-power),
 [setTransmitSerialNumber](/reference/radio/set-transmit-serial-number),
-[writeValueToSerial](/reference/radio/write-value-to-serial)
+[writeReceivedPacketToSerial](/reference/radio/write-received-packet-to-serial)
