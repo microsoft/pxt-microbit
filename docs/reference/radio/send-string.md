@@ -24,8 +24,8 @@ input.onButtonPressed(Button.A, () => {
     basic.showString("SENT");
 })
 
-radio.onDataPacketReceived(({ text }) => {
-    basic.showString(text);
+radio.onDataPacketReceived(({ receivedString }) => {
+    basic.showString(receivedString);
 });
 ```
 

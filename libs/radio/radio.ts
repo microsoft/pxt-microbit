@@ -13,7 +13,7 @@ namespace radio {
          * The string payload if a string was sent in this packet (via ``sendString()`` or ``sendValue()``)
          * or the empty string if this packet did not contain a string.
          */
-        public text: string;
+        public receivedString: string;
         /**
          * The system time of the sender of the packet at the time the packet was sent.
          */
@@ -35,7 +35,7 @@ namespace radio {
     //% help=radio/on-data-packet-received
     //% mutate=true
     //% mutateText=Packet
-    //% mutateDefaults="receivedNumber;text,receivedNumber;text"
+    //% mutateDefaults="receivedNumber;receivedString,receivedNumber;receivedString"
     //% blockId=radio_on_packet block="on radio received" blockGap=8
     export function onDataPacketReceived(cb: (packet: Packet) => void) {
         onDataReceived(() => {
@@ -44,7 +44,7 @@ namespace radio {
             packet.receivedNumber = receivedNumber();
             packet.time = receivedTime();
             packet.serial = receivedSerial();
-            packet.text = receivedString();
+            packet.receivedString = receivedString();
             packet.signal = receivedSignalStrength();
             cb(packet)
         });

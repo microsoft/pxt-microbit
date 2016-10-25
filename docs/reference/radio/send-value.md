@@ -22,7 +22,7 @@ or model rocket.
 ```blocks
 radio.setGroup(99)
 input.onButtonPressed(Button.A, () => {
-    radio.sendValue("acc",input.acceleration(Dimension.X))
+    radio.sendValue("acc", input.acceleration(Dimension.X))
 })
 ```
 
@@ -31,8 +31,8 @@ Then it shows them on the LED screen.
 
 ```blocks
 radio.setGroup(99)
-radio.onDataPacketReceived(({ text, receivedNumber }) => {
-	basic.showString(text);
+radio.onDataPacketReceived(({ receivedString, receivedNumber }) => {
+	basic.showString(receivedString);
     basic.showNumber(receivedNumber);
 });
 ```
