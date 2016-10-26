@@ -40,10 +40,57 @@ Let's get started!
 
 ### ~
 
-7 chassis1.jpg
--a----       10/26/2016   4:08 PM          76730 chassis2.jpg
--a----       10/26/2016   4:08 PM          84181 chassis3.jpg
--a----       10/26/2016   4:08 PM          44597 chassis4.jpg
+![](/static/mb/projects/inchworm/7 chassis1.jpg)
+![](/static/mb/projects/inchworm/chassis2.jpg)
+![](/static/mb/projects/inchworm/chassis3.jpg)
+![](/static/mb/projects/inchworm/chassis4.jpg)
+![](/static/mb/projects/inchworm/chassis5.jpg)
+![](/static/mb/projects/inchworm/chassis5.jpg)
+![](/static/mb/projects/inchworm/chassis6.jpg)
+![](/static/mb/projects/inchworm/chassis7.jpg)
+![](/static/mb/projects/inchworm/chassis8.jpg)
+![](/static/mb/projects/inchworm/circuit1.jpg)
+![](/static/mb/projects/inchworm/circuit2.jpg)
+![](/static/mb/projects/inchworm/clip1.jpg)
+![](/static/mb/projects/inchworm/clip2.jpg)
+![](/static/mb/projects/inchworm/clip3.jpg)
+![](/static/mb/projects/inchworm/materials.jpg)
+![](/static/mb/projects/inchworm/ready.jpg)
+![](/static/mb/projects/inchworm/servo1.jpg)
+![](/static/mb/projects/inchworm/servo2.jpg)
+![](/static/mb/projects/inchworm/servo3.jpg)
+![](/static/mb/projects/inchworm/servo4.jpg)
+![](/static/mb/projects/inchworm/servo5.jpg)
+![](/static/mb/projects/inchworm/servo6.jpg)
+![](/static/mb/projects/inchworm/servo7.jpg)
+![](/static/mb/projects/inchworm/servo8.jpg)
+
+```blocks
+input.onButtonPressed(Button.A, () => {
+    for (let i = 0; i < 4; i++) {
+        pins.servoWritePin(AnalogPin.P0, 0)
+        basic.showLeds(`
+            . . . . .
+            . . . . .
+            . . # . .
+            . # . . .
+            # . . . .
+            `)
+        basic.pause(500)
+        pins.servoWritePin(AnalogPin.P0, 180)
+        basic.showLeds(`
+            . . . . .
+            . . . . .
+            . . # . .
+            . . . # .
+            . . . . #
+            `)
+        basic.pause(500)
+    }
+})
+```
+![](/static/mb/projects/inchworm/chassis4.jpg
+-a----       10/26/2016   4:08 PM          47847 chassis5.jpg
 -a----       10/26/2016   4:08 PM          47847 chassis5.jpg
 -a----       10/26/2016   4:07 PM          71875 chassis6.jpg
 -a----       10/26/2016   4:07 PM          53400 chassis7.jpg
