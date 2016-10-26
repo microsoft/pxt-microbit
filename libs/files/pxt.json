@@ -1,16 +1,16 @@
 {
-    "name": "fs",
+    "name": "files",
     "description": "File system",
     "files": [
         "README.md",
         "enums.d.ts",
         "shims.d.ts",
-        "fs.cpp",
-        "fs.ts"
+        "files.cpp",
+        "files.ts"
     ],
     "public": true,
     "dependencies": {
-        "microbit": "file:../microbit"
+        "core": "file:../core"
     },
     "yotta": {
         "config": {

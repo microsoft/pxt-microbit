@@ -8,6 +8,7 @@
     "bundleddirs": [
         "libs/core",
         "libs/radio",
+        "libs/files",
         "libs/devices",
         "libs/bluetooth"
     ],
