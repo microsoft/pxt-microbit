@@ -79,6 +79,7 @@ declare const enum DAL {
     MICROBIT_BLE_PAIRING_TIMEOUT = 90,
     MICROBIT_BLE_POWER_LEVELS = 8,
     MICROBIT_BLE_MAXIMUM_BONDS = 4,
+    MICROBIT_BLE_EDDYSTONE_URL_ADV_INTERVAL = 400,
     // built/yt/yotta_modules/microbit-dal/inc//bluetooth/MicroBitButtonService.h
     // built/yt/yotta_modules/microbit-dal/inc//bluetooth/MicroBitDFUService.h
     MICROBIT_DFU_OPCODE_START_DFU = 1,
@@ -88,6 +89,7 @@ declare const enum DAL {
     // built/yt/yotta_modules/microbit-dal/inc//bluetooth/MicroBitIOPinService.h
     MICROBIT_IO_PIN_SERVICE_PINCOUNT = 19,
     MICROBIT_IO_PIN_SERVICE_DATA_SIZE = 10,
+    MICROBIT_PWM_PIN_SERVICE_DATA_SIZE = 2,
     // built/yt/yotta_modules/microbit-dal/inc//bluetooth/MicroBitLEDService.h
     MICROBIT_BLE_MAXIMUM_SCROLLTEXT = 20,
     // built/yt/yotta_modules/microbit-dal/inc//bluetooth/MicroBitMagnetometerService.h
@@ -305,6 +307,30 @@ declare const enum DAL {
     MICROBIT_DISPLAY_ROTATION_90 = 1,
     MICROBIT_DISPLAY_ROTATION_180 = 2,
     MICROBIT_DISPLAY_ROTATION_270 = 3,
+    // built/yt/yotta_modules/microbit-dal/inc//drivers/MicroBitFile.h
+    // built/yt/yotta_modules/microbit-dal/inc//drivers/MicroBitFileSystem.h
+    MBFS_FILENAME_LENGTH = 16,
+    MB_READ = 0x01,
+    MB_WRITE = 0x02,
+    MB_CREAT = 0x04,
+    MB_APPEND = 0x08,
+    MB_SEEK_SET = 0x01,
+    MB_SEEK_END = 0x02,
+    MB_SEEK_CUR = 0x04,
+    MBFS_STATUS_INITIALISED = 0x01,
+    MBFS_UNUSED = 0xFFFF,
+    MBFS_EOF = 0xEFFF,
+    MBFS_DELETED = 0x0000,
+    MBFS_DIRECTORY_ENTRY_FREE = 0x8000,
+    MBFS_DIRECTORY_ENTRY_VALID = 0x4000,
+    MBFS_DIRECTORY_ENTRY_DIRECTORY = 0x2000,
+    MBFS_DIRECTORY_ENTRY_NEW = 0xffff,
+    MBFS_DIRECTORY_ENTRY_DELETED = 0x0000,
+    MBFS_BLOCK_TYPE_FILE = 1,
+    MBFS_BLOCK_TYPE_DIRECTORY = 2,
+    MBFS_BLOCK_TYPE_FILETABLE = 3,
+    // built/yt/yotta_modules/microbit-dal/inc//drivers/MicroBitFlash.h
+    PAGE_SIZE = 1024,
     // built/yt/yotta_modules/microbit-dal/inc//drivers/MicroBitI2C.h
     MICROBIT_I2C_MAX_RETRIES = 9,
     // built/yt/yotta_modules/microbit-dal/inc//drivers/MicroBitIO.h
