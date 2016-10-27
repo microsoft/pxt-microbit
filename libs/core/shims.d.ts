@@ -578,7 +578,8 @@ declare namespace pins {
      * @param value angle or rotation speed, eg:180,90,0
      */
     //% help=pins/servo-write-pin weight=20
-    //% blockId=device_set_servo_pin block="servo write|pin %name|to %value" blockGap=8 shim=pins::servoWritePin
+    //% blockId=device_set_servo_pin block="servo write|pin %name|to %value" blockGap=8
+    //% parts=microservo trackArgs=0 shim=pins::servoWritePin
     function servoWritePin(name: AnalogPin, value: number): void;
 
     /**

@@ -29,6 +29,37 @@
             {"pinIndices": [2, 3]}
         ]
     },
+    "microservo": {
+        "simulationBehavior": "microservo",
+        "visual": {
+            "builtIn": "microservo",
+            "width": 74.85,
+            "height": 200,
+            "pinDistance": 10,
+            "pinLocations": [
+                {"x": 30, "y": 5},
+                {"x": 37, "y": 5},
+                {"x": 45, "y": 5}
+            ]
+        },
+        "numberOfPins": 3,
+        "pinDefinitions": [
+            {"target": {"pinInstantiationIdx": 0}, "style": "croc", "orientation": "+Z"},
+            {"target": "threeVolt", "style": "croc", "orientation": "+Z"},
+            {"target": "ground", "style": "croc", "orientation": "+Z"}
+        ],
+        "instantiation": {
+            "kind": "function",
+            "fullyQualifiedName": "pins.servoWritePin",
+            "argumentRoles": [
+                {"pinInstantiationIdx": 0, "partParameter": "name"}
+            ]
+        },
+        "assembly": [
+            {"part": true, "pinIndices": [2]},
+            {"pinIndices": [0, 1]}
+        ]
+    },
     "neopixel": {
         "simulationBehavior": "neopixel",
         "visual": {

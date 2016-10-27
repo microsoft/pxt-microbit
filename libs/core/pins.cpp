@@ -201,6 +201,7 @@ namespace pins {
      */
     //% help=pins/servo-write-pin weight=20
     //% blockId=device_set_servo_pin block="servo write|pin %name|to %value" blockGap=8
+    //% parts=microservo trackArgs=0
     void servoWritePin(AnalogPin name, int value) { 
         PINOP(setServoValue(value));
     }
