@@ -1,19 +1,16 @@
 # Send Value
 
 Send a [string]() and [number]() together by ``radio`` to other micro:bits.
+The maximum [string]() length is 12 characters.
 
 ```sig
-radio.sendValue("data", 0);
+radio.sendValue("name", 0);
 ```
 
 ### Parameters
 
 * ``name`` is a [string](/reference/types/string) to send by radio
 * ``value`` a [number](/reference/types/number) to send by radio
-
-### Simulator
-
-This function only works on the micro:bit, not in browsers.
 
 ### Example: Broadcasting acceleration
 
@@ -25,7 +22,7 @@ or model rocket.
 ```blocks
 radio.setGroup(99)
 input.onButtonPressed(Button.A, () => {
-    radio.sendValue("acc",input.acceleration(Dimension.X))
+    radio.sendValue("acc", input.acceleration(Dimension.X))
 })
 ```
 
@@ -34,15 +31,15 @@ Then it shows them on the LED screen.
 
 ```blocks
 radio.setGroup(99)
-radio.onDataReceived(() => {
-	basic.showString(radio.receiveString());
-    basic.showNumber(radio.receiveNumber());
+radio.onDataPacketReceived(({ receivedString, receivedNumber }) => {
+	basic.showString(receivedString);
+    basic.showNumber(receivedNumber);
 });
 ```
 
 ### See also
 
-[receive number](/reference/radio/receive-number), [on data received](/reference/radio/on-data-received)
+[on data packet received](/reference/radio/on-data-packet-received)
 
 ```package
 radio

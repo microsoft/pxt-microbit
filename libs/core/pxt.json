@@ -31,7 +31,6 @@
         "parts/speaker.svg",
         "parts/headphone.svg",
         "_locales/ja/core-jsdoc-strings.json",
-        "_locales/ja/core-strings.json",
         "_locales/fr/core-jsdoc-strings.json"
     ],
     "public": true,

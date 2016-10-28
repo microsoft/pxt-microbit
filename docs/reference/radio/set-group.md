@@ -32,7 +32,10 @@ radio.setGroup(128)
 
 ### See also
 
-[receive number](/reference/radio/receive-number), [send number](/reference/radio/send-number), [on data received](/reference/radio/on-data-received)
+[on data packet received](/reference/radio/on-data-packet-received),
+[send number](/reference/radio/send-number),
+[send value](/reference/radio/send-value),
+[send string](/reference/radio/send-string)
 
 ```package
 radio

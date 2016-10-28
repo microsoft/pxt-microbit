@@ -10,9 +10,6 @@ radio.sendNumber(0);
 
 * ``value`` - a [number](/reference/types/number) to send.
 
-### Simulator
-
-This function only works on the micro:bit, not in browsers.
 
 ### Example: Broadcasting acceleration
 
@@ -30,7 +27,7 @@ input.onButtonPressed(Button.A, () => {
 
 This example broadcasts the level of the light around it.
 You can do some interesting things with it if you use it along with the
-[Mailbot](/reference/radio/receive-number) example.
+[on data packet received](/reference/radio/on-data-packet-received) example.
 
 ```blocks
 radio.setGroup(99)
@@ -42,7 +39,7 @@ basic.forever(() => {
 
 ### See also
 
-[receive number](/reference/radio/receive-number), [on data received](/reference/radio/on-data-received)
+[on data packet received](/reference/radio/on-data-packet-received)
 
 ```package
 radio

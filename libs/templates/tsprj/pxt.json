@@ -1,0 +1,12 @@
+{
+    "name": "{0} bit",
+    "dependencies": {
+        "core": "*",
+        "radio": "*"
+    },
+    "description": "",
+    "files": [
+        "main.ts",
+        "README.md"
+    ]
+}

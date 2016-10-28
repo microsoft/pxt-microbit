@@ -1,5 +1,7 @@
 # On Data Received
 
+> Note: This API has been deprecated! Use [on data packet received](/reference/radio/on-data-packet-received) instead.
+
 Run part of a program when the micro:bit receives a
 [number](/reference/types/number) or [string](/reference/types/string) over ``radio``.
 
@@ -7,10 +9,6 @@ Run part of a program when the micro:bit receives a
 ```sig
 radio.onDataReceived(() => { });
 ```
-
-### Simulator
-
-This function only works on the micro:bit, not in browsers.
 
 ### Example
 
@@ -30,7 +28,7 @@ radio.onDataReceived(() => {
 
 ### See also
 
-[receive number](/reference/radio/receive-number),
+[on data packet received](/reference/radio/on-data-packet-received),
 [send number](/reference/radio/send-number), [set group](/reference/radio/set-group)
 
 ```package

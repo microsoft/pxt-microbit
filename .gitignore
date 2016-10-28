@@ -16,6 +16,7 @@ clients/win10/*.opendb
 clients/**/bin/**
 clients/**/obj/**
 clients/electron/projects
+hexcache
 
 *.user
 *.sw?

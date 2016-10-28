@@ -130,11 +130,7 @@ Welcome to the Touch Develop home page for the BBC micro:bit. Below you will fin
 * [running time](/reference/input/running-time)
 * [on shake](/reference/input/on-gesture)
 * [on button pressed](/reference/input/on-button-pressed)
-* [on logo down](/functions/on-logo-down)
-* [on logo up](/functions/on-logo-up)
 * [on pin pressed](/reference/input/on-pin-pressed)
-* [on screen down](/functions/on-screen-down)
-* [on screen up](/functions/on-screen-up)
 * [pin is pressed](/reference/input/pin-is-pressed)
 
 ### Image

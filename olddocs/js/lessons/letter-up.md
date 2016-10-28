@@ -43,9 +43,6 @@ Learn how to create a guessing game with **global variables** `var str: "this is
 * **show string** : [read more...](/reference/basic/show-string)
 * **local variables** : [read more...](/reference/variables/var)
 * **assignment operator** : [read more...](/reference/variables/assign)
-* **on logo up** [read more...](/functions/on-logo-up)
-* **on screen down** [read more...](/functions/on-screen-down)
-* **on screen up** [read more...](/functions/on-screen-up)
 * **math random** : [read more...](/js/math)
 
 ## Resources

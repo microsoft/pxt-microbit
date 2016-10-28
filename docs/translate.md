@@ -3,16 +3,23 @@
 Our translations are managed via Crowdin, a translation management platform. It is free to join
 and you can volunteer to translate parts of the web site.
 
-## Translating the editor interface
+## Crowdin project
 
 The project below contains the resources from https://www.pxt.io and the menu items of https://pxt.microbit.org.
 
 * [https://crowdin.com/project/kindscript](https://crowdin.com/project/kindscript)
 
-You will find two files in that project:
+If you want to help translating the editor, please sign in to Crowdin and send us a translator request.
 
-* ``string.json``: text contained in the menu items of https://pxt.microbit.org
-* ``website.json``: text contained in the pages served by https://www.pxt.io 
+## Translating the editor interface
+
+The editor interface strings, like the "Download" button are in the ``strings.json`` file. Start by updating this file to translate the UI.
+
+To test your changes "live", use **beta** build and the ``?livelang=CODE`` query argument where ``CODE`` is your language ISO code. For example, to see the french translations:
+
+* https://pxt.microbit.org/beta?livelang=fr
+
+Note that there may be a delay of up to 5 minutes before your changes in Crowdin make it into the "live" view.
 
 ## Translating the blocks and reference documentation
 

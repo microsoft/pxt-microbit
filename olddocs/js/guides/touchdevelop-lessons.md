@@ -77,11 +77,6 @@ Overview of TouchDevelop lessons for the micro:bit.
 * [compass heading](/reference/input/compass-heading)
 * [calibrate](/functions/calibrate)
 * [running time](/reference/input/running-time)
-* [on shake](/reference/input/on-gesture)
-* [on screen up](/functions/on-screen-up)
-* [on screen down](/functions/on-screen-down)
-* [on logo up](/functions/on-logo-up)
-* [on logo down](/functions/on-logo-down)
 
 ### ~
 

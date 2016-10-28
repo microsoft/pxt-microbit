@@ -1,30 +1,20 @@
 # Write Value To Serial
 
+> Note: This API has been deprecated! Use [write received packet to serial](/reference/radio/write-received-packet-to-serial) instead.
+
 Writes the data received by ``radio`` to serial in JSON format.
 
 ```sig
 radio.writeValueToSerial();
 ```
 
-### ~hint
-
-This method only works for [send number](/reference/radio/send-number)
-and [send value](/reference/radio/send-value). It does not work for
-[send string](/reference/radio/send-string), although you can send a
-string as part of [send value](/reference/radio/send-value).
-
-### ~
-
 ### Data received format
 
 The format for received data printed to serial is as follows:
 
-- [send number](/reference/radio/send-number): ```{v:ValueSent,t:MicrobitTimeAlive,s:Unused}```
-- [send value](/reference/radio/send-value): ```{v:ValueSent,t:MicrobitTimeAlive,s:Unused,n:"Name"}```
-
-### Simulator
-
-This function only works on the micro:bit, not in browsers.
+- [send number](/reference/radio/send-number): ```{v:ValueSent,t:MicrobitTimeAlive,s:SerialNumber}```
+- [send value](/reference/radio/send-value): ```{v:ValueSent,t:MicrobitTimeAlive,s:SerialNumber,n:"Name"}```
+- [send string](/reference/radio/send-string): ```{t:MicrobitTimeAlive,s:SerialNumber,n:"Text"}```
 
 ### Examples
 
@@ -50,7 +40,8 @@ Sample output to serial when ``A`` button pressed:
 
 [send number](/reference/radio/send-number),
 [send value](/reference/radio/send-value),
-[on data received](/reference/radio/on-data-received)
+[send string](/reference/radio/send-string),
+[on data packet received](/reference/radio/on-data-packet-received)
 
 ```package
 radio

@@ -19,7 +19,6 @@ Learn how to use running time. We will be learning how to create a pogo game usi
 let jumps = 0
 let acc = input.acceleration(Dimension.Y)
 basic.showNumber(0)
-radio.receiveNumber()
 led.stopAnimation()
 radio.sendNumber(0)
 basic.forever(() => { })
@@ -32,7 +31,7 @@ basic.showLeds(`
     `)
 basic.clearScreen()
 if (true) {}
-radio.onDataReceived(() => { })
+radio.onDataPacketReceived(() => { })
 ```
 ## Objectives
 

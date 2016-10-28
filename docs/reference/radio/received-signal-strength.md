@@ -1,11 +1,13 @@
 # Received Signal Strength
 
+> Note: This API has been deprecated! Use [on data packet received](/reference/radio/on-data-packet-received) instead.
+
 Find how strong the ``radio`` signal is, from `255` to `0`.
 (`255` means a weak signal and `0` means a strong one.)
 
 The micro:bit finds the signal strength by checking how strong it was
 the last time it ran the
-[receive number](/reference/radio/receive-number) function. That means
+[on data packet received](/reference/radio/on-data-packet-received) function. That means
 it needs to run **receive number** first.
 
 ```sig
@@ -37,7 +39,7 @@ basic.forever(() => {
 
 ### See also
 
-[receive number](/reference/radio/receive-number), [send number](/reference/radio/send-number), [on data received](/reference/radio/on-data-received)
+[on data packet received](/reference/radio/on-data-packet-received), [send number](/reference/radio/send-number), [on data received](/reference/radio/on-data-received)
 
 ```package
 radio
