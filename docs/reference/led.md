@@ -17,8 +17,9 @@ led.plotAll();
 led.screenshot();
 led.toggleAll();
 led.setDisplayMode(DisplayMode.BackAndWhite);
+led.enable(false)
 ```
 
 ### See Also
 
-[plot](/reference/led/plot), [unplot](/reference/led/unplot), [point](/reference/led/point), [brightness](/reference/led/brightness), [setBrightness](/reference/led/set-brightness), [stopAnimation](/reference/led/stop-animation), [plotBarGraph](/reference/led/plot-bar-graph), [fadeIn](/reference/led/fade-in), [fadeOut](/reference/led/fade-out), [plotAll](/reference/led/plot-all), [screenshot](/reference/led/screenshot), [toggle](/reference/led/toggle), [toggleAll](/reference/led/toggle-all), [setDisplayMode](/reference/led/set-display-mode)
+[plot](/reference/led/plot), [unplot](/reference/led/unplot), [point](/reference/led/point), [brightness](/reference/led/brightness), [setBrightness](/reference/led/set-brightness), [stopAnimation](/reference/led/stop-animation), [plotBarGraph](/reference/led/plot-bar-graph), [fadeIn](/reference/led/fade-in), [fadeOut](/reference/led/fade-out), [plotAll](/reference/led/plot-all), [screenshot](/reference/led/screenshot), [toggle](/reference/led/toggle), [toggleAll](/reference/led/toggle-all), [setDisplayMode](/reference/led/set-display-mode), [enabled](/reference/led/enable)

@@ -91,3 +91,10 @@ basic.showString("d", 150)
 
 You will not see the LED at position `0,0` lit up because the `show string` function overwrites the whole display buffer.
 
+
+### Pins: P3, P4, P6, P7, P9, P10
+
+These pins are coupled to the LED matrix display, and also it’s associated ambient light sensing mode.
+To disable the display driver feature (which will automatically disable the light sensing feature) use the function [led.enable](/reference/led/enable). 
+
+More information at http://tech.microbit.org/hardware/edgeconnector_ds/ .

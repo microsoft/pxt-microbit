@@ -101,8 +101,12 @@ namespace pxsim.visuals {
         }
 
         public updateState() {
-            let bw = this.state.displayMode == pxsim.DisplayMode.bw
-            let img = this.state.image;
+            const bw = this.state.displayMode == pxsim.DisplayMode.bw
+            const img = this.state.image;
+            if (this.state.disabled) {
+                img.clear();
+                return;
+            }
             this.leds.forEach((led, i) => {
                 let sel = (<SVGStylable><any>led)
                 let dx = i % this.DRAW_SIZE;
