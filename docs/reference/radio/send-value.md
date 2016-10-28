@@ -4,7 +4,7 @@ Send a [string]() and [number]() together by ``radio`` to other micro:bits.
 The maximum [string]() length is 12 characters.
 
 ```sig
-radio.sendValue("data", 0);
+radio.sendValue("name", 0);
 ```
 
 ### Parameters
