@@ -1,8 +1,8 @@
 {
     "name": "{0} bit",
     "dependencies": {
-        "core": "*",
-        "radio": "*"
+        "core": "file:../../core",
+        "radio": "file:../../radio"
     },
     "description": "",
     "files": [
