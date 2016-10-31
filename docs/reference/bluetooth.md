@@ -35,6 +35,26 @@ bluetooth.uartWriteValue("", 0);
 bluetooth
 ```
 
+## Apps and SDKs
+
+Here is a non-exhaustive list of apps and SDKs leveraging the Bluetooth services.
+
+### [micro:bit for Android](https://play.google.com/store/apps/details?id=com.samsung.microbit&hl=en) by Samsung Electronics UK
+
+Create games on your phone then ‘flash’ them on to your micro:bit to get playing.
+
+### [micro:bit for iOS](https://itunes.apple.com/us/app/micro-bit/id1092687276?mt=8) by Science Scope
+
+Create games on your phone then ‘flash’ them on to your micro:bit to get playing.
+
+### [Bitty Software](http://www.bittysoftware.com/apps.html)
+
+Bitty Audio Prank, Bitty Game Controller, Bitty Mood Lighting, Bitty Data Logger are apps that leverage the Bluetooth services. Available for Android and iOS.
+
+### [node-bbc-microbit](https://github.com/sandeepmistry/node-bbc-microbit)
+
+Control a BBC micro:bit from Node.JS using BLE.
+
 ### Advanced
  
 For more advanced information on the micro:bit Bluetooth UART service including information on using a smartphone, see the [Lancaster University micro:bit runtime technical documentation](http://lancaster-university.github.io/microbit-docs/ble/uart-service/)

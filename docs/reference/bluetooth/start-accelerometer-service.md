@@ -29,6 +29,15 @@ bluetooth.startAccelerometerService();
 
 http://www.youtube.com/watch?v=aep_GVowKfs#t=18s
 
+## Apps
+
+### [Bitty Data Logger](http://www.bittysoftware.com/apps/bitty_data_logger.html)
+
+With **Bitty Data Logger** you can capture and chart accelerometer data from your micro:bit over Bluetooth. 
+This means you can track and analyse the movement in space of your micro:bit, in terms of its acceleration.
+
+https://www.youtube.com/watch?v=TFmNRWGTBtM
+
 ### Advanced
  
 For more advanced information on the micro:bit Bluetooth accelerometer service including information on using a smartphone, see the [Lancaster University micro:bit runtime technical documentation](http://lancaster-university.github.io/microbit-docs/ble/accelerometer-service/)
