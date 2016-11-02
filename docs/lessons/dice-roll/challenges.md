@@ -1,6 +1,6 @@
 # dice roll challenges
 
-Create a dice on the micro:bit. 
+Create a dice on the @boardname@. 
 
 ## Before we get started
 
@@ -121,7 +121,7 @@ input.onGesture(Gesture.Shake, () => {
 
 ### Challenge 2
 
-Let's make a trick dice! Modify the line of code with `pick random` so that only numbers 3-6 can appear on the dice. Also note that we need to ensure `roll = 0` when only 1 dot is shown on the BBC micro:bit.
+Let's make a trick dice! Modify the line of code with `pick random` so that only numbers 3-6 can appear on the dice. Also note that we need to ensure `roll = 0` when only 1 dot is shown on the @boardname@.
 
 ```blocks 
 input.onGesture(Gesture.Shake, () => {
@@ -179,5 +179,5 @@ input.onGesture(Gesture.Shake, () => {
 
 ### Challenge 3
 
-Add a couple more conditions so that the BBC micro:bit randomly chooses a number between 1 and 8.
+Add a couple more conditions so that the @boardname@ randomly chooses a number between 1 and 8.
 

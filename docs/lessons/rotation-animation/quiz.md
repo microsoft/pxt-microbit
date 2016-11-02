@@ -43,7 +43,7 @@ while (rotating) {
 
 <br/>
 
-## 4. Draw the areas on the micro:bits to illustrate the code below. Explain why you chose to draw in those areas.
+## 4. Draw the areas on the @boardname@s to illustrate the code below. Explain why you chose to draw in those areas.
 
 ```blocks
 basic.showLeds(`

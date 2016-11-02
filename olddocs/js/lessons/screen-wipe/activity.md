@@ -1,10 +1,10 @@
 # screen wipe activity
 
-Clear the screen by pressing buttons on the BBC micro:bit.
+Clear the screen by pressing buttons on the @boardname@.
 
 ### ~avatar avatar
 
-This activity will teach how to clear the screen by pressing button ``A`` on the BBC micro:bit.
+This activity will teach how to clear the screen by pressing button ``A`` on the @boardname@.
 
 ### ~
 
@@ -35,7 +35,7 @@ input.onButtonPressed(Button.A, () => {
 }) // ***
 ```
 
-Run the script in the simulator or on the BBC micro:bit to see how this works!
+Run the script in the simulator or on the @boardname@ to see how this works!
 
 ### ~avatar boothing
 

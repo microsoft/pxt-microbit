@@ -13,7 +13,7 @@ basic.showNumber(add(1, 2))
 ```
 
 ### ~ hint
-For the micro:bit, you must specify a [type](/js/types) for each function parameter. 
+For the @boardname@, you must specify a [type](/js/types) for each function parameter. 
 ### ~ 
 
 Functions can refer to variables outside of the function body.

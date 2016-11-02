@@ -1,6 +1,6 @@
 # Send Number
 
-Broadcast a [number](/reference/types/number) to other micro:bits connected via ``radio``.
+Broadcast a [number](/reference/types/number) to other @boardname@s connected via ``radio``.
 
 ```sig
 radio.sendNumber(0);
@@ -13,8 +13,8 @@ radio.sendNumber(0);
 
 ### Example: Broadcasting acceleration
 
-This example broadcasts the value of your micro:bit's ``acceleration``
-in the `x` direction (left and right) to other micro:bits.  This kind
+This example broadcasts the value of your @boardname@'s ``acceleration``
+in the `x` direction (left and right) to other @boardname@s.  This kind
 of program might be useful in a model car or model rocket.
 
 ```blocks

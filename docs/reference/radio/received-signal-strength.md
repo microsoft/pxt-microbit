@@ -5,7 +5,7 @@
 Find how strong the ``radio`` signal is, from `255` to `0`.
 (`255` means a weak signal and `0` means a strong one.)
 
-The micro:bit finds the signal strength by checking how strong it was
+The @boardname@ finds the signal strength by checking how strong it was
 the last time it ran the
 [on data packet received](/reference/radio/on-data-packet-received) function. That means
 it needs to run **receive number** first.
@@ -21,7 +21,7 @@ how strong the signal is.
 
 ### Simulator
 
-This function only works on the micro:bit, not in browsers.
+This function only works on the @boardname@, not in browsers.
 
 ### Example
 

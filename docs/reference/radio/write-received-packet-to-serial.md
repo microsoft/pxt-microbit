@@ -19,7 +19,7 @@ The format for received data printed to serial is as follows:
 ### Examples
 
 When ```radio``` data is received (after pressing the ``A`` button on
-the second micro:bit), this program sends temperature data to
+the second @boardname@), this program sends temperature data to
 serial.
 
 ```blocks

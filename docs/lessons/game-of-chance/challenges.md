@@ -28,7 +28,7 @@ input.onButtonPressed(Button.A, () => {
 
 ### Challenge 2
 
-What if micro:bit's answer to the question is GAME OVER? Let's have `GAME OVER` be displayed when button `B` is pressed. Add a condition for button `B` and inside it show the `GAME OVER`.
+What if @boardname@'s answer to the question is GAME OVER? Let's have `GAME OVER` be displayed when button `B` is pressed. Add a condition for button `B` and inside it show the `GAME OVER`.
 
 ```blocks
 basic.showString("SELECT A BUTTON")

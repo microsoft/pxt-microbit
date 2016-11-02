@@ -16,7 +16,7 @@ Answer the questions while completing the tutorial. Pay attention to the dialogu
 
 <br/>
 
-## 2. Write an if statement that will display the message "TRUTH" on the BBC micro:bit  if the local variable 'random' equals 0. 
+## 2. Write an if statement that will display the message "TRUTH" on the @boardname@  if the local variable 'random' equals 0. 
 
 <br/>
 

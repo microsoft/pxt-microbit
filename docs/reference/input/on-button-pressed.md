@@ -3,7 +3,7 @@
 Start an [event handler](/reference/event-handler) (part of the program that will run when something happens, like when a button is pressed). 
 This handler works when button `A` or `B` is pressed, or `A` and `B` together.
 When you are using this function in a web browser, click the buttons on the screen instead of the ones
-on the BBC micro:bit.
+on the @boardname@.
 
 ```sig
 input.onButtonPressed(Button.A, () => {})

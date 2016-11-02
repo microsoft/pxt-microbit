@@ -84,12 +84,22 @@ namespace led {
 
     /**
      * Sets the display mode between black and white and greyscale for rendering LEDs.
-     * @param mode TODO
+     * @param mode mode the display mode in which the screen operates
      */
     //% weight=1 help=led/set-display-mode
-    //% parts="ledmatrix"
+    //% parts="ledmatrix" advanced=true
     void setDisplayMode(DisplayMode_ mode) {
         uBit.display.setDisplayMode((DisplayMode)mode);
+    }
+
+    /**
+    * Turns on or off the display    
+    */
+    //% help=led/enable blockId=device_led_enable icon="\uf04d"
+    //% advanced=true parts="ledmatrix"
+    void enable(bool on) {
+        if (on) uBit.display.enable();
+        else uBit.display.disable();
     }
 
     /**

@@ -4,7 +4,7 @@
 
 ### ~avatar
 
-Build your own micro:bit piano using bananas!
+Build your own @boardname@ piano using bananas!
 
 ### ~
 
@@ -14,7 +14,7 @@ Build your own micro:bit piano using bananas!
 
 ## Materials
 
-* micro:bit, battery holder and 2 AAA batteries
+* @boardname@, battery holder and 2 AAA batteries
 * Bananas
 * Orange
 * Crocodile clips

@@ -1,6 +1,6 @@
 # counter quiz answers 
 
-Learn how to create a counter with the BBC micro:bit button. 
+Learn how to create a counter with the @boardname@ button. 
 
 This is the answer key for the [counter quiz](/lessons/counter/quiz).
 
@@ -32,7 +32,7 @@ input.onButtonPressed(Button.A, () => {
 
 ![](/static/mb/lessons/counter-1.png)
 
-We are only pressing on button pressed once. So the number to display on the micro:bit is also one.
+We are only pressing on button pressed once. So the number to display on the @boardname@ is also one.
 
 <br/>
 
@@ -48,7 +48,7 @@ input.onButtonPressed(Button.A, () => {
 
 ![](/static/mb/lessons/counter-2.png)
 
-We included the code ``on button pressed("A")`` that runs each time the user presses A. The code increments `count` by `1`. We increase `count` by 1 whenever the user presses the button. So the third time the A button is pressed on the BBC micro:bit, the number 3 is displayed
+We included the code ``on button pressed("A")`` that runs each time the user presses A. The code increments `count` by `1`. We increase `count` by 1 whenever the user presses the button. So the third time the A button is pressed on the @boardname@, the number 3 is displayed
 
 <br/>
 

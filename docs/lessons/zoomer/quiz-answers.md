@@ -1,12 +1,12 @@
 # zoomer quiz answers
 
-Measure the acceleration on the micro:bit in the "z" direction.
+Measure the acceleration on the @boardname@ in the "z" direction.
 
 This is the answer key for the [zoomer quiz](/lessons/zoomer/quiz).
 
 ## 1. What is 'acceleration'?
 
-Acceleration is amount of force being applied to the BBC micro:bit in one of three specified directions.
+Acceleration is amount of force being applied to the @boardname@ in one of three specified directions.
 
 ## 2. Consider the following directions
 
@@ -22,7 +22,7 @@ Note: acceleration does not have be measured in the "x" direction. It can also b
 
 ## 3. Consider the following directions
 
-After storing the acceleration in a variable, write the code to show acceleration on the BBC micro:bit as a number
+After storing the acceleration in a variable, write the code to show acceleration on the @boardname@ as a number
 
 <br/>
 

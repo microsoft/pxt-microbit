@@ -1,6 +1,6 @@
 # answering machine blocks quiz
 
-Create an answering machine on the micro:bit.
+Create an answering machine on the @boardname@.
 
 ## Name
 
@@ -36,7 +36,7 @@ basic.showString("Hi")
 
 ![](/static/mb/lessons/answering-machine-4.png)
 
-## 4. If the rectangle below represents the micro:bit, write the code to display the letter "Z".
+## 4. If the rectangle below represents the @boardname@, write the code to display the letter "Z".
 
 ```blocks
 basic.showString("Z")

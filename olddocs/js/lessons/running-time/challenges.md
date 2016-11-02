@@ -4,7 +4,7 @@ My script. #docs
 
 **Challenge 0**
 
-Great job! You have successfully completed the [Running Time tutorial](/lessons/running-time/tutorial) . You have a forever loop that declares a variable in it that holds the running time in milliseconds of the micro:bit and then shows the seconds on the LED screen.
+Great job! You have successfully completed the [Running Time tutorial](/lessons/running-time/tutorial) . You have a forever loop that declares a variable in it that holds the running time in milliseconds of the @boardname@ and then shows the seconds on the LED screen.
 
 ```
 basic.forever(() => {

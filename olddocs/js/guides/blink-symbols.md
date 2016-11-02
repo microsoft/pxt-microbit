@@ -2,7 +2,7 @@
 
 ### Challenge 0
 
-You have successfully following the [blink tutorial](/hcwxud). If not, then let's start the tutorial now. Your micro:bit script should start by displaying a blinking script on screen. We want to plot the x and y coordinates to 2, 2. Additionally, you will pause by 100 milliseconds then clear the screen of the micro:bit.
+You have successfully following the [blink tutorial](/hcwxud). If not, then let's start the tutorial now. Your @boardname@ script should start by displaying a blinking script on screen. We want to plot the x and y coordinates to 2, 2. Additionally, you will pause by 100 milliseconds then clear the screen of the @boardname@.
 
 Let's give it a go!
 

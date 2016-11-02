@@ -488,11 +488,18 @@ declare namespace led {
 
     /**
      * Sets the display mode between black and white and greyscale for rendering LEDs.
-     * @param mode TODO
+     * @param mode mode the display mode in which the screen operates
      */
     //% weight=1 help=led/set-display-mode
-    //% parts="ledmatrix" shim=led::setDisplayMode
+    //% parts="ledmatrix" advanced=true shim=led::setDisplayMode
     function setDisplayMode(mode: DisplayMode): void;
+
+    /**
+     * Turns on or off the display    
+     */
+    //% help=led/enable blockId=device_led_enable icon="\uf04d"
+    //% advanced=true parts="ledmatrix" shim=led::enable
+    function enable(on: boolean): void;
 
     /**
      * Takes a screenshot of the LED screen and returns an image.
@@ -578,7 +585,8 @@ declare namespace pins {
      * @param value angle or rotation speed, eg:180,90,0
      */
     //% help=pins/servo-write-pin weight=20
-    //% blockId=device_set_servo_pin block="servo write|pin %name|to %value" blockGap=8 shim=pins::servoWritePin
+    //% blockId=device_set_servo_pin block="servo write|pin %name|to %value" blockGap=8
+    //% parts=microservo trackArgs=0 shim=pins::servoWritePin
     function servoWritePin(name: AnalogPin, value: number): void;
 
     /**

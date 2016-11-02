@@ -32,7 +32,7 @@ TouchDevelop operators include:
 
 Libraries provide additional functions:
 
-* the [micro:bit library](/js/contents)
+* the [@boardname@ library](/js/contents)
 * the [math](/js/math) and [bits](/js/bits) libraries
 
 ### see also

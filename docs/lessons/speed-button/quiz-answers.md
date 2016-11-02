@@ -10,7 +10,7 @@ This is the answer key for the [speed button quiz](/lessons/speed-button/quiz).
 
 A variable that is available throughout your main function.
 
-## 2. If the rectangle below represents the BBC micro:bit, shade the area that shows the value of the variable count.
+## 2. If the rectangle below represents the @boardname@, shade the area that shows the value of the variable count.
 
 ```blocks
 let count = 0
@@ -18,7 +18,7 @@ let count = 0
 
 ![](/static/mb/lessons/speed-button-0.png)
 
-## 3. If the rectangle below represents the BBC micro:bit, shade the areas that will be displayed after two button presses on Button A. Explain why that particular area is shaded.
+## 3. If the rectangle below represents the @boardname@, shade the areas that will be displayed after two button presses on Button A. Explain why that particular area is shaded.
 
 ```blocks
 let count = 0
@@ -34,7 +34,7 @@ input.onButtonPressed(Button.A, () => {
 
 After two button presses, **count** will be equal to 2.
 
-## 5. If the rectangle below represents the BBC micro:bit, shade the areas that will be displayed after five button presses on Button A. Explain why that particular area is shaded.
+## 5. If the rectangle below represents the @boardname@, shade the areas that will be displayed after five button presses on Button A. Explain why that particular area is shaded.
 
 ```blocks
 let count = 0

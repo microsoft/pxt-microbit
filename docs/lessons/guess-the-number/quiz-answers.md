@@ -1,16 +1,16 @@
 # guess the number quiz answers
 
-Learn how to generate a random number on the micro:bit.
+Learn how to generate a random number on the @boardname@.
 
 This is the answer key for the [guess the number quiz](/lessons/guess-the-number/quiz).
 
 ## 1. What is on button pressed?
 
-Answers may vary. Generally, on button pressed run code when an input button is pressed. The micro:bit has two input buttons: A and B.
+Answers may vary. Generally, on button pressed run code when an input button is pressed. The @boardname@ has two input buttons: A and B.
 
 ## 2. Consider the following directions
 
-Write the line of code that creates a condition when the BBC micro:bit button A is pressed.
+Write the line of code that creates a condition when the @boardname@ button A is pressed.
 
 
 ```blocks
@@ -28,7 +28,7 @@ let randomNumber = Math.random(10)
 ```
 
 ## 4. 
-If the rectangle below represents the BBC micro:bit, shade the areas that will be displayed. Explain why that particular area is shaded.
+If the rectangle below represents the @boardname@, shade the areas that will be displayed. Explain why that particular area is shaded.
 
 ```blocks
 let randomNumber = Math.random(10)

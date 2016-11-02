@@ -1,6 +1,6 @@
 # Pin Press Switch
 
-### @description micro:bit guitar: use pin press to toggle guitar play on/off
+### @description @boardname@ guitar: use pin press to toggle guitar play on/off
 
 ### ~avatar avatar
 Use pin press to switch guitar play on/off
@@ -55,15 +55,15 @@ input.onPinPressed(TouchPin.P2, () => {
 ```
 **Create the pin-press code**
 
-**Download the code** on the micro:bit
+**Download the code** on the @boardname@
 
 https://youtu.be/PAIU-vHqyGU
 
-**Hold the micro:bit touching The GND pin with one hand**
+**Hold the @boardname@ touching The GND pin with one hand**
 **with the other hand alternately touch the 0, 1 and 2 pins**
 
 ### ~hint
-**The electric signal traveled from pins, between your hands to `GND` and the micro:bit detected the electric signal!**
+**The electric signal traveled from pins, between your hands to `GND` and the @boardname@ detected the electric signal!**
 ### ~
 
 ## Step 2: Installing conductive foil on the guitar
@@ -78,7 +78,7 @@ https://youtu.be/YkymZGNmkrE
 **Connect the foil to `pin 1` using a crocodile clip**
 
 ## Step 3: Add a switch to turn the guitar ON and OFF
-**Using the `on` global variable we can switch the message on the micro:bit**
+**Using the `on` global variable we can switch the message on the @boardname@**
 **between ON and OFF**
 ```blocks
 let on = false
@@ -99,7 +99,7 @@ input.onPinPressed(TouchPin.P1, () => {
 ```
 **Create the ON/OFF switch code**
 
-**Download the code on the micro:bit**
+**Download the code on the @boardname@**
 
 **Test by touching `P1` to toggle the LED message between ON and OFF**
 

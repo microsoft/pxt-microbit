@@ -15,7 +15,7 @@ let isDone: boolean = false;
 
 ### ~ hint 
 In JavaScript, `numbers` are floating point values.
-However, for the micro:bit, `numbers` are integer values.
+However, for the @boardname@, `numbers` are integer values.
 ### ~
 
 Integer values can be specified via decimal, hexadecimal and octal notation:
@@ -74,7 +74,7 @@ let list: Array<number> = [1, 2, 3];
 ```
 
 ### ~hint
-For the micro:bit, all elements of an array must have the same type.
+For the @boardname@, all elements of an array must have the same type.
 ### ~
 
 
@@ -106,7 +106,7 @@ let c: Color = Color.Green;
 
 # Any
 
-The TypeScript type `any` is not supported in the micro:bit.
+The TypeScript type `any` is not supported in the @boardname@.
 
 
 # Void

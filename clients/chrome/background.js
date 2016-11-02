@@ -1,4 +1,3 @@
-///<reference path='typings/browser.d.ts'/>
 var connections = [];
 // A list of "ports", i.e. connected clients (such as web pages). Multiple web
 // pages can connect to our service: they all receive the same data.
@@ -41,7 +40,7 @@ function findNewDevices() {
 function main() {
     // Register new clients in the [ports] global variable.
     chrome.runtime.onConnectExternal.addListener(function (port) {
-        if (/^(micro:bit|touchdevelop|yelm|pxt|codemicrobit|codethemicrobit)$/.test(port.name)) {
+        if (/^(micro:bit|touchdevelop|yelm|pxt|codemicrobit|codethemicrobit|pxt.microbit.org)$/.test(port.name)) {
             ports.push(port);
             port.onDisconnect.addListener(function () {
                 ports = ports.filter(function (x) { return x != port; });

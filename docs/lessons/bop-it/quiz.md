@@ -26,7 +26,7 @@ Answer the questions while completing the tutorial. Pay attention to the dialogu
 
 <br />
 
-### 5. Write the code that increments the score if the BBC micro:bit logo is tilted down when the global variable called 'action' is equal to 1
+### 5. Write the code that increments the score if the @boardname@ logo is tilted down when the global variable called 'action' is equal to 1
 
 <br />
 
@@ -34,5 +34,5 @@ Answer the questions while completing the tutorial. Pay attention to the dialogu
 
 <br />
 
-### 7. Write the code that increments the score if the BBC micro:bit is shaken when the global variable called 'action' is equal to 2
+### 7. Write the code that increments the score if the @boardname@ is shaken when the global variable called 'action' is equal to 2
 

@@ -1,6 +1,6 @@
 # Block Editor STEM Lessons
 
-Overview of Blocks lessons for the BBC micro:bit.
+Overview of Blocks lessons for the @boardname@.
 
 ### @short Lessons
 
@@ -9,9 +9,9 @@ Overview of Blocks lessons for the BBC micro:bit.
 ## Science
 
 * [Night Light](/lessons/night-light), dim the LEDs with set brightness
-* [Hack your headphones](/projects/hack-your-headphones), create music on the BBC micro:bit by hacking your headphones
+* [Hack your headphones](/projects/hack-your-headphones), create music on the @boardname@ by hacking your headphones
 * [Banana Keyboard](/projects/banana-keyboard), create music with fruits
-* [Telegraph](/projects/telegraph), play the telegraph game between 2 BBC micro:bits
+* [Telegraph](/projects/telegraph), play the telegraph game between 2 @boardname@s
 * [Zoomer](/lessons/zoomer), measure the force with acceleration
 * [Glowing pendulum](/lessons/glowing-pendulum), construct a pendulum that glows using acceleration
 
@@ -30,7 +30,7 @@ Overview of Blocks lessons for the BBC micro:bit.
 * [Flashing heart](/lessons/flashing-heart), display images with a pause
 * [Blink](/lessons/blink), turn an LED on and off with plot
 * [Happy birthday](/lessons/happy-birthday), create a popular song
-* [Magic 8](/lessons/magic-8), a fortune teller game with the BBC micro:bit
+* [Magic 8](/lessons/magic-8), a fortune teller game with the @boardname@
 
 ### ~
 

@@ -1,6 +1,6 @@
 # Touch Develop Lessons
 
-Overview of Touch Develop lessons for the BBC micro:bit.
+Overview of Touch Develop lessons for the @boardname@.
 
 ### @short Lessons
 
@@ -9,10 +9,10 @@ Overview of Touch Develop lessons for the BBC micro:bit.
 ## Maker
 
 * [The Watch](/lessons/the-watch), design and create The Watch
-* [Hack your Headphones](/lessons/hack-your-headphones), create music on the BBC micro:bit by hacking your headphones
+* [Hack your Headphones](/lessons/hack-your-headphones), create music on the @boardname@ by hacking your headphones
 * [Banana Keyboard](/lessons/banana-keyboard), create music with fruits
-* [Telegraph](/lessons/telegraph), play the telegraph game between 2 BBC micro:bits
-* [Ornament Chain](/lessons/ornament-chain), play the ornament chain game between 2 BBC micro:bits
+* [Telegraph](/lessons/telegraph), play the telegraph game between 2 @boardname@s
+* [Ornament Chain](/lessons/ornament-chain), play the ornament chain game between 2 @boardname@s
 
 ## Beginner
 
@@ -33,7 +33,7 @@ Overview of Touch Develop lessons for the BBC micro:bit.
 
 ## Intermediate
 
-* [Magic 8](/lessons/magic-8), a fortune teller game with the BBC micro:bit
+* [Magic 8](/lessons/magic-8), a fortune teller game with the @boardname@
 * [Guess the Number](/lessons/guess-the-number), guess a random number with random
 * [Rock Paper Scissors](/lessons/rock-paper-scissors), use image offsets with local variables
 * [Counter](/lessons/counter), display a number with a variable
@@ -48,7 +48,7 @@ Overview of Touch Develop lessons for the BBC micro:bit.
 * [Digi Yoyo](/lessons/digi-yoyo), create a counter with a while loop
 * [Rotation Animation](/lessons/rotation-animation), control an animation with a boolean variable
 * [Offset Image](/lessons/offset-image), shift an image horizontally with image offset
-* [Compass](/lessons/compass), displays the direction the BBC micro:bit is pointing
+* [Compass](/lessons/compass), displays the direction the @boardname@ is pointing
 
 ### ~
 
@@ -64,10 +64,10 @@ Overview of Touch Develop lessons for the BBC micro:bit.
 * [Prank WiFi](/lessons/prank-wifi), create fake WiFi to trick your friends
 * [Jailbreak](/lessons/jailbreak), break out of a counting loop by pressing button "A"
 * [Flipping Bird](/lessons/flipping-bird), use modulo with a conditional
-* [Runaway Pac Man](/lessons/runaway-pacman), construct the game pac man with the BBC micro:bit
+* [Runaway Pac Man](/lessons/runaway-pacman), construct the game pac man with the @boardname@
 * [Line of Fire](/lessons/line-of-fire), make a game to test hand-eye coordination
 * [The Hat Game](/lessons/the-hat-game), make a game to test your focus on the moving ball
-* [2 Player Pong](/lessons/2-player-pong), collaborate with a classmate to develop Pong on multiple BBC micro:bits
+* [2 Player Pong](/lessons/2-player-pong), collaborate with a classmate to develop Pong on multiple @boardname@s
 
 ### Games
 
@@ -81,7 +81,7 @@ Overview of Touch Develop lessons for the BBC micro:bit.
 
 ### ~hide
 
-* [Number Psych](/lessons/number-psych), collaborate with multiple classmates to develop a game on multiple BBC micro:bits and a breadboard
+* [Number Psych](/lessons/number-psych), collaborate with multiple classmates to develop a game on multiple @boardname@s and a breadboard
 
 ### ~
 

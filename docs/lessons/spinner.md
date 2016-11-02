@@ -1,6 +1,6 @@
 # spinner lesson
 
-a spin the BBC micro:bit game with the input on shake.
+a spin the @boardname@ game with the input on shake.
 
 
 
@@ -37,7 +37,7 @@ basic.showLeds(`
 
 ## Objectives
 
-* learn how to run code when the BBC micro:bit is shaken, when running code in the web browser, moving the mouse quickly simulates shaking
+* learn how to run code when the @boardname@ is shaken, when running code in the web browser, moving the mouse quickly simulates shaking
 * learn how to create a local variable as a place where you can store and retrieve data
 * learn how the assignment operator is used to declare a new local variable
 * learn how to declare a new local variable or update the value of a variable

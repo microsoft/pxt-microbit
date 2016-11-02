@@ -1,7 +1,7 @@
 # Show Image
 
 Show an [image](/reference/images/image) (picture) on the
-[LED screen](/device/screen).  After the micro:bit shows an image, it
+[LED screen](/device/screen).  After the @boardname@ shows an image, it
 will pause for 400 milliseconds (1000 milliseconds is one second).
 
 ```sig
@@ -12,7 +12,7 @@ item.showImage(0);
 ### Parameters
 
 * an [image](/reference/images/image) (picture). It is usually a square with five LEDs on a side, but it might be wider. 
-* a [number](/reference/types/number) that says how many LEDs from the left of the picture the micro:bit should start. `0` means start at the first **frame** of the picture, `5` means start at the second frame, `10` means start at the third, and so on.
+* a [number](/reference/types/number) that says how many LEDs from the left of the picture the @boardname@ should start. `0` means start at the first **frame** of the picture, `5` means start at the second frame, `10` means start at the third, and so on.
 
 ### Example: Flip-flopping arrow
 

@@ -1,6 +1,6 @@
-# micro:bit/JavaScript Documentation
+# @boardname@/JavaScript Documentation
 
-JavaScript docs for the micro:bit
+JavaScript docs for the @boardname@
 
 ### @section full
 
@@ -14,10 +14,10 @@ JavaScript docs for the micro:bit
 
 ### ~
 
-Welcome to the Touch Develop home page for the BBC micro:bit. Below you will find resources about the Touch Develop programming language and code editor. Good places to start include:
+Welcome to the Touch Develop home page for the @boardname@. Below you will find resources about the Touch Develop programming language and code editor. Good places to start include:
 
 * [the Touch Develop Editor](/js/editor)
-* [30+ BBC micro:bit lessons](/lessonss)
+* [30+ @boardname@ lessons](/lessonss)
 * [offline support](/offline)
 
 ### ~column 
@@ -92,7 +92,7 @@ Welcome to the Touch Develop home page for the BBC micro:bit. Below you will fin
 
 ### ~column 
 
-## BBC micro:bit functions
+## @boardname@ functions
 
 ### Basic
 
@@ -190,11 +190,11 @@ Functions in this category require to be connected to a remote device.
 ## Run
 
 * [scripts in the browser](/js/simulator)
-* [scripts on your BBC micro:bit](/device/usb)
+* [scripts on your @boardname@](/device/usb)
 
 ## Debugging
 
-* use the [serial library](/js/serial-library) to print data from your micro:bit on your computer
+* use the [serial library](/js/serial-library) to print data from your @boardname@ on your computer
 * learn about the [device error codes](/device/errors) that are displayed when sad faces occur
 
 ## Edit/Publish

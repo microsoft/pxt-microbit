@@ -4,13 +4,13 @@ An introduction to graphics for the Block Editor.
 
 ## Before we get started
 
-Ensure you have completed the 'Hello, world!' and Loop tutorials and tested them on a simulator or on BBC micro:bit.
+Ensure you have completed the 'Hello, world!' and Loop tutorials and tested them on a simulator or on @boardname@.
 
 ```blocks
 basic.showString("HI!");
 ```
 
-The BBC micro:bit has a grid of 25 LEDs, so we can use these to display images.
+The @boardname@ has a grid of 25 LEDs, so we can use these to display images.
 
 We’ve already experimented with the `show string` block that displays a string (some text) that we program it to. However we can use more blocks from the **Images** drawer to render or display images in different ways.
 
@@ -22,7 +22,7 @@ We can draw little images from the LEDs by ticking boxes. Drag a `show image` bl
 
 ### Plotting points
 
-We can also code our bug to plot a point by giving an x (horizontal) and y (vertical) coordinates, from 0 to 4. Click the **LED** drawer and drag a `plot` block. Try changing the coordinates and see the effect this has on the BBC micro:bit.
+We can also code our bug to plot a point by giving an x (horizontal) and y (vertical) coordinates, from 0 to 4. Click the **LED** drawer and drag a `plot` block. Try changing the coordinates and see the effect this has on the @boardname@.
 
 We can also unplot a point (turn the LED off again) using the `unplot` block. So we could create a flashing LED program, using the `pause` block to create a delay.
 
@@ -43,7 +43,7 @@ The pause block is in milliseconds, so setting it to 1000 will have a pause of a
 
 ### Devising algorithms for shapes
 
-An algorithm is a set of steps to follow to solve a problem. We can begin to draw shapes on the BBC micro:bit using an algorithm. 
+An algorithm is a set of steps to follow to solve a problem. We can begin to draw shapes on the @boardname@ using an algorithm. 
 For example, we could draw a straight line with this code:
 
 ```blocks
@@ -70,7 +70,7 @@ basic.forever(() => {
 
 Animations are changes happening at a certain rate. For example, we could add the `pause` block from the **Basic** drawer with our square algorithm – this will slowly draw a square (as an animation).
 
-We could create more complex animations, for example we could make our BBC micro:bit display an explosion or fireworks.
+We could create more complex animations, for example we could make our @boardname@ display an explosion or fireworks.
 
 ### Image variables
 

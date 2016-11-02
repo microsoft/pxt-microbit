@@ -26,5 +26,5 @@ pins.analogPitch(frequency, duration)
 
 ### See also
 
-[micro:bit pins](/device/pins), [analog set period](/reference/pins/analog-set-period), [analog pitch](/reference/pins/analog-pitch)
+[@boardname@ pins](/device/pins), [analog set period](/reference/pins/analog-set-period), [analog pitch](/reference/pins/analog-pitch)
 

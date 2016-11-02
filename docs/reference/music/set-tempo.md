@@ -7,11 +7,11 @@ music.setTempo(60)
 ```
 ## Simulator
 
-This function only works on the micro:bit and in some browsers.
+This function only works on the @boardname@ and in some browsers.
 
 ### Parameters
 
-* ``bpm`` is a [number](/reference/types/number) that means the beats per minute you want (the number of beats in a minute of the music that the micro:bit is playing).
+* ``bpm`` is a [number](/reference/types/number) that means the beats per minute you want (the number of beats in a minute of the music that the @boardname@ is playing).
 
 ### See also
 

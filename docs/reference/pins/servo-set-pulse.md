@@ -22,7 +22,7 @@ pins.servoSetPulse(AnalogPin.P0, 1000)
 
 ### See also
 
-[BBC micro:bit pins](/device/pins),
+[@boardname@ pins](/device/pins),
 [on pin pressed](/reference/input/on-pin-pressed),
 [analog read pin](/reference/pins/analog-read-pin),
 [digital read pin](/reference/pins/digital-read-pin),

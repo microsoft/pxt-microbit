@@ -33,7 +33,7 @@ let acceleration = input.acceleration(Dimension.X)
 let accelerationAbsolute = Math.abs(acceleration)
 ```
 
-## 4. Write the code to use the acceleration value from question 3 to set the brightness on the BBC micro:bit.
+## 4. Write the code to use the acceleration value from question 3 to set the brightness on the @boardname@.
 
 <br/>
 

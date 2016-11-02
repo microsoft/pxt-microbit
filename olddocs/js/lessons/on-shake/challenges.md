@@ -1,6 +1,6 @@
 # flipping bird challenges
 
-These challenges will allow you to create and display a flipping image of a bird when the micro:bit is shaken. #docs
+These challenges will allow you to create and display a flipping image of a bird when the @boardname@ is shaken. #docs
 
 ### Challenge 0
 

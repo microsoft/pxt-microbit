@@ -1,7 +1,7 @@
 # Pulse In
 
 Returns the duration of a pulse (high or low) from a [pin](/device/pins) on
-the micro:bit board in microseconds.
+the @boardname@ board in microseconds.
 
 ```sig
 pins.pulseIn(DigitalPin.P0, PulseValue.High)

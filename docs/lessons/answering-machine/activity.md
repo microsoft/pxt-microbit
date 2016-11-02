@@ -1,6 +1,6 @@
 # answering machine blocks activity
 
-Learn to create an answering machine on the micro:bit 
+Learn to create an answering machine on the @boardname@ 
 
 ### ~avatar avatar
 

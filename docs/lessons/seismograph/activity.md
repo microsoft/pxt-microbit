@@ -1,16 +1,16 @@
 # Seismograph Activity 
 
-Welcome! In this project, you will build your own seismograph. This activity will teach how to use the micro:bit to chart the strength of the acceleration. Let's get started! Project duration: 25 minutes.
+Welcome! In this project, you will build your own seismograph. This activity will teach how to use the @boardname@ to chart the strength of the acceleration. Let's get started! Project duration: 25 minutes.
 
 ### ~avatar avatar
 
-Engineering: In this project, you will build your own seismograph micro:bit from tape and a household plate. 
+Engineering: In this project, you will build your own seismograph @boardname@ from tape and a household plate. 
 
 ### ~
 
 ## What you'll need: 
 
-* BBC micro:bit 
+* @boardname@ 
 * micro USB cable
 * Plate 
 * Tape 
@@ -28,13 +28,13 @@ Prepare Tape: Measure and cut approximately 10mm of tape. The tape will be faste
 
 ## 2. 
 
-Fasten Tape: Fasten tape to the micro USB cable and to the plate. Attach the micro:bit to the micro:bit USB cable. 
+Fasten Tape: Fasten tape to the micro USB cable and to the plate. Attach the @boardname@ to the @boardname@ USB cable. 
 
 ![](/static/mb/lessons/seismograph0.png)
 
 ### ~avatar avatar
 
-Computer Science: The seismograph has been built. We are ready to program the micro:bit to be a seismograph! 
+Computer Science: The seismograph has been built. We are ready to program the @boardname@ to be a seismograph! 
 
 ### ~
 
@@ -61,7 +61,7 @@ basic.forever(() => {
 
 ## 6. 
 
-At rest, the micro:bit is always subject to Earth gravity, whose magnitude is measured around ``1023``. Substract ``1023`` to measure a data close to ``0``. 
+At rest, the @boardname@ is always subject to Earth gravity, whose magnitude is measured around ``1023``. Substract ``1023`` to measure a data close to ``0``. 
 
 ```blocks
 basic.forever(() => {
@@ -74,7 +74,7 @@ basic.forever(() => {
 
 ### ~avatar avatar
 
-Data Analysis: We now need to use the micro:bit to Analyze Data and chart for the strength of the acceleration.
+Data Analysis: We now need to use the @boardname@ to Analyze Data and chart for the strength of the acceleration.
 
 ### ~
 
@@ -82,25 +82,25 @@ Data Analysis: We now need to use the micro:bit to Analyze Data and chart for th
 
 ## 7. 
 
-First, notice that moving the micro:bit in the simulator in any direction, you will change the acceleration value, which is being displayed as the same color as the micro:bit simulator. Also, notice that by moving the micro:bit simulator, there is a changing acceleration value. Second, the flat colored horizontal line will start a waving line to display the value of the strength as measured in milli-gravities. Finally, notice that the LED display will fluctate based on the movement of the micro:bit simulator. 
+First, notice that moving the @boardname@ in the simulator in any direction, you will change the acceleration value, which is being displayed as the same color as the @boardname@ simulator. Also, notice that by moving the @boardname@ simulator, there is a changing acceleration value. Second, the flat colored horizontal line will start a waving line to display the value of the strength as measured in milli-gravities. Finally, notice that the LED display will fluctate based on the movement of the @boardname@ simulator. 
 
 ![](/static/mb/lessons/analyze20.png)
 
 ## 8. 
  
-Connect a micro:bit to your computer using your USB cable
+Connect a @boardname@ to your computer using your USB cable
 
 ![](/static/mb/lessons/seismograph33.png)
 
-Click or tap the **Download** button for the seismograph program to run the program on the micro:bit. 
+Click or tap the **Download** button for the seismograph program to run the program on the @boardname@. 
 
 ## 9. 
 
-A black line should appear directly beneath the colored line. The black line measures the micro:bit acceleration.  And the colored line measures micro:bit simulator acceleration. 
+A black line should appear directly beneath the colored line. The black line measures the @boardname@ acceleration.  And the colored line measures @boardname@ simulator acceleration. 
 
-Run the acceleration experiment by vigarously moving the plate in any direction or move the object below the micro:bit (such as a table).
+Run the acceleration experiment by vigarously moving the plate in any direction or move the object below the @boardname@ (such as a table).
 
-Every time the micro:bit moves in any direction,  you generate data points that can be reviewed in Excel later. The more attempts to move the micro:bit, the more data to be reviewed in Excel.  
+Every time the @boardname@ moves in any direction,  you generate data points that can be reviewed in Excel later. The more attempts to move the @boardname@, the more data to be reviewed in Excel.  
 
 ![](/static/mb/lessons/seismograph5.png)
 
@@ -108,19 +108,19 @@ Every time the micro:bit moves in any direction,  you generate data points that 
 
 Please find seismogrph experiment obervations: 
 
-First, notice that moving the micro:bit in any direction, you will change the acceleration value, which is being displayed as a milli-gravities value. By moving the micro:bit, there will be a changing acceleration value. 
+First, notice that moving the @boardname@ in any direction, you will change the acceleration value, which is being displayed as a milli-gravities value. By moving the @boardname@, there will be a changing acceleration value. 
 
 ![](/static/mb/lessons/seismograph7.png)
 
-Second, the horizontal line will move to plot the value of the strength as measured in milli-gravities. The horizontal line's movement is based on the micro:bit acceleration in Magnitude or Strength. 
+Second, the horizontal line will move to plot the value of the strength as measured in milli-gravities. The horizontal line's movement is based on the @boardname@ acceleration in Magnitude or Strength. 
 
 ![](/static/mb/lessons/seismograph6.png)
 
-Third, notice that the LED display fluctates based on the movement of the micro:bit. 
+Third, notice that the LED display fluctates based on the movement of the @boardname@. 
 
 ![](/static/mb/lessons/seismograph8.png)
 
-Now we are ready to graph or chart the accceleration of the micro:bit. We want a printout of the micro:bit acceleration graphed in Excel.
+Now we are ready to graph or chart the accceleration of the @boardname@. We want a printout of the @boardname@ acceleration graphed in Excel.
 
 ## 11. 
 
@@ -141,7 +141,7 @@ Click or tap Download data
 
 ## 13. 
 
-A CSV file will be generated to display the data points collected by the micro:bit. Click or tap on the data Excel file that was downloaded to your local Downloads Folder. 
+A CSV file will be generated to display the data points collected by the @boardname@. Click or tap on the data Excel file that was downloaded to your local Downloads Folder. 
 
 ![](/static/mb/lessons/analyze9.png)
 
@@ -149,7 +149,7 @@ A CSV file will be generated to display the data points collected by the micro:b
 
 Select the data that you want to include in your chart. The chart should include the first two columns: time and acceleration. 
 
-Click or tap on the first two columns (A, B) to include time and acceleration data from the micro:bit  
+Click or tap on the first two columns (A, B) to include time and acceleration data from the @boardname@  
 
 
 ## 15.

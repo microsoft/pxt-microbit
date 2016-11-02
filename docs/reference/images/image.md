@@ -1,6 +1,6 @@
 # Image
 
-An image for the micro:bit screen.
+An image for the @boardname@ screen.
 
 ### @parent blocks/language
 

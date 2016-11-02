@@ -1,10 +1,10 @@
 # Projects
 
-Here are some cool projects that you can build with your micro:bit!
+Here are some cool projects that you can build with your @boardname@!
 
 ## Games
 
-Fun games to build with your micro:bit.
+Fun games to build with your @boardname@.
 
 ```codecard
 [{
@@ -72,7 +72,7 @@ Fun games to build with your micro:bit.
 
 ## From the community
 
-Projects contributed by the micro:bit community
+Projects contributed by the @boardname@ community
 
 ```codecard
 [{

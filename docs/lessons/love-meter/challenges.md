@@ -1,6 +1,6 @@
 # love meter blocks challenges
 
-Create a love meter with the micro:bit  
+Create a love meter with the @boardname@  
 
 ## Before we get started
 

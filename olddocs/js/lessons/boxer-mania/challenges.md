@@ -8,7 +8,7 @@ This [guided tutorial](/lessons/boxer-mania/tutorial) will help you create an an
 
 Let's create and show a series of frames on the LED screen; this is an animation!
 
-We will use multiple frames to make it look like a square is rotating on the micro:bit screen!
+We will use multiple frames to make it look like a square is rotating on the @boardname@ screen!
 
 ```
 basic.showAnimation(`

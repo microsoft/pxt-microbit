@@ -12,7 +12,9 @@ namespace pxsim {
         lightSensorState: LightSensorState;
         buttonPairState: ButtonPairState;
         radioState: RadioState;
+        // TODO: not singletons
         neopixelState: NeoPixelState;
+        microServoState: MicroServoState;
 
         constructor() {
             super()
@@ -48,7 +50,7 @@ namespace pxsim {
                     0,
                     0,
                     DAL.MICROBIT_ID_IO_P19,
-                    DAL.MICROBIT_ID_IO_P20                    
+                    DAL.MICROBIT_ID_IO_P20
                 ]
             });
             this.builtinParts["radio"] = this.radioState = new RadioState(runtime);
@@ -58,14 +60,17 @@ namespace pxsim {
             this.builtinParts["lightsensor"] = this.lightSensorState = new LightSensorState();
             this.builtinParts["compass"] = this.compassState = new CompassState();
             this.builtinParts["neopixel"] = this.neopixelState = new NeoPixelState();
+            this.builtinParts["microservo"] = this.microServoState = new MicroServoState();
 
             this.builtinVisuals["buttonpair"] = () => new visuals.ButtonPairView();
             this.builtinVisuals["ledmatrix"] = () => new visuals.LedMatrixView();
-            this.builtinVisuals["neopixel"] = () => new visuals.NeoPixelView();            
+            this.builtinVisuals["neopixel"] = () => new visuals.NeoPixelView();
+            this.builtinVisuals["microservo"] = () => new visuals.MicroServoView();
 
             this.builtinPartVisuals["buttonpair"] = (xy: visuals.Coord) => visuals.mkBtnSvg(xy);
             this.builtinPartVisuals["ledmatrix"] = (xy: visuals.Coord) => visuals.mkLedMatrixSvg(xy, 8, 8);
-            this.builtinPartVisuals["neopixel"] = (xy: visuals.Coord) => visuals.mkNeoPixelPart(xy);            
+            this.builtinPartVisuals["neopixel"] = (xy: visuals.Coord) => visuals.mkNeoPixelPart(xy);
+            this.builtinPartVisuals["microservo"] = (xy: visuals.Coord) => visuals.mkMicroServoPart(xy);
         }
 
         receiveMessage(msg: SimulatorMessage) {
@@ -97,7 +102,7 @@ namespace pxsim {
             const cmpDefs = msg.partDefinitions || {};
             const fnArgs = msg.fnArgs;
 
-            const opts : visuals.BoardHostOpts = {
+            const opts: visuals.BoardHostOpts = {
                 state: this,
                 boardDef: boardDef,
                 partsList: cmpsList,

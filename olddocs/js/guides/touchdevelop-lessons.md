@@ -1,6 +1,6 @@
 # TouchDevelop Lessons
 
-Overview of TouchDevelop lessons for the micro:bit.
+Overview of TouchDevelop lessons for the @boardname@.
 
 ### @section full
 
@@ -15,7 +15,7 @@ Overview of TouchDevelop lessons for the micro:bit.
 * [point](/reference/led/point)
 * [set brightness](/tfrmcgdtxk)
 
-## micro:bit
+## @boardname@
 
 ## functions
 
@@ -88,7 +88,7 @@ Overview of TouchDevelop lessons for the micro:bit.
 * [markdown](/js/markdown)
 * [creating interactive tutorials](/js/creatinginteractivetutorials)
 * [run scripts in a web browser](/js/simulator)
-* [run scripts on your micro:bit](/usb)
+* [run scripts on your @boardname@](/usb)
 * [libraries](/js/libraries)
 
 ### Functions and libraries

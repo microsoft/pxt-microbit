@@ -4,7 +4,7 @@ The acceleration function.
 
 **Challenge 0**
 
-Great job! You have successfully completed the [zoomer tutorial](https://test.microbit.co.uk/td/lessons/zoomer/challenges) . You have created a script that measures the acceleration on the micro:bit in the "z" direction of a 3D world.
+Great job! You have successfully completed the [zoomer tutorial](https://test.microbit.co.uk/td/lessons/zoomer/challenges) . You have created a script that measures the acceleration on the @boardname@ in the "z" direction of a 3D world.
 
 ```
 basic.forever(() => {
@@ -49,7 +49,7 @@ basic.forever(() => {
 
 ### Challenge 3
 
-If Button `B` is pressed, program the micro:bit to display the acceleration in the "y" direction.
+If Button `B` is pressed, program the @boardname@ to display the acceleration in the "y" direction.
 
 You can do this by storing the acceleration in a variable: `var milliY := input->acceleration("y")`.
 

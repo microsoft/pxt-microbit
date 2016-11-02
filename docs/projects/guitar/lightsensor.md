@@ -1,6 +1,6 @@
 # Light Sensor Tone control
 
-### @description micro:bit guitar: using light sensor to control tone
+### @description @boardname@ guitar: using light sensor to control tone
 
 ### ~avatar avatar
 
@@ -20,9 +20,9 @@ Use the Light Sensor to the control tone for this [Theremin](https://en.wikipedi
 *playing tones with light sensor*
 https://youtu.be/2cKg9pokVC4
 
-## The micro:bit LEDs Light Sensors
+## The @boardname@ LEDs Light Sensors
 
-- the micro:bit can detect external light level intensity reaching the LEDs
+- the @boardname@ can detect external light level intensity reaching the LEDs
 - the light level block reports a reading of values 0 (*dark*) to 255 (*bright*)
 - a **Forever Loop** is required to continually measure the current light level and control the tone
 
@@ -65,7 +65,7 @@ Experiment to see the effect on graph height when the **plot bar graph** value *
 ### Frequency
 **Frequency** measured in Hz which are cycles per second or vibrations per second
   * A healthy human ear can detect frequencies in the range of 20Hz to 20,000Hz.
-  * The micro:bit + headphones reliably produce detectable output ~50Hz - 6,000Hz.
+  * The @boardname@ + headphones reliably produce detectable output ~50Hz - 6,000Hz.
 
 **261Hz** represents a C note
 ```blocks
@@ -89,7 +89,7 @@ Create a **play tone** block using a **Math** section, **multiplication** block 
 ### Next
 **Add** a **B** button block that multiplies the **261** tone by a number other than 2 to set tone
 
-**Download the code to the micro:bit**
+**Download the code to the @boardname@**
 
 **Test the sound for multiples of the 261Hz *C* frequency**
 

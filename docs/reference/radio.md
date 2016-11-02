@@ -4,7 +4,7 @@ Communicate data using radio packets
 
 ```cards
 radio.sendNumber(0);
-radio.sendValue("data", 0);
+radio.sendValue("name", 0);
 radio.sendString("");
 radio.onDataPacketReceived(() => {
 

@@ -76,5 +76,5 @@ input.onGesture(Gesture.Shake, () => {
 
 **Challenge 3**
 
-Give Micro a nickname and display it on the micro:bit!
+Give Micro a nickname and display it on the @boardname@!
 

@@ -9,7 +9,7 @@ music.tempo()
 ### Returns
 
 * a [number](/reference/types/number) that means the beats per minute (number of
-  beats in a minute of the music that the micro:bit is playing).
+  beats in a minute of the music that the @boardname@ is playing).
 
 ### See also
 

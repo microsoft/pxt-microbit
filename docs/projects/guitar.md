@@ -2,14 +2,14 @@
 
 ![guitar icon](/static/mb/projects/guitar.png)
 
-### @description A beginner-intermediate maker activity, building a guitar with the micro:bit  
+### @description A beginner-intermediate maker activity, building a guitar with the @boardname@  
 
 ### ~avatar avatar
 
-Make a micro:bit guitar with this guided tutorial!
+Make a @boardname@ guitar with this guided tutorial!
 
 ### ~
-*playing micro:bit guitar*
+*playing @boardname@ guitar*
 https://youtu.be/GYmdTFvxz80
 
 ## Duration
@@ -23,7 +23,7 @@ https://youtu.be/GYmdTFvxz80
 * Markers and/or paint
 * Aluminum Foil
 * Scissors that can cut cardboard
-* 1 micro:bit, battery holder and 2 AAA batteries
+* 1 @boardname@, battery holder and 2 AAA batteries
 * 4-5 Crocodile clips
 * Headphones
 

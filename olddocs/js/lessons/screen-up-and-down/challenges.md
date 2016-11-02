@@ -20,7 +20,7 @@ input.onScreenUp(() => {
 
 **Challenge 1**
 
-Now have the Micro:bit do something when the screen is moved downward. You can do this by calling the on screen down method. Do not do anything when you call the on screen down method.
+Now have the @boardname@ do something when the screen is moved downward. You can do this by calling the on screen down method. Do not do anything when you call the on screen down method.
 
 ```
 input.onScreenUp(() => {
@@ -39,7 +39,7 @@ input.onScreenDown(() => {
 
 **Challenge 2**
 
-When the Micro:bit is moved downward, create and show an image of an upside down heart.
+When the @boardname@ is moved downward, create and show an image of an upside down heart.
 
 ```
 input.onScreenUp(() => {

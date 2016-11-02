@@ -2,7 +2,7 @@
 
 The plot image function.
 
-Display an [Image](/reference/images/image) on the BBC micro:bit's [LED screen](/device/screen)
+Display an [Image](/reference/images/image) on the @boardname@'s [LED screen](/device/screen)
 
 ### JavaScript
 

@@ -1,6 +1,6 @@
 # Objects disclaimer
 
-Touch Develop docs for the micro:bit.
+Touch Develop docs for the @boardname@.
 
 ### Memory management on the micro-bit
 

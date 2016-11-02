@@ -31,8 +31,10 @@
         "parts/speaker.svg",
         "parts/headphone.svg",
         "_locales/ja/core-jsdoc-strings.json",
-        "_locales/ja/core-strings.json",
-        "_locales/fr/core-jsdoc-strings.json"
+        "_locales/fr/core-jsdoc-strings.json",
+        "_locales/fr/core-strings.json",
+        "_locales/de/core-jsdoc-strings.json",
+        "_locales/de/core-strings.json"
     ],
     "public": true,
     "dependencies": {},

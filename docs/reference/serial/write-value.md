@@ -30,7 +30,7 @@ basic.forever(() => {
 #### ~hint
 
 The [send value](/reference/radio/send-value) function broadcasts
-string/number pairs.  You can use a second micro:bit to receive them,
+string/number pairs.  You can use a second @boardname@ to receive them,
 and then send them directly to the serial port with ``write value``.
 
 #### ~

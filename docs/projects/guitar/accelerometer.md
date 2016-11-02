@@ -1,6 +1,6 @@
 # Accelerometer Beat control
 
-### @description micro:bit guitar: using accelerometer to control tempo
+### @description @boardname@ guitar: using accelerometer to control tempo
 
 ### ~avatar avatar
 
@@ -33,18 +33,18 @@ Math.abs(1)
 
 ## Accelerometer, gravity and tilting!
 
-The micro:bit contains an **accelerometer** sensor that is able to measure forces applied to the board.
+The @boardname@ contains an **accelerometer** sensor that is able to measure forces applied to the board.
 On earth, we are subject to the **gravity force** which pulls us to the ground!
 
 https://youtu.be/0SULoTKmkhI
 
-When the micro:bit is flat on a table, with the screen pointing up, the gravity force is aligned
-with the **Z** axis of the micro:bit. 
+When the @boardname@ is flat on a table, with the screen pointing up, the gravity force is aligned
+with the **Z** axis of the @boardname@. 
 
-![micro:bit x, y, z axis image](/static/mb/projects/guitar/accelleration_axis.png)  
+![@boardname@ x, y, z axis image](/static/mb/projects/guitar/accelleration_axis.png)  
 
 If you tilt it up and down, the force will align with the **Y** axis -- this is how we can detect tilting!!!
-If the force along **Y** grows, the micro:bit is tilting more and more vertically!
+If the force along **Y** grows, the @boardname@ is tilting more and more vertically!
 
 ## Measuring Acceleration along different coordinates (X, Y, Z axis)  
 
@@ -59,7 +59,7 @@ basic.forever(() => {
 ```
 **Create the code** that measures the change in the Y axis acceleration as a graph on the LEDs  
   
-**Dowload the code** to the micro:bit 
+**Dowload the code** to the @boardname@ 
   
 **Test the movements that move the graph from 1 to 5 bars on the LEDs** 
 
@@ -74,7 +74,7 @@ Try graphing the acceleration along the **X** and **Z** axis. Can you explain th
 ### ~
 
 ### Step 2: Mapping acceleration to Beat
-**micro:bit sensors produce signal values between 0 to 1023. The *[map block](/reference/pins/map)* converts the signal to a desired range.**    
+**@boardname@ sensors produce signal values between 0 to 1023. The *[map block](/reference/pins/map)* converts the signal to a desired range.**    
 ```blocks
 basic.forever(() => {
         music.setTempo(pins.map(Math.abs(input.acceleration(Dimension.Y)),
@@ -86,7 +86,7 @@ basic.forever(() => {
 
 **Create the code** that *Maps*  Y axis acceleration as *tempo*  
   
-**Download the code** to the micro:bit on the guitar  
+**Download the code** to the @boardname@ on the guitar  
   
 **Test the movements that speed and slow the tempo**  
 
@@ -106,7 +106,7 @@ basic.forever(() => {
 ```  
 **Combine the code above with the light sensor tone control code from the previous activity**
   
-**Download the code** to the micro:bit on the guitar    
+**Download the code** to the @boardname@ on the guitar    
 
 ###  Now play the guitar adjusting tone and tempo using the light sensor and accelerometer!
 

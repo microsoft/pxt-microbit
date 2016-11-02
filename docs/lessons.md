@@ -28,7 +28,7 @@
 
 ## Intermediate
 
-* [Magic 8](/lessons/magic-8), a fortune teller game with the BBC micro:bit
+* [Magic 8](/lessons/magic-8), a fortune teller game with the @boardname@
 * [Guess the Number](/lessons/guess-the-number),  guess a random number with pick number
 * [Counter](/lessons/counter), display a number with a variable
 * [Love Meter](/lessons/love-meter), create a love meter with on pin pressed
@@ -40,7 +40,7 @@
 * [Temperature](/lessons/temperature), get the ambient temperature (degree Celsius °C)
 * [Digi Yoyo](/lessons/digi-yoyo), create a counter with a while loop
 * [Rotation Animation](/lessons/rotation-animation), control an animation with a boolean variable
-* [Compass](/lessons/compass), displays the direction the BBC micro:bit is pointing with compass
+* [Compass](/lessons/compass), displays the direction the @boardname@ is pointing with compass
 * [Zoomer](/lessons/zoomer), measure the force with acceleration
 * [Glowing Pendulum](/lessons/glowing-pendulum), construct a pendulum that glows using acceleration
 * [Classic Beatbox](/lessons/classic-beatbox), make a beatbox music player with variables
@@ -60,7 +60,7 @@
 * [Prank WiFi](/lessons/prank-wifi), create fake WiFi to trick your friends
 * [Speed Button](/lessons/speed-button), code a speed game with running time
 * [Headbands](/lessons/headbands), create a charades game with a collection of strings that hold the words
-* [Hero](/lessons/hero), reconstruct the classic arcade game pac man with the BBC micro:bit
+* [Hero](/lessons/hero), reconstruct the classic arcade game pac man with the @boardname@
 * [Catch the Egg](/lessons/catch-the-egg-game), catch falling eggs in a basket with an acceleration controller
 ### ~
 

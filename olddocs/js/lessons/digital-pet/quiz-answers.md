@@ -1,6 +1,6 @@
 # digital pet quiz answers
 
-A display of pet images for the BBC micro:bit 
+A display of pet images for the @boardname@ 
 
 ## Name
 

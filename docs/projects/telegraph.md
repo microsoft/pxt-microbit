@@ -4,7 +4,7 @@
 
 ### ~avatar
 
-Build a telegraph between two micro:bits to communicate with your friends!
+Build a telegraph between two @boardname@s to communicate with your friends!
 
 ### ~
 
@@ -12,7 +12,7 @@ Build a telegraph between two micro:bits to communicate with your friends!
 
 ## Materials
 
-* micro:bit, battery holder and 2 AAA batteries
+* @boardname@, battery holder and 2 AAA batteries
 * Crocodile clips
 
 ## Activities

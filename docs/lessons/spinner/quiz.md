@@ -1,6 +1,6 @@
 # spinner quiz 
 
-a spin the BBC micro:bit game with the input on shake.
+a spin the @boardname@ game with the input on shake.
 
 ## Name
 

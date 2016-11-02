@@ -1,6 +1,6 @@
 # Game Tutorials
 
-Overview of Games for the BBC micro:bit.
+Overview of Games for the @boardname@.
 
 ### @short Games
 
@@ -41,8 +41,8 @@ Overview of Games for the BBC micro:bit.
 * [Looper](/lessons/looper/tutorial), display a series of numbers with a for loop index
 * [Strobe light](/lessons/strobe-light/tutorial), develop shapes with a nested for loops
 * [Digi yoyo](/lessons/digi-yoyo/tutorial), create a counter with a while loop
-* [Magic 8](/lessons/magic-8/tutorial), a fortune teller game with the BBC micro:bit
-* [Compass](/lessons/compass/tutorial), displays the direction the BBC micro:bit is pointing
+* [Magic 8](/lessons/magic-8/tutorial), a fortune teller game with the @boardname@
+* [Compass](/lessons/compass/tutorial), displays the direction the @boardname@ is pointing
 * [Speed button](/lessons/speed-button/tutorial), code a speed game with running time
 
 ### ~hide
@@ -74,15 +74,15 @@ Overview of Games for the BBC micro:bit.
 * [Bop it](/lessons/bop-it/tutorial), a game where you have to keep up with the commands
 * [Letter Up](/lessons/letter-up/tutorial), a guessing game with string operators with string at
 * [Prank WiFi](/lessons/prank-wifi/tutorial), create fake WiFi to trick your friends
-* [Runaway pac man](/lessons/runaway-pacman/tutorial), construct the game pac man with the BBC micro:bit
+* [Runaway pac man](/lessons/runaway-pacman/tutorial), construct the game pac man with the @boardname@
 * [The hat game](/lessons/the-hat-game/tutorial), make a game to test your focus on the moving ball
-* [2 player pong](/lessons/2-player-pong/tutorial), collaborate with a classmate to develop Pong on multiple BBC micro:bits
+* [2 player pong](/lessons/2-player-pong/tutorial), collaborate with a classmate to develop Pong on multiple @boardname@s
 
 ### ~hide
 
 * [Glowing pendulum](/lessons/glowing-pendulum/tutorial), construct a pendulum that glows using acceleration
 * [Line of Fire](/lessons/line-of-fire/tutorial), make a game to test hand-eye coordination
-* [Number psych](/lessons/number-psych/tutorial), collaborate with multiple classmates to develop a game on multiple BBC micro:bits and a breadboard
+* [Number psych](/lessons/number-psych/tutorial), collaborate with multiple classmates to develop a game on multiple @boardname@s and a breadboard
 
 ### ~
 

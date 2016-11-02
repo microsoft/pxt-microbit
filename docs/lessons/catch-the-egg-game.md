@@ -47,5 +47,5 @@ game.removeLife(1);
 * learn how to return the larger of two numbers
 * learn how to return a random number
 * learn how to return the modulus
-* learn how to show a number of the BBC micro:bit screen
+* learn how to show a number of the @boardname@ screen
 * learn how to pause your code for the specified number of milliseconds

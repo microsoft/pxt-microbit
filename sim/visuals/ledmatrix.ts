@@ -3,9 +3,9 @@
 
 namespace pxsim.visuals {
     export function mkLedMatrixSvg(xy: Coord, rows: number, cols: number):
-            {el: SVGGElement, y: number, x: number, w: number, h: number, leds: SVGElement[], ledsOuter: SVGElement[], background: SVGElement} {
-        let result: {el: SVGGElement, y: number, x: number, w: number, h: number, leds: SVGElement[], ledsOuter: SVGElement[], background: SVGElement}
-             = {el: null, y: 0, x: 0, w: 0, h: 0, leds: [], ledsOuter: [], background: null};
+        { el: SVGGElement, y: number, x: number, w: number, h: number, leds: SVGElement[], ledsOuter: SVGElement[], background: SVGElement } {
+        let result: { el: SVGGElement, y: number, x: number, w: number, h: number, leds: SVGElement[], ledsOuter: SVGElement[], background: SVGElement }
+            = { el: null, y: 0, x: 0, w: 0, h: 0, leds: [], ledsOuter: [], background: null };
         result.el = <SVGGElement>svg.elt("g");
         let width = cols * PIN_DIST;
         let height = rows * PIN_DIST;
@@ -19,7 +19,7 @@ namespace pxsim.visuals {
         result.y = top;
         result.w = width;
         result.h = height;
-        result.background = svg.child(result.el, "rect", {class: "sim-display", x: left, y: top, width: width, height: height})
+        result.background = svg.child(result.el, "rect", { class: "sim-display", x: left, y: top, width: width, height: height })
 
         // ledsOuter
         result.leds = [];
@@ -101,8 +101,16 @@ namespace pxsim.visuals {
         }
 
         public updateState() {
-            let bw = this.state.displayMode == pxsim.DisplayMode.bw
-            let img = this.state.image;
+            if (this.state.disabled) {
+                this.leds.forEach((led, i) => {
+                    let sel = (<SVGStylable><any>led)
+                    sel.style.opacity = 0 + "";
+                });
+                return;
+            }
+
+            const bw = this.state.displayMode == pxsim.DisplayMode.bw
+            const img = this.state.image;
             this.leds.forEach((led, i) => {
                 let sel = (<SVGStylable><any>led)
                 let dx = i % this.DRAW_SIZE;

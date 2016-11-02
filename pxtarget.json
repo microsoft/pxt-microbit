@@ -22,46 +22,6 @@
         ],
         "githubPackages": false
     },
-    "blocksprj": {
-        "id": "blocksprj",
-        "config": {
-            "name": "{0} block",
-            "dependencies": {
-                "core": "*",
-                "radio": "*"
-            },
-            "description": "",
-            "files": [
-                "main.blocks",
-                "main.ts",
-                "README.md"
-            ]
-        },
-        "files": {
-            "main.blocks": "<xml xmlns=\"http://www.w3.org/1999/xhtml\">\n<block type=\"device_forever\">\n<statement name=\"HANDLER\">\n<block type=\"device_show_leds\">\n<field name=\"LED00\">FALSE</field>\n<field name=\"LED10\">FALSE</field>\n<field name=\"LED20\">FALSE</field>\n<field name=\"LED30\">FALSE</field>\n<field name=\"LED40\">FALSE</field>\n<field name=\"LED01\">FALSE</field>\n<field name=\"LED11\">TRUE</field>\n<field name=\"LED21\">FALSE</field>\n<field name=\"LED31\">TRUE</field>\n<field name=\"LED41\">FALSE</field>\n<field name=\"LED02\">FALSE</field>\n<field name=\"LED12\">FALSE</field>\n<field name=\"LED22\">FALSE</field>\n<field name=\"LED32\">FALSE</field>\n<field name=\"LED42\">FALSE</field>\n<field name=\"LED03\">TRUE</field>\n<field name=\"LED13\">FALSE</field>\n<field name=\"LED23\">FALSE</field>\n<field name=\"LED33\">FALSE</field>\n<field name=\"LED43\">TRUE</field>\n<field name=\"LED04\">FALSE</field>\n<field name=\"LED14\">TRUE</field>\n<field name=\"LED24\">TRUE</field>\n<field name=\"LED34\">TRUE</field>\n<field name=\"LED44\">FALSE</field>\n<next>\n<block type=\"device_show_leds\">\n<field name=\"LED00\">FALSE</field>\n<field name=\"LED10\">FALSE</field>\n<field name=\"LED20\">FALSE</field>\n<field name=\"LED30\">FALSE</field>\n<field name=\"LED40\">FALSE</field>\n<field name=\"LED01\">FALSE</field>\n<field name=\"LED11\">FALSE</field>\n<field name=\"LED21\">FALSE</field>\n<field name=\"LED31\">FALSE</field>\n<field name=\"LED41\">FALSE</field>\n<field name=\"LED02\">FALSE</field>\n<field name=\"LED12\">FALSE</field>\n<field name=\"LED22\">FALSE</field>\n<field name=\"LED32\">FALSE</field>\n<field name=\"LED42\">FALSE</field>\n<field name=\"LED03\">FALSE</field>\n<field name=\"LED13\">FALSE</field>\n<field name=\"LED23\">FALSE</field>\n<field name=\"LED33\">FALSE</field>\n<field name=\"LED43\">FALSE</field>\n<field name=\"LED04\">FALSE</field>\n<field name=\"LED14\">FALSE</field>\n<field name=\"LED24\">FALSE</field>\n<field name=\"LED34\">FALSE</field>\n<field name=\"LED44\">FALSE</field>\n</block>\n</next>\n</block>\n</statement>\n</block>\n</xml>",
-            "main.ts": "basic.forever(() => {\r\n    basic.showLeds(`\r\n        . # . # .\r\n        # . # . #\r\n        # . . . #\r\n        . # . # .\r\n        . . # . .\r\n        `)\r\n    basic.showLeds(`\r\n        . . . . .\r\n        . . . . .\r\n        . . . . .\r\n        . . . . .\r\n        . . . . .\r\n        `)\r\n})\r\n",
-            "README.md": ""
-        }
-    },
-    "tsprj": {
-        "id": "tsprj",
-        "config": {
-            "name": "{0} bit",
-            "dependencies": {
-                "core": "*",
-                "radio": "*"
-            },
-            "description": "",
-            "files": [
-                "main.ts",
-                "README.md"
-            ]
-        },
-        "files": {
-            "main.ts": "basic.showLeds(`\r\n    . . . . .\r\n    . # . # .\r\n    . . . . .\r\n    # . . . #\r\n    . # # # .\r\n    `);",
-            "README.md": ""
-        }
-    },
     "compile": {
         "isNative": false,
         "hasHex": true,
@@ -100,7 +60,7 @@
     },
     "simulator": {
         "autoRun": true,
-        "streams": true,
+        "streams": false,
         "aspectRatio": 1.22,
         "parts": true,
         "partsAspectRatio": 0.69,

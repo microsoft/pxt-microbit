@@ -12,7 +12,7 @@ Modulo (or Mod) is the remainder of a division problem.
 
 ## 2. Consider the following code
 
-If the rectangle below represents the BBC micro:bit, shade in the LEDs that show the value being stored into  the **global variable**, `count`. Explain why that particular area is shaded.
+If the rectangle below represents the @boardname@, shade in the LEDs that show the value being stored into  the **global variable**, `count`. Explain why that particular area is shaded.
 
 ```
 count = 1
@@ -38,7 +38,7 @@ count = 12
 count = math.mod(count, 5)
 ```
 
-If the rectangle below represents the BBC micro:bit, shade in the LEDs that show the value being stored into  the **global variable**, `count`. Explain why that particular area is shaded.
+If the rectangle below represents the @boardname@, shade in the LEDs that show the value being stored into  the **global variable**, `count`. Explain why that particular area is shaded.
 
 <br/>
 

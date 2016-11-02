@@ -1,6 +1,6 @@
 # Rotation
 
-Find how much the micro:bit is tilted in different directions.
+Find how much the @boardname@ is tilted in different directions.
 
 ```sig
 input.rotation(Rotation.Roll);
@@ -8,8 +8,8 @@ input.rotation(Rotation.Roll);
 
 ## ~hint
 
-The BBC micro:bit has a part called the **accelerometer** that can
-check how the micro:bit is moving.
+The @boardname@ has a part called the **accelerometer** that can
+check how the @boardname@ is moving.
 
 ## ~
 
@@ -21,13 +21,13 @@ check how the micro:bit is moving.
 
 * a [number](/reference/types/number) that means how much the microbit is tilted in the direction you say, from `0` to `360` degrees
 
-### Example: micro:bit leveler
+### Example: @boardname@ leveler
 
-This program helps you move the BBC micro:bit until it is level.  When
-it is level, the micro:bit shows a smiley.
+This program helps you move the @boardname@ until it is level.  When
+it is level, the @boardname@ shows a smiley.
 
 If you are running this program in a browser, you can tilt the
-micro:bit with your mouse.
+@boardname@ with your mouse.
 
 
 ```blocks

@@ -9,6 +9,7 @@ namespace pxsim {
         brigthness = 255;
         displayMode = DisplayMode.bw;
         font: Image = createFont();
+        disabled: boolean;
 
         animationQ: AnimationQueue;
 
@@ -283,5 +284,9 @@ namespace pxsim.led {
         let img = createImage(5)
         board().ledMatrixState.image.copyTo(0, 5, img, 0);
         return img;
+    }
+    export function enable(on: boolean) {
+        board().ledMatrixState.disabled = !on;
+        runtime.queueDisplayUpdate();
     }
 }

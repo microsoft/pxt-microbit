@@ -1,10 +1,10 @@
 # night light activity
 
-Change the brightness of the micro:bit.
+Change the brightness of the @boardname@.
 
 ### ~avatar avatar
 
-Welcome! This tutorial will teach you how to change the brightness of the micro:bit. Let's get started!
+Welcome! This tutorial will teach you how to change the brightness of the @boardname@. Let's get started!
 
 ### ~
 

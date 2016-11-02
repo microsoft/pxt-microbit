@@ -1,5 +1,5 @@
 # Buttons, Display & Sound
-### @description micro:bit guitar: using buttons with display and sound
+### @description @boardname@ guitar: using buttons with display and sound
 
 ### ~avatar avatar
 Use Button Events to control LED Display and play Sound
@@ -14,9 +14,9 @@ Use Button Events to control LED Display and play Sound
 
 ## Materials
 
-A micro:bit, battery pack and 2 x AAA batteries
+A @boardname@, battery pack and 2 x AAA batteries
 
-![battery pack and micro:bit](/static/mb/projects/guitar/microbit.jpg)
+![battery pack and @boardname@](/static/mb/projects/guitar/microbit.jpg)
 
 2 to 4 crocodile clips
 
@@ -43,7 +43,7 @@ music.beat(BeatFraction.Quarter)
 ```
 
 ## Step 1: Make a Smiley
-Open [pxt.microbit.org](https://pxt.microbit.org) in your web browser
+Open @homeurl@ in your web browser
 ```blocks
     basic.showLeds(`
         . # . # .
@@ -56,9 +56,9 @@ Open [pxt.microbit.org](https://pxt.microbit.org) in your web browser
 From **Basics**, drag a **show LEDs** block into the coding area
   * Create a face with LEDs
 
-![micro:bit USB connection](/static/mb/projects/guitar/connectmicrobit.jpg)
-Connect your micro:bit to your computer via USB and click **`Download`**.
-Follow the instructions to move the code to your micro:bit.
+![@boardname@ USB connection](/static/mb/projects/guitar/connectmicrobit.jpg)
+Connect your @boardname@ to your computer via USB and click **`Download`**.
+Follow the instructions to move the code to your @boardname@.
 
 ## Step 2: Add Smiley LED Button Events
 ```blocks
@@ -88,7 +88,7 @@ From **Input**, drag an **on button 'A' pressed** block into the coding area
 
 * Create a 'B' button block with a different LED face
 
-* Download the code to your micro:bit and try the A & B buttons
+* Download the code to your @boardname@ and try the A & B buttons
 
 
 ## Step 3: Add Headphone Speakers using Crocodile clips
@@ -100,16 +100,16 @@ Connect **GND** to the **base of the headphone jack** using a second crocodile c
 
 Connect **pin 0** to the **tip of the headphone jack** with a crocodile clip
 
-*attaching batteries and micro:bit*
+*attaching batteries and @boardname@*
 https://youtu.be/zwRTmpKIaVU
-Attach the micro:bit & battery-pack to the guitar body
+Attach the @boardname@ & battery-pack to the guitar body
 
 *connecting headphone speaker*
 https://youtu.be/ewyEW_U5G9M
 Connect the headphones with crocodile clips
 
 ### ~hint
-## The micro:bit can play music
+## The @boardname@ can play music
 
 The **play tone** block allows a range letter note tones from **C** to **B5**.
 Songs are played using sequences notes.   Like the beginning of a birthday song (C, C, D, C, F, E).
@@ -160,7 +160,7 @@ From **Music**, drag **play tone *C* for *1* beat** block under the **show leds*
 
 **Repeat** for **Button B** event
 
-**Download the code** to the micro:bit
+**Download the code** to the @boardname@
 
 **Try the A & B buttons** with headphones and power connected
 

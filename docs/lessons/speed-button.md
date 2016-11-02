@@ -1,6 +1,6 @@
 # speed button lesson
 
-code a speed game by declaring Booleans on the BBC micro:bit.
+code a speed game by declaring Booleans on the @boardname@.
 
 
 

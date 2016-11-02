@@ -8,7 +8,7 @@ This tutorial will teach you how to create a hero game to capture food while dod
 
 ### ~
 
-First we need to create a function create sprite at the x, y coordinates and that set the variable called hero on the micro:bit the first time we play.
+First we need to create a function create sprite at the x, y coordinates and that set the variable called hero on the @boardname@ the first time we play.
 
 
 ```blocks
@@ -17,7 +17,7 @@ let hero = game.createSprite(2, 2)
 
 ```
 
-Let's set up where we want our ghost will be. Create starting positions of the hero, ghost, and food in each individual quadrant. We will ensure that the ghost, food, and hero is set apart. Divide the micro:bit into 4 quadrants. We don't want hero to be too close to the ghost so let's make the ghost starting positions in the 3 other quadrants. Hero is in the one quadrant. To do this, we need to keep track of the middle point in each quadrant. Create sprite at the x, y coordinates for the hero, food, and ghost.
+Let's set up where we want our ghost will be. Create starting positions of the hero, ghost, and food in each individual quadrant. We will ensure that the ghost, food, and hero is set apart. Divide the @boardname@ into 4 quadrants. We don't want hero to be too close to the ghost so let's make the ghost starting positions in the 3 other quadrants. Hero is in the one quadrant. To do this, we need to keep track of the middle point in each quadrant. Create sprite at the x, y coordinates for the hero, food, and ghost.
 
 ```blocks
 let hero = game.createSprite(2, 2)
