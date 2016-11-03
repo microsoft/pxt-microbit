@@ -163,3 +163,13 @@ Apply the tape on the side using the same procedure.
 That's it! You have an @boardname@ wallet!
 
 ![](/static/mb/projects/wallet/wallet.jpg)
+
+## Protecting those buttons!
+
+The buttons of the @boarname@ are left vulnerable to being ripped out.
+
+![](/static/mb/projects/wallet/rug1.jpg)
+
+If you plan to make an extensive use of your wallet without using the buttons, you might want to consider to protect the buttons with additional tape.
+
+![](/static/mb/projects/wallet/rug2.jpg)
