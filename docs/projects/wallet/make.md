@@ -173,3 +173,11 @@ The buttons of the @boarname@ are left vulnerable to being ripped out.
 If you plan to make an extensive use of your wallet without using the buttons, you might want to consider to protect the buttons with additional tape.
 
 ![](/static/mb/projects/wallet/rug2.jpg)
+
+The wallet is ready, we just have to add some code into the @boardname@ to make it alive.
+
+### ~button /projects/wallet/animations
+
+Let's add some animations!
+
+### ~

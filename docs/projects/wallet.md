@@ -26,11 +26,10 @@ Make a @boardname@ wallet with this guided tutorial!
 
 ## Activities
 
-* [Making the wallet](/projects/wallet/making)  
-* [Animations](/projects/wallet/animations)  
-* [Pocket detection](/projects/wallet/pocket-detection)  
+* [Make](/projects/wallet/make)  
+* [Code](/projects/wallet/code)  
 
-### ~button /projects/wallet/making
+### ~button /projects/wallet/make
 
 Let's get started!
 

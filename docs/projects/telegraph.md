@@ -17,9 +17,9 @@ Build a telegraph between two @boardname@s to communicate with your friends!
 
 ## Activities
 
-* [Making the circuit](/projects/telegraph/making)  
+* [Making the circuit](/projects/telegraph/make)  
 * [Manual telegraph](/projects/telegraph/manual-telegraph)
 
-### ~button /projects/telegraph/making
+### ~button /projects/telegraph/make
 Let's get started!
 ### ~

@@ -21,7 +21,7 @@ Build your own music player @boardname@ from headphones.
 
 ## Activities
 
-* [Connect your headphone](/projects/hack-your-headphones/making)
+* [Connect your headphone](/projects/hack-your-headphones/make)
 * [Play sounds!]()
 
 # ~hint
@@ -30,7 +30,7 @@ Build your own music player @boardname@ from headphones.
 
 # ~
 
-### ~button /projects/hack-your-headphones/making
+### ~button /projects/hack-your-headphones/make
 
 Let's get started!
 
