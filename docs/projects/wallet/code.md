@@ -31,7 +31,7 @@ If the wallet is in your pocket, you should turn off the LEDs to save energy.
 
 How do we know that the wallet is in the pocket? It is really dark in there... We can use the [light level](/reference/input/light-level) to detect this!
 
-Using an [if statement](/blocks/if), we can test if the level of light is sufficient to turn on the screen. Otherwise, we turn off the screen for a few second to save energy.
+Using an [if statement](/blocks/logic/if), we can test if the level of light is sufficient to turn on the screen. Otherwise, we turn off the screen for a few second to save energy.
 
 ```blocks
 basic.forever(() => {
