@@ -22,6 +22,7 @@ Make a @boardname@ wallet with this guided tutorial!
 * Tape (masking, duct tape, and/or packing tape)
 * Scissors
 * 1 @boardname@, battery holder and 2 AAA batteries
+* Marker or pen
 
 ## Activities
 
