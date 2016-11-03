@@ -23,10 +23,14 @@ Fun games to build with your @boardname@.
   "name": "Rock Paper Scissors",
   "url":"/projects/rock-paper-scissors",
   "imageUrl":"/static/mb/projects/a4-motion.png"
+},{
+  "name": "Magic Button Trick",
+  "url":"/projects/magic-button-trick",
+  "imageUrl":"/static/mb/projects/magic-button-trick.png"
 }]
 ```
 
-## Maker, Arts, Fashion
+## Music
 
 ```codecard
 [{
@@ -41,11 +45,27 @@ Fun games to build with your @boardname@.
   "name": "Guitar",
   "url":"/projects/guitar",
   "imageUrl":"/static/mb/projects/guitar.png"
+}]
+```
+
+## Fashion
+
+```codecard
+[{
+  "name": "Duct Tape Wallet",
+  "url":"/projects/wallet",
+  "imageUrl":"/static/mb/projects/wallet.png"
 }, {
   "name": "Watch",
   "url":"/projects/the-watch",
   "imageUrl":"/static/mb/projects/a10-watch.png"
-}, {
+}]
+```
+
+## Science and Engineering
+
+```codecard
+[{
   "name": "Timing gates",
   "url":"/projects/timing-gates",
   "imageUrl":"/static/mb/projects/timing-gates.jpg"
@@ -69,19 +89,6 @@ Fun games to build with your @boardname@.
   "imageUrl":"/static/mb/projects/a9-radio.png"
 }]
 ```
-
-## From the community
-
-Projects contributed by the @boardname@ community
-
-```codecard
-[{
-  "name": "Magic Button Trick",
-  "url":"/projects/magic-button-trick",
-  "imageUrl":"/static/mb/projects/magic-button-trick.png"
-}]
-```
-
 
 ### See Also
 

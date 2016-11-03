@@ -1,6 +1,6 @@
 # Wallet
 
-![watch icon](/static/mb/projects/wallet.png)
+![wallet icon](/static/mb/projects/wallet.png)
 
 ### @description A beginner maker activity, building a duct tape wallet with the @boardname@  
 
