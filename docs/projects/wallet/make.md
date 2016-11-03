@@ -1,4 +1,5 @@
-# Making the Wallet
+# Wallet - Make
+
 ### @description Maker Project for Wallet
 
 ### ~avatar avatar
@@ -176,8 +177,8 @@ If you plan to make an extensive use of your wallet without using the buttons, y
 
 The wallet is ready, we just have to add some code into the @boardname@ to make it alive.
 
-### ~button /projects/wallet/animations
+### ~button /projects/wallet/code
 
-Let's add some animations!
+Let's add some code!
 
 ### ~
