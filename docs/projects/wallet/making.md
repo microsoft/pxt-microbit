@@ -71,3 +71,95 @@ Use your scissors and cut along the line you've just traced while keeping the sh
 Well done! The hole is done and perfectly centered!
 
 ![](/static/mb/projects/wallet/hole6.jpg)
+
+## Mounting the @boardname@
+
+We are going to cut a hole for the @boardname@ screen and buttons on the front of the wallet.
+
+Place the @boardname@ on the back of the sheet.
+
+![](/static/mb/projects/wallet/mbhole1.jpg)
+
+Mark the contour of the @boardname@ on the sheet with your marker. Don't worry about little mistakes.
+
+![](/static/mb/projects/wallet/mbhole2.jpg)
+
+Mark ticks at the location of each corners of the screen as shown on the picture.
+
+![](/static/mb/projects/wallet/mbhole3.jpg)
+
+Use the @boardname@ as a ruler to trace a line between the ticks.
+
+![](/static/mb/projects/wallet/mbhole5.jpg)
+
+Fill the inside square with your marker, you will need to cut it out later.
+
+![](/static/mb/projects/wallet/mbhole6.jpg)
+
+Mark the ticks along the button using the same procedure.
+
+![](/static/mb/projects/wallet/mbhole7.jpg)
+
+Fill the button square as well so that you clearly know what to cut or not.
+
+![](/static/mb/projects/wallet/mbhole8.jpg)
+
+Fold the sheet over the center of the darken area and cut out a triangle large enough to squeeze a blade of the scissors.
+
+![](/static/mb/projects/wallet/mbhole9.jpg)
+
+Starting from the small hole, work your way through cutting out the darkened area.
+
+![](/static/mb/projects/wallet/mbhole10.jpg)
+
+Eventually, the opening should look like a rectangle with a square in the middle.
+
+![](/static/mb/projects/wallet/mbhole11.jpg)
+
+Try mounting the @boardname@ and cutting more material as needed.
+
+![](/static/mb/projects/wallet/mbhole12.jpg)
+
+Put a generous layer of tape on the back of the @boardname@ to stick it on the wallet.
+
+![](/static/mb/projects/wallet/mbhole13.jpg)
+
+Attach the battery to the @boardname@. You are done for this step!
+
+![](/static/mb/projects/wallet/mbhole14.jpg)
+
+## Folding
+
+The last step is to fold the sheet and tape the sides to get a wallet.
+
+Start form the sheet facing paper up and fold the sheet over the large hole in the center.
+
+![](/static/mb/projects/wallet/fold1.jpg)
+
+Fold another time until the large hole is visible.
+
+![](/static/mb/projects/wallet/fold2.jpg)
+
+Apply a layer of tape on the side with the tape overlapping half over the wallet.
+
+![](/static/mb/projects/wallet/fold3.jpg)
+
+Flip over the wallet carefully.
+
+![](/static/mb/projects/wallet/fold4.jpg)
+
+Fold the remaining tape over the wallet and cut the sides with the scissors.
+
+![](/static/mb/projects/wallet/fold5.jpg)
+
+Tuck in the battery in the pocket inside the wallet and make sure the cables are out of the way.
+
+![](/static/mb/projects/wallet/fold6.jpg)
+
+Apply the tape on the side using the same procedure.
+
+![](/static/mb/projects/wallet/fold7.jpg)
+
+That's it! You have an @boardname@ wallet!
+
+![](/static/mb/projects/wallet/wallet.jpg)
