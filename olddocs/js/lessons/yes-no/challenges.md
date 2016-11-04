@@ -4,7 +4,7 @@ My script. #docs
 
 **Challenge 0**
 
-This [guided tutorial](/lessons/yes-no/challenges) will show you how to display text on the micro:bit!
+This [guided tutorial](/lessons/yes-no/challenges) will show you how to display text on the @boardname@!
 
 ```
 basic.showString("ASK ME A QUESTION", 150)

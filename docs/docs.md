@@ -8,10 +8,10 @@
 * [Projects](/projects)
 * [Lessons](/lessons)
 
-### Micro:bit reference
+### @boardname@ reference
 
-* [The micro:bit APIs](/reference)
-* [The micro:bit device](/device)
+* [The @boardname@ APIs](/reference)
+* [The @boardname@ device](/device)
 
 ### Language and data reference
 
@@ -28,4 +28,4 @@
 
 * [Command Line Interface](/cli)
 * Learn about [packages](/packages)
-* [Release notes](/release-notes)
+

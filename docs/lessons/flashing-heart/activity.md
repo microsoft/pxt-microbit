@@ -8,7 +8,7 @@ In this activity, you will learn how to blink an image on the LED screen.
 
 ### ~
 
-Let's start by adding code that plots a heart image on the screen using `show LEDs`. Once you are done coding, don't forget to run your code in the simulator or the micro:bit.
+Let's start by adding code that plots a heart image on the screen using `show LEDs`. Once you are done coding, don't forget to run your code in the simulator or the @boardname@.
 
 
 ```blocks

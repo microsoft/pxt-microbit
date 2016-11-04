@@ -1,6 +1,6 @@
 # Basic
 
-Provides access to basic micro:bit functionality.
+Provides access to basic @boardname@ functionality.
 
 ```cards
 basic.showNumber(0);

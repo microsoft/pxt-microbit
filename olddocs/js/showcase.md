@@ -4,7 +4,7 @@
 
 ## Get Started with These Hex Files!
 
-If you have a BBC micro:bit and would like to explore a few scripts, we've created the following hex files for you to copy to your BBC micro:bit
+If you have a @boardname@ and would like to explore a few scripts, we've created the following hex files for you to copy to your @boardname@
 
 ### Flashing Heart
 

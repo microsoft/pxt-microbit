@@ -16,7 +16,7 @@ Math - Pick Random
 
 ## Prior learning/place of lesson in scheme of work
 
-Learn how to create numbers randomly by using the input of the BBC micro:bit. We will be learning how to create random numbers with input using a local variable as well as simple commands, such as pick number and show number.
+Learn how to create numbers randomly by using the input of the @boardname@. We will be learning how to create random numbers with input using a local variable as well as simple commands, such as pick number and show number.
 
 ## Documentation
 

@@ -51,7 +51,7 @@ input.onButtonPressed(Button.A, () => {
 
 ### To learn more
 
-To learn more about how the BBC micro:bit queues up and schedules event handlers, see [the BBC micro:bit - a reactive system](/device/reactive)
+To learn more about how the @boardname@ queues up and schedules event handlers, see [the @boardname@ - a reactive system](/device/reactive)
 
 ### see also
 

@@ -1,6 +1,6 @@
 # compass lesson
 
-create a die on the BBC micro:bit.
+create a die on the @boardname@.
 
 ## Topic
 
@@ -36,7 +36,7 @@ basic.showLeds(`
 
 ## Objectives
 
-* learn how to run code when the BBC micro:bit is shaken, when running code in the web browser, moving the mouse quickly simulates shaking
+* learn how to run code when the @boardname@ is shaken, when running code in the web browser, moving the mouse quickly simulates shaking
 * learn how to create a local variable as a place where you can store and retrieve data
 * learn how the assignment operator is used to declare a new local variable
 * learn how to declare a new local variable or update the value of a variable

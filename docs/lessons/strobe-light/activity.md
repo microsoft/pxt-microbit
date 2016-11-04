@@ -10,7 +10,7 @@ Welcome! This guided tutorial will teach how to develop shapes with a for loop. 
 
 ### ~
 
-Create a `for loop` that will loop from 0 to 4 to indicate the x-coordinates of the micro:bit display.
+Create a `for loop` that will loop from 0 to 4 to indicate the x-coordinates of the @boardname@ display.
 
 ```blocks
 for (let i = 0; i < 5; i++) {
@@ -19,7 +19,7 @@ for (let i = 0; i < 5; i++) {
 
 ```
 
-Create another for loop that will loop from 0 to 4, indicating the y-coordinates of the micro:bit instead. This for loop will light each LED by column.
+Create another for loop that will loop from 0 to 4, indicating the y-coordinates of the @boardname@ instead. This for loop will light each LED by column.
 
 
 ```blocks

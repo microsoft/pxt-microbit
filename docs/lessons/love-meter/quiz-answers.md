@@ -39,7 +39,7 @@ basic.showNumber(item + 1);
 
 You have to add 1 if you want to generate a random number between 1 and 10 .
 
-## 5. Why do you have to hold ground (GND) to make this work on the micro:bit?
+## 5. Why do you have to hold ground (GND) to make this work on the @boardname@?
 
 
 You have told GND to complete the circuit.

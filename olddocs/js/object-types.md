@@ -1,6 +1,6 @@
 # Custom object types
 
-Touch Develop docs for the micro:bit.
+Touch Develop docs for the @boardname@.
 
 ### What is an object?
 

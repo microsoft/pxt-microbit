@@ -1,12 +1,12 @@
 # glowing pendulum block tutorial
 
-The glowing pendulum changes the screen brightness based on the acceleration measured on the BBC micro:bit.
+The glowing pendulum changes the screen brightness based on the acceleration measured on the @boardname@.
 
 ### Rebuild the game!
 
 The blocks have been shuffled! Put them back together so that...
 * all LEDs are turned on
-* the BBC micro:bit repeats code **forever** that
+* the @boardname@ repeats code **forever** that
   * reads the acceleration along the ``y`` axis,
   * calculate the absolute value of the acceleration
   * scales down the acceleration value by a factor of `4`

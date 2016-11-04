@@ -1,7 +1,7 @@
 # Temperature
 
 Find the temperature where you are. The temperature is measured in Celsius (metric).
-The micro:bit can find the temperature nearby by checking how hot its computer chips are.
+The @boardname@ can find the temperature nearby by checking how hot its computer chips are.
 
 ```sig
 input.temperature();
@@ -13,12 +13,12 @@ input.temperature();
 
 ### How does it work?
 
-The BBC micro:bit checks how hot its CPU (main computer chip) is.
-Because the micro:bit does not usually get very hot, the temperature of the CPU
+The @boardname@ checks how hot its CPU (main computer chip) is.
+Because the @boardname@ does not usually get very hot, the temperature of the CPU
 is usually close to the temperature of wherever you are.
-The micro:bit might warm up a little if you make it work hard, though!
+The @boardname@ might warm up a little if you make it work hard, though!
 
-### Example: micro:bit thermometer
+### Example: @boardname@ thermometer
 
 The following example uses `temperature` and `show number` to show the temperature of the room.
 
@@ -45,9 +45,9 @@ basic.forever(() => {
 
 ### ~hint
 
-Try comparing the temperature your micro:bit shows to a real thermometer in the same place.
-You might be able to figure out how much to subtract from the number the micro:bit
-shows to get the real temperature. Then you can change your program so the micro:bit is a 
+Try comparing the temperature your @boardname@ shows to a real thermometer in the same place.
+You might be able to figure out how much to subtract from the number the @boardname@
+shows to get the real temperature. Then you can change your program so the @boardname@ is a 
 better thermometer.
 
 ### ~

@@ -14,7 +14,7 @@ Answer the questions while completing the tutorial. Pay attention to the dialogu
 
 ## 2. Consider the following directions
 
-If the rectangle below represents the BBC micro:bit, shade in the LEDs that show the value being stored into  the **global variable**, `count`.
+If the rectangle below represents the @boardname@, shade in the LEDs that show the value being stored into  the **global variable**, `count`.
 
 ```
 count = 1
@@ -28,7 +28,7 @@ count = 1
 
 ## 3. Consider the following code
 
-If the rectangle below represents the BBC micro:bit, shade in the LEDs that show the value being stored into  the **global variable**, `count`. Explain why that particular area is shaded.
+If the rectangle below represents the @boardname@, shade in the LEDs that show the value being stored into  the **global variable**, `count`. Explain why that particular area is shaded.
 
 ```
 count = 1
@@ -50,7 +50,7 @@ count = 12
 count = math.mod(count, 5)
 ```
 
-If the rectangle below represents the BBC micro:bit, shade in the LEDs that show the value being stored into  the **global variable**, `count`. Explain why that particular area is shaded.
+If the rectangle below represents the @boardname@, shade in the LEDs that show the value being stored into  the **global variable**, `count`. Explain why that particular area is shaded.
 
 ![](/static/mb/empty-microbit.png)
 

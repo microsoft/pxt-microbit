@@ -35,7 +35,7 @@ basic.forever(() => {
 
 The following example keeps showing the [number](/reference/types/number) stored in a global variable.
 When you press button `A`, the number gets bigger.
-You can use a program like this to count things with your BBC micro:bit.
+You can use a program like this to count things with your @boardname@.
 
 ```blocks
 let num = 0
@@ -52,7 +52,7 @@ input.onButtonPressed(Button.A, () => {
 If different parts of a program are each trying 
 to show something on the LED screen at the same time, 
 you may get unexpected results.
-Try this on your micro:bit:
+Try this on your @boardname@:
 
 ```blocks
 basic.forever(() => {

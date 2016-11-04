@@ -25,7 +25,7 @@ To add a library to a script:
 
 Once you've added a library to your script, you can use any of the library's non-private [functions](/js/function). Here's how:
 
-* on the [Code Keyboard](/js/editor) click the button with the library's name (for example, `micro:bit` and `micro:bit game` are library buttons). The functions in the library have a button on the Code Keyboard.
+* on the [Code Keyboard](/js/editor) click the button with the library's name (for example, `@boardname@` and `@boardname@ game` are library buttons). The functions in the library have a button on the Code Keyboard.
 
 ### Create a library
 

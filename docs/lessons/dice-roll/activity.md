@@ -1,6 +1,6 @@
 # dice roll activity
 
-Create a dice on the micro:bit
+Create a dice on the @boardname@
 
 ### ~avatar avatar
 
@@ -8,7 +8,7 @@ Welcome! This tutorial will help you create a dice. Let's get started!
 
 ### ~
 
-Let's create a condition for when the micro:bit is shaken.
+Let's create a condition for when the @boardname@ is shaken.
 
 
 ```blocks

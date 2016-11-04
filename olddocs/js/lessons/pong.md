@@ -1,6 +1,6 @@
 # pong lesson
 
-code your own game of Pong on the micro:bit. #.
+code your own game of Pong on the @boardname@. #.
 
 ## Topic
 
@@ -71,7 +71,7 @@ Learn how to create **functions**, `function()` that perform a specific task and
 * learn how to repeat code in the background forever
 * learn how to conditionally run code depending on whether a condition is true or not
 * learn how to run code when an input button is pressed
-* learn how to show a string on the micro:bit's LED screen
+* learn how to show a string on the @boardname@'s LED screen
 * learn how to turn on a LED light on the LED screen. Learn how to specify which LED using x, y coordinates
 * learn how to turn off a LED light on the LED screen. Learn how to specify which LED using x, y coordinates
 * learn how to pause your code for the specified number of milliseconds

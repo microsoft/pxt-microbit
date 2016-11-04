@@ -4,7 +4,7 @@ My script. #docs
 
 **Challenge 0**
 
-This [guided tutorial](/xuhkviyyxa) introduces how to make an image look like it's scrolling across the micro:bit!
+This [guided tutorial](/xuhkviyyxa) introduces how to make an image look like it's scrolling across the @boardname@!
 
 We can use an animation to make an image look like its moving!
 

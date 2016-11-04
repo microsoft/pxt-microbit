@@ -1,6 +1,6 @@
 # night light lesson
 
-change the brightness of the BBC micro:bit.
+change the brightness of the @boardname@.
 
 ## Topic
 

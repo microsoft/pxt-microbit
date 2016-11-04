@@ -1,6 +1,6 @@
 # magic 8 lesson
 
-a fortune teller game with the BBC micro:bit.
+a fortune teller game with the @boardname@.
 
 ## Topic
 

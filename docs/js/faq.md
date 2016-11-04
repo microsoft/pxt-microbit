@@ -1,8 +1,8 @@
 # Frequently asked questions
 
-# What is the language supported for the micro:bit?
+# What is the language supported for the @boardname@?
 
-For the micro:bit, we support a "static" subset of TypeScript (itself a superset of JavaScript):
+For the @boardname@, we support a "static" subset of TypeScript (itself a superset of JavaScript):
 
 ## Supported language features
 

@@ -1,6 +1,6 @@
 # love meter blocks lesson
 
-Create a love meter with the BBC micro:bit.
+Create a love meter with the @boardname@.
 
 ## Topic
 

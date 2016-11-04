@@ -1,4 +1,4 @@
-# micro:bit senses
+# @boardname@ senses
 
 A #microbit library that exposes orientation and movement events.
 

@@ -12,7 +12,7 @@ A function that will display an image on the LED screen
 
 <br/>
 
-The extra empty image with show LED creates a blinking smiley, allowing the micro:bit to alternate between showing the smiley and the empty screen.
+The extra empty image with show LED creates a blinking smiley, allowing the @boardname@ to alternate between showing the smiley and the empty screen.
 
 ## 3. Draw the image created with this code
 

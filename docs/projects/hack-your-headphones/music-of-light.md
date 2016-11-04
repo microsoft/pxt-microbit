@@ -67,4 +67,4 @@ input.onButtonPressed(Button.A, () => {
 });
 ```
 
-* click **Download** and run your code on the micro:bit.
+* click **Download** and run your code on the @boardname@.

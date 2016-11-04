@@ -1,6 +1,6 @@
 # Teach Blocks
 
-Overview of lesson instructions for the BBC micro:bit.
+Overview of lesson instructions for the @boardname@.
 
 ### @short Teach
 
@@ -34,7 +34,7 @@ The quiz answers provide responses to the quiz. This will allow teachers to accu
 
 5) Challenges
 
-After the student completes the quiz, tutorial, and compiles the code onto the BBC micro:bit, distribute the lesson’s challenges. Challenges are additional customizing and exercises for the students. Challenges reinforce the concepts followed in the tutorial and quiz responses as shown with the [blink challenges](/lessons/blink/challenges).
+After the student completes the quiz, tutorial, and compiles the code onto the @boardname@, distribute the lesson’s challenges. Challenges are additional customizing and exercises for the students. Challenges reinforce the concepts followed in the tutorial and quiz responses as shown with the [blink challenges](/lessons/blink/challenges).
 
 ## Teacher Directions
 
@@ -48,7 +48,7 @@ After the student completes the quiz, tutorial, and compiles the code onto the B
 
 5) Complete quiz questions by following the the guided tutorials
 
-6) Compile the code from the tutorial onto the BBC micro:bit
+6) Compile the code from the tutorial onto the @boardname@
 
 7)  Distribute the challenges for additional coding through paper instructions
 
@@ -66,7 +66,7 @@ After the student completes the quiz, tutorial, and compiles the code onto the B
 
 ``05:00`` Distribute Lesson Quiz
 
-``07:00`` Access BBC micro:bit website
+``07:00`` Access @boardname@ website
 
 ``10:00`` Start Lesson Activity & Lesson Quiz
 

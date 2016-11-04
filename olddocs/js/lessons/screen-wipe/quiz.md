@@ -10,7 +10,7 @@ Use this activity document to guide your work in the [screen wipe tutorial](/les
 
 Answer the questions while completing the tutorial. Pay attention to the dialogues!
 
-## 1. What does the function "clear screen" do on the BBC micro:bit? 
+## 1. What does the function "clear screen" do on the @boardname@? 
 
 <br/>
 
@@ -20,13 +20,13 @@ Answer the questions while completing the tutorial. Pay attention to the dialogu
 
 <br/>
 
-## 3. How can the BBC micro:bit detect when it is shaken?
+## 3. How can the @boardname@ detect when it is shaken?
 
 <br/>
 
 <br/>
 
-## 4. Write the code that will clear an animation from the screen after shaking the BBC micro:bit.
+## 4. Write the code that will clear an animation from the screen after shaking the @boardname@.
 
 <br/>
 

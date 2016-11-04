@@ -1,6 +1,6 @@
 # Button Is Pressed
 
-Check whether a button is pressed right now. The micro:bit has two buttons: button `A` and button `B`.
+Check whether a button is pressed right now. The @boardname@ has two buttons: button `A` and button `B`.
 
 ```sig
 input.buttonIsPressed(Button.A);

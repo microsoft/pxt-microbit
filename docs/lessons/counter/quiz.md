@@ -1,6 +1,6 @@
 # counter quiz 
 
-Learn how to create a counter with the BBC micro:bit button. 
+Learn how to create a counter with the @boardname@ button. 
 
 ## Name
 

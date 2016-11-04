@@ -2,7 +2,7 @@
 
 ## Materials
 
-* micro:bit, battery holder and 2 AAA batteries
+* @boardname@, battery holder and 2 AAA batteries
 * Bananas
 * Orange
 * Crocodile clips
@@ -13,7 +13,7 @@
 
 ![](/static/mb/lessons/banana-keyboard-1.png)
 
-Using the 1st crocodile clip, connect the end of the crocodile clip onto GND pin on the micro:bit.
+Using the 1st crocodile clip, connect the end of the crocodile clip onto GND pin on the @boardname@.
 
 ### Step 2
 
@@ -21,7 +21,7 @@ Using the 1st crocodile clip, connect the end of the crocodile clip onto GND pin
 
 ![](/static/mb/lessons/banana-keyboard-3.png)
 
-Using the 2nd crocodile clip, connect the end of the crocodile clip onto the 0 pin on the micro:bit.
+Using the 2nd crocodile clip, connect the end of the crocodile clip onto the 0 pin on the @boardname@.
 
 ### Step 3
 
@@ -55,7 +55,7 @@ Using the 3rd crocodile clip, connect the unattached end of the crocodile clip o
 
 ![](/static/mb/lessons/banana-keyboard-10.png)
 
-Using the 4th crocodile clip, connect the end of the crocodile clip onto pin 1 on the micro:bit.
+Using the 4th crocodile clip, connect the end of the crocodile clip onto pin 1 on the @boardname@.
 
 ### Step 8
 
@@ -71,7 +71,7 @@ Your banana keyboard is ready!
 
 ### Step 10
 
-Connect your micro:bit to your computer using your USB cable and run this script:
+Connect your @boardname@ to your computer using your USB cable and run this script:
 ```blocks
 input.onPinPressed(TouchPin.P1, () => {
     music.playTone(music.noteFrequency(Note.C), music.beat(BeatFraction.Quarter));

@@ -2,11 +2,11 @@
 
 ![](/static/mb/projects/a5-compass.png)
 
-Display the direction that the micro:bit is facing using the compass 
+Display the direction that the @boardname@ is facing using the compass 
 
 ### ~avatar avatar
 
-Welcome! This guided tutorial will show you how to program a script that displays the direction the micro:bit is pointing. Let's get started!
+Welcome! This guided tutorial will show you how to program a script that displays the direction the @boardname@ is pointing. Let's get started!
 
 ### ~
 
@@ -24,7 +24,7 @@ basic.forever(() => {
 
 ## Step 2
 
-Store the reading of the micro:bit in a variable called `degrees`.
+Store the reading of the @boardname@ in a variable called `degrees`.
 
 ```blocks
 basic.forever(() => {
@@ -34,7 +34,7 @@ basic.forever(() => {
 
 ## Step 3
 
-If `degrees` is less than `45`, then the compass heading is mostly pointing toward North. Display `N` on the micro:bit.
+If `degrees` is less than `45`, then the compass heading is mostly pointing toward North. Display `N` on the @boardname@.
 
 ```blocks
 basic.forever(() => {
@@ -47,7 +47,7 @@ basic.forever(() => {
 
 ## Step 4
 
-If `degrees` is less than 135, the micro:bit is mostly pointing East. Display `E` on the micro:bit.
+If `degrees` is less than 135, the @boardname@ is mostly pointing East. Display `E` on the @boardname@.
 
 
 ```blocks
@@ -64,7 +64,7 @@ basic.forever(() => {
 
 ## Step 5
 
-If `degrees` is less than 225, the micro:bit is mostly pointing South. Display `S` on the micro:bit.
+If `degrees` is less than 225, the @boardname@ is mostly pointing South. Display `S` on the @boardname@.
 
 
 ```blocks
@@ -84,7 +84,7 @@ basic.forever(() => {
 
 ## Step 6
 
-If none of these conditions returned true, then the micro:bit must be pointing West. Display `W` on the micro:bit.
+If none of these conditions returned true, then the @boardname@ must be pointing West. Display `W` on the @boardname@.
 
 ```blocks
 basic.forever(() => {

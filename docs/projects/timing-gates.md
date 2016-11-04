@@ -8,17 +8,17 @@ This project explains the principles of timing gates using household materials.
 
 ## Timing gates
 
-The two gates are connected to the micro:bit and can detect a car passing through.
+The two gates are connected to the @boardname@ and can detect a car passing through.
 
 ![](/static/mb/projects/timing-gates/sketchgates.jpg "Sketch of the gates")
 
-As the car passes through the gate ``0``, it sends an event to the micro:bit through the [on pin pressed](/reference/input/on-pin-pressed) block.
-The micro:bit records the time in a variable ``t0``.
+As the car passes through the gate ``0``, it sends an event to the @boardname@ through the [on pin pressed](/reference/input/on-pin-pressed) block.
+The @boardname@ records the time in a variable ``t0``.
 
 ![](/static/mb/projects/timing-gates/sketchgate1.jpg "Sketch first gate")
 
-As the car passes through the gate ``1``, it sends an event to the micro:bit through the [on pin pressed](/reference/input/on-pin-pressed) block.
-The micro:bit records the time in a variable ``t1``.
+As the car passes through the gate ``1``, it sends an event to the @boardname@ through the [on pin pressed](/reference/input/on-pin-pressed) block.
+The @boardname@ records the time in a variable ``t1``.
 
 ![](/static/mb/projects/timing-gates/sketchgate2.jpg "Sketch first gate")
 
@@ -34,7 +34,7 @@ By dividing the distance between the gates by the duration, we get the speed of 
 * Aluminum fail
 * Double-side tape (carpet tape)
 * 4 crocodile clips
-* A micro:bit board and USB cable
+* A @boardname@ board and USB cable
 
 ![](/static/mb/projects/timing-gates/materials.jpg "Materials")
 
@@ -76,9 +76,9 @@ Connect a crocodile strip to each foil strip.
 
 ![](/static/mb/projects/timing-gates/connectsensor.jpg "Connecting sensor")
 
-Connect the crocodile plugs to the ``GND`` and ``P0`` pins on the micro:bit.
+Connect the crocodile plugs to the ``GND`` and ``P0`` pins on the @boardname@.
 
-![](/static/mb/projects/timing-gates/connectcrocs.jpg "Connecting the micro:bit")
+![](/static/mb/projects/timing-gates/connectcrocs.jpg "Connecting the @boardname@")
 
 The gate is ready to use! Your circuit should look like the picture below:
 
@@ -87,7 +87,7 @@ The gate is ready to use! Your circuit should look like the picture below:
 
 ## Detecting the car with code
 
-The micro:bit provides an event [on pin pressed](/reference/input/on-pin-pressed) 
+The @boardname@ provides an event [on pin pressed](/reference/input/on-pin-pressed) 
 that is raised when a circuit between ``GND`` and a pin is detected. The circuit conductor could be a wire or even your body!
 We will attach a foil to the bottom of the car. When it passes over the gate, it connect both foil strips, close the circuit and trigger the event. 
 
@@ -140,7 +140,7 @@ Repeat the same process with tape and foil to build the first gate.
 
 ![](/static/mb/projects/timing-gates/sensor2.jpg "Double foil sensors")
 
-Connect the crocodile plugs to the ``GND`` and ``P1`` pins on the micro:bit.
+Connect the crocodile plugs to the ``GND`` and ``P1`` pins on the @boardname@.
 
 ![](/static/mb/projects/timing-gates/sensormicrobit2.jpg "Sensor and microbit")
 
@@ -182,7 +182,7 @@ https://youtu.be/N4bWQcu6yWs
 
 ## Computing time
 
-The micro:bit has a clock that measures time precisely. It measures how many seconds the micro:bit has been on. 
+The @boardname@ has a clock that measures time precisely. It measures how many seconds the @boardname@ has been on. 
 We will record the time where each gate is tripped in variables ``t0`` and ``t1``. 
 We take the different between ``t1`` and ``t0`` to compute the duration between the gates.
 

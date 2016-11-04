@@ -1,6 +1,6 @@
 # zoomer block activity
 
-Measure the acceleration on the micro:bit in the "z" direction. 
+Measure the acceleration on the @boardname@ in the "z" direction. 
 
 ### ~avatar avatar
 
@@ -8,7 +8,7 @@ Measure the acceleration on the micro:bit in the "z" direction.
 
 ### ~
 
-Welcome! This activity will teach how to measure the acceleration on the micro:bit in the "z" direction. Let's get started!
+Welcome! This activity will teach how to measure the acceleration on the @boardname@ in the "z" direction. Let's get started!
 
 We want to display the acceleration forever. In order to do so, we need a `forever` loop.
 

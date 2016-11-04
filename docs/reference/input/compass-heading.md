@@ -1,8 +1,8 @@
 # Compass Heading
 
-Find which direction on a compass the micro:bit is facing.
+Find which direction on a compass the @boardname@ is facing.
 
-The micro:bit measures the **compass heading** from `0` to `360`
+The @boardname@ measures the **compass heading** from `0` to `360`
 degrees with its **magnetometer** chip. Different numbers mean north,
 east, south, and west.
 
@@ -33,7 +33,7 @@ the compass needle on the screen to change the compass heading.
 ### Example: compass
 
 This program finds the compass heading and then shows a letter
-that means whether the micro:bit is facing north (N), south (S),
+that means whether the @boardname@ is facing north (N), south (S),
 east (E), or west (W).
 
 ```blocks
@@ -52,12 +52,12 @@ basic.forever(() => {
 ### Calibration
 
 Every time you start to use the compass (for example, if you have just
-turned the micro:bit on), the micro:bit will start to **calibrate**
+turned the @boardname@ on), the @boardname@ will start to **calibrate**
 (adjust itself).  It will ask you to draw a circle by tilting the
-micro:bit.
+@boardname@.
 
 If you are calibrating or using the compass near metal, it might
-confuse the micro:bit.
+confuse the @boardname@.
 
 ### See also
 

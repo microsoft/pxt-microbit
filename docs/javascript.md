@@ -1,6 +1,7 @@
 # JavaScript
 
-Visit the cards below to starting programming JavaScript and TypeScript with the micro:bit:
+Visit the cards below to starting programming JavaScript 
+with the @boardname@:
 
 ```codecard
 [{

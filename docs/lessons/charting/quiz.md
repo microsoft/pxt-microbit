@@ -1,6 +1,6 @@
 # charting quiz
 
-Measure the acceleration on the micro:bit in the "x" direction. 
+Measure the acceleration on the @boardname@ in the "x" direction. 
 
 ## Name
 
@@ -18,6 +18,6 @@ Answer the questions while completing the tutorial. Pay attention to the dialogu
 
 <br/>
 
-## 3. After vigarously moving the micro:bit from side to side along the "x" axis for a sufficient amount of time,insert the Excel graph for displaying a line chart used to display trends over time. 
+## 3. After vigarously moving the @boardname@ from side to side along the "x" axis for a sufficient amount of time,insert the Excel graph for displaying a line chart used to display trends over time. 
 
 

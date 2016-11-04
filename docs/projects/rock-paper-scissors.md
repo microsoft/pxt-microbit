@@ -35,8 +35,8 @@ input.onGesture(Gesture.Shake, () => {
     }
 })
 ```
-In this project, you will build a Rock Paper Scissors game with the BBC micro:bit.
-You can play the game with a friend who has it on a micro:bit.
+In this project, you will build a Rock Paper Scissors game with the @boardname@.
+You can play the game with a friend who has it on a @boardname@.
 You can also play it with friends who are just using their hands.
 
 ### ~
@@ -44,12 +44,12 @@ You can also play it with friends who are just using their hands.
 
 ## Materials needed
 
-* Your BBC micro:bit -- that's it!
+* Your @boardname@ -- that's it!
 
 ## Step 1: Getting started
 
-We want the micro:bit to choose rock, paper, or scissors when you shake it.
-Try creating an ``on shake`` block so when you shake the micro:bit, it will run part of a program.
+We want the @boardname@ to choose rock, paper, or scissors when you shake it.
+Try creating an ``on shake`` block so when you shake the @boardname@, it will run part of a program.
 
 ```blocks
 input.onGesture(Gesture.Shake, () => {
@@ -57,7 +57,7 @@ input.onGesture(Gesture.Shake, () => {
 })
 ```
 
-Next, when you shake the micro:bit, it should pick a random number from `0` to `2`
+Next, when you shake the @boardname@, it should pick a random number from `0` to `2`
 and store it in the variable `weapon`. (This variable is named `weapon` because 
 rock, paper, and scissors are the weapons you use to battle your friends!)
 
@@ -110,7 +110,7 @@ input.onGesture(Gesture.Shake, () => {
 
 ## Step 3: A random rock
 
-Now we are going to add a new picture for the micro:bit to show
+Now we are going to add a new picture for the @boardname@ to show
 when another random number comes up.
 
 Make the ``else if`` part check if the variable `weapon` is `1`.
@@ -192,7 +192,7 @@ Your game is ready! Have fun!
 
 Here is a way you can make your Rock Paper Scissors game better.
 When button ``A`` is pressed, 
-the micro:bit will add `1` to your score.
+the @boardname@ will add `1` to your score.
 
 Open the ``Game`` drawer, and then add the block ``change score by 1`` to your program,
 like this:
@@ -206,7 +206,7 @@ input.onButtonPressed(Button.A, () => {
 
 ## Step 6: Prove you're the greatest!
 
-After your micro:bit can add `1` to the score, show how many wins you have.
+After your @boardname@ can add `1` to the score, show how many wins you have.
 
 ```blocks
 input.onButtonPressed(Button.A, () => {
@@ -217,7 +217,7 @@ input.onButtonPressed(Button.A, () => {
 ```
 ## Step 7: Staying honest
 
-Success! Your micro:bit can track wins!
+Success! Your @boardname@ can track wins!
 But what about losses? 
 Use the ``Game`` drawer to subtract `1` from your score when you press button `B`. 
 

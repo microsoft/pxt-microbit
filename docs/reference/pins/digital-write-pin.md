@@ -1,7 +1,7 @@
 # Digital Write Pin
 
 Write a **digital** (`0` or `1`) signal to a [pin](/device/pins) on
-the micro:bit board.
+the @boardname@ board.
 
 ```sig
 pins.digitalWritePin(DigitalPin.P1, 1)
@@ -40,9 +40,9 @@ basic.forever(() => {
 ```
 
 This program is a remote control for the score keeper program.  If you
-connect `P1` on the remote control micro:bit to `P0` on the score
-keeper micro:bit, you can press button `B` on the remote. This program
-will use ``digital write pin`` to make the other micro:bit buzz and
+connect `P1` on the remote control @boardname@ to `P0` on the score
+keeper @boardname@, you can press button `B` on the remote. This program
+will use ``digital write pin`` to make the other @boardname@ buzz and
 make the score bigger.
 
 ```blocks
@@ -55,7 +55,7 @@ input.onButtonPressed(Button.B, () => {
 
 ### See also
 
-[micro:bit pins](/device/pins),
+[@boardname@ pins](/device/pins),
 [digital read pin](/reference/pins/digital-read-pin),
 [analog read pin](/reference/pins/analog-read-pin),
 [analog write pin](/reference/pins/analog-write-pin),

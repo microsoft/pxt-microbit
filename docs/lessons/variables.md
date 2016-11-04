@@ -4,7 +4,7 @@ An introduction to variables for the Block Editor.
 
 ## What is a variable?
 
-Variables are things that are remembered by the BBC micro:bit. Variables can take a few formats and can have functions applied to them. For example, we could create a string, which is text. Or we could create a calculator that stores whichever number the user inputs as an integer, or whole number.
+Variables are things that are remembered by the @boardname@. Variables can take a few formats and can have functions applied to them. For example, we could create a string, which is text. Or we could create a calculator that stores whichever number the user inputs as an integer, or whole number.
 
 We can modify variables but they must first be defined. Open the ‘Variables’ drawer to the left of your code.
 
@@ -31,7 +31,7 @@ Finally, beneath that line, drag a `show number` block from the **Basic** drawer
 * We create a new variable called value and set it to 0
 * The code runs forever and waits for the user to press the A button
 * When the user does, value will be set to value + 1 (value will be incremented by 1)
-* Value will then be displayed on the BBC micro:bit's LEDS
+* Value will then be displayed on the @boardname@'s LEDS
 * This effectively creates a counter
 
 Variables can also be used for conditions with loops. See the 'Loops' section to learn about this.

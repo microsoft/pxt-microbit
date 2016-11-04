@@ -90,6 +90,6 @@ Your telegraph is ready!
 
 ### Step 7
 
-* Connect the first micro:bit to your computer using your USB cable and put the telegraph script on it.
-* Connect the second micro:bit to your computer using your USB cable and run the telegraph script on it.
+* Connect the first @boardname@ to your computer using your USB cable and put the telegraph script on it.
+* Connect the second @boardname@ to your computer using your USB cable and run the telegraph script on it.
 * The first person and second person take turns pressing button A to play the telegraph game!

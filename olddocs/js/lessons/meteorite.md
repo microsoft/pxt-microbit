@@ -52,8 +52,8 @@ Learn how to create **functions**, `function()` that perform a specific task and
 * learn how to gradually increase the LED screen brightness until the LED lights are turned on
 * learn how to conditionally run code depending on whether a condition is true or not
 * learn how to run code when an input button is pressed
-* learn how to show a number on the micro:bit's LED screen
-* learn how to show a string on the micro:bit's LED screen
+* learn how to show a number on the @boardname@'s LED screen
+* learn how to show a string on the @boardname@'s LED screen
 * learn how to turn on a LED light on the LED screen. Learn how to specify which LED using x, y coordinates
 * learn how to turn on all the 25 LEDs on the LED screen
 * learn how to pause your code for the specified number of milliseconds

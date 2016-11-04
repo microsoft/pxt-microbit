@@ -1,6 +1,6 @@
 # hack your headphones lesson
 
-display beautiful images on the BBC micro:bit.
+display beautiful images on the @boardname@.
 
 ## Topic
 
@@ -16,9 +16,9 @@ Year 7
 
 ## Prior learning/place of lesson in scheme of work
 
-Learn how to convert your BBC micro:bit into a music player using pins P0 and GND, headphones (or speakers), as well as crocodile clips (or spring clips).
+Learn how to convert your @boardname@ into a music player using pins P0 and GND, headphones (or speakers), as well as crocodile clips (or spring clips).
 
 ## Objectives
 
-* learn how to setup the BBC micro:bit with headphones to play music
+* learn how to setup the @boardname@ with headphones to play music
 

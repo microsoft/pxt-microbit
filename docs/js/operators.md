@@ -1,9 +1,9 @@
 ## Operators
 
-The following JavaScript operators are supported for the micro:bit.
+The following JavaScript operators are supported for the @boardname@.
 
 ### ~hint
-Note that for the micro:bit all arithmetic is performed on integers, rather than floating point.
+Note that for the @boardname@ all arithmetic is performed on integers, rather than floating point.
 This also is true when simulating in the browser.
 ### ~
 

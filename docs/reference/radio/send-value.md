@@ -1,6 +1,6 @@
 # Send Value
 
-Send a [string]() and [number]() together by ``radio`` to other micro:bits.
+Send a [string]() and [number]() together by ``radio`` to other @boardname@s.
 The maximum [string]() length is 12 characters.
 
 ```sig
@@ -14,9 +14,9 @@ radio.sendValue("name", 0);
 
 ### Example: Broadcasting acceleration
 
-This program sends your micro:bit's **acceleration** (amount it is
+This program sends your @boardname@'s **acceleration** (amount it is
 speeding up or slowing down) in the `x` direction (left and right) to
-other micro:bits. This kind of program might be useful in a model car
+other @boardname@s. This kind of program might be useful in a model car
 or model rocket.
 
 ```blocks

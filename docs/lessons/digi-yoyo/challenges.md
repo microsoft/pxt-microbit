@@ -62,7 +62,7 @@ while (count > 0) {
 
 ### Challenge 3
 
-Now, we need `count` to decrease by one after the micro:bit has displayed the value of `count`.
+Now, we need `count` to decrease by one after the @boardname@ has displayed the value of `count`.
 
 We can do this by adding this line:
 

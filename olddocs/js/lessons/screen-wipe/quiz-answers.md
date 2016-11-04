@@ -4,7 +4,7 @@ clear the screen by pressing the "A" button after an animation has been played.
 
 This is the answer key for the [screen wipe quiz](/lessons/screen-wipe/quiz).
 
-## 1. What does the function "clear screen" do on the BBC micro:bit? 
+## 1. What does the function "clear screen" do on the @boardname@? 
 
 This function turns off all the LED lights on the LED screen.
 
@@ -24,7 +24,7 @@ basic.showAnimation(`
 `, 400)
 ```
 
-## 3. Write the condition that will detect when the BBC micro:bit is shaken.
+## 3. Write the condition that will detect when the @boardname@ is shaken.
 
 <br/>
 
@@ -33,7 +33,7 @@ input.onGesture(Gesture.Shake, () => {
 })
 ```
 
-## 4. Write the code that will clear an animation from the screen after shaking the BBC micro:bit.
+## 4. Write the code that will clear an animation from the screen after shaking the @boardname@.
 
 <br/>
 

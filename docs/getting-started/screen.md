@@ -2,7 +2,7 @@
 
 ### ~avatar avatar
 
-There are 25 bright LEDs on the micro:bit screen. Let's use them to create some cool animations!
+There are 25 bright LEDs on the @boardname@ screen. Let's use them to create some cool animations!
 
 ### ~
 
@@ -12,7 +12,7 @@ Draw an unhappy face instead of the blank screen.  Click on the dots
 in the second ``show leds`` block until it matches the blocks below.
 Now you have an **animation** (cartoon) that shows a happy face,
 then an unhappy one, then a happy one again, forever (or until
-you turn off your micro:bit)!
+you turn off your @boardname@)!
 
 ```blocks
 basic.forever(() => {
@@ -32,7 +32,7 @@ basic.forever(() => {
         `)
 });
 ```
-Click **Download** to move your program to the BBC micro:bit!
+Click **Download** to move your program to the @boardname@!
 
 ### Your turn!
 
@@ -85,7 +85,7 @@ basic.forever(() => {
         `)
 });
 ```
-Click **Download** to move your program to the BBC micro:bit!
+Click **Download** to move your program to the @boardname@!
 
 #### ~hint
 

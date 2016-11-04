@@ -4,13 +4,13 @@
 
 ![](/static/mb/lessons/the-watch-0.png)
 
-In this project, you will build your own wearable micro:bit watch from an old pair of jeans and T-shirt. Project duration: 15 minutes.
+In this project, you will build your own wearable @boardname@ watch from an old pair of jeans and T-shirt. Project duration: 15 minutes.
 
 ![](/static/mb/lessons/the-watch-1.png)
 
 ## Materials
 
-* micro:bit, battery holder and 2 AAA batteries
+* @boardname@, battery holder and 2 AAA batteries
 * Old T-shirt
 * Old Jeans
 * Velcro with sticky back – 5cm x 5cm
@@ -70,25 +70,25 @@ Peal the tape protective layer from the rectangle.
 
 ![](/static/mb/lessons/the-watch-11.png)
 
-Place the micro:bit pins on the tape at more or less **7** cm from the left border. Then lower the micro:bit on the tape and press **gently**.
+Place the @boardname@ pins on the tape at more or less **7** cm from the left border. Then lower the @boardname@ on the tape and press **gently**.
 
 ### Step 9
 
 ![](/static/mb/lessons/the-watch-12.png)
 
-Connect the battery holder and place it on the right of the micro:bit. Tuck the cables away on the tape to protect them.
+Connect the battery holder and place it on the right of the @boardname@. Tuck the cables away on the tape to protect them.
 
 ### Step 10
 
 ![](/static/mb/lessons/the-watch-13.png)
 
-Stick the T-shirt rectangle from the top of the micro:bit, over the battery cables.
+Stick the T-shirt rectangle from the top of the @boardname@, over the battery cables.
 
 ### Step 11
 
 ![](/static/mb/lessons/the-watch-14.png)
 
-Use your fingers to push the T-shirt cloth under the micro:bit to give access to the micro-USB plug.
+Use your fingers to push the T-shirt cloth under the @boardname@ to give access to the micro-USB plug.
 
 ### Step 12
 
@@ -106,7 +106,7 @@ Turn over the watch and cut the extra T-shirt material.
 
 ![](/static/mb/lessons/the-watch-17.png)
 
-Stick the T-shirt cloth on the other side of the watch. Lift the micro:bit pins to slide the cloth under and leave them free from the tape.
+Stick the T-shirt cloth on the other side of the watch. Lift the @boardname@ pins to slide the cloth under and leave them free from the tape.
 
 ### Step 15
 

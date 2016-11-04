@@ -1,6 +1,6 @@
 # Plot LEDs
 
-Display an [Image](/reference/images/image) on the BBC micro:bit's [LED screen](/device/screen). NOTE: `basic -> plot image` has been replaced by `basic -> show leds`.
+Display an [Image](/reference/images/image) on the @boardname@'s [LED screen](/device/screen). NOTE: `basic -> plot image` has been replaced by `basic -> show leds`.
 
 ```sig
 basic.showLeds(`

@@ -12,11 +12,11 @@ Answer the questions while completing the tutorial. Pay attention to the dialogu
 
 ## 1. Define 'on logo up' 
 
-A function that will run code when the BBC micro:bit screen is facing up and vertically orientated.
+A function that will run code when the @boardname@ screen is facing up and vertically orientated.
 
 <br/>
 
-## 2. Write the condition that detects when the BBC micro:bit logo is facing up and vertically orientated.
+## 2. Write the condition that detects when the @boardname@ logo is facing up and vertically orientated.
 
 The `logo up` event is raised when...
 

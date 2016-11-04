@@ -1,9 +1,9 @@
 # Making the Guitar Body
-### @description Maker Project for Guitar Body for micro:bit
+### @description Maker Project for Guitar Body for @boardname@
 
 ### ~avatar avatar
 
-Make the Guitar Body for your micro:bit Guitar
+Make the Guitar Body for your @boardname@ Guitar
 
 ### ~
 

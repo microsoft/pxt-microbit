@@ -1,7 +1,7 @@
 # Digital Read Pin
 
 Read a **digital** (`0` or `1`) signal from a [pin](/device/pins) on
-the micro:bit board.
+the @boardname@ board.
 
 ```sig
 pins.digitalReadPin(DigitalPin.P3)
@@ -43,9 +43,9 @@ basic.forever(() => {
 ```
 
 This program is a remote control for the score keeper program.  If you
-connect `P1` on the remote control micro:bit to `P0` on the score
-keeper micro:bit, you can press button `B` on the remote to buzz and
-make the score bigger on the other micro:bit.
+connect `P1` on the remote control @boardname@ to `P0` on the score
+keeper @boardname@, you can press button `B` on the remote to buzz and
+make the score bigger on the other @boardname@.
 
 ```blocks
 input.onButtonPressed(Button.B, () => {
@@ -56,13 +56,13 @@ input.onButtonPressed(Button.B, () => {
 ```
 #### ~hint
 
-Remember to connect `GND` on both micro:bits together!
+Remember to connect `GND` on both @boardname@s together!
 
 #### ~
 
 ### See also
 
-[micro:bit pins](/device/pins),
+[@boardname@ pins](/device/pins),
 [digital write pin](/reference/pins/digital-write-pin),
 [analog read pin](/reference/pins/analog-read-pin),
 [analog write pin](/reference/pins/analog-write-pin),

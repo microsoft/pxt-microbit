@@ -38,7 +38,7 @@ Write the code to call the function that doubles the input number. (the function
 
 ## 6. Consider the following picture
 
-Write the code to show number 20 on the BBC micro:bit. Please add the variable called `doubled` Refer to the finished code on the tutorial.
+Write the code to show number 20 on the @boardname@. Please add the variable called `doubled` Refer to the finished code on the tutorial.
 
 <br/>
 

@@ -2,9 +2,9 @@
 
 The serial library #docs
 
-The **serial library** supports [serial communication](https://en.wikipedia.org/wiki/Serial_port) between the BBC micro:bit and another computer. Basically, this allows you to send data from the micro:bit to your own computer. This is very useful for debugging purposes: you can add `write line` statements in your code and see them display on your computer as the program executes.
+The **serial library** supports [serial communication](https://en.wikipedia.org/wiki/Serial_port) between the @boardname@ and another computer. Basically, this allows you to send data from the @boardname@ to your own computer. This is very useful for debugging purposes: you can add `write line` statements in your code and see them display on your computer as the program executes.
 
-The code below shows a simple script that sends a line when the BBC micro:bit starts and another line each time the button ``A`` is pressed.
+The code below shows a simple script that sends a line when the @boardname@ starts and another line each time the button ``A`` is pressed.
 
 ```
 serial.writeLine("started...")
@@ -13,18 +13,18 @@ input.onButtonPressed(Button.A, () => {
 })
 ```
 
-## How to read the micro:bit's serial output from your computer
+## How to read the @boardname@'s serial output from your computer
 
 Unfortunately, using the serial library requires quite a bit of a setup.
 
 ### Windows
 
-You must install a device driver (for the computer to recognize the serial interface of the micro:bit); then, you must also install a terminal emulator (which is going to connect to the micro:bit and read its output). Here's how to do it:
+You must install a device driver (for the computer to recognize the serial interface of the @boardname@); then, you must also install a terminal emulator (which is going to connect to the @boardname@ and read its output). Here's how to do it:
 
 * Follow instructions at https://developer.mbed.org/handbook/Windows-serial-configuration in order to install the device driver
 * Install a terminal emulator; we recommend [Tera Term](https://ttssh2.osdn.jp/index.html.en). At the time of this writing, the latest version is 4.88 and can be downloaded [from here](http://en.osdn.jp/frs/redir.php?m=jaist&f=%2Fttssh2%2F63767%2Fteraterm-4.88.exe). Follow the instructions from the installer.
 
-Once both the driver and the terminal emulator are installed, plug in the micro:bit and wait until the device is fully setup. Then, open TeraTerm.
+Once both the driver and the terminal emulator are installed, plug in the @boardname@ and wait until the device is fully setup. Then, open TeraTerm.
 
 * Hit `File` > `New Connection`
 * Check "Serial"; in the dropdown menu, pick the COM port that says "mbed Serial Port". Hit `Ok`.
@@ -32,7 +32,7 @@ Once both the driver and the terminal emulator are installed, plug in the micro:
 
 You should be good. Feel free to hit `Setup` > `Save Setup` in the menus to erase the default configuration file with a new one so that you don't have to type in the settings again.
 
-Please note that Windows will assign you a different COM port if you plug in another micro:bit. If you're juggling between micro:bits, you'll have to change the COM port every time.
+Please note that Windows will assign you a different COM port if you plug in another @boardname@. If you're juggling between @boardname@s, you'll have to change the COM port every time.
 
 ### Alternative Windows setup with Putty
 
@@ -51,27 +51,27 @@ If you prefer another terminal emulator (such as [PuTTY](http://www.putty.org/))
 
 (Untested).
 
-* Plug in the micro:bit
+* Plug in the @boardname@
 * Open a terminal
-* `dmesg | tail` will show you which `/dev/` node the micro:bit was assigned (e.g. `/dev/ttyUSB0`)
+* `dmesg | tail` will show you which `/dev/` node the @boardname@ was assigned (e.g. `/dev/ttyUSB0`)
 * Then, do: `screen /dev/ttyUSB0 115200` (install the `screen` program if you don't have it). To exit, run `Ctrl-A` `Ctrl-D`.
 
 Alternative programs include minicom, etc.
 
 ### Mac OS
 
-* Plug in the micro:bit
+* Plug in the @boardname@
 * Open a terminal
 * `ls /dev/cu.*` will return to you a list of serial devices; one of them will look like `/dev/cu.usbmodem1422` (the exact number depends on your computer)
-* `screen /dev/cu.usbmodem1422 115200` will open up the micro:bit's serial output. To exit, hit `Ctrl-A` `Ctrl-D`.
+* `screen /dev/cu.usbmodem1422 115200` will open up the @boardname@'s serial output. To exit, hit `Ctrl-A` `Ctrl-D`.
 
 ## Using the serial library in your programs
 
-If the ``serial`` button is not available, you will need first to add the ``micro:bit serial`` library to your script:
+If the ``serial`` button is not available, you will need first to add the ``@boardname@ serial`` library to your script:
 
 * tap on `add new`
 * tap on `library`
-* select `micro:bit serial`
+* select `@boardname@ serial`
 
 ### Writing data
 
@@ -95,7 +95,7 @@ serial.writeString("hello")
 serial.writeLine("this is a line")
 ```
 
-Theoretically, you can dump more sophisticated data and then read it back in the event that two micro:bits should be connected to each other over serial. We have not tested this scenario yet as we have yet to expose functionality that allows re-routing the serial ports to the edge connector.
+Theoretically, you can dump more sophisticated data and then read it back in the event that two @boardname@s should be connected to each other over serial. We have not tested this scenario yet as we have yet to expose functionality that allows re-routing the serial ports to the edge connector.
 
 * write an image
 

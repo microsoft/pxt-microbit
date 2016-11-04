@@ -1,6 +1,6 @@
 # 2 player pong quiz
 
-a two-player game of Pong using TWO BBC micro:bits!.
+a two-player game of Pong using TWO @boardname@s!.
 
 ## Name
 

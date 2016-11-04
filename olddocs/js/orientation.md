@@ -1,4 +1,4 @@
-# micro:bit orientation
+# @boardname@ orientation
 
 A #microbit library that exposes accelerometer events.
 

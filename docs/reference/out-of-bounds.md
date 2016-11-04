@@ -2,7 +2,7 @@
 
 The behavior of functions whose parameter values are out of bounds.
 
-Many of the BBC micro:bit functions have parameters. If a parameter is an unexpected value, the parameter is considered *out of bounds*.
+Many of the @boardname@ functions have parameters. If a parameter is an unexpected value, the parameter is considered *out of bounds*.
 
 For example, the [plot](/reference/led/plot) function has two parameters:
 

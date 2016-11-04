@@ -1,6 +1,6 @@
 # bop it challenges
 
-a game similar to "Simon Says" with the BBC micro:bit.
+a game similar to "Simon Says" with the @boardname@.
 
 ## Before we get started
 
