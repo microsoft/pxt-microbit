@@ -1,8 +1,8 @@
 {
     "name": "{0} block",
     "dependencies": {
-        "core": "*",
-        "radio": "*"
+        "core": "file:../core",
+        "bluetooth": "file:../bluetooth"
     },
     "description": "",
     "files": [
