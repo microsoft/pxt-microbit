@@ -15,7 +15,7 @@ The local server allows to run the editor and the documentation from your comput
 
 The following commands are a 1-time setup after synching the repo on your machine.
 
-* if not yet installed, install [Node.js 4.4.5 or higher](https://nodejs.org/en/download/)
+* See requirements for [pxt](https://github.com/Microsoft/pxt)
 * [clone this repo](https://help.github.com/articles/cloning-a-repository/) to your computer and go in the project folder
 ```
 git clone https://github.com/microsoft/pxt-microbit
