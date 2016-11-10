@@ -24,12 +24,10 @@
     "sim/public",
     "docs/*.md",
     "docs/*/*.md",
-    "docs/*/*/*.md",
-    "mainCli.js",
-    "mainCli.d.ts"
+    "docs/*/*/*.md"
   ],
-  "main": "mainCli.js",
-  "typings": "mainCli.d.ts",
+  "main": "built/pxtrequire.js",
+  "typings": "built/pxtrequire.d.ts",
   "devDependencies": {
     "typescript": "^1.8.7"
   },
