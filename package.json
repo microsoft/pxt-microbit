@@ -24,8 +24,12 @@
     "sim/public",
     "docs/*.md",
     "docs/*/*.md",
-    "docs/*/*/*.md"
+    "docs/*/*/*.md",
+    "mainCli.js",
+    "mainCli.d.ts"
   ],
+  "main": "mainCli.js",
+  "typings": "mainCli.d.ts",
   "devDependencies": {
     "typescript": "^1.8.7"
   },
