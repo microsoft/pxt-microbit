@@ -132,7 +132,7 @@ namespace bluetooth {
     //% help=bluetooth/advertise-url
     void advertiseUrl(StringData* url, int power) {
         int8_t level = CALIBRATED_POWERS[min(7, max(0, power))];
-        uBit.bleManager.advertiseEddystoneUrl(ManagedString(url), level);
+        uBit.bleManager.advertiseEddystoneUrl(ManagedString(url), level, false);
     }
 
     /**
