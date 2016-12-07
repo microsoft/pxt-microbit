@@ -117,7 +117,6 @@ namespace pxt {
 
     void RefObject::destroy() {
       ((RefObjectMethod)getVTable()->methods[0])(this);
-      delete this;
     }
 
     void RefObject::print() {
@@ -132,6 +131,7 @@ namespace pxt {
           if (refmask[i]) decr(r->fields[i]);
           r->fields[i] = 0;
         }
+        delete r;
     }
 
     void RefRecord_print(RefRecord *r)
@@ -259,6 +259,7 @@ namespace pxt {
         decr(fields[i]);
         fields[i] = 0;
       }
+      delete this;
     }
 
     void RefAction::print()
@@ -273,6 +274,7 @@ namespace pxt {
 
     void RefLocal::destroy()
     {
+      delete this;
     }
 
     PXT_VTABLE_CTOR(RefLocal) {
@@ -291,6 +293,7 @@ namespace pxt {
     void RefRefLocal::destroy()
     {
       decr(v);
+      delete this;
     }
 
     PXT_VTABLE_BEGIN(RefMap, 0, RefMapMarker)
@@ -305,6 +308,7 @@ namespace pxt {
         data[i].val = 0;
       }
       data.resize(0);
+      delete this;
     }
 
     int RefMap::findIdx(uint32_t key) {
