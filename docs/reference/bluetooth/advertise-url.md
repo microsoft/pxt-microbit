@@ -18,7 +18,7 @@ Read more at https://lancaster-university.github.io/microbit-docs/ble/eddystone/
 ## ~
 
 ```sig
-bluetooth.advertiseUrl("https://pxt.microbit.org/", 7);
+bluetooth.advertiseUrl("https://pxt.microbit.org/", 7, true);
 ```
 
 ### Parameters
@@ -29,7 +29,7 @@ bluetooth.advertiseUrl("https://pxt.microbit.org/", 7);
 ### Example: Broadcast a secret code
 
 ```blocks
-bluetooth.advertiseUrl("https://pxt.io?secret=42", 7);
+bluetooth.advertiseUrl("https://pxt.io?secret=42", 7, true);
 ```
 
 ## See Also
