@@ -45,10 +45,19 @@
                 }
             },
             {
+                "type": "missingPackage",
+                "map": {
+                    "radio\\s*\\.": "radio",
+                    "bluetooth\\s*\\.": "bluetooth",
+                    "devices\\s*\\.": "devices",
+                    "game\\s*\\.": "game"
+                }
+            },
+            {
                 "type": "api",
                 "map": {
-                    "bluetooth\\.uartRead\\((.*?)\\)": "bluetooth.uartReadUntil($1)",
-                    "bluetooth\\.uartWrite\\((.*?)\\)": "bluetooth.uartWriteUntil($1)"
+                    "bluetooth\\s*\\.uartRead\\s*\\((.*?)\\)": "bluetooth.uartReadUntil($1)",
+                    "bluetooth\\s*\\.uartWrite\\s*\\((.*?)\\)": "bluetooth.uartWriteUntil($1)"
                 }
             }
         ]
