@@ -23,3 +23,7 @@ input.onButtonPressed(Button.A, () => {
 ### See Also
 
 [change score by](/reference/game/score), [start countdown](/reference/game/start-countdown)
+
+```package
+game
+```

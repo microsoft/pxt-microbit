@@ -203,3 +203,7 @@ Click **Download** to move your program to the @boardname@!
 ### ~button /projects
 NEXT: PROJECTS!
 ### ~
+
+```package
+game
+```

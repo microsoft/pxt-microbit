@@ -88,3 +88,6 @@ The collection has a function `random` that returns a random element. Update you
 
 Play the game and try guessing all these words in less than 2 minutes!
 
+```package
+game
+```

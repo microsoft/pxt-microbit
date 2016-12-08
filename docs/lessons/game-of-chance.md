@@ -29,3 +29,7 @@ input.onButtonPressed(Button.A, () => {})
 * learn how to use the game library
 * learn how to show a string on the LED screen one character at a time
 * learn how to use to register an event handler that will execute whenever an input button is pressed
+
+```package
+game
+```

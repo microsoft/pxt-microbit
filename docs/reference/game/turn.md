@@ -31,3 +31,7 @@ item.move(2);
 
 [move](/reference/game/move),
 [create sprite](/reference/game/create-sprite)
+
+```package
+game
+```

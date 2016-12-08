@@ -30,3 +30,6 @@ Excellent, you're ready to continue with the [challenges](/lessons/game-counter/
 
 ### ~
 
+```package
+game
+```

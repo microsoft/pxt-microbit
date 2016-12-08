@@ -84,3 +84,6 @@ input.onPinPressed(TouchPin.P0, () => {
 
 Add `POINT ME NORTH` to the list of possible commands.
 
+```package
+game
+```

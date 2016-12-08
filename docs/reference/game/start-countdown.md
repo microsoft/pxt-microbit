@@ -27,3 +27,6 @@ game.startCountdown(10000)
 
 [score](/reference/game/score), [change score by](/reference/game/change-score-by)
 
+```package
+game
+```

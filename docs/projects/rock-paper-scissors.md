@@ -196,3 +196,6 @@ input.onButtonPressed(Button.B, () => {
 How else can you make your game better?
 Ever hear of [Rock Paper Scissors Spock Lizard](http://www.samkass.com/theories/RPSSL.html)?
 
+```package
+game
+```

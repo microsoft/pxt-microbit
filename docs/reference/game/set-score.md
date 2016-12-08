@@ -28,3 +28,7 @@ input.onButtonPressed(Button.A, () => {
 ### See Also
 
 [score](/reference/game/score), [start countdown](/reference/game/start-countdown)
+
+```package
+game
+```

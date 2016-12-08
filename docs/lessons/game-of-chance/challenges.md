@@ -46,3 +46,6 @@ input.onButtonPressed(Button.B, () => {
 
 When you are asked a yes or no question, do you always say yes or no? Add a condition for `on shake` that displays `TRY AGAIN`.
 
+```package
+game
+```

@@ -40,6 +40,9 @@ add these blocks to your coin flipper:
 
 #### ~
 
+Click on the ``+`` button in the toolback and add the **game** package 
+to get the game blocks.
+
 ```blocks
 input.onButtonPressed(Button.A, () => {
     game.addScore(1);
@@ -76,3 +79,7 @@ Flip until your thumbs get tired!
 ### ~button /getting-started/rock-paper-scissors
 NEXT: ROCK PAPER SCISSORS
 ### ~
+
+```package
+game
+```

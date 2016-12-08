@@ -40,6 +40,7 @@ bluetooth.onBluetoothConnected(() => {});
 radio
 devices
 bluetooth
+game
 ```
 
 ### See Also
