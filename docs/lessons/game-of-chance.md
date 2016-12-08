@@ -17,7 +17,6 @@ Learn how to creating a message with a **game over** to write your message. We w
 
 ## Documentation
 
-
 ```cards
 game.gameOver()
 basic.showString("Hello!")
