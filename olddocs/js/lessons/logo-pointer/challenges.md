@@ -9,7 +9,7 @@ This [guided tutorial](/zysycw) will help you display an arrow pointing the dire
 Let's display and upward pointing arrow when the logo is up!
 
 ```
-input.onLogoUp(() => {
+input.onGesture(Gesture.LogoUp, () => {
     images.createImage(`
 . . # . .
 . # # # .
@@ -27,7 +27,7 @@ How about when the logo is down? We should display the arrow pointing downward!
 Let's start by adding a condition for if the logo is down.
 
 ```
-input.onLogoUp(() => {
+input.onGesture(Gesture.LogoUp, () => {
     images.createImage(`
 . . # . .
 . # # # .
@@ -36,7 +36,7 @@ input.onLogoUp(() => {
 . . # . .
 `).showImage(0)
 })
-input.onLogoDown(() => {
+input.onGesture(Gesture.LogoDown,  () => {
 }) // ***
 ```
 
@@ -45,7 +45,7 @@ input.onLogoDown(() => {
 Now we need to display the arrow!
 
 ```
-input.onLogoUp(() => {
+input.onGesture(Gesture.LogoUp, () => {
     images.createImage(`
 . . # . .
 . # # # .
@@ -54,7 +54,7 @@ input.onLogoUp(() => {
 . . # . .
 `).showImage(0)
 })
-input.onLogoDown(() => {
+input.onGesture(Gesture.LogoDown,  () => {
     images.createImage(`
 . . # . .
 . . # . .

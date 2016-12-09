@@ -47,7 +47,8 @@
                 "type": "api",
                 "map": {
                     "bluetooth\\.uartRead\\((.*?)\\)": "bluetooth.uartReadUntil($1)",
-                    "bluetooth\\.uartWrite\\((.*?)\\)": "bluetooth.uartWriteUntil($1)"
+                    "bluetooth\\.uartWrite\\((.*?)\\)": "bluetooth.uartWriteUntil($1)",
+                    "input\\.(onLogoUp|onLogoDown|onScreenUp|onScreenDown|onShake)\\(": "intput.onGesture(Gesture.$1, "
                 }
             }
         ]
