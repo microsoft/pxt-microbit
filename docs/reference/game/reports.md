@@ -25,3 +25,7 @@ Reports the current direction of a sprite on the LED screen
 ```sig
 export function direction(_this: micro_bitSprites.LedSprite) : number
 ```
+
+```package
+game
+```

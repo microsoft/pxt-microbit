@@ -37,3 +37,6 @@ input.onButtonPressed(Button.A, () => {
 
 [Image](/reference/images/image), [show animation](/reference/basic/show-animation), [show image](/reference/images/show-image), [scroll image](/reference/images/scroll-image), [create image](/reference/images/create-image)
 
+```package
+game
+```

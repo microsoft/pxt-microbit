@@ -1,0 +1,12 @@
+{
+    "name": "game",
+    "description": "A game engine for LED pixels",
+    "files": [
+        "README.md",
+        "game.ts"
+    ],
+    "public": true,
+    "dependencies": {
+        "core": "file:../core"
+    }
+}

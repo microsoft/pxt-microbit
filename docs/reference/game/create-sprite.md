@@ -35,3 +35,6 @@ item.move(2);
 [turn](/reference/game/turn),
 [touching](/reference/game/touching)
 
+```package
+game
+```

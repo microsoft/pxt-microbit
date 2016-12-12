@@ -26,3 +26,7 @@ input.onButtonPressed(Button.B, () => {
 
 [score](/reference/game/score),
 [change score by](/reference/game/change-score-by), [start countdown](/reference/game/start-countdown)
+
+```package
+game
+```

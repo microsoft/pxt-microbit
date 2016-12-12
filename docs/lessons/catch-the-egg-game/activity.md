@@ -146,3 +146,7 @@ basic.forever(() => {
 Fantastic! Your game is now ready to show off.
 
 * Press the `run` button to see your finished game!
+
+```package
+game
+```

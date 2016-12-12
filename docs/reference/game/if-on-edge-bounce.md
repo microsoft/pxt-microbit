@@ -32,3 +32,7 @@ input.onButtonPressed(Button.B, () => {
 [create sprite](/reference/game/create-sprite),
 [touching](/reference/game/touching),
 [touching edge](/reference/game/touching-edge)
+
+```package
+game
+```

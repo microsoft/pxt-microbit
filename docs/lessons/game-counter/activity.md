@@ -1,6 +1,10 @@
 # game counter activity
 
-Have you ever tried to create a game counter? The concept is fairly simply: increase the game `score` with `on button pressed` .
+Have you ever tried to create a game counter? The concept is fairly simply: 
+increase the game `score` with `on button pressed` .
+
+Click on the ``+`` button in the toolback and add the **game** package 
+to get the ``game`` blocks.
 
 Let's start by adding `on button (A) pressed` will run each time the user presses A. Let's add a line of code that increments `score` by `1`.
 
@@ -30,3 +34,6 @@ Excellent, you're ready to continue with the [challenges](/lessons/game-counter/
 
 ### ~
 
+```package
+game
+```

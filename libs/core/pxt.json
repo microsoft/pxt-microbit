@@ -21,7 +21,6 @@
         "input.ts",
         "control.ts",
         "control.cpp",
-        "game.ts",
         "led.cpp",
         "led.ts",
         "music.ts",

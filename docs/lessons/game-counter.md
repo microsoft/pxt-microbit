@@ -28,3 +28,7 @@ basic.showNumber(0)
 * learn how arithmetic operators operate on numbers and return a number
 * learn how to run code when an input button is pressed
 * learn how to show a score on the LED screen
+
+```package
+game
+```

@@ -1,0 +1,17 @@
+{
+  "Direction.Left|block": "left",
+  "Direction.Right|block": "right",
+  "LedSpriteProperty.Blink|block": "blink",
+  "LedSpriteProperty.Brightness|block": "brightness",
+  "LedSpriteProperty.Direction|block": "direction",
+  "LedSpriteProperty.X|block": "x",
+  "LedSpriteProperty.Y|block": "y",
+  "game.addScore|block": "change score by|%points",
+  "game.createSprite|block": "create sprite at|x: %x|y: %y",
+  "game.gameOver|block": "game over",
+  "game.score|block": "score",
+  "game.setScore|block": "set score %points",
+  "game.startCountdown|block": "start countdown|(ms) %duration",
+  "game|block": "game",
+  "{id:category}Game": "Game"
+}

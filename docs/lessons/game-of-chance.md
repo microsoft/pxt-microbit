@@ -17,7 +17,6 @@ Learn how to creating a message with a **game over** to write your message. We w
 
 ## Documentation
 
-
 ```cards
 game.gameOver()
 basic.showString("Hello!")
@@ -29,3 +28,7 @@ input.onButtonPressed(Button.A, () => {})
 * learn how to use the game library
 * learn how to show a string on the LED screen one character at a time
 * learn how to use to register an event handler that will execute whenever an input button is pressed
+
+```package
+game
+```

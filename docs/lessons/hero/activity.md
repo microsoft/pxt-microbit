@@ -276,3 +276,6 @@ Congratulations! You have a homemade hero game based on the classic version of P
 
 ### ~
 
+```package
+game
+```

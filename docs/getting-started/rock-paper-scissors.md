@@ -162,6 +162,9 @@ Here is a way you can make your Rock Paper Scissors game better.
 When button ``A`` is pressed, 
 the @boardname@ will add `1` to your score.
 
+Click on the ``+`` button in the toolback and add the **game** package 
+to get the ``game`` blocks.
+
 Open the ``Game`` drawer, and then add the block ``change score by 1`` to your program,
 like this:
 
@@ -203,3 +206,7 @@ Click **Download** to move your program to the @boardname@!
 ### ~button /projects
 NEXT: PROJECTS!
 ### ~
+
+```package
+game
+```

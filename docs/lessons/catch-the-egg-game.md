@@ -49,3 +49,7 @@ game.removeLife(1);
 * learn how to return the modulus
 * learn how to show a number of the @boardname@ screen
 * learn how to pause your code for the specified number of milliseconds
+
+```package
+game
+```
