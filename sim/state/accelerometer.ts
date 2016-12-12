@@ -23,15 +23,15 @@ namespace pxsim.input {
     }
 
     export function rotation(kind: number): number {
-        let b = board().accelerometerState;
-        let acc = b.accelerometer;
+        const b = board().accelerometerState;
+        const acc = b.accelerometer;
         acc.activate();
-        let x = acc.getX(MicroBitCoordinateSystem.NORTH_EAST_DOWN);
-        let y = acc.getX(MicroBitCoordinateSystem.NORTH_EAST_DOWN);
-        let z = acc.getX(MicroBitCoordinateSystem.NORTH_EAST_DOWN);
+        const x = acc.getX(MicroBitCoordinateSystem.NORTH_EAST_DOWN);
+        const y = acc.getY(MicroBitCoordinateSystem.NORTH_EAST_DOWN);
+        const z = acc.getZ(MicroBitCoordinateSystem.NORTH_EAST_DOWN);
 
-        let roll = Math.atan2(y, z);
-        let pitch = Math.atan(-x / (y * Math.sin(roll) + z * Math.cos(roll)));
+        const roll = Math.atan2(y, z);
+        const pitch = Math.atan(-x / (y * Math.sin(roll) + z * Math.cos(roll)));
 
         let r = 0;
         switch (kind) {

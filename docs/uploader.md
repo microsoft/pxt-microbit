@@ -38,7 +38,7 @@ That's it!
 
 ### Installation Instructions
 
-* Download the [Microsoft.Uploader.Microbit.zip](https://pxt.microbit.org/microbit-uploader.zip) file to your local computer.
+* Download the [Microsoft.Uploader.Microbit.zip](https://www.touchdevelop.com/microbituploader.zip) file to your local computer.
 * Unzip the .zip file to your desktop.
 * Launch the Microsoft.Uploader.exe file before working on your @boardname@.
 

@@ -556,12 +556,12 @@ namespace pxsim.visuals {
 
         private updateTilt() {
             if (this.props.disableTilt) return;
-            let state = this.board;
+            const state = this.board;
             if (!state || !state.accelerometerState.accelerometer.isActive) return;
 
-            let x = state.accelerometerState.accelerometer.getX();
-            let y = state.accelerometerState.accelerometer.getY();
-            let af = 8 / 1023;
+            const x = state.accelerometerState.accelerometer.getX();
+            const y = -state.accelerometerState.accelerometer.getY();
+            const af = 8 / 1023;
 
             this.element.style.transform = "perspective(30em) rotateX(" + y * af + "deg) rotateY(" + x * af + "deg)"
             this.element.style.perspectiveOrigin = "50% 50% 50%";
@@ -704,7 +704,7 @@ namespace pxsim.visuals {
             }
             let tiltDecayer = 0;
             this.element.addEventListener(pointerEvents.move, (ev: MouseEvent) => {
-                let state = this.board;
+                const state = this.board;
                 if (!state.accelerometerState.accelerometer.isActive) return;
 
                 if (tiltDecayer) {
@@ -712,14 +712,14 @@ namespace pxsim.visuals {
                     tiltDecayer = 0;
                 }
 
-                let bbox = this.element.getBoundingClientRect();
-                let ax = (ev.clientX - bbox.width / 2) / (bbox.width / 3);
-                let ay = (ev.clientY - bbox.height / 2) / (bbox.height / 3);
+                const bbox = this.element.getBoundingClientRect();
+                const ax = (ev.clientX - bbox.width / 2) / (bbox.width / 3);
+                const ay = (ev.clientY - bbox.height / 2) / (bbox.height / 3);
 
-                let x = - Math.max(- 1023, Math.min(1023, Math.floor(ax * 1023)));
-                let y = Math.max(- 1023, Math.min(1023, Math.floor(ay * 1023)));
-                let z2 = 1023 * 1023 - x * x - y * y;
-                let z = Math.floor((z2 > 0 ? -1 : 1) * Math.sqrt(Math.abs(z2)));
+                const x = - Math.max(- 1023, Math.min(1023, Math.floor(ax * 1023)));
+                const y = - Math.max(- 1023, Math.min(1023, Math.floor(ay * 1023)));
+                const z2 = 1023 * 1023 - x * x - y * y;
+                const z = Math.floor((z2 > 0 ? -1 : 1) * Math.sqrt(Math.abs(z2)));
 
                 state.accelerometerState.accelerometer.update(x, y, z);
                 this.updateTilt();
