@@ -31,7 +31,7 @@ namespace control {
     /**
      * If the condition is false, display msg on serial console, and panic with code 098.
      */
-    export function assert(condition: boolean, msg ?: string) {
+    export function assert(condition: boolean, msg?: string) {
         if (!condition) {
             console.log("ASSERTION FAILED")
             if (msg != null) {
