@@ -26,6 +26,7 @@
   "String.substr": "Return substring of the current string.",
   "String.substr|param|length": "number of characters to extract",
   "String.substr|param|start": "first character index; can be negative from counting from the end, eg:0",
+  "basic": "Provides access to basic micro:bit functionality.",
   "basic.clearScreen": "Turn off all LEDs",
   "basic.forever": "Repeats the code forever in the background. On each iteration, allows other codes to run.",
   "basic.onStart": "Code that runs when the program starts.",
