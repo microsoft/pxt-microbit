@@ -37,7 +37,7 @@ input.onButtonPressed(Button.B, () => {
 
 We will use the @boardname@'s compass to detect the magnet. Compass's tell us what direction we are pointing by detecting the Earth's magnetic field but they can also detect any other magnet nearby. We will use that to check if our magnet is next to the @boardname@ by using the [magnetic force](/reference/input/magnetic-force) block found in the input menu's 'more' section. As we only want to measure the strength we change the drop down to select 'strength':
 
-```blocks
+```block
 input.magneticForce(Dimension.Strength)
 ```
 
@@ -50,16 +50,19 @@ If you have ever played with magnets you know they have two ends, often called a
 So in the code below we will check if the absolute value of our magnetic field strength reading is more than 100 and save the result of that check in a new variable called 'isSwitched':
 
 ```blocks
-let isSwitched = Math.abs(input.magneticForce(Dimension.Strength)) > 100
+let force = Math.abs(input.magneticForce(Dimension.Strength));
+let isSwitched = force > 100
 ```
 ## Step 4: running our 'magnet nearby' check all the time
 
 At the moment our code to detect the magnet being nearby will only run once so we need to put it into a [forever](/reference/basic/forever) block so that it keeps getting run again and again checking for the magnet to come near to the @boardname@. We should also make sure 'isSwitched' is false when our program starts.
 
 ```blocks
+let force = 0;
 let isSwitched = false;
 basic.forever(() => {
-	let isSwitched = Math.abs(input.magneticForce(Dimension.Strength)) > 100
+    force = Math.abs(input.magneticForce(Dimension.Strength));
+    isSwitched = force > 100
 })
 ```
 
@@ -68,10 +71,11 @@ basic.forever(() => {
 Now we can check the value of our variable 'isSwitched' whenever we want and we will know that the magnet is nearby if it's value is 'true'. Let's use that to change how the buttons work and complete the code for our trick. We will add an 'if, else' block to each button's code and check if we should swap over what each button displays because 'isSwitched' is equal to true:
 
 ```blocks
-
+let force = 0;
 let isSwitched = false;
 basic.forever(() => {
-    isSwitched = Math.abs(input.magneticForce(Dimension.Strength)) > 100
+    force = Math.abs(input.magneticForce(Dimension.Strength));
+    isSwitched = force > 100
 })
 
 input.onButtonPressed(Button.A, () => {
