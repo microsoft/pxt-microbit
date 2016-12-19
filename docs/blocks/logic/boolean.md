@@ -86,12 +86,14 @@ if (led.point(1,1) && led.point(2,2)) {
 When you compare two Numbers, you get a Boolean value, such as the comparison `x < 5` in the code below:
 
 ```blocks
-let x = Math.random(5)
-if(x < 5) {
-   basic.showString("low");
-} else { 
-   basic.showString("high");
-} 
+input.onButtonPressed(Button.A, () => {
+    let x = Math.random(5)
+    if(x < 5) {
+    basic.showString("low");
+    } else { 
+    basic.showString("high");
+    }
+})
 ```
 
 See the documentation on [Numbers](/reference/types/number) for more information on comparing two Numbers. You can also [compare strings](/reference/types/string-functions) using the `equals` function.

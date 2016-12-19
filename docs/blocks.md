@@ -9,6 +9,10 @@ let x = 0;
 Math.random(5);
 ```
 
+```cards
+basic.onStart(() => {})
+```
+
 ## See Also
 
 [logic](/blocks/logic), [loops](/blocks/loops), [math](/blocks/math), [variables](/blocks/variables)
