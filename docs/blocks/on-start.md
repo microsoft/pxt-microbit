@@ -15,3 +15,8 @@ input.onButtonPressed(Button.A, () => {
 })
 led.setBrightness(50)
 ```
+
+
+## What about JavaScript?
+
+``on-start`` only exists in the block editor. In JavaScript, all code executes sequentially from the first line.

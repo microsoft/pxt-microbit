@@ -11,4 +11,4 @@ Math.random(5);
 
 ## See Also
 
-[logic](/blocks/logic), [loops](/blocks/loops), [math](/blocks/math), [variables](/blocks/variables)
+[logic](/blocks/logic), [loops](/blocks/loops), [math](/blocks/math), [variables](/blocks/variables), [on-start](/blocks/on-start)
