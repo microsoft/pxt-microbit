@@ -1,5 +1,5 @@
 {
-  "bluetooth": "Support for additional Bluetooth services.",
+  "bluetooth": "Support for additional Bluetooth services.\n\nSupport for additional Bluetooth services.",
   "bluetooth.advertiseUrl": "Advertise an Eddystone URL",
   "bluetooth.advertiseUrl|param|connectable": "true to keep bluetooth connectable for other services, false otherwise.",
   "bluetooth.advertiseUrl|param|power": "power level between 0 and 7, eg: 7",

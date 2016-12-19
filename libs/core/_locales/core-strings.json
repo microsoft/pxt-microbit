@@ -89,7 +89,6 @@
   "String|block": "String",
   "basic.clearScreen|block": "clear screen",
   "basic.forever|block": "forever",
-  "basic.onStart|block": "on start",
   "basic.pause|block": "pause (ms) %pause",
   "basic.showLeds|block": "show leds",
   "basic.showNumber|block": "show|number %number",
