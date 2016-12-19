@@ -57,6 +57,12 @@
                     "bluetooth\\s*\\.uartRead\\s*\\((.*?)\\)": "bluetooth.uartReadUntil($1)",
                     "bluetooth\\s*\\.uartWrite\\s*\\((.*?)\\)": "bluetooth.uartWriteUntil($1)"
                 }
+            },
+            {
+                "type": "blockId",
+                "map": {
+                    "device_get_acceleration": "device_acceleration"
+                }
             }
         ]
     },
