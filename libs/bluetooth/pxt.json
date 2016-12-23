@@ -30,7 +30,7 @@
                     "event_service": 1,
                     "device_info_service": 1,
                     "eddystone_url": 1,
-                    "eddystone_uid": 0,
+                    "eddystone_uid": 1,
                     "open": 0,
                     "pairing_mode": 1,
                     "whitelist": 1,

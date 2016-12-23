@@ -138,6 +138,24 @@ namespace bluetooth {
     }
 
     /**
+    * Advertise an Eddystone UID
+	* @param nsAndInstance 16 bytes buffer of namespace (bytes 0-9) and instance (bytes 10-15)
+	* @param power power level between 0 and 7, eg: 7
+    * @param connectable true to keep bluetooth connectable for other services, false otherwise.
+    */
+    //% parts=bluetooth weight=12 advanced=true
+    void advertiseUidBuffer(Buffer nsAndInstance, int power, bool connectable) {
+        ManagedBuffer buf(nsAndInstance);
+        if (buf.length() != 16) return;
+
+        power = min(MICROBIT_BLE_POWER_LEVELS-1, max(0, power));
+        int8_t level = CALIBRATED_POWERS[power];
+        uint8_t uidNs[10]; buf.readBytes(uidNs, 0, 10);
+        uint8_t uidInst[6]; buf.readBytes(uidInst, 10, 6);
+        uBit.bleManager.advertiseEddystoneUid((const char*)uidNs, (const char*)uidInst, level, connectable);
+    }
+
+    /**
     * Sets the bluetooth transmit power between 0 (minimal) and 7 (maximum).
     * @param power power level between 0 (minimal) and 7 (maximum), eg: 7.
     */

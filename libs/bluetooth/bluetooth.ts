@@ -46,4 +46,21 @@ namespace bluetooth {
         // dummy implementation for simulator
         return "???"
     }
+
+    /**
+    * Advertise an Eddystone UID
+    * @param ns 4 last bytes of the namespace uid
+    * @param instance 4 last bytes of the instance uid
+    * @param power power level between 0 and 7, eg: 7
+    * @param connectable true to keep bluetooth connectable for other services, false otherwise.
+    */
+    //% blockId=eddystone_advertise_uid block="bluetooth advertise UID|namespace (bytes 6-9)%ns|instance (bytes 2-6)%instance|with power %power|connectable %connectable"
+    //% parts=bluetooth weight=12 blockGap=8
+    //% help=bluetooth/advertise-uid blockExternalInputs=1
+    export function advertiseUid(ns: number, instance: number, power: number, connectable: boolean) {
+        const buf = pins.createBuffer(16);
+        buf.fill(ns, 6, 4);
+        buf.fill(instance, 12, 4);
+        bluetooth.advertiseUidBuffer(buf, power, connectable);
+    }
 }

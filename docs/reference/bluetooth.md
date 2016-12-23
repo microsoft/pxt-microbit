@@ -35,7 +35,8 @@ bluetooth.uartWriteValue("", 0);
 ## Eddystone
 
 ```cards
-bluetooth.advertiseUrl("https://pxt.microbit.org/", 7);
+bluetooth.advertiseUid(42, 1, 7, true);
+bluetooth.advertiseUrl("https://pxt.microbit.org/", 7, true);
 bluetooth.stopAdvertising();
 ```
 

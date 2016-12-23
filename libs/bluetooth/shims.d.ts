@@ -93,6 +93,15 @@ declare namespace bluetooth {
     function advertiseUrl(url: string, power: number, connectable: boolean): void;
 
     /**
+     * Advertise an Eddystone UID
+     * @param nsAndInstance 16 bytes buffer of namespace (bytes 0-9) and instance (bytes 10-15)
+     * @param power power level between 0 and 7, eg: 7
+     * @param connectable true to keep bluetooth connectable for other services, false otherwise.
+     */
+    //% parts=bluetooth weight=12 advanced=true shim=bluetooth::advertiseUidBuffer
+    function advertiseUidBuffer(nsAndInstance: Buffer, power: number, connectable: boolean): void;
+
+    /**
      * Sets the bluetooth transmit power between 0 (minimal) and 7 (maximum).
      * @param power power level between 0 (minimal) and 7 (maximum), eg: 7.
      */

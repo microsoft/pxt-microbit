@@ -1,6 +1,6 @@
-# Avertise Url
+# Avertise UID Buffer
 
-Advertises a URL via the Eddystone protocol over Bluetooth.
+Advertises a UID via the Eddystone protocol over Bluetooth.
 
 ## ~hint
 
@@ -18,20 +18,15 @@ Read more at https://lancaster-university.github.io/microbit-docs/ble/eddystone/
 ## ~
 
 ```sig
-bluetooth.advertiseUrl("https://pxt.microbit.org/", true);
+bluetooth.advertiseUidBuffer(pins.createBuffer(16), 7, true);
 ```
 
 ### Parameters
 
-* ``url`` - a [string](/reference/types/string) containing the URL to broadcast, at most 17 characters long, excluding the protocol (eg: ``https://``) which gets encoded as 1 byte.
+* ``buffer`` - a 16 bytes buffer containing the namespace (first 10 bytes) and instance (last 6 bytes).
 * ``power`` - a [number](/reference/types/number) representing the power level between 0 (short) and 7 (maximum range).
 * ``connectable`` - a [boolean](/reference/type/boolean) indicating whether or not the micro:bit should accept connections. 
 
-### Example: Broadcast a secret code
-
-```blocks
-bluetooth.advertiseUrl("https://pxt.io?secret=42", true);
-```
 
 ## See Also
 
