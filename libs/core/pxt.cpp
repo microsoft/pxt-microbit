@@ -246,6 +246,25 @@ namespace pxt {
       return;
     }
 
+    void Segment::ensure(uint16_t newSize)
+    {
+      if (newSize < size)
+      {
+        return;
+      }
+      growByMin(newSize);
+    }
+
+    void Segment::setLength(uint32_t newLength)
+    {
+      if (newLength > size)
+      {
+        ensure(length);        
+      }
+      length = newLength;
+      return;
+    }
+
     void Segment::push(uint32_t value) 
     { 
       this->set(length, value);
@@ -269,17 +288,63 @@ namespace pxt {
       return 0;
     }
 
-    void Segment::remove(uint32_t i) 
+    //this function removes index i and     
+    uint32_t Segment::remove(uint32_t i) 
     {
 #ifdef DEBUG_BUILD
-      printf("In Segment::remove\n");
+      printf("In Segment::remove index:%u\n", i);
       this->print();
 #endif                  
       if (i < length)
       {
-        data[i] = Segment::MissingValue;
+        //value to return
+        uint32_t ret = data[i];
+        if (i + 1 < length)
+        {
+          //Move the rest of the elements to fill in the gap.
+          memmove(data + i, data + i + 1, (length - i - 1) * sizeof(uint32_t));
+        }
+        length--;        
+        data[length] = Segment::MissingValue;        
+#ifdef DEBUG_BUILD
+        printf("After Segment::remove index:%u\n", i);
+        this->print();
+#endif  
+        return ret;
       }
-      return;
+      error(ERR_OUT_OF_BOUNDS);
+      return 0;
+    }
+
+    //this function removes index i and     
+    void Segment::insert(uint32_t i, uint32_t value) 
+    {
+#ifdef DEBUG_BUILD
+      printf("In Segment::insert index:%u value:%u\n", i, value);
+      this->print();
+#endif                  
+
+      if (i < length)
+      {
+        ensure(length + 1);
+        if (i + 1 < length)
+        {
+          //Move the rest of the elements to fill in the gap.
+          memmove(data + i + 1, data + i, (length - i) * sizeof(uint32_t));
+        }
+
+        data[i] = value;        
+        length++;
+      }
+      else
+      {
+        //This is insert beyond the length, just call set which will adjust the length
+        set(i, value);
+      }
+#ifdef DEBUG_BUILD
+      printf("After Segment::insert index:%u\n", i);
+      this->print();
+#endif                   
     }
 
     void Segment::print()
@@ -365,17 +430,34 @@ namespace pxt {
       }
     }
 
-    void RefCollection::removeAt(int i) 
+    uint32_t RefCollection::removeAt(int i) 
     {
       if (!head.isValidIndex((uint32_t)i))
       {
-        return;
+        error(ERR_OUT_OF_BOUNDS);
+        return 0;
       }
       if (isRef())
       {
         decr(head.get(i));
       } 
-      head.remove(i);
+      return head.remove(i);
+    }
+
+    void RefCollection::insertAt(int i, uint32_t value) 
+    {
+      if (i < length())
+      {
+        head.insert(i, value);
+        if (isRef())
+        {
+          incr(value);
+        } 
+      }
+      else
+      {
+        error(ERR_OUT_OF_BOUNDS);
+      }
     }
 
     void RefCollection::setAt(int i, uint32_t value) 

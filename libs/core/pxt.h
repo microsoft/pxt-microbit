@@ -180,6 +180,7 @@ namespace pxt {
       static uint16_t growthFactor(uint16_t size);      
       void growByMin(uint16_t minSize);
       void growBy(uint16_t newSize);
+      void ensure(uint16_t newSize);
 
   public:
       Segment() : data (nullptr), length(0), size(0) {};
@@ -188,11 +189,13 @@ namespace pxt {
       void set(uint32_t i, uint32_t value);      
 
       uint32_t getLength() { return length;};
+      void setLength(uint32_t newLength);
 
       void push(uint32_t value);
       uint32_t pop();
 
-      void remove(uint32_t i);
+      uint32_t remove(uint32_t i);
+      void insert(uint32_t i, uint32_t value);
 
       //Returns true if there is a valid index greater than or equal to 'i', returns false otherwise
       //If 'i' is valid returns it in 'result', if not tries to find the next valid
@@ -225,11 +228,17 @@ namespace pxt {
     void print();
 
     uint32_t length() { return head.getLength();}
+    void setLength(uint32_t newLength) { head.setLength(newLength); }
+
     void push(uint32_t x);
     uint32_t pop();
-    uint32_t getAt(int x);
-    void removeAt(int x);
-    void setAt(int x, uint32_t y);
+    uint32_t getAt(int i);
+    void setAt(int i, uint32_t x);
+    //removes the element at index i and shifts the other elements left
+    uint32_t removeAt(int i);
+    //inserts the element at index i and moves the other elements right.
+    void insertAt(int i, uint32_t x); 
+
     int indexOf(uint32_t x, int start);
     int removeElement(uint32_t x);
   };

@@ -153,15 +153,19 @@ namespace Array_ {
     //%
     int length(RefCollection *c) { return c->length(); }
     //%
+    void setLength(RefCollection *c, int newLength) { c->setLength(newLength); }    
+    //%
     void push(RefCollection *c, uint32_t x) { c->push(x); }
     //%
     uint32_t pop(RefCollection *c) { return c->pop(); }    
     //%
     uint32_t getAt(RefCollection *c, int x) { return c->getAt(x); }
     //%
-    void removeAt(RefCollection *c, int x) { c->removeAt(x); }
+    void setAt(RefCollection *c, int x, uint32_t y) { c->setAt(x, y); }    
     //%
-    void setAt(RefCollection *c, int x, uint32_t y) { c->setAt(x, y); }
+    uint32_t removeAt(RefCollection *c, int x) { return c->removeAt(x); }
+    //%
+    void insertAt(RefCollection *c, int x, uint32_t value) { c->insertAt(x, value); }    
     //%
     int indexOf(RefCollection *c, uint32_t x, int start) { return c->indexOf(x, start); }
     //%
