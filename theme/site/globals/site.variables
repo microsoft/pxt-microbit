@@ -29,7 +29,7 @@
 *******************************/
 
 @mainMenuHeight: 5rem;
-@mobileMenuHeight: 5rem;
+@mobileMenuHeight: 4.4rem;
 
 @simulatorBackground: #FDFDFF;
 @blocklySvgColor: #ecf0f1;

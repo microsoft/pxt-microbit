@@ -59,8 +59,8 @@ namespace bluetooth {
     //% help=bluetooth/advertise-uid blockExternalInputs=1
     export function advertiseUid(ns: number, instance: number, power: number, connectable: boolean) {
         const buf = pins.createBuffer(16);
-        buf.fill(ns, 6, 4);
-        buf.fill(instance, 12, 4);
+        buf.setNumber(NumberFormat.Int32BE, 6, ns);
+        buf.setNumber(NumberFormat.Int32BE, 12, instance);
         bluetooth.advertiseUidBuffer(buf, power, connectable);
     }
 }
