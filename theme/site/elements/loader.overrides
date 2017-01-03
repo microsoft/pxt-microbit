@@ -1,3 +1,56 @@
 /*******************************
          Site Overrides
 *******************************/
+
+.ui.loader:before {
+   border: none;
+   border-radius: 0px;
+   box-shadow: none;
+}
+
+.ui.loader:after {
+   border: none;
+   box-shadow: none;
+   border-radius: 0px;
+   margin: 40px auto;
+   background: transparent url("static/microbit.simplified.svg") no-repeat center center;
+   background-size: 100%;
+  -webkit-animation: loader-pxt @loaderSpeed infinite ease-in-out;
+  animation: loader-pxt @loaderSpeed infinite ease-in-out;
+}
+
+@-webkit-keyframes loader-pxt {
+  0% {
+    -webkit-transform: perspective(160px) rotateX(0deg) rotateY(0deg);
+            transform: perspective(160px) rotateX(0deg) rotateY(0deg); 
+            opacity: 0}
+  15% {
+    -webkit-transform: perspective(160px) rotateX(0deg) rotateY(-60.1deg);
+            transform: perspective(160px) rotateX(0deg) rotateY(-60.1deg); }
+  50% {
+    -webkit-transform: perspective(160px) rotateX(0deg) rotateY(60.1deg);
+            transform: perspective(160px) rotateX(0deg) rotateY(60.1deg); 
+            opacity: 1}
+  100% {
+    -webkit-transform: perspective(160px) rotateX(0deg) rotateY(-180.9deg);
+            transform: perspective(160px) rotateX(0deg) rotateY(-180.9deg); 
+            opacity: 0}
+}
+
+@keyframes loader-pxt {
+  0% {
+    -webkit-transform: perspective(160px) rotateX(0deg) rotateY(0deg);
+            transform: perspective(160px) rotateX(0deg) rotateY(0deg); 
+            opacity: 0}
+  15% {
+    -webkit-transform: perspective(160px) rotateX(0deg) rotateY(-60.1deg);
+            transform: perspective(160px) rotateX(0deg) rotateY(-60.1deg); }
+  50% {
+    -webkit-transform: perspective(160px) rotateX(0deg) rotateY(60.1deg);
+            transform: perspective(160px) rotateX(0deg) rotateY(60.1deg);
+            opacity: 1}
+  100% {
+    -webkit-transform: perspective(160px) rotateX(0deg) rotateY(-180.9deg);
+            transform: perspective(160px) rotateX(0deg) rotateY(-180.9deg); 
+            opacity: 0}
+}

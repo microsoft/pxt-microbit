@@ -1,3 +1,7 @@
 /*******************************
     User Variable Overrides
 *******************************/
+
+@loaderSpeed: 2s;
+
+@large   : 200px;
