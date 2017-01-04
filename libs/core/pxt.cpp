@@ -288,7 +288,8 @@ namespace pxt {
       return 0;
     }
 
-    //this function removes index i and     
+    //this function removes an element at index i and shifts the rest of the elements to
+    //left to fill the gap   
     uint32_t Segment::remove(uint32_t i) 
     {
 #ifdef DEBUG_BUILD
@@ -316,7 +317,7 @@ namespace pxt {
       return 0;
     }
 
-    //this function removes index i and     
+    //this function inserts element value at index i by shifting the rest of the elements right.     
     void Segment::insert(uint32_t i, uint32_t value) 
     {
 #ifdef DEBUG_BUILD
