@@ -1,7 +1,7 @@
 /**
  * Control of the LED screen.
  */
-//% color=#5C2D91 weight=97
+//% color=#5C2D91 weight=97 icon="\uf205"
     namespace led {
 
     // what's the current high value
