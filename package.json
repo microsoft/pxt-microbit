@@ -21,10 +21,12 @@
     "built/*.json",
     "built/*.d.ts",
     "built/hexcache",
+    "built/web",
     "sim/public",
     "docs/*.md",
     "docs/*/*.md",
-    "docs/*/*/*.md"
+    "docs/*/*/*.md",
+    "docs/static/icons/favicon.ico"
   ],
   "main": "built/pxtrequire.js",
   "typings": "built/pxtrequire.d.ts",
