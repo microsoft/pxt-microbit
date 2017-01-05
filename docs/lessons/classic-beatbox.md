@@ -1,6 +1,6 @@
 # classic beatbox 
 
-display beautiful images on the BBC micro:bit.
+display beautiful images on the @boardname@.
 
 ## Topic
 
@@ -19,5 +19,5 @@ Learn how to make a beatbox music player using pins P1 and P2. We will be learni
 
 ## Objectives
 
-* learn how to code music on the BBC micro:bit
+* learn how to code music on the @boardname@
 

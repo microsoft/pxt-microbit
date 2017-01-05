@@ -1,10 +1,10 @@
 # Play Tone
 
-Play a musical tone through pin ``P0`` of the micro:bit for as long as you say.
+Play a musical tone through pin ``P0`` of the @boardname@ for as long as you say.
 
 ## Simulator
 
-This function only works on the micro:bit and in some browsers.
+This function only works on the @boardname@ and in some browsers.
 
 ```sig
 music.playTone(440, 120)
@@ -23,6 +23,15 @@ Next, it plays that note for 1000 milliseconds (one second).
 ```blocks
 let freq = music.noteFrequency(Note.C)
 music.playTone(freq, 1000)
+```
+
+
+### Using other pins
+
+Use [analogSetPitchPin](/reference/pins/analog-set-pitch-pin) to change that pin used to generate music.
+
+```blocks
+pins.analogSetPitchPin(AnalogPin.P1);
 ```
 
 ### See also

@@ -80,7 +80,7 @@ Answer the questions while completing the tutorial. Pay attention to the dialogu
 
 **Questions 10-14 are concerned with 'number pysch controller tutorial'**
 
-## 10. Write the code that asks for a player number if button 'A' is pressed on the BBC controller micro:bit.
+## 10. Write the code that asks for a player number if button 'A' is pressed on the BBC controller @boardname@.
 
 <br />
 
@@ -100,7 +100,7 @@ Answer the questions while completing the tutorial. Pay attention to the dialogu
 
 <br/>
 
-## 13. Create a while loop that first reads which controller the console micro:bit is requesting data from. Plot a waiting image, and then write an IF statement to check if the request corresponds to the controller. (Don't worry about writing anything inside the if statement).
+## 13. Create a while loop that first reads which controller the console @boardname@ is requesting data from. Plot a waiting image, and then write an IF statement to check if the request corresponds to the controller. (Don't worry about writing anything inside the if statement).
 
 <br />
 
@@ -108,7 +108,7 @@ Answer the questions while completing the tutorial. Pay attention to the dialogu
 
 <br/>
 
-## 14. Write the code that displays an "X" on the BBC micro:bit if 'result' is 1. Otherwise, display a "check mark".
+## 14. Write the code that displays an "X" on the @boardname@ if 'result' is 1. Otherwise, display a "check mark".
 
 <br />
 

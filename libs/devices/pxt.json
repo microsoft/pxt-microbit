@@ -1,6 +1,6 @@
 {
     "name": "devices",
-    "description": "The BLE specific services",
+    "description": "Camera, remote control and other Bluetooth services",
     "files": [
         "README.md",
         "enums.d.ts",
@@ -9,16 +9,8 @@
     ],
     "public": true,
     "dependencies": {
-        "core": "file:../core"
-    },
-    "yotta": {
-        "config": {
-            "microbit-dal": {
-                "bluetooth": {
-                    "enabled": 1
-                }
-            }
-        }
+        "core": "file:../core",
+        "bluetooth": "file:../bluetooth"
     },
     "installedVersion": "ljipgq"
 }

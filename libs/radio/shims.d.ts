@@ -2,7 +2,7 @@
 
 
 
-    //% color=270 weight=34
+    //% color=270 weight=34 icon="\uf012"
 declare namespace radio {
 
     /**
@@ -16,7 +16,7 @@ declare namespace radio {
     /**
      * Broadcasts a name / value pair along with the device serial number
      * and running time to any connected micro:bit in the group.
-     * @param name the field name (max 12 characters), eg: "data"
+     * @param name the field name (max 12 characters), eg: "name"
      * @param value the numberic value
      */
     //% help=radio/send-value
@@ -40,8 +40,18 @@ declare namespace radio {
     //% help=radio/write-value-to-serial
     //% weight=3
     //% blockId=radio_write_value_serial block="radio write value to serial"
-    //% advanced=true shim=radio::writeValueToSerial
+    //% deprecated=true shim=radio::writeValueToSerial
     function writeValueToSerial(): void;
+
+    /**
+     * Writes the last received packet to serial as JSON. This should be called
+     * within an ``onDataPacketReceived`` callback.
+     */
+    //% help=radio/write-received-packet-to-serial
+    //% weight=3
+    //% blockId=radio_write_packet_serial block="radio write received packet to serial"
+    //% advanced=true shim=radio::writeReceivedPacketToSerial
+    function writeReceivedPacketToSerial(): void;
 
     /**
      * Reads the next packet from the radio queue and returns the packet's number

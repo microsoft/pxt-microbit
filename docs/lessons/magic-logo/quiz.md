@@ -12,9 +12,9 @@ Use the hints from the [magic logo activity](/lessons/magic-logo/activity) to an
 
 <br/>
 
-## 2. Write the condition that detects when the BBC micro:bit logo is facing up and vertically orientated.
+## 2. Write the condition that detects when the @boardname@ logo is facing up and vertically orientated.
 
-## 3. Write the code to display a downward pointing arrow when the BBC micro:bit logo is down.
+## 3. Write the code to display a downward pointing arrow when the @boardname@ logo is down.
 
 ![](/static/mb/lessons/magic-logo-0.png)
 

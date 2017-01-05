@@ -4,7 +4,7 @@ The on fall function.
 
 ### Challenge 0
 
-Welcome! This [guided tutorial](https://live.microbit.co.uk/td/lessons/on-fall/tutorial) will show you how to detect when the micro:bit is falling. Your goal is to write a program that detects when the micro:bit falls!
+Welcome! This [guided tutorial](https://live.microbit.co.uk/td/lessons/on-fall/tutorial) will show you how to detect when the @boardname@ is falling. Your goal is to write a program that detects when the @boardname@ falls!
 
 ```
 input.onFall(() => {
@@ -61,7 +61,7 @@ input.onFall(() => {
 
 ### Challenge 3
 
-Create a loop so that the micro:bit alternates between the exclamation point and "X" images when the micro:bit falls. You will need a `forever` loop and a pause at the end of the loop to do this.
+Create a loop so that the @boardname@ alternates between the exclamation point and "X" images when the @boardname@ falls. You will need a `forever` loop and a pause at the end of the loop to do this.
 
 ## See Also
 

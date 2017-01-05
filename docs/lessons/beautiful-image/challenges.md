@@ -18,7 +18,7 @@ basic.showLeds(`
 
 ### Challenge 1
 
-Now show an new image that will display on the micro:bit.
+Now show an new image that will display on the @boardname@.
 
 ```blocks
 basic.showLeds(`

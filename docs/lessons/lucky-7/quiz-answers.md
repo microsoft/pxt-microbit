@@ -1,6 +1,6 @@
 #  lucky 7 blocks quiz answers
 
-Show a number on the micro:bit. 
+Show a number on the @boardname@. 
 
 This is the answer key for the [lucky 7 quiz](/lessons/lucky-7/quiz).
 
@@ -26,7 +26,7 @@ basic.showNumber(21)
 
 ![](/static/mb/lessons/lucky-7-1.png)
 
-## 4. Write the code that will be used to display the number 3 on the micro:bit.
+## 4. Write the code that will be used to display the number 3 on the @boardname@.
 
 ![](/static/mb/lessons/lucky-7-2.png)
 

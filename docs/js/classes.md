@@ -35,7 +35,7 @@ This calls into the constructor we defined earlier, creating a new object with t
 # Inheritance
 
 ### ~hint
-### Inheritance is not supported yet for the micro:bit. Coming soon...
+### Inheritance is not supported yet for the @boardname@. Coming soon...
 ### ~
 
 In TypeScript, we can use common object-oriented patterns.

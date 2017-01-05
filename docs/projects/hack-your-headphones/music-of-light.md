@@ -10,7 +10,9 @@ Let's start by adding a variable where you can store data. Then rename the varia
 
 
 ```blocks
-let light = input.lightLevel();
+input.onButtonPressed(Button.A, () => {
+    let light = input.lightLevel();
+});
 ```
 
 We want to play music on button pressed in order to register an event handler that will execute whenever when you run a script and click on button pressed on the simulator. We must start by opening the Input drawer and adding `on button pressed` A. Then add a block `rest` to plays nothing for a `1/16` beat. Modify your code so that your code looks like this.
@@ -67,4 +69,4 @@ input.onButtonPressed(Button.A, () => {
 });
 ```
 
-* click **Download** and run your code on the micro:bit.
+* click **Download** and run your code on the @boardname@.

@@ -23,7 +23,7 @@ pins.analogSetPeriod(AnalogPin.P0, 20000)
 
 ### See also
 
-[micro:bit pins](/device/pins),
+[@boardname@ pins](/device/pins),
 [on pin pressed](/reference/input/on-pin-pressed),
 [analog read pin](/reference/pins/analog-read-pin),
 [analog write pin](/reference/pins/analog-write-pin),

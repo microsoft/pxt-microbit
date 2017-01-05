@@ -1,6 +1,6 @@
 # dice roll quiz
 
-Create a dice when the BBC micro:bit is shaken 
+Create a dice when the @boardname@ is shaken 
 
 ## Name
 

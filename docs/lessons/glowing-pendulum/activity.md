@@ -47,7 +47,7 @@ basic.forever(() => {
 });
 ```
 
-Since the micro:bit will be swinging back and forth, the acceleration will only be positive half of the time. Thus, to always get a positive value, we want to take the absolute value of the acceleration.
+Since the @boardname@ will be swinging back and forth, the acceleration will only be positive half of the time. Thus, to always get a positive value, we want to take the absolute value of the acceleration.
 
 
 ```blocks
@@ -64,7 +64,7 @@ basic.forever(() => {
 });
 ```
 
-The function `acceleration(y)` returns a number between 0 and 1024. We want to use this value for the brightness of the micro:bit, but the `set brightness()` only accepts a value between 0 and 256. Thus, we need to divide the acceleration by 4 to ensure we will be in the appropriate range.
+The function `acceleration(y)` returns a number between 0 and 1024. We want to use this value for the brightness of the @boardname@, but the `set brightness()` only accepts a value between 0 and 256. Thus, we need to divide the acceleration by 4 to ensure we will be in the appropriate range.
 
 ```blocks
 basic.showLeds(`
@@ -82,7 +82,7 @@ basic.forever(() => {
 
 ```
 
-Now let's use our acceleration value to set the brightness on the micro:bit.
+Now let's use our acceleration value to set the brightness on the @boardname@.
 
 ```blocks
 basic.showLeds(`

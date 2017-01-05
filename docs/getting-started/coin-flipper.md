@@ -4,7 +4,7 @@
 
 Are you trying to choose whether to play soccer or go to the movies
 instead, or which toppings to have on your pizza?  Build a coin
-flipping machine with the BBC micro:bit to choose for you!
+flipping machine with the @boardname@ to choose for you!
 
 ### ~
 
@@ -23,8 +23,8 @@ input.onButtonPressed(Button.B, () => {
 ```
 ### ~hint
 
-The ``pick random true or false`` block randomly tells the ``if``
-block `true` or `false`.  If the ``pick`` block picked `true`, the
+The `[Math.randomBoolean()]` block randomly tells the ``if``
+block `true` or `false`.  If value picked is `true`, the
 ``if`` block shows the letter `H`. Otherwise, it shows the letter `T`.
 
 That's it!
@@ -50,7 +50,7 @@ input.onButtonPressed(Button.AB, () => {
 ```
 
 These blocks mean that if you press button `A`, you will add `1` to
-your score, and if you press `A` and `B` together, the micro:bit will
+your score, and if you press `A` and `B` together, the @boardname@ will
 show your score.
 
 When you're done, your coin flipping program should look like this:

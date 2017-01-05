@@ -4,11 +4,14 @@
     "installedVersion": "tsmdvf",
     "files": [
         "README.md",
+        "ManagedBuffer.cpp",
+        "ManagedBuffer.h",
+        "pxt.cpp",
+        "pxt.h",
         "dal.d.ts",
         "enums.d.ts",
         "shims.d.ts",
         "pxt-core.d.ts",
-        "ksbit.h",
         "core.cpp",
         "pxt-helpers.ts",
         "helpers.ts",
@@ -31,14 +34,15 @@
         "parts/speaker.svg",
         "parts/headphone.svg",
         "_locales/ja/core-jsdoc-strings.json",
-        "_locales/ja/core-strings.json",
-        "_locales/fr/core-jsdoc-strings.json"
+        "_locales/fr/core-jsdoc-strings.json",
+        "_locales/fr/core-strings.json",
+        "_locales/de/core-jsdoc-strings.json",
+        "_locales/de/core-strings.json"
     ],
     "public": true,
     "dependencies": {},
     "yotta": {
-        "configIsJustDefaults": true,
-        "config": {
+        "optionalConfig": {
             "microbit-dal": {
                 "bluetooth": {
                     "enabled": 0

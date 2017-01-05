@@ -1,6 +1,6 @@
 # charting quiz answers
 
-Measure the acceleration on the micro:bit in the "x" direction. 
+Measure the acceleration on the @boardname@ in the "x" direction. 
 
 
 ## Name
@@ -25,7 +25,7 @@ We are creating a forever loop to constantly display the appropriate brightness 
 led.plotBarGraph(input.acceleration(Dimension.X), 0)
 ```
 
-## 3. After vigarously moving the micro:bit from side to side along the "x" axis for a sufficient amount of time,insert the Excel graph for displaying a line chart used to display trends over time. 
+## 3. After vigarously moving the @boardname@ from side to side along the "x" axis for a sufficient amount of time,insert the Excel graph for displaying a line chart used to display trends over time. 
 
 <br/>
 

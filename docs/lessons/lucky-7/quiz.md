@@ -1,6 +1,6 @@
 #  lucky 7 blocks quiz
 
-Show a number on the micro:bit
+Show a number on the @boardname@
 
 ## Name
 
@@ -33,7 +33,7 @@ basic.showNumber(21)
 
 
 
-## 4. Write the code that will be used to display the number 3 on the micro:bit.
+## 4. Write the code that will be used to display the number 3 on the @boardname@.
 
 ![](/static/mb/lessons/lucky-7-3.png)
 

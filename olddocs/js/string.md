@@ -4,7 +4,7 @@ a piece of text.
 
 ### @parent js/language
 
-A *String* is a sequence of characters. For the BBC micro:bit, ASCII character codes 32 to 126 are supported; letters, digits, punctuation marks, and a few symbols. All other character codes appear as a ? on the [LED screen](/device/screen).
+A *String* is a sequence of characters. For the @boardname@, ASCII character codes 32 to 126 are supported; letters, digits, punctuation marks, and a few symbols. All other character codes appear as a ? on the [LED screen](/device/screen).
 
 ### Declare a string
 
@@ -34,7 +34,7 @@ let salutation = "Hello"
 
 ### The function `show string`
 
-Use [show string](/reference/basic/show-string) to display a string on the [LED screen](/device/screen). If the string is multiple characters, the string scrolls right to left. The following example displays `Hello world!` on the micro:bit screen:
+Use [show string](/reference/basic/show-string) to display a string on the [LED screen](/device/screen). If the string is multiple characters, the string scrolls right to left. The following example displays `Hello world!` on the @boardname@ screen:
 
 ```
 basic.showString("Hello world!", 100)

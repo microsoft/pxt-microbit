@@ -1,6 +1,6 @@
 # dice roll quiz answers
 
-Create a dice when the BBC micro:bit is shaken 
+Create a dice when the @boardname@ is shaken 
 
 These are the answers to the [dice roll quiz](/lessons/dice-roll/quiz).
 

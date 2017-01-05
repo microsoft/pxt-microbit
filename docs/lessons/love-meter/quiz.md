@@ -34,6 +34,6 @@ basic.showNumber(item + 1);
 
 
 
-## 5. Describe why you must hold ground (GND) before pressing (P0) to run a program using `on pin pressed(P0)` on the micro:bit
+## 5. Describe why you must hold ground (GND) before pressing (P0) to run a program using `on pin pressed(P0)` on the @boardname@
 
 

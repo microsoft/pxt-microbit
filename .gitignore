@@ -15,7 +15,7 @@ clients/win10/app/bld
 clients/win10/*.opendb
 clients/**/bin/**
 clients/**/obj/**
-clients/electron/projects
+electron-out
 hexcache
 
 *.user

@@ -1,10 +1,10 @@
-#include "ksbit.h"
+#include "pxt.h"
 
 
 /**
  * Provides access to basic micro:bit functionality.
  */
-//% color=#0078D7 weight=100
+//% color=#0078D7 weight=100 icon="\uf00a"
 namespace basic {
 
     /**
@@ -13,7 +13,7 @@ namespace basic {
      */
     //% help=basic/show-number
     //% weight=96
-    //% blockId=device_show_number block="show|number %number" blockGap=8 icon="\uf1ec"
+    //% blockId=device_show_number block="show|number %number" blockGap=8
     //% async
     //% parts="ledmatrix"
     void showNumber(int value, int interval = 150) { 
@@ -50,7 +50,7 @@ namespace basic {
      */
     //% help=basic/show-string 
     //% weight=87 blockGap=8
-    //% block="show|string %text" icon="\uf031" 
+    //% block="show|string %text" 
     //% async
     //% blockId=device_print_message
     //% parts="ledmatrix"
@@ -73,7 +73,7 @@ namespace basic {
      * Turn off all LEDs
      */
     //% help=basic/clear-screen weight=79
-    //% blockId=device_clear_display block="clear screen" icon="\uf12d"
+    //% blockId=device_clear_display block="clear screen"
     //% parts="ledmatrix"
     void clearScreen() {
       uBit.display.image.clear();
@@ -112,7 +112,7 @@ namespace basic {
      * Repeats the code forever in the background. On each iteration, allows other codes to run.
      * @param body code to execute
      */
-    //% help=basic/forever weight=55 blockGap=8
+    //% help=basic/forever weight=55 blockGap=8 blockAllowMultiple=1
     //% blockId=device_forever block="forever" icon="\uf01e"
     void forever(Action a) {
       if (a != 0) {

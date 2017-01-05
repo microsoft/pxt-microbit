@@ -100,5 +100,5 @@ music.playTone(music.noteFrequency(Note.F), music.beat(BeatFraction.Quarter));
 
 ### Challenge 3
 
-You now have a the ability to create music on the micro:bit. Try to code another favourite song.
+You now have a the ability to create music on the @boardname@. Try to code another favourite song.
 

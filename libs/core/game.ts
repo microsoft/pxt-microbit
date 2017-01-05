@@ -21,7 +21,7 @@ enum LedSpriteProperty {
 /**
  * A single-LED sprite game engine
  */
-//% color=#008272 weight=32
+//% color=#008272 weight=32 icon="\uf11b"
 //% advanced=true
 namespace game {
     let _score: number = 0;
@@ -40,7 +40,7 @@ namespace game {
      * @param x sprite horizontal coordinate, eg: 2
      * @param y sprite vertical coordinate, eg: 2
      */
-    //% weight=60
+    //% weight=60 blockGap=8
     //% blockId=game_create_sprite block="create sprite at|x: %x|y: %y"
     //% parts="ledmatrix"
     export function createSprite(x: number, y: number): LedSprite {
@@ -146,8 +146,9 @@ namespace game {
 
     /**
      * Sets the current score value
-     * @param value TODO
+     * @param value new score value.
      */
+    //% blockId=game_set_score block="set score %points" blockGap=8
     //% weight=10 help=game/set-score
     export function setScore(value: number): void {
         _score = Math.max(0, value);
@@ -589,7 +590,7 @@ namespace game {
 
         /**
          * Turns on the sprite (on by default)
-         * @param this TODO
+         * @param this the sprite
          */
         public on(): void {
             this.setBrightness(255);
@@ -597,7 +598,7 @@ namespace game {
 
         /**
          * Turns off the sprite (on by default)
-         * @param this TODO
+         * @param this the sprite
          */
         public off(): void {
             this.setBrightness(0);
@@ -605,8 +606,8 @@ namespace game {
 
         /**
          * Set the ``brightness`` of a sprite
-         * @param this TODO
-         * @param brightness TODO
+         * @param this the sprite
+         * @param brightness the brightness from 0 (off) to 255 (on), eg: 255.
          */
         //% parts="ledmatrix"
         public setBrightness(brightness: number): void {
@@ -616,8 +617,9 @@ namespace game {
 
         /**
          * Reports the ``brightness` of a sprite on the LED screen
-         * @param this TODO
+         * @param this the sprite
          */
+        //% parts="ledmatrix"
         public brightness(): number {
             let r: number;
             return this._brightness;
@@ -625,8 +627,8 @@ namespace game {
 
         /**
          * Changes the ``y`` position by the given amount
-         * @param this TODO
-         * @param value TODO
+         * @param this the sprite
+         * @param value the value to change brightness
          */
         public changeBrightnessBy(value: number): void {
             this.setBrightness(this._brightness + value);
@@ -643,10 +645,12 @@ namespace game {
 
         /**
          * Deletes the sprite from the game engine. All further operation of the sprite will not have any effect.
-         * @param sprite TODO
+         * @param this sprite to delete
          */
-        public delete(sprite: LedSprite): void {
-            sprites.removeElement(sprite);
+        //% weight=59
+        //% blockId="game_delete_sprite" block="delete %this"        
+        public delete(): void {
+            sprites.removeElement(this);
         }
 
         /**

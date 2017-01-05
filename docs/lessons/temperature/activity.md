@@ -1,10 +1,10 @@
 # temperature activity
 
-Measure the temperature on the micro:bit
+Measure the temperature on the @boardname@
 
-Welcome! This activity will teach how to measure the temperature on the micro:bit. Let's get started!
+Welcome! This activity will teach how to measure the temperature on the @boardname@. Let's get started!
 
-We want to display the temperature on shake. In order to do so, we need to register the event `on shake` that will execute whenever the user shakes the micro:bit; in the web browser, click the button labelled "SHAKE" under the simulator to generate a shake event
+We want to display the temperature on shake. In order to do so, we need to register the event `on shake` that will execute whenever the user shakes the @boardname@; in the web browser, click the button labelled "SHAKE" under the simulator to generate a shake event
 
 ```blocks
 input.onGesture(Gesture.Shake, () => {

@@ -10,7 +10,7 @@ Create an arrow that randomly points to a player.
 
 Welcome! This guided tutorial will teach how to program a script that randomly points to a player. Let's get started!
 
-Let's begin by adding an `on shake` condition to know when the micro:bit is shaken.
+Let's begin by adding an `on shake` condition to know when the @boardname@ is shaken.
 
 ```blocks
 input.onGesture(Gesture.Shake, () => {

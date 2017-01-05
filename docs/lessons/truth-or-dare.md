@@ -1,6 +1,6 @@
 # truth or dare lesson
 
-create a love meter with the BBC micro:bit.
+create a love meter with the @boardname@.
 
 
 
@@ -39,7 +39,7 @@ basic.showString("Hello!")
 
 ## Objectives
 
-* learn how to display an image on the BBC micro:bit
+* learn how to display an image on the @boardname@
 * learn how to run code when an input button is pressed
 * learn how to a create a variable for a place where you can store and retrieve data
 * learn how to declare a new local variable or update the value of a variable

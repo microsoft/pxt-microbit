@@ -17,49 +17,10 @@
         "sharing": false,
         "publish": false,
         "preferredPackages": [
-            "Microsoft/pxt-neopixel"
+            "Microsoft/pxt-neopixel",
+            "Microsoft/pxt-filesystem"
         ],
-        "githubPackages": false
-    },
-    "blocksprj": {
-        "id": "blocksprj",
-        "config": {
-            "name": "{0} block",
-            "dependencies": {
-                "core": "*",
-                "radio": "*"
-            },
-            "description": "",
-            "files": [
-                "main.blocks",
-                "main.ts",
-                "README.md"
-            ]
-        },
-        "files": {
-            "main.blocks": "<xml xmlns=\"http://www.w3.org/1999/xhtml\">\n<block type=\"device_forever\">\n<statement name=\"HANDLER\">\n<block type=\"device_show_leds\">\n<field name=\"LED00\">FALSE</field>\n<field name=\"LED10\">FALSE</field>\n<field name=\"LED20\">FALSE</field>\n<field name=\"LED30\">FALSE</field>\n<field name=\"LED40\">FALSE</field>\n<field name=\"LED01\">FALSE</field>\n<field name=\"LED11\">TRUE</field>\n<field name=\"LED21\">FALSE</field>\n<field name=\"LED31\">TRUE</field>\n<field name=\"LED41\">FALSE</field>\n<field name=\"LED02\">FALSE</field>\n<field name=\"LED12\">FALSE</field>\n<field name=\"LED22\">FALSE</field>\n<field name=\"LED32\">FALSE</field>\n<field name=\"LED42\">FALSE</field>\n<field name=\"LED03\">TRUE</field>\n<field name=\"LED13\">FALSE</field>\n<field name=\"LED23\">FALSE</field>\n<field name=\"LED33\">FALSE</field>\n<field name=\"LED43\">TRUE</field>\n<field name=\"LED04\">FALSE</field>\n<field name=\"LED14\">TRUE</field>\n<field name=\"LED24\">TRUE</field>\n<field name=\"LED34\">TRUE</field>\n<field name=\"LED44\">FALSE</field>\n<next>\n<block type=\"device_show_leds\">\n<field name=\"LED00\">FALSE</field>\n<field name=\"LED10\">FALSE</field>\n<field name=\"LED20\">FALSE</field>\n<field name=\"LED30\">FALSE</field>\n<field name=\"LED40\">FALSE</field>\n<field name=\"LED01\">FALSE</field>\n<field name=\"LED11\">FALSE</field>\n<field name=\"LED21\">FALSE</field>\n<field name=\"LED31\">FALSE</field>\n<field name=\"LED41\">FALSE</field>\n<field name=\"LED02\">FALSE</field>\n<field name=\"LED12\">FALSE</field>\n<field name=\"LED22\">FALSE</field>\n<field name=\"LED32\">FALSE</field>\n<field name=\"LED42\">FALSE</field>\n<field name=\"LED03\">FALSE</field>\n<field name=\"LED13\">FALSE</field>\n<field name=\"LED23\">FALSE</field>\n<field name=\"LED33\">FALSE</field>\n<field name=\"LED43\">FALSE</field>\n<field name=\"LED04\">FALSE</field>\n<field name=\"LED14\">FALSE</field>\n<field name=\"LED24\">FALSE</field>\n<field name=\"LED34\">FALSE</field>\n<field name=\"LED44\">FALSE</field>\n</block>\n</next>\n</block>\n</statement>\n</block>\n</xml>",
-            "main.ts": "basic.forever(() => {\r\n    basic.showLeds(`\r\n        . # . # .\r\n        # . # . #\r\n        # . . . #\r\n        . # . # .\r\n        . . # . .\r\n        `)\r\n    basic.showLeds(`\r\n        . . . . .\r\n        . . . . .\r\n        . . . . .\r\n        . . . . .\r\n        . . . . .\r\n        `)\r\n})\r\n",
-            "README.md": ""
-        }
-    },
-    "tsprj": {
-        "id": "tsprj",
-        "config": {
-            "name": "{0} bit",
-            "dependencies": {
-                "core": "*",
-                "radio": "*"
-            },
-            "description": "",
-            "files": [
-                "main.ts",
-                "README.md"
-            ]
-        },
-        "files": {
-            "main.ts": "basic.showLeds(`\r\n    . . . . .\r\n    . # . # .\r\n    . . . . .\r\n    # . . . #\r\n    . # # # .\r\n    `);",
-            "README.md": ""
-        }
+        "githubPackages": true
     },
     "compile": {
         "isNative": false,
@@ -83,10 +44,24 @@
                 }
             },
             {
+                "type": "missingPackage",
+                "map": {
+                    "radio\\s*\\.": "radio",
+                    "bluetooth\\s*\\.": "bluetooth",
+                    "devices\\s*\\.": "devices"
+                }
+            },
+            {
                 "type": "api",
                 "map": {
-                    "bluetooth\\.uartRead\\((.*?)\\)": "bluetooth.uartReadUntil($1)",
-                    "bluetooth\\.uartWrite\\((.*?)\\)": "bluetooth.uartWriteUntil($1)"
+                    "bluetooth\\s*\\.uartRead\\s*\\((.*?)\\)": "bluetooth.uartReadUntil($1)",
+                    "bluetooth\\s*\\.uartWrite\\s*\\((.*?)\\)": "bluetooth.uartWriteUntil($1)"
+                }
+            },
+            {
+                "type": "blockId",
+                "map": {
+                    "device_get_acceleration": "device_acceleration"
                 }
             }
         ]
@@ -95,11 +70,13 @@
         "mathBlocks": true,
         "loopsBlocks": true,
         "logicBlocks": true,
-        "variablesBlocks": true
+        "variablesBlocks": true,
+        "onStartColor": "#0078D7",
+        "onStartNamespace": "basic"
     },
     "simulator": {
         "autoRun": true,
-        "streams": true,
+        "streams": false,
         "aspectRatio": 1.22,
         "parts": true,
         "partsAspectRatio": 0.69,
@@ -199,10 +176,10 @@
     },
     "compileService": {
         "yottaTarget": "bbc-microbit-classic-gcc",
-        "yottaCorePackage": "pxt-microbit-core",
-        "githubCorePackage": "microsoft/pxt-microbit-core",
-        "gittag": "v0.5.0",
-        "serviceId": "ws"
+        "yottaCorePackage": "microbit",
+        "githubCorePackage": "lancaster-university/microbit",
+        "gittag": "v2.0.0-rc7",
+        "serviceId": "microbit"
     },
     "serial": {
         "manufacturerFilter": "^mbed$",
@@ -212,20 +189,23 @@
     "appTheme": {
         "accentColor": "#5C005C",
         "logoUrl": "http://microbit.org/",
-        "logo": "./static/logo.portrait.black.svg",
+        "logo": "./static/logo.portrait.white.svg",
         "docsLogo": "./static/logo.square.white.svg",
-        "portraitLogo": "./static/logo.square.black.svg",
+        "portraitLogo": "./static/logo.square.white.svg",
         "footerLogo": "./static/logo.portrait.black.svg",
-        "cardLogo": "https://az851932.vo.msecnd.net/pub/drbwxcth",
-        "appLogo": "https://az851932.vo.msecnd.net/pub/tbhemtig",
+        "cardLogo": "./static/icons/apple-touch-icon.png",
+        "appLogo": "./static/icons/apple-touch-icon.png",
         "organization": "Microsoft",
         "organizationUrl": "https://pxt.io/",
         "organizationLogo": "./static/Microsoft-logo_rgb_c-gray.png",
+        "organizationWideLogo": "./static/Microsoft-logo_rgb_c-white.png",
         "homeUrl": "https://pxt.microbit.org/",
         "embedUrl": "https://pxt.microbit.org/",
         "privacyUrl": "https://go.microsoft.com/fwlink/?LinkId=521839",
         "termsOfUseUrl": "https://go.microsoft.com/fwlink/?LinkID=206977",
         "githubUrl": "https://github.com/Microsoft/pxt-microbit",
+        "projectGallery": "projects",
+        "crowdinProject": "kindscript",
         "boardName": "micro:bit",
         "sideDoc": "getting-started",
         "browserSupport": [
@@ -285,6 +265,7 @@
                 "path": "/device"
             }
         ],
+        "hasReferenceDocs": true,
         "usbDocs": "/device/usb",
         "usbHelp": [
             {
@@ -347,6 +328,17 @@
                 "browser": "*",
                 "path": "/static/mb/device/usb-windows-sendto.jpg"
             }
-        ]
+        ],
+        "invertedMenu": true,
+        "coloredToolbox": true,
+        "monacoToolbox": true,
+        "blocklyOptions": { 
+            "grid": {
+                "spacing": 45,
+                "length": 7,
+                "colour": "rgba(189, 195, 199, 0.30)",
+                "snap": false
+            }
+        }
     }
 }

@@ -1,9 +1,9 @@
-#include "ksbit.h"
+#include "pxt.h"
 
 /**
 * Creation, manipulation and display of LED images.
 */
-//% color=#5C2D91 weight=31
+//% color=#5C2D91 weight=31 icon="\uf03e"
 //% advanced=true
 namespace images {
     /**
@@ -61,18 +61,15 @@ namespace ImageMethods {
 
     /**
      * Scrolls an image .
-     * @param frameOffset x offset moved on each animation step, eg: 5, 1, -1
+     * @param frameOffset x offset moved on each animation step, eg: 1, 2, 5
      * @param interval time between each animation step in milli seconds, eg: 200
      */
-    //% help=images/show-image weight=79 async blockNamespace=images
+    //% help=images/scroll-image weight=79 async blockNamespace=images
     //% blockId=device_scroll_image block="scroll image %sprite|with offset %frameoffset|and interval (ms) %delay" blockGap=8
     //% parts="ledmatrix"
     void scrollImage(Image id, int frameOffset, int interval) {
       MicroBitImage i(id);
-      if (i.getWidth() <= 5)
-        showImage(id, 0);
-      else
-        uBit.display.animate(i, interval, frameOffset, 0);
+      uBit.display.animate(i, interval, frameOffset, MICROBIT_DISPLAY_WIDTH - 1);
     }
 
 

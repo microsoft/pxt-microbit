@@ -1,6 +1,6 @@
 # Getting started
 
-### @description An activity for beginners to get started with the micro:bit
+### @description An activity for beginners to get started with the @boardname@
 
 ## ~avatar
 
@@ -33,9 +33,9 @@ basic.forever(() => {
 
 When this program runs, you will see a smiley face, then a blank
 screen, then a smiley again -- it never stops! (That's because of the
-``forever`` block.)
+`[basic.forever(() => {})]` block.)
 
-Click **Download** to move your program to the BBC micro:bit! 
+Click **Download** to move your program to the @boardname@! 
 Make sure to follow the instructions.
 
 ### ~button /getting-started/screen

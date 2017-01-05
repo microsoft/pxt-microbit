@@ -1,6 +1,6 @@
 # magic 8 activity
 
-Welcome! This activity will help you create a magic 8 ball on the micro:bit. Let's get started!
+Welcome! This activity will help you create a magic 8 ball on the @boardname@. Let's get started!
 
 Show a string to instruct the user how to play Magic 8! The magic 8 ball can only answer true or false questions.
 
@@ -17,7 +17,7 @@ basic.showString("ASK A QUESTION")
 basic.showNumber(8)
 ```
 
-Create a condition for when the micro:bit is shaken. Then use the block `clear screen` to clear the 8 from the display.
+Create a condition for when the @boardname@ is shaken. Then use the block `clear screen` to clear the 8 from the display.
 
 ```blocks
 basic.showString("ASK A QUESTION")

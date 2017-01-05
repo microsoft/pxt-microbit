@@ -1,6 +1,6 @@
 # magic 8 quiz 
 
-create a magic 8 ball on the BBC micro:bit.
+create a magic 8 ball on the @boardname@.
 
 ## Name
 

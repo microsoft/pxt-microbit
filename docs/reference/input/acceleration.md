@@ -2,7 +2,7 @@
 
 Get the acceleration value (milli g-force), in one of three specified dimensions.
 
-Find the acceleration of the micro:bit (how fast it is speeding up or slowing down).
+Find the acceleration of the @boardname@ (how fast it is speeding up or slowing down).
 
 ```sig
 input.acceleration(Dimension.X);
@@ -23,11 +23,11 @@ A **g** is as much acceleration as you get from Earth's gravity.
 
 ### Returns
 
-* a [number](/reference/types/number) that means the amount of acceleration. When the micro:bit is lying flat on a surface with the screen pointing up, `x` is `0`, `y` is `0`, and `z` is `-1023`.
+* a [number](/reference/types/number) that means the amount of acceleration. When the @boardname@ is lying flat on a surface with the screen pointing up, `x` is `0`, `y` is `0`, and `z` is `-1023`.
 
 ### Example: bar chart
 
-This example shows the acceleration of the micro:bit with a bar graph.
+This example shows the acceleration of the @boardname@ with a bar graph.
 
 ```blocks
 basic.forever(() => {

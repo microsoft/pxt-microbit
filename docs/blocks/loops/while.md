@@ -2,7 +2,7 @@
 
 Repeat code while a [Boolean](/blocks/logic/boolean) `condition` is true.
 
-```blocks
+```block
 while(true) {
 }
 ```
@@ -16,11 +16,13 @@ The condition is tested before any code runs. Which means that if the condition 
 The following example uses a while loop to make a diagonal line on the LED screen (points `0, 0`, `1, 1`, `2, 2`, `3, 3`, `4, 4`).
 
 ```blocks
-let index = 4;
-while(index >= 0) {
-    led.plot(index, index);
-    index--;
-}
+input.onButtonPressed(Button.A, () => {
+    let index = 4;
+    while(index >= 0) {
+        led.plot(index, index);
+        index--;
+    }
+})
 ```
 
 ### See also

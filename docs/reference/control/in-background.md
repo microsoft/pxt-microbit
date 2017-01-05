@@ -10,7 +10,7 @@ control.inBackground(() => {
 ### ~hint
 
 For more information, read 
-[The micro:bit - a reactive system](/device/reactive).
+[The @boardname@ - a reactive system](/device/reactive).
 It is pretty advanced!
 
 ### ~

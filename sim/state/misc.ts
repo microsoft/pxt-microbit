@@ -134,7 +134,7 @@ namespace pxsim.devices {
     export function onSignalStrengthChanged(action: number) {
         // TODO
     }
-    export function signalStrength() : number {
+    export function signalStrength(): number {
         // TODO
         return 0;
     }
@@ -165,18 +165,21 @@ namespace pxsim.bluetooth {
     export function startUartService(): void {
         // TODO
     }
-    export function uartWrite(s : string): void {
-        // TODO
+    export function uartWrite(s: string): void {
+        serial.writeString(s)
     }
     export function uartReadUntil(del: string): string {
-        // TODO
-        return ""
+        return serial.readUntil(del);
     }
-    export function onBluetoothConnected(a : RefAction) {
-        // TODO
-    }
-    export function onBluetoothDisconnected(a : RefAction) {
+    export function onBluetoothConnected(a: RefAction) {
         // TODO
     }
+    export function onBluetoothDisconnected(a: RefAction) {
+        // TODO
+    }
+    export function advertiseUrl(url: string, power: number, connectable: boolean) { }
+    export function advertiseUidBuffer(nsAndInstance: Buffer, power: number, connectable: boolean) { }
+    export function stopAdvertising() { }
+    export function setTransmitPower(power: number) {}
 }
 

@@ -1,3 +1,12 @@
 /*******************************
     User Variable Overrides
 *******************************/
+
+@invertedBackground: #3454D1;
+
+/*******************************
+    PXT Theme Overrides
+*******************************/
+
+@mainMenuHeight: 5rem;
+@mainMenuMinHeight: (@itemVerticalPadding * 2) + 2em;

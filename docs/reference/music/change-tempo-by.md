@@ -5,7 +5,7 @@ faster or slower by the amount you say.
 
 ## Simulator
 
-This function only works on the micro:bit and in some browsers.
+This function only works on the @boardname@ and in some browsers.
 
 ```sig
 music.changeTempoBy(20)
@@ -15,7 +15,7 @@ music.changeTempoBy(20)
 
 * ``bpm`` is a [number](/reference/types/number) that says how much to
   change the bpm (beats per minute, or number of beats in a minute of
-  the music that the micro:bit is playing).
+  the music that the @boardname@ is playing).
 
 ### Examples
 

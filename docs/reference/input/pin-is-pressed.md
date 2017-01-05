@@ -4,7 +4,7 @@ Find whether the pin you say is pressed or not pressed.
 
 If you hold the `GND` pin with one hand and touch pin `0`, `1`, or `2` with the other,
 a very small (safe) amount of electricity will flow through your body and back into
-the micro:bit. This is called **completing a circuit**. It's like you're a big wire!
+the @boardname@. This is called **completing a circuit**. It's like you're a big wire!
 
 ```sig
 input.pinIsPressed(TouchPin.P0);
@@ -12,7 +12,7 @@ input.pinIsPressed(TouchPin.P0);
 
 ## ~hint
 
-This function works best when the BBC micro:bit is using batteries for power,
+This function works best when the @boardname@ is using batteries for power,
 instead of the USB cable.
 
 ## ~
@@ -41,5 +41,5 @@ basic.forever(() => {
 
 ### See also
 
-[BBC micro:bit pins](/device/pins), [on pin pressed](/reference/input/on-pin-pressed), [analog read pin](/reference/pins/analog-read-pin), [analog write pin](/reference/pins/analog-write-pin), [digital read pin](/reference/pins/digital-read-pin), [digital write pin](/reference/pins/digital-write-pin)
+[@boardname@ pins](/device/pins), [on pin pressed](/reference/input/on-pin-pressed), [analog read pin](/reference/pins/analog-read-pin), [analog write pin](/reference/pins/analog-write-pin), [digital read pin](/reference/pins/digital-read-pin), [digital write pin](/reference/pins/digital-write-pin)
 

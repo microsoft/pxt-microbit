@@ -1,4 +1,4 @@
-#include "ksbit.h"
+#include "pxt.h"
 
 enum class Button {
     A = MICROBIT_ID_BUTTON_A,
@@ -104,18 +104,23 @@ enum class Gesture {
     * Raised when a 6G shock is detected
     */
     //% block="6g"
-    SixG = MICROBIT_ACCELEROMETER_EVT_6G
+    SixG = MICROBIT_ACCELEROMETER_EVT_6G,
+    /**
+    * Raised when a 8G shock is detected
+    */
+    //% block="8g"
+    EightG = MICROBIT_ACCELEROMETER_EVT_8G
 };
 
-//% color=300 weight=99
+//% color=300 weight=99 icon="\uf192"
 namespace input {
     /**
      * Do something when a button (``A``, ``B`` or both ``A+B``) is pressed
-     * @param button TODO
-     * @param body TODO
+     * @param button the button that needs to be pressed
+     * @param body code to run when event is raised
      */
     //% help=input/on-button-pressed weight=85 blockGap=8
-    //% blockId=device_button_event block="on button|%NAME|pressed" icon="\uf192"
+    //% blockId=device_button_event block="on button|%NAME|pressed"
     //% parts="buttonpair"
     void onButtonPressed(Button button, Action body) {
         registerWithDal((int)button, MICROBIT_BUTTON_EVT_CLICK, body);
@@ -123,26 +128,28 @@ namespace input {
 
     /**
      * Do something when when a gesture is done (like shaking the micro:bit).
-     * @param body TODO
+     * @param gesture the type of gesture to track, eg: Gesture.Shake
+     * @param body code to run when gesture is raised
      */
     //% help=input/on-gesture weight=84 blockGap=8
-    //% blockId=device_gesture_event block="on |%NAME" icon="\uf135"
+    //% blockId=device_gesture_event block="on |%NAME"
     //% parts="accelerometer"
     void onGesture(Gesture gesture, Action body) {
-        if ((int)gesture == MICROBIT_ACCELEROMETER_EVT_3G && uBit.accelerometer.getRange() < 3)
+        int gi = (int)gesture;
+        if (gi == MICROBIT_ACCELEROMETER_EVT_3G && uBit.accelerometer.getRange() < 3)
             uBit.accelerometer.setRange(4);
-        else if ((int)gesture == MICROBIT_ACCELEROMETER_EVT_6G && uBit.accelerometer.getRange() < 6)
+        else if ((gi == MICROBIT_ACCELEROMETER_EVT_6G || gi == MICROBIT_ACCELEROMETER_EVT_8G) && uBit.accelerometer.getRange() < 6)
             uBit.accelerometer.setRange(8);
-        registerWithDal(MICROBIT_ID_GESTURE, (int)gesture, body);
+        registerWithDal(MICROBIT_ID_GESTURE, gi, body);
     }
 
      /**
      * Do something when a pin is pressed.
-     * @param name the pin that needs to be pressed
+     * @param name the pin that needs to be pressed, eg: TouchPin.P0
      * @param body the code to run when the pin is pressed
      */
     //% help=input/on-pin-pressed weight=83
-    //% blockId=device_pin_event block="on pin %NAME|pressed" icon="\uf094"
+    //% blockId=device_pin_event block="on pin %name|pressed"
     void onPinPressed(TouchPin name, Action body) {
         auto pin = getPin((int)name);
         if (!pin) return;
@@ -154,11 +161,11 @@ namespace input {
 
     /**
      * Do something when a pin is released.
-     * @param name the pin that needs to be released
+     * @param name the pin that needs to be released, eg: TouchPin.P0
      * @param body the code to run when the pin is released
      */
     //% help=input/on-pin-released weight=6 blockGap=8
-    //% blockId=device_pin_released block="on pin %NAME|released" icon="\uf094"
+    //% blockId=device_pin_released block="on pin %NAME|released"
     //% advanced=true
     void onPinReleased(TouchPin name, Action body) {
         auto pin = getPin((int)name);
@@ -171,6 +178,7 @@ namespace input {
 
     /**
      * Get the button state (pressed or not) for ``A`` and ``B``.
+     * @param button the button to query the request, eg: Button.A
      */
     //% help=input/button-is-pressed weight=60
     //% block="button|%NAME|is pressed"
@@ -189,10 +197,10 @@ namespace input {
 
     /**
      * Get the pin state (pressed or not). Requires to hold the ground to close the circuit.
-     * @param name pin used to detect the touch
+     * @param name pin used to detect the touch, eg: TouchPin.P0
      */
     //% help=input/pin-is-pressed weight=58
-    //% blockId="device_pin_is_pressed" block="pin %NAME|is pressed" icon="\uf094"
+    //% blockId="device_pin_is_pressed" block="pin %NAME|is pressed"
     //% blockGap=8
     bool pinIsPressed(TouchPin name) {
         auto pin = getPin((int)name);
@@ -210,7 +218,7 @@ namespace input {
      * Get the acceleration value in milli-gravitys (when the board is laying flat with the screen up, x=0, y=0 and z=-1024)
      * @param dimension TODO
      */
-    //% help=input/acceleration weight=58 icon="\uf135"
+    //% help=input/acceleration weight=58
     //% blockId=device_acceleration block="acceleration (mg)|%NAME" blockGap=8
     //% parts="accelerometer"
     int acceleration(Dimension dimension) {
@@ -227,7 +235,7 @@ namespace input {
      * Reads the light level applied to the LED screen in a range from ``0`` (dark) to ``255`` bright.
      */
     //% help=input/light-level weight=57
-    //% blockId=device_get_light_level block="light level" blockGap=8 icon="\uf185"
+    //% blockId=device_get_light_level block="light level" blockGap=8
     //% parts="ledmatrix"
     int lightLevel() {
         return uBit.display.readLightLevel();
@@ -237,7 +245,7 @@ namespace input {
      * Get the current compass heading in degrees.
      */
     //% help=input/compass-heading
-    //% weight=56 icon="\uf14e"
+    //% weight=56
     //% blockId=device_heading block="compass heading (°)" blockGap=8
     //% parts="compass"
     int compassHeading() {
@@ -248,7 +256,7 @@ namespace input {
     /**
      * Gets the temperature in Celsius degrees (°C).
      */
-    //% weight=55 icon="\uf06d"
+    //% weight=55
     //% help=input/temperature
     //% blockId=device_temperature block="temperature (°C)" blockGap=8
     //% parts="thermometer"
@@ -261,7 +269,7 @@ namespace input {
      * @param kind TODO
      */
     //% help=input/rotation weight=52
-    //% blockId=device_get_rotation block="rotation (°)|%NAME" blockGap=8 icon="\uf197"
+    //% blockId=device_get_rotation block="rotation (°)|%NAME" blockGap=8
     //% parts="accelerometer" advanced=true
     int rotation(Rotation kind) {
       switch (kind) {
@@ -276,7 +284,7 @@ namespace input {
      * @param dimension TODO
      */
     //% help=input/magnetic-force weight=51
-    //% blockId=device_get_magnetic_force block="magnetic force (µT)|%NAME" blockGap=8 icon="\uf076"
+    //% blockId=device_get_magnetic_force block="magnetic force (µT)|%NAME" blockGap=8
     //% parts="compass"
     //% advanced=true
     int magneticForce(Dimension dimension) {
@@ -296,7 +304,7 @@ namespace input {
      * Gets the number of milliseconds elapsed since power on.
      */
     //% help=input/running-time weight=50
-    //% blockId=device_get_running_time block="running time (ms)" icon="\uf017"
+    //% blockId=device_get_running_time block="running time (ms)"
     //% advanced=true
     int runningTime() {
         return system_timer_current_time();
@@ -313,7 +321,7 @@ namespace input {
      * @param range a value describe the maximum strengh of acceleration measured
      */
     //% help=input/set-accelerometer-range
-    //% blockId=device_set_accelerometer_range block="set accelerometer|range %range" icon="\uf135"
+    //% blockId=device_set_accelerometer_range block="set accelerometer|range %range"
     //% weight=5
     //% parts="accelerometer"
     //% advanced=true

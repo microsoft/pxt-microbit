@@ -6,7 +6,7 @@ Show a string to instruct the user how to play Magic 8! The magic 8 ball can onl
 
 The blocks have been shuffled! Put them back together so that...
 * show "ASK A QUESTION" on the screen
-* when the micro:bit is shaken,
+* when the @boardname@ is shaken,
   * generate a random number between 0 and 2.
   * if the number is `2`, show "YES"
   * if the number is `1`, show "NO"

@@ -53,7 +53,7 @@ basic.forever(() => {
 })
 ```
 
-Run your code in the simulator or download it to your BBC micro:bit to see what happens!
+Run your code in the simulator or download it to your @boardname@ to see what happens!
 
 ### ~avatar avatar
 

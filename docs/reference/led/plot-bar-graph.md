@@ -11,7 +11,7 @@ led.plotBarGraph(2, 20);
 
 * ``value`` is a [number](/reference/types/number) that means what you
   are measuring or trying to show. For example, if you are measuring
-  the temperature of ice with the BBC micro:bit, ``value`` might be `0`
+  the temperature of ice with the @boardname@, ``value`` might be `0`
   because the temperature might be 0 degrees centigrade.
 * ``high`` is a [number](/reference/types/number) that means the highest
   possible number that the ``value`` parameter can be. This number is
@@ -20,9 +20,9 @@ led.plotBarGraph(2, 20);
 ### Example: chart acceleration
 
 This program shows a bar graph of the [acceleration](/reference/input/acceleration) 
-in the `x` direction of the micro:bit.
-The micro:bit's `x` direction is from left to right (or right to left).
-The more you speed up moving the micro:bit in this direction,
+in the `x` direction of the @boardname@.
+The @boardname@'s `x` direction is from left to right (or right to left).
+The more you speed up moving the @boardname@ in this direction,
 the taller the lines in the bar graph will be, 
 until they are as tall as the parameter `high` says they can be.
 

@@ -45,7 +45,7 @@ while (rotating) {
 
 It is a **while** loop that will be executed only if the ** variable** called `rotating` is **true**.
 
-## 4. If the rectangle below represents the BBC micro:bit, shade the areas that will be displayed. Explain why that particular area is shaded.
+## 4. If the rectangle below represents the @boardname@, shade the areas that will be displayed. Explain why that particular area is shaded.
 
 ```blocks
 basic.showLeds(`

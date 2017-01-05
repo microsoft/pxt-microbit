@@ -1,6 +1,9 @@
 {
+  "bluetooth.advertiseUid|block": "bluetooth advertise UID|namespace (bytes 6-9)%ns|instance (bytes 2-6)%instance|with power %power|connectable %connectable",
+  "bluetooth.advertiseUrl|block": "bluetooth advertise url %url|with power %power|connectable %connectable",
   "bluetooth.onBluetoothConnected|block": "on bluetooth connected",
   "bluetooth.onBluetoothDisconnected|block": "on bluetooth disconnected",
+  "bluetooth.setTransmitPower|block": "bluetooth set transmit power %power",
   "bluetooth.startAccelerometerService|block": "bluetooth accelerometer service",
   "bluetooth.startButtonService|block": "bluetooth button service",
   "bluetooth.startIOPinService|block": "bluetooth io pin service",
@@ -8,6 +11,7 @@
   "bluetooth.startMagnetometerService|block": "bluetooth magnetometer service",
   "bluetooth.startTemperatureService|block": "bluetooth temperature service",
   "bluetooth.startUartService|block": "bluetooth uart service",
+  "bluetooth.stopAdvertising|block": "bluetooth stop advertising",
   "bluetooth.uartReadUntil|block": "bluetooth uart|read until %del=serial_delimiter_conv",
   "bluetooth.uartWriteNumber|block": "bluetooth uart|write number %value",
   "bluetooth.uartWriteString|block": "bluetooth uart|write string %data",

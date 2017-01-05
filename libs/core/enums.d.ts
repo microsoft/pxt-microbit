@@ -115,6 +115,11 @@ declare namespace basic {
      */
     //% block="6g"
     SixG = 9,  // MICROBIT_ACCELEROMETER_EVT_6G
+    /**
+     * Raised when a 8G shock is detected
+     */
+    //% block="8g"
+    EightG = 10,  // MICROBIT_ACCELEROMETER_EVT_8G
     }
 declare namespace input {
 }
@@ -275,7 +280,9 @@ declare namespace led {
 
 
     declare enum PulseValue {
+    //% block=high
     High = 4,  // MICROBIT_PIN_EVT_PULSE_HI
+    //% block=low
     Low = 5,  // MICROBIT_PIN_EVT_PULSE_LO
     }
 

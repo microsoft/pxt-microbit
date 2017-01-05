@@ -1,6 +1,6 @@
 # zoomer blocks lesson
 
-measure the acceleration on the micro:bit in the "z" direction.
+measure the acceleration on the @boardname@ in the "z" direction.
 
 
 

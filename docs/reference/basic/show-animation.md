@@ -21,7 +21,7 @@ basic.showAnimation(`
 
 In this animation, each row is 15 spaces wide because
 there are three frames in the animation, and each frame is
-five spaces wide, just like the screen on the BBC micro:bit.
+five spaces wide, just like the screen on the @boardname@.
 
 ```blocks
 basic.showAnimation(`

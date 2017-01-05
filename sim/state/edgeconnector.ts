@@ -11,7 +11,7 @@ namespace pxsim.input {
         if (!pin) return;
         pin.isTouched();
         pxtcore.registerWithDal(pin.id, DAL.MICROBIT_BUTTON_EVT_UP, handler);
-     }
+    }
 
     export function pinIsPressed(pinId: number): boolean {
         let pin = getPin(pinId);
@@ -72,8 +72,12 @@ namespace pxsim.pins {
     }
 
     export function servoWritePin(pinId: number, value: number) {
+        let pin = getPin(pinId);
+        if (!pin) return;
+
         analogSetPeriod(pinId, 20000);
-        // TODO
+        const state = board().servosState.servoState(pinId);
+        state.setAngle(value);
     }
 
     export function servoSetPulse(pinId: number, micros: number) {

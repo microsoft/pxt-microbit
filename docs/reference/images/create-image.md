@@ -1,6 +1,6 @@
 # Create Image
 
-Make an [image](/reference/images/image) (picture) for the micro:bit
+Make an [image](/reference/images/image) (picture) for the @boardname@
 [LED screen](/device/screen).
 
 ```sig

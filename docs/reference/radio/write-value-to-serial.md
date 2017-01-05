@@ -1,5 +1,7 @@
 # Write Value To Serial
 
+> Note: This API has been deprecated! Use [write received packet to serial](/reference/radio/write-received-packet-to-serial) instead.
+
 Writes the data received by ``radio`` to serial in JSON format.
 
 ```sig
@@ -17,7 +19,7 @@ The format for received data printed to serial is as follows:
 ### Examples
 
 When ```radio``` data is received (after pressing the ``A`` button on
-the second micro:bit), this program sends temperature data to
+the second @boardname@), this program sends temperature data to
 serial.
 
 ```blocks

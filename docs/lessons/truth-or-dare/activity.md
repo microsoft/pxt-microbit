@@ -6,7 +6,7 @@ A multi-player game that forces each player to reveal a secret or something funn
 
 
 
-Welcome! This tutorial will teach how to program a game of truth or dare on the micro:bit. Let's get started!
+Welcome! This tutorial will teach how to program a game of truth or dare on the @boardname@. Let's get started!
 
 ### ~
 
@@ -23,7 +23,7 @@ basic.showLeds(`
 
 ```
 
-Now let's create a condition to know when button `A` is pressed so that we can display "truth" or "dare" on the micro:bit. We want the BBC micro:bit to randomly choose whether to display "truth" or display "dare". We can use accomplish this by using `pick random (1)`.
+Now let's create a condition to know when button `A` is pressed so that we can display "truth" or "dare" on the @boardname@. We want the @boardname@ to randomly choose whether to display "truth" or display "dare". We can use accomplish this by using `pick random (1)`.
 
 ```blocks
 basic.showLeds(`

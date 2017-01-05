@@ -1,6 +1,6 @@
 # zoomer quiz
 
-Measure the acceleration on the micro:bit in the "z" direction.
+Measure the acceleration on the @boardname@ in the "z" direction.
 
 ## Name
 
@@ -18,7 +18,7 @@ Answer the questions while completing the tutorial. Pay attention to the dialogu
 
 <br/>
 
-## 3. After storing the acceleration in a variable, write the code to show acceleration on the BBC micro:bit as a number.
+## 3. After storing the acceleration in a variable, write the code to show acceleration on the @boardname@ as a number.
 
 <br/>
 

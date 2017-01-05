@@ -6,10 +6,10 @@
   },
 
   "manifest_version": 2,
-  "name": "code the micro:bit",
-  "version": "0.6.0",
+  "name": "pxt.microbit.org",
+  "version": "0.7.0",
   "author": "Microsoft Corporation",
-  "short_name": "code the micro:bit",
+  "short_name": "pxt.microbit.org",
 
   "description": "Extension for https://pxt.microbit.org.",
   "homepage_url": "https://pxt.microbit.org",

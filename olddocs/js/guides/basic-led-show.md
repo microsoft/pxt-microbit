@@ -2,7 +2,7 @@
 
 ### Challenge 0
 
-You have successfully following the [guided tutorial] (https://live.microbit.co.uk/td/tutorials/blink). If not, we should make sure the micro:bit script displays a blinking script on screen. We want to plot the x and y coordinates to 2, 2. Additionally, you will pause by 100 milliseconds then you will clear the screen of the micro:bit. Let's give it a go!
+You have successfully following the [guided tutorial] (https://live.microbit.co.uk/td/tutorials/blink). If not, we should make sure the @boardname@ script displays a blinking script on screen. We want to plot the x and y coordinates to 2, 2. Additionally, you will pause by 100 milliseconds then you will clear the screen of the @boardname@. Let's give it a go!
 
 ```
 while (true) {

@@ -4,9 +4,9 @@ Access the photo/video-taking functionality of a remote device using the ``tell 
 
 ### ~hint
 
-The functions in the ``devices`` namespace allow the BBC micro:bit to communicate with a separate (remote) device, 
+The functions in the ``devices`` namespace allow the @boardname@ to communicate with a separate (remote) device, 
 such as a smartphone, over Bluetooth (Smart).
-The set of supported events will depend on the remote device and the BBC micro:bit apps available for the remote device.
+The set of supported events will depend on the remote device and the @boardname@ apps available for the remote device.
 
 ### ~
 

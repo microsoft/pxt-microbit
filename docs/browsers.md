@@ -1,7 +1,6 @@
 # Unsupported configuration
 
-[pxt.microbit.org](https://pxt.microbit.org) doesn't currently support
-your browser or operating system. The following configurations are supported:
+Your browser is currently not supported. The following configurations are supported:
 
 ## Windows
 

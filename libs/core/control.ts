@@ -1,7 +1,7 @@
 /**
 * Runtime and event utilities.
 */
-//% weight=1 color="#333333"
+//% weight=1 color="#333333" icon="\uf233"
 //% advanced=true
 namespace control {
 
@@ -31,7 +31,7 @@ namespace control {
     /**
      * If the condition is false, display msg on serial console, and panic with code 098.
      */
-    export function assert(condition: boolean, msg ?: string) {
+    export function assert(condition: boolean, msg?: string) {
         if (!condition) {
             console.log("ASSERTION FAILED")
             if (msg != null) {

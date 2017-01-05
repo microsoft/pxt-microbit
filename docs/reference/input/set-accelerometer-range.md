@@ -1,6 +1,6 @@
 # Set Accelerometer Range
 
-Set up the part of the micro:bit that measures
+Set up the part of the @boardname@ that measures
 [acceleration](/reference/input/acceleration) (how much the microbit
 is speeding up or slowing down), in case you need to measure high
 or low acceleration.
@@ -13,12 +13,12 @@ input.setAccelerometerRange(AcceleratorRange.OneG);
 
 * ``range`` means the biggest number of gravities of acceleration you
   will be measuring (either `1g`, `2g`, `4g`, or `8g`).  Any bigger numbers
-  will be ignored by your micro:bit, both when you are picking a
+  will be ignored by your @boardname@, both when you are picking a
   number of gravities, and when you are measuring acceleration.
 
 ### Example
 
-This program says the highest acceleration that your micro:bit
+This program says the highest acceleration that your @boardname@
 will measure is 4G. Then it measures acceleration from side to side
 until you stop the program.
 
@@ -31,7 +31,7 @@ basic.forever(() => {
 
 #### ~hint
 
-This program does not work in the simulator, only in a micro:bit.
+This program does not work in the simulator, only in a @boardname@.
 
 #### ~
 

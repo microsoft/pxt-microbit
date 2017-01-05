@@ -4,7 +4,7 @@ string-related functions.
 
 ### @parent js/language
 
-The following string related functions are available in Touch Develop for the BBC micro:bit:
+The following string related functions are available in Touch Develop for the @boardname@:
 
 * **equals** - find out if two strings are the same
 * **at** - get a character within a string

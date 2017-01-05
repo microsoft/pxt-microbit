@@ -1,6 +1,6 @@
 # Create Big Image
 
-Make a big [image](/reference/images/image) (picture) for the micro:bit
+Make a big [image](/reference/images/image) (picture) for the @boardname@
 [LED screen](/device/screen). The big image made of two squares.
 Each of the squares is five LEDs on a side, like a regular image.
 

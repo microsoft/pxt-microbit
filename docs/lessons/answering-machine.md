@@ -1,6 +1,6 @@
 # answering machine blocks lesson
 
-Create an answering machine on the BBC micro:bit
+Create an answering machine on the @boardname@
 
 ## Topic
 

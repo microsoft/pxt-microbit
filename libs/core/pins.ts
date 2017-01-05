@@ -1,7 +1,7 @@
 /**
  * Control currents in Pins for analog/digital signals, servos, i2c, ...
  */
-//% color=#A80000 weight=30
+//% color=#A80000 weight=30 icon="\uf140"
 //% advanced=true
 namespace pins {
     /**
@@ -21,7 +21,7 @@ namespace pins {
     /**
      * Read one number from 7-bit I2C address.
      */
-    //% help=pins/i2c-read-number blockGap=8
+    //% help=pins/i2c-read-number blockGap=8 advanced=true
     //% blockId=pins_i2c_readnumber block="i2c read number|at address %address|of format %format=i2c_sizeof" weight=7
     export function i2cReadNumber(address: number, format: NumberFormat): number {
         let buf = pins.i2cReadBuffer(address, pins.sizeOf(format))
@@ -31,7 +31,7 @@ namespace pins {
     /**
      * Write one number to a 7-bit I2C address.
      */
-    //% help=pins/i2c-write-number blockGap=8
+    //% help=pins/i2c-write-number blockGap=8 advanced=true
     //% blockId=i2c_writenumber block="i2c write number|at address %address|with value %value|of format %format=i2c_sizeof" weight=6
     export function i2cWriteNumber(address: number, value: number, format: NumberFormat): void {
         let buf = createBuffer(pins.sizeOf(format))

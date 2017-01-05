@@ -5,7 +5,7 @@ The tone will keep playing until you tell it not to.
 
 ## Simulator
 
-This function only works on the micro:bit and in some browsers.
+This function only works on the @boardname@ and in some browsers.
 
 ```sig
 music.ringTone(440)
@@ -20,9 +20,9 @@ or pitch.
 
 ### Example
 
-This program checks the **accelerometer** for the micro:bit's
-**acceleration** (how much the micro:bit is speeding up or slowing
-down). Then it uses that acceleration to make a tone.  If the micro:bit
+This program checks the **accelerometer** for the @boardname@'s
+**acceleration** (how much the @boardname@ is speeding up or slowing
+down). Then it uses that acceleration to make a tone.  If the @boardname@
 speeds up, the tone's pitch gets higher, and if it slows down, the
 tone's pitch gets lower.  It's fun -- try it!
 
@@ -30,6 +30,14 @@ tone's pitch gets lower.  It's fun -- try it!
 basic.forever(() => {
     music.ringTone(input.acceleration(Dimension.X))
 })
+```
+
+### Using other pins
+
+Use [analogSetPitchPin](/reference/pins/analog-set-pitch-pin) to change that pin used to generate music.
+
+```blocks
+pins.analogSetPitchPin(AnalogPin.P1);
 ```
 
 ### See also

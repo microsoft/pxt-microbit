@@ -138,21 +138,13 @@ namespace pxsim.radio {
     }
 
     export function writeValueToSerial(): void {
-        let b = board();
-        let p = b.radioState.bus.datagram.recv();
+        const b = board();
+        writePacketToSerial(b, b.radioState.bus.datagram.recv())
+    }
 
-        switch(p.payload.type) {
-            case PacketPayloadType.NUMBER:
-                b.writeSerial(`{"t":${p.time},"s":${p.serial},"v":${p.payload.numberData}}`)
-                break;
-            case PacketPayloadType.VALUE:
-                b.writeSerial(`{"t":${p.time},"s":${p.serial},"n":"${p.payload.stringData}","v":${p.payload.numberData}}`)
-                break;
-            case PacketPayloadType.STRING:
-                b.writeSerial(`{"t":${p.time},"s":${p.serial},"n":"${p.payload.stringData}"}`)
-                break;
-            default:
-        }
+    export function writeReceivedPacketToSerial(): void {
+        const b = board();
+        writePacketToSerial(b, b.radioState.bus.datagram.lastReceived);
     }
 
     export function sendValue(name: string, value: number) {
@@ -199,5 +191,20 @@ namespace pxsim.radio {
 
     export function receivedTime(): number {
         return board().radioState.bus.datagram.lastReceived.time;
+    }
+
+    function writePacketToSerial(b: DalBoard, p: PacketBuffer) {
+        switch(p.payload.type) {
+            case PacketPayloadType.NUMBER:
+                b.writeSerial(`{"t":${p.time},"s":${p.serial},"v":${p.payload.numberData}}\r\n`)
+                break;
+            case PacketPayloadType.VALUE:
+                b.writeSerial(`{"t":${p.time},"s":${p.serial},"n":"${p.payload.stringData}","v":${p.payload.numberData}}\r\n`)
+                break;
+            case PacketPayloadType.STRING:
+                b.writeSerial(`{"t":${p.time},"s":${p.serial},"n":"${p.payload.stringData}"}\r\n`)
+                break;
+            default:
+        }
     }
 }

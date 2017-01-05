@@ -1,4 +1,4 @@
-#include "ksbit.h"
+#include "pxt.h"
 
 enum SerialPin {
     P0 = MICROBIT_ID_IO_P0,
@@ -34,7 +34,7 @@ enum Delimiters {
     Hash = 6,
 };
 
-//% weight=2 color=30
+//% weight=2 color=30 icon="\uf287"
 //% advanced=true
 namespace serial {
     // note that at least one // followed by % is needed per declaration!
@@ -83,16 +83,19 @@ namespace serial {
 
     /**
     * Dynamically configuring the serial instance to use pins other than USBTX and USBRX.
-    * @param tx the new transmission pins
-    * @param rx the new reception pin
-    * @param baud the new baud rate. eg: 115200
+    * @param tx the new transmission pins, eg: SerialPin.P0
+    * @param rx the new reception pin, eg: SerialPin.P1
+    * @param rate the new baud rate. eg: 115200
     */
     //% weight=10
     //% help=serial/redirect-to
     //% blockId=serial_redirect block="serial|redirect to|TX %tx|RX %rx|at baud rate %rate"
     //% blockExternalInputs=1
     void redirect(SerialPin tx, SerialPin rx, BaudRate rate) {
-      uBit.serial.redirect((PinName)tx, (PinName)rx);
+      MicroBitPin* txp = getPin(tx); if (!tx) return;
+      MicroBitPin* rxp = getPin(rx); if (!rx) return;
+
+      uBit.serial.redirect(txp->name, rxp->name);
       uBit.serial.baud((int)rate);
     }
 }

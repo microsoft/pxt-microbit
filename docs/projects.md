@@ -1,10 +1,10 @@
 # Projects
 
-Here are some cool projects that you can build with your micro:bit!
+Here are some cool projects that you can build with your @boardname@!
 
 ## Games
 
-Fun games to build with your micro:bit.
+Fun games to build with your @boardname@.
 
 ```codecard
 [{
@@ -23,10 +23,14 @@ Fun games to build with your micro:bit.
   "name": "Rock Paper Scissors",
   "url":"/projects/rock-paper-scissors",
   "imageUrl":"/static/mb/projects/a4-motion.png"
+},{
+  "name": "Magic Button Trick",
+  "url":"/projects/magic-button-trick",
+  "imageUrl":"/static/mb/projects/magic-button-trick.png"
 }]
 ```
 
-## Maker, Arts, Fashion
+## Music
 
 ```codecard
 [{
@@ -41,11 +45,27 @@ Fun games to build with your micro:bit.
   "name": "Guitar",
   "url":"/projects/guitar",
   "imageUrl":"/static/mb/projects/guitar.png"
+}]
+```
+
+## Fashion
+
+```codecard
+[{
+  "name": "Duct Tape Wallet",
+  "url":"/projects/wallet",
+  "imageUrl":"/static/mb/projects/wallet.png"
 }, {
   "name": "Watch",
-  "url":"/projects/the-watch",
+  "url":"/projects/watch",
   "imageUrl":"/static/mb/projects/a10-watch.png"
-}, {
+}]
+```
+
+## Science and Engineering
+
+```codecard
+[{
   "name": "Timing gates",
   "url":"/projects/timing-gates",
   "imageUrl":"/static/mb/projects/timing-gates.jpg"
@@ -70,19 +90,6 @@ Fun games to build with your micro:bit.
 }]
 ```
 
-## From the community
-
-Projects contributed by the micro:bit community
-
-```codecard
-[{
-  "name": "Magic Button Trick",
-  "url":"/projects/magic-button-trick",
-  "imageUrl":"/static/mb/projects/magic-button-trick.png"
-}]
-```
-
-
 ### See Also
 
-[Flashing Heart](/projects/flashing-heart), [Smiley Buttons](/projects/smiley-buttons), [Love Meter](/projects/love-meter), [Rock Paper Scissors](/projects/rock-paper-scissors), [Compass](/projects/compass), [Hack your headphones](/projects/hack-your-headphones), [Banana keyboard](/projects/banana-keyboard), [Telegraph](/projects/telegraph), [Radio](/projects/radio), [Guitar](/projects/guitar), [Watch](/projects/the-watch)
+[Flashing Heart](/projects/flashing-heart), [Smiley Buttons](/projects/smiley-buttons), [Love Meter](/projects/love-meter), [Rock Paper Scissors](/projects/rock-paper-scissors), [Compass](/projects/compass), [Hack your headphones](/projects/hack-your-headphones), [Banana keyboard](/projects/banana-keyboard), [Telegraph](/projects/telegraph), [Radio](/projects/radio), [Guitar](/projects/guitar), [Wallet](/projects/wallet), [Watch](/projects/watch)

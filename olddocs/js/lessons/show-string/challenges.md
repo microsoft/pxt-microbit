@@ -4,7 +4,7 @@ My script. #docs
 
 **Challenge 0**
 
-Welcome! This [guided tutorial](/pxjkww) introduces the basic show string method on the micro:bit.
+Welcome! This [guided tutorial](/pxjkww) introduces the basic show string method on the @boardname@.
 
 Let's show the string 'Hello' on the LED screen. The string will scroll one character at a time from left to right.
 

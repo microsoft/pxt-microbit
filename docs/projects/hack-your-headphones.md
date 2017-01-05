@@ -4,7 +4,7 @@
 
 ### ~avatar
 
-Build your own music player micro:bit from headphones.
+Build your own music player @boardname@ from headphones.
 
 ### ~
 
@@ -15,14 +15,9 @@ Build your own music player micro:bit from headphones.
 
 ## Materials
 
-* micro:bit, battery holder and 2 AAA batteries
+* @boardname@, battery holder and 2 AAA batteries
 * Headphones
 * Crocodile clips
-
-## Activities
-
-* [Connect your headphone](/projects/hack-your-headphones/making)
-* [Play sounds!]()
 
 # ~hint
 
@@ -30,7 +25,12 @@ Build your own music player micro:bit from headphones.
 
 # ~
 
-### ~button /projects/hack-your-headphones/making
+## Activities
+
+* [Connect your headphone](/projects/hack-your-headphones/make)
+* [Play sounds!]()
+
+### ~button /projects/hack-your-headphones/make
 
 Let's get started!
 

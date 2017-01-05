@@ -24,7 +24,7 @@ using namespace pxt;
 // payload: string length (9), string (10 ... 28)
 #define PACKET_TYPE_STRING 2
 
-//% color=270 weight=34
+//% color=270 weight=34 icon="\uf012"
 namespace radio {
 
     // -------------------------------------------------------------------------
@@ -100,6 +100,25 @@ namespace radio {
         return ManagedString().leakData();
     }
 
+    void writePacketAsJSON(uint8_t tp, int v, int s, int t, StringData* m) {
+        // Convert the packet to JSON and send over serial
+        uBit.serial.send("{");
+        uBit.serial.send("\"t\":");
+        uBit.serial.send(t);
+        uBit.serial.send(",\"s\":");
+        uBit.serial.send(s);
+        if (tp == PACKET_TYPE_STRING || tp == PACKET_TYPE_VALUE) {
+            uBit.serial.send(",\"n\":\"");
+            uBit.serial.send(m);
+            uBit.serial.send("\"");
+        }
+        if (tp == PACKET_TYPE_NUMBER || tp == PACKET_TYPE_VALUE) {
+            uBit.serial.send(",\"v\":");
+            uBit.serial.send(v);
+        }
+        uBit.serial.send("}\r\n");
+    }
+
     /**
      * Takes a packet from the micro:bit radio queue.
      * @param writeToSerial if true, write the received packet to serial without updating the global packet;
@@ -144,22 +163,7 @@ namespace radio {
             msg = m;
         }
         else {
-            // Convert the packet to JSON and send over serial
-            uBit.serial.send("{");
-            uBit.serial.send("\"t\":");
-            uBit.serial.send(t);
-            uBit.serial.send(",\"s\":");
-            uBit.serial.send(s);
-            if (tp == PACKET_TYPE_STRING || tp == PACKET_TYPE_VALUE) {
-                uBit.serial.send(",\"n\":\"");
-                uBit.serial.send(m);
-                uBit.serial.send("\"");
-            }
-            if (tp == PACKET_TYPE_NUMBER || tp == PACKET_TYPE_VALUE) {
-                uBit.serial.send(",\"v\":");
-                uBit.serial.send(v);
-            }
-            uBit.serial.send("}\r\n");
+            writePacketAsJSON(tp, v, s, t, m);
         }
     }
 
@@ -184,7 +188,7 @@ namespace radio {
     /**
     * Broadcasts a name / value pair along with the device serial number
     * and running time to any connected micro:bit in the group.
-    * @param name the field name (max 12 characters), eg: "data"
+    * @param name the field name (max 12 characters), eg: "name"
     * @param value the numberic value
     */
     //% help=radio/send-value
@@ -231,10 +235,23 @@ namespace radio {
     //% help=radio/write-value-to-serial
     //% weight=3
     //% blockId=radio_write_value_serial block="radio write value to serial"
-    //% advanced=true
+    //% deprecated=true
     void writeValueToSerial() {
         if (radioEnable() != MICROBIT_OK) return;
         receivePacket(true);
+    }
+
+    /**
+    * Writes the last received packet to serial as JSON. This should be called
+    * within an ``onDataPacketReceived`` callback.
+    */
+    //% help=radio/write-received-packet-to-serial
+    //% weight=3
+    //% blockId=radio_write_packet_serial block="radio write received packet to serial"
+    //% advanced=true
+    void writeReceivedPacketToSerial() {
+        if (radioEnable() != MICROBIT_OK) return;
+        writePacketAsJSON(type, value, (int) serial, (int) time, msg);
     }
 
     /**

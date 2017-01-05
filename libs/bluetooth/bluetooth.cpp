@@ -7,10 +7,9 @@ using namespace pxt;
 /**
  * Support for additional Bluetooth services.
  */
-//% color=#0082FB weight=20
+//% color=#0082FB weight=20 icon="\uf294"
 namespace bluetooth {
     MicroBitUARTService *uart = NULL;
-
 
     /**
     *  Starts the Bluetooth accelerometer service
@@ -119,5 +118,60 @@ namespace bluetooth {
     //% parts="bluetooth"
     void onBluetoothDisconnected(Action body) {
         registerWithDal(MICROBIT_ID_BLE, MICROBIT_BLE_EVT_DISCONNECTED, body);
-    }  
+    } 
+
+    const int8_t CALIBRATED_POWERS[] = {-49, -37, -33, -28, -25, -20, -15, -10};
+    /**
+    * Advertise an Eddystone URL
+	* @param url the url to transmit. Must be no longer than the supported eddystone url length, eg: "https://pxt.io/"
+	* @param power power level between 0 and 7, eg: 7
+    * @param connectable true to keep bluetooth connectable for other services, false otherwise.
+    */
+    //% blockId=eddystone_advertise_url block="bluetooth advertise url %url|with power %power|connectable %connectable"
+    //% parts=bluetooth weight=11 blockGap=8
+    //% help=bluetooth/advertise-url blockExternalInputs=1
+    void advertiseUrl(StringData* url, int power, bool connectable) {
+        power = min(MICROBIT_BLE_POWER_LEVELS-1, max(0, power));
+        int8_t level = CALIBRATED_POWERS[power];
+        uBit.bleManager.advertiseEddystoneUrl(ManagedString(url), level, connectable);
+        uBit.bleManager.setTransmitPower(power);
+    }
+
+    /**
+    * Advertise an Eddystone UID
+	* @param nsAndInstance 16 bytes buffer of namespace (bytes 0-9) and instance (bytes 10-15)
+	* @param power power level between 0 and 7, eg: 7
+    * @param connectable true to keep bluetooth connectable for other services, false otherwise.
+    */
+    //% parts=bluetooth weight=12 advanced=true
+    void advertiseUidBuffer(Buffer nsAndInstance, int power, bool connectable) {
+        ManagedBuffer buf(nsAndInstance);
+        if (buf.length() != 16) return;
+
+        power = min(MICROBIT_BLE_POWER_LEVELS-1, max(0, power));
+        int8_t level = CALIBRATED_POWERS[power];
+        uint8_t uidNs[10]; buf.readBytes(uidNs, 0, 10);
+        uint8_t uidInst[6]; buf.readBytes(uidInst, 10, 6);
+        uBit.bleManager.advertiseEddystoneUid((const char*)uidNs, (const char*)uidInst, level, connectable);
+    }
+
+    /**
+    * Sets the bluetooth transmit power between 0 (minimal) and 7 (maximum).
+    * @param power power level between 0 (minimal) and 7 (maximum), eg: 7.
+    */
+    //% parts=bluetooth weight=5 help=bluetooth/set-transmit-power advanced=true
+    //% blockId=bluetooth_settransmitpower block="bluetooth set transmit power %power"
+    void setTransmitPower(int power) {
+        uBit.bleManager.setTransmitPower(min(MICROBIT_BLE_POWER_LEVELS-1, max(0, power)));
+    }
+
+    /**
+    * Stops advertising Eddystone end points
+    */
+    //% blockId=eddystone_stop_advertising block="bluetooth stop advertising"
+    //% parts=bluetooth weight=10
+    //% help=bluetooth/stop-advertising advanced=true
+    void stopAdvertising() {
+        uBit.bleManager.stopAdvertising();
+    } 
 }

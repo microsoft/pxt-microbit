@@ -1,10 +1,10 @@
 # love meter blocks activity
 
-Create a love meter with the micro:bit
+Create a love meter with the @boardname@
 
 ### ~avatar avatar
 
-Welcome! This activity will help you create a love meter with the micro:bit. Let's get started!
+Welcome! This activity will help you create a love meter with the @boardname@. Let's get started!
 
 ### ~
 
@@ -28,7 +28,7 @@ input.onPinPressed(TouchPin.P0, () => {
 
 ```
 
-Finally, let's show that number on the micro:bit. You are registering an event handler that will execute on the BBC micro:bit whenever the user holds the GND pin with one hand, and presses pin 0 with the other hand, thus completing a circuit
+Finally, let's show that number on the @boardname@. You are registering an event handler that will execute on the @boardname@ whenever the user holds the GND pin with one hand, and presses pin 0 with the other hand, thus completing a circuit
 
 
 ```blocks

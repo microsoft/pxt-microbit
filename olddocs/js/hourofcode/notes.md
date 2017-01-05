@@ -1,14 +1,14 @@
 # Hour of Code notes
 
-learn how to run an Hour Of Code with the BBC micro:bit. #docs
+learn how to run an Hour Of Code with the @boardname@. #docs
 
-The BBC micro:bit can be used to run an Hour Of Code™ event for beginner of all ages. This document provides a detailed guidance on how to prepare and deliver the event in your school.
+The @boardname@ can be used to run an Hour Of Code™ event for beginner of all ages. This document provides a detailed guidance on how to prepare and deliver the event in your school.
 
 ## Preparation
 
 1) Computers
 
-Each participant has **a computer connected to a BBC micro:bit via micro-USB**.
+Each participant has **a computer connected to a @boardname@ via micro-USB**.
 
 2) Internet
 
@@ -41,8 +41,8 @@ Bring more energy in the room by playing music.
 
 After your Hour Of Code™, you will want to provide plenty of material for students to continue learning about coding. Here are some good places to start:
 
-* [more challenges](/lessonss) are available for BBC micro:bit
-* [the Quick Start Guide for Teachers](http://www.slideshare.net/Microsofteduk/bbc-microbit-guide-from-hodder-education) are available within BBC micro:bit
+* [more challenges](/lessonss) are available for @boardname@
+* [the Quick Start Guide for Teachers](http://www.slideshare.net/Microsofteduk/bbc-microbit-guide-from-hodder-education) are available within @boardname@
 
 _The Hour of Code™ is a nationwide initiative by [Computer Science Education Week](http://csedweek.org) and [Code.org](http://code.org) to introduce millions of students to one hour of computer science and computer programming._
 

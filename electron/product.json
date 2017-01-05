@@ -1,0 +1,14 @@
+{
+    "applicationName": "pxt-microbit-oss",
+    "dataFolderName": ".pxt-microbit-oss",
+    "darwinBundleIdentifier": "com.microsoft.pxtmicrobitoss",
+    "nameShort": "PXT microbit - OSS",
+    "nameLong": "PXT micro:bit - OSS",
+    "targetId": "pxt-microbit",
+    "win32AppId": "{{92db071a-6f58-4938-8c97-13c873f4da13}",
+    "win32AppUserModelId": "Microsoft.PXTmicrobitOss",
+    "win32DirName": "Microsoft PXT microbit - OSS",
+    "win32MutexName": "pxtmicrobitoss",
+    "win32NameVersion": "Microsoft PXT microbit-OSS",
+    "win32RegValueName": "PXTmicrobitOss"
+}

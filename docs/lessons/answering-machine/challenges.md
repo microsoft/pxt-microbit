@@ -12,7 +12,7 @@ basic.showString("ASK ME A QUESTION")
 
 ### Challenge 1
 
-Now we need to reply after someone asks micro:bit a  yes or no question. We want to respond `YES` when button `A` is pressed. Add a condition for button `A` and inside it show the string `YES`.
+Now we need to reply after someone asks @boardname@ a  yes or no question. We want to respond `YES` when button `A` is pressed. Add a condition for button `A` and inside it show the string `YES`.
 
 ```blocks
 basic.showString("ASK ME A QUESTION")
@@ -25,7 +25,7 @@ input.onButtonPressed(Button.A, () => {
 
 ### Challenge 2
 
-What if micro:bit's answer to the question is no? Let's have `NO` be displayed when button `B` is pressed. Add a condition for button `B` and inside it show the string `NO`.
+What if @boardname@'s answer to the question is no? Let's have `NO` be displayed when button `B` is pressed. Add a condition for button `B` and inside it show the string `NO`.
 
 ```blocks
 basic.showString("ASK ME A QUESTION")

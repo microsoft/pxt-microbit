@@ -17,12 +17,12 @@ input.onButtonPressed(Button.A, () => {
 
 #### ~hint
 
-The ``showString`` block can show letters, numbers, and punctuation
-on the micro:bit screen.
+The `[basic.showString("HI")]` block can show letters, numbers, and punctuation
+on the @boardname@ screen.
 
 #### ~
 
-Now try to unscramble these blocks in the editor so that the micro:bit
+Now try to unscramble these blocks in the editor so that the @boardname@
 shows **BANANA** when you press button `B`.
 
 ```shuffle
@@ -33,11 +33,11 @@ input.onButtonPressed(Button.B, () => {
 #### ~hint
 
 You can find the letter `B` by clicking the letter `A` on the
-``onButtonPressed`` block.
+`[input.onButtonPressed(Button.A, () => {})]` block.
 
 #### ~
 
-Click **Download** to move your program to the BBC micro:bit!
+Click **Download** to move your program to the @boardname@!
 
 #### Your turn!
 
@@ -48,9 +48,9 @@ name_ instead of **BANANA** when you press `B`?
 ### Pins
 
 You can also use the pins as buttons.  (The pins are the holes in the
-metal stripe at the bottom of the micro:bit board.)  For example, hold
+metal stripe at the bottom of the @boardname@ board.)  For example, hold
 the ``GND`` button with one hand and touch the ``0`` pin (called
-``P0``) with your other hand to tell the micro:bit you're pressing it.
+``P0``) with your other hand to tell the @boardname@ you're pressing it.
 
 Unscramble the blocks in the editor to show a heart when you touch
 pin ``P0``.
@@ -65,7 +65,7 @@ input.onPinPressed(TouchPin.P0, () => {
 . . # . .`);
 });
 ```
-Click **Download** to move your program to the BBC micro:bit!
+Click **Download** to move your program to the @boardname@!
 
 ## ~hint
 

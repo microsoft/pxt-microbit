@@ -1,4 +1,4 @@
-#include "ksbit.h"
+#include "pxt.h"
 
 enum class DisplayMode_ {
     //% block="black and white"
@@ -8,7 +8,7 @@ enum class DisplayMode_ {
     // TODO DISPLAY_MODE_BLACK_AND_WHITE_LIGHT_SENSE
 };
 
-//% color=3 weight=35
+//% color=3 weight=35 icon="\uf205"
 namespace led {
 
     /**
@@ -17,7 +17,7 @@ namespace led {
      * @param y TODO
      */
     //% help=led/plot weight=78
-    //% blockId=device_plot block="plot|x %x|y %y" icon="\uf205" blockGap=8
+    //% blockId=device_plot block="plot|x %x|y %y" blockGap=8
     //% parts="ledmatrix"
     void plot(int x, int y) {
       uBit.display.image.setPixelValue(x, y, 1);
@@ -29,7 +29,7 @@ namespace led {
      * @param y TODO
      */
     //% help=led/unplot weight=77
-    //% blockId=device_unplot block="unplot|x %x|y %y" icon="\uf204" blockGap=8
+    //% blockId=device_unplot block="unplot|x %x|y %y" blockGap=8
     //% parts="ledmatrix"
     void unplot(int x, int y) {
       uBit.display.image.setPixelValue(x, y, 0);
@@ -41,7 +41,7 @@ namespace led {
      * @param y TODO
      */
     //% help=led/point weight=76
-    //% blockId=device_point block="point|x %x|y %y" icon="\uf10c"
+    //% blockId=device_point block="point|x %x|y %y"
     //% parts="ledmatrix"
     bool point(int x, int y) {
       int pix = uBit.display.image.getPixelValue(x, y);
@@ -52,7 +52,7 @@ namespace led {
      * Get the screen brightness from 0 (off) to 255 (full bright).
      */
     //% help=led/brightness weight=60
-    //% blockId=device_get_brightness block="brightness" icon="\uf042" blockGap=8
+    //% blockId=device_get_brightness block="brightness" blockGap=8
     //% parts="ledmatrix"
     //% advanced=true
     int brightness() {
@@ -64,7 +64,7 @@ namespace led {
      * @param value the brightness value, eg:255, 127, 0
      */
     //% help=led/set-brightness weight=59
-    //% blockId=device_set_brightness block="set brightness %value" icon="\uf042"
+    //% blockId=device_set_brightness block="set brightness %value"
     //% parts="ledmatrix"
     //% advanced=true
     void setBrightness(int value) {
@@ -75,7 +75,7 @@ namespace led {
      * Cancels the current animation and clears other pending animations.
      */
     //% weight=50 help=led/stop-animation
-    //% blockId=device_stop_animation block="stop animation" icon="\uf04d"
+    //% blockId=device_stop_animation block="stop animation"
     //% parts="ledmatrix"
     //% advanced=true
     void stopAnimation() {
@@ -84,12 +84,22 @@ namespace led {
 
     /**
      * Sets the display mode between black and white and greyscale for rendering LEDs.
-     * @param mode TODO
+     * @param mode mode the display mode in which the screen operates
      */
     //% weight=1 help=led/set-display-mode
-    //% parts="ledmatrix"
+    //% parts="ledmatrix" advanced=true
     void setDisplayMode(DisplayMode_ mode) {
         uBit.display.setDisplayMode((DisplayMode)mode);
+    }
+
+    /**
+    * Turns on or off the display    
+    */
+    //% help=led/enable blockId=device_led_enable block="led enable %on"
+    //% advanced=true parts="ledmatrix"
+    void enable(bool on) {
+        if (on) uBit.display.enable();
+        else uBit.display.disable();
     }
 
     /**

@@ -67,5 +67,5 @@ input.onLogoDown(() => {
 
 **Challenge 3**
 
-Let's show a spinning arrow when the micro:bit is shaken. We can do this by adding an on shake condition and showing an animation of the arrow spinning!
+Let's show a spinning arrow when the @boardname@ is shaken. We can do this by adding an on shake condition and showing an animation of the arrow spinning!
 

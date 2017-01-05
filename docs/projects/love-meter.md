@@ -1,8 +1,10 @@
 # love meter
 
-![](/static/mb/projects/a3-pins.png)
+### ~avatar avatar
 
-Use pins P0, P1 and P2 to change the display by creating a circuit with your body.
+Use pins and your body to change the display!
+
+### ~
 
 ## Step 1
 

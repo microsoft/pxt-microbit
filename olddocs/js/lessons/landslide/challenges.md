@@ -73,5 +73,5 @@ input.onFall(() => {
 
 ### Challenge 3
 
-Now let's display a third image when the micro:bit falls! First, add `basic->pause(2000)` followed by another image of your choice. Be creative!
+Now let's display a third image when the @boardname@ falls! First, add `basic->pause(2000)` followed by another image of your choice. Be creative!
 

@@ -8,14 +8,14 @@ input.magneticForce(Dimension.X);
 
 ## ~hint
 
-The micro:bit measures magnetic force with **microteslas**.
+The @boardname@ measures magnetic force with **microteslas**.
 
 ## ~
 
 
 ### Parameters
 
-* ``dimension`` means which direction the micro:bit should measure
+* ``dimension`` means which direction the @boardname@ should measure
   magnetic force in: either `Dimension.X` (the left-right direction),
   `Dimension.Y` (the forward/backward direction), or `Dimension.Z`
   (the up/down direction)
@@ -26,7 +26,7 @@ The micro:bit measures magnetic force with **microteslas**.
 
 ### Example: metal detector
 
-This program makes the center LED of the micro:bit get brighter when
+This program makes the center LED of the @boardname@ get brighter when
 the magnetic force is stronger, and dimmer when it is weaker.
 
 ```blocks

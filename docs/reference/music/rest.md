@@ -4,7 +4,7 @@ Rest (play no sound) through pin `PO` for the amount of time you say.
 
 ## Simulator
 
-This function only works on the micro:bit and in some browsers.
+This function only works on the @boardname@ and in some browsers.
 
 ```sig
 music.rest(400)
@@ -13,7 +13,7 @@ music.rest(400)
 ### Parameters
 
 * ``ms`` is a [number](/reference/types/number) saying how many
-  milliseconds the micro:bit should rest. One second is 1000
+  milliseconds the @boardname@ should rest. One second is 1000
   milliseconds.
 
 ## Example

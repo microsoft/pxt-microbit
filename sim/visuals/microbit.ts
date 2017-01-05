@@ -334,12 +334,19 @@ namespace pxsim.visuals {
                 svg.fill(this.buttons[index], btn.pressed ? theme.buttonDown : theme.buttonUp);
             });
 
-            let bw = state.ledMatrixState.displayMode == pxsim.DisplayMode.bw
-            let img = state.ledMatrixState.image;
-            this.leds.forEach((led, i) => {
-                let sel = (<SVGStylable><any>led)
-                sel.style.opacity = ((bw ? img.data[i] > 0 ? 255 : 0 : img.data[i]) / 255.0) + "";
-            })
+            if (state.ledMatrixState.disabled) {
+                this.leds.forEach((led, i) => {
+                    const sel = (<SVGStylable><any>led)
+                    sel.style.opacity = "0";
+                })
+            } else {
+                const bw = state.ledMatrixState.displayMode == pxsim.DisplayMode.bw
+                const img = state.ledMatrixState.image;
+                this.leds.forEach((led, i) => {
+                    const sel = (<SVGStylable><any>led)
+                    sel.style.opacity = ((bw ? img.data[i] > 0 ? 255 : 0 : img.data[i]) / 255.0) + "";
+                })
+            }
             this.updatePins();
             this.updateTilt();
             this.updateHeading();
@@ -549,12 +556,12 @@ namespace pxsim.visuals {
 
         private updateTilt() {
             if (this.props.disableTilt) return;
-            let state = this.board;
+            const state = this.board;
             if (!state || !state.accelerometerState.accelerometer.isActive) return;
 
-            let x = state.accelerometerState.accelerometer.getX();
-            let y = state.accelerometerState.accelerometer.getY();
-            let af = 8 / 1023;
+            const x = state.accelerometerState.accelerometer.getX();
+            const y = -state.accelerometerState.accelerometer.getY();
+            const af = 8 / 1023;
 
             this.element.style.transform = "perspective(30em) rotateX(" + y * af + "deg) rotateY(" + x * af + "deg)"
             this.element.style.perspectiveOrigin = "50% 50% 50%";
@@ -613,7 +620,7 @@ namespace pxsim.visuals {
             }
 
             // head
-            this.head = <SVGGElement>svg.child(this.g, "g", {class: "sim-head"});
+            this.head = <SVGGElement>svg.child(this.g, "g", { class: "sim-head" });
             svg.child(this.head, "circle", { cx: 258, cy: 75, r: 100, fill: "transparent" })
             this.logos.push(svg.path(this.head, "sim-theme sim-theme-glow", "M269.9,50.2L269.9,50.2l-39.5,0v0c-14.1,0.1-24.6,10.7-24.6,24.8c0,13.9,10.4,24.4,24.3,24.7v0h39.6c14.2,0,24.8-10.6,24.8-24.7C294.5,61,284,50.3,269.9,50.2 M269.7,89.2L269.7,89.2l-39.3,0c-7.7-0.1-14-6.4-14-14.2c0-7.8,6.4-14.2,14.2-14.2h39.1c7.8,0,14.2,6.4,14.2,14.2C283.9,82.9,277.5,89.2,269.7,89.2"));
             this.logos.push(svg.path(this.head, "sim-theme sim-theme-glow", "M230.6,69.7c-2.9,0-5.3,2.4-5.3,5.3c0,2.9,2.4,5.3,5.3,5.3c2.9,0,5.3-2.4,5.3-5.3C235.9,72.1,233.5,69.7,230.6,69.7"));
@@ -638,7 +645,7 @@ namespace pxsim.visuals {
             this.pins.push(svg.path(this.g, "sim-pin", "M359.9,317.3c-12.8,0-22.1,10.3-23.1,23.1V406H383v-65.6C383,327.7,372.7,317.3,359.9,317.3z M360,360.1c-10.7,0-19.3-8.6-19.3-19.3c0-10.7,8.6-19.3,19.3-19.3c10.7,0,19.3,8.7,19.3,19.3C379.3,351.5,370.7,360.1,360,360.1z"));
             this.pins.push(svg.path(this.g, "sim-pin", "M458,317.6c-13,0-23.6,10.6-23.6,23.6c0,0,0,0.1,0,0.1h0V406H469c4.3,0,8.4-1,12.6-2.7v-60.7c0-0.4,0-0.9,0-1.3C481.6,328.1,471,317.6,458,317.6z M457.8,360.9c-10.7,0-19.3-8.6-19.3-19.3c0-10.7,8.6-19.3,19.3-19.3c10.7,0,19.3,8.7,19.3,19.3C477.1,352.2,468.4,360.9,457.8,360.9z"));
 
-            this.pins.forEach((p, i) => svg.hydrate(p, {title: pinTitles[i]}));
+            this.pins.forEach((p, i) => svg.hydrate(p, { title: pinTitles[i] }));
 
             this.pinGradients = this.pins.map((pin, i) => {
                 let gid = "gradient-pin-" + i
@@ -656,7 +663,7 @@ namespace pxsim.visuals {
                 const btnw = 56.2;
                 const btnn = 6;
                 const btnnm = 10
-                let btng = svg.child(this.g, "g", {class: "sim-button-group"});
+                let btng = svg.child(this.g, "g", { class: "sim-button-group" });
                 this.buttonsOuter.push(btng);
                 svg.child(btng, "rect", { class: "sim-button-outer", x: left, y: top, rx: btnr, ry: btnr, width: btnw, height: btnw });
                 svg.child(btng, "circle", { class: "sim-button-nut", cx: left + btnnm, cy: top + btnnm, r: btnn });
@@ -697,7 +704,7 @@ namespace pxsim.visuals {
             }
             let tiltDecayer = 0;
             this.element.addEventListener(pointerEvents.move, (ev: MouseEvent) => {
-                let state = this.board;
+                const state = this.board;
                 if (!state.accelerometerState.accelerometer.isActive) return;
 
                 if (tiltDecayer) {
@@ -705,13 +712,14 @@ namespace pxsim.visuals {
                     tiltDecayer = 0;
                 }
 
-                let ax = (ev.clientX - this.element.clientWidth / 2) / (this.element.clientWidth / 3);
-                let ay = (ev.clientY - this.element.clientHeight / 2) / (this.element.clientHeight / 3);
+                const bbox = this.element.getBoundingClientRect();
+                const ax = (ev.clientX - bbox.width / 2) / (bbox.width / 3);
+                const ay = (ev.clientY - bbox.height / 2) / (bbox.height / 3);
 
-                let x = - Math.max(- 1023, Math.min(1023, Math.floor(ax * 1023)));
-                let y = Math.max(- 1023, Math.min(1023, Math.floor(ay * 1023)));
-                let z2 = 1023 * 1023 - x * x - y * y;
-                let z = Math.floor((z2 > 0 ? -1 : 1) * Math.sqrt(Math.abs(z2)));
+                const x = - Math.max(- 1023, Math.min(1023, Math.floor(ax * 1023)));
+                const y = - Math.max(- 1023, Math.min(1023, Math.floor(ay * 1023)));
+                const z2 = 1023 * 1023 - x * x - y * y;
+                const z = Math.floor((z2 > 0 ? -1 : 1) * Math.sqrt(Math.abs(z2)));
 
                 state.accelerometerState.accelerometer.update(x, y, z);
                 this.updateTilt();

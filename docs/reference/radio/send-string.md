@@ -1,6 +1,6 @@
 # Send String
 
-Sends a string to other micro:bits in the area connected by radio. The
+Sends a string to other @boardname@s in the area connected by radio. The
 maximum string length is 19 characters.
 
 ```sig
@@ -14,9 +14,9 @@ radio.sendString("Hello!")
 
 ### Example: Two-way radio
 
-If you load this program onto two or more micro:bits, you can send a
+If you load this program onto two or more @boardname@s, you can send a
 code word from one of them to the others by pressing button `A`.  The
-other micro:bits will receive the code word and then show it.
+other @boardname@s will receive the code word and then show it.
 
 ```blocks
 input.onButtonPressed(Button.A, () => {
@@ -24,8 +24,8 @@ input.onButtonPressed(Button.A, () => {
     basic.showString("SENT");
 })
 
-radio.onDataPacketReceived(({ text }) => {
-    basic.showString(text);
+radio.onDataPacketReceived(({ receivedString }) => {
+    basic.showString(receivedString);
 });
 ```
 

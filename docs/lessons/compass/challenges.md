@@ -1,6 +1,6 @@
 # compass challenges
 
-Display the direction that the micro:bit is facing using the compass 
+Display the direction that the @boardname@ is facing using the compass 
 
 ## Before we get started
 
@@ -27,7 +27,7 @@ basic.forever(() => {
 
 ### Challenge 1
 
-Instead of displaying `N` when the BBC micro:bit is pointing North, display a star to indicate the north star.
+Instead of displaying `N` when the @boardname@ is pointing North, display a star to indicate the north star.
 
 ```blocks
  let degrees = 0;

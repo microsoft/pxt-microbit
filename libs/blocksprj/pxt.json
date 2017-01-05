@@ -1,0 +1,13 @@
+{
+    "name": "{0} block",
+    "dependencies": {
+        "core": "file:../core",
+        "radio": "file:../radio"
+    },
+    "description": "",
+    "files": [
+        "main.blocks",
+        "main.ts",
+        "README.md"
+    ]
+}

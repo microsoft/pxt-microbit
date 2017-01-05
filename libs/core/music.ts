@@ -119,13 +119,17 @@ enum BeatFraction {
     //% block="1/8"
     Eighth = 8,
     //% block="1/16"
-    Sixteenth = 16
+    Sixteenth = 16,
+    //% block="2"
+    Double = 32,
+    //% block="4",
+    Breve = 64
 }
 
 /**
  * Generation of music tones through pin ``P0``.
  */
-//% color=#D83B01 weight=98
+//% color=#D83B01 weight=98 icon="\uf025"
 namespace music {
     let beatsPerMinute: number = 120;
 
@@ -135,10 +139,9 @@ namespace music {
      * @param ms tone duration in milliseconds (ms)
      */
     //% help=music/play-tone weight=90
-    //% blockId=device_play_note block="play|tone %note=device_note|for %duration=device_beat" icon="\uf025" blockGap=8
+    //% blockId=device_play_note block="play|tone %note=device_note|for %duration=device_beat" blockGap=8
     //% parts="headphone"
     export function playTone(frequency: number, ms: number): void {
-        pins.analogSetPitchPin(AnalogPin.P0);
         pins.analogPitch(frequency, ms);
     }
 
@@ -147,10 +150,9 @@ namespace music {
      * @param frequency pitch of the tone to play in Hertz (Hz)
      */
     //% help=music/ring-tone weight=80
-    //% blockId=device_ring block="ring tone (Hz)|%note=device_note" icon="\uf025" blockGap=8
+    //% blockId=device_ring block="ring tone (Hz)|%note=device_note" blockGap=8
     //% parts="headphone"
     export function ringTone(frequency: number): void {
-        pins.analogSetPitchPin(AnalogPin.P0);
         pins.analogPitch(frequency, 0);
     }
 
@@ -168,7 +170,7 @@ namespace music {
 
     /**
      * Gets the frequency of a note.
-     * @param name the note name
+     * @param name the note name, eg: Note.C
      */
     //% weight=50 help=music/note-frequency
     //% blockId=device_note block="%note"
@@ -190,11 +192,15 @@ namespace music {
         init();
         if (fraction == null) fraction = BeatFraction.Whole;
         let beat = 60000 / beatsPerMinute;
-        if (fraction == BeatFraction.Whole) return beat;
-        else if (fraction == BeatFraction.Half) return beat / 2;
-        else if (fraction == BeatFraction.Quarter) return beat / 4
-        else if (fraction == BeatFraction.Eighth) return beat / 8;
-        else return beat / 16;
+        switch (fraction) {
+            case BeatFraction.Half: return beat / 2;
+            case BeatFraction.Quarter: return beat / 4;
+            case BeatFraction.Eighth: return beat / 8;
+            case BeatFraction.Sixteenth: return beat / 16;
+            case BeatFraction.Double: return beat * 2;
+            case BeatFraction.Breve: return beat * 4;
+            default: return beat;
+        }
     }
 
     /**

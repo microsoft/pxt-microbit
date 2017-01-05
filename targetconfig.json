@@ -1,0 +1,11 @@
+{
+    "packages": {
+        "approvedOrgs": [
+            "Microsoft",
+            "microbit-foundation"
+        ],
+        "approvedRepos": [
+            "CoderDojoOlney/pxt-olney"
+        ]
+    }
+}

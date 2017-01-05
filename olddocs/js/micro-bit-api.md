@@ -1,6 +1,6 @@
-# micro:bit
+# @boardname@
 
-The micro:bit device api. #microbit
+The @boardname@ device api. #microbit
 
 Initialize the library.
 

@@ -24,11 +24,11 @@ The currently available on-line resources from the Quick Start Guide are the
 
 ### Errata
 
-* compilation to the BBC micro:bit now works [off line](/offline), based on a new compiler in the web browser. The text and picture below replaces the text and picture on page 10 of the Guide:
+* compilation to the @boardname@ now works [off line](/offline), based on a new compiler in the web browser. The text and picture below replaces the text and picture on page 10 of the Guide:
 
-### How does my program get onto the BBC micro:bit?
+### How does my program get onto the @boardname@?
 
-For your program to work on the BBC micro:bit, first it has to be compiled. Compiling means to translate a program into a more efficient computer language. When you hit the compile button on the Microsoft Touch Develop Editor interface, your program is compiled into a hex file that contains the machine code in the instruction set used by the ARM processor that is on your BBC micro:bit.  Compiling to ARM machine code actually happens in the web browser, where the code from script is joined with the machine code of the micro:bit runtime.
+For your program to work on the @boardname@, first it has to be compiled. Compiling means to translate a program into a more efficient computer language. When you hit the compile button on the Microsoft Touch Develop Editor interface, your program is compiled into a hex file that contains the machine code in the instruction set used by the ARM processor that is on your @boardname@.  Compiling to ARM machine code actually happens in the web browser, where the code from script is joined with the machine code of the @boardname@ runtime.
 
 ![](/static/mb/quick-start-0.png)
 

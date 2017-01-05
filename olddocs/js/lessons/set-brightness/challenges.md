@@ -1,10 +1,10 @@
 # set brightness challenges
 
-These challenges will allow you to change the brightness of the micro:bit. docs
+These challenges will allow you to change the brightness of the @boardname@. docs
 
 **Challenge 0**
 
-[This tutorial](/lessons/set-brightness/tutorial) will show you how to set the brightness on the micro:bit.
+[This tutorial](/lessons/set-brightness/tutorial) will show you how to set the brightness on the @boardname@.
 
 ```
 led.setBrightness(255)

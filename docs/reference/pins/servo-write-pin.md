@@ -44,5 +44,5 @@ pins.servoWritePin(AnalogPin.P0, 0)
 
 ### See also
 
-[BBC micro:bit pins](/device/pins), [servo set pulse](/reference/pins/servo-set-pulse)
+[@boardname@ pins](/device/pins), [servo set pulse](/reference/pins/servo-set-pulse)
 

@@ -1,3 +1,35 @@
 /*******************************
      User Global Variables
 *******************************/
+
+@importGoogleFonts: true;
+
+@fontName  : 'Roboto';
+
+@emSize      : 14px;
+@fontSize    : 13px;
+
+@primaryColor: @purple;
+
+@teal: #3891A6;
+@blue: #456990;
+@red: #EF767A;
+@pink: #F46197;
+@yellow: #FDE74C;
+
+/* Microbit.org colors */
+@orange: #ff8b27;
+@purple: #6633cc;
+@green: #00ED00;
+
+@pageBackground: #fff;
+
+/*******************************
+         PXT Overrides
+*******************************/
+
+@mainMenuHeight: 5rem;
+@mobileMenuHeight: 4.4rem;
+
+@simulatorBackground: #FDFDFF;
+@blocklySvgColor: #ecf0f1;

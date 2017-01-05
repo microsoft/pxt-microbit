@@ -1,6 +1,6 @@
 # Statements
 
-The following JavaScript statements are supported for the micro:bit:
+The following JavaScript statements are supported for the @boardname@:
 
 ## Variable declarations
 * `const` statement - [read more](http://devdocs.io/javascript/statements/const)

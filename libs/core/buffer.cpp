@@ -1,4 +1,4 @@
-#include "ksbit.h"
+#include "pxt.h"
 
 // keep in sync with github/pxt/pxtsim/libgeneric.ts
 enum class NumberFormat {

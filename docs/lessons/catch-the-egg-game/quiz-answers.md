@@ -43,7 +43,7 @@ eggY = eggY + 1
 led.plot(eggX, eggY)
 ```
 
-## 4. . Write the code that resets the egg after it has fallen past the bottom of the BBC micro:bit.
+## 4. . Write the code that resets the egg after it has fallen past the bottom of the @boardname@.
 
 <br/>
 

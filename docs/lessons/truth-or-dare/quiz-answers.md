@@ -10,7 +10,7 @@ This is the answer key for the [truth or dare quiz](/lessons/truth-or-dare/quiz)
 let random = Math.random(4)
 ```
 
-## 2. Write an if statement that will display the message "TRUTH" on the BBC micro:bit  if the local variable 'random' equals 0. 
+## 2. Write an if statement that will display the message "TRUTH" on the @boardname@  if the local variable 'random' equals 0. 
 
 ```blocks
 let random = Math.random(4)

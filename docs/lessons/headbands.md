@@ -61,10 +61,10 @@ Learn how to create a charades game with **collections**, ` create -> Collection
 * learn how to create a global variable as a place where you can store data so that you can use it later in your code, accessible across functions and in nested code blocks
 * learn how to repeat code in the background forever
 * learn how to learn how to conditionally run code depending on whether a condition is true or not
-* learn how to run code when the BBC micro:bit is oriented perpendicular to the floor with the logo down
+* learn how to run code when the @boardname@ is oriented perpendicular to the floor with the logo down
 * learn how to get the number of milliseconds elapsed since the script began
-* learn how to show a string on the BBC micro:bit screen
-* learn how to show a number of the BBC micro:bit screen
+* learn how to show a string on the @boardname@ screen
+* learn how to show a number of the @boardname@ screen
 
 ## Links to the National Curriculum Programmes of Study for Computing
 

@@ -4,7 +4,7 @@ Returns the duration of a beat in milli-seconds
 
 ## Simulator
 
-This function only works on the micro:bit and in some browsers.
+This function only works on the @boardname@ and in some browsers.
 
 ```sig
 music.beat(BeatFraction.Whole)

@@ -35,7 +35,7 @@ This file contains a map from the symbol name to the en
 ```
 {
   ...
-  "basic": "Provides access to basic micro:bit functionality.",
+  "basic": "Provides access to common functionality.",
    ...
 }
 ```
