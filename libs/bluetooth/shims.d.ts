@@ -4,7 +4,7 @@
     /**
      * Support for additional Bluetooth services.
      */
-    //% color=#0082FB weight=20
+    //% color=#0082FB weight=20 icon="\uf294"
 declare namespace bluetooth {
 
     /**

@@ -129,7 +129,7 @@ enum BeatFraction {
 /**
  * Generation of music tones through pin ``P0``.
  */
-//% color=#D83B01 weight=98
+//% color=#D83B01 weight=98 icon="\uf025"
 namespace music {
     let beatsPerMinute: number = 120;
 
@@ -139,7 +139,7 @@ namespace music {
      * @param ms tone duration in milliseconds (ms)
      */
     //% help=music/play-tone weight=90
-    //% blockId=device_play_note block="play|tone %note=device_note|for %duration=device_beat" icon="\uf025" blockGap=8
+    //% blockId=device_play_note block="play|tone %note=device_note|for %duration=device_beat" blockGap=8
     //% parts="headphone"
     export function playTone(frequency: number, ms: number): void {
         pins.analogPitch(frequency, ms);
@@ -150,7 +150,7 @@ namespace music {
      * @param frequency pitch of the tone to play in Hertz (Hz)
      */
     //% help=music/ring-tone weight=80
-    //% blockId=device_ring block="ring tone (Hz)|%note=device_note" icon="\uf025" blockGap=8
+    //% blockId=device_ring block="ring tone (Hz)|%note=device_note" blockGap=8
     //% parts="headphone"
     export function ringTone(frequency: number): void {
         pins.analogPitch(frequency, 0);

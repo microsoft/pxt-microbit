@@ -2,7 +2,7 @@
 
 
 
-    //% color=270 weight=34
+    //% color=270 weight=34 icon="\uf012"
 declare namespace radio {
 
     /**
