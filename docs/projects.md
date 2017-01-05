@@ -66,6 +66,10 @@ Fun games to build with your @boardname@.
 
 ```codecard
 [{
+  "name": "Inchworm",
+  "url":"/projects/inchworm",
+  "imageUrl":"/static/mb/projects/inchworm.jpg"
+}, {
   "name": "Timing gates",
   "url":"/projects/timing-gates",
   "imageUrl":"/static/mb/projects/timing-gates.jpg"
