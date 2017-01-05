@@ -21,7 +21,7 @@ enum LedSpriteProperty {
 /**
  * A single-LED sprite game engine
  */
-//% color=#008272 weight=32
+//% color=#008272 weight=32 icon="\uf11b"
 //% advanced=true
 namespace game {
     let _score: number = 0;

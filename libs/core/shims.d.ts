@@ -4,7 +4,7 @@
     /**
      * Creation, manipulation and display of LED images.
      */
-    //% color=#5C2D91 weight=31
+    //% color=#5C2D91 weight=31 icon="\uf03e"
     //% advanced=true
 declare namespace images {
 
@@ -658,7 +658,7 @@ declare namespace pins {
 
 
 
-    //% weight=2 color=30
+    //% weight=2 color=30 icon="\uf287"
     //% advanced=true
 declare namespace serial {
 
