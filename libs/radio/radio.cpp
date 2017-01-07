@@ -24,7 +24,7 @@ using namespace pxt;
 // payload: string length (9), string (10 ... 28)
 #define PACKET_TYPE_STRING 2
 
-//% color=270 weight=34
+//% color=270 weight=96 icon="\uf012"
 namespace radio {
 
     // -------------------------------------------------------------------------

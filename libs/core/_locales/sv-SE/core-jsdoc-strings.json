@@ -1,0 +1,5 @@
+{
+  "Math.abs": "Returnerar absolutbeloppet av ett tal (värdet utan hänsyn till huruvida det är positivt eller negativt). \nTill exempel är absolutbeloppet av -5 detsamma som absolutbeloppet av 5.",
+  "Math.max": "Returnerar det större av två givna numeriska uttryck.",
+  "Math.min": "Returnerar det mindre av två givna numeriska uttryck."
+}

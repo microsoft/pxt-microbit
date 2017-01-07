@@ -6,7 +6,9 @@
         "shims.d.ts",
         "enums.d.ts",
         "radio.cpp",
-        "radio.ts"
+        "radio.ts",
+        "_locales/de/radio-strings.json",
+        "_locales/de/radio-jsdoc-strings.json"
     ],
     "public": true,
     "dependencies": {

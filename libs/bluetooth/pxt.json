@@ -6,7 +6,8 @@
         "enums.d.ts",
         "shims.d.ts",
         "bluetooth.ts",
-        "bluetooth.cpp"
+        "bluetooth.cpp",
+        "_locales/de/bluetooth-jsdoc-strings.json"
     ],
     "public": true,
     "dependencies": {
@@ -46,7 +47,7 @@
                     "microbit-dal": {
                         "bluetooth": {
                             "open": 1,
-                            "pairing_mode": 0,                            
+                            "pairing_mode": 0,
                             "whitelist": 0,
                             "security_level": null
                         }

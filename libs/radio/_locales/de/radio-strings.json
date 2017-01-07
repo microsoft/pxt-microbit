@@ -1,0 +1,17 @@
+{
+  "radio.onDataPacketReceived|block": "wenn Datenpaket empfangen",
+  "radio.onDataReceived|block": "über Funk empfangene Daten",
+  "radio.receiveNumber|block": "über Funk empfangene Zahl",
+  "radio.receiveString|block": "über Funk empfangene Zeichenfolge",
+  "radio.receivedSignalStrength|block": "über Funk empfangene Signalstärke",
+  "radio.sendNumber|block": "sende Zahl %value über Funk",
+  "radio.sendString|block": "sende Zeichenfolge %msg über Funk",
+  "radio.sendValue|block": "schicke | Wert %name |=%value über Funk",
+  "radio.setGroup|block": "setze Gruppe %ID über Funk",
+  "radio.setTransmitPower|block": "lege Übertragungsstärke %power über Funk fest",
+  "radio.setTransmitSerialNumber|block": "übertrage Übertragungs-Seriennummer %transmit über Funk",
+  "radio.writeReceivedPacketToSerial|block": "schreibe das über Funk emfangene Paket auf Seriell",
+  "radio.writeValueToSerial|block": "schreibe Wert auf Seriell über Funk",
+  "radio|block": "Funk",
+  "{id:category}Radio": "Funk"
+}

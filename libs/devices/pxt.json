@@ -5,7 +5,8 @@
         "README.md",
         "enums.d.ts",
         "shims.d.ts",
-        "devices.cpp"
+        "devices.cpp",
+        "_locales/fr/devices-jsdoc-strings.json"
     ],
     "public": true,
     "dependencies": {

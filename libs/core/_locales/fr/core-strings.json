@@ -30,7 +30,6 @@
   "input.magneticForce|block": "force magnétique (µT) |%NAME",
   "input.onButtonPressed|block": "lorsque le button|%NAME|est pressé",
   "input.onGesture|block": "lorsque|%NAME",
-  "input.onPinPressed|block": "lorsque le pin %NAME|est pressé",
   "input.onPinReleased|block": "lorsque la broche %NAME|est lachée",
   "input.pinIsPressed|block": "broche %NAME| est pressée",
   "input.rotation|block": "rotation (°)|%NAME",

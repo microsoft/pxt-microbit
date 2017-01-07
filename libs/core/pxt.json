@@ -37,7 +37,11 @@
         "_locales/fr/core-jsdoc-strings.json",
         "_locales/fr/core-strings.json",
         "_locales/de/core-jsdoc-strings.json",
-        "_locales/de/core-strings.json"
+        "_locales/de/core-strings.json",
+        "_locales/no/core-strings.json",
+        "_locales/ja/core-strings.json",
+        "_locales/sv-SE/core-jsdoc-strings.json",
+        "_locales/no/core-jsdoc-strings.json"
     ],
     "public": true,
     "dependencies": {},

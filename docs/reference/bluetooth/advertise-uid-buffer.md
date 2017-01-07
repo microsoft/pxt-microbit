@@ -25,7 +25,7 @@ bluetooth.advertiseUidBuffer(pins.createBuffer(16), 7, true);
 
 * ``buffer`` - a 16 bytes buffer containing the namespace (first 10 bytes) and instance (last 6 bytes).
 * ``power`` - a [number](/reference/types/number) representing the power level between 0 (short) and 7 (maximum range).
-* ``connectable`` - a [boolean](/reference/type/boolean) indicating whether or not the micro:bit should accept connections. 
+* ``connectable`` - a [boolean](/blocks/logic/boolean) indicating whether or not the micro:bit should accept connections. 
 
 
 ## See Also

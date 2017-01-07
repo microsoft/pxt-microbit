@@ -3,7 +3,7 @@
 /**
 * Creation, manipulation and display of LED images.
 */
-//% color=#5C2D91 weight=31
+//% color=#5C2D91 weight=31 icon="\uf03e"
 //% advanced=true
 namespace images {
     /**

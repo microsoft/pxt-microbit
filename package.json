@@ -1,6 +1,6 @@
 {
   "name": "pxt-microbit",
-  "version": "0.7.12",
+  "version": "0.7.20",
   "description": "micro:bit target for PXT",
   "keywords": [
     "JavaScript",
@@ -21,10 +21,12 @@
     "built/*.json",
     "built/*.d.ts",
     "built/hexcache",
+    "built/web",
     "sim/public",
     "docs/*.md",
     "docs/*/*.md",
-    "docs/*/*/*.md"
+    "docs/*/*/*.md",
+    "docs/static/icons/favicon.ico"
   ],
   "main": "built/pxtrequire.js",
   "typings": "built/pxtrequire.d.ts",
@@ -34,6 +36,6 @@
     "semantic-ui-less": "^2.2.4"
   },
   "dependencies": {
-    "pxt-core": "0.7.13"
+    "pxt-core": "0.8.8"
   }
 }
