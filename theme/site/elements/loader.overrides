@@ -13,7 +13,7 @@
    box-shadow: none;
    border-radius: 0px;
    margin: 40px auto;
-   background: transparent url("static/microbit.simplified.svg") no-repeat center center;
+   background: transparent data-uri("static/logo.square.white.svg") no-repeat center center;
    background-size: 100%;
   -webkit-animation: loader-pxt @loaderSpeed infinite ease-in-out;
   animation: loader-pxt @loaderSpeed infinite ease-in-out;
@@ -25,15 +25,15 @@
             transform: perspective(160px) rotateX(0deg) rotateY(0deg); 
             opacity: 0}
   15% {
-    -webkit-transform: perspective(160px) rotateX(0deg) rotateY(-60.1deg);
-            transform: perspective(160px) rotateX(0deg) rotateY(-60.1deg); }
+    -webkit-transform: perspective(160px) rotateX(0deg) rotateY(-@loaderAngle);
+            transform: perspective(160px) rotateX(0deg) rotateY(-@loaderAngle); }
   50% {
-    -webkit-transform: perspective(160px) rotateX(0deg) rotateY(60.1deg);
-            transform: perspective(160px) rotateX(0deg) rotateY(60.1deg); 
+    -webkit-transform: perspective(160px) rotateX(0deg) rotateY(@loaderAngle);
+            transform: perspective(160px) rotateX(0deg) rotateY(@loaderAngle); 
             opacity: 1}
   100% {
-    -webkit-transform: perspective(160px) rotateX(0deg) rotateY(-180.9deg);
-            transform: perspective(160px) rotateX(0deg) rotateY(-180.9deg); 
+    -webkit-transform: perspective(160px) rotateX(0deg) rotateY(0deg);
+            transform: perspective(160px) rotateX(0deg) rotateY(0deg); 
             opacity: 0}
 }
 
@@ -43,14 +43,14 @@
             transform: perspective(160px) rotateX(0deg) rotateY(0deg); 
             opacity: 0}
   15% {
-    -webkit-transform: perspective(160px) rotateX(0deg) rotateY(-60.1deg);
-            transform: perspective(160px) rotateX(0deg) rotateY(-60.1deg); }
+    -webkit-transform: perspective(160px) rotateX(0deg) rotateY(-10deg);
+            transform: perspective(160px) rotateX(0deg) rotateY(-10deg); }
   50% {
-    -webkit-transform: perspective(160px) rotateX(0deg) rotateY(60.1deg);
-            transform: perspective(160px) rotateX(0deg) rotateY(60.1deg);
+    -webkit-transform: perspective(160px) rotateX(0deg) rotateY(10deg);
+            transform: perspective(160px) rotateX(0deg) rotateY(10deg);
             opacity: 1}
   100% {
-    -webkit-transform: perspective(160px) rotateX(0deg) rotateY(-180.9deg);
-            transform: perspective(160px) rotateX(0deg) rotateY(-180.9deg); 
+    -webkit-transform: perspective(160px) rotateX(0deg) rotateY(0deg);
+            transform: perspective(160px) rotateX(0deg) rotateY(0deg); 
             opacity: 0}
 }
