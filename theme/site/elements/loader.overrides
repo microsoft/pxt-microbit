@@ -13,7 +13,7 @@
    box-shadow: none;
    border-radius: 0px;
    margin: 40px auto;
-   background: transparent data-uri("static/logo.square.white.svg") no-repeat center center;
+   background: transparent data-uri("static/loader.svg") no-repeat center center;
    background-size: 100%;
   -webkit-animation: loader-pxt @loaderSpeed infinite ease-in-out;
   animation: loader-pxt @loaderSpeed infinite ease-in-out;
