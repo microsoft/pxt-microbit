@@ -1,8 +1,3 @@
 /*******************************
     User Variable Overrides
 *******************************/
-
-@loaderSpeed: 2s;
-@loaderAngle: 5deg;
-
-@large   : 200px;
