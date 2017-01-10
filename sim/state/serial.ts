@@ -40,7 +40,7 @@ namespace pxsim.serial {
     }
 
     export function readString(): string {
-        return board().serialState.readSerial();        
+        return board().serialState.readSerial();
     }
 
     export function onDataReceived(delimiters: string, handler: RefAction) {

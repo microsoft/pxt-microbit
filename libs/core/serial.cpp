@@ -70,6 +70,8 @@ namespace serial {
     void onDataReceived(StringData* delimiters, Action body) {
       uBit.serial.eventOn(ManagedString(delimiters));
       registerWithDal(MICROBIT_ID_SERIAL, MICROBIT_SERIAL_EVT_DELIM_MATCH, body);
+      // lazy initialization of serial buffers
+      uBit.serial.read();
     }
 
     /**
