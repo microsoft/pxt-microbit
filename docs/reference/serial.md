@@ -7,7 +7,9 @@ serial.writeLine("");
 serial.writeNumber(0);
 serial.writeValue("x", 0);
 serial.writeString("");
+serial.readUntil(",");
 serial.readLine();
+serial.readString();
 serial.redirect(SerialPin.P0, SerialPin.P0, BaudRate.BaudRate115200);
 serial.onDataReceived(",", () => {})
 ```
