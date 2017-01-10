@@ -680,6 +680,14 @@ declare namespace serial {
     function readLine(): string;
 
     /**
+     * Registers an event to be fired when one of the delimiter is matched
+     * @param delimiters the characters to match received characters against. eg:"\r\n"
+     */
+    //% help=serial/on-data-received
+    //% weight=18 blockId=serial_on_data_received block="serial|on data received %delimiters=serial_delimiter_conv" shim=serial::onDataReceived
+    function onDataReceived(delimiters: string, body: () => void): void;
+
+    /**
      * Sends a piece of text through Serial connection.
      */
     //% help=serial/write-string

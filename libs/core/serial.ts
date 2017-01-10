@@ -38,20 +38,10 @@ namespace serial {
     }
 
     /**
-    * Registers an event to be fired when a line has been received
-    */
-    // help=serial/on-line-received
-    // blockId=serial_on_line_received block="serial on line received"
-    // weight=21 blockGap=8
-    export function onLineReceived(body: Action): void {
-       // serial.onDataReceived("\n", body);
-    }
-
-    /**
      * Returns the delimiter corresponding string
      */
     //% blockId="serial_delimiter_conv" block="%del"
-    //% weight=1
+    //% weight=1 blockHidden=true
     export function delimiters(del: Delimiters): string {
         // even though it might not look like, this is more
         // (memory) efficient than the C++ implementation, because the
