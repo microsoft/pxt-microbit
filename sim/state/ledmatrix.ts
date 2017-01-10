@@ -228,7 +228,7 @@ namespace pxsim.basic {
             clearScreen();
             pause(interval * 5);
         } else {
-            if (s.length == 1) showLeds(createImageFromString(s + " "), interval * 5)
+            if (s.length == 1) showLeds(createImageFromString(s), 0)
             else ImageMethods.scrollImage(createImageFromString(s + " "), 1, interval);
         }
     }
