@@ -38,6 +38,16 @@ namespace serial {
     }
 
     /**
+     * Reads a line of text from the serial port.
+     */
+    //% help=serial/read-line
+    //% blockId=serial_read_line block="serial|read line"
+    //% weight=20 blockGap=8
+    export function readLine(): string {
+        return serial.readUntil(delimiters(Delimiters.NewLine));
+    }
+
+    /**
      * Returns the delimiter corresponding string
      */
     //% blockId="serial_delimiter_conv" block="%del"

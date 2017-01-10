@@ -35,16 +35,12 @@ namespace pxsim.serial {
         board().writeSerial(s);
     }
 
-    export function readString(): string {
-        return board().serialState.readSerial();
-    }
-
-    export function readLine(): string {
-        return board().serialState.readSerial();
-    }
-
     export function readUntil(del: string): string {
-        return readLine();
+        return readString();
+    }
+
+    export function readString(): string {
+        return board().serialState.readSerial();        
     }
 
     export function onDataReceived(delimiters: string, handler: RefAction) {

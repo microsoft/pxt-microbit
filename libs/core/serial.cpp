@@ -51,13 +51,14 @@ namespace serial {
     }
 
     /**
-     * Reads a line of text from the serial port.
-     */
-    //% help=serial/read-line
-    //% blockId=serial_read_line block="serial|read line"
-    //% weight=20 blockGap=8
-    StringData* readLine() {
-      return readUntil(ManagedString("\n").leakData());
+    * Reads the buffered received data as a string
+    */
+    //% blockId=serial_read_buffer block="serial|read string"
+    //% weight=18
+    StringData* readString() {
+      int n = uBit.serial.getRxBufferSize();
+      if (n == 0) return ManagedString("").leakData();
+      return ManagedString(uBit.serial.read(n, MicroBitSerialMode::SYNC_SLEEP)).leakData();
     }
 
     /**

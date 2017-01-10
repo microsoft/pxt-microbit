@@ -672,12 +672,11 @@ declare namespace serial {
     function readUntil(delimiter: string): string;
 
     /**
-     * Reads a line of text from the serial port.
+     * Reads the buffered received data as a string
      */
-    //% help=serial/read-line
-    //% blockId=serial_read_line block="serial|read line"
-    //% weight=20 blockGap=8 shim=serial::readLine
-    function readLine(): string;
+    //% blockId=serial_read_buffer block="serial|read string"
+    //% weight=18 shim=serial::readString
+    function readString(): string;
 
     /**
      * Registers an event to be fired when one of the delimiter is matched.

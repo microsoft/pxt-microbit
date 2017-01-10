@@ -11,6 +11,16 @@ serial.onDataReceived(",", () => {})
 
 * `delimiters` is a [string](/reference/types/string) containing any of the character to match
 
+### Example
+
+Read values separated by `,`:
+
+```blocks
+serial.onDataReceived(serial.delimiters(Delimiters.Comma), () => {
+    basic.showString(serial.readUntil(serial.delimiters(Delimiters.Comma)))
+})
+```
+
 ### See also
 
 [serial](/device/serial),
