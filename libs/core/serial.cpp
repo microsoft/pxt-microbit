@@ -61,8 +61,8 @@ namespace serial {
     }
 
     /**
-    * Registers an event to be fired when one of the delimiter is matched
-    * @param delimiters the characters to match received characters against. eg:"\r\n"
+    * Registers an event to be fired when one of the delimiter is matched.
+    * @param delimiters the characters to match received characters against.
     */
     //% help=serial/on-data-received
     //% weight=18 blockId=serial_on_data_received block="serial|on data received %delimiters=serial_delimiter_conv"

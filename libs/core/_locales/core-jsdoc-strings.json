@@ -231,7 +231,7 @@
   "pins.spiWrite|param|value": "Data to be sent to the SPI slave",
   "serial": "Reading and writing data over a serial connection.",
   "serial.delimiters": "Returns the delimiter corresponding string",
-  "serial.onDataReceived": "Registers an event to be fired when one of the delimiter is matched",
+  "serial.onDataReceived": "Registers an event to be fired when one of the delimiter is matched.",
   "serial.onDataReceived|param|delimiters": "the characters to match received characters against. eg:\"\\r\\n\"",
   "serial.readLine": "Reads a line of text from the serial port.",
   "serial.readUntil": "Reads a line of text from the serial port and returns the buffer when the delimiter is met.",
