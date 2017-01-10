@@ -58,7 +58,7 @@ namespace serial {
     StringData* readString() {
       int n = uBit.serial.getRxBufferSize();
       if (n == 0) return ManagedString("").leakData();
-      return ManagedString(uBit.serial.read(n, MicroBitSerialMode::SYNC_SLEEP)).leakData();
+      return ManagedString(uBit.serial.read(n, MicroBitSerialMode::ASYNC)).leakData();
     }
 
     /**
@@ -71,7 +71,7 @@ namespace serial {
       uBit.serial.eventOn(ManagedString(delimiters));
       registerWithDal(MICROBIT_ID_SERIAL, MICROBIT_SERIAL_EVT_DELIM_MATCH, body);
       // lazy initialization of serial buffers
-      uBit.serial.read();
+      uBit.serial.read(MicroBitSerialMode::ASYNC);
     }
 
     /**
