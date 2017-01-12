@@ -71,7 +71,7 @@ namespace pxsim.control {
     }
 
     export function eventTimestamp(): number {
-        return board().bus.getLastEventTimestamp();
+        return board().bus.getLastEventTime();
     }
 }
 
