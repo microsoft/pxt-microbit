@@ -65,6 +65,14 @@ namespace pxsim.control {
         // TODO mode?
         board().bus.queue(id, evid)
     }
+
+    export function eventValue(): number | string {
+        return board().bus.getLastEvent();
+    }
+
+    export function eventTimestamp(): number {
+        return board().bus.getLastEventTimestamp();
+    }
 }
 
 namespace pxsim.pxtcore {
