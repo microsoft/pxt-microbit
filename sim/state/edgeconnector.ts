@@ -76,8 +76,7 @@ namespace pxsim.pins {
         if (!pin) return;
 
         analogSetPeriod(pinId, 20000);
-        const state = board().servosState.servoState(pinId);
-        state.setAngle(value);
+        pin.servoAngle = value;
     }
 
     export function servoSetPulse(pinId: number, micros: number) {
