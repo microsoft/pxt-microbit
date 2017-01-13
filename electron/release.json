@@ -1,9 +1,9 @@
 {
     "versions": {
         "0": {
-            "latest": "v0.7.23",
+            "latest": "v0.7.29",
             "banned": [],
-            "prompt": "v1.0.0"
+            "prompt": "v0.7.29"
         }
     }
 }
