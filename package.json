@@ -36,6 +36,6 @@
     "semantic-ui-less": "^2.2.4"
   },
   "dependencies": {
-    "pxt-core": "0.9.5"
+    "pxt-core": "0.10.1"
   }
 }
