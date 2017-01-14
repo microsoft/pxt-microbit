@@ -14,7 +14,6 @@ namespace pxsim {
         radioState: RadioState;
         // TODO: not singletons
         neopixelState: NeoPixelState;
-        servosState: MicroServosState;
         fileSystem: FileSystemState;
 
         constructor() {
@@ -53,7 +52,13 @@ namespace pxsim {
                     0,
                     DAL.MICROBIT_ID_IO_P19,
                     DAL.MICROBIT_ID_IO_P20
-                ]
+                ],
+                servos: {
+                    "P0": DAL.MICROBIT_ID_IO_P0,
+                    "P1": DAL.MICROBIT_ID_IO_P1,
+                    "P2": DAL.MICROBIT_ID_IO_P2,
+                    "P3": DAL.MICROBIT_ID_IO_P3
+                }
             });
             this.builtinParts["radio"] = this.radioState = new RadioState(runtime);
             this.builtinParts["accelerometer"] = this.accelerometerState = new AccelerometerState(runtime);
@@ -62,12 +67,7 @@ namespace pxsim {
             this.builtinParts["lightsensor"] = this.lightSensorState = new LightSensorState();
             this.builtinParts["compass"] = this.compassState = new CompassState();
             this.builtinParts["neopixel"] = this.neopixelState = new NeoPixelState();
-            this.builtinParts["microservo"] = this.servosState = new MicroServosState({
-                "P0": DAL.MICROBIT_ID_IO_P0,
-                "P1": DAL.MICROBIT_ID_IO_P1,
-                "P2": DAL.MICROBIT_ID_IO_P2,
-                "P3": DAL.MICROBIT_ID_IO_P3
-            });
+            this.builtinParts["microservo"] = this.edgeConnectorState;
 
             this.builtinVisuals["buttonpair"] = () => new visuals.ButtonPairView();
             this.builtinVisuals["ledmatrix"] = () => new visuals.LedMatrixView();
