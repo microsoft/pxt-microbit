@@ -3,27 +3,43 @@
 You can publish libraries (also known as packages or extensions)
 that users can then add to their scripts. These typically
 provide a driver for a particular hardware device you can connect
-to a microbit.
+to a microbit. 
 
-* [pxt-max6675](https://github.com/Microsoft/pxt-max6675) -- TypeScript
+### ~ hint
+
+All packages need to be approved by the Micro:bit Foundation before being available in the web editor.
+See **Approval** section below.
+
+### ~
+
 * [pxt-neopixel](https://github.com/Microsoft/pxt-neopixel) -- TypeScript + ARM Thumb assembly package
+* [pxt-max6675](https://github.com/Microsoft/pxt-max6675) -- TypeScript
 * [pxt-sonar](https://github.com/microsoft/pxt-sonar) -- TypeScript
 * [pxt-i2c-fram](https://github.com/microsoft/pxt-i2c-fram) -- TypeScript
 
 * [Sample C++ extension](https://github.com/Microsoft/pxt-microbit-cppsample)
-* [Sample TypeScript extension](https://github.com/Microsoft/pxt-microbit/tree/master/libs/i2c-fram)
 
 ## Finding packages
 
-From the editor, the user clicks on **More** then **Add Package** and searches for the package. 
+From the block editor, the user clicks on **Add Package** and searches for the package. 
+Otherwise, the **Add Package** is also available from the gearwheel menu.
 
-To see the list of packages, click on **More** then **Show Files** to see the project file list.
+To see the list of packages, switch to JavaScript and use the **Explorer** view to find them.
 
-To remove a package, click on the garbage button in the file list next to the package.
+To remove a package, click on the garbage button in the **Explorer** view next to the package.
 
-## Publishing packages
+## Publishing and Approving packages
 
-Packages can be published from the pxt command line. Check out [the docs](https://www.pxt.io/packages).
+Please follow these steps to get it approved and listed in the web site:
+
+1. setup a public GitHub repository with your package sources
+2. ensure that the license is **Apache2** or **MIT**
+3. fill ``test.ts`` with a test scenario
+4. ensure that the package builds by running ``pxt`` from the package folder. [Read more...](https://www.pxt.io/packages).
+5. fill up the ``README.md`` file with documentation. See [markdown docs](https://pxt.io/writing-docs) for syntax.
+6. add a screenshot image at ``/docs/static/screenshot.png`` for use in the web site
+7. publish a release by running ``pxt bump`` from the package folder.
+8. open a support ticket at https://support.microbit.org and select the **package approval** option.
 
 ## Localizing packages
 
