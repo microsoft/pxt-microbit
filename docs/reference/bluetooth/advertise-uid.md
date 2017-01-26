@@ -26,7 +26,7 @@ bluetooth.advertiseUid(42, 1, 7, true);
 * ``namespace`` last 4 bytes of the namespace uid (6 to 9)
 * ``instance`` last 4 bytes of the instance (2 to 5)
 * ``power`` - a [number](/reference/types/number) representing the power level between 0 (short) and 7 (maximum range).
-* ``connectable`` - a [boolean](/blocks/logic/boolean) indicating whether or not the micro:bit should accept connections. 
+* ``connectable`` - a [boolean](/blocks/logic/boolean) indicating whether or not the @boardname@ should accept connections. 
 
 ## Encoding
 

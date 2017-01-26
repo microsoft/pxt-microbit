@@ -1,7 +1,7 @@
 
 # Inchworm
 
-### @description A inchworm like robot built with the micro:bit
+### @description A inchworm like robot built with the @boardname@
 
 ### ~avatar avatar
 

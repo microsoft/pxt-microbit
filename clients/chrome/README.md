@@ -1,5 +1,5 @@
 # microbit-chrome
-Prototype chrome addon that exposes the micro:bit's serial output to webpages. 
+Prototype chrome addon that exposes the @boardname@'s serial output to webpages. 
 * watch the [demo video](https://vimeo.com/146207766)
 
 # Installation
