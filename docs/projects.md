@@ -76,20 +76,14 @@ Fun games to build with your @boardname@.
 }]
 ```
 
-## Science and Engineering
+## More
 
 ```codecard
 [{
   "name": "Timing gates",
   "url":"/projects/timing-gates",
   "imageUrl":"/static/mb/projects/timing-gates.jpg"
-}]
-```
-
-## More
-
-```codecard
-[{
+}, {
   "name": "Compass",
   "url":"/projects/compass",
   "imageUrl":"/static/mb/projects/a5-compass.png"
