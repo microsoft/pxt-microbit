@@ -2,8 +2,8 @@
 
 > Note: This API has been deprecated! Use [on data packet received](/reference/radio/on-data-packet-received) instead.
 
-Find how strong the ``radio`` signal is, from `255` to `0`.
-(`255` means a weak signal and `0` means a strong one.)
+Find how strong the ``radio`` signal is, from `-128` to `-42`.
+(`-128` means a weak signal and `-42` means a strong one.)
 
 The @boardname@ finds the signal strength by checking how strong it was
 the last time it ran the
@@ -16,7 +16,7 @@ radio.receivedSignalStrength();
 
 ### Returns
 
-* a [number](/reference/types/number) between `255` and `0` that means
+* a [number](/reference/types/number) between `-128` and `-42` that means
 how strong the signal is.
 
 ### Simulator
