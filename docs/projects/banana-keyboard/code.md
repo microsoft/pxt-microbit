@@ -1,4 +1,4 @@
-# banana keyboard - beat box
+# Code
 
 Have you ever tried to making beat box sounds? Let's try making a beatbox with code!
 

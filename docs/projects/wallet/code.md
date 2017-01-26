@@ -1,4 +1,4 @@
-# Wallet - Code
+# Code
 
 ## Simple animation
 

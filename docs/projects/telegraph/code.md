@@ -1,4 +1,4 @@
-# telegraph - manual telegraph 
+# Code 
 
 Let's build the code that will send a impulse while the user presses ``A``.
 

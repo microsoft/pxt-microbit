@@ -1,4 +1,4 @@
-# banana keyboard - making
+# Make
 
 ## Materials
 
@@ -80,6 +80,6 @@ input.onPinPressed(TouchPin.P1, () => {
 
 Tap your banana instrument to play sound against... the fruit!
 
-### ~button /projects/banana-keyboard/beat-box
+### ~button /projects/banana-keyboard/code
 NEXT: beat box
 ### ~

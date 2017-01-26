@@ -1,4 +1,4 @@
-# Wallet - Make
+# Make
 
 ### @description Maker Project for Wallet
 

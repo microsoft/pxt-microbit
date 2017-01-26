@@ -1,4 +1,4 @@
-# telegraph - making 
+# Make
 
 ### ~avatar
 
@@ -68,8 +68,8 @@ Using the 4th crocodile clip, connect the unattached end of the crocodile clip o
 ![](/static/mb/lessons/telegraph-0.png)
 
 
-### ~button /projects/telegraph/manual-telegraph
+### ~button /projects/telegraph/code
 
-NEXT: manual telegraph
+NEXT: Code
 
 ### ~
