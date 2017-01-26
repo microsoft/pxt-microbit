@@ -1,13 +1,4 @@
-# Preparing the servo
-### @description Connecting the servo to crocodile clips
-
-### ~avatar avatar
-
-Equip the microservo with crocodile clips.
-
-### ~
-
-## Duration: ~30 minutes
+# Equipping a microservo with Crocodile clips
 
 ## Materials
   * Cutting pliers or wire cutter
@@ -70,7 +61,7 @@ Place the cables next to each other
 
 It is very **important** to ensure that there is a good connection between the 2 cables.
 If the connection is weak, the microservo will not receive enough current and it will not work.
-If you have access to a soldering iron, we strongly recommend to solver this connection.
+**If you have access to a soldering iron, we strongly recommend to solder this connection.**
 
 ### ~
 
@@ -105,11 +96,9 @@ When attaching the crocodile clips to the pins, don't hesitate to grab the side 
 * Download the following code to your @boardname@
 
 ```blocks
-let a = 0
 basic.forever(() => {
-    a = input.acceleration(Dimension.X)
     pins.servoWritePin(AnalogPin.P0, pins.map(
-        a,
+        input.acceleration(Dimension.X),
         -512,
         512,
         0,
@@ -121,10 +110,7 @@ basic.forever(() => {
 * When powered by USB, make sure that the servo moves when you tilt the board.
 * When powered by batteries **only**, make sure that the servo moves when you tilt the board.
 
+## Troubleshooting
+
 If your servo seems to sutter and stay stuck at a particular position, it means that it is not receiving enough power.
 This is probably due to a weak connection or low battery level. Check each connection and check your batteries.
-
-
-### ~button /projects/inchworm/chassis
-NEXT: Chassis
-### ~

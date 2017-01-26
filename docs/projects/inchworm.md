@@ -27,9 +27,12 @@ https://youtu.be/BiZLjugXMbM
 
 ![Materials](/static/mb/projects/inchworm/materials.jpg)
 
+## Preparation
+
+* [Equip the microservo with crocodile clips](/device/servo)
+
 ## Activities
 
-* [Servo](/projects/inchworm/servo)  
 * [Chassis](/projects/inchworm/chassis)  
 * [Code](/projects/inchworm/code)  
 
