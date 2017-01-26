@@ -1,11 +1,11 @@
 
-# Inchworm
+# Coffee Cup Monster
 
-### @description A inchworm like robot built with the @boardname@
+### @description A monster made of cardboard that responds to light
 
 ### ~avatar avatar
 
-Make a funny inchworm robot!
+Make a coffee cup monster that responds to light!
 
 ### ~
 
@@ -17,15 +17,14 @@ https://youtu.be/BiZLjugXMbM
 
 ## Materials
 
-* Cardboard pieces (recycle!)
-* Glue gun or Tape (masking, duct tape, and/or packing tape)
+* 3 Coffee cup holders
+* 2 Coffee cup strirer wood sticks
+* Glue gun
 * Scissors that can cut cardboard
 * 1 @boardname@, battery holder and 2 AAA batteries
 * 3 Crocodile clips
 * 1 micro servo 9g SG90
 * 1 paper clip
-
-![Materials](/static/mb/projects/inchworm/materials.jpg)
 
 ## Preparation
 
@@ -33,11 +32,11 @@ https://youtu.be/BiZLjugXMbM
 
 ## Activities
 
-* [Make](/projects/inchworm/make)  
-* [Code](/projects/inchworm/code)  
-* [Connect](/projects/inchworm/connect)  
+* [Make](/projects/coffee-cup-monster/make)  
+* [Code](/projects/coffee-cup-monster/code)  
+* [Connect](/projects/coffee-cup-monster/connect)  
 
-### ~button /projects/inchworm/make
+### ~button /projects/coffee-cup-monster/make
 
 Let's get started!
 

@@ -62,14 +62,24 @@ Fun games to build with your @boardname@.
 }]
 ```
 
-## Science and Engineering
+## Toys
 
 ```codecard
 [{
   "name": "Inchworm",
   "url":"/projects/inchworm",
   "imageUrl":"/static/mb/projects/inchworm.jpg"
-}, {
+},{
+  "name": "Coffe cup monster",
+  "url":"/projects/coffee-cup-monster",
+  "imageUrl":"/static/mb/projects/inchworm.jpg"
+}]
+```
+
+## Science and Engineering
+
+```codecard
+[{
   "name": "Timing gates",
   "url":"/projects/timing-gates",
   "imageUrl":"/static/mb/projects/timing-gates.jpg"
