@@ -119,6 +119,9 @@ namespace pxsim.pins {
     export function getPinAddress(name: number) {
         return getPin(name)
     }
+
+    export function setEvents(name: number, event: number) {
+    }
 }
 
 namespace pxsim.devices {

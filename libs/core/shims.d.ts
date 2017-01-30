@@ -629,6 +629,16 @@ declare namespace pins {
     function setPull(name: DigitalPin, pull: PinPullMode): void;
 
     /**
+     * Configures the events emitted by this pin. Events can be subscribed to
+     * using ``control.onEvent()``.
+     * @param name pin to set the event mode on, eg: DigitalPin.P0
+     * @param type the type of events for this pin to emit, eg: PinEventType.Edge
+     */
+    //% help=pins/set-events weight=4 advanced=true
+    //% blockId=device_set_pin_events block="set pin %pin|to emit %type|events" shim=pins::setEvents
+    function setEvents(name: DigitalPin, type: PinEventType): void;
+
+    /**
      * Create a new zero-initialized buffer.
      * @param size number of bytes in the buffer
      */

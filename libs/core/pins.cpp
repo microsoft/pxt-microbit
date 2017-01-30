@@ -47,6 +47,17 @@ enum class PinPullMode {
     PullNone = 2
 };
 
+enum class PinEventType {
+    //% block="edge"
+    Edge = MICROBIT_PIN_EVENT_ON_EDGE,
+    //% block="pulse"
+    Pulse = MICROBIT_PIN_EVENT_ON_PULSE,
+    //% block="touch"
+    Touch = MICROBIT_PIN_EVENT_ON_TOUCH,
+    //% block="none"
+    None = MICROBIT_PIN_EVENT_NONE
+};
+
 MicroBitPin *getPin(int id) {
     switch (id) {
         case MICROBIT_ID_IO_P0: return &uBit.io.P0;
@@ -107,7 +118,7 @@ namespace pins {
       */
     //% help=pins/digital-write-pin weight=29
     //% blockId=device_set_digital_pin block="digital write|pin %name|to %value"
-    void digitalWritePin(DigitalPin name, int value) { 
+    void digitalWritePin(DigitalPin name, int value) {
         PINOP(setDigitalValue(value));
     }
 
@@ -116,7 +127,7 @@ namespace pins {
      * @param name pin to write to, eg: AnalogPin.P0
      */
     //% help=pins/analog-read-pin weight=25
-    //% blockId=device_get_analog_pin block="analog read|pin %name" blockGap="8" 
+    //% blockId=device_get_analog_pin block="analog read|pin %name" blockGap="8"
     int analogReadPin(AnalogPin name) {
         PINREAD(getAnalogValue());
     }
@@ -128,7 +139,7 @@ namespace pins {
      */
     //% help=pins/analog-write-pin weight=24
     //% blockId=device_set_analog_pin block="analog write|pin %name|to %value" blockGap=8
-    void analogWritePin(AnalogPin name, int value) { 
+    void analogWritePin(AnalogPin name, int value) {
         PINOP(setAnalogValue(value));
     }
 
@@ -139,11 +150,11 @@ namespace pins {
      * @param micros period in micro seconds. eg:20000
      */
     //% help=pins/analog-set-period weight=23 blockGap=8
-    //% blockId=device_set_analog_period block="analog set period|pin %pin|to (µs)%micros" 
-    void analogSetPeriod(AnalogPin name, int micros) { 
+    //% blockId=device_set_analog_period block="analog set period|pin %pin|to (µs)%micros"
+    void analogSetPeriod(AnalogPin name, int micros) {
         PINOP(setAnalogPeriodUs(micros));
     }
-    
+
     /**
     * Configures this pin to a digital input, and generates events where the timestamp is the duration that this pin was either ``high`` or ``low``.
     * @param name digital pin to register to, eg: DigitalPin.P0
@@ -154,11 +165,11 @@ namespace pins {
     void onPulsed(DigitalPin name, PulseValue pulse, Action body) {
         MicroBitPin* pin = getPin((int)name);
         if (!pin) return;
-        
-        pin->eventOn(MICROBIT_PIN_EVENT_ON_PULSE);        
+
+        pin->eventOn(MICROBIT_PIN_EVENT_ON_PULSE);
         registerWithDal((int)name, (int)pulse, body);
     }
-    
+
     /**
     * Gets the duration of the last pulse in micro-seconds. This function should be called from a ``onPulsed`` handler.
     */
@@ -174,7 +185,7 @@ namespace pins {
     * @param name the pin which measures the pulse, eg: DigitalPin.P0
     * @param value the value of the pulse, eg: PulseValue.High
     * @param maximum duration in micro-seconds
-    */    
+    */
     //% blockId="pins_pulse_in" block="pulse in (µs)|pin %name|pulsed %value"
     //% weight=20 advanced=true
     int pulseIn(DigitalPin name, PulseValue value, int maxDuration = 2000000) {
@@ -182,20 +193,20 @@ namespace pins {
         if (!pin) return 0;
 
         int pulse = value == PulseValue::High ? 1 : 0;
-        uint64_t tick =  system_timer_current_time_us(); 
-        uint64_t maxd = (uint64_t)maxDuration;      
+        uint64_t tick =  system_timer_current_time_us();
+        uint64_t maxd = (uint64_t)maxDuration;
         while(pin->getDigitalValue() != pulse) {
             if(system_timer_current_time_us() - tick > maxd)
-                return 0;            
+                return 0;
         }
 
-        uint64_t start =  system_timer_current_time_us();       
+        uint64_t start =  system_timer_current_time_us();
         while(pin->getDigitalValue() == pulse) {
             if(system_timer_current_time_us() - tick > maxd)
-                return 0;            
-        }        
-        uint64_t end =  system_timer_current_time_us();       
-        return end - start;         
+                return 0;
+        }
+        uint64_t end =  system_timer_current_time_us();
+        return end - start;
     }
 
     /**
@@ -206,7 +217,7 @@ namespace pins {
     //% help=pins/servo-write-pin weight=20
     //% blockId=device_set_servo_pin block="servo write|pin %name|to %value" blockGap=8
     //% parts=microservo trackArgs=0
-    void servoWritePin(AnalogPin name, int value) { 
+    void servoWritePin(AnalogPin name, int value) {
         PINOP(setServoValue(value));
     }
 
@@ -217,7 +228,7 @@ namespace pins {
      */
     //% help=pins/servo-set-pulse weight=19
     //% blockId=device_set_servo_pulse block="servo set pulse|pin %value|to (µs) %micros"
-    void servoSetPulse(AnalogPin name, int micros) { 
+    void servoSetPulse(AnalogPin name, int micros) {
         PINOP(setServoPulseUs(micros));
     }
 
@@ -230,7 +241,7 @@ namespace pins {
      */
     //% blockId=device_analog_set_pitch_pin block="analog set pitch pin %name"
     //% help=pins/analog-set-pitch weight=3 advanced=true
-    void analogSetPitchPin(AnalogPin name) { 
+    void analogSetPitchPin(AnalogPin name) {
       pitchPin = getPin((int)name);
     }
 
@@ -241,8 +252,8 @@ namespace pins {
      */
     //% blockId=device_analog_pitch block="analog pitch %frequency|for (ms) %ms"
     //% help=pins/analog-pitch weight=4 async advanced=true blockGap=8
-    void analogPitch(int frequency, int ms) { 
-      if (pitchPin == NULL) 
+    void analogPitch(int frequency, int ms) {
+      if (pitchPin == NULL)
         analogSetPitchPin(AnalogPin::P0);
       if (frequency <= 0) {
         pitchPin->setAnalogValue(0);
@@ -250,7 +261,7 @@ namespace pins {
         pitchPin->setAnalogValue(512);
         pitchPin->setAnalogPeriodUs(1000000/frequency);
       }
-      
+
       if (ms > 0) {
           fiber_sleep(ms);
           pitchPin->setAnalogValue(0);
@@ -259,7 +270,7 @@ namespace pins {
       }
     }
 
-    
+
     /**
     * Configures the pull of this pin.
     * @param name pin to set the pull mode on, eg: DigitalPin.P0
@@ -268,11 +279,23 @@ namespace pins {
     //% help=pins/set-pull weight=3 advanced=true
     //% blockId=device_set_pull block="set pull|pin %pin|to %pull"
     void setPull(DigitalPin name, PinPullMode pull) {
-        PinMode m = pull == PinPullMode::PullDown 
+        PinMode m = pull == PinPullMode::PullDown
             ? PinMode::PullDown
-            : pull == PinPullMode::PullUp ? PinMode::PullUp 
+            : pull == PinPullMode::PullUp ? PinMode::PullUp
             : PinMode::PullNone;
         PINOP(setPull(m));
+    }
+
+    /**
+    * Configures the events emitted by this pin. Events can be subscribed to
+    * using ``control.onEvent()``.
+    * @param name pin to set the event mode on, eg: DigitalPin.P0
+    * @param type the type of events for this pin to emit, eg: PinEventType.Edge
+    */
+    //% help=pins/set-events weight=4 advanced=true
+    //% blockId=device_set_pin_events block="set pin %pin|to emit %type|events"
+    void setEvents(DigitalPin name, PinEventType type) {
+        getPin((int)name)->eventOn((int)type);
     }
 
     /**
@@ -295,7 +318,7 @@ namespace pins {
       uBit.i2c.read(address << 1, (char*)buf->payload, size, repeat);
       return buf;
     }
-    
+
     /**
      * Write bytes to a 7-bit I2C `address`.
      */
@@ -322,5 +345,5 @@ namespace pins {
         auto p = allocSPI();
         return p->write(value);
     }
-    
+
 }
