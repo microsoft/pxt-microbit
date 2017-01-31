@@ -39,7 +39,7 @@ Please follow these steps to get it approved and listed in the web site:
 5. fill up the ``README.md`` file with documentation. See [markdown docs](https://pxt.io/writing-docs) for syntax.
 6. add a screenshot image at ``/docs/static/screenshot.png`` for use in the web site
 7. publish a release by running ``pxt bump`` from the package folder.
-8. open a support ticket at https://support.microbit.org and select the **package approval** option.
+8. open a support ticket at https://support.microbit.org and add **package approval** in the subject line.
 
 ## Localizing packages
 
