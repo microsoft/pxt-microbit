@@ -30,16 +30,21 @@ To remove a package, click on the garbage button in the **Explorer** view next t
 
 ## Publishing and Approving packages
 
-Please follow these steps to get it approved and listed in the web site:
+Once your package is ready, follow these steps to get it approved and listed in the pxt.microbit.org web site:
 
 1. setup a public GitHub repository with your package sources
 2. ensure that the license is **Apache2** or **MIT**
 3. fill ``test.ts`` with a test scenario
 4. ensure that the package builds by running ``pxt`` from the package folder. [Read more...](https://www.pxt.io/packages).
 5. fill up the ``README.md`` file with documentation. See [markdown docs](https://pxt.io/writing-docs) for syntax.
-6. add a screenshot image at ``/docs/static/screenshot.png`` for use in the web site
-7. publish a release by running ``pxt bump`` from the package folder.
-8. open a support ticket at https://support.microbit.org and add **package approval** in the subject line.
+6. publish a release by running ``pxt bump`` from the package folder.
+7. open a support ticket at https://support.microbit.org, add **package approval** in the subject line.
+
+```
+Package approval request
+
+github repo: .....
+```
 
 ## Localizing packages
 
