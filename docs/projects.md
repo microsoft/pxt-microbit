@@ -69,10 +69,6 @@ Fun games to build with your @boardname@.
   "name": "Inchworm",
   "url":"/projects/inchworm",
   "imageUrl":"/static/mb/projects/inchworm.jpg"
-},{
-  "name": "Coffe cup monster",
-  "url":"/projects/coffee-cup-monster",
-  "imageUrl":"/static/mb/projects/inchworm.jpg"
 }]
 ```
 
