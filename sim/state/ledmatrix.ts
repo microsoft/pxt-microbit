@@ -129,10 +129,11 @@ namespace pxsim.images {
 }
 
 namespace pxsim.ImageMethods {
-    export function showImage(leds: Image, offset: number) {
+    export function showImage(leds: Image, offset: number, interval: number) {
         pxtrt.nullCheck(leds)
         leds.copyTo(offset, 5, board().ledMatrixState.image, 0)
         runtime.queueDisplayUpdate()
+        basic.pause(interval);
     }
 
     export function plotImage(leds: Image, offset: number): void {
@@ -155,8 +156,8 @@ namespace pxsim.ImageMethods {
         ImageMethods.plotImage(leds, frame * Image.height);
     }
 
-    export function showFrame(leds: Image, frame: number) {
-        ImageMethods.showImage(leds, frame * Image.height);
+    export function showFrame(leds: Image, frame: number, interval: number) {
+        ImageMethods.showImage(leds, frame * Image.height, interval);
     }
 
     export function pixel(leds: Image, x: number, y: number): number {

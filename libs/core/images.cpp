@@ -43,9 +43,9 @@ namespace ImageMethods {
      */
     //% help=images/show-image weight=80 blockNamespace=images
     //% blockId=device_show_image_offset block="show image %sprite|at offset %offset" blockGap=8
-    //% parts="ledmatrix"
-    void showImage(Image sprite, int xOffset) {
-      uBit.display.print(MicroBitImage(sprite), -xOffset, 0, 0);
+    //% parts="ledmatrix" async
+    void showImage(Image sprite, int xOffset, int interval = 400) {
+      uBit.display.print(MicroBitImage(sprite), -xOffset, 0, 0, interval);
     }
 
     /**
@@ -150,7 +150,7 @@ namespace ImageMethods {
      */
     //% weight=70 help=images/show-frame
     //% parts="ledmatrix"
-    void showFrame(Image i, int frame) {
-        showImage(i, frame * 5);
+    void showFrame(Image i, int frame, int interval) {
+        showImage(i, frame * 5, interval);
     }
 }
