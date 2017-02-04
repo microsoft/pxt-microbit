@@ -118,8 +118,8 @@ declare interface Image {
      * @param frame TODO
      */
     //% weight=70 help=images/show-frame
-    //% parts="ledmatrix" shim=ImageMethods::showFrame
-    showFrame(frame: number, interval: number): void;
+    //% parts="ledmatrix" interval.defl=400 shim=ImageMethods::showFrame
+    showFrame(frame: number, interval?: number): void;
 }
 
 

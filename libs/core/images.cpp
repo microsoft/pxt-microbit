@@ -150,7 +150,7 @@ namespace ImageMethods {
      */
     //% weight=70 help=images/show-frame
     //% parts="ledmatrix"
-    void showFrame(Image i, int frame, int interval) {
+    void showFrame(Image i, int frame, int interval = 400) {
         showImage(i, frame * 5, interval);
     }
 }
