@@ -72,6 +72,7 @@
         "loopsBlocks": true,
         "logicBlocks": true,
         "variablesBlocks": true,
+        "textBlocks": true,
         "onStartColor": "#0078D7",
         "onStartNamespace": "basic",
         "onStartWeight": 54
