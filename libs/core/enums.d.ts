@@ -280,6 +280,32 @@ declare namespace led {
     P3 = 10,  // MICROBIT_ID_IO_P3
     P4 = 11,  // MICROBIT_ID_IO_P4
     P10 = 17,  // MICROBIT_ID_IO_P10
+    //% block="P5 (write only)"
+    P5 = 12,  // MICROBIT_ID_IO_P5
+    //% block="P6 (write only)"
+    P6 = 13,  // MICROBIT_ID_IO_P6
+    //% block="P5 (write only)"
+    P7 = 14,  // MICROBIT_ID_IO_P7
+    //% block="P8 (write only)"
+    P8 = 15,  // MICROBIT_ID_IO_P8
+    //% block="P9 (write only)"
+    P9 = 16,  // MICROBIT_ID_IO_P9
+    //% block="P11 (write only)"
+    P11 = 18,  // MICROBIT_ID_IO_P11
+    //% block="P12 (write only)"
+    P12 = 19,  // MICROBIT_ID_IO_P12
+    //% block="P13 (write only)"
+    P13 = 20,  // MICROBIT_ID_IO_P13
+    //% block="P14 (write only)"
+    P14 = 21,  // MICROBIT_ID_IO_P14
+    //% block="P15 (write only)"
+    P15 = 22,  // MICROBIT_ID_IO_P15
+    //% block="P16 (write only)"
+    P16 = 23,  // MICROBIT_ID_IO_P16
+    //% block="P19 (write only)"
+    P19 = 24,  // MICROBIT_ID_IO_P19
+    //% block="P20 (write only)"
+    P20 = 25,  // MICROBIT_ID_IO_P20
     }
 
 
