@@ -154,313 +154,324 @@ namespace basic {
 
 
 namespace images {
-    let iconDefinitions : string[] = null;
-    let arrowDefinitions : string[] = null;
 
-    function initArrows(): void {
-        if (arrowDefinitions == null) {
-            arrowDefinitions = [];
-                                            // compass directions
-            arrowDefinitions[ArrowNames.North] = `    
+    function getArrow(i : ArrowNames): string {
+            switch(i) {
+            // compass directions
+            case ArrowNames.North: return `    
                                         . . # . .
                                         . # # # .
                                         # . # . #
                                         . . # . .
                                         . . # . .`;
-            arrowDefinitions[ArrowNames.NorthEast] = ` 
+            case ArrowNames.NorthEast: return ` 
                                         . . # # #
                                         . . . # #
                                         . . # . #
                                         . # . . .
                                         # . . . .`;
-            arrowDefinitions[ArrowNames.East] = ` 
+            case  ArrowNames.East: return ` 
                                         . . # . .
                                         . . . # .
                                         # # # # #
                                         . . . # .
                                         . . # . .`;
-            arrowDefinitions[ArrowNames.SouthEast] = ` 
+            case ArrowNames.SouthEast: return ` 
                                         # . . . .
                                         . # . . .
                                         . . # . #
                                         . . . # #
                                         . . # # #`;
-            arrowDefinitions[ArrowNames.South] = ` 
+            case ArrowNames.South: return ` 
                                         . . # . .
                                         . . # . .
                                         # . # . #
                                         . # # # .
                                         . . # . .`;
-            arrowDefinitions[ArrowNames.SouthWest] = ` 
+            case ArrowNames.SouthWest: return ` 
                                         . . . . #
                                         . . . # .
                                         # . # . .
                                         # # . . .
                                         # # # . .`;
-            arrowDefinitions[ArrowNames.West] = ` 
+            case ArrowNames.West: return ` 
                                         . . # . .
                                         . # . . .
                                         # # # # #
                                         . # . . .
                                         . . # . .`;
-            arrowDefinitions[ArrowNames.NorthWest] = ` 
+            case ArrowNames.NorthWest: return ` 
                                         # # # . .
                                         # # . . .
                                         # . # . .
                                         . . . # .
                                         . . . . #`;
-        }
+            default:                return `
+                                        . . . . .
+                                        . . . . .
+                                        . . . . .
+                                        . . . . .
+                                        . . . . .
+                                        `;
+       }
     }
     
-    function initIcons(): void {
-        if (iconDefinitions == null) {
-            iconDefinitions = [];
-            iconDefinitions[IconNames.Heart] = `
+    function getIcon(i: IconNames): string {
+
+            switch (i) {
+            case IconNames.Heart : return `
                                         . # . # .
                                         # # # # #
                                         # # # # #
                                         . # # # .
                                         . . # . .`;
 
-            iconDefinitions[IconNames.SmallHeart] = `
+            case IconNames.SmallHeart : return `
                                         . . . . .
                                         . # . # .
                                         . # # # .
                                         . . # . .
                                         . . . . .`;
                                             //faces
-            iconDefinitions[IconNames.Happy] = `
+            case IconNames.Happy: return `
                                         . . . . .
                                         . # . # .
                                         . . . . .
                                         # . . . #
                                         . # # # .`;
-            iconDefinitions[IconNames.Sad] = `
+            case IconNames.Sad: return `
                                         . . . . .
                                         . # . # .
                                         . . . . .
                                         . # # # .
                                         # . . . #`;
-            iconDefinitions[IconNames.Confused] = `
+            case IconNames.Confused: return `
                                         . . . . .
                                         . # . # .
                                         . . . . .
                                         . # . # .
                                         # . # . #`;
-            iconDefinitions[IconNames.Angry] = `
+            case IconNames.Angry: return `
                                         # . . . #
                                         . # . # .
                                         . . . . .
                                         # # # # #
                                         # . # . #`;
-            iconDefinitions[IconNames.Asleep] = `
+            case IconNames.Asleep: return `
                                         . . . . .
                                         # # . # #
                                         . . . . .
                                         . # # # .
                                         . . . . .`;
-            iconDefinitions[IconNames.Surprised] = `
+            case IconNames.Surprised: return `
                                         . # . # .
                                         . . . . .
                                         . . # . .
                                         . # . # .
                                         . . # . .`;
-            iconDefinitions[IconNames.Silly] = `
+            case IconNames.Silly: return `
                                         # . . . #
                                         . . . . .
                                         # # # # #
                                         . . . # #
                                         . . . # #`;
-            iconDefinitions[IconNames.Fabulous] = `
+            case IconNames.Fabulous: return `
                                         # # # # #
                                         # # . # #
                                         . . . . .
                                         . # . # .
                                         . # # # .`;
-            iconDefinitions[IconNames.Meh] = `
+            case IconNames.Meh: return `
                                         # # . # #
                                         . . . . .
                                         . . . # .
                                         . . # . .
                                         . # . . .`;
-            iconDefinitions[IconNames.Yes] = `
+            case IconNames.Yes: return `
                                         . . . . .
                                         . . . . #
                                         . . . # .
                                         # . # . .
                                         . # . . .`;
-            iconDefinitions[IconNames.No] = `
+            case IconNames.No: return `
                                         # . . . #
                                         . # . # .
                                         . . # . .
                                         . # . # .
                                         # . . . #`;
-            iconDefinitions[IconNames.Triangle] = `
+            case IconNames.Triangle: return `
                                         . . . . .
                                         . . # . .
                                         . # . # .
                                         # # # # #
                                         . . . . .`;
-            iconDefinitions[IconNames.LeftTriangle] = `
+            case IconNames.LeftTriangle: return `
                                         # . . . .
                                         # # . . .
                                         # . # . .
                                         # . . # .
                                         # # # # #`;
-            iconDefinitions[IconNames.Chessboard] = `
+            case IconNames.Chessboard: return `
                                         . # . # .
                                         # . # . #
                                         . # . # .
                                         # . # . #
                                         . # . # .`;
-            iconDefinitions[IconNames.Diamond] = `
+            case IconNames.Diamond: return `
                                         . . # . .
                                         . # . # .
                                         # . . . #
                                         . # . # .
                                         . . # . .`;
-            iconDefinitions[IconNames.SmallDiamond] = `
+            case IconNames.SmallDiamond: return `
                                         . . . . .
                                         . . # . .
                                         . # . # .
                                         . . # . .
                                         . . . . .`;
-            iconDefinitions[IconNames.Square] = `
+            case IconNames.Square: return `
                                         # # # # #
                                         # . . . #
                                         # . . . #
                                         # . . . #
                                         # # # # #`;
-            iconDefinitions[IconNames.SmallSquare] = `
+            case IconNames.SmallSquare: return `
                                         . . . . .
                                         . # # # .
                                         . # . # .
                                         . # # # .
                                         . . . . .`;
                                             // The following images were designed by Abbie Brooks.
-            iconDefinitions[IconNames.TShirt] = `
+            case IconNames.TShirt: return `
                                         # # . # #
                                         # # # # #
                                         . # # # .
                                         . # # # .
                                         . # # # .`;
-            iconDefinitions[IconNames.Rollerskate] = `
+            case IconNames.Rollerskate: return `
                                         . . . # #
                                         . . . # #
                                         # # # # #
                                         # # # # #
                                         . # . # .`;
-            iconDefinitions[IconNames.Duck] = `
+            case IconNames.Duck: return `
                                         . # # . .
                                         # # # . .
                                         . # # # #
                                         . # # # .
                                         . .. . .`;
-            iconDefinitions[IconNames.House] = `
+            case IconNames.House: return `
                                         . . # . .
                                         . # # # .
                                         # # # # #
                                         . # # # .
                                         . # . # .`;
-            iconDefinitions[IconNames.Tortoise] = `
+            case IconNames.Tortoise: return `
                                         . . . . .
                                         . # # # .
                                         # # # # #
                                         . # . # .
                                         . . . . .`;
-            iconDefinitions[IconNames.Butterfly] = `
+            case IconNames.Butterfly: return `
                                         # # . # #
                                         # # # # #
                                         . . # . .
                                         # # # # #
                                         # # . # #`;
-            iconDefinitions[IconNames.StickFigure] = `
+            case IconNames.StickFigure: return `
                                         . . # . .
                                         # # # # #
                                         . . # . .
                                         . # . # .
                                         # . . . #`;
-            iconDefinitions[IconNames.Ghost] = `
+            case IconNames.Ghost: return `
                                         . # # # .
                                         # . # . #
                                         # # # # #
                                         # # # # #
                                         # . # . #`;
-            iconDefinitions[IconNames.Sword] = `
+            case IconNames.Sword: return `
                                         . . # . .
                                         . . # . .
                                         . . # . .
                                         . # # # .
                                         . . # . .`;
-            iconDefinitions[IconNames.Giraffe] = `
+            case IconNames.Giraffe: return `
                                         # # . . .
                                         . # . . .
                                         . # . . .
                                         . # # # .
                                         . # . # .`;
-            iconDefinitions[IconNames.Skull] = `
+            case IconNames.Skull: return `
                                         . # # # .
                                         # . # . #
                                         # # # # #
                                         . # # # .
                                         . # # # .`;
-            iconDefinitions[IconNames.Umbrella] = `
+            case IconNames.Umbrella: return `
                                         . # # # .
                                         # # # # #
                                         . . # . .
                                         # . # . .
                                         # # # . .`;
-            iconDefinitions[IconNames.Snake] = `
+            case IconNames.Snake: return `
                                         # # . . .
                                         # # . # #
                                         . # . # .
                                         . # # # .
                                         . . . . .`;
                                         // animals    
-            iconDefinitions[IconNames.Rabbit] = `
+            case IconNames.Rabbit: return `
                                         # . # . .
                                         # . # . .
                                         # # # # .
                                         # # . # .
                                         # # # # .`;
-            iconDefinitions[IconNames.Cow] = `
+            case IconNames.Cow: return `
                                         # . . . #
                                         # . . . #
                                         # # # # #
                                         . # # # .
                                         . . # . .`;
                                         // musical notes
-            iconDefinitions[IconNames.QuarterNote] = `
+            case IconNames.QuarterNote: return `
                                         . . # . .
                                         . . # . .
                                         . . # . .
                                         # # # . .
                                         # # # . .`;
-            iconDefinitions[IconNames.EigthNote] = `
+            case IconNames.EigthNote: return `
                                         . . # . .
                                         . . # # .
                                         . . # . #
                                         # # # . .
                                         # # # . .`;
                                         // other icons
-            iconDefinitions[IconNames.Pitchfork] = `
+            case IconNames.Pitchfork: return `
                                         # . # . #
                                         # . # . #
                                         # # # # #
                                         . . # . .
                                         . . # . .`;
-            iconDefinitions[IconNames.Pacman] = `
+            case IconNames.Pacman: return `
                                         . # # # #
                                         # # # # .
                                         # # # . .
                                         # # # # .
                                         . # # # #`;
-            iconDefinitions[IconNames.Target] = `
+            case IconNames.Target: return `
                                         . . # . .
                                         . # # # .
                                         # # . # #
                                         . # # # .
                                         . . # . .`;
+            default:                return `
+                                        . . . . .
+                                        . . . . .
+                                        . . . . .
+                                        . . . . .
+                                        . . . . .
+                                        `;
         }
     }
 
@@ -474,7 +485,6 @@ namespace images {
     //% weight=50 blockGap=8
     //% blockId=builtin_arrow_image block="arrow image %i=device_arrow"
     export function arrowImage(i: ArrowNames): Image {
-        initArrows();
         let res = images.createImage(`
             . . . . .
             . . . . .
@@ -482,16 +492,12 @@ namespace images {
             . . . . .
             . . . . .
             `)
-        if (i < arrowDefinitions.length) {
-            return set(res, arrowDefinitions[i]);
-        }
-        return res;
+        return set(res, getArrow(i));
     }
 
     //% weight=50 blockGap=8
     //% blockId=builtin_image block="icon image %i"
     export function iconImage(i: IconNames): Image {
-        initIcons();
         let res = images.createImage(`
                 . . . . .
                 . . . . .
@@ -499,10 +505,7 @@ namespace images {
                 . . . . .
                 . . . . .
                 `)
-        if (i < iconDefinitions.length) {
-            return set(res, iconDefinitions[i])
-        }
-        return res;
+        return set(res, getIcon(i));
     }
 
     function set(res: Image, s: string) {
