@@ -1,112 +1,112 @@
 enum Note {
-    //% blockIdentity=music.noteFrequency
+    //% blockIdentity=music.noteFrequency noteValue=262
     C = 262,
     //% block=C#
-    //% blockIdentity=music.noteFrequency
+    //% blockIdentity=music.noteFrequency noteValue=277
     CSharp = 277,
-    //% blockIdentity=music.noteFrequency
+    //% blockIdentity=music.noteFrequency noteValue=294
     D = 294,
-    //% blockIdentity=music.noteFrequency
+    //% blockIdentity=music.noteFrequency noteValue=311
     Eb = 311,
-    //% blockIdentity=music.noteFrequency
+    //% blockIdentity=music.noteFrequency noteValue=330
     E = 330,
-    //% blockIdentity=music.noteFrequency
+    //% blockIdentity=music.noteFrequency noteValue=349
     F = 349,
     //% block=F#
-    //% blockIdentity=music.noteFrequency
+    //% blockIdentity=music.noteFrequency noteValue=370
     FSharp = 370,
-    //% blockIdentity=music.noteFrequency
+    //% blockIdentity=music.noteFrequency noteValue=392
     G = 392,
     //% block=G#
-    //% blockIdentity=music.noteFrequency
+    //% blockIdentity=music.noteFrequency noteValue=415
     GSharp = 415,
-    //% blockIdentity=music.noteFrequency
+    //% blockIdentity=music.noteFrequency noteValue=440
     A = 440,
-    //% blockIdentity=music.noteFrequency
+    //% blockIdentity=music.noteFrequency noteValue=466
     Bb = 466,
-    //% blockIdentity=music.noteFrequency
+    //% blockIdentity=music.noteFrequency noteValue=494
     B = 494,
-    //% blockIdentity=music.noteFrequency
+    //% blockIdentity=music.noteFrequency noteValue=131
     C3 = 131,
     //% block=C#3
-    //% blockIdentity=music.noteFrequency
+    //% blockIdentity=music.noteFrequency noteValue=139
     CSharp3 = 139,
-    //% blockIdentity=music.noteFrequency
+    //% blockIdentity=music.noteFrequency noteValue=147
     D3 = 147,
-    //% blockIdentity=music.noteFrequency
+    //% blockIdentity=music.noteFrequency noteValue=156
     Eb3 = 156,
-    //% blockIdentity=music.noteFrequency
+    //% blockIdentity=music.noteFrequency noteValue=165
     E3 = 165,
-    //% blockIdentity=music.noteFrequency
+    //% blockIdentity=music.noteFrequency noteValue=175
     F3 = 175,
     //% block=F#3
-    //% blockIdentity=music.noteFrequency
+    //% blockIdentity=music.noteFrequency noteValue=185
     FSharp3 = 185,
-    //% blockIdentity=music.noteFrequency
+    //% blockIdentity=music.noteFrequency noteValue=196
     G3 = 196,
     //% block=G#3
-    //% blockIdentity=music.noteFrequency
+    //% blockIdentity=music.noteFrequency noteValue=208
     GSharp3 = 208,
-    //% blockIdentity=music.noteFrequency
+    //% blockIdentity=music.noteFrequency noteValue=220
     A3 = 220,
-    //% blockIdentity=music.noteFrequency
+    //% blockIdentity=music.noteFrequency noteValue=233
     Bb3 = 233,
-    //% blockIdentity=music.noteFrequency
+    //% blockIdentity=music.noteFrequency noteValue=247
     B3 = 247,
-    //% blockIdentity=music.noteFrequency
+    //% blockIdentity=music.noteFrequency noteValue=262
     C4 = 262,
     //% block=C#4
-    //% blockIdentity=music.noteFrequency
+    //% blockIdentity=music.noteFrequency noteValue=277
     CSharp4 = 277,
-    //% blockIdentity=music.noteFrequency
+    //% blockIdentity=music.noteFrequency noteValue=294
     D4 = 294,
-    //% blockIdentity=music.noteFrequency
+    //% blockIdentity=music.noteFrequency noteValue=311
     Eb4 = 311,
-    //% blockIdentity=music.noteFrequency
+    //% blockIdentity=music.noteFrequency noteValue=330
     E4 = 330,
-    //% blockIdentity=music.noteFrequency
+    //% blockIdentity=music.noteFrequency noteValue=349
     F4 = 349,
     //% block=F#4
-    //% blockIdentity=music.noteFrequency
+    //% blockIdentity=music.noteFrequency noteValue=370
     FSharp4 = 370,
-    //% blockIdentity=music.noteFrequency
+    //% blockIdentity=music.noteFrequency noteValue=392
     G4 = 392,
     //% block=G#4
-    //% blockIdentity=music.noteFrequency
+    //% blockIdentity=music.noteFrequency noteValue=415
     GSharp4 = 415,
-    //% blockIdentity=music.noteFrequency
+    //% blockIdentity=music.noteFrequency noteValue=440
     A4 = 440,
-    //% blockIdentity=music.noteFrequency
+    //% blockIdentity=music.noteFrequency noteValue=466
     Bb4 = 466,
-    //% blockIdentity=music.noteFrequency
+    //% blockIdentity=music.noteFrequency noteValue=494
     B4 = 494,
-    //% blockIdentity=music.noteFrequency
+    //% blockIdentity=music.noteFrequency noteValue=523
     C5 = 523,
     //% block=C#5
-    //% blockIdentity=music.noteFrequency
+    //% blockIdentity=music.noteFrequency noteValue=555
     CSharp5 = 555,
-    //% blockIdentity=music.noteFrequency
+    //% blockIdentity=music.noteFrequency noteValue=587
     D5 = 587,
-    //% blockIdentity=music.noteFrequency
+    //% blockIdentity=music.noteFrequency noteValue=622
     Eb5 = 622,
-    //% blockIdentity=music.noteFrequency
+    //% blockIdentity=music.noteFrequency noteValue=659
     E5 = 659,
-    //% blockIdentity=music.noteFrequency
+    //% blockIdentity=music.noteFrequency noteValue=698
     F5 = 698,
     //% block=F#5
-    //% blockIdentity=music.noteFrequency
+    //% blockIdentity=music.noteFrequency noteValue=740
     FSharp5 = 740,
-    //% blockIdentity=music.noteFrequency
+    //% blockIdentity=music.noteFrequency noteValue=784
     G5 = 784,
     //% block=G#5
-    //% blockIdentity=music.noteFrequency
+    //% blockIdentity=music.noteFrequency noteValue=831
     GSharp5 = 831,
-    //% blockIdentity=music.noteFrequency
+    //% blockIdentity=music.noteFrequency noteValue=880
     A5 = 880,
-    //% blockIdentity=music.noteFrequency
+    //% blockIdentity=music.noteFrequency noteValue=932
     Bb5 = 932,
-    //% blockIdentity=music.noteFrequency
-    B5 = 989,
+    //% blockIdentity=music.noteFrequency noteValue=989
+    B5 = 988,
 }
 
 enum BeatFraction {
@@ -146,7 +146,7 @@ namespace music {
     }
 
     /**
-     * Plays a tone through pin ``P0``.
+     * Plays a tone through pin ``P0``. 
      * @param frequency pitch of the tone to play in Hertz (Hz)
      */
     //% help=music/ring-tone weight=80
@@ -175,6 +175,7 @@ namespace music {
     //% weight=50 help=music/note-frequency
     //% blockId=device_note block="%note"
     //% shim=TD_ID blockHidden=true
+    //% blockFieldEditor="note_editor"
     export function noteFrequency(name: Note): number {
         return name;
     }
