@@ -105,7 +105,7 @@ enum Note {
     A5 = 880,
     //% blockIdentity=music.noteFrequency noteValue=932
     Bb5 = 932,
-    //% blockIdentity=music.noteFrequency noteValue=989
+    //% blockIdentity=music.noteFrequency noteValue=988
     B5 = 988,
 }
 
