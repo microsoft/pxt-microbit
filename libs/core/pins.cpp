@@ -33,7 +33,7 @@ enum class AnalogPin {
     P5 = MICROBIT_ID_IO_P5,
     //% block="P6 (write only)"
     P6 = MICROBIT_ID_IO_P6,
-    //% block="P5 (write only)"
+    //% block="P7 (write only)"
     P7 = MICROBIT_ID_IO_P7,
     //% block="P8 (write only)"
     P8 = MICROBIT_ID_IO_P8,
