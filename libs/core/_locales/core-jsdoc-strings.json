@@ -170,6 +170,8 @@
   "music.changeTempoBy|param|bpm": "The change in beats per minute to the tempo, eg: 20",
   "music.noteFrequency": "Gets the frequency of a note.",
   "music.noteFrequency|param|name": "the note name, eg: Note.C",
+  "music.playMelody": "Plays a melody through pin ``P0``. \nNotes are expressed as a string of characters with this format: NOTE[octave][:duration]",
+  "music.playMelody|param|melody": "the melody array to play, eg: ['g5:1', 'f', 'e', 'd', 'c']",
   "music.playTone": "Plays a tone through pin ``P0`` for the given duration.",
   "music.playTone|param|frequency": "pitch of the tone to play in Hertz (Hz)",
   "music.playTone|param|ms": "tone duration in milliseconds (ms)",
