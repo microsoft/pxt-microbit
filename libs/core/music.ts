@@ -132,6 +132,7 @@ enum BeatFraction {
 //% color=#D83B01 weight=98 icon="\uf025"
 namespace music {
     let beatsPerMinute: number = 120;
+    const freqTable = [28, 29, 31, 33, 35, 37, 39, 41, 44, 46, 49, 52, 55, 58, 62, 65, 69, 73, 78, 82, 87, 92, 98, 104, 110, 117, 123, 131, 139, 147, 156, 165, 175, 185, 196, 208, 220, 233, 247, 262, 277, 294, 311, 330, 349, 370, 392, 415, 440, 466, 494, 523, 554, 587, 622, 659, 698, 740, 784, 831, 880, 932, 988, 1047, 1109, 1175, 1245, 1319, 1397, 1480, 1568, 1661, 1760, 1865, 1976, 2093, 2217, 2349, 2489, 2637, 2794, 2960, 3136, 3322, 3520, 3729, 3951, 4186]
 
     /**
      * Plays a tone through pin ``P0`` for the given duration.
@@ -238,6 +239,56 @@ namespace music {
         init();
         if (bpm > 0) {
             beatsPerMinute = Math.max(1, bpm);
+        }
+    }
+
+    /**
+     * Plays a melody through pin ``P0``. 
+     * Notes are expressed as a string of characters with this format: NOTE[octave][:duration]
+     * @param melody the melody array to play, eg: ['g5:1', 'f', 'e', 'd', 'c']
+     */
+    export function playMelody(melody: string[]) {
+        let beat = 20000 / beatsPerMinute;
+        let currBeats = 1;
+        for (let i = 0; i < melody.length; i++) {
+            let currentNote = melody[i];
+            let note: number;
+            let isrest: boolean = false;
+            let sharp: boolean = false;
+            let octave: number = 4;
+            let beatPos: number;
+            let parsingOctave: boolean = true;
+
+            for (let pos = 0; pos < currentNote.length; pos++) {
+                let chars = currentNote.charAt(pos);
+                switch (chars) {
+                    case 'a': case 'A': note = 1; break;
+                    case 'b': case 'B': note = 3; break;
+                    case 'c': case 'C': note = 4; break;
+                    case 'd': case 'D': note = 6; break;
+                    case 'e': case 'E': note = 8; break;
+                    case 'f': case 'F': note = 9; break;
+                    case 'g': case 'G': note = 11; break;
+                    case 'r': case 'R': isrest = true; break;
+                    case '#': note++; sharp = true; break;
+                    case 'b': note--; sharp = true; break;
+                    case ':': parsingOctave = false; beatPos = pos; break;
+                    default:
+                    if (parsingOctave) {
+                    octave = parseInt(chars);
+                }
+                }
+            }
+            if (!parsingOctave) {
+                currBeats = parseInt(currentNote.substr(beatPos + 1, currentNote.length - beatPos));
+            }
+            if (isrest) {
+                rest(currBeats * beat)
+            } else {
+                let keyNumber = note + (12 * (octave - 1));
+                let frequency = keyNumber >= 0 && keyNumber < freqTable.length ? freqTable[keyNumber] : 0;
+                playTone(frequency, currBeats * beat);
+            }
         }
     }
 }
