@@ -254,7 +254,6 @@ namespace music {
             let currentNote = melody[i];
             let note: number;
             let isrest: boolean = false;
-            let sharp: boolean = false;
             let octave: number = 4;
             let beatPos: number;
             let parsingOctave: boolean = true;
@@ -270,8 +269,8 @@ namespace music {
                     case 'f': case 'F': note = 9; break;
                     case 'g': case 'G': note = 11; break;
                     case 'r': case 'R': isrest = true; break;
-                    case '#': note++; sharp = true; break;
-                    case 'b': note--; sharp = true; break;
+                    case '#': note++; break;
+                    case 'b': note--; break;
                     case ':': parsingOctave = false; beatPos = pos; break;
                     default:
                     if (parsingOctave) {
