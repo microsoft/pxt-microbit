@@ -76,7 +76,7 @@ namespace music {
     //% help=music/play-melody weight=100
     //% blockId=device_play_melody block="play|melody %melody"
     //% parts="headphone"
-    export function playBuiltinMelody(melody: MelodyNames) {
+    export function playBuiltinMelody(melody: MelodyNames): void {
         let res = getMelody(melody)
         music.playMelody(res)
     }
