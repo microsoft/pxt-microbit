@@ -25,7 +25,7 @@ THE SOFTWARE.
 
 // Melodies from file microbitmusictunes.c https://github.com/bbcmicrobit/MicroPython
 
-enum MelodyNames {
+enum Melodies {
     //% block="dadadum"
     DADADADUM = 0,
     //% block="entertainer"
@@ -76,12 +76,7 @@ namespace music {
     //% help=music/play-melody weight=100
     //% blockId=device_play_melody block="play|melody %melody"
     //% parts="headphone"
-    export function playBuiltinMelody(melody: MelodyNames): void {
-        let res = getMelody(melody)
-        music.playMelody(res)
-    }
-
-    function getMelody(i: MelodyNames): string[] {
+    export function playBuiltinMelody(melody: Melodies): void {
         const melodies = [['r4:2', 'g', 'g', 'g', 'eb:8', 'r:2', 'f', 'f', 'f', 'd:8'
         ], ['d4:1', 'd#', 'e', 'c5:2', 'e4:1', 'c5:2', 'e4:1', 'c5:3', 'c:1', 'd', 'd#', 'e', 'c', 'd', 'e:2', 'b4:1', 'd5:2', 'c:4'
             ], ['c4:1', 'e', 'g', 'c5', 'e', 'g4', 'c5', 'e', 'c4', 'e', 'g', 'c5', 'e', 'g4', 'c5', 'e', 'c4', 'd', 'g', 'd5', 'f', 'g4', 'd5', 'f', 'c4', 'd', 'g', 'd5', 'f', 'g4', 'd5', 'f', 'b3', 'd4', 'g', 'd5', 'f', 'g4', 'd5', 'f', 'b3', 'd4', 'g', 'd5', 'f', 'g4', 'd5', 'f', 'c4', 'e', 'g', 'c5', 'e', 'g4', 'c5', 'e', 'c4', 'e', 'g', 'c5', 'e', 'g4', 'c5', 'e'
@@ -103,6 +98,7 @@ namespace music {
             ], ['g5:1', 'f', 'e', 'd', 'c'
             ], ['g4:1', 'c5', 'e', 'g:2', 'e:1', 'g:3'
             ], ['g5:1', 'd#', 'c', 'g4:2', 'b:1', 'c5:3']];
-        return melodies[i];
+
+        music.playMelody(melodies[i])
     }
 }

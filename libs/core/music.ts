@@ -254,7 +254,7 @@ namespace music {
             let currentNote = melody[i];
             let note: number;
             let isrest: boolean = false;
-            let octave: number = 4;
+            let octave: number = 4; //Middle Octave
             let beatPos: number;
             let parsingOctave: boolean = true;
 
