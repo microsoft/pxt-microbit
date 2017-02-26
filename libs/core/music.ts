@@ -242,23 +242,64 @@ namespace music {
         }
     }
 
+    let currentMelody: Melody;
+
     /**
      * Plays a melody through pin ``P0``. 
      * Notes are expressed as a string of characters with this format: NOTE[octave][:duration]
      * @param melody the melody array to play, eg: ['g5:1']
      */
-    export function playMelody(melody: string[]) {
-        let currBeats = 1;
-        for (let i = 0; i < melody.length; i++) {
-            let currentNote = melody[i];
+    export function playMelody(melodyArray: string[]) {
+        let melody = new Melody(melodyArray);
+        if (currentMelody && currentMelody.isPlaying()) {
+            currentMelody.cancel();
+            currentMelody = null;
+        }
+        currentMelody = melody;
+        currentMelody.startPlaying();
+    }
+
+    class Melody {
+        _melodyArray: string[];
+        _currentBeats: number;
+        _playing: boolean;
+
+        constructor(melodyArray: string[]) {
+            this._melodyArray = melodyArray;
+        }
+
+        isPlaying() {
+            return this._playing;
+        }
+
+        startPlaying() {
+            this._playing = true;
+            let currBeats = 1;
+
+            let pos = 0;
+            while (pos < this._melodyArray.length && this._playing) {
+                this.playMelodyNote(this._melodyArray[pos]);
+                pos++;
+            }
+
+            this._playing = false;
+        }
+
+        cancel() {
+            this._playing = false;
+        }
+
+        private playMelodyNote(currNote: string) {
+            let currBeats = this._currentBeats;
+
             let note: number;
             let isrest: boolean = false;
             let octave: number = 4; //Middle Octave
             let beatPos: number;
             let parsingOctave: boolean = true;
 
-            for (let pos = 0; pos < currentNote.length; pos++) {
-                let chars = currentNote.charAt(pos);
+            for (let pos = 0; pos < currNote.length; pos++) {
+                let chars = currNote.charAt(pos);
                 switch (chars) {
                     case 'a': case 'A': note = 1; break;
                     case 'b': case 'B': note = 3; break;
@@ -271,22 +312,19 @@ namespace music {
                     case '#': note++; break;
                     case 'b': note--; break;
                     case ':': parsingOctave = false; beatPos = pos; break;
-                    default:
-                    if (parsingOctave) {
-                    octave = parseInt(chars);
-                }
+                    default: if (parsingOctave) octave = parseInt(chars);
                 }
             }
             if (!parsingOctave) {
-                currBeats = parseInt(currentNote.substr(beatPos + 1, currentNote.length - beatPos));
+                currBeats = parseInt(currNote.substr(beatPos + 1, currNote.length - beatPos));
             }
             let beat = 20000 / beatsPerMinute;
             if (isrest) {
-                rest(currBeats * beat)
+                music.rest(currBeats * beat)
             } else {
                 let keyNumber = note + (12 * (octave - 1));
                 let frequency = keyNumber >= 0 && keyNumber < freqTable.length ? freqTable[keyNumber] : 0;
-                playTone(frequency, currBeats * beat);
+                music.playTone(frequency, currBeats * beat);
             }
         }
     }
