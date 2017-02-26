@@ -172,7 +172,7 @@
   "music.noteFrequency|param|name": "the note name, eg: Note.C",
   "music.playBuiltinMelody": "Plays the selected built-in melody through pin ``P0``.",
   "music.playMelody": "Plays a melody through pin ``P0``. \nNotes are expressed as a string of characters with this format: NOTE[octave][:duration]",
-  "music.playMelody|param|melody": "the melody array to play, eg: ['g5:1', 'f', 'e', 'd', 'c']",
+  "music.playMelody|param|melody": "the melody array to play, eg: ['g5:1']",
   "music.playTone": "Plays a tone through pin ``P0`` for the given duration.",
   "music.playTone|param|frequency": "pitch of the tone to play in Hertz (Hz)",
   "music.playTone|param|ms": "tone duration in milliseconds (ms)",

@@ -245,10 +245,9 @@ namespace music {
     /**
      * Plays a melody through pin ``P0``. 
      * Notes are expressed as a string of characters with this format: NOTE[octave][:duration]
-     * @param melody the melody array to play, eg: ['g5:1', 'f', 'e', 'd', 'c']
+     * @param melody the melody array to play, eg: ['g5:1']
      */
     export function playMelody(melody: string[]) {
-        let beat = 20000 / beatsPerMinute;
         let currBeats = 1;
         for (let i = 0; i < melody.length; i++) {
             let currentNote = melody[i];
@@ -281,6 +280,7 @@ namespace music {
             if (!parsingOctave) {
                 currBeats = parseInt(currentNote.substr(beatPos + 1, currentNote.length - beatPos));
             }
+            let beat = 20000 / beatsPerMinute;
             if (isrest) {
                 rest(currBeats * beat)
             } else {
