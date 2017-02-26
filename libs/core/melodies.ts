@@ -99,6 +99,6 @@ namespace music {
             ], ['g4:1', 'c5', 'e', 'g:2', 'e:1', 'g:3'
             ], ['g5:1', 'd#', 'c', 'g4:2', 'b:1', 'c5:3']];
 
-        music.playMelody(melodies[i])
+        music.playMelody(melodies[melody])
     }
 }
