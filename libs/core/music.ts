@@ -250,12 +250,11 @@ namespace music {
      * @param melody the melody array to play, eg: ['g5:1']
      */
     export function playMelody(melodyArray: string[]) {
-        let melody = new Melody(melodyArray);
         if (currentMelody && currentMelody.isPlaying()) {
             currentMelody.cancel();
             currentMelody = null;
         }
-        currentMelody = melody;
+        currentMelody = new Melody(melodyArray);
         currentMelody.startPlaying();
     }
 
