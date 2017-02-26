@@ -278,7 +278,8 @@ namespace music {
 
             let pos = 0;
             while (pos < this._melodyArray.length && this._playing) {
-                this.playMelodyNote(this._melodyArray[pos]);
+                let currentNote = this._melodyArray[pos];
+                this.playMelodyNote(currentNote);
                 pos++;
             }
 
@@ -290,8 +291,6 @@ namespace music {
         }
 
         private playMelodyNote(currNote: string) {
-            let currBeats = this._currentBeats;
-
             let note: number;
             let isrest: boolean = false;
             let octave: number = 4; //Middle Octave
@@ -299,8 +298,8 @@ namespace music {
             let parsingOctave: boolean = true;
 
             for (let pos = 0; pos < currNote.length; pos++) {
-                let chars = currNote.charAt(pos);
-                switch (chars) {
+                let noteChar = currNote.charAt(pos);
+                switch (noteChar) {
                     case 'a': case 'A': note = 1; break;
                     case 'b': case 'B': note = 3; break;
                     case 'c': case 'C': note = 4; break;
@@ -312,19 +311,19 @@ namespace music {
                     case '#': note++; break;
                     case 'b': note--; break;
                     case ':': parsingOctave = false; beatPos = pos; break;
-                    default: if (parsingOctave) octave = parseInt(chars);
+                    default: if (parsingOctave) octave = parseInt(noteChar);
                 }
             }
             if (!parsingOctave) {
-                currBeats = parseInt(currNote.substr(beatPos + 1, currNote.length - beatPos));
+                this._currentBeats = parseInt(currNote.substr(beatPos + 1, currNote.length - beatPos));
             }
             let beat = 20000 / beatsPerMinute;
             if (isrest) {
-                music.rest(currBeats * beat)
+                music.rest(this._currentBeats * beat)
             } else {
                 let keyNumber = note + (12 * (octave - 1));
                 let frequency = keyNumber >= 0 && keyNumber < freqTable.length ? freqTable[keyNumber] : 0;
-                music.playTone(frequency, currBeats * beat);
+                music.playTone(frequency, this._currentBeats * beat);
             }
         }
     }
