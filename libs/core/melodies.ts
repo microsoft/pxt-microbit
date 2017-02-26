@@ -27,45 +27,45 @@ THE SOFTWARE.
 
 enum Melodies {
     //% block="dadadum"
-    DADADADUM = 0,
+    Dadadadum = 0,
     //% block="entertainer"
-    ENTERTAINER,
+    Entertainer,
     //% block="prelude"
-    PRELUDE,
+    Prelude,
     //% block="ode"
-    ODE,
+    Ode,
     //% block="nyan"
-    NYAN,
+    Nyan,
     //% block="ringtone"
-    RINGTONE,
+    Ringtone,
     //% block="funk"
-    FUNK,
+    Funk,
     //% block="blues"
-    BLUES,
+    Blues,
     //% block="birthday"
-    BIRTHDAY,
+    Birthday,
     //% block="wedding"
-    WEDDING,
+    Wedding,
     //% block="funereal"
-    FUNERAL,
+    Funeral,
     //% block="punchline"
-    PUNCHLINE,
+    Punchline,
     //% block="baddy"
-    BADDY,
+    Baddy,
     //% block="chase"
-    CHASE,
+    Chase,
     //% block="ba ding"
-    BA_DING,
+    BaDing,
     //% block="wawawawaa"
-    WAWAWAWAA,
+    Wawawawaa,
     //% block="jump up"
-    JUMP_UP,
+    JumpUp,
     //% block="jump down"
-    JUMP_DOWN,
+    JumpDown,
     //% block="power up"
-    POWER_UP,
+    PowerUp,
     //% block="power down"
-    POWER_DOWN,
+    PowerDown,
 }
 
 namespace music {
@@ -73,7 +73,7 @@ namespace music {
     /**
      * Plays the selected built-in melody through pin ``P0``. 
      */
-    //% help=music/play-melody weight=100
+    //% help=music/play-builtin-melody weight=60
     //% blockId=device_play_melody block="play|melody %melody"
     //% parts="headphone"
     export function playBuiltinMelody(melody: Melodies): void {
