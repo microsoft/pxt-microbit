@@ -261,10 +261,12 @@ namespace music {
     class Melody {
         _melodyArray: string[];
         _currentBeats: number;
+        _currentOctave: number;
         _playing: boolean;
 
         constructor(melodyArray: string[]) {
             this._melodyArray = melodyArray;
+            this._currentOctave = 4; //Middle octave
         }
 
         isPlaying() {
@@ -292,7 +294,6 @@ namespace music {
         private playMelodyNote(currNote: string) {
             let note: number;
             let isrest: boolean = false;
-            let octave: number = 4; //Middle Octave
             let beatPos: number;
             let parsingOctave: boolean = true;
 
@@ -310,7 +311,7 @@ namespace music {
                     case '#': note++; break;
                     case 'b': note--; break;
                     case ':': parsingOctave = false; beatPos = pos; break;
-                    default: if (parsingOctave) octave = parseInt(noteChar);
+                    default: if (parsingOctave) this._currentOctave = parseInt(noteChar);
                 }
             }
             if (!parsingOctave) {
@@ -320,7 +321,7 @@ namespace music {
             if (isrest) {
                 music.rest(this._currentBeats * beat)
             } else {
-                let keyNumber = note + (12 * (octave - 1));
+                let keyNumber = note + (12 * (this._currentOctave - 1));
                 let frequency = keyNumber >= 0 && keyNumber < freqTable.length ? freqTable[keyNumber] : 0;
                 music.playTone(frequency, this._currentBeats * beat);
             }
