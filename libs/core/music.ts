@@ -268,7 +268,7 @@ namespace music {
      */
     export function startMelody(melody: string[], repeat: MelodyRepeat = MelodyRepeat.Once, location: MelodyLocation = MelodyLocation.Foreground) {
         if (currentMelody != undefined) {
-            if (currentMelody.location == MelodyLocation.Background) {
+            if (location != MelodyLocation.Background && currentMelody.location == MelodyLocation.Background) {
                 currentBackgroundMelody = currentMelody;
             }
             currentMelody = new Melody(melody, repeat, location);
@@ -279,7 +279,9 @@ namespace music {
                 while (currentMelody.hasNextNote()) {
                     playNextNote(currentMelody);
                     if (!currentMelody.hasNextNote() && currentBackgroundMelody) {
+                        // Swap the background melody back
                         currentMelody = currentBackgroundMelody;
+                        currentBackgroundMelody = null;
                     }
                 }
                 currentMelody = null;
