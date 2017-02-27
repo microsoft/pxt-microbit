@@ -70,15 +70,32 @@ enum Melodies {
 
 namespace music {
 
+
     /**
-     * Plays the selected built-in melody through pin ``P0``. 
+     * Plays the selected built-in melody through pin ``P0`` once, in the foreground.
+     * @param melody the melody to play
      */
     //% help=music/play-builtin-melody weight=60
-    //% blockId=device_play_melody block="play|melody %melody"
+    //% blockId=device_play_builtin_melody block="play|melody %melody"
     //% parts="headphone"
     export function playBuiltinMelody(melody: Melodies): void {
         let res = getMelody(melody);
-        music.playMelody(res);
+        music.startMelody(res, MelodyRepeat.Once, MelodyLocation.Foreground);
+    }
+
+    /**
+     * Start playing the selected built-in melody through pin ``P0``. 
+     * @param melody the melody to play
+     * @param repeat play once or forever
+     * @param location play in foreground or background
+     */
+    //% help=music/play-builtin-melody weight=50
+    //% blockId=device_start_builtin_melody block="start|melody %melody| repeating %repeat| in the %location"
+    //% parts="headphone"
+    //% advanced=true
+    export function startBuiltinMelody(melody: Melodies, repeat: MelodyRepeat, location: MelodyLocation): void {
+        let res = getMelody(melody);
+        music.startMelody(res, repeat, location);
     }
 
     function getMelody(melody: Melodies): string[] {
