@@ -260,12 +260,13 @@ namespace music {
 
     class Melody {
         _melodyArray: string[];
-        _currentBeats: number;
+        _currentDuration: number;
         _currentOctave: number;
         _playing: boolean;
 
         constructor(melodyArray: string[]) {
             this._melodyArray = melodyArray;
+            this._currentDuration = 4; //Default duration (Crotchet)
             this._currentOctave = 4; //Middle octave
         }
 
@@ -275,7 +276,6 @@ namespace music {
 
         startPlaying() {
             this._playing = true;
-            let currBeats = 1;
 
             let pos = 0;
             while (pos < this._melodyArray.length && this._playing) {
@@ -315,15 +315,15 @@ namespace music {
                 }
             }
             if (!parsingOctave) {
-                this._currentBeats = parseInt(currNote.substr(beatPos + 1, currNote.length - beatPos));
+                this._currentDuration = parseInt(currNote.substr(beatPos + 1, currNote.length - beatPos));
             }
-            let beat = 20000 / beatsPerMinute;
+            let beat = (60000 / beatsPerMinute) / 4;
             if (isrest) {
-                music.rest(this._currentBeats * beat)
+                music.rest(this._currentDuration * beat)
             } else {
                 let keyNumber = note + (12 * (this._currentOctave - 1));
                 let frequency = keyNumber >= 0 && keyNumber < freqTable.length ? freqTable[keyNumber] : 0;
-                music.playTone(frequency, this._currentBeats * beat);
+                music.playTone(frequency, this._currentDuration * beat);
             }
         }
     }
