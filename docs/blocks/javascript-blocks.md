@@ -6,6 +6,20 @@ that can't be converted into blocks, it instead creates a grey JavaScript block
 to preserve it. These blocks get converted right back into the original
 JavaScript when you switch back to the text editor.
 
+```blocks
+for (let index = 0; index <= 5; index++) {
+    basic.showNumber(fibonacci(index))
+}
+
+function fibonacci(n: number): number {
+    if (n === 0 || n === 1) {
+        return 1;
+    }
+
+    return fibonacci(n - 1) + fibonacci(n - 2);
+}
+```
+
 The code in JavaScript blocks cannot be edited, but the blocks
 themselves can be moved, copied, pasted, and deleted just like any
 other block.
