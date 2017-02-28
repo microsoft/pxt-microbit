@@ -107,6 +107,7 @@
   "basic.clearScreen|block": "表示を消す",
   "basic.forever|block": "ずっと",
   "basic.pause|block": "一時停止（ミリ秒） %pause",
+  "basic.showIcon|block": "アイコン %i を表示",
   "basic.showLeds|block": "LEDに表示",
   "basic.showNumber|block": "数を表示|%number",
   "basic.showString|block": "文字列を表示|%text",

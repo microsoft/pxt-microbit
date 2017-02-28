@@ -333,7 +333,7 @@
         "coloredToolbox": true,
         "monacoToolbox": true,
         "hasAudio": true,
-        "blocklyOptions": { 
+        "blocklyOptions": {
             "grid": {
                 "spacing": 45,
                 "length": 7,

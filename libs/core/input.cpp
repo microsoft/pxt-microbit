@@ -112,7 +112,7 @@ enum class Gesture {
     EightG = MICROBIT_ACCELEROMETER_EVT_8G
 };
 
-//% color=300 weight=99 icon="\uf192"
+//% color=#B4009E weight=99 icon="\uf192"
 namespace input {
     /**
      * Do something when a button (``A``, ``B`` or both ``A+B``) is pressed
@@ -212,7 +212,7 @@ namespace input {
         double y = uBit.accelerometer.getY();
         double z = uBit.accelerometer.getZ();
         return (int)sqrt(x*x+y*y+z*z);
-    }    
+    }
 
     /**
      * Get the acceleration value in milli-gravitys (when the board is laying flat with the screen up, x=0, y=0 and z=-1024)

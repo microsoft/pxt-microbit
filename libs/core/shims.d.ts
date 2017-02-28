@@ -212,7 +212,7 @@ declare namespace basic {
 
 
 
-    //% color=300 weight=99 icon="\uf192"
+    //% color=#B4009E weight=99 icon="\uf192"
 declare namespace input {
 
     /**
@@ -430,7 +430,7 @@ declare namespace control {
 
 
 
-    //% color=3 weight=35 icon="\uf205"
+    //% color=#5C2D91 weight=97 icon="\uf205"
 declare namespace led {
 
     /**
@@ -500,7 +500,7 @@ declare namespace led {
     function setDisplayMode(mode: DisplayMode): void;
 
     /**
-     * Turns on or off the display    
+     * Turns on or off the display
      */
     //% help=led/enable blockId=device_led_enable block="led enable %on"
     //% advanced=true parts="ledmatrix" shim=led::enable
@@ -671,7 +671,7 @@ declare namespace pins {
 
 
 
-    //% weight=2 color=30 icon="\uf287"
+    //% weight=2 color=#002050 icon="\uf287"
     //% advanced=true
 declare namespace serial {
 

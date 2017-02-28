@@ -27,6 +27,7 @@ THE SOFTWARE.
 
 enum IconNames {
     //% block="heart"
+    //% blockImage=1
     Heart = 0,
     //% block="small heart"
     SmallHeart,
@@ -136,6 +137,7 @@ namespace basic {
     //% blockId=basic_show_icon 
     //% block="show icon %i" icon="\uf00a"
     //% parts="ledmatrix"
+    //% help=basic/show-icon
     export function showIcon(icon: IconNames) {
         let res = images.iconImage(icon)
         res.showImage(0)
@@ -146,6 +148,7 @@ namespace basic {
     //% block="show arrow %i=device_arrow"
     //% parts="ledmatrix"
     //% advanced=true
+    //% help=basic/show-arrow
     export function showArrow(i: number) {
         let res = images.arrowImage(i)
         res.showImage(0)

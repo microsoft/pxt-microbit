@@ -8,7 +8,7 @@ enum class DisplayMode_ {
     // TODO DISPLAY_MODE_BLACK_AND_WHITE_LIGHT_SENSE
 };
 
-//% color=3 weight=35 icon="\uf205"
+//% color=#5C2D91 weight=97 icon="\uf205"
 namespace led {
 
     /**
@@ -93,7 +93,7 @@ namespace led {
     }
 
     /**
-    * Turns on or off the display    
+    * Turns on or off the display
     */
     //% help=led/enable blockId=device_led_enable block="led enable %on"
     //% advanced=true parts="ledmatrix"
