@@ -263,6 +263,7 @@ namespace music {
      */
     //% weight=50 help=music/builtin-melody
     //% blockId=device_builtin_melody block="%melody"
+    //% shim=TD_ID blockHidden=true
     export function builtInMelody(melody: Melodies): string[] {
         return getMelody(melody);
     }
