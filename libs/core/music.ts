@@ -128,7 +128,7 @@ enum BeatFraction {
 
 enum MelodyOptions {
     //% block="once""
-    Once = 1, 
+    Once = 1,
     //% block="forever"
     Forever = 2,
     //% block="once in background"
@@ -263,13 +263,13 @@ namespace music {
      */
     //% weight=50 help=music/builtin-melody
     //% blockId=device_builtin_melody block="%melody"
-    //% shim=TD_ID blockHidden=true
+    //% blockHidden=true
     export function builtInMelody(melody: Melodies): string[] {
         return getMelody(melody);
     }
 
     /**
-     * Starts playing a melody through pin ``P0``. 
+     * Starts playing a melody through pin ``P0``.
      * Notes are expressed as a string of characters with this format: NOTE[octave][:duration]
      * @param melody the melody array to play, eg: ['g5:1']
      * @param options melody options, once / forever, in the foreground / background
@@ -299,7 +299,7 @@ namespace music {
                     }
                 }
                 currentMelody = null;
-            })   
+            })
         }
     }
 
