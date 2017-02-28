@@ -126,18 +126,15 @@ enum BeatFraction {
     Breve = 64
 }
 
-enum MelodyRepeat {
+enum MelodyOptions {
     //% block="once""
     Once = 1, 
     //% block="forever"
-    Forever
-}
-
-enum MelodyLocation {
-    //% block="foreground""
-    Foreground = 1, 
-    //% block="background""
-    Background
+    Forever = 2,
+    //% block="once in background"
+    OnceInBackground = 4,
+    //% block="forever in background"
+    ForeverInBackground = 8
 }
 
 /**
@@ -146,7 +143,7 @@ enum MelodyLocation {
 //% color=#D83B01 weight=98 icon="\uf025"
 namespace music {
     let beatsPerMinute: number = 120;
-    const freqTable = [28, 29, 31, 33, 35, 37, 39, 41, 44, 46, 49, 52, 55, 58, 62, 65, 69, 73, 78, 82, 87, 92, 98, 104, 110, 117, 123, 131, 139, 147, 156, 165, 175, 185, 196, 208, 220, 233, 247, 262, 277, 294, 311, 330, 349, 370, 392, 415, 440, 466, 494, 523, 554, 587, 622, 659, 698, 740, 784, 831, 880, 932, 988, 1047, 1109, 1175, 1245, 1319, 1397, 1480, 1568, 1661, 1760, 1865, 1976, 2093, 2217, 2349, 2489, 2637, 2794, 2960, 3136, 3322, 3520, 3729, 3951, 4186]
+    let freqTable: number[] = [];
 
     /**
      * Plays a tone through pin ``P0`` for the given duration.
@@ -200,6 +197,7 @@ namespace music {
 
     function init() {
         if (beatsPerMinute <= 0) beatsPerMinute = 120;
+        if (freqTable.length == 0) freqTable = [28, 29, 31, 33, 35, 37, 39, 41, 44, 46, 49, 52, 55, 58, 62, 65, 69, 73, 78, 82, 87, 92, 98, 104, 110, 117, 123, 131, 139, 147, 156, 165, 175, 185, 196, 208, 220, 233, 247, 262, 277, 294, 311, 330, 349, 370, 392, 415, 440, 466, 494, 523, 554, 587, 622, 659, 698, 740, 784, 831, 880, 932, 988, 1047, 1109, 1175, 1245, 1319, 1397, 1480, 1568, 1661, 1760, 1865, 1976, 2093, 2217, 2349, 2489, 2637, 2794, 2960, 3136, 3322, 3520, 3729, 3951, 4186]
     }
 
     /**
@@ -260,20 +258,35 @@ namespace music {
     let currentBackgroundMelody: Melody;
 
     /**
+     * Gets the melody array of a built-in melody.
+     * @param name the note name, eg: Note.C
+     */
+    //% weight=50 help=music/builtin-melody
+    //% blockId=device_builtin_melody block="%melody"
+    export function builtInMelody(melody: Melodies): string[] {
+        return getMelody(melody);
+    }
+
+    /**
      * Starts playing a melody through pin ``P0``. 
      * Notes are expressed as a string of characters with this format: NOTE[octave][:duration]
      * @param melody the melody array to play, eg: ['g5:1']
-     * @param repeat play once or forever
-     * @param location play in foreground or background
+     * @param options melody options, once / forever, in the foreground / background
      */
-    export function startMelody(melody: string[], repeat: MelodyRepeat = MelodyRepeat.Once, location: MelodyLocation = MelodyLocation.Foreground) {
+    //% help=music/start-melody weight=60
+    //% blockId=device_start_melody block="start|melody %melody=device_builtin_melody| repeating %options"
+    //% parts="headphone"
+    export function beginMelody(melodyArray: string[], options: MelodyOptions = MelodyOptions.Once) {
+        init();
         if (currentMelody != undefined) {
-            if (location != MelodyLocation.Background && currentMelody.location == MelodyLocation.Background) {
+            if (((options & MelodyOptions.OnceInBackground) == 0)
+                && ((options & MelodyOptions.ForeverInBackground) == 0)
+                && currentMelody.background == true) {
                 currentBackgroundMelody = currentMelody;
             }
-            currentMelody = new Melody(melody, repeat, location);
+            currentMelody = new Melody(melodyArray, options);
         } else {
-            currentMelody = new Melody(melody, repeat, location);
+            currentMelody = new Melody(melodyArray, options);
             // Only start the fiber once
             control.inBackground(() => {
                 while (currentMelody.hasNextNote()) {
@@ -331,7 +344,7 @@ namespace music {
         }
         melody.currentDuration = currentDuration;
         melody.currentOctave = currentOctave;
-        melody.currentPos = melody.repeating == MelodyRepeat.Forever && currentPos == melody.melodyArray.length - 1 ? 0 : currentPos + 1;
+        melody.currentPos = melody.repeating == true && currentPos == melody.melodyArray.length - 1 ? 0 : currentPos + 1;
     }
 
     class Melody {
@@ -339,20 +352,22 @@ namespace music {
         public currentDuration: number;
         public currentOctave: number;
         public currentPos: number;
-        public repeating: MelodyRepeat;
-        public location: MelodyLocation;
+        public repeating: boolean;
+        public background: boolean;
 
-        constructor(melodyArray: string[], repeating: MelodyRepeat, location: MelodyLocation) {
+        constructor(melodyArray: string[], options: MelodyOptions) {
             this.melodyArray = melodyArray;
-            this.repeating = repeating;
-            this.location = location;
+            this.repeating = ((options & MelodyOptions.Forever) != 0);
+            this.repeating = this.repeating ? true : ((options & MelodyOptions.ForeverInBackground) != 0)
+            this.background = ((options & MelodyOptions.OnceInBackground) != 0);
+            this.background = this.background ? true : ((options & MelodyOptions.ForeverInBackground) != 0);
             this.currentDuration = 4; //Default duration (Crotchet)
             this.currentOctave = 4; //Middle octave
             this.currentPos = 0;
         }
 
         hasNextNote() {
-            return this.repeating == MelodyRepeat.Forever || this.currentPos < this.melodyArray.length;
+            return this.repeating || this.currentPos < this.melodyArray.length;
         }
 
         nextNote(): string {

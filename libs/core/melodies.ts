@@ -26,79 +26,51 @@ THE SOFTWARE.
 // Melodies from file microbitmusictunes.c https://github.com/bbcmicrobit/MicroPython
 
 enum Melodies {
-    //% block="dadadum"
+    //% block="dadadum" blockIdentity=music.builtInMelody
     Dadadadum = 0,
-    //% block="entertainer"
+    //% block="entertainer" blockIdentity=music.builtInMelody
     Entertainer,
-    //% block="prelude"
+    //% block="prelude" blockIdentity=music.builtInMelody
     Prelude,
-    //% block="ode"
+    //% block="ode" blockIdentity=music.builtInMelody
     Ode,
-    //% block="nyan"
+    //% block="nyan" blockIdentity=music.builtInMelody
     Nyan,
-    //% block="ringtone"
+    //% block="ringtone" blockIdentity=music.builtInMelody
     Ringtone,
-    //% block="funk"
+    //% block="funk" blockIdentity=music.builtInMelody
     Funk,
-    //% block="blues"
+    //% block="blues" blockIdentity=music.builtInMelody
     Blues,
-    //% block="birthday"
+    //% block="birthday" blockIdentity=music.builtInMelody
     Birthday,
-    //% block="wedding"
+    //% block="wedding" blockIdentity=music.builtInMelody
     Wedding,
-    //% block="funereal"
+    //% block="funereal" blockIdentity=music.builtInMelody
     Funeral,
-    //% block="punchline"
+    //% block="punchline" blockIdentity=music.builtInMelody
     Punchline,
-    //% block="baddy"
+    //% block="baddy" blockIdentity=music.builtInMelody
     Baddy,
-    //% block="chase"
+    //% block="chase" blockIdentity=music.builtInMelody
     Chase,
-    //% block="ba ding"
+    //% block="ba ding" blockIdentity=music.builtInMelody
     BaDing,
-    //% block="wawawawaa"
+    //% block="wawawawaa" blockIdentity=music.builtInMelody
     Wawawawaa,
-    //% block="jump up"
+    //% block="jump up" blockIdentity=music.builtInMelody
     JumpUp,
-    //% block="jump down"
+    //% block="jump down" blockIdentity=music.builtInMelody
     JumpDown,
-    //% block="power up"
+    //% block="power up" blockIdentity=music.builtInMelody
     PowerUp,
-    //% block="power down"
+    //% block="power down" blockIdentity=music.builtInMelody
     PowerDown,
 }
 
 namespace music {
 
-
-    /**
-     * Plays the selected built-in melody through pin ``P0`` once, in the foreground.
-     * @param melody the melody to play
-     */
-    //% help=music/play-builtin-melody weight=60
-    //% blockId=device_play_builtin_melody block="play|melody %melody"
-    //% parts="headphone"
-    export function playBuiltinMelody(melody: Melodies): void {
-        let res = getMelody(melody);
-        music.startMelody(res, MelodyRepeat.Once, MelodyLocation.Foreground);
-    }
-
-    /**
-     * Start playing the selected built-in melody through pin ``P0``. 
-     * @param melody the melody to play
-     * @param repeat play once or forever
-     * @param location play in foreground or background
-     */
-    //% help=music/play-builtin-melody weight=50
-    //% blockId=device_start_builtin_melody block="start|melody %melody| repeating %repeat| in the %location"
-    //% parts="headphone"
-    //% advanced=true
-    export function startBuiltinMelody(melody: Melodies, repeat: MelodyRepeat, location: MelodyLocation): void {
-        let res = getMelody(melody);
-        music.startMelody(res, repeat, location);
-    }
-
-    function getMelody(melody: Melodies): string[] {
+    export function getMelody(melody: Melodies): string[] {
         switch (melody) {
             case Melodies.Dadadadum:
                 return ['r4:2', 'g', 'g', 'g', 'eb:8', 'r:2', 'f', 'f', 'f', 'd:8'];
