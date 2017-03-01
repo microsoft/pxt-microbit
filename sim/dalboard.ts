@@ -16,6 +16,9 @@ namespace pxsim {
         neopixelState: NeoPixelState;
         fileSystem: FileSystemState;
 
+        // visual
+        view: SVGElement;
+
         constructor() {
             super()
 
@@ -123,9 +126,13 @@ namespace pxsim {
             }), opts);
 
             document.body.innerHTML = ""; // clear children
-            document.body.appendChild(viewHost.getView());
+            document.body.appendChild(this.view = viewHost.getView());
 
             return Promise.resolve();
+        }
+
+        screenshot(): string {
+            return svg.toDataUri(new XMLSerializer().serializeToString(this.view));
         }
     }
 
