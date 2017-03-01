@@ -81,6 +81,9 @@ declare const enum DAL {
     MICROBIT_BLE_MAXIMUM_BONDS = 4,
     MICROBIT_BLE_EDDYSTONE_ADV_INTERVAL = 400,
     MICROBIT_BLE_EDDYSTONE_DEFAULT_POWER = 0xF0,
+    MICROBIT_BLE_STATUS_STORE_SYSATTR = 0x02,
+    MICROBIT_BLE_STATUS_DISCONNECT = 0x04,
+    MICROBIT_BLE_DISCONNECT_AFTER_PAIRING_DELAY = 500,
     // built/yt/yotta_modules/microbit-dal/inc/bluetooth/MicroBitButtonService.h
     // built/yt/yotta_modules/microbit-dal/inc/bluetooth/MicroBitDFUService.h
     MICROBIT_DFU_OPCODE_START_DFU = 1,
@@ -191,10 +194,7 @@ declare const enum DAL {
     MICROBIT_SERIAL_EVT_TX_EMPTY = 2,
     MICROBIT_UART_S_EVT_TX_EMPTY = 3,
     // built/yt/yotta_modules/microbit-dal/inc/drivers/DynamicPwm.h
-    NO_PWMS = 3,
     MICROBIT_DEFAULT_PWM_PERIOD = 20000,
-    PWM_PERSISTENCE_TRANSIENT = 1,
-    PWM_PERSISTENCE_PERSISTENT = 2,
     // built/yt/yotta_modules/microbit-dal/inc/drivers/MicroBitAccelerometer.h
     MICROBIT_ACCEL_PITCH_ROLL_VALID = 0x02,
     MICROBIT_ACCEL_ADDED_TO_IDLE = 0x04,
@@ -375,8 +375,8 @@ declare const enum DAL {
     MICROBIT_PIN_EVT_FALL = 3,
     MICROBIT_PIN_EVT_PULSE_HI = 4,
     MICROBIT_PIN_EVT_PULSE_LO = 5,
-    PIN_CAPABILITY_DIGITAL = 0x01,
-    PIN_CAPABILITY_ANALOG = 0x02,
+    PIN_CAPABILITY_DIGITAL_IN = 0x01,
+    PIN_CAPABILITY_DIGITAL_OUT = 0x02,
     // built/yt/yotta_modules/microbit-dal/inc/drivers/MicroBitRadio.h
     MICROBIT_RADIO_STATUS_INITIALISED = 0x0001,
     MICROBIT_RADIO_BASE_ADDRESS = 0x75626974,

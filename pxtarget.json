@@ -181,7 +181,7 @@
         "yottaTarget": "bbc-microbit-classic-gcc",
         "yottaCorePackage": "microbit",
         "githubCorePackage": "lancaster-university/microbit",
-        "gittag": "v2.0.0-rc7",
+        "gittag": "v2.0.0-rc8",
         "serviceId": "microbit"
     },
     "serial": {
