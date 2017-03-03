@@ -194,317 +194,317 @@ namespace basic {
 
 namespace images {
 
-    function getArrow(i : ArrowNames): string {
+    function getArrow(i : ArrowNames): Image {
             switch(i) {
             // compass directions
-            case ArrowNames.North: return `    
+            case ArrowNames.North: return images.createImage(`    
                                         . . # . .
                                         . # # # .
                                         # . # . #
                                         . . # . .
-                                        . . # . .`;
-            case ArrowNames.NorthEast: return ` 
+                                        . . # . .`);
+            case ArrowNames.NorthEast: return images.createImage(` 
                                         . . # # #
                                         . . . # #
                                         . . # . #
                                         . # . . .
-                                        # . . . .`;
-            case  ArrowNames.East: return ` 
+                                        # . . . .`);
+            case  ArrowNames.East: return images.createImage(` 
                                         . . # . .
                                         . . . # .
                                         # # # # #
                                         . . . # .
-                                        . . # . .`;
-            case ArrowNames.SouthEast: return ` 
+                                        . . # . .`);
+            case ArrowNames.SouthEast: return images.createImage(` 
                                         # . . . .
                                         . # . . .
                                         . . # . #
                                         . . . # #
-                                        . . # # #`;
-            case ArrowNames.South: return ` 
+                                        . . # # #`);
+            case ArrowNames.South: return images.createImage(` 
                                         . . # . .
                                         . . # . .
                                         # . # . #
                                         . # # # .
-                                        . . # . .`;
-            case ArrowNames.SouthWest: return ` 
+                                        . . # . .`);
+            case ArrowNames.SouthWest: return images.createImage(` 
                                         . . . . #
                                         . . . # .
                                         # . # . .
                                         # # . . .
-                                        # # # . .`;
-            case ArrowNames.West: return ` 
+                                        # # # . .`);
+            case ArrowNames.West: return images.createImage(` 
                                         . . # . .
                                         . # . . .
                                         # # # # #
                                         . # . . .
-                                        . . # . .`;
-            case ArrowNames.NorthWest: return ` 
+                                        . . # . .`);
+            case ArrowNames.NorthWest: return images.createImage(` 
                                         # # # . .
                                         # # . . .
                                         # . # . .
                                         . . . # .
-                                        . . . . #`;
-            default:                return `
+                                        . . . . #`);
+            default:                return images.createImage(`
                                         . . . . .
                                         . . . . .
                                         . . . . .
                                         . . . . .
                                         . . . . .
-                                        `;
+                                        `);
        }
     }
     
-    function getIcon(i: IconNames): string {
+    function getIcon(i: IconNames): Image {
 
             switch (i) {
-            case IconNames.Heart : return `
+            case IconNames.Heart : return images.createImage(`
                                         . # . # .
                                         # # # # #
                                         # # # # #
                                         . # # # .
-                                        . . # . .`;
+                                        . . # . .`);
 
-            case IconNames.SmallHeart : return `
+            case IconNames.SmallHeart : return images.createImage(`
                                         . . . . .
                                         . # . # .
                                         . # # # .
                                         . . # . .
-                                        . . . . .`;
+                                        . . . . .`);
                                             //faces
-            case IconNames.Happy: return `
+            case IconNames.Happy: return images.createImage(`
                                         . . . . .
                                         . # . # .
                                         . . . . .
                                         # . . . #
-                                        . # # # .`;
-            case IconNames.Sad: return `
+                                        . # # # .`);
+            case IconNames.Sad: return images.createImage(`
                                         . . . . .
                                         . # . # .
                                         . . . . .
                                         . # # # .
-                                        # . . . #`;
-            case IconNames.Confused: return `
+                                        # . . . #`);
+            case IconNames.Confused: return images.createImage(`
                                         . . . . .
                                         . # . # .
                                         . . . . .
                                         . # . # .
-                                        # . # . #`;
-            case IconNames.Angry: return `
+                                        # . # . #`);
+            case IconNames.Angry: return images.createImage(`
                                         # . . . #
                                         . # . # .
                                         . . . . .
                                         # # # # #
-                                        # . # . #`;
-            case IconNames.Asleep: return `
+                                        # . # . #`);
+            case IconNames.Asleep: return images.createImage(`
                                         . . . . .
                                         # # . # #
                                         . . . . .
                                         . # # # .
-                                        . . . . .`;
-            case IconNames.Surprised: return `
+                                        . . . . .`);
+            case IconNames.Surprised: return images.createImage(`
                                         . # . # .
                                         . . . . .
                                         . . # . .
                                         . # . # .
-                                        . . # . .`;
-            case IconNames.Silly: return `
+                                        . . # . .`);
+            case IconNames.Silly: return images.createImage(`
                                         # . . . #
                                         . . . . .
                                         # # # # #
                                         . . . # #
-                                        . . . # #`;
-            case IconNames.Fabulous: return `
+                                        . . . # #`);
+            case IconNames.Fabulous: return images.createImage(`
                                         # # # # #
                                         # # . # #
                                         . . . . .
                                         . # . # .
-                                        . # # # .`;
-            case IconNames.Meh: return `
+                                        . # # # .`);
+            case IconNames.Meh: return images.createImage(`
                                         # # . # #
                                         . . . . .
                                         . . . # .
                                         . . # . .
-                                        . # . . .`;
-            case IconNames.Yes: return `
+                                        . # . . .`);
+            case IconNames.Yes: return images.createImage(`
                                         . . . . .
                                         . . . . #
                                         . . . # .
                                         # . # . .
-                                        . # . . .`;
-            case IconNames.No: return `
+                                        . # . . .`);
+            case IconNames.No: return images.createImage(`
                                         # . . . #
                                         . # . # .
                                         . . # . .
                                         . # . # .
-                                        # . . . #`;
-            case IconNames.Triangle: return `
+                                        # . . . #`);
+            case IconNames.Triangle: return images.createImage(`
                                         . . . . .
                                         . . # . .
                                         . # . # .
                                         # # # # #
-                                        . . . . .`;
-            case IconNames.LeftTriangle: return `
+                                        . . . . .`);
+            case IconNames.LeftTriangle: return images.createImage(`
                                         # . . . .
                                         # # . . .
                                         # . # . .
                                         # . . # .
-                                        # # # # #`;
-            case IconNames.Chessboard: return `
+                                        # # # # #`);
+            case IconNames.Chessboard: return images.createImage(`
                                         . # . # .
                                         # . # . #
                                         . # . # .
                                         # . # . #
-                                        . # . # .`;
-            case IconNames.Diamond: return `
+                                        . # . # .`);
+            case IconNames.Diamond: return images.createImage(`
                                         . . # . .
                                         . # . # .
                                         # . . . #
                                         . # . # .
-                                        . . # . .`;
-            case IconNames.SmallDiamond: return `
+                                        . . # . .`);
+            case IconNames.SmallDiamond: return images.createImage(`
                                         . . . . .
                                         . . # . .
                                         . # . # .
                                         . . # . .
-                                        . . . . .`;
-            case IconNames.Square: return `
+                                        . . . . .`);
+            case IconNames.Square: return images.createImage(`
                                         # # # # #
                                         # . . . #
                                         # . . . #
                                         # . . . #
-                                        # # # # #`;
-            case IconNames.SmallSquare: return `
+                                        # # # # #`);
+            case IconNames.SmallSquare: return images.createImage(`
                                         . . . . .
                                         . # # # .
                                         . # . # .
                                         . # # # .
-                                        . . . . .`;
+                                        . . . . .`);
                                             // The following images were designed by Abbie Brooks.
-            case IconNames.TShirt: return `
+            case IconNames.TShirt: return images.createImage(`
                                         # # . # #
                                         # # # # #
                                         . # # # .
                                         . # # # .
-                                        . # # # .`;
-            case IconNames.Rollerskate: return `
+                                        . # # # .`);
+            case IconNames.Rollerskate: return images.createImage(`
                                         . . . # #
                                         . . . # #
                                         # # # # #
                                         # # # # #
-                                        . # . # .`;
-            case IconNames.Duck: return `
+                                        . # . # .`);
+            case IconNames.Duck: return images.createImage(`
                                         . # # . .
                                         # # # . .
                                         . # # # #
                                         . # # # .
-                                        . .. . .`;
-            case IconNames.House: return `
+                                        . .. . .`);
+            case IconNames.House: return images.createImage(`
                                         . . # . .
                                         . # # # .
                                         # # # # #
                                         . # # # .
-                                        . # . # .`;
-            case IconNames.Tortoise: return `
+                                        . # . # .`);
+            case IconNames.Tortoise: return images.createImage(`
                                         . . . . .
                                         . # # # .
                                         # # # # #
                                         . # . # .
-                                        . . . . .`;
-            case IconNames.Butterfly: return `
+                                        . . . . .`);
+            case IconNames.Butterfly: return images.createImage(`
                                         # # . # #
                                         # # # # #
                                         . . # . .
                                         # # # # #
-                                        # # . # #`;
-            case IconNames.StickFigure: return `
+                                        # # . # #`);
+            case IconNames.StickFigure: return images.createImage(`
                                         . . # . .
                                         # # # # #
                                         . . # . .
                                         . # . # .
-                                        # . . . #`;
-            case IconNames.Ghost: return `
+                                        # . . . #`);
+            case IconNames.Ghost: return images.createImage(`
                                         . # # # .
                                         # . # . #
                                         # # # # #
                                         # # # # #
-                                        # . # . #`;
-            case IconNames.Sword: return `
+                                        # . # . #`);
+            case IconNames.Sword: return images.createImage(`
                                         . . # . .
                                         . . # . .
                                         . . # . .
                                         . # # # .
-                                        . . # . .`;
-            case IconNames.Giraffe: return `
+                                        . . # . .`);
+            case IconNames.Giraffe: return images.createImage(`
                                         # # . . .
                                         . # . . .
                                         . # . . .
                                         . # # # .
-                                        . # . # .`;
-            case IconNames.Skull: return `
+                                        . # . # .`);
+            case IconNames.Skull: return images.createImage(`
                                         . # # # .
                                         # . # . #
                                         # # # # #
                                         . # # # .
-                                        . # # # .`;
-            case IconNames.Umbrella: return `
+                                        . # # # .`);
+            case IconNames.Umbrella: return images.createImage(`
                                         . # # # .
                                         # # # # #
                                         . . # . .
                                         # . # . .
-                                        # # # . .`;
-            case IconNames.Snake: return `
+                                        # # # . .`);
+            case IconNames.Snake: return images.createImage(`
                                         # # . . .
                                         # # . # #
                                         . # . # .
                                         . # # # .
-                                        . . . . .`;
+                                        . . . . .`);
                                         // animals    
-            case IconNames.Rabbit: return `
+            case IconNames.Rabbit: return images.createImage(`
                                         # . # . .
                                         # . # . .
                                         # # # # .
                                         # # . # .
-                                        # # # # .`;
-            case IconNames.Cow: return `
+                                        # # # # .`);
+            case IconNames.Cow: return images.createImage(`
                                         # . . . #
                                         # . . . #
                                         # # # # #
                                         . # # # .
-                                        . . # . .`;
+                                        . . # . .`);
                                         // musical notes
-            case IconNames.QuarterNote: return `
+            case IconNames.QuarterNote: return images.createImage(`
                                         . . # . .
                                         . . # . .
                                         . . # . .
                                         # # # . .
-                                        # # # . .`;
-            case IconNames.EigthNote: return `
+                                        # # # . .`);
+            case IconNames.EigthNote: return images.createImage(`
                                         . . # . .
                                         . . # # .
                                         . . # . #
                                         # # # . .
-                                        # # # . .`;
+                                        # # # . .`);
                                         // other icons
-            case IconNames.Pitchfork: return `
+            case IconNames.Pitchfork: return images.createImage(`
                                         # . # . #
                                         # . # . #
                                         # # # # #
                                         . . # . .
-                                        . . # . .`;
-            case IconNames.Target: return `
+                                        . . # . .`);
+            case IconNames.Target: return images.createImage(`
                                         . . # . .
                                         . # # # .
                                         # # . # #
                                         . # # # .
-                                        . . # . .`;
-            default:                return `
+                                        . . # . .`);
+            default:                return images.createImage(`
                                         . . . . .
                                         . . . . .
                                         . . . . .
                                         . . . . .
                                         . . . . .
-                                        `;
+                                        `);
         }
     }
 
@@ -518,37 +518,12 @@ namespace images {
     //% weight=50 blockGap=8
     //% blockId=builtin_arrow_image block="arrow image %i=device_arrow"
     export function arrowImage(i: ArrowNames): Image {
-        let res = images.createImage(`
-            . . . . .
-            . . . . .
-            . . . . .
-            . . . . .
-            . . . . .
-            `)
-        return set(res, getArrow(i));
+        return getArrow(i);
     }
 
     //% weight=50 blockGap=8
     //% blockId=builtin_image block="icon image %i"
     export function iconImage(i: IconNames): Image {
-        let res = images.createImage(`
-                . . . . .
-                . . . . .
-                . . . . .
-                . . . . .
-                . . . . .
-                `)
-        return set(res, getIcon(i));
-    }
-
-    function set(res: Image, s: string) {
-        let j = 0;
-        for (let x of s) {
-            if (x == "." || x == "#") {
-                res.setPixel(j % 5, j / 5, x == "#")
-                j++
-            }
-        }
-        return res
+        return getIcon(i);
     }
 }
