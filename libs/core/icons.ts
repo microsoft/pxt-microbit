@@ -142,7 +142,10 @@ enum IconNames {
     Square,
     //% block="small square"
     //% blockImage=1
-    SmallSquare
+    SmallSquare,
+    //% block="scissors"
+    //% blockImage=1
+    Scissors
 }
 
 enum ArrowNames {
@@ -383,6 +386,12 @@ namespace images {
                                         . # . # .
                                         . # # # .
                                         . . . . .`;
+            case IconNames.Scissors: return `
+                                        # # . . #
+                                        # # . # .
+                                        . . # . .
+                                        # # . # .
+                                        # # . . #`;
                                             // The following images were designed by Abbie Brooks.
             case IconNames.TShirt: return `
                                         # # . # #
