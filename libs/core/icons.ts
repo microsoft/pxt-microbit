@@ -194,7 +194,9 @@ namespace basic {
 
 namespace images {
 
-    function getArrow(i : ArrowNames): Image {
+    //% weight=50 blockGap=8
+    //% blockId=builtin_arrow_image block="arrow image %i=device_arrow"
+    export function arrowImage(i : ArrowNames): Image {
             switch(i) {
             // compass directions
             case ArrowNames.North: return images.createImage(`    
@@ -255,8 +257,9 @@ namespace images {
        }
     }
     
-    function getIcon(i: IconNames): Image {
-
+    //% weight=50 blockGap=8
+    //% blockId=builtin_image block="icon image %i"
+    export function iconImage(i: IconNames): Image {
             switch (i) {
             case IconNames.Heart : return images.createImage(`
                                         . # . # .
@@ -513,17 +516,5 @@ namespace images {
     //% shim=TD_ID
     export function arrowNumber(arrow: ArrowNames): number {
         return arrow;
-    }
-
-    //% weight=50 blockGap=8
-    //% blockId=builtin_arrow_image block="arrow image %i=device_arrow"
-    export function arrowImage(i: ArrowNames): Image {
-        return getArrow(i);
-    }
-
-    //% weight=50 blockGap=8
-    //% blockId=builtin_image block="icon image %i"
-    export function iconImage(i: IconNames): Image {
-        return getIcon(i);
     }
 }
