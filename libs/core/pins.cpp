@@ -144,6 +144,7 @@ namespace pins {
       */
     //% help=pins/digital-write-pin weight=29
     //% blockId=device_set_digital_pin block="digital write|pin %name|to %value"
+    //% value.min=0 value.max=1
     void digitalWritePin(DigitalPin name, int value) {
         PINOP(setDigitalValue(value));
     }
@@ -243,6 +244,7 @@ namespace pins {
     //% help=pins/servo-write-pin weight=20
     //% blockId=device_set_servo_pin block="servo write|pin %name|to %value" blockGap=8
     //% parts=microservo trackArgs=0
+    //% value.min=0 value.max=180
     void servoWritePin(AnalogPin name, int value) {
         PINOP(setServoValue(value));
     }

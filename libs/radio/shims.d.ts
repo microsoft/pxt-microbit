@@ -95,11 +95,12 @@ declare namespace radio {
 
     /**
      * Sets the group id for radio communications. A micro:bit can only listen to one group ID at any time.
-     * @ param id the group id between ``0`` and ``255``, 1 eg
+     * @param id the group id between ``0`` and ``255``, eg: 1
      */
     //% help=radio/set-group
     //% weight=10 blockGap=8
-    //% blockId=radio_set_group block="radio set group %ID" shim=radio::setGroup
+    //% blockId=radio_set_group block="radio set group %ID"
+    //% id.min=0 id.max=255 shim=radio::setGroup
     function setGroup(id: number): void;
 
     /**
@@ -109,6 +110,7 @@ declare namespace radio {
     //% help=radio/set-transmit-power
     //% weight=9 blockGap=8
     //% blockId=radio_set_transmit_power block="radio set transmit power %power"
+    //% power.min=0 power.max=7
     //% advanced=true shim=radio::setTransmitPower
     function setTransmitPower(power: number): void;
 
