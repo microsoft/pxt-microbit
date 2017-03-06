@@ -440,7 +440,8 @@ declare namespace led {
      */
     //% help=led/plot weight=78
     //% blockId=device_plot block="plot|x %x|y %y" blockGap=8
-    //% parts="ledmatrix" shim=led::plot
+    //% parts="ledmatrix"
+    //% x.min=0 x.max=4 y.min=0 y.max=4 shim=led::plot
     function plot(x: number, y: number): void;
 
     /**
@@ -450,7 +451,8 @@ declare namespace led {
      */
     //% help=led/unplot weight=77
     //% blockId=device_unplot block="unplot|x %x|y %y" blockGap=8
-    //% parts="ledmatrix" shim=led::unplot
+    //% parts="ledmatrix"
+    //% x.min=0 x.max=4 y.min=0 y.max=4 shim=led::unplot
     function unplot(x: number, y: number): void;
 
     /**
@@ -460,7 +462,8 @@ declare namespace led {
      */
     //% help=led/point weight=76
     //% blockId=device_point block="point|x %x|y %y"
-    //% parts="ledmatrix" shim=led::point
+    //% parts="ledmatrix"
+    //% x.min=0 x.max=4 y.min=0 y.max=4 shim=led::point
     function point(x: number, y: number): boolean;
 
     /**
@@ -479,7 +482,8 @@ declare namespace led {
     //% help=led/set-brightness weight=59
     //% blockId=device_set_brightness block="set brightness %value"
     //% parts="ledmatrix"
-    //% advanced=true shim=led::setBrightness
+    //% advanced=true
+    //% value.min=0 value.max=255 shim=led::setBrightness
     function setBrightness(value: number): void;
 
     /**
@@ -529,7 +533,8 @@ declare namespace pins {
      * @param value value to set on the pin, 1 eg,0
      */
     //% help=pins/digital-write-pin weight=29
-    //% blockId=device_set_digital_pin block="digital write|pin %name|to %value" shim=pins::digitalWritePin
+    //% blockId=device_set_digital_pin block="digital write|pin %name|to %value"
+    //% value.min=0 value.max=1 shim=pins::digitalWritePin
     function digitalWritePin(name: DigitalPin, value: number): void;
 
     /**
@@ -546,7 +551,8 @@ declare namespace pins {
      * @param value value to write to the pin between ``0`` and ``1023``. eg:1023,0
      */
     //% help=pins/analog-write-pin weight=24
-    //% blockId=device_set_analog_pin block="analog write|pin %name|to %value" blockGap=8 shim=pins::analogWritePin
+    //% blockId=device_set_analog_pin block="analog write|pin %name|to %value" blockGap=8
+    //% value.min=0 value.max=1023 shim=pins::analogWritePin
     function analogWritePin(name: AnalogPin, value: number): void;
 
     /**
@@ -593,7 +599,8 @@ declare namespace pins {
      */
     //% help=pins/servo-write-pin weight=20
     //% blockId=device_set_servo_pin block="servo write|pin %name|to %value" blockGap=8
-    //% parts=microservo trackArgs=0 shim=pins::servoWritePin
+    //% parts=microservo trackArgs=0
+    //% value.min=0 value.max=180 shim=pins::servoWritePin
     function servoWritePin(name: AnalogPin, value: number): void;
 
     /**

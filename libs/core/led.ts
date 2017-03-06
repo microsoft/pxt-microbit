@@ -55,6 +55,7 @@
     //% help=led/toggle weight=77
     //% blockId=device_led_toggle block="toggle|x %x|y %y" icon="\uf204" blockGap=8
     //% parts="ledmatrix"
+    //% x.min=0 x.max=4 y.min=0 y.max=4
     export function toggle(x: number, y: number): void {
         if (led.point(x, y)) {
             led.unplot(x, y);

@@ -247,6 +247,7 @@ namespace music {
      */
     //% help=music/set-tempo weight=38
     //% blockId=device_set_tempo block="set tempo to (bpm)|%value"
+    //% bpm.min=4 bpm.max=400
     export function setTempo(bpm: number): void {
         init();
         if (bpm > 0) {

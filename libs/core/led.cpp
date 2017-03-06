@@ -19,6 +19,7 @@ namespace led {
     //% help=led/plot weight=78
     //% blockId=device_plot block="plot|x %x|y %y" blockGap=8
     //% parts="ledmatrix"
+    //% x.min=0 x.max=4 y.min=0 y.max=4
     void plot(int x, int y) {
       uBit.display.image.setPixelValue(x, y, 1);
     }
@@ -31,6 +32,7 @@ namespace led {
     //% help=led/unplot weight=77
     //% blockId=device_unplot block="unplot|x %x|y %y" blockGap=8
     //% parts="ledmatrix"
+    //% x.min=0 x.max=4 y.min=0 y.max=4
     void unplot(int x, int y) {
       uBit.display.image.setPixelValue(x, y, 0);
     }
@@ -43,6 +45,7 @@ namespace led {
     //% help=led/point weight=76
     //% blockId=device_point block="point|x %x|y %y"
     //% parts="ledmatrix"
+    //% x.min=0 x.max=4 y.min=0 y.max=4
     bool point(int x, int y) {
       int pix = uBit.display.image.getPixelValue(x, y);
       return pix > 0;
@@ -67,6 +70,7 @@ namespace led {
     //% blockId=device_set_brightness block="set brightness %value"
     //% parts="ledmatrix"
     //% advanced=true
+    //% value.min=0 value.max=255
     void setBrightness(int value) {
        uBit.display.setBrightness(value);
     }

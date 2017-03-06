@@ -142,7 +142,10 @@ enum IconNames {
     Square,
     //% block="small square"
     //% blockImage=1
-    SmallSquare
+    SmallSquare,
+    //% block="scissors"
+    //% blockImage=1
+    Scissors
 }
 
 enum ArrowNames {
@@ -174,6 +177,9 @@ namespace basic {
     //% block="show icon %i" icon="\uf00a"
     //% parts="ledmatrix"
     //% help=basic/show-icon
+    //% blockFieldEditor="FieldGridPicker"
+    //% blockFieldEditorParams.width=500 blockFieldEditorParams.columns=5
+    //% blockFieldEditorParams.itemColour=black blockFieldEditorParams.tooltips=true
     export function showIcon(icon: IconNames) {
         let res = images.iconImage(icon)
         res.showImage(0)
@@ -383,6 +389,13 @@ namespace images {
                                         . # . # .
                                         . # # # .
                                         . . . . .`);
+
+            case IconNames.Scissors: return images.createImage(`
+                                        # # . . #
+                                        # # . # .
+                                        . . # . .
+                                        # # . # .
+                                        # # . . #`);
                                             // The following images were designed by Abbie Brooks.
             case IconNames.TShirt: return images.createImage(`
                                         # # . # #
