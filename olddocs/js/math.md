@@ -2,7 +2,7 @@
 
 Functions in the math library.
 
-### @parent js/language
+### @parent javascript/language
 
 The math library includes math related functions that you can use with [Numbers](/reference/types/number).
 

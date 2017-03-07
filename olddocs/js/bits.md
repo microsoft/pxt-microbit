@@ -6,7 +6,7 @@ Functions in the Bits library.
 
 The binary numeral system represents numeric values using values 0 and 1. This is how almost all modern computers store data. Each 0 or 1 digit is called a binary digit, or bit for short.
 
-The Bits library includes functions for bit-level manipulation of integers. In the [Touch Develop editor](/js/editor), click `bits` to see the following bit functions:
+The Bits library includes functions for bit-level manipulation of integers. In the [Touch Develop editor](/javascript/editor), click `bits` to see the following bit functions:
 
 ## Bitwise and, or, and xor functions
 
@@ -63,5 +63,5 @@ bits `->` shift right unint32 (x : [Number](/reference/types/number), bits : [Nu
 
 ### See also
 
-[statements and operators](/js/statements), [math functions](/js/math), [Number](/reference/types/number)
+[statements and operators](/javascript/statements), [math functions](/javascript/math), [Number](/reference/types/number)
 

@@ -2,7 +2,7 @@
 
 A note in code.
 
-### @parent js/statement
+### @parent javascript/statement
  
 
 A comment is a line of code that contains text, usually an explanation or a note. All comments are ignored during script execution.
@@ -59,10 +59,10 @@ When you want to uncomment your code, click the `if false then` statement in you
 
 ### Library and function comments
 
-* Use [comments](/js/comment) at the beginning of a library to describe the  library
-* Use [comments](/js/comment) at the beginning of a [function](/js/function) to describe a function. The comment will appear in the help area of the Touch Develop editor when you insert the function
+* Use [comments](/javascript/comment) at the beginning of a library to describe the  library
+* Use [comments](/javascript/comment) at the beginning of a [function](/javascript/function) to describe a function. The comment will appear in the help area of the Touch Develop editor when you insert the function
 
 ### See also
 
-[markdown syntax](/js/markdown), [Touch Develop editor](/js/editor)
+[markdown syntax](/javascript/markdown), [Touch Develop editor](/javascript/editor)
 

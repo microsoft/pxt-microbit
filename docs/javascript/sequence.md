@@ -58,6 +58,6 @@ basic.showNumber(1);
 
 [Read more](http://inimino.org/~inimino/blog/javascript_semicolons) about semicolons in JavaScript.
 
-### ~button /js/variables
+### ~button /javascript/variables
 NEXT: Variable Declarations
 ### ~

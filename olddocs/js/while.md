@@ -2,7 +2,7 @@
 
 Repeat code in a loop while a condition is true.
 
-### @parent js/language
+### @parent javascript/language
  
 
 Repeat code while a [Boolean](/reference/types/boolean) `condition` is true.

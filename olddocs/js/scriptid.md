@@ -2,7 +2,7 @@
 
 What is the script id? #docs
 
-### @parent js/contents
+### @parent javascript/contents
  
 
 the *script id* is a unique identifier that is given to each [published](/js/publishing) script. This way you can share your scripts with other people.

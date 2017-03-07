@@ -2,7 +2,7 @@
 
 Libraries are scripts with functions that you can use in other scripts.
 
-### @parent js/language
+### @parent javascript/language
 
 Libraries are scripts with functions that you can use in other scripts. For example, `game` is a library of game-related functions that you can use in your scripts.
 

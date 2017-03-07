@@ -2,7 +2,7 @@
 
 An image for the @boardname@ screen.
 
-### @parent js/language
+### @parent javascript/language
 
 An *Image* is a matrix of pixels to show on the [LED screen](/device/screen)
 

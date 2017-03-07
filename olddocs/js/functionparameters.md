@@ -2,7 +2,7 @@
 
 How to use parameters to pass info in and out of an function.
 
-### @parent js/function
+### @parent javascript/function
  
 
 A [function](/js/function) can have multiple input parameters and/or a single output parameter.  The parameters must be one of the supported variable [types](/js/types).

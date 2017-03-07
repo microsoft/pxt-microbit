@@ -2,7 +2,7 @@
 
 Exit a function.
 
-### @parent js/statement
+### @parent javascript/statement
  
 
 The return statement exits a [function](/js/function) and returns a value to the code that called the function.

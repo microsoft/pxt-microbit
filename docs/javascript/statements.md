@@ -27,6 +27,6 @@ The following JavaScript statements are supported for the @boardname@:
 * labelled statement - [read more](http://devdocs.io/javascript/statements/label)
 * `default` statement - [read more](http://devdocs.io/javascript/statements/default)
 
-### ~button /js/functions
+### ~button /javascript/functions
 NEXT: Functions
 ### ~

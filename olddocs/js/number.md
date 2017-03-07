@@ -2,7 +2,7 @@
 
 An integer number.
 
-### @parent js/language
+### @parent javascript/language
 
 A *Number* is an integer such as `42` or `-42`. More precisely, a *Number* is a signed 32-bit integer (two's complement).
 

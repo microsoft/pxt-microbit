@@ -2,7 +2,7 @@
 
 Run code based on a condition.
 
-### @parent js/language
+### @parent javascript/language
  
 
 Conditionally run code depending on whether a [Boolean](/reference/types/boolean) condition is true or false.

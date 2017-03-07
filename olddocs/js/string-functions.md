@@ -2,7 +2,7 @@
 
 string-related functions.
 
-### @parent js/language
+### @parent javascript/language
 
 The following string related functions are available in Touch Develop for the @boardname@:
 

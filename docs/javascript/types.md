@@ -136,6 +136,6 @@ function warnUser(): void {
 
 Declaring variables of type `void` is not useful.
 
-### ~button /js/classes
+### ~button /javascript/classes
 NEXT: Classes
 ### ~

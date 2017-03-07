@@ -18,6 +18,6 @@ This also is true when simulating in the browser.
 * comparison operators - [read more](http://devdocs.io/javascript/operators/comparison_operators)
 * conditional operator - [read more](http://devdocs.io/javascript/operators/conditional_operator)
 
-### ~button /js/statements
+### ~button /javascript/statements
 NEXT: Statements
 ### ~

@@ -2,7 +2,7 @@
 
 Built-in operators.
 
-### @parent js/language
+### @parent javascript/language
  
 
 ### to be removed: has been combined into [statements and operators](/js/statements)

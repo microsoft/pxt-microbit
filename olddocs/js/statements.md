@@ -2,7 +2,7 @@
 
 Statements, operators, and libraries.
 
-### @parent js/language
+### @parent javascript/language
  
 
 TouchDevelop functions include statements and operators.

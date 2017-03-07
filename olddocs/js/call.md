@@ -2,14 +2,14 @@
 
 How to call a function in your code.
 
-### @parent js/language
+### @parent javascript/language
  
 
-Type a function name in your code to call an existing [function](/js/function) in your script.
+Type a function name in your code to call an existing [function](/javascript/function) in your script.
 
 ### Call a function
 
-1. In the Touch Develop editor, click a line of code to open the on-screen [Code Keyboard](/js/editor).
+1. In the Touch Develop editor, click a line of code to open the on-screen [Code Keyboard](/javascript/editor).
 
 2. Click `code` to see the functions in your script.
 
@@ -59,5 +59,5 @@ To see a list of the functions in a script, open the script and then click `scri
 
 ### See also
 
-[function parameters](/js/functionparameters), [create a function](/js/function), [return statement](/js/return)
+[function parameters](/javascript/functionparameters), [create a function](/javascript/function), [return statement](/javascript/return)
 

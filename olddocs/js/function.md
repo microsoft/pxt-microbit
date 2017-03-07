@@ -2,7 +2,7 @@
 
 How to define a function with input and output parameters.
 
-### @parent js/language
+### @parent javascript/language
  
 
 A function is a unit of code that performs a specific task and returns a result.

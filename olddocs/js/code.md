@@ -2,7 +2,7 @@
 
 A function with inputs and outputs.
 
-### @parent js/language
+### @parent javascript/language
  
 
 To add a **functions** to your script, click the `script` button, then click the `+` `add new function` button

@@ -128,6 +128,6 @@ const numLivesForCat = 9;
 They are like `let` declarations but, as their name implies, their value cannot be changed once they are bound.
 In other words, they have the same scoping rules as `let`, but you can't re-assign to them.
 
-### ~button /js/operators
+### ~button /javascript/operators
 NEXT: Operators
 ### ~

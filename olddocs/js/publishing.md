@@ -2,7 +2,7 @@
 
 How to publish scripts.
 
-### @parent js/contents
+### @parent javascript/contents
  
 
 Scripts that you create are periodically saved in the cloud, but only published scripts can be seen by other people. Once you publish a script, other people can run your script, post comments on it, tweak and re-publish it, or rate your script with a heart.

@@ -53,6 +53,6 @@ It's a syntax error to have a left parenthesis without the "closing" right paren
 basic.clearScreen(
 ```
 
-### ~button /js/sequence
+### ~button /javascript/sequence
 NEXT: Sequencing Commands
 ### ~

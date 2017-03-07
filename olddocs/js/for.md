@@ -2,7 +2,7 @@
 
 Repeat code a preset number of times.
 
-### @parent js/language
+### @parent javascript/language
  
 
 Repeat code a fixed number of times.
