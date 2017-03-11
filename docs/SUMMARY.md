@@ -43,7 +43,6 @@
         * [on gesture](/reference/input/on-gesture.md)
         * [on pin pressed](/reference/input/on-pin-pressed.md)
         * [button is pressed](/reference/input/button-is-pressed.md)
-        * [on button pressed](/reference/input/on-button-pressed.md)
         * [compass heading](/reference/input/compass-heading.md)
         * [pin is pressed](/reference/input/pin-is-pressed.md)
         * [temperature](/reference/input/temperature.md)
@@ -108,6 +107,7 @@
     * [Types](/javascript/types.md)
     * [Classes](/javascript/classes.md)
 
+### Other
 
 * [Hardware](/device.md)
 
