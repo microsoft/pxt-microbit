@@ -4,14 +4,14 @@
 
 * [Support](https://support.microbit.org/)
 
-### Projects #projects
+## #projects
 
 * [Projects](/docs)
     * [Make](/projects)
         * [Flashing heart](/projects/flashing-heart)
         * [Smiley buttons](/projects/smiley-buttons)
         * [Love meter](/projects/love-meter)
-        * [Rock raper scissors](/projects/rock-paper-scissors)
+        * [Rock paper scissors](/projects/rock-paper-scissors)
         * [Magic button trick](/projects/magic-button-trick)
         * [Hack your headphones](/projects/hack-your-headphones)
         * [Banana keyboard](/projects/banana-keyboard)
@@ -31,7 +31,7 @@
         * [Plot light level](/examples/plot-light-level)
         * [Plot analog pin](/examples/plot-analog-pin)
 
-### Reference #reference
+## #reference
 
 * [Reference](/reference)
     * [Basic](/reference/basic)
@@ -87,6 +87,6 @@
         * [set transmit serial number](/reference/radio/set-transmit-serial-number)
         * [write received packet to serial](/reference/radio/write-received-packet-to-serial)
 
-### Other #other
+## #other
 
 * [Hardware](/device)
