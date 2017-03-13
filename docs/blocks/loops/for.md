@@ -1,13 +1,6 @@
-# For
+# @extends
 
-### @parent blocks/language
- 
-Run part of the program the number of times you say.
-
-```block
-for(let i = 0; i <= 4; ++i) {
-}
-```
+## #examples
 
 ### Example: Count to 4
 
@@ -20,8 +13,3 @@ input.onButtonPressed(Button.A, () => {
     }
 })
 ```
-
-### See also
-
-[repeat](/blocks/loops/repeat), [while](/blocks/loops/while), [if](/blocks/logic/if), [show number](/reference/basic/show-number)
-
