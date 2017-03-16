@@ -19,6 +19,7 @@
         * [Duct tape wallet](/projects/wallet)
         * [Watch](/projects/watch)
         * [Inchworm](/projects/inchworm)
+        * [Milk moster](/projects/milk-monster)
         * [Timing gates](/projects/timing-gates)
         * [Compass](/projects/compass)
         * [Telegraph](/projects/telegraph)
