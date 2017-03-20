@@ -10,18 +10,18 @@ Turn a piece of cardboard into an milk-monster!
 ## Duration: ~45 minutes
 
 ## Materials
-Recycled
-* 1 Milk Carton (recycle!)
+#### Recycled
+* 1 Milk Carton (with a screwable top cap)
 * 1 Small cord - recycle string from a used tea bag
 * 1 Paper clip
 
-Electronics
+### Electronics
 * 1 @boardname@, battery holder and 2 AAA batteries
 * 3 Crocodile clips
 * 1 micro servo 9g SG90
 * 1 servo clip designed for Milky Monster [download on thingiverse](http://www.thingiverse.com/thing:2185971) (optional). Teachers may prefer to download the classroom pack (16 servo clips).
 
-Tools
+### Tools
 * Small knive and  Scissors that can cut cardboard
 * Tape (masking, duct tape, and/or packing tape)
 * Glue gun

@@ -18,7 +18,7 @@ https://youtu.be/egl3fNAYylk
 ## Materials
 
 Recycled
-* 1 Milk Carton (recycle!)
+* 1 Milk Carton (with a screwable top cap)
 * 1 Small cord - recylce string from a used tea bag 
 * 1 Paper clip
 
