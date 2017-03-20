@@ -78,6 +78,6 @@ Your Milky Monster is ready!
 
 https://youtu.be/egl3fNAYylk
 
-### ~button /projects/milk-monster/connect
+### ~button /projects/milky-monster/connect
 NEXT: Connect
 ### ~

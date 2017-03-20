@@ -3,7 +3,7 @@
 
 ### ~avatar avatar
 
-Turn a piece of cardboard into an milk-monster!
+Turn a piece of cardboard into an milky-monster!
 
 ### ~
 
@@ -28,7 +28,7 @@ Turn a piece of cardboard into an milk-monster!
 
 ## Step 1: download and cut the template
 
-[Download the Milky Monster template](/static/mb/projects/milk-monster/MilkyMonsterTemplate.pdf) and cutout the template.
+[Download the Milky Monster template](/static/mb/projects/milky-monster/MilkyMonsterTemplate.pdf) and cutout the template.
 
 
 https://youtu.be/ipsZuFNgTHM
@@ -62,7 +62,7 @@ https://youtu.be/RWJbqI03wPE
 
 Using scissors, create a small whole to insert the cord. Tape the cord on the backsite of the mouth.
 
-![](/static/mb/projects/milk-monster/connectmouth.jpg)
+![](/static/mb/projects/milky-monster/connectmouth.jpg)
 
 Once finished position the mouth in upward position and fix the cord between the cap.
 https://youtu.be/Qyndcsmt0AU
@@ -75,7 +75,7 @@ https://youtu.be/3FUNI0GSbNc
 
 ## Step 8: Create space for cables
 
-Create space to route the cables nicely on back of the milk-monster.
+Create space to route the cables nicely on back of the milky-monster.
 
 https://youtu.be/BoIRCk769MM
 
@@ -106,10 +106,10 @@ https://youtu.be/RiQE-9z9LrI
 
 ## Step 11: it's ready!
 
-Your milk-monster is ready!
+Your milky-monster is ready!
 
-![](/static/mb/projects/milk-monster/ready.jpg)
+![](/static/mb/projects/milky-monster/ready.jpg)
 
-### ~button /projects/milk-monster/code
+### ~button /projects/milky-monster/code
 NEXT: Code
 ### ~

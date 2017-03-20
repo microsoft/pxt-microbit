@@ -1,7 +1,7 @@
 
 # Milk monster
 
-### @description A milk-monster like robot built with the @boardname@
+### @description A milky-monster like robot built with the @boardname@
 
 ### ~avatar avatar
 
@@ -33,7 +33,7 @@ Tools
 * Tape (masking, duct tape, and/or packing tape)
 * Glue gun
 
-![Materials](/static/mb/projects/milk-monster/materials.jpg)
+![Materials](/static/mb/projects/milky-monster/materials.jpg)
 
 ## Preparation
 
@@ -42,11 +42,11 @@ Tools
 
 ## Activities
 
-* [Make](/projects/milk-monster/make)  
-* [Code](/projects/milk-monster/code)  
-* [Connect](/projects/milk-monster/connect)  
+* [Make](/projects/milky-monster/make)  
+* [Code](/projects/milky-monster/code)  
+* [Connect](/projects/milky-monster/connect)  
 
-### ~button /projects/milk-monster/make
+### ~button /projects/milky-monster/make
 
 Let's get started!
 
