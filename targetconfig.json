@@ -6,7 +6,8 @@
         ],
         "approvedRepos": [
             "CoderDojoOlney/pxt-olney",
-            "PaulDFoster/pxt-microbit-GY521"
+            "PaulDFoster/pxt-microbit-GY521",
+            "chevyng/pxt-ucl-junkrobot"
         ]
     }
 }
