@@ -54,13 +54,14 @@ https://youtu.be/Yyk1zW4sFoM
 
 Use tape to extend the mouth approx 1 cm. Fold one after the other.
 
+
 https://youtu.be/RWJbqI03wPE
 
 ## Step 6: connect cord
 
 Using scissors, create a small whole to insert the cord. Tape the cord on the backsite of the mouth.
 
-![](/static/mb/projects/milk-monster/connect mouth.jpg)
+![](/static/mb/projects/milk-monster/connectmouth.jpg)
 
 Once finished position the mouth in upward position and fix the cord between the cap.
 https://youtu.be/Qyndcsmt0AU
@@ -101,7 +102,6 @@ https://youtu.be/Ch_vU5LXPeM
 Connect the crocodile clips to the servo.
 
 https://youtu.be/RiQE-9z9LrI
-
 
 ## Step 11: it's ready!
 

@@ -43,16 +43,19 @@ https://youtu.be/YZfkMWTeH4o
 ## Step 3: check calibration
 
 When the user pressed ``A`` the servo rotor should be in 'up' position. 
+
 https://youtu.be/bAqXEawUsSM
 
 ## Step 4: connect cord to rotor
 
 Connect the cord to the servo rotor while mouth of Milky Monster is **closed**.
+
 https://youtu.be/AWsnwk_iA_A
 
 ## Step 5: connect cables to @boardname@
 
 Connect cables from @boardname@ to the servo and place the battery.
+
 https://youtu.be/fAR58GJUZdM
 
 ## Step 6: code light sensor

@@ -91,14 +91,10 @@ Fun games to build with your @boardname@.
   "name": "Telegraph",
   "url":"/projects/telegraph",
   "imageUrl":"/static/mb/projects/a8-network.png"
-},{
-  "name": "Radio",
-  "url":"/projects/radio",
-  "imageUrl":"/static/mb/projects/a9-radio.png"
 }]
 ```
 
 ### See Also
 
-[Flashing Heart](/projects/flashing-heart), [Smiley Buttons](/projects/smiley-buttons), [Love Meter](/projects/love-meter), [Rock Paper Scissors](/projects/rock-paper-scissors), [Compass](/projects/compass), [Hack your headphones](/projects/hack-your-headphones), [Banana keyboard](/projects/banana-keyboard), [Telegraph](/projects/telegraph), [Radio](/projects/radio), [Guitar](/projects/guitar), [Wallet](/projects/wallet), [Watch](/projects/watch),
+[Flashing Heart](/projects/flashing-heart), [Smiley Buttons](/projects/smiley-buttons), [Love Meter](/projects/love-meter), [Rock Paper Scissors](/projects/rock-paper-scissors), [Compass](/projects/compass), [Hack your headphones](/projects/hack-your-headphones), [Banana keyboard](/projects/banana-keyboard), [Telegraph](/projects/telegraph), [Guitar](/projects/guitar), [Wallet](/projects/wallet), [Watch](/projects/watch),
 [Milk Monster](/projects/milk-monster)

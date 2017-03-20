@@ -13,41 +13,45 @@ The servo requires 3 connections: GND, 3V and a logic pin.
 In this tutorial, we will equip the servo with crocodile clips to make it easier to use. 
 However, you could also use a shield or female to crocodile clips to acheive the same effect.
 
-If you are running a class or activity, you should consider preparing all servos before hand.
+## The easy way: Alligator/Crocobile Clip to Male Jumpers #hintconnection
 
 ### ~ hint
 
-Kitronik wrote an excellent in-depth guide about using servos with the @boardname@. 
-Check it out at https://www.kitronik.co.uk/blog/using-bbc-microbit-control-servo/ .
+The easiest way to connect a servo to the @boardname@ is to use cables that have an **Alligator/Crocobile clip** on one end
+and a **Male jumper (pig tail)** on the other end. You can purchase bundles of such cables from various electronic resellers.
 
 ### ~
 
-## Step 1: cutout the connector
+## Custom connection
+
+If you are running a class or activity, you should consider preparing all servos before hand.
+
+### Step 1: cutout the connector
 
 Using the cutting pliers, cut out the dark plastic connector.
 
 ![](/static/mb/projects/inchworm/servo1.jpg)
 
-## Step 2: strip out cables
+### Step 2: strip out cables
 
 Using the plier or a wire stripper, strip the plastic from the cables.
 
 ![](/static/mb/projects/inchworm/servotrim.jpg)
 
-## Step 3: threading the servo cablers
+### Step 3: threading the servo cablers
 
 Thread the servo cables.
 
 ![](/static/mb/projects/inchworm/servo3.jpg)
 
-## Step 4: crocobile clip claps
+### Step 4: crocobile clip
 
 Cut a crocodile cable in two and strip out the casing. 
 If possible try to use the same cable colors as the servo!
 
 ![](/static/mb/projects/inchworm/servo4.jpg)
 
-## Step 5: thread cables together
+### Step 5: thread cables together
 
 Place the cables next to each other
 
@@ -65,19 +69,19 @@ If the connection is weak, the microservo will not receive enough current and it
 
 ### ~
 
-## Step 4: protect the connection
+### Step 4: protect the connection
 
-Protect the connection with electrical or duct tape.
+Protect the connection with shrinkwrap tubes, electrical or duct tape.
 
 ![](/static/mb/projects/inchworm/servo7.jpg)
 
-## Step 5: repeat for all cables
+### Step 5: repeat for all cables
 
 Repeat the same process until all cables are connected.
 
 ![](/static/mb/projects/inchworm/servo8.jpg)
 
-## Step 6: testing!
+### Step 6: testing!
 
 It's time to test that your connection are all proper and that the servo will function **when the @boardname@ is powered by battery**.
 
