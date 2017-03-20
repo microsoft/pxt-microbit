@@ -26,5 +26,3 @@ input.onButtonPressed(Button.A, () => {
 ```package
 radio
 ```
-## about the author
-This project was contributed by Peter Heldens [@peterheldens](https://twitter.com/peterheldens). You can checkout his [@boardname@ makershow channel on youtube](http://aka.ms/microbit-makershow) for more projects.

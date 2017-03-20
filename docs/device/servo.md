@@ -15,12 +15,8 @@ However, you could also use a shield or female to crocodile clips to acheive the
 
 ## The easy way: Alligator/Crocobile Clip to Male Jumpers #hintconnection
 
-### ~ hint
-
 The easiest way to connect a servo to the @boardname@ is to use cables that have an **Alligator/Crocobile clip** on one end
 and a **Male jumper (pig tail)** on the other end. You can purchase bundles of such cables from various electronic resellers.
-
-### ~
 
 ## Custom connection
 
