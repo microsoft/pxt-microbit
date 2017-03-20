@@ -28,7 +28,7 @@ Tools
 
 ## Step 1: download and cut the template
 
-[Download the Milky Monster template]![](/static/mb/projects/milk-monster/cut template.jpg) and cutout the template. 
+[Download the Milky Monster template]![](/static/mb/projects/milk-monster/MilkyMonsterTemplate.jpg) and cutout the template. 
 
 https://youtu.be/ipsZuFNgTHM
 
