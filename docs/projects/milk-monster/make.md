@@ -1,88 +1,129 @@
 # Make
-### @description Building the cardboard inchworm
+### @description Building the cardboard Milky Monster
 
 ### ~avatar avatar
 
-Turn a piece of cardboard into an inchworm!
+Turn a piece of cardboard into an milk-monster!
 
 ### ~
 
 ## Duration: ~45 minutes
 
 ## Materials
-  * Cardboard
-  * Scissors or cutters
-  * glue gun or tape
-  * 1 paper clip
+Recycled
+* 1 Milk Carton (recycle!)
+* 1 Small cord - recycle string from a used tea bag
+* 1 Paper clip
 
-## Step 1: cardboard
+Electronics
+* 1 @boardname@, battery holder and 2 AAA batteries
+* 3 Crocodile clips
+* 1 micro servo 9g SG90
+* 1 servo clip designed for Milky Monster [download on thingiverse](http://www.thingiverse.com/thing:2185971) (optional). Teachers may prefer to download the classroom pack (16 servo clips).
 
-Cutout a cardboard rectangle. You can use the @boardname@ as a ruler to figure out the size.
+Tools
+* Small knive and  Scissors that can cut cardboard
+* Tape (masking, duct tape, and/or packing tape)
+* Glue gun
 
-![](/static/mb/projects/inchworm/chassis1.jpg)
+## Step 1: download the template
 
-## Step 2: center fold
+[Download the Milky Monster template](https://msenmediastorage.blob.core.windows.net/resources/f12f968b-bb68-41d1-a77f-700dab181042.pdf) and cutout the template.
 
-Fold the cardboard in half over the short edge.
 
-![](/static/mb/projects/inchworm/chassis2.jpg)
+![](/static/mb/projects/milk-monster/cut template.jpg)
+https://youtu.be/ipsZuFNgTHM
 
-## Step 3: legs
+## Step 1: cut the template
 
-Fold each end so they rest flat on the ground.
+[Download the Milky Monster template](https://msenmediastorage.blob.core.windows.net/resources/f12f968b-bb68-41d1-a77f-700dab181042.pdf) and cutout the template. 
 
-![](/static/mb/projects/inchworm/chassis3.jpg)
+![](/static/mb/projects/milk-monster/cut template.jpg)
+https://youtu.be/ipsZuFNgTHM
 
-## Step 4: front teeth
+## Step 2: glue template on milk carton
 
-Fold each corners on one end of the cardbard. This will be the front of the inchworm which is supposed to grip the ground.
+Glue the template on the milk carton.
 
-![](/static/mb/projects/inchworm/chassis4.jpg)
+![](/static/mb/projects/milk-monster/glue template.jpg)
 
-## Step 5: back teeth
+## Step 3: cut carton
 
-Using a scissor or a cutter (watch the fingers!), cut out various strips in the other edge. Fold one after the other.
+Cut the carton (watch the fingers!)
 
-![](/static/mb/projects/inchworm/chassis5.jpg)
+https://youtu.be/pvC3Tnhe5QU
 
-## Step 6: mounting the board
+## Step 4: create mouth
 
-Using tape or a glue gun, mount the @boardname@ on one side and the microservo on the cardobard.
+Cut the cardboard halfways and fold the corners. This will be the mouth of the Milky Monster.
 
-![](/static/mb/projects/inchworm/chassis6.jpg)
+https://youtu.be/Yyk1zW4sFoM
 
-## Step 7: mounting the servo
+## Step 5: extend mouth
 
-Attach the servo on the **edge** of the other cardboard side.
+Use tape to extend the mouth approx 1 cm. Fold one after the other.
 
-![](/static/mb/projects/inchworm/chassis7.jpg)
+![](/static/mb/projects/milk-monster/connect mouth.jpg)
+https://youtu.be/RWJbqI03wPE
 
-## Step 8: Cable clean up (optional)
+## Step 6: connect cord
 
-Use tape to route the cables nicely on the inchworm.
+Using scissors, create a small whole to insert the cord. Tape the cord on the backsite of the mouth.
 
-![](/static/mb/projects/inchworm/chassis8.jpg)
+![](/static/mb/projects/milk-monster/connect mouth.jpg)
 
-## Step 9: attaching paper clip to servo
+Once finished position the mouth in upward position and fix the cord between the cap.
+https://youtu.be/Qyndcsmt0AU
 
-Unfold a paper clip and attach it to the servo arm.
+## Step 7: create space for @boardname@
 
-![](/static/mb/projects/inchworm/clip2.jpg)
+Use scissors to create space at the bottom of the Milky Monster to attach the @boardname@.
 
-## Step 10: attaching paper clip to cardboard
+![](/static/mb/projects/milk-monster/create space for microbit.jpg)
+https://youtu.be/3FUNI0GSbNc
 
-Slide the folder paper clip into the cardboard, and use tape to secure it. 
-You might need to toy around with the size of the clip so that the servo rotation opens the inchworm sufficiently.
+## Step 8: Create space for cables
 
-![](/static/mb/projects/inchworm/clip3.jpg)
+Create space to route the cables nicely on back of the milk-monster.
+
+https://youtu.be/BoIRCk769MM
+
+## Step 9: attaching clip to servo
+
+Use a philips screw driver to mount the servo to the 3D-printed servo clip.
+If you don't have the 3D-printed clips available, [download on thingiverse](http://www.thingiverse.com/thing:2185971) , or fix the servo using tyraps or a glue gun.
+
+![](/static/mb/projects/milk-monster/clip to servo.jpg)
+https://youtu.be/drKzo5zqvuI
+
+## Step 10: attaching servo to milk button
+
+Glue servo to the cap of the milk carton.
+
+![](/static/mb/projects/milk-monster/glue servo.jpg)
+https://youtu.be/Ch_vU5LXPeM
+
+## Step 11: cutout hole in cap
+
+Cutout a hole in the cap to guide the string to the servo.
+
+![](/static/mb/projects/milk-monster/glue servo.jpg)
+https://youtu.be/Ch_vU5LXPeM
+
+## Step 12: connect crocodile clips
+
+Connect the crocodile clips to the servo.
+
+![](/static/mb/projects/milk-monster/glue servo.jpg)
+https://youtu.be/RiQE-9z9LrI
 
 
 ## Step 11: it's ready!
 
-Your inchworm is ready!
+Your milk-monster is ready!
 
-![](/static/mb/projects/inchworm/ready.jpg)
+![](/static/mb/projects/milk-monster/ready.jpg)
 
-### ~button /projects/inchworm/code
+### ~button /projects/milk-monster/code
 NEXT: Code
 ### ~

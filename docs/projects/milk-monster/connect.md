@@ -2,14 +2,14 @@
 
 ### ~avatar avatar
 
-Remote control your inchworm with another @boardname@
+Remote control your Milky Monster with another @boardname@
 
 ### ~
 
 ## Duration: ~30 minutes
 
-You will need 2 @boardname@ for this part. By using the radio, we can make the inchworm controlled by another @boardname@.
-Download the code below to the @boardname@ on the inchworm and another "controller" @boardname@. Whenere A is pressed, the inchworm will move once.
+You will need 2 @boardname@ for this part. By using the radio, we can make the Milky Monster controlled by another @boardname@.
+Download the code below to the @boardname@ on the Milky Monster and another "controller" @boardname@. Whenere A is pressed, the Milky Monster will move once.
 
 ```blocks
 radio.onDataPacketReceived(({receivedNumber}) => {
