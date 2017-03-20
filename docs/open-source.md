@@ -16,4 +16,5 @@ as well as a set of helper functions (such as displaying a number/image/string o
 ## Packages
 
 * [microsoft/pxt-neopixel](https://github.com/microsoft/pxt-neopixel), package for neopixel strips
+* [microsoft/pxt-filesystem](https://github.com/microsoft/pxt-filesystem), package for the file system
 * [microsoft/pxt-max6675](https://github.com/microsoft/pxt-max6675), package for Temperature Probe (MAX6675)

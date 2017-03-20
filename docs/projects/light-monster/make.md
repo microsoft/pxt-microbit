@@ -1,5 +1,5 @@
 # Make
-### @description Building the coffee cup monster
+### @description Building the light monster
 
 ### ~avatar avatar
 

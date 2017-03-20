@@ -1,5 +1,5 @@
 
-# Coffee Cup Monster
+# Light Monster
 
 ### @description A monster made of cardboard that responds to light
 
@@ -32,11 +32,11 @@ https://youtu.be/BiZLjugXMbM
 
 ## Activities
 
-* [Make](/projects/coffee-cup-monster/make)  
-* [Code](/projects/coffee-cup-monster/code)  
-* [Connect](/projects/coffee-cup-monster/connect)  
+* [Make](/projects/light-monster/make)  
+* [Code](/projects/light-monster/code)  
+* [Connect](/projects/light-monster/connect)  
 
-### ~button /projects/coffee-cup-monster/make
+### ~button /projects/light-monster/make
 
 Let's get started!
 
