@@ -70,7 +70,7 @@ Fun games to build with your @boardname@.
   "url":"/projects/inchworm",
   "imageUrl":"/static/mb/projects/inchworm.jpg"
 }, {
-  "name": "Milk monster",
+  "name": "Milky Monster",
   "url":"/projects/milk-monster",
   "imageUrl":"/static/mb/projects/milk-monster.jpg"
 }]
