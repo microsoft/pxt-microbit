@@ -93,7 +93,7 @@ namespace pxsim {
                     break;
                 case "serial":
                     let data = (<SimulatorSerialMessage>msg).data || "";
-                    this.serialState.recieveData(data);
+                    this.serialState.receiveData(data);
                     break;
                 case "radiopacket":
                     let packet = <SimulatorRadioPacketMessage>msg;
