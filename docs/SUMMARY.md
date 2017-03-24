@@ -19,6 +19,7 @@
         * [Duct tape wallet](/projects/wallet)
         * [Watch](/projects/watch)
         * [Inchworm](/projects/inchworm)
+        * [Milk Jar Robot](/projects/milk-jar-robot)
         * [Milk monster](/projects/milky-monster)
         * [Timing gates](/projects/timing-gates)
         * [Compass](/projects/compass)
@@ -30,6 +31,7 @@
         * [Plot acceleration](/examples/plot-acceleration)
         * [Plot light level](/examples/plot-light-level)
         * [Plot analog pin](/examples/plot-analog-pin)
+        * [Servo Calibrator](/examples/servo-calibrator)
 
 ## #reference
 

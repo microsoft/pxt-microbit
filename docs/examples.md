@@ -39,3 +39,13 @@ Here are some fun programs for your @boardname@!
   "url":"/examples/plot-analog-pin"
 }]
 ```
+
+## Actuators
+
+```codecard
+[{
+  "name": "Servo Calibrator",
+  "description": "calibrates a servo",
+  "url":"/examples/servo-calibrator"
+}]
+```

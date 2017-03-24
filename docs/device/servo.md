@@ -110,6 +110,10 @@ basic.forever(() => {
 * When powered by USB, make sure that the servo moves when you tilt the board.
 * When powered by batteries **only**, make sure that the servo moves when you tilt the board.
 
+## Calibrating
+
+Using the [servo calibrator program](/examples/servo-calibrator) to determine the best angles to use in your make.
+
 ## Troubleshooting
 
 If your servo seems to sutter and stay stuck at a particular position, it means that it is not receiving enough power.
