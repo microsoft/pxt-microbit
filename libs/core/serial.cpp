@@ -27,7 +27,7 @@ enum BaudRate {
   BaudRate14400 = 14400,    
   //% block=9600
   BaudRate9600 = 9600
-  //% block=28800
+  //% block=4800
   BaudRate4800 = 4800,    
   //% block=2400
   BaudRate2400 = 2400,    
