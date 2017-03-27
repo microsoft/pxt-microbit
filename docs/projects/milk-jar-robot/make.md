@@ -16,27 +16,27 @@ Turn a piece of cardboard into an milky-monster!
 
 https://youtu.be/1JbjOFft4Lc
 
-## Step 1: Cutting the mouth
+## Step 2: Cutting the mouth
 
 https://youtu.be/1oQC2pyTEQ4
 
-## Step 2: Cutting the teeth
+## Step 3: Cutting the teeth
 
 https://youtu.be/PBrtlf49aaY
 
-## Step 3: Attaching the mouth
+## Step 4: Attaching the mouth
 
 https://youtu.be/z1KWDi2T8OA
 
-## Step 4: Attaching the mouth wood sticks
+## Step 5: Attaching the mouth wood sticks
 
 https://youtu.be/Wfr5Vf51-ZU
 
-## Step 5: Mounting the servo
+## Step 6: Mounting the servo
 
 https://youtu.be/GsOP1S6cDjU
 
-## Step 6: Connecting the mouth to the servo
+## Step 7: Connecting the mouth to the servo
 
 https://youtu.be/pRAC2Ritgtk
 
