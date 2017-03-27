@@ -1,10 +1,10 @@
 # Equipping a microservo with Crocodile clips
 
-## Materials
-  * Cutting pliers or wire cutter
-  * Tape (masking, duct tape, and/or packing tape)
-  * 3 crocodile clips, yellow, red and black.
-  * 1 micro servo 9g (SG90)
+### ~ hint
+
+If you are running a class or activity, you should consider preparing all servos before hand.
+
+### ~
 
 ## Using a microservo with the @boardname@
 
@@ -16,11 +16,37 @@ However, you could also use a shield or female to crocodile clips to acheive the
 ## The easy way: Alligator/Crocobile Clip to Male Jumpers #hintconnection
 
 The easiest way to connect a servo to the @boardname@ is to use cables that have an **Alligator/Crocobile clip** on one end
-and a **Male jumper (pig tail)** on the other end. You can purchase bundles of such cables from various electronic resellers.
+and a **Male jumper (pig tail)** on the other end. You can purchase bundles of such cables from various electronic resellers or easily build yours as show below.
 
-## Custom connection
+https://youtu.be/XtzsydSTXEg
 
-If you are running a class or activity, you should consider preparing all servos before hand.
+### Materials
+
+  * 1 Crocodile clip cable
+  * 1 male (pig tail) cable
+  * Cutting pliers or wire cutter
+  * 1 shrink wrap cables and a lighter
+
+Simple cut the cables, strip them, thread the cables together and cover with the shrink wrap.
+
+### ~ hint
+
+It is very **important** to ensure that there is a good connection between the 2 cables.
+If the connection is weak, the microservo will not receive enough current and it will not work.
+**If you have access to a soldering iron, we strongly recommend to solder this connection.**
+
+### ~
+
+
+## Direct connection
+
+You can also connect your crocodile clips directly to the servo.
+
+## Materials
+  * Cutting pliers or wire cutter
+  * Tape (masking, duct tape, and/or packing tape)
+  * 3 crocodile clips, yellow, red and black.
+  * 1 micro servo 9g (SG90)
 
 ### Step 1: cutout the connector
 
