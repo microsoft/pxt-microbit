@@ -2,10 +2,10 @@
 
 ### Step 1
 
-Place blocks in the workspace to scroll text on the screen.
+Welcome! Place the ``||show string||`` block in the ``||on start||`` slot to scroll your name.
 
 ```blocks
-basic.showString("Hello!")
+basic.showString("Micro!")
 ```
 
 ### Step 2
@@ -14,23 +14,26 @@ Click ``|Download|`` to transfer your code in your @boardname@!
 
 ### Step 3
 
-Great, the text scrolled! But then it stopped.
-Let's make it scroll when button **A** is pressed.
+The text stopped. Place the ``||show string||`` block in the ``||on button pressed||``
+slot to scroll your name when button **A** is pressed.
 
 ```block
 input.onButtonPressed(Button.A, () => {
-    basic.showString("Hello!")
+    basic.showString("Micro!")
 });
 ```
 
 ### Step 4
 
 Click ``|Download|`` to transfer your code
-and press **A** to scroll your text.
+then press button **A** to scroll your text.
 
 ### Step 5
 
-Place more blocks to display a smiley when button **B** is pressed.
+Place blocks to display a smiley when button **B** is pressed.
+
+####   
+
 Use the dropdown to find ``B``!
 
 ```block
@@ -47,28 +50,20 @@ input.onButtonPressed(Button.B, () => {
 
 ### Step 6
 
-Drag more blocks to display a frownie when @boardname@ is shaken.
+Place the ``||show number||`` and ``||pick random||`` blocks
+in the ``||on shake||`` slot to build a dice.
+
+####   
+
+When the @boardname@ is shaken, the random number between ``0`` and ``6`` will be displayed
+on the scren.
 
 ```block
 input.onGesture(Gesture.Shake, () => {
-    basic.showLeds(`
-    # # . # #
-    # # . # #
-    . . . . .
-    . # # # .
-    # . . . #
-    `)
+    basic.showNumber(Math.random(7))
 })
 ```
 
 ### Step 7
 
-Drag more blocks to display a random number when pin ``P0`` is touched.
-Hold your right thumb on the ``GND`` metal pin 
-at press the ``0`` pin with your right hand to trigger this event.
-
-```block
-input.onPinPressed(TouchPin.P0, () => {
-    basic.showNumber(Math.random(7))
-})
-```
+Well done! You have complete this activity.
