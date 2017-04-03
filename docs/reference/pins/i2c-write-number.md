@@ -4,7 +4,7 @@ Write the specified number to the specified 7-bit I2C address in the
 specified number format.
 
 ```sig
-pins.i2cWriteNumber(0, 0, NumberFormat.Int8LE);
+pins.i2cWriteNumber(0, 0, NumberFormat.Int8LE, true);
 ```
 
 ### Parameters
@@ -18,6 +18,7 @@ pins.i2cWriteNumber(0, 0, NumberFormat.Int8LE);
   * **Int** stands for "integer", and **UInt** stands for "unsigned integer".
   * **LE** stands for "little-endian" and **BE** stands for "big-endian".
   * The number in each format name stands for the number of bits in the format.
+* ``repeated`` repeated start, true - don't send stop at end
 
 ### Example
 

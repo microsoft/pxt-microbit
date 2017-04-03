@@ -4,7 +4,7 @@ Read one number from the specified 7-bit I2C address, in the specified
 number format.
 
 ```sig
-pins.i2cReadNumber(0, NumberFormat.Int8LE);
+pins.i2cReadNumber(0, NumberFormat.Int8LE, false);
 ```
 
 ### Parameters
@@ -17,6 +17,7 @@ pins.i2cReadNumber(0, NumberFormat.Int8LE);
   * **Int** stands for "integer", and **UInt** stands for "unsigned integer".
   * **LE** stands for "little-endian" and **BE** stands for "big-endian".
   * The number in each format name stands for the number of bits in the format.
+* ``repeated`` repeated start, true - don't send stop at end
 
 ### Example
 
@@ -24,7 +25,7 @@ The following example reads a number in big-endian, 16-bit, unsigned integer
 format from the 7-bit I2C address `32`.
 
 ```blocks
-pins.i2cReadNumber(32, NumberFormat.UInt16BE);
+pins.i2cReadNumber(32, NumberFormat.UInt16BE, false);
 ```
 
 #### ~hint
