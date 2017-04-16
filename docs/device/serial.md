@@ -32,6 +32,8 @@ If you are using the Google Chrome browser, you can use our extension to get ser
 * Restart Chrome and open the [web editor](https://pxt.microbit.org)
 * The serial data will show below the simulator
 
+If the extension is enabled, it will not be possible to access the port/device by other means such as another program than chrome.
+
 ### Windows
 
 You must install a device driver (for the computer to recognize the
