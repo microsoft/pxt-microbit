@@ -10,8 +10,15 @@ serial.writeString("");
 serial.readUntil(",");
 serial.readLine();
 serial.readString();
-serial.redirect(SerialPin.P0, SerialPin.P0, BaudRate.BaudRate115200);
 serial.onDataReceived(",", () => {})
+```
+
+### Advanced
+
+```cards
+serial.redirect(SerialPin.P0, SerialPin.P0, BaudRate.BaudRate115200);
+serial.writeBuffer(pins.createBuffer(0));
+serial.readBuffer(64);
 ```
 
 ### See Also

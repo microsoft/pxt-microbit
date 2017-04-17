@@ -715,6 +715,19 @@ declare namespace serial {
     function writeString(text: string): void;
 
     /**
+     * Sends a buffer through Serial connection
+     */
+    //% help=serial/write-buffer advanced=true weight=6 shim=serial::writeBuffer
+    function writeBuffer(buffer: Buffer): void;
+
+    /**
+     * Reads multiple characters from the rxBuff and fills a user buffer.
+     * @param length default buffer length, eg: 64
+     */
+    //% help=serial/read-buffer advanced=true weight=5 shim=serial::readBuffer
+    function readBuffer(length: number): Buffer;
+
+    /**
      * Dynamically configuring the serial instance to use pins other than USBTX and USBRX.
      * @param tx the new transmission pins, eg: SerialPin.P0
      * @param rx the new reception pin, eg: SerialPin.P1

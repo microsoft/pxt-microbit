@@ -1,5 +1,7 @@
 #include "pxt.h"
 
+#define MICROBIT_SERIAL_READ_BUFFER_LENGTH 64
+
 enum SerialPin {
     P0 = MICROBIT_ID_IO_P0,
     P1 = MICROBIT_ID_IO_P1,
@@ -99,7 +101,37 @@ namespace serial {
     //% weight=87
     //% blockId=serial_writestring block="serial|write string %text"
     void writeString(StringData *text) {
+      if (!text) return;
+
       uBit.serial.send(ManagedString(text));
+    }
+
+    /**
+    * Sends a buffer through Serial connection
+    */
+    //% help=serial/write-buffer advanced=true weight=6
+    void writeBuffer(Buffer buffer) {
+      if (!buffer) return;
+
+      ManagedBuffer buf(buffer);
+      uBit.serial.send(buf.getBytes(), buf.length());
+    }
+
+    /**
+    * Reads multiple characters from the rxBuff and fills a user buffer.
+    * @param length default buffer length, eg: 64
+    */
+    //% help=serial/read-buffer advanced=true weight=5
+    Buffer readBuffer(int length) {
+      if (length <= 0)
+        length = MICROBIT_SERIAL_READ_BUFFER_LENGTH;
+        
+      ManagedBuffer buf(length);
+      int read = uBit.serial.read(buf.getBytes(), buf.length());
+      if (read != buf.length())
+        buf = buf.slice(read);
+
+      return buf.leakData();
     }
 
     /**
