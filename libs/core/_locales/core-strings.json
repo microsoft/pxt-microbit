@@ -28,6 +28,7 @@
   "BaudRate.BaudRate28800|block": "28800",
   "BaudRate.BaudRate300|block": "300",
   "BaudRate.BaudRate38400|block": "38400",
+  "BaudRate.BaudRate31250|block": "31250",
   "BaudRate.BaudRate4800|block": "4800",
   "BaudRate.BaudRate57600|block": "57600",
   "BaudRate.BaudRate9600|block": "9600",

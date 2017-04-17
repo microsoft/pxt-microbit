@@ -447,6 +447,8 @@ declare namespace led {
     BaudRate57600 = 57600,
     //% block=38400
     BaudRate38400 = 38400,
+    //% block=31250
+    BaudRate31250 = 31250,
     //% block=28800
     BaudRate28800 = 28800,
     //% block=19200
