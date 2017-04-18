@@ -228,33 +228,7 @@
         "feedbackUrl": "https://www.research.net/r/MCmicro",
         "appStoreID": "1092687276",
         "mobileSafariDownloadProtocol": "microbithex://?data",
-        "browserSupport": [
-            {
-                "name": "unsupported",
-                "os": "*",
-                "path": "/browsers"
-            },
-            {
-                "name": "unsupported",
-                "os": "mac",
-                "path": "/browsers/mac"
-            },
-            {
-                "name": "unsupported",
-                "os": "linux",
-                "path": "browsers/linux"
-            },
-            {
-                "name": "unsupported",
-                "os": "rpi",
-                "path": "/raspberry-pi"
-            },
-            {
-                "name": "unsupported",
-                "os": "windows",
-                "path": "/browsers/windows"
-            }
-        ],
+        "extendEditor": true,
         "docMenu": [
             {
                 "name": "Support",
