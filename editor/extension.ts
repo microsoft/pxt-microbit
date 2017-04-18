@@ -1,7 +1,7 @@
 /// <reference path="../node_modules/pxt-core/built/pxteditor.d.ts" />
 
 namespace pxt.editor {
-    export function initExtensionsAsync(opts: pxt.editor.ExtensionOptions): Promise<pxt.editor.ExtensionResult> {
+    initExtensionsAsync = function(opts: pxt.editor.ExtensionOptions): Promise<pxt.editor.ExtensionResult> {
         pxt.debug('loading microbit target extensions...')
         const res: pxt.editor.ExtensionResult = {
             hexFileImporters: [{
