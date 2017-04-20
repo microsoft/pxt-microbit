@@ -139,7 +139,6 @@ namespace pxsim.ImageMethods {
             frame: () => {
                 if (first) {
                     leds.copyTo(offset, 5, board().ledMatrixState.image, 0)
-                    runtime.queueDisplayUpdate()
                     first = false;
                     return true;
                 }
@@ -156,7 +155,6 @@ namespace pxsim.ImageMethods {
             interval: 0,
             frame: () => {
                 leds.copyTo(offset, 5, board().ledMatrixState.image, 0)
-                runtime.queueDisplayUpdate()
                 return false;
             }
         })
