@@ -339,6 +339,7 @@
                 "colour": "rgba(189, 195, 199, 0.30)",
                 "snap": false
             }
-        }
+        },
+        "highContrast": true
     }
 }

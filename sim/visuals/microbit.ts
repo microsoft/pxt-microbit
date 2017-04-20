@@ -136,6 +136,11 @@ namespace pxsim.visuals {
             stroke-width: 2px;
         }
     `;
+    const MB_HIGHCONTRAST = `
+.sim-led {
+    stroke: red;
+}    
+    `
     const pins4onXs = [66.7, 79.1, 91.4, 103.7, 164.3, 176.6, 188.9, 201.3, 213.6, 275.2, 287.5, 299.8, 312.1, 324.5, 385.1, 397.4, 409.7, 422];
     const pins4onMids = pins4onXs.map(x => x + 5);
     const littlePinDist = pins4onMids[1] - pins4onMids[0];
@@ -179,6 +184,7 @@ namespace pxsim.visuals {
     const MB_WIDTH = 500;
     const MB_HEIGHT = 408;
     export interface IBoardTheme {
+        highContrast?: boolean;
         accent?: string;
         display?: string;
         pin?: string;
@@ -215,8 +221,18 @@ namespace pxsim.visuals {
         }
     });
 
-    export function randomTheme(): IBoardTheme {
-        return themes[Math.floor(Math.random() * themes.length)];
+    export function randomTheme(highContrast?: boolean): IBoardTheme {
+        let theme = themes[Math.floor(Math.random() * themes.length)];
+        if (highContrast) {
+            theme = JSON.parse(JSON.stringify(theme)) as IBoardTheme;
+            theme.highContrast = true;
+            theme.ledOff = "#888";
+            theme.ledOn = "#0000bb";
+            theme.display = "#ffffff";
+            theme.pin = "#D4AF37";
+            theme.accent = "#273EE2";
+        }
+        return theme;
     }
 
     export interface IBoardProps {
@@ -581,7 +597,7 @@ namespace pxsim.visuals {
                 "height": MB_HEIGHT + "px",
             });
             this.style = <SVGStyleElement>svg.child(this.element, "style", {});
-            this.style.textContent = MB_STYLE;
+            this.style.textContent = MB_STYLE + (this.props.theme.highContrast ? MB_HIGHCONTRAST : "");
 
             this.defs = <SVGDefsElement>svg.child(this.element, "defs", {});
             this.g = <SVGGElement>svg.elt("g");

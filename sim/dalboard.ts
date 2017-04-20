@@ -120,9 +120,11 @@ namespace pxsim {
                 fnArgs: fnArgs,
                 maxWidth: "100%",
                 maxHeight: "100%",
+                highContrast: msg.highContrast
             };
             const viewHost = new visuals.BoardHost(pxsim.visuals.mkBoardView({
-                visual: boardDef.visual
+                visual: boardDef.visual,
+                highContrast: msg.highContrast
             }), opts);
 
             document.body.innerHTML = ""; // clear children
