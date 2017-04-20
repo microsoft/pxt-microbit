@@ -131,15 +131,35 @@ namespace pxsim.images {
 namespace pxsim.ImageMethods {
     export function showImage(leds: Image, offset: number, interval: number) {
         pxtrt.nullCheck(leds)
-        leds.copyTo(offset, 5, board().ledMatrixState.image, 0)
-        runtime.queueDisplayUpdate()
-        basic.pause(interval);
+        let cb = getResume();
+        let first = true;
+
+        board().ledMatrixState.animationQ.enqueue({
+            interval,
+            frame: () => {
+                if (first) {
+                    leds.copyTo(offset, 5, board().ledMatrixState.image, 0)
+                    runtime.queueDisplayUpdate()
+                    first = false;
+                    return true;
+                }
+                return false;
+            },
+            whenDone: cb
+        })
     }
 
     export function plotImage(leds: Image, offset: number): void {
         pxtrt.nullCheck(leds)
-        leds.copyTo(offset, 5, board().ledMatrixState.image, 0)
-        runtime.queueDisplayUpdate()
+
+        board().ledMatrixState.animationQ.enqueue({
+            interval: 0,
+            frame: () => {
+                leds.copyTo(offset, 5, board().ledMatrixState.image, 0)
+                runtime.queueDisplayUpdate()
+                return false;
+            }
+        })
     }
 
     export function height(leds: Image): number {
