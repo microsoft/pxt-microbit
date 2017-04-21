@@ -648,9 +648,10 @@ namespace game {
          * @param this sprite to delete
          */
         //% weight=59
-        //% blockId="game_delete_sprite" block="delete %this"        
+        //% blockId="game_delete_sprite" block="delete %this"
         public delete(): void {
             sprites.removeElement(this);
+            plot();
         }
 
         /**
