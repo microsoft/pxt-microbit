@@ -377,6 +377,10 @@ declare const enum DAL {
     MICROBIT_PIN_EVT_PULSE_LO = 5,
     PIN_CAPABILITY_DIGITAL_IN = 0x01,
     PIN_CAPABILITY_DIGITAL_OUT = 0x02,
+    // built/yt/yotta_modules/microbit-dal/inc/drivers/MicroBitQuadratureDecoder.h
+    QDEC_USE_SYSTEM_TICK = 0x01,
+    QDEC_USE_DEBOUNCE = 0x02,
+    QDEC_LED_ACTIVE_LOW = 0x04,
     // built/yt/yotta_modules/microbit-dal/inc/drivers/MicroBitRadio.h
     MICROBIT_RADIO_STATUS_INITIALISED = 0x0001,
     MICROBIT_RADIO_BASE_ADDRESS = 0x75626974,
