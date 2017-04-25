@@ -137,6 +137,11 @@ enum MelodyOptions {
     ForeverInBackground = 8
 }
 
+enum MusicEventValue {
+    //% block="note player"
+    MelodyNotePlayed = 1,
+}
+
 /**
  * Generation of music tones through pin ``P0``.
  */
@@ -144,6 +149,8 @@ enum MelodyOptions {
 namespace music {
     let beatsPerMinute: number = 120;
     let freqTable: number[] = [];
+    let _playTone: (frequency: number, duration: number) => void;
+    const MICROBIT_MELODY_ID = 2000;
 
     /**
      * Plays a tone through pin ``P0`` for the given duration.
@@ -155,7 +162,8 @@ namespace music {
     //% parts="headphone"
     //% useEnumVal = 1
     export function playTone(frequency: number, ms: number): void {
-        pins.analogPitch(frequency, ms);
+        if (_playTone) _playTone(frequency, ms);
+        else pins.analogPitch(frequency, ms);
     }
 
     /**
@@ -167,7 +175,7 @@ namespace music {
     //% parts="headphone"
     //% useEnumVal = 1
     export function ringTone(frequency: number): void {
-        pins.analogPitch(frequency, 0);
+        playTone(frequency, 0);
     }
 
     /**
@@ -270,6 +278,15 @@ namespace music {
     }
 
     /**
+     * Registers code to run on various melody events
+     */
+    //% blockId=melody_on_melody_event block="on event"
+    //% help=music/on-melody-event
+    export function onMelodyEvent(value: MelodyEventValue, handler: Action) {
+        control.onEvent(MICROBIT_MELODY_ID, value, handler);
+    }
+
+    /**
      * Starts playing a melody through pin ``P0``.
      * Notes are expressed as a string of characters with this format: NOTE[octave][:duration]
      * @param melody the melody array to play, eg: ['g5:1']
@@ -302,6 +319,14 @@ namespace music {
                 currentMelody = null;
             })
         }
+    }
+
+    /**
+     * Sets a custom playTone function for playing melodies
+     */
+    //% advanced=true
+    export function setPlayTone(f: (frequency: number, duration: number) => void) {
+        _playTone = f;
     }
 
     function playNextNote(melody: Melody): void {
@@ -347,6 +372,8 @@ namespace music {
         melody.currentDuration = currentDuration;
         melody.currentOctave = currentOctave;
         melody.currentPos = melody.repeating == true && currentPos == melody.melodyArray.length - 1 ? 0 : currentPos + 1;
+
+        control.raiseEvent(MICROBIT_MELODY_ID, MusicEventValue.MelodyNotePlayed);
     }
 
     class Melody {
