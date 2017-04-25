@@ -59,6 +59,18 @@ turned the @boardname@ on), the @boardname@ will start to [calibrateCompass](/re
 If you are calibrating or using the compass near metal, it might
 confuse the @boardname@.
 
+### ~ hint
+
+Keep the calibration handy by running it when the user pressed **A+B**.
+
+```block
+input.onButtonPressed(Button.AB, () => {
+    input.calibrateCompass();
+})
+```
+
+### ~
+
 ### See also
 
 [acceleration](/reference/input/acceleration), [calibrateCompass](/reference/input/calibrate-compass)
