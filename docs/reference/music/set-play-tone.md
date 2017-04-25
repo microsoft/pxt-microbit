@@ -13,13 +13,24 @@ music.setPlayTone((freq, ms) => {})
 
 ### Example
 
-This example send the tone over radio.
+This example send the frequency and duration over radio 
+and plays it on the remote @boardname@.
 
 ```typescript
-music.setPlayTone((f,ms) => {
-    radio.sendNumber((f & 0xff) << 16 | ms);
-});
-music.playTone(440, 500);
+input.onButtonPressed(Button.A, () => {
+    music.playTone(440, 120)
+    led.toggle(0, 0)
+})
+radio.onDataPacketReceived( ({ receivedNumber }) =>  {
+    const freq = receivedNumber >> 16;
+    const duration = receivedNumber & 0xffff;
+    music.playTone(freq, duration);
+})
+input.onButtonPressed(Button.B, () => {
+    music.setPlayTone((frequency: number, duration: number) => {
+        radio.sendNumber((frequency << 16) | (duration & 0xffff));
+    })    
+})
 ```
 ### See also
 
