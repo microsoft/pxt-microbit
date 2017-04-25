@@ -137,13 +137,31 @@ enum MelodyOptions {
     ForeverInBackground = 8
 }
 
-enum MusicEventValue {
-    //% block="note player"
+enum MusicEvent {
+    //% block="melody note played"
     MelodyNotePlayed = 1,
+    //% block="melody started"
+    MelodyStarted = 2,
+    //% block="melody ended"
+    MelodyEnded = 3,
+    //% block="melody repeated"
+    MelodyRepeated = 4,
+    //% block="background melody note played"
+    BackgroundMelodyNotePlayed = MelodyNotePlayed | 0xf0,
+    //% block="background melody started"
+    BackgroundMelodyStarted = MelodyStarted | 0xf0,
+    //% block="background melody ended"
+    BackgroundMelodyEnded = MelodyEnded | 0xf0,
+    //% block="background melody repeated"
+    BackgroundMelodyRepeated = MelodyRepeated | 0xf0,
+    //% block="background melody paused"
+    BackgroundMelodyPaused = 5 | 0xf0,
+    //% block="background melody resumed"
+    BackgroundMelodyResumed = 6 | 0xf0
 }
 
 /**
- * Generation of music tones through pin ``P0``.
+ * Generation of music tones.
  */
 //% color=#D83B01 weight=98 icon="\uf025"
 namespace music {
@@ -280,32 +298,38 @@ namespace music {
     /**
      * Registers code to run on various melody events
      */
-    //% blockId=melody_on_melody_event block="on event"
-    //% help=music/on-melody-event
-    export function onMelodyEvent(value: MelodyEventValue, handler: Action) {
+    //% blockId=melody_on_event block="music on %value"
+    //% help=music/on-event weight=59
+    export function onEvent(value: MusicEvent, handler: Action) {
         control.onEvent(MICROBIT_MELODY_ID, value, handler);
     }
 
     /**
-     * Starts playing a melody through pin ``P0``.
+     * Starts playing a melody.
      * Notes are expressed as a string of characters with this format: NOTE[octave][:duration]
      * @param melody the melody array to play, eg: ['g5:1']
      * @param options melody options, once / forever, in the foreground / background
      */
-    //% help=music/begin-melody weight=60
-    //% blockId=device_start_melody block="start|melody %melody=device_builtin_melody| repeating %options"
+    //% help=music/begin-melody weight=60 blockGap=8
+    //% blockId=device_start_melody block="start melody %melody=device_builtin_melody| repeating %options"
     //% parts="headphone"
     export function beginMelody(melodyArray: string[], options: MelodyOptions = MelodyOptions.Once) {
         init();
         if (currentMelody != undefined) {
             if (((options & MelodyOptions.OnceInBackground) == 0)
                 && ((options & MelodyOptions.ForeverInBackground) == 0)
-                && currentMelody.background == true) {
+                && currentMelody.background) {
                 currentBackgroundMelody = currentMelody;
+                currentMelody = null;
+                control.raiseEvent(MICROBIT_MELODY_ID, MusicEvent.BackgroundMelodyPaused);
             }
+            if (currentMelody)
+                control.raiseEvent(MICROBIT_MELODY_ID, currentMelody.background ? MusicEvent.BackgroundMelodyEnded : MusicEvent.MelodyEnded);
             currentMelody = new Melody(melodyArray, options);
+            control.raiseEvent(MICROBIT_MELODY_ID, currentMelody.background ? MusicEvent.BackgroundMelodyStarted : MusicEvent.MelodyStarted);
         } else {
             currentMelody = new Melody(melodyArray, options);
+            control.raiseEvent(MICROBIT_MELODY_ID, currentMelody.background ? MusicEvent.BackgroundMelodyStarted : MusicEvent.MelodyStarted);
             // Only start the fiber once
             control.inBackground(() => {
                 while (currentMelody.hasNextNote()) {
@@ -314,9 +338,12 @@ namespace music {
                         // Swap the background melody back
                         currentMelody = currentBackgroundMelody;
                         currentBackgroundMelody = null;
+                        control.raiseEvent(MICROBIT_MELODY_ID, MusicEvent.MelodyEnded);
+                        control.raiseEvent(MICROBIT_MELODY_ID, MusicEvent.BackgroundMelodyResumed);
                     }
                 }
                 currentMelody = null;
+                control.raiseEvent(MICROBIT_MELODY_ID, currentMelody.background ? MusicEvent.BackgroundMelodyEnded : MusicEvent.MelodyEnded);
             })
         }
     }
@@ -324,6 +351,7 @@ namespace music {
     /**
      * Sets a custom playTone function for playing melodies
      */
+    //% help=music/set-play-tone
     //% advanced=true
     export function setPlayTone(f: (frequency: number, duration: number) => void) {
         _playTone = f;
@@ -371,9 +399,12 @@ namespace music {
         }
         melody.currentDuration = currentDuration;
         melody.currentOctave = currentOctave;
-        melody.currentPos = melody.repeating == true && currentPos == melody.melodyArray.length - 1 ? 0 : currentPos + 1;
+        const repeating = melody.repeating && currentPos == melody.melodyArray.length - 1;
+        melody.currentPos = repeating ? 0 : currentPos + 1;
 
-        control.raiseEvent(MICROBIT_MELODY_ID, MusicEventValue.MelodyNotePlayed);
+        control.raiseEvent(MICROBIT_MELODY_ID, melody.background ? MusicEvent.BackgroundMelodyNotePlayed : MusicEvent.MelodyNotePlayed);
+        if (repeating)
+            control.raiseEvent(MICROBIT_MELODY_ID, melody.background ? MusicEvent.BackgroundMelodyRepeated : MusicEvent.MelodyRepeated);
     }
 
     class Melody {

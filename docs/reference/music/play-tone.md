@@ -2,9 +2,11 @@
 
 Play a musical tone through pin ``P0`` of the @boardname@ for as long as you say.
 
-## Simulator
+### ~ hint
 
 This function only works on the @boardname@ and in some browsers.
+
+### ~
 
 ```sig
 music.playTone(440, 120)
