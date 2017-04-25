@@ -78,7 +78,8 @@ namespace pxsim.input {
         return runtime.runningTime();
     }
 
-    export function calibrate() {
+    export function calibrateCompass() {
+        // device calibrates...
     }
 }
 

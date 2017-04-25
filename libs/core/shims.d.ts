@@ -339,7 +339,7 @@ declare namespace input {
     /**
      * Obsolete, compass calibration is automatic.
      */
-    //% help=input/calibrate weight=0
+    //% help=input/calibrate-compass advanced=true
     //% blockId="input_compass_calibrate" block="calibrate compass" shim=input::calibrateCompass
     function calibrateCompass(): void;
 
