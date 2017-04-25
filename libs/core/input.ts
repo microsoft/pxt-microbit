@@ -47,4 +47,12 @@ namespace input {
     export function onLogoDown(body: Action): void {
         onGesture(Gesture.LogoDown, body);
     }
+
+    /**
+     * Obsolete, use input.calibrateCompass instead.
+     */
+    //% weight=0 help=input/calibrate-compass
+    export function calibrate() {
+        input.calibrateCompass();
+    }
 }
