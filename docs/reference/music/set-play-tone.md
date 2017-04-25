@@ -4,7 +4,7 @@ Replaces the implementation of the [music play tone](/reference/music/play-tone)
 
 
 ```sig
-music.setPlayTone((freq, ms) => {})
+music.setPlayTone((frequency: number, duration: number) => {})
 ```
 
 ### Parameters

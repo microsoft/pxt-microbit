@@ -339,8 +339,9 @@ declare namespace input {
     /**
      * Obsolete, compass calibration is automatic.
      */
-    //% help=input/calibrate weight=0 shim=input::calibrate
-    function calibrate(): void;
+    //% help=input/calibrate weight=0
+    //% blockId="input_compass_calibrate" block="calibrate compass" shim=input::calibrateCompass
+    function calibrateCompass(): void;
 
     /**
      * Sets the accelerometer sample range in gravities.

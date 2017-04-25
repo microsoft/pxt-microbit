@@ -99,7 +99,7 @@
   "input.acceleration|param|dimension": "TODO",
   "input.buttonIsPressed": "Get the button state (pressed or not) for ``A`` and ``B``.",
   "input.buttonIsPressed|param|button": "the button to query the request, eg: Button.A",
-  "input.calibrate": "Obsolete, compass calibration is automatic.",
+  "input.calibrateCompass": "Obsolete, compass calibration is automatic.",
   "input.compassHeading": "Get the current compass heading in degrees.",
   "input.lightLevel": "Reads the light level applied to the LED screen in a range from ``0`` (dark) to ``255`` bright.",
   "input.magneticForce": "Get the magnetic force value in ``micro-Teslas`` (``µT``). This function is not supported in the simulator.",

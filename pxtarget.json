@@ -55,7 +55,8 @@
                 "type": "api",
                 "map": {
                     "bluetooth\\s*\\.uartRead\\s*\\((.*?)\\)": "bluetooth.uartReadUntil($1)",
-                    "bluetooth\\s*\\.uartWrite\\s*\\((.*?)\\)": "bluetooth.uartWriteUntil($1)"
+                    "bluetooth\\s*\\.uartWrite\\s*\\((.*?)\\)": "bluetooth.uartWriteUntil($1)",
+                    "input\\s*\\.calibrate\\s*\\(": "input.calibrateCompass("
                 }
             },
             {

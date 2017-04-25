@@ -22,7 +22,6 @@ input.rotation(Rotation.Pitch);
 input.magneticForce(Dimension.X);
 input.runningTime();
 input.setAccelerometerRange(AcceleratorRange.OneG);
-input.calibrate();
 input.onLogoDown(() => {
     
 });
@@ -42,4 +41,4 @@ input.onShake(() => {
 
 ### See Also
 
-[onButtonPressed](/reference/input/on-button-pressed), [onGesture](/reference/input/on-gesture), [onPinPressed](/reference/input/on-pin-pressed), [buttonIsPressed](/reference/input/button-is-pressed), [compassHeading](/reference/input/compass-heading), [pinIsPressed](/reference/input/pin-is-pressed), [temperature](/reference/input/temperature), [acceleration](/reference/input/acceleration), [lightLevel](/reference/input/light-level), [rotation](/reference/input/rotation), [magneticForce](/reference/input/magnetic-force), [runningTime](/reference/input/running-time), [setAccelerometerRange](/reference/input/set-accelerometer-range)
+[onButtonPressed](/reference/input/on-button-pressed), [onGesture](/reference/input/on-gesture), [onPinPressed](/reference/input/on-pin-pressed), [buttonIsPressed](/reference/input/button-is-pressed), [compassHeading](/reference/input/compass-heading), [pinIsPressed](/reference/input/pin-is-pressed), [temperature](/reference/input/temperature), [acceleration](/reference/input/acceleration), [lightLevel](/reference/input/light-level), [rotation](/reference/input/rotation), [magneticForce](/reference/input/magnetic-force), [runningTime](/reference/input/running-time), [setAccelerometerRange](/reference/input/set-accelerometer-range), [calibrate-compass](/reference/input/calibrate-compass)

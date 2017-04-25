@@ -52,7 +52,7 @@ basic.forever(() => {
 ### Calibration
 
 Every time you start to use the compass (for example, if you have just
-turned the @boardname@ on), the @boardname@ will start to **calibrate**
+turned the @boardname@ on), the @boardname@ will start to [calibrateCompass](/reference/input/calibrate-compass)
 (adjust itself).  It will ask you to draw a circle by tilting the
 @boardname@.
 
@@ -61,4 +61,4 @@ confuse the @boardname@.
 
 ### See also
 
-[acceleration](/reference/input/acceleration)
+[acceleration](/reference/input/acceleration), [calibrateCompass](/reference/input/calibrate-compass)
