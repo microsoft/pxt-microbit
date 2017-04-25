@@ -10,14 +10,9 @@ music.beat(BeatFraction.Whole);
 music.tempo();
 music.changeTempoBy(20);
 music.setTempo(120);
-```
-
-## Advanced
-
-``cards
-music.setPlayTone((freq, ms) => {});
 music.onEvent(MusicEvent.MelodyNotePlayed, () => {});
-``
+music.setPlayTone((freq, ms) => {});
+```
 
 ### See Also
 
