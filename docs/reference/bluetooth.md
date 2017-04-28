@@ -30,6 +30,7 @@ bluetooth.uartReadUntil("");
 bluetooth.uartWriteString("");
 bluetooth.uartWriteNumber(0);
 bluetooth.uartWriteValue("", 0);
+bluetooth.onUartDataReceived(",", () => {})
 ```
 
 ## Eddystone
