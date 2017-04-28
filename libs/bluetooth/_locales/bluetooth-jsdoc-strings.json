@@ -17,6 +17,8 @@
   "bluetooth.onBluetoothConnected|param|body": "Code to run when a Bluetooth connection is established",
   "bluetooth.onBluetoothDisconnected": "Register code to run when a bluetooth connection to the micro:bit is lost",
   "bluetooth.onBluetoothDisconnected|param|body": "Code to run when a Bluetooth connection is lost",
+  "bluetooth.onUartDataReceived": "Registers an event to be fired when one of the delimiter is matched.",
+  "bluetooth.onUartDataReceived|param|delimiters": "the characters to match received characters against.",
   "bluetooth.setTransmitPower": "Sets the bluetooth transmit power between 0 (minimal) and 7 (maximum).",
   "bluetooth.setTransmitPower|param|power": "power level between 0 (minimal) and 7 (maximum), eg: 7.",
   "bluetooth.startAccelerometerService": "Starts the Bluetooth accelerometer service",

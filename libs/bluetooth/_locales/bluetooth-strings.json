@@ -3,6 +3,7 @@
   "bluetooth.advertiseUrl|block": "bluetooth advertise url %url|with power %power|connectable %connectable",
   "bluetooth.onBluetoothConnected|block": "on bluetooth connected",
   "bluetooth.onBluetoothDisconnected|block": "on bluetooth disconnected",
+  "bluetooth.onUartDataReceived|block": "bluetooth|on data received %delimiters=serial_delimiter_conv",
   "bluetooth.setTransmitPower|block": "bluetooth set transmit power %power",
   "bluetooth.startAccelerometerService|block": "bluetooth accelerometer service",
   "bluetooth.startButtonService|block": "bluetooth button service",

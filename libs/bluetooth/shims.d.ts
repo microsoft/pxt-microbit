@@ -64,6 +64,14 @@ declare namespace bluetooth {
     function startUartService(): void;
 
     /**
+     * Registers an event to be fired when one of the delimiter is matched.
+     * @param delimiters the characters to match received characters against.
+     */
+    //% help=bluetooth/on-uart-data-received
+    //% weight=18 blockId=bluetooth_on_data_received block="bluetooth|on data received %delimiters=serial_delimiter_conv" shim=bluetooth::onUartDataReceived
+    function onUartDataReceived(delimiters: string, body: () => void): void;
+
+    /**
      * Register code to run when the micro:bit is connected to over Bluetooth
      * @param body Code to run when a Bluetooth connection is established
      */
