@@ -10,5 +10,16 @@
             "chevyng/pxt-ucl-junkrobot",
             "srs/pxt-bitbot"
         ]
-    }
+    },
+    "languages": [
+        "de",
+        "du",
+        "fr",
+        "ja",
+        "no",
+        "sv-SE",
+        "si-LK",
+        "zh-CN",
+        "zh-TW"
+    ]
 }
