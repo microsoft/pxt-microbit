@@ -236,6 +236,7 @@ namespace pxsim.basic {
     export function showNumber(x: number, interval: number) {
         if (interval < 0)
             interval = 0;
+
         let leds = createImageFromString(x.toString());
         if (x < 0 || x >= 10) ImageMethods.scrollImage(leds, 1, interval);
         else showLeds(leds, interval * 5);
@@ -244,6 +245,7 @@ namespace pxsim.basic {
     export function showString(s: string, interval: number) {
         if (interval < 0)
             interval = 0;
+
         if (s.length == 0) {
             clearScreen();
             pause(interval * 5);

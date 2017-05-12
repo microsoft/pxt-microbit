@@ -19,6 +19,7 @@ namespace basic {
     void showNumber(int value, int interval = 150) { 
       if (interval < 0)
         interval = 0;
+
       ManagedString t(value);
       if (value < 0 || value >= 10) {
         uBit.display.scroll(t, interval);
@@ -55,7 +56,11 @@ namespace basic {
     //% parts="ledmatrix"
     void showString(StringData *text, int interval = 150) {
       if (interval < 0)
+<<<<<<< HEAD
         interval = 0;
+=======
+        return;
+>>>>>>> parent of 65214e17... get showString and showNumber in alignment w.r.t asynch semantics
       ManagedString s(text);
       int l = s.length();
       if (l == 0) {
