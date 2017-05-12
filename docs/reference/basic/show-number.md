@@ -9,7 +9,7 @@ basic.showNumber(2)
 ### Parameters
 
 * `value` is a [Number](/types/number).
-* `interval` is an optional [Number](/types/number). It means the number of milliseconds before sliding the `value` left by one LED each time. Bigger intervals make the sliding slower.
+* `interval` is an optional [Number](/types/number). It means the number of milliseconds before sliding the `value` left by one LED each time. Bigger intervals make the sliding slower. A negative interval is treated as zero.
 
 ### Examples:
 
