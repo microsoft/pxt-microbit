@@ -55,7 +55,7 @@ declare namespace devices {
      */
     //% help=devices/signal-strength weight=24
     //% blockId=devices_signal_strength block="signal strength" blockGap=14 icon="\uf012" blockGap=14 shim=devices::signalStrength
-    function signalStrength(): number;
+    function signalStrength(): int32;
 
     /**
      * Registers code to run when the device notifies about a change of signal strength.
