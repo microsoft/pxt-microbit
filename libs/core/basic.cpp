@@ -17,9 +17,10 @@ namespace basic {
     //% async
     //% parts="ledmatrix"
     void showNumber(int value, int interval = 150) { 
-      if (interval < 0)
+      if (interval < 0) {
+        fiber_sleep(0);
         return;
-
+      }
       ManagedString t(value);
       if (value < 0 || value >= 10) {
         uBit.display.scroll(t, interval);
@@ -55,8 +56,10 @@ namespace basic {
     //% blockId=device_print_message
     //% parts="ledmatrix"
     void showString(StringData *text, int interval = 150) {
-      if (interval < 0)
+      if (interval < 0) {
+        fiber_sleep(0);
         return;
+      }
       ManagedString s(text);
       int l = s.length();
       if (l == 0) {

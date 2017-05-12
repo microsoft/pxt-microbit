@@ -234,16 +234,19 @@ namespace pxsim.ImageMethods {
 
 namespace pxsim.basic {
     export function showNumber(x: number, interval: number) {
-        if (interval < 0) return;
-
-        let leds = createImageFromString(x.toString());
-        if (x < 0 || x >= 10) ImageMethods.scrollImage(leds, 1, interval);
-        else showLeds(leds, interval * 5);
+        if (interval < 0) {
+            pause(0)
+        } else {
+            let leds = createImageFromString(x.toString());
+            if (x < 0 || x >= 10) ImageMethods.scrollImage(leds, 1, interval);
+            else showLeds(leds, interval * 5);
+        }
     }
 
     export function showString(s: string, interval: number) {
-        if (interval < 0) return;
-        if (s.length == 0) {
+        if (interval < 0) {
+            pause(0)
+        } else if (s.length == 0) {
             clearScreen();
             pause(interval * 5);
         } else {
