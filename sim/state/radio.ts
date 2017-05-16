@@ -41,7 +41,7 @@ namespace pxsim {
                 rssi: -1,
                 serial: 0,
                 time: 0,
-                payload: { type: -1 }
+                payload: { type: -1, groupId: 0 }
             };
         }
     }
