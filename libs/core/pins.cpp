@@ -133,6 +133,7 @@ namespace pins {
      */
     //% help=pins/digital-read-pin weight=30
     //% blockId=device_get_digital_pin block="digital read|pin %name" blockGap=8
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     int digitalReadPin(DigitalPin name) {
         PINREAD(getDigitalValue());
     }
@@ -145,6 +146,7 @@ namespace pins {
     //% help=pins/digital-write-pin weight=29
     //% blockId=device_set_digital_pin block="digital write|pin %name|to %value"
     //% value.min=0 value.max=1
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     void digitalWritePin(DigitalPin name, int value) {
         PINOP(setDigitalValue(value));
     }
@@ -155,6 +157,7 @@ namespace pins {
      */
     //% help=pins/analog-read-pin weight=25
     //% blockId=device_get_analog_pin block="analog read|pin %name" blockGap="8"
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     int analogReadPin(AnalogPin name) {
         PINREAD(getAnalogValue());
     }
@@ -167,6 +170,7 @@ namespace pins {
     //% help=pins/analog-write-pin weight=24
     //% blockId=device_set_analog_pin block="analog write|pin %name|to %value" blockGap=8
     //% value.min=0 value.max=1023
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     void analogWritePin(AnalogPin name, int value) {
         PINOP(setAnalogValue(value));
     }
@@ -179,6 +183,7 @@ namespace pins {
      */
     //% help=pins/analog-set-period weight=23 blockGap=8
     //% blockId=device_set_analog_period block="analog set period|pin %pin|to (µs)%micros"
+    //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=4
     void analogSetPeriod(AnalogPin name, int micros) {
         PINOP(setAnalogPeriodUs(micros));
     }
@@ -190,6 +195,7 @@ namespace pins {
     */
     //% help=pins/on-pulsed weight=22 blockGap=8 advanced=true
     //% blockId=pins_on_pulsed block="on|pin %pin|pulsed %pulse"
+    //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=4
     void onPulsed(DigitalPin name, PulseValue pulse, Action body) {
         MicroBitPin* pin = getPin((int)name);
         if (!pin) return;
