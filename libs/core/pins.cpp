@@ -134,6 +134,7 @@ namespace pins {
     //% help=pins/digital-read-pin weight=30
     //% blockId=device_get_digital_pin block="digital read|pin %name" blockGap=8
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+    //% name.fieldOptions.tooltips="false" name.fieldOptions.width="300"
     int digitalReadPin(DigitalPin name) {
         PINREAD(getDigitalValue());
     }
@@ -147,6 +148,7 @@ namespace pins {
     //% blockId=device_set_digital_pin block="digital write|pin %name|to %value"
     //% value.min=0 value.max=1
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+    //% name.fieldOptions.tooltips="false" name.fieldOptions.width="300"
     void digitalWritePin(DigitalPin name, int value) {
         PINOP(setDigitalValue(value));
     }
@@ -158,6 +160,7 @@ namespace pins {
     //% help=pins/analog-read-pin weight=25
     //% blockId=device_get_analog_pin block="analog read|pin %name" blockGap="8"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+    //% name.fieldOptions.tooltips="false"
     int analogReadPin(AnalogPin name) {
         PINREAD(getAnalogValue());
     }
@@ -171,6 +174,7 @@ namespace pins {
     //% blockId=device_set_analog_pin block="analog write|pin %name|to %value" blockGap=8
     //% value.min=0 value.max=1023
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+    //% name.fieldOptions.tooltips="false"
     void analogWritePin(AnalogPin name, int value) {
         PINOP(setAnalogValue(value));
     }
@@ -184,6 +188,7 @@ namespace pins {
     //% help=pins/analog-set-period weight=23 blockGap=8
     //% blockId=device_set_analog_period block="analog set period|pin %pin|to (µs)%micros"
     //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=4
+    //% pin.fieldOptions.tooltips="false"
     void analogSetPeriod(AnalogPin name, int micros) {
         PINOP(setAnalogPeriodUs(micros));
     }
@@ -196,6 +201,7 @@ namespace pins {
     //% help=pins/on-pulsed weight=22 blockGap=8 advanced=true
     //% blockId=pins_on_pulsed block="on|pin %pin|pulsed %pulse"
     //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=4
+    //% pin.fieldOptions.tooltips="false" pin.fieldOptions.width="300"
     void onPulsed(DigitalPin name, PulseValue pulse, Action body) {
         MicroBitPin* pin = getPin((int)name);
         if (!pin) return;
@@ -222,6 +228,8 @@ namespace pins {
     */
     //% blockId="pins_pulse_in" block="pulse in (µs)|pin %name|pulsed %value"
     //% weight=20 advanced=true
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+    //% name.fieldOptions.tooltips="false" name.fieldOptions.width="300"
     int pulseIn(DigitalPin name, PulseValue value, int maxDuration = 2000000) {
         MicroBitPin* pin = getPin((int)name);
         if (!pin) return 0;
@@ -252,6 +260,8 @@ namespace pins {
     //% blockId=device_set_servo_pin block="servo write|pin %name|to %value" blockGap=8
     //% parts=microservo trackArgs=0
     //% value.min=0 value.max=180
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+    //% name.fieldOptions.tooltips="false"
     void servoWritePin(AnalogPin name, int value) {
         PINOP(setServoValue(value));
     }
@@ -263,6 +273,8 @@ namespace pins {
      */
     //% help=pins/servo-set-pulse weight=19
     //% blockId=device_set_servo_pulse block="servo set pulse|pin %value|to (µs) %micros"
+    //% value.fieldEditor="gridpicker" value.fieldOptions.columns=4
+    //% value.fieldOptions.tooltips="false"
     void servoSetPulse(AnalogPin name, int micros) {
         PINOP(setServoPulseUs(micros));
     }
@@ -276,6 +288,8 @@ namespace pins {
      */
     //% blockId=device_analog_set_pitch_pin block="analog set pitch pin %name"
     //% help=pins/analog-set-pitch weight=3 advanced=true
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+    //% name.fieldOptions.tooltips="false"
     void analogSetPitchPin(AnalogPin name) {
       pitchPin = getPin((int)name);
     }
@@ -313,6 +327,8 @@ namespace pins {
     */
     //% help=pins/set-pull weight=3 advanced=true
     //% blockId=device_set_pull block="set pull|pin %pin|to %pull"
+    //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=4
+    //% pin.fieldOptions.tooltips="false" pin.fieldOptions.width="300"
     void setPull(DigitalPin name, PinPullMode pull) {
         PinMode m = pull == PinPullMode::PullDown
             ? PinMode::PullDown
@@ -329,6 +345,8 @@ namespace pins {
     */
     //% help=pins/set-events weight=4 advanced=true
     //% blockId=device_set_pin_events block="set pin %pin|to emit %type|events"
+    //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=4
+    //% pin.fieldOptions.tooltips="false" pin.fieldOptions.width="300"
     void setEvents(DigitalPin name, PinEventType type) {
         getPin((int)name)->eventOn((int)type);
     }
