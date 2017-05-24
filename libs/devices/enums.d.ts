@@ -105,9 +105,9 @@
     //% block="D up"
     DUp = 8,  // MES_DPAD_BUTTON_D_UP
     //% block="1 down"
-    _1Down = 10,  // MES_DPAD_BUTTON_1_UP
+    _1Down = 9,  // MES_DPAD_BUTTON_1_DOWN
     //% block="1 up"
-    _1Up = 9,  // MES_DPAD_BUTTON_1_DOWN
+    _1Up = 10,  // MES_DPAD_BUTTON_1_UP
     //% block="2 down"
     _2Down = 11,  // MES_DPAD_BUTTON_2_DOWN
     //% block="2 up"

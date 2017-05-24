@@ -50,6 +50,11 @@ Here are some fun programs for your @boardname@!
   "description": "chart analog input on the LED screen",
   "url":"/examples/plot-analog-pin",
   "cardType": "example"
+}, {
+  "name": "Stop Watch",
+  "description": "easy time tracking",
+  "url":"/examples/stop-watch",
+  "cardType": "example"
 }]
 ```
 

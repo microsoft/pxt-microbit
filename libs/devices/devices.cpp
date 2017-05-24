@@ -103,9 +103,9 @@ enum class MesDpadButtonInfo {
     //% block="D up"
     DUp = MES_DPAD_BUTTON_D_UP,
     //% block="1 down"
-    _1Down = MES_DPAD_BUTTON_1_UP,
+    _1Down = MES_DPAD_BUTTON_1_DOWN,
     //% block="1 up"
-    _1Up = MES_DPAD_BUTTON_1_DOWN,
+    _1Up = MES_DPAD_BUTTON_1_UP,
     //% block="2 down"
     _2Down = MES_DPAD_BUTTON_2_DOWN,
     //% block="2 up"
@@ -125,62 +125,6 @@ enum class MesDpadButtonInfo {
  */
 //% color=#008272 weight=80 icon="\uf10b"
 namespace devices {
-    static void genEvent(int id, int event) {
-      MicroBitEvent e(id, event);
-    }
-
-    /**
-     * Sends a ``camera`` command to the parent device.
-     * @param event event description
-     */
-    //% weight=30 help=devices/tell-camera-to
-    //% blockId=devices_camera icon="\uf030" block="tell camera to|%property" blockGap=8
-    void tellCameraTo(MesCameraEvent event) { 
-        genEvent(MES_CAMERA_ID, (int)event);
-    }
-
-    /**
-     * Sends a ``remote control`` command to the parent device.
-     * @param event event description
-     */
-    //% weight=29 help=devices/tell-remote-control-to
-    //% blockId=devices_remote_control block="tell remote control to|%property" blockGap=14 icon="\uf144"
-    void tellRemoteControlTo(MesRemoteControlEvent event) { 
-        genEvent(MES_REMOTE_CONTROL_ID, (int)event);
-    }
-
-    /**
-     * Sends an ``alert`` command to the parent device.
-     * @param event event description
-     */
-    //% weight=27 help=devices/raise-alert-to
-    //% blockId=devices_alert block="raise alert to|%property" icon="\uf0f3"
-    void raiseAlertTo(MesAlertEvent event) { 
-        genEvent(MES_ALERTS_ID, (int)event);
-    }
-
-    /**
-     * Registers code to run when the device notifies about a particular event.
-     * @param event event description
-     * @param body code handler when event is triggered
-     */
-    //% help=devices/on-notified weight=26
-    //% blockId=devices_device_info_event block="on notified|%event" icon="\uf10a"
-    void onNotified(MesDeviceInfo event, Action body) {
-        registerWithDal(MES_DEVICE_INFO_ID, (int)event, body);
-    }
-
-    /**
-     * Register code to run when the micro:bit receives a command from the paired gamepad.
-     * @param name button name
-     * @param body code to run when button is pressed
-     */
-    //% help=devices/on-gamepad-button weight=40
-    //% weight=25
-    //% blockId=devices_gamepad_event block="on gamepad button|%NAME" icon="\uf11b"
-    void onGamepadButton(MesDpadButtonInfo name, Action body) {
-        registerWithDal(MES_DPAD_CONTROLLER_ID, (int)name, body);
-    }
 
     static int _signalStrength = -1;
     static void signalStrengthHandler(MicroBitEvent ev) { 
