@@ -22,8 +22,9 @@ pins.spiWrite(0);
 pins.setPull(DigitalPin.P0, PinPullMode.PullDown);
 pins.analogPitch(0, 0);
 pins.analogSetPitchPin(AnalogPin.P0);
+pins.ping(DigitalPin.P0, DigitalPin.P1, PingUnit.Centimeters);
 ```
 
 ### See Also
 
-[digitalReadPin](/reference/pins/digital-read-pin), [digitalWritePin](/reference/pins/digital-write-pin), [analogReadPin](/reference/pins/analog-read-pin), [analogWritePin](/reference/pins/analog-write-pin), [analogSetPeriod](/reference/pins/analog-set-period), [map](/reference/pins/map), [onPulsed](/reference/pins/on-pulsed), [pulseDuration](/reference/pins/pulse-duration), [pulseIn](/reference/pins/pulse-in), [servoWritePin](/reference/pins/servo-write-pin), [servoSetPulse](/reference/pins/servo-set-pulse), [i2cReadNumber](/reference/pins/i2c-read-number), [i2cWriteNumber](/reference/pins/i2c-write-number), [setPull](/reference/pins/set-pull), [analogPitch](/reference/pins/analog-pitch), [analogSetPitchPin](/reference/pins/analog-set-pitch-pin), [spiWrite](/reference/pins/spi-write)
+[digitalReadPin](/reference/pins/digital-read-pin), [digitalWritePin](/reference/pins/digital-write-pin), [analogReadPin](/reference/pins/analog-read-pin), [analogWritePin](/reference/pins/analog-write-pin), [analogSetPeriod](/reference/pins/analog-set-period), [map](/reference/pins/map), [onPulsed](/reference/pins/on-pulsed), [pulseDuration](/reference/pins/pulse-duration), [pulseIn](/reference/pins/pulse-in), [servoWritePin](/reference/pins/servo-write-pin), [servoSetPulse](/reference/pins/servo-set-pulse), [i2cReadNumber](/reference/pins/i2c-read-number), [i2cWriteNumber](/reference/pins/i2c-write-number), [setPull](/reference/pins/set-pull), [analogPitch](/reference/pins/analog-pitch), [analogSetPitchPin](/reference/pins/analog-set-pitch-pin), [spiWrite](/reference/pins/spi-write), [ping](/reference/pins/ping)

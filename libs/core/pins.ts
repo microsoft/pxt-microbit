@@ -1,3 +1,12 @@
+enum PingUnit {
+    //% block="cm"
+    Centimeters,
+    //% block="micros"
+    MicroSeconds,
+    //% block="inches"
+    Inches
+}
+
 /**
  * Control currents in Pins for analog/digital signals, servos, i2c, ...
  */
@@ -37,6 +46,33 @@ namespace pins {
         let buf = createBuffer(pins.sizeOf(format))
         buf.setNumber(format, 0, value)
         pins.i2cWriteBuffer(address, buf, repeated)
+    }
+
+    /**
+     * Send a ping and get the echo time or distance
+     * @param trig the tigger pin
+     * @param echo the echo pin, eg: DigitalPin.P1
+     * @param unit desired conversion unit
+     * @param maxCmDistance maximum distance in centimeters, eg: 500
+     */
+    //% advanced=true
+    //% blockId=pins_ping block="ping trig %trig|echo %echo|unit %unit"
+    export function ping(trig: DigitalPin, echo: DigitalPin, unit: PingUnit, maxCmDistance = 500): number {
+        // send pulse
+        pins.setPull(trig, PinPullMode.PullNone);
+        pins.digitalWritePin(trig, 0);
+        control.waitMicros(2);
+        pins.digitalWritePin(trig, 1);
+        control.waitMicros(10);
+        pins.digitalWritePin(trig, 0);
+
+        // read pulse
+        const d = pins.pulseIn(echo, PulseValue.High, maxCmDistance * 58);
+        switch (unit) {
+            case PingUnit.Centimeters: return d / 58;
+            case PingUnit.Inches: return d / 148;
+            default: return d;
+        }
     }
 
     /**
