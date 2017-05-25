@@ -12,20 +12,19 @@ Help Karel make LED art!
 
 The goal of this activity is to download the JavaScript code given below onto a board,
 then USE the program to introduce new students to the Micro:bit.
-Students will not do the coding this time.  They will be users to get familiar to the board.
+Students will not do the coding this time.  They will be users to get familiar with the board.
 
 ### How to play
 
-Player control:
-* ``A button``: Turn Left
+* ``A button`` **Turn Left**<br>
 Does not draw anything just changes the direction Karel (the flashing led) is facing
-* ``B button``: Move Forward
+* ``B button`` **Move Forward**<br>
 Moves Karel forward one step and leaves the LED on behind him
-* ``shake``: Jump
+* ``shake`` **Jump**<br>
 Moves Karel forward one step without leaving the LED on behind him
-* ``A+B button``: Hide Karel
+* ``A+B button`` **Hide Karel**<br>
 Shows or hides Karel (the flashing LED), to be used once your artwork is complete
-* ``Reset button``: Clear the board and restart
+* ``Reset button`` **Clear the board and restart**<br>
 Restart the program and clear the board
 
 Note, that there is no way to erase, other than restarting.
@@ -51,11 +50,11 @@ For patterns that you design decide which LEDs you want to turn on and then make
 ![](/static/mb/projects/karel/check.png "Check")
 
 ## First letter of your name
-Figure out how to make the first letter of your name with the LEDs.
+Figure out how to make the first letter of your name with the LEDs.<br>
 ![](/static/mb/projects/karel/blank.png "Blank")
 
 ## Your design!
-Make something fun!
+Make something fun!<br>
 ![](/static/mb/projects/karel/blank.png "Blank")
 
 Thanks for playing with Karel the LED!
@@ -67,6 +66,7 @@ Thanks for playing with Karel the LED!
  * Karel the LED
  * 
  * Copy this code into the JavaScript editor and program the board.
+ * Use the instructions above to complete the challenges.
  */
 basic.forever(() => {
     if (board.isKarelActive) {
