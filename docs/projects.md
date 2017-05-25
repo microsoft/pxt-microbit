@@ -85,6 +85,10 @@ Fun games to build with your @boardname@.
   "name": "Milky Monster",
   "url":"/projects/milky-monster",
   "imageUrl":"/static/mb/projects/milky-monster.jpg"
+}, {
+  "name": "Karel the LED",
+  "url": "/projects/karel",
+  "imageUrl": "/static/mb/projects/karel.png"
 }]
 ```
 
@@ -109,4 +113,4 @@ Fun games to build with your @boardname@.
 ### See Also
 
 [Flashing Heart](/projects/flashing-heart), [Smiley Buttons](/projects/smiley-buttons), [Love Meter](/projects/love-meter), [Rock Paper Scissors](/projects/rock-paper-scissors), [Compass](/projects/compass), [Hack your headphones](/projects/hack-your-headphones), [Banana keyboard](/projects/banana-keyboard), [Telegraph](/projects/telegraph), [Guitar](/projects/guitar), [Wallet](/projects/wallet), [Watch](/projects/watch),
-[Milk Monster](/projects/milky-monster)
+[Milk Monster](/projects/milky-monster) [Karel the LED](/projects/karel)
