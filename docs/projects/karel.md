@@ -11,20 +11,20 @@ Help Karel make LED art!
 ![](/static/mb/projects/karel/hi.png "Hi")
 
 The goal of this activity is to download the JavaScript code given below onto a board,
-then USE the program to introduce new students to the Micro:bit.
+then USE the program to introduce new students to the @boardname@.
 Students will not do the coding this time.  They will be users to get familiar with the board.
 
 ### How to play
 
-* ``A button`` **Turn Left**<br>
+* ``A button`` **Turn Left**  
 Does not draw anything just changes the direction Karel (the flashing led) is facing
-* ``B button`` **Move Forward**<br>
+* ``B button`` **Move Forward**  
 Moves Karel forward one step and leaves the LED on behind him
-* ``shake`` **Jump**<br>
+* ``shake`` **Jump**  
 Moves Karel forward one step without leaving the LED on behind him
-* ``A+B button`` **Hide Karel**<br>
+* ``A+B button`` **Hide Karel**  
 Shows or hides Karel (the flashing LED), to be used once your artwork is complete
-* ``Reset button`` **Clear the board and restart**<br>
+* ``Reset button`` **Clear the board and restart**  
 Restart the program and clear the board
 
 Note, that there is no way to erase, other than restarting.
@@ -50,11 +50,11 @@ For patterns that you design decide which LEDs you want to turn on and then make
 ![](/static/mb/projects/karel/check.png "Check")
 
 ## First letter of your name
-Figure out how to make the first letter of your name with the LEDs.<br>
+Figure out how to make the first letter of your name with the LEDs.  
 ![](/static/mb/projects/karel/blank.png "Blank")
 
 ## Your design!
-Make something fun!<br>
+Make something fun!  
 ![](/static/mb/projects/karel/blank.png "Blank")
 
 Thanks for playing with Karel the LED!
@@ -183,3 +183,8 @@ class Board {
 
 }
 ```
+
+
+
+## about the authors
+This project was contributed by Dr. David Fisher a professor at [Rose-Hulman Institute of Technology](http://www.rose-hulman.edu/). Dr. Fisher loves educational robotics and runs various outreach programming activities, including a summar camp, called [Connecting with Code](https://connectingwithcode.org), which gives a @boardname@ to each participant.  
