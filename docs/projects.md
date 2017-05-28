@@ -81,6 +81,10 @@ Fun games to build with your @boardname@.
   "name": "Milky Monster",
   "url":"/projects/milky-monster",
   "imageUrl":"/static/mb/projects/milky-monster.jpg"
+}, {
+  "name": "Railway crossing",
+  "url":"/projects/railway-crossing",
+  "imageUrl":"/static/mb/projects/railway-crossing.png"
 }]
 ```
 
