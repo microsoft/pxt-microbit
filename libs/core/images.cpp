@@ -69,7 +69,7 @@ namespace ImageMethods {
     //% parts="ledmatrix"
     void scrollImage(Image id, int frameOffset, int interval) {
       MicroBitImage i(id);
-      uBit.display.animate(i, interval, frameOffset, MICROBIT_DISPLAY_WIDTH - 1);
+      uBit.display.animate(i, interval, frameOffset, MICROBIT_DISPLAY_ANIMATE_DEFAULT_POS, 0);
     }
 
 
