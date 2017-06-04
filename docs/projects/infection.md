@@ -9,6 +9,8 @@ There is a disease outbreak! Will you find patient zero?!?
 **Infection** is a distributed game which simulates 
 the propagation of an illness. **The goal is to stop the outbreak before every player dies!**
 
+* **Number of players:** 1 Master, 4 or more players. Each Master and players need a @boardname@ with battery pack.
+
 In this game, a master @boardname@ infects a "patient zero" player
 with the sickness. The infected player will be contagious immediately but won't show any sign 
 during the incubation time. The sickness gets transmitted when two @boardname@ get close to each other.
