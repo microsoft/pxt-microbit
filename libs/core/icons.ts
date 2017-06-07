@@ -421,7 +421,7 @@ namespace images {
                                         # # # . .
                                         . # # # #
                                         . # # # .
-                                        . .. . .`);
+                                        . . . . .`);
             case IconNames.House: return images.createImage(`
                                         . . # . .
                                         . # # # .
