@@ -12,6 +12,14 @@
     Add your custom CSS here
 *******************************/
 
+/* Roboto font */
+@RobotoFont: data-uri("../docs/static/fonts/Roboto_400_normal.woff");
+
+@font-face  {
+    font-family: 'Roboto';
+    src: @RobotoFont format("woff");
+}
+
 .ui.button.download-button {
     &:extend(.ui.purple.button all);
 }

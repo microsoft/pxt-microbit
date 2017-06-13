@@ -2,9 +2,10 @@
      User Global Variables
 *******************************/
 
-@importGoogleFonts: true;
+@importGoogleFonts: false;
 
-@fontName  : 'Roboto';
+@headerFont        : Roboto,"Arial Narrow","Helvetica Neue",Helvetica,Arial,sans-serif;
+@pageFont          : Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
 
 @emSize      : 14px;
 @fontSize    : 13px;
