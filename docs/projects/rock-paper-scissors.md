@@ -187,6 +187,7 @@ Here are all the blocks you will need:
 ```shuffle
 input.onButtonPressed(Button.B, () => {
     game.addScore(-1)
+    basic.pause(1)
     basic.showString("LOSSES:")
     basic.showNumber(game.score())
 })
