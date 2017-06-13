@@ -166,11 +166,12 @@ input.onButtonPressed(Button.A, () => {
 
 ## Step 6: Prove you're the greatest!
 
-After your @boardname@ can add `1` to the score, show how many wins you have.
+After your @boardname@ can add `1` to the score, show how many wins you have. Remember to add a pause after addScore so text will display.
 
 ```blocks
 input.onButtonPressed(Button.A, () => {
     game.addScore(1)
+    basic.pause(1)
     basic.showString("WINS:")
     basic.showNumber(game.score())
 })
