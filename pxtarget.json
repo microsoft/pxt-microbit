@@ -193,7 +193,8 @@
         "serviceId": "microbit"
     },
     "serial": {
-        "manufacturerFilter": "^mbed$",
+        "productFilter": "0x0204",
+        "vendorFilter": "0x0d28",
         "nameFilter": "^mbed Serial Port",
         "log": true
     },

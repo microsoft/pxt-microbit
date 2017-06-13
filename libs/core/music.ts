@@ -342,8 +342,8 @@ namespace music {
                         control.raiseEvent(MICROBIT_MELODY_ID, MusicEvent.BackgroundMelodyResumed);
                     }
                 }
-                currentMelody = null;
                 control.raiseEvent(MICROBIT_MELODY_ID, currentMelody.background ? MusicEvent.BackgroundMelodyEnded : MusicEvent.MelodyEnded);
+                currentMelody = null;
             })
         }
     }
