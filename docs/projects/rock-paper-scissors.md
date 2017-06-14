@@ -180,7 +180,8 @@ input.onButtonPressed(Button.A, () => {
 
 Success! Your @boardname@ can track wins!
 But what about losses? 
-Use the ``Game`` drawer to subtract `1` from your score when you press button `B`. 
+Use the ``Game`` drawer to subtract `1` from your score when you press button `B`.
+Change `WINS` to `SCORE` in step 6.
 
 Here are all the blocks you will need:
 
@@ -188,7 +189,7 @@ Here are all the blocks you will need:
 input.onButtonPressed(Button.B, () => {
     game.addScore(-1)
     basic.pause(1)
-    basic.showString("LOSSES:")
+    basic.showString("SCORE:")
     basic.showNumber(game.score())
 })
 ```
