@@ -16,5 +16,4 @@ basic.forever(() => {
     basic.showNumber(angle)    
 })
 pins.servoWritePin(AnalogPin.P0, angle)
-basic.showString("Press A or B to change servo angle")
 ```
