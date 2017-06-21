@@ -20,6 +20,7 @@
     * [Duct tape wallet](/projects/wallet)
     * [Watch](/projects/watch)
     * [Soil Moisture](/projects/soil-moisture)
+    * [Plant Watering](/projects/plant-watering)
     * [Voting Machine](/projects/voting-machine)
     * [Infection](/projects/infection)
     * [Fireflies](/projects/fireflies)
