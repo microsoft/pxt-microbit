@@ -111,6 +111,10 @@ Fun games to build with your @boardname@.
   "name": "Soil Moisture",
   "url":"/projects/soil-moisture",
   "imageUrl":"/static/mb/projects/soil-moisture.jpg"
+}, {
+  "name": "Plant Watering",
+  "url":"/projects/plant-watering",
+  "imageUrl":"/static/mb/projects/plant-watering.jpg"
 }]
 ```
 
