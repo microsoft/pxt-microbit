@@ -102,6 +102,7 @@ Fun games to build with your @boardname@.
 
 ## STEM
 
+```codecard
 [{
   "name": "Timing gates",
   "url":"/projects/timing-gates",
@@ -111,6 +112,7 @@ Fun games to build with your @boardname@.
   "url":"/projects/soil-moisture",
   "imageUrl":"/static/mb/projects/soil-moisture.jpg"
 }]
+```
 
 ## More
 
