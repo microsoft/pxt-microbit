@@ -7,7 +7,7 @@ Make a funny milky-monster robot!
 
 ### ~
 
-![](/static/mb/projects/soil-moisture.jpg)
+![](/static/mb/projects/soil-moisture/soil-moisture.jpg)
 
 ## Materials
 
