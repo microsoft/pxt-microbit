@@ -55,6 +55,8 @@ for dry dirt.
 * insert the nails in the wet dirt, press ``B`` and note the value. You should see a value close to ``1000``
 for dry dirt.
 
+https://youtu.be/S8NppVT_paw
+
 ## Step 3: Don't waste energy!
 
 ![](/static/mb/projects/soil-moisture/nailsp1.jpg)
