@@ -100,14 +100,22 @@ Fun games to build with your @boardname@.
 }]
 ```
 
-## More
+## STEM
 
-```codecard
 [{
   "name": "Timing gates",
   "url":"/projects/timing-gates",
   "imageUrl":"/static/mb/projects/timing-gates.jpg"
-}, {
+},{
+  "name": "Soil Moisture",
+  "url":"/projects/soil-moisture",
+  "imageUrl":"/static/mb/projects/soil-moisture.jpg"
+}]
+
+## More
+
+```codecard
+[{
   "name": "Compass",
   "url":"/projects/compass",
   "imageUrl":"/static/mb/projects/a5-compass.png"
