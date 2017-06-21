@@ -1,14 +1,21 @@
 # Servo calibrator
 
+Use this program to calibrate the angles of a servo.
+Press ``A`` to reduce the angle by 5 and ``B`` to
+increase it by 5.
+
+The current angle is displayed on the screen
+in a loop.
+
 ```blocks
 let angle = 90
 input.onButtonPressed(Button.A, () => {
-    angle -= 5
+    angle -= Math.max(0, 5)
     pins.servoWritePin(AnalogPin.P0, angle)
     led.stopAnimation()
 })
 input.onButtonPressed(Button.B, () => {
-    angle += 5
+    angle += Math.min(180, 5)
     pins.servoWritePin(AnalogPin.P0, angle)
     led.stopAnimation()
 })
