@@ -42,3 +42,8 @@ When the dashboard receives a message from a @boardname@, it find a pixel for th
 and uses the number received as the brightness of the LED.
 
 When a message hasn't been received by a board for some time, it's pixel will start to blink. After more time, it will simply turn off. 
+
+
+```package
+radio
+```
