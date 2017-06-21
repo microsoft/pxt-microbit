@@ -4,6 +4,8 @@ You will need to get a pot of dry dirt and wet dirt for the coding.
 
 ## Step 1: Measuring moisture
 
+![](/static/mb/projects/soil-moisture/nailsv3.jpg)
+
 The soil acts as a variable resistor based on the amount of water and nutrient. 
 The water is not conductive but the nutrient are, so more water, more nutrient, so the soil will be less resistive.
 
@@ -19,6 +21,8 @@ basic.forever(() => {
     )
 })
 ```
+
+### Experiment!
 
 * insert the nails in the dry dirt and you should see most LEDs off
 * insert the nail in the wet dirt and you should see most LEDs on
@@ -44,6 +48,8 @@ basic.forever(() => {
 })
 ```
 
+### Experiment!
+
 * insert the nails in the dry dirt, press ``A`` and note the value. You should see a value close to ``250``
 for dry dirt.
 * insert the nails in the wet dirt, press ``B`` and note the value. You should see a value close to ``1000``
@@ -51,9 +57,11 @@ for dry dirt.
 
 ## Step 3: Don't waste energy!
 
+![](/static/mb/projects/soil-moisture/nailsp1.jpg)
+
 We want our probe to work for a long time on batteries so we need to tweak our code to save energy.
 
-* Our circuit connects directly to the ``3v` pin so it is always using electricity. Instead, 
+* Our circuit connects directly to the ``3v`` pin so it is always using electricity. Instead, 
 we will connect it to ``P1`` and turn that pin high only while the measurement is taken.
 This saves electricty and also avoids corrosion of the probes.
 * We will also lower the brightness of the screen to lower the energy consumption from the LEDs.
@@ -76,6 +84,8 @@ basic.forever(() => {
     basic.pause(5000);
 })
 ```
+
+### Experiment!
 
 * using the dry and wet dirt pots, test that your ciruit still works. Remember you'll have to wait up to 10 seconds to see a change!
 
