@@ -57,7 +57,7 @@ We want our probe to work for a long time on batteries so we need to tweak our c
 we will connect it to ``P1`` and turn that pin high only while the measurement is taken.
 This saves electricty and also avoids corrosion of the probes.
 * We will also lower the brightness of the screen to lower the energy consumption from the LEDs.
-* Soil moisture changes very slowly so we don't need to measure all the times!!! Let's add a [sleep](/reference/basic/sleep) of 10 seconds in the loop as well.
+* Soil moisture changes very slowly so we don't need to measure all the times!!! Let's add a [sleep](/reference/basic/sleep) of 5 seconds in the loop as well.
 
 ```blocks
 led.setBrightness(64)
@@ -73,7 +73,7 @@ basic.forever(() => {
     if (input.buttonIsPressed(Button.A)) {
         basic.showNumber(reading)
     }
-    basic.pause(10000);
+    basic.pause(5000);
 })
 ```
 
