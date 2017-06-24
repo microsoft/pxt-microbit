@@ -17,17 +17,20 @@ The hidden @boardname@ are called **beacons** as they serve as a signal.
 
 We set the radio group to ``1`` to make sure all the players are using the same group. 
 We also tell the @boardname@ to transmit its serial number (that's a unique number that identifies it)
-so that the player can tell apart each beacon.
+so that the player can tell apart each beacon. We also reduce the power of the antenna to reduce the range of transmission.
 
 ```block
 radio.setGroup(1)
 radio.setTransmitSerialNumber(true)
+radio.setTransmitPower(6)
 ```
 
 ### Beacon gotta beam
 
 The beacon simply needs to send a radio message every now and then. To pace it out, 
 we add some ``|show icon|`` blocks to animate the screen.
+
+
 
 ```blocks
 basic.forever(() => {
@@ -37,6 +40,7 @@ basic.forever(() => {
 })
 radio.setGroup(1)
 radio.setTransmitSerialNumber(true)
+radio.setTransmitPower(6)
 ```
 
 ### Hide the beacons
@@ -67,18 +71,21 @@ Take notes of the values as you move around the beacon.
 
 ### Hot or cold?
 
-The hunter screen displays ``H`` on the screen if the beacon is close, ``M`` midly close and ``C`` if it is far away. Use the ``signal`` values collected in the previous step to determine when to show those letters.
+The hunter screen displays ``SmallDiamond`` on the screen if the beacon is far, ``Diamond`` mildly close and ``Square`` if it is close. Use the ``signal`` values collected in the previous step to determine when to show those letters.
 
-Here is an example that uses ``-45`` for hot, ``-70`` for mild. Use your own values based on the room setup or the hidding place.
+Here is an example that uses ``-95`` and less for cold, between ``-95`` and ``-80`` for mild and above ``-80`` for hot. Use your own values based on the room setup or the hidding place.
+
+To make the program more responsive, we add a ``|led stop animation|`` to cancel any icon animation when a new beacon packet comes.
 
 ```blocks
 radio.onDataPacketReceived( ({ receivedNumber, signal }) =>  {
-    if (signal < -45) {
-        basic.showString("H")
-    } else if (signal < -70) {
-        basic.showString("M")
+    led.stopAnimation();
+    if (signal < -90) {
+        basic.showIcon(IconNames.SmallDiamond)
+    } else if (signal < -80) {
+        basic.showIcon(IconNames.Diamond)
     } else {
-        basic.showString("C")
+        basic.showIcon(IconNames.Square)
     }
 })
 radio.setGroup(1)
@@ -110,9 +117,10 @@ if the value is not found.
 ```blocks
 let beacons: number[] = [0]
 radio.onDataPacketReceived( ({ receivedNumber, signal, serial }) =>  {
-    if (beacons.indexOf(serial) < 0) {
+    if (signal > -50 && beacons.indexOf(serial) < 0) {
         beacons.push(serial)
         game.addScore(1)
+        basic.showNumber(game.score())
     }
 })
 ```
@@ -134,16 +142,18 @@ The hunter code with all th pieces together looks like this now. Download it and
 ```blocks
 let beacons: number[] = [0];
 radio.onDataPacketReceived( ({ receivedNumber, signal, serial }) =>  {
-    if (signal < -45) {
-        basic.showString("H")
-    } else if (signal < -70) {
-        basic.showString("M")
+    led.stopAnimation();
+    if (signal < -95) {
+        basic.showIcon(IconNames.SmallDiamond)
+    } else if (signal < -80) {
+        basic.showIcon(IconNames.Diamond)
     } else {
-        basic.showString("C")
-    }
-    if (beacons.indexOf(serial) < 0) {
-        beacons.push(serial)
-        game.addScore(1)
+        basic.showIcon(IconNames.Square)
+        if (signal > -50 && beacons.indexOf(serial) < 0) {
+            beacons.push(serial)
+            game.addScore(1)
+            basic.showNumber(game.score())
+        }
     }
 })
 input.onButtonPressed(Button.A, () => {
