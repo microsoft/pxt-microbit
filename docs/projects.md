@@ -37,21 +37,21 @@ Fun games to build with your @boardname@.
 ## Multiplayer Games
 ```codecard
 [{
-  "name": "Hot Or Cold",
-  "url": "/projects/hot-or-cold",
-  "imageUrl": "/static/mb/projects/hot-or-cold.jpg"
+  "name": "Fireflies",
+  "url": "/projects/fireflies",
+  "imageUrl": "/static/mb/projects/fireflies.png"
 }, {
   "name": "Infection",
   "url": "/projects/infection",
   "imageUrl": "/static/mb/projects/infection.png"
 }, {
+  "name": "Hot Or Cold",
+  "url": "/projects/hot-or-cold",
+  "imageUrl": "/static/mb/projects/hot-or-cold.jpg"
+}, {
   "name": "Voting Machine",
   "url": "/projects/voting-machine",
   "imageUrl": "/static/mb/projects/voting-machine.png"
-}, {
-  "name": "Fireflies",
-  "url": "/projects/fireflies",
-  "imageUrl": "/static/mb/projects/fireflies.png"
 }]
 ```
 
