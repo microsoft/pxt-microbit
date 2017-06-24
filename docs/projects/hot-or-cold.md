@@ -8,10 +8,12 @@ Find the hidden @boarname@ before the other players!
 
 ### ~
 
+https://youtu.be/nbRfNug-RkY
+
 ## Beacons
 
 In this game, players are looking for hidden @boardname@ that emit radio signals. 
-The hidden @boardname@ are called **beacons** as they serve as a signal.
+The hidden @boardname@ are called **beacons**.
 
 ### Setting up the radio
 
