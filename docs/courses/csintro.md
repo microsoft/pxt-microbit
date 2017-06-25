@@ -30,7 +30,7 @@ UNDER CONSTRUCTION: We are still migrating the CSIntro content to this format...
 ### ~
 
 1. [Making](/courses/csintro/making)
-2. Algorithms 
+2. [Algorithms](courses/csintro/algorithms) 
 3. Variables 
 4. Conditionals 
 5. Iteration 
