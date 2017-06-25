@@ -74,6 +74,10 @@ input.onButtonPressed(Button.B, () => {
 });
 ```
 
+## Learn!
+
+We have tons of [projects](/projects), [examples](/examples) and [courses](/courses) to get your started!
+
 ## C++ Runtime
 
 The [C++ micro:bit runtime](http://lancaster-university.github.io/microbit-docs/), created at [Lancaster University](http://www.lancaster.ac.uk/), provides access to the hardware functions of the micro:bit, 
