@@ -60,6 +60,11 @@
             * [Walkthrough](/courses/csintro/making/walkthrough)
             * [Project](/courses/csintro/making/project)
             * [Standards](/courses/csintro/making/standards)
+        * [Algorithms](/courses/csintro/algorithms)
+            * [Overview](/courses/csintro/algorithms/overview)
+            * [Unplugged](/courses/csintro/algorithms/unplugged)
+            * [Activity](/courses/csintro/algorithms/activity)
+            * [Project](/courses/csintro/algorithms/project)
 
 ## #reference
 
