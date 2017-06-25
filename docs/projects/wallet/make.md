@@ -167,7 +167,7 @@ That's it! You have an @boardname@ wallet!
 
 ## Protecting those buttons!
 
-The buttons of the @boarname@ are left vulnerable to being ripped out.
+The buttons of the @boardname@ are left vulnerable to being ripped out.
 
 ![](/static/mb/projects/wallet/rug1.jpg)
 
