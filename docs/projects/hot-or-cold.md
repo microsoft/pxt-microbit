@@ -4,7 +4,7 @@
 
 ### ~avatar avatar
 
-Find the hidden @boarname@ before the other players!
+Find the hidden @boardname@ before the other players!
 
 ### ~
 
