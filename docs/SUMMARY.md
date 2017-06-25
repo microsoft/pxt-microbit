@@ -65,6 +65,7 @@
             * [Unplugged](/courses/csintro/algorithms/unplugged)
             * [Activity](/courses/csintro/algorithms/activity)
             * [Project](/courses/csintro/algorithms/project)
+            * [Standards](/courses/csintro/algorithms/standards)
 
 ## #reference
 
