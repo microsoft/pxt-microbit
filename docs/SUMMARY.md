@@ -23,7 +23,7 @@
     * [Reaction Time](/projects/reaction-time)
     * [States of Matter](/projects/states-of-matter)
     * [Hot Or Cold](/projects/hot-or-cold)
-    * [Voting Machine](/projects/voting-machine)   
+    * [Voting Machine](/projects/voting-machine)
     * [Infection](/projects/infection)
     * [Fireflies](/projects/fireflies)
     * [Rock Paper Scissors Teams](/projects/rps-teams)
