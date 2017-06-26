@@ -52,6 +52,10 @@ Fun games to build with your @boardname@.
   "name": "Voting Machine",
   "url": "/projects/voting-machine",
   "imageUrl": "/static/mb/projects/voting-machine.png"
+}, {
+  "name": "Rock Paper Scissors Teams",
+  "url": "/projects/rock-paper-scissors-teams",
+  "imageUrl": "/static/mb/projects/rpsteams.png"
 }]
 ```
 
