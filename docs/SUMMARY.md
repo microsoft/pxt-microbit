@@ -26,7 +26,7 @@
     * [Voting Machine](/projects/voting-machine)   
     * [Infection](/projects/infection)
     * [Fireflies](/projects/fireflies)
-    * [Rock Paper Scissors Teams](/projects/rock-paper-scissors-teams) 
+    * [Rock Paper Scissors Teams](/projects/rps-teams)
     * [Inchworm](/projects/inchworm)
     * [Milk Carton Robot](/projects/milk-carton-robot)
     * [Milk monster](/projects/milky-monster)

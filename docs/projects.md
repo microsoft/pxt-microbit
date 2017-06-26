@@ -54,7 +54,7 @@ Fun games to build with your @boardname@.
   "imageUrl": "/static/mb/projects/voting-machine.png"
 }, {
   "name": "Rock Paper Scissors Teams",
-  "url": "/projects/rock-paper-scissors-teams",
+  "url": "/projects/rps-teams",
   "imageUrl": "/static/mb/projects/rpsteams.png"
 }]
 ```
@@ -162,4 +162,5 @@ Fun games to build with your @boardname@.
 [Flashing Heart](/projects/flashing-heart), [Smiley Buttons](/projects/smiley-buttons), [Love Meter](/projects/love-meter), [Rock Paper Scissors](/projects/rock-paper-scissors), [Compass](/projects/compass), [Hack your headphones](/projects/hack-your-headphones), [Banana keyboard](/projects/banana-keyboard), [Telegraph](/projects/telegraph), [Guitar](/projects/guitar), [Wallet](/projects/wallet), [Watch](/projects/watch),
 [Milk Monster](/projects/milky-monster), [Karel the LED](/projects/karel), [Infection](/projects/infection), [Voting Machine](/projects/voting-machine)
 [Fireflies](/projects/fireflies), [Soil Moisture](/projects/soil-moisture),
-[States Of Matter](/projects/states-of-matter), [Reaction Time](/projects/reaction-time)
+[States Of Matter](/projects/states-of-matter), [Reaction Time](/projects/reaction-time),
+[Rock Paper Scissors Teams](/projects/rps-teams)
