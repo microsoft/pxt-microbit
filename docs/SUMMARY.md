@@ -67,6 +67,12 @@
             * [Activity](/courses/csintro/algorithms/activity)
             * [Project](/courses/csintro/algorithms/project)
             * [Standards](/courses/csintro/algorithms/standards)
+        * [Variables](/courses/csintro/variables)
+            * [Overview](/courses/csintro/variables/overview)
+            * [Unplugged](/courses/csintro/variables/unplugged)
+            * [Activity](/courses/csintro/variables/activity)
+            * [Project](/courses/csintro/variables/project)
+            * [Standards](/courses/csintro/variables/standards)
 
 ## #reference
 
