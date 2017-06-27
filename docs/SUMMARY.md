@@ -73,6 +73,12 @@
             * [Activity](/courses/csintro/variables/activity)
             * [Project](/courses/csintro/variables/project)
             * [Standards](/courses/csintro/variables/standards)
+        * [Conditionals](/courses/csintro/conditionals)
+            * [Overview](/courses/csintro/conditionals/overview)
+            * [Unplugged](/courses/csintro/conditionals/unplugged)
+            * [Activity](/courses/csintro/conditionals/activity)
+            * [Project](/courses/csintro/conditionals/project)
+            * [Standards](/courses/csintro/conditionals/standards)
 
 ## #reference
 

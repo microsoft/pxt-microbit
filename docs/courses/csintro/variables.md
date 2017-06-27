@@ -31,7 +31,7 @@ Students will...
 1. [**Overview**: Variables and constants](/courses/csintro/variables/overview)
 2. [**Unplugged**: Keeping score](/courses/csintro/variables/unplugged)
 3. [**Activity**: Scorekeeper](/courses/csintro/variables/activity)
-4. [**Project**: Everyting counts](/courses/csintro/variables/project)
+4. [**Project**: Everything counts](/courses/csintro/variables/project)
 
 ## Related standards
 
