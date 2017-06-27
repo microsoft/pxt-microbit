@@ -79,6 +79,12 @@
             * [Activity](/courses/csintro/conditionals/activity)
             * [Project](/courses/csintro/conditionals/project)
             * [Standards](/courses/csintro/conditionals/standards)
+        * [Iteration](/courses/csintro/iteration)
+            * [Overview](/courses/csintro/iteration/overview)
+            * [Unplugged](/courses/csintro/iteration/unplugged)
+            * [Activity](/courses/csintro/iteration/activity)
+            * [Project](/courses/csintro/iteration/project)
+            * [Standards](/courses/csintro/iteration/standards)
 
 ## #reference
 

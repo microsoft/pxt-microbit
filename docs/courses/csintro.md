@@ -35,7 +35,7 @@ UNDER CONSTRUCTION: We are still migrating the CSIntro content to this format...
 2. [Algorithms](/courses/csintro/algorithms) 
 3. [Variables](/courses/csintro/variables) 
 4. [Conditionals](/courses/csintro/conditionals)
-5. Iteration 
+5. [Iteration](/courses/csintro/iteration) 
 6. Review/Mini-Project 
 7. Coordinate Grid System
 8. Booleans
