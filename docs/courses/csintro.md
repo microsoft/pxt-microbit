@@ -38,7 +38,7 @@ UNDER CONSTRUCTION: We are still migrating the CSIntro content to this format...
 5. [Iteration](/courses/csintro/iteration) 
 6. [Review/Mini-Project](/courses/csintro/miniproject)
 7. [Coordinate Grid System](/courses/csintro/coordinates)
-8. Booleans
+8. [Booleans](/courses/csintro/booleans)
 9. Music and Arrays 
 10. Bits, Bytes, and Binary 
 11. Radio 

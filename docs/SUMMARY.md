@@ -96,6 +96,12 @@
             * [Activity](/courses/csintro/coordinates/activity)
             * [Project](/courses/csintro/coordinates/project)
             * [Standards](/courses/csintro/coordinates/standards)
+        * [Booleans](/courses/csintro/booleans)
+            * [Overview](/courses/csintro/booleans/overview)
+            * [Unplugged](/courses/csintro/booleans/unplugged)
+            * [Activity](/courses/csintro/booleans/activity)
+            * [Project](/courses/csintro/booleans/project)
+            * [Standards](/courses/csintro/booleans/standards)
 
 ## #reference
 
