@@ -37,7 +37,7 @@ UNDER CONSTRUCTION: We are still migrating the CSIntro content to this format...
 4. [Conditionals](/courses/csintro/conditionals)
 5. [Iteration](/courses/csintro/iteration) 
 6. [Review/Mini-Project](/courses/csintro/miniproject)
-7. Coordinate Grid System
+7. [Coordinate Grid System](/courses/csintro/coordinates)
 8. Booleans
 9. Music and Arrays 
 10. Bits, Bytes, and Binary 

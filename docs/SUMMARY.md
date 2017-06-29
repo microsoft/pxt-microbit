@@ -90,6 +90,12 @@
             * [Activity](/courses/csintro/miniproject/activity)
             * [Project](/courses/csintro/miniproject/project)
             * [Standards](/courses/csintro/miniproject/standards)
+        * [Coordinates](/courses/csintro/coordinates)
+            * [Overview](/courses/csintro/coordinates/overview)
+            * [Unplugged](/courses/csintro/coordinates/unplugged)
+            * [Activity](/courses/csintro/coordinates/activity)
+            * [Project](/courses/csintro/coordinates/project)
+            * [Standards](/courses/csintro/coordinates/standards)
 
 ## #reference
 
