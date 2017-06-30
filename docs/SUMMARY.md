@@ -102,6 +102,12 @@
             * [Activity](/courses/csintro/booleans/activity)
             * [Project](/courses/csintro/booleans/project)
             * [Standards](/courses/csintro/booleans/standards)
+        * [Binary](/courses/csintro/binary)
+            * [Overview](/courses/csintro/binary/overview)
+            * [Unplugged](/courses/csintro/binary/unplugged)
+            * [Activity](/courses/csintro/binary/activity)
+            * [Project](/courses/csintro/binary/project)
+            * [Standards](/courses/csintro/binary/standards)
 
 ## #reference
 

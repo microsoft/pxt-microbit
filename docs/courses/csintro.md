@@ -39,8 +39,7 @@ UNDER CONSTRUCTION: We are still migrating the CSIntro content to this format...
 6. [Review/Mini-Project](/courses/csintro/miniproject)
 7. [Coordinate Grid System](/courses/csintro/coordinates)
 8. [Booleans](/courses/csintro/booleans)
-9. Music and Arrays 
-10. Bits, Bytes, and Binary 
-11. Radio 
-12. Arrays
-13. Independent Final Project 
+9. [Bits, Bytes, and Binary](/courses/csintro/binary)
+10. Radio 
+11. Arrays
+12. Independent Final Project 
