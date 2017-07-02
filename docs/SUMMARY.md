@@ -108,6 +108,12 @@
             * [Activity](/courses/csintro/binary/activity)
             * [Project](/courses/csintro/binary/project)
             * [Standards](/courses/csintro/binary/standards)
+        * [Radio](/courses/csintro/radio)
+            * [Overview](/courses/csintro/radio/overview)
+            * [Unplugged](/courses/csintro/radio/unplugged)
+            * [Activity](/courses/csintro/radio/activity)
+            * [Project](/courses/csintro/radio/project)
+            * [Standards](/courses/csintro/radio/standards)
 
 ## #reference
 

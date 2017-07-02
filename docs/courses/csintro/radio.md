@@ -4,12 +4,14 @@ This lesson covers the use of more than one micro:bit to share and combine data.
 
 ![Radio wave diagram](/static/courses/csintro/radio/radio-wave.png)
 
-Lesson Objectives: 
+## Lesson objectives
+
 Students will...
 * Understand how to use the Radio blocks to send and receive data between micro:bits
 * Understand the specific types of data that can be sent over the Radio
 
-Lesson Structure
+## Lesson structure
+
 * Introduction: Radio & Communication
 * Unplugged Activity: Infection Simulation
 * Micro:bit Activity: Marco Polo & Morse Code

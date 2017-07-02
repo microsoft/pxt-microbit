@@ -40,6 +40,6 @@ UNDER CONSTRUCTION: We are still migrating the CSIntro content to this format...
 7. [Coordinate Grid System](/courses/csintro/coordinates)
 8. [Booleans](/courses/csintro/booleans)
 9. [Bits, Bytes, and Binary](/courses/csintro/binary)
-10. Radio 
+10. [Radio](/courses/csintro/radio)
 11. Arrays
 12. Independent Final Project 
