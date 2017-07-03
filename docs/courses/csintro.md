@@ -41,5 +41,5 @@ UNDER CONSTRUCTION: We are still migrating the CSIntro content to this format...
 8. [Booleans](/courses/csintro/booleans)
 9. [Bits, Bytes, and Binary](/courses/csintro/binary)
 10. [Radio](/courses/csintro/radio)
-11. Arrays
+11. [Arrays](/courses/csintro/arrays)
 12. Independent Final Project 

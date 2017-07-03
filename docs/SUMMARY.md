@@ -114,6 +114,12 @@
             * [Activity](/courses/csintro/radio/activity)
             * [Project](/courses/csintro/radio/project)
             * [Standards](/courses/csintro/radio/standards)
+        * [Arrays](/courses/csintro/arrays)
+            * [Overview](/courses/csintro/arrays/overview)
+            * [Unplugged](/courses/csintro/arrays/unplugged)
+            * [Activity](/courses/csintro/arrays/activity)
+            * [Project](/courses/csintro/arrays/project)
+            * [Standards](/courses/csintro/arrays/standards)
 
 ## #reference
 
