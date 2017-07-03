@@ -210,7 +210,6 @@ input.onButtonPressed(Button.B, () => {
 basic.clearScreen()
 ```
 
-Here it is online: [**HappySadFace**](https://makecode.microbit.org/_52r8737R8d88)
 
 
 

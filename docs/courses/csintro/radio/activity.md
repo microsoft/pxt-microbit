@@ -56,7 +56,7 @@ radio.setGroup(1)
 
 ## Mods
 * Add a 'show leds' block to the 'on start' block. We created an image of the initials MP.
-* From the Music Toolbox drawer, drag 2 'play tone' blocks to the coding workspace.  See https://makecode.microbit.org/projects/hack-your-headphones for how to connect a speaker or headphones to the micro:bit.
+* From the Music Toolbox drawer, drag 2 'play tone' blocks to the coding workspace.  See [hack your headphones](/projects/hack-your-headphones) for how to connect a speaker or headphones to the micro:bit.
 * Drag one of the 'play tone' blocks to the 'on button A pressed' block, and the other one to the 'on button B pressed' block.
 * Change the default value in the 'play tone' block that is inside the 'on button A pressed' block to the value Low C.
 

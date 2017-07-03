@@ -62,8 +62,6 @@ input.onGesture(Gesture.Shake, () => {
 })
 ```
 
-See the [**BattleGame**](https://makecode.microbit.org/12149-80948-84778-40832) project online.
-
 ## Beta Testing
 
 Give students a chance to play each other’s games. The following process works well:
@@ -145,7 +143,6 @@ input.onButtonPressed(Button.A, () => {
 basic.showString("SPACE RACE")
 previous_roll = 0
 ```	
-See the [SpaceRace](https://makecode.microbit.org/65306-07188-65044-14657) game online.
 
 ## Assessment
 

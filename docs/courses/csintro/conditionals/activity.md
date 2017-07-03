@@ -19,11 +19,49 @@ Else display scissors icon.
 
 ## micro:bit
 * Working from the specifications, have students work in pairs to try to code a Rock Paper Scissors game on their own.
-* If students get stuck, there is a tutorial at https://pxt.microbit.org/projects/rock-paper-scissors (steps 1 through 4), that leads students step-by-step through the process of coding a working rock paper scissor game for their micro:bit.
+* If students get stuck, there is a tutorial at [rock, paper, scissors](/projects/rock-paper-scissors) (steps 1 through 4), that leads students step-by-step through the process of coding a working rock paper scissor game for their micro:bit.
 * Let them play the game against their program.
 
 ## Ideas for Mods
 * Add a way to keep score: Steps 5 through 7 in the tutorial
 * Mod the game to use different images or to add more options like ‘Rock Paper Scissors Lizard Spock’, Step 8 in the tutorial
 
-See the activity online: [**Rock, paper, scissors**](https://makecode.microbit.org/_A6Xbepc3w4uu)
+Here's an example mod:
+
+```blocks
+let hand = 0
+input.onGesture(Gesture.Shake, () => {
+    hand = Math.random(3)
+    if (hand == 0) {
+        basic.showLeds(`
+            # # # # #
+            # . . . #
+            # . . . #
+            # . . . #
+            # # # # #
+            `)
+    } else if (hand == 1) {
+        basic.showLeds(`
+            . . . . .
+            . # # # .
+            . # # # .
+            . # # # .
+            . . . . .
+            `)
+    } else {
+        basic.showLeds(`
+            # # . . #
+            # # . # .
+            . . # . .
+            # # . # .
+            # # . . #
+            `)
+    }
+})
+input.onButtonPressed(Button.A, () => {
+    game.addScore(1)
+    basic.pause(100)
+    basic.showString("Wins:")
+    basic.showNumber(game.score())
+})
+```

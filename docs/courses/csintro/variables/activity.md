@@ -199,7 +199,6 @@ PlayerAWins = 0
 PlayerBWins = 0
 PlayersTie = 0
 ```
-See the activity online: [**Scorekeeper**](https://makecode.microbit.org/47893-98679-98470-56344)
 
 ## Try it out!
 Download the Scorekeeper program to the micro:bit, and have the students play one last round of Rock Paper Scissors using their micro:bits to act as the Scorekeeper!

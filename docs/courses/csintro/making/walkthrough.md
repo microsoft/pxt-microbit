@@ -32,9 +32,6 @@ basic.forever(() => {
 })
 ```
 
-See the [**MicroPet**](https://makecode.microbit.org/_38yJ1PAkuKPV) project online.
-https://makecode.microbit.org/_38yJ1PAkuKPV
-
 ## Tour of Microsoft MakeCode
 
 * **Simulator**	 - on the left side of the screen, you will see a virtual micro:bit that will show what your program will look like running on a micro:bit. This is helpful for debugging, and instant feedback on program execution.
