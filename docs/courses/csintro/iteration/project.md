@@ -68,9 +68,9 @@ Have students write a reflection of about 150–300 words, addressing the follow
 `*` Uses loops in a way that is integral to the program<br/>
 `*` Compiles and runs as intended<br/>
 `*` Meaningful comments in code<br/>
-**3 =** micro:bit program lacks 1 of the required elements<br/>
-**2 =** micro:bit program lacks 2 of the required elements<br/>
-**1 =** micro:bit program lacks 3 or more of the required elements
+**3 =** micro:bit program lacks 1 of the required elements.<br/>
+**2 =** micro:bit program lacks 2 of the required elements.<br/>
+**1 =** micro:bit program lacks 3 or more of the required elements.
 
 ### Collaboration reflection
 **4 =** Reflection piece includes:<br/>

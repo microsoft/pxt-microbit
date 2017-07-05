@@ -27,11 +27,11 @@ You can stick the micro:bit into place using some sticky tape, or you can create
 ![Binary cash register project](/static/courses/csintro/binary/binary-cash-register.jpg)
 An implementation of the Binary Cash Register
 
-## Extra Mods
+## Extra mods
 * Write some code that will display the number in binary when you press the A button. 
 * Think of a way to create more place values, perhaps by using a second micro:bit and a Radio connection.
 
-## Optional Project: Build a Binary Wristwatch
+## Optional project: Build a binary wristwatch
 * Write a program that will display the correct time (once set) on the micro:bit. 
 * The 3-4 numbers displayed will be in binary (not decimal).
 * To make the strap of the wristwatch, put 2 pieces of duct tape back-to-back, and use velcro tabs as the fasteners
@@ -82,7 +82,7 @@ Have students write a reflection of about 150–300 words, addressing the follow
 **2 =** Reflection piece lacks 2 of the required elements.<br/>
 **1 =** Reflection piece lacks 3 of the required elements. 
 
-## Additional Questions to Ponder
+## Additional questions to ponder
 * How could you use a row of flashlights to represent a number to someone else far away? 
 * How might you use those flashlights to send a message?
 	

@@ -52,7 +52,7 @@ View projects at the following sites for inspiration:
 * http://make.techwillsaveus.com/bbc-microbit
 * http://microbit.org/ideas/
 * https://twitter.com/MicroMonstersUK
-* https://pxt.microbit.org/projects
+* [Projects](/projects)
 
 ## Examples
 

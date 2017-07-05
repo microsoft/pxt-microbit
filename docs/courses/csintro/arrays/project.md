@@ -8,11 +8,11 @@ Ideally, the micro:bit should be mounted in some kind of housing, perhaps a guit
 
 Here are some examples of guitars that were made out of cardboard and colored, patterned duct tape that you can buy in craft stores. 
 
-## Example Guitar Code
+## Example guitar code
 
 This is an example of a project that uses the micro:bit accelerometer to play different tones when the guitar is held and tilted while playing. Pressing the A button will save the current tone to an array. After ten tones, a repeating melody will be performed. Press the B button to clear the array and start over.
 
-## Song-maker
+### Song-maker
 
 ```blocks
 let currentNote = 0

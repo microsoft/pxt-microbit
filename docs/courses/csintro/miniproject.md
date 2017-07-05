@@ -10,7 +10,7 @@ It also reinforces the important idea that how you solve problems is at least as
 
 ## Lesson plan
 
-1. [**Review**: Look back at what we've learned so far](/courses/csintro/miniproject/review)
+1. [**Review**: Looking back at what we've learned so far](/courses/csintro/miniproject/review)
 3. [**Activity**: Collaboratively independent](/courses/csintro/miniproject/activity)
 4. [**Project**: Mini-project](/courses/csintro/miniproject/project)
 

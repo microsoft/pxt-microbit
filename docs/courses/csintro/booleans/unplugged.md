@@ -1,4 +1,4 @@
-## Unplugged: Two Heads are Better Than One
+## Unplugged: Two heads are better than one
 
 Materials: A penny for each student, paper and pencils
  
@@ -193,15 +193,15 @@ basic.forever(() => {
 })
 ```
 
-## Random Functions
+## Random functions
 
 We use a coin flip to decide things because the result is random, meaning the result happens without any conscious decision or direction. We use dice and game spinners for the same reason. The results are not predetermined or directed in any way.
  
 So, how do we get a random flip in code? Most computer programming languages have a built in function that will select a random number given a range of values. Microsoft MakeCode has a block for this.  And it also has a block for getting a random true or false value.
  
-We will call on this built in function to get a random true or false value for each flip of a coin in the next [Activity](/courses/csintro/booleans/activity).
+We will call on this built in function to get a random true or false value for each flip of a coin in the next [activity](/courses/csintro/booleans/activity).
  
-Our basic pseudocode for our Double Coin Flipper could look like this:
+Our basic pseudocode for our 'double coin flipper' could look like this:
 
 1. Use the random function to get a true/false value for Coin A.
 2. Use the random function to get a true/false value for Coin A.

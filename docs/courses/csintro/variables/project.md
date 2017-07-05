@@ -13,7 +13,7 @@ Remind the students of all the different inputs available to them through the mi
 
 ### Duct tape wallet
 
-You can find instructions on the web for creating a durable, fashionable wallet or purse out of duct tape (https://pxt.microbit.org/projects/wallet). Create a place for the micro:bit to fit securely. Use Button A to add dollars to the wallet, and Button B to subtract dollars from the wallet.
+You can see the instructions for creating a durable, fashionable wallet or purse out of duct tape: [Duct tape wallet](/projects/wallet). Create a place for the micro:bit to fit securely. Use Button A to add dollars to the wallet, and Button B to subtract dollars from the wallet.
 
 **Extra mod:** Use other inputs to handle cents, and provide a way to display how much money is in the wallet in dollars and cents.
 

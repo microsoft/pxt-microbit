@@ -2,7 +2,7 @@
 
 This lesson introduces the concept of looping and iteration. Presents the 'While' block as a combination of an iteration and a conditional statement.
 
-## Lesson Objectives
+## Lesson objectives
 
 Students will...
 * Understand the value of iteration in programming
@@ -10,7 +10,7 @@ Students will...
 * Learn how and when to use the Looping blocks ‘repeat’, ‘while’, and ‘for’
 * Apply the above knowledge and skills to create a unique program that uses iteration and looping as an integral part of the program
 	
-## Lesson Structure
+## Lesson structure
 
 * Introduction: Lather. Rinse. Repeat.
 * Unplugged Activity: Walk a Square pseudocode

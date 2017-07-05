@@ -58,7 +58,7 @@
         * [Making](/courses/csintro/making)
             * [Introduction](/courses/csintro/making/introduction)
             * [Unplugged](/courses/csintro/making/unplugged)
-            * [Walkthrough](/courses/csintro/making/walkthrough)
+            * [Walkthrough](/courses/csintro/making/activity)
             * [Project](/courses/csintro/making/project)
             * [Standards](/courses/csintro/making/standards)
         * [Algorithms](/courses/csintro/algorithms)
@@ -120,6 +120,11 @@
             * [Activity](/courses/csintro/arrays/activity)
             * [Project](/courses/csintro/arrays/project)
             * [Standards](/courses/csintro/arrays/standards)
+        * [Final Project](/courses/csintro/finalproject)
+            * [Review](/courses/csintro/finalproject/review)
+            * [Project](/courses/csintro/finalproject/project)
+            * [Examples](/courses/csintro/finalproject/examples)
+            * [Standards](/courses/csintro/finalproject/standards)
 
 ## #reference
 

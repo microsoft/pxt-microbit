@@ -33,10 +33,10 @@ _Bring the person to the front of the line and then compare that person’s numb
 ## Some Different Types of Sorts
 In computer science, there are certain common strategies, or algorithms, for sorting a collection of values. Try acting out each of these different sorts with your students.
  
-## Bubble Sort
+### Bubble Sort
 Compare the first two students. If the student on the right is smaller than the student on the left, they should swap places. Then compare the second and third students. If the student on the right is smaller than the student on the left, they should swap places. When you reach the end, start over at the beginning again. Continue in this way until you make it through the entire row of students without swapping anybody.
  
-### In pseudocode:
+#### In pseudocode:
 1. Create a variable called counter.
 2. Set the counter to zero.
 3. Go through the entire array.
@@ -45,7 +45,7 @@ Compare the first two students. If the student on the right is smaller than the 
 >2. Add one to counter
 5. Repeat steps 2 through 4 as long as counter is greater than zero.
  
-### In MakeCode:
+#### In MakeCode:
 
 **Note:** Press B to display the array visually. The length of each vertical bar represents each number in the array, from left to right. Press A to sort the array using Bubble Sort. Press A + B to generate new random numbers for the array.
 
@@ -104,15 +104,15 @@ list = [4, 2, 5, 1, 3]
 counter = 1
 ```
 
-## Selection Sort
+### Selection Sort
 Take the first student on the left and consider that person’s number the smallest number you have found so far. If the next person in line has a number that is smaller than that number, then make that person’s number your new smallest number and continue in this way until you reach the end of the line of students. Then, move the person with the smallest number all the way to the left. Then start over from the second person in line. Keep going, finding the smallest number each time, and making that person the rightmost person in the sorted line of students.
  
-### In pseudocode:
+#### In pseudocode:
 1. Find the smallest unsorted value in the array.
 2. Swap that value with the first unsorted value in the array.
 3. Repeat steps 1 and 2 while the number of unsorted items is greater than zero.
  
-### In MakeCode:
+#### In MakeCode:
 
 **Note:** The inner loop gets smaller as the sorting algorithm runs because the number of unsorted items decreases as you go. The index that the inner loop starts at needs to change as the number of sorted items increases, which is why we have to use a separate counter (item) and compute j every time through the inner loop.
 
@@ -178,15 +178,15 @@ list = [4, 2, 5, 1, 3]
 min = 1
 ```
 
-## Insertion Sort
+### Insertion Sort
 Take the first student on the left and consider that person sorted. Next, take the next student and compare him to the first student in the sorted section. If he is greater than the first student, then place him to the right of the student in the sorted section. Otherwise, place him to the left of the student in the sorted section. Continue down the line, considering each student in turn and then moving from left to right along the students in the sorted section until you find the proper place for each student to go, shifting the other students to the right to make room.
  
-### In pseudocode:
+#### In pseudocode:
 1. For each element in the unsorted section of the list, compare it against each element in the sorted section of the list until you find its proper place.
 2. Shift the other elements in the sorted list to the right to make room.
 3. Insert the element into its proper place in the sorted list.
  
-### In MakeCode:
+#### In MakeCode:
 
 ```blocks
 let j = 0

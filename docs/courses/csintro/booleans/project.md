@@ -299,8 +299,13 @@ This is an example of a board game in which the micro:bit displays an arrow poin
 
 
 Here is a portion of the board game's code. A boolean variable is used to determine whose turn it is. If player1Turn is false, then it's player 2's turn. A random number is generated to show the arrow seventy-five percent of the time (for values of 0, 1, or 2).
-```block
-if (player1Turn == true && Math.random(4) < 3) {}
+
+```blocks
+input.onGesture(Gesture.Shake, () => {
+if (player1Turn == true && Math.random(4) < 3) {
+
+    }
+})
 ```
 
 ## Assessment
@@ -317,8 +322,8 @@ if (player1Turn == true && Math.random(4) < 3) {}
 ### Micro:bit program
 
 **4 =** micro:bit program:<br/>
-`*` Uses Boolean variables in a way that is integral to the program<br/>
-`*` Uses a random function in a way that is integral to the program<br/>
+`*` Uses Boolean variables in a way that is integral to the program.<br/>
+`*` Uses a random function in a way that is integral to the program.<br/>
 `*` Compiles and runs as intended<br/>
 `*` Meaningful comments in code<br/>
 **3 =** micro:bit program lacks 1 of the required element.<br/>

@@ -37,19 +37,18 @@ This course takes approximately 14 weeks to complete, spending about 1 week on e
 
 ## Overall Course Scope & Sequence:
 
-1. [Making](/csintro/making) 
-2. Algorithms 
-3. Variables 
-4. Conditionals 
-5. Iteration 
-6. Review/Mini-Project 
-7. Coordinate Grid System
-8. Booleans
-9. Music and Arrays 
-10. Bits, Bytes, and Binary 
-11. Radio 
-12. Arrays
-13. Independent Final Project 
+1. [Making](/courses/csintro/making) 
+2. [Algorithms](/courses/csintro/algorithms)
+3. [Variables](/courses/csintro/variables)
+4. [Conditionals](/courses/csintro/conditionals)
+5. [Iteration](/courses/csintro/iteration)
+6. [Review/Mini-Project](courses/csintro/miniproject)
+7. [Coordinate Grid System](/courses/csintro/coordinates)
+8. [Booleans](/courses/csintro/booleans)
+9. [Bits, Bytes, and Binary](/courses/csintro/binary) 
+10. [Radio](/courses/csintro/radio)
+11. [Arrays](/courses/csintro/arrays)
+12. [Independent Final Project](/courses/csintro/finalproject)
 
 Each of the 12 lessons is comprised of the following parts:
 

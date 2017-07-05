@@ -6,7 +6,7 @@ Guide the students to create programs using coordinates and LEDs. Each of these 
 * Random Patterns generator - A short exercise using a loop to generate random LED patterns and then checking the status of a specific LED.
 * Brightness - A short exercise in using the brightness settings for the micro:bit LEDs.
 
-## Smile Animation
+## Smile animation
 
 A short exercise in plotting and toggling LEDs to create a simple animation.
 * Though students can use the 'show leds' block for images and animation, there is another way to tell the micro:bit what LEDs to turn on and off using coordinates.
@@ -79,7 +79,7 @@ led.plot(3, 3)
 * Add a third image to the animation, perhaps a frown face. 
 * Make your own custom animation! What LEDs stay the same and which need to be toggled?
  
-## Random Patterns generator
+## Random patterns generator
 A short exercise using a loop to generate random LED patterns and then checking the status of a specific LED.
 Pseudocode:
 * On button A pressed we’ll use a loop to turn on a random set of LED lights on our micro:bit. 
@@ -129,7 +129,7 @@ input.onButtonPressed(Button.B, () => {
 })
 ```
 
-Try it out!
+### Try it out!
 * Download the program to your micro:bit
 * Press button A to create a random pattern
 * Press button B to check and display the status of the specific LED
@@ -193,6 +193,6 @@ led.setBrightness(255)
 basic.showIcon(IconNames.Heart)
 ```
 
-Try it out!
+### Try it out!
 
 * What happens if adding 25 or subtracting 25 from the current brightness level would result in a sum or difference outside of the 0 to 255 brightness range? 

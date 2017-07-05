@@ -33,13 +33,39 @@ Sample fidget cube designs
 
 ## Assessment
 
-| | 4 | 3 | 2 | 1 |
-| - | - | - | - |
-| ============= | =============== | =============== | ============== | ============= |
-| Inputs | At least 4<br/>different inputs<br/>are successfully<br/>implemented | At least 3<br/>different inputs<br/> are successfully<br/>implemented | At least 2<br/>different inputs<br/>are successfully<br/>implemented | Fewer than 2<br/>different inputs<br/>are successfully<br/>implemented |
-| ============= | =============== | =============== | ============== | ============= |
-| Outputs | At least 4<br/>different outputs<br/>are successfully<br/>implemented | At least 3<br/>different outputs<br/>are successfully<br/>implemented | At least 2<br/>different outputs<br/>are successfully<br/>implemented | Fewer than 2<br/>different outputs<br/>are successfully<br/>implemented |
-| ============= | =============== | =============== | ============== | ============= |
-| Micro:bit<br/>program |Micro:bit<br/>program:<br/>- uses event<br/>handlers in a<br/>way that is<br/>integral to the<br/>program<br/>- compiles and<br/>runs as<br/>intended<br/>- includes<br/>meaningful<br/>comments | Micro:bit<br/>program lacks 1<br/>of the required<br/>elements | Micro:bit<br/>program lacks 2<br/>of the required<br/>elements | Micro:bit<br/>program lacks all<br/>or of the<br/>required<br/>elements |
-| ============= | =============== | =============== | ============== | ============= |
-| Collaboration<br/>reflection | Reflection piece<br/>includes:<br/>- brainstorming<br/>ideas<br/>- construction<br/>programming<br/>beta testing | Reflection piece<br/>lacks 1 of the<br/>required<br/>elements |	Reflection piece<br/>lacks 2 of the<br/>required<br/>elements | Reflection piece<br/>lacks 3 of the<br/>required<br/>elements |
+**Competency scores**: 4, 3, 2, 1
+
+### Inputs
+
+**4 =** At least 4 different inputs are successfully implemented.<br/>
+**3 =** At least 3 different inputs are successfully implemented.<br/>
+**2 =** At least 2 different inputs are successfully implemented.<br/>
+**1 =** Fewer than 2 different inputs are successfully implemented.
+
+### Outputs
+
+**4 =** At least 4 different outputs are successfully implemented.<br/>
+**3 =** At least 3 different outputs are successfully implemented.<br/>
+**2 =** At least 2 different outputs are successfully implemented.<br/>
+**1 =** Fewer than 2 different outputs are successfully implemented.
+
+### micro:bit program
+
+**4 =** micro:bit program:
+`*` uses event handlers in a way that is integral to the program<br/>
+`*` compiles and runs as intended<br/>
+`*` includes meaningful comments<br/>
+**3 =** micro:bit program lacks 1 of the required elements<br/>
+**2 =** micro:bit program lacks 2 of the required elements<br/>
+**1 =** micro:bit program lacks all of the required elements.
+
+### Collaboration reflection
+
+**4 =** Reflection piece includes:<br/>
+`*` brainstorming ideas<br/>
+`*` construction<br/>
+`*` programming<br/>
+`*` beta testing<br/>
+**3 =** Reflection piece lacks 1 of the required elements.<br/>
+**2 =** Reflection piece lacks 2 of the required elements.<br/>
+**1 =** Reflection piece lacks 3 of the required elements.

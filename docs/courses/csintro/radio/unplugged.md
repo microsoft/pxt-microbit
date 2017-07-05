@@ -18,8 +18,7 @@ The goals of this activity are:
 ![Biohazard symbol](/static/courses/csintro/radio/infection.png)
 
 ## Setup
-This site is the home page for the Infection game:
-https://pxt.microbit.org/projects/infection
+This site is the home page for the Infection game: [Infection](/projects/infection).
  
 On that page you should be able to copy the JavaScript code, then go to your MakeCode JavaScript editor and paste the JavaScript code into the window.
  

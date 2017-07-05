@@ -5,14 +5,14 @@ This lesson introduces the use of the boolean data type to control the flow of a
 ![Picture and quote of Shakespeare](/static/courses/csintro/booleans/shakespeare.png)
 Shakespeare knew Booleans (quote from Hamlet)
 
-## Lesson Objectives 
+## Lesson objectives 
 Students will...
 * Understand what booleans and boolean operators are, and why and when to use them in a program.
 * Learn how to create a boolean, set the boolean to an initial value, and change the value of the boolean within a micro:bit program.
 * Learn how to use the random true or false block. 
 * Apply the above knowledge and skills to create a unique program that uses booleans and boolean operators as an integral part of the program.
  
-## Lesson Plan Structure
+## Lesson structure
 * Introduction: Booleans in daily life
 * Unplugged Activity: Two Heads are Better Than One
 * Micro:bit Activity: Double Coin Flipper

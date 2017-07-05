@@ -153,7 +153,7 @@ decimal = 0
 binary = ""
 ```
 
-## Try it out!
+### Try it out!
 Have someone else try your program out. Then think about how the program might be improved. 
 Here are some additional modifications you might try:
 * Add a way to clear the binary and decimal values so you can start over.

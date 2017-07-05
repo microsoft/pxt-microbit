@@ -114,7 +114,7 @@ If there is time, let the students experiment with changing the parameters to se
 
 We just used the first of the 3 different types of Loop blocks available to us. What about the other 2 loop blocks, ‘while’ and ‘for’?
 
-## ‘For’ block: Traveling light
+## ‘For’ block: traveling light
 
 The ‘for’ block is useful when you have a variable in your loop that you want to change by a fixed amount within a specific range each time through a loop.  What does this mean? Let’s look at an example.
 
@@ -265,4 +265,4 @@ Example Pseudocode:
 
 _When someone shakes the micro:bit, while button A is not pressed, play the two tone alarm twice. Keep playing the alarm tones until the user presses the A button._
 
-To use sound with your micro:bit, you will need to connect it to some speakers or headphones. See how to do this here:  https://pxt.microbit.org/projects/hack-your-headphones
+To use sound with your micro:bit, you will need to connect it to some speakers or headphones. See how to do this here: [Hack you headphones](/projects/hack-your-headphones).

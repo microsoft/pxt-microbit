@@ -91,8 +91,8 @@ Because we were able to visualize our blocks as we wrote our pseudocode, we alre
  
 * We can now simply add this to our current code
 * And provide user feedback by adding some visuals
-	
-```block
+
+```blocks
 let PlayerBScore = 0
 let PlayerAScore = 0
 let CoinBHeads = false

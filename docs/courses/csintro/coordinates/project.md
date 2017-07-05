@@ -11,7 +11,7 @@ Your task is to create:
 
 1. A "screen saver" animation using the plot/unplot blocks. You can fill the screen line by line, pausing between each one, or fill it with a random constellation of stars. 
 
-OR
+>-- OR --
 
 1. A game that uses sprites to manage the x and y coordinate values of the different objects.
 
@@ -19,7 +19,7 @@ Your project might use variables to store the values of sprites, which are speci
 
 ## Project Ideas
 
-### Firework Screensaver
+### Firework screensaver
 
 This project uses a for loop with the plot/unplot blocks to create a symmetrical design on the screen. This student used a subtraction operation to get a variable that decreases as the index variable in the loop increases.
 
@@ -40,7 +40,7 @@ basic.forever(() => {
 })
 ```
 
-### Cascade Screensaver
+### Cascade screensaver
 
 This example creates a diagonal cascading effect across the screen. Note the use of a variable (speed) to allow you to easily change the speed of the animation by changing just one number value.
 
@@ -81,7 +81,7 @@ basic.forever(() => {
 speed = 10
 ```
 
-### Dodge Ball Game 
+### Dodge ball game 
 This is a Dodge Ball game that uses one sprite (dodger) to try to avoid another sprite (ball). You use the A and B buttons to move the dodger to avoid the balls that are falling from the top of the screen.
 
 Here is the complete Dodge Ball program.

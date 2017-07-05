@@ -171,6 +171,7 @@ To comment a block of code:
 Notes
 * When you right-click on the icon that appears before the words on a block, notice that there are other options available to you that allow you to duplicate and delete blocks, as well as get help. Feel free to explore and use these as you code.
 * In JavaScript, you can add a comment by using two forward slashes, then typing your comment. The two forward slashes tell JavaScript that the following text (on that same line) is a comment.
+
 ```typescript
 // Display a happy face when button A is pressed.
 ```
