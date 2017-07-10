@@ -22,21 +22,6 @@ input.rotation(Rotation.Pitch);
 input.magneticForce(Dimension.X);
 input.runningTime();
 input.setAccelerometerRange(AcceleratorRange.OneG);
-input.onLogoDown(() => {
-    
-});
-input.onLogoUp(() => {
-    
-});
-input.onScreenDown(() => {
-    
-});
-input.onScreenUp(() => {
-    
-});
-input.onShake(() => {
-    
-});
 ```
 
 ### See Also

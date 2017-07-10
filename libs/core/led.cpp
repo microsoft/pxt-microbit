@@ -2,7 +2,7 @@
 
 enum class DisplayMode_ {
     //% block="black and white"
-    BackAndWhite = DISPLAY_MODE_BLACK_AND_WHITE,
+    BlackAndWhite = DISPLAY_MODE_BLACK_AND_WHITE,
     //% block="greyscale"
     Greyscale = DISPLAY_MODE_GREYSCALE,
     // TODO DISPLAY_MODE_BLACK_AND_WHITE_LIGHT_SENSE
@@ -91,6 +91,7 @@ namespace led {
      * @param mode mode the display mode in which the screen operates
      */
     //% weight=1 help=led/set-display-mode
+    //% blockId=device_led_set_display_mode block="set display mode %mode"
     //% parts="ledmatrix" advanced=true
     void setDisplayMode(DisplayMode_ mode) {
         uBit.display.setDisplayMode((DisplayMode)mode);
@@ -99,7 +100,7 @@ namespace led {
     /**
     * Turns on or off the display
     */
-    //% help=led/enable blockId=device_led_enable block="led enable %on"
+    //% help=led/enable blockId=device_led_enable block="enable %on"
     //% advanced=true parts="ledmatrix"
     void enable(bool on) {
         if (on) uBit.display.enable();
@@ -109,7 +110,7 @@ namespace led {
     /**
      * Takes a screenshot of the LED screen and returns an image.
      */
-    //% help=led/screenshot
+    //% help=led/screenshot blockId=device_led_screenshot block="screenshot"
     //% parts="ledmatrix"
     Image screenshot() {
       return uBit.display.screenShot().leakData();

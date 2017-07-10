@@ -18,13 +18,6 @@ basic.forever(() => {
     
 });
 basic.pause(100);
-basic.plotLeds(`
-. . . . .
-. . . . .
-. . # . .
-. . . . .
-. . . . .
-`);
 basic.showArrow(ArrowNames.North);
 basic.showAnimation(`
 . . . . .
