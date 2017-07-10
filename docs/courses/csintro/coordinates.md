@@ -17,7 +17,7 @@ Students will...
 
 * Introduction: Coordinate Grid
 * Unplugged Activity: Battleship
-* Micro:bit Activities: Animation and Patterns
+* micro:bit Activities: Animation and Patterns
 * Project: Screensaver or Game
 * Assessment: Rubric 
 * Standards: Listed

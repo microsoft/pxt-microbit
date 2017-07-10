@@ -319,7 +319,7 @@ if (player1Turn == true && Math.random(4) < 3) {
 **2 =** At least 1 Boolean variable is implemented in a meaningful way.<br/>
 **1 =** No Boolean variables are implemented.
 			 
-### Micro:bit program
+### micro:bit program
 
 **4 =** micro:bit program:<br/>
 `*` Uses Boolean variables in a way that is integral to the program.<br/>

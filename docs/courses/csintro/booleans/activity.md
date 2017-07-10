@@ -188,7 +188,7 @@ input.onGesture(Gesture.Shake, () => {
 ``` 
 
 Try it out!
-Have the students play a few more rounds of the Double Coin Flip using their new Micro:bit Double Coin Flipper!
+Have the students play a few more rounds of the Double Coin Flip using their new micro:bit Double Coin Flipper!
  
 ## Boolean operator NOT in a Loop
 

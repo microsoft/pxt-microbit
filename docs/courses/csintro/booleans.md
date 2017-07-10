@@ -15,7 +15,7 @@ Students will...
 ## Lesson structure
 * Introduction: Booleans in daily life
 * Unplugged Activity: Two Heads are Better Than One
-* Micro:bit Activity: Double Coin Flipper
+* micro:bit Activity: Double Coin Flipper
 * Project: Boolean
 * Assessment: Rubric
 * Standards: Listed

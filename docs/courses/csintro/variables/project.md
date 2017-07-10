@@ -33,7 +33,7 @@ Using the 'On Shake' block, you can detect when the micro:bit has been shaken an
 
 See if you can count your steps while running or doing other physical activities carrying the micro:bit. Where is it best mounted? 
 
-**Extra Mod:** Design a wearable band or holder that can carry the Micro:bit securely so it doesn’t slip out during exercise.
+**Extra Mod:** Design a wearable band or holder that can carry the micro:bit securely so it doesn’t slip out during exercise.
 
 ### Calculator
 
@@ -56,7 +56,7 @@ In any design project, it's important to start by understanding the problem. You
 
 If you are designing something else, think about how you might find out more information about your problem through interviewing or observing people using current solutions.
 
-Then start brainstorming. Sketch out a variety of different ideas. Remember that it's okay if the ideas seem far-out or impractical. Some of the best products come out of seemingly crazy ideas that can ultimately be worked into the design of something useful. What kind of holder can you design to hold the Micro:bit securely? How will it be used in the real world, as part of a physical design?
+Then start brainstorming. Sketch out a variety of different ideas. Remember that it's okay if the ideas seem far-out or impractical. Some of the best products come out of seemingly crazy ideas that can ultimately be worked into the design of something useful. What kind of holder can you design to hold the micro:bit securely? How will it be used in the real world, as part of a physical design?
 
 Use the simulator to do your programming, and test out a number of different ideas. What is the easiest way to keep track of data? If you are designing for the accelerometer, try to see what different values are generated through different actions (you can display the value the accelerometer is currently reading using the 'Show Number' block; clear the screen afterward so you can see the reading).
 
@@ -80,7 +80,7 @@ Have students write a reflection of about 150–300 words, addressing the follow
 * What was the problem you were trying to solve with this project?
 * What were the Variables that you used to keep track of information?
 * What mathematical operations did you perform on your variables? What information did you provide?
-* Describe what the physical component of your Micro:bit project was (e.g., an armband, a wallet, a holder, etc.)
+* Describe what the physical component of your micro:bit project was (e.g., an armband, a wallet, a holder, etc.)
 * How well did your prototype work? What were you happy with? What would you change?
 * What was something that was surprising to you about the process of creating this project?
 * Describe a difficult point in the process of designing this project, and explain how you resolved it.

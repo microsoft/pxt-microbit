@@ -12,9 +12,9 @@ Students will...
 
 ## Lesson structure
 
-* Introduction: Radio & Communication
-* Unplugged Activity: Infection Simulation
-* Micro:bit Activity: Marco Polo & Morse Code
+* Introduction: Radio & communication
+* Unplugged Activity: Infection simulation
+* micro:bit Activity: Marco Polo & Morse Code
 * Project: Radio
 * Assessment: Rubric 
 * Standards: Listed

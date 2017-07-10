@@ -42,7 +42,7 @@ Have students flip their coins together, keeping track of the outcomes, perhaps 
  
 Example:
 ```
-    Coin A   Coin B   Totals
+    Coin A  Coin B   Totals
     ========================
     Heads   Heads	 
     Heads   Tails	 

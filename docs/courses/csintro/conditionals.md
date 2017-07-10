@@ -13,9 +13,9 @@ Students will...
 
 ## Lesson structure
 * Introduction: Conditionals in daily life
-* Unplugged Activity: Red if, Green then
-* Micro:bit Activity: Rock Paper Scissors
-* Project: Board Game
+* Unplugged Activity: Red if, green then
+* micro:bit Activity: Rock Paper Scissors
+* Project: Board game
 * Assessment: Rubric for board game project
 * Standards: Listed
 

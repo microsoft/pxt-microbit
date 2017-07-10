@@ -20,7 +20,7 @@ Students will...
 
 * Introduction: Variables in daily life
 * Unplugged Activity: Rock Paper Scissors scorekeeping activity
-* Micro:bit Activity: Make a game scorekeeper
+* micro:bit Activity: Make a game scorekeeper
 * Project: Make a scorekeeper
 * Project Mods
 * Assessment: Rubric 

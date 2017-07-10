@@ -38,12 +38,12 @@ Have students write a reflection of about 150–300 words, addressing the follow
 ## Rubric
 For creative projects such as these, we normally don’t use a qualitative rubric to grade the creativity or the match with their partner’s needs. We just check to make sure that the micro:pet meets the required specifications:
 * Program properly downloaded to micro:bit
-* Micro:bit supported so the face is showing
-* Micro:bit can be turned on and off without taking critter apart
+* micro:bit supported so the face is showing
+* micro:bit can be turned on and off without taking critter apart
 * Turned in notes on interview process
 * Written reflection (prompt is above)
 
-## Micro:Pet Examples
+## micro:pet Examples
 
 ![A dog micro:pet](/static/courses/csintro/making/micropet-dog.jpg)
 Dog

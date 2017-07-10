@@ -10,7 +10,7 @@ The first step in coding by design involves understanding someone else’s need.
 **Materials:** Pairs of students, something to take notes on
 
 **Getting started:**
-Pair students up with each other. One is Student A, the other is Student B. The goal of this activity is to gather information from their partner that will help them to design a Micro:bit pet for their partner.
+Pair students up with each other. One is Student A, the other is Student B. The goal of this activity is to gather information from their partner that will help them to design a micro:bit pet for their partner.
 
 **5 minutes:** Student A interviews Student B. The goal is to find out what Student B considers to be their ideal pet. Student A should mostly listen, and ask questions to keep Student B talking for the entire time. Here are some questions to start with:
 

@@ -51,7 +51,7 @@ Sample fidget cube designs
 
 ### micro:bit program
 
-**4 =** micro:bit program:
+**4 =** micro:bit program:<br/>
 `*` uses event handlers in a way that is integral to the program<br/>
 `*` compiles and runs as intended<br/>
 `*` includes meaningful comments<br/>

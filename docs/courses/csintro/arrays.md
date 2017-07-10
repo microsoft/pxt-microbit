@@ -1,6 +1,6 @@
 # Arrays
 
-This lesson covers storing and retrieving data in an ordered fashion using Arrays.  Introduces JavaScript as an alternate way of creating and modifying code. Uses a melody as a list/array of notes.
+This lesson covers storing and retrieving data in an ordered fashion using Arrays. Introduces JavaScript as an alternate way of creating and modifying code. Uses a melody as a list/array of notes.
  
 ## Lesson objectives
 Students will...
@@ -11,9 +11,9 @@ Students will...
  
 ## Lesson structure
 * Introduction: Arrays
-* Unplugged Activity: Different Sorts of People
-* Micro:bit Activity: Headband Charades, Starry Starry Night
-* Project: Make a Musical Instrument
+* Unplugged Activity: Different sorts of people
+* micro:bit Activity: Headband charades, Starry Starry Night
+* Project: Make a musical instrument
 * Assessment: Rubric 
 * Standards: Listed
  

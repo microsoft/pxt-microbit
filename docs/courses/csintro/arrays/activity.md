@@ -20,14 +20,15 @@ Notice that the array comes with 2 string blocks. We’ll want more for our char
 * Click on the blue gear-wheel icon in the top left corner of the 'create array' block.
 * From the pop up window, add as many values (elements) as you'd like to the array block by dragging the value block from the left side of the window to the array block on the right side of the window.
 * For now, we’ll add 4 more values for a total of 6 values.
+
 ![Add values to array](/static/courses/csintro/arrays/array-add-value.png)
 * Drag 4 string blocks from the Text Toolbox drawer, and place them in the empty array slots.
 
 ```blocks
 let arrayWords = ["", "", "", "", "", "", ""]
 ```
-* Fill each string with one word. Choose words that will be fun for a game of charades. 
-Example:
+* Fill each string with one word. Choose words that will be fun for a game of charades. Example:
+
 ```blocks	
 let arrayWords = ["cat", "guitar", "flashlight", "cupcake", "tree", "frisbee"]
 ```

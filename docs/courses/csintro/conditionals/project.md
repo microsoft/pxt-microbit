@@ -33,7 +33,7 @@ The micro:bit might:
 * Display a dynamic score
 * ... let your imaginations run wild!
 	
-Ideally, students should be writing their own versions of Micro:bit programs to do something original. 
+Ideally, students should be writing their own versions of micro:bit programs to do something original. 
 Here is one simple program to discuss and use as an example:
 
 Battle Game Pieces
@@ -100,7 +100,7 @@ Space Race by K. and S.
 Finished game
 
 ![micro:bit holder square](/static/courses/csintro/conditionals/microbit-holder.jpg)
-Micro:bit Holder
+micro:bit Holder
 	
 ![Game pieces](/static/courses/csintro/conditionals/game-pieces.jpg)
 Game pieces
@@ -161,7 +161,7 @@ previous_roll = 0
 `*` Complete<br/>
 `*` Neat<br/>
 `*` Fits with the theme of the game<br/>
-`*` Micro:bit is a central part of the game<br/>
+`*` micro:bit is a central part of the game<br/>
 **3 =** Game board meets only 3 of the conditions listed for a score of 4.<br/>
 **2 =** Game board meets only 2 of the conditions listed for a score of 4.<br/>
 **1 =** Game board meets only 1 of the conditions listed for a score of 4.
@@ -169,7 +169,7 @@ previous_roll = 0
 ### micro:bit program
 
 >**4 =** micro:bit program:<br/>
-`*` Uses the Micro:bit in a way that is integral to the game<br/>
+`*` Uses the micro:bit in a way that is integral to the game<br/>
 `*` Uses conditionals correctly<br/>
 `*` Compiles and runs as intended<br/>
 `*` JavaScript includes comments in code<br/>

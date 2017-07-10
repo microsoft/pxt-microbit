@@ -14,7 +14,7 @@ Students will...
 
 * Introduction: Lather. Rinse. Repeat.
 * Unplugged Activity: Walk a Square pseudocode
-* Micro:bit Activities: Code a Sprite to Walk a Square, Travelling Light, Micro:bit Alarm!
+* micro:bit Activities: Code a sprite to walk a Square, travelling light, micro:bit alarm!
 * Project: Get Loopy!
 * Project Mods: Use servo motors to add a motion element to the project
 * Assessment: Rubric 

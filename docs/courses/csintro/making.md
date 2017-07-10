@@ -20,7 +20,7 @@ Students will...
 * [**Introduction**: The micro:bit is for making](/courses/csintro/making/introduction)
 * [**Unplugged**: Design Thinking](/courses/csintro/making/unplugged)
 * [**Activity**: MakeCode download](/courses/csintro/making/activity)
-* [**Project**: Micro:pet (including mods and rubric)](/courses/csintro/making/project)
+* [**Project**: micro:pet (including mods and rubric)](/courses/csintro/making/project)
 
 ## Related standards
 

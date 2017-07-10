@@ -128,7 +128,7 @@ What do you think would happen if we did not clear the screen? Try it.
 
 ## Showing the final values of the variables
 
-To finish our program, we can add code that tells the Micro:bit to display the final values of our variables.
+To finish our program, we can add code that tells the micro:bit to display the final values of our variables.
 Since we have already used buttons A and B, we can use the ‘on shake’ event handler block to trigger this event. 
 We can use the ‘show string’, ‘show leds’, ‘pause’, and ‘show number’ blocks to display these final values in a clear way.
 Here is the complete program.

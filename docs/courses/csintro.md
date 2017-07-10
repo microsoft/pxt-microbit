@@ -15,7 +15,7 @@ The entire course is also available as a download. Chose any of these formats:
 
 [![](/static/courses/csintro/icons/microsoft-onenote-24x24.png) **OneNote** - Intro to CS with MakeCode for micro:bit](https://1drv.ms/o/s!AqsgsTyHBmRBgQvFaUaeANNHbxpC)
 
-[![](/static/courses/csintro/icons/adobe-pdf-file-icon-24x24.png) **PDF** -Intro to CS with MakeCode for micro:bit](https://1drv.ms/b/s!AqsgsTyHBmRBgQ1Fjzm5y5wKG75M)
+[![](/static/courses/csintro/icons/adobe-pdf-file-icon-24x24.png) **PDF** - Intro to CS with MakeCode for micro:bit](https://1drv.ms/b/s!AqsgsTyHBmRBgQ1Fjzm5y5wKG75M)
 
 [![](/static/courses/csintro/icons/apple-itunes-ibook-24x24.png) **iBook** - Making with micro:bit](https://itunes.apple.com/us/book/making-with-micro-bit/id1255260221?mt=11)
 ### ~
