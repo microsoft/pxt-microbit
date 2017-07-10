@@ -172,7 +172,7 @@ namespace radio {
      */
     //% help=radio/send-number
     //% weight=60
-    //% blockId=radio_datagram_send block="radio send number %value" blockGap=8
+    //% blockId=radio_datagram_send block="send number %value" blockGap=8
     void sendNumber(int value) {
         if (radioEnable() != MICROBIT_OK) return;
         uint8_t length = PACKET_PREFIX_LENGTH + sizeof(uint32_t);
@@ -193,7 +193,7 @@ namespace radio {
     */
     //% help=radio/send-value
     //% weight=59
-    //% blockId=radio_datagram_send_value block="radio send|value %name|= %value" blockGap=8
+    //% blockId=radio_datagram_send_value block="send|value %name|= %value" blockGap=8
     void sendValue(StringData* name, int value) {
         if (radioEnable() != MICROBIT_OK) return;
 
@@ -215,7 +215,7 @@ namespace radio {
      */
     //% help=radio/send-string
     //% weight=58
-    //% blockId=radio_datagram_send_string block="radio send string %msg"
+    //% blockId=radio_datagram_send_string block="send string %msg"
     void sendString(StringData* msg) {
         if (radioEnable() != MICROBIT_OK) return;
 
@@ -234,7 +234,7 @@ namespace radio {
     */
     //% help=radio/write-value-to-serial
     //% weight=3
-    //% blockId=radio_write_value_serial block="radio write value to serial"
+    //% blockId=radio_write_value_serial block="write value to serial"
     //% deprecated=true
     void writeValueToSerial() {
         if (radioEnable() != MICROBIT_OK) return;
@@ -247,7 +247,7 @@ namespace radio {
     */
     //% help=radio/write-received-packet-to-serial
     //% weight=3
-    //% blockId=radio_write_packet_serial block="radio write received packet to serial"
+    //% blockId=radio_write_packet_serial block="write received packet to serial"
     //% advanced=true
     void writeReceivedPacketToSerial() {
         if (radioEnable() != MICROBIT_OK) return;
@@ -260,7 +260,7 @@ namespace radio {
      */
     //% help=radio/receive-number
     //% weight=46
-    //% blockId=radio_datagram_receive block="radio receive number" blockGap=8
+    //% blockId=radio_datagram_receive block="receive number" blockGap=8
     //% deprecated=true
     int receiveNumber()
     {
@@ -274,7 +274,7 @@ namespace radio {
      */
     //% help=radio/on-data-received
     //% weight=50
-    //% blockId=radio_datagram_received_event block="radio on data received" blockGap=8
+    //% blockId=radio_datagram_received_event block="on data received" blockGap=8
     //% deprecated=true
     void onDataReceived(Action body) {
         if (radioEnable() != MICROBIT_OK) return;
@@ -288,7 +288,7 @@ namespace radio {
      * Reads the next packet from the radio queue and returns the packet's string
      * payload or the empty string if the packet did not contain a string.
      */
-    //% blockId=radio_datagram_receive_string block="radio receive string" blockGap=8
+    //% blockId=radio_datagram_receive_string block="receive string" blockGap=8
     //% weight=44
     //% help=radio/receive-string
     //% deprecated=true
@@ -305,7 +305,7 @@ namespace radio {
      */
     //% help=radio/received-signal-strength
     //% weight=40
-    //% blockId=radio_datagram_rssi block="radio received signal strength"
+    //% blockId=radio_datagram_rssi block="received signal strength"
     //% deprecated=true
     int receivedSignalStrength() {
         if (radioEnable() != MICROBIT_OK) return 0;
@@ -318,7 +318,7 @@ namespace radio {
      */
     //% help=radio/set-group
     //% weight=10 blockGap=8
-    //% blockId=radio_set_group block="radio set group %ID"
+    //% blockId=radio_set_group block="set group %ID"
     //% id.min=0 id.max=255
     void setGroup(int id) {
         if (radioEnable() != MICROBIT_OK) return;
@@ -331,7 +331,7 @@ namespace radio {
     */
     //% help=radio/set-transmit-power
     //% weight=9 blockGap=8
-    //% blockId=radio_set_transmit_power block="radio set transmit power %power"
+    //% blockId=radio_set_transmit_power block="set transmit power %power"
     //% power.min=0 power.max=7
     //% advanced=true
     void setTransmitPower(int power) {
@@ -345,7 +345,7 @@ namespace radio {
     */
     //% help=radio/set-transmit-serial-number
     //% weight=8 blockGap=8
-    //% blockId=radio_set_transmit_serial_number block="radio set transmit serial number %transmit"
+    //% blockId=radio_set_transmit_serial_number block="set transmit serial number %transmit"
     //% advanced=true
     void setTransmitSerialNumber(bool transmit) {
         if (radioEnable() != MICROBIT_OK) return;
