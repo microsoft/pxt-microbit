@@ -1,6 +1,6 @@
 # Set Display Mode
 
-Sets the display mode to either black and white and greyscale for rendering [LEDs](/device/screen).
+Sets the display mode to either black and white or greyscale for rendering [LEDs](/device/screen).
 
 ```sig
 led.setDisplayMode(DisplayMode.Greyscale)
