@@ -26,8 +26,11 @@ This is an introduction to coding and computer science by way of making and desi
   * [ ] Servo motor (for movement)
   * [ ] Croc clip to Male connector (for connecting to Servo motor)
   * [ ] Croc clip to Headphone jack adapter (http://microbit-accessories.co.uk/)
+  * [ ] Copper tape
 
 * MakeCode for the micro:bit is a free web app: https://makecode.microbit.org
+
+Copper tape is inexpensive and super useful in all sorts of maker activities so it’s worth it to invest in a few rolls to keep on hand for micro:bit projects. We use it in [Lesson 9 (Binary Cash Register)](/courses/csintro/binary/project). You can purchase copper tape at https://www.adafruit.com/product/1128/ and https://www.sparkfun.com/products/10561.
 
 When students complete this course they will have a good understanding of computer science concepts that can serve as the foundation for future study. They will develop powerful design skills that they can use in future projects of all types, whether they are designing 3D printed prototypes or creating apps that serve a real world purpose.
 
