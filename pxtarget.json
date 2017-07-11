@@ -345,6 +345,9 @@
             }
         },
         "highContrast": true,
-        "selectLanguage": true
+        "selectLanguage": true,
+        "monacoColors": {
+            "editor.background": "#ecf0f1"
+        }
     }
 }
