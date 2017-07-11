@@ -19,7 +19,7 @@ A collection of courses built for the @boardname@.
 },
  {
   "name": "micro:bit of Things",
-  "description": "A hands-on course about the micro:bit what you can do with it.",
+  "description": "A hands-on course about the micro:bit and what you can do with it.",
   "url":"https://sites.google.com/view/microbitofthings",
   "imageUrl": "https://lh4.googleusercontent.com/T_abGPJXNGVRNoKBmu6eZEoAkZXj1JubbIsbimSgF-Yc1BA2fUgXkrtMAmawjWlOU801fUnZ=w371"
 }]
