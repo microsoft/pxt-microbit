@@ -11,14 +11,6 @@ Students will...
 * Practice using the Logic blocks so different conditions yield specified outcomes.
 * Demonstrate understanding and apply skill by collaborating with classmates to create a game that uses a micro:bit and a program that correctly and effectively uses conditionals. 
 
-## Lesson structure
-* Introduction: Conditionals in daily life
-* Unplugged Activity: Red if, green then
-* micro:bit Activity: Rock Paper Scissors
-* Project: Board game
-* Assessment: Rubric for board game project
-* Standards: Listed
-
 ## Lesson plan
 
 1. [**Overview**: Conditional statements](/courses/csintro/conditionals/overview)
