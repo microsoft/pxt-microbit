@@ -52,7 +52,7 @@
   "Dimension.Z|block": "z",
   "Direction.Left|block": "links",
   "Direction.Right|block": "rechts",
-  "DisplayMode.BackAndWhite|block": "zwart-wit",
+  "DisplayMode.BlackAndWhite|block": "zwart-wit",
   "DisplayMode.Greyscale|block": "grijswaarden",
   "EventCreationMode.CreateAndFire": "MicroBitEvent is geïnitialiseerd, en zijn gebeurtenis-afhandelaars zijn onmiddellijk opgeroepen (niet geschikt om bij interrupts te gebruiken!).",
   "EventCreationMode.CreateOnly": "MicroBitEvent is geïnitialiseerd en er vinden geen verdere verwerkingen plaats.",

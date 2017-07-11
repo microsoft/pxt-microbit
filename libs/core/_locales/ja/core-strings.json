@@ -39,7 +39,7 @@
   "Dimension.Z|block": "Z",
   "Direction.Left|block": "左",
   "Direction.Right|block": "右",
-  "DisplayMode.BackAndWhite|block": "白黒",
+  "DisplayMode.BlackAndWhite|block": "白黒",
   "DisplayMode.Greyscale|block": "グレースケール",
   "Gesture.EightG": "8Gの衝撃があったときに発生します。",
   "Gesture.EightG|block": "8G",

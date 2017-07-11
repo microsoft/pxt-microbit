@@ -42,7 +42,7 @@
   "Dimension.Z|block": "z",
   "Direction.Left|block": "වම",
   "Direction.Right|block": "දකුණ",
-  "DisplayMode.BackAndWhite|block": "කළු සහ සුදු",
+  "DisplayMode.BlackAndWhite|block": "කළු සහ සුදු",
   "DisplayMode.Greyscale|block": "greyscale",
   "EventCreationMode.CreateAndFire": "MicroBitEvent is initialised, and its event handlers are immediately fired (not suitable for use in interrupts!).",
   "EventCreationMode.CreateOnly": "MicroBitEvent is initialised, and no further processing takes place.",

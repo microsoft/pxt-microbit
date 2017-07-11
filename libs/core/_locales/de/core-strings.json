@@ -24,7 +24,7 @@
   "Dimension.Z|block": "z",
   "Direction.Left|block": "links",
   "Direction.Right|block": "rechts",
-  "DisplayMode.BackAndWhite|block": "Schwarz-Weiß",
+  "DisplayMode.BlackAndWhite|block": "Schwarz-Weiß",
   "DisplayMode.Greyscale|block": "Graustufen",
   "EventCreationMode.CreateAndFire": "Calliope mini-Event wurde initialisiert, seine Event-Handler werden unverzüglich ausgeführt (nicht geeignet für die Nutzung bei Unterbrechungen!).",
   "EventCreationMode.CreateOnly": "Calliope mini-Event wurde initialisiert, es wird keine weitere Verarbeitung vorgenommen.",

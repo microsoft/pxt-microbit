@@ -42,7 +42,7 @@
   "Dimension.Z|block": "z",
   "Direction.Left|block": "venstre",
   "Direction.Right|block": "høyre",
-  "DisplayMode.BackAndWhite|block": "svart og hvitt",
+  "DisplayMode.BlackAndWhite|block": "svart og hvitt",
   "DisplayMode.Greyscale|block": "gråtone",
   "EventCreationMode.CreateAndFire": "En hendelse opprettes og den tilhørende hendelsesbehandleren startes. (Må ikke brukes inne i et interrupt.)",
   "EventCreationMode.CreateOnly": "En hendelse opprettes, men behandling av hendelsen startes ikke.",

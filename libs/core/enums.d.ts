@@ -365,7 +365,7 @@ declare namespace control {
 
     declare enum DisplayMode {
     //% block="black and white"
-    BackAndWhite = 0,  // DISPLAY_MODE_BLACK_AND_WHITE
+    BlackAndWhite = 0,  // DISPLAY_MODE_BLACK_AND_WHITE
     //% block="greyscale"
     Greyscale = 1,  // DISPLAY_MODE_GREYSCALE
     // TODO DISPLAY_MODE_BLACK_AND_WHITE_LIGHT_SENSE

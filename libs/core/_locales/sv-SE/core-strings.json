@@ -26,7 +26,7 @@
   "Dimension.Z|block": "z",
   "Direction.Left|block": "vänster",
   "Direction.Right|block": "höger",
-  "DisplayMode.BackAndWhite|block": "svartvitt",
+  "DisplayMode.BlackAndWhite|block": "svartvitt",
   "DisplayMode.Greyscale|block": "gråskala",
   "EventCreationMode.CreateAndFire": "MicroBitEvent har initierats, och dess händelsehanterare exekveras omedelbart (ej lämpligt för användning inom avbrott!).",
   "EventCreationMode.CreateOnly": "MicroBitEvent initierats, och ingen ytterligare bearbetning sker.",

@@ -113,7 +113,7 @@ namespace game {
             unplugEvents();
             led.stopAnimation();
             led.setBrightness(255);
-            led.setDisplayMode(DisplayMode.BackAndWhite);
+            led.setDisplayMode(DisplayMode.BlackAndWhite);
             while (true) {
                 for (let i = 0; i < 8; i++) {
                     basic.clearScreen();

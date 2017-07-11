@@ -49,8 +49,8 @@
 
     /**
      * Toggles a particular pixel
-     * @param x TODO
-     * @param y TODO
+     * @param x pixel row
+     * @param y pixel column
      */
     //% help=led/toggle weight=77
     //% blockId=device_led_toggle block="toggle|x %x|y %y" icon="\uf204" blockGap=8
@@ -68,6 +68,7 @@
      * Turns all LEDS on
      */
     //% help=led/plot-all
+    //% blockId=device_led_plot_all block="plot all" icon="\uf204"
     //% parts="ledmatrix"
     export function plotAll(): void {
         for (let i = 0; i < 5; i++) {
@@ -81,6 +82,7 @@
      * Inverts the current LED display
      */
     //% help=led/toggle-all
+    //% blockId=device_led_toggle_all block="toggle all" icon="\uf204"
     //% parts="ledmatrix"
     export function toggleAll(): void {
         for (let i = 0; i < 5; i++) {
@@ -92,9 +94,10 @@
 
     /**
      * Fades in the screen display.
-     * @param ms TODO
+     * @param ms fade-in time in milliseconds
      */
     //% help=led/fade-in
+    //% blockId=device_led_fade_in block="fade in (ms) %ms" icon="\uf204"
     //% parts="ledmatrix"
     export function fadeIn(ms: number = 700): void {
         if (ms < 20) {
@@ -115,9 +118,10 @@
 
     /**
      * Fades out the screen brightness.
-     * @param ms TODO
+     * @param ms fade-out time in milliseconds
      */
     //% help=led/fade-out
+    //% blockId=device_led_fade_out block="fade out (ms) %ms" icon="\uf204"
     //% parts="ledmatrix"
     export function fadeOut(ms: number = 700): void {
         if (ms < 20) {
