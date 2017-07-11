@@ -19,4 +19,4 @@ Variables hold a specific type of information. The micro:bit's variables can kee
 * A number variable could hold numerical data such as the year, the temperature, or the degree of acceleration.
 * A string variable holds a string of alphanumeric characters such as a person's name, a password, or the day of the week.
 * A boolean variable has only two values: true or false. You might have certain things that happen only when the variable called _gameOver_ is false, for example.
-* A sprite is a special variable that represents a single dot on the screen and holds two separate values for the row an
+* A sprite is a special variable that represents a single dot on the screen and holds two separate values for the row and column the dot is currently in.
