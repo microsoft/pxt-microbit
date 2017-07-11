@@ -42,13 +42,13 @@ We already initialized these variables and now need to code to update the values
 * Each time the scorekeeper presses button B, to record a win for Player B, we want to add 1 to the current value of the variable `PlayerBWins`.
 * Each time the scorekeeper presses both button A and button B at the same time to record a tie, we want to add 1 to the current value of the variable `PlayersTie`.
 	
-From the Input menu, drag 3 of the ‘on button A pressed’ event handlers to your coding window.
+From the Input menu, drag 3 of the ‘on button A pressed’ event handlers to your Programming Workspace.
 
 ![onButtonPressed A](/static/courses/csintro/variables/on-button-pressed.png)
 
 Leave one block with ‘A’. Use the drop-down menu in the block to choose ‘B’ for the second block and ‘A+B’ for the third block.
 
-From the Variables menu, drag 3 of the ‘change item by 1’ blocks to your coding window.
+From the Variables menu, drag 3 of the ‘change item by 1’ blocks to your Programming Workspace.
 
 ![Change variable](/static/courses/csintro/variables/change-variable.png)
 
