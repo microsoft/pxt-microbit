@@ -15,23 +15,13 @@ Students will...
 * Understand that when you update or change the value held by a variable, the new value replaces the previous value.
 * Learn how to use the basic mathematical blocks for adding, subtracting, multiplying, and dividing variables.
 * Apply the above knowledge and skills to create a unique program that uses variables as an integral part of the program.
-	
-## Lesson Structure
-
-* Introduction: Variables in daily life
-* Unplugged Activity: Rock Paper Scissors scorekeeping activity
-* micro:bit Activity: Make a game scorekeeper
-* Project: Make a scorekeeper
-* Project Mods
-* Assessment: Rubric 
-* Standards: Listed
 
 ## Lesson plan
 
-1. [**Overview**: Variables and constants](/courses/csintro/variables/overview)
-2. [**Unplugged**: Keeping score](/courses/csintro/variables/unplugged)
-3. [**Activity**: Scorekeeper](/courses/csintro/variables/activity)
-4. [**Project**: Everything counts](/courses/csintro/variables/project)
+1. [**Overview**: Variables in Daily Life](/courses/csintro/variables/overview)
+2. [**Unplugged**: Rock Paper Scissors](/courses/csintro/variables/unplugged)
+3. [**Activity**: Make a Game Scorekeeper](/courses/csintro/variables/activity)
+4. [**Project**: Everything Counts](/courses/csintro/variables/project)
 
 ## Related standards
 
