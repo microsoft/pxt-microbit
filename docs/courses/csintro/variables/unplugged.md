@@ -1,6 +1,6 @@
 # Unplugged: Keeping score
 
-To experience creating and working with variables, have students pair up and play _Rock Paper Scissors_.
+The objective of this activity is to experience creating and working with variables by pairing up and playing _Rock Paper Scissors_.
 
 ![Rock-paper-scissors hands](/static/courses/csintro/variables/rps-hands.png)
 
