@@ -137,7 +137,6 @@
         * [clear screen](/reference/basic/clear-screen)
         * [forever](/reference/basic/forever)
         * [pause](/reference/basic/pause)
-        * [plot leds](/reference/basic/plot-leds)
         * [show arrow](/reference/basic/show-arrow)
         * [show animation](/reference/basic/show-animation)
     * [Input](/reference/input)
