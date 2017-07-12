@@ -36,7 +36,7 @@ namespace radio {
     //% mutate=objectdestructuring
     //% mutateText=Packet
     //% mutateDefaults="receivedNumber;receivedString:name,receivedNumber:value;receivedString"
-    //% blockId=radio_on_packet block="on data packet received" blockGap=8
+    //% blockId=radio_on_packet block="on radio received" blockGap=8
     export function onDataPacketReceived(cb: (packet: Packet) => void) {
         onDataReceived(() => {
             receiveNumber();
