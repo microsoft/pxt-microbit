@@ -111,6 +111,7 @@ namespace serial {
     /**
     * Sends a buffer through Serial connection
     */
+    //% blockId=serial_writebuffer block="serial|write buffer %buffer"
     //% help=serial/write-buffer advanced=true weight=6
     void writeBuffer(Buffer buffer) {
       if (!buffer) return;
@@ -120,9 +121,10 @@ namespace serial {
     }
 
     /**
-    * Reads multiple characters from the rxBuff and fills a user buffer.
+    * Reads multiple characters from the receive buffer and fills a user buffer.
     * @param length default buffer length, eg: 64
     */
+    //% blockId=serial_readbuffer block="serial|read buffer %length"
     //% help=serial/read-buffer advanced=true weight=5
     Buffer readBuffer(int length) {
       if (length <= 0)
