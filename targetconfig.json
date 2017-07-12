@@ -13,7 +13,8 @@
             "sparkfun/pxt-moto-bit",
             "sparkfun/pxt-weather-bit",
             "KitronikLtd/pxt-kitronik-servo-lite",
-            "Tinkertanker/pxt-ssd1306-microbit"
+            "Tinkertanker/pxt-ssd1306-microbit",
+            "minodekit/pxt-minode"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel"
