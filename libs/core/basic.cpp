@@ -85,8 +85,6 @@ namespace basic {
      * @param interval time in milliseconds between each redraw
      */
     //% help=basic/show-animation imageLiteral=1 async
-    //% blockId=device_show_animation 
-    //% block="show animation"
     //% parts="ledmatrix"
     void showAnimation(ImageLiteral leds, int interval = 400) {
       uBit.display.animate(MicroBitImage(imageBytes(leds)), interval, 5, 0, 0);
