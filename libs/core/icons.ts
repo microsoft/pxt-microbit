@@ -208,6 +208,7 @@ namespace basic {
 namespace images {
 
     //% weight=50 blockGap=8
+    //% help=images/arrow-image
     //% blockId=builtin_arrow_image block="arrow image %i=device_arrow"
     export function arrowImage(i: ArrowNames): Image {
         switch (i) {
@@ -271,6 +272,7 @@ namespace images {
     }
 
     //% weight=50 blockGap=8
+    //% help=images/icon-image
     //% blockId=builtin_image block="icon image %i"
     export function iconImage(i: IconNames): Image {
         switch (i) {
@@ -532,6 +534,7 @@ namespace images {
     }
 
     //% weight=50 blockGap=8
+    //% help=images/arrow-number
     //% blockId=device_arrow block="%arrow"
     //% shim=TD_ID
     export function arrowNumber(arrow: ArrowNames): number {
