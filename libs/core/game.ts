@@ -59,7 +59,7 @@ namespace game {
     }
 
     /**
-     * Adds points to the current score
+     * Adds points to the current score and shows an animation
      * @param points amount of points to change, eg: 1
      */
     //% weight=10 help=game/add-score
@@ -78,7 +78,7 @@ namespace game {
     }
 
     /**
-     * Starts a game countdown timer
+     * Shows an animation, then starts a game countdown timer, which causes Game Over when it reaches 0
      * @param ms countdown duration in milliseconds, eg: 10000
      */
     //% weight=9 help=game/start-countdown
@@ -102,7 +102,7 @@ namespace game {
     }
 
     /**
-     * Displays a game over animation.
+     * Displays a game over animation and the score.
      */
     //% weight=8 help=game/game-over
     //% blockId=game_game_over block="game over"
@@ -304,7 +304,7 @@ namespace game {
         }
 
         /**
-         * Move a certain number of LEDs
+         * Move a certain number of LEDs in the current direction
          * @param this the sprite to move
          * @param leds number of leds to move, eg: 1, -1
          */
@@ -354,7 +354,7 @@ namespace game {
         }
 
         /**
-         * If touching the edge of the stage, then bounce away.
+         * If touching the edge of the stage and facing towards it, then turn away.
          * @param this TODO
          */
         //% weight=18
@@ -566,7 +566,7 @@ namespace game {
         }
 
         /**
-         * Reports true if sprite is touching specified sprite
+         * Reports true if sprite has the same position as specified sprite
          * @param this TODO
          * @param other TODO
          */
