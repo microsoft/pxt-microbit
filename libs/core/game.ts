@@ -644,7 +644,7 @@ namespace game {
         }
 
         /**
-         * Deletes the sprite from the game engine. All further operation of the sprite will not have any effect.
+         * Deletes the sprite from the game engine. The sprite will no longer appear on the screen or interact with other sprites.
          * @param this sprite to delete
          */
         //% weight=59
