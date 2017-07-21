@@ -17,14 +17,6 @@ directly into the MICROBIT drive!
 
 ### ~
 
-### ~ hint
-
-In Chrome, you can change the **Downloads** settings to let you choose where
-to save each file. Then you can save the ``.hex`` file
-directly into the MICROBIT drive.
-
-### ~
-
 ![](/static/mb/device/usb-thin.jpg)
 
 ## Instructions
