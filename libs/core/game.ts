@@ -651,8 +651,13 @@ namespace game {
         //% blockId="game_delete_sprite" block="delete %this"
         public delete(): void {
             this._enabled = false;
-            if (sprites.removeElement(this))
+            if (sprites.removeElement(this)) {
                 plot();
+                if (sprites.length == 0) {
+                    //Last sprite deleted, so plot is now disabled
+                    basic.clearScreen();
+                }
+            }
         }
 
         /**
@@ -723,7 +728,7 @@ namespace game {
      */
     //% parts="ledmatrix"
     function plot(): void {
-        if (game.isGameOver()) {
+        if (game.isGameOver() || sprites.length == 0) {
             return;
         }
         let now = input.runningTime();
