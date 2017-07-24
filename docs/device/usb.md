@@ -1,4 +1,4 @@
-# Uploading programs on your micro:bit
+# Uploading programs to your micro:bit
 
 Most of the time you'll be writing and testing your programs in the [simulator](/device/simulator). Once you've finished your program though, you can **compile** it and run it on your @boardname@. Transferring your program to the @boardname@ is as simple as saving a file to a drive on your computer.
 
@@ -14,7 +14,7 @@ The basic steps are:
 
 ## How to transfer the program with your browser
 
-Here are instructions for different browsers on different computers. Select the one you're using:
+Here are instructions for different browsers on Windows and Mac computers. Choose the one you're using:
 
 #### Windows browsers
 
@@ -31,6 +31,6 @@ Here are instructions for different browsers on different computers. Select the 
 
 ### ~hint
 
-Did the transfer work? If not, see some [troubleshooting tips](/device/usb/troubleshooting).
+Transfer not working? See some [troubleshooting tips](/device/usb/troubleshooting).
 
 ### ~
