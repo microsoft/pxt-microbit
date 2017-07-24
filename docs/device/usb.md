@@ -1,8 +1,8 @@
-# Uploading programs to your micro:bit
+# Uploading programs to your @boardname@
 
 Most of the time you'll be writing and testing your programs in the [simulator](/device/simulator). Once you've finished your program though, you can **compile** it and run it on your @boardname@. Transferring your program to the @boardname@ is as simple as saving a file to a drive on your computer.
 
-When you plug your @boardname@ into USB, a new drive is created with the **MICROBIT** label. This is where you'll save your program.
+When you plug your @boardname@ into USB, a new drive is created with the **@drivename@** label. This is where you'll save your program.
 
 ![](/static/mb/device/usb-thin.jpg)
 
@@ -10,7 +10,7 @@ The basic steps are:
 
 1. Connect your @boardname@ to your computer via USB.
 2. Click **Download** to download the `.hex` file.
-3. Move the `.hex` file from your computer onto the **MICROBIT** drive. The next section has instructions for the browser that you're using.
+3. Move the `.hex` file from your computer onto the **@drivename@** drive. The next section has instructions for the browser that you're using.
 
 ## How to transfer the program with your browser
 
