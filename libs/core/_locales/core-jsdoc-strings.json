@@ -254,7 +254,7 @@
   "serial.delimiters": "Returns the delimiter corresponding string",
   "serial.onDataReceived": "Registers an event to be fired when one of the delimiter is matched.",
   "serial.onDataReceived|param|delimiters": "the characters to match received characters against.",
-  "serial.readBuffer": "Reads multiple characters from the rxBuff and fills a user buffer.",
+  "serial.readBuffer": "Reads multiple characters from the receive buffer and fills a user buffer.",
   "serial.readBuffer|param|length": "default buffer length, eg: 64",
   "serial.readLine": "Reads a line of text from the serial port.",
   "serial.readString": "Reads the buffered received data as a string",

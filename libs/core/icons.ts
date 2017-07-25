@@ -149,21 +149,21 @@ enum IconNames {
 }
 
 enum ArrowNames {
-    //% blockIdentity=images.arrowNumber
+    //% blockIdentity=images.arrowNumber block="North"
     North = 0,
-    //% blockIdentity=images.arrowNumber
+    //% blockIdentity=images.arrowNumber block="North East"
     NorthEast,
-    //% blockIdentity=images.arrowNumber
+    //% blockIdentity=images.arrowNumber block="East"
     East,
-    //% blockIdentity=images.arrowNumber
+    //% blockIdentity=images.arrowNumber block="South East"
     SouthEast,
-    //% blockIdentity=images.arrowNumber
+    //% blockIdentity=images.arrowNumber block="South"
     South,
-    //% blockIdentity=images.arrowNumber 
+    //% blockIdentity=images.arrowNumber block="South West"
     SouthWest,
-    //% blockIdentity=images.arrowNumber
+    //% blockIdentity=images.arrowNumber block="West"
     West,
-    //% blockIdentity=images.arrowNumber
+    //% blockIdentity=images.arrowNumber block="North West"
     NorthWest,
 }
 
