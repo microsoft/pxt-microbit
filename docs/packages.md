@@ -35,5 +35,17 @@
   "name": "SRS BitBot",
   "url":"/pkg/srs/pxt-bitbot",
   "cardType": "package"
+}, {
+  "name": "File System",
+  "url":"/pkg/microsoft/pxt-filesystem",
+  "cardType": "package"
+}, {
+  "name": "MIDI",
+  "url":"/pkg/microsoft/pxt-midi",
+  "cardType": "package"
+}, {
+  "name": "Bluetooth MIDI",
+  "url":"/pkg/microsoft/pxt-bluetooth-midi",
+  "cardType": "package"
 }]
 ```
