@@ -125,12 +125,24 @@ span.blocklyTreeLabel {
         padding-top: 0.25rem;
         height: 2.4rem;
     }
+    .blocklyToolboxDiv, .monacoToolboxDiv {
+        border-left: 0 !important;
+    }
+    div.blocklyTreeRoot {
+        padding: 0;
+    }
 }
 
 /* Tablet */
 @media only screen and (min-width: @tabletBreakpoint) and (max-width: @largestTabletScreen) {
     #filelist {
         background: transparent !important;
+    }
+    .blocklyToolboxDiv, .monacoToolboxDiv {
+        border-left: 0 !important;
+    }
+    div.blocklyTreeRoot {
+        padding: 0;
     }
 }
 
