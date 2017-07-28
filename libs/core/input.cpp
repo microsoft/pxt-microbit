@@ -150,7 +150,7 @@ enum class MesDpadButtonInfo {
 //% color=#B4009E weight=99 icon="\uf192"
 namespace input {
     /**
-     * Do something when a button (``A``, ``B`` or both ``A+B``) is pressed
+     * Do something when a button (A, B or both A+B) is pushed down and released again.
      * @param button the button that needs to be pressed
      * @param body code to run when event is raised
      */
@@ -180,7 +180,7 @@ namespace input {
     }
 
      /**
-     * Do something when a pin is pressed.
+     * Do something when a pin is touched and released again (while also touching the GND pin).
      * @param name the pin that needs to be pressed, eg: TouchPin.P0
      * @param body the code to run when the pin is pressed
      */

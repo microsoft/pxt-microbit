@@ -5,6 +5,9 @@ This handler works when button `A` or `B` is pressed, or `A` and `B` together.
 When you are using this function in a web browser, click the buttons on the screen instead of the ones
 on the @boardname@.
 
+* For button `A` or `B`: This handler works when the button is pushed down and released within 1 second.
+* For `A` and `B` together: This handler works when `A` and `B` are both pushed down, then one of them is released within 1.5 seconds of pushing down the second button.
+
 ```sig
 input.onButtonPressed(Button.A, () => {})
 ```
