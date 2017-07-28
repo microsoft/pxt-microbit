@@ -243,6 +243,10 @@ declare namespace input {
     //% blockIdentity="control.eventValueId"
     MICROBIT_EVT_ANY = 0,  // MICROBIT_EVT_ANY
     //% blockIdentity="control.eventValueId"
+    MICROBIT_BUTTON_EVT_DOWN = 1,  // MICROBIT_BUTTON_EVT_DOWN
+    //% blockIdentity="control.eventValueId"
+    MICROBIT_BUTTON_EVT_UP = 2,  // MICROBIT_BUTTON_EVT_UP
+    //% blockIdentity="control.eventValueId"
     MICROBIT_BUTTON_EVT_CLICK = 3,  // MICROBIT_BUTTON_EVT_CLICK
     //% blockIdentity="control.eventValueId"
     MICROBIT_RADIO_EVT_DATAGRAM = 1,  // MICROBIT_RADIO_EVT_DATAGRAM
