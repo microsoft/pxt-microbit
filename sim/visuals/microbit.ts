@@ -1,7 +1,10 @@
 namespace pxsim.visuals {
     const MB_STYLE = `
         svg.sim {
-            margin-bottom:1em;
+            box-sizing: border-box;
+            width: 100%;
+            height: 100%;
+            display: block;
         }
         svg.sim.grayscale {
             -moz-filter: grayscale(1);
