@@ -1,5 +1,6 @@
 # Conditional statements
 
+![Rainbow Road](/static/courses/csintro/conditionals/cover.jpg)
 This lesson introduces the Logic blocks such as 'If...then' and 'If...then...else'.
 Students practice skills of creativity, problem-solving, and collaboration.
 
