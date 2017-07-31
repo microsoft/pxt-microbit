@@ -1,5 +1,7 @@
 # Iteration & Looping
 
+![Guitar Picture](/static/courses/csintro/iteration/guitar.jpg)
+
 This lesson introduces the concept of looping and iteration. Presents the 'While' block as a combination of an iteration and a conditional statement.
 
 ## Lesson objectives

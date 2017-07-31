@@ -1,12 +1,12 @@
 # Unplugged: Walk a square
 
+![Chair with Pseudocode on the board.](/static/courses/csintro/iteration/chair-pseudo.png)
+
 ## Objective
 To reinforce the concept of iteration by having students act out the repeated steps of an algorithm in real life.
 
 ## Overview
 Students will give the teacher instructions to do a simple activity, then look for places where using iteration could shorten their code and make it more efficient.
-
-![Chair](/static/courses/csintro/iteration/chair.jpg)
 
 ## Process
 
