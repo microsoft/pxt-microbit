@@ -108,7 +108,7 @@ Have students write a reflection of about 150–300 words, addressing the follow
 **2 =** Uses a mathematical operation incorrectly or not in a way that is integral to the program.<br/>
 **1 =** No mathematical operations are used.
 
-### Micro:bit program
+### micro:bit program
 >**4 =** micro:bit program:<br/>
 ` *` Uses variables in a way that is integral to the program<br/>
 ` *` Uses mathematical operations to add, subtract, multiply, and/or divide variables<br/>
