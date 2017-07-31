@@ -40,7 +40,7 @@ Here is one simple program to discuss and use as an example:
 
 ![Close-up of game tokens](/static/courses/csintro/conditionals/battle-pieces.jpg)
 
-### Battle Pieces
+### Battle pieces
 
 In this example, pieces start out at full strength and lose points based on random events on the board. When two pieces meet on the same space, they battle. 
 * Press A to enter the strength of piece A. 
@@ -105,7 +105,7 @@ Space Race by K. and S.
 Finished game
 
 ![micro:bit holder square](/static/courses/csintro/conditionals/microbit-holder.jpg)
-micro:bit Holder
+micro:bit holder
 	
 ![Game pieces](/static/courses/csintro/conditionals/game-pieces.jpg)
 Game pieces
