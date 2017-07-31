@@ -39,7 +39,8 @@ Ideally, students should be writing their own versions of micro:bit programs to 
 Here is one simple program to discuss and use as an example:
 
 ![Close-up of game tokens](/static/courses/csintro/conditionals/battle-pieces.jpg)
-Battle Pieces
+
+### Battle Pieces
 
 In this example, pieces start out at full strength and lose points based on random events on the board. When two pieces meet on the same space, they battle. 
 * Press A to enter the strength of piece A. 
