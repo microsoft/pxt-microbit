@@ -1,5 +1,6 @@
 # Project: Board Game
 
+![Close-up of game tokens](/static/courses/csintro/booleans/shakespeare.png)
 This is an assignment for students to create a board game. It should take two to three class periods. If your school has a makerspace or an art classroom where students can access materials such as cardboard, poster paints, or markers, you might schedule your classes to work there. 
 
 Once students have finished the first version of their games, schedule time for students to play each other’s games. Ideally, give them some time to give and gather feedback, then revise their games accordingly.
