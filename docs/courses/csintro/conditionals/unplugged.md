@@ -1,6 +1,6 @@
 # Unplugged: Red light, green light
 
-![Red and green stoplight](/static/courses/csintro/conditionals/red-light-green-light.jpg)
+![Red and green stoplight](/static/courses/csintro/conditionals/traffic-light.png)
 
 ## Objective
 To reinforce the programming of basic conditionals by having students experience conditionals through acting them out in real life.
