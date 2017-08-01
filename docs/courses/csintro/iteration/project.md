@@ -28,7 +28,7 @@ https://youtu.be/Xvybu_T5IL8
 
 [**micro:bit Hat Man - inside view**](https://youtu.be/ZfKgFQjygQQ)
 https://youtu.be/ZfKgFQjygQQ
-
+<br/>
 This project uses the micro:bit light sensor to display a happy face when it is sunny, and a frowning face when it is dark. The micro:bit is connected to a servo mounted on the inside of the container, and the smile and frown are attached to plastic coffee stirrers with tape and hot glue.
 
 ## Reflection

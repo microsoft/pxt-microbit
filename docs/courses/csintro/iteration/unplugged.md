@@ -41,7 +41,7 @@ This is a great opportunity to have the students think of the benefits of having
 ## Notes
 * Depending on the particular class, you can make this exercise more challenging, by requiring the students to be more specific in their instructions. 
 
-For example: Step forward 14 inches (you can have students actually measure the exact distance), turn left 90 degrees...
+**Example:** Step forward 14 inches (you can have students actually measure the exact distance), turn left 90 degrees...
 	
 
 
