@@ -30,6 +30,8 @@ game.setScore(0);
 ```cards
 game.startCountdown(10000);
 game.gameOver();
+game.pause();
+game.resume();
 ```
 
 ### See also
@@ -38,4 +40,5 @@ game.gameOver();
 [ifOnEdgeBounce](/reference/game/if-on-edge-bounce), [get](/reference/game/get), [set](/reference/game/set),
 [change](/reference/game/change), [isTouching](/reference/game/touching) [isTouchingEdge](/reference/game/touching-edge),
 [addScore](/reference/game/change-score-by), [score](/reference/game/score), [setScore](/reference/game/set-score),
-[startCountdown](/reference/game/start-countdown), [gameOver](/reference/game/game-over)
+[startCountdown](/reference/game/start-countdown), [gameOver](/reference/game/game-over),
+[pause](/reference/game/pause), [resume](/reference/game/resume)
