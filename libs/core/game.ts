@@ -762,7 +762,7 @@ namespace game {
         for (let i = 0; i < _sprites.length; i++) {
             _sprites[i]._plot(now);
         }
-        const mode = led.displayMode();
+        const mode = led.displayMode() == DisplayMode.Greyscale ? DisplayMode.Greyscale : DisplayMode.BackAndWhite;
         led.setDisplayMode(DisplayMode.Greyscale);
         _img.plotImage(0);
         led.setDisplayMode(mode);
