@@ -1,5 +1,7 @@
 # Arrays
 
+![Cover image](/static/courses/csintro/arrays/cover.jpg)
+
 This lesson introduces the fundamental concept of storing and retrieving data in an ordered fashion using Arrays. We'll also look at JavaScript as an alternate way of creating and modifying code. We'll look at the structure of a Melody as a list of notes.
  
 ## Lesson objectives

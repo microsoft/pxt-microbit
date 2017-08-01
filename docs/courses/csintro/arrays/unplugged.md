@@ -10,6 +10,8 @@ In this activity, you will demonstrate different kinds of sorting methods on you
 
 * Have up to ten students (the Sortees) stand up at the front of the classroom. Ask another student to volunteer to be the Sorter.
 * Mix up the order of the papers and give each student a piece of paper with a number on it. They should hold the paper facing outward so their number is visible. Each of these students is like an element in an array.
+
+![Illustration of line of students representing an array](/static/courses/csintro/arrays/sorts-people.png)
  
 ## Initial Sort
 
@@ -45,6 +47,8 @@ Compare the first two students. If the student on the right is smaller than the 
 >2. Add one to counter
 5. Repeat steps 2 through 4 as long as counter is greater than zero.
  
+![Bubble Sort Animation](/static/courses/csintro/arrays/bubble-sort.gif)
+
 #### In MakeCode:
 
 **Note:** Press B to display the array visually. The length of each vertical bar represents each number in the array, from left to right. Press A to sort the array using Bubble Sort. Press A + B to generate new random numbers for the array.
@@ -111,7 +115,9 @@ Take the first student on the left and consider that person’s number the small
 1. Find the smallest unsorted value in the array.
 2. Swap that value with the first unsorted value in the array.
 3. Repeat steps 1 and 2 while the number of unsorted items is greater than zero.
- 
+
+![Selection Sort Animation](/static/courses/csintro/arrays/selection-sort.gif)
+
 #### In MakeCode:
 
 **Note:** The inner loop gets smaller as the sorting algorithm runs because the number of unsorted items decreases as you go. The index that the inner loop starts at needs to change as the number of sorted items increases, which is why we have to use a separate counter (item) and compute j every time through the inner loop.
@@ -185,7 +191,9 @@ Take the first student on the left and consider that person sorted. Next, take t
 1. For each element in the unsorted section of the list, compare it against each element in the sorted section of the list until you find its proper place.
 2. Shift the other elements in the sorted list to the right to make room.
 3. Insert the element into its proper place in the sorted list.
- 
+
+![Insertion Sort Animation](/static/courses/csintro/arrays/insertion-sort.gif)
+
 #### In MakeCode:
 
 ```blocks
@@ -245,4 +253,4 @@ j = 1
 In 2008, Illinois Senator Barack Obama was interviewed by Google’s CEO Eric Schmidt, who asks him a computer science interview question. Watch as the interview doesn’t go exactly as planned…
 
 https://www.youtube.com/watch?v=k4RRi_ntQc8
-[Barak Obama interviewed by Eric Schmidt](https://www.youtube.com/watch?v=k4RRi_ntQc8)
+[Barack Obama interviewed by Eric Schmidt](https://www.youtube.com/watch?v=k4RRi_ntQc8)
