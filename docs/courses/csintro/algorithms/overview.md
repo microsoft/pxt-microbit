@@ -1,4 +1,4 @@
-# Introduction
+`# Introduction
 
 What is a micro:bit?
 The micro:bit was created in 2015 in the UK by the BBC to teach computer science to students. The BBC gave away a micro:bit to every Year 7 student in the UK. You can think of a micro:bit as a mini computer.
@@ -9,7 +9,7 @@ http://microbit.org
 ## What is a computer?
 There are 4 main components that make up any computer:
 
-![Computer components](/static/courses/csintro/algorithms/computer-components.png)
+![Computer components](/static/courses/csintro/algorithms/cpu.png)
 
 1. The Processor – this is usually a small chip inside the computer, and it’s how the computer processes and transforms information. Has anyone heard of the term “CPU”?  CPU stands for Central Processing Unit. You can think of the processor as the Brains of the computer - the faster the processor, the more quickly the computer can think.
 

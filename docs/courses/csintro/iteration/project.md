@@ -1,5 +1,7 @@
 # Project: Get loopy!
 
+![Birthday Card Project](/static/courses/csintro/iteration/birthday-card.jpg)
+
 There are many different ways to use the three types of loop blocks.
 
 Recall the different common repetitive actions you thought of back at the beginning of this lesson.
@@ -26,7 +28,7 @@ https://youtu.be/Xvybu_T5IL8
 
 [**micro:bit Hat Man - inside view**](https://youtu.be/ZfKgFQjygQQ)
 https://youtu.be/ZfKgFQjygQQ
-
+<br/>
 This project uses the micro:bit light sensor to display a happy face when it is sunny, and a frowning face when it is dark. The micro:bit is connected to a servo mounted on the inside of the container, and the smile and frown are attached to plastic coffee stirrers with tape and hot glue.
 
 ## Reflection
@@ -53,14 +55,14 @@ Have students write a reflection of about 150–300 words, addressing the follow
 
 **4 =** All variable names are unique and clearly describe what information values the variables hold<br/>
 **3 =** The majority of variable names are unique and clearly describe what information values the variables hold.<br/>
-**2 =** A minority of variable names are unique and clearly describe what information values the variables hold.<br/>
+**2 =** Few variable names are unique or clearly describe what information values the variables hold.<br/>
 **1 =** None of the variable names clearly describe what information values the variables hold.
 
 ### Sound, display, and motion
 
 **4 =** Uses sound, display, and motion in a way that is integral to the program.<br/>
-**3 =** Uses a only two of the required element in a way that is integral to the program.<br/>
-**2 =** Uses a only one of the required element in a way that is integral to the program.<br/>
+**3 =** Uses only two of the required elements in a way that is integral to the program.<br/>
+**2 =** Uses only one of the required elements in a way that is integral to the program.<br/>
 **1 =** None of the required elements are used.
 
 ### micro:bit program

@@ -46,7 +46,7 @@ Notes:
 
 * Deleting blocks - Click on the 'forever' block and drag it left to the Toolbox area. You should see a garbage can icon appear. Let go of the block and it should disappear. You can drag any block back to the Toolbox area to delete it from the coding workspace.  You can also remove a block from your coding window by selecting the block and then pressing the "delete" key on your keyboard (or command-X on a mac).
 
->![Trash](/static/courses/csintro/algorithms/trash.png)
+>![Trash](/static/courses/csintro/algorithms/drag-to-trash.gif)
 
 Looking at our pseudocode, we want to make sure to start a program with a clear screen.
 
@@ -148,7 +148,7 @@ Remember, MakeCode automatically compiles and runs your program, so all you need
 * Feel free to play around with turning LEDs on or off in the ‘show leds’ blocks until you get the images you want. 
 * Remember to save your code. 
 
->![Face on micro:bit screen](/static/courses/csintro/algorithms/microbit-screen-face.png)
+>![Face on micro:bit screen](/static/courses/csintro/algorithms/happy-sad.gif)
 
 ## Commenting your code
 It is good practice to add comments to your code. Comments can be useful in a number of ways. Comments can help you remember what a certain block of code does and/or why you chose to program something the way you did. Comments also help others reading your code to understand these same things.

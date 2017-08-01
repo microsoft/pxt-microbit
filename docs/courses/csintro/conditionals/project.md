@@ -1,5 +1,7 @@
 # Project: Board Game
 
+![Close-up of game tokens](/static/courses/csintro/conditionals/game-pieces.jpg)
+
 This is an assignment for students to create a board game. It should take two to three class periods. If your school has a makerspace or an art classroom where students can access materials such as cardboard, poster paints, or markers, you might schedule your classes to work there. 
 
 Once students have finished the first version of their games, schedule time for students to play each other’s games. Ideally, give them some time to give and gather feedback, then revise their games accordingly.
@@ -36,7 +38,10 @@ The micro:bit might:
 Ideally, students should be writing their own versions of micro:bit programs to do something original. 
 Here is one simple program to discuss and use as an example:
 
-Battle Game Pieces
+![Close-up of game tokens](/static/courses/csintro/conditionals/battle-pieces.jpg)
+
+### Battle pieces
+
 In this example, pieces start out at full strength and lose points based on random events on the board. When two pieces meet on the same space, they battle. 
 * Press A to enter the strength of piece A. 
 * Then press B to enter the strength of piece B. 
@@ -100,7 +105,7 @@ Space Race by K. and S.
 Finished game
 
 ![micro:bit holder square](/static/courses/csintro/conditionals/microbit-holder.jpg)
-micro:bit Holder
+micro:bit holder
 	
 ![Game pieces](/static/courses/csintro/conditionals/game-pieces.jpg)
 Game pieces
