@@ -97,6 +97,14 @@ namespace led {
     }
 
     /**
+    * Gets the current display mode
+    */
+    //% weight=1 parts="ledmatrix" advanced=true
+    DisplayMode_ displayMode() {
+        return (DisplayMode_)uBit.display.getDisplayMode();
+    }
+
+    /**
     * Turns on or off the display
     */
     //% help=led/enable blockId=device_led_enable block="led enable %on"

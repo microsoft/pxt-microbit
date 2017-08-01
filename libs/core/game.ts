@@ -739,7 +739,6 @@ namespace game {
 0 0 0 0 0
 0 0 0 0 0`);
             _sprites = (<LedSprite[]>[]);
-            led.setDisplayMode(DisplayMode.Greyscale);
             basic.forever(() => {
                 basic.pause(30);
                 plot();
@@ -763,7 +762,10 @@ namespace game {
         for (let i = 0; i < _sprites.length; i++) {
             _sprites[i]._plot(now);
         }
+        const mode = led.displayMode();
+        led.setDisplayMode(DisplayMode.Greyscale);
         _img.plotImage(0);
+        led.setDisplayMode(mode);
     }
 
     /**

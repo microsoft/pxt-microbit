@@ -61,7 +61,6 @@
   "Direction.Left|block": "left",
   "Direction.Right|block": "right",
   "DisplayMode.BackAndWhite|block": "black and white",
-  "DisplayMode.BlackAndWhite|block": "black and white",
   "DisplayMode.Greyscale|block": "greyscale",
   "EventCreationMode.CreateAndFire": "MicroBitEvent is initialised, and its event handlers are immediately fired (not suitable for use in interrupts!).",
   "EventCreationMode.CreateOnly": "MicroBitEvent is initialised, and no further processing takes place.",

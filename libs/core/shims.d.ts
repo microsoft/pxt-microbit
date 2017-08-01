@@ -510,6 +510,12 @@ declare namespace led {
     function setDisplayMode(mode: DisplayMode): void;
 
     /**
+     * Gets the current display mode
+     */
+    //% weight=1 parts="ledmatrix" advanced=true shim=led::displayMode
+    function displayMode(): DisplayMode;
+
+    /**
      * Turns on or off the display
      */
     //% help=led/enable blockId=device_led_enable block="led enable %on"

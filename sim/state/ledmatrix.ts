@@ -305,6 +305,10 @@ namespace pxsim.led {
         runtime.queueDisplayUpdate()
     }
 
+    export function displayMode(): DisplayMode {
+        return board().ledMatrixState.displayMode;
+    }
+
     export function screenshot(): Image {
         let img = createImage(5)
         board().ledMatrixState.image.copyTo(0, 5, img, 0);
