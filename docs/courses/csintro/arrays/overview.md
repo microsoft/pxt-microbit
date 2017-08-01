@@ -58,5 +58,3 @@ There are some good array sorting videos:
 * Bubble-sort with Hungarian folk dance: https://youtu.be/lyZQPjUT5B4
 * Select-sort with Gypsy folk dance: https://youtu.be/Ns4TPTC8whw
 * Insert-sort with Romanian folk dance: https://youtu.be/ROalU379l3U
-
-![Folk dance sorting](/static/courses/csintro/arrays/folk-dance-sorting.png)
