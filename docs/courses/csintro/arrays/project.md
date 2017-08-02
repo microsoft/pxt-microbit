@@ -101,10 +101,17 @@ Have students write a reflection of about 150–300 words, addressing the follow
 **2 =** Array skips values or has other problems with storing and/or retrieving elements.<br/>
 **1 =** Array doesn't work at all or no array present.
 
+### Maker component
+
+**4 =** Tangible component is tightly integrated with the micro:bit and each relies heavily on the other to make the project complete.
+**3 =** Tangible component is somewhat integrated with the micro:bit but is not essential.
+**2 =** Tangible component does not add to the functionality of the program.
+**1 =** No tangible component.
+
 ### micro:bit program
 
 **4 =** The program:<br/>
-`*` Uses at least one array in a fully integrated and  meaningful way<br/>
+`*` Uses at least one array in a fully integrated and meaningful way<br/>
 `*` Compiles and runs as intended<br/>
 `*` Meaningful comments in code<br/>
 **3 =** Uses an array in a tangential way that is peripheral to function of project and/or program lacks 1 of the required elements.<br/>
@@ -113,11 +120,7 @@ Have students write a reflection of about 150–300 words, addressing the follow
 
 ### Collaboration reflection
 
-**4 =** Reflection piece includes:<br/>
-`*` Brainstorming ideas<br
-`*` Construction<br/>
-`*` Programming<br/>
-`*` Beta testing<br/>
+**4 =** Reflection piece addresses all prompts.<br/>
 **3 =** Reflection piece lacks 1 of the required elements.<br/>
 **2 =** Reflection piece lacks 2 of the required elements.<br/>
 **1 =** Reflection piece lacks 3 of the required elements.
