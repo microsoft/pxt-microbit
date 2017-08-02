@@ -3,6 +3,7 @@ namespace pxsim.input {
         let pin = getPin(pinId);
         if (!pin) return;
         pin.isTouched();
+        runtime.queueDisplayUpdate(); 
         pxtcore.registerWithDal(pin.id, DAL.MICROBIT_BUTTON_EVT_CLICK, handler);
     }
 
@@ -10,6 +11,7 @@ namespace pxsim.input {
         let pin = getPin(pinId);
         if (!pin) return;
         pin.isTouched();
+        runtime.queueDisplayUpdate(); 
         pxtcore.registerWithDal(pin.id, DAL.MICROBIT_BUTTON_EVT_UP, handler);
     }
 
