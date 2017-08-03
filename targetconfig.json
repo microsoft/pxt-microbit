@@ -2,7 +2,8 @@
     "packages": {
         "approvedOrgs": [
             "Microsoft",
-            "microbit-foundation"
+            "microbit-foundation",
+            "KitronikLtd"
         ],
         "approvedRepos": [
             "CoderDojoOlney/pxt-olney",
