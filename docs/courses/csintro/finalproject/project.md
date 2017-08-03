@@ -52,7 +52,7 @@ Sample Work Log:
 3/31: 45 min. Worked on attaching cardboard arm to servo and mounting servo to inside<br/>
 4/1: 30 min. Looked up documentation on talking to NeoPixel strip, worked through demos<br/>
 4/3: 45 min. Hot glued NeoPixel strip to outside of dinosaur, finished painting<br/>
-4/4: 30 min. Coded lighting patterns in pxt._
+4/4: 30 min. Coded lighting patterns in MakeCode._
 
 **Teacher note:** We generally don't accept late work logs. If a student simply didn't have time to do any work on the project, he should still file a work log, and report that no work got done. Work logs are worth a few points each, so missing one or two isn't a problem, but if it happens a lot it's usually time to do a check-in with that student and see where she is with the project.
 
@@ -72,7 +72,7 @@ Sample Record of Thinking Excerpt:
 >_Week of April 6<br/>
 I guess I would choose the word "elated" because that's what I am feeling right now. After Mr. Kiang helped me figure out why my code wasn't working I was able to see it working exactly how I pictured it last week! That was a great moment. I was surprised how hard writing code that works is. I planned out the steps I wanted it to do but I didn't realize that the loops had to be nested one inside the other so I was stuck for a while. It always seems more simple than it is, that's one thought I will take into next week. Now I have the head attached to the body and the jaws work. I'm going to keep trying to get the lights working._
 
-Teacher Note: A Record of Thinking is not an expanded work log!  Students will sometimes just write a more detailed list of all of the tasks they completed over the week, and that's not the point of the Record of Thinking.  The Work Logs are to show WHAT you did. The Record of Thinking is to show HOW you learned how to do it.  Unlike Work Logs, I will accept late Records of Thinking as long as they come no later than the due date for the next week’s Record of Thinking. It is an important form of documentation of the learning process.
+Teacher Note: A Record of Thinking is not an expanded work log!  Students will sometimes just write a more detailed list of all of the tasks they completed over the week, and that's not the point of the Record of Thinking.  The Work Logs are to show WHAT you did. The Record of Thinking is to show HOW you learned how to do it. Unlike Work Logs, I will accept late Records of Thinking as long as they come no later than the due date for the next week’s Record of Thinking. It is an important form of documentation of the learning process.
 
 ## Turning in the final project
 When you turn in the final project, you should turn in your code, and a final narrative.
@@ -145,6 +145,13 @@ We have found that a "science fair" format works nicely, with students sitting a
 **2 =** Code somewhat effectively demonstrates the use of new concept(s). Only some variable names are unique and/or clearly describe what information values the variables hold. Code is somewhat efficient.<br/>
 **1 =** Code demonstrates the use of new concept(s), yet is not effective. Few or no variable names are unique and/or clearly describe what information values the variables hold. Code is not efficient.
 
+### Variable names
+
+**4 =** All variable names are unique and clearly describe what information values the variables hold.<br/>
+**3 =** Most variable names are unique and/or clearly describe what information values the variables hold.<br/>
+**2 =** Only some variable names are unique and/or clearly describe what information values the variables hold.<br/>
+**1 =** Few or no variable names are unique and/or clearly describe what information values the variables hold.<br/>
+
 ### Maker component
 
 **4 =** Tangible component is tightly integrated with the micro:bit and each relies heavily on the other to make the project complete. <br/>
@@ -167,3 +174,4 @@ We have found that a "science fair" format works nicely, with students sitting a
 **2 =** Reflection piece is superficial and lacks 2 of the required elements.<br/>
 **4 =** Reflection piece is trivial and lacks 3 of the required elements. 
 
+As always, these rubrics are just a starting point and you should certainly feel free to adjust them as appropriate for your own classroom or learning environment.
