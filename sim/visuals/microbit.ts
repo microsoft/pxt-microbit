@@ -367,9 +367,18 @@ namespace pxsim.visuals {
             } else {
                 const bw = state.ledMatrixState.displayMode == pxsim.DisplayMode.bw
                 const img = state.ledMatrixState.image;
+                const br = state.ledMatrixState.brigthness != undefined ? state.ledMatrixState.brigthness : 255;
                 this.leds.forEach((led, i) => {
                     const sel = (<SVGStylable><any>led)
-                    sel.style.opacity = ((bw ? img.data[i] > 0 ? 255 : 0 : img.data[i]) / 255.0) + "";
+                    let imgbr = bw ? (img.data[i] > 0 ? br : 0) : img.data[i];
+                    // correct brightness
+                    const opacity = imgbr > 0 ? imgbr / 255 * 155 + 100 : 0;
+                    const transfrom = imgbr > 0 ? imgbr / 255 * 0.4 + 0.6 : 0;
+                    sel.style.opacity = (opacity / 255) + "";
+                    if (transfrom > 0) {
+                        sel.style.transformOrigin = '50% 50%';
+                        sel.style.transform = `scale(${transfrom})`;
+                    }
                 })
             }
             this.updatePins();
@@ -613,6 +622,15 @@ namespace pxsim.visuals {
             this.element.appendChild(this.g);
 
             // filters
+            let ledglow = svg.child(this.defs, "filter", { id: "ledglow", x: "-75%", y: "-75%", width: "300%", height: "300%" });
+            svg.child(ledglow, "feMorphology", { operator: "dilate", radius: "4", in: "SourceAlpha", result: "thicken"});
+            svg.child(ledglow, "feGaussianBlur", { stdDeviation: "5", in: "thicken", result: "blurred"});
+            svg.child(ledglow, "feFlood", { "flood-color": "rgb(255, 17, 77)", result: "glowColor"});
+            svg.child(ledglow, "feComposite", { in: "glowColor", in2: "blurred", operator: "in", result: "ledglow_colored"});
+            let ledglowMerge = svg.child(ledglow, "feMerge", {});
+            svg.child(ledglowMerge, "feMergeNode", { in: "ledglow_colored"});
+            svg.child(ledglowMerge, "feMergeNode", { in: "SourceGraphic"});
+
             let glow = svg.child(this.defs, "filter", { id: "filterglow", x: "-5%", y: "-5%", width: "120%", height: "120%" });
             svg.child(glow, "feGaussianBlur", { stdDeviation: "5", result: "glow" });
             let merge = svg.child(glow, "feMerge", {});
@@ -641,7 +659,9 @@ namespace pxsim.visuals {
                     let ledleft = j * ledoffw + left;
                     let k = i * 5 + j;
                     this.ledsOuter.push(svg.child(this.g, "rect", { class: "sim-led-back", x: ledleft, y: ledtop, width: 10, height: 20, rx: 2, ry: 2 }));
-                    this.leds.push(svg.child(this.g, "rect", { class: "sim-led", x: ledleft - 2, y: ledtop - 2, width: 14, height: 24, rx: 3, ry: 3, title: `(${j},${i})` }));
+                    let led = svg.child(this.g, "rect", { class: "sim-led", x: ledleft - 2, y: ledtop - 2, width: 14, height: 24, rx: 3, ry: 3, title: `(${j},${i})` });
+                    svg.filter(led, `url(#ledglow)`)
+                    this.leds.push(led);
                 }
             }
 
