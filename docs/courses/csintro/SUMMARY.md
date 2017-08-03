@@ -14,6 +14,10 @@
 
 * [References](/courses/csintro/references)
 
+## Acknowledgements
+
+* [Acknowledgements](/courses/csintro/acknowledgements)
+
 ## Making
 
 * [Making](/courses/csintro/making)

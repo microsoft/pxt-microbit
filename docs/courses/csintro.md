@@ -36,6 +36,7 @@ Each of the 12 lessons is structured in this format:
 * [About](/courses/csintro/about)
 * [Introduction](/courses/csintro/introduction)
 * [References](/courses/csintro/references)
+* [Acknowledgements](/courses/csintro/acknowledgements)
 
 ### Lessons
 
