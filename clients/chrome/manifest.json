@@ -12,8 +12,7 @@
   "short_name": "makecode.microbit.org",
 
   "description": "Extension for https://makecode.microbit.org.",
-  "homepage_url": "https://makecode.microbit.org",
-  "offline_enabled": "true",
+  "offline_enabled": true,
   "icons": {
     "48": "logo48.png",
     "128": "logo128.png"
