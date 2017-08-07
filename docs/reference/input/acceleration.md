@@ -17,15 +17,15 @@ A **g** is as much acceleration as you get from Earth's gravity.
 
 
 
-### Parameters
+## Parameters
 
 * ``dimension`` means which direction you are checking for acceleration, either `Dimension.X` (left and right), `Dimension.Y` (forward and backward), or `Dimension.Z` (up and down)
 
-### Returns
+## Returns
 
 * a [number](/types/number) that means the amount of acceleration. When the @boardname@ is lying flat on a surface with the screen pointing up, `x` is `0`, `y` is `0`, and `z` is `-1023`.
 
-### Example: bar chart
+## Example: bar chart
 
 This example shows the acceleration of the @boardname@ with a bar graph.
 
@@ -36,7 +36,7 @@ basic.forever(() => {
 ```
 
 
-### See also
+## See also
 
 [set accelerometer range](/reference/input/set-accelerometer-range),
 [compass heading](/reference/input/compass-heading),

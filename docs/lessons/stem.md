@@ -2,9 +2,9 @@
 
 Overview of Blocks lessons for the @boardname@.
 
-### @short Lessons
+## @short Lessons
 
-### ~column 
+## ~column 
 
 ## Science
 
@@ -15,9 +15,9 @@ Overview of Blocks lessons for the @boardname@.
 * [Zoomer](/lessons/zoomer), measure the force with acceleration
 * [Glowing pendulum](/lessons/glowing-pendulum), construct a pendulum that glows using acceleration
 
-### ~
+## ~
 
-### ~column 
+## ~column 
 
 ## Technology
 
@@ -32,9 +32,9 @@ Overview of Blocks lessons for the @boardname@.
 * [Happy birthday](/lessons/happy-birthday), create a popular song
 * [Magic 8](/lessons/magic-8), a fortune teller game with the @boardname@
 
-### ~
+## ~
 
-### ~column 
+## ~column 
 
 ## Engineering
 
@@ -44,9 +44,9 @@ Overview of Blocks lessons for the @boardname@.
 * [Beatbox](/lessons/classic-beatbox), make a beatbox music player with variables
 * [Temperature](/lessons/temperature), get the ambient temperature (degree Celsius °C)
 
-### ~
+## ~
 
-### ~column 
+## ~column 
 
 ## Math
 
@@ -60,5 +60,5 @@ Overview of Blocks lessons for the @boardname@.
 * [Digi Yoyo](/lessons/digi-yoyo), create a counter with a while loop
 * [Rotation animation](/lessons/rotation-animation), control an animation with a boolean variable
 
-### ~
+## ~
 

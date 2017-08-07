@@ -10,7 +10,7 @@ A packet that was received by the radio.
 * `serial` - The serial number of the @boardname@ that sent this packet or `0` if the @boardname@ did not include its serial number.
 * `signal` - How strong the radio signal is from `255` (weak) to `0` (strong).
 
-### See also
+## See also
 
 [on data packet received](/reference/radio/on-data-packet-received),
 

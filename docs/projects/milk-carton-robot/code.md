@@ -1,11 +1,11 @@
 # Code
-### @description code to make the Milk Carton Robot alive
+## @description code to make the Milk Carton Robot alive
 
-### ~avatar avatar
+## ~avatar avatar
 
 Add code to make the Milk Carton Robot move.
 
-### ~
+## ~
 
 ## Duration: ~15 minutes
 
@@ -68,6 +68,6 @@ closed = 175
 ```
 
 
-### ~button /projects/milk-carton-robot/connect
+## ~button /projects/milk-carton-robot/connect
 NEXT: Connect
-### ~
+## ~

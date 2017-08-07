@@ -1,5 +1,5 @@
 # Code
-### @description code to make the Reaction Time interactive
+## @description code to make the Reaction Time interactive
 
 ![](/static/mb/courses/stem/reaction_time_complete.jpg)
 
@@ -7,11 +7,11 @@ This lesson uses the @boardname@ to measure the reaction time of a student by co
 
 Connect each piece of foil to the appropriate pin on the @boardname@.  
 
-### ~ hint
+## ~ hint
 
 For the experiment we will **not** be utilizing the ``P2`` pin.
 
-### ~
+## ~
 
 Test the apparatus by putting one hand on the ground pin and one hand on the ``P0`` pin.  This will complete the circuit and start the timer on the @boardname@ after a 3 second count down.
 

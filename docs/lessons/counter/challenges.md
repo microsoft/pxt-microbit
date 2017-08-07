@@ -14,7 +14,7 @@ input.onButtonPressed(Button.A, () => {
 })
 ```
 
-### Challenge 1
+## Challenge 1
 
 Let's add the code to `count` when `B` is pressed. Add an event handler with `on button pressed(B)` then add the code to `count`.
 
@@ -31,7 +31,7 @@ input.onButtonPressed(Button.B, () => {
 })
 ```
 
-### Challenge 3
+## Challenge 3
 
 Now let's try to reset the counter when the @boardname@ is shaken. You will need to register an event handler with `on shake`.
 

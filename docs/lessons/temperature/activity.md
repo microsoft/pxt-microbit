@@ -32,9 +32,9 @@ input.onGesture(Gesture.Shake, () => {
 
 * click run to see if the code works as expected.
 
-### ~avatar avatar
+## ~avatar avatar
 
 Excellent, you're ready to continue with the [challenges](/lessons/temperature/challenges)!
 
-### ~
+## ~
 

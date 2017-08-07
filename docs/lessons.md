@@ -1,10 +1,10 @@
 # Lessons 
 
-### @description Lessons to teach computer science and coding.
+## @description Lessons to teach computer science and coding.
 
-### @short Lessons
+## @short Lessons
 
-### ~column 
+## ~column 
 
 ## Beginner
 
@@ -22,9 +22,9 @@
 * [Game Counter](/lessons/game-counter), displays the player's score with score and add points to score
 * [Happy Birthday](/lessons/happy-birthday), create a popular song
 
-### ~
+## ~
 
-### ~column 
+## ~column 
 
 ## Intermediate
 
@@ -45,9 +45,9 @@
 * [Glowing Pendulum](/lessons/glowing-pendulum), construct a pendulum that glows using acceleration
 * [Classic Beatbox](/lessons/classic-beatbox), make a beatbox music player with variables
 
-### ~
+## ~
 
-### ~column 
+## ~column 
 
 ## Maker
 * [Pogo](/lessons/pogo), create a pogo game to test your jumping abilities
@@ -62,6 +62,6 @@
 * [Headbands](/lessons/headbands), create a charades game with a collection of strings that hold the words
 * [Hero](/lessons/hero), reconstruct the classic arcade game pac man with the @boardname@
 * [Catch the Egg](/lessons/catch-the-egg-game), catch falling eggs in a basket with an acceleration controller
-### ~
+## ~
 
-### @section full
+## @section full

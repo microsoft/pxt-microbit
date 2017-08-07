@@ -1,6 +1,6 @@
 # Railway crossing
 
-### ~
+## ~
 
 https://youtu.be/xBInZN2ZWRI
 
@@ -152,7 +152,7 @@ For the barrier you need:
  - A straw (preferably white)
  - Some red tape for decoration
  
-### Instructions
+## Instructions
 
  - Glue the servo to the pole
  - Glue a strip of cardboard over it for stability
@@ -160,19 +160,19 @@ For the barrier you need:
  - Add the instructions below at the right location in your program
  - Connect the servo to the 3V, GND and PIN0 as shown in the simulator
  
-#### Open the barrier
+### Open the barrier
 ```block 
 pins.servoWritePin(AnalogPin.P0, 90)
 ```
  
-#### Close the barrier
+### Close the barrier
 ```block
 pins.servoWritePin(AnalogPin.P0, 180)
 ```
  
 Good luck and have fun!
    
-### ~
+## ~
 
 ## about the author
 This project was contributed by Johan Gorter [@JohanGorter](https://twitter.com/JohanGorter).

@@ -2,11 +2,11 @@
 
 An image for the @boardname@ screen.
 
-### @parent blocks/language
+## @parent blocks/language
 
 An *Image* is a matrix of pixels to show on the [LED screen](/device/screen)
 
-### Block Editor: Show LEDs
+## Block Editor: Show LEDs
 
 To display an image:
 
@@ -22,7 +22,7 @@ basic.showLeds(`
     `)
 ```
 
-### Creating an image
+## Creating an image
 
 To create an image that you can later modify, see the [create image](/reference/images/create-image) function.
 
@@ -38,7 +38,7 @@ You should see code similar to this:
 
 ![](/static/mb/blocks/image-0.png)
 
-### Image functions
+## Image functions
 
 * [create image](/reference/images/create-image): create an image from a series of on/off LED states
 * [clear](/reference/basic/clear-screen): turn off all the pixels in an image
@@ -47,7 +47,7 @@ You should see code similar to this:
 * [show image](/reference/images/show-image): show an image on the screen
 * [scroll image](/reference/images/scroll-image): scroll an image on the screen
 
-### See also
+## See also
 
 [Show LEDs](/reference/basic/show-leds), [create image](/reference/images/create-image), [show image](/reference/images/show-image), [LED screen](/device/screen)
 

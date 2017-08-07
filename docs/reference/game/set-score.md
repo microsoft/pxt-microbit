@@ -5,11 +5,11 @@ Sets the current score.
 ```sig
 game.setScore(1)
 ```
-### Parameters
+## Parameters
 
 * a [number](/types/number) that represents the new score.
 
-### Examples
+## Examples
 
 This program is a simple game.
 Press button ``A`` as much as possible to increase the score. 
@@ -25,6 +25,6 @@ input.onButtonPressed(Button.A, () => {
 })
 ```
 
-### See Also
+## See Also
 
 [score](/reference/game/score), [start countdown](/reference/game/start-countdown)

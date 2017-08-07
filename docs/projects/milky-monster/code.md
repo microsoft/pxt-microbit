@@ -1,11 +1,11 @@
 # Code
-### @description code to make the Milky Monster alive
+## @description code to make the Milky Monster alive
 
-### ~avatar avatar
+## ~avatar avatar
 
 Add code to make the Milky Monster move.
 
-### ~
+## ~
 
 ## Duration: ~30 minutes
 
@@ -32,11 +32,11 @@ basic.showString("calibrate")
 
 The servo should be positioned on 180 degrees **before** attaching the rotor to it. This is to make sure the mouth of the Milky Monster will be closed once the servo reaches 180 degrees. 
 
-### ~ hint
+## ~ hint
 
 You may use a philips scew driver to attach the rotor to the servo. 
 
-### ~
+## ~
 
 https://youtu.be/YZfkMWTeH4o
 
@@ -78,6 +78,6 @@ Your Milky Monster is ready!
 
 https://youtu.be/egl3fNAYylk
 
-### ~button /projects/milky-monster/connect
+## ~button /projects/milky-monster/connect
 NEXT: Connect
-### ~
+## ~

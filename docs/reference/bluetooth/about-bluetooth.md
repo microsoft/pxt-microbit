@@ -18,21 +18,21 @@ A Bluetooth device contains a table of data called an Attribute Table which can 
 
 The Attribute Table contains something like a series of records of various types. The main types are called Services, Characteristics and Descriptors. Let's look at each of these terms in turn.
 
-### Attributes
+## Attributes
 
 Services, Characteristics and Descriptors are all types of Attribute. Hence Generic Attribute Profile, Attribute Table and something called the Attribute Protocol. All attributes have a type which is identified by a UUID (Universally Unique Identifer). Some Attributes are defined by the Bluetooth SIG, the technical standards body for Bluetooth and these have UUIDs which are 16 bits in length. Some Attributes are custom designed for a particular device by the product team and these have 128 bit UUIDs. The @boardname@ uses a mixture of 16 bit and 128 bit UUIDs.
 
-### Structure
+## Structure
 
 Services, Characteristics and Descriptors are organised in a hierarchy with Services at the top and Descriptors at the bottom. Services contain one or more Characteristics. A Characteristic owns zero or more Descriptors. Zero because Descriptors are completely optional whereas a Service must contain at least one Characteristic.
 
 ![](/static/bluetooth/gatt_hierarchy.png)
   
-### Services
+## Services
 
 A Service is a container for logically related Bluetooth data items. Those data items are in fact called Characteristics. A Service can be thought of as the owner of the Characteristics inside it. Often a Service represents a particular feature (e.g. a hardware feature) of a device like the buttons or a particular sensor. An example of a Bluetooth SIG defined Service is the Device Information Service which, as the name suggests, is a container for various items of information about the device such as its manufacturer and serial number. The @boardname@ has this service.
 
-### Characteristics
+## Characteristics
 
 Characteristics are items of data which relate to a particular internal state of the device or perhaps some state of the environment which the device can measure using a sensor. The current battery level is an example of internal state data whereas the ambient temperature could perhaps be measured by a sensor. Sometimes Characteristics represent configuration data such as the frequency at which you want something to be measured. In any of these cases, the way a device can expose such data to other devices to use via Bluetooth is by making them available as a Characteristic. An example of a Bluetooth SIG defined Characteristic is the Serial Number String which you'll find inside the Device Information service.
 
@@ -46,11 +46,11 @@ Sometimes the device will have been programmed to respond in a special way when 
 
 Permissions are to do with security and further describe the security conditions that must be met before read or write access to the characteristic is to be granted.
 
-### Descriptors
+## Descriptors
 
 Descriptors contain meta data which either augments the details relating to the Characteristic which the Descriptor belongs to or allows the configuration of a behaviour involving that Characteristic. Notification messages are switched on or off using a special descriptor called the Client Characteristic Configuration Descriptor for example.
 
-### Profile
+## Profile
 
 A Bluetooth profile is a specification which pulls together all the required information about how a device behaves, how it can be accessed in terms of its services, characteristics and descriptors, security rules, concurrency limitations and so on.
 
@@ -86,11 +86,11 @@ That's it! Enjoy using Bluetooth on the @boardname@!
 
 Martin Woolley, Bluetooth SIG. Twitter: @bluetooth_mdw
 
-#### Video
+### Video
 https://www.youtube.com/watch?v=aep_GVowKfs
 
 
-### See also
+## See also
 
 [About Bluetooth](/reference/bluetooth/about-bluetooth), [@boardname@ Bluetooth profile overview ](http://lancaster-university.github.io/microbit-docs/ble/profile/), [@boardname@ Bluetooth profile reference](http://lancaster-university.github.io/microbit-docs/resources/bluetooth/microbit-profile-V1.9-Level-2.pdf),  [Bluetooth on @boardname@ resources](http://bluetooth-mdw.blogspot.co.uk/p/bbc-microbit.html), [Bluetooth SIG](https://www.bluetooth.com)
 

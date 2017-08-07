@@ -64,8 +64,8 @@ By copying the script onto the `MICROBIT` drive, you have programmed it into the
 flash memory on the micro:bit, which means even after you unplug the micro:bit,
 your program will still run if the micro:bit is powered by battery.
 
-### ~hint
+## ~hint
 
 Transfer not working? See some [troubleshooting tips](/device/usb/troubleshooting).
 
-### ~
+## ~

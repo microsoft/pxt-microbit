@@ -24,7 +24,7 @@ basic.forever(() => {
 });
 ```
 
-### Challenge 1
+## Challenge 1
 
 Instead of displaying `N` when the @boardname@ is pointing North, display a star to indicate the north star.
 
@@ -54,7 +54,7 @@ basic.forever(() => {
 
 * Run your code to see if it works as expected
 
-### Challenge 2
+## Challenge 2
 
 Instead of displaying just `N`, `W`, `S`, or `E`, display the full word.
 
@@ -79,7 +79,7 @@ basic.forever(() => {
 
 * Run your code to see if it works as expected
 
-### Challenge 3
+## Challenge 3
 
 Display your own unique message for each direction.
 

@@ -2,11 +2,11 @@
 
 Overview of lesson instructions for the @boardname@.
 
-### @short Teach
+## @short Teach
 
 The [lessons](/lessons) promote computational thinking and computer science literacy from an early age and provide opportunities for learning these skills within the context of public and private education, where they will be available to Year 7 students. This page is a 'how to manual' for using the lessons in the classroom.
 
-### @section full
+## @section full
 
 ##  Summary
 

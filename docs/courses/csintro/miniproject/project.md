@@ -77,7 +77,7 @@ Because students are working on the projects in class, and much of the benefit c
 
 A work log is a short, bullet point list of what they worked on, and how long it took. Stick to the facts. It shouldn’t take more than thirty seconds or so to write up a work log. Students should do one for every class. A shared Microsoft OneNote notebook is a great way to keep a work log that students can update regularly. Alternately, you might use a collaborative shared document, or your classroom management system, or even e-mail.
 
-#### Sample Work Log
+### Sample Work Log
 >**_April 11_**<br/>
 _20 min. Created code that reacts when pins P0 and P1 are pressed._<br/>
 _0 min. Talked with Mr. Kiang about how to attach wires so they won’t fall off_<br/>
@@ -103,35 +103,35 @@ Sample Reflection (excerpt)
 
 **Competency scores**: 4, 3, 2, 1
 
-### Code - Show what you know
+## Code - Show what you know
 
 **4 =** Code very effectively demonstrates the use of previous concept(s). Variable names are unique and clearly describe what information values the variables hold. Code is highly efficient.<br/>
 **3 =** Code only partially demonstrates previous concepts, and/or is not efficient.<br/>
 **2 =** Code only partially demonstrates previous concepts, and/or is not efficient, variable names not clear.<br/>
 **1 =** Code does not demonstrate previous concepts, is not efficient, variable names not clear.
 
-### Code - Show something new
+## Code - Show something new
 
 **4 =** Code very effectively demonstrates the use of new concept(s). Variable names are unique and clearly describe what information values the variables hold. Code is highly efficient.<br/>
 **3 =** Code only minimally demonstrates new concepts, and/or is not efficient.<br/>
 **2 =** Code only minimally demonstrates new concepts, and/or is not efficient, variable names not clear.<br/>
 **1 =** Code does not demonstrate new concepts, is not efficient, variable names not clear.<br/>
 
-### Maker component
+## Maker component
 
 **4 =** Tangible component is tightly integrated with the micro:bit and each relies heavily on the other to make the project complete.<br/>
 **3 =**Tangible component is somewhat integrated with the micro:bit but is not essential.<br/>
 **2 =** Tangible component does not add to the functionality of the program.<br/>
 **1 =** No tangible component.
 
-### Work Logs
+## Work Logs
 
 **4 =** All work logs submitted on time, and accurate.<br/>
 **3 =** One late or missing work log and/or work logs not accurate nor sufficiently detailed.<br/>
 **2 =** Two late or missing work logs and/or work logs not accurate nor sufficiently detailed.<br/>
 **1 =** More than two late or missing work logs and/or not accurate nor sufficiently detailed.
 
-### Reflection
+## Reflection
 
 **4 =** Reflection piece describes:<br/>
 `*` Development Process<br/>

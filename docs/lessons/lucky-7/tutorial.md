@@ -4,9 +4,9 @@ Coding challenges for lucky 7.
 
 ###~ Avatar
 
-### @video td/videos/lucky-7-1-2
+## @video td/videos/lucky-7-1-2
 
-### Rebuild the game!
+## Rebuild the game!
 
 The blocks have been shuffled! Put them back together so that…
 * The blocks should be multiples of 7 and a pause between the numbers
@@ -17,7 +17,7 @@ basic.pause(500)
 basic.showNumber(14)
 ```
 
-### Hints and tips
+## Hints and tips
 
 Cut out these documentation cards to help you!
 

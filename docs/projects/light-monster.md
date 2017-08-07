@@ -1,13 +1,13 @@
 
 # Light Monster
 
-### @description A monster made of cardboard that responds to light
+## @description A monster made of cardboard that responds to light
 
-### ~avatar avatar
+## ~avatar avatar
 
 Make a coffee cup monster that responds to light!
 
-### ~
+## ~
 
 https://youtu.be/BiZLjugXMbM
 
@@ -36,8 +36,8 @@ https://youtu.be/BiZLjugXMbM
 * [Code](/projects/light-monster/code)  
 * [Connect](/projects/light-monster/connect)  
 
-### ~button /projects/light-monster/make
+## ~button /projects/light-monster/make
 
 Let's get started!
 
-### ~
+## ~

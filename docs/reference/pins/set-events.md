@@ -6,12 +6,12 @@ Configure the type of events emitted by a given pin.
 pins.setEvents(DigitalPin.P0, PinEventType.Edge);
 ```
 
-### Parameters
+## Parameters
 
 * ``name``: The @boardname@ hardware pin to configure (``P0`` through ``P20``)
 * ``type``: The type of events this pin should emit
 
-### Example
+## Example
 
 The following example configures pin ``P0`` and then
 subscribes to the rise and fall events.

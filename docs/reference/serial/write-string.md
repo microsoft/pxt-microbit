@@ -7,11 +7,11 @@ without starting a new line afterward.
 serial.writeString("");
 ```
 
-### Parameters
+## Parameters
 
 * `text` is the [string](/types/string) to write to the serial port
 
-### Example: simple serial
+## Example: simple serial
 
 This program writes the word `JUMBO` to the serial port repeatedly,
 without any new lines.
@@ -23,7 +23,7 @@ basic.forever(() => {
 });
 ```
 
-### See also
+## See also
 
 [serial](/device/serial),
 [serial write line](/reference/serial/write-line),

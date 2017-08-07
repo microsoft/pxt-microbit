@@ -2,11 +2,11 @@
 
 Show an image that points up when the logo is up. 
 
-### ~avatar avatar
+## ~avatar avatar
 
 Welcome! This tutorial will help you display an arrow pointing toward the logo! Let's get started.
 
-### ~
+## ~
 
 Using the **accelerometer** sensor, the @boardname@ can detect when the **logo** is oriented **up**. We call that the **logo up** event. We will use `on logo up` to register an event handler that will run when the **logo up** event happens.
 
@@ -32,9 +32,9 @@ input.onGesture(Gesture.LogoUp, () => {
 
 Run your code and try to turn around the @boardname@ to see the **logo up** event in action!
 
-### ~avatar boothing
+## ~avatar boothing
 
 Excellent, you're ready to continue with the [challenges](/lessons/magic-logo/challenges)!
 
-### ~
+## ~
 

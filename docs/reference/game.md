@@ -32,7 +32,7 @@ game.startCountdown(10000);
 game.gameOver();
 ```
 
-### See also
+## See also
 
 [createSprite](/reference/game/create-sprite), [move](/reference/game/move), [turn](/reference/game/turn),
 [ifOnEdgeBounce](/reference/game/if-on-edge-bounce), [get](/reference/game/get), [set](/reference/game/set),

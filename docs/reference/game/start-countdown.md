@@ -6,11 +6,11 @@ Start counting down time from the number of milliseconds you say.
 game.startCountdown(1000)
 ```
 
-### Parameters
+## Parameters
 
 * ``ms`` is a [number](/types/number) that says how many milliseconds to count down (one second is 1000 milliseconds)
 
-### Examples
+## Examples
 
 This program is a simple game.
 Press button ``A`` as much as possible.
@@ -23,7 +23,7 @@ input.onButtonPressed(Button.A, () => {
 game.startCountdown(10000)
 ```
 
-### See Also
+## See Also
 
 [score](/reference/game/score), [change score by](/reference/game/change-score-by)
 

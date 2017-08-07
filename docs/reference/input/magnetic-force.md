@@ -13,18 +13,18 @@ The @boardname@ measures magnetic force with **microteslas**.
 ## ~
 
 
-### Parameters
+## Parameters
 
 * ``dimension`` means which direction the @boardname@ should measure
   magnetic force in: either `Dimension.X` (the left-right direction),
   `Dimension.Y` (the forward/backward direction), or `Dimension.Z`
   (the up/down direction)
 
-### Returns
+## Returns
 
 * a [number](/types/number) of microteslas that means the strength of the magnet
 
-### Example: metal detector
+## Example: metal detector
 
 This program makes the center LED of the @boardname@ get brighter when
 the magnetic force is stronger, and dimmer when it is weaker.
@@ -37,6 +37,6 @@ basic.forever(() => {
 })
 ```
 
-### See also
+## See also
 
 [compass heading](/reference/input/compass-heading)

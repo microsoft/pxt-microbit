@@ -1,20 +1,20 @@
 # Wallet
 
-### @description A beginner maker activity, building a duct tape wallet with the @boardname@  
+## @description A beginner maker activity, building a duct tape wallet with the @boardname@  
 
-### ~avatar avatar
+## ~avatar avatar
 
 Make a @boardname@ wallet with this guided tutorial!
 
-### ~
+## ~
 
 ![wallet image](/static/mb/projects/wallet/wallet.jpg)
 
-### ~button /projects/wallet/make
+## ~button /projects/wallet/make
 
 Let's get started!
 
-### ~
+## ~
 
 ## References
 

@@ -9,14 +9,14 @@ Remind the students of all the different inputs available to them through the mi
  
 ## Project Ideas
 
-### Sunscreen Monitor
+## Sunscreen Monitor
 
 When you shake the micro:bit, it reports the current temperature in degrees Fahrenheit.  Button B measures the light level and if it is above 70 degrees AND very bright, it will display a sun icon.  If it is above 70 degrees and less bright, it will display a cloudy symbol. If it is dark, it will display a nighttime icon.
 
 [**micro:bit Sunscreen Monitor**](https://youtu.be/VmD-dcZZQFc)
 https://youtu.be/VmD-dcZZQFc
 
-#### Sunscreen code
+### Sunscreen code
 
 ```blocks
 input.onButtonPressed(Button.B, () => {
@@ -178,7 +178,7 @@ This example uses boolean operations because both light level AND temperature mu
 if (128 > input.lightLevel() && 0 < input.lightLevel() && input.temperature() > 22) {}
 ```
  
-### Two-player game
+## Two-player game
 
 Create a game in which two players take turns on the same micro:bit. You can use a boolean variable called PlayerATurn to keep track of whose turn it is.
 
@@ -187,7 +187,7 @@ Create a game in which two players take turns on the same micro:bit. You can use
 ![Two player game project](/static/courses/csintro/booleans/two-player-game.png)
 Board Game with Arrows
 
-#### Board game arrow code
+### Board game arrow code
 
 ```blocks
 let player1Turn = false
@@ -312,14 +312,14 @@ if (player1Turn == true && Math.random(4) < 3) {
  
 **Competency scores**: 4, 3, 2, 1
  
-### Boolean
+## Boolean
 
 **4 =** More than 2 Boolean variables are implemented in a meaningful way.<br/>
 **3 =** At least 2 Boolean variable is implemented in a meaningful way.<br/>
 **2 =** At least 1 Boolean variable is implemented in a meaningful way.<br/>
 **1 =** No Boolean variables are implemented.
 			 
-### micro:bit program
+## micro:bit program
 
 **4 =** micro:bit program:<br/>
 `*` Uses Boolean variables in a way that is integral to the program.<br/>
@@ -330,7 +330,7 @@ if (player1Turn == true && Math.random(4) < 3) {
 **2 =** micro:bit program lacks 2 of the required elements.<br/>
 **1 =** micro:bit program lacks 3 or more of the required elements.
 
-### Collaboration reflection
+## Collaboration reflection
 
 **4 =** Reflection piece includes:<br/>
 `*` Brainstorming ideas<br/>

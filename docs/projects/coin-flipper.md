@@ -1,12 +1,12 @@
 # The amazing coin flipper
 
-### ~avatar avatar
+## ~avatar avatar
 
 Are you trying to choose whether to play soccer or go to the movies
 instead, or which toppings to have on your pizza?  Build a coin
 flipping machine with the @boardname@ to choose for you!
 
-### ~
+## ~
 
 Here are the blocks to make your coin flipper.  When you press button
 `B`, the coin flipper will show either `H` for heads or `T` for tails
@@ -21,7 +21,7 @@ input.onButtonPressed(Button.B, () => {
     }
 });
 ```
-### ~hint
+## ~hint
 
 The `[Math.randomBoolean()]` block randomly tells the ``if``
 block `true` or `false`.  If value picked is `true`, the
@@ -29,16 +29,16 @@ block `true` or `false`.  If value picked is `true`, the
 
 That's it!
 
-### ~
+## ~
 
-### Keeping score
+## Keeping score
 
-#### ~avatar
+### ~avatar
 
 To keep track out of how many guesses you've won,
 add these blocks to your coin flipper:
 
-#### ~
+### ~
 
 ```blocks
 input.onButtonPressed(Button.A, () => {

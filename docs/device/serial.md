@@ -24,7 +24,7 @@ basic.forever(() => {
 
 Unfortunately, using the serial library requires quite a bit of a setup.
 
-### BBC micro:bit Chrome Extension
+## BBC micro:bit Chrome Extension
 
 If you are using the Google Chrome browser, you can use our extension to get serial data streaming in the editor.
 
@@ -34,7 +34,7 @@ If you are using the Google Chrome browser, you can use our extension to get ser
 
 If the extension is enabled, it will not be possible to access the port/device for the micro:bit from other programs than Chrome.
 
-### Windows
+## Windows
 
 You must install a device driver (for the computer to recognize the
 serial interface of the micro:bit); then, you must also install a
@@ -47,7 +47,7 @@ its output).
 
 * Instructions for installing a terminal emulator are below.
 
-#### Windows > Tera Term
+### Windows > Tera Term
 
 * Install the terminal emulator [Tera Term](https://ttssh2.osdn.jp/index.html.en). At the time of this writing, the latest version is 4.88 and can be downloaded [from here](http://en.osdn.jp/frs/redir.php?m=jaist&f=%2Fttssh2%2F63767%2Fteraterm-4.88.exe). Follow the instructions from the installer.
 
@@ -61,7 +61,7 @@ You should be good. Feel free to hit `Setup` > `Save Setup` in the menus to eras
 
 Please note that Windows will assign you a different COM port if you plug in another micro:bit. If you're juggling between micro:bits, you'll have to change the COM port every time.
 
-#### Windows > Putty
+### Windows > Putty
 
 If you prefer another terminal emulator (such as [PuTTY](http://www.putty.org/)), here are some instructions.
 
@@ -74,7 +74,7 @@ If you prefer another terminal emulator (such as [PuTTY](http://www.putty.org/))
 
 ![](/static/mb/serial-library-1.png)
 
-### Linux
+## Linux
 
 * Install the program `screen` if it is not already installed.
 * Plug in the micro:bit.
@@ -87,7 +87,7 @@ If you prefer another terminal emulator (such as [PuTTY](http://www.putty.org/))
 
 Alternative programs include `minicom` and so on.
 
-### Mac OS
+## Mac OS
 
 * Plug in the micro:bit
 * Open a terminal

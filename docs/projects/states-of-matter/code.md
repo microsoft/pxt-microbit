@@ -1,5 +1,5 @@
 # Code
-### @description code to detect States of Matter 
+## @description code to detect States of Matter 
 
 Have you ever tried to represent the states of matter? Let's try to visually represent various states of matter based on atmospheric temperatures!
 

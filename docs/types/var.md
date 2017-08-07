@@ -1,6 +1,6 @@
 # @extends
 
-#### #letexample
+### #letexample
 
 A variable is created for the number returned by the [brightness](/reference/led/brightness) function.
 
@@ -8,7 +8,7 @@ A variable is created for the number returned by the [brightness](/reference/led
 let b = led.brightness();
 ```
 
-#### #readvariableexample
+### #readvariableexample
 
 For example, the following code shows the value stored in `counter` on the LED screen:
 
@@ -17,7 +17,7 @@ let counter = 1;
 basic.showNumber(counter);
 ```
 
-#### #updatevariableexample
+### #updatevariableexample
 
 The following code sets `counter` to 1 and then increments `counter` by 10:
 
@@ -27,7 +27,7 @@ counter = counter + 10;
 basic.showNumber(counter);
 ```
 
-#### #whyusevariablesexample
+### #whyusevariablesexample
 
 A counter is a great example:
 
@@ -39,7 +39,7 @@ input.onButtonPressed(Button.A, () => {
 });
 ```
 
-#### #localvariableexample
+### #localvariableexample
 ```block
 // x does NOT exist here.
 if (led.brightness() > 128) {

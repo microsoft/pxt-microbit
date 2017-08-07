@@ -12,7 +12,7 @@ Here are some examples of guitars that were made out of cardboard and colored, p
 
 This is an example of a project that uses the micro:bit accelerometer to play different tones when the guitar is held and tilted while playing. Pressing the A button will save the current tone to an array. After ten tones, a repeating melody will be performed. Press the B button to clear the array and start over.
 
-### Song-maker
+## Song-maker
 
 ```blocks
 let currentNote = 0
@@ -94,14 +94,14 @@ Have students write a reflection of about 150–300 words, addressing the follow
 
 **Competency scores**: 4, 3, 2, 1
 
-### Array
+## Array
 
 **4 =** Stores and iterates through each element of the array successfully.<br/>
 **3 =** Stores each element of the array successfully.<br/>
 **2 =** Array skips values or has other problems with storing and/or retrieving elements.<br/>
 **1 =** Array doesn't work at all or no array present.
 
-### micro:bit program
+## micro:bit program
 
 **4 =** The program:<br/>
 `*` Uses at least one array in a fully integrated and  meaningful way<br/>
@@ -111,7 +111,7 @@ Have students write a reflection of about 150–300 words, addressing the follow
 **2 =** Array is poorly implemented and/or peripheral to function of project, and/or lacks 2 of the required elements.<br/>
 **1 =** micro:bit program lacks 3 or more of the required elements.
 
-### Collaboration reflection
+## Collaboration reflection
 
 **4 =** Reflection piece includes:<br/>
 `*` Brainstorming ideas<br

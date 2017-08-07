@@ -53,14 +53,14 @@ Have students write a reflection of about 150–300 words, addressing the follow
 
 **Competency scores**: 4, 3, 2, 1
 
-### Binary display
+## Binary display
 
 **4 =** All binary numerals display correctly.<br/>
 **3 =** At least 2 binary numerals display correctly.<br/>
 **2 =** At least 1 binary numeral displays.<br/>
 **1 =** No binary numerals display correctly.
 
-### micro:bit program
+## micro:bit program
 
 **4 =** micro:bit program:<br/>
 `*` Uses binary in a way that is integral to the program<br/>
@@ -71,7 +71,7 @@ Have students write a reflection of about 150–300 words, addressing the follow
 **2 =** micro:bit program lacks 2 of the required elements.<br/>
 **1 =** micro:bit program lacks 3 or more of the required elements.
 
-### Reflection
+## Reflection
 
 **4 =** Reflection piece includes:<br/>
 `*` Brainstorming ideas<br/>

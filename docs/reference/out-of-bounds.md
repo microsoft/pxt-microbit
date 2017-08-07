@@ -6,18 +6,18 @@ Many of the @boardname@ functions have parameters. If a parameter is an unexpect
 
 For example, the [plot](/reference/led/plot) function has two parameters:
 
-### syntax
+## syntax
 
 ```sig
 led.plot(0,0)
 ```
 
-### parameters
+## parameters
 
 * x - the *x coordinate* or horizontal position (0, 1, 2, 3, 4)
 * y - the *y coordinate* or vertical position (0, 1, 2, 3, 4)
 
-### out of bounds
+## out of bounds
 
 here's an example of code with an out of bounds parameter (the *x* and *y* parameters are outside the expected range of 0-4):
 
@@ -25,11 +25,11 @@ here's an example of code with an out of bounds parameter (the *x* and *y* param
 led.plot(9, -21)
 ```
 
-### what happens?
+## what happens?
 
 Typically, when a parameter supplied to a function is out of bounds that function does nothing (as if the function never executed). So, in the above case, the LED screen will not change.
 
-### return value
+## return value
 
 If you call the `point` function with an out of bounds parameter, the function returns `false`:
 

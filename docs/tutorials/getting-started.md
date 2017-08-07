@@ -1,6 +1,6 @@
 # Getting started
 
-### Step 1
+## Step 1
 
 Welcome! Place the ``||show string||`` block in the ``||on start||`` slot to scroll your name.
 
@@ -8,11 +8,11 @@ Welcome! Place the ``||show string||`` block in the ``||on start||`` slot to scr
 basic.showString("Micro!")
 ```
 
-### Step 2
+## Step 2
 
 Click ``|Download|`` to transfer your code in your @boardname@!
 
-### Step 3
+## Step 3
 
 The text stopped. Place the ``||show string||`` block in the ``||on button pressed||``
 slot to scroll your name when button **A** is pressed.
@@ -23,16 +23,16 @@ input.onButtonPressed(Button.A, () => {
 });
 ```
 
-### Step 4
+## Step 4
 
 Click ``|Download|`` to transfer your code
 then press button **A** to scroll your text.
 
-### Step 5
+## Step 5
 
 Place blocks to display a smiley when button **B** is pressed.
 
-####   
+###   
 
 Use the dropdown to find ``B``!
 
@@ -48,12 +48,12 @@ input.onButtonPressed(Button.B, () => {
 })
 ```
 
-### Step 6
+## Step 6
 
 Place the ``||show number||`` and ``||pick random||`` blocks
 in the ``||on shake||`` slot to build a dice.
 
-####   
+###   
 
 When the @boardname@ is shaken, the random number between ``0`` and ``6`` will be displayed
 on the scren.
@@ -64,6 +64,6 @@ input.onGesture(Gesture.Shake, () => {
 })
 ```
 
-### Step 7
+## Step 7
 
 Well done! You have completed this activity.

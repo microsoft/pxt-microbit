@@ -10,15 +10,15 @@ let item: game.LedSprite = null;
 item.isTouchingEdge();
 ```
 
-### Parameters
+## Parameters
 
 * a **sprite** that might be touching the edge of the screen
 
-### Returns
+## Returns
 
 `true` if the sprite is touching the edge of the screen
 
-### Example
+## Example
 
 This program makes a sprite in the middle of the left edge of the LED screen.
 Then it says `EDGY!` if it's on the edge (which it is!), and `SAFE!` if it's
@@ -33,7 +33,7 @@ if (item.isTouchingEdge()) {
 }
 ```
 	
-### See also
+## See also
 
 [create sprite](/reference/game/create-sprite),
 [touching](/reference/game/touching),

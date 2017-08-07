@@ -17,8 +17,8 @@ The final wiring should look like this:
 
 ![](/static/mb/projects/plant-watering/make.jpg)
 
-### ~button /projects/plant-watering/code
+## ~button /projects/plant-watering/code
 
 Code
 
-### ~
+## ~

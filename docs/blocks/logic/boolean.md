@@ -2,7 +2,7 @@
 
 ## #examples
 
-### Example: ``AND`` operator
+## Example: ``AND`` operator
 
 This example turns on LED `3 , 3`, if LEDs `1 , 1` and `2 , 2` are both on:
 
@@ -12,7 +12,7 @@ if (led.point(1,1) && led.point(2,2)) {
 }
 ```
 
-### Example: Comparisons of numbers and strings
+## Example: Comparisons of numbers and strings
 
 When you compare two Numbers, you get a Boolean value, such as the comparison `x < 5` in the code below:
 

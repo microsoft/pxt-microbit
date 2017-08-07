@@ -4,7 +4,7 @@ Advertises a UID via the Eddystone protocol over Bluetooth.
 
 ## ~hint
 
-### Eddystone
+## Eddystone
 
 Bluetooth beacons are used to indicate proximity to a place or object of interest. 
 Beacons use Bluetooth advertising to broadcast a small amount of data, 
@@ -21,7 +21,7 @@ Read more at https://lancaster-university.github.io/microbit-docs/ble/eddystone/
 bluetooth.advertiseUidBuffer(pins.createBuffer(16), 7, true);
 ```
 
-### Parameters
+## Parameters
 
 * ``buffer`` - a 16 bytes buffer containing the namespace (first 10 bytes) and instance (last 6 bytes).
 * ``power`` - a [number](/types/number) representing the power level between 0 (short) and 7 (maximum range).

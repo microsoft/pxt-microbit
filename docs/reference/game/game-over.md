@@ -6,7 +6,7 @@ End the game and show the score.
 game.gameOver();
 ```
 
-### Example
+## Example
 
 This program asks you to pick a button.
 If you press button `A`, the program says `YOU WIN!`.
@@ -22,7 +22,7 @@ input.onButtonPressed(Button.B, () => {
 });
 ```
 
-### See Also
+## See Also
 
 [score](/reference/game/score),
 [change score by](/reference/game/change-score-by), [start countdown](/reference/game/start-countdown)

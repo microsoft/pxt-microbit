@@ -1,18 +1,18 @@
 # Uploader
 
-### @description A Windows application that automatically deploys .hex files to connected @boardname@ boards
+## @description A Windows application that automatically deploys .hex files to connected @boardname@ boards
 
-### ~avatar avatar
+## ~avatar avatar
 
 The Uploader **automatically** deploys .hex files to all @boardname@s connected to your computer.
 
 ## [DOWNLOAD](https://www.pxt.io/microbit-uploader.zip)
 
-### ~
+## ~
 
-### ~column 
+## ~column 
 
-### Works with any browser!
+## Works with any browser!
 
 The uploader monitors your Downloads folder looking for any .hex file that has been downloaded (saved from the browser). 
 When it detects a new .hex file, the uploader tries to copy it to all MICROBIT drives. 
@@ -20,11 +20,11 @@ That's it!
 
 ![](/static/uploader/tooltip.png)
 
-### ~
+## ~
 
-### ~column 
+## ~column 
 
-### System Requirements
+## System Requirements
 
 * Windows XP or later
 * .NET runtime 2.0 or higher
@@ -32,14 +32,14 @@ That's it!
 
 ![](/static/uploader/screenshot.png)
 
-### ~
+## ~
 
-### ~column 
+## ~column 
 
-### Installation Instructions
+## Installation Instructions
 
 * Download the [Microsoft.Uploader.Microbit.zip](https://www.touchdevelop.com/microbituploader.zip) file to your local computer.
 * Unzip the .zip file to your desktop.
 * Launch the Microsoft.Uploader.exe file before working on your @boardname@.
 
-### ~
+## ~

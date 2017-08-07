@@ -4,7 +4,7 @@ Advertises a UID via the Eddystone protocol over Bluetooth.
 
 ## ~hint
 
-### Eddystone
+## Eddystone
 
 Bluetooth beacons are used to indicate proximity to a place or object of interest. 
 Beacons use Bluetooth advertising to broadcast a small amount of data, 
@@ -21,7 +21,7 @@ Read more at https://lancaster-university.github.io/microbit-docs/ble/eddystone/
 bluetooth.advertiseUid(42, 1, 7, true);
 ```
 
-### Parameters
+## Parameters
 
 * ``namespace`` last 4 bytes of the namespace uid (6 to 9)
 * ``instance`` last 4 bytes of the instance (2 to 5)

@@ -2,11 +2,11 @@
 
 Rotate images with a while loop. 
 
-### ~avatar avatar
+## ~avatar avatar
 
 Welcome! This tutorial will teach how to rotate images with a **while loop**. Let's get started!
 
-### ~
+## ~
 
 Let's start by creating a global variable called `rotating` and initialize it to true. This well indicate when the animation should be displaying.
 
@@ -61,9 +61,9 @@ while (rotating) {
 }
 ```
 
-### ~avatar avatar
+## ~avatar avatar
 
 Excellent, you're ready to continue with the [challenges](/lessons/rotation-animation/challenges)!
 
-### ~
+## ~
 

@@ -10,11 +10,11 @@ east, south, and west.
 input.compassHeading();
 ```
 
-### Returns
+## Returns
 
 * a [number](/types/number) from `0` to `360` degrees, which means the compass heading. If the compass isn't ready, it returns `-1003`.
 
-### Example
+## Example
 
 This program finds the compass heading and stores it in the
 `degrees` variable.
@@ -23,14 +23,14 @@ This program finds the compass heading and stores it in the
 let degrees = input.compassHeading()
 ```
 
-### ~hint 
+## ~hint 
 
 When you run a program that uses this function in a browser, click and drag
 the compass needle on the screen to change the compass heading.
 
-### ~
+## ~
 
-### Example: compass
+## Example: compass
 
 This program finds the compass heading and then shows a letter
 that means whether the @boardname@ is facing north (N), south (S),
@@ -49,7 +49,7 @@ basic.forever(() => {
 })
 ```
 
-### Calibration
+## Calibration
 
 Every time you start to use the compass (for example, if you have just
 turned the @boardname@ on), the @boardname@ will start to [calibrateCompass](/reference/input/calibrate-compass)
@@ -59,7 +59,7 @@ turned the @boardname@ on), the @boardname@ will start to [calibrateCompass](/re
 If you are calibrating or using the compass near metal, it might
 confuse the @boardname@.
 
-### ~ hint
+## ~ hint
 
 Keep the calibration handy by running it when the user pressed **A+B**.
 
@@ -69,8 +69,8 @@ input.onButtonPressed(Button.AB, () => {
 })
 ```
 
-### ~
+## ~
 
-### See also
+## See also
 
 [acceleration](/reference/input/acceleration), [calibrateCompass](/reference/input/calibrate-compass)

@@ -1,10 +1,10 @@
 # magic button trick 
 
-### ~avatar avatar
+## ~avatar avatar
 
 Build a magic trick that uses the @boardname@'s compass to detect a nearby magnet!
 
-### ~
+## ~
 This is a simple magic trick you can perform to amaze your friends, where by moving the sticky labels on your @boardname@'s **A** and **B** button you appear to make the buttons really switch over. To see the trick performed watch the video below.
 
 https://youtu.be/-9KvmPopov8

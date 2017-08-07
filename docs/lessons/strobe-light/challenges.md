@@ -17,7 +17,7 @@ for (let i = 0; i < 5; i++) {
 ```
 
 
-### Challenge 1
+## Challenge 1
 
 
 
@@ -34,7 +34,7 @@ for (let i = 0; i < 5; i++) {
 
 * Run the code to see if it works as expected.
 
-### Challenge 2
+## Challenge 2
 
 
 
@@ -51,7 +51,7 @@ for (let i = 0; i < 5; i++) {
 
 * Run the code to see if it works as expected.
 
-### Challenge 3
+## Challenge 3
 
 
 

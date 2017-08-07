@@ -1,11 +1,11 @@
 # Code
-### @description code to make the inchworm alive
+## @description code to make the inchworm alive
 
-### ~avatar avatar
+## ~avatar avatar
 
 Add code to make the inchworm move.
 
-### ~
+## ~
 
 ## Duration: ~30 minutes
 
@@ -23,13 +23,13 @@ input.onButtonPressed(Button.A, () => {
 });
 ```
 
-### ~ hint
+## ~ hint
 
 You may have noticed that the inchworm can be rather slow or simply won't move. Try to improve the design of your legs, teeth
 so that the inchworm goes as fast as possible. Trying it on carpet also great helps avoiding skidding.
 
-### ~
+## ~
 
-### ~button /projects/inchworm/connect
+## ~button /projects/inchworm/connect
 NEXT: Connect
-### ~
+## ~

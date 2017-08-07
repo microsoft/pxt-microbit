@@ -1,19 +1,19 @@
 # Plant Watering
 
 
-### ~avatar avatar
+## ~avatar avatar
 
 Water your plants automatically!
 
-### ~
+## ~
 
 https://youtu.be/7eC_VjH1eP0
 
-### ~ hint
+## ~ hint
 
 This is a follow up of the **[soil moisture project](/projects/soil-moisture)**.
 
-### ~
+## ~
 
 ## Materials
 
@@ -33,8 +33,8 @@ This is a follow up of the **[soil moisture project](/projects/soil-moisture)**.
 * [Code](/projects/plant-watering/code)
 * [Connect](/projects/plant-watering/connect)
 
-### ~button /projects/plant-watering/make
+## ~button /projects/plant-watering/make
 
 Let's get started!
 
-### ~
+## ~

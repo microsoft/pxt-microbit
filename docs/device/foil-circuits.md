@@ -8,14 +8,14 @@ We will show you how to connect the @boardname@ to headphones using Alumunium fo
 
 https://youtu.be/mhXYyPuvpz0
 
-### Materials
+## Materials
 
 * @boardname@ and battery pack (you can also power it via USB)
 * a small piece of cardboard
 * Aluminium foil
 * tape
 
-### Assembly instructions
+## Assembly instructions
 
 Tape the @boardname@ and battery pack to the card board. Make sure to remove the batteries while you are building your circuit.
 

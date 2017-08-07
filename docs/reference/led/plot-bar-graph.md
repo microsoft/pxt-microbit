@@ -7,7 +7,7 @@ A bar graph is a kind of chart that shows numbers as lines with different length
 led.plotBarGraph(2, 20);
 ```
 
-### Parameters
+## Parameters
 
 * ``value`` is a [number](/types/number) that means what you
   are measuring or trying to show. For example, if you are measuring
@@ -17,7 +17,7 @@ led.plotBarGraph(2, 20);
   possible number that the ``value`` parameter can be. This number is
   also the tallest that the lines in the bar chart can be.
 
-### Example: chart acceleration
+## Example: chart acceleration
 
 This program shows a bar graph of the [acceleration](/reference/input/acceleration) 
 in the `x` direction of the @boardname@.
@@ -33,7 +33,7 @@ basic.forever(() => {
 })
 ```
 
-### See also
+## See also
 
 [brightness](/reference/led/brightness), [fade in](/reference/led/fade-in), [fade out](/reference/led/fade-out), [LED screen](/device/screen), [stop animation](/reference/led/stop-animation)
 

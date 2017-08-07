@@ -2,11 +2,11 @@
 
 Display the direction that the @boardname@ is facing using the compass 
 
-### ~avatar avatar
+## ~avatar avatar
 
 Welcome! This guided tutorial will show you how to program a script that displays the direction the @boardname@ is pointing. Let's get started!
 
-### ~
+## ~
 
 Create a loop that will continuously update the reading of the compass.
 
@@ -90,9 +90,9 @@ basic.forever(() => {
 });
 ```
 
-### ~avatar avatar
+## ~avatar avatar
 
 Excellent, you're ready to continue with the [challenges](/lessons/compass/challenges)!
 
-### ~
+## ~
 

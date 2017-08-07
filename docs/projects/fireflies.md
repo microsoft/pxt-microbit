@@ -1,11 +1,11 @@
 
 # Fireflies
 
-### ~ avatar
+## ~ avatar
 
 Turn your @boardname@ into fireflies.
 
-### ~
+## ~
 
 https://youtu.be/ZGvtnE1Wy6U
 
@@ -18,7 +18,7 @@ Go to http://ncase.me/fireflies/ and read about the fireflies synchronization ph
 We want to create virtual fireflies using multiple @boardname@ (each @boardname@ acts as a firefly).
 Let's review some of the key points of the article:
 
-### "Each firefly has its own individual internal clock"
+## "Each firefly has its own individual internal clock"
 
 A clock in this case is like a counter, so we will start by adding a ``clock`` variable to our program.
 
@@ -27,7 +27,7 @@ A clock in this case is like a counter, so we will start by adding a ``clock`` v
 let clock = 1
 ```
 
-### "and every time the clock “strikes twelve”, it flashes."
+## "and every time the clock “strikes twelve”, it flashes."
 
 We can use a [forever](/reference/basic/forever) loop to repeat code that increments the clock.
 When the clock reaches "noon" (let's pick `8`), we turn on the screen briefly (by using the game score animation)
@@ -53,7 +53,7 @@ basic.forever(() => {
 })
 ```
 
-### Step 1: when you see a nearby firefly flash, nudge your clock a little bit forward.
+## Step 1: when you see a nearby firefly flash, nudge your clock a little bit forward.
 
 The @boardname@ can send radio messages to neighbor @boardname@.
 We can use these messages to simulate the "flashes" of light. 
@@ -94,7 +94,7 @@ radio.onDataPacketReceived(() => {
 })
 ```
 
-### Putting all together
+## Putting all together
 
 https://youtu.be/XzZeB4yYnEw
 

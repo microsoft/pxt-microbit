@@ -10,7 +10,7 @@ Complete the [lucky 7 activity](/lessons/lucky-7/activity) and your code will lo
 basic.showNumber(7)
 ```
 
-### Challenge 1
+## Challenge 1
 
 But we also should pause before showing another number. Let's add a pause of 500 milliseconds.
 
@@ -19,7 +19,7 @@ basic.showNumber(7)
 basic.pause(500)
 ```
 
-### Challenge 2
+## Challenge 2
 
 What about other multiples of 7? Let's display the next multiple of 7 on the screen!
 
@@ -31,7 +31,7 @@ basic.showNumber(14)
 
 * Run the code to see if it works as expected.
 
-### Challenge 3
+## Challenge 3
 
 Keep displaying multiples of 7 such as 21 and 28...
 

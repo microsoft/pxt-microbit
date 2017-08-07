@@ -32,7 +32,7 @@ input.onButtonPressed(Button.A, () => {
 })
 ```
 
-### Challenge 1
+## Challenge 1
 
 Let's make the word "DARE" appear a little more often than "TRUTH". Change the line of code with `pick random (1)` to `pick random (2)`.
 
@@ -62,7 +62,7 @@ input.onButtonPressed(Button.A, () => {
 ```
 
 
-### Challenge 2
+## Challenge 2
 
 Instead of just saying "TRUTH" or "DARE", let's sometimes say "SKIP". This would allow the skipped person to spin the @boardname@ without completing a truth or dare. Modify the if statement as shown.
 
@@ -98,7 +98,7 @@ input.onButtonPressed(Button.A, () => {
 
 * Run your code to see if it works as expected
 
-### Challenge 3
+## Challenge 3
 
 Add some other messages, such as "TWO DARES" for the @boardname@ to show. You will need to modify the parameter inside `pick random (3)` as well as adding another `if` condition.
 

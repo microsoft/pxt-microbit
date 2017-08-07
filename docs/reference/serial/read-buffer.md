@@ -6,7 +6,7 @@ Read the buffered serial data as a buffer
 serial.readBuffer(64);
 ```
 
-### Returns
+## Returns
 
 * a Buffer containing input from the serial port. Empty if no data available.
 

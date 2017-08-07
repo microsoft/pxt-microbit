@@ -1,10 +1,10 @@
 # Timing gates
 
-### ~avatar
+## ~avatar
 
 This project explains the principles of timing gates using household materials.
 
-### ~
+## ~
 
 ## Timing gates
 
@@ -127,12 +127,12 @@ By moving the car (slowly) through the gate, you will see that it triggers the `
 
 https://youtu.be/M3DIUvDPlIA
 
-### ~hint
+## ~hint
 
 It does not work always! Sometimes the foil does not touch long enough both strip to be detected. This is due to the poor quality of our sensor.
 To fix this, you would have to consider using better sensors based on IR or Hall effect.
 
-### ~
+## ~
 
 ## Adding the second gate
 

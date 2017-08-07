@@ -2,23 +2,23 @@
 
 Control the presentation of media content available on a remote device using the `tell remote control` to function.
 
-### ~hint
+## ~hint
 ![](/static/bluetooth/Bluetooth_SIG.png)
 
 For another device like a smartphone to use any of the Bluetooth "services" which the @boardname@ has, it must first be [paired with the @boardname@](/reference/bluetooth/bluetooth-pairing). Once paired, the other device may connect to the @boardname@ and exchange data relating to many of the @boardname@'s features.
 
-### ~
+## ~
 
 
 ```sig
 devices.tellRemoteControlTo(MesRemoteControlEvent.play)
 ```
 
-### Parameters
+## Parameters
 
 * event - an event identifier
 
-### Event values
+## Event values
 
 * play
 * stop
@@ -30,7 +30,7 @@ devices.tellRemoteControlTo(MesRemoteControlEvent.play)
 * previous track
 * next track
 
-### Examples
+## Examples
 
 To tell the connected device to start playing:
 
@@ -80,7 +80,7 @@ To tell the connected device volume down
 devices.tellRemoteControlTo(MesRemoteControlEvent.volumeDown)
 ```
 
-### See also
+## See also
 
 [tell camera to](/reference/devices/tell-camera-to), [raise alert to](/reference/devices/raise-alert-to)
 

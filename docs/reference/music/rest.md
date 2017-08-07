@@ -10,7 +10,7 @@ This function only works on the @boardname@ and in some browsers.
 music.rest(400)
 ```
 
-### Parameters
+## Parameters
 
 * ``ms`` is a [number](/types/number) saying how many
   milliseconds the @boardname@ should rest. One second is 1000
@@ -24,7 +24,7 @@ music.playTone(frequency, 1000)
 music.rest(1000)
 ```
 
-### See also
+## See also
 
 [play tone](/reference/music/play-tone), [ring tone](/reference/music/ring-tone) , [tempo](/reference/music/tempo), [set tempo](/reference/music/set-tempo), [change tempo by](/reference/music/change-tempo-by)
 

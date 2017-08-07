@@ -1,8 +1,8 @@
 # Accelerometer Beat control
 
-### @description @boardname@ guitar: using accelerometer to control tempo
+## @description @boardname@ guitar: using accelerometer to control tempo
 
-### ~avatar avatar
+## ~avatar avatar
 
 Use the Accelerometer to control guitar tempo
 * Concepts:
@@ -15,7 +15,7 @@ Use the Accelerometer to control guitar tempo
      * Graphing
      * Absolute value
 
-### ~  
+## ~  
 
 ## Duration: 30 - 45 minutes  
   
@@ -51,7 +51,7 @@ If the force along **Y** grows, the @boardname@ is tilting more and more vertica
 The acceleration block approximately measures **milli-g**, which is 1/1000 of a **g** or the 
 acceleration of gravity. 
 
-### Step 1: Graphing acceleration 
+## Step 1: Graphing acceleration 
 ```blocks
 basic.forever(() => {
     led.plotBarGraph(input.acceleration(Dimension.Y), 1023)
@@ -63,17 +63,17 @@ basic.forever(() => {
   
 **Test the movements that move the graph from 1 to 5 bars on the LEDs** 
 
-### Extra
+## Extra
 
 Try graphing the acceleration along the **X** and **Z** axis. Can you explain the differences?
 
-### ~hint  
+## ~hint  
 ## Mapping  
 **It is common to map one standard to another - such as with temperature**  
 ![Fahrenheit to Celsius](/static/mb/projects/guitar/map_analogy.png "Fahrenheit to Celsius")  
-### ~
+## ~
 
-### Step 2: Mapping acceleration to Beat
+## Step 2: Mapping acceleration to Beat
 **@boardname@ sensors produce signal values between 0 to 1023. The *[map block](/reference/pins/map)* converts the signal to a desired range.**    
 ```blocks
 basic.forever(() => {
@@ -90,7 +90,7 @@ basic.forever(() => {
   
 **Test the movements that speed and slow the tempo**  
 
-### Step 3: Combine with light sensor tone control  
+## Step 3: Combine with light sensor tone control  
 **Put it all together!**
 
 ```blocks
@@ -108,8 +108,8 @@ basic.forever(() => {
   
 **Download the code** to the @boardname@ on the guitar    
 
-###  Now play the guitar adjusting tone and tempo using the light sensor and accelerometer!
+##  Now play the guitar adjusting tone and tempo using the light sensor and accelerometer!
 
-### ~button /projects/guitar/pinpress
+## ~button /projects/guitar/pinpress
 NEXT: Pin Press on/off
-### ~
+## ~

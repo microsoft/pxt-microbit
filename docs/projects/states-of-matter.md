@@ -1,13 +1,13 @@
 
 # States of Matter
 
-### @description A states of matter experiment made of cardboard
+## @description A states of matter experiment made of cardboard
 
-### ~avatar avatar
+## ~avatar avatar
 
 Make a states of matter experiment that responds to your micro:bit wand or micro:bit's movement!
 
-### ~
+## ~
 
 https://youtu.be/Hdsy93yaQC0
 
@@ -28,8 +28,8 @@ The activity is approx 30-45 min based on familiarity with the coding concepts
 * [Make](/projects/states-of-matter/make)  
 * [Code](/projects/states-of-matter/code)  
 
-### ~button /projects/states-of-matter/make
+## ~button /projects/states-of-matter/make
 
 Let's get started!
 
-### ~
+## ~

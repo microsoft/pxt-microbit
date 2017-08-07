@@ -1,10 +1,10 @@
 # rock paper scissors
 
-### ~avatar avatar
+## ~avatar avatar
 
 Build a rock paper scissors game!
 
-### ~
+## ~
 
 ## Step 1: Getting started
 
@@ -32,9 +32,9 @@ input.onGesture(Gesture.Shake, () => {
 
 ```
 
-### ~hint
+## ~hint
 No one can predict random numbers. That's what makes them great for Rock Paper Scissors!
-### ~
+## ~
 
 Each possible number these blocks can make (`0`, `1`, or `2`) means a different picture.
 We will show the right picture for that number on the LED screen.
@@ -139,12 +139,12 @@ input.onGesture(Gesture.Shake, () => {
 
 ```
 
-### ~hint
+## ~hint
 
 You don't need to check if `weapon` is `2` because `2` is the only number left out of `0`, `1`, and `2`.
 That's why you can use an ``else`` instead of an ``else if``.
 
-### ~
+## ~
 
 Your game is ready! Have fun!
 

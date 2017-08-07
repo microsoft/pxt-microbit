@@ -12,7 +12,7 @@ basic.forever(() => {
     basic.showNumber(az)
 })
 ```
-### Challenge 1
+## Challenge 1
 
 
 
@@ -31,7 +31,7 @@ basic.forever(() => {
 
 * Run the code to see if it works as expected.
 
-### Challenge 2
+## Challenge 2
 
 Display the `y` acceleration when `B` is pressed by adding another `if` statement using `button (B) is pressed`.
 

@@ -8,11 +8,11 @@ let item = game.createSprite(0, 2);
 item.ifOnEdgeBounce();
 ```
 
-### Parameters
+## Parameters
 
 * a **sprite** that might be on the edge of the LED screen.
 
-### Example
+## Example
 
 This program makes a sprite on the right edge of the screen with a
 direction of 90 degrees, and bounces it so it has a direction of -90
@@ -27,7 +27,7 @@ input.onButtonPressed(Button.B, () => {
 });
 ```
 
-### See also
+## See also
 
 [create sprite](/reference/game/create-sprite),
 [touching](/reference/game/touching),

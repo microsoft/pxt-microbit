@@ -7,13 +7,13 @@ let item: game.LedSprite = null;
 item.turn(Direction.Right, 45);
 ```
 
-### Parameters
+## Parameters
 
 * a choice whether the sprite should turn **left** or **right**
 * a [number](/types/number) that means how much the sprite should turn.
   This number is in **degrees**, so a straight left or right turn is 90 degrees.
 
-### Example
+## Example
 
 
 This program starts a sprite in the middle of the screen.
@@ -26,7 +26,7 @@ item.turn(Direction.Right, 45);
 item.move(2);
 ```
 
-### See also
+## See also
 
 
 [move](/reference/game/move),

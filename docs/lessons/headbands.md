@@ -70,14 +70,14 @@ Learn how to create a charades game with **collections**, ` create -> Collection
 
 ## Progression Pathways / Computational Thinking Framework
 
-#### Algorithms
+### Algorithms
 
 * Designs solutions (algorithms) that use repetition and two-way  selection, ie if, then and else.(AL)
 *  Uses logical reasoning to predict  outputs, showing an awareness of inputs (AL)
 * Recognises that different solutions exist for the same problem (AL) (AB)  Understands that iteration is the repetition of a process such as a loop (AL)
 * Represents solutions using a structured notation (AL) (AB)
 
-#### Programming & Development
+### Programming & Development
 
 * Creates programs that implement algorithms to achieve given goals (AL)
 *  Declares and assigns variables(AB)
@@ -87,20 +87,20 @@ Learn how to create a charades game with **collections**, ` create -> Collection
 * Uses a range of operators and expressions e.g. Boolean, and applies them in the context of program control. (AL)
 * Selects the appropriate data types(AL) (AB
 
-#### Data & Data Representation
+### Data & Data Representation
 
 * Understands the difference between data and information(AB)
 * Performs more complex searches for information e.g. using Boolean and relational operators(AL) (GE) (EV)
 
-#### Hardware & Processing
+### Hardware & Processing
 
 * Knows that computers collect data from various input devices, including sensors and application software (AB)
 
-#### Communication Networks
+### Communication Networks
 
 * Demonstrates responsible use of technologies and online services, and knows a range of ways to report concerns Understands how search engines rank search results (AL)
 
-#### Information Technology
+### Information Technology
 
 * Collects, organizes, and presents data and information in digital content (AB)
 * Makes appropriate improvements to solutions based on feedback received, and can comment on the success of the solution (EV)

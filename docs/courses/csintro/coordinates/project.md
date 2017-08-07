@@ -19,7 +19,7 @@ Your project might use variables to store the values of sprites, which are speci
 
 ## Project Ideas
 
-### Firework screensaver
+## Firework screensaver
 
 This project uses a for loop with the plot/unplot blocks to create a symmetrical design on the screen. This student used a subtraction operation to get a variable that decreases as the index variable in the loop increases.
 
@@ -40,7 +40,7 @@ basic.forever(() => {
 })
 ```
 
-### Cascade screensaver
+## Cascade screensaver
 
 This example creates a diagonal cascading effect across the screen. Note the use of a variable (speed) to allow you to easily change the speed of the animation by changing just one number value.
 
@@ -81,7 +81,7 @@ basic.forever(() => {
 speed = 10
 ```
 
-### Dodge ball game 
+## Dodge ball game 
 This is a Dodge Ball game that uses one sprite (dodger) to try to avoid another sprite (ball). You use the A and B buttons to move the dodger to avoid the balls that are falling from the top of the screen.
 
 Here is the complete Dodge Ball program.
@@ -130,7 +130,7 @@ Have students write a reflection of about 150–300 words, addressing the follow
 
 **Competency scores**: 4, 3, 2, 1
  
-### Coordinates and LEDs
+## Coordinates and LEDs
 
 **4 =** Uses at least 3 of the different kinds of plot/ unplot/toggle/point x y blocks in a meaningful way.
 `*` Uses variables to update coordinates.<br/>
@@ -138,7 +138,7 @@ Have students write a reflection of about 150–300 words, addressing the follow
 **2 =** At least 1 of the different kinds of plot/unplot/ toggle/point x y blocks in a meaningful way.<br/>
 **1 =** No plot/unplot/ toggle/point x y blocks are implemented. 	 
 
-### micro:bit program
+## micro:bit program
 
 **4 =** micro:bit program:<br/>
 `*` Uses plotted LEDs in a way that is integral to the program<br/>
@@ -148,7 +148,7 @@ Have students write a reflection of about 150–300 words, addressing the follow
 **2 =** micro:bit program lacks 2 of the required elements.<br/>
 **1 =** micro:bit program lacks all of the required elements.
 
-### Collaboration reflection
+## Collaboration reflection
 
 **4 =** Reflection piece includes:<br/>
 `*` Brainstorming ideas<br/>

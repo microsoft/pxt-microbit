@@ -7,24 +7,24 @@ the @boardname@ board in microseconds.
 pins.pulseIn(DigitalPin.P0, PulseValue.High)
 ```
 
-### ~avatar
+## ~avatar
 
 Some pins are also used by the [LED screen](/device/screen).
 Please read the [page about pins](/device/pins) carefully.
 
-### ~
+## ~
 
-### Parameters
+## Parameters
 
 * ``name`` is a [string](/types/string) that stores the name of the pin (``P0``, ``P1``, or ``P2``, up through ``P20``)
 * ``value`` is the value of the pulse, ``high`` or ``low``
 * ``maxDuration``, maximum duration in micro-seconds. If no pulse is received 
 
-### Returns
+## Returns
 
 * a [number](/types/number) that represents the pulse duration in micro-seconds
 
-### Example: Measuring distance with a sonar
+## Example: Measuring distance with a sonar
 
 The following script sends a pulse on ``P0`` and reads the pulse returned by a HC-SR04 sonar to determine the distance of the object in front of the sensor.
 
@@ -43,12 +43,12 @@ basic.forever(() => {
 })
 ```
 
-#### ~hint
+### ~hint
 
 This function is not supported in the simulator.
 
-#### ~
+### ~
 
-### See also
+## See also
 
 [digital write pin](/reference/pins/digital-write-pin),

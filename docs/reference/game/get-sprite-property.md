@@ -7,7 +7,7 @@ let item: game.LedSprite = null;
 item.get(LedSpriteProperty.X);
 ```
 
-### Parameters
+## Parameters
 
 * the **sprite** you want to know something about
 * the kind of [number](/types/number) you want to know about the sprite, like
@@ -17,11 +17,11 @@ item.get(LedSpriteProperty.X);
     * ``brightness``, how bright the LED sprite is (this works the same way as the [brightness](/reference/led/brightness) function)
     * ``blink``, how fast the sprite is blinking (the bigger the number is, the faster the sprite is blinking)
 
-### Returns
+## Returns
 
 The [number](/types/number) you asked for.
 
-### Example
+## Example
 
 This program makes a sprite and shows the number of its brightness on the screen. 
 
@@ -30,7 +30,7 @@ let ball = game.createSprite(0, 2);
 basic.showNumber(ball.get(LedSpriteProperty.Brightness));
 ```
 
-### See also
+## See also
 
 [turn](/reference/game/turn),
 [brightness](/reference/led/brightness),

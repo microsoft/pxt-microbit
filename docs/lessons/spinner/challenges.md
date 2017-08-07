@@ -40,7 +40,7 @@ input.onGesture(Gesture.Shake, () => {
 })
 ```
 
-### Challenge 1
+## Challenge 1
 
 Modify the random number generator so that it can include new arrows we will create in the next challenge.
 
@@ -82,7 +82,7 @@ input.onGesture(Gesture.Shake, () => {
 
 * Do **not** run the code yet because it will not work until you have conditions for every random number.
 
-### Challenge 2
+## Challenge 2
 
 Let's add more arrows that point diagonally.
 
@@ -167,7 +167,7 @@ input.onGesture(Gesture.Shake, () => {
 
 * Run your code to see if it works as expected
 
-### Challenge 3
+## Challenge 3
 
 Add some other arrows if there are more than 8 players.
 

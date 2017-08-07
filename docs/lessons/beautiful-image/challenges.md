@@ -16,7 +16,7 @@ basic.showLeds(`
     `)
 ```
 
-### Challenge 1
+## Challenge 1
 
 Now show an new image that will display on the @boardname@.
 
@@ -39,7 +39,7 @@ basic.showLeds(`
 
 * Does your code work as expected?
 
-### Challenge 2
+## Challenge 2
 
 Nice job! Why don't we create a third image that will show after the other two?
 

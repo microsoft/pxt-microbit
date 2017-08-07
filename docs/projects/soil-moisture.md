@@ -1,11 +1,11 @@
 # Soil Moisture
 
 
-### ~avatar avatar
+## ~avatar avatar
 
 Track the soil moisture of your plants!
 
-### ~
+## ~
 
 ![](/static/mb/projects/soil-moisture/soil-moisture.jpg)
 
@@ -21,8 +21,8 @@ Track the soil moisture of your plants!
 * [Code](/projects/soil-moisture/code)
 * [Connect](/projects/soil-moisture/connect)
 
-### ~button /projects/soil-moisture/make
+## ~button /projects/soil-moisture/make
 
 Let's get started!
 
-### ~
+## ~

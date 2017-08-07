@@ -2,7 +2,7 @@
 
 Show a string to instruct the user how to play Magic 8! The magic 8 ball can only answer questions with "YES", "NO", or "MAYBE"...
 
-### Rebuild the game!
+## Rebuild the game!
 
 The blocks have been shuffled! Put them back together so that...
 * show "ASK A QUESTION" on the screen

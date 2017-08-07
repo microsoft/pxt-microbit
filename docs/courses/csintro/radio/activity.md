@@ -156,7 +156,7 @@ radio.onDataPacketReceived( ({ receivedNumber }) => {
 })
 ```
 
-### Try it!
+## Try it!
 * Download your program to the micro:bit
 * Press button A on the sending micro:bit
 * Does this cause a dot to be displayed on the receiving micro:bit? 
@@ -192,7 +192,7 @@ Now each time the sender presses button A, you see a dot appear.
 * Change the values on the righthand side of the comparison block to 1, and 2.
 * Modify the images displayed to show a dash, and a full screen of lights
 
-### Morse code program
+## Morse code program
 
 ```blocks
 
@@ -244,7 +244,7 @@ radio.setGroup(1)
 basic.showString("Morse Code")
 ```
 
-### Try it!
+## Try it!
 * Download your program to the micro:bit
 * Press buttons A, B, and A+B together on the micro:bit
 

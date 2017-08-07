@@ -16,7 +16,7 @@ Amount: One set of coins (with one coin of each of the first four denominations 
 
 Hold onto the 16 and 32 unit coins for later.
 
-### ~hint
+## ~hint
 **Tip**
 
 If you have time, create on a poster board, on the whiteboard, or on paper as a handout, a big rectangle representing a vending machine. Draw in different items for purchase that would appeal to the students. Have the different items priced differently from 1 unit to 15 units.  This is particularly good to have for younger and more visually oriented students.
@@ -24,7 +24,7 @@ If you have time, create on a poster board, on the whiteboard, or on paper as a 
 You can also just make a very simple vending machine diagram like the one below:
 
 ![Vend-o-matic diagram](/static/courses/csintro/binary/vendomatic.jpg)
-### ~
+## ~
 ## Introduction
 Ask the students the following questions to spark discussion:
 * Have any of them bought anything in the last 24 hours? _Usually they have bought a snack or perhaps lunch._

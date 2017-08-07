@@ -1,8 +1,8 @@
 # Pin Press Switch
 
-### @description @boardname@ guitar: use pin press to toggle guitar play on/off
+## @description @boardname@ guitar: use pin press to toggle guitar play on/off
 
-### ~avatar avatar
+## ~avatar avatar
 Use pin press to switch guitar play on/off
 
 * Concepts:
@@ -11,7 +11,7 @@ Use pin press to switch guitar play on/off
     * Variable/Global-Variable
     * Conditional: **`if`**, **`else`**
     * Boolean: **`True`/`False`**
-### ~
+## ~
 
 ## Duration: approximately 45 minutes
 
@@ -29,7 +29,7 @@ input.onPinPressed(TouchPin.P1, () => {})
 
 
 
-### ~hint
+## ~hint
 ## Circuits & Switches
 * **Circuits** need a power supply (battery), a resister (like a LED) & a conductor (metal, water, hand)
 * **Switches** turn electric power on by closing (completing) a circuit with a conductor so power can flow
@@ -38,7 +38,7 @@ input.onPinPressed(TouchPin.P1, () => {})
 
 **In this activity we use YOU to conduct electricity**
 **to close the circuit that switches the guitar ON and OFF!**
-### ~
+## ~
 
 ## Step 1: Pin Press Test
 
@@ -62,9 +62,9 @@ https://youtu.be/PAIU-vHqyGU
 **Hold the @boardname@ touching The GND pin with one hand**
 **with the other hand alternately touch the 0, 1 and 2 pins**
 
-### ~hint
+## ~hint
 **The electric signal traveled from pins, between your hands to `GND` and the @boardname@ detected the electric signal!**
-### ~
+## ~
 
 ## Step 2: Installing conductive foil on the guitar
 https://youtu.be/NX0ECcpXFes

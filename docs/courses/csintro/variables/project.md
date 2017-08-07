@@ -11,31 +11,31 @@ Remind the students of all the different inputs available to them through the mi
 
 ## Project Ideas
 
-### Duct tape wallet
+## Duct tape wallet
 
 You can see the instructions for creating a durable, fashionable wallet or purse out of duct tape: [Duct tape wallet](/projects/wallet). Create a place for the micro:bit to fit securely. Use Button A to add dollars to the wallet, and Button B to subtract dollars from the wallet.
 
 **Extra mod:** Use other inputs to handle cents, and provide a way to display how much money is in the wallet in dollars and cents.
 
-### Umpire’s baseball counter (pitches and strikes)
+## Umpire’s baseball counter (pitches and strikes)
 
 In baseball during an at-bat, umpires must keep track of how many pitches have been thrown to each batter. Use Button A to record the number of balls (up to 4) and the number of strikes (up to 3).
 
 **Extra mod:** Create a way to reset both variables to zero, create a way to see the number of balls and strikes on the screen at the same time.
 
-### Shake counter
+## Shake counter
 
 Using the 'On Shake' block, you can detect when the micro:bit has been shaken and increment a variable accordingly. Try attaching the micro:bit to a lacrosse stick and keep track of how many times you have successfully thrown the ball up in the air and caught it.
 
 **Extra mod:** Make the micro:bit create a sound of increasing pitch every time you successfully catch the ball.
 
-### Pedometer
+## Pedometer
 
 See if you can count your steps while running or doing other physical activities carrying the micro:bit. Where is it best mounted? 
 
 **Extra Mod:** Design a wearable band or holder that can carry the micro:bit securely so it doesn’t slip out during exercise.
 
-### Calculator
+## Calculator
 
 Create an adding machine. Use Button A to increment the first number, and Button B to increment the second number. Then, use Shake or Buttons A + B to add the two numbers and display their sum.
 
@@ -89,26 +89,26 @@ Have students write a reflection of about 150–300 words, addressing the follow
 
 **Competency scores**: 4, 3, 2, 1
 
-### Variables
+## Variables
 >**4 =** At least 3 different variables are implemented in a meaningful way.<br/>
 **3 =** At least 2 variables are implemented in a meaningful way.<br/>
 **2 =** At least 1 variable is implemented in a meaningful way.<br/>
 **1 =** No variables are implemented.
 
-### Variable names
+## Variable names
 
 >**4 =** All variable names are unique and clearly describe what information values the variables hold.<br/>
 **3 =** The majority of variable names are unique and clearly describe what information values the variables hold.<br/>
 **2 =** A minority of variable names are unique and clearly describe what information values the variables hold.<br/>
 **1 =** None of the variable names clearly describe what information values the variables hold.<br/>
 
-### Mathematical operations
+## Mathematical operations
 >**4 =** Uses a mathematical operation on at least two variables in a way that is integral to the program.<br/>
 **3 =** Uses a mathematical operation on at least one variable in a way that is integral to the program.<br/>
 **2 =** Uses a mathematical operation incorrectly or not in a way that is integral to the program.<br/>
 **1 =** No mathematical operations are used.
 
-### micro:bit program
+## micro:bit program
 >**4 =** micro:bit program:<br/>
 ` *` Uses variables in a way that is integral to the program<br/>
 ` *` Uses mathematical operations to add, subtract, multiply, and/or divide variables<br/>
@@ -118,7 +118,7 @@ Have students write a reflection of about 150–300 words, addressing the follow
 **2 =** micro:bit program lacks 2 of the required elements.<br/>
 **1 =** micro:bit program lacks 3 or more of the required elements.
 
-### Collaboration reflection
+## Collaboration reflection
 
 >**4 =** Reflection piece addresses all prompts.<br/>
 **3 =** Reflection piece lacks 1 of the required elements.<br/>

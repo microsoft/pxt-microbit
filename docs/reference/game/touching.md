@@ -9,16 +9,16 @@ let item: game.LedSprite = null;
 item.isTouching(null);
 ```
 
-### Parameters
+## Parameters
 
 * a **sprite** you are checking
 * another **sprite** that might be touching the one you are checking
 
-### Returns
+## Returns
 
 `true` if the two sprites are touching.
 
-### Example
+## Example
 
 This program creates two sprites called ``matter`` and ``antimatter``,
 and then checks whether they are touching.  If they are, there is an
@@ -34,7 +34,7 @@ if (matter.isTouching(antimatter)) {
 }
 ```
 
-### See also
+## See also
 
 [create sprite](/reference/game/create-sprite),
 [touching edge](/reference/game/touching-edge),

@@ -17,7 +17,7 @@ basic.showLeds(`
     `)
 ```
 
-### See also
+## See also
 
 [Run scripts on your micro:bit](/device/usb)
 

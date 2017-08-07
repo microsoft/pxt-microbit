@@ -1,12 +1,12 @@
 # Hot Or Cold
 
-### @description A Hot-or-Cold treasure hunt game
+## @description A Hot-or-Cold treasure hunt game
 
-### ~avatar avatar
+## ~avatar avatar
 
 Find the hidden @boardname@ before the other players!
 
-### ~
+## ~
 
 https://youtu.be/nbRfNug-RkY
 
@@ -15,7 +15,7 @@ https://youtu.be/nbRfNug-RkY
 In this game, players are looking for hidden @boardname@ that emit radio signals. 
 The hidden @boardname@ are called **beacons**.
 
-### Setting up the radio
+## Setting up the radio
 
 We set the radio group to ``1`` to make sure all the players are using the same group. 
 We also tell the @boardname@ to transmit its serial number (that's a unique number that identifies it)
@@ -27,7 +27,7 @@ radio.setTransmitSerialNumber(true)
 radio.setTransmitPower(6)
 ```
 
-### Beacon gotta beam
+## Beacon gotta beam
 
 The beacon simply needs to send a radio message every now and then. To pace it out, 
 we add some ``|show icon|`` blocks to animate the screen.
@@ -45,7 +45,7 @@ radio.setTransmitSerialNumber(true)
 radio.setTransmitPower(6)
 ```
 
-### Hide the beacons
+## Hide the beacons
 
 Download the code to your beacon @boardname@ and hide them!
 
@@ -53,7 +53,7 @@ Download the code to your beacon @boardname@ and hide them!
 
 The hunter @boardname@ look for beacons. 
 
-### Is the beacon close?
+## Is the beacon close?
 
 To determine how far or close, we use the signal strength of each radio packet sent by the beacons. The signal
 strength ranges from ``-128db`` (weak) to ``-42db`` (very strong). 
@@ -71,7 +71,7 @@ Take notes of the values as you move around the beacon.
 * mild signal value: ``_________________``
 * cold signal value: ``_________________``
 
-### Hot or cold?
+## Hot or cold?
 
 The hunter screen displays ``SmallDiamond`` on the screen if the beacon is far, ``Diamond`` mildly close and ``Square`` if it is close. Use the ``signal`` values collected in the previous step to determine when to show those letters.
 
@@ -99,7 +99,7 @@ Download the code and play the game!
 
 We're making the game more interresting by counting how many beacons a player has seen so far.
 
-### Remember the beacons
+## Remember the beacons
 
 Remember that the beacon was configured to transmit its serial number? We can use this information
 to determine if we've visited a beacon for the first time.
@@ -127,7 +127,7 @@ radio.onDataPacketReceived( ({ receivedNumber, signal, serial }) =>  {
 })
 ```
 
-### Show my score
+## Show my score
 
 To see the current score, we add a ``|on button pressed|`` that displays the score on screen when ``A`` is pressed.
 
@@ -137,7 +137,7 @@ input.onButtonPressed(Button.A, () => {
 })
 ``` 
 
-### All together
+## All together
 
 The hunter code with all th pieces together looks like this now. Download it and try it out with multiple beacons!
 

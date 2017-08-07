@@ -2,13 +2,13 @@
 
 A multi-player game that forces each player to reveal a secret or something funny. 
 
-### ~avatar avatar
+## ~avatar avatar
 
 
 
 Welcome! This tutorial will teach how to program a game of truth or dare on the @boardname@. Let's get started!
 
-### ~
+## ~
 
 Begin by using Show LEDs to create an "up-arrow" image, which will point to someone.
 
@@ -90,9 +90,9 @@ input.onButtonPressed(Button.A, () => {
 
 * Run your program: Press button A!
 
-### ~avatar avatar
+## ~avatar avatar
 
 Excellent, you're ready to continue with the [challenges](/lessons/truth-or-dare/challenges)!
 
-### ~
+## ~
 

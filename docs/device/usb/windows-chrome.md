@@ -53,7 +53,7 @@ You only need to do this once.
 
 If the file was saved onto your computer, you will need to transfer it to the micro:bit.
 
-### Manual transfer
+## Manual transfer
 
 Your `.hex` file (created in Step 3 above) appears as a download at the bottom of the browser.
 Click on the arrow next to the name of the file and then click **Show in folder**.
@@ -66,7 +66,7 @@ Alternatively, right-click on the hex file, choose **Send to**, and then **MICRO
 
 ![](/static/mb/device/usb-windows-sendto.jpg)
 
-### micro:bit uploader
+## micro:bit uploader
 
 You can use the [micro:bit uploader](/uploader) to automatically deploy ``.hex`` files to your micro:bit!
 ![](/static/uploader/tooltip.png)
@@ -82,8 +82,8 @@ You can use the [micro:bit uploader](/uploader) to automatically deploy ``.hex``
    flash memory on the micro:bit, which means even after you unplug the micro:bit,
    your program will still run if the micro:bit is powered by battery.
 
-### ~hint
+## ~hint
 
 Transfer not working? See some [troubleshooting tips](/device/usb/troubleshooting).
 
-### ~
+## ~

@@ -148,14 +148,14 @@ previous_roll = 0
 
 **Competency scores**: 4, 3, 2, 1
 
-### Rules
+## Rules
 
 >**4 =** All game rules are clear and complete.<br/>
 **3 =** A game rule is missing or not complete or not clear.<br/>
 **2 =** More than one game rule is missing or not complete or not clear<br/>
 **1 =** Most of the game rules are missing or it is not clear what the rules are.
 
-### Game board
+## Game board
 
 >**4 =** Game board is:<br/>
 `*` Complete<br/>
@@ -166,7 +166,7 @@ previous_roll = 0
 **2 =** Game board meets only 2 of the conditions listed for a score of 4.<br/>
 **1 =** Game board meets only 1 of the conditions listed for a score of 4.
 
-### micro:bit program
+## micro:bit program
 
 >**4 =** micro:bit program:<br/>
 `*` Uses the micro:bit in a way that is integral to the game<br/>
@@ -177,14 +177,14 @@ previous_roll = 0
 **2 =** micro:bit program lacks 2 of the required elements.<br/>
 **1 =** micro:bit program lacks 3 of the required elements. 
 
-### Photo documentation
+## Photo documentation
 
 >**4 =** Complete photo documentation that includes photos of game board and code and captions.<br/>
 **3 =** A photo is missing or of poor quality or a caption is missing.<br/>
 **2 =** Multiple photos and/or captions missing or of poor quality.<br/>
 **1 =** Most photos and/or captions missing or of poor quality.
 
-### Collaboration reflection
+## Collaboration reflection
 >**4 =** Reflection piece includes:<br/>
 `*` Brainstorming ideas<br/>
 `*` Construction<br/>

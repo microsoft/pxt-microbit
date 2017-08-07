@@ -8,7 +8,7 @@ let item: Image = null;
 item.scrollImage(5, 200);
 ```
 
-### Parameters
+## Parameters
 
 * a [number](/types/number) that means
   how many LEDs to scroll at a time, from right to left or
@@ -25,7 +25,7 @@ item.scrollImage(5, 200);
   ``offset`` says. (1000 milliseconds is one second.) The bigger you
   make this number, the slower the image will scroll.
 
-### Example
+## Example
 
 This program scrolls an image of two arrows five LEDs at a time,
 with a pause of 200 milliseconds between each time it scrolls.
@@ -47,7 +47,7 @@ basic.forever(() => {
 });	
 ```
 
-### See also
+## See also
 
 [show image](/reference/images/show-image), [image](/reference/images/image), [create image](/reference/images/create-image), [show animation](/reference/basic/show-animation)
 

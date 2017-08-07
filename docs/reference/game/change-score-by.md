@@ -5,11 +5,11 @@ Add the amount you say to the score for the game.
 ```sig
 game.addScore(1)
 ```
-### Parameters
+## Parameters
 
 * a [number](/types/number) that means how much to add to the score. A negative number means to subtract from the score.
 
-### Examples
+## Examples
 
 This program is a simple game.
 Press button ``A`` as much as possible.
@@ -22,6 +22,6 @@ input.onButtonPressed(Button.A, () => {
 game.startCountdown(10000)
 ```
 
-### See Also
+## See Also
 
 [score](/reference/game/score), [start countdown](/reference/game/start-countdown)

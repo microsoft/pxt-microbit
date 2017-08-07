@@ -15,7 +15,7 @@ basic.forever(() => {
 })
 ```
 
-### Challenge 1
+## Challenge 1
 
 Let's display a "smiley face" on the screen! We'll start by plotting the eyes.
 
@@ -34,7 +34,7 @@ basic.forever(() => {
 })
 ```
 
-### Challenge 2
+## Challenge 2
 
 Let's add the code to plot the mouth by using `plot` and `unplot` to the following coordinates: (1,4), (2,4) and (3,4). When you're ready, don't forget to run your code to try it out!
 
@@ -57,7 +57,7 @@ basic.forever(() => {
 })
 ```
 
-### Challenge 3
+## Challenge 3
 
 Let's keep using `plot` to convert the mouth into a smiley face.
 
@@ -69,11 +69,11 @@ Let's keep using `plot` to convert the mouth into a smiley face.
 0 1 1 1 0
 ````
 
-### Challenge 4
+## Challenge 4
 
 Let's make it blink a bit faster. To do so, we need to reduce the amount of time used in ``pause`` to 100 milliseconds.
 
-### Challenge 5
+## Challenge 5
 
 Create your own image by changing the coordinates in `plot` and `unplot`!
 

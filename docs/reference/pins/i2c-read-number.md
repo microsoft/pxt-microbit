@@ -7,7 +7,7 @@ number format.
 pins.i2cReadNumber(0, NumberFormat.Int8LE, false);
 ```
 
-### Parameters
+## Parameters
 
 * ``address``: the 7-bit I2C address from which to read the number.
 * ``format``: the number format. Formats include
@@ -19,7 +19,7 @@ pins.i2cReadNumber(0, NumberFormat.Int8LE, false);
   * The number in each format name stands for the number of bits in the format.
 * ``repeated`` repeated start, true - don't send stop at end
 
-### Example
+## Example
 
 The following example reads a number in big-endian, 16-bit, unsigned integer
 format from the 7-bit I2C address `32`.
@@ -28,12 +28,12 @@ format from the 7-bit I2C address `32`.
 pins.i2cReadNumber(32, NumberFormat.UInt16BE, false);
 ```
 
-#### ~hint
+### ~hint
 
 This function is not supported in the simulator.
 
-#### ~
+### ~
 
-### See also
+## See also
 
 [I2C](https://en.wikipedia.org/wiki/I%C2%B2C)

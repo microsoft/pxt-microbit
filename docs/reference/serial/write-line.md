@@ -7,11 +7,11 @@ by writing `\r\n`.
 serial.writeLine("");
 ```
 
-### Parameters
+## Parameters
 
 * `text` is the [string](/types/string) to write to the serial port
 
-### Example: simple serial
+## Example: simple serial
 
 This program writes the word `BOFFO` to the serial port repeatedly.
 
@@ -22,7 +22,7 @@ basic.forever(() => {
 });
 ```
 
-### Example: streaming data
+## Example: streaming data
 
 This program checks the
 [compass heading](/reference/input/compass-heading) and sends the
@@ -44,7 +44,7 @@ basic.forever(() => {
     }
 })
 ```
-### See also
+## See also
 
 [serial](/device/serial),
 [serial write number](/reference/serial/write-number),
