@@ -85,42 +85,6 @@
     //% block="volume down"
     volumeDown = 9,  // MES_REMOTE_CONTROL_EVT_VOLUMEDOWN
     }
-
-
-    declare enum MesDpadButtonInfo {
-    //% block="A down"
-    ADown = 1,  // MES_DPAD_BUTTON_A_DOWN
-    //% block="A up"
-    AUp = 2,  // MES_DPAD_BUTTON_A_UP
-    //% block="B down"
-    BDown = 3,  // MES_DPAD_BUTTON_B_DOWN
-    //% block="B up"
-    BUp = 4,  // MES_DPAD_BUTTON_B_UP
-    //% block="C down"
-    CDown = 5,  // MES_DPAD_BUTTON_C_DOWN
-    //% block="C up"
-    CUp = 6,  // MES_DPAD_BUTTON_C_UP
-    //% block="D down"
-    DDown = 7,  // MES_DPAD_BUTTON_D_DOWN
-    //% block="D up"
-    DUp = 8,  // MES_DPAD_BUTTON_D_UP
-    //% block="1 down"
-    _1Down = 10,  // MES_DPAD_BUTTON_1_UP
-    //% block="1 up"
-    _1Up = 9,  // MES_DPAD_BUTTON_1_DOWN
-    //% block="2 down"
-    _2Down = 11,  // MES_DPAD_BUTTON_2_DOWN
-    //% block="2 up"
-    _2Up = 12,  // MES_DPAD_BUTTON_2_UP
-    //% block="3 down"
-    _3Down = 13,  // MES_DPAD_BUTTON_3_DOWN
-    //% block="3 up"
-    _3Up = 14,  // MES_DPAD_BUTTON_3_UP
-    //% block="4 down"
-    _4Down = 15,  // MES_DPAD_BUTTON_4_DOWN
-    //% block="4 up"
-    _4Up = 16,  // MES_DPAD_BUTTON_4_UP
-    }
 declare namespace devices {
 }
 

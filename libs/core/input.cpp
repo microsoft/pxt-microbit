@@ -112,10 +112,45 @@ enum class Gesture {
     EightG = MICROBIT_ACCELEROMETER_EVT_8G
 };
 
+enum class MesDpadButtonInfo {
+    //% block="A down"
+    ADown = MES_DPAD_BUTTON_A_DOWN,
+    //% block="A up"
+    AUp = MES_DPAD_BUTTON_A_UP,
+    //% block="B down"
+    BDown = MES_DPAD_BUTTON_B_DOWN,
+    //% block="B up"
+    BUp = MES_DPAD_BUTTON_B_UP,
+    //% block="C down"
+    CDown = MES_DPAD_BUTTON_C_DOWN,
+    //% block="C up"
+    CUp = MES_DPAD_BUTTON_C_UP,
+    //% block="D down"
+    DDown = MES_DPAD_BUTTON_D_DOWN,
+    //% block="D up"
+    DUp = MES_DPAD_BUTTON_D_UP,
+    //% block="1 down"
+    _1Down = MES_DPAD_BUTTON_1_DOWN,
+    //% block="1 up"
+    _1Up = MES_DPAD_BUTTON_1_UP,
+    //% block="2 down"
+    _2Down = MES_DPAD_BUTTON_2_DOWN,
+    //% block="2 up"
+    _2Up = MES_DPAD_BUTTON_2_UP,
+    //% block="3 down"
+    _3Down = MES_DPAD_BUTTON_3_DOWN,
+    //% block="3 up"
+    _3Up = MES_DPAD_BUTTON_3_UP,
+    //% block="4 down"
+    _4Down = MES_DPAD_BUTTON_4_DOWN,
+    //% block="4 up"
+    _4Up = MES_DPAD_BUTTON_4_UP,
+};
+
 //% color=#B4009E weight=99 icon="\uf192"
 namespace input {
     /**
-     * Do something when a button (``A``, ``B`` or both ``A+B``) is pressed
+     * Do something when a button (A, B or both A+B) is pushed down and released again.
      * @param button the button that needs to be pressed
      * @param body code to run when event is raised
      */
@@ -134,6 +169,7 @@ namespace input {
     //% help=input/on-gesture weight=84 blockGap=8
     //% blockId=device_gesture_event block="on |%NAME"
     //% parts="accelerometer"
+    //% NAME.fieldEditor="gridpicker" NAME.fieldOptions.columns=4
     void onGesture(Gesture gesture, Action body) {
         int gi = (int)gesture;
         if (gi == MICROBIT_ACCELEROMETER_EVT_3G && uBit.accelerometer.getRange() < 3)
@@ -144,7 +180,7 @@ namespace input {
     }
 
      /**
-     * Do something when a pin is pressed.
+     * Do something when a pin is touched and released again (while also touching the GND pin).
      * @param name the pin that needs to be pressed, eg: TouchPin.P0
      * @param body the code to run when the pin is pressed
      */

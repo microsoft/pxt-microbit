@@ -37,7 +37,7 @@ bluetooth.onUartDataReceived(",", () => {})
 
 ```cards
 bluetooth.advertiseUid(42, 1, 7, true);
-bluetooth.advertiseUrl("https://pxt.microbit.org/", 7, true);
+bluetooth.advertiseUrl("https://makecode.microbit.org/", 7, true);
 bluetooth.stopAdvertising();
 ```
 

@@ -146,16 +146,16 @@ namespace pxt {
 #ifdef DEBUG_BUILD
       printf("In Segment::get index:%u\n", i);
       this->print();
-#endif            
-      
+#endif
+
       if (i < length)
       {
-          return data[i];          
+          return data[i];
       }
       return Segment::DefaultValue;
     }
 
-    void Segment::set(uint32_t i, uint32_t value) 
+    void Segment::set(uint32_t i, uint32_t value)
     {
         if (i < size)
         {
@@ -168,16 +168,16 @@ namespace pxt {
         }
         if (length <= i)
         {
-           length = i + 1; 
-        }        
+           length = i + 1;
+        }
 
 #ifdef DEBUG_BUILD
         printf("In Segment::set\n");
         this->print();
-#endif            
-        
+#endif
+
         return;
-    }      
+    }
 
     uint16_t Segment::growthFactor(uint16_t size)
     {
@@ -201,12 +201,12 @@ namespace pxt {
       growBy(max(minSize, growthFactor(size)));
     }
 
-    void Segment::growBy(uint16_t newSize) 
+    void Segment::growBy(uint16_t newSize)
     {
 #ifdef DEBUG_BUILD
          printf("growBy: %d\n", newSize);
          this->print();
-#endif      
+#endif
       if (size < newSize)
       {
          //this will throw if unable to allocate
@@ -221,16 +221,16 @@ namespace pxt {
          memset(tmp + size, Segment::DefaultValue, (newSize - size) * sizeof(uint32_t));
 
          //free older segment;
-         ::operator delete(data); 
+         ::operator delete(data);
 
-         data = tmp; 
+         data = tmp;
          size = newSize;
 
 #ifdef DEBUG_BUILD
          printf("growBy - after reallocation\n");
          this->print();
-#endif         
-         
+#endif
+
       }
       //else { no shrinking yet; }
       return;
@@ -249,42 +249,42 @@ namespace pxt {
     {
       if (newLength > size)
       {
-        ensure(length);        
+        ensure(length);
       }
       length = newLength;
       return;
     }
 
-    void Segment::push(uint32_t value) 
-    { 
+    void Segment::push(uint32_t value)
+    {
       this->set(length, value);
     }
-    
-    uint32_t Segment::pop() 
+
+    uint32_t Segment::pop()
     {
 #ifdef DEBUG_BUILD
       printf("In Segment::pop\n");
       this->print();
-#endif            
-      
+#endif
+
       if (length > 0)
       {
+        --length;
         uint32_t value = data[length];
         data[length] = Segment::DefaultValue;
-        --length;
         return value;
       }
       return Segment::DefaultValue;
     }
 
     //this function removes an element at index i and shifts the rest of the elements to
-    //left to fill the gap   
-    uint32_t Segment::remove(uint32_t i) 
+    //left to fill the gap
+    uint32_t Segment::remove(uint32_t i)
     {
 #ifdef DEBUG_BUILD
       printf("In Segment::remove index:%u\n", i);
       this->print();
-#endif                  
+#endif
       if (i < length)
       {
         //value to return
@@ -294,24 +294,24 @@ namespace pxt {
           //Move the rest of the elements to fill in the gap.
           memmove(data + i, data + i + 1, (length - i - 1) * sizeof(uint32_t));
         }
-        length--;        
-        data[length] = Segment::DefaultValue;        
+        length--;
+        data[length] = Segment::DefaultValue;
 #ifdef DEBUG_BUILD
         printf("After Segment::remove index:%u\n", i);
         this->print();
-#endif  
+#endif
         return ret;
       }
       return Segment::DefaultValue;
     }
 
-    //this function inserts element value at index i by shifting the rest of the elements right.     
-    void Segment::insert(uint32_t i, uint32_t value) 
+    //this function inserts element value at index i by shifting the rest of the elements right.
+    void Segment::insert(uint32_t i, uint32_t value)
     {
 #ifdef DEBUG_BUILD
       printf("In Segment::insert index:%u value:%u\n", i, value);
       this->print();
-#endif                  
+#endif
 
       if (i < length)
       {
@@ -322,7 +322,7 @@ namespace pxt {
           memmove(data + i + 1, data + i, (length - i) * sizeof(uint32_t));
         }
 
-        data[i] = value;        
+        data[i] = value;
         length++;
       }
       else
@@ -333,7 +333,7 @@ namespace pxt {
 #ifdef DEBUG_BUILD
       printf("After Segment::insert index:%u\n", i);
       this->print();
-#endif                   
+#endif
     }
 
     void Segment::print()
@@ -360,29 +360,29 @@ namespace pxt {
 #ifdef DEBUG_BUILD
       printf("In Segment::destroy\n");
       this->print();
-#endif          
+#endif
       length = size = 0;
       ::operator delete(data);
       data = nullptr;
     }
 
-    void RefCollection::push(uint32_t x) 
+    void RefCollection::push(uint32_t x)
     {
       if (isRef()) incr(x);
       head.push(x);
     }
 
-    uint32_t RefCollection::pop() 
+    uint32_t RefCollection::pop()
     {
       uint32_t ret = head.pop();
       if (isRef())
       {
-        incr(ret);  
-      } 
+        incr(ret);
+      }
       return ret;
     }
 
-    uint32_t RefCollection::getAt(int i) 
+    uint32_t RefCollection::getAt(int i)
     {
       uint32_t tmp = head.get(i);
       if (isRef())
@@ -392,27 +392,27 @@ namespace pxt {
       return tmp;
     }
 
-    uint32_t RefCollection::removeAt(int i) 
+    uint32_t RefCollection::removeAt(int i)
     {
       if (isRef())
       {
         decr(head.get(i));
-      } 
+      }
       return head.remove(i);
     }
 
-    void RefCollection::insertAt(int i, uint32_t value) 
+    void RefCollection::insertAt(int i, uint32_t value)
     {
       head.insert(i, value);
       if (isRef())
       {
         incr(value);
-      } 
+      }
     }
 
-    void RefCollection::setAt(int i, uint32_t value) 
+    void RefCollection::setAt(int i, uint32_t value)
     {
-      if (isRef()) 
+      if (isRef())
       {
         if (head.isValidIndex((uint32_t)i))
         {
@@ -423,9 +423,9 @@ namespace pxt {
       head.set(i, value);
     }
 
-    int RefCollection::indexOf(uint32_t x, int start) 
+    int RefCollection::indexOf(uint32_t x, int start)
     {
-      if (isString()) 
+      if (isString())
       {
         StringData *xx = (StringData*)x;
         uint32_t i = start;
@@ -443,8 +443,8 @@ namespace pxt {
           }
           i++;
         }
-      } 
-      else 
+      }
+      else
       {
         uint32_t i = start;
         while(head.isValidIndex(i))
@@ -460,7 +460,7 @@ namespace pxt {
       return -1;
     }
 
-    int RefCollection::removeElement(uint32_t x) 
+    int RefCollection::removeElement(uint32_t x)
     {
       int idx = indexOf(x, 0);
       if (idx >= 0) {

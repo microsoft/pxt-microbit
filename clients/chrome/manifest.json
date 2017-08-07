@@ -6,13 +6,13 @@
   },
 
   "manifest_version": 2,
-  "name": "pxt.microbit.org",
+  "name": "makecode.microbit.org",
   "version": "0.7.0",
   "author": "Microsoft Corporation",
-  "short_name": "pxt.microbit.org",
+  "short_name": "makecode.microbit.org",
 
-  "description": "Extension for https://pxt.microbit.org.",
-  "homepage_url": "https://pxt.microbit.org",
+  "description": "Extension for https://makecode.microbit.org.",
+  "homepage_url": "https://makecode.microbit.org",
   "offline_enabled": "true",
   "icons": {
     "48": "logo48.png",
@@ -25,6 +25,6 @@
   ],
 
   "externally_connectable": {
-    "matches": [ "*://localhost/*", "https://pxt.microbit.org/*", "https://*.microbit.org/*" ]
+    "matches": [ "*://localhost/*", "https://makecode.microbit.org/*", "https://*.microbit.org/*" ]
   }
 }

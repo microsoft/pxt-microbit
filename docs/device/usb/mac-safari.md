@@ -34,7 +34,7 @@ it appears as a new drive under Devices.
 
 ## Step 2: Download your program
 
-1. Open your project on [pxt.microbit.org](https://pxt.microbit.org)
+1. Open your project on @homeurl@
 2. Click **Download**
 3. When prompted, choose to **save** the compiled file onto your computer. The
    prompt will be different depending on which browser you are using, or

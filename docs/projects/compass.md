@@ -32,12 +32,13 @@ basic.forever(() => {
 
 ## Step 3
 
-If `degrees` is less than `45`, then the compass heading is mostly pointing toward North. Display `N` on the @boardname@.
+If `degrees` is less than `45` or greater than `315`, 
+then the compass heading is mostly pointing toward North. Display `N` on the @boardname@.
 
 ```blocks
 basic.forever(() => {
     let degrees = input.compassHeading();
-    if (degrees < 45) {
+    if (degrees < 45 || degrees > 315) {
         basic.showString("N");
     }
 });
@@ -51,7 +52,7 @@ If `degrees` is less than 135, the @boardname@ is mostly pointing East. Display 
 ```blocks
 basic.forever(() => {
     let degrees = input.compassHeading();
-    if (degrees < 45) {
+    if (degrees < 45 || degrees > 315) {
         basic.showString("N");
     }
     else if (degrees < 135) {
@@ -68,7 +69,7 @@ If `degrees` is less than 225, the @boardname@ is mostly pointing South. Display
 ```blocks
 basic.forever(() => {
     let degrees = input.compassHeading();
-    if (degrees < 45) {
+    if (degrees < 45 || degrees > 315) {
         basic.showString("N");
     }
     else if (degrees < 135) {
@@ -87,7 +88,7 @@ If none of these conditions returned true, then the @boardname@ must be pointing
 ```blocks
 basic.forever(() => {
     let degrees = input.compassHeading();
-    if (degrees < 45) {
+    if (degrees < 45 || degrees > 315) {
         basic.showString("N");
     }
     else if (degrees < 135) {

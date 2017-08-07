@@ -216,7 +216,7 @@ declare namespace basic {
 declare namespace input {
 
     /**
-     * Do something when a button (``A``, ``B`` or both ``A+B``) is pressed
+     * Do something when a button (A, B or both A+B) is pushed down and released again.
      * @param button the button that needs to be pressed
      * @param body code to run when event is raised
      */
@@ -232,11 +232,12 @@ declare namespace input {
      */
     //% help=input/on-gesture weight=84 blockGap=8
     //% blockId=device_gesture_event block="on |%NAME"
-    //% parts="accelerometer" shim=input::onGesture
+    //% parts="accelerometer"
+    //% NAME.fieldEditor="gridpicker" NAME.fieldOptions.columns=4 shim=input::onGesture
     function onGesture(gesture: Gesture, body: () => void): void;
 
     /**
-     * Do something when a pin is pressed.
+     * Do something when a pin is touched and released again (while also touching the GND pin).
      * @param name the pin that needs to be pressed, eg: TouchPin.P0
      * @param body the code to run when the pin is pressed
      */
@@ -390,6 +391,7 @@ declare namespace control {
      * @param mode optional definition of how the event should be processed after construction (default is CREATE_AND_FIRE).
      */
     //% weight=21 blockGap=12 blockId="control_raise_event" block="raise event|from source %src=control_event_source_id|with value %value=control_event_value_id" blockExternalInputs=1
+    //% help=control/raise-event
     //% mode.defl=1 shim=control::raiseEvent
     function raiseEvent(src: number, value: number, mode?: EventCreationMode): void;
 
@@ -397,6 +399,7 @@ declare namespace control {
      * Raises an event in the event bus.
      */
     //% weight=20 blockGap=8 blockId="control_on_event" block="on event|from %src=control_event_source_id|with value %value=control_event_value_id"
+    //% help=control/on-event
     //% blockExternalInputs=1 shim=control::onEvent
     function onEvent(src: number, value: number, handler: () => void): void;
 
@@ -404,6 +407,7 @@ declare namespace control {
      * Gets the value of the last event executed on the bus
      */
     //% blockId=control_event_value" block="event value"
+    //% help=control/event-value
     //% weight=18 shim=control::eventValue
     function eventValue(): number;
 
@@ -411,6 +415,7 @@ declare namespace control {
      * Gets the timestamp of the last event executed on the bus
      */
     //% blockId=control_event_timestamp" block="event timestamp"
+    //% help=control/event-timestamp
     //% weight=19 blockGap=8 shim=control::eventTimestamp
     function eventTimestamp(): number;
 
@@ -525,7 +530,9 @@ declare namespace pins {
      * @param name pin to read from, eg: DigitalPin.P0
      */
     //% help=pins/digital-read-pin weight=30
-    //% blockId=device_get_digital_pin block="digital read|pin %name" blockGap=8 shim=pins::digitalReadPin
+    //% blockId=device_get_digital_pin block="digital read|pin %name" blockGap=8
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+    //% name.fieldOptions.tooltips="false" name.fieldOptions.width="300" shim=pins::digitalReadPin
     function digitalReadPin(name: DigitalPin): number;
 
     /**
@@ -535,7 +542,9 @@ declare namespace pins {
      */
     //% help=pins/digital-write-pin weight=29
     //% blockId=device_set_digital_pin block="digital write|pin %name|to %value"
-    //% value.min=0 value.max=1 shim=pins::digitalWritePin
+    //% value.min=0 value.max=1
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+    //% name.fieldOptions.tooltips="false" name.fieldOptions.width="300" shim=pins::digitalWritePin
     function digitalWritePin(name: DigitalPin, value: number): void;
 
     /**
@@ -543,7 +552,9 @@ declare namespace pins {
      * @param name pin to write to, eg: AnalogPin.P0
      */
     //% help=pins/analog-read-pin weight=25
-    //% blockId=device_get_analog_pin block="analog read|pin %name" blockGap="8" shim=pins::analogReadPin
+    //% blockId=device_get_analog_pin block="analog read|pin %name" blockGap="8"
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+    //% name.fieldOptions.tooltips="false" shim=pins::analogReadPin
     function analogReadPin(name: AnalogPin): number;
 
     /**
@@ -553,7 +564,9 @@ declare namespace pins {
      */
     //% help=pins/analog-write-pin weight=24
     //% blockId=device_set_analog_pin block="analog write|pin %name|to %value" blockGap=8
-    //% value.min=0 value.max=1023 shim=pins::analogWritePin
+    //% value.min=0 value.max=1023
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+    //% name.fieldOptions.tooltips="false" shim=pins::analogWritePin
     function analogWritePin(name: AnalogPin, value: number): void;
 
     /**
@@ -563,7 +576,9 @@ declare namespace pins {
      * @param micros period in micro seconds. eg:20000
      */
     //% help=pins/analog-set-period weight=23 blockGap=8
-    //% blockId=device_set_analog_period block="analog set period|pin %pin|to (µs)%micros" shim=pins::analogSetPeriod
+    //% blockId=device_set_analog_period block="analog set period|pin %pin|to (µs)%micros"
+    //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=4
+    //% pin.fieldOptions.tooltips="false" shim=pins::analogSetPeriod
     function analogSetPeriod(name: AnalogPin, micros: number): void;
 
     /**
@@ -572,7 +587,9 @@ declare namespace pins {
      * @param pulse the value of the pulse, eg: PulseValue.High
      */
     //% help=pins/on-pulsed weight=22 blockGap=8 advanced=true
-    //% blockId=pins_on_pulsed block="on|pin %pin|pulsed %pulse" shim=pins::onPulsed
+    //% blockId=pins_on_pulsed block="on|pin %pin|pulsed %pulse"
+    //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=4
+    //% pin.fieldOptions.tooltips="false" pin.fieldOptions.width="300" shim=pins::onPulsed
     function onPulsed(name: DigitalPin, pulse: PulseValue, body: () => void): void;
 
     /**
@@ -590,7 +607,10 @@ declare namespace pins {
      * @param maximum duration in micro-seconds
      */
     //% blockId="pins_pulse_in" block="pulse in (µs)|pin %name|pulsed %value"
-    //% weight=20 advanced=true maxDuration.defl=2000000 shim=pins::pulseIn
+    //% weight=20 advanced=true
+    //% help=pins/pulse-in
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+    //% name.fieldOptions.tooltips="false" name.fieldOptions.width="300" maxDuration.defl=2000000 shim=pins::pulseIn
     function pulseIn(name: DigitalPin, value: PulseValue, maxDuration?: number): number;
 
     /**
@@ -601,7 +621,9 @@ declare namespace pins {
     //% help=pins/servo-write-pin weight=20
     //% blockId=device_set_servo_pin block="servo write|pin %name|to %value" blockGap=8
     //% parts=microservo trackArgs=0
-    //% value.min=0 value.max=180 shim=pins::servoWritePin
+    //% value.min=0 value.max=180
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+    //% name.fieldOptions.tooltips="false" shim=pins::servoWritePin
     function servoWritePin(name: AnalogPin, value: number): void;
 
     /**
@@ -610,7 +632,9 @@ declare namespace pins {
      * @param micros pulse duration in micro seconds, eg:1500
      */
     //% help=pins/servo-set-pulse weight=19
-    //% blockId=device_set_servo_pulse block="servo set pulse|pin %value|to (µs) %micros" shim=pins::servoSetPulse
+    //% blockId=device_set_servo_pulse block="servo set pulse|pin %value|to (µs) %micros"
+    //% value.fieldEditor="gridpicker" value.fieldOptions.columns=4
+    //% value.fieldOptions.tooltips="false" shim=pins::servoSetPulse
     function servoSetPulse(name: AnalogPin, micros: number): void;
 
     /**
@@ -618,7 +642,9 @@ declare namespace pins {
      * @param name pin to modulate pitch from
      */
     //% blockId=device_analog_set_pitch_pin block="analog set pitch pin %name"
-    //% help=pins/analog-set-pitch weight=3 advanced=true shim=pins::analogSetPitchPin
+    //% help=pins/analog-set-pitch-pin weight=3 advanced=true
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+    //% name.fieldOptions.tooltips="false" shim=pins::analogSetPitchPin
     function analogSetPitchPin(name: AnalogPin): void;
 
     /**
@@ -636,7 +662,9 @@ declare namespace pins {
      * @param pull one of the mbed pull configurations, eg: PinPullMode.PullUp
      */
     //% help=pins/set-pull weight=3 advanced=true
-    //% blockId=device_set_pull block="set pull|pin %pin|to %pull" shim=pins::setPull
+    //% blockId=device_set_pull block="set pull|pin %pin|to %pull"
+    //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=4
+    //% pin.fieldOptions.tooltips="false" pin.fieldOptions.width="300" shim=pins::setPull
     function setPull(name: DigitalPin, pull: PinPullMode): void;
 
     /**
@@ -646,7 +674,9 @@ declare namespace pins {
      * @param type the type of events for this pin to emit, eg: PinEventType.Edge
      */
     //% help=pins/set-events weight=4 advanced=true
-    //% blockId=device_set_pin_events block="set pin %pin|to emit %type|events" shim=pins::setEvents
+    //% blockId=device_set_pin_events block="set pin %pin|to emit %type|events"
+    //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=4
+    //% pin.fieldOptions.tooltips="false" pin.fieldOptions.width="300" shim=pins::setEvents
     function setEvents(name: DigitalPin, type: PinEventType): void;
 
     /**
@@ -675,6 +705,31 @@ declare namespace pins {
     //% help=pins/spi-write weight=5 advanced=true
     //% blockId=spi_write block="spi write %value" shim=pins::spiWrite
     function spiWrite(value: number): number;
+
+    /**
+     * Sets the SPI frequency
+     * @param frequency the clock frequency, eg: 1000000
+     */
+    //% help=pins/spi-frequency weight=4 advanced=true
+    //% blockId=spi_frequency block="spi frequency %frequency" shim=pins::spiFrequency
+    function spiFrequency(frequency: number): void;
+
+    /**
+     * Sets the SPI bits and mode
+     * @param bits the number of bits, eg: 8
+     * @param mode the mode, eg: 3
+     */
+    //% help=pins/spi-format weight=3 advanced=true
+    //% blockId=spi_format block="spi format|bits %bits|mode %mode" shim=pins::spiFormat
+    function spiFormat(bits: number, mode: number): void;
+
+    /**
+     * Sets the MOSI, MISO, SCK pins used by the SPI instance
+     *
+     */
+    //% help=pins/spi-pins weight=2 advanced=true
+    //% blockId=spi_pins block="spi set pins|MOSI %mosi|MISO %miso|SCK %sck" shim=pins::spiPins
+    function spiPins(mosi: DigitalPin, miso: DigitalPin, sck: DigitalPin): void;
 }
 
 
@@ -718,13 +773,15 @@ declare namespace serial {
     /**
      * Sends a buffer through Serial connection
      */
+    //% blockId=serial_writebuffer block="serial|write buffer %buffer"
     //% help=serial/write-buffer advanced=true weight=6 shim=serial::writeBuffer
     function writeBuffer(buffer: Buffer): void;
 
     /**
-     * Reads multiple characters from the rxBuff and fills a user buffer.
+     * Reads multiple characters from the receive buffer and fills a user buffer.
      * @param length default buffer length, eg: 64
      */
+    //% blockId=serial_readbuffer block="serial|read buffer %length"
     //% help=serial/read-buffer advanced=true weight=5 shim=serial::readBuffer
     function readBuffer(length: number): Buffer;
 

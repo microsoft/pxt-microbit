@@ -12,6 +12,14 @@
     Add your custom CSS here
 *******************************/
 
+/* Roboto font */
+@RobotoFont: data-uri("../docs/static/fonts/Roboto_400_normal.woff");
+
+@font-face  {
+    font-family: 'Roboto';
+    src: @RobotoFont format("woff");
+}
+
 .ui.button.download-button {
     &:extend(.ui.purple.button all);
 }
@@ -30,6 +38,10 @@
 }
 
 .ui.button.editortools-btn {
+    &:extend(.ui.blue.button all);
+}
+
+.ui.button.exit-tutorial-btn {
     &:extend(.ui.blue.button all);
 }
 
@@ -94,17 +106,9 @@ span.blocklyTreeLabel {
              Monaco
 *******************************/
 
-.monaco-editor, .monaco-editor .inputarea {
-    background: #ecf0f1;
-}
-
 .monacoDraggableBlock {
     background: #ecf0f1;
     border: solid 3px #ecf0f1;
-}
-
-.monaco-editor-background {
-    background: #ecf0f1;
 }
 
 .monacoFlyout {
@@ -117,12 +121,24 @@ span.blocklyTreeLabel {
     #filelist {
         background: transparent !important;
     }
+    .blocklyToolboxDiv, .monacoToolboxDiv {
+        border-left: 0 !important;
+    }
+    div.blocklyTreeRoot {
+        padding: 0;
+    }
 }
 
 /* Tablet */
 @media only screen and (min-width: @tabletBreakpoint) and (max-width: @largestTabletScreen) {
     #filelist {
         background: transparent !important;
+    }
+    .blocklyToolboxDiv, .monacoToolboxDiv {
+        border-left: 0 !important;
+    }
+    div.blocklyTreeRoot {
+        padding: 0;
     }
 }
 

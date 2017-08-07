@@ -84,6 +84,10 @@ enum EventBusValue {
     //% blockIdentity="control.eventValueId"
     MICROBIT_EVT_ANY_ = MICROBIT_EVT_ANY,
     //% blockIdentity="control.eventValueId"
+    MICROBIT_BUTTON_EVT_DOWN_ = MICROBIT_BUTTON_EVT_DOWN,
+    //% blockIdentity="control.eventValueId"
+    MICROBIT_BUTTON_EVT_UP_ = MICROBIT_BUTTON_EVT_UP,
+    //% blockIdentity="control.eventValueId"
     MICROBIT_BUTTON_EVT_CLICK_ = MICROBIT_BUTTON_EVT_CLICK,
     //% blockIdentity="control.eventValueId"
     MICROBIT_RADIO_EVT_DATAGRAM_ = MICROBIT_RADIO_EVT_DATAGRAM,
@@ -245,6 +249,7 @@ namespace control {
      * @param mode optional definition of how the event should be processed after construction (default is CREATE_AND_FIRE).
      */
     //% weight=21 blockGap=12 blockId="control_raise_event" block="raise event|from source %src=control_event_source_id|with value %value=control_event_value_id" blockExternalInputs=1
+    //% help=control/raise-event
     //% mode.defl=CREATE_AND_FIRE
     void raiseEvent(int src, int value, EventCreationMode mode) {
         MicroBitEvent evt(src, value, (MicroBitEventLaunchMode)mode);
@@ -254,6 +259,7 @@ namespace control {
      * Raises an event in the event bus.
      */
     //% weight=20 blockGap=8 blockId="control_on_event" block="on event|from %src=control_event_source_id|with value %value=control_event_value_id"
+    //% help=control/on-event
     //% blockExternalInputs=1
     void onEvent(int src, int value, Action handler) {
         registerWithDal(src, value, handler);
@@ -263,6 +269,7 @@ namespace control {
     * Gets the value of the last event executed on the bus
     */
     //% blockId=control_event_value" block="event value"
+    //% help=control/event-value
     //% weight=18
     int eventValue() {
         return pxt::lastEvent.value;
@@ -272,6 +279,7 @@ namespace control {
     * Gets the timestamp of the last event executed on the bus
     */
     //% blockId=control_event_timestamp" block="event timestamp"
+    //% help=control/event-timestamp
     //% weight=19 blockGap=8
     int eventTimestamp() {
         return pxt::lastEvent.timestamp;

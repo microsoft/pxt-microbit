@@ -1,10 +1,10 @@
-# Get Sprite Property
+# change Sprite Property
 
 Change the kind of [number](/types/number) you say for a [sprite](/reference/game/create-sprite).
 
 ```sig
 let item: game.LedSprite = null;
-item.set(LedSpriteProperty.X, 0);
+item.change(LedSpriteProperty.X, 0);
 ```
 
 ### Parameters

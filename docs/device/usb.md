@@ -1,35 +1,33 @@
-# Uploading programs on your micro:bit
+# Uploading programs to your @boardname@
 
-While you're writing and testing your programs, you'll mostly be [running them
-in the simulator](/device/simulator), but once you've finished your program you
-can **compile** it and run it on your micro:bit.
+Most of the time you'll be writing and testing your programs in the [simulator](/device/simulator). Once you've finished your program though, you can **compile** it and run it on your @boardname@. Transferring your program to the @boardname@ is as simple as saving a file to a drive on your computer.
 
-The basic steps are:
-
-1. Connect your @boardname@ to your computer via USB
-2. Click **Download** to download the `.hex` file
-3. Move the `.hex` file from your computer onto the MICROBIT drive
-
-### ~ hint
-
-In Edge, Internet Explorer and Firefox, you can click on the **Save As** button on the bottom bar and save the ``.hex`` file
-directly into the MICROBIT drive!
-
-### ~
+When you plug your @boardname@ into USB, a new drive is created with the **@drivename@** label. This is where you'll save your program.
 
 ![](/static/mb/device/usb-thin.jpg)
 
-## Instructions
+The basic steps are:
 
-Pick the instructions for your operating system and browser:
+1. Connect your @boardname@ to your computer via USB.
+2. Click **Download** to download the `.hex` file.
+3. Move the `.hex` file from your computer onto the **@drivename@** drive. The next section has instructions for the browser that you're using.
 
-* [Windows - Microsoft Edge](/device/usb/windows-edge)
-* [Windows - Internet Explorer](/device/usb/windows-ie)
-* [Windows - Chrome](/device/usb/windows-chrome)
-* [Windows - Firefox](/device/usb/windows-firefox)
-* [Mac - Safari](/device/usb/mac-safari)
-* [Mac - Chrome](/device/usb/mac-chrome)
-* [Mac - Firefox](/device/usb/mac-firefox)
+## How to transfer the program with your browser
+
+Here are instructions for different browsers on Windows and Mac computers. Choose the one you're using:
+
+#### Windows browsers
+
+* [Microsoft Edge](/device/usb/windows-edge)
+* [Internet Explorer](/device/usb/windows-ie)
+* [Chrome](/device/usb/windows-chrome)
+* [Firefox](/device/usb/windows-firefox)
+
+#### Mac browsers
+
+* [Safari](/device/usb/mac-safari)
+* [Chrome](/device/usb/mac-chrome)
+* [Firefox](/device/usb/mac-firefox)
 
 ### ~hint
 

@@ -50,6 +50,16 @@ Here are some fun programs for your @boardname@!
   "description": "chart analog input on the LED screen",
   "url":"/examples/plot-analog-pin",
   "cardType": "example"
+}, {
+  "name": "Stop Watch",
+  "description": "easy time tracking",
+  "url":"/examples/stop-watch",
+  "cardType": "example"
+}, {
+  "name": "Radio Dashboard",
+  "description": "dashboard for radio clients",
+  "url":"/examples/radio-dashboard",
+  "cardType": "example"
 }]
 ```
 
@@ -60,17 +70,6 @@ Here are some fun programs for your @boardname@!
   "name": "Servo Calibrator",
   "description": "calibrates a servo",
   "url":"/examples/servo-calibrator",
-  "cardType": "example"
-}]
-```
-
-## Bluetooth
-
-```codecard
-[{
-  "name": "Eddystone Beacon",
-  "description": "Beacon that beams a URL",
-  "url": "/examples/eddystone-beacon",
   "cardType": "example"
 }]
 ```

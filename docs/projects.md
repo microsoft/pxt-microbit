@@ -34,6 +34,31 @@ Fun games to build with your @boardname@.
 }]
 ```
 
+## Multiplayer Games
+```codecard
+[{
+  "name": "Fireflies",
+  "url": "/projects/fireflies",
+  "imageUrl": "/static/mb/projects/fireflies.png"
+}, {
+  "name": "Infection",
+  "url": "/projects/infection",
+  "imageUrl": "/static/mb/projects/infection.png"
+}, {
+  "name": "Hot Or Cold",
+  "url": "/projects/hot-or-cold",
+  "imageUrl": "/static/mb/projects/hot-or-cold.jpg"
+}, {
+  "name": "Voting Machine",
+  "url": "/projects/voting-machine",
+  "imageUrl": "/static/mb/projects/voting-machine.png"
+}, {
+  "name": "Rock Paper Scissors Teams",
+  "url": "/projects/rps-teams",
+  "imageUrl": "/static/mb/projects/rpsteams.png"
+}]
+```
+
 ## Music
 
 ```codecard
@@ -81,6 +106,36 @@ Fun games to build with your @boardname@.
   "name": "Milky Monster",
   "url":"/projects/milky-monster",
   "imageUrl":"/static/mb/projects/milky-monster.jpg"
+}, {
+  "name": "Railway crossing",
+  "url":"/projects/railway-crossing",
+  "imageUrl":"/static/mb/projects/railway-crossing.png"
+}]
+```
+
+## STEM
+
+```codecard
+[{
+  "name": "Timing gates",
+  "url":"/projects/timing-gates",
+  "imageUrl":"/static/mb/projects/timing-gates.jpg"
+},{
+  "name": "Soil Moisture",
+  "url":"/projects/soil-moisture",
+  "imageUrl":"/static/mb/projects/soil-moisture.jpg"
+}, {
+  "name": "Plant Watering",
+  "url":"/projects/plant-watering",
+  "imageUrl":"/static/mb/projects/plant-watering.jpg"
+}, {
+  "name": "Reaction Time",
+  "url":"/projects/reaction-time",
+  "imageUrl":"/static/mb/projects/reaction-time.jpg"
+}, {
+  "name": "States of Matter",
+  "url":"/projects/states-of-matter",
+  "imageUrl":"/static/mb/projects/states-of-matter.jpg"
 }]
 ```
 
@@ -88,10 +143,6 @@ Fun games to build with your @boardname@.
 
 ```codecard
 [{
-  "name": "Timing gates",
-  "url":"/projects/timing-gates",
-  "imageUrl":"/static/mb/projects/timing-gates.jpg"
-}, {
   "name": "Compass",
   "url":"/projects/compass",
   "imageUrl":"/static/mb/projects/a5-compass.png"
@@ -99,10 +150,17 @@ Fun games to build with your @boardname@.
   "name": "Telegraph",
   "url":"/projects/telegraph",
   "imageUrl":"/static/mb/projects/a8-network.png"
+}, {
+  "name": "Karel the LED",
+  "url": "/projects/karel",
+  "imageUrl": "/static/mb/projects/karel.png"
 }]
 ```
 
 ### See Also
 
 [Flashing Heart](/projects/flashing-heart), [Smiley Buttons](/projects/smiley-buttons), [Love Meter](/projects/love-meter), [Rock Paper Scissors](/projects/rock-paper-scissors), [Compass](/projects/compass), [Hack your headphones](/projects/hack-your-headphones), [Banana keyboard](/projects/banana-keyboard), [Telegraph](/projects/telegraph), [Guitar](/projects/guitar), [Wallet](/projects/wallet), [Watch](/projects/watch),
-[Milk Monster](/projects/milky-monster)
+[Milk Monster](/projects/milky-monster), [Karel the LED](/projects/karel), [Infection](/projects/infection), [Voting Machine](/projects/voting-machine)
+[Fireflies](/projects/fireflies), [Soil Moisture](/projects/soil-moisture),
+[States Of Matter](/projects/states-of-matter), [Reaction Time](/projects/reaction-time),
+[Rock Paper Scissors Teams](/projects/rps-teams)

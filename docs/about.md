@@ -74,6 +74,10 @@ input.onButtonPressed(Button.B, () => {
 });
 ```
 
+## Learn!
+
+We have tons of [projects](/projects), [examples](/examples) and [courses](/courses) to get your started!
+
 ## C++ Runtime
 
 The [C++ micro:bit runtime](http://lancaster-university.github.io/microbit-docs/), created at [Lancaster University](http://www.lancaster.ac.uk/), provides access to the hardware functions of the micro:bit, 
@@ -84,7 +88,7 @@ When code is compiled to ARM machine code, the calls to JavaScript micro:bit fun
 
 ## [Command Line Tools](/cli)
 
-Looking to use pxt.microbit.org in your favorite editor? Install the [command line tools](/cli) and get rolling!
+Looking to use @homeurl@ in your favorite editor? Install the [command line tools](/cli) and get rolling!
 
 ## [Packages](/packages)
 

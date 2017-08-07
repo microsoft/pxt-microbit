@@ -223,7 +223,7 @@ namespace music {
 
     function init() {
         if (beatsPerMinute <= 0) beatsPerMinute = 120;
-        if (freqTable.length == 0) freqTable = [28, 29, 31, 33, 35, 37, 39, 41, 44, 46, 49, 52, 55, 58, 62, 65, 69, 73, 78, 82, 87, 92, 98, 104, 110, 117, 123, 131, 139, 147, 156, 165, 175, 185, 196, 208, 220, 233, 247, 262, 277, 294, 311, 330, 349, 370, 392, 415, 440, 466, 494, 523, 554, 587, 622, 659, 698, 740, 784, 831, 880, 932, 988, 1047, 1109, 1175, 1245, 1319, 1397, 1480, 1568, 1661, 1760, 1865, 1976, 2093, 2217, 2349, 2489, 2637, 2794, 2960, 3136, 3322, 3520, 3729, 3951, 4186]
+        if (freqTable.length == 0) freqTable = [31, 33, 35, 37, 39, 41, 44, 46, 49, 52, 55, 58, 62, 65, 69, 73, 78, 82, 87, 92, 98, 104, 110, 117, 123, 131, 139, 147, 156, 165, 175, 185, 196, 208, 220, 233, 247, 262, 277, 294, 311, 330, 349, 370, 392, 415, 440, 466, 494, 523, 554, 587, 622, 659, 698, 740, 784, 831, 880, 932, 988, 1047, 1109, 1175, 1245, 1319, 1397, 1480, 1568, 1661, 1760, 1865, 1976, 2093, 2217, 2349, 2489, 2637, 2794, 2960, 3136, 3322, 3520, 3729, 3951, 4186]
     }
 
     /**
@@ -342,8 +342,8 @@ namespace music {
                         control.raiseEvent(MICROBIT_MELODY_ID, MusicEvent.BackgroundMelodyResumed);
                     }
                 }
-                currentMelody = null;
                 control.raiseEvent(MICROBIT_MELODY_ID, currentMelody.background ? MusicEvent.BackgroundMelodyEnded : MusicEvent.MelodyEnded);
+                currentMelody = null;
             })
         }
     }
@@ -372,13 +372,13 @@ namespace music {
         for (let pos = 0; pos < currNote.length; pos++) {
             let noteChar = currNote.charAt(pos);
             switch (noteChar) {
-                case 'a': case 'A': note = 1; break;
-                case 'b': case 'B': note = 3; break;
-                case 'c': case 'C': note = 4; break;
-                case 'd': case 'D': note = 6; break;
-                case 'e': case 'E': note = 8; break;
-                case 'f': case 'F': note = 9; break;
-                case 'g': case 'G': note = 11; break;
+                case 'c': case 'C': note = 1; break;
+                case 'd': case 'D': note = 3; break;
+                case 'e': case 'E': note = 5; break;
+                case 'f': case 'F': note = 6; break;
+                case 'g': case 'G': note = 8; break;
+                case 'a': case 'A': note = 10; break;
+                case 'b': case 'B': note = 12; break;
                 case 'r': case 'R': isrest = true; break;
                 case '#': note++; break;
                 case 'b': note--; break;

@@ -97,7 +97,7 @@ namespace pxsim {
                     break;
                 case "radiopacket":
                     let packet = <SimulatorRadioPacketMessage>msg;
-                    this.radioState.recievePacket(packet);
+                    this.radioState.receivePacket(packet);
                     break;
             }
         }

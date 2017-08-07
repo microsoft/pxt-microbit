@@ -124,7 +124,7 @@
 }
 
 - (void)launchEditor:(id)sender {
-    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"https://pxt.microbit.org/"]];
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"https://makecode.microbit.org/"]];
 }
 
 @end

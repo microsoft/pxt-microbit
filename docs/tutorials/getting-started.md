@@ -66,4 +66,4 @@ input.onGesture(Gesture.Shake, () => {
 
 ### Step 7
 
-Well done! You have complete this activity.
+Well done! You have completed this activity.

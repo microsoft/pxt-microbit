@@ -1,6 +1,6 @@
 # Basic
 
-Provides access to basic @boardname@ functionality.
+Use basic @boardname@ functions and actions.
 
 ```cards
 basic.showNumber(0);
@@ -18,13 +18,6 @@ basic.forever(() => {
     
 });
 basic.pause(100);
-basic.plotLeds(`
-. . . . .
-. . . . .
-. . # . .
-. . . . .
-. . . . .
-`);
 basic.showArrow(ArrowNames.North);
 basic.showAnimation(`
 . . . . .
@@ -35,10 +28,10 @@ basic.showAnimation(`
 `);
 ```
 
-### See Also
+### See also
 
 [showNumber](/reference/basic/show-number), 
 [showIcon](/reference/basic/show-icon),
 [showLeds](/reference/basic/show-leds), [showString](/reference/basic/show-string), 
 [clearScreen](/reference/basic/clear-screen), [forever](/reference/basic/forever), [pause](/reference/basic/pause), 
-[showAnimation](/reference/basic/show-animation)
+[showArrow](/reference/basic/show-arrow), [showAnimation](/reference/basic/show-animation)

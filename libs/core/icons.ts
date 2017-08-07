@@ -149,21 +149,21 @@ enum IconNames {
 }
 
 enum ArrowNames {
-    //% blockIdentity=images.arrowNumber
+    //% blockIdentity=images.arrowNumber block="North"
     North = 0,
-    //% blockIdentity=images.arrowNumber
+    //% blockIdentity=images.arrowNumber block="North East"
     NorthEast,
-    //% blockIdentity=images.arrowNumber
+    //% blockIdentity=images.arrowNumber block="East"
     East,
-    //% blockIdentity=images.arrowNumber
+    //% blockIdentity=images.arrowNumber block="South East"
     SouthEast,
-    //% blockIdentity=images.arrowNumber
+    //% blockIdentity=images.arrowNumber block="South"
     South,
-    //% blockIdentity=images.arrowNumber 
+    //% blockIdentity=images.arrowNumber block="South West"
     SouthWest,
-    //% blockIdentity=images.arrowNumber
+    //% blockIdentity=images.arrowNumber block="West"
     West,
-    //% blockIdentity=images.arrowNumber
+    //% blockIdentity=images.arrowNumber block="North West"
     NorthWest,
 }
 
@@ -171,6 +171,8 @@ namespace basic {
 
     /**
      * Draws the selected icon on the LED screen
+     * @param icon the predifined icon id
+     * @param interval the amount of time (milliseconds) to show the icon. Default is 600.
      */
     //% weight=90 blockGap=8
     //% blockId=basic_show_icon
@@ -180,20 +182,25 @@ namespace basic {
     //% i.fieldEditor="gridpicker"
     //% i.fieldOptions.width="400" i.fieldOptions.columns="5"
     //% i.fieldOptions.itemColour="black" i.fieldOptions.tooltips="true"
-    export function showIcon(icon: IconNames) {
+    export function showIcon(icon: IconNames, interval = 600) {
         let res = images.iconImage(icon)
-        res.showImage(0)
+        res.showImage(0, interval)
     }
 
+    /**
+     * Shows an arrow on screent
+     * @param direction the direction of the arrow
+     * @param interval the amount of time (milliseconds) to show the icon. Default is 600.
+     */
     //% weight=50 blockGap=8
-    //% blockId=basic_show_arrow 
+    //% blockId=basic_show_arrow
     //% block="show arrow %i=device_arrow"
     //% parts="ledmatrix"
     //% advanced=true
     //% help=basic/show-arrow
-    export function showArrow(i: number) {
-        let res = images.arrowImage(i)
-        res.showImage(0)
+    export function showArrow(direction: number, interval = 600) {
+        let res = images.arrowImage(direction)
+        res.showImage(0, interval)
     }
 }
 
@@ -201,9 +208,10 @@ namespace basic {
 namespace images {
 
     //% weight=50 blockGap=8
+    //% help=images/arrow-image
     //% blockId=builtin_arrow_image block="arrow image %i=device_arrow"
-    export function arrowImage(i : ArrowNames): Image {
-            switch(i) {
+    export function arrowImage(i: ArrowNames): Image {
+        switch (i) {
             // compass directions
             case ArrowNames.North: return images.createImage(`    
                                         . . # . .
@@ -217,7 +225,7 @@ namespace images {
                                         . . # . #
                                         . # . . .
                                         # . . . .`);
-            case  ArrowNames.East: return images.createImage(` 
+            case ArrowNames.East: return images.createImage(` 
                                         . . # . .
                                         . . . # .
                                         # # # # #
@@ -253,34 +261,35 @@ namespace images {
                                         # . # . .
                                         . . . # .
                                         . . . . #`);
-            default:                return images.createImage(`
+            default: return images.createImage(`
                                         . . . . .
                                         . . . . .
                                         . . . . .
                                         . . . . .
                                         . . . . .
                                         `);
-       }
+        }
     }
-    
+
     //% weight=50 blockGap=8
+    //% help=images/icon-image
     //% blockId=builtin_image block="icon image %i"
     export function iconImage(i: IconNames): Image {
-            switch (i) {
-            case IconNames.Heart : return images.createImage(`
+        switch (i) {
+            case IconNames.Heart: return images.createImage(`
                                         . # . # .
                                         # # # # #
                                         # # # # #
                                         . # # # .
                                         . . # . .`);
 
-            case IconNames.SmallHeart : return images.createImage(`
+            case IconNames.SmallHeart: return images.createImage(`
                                         . . . . .
                                         . # . # .
                                         . # # # .
                                         . . # . .
                                         . . . . .`);
-                                            //faces
+            //faces
             case IconNames.Happy: return images.createImage(`
                                         . . . . .
                                         . # . # .
@@ -396,7 +405,7 @@ namespace images {
                                         . . # . .
                                         # # . # .
                                         # # . . #`);
-                                            // The following images were designed by Abbie Brooks.
+            // The following images were designed by Abbie Brooks.
             case IconNames.TShirt: return images.createImage(`
                                         # # . # #
                                         # # # # #
@@ -414,7 +423,7 @@ namespace images {
                                         # # # . .
                                         . # # # #
                                         . # # # .
-                                        . .. . .`);
+                                        . . . . .`);
             case IconNames.House: return images.createImage(`
                                         . . # . .
                                         . # # # .
@@ -475,7 +484,7 @@ namespace images {
                                         . # . # .
                                         . # # # .
                                         . . . . .`);
-                                        // animals    
+            // animals
             case IconNames.Rabbit: return images.createImage(`
                                         # . # . .
                                         # . # . .
@@ -488,7 +497,7 @@ namespace images {
                                         # # # # #
                                         . # # # .
                                         . . # . .`);
-                                        // musical notes
+            // musical notes
             case IconNames.QuarterNote: return images.createImage(`
                                         . . # . .
                                         . . # . .
@@ -501,7 +510,7 @@ namespace images {
                                         . . # . #
                                         # # # . .
                                         # # # . .`);
-                                        // other icons
+            // other icons
             case IconNames.Pitchfork: return images.createImage(`
                                         # . # . #
                                         # . # . #
@@ -514,7 +523,7 @@ namespace images {
                                         # # . # #
                                         . # # # .
                                         . . # . .`);
-            default:                return images.createImage(`
+            default: return images.createImage(`
                                         . . . . .
                                         . . . . .
                                         . . . . .
@@ -525,6 +534,7 @@ namespace images {
     }
 
     //% weight=50 blockGap=8
+    //% help=images/arrow-number
     //% blockId=device_arrow block="%arrow"
     //% shim=TD_ID
     export function arrowNumber(arrow: ArrowNames): number {

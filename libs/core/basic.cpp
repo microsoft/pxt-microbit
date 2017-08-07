@@ -87,7 +87,7 @@ namespace basic {
     //% help=basic/show-animation imageLiteral=1 async
     //% parts="ledmatrix"
     void showAnimation(ImageLiteral leds, int interval = 400) {
-      uBit.display.animate(MicroBitImage(imageBytes(leds)), interval, 5, 0);
+      uBit.display.animate(MicroBitImage(imageBytes(leds)), interval, 5, 0, 0);
     }
 
     /**

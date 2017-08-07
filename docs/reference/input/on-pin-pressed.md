@@ -2,8 +2,9 @@
 
 Start an [event handler](/reference/event-handler) (part of the
 program that will run when something happens, like when a button is
-pressed).  This handler works when you press pin `0`, `1`, or `2`
-together with `GND`.  When you are using this function in a web
+pressed).  This handler works when you touch pin `0`, `1`, or `2`
+together with `GND`, and release it within 1 second.
+When you are using this function in a web
 browser, click the pins on the screen instead of the ones on the
 @boardname@.
 

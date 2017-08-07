@@ -6,6 +6,12 @@ Shows the selected arrow on the LED screen
 basic.showArrow(ArrowNames.North)
 ```
 
+
+### Parameters
+
+* ``direction``, the identifier of the arrow to display
+* ``interval`` (optional), the time to display in milliseconds. default is 400.
+
 ### Example
 
 This program shows all eight arrows.

@@ -14,7 +14,7 @@ led.enable(false);
 
 This program turns off the screen when pressing button ``B``
 
-```typescript
+```blocks
 input.onButtonPressed(Button.B, () => {
     led.enable(false)
 });

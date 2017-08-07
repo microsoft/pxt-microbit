@@ -8,7 +8,28 @@
             "CoderDojoOlney/pxt-olney",
             "PaulDFoster/pxt-microbit-GY521",
             "chevyng/pxt-ucl-junkrobot",
-            "srs/pxt-bitbot"
+            "srs/pxt-bitbot",
+            "sparkfun/pxt-gamer-bit",
+            "sparkfun/pxt-moto-bit",
+            "sparkfun/pxt-weather-bit",
+            "KitronikLtd/pxt-kitronik-servo-lite",
+            "Tinkertanker/pxt-ssd1306-microbit",
+            "minodekit/pxt-minode"
+        ],
+        "preferredRepos": [
+            "Microsoft/pxt-neopixel"
         ]
-    }
+    },
+    "languages": [
+        "de",
+        "en",
+        "fr",
+        "ja",
+        "nl",
+        "no",
+        "sv-SE",
+        "si-LK",
+        "zh-CN",
+        "zh-TW"
+    ]
 }

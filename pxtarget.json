@@ -1,9 +1,9 @@
 {
     "id": "microbit",
     "nickname": "microbit",
-    "name": "pxt.microbit.org",
-    "title": "pxt.microbit.org - Blocks / Javascript editor for micro:bit",
-    "description": "A Blocks / JavaScript code editor for the micro:bit.",
+    "name": "makecode.microbit.org",
+    "title": "Microsoft MakeCode for micro:bit",
+    "description": "A Blocks / JavaScript code editor for the micro:bit powered by Microsoft MakeCode.",
     "corepkg": "core",
     "bundleddirs": [
         "libs/core",
@@ -79,6 +79,8 @@
         "logicBlocks": true,
         "variablesBlocks": true,
         "textBlocks": true,
+        "listsBlocks": true,
+        "functionBlocks": true,
         "onStartColor": "#0078D7",
         "onStartNamespace": "basic",
         "onStartWeight": 54
@@ -188,17 +190,18 @@
         "yottaTarget": "bbc-microbit-classic-gcc",
         "yottaCorePackage": "microbit",
         "githubCorePackage": "lancaster-university/microbit",
-        "gittag": "v2.0.0-rc9",
+        "gittag": "v2.0.0-rc11",
         "serviceId": "microbit"
     },
     "serial": {
-        "manufacturerFilter": "^mbed$",
+        "productFilter": "0x0204",
+        "vendorFilter": "0x0d28",
         "nameFilter": "^mbed Serial Port",
         "log": true
     },
     "appTheme": {
         "accentColor": "#5C005C",
-        "logoUrl": "https://microbit.org/",
+        "logoUrl": "https://microbit.org/code/",
         "logo": "./static/logo.portrait.white.svg",
         "docsLogo": "./static/logo.square.white.svg",
         "portraitLogo": "./static/logo.square.white.svg",
@@ -209,13 +212,13 @@
         "organizationUrl": "https://makecode.com/",
         "organizationLogo": "./static/Microsoft-logo_rgb_c-gray-square.png",
         "organizationWideLogo": "./static/Microsoft-logo_rgb_c-white.png",
-        "homeUrl": "https://pxt.microbit.org/",
-        "embedUrl": "https://pxt.microbit.org/",
-        "shareUrl": "https://pxt.microbit.org/",
-        "legacyDomain": "pxt.microbit.org",
+        "homeUrl": "https://makecode.microbit.org/",
+        "embedUrl": "https://makecode.microbit.org/",
+        "shareUrl": "https://makecode.microbit.org/",
         "privacyUrl": "https://makecode.com/privacy",
         "termsOfUseUrl": "https://makecode.com/termsofuse",
         "githubUrl": "https://github.com/Microsoft/pxt-microbit",
+        "legacyDomain": "pxt.microbit.org",
         "galleries": {
             "Projects": "projects",
             "Examples": "examples"
@@ -341,6 +344,10 @@
                 "snap": false
             }
         },
-        "highContrast": true
+        "highContrast": true,
+        "selectLanguage": true,
+        "monacoColors": {
+            "editor.background": "#ecf0f1"
+        }
     }
 }

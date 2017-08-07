@@ -1,7 +1,3 @@
 # @extends
 
 ### #specific
-
-```
-basic.forever(() => {});
-```

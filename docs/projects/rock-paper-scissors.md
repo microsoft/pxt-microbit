@@ -166,11 +166,12 @@ input.onButtonPressed(Button.A, () => {
 
 ## Step 6: Prove you're the greatest!
 
-After your @boardname@ can add `1` to the score, show how many wins you have.
+After your @boardname@ can add `1` to the score, show how many wins you have. Remember to add a pause after addScore so text will display.
 
 ```blocks
 input.onButtonPressed(Button.A, () => {
     game.addScore(1)
+    basic.pause(1)
     basic.showString("WINS:")
     basic.showNumber(game.score())
 })
@@ -179,14 +180,16 @@ input.onButtonPressed(Button.A, () => {
 
 Success! Your @boardname@ can track wins!
 But what about losses? 
-Use the ``Game`` drawer to subtract `1` from your score when you press button `B`. 
+Use the ``Game`` drawer to subtract `1` from your score when you press button `B`.
+Change `WINS` to `SCORE` in step 6.
 
 Here are all the blocks you will need:
 
 ```shuffle
 input.onButtonPressed(Button.B, () => {
     game.addScore(-1)
-    basic.showString("LOSSES:")
+    basic.pause(1)
+    basic.showString("SCORE:")
     basic.showNumber(game.score())
 })
 ```

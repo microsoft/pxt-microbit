@@ -10,13 +10,6 @@ The basic steps are:
 2. Click **Download** and download the `.hex` file
 3. Copy the `.hex` file from your computer onto the micro:bit drive
 
-### ~hint
-
-You can use the [micro:bit uploader](/uploader) to automatically deploy ``.hex`` files to your micro:bit!
-![](/static/uploader/tooltip.png)
-
-### ~
-
 ## Requirements
 
 You need the following things to transfer and run a script on your micro:bit:
@@ -39,38 +32,55 @@ it appears as a new drive under Devices.
 
 ![](/static/mb/device/usb-windows-device.jpg)
 
-## Step 2: Download your program
+## Step 2 (optional): Configure Chrome to ask where to save the file
 
-1. Open your project on [pxt.microbit.org](https://pxt.microbit.org)
+You only need to do this once.
+
+1. Open the **Settings** for Chrome.
+2. Click **Advanced** at the bottom of the page.
+3. Find the **Downloads** settings.
+4. Enable the setting **Ask where to save each file before downloading**.
+
+## Step 3: Download your program
+
+1. Open your project on @homeurl@
 2. Click **Download**
-3. When prompted, choose to **save** the compiled file onto your computer. The
-   prompt will be different depending on which browser you are using, or
-   whether you are using a Windows computer or a Mac
+3. If you did Step 2 above, Chrome will ask where to save the `.hex` file,
+    so save it into the `MICROBIT` drive.
+    Otherwise, continue with one of the options in Step 4 below.
 
-Your `.hex` file appears as a download at the bottom of the browser. Click on
-the arrow next to the name of the file and then click **Show in folder**.
+## Step 4: Transfer the file to your micro:bit
+
+If the file was saved onto your computer, you will need to transfer it to the micro:bit.
+
+### Manual transfer
+
+Your `.hex` file (created in Step 3 above) appears as a download at the bottom of the browser.
+Click on the arrow next to the name of the file and then click **Show in folder**.
 
 ![](/static/mb/device/usb-windows-chrome.png)
 
-Drag and drop the `.hex` file from the download folder onto the `MICROBIT` drive.
+In File Explorer, drag and drop the `.hex` file from the download folder onto the `MICROBIT` drive.
 
-## Step 3: Transfer the file to your micro:bit
+Alternatively, right-click on the hex file, choose **Send to**, and then **MICROBIT**.
 
-* Once you've found the folder containing your `.hex` file, drag and drop it
-    onto your `MICROBIT` drive
+![](/static/mb/device/usb-windows-sendto.jpg)
+
+### micro:bit uploader
+
+You can use the [micro:bit uploader](/uploader) to automatically deploy ``.hex`` files to your micro:bit!
+![](/static/uploader/tooltip.png)
+
+## Step 5: After transferring the file
+
 * The LED on the back of your micro:bit flashes during the transfer (which 
     should only take a few seconds).
 * Once transferred, the code will run automatically on your micro:bit. To rerun
    your program, press the reset button on the back of your micro:bit. The reset 
    button automatically runs the newest file on the micro:bit.
-
-In File Explorer, right-click on the hex file (created in Step 2 above), choose **Send to**, and then **MICROBIT**.
-
-![](/static/mb/device/usb-windows-sendto.jpg)
-
-By copying the script onto the `MICROBIT` drive, you have programmed it into the
-flash memory on the micro:bit, which means even after you unplug the micro:bit,
-your program will still run if the micro:bit is powered by battery.
+* By copying the script onto the `MICROBIT` drive, you have programmed it into the
+   flash memory on the micro:bit, which means even after you unplug the micro:bit,
+   your program will still run if the micro:bit is powered by battery.
 
 ### ~hint
 

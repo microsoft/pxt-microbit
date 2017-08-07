@@ -18,7 +18,7 @@ Read more at https://lancaster-university.github.io/microbit-docs/ble/eddystone/
 ## ~
 
 ```sig
-bluetooth.advertiseUrl("https://pxt.microbit.org/", 7, true);
+bluetooth.advertiseUrl("https://makecode.microbit.org/", 7, true);
 ```
 
 ### Parameters

@@ -59,7 +59,7 @@ namespace game {
     }
 
     /**
-     * Adds points to the current score
+     * Adds points to the current score and shows an animation
      * @param points amount of points to change, eg: 1
      */
     //% weight=10 help=game/add-score
@@ -78,7 +78,7 @@ namespace game {
     }
 
     /**
-     * Starts a game countdown timer
+     * Shows an animation, then starts a game countdown timer, which causes Game Over when it reaches 0
      * @param ms countdown duration in milliseconds, eg: 10000
      */
     //% weight=9 help=game/start-countdown
@@ -102,7 +102,7 @@ namespace game {
     }
 
     /**
-     * Displays a game over animation.
+     * Displays a game over animation and the score.
      */
     //% weight=8 help=game/game-over
     //% blockId=game_game_over block="game over"
@@ -292,19 +292,21 @@ namespace game {
         private _dir: number;
         private _brightness: number;
         private _blink: number;
+        private _enabled: boolean;
 
         constructor(x: number, y: number) {
             this._x = Math.clamp(0, 4, x);
             this._y = Math.clamp(0, 4, y);
             this._dir = 90;
             this._brightness = 255;
+            this._enabled = true;
             init();
             sprites.push(this);
             plot();
         }
 
         /**
-         * Move a certain number of LEDs
+         * Move a certain number of LEDs in the current direction
          * @param this the sprite to move
          * @param leds number of leds to move, eg: 1, -1
          */
@@ -354,7 +356,7 @@ namespace game {
         }
 
         /**
-         * If touching the edge of the stage, then bounce away.
+         * If touching the edge of the stage and facing towards it, then turn away.
          * @param this TODO
          */
         //% weight=18
@@ -566,14 +568,14 @@ namespace game {
         }
 
         /**
-         * Reports true if sprite is touching specified sprite
+         * Reports true if sprite has the same position as specified sprite
          * @param this TODO
          * @param other TODO
          */
         //% weight=20
         //% blockId=game_sprite_touching_sprite block="%sprite|touching %other|?" blockGap=8
         public isTouching(other: LedSprite): boolean {
-            return this._x == other._x && this._y == other._y;
+            return this._enabled && other._enabled && this._x == other._x && this._y == other._y;
         }
 
         /**
@@ -642,12 +644,13 @@ namespace game {
         }
 
         /**
-         * Deletes the sprite from the game engine. All further operation of the sprite will not have any effect.
+         * Deletes the sprite from the game engine. The sprite will no longer appear on the screen or interact with other sprites.
          * @param this sprite to delete
          */
         //% weight=59
         //% blockId="game_delete_sprite" block="delete %this"
         public delete(): void {
+            this._enabled = false;
             if (sprites.removeElement(this))
                 plot();
         }

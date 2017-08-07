@@ -30,8 +30,7 @@ Turn a piece of cardboard into an milky-monster!
 
 ## Step 1: download and cut the template
 
-[Download the Milky Monster template](/static/mb/projects/milky-monster/MilkyMonsterTemplate.pdf) and cutout the template.
-
+[Download the template](/static/mb/projects/milky-monster/template.pdf) and cutout the template.
 
 https://youtu.be/ipsZuFNgTHM
 

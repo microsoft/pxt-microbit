@@ -1,4 +1,4 @@
-# Show Animation
+# show Animation
 
 Show a group of image frames (pictures) one after another on the [LED screen](/device/screen). It pauses the amount of time you tell it after each frame.
 
@@ -14,8 +14,8 @@ basic.showAnimation(`
 
 ### Parameters
 
-* `leds` is a [String](/types/string) that shows which LEDs are on and off, in groups one after another.
-* `interval` is an optional [Number](/types/number). It means the number of milliseconds to pause after each image frame.
+* `leds` is a [string](/types/string) that shows which LEDs are on and off, in groups one after another.
+* `interval` is an optional [number](/types/number). It means the number of milliseconds to pause after each image frame.
 
 ### Example: Animating a group of image frames
 
