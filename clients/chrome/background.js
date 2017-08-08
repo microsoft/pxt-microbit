@@ -25,14 +25,19 @@ function findNewDevices() {
         serialPorts.forEach(function (serialPort) {
             if (byPath(serialPort.path).length == 0 &&
                 serialPort.displayName == "mbed Serial Port") {
-                chrome.serial.connect(serialPort.path, { bitrate: 115200 }, function (info) {
-                    // In case the [connect] operation takes more than five seconds...
-                    if (info && byPath(serialPort.path).length == 0)
-                        connections.push({
-                            id: info.connectionId,
-                            path: serialPort.path
-                        });
-                });
+                try {
+                    chrome.serial.connect(serialPort.path, { bitrate: 115200 }, function (info) {
+                        // In case the [connect] operation takes more than five seconds...
+                        if (info && byPath(serialPort.path).length == 0)
+                            connections.push({
+                                id: info.connectionId,
+                                path: serialPort.path
+                            });
+                    });
+                }
+                catch (e) {
+                    console.log("failed to connect to " + serialPort.displayName);
+                }
             }
         });
     });
@@ -40,7 +45,8 @@ function findNewDevices() {
 function main() {
     // Register new clients in the [ports] global variable.
     chrome.runtime.onConnectExternal.addListener(function (port) {
-        if (/^(micro:bit|touchdevelop|yelm|pxt|codemicrobit|codethemicrobit|pxt.microbit.org|makecode)$/.test(port.name)) {
+        console.log('connection to port ' + port.name);
+        if (/^serial$/.test(port.name)) {
             ports.push(port);
             port.onDisconnect.addListener(function () {
                 ports = ports.filter(function (x) { return x != port; });

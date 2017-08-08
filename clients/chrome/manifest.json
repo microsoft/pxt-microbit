@@ -7,7 +7,7 @@
 
   "manifest_version": 2,
   "name": "makecode.microbit.org",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "author": "Microsoft Corporation",
   "short_name": "makecode.microbit.org",
 
