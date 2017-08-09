@@ -79,7 +79,7 @@ A helpful feature of Microsoft MakeCode is "Slo-Mo", or slow-motion mode.
 * Click on the snail icon under the micro:bit simulator. 
 This will slow down the execution (running) of the program, and highlight parts of your code so you can see step-by-step, which line of code is being processed.
 
-![micro:bit sim in slo-mo](/static/courses/csintro/iteration/microbit-slo-mo.png)
+![micro:bit sim in slo-mo](/static/courses/csintro/iteration/slo-mo.gif)
 
 Now run your program several more times. Do you see the different lines of your code highlighted as the program runs? Do you see the sprite move?
 
@@ -189,6 +189,8 @@ We can use the default values for the rest of the parameters.
 
 You should now see a light moving from left to right along the top row of the micro:bit simulator.
 
+![Moving Dot Top Row](/static/courses/csintro/iteration/moving-dot.gif)
+
 To make our pattern continue through all the leds, we can change the value of the y coordinate as well.
 
 To do this efficiently, using the fewest lines of code, we can even put a loop inside a loop. Loops inside other loops are known as **nested loops**.
@@ -215,6 +217,8 @@ basic.forever(() => {
 ```
 
 There! With only a half dozen or so lines of code, we have made our light travel through all the coordinates on the micro:bit screen.
+
+![Moving Dot All](/static/courses/csintro/iteration/moving-dot-all.gif)
 
 **Check:** Make sure the students can read this code.
 

@@ -126,11 +126,7 @@ Have students write a reflection of about 150–300 words, addressing the follow
 
 ## Collaboration reflection
 
-**4 =** Reflection piece includes:<br/>
-`*` Brainstorming ideas<br/>
-`*` Construction<br/>
-`*` Programming<br/>
-`*` Beta testing<br/>
+**4 =** Reflection piece addresses all prompts.<br/>
 **3 =** Reflection piece lacks 1 of the required elements.<br/>
 **2 =** Reflection piece lacks 2 of the required elements.<br/>
 **1 =** Reflection piece lacks 3 of the required elements.	 

@@ -2,7 +2,7 @@
 
 The objective of this activity is to experience creating and working with variables by pairing up and playing _Rock Paper Scissors_.
 
-![Rock-paper-scissors hands](/static/courses/csintro/variables/rps-hands.png)
+![Rock-paper-scissors hands](/static/courses/csintro/variables/rps-sketch.jpg)
 
 Ask students to keep track of their scores on paper. 
 You can also have students play in groups of three with the third student acting as the scorekeeper.
@@ -16,7 +16,7 @@ Students will keep track of how many times each player wins as well as the numbe
 Ask some students to share how they kept track of player scores. 
 There may be some variety, but most will have written down the players’ names and then beside or below the names, marks representing the ‘wins’ of each player. And they may have made a separate place for recording ties.
 
-![Score sheet](/static/courses/csintro/variables/keeping-score.png)
+![Score sheet](/static/courses/csintro/variables/mary-doug-score.jpg)
 Sample score-keeping sheet
 
 Ask the students what parts of the score sheet represent **constants**, values that do not change through the course of a gaming session.

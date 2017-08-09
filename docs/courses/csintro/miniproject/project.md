@@ -142,4 +142,8 @@ Sample Reflection (excerpt)
 **3 =** Reflection piece lacks 2 of the required elements.<br/>
 **1 =** Reflection piece lacks 3 of the required elements.
  
+## Notes
 
+We actually split the grading of code between "show what you know" and "show something new." If a student uses variables incorrectly or uses bad variable names, we generally would take off points in both places. Sometimes it is difficult to distinguish between what is old and new if the student's reflection is less than clear; in those cases, we have to use some discretion in terms of where we take points off. Another option would be to break out the Variables category into its own row. 
+
+As always, these rubrics are just a starting point and you should certainly feel free to adjust them as appropriate for your own classroom or learning environment.

@@ -1,6 +1,6 @@
 # Review
 
-![Take another look](/static/courses/csintro/miniproject/review.jpg)
+![Take another look](/static/courses/csintro/miniproject/review.png)
 
 Take this time to review the concepts we have covered so far.
 

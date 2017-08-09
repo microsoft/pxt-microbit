@@ -1,5 +1,7 @@
 # Project: Boolean
 
+![Two-Player Game Example Board](/static/courses/csintro/booleans/two-player.jpg)
+
 This is an assignment for students to come up with a micro:bit program that uses Boolean variables, Boolean operators, and possibly the random function. 
  
 ## Input
@@ -307,6 +309,13 @@ if (player1Turn == true && Math.random(4) < 3) {
     }
 })
 ```
+## Reflection
+
+Have students write a reflection of about 150–300 words, addressing the following points:
+* How did you incorporate boolean variables into your micro:bit program?
+* How did you incorporate boolean operators into your micro:bit program?
+* Describe something in your project that you are proud of.
+* If you had more time to work on this project, describe what you might add or change.
 
 ## Assessment
  
@@ -315,28 +324,23 @@ if (player1Turn == true && Math.random(4) < 3) {
 ## Boolean
 
 **4 =** More than 2 Boolean variables are implemented in a meaningful way.<br/>
-**3 =** At least 2 Boolean variable is implemented in a meaningful way.<br/>
+**3 =** At least 2 Boolean variables are implemented in a meaningful way.<br/>
 **2 =** At least 1 Boolean variable is implemented in a meaningful way.<br/>
 **1 =** No Boolean variables are implemented.
 			 
 ## micro:bit program
 
 **4 =** micro:bit program:<br/>
-`*` Uses Boolean variables in a way that is integral to the program.<br/>
-`*` Uses a random function in a way that is integral to the program.<br/>
+`*` Uses Booleans in a way that is integral to the program.<br/>
 `*` Compiles and runs as intended<br/>
 `*` Meaningful comments in code<br/>
 **3 =** micro:bit program lacks 1 of the required element.<br/>
 **2 =** micro:bit program lacks 2 of the required elements.<br/>
-**1 =** micro:bit program lacks 3 or more of the required elements.
+**1 =** micro:bit program lacks all of the required elements.
 
 ## Collaboration reflection
 
-**4 =** Reflection piece includes:<br/>
-`*` Brainstorming ideas<br/>
-`*` Construction<br/>
-`*` Programming<br/>
-`*` Beta testing<br/>
+**4 =** Reflection piece addresses all prompts.<br/>
 **3 =** Reflection piece lacks 1 of the required elements.<br/>
 **2 =** Reflection piece lacks 2 of the required elements.<br/>
 **1 =** Reflection piece lacks 3 of the required elements. 

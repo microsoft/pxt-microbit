@@ -1,9 +1,8 @@
 # Booleans
 
-This lesson introduces the use of the boolean data type to control the flow of a program, keep track of state, and to include or exclude certain conditions.
+![micro:bit Combo Box](/static/courses/csintro/booleans/cover.jpeg)
 
-![Picture and quote of Shakespeare](/static/courses/csintro/booleans/shakespeare.png)
-Shakespeare knew Booleans (quote from Hamlet)
+This lesson introduces the use of the boolean data type to control the flow of a program, keep track of state, and to include or exclude certain conditions.
 
 ## Lesson objectives 
 Students will...

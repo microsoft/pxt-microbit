@@ -109,7 +109,7 @@ Check the on/off state of an LED
 * If the LED is currently off, the point x y block will return false. 
 
 * For this exercise, we’ll use the two Yes/No built in icons to display the LED’s current status. From the Basic Toolbox drawer, drag 2 'show icon' blocks into each of the 'then' and 'else' clauses.  Select the check mark for Yes, and the X icon for No.
-* For now, we’ll leave the default coordinate values (0,0).  But you can challenge your students to add a loop to test for all coordinates on the micro:bit
+* For now, we’ll leave the default coordinate values (0,0).  But you can challenge your students to add a loop to test for all coordinates on the micro:bit.
 
 Here is the complete program:
 
@@ -195,4 +195,4 @@ basic.showIcon(IconNames.Heart)
 
 ## Try it out!
 
-* What happens if adding 25 or subtracting 25 from the current brightness level would result in a sum or difference outside of the 0 to 255 brightness range? 
+What happens if adding 25 or subtracting 25 from the current brightness level would result in a sum or difference outside of the 0 to 255 brightness range? 

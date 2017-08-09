@@ -32,8 +32,9 @@ namespace game {
     let _countdownPause: number = 0;
     let _level: number = 1;
     let _gameId: number = 0;
-    let img: Image;
-    let sprites: LedSprite[];
+    let _img: Image;
+    let _sprites: LedSprite[];
+    let _paused: boolean = false;
 
     /**
      * Creates a new LED sprite pointing to the right.
@@ -67,14 +68,15 @@ namespace game {
     //% parts="ledmatrix"
     export function addScore(points: number): void {
         setScore(_score + points);
-        control.inBackground(() => {
-            led.stopAnimation();
-            basic.showAnimation(`0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 0 0 0 1 0 0 0 0 0
-0 0 0 0 0 0 0 1 0 0 0 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0
-0 0 1 0 0 0 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 1 0 0 0 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 0 0 0 1 0 0 0 0 0`, 20);
-        });
+        if (!_paused)
+            control.inBackground(() => {
+                led.stopAnimation();
+                basic.showAnimation(`0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 0 0 0 1 0 0 0 0 0
+    0 0 0 0 0 0 0 1 0 0 0 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0
+    0 0 1 0 0 0 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 1 0 0 0 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 0 0 0 1 0 0 0 0 0`, 20);
+            });
     }
 
     /**
@@ -94,6 +96,7 @@ namespace game {
             _countdownPause = Math.max(500, ms);
             _startTime = -1;
             _endTime = input.runningTime() + _countdownPause;
+            _paused = false;
             control.inBackground(() => {
                 basic.pause(_countdownPause);
                 gameOver();
@@ -201,14 +204,15 @@ namespace game {
     //% parts="ledmatrix"
     export function removeLife(life: number): void {
         setLife(_life - life);
-        control.inBackground(() => {
-            led.stopAnimation();
-            basic.showAnimation(`1 0 0 0 1 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0
+        if (!_paused)
+            control.inBackground(() => {
+                led.stopAnimation();
+                basic.showAnimation(`1 0 0 0 1 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0
 0 1 0 1 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0
 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0
 0 1 0 1 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0
 1 0 0 0 1 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0`, 40);
-        });
+            });
     }
 
     /**
@@ -263,8 +267,36 @@ namespace game {
      * Indicates if the game is display the game over sequence.
      */
     export function isGameOver(): boolean {
-        let over: boolean;
         return _isGameOver;
+    }
+
+    /**
+     * Indicates if the game rendering is paused to allow other animations
+     */
+    //%
+    export function isPaused(): boolean {
+        return _paused;
+    }
+
+    /**
+     * Pauses the game rendering engine to allow other animations
+     */
+    //% blockId=game_pause block="pause"
+    //% advanced=true blockGap=8 help=game/pause
+    export function pause(): void {
+        plot()
+        _paused = true;
+    }
+
+
+    /**
+     * Resumes the game rendering engine
+     */
+    //% blockId=game_resume block="resume"
+    //% advanced=true blockGap=8 help=game/resumeP
+    export function resume(): void {
+        _paused = false;
+        plot();
     }
 
     /**
@@ -301,7 +333,7 @@ namespace game {
             this._brightness = 255;
             this._enabled = true;
             init();
-            sprites.push(this);
+            _sprites.push(this);
             plot();
         }
 
@@ -651,7 +683,7 @@ namespace game {
         //% blockId="game_delete_sprite" block="delete %this"
         public delete(): void {
             this._enabled = false;
-            if (sprites.removeElement(this))
+            if (_sprites.removeElement(this))
                 plot();
         }
 
@@ -692,22 +724,21 @@ namespace game {
                     r = (now / ps._blink) % 2;
                 }
                 if (r == 0) {
-                    img.setPixelBrightness(ps._x, ps._y, img.pixelBrightness(ps._x, ps._y) + ps._brightness);
+                    _img.setPixelBrightness(ps._x, ps._y, _img.pixelBrightness(ps._x, ps._y) + ps._brightness);
                 }
             }
         }
     }
 
     function init(): void {
-        if (img == null) {
-            img = images.createImage(
+        if (_img == null) {
+            _img = images.createImage(
                 `0 0 0 0 0
 0 0 0 0 0
 0 0 0 0 0
 0 0 0 0 0
 0 0 0 0 0`);
-            sprites = (<LedSprite[]>[]);
-            led.setDisplayMode(DisplayMode.Greyscale);
+            _sprites = (<LedSprite[]>[]);
             basic.forever(() => {
                 basic.pause(30);
                 plot();
@@ -723,15 +754,19 @@ namespace game {
      */
     //% parts="ledmatrix"
     function plot(): void {
-        if (game.isGameOver()) {
+        if (game.isGameOver() || game.isPaused() || !_img) {
             return;
         }
+        // ensure greyscale mode
+        if (led.displayMode() != DisplayMode.Greyscale)
+            led.setDisplayMode(DisplayMode.Greyscale);
+        // render sprites
         let now = input.runningTime();
-        img.clear();
-        for (let i = 0; i < sprites.length; i++) {
-            sprites[i]._plot(now);
+        _img.clear();
+        for (let i = 0; i < _sprites.length; i++) {
+            _sprites[i]._plot(now);
         }
-        img.plotImage(0);
+        _img.plotImage(0);
     }
 
     /**

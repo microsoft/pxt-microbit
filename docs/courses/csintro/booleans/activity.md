@@ -1,5 +1,7 @@
 # Activity: Double coin flipper
 
+![Example Board](/static/courses/csintro/booleans/fuzzies.jpg)
+
 Guide the students to create a program using Boolean variables and operators.
 We’ll use our pseudocode from the previous activity to code a double coin flipper program.
  

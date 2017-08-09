@@ -139,6 +139,14 @@ namespace pxsim.visuals {
         .sim-wireframe .sim-board {
             stroke-width: 2px;
         }
+        .no-drag {
+            user-drag: none;
+            user-select: none;
+            -moz-user-select: none;
+            -webkit-user-drag: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+        }
     `;
     const MB_HIGHCONTRAST = `
 .sim-led {
@@ -362,9 +370,18 @@ namespace pxsim.visuals {
             } else {
                 const bw = state.ledMatrixState.displayMode == pxsim.DisplayMode.bw
                 const img = state.ledMatrixState.image;
+                const br = state.ledMatrixState.brigthness != undefined ? state.ledMatrixState.brigthness : 255;
                 this.leds.forEach((led, i) => {
                     const sel = (<SVGStylable><any>led)
-                    sel.style.opacity = ((bw ? img.data[i] > 0 ? 255 : 0 : img.data[i]) / 255.0) + "";
+                    let imgbr = bw ? (img.data[i] > 0 ? br : 0) : img.data[i];
+                    // correct brightness
+                    const opacity = imgbr > 0 ? imgbr / 255 * 155 + 100 : 0;
+                    const transfrom = imgbr > 0 ? imgbr / 255 * 0.4 + 0.6 : 0;
+                    sel.style.opacity = (opacity / 255) + "";
+                    if (transfrom > 0) {
+                        sel.style.transformOrigin = '50% 50%';
+                        sel.style.transform = `scale(${transfrom})`;
+                    }
                 })
             }
             this.updatePins();
@@ -460,7 +477,7 @@ namespace pxsim.visuals {
                 let gid = "gradient-thermometer";
                 this.thermometerGradient = svg.linearGradient(this.defs, gid);
                 this.thermometer = <SVGRectElement>svg.child(this.g, "rect", {
-                    class: "sim-thermometer",
+                    class: "sim-thermometer no-drag",
                     x: 120,
                     y: 110,
                     width: 20,
@@ -593,7 +610,7 @@ namespace pxsim.visuals {
                 let r = 35;
                 this.lightLevelButton = svg.child(this.g, "circle", {
                     cx: `50px`, cy: `${cy}px`, r: `${r}px`,
-                    class: 'sim-light-level-button',
+                    class: 'sim-light-level-button no-drag',
                     fill: `url(#${gid})`
                 }) as SVGCircleElement;
                 let pt = this.element.createSVGPoint();
@@ -686,6 +703,15 @@ namespace pxsim.visuals {
             this.element.appendChild(this.g);
 
             // filters
+            let ledglow = svg.child(this.defs, "filter", { id: "ledglow", x: "-75%", y: "-75%", width: "300%", height: "300%" });
+            svg.child(ledglow, "feMorphology", { operator: "dilate", radius: "4", in: "SourceAlpha", result: "thicken"});
+            svg.child(ledglow, "feGaussianBlur", { stdDeviation: "5", in: "thicken", result: "blurred"});
+            svg.child(ledglow, "feFlood", { "flood-color": "rgb(255, 17, 77)", result: "glowColor"});
+            svg.child(ledglow, "feComposite", { in: "glowColor", in2: "blurred", operator: "in", result: "ledglow_colored"});
+            let ledglowMerge = svg.child(ledglow, "feMerge", {});
+            svg.child(ledglowMerge, "feMergeNode", { in: "ledglow_colored"});
+            svg.child(ledglowMerge, "feMergeNode", { in: "SourceGraphic"});
+
             let glow = svg.child(this.defs, "filter", { id: "filterglow", x: "-5%", y: "-5%", width: "120%", height: "120%" });
             svg.child(glow, "feGaussianBlur", { stdDeviation: "5", result: "glow" });
             let merge = svg.child(glow, "feMerge", {});
@@ -714,12 +740,14 @@ namespace pxsim.visuals {
                     let ledleft = j * ledoffw + left;
                     let k = i * 5 + j;
                     this.ledsOuter.push(svg.child(this.g, "rect", { class: "sim-led-back", x: ledleft, y: ledtop, width: 10, height: 20, rx: 2, ry: 2 }));
-                    this.leds.push(svg.child(this.g, "rect", { class: "sim-led", x: ledleft - 2, y: ledtop - 2, width: 14, height: 24, rx: 3, ry: 3, title: `(${j},${i})` }));
+                    let led = svg.child(this.g, "rect", { class: "sim-led", x: ledleft - 2, y: ledtop - 2, width: 14, height: 24, rx: 3, ry: 3, title: `(${j},${i})` });
+                    svg.filter(led, `url(#ledglow)`)
+                    this.leds.push(led);
                 }
             }
 
             // head
-            this.head = <SVGGElement>svg.child(this.g, "g", { class: "sim-head" });
+            this.head = <SVGGElement>svg.child(this.g, "g", { class: "sim-head no-drag" });
             svg.child(this.head, "circle", { cx: 258, cy: 75, r: 100, fill: "transparent" })
             this.logos.push(svg.path(this.head, "sim-theme sim-theme-glow", "M269.9,50.2L269.9,50.2l-39.5,0v0c-14.1,0.1-24.6,10.7-24.6,24.8c0,13.9,10.4,24.4,24.3,24.7v0h39.6c14.2,0,24.8-10.6,24.8-24.7C294.5,61,284,50.3,269.9,50.2 M269.7,89.2L269.7,89.2l-39.3,0c-7.7-0.1-14-6.4-14-14.2c0-7.8,6.4-14.2,14.2-14.2h39.1c7.8,0,14.2,6.4,14.2,14.2C283.9,82.9,277.5,89.2,269.7,89.2"));
             this.logos.push(svg.path(this.head, "sim-theme sim-theme-glow", "M230.6,69.7c-2.9,0-5.3,2.4-5.3,5.3c0,2.9,2.4,5.3,5.3,5.3c2.9,0,5.3-2.4,5.3-5.3C235.9,72.1,233.5,69.7,230.6,69.7"));

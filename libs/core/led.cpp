@@ -13,15 +13,34 @@ namespace led {
 
     /**
      * Turn on the specified LED using x, y coordinates (x is horizontal, y is vertical). (0,0) is upper left.
-     * @param x TODO
-     * @param y TODO
+     * @param x the horizontal coordinate of the LED starting at 0
+     * @param y the vertical coordinate of the LED starting at 0
      */
     //% help=led/plot weight=78
     //% blockId=device_plot block="plot|x %x|y %y" blockGap=8
     //% parts="ledmatrix"
     //% x.min=0 x.max=4 y.min=0 y.max=4
     void plot(int x, int y) {
-      uBit.display.image.setPixelValue(x, y, 1);
+      uBit.display.image.setPixelValue(x, y, 0xff);
+    }
+
+    /**
+     * Turn on the specified LED with specific brightness using x, y coordinates (x is horizontal, y is vertical). (0,0) is upper left.
+     * @param x the horizontal coordinate of the LED starting at 0
+     * @param y the vertical coordinate of the LED starting at 0
+     * @param brightness the brightness from 0 (off) to 255 (bright), eg:255
+     */
+    //% help=led/plot weight=78
+    //% blockId=device_plot_brightness block="plot|x %x|y %y|brightness %brightness" blockGap=8
+    //% parts="ledmatrix"
+    //% x.min=0 x.max=4 y.min=0 y.max=4 brightness.min=0 brightness.max=255
+    //% advanced=true
+    void plotBrightness(int x, int y, int brightness) {
+        brightness = max(0, min(0xff, brightness));
+        // enable greyscale as needed
+        if (brightness != 0 && brightness != 0xff && uBit.display.getDisplayMode() != DISPLAY_MODE_GREYSCALE)
+            uBit.display.setDisplayMode(DISPLAY_MODE_GREYSCALE);
+        uBit.display.image.setPixelValue(x, y, brightness);
     }
 
     /**
@@ -94,6 +113,14 @@ namespace led {
     //% parts="ledmatrix" advanced=true
     void setDisplayMode(DisplayMode_ mode) {
         uBit.display.setDisplayMode((DisplayMode)mode);
+    }
+
+    /**
+    * Gets the current display mode
+    */
+    //% weight=1 parts="ledmatrix" advanced=true
+    DisplayMode_ displayMode() {
+        return (DisplayMode_)uBit.display.getDisplayMode();
     }
 
     /**

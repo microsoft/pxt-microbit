@@ -1,9 +1,11 @@
-## Activity: Headband charades
+## Activity: Headband charades and starry starry night
+
+![Starry Night](/static/courses/csintro/arrays/starry-night.png)
 
 Create an array of words that can be used as part of a charades-type game.
 This activity is based on a very popular phone app invented by Ellen DeGeneres (https://bits.blogs.nytimes.com/2013/05/03/ellen-degeneres-iphone-game/).
 
-![Heads up game](/static/courses/csintro/arrays/heads-up-game.jpg)
+![Heads up game](/static/courses/csintro/arrays/headband-charades.png)
 	
 * Create a new variable and give it a name like arrayWords.
 * Insert a 'set' variable block into the 'on start' block. 
@@ -186,4 +188,100 @@ basic.showNumber(2)
 basic.pause(100)
 basic.showNumber(1)
 basic.showString(arrayWords[index])
+```
+
+![Random stars](/static/courses/csintro/arrays/starry-night.gif)
+
+## Activity: Starry starry night
+
+In this micro:bit activity, we will create a set of random constellations on the micro:bit screen. We will use an array filled with numbers to tell us how many stars (dots) should be in each constellation.
+
+Review the use of the random block in the Math category.
+
+* Create a block that will plot a single dot at a random location on the screen by choosing a random number from 0 to 4 for the x axis and a random number from 0 to 4 for the y axis.
+
+```blocks
+led.plot(Math.random(5), Math.random(5))
+```
+
+Next, let’s create a loop that will repeat the above code five times, for a constellation with five stars.
+
+```blocks
+for (let index = 0; index <= 4; index++) {
+    led.plot(Math.random(5), Math.random(5))
+    }
+```
+
+Note that to keep things simple we don’t check for duplicates, so it’s possible you may end up with fewer than five visible stars. That’s okay.
+
+Next, let’s create an array with five numbers in it. We will loop through the array and create five separate constellations, using the numbers in the array to represent the number of stars in each of the five constellations.
+
+To create an array, you need to set the value of a variable to the array.
+
+* From the Variables Toolbox drawer, drag out the ‘set item’ block and attach a ‘create array with number’ block to it.
+* Then click on the blue Gear icon and add four more values to the block, for a total of five.
+
+![Gear icon on array block](/static/courses/csintro/arrays/gear-values.png)
+
+You can put the Gear view away by clicking on the Gear again. You can drag additional numbers out of the Math category and snap them to the open slots in the Create array with block. Go ahead and change them to some random values, then attach the whole thing to the ‘on start’ event handler block.
+
+Now, when the micro:bit starts, it will create an array with those five values. Let’s create the constellations when the A button is pressed. Looking at our loop, instead of repeating 0 to 4 times, we actually want to use the value from the array to figure out how many stars to create.
+
+* Drag the ‘get value from list’ block from the Arrays Toolbox drawer and replace the 4 with that block.
+
+You should see that there are more stars printed now, although there is an extra star; if the first value in the array is 5, you will actually see 6 stars because the loop runs when index is 0.
+
+To fix this, we need to do a little math by subtracting 1 from whatever the value in the array is. You can use a Math operation block to do this.
+
+**Note:** Be sure to hit Refresh a few times on the simulator, because sometimes some stars get hidden behind other stars.
+
+![Random stars](/static/courses/csintro/arrays/random-stars.png)
+
+The above code takes the first value in the array and creates that many stars at random locations. Now, all we need to do is iterate through the entire array and do the same thing for each of the values. We will put the above code inside another loop that will run the same number of times as the length of the array (in this case, 5). You should also use a 'pause' block and a 'clear screen' block in between each constellation.
+
+Finally, you might attach the code that shows the constellations to an 'on button A pressed' event handler. 
+
+Here is the complete program.
+
+```blocks
+let list: number[] = []
+input.onButtonPressed(Button.A, () => {
+    for (let i = 0; i <= list.length - 1; i++) {
+        for (let j = 0; j <= list[i] - 1; j++) {
+            led.plot(Math.random(5), Math.random(5))
+        }
+        basic.pause(1000)
+        basic.clearScreen()
+    }
+})
+list = [5, 2, 1, 3, 4]
+```
+
+## Traversing an array
+
+Traversing an array means proceeding through the elements of the array in sequence. Note that there is a special loop in the Loops Toolbox drawer called ‘for element value of list’. This loop automatically takes each element of your array in turn and copies it into a variable called value.
+
+![index loop](/static/courses/csintro/arrays/for-index.png)
+
+The following code is useful for printing out the values of the elements in your array:
+
+```blocks
+input.onButtonPressed(Button.B, () => {
+   for (let value of list) {
+       basic.showNumber(value)
+   }
+   basic.clearScreen()
+})
+```
+
+However, note that value holds a copy of the element in the array, so changing value doesn’t affect the original element.
+
+If you run the code below, then print out the array again, you will see that it is unchanged.
+
+```blocks
+input.onButtonPressed(Button.A, () => {
+   for (let value of list) {
+       value += 1
+   }
+})
 ```

@@ -1,8 +1,8 @@
 # Radio and Communication
 
-This lesson covers the use of more than one micro:bit to share and combine data. Students will explore a complex epidemiological program (Infection) that demonstrates the Radio functionality of the micro:bit. Students will send and receive numbers and strings in a series of guided activities. Finally, students are asked to collaborate so that they can share their micro:bits and create a project together.
+![Combo Box Example](/static/courses/csintro/radio/combo-box.png)
 
-![Radio wave diagram](/static/courses/csintro/radio/radio-wave.png)
+This lesson covers the use of more than one micro:bit to share and combine data. Students will explore a complex epidemiological program (Infection) that demonstrates the Radio functionality of the micro:bit. Students will send and receive numbers and strings in a series of guided activities. Finally, students are asked to collaborate so that they can share their micro:bits and create a project together.
 
 ## Lesson objectives
 

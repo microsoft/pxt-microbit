@@ -33,7 +33,7 @@
         },
         "userConfigs": [
             {
-                "description": "Unsecure Pairing: Anyone can connect via Bluetooth.",
+                "description": "No Pairing Required: Anyone can connect via Bluetooth.",
                 "config": {
                     "microbit-dal": {
                         "bluetooth": {
@@ -46,7 +46,7 @@
                 }
             },
             {
-                "description": "JustWorks pairing (default): Button press to pair.",
+                "description": "JustWorks pairing (default): Pairing is automatic once the pairing is initiated.",
                 "config": {
                     "microbit-dal": {
                         "bluetooth": {
@@ -59,7 +59,7 @@
                 }
             },
             {
-                "description": "Passkey pairing: Button press and 6 digit key to pair.",
+                "description": "Passkey pairing: Pairing requires 6 digit key to pair.",
                 "config": {
                     "microbit-dal": {
                         "bluetooth": {

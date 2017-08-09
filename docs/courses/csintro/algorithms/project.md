@@ -1,5 +1,6 @@
 # Project: Fidget Cube
 
+![Sample fidget cube](/static/courses/csintro/algorithms/fidgetcube.jpg)
 A fidget cube is a little cube with something different that you can manipulate on each surface. There are buttons, switches, and dials, and people who like to “fidget” find it relaxing to push, pull, press, and play with it. In this project, students are challenged to turn the micro:bit into their very own “fidget cube”. 
 
 Show students some examples of fidget cubes:

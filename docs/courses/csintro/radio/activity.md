@@ -1,5 +1,7 @@
 # Activity: Marco Polo and Morse code
 
+![Marco Polo Cartoon](/static/courses/csintro/radio/marco-polo.png)
+
 Guide the students in creating programs that use the radio communication blocks to send and receive data between two micro:bits.
 
 Notes:
@@ -89,7 +91,7 @@ basic.showLeds(`
 Send and receive numbers between micro:bits. 
 Depending on the button pressed, send a different number value between micro:bits. On receiving a number, display a different image unique to the number sent. One number will represent a dot, another a dash and another a space or stop.
 
-![Morse code alphabet](/static/courses/csintro/radio/morse-code-alphabet.jpg)
+![Morse code alphabet](/static/courses/csintro/radio/morse.png)
 
 * Set the group ID number.
 * Add a 'show string' block to the 'on start' block, to identify the program. 

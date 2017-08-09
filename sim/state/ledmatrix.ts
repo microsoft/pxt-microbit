@@ -273,7 +273,16 @@ namespace pxsim.basic {
 
 namespace pxsim.led {
     export function plot(x: number, y: number) {
-        board().ledMatrixState.image.set(x, y, 255);
+        board().ledMatrixState.image.set(x, y, 0xff);
+        runtime.queueDisplayUpdate()
+    }
+
+    export function plotBrightness(x: number, y: number, brightness: number) {
+        const state = board().ledMatrixState;
+        brightness = Math.max(0, Math.min(0xff, brightness));
+        if (brightness != 0 && brightness != 0xff && state.displayMode != DisplayMode.greyscale)
+                state.displayMode = DisplayMode.greyscale;
+        state.image.set(x, y, brightness);
         runtime.queueDisplayUpdate()
     }
 
@@ -303,6 +312,10 @@ namespace pxsim.led {
     export function setDisplayMode(mode: DisplayMode): void {
         board().ledMatrixState.displayMode = mode;
         runtime.queueDisplayUpdate()
+    }
+
+    export function displayMode(): DisplayMode {
+        return board().ledMatrixState.displayMode;
     }
 
     export function screenshot(): Image {

@@ -1,8 +1,7 @@
 # Variables
 
-This lesson introduces the use of variables to store data or the results of mathematical operations.  Students will practice giving variables unique and meaningful names.  And we will introduce the basic mathematical operations for adding subtracting, multiplying, and dividing variables.
-
-![Variable value](/static/courses/csintro/variables/variable-value.png)
+![Variable value](/static/courses/csintro/variables/cover.JPG)
+This lesson introduces the use of variables to store data or the results of mathematical operations.  Students will practice giving variables unique and meaningful names. We will also introduce the basic mathematical operations for adding, subtracting, multiplying, and dividing variables.
 
 ## Lesson Objectives 
 

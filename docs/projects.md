@@ -119,23 +119,23 @@ Fun games to build with your @boardname@.
 [{
   "name": "Timing gates",
   "url":"/projects/timing-gates",
-  "imageUrl":"/static/mb/projects/timing-gates.jpg"
+  "imageUrl":"/static/mb/projects/timegate.jpg"
 },{
   "name": "Soil Moisture",
   "url":"/projects/soil-moisture",
-  "imageUrl":"/static/mb/projects/soil-moisture.jpg"
+  "imageUrl":"/static/mb/projects/soilmoisture.jpg"
 }, {
   "name": "Plant Watering",
   "url":"/projects/plant-watering",
-  "imageUrl":"/static/mb/projects/plant-watering.jpg"
+  "imageUrl":"/static/mb/projects/plantwatering.jpg"
 }, {
   "name": "Reaction Time",
   "url":"/projects/reaction-time",
-  "imageUrl":"/static/mb/projects/reaction-time.jpg"
+  "imageUrl":"/static/mb/projects/reaction.jpg"
 }, {
   "name": "States of Matter",
   "url":"/projects/states-of-matter",
-  "imageUrl":"/static/mb/projects/states-of-matter.jpg"
+  "imageUrl":"/static/mb/projects/som.jpg"
 }]
 ```
 

@@ -1,11 +1,13 @@
 # Binary
 
+![Binary numbers shown on a monitor](/static/courses/csintro/binary/binary-crt.png)
+
 This lesson presents the concept of binary digits and base-2 notation.  Students will learn how data is stored digitally and how it can be read and accessed.
 
 ## Lesson objectives
 
 Students will...
-* Understand what a bit and byte are and how they relate to computers and the way information is processed and stored.
+* Understand what bits and bytes are and how they relate to computers and the way information is processed and stored.
 * Learn to count in Base-2 (binary) and translate numbers from Base-10 (decimal) to binary and decimal.
 * Apply the above knowledge and skills to create a unique program that uses binary counting as an integral part of the program.
 

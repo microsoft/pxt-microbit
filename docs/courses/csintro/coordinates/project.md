@@ -23,6 +23,25 @@ Your project might use variables to store the values of sprites, which are speci
 
 This project uses a for loop with the plot/unplot blocks to create a symmetrical design on the screen. This student used a subtraction operation to get a variable that decreases as the index variable in the loop increases.
 
+```sim
+basic.forever(() => {
+    for (let x = 0; x <= 4; x++) {
+        led.plot(x, 0)
+        led.plot(0, 4 - x)
+        led.plot(4 - x, 4)
+        led.plot(4, x)
+        basic.pause(50)
+        led.unplot(x, 0)
+        led.unplot(4 - x, 4)
+        led.unplot(0, 4 - x)
+        led.unplot(4, x)
+        basic.pause(50)
+    }
+})
+```
+
+This project uses a for loop with the plot/unplot blocks to create a symmetrical design on the screen. This student used a subtraction operation to get a variable that decreases as the index variable in the loop increases.
+
 ```blocks
 basic.forever(() => {
     for (let x = 0; x <= 4; x++) {
@@ -44,8 +63,42 @@ basic.forever(() => {
 
 This example creates a diagonal cascading effect across the screen. Note the use of a variable (speed) to allow you to easily change the speed of the animation by changing just one number value.
 
-```blocks
+```sim
+let reverse = 0
+let speed = 10
+let inner = 0
+let outer = 0
+basic.forever(() => {
+    for (let outer = 0; outer <= 4; outer++) {
+        reverse = 4 - outer
+        for (let inner = 0; inner <= 4; inner++) {
+            led.plot(outer, reverse)
+            basic.pause(speed)
+            led.plot(reverse, outer)
+            basic.pause(speed)
+            led.plot(reverse - inner, reverse)
+            basic.pause(speed)
+            led.plot(reverse, reverse - inner)
+            basic.pause(speed)
+        }
+    }
+    for (let outer = 0; outer <= 4; outer++) {
+        reverse = 4 - outer
+        for (let inner = 0; inner <= 4; inner++) {
+            led.unplot(outer, reverse)
+            basic.pause(speed)
+            led.unplot(reverse, outer)
+            basic.pause(speed)
+            led.unplot(reverse - inner, reverse)
+            basic.pause(speed)
+            led.unplot(reverse, reverse - inner)
+            basic.pause(speed)
+        }
+    }
+})
+```
 
+```blocks
 let reverse = 0
 let speed = 0
 let inner = 0
@@ -81,8 +134,39 @@ basic.forever(() => {
 speed = 10
 ```
 
-## Dodge ball game 
+## Dodge ball game
+
 This is a Dodge Ball game that uses one sprite (dodger) to try to avoid another sprite (ball). You use the A and B buttons to move the dodger to avoid the balls that are falling from the top of the screen.
+
+```sim
+let dodger: game.LedSprite = null
+let ball: game.LedSprite = null
+basic.forever(() => {
+   if (dodger.isTouching(ball)) {
+       game.gameOver()
+   } else if (ball.get(LedSpriteProperty.Y) < 4) {
+       ball.change(LedSpriteProperty.Y, 1)
+       basic.pause(250)
+   } else {
+       game.addScore(1)
+       ball.set(LedSpriteProperty.Y, 0)
+       ball.set(LedSpriteProperty.X, Math.random(5))
+   }
+})
+input.onButtonPressed(Button.A, () => {
+   if (dodger.get(LedSpriteProperty.X) > 0) {
+       dodger.change(LedSpriteProperty.X, -1)
+   }
+})
+input.onButtonPressed(Button.B, () => {
+   if (dodger.get(LedSpriteProperty.X) < 4) {
+       dodger.change(LedSpriteProperty.X, 1)
+   }
+})
+ball = game.createSprite(Math.random(5), 0)
+dodger = game.createSprite(2, 4)
+game.setScore(0)
+```
 
 Here is the complete Dodge Ball program.
 
@@ -150,11 +234,7 @@ Have students write a reflection of about 150–300 words, addressing the follow
 
 ## Collaboration reflection
 
-**4 =** Reflection piece includes:<br/>
-`*` Brainstorming ideas<br/>
-`*` Construction<br/>
-`*` Programming<br/>
-`*` Beta testing<br/>
+**4 =** Reflection piece addresses all prompts.<br/>
 **3 =** Reflection piece lacks 1 of the required elements.<br/>
 **2 =** Reflection piece lacks 2 of the required elements.<br/>
 **1 =** Reflection piece lacks 3 of the required elements. 

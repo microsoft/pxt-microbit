@@ -13,7 +13,7 @@ What’s a common issue with coin tosses? Students may bring up issues of trust 
  
 Here’s a solution... The double coin toss.
 
-![Two pennies showing heads and tails](/static/courses/csintro/booleans/two-coins.jpg)
+![Two pennies showing heads and tails](/static/courses/csintro/booleans/pennies.png)
 
 In a double coin toss, both people have a coin and they flip the coins at the same time.
  

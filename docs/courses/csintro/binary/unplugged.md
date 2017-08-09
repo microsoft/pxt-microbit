@@ -23,7 +23,7 @@ If you have time, create on a poster board, on the whiteboard, or on paper as a 
 
 You can also just make a very simple vending machine diagram like the one below:
 
-![Vend-o-matic diagram](/static/courses/csintro/binary/vendomatic.jpg)
+![Vend-o-matic diagram](/static/courses/csintro/binary/vendomatic.png)
 ## ~
 ## Introduction
 Ask the students the following questions to spark discussion:
@@ -105,7 +105,7 @@ Hand out the 32 unit coins, one to each student or pair of students.
 * What is the new maximum price you could pay for an item? _63_
 * What combinations of coins can you use to pay for an item priced from 32 units to this new maximum price? 
 
-![Coins representing binary digits](/static/courses/csintro/binary/coins-as-digits.jpg)
+![Coins representing binary digits](/static/courses/csintro/binary/binary-place-values.png)
 From coins to binary notation - the number 45
 
 Once students are comfortable making combinations of numbers, encourage them to use ones and zeroes to represent the numbers instead. This number system uses the number 2 as its base (each place is two times the one before it.) It is called the Base-2 system, or binary system. The number system we are normally familiar with is the Base-10 system, or decimal system (each place is ten times the one before it.)

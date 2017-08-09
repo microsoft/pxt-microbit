@@ -81,6 +81,12 @@ There are a number of repos that pxt-microbit depends on. The main ones are:
 - https://github.com/lancaster-university/microbit, basic wrapper around the DAL
 - https://github.com/lancaster-university/microbit-dal
 
+## Versions
+
+Current serviced versions of pxt-microbit:
+
+| pxt-microbit  | v0.12.*       | release | uses pxt/v0 v.0.12.*
+| pxt-microbit  | v0.13.*       | accessibility | uses pxt/v0 v.0.13.* (with accessibility)
 
 ## Code of Conduct
 

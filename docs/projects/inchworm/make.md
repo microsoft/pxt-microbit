@@ -47,7 +47,7 @@ Using a scissor or a cutter (watch the fingers!), cut out various strips in the 
 
 ## Step 6: mounting the board
 
-Using tape or a glue gun, mount the @boardname@ on one side and the microservo on the cardobard.
+Using tape or a glue gun, mount the @boardname@ on one side and the microservo on the cardboard.
 
 ![](/static/mb/projects/inchworm/chassis6.jpg)
 

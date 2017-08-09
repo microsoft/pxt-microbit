@@ -15,7 +15,7 @@ The goals of this activity are:
 * Explore a professionally developed micro:bit simulation
  
 
-![Biohazard symbol](/static/courses/csintro/radio/infection.png)
+![Biohazard symbol](/static/courses/csintro/radio/biohazard.png)
 
 ## Setup
 This site is the home page for the Infection game: [Infection](/projects/infection).
@@ -53,7 +53,7 @@ Play the game one more time, or more depending on available time, and attempt to
 As students talk through their theories, they will often talk about a scientific idea without knowing the specific word for it. This presents a nice opportunity, once students have surfaced an idea, to give it a proper name so that you can start to develop a common working vocabulary for talking about the problem. 
  
 Here are some common terms that come up in discussion:
-*  Asymptomatic: Someone who has the virus but is not showing outward symptoms of being sick.
+* Asymptomatic: Someone who has the virus but is not showing outward symptoms of being sick.
 * Carrier: Someone who has the virus and can transmit it to others.
 * Immunity: Someone who cannot contract or transmit the virus.
 * Incubation: The period of time between when a person contracts the virus and when the person starts to show symptoms of being sick.
@@ -62,5 +62,5 @@ Here are some common terms that come up in discussion:
 * Quarantine: A strategy to isolate those who are suspected of carrying a virus
  
 ## Reference
-This game is a distributed simulation of a viral outbreak. It is modeled after the Thinking Tags participatory simulations developed at MIT Media Lab. Participatory Simulations have been found to enhance student understanding of complex dynamic relationships, inquiry skills, and scientific understanding. (Colella, V. (2000). Participatory Simulations: Building Collaborative Understanding Through Immersive Dynamic Modeling. _Journal of the Learning Sciences, 9(4), 471–500._ http://doi.org/10.1207/S15327809JLS0904_40\)
+This game is a distributed simulation of a viral outbreak. It is modeled after the Thinking Tags participatory simulations developed at MIT Media Lab. Participatory Simulations have been found to enhance student understanding of complex dynamic relationships, inquiry skills, and scientific understanding. (Colella, V. (2000). Participatory Simulations: Building Collaborative Understanding Through Immersive Dynamic Modeling. _Journal of the Learning Sciences, 9(4), 471–500._ http://dx.doi.org/10.1207/S15327809JLS0904_4)
 

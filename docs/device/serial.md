@@ -24,28 +24,26 @@ basic.forever(() => {
 
 Unfortunately, using the serial library requires quite a bit of a setup.
 
-## BBC micro:bit Chrome Extension
+### ~ hint
+
+**Windows earlier than 10**
+
+If you are running a Windows version earlier than 10, you must install a device driver 
+(for the computer to recognize the serial interface of the micro:bit).
+
+* Follow the instructions at https://docs.mbed.com/docs/mbed-os-handbook/en/latest/getting_started/what_need/ to install the device driver.
+
+## ~
+
+### Chrome Extension
 
 If you are using the Google Chrome browser, you can use our extension to get serial data streaming in the editor.
 
-* Install the [Extension for BBC micro:bit](https://chrome.google.com/webstore/detail/extension-for-bbc-microbi/cihhkhnngbjlhahcfmhekmbnnjcjdbge?hl=en-US) on the Chrome Web Store.
+* Install the [Extension for micro:bit](https://chrome.google.com/webstore/detail/extension-for-bbc-microbi/cihhkhnngbjlhahcfmhekmbnnjcjdbge?hl=en-US) on the Chrome Web Store.
 * Restart Chrome and open the [web editor](@homeurl@)
 * The serial data will show below the simulator
 
 If the extension is enabled, it will not be possible to access the port/device for the micro:bit from other programs than Chrome.
-
-## Windows
-
-You must install a device driver (for the computer to recognize the
-serial interface of the micro:bit); then, you must also install a
-terminal emulator (which is going to connect to the micro:bit and read
-its output).
-
-* Follow the instructions at
-  https://developer.mbed.org/handbook/Windows-serial-configuration to
-  install the device driver.
-
-* Instructions for installing a terminal emulator are below.
 
 ### Windows > Tera Term
 
@@ -93,3 +91,27 @@ Alternative programs include `minicom` and so on.
 * Open a terminal
 * `ls /dev/cu.*` will return to you a list of serial devices; one of them will look like `/dev/cu.usbmodem1422` (the exact number depends on your computer)
 * `screen /dev/cu.usbmodem1422 115200` will open up the micro:bit's serial output. To exit, hit `Ctrl-A` `Ctrl-D`.
+
+
+### Custom Chrome Extensions
+
+### ~ hint
+
+**Developer Zone!** This is an experimental feature that may change in the future and requires understanding how to [build Chrome Extensions](https://developer.chrome.com/extensions/getstarted).
+
+### ~
+
+You can use the ``chromeserial=CHROMEID`` query argument to load your own Chrome Extension in the editor. You can find the ChromeID in the list of extensions or the store URL.
+
+* see the sources of the [micro:bit extension](https://github.com/Microsoft/pxt-microbit/blob/master/clients/chrome/background.ts)
+* the editor will try to connect a port named ``serial`` ([source](https://github.com/Microsoft/pxt-microbit/blob/master/clients/chrome/background.ts#L73))
+* data can be sent back to the editor as JSON payloads ([source](https://github.com/Microsoft/pxt-microbit/blob/master/clients/chrome/background.ts#L42))
+
+```typescript
+port.postMessage({
+    type: "serial",
+    data: decodedString,
+    id: id
+  }));
+}
+```

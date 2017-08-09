@@ -197,7 +197,8 @@
         "productFilter": "0x0204",
         "vendorFilter": "0x0d28",
         "nameFilter": "^mbed Serial Port",
-        "log": true
+        "log": true,
+        "chromeExtension": "hjcflblhjoglmjjkecamiegdigfkgeni"
     },
     "appTheme": {
         "accentColor": "#5C005C",
