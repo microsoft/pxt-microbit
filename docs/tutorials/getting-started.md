@@ -2,7 +2,7 @@
 
 ### Step 1
 
-Welcome! Place the ``||show string||`` block in the ``||on start||`` slot to scroll your name.
+Welcome! Place the ``||basic:show string||`` block in the ``||basic:on start||`` slot to scroll your name.
 
 ```blocks
 basic.showString("Micro!")
@@ -14,7 +14,7 @@ Click ``|Download|`` to transfer your code in your @boardname@!
 
 ### Step 3
 
-The text stopped. Place the ``||show string||`` block in the ``||on button pressed||``
+The text stopped. Place the ``||basic:show string||`` block in the ``||input:on button pressed||``
 slot to scroll your name when button **A** is pressed.
 
 ```block
@@ -50,8 +50,8 @@ input.onButtonPressed(Button.B, () => {
 
 ### Step 6
 
-Place the ``||show number||`` and ``||pick random||`` blocks
-in the ``||on shake||`` slot to build a dice.
+Place the ``||basic:show number||`` and ``||Math:pick random||`` blocks
+in the ``||input:on shake||`` slot to build a dice.
 
 ####   
 

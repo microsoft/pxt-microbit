@@ -6,7 +6,7 @@ Get the number that matches an arrow image name.
 images.arrowNumber(ArrowNames.North)
 ```
 
-Each arrow image name has a number for it. You can find the number for any arrow name with ``||arrow number||``.
+Each arrow image name has a number for it. You can find the number for any arrow name with ``||Images:arrow number||``.
 
 ## Parameters
 
