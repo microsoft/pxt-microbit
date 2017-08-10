@@ -8,7 +8,7 @@ When you plug your @boardname@ into USB, a new drive is created with the **@driv
 
 The basic steps are:
 
-1. Connect your @boardname@ to your computer via USB.
+1. Connect your @boardname@ to your computer with a USB cable.
 2. Click **Download** to download the `.hex` file.
 3. Move the `.hex` file from your computer onto the **@drivename@** drive. The next section has instructions for the browser that you're using.
 

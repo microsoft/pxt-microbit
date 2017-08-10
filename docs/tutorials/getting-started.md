@@ -2,7 +2,7 @@
 
 ### Step 1
 
-Welcome! Place the ``||basic:show string||`` block in the ``||basic:on start||`` slot to scroll your name.
+Welcome! Place the ``||basic:show string||`` block in the ``||basic:on start||`` slot. Replace the ``"Hello"`` text with your name. Did you see it scroll?.
 
 ```blocks
 basic.showString("Micro!")
@@ -10,12 +10,11 @@ basic.showString("Micro!")
 
 ### Step 2
 
-Click ``|Download|`` to transfer your code in your @boardname@!
+Connect a USB cable to the @boardname@ and click ``|Download|``. Save the program to the **@drivename@** drive. This transfers your code to the @boardname@!
 
 ### Step 3
 
-The text stopped. Place the ``||basic:show string||`` block in the ``||input:on button pressed||``
-slot to scroll your name when button **A** is pressed.
+Well, the text stopped. Place the ``||basic:show string||`` block in the ``||input:on button pressed||`` slot to scroll your name when button **A** is pressed.
 
 ```block
 input.onButtonPressed(Button.A, () => {
@@ -25,12 +24,11 @@ input.onButtonPressed(Button.A, () => {
 
 ### Step 4
 
-Click ``|Download|`` to transfer your code
-then press button **A** to scroll your text.
+Click ``|Download|`` to save and transfer your code again, then press button **A** to scroll your text.
 
 ### Step 5
 
-Place blocks to display a smiley when button **B** is pressed.
+Place some blocks to display a smiley when button **B** is pressed.
 
 ####   
 
@@ -51,12 +49,12 @@ input.onButtonPressed(Button.B, () => {
 ### Step 6
 
 Place the ``||basic:show number||`` and ``||Math:pick random||`` blocks
-in the ``||input:on shake||`` slot to build a dice.
+in an ``||input:on shake||`` slot to build a dice.
 
 ####   
 
-When the @boardname@ is shaken, the random number between ``0`` and ``6`` will be displayed
-on the scren.
+When the @boardname@ is shaken, a random number between ``0`` and ``6`` is displayed
+on the screen.
 
 ```block
 input.onGesture(Gesture.Shake, () => {
@@ -66,4 +64,4 @@ input.onGesture(Gesture.Shake, () => {
 
 ### Step 7
 
-Well done! You have completed this activity.
+Well done! You've completed your first MakeCode activity.
