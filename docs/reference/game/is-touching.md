@@ -37,5 +37,5 @@ if (matter.isTouching(antimatter)) {
 ### See also
 
 [create sprite](/reference/game/create-sprite),
-[touching edge](/reference/game/touching-edge),
+[is touching edge](/reference/game/is-touching-edge),
 [if on edge, bounce](/reference/game/if-on-edge-bounce)

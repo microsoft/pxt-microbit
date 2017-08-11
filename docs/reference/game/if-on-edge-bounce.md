@@ -30,5 +30,5 @@ input.onButtonPressed(Button.B, () => {
 ### See also
 
 [create sprite](/reference/game/create-sprite),
-[touching](/reference/game/touching),
-[touching edge](/reference/game/touching-edge)
+[is touching](/reference/game/is-touching),
+[is touching edge](/reference/game/is-touching-edge)

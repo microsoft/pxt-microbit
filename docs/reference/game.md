@@ -36,9 +36,9 @@ game.resume();
 
 ### See also
 
-[createSprite](/reference/game/create-sprite), [move](/reference/game/move), [turn](/reference/game/turn),
+[create sprite](/reference/game/create-sprite), [move](/reference/game/move), [turn](/reference/game/turn),
 [ifOnEdgeBounce](/reference/game/if-on-edge-bounce), [get](/reference/game/get), [set](/reference/game/set),
-[change](/reference/game/change), [isTouching](/reference/game/touching) [isTouchingEdge](/reference/game/touching-edge),
-[addScore](/reference/game/change-score-by), [score](/reference/game/score), [setScore](/reference/game/set-score),
-[startCountdown](/reference/game/start-countdown), [gameOver](/reference/game/game-over),
+[change](/reference/game/change), [is touching](/reference/game/is-touching) [is touching edge](/reference/game/is-touching-edge),
+[add score](/reference/game/add-score), [score](/reference/game/score), [set score](/reference/game/set-score),
+[start countdown](/reference/game/start-countdown), [game over](/reference/game/game-over),
 [pause](/reference/game/pause), [resume](/reference/game/resume)

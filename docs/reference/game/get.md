@@ -34,6 +34,6 @@ basic.showNumber(ball.get(LedSpriteProperty.Brightness));
 
 [turn](/reference/game/turn),
 [brightness](/reference/led/brightness),
-[change sprite property](/reference/game/change-sprite-property),
-[set sprite property](/reference/game/set-sprite-property)
+[change sprite property](/reference/game/change),
+[set sprite property](/reference/game/set)
 

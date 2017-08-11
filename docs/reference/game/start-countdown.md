@@ -25,5 +25,5 @@ game.startCountdown(10000)
 
 ### See Also
 
-[score](/reference/game/score), [change score by](/reference/game/change-score-by)
+[score](/reference/game/score), [add score](/reference/game/add-score)
 

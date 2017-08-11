@@ -25,4 +25,4 @@ input.onButtonPressed(Button.B, () => {
 ### See Also
 
 [score](/reference/game/score),
-[change score by](/reference/game/change-score-by), [start countdown](/reference/game/start-countdown)
+[add score](/reference/game/add-score), [start countdown](/reference/game/start-countdown)

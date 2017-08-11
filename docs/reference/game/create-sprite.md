@@ -33,5 +33,5 @@ item.move(2);
 
 [move](/reference/game/move),
 [turn](/reference/game/turn),
-[touching](/reference/game/touching)
+[is-touching](/reference/game/is-touching)
 

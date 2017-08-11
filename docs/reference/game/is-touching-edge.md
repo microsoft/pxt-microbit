@@ -36,5 +36,5 @@ if (item.isTouchingEdge()) {
 ### See also
 
 [create sprite](/reference/game/create-sprite),
-[touching](/reference/game/touching),
+[is touching](/reference/game/is-touching),
 [if on edge, bounce](/reference/game/if-on-edge-bounce)

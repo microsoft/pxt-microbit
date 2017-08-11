@@ -1,13 +1,13 @@
-# Set Score
+# add Score
 
-Sets the current score.
+Add more to the current score for the game.
 
 ```sig
-game.setScore(1)
+game.addScore(1)
 ```
 ### Parameters
 
-* a [number](/types/number) that represents the new score.
+* a [number](/types/number) that means how much to add to the score. A negative number means to subtract from the score.
 
 ### Examples
 
@@ -27,4 +27,4 @@ input.onButtonPressed(Button.A, () => {
 
 ### See Also
 
-[score](/reference/game/score), [add score](/reference/game/add-score), [start countdown](/reference/game/start-countdown)
+[score](/reference/game/score), [set score](/reference/game/set-score), [start countdown](/reference/game/start-countdown)

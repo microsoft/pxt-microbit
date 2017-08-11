@@ -33,5 +33,5 @@ ball.change(LedSpriteProperty.X, 2);
 
 [turn](/reference/game/turn),
 [brightness](/reference/led/brightness),
-[get sprite property](/reference/game/get-sprite-property),
-[set sprite property](/reference/game/set-sprite-property)
+[get sprite property](/reference/game/get),
+[set sprite property](/reference/game/set)

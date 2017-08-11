@@ -32,8 +32,8 @@ control.inBackground(() => {
 ## Bluetooth
 
 ```namespaces
-devices.tellCameraTo(MesCameraEvent.TakePhoto);
 bluetooth.onBluetoothConnected(() => {});
+devices.tellCameraTo(MesCameraEvent.TakePhoto);
 ```
   
 ```package
