@@ -415,7 +415,7 @@ namespace pxsim.visuals {
                     svg.fill(this.shakeButton, this.props.theme.virtualButtonUp);
                     this.board.bus.queue(DAL.MICROBIT_ID_GESTURE, 11); // GESTURE_SHAKE
                 })
-                accessibility.enableKeyboardInteraction(this.shakeButton, () => {
+                accessibility.enableKeyboardInteraction(this.shakeButton, null, () => {
                     this.board.bus.queue(DAL.MICROBIT_ID_GESTURE, 11);
                 });
                 accessibility.setAria(this.shakeButton, "button", "Shake the board");
@@ -954,7 +954,7 @@ namespace pxsim.visuals {
                     this.board.bus.queue(state.edgeConnectorState.pins[index].id, DAL.MICROBIT_BUTTON_EVT_UP);
                     this.board.bus.queue(state.edgeConnectorState.pins[index].id, DAL.MICROBIT_BUTTON_EVT_CLICK);
                 })
-                accessibility.enableKeyboardInteraction(btn, () => {
+                accessibility.enableKeyboardInteraction(btn, null, () => {
                     let state = this.board;
                     this.board.bus.queue(state.edgeConnectorState.pins[index].id, DAL.MICROBIT_BUTTON_EVT_UP);
                     this.board.bus.queue(state.edgeConnectorState.pins[index].id, DAL.MICROBIT_BUTTON_EVT_CLICK);
@@ -981,7 +981,7 @@ namespace pxsim.visuals {
                     this.board.bus.queue(stateButtons[index].id, DAL.MICROBIT_BUTTON_EVT_UP);
                     this.board.bus.queue(stateButtons[index].id, DAL.MICROBIT_BUTTON_EVT_CLICK);
                 })
-                accessibility.enableKeyboardInteraction(btn, () => {
+                accessibility.enableKeyboardInteraction(btn, null, () => {
                     this.board.bus.queue(stateButtons[index].id, DAL.MICROBIT_BUTTON_EVT_UP);
                     this.board.bus.queue(stateButtons[index].id, DAL.MICROBIT_BUTTON_EVT_CLICK);
                 });
@@ -1016,7 +1016,7 @@ namespace pxsim.visuals {
                 this.board.bus.queue(stateButtons[2].id, DAL.MICROBIT_BUTTON_EVT_UP);
                 this.board.bus.queue(stateButtons[2].id, DAL.MICROBIT_BUTTON_EVT_CLICK);
             })
-            accessibility.enableKeyboardInteraction(this.buttonsOuter[2], () => {
+            accessibility.enableKeyboardInteraction(this.buttonsOuter[2], null, () => {
                 this.board.bus.queue(stateButtons[2].id, DAL.MICROBIT_BUTTON_EVT_UP);
                 this.board.bus.queue(stateButtons[2].id, DAL.MICROBIT_BUTTON_EVT_CLICK);
             });
