@@ -139,6 +139,9 @@ namespace pxsim.visuals {
         .sim-wireframe .sim-board {
             stroke-width: 2px;
         }
+        *:focus {
+            outline: 2px solid white;
+        }
         .no-drag {
             user-drag: none;
             user-select: none;
