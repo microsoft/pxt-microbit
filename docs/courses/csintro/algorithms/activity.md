@@ -100,22 +100,21 @@ Now we can use our LED lights to display different images depending on what butt
 	
 ```blocks
 input.onButtonPressed(Button.A, () => {
-   basic.showLeds(`
-       . . . . .
-       . . . . .
-       . . . . .
-       . . . . .
-       . . . . .
-       `)
+    basic.showLeds(`. . . . .
+    . . . . .
+    . . . . .
+    . . . . .
+    . . . . .
+    `)
 })
 input.onButtonPressed(Button.B, () => {
-   basic.showLeds(`
-       . . . . .
-       . . . . .
-       . . . . .
-       . . . . .
-       . . . . .
-       `)
+    basic.showLeds(`
+    . . . . .
+    . . . . .
+    . . . . .
+    . . . . .
+    . . . . .
+    `)
 })
 ```
 * Click on the individual little boxes in the ‘show leds’ block that is in the ‘on button A pressed’ event handler to create the image of a happy face.
