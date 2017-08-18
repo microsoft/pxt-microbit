@@ -456,7 +456,7 @@ declare namespace led {
      * @param y the vertical coordinate of the LED starting at 0
      * @param brightness the brightness from 0 (off) to 255 (bright), eg:255
      */
-    //% help=led/plot weight=78
+    //% help=led/plot-brightness weight=78
     //% blockId=device_plot_brightness block="plot|x %x|y %y|brightness %brightness" blockGap=8
     //% parts="ledmatrix"
     //% x.min=0 x.max=4 y.min=0 y.max=4 brightness.min=0 brightness.max=255
