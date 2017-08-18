@@ -31,7 +31,6 @@ This is a follow up of the **[soil moisture project](/projects/soil-moisture)**.
 
 * [Make](/projects/plant-watering/make)  
 * [Code](/projects/plant-watering/code)
-* [Connect](/projects/plant-watering/connect)
 
 ### ~button /projects/plant-watering/make
 
