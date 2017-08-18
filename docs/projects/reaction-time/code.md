@@ -1,8 +1,6 @@
 # Code
 ### @description code to make the Reaction Time interactive
 
-![](/static/mb/courses/stem/reaction_time_complete.jpg)
-
 This lesson uses the @boardname@ to measure the reaction time of a student by completing a circuit on a board. The student will be measuring his/her reaction time in an undistracted environment and a distracted environment.  
 
 Connect each piece of foil to the appropriate pin on the @boardname@.  
