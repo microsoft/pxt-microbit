@@ -1,4 +1,5 @@
 # Introduction
+
 Most everyone who uses a computer has heard the terms, kilobyte (kB), Megabyte (MB), Gigabyte (GB) and even Terabyte (TB), usually when referring to the size of computer files and hard drives as well as download speeds. Bandwidth or connection rates are measured in bits/second. But what is a bit and what is a byte and what do they have to do with computers?
 
 Picture a basic room light. The light is either on or it is off. You control the current state of the light by flipping a switch that has only two settings, down (light off) and up (light on). The earliest computers used a series of mechanical switches to control the flow of electricity through their circuits, turning each one on or off. The on/off states of the circuits was used to represent and even store information. The smallest unit of information, representing the state of one switch, is known as a bit.
@@ -13,10 +14,8 @@ A byte can represent any value from 00000000 through 11111111, for a total of 25
 
 Modern computers rely on transistors, which pack millions of tiny switches into a chip smaller than your thumb, but information is still represented in essentially the same way: as a series of ones and zeros. By using binary, computers can represent information simply and efficiently using a system that is very effectively modeled in digital circuitry.
 
-![Binary numbers shown on a monitor](/static/courses/csintro/binary/binary-numbers.jpg)
-Binary numbers on a terminal monitor
-
 ## Review
+
 * A Bit is a binary digit with two possible values, zero or one
 * A Byte is a sequence of 8 bits and has 256 possible values from 00000000 through 11111111
 * A kilobyte (kB) is 1,024 bytes or 2^10 bytes
@@ -25,6 +24,7 @@ Binary numbers on a terminal monitor
 * A Terabyte (TB) is 1,099,511,627,776 bytes or 2^40 bytes
 	
 ## Notes 
+
 * The ones and zeros of bits and bytes can be used to represent letters, numbers, and even different keys on a computer keyboard. 
 * A bit can be used to hold a Boolean (true/false) value.  A value of zero represents ‘false’ and a value of one represents ‘true’.
 	
