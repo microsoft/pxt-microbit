@@ -108,7 +108,7 @@ You can use the ``chromeserial=CHROMEID`` query argument to load your own Chrome
 * the editor will try to connect a port named ``serial`` ([source](https://github.com/Microsoft/pxt-microbit/blob/master/clients/chrome/background.ts#L73))
 * data can be sent back to the editor as JSON payloads ([source](https://github.com/Microsoft/pxt-microbit/blob/master/clients/chrome/background.ts#L42))
 
-```typescript
+```typescript-ignore
 port.postMessage({
     type: "serial",
     data: decodedString,
