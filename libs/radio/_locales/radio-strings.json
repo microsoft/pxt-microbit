@@ -1,9 +1,11 @@
 {
   "radio.onDataPacketReceived|block": "on radio received",
   "radio.onDataReceived|block": "radio on data received",
+  "radio.onEventReceived|block": "on radio event %event|received",
   "radio.receiveNumber|block": "radio receive number",
   "radio.receiveString|block": "radio receive string",
   "radio.receivedSignalStrength|block": "radio received signal strength",
+  "radio.sendEvent|block": "radio send event %event",
   "radio.sendNumber|block": "radio send number %value",
   "radio.sendString|block": "radio send string %msg",
   "radio.sendValue|block": "radio send|value %name|= %value",

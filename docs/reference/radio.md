@@ -9,6 +9,8 @@ radio.sendString("");
 radio.onDataPacketReceived(() => {
 
 });
+radio.sendEvent(1);
+radio.onEventReceived(1, () => {});
 radio.setGroup(0);
 radio.setTransmitPower(7);
 radio.setTransmitSerialNumber(false);
@@ -25,6 +27,8 @@ radio
 [sendValue](/reference/radio/send-value),
 [sendString](/reference/radio/send-string),
 [onDataPacketReceived](/reference/radio/on-data-packet-received),
+[sendEvent](/reference/radio/send-event),
+[onEventReceived](/reference/radio/on-event-received),
 [setGroup](/reference/radio/set-group),
 [setTransmitPower](/reference/radio/set-transmit-power),
 [setTransmitSerialNumber](/reference/radio/set-transmit-serial-number),

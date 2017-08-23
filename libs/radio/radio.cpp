@@ -54,14 +54,24 @@ namespace radio {
         return r;
     }
 
-    void broadcastMessage(int message) {
+    /**
+    * Broadcast an event to other devices via radio
+    */
+    //% blockId=radio_send_event block="radio send event %event"
+    //% advanced=true blockGap=8 weight=90
+    void sendEvent(int event) {
         if (radioEnable() != MICROBIT_OK) return;
-        uBit.radio.event.eventReceived(MicroBitEvent(MES_BROADCAST_GENERAL_ID, message, CREATE_ONLY));
+        uBit.radio.event.eventReceived(MicroBitEvent(MES_BROADCAST_GENERAL_ID, event, CREATE_ONLY));
     }
 
-    void onBroadcastMessageReceived(int message, Action f) {
+    /**
+    * Register code to run when a radio event is received
+    */
+    //% blockId=radio_on_event block="on radio event %event|received"
+    //% advanced=true weight=89
+    void onEventReceived(int event, Action f) {
         if (radioEnable() != MICROBIT_OK) return;
-        registerWithDal(MES_BROADCAST_GENERAL_ID, message, f);
+        registerWithDal(MES_BROADCAST_GENERAL_ID, event, f);
     }
 
     void setPacketPrefix(uint8_t* buf, int type) {

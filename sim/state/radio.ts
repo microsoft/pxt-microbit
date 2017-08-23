@@ -107,11 +107,11 @@ namespace pxsim.radio {
         STRING = 2
     }
 
-    export function broadcastMessage(msg: number): void {
+    export function sendEvent(msg: number): void {
         board().radioState.broadcast(msg);
     }
 
-    export function onBroadcastMessageReceived(msg: number, handler: RefAction): void {
+    export function onEventReceived(msg: number, handler: RefAction): void {
         pxtcore.registerWithDal(DAL.MES_BROADCAST_GENERAL_ID, msg, handler);
     }
 

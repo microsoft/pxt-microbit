@@ -6,6 +6,20 @@
 declare namespace radio {
 
     /**
+     * Broadcast an event to other devices via radio
+     */
+    //% blockId=radio_send_event block="radio send event %event"
+    //% advanced=true blockGap=8 weight=90 shim=radio::sendEvent
+    function sendEvent(event: number): void;
+
+    /**
+     * Register code to run when a radio event is received
+     */
+    //% blockId=radio_on_event block="on radio event %event|received"
+    //% advanced=true weight=89 shim=radio::onEventReceived
+    function onEventReceived(event: number, f: () => void): void;
+
+    /**
      * Broadcasts a number over radio to any connected micro:bit in the group.
      */
     //% help=radio/send-number
