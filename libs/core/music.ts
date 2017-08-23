@@ -307,13 +307,13 @@ namespace music {
     /**
      * Starts playing a melody.
      * Notes are expressed as a string of characters with this format: NOTE[octave][:duration]
-     * @param melody the melody array to play, eg: ['g5:1']
+     * @param melodyArray the melody array to play, eg: ['g5:1']
      * @param options melody options, once / forever, in the foreground / background
      */
     //% help=music/begin-melody weight=60 blockGap=8
     //% blockId=device_start_melody block="start melody %melody=device_builtin_melody| repeating %options"
     //% parts="headphone"
-    export function beginMelody(melodyArray: string[], options: MelodyOptions = MelodyOptions.Once) {
+    export function beginMelody(melodyArray: string[], options: MelodyOptions = 1) {
         init();
         if (currentMelody != undefined) {
             if (((options & MelodyOptions.OnceInBackground) == 0)

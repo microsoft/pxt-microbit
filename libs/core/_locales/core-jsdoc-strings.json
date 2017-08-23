@@ -181,6 +181,7 @@
   "music": "Generation of music tones.",
   "music.beat": "Returns the duration of a beat in milli-seconds",
   "music.beginMelody": "Starts playing a melody.\nNotes are expressed as a string of characters with this format: NOTE[octave][:duration]",
+  "music.beginMelody|param|melodyArray": "the melody array to play, eg: ['g5:1']",
   "music.beginMelody|param|options": "melody options, once / forever, in the foreground / background",
   "music.builtInMelody": "Gets the melody array of a built-in melody.",
   "music.changeTempoBy": "Change the tempo by the specified amount",
