@@ -21,6 +21,11 @@ A collection of courses built for the @boardname@.
   "description": "11 experiments based on the Kitronik Inventor Kit",
   "url": "https://www.kitronik.co.uk/blog/inventors-kit-experiment-1-help",
   "imageUrl": "https://www.kitronik.co.uk/wp/wp-content/uploads/2016/10/inventors-kit-experiment-1-further-help-870.jpg"
+},{
+  "name": "SparkFun Videos",
+  "description": "YouTube video tutorials produced by the SparkFun team!",
+  "url": "https://youtu.be/kaNtg1HGXbY?list=PLBcrWxTa5CS0mWJrytvii8aG5KUqMXvSk",
+  "imageUrl": "https://i.ytimg.com/vi/kaNtg1HGXbY/hqdefault.jpg"
 },
  {
   "name": "micro:bit of Things",
