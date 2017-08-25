@@ -8,6 +8,8 @@ Hack the @boardname@ into the car!
 
 ### ~
 
+https://youtu.be/gH__3l_oDeM
+
 ## Materials
 
 * a toy RC car with 4 or 6 AA batteries
@@ -30,7 +32,7 @@ you will need them again!
 Follow the motor and power cables and cut the wires as close as possible from the electronic board. You should end up with a total of 8 cables:
 2 for power, 2 for the steering motor and 2 pairs for the torque motors.
 
-![Electronic board removed](/static/mb/projects/rc-car/electremoved.jpg)
+![Electronic board removed](/static/mb/projects/rc-car/elecremoved.jpg)
 
 ## Step 4: Prepare the cables
 
@@ -42,10 +44,8 @@ Using the wire trimmer, expose 1/4 inch (1/2 cm) of metal on each wire so you ca
 
 * Connect the cables from the battery section to the power input on the motor shield. 
 Make sure the **+** cable goes into the **+** port!
-
 * Connect both torque motors to the **motor 1** connector in the motor driver. 
 Make sure to connect the cables of same colors so that your wheel turn the same direction!
-
 * Connect the remaining motor cables to the **motor 2** connector.
 
 ![Wiring](/static/mb/projects/rc-car/wiring.jpg)
@@ -67,7 +67,7 @@ Once you have replaced the cover (original or carboard), decorate it to your tas
 
 ![Painted](/static/mb/projects/rc-car/painted.jpg)
 
-That's it!
+That's it, it's time to code!
 
 ### ~button /projects/rc-car/code
 

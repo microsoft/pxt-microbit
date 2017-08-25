@@ -13,13 +13,15 @@ After the package gets loaded, you should see a new **Kitronik" category in the 
 
 ## Step 2: Round and round we go!
 
+https://youtu.be/pD6tM1nXCPA
+
 The first program will have the car drive in a circle for 5 seconds when the user presses button ``A``. 
 This is simply done by turning both motor controllers on for 5 seconds.
 
 ```blocks
 input.onButtonPressed(Button.A, () => {
     basic.showIcon(IconNames.Happy)
-    kitronik.motorOn(kitronik.Motors.Motor1, kitronik.MotorDirection.Forward, 100)
+    kitronik.motorOn(kitronik.Motors.Motor1, kitronik.MotorDirection.Reverse, 100)
     kitronik.motorOn(kitronik.Motors.Motor2, kitronik.MotorDirection.Forward, 100)
     basic.pause(5000)
     kitronik.motorOff(kitronik.Motors.Motor1)
@@ -39,16 +41,18 @@ You can either swap the cables or change your code to account for that.
 
 ## Step 3: Figure Eight
 
+https://youtu.be/agor9wtiAkE
+
 Instead of stopping after 5 seconds, we reverse the steering motor to turn the other direction. This will create a figure eight trajectory.
 
 ```blocks
 input.onButtonPressed(Button.A, () => {
     basic.showIcon(IconNames.Happy)
-    kitronik.motorOn(kitronik.Motors.Motor1, kitronik.MotorDirection.Forward, 100)
+    kitronik.motorOn(kitronik.Motors.Motor1, kitronik.MotorDirection.Reverse, 100)
     kitronik.motorOn(kitronik.Motors.Motor2, kitronik.MotorDirection.Forward, 100)
-    basic.pause(5000)
+    basic.pause(3500)
     kitronik.motorOn(kitronik.Motors.Motor2, kitronik.MotorDirection.Reverse, 100)
-    basic.pause(5000)
+    basic.pause(3500)
     kitronik.motorOff(kitronik.Motors.Motor1)
     kitronik.motorOff(kitronik.Motors.Motor2)
     basic.showIcon(IconNames.SmallDiamond)
