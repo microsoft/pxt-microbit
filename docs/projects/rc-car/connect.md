@@ -1,9 +1,10 @@
 # Connect
 
-We are going to use radio to remote control the toy car. 
-A second @microbit@ will send commands to control the throttle and the steering.
 
 https://youtu.be/XXesoUC0XBU
+
+We are going to use radio to remote control the toy car. 
+A second @microbit@ will send commands to control the throttle and the steering.
 
 ```blocks
 let steering = 0
