@@ -30,6 +30,7 @@
     * [Inchworm](/projects/inchworm)
     * [Milk Carton Robot](/projects/milk-carton-robot)
     * [Milk monster](/projects/milky-monster)
+    * [RC Car](/projects/rc-car)
     * [Timing gates](/projects/timing-gates)
     * [Compass](/projects/compass)
     * [Telegraph](/projects/telegraph)

@@ -6,7 +6,7 @@ Hack a toy RC car with your @boardname@!
 
 ### ~
 
-![](/static/mb/projects/rc-car.jpg)
+https://youtu.be/xQJCZwVvjyw
 
 ### ~ hint
 
