@@ -3,6 +3,8 @@
 We are going to use radio to remote control the toy car. 
 A second @microbit@ will send commands to control the throttle and the steering.
 
+https://youtu.be/XXesoUC0XBU
+
 ```blocks
 let steering = 0
 let throttle = 0
@@ -18,9 +20,9 @@ radio.onDataPacketReceived( ({ receivedString: name, receivedNumber: value }) =>
         }
     } else if (name == "steering") {
         if (value > 0) {
-            kitronik.motorOn(kitronik.Motors.Motor2, kitronik.MotorDirection.Reverse, 100);
-        } else if (value < 0) {
             kitronik.motorOn(kitronik.Motors.Motor2, kitronik.MotorDirection.Forward, 100);
+        } else if (value < 0) {
+            kitronik.motorOn(kitronik.Motors.Motor2, kitronik.MotorDirection.Reverse, 100);
         } else {
             kitronik.motorOff(kitronik.Motors.Motor2);
         }
