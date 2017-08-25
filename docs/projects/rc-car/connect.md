@@ -6,7 +6,7 @@ https://youtu.be/XXesoUC0XBU
 We are going to use radio to remote control the toy car. 
 A second @microbit@ will send commands to control the throttle and the steering.
 
-```blocks
+```blocks-ignore
 let steering = 0
 let throttle = 0
 radio.onDataPacketReceived( ({ receivedString: name, receivedNumber: value }) =>  {
@@ -46,4 +46,9 @@ basic.forever(() => {
     radio.sendValue("steering", steering)
 })
 radio.setGroup(12)
+```
+
+```package
+radio
+pxt-kitronik-motor-driver=github:kitronikltd/pxt-kitronik-motor-driver#v0.0.3
 ```

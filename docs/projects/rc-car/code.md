@@ -18,7 +18,7 @@ https://youtu.be/pD6tM1nXCPA
 The first program will have the car drive in a circle for 5 seconds when the user presses button ``A``. 
 This is simply done by turning both motor controllers on for 5 seconds.
 
-```blocks
+```blocks-ignore
 input.onButtonPressed(Button.A, () => {
     basic.showIcon(IconNames.Happy)
     kitronik.motorOn(kitronik.Motors.Motor1, kitronik.MotorDirection.Reverse, 100)
@@ -45,7 +45,7 @@ https://youtu.be/agor9wtiAkE
 
 Instead of stopping after 5 seconds, we reverse the steering motor to turn the other direction. This will create a figure eight trajectory.
 
-```blocks
+```blocks-ignore
 input.onButtonPressed(Button.A, () => {
     basic.showIcon(IconNames.Happy)
     kitronik.motorOn(kitronik.Motors.Motor1, kitronik.MotorDirection.Reverse, 100)
