@@ -34,10 +34,10 @@ basic.showLeds(`
     `)
 ```
 
-* **variable**: [read more...](/blocks/variables)
-* **arithmetic operators**: [read more...](/types/number)
-* **on button pressed** : [read more...](/reference/input/on-button-pressed)
-* **show number** : [read more...](/reference/basic/show-number)
+* **[variable](/blocks/variables)**:
+* **[arithmetic operators](/types/number)**
+* **[on button pressed](/reference/input/on-button-pressed)**
+* **[show number](/reference/basic/show-number)**
 
 ## Objectives
 

@@ -21,12 +21,12 @@ Learn how to declare a **Boolean** variable, `var t:= true` `var f:=false` for o
 
 ## Documentation
 
-* **running time** : [read more...](/reference/input/running-time)
-* **variable** : [read more...](/blocks/variables)
-* **Boolean** : [read more...](/blocks/logic/boolean)
-* **on button pressed** : [read more...](/reference/input/on-button-pressed)
-* **if** : [read more...](/blocks/logic/if)
-* **show string** : [read more...](/reference/basic/show-string)
+* **[running time](/reference/input/running-time)**
+* **[variable](/blocks/variables)**
+* **[Boolean](/blocks/logic/boolean)** :
+* **[on button pressed](/reference/input/on-button-pressed)**
+* **[if](/blocks/logic/if)**
+* **[show string](/reference/basic/show-string)**
 
 ## Objectives
 

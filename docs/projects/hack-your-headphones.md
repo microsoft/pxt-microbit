@@ -21,7 +21,7 @@ Build your own music player @boardname@ from headphones.
 
 # ~hint
 
-**No crocodile clips!?!?!** Use wires or Aluminium foil! [Read more...](/device/foil-circuits)
+**No crocodile clips!?!?!** Use [wires or Aluminium foil](/device/foil-circuits)!
 
 # ~
 

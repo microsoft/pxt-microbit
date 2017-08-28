@@ -42,13 +42,13 @@ Learn how to create a charades game with **collections**, ` create -> Collection
 ## Documentation
 
 * **collection**
-* **variables** : [read more...](/blocks/variables)
-* **Boolean** : [read more...](/blocks/logic/boolean)
-* **on logo up** [read more...](/reference/input/on-gesture)
-* **on screen down** [read more...](/reference/input/on-gesture)
-* **on screen up** [read more...](/reference/input/on-gesture)
-* **show string** : [read more...](/reference/basic/show-string)
-* **game library** : [read more...](/reference/game)
+* **[variables](/blocks/variables)**
+* **[Boolean](/blocks/logic/boolean)**
+* **[on logo up](/reference/input/on-gesture)**
+* **[on screen down](/reference/input/on-gesture)**
+* **[on screen up](/reference/input/on-gesture)**
+* **[show string](/reference/basic/show-string)**
+* **[game library](/reference/game)**
 
 ## Resources
 
