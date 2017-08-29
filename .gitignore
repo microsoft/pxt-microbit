@@ -17,6 +17,7 @@ clients/**/bin/**
 clients/**/obj/**
 electron-out
 hexcache
+build
 
 *.user
 *.sw?

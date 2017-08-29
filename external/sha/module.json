@@ -1,0 +1,9 @@
+{
+  "name": "sha",
+  "version": "0.0.0",
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {},
+  "bin": "./source"
+}

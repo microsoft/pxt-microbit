@@ -155,6 +155,41 @@ namespace pxt.editor {
         0x4001e000, 0x00000504,
     ])
 
+    const computeSHA = new Uint32Array([
+        0xb0d3b5f0, 0x23009311, 0x91069005, 0x93079210, 0x9a119b07, 0xd1004293,
+        0x9b06e0c6, 0x4b649304, 0x4b64930d, 0x4b64930c, 0x4b64930b, 0x4b64930a,
+        0x4b649309, 0x4b649308, 0x4b649302, 0xe0939301, 0x9a042100, 0x78537810,
+        0x041b0600, 0x78d04303, 0x78904303, 0x02003204, 0xa8124303, 0x3104500b,
+        0xd1ef2940, 0xac420003, 0x2107685a, 0x26120015, 0x001141cd, 0x08d241f1,
+        0x404a4069, 0x68196a5d, 0x19496b98, 0x00051852, 0x41cd2111, 0x36010001,
+        0x0a8041f1, 0x40414069, 0x64191851, 0x429c3304, 0x9b09d1e2, 0x930f2700,
+        0x9d089b0d, 0x9b0c930e, 0x93039e02, 0x98019b0b, 0x990a469c, 0x000c230b,
+        0x41dc000a, 0x41da3b05, 0x000c4062, 0x41dc3313, 0x40544b3f, 0x58fbaa12,
+        0x370458ba, 0x18a2189a, 0x9b034664, 0x438b400c, 0x18d24063, 0x00049b0e,
+        0x930e18d3, 0x41dc230d, 0x00232202, 0x41d40004, 0x405c0002, 0x41da2316,
+        0x4054002b, 0x4073002a, 0x40034032, 0x18e44053, 0x9b0f9a0e, 0x18d3950f,
+        0x9c031912, 0x2480940e, 0x42a70064, 0x9c01d134, 0x920118a2, 0x18129a02,
+        0x9a089202, 0x92081992, 0x19529a09, 0x9a0a9209, 0x930a18d3, 0x9a039b0b,
+        0x930b185b, 0x44639b0c, 0x930c4694, 0x44639b0d, 0x9b04930d, 0x93043340,
+        0x9b049a06, 0x9a101a9b, 0xd900429a, 0x9b05e764, 0x601a9a01, 0x605a9a02,
+        0x9a052308, 0x9a1018d3, 0x46949305, 0x44639b06, 0x9b079306, 0xe73a3301,
+        0x00060035, 0x46620010, 0x9203468c, 0xe7890019, 0x2000be2a, 0xbdf0b053,
+        0x5be0cd19, 0x1f83d9ab, 0x9b05688c, 0x510e527f, 0xa54ff53a, 0x3c6ef372,
+        0xbb67ae85, 0x6a09e667, 0x200001d4,
+        // this is 0x200001d4
+        0x428a2f98, 0x71374491, 0xb5c0fbcf, 0xe9b5dba5, 0x3956c25b, 0x59f111f1,
+        0x923f82a4, 0xab1c5ed5, 0xd807aa98, 0x12835b01, 0x243185be, 0x550c7dc3,
+        0x72be5d74, 0x80deb1fe, 0x9bdc06a7, 0xc19bf174, 0xe49b69c1, 0xefbe4786,
+        0x0fc19dc6, 0x240ca1cc, 0x2de92c6f, 0x4a7484aa, 0x5cb0a9dc, 0x76f988da,
+        0x983e5152, 0xa831c66d, 0xb00327c8, 0xbf597fc7, 0xc6e00bf3, 0xd5a79147,
+        0x06ca6351, 0x14292967, 0x27b70a85, 0x2e1b2138, 0x4d2c6dfc, 0x53380d13,
+        0x650a7354, 0x766a0abb, 0x81c2c92e, 0x92722c85, 0xa2bfe8a1, 0xa81a664b,
+        0xc24b8b70, 0xc76c51a3, 0xd192e819, 0xd6990624, 0xf40e3585, 0x106aa070,
+        0x19a4c116, 0x1e376c08, 0x2748774c, 0x34b0bcb5, 0x391c0cb3, 0x4ed8aa4a,
+        0x5b9cca4f, 0x682e6ff3, 0x748f82ee, 0x78a5636f, 0x84c87814, 0x8cc70208,
+        0x90befffa, 0xa4506ceb, 0xbef9a3f7, 0xc67178f2
+    ])
+
     let startTime = 0
     function log(msg: string) {
         let now = Date.now()
@@ -165,6 +200,8 @@ namespace pxt.editor {
     }
 
     export function deployCoreAsync(resp: pxtc.CompileResult, isCli = false): Promise<void> {
+        U.assert(computeSHA.length == 0x1d4 / 4 + 64)
+        
         let saveHexAsync = () => {
             if (isCli) {
                 return Promise.resolve()
@@ -222,7 +259,7 @@ namespace pxt.editor {
             })
             .then(() => {
                 log("convert")
-                // TODO this is seriously inefficient
+                // TODO this is seriously inefficient (130ms on a fast machine)
                 let uf2 = UF2.newBlockFile()
                 UF2.writeHex(uf2, resp.outfiles[pxtc.BINARY_HEX].split(/\r?\n/))
                 let bytes = U.stringToUint8Array(UF2.serializeFile(uf2))
@@ -230,7 +267,12 @@ namespace pxt.editor {
 
                 let aligned = pageAlignBlocks(parsed, pageSize)
 
-
+                log("sha")
+                // this OTOH is quite quick (10ms)
+                let sums = aligned.map(b => pxtc.BrowserImpl.sha256block(b.data)[0])
+                console.log(sums)
+                log("sha done")
+                
                 return Promise.mapSeries(U.range(aligned.length),
                     i => {
                         let b = aligned[i]
