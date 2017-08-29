@@ -1,6 +1,6 @@
-# headbands lesson
+# Headband lesson
 
-create a charades game that can be played with your friends.
+Create a charades game to play with your friends.
 
 ## Topic
 
