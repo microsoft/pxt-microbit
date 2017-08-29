@@ -4,6 +4,7 @@ namespace pxt.editor {
     import UF2 = pxtc.UF2;
 
     const pageSize = 1024;
+    const numPages = 256;
 
     class DAPWrapper {
         cortexM: DapJS.CortexM
@@ -155,6 +156,8 @@ namespace pxt.editor {
         0x4001e000, 0x00000504,
     ])
 
+
+    // void computeHashes(uint32_t *dst, uint8_t *ptr, uint32_t pageSize, uint32_t numPages)
     const computeSHA = new Uint32Array([
         0xb0d3b5f0, 0x23009311, 0x91069005, 0x93079210, 0x9a119b07, 0xd1004293,
         0x9b06e0c6, 0x4b649304, 0x4b64930d, 0x4b64930c, 0x4b64930b, 0x4b64930a,
@@ -199,9 +202,26 @@ namespace pxt.editor {
         console.log(`HID ${ts}: ${msg}`)
     }
 
-    export function deployCoreAsync(resp: pxtc.CompileResult, isCli = false): Promise<void> {
+    const membase = 0x20000000
+    const loadAddr = membase
+    const dataAddr = 0x20002000
+    const stackAddr = 0x20001000
+
+    function getFlashChecksumsAsync(wrap: DAPWrapper) {
         U.assert(computeSHA.length == 0x1d4 / 4 + 64)
-        
+
+        let pages = numPages
+
+        // TODO only compute for pages in hex file
+        return wrap.cortexM.runCode(computeSHA, loadAddr, loadAddr + 1, 0xffffffff, stackAddr, true,
+            dataAddr, 0, pageSize, pages)
+            .then(() => wrap.cortexM.memory.readBlock(dataAddr, pages * 2, pageSize))
+            .then(buf => {
+                console.log(U.toHex(buf))
+            })
+    }
+
+    export function deployCoreAsync(resp: pxtc.CompileResult, isCli = false): Promise<void> {
         let saveHexAsync = () => {
             if (isCli) {
                 return Promise.resolve()
@@ -218,10 +238,8 @@ namespace pxt.editor {
 
         let logV = (msg: string) => { }
         //let logV = log
-        
-        let membase = 0x20000000
-        let loadAddr = membase
-        let dataAddr = 0x20002000
+
+
 
         const runFlash = (b: UF2.Block, dataAddr: number) => {
             const cmd = wrap.cortexM.prepareCommand();
@@ -230,7 +248,7 @@ namespace pxt.editor {
 
             cmd.writeCoreRegister(DapJS.CortexReg.PC, loadAddr + 4 + 1);
             cmd.writeCoreRegister(DapJS.CortexReg.LR, loadAddr + 1);
-            cmd.writeCoreRegister(DapJS.CortexReg.SP, 0x20001000);
+            cmd.writeCoreRegister(DapJS.CortexReg.SP, stackAddr);
 
             cmd.writeCoreRegister(0, b.targetAddr);
             cmd.writeCoreRegister(1, dataAddr);
@@ -253,6 +271,7 @@ namespace pxt.editor {
                 log("reset")
                 return wrap.cortexM.reset(true)
             })
+            .then(() => getFlashChecksumsAsync(wrap))
             .then(() => {
                 log("write code")
                 return wrap.cortexM.memory.writeBlock(loadAddr, flashPageBIN)
@@ -272,7 +291,7 @@ namespace pxt.editor {
                 let sums = aligned.map(b => pxtc.BrowserImpl.sha256block(b.data)[0])
                 console.log(sums)
                 log("sha done")
-                
+
                 return Promise.mapSeries(U.range(aligned.length),
                     i => {
                         let b = aligned[i]
