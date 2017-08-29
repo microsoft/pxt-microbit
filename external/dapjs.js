@@ -753,15 +753,18 @@ var CortexM = (function () {
                         _a.label = 3;
                     case 3: 
                     // Run the program and wait for halt
-                    return [4 /*yield*/, this.resume()];
+                    //await this.resume();
+                    return [4 /*yield*/, this.debug.enable()];
                     case 4:
                         // Run the program and wait for halt
+                        //await this.resume();
                         _a.sent();
                         return [4 /*yield*/, this.waitForHalt(constants_1.DEFAULT_RUNCODE_TIMEOUT)];
                     case 5:
                         _a.sent(); // timeout after 10s
-                        return [4 /*yield*/, this.readCoreRegister(0 /* R0 */)];
-                    case 6: return [2 /*return*/, _a.sent()];
+                        return [2 /*return*/, 0
+                            //return await this.readCoreRegister(CortexReg.R0);
+                        ];
                 }
             });
         });
@@ -782,8 +785,10 @@ var CortexM = (function () {
                                     running = true;
                                     if (timeout > 0) {
                                         setTimeout(function () {
-                                            reject("waitForHalt timed out.");
-                                            running = false;
+                                            if (running) {
+                                                reject("waitForHalt timed out.");
+                                                running = false;
+                                            }
                                         }, timeout);
                                     }
                                     _b.label = 1;
@@ -799,6 +804,7 @@ var CortexM = (function () {
                                     return [3 /*break*/, 1];
                                 case 4:
                                     if (running) {
+                                        running = false;
                                         resolve();
                                     }
                                     return [2 /*return*/];
@@ -963,8 +969,12 @@ var Debug = (function () {
     Debug.prototype.init = function () {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
-                this.setupFpb();
-                return [2 /*return*/];
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.setupFpb()];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
             });
         });
     };
@@ -1625,19 +1635,15 @@ var Memory = (function () {
     };
     Memory.prototype.writeBlockCore = function (addr, words) {
         return __awaiter(this, void 0, void 0, function () {
-            var blSz, reg, prep, i, e_3;
+            var prep, e_3;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         _a.trys.push([0, 2, , 7]);
-                        blSz = 14;
-                        reg = util_1.apReg(12 /* DRW */, 0 /* WRITE */);
                         prep = this.dev.prepareCommand();
                         prep.writeAp(0 /* CSW */, 587202640 /* CSW_VALUE */ | 2 /* CSW_SIZE32 */);
                         prep.writeAp(4 /* TAR */, addr);
-                        for (i = 0; i < Math.ceil(words.length / blSz); i++) {
-                            prep.writeRegRepeat(reg, words.subarray(i * blSz, i * blSz + blSz));
-                        }
+                        prep.writeRegRepeat(util_1.apReg(12 /* DRW */, 0 /* WRITE */), words);
                         return [4 /*yield*/, prep.go()];
                     case 1:
                         _a.sent();
@@ -2227,28 +2233,25 @@ var PreparedDapCommand = (function () {
      */
     PreparedDapCommand.prototype.go = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var v, i, command, result, j;
+            var v, i, command, results, i, result, j;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         v = [];
-                        i = 0;
-                        _a.label = 1;
-                    case 1:
-                        if (!(i < this.commands.length)) return [3 /*break*/, 4];
-                        command = this.commands[i];
-                        command[1] = this.commandCounts[i];
-                        return [4 /*yield*/, this.dap.cmdNums(5 /* DAP_TRANSFER */, command)];
-                    case 2:
-                        result = _a.sent();
-                        for (j = 0; j < this.readCounts[i]; j++) {
-                            v.push(util_1.readUInt32LE(result, 3 + 4 * j));
+                        for (i = 0; i < this.commands.length; i++) {
+                            command = this.commands[i];
+                            command[1] = this.commandCounts[i];
                         }
-                        _a.label = 3;
-                    case 3:
-                        i++;
-                        return [3 /*break*/, 1];
-                    case 4: return [2 /*return*/, v];
+                        return [4 /*yield*/, this.dap.sendTransfers(this.commands)];
+                    case 1:
+                        results = _a.sent();
+                        for (i = 0; i < this.commands.length; i++) {
+                            result = results[i];
+                            for (j = 0; j < this.readCounts[i]; j++) {
+                                v.push(util_1.readUInt32LE(result, 3 + 4 * j));
+                            }
+                        }
+                        return [2 /*return*/, v];
                 }
             });
         });
@@ -2365,6 +2368,43 @@ var CMSISDAP = (function () {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 return [2 /*return*/, this.cmdNums(3 /* DAP_DISCONNECT */, [])];
+            });
+        });
+    };
+    CMSISDAP.prototype.sendTransfers = function (commands) {
+        return __awaiter(this, void 0, void 0, function () {
+            var res, _i, commands_1, cmd, _a, _b;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
+                    case 0:
+                        if (this.hid.sendMany)
+                            return [2 /*return*/, this.hid.sendMany(commands.map(function (cmd) {
+                                    cmd.unshift(5 /* DAP_TRANSFER */);
+                                    return Uint8Array.from(cmd);
+                                })).then(function (bufs) {
+                                    for (var _i = 0, bufs_1 = bufs; _i < bufs_1.length; _i++) {
+                                        var buf = bufs_1[_i];
+                                        if (buf[0] != 5 /* DAP_TRANSFER */)
+                                            throw new Error("Bad response for Transfer (many) -> " + buf[0]);
+                                    }
+                                    return bufs;
+                                })];
+                        res = [];
+                        _i = 0, commands_1 = commands;
+                        _c.label = 1;
+                    case 1:
+                        if (!(_i < commands_1.length)) return [3 /*break*/, 4];
+                        cmd = commands_1[_i];
+                        _b = (_a = res).push;
+                        return [4 /*yield*/, this.cmdNums(5 /* DAP_TRANSFER */, cmd)];
+                    case 2:
+                        _b.apply(_a, [_c.sent()]);
+                        _c.label = 3;
+                    case 3:
+                        _i++;
+                        return [3 /*break*/, 1];
+                    case 4: return [2 /*return*/, res];
+                }
             });
         });
     };

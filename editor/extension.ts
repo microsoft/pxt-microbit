@@ -10,19 +10,33 @@ namespace pxt.editor {
 
         constructor(h: HF2.PacketIO) {
             let pbuf = new U.PromiseBuffer<Uint8Array>()
+
+            let sendMany = (cmds: Uint8Array[]) => {
+                return h.talksAsync(cmds.map(c => ({ cmd: 0, data: c })))
+            }
+
+            if (!h.talksAsync)
+                sendMany = null
+
             let dev = new DapJS.DAP({
                 write: writeAsync,
                 close: closeAsync,
-                read: readAsync
+                read: readAsync,
+                sendMany: sendMany
             })
             this.cortexM = new DapJS.CortexM(dev)
+            let id = 0
+
 
             h.onData = buf => {
                 pbuf.push(buf)
             }
 
             function writeAsync(data: ArrayBuffer) {
-                return h.sendPacketAsync(new Uint8Array(data))
+                //if (id++ == 13)
+                //    debugger
+                h.sendPacketAsync(new Uint8Array(data))
+                return Promise.resolve()
             }
 
             function readAsync() {
@@ -35,17 +49,23 @@ namespace pxt.editor {
         }
 
         reconnectAsync(first: boolean) {
+            const showNumAsync = (addr: number) => {
+                return this.cortexM.memory.read32(addr)
+                    .then(buf => {
+                        console.log(`at ${addr}: 0x${buf.toString(16)}`)
+                    })
+            }
+
             return this.cortexM.init()
-                .then(() => this.cortexM.memory.read32(0))
-                .then(buf => {
-                    console.log("at0: " + buf.toString(16))
-                })
-                .then(() => this.cortexM.halt())
-                .then(() => this.cortexM.waitForHalt())
-                .then(() => this.cortexM.memory.readBlock(0x20000000, 100, pageSize))
+            /*
+                .then(() => this.cortexM.memory.readBlock(0x0, 100, pageSize))
                 .then(buf => {
                     console.log("buf: " + U.toHex(buf))
                 })
+                .then(() => {
+                    throw new Error("blah")   
+                })
+                */
         }
     }
 
@@ -92,8 +112,60 @@ namespace pxt.editor {
         return initPromise
     }
 
-    export function deployCoreAsync(resp: pxtc.CompileResult, isCli = false) {
-        let saveUF2Async = () => {
+    function pageAlignBlocks(blocks: UF2.Block[], pageSize: number) {
+        U.assert(pageSize % 256 == 0)
+        let res: UF2.Block[] = []
+        for (let i = 0; i < blocks.length;) {
+            let b0 = blocks[i]
+            let newbuf = new Uint8Array(pageSize)
+            let startPad = b0.targetAddr & (pageSize - 1)
+            let newAddr = b0.targetAddr - startPad
+            for (; i < blocks.length; ++i) {
+                let b = blocks[i]
+                if (b.targetAddr + b.payloadSize > newAddr + pageSize)
+                    break
+                U.memcpy(newbuf, b.targetAddr - newAddr, b.data, 0, b.payloadSize)
+            }
+            let bb = U.flatClone(b0)
+            bb.data = newbuf
+            bb.targetAddr = newAddr
+            bb.payloadSize = pageSize
+            res.push(bb)
+        }
+        return res
+    }
+
+    const flashPageBINquick = new Uint32Array([
+        0xbe00be00, // bkpt - LR is set to this
+        0x2480b5f0, 0x00e42300, 0x58cd58c2, 0xd10342aa, 0x42a33304, 0xbdf0d1f8,
+        0x4b162502, 0x509d4a16, 0x2d00591d, 0x24a1d0fc, 0x511800e4, 0x3cff3c09,
+        0x591e0025, 0xd0fc2e00, 0x509c2400, 0x2c00595c, 0x2401d0fc, 0x509c2580,
+        0x595c00ed, 0xd0fc2c00, 0x00ed2580, 0x002e2400, 0x5107590f, 0x2f00595f,
+        0x3404d0fc, 0xd1f742ac, 0x50992100, 0x2a00599a, 0xe7d0d0fc, 0x4001e000,
+        0x00000504,
+    ])
+
+    // doesn't check if data is already there - for timing
+    const flashPageBIN = new Uint32Array([
+        0xbe00be00, // bkpt - LR is set to this
+        0x2402b5f0, 0x4a174b16, 0x2480509c, 0x002500e4, 0x2e00591e, 0x24a1d0fc,
+        0x511800e4, 0x2c00595c, 0x2400d0fc, 0x2480509c, 0x002500e4, 0x2e00591e,
+        0x2401d0fc, 0x595c509c, 0xd0fc2c00, 0x00ed2580, 0x002e2400, 0x5107590f,
+        0x2f00595f, 0x3404d0fc, 0xd1f742ac, 0x50992100, 0x2a00599a, 0xbdf0d0fc,
+        0x4001e000, 0x00000504,
+    ])
+
+    let startTime = 0
+    function log(msg: string) {
+        let now = Date.now()
+        if (!startTime) startTime = now
+        now -= startTime
+        let ts = ("00000" + now).slice(-5)
+        console.log(`HID ${ts}: ${msg}`)
+    }
+
+    export function deployCoreAsync(resp: pxtc.CompileResult, isCli = false): Promise<void> {
+        let saveHexAsync = () => {
             if (isCli) {
                 return Promise.resolve()
             } else {
@@ -101,11 +173,89 @@ namespace pxt.editor {
             }
         }
 
-        if (noHID) return saveUF2Async()
+        if (noHID) return saveHexAsync()
+
+        let wrap: DAPWrapper
+
+        log("init")
+
+        let membase = 0x20000000
+        let loadAddr = membase
+        let dataAddr = 0x20002000
 
         return initAsync()
+            .then(w => {
+                wrap = w
+                log("reset")
+                return wrap.cortexM.reset(true)
+            })
             .then(() => {
-                // TODO
+                log("write code")
+                return wrap.cortexM.memory.writeBlock(loadAddr, flashPageBIN)
+            })
+            .then(() => {
+                log("convert")
+                // TODO this is seriously inefficient
+                let uf2 = UF2.newBlockFile()
+                UF2.writeHex(uf2, resp.outfiles[pxtc.BINARY_HEX].split(/\r?\n/))
+                let bytes = U.stringToUint8Array(UF2.serializeFile(uf2))
+                let parsed = UF2.parseFile(bytes)
+
+                let aligned = pageAlignBlocks(parsed, pageSize)
+
+
+                return Promise.mapSeries(U.range(aligned.length),
+                    i => {
+                        let b = aligned[i]
+                        if (b.targetAddr >= 0x10000000)
+                            return Promise.resolve()
+
+                        log("about to write at 0x" + b.targetAddr.toString(16))
+
+
+                        const cmd = wrap.cortexM.prepareCommand();
+
+                        cmd.halt();
+
+                        // Point the program counter to the start of the program
+                        cmd.writeCoreRegister(DapJS.CortexReg.PC, loadAddr + 4 + 1);
+                        cmd.writeCoreRegister(DapJS.CortexReg.LR, loadAddr + 1);
+                        cmd.writeCoreRegister(DapJS.CortexReg.SP, 0x20001000);
+
+                        cmd.writeCoreRegister(0, b.targetAddr);
+                        cmd.writeCoreRegister(1, dataAddr);
+
+
+                        let u32data = new Uint32Array(b.data.buffer) // assumes little endian
+                        return wrap.cortexM.memory.writeBlock(dataAddr, u32data)
+                            .then(() => {
+                                log("setregs")
+                                return cmd.go()
+                            })
+                            .then(() => {
+                                log("dbg en")
+                                // starts the program
+                                return wrap.cortexM.debug.enable()
+                            })
+                            .then(() => {
+                                log("wait")
+                                return wrap.cortexM.waitForHalt(500)
+                            })
+                            .then(() => {
+                                log("done block")
+                            })
+                    })
+                    .then(() => {
+                        log("flash done")
+                        return wrap.cortexM.reset(false)
+                    })
+            })
+            .catch(e => {
+                // if we failed to initalize, retry
+                if (noHID)
+                    return saveHexAsync()
+                else
+                    return Promise.reject(e)
             })
     }
 
