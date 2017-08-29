@@ -871,16 +871,14 @@ exports.CoreNames.set(3168 /* CortexM0p */, "Cortex-M0+");
 
 "use strict";
 
-function __export(m) {
-    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
-}
 Object.defineProperty(exports, "__esModule", { value: true });
 var cortex_1 = __webpack_require__(2);
 exports.CortexM = cortex_1.CortexM;
 var constants_1 = __webpack_require__(3);
 exports.CoreNames = constants_1.CoreNames;
 exports.ISANames = constants_1.ISANames;
-__export(__webpack_require__(9));
+var dap_1 = __webpack_require__(9);
+exports.DAP = dap_1.default;
 var FlashTarget_1 = __webpack_require__(12);
 exports.FlashTargets = FlashTarget_1.FlashTargets;
 exports.FlashTarget = FlashTarget_1.FlashTarget;

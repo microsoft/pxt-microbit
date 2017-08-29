@@ -3,6 +3,8 @@
 namespace pxt.editor {
     import UF2 = pxtc.UF2;
 
+    const pageSize = 1024;
+
     class DAPWrapper {
         cortexM: DapJS.CortexM
 
@@ -19,7 +21,7 @@ namespace pxt.editor {
                 pbuf.push(buf)
             }
 
-            function writeAsync(data:ArrayBuffer) {
+            function writeAsync(data: ArrayBuffer) {
                 return h.sendPacketAsync(new Uint8Array(data))
             }
 
@@ -31,9 +33,19 @@ namespace pxt.editor {
                 return h.disconnectAsync()
             }
         }
-        
+
         reconnectAsync(first: boolean) {
-            return Promise.resolve()
+            return this.cortexM.init()
+                .then(() => this.cortexM.memory.read32(0))
+                .then(buf => {
+                    console.log("at0: " + buf.toString(16))
+                })
+                .then(() => this.cortexM.halt())
+                .then(() => this.cortexM.waitForHalt())
+                .then(() => this.cortexM.memory.readBlock(0x20000000, 100, pageSize))
+                .then(buf => {
+                    console.log("buf: " + U.toHex(buf))
+                })
         }
     }
 
@@ -52,9 +64,6 @@ namespace pxt.editor {
     function initAsync() {
         if (initPromise)
             return initPromise
-
-
-        pxt.BrowserUtils.loadScriptAsync(pxt.webConfig.commitCdnUrl + "dapjs.js")
 
         let canHID = false
         if (U.isNodeJS) {
@@ -97,7 +106,7 @@ namespace pxt.editor {
         return initAsync()
             .then(() => {
                 // TODO
-             })
+            })
     }
 
     initExtensionsAsync = function (opts: pxt.editor.ExtensionOptions): Promise<pxt.editor.ExtensionResult> {
