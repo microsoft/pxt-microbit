@@ -179,9 +179,36 @@ namespace pxt.editor {
 
         log("init")
 
+        let logV = (msg: string) => { }
+        //let logV = log
+        
         let membase = 0x20000000
         let loadAddr = membase
         let dataAddr = 0x20002000
+
+        const runFlash = (b: UF2.Block, dataAddr: number) => {
+            const cmd = wrap.cortexM.prepareCommand();
+
+            cmd.halt();
+
+            cmd.writeCoreRegister(DapJS.CortexReg.PC, loadAddr + 4 + 1);
+            cmd.writeCoreRegister(DapJS.CortexReg.LR, loadAddr + 1);
+            cmd.writeCoreRegister(DapJS.CortexReg.SP, 0x20001000);
+
+            cmd.writeCoreRegister(0, b.targetAddr);
+            cmd.writeCoreRegister(1, dataAddr);
+
+            return Promise.resolve()
+                .then(() => {
+                    logV("setregs")
+                    return cmd.go()
+                })
+                .then(() => {
+                    logV("dbg en")
+                    // starts the program
+                    return wrap.cortexM.debug.enable()
+                })
+        }
 
         return initAsync()
             .then(w => {
@@ -210,39 +237,34 @@ namespace pxt.editor {
                         if (b.targetAddr >= 0x10000000)
                             return Promise.resolve()
 
-                        log("about to write at 0x" + b.targetAddr.toString(16))
+                        logV("about to write at 0x" + b.targetAddr.toString(16))
 
+                        let writeBl = Promise.resolve()
 
-                        const cmd = wrap.cortexM.prepareCommand();
+                        let thisAddr = (i & 1) ? dataAddr : dataAddr + pageSize
+                        let nextAddr = (i & 1) ? dataAddr + pageSize : dataAddr
 
-                        cmd.halt();
+                        if (i == 0) {
+                            let u32data = new Uint32Array(b.data.buffer) // assumes little endian
+                            writeBl = wrap.cortexM.memory.writeBlock(thisAddr, u32data)
+                        }
 
-                        // Point the program counter to the start of the program
-                        cmd.writeCoreRegister(DapJS.CortexReg.PC, loadAddr + 4 + 1);
-                        cmd.writeCoreRegister(DapJS.CortexReg.LR, loadAddr + 1);
-                        cmd.writeCoreRegister(DapJS.CortexReg.SP, 0x20001000);
-
-                        cmd.writeCoreRegister(0, b.targetAddr);
-                        cmd.writeCoreRegister(1, dataAddr);
-
-
-                        let u32data = new Uint32Array(b.data.buffer) // assumes little endian
-                        return wrap.cortexM.memory.writeBlock(dataAddr, u32data)
+                        return writeBl
+                            .then(() => runFlash(b, thisAddr))
                             .then(() => {
-                                log("setregs")
-                                return cmd.go()
+                                let next = aligned[i + 1]
+                                if (!next)
+                                    return Promise.resolve()
+                                logV("write next")
+                                let buf = new Uint32Array(next.data.buffer)
+                                return wrap.cortexM.memory.writeBlock(nextAddr, buf)
                             })
                             .then(() => {
-                                log("dbg en")
-                                // starts the program
-                                return wrap.cortexM.debug.enable()
-                            })
-                            .then(() => {
-                                log("wait")
+                                logV("wait")
                                 return wrap.cortexM.waitForHalt(500)
                             })
                             .then(() => {
-                                log("done block")
+                                logV("done block")
                             })
                     })
                     .then(() => {

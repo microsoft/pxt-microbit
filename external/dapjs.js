@@ -753,18 +753,15 @@ var CortexM = (function () {
                         _a.label = 3;
                     case 3: 
                     // Run the program and wait for halt
-                    //await this.resume();
-                    return [4 /*yield*/, this.debug.enable()];
+                    return [4 /*yield*/, this.resume()];
                     case 4:
                         // Run the program and wait for halt
-                        //await this.resume();
                         _a.sent();
                         return [4 /*yield*/, this.waitForHalt(constants_1.DEFAULT_RUNCODE_TIMEOUT)];
                     case 5:
                         _a.sent(); // timeout after 10s
-                        return [2 /*return*/, 0
-                            //return await this.readCoreRegister(CortexReg.R0);
-                        ];
+                        return [4 /*yield*/, this.readCoreRegister(0 /* R0 */)];
+                    case 6: return [2 /*return*/, _a.sent()];
                 }
             });
         });
