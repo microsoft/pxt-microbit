@@ -9,7 +9,7 @@ Hack the @boardname@ into the car!
 ### ~
 
 https://youtu.be/gH__3l_oDeM
-
+<br/>
 ![A toy RC car](/static/mb/projects/rc-car/rccar.jpg)
 
 ## Step 1: Remove the batteries!
