@@ -1,6 +1,6 @@
-# counter lesson
+# Counter lesson
 
-Learn how to create a counter with with on button pressed.
+Learn how to create a counter with with **on button** pressed.
 
 ## Topic
 
@@ -13,9 +13,9 @@ Variables
 * [quiz](/lessons/counter/quiz)
 * [quiz answers](/lessons/counter/quiz-answers)
 
-## Prior learning/place of lesson in scheme of work
+## Prior learning and the place of lesson in scheme of work
 
-Learn how to creating a **variable** to keep track of the current count. We will be learning how to create a counter app using a variable as well as simple commands, such as on button pressed, and show number.
+Learn how to create a **variable** to keep track of the current count. We will be learning how to create a counter app using a variable and simple commands, such as on button pressed, and show number.
 
 ## Documentation
 
