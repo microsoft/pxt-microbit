@@ -8,5 +8,6 @@
         "rootDir": ".",
         "newLine": "LF",
         "sourceMap": false
-    }
+    },
+    "prepend": ["../external/dapjs.js"]
 }

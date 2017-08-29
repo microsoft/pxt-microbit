@@ -28,8 +28,7 @@
         "driveName": "MICROBIT",
         "hexMimeType": "application/x-microbit-hex",
         "openocdScript": "source [find interface/cmsis-dap.cfg]; source [find target/nrf51.cfg]",
-        "upgrades": [
-            {
+        "upgrades": [{
                 "type": "package",
                 "map": {
                     "microbit": "core",
@@ -194,11 +193,12 @@
         "serviceId": "microbit"
     },
     "serial": {
-        "productFilter": "0x0204",
-        "vendorFilter": "0x0d28",
         "nameFilter": "^mbed Serial Port",
         "log": true,
-        "chromeExtension": "hjcflblhjoglmjjkecamiegdigfkgeni"
+        "chromeExtension": "hjcflblhjoglmjjkecamiegdigfkgeni",
+        "vendorId": "0x0d28",
+        "productId": "0x0204",
+        "rawHID": true
     },
     "appTheme": {
         "accentColor": "#5C005C",
@@ -234,8 +234,7 @@
         "appStoreID": "1092687276",
         "mobileSafariDownloadProtocol": "microbithex://?data",
         "extendEditor": true,
-        "docMenu": [
-            {
+        "docMenu": [{
                 "name": "Support",
                 "path": "https://support.microbit.org/"
             },
@@ -271,8 +270,7 @@
         ],
         "hasReferenceDocs": true,
         "usbDocs": "/device/usb",
-        "usbHelp": [
-            {
+        "usbHelp": [{
                 "name": "connection",
                 "os": "*",
                 "browser": "*",

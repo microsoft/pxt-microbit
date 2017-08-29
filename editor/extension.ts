@@ -3,10 +3,44 @@
 namespace pxt.editor {
     import UF2 = pxtc.UF2;
 
+    class DAPWrapper {
+        cortexM: DapJS.CortexM
+
+        constructor(h: HF2.PacketIO) {
+            let pbuf = new U.PromiseBuffer<Uint8Array>()
+            let dev = new DapJS.DAP({
+                write: writeAsync,
+                close: closeAsync,
+                read: readAsync
+            })
+            this.cortexM = new DapJS.CortexM(dev)
+
+            h.onData = buf => {
+                pbuf.push(buf)
+            }
+
+            function writeAsync(data:ArrayBuffer) {
+                return h.sendPacketAsync(new Uint8Array(data))
+            }
+
+            function readAsync() {
+                return pbuf.shiftAsync()
+            }
+
+            function closeAsync() {
+                return h.disconnectAsync()
+            }
+        }
+        
+        reconnectAsync(first: boolean) {
+            return Promise.resolve()
+        }
+    }
+
     function hf2Async() {
         return pxt.HF2.mkPacketIOAsync()
             .then(h => {
-                let w = new Ev3Wrapper(h)
+                let w = new DAPWrapper(h)
                 return w.reconnectAsync(true)
                     .then(() => w)
             })
@@ -14,7 +48,7 @@ namespace pxt.editor {
 
     let noHID = false
 
-    let initPromise: Promise<Ev3Wrapper>
+    let initPromise: Promise<DAPWrapper>
     function initAsync() {
         if (initPromise)
             return initPromise
@@ -61,9 +95,12 @@ namespace pxt.editor {
         if (noHID) return saveUF2Async()
 
         return initAsync()
+            .then(() => {
+                // TODO
+             })
     }
 
-    initExtensionsAsync = function(opts: pxt.editor.ExtensionOptions): Promise<pxt.editor.ExtensionResult> {
+    initExtensionsAsync = function (opts: pxt.editor.ExtensionOptions): Promise<pxt.editor.ExtensionResult> {
         pxt.debug('loading microbit target extensions...')
         const res: pxt.editor.ExtensionResult = {
             hexFileImporters: [{
@@ -75,16 +112,16 @@ namespace pxt.editor {
                     }, name: data.meta.name
                 })
             }, {
-                id: "td",
-                canImport: data => data.meta.cloudId == "microbit.co.uk" && data.meta.editor == "touchdevelop",
-                importAsync: (project, data) =>
-                    project.createProjectAsync({
-                        filesOverride: { "main.blocks": "", "main.ts": "  " },
-                        name: data.meta.name
-                    })
-                    .then(() => project.convertTouchDevelopToTypeScriptAsync(data.source))
-                    .then(text => project.overrideTypescriptFile(text))
-            }]
+                    id: "td",
+                    canImport: data => data.meta.cloudId == "microbit.co.uk" && data.meta.editor == "touchdevelop",
+                    importAsync: (project, data) =>
+                        project.createProjectAsync({
+                            filesOverride: { "main.blocks": "", "main.ts": "  " },
+                            name: data.meta.name
+                        })
+                            .then(() => project.convertTouchDevelopToTypeScriptAsync(data.source))
+                            .then(text => project.overrideTypescriptFile(text))
+                }]
         };
         pxt.commands.deployCoreAsync = deployCoreAsync;
         return Promise.resolve<pxt.editor.ExtensionResult>(res);
