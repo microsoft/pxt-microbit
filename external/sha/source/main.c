@@ -166,7 +166,7 @@ int Reset_Handler(uint32_t *dst, uint8_t *ptr, uint32_t pageSize,
   return 0;
 }
 
-#ifdef __arm__
+#if 0
 #define PAGE_SIZE 0x400
 #define SIZE_IN_WORDS (PAGE_SIZE / 4)
 
@@ -177,7 +177,7 @@ int Reset_Handler(uint32_t *dst, uint8_t *ptr, uint32_t pageSize,
       ;                                                                        \
   } while (0)
 
-extern "C" void overwriteFlashPage(uint32_t *to, uint32_t *from) {
+void overwriteFlashPage(uint32_t *to, uint32_t *from) {
   int same = 1;
   for (int i = 0; i <= (SIZE_IN_WORDS - 1); i++) {
     if (to[i] != from[i]) {
