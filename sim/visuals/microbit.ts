@@ -147,8 +147,8 @@ namespace pxsim.visuals {
         .sim-thermometer:focus,
         .sim-shake:focus,
         .sim-light-level-button:focus {
-            stroke: #4D90FE !important;
-            stroke-width: 3px !important;
+            stroke: #4D90FE;
+            stroke-width: 5px !important;
         }
         .no-drag {
             user-drag: none;
@@ -162,7 +162,14 @@ namespace pxsim.visuals {
     const MB_HIGHCONTRAST = `
 .sim-led {
     stroke: red;
-}    
+}
+*:focus .sim-button-outer,
+.sim-pin:focus,
+.sim-thermometer:focus,
+.sim-shake:focus,
+.sim-light-level-button:focus {
+    stroke: #10C8CD !important;
+}
     `
     const pins4onXs = [66.7, 79.1, 91.4, 103.7, 164.3, 176.6, 188.9, 201.3, 213.6, 275.2, 287.5, 299.8, 312.1, 324.5, 385.1, 397.4, 409.7, 422];
     const pins4onMids = pins4onXs.map(x => x + 5);
