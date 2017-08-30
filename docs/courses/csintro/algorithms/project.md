@@ -39,21 +39,21 @@ Sample fidget cube designs
 
 **Competency scores**: 4, 3, 2, 1
 
-## Inputs
+### Inputs
 
 **4 =** At least 4 different inputs are successfully implemented.<br/>
 **3 =** At least 3 different inputs are successfully implemented.<br/>
 **2 =** At least 2 different inputs are successfully implemented.<br/>
 **1 =** Fewer than 2 different inputs are successfully implemented.
 
-## Outputs
+### Outputs
 
 **4 =** At least 4 different outputs are successfully implemented.<br/>
 **3 =** At least 3 different outputs are successfully implemented.<br/>
 **2 =** At least 2 different outputs are successfully implemented.<br/>
 **1 =** Fewer than 2 different outputs are successfully implemented.
 
-## micro:bit program
+### micro:bit program
 
 **4 =** micro:bit program:<br/>
 `*` uses event handlers in a way that is integral to the program<br/>
@@ -63,7 +63,7 @@ Sample fidget cube designs
 **2 =** micro:bit program lacks 2 of the required elements<br/>
 **1 =** micro:bit program lacks all of the required elements.
 
-## Collaboration reflection
+### Collaboration reflection
 
 **4 =** Reflection piece includes:<br/>
 `*` brainstorming ideas<br/>

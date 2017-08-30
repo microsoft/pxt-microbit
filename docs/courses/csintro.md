@@ -8,7 +8,7 @@ This course takes approximately 14 weeks to complete, spending about 1 week on e
 
 ![Space race image](/static/courses/csintro.jpg)
 
-## ~ hint
+### ~ hint
 **Download it**
 
 The entire course is also available as a download. Choose any of these formats:
@@ -20,9 +20,9 @@ The entire course is also available as a download. Choose any of these formats:
 [![](/static/courses/csintro/icons/adobe-pdf-file-icon-24x24.png) **PDF** - Intro to CS with MakeCode for micro:bit](https://1drv.ms/b/s!AqsgsTyHBmRBgQ1Fjzm5y5wKG75M)
 
 [![](/static/courses/csintro/icons/apple-itunes-ibook-24x24.png) **iBooks** - Making with micro:bit](https://itunes.apple.com/us/book/making-with-micro-bit/id1255260221?mt=11)
-## ~
+### ~
 
-## Lesson structure
+### Lesson structure
 
 Each of the 12 lessons is structured in this format:
 * Topic Introduction
@@ -33,14 +33,14 @@ Each of the 12 lessons is structured in this format:
 * Assessment - A project rubric and guidance for grading the project.
 * Standards - A list of CSTA K-12 Computer Science Standards and/or concepts covered by this lesson.
 
-## Course contents
+### Course contents
 
 * [About](/courses/csintro/about)
 * [Introduction](/courses/csintro/introduction)
 * [References](/courses/csintro/references)
 * [Acknowledgements](/courses/csintro/acknowledgements)
 
-## Lessons
+### Lessons
 
 1. [Making](/courses/csintro/making)
 2. [Algorithms](/courses/csintro/algorithms) 

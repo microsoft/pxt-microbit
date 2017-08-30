@@ -129,7 +129,7 @@ input.onButtonPressed(Button.B, () => {
 })
 ```
 
-## Try it out!
+### Try it out!
 * Download the program to your micro:bit
 * Press button A to create a random pattern
 * Press button B to check and display the status of the specific LED
@@ -193,6 +193,6 @@ led.setBrightness(255)
 basic.showIcon(IconNames.Heart)
 ```
 
-## Try it out!
+### Try it out!
 
 What happens if adding 25 or subtracting 25 from the current brightness level would result in a sum or difference outside of the 0 to 255 brightness range? 

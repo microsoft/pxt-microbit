@@ -131,28 +131,28 @@ We have found that a "science fair" format works nicely, with students sitting a
 
 **Competency scores**: 4, 3, 2, 1
 
-## Code - Show what you know
+### Code - Show what you know
 
 **4 =** Code very effectively demonstrates the use of previous concept(s). All variable names are unique and clearly describe what information values the variables hold. Code is highly efficient.<br/>
 **3 =** Code effectively demonstrates the use of previous concept(s). Most variable names are unique and/or clearly describe what information values the variables hold. Code is mostly efficient.<br/>
 **2 =** Code somewhat effectively demonstrates the use of previous concept(s). Only some variable names are unique and/or clearly describe what information values the variables hold. Code is somewhat efficient.<br/>
 **1 =** Code demonstrates the use of previous concept(s), yet is not effective. Few or no variable names are unique and/or clearly describe what information values the variables hold. Code is not efficient.
 
-## Code - Show something new
+### Code - Show something new
 
 **4 =** Code very effectively demonstrates the use of new concept(s). All variable names are unique and clearly describe what information values the variables hold. Code is highly efficient.<br/>
 **3 =** Code effectively demonstrates the use of new concept(s). Most variable names are unique and/or clearly describe what information values the variables hold. Code is mostly efficient.<br/>
 **2 =** Code somewhat effectively demonstrates the use of new concept(s). Only some variable names are unique and/or clearly describe what information values the variables hold. Code is somewhat efficient.<br/>
 **1 =** Code demonstrates the use of new concept(s), yet is not effective. Few or no variable names are unique and/or clearly describe what information values the variables hold. Code is not efficient.
 
-## Variable names
+### Variable names
 
 **4 =** All variable names are unique and clearly describe what information values the variables hold.<br/>
 **3 =** Most variable names are unique and/or clearly describe what information values the variables hold.<br/>
 **2 =** Only some variable names are unique and/or clearly describe what information values the variables hold.<br/>
 **1 =** Few or no variable names are unique and/or clearly describe what information values the variables hold.<br/>
 
-## Maker component
+### Maker component
 
 **4 =** Tangible component is tightly integrated with the micro:bit and each relies heavily on the other to make the project complete. <br/>
 **3 =** Tangible component is somewhat integrated with the micro:bit but is not essential.<br/>
@@ -160,14 +160,14 @@ We have found that a "science fair" format works nicely, with students sitting a
 **1 =** No tangible component.
 
 
-## Work Logs
+### Work Logs
 
 **4 =** All work logs submitted on time, and accurate.<br/>
 **3 =** Two late or missing work log and/or work logs not accurate nor sufficiently detailed.<br/>
 **2 =** Four late or missing work logs and/or work logs not accurate nor sufficiently detailed.<br/>
 **1 =** More than four late or missing work logs and/or not accurate nor sufficiently detailed.<br/>
 
-## Final narrative
+### Final narrative
 
 **4 =** Narrative piece is thoughtful and detailed and contains all required elements.<br/>
 **3 =** Reflection piece is mostly thoughtful and/or lacks 1 of the required elements.<br/>

@@ -63,25 +63,25 @@ Each of the 12 lessons is comprised of the following parts:
 * Assessment ̶- A project rubric and guidance for grading the project.
 * Standards ̶ -A list of [CSTA K-12 Computer Science Standards](https://www.csteachers.org/?page=CSTA_Standards) and/or concepts covered by this lesson.
 
-## Topic introduction
+### Topic introduction
 
 The introduction to each lesson will tell you what learning objectives are covered in the lesson, and presents an overview of that lesson's topic. Some lessons have a specific activity that can help introduce the topic to students in a fun way.
 
-## Unplugged activity (30 min)
+### Unplugged activity (30 min)
 Each lesson starts with an unplugged activity, which doesn't require a computer or a micro:bit. It's a chance to get students up and moving around, and is designed to be a fun introduction to the computer science concept covered in that lesson. Unplugged activities are an important way to demonstrate new concepts in a tangible, often kinesthetic, way. Since so many computer-based topics are abstract, unplugged activities are very effective at fostering understanding that students will then demonstrate in later activities.
 
-## micro:bit activity (45–60 min)
+### micro:bit activity (45–60 min)
 Each lesson also contains a micro:bit activity, which we informally refer to as a "birdhouse" activity, after the innumerable wooden birdhouses so many of us made in wood shop as a way to master basic skills. Each lesson's micro:bit activity is an example that walks students step-by-step through building a project that demonstrates that lesson's topic. By the time students finish the activity, they will have written code that they can use in a different project of their own design.
 
 Some students will finish the activity more quickly than others. Those students can then be a helpful resource for their classmates, or they can challenge themselves by modifying, or "modding" the activity to do something different. We have provided examples and suggestions at the end of many of these activities, and feel free to suggest your own (or encourage your students to come up with their own ideas!)
 
-## Project (60–120 min)
+### Project (60–120 min)
 After presenting the concept in an unplugged fashion, then walking students through a demonstration activity, it is time to challenge students to use those skills to create something that is creative and original. Students will be working on their projects in a "collaboratively independent" way, which means each student is responsible for turning in his or her own project, but are encouraged to work together and help each other while doing so. Some form of reflection is an important part of documenting the learning that has taken place, and it's a great idea to share out the final projects and reflections, either at an event or on a blog.
 
 There are also a series of Project Mods that students can do to extend the project they have created. These are useful for students who already have some experience with coding or who want an extra challenge.
 
-## Assessment
+### Assessment
 A rubric is provided for each project that can be customized according to what students are being asked to demonstrate. For the Activities we just expect students to do them, so those are fairly simple to check off. For the Projects, however, there is often a range of grades based on how closely the project meets the specifications of the assignment.
 
-## Standards
+### Standards
 Where applicable, we have mapped each of the lessons to the [Computer Science Teachers Association (CSTA) K-12 Standards](https://www.csteachers.org/?page=CSTA_Standards), which are US nationally recognized standards for computer science education.
