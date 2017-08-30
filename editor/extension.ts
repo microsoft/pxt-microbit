@@ -296,17 +296,43 @@ namespace pxt.editor {
     const dataAddr = 0x20002000
     const stackAddr = 0x20001000
 
+    export const bufferConcat = (bufs: Uint8Array[]) => {
+        let len = 0;
+        for (const b of bufs) {
+            len += b.length;
+        }
+        const r = new Uint8Array(len);
+        len = 0;
+        for (const b of bufs) {
+            r.set(b, len);
+            len += b.length;
+        }
+        return r;
+    };
+
+
     function getFlashChecksumsAsync(wrap: DAPWrapper) {
-        U.assert(computeSHA.length == 0x1d4 / 4 + 64)
-
+        log("getting existing flash checksums")
         let pages = numPages
-
         return wrap.cortexM.runCode(computeChecksums2, loadAddr, loadAddr + 1, 0xffffffff, stackAddr, true,
             dataAddr, 0, pageSize, pages)
             .then(() => wrap.cortexM.memory.readBlock(dataAddr, pages * 2, pageSize))
-            .then(buf => {
-                console.log(U.toHex(buf))
-            })
+    }
+
+    function onlyChanged(blocks: UF2.Block[], checksums: Uint8Array) {
+        return blocks.filter(b => {
+            let idx = b.targetAddr / pageSize
+            U.assert((idx | 0) == idx)
+            U.assert(b.data.length == pageSize)
+            if (idx * 8 + 8 > checksums.length)
+                return true // out of range?
+            let c0 = HF2.read32(checksums, idx * 8)
+            let c1 = HF2.read32(checksums, idx * 8 + 4)
+            let ch = murmur3_core(b.data)
+            if (c0 == ch[0] && c1 == ch[1])
+                return false
+            return true
+        })
     }
 
     export function deployCoreAsync(resp: pxtc.CompileResult, isCli = false): Promise<void> {
@@ -353,6 +379,8 @@ namespace pxt.editor {
                 })
         }
 
+        let checksums: Uint8Array
+
         return initAsync()
             .then(w => {
                 wrap = w
@@ -360,7 +388,8 @@ namespace pxt.editor {
                 return wrap.cortexM.reset(true)
             })
             .then(() => getFlashChecksumsAsync(wrap))
-            .then(() => {
+            .then(buf => {
+                checksums = buf
                 log("write code")
                 return wrap.cortexM.memory.writeBlock(loadAddr, flashPageBIN)
             })
@@ -373,11 +402,10 @@ namespace pxt.editor {
                 let parsed = UF2.parseFile(bytes)
 
                 let aligned = pageAlignBlocks(parsed, pageSize)
-
-                log("check")
-                let sums2 = aligned.map(b => murmur3_core(b.data))
-                console.log(sums2)
-                log("sha done")
+                log(`initial: ${aligned.length} pages`)
+                aligned = onlyChanged(aligned, checksums)
+                console.log(aligned)
+                log(`incremental: ${aligned.length} pages`)
 
                 return Promise.mapSeries(U.range(aligned.length),
                     i => {

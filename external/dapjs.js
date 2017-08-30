@@ -1520,58 +1520,30 @@ var Memory = (function () {
      */
     Memory.prototype.readBlock = function (addr, words, pageSize) {
         return __awaiter(this, void 0, void 0, function () {
-            var _this = this;
-            var funs, bufs, end, ptr, _loop_1, _i, funs_1, f, result;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var bufs, end, ptr, nextptr, len, _a, _b, result;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        funs = [function () { return __awaiter(_this, void 0, void 0, function () { return __generator(this, function (_a) {
-                                return [2 /*return*/, Promise.resolve()];
-                            }); }); }];
                         bufs = [];
                         end = addr + words * 4;
                         ptr = addr;
-                        _loop_1 = function () {
-                            var nextptr = ptr + pageSize;
-                            if (ptr === addr) {
-                                nextptr &= ~(pageSize - 1);
-                            }
-                            var len = Math.min(nextptr - ptr, end - ptr);
-                            var ptr0 = ptr;
-                            util_1.assert((len & 3) === 0);
-                            funs.push(function () { return __awaiter(_this, void 0, void 0, function () {
-                                var _a, _b;
-                                return __generator(this, function (_c) {
-                                    switch (_c.label) {
-                                        case 0:
-                                            _b = (_a = bufs).push;
-                                            return [4 /*yield*/, this.readBlockCore(ptr0, len >> 2)];
-                                        case 1:
-                                            _b.apply(_a, [_c.sent()]);
-                                            return [2 /*return*/];
-                                    }
-                                });
-                            }); });
-                            ptr = nextptr;
-                        };
-                        while (ptr < end) {
-                            _loop_1();
-                        }
-                        _i = 0, funs_1 = funs;
-                        _a.label = 1;
+                        _c.label = 1;
                     case 1:
-                        if (!(_i < funs_1.length)) return [3 /*break*/, 4];
-                        f = funs_1[_i];
-                        return [4 /*yield*/, f()];
+                        if (!(ptr < end)) return [3 /*break*/, 3];
+                        nextptr = ptr + pageSize;
+                        if (ptr === addr) {
+                            nextptr &= ~(pageSize - 1);
+                        }
+                        len = Math.min(nextptr - ptr, end - ptr);
+                        util_1.assert((len & 3) === 0);
+                        _b = (_a = bufs).push;
+                        return [4 /*yield*/, this.readBlockCore(ptr, len >> 2)];
                     case 2:
-                        _a.sent();
-                        _a.label = 3;
-                    case 3:
-                        _i++;
+                        _b.apply(_a, [_c.sent()]);
+                        ptr = nextptr;
                         return [3 /*break*/, 1];
-                    case 4: return [4 /*yield*/, util_1.bufferConcat(bufs)];
-                    case 5:
-                        result = _a.sent();
+                    case 3:
+                        result = util_1.bufferConcat(bufs);
                         return [2 /*return*/, result.subarray(0, words * 4)];
                 }
             });
@@ -1625,7 +1597,7 @@ var Memory = (function () {
                     case 4:
                         i++;
                         return [3 /*break*/, 2];
-                    case 5: return [2 /*return*/, util_1.bufferConcat(blocks)];
+                    case 5: return [2 /*return*/, util_1.bufferConcat(blocks).subarray(0, words * 4)];
                 }
             });
         });
