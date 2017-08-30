@@ -59,8 +59,9 @@ static inline void sha256round(uint32_t *hs, uint32_t *w) {
   hs[7] += h;
 }
 
-__attribute__((always_inline)) static inline void
-sha256block(uint8_t *buf, uint32_t len, uint32_t *dst) {
+#define INLINE __attribute__((always_inline)) static inline
+
+INLINE void sha256block(uint8_t *buf, uint32_t len, uint32_t *dst) {
   uint32_t hs[] = {0x6a09e667, 0xbb67ae85, 0x3c6ef372, 0xa54ff53a,
                    0x510e527f, 0x9b05688c, 0x1f83d9ab, 0x5be0cd19};
 
@@ -79,18 +80,66 @@ sha256block(uint8_t *buf, uint32_t len, uint32_t *dst) {
   dst[1] = hs[1];
 }
 
+#define POLYNOMIAL 0xEDB88320
+
+INLINE void makeCRC32tab(uint32_t *table) {
+  for (uint32_t b = 0; b < 256; ++b) {
+    uint32_t r = b;
+    for (uint32_t j = 0; j < 8; ++j) {
+      if (r & 1)
+        r = (r >> 1) ^ POLYNOMIAL;
+      else
+        r = (r >> 1);
+    }
+    table[b] = r;
+  }
+}
+
+INLINE uint32_t crc(const uint8_t *p, uint32_t len, uint32_t *crcTable) {
+  uint32_t crc = ~0U;
+  for (uint32_t i = 0; i < len; ++i)
+    crc = crcTable[*p++ ^ (crc & 0xff)] ^ (crc >> 8);
+  return (~crc);
+}
+
+INLINE uint32_t murmur3_core(const uint8_t *data, uint32_t len) {
+  uint32_t h = 0x2F9BE6CC;
+  const uint32_t *data32 = (const uint32_t *)data;
+  uint32_t i = len >> 2;
+  do {
+    uint32_t k = *data32++;
+    k *= 0xcc9e2d51;
+    k = (k << 15) | (k >> 17);
+    k *= 0x1b873593;
+    h ^= k;
+    h = (h << 13) | (h >> 19);
+    h = (h * 5) + 0xe6546b64;
+  } while (--i);
+  return h;
+}
+
 int Reset_Handler(uint32_t *dst, uint8_t *ptr, uint32_t pageSize,
                   uint32_t numPages) {
+  uint32_t crcTable[256];
+  makeCRC32tab(crcTable);
+
   for (uint32_t i = 0; i < numPages; ++i) {
-    sha256block(ptr, pageSize, dst);
+#if 0
+sha256block(ptr, pageSize, dst);
+#else
+    dst[0] = crc(ptr, pageSize, crcTable);
+    dst[1] = murmur3_core(ptr, pageSize);
+#endif
     dst += 2;
     ptr += pageSize;
   }
+  #ifdef __arm__
   __asm__("bkpt 42");
+  #endif
   return 0;
 }
 
-#if 0
+#ifndef __arm__
 #define PS 1024
 #define NP 10
 
@@ -98,17 +147,19 @@ int Reset_Handler(uint32_t *dst, uint8_t *ptr, uint32_t pageSize,
 #include <string.h>
 
 int main() {
+
   uint8_t buf[NP * PS];
   uint32_t sums[NP * 2];
   memset(buf, 0, sizeof(buf));
   for (int i = 0; i < PS; ++i)
-  buf[i]=i;
+    buf[i] = i;
   for (int i = 0; i < PS; ++i)
-  buf[i+PS]=108;
+    buf[i + PS] = 108;
   Reset_Handler(sums, buf, PS, NP);
-  for (int i  = 0; i < NP; ++i) {
-    printf("%08x %08x\n", sums[i*2],sums[i*2+1]);
+  for (int i = 0; i < NP; ++i) {
+    printf("%08x %08x\n", sums[i * 2], sums[i * 2 + 1]);
   }
+
   return 0;
 }
 #endif

@@ -1,10 +1,69 @@
 /// <reference path="../node_modules/pxt-core/built/pxteditor.d.ts" />
 
+interface Math {
+    imul(x: number, y: number): number;
+}
 namespace pxt.editor {
     import UF2 = pxtc.UF2;
 
     const pageSize = 1024;
     const numPages = 256;
+
+    function makeCRC32tab() {
+        let tab: number[] = []
+        for (let b = 0; b < 256; ++b) {
+            let r = b;
+            for (let j = 0; j < 8; ++j) {
+                if (r & 1)
+                    r = (r >>> 1) ^ 0xEDB88320;
+                else
+                    r = (r >>> 1);
+            }
+            tab.push(r >>> 0)
+        }
+        return new Uint32Array(tab)
+    }
+    let crcTab: Uint32Array
+    function crc32(data: Uint8Array) {
+        if (!crcTab) crcTab = makeCRC32tab()
+        let crc = ~0;
+        for (let i = 0; i < data.length; ++i)
+            crc = (crcTab[data[i] ^ (crc & 0xff)] ^ (crc >>> 8)) >>> 0;
+        return (~crc) >>> 0;
+    }
+
+    function murmur3_core(data: Uint8Array) {
+
+        let h = 0x2F9BE6CC;
+        for (let i = 0; i < data.length; i += 4) {
+            let k = HF2.read32(data, i) >>> 0
+            k = Math.imul(k, 0xcc9e2d51);
+            k = (k << 15) | (k >>> 17);
+            k = Math.imul(k, 0x1b873593);
+            h ^= k;
+            h = (h << 13) | (h >>> 19);
+            h = (Math.imul(h, 5) + 0xe6546b64) >>> 0;
+        }
+        return h;
+    }
+
+    export function getChecksum(data: Uint8Array) {
+        function h(n: number) {
+            return "0x" + ("000000000" + (n >>> 0).toString(16)).slice(-8)
+        }
+        return h(crc32(data)) + ", " + h(murmur3_core(data))
+    }
+
+    export function testCheck() {
+        let b = new Uint8Array(1024)
+        console.log("zero: " + getChecksum(b))
+        for (let i = 0; i < b.length; ++i)
+            b[i] = i
+        console.log("incr: " + getChecksum(b))
+        for (let i = 0; i < b.length; ++i)
+            b[i] = 108
+        console.log("108: " + getChecksum(b))
+    }
 
     class DAPWrapper {
         cortexM: DapJS.CortexM
@@ -156,6 +215,20 @@ namespace pxt.editor {
         0x4001e000, 0x00000504,
     ])
 
+    // void computeHashes(uint32_t *dst, uint8_t *ptr, uint32_t pageSize, uint32_t numPages)
+    // requires just over 1k of stack!
+    const computeChecksums = new Uint32Array([
+        0x4c2bb5f0, 0x44a52580, 0x468c9201, 0x4e292200, 0x006d9303, 0x21080013,
+        0x2401001f, 0x40e34027, 0xd0002f00, 0x39014073, 0xd1f52900, 0xac040097,
+        0x513b3201, 0xd1ed42aa, 0x9b01000e, 0x9302089b, 0x429e9b03, 0x4661d02f,
+        0x9b012201, 0x449c000c, 0xe00d4252, 0x782325ff, 0x406b4015, 0x3514adff,
+        0x18eb009b, 0x0a124d14, 0x681b195b, 0x405a3401, 0xd1ef45a4, 0x271343d2,
+        0x4c109d02, 0x4b106002, 0x3d01c904, 0x2311435a, 0x4b0e41da, 0x405c4353,
+        0x230541fc, 0x4b0c435c, 0x2d0018e4, 0x6044d1ef, 0x30083601, 0xbe2ae7cc,
+        0x4b082000, 0xbdf0449d, 0xfffffbec, 0xedb88320, 0xfffffc00, 0x2f9be6cc,
+        0xcc9e2d51, 0x1b873593, 0xe6546b64, 0x00000414,
+    ])
+
 
     // void computeHashes(uint32_t *dst, uint8_t *ptr, uint32_t pageSize, uint32_t numPages)
     const computeSHA = new Uint32Array([
@@ -212,8 +285,7 @@ namespace pxt.editor {
 
         let pages = numPages
 
-        // TODO only compute for pages in hex file
-        return wrap.cortexM.runCode(computeSHA, loadAddr, loadAddr + 1, 0xffffffff, stackAddr, true,
+        return wrap.cortexM.runCode(computeChecksums, loadAddr, loadAddr + 1, 0xffffffff, stackAddr, true,
             dataAddr, 0, pageSize, pages)
             .then(() => wrap.cortexM.memory.readBlock(dataAddr, pages * 2, pageSize))
             .then(buf => {
@@ -286,10 +358,10 @@ namespace pxt.editor {
 
                 let aligned = pageAlignBlocks(parsed, pageSize)
 
-                log("sha")
-                // this OTOH is quite quick (10ms)
-                let sums = aligned.map(b => pxtc.BrowserImpl.sha256block(b.data)[0])
-                console.log(sums)
+                log("check")
+                let sums1 = aligned.map(b => crc32(b.data))
+                let sums2 = aligned.map(b => murmur3_core(b.data))
+                console.log(sums1, sums2)
                 log("sha done")
 
                 return Promise.mapSeries(U.range(aligned.length),
@@ -344,6 +416,18 @@ namespace pxt.editor {
 
     initExtensionsAsync = function (opts: pxt.editor.ExtensionOptions): Promise<pxt.editor.ExtensionResult> {
         pxt.debug('loading microbit target extensions...')
+
+        if (!Math.imul)
+            Math.imul = (a, b) => {
+                var ah = (a >>> 16) & 0xffff;
+                var al = a & 0xffff;
+                var bh = (b >>> 16) & 0xffff;
+                var bl = b & 0xffff;
+                // the shift by 0 fixes the sign on the high part
+                // the final |0 converts the unsigned value into a signed value
+                return ((al * bl) + (((ah * bl + al * bh) << 16) >>> 0) | 0);
+            };
+
         const res: pxt.editor.ExtensionResult = {
             hexFileImporters: [{
                 id: "blockly",
