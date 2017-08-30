@@ -33,7 +33,7 @@ Each of the 12 lessons is structured in this format:
 * Assessment - A project rubric and guidance for grading the project.
 * Standards - A list of CSTA K-12 Computer Science Standards and/or concepts covered by this lesson.
 
-### Course contents
+## Course contents
 
 * [About](/courses/csintro/about)
 * [Introduction](/courses/csintro/introduction)
