@@ -118,9 +118,9 @@ INLINE uint32_t murmur3_core(const uint8_t *data, uint32_t len) {
   return h;
 }
 
-INLINE void murmur3_core_2(const uint8_t *data, uint32_t len,
-                               uint32_t *dst) {
-  // compute two hashes with different seeds in parallel, hopefully reducing collisions
+INLINE void murmur3_core_2(const uint8_t *data, uint32_t len, uint32_t *dst) {
+  // compute two hashes with different seeds in parallel, hopefully reducing
+  // collisions
   uint32_t h0 = 0x2F9BE6CC;
   uint32_t h1 = 0x1EC3A6C8;
   const uint32_t *data32 = (const uint32_t *)data;
@@ -165,6 +165,54 @@ int Reset_Handler(uint32_t *dst, uint8_t *ptr, uint32_t pageSize,
 #endif
   return 0;
 }
+
+#ifdef __arm__
+#define PAGE_SIZE 0x400
+#define SIZE_IN_WORDS (PAGE_SIZE / 4)
+
+#define setConfig(v)                                                           \
+  do {                                                                         \
+    NRF_NVMC->CONFIG = v;                                                      \
+    while (NRF_NVMC->READY == NVMC_READY_READY_Busy)                           \
+      ;                                                                        \
+  } while (0)
+
+extern "C" void overwriteFlashPage(uint32_t *to, uint32_t *from) {
+  int same = 1;
+  for (int i = 0; i <= (SIZE_IN_WORDS - 1); i++) {
+    if (to[i] != from[i]) {
+      same = 0;
+      break;
+    }
+  }
+  if (same)
+    return;
+
+  // Turn on flash erase enable and wait until the NVMC is ready:
+  setConfig(NVMC_CONFIG_WEN_Een << NVMC_CONFIG_WEN_Pos);
+
+  // Erase page:
+  NRF_NVMC->ERASEPAGE = (uint32_t)to;
+  while (NRF_NVMC->READY == NVMC_READY_READY_Busy)
+    ;
+
+  // Turn off flash erase enable and wait until the NVMC is ready:
+  setConfig(NVMC_CONFIG_WEN_Ren << NVMC_CONFIG_WEN_Pos);
+
+  // Turn on flash write enable and wait until the NVMC is ready:
+  setConfig(NVMC_CONFIG_WEN_Wen << NVMC_CONFIG_WEN_Pos);
+
+  for (int i = 0; i <= (SIZE_IN_WORDS - 1); i++) {
+    *(to + i) = *(from + i);
+    while (NRF_NVMC->READY == NVMC_READY_READY_Busy)
+      ;
+  }
+
+  // Turn off flash write enable and wait until the NVMC is ready:
+  setConfig(NVMC_CONFIG_WEN_Ren << NVMC_CONFIG_WEN_Pos);
+}
+
+#endif
 
 #ifndef __arm__
 #define PS 1024
