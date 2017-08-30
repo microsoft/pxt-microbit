@@ -118,6 +118,31 @@ INLINE uint32_t murmur3_core(const uint8_t *data, uint32_t len) {
   return h;
 }
 
+INLINE void murmur3_core_2(const uint8_t *data, uint32_t len,
+                               uint32_t *dst) {
+  // compute two hashes with different seeds in parallel, hopefully reducing collisions
+  uint32_t h0 = 0x2F9BE6CC;
+  uint32_t h1 = 0x1EC3A6C8;
+  const uint32_t *data32 = (const uint32_t *)data;
+  uint32_t i = len >> 2;
+  do {
+    uint32_t k = *data32++;
+    k *= 0xcc9e2d51;
+    k = (k << 15) | (k >> 17);
+    k *= 0x1b873593;
+
+    h0 ^= k;
+    h1 ^= k;
+    h0 = (h0 << 13) | (h0 >> 19);
+    h1 = (h1 << 13) | (h1 >> 19);
+    h0 = (h0 * 5) + 0xe6546b64;
+    h1 = (h1 * 5) + 0xe6546b64;
+  } while (--i);
+
+  dst[0] = h0;
+  dst[1] = h1;
+}
+
 int Reset_Handler(uint32_t *dst, uint8_t *ptr, uint32_t pageSize,
                   uint32_t numPages) {
   uint32_t crcTable[256];
@@ -125,17 +150,19 @@ int Reset_Handler(uint32_t *dst, uint8_t *ptr, uint32_t pageSize,
 
   for (uint32_t i = 0; i < numPages; ++i) {
 #if 0
-sha256block(ptr, pageSize, dst);
-#else
+    sha256block(ptr, pageSize, dst);
+#elif 0
     dst[0] = crc(ptr, pageSize, crcTable);
     dst[1] = murmur3_core(ptr, pageSize);
+#else
+    murmur3_core_2(ptr, pageSize, dst);
 #endif
     dst += 2;
     ptr += pageSize;
   }
-  #ifdef __arm__
+#ifdef __arm__
   __asm__("bkpt 42");
-  #endif
+#endif
   return 0;
 }
 

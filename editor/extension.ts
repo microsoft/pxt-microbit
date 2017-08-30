@@ -33,25 +33,31 @@ namespace pxt.editor {
     }
 
     function murmur3_core(data: Uint8Array) {
+        let h0 = 0x2F9BE6CC;
+        let h1 = 0x1EC3A6C8;
 
-        let h = 0x2F9BE6CC;
         for (let i = 0; i < data.length; i += 4) {
             let k = HF2.read32(data, i) >>> 0
             k = Math.imul(k, 0xcc9e2d51);
             k = (k << 15) | (k >>> 17);
             k = Math.imul(k, 0x1b873593);
-            h ^= k;
-            h = (h << 13) | (h >>> 19);
-            h = (Math.imul(h, 5) + 0xe6546b64) >>> 0;
+
+            h0 ^= k;
+            h1 ^= k;
+            h0 = (h0 << 13) | (h0 >>> 19);
+            h1 = (h1 << 13) | (h1 >>> 19);
+            h0 = (Math.imul(h0, 5) + 0xe6546b64) >>> 0;
+            h1 = (Math.imul(h1, 5) + 0xe6546b64) >>> 0;
         }
-        return h;
+        return [h0, h1]
     }
 
     export function getChecksum(data: Uint8Array) {
         function h(n: number) {
             return "0x" + ("000000000" + (n >>> 0).toString(16)).slice(-8)
         }
-        return h(crc32(data)) + ", " + h(murmur3_core(data))
+        let c = murmur3_core(data)
+        return h(c[0]) + ", " + h(c[1])
     }
 
     export function testCheck() {
@@ -216,6 +222,7 @@ namespace pxt.editor {
     ])
 
     // void computeHashes(uint32_t *dst, uint8_t *ptr, uint32_t pageSize, uint32_t numPages)
+
     // requires just over 1k of stack!
     const computeChecksums = new Uint32Array([
         0x4c2bb5f0, 0x44a52580, 0x468c9201, 0x4e292200, 0x006d9303, 0x21080013,
@@ -229,8 +236,17 @@ namespace pxt.editor {
         0xcc9e2d51, 0x1b873593, 0xe6546b64, 0x00000414,
     ])
 
+    const computeChecksums2 = new Uint32Array([
+        0x4c27b5f0, 0x44a52680, 0x22009201, 0x91004f25, 0x00769303, 0x24080013,
+        0x25010019, 0x40eb4029, 0xd0002900, 0x3c01407b, 0xd1f52c00, 0x468c0091,
+        0xa9044665, 0x506b3201, 0xd1eb42b2, 0x089b9b01, 0x23139302, 0x9b03469c,
+        0xd104429c, 0x2000be2a, 0x449d4b15, 0x9f00bdf0, 0x4d149e02, 0x49154a14,
+        0x3e01cf08, 0x2111434b, 0x491341cb, 0x405a434b, 0x4663405d, 0x230541da,
+        0x4b10435a, 0x466318d2, 0x230541dd, 0x4b0d435d, 0x2e0018ed, 0x6002d1e7,
+        0x9a009b01, 0x18d36045, 0x93003008, 0xe7d23401, 0xfffffbec, 0xedb88320,
+        0x00000414, 0x1ec3a6c8, 0x2f9be6cc, 0xcc9e2d51, 0x1b873593, 0xe6546b64,
+    ])
 
-    // void computeHashes(uint32_t *dst, uint8_t *ptr, uint32_t pageSize, uint32_t numPages)
     const computeSHA = new Uint32Array([
         0xb0d3b5f0, 0x23009311, 0x91069005, 0x93079210, 0x9a119b07, 0xd1004293,
         0x9b06e0c6, 0x4b649304, 0x4b64930d, 0x4b64930c, 0x4b64930b, 0x4b64930a,
@@ -285,7 +301,7 @@ namespace pxt.editor {
 
         let pages = numPages
 
-        return wrap.cortexM.runCode(computeChecksums, loadAddr, loadAddr + 1, 0xffffffff, stackAddr, true,
+        return wrap.cortexM.runCode(computeChecksums2, loadAddr, loadAddr + 1, 0xffffffff, stackAddr, true,
             dataAddr, 0, pageSize, pages)
             .then(() => wrap.cortexM.memory.readBlock(dataAddr, pages * 2, pageSize))
             .then(buf => {
@@ -359,9 +375,8 @@ namespace pxt.editor {
                 let aligned = pageAlignBlocks(parsed, pageSize)
 
                 log("check")
-                let sums1 = aligned.map(b => crc32(b.data))
                 let sums2 = aligned.map(b => murmur3_core(b.data))
-                console.log(sums1, sums2)
+                console.log(sums2)
                 log("sha done")
 
                 return Promise.mapSeries(U.range(aligned.length),
