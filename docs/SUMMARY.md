@@ -306,3 +306,4 @@
      * [Servo](/device/servo)
      * [Simulator](/device/simulator)
      * [Usb](/device/usb)
+     * [Flashing via HID (CMSIS-DAP)](/hidflash)

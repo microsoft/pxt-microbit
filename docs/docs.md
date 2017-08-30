@@ -29,4 +29,5 @@
 
 * [Command Line Interface](/cli)
 * Learn about [packages](/packages)
+* [Flashing via HID (CMSIS-DAP)](/hidflash)
 
