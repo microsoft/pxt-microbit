@@ -73,6 +73,8 @@ Now that the virtual CoinA and CoinB have been virtually flipped, we need to com
 * Drag the 'if...then...else' block into the 'on shake' block under the 'set' variable blocks
 
 ```blocks
+let CoinBHeads = false
+let CoinAHeads = false
 input.onGesture(Gesture.Shake, () => {
     CoinAHeads = Math.randomBoolean()
     CoinBHeads = Math.randomBoolean()

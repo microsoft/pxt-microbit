@@ -23,145 +23,145 @@ https://youtu.be/VmD-dcZZQFc
 ```blocks
 input.onButtonPressed(Button.B, () => {
     if (128 > input.lightLevel() && 0 < input.lightLevel() && input.temperature() > 22) {
-        basic.showAnimation(`
+        basic.showLeds(`
             . # . # .
             # . . . #
             . . . . .
             . . . . .
             . . . . .
-            `, 500)
-basic.showAnimation(`
+            `)
+basic.showLeds(`
             . # # # .
             # . . . #
             . . . . .
             . . . . .
             . . . . .
-            `, 500)
-basic.showAnimation(`
+            `)
+basic.showLeds(`
             . # # # .
             # . . . #
             . # . # .
             . . . . .
             . . . . .
-            `, 500)
-basic.showAnimation(`
+            `)
+basic.showLeds(`
             . # # # .
             # . . . #
             . # # # .
             . . . . .
             . . . . .
-            `, 500)
-basic.showAnimation(`
+            `)
+basic.showLeds(`
             . . . . .
             . # . # .
             . . . . .
             . # # # .
             # . . . #
-            `, 500)
+            `)
     } else {
-        basic.showAnimation(`
+        basic.showLeds(`
             # . . . .
             . . . . .
             . . . . .
             . . . . .
             . . . . .
-            `, 500)
-basic.showAnimation(`
+            `)
+basic.showLeds(`
             . # . . .
             # # . . .
             . . . . .
             . . . . .
             . . . . .
-            `, 500)
-basic.showAnimation(`
+            `)
+basic.showLeds(`
             . . # . .
             . . # . .
             # # # . .
             . . . . .
             . . . . .
-            `, 500)
-basic.showAnimation(`
+            `)
+basic.showLeds(`
             . . # # .
             . . # . .
             # # # . .
             # . . # .
             . . . . .
-            `, 500)
-basic.showAnimation(`
+            `)
+basic.showLeds(`
             . . # # #
             . . # . .
             # # # . .
             # . . # .
             # . . . #
-            `, 500)
-basic.showAnimation(`
+            `)
+basic.showLeds(`
             . . . . .
             . # . # .
             . . . . .
             # . . . #
             . # # # .
-            `, 500)
+            `)
     }
 })
 input.onButtonPressed(Button.A, () => {
     if (input.temperature() < 22 && input.temperature() > 6) {
-        basic.showAnimation(`
+        basic.showLeds(`
             . . . . .
             . . . . .
             . . # . .
             . . . . .
             . . . . .
-            `, 500)
-basic.showAnimation(`
+            `)
+basic.showLeds(`
             . . . . .
             . . # . .
             . # # # .
             . . # . .
             . . . . .
-            `, 500)
-basic.showAnimation(`
+            `)
+basic.showLeds(`
             . . . . .
             . . . . .
             . . . . .
             . . . . .
             . . . . .
-            `, 500)
-basic.showAnimation(`
+            `)
+basic.showLeds(`
             # # # # #
             # # # # #
             # # # # #
             # # # # #
             # # # # #
-            `, 500)
+            `)
     } else {
-        basic.showAnimation(`
+        basic.showLeds(`
             . . . . .
             . . . . .
             . . # . .
             . . . . .
             . . . . .
-            `, 500)
-basic.showAnimation(`
+            `)
+basic.showLeds(`
             . . . . .
             . . . . .
             . # # # .
             . . . . .
             . . . . .
-            `, 500)
-basic.showAnimation(`
+            `)
+basic.showLeds(`
             . . . . .
             . . . . .
             . . . . .
             . . . . .
             . . . . .
-            `, 500)
-basic.showAnimation(`
+            `)
+basic.showLeds(`
             # # # # #
             # . . . #
             # . . . #
             # . . . #
             # # # # #
-            `, 500)
+            `)
     }
 })
 input.onGesture(Gesture.Shake, () => {
@@ -303,8 +303,9 @@ This is an example of a board game in which the micro:bit displays an arrow poin
 Here is a portion of the board game's code. A boolean variable is used to determine whose turn it is. If player1Turn is false, then it's player 2's turn. A random number is generated to show the arrow seventy-five percent of the time (for values of 0, 1, or 2).
 
 ```blocks
+let player1Turn = false;
 input.onGesture(Gesture.Shake, () => {
-if (player1Turn == true && Math.random(4) < 3) {
+    if (player1Turn == true && Math.random(4) < 3) {
 
     }
 })

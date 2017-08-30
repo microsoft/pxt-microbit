@@ -3,7 +3,7 @@
 For this activity, each student will need a micro:bit. 
 Everyone will create the same program, the classic rock paper scissor game.
 
-![Rock, paper, scissors](/static/courses/csintro/conditionals/rock-paper-scissors.png)
+![Rock, paper, scissors](/static/courses/csintro/conditionals/rock-paper-scissors-items.png)
 
 ## Introduce activity
 

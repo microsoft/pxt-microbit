@@ -1,53 +1,69 @@
 # References
 
-
-
 We have included some additional reference books and materials if you are interested in learning more about the maker mindset.
 
-##Maker Education, Physical Computing or Design Thinking in the Classroom
+## Maker Education, Physical Computing or Design Thinking in the Classroom
 
-![Invent to Learn Book Cover](/static/courses/csintro/references/invent-to-learn.jpg)
-* [Invent To Learn](http://inventtolearn.com/)
+### [Invent To Learn](http://inventtolearn.com/)
+by **Sylvia Libow Martinez and Gary Stager**
 
->   Making, Tinkering, and Engineering in the Classroom By Sylvia Libow Martinez and Gary Stager
+Making, Tinkering, and Engineering in the Classroom
 
-![Launch Book Cover](/static/courses/csintro/references/launch.jpg)	
-* [Launch](http://thelaunchcycle.com/)
+[![Invent to Learn Book Cover](/static/courses/csintro/references/invent-to-learn.jpg)](http://inventtolearn.com/)
 
->	Using Design Thinking to Boost Creativity and Bring Out the Maker in Every Student by John Spencer and AJ Juliani
+### [Launch](http://thelaunchcycle.com/)
+by **John Spencer and AJ Juliani**
 
-![Innovator's Mindset Book Cover](/static/courses/csintro/references/innovators-mindset.jpg)	
-* [The Innovator's Mindset](http://georgecouros.ca/blog/archives/5715)
+Using Design Thinking to Boost Creativity and Bring Out the Maker in Every Student
 
->	Empower Learning, Unleash Talent, and Lead a Culture of Creativity by George Couros
+[![Launch Book Cover](/static/courses/csintro/references/launch.jpg)](http://thelaunchcycle.com/)
 
-![Makerspace Projects Book Cover](/static/courses/csintro/references/makerspace-projects.jpg)	
-* [The Big Book of Makerspace Projects](https://colleengraves.org/bigmakerbook/)
+### [The Innovator's Mindset](http://georgecouros.ca/blog/archives/5715)
+by **George Couros**
 
->   Inspiring Makers to Experiment, Create, and Learn by Colleen Graves
+Empower Learning, Unleash Talent, and Lead a Culture of Creativity
 
-##Code and Computational Thinking
+[![Innovator's Mindset Book Cover](/static/courses/csintro/references/innovators-mindset.jpg)](http://georgecouros.ca/blog/archives/5715)
 
-![Code Book Cover](/static/courses/csintro/references/code.jpg)	
-* [Code](http://www.charlespetzold.com/code/)
+### [The Big Book of Makerspace Projects](https://colleengraves.org/bigmakerbook/)
+by **Colleen Graves**
 
->   The Hidden Language of Computer Hardware and Software by Charles Petzold
+Inspiring Makers to Experiment, Create, and Learn
 
-![Girl Code Book Cover](/static/courses/csintro/references/girl-code.jpg)	
-* [Girl Code](https://www.girlcodethebook.com/)
+![Makerspace Projects Book Cover](/static/courses/csintro/references/makerspace-projects.jpg)
 
->   Gaming, Going Viral, and Getting it Done by Andy Gonzales and Sophie Houser
+## Code and Computational Thinking
 
-![Secret Coders Book Cover](/static/courses/csintro/references/secret-coders.jpg)	
-* [Secret Coders](http://www.secret-coders.com/)
+### [Code](http://www.charlespetzold.com/code/)
+by **Charles Petzold**
 
->   Secret Coders by Gene Luen Yang and Mike Holmes
+The Hidden Language of Computer Hardware and Software
 
-![How to Count Book Cover](/static/courses/csintro/references/how-to-count.png)	
-* [How to Count](https://stevenf.com/books/)
+[![Code Book Cover](/static/courses/csintro/references/code.jpg)](http://www.charlespetzold.com/code/)
 
->   Programming for Mere Mortals, Vol. 1 by Steven Frank
-	
+### [Girl Code](https://www.girlcodethebook.com/)
+by **Andy Gonzales and Sophie Houser**
+
+Gaming, Going Viral, and Getting it Done
+
+[![Girl Code Book Cover](/static/courses/csintro/references/girl-code.jpg)](https://www.girlcodethebook.com/)
+
+### [Secret Coders](http://www.secret-coders.com/)
+by **Gene Luen Yang and Mike Holmes**
+
+Get with the PROGRAM!
+
+[![Secret Coders Book Cover](/static/courses/csintro/references/secret-coders.jpg)](http://www.secret-coders.com/)
+
+### [How to Count](https://stevenf.com/books/)
+by **Steven Frank**
+
+Programming for Mere Mortals, Vol. 1
+
+[![How to Count Book Cover](/static/courses/csintro/references/how-to-count.png)](https://stevenf.com/books/)
+
+## Feedback
+
 If you have feedback for the Microsoft MakeCode team, you can fill out their survey form here: https://aka.ms/microbitfeedback
 
 The support site for the micro:bit is located here: [https://support.microbit.org](https://support.microbit.org/)

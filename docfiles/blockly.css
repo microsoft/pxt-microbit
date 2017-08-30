@@ -1,0 +1,612 @@
+/*******************************
+         Site Settings
+*******************************/
+/*-------------------
+       Fonts
+--------------------*/
+/*-------------------
+      Base Sizes
+--------------------*/
+/* This is the single variable that controls them all */
+/* The size of page text  */
+/*-------------------
+    Border Radius
+--------------------*/
+/* See Power-user section below
+   for explanation of @px variables
+*/
+/*-------------------
+    Brand Colors
+--------------------*/
+/*--------------
+  Page Heading
+---------------*/
+/*--------------
+   Form Input
+---------------*/
+/* This adjusts the default form input across all elements */
+/* Input Text Color */
+/* Line Height Default For Inputs in Browser */
+/*-------------------
+    Focused Input
+--------------------*/
+/* Used on inputs, textarea etc */
+/* Used on dropdowns, other larger blocks */
+/*-------------------
+        Sizes
+--------------------*/
+/*
+  Sizes are all expressed in terms of 14px/em (default em)
+  This ensures these "ratios" remain constant despite changes in EM
+*/
+/*-------------------
+        Page
+--------------------*/
+/*-------------------
+      Paragraph
+--------------------*/
+/*-------------------
+       Links
+--------------------*/
+/*-------------------
+  Highlighted Text
+--------------------*/
+/*-------------------
+       Loader
+--------------------*/
+/*-------------------
+        Grid
+--------------------*/
+/*-------------------
+     Transitions
+--------------------*/
+/*-------------------
+     Breakpoints
+--------------------*/
+/*-------------------
+      Site Colors
+--------------------*/
+/*---  Colors  ---*/
+/*---  Light Colors  ---*/
+/*---   Neutrals  ---*/
+/*--- Colored Backgrounds ---*/
+/*--- Colored Headers ---*/
+/*--- Colored Text ---*/
+/*--- Colored Border ---*/
+/*-------------------
+     Alpha Colors
+--------------------*/
+/*-------------------
+       Accents
+--------------------*/
+/* Differentiating Neutrals */
+/* Differentiating Layers */
+/*******************************
+           Power-User
+*******************************/
+/*-------------------
+    Emotive Colors
+--------------------*/
+/* Positive */
+/* Negative */
+/* Info */
+/* Warning */
+/*-------------------
+        Paths
+--------------------*/
+/* For source only. Modified in gulp for dist */
+/*-------------------
+       Em Sizes
+--------------------*/
+/*
+  This rounds @size values to the closest pixel then expresses that value in (r)em.
+  This ensures all size values round to exact pixels
+*/
+/* em */
+/* rem */
+/*-------------------
+       Icons
+--------------------*/
+/* Maximum Glyph Width of Icon */
+/*-------------------
+     Neutral Text
+--------------------*/
+/*-------------------
+     Brand Colors
+--------------------*/
+/*-------------------
+      Borders
+--------------------*/
+/*-------------------
+    Derived Values
+--------------------*/
+/* Loaders Position Offset */
+/* Rendered Scrollbar Width */
+/* Maximum Single Character Glyph Width, aka Capital "W" */
+/* Used to match floats with text */
+/* Header Spacing */
+/* Minimum Mobile Width */
+/* Positive / Negative Dupes */
+/* Responsive */
+/*-------------------
+  Exact Pixel Values
+--------------------*/
+/*
+  These are used to specify exact pixel values in em
+  for things like borders that remain constantly
+  sized as emSize adjusts
+
+  Since there are many more sizes than names for sizes,
+  these are named by their original pixel values.
+
+*/
+/* Columns */
+/*******************************
+             States
+*******************************/
+/*-------------------
+      Disabled
+--------------------*/
+/*-------------------
+        Hover
+--------------------*/
+/*---  Shadows  ---*/
+/*---  Colors  ---*/
+/*---  Emotive  ---*/
+/*---  Brand   ---*/
+/*---  Dark Tones  ---*/
+/*---  Light Tones  ---*/
+/*-------------------
+        Focus
+--------------------*/
+/*---  Colors  ---*/
+/*---  Emotive  ---*/
+/*---  Brand   ---*/
+/*---  Dark Tones  ---*/
+/*---  Light Tones  ---*/
+/*-------------------
+    Down (:active)
+--------------------*/
+/*---  Colors  ---*/
+/*---  Emotive  ---*/
+/*---  Brand   ---*/
+/*---  Dark Tones  ---*/
+/*---  Light Tones  ---*/
+/*-------------------
+        Active
+--------------------*/
+/*---  Colors  ---*/
+/*---  Emotive  ---*/
+/*---  Brand   ---*/
+/*---  Dark Tones  ---*/
+/*---  Light Tones  ---*/
+/*******************************
+     User Global Variables
+*******************************/
+/*-------------------
+     Fonts
+--------------------*/
+/*-------------------
+   Breakpoints
+--------------------*/
+/*
+@mobileBreakpoint            : unit( (63 * @emSize), px);
+@tabletBreakpoint            : unit( (79 * @emSize), px);
+@computerBreakpoint          : unit( (91 * @emSize), px);
+@largeMonitorBreakpoint      : unit( (99 * @emSize), px);
+@widescreenMonitorBreakpoint : unit( (119 * @emSize), px);
+*/
+/*******************************
+     PXT Variables
+*******************************/
+/*-------------------
+   Menu
+--------------------*/
+/*-------------------
+   Layout
+--------------------*/
+/*-------------------
+   Background
+--------------------*/
+/*-------------------
+   Full screen
+--------------------*/
+/*-------------------
+   Side Docs
+--------------------*/
+/*-------------------
+   Editor
+--------------------*/
+/*-------------------
+   Blockly
+--------------------*/
+/*******************************
+     User Global Variables
+*******************************/
+/* Microbit.org colors */
+/*******************************
+         PXT Overrides
+*******************************/
+/*-------------------
+   Menu
+--------------------*/
+/*-------------------
+   Layout
+--------------------*/
+/*-------------------
+   Background
+--------------------*/
+/*-------------------
+   Side Docs
+--------------------*/
+/*-------------------
+   Editor
+--------------------*/
+/* Import all components */
+/*******************************
+             Blockly
+*******************************/
+/* Lower Z index for BlocklyWidgetDiv and grid picker tooltips */
+.blocklyWidgetDiv {
+  z-index: 105;
+}
+.blocklyGridPickerTooltip {
+  z-index: 106;
+}
+.blocklyGridPickerPadder {
+  box-shadow: 0px 0px 8px 1px;
+}
+/* Set Z index of the Blockly scrollbars to be beneath the BlocklyWidgetDiv */
+.blocklyScrollbarHorizontal,
+.blocklyScrollbarVertical {
+  z-index: 8 !important;
+}
+.blocklyTooltipDiv {
+  border: none !important;
+  box-shadow: none !important;
+  background-color: transparent !important;
+  opacity: 1 !important;
+  /* wrap the JS text inside a blockly Tooltip */
+  overflow-wrap: break-word;
+}
+.blocklyToolboxDiv,
+.monacoToolboxDiv {
+  background: rgba(0, 0, 0, 0.05) !important;
+  z-index: 1;
+  -webkit-transition: width 1s;
+  /* Safari */
+  -moz-transition: width 1s;
+  /* Mozilla */
+  -webkit-transition-timing-function: ease-in;
+  /* Mozilla */
+  -o-transition: width 1s;
+  /* Opera */
+  transition: width 1s;
+  transition-timing-function: ease-in;
+}
+svg.blocklySvg {
+  background-color: #ecf0f1 !important;
+}
+#blocksEditor .injectionDiv svg {
+  overflow: visible;
+}
+span.blocklyTreeLabel,
+text.blocklyText,
+input.blocklyHtmlInput {
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace !important;
+}
+/* Using 1rem creates font size issues in Edge
+text.blocklyText {
+    font-size:1rem !important;
+} */
+span.blocklyTreeLabel {
+  font-size: 1.25rem;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.blocklyFlyoutButtonShadow {
+  fill: none !important;
+}
+.blocklyFlyoutLabelText {
+  fill: white !important;
+  font-size: 1rem;
+}
+.blocklyFlyoutLabelText:hover {
+  fill: white !important;
+}
+/* Opacity of blockly flyout background */
+.blocklyFlyoutBackground {
+  fill-opacity: 0.9 !important;
+}
+div.blocklyTreeRow,
+span.blocklyTreeLabel {
+  cursor: pointer;
+}
+/* The trash icon inside the toolbox */
+#blocklyTrashIcon {
+  position: absolute;
+  top: 30%;
+  left: 0;
+  text-align: center;
+  width: 100px;
+  height: 80px;
+  z-index: 8;
+  font-size: 5rem;
+  color: #6633cc;
+}
+/* Blockly / Monaco Toolbox Buttons */
+#blocklyToolboxButtons,
+#monacoToolboxButtons {
+  margin-top: 0.1rem;
+  font-size: 3rem;
+}
+/* Blockly Search bar */
+.blocklySearchInputField {
+  border: 0 !important;
+  border-radius: 0 !important;
+}
+/* Blockly toolbox icons */
+span.blocklyTreeIcon {
+  opacity: 1;
+  margin: 0.0em 0.25em 0.0em 0.25em;
+  width: 30px;
+  font-family: 'Icons';
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+  text-align: center;
+  speak: none;
+  font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  backface-visibility: hidden;
+  font-size: 1.2rem;
+  height: 100%;
+  display: none;
+}
+.blocklyTreeSelected .blocklyTreeIcon {
+  color: white;
+}
+.blocklyTreeIcon.blocklyTreeIconsearch::before {
+  content: "\f002";
+}
+.blocklyTreeIcon.blocklyTreeIconDefault::before {
+  content: "\f12e";
+}
+.blocklyTreeIcon.blocklyTreeIconadvancedcollapsed::before {
+  content: "\f078";
+}
+.blocklyTreeIcon.blocklyTreeIconadvancedexpanded::before {
+  content: "\f077";
+}
+.blocklyTreeIcon.blocklyTreeIconmore::before {
+  content: "\f141";
+}
+.blocklyTreeIcon.blocklyTreeIconaddpackage::before {
+  content: "\f055";
+}
+.blocklyTreeIcon.blocklyTreeIconloops::before {
+  content: "\f01e";
+}
+.blocklyTreeIcon.blocklyTreeIconmath::before {
+  content: "\f1ec";
+}
+.blocklyTreeIcon.blocklyTreeIconlogic::before {
+  content: "\f074";
+}
+.blocklyTreeIcon.blocklyTreeIconvariables::before {
+  content: "\f039";
+}
+.blocklyTreeIcon.blocklyTreeIcontext::before {
+  content: "\f035";
+}
+.blocklyTreeIcon.blocklyTreeIconarrays::before {
+  content: "\f0cb";
+}
+.blocklyTreeIcon.blocklyTreeIconfunctions {
+  font-family: xicon !important;
+}
+.blocklyTreeIcon.blocklyTreeIconfunctions::before {
+  content: "\f107";
+}
+/* Blockly Slider field */
+.blocklyWidgetDiv .goog-slider-horizontal {
+  background: white;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+/* Fade out disabled blocks, but don't completely lose the colour */
+.blocklyDisabled > .blocklyPathDark {
+  display: block !important;
+  fill-opacity: 0.5;
+}
+/* This horrendous selector and the next are for subcategories in the Blockly toolbox */
+div.blocklyTreeRoot div div div div div.blocklyTreeRow {
+  padding-left: 0px !important;
+  border-left-width: 12px !important;
+  min-width: 30px;
+  min-height: 30px;
+  line-height: 30px;
+}
+div.blocklyTreeRoot div div div div div.blocklyTreeRow span.blocklyTreeLabel {
+  font-size: 1rem;
+}
+/* This is to ensure the leds inside showLeds fill the entire checkbox */
+text.blocklyCheckbox {
+  fill: #ff3030 !important;
+  text-shadow: 0px 0px 6px #f00;
+  font-size: 17pt !important;
+}
+/*******************************
+        Media Adjustments
+*******************************/
+/* Large Monitor */
+@media only screen and (min-width: 1200px) {
+  /* Blockly */
+  div.blocklyTreeRow {
+    min-width: 200px;
+    min-height: 40px;
+    line-height: 40px;
+  }
+  #blocklyTrashIcon {
+    width: 200px;
+  }
+}
+/* Small Monitor */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  /* Blockly row */
+  div.blocklyTreeRow {
+    min-width: 180px;
+    min-height: 40px;
+    line-height: 40px;
+  }
+  #blocklyTrashIcon {
+    width: 180px;
+  }
+}
+/* Tablet */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  /* Blockly */
+  div.blocklyTreeRow {
+    min-width: 150px;
+    min-height: 45px;
+    line-height: 45px;
+    border-left-width: 12px !important;
+  }
+  #blocklyTrashIcon {
+    width: 150px;
+  }
+  div.blocklyTreeRoot div div div div div.blocklyTreeRow {
+    border-left-width: 18px !important;
+  }
+}
+/* Mobile */
+@media only screen and (max-width: 767px) {
+  div.blocklyTreeRow {
+    min-width: 50px;
+    min-height: 50px;
+    line-height: 50px;
+    border-left-width: 6px !important;
+  }
+  span.blocklyTreeIcon {
+    font-size: 1.5rem;
+  }
+  #blocklyTrashIcon {
+    width: 50px;
+  }
+  div.blocklyTreeRoot div div div div div.blocklyTreeRow {
+    border-left-width: 8px !important;
+  }
+}
+/* >= Small Monitor (Small Monitor + Large Monitor + Wide Monitor) */
+@media only screen and (min-width: 992px) {
+  /* Blockly */
+  div.blocklyTreeRow {
+    border-left-width: 12px !important;
+  }
+  div.blocklyTreeRoot div div div div div.blocklyTreeRow {
+    border-left-width: 18px !important;
+  }
+}
+/* <= Small Monitor (Mobile + Tablet + Small Monitor) */
+@media only screen and (max-width: 1199px) {
+  /* Blockly */
+  span.blocklyTreeLabel {
+    font-size: 1rem;
+  }
+}
+/* <= Tablet (Mobile + Tablet) */
+@media only screen and (max-width: 991px) {
+  /* Blockly */
+  span.blocklyTreeLabel {
+    font-size: 1rem;
+  }
+}
+/* Mobile */
+@media only screen and (max-width: 767px) {
+  /* Hide blockly tree labels on mobile */
+  span.blocklyTreeLabel,
+  div.blocklyTreeRow:hover span.blocklyTreeLabel,
+  div.blocklyTreeRow.blocklyTreeSelected:hover span.blocklyTreeLabel {
+    display: none !important;
+  }
+  div.blocklyTreeRow {
+    padding-right: 0;
+    text-align: center;
+  }
+  text.blocklyCheckbox {
+    font-size: 17pt !important;
+  }
+  /* Blockly trash icon */
+  #blocklyTrashIcon {
+    font-size: 3rem;
+  }
+  /* Hide the blockly toolbox search */
+  #blocklySearchArea {
+    display: none !important;
+  }
+}
+/* Reference import */
+/*******************************
+             Blockly
+*******************************/
+div.blocklyTreeRow {
+  box-shadow: inset 0 -1px 0 0 #ecf0f1;
+  margin-bottom: 0px !important;
+  -webkit-transition-property: background-color;
+  /* Safari */
+  -webkit-transition-duration: 1s;
+  /* Safari */
+  transition-property: background-color;
+  transition-duration: 1s;
+}
+/* Blockly toolbox font size same as the page font */
+span.blocklyTreeLabel {
+  font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  font-weight: 200;
+}
+.blocklyToolboxDiv,
+.monacoToolboxDiv {
+  background-color: white !important;
+  border-left: 1px solid #ecf0f1 !important;
+  box-shadow: 4px 0px 2px -4px rgba(0, 0, 0, 0.12), 4px 0px 2px -4px rgba(0, 0, 0, 0.24);
+}
+.blocklyFlyoutBackground {
+  fill: #525A67 !important;
+}
+/* Remove shadow around blockly blocks */
+.blocklyPathDark,
+.blocklyPathLight {
+  display: none;
+}
+/* Blockly Field: Grid picker */
+.blocklyGridPickerTooltip {
+  padding: 3px 5px;
+  background-color: #fefefe;
+  border: black solid 3px;
+  color: black;
+  border-radius: 10px;
+}
+/* Mobile */
+@media only screen and (max-width: 767px) {
+  .blocklyToolboxDiv,
+  .monacoToolboxDiv {
+    border-left: 0 !important;
+  }
+  div.blocklyTreeRoot {
+    padding: 0;
+  }
+}
+/* Tablet */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .blocklyToolboxDiv,
+  .monacoToolboxDiv {
+    border-left: 0 !important;
+  }
+  div.blocklyTreeRoot {
+    padding: 0;
+  }
+}

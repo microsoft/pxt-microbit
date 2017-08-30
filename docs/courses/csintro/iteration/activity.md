@@ -189,7 +189,17 @@ We can use the default values for the rest of the parameters.
 
 You should now see a light moving from left to right along the top row of the micro:bit simulator.
 
-![Moving Dot Top Row](/static/courses/csintro/iteration/moving-dot.gif)
+```sim
+let index = 0
+basic.forever(() => {
+   for (let xindex = 0; xindex <= 4; xindex++) {
+       led.plot(xindex, 0)
+       basic.pause(100)
+       led.unplot(xindex, 0)
+       basic.pause(100)
+   }
+})
+```
 
 To make our pattern continue through all the leds, we can change the value of the y coordinate as well.
 
@@ -218,7 +228,20 @@ basic.forever(() => {
 
 There! With only a half dozen or so lines of code, we have made our light travel through all the coordinates on the micro:bit screen.
 
-![Moving Dot All](/static/courses/csintro/iteration/moving-dot-all.gif)
+```sim
+let index = 0
+let yindex = 0
+basic.forever(() => {
+   for (let yindex = 0; yindex <= 4; yindex++) {
+       for (let xindex = 0; xindex <= 4; xindex++) {
+           led.plot(xindex, yindex)
+           basic.pause(100)
+           led.unplot(xindex, yindex)
+           basic.pause(100)
+       }
+   }
+})
+```
 
 **Check:** Make sure the students can read this code.
 

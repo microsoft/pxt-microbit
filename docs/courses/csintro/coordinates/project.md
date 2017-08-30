@@ -9,11 +9,11 @@ Normally, if a show was running, or if someone was actively using the computer, 
 
 Your task is to create:
 
-1. A "screen saver" animation using the plot/unplot blocks. You can fill the screen line by line, pausing between each one, or fill it with a random constellation of stars. 
+* A "screen saver" animation using the plot/unplot blocks. You can fill the screen line by line, pausing between each one, or fill it with a random constellation of stars. 
 
 >-- OR --
 
-1. A game that uses sprites to manage the x and y coordinate values of the different objects.
+* A game that uses sprites to manage the x and y coordinate values of the different objects.
 
 Your project might use variables to store the values of sprites, which are special structures that contain an x and a y coordinate together that describe the sprite's location as one LED on the screen. 
 

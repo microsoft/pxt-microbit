@@ -161,26 +161,25 @@ Headband Charades Complete Program (simple version - no time limit or scoring):
 let index = 0
 let arrayWords: string[] = []
 input.onGesture(Gesture.ScreenUp, () => {
-   basic.showString(arrayWords[index])
+    basic.showString(arrayWords[index])
 })
 input.onGesture(Gesture.ScreenDown, () => {
-   led.stopAnimation()
-   basic.clearScreen()
-   if (index < arrayWords.length - 1) {
-       index += 1
-   } else {
-       game.gameOver()
-   }
+    led.stopAnimation()
+    basic.clearScreen()
+    if (index < arrayWords.length - 1) {
+        index += 1
+    } else {
+        game.gameOver()
+    }
 })
 arrayWords = ["cat", "guitar", "flashlight", "cupcake", "tree", "frisbee"]
 index = 0
 basic.showLeds(`
-   . # # # .
-   . . . # .
-   . . # # .
-   . . . . .
-   . . # . .
-   `)
+    . # # # .
+    . . . # .
+    . . # # .
+    . . . . .
+    . . # . .`)
 basic.pause(100)
 basic.showNumber(3)
 basic.pause(100)
@@ -235,7 +234,13 @@ To fix this, we need to do a little math by subtracting 1 from whatever the valu
 
 **Note:** Be sure to hit Refresh a few times on the simulator, because sometimes some stars get hidden behind other stars.
 
-![Random stars](/static/courses/csintro/arrays/random-stars.png)
+```block
+let list = [5, 2, 1, 3, 4]
+
+for (let index = 0; index < list[0] - 1; index++) {
+    led.plot(Math.random(5), Math.random(5))
+}
+```
 
 The above code takes the first value in the array and creates that many stars at random locations. Now, all we need to do is iterate through the entire array and do the same thing for each of the values. We will put the above code inside another loop that will run the same number of times as the length of the array (in this case, 5). You should also use a 'pause' block and a 'clear screen' block in between each constellation.
 
@@ -261,11 +266,17 @@ list = [5, 2, 1, 3, 4]
 
 Traversing an array means proceeding through the elements of the array in sequence. Note that there is a special loop in the Loops Toolbox drawer called ‘for element value of list’. This loop automatically takes each element of your array in turn and copies it into a variable called value.
 
-![index loop](/static/courses/csintro/arrays/for-index.png)
+```block
+for (let index = 0; index <= 4; index++){
+
+}
+```
 
 The following code is useful for printing out the values of the elements in your array:
 
 ```blocks
+let list = [5, 2, 1, 3, 4]
+
 input.onButtonPressed(Button.B, () => {
    for (let value of list) {
        basic.showNumber(value)
@@ -279,6 +290,8 @@ However, note that value holds a copy of the element in the array, so changing v
 If you run the code below, then print out the array again, you will see that it is unchanged.
 
 ```blocks
+let list = [5, 2, 1, 3, 4]
+
 input.onButtonPressed(Button.A, () => {
    for (let value of list) {
        value += 1

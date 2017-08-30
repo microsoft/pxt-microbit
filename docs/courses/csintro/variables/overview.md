@@ -9,6 +9,7 @@ Ask the students to think of some pieces of information in their daily life that
 Constants and variables can be numbers and/or text.
 
 ## Examples 
+
 In one school day...
 
 * Constants: The day of the week, the year, student’s name, the school’s address

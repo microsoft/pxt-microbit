@@ -83,3 +83,7 @@ basic.forever(() => {
 radio.setGroup(4)
 game.addScore(1)
 ```
+
+```package
+radio
+```

@@ -10,7 +10,7 @@ Tell the students that they will be creating a program that will act as a scorek
 
 Creating and naming variables: Lead the students to create meaningful names for their variables.
 * What would be a unique and clear name for the variable that will keep track of the number of times Player A wins?
-* Student suggestions may be: ‘PAW’, PlayerA’, ‘AButtonPress’, ‘AButtonCount’, ‘PlayerAWins’...
+* Student suggestions may be: ``PAW``, ``PlayerA``, ``AButtonPress``, ``AButtonCount``, ``PlayerAWins``...
 * Discuss why (or why not) different suggestions make clear what value the variable will hold. In general, variable names should clearly describe what type of information they hold.
 	
 In MakeCode, from the Variables menu, make and name these three variables: `PlayerAWins`, `PlayerBWins`, `PlayersTie`.
@@ -62,13 +62,13 @@ let PlayerBWins = 0
 let PlayersTie = 0
 
 input.onButtonPressed(Button.A, () => {
-   PlayerAWins += 1
+   PlayerAWins += 1
 })
 input.onButtonPressed(Button.B, () => {
-   PlayerBWins += 1
+   PlayerBWins += 1
 })
 input.onButtonPressed(Button.AB, () => {
-   PlayersTie += 1
+   PlayersTie += 1
 })
 ```
 ## User feedback
@@ -90,37 +90,37 @@ let PlayerBWins = 0
 let PlayersTie = 0
 
 input.onButtonPressed(Button.A, () => {
-   PlayerAWins += 1
-   basic.showLeds(`
-       . # # # .
-       . # . # .
-       . # # # .
-       . # . # .
-       . # . # .
-       `)
-   basic.clearScreen()
+   PlayerAWins += 1
+   basic.showLeds(`
+       . # # # .
+       . # . # .
+       . # # # .
+       . # . # .
+       . # . # .
+       `)
+   basic.clearScreen()
 })
 input.onButtonPressed(Button.B, () => {
-   PlayerBWins += 1
-   basic.showLeds(`
-       . # # . .
-       . # . # .
-       . # # # .
-       . # . # .
-       . # # . .
-       `)
-   basic.clearScreen()
+   PlayerBWins += 1
+   basic.showLeds(`
+       . # # . .
+       . # . # .
+       . # # # .
+       . # . # .
+       . # # . .
+       `)
+   basic.clearScreen()
 })
 input.onButtonPressed(Button.AB, () => {
-   PlayersTie += 1
-   basic.showLeds(`
-       . # # # .
-       . . # . .
-       . . # . .
-       . . # . .
-       . . # . .
-       `)
-   basic.clearScreen()
+   PlayersTie += 1
+   basic.showLeds(`
+       . # # # .
+       . . # . .
+       . . # . .
+       . . # . .
+       . . # . .
+       `)
+   basic.clearScreen()
 })
 ```
 Notice that we added a ‘clear screen’ block after showing ‘A’, ‘B’, or ‘T’. 
@@ -138,61 +138,61 @@ let PlayersTie = 0
 let PlayerBWins = 0
 let PlayerAWins = 0
 input.onButtonPressed(Button.A, () => {
-   PlayerAWins += 1
-   basic.showLeds(`
-       . # # # .
-       . # . # .
-       . # # # .
-       . # . # .
-       . # . # .
-       `)
-   basic.clearScreen()
+   PlayerAWins += 1
+   basic.showLeds(`
+       . # # # .
+       . # . # .
+       . # # # .
+       . # . # .
+       . # . # .
+       `)
+   basic.clearScreen()
 })
 input.onButtonPressed(Button.B, () => {
-   PlayerBWins += 1
-   basic.showLeds(`
-       . # # . .
-       . # . # .
-       . # # # .
-       . # . # .
-       . # # . .
-       `)
-   basic.clearScreen()
+   PlayerBWins += 1
+   basic.showLeds(`
+       . # # . .
+       . # . # .
+       . # # # .
+       . # . # .
+       . # # . .
+       `)
+   basic.clearScreen()
 })
 input.onButtonPressed(Button.AB, () => {
-   PlayersTie += 1
-   basic.showLeds(`
-       . # # # .
-       . . # . .
-       . . # . .
-       . . # . .
-       . . # . .
-       `)
-   basic.clearScreen()
+   PlayersTie += 1
+   basic.showLeds(`
+       . # # # .
+       . . # . .
+       . . # . .
+       . . # . .
+       . . # . .
+       `)
+   basic.clearScreen()
 })
 input.onGesture(Gesture.Shake, () => {
-   basic.showString("Wins:")
-   basic.showLeds(`
-       . # # # .
-       . # . # .
-       . # # # .
-       . # . # .
-       . # . # .
-       `)
-   basic.showNumber(PlayerAWins)
-   basic.pause(1000)
-   basic.showLeds(`
-       . # # . .
-       . # . # .
-       . # # # .
-       . # . # .
-       . # # . .
-       `)
-   basic.showNumber(PlayerBWins)
-   basic.pause(1000)
-   basic.showString("Ties:")
-   basic.showNumber(PlayersTie)
-   basic.pause(1000)   
+   basic.showString("Wins:")
+   basic.showLeds(`
+       . # # # .
+       . # . # .
+       . # # # .
+       . # . # .
+       . # . # .
+       `)
+   basic.showNumber(PlayerAWins)
+   basic.pause(1000)
+   basic.showLeds(`
+       . # # . .
+       . # . # .
+       . # # # .
+       . # . # .
+       . # # . .
+       `)
+   basic.showNumber(PlayerBWins)
+   basic.pause(1000)
+   basic.showString("Ties:")
+   basic.showNumber(PlayersTie)
+   basic.pause(1000)   
    basic.clearScreen()
 })
 PlayerAWins = 0
@@ -228,8 +228,8 @@ let PlayerBWins = 0
 let PlayerAWins = 0
 
 input.onGesture(Gesture.Shake, () => {
-   basic.showString("Total rounds played:")
-   basic.showNumber(PlayerAWins + PlayerBWins + PlayersTie)
+   basic.showString("Total rounds played:")
+   basic.showNumber(PlayerAWins + PlayerBWins + PlayersTie)
 })
 ```
 * Save, download, and try the program again to make sure that it runs correctly and displays the correct numbers for each variable.

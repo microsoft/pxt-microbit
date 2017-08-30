@@ -139,6 +139,17 @@ namespace pxsim.visuals {
         .sim-wireframe .sim-board {
             stroke-width: 2px;
         }
+        *:focus {
+            outline: none;
+        }
+        *:focus .sim-button-outer,
+        .sim-pin:focus,
+        .sim-thermometer:focus,
+        .sim-shake:focus,
+        .sim-light-level-button:focus {
+            stroke: #4D90FE !important;
+            stroke-width: 3px !important;
+        }
         .no-drag {
             user-drag: none;
             user-select: none;
@@ -399,7 +410,7 @@ namespace pxsim.visuals {
         private updateGestures() {
             let state = this.board;
             if (state.accelerometerState.useShake && !this.shakeButton) {
-                this.shakeButton = svg.child(this.g, "circle", { cx: 380, cy: 100, r: 16.5 }) as SVGCircleElement;
+                this.shakeButton = svg.child(this.g, "circle", { cx: 380, cy: 100, r: 16.5, class: "sim-shake" }) as SVGCircleElement;
                 accessibility.makeFocusable(this.shakeButton);
                 svg.fill(this.shakeButton, this.props.theme.virtualButtonUp)
                 this.shakeButton.addEventListener(pointerEvents.down, ev => {
@@ -415,7 +426,7 @@ namespace pxsim.visuals {
                     svg.fill(this.shakeButton, this.props.theme.virtualButtonUp);
                     this.board.bus.queue(DAL.MICROBIT_ID_GESTURE, 11); // GESTURE_SHAKE
                 })
-                accessibility.enableKeyboardInteraction(this.shakeButton, () => {
+                accessibility.enableKeyboardInteraction(this.shakeButton, undefined, () => {
                     this.board.bus.queue(DAL.MICROBIT_ID_GESTURE, 11);
                 });
                 accessibility.setAria(this.shakeButton, "button", "Shake the board");
@@ -954,7 +965,7 @@ namespace pxsim.visuals {
                     this.board.bus.queue(state.edgeConnectorState.pins[index].id, DAL.MICROBIT_BUTTON_EVT_UP);
                     this.board.bus.queue(state.edgeConnectorState.pins[index].id, DAL.MICROBIT_BUTTON_EVT_CLICK);
                 })
-                accessibility.enableKeyboardInteraction(btn, () => {
+                accessibility.enableKeyboardInteraction(btn, undefined, () => {
                     let state = this.board;
                     this.board.bus.queue(state.edgeConnectorState.pins[index].id, DAL.MICROBIT_BUTTON_EVT_UP);
                     this.board.bus.queue(state.edgeConnectorState.pins[index].id, DAL.MICROBIT_BUTTON_EVT_CLICK);
@@ -981,7 +992,7 @@ namespace pxsim.visuals {
                     this.board.bus.queue(stateButtons[index].id, DAL.MICROBIT_BUTTON_EVT_UP);
                     this.board.bus.queue(stateButtons[index].id, DAL.MICROBIT_BUTTON_EVT_CLICK);
                 })
-                accessibility.enableKeyboardInteraction(btn, () => {
+                accessibility.enableKeyboardInteraction(btn, undefined, () => {
                     this.board.bus.queue(stateButtons[index].id, DAL.MICROBIT_BUTTON_EVT_UP);
                     this.board.bus.queue(stateButtons[index].id, DAL.MICROBIT_BUTTON_EVT_CLICK);
                 });
@@ -1016,7 +1027,7 @@ namespace pxsim.visuals {
                 this.board.bus.queue(stateButtons[2].id, DAL.MICROBIT_BUTTON_EVT_UP);
                 this.board.bus.queue(stateButtons[2].id, DAL.MICROBIT_BUTTON_EVT_CLICK);
             })
-            accessibility.enableKeyboardInteraction(this.buttonsOuter[2], () => {
+            accessibility.enableKeyboardInteraction(this.buttonsOuter[2], undefined, () => {
                 this.board.bus.queue(stateButtons[2].id, DAL.MICROBIT_BUTTON_EVT_UP);
                 this.board.bus.queue(stateButtons[2].id, DAL.MICROBIT_BUTTON_EVT_CLICK);
             });

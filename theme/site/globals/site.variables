@@ -17,12 +17,12 @@
 @red: #EF767A;
 @pink: #F46197;
 @yellow: #FDE74C;
-@grey:#95a5a6;
+@grey: #95a5a6;
+@green: #107C10;
 
 /* Microbit.org colors */
 @orange: #ff8b27;
 @purple: #6633cc;
-@green: #00ED00;
 
 @pageBackground: #fff;
 

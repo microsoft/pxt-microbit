@@ -1,16 +1,16 @@
-# Set Sprite Property
+# change Sprite Property
 
-Make a [sprite](/reference/game/create-sprite) store the kind of [number](/types/number) you say.
+Change the kind of [number](/types/number) you say for a [sprite](/reference/game/create-sprite).
 
 ```sig
 let item: game.LedSprite = null;
-item.set(LedSpriteProperty.X, 0);
+item.change(LedSpriteProperty.X, 0);
 ```
 
 ## Parameters
 
-* the **sprite** you want to make store the number you say
-* the kind of [number](/types/number) you want to store in the sprite, like
+* the **sprite** you want to change
+* the kind of [number](/types/number) you want to change for the sprite, like
     * ``x``, how far up or down the sprite is on the screen (`0`-`4`)
     * ``y``, how far left or right the sprite is on the screen (`0`-`4`)
     * ``direction``, which way the sprite is pointing (this works the same way as the [turn](/reference/game/turn) function)
@@ -21,17 +21,17 @@ item.set(LedSpriteProperty.X, 0);
 
 This program makes a sprite on the left side of the screen,
 waits two seconds (2000 milliseconds),
-and then moves it to the right side of the screen.
+and then moves it to the middle of the screen.
 
 ```blocks
 let ball = game.createSprite(0, 2);
 basic.pause(2000);
-ball.set(LedSpriteProperty.X, 4);
+ball.change(LedSpriteProperty.X, 2);
 ```
 
 ## See also
 
 [turn](/reference/game/turn),
 [brightness](/reference/led/brightness),
-[change sprite property](/reference/game/change-sprite-property),
-[get sprite property](/reference/game/get-sprite-property)
+[get sprite property](/reference/game/get),
+[set sprite property](/reference/game/set)

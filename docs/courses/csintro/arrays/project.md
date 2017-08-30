@@ -103,9 +103,9 @@ Have students write a reflection of about 150–300 words, addressing the follow
 
 ## Maker component
 
-**4 =** Tangible component is tightly integrated with the micro:bit and each relies heavily on the other to make the project complete.
-**3 =** Tangible component is somewhat integrated with the micro:bit but is not essential.
-**2 =** Tangible component does not add to the functionality of the program.
+**4 =** Tangible component is tightly integrated with the micro:bit and each relies heavily on the other to make the project complete.<br/>
+**3 =** Tangible component is somewhat integrated with the micro:bit but is not essential.<br/>
+**2 =** Tangible component does not add to the functionality of the program.<br/>
 **1 =** No tangible component.
 
 ## micro:bit program

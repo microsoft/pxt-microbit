@@ -2,7 +2,7 @@
 
 ## Step 1
 
-Place the ``||show leds||`` block and paint a heart.
+Place the ``||basic:show leds||`` block and paint a heart.
 
 ```block
 basic.showLeds(`
@@ -20,7 +20,7 @@ Click ``|Download|`` to transfer your code in your @boardname@!
 
 ## Step 3
 
-Place another ``||show leds||`` block under the heart to make it blink.
+Place another ``||basic:show leds||`` block under the heart to make it blink.
 
 ```block
 basic.showLeds(`
@@ -39,7 +39,7 @@ basic.showLeds(`
 
 ## Step 4
 
-Place the blocks inside the ``||forever||``
+Place the blocks inside the ``||basic:forever||``
 to repeat the animation.
 
 ```block
@@ -66,7 +66,7 @@ Click ``|Download|`` to transfer your code in your @boardname@!
 
 ## Step 6
 
-Place more ``||show leds||`` blocks to create your own animation.
+Place more ``||basic:show leds||`` blocks to create your own animation.
 
 ```block
 basic.forever(() => {

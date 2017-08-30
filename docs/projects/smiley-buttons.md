@@ -70,7 +70,7 @@ Try pressing ``A`` or ``B``!
 ## Step 4
 
 You can also have a secret mode where ``A`` and ``B`` are pressed together. 
-In that case, add multiple ``||show leds||`` blocks to create an animation...
+In that case, add multiple ``||basic:show leds||`` blocks to create an animation...
 
 ```blocks
 input.onButtonPressed(Button.AB, () => {

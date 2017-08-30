@@ -130,3 +130,7 @@ basic.forever(() => {
 radio.setTransmitPower(1)
 radio.setGroup(12)
 ```
+
+```package
+radio
+```

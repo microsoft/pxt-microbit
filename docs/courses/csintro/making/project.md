@@ -1,4 +1,4 @@
-# Project: Micro:pet
+# Project: micro:pet
 
 ## Project
 

@@ -100,22 +100,21 @@ Now we can use our LED lights to display different images depending on what butt
 	
 ```blocks
 input.onButtonPressed(Button.A, () => {
-   basic.showLeds(`
-       . . . . .
-       . . . . .
-       . . . . .
-       . . . . .
-       . . . . .
-       `)
+    basic.showLeds(`. . . . .
+    . . . . .
+    . . . . .
+    . . . . .
+    . . . . .
+    `)
 })
 input.onButtonPressed(Button.B, () => {
-   basic.showLeds(`
-       . . . . .
-       . . . . .
-       . . . . .
-       . . . . .
-       . . . . .
-       `)
+    basic.showLeds(`
+    . . . . .
+    . . . . .
+    . . . . .
+    . . . . .
+    . . . . .
+    `)
 })
 ```
 * Click on the individual little boxes in the ‘show leds’ block that is in the ‘on button A pressed’ event handler to create the image of a happy face.
@@ -123,22 +122,22 @@ input.onButtonPressed(Button.B, () => {
 
 ```blocks
 input.onButtonPressed(Button.A, () => {
-   basic.showLeds(`
-       . . . . .
-       . # . # .
-       . . . . .
-       # . . . #
-       . # # # .
-       `)
+   basic.showLeds(`
+       . . . . .
+       . # . # .
+       . . . . .
+       # . . . #
+       . # # # .
+       `)
 })
 input.onButtonPressed(Button.B, () => {
-   basic.showLeds(`
-       . . . . .
-       . # . # .
-       . . . . .
-       . # # # .
-       # . . . #
-       `)
+   basic.showLeds(`
+       . . . . .
+       . # . # .
+       . . . . .
+       . # # # .
+       # . . . #
+       `)
 })
 ```
 
@@ -148,7 +147,26 @@ Remember, MakeCode automatically compiles and runs your program, so all you need
 * Feel free to play around with turning LEDs on or off in the ‘show leds’ blocks until you get the images you want. 
 * Remember to save your code. 
 
->![Face on micro:bit screen](/static/courses/csintro/algorithms/happy-sad.gif)
+```sim
+basic.forever(() => {
+    basic.showLeds(`
+        . . . . .
+        . # . # .
+        . . . . .
+        # . . . #
+        . # # # .
+        `)
+    basic.pause(800)
+    basic.showLeds(`
+        . . . . .
+        . # . # .
+        . . . . .
+        . # # # .
+        # . . . #
+        `)
+    basic.pause(800)
+})
+```
 
 ## Commenting your code
 It is good practice to add comments to your code. Comments can be useful in a number of ways. Comments can help you remember what a certain block of code does and/or why you chose to program something the way you did. Comments also help others reading your code to understand these same things.
@@ -179,7 +197,7 @@ Notes
 
 Clean up your coding workspace before you do a final save! What does this mean?
 
-* It means that only the code and blocks that you are using in your program are still in the workspace.  
+* It means that only the code and blocks that you are using in your program are still in the workspace.  
 * Remove (delete) any other blocks that you may have dragged into the coding workspace as you were experimenting and building your program.
 	
 ## Save and download
@@ -190,23 +208,23 @@ Here is the complete program:
 ```blocks
 // Display a happy face when button A is pressed.
 input.onButtonPressed(Button.A, () => {
-   basic.showLeds(`
-       . . . . .
-       . # . # .
-       . . . . .
-       # . . . #
-       . # # # .
-       `)
+   basic.showLeds(`
+       . . . . .
+       . # . # .
+       . . . . .
+       # . . . #
+       . # # # .
+       `)
 })
 // Display a sad face when button B is pressed.
 input.onButtonPressed(Button.B, () => {
-   basic.showLeds(`
-       . . . . .
-       . # . # .
-       . . . . .
-       . # # # .
-       # . . . #
-       `)
+   basic.showLeds(`
+       . . . . .
+       . # . # .
+       . . . . .
+       . # # # .
+       # . . . #
+       `)
 })
 basic.clearScreen()
 ```

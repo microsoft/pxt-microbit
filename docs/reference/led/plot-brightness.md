@@ -6,12 +6,6 @@ Turn on a LED light with a specific brightness on the [LED screen](/device/scree
 led.plotBrightness(0,0, 128);
 ```
 
-## ~hint
-
-Use [unplot](/reference/led/unplot) to turn **off** an LED.
-
-## ~
-
 ### Parameters
 
 * ``x`` is a [number](/types/number) that means the
@@ -37,7 +31,7 @@ coordinates, see [LED screen](/device/screen).
 This program turns on the bottom right LED at 50% brightness
 
 ```blocks
-led.plot(4, 4, 128)
+led.plotBrightness(2, 2, 128)
 ```
 
 
@@ -49,10 +43,10 @@ to make a square around the edges of the LED screen.
 
 ```blocks
 for (let i = 0; i < 5; i++) {
-    led.plot(0, i, 64)
-    led.plot(4, i, 128)
-    led.plot(i, 0, 172)
-    led.plot(i, 4, 255)
+    led.plotBrightness(0, i, 64)
+    led.plotBrightness(4, i, 128)
+    led.plotBrightness(i, 0, 172)
+    led.plotBrightness(i, 4, 255)
     basic.pause(500)
 }
 ```

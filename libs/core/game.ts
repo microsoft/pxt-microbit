@@ -41,7 +41,7 @@ namespace game {
      * @param x sprite horizontal coordinate, eg: 2
      * @param y sprite vertical coordinate, eg: 2
      */
-    //% weight=60 blockGap=8
+    //% weight=60 blockGap=8 help=game/create-sprite
     //% blockId=game_create_sprite block="create sprite at|x: %x|y: %y"
     //% parts="ledmatrix"
     export function createSprite(x: number, y: number): LedSprite {
@@ -342,7 +342,7 @@ namespace game {
          * @param this the sprite to move
          * @param leds number of leds to move, eg: 1, -1
          */
-        //% weight=50
+        //% weight=50 help=game/move
         //% blockId=game_move_sprite block="%sprite|move by %leds" blockGap=8
         //% parts="ledmatrix"
         public move(leds: number): void {
@@ -391,7 +391,7 @@ namespace game {
          * If touching the edge of the stage and facing towards it, then turn away.
          * @param this TODO
          */
-        //% weight=18
+        //% weight=18 help=game/if-on-edge-bounce
         //% blockId=game_sprite_bounce block="%sprite|if on edge, bounce"
         //% parts="ledmatrix"
         public ifOnEdgeBounce(): void {
@@ -445,7 +445,7 @@ namespace game {
          * @param direction left or right
          * @param degrees angle in degrees to turn, eg: 45, 90, 180, 135
          */
-        //% weight=49
+        //% weight=49 help=game/turn
         //% blockId=game_turn_sprite block="%sprite|turn %direction|by (°) %degrees"
         public turn(direction: Direction, degrees: number) {
             if (direction == Direction.Right)
@@ -477,7 +477,7 @@ namespace game {
          * @param property the name of the property to change
          * @param the updated value
          */
-        //% weight=29
+        //% weight=29 help=game/set
         //% blockId=game_sprite_set_property block="%sprite|set %property|to %value" blockGap=8
         public set(property: LedSpriteProperty, value: number) {
             switch (property) {
@@ -494,7 +494,7 @@ namespace game {
          * @param property the name of the property to change
          * @param value amount of change, eg: 1
          */
-        //% weight=30
+        //% weight=30 help=game/change
         //% blockId=game_sprite_change_xy block="%sprite|change %property|by %value" blockGap=8
         public change(property: LedSpriteProperty, value: number) {
             switch (property) {
@@ -510,7 +510,7 @@ namespace game {
          * Gets a property of the sprite
          * @param property the name of the property to change
          */
-        //% weight=28
+        //% weight=28 help=game/get
         //% blockId=game_sprite_property block="%sprite|%property"
         public get(property: LedSpriteProperty) {
             switch (property) {
@@ -604,7 +604,7 @@ namespace game {
          * @param this TODO
          * @param other TODO
          */
-        //% weight=20
+        //% weight=20 help=game/is-touching
         //% blockId=game_sprite_touching_sprite block="%sprite|touching %other|?" blockGap=8
         public isTouching(other: LedSprite): boolean {
             return this._enabled && other._enabled && this._x == other._x && this._y == other._y;
@@ -614,7 +614,7 @@ namespace game {
          * Reports true if sprite is touching an edge
          * @param this TODO
          */
-        //% weight=19
+        //% weight=19 help=game/is-touching-edge
         //% blockId=game_sprite_touching_edge block="%sprite|touching edge?" blockGap=8
         public isTouchingEdge(): boolean {
             return this._x == 0 || this._x == 4 || this._y == 0 || this._y == 4;
@@ -679,7 +679,7 @@ namespace game {
          * Deletes the sprite from the game engine. The sprite will no longer appear on the screen or interact with other sprites.
          * @param this sprite to delete
          */
-        //% weight=59
+        //% weight=59 help=game/delete
         //% blockId="game_delete_sprite" block="delete %this"
         public delete(): void {
             this._enabled = false;

@@ -46,12 +46,12 @@ This course takes approximately 14 weeks to complete, spending about 1 week on e
 4. [Conditionals](/courses/csintro/conditionals)
 5. [Iteration](/courses/csintro/iteration)
 6. [Review/Mini-Project](courses/csintro/miniproject)
-7. [Coordinate Grid System](/courses/csintro/coordinates)
+7. [Coordinate grid system](/courses/csintro/coordinates)
 8. [Booleans](/courses/csintro/booleans)
-9. [Bits, Bytes, and Binary](/courses/csintro/binary) 
+9. [Bits, bytes, and binary](/courses/csintro/binary) 
 10. [Radio](/courses/csintro/radio)
 11. [Arrays](/courses/csintro/arrays)
-12. [Independent Final Project](/courses/csintro/finalproject)
+12. [Independent final project](/courses/csintro/finalproject)
 
 Each of the 12 lessons is comprised of the following parts:
 

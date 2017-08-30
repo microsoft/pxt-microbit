@@ -1,12 +1,14 @@
 # Project: Fidget Cube
 
 ![Sample fidget cube](/static/courses/csintro/algorithms/fidgetcube.jpg)
+
 A fidget cube is a little cube with something different that you can manipulate on each surface. There are buttons, switches, and dials, and people who like to “fidget” find it relaxing to push, pull, press, and play with it. In this project, students are challenged to turn the micro:bit into their very own “fidget cube”. 
 
 Show students some examples of fidget cubes:
-* Original Kickstarter Fidget Cube - https://www.kickstarter.com/projects/antsylabs/fidget-cube-a-vinyl-desk-toy  (there is a funny video showing the fidget cube in action).
+* Original Kickstarter Fidget Cube - [Fidget Cube: A Vinyl Desk Toy](https://www.kickstarter.com/projects/antsylabs/fidget-cube-a-vinyl-desk-toy) (there is a funny video showing the fidget cube in action).
 
 ## Discussion questions
+
 * Do any of your students fidget? 
 * What kinds of things do they fidget with? Spinning pens, fidget spinners, rings, coins? 
 * There are many different versions of fidget cubes available now. Do any students have any? 
@@ -18,6 +20,7 @@ Show students some examples of fidget cubes:
 Remind students that a computing device has a number of inputs, and a number of outputs. The code that we write processes input by telling the micro:bit what to do when various events occur.
 
 ## Project
+
 Make a fidget cube out of the micro:bit, create a unique output for each of the following inputs:
 * on button A pressed
 * on button B pressed
@@ -29,7 +32,7 @@ See if you can combine a maker element similar to what you created in Lesson 1 b
 ![](/static/courses/csintro/algorithms/fidget-cube.jpg)
 Sample fidget cube designs
 
-## Project Mod 
+## Project mod 
 * Add more inputs and more outputs - use more than 4 different types of input. Try to use other types of output (other than LEDs) such as sound!
 
 ## Assessment
