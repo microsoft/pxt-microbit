@@ -8,7 +8,7 @@ Did you know you could attach your headhpones to the @boardname@ to generate sou
 
 # ~hint
 
-**No crocodile clips!?!?!** Use wires or Aluminium foil! [Read more...](/device/foil-circuits)
+**No crocodile clips!?!?!** Use [wires or aluminium foil](/device/foil-circuits)!
 
 # ~
 
