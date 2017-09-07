@@ -30,6 +30,7 @@
     * [Inchworm](/projects/inchworm)
     * [Milk Carton Robot](/projects/milk-carton-robot)
     * [Milk monster](/projects/milky-monster)
+    * [RC Car](/projects/rc-car)
     * [Timing gates](/projects/timing-gates)
     * [Compass](/projects/compass)
     * [Telegraph](/projects/telegraph)
@@ -291,7 +292,6 @@
     * [Code Dojo Olney](/pkg/CoderDojoOlney/pxt-olney)
     * [UCL Junk Robot](/pkg/chevyng/pxt-ucl-junkrobot)
     * [SRS BitBot](/pkg/srs/pxt-bitbot)
-}
 
 ## #other
 

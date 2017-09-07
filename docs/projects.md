@@ -110,6 +110,10 @@ Fun games to build with your @boardname@.
   "name": "Railway crossing",
   "url":"/projects/railway-crossing",
   "imageUrl":"/static/mb/projects/railway-crossing.png"
+},{
+  "name": "Kitronik RC car hack",
+  "url": "/projects/rc-car",
+  "imageUrl":"/static/mb/projects/rc-car.jpg"
 }]
 ```
 

@@ -36,6 +36,11 @@ Here are some fun programs for your @boardname@!
 
 ```codecard
 [{
+  "name": "Egg & Spoon race",
+  "description": "Balance a micro:bit like an egg and spoon race",
+  "url":"/examples/egg-and-spoon",
+  "cardType": "example"
+},{
   "name": "Plot Acceleration",
   "description": "chart acceleration on the LED screen",
   "url":"/examples/plot-acceleration",
