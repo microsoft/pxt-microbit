@@ -10,7 +10,7 @@ Run part of a program when the @boardname@ receives a
 radio.onDataReceived(() => { });
 ```
 
-### Example
+## Example
 
 This program keeps sending numbers that says how fast the @boardname@ is
 slowing down or speeding up.  It also receives numbers for the same
@@ -26,7 +26,7 @@ radio.onDataReceived(() => {
 })
 ```
 
-### See also
+## See also
 
 [on data packet received](/reference/radio/on-data-packet-received),
 [send number](/reference/radio/send-number), [set group](/reference/radio/set-group)

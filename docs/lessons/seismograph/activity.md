@@ -2,11 +2,11 @@
 
 Welcome! In this project, you will build your own seismograph. This activity will teach how to use the @boardname@ to chart the strength of the acceleration. Let's get started! Project duration: 25 minutes.
 
-### ~avatar avatar
+## ~avatar avatar
 
 Engineering: In this project, you will build your own seismograph @boardname@ from tape and a household plate. 
 
-### ~
+## ~
 
 ## What you'll need: 
 
@@ -32,11 +32,11 @@ Fasten Tape: Fasten tape to the micro USB cable and to the plate. Attach the @bo
 
 ![](/static/mb/lessons/seismograph0.png)
 
-### ~avatar avatar
+## ~avatar avatar
 
 Computer Science: The seismograph has been built. We are ready to program the @boardname@ to be a seismograph! 
 
-### ~
+## ~
 
 # Programming Steps
     
@@ -70,13 +70,13 @@ basic.forever(() => {
 
 ```
 
-### ~
+## ~
 
-### ~avatar avatar
+## ~avatar avatar
 
 Data Analysis: We now need to use the @boardname@ to Analyze Data and chart for the strength of the acceleration.
 
-### ~
+## ~
 
 # Data Analysis Steps
 
@@ -178,9 +178,9 @@ Let's select Style 10 as an example.
 
 ![](/static/mb/lessons/analyze19.png)
 
-### ~avatar avatar
+## ~avatar avatar
 
 Excellent, you're ready to continue with the [challenges](/lessons/seismograph/challenge)
 
-### ~
+## ~
 

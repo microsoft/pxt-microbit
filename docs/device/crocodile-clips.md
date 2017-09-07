@@ -1,16 +1,16 @@
-# crocodile clips
+# Crocodile clips
 
 The large holes at the bottom of the board are designed to attach alligator/crocodile clips 
 to create electrical circuit with other components.
 
 # ~hint
 
-**No crocodile clips!?!?!** Use wires or Aluminium foil! [Read more...](/device/foil-circuits)
+**No crocodile clips!?!?!** Use [wires or aluminium foil](/device/foil-circuits)!
 
 # ~
 
 
-## Connecting Crocodile Clips
+## Connecting crocodile clips
 
 The hole for ``P0`` and ``GND`` allow to grab the board on the side which makes for a great grip.
 

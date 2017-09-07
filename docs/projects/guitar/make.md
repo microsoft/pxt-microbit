@@ -1,11 +1,11 @@
 # Making the Guitar Body
-### @description Maker Project for Guitar Body for @boardname@
+## @description Maker Project for Guitar Body for @boardname@
 
-### ~avatar avatar
+## ~avatar avatar
 
 Make the Guitar Body for your @boardname@ Guitar
 
-### ~
+## ~
 
 ## Duration: ~45 minutes
 
@@ -25,12 +25,12 @@ https://youtu.be/xMSrWaOZkFg
 the shape of your guitar
 * Trace the design on a flat piece of cardboard (40-80 cm is best)
 
-### ~hint
+## ~hint
 
    * Avoid small details that are difficult to cut into cardboard
    * Unfolding a box gives longer pieces of cardboard and creases can be reinforced
 
-### ~
+## ~
 
 ## Step 2: Cut out the body
 *cutting the cardboard*
@@ -54,6 +54,6 @@ https://youtu.be/q0GkQdJmxjE
 
 Strengthen the guitar next with an angled cardboard strip (*optional*).
 
-### ~button /projects/guitar/displaybuttons
+## ~button /projects/guitar/displaybuttons
 NEXT: Buttons, Display and Sound
-### ~
+## ~

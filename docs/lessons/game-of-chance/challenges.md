@@ -11,7 +11,7 @@ basic.showString("SELECT A BUTTON")
 ```
 
 
-### Challenge 1
+## Challenge 1
 
 Now we need to to play the game of chance by responding to the message. We want to respond `YOU WIN` when button `A` is pressed. Add a condition for button `A` and inside it show the string `YOU WIN`.
 
@@ -26,7 +26,7 @@ input.onButtonPressed(Button.A, () => {
 
 * `Run` the code to see if it works as expected.
 
-### Challenge 2
+## Challenge 2
 
 What if @boardname@'s answer to the question is GAME OVER? Let's have `GAME OVER` be displayed when button `B` is pressed. Add a condition for button `B` and inside it show the `GAME OVER`.
 
@@ -42,7 +42,7 @@ input.onButtonPressed(Button.B, () => {
 
 * `Run` the code to see if it works as expected.
 
-### Challenge 3
+## Challenge 3
 
 When you are asked a yes or no question, do you always say yes or no? Add a condition for `on shake` that displays `TRY AGAIN`.
 

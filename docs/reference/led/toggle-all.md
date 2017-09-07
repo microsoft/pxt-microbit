@@ -6,11 +6,11 @@ Toggle all the 25 LEDs on the [LED screen](/device/screen) - if an LED is on bef
 led.toggleAll()
 ```
 
-### Parameters
+## Parameters
 
 * none
 
-### Example
+## Example
 
 The following code will result in every LED being on except for the LED at coordinate (2,2)
 
@@ -26,7 +26,7 @@ led.plot(2, 2)
 led.toggleAll()
 ```
 
-### See also
+## See also
 
 [toggle](/reference/led/toggle), [LED screen](/device/screen), [clear screen](/reference/basic/clear-screen)
 

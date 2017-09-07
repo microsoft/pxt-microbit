@@ -10,14 +10,14 @@ into another sprite.
 game.createSprite(2, 2);
 ```
 
-### Parameters
+## Parameters
 
 * ``x``: The left-to-right place on the LED screen where the sprite will start out.
 * ``y``: The top-to-bottom place on the LED screen where the sprite will start out.
 
 `0` and `4` mean the edges of the screen, and `2` means in the middle.
 
-### Example
+## Example
 
 This program starts a sprite in the middle of the screen.
 Next, the sprite turns toward the lower-right corner.
@@ -29,7 +29,7 @@ item.turn(Direction.Right, 45);
 item.move(2);
 ```
 
-### See also
+## See also
 
 [move](/reference/game/move),
 [turn](/reference/game/turn),

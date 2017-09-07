@@ -2,7 +2,7 @@
 
 ## #examples
 
-### Example: Count to 4
+## Example: Count to 4
 
 This program will show the numbers 0, 1, 2, 3, and 4 one after another on the LED screen.
 

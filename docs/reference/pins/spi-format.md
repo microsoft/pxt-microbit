@@ -6,11 +6,11 @@ Sets the SPI format
 pins.spiFormat(8, 3);
 ```
 
-### Parameters
+## Parameters
 
 * ``bits``, 
 * ``mode``,
 
-### See also
+## See also
 
 [SPI](https://developer.mbed.org/handbook/SPI)

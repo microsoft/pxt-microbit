@@ -1,10 +1,10 @@
 # Code
 
-### ~avatar avatar
+## ~avatar avatar
 
 Have you ever tried to making beat box sounds based on the light level? Let's try making a beatbox with code!
 
-### ~
+## ~
 
 Let's start by adding a variable where you can store data. Then rename the variable to "light". Then set the value of the variable to the block `light level` from the Input drawer. This will gets the `light level` from 0 (dark) to 255 (bright). The light is measured by using various LEDs from the screen. Modify your code so that your code looks like this.
 

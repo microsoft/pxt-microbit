@@ -19,7 +19,7 @@ radio.writeReceivedPacketToSerial();
 radio
 ```
 
-### See Also
+## See Also
 
 [sendNumber](/reference/radio/send-number),
 [sendValue](/reference/radio/send-value),

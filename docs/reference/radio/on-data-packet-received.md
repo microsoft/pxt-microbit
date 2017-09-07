@@ -8,13 +8,13 @@ Run part of a program when the @boardname@ receives a
 radio.onDataPacketReceived(({receivedNumber, receivedString, time, serial, signal}) => { });
 ```
 
-### ~hint
+## ~hint
 
 To add or remove the parts of the packet from the block, try clicking the blue gear in the corner!
 
-### ~
+## ~
 
-### Callback Parameters
+## Callback Parameters
 
 * ``packet`` - the [packet](/reference/radio/packet) that was received by the radio. The packet has the following properties:
   * `receivedNumber` - The [number](/types/number) that was sent in this packet or `0` if this packet did not contain a number. See [send number](/reference/radio/send-number) and [send value](/reference/radio/send-value)
@@ -23,7 +23,7 @@ To add or remove the parts of the packet from the block, try clicking the blue g
   * `serial` - The serial number of the @boardname@ that sent this packet or `0` if the @boardname@ did not include its serial number.
   * `signal` - How strong the radio signal is from `-128` (weak) to `-42` (strong).
 
-### Example
+## Example
 
 This program keeps sending numbers that says how fast the @boardname@ is
 slowing down or speeding up.  It also receives numbers for the same
@@ -39,7 +39,7 @@ radio.onDataPacketReceived(({ receivedNumber }) => {
 })
 ```
 
-### Example
+## Example
 
 This program uses the signal strength from received packets to graph the
 approximate distance between two @boardname@s.
@@ -56,7 +56,7 @@ radio.onDataPacketReceived(({ signal, receivedNumber }) => {
 })
 ```
 
-### See also
+## See also
 
 [send number](/reference/radio/send-number),
 [send string](/reference/radio/send-string),

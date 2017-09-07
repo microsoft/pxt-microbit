@@ -14,6 +14,6 @@ control.eventTimestamp();
 control.eventValue();
 ```
 
-### See Also
+## See Also
 
 [inBackground](/reference/control/in-background), [reset](/reference/control/reset), [waitMicros](/reference/control/wait-micros), [onEvent](/reference/control/on-event), [raiseEvent](/reference/control/raise-event), [eventTimestamp](/reference/control/event-timestamp), [eventValue](/reference/control/event-value)

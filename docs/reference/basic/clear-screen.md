@@ -6,7 +6,7 @@ Turn off all the LED lights on the [LED screen](/device/screen).
 basic.clearScreen()
 ```
 
-### Example: Vanishing heart
+## Example: Vanishing heart
 
 The following code shows a heart on the screen and then turns off all the LED lights.
 
@@ -21,7 +21,7 @@ basic.showLeds(`
 basic.clearScreen()
 ```
 
-### See also
+## See also
 
 [set brightness](/reference/led/set-brightness), [unplot](/reference/led/unplot), [plot](/reference/led/plot), [Image](/reference/images/image)
 

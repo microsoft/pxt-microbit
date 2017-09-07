@@ -2,11 +2,11 @@
 
 Display a number with a variable. 
 
-### ~avatar avatar
+## ~avatar avatar
 
 Welcome! This tutorial will teach you how to make a counter that increments when button A is pressed. Let's get started!
 
-### ~
+## ~
 
 Let's start by creating a **local variable** `count` to keep track of the current count.
 
@@ -35,9 +35,9 @@ input.onButtonPressed(Button.A, () => {
 ```
 
 
-### ~avatar avatar
+## ~avatar avatar
 
 Excellent, you're ready to continue with the [challenges](/lessons/counter/challenges)
 
-### ~
+## ~
 

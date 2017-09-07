@@ -2,7 +2,7 @@
 
 How to define and use local variables.
 
-### @parent language
+## @parent language
 
 A variable is a place where you can store and retrieve data. Variables have a name, a [type](/types), and value:
 
@@ -10,7 +10,7 @@ A variable is a place where you can store and retrieve data. Variables have a na
 * *type* refers to the kind of data a variable can store
 * *value* refers to what's stored in the variable
 
-### Var statement
+## Var statement
 
 Use the Block Editor variable statement to create a variable 
 and the [assignment operator](/blocks/variables/assign) 
@@ -35,7 +35,7 @@ A variable is created for the number returned by the [brightness](/reference/led
 let b = led.brightness();
 ```
 
-### Using variables
+## Using variables
 
 Once you've defined a variable, just use the variable's name whenever you need what's stored in the variable. For example, the following code shows the value stored in `counter` on the LED screen:
 
@@ -52,7 +52,7 @@ counter = counter + 10;
 basic.showNumber(counter);
 ```
 
-### Why use variables?
+## Why use variables?
 
 If you want to remember and modify data, you'll need a variable. 
 A counter is a great example:
@@ -65,7 +65,7 @@ input.onButtonPressed(Button.A, () => {
 });
 ```
 
-### Local variables
+## Local variables
 
 Local variables exist only within the function or block of code where they're defined. For example:
 
@@ -77,11 +77,11 @@ if (led.brightness() > 128) {
 }
 ```
 
-#### Notes
+### Notes
 
 * You can use the default variable names if you'd like, however, it's best to use descriptive variable names. To change a variable name in the editor, select the down arrow next to the variable and then click "new variable".
 
-### See also
+## See also
 
 [types](/types), [assignment operator](/blocks/variables/assign)
 

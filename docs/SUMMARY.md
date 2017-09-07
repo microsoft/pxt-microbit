@@ -292,7 +292,6 @@
     * [Code Dojo Olney](/pkg/CoderDojoOlney/pxt-olney)
     * [UCL Junk Robot](/pkg/chevyng/pxt-ucl-junkrobot)
     * [SRS BitBot](/pkg/srs/pxt-bitbot)
-}
 
 ## #other
 

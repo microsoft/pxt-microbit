@@ -1,10 +1,10 @@
 # Voting Machine
 
-### ~ avatar
+## ~ avatar
 
 Build a voting machine using many @boardname@s!
 
-### ~
+## ~
 
 https://youtu.be/77HOqf8BaNg
 

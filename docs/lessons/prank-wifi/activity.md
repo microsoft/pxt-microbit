@@ -42,7 +42,7 @@ basic.forever(() => {
 
 ```
 
-### Challenge 1
+## Challenge 1
 
 What if wanted to show the maximum connectivity of wifi instead of just 1, 3, or 4 bars?
 
@@ -86,7 +86,7 @@ basic.forever(() => {
 })
 ```
 
-### Challenge 2
+## Challenge 2
 
 Let's add an **IF** at the bottom of your code that checks to see if `sum >= to 1200` **and** if `sum <1400`
 
@@ -135,7 +135,7 @@ basic.forever(() => {
 })
 ```
 
-### Challenge 3
+## Challenge 3
 
 Now it's your turn! Be creative and change the Wifi meter images to your own wifi image you're sure will prank your friends by editing the lines that call `showLeds()`.
 

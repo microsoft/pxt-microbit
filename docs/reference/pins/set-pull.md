@@ -16,12 +16,12 @@ pins.setPull(DigitalPin.P9, PinPullMode.PullDown);
 
 The pull-up and -down resistors are about 13kOhm.
 
-### Parameters
+## Parameters
 
 * ``name``: The @boardname@ hardware pin to configure (``P0``-``P20``)
 * ``pull``: The pull to which to set the pin (**down**, **up**, or **none**)
 
-### Example
+## Example
 
 The following example sets the pull of pin ``P0`` to **up** (high).
 
@@ -29,6 +29,6 @@ The following example sets the pull of pin ``P0`` to **up** (high).
 pins.setPull(DigitalPin.P0, PinPullMode.PullUp);
 ```
 
-### See also
+## See also
 
 [@boardname@ | mbed](https://developer.mbed.org/platforms/Microbit/)

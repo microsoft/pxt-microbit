@@ -7,7 +7,7 @@ let item: game.LedSprite = null;
 item.set(LedSpriteProperty.X, 0);
 ```
 
-### Parameters
+## Parameters
 
 * the **sprite** you want to make store the number you say
 * the kind of [number](/types/number) you want to store in the sprite, like
@@ -17,7 +17,7 @@ item.set(LedSpriteProperty.X, 0);
     * ``brightness``, how bright the LED sprite is (this works the same way as the [brightness](/reference/led/brightness) function)
     * ``blink``, how fast the sprite is blinking (the bigger the number is, the faster the sprite is blinking)
 
-### Example
+## Example
 
 This program makes a sprite on the left side of the screen,
 waits two seconds (2000 milliseconds),
@@ -29,7 +29,7 @@ basic.pause(2000);
 ball.set(LedSpriteProperty.X, 4);
 ```
 
-### See also
+## See also
 
 [turn](/reference/game/turn),
 [brightness](/reference/led/brightness),

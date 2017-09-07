@@ -34,7 +34,7 @@ input.onButtonPressed(Button.B, () => {
 }) 
 ```
 
-### Challenge 1
+## Challenge 1
 
 Now let's add some more types of instructions for the player to follow. Let's add `PRESS PIN 0`. 
 Change the global variable `action` to `math->random(4)` so that we can add a new **IF** statement that checks if `action=3`. If it does, display instructions to press pin 0.
@@ -58,7 +58,7 @@ export function newAction() {
 }
 ```
 
-### Challenge 2
+## Challenge 2
 
 Now let's implement `PRESS PIN 0` in the main. Create a condition of `input->on pin pressed("P0")` that will add one to the score and calls the method `new action`.
 
@@ -80,7 +80,7 @@ input.onPinPressed(TouchPin.P0, () => {
 })
 ```
 
-### Challenge 3
+## Challenge 3
 
 Add `POINT ME NORTH` to the list of possible commands.
 

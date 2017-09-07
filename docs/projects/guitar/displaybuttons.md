@@ -1,14 +1,14 @@
 # Buttons, Display & Sound
-### @description @boardname@ guitar: using buttons with display and sound
+## @description @boardname@ guitar: using buttons with display and sound
 
-### ~avatar avatar
+## ~avatar avatar
 Use Button Events to control LED Display and play Sound
 * **Concepts:**
      * Events
      * Tone/Note
      * Sequence
 
-### ~
+## ~
 
 ## Duration: 30 - 45 minutes
 
@@ -108,7 +108,7 @@ Attach the @boardname@ & battery-pack to the guitar body
 https://youtu.be/ewyEW_U5G9M
 Connect the headphones with crocodile clips
 
-### ~hint
+## ~hint
 ## The @boardname@ can play music
 
 The **play tone** block allows a range letter note tones from **C** to **B5**.
@@ -129,7 +129,7 @@ input.onButtonPressed(Button.A, () => {
     music.playTone(Note.E, music.beat(BeatFraction.Whole))
 })
 ```
-### ~
+## ~
 ## Step 4: Add Tone Playing Events for Buttons A & B
 ```blocks
 input.onButtonPressed(Button.A, () => {
@@ -174,6 +174,6 @@ From **Music**, drag **play tone *C* for *1* beat** block under the **show leds*
 * [Hack your headphones](/projects/hack-your-headphones)
 
 
-### ~button /projects/guitar/lightsensor
+## ~button /projects/guitar/lightsensor
 NEXT: Light Sensor Tone Control
-### ~
+## ~

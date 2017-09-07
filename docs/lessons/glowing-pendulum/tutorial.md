@@ -2,7 +2,7 @@
 
 The glowing pendulum changes the screen brightness based on the acceleration measured on the @boardname@.
 
-### Rebuild the game!
+## Rebuild the game!
 
 The blocks have been shuffled! Put them back together so that...
 * all LEDs are turned on

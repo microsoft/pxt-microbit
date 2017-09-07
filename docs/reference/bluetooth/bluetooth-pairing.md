@@ -1,13 +1,13 @@
 # Bluetooth Pairing 
 
-### ~hint
+## ~hint
 ![](/static/bluetooth/Bluetooth_SIG.png)
 
 For another device like a smartphone to use any of the Bluetooth "services" which the @boardname@ has, it must first be [paired with the @boardname@](/reference/bluetooth/bluetooth-pairing). Once paired, the other device may connect to the @boardname@ and exchange data relating to many of the @boardname@'s features.
 
-### ~
+## ~
 
-### What is 'pairing'?
+## What is 'pairing'?
 
 'Pairing' is what you have to do to have your @boardname@ trust another device like a smartphone and similarly, have your smartphone trust your @boardname@. Why 'trust'? Well, pairing is all about security. You wouldn't usually want just anyone's smartphone connecting to your @boardname@ and making it do things so by pairing *your* smartphone with *your* @boardname@ you ensure that only your devices can talk to each other.     
 
@@ -26,7 +26,7 @@ To get your @boardname@ ready for pairing do the following:
 
 Your @boardname@ is now ready to be paired with the other device. Read the section below which relates to your 'other' device and watch the video too. 
 
-### How do you pair your @boardname@ with a Windows smartphone or tablet?
+## How do you pair your @boardname@ with a Windows smartphone or tablet?
 
 1. Go into Settings
 2. Select Bluetooth
@@ -38,11 +38,11 @@ Your @boardname@ is now ready to be paired with the other device. Read the secti
 8. Enter the 6 digits which the @boardname@ displayed into your Windows smartphone in the pop-up box provided and then select "done".
 9. If you entered the right number the @boardname@ will display a tick / check mark. If you made a mistake it will display a cross or X and you should repeat the process to try again. 
 
-#### Video
+### Video
 https://www.youtube.com/watch?v=AoW3mit7jIg
 
 
-### How do you pair your @boardname@ with an Android smartphone or tablet?
+## How do you pair your @boardname@ with an Android smartphone or tablet?
 
 1. Go into Settings
 2. Select Bluetooth
@@ -54,10 +54,10 @@ https://www.youtube.com/watch?v=AoW3mit7jIg
 8. Enter the 6 digits which the @boardname@ displayed into your Android smartphone in the pop-up box provided and then select "done".
 9. If you entered the right number the @boardname@ will display a tick / check mark. If you made a mistake it will display a cross or X and you should repeat the process to try again. 
 
-#### Video
+### Video
 https://www.youtube.com/watch?v=7hLBfdAGkZI
 
-### How do you pair your @boardname@ with an Apple iOS smartphone or tablet?
+## How do you pair your @boardname@ with an Apple iOS smartphone or tablet?
 
 The steps to pair with an Apple iOS device are different to those followed for an Android or Windows device. To trigger pairing you need an application which will try to interact with your @boardname@ and it's that interaction that triggers the iOS pairing process. There are many you could use but for the purposes of this documentation we'll suggest you install the "nRF Master Control Panel" (nRF MCP) application from Nordic Semiconductor. You'll find it in the Apple app store. It's a really useful Bluetooth application which will help you learn about Bluetooth as well as it having the ability to trigger the pairing process. After installing nRF MCP you should follow these steps to pair with your @boardname@:
 
@@ -70,11 +70,11 @@ The steps to pair with an Apple iOS device are different to those followed for a
 7. Enter the 6 digits which the @boardname@ displayed into your Apple device in the pop-up box provided and then select "Pair".
 8. If you entered the right number the @boardname@ will display a tick / check mark. If you made a mistake it will display a cross or X and you should repeat the process to try again. 
 
-#### Video
+### Video
 https://www.youtube.com/watch?v=wslwyAMwMhs
 
 
-### How often do I need to pair my @boardname@ with my phone?
+## How often do I need to pair my @boardname@ with my phone?
 
 You do *not* need to pair your @boardname@ and smartphone or tablet every time you use them together. Pairing establishes 'trust' which will be retained until it is somehow lost. When another device wants to talk to your @boardname@ it must connect to it but connecting and pairing are not the same thing.
 
@@ -90,7 +90,7 @@ If you do find yourself needing to pair again you will first need to remove the 
 * On iOS go into Settings/Bluetooth, select your @boardname@ and then select Forget This Device
 * On a Windows device go into Settings/Bluetooth. Press and hold the @boardname@ entry on the Windows device. A pop-up will appear with the option "delete". Select "delete" to unpair your @boardname@.
 
-### See also
+## See also
 
 [About Bluetooth](/reference/bluetooth/about-bluetooth), [@boardname@ Bluetooth profile overview ](http://lancaster-university.github.io/microbit-docs/ble/profile/), [@boardname@ Bluetooth profile reference](http://lancaster-university.github.io/microbit-docs/resources/bluetooth/microbit-profile-V1.9-Level-2.pdf),  [Bluetooth on @boardname@ resources](http://bluetooth-mdw.blogspot.co.uk/p/bbc-microbit.html), [Bluetooth SIG](https://www.bluetooth.com)
 

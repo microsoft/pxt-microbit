@@ -4,17 +4,17 @@ The clear function for images.
 
 Turn off all the pixels in an [Image](/reference/images/image).
 
-### JavaScript
+## JavaScript
 
 ```sig
 export function clear(img: micro_bit.Image)
 ```
 
-### Parameters
+## Parameters
 
 * none
 
-### Example
+## Example
 
 The following example turns off the pixels of `img` when the A input button is pressed:
 
@@ -33,7 +33,7 @@ input.onButtonPressed(Button.A, () => {
 })
 ```
 
-### See also
+## See also
 
 [Image](/reference/images/image), [show animation](/reference/basic/show-animation), [show image](/reference/images/show-image), [scroll image](/reference/images/scroll-image), [create image](/reference/images/create-image)
 

@@ -6,6 +6,6 @@ Write a buffer to the [serial](/device/serial) port.
 serial.writeBuffer(pins.createBuffer(0));
 ```
 
-### Parameters
+## Parameters
 
 * `buffer` is the buffer to write to the serial port

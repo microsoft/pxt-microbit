@@ -41,7 +41,7 @@ input.onButtonPressed(Button.A, () => {
 
 ```
 
-### Challenge 1
+## Challenge 1
 
 Create an event handler for Button B.
 
@@ -83,7 +83,7 @@ input.onButtonPressed(Button.B, () => {
 
 ```
 
-### Challenge 2
+## Challenge 2
 
 
 
@@ -155,7 +155,7 @@ basic.showLeds(`
 ```
 
 
-### Challenge 3
+## Challenge 3
 
 Show an animation that scrolls back up when you press button "B".
 

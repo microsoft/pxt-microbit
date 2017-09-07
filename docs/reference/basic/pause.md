@@ -7,11 +7,11 @@ You can use this function to slow your program down.
 basic.pause(400)
 ```
 
-### Parameters
+## Parameters
 
 * ``ms`` is the number of milliseconds that you want to pause (100 milliseconds = 1/10 second, and 1000 milliseconds = 1 second).
 
-### Example: diagonal line
+## Example: diagonal line
 
 This example draws a diagonal line by turning on LED `0, 0` (top left) through LED `4, 4` (bottom right). 
 The program pauses 500 milliseconds after turning on each LED. 
@@ -24,7 +24,7 @@ for (let i = 0; i < 5; i++) {
 }
 ```
 
-### See also
+## See also
 
 [while](/blocks/loops/while), [running time](/reference/input/running-time), [for](/blocks/loops/for)
 

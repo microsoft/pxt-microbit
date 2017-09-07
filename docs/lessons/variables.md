@@ -26,7 +26,7 @@ Drag another `set item` block from the **Variables** draw and click the **down a
 
 Finally, beneath that line, drag a `show number` block from the **Basic** drawer, and drag out the `0`. Drag another variable block from the **Variables** drawer, change it to `value`, and drop this into the space.
 
-### What does this code do?
+## What does this code do?
 
 * We create a new variable called value and set it to 0
 * The code runs forever and waits for the user to press the A button

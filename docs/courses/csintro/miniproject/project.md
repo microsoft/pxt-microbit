@@ -77,7 +77,7 @@ Because students are working on the projects in class, and much of the benefit c
 
 A work log is a short, bullet point list of what they worked on, and how long it took. Stick to the facts. It shouldn’t take more than thirty seconds or so to write up a work log. Students should do one for every class. A shared Microsoft OneNote notebook is a great way to keep a work log that students can update regularly. Alternately, you might use a collaborative shared document, or your classroom management system, or even e-mail.
 
-#### Sample Work Log
+### Sample Work Log
 >**_April 11_**<br/>
 _20 min. Created code that reacts when pins P0 and P1 are pressed._<br/>
 _0 min. Talked with Mr. Kiang about how to attach wires so they won’t fall off_<br/>

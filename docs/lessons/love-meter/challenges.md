@@ -14,7 +14,7 @@ input.onPinPressed(TouchPin.P0, () => {
 
 ```
 
-### Challenge 1
+## Challenge 1
 
 Add a pause of 3000 milliseconds (3 seconds) after showing the number so that the number won't immediately disappear in the next challenge.
 
@@ -27,7 +27,7 @@ input.onPinPressed(TouchPin.P0, () => {
 })
 ```
 
-### Challenge 2
+## Challenge 2
 
 If the rating **x** is between *0* and *3* (strictly less than *4*), display the text "HORRIBLE!".
 
@@ -43,7 +43,7 @@ input.onPinPressed(TouchPin.P0, () => {
 })
 ```
 
-### Challenge 3
+## Challenge 3
 
 **If** the rating is between 4 and 7, display the text "MEDIOCRE!" **else** display the text "MATCHED!"
 
@@ -63,7 +63,7 @@ input.onPinPressed(TouchPin.P0, () => {
 })
 ```
 
-### Challenge 4
+## Challenge 4
 
 Use `show LEDs` to display images instead of text for each case.
 

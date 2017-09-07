@@ -1,10 +1,10 @@
 # Infection
 
-### ~avatar avatar
+## ~avatar avatar
 
 There is a disease outbreak! Will you find patient zero?!?
 
-### ~
+## ~
 
 **Infection** is a distributed game which simulates 
 the propagation of an illness. **The goal is to stop the outbreak before every player dies!**
@@ -18,14 +18,14 @@ After the incubation period, the sad face will appear on the screen. After the s
 
 If any player survives the outbreak, the game is won. Otherwise try again!
 
-### ~ hint
+## ~ hint
 
 **Infection** is an engaging game that will get your students running around.
 We recommend playing it outside to give more space for the students.
 
-### ~
+## ~
 
-### How to play
+## How to play
 
 Press `A+B` to enter master mode (1 per game).
 
@@ -53,7 +53,7 @@ Icons used in the game:
 
 https://makecode.microbit.org/_gymCJCWPbiDu
 
-### JavaScript code
+## JavaScript code
 
 ```typescript
 /**

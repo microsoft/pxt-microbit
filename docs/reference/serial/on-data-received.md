@@ -7,11 +7,11 @@ Registers an event to be fired when one of the delimiter is matched.
 serial.onDataReceived(",", () => {})
 ```
 
-### Parameters
+## Parameters
 
 * `delimiters` is a [string](/types/string) containing any of the character to match
 
-### Example
+## Example
 
 Read values separated by `,`:
 
@@ -21,7 +21,7 @@ serial.onDataReceived(serial.delimiters(Delimiters.Comma), () => {
 })
 ```
 
-### See also
+## See also
 
 [serial](/device/serial),
 [serial write line](/reference/serial/write-line),

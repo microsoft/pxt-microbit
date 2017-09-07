@@ -1,12 +1,12 @@
 # Make
 
-### @description Maker Project for Wallet
+## @description Maker Project for Wallet
 
-### ~avatar avatar
+## ~avatar avatar
 
 Make the duct tape wallet for your @boardname@
 
-### ~
+## ~
 
 ## Duration: ~30 minutes
 
@@ -177,8 +177,8 @@ If you plan to make an extensive use of your wallet without using the buttons, y
 
 The wallet is ready, we just have to add some code into the @boardname@ to make it alive.
 
-### ~button /projects/wallet/code
+## ~button /projects/wallet/code
 
 Let's add some code!
 
-### ~
+## ~

@@ -1,10 +1,10 @@
 # Rock Paper Scissors Teams
 
-### ~avatar avatar
+## ~avatar avatar
 
 Massively multi-player rock paper scissors!
 
-### ~
+## ~
 
 https://youtu.be/8ztOmdZi5Pw
 

@@ -6,7 +6,7 @@ Blocks the current fiber for the given amount of micro-seconds.
 control.waitMicros(4)
 ```
 
-### Example
+## Example
 
 This program sends a 10 micro-second HIGH pulse through pin ``P0``. 
 
@@ -21,12 +21,12 @@ control.waitMicros(10)
 pins.digitalWritePin(DigitalPin.P0, 0)
 ```
 
-#### ~hint
+### ~hint
 
 This function is not supported in the simulator.
 
-#### ~
+### ~
 
-### See Also
+## See Also
 
 [pause](/reference/basic/pause)

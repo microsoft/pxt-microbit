@@ -6,11 +6,11 @@ Read a text from the serial port until a delimiter is found.
 serial.readUntil(",");
 ```
 
-### Returns
+## Returns
 
 * a [string](/types/string) containing input from the serial port, such as a response typed by a user
 
-### Example
+## Example
 
 The following example reads strings separated by commands (``,``).
 
@@ -21,7 +21,7 @@ basic.forever(() => {
 });
 ```
 
-### See also
+## See also
 
 [serial](/device/serial),
 [serial write line](/reference/serial/write-line),

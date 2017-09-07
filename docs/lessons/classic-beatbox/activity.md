@@ -47,8 +47,8 @@ input.onPinPressed(TouchPin.P1, () => {
 
 * click *run* to see if the code works as expected.
 
-### ~avatar boothing
+## ~avatar boothing
 
 Excellent, you're ready to continue with the [challenges](/lessons/classic-beatbox/challenges)!
 
-### ~
+## ~

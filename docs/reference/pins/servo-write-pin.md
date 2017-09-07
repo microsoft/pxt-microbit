@@ -12,20 +12,20 @@ and approximately `90` specifies no movement.)
 pins.servoWritePin(AnalogPin.P0, 180)
 ```
 
-### Parameters
+## Parameters
 
 * ``name``: a [string](/types/string) that specifies the pin name (`P0` through `P4`, or `P10`)
 * ``value``: a [number](/types/number) from `0` through `180`
 
-### Examples
+## Examples
 
-#### Setting the shaft angle to midpoint on a servo
+### Setting the shaft angle to midpoint on a servo
 
 ```blocks
 pins.servoWritePin(AnalogPin.P0, 90)
 ```
 
-#### Controlling the shaft by using the tilt information of the accelerometer
+### Controlling the shaft by using the tilt information of the accelerometer
 
 ```blocks
 basic.forever(() => {
@@ -36,13 +36,13 @@ basic.forever(() => {
 })
 ```
 
-#### Setting the full speed on a continuous servo
+### Setting the full speed on a continuous servo
 
 ```blocks
 pins.servoWritePin(AnalogPin.P0, 0)
 ```
 
-### See also
+## See also
 
 [@boardname@ pins](/device/pins), [servo set pulse](/reference/pins/servo-set-pulse)
 

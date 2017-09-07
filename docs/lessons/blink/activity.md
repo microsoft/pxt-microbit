@@ -2,7 +2,7 @@
 
 Turn an LED on and off with forever 
 
-### ~avatar avatar
+## ~avatar avatar
 
 ```sim
 basic.forever(() => {
@@ -14,7 +14,7 @@ basic.forever(() => {
 ```
 Let's build a blinking light!
 
-### ~
+## ~
 
 Have you ever tried to blink a flashlight at night? The concept is fairly simply: turn on the light, wait for a little, turn off the light, wait again, and repeat. That's exactly what we need to code to get a blinking LED.
 
@@ -53,9 +53,9 @@ basic.forever(() => {
 })
 ```
 
-### ~avatar boothing
+## ~avatar boothing
 
 Excellent, you're ready to continue with the [challenges](/lessons/blink/challenges)!
 
-### ~
+## ~
 

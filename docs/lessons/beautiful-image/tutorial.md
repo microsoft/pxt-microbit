@@ -2,9 +2,9 @@
 
 Beautiful Image tutorial. 
 
-### ~avatar avatar
+## ~avatar avatar
 
-### @video td/videos/beautiful-image-0
+## @video td/videos/beautiful-image-0
 
 Rebuild the game!
 

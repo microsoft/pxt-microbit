@@ -2,11 +2,11 @@
 
 Control images with a variable.
 
-### ~avatar avatar
+## ~avatar avatar
 
 In this activity, you will learn how to blink an image on the LED screen.
 
-### ~
+## ~
 
 Let's start by adding code that plots a heart image on the screen using `show LEDs`. Once you are done coding, don't forget to run your code in the simulator or the @boardname@.
 
@@ -63,9 +63,9 @@ basic.forever(() => {
 ```
 
 
-### ~avatar boothing
+## ~avatar boothing
 
 Excellent, you're ready to continue with the [challenges](/lessons/flashing-heart/challenges)!
 
-### ~
+## ~
 

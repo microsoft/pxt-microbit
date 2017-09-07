@@ -16,21 +16,21 @@ The basic steps are:
 
 Here are instructions for different browsers on Windows and Mac computers. Choose the one you're using:
 
-#### Windows browsers
+### Windows browsers
 
 * [Microsoft Edge](/device/usb/windows-edge)
 * [Internet Explorer](/device/usb/windows-ie)
 * [Chrome](/device/usb/windows-chrome)
 * [Firefox](/device/usb/windows-firefox)
 
-#### Mac browsers
+### Mac browsers
 
 * [Safari](/device/usb/mac-safari)
 * [Chrome](/device/usb/mac-chrome)
 * [Firefox](/device/usb/mac-firefox)
 
-### ~hint
+## ~hint
 
 Transfer not working? See some [troubleshooting tips](/device/usb/troubleshooting).
 
-### ~
+## ~

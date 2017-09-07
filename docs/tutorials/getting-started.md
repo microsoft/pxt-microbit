@@ -1,6 +1,6 @@
 # Getting started
 
-### Step 1
+## Step 1
 
 Welcome! Place the ``||basic:show string||`` block in the ``||basic:on start||`` slot. Replace the ``"Hello"`` text with your name. Did you see it scroll?.
 
@@ -8,11 +8,11 @@ Welcome! Place the ``||basic:show string||`` block in the ``||basic:on start||``
 basic.showString("Micro!")
 ```
 
-### Step 2
+## Step 2
 
 Connect a USB cable to the @boardname@ and click ``|Download|``. Save the program to the **@drivename@** drive. This transfers your code to the @boardname@!
 
-### Step 3
+## Step 3
 
 Well, the text stopped. Place the ``||basic:show string||`` block in the ``||input:on button pressed||`` slot to scroll your name when button **A** is pressed.
 
@@ -22,15 +22,15 @@ input.onButtonPressed(Button.A, () => {
 });
 ```
 
-### Step 4
+## Step 4
 
 Click ``|Download|`` to save and transfer your code again, then press button **A** to scroll your text.
 
-### Step 5
+## Step 5
 
 Place some blocks to display a smiley when button **B** is pressed.
 
-####   
+###   
 
 Use the dropdown to find ``B``!
 
@@ -46,12 +46,12 @@ input.onButtonPressed(Button.B, () => {
 })
 ```
 
-### Step 6
+## Step 6
 
 Place the ``||basic:show number||`` and ``||Math:pick random||`` blocks
 in an ``||input:on shake||`` slot to build a dice.
 
-####   
+###   
 
 When the @boardname@ is shaken, a random number between ``0`` and ``6`` is displayed
 on the screen.
@@ -62,6 +62,6 @@ input.onGesture(Gesture.Shake, () => {
 })
 ```
 
-### Step 7
+## Step 7
 
 Well done! You've completed your first MakeCode activity.

@@ -1,13 +1,13 @@
 
 # Reaction Time
 
-### @description A reaction time experiment made of cardboard
+## @description A reaction time experiment made of cardboard
 
-### ~avatar avatar
+## ~avatar avatar
 
 Make a reaction time experiment that responds to your body's conductivity!
 
-### ~
+## ~
 
 https://youtu.be/doHwknM7HbQ
 
@@ -28,8 +28,8 @@ https://youtu.be/doHwknM7HbQ
 * [Make](/projects/reaction-time/make)  
 * [Code](/projects/reaction-time/code)  
 
-### ~button /projects/reaction-time/make
+## ~button /projects/reaction-time/make
 
 Let's get started!
 
-### ~
+## ~

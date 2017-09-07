@@ -14,7 +14,7 @@ calling this function.
 pins.map(0, 0, 4, 0, 1023);
 ```
 
-### Parameters
+## Parameters
 
 * ``value``: a [number](/types/number) that specifies the value to map
 * ``fromLow``: a [number](/types/number)  that specifies the lower bound of the origin interval
@@ -33,7 +33,7 @@ let index = pins.map(value1, 0, 1023, 0, 4)
 led.plot(0, index)
 ```
 
-### See also
+## See also
 
 [analog read pin](/reference/pins/analog-read-pin)
 

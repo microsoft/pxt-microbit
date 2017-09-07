@@ -26,7 +26,7 @@ input.onGesture(Gesture.Shake, () =>  {
 ```
 
 
-### Challenge 1
+## Challenge 1
 
 Now let's increase the number of responses the magic 8 ball can give. How about 5 responses instead? Let's change the limit of `pick random` to  4.
 
@@ -49,7 +49,7 @@ input.onGesture(Gesture.Shake, () =>  {
 })
 ```
 
-### Challenge 2
+## Challenge 2
 
 Now have the magic 8 ball respond "Try again" if **randomNumber** is 3.
 
@@ -73,7 +73,7 @@ input.onGesture(Gesture.Shake, () => {
 })
 ```
 
-### Challenge 3
+## Challenge 3
 
 Now what about if **randomNumber** is 4? Let's have the magic 8 ball respond "Definitely!".
 

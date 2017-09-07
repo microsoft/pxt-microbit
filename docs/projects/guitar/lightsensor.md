@@ -1,8 +1,8 @@
 # Light Sensor Tone control
 
-### @description @boardname@ guitar: using light sensor to control tone
+## @description @boardname@ guitar: using light sensor to control tone
 
-### ~avatar avatar
+## ~avatar avatar
 
 Use the Light Sensor to the control tone for this [Theremin](https://en.wikipedia.org/wiki/Theremin) inspired guitar
 
@@ -13,7 +13,7 @@ Use the Light Sensor to the control tone for this [Theremin](https://en.wikipedi
      * Ratio Mapping
      * Forever Loop
      * Math (multiplication) with code properties
-### ~
+## ~
 
 ## Duration: 30 - 45 minutes
 
@@ -61,8 +61,8 @@ Experiment to see the effect on graph height when the **plot bar graph** value *
 **255 is the maximum light input reading**, try numbers smaller than 255
 **Find a value** that allows the graph to show 1 - 5 bars
 
-### ~hint
-### Frequency
+## ~hint
+## Frequency
 **Frequency** measured in Hz which are cycles per second or vibrations per second
   * A healthy human ear can detect frequencies in the range of 20Hz to 20,000Hz.
   * The @boardname@ + headphones reliably produce detectable output ~50Hz - 6,000Hz.
@@ -76,7 +76,7 @@ by replacing the letter **C** note with a **number** block that has the value it
 ```blocks
 music.playTone(261, music.beat(BeatFraction.Half))
 ```
-### ~
+## ~
 
 ## Step 3: Multiply Frequency using Math blocks
  ```blocks
@@ -86,7 +86,7 @@ input.onButtonPressed(Button.A, () => {
 ```
 Create a **play tone** block using a **Math** section, **multiplication** block to set *tone*
 
-### Next
+## Next
 **Add** a **B** button block that multiplies the **261** tone by a number other than 2 to set tone
 
 **Download the code to the @boardname@**
@@ -110,6 +110,6 @@ Cover the LEDs with your hand to vary light detected to control the tone
 ## Good work, this guitar is sounding good!
 **Challenge:** Create a variable for the light level multiplier that you can change using buttons (optional)
 
-### ~button /projects/guitar/accelerometer
+## ~button /projects/guitar/accelerometer
 NEXT: Accelerometer Beat control
-### ~
+## ~

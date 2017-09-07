@@ -6,12 +6,12 @@ Raises events for melodies or music events.
 music.onEvent(MusicEvent.MelodyNotePlayed, () => {})
 ```
 
-### Parameters
+## Parameters
 
 * ``value`` the kind of event
 * ``handler`` the code to run when the event is raised.
 
-### Example
+## Example
 
 This example prints all the events to the serial output.
 

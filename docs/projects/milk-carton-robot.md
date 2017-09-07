@@ -1,13 +1,13 @@
 
 # Milk Carton Robot
 
-### @description A half gallon milk carton robot
+## @description A half gallon milk carton robot
 
-### ~avatar avatar
+## ~avatar avatar
 
 Make a funny Milk Carton robot!
 
-### ~
+## ~
 
 https://youtu.be/Ah4fEbJtklU
 
@@ -17,20 +17,20 @@ https://youtu.be/Ah4fEbJtklU
 
 ## Materials
 
-### Recycled
+## Recycled
 
 * 1 Milk Carton **without a screwable cap**
 * 2 Coffee stiring wood sticks
 * 2 Straws
 * 2 clothespin (optional, can be replaced by glue)
 
-### Electronics
+## Electronics
 
 * 1 @boardname@, battery holder and 2 AAA batteries
 * 3 Crocodile clips to pigtail cables
 * 1 micro servo 9g SG90
 
-### Tools
+## Tools
 * Scissors that can cut cardboard
 * Hole puncher (scissors will work too)
 * Glue gun
@@ -47,8 +47,8 @@ https://youtu.be/Ah4fEbJtklU
 * [Code](/projects/milk-carton-robot/code)  
 * [Connect](/projects/milk-carton-robot/connect)  
 
-### ~button /projects/milk-carton-robot/make
+## ~button /projects/milk-carton-robot/make
 
 Let's get started!
 
-### ~
+## ~

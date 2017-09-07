@@ -19,8 +19,8 @@ Learn how to **show LEDs** to turn on a LED light pattern on the LED screen. We 
 
 ## Documentation
 
-* **show LEDs** : [read more...](/reference/basic/show-leds)
-* **on button pressed** : [read more...](/reference/input/on-button-pressed)
+* **[show LEDs](/reference/basic/show-leds)**
+* **[on button pressed](/reference/input/on-button-pressed)**
 
 ```cards
 input.onButtonPressed(Button.A, () => {})

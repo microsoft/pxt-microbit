@@ -1,10 +1,11 @@
 # Connect
 
+## Step 4: Remote control
 
 https://youtu.be/XXesoUC0XBU
 
-We are going to use radio to remote control the toy car. 
-A second @microbit@ will send commands to control the throttle and the steering.
+We can use the radio on the @boardname@ to control the toy car remotely.
+A second @boardname@ will send commands to control the throttle and the steering.
 
 ```blocks-ignore
 let steering = 0

@@ -12,7 +12,7 @@ on the @boardname@.
 input.onButtonPressed(Button.A, () => {})
 ```
 
-### Example: count button clicks
+## Example: count button clicks
 
 This example counts how many times you press the `A` button. 
 Each time you press the button, the [LED screen](/device/screen) shows the `count` variable getting bigger.
@@ -26,7 +26,7 @@ input.onButtonPressed(Button.A, () => {
 })
 ```
 
-### Example: roll dice
+## Example: roll dice
 
 This example shows a number from 1 to 6 when you press the `B` button.
 
@@ -37,14 +37,14 @@ input.onButtonPressed(Button.B, () => {
 })
 ```
 
-### ~hint
+## ~hint
 
 This program adds a `1` to `random(6)` so the numbers on the dice will come out right.
 Otherwise, sometimes they would show a `0`.
 
-### ~
+## ~
 
-### See also
+## See also
 
 [button is pressed](/reference/input/button-is-pressed), [forever](/reference/basic/forever), [random](/blocks/math)
 

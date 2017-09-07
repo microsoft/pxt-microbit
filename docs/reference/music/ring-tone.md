@@ -11,14 +11,14 @@ This function only works on the @boardname@ and in some browsers.
 music.ringTone(440)
 ```
 
-### Parameters
+## Parameters
 
 * ``frequency`` is a [number](/types/number) that says
 how high-pitched or low-pitched the tone is.  This
 number is in **Hz** (**Hertz**), which is a measurement of frequency
 or pitch.
 
-### Example
+## Example
 
 This program checks the **accelerometer** for the @boardname@'s
 **acceleration** (how much the @boardname@ is speeding up or slowing
@@ -32,7 +32,7 @@ basic.forever(() => {
 })
 ```
 
-### Using other pins
+## Using other pins
 
 Use [analogSetPitchPin](/reference/pins/analog-set-pitch-pin) to change that pin used to generate music.
 
@@ -40,7 +40,7 @@ Use [analogSetPitchPin](/reference/pins/analog-set-pitch-pin) to change that pin
 pins.analogSetPitchPin(AnalogPin.P1);
 ```
 
-### See also
+## See also
 
 [rest](/reference/music/rest), [play tone](/reference/music/play-tone),
 [tempo](/reference/music/tempo), [set tempo](/reference/music/set-tempo),

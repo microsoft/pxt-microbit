@@ -24,7 +24,6 @@ basic.forever(() => {
 
 Unfortunately, using the serial library requires quite a bit of a setup.
 
-
 ### ~ hint
 
 **Windows earlier than 10**
@@ -34,7 +33,7 @@ If you are running a Windows version earlier than 10, you must install a device 
 
 * Follow the instructions at https://docs.mbed.com/docs/mbed-os-handbook/en/latest/getting_started/what_need/ to install the device driver.
 
-### ~
+## ~
 
 ### Chrome Extension
 
@@ -73,7 +72,7 @@ If you prefer another terminal emulator (such as [PuTTY](http://www.putty.org/))
 
 ![](/static/mb/serial-library-1.png)
 
-### Linux
+## Linux
 
 * Install the program `screen` if it is not already installed.
 * Plug in the micro:bit.
@@ -86,7 +85,7 @@ If you prefer another terminal emulator (such as [PuTTY](http://www.putty.org/))
 
 Alternative programs include `minicom` and so on.
 
-### Mac OS
+## Mac OS
 
 * Plug in the micro:bit
 * Open a terminal

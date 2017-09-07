@@ -2,11 +2,11 @@
 
 A classic game, Hero, in which you must capture the food and flee away from the ghost!
 
-### ~avatar avatar
+## ~avatar avatar
 
 This tutorial will teach you how to create a hero game to capture food while dodging the ghost; the game was inspired by the classic arcade game Pac Man.
 
-### ~
+## ~
 
 First we need to create a function create sprite at the x, y coordinates and that set the variable called hero on the @boardname@ the first time we play.
 
@@ -270,9 +270,9 @@ ghost.set(LedSpriteProperty.X, 4);
 
 ```
 
-### ~avatar avatar
+## ~avatar avatar
 
 Congratulations! You have a homemade hero game based on the classic version of PacMan
 
-### ~
+## ~
 

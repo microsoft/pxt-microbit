@@ -2,13 +2,13 @@
 
 design a blinking rectangle animation.
 
-### ~avatar avatar
+## ~avatar avatar
 
 
 
 Welcome! This tutorial will teach how design a **snowfall animation**. Let's get started!
 
-### ~
+## ~
 
 Let's start by creating a `forever` loop that will allow us to repeat the show LEDs code. Any code in the `forever` loop will repeat in the background... forever.
 
@@ -55,9 +55,9 @@ basic.forever(() => {
 
 Run your code in the simulator or download it to your @boardname@ to see what happens!
 
-### ~avatar avatar
+## ~avatar avatar
 
 Excellent, you're ready to continue with the [challenges](/lessons/snowflake-fall/challenges)!
 
-### ~
+## ~
 

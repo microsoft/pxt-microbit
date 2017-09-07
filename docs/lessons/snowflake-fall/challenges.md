@@ -25,7 +25,7 @@ basic.forever(() => {
 })
 ```
 
-### Challenge 1
+## Challenge 1
 
 
 
@@ -62,7 +62,7 @@ basic.forever(() => {
 
 * Run your program and see if it works.
 
-### Challenge 3
+## Challenge 3
 
 Add a fourth frame to the current animation... or make it your own!
 

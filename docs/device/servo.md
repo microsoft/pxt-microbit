@@ -1,10 +1,10 @@
 # Equipping a microservo with Crocodile clips
 
-### ~ hint
+## ~ hint
 
 If you are running a class or activity, you should consider preparing all servos before hand.
 
-### ~
+## ~
 
 ## Using a microservo with the @boardname@
 
@@ -20,7 +20,7 @@ and a **Male jumper (pig tail)** on the other end. You can purchase bundles of s
 
 https://youtu.be/XtzsydSTXEg
 
-### Materials
+## Materials
 
   * 1 Crocodile clip cable
   * 1 male (pig tail) cable
@@ -29,13 +29,13 @@ https://youtu.be/XtzsydSTXEg
 
 Simple cut the cables, strip them, thread the cables together and cover with the shrink wrap.
 
-### ~ hint
+## ~ hint
 
 It is very **important** to ensure that there is a good connection between the 2 cables.
 If the connection is weak, the microservo will not receive enough current and it will not work.
 **If you have access to a soldering iron, we strongly recommend to solder this connection.**
 
-### ~
+## ~
 
 
 ## Direct connection
@@ -48,32 +48,32 @@ You can also connect your crocodile clips directly to the servo.
   * 3 crocodile clips, yellow, red and black.
   * 1 micro servo 9g (SG90)
 
-### Step 1: cutout the connector
+## Step 1: cutout the connector
 
 Using the cutting pliers, cut out the dark plastic connector.
 
 ![](/static/mb/projects/inchworm/servo1.jpg)
 
-### Step 2: strip out cables
+## Step 2: strip out cables
 
 Using the plier or a wire stripper, strip the plastic from the cables.
 
 ![](/static/mb/projects/inchworm/servotrim.jpg)
 
-### Step 3: threading the servo cablers
+## Step 3: threading the servo cablers
 
 Thread the servo cables.
 
 ![](/static/mb/projects/inchworm/servo3.jpg)
 
-### Step 4: crocobile clip
+## Step 4: crocobile clip
 
 Cut a crocodile cable in two and strip out the casing. 
 If possible try to use the same cable colors as the servo!
 
 ![](/static/mb/projects/inchworm/servo4.jpg)
 
-### Step 5: thread cables together
+## Step 5: thread cables together
 
 Place the cables next to each other
 
@@ -83,27 +83,27 @@ Place the cables next to each other
 
 ![](/static/mb/projects/inchworm/servo6.jpg)
 
-### ~ hint
+## ~ hint
 
 It is very **important** to ensure that there is a good connection between the 2 cables.
 If the connection is weak, the microservo will not receive enough current and it will not work.
 **If you have access to a soldering iron, we strongly recommend to solder this connection.**
 
-### ~
+## ~
 
-### Step 4: protect the connection
+## Step 4: protect the connection
 
 Protect the connection with shrinkwrap tubes, electrical or duct tape.
 
 ![](/static/mb/projects/inchworm/servo7.jpg)
 
-### Step 5: repeat for all cables
+## Step 5: repeat for all cables
 
 Repeat the same process until all cables are connected.
 
 ![](/static/mb/projects/inchworm/servo8.jpg)
 
-### Step 6: testing!
+## Step 6: testing!
 
 It's time to test that your connection are all proper and that the servo will function **when the @boardname@ is powered by battery**.
 
@@ -111,13 +111,13 @@ It's time to test that your connection are all proper and that the servo will fu
 
 ![](/static/mb/projects/inchworm/circuit1.jpg)
 
-### ~ hint
+## ~ hint
 
 When attaching the crocodile clips to the pins, don't hesitate to grab the side of the board with the jaws.
 
 ![](/static/mb/projects/inchworm/circuit2.jpg)
 
-### ~
+## ~
 
 * Download the following code to your @boardname@
 

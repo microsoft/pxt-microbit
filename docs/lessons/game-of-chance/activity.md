@@ -8,9 +8,9 @@ We will use `show string` to show text on the LED screen. *String* is a common n
 basic.showString("SELECT A BUTTON")
 ```
 
-### ~avatar boothing
+## ~avatar boothing
 
 Excellent, you're ready to continue with the [challenges](/lessons/game-of-chance/challenges)!
 
-### ~
+## ~
 

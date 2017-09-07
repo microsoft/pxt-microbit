@@ -1,11 +1,11 @@
 # Make
-### @description Building the cardboard inchworm
+## @description Building the cardboard inchworm
 
-### ~avatar avatar
+## ~avatar avatar
 
 Turn a piece of cardboard into an inchworm!
 
-### ~
+## ~
 
 ## Duration: ~45 minutes
 
@@ -83,6 +83,6 @@ Your inchworm is ready!
 
 ![](/static/mb/projects/inchworm/ready.jpg)
 
-### ~button /projects/inchworm/code
+## ~button /projects/inchworm/code
 NEXT: Code
-### ~
+## ~

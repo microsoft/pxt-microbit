@@ -12,22 +12,22 @@ measured as +4 dBm.
 radio.setTransmitPower(7);
 ```
 
-### Range
+## Range
 
 If your @boardname@ is sending with a strength of `7`, and you are in
 an open area without many other computers around, the @boardname@ signal
 can reach as far as 70 meters (about 230 feet).
 
-### Parameters
+## Parameters
 
 * ``power`` is a [number](/types/number) between ``0`` and ``7`` that
 means how strong the signal is.
 
-### Simulator
+## Simulator
 
 This function only works on the @boardname@, not in browsers.
 
-### Example
+## Example
 
 This program makes the ``radio`` send at full strength.
 
@@ -35,7 +35,7 @@ This program makes the ``radio`` send at full strength.
 radio.setTransmitPower(7)
 ```
 
-### See also
+## See also
 
 [on data packet received](/reference/radio/on-data-packet-received),
 [send number](/reference/radio/send-number),

@@ -2,12 +2,12 @@
 
 Raise an alert on a remote device.
 
-### ~hint
+## ~hint
 ![](/static/bluetooth/Bluetooth_SIG.png)
 
 For another device like a smartphone to use any of the Bluetooth "services" which the @boardname@ has, it must first be [paired with the @boardname@](/reference/bluetooth/bluetooth-pairing). Once paired, the other device may connect to the @boardname@ and exchange data relating to many of the @boardname@'s features.
 
-### ~
+## ~
 
 
 
@@ -15,11 +15,11 @@ For another device like a smartphone to use any of the Bluetooth "services" whic
 devices.raiseAlertTo(MesAlertEvent.Vibrate)
 ```
 
-### Parameters
+## Parameters
 
 * event - an event identifier
 
-### Examples
+## Examples
 
 To tell the connected device to display toast
 
@@ -57,7 +57,7 @@ To tell the connected device to ring alarm
 devices.raiseAlertTo(MesAlertEvent.RingAlarm)
 ```
 
-### See also
+## See also
 
 [tell remote control to](/reference/devices/tell-remote-control-to), [tell camera to](/reference/devices/tell-camera-to)
 

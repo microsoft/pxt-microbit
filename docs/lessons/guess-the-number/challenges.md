@@ -13,7 +13,7 @@ input.onButtonPressed(Button.A, () => {
 })
 ```
 
-### Challenge 1
+## Challenge 1
 
 When button `B` is pressed, we want to clear the screen. This will make it so users can play your game over and over again! Add an event handler to handle this case.
 
@@ -27,7 +27,7 @@ input.onButtonPressed(Button.B, () => {
 })
 ```
 
-### Challenge 2
+## Challenge 2
 
 Show an animation when you clear the screen! Choose what animation makes most sense to you. Be creative!
 

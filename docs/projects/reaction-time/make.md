@@ -1,6 +1,6 @@
 # Make
 
-### @description Building the reaction time experiment.
+## @description Building the reaction time experiment.
 
 https://youtu.be/DgJ-S0q0EMs
 
@@ -9,9 +9,9 @@ https://youtu.be/DgJ-S0q0EMs
 
 That's it!
 
-### ~button /projects/reaction-time/code
+## ~button /projects/reaction-time/code
 
 Code
 
-### ~
+## ~
 

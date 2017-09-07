@@ -1,6 +1,6 @@
 # catch the egg game tutorial
 
-### Rebuild the game!
+## Rebuild the game!
 
 The blocks have been shuffled! Put them back together so that...
 * an egg LED  falls from the top of the screen, row by row.

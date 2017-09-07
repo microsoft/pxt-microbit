@@ -7,12 +7,12 @@ Use [analog set pitch pin](/reference/pins/analog-set-pitch-pin) to set the curr
 pins.analogPitch(440, 300)
 ```
 
-### Parameters
+## Parameters
 
 * `frequency` : [Number](/types/number)
 * `ms`: [Number](/types/number)
 
-### Example
+## Example
 
 ```blocks
 pins.analogSetPitchPin("P0")
@@ -22,12 +22,12 @@ pins.analogSetPitchPin(AnalogPin.P1);
 pins.analogPitch(frequency1, duration)
 ```
 
-### Some common notes
+## Some common notes
 
 * 440 = A4 on piano
 * see [piano key frequencies ](https://en.wikipedia.org/wiki/Piano_key_frequencies) for more information
 
-### See also
+## See also
 
 [@boardname@ pins](/device/pins), [analog set period](/reference/pins/analog-set-period), [analog set pitch pin](/reference/pins/analog-set-pitch-pin)
 

@@ -34,7 +34,7 @@ game.pause();
 game.resume();
 ```
 
-### See also
+## See also
 
 [create sprite](/reference/game/create-sprite), [move](/reference/game/move), [turn](/reference/game/turn),
 [ifOnEdgeBounce](/reference/game/if-on-edge-bounce), [get](/reference/game/get), [set](/reference/game/set),
