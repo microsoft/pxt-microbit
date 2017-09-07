@@ -7,12 +7,12 @@ ms, and set the pulse width to the specified value.
 pins.servoSetPulse(AnalogPin.P1, 1500)
 ```
 
-### Parameters
+## Parameters
 
 * ``name``: a [string](/types/string) that specifies the pin to configure (`P0` through `P4`, or `P10`)
 * ``micros``: a [number](/types/number) that specifies the analog period in microseconds.
 
-### Example
+## Example
 
 The following code sets the servo pulse to `1000` microseconds.
 
@@ -20,7 +20,7 @@ The following code sets the servo pulse to `1000` microseconds.
 pins.servoSetPulse(AnalogPin.P0, 1000)
 ```
 
-### See also
+## See also
 
 [@boardname@ pins](/device/pins),
 [on pin pressed](/reference/input/on-pin-pressed),

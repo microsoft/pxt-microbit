@@ -8,11 +8,11 @@ This function should be called from an **on pulsed** handler.
 pins.pulseDuration();
 ```
 
-### Returns
+## Returns
 
 The duration of the last pulse, measured in microseconds.
 
-### Example
+## Example
 
 The following example waits for pin ``P0`` to be pulsed high, and then
 displays the duration of the pulse in microseconds on the LED screen.
@@ -23,7 +23,7 @@ pins.onPulsed(DigitalPin.P0, PulseValue.High, () => {
 });
 ```
 
-### See also
+## See also
 
 [servo set pulse](/reference/pins/servo-set-pulse),
 [on pulsed](/reference/pins/on-pulsed),

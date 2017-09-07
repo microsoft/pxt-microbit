@@ -14,13 +14,13 @@ The @boardname@ has a grid of 25 LEDs, so we can use these to display images.
 
 We’ve already experimented with the `show string` block that displays a string (some text) that we program it to. However we can use more blocks from the **Images** drawer to render or display images in different ways.
 
-### Pixel Art
+## Pixel Art
 
 We can draw little images from the LEDs by ticking boxes. Drag a `show image` block from the **Images** drawer and connect in a `create image` block. You can customize this image by clicking boxes to tick whether the LED will turn on or off. For example, if we were creating a music player we may want to the show the `play` block:
 
 ![](/static/mb/blocks/lessons/graphics-0.png)
 
-### Plotting points
+## Plotting points
 
 We can also code our bug to plot a point by giving an x (horizontal) and y (vertical) coordinates, from 0 to 4. Click the **LED** drawer and drag a `plot` block. Try changing the coordinates and see the effect this has on the @boardname@.
 
@@ -41,7 +41,7 @@ We can also use the `basic.clearScreen` block to turn off all LEDs.
 
 The pause block is in milliseconds, so setting it to 1000 will have a pause of a single second.
 
-### Devising algorithms for shapes
+## Devising algorithms for shapes
 
 An algorithm is a set of steps to follow to solve a problem. We can begin to draw shapes on the @boardname@ using an algorithm. 
 For example, we could draw a straight line with this code:
@@ -66,13 +66,13 @@ basic.forever(() => {
 })
 ```
 
-### Animations
+## Animations
 
 Animations are changes happening at a certain rate. For example, we could add the `pause` block from the **Basic** drawer with our square algorithm – this will slowly draw a square (as an animation).
 
 We could create more complex animations, for example we could make our @boardname@ display an explosion or fireworks.
 
-### Image variables
+## Image variables
 
 We can create image variables so we can easily display an image at a later point. For example:
 

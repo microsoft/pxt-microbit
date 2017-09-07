@@ -17,7 +17,7 @@ input.onPinPressed(TouchPin.P1, () => {
 })
 ```
 
-### Challenge 1
+## Challenge 1
 
 Let's include a second sound `on pin pressed` *P2*. To do this, you need to add the same blocks as the banana keyboard activity. However, you must change alter `on pin pressed` from P1 to P2. Additionally, you must *decrease* the frequency of the variable "sound" by 25. Modify your code so that your code looks like this
 
@@ -42,7 +42,7 @@ input.onPinPressed(TouchPin.P2, () => {
 
 * click *run* to see if the code works as expected.
 
-### Challenge 2
+## Challenge 2
 
 Finally, we want images to be displayed with sounds `on pin pressed`. Add `show LEDs` blocks under `on pin pressed` P1 and P2.
 

@@ -1,12 +1,12 @@
 # guess the number tutorial
 
-### ~avatar avatar
+## ~avatar avatar
 
 This tutorial will help you create a guess the number game! Let's get started!
 
-### ~
+## ~
 
-### Rebuild the game!
+## Rebuild the game!
 
 The blocks have been shuffled! Put them back together so that...
 * when the user presses button ``A``,

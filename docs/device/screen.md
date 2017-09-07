@@ -15,7 +15,7 @@ The micro:bit LED screen
 The micro:bit LED screen consists of 25 red LED lights arranged in a 5X5 grid (5 LEDs across by 5 LEDs down).
 In the screen above, we created a checkerboard pattern using the LEDs.
 
-### Which LED?
+## Which LED?
 
 You use `(x ,y)` coordinates to specify a particular LED in the grid; 
 where `x` is the horizontal position (0,1,2,3,4) and `y` is the vertical position 
@@ -37,17 +37,17 @@ Here are the x, y coordinates for the LEDs in the 5X5 grid:
 
 The x, y coordinates for the LED in the centre of the grid are `(2,2)`. Starting from `(0,0)` count over 2 columns and then down 2 rows.
 
-### Check your understanding
+## Check your understanding
 
 Which LEDs are turned on in the checkboard pattern above? 
 
-### Row, column - 1
+## Row, column - 1
 
 Since the row and column numbers start at 0, an easy way to figure out the (x,y) coordinates 
 is to subtract 1 from the row and column number (when counting from 1). 
 In other words, to specify the LED in the 4th column 5th row, subtract 1 from each number to get coordinates `(3,4)`.
 
-### Turn a LED on/off
+## Turn a LED on/off
 
 Use [plot](/reference/led/plot) and [unplot](/reference/led/unplot) to turn a LED on or off
 
@@ -60,7 +60,7 @@ basic.pause(1000);
 led.unplot(1,1);
 ```
 
-### Is a LED on/off?
+## Is a LED on/off?
 
 Use the [point](/reference/led/point) function to find out if a LED is on or off.
 
@@ -69,11 +69,11 @@ if(led.point(0,0)) {
 }
 ```
 
-### Display images, strings and numbers
+## Display images, strings and numbers
 
 Instead of turning individual LEDs on or off, as above, you can display an [image](/reference/images/image) directly to the screen or show text/numbers on screen using the [show number](/reference/basic/show-number)/[show string](/reference/basic/show-string) function.
 
-### The display buffer
+## The display buffer
 
 The micro:bit runtime keeps an in-memory representation of the state of all 25 LEDS. This state is known as the "display buffer" and controls which LEDS are on and which are off. The plot/unplot/point functions access the display buffer directly. On the other hand, the functions that show an image, number or string overwrite the buffer completely. To illustrate, first try running this code sequence
 
@@ -92,7 +92,7 @@ basic.showString("d", 150)
 You will not see the LED at position `0,0` lit up because the `show string` function overwrites the whole display buffer.
 
 
-### Pins: P3, P4, P6, P7, P9, P10
+## Pins: P3, P4, P6, P7, P9, P10
 
 These pins are coupled to the LED matrix display, and also it’s associated ambient light sensing mode.
 To disable the display driver feature (which will automatically disable the light sensing feature) use the function [led.enable](/reference/led/enable). 

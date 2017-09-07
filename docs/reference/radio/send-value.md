@@ -7,12 +7,12 @@ The maximum [string]() length is 12 characters.
 radio.sendValue("name", 0);
 ```
 
-### Parameters
+## Parameters
 
 * ``name`` is a [string](/types/string) to send by radio
 * ``value`` a [number](/types/number) to send by radio
 
-### Example: Broadcasting acceleration
+## Example: Broadcasting acceleration
 
 This program sends your @boardname@'s **acceleration** (amount it is
 speeding up or slowing down) in the `x` direction (left and right) to
@@ -37,7 +37,7 @@ radio.onDataPacketReceived(({ receivedString, receivedNumber }) => {
 });
 ```
 
-### See also
+## See also
 
 [on data packet received](/reference/radio/on-data-packet-received)
 

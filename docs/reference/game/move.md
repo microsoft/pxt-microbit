@@ -7,11 +7,11 @@ let item: game.LedSprite = null;
 item.move(1);
 ```
 
-### Parameters
+## Parameters
 
 * a [number](/types/number) that means how many LEDs the sprite should move
 
-### Example
+## Example
 
 This program starts a sprite in the middle of the screen.
 Next, the sprite turns toward the lower-right corner.
@@ -23,7 +23,7 @@ item.turn(Direction.Right, 45);
 item.move(2);
 ```
 
-### See also
+## See also
 
 [turn](/reference/game/turn),
 [create sprite](/reference/game/create-sprite)

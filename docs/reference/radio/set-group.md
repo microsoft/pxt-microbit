@@ -14,15 +14,15 @@ to talk to each other because they will have the same group ID.
 radio.setGroup(0);
 ```
 
-### Parameters
+## Parameters
 
 * ``id`` is a [number](/types/number) from ``0`` to ``255``.
 
-### Simulator
+## Simulator
 
 This function only works on the @boardname@, not in browsers.
 
-### Example
+## Example
 
 This program makes the group ID equal 128.
 
@@ -30,7 +30,7 @@ This program makes the group ID equal 128.
 radio.setGroup(128)
 ```
 
-### See also
+## See also
 
 [on data packet received](/reference/radio/on-data-packet-received),
 [send number](/reference/radio/send-number),

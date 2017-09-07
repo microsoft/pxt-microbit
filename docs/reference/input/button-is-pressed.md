@@ -6,15 +6,15 @@ Check whether a button is pressed right now. The @boardname@ has two buttons: bu
 input.buttonIsPressed(Button.A);
 ```
 
-### Parameters
+## Parameters
 
 * ``button`` is a [String](/types/string). You should store `A` in it to check the left button, `B` to check the right button, or `A+B` to check both at the same time.
 
-### Returns
+## Returns
 
 * [Boolean](/blocks/logic/boolean) that is `true` if the button you are checking is pressed, `false` if it is not pressed.
 
-### Example
+## Example
 
 This program uses an [if](/blocks/logic/if) to run 
 one part of the program if the `A` button is pressed, and 
@@ -33,7 +33,7 @@ basic.forever(() => {
 })
 ```
 
-### See also
+## See also
 
 [on button pressed](/reference/input/on-button-pressed), [if](/blocks/logic/if), [forever](/reference/basic/forever)
 

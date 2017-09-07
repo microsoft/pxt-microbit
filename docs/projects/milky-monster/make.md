@@ -1,29 +1,29 @@
 # Make
-### @description Building the cardboard Milky Monster
+## @description Building the cardboard Milky Monster
 
-### ~avatar avatar
+## ~avatar avatar
 
 Turn a piece of cardboard into an milky-monster!
 
 ![](/static/mb/projects/milky-monster/monsters.jpg)
 
-### ~
+## ~
 
 ## Duration: ~45 minutes
 
 ## Materials
-#### Recycled
+### Recycled
 * 1 Milk Carton (with a screwable top cap)
 * 1 Small cord - recycle string from a used tea bag
 * 1 Paper clip
 
-### Electronics
+## Electronics
 * 1 @boardname@, battery holder and 2 AAA batteries
 * 3 Crocodile clips
 * 1 micro servo 9g SG90
 * 1 servo clip designed for Milky Monster [download on thingiverse](http://www.thingiverse.com/thing:2185971) (optional). Teachers may prefer to download the classroom pack (16 servo clips).
 
-### Tools
+## Tools
 * Small knive and  Scissors that can cut cardboard
 * Tape (masking, duct tape, and/or packing tape)
 * Glue gun
@@ -111,6 +111,6 @@ Your milky-monster is ready, it is time to decorate it! Customize the milky mons
 
 ![](/static/mb/projects/milky-monster/monsters.jpg)
 
-### ~button /projects/milky-monster/code
+## ~button /projects/milky-monster/code
 NEXT: Code
-### ~
+## ~

@@ -28,7 +28,7 @@ basic.showAnimation(`
 `);
 ```
 
-### See also
+## See also
 
 [showNumber](/reference/basic/show-number), 
 [showIcon](/reference/basic/show-icon),

@@ -7,12 +7,12 @@ maximum string length is 19 characters.
 radio.sendString("Hello!")
 ```
 
-### Parameters
+## Parameters
 
 * `msg` is a [string](/types/string) to send by radio.
 
 
-### Example: Two-way radio
+## Example: Two-way radio
 
 If you load this program onto two or more @boardname@s, you can send a
 code word from one of them to the others by pressing button `A`.  The
@@ -29,13 +29,13 @@ radio.onDataPacketReceived(({ receivedString }) => {
 });
 ```
 
-### ~hint
+## ~hint
 
 A radio that can both transmit and receive is called a _transceiver_.
 
-### ~
+## ~
 
-### See also
+## See also
 
 [on data packet received](/reference/radio/on-data-packet-received)
 

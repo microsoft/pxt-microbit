@@ -2,11 +2,11 @@
 
 Change the brightness of the @boardname@.
 
-### ~avatar avatar
+## ~avatar avatar
 
 Welcome! This tutorial will teach you how to change the brightness of the @boardname@. Let's get started!
 
-### ~
+## ~
 
 The brightness of the LED screen can be changed by using the `set brightness` function. This function takes a number between ``0`` (off) and ``255`` (full brightness).
 
@@ -57,9 +57,9 @@ input.onButtonPressed(Button.A, () => {
 
 
 
-### ~avatar boothing
+## ~avatar boothing
 
 Excellent, you're ready to continue with the [challenges](/lessons/night-light/challenges)!
 
-### ~
+## ~
 

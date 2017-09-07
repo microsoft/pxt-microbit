@@ -1,11 +1,11 @@
 # Code
-### @description code to make the coffee cup monster alive
+## @description code to make the coffee cup monster alive
 
-### ~avatar avatar
+## ~avatar avatar
 
 Add code to open the mouth when light is detected.
 
-### ~
+## ~
 
 ## Duration: ~30 minutes
 
@@ -24,6 +24,6 @@ basic.forever(() => {
 })
 ```
 
-### ~button /projects/light-monster/connect
+## ~button /projects/light-monster/connect
 NEXT: Connect
-### ~
+## ~

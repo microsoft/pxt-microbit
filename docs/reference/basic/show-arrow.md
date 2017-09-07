@@ -7,12 +7,12 @@ basic.showArrow(ArrowNames.North)
 ```
 
 
-### Parameters
+## Parameters
 
 * ``direction``, the identifier of the arrow to display
 * ``interval`` (optional), the time to display in milliseconds. default is 400.
 
-### Example
+## Example
 
 This program shows all eight arrows.
 
@@ -23,7 +23,7 @@ for (let index = 0; index <= 7; index++) {
 }
 ```
 
-### See also
+## See also
 
 [showIcon](/reference/basic/show-icon),
 [showLeds](/reference/basic/show-leds)

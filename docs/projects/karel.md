@@ -1,10 +1,10 @@
 # Karel the LED
 
-### ~avatar avatar
+## ~avatar avatar
 
 Help Karel make LED art!
 
-### ~
+## ~
 
 **Karel the LED** can't turn right, but he can make some great LED art!
 
@@ -14,7 +14,7 @@ The goal of this activity is to download the JavaScript code given below onto a 
 then USE the program to introduce new students to the @boardname@.
 Students will not do the coding this time.  They will be users to get familiar with the board.
 
-### How to play
+## How to play
 
 * ``A button`` **Turn Left**  
 Does not draw anything just changes the direction Karel (the flashing led) is facing
@@ -29,7 +29,7 @@ Restart the program and clear the board
 
 Note, that there is no way to erase, other than restarting.
 
-### ~
+## ~
 
 See if you can make each pattern below using A, B, and shake.  Once you have completed a challenge press A and B at the same time to hide Karel.
 For patterns that you design decide which LEDs you want to turn on and then make that design with Karel.
@@ -59,7 +59,7 @@ Make something fun!
 
 Thanks for playing with Karel the LED!
 
-### ~
+## ~
 
 ```typescript
 /**

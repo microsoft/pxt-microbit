@@ -1,10 +1,10 @@
 # smiley buttons
 
-### ~avatar
+## ~avatar
 
 Use buttons to show a smiley face! 
 
-### ~
+## ~
 
 ## Step 1
 

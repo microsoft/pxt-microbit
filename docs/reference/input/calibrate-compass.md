@@ -6,7 +6,7 @@ Runs the compass calibration sequence.
 input.calibrateCompass();
 ```
 
-### Calibration
+## Calibration
 
 The calibration will ask you to draw a circle by tilting the
 @boardname@.
@@ -14,7 +14,7 @@ The calibration will ask you to draw a circle by tilting the
 If you are calibrating or using the compass near metal, it might
 confuse the @boardname@.
 
-### Example
+## Example
 
 This example runs the calibration when the user presses **A+B** buttons.
 
@@ -24,6 +24,6 @@ input.onButtonPressed(Button.AB, () => {
 })
 ```
 
-### See also
+## See also
 
 [compassHeading](/reference/input/compass-heading)

@@ -1,13 +1,13 @@
 
 # Inchworm
 
-### @description A inchworm like robot built with the @boardname@
+## @description A inchworm like robot built with the @boardname@
 
-### ~avatar avatar
+## ~avatar avatar
 
 Make a funny inchworm robot!
 
-### ~
+## ~
 
 https://youtu.be/BiZLjugXMbM
 
@@ -37,8 +37,8 @@ https://youtu.be/BiZLjugXMbM
 * [Code](/projects/inchworm/code)  
 * [Connect](/projects/inchworm/connect)  
 
-### ~button /projects/inchworm/make
+## ~button /projects/inchworm/make
 
 Let's get started!
 
-### ~
+## ~

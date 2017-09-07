@@ -14,11 +14,11 @@ has to be turned on first.
 input.lightLevel();
 ```
 
-### Returns
+## Returns
 
 * a [Number](/types/number) that means a light level from ``0`` (dark) to ``255`` (bright).
 
-### Example: show light level
+## Example: show light level
 
 When you press button `B` on the microbit, this
 program shows the light level
@@ -31,7 +31,7 @@ input.onButtonPressed(Button.B, () => {
 })
 ```
 
-### Example: chart light level
+## Example: chart light level
 
 This program shows the light level with a [bar chart](/reference/led/plot-bar-graph) on the @boardname@ screen.
 If you carry the @boardname@ around to different places with different light levels,
@@ -43,7 +43,7 @@ basic.forever(() => {
 })
 ```
 
-### See also
+## See also
 
 [acceleration](/reference/input/acceleration), [compass-heading](/reference/input/compass-heading)
 

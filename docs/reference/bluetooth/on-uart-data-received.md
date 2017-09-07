@@ -6,11 +6,11 @@ Registers an event to be fired when one of the delimiter is matched.
 bluetooth.onUartDataReceived(",", () => {})
 ```
 
-### Parameters
+## Parameters
 
 * `delimiters` is a [string](/types/string) containing any of the character to match
 
-### Example
+## Example
 
 Read values separated by `,`:
 

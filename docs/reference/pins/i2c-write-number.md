@@ -7,7 +7,7 @@ specified number format.
 pins.i2cWriteNumber(0, 0, NumberFormat.Int8LE, true);
 ```
 
-### Parameters
+## Parameters
 
 * ``address``: the 7-bit I2C address to which to send ``value``
 * ``value``: the number to send to ``address``
@@ -20,7 +20,7 @@ pins.i2cWriteNumber(0, 0, NumberFormat.Int8LE, true);
   * The number in each format name stands for the number of bits in the format.
 * ``repeated`` repeated start, true - don't send stop at end
 
-### Example
+## Example
 
 The following example sends the value `2055` to the 7-bit I2C
 address `32` in big-endian 32-bit integer format.
@@ -29,12 +29,12 @@ address `32` in big-endian 32-bit integer format.
 pins.i2cWriteNumber(32, 2055, NumberFormat.Int32BE);
 ```
 
-#### ~hint
+### ~hint
 
 This function is not supported in the simulator.
 
-#### ~
+### ~
 
-### See also
+## See also
 
 [I2C](https://en.wikipedia.org/wiki/I%C2%B2C)

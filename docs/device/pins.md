@@ -8,7 +8,7 @@ The micro:bit has 25 external connections on the edge connector of the board, wh
 
 There are five large pins, that are also connected to holes in the board labelled: 0, 1, 2, 3V, and GND. And along the same edge, there are 20 small pins that you can use when plugging the micro:bit into an edge connector.
 
-### Large pins
+## Large pins
 
 You can easily attach crocodile clips or 4mm banana plugs to the five large pins.
 
@@ -20,11 +20,11 @@ The first three, labelled 0, 1 and 2 are flexible and can be used for many diffe
 
 The other two large pins (3V and GND) are very different!/td/td
 
-### ~hint 
+## ~hint 
 
 Watch out! The pins labelled 3V and GND relate to the power supply of the board, and they should NEVER be connected together.
 
-### ~
+## ~
 
 *power input*: If the micro:bit is powered by USB or a battery, then you can use the 3V pin as a *power output* to power peripherals with.
 
@@ -33,7 +33,7 @@ Watch out! The pins labelled 3V and GND relate to the power supply of the board,
 
 If you hold the ‘GND’ pin with one hand, you can program the microbit to detect yourself touching the 0,1 or 2 pins with your other hand, giving you three more buttons to experiment with (you just used your body to complete an electrical circuit).
 
-### Small pins
+## Small pins
 
 There are 20 small pins numbered sequentially from 3-22 (these pins are not labeled on the micro:bit, however, they are labelled in the picture above).
 
@@ -57,7 +57,7 @@ Unlike the three large pins that are dedicated to being used for external connec
 * **pins 19 and 20**: implement the clock signal (SCL) and data line (SDA) of the I2C bus communication protocol. With I2C, several devices can be connected on the same bus and send/read messages to and from the CPU. Internally, the accelerometer and the compass are connected to i2c.
 * **pins 21 and 22**: these pins are wired to the GND pin and serve no other function
 
-### Connecting to the small pins
+## Connecting to the small pins
 
 It is recommended that an edge connector be acquired to connect to the small pins. More information on compatible edge connectors will be available later.
 

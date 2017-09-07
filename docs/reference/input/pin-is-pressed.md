@@ -17,15 +17,15 @@ instead of the USB cable.
 
 ## ~
 
-### Parameters
+## Parameters
 
 * a [string](/types/string) that holds the pin name (**P0**, **P1**, or **P2**)
 
-### returns
+## returns
 
 * a [boolean](/blocks/logic/boolean) that means whether the pin you say is pressed (`true` or `false`)
 
-### Example
+## Example
 
 This program shows `1` if `P0` is pressed, and `0` if `P0` is not pressed:
 
@@ -39,7 +39,7 @@ basic.forever(() => {
 })
 ```
 
-### See also
+## See also
 
 [@boardname@ pins](/device/pins), [on pin pressed](/reference/input/on-pin-pressed), [analog read pin](/reference/pins/analog-read-pin), [analog write pin](/reference/pins/analog-write-pin), [digital read pin](/reference/pins/digital-read-pin), [digital write pin](/reference/pins/digital-write-pin)
 

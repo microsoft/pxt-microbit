@@ -24,7 +24,7 @@ images.iconImage(IconNames.Heart)
 images.arrowNumber(ArrowNames.North)
 ```
 
-### See Also
+## See Also
 
 [createImage](/reference/images/create-image), [createBigImage](/reference/images/create-big-image),
 [showImage](/reference/images/show-image), [scrollImage](/reference/images/scroll-image),

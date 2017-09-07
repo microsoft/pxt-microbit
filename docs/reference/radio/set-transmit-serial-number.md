@@ -6,11 +6,11 @@ Make the ``radio`` packet embed the board serial number with each packet of data
 radio.setTransmitSerialNumber(true);
 ```
 
-### Parameters
+## Parameters
 
 * ``transmit`` is a [boolean](/types/boolean) that represents whether the serial number needs to be transmitted.
 
-### Example
+## Example
 
 This program makes the ``radio`` send the serial number in each packet.
 
@@ -18,7 +18,7 @@ This program makes the ``radio`` send the serial number in each packet.
 radio.setTransmitSerialNumber(true);
 ```
 
-### See also
+## See also
 
 [on data packet received](/reference/radio/on-data-packet-received),
 [send number](/reference/radio/send-number),

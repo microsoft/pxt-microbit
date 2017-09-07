@@ -13,7 +13,7 @@ serial.readString();
 serial.onDataReceived(",", () => {})
 ```
 
-### Advanced
+## Advanced
 
 ```cards
 serial.redirect(SerialPin.P0, SerialPin.P0, BaudRate.BaudRate115200);
@@ -21,7 +21,7 @@ serial.writeBuffer(pins.createBuffer(0));
 serial.readBuffer(64);
 ```
 
-### See Also
+## See Also
 
 [writeLine](/reference/serial/write-line), [writeNumber](/reference/serial/write-number), [writeValue](/reference/serial/write-value),
 [writeString](/reference/serial/write-string), [readUntil](/reference/serial/read-until), [readLine](/reference/serial/read-line),

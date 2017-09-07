@@ -4,7 +4,7 @@ Stops advertising URL via the Eddystone protocol over Bluetooth.
 
 ## ~hint
 
-### Eddystone
+## Eddystone
 
 Bluetooth beacons are used to indicate proximity to a place or object of interest. 
 Beacons use Bluetooth advertising to broadcast a small amount of data, 
@@ -21,7 +21,7 @@ Read more at https://lancaster-university.github.io/microbit-docs/ble/eddystone/
 bluetooth.stopAdvertising();
 ```
 
-### Example: stop advertising on button pressed
+## Example: stop advertising on button pressed
 
 ```blocks
 input.onButtonPressed(Button.A, () => {

@@ -1,18 +1,18 @@
 # The micro:bit - a reactive system
 
-### Computing systems
+## Computing systems
 
 What sort of a *computing system* is the micro:bit?
 
-### ~hint 
+## ~hint 
 
 There are different types of computing systems, to address different kinds of problems that arise in practice: *transaction processing systems* are used by banks to handle huge numbers of financial transactions by their customers; *distributed systems* make a set of networked computers appear as one big computer (like Google’s search engine); there are also *parallel systems*, such as graphic cards, which perform a huge number of primitive operations simultaneously, using a great number of small processing cores.
 
-### ~
+## ~
 
 The micro:bit is a *reactive system* – it reacts continuously to external events, such as a person pressing the A button of the micro:bit or shaking the device. The reaction to an event may be to perform a computation, update variables, and change the display.  After the device reacts to an event, it is ready to react to the next one. If this sounds like a computer game, that’s because most computer games are reactive systems too!
 
-### Responsiveness
+## Responsiveness
 
 We want reactive systems to be responsive, which means to react in a timely manner to events. For example, when you play a computer game, it’s frustrating if you press a button to make a character jump, but it doesn’t immediately jump.  A delay in reacting, or lack of responsiveness , can be the difference between life and death, both in the real and virtual worlds.
 
@@ -20,7 +20,7 @@ Let’s consider a simple example: you want to program your micro:bit to accurat
 
 Let’s say that the current count is 42 and the number 42 is scrolling across the LED screen. This means there is some code executing to perform the scroll.  So, what should happen if you press the A button during the scroll?  It would be a bad idea to ignore the button press, so some code should record the occurrence of the button press. But we just said there already is code running in order to scroll the number 42!  If we wait until the code scrolling the 42 has finished to look for a button press, we will miss the button press.  We want to avoid this sort of unresponsiveness.
 
-### Concurrency
+## Concurrency
 
 To be responsive, a reactive system needs to be able to do several things at the same time (concurrently), just like you can.  But the micro:bit only has one CPU for executing your program, which means it can only execute one program instruction at a time. On the other hand, it can execute millions of instructions in a single second.  This points the way to a solution.
 
@@ -42,7 +42,7 @@ TODO Diagram
 
 As we’ll soon see, there are other choices for how the sequences can be ordered to achieve the desired result.
 
-### The micro:bit scheduler and queuing up subprograms
+## The micro:bit scheduler and queuing up subprograms
 
 The micro:bit’s *scheduler* provides the capability to concurrently execute different code sequences, relieving us of a lot of low-level programming.   In fact, scheduling is so useful that it is a part of every *operating system*!
 
@@ -90,7 +90,7 @@ The function ends after the execution of these three statements, but this is not
 
 The second job of the scheduler is to periodically interrupt execution to read (poll) the various inputs to the micro:bit (the buttons, pins, etc.) and fire off events (such as “button A pressed”). Recall that the firing of an event causes the event handler subprogram associated with that event to be queued for later execution. The scheduler uses a timer built into the micro:bit hardware to interrupt execution every 6 milliseconds and poll the inputs, which is more than fast enough to catch the quickest press of a button.
 
-### Cooperative passing of control
+## Cooperative passing of control
 
 How does the forever loop get to start execution? Furthermore, once the forever loop is running, how does any other subprogram (like the event handler that increments the count) ever get a chance to execute?
 
@@ -117,7 +117,7 @@ The `forever` loop actually is a function that takes a subprogram (an *Action* i
 
 Though the `while true` loop will repeatedly execute the body subprogram, between each execution of the body it will permit the scheduler to execute other subprograms.  If the while loop did not contain the call to `pause`, then once control passed into the while loop, it would never pass back to the scheduler and no other subprogram would be able to execute (unless the body subprogram contained a call to `pause` itself).
 
-### Round-robin scheduling
+## Round-robin scheduling
 
 Now, we come to the third and final job of the scheduler, which is to determine which subprogram to pass control to next. The scheduler uses two queues to perform this task, the sleep queue and the run queue. The sleep queue contains the subprograms that have called the pause function and still have time left to sleep. The run queue contains all the non-sleeping subprograms, such as the event handlers queued by the firing of an event.
 
@@ -125,7 +125,7 @@ The scheduler  moves the subprogram that has just paused into the sleep queue an
 
 The property of such round-robin scheduling is that under the assumption that every subprogram periodically enters the sleep queue, then every subprogram will periodically get a chance to execute.
 
-### Putting it all together
+## Putting it all together
 
 Let’s go back to the `count button presses` function and revisit its execution based on what we have learned about the micro:bit scheduler. As detailed before, the function executes three steps to: (1) set up the event handler for each press of button A; (2) queue the forever loop to the run queue; (3) initialize the global variable `count` to zero.
 
@@ -135,7 +135,7 @@ The function then ends execution and control passes back to the scheduler.  Let�
 
 While "Show 0" (the blue sequence) is running, periodic interrupts by the scheduler (every 6 milliseconds) poll for button presses and queue an event handler for each press of button A.  Let’s say that one button press takes place during this time, as shown above. This will cause an event handler (labelled “inc”) to be queued for later execution by the scheduler. Once the "Show 0" has completed, the loop then calls `basic -> pause(20)` to put the forever loop to sleep for 20 milliseconds and give the scheduler an opportunity to run any newly queued event handler. Control passes to the “inc” event handler which will increment the global variable `count` from 0 to 1 and then complete, returning control to the scheduler.  At some point, the `forever` loop moves from the sleep queue to the run queue; the `forever` loop then will resume and call `basic -> show number(1,150)`.
 
-### Final thoughts
+## Final thoughts
 
 Through this example, we have seen that the micro:bit scheduler enables you to create a program that is composed of concurrent subprograms. In essence, the programmer needs to only think about the concurrent subprograms cooperatively passing control back to the scheduler, making sure no subprogram hogs control (or “dribbles the ball without passing”) for too long. While a subprogram runs, the scheduler polls the buttons and other IO peripherals at a high frequency in order to fire off events and queue event handlers for later execution, but this is invisible to the programmer.
 

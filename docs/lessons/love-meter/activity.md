@@ -2,11 +2,11 @@
 
 Create a love meter with the @boardname@
 
-### ~avatar avatar
+## ~avatar avatar
 
 Welcome! This activity will help you create a love meter with the @boardname@. Let's get started!
 
-### ~
+## ~
 
 Begin by registering an event with `on pin pressed` *P0* to know when someone is holding pin *P0* and pin *Gnd*.
 
@@ -39,9 +39,9 @@ input.onPinPressed(TouchPin.P0, () => {
 
 ```
 
-### ~avatar avatar
+## ~avatar avatar
 
 Excellent, you're ready to continue with the [challenges](/lessons/love-meter/challenges)
 
-### ~
+## ~
 

@@ -7,15 +7,15 @@ control.inBackground(() => {
 })
 ```
 
-### ~hint
+## ~hint
 
 For more information, read 
 [The @boardname@ - a reactive system](/device/reactive).
 It is pretty advanced!
 
-### ~
+## ~
 
-### Example
+## Example
 
 This program shows how running in the background can say what is
 stored in a variable like `num`, while another part (``on button pressed``)
@@ -47,7 +47,7 @@ input.onButtonPressed(Button.A, () => {
 })
 ```
 
-### See also
+## See also
 
 [while](/blocks/loops/while), [forever](/reference/basic/forever),
 [on button pressed](/reference/input/on-button-pressed)

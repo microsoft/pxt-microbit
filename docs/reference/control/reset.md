@@ -8,7 +8,7 @@ This function is like pressing the reset button on the back of the @boardname@.
 control.reset()
 ```
 
-### Example
+## Example
 
 This program will count as high as you like when you press button `A`.
 When you get tired of counting, press button `B` to reset the
@@ -26,12 +26,12 @@ input.onButtonPressed(Button.B, () => {
 });
 ```
 
-#### ~hint
+### ~hint
 
 This program works better on a real @boardname@ than in the simulator.
 
-#### ~
+### ~
 
-### See Also
+## See Also
 
 [clear screen](/reference/basic/clear-screen), [game over](/reference/game/game-over)

@@ -100,9 +100,9 @@ basic.forever(() => {
 });
 ```
 
-### ~avatar avatar
+## ~avatar avatar
 
 Excellent, you're ready to continue with the [challenges](/lessons/glowing-pendulum/challenges)!
 
-### ~
+## ~
 

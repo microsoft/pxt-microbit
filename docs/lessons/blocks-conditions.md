@@ -28,7 +28,7 @@ basic.forever(() => {
 
 Again, test the code in the simulator. Try clicking **Button A** to display the "hello, world!" message every time the `button is pressed`.
 
-### More 'if' statements
+## More 'if' statements
 
 You could now add additional conditions to your 'if statement'. Here are some ideas:
 

@@ -18,7 +18,7 @@ for (let i = 0; i < 6; i++) {
 }
 ```
 
-### Challenge 1
+## Challenge 1
 
 What if we want to count up to lucky number 7 instead? Let's do that by changing the ending value to `7` instead of `5`.
 
@@ -33,7 +33,7 @@ for (let i = 0; i < 8; i++) {
 
 * Run the program now to see your changes.
 
-### Challenge 2
+## Challenge 2
 
 What about 9? Let's do that by changing the ending value to `9`.
 
@@ -49,7 +49,7 @@ for (let i = 0; i < 10; i++) {
 
 * Run your code to see the new counter.
 
-### Challenge 3
+## Challenge 3
 
 Now let's start counting from `3` instead! Our for loop will always start at `0` so we simply add `3` to the `i` variable when passing it to `show number`.
 
@@ -64,7 +64,7 @@ for (let i = 0; i < 10; i++) {
 
 Run it on the simulator!
 
-### Challenge 4
+## Challenge 4
 
 Now, let's **count down from 9**. Change the line `show number(i + 2, 150)` to `show number(9 - i, 150)`.
 
@@ -79,7 +79,7 @@ for (let i = 0; i < 10; i++) {
 
 * Run the code to make sure it is doing what is expected.
 
-### Challenge 5
+## Challenge 5
 
 After counting down from `9` let's show the string `BOOOM`!
 

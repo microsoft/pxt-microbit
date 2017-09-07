@@ -9,11 +9,11 @@ input.onGesture(Gesture.Shake,() => {
 })
 ```
 
-### Parameters
+## Parameters
 
 * ``gesture`` means the way you hold or move the @boardname@. This can be `shake`, `logo up`, `logo down`, `screen up`, `screen down`, `tilt left`, `tilt right`, `free fall`, `3g`, or `6g`.
 
-### Example: random number
+## Example: random number
 
 This program shows a number from `0` to `9` when you shake the @boardname@.
 

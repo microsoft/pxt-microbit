@@ -11,13 +11,13 @@ This function only works on the @boardname@ and in some browsers.
 music.changeTempoBy(20)
 ```
 
-### Parameters
+## Parameters
 
 * ``bpm`` is a [number](/types/number) that says how much to
   change the bpm (beats per minute, or number of beats in a minute of
   the music that the @boardname@ is playing).
 
-### Examples
+## Examples
 
 This program makes the music faster by 12 bpm.
 
@@ -31,7 +31,7 @@ This program makes the music _slower_ by 12 bpm.
 music.changeTempoBy(-12)
 ```
 
-### See also
+## See also
 
 [play tone](/reference/music/play-tone), [ring tone](/reference/music/ring-tone) 
 

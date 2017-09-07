@@ -4,11 +4,11 @@
 
 Display the direction that the @boardname@ is facing using the compass 
 
-### ~avatar avatar
+## ~avatar avatar
 
 Welcome! This guided tutorial will show you how to program a script that displays the direction the @boardname@ is pointing. Let's get started!
 
-### ~
+## ~
 
 ## Step 1
 

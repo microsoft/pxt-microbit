@@ -16,7 +16,7 @@ input.onButtonPressed(Button.A, () => {
 })
 ```
 
-### Challenge 1
+## Challenge 1
 
 We need to know when the user has hit button `A` 15 times. The user wins when he/she is able to accomplish this in less than 5000 milliseconds (5 seconds). We can check for both conditions by using an `and` operator. When using an `and` operator, both conditions need to be true in order for the condition to be true.
 
@@ -43,7 +43,7 @@ input.onButtonPressed(Button.A, () => {
 })
 ```
 
-### Challenge 2
+## Challenge 2
 
 We want to set `fastPress` to false if the user was too slow. To do so, we need another condition to see if the user took more than 5000 milliseconds (5 seconds). In the `if` statement, set `fastPress` to false.
 
@@ -61,7 +61,7 @@ input.onButtonPressed(Button.A, () => {
 })
 ```
 
-### Challenge 3
+## Challenge 3
 
 
 
@@ -89,7 +89,7 @@ input.onButtonPressed(Button.A, () => {
 
 * Click the `run` button to see if the code runs properly.
 
-### Challenge 4
+## Challenge 4
 
 
 

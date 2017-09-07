@@ -23,7 +23,7 @@ basic.forever(() => {
 ```
 
 
-### Challenge 1
+## Challenge 1
 
 Let's plot a different image. Let's display a broken heart!
 
@@ -56,7 +56,7 @@ basic.forever(() => {
 
 * click *run main* to see if the code works as expected.
 
-### Challenge 2
+## Challenge 2
 
 Now let's alternate flashing the heart and the broken heart. To do this, we need to add a `clear screen` block and then add a `pause` block of 500 milliseconds under the new code we added in Challenge 1.
 
@@ -90,7 +90,7 @@ basic.forever(() => {
 
 * click *run main* to see if the code works as expected.
 
-### Challenge 3
+## Challenge 3
 
 You now have a heart and broken heart flashing! Now plot a new image to alternate in with the heart and broken heart.
 

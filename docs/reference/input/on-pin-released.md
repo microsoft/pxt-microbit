@@ -28,7 +28,7 @@ instead of the USB cable.
 
 * ``name`` means the pin that is being released, either `P0`, `P1`, or `P2`
 
-### Example: pin pressed counter
+## Example: pin pressed counter
 
 This program counts how many times you release the `P0` pin. 
 Every time you release the pin, the program shows the number of times on the screen.
@@ -42,7 +42,7 @@ input.onPinReleased(TouchPin.P0, () => {
 })
 ```
 
-### See also
+## See also
 
 [@boardname@ pins](/device/pins), [pin is pressed](/reference/input/pin-is-pressed), [analog read pin](/reference/pins/analog-read-pin), [analog write pin](/reference/pins/analog-write-pin), [digital read pin](/reference/pins/digital-read-pin), [digital write pin](/reference/pins/digital-write-pin)
 

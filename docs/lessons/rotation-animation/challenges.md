@@ -47,7 +47,7 @@ while (rotating) {
 ```
 
 
-### Challenge 1
+## Challenge 1
 
 Now let's add to this by creating a condition for on button pressed `A` before the while loop. We will also introduce serial writeLine for the while loop and input OnButtonPressed 
 
@@ -91,7 +91,7 @@ input.onButtonPressed(Button.A, () => {
 
 ```
 
-### Challenge 2
+## Challenge 2
 
 
 
@@ -139,7 +139,7 @@ input.onButtonPressed(Button.A, () => {
 
 * Run the code to see the awesome rotation.
 
-### Challenge 3
+## Challenge 3
 
 Let's also make the image rotate the opposite way when button A is pressed! We can do this with another while loop that is only executed while `not rotating`.
 

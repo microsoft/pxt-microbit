@@ -1,12 +1,12 @@
 # Guitar
 
-### @description A beginner-intermediate maker activity, building a guitar with the @boardname@  
+## @description A beginner-intermediate maker activity, building a guitar with the @boardname@  
 
-### ~avatar avatar
+## ~avatar avatar
 
 Make a @boardname@ guitar with this guided tutorial!
 
-### ~
+## ~
 
 https://youtu.be/GYmdTFvxz80
 
@@ -33,8 +33,8 @@ https://youtu.be/GYmdTFvxz80
 * [Accelerometer Beat control](/projects/guitar/accelerometer)  
 * [Pin Press Switch](/projects/guitar/pinpress)  
 
-### ~button /projects/guitar/make
+## ~button /projects/guitar/make
 
 Let's get started!
 
-### ~
+## ~

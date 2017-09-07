@@ -2,11 +2,11 @@
 
 Create an arrow that randomly points to a player. 
 
-### ~avatar avatar
+## ~avatar avatar
 
 
 
-### ~
+## ~
 
 Welcome! This guided tutorial will teach how to program a script that randomly points to a player. Let's get started!
 
@@ -102,9 +102,9 @@ input.onGesture(Gesture.Shake, () => {
 ```
 
 
-### ~avatar avatar
+## ~avatar avatar
 
 Excellent, you're ready to continue with the [challenges](/lessons/spinner/challenges)!
 
-### ~
+## ~
 

@@ -17,7 +17,7 @@ while (count < 10) {
 }
 ```
 
-### Challenge 1
+## Challenge 1
 
 How about we create a counter that counts backwards from 10 to 1? Let's add a while loop that executes only when `count` is greater than 0.
 
@@ -38,7 +38,7 @@ while (count > 0) {
 ```
 
 
-### Challenge 2
+## Challenge 2
 
 Inside of the while loop, let's add `pause->(1000)` so that we have a pause between each number as it's counting down. Also, let's show `count`!
 
@@ -60,7 +60,7 @@ while (count > 0) {
 
 * Run the code to see if it works as expected.
 
-### Challenge 3
+## Challenge 3
 
 Now, we need `count` to decrease by one after the @boardname@ has displayed the value of `count`.
 

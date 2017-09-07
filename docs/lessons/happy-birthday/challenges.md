@@ -26,9 +26,9 @@ basic.pause(100);
 
 ```
 
-### ~
+## ~
 
-### Challenge 1
+## Challenge 1
 
 Let's code the third part of Happy Birthday!
 
@@ -60,7 +60,7 @@ basic.pause(100);
 
 * click *run * to see if the code works as expected.
 
-### Challenge 2
+## Challenge 2
 
 Finally, we continue to adding the appropriate `play` block and fit the following chords blocks `F`, `E`, `C`, `D` to complete the third part of the song. Modify your code so that your code looks like this.
 
@@ -98,7 +98,7 @@ music.playTone(music.noteFrequency(Note.F), music.beat(BeatFraction.Quarter));
 
 * click *run * to see if the code works as expected.
 
-### Challenge 3
+## Challenge 3
 
 You now have a the ability to create music on the @boardname@. Try to code another favourite song.
 

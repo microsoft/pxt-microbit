@@ -2,13 +2,13 @@
 
 Develop shapes with a for loop. 
 
-### ~avatar avatar
+## ~avatar avatar
 
 
 
 Welcome! This guided tutorial will teach how to develop shapes with a for loop. Let's get started!
 
-### ~
+## ~
 
 Create a `for loop` that will loop from 0 to 4 to indicate the x-coordinates of the @boardname@ display.
 
@@ -54,9 +54,9 @@ for (let i = 0; i < 5; i++) {
 }
 ```
 
-### ~avatar avatar
+## ~avatar avatar
 
 Excellent, you're ready to continue with the [challenges](/lessons/strobe-light/challenges)!
 
-### ~
+## ~
 

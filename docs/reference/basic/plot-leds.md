@@ -12,11 +12,11 @@ basic.showLeds(`
 `)
 ```
 
-### Parameters
+## Parameters
 
 * leds - a series of LED on/off states that form an image (see steps below)
 
-### Example: smiley
+## Example: smiley
 
 ```blocks
 basic.showLeds(`
@@ -28,7 +28,7 @@ basic.showLeds(`
 `)
 ```
 
-### See also
+## See also
 
 [show animation](/reference/basic/show-animation), [image](/reference/images/image), [show image](/reference/images/show-image), [scroll image](/reference/images/scroll-image)
 

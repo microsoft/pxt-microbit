@@ -21,7 +21,7 @@ input.onButtonPressed(Button.A, () => {
 })
 
 ```
-### Challenge 1
+## Challenge 1
 
 
 
@@ -46,6 +46,6 @@ input.onButtonPressed(Button.B, () => {
 ```
 
 
-### Challenge 3
+## Challenge 3
 
 Add an event handler with `on shake` to change the LED brightness back to a `255`.

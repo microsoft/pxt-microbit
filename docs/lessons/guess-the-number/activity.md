@@ -2,11 +2,11 @@
 
 Guess the number with math random. 
 
-### ~avatar avatar
+## ~avatar avatar
 
 Welcome! This tutorial will help you create a guess the number game! Let's get started!
 
-### ~
+## ~
 
 Add an event handler when button `A` is pressed.
 
@@ -37,9 +37,9 @@ input.onButtonPressed(Button.A, () => {
 
 ```
 
-### ~avatar avatar
+## ~avatar avatar
 
 Excellent, you're ready to continue with the [challenges](/lessons/guess-the-number/challenges)!
 
-### ~
+## ~
 

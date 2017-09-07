@@ -8,7 +8,7 @@ basic.forever(() => {
 })
 ```
 
-### Example: compass
+## Example: compass
 
 The following example constantly checks the 
 [compass heading](/reference/input/compass-heading) 
@@ -31,7 +31,7 @@ basic.forever(() => {
 })
 ```
 
-### Example: counter
+## Example: counter
 
 The following example keeps showing the [number](/types/number) stored in a global variable.
 When you press button `A`, the number gets bigger.
@@ -47,7 +47,7 @@ input.onButtonPressed(Button.A, () => {
 })
 ```
 
-### Competing for the LED screen
+## Competing for the LED screen
 
 If different parts of a program are each trying 
 to show something on the LED screen at the same time, 
@@ -63,7 +63,7 @@ input.onButtonPressed(Button.A, () => {
 })
 ```
 
-### See also
+## See also
 
 [while](/blocks/loops/while), [on button pressed](/reference/input/on-button-pressed), [in background](/reference/control/in-background)
 

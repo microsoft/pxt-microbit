@@ -1,11 +1,11 @@
 # Make
-### @description Building the light monster
+## @description Building the light monster
 
-### ~avatar avatar
+## ~avatar avatar
 
 Turn a piece of coffee holders into a monster!
 
-### ~
+## ~
 
 ## Duration: ~60 minutes
 
@@ -20,6 +20,6 @@ Turn a piece of coffee holders into a monster!
 
 TODO
 
-### ~button /projects/coffee-cup-monster/code
+## ~button /projects/coffee-cup-monster/code
 NEXT: Code
-### ~
+## ~

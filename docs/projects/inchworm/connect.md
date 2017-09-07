@@ -1,10 +1,10 @@
 # Connect
 
-### ~avatar avatar
+## ~avatar avatar
 
 Remote control your inchworm with another @boardname@
 
-### ~
+## ~
 
 ## Duration: ~30 minutes
 

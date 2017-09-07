@@ -1,12 +1,12 @@
 # banana keyboard
 
-### @description A beginner maker activity, building a piano from bananas.
+## @description A beginner maker activity, building a piano from bananas.
 
-### ~avatar
+## ~avatar
 
 Build your own @boardname@ piano using bananas!
 
-### ~
+## ~
 
 ![](/static/mb/lessons/banana-keyboard-0.png)
 
@@ -24,6 +24,6 @@ Build your own @boardname@ piano using bananas!
 * [Make](/projects/banana-keyboard/make)  
 * [Code](/projects/banana-keyboard/code)
 
-### ~button /projects/banana-keyboard/make
+## ~button /projects/banana-keyboard/make
 Let's get started!
-### ~
+## ~

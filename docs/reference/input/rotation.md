@@ -13,15 +13,15 @@ check how the @boardname@ is moving.
 
 ## ~
 
-### Parameters
+## Parameters
 
 * ``kind`` means which direction you are checking: `Rotation.Pitch` (up and down) or `Rotation.Roll` (left and right)
 
-### Returns
+## Returns
 
 * a [number](/types/number) that means how much the microbit is tilted in the direction you say, from `0` to `360` degrees
 
-### Example: @boardname@ leveler
+## Example: @boardname@ leveler
 
 This program helps you move the @boardname@ until it is level.  When
 it is level, the @boardname@ shows a smiley.
@@ -55,7 +55,7 @@ basic.forever(() => {
 	});
 ```
 
-### See also
+## See also
 
 [acceleration](/reference/input/acceleration), [compass-heading](/reference/input/compass-heading)
 

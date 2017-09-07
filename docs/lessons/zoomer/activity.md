@@ -2,11 +2,11 @@
 
 Measure the acceleration on the @boardname@ in the "z" direction. 
 
-### ~avatar avatar
+## ~avatar avatar
 
 
 
-### ~
+## ~
 
 Welcome! This activity will teach how to measure the acceleration on the @boardname@ in the "z" direction. Let's get started!
 
@@ -35,9 +35,9 @@ basic.forever(() => {
 })
 ```
 
-### ~avatar avatar
+## ~avatar avatar
 
 Excellent, you're ready to continue with the [challenges](/lessons/zoomer/challenges)!
 
-### ~
+## ~
 

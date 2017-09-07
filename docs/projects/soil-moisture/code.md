@@ -22,7 +22,7 @@ basic.forever(() => {
 })
 ```
 
-### Experiment!
+## Experiment!
 
 * insert the nails in the dry dirt and you should see most LEDs off
 * insert the nail in the wet dirt and you should see most LEDs on
@@ -48,7 +48,7 @@ basic.forever(() => {
 })
 ```
 
-### Experiment!
+## Experiment!
 
 * insert the nails in the dry dirt, press ``A`` and note the value. You should see a value close to ``250``
 for dry dirt.
@@ -87,12 +87,12 @@ basic.forever(() => {
 })
 ```
 
-### Experiment!
+## Experiment!
 
 * using the dry and wet dirt pots, test that your ciruit still works. Remember you'll have to wait up to 10 seconds to see a change!
 
-### ~button /projects/soil-moisture/connect
+## ~button /projects/soil-moisture/connect
 
 Connect
 
-### ~
+## ~

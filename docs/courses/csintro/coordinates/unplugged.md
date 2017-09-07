@@ -39,7 +39,7 @@ Since their grid is only one quarter the size of the original Battleship grid, s
 
 The game can be played with just paper and pencils or you could use small tokens and markers, like coins, buttons, or paper clips to represent the ships.
  
-### Notes:
+## Notes:
 * Place students’ grids in sheet protectors or laminate them so they can be used again and again with white board (dry erase) markers.
 * The official rules of Battleship are easily found on the internet. Modify them as needed for your particular class.
 

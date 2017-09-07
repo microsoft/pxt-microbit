@@ -9,12 +9,12 @@ let item: Image = null;
 item.showImage(0);
 ```
 
-### Parameters
+## Parameters
 
 * an [image](/reference/images/image) (picture). It is usually a square with five LEDs on a side, but it might be wider. 
 * a [number](/types/number) that says how many LEDs from the left of the picture the @boardname@ should start. `0` means start at the first **frame** of the picture, `5` means start at the second frame, `10` means start at the third, and so on.
 
-### Example: Flip-flopping arrow
+## Example: Flip-flopping arrow
 
 This program makes a big image with a frame of an arrow pointing up,
 and a frame of an arrow pointing down.  If you press button `A`, the
@@ -39,7 +39,7 @@ input.onButtonPressed(Button.B, () => {
 });
 ```
 
-### See also
+## See also
 
 [image](/reference/images/image),
 [create image](/reference/images/create-image),

@@ -6,12 +6,12 @@ Broadcast a [number](/types/number) to other @boardname@s connected via ``radio`
 radio.sendNumber(0);
 ```
 
-### Parameters
+## Parameters
 
 * ``value`` - a [number](/types/number) to send.
 
 
-### Example: Broadcasting acceleration
+## Example: Broadcasting acceleration
 
 This example broadcasts the value of your @boardname@'s ``acceleration``
 in the `x` direction (left and right) to other @boardname@s.  This kind
@@ -23,7 +23,7 @@ input.onButtonPressed(Button.A, () => {
 })
 ```
 
-### Light level sender
+## Light level sender
 
 This example broadcasts the level of the light around it.
 You can do some interesting things with it if you use it along with the
@@ -37,7 +37,7 @@ basic.forever(() => {
 })
 ```
 
-### See also
+## See also
 
 [on data packet received](/reference/radio/on-data-packet-received)
 

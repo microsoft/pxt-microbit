@@ -2,11 +2,11 @@
 
 Create a dice on the @boardname@
 
-### ~avatar avatar
+## ~avatar avatar
 
 Welcome! This tutorial will help you create a dice. Let's get started!
 
-### ~
+## ~
 
 Let's create a condition for when the @boardname@ is shaken.
 
@@ -161,9 +161,9 @@ input.onGesture(Gesture.Shake, () => {
 ```
 
 
-### ~avatar avatar
+## ~avatar avatar
 
 Excellent, you're ready to continue with the [challenges](/lessons/dice-roll/challenges)!
 
-### ~
+## ~
 

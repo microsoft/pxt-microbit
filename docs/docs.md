@@ -1,31 +1,31 @@
 # Documentation
 
-### @description Links to the documentation, reference and projects.
+## @description Links to the documentation, reference and projects.
 
-### Things to do
+## Things to do
 
 * [Projects](/projects)
 * [Examples](/examples)
 * [Courses](/courses)
 * [Lessons](/lessons)
 
-### @boardname@ reference
+## @boardname@ reference
 
 * [The @boardname@ APIs](/reference)
 * [The @boardname@ device](/device)
 
-### Language and data reference
+## Language and data reference
 
 * [Blocks language](/blocks)
 * [JavaScript language](/javascript)
 
-### More questions?
+## More questions?
 
 * [Frequently Asked Question](/faq)
 * [Help Translate](/translate)
 * [Embedding project](/share)
 
-### Developers
+## Developers
 
 * [Command Line Interface](/cli)
 * Learn about [packages](/packages)

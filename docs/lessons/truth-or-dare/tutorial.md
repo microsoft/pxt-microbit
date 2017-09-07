@@ -1,6 +1,6 @@
 # truth or dare tutorial
 
-### ~avatar avatar
+## ~avatar avatar
 
 
 
@@ -8,9 +8,9 @@ The *Truth or dare!* game works as follows: a player spins the @boardname@ on th
 When the @boardname@ stops spinning, the player pointed by the arrow (displayed on screen) must press the button "A" 
 to see if she has to provide a *truth* or a *dare*.
 
-### ~
+## ~
 
-### Rebuild the game!
+## Rebuild the game!
 
 The blocks have been shuffled! Put them back together so that...
 * an up arrow is displayed when the @boardname@ is powered on.
@@ -42,7 +42,7 @@ input.onButtonPressed(Button.A, () => {
     `)
 })
 ```
-### Hints and tips
+## Hints and tips
 Cut out these documentation cards to help you!
 
 ```cards

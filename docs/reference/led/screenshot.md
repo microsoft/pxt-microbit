@@ -6,15 +6,15 @@ Make an [Image](/reference/images/image) out of the current state of the [LED sc
 led.screenshot();
 ```
 
-### Parameters
+## Parameters
 
 * none
 
-### Returns
+## Returns
 
 * an [Image](/reference/images/image) of what is currently visible on the [LED screen](/device/screen)
 
-### See also
+## See also
 
 [create image](/reference/images/create-image), [LED screen](/device/screen),
 

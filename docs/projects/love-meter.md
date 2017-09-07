@@ -1,10 +1,10 @@
 # love meter
 
-### ~avatar avatar
+## ~avatar avatar
 
 Use pins and your body to change the display!
 
-### ~
+## ~
 
 ## Step 1
 

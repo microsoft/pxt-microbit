@@ -1,13 +1,13 @@
 # Make
-### @description Building the cardboard Milk Carton Robot
+## @description Building the cardboard Milk Carton Robot
 
-### ~avatar avatar
+## ~avatar avatar
 
 Turn a piece of cardboard into an milk carton robot!
 
 ![Make](/static/mb/projects/milk-carton-robot/make.jpg)
 
-### ~
+## ~
 
 ## Duration: ~45 minutes
 
@@ -43,6 +43,6 @@ https://youtu.be/pRAC2Ritgtk
 
 Well done! Let's move to programming the @boardname@ to move the mouth.
 
-### ~button /projects/milk-carton-robot/code
+## ~button /projects/milk-carton-robot/code
 NEXT: Code
-### ~
+## ~

@@ -24,9 +24,9 @@ input.onButtonPressed(Button.A, () => {
 
 
 
-### ~avatar boothing
+## ~avatar boothing
 
 Excellent, you're ready to continue with the [challenges](/lessons/game-counter/challenges)!
 
-### ~
+## ~
 

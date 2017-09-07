@@ -6,7 +6,7 @@ or [string](/types/string) you say.
 When you use the equals sign to store something in a variable, the equals sign is called
 an *assignment operator*, and what you store is called a *value*.
 
-### Storing numbers in variables
+## Storing numbers in variables
 
 This program makes the variable `item` equal `5` and then shows it on the [LED screen](/device/screen).
 
@@ -15,7 +15,7 @@ let item = 5
 basic.showNumber(item)
 ````
 
-### Storing strings in variables
+## Storing strings in variables
 
 This program makes the variable `name` equal `Joe` and then shows it on the [LED screen](/device/screen).
 
@@ -24,13 +24,13 @@ let name = "Joe"
 basic.showString(name);
 ````
 
-### Notes
+## Notes
 
 You can use the assignment operator with variables of 
 every [type](/types). A *type* is which kind of thing
 a variable can store, like a number or string.
 
-### See also
+## See also
 
 [variable](/blocks/variables/var), [types](/types)
 

@@ -2,11 +2,11 @@
 
 ![](/static/mb/lessons/telegraph-0.png)
 
-### ~avatar
+## ~avatar
 
 Build a telegraph between two @boardname@s to communicate with your friends!
 
-### ~
+## ~
 
 ## Duration: ~30 minutes
 
@@ -20,6 +20,6 @@ Build a telegraph between two @boardname@s to communicate with your friends!
 * [Make](/projects/telegraph/make)  
 * [Code](/projects/telegraph/code)
 
-### ~button /projects/telegraph/make
+## ~button /projects/telegraph/make
 Let's get started!
-### ~
+## ~

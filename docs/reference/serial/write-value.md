@@ -6,7 +6,7 @@ Write a name/value pair and a newline character (`\r\n`) to the [serial](/device
 serial.writeValue("x", 0);
 ```
 
-### Parameters
+## Parameters
 
 * `name` is the [string](/types/string) to write to the serial port
 * `value` is the [number](/types/number) to write to the serial port
@@ -14,7 +14,7 @@ serial.writeValue("x", 0);
 
 
 
-### Example: streaming data
+## Example: streaming data
 
 Every 10 seconds, the example below sends the temperature and light level
 to the serial port.
@@ -27,15 +27,15 @@ basic.forever(() => {
 })
 ```
 
-#### ~hint
+### ~hint
 
 The [send value](/reference/radio/send-value) function broadcasts
 string/number pairs.  You can use a second @boardname@ to receive them,
 and then send them directly to the serial port with ``write value``.
 
-#### ~
+### ~
 
-### See also
+## See also
 
 [serial](/device/serial),
 [serial write line](/reference/serial/write-line),

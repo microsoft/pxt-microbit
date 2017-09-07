@@ -13,7 +13,7 @@ input.onGesture(Gesture.Shake, () => {
 })
 ```
 
-### Challenge 1
+## Challenge 1
 
 Let's add the code to display the text `C IS THE TEMP` with a `show string` block. Modify the `show string` block to slowly display the text by an interval of `300`.
 
@@ -27,7 +27,7 @@ input.onGesture(Gesture.Shake, () => {
 
 * Run the code to see if it works as expected.
 
-### Challenge 2
+## Challenge 2
 
 Let's add code to display the temperature gauge image with a `show LEDs` block.
 

@@ -14,16 +14,16 @@ it needs to run **receive number** first.
 radio.receivedSignalStrength();
 ```
 
-### Returns
+## Returns
 
 * a [number](/types/number) between `-128` and `-42` that means
 how strong the signal is.
 
-### Simulator
+## Simulator
 
 This function only works on the @boardname@, not in browsers.
 
-### Example
+## Example
 
 This example shows how strong the radio signal of the
 [light level sender example](/reference/radio/send-number) is.
@@ -37,7 +37,7 @@ basic.forever(() => {
 });
 ```
 
-### See also
+## See also
 
 [on data packet received](/reference/radio/on-data-packet-received), [send number](/reference/radio/send-number), [on data received](/reference/radio/on-data-received)
 

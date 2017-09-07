@@ -3,11 +3,11 @@
 Coding challenges for the seismograph.
 
 
-### ~avatar avatar
+## ~avatar avatar
 
 Engineering: In this project, you will build a remote control based on the seismograph @boardname@ activity using a second @boardname@ and micro USB cable.
 
-### ~
+## ~
 
 ## What you'll need:
 
@@ -30,9 +30,9 @@ basic.forever(() => {
 
 ```
 
-### ~avatar avatar
+## ~avatar avatar
 Computer Science: Welcome! The activity will teach you how to code the acceleration of the 1st @boardname@ and to visualize the acceleration on the 2nd @boardname@. Let's get started!
-### ~
+## ~
 
 # Computer Science Steps
 
@@ -97,9 +97,9 @@ radio.onDataPacketReceived(({ receivedNumber }) => {
 });
 ```
 
-### ~avatar avatar
+## ~avatar avatar
 Science: Welcome! The activity will teach you how to chart the acceleration of the 1st @boardname@ and to visualize the acceleration on the 2nd @boardname@. Let's get started!
-### ~
+## ~
 
 # Science Steps
 
@@ -190,7 +190,7 @@ Let's select Style 10 as an example.
 ![](/static/mb/lessons/analyze19.png)
 
 
-### ~
+## ~
 * Have fun reviewing your seismograph data and analyzing the acceleration with Excel.
 * The first person and second person take shaking or moving the micor:bit in any direction while the other player charts the data on the @boardname@!
 * Review and analyze the actual @boardname@ device acceleration data on Excel

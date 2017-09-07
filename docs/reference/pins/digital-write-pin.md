@@ -7,19 +7,19 @@ the @boardname@ board.
 pins.digitalWritePin(DigitalPin.P1, 1)
 ```
 
-### ~avatar
+## ~avatar
 
 Some pins are also used by the [LED screen](/device/screen).
 Please read the [page about pins](/device/pins) carefully.
 
-### ~
+## ~
 
-### Parameters
+## Parameters
 
 * ``name`` is a [string](/types/string) that stores the name of the pin (``P0``, ``P1``, or ``P2``, up through ``P20``)
 * ``value`` is a [number](/types/number) that can be either `0` or `1`
 
-### Example: football score keeper
+## Example: football score keeper
 
 This program reads pin `P0` to find when a goal is scored.  When `P0`
 is `1`, the program makes the score bigger and plays a buzzer sound
@@ -53,7 +53,7 @@ input.onButtonPressed(Button.B, () => {
 });
 ```
 
-### See also
+## See also
 
 [@boardname@ pins](/device/pins),
 [digital read pin](/reference/pins/digital-read-pin),

@@ -7,11 +7,11 @@ Replaces the implementation of the [music play tone](/reference/music/play-tone)
 music.setPlayTone((frequency: number, duration: number) => {})
 ```
 
-### Parameters
+## Parameters
 
 * ``f`` the replacement function
 
-### Example
+## Example
 
 This example send the frequency and duration over radio 
 and plays it on the remote @boardname@.
@@ -32,7 +32,7 @@ input.onButtonPressed(Button.B, () => {
     })    
 })
 ```
-### See also
+## See also
 
 [rest](/reference/music/rest), [ring tone](/reference/music/ring-tone) , [tempo](/reference/music/tempo), [set tempo](/reference/music/set-tempo), 
 [change tempo by](/reference/music/change-tempo-by)
