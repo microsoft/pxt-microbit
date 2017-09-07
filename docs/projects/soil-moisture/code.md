@@ -52,8 +52,8 @@ basic.forever(() => {
 
 * insert the nails in the dry dirt, press ``A`` and note the value. You should see a value close to ``250``
 for dry dirt.
-* insert the nails in the wet dirt, press ``B`` and note the value. You should see a value close to ``1000``
-for dry dirt.
+* insert the nails in the wet dirt, press ``A`` and note the value. You should see a value close to ``1000``
+for wet dirt.
 
 https://youtu.be/S8NppVT_paw
 

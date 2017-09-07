@@ -1,4 +1,4 @@
-# the watch - Make
+# The watch - Make
 
 ## @description Maker Project for Watch
 
@@ -148,4 +148,10 @@ Trim any leftover fabric, threads or tape.
 
 ![](/static/mb/lessons/the-watch-23.png)
 
-Your watch is ready!
+Your watch is ready! We'll now add code to the @boardname@ to make it keep time for real!
+
+### ~button /projects/watch/code
+
+Let's add some code!
+
+### ~

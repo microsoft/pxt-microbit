@@ -14,8 +14,18 @@ A collection of courses built for the @boardname@.
 }, {
   "name": "Start Coding",
   "description": "11 lessons with five minute plans, teacher notes and program files",
-  "url":"http://microbit.org/en/2017-03-07-javascript-block-resources/",
-  "imageUrl": "http://microbit.org/assets/posts/2017-03-07-rock%20paper%20scissors.png"
+  "url":"https://microbit.org/en/2017-03-07-javascript-block-resources/",
+  "imageUrl": "https://microbit.org/assets/posts/2017-03-07-rock%20paper%20scissors.png"
+}, {
+  "name": "Kitronik Inventory Kit",
+  "description": "11 experiments based on the Kitronik Inventor Kit",
+  "url": "https://www.kitronik.co.uk/blog/inventors-kit-experiment-1-help",
+  "imageUrl": "https://www.kitronik.co.uk/wp/wp-content/uploads/2016/10/inventors-kit-experiment-1-further-help-870.jpg"
+},{
+  "name": "SparkFun Videos",
+  "description": "YouTube video tutorials produced by the SparkFun team!",
+  "url": "https://youtu.be/kaNtg1HGXbY?list=PLBcrWxTa5CS0mWJrytvii8aG5KUqMXvSk",
+  "imageUrl": "https://i.ytimg.com/vi/kaNtg1HGXbY/hqdefault.jpg"
 },
  {
   "name": "micro:bit of Things",
