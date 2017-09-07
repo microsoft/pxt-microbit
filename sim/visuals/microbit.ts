@@ -64,7 +64,6 @@ namespace pxsim.visuals {
         font-family:"Lucida Console", Monaco, monospace;
         font-size:25px;
         fill:#fff;
-        user-select: none;
         pointer-events: none;
         }
 
@@ -150,7 +149,7 @@ namespace pxsim.visuals {
             stroke: #4D90FE;
             stroke-width: 5px !important;
         }
-        .no-drag {
+        .no-drag, .sim-text, .sim-text-pin {
             user-drag: none;
             user-select: none;
             -moz-user-select: none;
