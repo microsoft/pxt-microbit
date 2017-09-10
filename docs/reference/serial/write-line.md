@@ -29,18 +29,19 @@ This program checks the
 direction to the serial port repeatedly.
 
 ```blocks
+let degrees = 0
 basic.forever(() => {
-    let heading = input.compassHeading()
-    if (heading < 45) {
-        serial.writeLine("N");
-    } else if (heading < 135) {
-        serial.writeLine("E");
-    }
-    else if (heading < 225) {
-        serial.writeLine("S");
-    }
-    else {
-        serial.writeLine("W");
+    degrees = input.compassHeading()
+    if (degrees < 45) {
+        basic.showArrow(ArrowNames.North)
+    } else if (degrees < 135) {
+        basic.showArrow(ArrowNames.West)
+    } else if (degrees < 225) {
+        basic.showArrow(ArrowNames.South)
+    } else if (degrees < 315) {
+        basic.showArrow(ArrowNames.East)
+    } else {
+        basic.showArrow(ArrowNames.North)
     }
 })
 ```
