@@ -45,6 +45,7 @@
   "Math.pow|param|y": "The exponent value of the expression.",
   "Math.random": "Return a pseudorandom number between 0 and `limit`.",
   "Math.randomBoolean": "Generates a `true` or `false` value randomly, just like flipping a coin.",
+  "Math.random|param|limit": "the upper bound of the number generated, eg: 4.",
   "Math.sign": "Returns the sign of the x, indicating whether x is positive, negative or zero.",
   "Math.sign|param|x": "The numeric expression to test",
   "Math.sqrt": "Return the square root of a number.",

@@ -477,10 +477,10 @@ namespace pxsim.visuals {
                 accessibility.makeFocusable(this.pins[index]);
                 accessibility.setAria(this.pins[index], "slider", this.pins[index].firstChild.textContent);
                 this.pins[index].setAttribute("aria-valuemin", "0");
-                this.pins[index].setAttribute("aria-valuemax", "1023");
+                this.pins[index].setAttribute("aria-valuemax", pin.mode & PinFlags.Analog ? "1023" : "100");
                 this.pins[index].setAttribute("aria-orientation", "vertical");
-                this.pins[index].setAttribute("aria-valuenow", text.textContent);
-                accessibility.setLiveContent(text.textContent);
+                this.pins[index].setAttribute("aria-valuenow", text ? text.textContent : v);
+                accessibility.setLiveContent(text ? text.textContent : v);
             }
         }
 
