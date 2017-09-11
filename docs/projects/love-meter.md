@@ -1,52 +1,37 @@
 # love meter
 
-## ~avatar avatar
-
-Use pins and your body to change the display!
-
-## ~
 
 ## Step 1
 
-Use [on pin pressed](/reference/input/on-pin-pressed) to show a random number
-when pin P0 is pressed (hold the GND pin with other hand):
+Let's build a **LOVE METER** machine. Place a ``||input:on pin pressed||`` block to run code
+when pin ``P0`` is pressed.
 
 ```blocks
 input.onPinPressed(TouchPin.P0, () => {
-    basic.showNumber(Math.random(11));
 });
 ```
 ## Step 2
 
-Show a string when pin P1 is pressed:
+Using ``||basic:show number||`` and ``||Math:pick random||`` blocks, 
+show a random number from 0 to 100 when pin ``P0`` is pressed.
 
 ```blocks
 input.onPinPressed(TouchPin.P0, () => {
-    basic.showNumber(Math.random(11));
-});
-input.onPinPressed(TouchPin.P1, () => {
-    basic.showString("LOVE?");
+    basic.showNumber(Math.random(101));
 });
 ```
 
 ## Step 3
 
-Show a heart when pin P2 is pressed:
+Show ``"LOVE METER"`` on the screen when the @boardname@ starts.
 
 ```blocks
+basic.showString("LOVE METER");
 input.onPinPressed(TouchPin.P0, () => {
-    basic.showNumber(Math.random(11));
-});
-input.onPinPressed(TouchPin.P1, () => {
-    basic.showString("LOVE?");
-});
-input.onPinPressed(TouchPin.P2, () => {
-    basic.showLeds(`
-        . # # # .
-        # # # # #
-        # # # # #
-        . # # # .
-        . . # . .
-        `);
+    basic.showNumber(Math.random(101));
 });
 ```
+
+## Step 4
+
+Click ``|Download|`` to transfer your code in your @boardname@. Hold the ``GND`` pin with other hand and press pin ``P0`` with the other hand to trigger this code.

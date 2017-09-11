@@ -1,4 +1,4 @@
-# The amazing coin flipper
+# Coin Flipper
 
 ## ~avatar avatar
 
@@ -8,67 +8,66 @@ flipping machine with the @boardname@ to choose for you!
 
 ## ~
 
-Here are the blocks to make your coin flipper.  When you press button
-`B`, the coin flipper will show either `H` for heads or `T` for tails
-on the LED screen.
+## Step 1
 
-```blocks
-input.onButtonPressed(Button.B, () => {
-    if (Math.randomBoolean()) {
-        basic.showString("H");
-    } else {
-        basic.showString("T");
-    }
-});
-```
-## ~hint
-
-The `[Math.randomBoolean()]` block randomly tells the ``if``
-block `true` or `false`.  If value picked is `true`, the
-``if`` block shows the letter `H`. Otherwise, it shows the letter `T`.
-
-That's it!
-
-## ~
-
-## Keeping score
-
-### ~avatar
-
-To keep track out of how many guesses you've won,
-add these blocks to your coin flipper:
-
-### ~
+Place a ``||input:on button pressed||`` block to run code 
+when button **A** is pressed.
 
 ```blocks
 input.onButtonPressed(Button.A, () => {
-    game.addScore(1);
-});
-input.onButtonPressed(Button.AB, () => {
-    basic.showNumber(game.score());
-});
+})
 ```
 
-These blocks mean that if you press button `A`, you will add `1` to
-your score, and if you press `A` and `B` together, the @boardname@ will
-show your score.
+## Step 2
 
-When you're done, your coin flipping program should look like this:
+Place a **if** block and check the value returned by the ``||Math:pick random true or false||`` block.
+
+``||Math:pick random true or false||`` returns ``true`` or ``false`` randomly.
 
 ```blocks
-input.onButtonPressed(Button.B, () => {
-    if (Math.randomBoolean()) {
-        basic.showString("H");
-    } else {
-        basic.showString("T");
-    }
-});
 input.onButtonPressed(Button.A, () => {
-    game.addScore(1);
-});
-input.onButtonPressed(Button.AB, () => {
-    basic.showNumber(game.score());
+    if (Math.randomBoolean()) {
+    } else {
+    }
 });
 ```
 
-Flip until your thumbs get tired!
+## Step 3
+
+Place a ``||basic:show icon||`` block under the **if** and pick one of the images.
+
+```blocks
+input.onButtonPressed(Button.A, () => {
+    if (Math.randomBoolean()) {
+        basic.showIcon(IconNames.Skull)
+    } else {
+        basic.showIcon(IconNames.Square)
+    }
+});
+```
+
+## Step 4
+
+Click ``|Download|`` to transfer your code in your @boardname@ and press button **A** to try it out.
+
+## Step 5
+
+Place multiple ``||basic:show icon||`` blocks before the **if** to create a coin flipping animation.
+
+```blocks
+input.onButtonPressed(Button.A, () => {
+    basic.showIcon(IconNames.Diamond)
+    basic.showIcon(IconNames.SmallDiamond)
+    basic.showIcon(IconNames.Diamond)
+    basic.showIcon(IconNames.SmallDiamond)
+    if (Math.randomBoolean()) {
+        basic.showIcon(IconNames.Skull)
+    } else {
+        basic.showIcon(IconNames.Square)
+    }
+})
+```
+
+## Step 6
+
+Click ``|Download|`` to transfer your code in your @boardname@ and press button **A** to try it out!
