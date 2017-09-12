@@ -34,6 +34,7 @@ If you are running a Windows version earlier than 10, you must install a device 
 * Follow the instructions at https://docs.mbed.com/docs/mbed-os-handbook/en/latest/getting_started/what_need/ to install the device driver.
 
 ## ~
+Also, if you don't see the serial port as one of your computer's devices, you might need to [update the firmware](/device/firmware) on the @boardname@. Find the device name for the attached serial port in the following instructions for your operating system.
 
 ### Chrome Extension
 
