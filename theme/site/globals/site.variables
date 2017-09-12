@@ -20,6 +20,8 @@
 @grey: #95a5a6;
 @green: #107C10;
 
+@greenTextColor : #126B1B;
+
 /* Microbit.org colors */
 @orange: #ff8b27;
 @purple: #6633cc;
