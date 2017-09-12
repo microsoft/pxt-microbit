@@ -21,7 +21,6 @@
 @green: #107C10;
 
 /* Microbit.org colors */
-@orange: #ff8b27;
 @purple: #6633cc;
 
 @pageBackground: #fff;
