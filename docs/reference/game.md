@@ -1,6 +1,13 @@
 # Game
 
-Make games with sprites. Keep score and control gameplay. 
+Make games with sprites. Keep score and controls gameplay. 
+
+## ~ hint
+
+Once the game engine is started, it will render the sprites to the screen and potentially override any kind of animation you are trying to show.
+Using [game pause](/reference/game/pause) and [game resume](/reference/game/resume) to disable and enable the game rendering loop.
+
+## ~
 
 ## Sprites
 
