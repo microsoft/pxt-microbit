@@ -1,7 +1,7 @@
 // Auto-generated. Do not edit.
 
 
-    declare enum MesCameraEvent {
+    declare const enum MesCameraEvent {
     //% block="take photo"
     TakePhoto = 3,  // MES_CAMERA_EVT_TAKE_PHOTO
     //% block="start video capture"
@@ -21,7 +21,7 @@
     }
 
 
-    declare enum MesAlertEvent {
+    declare const enum MesAlertEvent {
     //% block="display toast"
     DisplayToast = 1,  // MES_ALERT_EVT_DISPLAY_TOAST
     //% block="vibrate"
@@ -47,7 +47,7 @@
     }
 
 
-    declare enum MesDeviceInfo {
+    declare const enum MesDeviceInfo {
     //% block="incoming call"
     IncomingCall = 7,  // MES_DEVICE_INCOMING_CALL
     //% block="incoming message"
@@ -65,7 +65,7 @@
     }
 
 
-    declare enum MesRemoteControlEvent {
+    declare const enum MesRemoteControlEvent {
     //% block="play"
     play = 1,  // MES_REMOTE_CONTROL_EVT_PLAY
     //% block="pause"

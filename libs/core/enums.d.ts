@@ -5,7 +5,7 @@ declare namespace basic {
 }
 
 
-    declare enum Button {
+    declare const enum Button {
     A = 1,  // MICROBIT_ID_BUTTON_A
     B = 2,  // MICROBIT_ID_BUTTON_B
     //% block="A+B"
@@ -13,7 +13,7 @@ declare namespace basic {
     }
 
 
-    declare enum Dimension {
+    declare const enum Dimension {
     //% block=x
     X = 0,
     //% block=y
@@ -25,7 +25,7 @@ declare namespace basic {
     }
 
 
-    declare enum Rotation {
+    declare const enum Rotation {
     //% block=pitch
     Pitch = 0,
     //% block=roll
@@ -33,14 +33,14 @@ declare namespace basic {
     }
 
 
-    declare enum TouchPin {
+    declare const enum TouchPin {
     P0 = 7,  // MICROBIT_ID_IO_P0
     P1 = 8,  // MICROBIT_ID_IO_P1
     P2 = 9,  // MICROBIT_ID_IO_P2
     }
 
 
-    declare enum AcceleratorRange {
+    declare const enum AcceleratorRange {
     /**
      * The accelerator measures forces up to 1 gravity
      */
@@ -64,7 +64,7 @@ declare namespace basic {
     }
 
 
-    declare enum Gesture {
+    declare const enum Gesture {
     /**
      * Raised when shaken
      */
@@ -123,7 +123,7 @@ declare namespace basic {
     }
 
 
-    declare enum MesDpadButtonInfo {
+    declare const enum MesDpadButtonInfo {
     //% block="A down"
     ADown = 1,  // MES_DPAD_BUTTON_A_DOWN
     //% block="A up"
@@ -165,7 +165,7 @@ declare namespace input {
      * How to create the event.
      */
 
-    declare enum EventCreationMode {
+    declare const enum EventCreationMode {
     /**
      * MicroBitEvent is initialised, and no further processing takes place.
      */
@@ -177,7 +177,7 @@ declare namespace input {
     }
 
 
-    declare enum EventBusSource {
+    declare const enum EventBusSource {
     //% blockIdentity="control.eventSourceId"
     MICROBIT_ID_BUTTON_A = 1,  // MICROBIT_ID_BUTTON_A
     //% blockIdentity="control.eventSourceId"
@@ -239,7 +239,7 @@ declare namespace input {
     }
 
 
-    declare enum EventBusValue {
+    declare const enum EventBusValue {
     //% blockIdentity="control.eventValueId"
     MICROBIT_EVT_ANY = 0,  // MICROBIT_EVT_ANY
     //% blockIdentity="control.eventValueId"
@@ -367,7 +367,7 @@ declare namespace control {
 }
 
 
-    declare enum DisplayMode {
+    declare const enum DisplayMode {
     //% block="black and white"
     BackAndWhite = 0,  // DISPLAY_MODE_BLACK_AND_WHITE
     //% block="greyscale"
@@ -378,7 +378,7 @@ declare namespace led {
 }
 
 
-    declare enum DigitalPin {
+    declare const enum DigitalPin {
     P0 = 7,  // MICROBIT_ID_IO_P0
     P1 = 8,  // MICROBIT_ID_IO_P1
     P2 = 9,  // MICROBIT_ID_IO_P2
@@ -401,7 +401,7 @@ declare namespace led {
     }
 
 
-    declare enum AnalogPin {
+    declare const enum AnalogPin {
     P0 = 7,  // MICROBIT_ID_IO_P0
     P1 = 8,  // MICROBIT_ID_IO_P1
     P2 = 9,  // MICROBIT_ID_IO_P2
@@ -437,7 +437,7 @@ declare namespace led {
     }
 
 
-    declare enum PulseValue {
+    declare const enum PulseValue {
     //% block=high
     High = 4,  // MICROBIT_PIN_EVT_PULSE_HI
     //% block=low
@@ -445,7 +445,7 @@ declare namespace led {
     }
 
 
-    declare enum PinPullMode {
+    declare const enum PinPullMode {
     //% block="down"
     PullDown = 0,
     //% block="up"
@@ -455,7 +455,7 @@ declare namespace led {
     }
 
 
-    declare enum PinEventType {
+    declare const enum PinEventType {
     //% block="edge"
     Edge = 1,  // MICROBIT_PIN_EVENT_ON_EDGE
     //% block="pulse"
@@ -467,7 +467,7 @@ declare namespace led {
     }
 
 
-    declare enum SerialPin {
+    declare const enum SerialPin {
     P0 = 7,  // MICROBIT_ID_IO_P0
     P1 = 8,  // MICROBIT_ID_IO_P1
     P2 = 9,  // MICROBIT_ID_IO_P2
@@ -480,7 +480,7 @@ declare namespace led {
     }
 
 
-    declare enum BaudRate {
+    declare const enum BaudRate {
     //% block=115200
     BaudRate115200 = 115200,
     //% block=57600
@@ -508,7 +508,7 @@ declare namespace led {
     }
 
 
-    declare enum Delimiters {
+    declare const enum Delimiters {
     //% block="new line"
     NewLine = 1,
     //% block=","
@@ -526,7 +526,7 @@ declare namespace serial {
 }
 
 
-    declare enum NumberFormat {
+    declare const enum NumberFormat {
     Int8LE = 1,
     UInt8LE = 2,
     Int16LE = 3,
