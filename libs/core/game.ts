@@ -73,12 +73,16 @@ namespace game {
             _backgroundAnimation = true;
             control.inBackground(() => {
                 led.stopAnimation();
-                led.setDisplayMode(DisplayMode.BackAndWhite);
+                const dm = led.displayMode();
+                if (dm != DisplayMode.BackAndWhite)
+                    led.setDisplayMode(DisplayMode.BackAndWhite);
                 basic.showAnimation(`0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 0 0 0 1 0 0 0 0 0
     0 0 0 0 0 0 0 1 0 0 0 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0
     0 0 1 0 0 0 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
     0 0 0 0 0 0 0 1 0 0 0 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0
     0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 0 0 0 1 0 0 0 0 0`, 20);
+                if (dm != DisplayMode.BackAndWhite)
+                    led.setDisplayMode(dm);
                 _backgroundAnimation = false;
             });
         }
@@ -763,7 +767,8 @@ namespace game {
             return;
         }
         // ensure greyscale mode
-        if (led.displayMode() != DisplayMode.Greyscale)
+        const dm = led.displayMode();
+        if (dm != DisplayMode.Greyscale)            
             led.setDisplayMode(DisplayMode.Greyscale);
         // render sprites
         const now = input.runningTime();
