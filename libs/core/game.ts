@@ -758,7 +758,7 @@ namespace game {
      */
     //% parts="ledmatrix"
     function plot(): void {
-        if (game.isGameOver() || game.isPaused() || !_img) {
+        if (game.isGameOver() || game.isPaused() || !_img || _backgroundAnimation) {
             return;
         }
         // ensure greyscale mode
