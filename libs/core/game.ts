@@ -73,6 +73,7 @@ namespace game {
             _backgroundAnimation = true;
             control.inBackground(() => {
                 led.stopAnimation();
+                led.setDisplayMode(DisplayMode.BackAndWhite);
                 basic.showAnimation(`0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 0 0 0 1 0 0 0 0 0
     0 0 0 0 0 0 0 1 0 0 0 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0
     0 0 1 0 0 0 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
@@ -765,7 +766,7 @@ namespace game {
         if (led.displayMode() != DisplayMode.Greyscale)
             led.setDisplayMode(DisplayMode.Greyscale);
         // render sprites
-        let now = input.runningTime();
+        const now = input.runningTime();
         _img.clear();
         for (let i = 0; i < _sprites.length; i++) {
             _sprites[i]._plot(now);
