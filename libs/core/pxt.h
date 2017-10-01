@@ -160,6 +160,7 @@ namespace pxt {
     inline void unref()
     {
       //printf("DECR "); this->print();
+      check(refcnt > 0, ERR_REF_DELETED);
       refcnt -= 2;
       if (refcnt == 0) {
         destroy();

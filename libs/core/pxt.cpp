@@ -394,10 +394,7 @@ namespace pxt {
 
     uint32_t RefCollection::removeAt(int i)
     {
-      if (isRef())
-      {
-        decr(head.get(i));
-      }
+      // no decr() - we return the result
       return head.remove(i);
     }
 
@@ -464,7 +461,8 @@ namespace pxt {
     {
       int idx = indexOf(x, 0);
       if (idx >= 0) {
-        removeAt(idx);
+        uint32_t elt = removeAt(idx);
+        if (isRef()) decr(elt);
         return 1;
       }
       return 0;
