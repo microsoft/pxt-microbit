@@ -31,52 +31,66 @@ namespace pxt.editor {
 
     class DAPWrapper {
         cortexM: DapJS.CortexM
+        packetIo: HF2.PacketIO;
 
         constructor(h: HF2.PacketIO) {
-            let pbuf = new U.PromiseBuffer<Uint8Array>()
+            this.packetIo = h;
+            let pbuf = new U.PromiseBuffer<Uint8Array>();
 
             let sendMany = (cmds: Uint8Array[]) => {
-                return h.talksAsync(cmds.map(c => ({ cmd: 0, data: c })))
+                return h.talksAsync(cmds.map(c => ({ cmd: 0, data: c })));
             }
 
             if (!h.talksAsync)
-                sendMany = null
+                sendMany = null;
 
             let dev = new DapJS.DAP({
                 write: writeAsync,
-                close: closeAsync,
+                close: this.disconnectAsync,
                 read: readAsync,
                 sendMany: sendMany
-            })
-            this.cortexM = new DapJS.CortexM(dev)
+            });
+            this.cortexM = new DapJS.CortexM(dev);
 
             h.onData = buf => {
-                pbuf.push(buf)
+                pbuf.push(buf);
             }
 
             function writeAsync(data: ArrayBuffer) {
-                h.sendPacketAsync(new Uint8Array(data))
-                return Promise.resolve()
+                h.sendPacketAsync(new Uint8Array(data));
+                return Promise.resolve();
             }
 
             function readAsync() {
-                return pbuf.shiftAsync()
-            }
-
-            function closeAsync() {
-                return h.disconnectAsync()
+                return pbuf.shiftAsync();
             }
         }
 
         reconnectAsync(first: boolean) {
-            return this.cortexM.init()
+            return this.cortexM.init();
+        }
+
+        disconnectAsync() {
+            return this.packetIo.disconnectAsync();
         }
     }
 
+    let previousDapWrapper: DAPWrapper;
     function dapAsync() {
-        return pxt.HF2.mkPacketIOAsync()
+        return Promise.resolve()
+            .then(() => {
+                if (previousDapWrapper) {
+                    return previousDapWrapper.disconnectAsync()
+                        .finally(() => {
+                            previousDapWrapper = null;
+                        });
+                }
+                return Promise.resolve();
+            })
+            .then(() => pxt.HF2.mkPacketIOAsync())
             .then(h => {
                 let w = new DAPWrapper(h)
+                previousDapWrapper = w;
                 return w.reconnectAsync(true)
                     .then(() => w)
             })

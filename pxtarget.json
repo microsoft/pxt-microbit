@@ -81,8 +81,8 @@
             {
                 "usagePage": "0xFF00",
                 "usageId": "0x0001",
-                "vid": "0x0204",
-                "pid": "0x0d28"
+                "vid": "0x0d28",
+                "pid": "0x0204"
             }
         ]
     },
