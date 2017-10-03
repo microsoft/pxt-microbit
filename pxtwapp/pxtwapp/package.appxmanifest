@@ -55,6 +55,9 @@
       <Device Id="vidpid:0001 0002">
         <Function Type="usage:FF00 *" />
       </Device>
+      <Device Id="vidpid:0204 0d28">
+        <Function Type="usage:FF00 *" />
+      </Device>
     </DeviceCapability>
   </Capabilities>
 </Package>
