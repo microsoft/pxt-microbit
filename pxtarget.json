@@ -75,12 +75,6 @@
             {
                 "usagePage": "0xFF00",
                 "usageId": "0x0001",
-                "vid": "0x0001",
-                "pid": "0x0002"
-            },
-            {
-                "usagePage": "0xFF00",
-                "usageId": "0x0001",
                 "vid": "0x0d28",
                 "pid": "0x0204"
             }
