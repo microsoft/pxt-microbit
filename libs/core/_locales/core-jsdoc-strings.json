@@ -179,6 +179,7 @@
   "input.rotation": "The pitch or roll of the device, rotation along the ``x-axis`` or ``y-axis``, in degrees.",
   "input.rotation|param|kind": "TODO",
   "input.runningTime": "Gets the number of milliseconds elapsed since power on.",
+  "input.runningTimeMicros": "Gets the number of microseconds elapsed since power on.",
   "input.setAccelerometerRange": "Sets the accelerometer sample range in gravities.",
   "input.setAccelerometerRange|param|range": "a value describe the maximum strengh of acceleration measured",
   "input.temperature": "Gets the temperature in Celsius degrees (°C).",

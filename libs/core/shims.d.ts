@@ -332,10 +332,18 @@ declare namespace input {
     /**
      * Gets the number of milliseconds elapsed since power on.
      */
-    //% help=input/running-time weight=50
+    //% help=input/running-time weight=50 blockGap=8
     //% blockId=device_get_running_time block="running time (ms)"
     //% advanced=true shim=input::runningTime
     function runningTime(): number;
+
+    /**
+     * Gets the number of microseconds elapsed since power on.
+     */
+    //% help=input/running-time-micros weight=49
+    //% blockId=device_get_running_time_micros block="running time (micros)"
+    //% advanced=true shim=input::runningTimeMicros
+    function runningTimeMicros(): number;
 
     /**
      * Obsolete, compass calibration is automatic.

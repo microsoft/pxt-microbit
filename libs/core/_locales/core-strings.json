@@ -268,6 +268,7 @@
   "input.onPinReleased|block": "on pin %NAME|released",
   "input.pinIsPressed|block": "pin %NAME|is pressed",
   "input.rotation|block": "rotation (°)|%NAME",
+  "input.runningTimeMicros|block": "running time (micros)",
   "input.runningTime|block": "running time (ms)",
   "input.setAccelerometerRange|block": "set accelerometer|range %range",
   "input.temperature|block": "temperature (°C)",
