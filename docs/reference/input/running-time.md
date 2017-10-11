@@ -1,6 +1,6 @@
 # Running Time
 
-Find how long it has been since the program started.
+Find how long it has been since the program started in milli-seconds.
 
 ```sig
 input.runningTime();

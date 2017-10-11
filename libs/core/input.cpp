@@ -347,6 +347,16 @@ namespace input {
     }
 
     /**
+     * Gets the number of microseconds elapsed since power on.
+     */
+    //% help=input/running-time-micros weight=49
+    //% blockId=device_get_running_time_micros block="running time (micros)"
+    //% advanced=true
+    int runningTimeMicros() {
+        return system_timer_current_time_us();
+    }
+
+    /**
      * Obsolete, compass calibration is automatic.
      */
     //% help=input/calibrate-compass advanced=true
