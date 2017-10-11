@@ -73,16 +73,11 @@ namespace game {
             _backgroundAnimation = true;
             control.inBackground(() => {
                 led.stopAnimation();
-                const dm = led.displayMode();
-                if (dm != DisplayMode.BackAndWhite)
-                    led.setDisplayMode(DisplayMode.BackAndWhite);
                 basic.showAnimation(`0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 0 0 0 1 0 0 0 0 0
     0 0 0 0 0 0 0 1 0 0 0 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0
     0 0 1 0 0 0 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
     0 0 0 0 0 0 0 1 0 0 0 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0
     0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 0 0 0 1 0 0 0 0 0`, 20);
-                if (dm != DisplayMode.BackAndWhite)
-                    led.setDisplayMode(dm);
                 _backgroundAnimation = false;
             });
         }
@@ -125,7 +120,6 @@ namespace game {
             unplugEvents();
             led.stopAnimation();
             led.setBrightness(255);
-            led.setDisplayMode(DisplayMode.BackAndWhite);
             while (true) {
                 for (let i = 0; i < 8; i++) {
                     basic.clearScreen();
@@ -777,6 +771,9 @@ namespace game {
             _sprites[i]._plot(now);
         }
         _img.plotImage(0);
+        // restore previous display mode
+        if (dm != DisplayMode.Greyscale)
+            led.setDisplayMode(dm);
     }
 
     /**
