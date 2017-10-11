@@ -193,13 +193,13 @@ namespace pxsim.bluetooth {
     export function startUartService(): void {
         // TODO
     }
-    export function uartWrite(s: string): void {
+    export function uartWriteString(s: string): void {
         serial.writeString(s)
     }
     export function uartReadUntil(del: string): string {
         return serial.readUntil(del);
     }
-    export function onDataReceived(delimiters: string, handler: RefAction) {
+    export function onUartDataReceived(delimiters: string, handler: RefAction) {
         let b = board();
         b.bus.listen(DAL.MICROBIT_ID_BLE_UART, DAL.MICROBIT_UART_S_EVT_DELIM_MATCH, handler);
     }
