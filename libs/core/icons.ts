@@ -274,6 +274,9 @@ namespace images {
     //% weight=50 blockGap=8
     //% help=images/icon-image
     //% blockId=builtin_image block="icon image %i"
+    //% i.fieldEditor="gridpicker"
+    //% i.fieldOptions.width="400" i.fieldOptions.columns="5"
+    //% i.fieldOptions.itemColour="black" i.fieldOptions.tooltips="true"
     export function iconImage(i: IconNames): Image {
         switch (i) {
             case IconNames.Heart: return images.createImage(`

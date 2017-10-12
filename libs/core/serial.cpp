@@ -148,6 +148,10 @@ namespace serial {
     //% help=serial/redirect-to
     //% blockId=serial_redirect block="serial|redirect to|TX %tx|RX %rx|at baud rate %rate"
     //% blockExternalInputs=1
+    //% tx.fieldEditor="gridpicker" tx.fieldOptions.columns=3
+    //% tx.fieldOptions.tooltips="false"
+    //% rx.fieldEditor="gridpicker" rx.fieldOptions.columns=3
+    //% rx.fieldOptions.tooltips="false"
     void redirect(SerialPin tx, SerialPin rx, BaudRate rate) {
       MicroBitPin* txp = getPin(tx); if (!tx) return;
       MicroBitPin* rxp = getPin(rx); if (!rx) return;

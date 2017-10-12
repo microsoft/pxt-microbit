@@ -821,7 +821,11 @@ declare namespace serial {
     //% weight=10
     //% help=serial/redirect-to
     //% blockId=serial_redirect block="serial|redirect to|TX %tx|RX %rx|at baud rate %rate"
-    //% blockExternalInputs=1 shim=serial::redirect
+    //% blockExternalInputs=1
+    //% tx.fieldEditor="gridpicker" tx.fieldOptions.columns=3
+    //% tx.fieldOptions.tooltips="false"
+    //% rx.fieldEditor="gridpicker" rx.fieldOptions.columns=3
+    //% rx.fieldOptions.tooltips="false" shim=serial::redirect
     function redirect(tx: SerialPin, rx: SerialPin, rate: BaudRate): void;
 }
 
