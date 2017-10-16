@@ -755,7 +755,13 @@ declare namespace pins {
      *
      */
     //% help=pins/spi-pins weight=2 advanced=true
-    //% blockId=spi_pins block="spi set pins|MOSI %mosi|MISO %miso|SCK %sck" shim=pins::spiPins
+    //% blockId=spi_pins block="spi set pins|MOSI %mosi|MISO %miso|SCK %sck"
+    //% mosi.fieldEditor="gridpicker" mosi.fieldOptions.columns=4
+    //% mosi.fieldOptions.tooltips="false" mosi.fieldOptions.width="300"
+    //% miso.fieldEditor="gridpicker" miso.fieldOptions.columns=4
+    //% miso.fieldOptions.tooltips="false" miso.fieldOptions.width="300"
+    //% sck.fieldEditor="gridpicker" sck.fieldOptions.columns=4
+    //% sck.fieldOptions.tooltips="false" sck.fieldOptions.width="300" shim=pins::spiPins
     function spiPins(mosi: DigitalPin, miso: DigitalPin, sck: DigitalPin): void;
 }
 
