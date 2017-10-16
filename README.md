@@ -1,9 +1,9 @@
 # micro:bit target for PXT
 
-This target allow to program a [BBC micro:bit](https://microbit.org/) using 
+This target allows you to program a [BBC micro:bit](https://microbit.org/) using 
 PXT ([Microsoft Programming Experience Toolkit](https://github.com/Microsoft/pxt)).
 
-* [Try it live](@homeurl@)
+* [Try it live](https://makecode.microbit.org)
 
 [![Build Status](https://travis-ci.org/Microsoft/pxt-microbit.svg?branch=master)](https://travis-ci.org/Microsoft/pxt-microbit)
 
@@ -13,11 +13,11 @@ All issue tracking for this repo happens at https://github.com/Microsoft/pxt, se
 
 ## Local server
 
-The local server allows to run the editor and the documentation from your computer.
+The local server lets you to run the editor and serve the documentation from your own computer.
 
 ### Setup
 
-The following commands are a 1-time setup after synching the repo on your machine.
+The following commands perform a one-time setup after synching the repo on your machine.
 
 * See requirements for [pxt](https://github.com/Microsoft/pxt)
 * [clone this repo](https://help.github.com/articles/cloning-a-repository/) to your computer and go in the project folder
@@ -32,6 +32,7 @@ npm install -g pxt
 * install the dependencies
 ```
 npm install
+
 ```
 
 ### Running
@@ -50,16 +51,16 @@ pxt serve -yt
 
 ## Updates
 
-To update your PXT version and make sure you're running the latest tools, run (add ``sudo`` for Mac/Linux shells)
+To update your PXT version and make sure you're running the latest tools, run (add ``sudo`` for Mac/Linux shells):
 ```
 pxt update
 ```
 
-More instructions at https://github.com/Microsoft/pxt#running-a-target-from-localhost 
+More instructions are at https://github.com/Microsoft/pxt#running-a-target-from-localhost 
 
 ## Testing
 
-The build automatically runs the following:
+The build also automatically runs the following checks:
 
 * make sure the built-in packages compile
 * `pxt run` in `libs/lang-test*` - this will run the test in command line runner; 
@@ -76,7 +77,7 @@ The `lang-test0` source comes from the `pxt-core` package. It's also tested with
 
 ## Repos 
 
-There are a number of repos that pxt-microbit depends on. The main ones are:
+The pxt-microbit target depends on several other repos. The main ones are:
 - https://github.com/Microsoft/pxt, the PXT framework
 - https://github.com/lancaster-university/microbit, basic wrapper around the DAL
 - https://github.com/lancaster-university/microbit-dal
@@ -85,8 +86,10 @@ There are a number of repos that pxt-microbit depends on. The main ones are:
 
 Current serviced versions of pxt-microbit:
 
-| pxt-microbit  | v0.12.*       | release | uses pxt/v0 v.0.12.*
-| pxt-microbit  | v0.13.*       | accessibility | uses pxt/v0 v.0.13.* (with accessibility)
+| Target | Version | Type | PXT |
+|---|---|---|---|
+| pxt-microbit  | v0.13.\* | accessibility | uses pxt/v0 v.0.13.\* (with accessibility) |
+| pxt-microbit  | v0.12.\* | release | uses pxt/v0 v.0.12.\* |
 
 ## Code of Conduct
 
