@@ -222,13 +222,9 @@ namespace pxt.editor {
         })
     }
 
-    export function deployCoreAsync(resp: pxtc.CompileResult, isCli = false): Promise<void> {
+    export function deployCoreAsync(resp: pxtc.CompileResult, d: pxt.commands.DeployOptions = {}): Promise<void> {
         let saveHexAsync = () => {
-            if (isCli) {
-                return Promise.resolve()
-            } else {
-                return pxt.commands.saveOnlyAsync(resp)
-            }
+            return pxt.commands.saveOnlyAsync(resp)
         }
 
         startTime = 0
@@ -331,8 +327,16 @@ namespace pxt.editor {
                         return wrap.cortexM.reset(false)
                     })
             })
-            .catch(e => {
-                return saveHexAsync();
+            .catch(e => {  
+                if (e.description === "Device not found" && d.reportError) {
+                    if (d.reportError) {
+                        d.reportError(Util.lf("Connect your device."))
+                    } else {
+                        console.error(e)
+                    }
+                } else {
+                    saveHexAsync()
+                }           
             })
     }
 
