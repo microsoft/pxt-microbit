@@ -21,6 +21,7 @@ input.lightLevel();
 input.rotation(Rotation.Pitch);
 input.magneticForce(Dimension.X);
 input.runningTime();
+input.runningTimeMicros();
 input.setAccelerometerRange(AcceleratorRange.OneG);
 ```
 
