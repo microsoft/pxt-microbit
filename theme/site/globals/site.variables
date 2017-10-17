@@ -67,3 +67,11 @@
 
 @blocklyToolboxColor: rgba(0, 0, 0, 0.05);
 @trashIconColor: @primaryColor;
+
+/*-------------------
+   Serial
+--------------------*/
+
+@serialTextColor: white;
+@serialGraphBackground: #d9d9d9;
+@serialDark: #676767;
