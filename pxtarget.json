@@ -206,7 +206,7 @@
         "useEditor": true,
         "editorTheme": {
             "graphBackground": "#d9d9d9",
-            "lineColors": ["#CC2936", "#FFC914", "#2EB7ED", "#FB48C7", "#08415C", "#C200C0"]
+            "lineColors": ["#6633cc", "#3891A6", "#3454D1", "#EF767A", "#F46197", "#107C10"]
         },
         "chromeExtension": "hjcflblhjoglmjjkecamiegdigfkgeni",
         "vendorId": "0x0d28",

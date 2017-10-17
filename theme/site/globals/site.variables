@@ -72,5 +72,5 @@
    Serial
 --------------------*/
 
-@serialTextColor: white;
+@serialTextColor: black;
 @serialGraphBackground: #d9d9d9;
