@@ -332,11 +332,12 @@ namespace pxt.editor {
                     if (d.reportError) {
                         d.reportError(Util.lf("Please connect your device."))
                     } else {
-                        console.error(e)
+                        pxt.reportException(e)
                     }
                 } else {
-                    saveHexAsync()
-                }           
+                    return saveHexAsync()
+                }  
+                return Promise.resolve()      
             })
     }
 
