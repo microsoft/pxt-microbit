@@ -328,9 +328,9 @@ namespace pxt.editor {
                     })
             })
             .catch(e => {  
-                if (e.description === "Device not found" && d.reportError) {
+                if (e.type === "devicenotfound" && d.reportError) {
                     if (d.reportError) {
-                        d.reportError(Util.lf("Connect your device."))
+                        d.reportError(Util.lf("Please connect your device."))
                     } else {
                         console.error(e)
                     }
