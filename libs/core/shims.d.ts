@@ -145,7 +145,7 @@ declare namespace basic {
      * @param leds the pattern of LED to turn on/off
      * @param interval time in milliseconds to pause after drawing
      */
-    //% help=basic/show-leds 
+    //% help=basic/show-leds
     //% weight=95 blockGap=8
     //% imageLiteral=1 async
     //% blockId=device_show_leds
@@ -158,9 +158,9 @@ declare namespace basic {
      * @param text the text to scroll on the screen, eg: "Hello!"
      * @param interval how fast to shift characters; eg: 150, 100, 200, -100
      */
-    //% help=basic/show-string 
+    //% help=basic/show-string
     //% weight=87 blockGap=8
-    //% block="show|string %text" 
+    //% block="show|string %text"
     //% async
     //% blockId=device_print_message
     //% parts="ledmatrix" interval.defl=150 shim=basic::showString
@@ -196,7 +196,7 @@ declare namespace basic {
      * Repeats the code forever in the background. On each iteration, allows other codes to run.
      * @param body code to execute
      */
-    //% help=basic/forever weight=55 blockGap=8 blockAllowMultiple=1
+    //% help=basic/forever weight=55 blockGap=8 blockAllowMultiple=1 afterOnStart=true
     //% blockId=device_forever block="forever" icon="\uf01e" shim=basic::forever
     function forever(a: () => void): void;
 
@@ -373,7 +373,7 @@ declare namespace control {
     /**
      * Schedules code that run in the background.
      */
-    //% help=control/in-background blockAllowMultiple=1
+    //% help=control/in-background blockAllowMultiple=1 afterOnStart=true
     //% blockId="control_in_background" block="run in background" blockGap=8 shim=control::inBackground
     function inBackground(a: () => void): void;
 

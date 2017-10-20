@@ -16,7 +16,7 @@ namespace basic {
     //% blockId=device_show_number block="show|number %number" blockGap=8
     //% async
     //% parts="ledmatrix"
-    void showNumber(int value, int interval = 150) { 
+    void showNumber(int value, int interval = 150) {
       if (interval <= 0)
         interval = 1;
       ManagedString t(value);
@@ -32,7 +32,7 @@ namespace basic {
      * @param leds the pattern of LED to turn on/off
      * @param interval time in milliseconds to pause after drawing
      */
-    //% help=basic/show-leds 
+    //% help=basic/show-leds
     //% weight=95 blockGap=8
     //% imageLiteral=1 async
     //% blockId=device_show_leds
@@ -47,9 +47,9 @@ namespace basic {
      * @param text the text to scroll on the screen, eg: "Hello!"
      * @param interval how fast to shift characters; eg: 150, 100, 200, -100
      */
-    //% help=basic/show-string 
+    //% help=basic/show-string
     //% weight=87 blockGap=8
-    //% block="show|string %text" 
+    //% block="show|string %text"
     //% async
     //% blockId=device_print_message
     //% parts="ledmatrix"
@@ -112,7 +112,7 @@ namespace basic {
      * Repeats the code forever in the background. On each iteration, allows other codes to run.
      * @param body code to execute
      */
-    //% help=basic/forever weight=55 blockGap=8 blockAllowMultiple=1
+    //% help=basic/forever weight=55 blockGap=8 blockAllowMultiple=1 afterOnStart=true
     //% blockId=device_forever block="forever" icon="\uf01e"
     void forever(Action a) {
       if (a != 0) {
