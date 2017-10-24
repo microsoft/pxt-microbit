@@ -36,16 +36,6 @@ If you are running a Windows version earlier than 10, you must install a device 
 ## ~
 Also, if you don't see the serial port as one of your computer's devices, you might need to [update the firmware](/device/firmware) on the @boardname@. Find the device name for the attached serial port in the following instructions for your operating system.
 
-### Chrome Extension
-
-If you are using the Google Chrome browser, you can use our extension to get serial data streaming in the editor.
-
-* Install the [Extension for micro:bit](https://chrome.google.com/webstore/detail/extension-for-bbc-microbi/cihhkhnngbjlhahcfmhekmbnnjcjdbge?hl=en-US) on the Chrome Web Store.
-* Restart Chrome and open the [web editor](@homeurl@)
-* The serial data will show below the simulator
-
-If the extension is enabled, it will not be possible to access the port/device for the micro:bit from other programs than Chrome.
-
 ### Windows > Tera Term
 
 * Install the terminal emulator [Tera Term](https://ttssh2.osdn.jp/index.html.en). At the time of this writing, the latest version is 4.88 and can be downloaded [from here](http://en.osdn.jp/frs/redir.php?m=jaist&f=%2Fttssh2%2F63767%2Fteraterm-4.88.exe). Follow the instructions from the installer.
@@ -93,6 +83,21 @@ Alternative programs include `minicom` and so on.
 * `ls /dev/cu.*` will return to you a list of serial devices; one of them will look like `/dev/cu.usbmodem1422` (the exact number depends on your computer)
 * `screen /dev/cu.usbmodem1422 115200` will open up the micro:bit's serial output. To exit, hit `Ctrl-A` `Ctrl-D`.
 
+### Chrome Extension
+
+### ~ hint
+
+**Developer Zone!** This is an experimental feature that may change in the future. This is not supported by MakeCode team.
+
+### ~
+
+If you are using the Google Chrome browser, you can use our extension to get serial data streaming in the editor.
+
+* Install the [Extension for micro:bit](https://chrome.google.com/webstore/detail/extension-for-bbc-microbi/cihhkhnngbjlhahcfmhekmbnnjcjdbge?hl=en-US) on the Chrome Web Store.
+* Restart Chrome and open the [web editor](@homeurl@)
+* The serial data will show below the simulator
+
+If the extension is enabled, it will not be possible to access the port/device for the micro:bit from other programs than Chrome.
 
 ### Custom Chrome Extensions
 
