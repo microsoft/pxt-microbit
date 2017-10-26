@@ -1,6 +1,6 @@
 ﻿body {
     margin: 10px;
-    background-color: #4C4B4D;
+    background-color: #6633cc;
     color: #FFFFFF;
     font-family: 'Open Sans', 'Helvetica Neue', Arial, Helvetica, sans-serif;
 }
@@ -31,7 +31,7 @@
     text-align: center;
     text-decoration: none;
     border-radius: 0.28571429rem;
-    background-color: #FB48C7;
+    background-color: #ff8b27;
     margin: 15px 10px 100px 10px;
     width: 80px;
     height: 35px;
