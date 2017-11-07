@@ -103,7 +103,7 @@ let players: number[] = [0]
 ## Step 4: Receiving a message (part 1)
 
 In an the ``|on radio received|`` event, we receive the status from another @boardname@. Click on the **gearwheel*
-to add the ``serial`` parameter as we will need it to identify who sent that packet.
+to add the ``serialNumber`` parameter as we will need it to identify who sent that packet.
 
 We compute three values from the data received:
 
@@ -117,9 +117,9 @@ let player_index = 0
 let players: number[] = [0]
 let weapon = 0
 let found = false
-radio.onDataPacketReceived(({ receivedNumber, serial }) => {
+radio.onDataPacketReceived(({ receivedNumber, serialNumber }) => {
     match = weapon == receivedNumber
-    player_index = players.indexOf(serial)
+    player_index = players.indexOf(serialNumber)
     found = player_index >= 0
 })
 ```
@@ -140,12 +140,12 @@ let players: number[] = [0]
 let weapon = 0
 let found = false
 let temp = 0
-radio.onDataPacketReceived(({ receivedNumber, serial }) => {
+radio.onDataPacketReceived(({ receivedNumber, serialNumber }) => {
     match = weapon == receivedNumber
-    player_index = players.indexOf(serial)
+    player_index = players.indexOf(serialNumber)
     found = player_index >= 0
     if (match && !(found)) {
-        players.push(serial)
+        players.push(serialNumber)
     } 
     if (!(match) && found) {
         temp = players.removeAt(player_index)
@@ -195,12 +195,12 @@ input.onGesture(Gesture.Shake, () => {
     players = [0]
     weapon = Math.random(3)
 })
-radio.onDataPacketReceived( ({ receivedNumber, serial }) =>  {
+radio.onDataPacketReceived( ({ receivedNumber, serialNumber }) =>  {
     match = weapon == receivedNumber
-    player_index = players.indexOf(serial)
+    player_index = players.indexOf(serialNumber)
     found = player_index >= 0
     if (match && !(found)) {
-        players.push(serial)
+        players.push(serialNumber)
     } 
     if (!(match) && found) {
         temp = players.removeAt(player_index)
