@@ -8,10 +8,6 @@ Get the width of an [Image](/reference/images/image) in columns.
 images.createImage().width();
 ```
 
-## Parameters
-
-* none
-
 ## Returns
 
 * [Number](/types/number) - the number of columns in a image. This function returns 5 if the image has 1 frame, 10 for 2 frames, 15 for 3 frames and so on. Divide the number of columns by 5 to find out how many frames an image has (see example below).
