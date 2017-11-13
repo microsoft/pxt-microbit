@@ -1,10 +1,10 @@
 # Hack your headphones 
 
-## @description A beginner maker activity, building a piano from bananas.
+## @description An intermediate maker activity, making a @boardname@ music player using headphones
 
 ## ~avatar
 
-Build your own music player @boardname@ from headphones.
+Build your own @boardname@ music player using headphones.
 
 ## ~
 

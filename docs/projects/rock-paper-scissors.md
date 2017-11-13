@@ -27,9 +27,7 @@ input.onGesture(Gesture.Shake, () => {
 
 ```
 
-Each possible number these blocks can make (`0`, `1`, or `2`) means a different picture.
-We will show the right picture for that number on the LED screen.
-
+In a later step, each of the possible numbers (`0`, `1`, or `2`) is matched to its own picture. The picture is shown on the LEDs when its number is picked.
 
 ## Step 3
 
