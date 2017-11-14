@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3" IgnorableNamespaces="uap uap3 mp">
-  <Identity Name="microsoft.makecode.microbit" Version="1.0.1.0" Publisher="CN=microbit" />
-  <mp:PhoneIdentity PhoneProductId="34e8cde2-3991-414e-bb19-bff4bd5e031a" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
+  <Identity Name="MicrobitEducationalFounda.196216C47839B" Version="1.1.0.0" Publisher="CN=DA0852B7-E38D-4F10-9429-7A96575322FD" />
+  <mp:PhoneIdentity PhoneProductId="5ddd542e-5ab4-48bc-b116-0782dc08ab97" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
-    <DisplayName>Microsoft MakeCode for micro:bit</DisplayName>
-    <PublisherDisplayName>micro:bit</PublisherDisplayName>
+    <DisplayName>MakeCode for micro:bit</DisplayName>
+    <PublisherDisplayName>Micro:bit Educational Foundation</PublisherDisplayName>
     <Logo>images\storelogo.png</Logo>
   </Properties>
   <Dependencies>
@@ -21,7 +21,7 @@
         <uap:Rule Match="https://makecode.microbit.com/beta" Type="include" WindowsRuntimeAccess="all" />
         <uap:Rule Match="https://trg-microbit.userpxt.io/beta---simulator" Type="include" WindowsRuntimeAccess="none" />
       </uap:ApplicationContentUriRules>
-      <uap:VisualElements DisplayName="Microsoft MakeCode for micro:bit" Description="Microsoft MakeCode for micro:bit" BackgroundColor="#3454d1" Square150x150Logo="images\Square150x150Logo.png" Square44x44Logo="images\Square44x44Logo.png">
+      <uap:VisualElements DisplayName="MakeCode for micro:bit" Description="Microsoft MakeCode for microbit" BackgroundColor="#3454d1" Square150x150Logo="images\Square150x150Logo.png" Square44x44Logo="images\Square44x44Logo.png">
         <uap:DefaultTile Wide310x150Logo="images\Wide310x150Logo.png" Square71x71Logo="images\SmallTile.png">
         </uap:DefaultTile>
         <uap:SplashScreen Image="images\SplashScreen.png" BackgroundColor="#3454d1" />
