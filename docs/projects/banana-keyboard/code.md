@@ -1,6 +1,6 @@
 # Code
 
-Have you ever tried to making beat box sounds? Let's try making a beatbox with code!
+Have you ever tried making beat box sounds? Let's try making a beatbox with code!
 
 We will register an event handler on the fruit that will execute when two things occur: first, the alligator clip attaches to GND and the other side of the alligator clip is inserted into a banana. Let's start by adding a variable where you can store data. Then rename the variable to "sound". Then set the value of the variable to the note block `A` from the Music drawer. Modify your code so that your code looks like this.
 

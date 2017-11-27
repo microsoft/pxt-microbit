@@ -1,4 +1,4 @@
-# banana keyboard
+# Banana keyboard
 
 ## @description A beginner maker activity, building a piano from bananas.
 
@@ -15,7 +15,7 @@ Build your own @boardname@ piano using bananas!
 ## Materials
 
 * @boardname@, battery holder and 2 AAA batteries
-* Bananas
+* Banana
 * Orange
 * Crocodile clips
 
