@@ -1,14 +1,16 @@
 # Code
 
-Have you ever tried making beat box sounds? Let's try making a beatbox with code!
+Have you ever tried making beat box sounds? Let's try making a beatbox with code and, yes, a banana!
 
-We will register an event handler on the fruit that will execute when two things occur: first, the alligator clip attaches to GND and the other side of the alligator clip is inserted into a banana. Let's start by adding a variable where you can store data. Then rename the variable to "sound". Then set the value of the variable to the note block `A` from the Music drawer. Modify your code so that your code looks like this.
+## Code the banana key
+
+Start by adding a variable to store a musical note. Rename the variable to `sound`. Set the value of the variable to the note block `Middle A` from the **Music** drawer.
 
 ```blocks
 let sound = music.noteFrequency(Note.A);
 ```
 
-We want to play music on pin pressed in order to register an event handler that will execute whenever when you run a script and click pin 1 on the simulator. We must start by opening the Input drawer and adding `on pin pressed` P1. Modify your code so that your code looks like this.
+We want to play music when the fruit connected to a pin pressed. So, we register an event handler that executes whenever pin **1** is pressed. Pin **1** is, of course, connected to the banana. Add a ``||input:on pin pressed||`` block from the **Input** drawer.
 
 ```blocks
 let sound = music.noteFrequency(Note.A);
@@ -17,38 +19,59 @@ input.onPinPressed(TouchPin.P1, () => {
 })
 ```
 
-We want to code the notes that will be played `on pin pressed`. We click on the Input drawer then insert a `for loop` that will increment by *i*. Click on the Variables drawer. Add `set item` block. Rename the variable block to "sound." Then add a Maths block to increase the variable sound from the note frequency of block `A` to `A` plus 25.Modify your code so that your code looks like this
-
-```blocks
-let sound = music.noteFrequency(Note.A);
-input.onPinPressed(TouchPin.P1, () => {
-    for (let i = 0; i < 4; i++) {
-        sound = sound + 25
-    }
-})
-```
-
-
-* click *Download* to see if the code works as expected.
-
-
-
-Let's include a second sound `on pin pressed` *P2*. To do this, you need to add the same blocks as the banana keyboard activity. However, you must change alter `on pin pressed` from P1 to P2. Additionally, you must *decrease* the frequency of the variable "sound" by 25. Modify your code so that your code looks like this. You will need to include a second banana to a alligator (spring) clip in the same procedure as the first activity. 
+Now, let's create some notes to play when the banana is pressed. Click on the **Loops** drawer then insert a ``||loops:repeat||`` loop into the ``||input:on pin pressed||`` block. Click on the **Variables** drawer and pull out a ``||variables:change item by||`` block and put it into the loop. Rename the variable to `sound`. Change the value from `1` to `25`. This will increase the variable `sound` from the note frequency of block `Middle A` to `Middle A` plus 25 and so on. Put a ``||variables:set to||`` block for `sound` right after the loop. Set it to `Middle A` a in order to reset the sound after a banana press.
 
 ```blocks
 let sound = music.noteFrequency(Note.A);
 
 input.onPinPressed(TouchPin.P1, () => {
     for (let i = 0; i < 4; i++) {
-        sound = sound + 25
+        sound += 25;
     }
-})
+    sound = music.noteFrequency(Note.A);
+});
+```
+
+Finally, insert a ``||music:play tone||`` above the ``||variables:change by||``. Pull out the ``sound`` variable block and drop it in the note slot of ``||music:play tone||``. Change the beat fraction from `1` to `1/4`.
+
+```blocks
+let sound = music.noteFrequency(Note.A);
+
+input.onPinPressed(TouchPin.P1, () => {
+    for (let i = 0; i < 4; i++) {
+        music.playTone(sound, music.beat(BeatFraction.Quarter));
+        sound += 25;
+    }
+    sound = music.noteFrequency(Note.A);
+});
+```
+
+Click `|Download|` and try a banana press. Did you hear 4 notes play?
+
+
+## Add another banana key
+Go back to **[Make](/projects/banana-keyboard/make)** and repeat steps 7 and 8 with another banana but this time connect the crocodile clip to pin **3**.
+
+Duplicate the ``||input:on pin pressed||`` event handler to make a second one. For the new ``||input:on pin pressed||``, change the pin name to **P2**. In the pin **P2** event, let's have the the frequency in the variable `sound` decrease by 25 instead of having it increase. Change the `25` in the ``||variables:change by||`` block to `-25`. OK, your code now looks like this:
+
+```blocks
+let sound = music.noteFrequency(Note.A);
+
+input.onPinPressed(TouchPin.P1, () => {
+    for (let i = 0; i < 4; i++) {
+        music.playTone(sound, music.beat(BeatFraction.Quarter));
+        sound += 25;
+    }
+    sound = music.noteFrequency(Note.A);
+});
 
 input.onPinPressed(TouchPin.P2, () => {
     for (let i = 0; i < 4; i++) {
-        sound = sound - 25
+        music.playTone(sound, music.beat(BeatFraction.Quarter));
+        sound += -25;
     }
-})
+    sound = music.noteFrequency(Note.A);
+});
 ```
 
-* click *Download* to see if the code works as expected.
+Click `|Download|` again and play both bananas. It's a fruit jam session!

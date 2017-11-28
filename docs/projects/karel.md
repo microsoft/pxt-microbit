@@ -10,63 +10,94 @@ Help Karel make LED art!
 
 ![](/static/mb/projects/karel/hi.png "Hi")
 
-The goal of this activity is to download the JavaScript code given below onto a board,
-then USE the program to introduce new students to the @boardname@.
-Students will not do the coding this time.  They will be users to get familiar with the board.
+The goal of this activity is to download the JavaScript code given below onto a @boardname@.
+Then USE the program to introduce new students to the @boardname@.
+Students will not do the coding this time. They will be the users who get familiar with the board.
 
 ## How to play
 
 * ``A button`` **Turn Left**  
-Does not draw anything just changes the direction Karel (the flashing led) is facing
+>Does not draw anything just changes the direction Karel (the flashing led) is facing
 * ``B button`` **Move Forward**  
-Moves Karel forward one step and leaves the LED on behind him
+>Moves Karel forward one step and leaves the LED on behind him
 * ``shake`` **Jump**  
-Moves Karel forward one step without leaving the LED on behind him
+>Moves Karel forward one step without leaving the LED on behind him
 * ``A+B button`` **Hide Karel**  
-Shows or hides Karel (the flashing LED), to be used once your artwork is complete
+>Shows or hides Karel (the flashing LED), to be used once your artwork is complete
 * ``Reset button`` **Clear the board and restart**  
-Restart the program and clear the board
+>Restart the program and clear the board
 
-Note, that there is no way to erase, other than restarting.
+**Note:** There is no way to erase, except by restarting.
 
-## ~
+## Try drawing some patterns
 
-See if you can make each pattern below using A, B, and shake.  Once you have completed a challenge press A and B at the same time to hide Karel.
-For patterns that you design decide which LEDs you want to turn on and then make that design with Karel.
+See if you can make each pattern below using **A**, **B**, and **shake**. Once you have completed a challenge press **A** and **B** at the same time to hide Karel.
+For patterns that you design, decide which LEDs you want to turn on and then make that design with Karel.
 
-## Spiral
+### Spiral
 ![](/static/mb/projects/karel/spiral.png "Spiral")
 
-## Right turn
+### Right turn
 ![](/static/mb/projects/karel/right-turn.png "Right turn")
 
-## Eyes
+### Eyes
 ![](/static/mb/projects/karel/eyes.png "Eyes")
 
-## Smile
+### Smile
+
 ![](/static/mb/projects/karel/smile.png "Smile")
 
-## Check
+### Check
+
 ![](/static/mb/projects/karel/check.png "Check")
 
-## First letter of your name
-Figure out how to make the first letter of your name with the LEDs.  
-![](/static/mb/projects/karel/blank.png "Blank")
+### First letter of your name
 
-## Your design!
-Make something fun!  
-![](/static/mb/projects/karel/blank.png "Blank")
+Figure out how to make the first letter of your name with the LEDs.  
+
+```sim
+basic.forever(() => {
+    basic.showAnimation(`
+    # # # . . # # # . . # # # . . # # # . .
+    . . . . . # . . . . # . . . . # . . # .
+    . . . . . # . . . . # . . . . # . . # .
+    . . . . . # . . . . # . . . . # . . # .
+    . . . . . # . . . . # # # . . # # # . .
+    `)
+    basic.pause(1000)
+    basic.clearScreen()
+    basic.pause(1000)
+})
+```
+
+### Your design!
+
+Make something fun!
+
+```sim
+basic.forever(() => {
+    basic.showAnimation(`
+    # . . . . # . . . . # . . . . # . . . . # . . . . # . . . .
+    . . . . . # . . . . # . . . . # . . . . # . . . # # . # # #
+    . . . . . # . . . . # . . . . # . . . . # . . . # # . # . #
+    . . . . . # . . . . # . . . . # . . . . # . . . # # . . . #
+    . . . . . # . . . . # # # # # # # # # # # # # # # # # # # #
+    `)
+    basic.pause(1000)
+    basic.clearScreen()
+    basic.pause(1000)
+})
+```
 
 Thanks for playing with Karel the LED!
 
-## ~
+## Coding Karel the LED
+
+Copy this code into the JavaScript editor and then download it to the board.
 
 ```typescript
 /**
  * Karel the LED
- * 
- * Copy this code into the JavaScript editor and program the board.
- * Use the instructions above to complete the challenges.
  */
 basic.forever(() => {
     if (board.isKarelActive) {
@@ -155,36 +186,34 @@ class Board {
         }
         switch (this.karelDirection) {
             case Direction.UP:
-            if (this.karelY > 0) {
-            this.karelY -= 1;
-        }
-            break;
+                if (this.karelY > 0) {
+                    this.karelY -= 1;
+                }
+                break;
             case Direction.LEFT:
-            if (this.karelX > 0) {
-            this.karelX -= 1;
-        }
-            break;
+                if (this.karelX > 0) {
+                    this.karelX -= 1;
+                }
+                break;
             case Direction.DOWN:
-            if (this.karelY < 4) {
-            this.karelY += 1;
-        }
-            break;
+                if (this.karelY < 4) {
+                    this.karelY += 1;
+                }
+                break;
             case Direction.RIGHT:
-            if (this.karelX < 4) {
-            this.karelX += 1;
-        }
-            break;
+                if (this.karelX < 4) {
+                    this.karelX += 1;
+                }
+                break;
         }
     }
 
     pressedAB() {
         this.isKarelActive = !this.isKarelActive;
     }
-
 }
 ```
 
+## About the authors
 
-
-## about the authors
-This project was contributed by Dr. David Fisher a professor at [Rose-Hulman Institute of Technology](http://www.rose-hulman.edu/). Dr. Fisher loves educational robotics and runs various outreach programming activities, including a summar camp, called [Connecting with Code](https://connectingwithcode.org), which gives a @boardname@ to each participant.  
+This project was contributed by Dr. David Fisher a professor at [Rose-Hulman Institute of Technology](https://www.rose-hulman.edu/academics/faculty/fisher-david-fisherds.html). Dr. Fisher loves educational robotics and runs various outreach programming activities, including a summer camp, called [Connecting with Code](https://connectingwithcode.org), which gives a @boardname@ to each participant.  

@@ -5,7 +5,7 @@
 * @boardname@, battery holder and 2 AAA batteries
 * Banana
 * Orange
-* Crocodile clips
+* 4 Crocodile clips
 
 ## Steps
 
@@ -13,7 +13,7 @@
 
 ![](/static/mb/lessons/banana-keyboard-1.png)
 
-Using the **1st** crocodile clip, connect the end of the crocodile clip onto **GND** pin on the @boardname@.
+Using the **1st** crocodile clip, connect the end of the crocodile clip onto **GND** pin of the @boardname@.
 
 ### ``|Step 2|`` - Connect the sound lead
 
@@ -21,7 +21,7 @@ Using the **1st** crocodile clip, connect the end of the crocodile clip onto **G
 
 ![](/static/mb/lessons/banana-keyboard-3.png)
 
-Using the **2nd** crocodile clip, connect the end of the crocodile clip onto pin **0** on the @boardname@.
+Using the **2nd** crocodile clip, connect the end of the crocodile clip onto pin **0** of the @boardname@.
 
 ### ``|Step 3|`` - Connect the headphone to ground
 
@@ -29,7 +29,7 @@ Using the **2nd** crocodile clip, connect the end of the crocodile clip onto pin
 
 Using the **1st** crocodile clip, connect the second end of the crocodile clip onto based of the headphone jack.
 
-### ``|Step 4|`` - Connect the headphone to sound pin
+### ``|Step 4|`` - Connect the headphone sound contact
 
 ![](/static/mb/lessons/banana-keyboard-5.png)
 
@@ -37,13 +37,13 @@ Using the **1st** crocodile clip, connect the second end of the crocodile clip o
 
 Using the **2nd** crocodile clip, connect the second end of the crocodile clip onto tip of the headphone jack.
 
-### ``|Step 5|`` - Connect the first fruit lead
+### ``|Step 5|`` - Connect a fruit lead
 
 ![](/static/mb/lessons/banana-keyboard-7.png)
 
 Using the **3rd** crocodile clip, connect the end of the crocodile clip onto the **1st** crocodile clip already clipped onto **GND**.
 
-### ``|Step 6|`` - Connect the fruit to ground
+### ``|Step 6|`` - Connect the orange to ground
 
 ![](/static/mb/lessons/banana-keyboard-8.png)
 
@@ -51,7 +51,7 @@ Using the **3rd** crocodile clip, connect the end of the crocodile clip onto the
 
 Using the **3rd** crocodile clip, connect the unattached end of the crocodile clip onto the orange.
 
-### ``|Step 7|`` - Connect the second fruit lead
+### ``|Step 7|`` - Connect a second fruit lead
 
 ![](/static/mb/lessons/banana-keyboard-10.png)
 
@@ -78,7 +78,7 @@ input.onPinPressed(TouchPin.P1, () => {
 });
 ```
 
-Tap your banana instrument to play sound against... the fruit!
+Grab a the orange with one hand. With the fingers of your other hand, tap the banana to play sound. Your banana keyboard is ready!
 
 ## ~button /projects/banana-keyboard/code
 NEXT: beat box

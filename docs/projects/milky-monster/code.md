@@ -77,7 +77,7 @@ basic.forever(() => {
 Your Milky Monster is ready!
 
 https://youtu.be/egl3fNAYylk
-
+<br/>
 ## ~button /projects/milky-monster/connect
 NEXT: Connect
 ## ~
