@@ -145,5 +145,5 @@ Now, click the **SHAKE** spot a few times to see how the @boardname@ is feeling.
 
 ## Step 11
 
-Awesome job! You've completed your HoC: Microsoft MakeCode activity. If you have a @boardname@ to use, click the `|Download|` button and try your code on the board.
+Awesome job! You've completed your Microsoft MakeCode activity. If you have a @boardname@ to use, click the `|Download|` button and try your code on the board.
 
