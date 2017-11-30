@@ -8,6 +8,8 @@ Make the Rock-Paper-Scissors game on your @boardname@ and challenge your friends
 
 ## ~
 
+![Rock Paper Scissors game on wrist](/static/mb/projects/rock-paper-scissors.jpg)
+
 ## Duration: ~20 minutes.
 
 ## Materials
