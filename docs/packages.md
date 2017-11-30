@@ -47,5 +47,37 @@
   "name": "Bluetooth MIDI",
   "url":"/pkg/microsoft/pxt-bluetooth-midi",
   "cardType": "package"
+}, {
+  "name": "BlockyTalkyBLE",
+  "url":"/pkg/LaboratoryForPlayfulComputation/pxt-BlockyTalkyBLE",
+  "cardType": "package"
+}, {
+  "name": "ssd1306 OLED",
+  "url":"/pkg/Tinkertanker/pxt-ssd1306-microbit",
+  "cardType": "package"
+}, {
+  "name": "ky040 rotary",
+  "url":"/pkg/Tinkertanker/pxt-ky040-microbit",
+  "cardType": "package"
+}, {
+  "name": "GY521",
+  "url":"/pkg/PaulDFoster/pxt-microbit-GY521",
+  "cardType": "package"
+}, {
+  "name": "Sparkfun Gamer:bit",
+  "url":"pkg/sparkfun/pxt-gamer-bit",
+  "cardType": "package"
+}, {
+  "name": "Sparkfun Moto:bit",
+  "url":"/pkg/sparkfun/pxt-moto-bit",
+  "cardType": "package"
+}, {
+  "name": "Sparkfun Weather:bit",
+  "url":"/pkg/sparkfun/pxt-moto-bit",
+  "cardType": "package"
+}, {
+  "name": "Minode Kit",
+  "url":"/pkg/minodekit/pxt-minode",
+  "cardType": "package"
 }]
 ```

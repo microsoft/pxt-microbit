@@ -9,6 +9,10 @@ This function only works on the @boardname@ and in some browsers.
 ```sig
 music.beginMelody(music.builtInMelody(Melodies.Entertainer), MelodyOptions.Once)
 ```
+or in the format ``NOTE[octave][:duration] eg: ['g5:1']``
+```sig
+music.beginMelody(['g4:1', 'c5', 'e', 'g:2', 'e:1', 'g:3'], MelodyOptions.Once)
+```
 
 ## Parameters
 
