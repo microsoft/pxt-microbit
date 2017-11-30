@@ -4,12 +4,8 @@
 
 https://youtu.be/DgJ-S0q0EMs
 
-## Make the reaction pad
-
 * Fold the foil squares and place them around the cardboard.
-* Connect each piece of foil to the appropriate pin on the @boardname@.
-
-**Note:** Although the video shows a connection to the **P2** pin, it isn't used in this experiment.
+*  Connect each piece of foil to the appropriate pin on the Micro:bit. Note: For the experiment we will not be utilizing the P2 pin
 
 That's it!
 
@@ -18,4 +14,3 @@ That's it!
 Code
 
 ## ~
-
