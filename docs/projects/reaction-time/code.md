@@ -1,7 +1,7 @@
 # Code
 ## @description code to make the Reaction Time interactive
 
-This lesson uses the @boardname@ to measure the reaction time of a student by completing a circuit on a cardboard pad. The student will measure their reaction time in both distracted and undistracted environments.
+This lesson uses the @boardname@ to measure a student's reaction time in completing a circuit path on a cardboard pad. The student's reaction time is measured in both a distracted and an undistracted environment.
 
 Connect each piece of foil to the appropriate pin on the @boardname@.  
 
@@ -15,7 +15,7 @@ The @boardname@ then reads the time, in milliseconds, between timer start and cl
 
 ## Step 1: Variables
 
-In order for **Reaction Time** to follow track the speed of a a player's reaction, we need to add variables to keep some data. We initialize (assign, or set) the variables to some starting values. The variables we want are: `start`, `end`, `false_start`, and `running`. Set the values of the variables, `start` and `end` to `0` which means no time elapsed. Then set the value of the variables `false_start` and `running` to `false` to say we haven't started yet.
+In order for **Reaction Time** to track the speed of a a player's reaction, we need to add variables to keep some data. We initialize (assign, or set) the variables to some starting values. The variables needed are: `start`, `end`, `false_start`, and `running`. Set the values of variables `start` and `end` to `0`, which means no time elapsed. Then set the value of the variables `false_start` and `running` to `false` to say we haven't started yet.
 
 So, our tracking variables do this:
 - the reaction time experiment starts and ends at specific times based on the player's reaction.
@@ -38,7 +38,7 @@ start = 0
 
 We need to register event handlers that will execute whenever the user presses down on the **GND** pin with one hand, and presses pin **P0** or **P1** with the other hand, which completes the circuit. Our event handlers are two ``||input:on pin pressed||`` blocks, one for **P0** and the other for **P1**.
 
-Test the code in the simulator. Click pin **P0** and **P1**. The game will start on the **P0** press and  **P1** press detects when the player visualizes a single LED on the screen. Add the  ``||input:on pin pressed||` blocks to your code:
+Add the  ``||input:on pin pressed||`` blocks to your code:
 
 ```blocks
 let start = 0
@@ -111,7 +111,7 @@ start = 0
 
 ## Step 5: Begin reaction time randomly 
 
-Let's add a random starting time after pin **p0** is pressed. Include the ``||math:random||`` at the bottom of the event block like this:
+Let's add a random starting time after pin **p0** is pressed. Include the ``||math:random||`` block in a ``||basic:pause||`` at the bottom of the event block like this:
 
 ```blocks
 let start = 0
@@ -172,9 +172,9 @@ start = 0
 
 ## Step 7: Display feedback to reaction 
 
-Add some code to detect when the player presses the **GND** foil with one hand and and the **P1** pin with the other. This code detects the circuit connection and shuts off the timer. Also, add code to have the @boardname@ read the time in milliseconds from when the timer starts and the circuit is completed. This code also detects if there is a correct reaction or false start if pin **P1** is pressed.  
+Add some code to detect when the player presses the **GND** foil with one hand and the **P1** pin with the other. This code detects the circuit connection and shuts off the timer. Also, add code to have the @boardname@ read the time in milliseconds from when the timer starts and the circuit is completed. This code also detects if there is a correct reaction or false start if pin **P1** is pressed.  
 
-Let's display one of two images if pin **P1** is pressed. The first image displays if the player correctly completes the circuit between **GND** and **P1**. This means a that correct reaction occurred to complete the circuit with pin **P1** pressed after the randomly generated LED appears.
+Let's display one of two images if pin **P1** is pressed. The first image displays if the player correctly completes the circuit between **GND** and **P1**. This means that a correct reaction occurred to complete the circuit with pin **P1** pressed after the randomly generated LED appears.
 
 The second image displays if the player completes a circuit between **GND** and **P1** but on a false start. A false start is detected if the player completes a circuit if pin **P1** is pressed before the LED randomly appears at its random x, y coordinate. Modify the code to include the actions for the pin **P1** event:
 
