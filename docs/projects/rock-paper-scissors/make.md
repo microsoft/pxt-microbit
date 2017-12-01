@@ -32,6 +32,8 @@ Attach Velcro tabs at the ends of the wrist cuff as fasteners. You may need to t
 
 Decorate the wrist cuff with stickers, glitter, markers, etc.
 
+![Rock Paper Scissors game on wrist](/static/mb/projects/rock-paper-scissors.jpg)
+
 ## ~button /projects/rock-paper-scissors/code
 NEXT: Code the game!
 ## ~
