@@ -242,6 +242,7 @@
         "crowdinProject": "kindscript",
         "boardName": "micro:bit",
         "driveDisplayName": "MICROBIT",
+        "windowsStoreLink": "https://www.microsoft.com/store/apps/9pjc7sv48lcx",
         "sideDoc": "tutorials/getting-started",
         "feedbackUrl": "https://www.research.net/r/MCmicro",
         "appStoreID": "1092687276",

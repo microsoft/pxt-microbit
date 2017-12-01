@@ -19,13 +19,6 @@ basic.forever(() => {
 });
 basic.pause(100);
 basic.showArrow(ArrowNames.North);
-basic.showAnimation(`
-. . . . .
-. . . . .
-. . # . .
-. . . . .
-. . . . .
-`);
 ```
 
 ## See also
