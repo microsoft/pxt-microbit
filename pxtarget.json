@@ -201,7 +201,7 @@
         "serviceId": "microbit"
     },
     "serial": {
-        "nameFilter": "^mbed Serial Port",
+        "nameFilter": "^(mbed Serial Port|DAPLink CMSIS-DAP)",
         "log": true,
         "useEditor": true,
         "editorTheme": {
