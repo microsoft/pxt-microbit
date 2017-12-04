@@ -18,7 +18,7 @@ The first three, labelled 0, 1 and 2 are flexible and can be used for many diffe
 * **1**: GPIO with ADC
 * **2**: GPIO with ADC
 
-The other two large pins (3V and GND) are very different!/td/td
+The other two large pins (3V and GND) are very different!
 
 ## ~hint 
 
