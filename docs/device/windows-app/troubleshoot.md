@@ -1,6 +1,6 @@
 # Troubleshooting downloads from the Windows 10 App
 
-Is Windows App not downloading your program properly? Let's try to figure why!
+Is Windows App not downloading your program properly? Let's try to figure out why!
 
 ## Step 1: Check your cable
 
@@ -25,9 +25,9 @@ If the version is **0234**, you **NEED** to update the [firmware](/device/firmwa
 
 ### Upgrade the firmware
 
-2. Put your @boardname@ into **Maintenence Mode**. To do this, unplug the USB cable from the @boardname@ and then re-connect the USB cable while you hold down the reset button. Once you insert the cable, you can release the reset button.
-3. You should now see a **MAINTENENCE** drive instead of the **MICROBIT** drive like before. Also, a yellow LED light will stay on next to the reset button.
-4. Go to the **[firmware upgrade](https://support.microbit.org/support/solutions/articles/19000019131-how-to-upgrade-the-firmware-on-the-micro-bit)** page at microbit.org.
+1. Put your @boardname@ into **Maintenence Mode**. To do this, unplug the USB cable from the @boardname@ and then re-connect the USB cable while you hold down the reset button. Once you insert the cable, you can release the reset button.
+2. You should now see a **MAINTENENCE** drive instead of the **MICROBIT** drive like before. Also, a yellow LED light will stay on next to the reset button.
+3. Go to the **[firmware upgrade](https://support.microbit.org/support/solutions/articles/19000019131-how-to-upgrade-the-firmware-on-the-micro-bit)** page at microbit.org.
 4. Find the link for the `HEX` file at the bottom of the page. Right-click on the link and choose **Save link as** (your browser might say **Save target** or something similar). In the file dialog, click to select the **MAINTENENCE** drive. Press **Save** and the firmware file will copy to the @boardname@.
 5. The yellow LED will flash while the `HEX` file is copying. When the copy finishes, the LED will go off and the @boardname@ resets. The **MAINTENENCE** drive now changes back to **MICROBIT**.
 6. The upgrade is complete! You can open the **DETAILS.TXT** file to check and see that the firmware version changed to the match the version of the `HEX` file you copied.
