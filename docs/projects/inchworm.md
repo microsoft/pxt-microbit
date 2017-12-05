@@ -1,7 +1,7 @@
 
 # Inchworm
 
-## @description A inchworm like robot built with the @boardname@
+## @description A inchworm-like robot built with the @boardname@
 
 ## ~avatar avatar
 
@@ -29,7 +29,7 @@ https://youtu.be/BiZLjugXMbM
 
 ## Preparation
 
-* [Equip the microservo with crocodile clips](/device/servo)
+* [Setup the microservo with crocodile clips](/device/servo)
 
 ## Activities
 

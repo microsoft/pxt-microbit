@@ -11,8 +11,7 @@ Add code to make the inchworm move.
 
 ## Step 1: walk forever
 
-In order for the inchworm to move, the @boardname@ needs to command the servo to go between ``0`` and ``180`` degrees
-at a certain pace. In the code below, the user pressed button ``A`` to launch the inchworm.
+In order for the inchworm to move, the @boardname@ needs to command the servo to move between ``0`` and ``180`` degrees at a certain pace. The code below starts the inchworm moving when the **A** button is pressed.
 
 ```blocks
 input.onButtonPressed(Button.A, () => {
@@ -25,8 +24,7 @@ input.onButtonPressed(Button.A, () => {
 
 ## ~ hint
 
-You may have noticed that the inchworm can be rather slow or simply won't move. Try to improve the design of your legs, teeth
-so that the inchworm goes as fast as possible. Trying it on carpet also great helps avoiding skidding.
+You might notice that the inchworm goes really slow or maybe just won't move at all. Try to improve the design of your legs and teeth until the inchworm can go as fast as possible. Also, trying it on the carpet gives it more grip and helps to avoid skidding.
 
 ## ~
 

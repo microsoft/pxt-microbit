@@ -8,8 +8,7 @@ Remote control your inchworm with another @boardname@
 
 ## Duration: ~30 minutes
 
-You will need 2 @boardname@ for this part. By using the radio, we can make the inchworm controlled by another @boardname@.
-Download the code below to the @boardname@ on the inchworm and another "controller" @boardname@. Whenere A is pressed, the inchworm will move once.
+You will need one more @boardname@ for this part. By using the radio, we can control the inchworm with another @boardname@. Download the code below to the @boardname@ on the inchworm and then again onto a "controller" @boardname@. Whenever button **A** is pressed, the inchworm moves once.
 
 ```blocks
 radio.onDataPacketReceived(({receivedNumber}) => {
