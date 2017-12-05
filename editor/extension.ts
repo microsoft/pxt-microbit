@@ -328,16 +328,11 @@ namespace pxt.editor {
                     })
             })
             .catch(e => {  
-                if (e.type === "devicenotfound" && d.reportError) {
-                    if (d.reportError) {
-                        d.reportError(Util.lf("Please connect your device."))
-                    } else {
-                        pxt.reportException(e)
-                    }
+                if (e.type === "devicenotfound" && d.reportDeviceNotFoundAsync) {
+                    return d.reportDeviceNotFoundAsync("/device/windows-app/troubleshoot");
                 } else {
                     return saveHexAsync()
                 }  
-                return Promise.resolve()      
             })
     }
 

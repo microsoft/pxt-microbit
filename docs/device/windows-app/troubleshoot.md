@@ -15,8 +15,9 @@ If you cannot see the drive,
 
 * go to the **MICROBIT** drive
 * open the **DETAILS.TXT** file
-* look for the version number, it should say **Version: ...**
+* look for the version number in the text. It is a number following **Version: **.
 
-**If the version is 0234**, you **need** to update the [firmware](/device/firmware) on your @boardname@. 
-[Follow the instructions from the Micro:bit Foundation](https://support.microbit.org/support/solutions/articles/19000019131-how-to-upgrade-the-firmware-on-the-micro-bit).
+**If the version is "Version: 0234"**, you **need** to update the [firmware](/device/firmware) on your @boardname@. 
+
+* [Follow the firmware upgrade instructions from the Micro:bit Foundation](https://support.microbit.org/support/solutions/articles/19000019131-how-to-upgrade-the-firmware-on-the-micro-bit).
 
