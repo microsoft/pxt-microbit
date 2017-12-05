@@ -14,13 +14,12 @@
     <Resource Language="x-generate" />
   </Resources>
   <Applications>
-    <Application Id="App" StartPage="http://localhost:3232/?dbg=1&amp;nolocalhost=1#local_token=37dc4d35-0e01-43f9-d725-2f4b35cd11ba&amp;wsport=3233">
+    <Application Id="App" StartPage="https://makecode.microbit.org/">
       <uap:ApplicationContentUriRules>
         <uap:Rule Match="https://makecode.microbit.org/" Type="include" WindowsRuntimeAccess="all" />
         <uap:Rule Match="https://trg-microbit.userpxt.io/---simulator" Type="include" WindowsRuntimeAccess="none" />
         <uap:Rule Match="https://makecode.microbit.com/beta" Type="include" WindowsRuntimeAccess="all" />
         <uap:Rule Match="https://trg-microbit.userpxt.io/beta---simulator" Type="include" WindowsRuntimeAccess="none" />
-        <uap:Rule Match="http://localhost:3232/" Type="include" WindowsRuntimeAccess="all" />
       </uap:ApplicationContentUriRules>
       <uap:VisualElements DisplayName="MakeCode for micro:bit" Description="Microsoft MakeCode for microbit" BackgroundColor="#3454d1" Square150x150Logo="images\Square150x150Logo.png" Square44x44Logo="images\Square44x44Logo.png">
         <uap:DefaultTile Wide310x150Logo="images\Wide310x150Logo.png" Square71x71Logo="images\SmallTile.png">
