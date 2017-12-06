@@ -1,4 +1,4 @@
-# Troubleshooting downloads from the Windows 10 App
+ # Troubleshooting downloads from the Windows 10 App
 
 Is Windows App not downloading your program properly? Let's try to figure out why!
 
@@ -33,7 +33,7 @@ If the version is higher than **0234** say **0241** or **0243** you have the rig
 
 1. Put your @boardname@ into **MAINTENANCE Mode**. To do this, unplug the USB cable from the @boardname@ and then re-connect the USB cable while you hold down the reset button. Once you insert the cable, you can release the reset button. You should now see a **MAINTENANCE** drive instead of the **MICROBIT** drive like before. Also, a yellow LED light will stay on next to the reset button.
 ![MAINTENANCE gesture](/static/mb/device/maintenance.gif)
-2. <a href="https://support.microbit.org/helpdesk/attachments/19008095092" target="_blank">Download the firmware .hex file</a>
+2. <a href="https://support.microbit.org/helpdesk/attachments/19008095092" target="_blank" download="microbitfirmware.hex">Download the firmware .hex file</a>
 3. Drag and drop that file onto the **MAINTENANCE** drive.
 4. The yellow LED will flash while the `HEX` file is copying. When the copy finishes, the LED will go off and the @boardname@ resets. The **MAINTENANCE** drive now changes back to **MICROBIT**.
 5. The upgrade is complete! You can open the **DETAILS.TXT** file to check and see that the firmware version changed to the match the version of the `HEX` file you copied.
