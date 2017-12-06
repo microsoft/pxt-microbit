@@ -2,15 +2,13 @@
 
 ## ~avatar avatar
 
-Remote control your monster with another @boardname@
+Remote control your monster with another @boardname@.
 
 ## ~
 
 ## Duration: ~30 minutes
 
-You will need 2 @boardname@ for this part. By using the radio, we can make the inchworm controlled by another @boardname@.
-Download the code below to the @boardname@ on the inchworm and another "controller" @boardname@. 
-Whenere A is pressed, the monster will open and close it's mouth will move once.
+You will need one more @boardname@ for this part. By using the radio, we can control the monster with another @boardname@. Download the code below to the @boardname@ on the monster and then again onto a "controller" @boardname@. Whenever button **A** is pressed, the monster's mouth moves once.
 
 ```blocks
 radio.onDataPacketReceived(({receivedNumber}) => {
