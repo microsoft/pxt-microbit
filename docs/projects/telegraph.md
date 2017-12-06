@@ -12,8 +12,8 @@ Build a telegraph between two @boardname@s to communicate with your friends!
 
 ## Materials
 
-* @boardname@, battery holder and 2 AAA batteries
-* Crocodile clips
+* 2 @boardname@s, a battery holder, and 2 AAA batteries
+* 4 crocodile clips
 
 ## Activities
 
