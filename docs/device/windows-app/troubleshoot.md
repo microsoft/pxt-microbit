@@ -1,4 +1,4 @@
-# Troubleshooting downloads from the Windows 10 App
+ Troubleshooting downloads from the Windows 10 App
 
 Is Windows App not downloading your program properly? Let's try to figure out why!
 
@@ -8,13 +8,14 @@ Make sure that your @boardname@ is connected to your computer with a micro USB c
 
 ![MICROBIT drive](/static/mb/device/windows-microbit-drive.png)
 
-If you can't see the drive:
+**If you can see the MICROBIT drive go to step 2**.
 
+If you can't see the drive:
 * **Make sure that the USB cable is working.**
 >Does the cable work on another computer? If not, find a different cable to use. Some cables may only provide a power connection and don't actually transfer data.
 * **Try another USB port on your computer.**
 
-Is the cable good but you still can't see the **MICROBIT** drive? Hmm, you might have a problem with your @boardname@. Try the additional steps described in the [fault finding](https://support.microbit.org/support/solutions/articles/19000024000-fault-finding-with-a-micro-bit) page at microbit.org. If this doesn't help, you can create a [support ticket](https://support.microbit.org/support/tickets/new) to notify the Micro:bit Foundation of the problem.
+Is the cable good but you still can't see the **MICROBIT** drive? Hmm, you might have a problem with your @boardname@. Try the additional steps described in the [fault finding](https://support.microbit.org/support/solutions/articles/19000024000-fault-finding-with-a-micro-bit) page at microbit.org. If this doesn't help, you can create a [support ticket](https://support.microbit.org/support/tickets/new) to notify the Micro:bit Foundation of the problem. Skip the rest of these steps.
 
 ## Step 2: Check your firmware version
 
@@ -25,7 +26,8 @@ It's possible that the firmware version on the @boardname@ needs an update. Let'
 ![](/static/mb/device/mb-drive-contents.jpg)<br/>
 3. Look for a line in the file that says the version number. It should say **Version: \.\.\.**
 ![](/static/mb/device/details-txt.jpg)<br/>
-If the version is **0234**, you **NEED** to update the [firmware](/device/firmware) on your @boardname@. Follow the upgrade instructions described next.
+If the version is **0234**, you **NEED** to update the [firmware](/device/firmware) on your @boardname@. Follow the upgrade instructions described below at **Upgrade the firmware**.
+If the version is higher than **0234** say **0241** or **0243** you have the right firmware. You can create a [support ticket](https://support.microbit.org/support/tickets/new) to notify the Micro:bit Foundation of the problem. Skip the rest of these steps.
 
 ### Upgrade the firmware
 
@@ -39,3 +41,5 @@ If the version is **0234**, you **NEED** to update the [firmware](/device/firmwa
 ### ~hint
 If you want to know more about connecting the board, MAINTENANCE Mode, and upgrading the firmware, read about it in the [Firmware support page](https://support.microbit.org/support/solutions/articles/19000019131-how-to-upgrade-the-firmware-on-the-micro-bit).
 ### ~
+
+
