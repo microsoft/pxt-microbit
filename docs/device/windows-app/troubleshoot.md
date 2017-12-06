@@ -1,4 +1,4 @@
- Troubleshooting downloads from the Windows 10 App
+# Troubleshooting downloads from the Windows 10 App
 
 Is Windows App not downloading your program properly? Let's try to figure out why!
 
