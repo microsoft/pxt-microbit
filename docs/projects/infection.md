@@ -7,49 +7,51 @@ There is a disease outbreak! Will you find patient zero?!?
 ## ~
 
 **Infection** is a distributed game which simulates 
-the propagation of an illness. **The goal is to stop the outbreak before every player dies!**
+the spread of an illness. **The goal is to stop the outbreak before every player dies!**
 
-* **Number of players:** 1 Master, 4 or more players. Each Master and players need a @boardname@ with battery pack.
+* **Number of players:** 1 Master and 4, or more, additional players. The Master and all other players need a @boardname@ with battery pack.
 
-In this game, a master @boardname@ infects a "patient zero" player
-with the sickness. The infected player will be contagious immediately but won't show any sign 
-during the incubation time. The sickness gets transmitted when two @boardname@ get close to each other.
-After the incubation period, the sad face will appear on the screen. After the sickness period, the player will eventually die and a skull will display on the screen. Dead players are out of the game.
+In this game, a Master @boardname@ infects a single, initial player ("patient zero")
+with the illness. The infected player is contagious immediately but won't show any signs sickness
+during the incubation time. The sickness gets transmitted when two @boardname@s get close enough to each other to "contract the disease".
+After the incubation period, a sad face appears on the screen. After the sickness period, the player will eventually die and a skull displays on the screen. Dead players are out of the game.
 
-If any player survives the outbreak, the game is won. Otherwise try again!
+If at least one player survives the outbreak, the game is won. Otherwise, try again!
 
 ## ~ hint
 
 **Infection** is an engaging game that will get your students running around.
-We recommend playing it outside to give more space for the students.
+We recommend playing it outside, or in a large open area, to give more space for the activity.
 
 ## ~
 
 ## How to play
 
-Press `A+B` to enter master mode (1 per game).
+Press `A+B` to enter Master mode (there's only one Master in a game).
 
-Wait for players to be paired. The number of paired player will display on screen.
-A letter will appear on the player's screen, this letter is the player's identity.
+Wait for players to be paired. The number of paired players will display on the screen.
+When paired, a letter appears on the player's screen, this letter is the player's identity.
 
-Once all your players are registered, press `A+B` to start the infection game. 
-The game will pick a random player as **patient zero**.
+Once all of your players are registered, press `A+B` to start the infection game. 
+The game randomly picks a player as **patient zero**.
 
-A player will transmit the disease if close enough (`RSSI`) and with a certain probability (`TRANSMISSIONPROB`). 
-During the incudation phase (`INCUBATION`), the player does not show any sign of illness (happy face). 
-After that phase, the player gets sick and shows a sad face on the screen. After the sick face, the player dies and a skull shows up.
+A player will transmit the disease to another player if close enough (detecting a sufficient `RSSI`), and if a certain probability (`TRANSMISSIONPROB`) of disease transfer is reached. 
+During the incubation phase (`INCUBATION`), the player does not show any sign of illness (happy face). 
+After that phase, the player gets sick and shows a sad face on the screen. After the sick (sad) face, the player dies and a skull shows up.
 
-Once the game is over, the @boardname@ will show the player id (A,B,C...), health and 
-who infected him. The master @boardname@ will show the identity of patient zero.
+Once the game is over, the @boardname@ will show the player's id (`A`, `B`, `C`...), health, and 
+the id of the player who infected them. The Master @boardname@ will show the identity of patient zero.
   
 Icons used in the game:
 
-* Pairing: IconNames.Ghost
-* Paired: IconNames.Happy
-* Dead: IconNames.Skull
-* Sick: IconNames.Sad
-* Incubating: IconNames.Confused
-* Healthy: IconNames.Happy
+* Pairing: `IconNames.Ghost`
+* Paired: `IconNames.Happy`
+* Dead: `IconNames.Skull`
+* Sick: `IconNames.Sad`
+* Incubating: `IconNames.Confused`
+* Healthy: `IconNames.Happy`
+
+## Project share
 
 https://makecode.microbit.org/_gymCJCWPbiDu
 
@@ -387,7 +389,6 @@ basic.forever(() => {
         gameFace();
     }
 })
-
 
 basic.showIcon(GameIcons.Pairing)
 ```
