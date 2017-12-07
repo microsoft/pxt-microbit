@@ -9,16 +9,16 @@ Turn your @boardname@ into fireflies.
 
 https://youtu.be/ZGvtnE1Wy6U
 
-## How do Fireflies synchronise?
+## How do Fireflies synchronize?
 
 Go to http://ncase.me/fireflies/ and read about the fireflies synchronization phenomenon.
 
-## Code
+## Code the firefly
 
-We want to create virtual fireflies using multiple @boardname@ (each @boardname@ acts as a firefly).
-Let's review some of the key points of the article:
+We want to create virtual fireflies using multiple @boardname@s (each @boardname@ acts as a firefly).
+Let's review some of the key points from the article:
 
-## "Each firefly has its own individual internal clock"
+### "Each firefly has its own individual internal clock..."
 
 A clock in this case is like a counter, so we will start by adding a ``clock`` variable to our program.
 
@@ -27,10 +27,10 @@ A clock in this case is like a counter, so we will start by adding a ``clock`` v
 let clock = 1
 ```
 
-## "and every time the clock “strikes twelve”, it flashes."
+### "...and every time the clock 'strikes twelve', it flashes."
 
-We can use a [forever](/reference/basic/forever) loop to repeat code that increments the clock.
-When the clock reaches "noon" (let's pick `8`), we turn on the screen briefly (by using the game score animation)
+We can use a ``||basic:forever||`` loop to repeat code that increments the clock.
+When the clock reaches "noon" (let's pick `8` as noon), we turn on the screen briefly (by using the game score animation)
 
 ```block
 // the clock ticker
@@ -53,12 +53,11 @@ basic.forever(() => {
 })
 ```
 
-## Step 1: when you see a nearby firefly flash, nudge your clock a little bit forward.
+### When you see a nearby firefly flash, nudge your clock a little bit forward
 
-The @boardname@ can send radio messages to neighbor @boardname@.
-We can use these messages to simulate the "flashes" of light. 
+The @boardname@ can send radio messages to a neighbor @boardname@. We can use these messages to simulate the "flashes" of light. 
 
-* When a firefly flashes, it also sends a number over radio using [radio send number](/reference/radio/send-number).
+When a firefly flashes, it also sends a number over radio using ``||radio:radio send number||``:
 
 ```block
 // the clock ticker
@@ -83,7 +82,7 @@ basic.forever(() => {
 })
 ```
 
-* When a firefly receives a radio packet, it increments its clock by one.
+When a firefly receives a radio packet, it increments its clock by one:
 
 ```block
 // the clock ticker
@@ -94,13 +93,13 @@ radio.onDataPacketReceived(() => {
 })
 ```
 
-## Putting all together
+## Put it all together
 
 https://youtu.be/XzZeB4yYnEw
 
-Download this program on as many @boardname@ as you can find and try it out in a dark room!
+Download this program on as many @boardname@s as you can find and try it out in the dark!
 
-(We've added a [radio set group](/reference/radio/set-group) block to specify which group the firefly will communicate on). 
+**Note:** We've added a ``||radio:radio set group||`` block to specify which group the firefly will communicate on. 
 
 ```blocks
 // the clock ticker

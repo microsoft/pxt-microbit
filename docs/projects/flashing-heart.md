@@ -40,8 +40,7 @@ basic.showLeds(`
 
 ## Step 4
 
-Move the blocks inside the ``||basic:forever||``
-to repeat the animation.
+Move the blocks inside the ``||basic:forever||`` to repeat the animation.
 
 ```block
 basic.forever(() => {
@@ -63,7 +62,7 @@ basic.forever(() => {
 
 ## Step 5
 
-Click ``|Download|`` to transfer your code in your @boardname@!
+Click ``|Download|`` to transfer your code in your @boardname@ and watch the hearts flash!
 
 ## Step 6
 
