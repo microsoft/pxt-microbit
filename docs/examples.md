@@ -68,6 +68,27 @@ Here are some fun programs for your @boardname@!
 }]
 ```
 
+## Turtle graphics
+
+```codecard
+[{
+  "name": "Turtle Square",
+  "description": "move in a square",
+  "url":"/examples/turtle-square",
+  "cardType": "example"
+}, {
+  "name": "Turtle Spiral",
+  "description": "move in a spiral",
+  "url":"/examples/turtle-spiral",
+  "cardType": "example"  
+}, {
+  "name": "Turtle Scanner",
+  "description": "scans the screen down",
+  "url":"/examples/turtle-scanner",
+  "cardType": "example"  
+}]
+```
+
 ## Actuators
 
 ```codecard
