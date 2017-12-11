@@ -1,6 +1,6 @@
 # Turtle Spiral
 
-The turtle goes to the center back and forth.
+A turtle that spirals into the center of the display and back out again.
 
 ```blocks
 let index = 0
