@@ -298,6 +298,18 @@
     * [SRS BitBot](/pkg/srs/pxt-bitbot)
     * [BlockyTalkyBLE](/pkg/LaboratoryForPlayfulComputation/pxt-blockytalkybluetooth/)
 
+## #types
+
+* [Types](/types)
+    * [Number](/types/number)
+    * [String](/types/string)
+    * [Boolean](/types/boolean)
+    * [Array](/types/array)
+    * [Function](/types/function)
+    * [Buffer](/types/buffer)
+        * [Using buffers](/types/buffer/using-buffers)
+        * [Number format](/types/buffer/number-format)
+
 ## #other
 
 * [Hardware](/device)

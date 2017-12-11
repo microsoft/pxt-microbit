@@ -85,7 +85,7 @@ input.onButtonPressed(Button.A, () => {
 })
 ```
 
-Later we can upload the file to the laptop computer by pressing the **B** button:
+Later, we can upload the file to the laptop computer by pressing the **B** button:
 
 ```typescript-ignore
 let dataReady = false;
