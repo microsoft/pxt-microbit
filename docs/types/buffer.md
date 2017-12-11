@@ -8,7 +8,7 @@ Sending and receiving data over the pins might need a buffer if you use your own
 
 A buffer is created with the **createBuffer** function by choosing a buffer size as a number of bytes.
 
-```typescript
+```typescript-ignore
 let bufr = pins.createBuffer(16);
 ```
 
@@ -16,14 +16,14 @@ let bufr = pins.createBuffer(16);
 
 You can get a number value from a particular place in a buffer using **getNumber**. To do it, you have to say how big each of your number values are. The size of the number values is set using a [NumberFormat](/types/buffer/number-format#number-format-types) type. You use an _offset_ value which is the position in the buffer where the number value you want is at. 
 
-```typescript
+```typescript-ignore
 let num = bufr.getNumber(NumberFormat.Int8LE, 5)
 ```
 
 ## Put a number value into a buffer
 A number is placed in a buffer with **setNumber**. You use a number format like with **getNumber**. A new value to goes into the buffer at the position you select.
 
-```typescript
+```typescript-ignore
 let val = 15;
 bufr.setNumber(NumberFormat.Int8LE, 5, val);
 ```
@@ -32,7 +32,7 @@ bufr.setNumber(NumberFormat.Int8LE, 5, val);
 
 The buffer **length** property tells how big the buffer is in size as number of bytes.
 
-```typescript
+```typescript-ignore
 let bufrLength = bufr.length;
 ```
 
@@ -41,7 +41,7 @@ let bufrLength = bufr.length;
 You can fill an entire buffer so that every byte in the buffer has the same value. You use the 
 **fill** function to initialize or reset the buffer contents to a default value. Typically the number `0`.
 
-```typescript
+```typescript-ignore
 bufr.fill(0);
 ```
 
@@ -49,7 +49,7 @@ bufr.fill(0);
 
 A new smaller buffer is created from an original larger one using the **slice** function. You tell what position you want to start from in the original buffer and how many bytes from that position you want to copy.
 
-```typescript
+```typescript-ignore
 let newBufr = bufr.slice(32, 64);
 ```
 
@@ -57,7 +57,7 @@ let newBufr = bufr.slice(32, 64);
 
 The contents of a buffer are shifted left or right by some amount of bytes with the **shift** function. A positive shift number moves the data to the left (to a lower position in the buffer). A negative number moves the data to the right (to a higher position in the buffer). Any data that is moved past the first or last position in the buffer is lost. Locations in the buffer where data is shifted out of are filled with `0` values.
 
-```typescript
+```typescript-ignore
 bufr.shift(8);
 ```
 Here's an example of shifting a buffer to the left (higher positions to lower positions). The original buffer contains:
@@ -84,7 +84,7 @@ After shifting by 2 bytes using **shift(2)**...
 
 The contents of a buffer are rotated left or right by some amount of bytes with the **rotate** function. A positive rotate number rotates the data to the left (to a lower position in the buffer). A negative number moves the data to the right (to a higher position in the buffer). Any data that is moved past the first or last position in the buffer is placed back in the buffer at the location where the rotation ended.
 
-```typescript
+```typescript-ignore
 bufr.rotate(6);
 ```
 Here's an example of rotating a buffer to the left (higher positions to lower positions). The original buffer contains:
@@ -111,7 +111,7 @@ After shifting by 3 bytes using **rotate(3)**...
 
 The contents of another buffer are copied to a location in the current buffer using the **write** function. You say where (what position) in the current buffer you want to write the contents to and include the other buffer as the second parameter.
 
-```typescript
+```typescript-ignore
 let sourceBufr = serial.readBuffer(32);
 bufr.write(128, sourceBufr);
 ```

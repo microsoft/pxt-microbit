@@ -67,3 +67,7 @@ The formats for numbers stored on the @boardname@ are:
 * `UInt16BE`: two bytes, unsigned, big endian
 * `Int32LE`: four bytes, unsigned, little endian
 * `Int32BE`: four bytes, unsigned, big endian
+
+## See also
+
+[buffer](/types/buffer)

@@ -69,7 +69,7 @@ This will save the light level measurements but we'd like to upload the data lat
 
 The **Pins** category has a special function called **createBuffer**. It makes a buffer that holds data with a size specified in bytes. Here it is:
 
-```typescript
+```typescript-ignore
 let darkness = pins.createBuffer(60 * 4);
 ```
 
