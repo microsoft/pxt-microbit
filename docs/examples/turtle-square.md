@@ -1,6 +1,6 @@
 # Turtle Square
 
-A turtle program that runs in a square.
+A turtle that traces a square pattern.
 
 ```blocks
 turtle.setPosition(0, 0)
