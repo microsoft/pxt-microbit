@@ -30,6 +30,15 @@ namespace String_ {
     }
 
     //%
+    int compareDecr(StringData *s, StringData *that) {
+      int r = compare(s, that);
+      if (r == 0)
+        decr((uint32_t)that);
+      return r;
+    }
+    
+
+    //%
     int length(StringData *s) { return s->len; }
 
     //%
@@ -112,6 +121,15 @@ namespace Number_ {
     int div(int x, int y) { return x / y; }
     //%
     int mod(int x, int y) { return x % y; }
+
+    //%
+    bool eqDecr(int x, int y) { 
+      if(x == y) {
+        decr(y);
+        return true;
+      }
+      return false;
+    }
 }
 
 namespace Math_ {
