@@ -1,6 +1,6 @@
 # Turtle Scanner
 
-The turtle keeps on the scanning the screen.
+The turtle scans the display over and over again.
 
 ```blocks
 turtle.setPosition(0, 0)
