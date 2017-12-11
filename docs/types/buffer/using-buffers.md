@@ -4,13 +4,13 @@ Memory used as temporary location for data in a program is commonly called a _bu
 
 ## Multiple data types in one place
 
-Much of the time you read and write a [number](/types/number) or a [string](/types/string) to and from the devices connected to or part of the @boardname@. Sometimes, though, you need to transfer data that is more complicated just these simple types. Your data could be a combination of numbers and strings together, or just a lot of numbers together as a chunk. An example of where you might do this is if you have a external display module or a camera connected to the @boardname@. A buffer is kind of like an [array](/types/array) but it can have data of any type at any place in it.
+Much of the time you read and write [numbers](/types/number) and [strings](/types/string) to and from connected devices or to and from a part on the @boardname@. Sometimes, though, you need to transfer data that is more complicated just these simple types. Your data could be a combination of numbers and strings together, or just a lot of numbers together as a chunk. An example of where you might do this is if you have a external display module or a camera connected to the @boardname@. A buffer is kind of like an [array](/types/array) but it can have data of any type at any place in it.
 
 ## Get a buffer
 
-Let's say we want to use a super accurate clock with our @boardname@. We can get an external Real Time Clock (RTC) device and connect it to the I2C pins. The time values returned from the RTC device come to us as a sequence of numbers (each number is one _byte_ of data, which means we use the number format of `UInt8LE`). The current time is read from the RTC in a buffer of 7 numbers at a time (7 bytes). Here's an example of a function we can create to read the time and return the data in a buffer:
+Maybe we want to use a super accurate clock with our @boardname@. We can get an external Real Time Clock (RTC) device and connect it to the I2C pins. The time values returned from the RTC device come to us as a sequence of numbers (each number is one _byte_ of data, which means we use the number format of `UInt8LE`). The current time is read from the RTC in a buffer as 7 numbers of a time data (7 bytes). Here's an example of a function we can create to read the time and return the data in a buffer:
 
-```blocks
+```typescript-ignore
 const rtcAddress = 104;
 
 function getTimeData() {
@@ -19,31 +19,39 @@ function getTimeData() {
 }
 ```
 
-The command to read the time is uses just one number so we use [i2cWriteNumber](/reference/pins/i2c-write-number) to send this command. The time data that the RTC gives us is comes back as buffer from  [i2cReadBuffer](/reference/pins/i2c-read-buffer).
+The command to read the time uses just one number so we use **i2cWriteNumber** to send this command. The time data that the RTC gives us comes back as a buffer from  **i2cReadBuffer**.
 
 ## Reading from a buffer
 
-Data items in buffers are located at _offsets_ inside the buffer. Like an _index_ in an array, an offset is the position number of some particular data in the buffer we want to access.
+Data items in buffers are located at _offsets_ inside the buffer. Like an _index_ in an [array](/types/array), an offset is the position number of some particular data in the buffer we want to access.
 
 In the previous example, our **getTimeData** function returned the current time to us in a buffer. The time data is 7 numbers all together. Remember, for this device the numbers are bytes which means we use `UInt8LE` as the format. The time is formatted where the first number is seconds, the next number is minutes, and so on. So, if we wanted to know what the current day is, we have to look at the 6th number. This is how we get the 6th number from the the buffer:
 
-```typescript
+```typescript-ignore
 let timeBuf = getTimeData();
 let day = timeBuf.getNumber(NumberFormat.Int8LE, 6);
 ```
 
 If we want to decode the data further, we can convert the day number to a name:
 
-```typescript
+```typescript-ignore
 let dayNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 let timeBuf = getTimeData();
 let day = timeBuf.getNumber(NumberFormat.Int8LE, 6);
 basic.showString(dayNames[day]);
 ```
 
+## ~hint
+**RTC module**
+
+Do you want to use a real RTC module and read accurate time data just like in the example? You can get a [precision RTC breakout](https://www.adafruit.com/product/3013) that connects on I2C.
+## ~
+
 ## Writing to a buffer
 
-To write to a buffer, you need to use an existing buffer or create one. There is a function that is part of **Pins** that lets you create one. Let's say you want to see how quickly it gets dark in the evening over  a period of 4 hours. You want set the @boardname@ next to the window with the room lights off and record a light level reading once every minute.
+To write to a buffer, you need to use an existing buffer or create one. There is a function that is part of **Pins** that lets you create one.
+
+Let's say you want to see how quickly it gets dark in the evening over  a period of 4 hours. You set the @boardname@ next to the window with the room lights off and record a light level reading once every minute.
 
 You could simply save the light measurements in an array like this:
 
@@ -67,7 +75,7 @@ let darkness = pins.createBuffer(60 * 4);
 
 The code in blocks for recording the light level is modified to make our file data:
 
-```blocks
+```typescript-ignore
 let darkness = pins.createBuffer(60 * 4);
 input.onButtonPressed(Button.A, () => {
     for (let i = 0; i < 60 * 4; i++) {
@@ -77,9 +85,9 @@ input.onButtonPressed(Button.A, () => {
 })
 ```
 
-Then later we can upload the file to the laptop computer by pressing the **B** button:
+Later we can upload the file to the laptop computer by pressing the **B** button:
 
-```blocks
+```typescript-ignore
 let dataReady = false;
 let darkness = pins.createBuffer(60 * 4);
 input.onButtonPressed(Button.A, () => {
@@ -99,3 +107,8 @@ input.onButtonPressed(Button.B, () => {
     }    
 })
 ```
+
+## See also
+
+[buffer](/types/buffer), [number format](types/buffer/number-format),
+[serial read buffer](/reference/serial/read-buffer), [serial write buffer](/reference/serial/write-buffer)
