@@ -22,6 +22,18 @@ If the desired number of characters are available, **readBuffer** returns a buff
 The need to pause for more data is set by the @boardname@ **[serial mode](https://lancaster-university.github.io/microbit-docs/ubit/serial/#serial-modes)**.
 ## ~
 
+## Example
+
+Read character data from the serial port one row at a time. Write the rows to an LED display connected to the I2C pins.
+
+```blocks
+let rowData: Buffer = null;
+for (let i = 0; i < 24; i++) {
+    rowData = serial.readBuffer(80);
+    pins.i2cWriteBuffer(65, rowData, false);
+}
+```
+
 ## See Also
 
 [write buffer](/reference/serial/write-buffer)
