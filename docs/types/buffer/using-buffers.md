@@ -19,7 +19,7 @@ function getTimeData() {
 }
 ```
 
-The command to read the time uses just one number so we use [i2cWriteNumber](/refernece/pins/i2c-write-number) to send this command. The time data that the RTC gives us comes back as a buffer from [i2cReadBuffer](/reference/pins/i2c-read-buffer).
+The command to read the time uses just one number so we use [i2cWriteNumber](/reference/pins/i2c-write-number) to send this command. The time data that the RTC gives us comes back as a buffer from [i2cReadBuffer](/reference/pins/i2c-read-buffer).
 
 ## Reading from a buffer
 
