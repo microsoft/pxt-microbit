@@ -65,8 +65,8 @@ The formats for numbers stored on the @boardname@ are:
 * `UInt16LE`: two bytes, unsigned, little endian
 * `Int16BE`: two bytes, signed, big endian
 * `UInt16BE`: two bytes, unsigned, big endian
-* `Int32LE`: four bytes, unsigned, little endian
-* `Int32BE`: four bytes, unsigned, big endian
+* `Int32LE`: four bytes, signed, little endian
+* `Int32BE`: four bytes, signed, big endian
 
 ## See also
 
