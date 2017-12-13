@@ -28,6 +28,9 @@
         "driveName": "MICROBIT",
         "hexMimeType": "application/x-microbit-hex",
         "openocdScript": "source [find interface/cmsis-dap.cfg]; source [find target/nrf51.cfg]",
+        "flashUsableEnd": 245760,
+        "flashEnd": 245760,
+        "flashCodeAlign": 1024,
         "upgrades": [{
                 "type": "package",
                 "map": {
