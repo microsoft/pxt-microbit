@@ -152,11 +152,22 @@ namespace serial {
     //% tx.fieldOptions.tooltips="false"
     //% rx.fieldEditor="gridpicker" rx.fieldOptions.columns=3
     //% rx.fieldOptions.tooltips="false"
+    //% blockGap=8
     void redirect(SerialPin tx, SerialPin rx, BaudRate rate) {
       MicroBitPin* txp = getPin(tx); if (!tx) return;
       MicroBitPin* rxp = getPin(rx); if (!rx) return;
 
       uBit.serial.redirect(txp->name, rxp->name);
       uBit.serial.baud((int)rate);
+    }
+
+    /**
+    * Redirects the serial instance to USBTX and USBRX.
+    */
+    //% weight=9 help=serial/redirect-to-usb
+    //% blockId=serial_redirect_to_usb block="serial|redirect to USB"    
+    void redirectToUSB() {
+      uBit.serial.redirect(USBTX, USBRX);
+      uBit.serial.baud(115200);
     }
 }

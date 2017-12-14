@@ -49,4 +49,8 @@ namespace pxsim.serial {
     export function redirect(tx: number, rx: number, rate: number) {
         // TODO?
     }
+
+    export function redirectToUSB() {
+        // TODO
+    }
 }

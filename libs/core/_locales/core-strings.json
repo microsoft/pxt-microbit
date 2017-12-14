@@ -339,6 +339,7 @@
   "serial.readLine|block": "serial|read line",
   "serial.readString|block": "serial|read string",
   "serial.readUntil|block": "serial|read until %delimiter=serial_delimiter_conv",
+  "serial.redirectToUSB|block": "serial|redirect to USB",
   "serial.redirect|block": "serial|redirect to|TX %tx|RX %rx|at baud rate %rate",
   "serial.writeBuffer|block": "serial|write buffer %buffer",
   "serial.writeLine|block": "serial|write line %text",

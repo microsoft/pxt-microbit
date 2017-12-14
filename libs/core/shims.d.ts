@@ -833,6 +833,13 @@ declare namespace serial {
     //% rx.fieldEditor="gridpicker" rx.fieldOptions.columns=3
     //% rx.fieldOptions.tooltips="false" shim=serial::redirect
     function redirect(tx: SerialPin, rx: SerialPin, rate: BaudRate): void;
+
+    /**
+     * Redirects the serial instance to USBTX and USBRX.
+     */
+    //% weight=9 help=serial/redirect-to-usb
+    //% blockId=serial_redirect_to_usb block="serial|redirect to USB" shim=serial::redirectToUSB
+    function redirectToUSB(): void;
 }
 
 
