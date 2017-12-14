@@ -27,5 +27,6 @@ input.onButtonPressed(Button.A, () => {
 
 ## See also
 
-[serial](/device/serial)
+[serial](/device/serial),
+[redirectToUSB](/reference/serial/redirect-to-usb)
 
