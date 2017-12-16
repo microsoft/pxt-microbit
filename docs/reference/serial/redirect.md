@@ -17,7 +17,7 @@ The default connection for the serial port is over a USB cable. You can have the
 ## ~hint
 **Baud rate**
 
-Serial communication transmits data by sending one bit of a [digital number](/buffer/number-format) (usually a byte sized number), at a time. So, the data bytes are sent as a series of their bits. Serial communication uses just one wire to send these bits so only one bit can travel across the wire at a time.
+Serial communication transmits data by sending one bit of a [digital number](/types/buffer/number-format) (usually a byte sized number), at a time. So, the data bytes are sent as a series of their bits. Serial communication uses just one wire to send these bits so only one bit can travel across the wire at a time.
 
 When pins on your @boardname@ are configured for serial communication, they make a serial port for data. The port switches the voltage on the pins to represent a new bit to send on the wire. A series of these voltage changes eventually sends a complete byte of data. The speed at which the voltage changes create a signal to communicate the bits is called the _baud_ rate.
 

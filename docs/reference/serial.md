@@ -27,5 +27,5 @@ serial.readBuffer(64);
 [writeLine](/reference/serial/write-line), [writeNumber](/reference/serial/write-number), [writeValue](/reference/serial/write-value),
 [writeString](/reference/serial/write-string), [readUntil](/reference/serial/read-until), [readLine](/reference/serial/read-line),
 [readString](/reference/serial/read-string), [onDataReceived](/reference/serial/on-data-received),
-[redirect](/reference/serial/redirect-to), [writeBuffer](/reference/serial/write-buffer), [readBuffer](/reference/serial/read-buffer),
+[redirect](/reference/serial/redirect), [writeBuffer](/reference/serial/write-buffer), [readBuffer](/reference/serial/read-buffer),
 [redirectToUSB](/reference/serial/redirect-to-usb)
