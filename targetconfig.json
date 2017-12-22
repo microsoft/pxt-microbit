@@ -15,7 +15,8 @@
             "sparkfun/pxt-moto-bit",
             "sparkfun/pxt-weather-bit",
             "minodekit/pxt-minode",
-            "LaboratoryForPlayfulComputation/pxt-blockytalkyBLE"
+            "LaboratoryForPlayfulComputation/pxt-blockytalkyBLE",
+            "mbitfun/pxt-katakana"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel"
