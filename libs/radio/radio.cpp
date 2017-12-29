@@ -91,19 +91,6 @@ namespace radio {
         return len + 1;
     }
 
-    uint8_t copyBufferValue(uint8_t* buf, BufferData* data, uint8_t maxLength) {
-        ManagedBuffer s(data);
-        uint8_t len = min(maxLength, s.length());
-
-        // One byte for length of the string
-        buf[0] = len;
-
-        if (len > 0) {
-            memcpy(buf + 1, s.getBytes(), len);
-        }
-        return len + 1;
-    }
-
     StringData* getStringValue(uint8_t* buf, uint8_t maxLength) {
         // First byte is the string length
         uint8_t len = min(maxLength, buf[0]);
@@ -116,6 +103,18 @@ namespace radio {
         }
         return ManagedString().leakData();
     }
+
+    uint8_t copyBufferValue(uint8_t* buf, BufferData* data, uint8_t maxLength) {
+        ManagedBuffer s(data);
+        uint8_t len = min(maxLength, s.length());
+
+        // One byte for length of the buffer
+        buf[0] = len;
+        if (len > 0) {
+            memcpy(buf + 1, s.getBytes(), len);
+        }
+        return len + 1;
+    }    
 
     BufferData* getBufferValue(uint8_t* buf, uint8_t maxLength) {
         // First byte is the buffer length
@@ -165,7 +164,7 @@ namespace radio {
         uint8_t tp;
         int t;
         int s;
-        int v;
+        int v = 0;
         StringData* m = NULL;
         BufferData* b = NULL;
 
@@ -174,11 +173,9 @@ namespace radio {
         memcpy(&s, buf + 5, 4);
 
         if (tp == PACKET_TYPE_STRING) {
-            v = 0;
             m = getStringValue(buf + PACKET_PREFIX_LENGTH, MAX_PAYLOAD_LENGTH - 1);
         }
         else if (tp == PACKET_TYPE_BUFFER) {
-            v = 0;
             b = getBufferValue(buf + PACKET_PREFIX_LENGTH, MAX_PAYLOAD_LENGTH - 1);
         }
         else {
