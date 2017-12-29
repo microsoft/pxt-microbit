@@ -142,6 +142,7 @@ namespace radio {
         if (tp == PACKET_TYPE_BUFFER && NULL != b) {
             ManagedBuffer mb(b);
             uBit.serial.send(",\"b\":\"");
+            // TODO: proper base64 encoding
             uBit.serial.send(mb.getBytes(), mb.length());
             uBit.serial.send("\"");
         }
