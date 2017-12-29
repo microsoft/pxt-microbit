@@ -20,6 +20,11 @@ namespace radio {
          */
         public receivedBuffer: Buffer;
         /**
+         * The array of numbers if numbers were sent
+         * or the empty array
+         */
+        public receivedNumbers: number[];
+        /**
          * The system time of the sender of the packet at the time the packet was sent.
          */
         public time: number;
@@ -51,8 +56,39 @@ namespace radio {
             packet.serial = receivedSerial();
             packet.receivedString = receivedString();
             packet.receivedBuffer = receivedBuffer();
+            packet.receivedNumbers = receivedNumbers();
             packet.signal = receivedSignalStrength();
             cb(packet)
         });
+    }
+
+    function receivedNumbers(): number[] {
+        const buf = receivedBuffer();
+        if (buf && buf.length == 16) {
+            return [
+                buf.getNumber(NumberFormat.Int32LE, 0),
+                buf.getNumber(NumberFormat.Int32LE, 4),
+                buf.getNumber(NumberFormat.Int32LE, 8),
+                buf.getNumber(NumberFormat.Int32LE, 12)
+            ]
+        }
+
+        return [];
+    }
+
+    /**
+     * Broadcasts up to 4 numbers over radio to any connected micro:bit in the group.
+     */
+    //% help=radio/send-numbers
+    //% weight=40
+    //% advanced=true
+    //% blockId=radio_datagram_send_numbers block="radio send numbers %number1|%number2|%number3|%number4" blockGap=8
+    export function sendNumbers(number0: number, number1: number, number2: number, number3: number) {
+        const buf = pins.createBuffer(16);
+        buf.setNumber(NumberFormat.Int32LE, 0, number0);
+        buf.setNumber(NumberFormat.Int32LE, 4, number1);
+        buf.setNumber(NumberFormat.Int32LE, 8, number2);
+        buf.setNumber(NumberFormat.Int32LE, 12, number3);
+        radio.sendBuffer(buf)
     }
 }

@@ -4,6 +4,7 @@
   "radio.receiveNumber|block": "radio receive number",
   "radio.receiveString|block": "radio receive string",
   "radio.receivedSignalStrength|block": "radio received signal strength",
+  "radio.sendNumbers|block": "radio send numbers %number1|%number2|%number3|%number4",
   "radio.sendNumber|block": "radio send number %value",
   "radio.sendString|block": "radio send string %msg",
   "radio.sendValue|block": "radio send|value %name|= %value",
