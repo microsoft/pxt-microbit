@@ -16,7 +16,7 @@
   "radio.receivedSignalStrength": "Gets the received signal strength indicator (RSSI) from the last packet taken\nfrom the radio queue (via ``receiveNumber``, ``receiveString``, etc). Not supported in simulator.\nnamespace=radio",
   "radio.receivedString": "Returns the string payload from the last packet taken from the radio queue\n(via ``receiveNumber``, ``receiveString``, etc) or the empty string if that\npacket did not contain a string.",
   "radio.receivedTime": "Returns the system time of the sender micro:bit at the moment when it sent the\nlast packet taken from the radio queue (via ``receiveNumber``,\n``receiveString``, etc).",
-  "radio.sendBuffer": "Broadcasts a buffer (up to 18 bytes long) along with the device serial number\nand running time to any connected micro:bit in the group.",
+  "radio.sendBuffer": "Broadcasts a buffer (up to 19 bytes long) along with the device serial number\nand running time to any connected micro:bit in the group.",
   "radio.sendNumber": "Broadcasts a number over radio to any connected micro:bit in the group.",
   "radio.sendString": "Broadcasts a string along with the device serial number\nand running time to any connected micro:bit in the group.",
   "radio.sendValue": "Broadcasts a name / value pair along with the device serial number\nand running time to any connected micro:bit in the group.",

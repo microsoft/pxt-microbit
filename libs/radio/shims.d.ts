@@ -34,7 +34,7 @@ declare namespace radio {
     function sendString(msg: string): void;
 
     /**
-     * Broadcasts a buffer (up to 18 bytes long) along with the device serial number
+     * Broadcasts a buffer (up to 19 bytes long) along with the device serial number
      * and running time to any connected micro:bit in the group.
      */
     //% help=radio/send-buffer

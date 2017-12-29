@@ -6,14 +6,14 @@ Communicate data using radio packets
 radio.sendNumber(0);
 radio.sendValue("name", 0);
 radio.sendString("");
-radio.sendBuffer(null);
-radio.onDataPacketReceived(() => {
+radio.onDataPacketReceived(({ receivedBuffer }) => {
 
 });
 radio.setGroup(0);
 radio.setTransmitPower(7);
 radio.setTransmitSerialNumber(false);
 radio.writeReceivedPacketToSerial();
+radio.sendBuffer(null);
 ```
 
 ```package
