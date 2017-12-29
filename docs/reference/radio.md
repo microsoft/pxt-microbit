@@ -6,7 +6,6 @@ Communicate data using radio packets
 radio.sendNumber(0);
 radio.sendValue("name", 0);
 radio.sendString("");
-radio.sendNumbers(0,0,0,0)
 radio.onDataPacketReceived(({ receivedNumber }) => {
 
 });
@@ -26,7 +25,6 @@ radio
 [sendNumber](/reference/radio/send-number),
 [sendValue](/reference/radio/send-value),
 [sendString](/reference/radio/send-string),
-[sendNumbers](/reference/radio/send-numbers),
 [sendBuffer](/reference/radio/send-buffer),
 [onDataPacketReceived](/reference/radio/on-data-packet-received),
 [setGroup](/reference/radio/set-group),
