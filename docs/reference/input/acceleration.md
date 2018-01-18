@@ -37,7 +37,7 @@ If you decide to lift your @boardname@ off the table, then you've just added ano
 
 ```strength3D = Math.sqrt((accelX * accelX) + (accelY * accelY) + (accelZ * accelZ))```
 
-This calculation is called the [Euclidean morm](https://en.wikipedia.org/wiki/Euclidean_norm) of acceleration.
+This calculation is called the [Euclidean norm](https://en.wikipedia.org/wiki/Euclidean_norm) of acceleration.
 
 ### ~
 
