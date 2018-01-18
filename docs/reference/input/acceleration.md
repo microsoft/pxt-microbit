@@ -21,7 +21,25 @@ A **g** is as much acceleration as you get from Earth's gravity.
 >`x`: acceleration in the left and right direction.<br/>
 `y`: acceleration in the forward and backward direction.<br/>
 `z`: acceleration in the up and down direction.<br/>
-`strength`: the total of all the forces in every dimension (all directions) together.
+`strength`: the resulting strength of acceleration from all three dimensions (directions).
+
+### ~hint
+
+**Forces in space**
+
+Since we don't live on a flat world, forces happen in three dimensional space. If the movement of an object isn't exactly in the direction of one axis, we need a way to calculate its acceleration from the values measured for all the axes together.
+
+If you put your @boardname@ on a level table and push it diagonally, you have an acceleration in two dimensions. You can find the acceleration in that direction just like how you calculate the long side of a triangle using the two shorter sides (**X** and **Y**): 
+
+```strength2D = Math.sqrt((accelX * accelX) + (accelY * accelY))```
+
+If you decide to lift your @boardname@ off the table, then you've just added another dimension, so insert the acceleration value for the **Z** axis into the equation:
+
+```strength3D = Math.sqrt((accelX * accelX) + (accelY * accelY) + (accelZ * accelZ))```
+
+This calculation is called the [Euclidean morm](https://en.wikipedia.org/wiki/Euclidean_norm) of acceleration.
+
+### ~
 
 ## Returns
 

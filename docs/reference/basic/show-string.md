@@ -1,6 +1,6 @@
 # Show String
 
-Show a text sting on the [LED screen](/device/screen). It will slide left if it is bigger than the screen.
+Show a sting on the [LED screen](/device/screen). It will slide left if it is bigger than the screen.
 
 ```sig
 basic.showString("Hello!")
