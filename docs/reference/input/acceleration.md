@@ -20,8 +20,8 @@ A **g** is as much acceleration as you get from Earth's gravity.
 * **dimension**: the direction you are checking for acceleration, or the total strength of force.
 >`x`: acceleration in the left and right direction.<br/>
 `y`: acceleration in the forward and backward direction.<br/>
-`z`: acceleration the up and down direction.<br/>
-`strength`: the total of all the forces in every dimension (direction) together.
+`z`: acceleration in the up and down direction.<br/>
+`strength`: the total of all the forces in every dimension (all directions) together.
 
 ## Returns
 
