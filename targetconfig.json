@@ -17,7 +17,8 @@
             "minodekit/pxt-minode",
             "LaboratoryForPlayfulComputation/pxt-blockytalkyBLE",
             "mbitfun/pxt-katakana",
-            "jdarling/pxt-pca9685"
+            "jdarling/pxt-pca9685",
+            "Seeed-Studio/pxt-grove"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel"
