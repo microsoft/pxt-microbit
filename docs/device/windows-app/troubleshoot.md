@@ -50,4 +50,6 @@ If you want to know more about connecting the board, MAINTENANCE Mode, and upgra
 
 ### ~
 
+## Step 4: Wait for the driver updates
 
+Once you've updated the firmware, Windows will detect the updated device and install the drivers necessary to enable communication with the @boardname@. This step happens in the background and may take a minute or two.

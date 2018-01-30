@@ -104,7 +104,8 @@ namespace pxsim.radio {
     enum PacketPayloadType {
         NUMBER = 0,
         VALUE = 1,
-        STRING = 2
+        STRING = 2,
+        BUFFER = 3
     }
 
     export function broadcastMessage(msg: number): void {
@@ -136,11 +137,24 @@ namespace pxsim.radio {
     }
 
     export function sendString(msg: string): void {
+        if (msg === undefined) return;
+
         msg = msg.substr(0, 19);
         board().radioState.bus.datagram.send({
             type: PacketPayloadType.STRING,
             groupId: board().radioState.groupId,
             stringData: msg,
+        });
+    }
+
+    export function sendBuffer(buf: RefBuffer): void {
+        if (!buf) return;
+        
+        const data = buf.data.slice(0, 18);
+        board().radioState.bus.datagram.send({
+            type: PacketPayloadType.STRING,
+            groupId: board().radioState.groupId,
+            bufferData: data
         });
     }
 
@@ -197,12 +211,16 @@ namespace pxsim.radio {
         return initString(board().radioState.bus.datagram.lastReceived.payload.stringData || "");
     }
 
+    export function receivedBuffer(): RefBuffer {
+        return new RefBuffer(board().radioState.bus.datagram.lastReceived.payload.bufferData || new Uint8Array(0))
+    }
+
     export function receivedTime(): number {
         return board().radioState.bus.datagram.lastReceived.time;
     }
 
     function writePacketToSerial(b: DalBoard, p: PacketBuffer) {
-        switch(p.payload.type) {
+        switch (p.payload.type) {
             case PacketPayloadType.NUMBER:
                 b.writeSerial(`{"t":${p.time},"s":${p.serial},"v":${p.payload.numberData}}\r\n`)
                 break;
@@ -212,7 +230,15 @@ namespace pxsim.radio {
             case PacketPayloadType.STRING:
                 b.writeSerial(`{"t":${p.time},"s":${p.serial},"n":"${p.payload.stringData}"}\r\n`)
                 break;
+            case PacketPayloadType.BUFFER:
+                const buf = new Uint8Array(p.payload.bufferData.buffer);
+                let res = "";
+                for (let i = 0; i < buf.length; ++i)
+                    res += String.fromCharCode(buf[i]);
+                b.writeSerial(`{"t":${p.time},"s":${p.serial},"b":"${res}"}\r\n`)
             default:
+                // unknown type
+                break;
         }
     }
 }

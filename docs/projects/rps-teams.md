@@ -111,9 +111,9 @@ let player_index = 0
 let players: number[] = [0]
 let tool = 0
 let found = false
-radio.onDataPacketReceived(({ receivedNumber, serial }) => {
+radio.onDataPacketReceived(({ receivedNumber, serial: serialNumber }) => {
     match = tool == receivedNumber
-    player_index = players.indexOf(serial)
+    player_index = players.indexOf(serialNumber)
     found = player_index >= 0
 })
 ```
@@ -134,12 +134,12 @@ let players: number[] = [0]
 let tool = 0
 let found = false
 let temp = 0
-radio.onDataPacketReceived(({ receivedNumber, serial }) => {
+radio.onDataPacketReceived(({ receivedNumber, serial: serialNumber }) => {
     match = tool == receivedNumber
-    player_index = players.indexOf(serial)
+    player_index = players.indexOf(serialNumber)
     found = player_index >= 0
     if (match && !(found)) {
-        players.push(serial)
+        players.push(serialNumber)
     } 
     if (!(match) && found) {
         temp = players.removeAt(player_index)
@@ -187,13 +187,13 @@ input.onGesture(Gesture.Shake, () => {
     players = [0]
     tool = Math.random(3)
 })
-radio.onDataPacketReceived( ({ receivedNumber, serial }) =>  {
+radio.onDataPacketReceived( ({ receivedNumber, serial: serialNumber }) =>  {
     match = tool == receivedNumber
-    player_index = players.indexOf(serial)
+    player_index = players.indexOf(serialNumber)
     found = player_index >= 0
     if (match && !(found)) {
-        players.push(serial)
-    } 
+        players.push(serialNumber)
+    }
     if (!(match) && found) {
         temp = players.removeAt(player_index)
     }

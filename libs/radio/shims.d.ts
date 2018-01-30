@@ -34,6 +34,15 @@ declare namespace radio {
     function sendString(msg: string): void;
 
     /**
+     * Broadcasts a buffer (up to 19 bytes long) along with the device serial number
+     * and running time to any connected micro:bit in the group.
+     */
+    //% help=radio/send-buffer
+    //% weight=57
+    //% advanced=true shim=radio::sendBuffer
+    function sendBuffer(msg: Buffer): void;
+
+    /**
      * Reads the next packet from the radio queue and and writes it to serial
      * as JSON.
      */
@@ -147,6 +156,14 @@ declare namespace radio {
      */
     //% help=radio/received-string shim=radio::receivedString
     function receivedString(): string;
+
+    /**
+     * Returns the buffer payload from the last packet taken from the radio queue
+     * (via ``receiveNumber``, ``receiveString``, etc) or the empty string if that
+     * packet did not contain a string.
+     */
+    //% help=radio/received-buffer shim=radio::receivedBuffer
+    function receivedBuffer(): Buffer;
 
     /**
      * Returns the system time of the sender micro:bit at the moment when it sent the
