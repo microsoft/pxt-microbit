@@ -4,7 +4,8 @@
             "Microsoft",
             "microbit-foundation",
             "KitronikLtd",
-            "tinkertanker"
+            "tinkertanker",
+            "Seeed-Studio"
         ],
         "approvedRepos": [
             "CoderDojoOlney/pxt-olney",
