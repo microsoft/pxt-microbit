@@ -111,4 +111,4 @@ control the micro:bit or the micro:bit can control another BLE device.
 ## Technical Information
 
 The micro:bit has been designed to be a bare-board micro controller for use by children aged 11-12. 
-More information is available at the [Microbit Foundation web site](https://microbit.org/device).
+More information is available at the [Microbit Foundation web site](https://microbit.org/guide/.

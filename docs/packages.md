@@ -83,5 +83,13 @@
   "name": "Katakana",
   "url":"/pkg/mbitfun/pxt-katakana",
   "cardType": "package"
+  }, {
+  "name": "Grove inventor kit",
+  "url":"/pkg/Seeed-Studio/pxt-grove",
+  "cardType": "package"
+  }, {
+  "name": "PCA9685 LED controller",
+  "url":"/pkg/jdarling/pxt-pca9685",
+  "cardType": "package"
 }]
 ```
