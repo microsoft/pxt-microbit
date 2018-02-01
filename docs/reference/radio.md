@@ -6,13 +6,14 @@ Communicate data using radio packets
 radio.sendNumber(0);
 radio.sendValue("name", 0);
 radio.sendString("");
-radio.onDataPacketReceived(() => {
+radio.onDataPacketReceived(({ receivedNumber }) => {
 
 });
 radio.setGroup(0);
 radio.setTransmitPower(7);
 radio.setTransmitSerialNumber(false);
 radio.writeReceivedPacketToSerial();
+radio.sendBuffer(null);
 ```
 
 ```package
@@ -24,6 +25,7 @@ radio
 [sendNumber](/reference/radio/send-number),
 [sendValue](/reference/radio/send-value),
 [sendString](/reference/radio/send-string),
+[sendBuffer](/reference/radio/send-buffer),
 [onDataPacketReceived](/reference/radio/on-data-packet-received),
 [setGroup](/reference/radio/set-group),
 [setTransmitPower](/reference/radio/set-transmit-power),

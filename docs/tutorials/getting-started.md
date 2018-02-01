@@ -2,7 +2,7 @@
 
 ## Step 1
 
-Welcome! Place the ``||basic:show string||`` block in the ``||basic:on start||`` slot. Replace the ``"Hello"`` text with your name. Did you see it scroll?.
+Welcome! Place the ``||basic:show string||`` block in the ``||basic:on start||`` slot. Replace the ``"Hello"`` text with your name. Did you see it scroll?
 
 ```blocks
 basic.showString("Micro!")

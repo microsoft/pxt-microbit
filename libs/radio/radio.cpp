@@ -24,6 +24,9 @@ using namespace pxt;
 // payload: string length (9), string (10 ... 28)
 #define PACKET_TYPE_STRING 2
 
+// payload: buffer length (9), buffer (10 ... 28)
+#define PACKET_TYPE_BUFFER 3
+
 //% color=270 weight=96 icon="\uf012"
 namespace radio {
 
@@ -39,7 +42,8 @@ namespace radio {
     uint32_t time;
     uint32_t serial;
     int value;
-    StringData* msg;
+    StringData* msg; // may be NULL before first packet
+    BufferData* bufMsg; // may be NULL before first packet
 
     int radioEnable() {
         int r = uBit.radio.enable();
@@ -92,7 +96,7 @@ namespace radio {
         uint8_t len = min(maxLength, buf[0]);
 
         if (len) {
-            char name[maxLength + 1];
+            char name[len + 1];
             memcpy(name, buf + 1, len);
             name[len] = 0;
             return ManagedString(name).leakData();
@@ -100,16 +104,45 @@ namespace radio {
         return ManagedString().leakData();
     }
 
-    void writePacketAsJSON(uint8_t tp, int v, int s, int t, StringData* m) {
+    uint8_t copyBufferValue(uint8_t* buf, BufferData* data, uint8_t maxLength) {
+        ManagedBuffer s(data);
+        uint8_t len = min(maxLength, s.length());
+
+        // One byte for length of the buffer
+        buf[0] = len;
+        if (len > 0) {
+            memcpy(buf + 1, s.getBytes(), len);
+        }
+        return len + 1;
+    }    
+
+    BufferData* getBufferValue(uint8_t* buf, uint8_t maxLength) {
+        // First byte is the buffer length
+        uint8_t len = min(maxLength, buf[0]);
+        if (len) {
+            // skip first byte
+            return ManagedBuffer(buf + 1, len).leakData();
+        }
+        return ManagedBuffer().leakData();
+    }
+
+    void writePacketAsJSON(uint8_t tp, int v, int s, int t, StringData* m, BufferData* b) {
         // Convert the packet to JSON and send over serial
         uBit.serial.send("{");
         uBit.serial.send("\"t\":");
         uBit.serial.send(t);
         uBit.serial.send(",\"s\":");
         uBit.serial.send(s);
-        if (tp == PACKET_TYPE_STRING || tp == PACKET_TYPE_VALUE) {
+        if ((tp == PACKET_TYPE_STRING || tp == PACKET_TYPE_VALUE) && NULL != m) {
             uBit.serial.send(",\"n\":\"");
-            uBit.serial.send(m);
+            uBit.serial.send(ManagedString(m));
+            uBit.serial.send("\"");
+        }
+        if (tp == PACKET_TYPE_BUFFER && NULL != b) {
+            ManagedBuffer mb(b);
+            uBit.serial.send(",\"b\":\"");
+            // TODO: proper base64 encoding
+            uBit.serial.send(mb.getBytes(), mb.length());
             uBit.serial.send("\"");
         }
         if (tp == PACKET_TYPE_NUMBER || tp == PACKET_TYPE_VALUE) {
@@ -131,27 +164,31 @@ namespace radio {
         uint8_t tp;
         int t;
         int s;
-        int v;
-        StringData* m;
-
+        int v = 0;
+        StringData* m = NULL;
+        BufferData* b = NULL;
 
         memcpy(&tp, buf, 1);
         memcpy(&t, buf + 1, 4);
         memcpy(&s, buf + 5, 4);
 
         if (tp == PACKET_TYPE_STRING) {
-            v = 0;
             m = getStringValue(buf + PACKET_PREFIX_LENGTH, MAX_PAYLOAD_LENGTH - 1);
+        }
+        else if (tp == PACKET_TYPE_BUFFER) {
+            b = getBufferValue(buf + PACKET_PREFIX_LENGTH, MAX_PAYLOAD_LENGTH - 1);
         }
         else {
             memcpy(&v, buf + 9, 4);
             if (tp == PACKET_TYPE_VALUE) {
                 m = getStringValue(buf + VALUE_PACKET_NAME_LEN_OFFSET, MAX_FIELD_NAME_LENGTH);
             }
-            else {
-                m = ManagedString().leakData();
-            }
         }
+
+        if (NULL == m)
+            m = ManagedString().leakData();
+        if (NULL == b)
+            b = ManagedBuffer().leakData();
 
         if (!writeToSerial) {
             // Refresh global packet
@@ -161,9 +198,10 @@ namespace radio {
             serial = s;
             value = v;
             msg = m;
+            bufMsg = b;
         }
         else {
-            writePacketAsJSON(tp, v, s, t, m);
+            writePacketAsJSON(tp, v, s, t, m, b);
         }
     }
 
@@ -217,7 +255,7 @@ namespace radio {
     //% weight=58
     //% blockId=radio_datagram_send_string block="radio send string %msg"
     void sendString(StringData* msg) {
-        if (radioEnable() != MICROBIT_OK) return;
+        if (radioEnable() != MICROBIT_OK || NULL == msg) return;
 
         uint8_t buf[32];
         memset(buf, 0, 32);
@@ -227,6 +265,26 @@ namespace radio {
 
         uBit.radio.datagram.send(buf, PACKET_PREFIX_LENGTH + stringLen);
     }
+
+    /**
+     * Broadcasts a buffer (up to 19 bytes long) along with the device serial number
+     * and running time to any connected micro:bit in the group.
+     */
+    //% help=radio/send-buffer
+    //% weight=57
+    //% advanced=true
+    void sendBuffer(Buffer msg) {
+        if (radioEnable() != MICROBIT_OK || NULL == msg) return;
+
+        uint8_t buf[32];
+        memset(buf, 0, 32);
+
+        setPacketPrefix(buf, PACKET_TYPE_BUFFER);
+        int bufLen = copyBufferValue(buf + PACKET_PREFIX_LENGTH, msg, MAX_PAYLOAD_LENGTH - 1);
+
+        uBit.radio.datagram.send(buf, PACKET_PREFIX_LENGTH + bufLen);
+    }
+
 
     /**
     * Reads the next packet from the radio queue and and writes it to serial
@@ -251,7 +309,7 @@ namespace radio {
     //% advanced=true
     void writeReceivedPacketToSerial() {
         if (radioEnable() != MICROBIT_OK) return;
-        writePacketAsJSON(type, value, (int) serial, (int) time, msg);
+        writePacketAsJSON(type, value, (int) serial, (int) time, msg, bufMsg);
     }
 
     /**
@@ -381,8 +439,19 @@ namespace radio {
      */
     //% help=radio/received-string
     StringData* receivedString() {
-        if (radioEnable() != MICROBIT_OK) return ManagedString().leakData();
+        if (radioEnable() != MICROBIT_OK || NULL == msg) return ManagedString().leakData();
         return msg;
+    }
+
+    /**
+     * Returns the buffer payload from the last packet taken from the radio queue
+     * (via ``receiveNumber``, ``receiveString``, etc) or the empty string if that
+     * packet did not contain a string.
+     */
+    //% help=radio/received-buffer
+    Buffer receivedBuffer() {
+        if (radioEnable() != MICROBIT_OK || NULL == bufMsg) return ManagedBuffer().leakData();
+        return bufMsg;
     }
 
     /**

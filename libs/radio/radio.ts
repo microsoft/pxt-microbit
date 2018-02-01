@@ -15,6 +15,11 @@ namespace radio {
          */
         public receivedString: string;
         /**
+         * The buffer payload if a buffer was sent in this packet
+         * or the empty buffer
+         */
+        public receivedBuffer: Buffer;
+        /**
          * The system time of the sender of the packet at the time the packet was sent.
          */
         public time: number;
@@ -45,6 +50,7 @@ namespace radio {
             packet.time = receivedTime();
             packet.serial = receivedSerial();
             packet.receivedString = receivedString();
+            packet.receivedBuffer = receivedBuffer();
             packet.signal = receivedSignalStrength();
             cb(packet)
         });

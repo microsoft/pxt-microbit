@@ -783,6 +783,7 @@ declare namespace serial {
     /**
      * Reads the buffered received data as a string
      */
+    //% help=serial/read-string
     //% blockId=serial_read_buffer block="serial|read string"
     //% weight=18 shim=serial::readString
     function readString(): string;
