@@ -91,5 +91,9 @@
   "name": "PCA9685 LED controller",
   "url":"/pkg/jdarling/pxt-pca9685",
   "cardType": "package"
+  }, {
+  "name": "Muselab WiFi IoT Sheild",
+  "url":"/pkg/MUSELAB/pxt-wifi-shield",
+  "cardType": "package"
 }]
 ```

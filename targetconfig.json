@@ -18,7 +18,8 @@
             "minodekit/pxt-minode",
             "LaboratoryForPlayfulComputation/pxt-blockytalkyBLE",
             "mbitfun/pxt-katakana",
-            "jdarling/pxt-pca9685"
+            "jdarling/pxt-pca9685",
+            "MUSELAB/pxt-wifi-shield"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel"
