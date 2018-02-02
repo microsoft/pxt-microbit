@@ -95,5 +95,9 @@
   "name": "Muselab WiFi IoT Sheild",
   "url":"/pkg/MUSELAB/pxt-wifi-shield",
   "cardType": "package"
+  }, {
+  "name": "Kittenbot RobotBit",
+  "url":"/pkg/kittenbot/pxt-robotbit",
+  "cardType": "package"
 }]
 ```
