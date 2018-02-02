@@ -77,6 +77,8 @@ namespace pxt.editor {
 
     let previousDapWrapper: DAPWrapper;
     function dapAsync() {
+        if (previousDapWrapper)
+            return Promise.resolve(previousDapWrapper)
         return Promise.resolve()
             .then(() => {
                 if (previousDapWrapper) {
@@ -98,6 +100,10 @@ namespace pxt.editor {
 
     function initAsync() {
         let canHID = false
+
+        if (pxt.usb.isEnabled)
+            canHID = true
+
         if (U.isNodeJS) {
             canHID = true
         } else {
@@ -327,12 +333,12 @@ namespace pxt.editor {
                         return wrap.cortexM.reset(false)
                     })
             })
-            .catch(e => {  
+            .catch(e => {
                 if (e.type === "devicenotfound" && d.reportDeviceNotFoundAsync) {
                     return d.reportDeviceNotFoundAsync("/device/windows-app/troubleshoot");
                 } else {
                     return saveHexAsync()
-                }  
+                }
             })
     }
 
@@ -371,6 +377,14 @@ namespace pxt.editor {
                         .then(text => project.overrideTypescriptFile(text))
             }]
         };
+
+        pxt.usb.setFilters([{
+            vendorId: 0x0D28,
+            productId: 0x0204,
+            classCode: 0xff,
+            subclassCode: 0x03
+        }])
+
         pxt.commands.deployCoreAsync = deployCoreAsync;
         return Promise.resolve<pxt.editor.ExtensionResult>(res);
     }
