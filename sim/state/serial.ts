@@ -25,9 +25,6 @@ namespace pxsim {
                 this.serialOutBuffer = '';
             }
         }
-        writeSerialBuffer(b: RefBuffer) {
-            // TODO
-        }
     }
 }
 
@@ -37,7 +34,7 @@ namespace pxsim.serial {
     }
 
     export function writeBuffer(buf: RefBuffer) {
-        board().writeSerialBuffer(buf);
+        // TODO
     }
 
     export function readUntil(del: string): string {
