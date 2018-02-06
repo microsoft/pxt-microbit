@@ -1,9 +1,12 @@
 {
   "devices": "Bedien een telefoon met de BBC micro:bit via Bluetooth.",
+  "devices.onGamepadButton": "Registreer de code die wordt uitgevoerd als de micro:bit een commando van een gekoppelde gamepad ontvangt.",
   "devices.onGamepadButton|param|body": "code dat uitgevoerd moet worden wanneer de knop wordt ingedrukt",
   "devices.onGamepadButton|param|name": "knopnaam",
   "devices.onNotified": "Hiermee registreert u code die wordt uitgevoerd wanneer het apparaat een bepaalde gebeurtenis aangeeft.",
+  "devices.onNotified|param|body": "code-handler wanneer gebeurtenis wordt geactiveerd",
   "devices.onNotified|param|event": "Beschrijving van gebeurtenis",
+  "devices.onSignalStrengthChanged": "Registreer de code die wordt uitgevoerd als het apparaat een verandering van de signaalsterkte bemerkt.",
   "devices.onSignalStrengthChanged|param|body": "Code om uit te voeren wanneer de signaalsterkte wijzigt.",
   "devices.raiseAlertTo": "Stuurt een '' waarschuwing '' commando naar het bovenliggende apparaat.",
   "devices.raiseAlertTo|param|event": "Beschrijving van gebeurtenis",

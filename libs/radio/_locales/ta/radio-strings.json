@@ -1,0 +1,16 @@
+{
+  "radio.onDataReceived|block": "வானலை பெறப்படதும்",
+  "radio.receiveNumber|block": "வானலையில் எண்ணைப்பெறு",
+  "radio.receiveString|block": "வானலையில் சரத்தைப்பெறு",
+  "radio.receivedSignalStrength|block": "வானலையின் சமிக்கை வலு பெறப்பட்டதும்",
+  "radio.sendNumber|block": "வானலையில் எண் %value ஐ அனுப்பு",
+  "radio.sendString|block": "வானலையில் சரம் %value ஐ அனுப்பு",
+  "radio.sendValue|block": "வானலை அனுப்பு | பெறுமதி %name|= %value",
+  "radio.setGroup|block": "வானலைக் குழு %ID ஐ சூட்டு",
+  "radio.setTransmitPower|block": "வானலையின் அனுப்பும் வலு %power ஐ சூட்டு",
+  "radio.setTransmitSerialNumber|block": "வானலையின் அனுப்பும் தொடரெண் %transmit ஐ சூட்டு",
+  "radio.writeReceivedPacketToSerial|block": "வானலை பெற்ற பொட்டலப் பெறுமதியை தொடர் தொடர்புக்கு எழுது",
+  "radio.writeValueToSerial|block": "வானலை பெறுமதியை தொடர் தொடர்புக்கு எழுது",
+  "radio|block": "வானலை",
+  "{id:category}Radio": "வானலை"
+}

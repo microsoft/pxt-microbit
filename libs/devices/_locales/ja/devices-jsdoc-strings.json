@@ -1,3 +1,18 @@
 {
-  "devices.onGamepadButton|param|body": "ボタンが押されたときに実行するコード"
+  "devices": "BBC micro:bitで、Bluetoothで接続したスマートフォンを制御する。",
+  "devices.onGamepadButton": "Bluetoothで接続したゲームパッドからコマンドを受信したときに実行するコードを登録します。",
+  "devices.onGamepadButton|param|body": "ボタンが押されたときに実行するコード",
+  "devices.onGamepadButton|param|name": "ボタンの名前",
+  "devices.onNotified": "Bluetooth接続機器から、何らかのイベントを受信したときに実行するコードを登録します。",
+  "devices.onNotified|param|body": "イベントが通知されたときに実行するコード",
+  "devices.onNotified|param|event": "イベントの指定",
+  "devices.onSignalStrengthChanged": "Bluetooth接続機器から、その信号受信強度が変わったという通知を受信したときに実行するコードを登録します。",
+  "devices.onSignalStrengthChanged|param|body": "信号受信強度が変わったときに実行するコード。",
+  "devices.raiseAlertTo": "親機器に対して「アラート」コマンドを送信します。",
+  "devices.raiseAlertTo|param|event": "イベントの指定",
+  "devices.signalStrength": "接続された機器から報告された信号受信強度の最新の値を返します。",
+  "devices.tellCameraTo": "親機器に対して「カメラ」コマンドを送信します。",
+  "devices.tellCameraTo|param|event": "イベントの指定",
+  "devices.tellRemoteControlTo": "親機器に対して音楽プレーヤーの「リモコン」コマンドを送信します。",
+  "devices.tellRemoteControlTo|param|event": "イベントの指定"
 }

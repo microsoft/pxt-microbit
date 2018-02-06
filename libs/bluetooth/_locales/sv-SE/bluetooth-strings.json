@@ -1,0 +1,22 @@
+{
+  "bluetooth.advertiseUid|block": "bluetooth annonsera UID | namnrymd (byte 6-9)%ns | instans (byte 2-6)%instance | med styrka %power | anslutningsbar %connectable",
+  "bluetooth.advertiseUrl|block": "bluetooth annonsera url %url | med styrka %power | anslutningsbar %connectable",
+  "bluetooth.onBluetoothConnected|block": "när bluetooth är anslutet",
+  "bluetooth.onBluetoothDisconnected|block": "när bluetooth är frånkopplat",
+  "bluetooth.onUartDataReceived|block": "bluetooth|när data tas emot %delimiters=serial_delimiter_conv",
+  "bluetooth.setTransmitPower|block": "bluetooth ställ in överföringsstyrka %power",
+  "bluetooth.startAccelerometerService|block": "bluetooth-accelerometertjänst",
+  "bluetooth.startButtonService|block": "bluetooth-knapptjänst",
+  "bluetooth.startIOPinService|block": "bluetooth-io pin tjänst",
+  "bluetooth.startLEDService|block": "bluetooth led-tjänst",
+  "bluetooth.startMagnetometerService|block": "bluetooth-magnetometertjänst",
+  "bluetooth.startTemperatureService|block": "bluetooth-temperaturtjänst",
+  "bluetooth.startUartService|block": "bluetooth UART-tjänst",
+  "bluetooth.stopAdvertising|block": "bluetooth stoppa annonseringen",
+  "bluetooth.uartReadUntil|block": "bluetooth uart|läsa tills %del=serial_delimiter_conv",
+  "bluetooth.uartWriteNumber|block": "bluetooth uart|skriv numret %value",
+  "bluetooth.uartWriteString|block": "bluetooth uart|skriv strängen %data",
+  "bluetooth.uartWriteValue|block": "bluetooth uart|skriv värdet %name|= %value",
+  "bluetooth|block": "bluetooth",
+  "{id:category}Bluetooth": "Bluetooth"
+}

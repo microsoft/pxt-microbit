@@ -1,0 +1,22 @@
+{
+  "bluetooth.advertiseUid|block": "藍芽 advertise UID|命名空間 (bytes 6-9)%ns|實例 (bytes 2-6)%instance|功率%power|可連接 %connectable",
+  "bluetooth.advertiseUrl|block": "藍芽 advertise url %url|功率 %power|可連接 %connectable",
+  "bluetooth.onBluetoothConnected|block": "當藍芽連線時",
+  "bluetooth.onBluetoothDisconnected|block": "當藍芽斷線時",
+  "bluetooth.onUartDataReceived|block": "當藍芽數據中收到 %delimiters=serial_delimiter_conv 時",
+  "bluetooth.setTransmitPower|block": "藍芽傳輸強度設為 %power",
+  "bluetooth.startAccelerometerService|block": "藍芽加速度計服務",
+  "bluetooth.startButtonService|block": "藍芽按鈕服務",
+  "bluetooth.startIOPinService|block": "藍芽 io pin 服務",
+  "bluetooth.startLEDService|block": "藍芽 led 服務",
+  "bluetooth.startMagnetometerService|block": "藍芽磁強計服務",
+  "bluetooth.startTemperatureService|block": "藍芽溫度計服務",
+  "bluetooth.startUartService|block": "藍芽串口服務",
+  "bluetooth.stopAdvertising|block": "藍芽停止開放偵測",
+  "bluetooth.uartReadUntil|block": "藍芽串口|讀取直到 %del=serial_delimiter_conv",
+  "bluetooth.uartWriteNumber|block": "藍芽串口|寫入數字 %value",
+  "bluetooth.uartWriteString|block": "藍芽串口|寫入文字 %data",
+  "bluetooth.uartWriteValue|block": "藍芽串口|寫入值 %name|= %value",
+  "bluetooth|block": "藍芽",
+  "{id:category}Bluetooth": "藍芽"
+}

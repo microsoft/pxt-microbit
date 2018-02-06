@@ -1,0 +1,16 @@
+{
+  "radio.onDataReceived|block": "لم يتم استلام بيانات إلى الراديو",
+  "radio.receiveNumber|block": "الرديو استلم الرقم",
+  "radio.receiveString|block": "الراديو استلم سلسلة",
+  "radio.receivedSignalStrength|block": "الراديو استلم قوة الإشارة",
+  "radio.sendNumber|block": "الراديو أرسل الرقم %value",
+  "radio.sendString|block": "الراديو أرسل السلسلة %msg",
+  "radio.sendValue|block": "الراديو أرسل|القيمة %name|= %value",
+  "radio.setGroup|block": "الراديو عين المجموعة %ID",
+  "radio.setTransmitPower|block": "الراديو عين طاقة الإرسال %power",
+  "radio.setTransmitSerialNumber|block": "الراديو عين الرقم التسلسلي للإرسال %transmit",
+  "radio.writeReceivedPacketToSerial|block": "الراديو كتب حزمة مستلمة إلى اتصال تسلسلي",
+  "radio.writeValueToSerial|block": "الراديو كتب قيمة إلى اتصال تسلسلي",
+  "radio|block": "الراديو",
+  "{id:category}Radio": "الراديو"
+}

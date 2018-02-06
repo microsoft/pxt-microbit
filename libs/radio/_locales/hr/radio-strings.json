@@ -1,0 +1,16 @@
+{
+  "radio.onDataReceived|block": "nakon prijema radijskih podataka",
+  "radio.receiveNumber|block": "primljen broj preko radijske komunikacije",
+  "radio.receiveString|block": "radio primljen znakovni niz",
+  "radio.receivedSignalStrength|block": "radio primljena jačina signala",
+  "radio.sendNumber|block": "radio pošalji broj",
+  "radio.sendString|block": "radio pošalji znakovni niz",
+  "radio.sendValue|block": "slanje |vrijednosti %name|= %value radijskom komunikacijom",
+  "radio.setGroup|block": "radio odaberi grupu za komunikaciju %ID",
+  "radio.setTransmitPower|block": "radio odaberi jačinu odašiljanja signala %power",
+  "radio.setTransmitSerialNumber|block": "postavljanje serijskog broja odlazne poruke u radijskoj komunikaciji %transmit\n \nContext | Request Context",
+  "radio.writeReceivedPacketToSerial|block": "ispis primljenog radijskog paketa na serijski port",
+  "radio.writeValueToSerial|block": "ispis vrijednosti na serijski port",
+  "radio|block": "radio komunikacija",
+  "{id:category}Radio": "Radio"
+}

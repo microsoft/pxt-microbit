@@ -1,0 +1,22 @@
+{
+  "bluetooth.advertiseUid|block": "bluetooth реклама UID|място за име (бита 6-9)%ns|случай (бита 2-6)%instance|със захранване %power|възможност за свързване %connectable",
+  "bluetooth.advertiseUrl|block": "bluetooth реклама url %url|със захранване %power|възможност за свързване %connectable",
+  "bluetooth.onBluetoothConnected|block": "свързан чрез bluetooth",
+  "bluetooth.onBluetoothDisconnected|block": "не е свързан чрез bluetooth",
+  "bluetooth.onUartDataReceived|block": "bluetooth|на получени данни %delimiters=serial_delimiter_conv",
+  "bluetooth.setTransmitPower|block": "bluetooth задаване на захранване за предаване %power",
+  "bluetooth.startAccelerometerService|block": "услуга bluetooth акселометър",
+  "bluetooth.startButtonService|block": "услуга bluetooth бутон",
+  "bluetooth.startIOPinService|block": "услуга bluetooth io пин",
+  "bluetooth.startLEDService|block": "услуга bluetooth led",
+  "bluetooth.startMagnetometerService|block": "услуга bluetooth магнитометър",
+  "bluetooth.startTemperatureService|block": "услуга bluetooth температура",
+  "bluetooth.startUartService|block": "услуга bluetooth uart",
+  "bluetooth.stopAdvertising|block": "bluetooth спиране на реклама",
+  "bluetooth.uartReadUntil|block": "bluetooth uart|прочит до %del=serial_delimiter_conv",
+  "bluetooth.uartWriteNumber|block": "bluetooth uart|запис на число %value",
+  "bluetooth.uartWriteString|block": "bluetooth uart|запис на низ %data",
+  "bluetooth.uartWriteValue|block": "bluetooth uart|запис на стойност %name|= %value",
+  "bluetooth|block": "bluetooth",
+  "{id:category}Bluetooth": "Bluetooth"
+}

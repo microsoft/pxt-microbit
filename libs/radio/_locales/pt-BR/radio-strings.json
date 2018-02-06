@@ -1,0 +1,16 @@
+{
+  "radio.onDataReceived|block": "rádio em dados recebidos",
+  "radio.receiveNumber|block": "rádio recebe número",
+  "radio.receiveString|block": "rádio recebe cadeia de caractéres",
+  "radio.receivedSignalStrength|block": "força do sinal recebido do rádio",
+  "radio.sendNumber|block": "rádio envia número %value",
+  "radio.sendString|block": "rádio envia cadeia de caracteres %msg",
+  "radio.sendValue|block": "rádio envia |value %name|= %value",
+  "radio.setGroup|block": "definir grupo do rádio %ID",
+  "radio.setTransmitPower|block": "conjunto de rádio transmite energia %power",
+  "radio.setTransmitSerialNumber|block": "conjunto de rádio transmite o número serial %transmit",
+  "radio.writeReceivedPacketToSerial|block": "rádio escreve pacote recebido para serial",
+  "radio.writeValueToSerial|block": "rádio escreve valor para serial",
+  "radio|block": "rádio",
+  "{id:category}Radio": "Rádio"
+}

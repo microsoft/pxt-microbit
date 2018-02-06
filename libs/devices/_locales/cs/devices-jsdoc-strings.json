@@ -1,0 +1,18 @@
+{
+  "devices": "Ovládat telefon BBC micro:bitem přes Bluetooth.",
+  "devices.onGamepadButton": "Registrujte kód, který se má spustit, když micro:bit obdrží příkaz od spárovaného gamepadu.",
+  "devices.onGamepadButton|param|body": "kód, který má být spuštěn, když je tlačítko zmáčknuto",
+  "devices.onGamepadButton|param|name": "jméno tlačítka",
+  "devices.onNotified": "Registruje kód, který se má spustit, když zařízení informuje o určité události.",
+  "devices.onNotified|param|body": "obslužná rutina kódu při aktivaci události",
+  "devices.onNotified|param|event": "popis události",
+  "devices.onSignalStrengthChanged": "Registruje kód, který se má spustit, když zařízení informuje o změně síly signálu.",
+  "devices.onSignalStrengthChanged|param|body": "Kód, který se spustí, když se změní síla signálu.",
+  "devices.raiseAlertTo": "Odešle příkaz ``výstraha`` nadřazenému zařízení.",
+  "devices.raiseAlertTo|param|event": "popis události",
+  "devices.signalStrength": "Vrátí poslední sílu signálu oznámenou spárovaným zařízením.",
+  "devices.tellCameraTo": "Odešle příkaz ``fotoaparát``nadřazenému zařízení.",
+  "devices.tellCameraTo|param|event": "popis události",
+  "devices.tellRemoteControlTo": "Odešle příkaz ``vzdálené řízení``nadřazenému zařízení.",
+  "devices.tellRemoteControlTo|param|event": "popis události"
+}

@@ -1,0 +1,17 @@
+{
+  "radio.onDataPacketReceived|block": "라디오 수신하면 실행",
+  "radio.onDataReceived|block": "라디오 수신하면 실행",
+  "radio.receiveNumber|block": "수",
+  "radio.receiveString|block": "문자열",
+  "radio.receivedSignalStrength|block": "라디오 수신 신호 세기",
+  "radio.sendNumber|block": "라디오 전송 %value",
+  "radio.sendString|block": "라디오 전송 %msg",
+  "radio.sendValue|block": "라디오 전송|%name|= %value",
+  "radio.setGroup|block": "라디오 그룹 설정 %ID",
+  "radio.setTransmitPower|block": "라디오 전송 강도 설정 %power",
+  "radio.setTransmitSerialNumber|block": "라디오 시리얼 번호 전송 설정 %transmit",
+  "radio.writeReceivedPacketToSerial|block": "라디오 수신 패킷을 시리얼로 전송",
+  "radio.writeValueToSerial|block": "라디오 값을 시리얼로 출력",
+  "radio|block": "라디오",
+  "{id:category}Radio": "라디오"
+}

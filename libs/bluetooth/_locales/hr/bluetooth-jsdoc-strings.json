@@ -1,0 +1,8 @@
+{
+  "bluetooth.onUartDataReceived": "Pokreće događaj kada se primi jedna od posebnih oznaka teksta.",
+  "bluetooth.onUartDataReceived|param|delimiters": "oznaka koji se očekuje.",
+  "bluetooth.uartWriteNumber": "Ispisuje brojčanu vrijednost na serijsku vezu",
+  "bluetooth.uartWriteValue": "Zapisuje par ``name: value`` na serijsku vezu.",
+  "bluetooth.uartWriteValue|param|name": "naziv koji se šalje preko serijske veze, npr: x",
+  "bluetooth.uartWriteValue|param|value": "za ispisati"
+}

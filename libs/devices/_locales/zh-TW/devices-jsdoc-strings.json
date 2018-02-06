@@ -1,0 +1,18 @@
+{
+  "devices": "用 BBC 的 micro:bit 來操控手機（透過藍牙）。",
+  "devices.onGamepadButton": "註冊 micro:bit 收到配對遊戲控制器命令時要執行的程式碼。",
+  "devices.onGamepadButton|param|body": "按下按鈕時要執行的程式碼",
+  "devices.onGamepadButton|param|name": "按鈕名稱",
+  "devices.onNotified": "註冊當裝置通知特定事件時要執行的程式碼。",
+  "devices.onNotified|param|body": "事件觸發時的程式碼處理常式",
+  "devices.onNotified|param|event": "事件描述",
+  "devices.onSignalStrengthChanged": "註冊當裝置通知訊號強度變化時要執行的程式碼。",
+  "devices.onSignalStrengthChanged|param|body": "訊號強度變更時執行的程式碼。",
+  "devices.raiseAlertTo": "傳送「alert」命令給父裝置。",
+  "devices.raiseAlertTo|param|event": "事件描述",
+  "devices.signalStrength": "傳回配對裝置所報告的最新訊號強度。",
+  "devices.tellCameraTo": "傳送「camera」命令給父裝置。",
+  "devices.tellCameraTo|param|event": "事件描述",
+  "devices.tellRemoteControlTo": "傳送「remote control」命令給父裝置。",
+  "devices.tellRemoteControlTo|param|event": "事件描述"
+}

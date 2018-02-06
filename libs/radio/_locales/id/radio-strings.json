@@ -1,0 +1,17 @@
+{
+  "radio.onDataPacketReceived|block": "pada radio yang diterima",
+  "radio.onDataReceived|block": "radio pada saat data diterima",
+  "radio.receiveNumber|block": "terima lewat radio angka",
+  "radio.receiveString|block": "terima lewat radio untai",
+  "radio.receivedSignalStrength|block": "kekuatan sinyal yang diterima radio",
+  "radio.sendNumber|block": "kirim lewat radio angka %value",
+  "radio.sendString|block": "kirim untai lewat radio %msg",
+  "radio.sendValue|block": "kirim lewat radio|nilai %name|= %value",
+  "radio.setGroup|block": "tetapkan grup radio %ID",
+  "radio.setTransmitPower|block": "atur kekuatan transmisi radio %power",
+  "radio.setTransmitSerialNumber|block": "tetapkan angka serial transmisi radio %transmit",
+  "radio.writeReceivedPacketToSerial|block": "tulis paket yang diterima lewat radio ke serial",
+  "radio.writeValueToSerial|block": "tulis nilai radio ke serial",
+  "radio|block": "radio",
+  "{id:category}Radio": "Radio"
+}

@@ -1,0 +1,22 @@
+{
+  "bluetooth.advertiseUid|block": "Bluetooth UIDをアドバタイズ|ネームスペース（6～9バイト目） %ns|インスタンス（2～6バイト）\n %instance|出力強度 %power|接続可能 %connectable",
+  "bluetooth.advertiseUrl|block": "Bluetooth URLをアドバタイズ %url|出力強度 %power|接続可能 %connectable",
+  "bluetooth.onBluetoothConnected|block": "Bluetooth 接続されたとき",
+  "bluetooth.onBluetoothDisconnected|block": "Bluetooth 接続が切断されたとき",
+  "bluetooth.onUartDataReceived|block": "Bluetooth|データを受信したとき|区切り文字 %delimiters=serial_delimiter_conv",
+  "bluetooth.setTransmitPower|block": "Bluetooth 送信強度を設定 %power",
+  "bluetooth.startAccelerometerService|block": "Bluetooth 加速度計サービス",
+  "bluetooth.startButtonService|block": "Bluetooth ボタンサービス",
+  "bluetooth.startIOPinService|block": "Bluetooth 入出力端子サービス",
+  "bluetooth.startLEDService|block": "Bluetooth LEDサービス",
+  "bluetooth.startMagnetometerService|block": "Bluetooth 磁力計サービス",
+  "bluetooth.startTemperatureService|block": "Bluetooth 温度計サービス",
+  "bluetooth.startUartService|block": "Bluetooth UARTサービス",
+  "bluetooth.stopAdvertising|block": "Bluetooth アドバタイズを停止",
+  "bluetooth.uartReadUntil|block": "Bluetooth UART|つぎのいずれかの文字の手前まで読み取る %del=serial_delimiter_conv",
+  "bluetooth.uartWriteNumber|block": "Bluetooth UART|数値を文字で書き出す %value",
+  "bluetooth.uartWriteString|block": "Bluetooth UART|文字列を書き出す",
+  "bluetooth.uartWriteValue|block": "Bluetooth UART|名前と値を書き出す %name|= %value",
+  "bluetooth|block": "Bluetooth",
+  "{id:category}Bluetooth": "Bluetooth"
+}

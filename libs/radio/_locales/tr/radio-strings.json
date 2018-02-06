@@ -1,0 +1,17 @@
+{
+  "radio.onDataPacketReceived|block": "radyo ile alma",
+  "radio.onDataReceived|block": "radyo ile veri alma",
+  "radio.receiveNumber|block": "radyo ile sayı alma",
+  "radio.receiveString|block": "radyo ile dizi alma",
+  "radio.receivedSignalStrength|block": "radyo ile sinyal gücü alma",
+  "radio.sendNumber|block": "radyo ile sayı gönderme %value",
+  "radio.sendString|block": "radyo ile dizi gönderme %msg",
+  "radio.sendValue|block": "radyo ile|değer gönderme %name|= %value",
+  "radio.setGroup|block": "radyo grubunu ayarla %ID",
+  "radio.setTransmitPower|block": "radyo verici günü ayarla %power",
+  "radio.setTransmitSerialNumber|block": "radyo vericisi seri numarasını ayarla %transmit",
+  "radio.writeReceivedPacketToSerial|block": "radyo, alınan paketi seriye yazar",
+  "radio.writeValueToSerial|block": "radyo, değeri seriye yazar",
+  "radio|block": "radyo",
+  "{id:category}Radio": "Radyo"
+}

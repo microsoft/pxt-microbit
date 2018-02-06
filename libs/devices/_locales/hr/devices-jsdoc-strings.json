@@ -1,0 +1,6 @@
+{
+  "devices": "Upravljaj telefonom s BBC micro:bit-om koristeći Bluetooth.",
+  "devices.onGamepadButton": "Registrirati kôd koji će se izvršiti kada micro:bit malo primi naredbu od uparenog gamepada.",
+  "devices.onGamepadButton|param|body": "kôd koji će se izvršiti kada se pritisne tipka",
+  "devices.onGamepadButton|param|name": "naziv tipke"
+}

@@ -1,0 +1,18 @@
+{
+  "devices": "Kontrol ponsel dengan BBC micro:bit melalui Bluetooth.",
+  "devices.onGamepadButton": "Daftarkan kode yang akan dijalankan saat micro:bit menerima perintah dari gamepad yang disandingkan.",
+  "devices.onGamepadButton|param|body": "kode yang akan dijalankan saat tombol ditekan",
+  "devices.onGamepadButton|param|name": "nama tombol",
+  "devices.onNotified": "Mendaftarkan kode yang akan dijalankan saat perangkat memberi tahu tentang peristiwa tertentu.",
+  "devices.onNotified|param|body": "pelacak kode saat peristiwa dipicu",
+  "devices.onNotified|param|event": "deskripsi peristiwa",
+  "devices.onSignalStrengthChanged": "Mendaftarkan kode yang akan dijalankan saat perangkat memberi tahu tentang perubahan kekuatan sinyal.",
+  "devices.onSignalStrengthChanged|param|body": "Kode yang dijalankan saat kekuatan sinyal berubah.",
+  "devices.raiseAlertTo": "Mengirimkan suatu perintah ``peringatan`` kepada perangkat induk.",
+  "devices.raiseAlertTo|param|event": "deskripsi peristiwa",
+  "devices.signalStrength": "Mengembalikan kekuatan sinyal terakhir yang dilaporkan oleh perangkat yang disandingkan.",
+  "devices.tellCameraTo": "Mengirimkan suatu perintah ``kamera`` kepada perangkat induk.",
+  "devices.tellCameraTo|param|event": "deskripsi peristiwa",
+  "devices.tellRemoteControlTo": "Mengirimkan suatu perintah ``kontrol jarak jauh`` kepada perangkat induk.",
+  "devices.tellRemoteControlTo|param|event": "deskripsi peristiwa"
+}

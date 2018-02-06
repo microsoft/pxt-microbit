@@ -1,0 +1,17 @@
+{
+  "radio.onDataPacketReceived|block": "kun radio vastaanottaa",
+  "radio.onDataReceived|block": "radio kun dataa vastaanotetaan",
+  "radio.receiveNumber|block": "radio vastaanottaa numeron",
+  "radio.receiveString|block": "radio vastaanottaa merkkijonon",
+  "radio.receivedSignalStrength|block": "radio vastaanotti signaalin voimakkuuden",
+  "radio.sendNumber|block": "radio lähettää numeron %value",
+  "radio.sendString|block": "radio lähettää merkkijonon %msg",
+  "radio.sendValue|block": "radio lähettää|arvon %name|= %value",
+  "radio.setGroup|block": "radio aseta ryhmä %ID",
+  "radio.setTransmitPower|block": "radio aseta lähetysteho %power",
+  "radio.setTransmitSerialNumber|block": "radio määritä lähetyksen sarjanumero %transmit",
+  "radio.writeReceivedPacketToSerial|block": "radio kirjoita vastaanotettu paketti sarjaan",
+  "radio.writeValueToSerial|block": "radio kirjoita arvo sarjaan",
+  "radio|block": "radio",
+  "{id:category}Radio": "Radio"
+}

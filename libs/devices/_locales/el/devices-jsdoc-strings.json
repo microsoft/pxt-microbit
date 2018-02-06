@@ -1,0 +1,18 @@
+{
+  "devices": "Έλεγχος τηλεφώνου με BBC micro:bit μέσω Bluetooth.",
+  "devices.onGamepadButton": "Καταχώρηση κώδικα προς εκτέλεση όταν το micro:bit λαμβάνει μια εντολή από το συνδεδεμένο χειριστήριο παιχνιδιών.",
+  "devices.onGamepadButton|param|body": "κώδικας εκτέλεσης όταν πιέζεται ένα πλήκτρο",
+  "devices.onGamepadButton|param|name": "όνομα πλήκτρου",
+  "devices.onNotified": "Καταχωρεί κώδικα προς εκτέλεση όταν η συσκευή ειδοποιεί για μια συγκεκριμένη εκδήλωση.",
+  "devices.onNotified|param|body": "συντελεστής χειρισμού κώδικα όταν πυροδοτείται μια εκδήλωση",
+  "devices.onNotified|param|event": "περιγραφή εκδήλωσης",
+  "devices.onSignalStrengthChanged": "Καταχωρεί κώδικα προς εκτέλεση όταν η συσκευή ειδοποιεί για μια αλλαγή στην ένταση του σήματος.",
+  "devices.onSignalStrengthChanged|param|body": "Εκτέλεση κώδικα όταν αλλάζει η ένταση του σήματος.",
+  "devices.raiseAlertTo": "Αποστέλλει μια εντολή ``alert`` στη γονική συσκευή.",
+  "devices.raiseAlertTo|param|event": "περιγραφή εκδήλωσης",
+  "devices.signalStrength": "Επιστρέφει την τελευταία ισχύ σήματος που αναφέρθηκε από τη συνδεδεμένη συσκευή.",
+  "devices.tellCameraTo": "Αποστέλλει μια εντολή ``camera`` στη γονική συσκευή.",
+  "devices.tellCameraTo|param|event": "περιγραφή εκδήλωσης",
+  "devices.tellRemoteControlTo": "Αποστέλλει μια εντολή ``remote control`` στη γονική συσκευή.",
+  "devices.tellRemoteControlTo|param|event": "περιγραφή εκδήλωσης"
+}

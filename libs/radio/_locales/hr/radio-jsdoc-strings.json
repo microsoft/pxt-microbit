@@ -1,0 +1,20 @@
+{
+  "radio": "Prijenos podataka radijskom vezom",
+  "radio.onDataReceived": "Kod koji se izvodi kad se prime podatci putem radijske veze.",
+  "radio.receiveNumber": "Čita slijedeću vrijednost iz radijskog stoga podataka, ako je stog prazan vraća vrijednost 0.",
+  "radio.receiveString": "Čita slijedeći znakovni niz iz radijskog stoga podataka, ako je stog prazan vraća prazan niz \"\".",
+  "radio.receivedSignalStrength": "Očitava jačinu prijemnog signala (RSSI) zadnjeg paketa iz radijskog stoga ( preko ``receiveNumber``, ``receiveString``, itd.) Opcija nije podržana u simulatoru. \nnamespace=radio",
+  "radio.sendNumber": "Odašilje brojčanu vrijednost bilo kojem micro:bit-u spojenom u radijsku grupu.",
+  "radio.sendString": "Odašilje znakovni niz bilo kojem micro:bit-u spojenom u radijsku grupu.",
+  "radio.sendValue": "Odašilje naziv/vrijednost zajedno s serijskim brojem i vremenom rada bilo kojem micro:bit-u spojenom u radijsku grupu.",
+  "radio.sendValue|param|name": "naziv polja (sadrži najviše 12 znakova), npr. \"ime\"",
+  "radio.sendValue|param|value": "brojčana vrijednost",
+  "radio.setGroup": "Određivanje ID-a radijske grupe. Micro:bit može istovremeno slušati samo jednu radijsku grupu.",
+  "radio.setGroup|param|id": "oznaka radijske grupe, ID, može biti između 0 i 255",
+  "radio.setTransmitPower": "Promjeni izlaznu jačinu predajnika na zadanu vrijednost.",
+  "radio.setTransmitPower|param|power": "raspon je od 0 do 7, gdje 0 predstavlja najnižu a 7 najvišu izlaznu snagu. npr: 7",
+  "radio.setTransmitSerialNumber": "Postavka radijske komunikacija da svakoj poruci dodaje serijski broj.",
+  "radio.setTransmitSerialNumber|param|transmit": "vrijednost označava je li serijski broj odaslan, npr: istina",
+  "radio.writeReceivedPacketToSerial": "Ispisuje zadnji primljeni paket na serijski izlaz kao JSON. Potrebno ga je pozvati u ``onDataPacketReceived`` callback.",
+  "radio.writeValueToSerial": "Čita slijedeći paket iz radijskog stoga i ispisuje ga na serijski kao JSON."
+}

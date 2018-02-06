@@ -1,0 +1,18 @@
+{
+  "devices": "Styr en telefon med BBC micro:bit via Bluetooth.",
+  "devices.onGamepadButton": "Registrera kod som ska köras när micro:bit tar emot ett kommando från parad spelkontroll.",
+  "devices.onGamepadButton|param|body": "kod att köra när knappen trycks",
+  "devices.onGamepadButton|param|name": "knappnamn",
+  "devices.onNotified": "Registrerar kod att köra när enheten meddelar om en viss händelse.",
+  "devices.onNotified|param|body": "kodhanterare när händelsen aktiveras",
+  "devices.onNotified|param|event": "händelsebeskrivning",
+  "devices.onSignalStrengthChanged": "Registrerar kod att köra när enheten meddelar om en förändring av signalstyrkan.",
+  "devices.onSignalStrengthChanged|param|body": "Kod körs när signalstyrkan ändras.",
+  "devices.raiseAlertTo": "Skickar ett ''alert''-kommando till moderenheten.",
+  "devices.raiseAlertTo|param|event": "händelsebeskrivning",
+  "devices.signalStrength": "Returnerar senaste signalstyrkan som rapporterats av den parade enheten.",
+  "devices.tellCameraTo": "Skickar ett ''kamera''-kommando till moderenheten.",
+  "devices.tellCameraTo|param|event": "händelsebeskrivning",
+  "devices.tellRemoteControlTo": "Skickar ett ''fjärrkontroll''-kommando till moderenheten.",
+  "devices.tellRemoteControlTo|param|event": "händelsebeskrivning"
+}

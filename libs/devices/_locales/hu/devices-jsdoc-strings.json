@@ -1,0 +1,18 @@
+{
+  "devices": "Telefon vezérlése a BBC micro:bit-tel Bluetooth-on át.",
+  "devices.onGamepadButton": "Eltárolja azt a kódot, amelyet a micro:bit akkor futtat, amikor parancsot kap a párosított játékkontrollertől.",
+  "devices.onGamepadButton|param|body": "a gomb lenyomásakor futtatandó kód",
+  "devices.onGamepadButton|param|name": "gomb neve",
+  "devices.onNotified": "Eltárolja azt a kódot, amit akkor futtat, amikor egy bizonyos eseményről értesítést küld az eszköz.",
+  "devices.onNotified|param|body": "eseménykezelő, amikor az esemény kiváltódik",
+  "devices.onNotified|param|event": "esemény leírása",
+  "devices.onSignalStrengthChanged": "Eltárolja azt a kódot, amit akkor futtat, amikor a jelerősség változásáról értesítést küld az eszköz.",
+  "devices.onSignalStrengthChanged|param|body": "A lefuttatandó kód, amikor változik a jelerősség.",
+  "devices.raiseAlertTo": "Egy ``riasztás`` parancsot küld a szülőeszköznek.",
+  "devices.raiseAlertTo|param|event": "esemény leírása",
+  "devices.signalStrength": "Visszaadja a párosított eszköz által utoljára jelzett jelerősséget.",
+  "devices.tellCameraTo": "Egy ``kamera`` parancsot küld a szülőeszköznek.",
+  "devices.tellCameraTo|param|event": "esemény leírása",
+  "devices.tellRemoteControlTo": "Egy ``távoli vezérlés`` parancsot küld a szülőeszköznek.",
+  "devices.tellRemoteControlTo|param|event": "esemény leírása"
+}

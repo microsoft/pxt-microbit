@@ -1,0 +1,18 @@
+{
+  "devices": "Telefonunuzu Bluetooth üzerinden BBC micro:bit ile yönetin.",
+  "devices.onGamepadButton": "Mikro:bit, eşleştirilmiş bir oyun kumandasından komut aldığında çalışacak kayıt kodu.",
+  "devices.onGamepadButton|param|body": "düğmeye basıldığında çalıştırılacak kod",
+  "devices.onGamepadButton|param|name": "düğme adı",
+  "devices.onNotified": "Cihaz, belirli bir etkinlik olduğunu bildirdiğinde çalıştırılacak kodu kaydeder.",
+  "devices.onNotified|param|body": "olay tetiklendiğinde kod işleyicisi",
+  "devices.onNotified|param|event": "etkinlik tanımı",
+  "devices.onSignalStrengthChanged": "Cihaz, sinyal gücünde bir değişiklik olduğunu bildirdiğinde çalıştırılacak kodu kaydeder.",
+  "devices.onSignalStrengthChanged|param|body": "Kod, sinyal gücü değiştiğinde çalışır.",
+  "devices.raiseAlertTo": "Ana cihaza `` uyarı`` komutunu gönderir.",
+  "devices.raiseAlertTo|param|event": "etkinlik tanımı",
+  "devices.signalStrength": "Eşleştirilmiş bir cihaz tarafından bildirilen son sinyal gücünü döndürür.",
+  "devices.tellCameraTo": "Ana cihaza `` kamera`` komutunu gönderir.",
+  "devices.tellCameraTo|param|event": "etkinlik tanımı",
+  "devices.tellRemoteControlTo": "Ana cihaza ``uzaktan kontrol`` komutunu gönderir.",
+  "devices.tellRemoteControlTo|param|event": "etkinlik tanımı"
+}

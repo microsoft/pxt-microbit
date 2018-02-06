@@ -1,0 +1,16 @@
+{
+  "radio.onDataReceived|block": "ράδιο έγινε λήψη δεδομένων",
+  "radio.receiveNumber|block": "ράδιο λήψη αριθμού",
+  "radio.receiveString|block": "ράδιο λήψη συμβολοσειράς",
+  "radio.receivedSignalStrength|block": "ράδιο ισχύς ληφθέντος σήματος",
+  "radio.sendNumber|block": "ράδιο αποστολή αριθμού %value",
+  "radio.sendString|block": "ράδιο αποστολή συμβολοσειράς %msg",
+  "radio.sendValue|block": "ράδιο αποστολή|τιμή %name|= %value",
+  "radio.setGroup|block": "ράδιο ορισμός %ID ομάδας",
+  "radio.setTransmitPower|block": "ράδιο ορισμός ισχύος μετάδοσης %power",
+  "radio.setTransmitSerialNumber|block": "ράδιο ορισμός μετάδοσης σειριακού αριθμού %transmit",
+  "radio.writeReceivedPacketToSerial|block": "ράδιο εγγραφή ληφθέντος πακέτου στη σειριακή",
+  "radio.writeValueToSerial|block": "ράδιο εγγραφή τιμής στη σειριακή",
+  "radio|block": "ράδιο",
+  "{id:category}Radio": "Ράδιο"
+}

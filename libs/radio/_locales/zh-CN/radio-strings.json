@@ -1,0 +1,16 @@
+{
+  "radio.onDataReceived|block": "当无线接收到数据时",
+  "radio.receiveNumber|block": "无线接收数字",
+  "radio.receiveString|block": "无线接收字符串",
+  "radio.receivedSignalStrength|block": "无线接收信号强度",
+  "radio.sendNumber|block": "无线发送数字 %value",
+  "radio.sendString|block": "无线发送字符串 %msg",
+  "radio.sendValue|block": "无线发送值 %name|= %value",
+  "radio.setGroup|block": "无线设置组 %ID",
+  "radio.setTransmitPower|block": "无线设置发射功率 %power",
+  "radio.setTransmitSerialNumber|block": "无线设置发射序列号 %transmit",
+  "radio.writeReceivedPacketToSerial|block": "将接收到的数据包无线写入串口",
+  "radio.writeValueToSerial|block": "将值无线写入串口",
+  "radio|block": "无线",
+  "{id:category}Radio": "无线"
+}

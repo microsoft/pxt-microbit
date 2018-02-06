@@ -1,0 +1,22 @@
+{
+  "bluetooth.advertiseUid|block": "bluetooth UID hirdetés|namespace (6-9 bájtok)%ns|példány (2-6 bájtok)%instance|teljesítménnyel %power|csatlakozásképes %connectable",
+  "bluetooth.advertiseUrl|block": "bluetooth url hirdetése %url|teljesítmény: %power",
+  "bluetooth.onBluetoothConnected|block": "bluetooth csatlakozáskor",
+  "bluetooth.onBluetoothDisconnected|block": "bluetooth kapcsolat bontásakor",
+  "bluetooth.onUartDataReceived|block": "bluetooth | kapott bekapcsolási adatok %delimiters = serial_delimiter_conv",
+  "bluetooth.setTransmitPower|block": "bluetooth adási teljesítmény legyen %power",
+  "bluetooth.startAccelerometerService|block": "bluetooth gyorsulásmérő szolgáltatás",
+  "bluetooth.startButtonService|block": "bluetooth nyomógomb szolgáltatás",
+  "bluetooth.startIOPinService|block": "bluetooth ki/bemeneti csatlakozó szolgáltatás",
+  "bluetooth.startLEDService|block": "bluetooth led szolgáltatás",
+  "bluetooth.startMagnetometerService|block": "bluetooth magnetométer szolgáltatás",
+  "bluetooth.startTemperatureService|block": "bluetooth hőmérséklet szolgáltatás",
+  "bluetooth.startUartService|block": "bluetooth uart szolgáltatás",
+  "bluetooth.stopAdvertising|block": "bluetooth hirdetés leállítása",
+  "bluetooth.uartReadUntil|block": "bluetooth uart|olvasás mígnem %del=serial_delimiter_conv",
+  "bluetooth.uartWriteNumber|block": "bluetooth uart|szám írása %value",
+  "bluetooth.uartWriteString|block": "bluetooth uart|szöveg írása %data",
+  "bluetooth.uartWriteValue|block": "bluetooth uart|érték írása %name|= %value",
+  "bluetooth|block": "bluetooth",
+  "{id:category}Bluetooth": "Bluetooth"
+}

@@ -1,0 +1,22 @@
+{
+  "bluetooth.advertiseUid|block": "UID объявления Bluetooth|пространство имен (байты 6-9)%ns|экземпляр (байты 2-6)%instance|с мощностью %power|подключение %connectable",
+  "bluetooth.advertiseUrl|block": "URL-адрес объявления Bluetooth %url|с мощностью %power|подключение %connectable",
+  "bluetooth.onBluetoothConnected|block": "по подключению Bluetooth",
+  "bluetooth.onBluetoothDisconnected|block": "по отключению Bluetooth",
+  "bluetooth.onUartDataReceived|block": "Bluetooth|по получению данных %delimiters=serial_delimiter_conv",
+  "bluetooth.setTransmitPower|block": "Bluetooth: задать мощность передачи %power",
+  "bluetooth.startAccelerometerService|block": "Bluetooth-сервис акселерометра",
+  "bluetooth.startButtonService|block": "Bluetooth-сервис кнопок",
+  "bluetooth.startIOPinService|block": "Bluetooth-сервис контакта ввода-вывода",
+  "bluetooth.startLEDService|block": "Bluetooth-сервис светодиодов",
+  "bluetooth.startMagnetometerService|block": "Bluetooth-сервис магнитометра",
+  "bluetooth.startTemperatureService|block": "Bluetooth-сервис температуры",
+  "bluetooth.startUartService|block": "Bluetooth-сервис UART",
+  "bluetooth.stopAdvertising|block": "остановить объявление Bluetooth",
+  "bluetooth.uartReadUntil|block": "Bluetooth UART|читать до %del=serial_delimiter_conv",
+  "bluetooth.uartWriteNumber|block": "Bluetooth UART|записать число %value",
+  "bluetooth.uartWriteString|block": "Bluetooth UART|записать строку %data",
+  "bluetooth.uartWriteValue|block": "Bluetooth UART|записать значение %name|= %value",
+  "bluetooth|block": "Bluetooth",
+  "{id:category}Bluetooth": "Bluetooth"
+}

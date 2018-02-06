@@ -1,0 +1,22 @@
+{
+  "bluetooth.advertiseUid|block": "UID оголошення Bluetooth|простір імен (байти 6-9)%ns|екземпляр (байти 2-6)%instance|з потужністю%power|підключення%connectable",
+  "bluetooth.advertiseUrl|block": "URL-адреса оголошення Bluetooth %url|с потужністю %power|підключення %connectable",
+  "bluetooth.onBluetoothConnected|block": "при підключенні bluetooth",
+  "bluetooth.onBluetoothDisconnected|block": "при відключенні bluetooth",
+  "bluetooth.onUartDataReceived|block": "bluetooth|при отриманні даних %delimiters=serial_delimiter_conv",
+  "bluetooth.setTransmitPower|block": "bluetooth- задати потужність передачі %power",
+  "bluetooth.startAccelerometerService|block": "bluetooth-сервіс акселерометра",
+  "bluetooth.startButtonService|block": "bluetooth-сервіс клавіш",
+  "bluetooth.startIOPinService|block": "bluetooth-сервіс контакту вводу-виводу",
+  "bluetooth.startLEDService|block": "bluetooth-сервіс світлодіодів",
+  "bluetooth.startMagnetometerService|block": "bluetooth-сервіс магнітометра",
+  "bluetooth.startTemperatureService|block": "bluetooth-сервіс температури",
+  "bluetooth.startUartService|block": "bluetooth-сервіс uart",
+  "bluetooth.stopAdvertising|block": "зупинити оголошення bluetooth",
+  "bluetooth.uartReadUntil|block": "bluetooth uart|читати до %del=serial_delimiter_conv",
+  "bluetooth.uartWriteNumber|block": "bluetooth uart|записати число %value",
+  "bluetooth.uartWriteString|block": "bluetooth uart|записати рядок %data",
+  "bluetooth.uartWriteValue|block": "bluetooth uart|записати значення %name|= %value",
+  "bluetooth|block": "bluetooth",
+  "{id:category}Bluetooth": "Bluetooth"
+}

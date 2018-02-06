@@ -1,0 +1,18 @@
+{
+  "devices": "Controla um telefone com a BBC micro:bit através de Bluetooth.",
+  "devices.onGamepadButton": "Código de registo a executar quando o micro:bit recebe um comando do gamepad emparelhado.",
+  "devices.onGamepadButton|param|body": "o código a executar ao premir o botão",
+  "devices.onGamepadButton|param|name": "nome do botão",
+  "devices.onNotified": "Regista o código a executar quando o dispositivo notifica sobre um evento específico.",
+  "devices.onNotified|param|body": "manipulador de código quando o evento é acionado",
+  "devices.onNotified|param|event": "descrição do evento",
+  "devices.onSignalStrengthChanged": "Regista o código a executar quando o dispositivo notifica sobre uma alteração da força do sinal.",
+  "devices.onSignalStrengthChanged|param|body": "Código executa quando muda a intensidade do sinal.",
+  "devices.raiseAlertTo": "Envia um comando ``alerta`` para o dispositivo parente.",
+  "devices.raiseAlertTo|param|event": "descrição do evento",
+  "devices.signalStrength": "Devolve a última força de sinal relatada pelo dispositivo emparelhado.",
+  "devices.tellCameraTo": "Envia um comando ``câmara`` para o dispositivo parente.",
+  "devices.tellCameraTo|param|event": "descrição do evento",
+  "devices.tellRemoteControlTo": "Envia um comando ``controlo remoto`` para o dispositivo parente.",
+  "devices.tellRemoteControlTo|param|event": "descrição do evento"
+}

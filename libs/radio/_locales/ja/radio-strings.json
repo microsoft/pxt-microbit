@@ -1,10 +1,17 @@
 {
   "radio.onDataPacketReceived|block": "無線で受信したとき",
-  "radio.sendNumber|block": "無線で数字を送信 %value",
+  "radio.onDataReceived|block": "無線でデータを受信したとき",
+  "radio.receiveNumber|block": "無線で受信した数値",
+  "radio.receiveString|block": "無線で受信した文字列",
+  "radio.receivedSignalStrength|block": "通信相手が受信した電波の強さ",
+  "radio.sendNumber|block": "無線で数値を送信 %value",
   "radio.sendString|block": "無線で文字列を送信 %msg",
   "radio.sendValue|block": "無線で送信 | %name |= %value",
   "radio.setGroup|block": "無線のグループを設定 %ID",
-  "radio.setTransmitPower|block": "無線の送信パワー %power",
-  "radio.setTransmitSerialNumber|block": "無線でシリアル番号を送信 %transmit",
+  "radio.setTransmitPower|block": "無線の送信強度を設定 %power",
+  "radio.setTransmitSerialNumber|block": "シリアル番号の送信の有無を設定 %transmit",
+  "radio.writeReceivedPacketToSerial|block": "無線で最後に受信したパケットをシリアルポートに書き込む",
+  "radio.writeValueToSerial|block": "無線で受信してシリアルポートに書き込む",
+  "radio|block": "無線",
   "{id:category}Radio": "無線"
 }

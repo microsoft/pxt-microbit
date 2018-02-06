@@ -1,0 +1,16 @@
+{
+  "radio.onDataReceived|block": "když jsou přijata data přes rádio",
+  "radio.receiveNumber|block": "číslo přijatého rádiového signálu",
+  "radio.receiveString|block": "řetězec přijatý rádiovým signálem",
+  "radio.receivedSignalStrength|block": "síla přijatého rádiového signálu",
+  "radio.sendNumber|block": "odeslat rádiem číslo %value",
+  "radio.sendString|block": "odeslat rádiem řetězec %msg",
+  "radio.sendValue|block": "odeslat rádiem|hodnotu %name|= %value",
+  "radio.setGroup|block": "nastavit skupinu rádia na %ID",
+  "radio.setTransmitPower|block": "nastavit vysílací výkon rádia na %power",
+  "radio.setTransmitSerialNumber|block": "nastavit sériové číslo rádia na %transmit",
+  "radio.writeReceivedPacketToSerial|block": "rádio zapíše každý přijatý paket do série",
+  "radio.writeValueToSerial|block": "rádio zapíše hodnotu do série",
+  "radio|block": "rádio",
+  "{id:category}Radio": "Rádio"
+}

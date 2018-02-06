@@ -1,0 +1,17 @@
+{
+  "radio.onDataPacketReceived|block": "når radio modtog",
+  "radio.onDataReceived|block": "når radioen modtager data",
+  "radio.receiveNumber|block": "når radio modtager nummer",
+  "radio.receiveString|block": "når radio modtager streng",
+  "radio.receivedSignalStrength|block": "radio modtog signalstyrke",
+  "radio.sendNumber|block": "når radio sender nummer %value",
+  "radio.sendString|block": "når radio sender strengen %msg",
+  "radio.sendValue|block": "når radio sender|værdi %name|= %value",
+  "radio.setGroup|block": "når radio indstiller gruppe %ID",
+  "radio.setTransmitPower|block": "når radio sender effekt %power",
+  "radio.setTransmitSerialNumber|block": "når radio sender serienummer %transmit",
+  "radio.writeReceivedPacketToSerial|block": "når radio skriver den modtagede pakke til seriel",
+  "radio.writeValueToSerial|block": "når radio skriver værdi til seriel",
+  "radio|block": "radio",
+  "{id:category}Radio": "Radio"
+}
