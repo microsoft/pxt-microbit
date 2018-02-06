@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - "5.7.0"
+  - "8.9.4"
 script:
   - "node node_modules/pxt-core/built/pxt.js travis"  
   - "(cd libs/lang-test0; node ../../node_modules/pxt-core/built/pxt.js run)"
