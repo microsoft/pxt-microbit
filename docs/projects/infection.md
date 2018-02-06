@@ -53,6 +53,13 @@ Icons used in the game:
 
 ## Project share
 
+### ~ hint
+
+This code uses language features, such as ``switch`` or ``enum``, that are not supported in blocks.
+As a result, it will not convert back to blocks.
+
+### ~
+
 https://makecode.microbit.org/_gymCJCWPbiDu
 
 ## JavaScript code

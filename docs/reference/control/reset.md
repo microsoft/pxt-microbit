@@ -7,6 +7,13 @@ This function is like pressing the reset button on the back of the @boardname@.
 ```sig
 control.reset()
 ```
+## ~hint
+
+**Simulator**
+
+The **reset** function works only on a real @boardname@ and not in the simulator.
+
+## ~
 
 ## Example
 
@@ -26,12 +33,6 @@ input.onButtonPressed(Button.B, () => {
 });
 ```
 
-### ~hint
-
-This program works better on a real @boardname@ than in the simulator.
-
-### ~
-
-## See Also
+## See also
 
 [clear screen](/reference/basic/clear-screen), [game over](/reference/game/game-over)

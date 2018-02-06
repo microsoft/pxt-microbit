@@ -33,6 +33,10 @@ namespace pxsim.serial {
         board().writeSerial(s);
     }
 
+    export function writeBuffer(buf: RefBuffer) {
+        // TODO
+    }
+
     export function readUntil(del: string): string {
         return readString();
     }
