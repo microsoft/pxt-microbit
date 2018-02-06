@@ -57,8 +57,7 @@ namespace pxt.editor {
             }
 
             function writeAsync(data: ArrayBuffer) {
-                h.sendPacketAsync(new Uint8Array(data));
-                return Promise.resolve();
+                return h.sendPacketAsync(new Uint8Array(data));
             }
 
             function readAsync() {
@@ -67,7 +66,11 @@ namespace pxt.editor {
         }
 
         reconnectAsync(first: boolean) {
-            return this.cortexM.init();
+            if (!first)
+                return this.packetIo.reconnectAsync()
+                    .then(() => this.cortexM.init())
+            else
+                return this.cortexM.init();
         }
 
         disconnectAsync() {
@@ -270,6 +273,11 @@ namespace pxt.editor {
                 wrap = w
                 log("reset")
                 return wrap.cortexM.reset(true)
+                    .catch(e => {
+                        log("trying re-connect")
+                        return wrap.reconnectAsync(false)
+                            .then(() => wrap.cortexM.reset(true))
+                    })
             })
             .then(() => getFlashChecksumsAsync(wrap))
             .then(buf => {
