@@ -83,8 +83,16 @@ namespace pxt.editor {
                     packetIoPromise = null;
                     return Promise.reject(err);
                 });
+            return packetIoPromise;
+        } else {
+            let packetIo: pxt.HF2.PacketIO;
+            return packetIoPromise
+                .then((io) => {
+                    packetIo = io;
+                    return io.reconnectAsync();
+                })
+                .then(() => packetIo);
         }
-        return packetIoPromise;
     }
 
     let previousDapWrapper: DAPWrapper;
