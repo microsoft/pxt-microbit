@@ -349,7 +349,7 @@ namespace pxt.editor {
             })
             .catch(e => {
                 if (e.type === "devicenotfound" && d.reportDeviceNotFoundAsync) {
-                    return d.reportDeviceNotFoundAsync("/device/windows-app/troubleshoot");
+                    return d.reportDeviceNotFoundAsync("/device/windows-app/troubleshoot", resp);
                 } else {
                     return saveHexAsync()
                 }
