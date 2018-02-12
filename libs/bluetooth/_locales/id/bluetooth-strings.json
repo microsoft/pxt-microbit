@@ -1,0 +1,22 @@
+{
+  "bluetooth.advertiseUid|block": "iklankan UID melalui bluetooth|namespace (bita 6-9)%ns|instance (bita 2-6)%instance|dengan kekuatan %power|dapat terkoneksi %connectable",
+  "bluetooth.advertiseUrl|block": "iklankan url melalui bluetooth %url|dengan kekuatan %power|dapat terkoneksi %connectable",
+  "bluetooth.onBluetoothConnected|block": "pada saat bluetooth terkoneksi",
+  "bluetooth.onBluetoothDisconnected|block": "pada saat bluetooth terputus",
+  "bluetooth.onUartDataReceived|block": "bluetooth|saat data diterima %delimiters=serial_delimiter_conv",
+  "bluetooth.setTransmitPower|block": "atur kekuatan transmisi melalui bluetooth %power",
+  "bluetooth.startAccelerometerService|block": "layanan akselerometer bluetooth",
+  "bluetooth.startButtonService|block": "layanan tombol bluetooth",
+  "bluetooth.startIOPinService|block": "layanan pin io bluetooth",
+  "bluetooth.startLEDService|block": "layanan led bluetooth",
+  "bluetooth.startMagnetometerService|block": "layanan magnetometer bluetooth",
+  "bluetooth.startTemperatureService|block": "layanan suhu bluetooth",
+  "bluetooth.startUartService|block": "layanan uart bluetooth",
+  "bluetooth.stopAdvertising|block": "hentikan beriklan melalui bluetooth",
+  "bluetooth.uartReadUntil|block": "uart bluetooth|baca hingga %del=serial_delimiter_conv",
+  "bluetooth.uartWriteNumber|block": "uart bluetooth|tulis angka %value",
+  "bluetooth.uartWriteString|block": "uart bluetooth|tulis untai %data",
+  "bluetooth.uartWriteValue|block": "uart bluetooth|tulis nilai %name|= %value",
+  "bluetooth|block": "bluetooth",
+  "{id:category}Bluetooth": "Bluetooth"
+}

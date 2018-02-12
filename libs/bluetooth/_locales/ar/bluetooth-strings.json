@@ -1,0 +1,22 @@
+{
+  "bluetooth.advertiseUid|block": "معرف مستخدم إعلان بلوتوث |مساحة الاسم (بايت 6-9)%ns|المثيل (بايت 2-6)%instance|بطاقة %power|قابل للاتصل %connectable",
+  "bluetooth.advertiseUrl|block": "عنوان url لإعلان البلوتوث %url|بطاقة %power|قابل للاتصال %connectable",
+  "bluetooth.onBluetoothConnected|block": "في حالة اتصال بلوتوث",
+  "bluetooth.onBluetoothDisconnected|block": "في حالة فصل اتصال بلوتوث",
+  "bluetooth.onUartDataReceived|block": "بلوتوث|لم يتم استلام بيانات %delimiters=serial_delimiter_conv",
+  "bluetooth.setTransmitPower|block": "تعيين طاقة إرسال بلوتوث %power",
+  "bluetooth.startAccelerometerService|block": "خدمة مقياس تسارع البلوتوث",
+  "bluetooth.startButtonService|block": "خدمة زر بلوتوث",
+  "bluetooth.startIOPinService|block": "خدمة دبوس بلوتوث io",
+  "bluetooth.startLEDService|block": "خدمة مصباح led لبلوتوث",
+  "bluetooth.startMagnetometerService|block": "خدمة مقياس مغناطيسية البلوتوث",
+  "bluetooth.startTemperatureService|block": "خدمة حرارة البلوتوث",
+  "bluetooth.startUartService|block": "خدمة uart للبلوتوث",
+  "bluetooth.stopAdvertising|block": "إيقاف إعلان بلوتوث",
+  "bluetooth.uartReadUntil|block": "بلوتوث uart|قراءة حتى %del=serial_delimiter_conv",
+  "bluetooth.uartWriteNumber|block": "بلوتوث uart|كتابة رقم %value",
+  "bluetooth.uartWriteString|block": "بلوتوث uart|كتابة سلسلة %data",
+  "bluetooth.uartWriteValue|block": "بلوتوث uart|كتابة قيمة %name|= %value",
+  "bluetooth|block": "بلوتوث",
+  "{id:category}Bluetooth": "بلوتوث"
+}

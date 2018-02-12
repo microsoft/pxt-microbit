@@ -1,0 +1,16 @@
+{
+  "radio.onDataReceived|block": "nadaj gdy dane są otrzymane",
+  "radio.receiveNumber|block": "nadaj otrzymaną liczbę",
+  "radio.receiveString|block": "nadaj otrzymany łańcuch znaków",
+  "radio.receivedSignalStrength|block": "nadaj otrzymaną siłę sygnału",
+  "radio.sendNumber|block": "radio wyślij liczbę %value",
+  "radio.sendString|block": "radio wyślij ciąg %msg",
+  "radio.sendValue|block": "radio wyślij|wartość %name|= %value",
+  "radio.setGroup|block": "radio ustaw %ID grupy",
+  "radio.setTransmitPower|block": "radio ustaw moc przesyłu %power",
+  "radio.setTransmitSerialNumber|block": "radia ustaw przesył numeru seryjnego %transmit",
+  "radio.writeReceivedPacketToSerial|block": "radio zapisz otrzymany pakiet do szeregowego",
+  "radio.writeValueToSerial|block": "radio zapisz wartość do szeregowego",
+  "radio|block": "radio",
+  "{id:category}Radio": "Radio"
+}

@@ -1,0 +1,22 @@
+{
+  "bluetooth.advertiseUid|block": "Bluetooth-Übertragung UID|Namensraum (Bytes 6-9)%ns|Instanz (Bytes 2-6)%instance|mit Leistung %power|verbindbar %connectable",
+  "bluetooth.advertiseUrl|block": "Bluetooth-Übertragung URL %url|mit Leistung %power|verbindbar %connectable",
+  "bluetooth.onBluetoothConnected|block": "wenn Bluetooth verbunden",
+  "bluetooth.onBluetoothDisconnected|block": "wenn Bluetooth getrennt ist",
+  "bluetooth.onUartDataReceived|block": "Bluetooth|wenn Daten empfangen %delimiters=serial_delimiter_conv",
+  "bluetooth.setTransmitPower|block": "Bluetooth-Übertragungsstärke %power",
+  "bluetooth.startAccelerometerService|block": "Bluetooth-Beschleunigungssensor-Dienst",
+  "bluetooth.startButtonService|block": "Bluetooth-Tasten-Dienst",
+  "bluetooth.startIOPinService|block": "Bluetooth-IO-Pin-Dienst",
+  "bluetooth.startLEDService|block": "Bluetooth-LED-Dienst",
+  "bluetooth.startMagnetometerService|block": "Bluetooth-Magnetometer-Dienst",
+  "bluetooth.startTemperatureService|block": "Bluetooth-Temperatur-Dienst",
+  "bluetooth.startUartService|block": "Bluetooth-UART-Dienst",
+  "bluetooth.stopAdvertising|block": "Bluetooth-Übertragung stoppen",
+  "bluetooth.uartReadUntil|block": "Bluetooth-UART|lesen bis %del=serial_delimiter_conv",
+  "bluetooth.uartWriteNumber|block": "Bluetooth-UART|schreibe Zahl %value",
+  "bluetooth.uartWriteString|block": "Bluetooth-UART|schreibe Zeichenkette %data",
+  "bluetooth.uartWriteValue|block": "Bluetooth-UART|schreibe Wert %name|= %value",
+  "bluetooth|block": "Bluetooth",
+  "{id:category}Bluetooth": "Bluetooth"
+}

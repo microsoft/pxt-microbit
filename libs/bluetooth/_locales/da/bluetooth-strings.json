@@ -1,0 +1,22 @@
+{
+  "bluetooth.advertiseUid|block": "bluetooth annoncer UID|navneområde (bytes 6-9)%ns|forekomst (bytes 2-6)%instance|med effekt %power|tilsluttelig %connectable",
+  "bluetooth.advertiseUrl|block": "bluetooth annoncer url-adresse %url|med effekt %power|tilsluttelig %connectable",
+  "bluetooth.onBluetoothConnected|block": "når bluetooth er tilsluttet",
+  "bluetooth.onBluetoothDisconnected|block": "når bluetooth frakobles",
+  "bluetooth.onUartDataReceived|block": "bluetooth|når data modtages %delimiters=serial_delimiter_conv",
+  "bluetooth.setTransmitPower|block": "bluetooth indstil sendeeffekt %power",
+  "bluetooth.startAccelerometerService|block": "bluetooth-accelerometertjeneste",
+  "bluetooth.startButtonService|block": "bluetooth-knaptjeneste",
+  "bluetooth.startIOPinService|block": "bluetooth io-pintjeneste",
+  "bluetooth.startLEDService|block": "bluetooth led-tjeneste",
+  "bluetooth.startMagnetometerService|block": "bluetooth-magnetometertjeneste",
+  "bluetooth.startTemperatureService|block": "bluetooth-temperaturtjeneste",
+  "bluetooth.startUartService|block": "bluetooth uart-tjeneste",
+  "bluetooth.stopAdvertising|block": "bluetooth stop annoncering",
+  "bluetooth.uartReadUntil|block": "bluetooth uart|læs indtill %del=serial_delimiter_conv",
+  "bluetooth.uartWriteNumber|block": "bluetooth uart|skriv nummer %value",
+  "bluetooth.uartWriteString|block": "bluetooth uart|skriv streng %data",
+  "bluetooth.uartWriteValue|block": "bluetooth uart|skriv værdi %name|= %value",
+  "bluetooth|block": "bluetooth",
+  "{id:category}Bluetooth": "Bluetooth"
+}

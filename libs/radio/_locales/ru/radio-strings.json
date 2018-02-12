@@ -1,0 +1,16 @@
+{
+  "radio.onDataReceived|block": "радио: при получении данных",
+  "radio.receiveNumber|block": "радио: получить число",
+  "radio.receiveString|block": "радио: получить строку",
+  "radio.receivedSignalStrength|block": "радио: уровень принимаемого сигнала",
+  "radio.sendNumber|block": "радио: отправить число %value",
+  "radio.sendString|block": "радио: отправить строку %msg",
+  "radio.sendValue|block": "радио: отправить|значение %name|= %value",
+  "radio.setGroup|block": "радио: задать групповой %ID",
+  "radio.setTransmitPower|block": "радио: задать мощность передачи %power",
+  "radio.setTransmitSerialNumber|block": "радио: задать передачу серийного номера %transmit",
+  "radio.writeReceivedPacketToSerial|block": "радио: записать принятый пакет в последовательный порт",
+  "radio.writeValueToSerial|block": "радио: записать значение в последовательный порт",
+  "radio|block": "радио",
+  "{id:category}Radio": "Радио"
+}

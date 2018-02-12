@@ -1,0 +1,17 @@
+{
+  "radio.onDataPacketReceived|block": "當收到廣播",
+  "radio.onDataReceived|block": "當接收到資料時廣播",
+  "radio.receiveNumber|block": "廣播接收數字",
+  "radio.receiveString|block": "廣播接收字串",
+  "radio.receivedSignalStrength|block": "廣播接收訊號強度",
+  "radio.sendNumber|block": "廣播發送數字 %value",
+  "radio.sendString|block": "廣播發送文字 %msg",
+  "radio.sendValue|block": "廣播發送|值 %name|= %value",
+  "radio.setGroup|block": "廣播群組設為 %ID",
+  "radio.setTransmitPower|block": "廣播強度設為 %power",
+  "radio.setTransmitSerialNumber|block": "廣播序號設為 %transmit",
+  "radio.writeReceivedPacketToSerial|block": "廣播接收封包寫入到序列",
+  "radio.writeValueToSerial|block": "廣播將值寫入序列",
+  "radio|block": "廣播",
+  "{id:category}Radio": "廣播"
+}

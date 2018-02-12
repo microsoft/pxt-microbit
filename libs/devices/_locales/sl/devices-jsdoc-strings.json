@@ -1,0 +1,18 @@
+{
+  "devices": "Upravljaj telefon z BBC micro:bit-om preko Bluetooth-a.",
+  "devices.onGamepadButton": "Nastavi kodo, ki se izvede, ko micro:bit dobi ukaz od seznanjenega ploščka.",
+  "devices.onGamepadButton|param|body": "koda, ki se bo zagnala, ko je pritisnjen gumb",
+  "devices.onGamepadButton|param|name": "ime gumba",
+  "devices.onNotified": "Nastavi kodo, ki se bo zagnala, ko naprava opozori na določen dogodek.",
+  "devices.onNotified|param|body": "obravnalec kode, ko se zgodi dogodek",
+  "devices.onNotified|param|event": "opis dogodka",
+  "devices.onSignalStrengthChanged": "Nastavi kodo, da se zažene, ko naprava opozori o spremembi moči v signalu.",
+  "devices.onSignalStrengthChanged|param|body": "Koda se bo zagnala, ko se spremeni moč signala.",
+  "devices.raiseAlertTo": "Pošlje ``alert`` ukaz nadrejeni napravi.",
+  "devices.raiseAlertTo|param|event": "opis dogodka",
+  "devices.signalStrength": "Vrne zadnjo moč signala, ki ga je oddala seznanjena naprava.",
+  "devices.tellCameraTo": "Pošlje ``camera`` ukaz nadrejeni napravi.",
+  "devices.tellCameraTo|param|event": "opis dogodka",
+  "devices.tellRemoteControlTo": "Pošlje ``remote control`` ukaz nadrejeni napravi.",
+  "devices.tellRemoteControlTo|param|event": "opis dogodka"
+}

@@ -1,0 +1,18 @@
+{
+  "devices": "Ohjaa puhelinta BBC:n Micro:bitillä bluetoothin kautta.",
+  "devices.onGamepadButton": "Rekisteröi koodi, joka suoritetaan, kun micro:bit vastaanottaa komennon yhdistetystä peliohjaimesta.",
+  "devices.onGamepadButton|param|body": "suoritettava koodi, kun painiketta painetaan",
+  "devices.onGamepadButton|param|name": "painikkeen nimi",
+  "devices.onNotified": "Rekisteröi koodin, joka suoritetaan, kun laite ilmoittaa tietystä tapahtumasta.",
+  "devices.onNotified|param|body": "koodin käsittelijä, kun tapahtuma käynnistyy",
+  "devices.onNotified|param|event": "tapahtuman kuvaus",
+  "devices.onSignalStrengthChanged": "Rekisteröi koodin, joka suoritetaan, kun laite ilmoittaa signaalin voimakkuuden muutoksesta.",
+  "devices.onSignalStrengthChanged|param|body": "Suoritettava koodi, kun signaalin voimakkuus muuttuu.",
+  "devices.raiseAlertTo": "Lähettää ``alert``-komennon isäntälaitteelle.",
+  "devices.raiseAlertTo|param|event": "tapahtuman kuvaus",
+  "devices.signalStrength": "Palauttaa viimeisimmän yhdistetyn laitteen ilmoittaman signaalin voimakkuuden.",
+  "devices.tellCameraTo": "Lähettää ``camera``-komennon isäntälaitteelle.",
+  "devices.tellCameraTo|param|event": "tapahtuman kuvaus",
+  "devices.tellRemoteControlTo": "Lähettää ``remote control``-komennon isäntälaitteelle.",
+  "devices.tellRemoteControlTo|param|event": "tapahtuman kuvaus"
+}

@@ -1,0 +1,22 @@
+{
+  "bluetooth.advertiseUid|block": "UID de publicación de bluetooth|espacio de nombres (bytes 6-9)%ns|instancia (bytes 2-6)%instance|con potencia %power|conectable %connectable",
+  "bluetooth.advertiseUrl|block": "url de publicación de bluetooth %url|con potencia %power|conectable %connectable",
+  "bluetooth.onBluetoothConnected|block": "al conectar bluetooth",
+  "bluetooth.onBluetoothDisconnected|block": "al desconectar bluetooth",
+  "bluetooth.onUartDataReceived|block": "bluetooth|al recibir datos %delimiters=serial_delimiter_conv",
+  "bluetooth.setTransmitPower|block": "bluetooth establecer potencia de transmisión %power",
+  "bluetooth.startAccelerometerService|block": "blue tooth servicio de acelerómetro",
+  "bluetooth.startButtonService|block": "bluetooth servicio de botón",
+  "bluetooth.startIOPinService|block": "bluetooth servicio de pin E/S",
+  "bluetooth.startLEDService|block": "bluetooth servicio de led",
+  "bluetooth.startMagnetometerService|block": "bluetooth servicio de magnetómetro",
+  "bluetooth.startTemperatureService|block": "bluetooth servicio de temperatura",
+  "bluetooth.startUartService|block": "bluetooth servicio uart",
+  "bluetooth.stopAdvertising|block": "detener publicación bluetooth",
+  "bluetooth.uartReadUntil|block": "uart bluetooth|leer hasta %del=serial_delimiter_conv",
+  "bluetooth.uartWriteNumber|block": "uart bluetooth|escribir número %valor",
+  "bluetooth.uartWriteString|block": "uart bluetooth|escribir cadena %data",
+  "bluetooth.uartWriteValue|block": "uart bluetooth|escribir valor %name|= %valor",
+  "bluetooth|block": "bluetooth",
+  "{id:category}Bluetooth": "Bluetooth"
+}

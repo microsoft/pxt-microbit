@@ -1,0 +1,22 @@
+{
+  "bluetooth.advertiseUid|block": "bluetooth reklam UID|ad alanı (6-9 bayt)%ns|örnek (2-6 bayt)%instance|güç %power|bağlanılabilirlik %connectable",
+  "bluetooth.advertiseUrl|block": "bluetooth reklam URL'si %url|güç %power|bağlanılabilirlik %connectable",
+  "bluetooth.onBluetoothConnected|block": "Bluetooth'a bağlandı",
+  "bluetooth.onBluetoothDisconnected|block": "Bluetooth bağlantısı kesildi",
+  "bluetooth.onUartDataReceived|block": "bluetooth|veri alımı %delimiters=serial_delimiter_conv",
+  "bluetooth.setTransmitPower|block": "bluetooth veri iletim gücünü ayarla %power",
+  "bluetooth.startAccelerometerService|block": "Bluetooth ivmeölçer hizmeti",
+  "bluetooth.startButtonService|block": "Bluetooth anahtar hizmeti",
+  "bluetooth.startIOPinService|block": "Bluetooth io pin hizmeti",
+  "bluetooth.startLEDService|block": "Bluetooth LED hizmeti",
+  "bluetooth.startMagnetometerService|block": "Bluetooth manyetometre hizmeti",
+  "bluetooth.startTemperatureService|block": "Bluetooth sıcaklık hizmeti",
+  "bluetooth.startUartService|block": "Bluetooth UART hizmeti",
+  "bluetooth.stopAdvertising|block": "Bluetooth reklam yayınını durdur",
+  "bluetooth.uartReadUntil|block": "bluetooth UART|okur %del=serial_delimiter_conv",
+  "bluetooth.uartWriteNumber|block": "bluetooth UART|yazma sayısı %value",
+  "bluetooth.uartWriteString|block": "bluetooth UART|yazma dizini %data",
+  "bluetooth.uartWriteValue|block": "bluetooth UART|yazma değeri %name|= %value",
+  "bluetooth|block": "bluetooth",
+  "{id:category}Bluetooth": "Bluetooth"
+}

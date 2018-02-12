@@ -1,0 +1,22 @@
+{
+  "bluetooth.advertiseUid|block": "蓝牙公布 UID|命名空间（字节 6-9）%ns|实例（字节 2-6）%instance|功率 %power|可连接 %connectable",
+  "bluetooth.advertiseUrl|block": "蓝牙公布网址 %url|功率 %power|可连接 %connectable",
+  "bluetooth.onBluetoothConnected|block": "通过蓝牙连接时",
+  "bluetooth.onBluetoothDisconnected|block": "断开蓝牙连接时",
+  "bluetooth.onUartDataReceived|block": "通过蓝牙接收数据并遇到 %delimiters=serial_delimiter_conv",
+  "bluetooth.setTransmitPower|block": "设置蓝牙传输功率 %power",
+  "bluetooth.startAccelerometerService|block": "蓝牙加速计服务",
+  "bluetooth.startButtonService|block": "蓝牙按钮服务",
+  "bluetooth.startIOPinService|block": "蓝牙 io 引脚服务",
+  "bluetooth.startLEDService|block": "蓝牙 led 服务",
+  "bluetooth.startMagnetometerService|block": "蓝牙磁力计服务",
+  "bluetooth.startTemperatureService|block": "蓝牙温度服务",
+  "bluetooth.startUartService|block": "蓝牙 uart 服务",
+  "bluetooth.stopAdvertising|block": "停止蓝牙公布",
+  "bluetooth.uartReadUntil|block": "读取蓝牙 uart|，直至遇到 %del=serial_delimiter_conv",
+  "bluetooth.uartWriteNumber|block": "蓝牙 uart|写入数字 %value",
+  "bluetooth.uartWriteString|block": "蓝牙 uart|写入字符串 %data",
+  "bluetooth.uartWriteValue|block": "蓝牙 uart|写入值 %name|= %value",
+  "bluetooth|block": "蓝牙",
+  "{id:category}Bluetooth": "蓝牙"
+}

@@ -1,0 +1,14 @@
+{
+  "radio.onDataPacketReceived|block": "ob radijskem sprejemu",
+  "radio.onDataReceived|block": "ob prejetju podatkov iz radia",
+  "radio.receiveNumber|block": "radio prejme številko",
+  "radio.receiveString|block": "radio sprejme niz",
+  "radio.sendNumber|block": "radio pošlje število %value",
+  "radio.sendString|block": "radio pošlje niz %msg",
+  "radio.sendValue|block": "radio pošlje|vrednost %name|= %vrednost",
+  "radio.setGroup|block": "nastavi skupino radia %ID",
+  "radio.setTransmitPower|block": "nastavi moč oddajanega signala radia %power",
+  "radio.setTransmitSerialNumber|block": "nastavi oddajno serijsko številko radia %oddajaj",
+  "radio|block": "radio",
+  "{id:category}Radio": "Radio"
+}

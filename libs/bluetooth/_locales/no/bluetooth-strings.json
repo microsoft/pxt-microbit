@@ -3,6 +3,7 @@
   "bluetooth.advertiseUrl|block": "bluetooth kringkast url %url|med sendereffekt %power|kan tilkobles %connectable",
   "bluetooth.onBluetoothConnected|block": "når bluetooth tilkobles",
   "bluetooth.onBluetoothDisconnected|block": "når bluetooth frakobles",
+  "bluetooth.onUartDataReceived|block": "bluetooth|når data mottas %delimiters=serial_delimiter_conv",
   "bluetooth.setTransmitPower|block": "bluetooth sett sendereffekt %power",
   "bluetooth.startAccelerometerService|block": "bluetooth akselerometer-tjeneste",
   "bluetooth.startButtonService|block": "bluetooth trykknapp-tjeneste",

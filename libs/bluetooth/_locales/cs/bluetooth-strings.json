@@ -1,0 +1,22 @@
+{
+  "bluetooth.advertiseUid|block": "zveřejnit UID přes bluetooth| jmenný prostor (6-9 bytů)%ns | instance (2-6 bytů)%instance |o výkonu %power | připojitelné %connectable",
+  "bluetooth.advertiseUrl|block": "zveřejnit %url přes bluetooth| o výkonu %power | připojitelné %connectable",
+  "bluetooth.onBluetoothConnected|block": "když je připojen bluetooth",
+  "bluetooth.onBluetoothDisconnected|block": "když je bluetooth odpojen",
+  "bluetooth.onUartDataReceived|block": "bluetooth|na přijímaná data %delimiters=serial_delimiter_conv",
+  "bluetooth.setTransmitPower|block": "nastavit sílu signálu bluetooth %power",
+  "bluetooth.startAccelerometerService|block": "služba bluetooth akcelometru",
+  "bluetooth.startButtonService|block": "služba bluetooth tlačítka",
+  "bluetooth.startIOPinService|block": "služba bluetooth io pinu",
+  "bluetooth.startLEDService|block": "služba bluetooth led světel",
+  "bluetooth.startMagnetometerService|block": "služba bluetooth magnetometru",
+  "bluetooth.startTemperatureService|block": "služba bluetooth teploměru",
+  "bluetooth.startUartService|block": "služba bluetooth UART",
+  "bluetooth.stopAdvertising|block": "zakázat oznámení přes bluetooth",
+  "bluetooth.uartReadUntil|block": "bluetooth uart|číst dokud %del=serial_delimiter_conv",
+  "bluetooth.uartWriteNumber|block": "bluetooth uart|zapsat číslo %value",
+  "bluetooth.uartWriteString|block": "bluetooth uart|zapsat řetězec %data",
+  "bluetooth.uartWriteValue|block": "bluetooth uart|zapsat hodnotu %name|= %value",
+  "bluetooth|block": "bluetooth",
+  "{id:category}Bluetooth": "Bluetooth"
+}

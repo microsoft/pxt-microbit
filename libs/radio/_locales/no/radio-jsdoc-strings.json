@@ -1,3 +1,26 @@
 {
-  "radio.onDataPacketReceived": "Setter opp kode som skal kjøres når radioen mottar data. Henter mottatte data inn i en variabel."
+  "radio": "Kommunisere data ved hjelp av radiopakker",
+  "radio.Packet.receivedNumber": "Talldataene hvis et tall ble sendt i denne pakken (via ``sendNumber()`` eller ``sendValue()``)\neller 0 hvis pakken ikke inneholdt et tall.",
+  "radio.Packet.receivedString": "Strengdataene hvis en streng ble sendt i pakken (via ``sendString()`` eller ``sendValue()``)\neller en tom streng hvis pakken ikke inneholdt en streng.",
+  "radio.Packet.serial": "Serienummeret til avsenderen av pakken eller 0, hvis senderen ikke sendte sitt serienummer.",
+  "radio.Packet.signal": "Indikator (RSSI) for mottatt signalstyrke av pakken.",
+  "radio.Packet.time": "Systemtid når avsender sendte pakken.",
+  "radio.onDataPacketReceived": "Setter opp kode som skal kjøres når radioen mottar data. Henter mottatte data inn i en variabel.",
+  "radio.onDataReceived": "Registrerer kode som skal kjøres når en pakke mottas over radio.",
+  "radio.receiveNumber": "Leser den neste pakken fra radiokøen og returnerer pakkens talldata eller 0 hvis pakken ikke inneholdt et tall.",
+  "radio.receiveString": "Leser den neste pakken fra radiokøen og returnerer pakkens talldata eller 0 hvis pakken ikke inneholdt et tall.",
+  "radio.receivedSignalStrength": "Får mottatt signalstyrkeindikator (RSSI) fra siste pakke tatt fra radiokøen (via ``receiveNumber``, ``receiveString``, osv). Støttes ikke i simulator.\nnavneområde = radiostasjoner",
+  "radio.sendNumber": "Sender et tall over radio til alle tilkoblede mikro:bit i gruppen.",
+  "radio.sendString": "Sender en tekst sammen med enhetsserienummer og kjøretiden til alle tilkoblede mikro:bit i gruppen.",
+  "radio.sendValue": "Sender et navn / verdipar sammen med enhetsserienummer og kjøretiden til alle tilkoblede mikro:bit i gruppen.",
+  "radio.sendValue|param|name": "områdenavn (maks 12 tegn), f.eks: \"navn\"",
+  "radio.sendValue|param|value": "den numerisk verdien",
+  "radio.setGroup": "Angir gruppe-id for radiokommunikasjon. En micro:bit kan bare høre på én gruppe-ID til enhver tid.",
+  "radio.setGroup|param|id": "gruppe-id mellom ``0`` og ``255``, eks.: 1",
+  "radio.setTransmitPower": "Endre senderens utgående strømnivå til den angitte verdien.",
+  "radio.setTransmitPower|param|power": "en verdi i området 0..7, der 0 er laveste verdi og 7 er den høyeste. F.eks.: 7",
+  "radio.setTransmitSerialNumber": "Sett radioen til å overføre serienummeret i hver melding.",
+  "radio.setTransmitSerialNumber|param|transmit": "verdien indikerer om serienummer er sendt, f.eks: sann",
+  "radio.writeReceivedPacketToSerial": "Skriver siste mottatte pakke til seriell som JSON. Dette bør angis i tilbakekallet ``onDataPacketReceived``.",
+  "radio.writeValueToSerial": "Leser neste pakke fra radiokøen og skriver det til seriell som JSON."
 }

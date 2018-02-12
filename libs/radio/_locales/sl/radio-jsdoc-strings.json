@@ -1,0 +1,20 @@
+{
+  "radio": "Sporoči podatke z uporabo radijskih paketov",
+  "radio.onDataReceived": "Zapiše kodo za izvajanje ko je sprejel paket preko radia.",
+  "radio.receiveNumber": "Prebere naslednji paket iz čakalne vrste in vrne številko vsebovano v paket, če paket ni vsebovala številke vrne 0 ničlo.",
+  "radio.receiveString": "Prebere naslednji paket iz čakalne vrste in vrne vrednost niza, ki gaje vseboval paket. Če paket ni vseboval niza vrne prazno vrednost.",
+  "radio.receivedSignalStrength": "Dobi indikator moči signala (RSSI), ki se nanaša na zadnji sprejeti paket v radijski čakalni vrsti (preko '' receiveNumber'', '' receiveString'', itd). Simulator tega ne podpira.\nimenski prostor = radiu",
+  "radio.sendNumber": "Radio odda številko vsem v skupino povezanim micro:bit sprejemnikom.",
+  "radio.sendString": "Radio odda: niz, serijsko številko naprave in čas delovanja vsem v skupino povezanim micr:bitom.",
+  "radio.sendValue": "Radio odda dvojico vrednosti ime/vrednost skupaj s serijsko številko mikrobita in časom delovanja vsem v skupino vključenim micro:bitom.",
+  "radio.sendValue|param|name": "polje ime (vsebuje največ 12 znakov), npr: \"PoljubnoIME\"",
+  "radio.sendValue|param|value": "številčna vrednost",
+  "radio.setGroup": "Določa ID številko skupine za radiokomunikacije. Mikro:bit lahko sprejema samo komunikacijo ene skupine s podanim ID.\n@ param id številka skupine je lahko med '' 0'' in '' 255'', 1 primer",
+  "radio.setGroup|param|id": "številka skupine med ``0`` in ``255``, npr: 1",
+  "radio.setTransmitPower": "Spremeni izhodno moč oddajnika na podano vrednost razpon je 0.. 7.",
+  "radio.setTransmitPower|param|power": "vrednost v razponu od 0..7, kjer je 0 najnižja moč in 7 najmočnejša moč signala. npr:5",
+  "radio.setTransmitSerialNumber": "Nastavitev radijskega oddajanja, da pošilja serijsko številko v vsakem sporočilu.",
+  "radio.setTransmitSerialNumber|param|transmit": "vrednost označuje, če je serijska številka posredovana eg: true",
+  "radio.writeReceivedPacketToSerial": "Zaporedno piše zadnji prejeti paket kot JSON. Klic naj se uporabi v ´´onDataPacketReceived``povr. klicu.",
+  "radio.writeValueToSerial": "Prebere naslednji paket iz radijske čakalne vrste in piše v zaporedni kot JSON."
+}

@@ -1,0 +1,18 @@
+{
+  "devices": "التحكم في هاتف باستخدام BBC micro:bit عن طريق البلوتوث.",
+  "devices.onGamepadButton": "تسجيل تعليمة برمجية لتشغيلها عندما يتلقى micro:bit أمرًا من لوحة اللعبة المقترنة.",
+  "devices.onGamepadButton|param|body": "تعليمة برمجية للتشغيل عند الضغط على الزر",
+  "devices.onGamepadButton|param|name": "اسم الزر",
+  "devices.onNotified": "يسجل تعليمة البرمجية لتشغيلها عندما يتم إخطار الجهاز بفعالية معينة.",
+  "devices.onNotified|param|body": "معالج التعليمات البرمجية عند إطلاق حدث",
+  "devices.onNotified|param|event": "وصف الحدث",
+  "devices.onSignalStrengthChanged": "يسجل تعليمة برمجية لتشغيلها عندما يتم إخطار الجهاز بتغيير في قوة الإشارة.",
+  "devices.onSignalStrengthChanged|param|body": "تعليمة برمجية للتشغيل عند تغير قوة الإشارة.",
+  "devices.raiseAlertTo": "يرسل أمر ``تنبيه`` إلى الجهاز الرئيسي.",
+  "devices.raiseAlertTo|param|event": "وصف الحدث",
+  "devices.signalStrength": "يرجع آخر قوة إشارة تم الإبلاغ عنها بواسطة الجهاز المقترن.",
+  "devices.tellCameraTo": "يرسل أمر ``كاميرا`` إلى الجهاز المقترن.",
+  "devices.tellCameraTo|param|event": "وصف الحدث",
+  "devices.tellRemoteControlTo": "يرسل أمر ``تحكم عن بعد`` إلى الجهاز المقترن.",
+  "devices.tellRemoteControlTo|param|event": "وصف الحدث"
+}

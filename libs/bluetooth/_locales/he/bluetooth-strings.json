@@ -1,0 +1,14 @@
+{
+  "bluetooth.onBluetoothConnected|block": "בחיבור לבלוטות'",
+  "bluetooth.onBluetoothDisconnected|block": "בניתוק בלוטות'",
+  "bluetooth.startAccelerometerService|block": "שירות האצת בלוטות'",
+  "bluetooth.startButtonService|block": "כפתור שירות בלוטות'",
+  "bluetooth.startIOPinService|block": "שירות פין קלט/פלט בלוטות'",
+  "bluetooth.startLEDService|block": "נורית שירות בלוטות'",
+  "bluetooth.startMagnetometerService|block": "שירות מגנטומטר בלוטות'",
+  "bluetooth.startTemperatureService|block": "שירות טמפרטורה בלוטות'",
+  "bluetooth.startUartService|block": "שירות פין קלט/פלט בלוטות'",
+  "bluetooth.stopAdvertising|block": "בלוטות' הפסק פרסום",
+  "bluetooth|block": "בלוטות'",
+  "{id:category}Bluetooth": "בלוטות'"
+}

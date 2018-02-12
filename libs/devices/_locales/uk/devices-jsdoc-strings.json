@@ -1,0 +1,18 @@
+{
+  "devices": "Управління телефоном за допомогою BBC micro:bit через Bluetooth.",
+  "devices.onGamepadButton": "Зареєструвати код, який запускається, коли micro:bit отримує команду з пов'язаного геймпаду.",
+  "devices.onGamepadButton|param|body": "код, що запускається при натисканні на кнопку",
+  "devices.onGamepadButton|param|name": "назва кнопки",
+  "devices.onNotified": "Реєструє код, що запускається, коли пристрій повідомлює про певну подію.",
+  "devices.onNotified|param|body": "обробник коду при задіюванні події",
+  "devices.onNotified|param|event": "опис події",
+  "devices.onSignalStrengthChanged": "Реєструє код, що запускається, коли пристрій повідомляє про зміну рівня сигналу.",
+  "devices.onSignalStrengthChanged|param|body": "Код, що запускається у разі зміни рівня сигналу.",
+  "devices.raiseAlertTo": "Надсилає команду \"попередження\" на батьківський пристрій.",
+  "devices.raiseAlertTo|param|event": "опис події",
+  "devices.signalStrength": "Повертає останній рівень сигналу, переданий пов'язаним пристроєм.",
+  "devices.tellCameraTo": "Надсилає команду \"камера\" на батьківський пристрій.",
+  "devices.tellCameraTo|param|event": "опис події",
+  "devices.tellRemoteControlTo": "Надсилає команду \"дистанційне управління\" на батьківський пристрій.",
+  "devices.tellRemoteControlTo|param|event": "опис події"
+}

@@ -1,0 +1,16 @@
+{
+  "radio.onDataReceived|block": "rádió: adat vételekor",
+  "radio.receiveNumber|block": "rádió: szám vétele",
+  "radio.receiveString|block": "rádió: szöveg vétele",
+  "radio.receivedSignalStrength|block": "rádió: vett jelerősség",
+  "radio.sendNumber|block": "rádió: szám küldése %value",
+  "radio.sendString|block": "rádió: szöveg küldése %value",
+  "radio.sendValue|block": "rádió: érték|küldése %name|= %value",
+  "radio.setGroup|block": "rádió: csoport legyen %ID",
+  "radio.setTransmitPower|block": "rádió: adási teljesítmény legyen %power",
+  "radio.setTransmitSerialNumber|block": "rádió: sorozatszám küldése legyen %transmit",
+  "radio.writeReceivedPacketToSerial|block": "rádió: vett csomag soros vonalra írása",
+  "radio.writeValueToSerial|block": "rádió: érték soros vonalra írása",
+  "radio|block": "rádió",
+  "{id:category}Radio": "Rádió"
+}

@@ -1,0 +1,22 @@
+{
+  "bluetooth.advertiseUid|block": "UID ogłoszenia bluetooth|przestrzeń nazw (bajty 6-9)%ns|instancja (bajty 2-6)%instance|z mocą %power|podłączane %connectable",
+  "bluetooth.advertiseUrl|block": "url ogłoszenia bluetooth %url|z mocą %power|podłączane %connectable",
+  "bluetooth.onBluetoothConnected|block": "bluetooth połączony",
+  "bluetooth.onBluetoothDisconnected|block": "bluetooth rozłączony",
+  "bluetooth.onUartDataReceived|block": "bluetooth|gdy otrzymano dane %delimiters=serial_delimiter_conv",
+  "bluetooth.setTransmitPower|block": "ustawiona moc przesyłu bluetootha: %power",
+  "bluetooth.startAccelerometerService|block": "przesłanie pomiaru przyspieszenia przez bluetooth",
+  "bluetooth.startButtonService|block": "przesłanie przez bluetooth odczytu stanu przycisku",
+  "bluetooth.startIOPinService|block": "sterowanie urządzeniami wyjścia/wejście przez bluetooth",
+  "bluetooth.startLEDService|block": "sterowanie przez bluetooth wyświetlaczem Led",
+  "bluetooth.startMagnetometerService|block": "pobieranie przez bluetooth pomiarów magnetometru",
+  "bluetooth.startTemperatureService|block": "pobieranie przez bluetooth pomiarów temperatury",
+  "bluetooth.startUartService|block": "wymiana przez bluetooth danych Uart",
+  "bluetooth.stopAdvertising|block": "bluetooth zaprzestań ogłaszania",
+  "bluetooth.uartReadUntil|block": "bluetooth uart | czytaj aż do %del = serial_delimiter_conv",
+  "bluetooth.uartWriteNumber|block": "bluetooth uart | Napisz numer %value",
+  "bluetooth.uartWriteString|block": "bluetooth uart | Napisz łańcuch %data",
+  "bluetooth.uartWriteValue|block": "bluetooth uart | Napisz wartość %name | = %value",
+  "bluetooth|block": "bluetooth",
+  "{id:category}Bluetooth": "Bluetooth"
+}

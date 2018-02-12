@@ -1,0 +1,17 @@
+{
+  "radio.onDataPacketReceived|block": "на получен по радио",
+  "radio.onDataReceived|block": "радио на получени данни",
+  "radio.receiveNumber|block": "число на получаване по радио",
+  "radio.receiveString|block": "низ на получаване по радио",
+  "radio.receivedSignalStrength|block": "получена по радио сила на сигнала",
+  "radio.sendNumber|block": "изпратено по радио число %value",
+  "radio.sendString|block": "изпратен по радио низ %msg",
+  "radio.sendValue|block": "изпратен по радио|стойност %name|= %value",
+  "radio.setGroup|block": "зададена по радио група %ID",
+  "radio.setTransmitPower|block": "зададена от радио предавателна мощност %power",
+  "radio.setTransmitSerialNumber|block": "зададено от радио предаване на сериен номер %transmit",
+  "radio.writeReceivedPacketToSerial|block": "написан чрез радио получен пакет към серия",
+  "radio.writeValueToSerial|block": "записана чрез радио стойност към серия",
+  "radio|block": "радио",
+  "{id:category}Radio": "Радио"
+}

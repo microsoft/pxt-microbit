@@ -1,0 +1,18 @@
+{
+  "devices": "마이크로비트의 블루투스 기능을 이용해 스마트폰을 제어합니다.",
+  "devices.onGamepadButton": "페어링된 게임패드에서 명령이 전송되면, 설정한 작업을 실행합니다.",
+  "devices.onGamepadButton|param|body": "버튼이 눌렸을 때 실행시킬 코드",
+  "devices.onGamepadButton|param|name": "버튼 이름",
+  "devices.onNotified": "이벤트가 발생하면, 설정한 작업을 실행합니다.",
+  "devices.onNotified|param|body": "이벤트가 발생했을 때 처리할 코드 핸들러",
+  "devices.onNotified|param|event": "이벤트 설명",
+  "devices.onSignalStrengthChanged": "연결 신호 강도가 변화하면, 설정한 작업을 실행합니다.",
+  "devices.onSignalStrengthChanged|param|body": "연결 신호 강도가 변화했을 때 실행할 코드",
+  "devices.raiseAlertTo": "연결시킨 장치에 ``alert`` 명령을 전송합니다.",
+  "devices.raiseAlertTo|param|event": "이벤트 설명",
+  "devices.signalStrength": "페어링된 장치에서 받은 마지막 신호의 세기를 읽어옵니다.",
+  "devices.tellCameraTo": "연결시킨 장치에 ``camera`` 명령을 전송합니다.",
+  "devices.tellCameraTo|param|event": "이벤트 설명",
+  "devices.tellRemoteControlTo": "연결시킨 장치에 ``remote control`` 명령을 전송합니다.",
+  "devices.tellRemoteControlTo|param|event": "이벤트 설명"
+}

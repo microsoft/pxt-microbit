@@ -1,0 +1,18 @@
+{
+  "devices": "Eine Telefon mit dem BBC-micro:bt per Bluetooth steuern.",
+  "devices.onGamepadButton": "Registriert Code, der ausgeführt werden soll, wenn der micro:bit einen Befehl vom verbundenen Gamepad erhält.",
+  "devices.onGamepadButton|param|body": "Code, der ausgeführt werden soll, wenn die Taste gedrückt wird",
+  "devices.onGamepadButton|param|name": "Name der Schaltfläche",
+  "devices.onNotified": "Registriert Code, der ausgeführt werden soll, wenn das Gerät von einem bestimmten Ereignis benachrichtigt wird.",
+  "devices.onNotified|param|body": "Codehandler, wenn Ereignis ausgelöst wird",
+  "devices.onNotified|param|event": "Beschreibung des Ereignisses",
+  "devices.onSignalStrengthChanged": "Registriert Code, der ausgeführt werden soll, wenn das Gerät über eine Änderung der Signalstärke informiert wird.",
+  "devices.onSignalStrengthChanged|param|body": "Code, der ausgeführt wird, wenn die Signalstärke sich ändert.",
+  "devices.raiseAlertTo": "Sendet den Befehl ‚‚Alarm‘‘ an das Elterngerät.",
+  "devices.raiseAlertTo|param|event": "Beschreibung des Ereignisses",
+  "devices.signalStrength": "Gibt die letzte vom gekoppelten Gerät gemeldete Signalstärke aus.",
+  "devices.tellCameraTo": "Sendet einen Befehl ‚‚Alarm‘‘ an das Elterngerät.",
+  "devices.tellCameraTo|param|event": "Beschreibung des Ereignisses",
+  "devices.tellRemoteControlTo": "Sendet einen Befehl ‚‚Fernbedienung‘‘ an das Elterngerät.",
+  "devices.tellRemoteControlTo|param|event": "Beschreibung des Ereignisses"
+}

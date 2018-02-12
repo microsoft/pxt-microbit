@@ -1,0 +1,18 @@
+{
+  "devices": "通过蓝牙控制带 BBC micro:bit 的电话。",
+  "devices.onGamepadButton": "将代码注册为在 micro:bit 从配对的游戏手柄接收到命令时运行。",
+  "devices.onGamepadButton|param|body": "按下按钮时要运行的代码",
+  "devices.onGamepadButton|param|name": "按钮名称",
+  "devices.onNotified": "将代码注册为在设备通知特定事件时运行。",
+  "devices.onNotified|param|body": "事件触发时的代码处理程序",
+  "devices.onNotified|param|event": "事件描述",
+  "devices.onSignalStrengthChanged": "将代码注册为在设备通知信号强度变化时运行。",
+  "devices.onSignalStrengthChanged|param|body": "信号强度变化时要运行的代码。",
+  "devices.raiseAlertTo": "向父设备发送“警报”命令。",
+  "devices.raiseAlertTo|param|event": "事件描述",
+  "devices.signalStrength": "返回配对设备报告的上一个信号强度。",
+  "devices.tellCameraTo": "向父设备发送“相机”命令。",
+  "devices.tellCameraTo|param|event": "事件描述",
+  "devices.tellRemoteControlTo": "向父设备发送“遥控”命令。",
+  "devices.tellRemoteControlTo|param|event": "事件描述"
+}

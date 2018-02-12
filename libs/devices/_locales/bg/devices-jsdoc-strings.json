@@ -1,0 +1,18 @@
+{
+  "devices": "Контролиране на телефон с BBC micro:bit чрез Bluetooth.",
+  "devices.onGamepadButton": "Регистриране на код за стартиране, когато micro:bit получава команда от двоен геймпад.",
+  "devices.onGamepadButton|param|body": "код за стартиране, когато бутонът е натиснат",
+  "devices.onGamepadButton|param|name": "име на бутон",
+  "devices.onNotified": "Регистрира кода за стратиране, когато устройството известява за определено събитие.",
+  "devices.onNotified|param|body": "манупулатор за код, когато е задействано събитие",
+  "devices.onNotified|param|event": "описание на събитие",
+  "devices.onSignalStrengthChanged": "Регистрира код за стартиране, когато устройството известява за промяна в силата на сигнала.",
+  "devices.onSignalStrengthChanged|param|body": "Стартиране на код, когато силата на сигнала се променя.",
+  "devices.raiseAlertTo": "Изпраща команда ``известие`` към родителското устройство.",
+  "devices.raiseAlertTo|param|event": "описание на събитие",
+  "devices.signalStrength": "Връща последния сигнал, докладван от двойното устройство.",
+  "devices.tellCameraTo": "Изпраща команда ``камера`` към родителското устройство.",
+  "devices.tellCameraTo|param|event": "описание на събитие",
+  "devices.tellRemoteControlTo": "Изпраща команда ``дистанционно управление`` към родителското устройство.",
+  "devices.tellRemoteControlTo|param|event": "описание на събитие"
+}

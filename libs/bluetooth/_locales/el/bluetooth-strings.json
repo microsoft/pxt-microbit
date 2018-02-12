@@ -1,0 +1,22 @@
+{
+  "bluetooth.advertiseUid|block": "UID διαφήμισης bluetooth |ονόματα (bytes 6-9)%ns|περιστατικό (bytes 2-6)%instance|με ισχύ %power|συνδέσιμο %connectable",
+  "bluetooth.advertiseUrl|block": "url διαφήμισης bluetooth %url|με ισχύ %power|συνδέσιμο %connectable",
+  "bluetooth.onBluetoothConnected|block": "όταν συνδέεται bluetooth",
+  "bluetooth.onBluetoothDisconnected|block": "όταν αποσυνδέεται bluetooth",
+  "bluetooth.onUartDataReceived|block": "bluetooth|κατά τη λήψη δεδομένων %delimiters=serial_delimiter_conv",
+  "bluetooth.setTransmitPower|block": "ορισμός ισχύος μετάδοσης bluetooth %power",
+  "bluetooth.startAccelerometerService|block": "υπηρεσία επιταχυνσιόμετρου bluetooth",
+  "bluetooth.startButtonService|block": "υπηρεσία κουμπιού bluetooth",
+  "bluetooth.startIOPinService|block": "υπηρεσία bluetooth io pin",
+  "bluetooth.startLEDService|block": "υπηρεσία bluetooth led",
+  "bluetooth.startMagnetometerService|block": "υπηρεσία μαγνητομέτρου bluetooth",
+  "bluetooth.startTemperatureService|block": "υπηρεσία θερμοκρασίας bluetooth",
+  "bluetooth.startUartService|block": "υπηρεσία uart bluetooth",
+  "bluetooth.stopAdvertising|block": "διακοπή διαφήμισης bluetooth",
+  "bluetooth.uartReadUntil|block": "bluetooth uart|ανάγνωση έως %del=serial_delimiter_conv",
+  "bluetooth.uartWriteNumber|block": "bluetooth uart|εγγραφή αριθμού %value",
+  "bluetooth.uartWriteString|block": "bluetooth uart|εγγραφή συμβολοσειράς %data",
+  "bluetooth.uartWriteValue|block": "bluetooth uart|εγγραφή τιμής %name|= %value",
+  "bluetooth|block": "bluetooth",
+  "{id:category}Bluetooth": "Bluetooth"
+}

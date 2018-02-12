@@ -1,0 +1,22 @@
+{
+  "bluetooth.advertiseUid|block": "bluetooth ilmoita UID-tunnus|nimitila (bitit 6-9)%ns|esiintymä (bitit 2-6)%instance|teholla %power|yhdistettävä %connectable",
+  "bluetooth.advertiseUrl|block": "bluetooth ilmoita url-osoite %url|teholla %power|yhdistettävä %connectable",
+  "bluetooth.onBluetoothConnected|block": "kun bluetooth yhdistetään",
+  "bluetooth.onBluetoothDisconnected|block": "kun bluetooth-yhteys katkaistaan",
+  "bluetooth.onUartDataReceived|block": "bluetooth|kun data vastaanotettu %delimiters=serial_delimiter_conv",
+  "bluetooth.setTransmitPower|block": "bluetooth aseta lähetysteho %power",
+  "bluetooth.startAccelerometerService|block": "bluetooth-kiihtyvyysmittaripalvelu",
+  "bluetooth.startButtonService|block": "bluetooth-painikepalvelu",
+  "bluetooth.startIOPinService|block": "bluetooth-io-pinnipalvelu",
+  "bluetooth.startLEDService|block": "bluetooth-led-palvelu",
+  "bluetooth.startMagnetometerService|block": "bluetooth-magnetometripalvelu",
+  "bluetooth.startTemperatureService|block": "bluetooth-lämpötilapalvelu",
+  "bluetooth.startUartService|block": "bluetooth-uart-palvelu",
+  "bluetooth.stopAdvertising|block": "bluetooth lopeta ilmoittaminen",
+  "bluetooth.uartReadUntil|block": "bluetooth uart|lue kunnes %del=serial_delimiter_conv",
+  "bluetooth.uartWriteNumber|block": "bluetooth uart|kirjoita luku %value",
+  "bluetooth.uartWriteString|block": "bluetooth uart|kirjoita merkkijono %data",
+  "bluetooth.uartWriteValue|block": "bluetooth uart|kirjoita arvo %name|= %value",
+  "bluetooth|block": "bluetooth",
+  "{id:category}Bluetooth": "Bluetooth"
+}

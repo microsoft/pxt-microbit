@@ -1,0 +1,18 @@
+{
+  "devices": "Steruj telefonem za pomocą BBC micro:bit przez Bluetooth.",
+  "devices.onGamepadButton": "Zarejestruj kod do uruchomienia gdy micro:bit otrzyma polecenie za pośrednictwem sparowanego gamepada.",
+  "devices.onGamepadButton|param|body": "kod do uruchomienia po naciśnięciu przycisku",
+  "devices.onGamepadButton|param|name": "nazwa przycisku",
+  "devices.onNotified": "Rejestruje kod do uruchomienia, gdy urządzenie powiadomi o określonym zdarzeniu.",
+  "devices.onNotified|param|body": "kod, który zawiera informację gdy zdarzenie jest wywołane",
+  "devices.onNotified|param|event": "opis zdarzenia",
+  "devices.onSignalStrengthChanged": "Rejestruje kod do uruchomienia, gdy urządzenie powiadomi o zmianie siły sygnału.",
+  "devices.onSignalStrengthChanged|param|body": "Kod jest uruchamiany, gdy zmienia się siła sygnału.",
+  "devices.raiseAlertTo": "Wysyła polecenie '' ostrzeżenie '' do urządzenia nadrzędnego.",
+  "devices.raiseAlertTo|param|event": "opis zdarzenia",
+  "devices.signalStrength": "Zwraca ostatnią wartość siły sygnału zgłaszaną przez sparowane urządzenie.",
+  "devices.tellCameraTo": "Wysyła polecenie '' aparat '' do urządzenia nadrzędnego.",
+  "devices.tellCameraTo|param|event": "opis zdarzenia",
+  "devices.tellRemoteControlTo": "Wysyła polecenie '' pilot'' do urządzenia nadrzędnego.",
+  "devices.tellRemoteControlTo|param|event": "opis zdarzenia"
+}

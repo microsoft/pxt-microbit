@@ -1,0 +1,22 @@
+{
+  "bluetooth.advertiseUid|block": "bluetooth oglaševanje UID | imenskega prostora (6-9 bajtov)%ns |%instance stopnje (2-6 bajtov) | z močjo %power | gradnika %connectable",
+  "bluetooth.advertiseUrl|block": "bluetooth oglaševanje url %url | z močjo %power |gradnika %connectable",
+  "bluetooth.onBluetoothConnected|block": "ko se bluetooth poveže",
+  "bluetooth.onBluetoothDisconnected|block": "ko se bluetooth povezava prekine",
+  "bluetooth.onUartDataReceived|block": "bluetooth|ob sprejemu podatkov %delimiters=serial_delimiter_conv",
+  "bluetooth.setTransmitPower|block": "nastavi prenosno moč bluetootha %power",
+  "bluetooth.startAccelerometerService|block": "bluetoothova storitev za pospešek",
+  "bluetooth.startButtonService|block": "bluetoothova storitev za gumbe",
+  "bluetooth.startIOPinService|block": "storitve za vnos in izhod podatkov preko bluetootha",
+  "bluetooth.startLEDService|block": "storitve za led lučke pri uporabi bluetoota",
+  "bluetooth.startMagnetometerService|block": "storitve za meritev magnetnosti preko bluetootha",
+  "bluetooth.startTemperatureService|block": "storitve za temperaturo preko bluetootha",
+  "bluetooth.startUartService|block": "storitve uart preko bluetootha",
+  "bluetooth.stopAdvertising|block": "bluetooth ustavi oglaševanje",
+  "bluetooth.uartReadUntil|block": "bluetooth uart|beri dokler %del=serial_delimiter_conv",
+  "bluetooth.uartWriteNumber|block": "bluetooth uart|napiši številko %value",
+  "bluetooth.uartWriteString|block": "bluetooth uart|napiši string %data",
+  "bluetooth.uartWriteValue|block": "bluetooth uart| shrani vrednost %name|= %value",
+  "bluetooth|block": "bluetooth",
+  "{id:category}Bluetooth": "Bluetooth"
+}

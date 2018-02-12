@@ -1,0 +1,22 @@
+{
+  "bluetooth.advertiseUid|block": "블루투스 UID 전송|namespace (bytes 6-9)%ns|instance (bytes 2-6)%instance|with power %power|connectable %connectable",
+  "bluetooth.advertiseUrl|block": "블루투스 URL 전송 %url|with power %power|connectable %connectable",
+  "bluetooth.onBluetoothConnected|block": "블루투스 연결되면 실행",
+  "bluetooth.onBluetoothDisconnected|block": "블루투스 해제되면 실행",
+  "bluetooth.onUartDataReceived|block": "블루투스|문자 받으면 실행 %delimiters=serial_delimiter_conv",
+  "bluetooth.setTransmitPower|block": "블루투스 전송 강도 설정 %power",
+  "bluetooth.startAccelerometerService|block": "블루투스 가속도 센서 서비스 시작",
+  "bluetooth.startButtonService|block": "블루투스 버튼 서비스 시작",
+  "bluetooth.startIOPinService|block": "블루투스 입출력 핀 서비스 시작",
+  "bluetooth.startLEDService|block": "블루투스 LED 서비스 시작",
+  "bluetooth.startMagnetometerService|block": "블루투스 자기 센서 서비스 시작",
+  "bluetooth.startTemperatureService|block": "블루투스 온도 센서 서비스 시작",
+  "bluetooth.startUartService|block": "블루투스 UART 서비스 시작",
+  "bluetooth.stopAdvertising|block": "블루투스 전송 중단",
+  "bluetooth.uartReadUntil|block": "블루투스 UART|문자까지 읽기 %del=serial_delimiter_conv",
+  "bluetooth.uartWriteNumber|block": "블루투스 UART 전송|%value",
+  "bluetooth.uartWriteString|block": "블루투스 UART 전송|%data",
+  "bluetooth.uartWriteValue|block": "블루투스 UART 전송|%name|= %value",
+  "bluetooth|block": "블루투스",
+  "{id:category}Bluetooth": "블루투스"
+}
