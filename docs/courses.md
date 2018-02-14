@@ -4,7 +4,7 @@ A collection of courses and tutorials built for the @boardname@.
 
 ## Classroom
 
-Structured courses for teaching computer science in the classroom.
+Structured courses for teaching science and technology in the classroom.
 
 ```codecard
 [{
@@ -12,6 +12,11 @@ Structured courses for teaching computer science in the classroom.
   "description": "14 week computer science course for middle school grades 6-8",
   "url":"/courses/csintro",
   "imageUrl": "/static/courses/csintro.jpg"
+}, {
+  "name": "micro:bit Science Experiments",
+  "description": "Science experiment lessons with measurements and data analysis activites",
+  "url":"/courses/ucp-science",
+  "imageUrl": "/static/courses/plonk.jpg"
 }]
 ```
 

@@ -130,6 +130,12 @@
             * [Project](/courses/csintro/finalproject/project)
             * [Examples](/courses/csintro/finalproject/examples)
             * [Standards](/courses/csintro/finalproject/standards)
+    * [Science experiments](/courses/ucp-science)
+        * [Data collection](/courses/ucp-science/data-collection)
+            * [Overview](/courses/ucp-science/data-collection/overview)
+            * [Setup and procedure](/courses/ucp-science/data-collection/setup-procedure)
+            * [Resources](/courses/ucp-science/data-collection/resources)
+
 
 ## #reference
 
