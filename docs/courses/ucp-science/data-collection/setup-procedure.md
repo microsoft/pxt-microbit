@@ -195,7 +195,7 @@ When the data recorded is downloaded as a CSV spreadsheet file, it is named "dat
 
 #### ~hint
 
-Iit usually opens in directly into a spreadsheet but sometimes it doesn’t which makes it hard to find. A search of the C:\ drive might be necessary to find it.
+The CSV file usually opens in directly into a spreadsheet but sometimes it doesn’t which makes it hard to find. A search of the C:\ drive might be necessary to find it.
 
 #### ~
 
@@ -204,6 +204,13 @@ Here is a link to sample downloaded data from the "data.csv" file that's already
 https://docs.google.com/spreadsheets/d/1L_3Gq61UFEEjVZYQk31yTwzrTF3nlv55Ic2CjQdbIW8/edit?usp=sharing
 
 Additional analysis and graphing can be done in a spreadsheet.
+
+<br/>
+
+| | | |
+|-|-|-|
+| Adapted from "[Microbit Data Collection Methods](https://drive.google.com/open?id=13Mi6caoelyzgch6tUj-wlw0bmgS7ikGEwYR2a37mEww)" by [C Lyman](http://utahcoding.org) | | [![CC BY-NC-SA](https://licensebuttons.net/l/by-nc-sa/4.0/80x15.png)](https://creativecommons.org/licenses/by-nc-sa/4.0/) |
+
 
 ```package
 radio

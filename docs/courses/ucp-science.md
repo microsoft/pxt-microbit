@@ -22,5 +22,6 @@ The lesson series includes:
 * Magnetic Forces
 * Electricity - Battery Tester
  
-The micro:bit Science Experiments lesson series is generously provided by the [Utah Coding Project](https://sites.google.com/view/utahcodingproject/home) and is developed by [Carl Lyman](mailto:utahcoding@outlook.com).
+The [micro:bit Science Experiments](https://sites.google.com/view/utahcodingproject/csta/microbit-science-experiments) lesson series is generously provided by the [Utah Coding Project](https://sites.google.com/view/utahcodingproject/home) and is developed by [Carl Lyman](mailto:utahcoding@outlook.com).
  
+[![CC BY-NC-SA](https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
