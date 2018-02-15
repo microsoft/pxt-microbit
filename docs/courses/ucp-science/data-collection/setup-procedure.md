@@ -16,7 +16,7 @@ basic.showNumber(input.temperature())
 
 As data is displayed it can then be recorded on a paper for further analysis.
 
-Data can also be displayed graphically on the micro:bit using the ``||led:plot bar graph o||`` block from the ``||led:LED||`` toolbox. 
+Data can also be displayed graphically on the micro:bit using the ``||led:plot bar graph||`` block from the ``||led:LED||`` toolbox. 
     
 ```blocks
 led.plotBarGraph(
@@ -26,11 +26,20 @@ led.plotBarGraph(
 
 ### Option 2 - micro:bit Windows 10 MakeCode app and a USB connection
 
-The Windows 10 MakeCode app allows data to be directly read from the micro:bit when it is attached using USB cable. Data can be sent from the micro:bit to the Windows 10 MakeCode app  using serial data connection. The data collected over the serial connection can be graphed and the data can be downloaded. A limit of only about the last 20 seconds of data can be downloaded as a "data.csv" file. This allows the collection of data in real time. This file can be opened in a spreadsheet for further analysis. Many different kinds of experiments can be performed using this data logging technique. 
+The Windows 10 MakeCode app allows data to be directly read from the micro:bit when it is attached using USB cable. Data can be sent from the micro:bit to the Windows 10 MakeCode app  using serial data connection. The data collected over the serial connection can be graphed and the data can be downloaded. This file can be opened in a spreadsheet for further analysis. Many different kinds of experiments can be performed using this data logging technique. 
 
 You can download the [Windows 10 MakeCode](https://www.microsoft.com/store/apps/9PJC7SV48LCX) app.
 
-With the program downloaded from the MakeCode app to the micro:bit and the USB cable left connected and using the ``||serial:serial write value||`` block from the ``||serial:Serial||`` toolbox in the **Advanced** tool section.
+With the program downloaded from the MakeCode app to the micro:bit and the USB cable left connected, the
+``||led:plot bar graph||`` will automatically upload the data to the app.
+
+```blocks
+led.plotBarGraph(
+    input.temperature(), 0
+    )
+```
+
+Alternatively, you can the ``||serial:serial write value||`` block from the ``||serial:serial||`` toolbox in the **Advanced** tool section. This can be useful if you need to send different values, like temperature and light.
 
 ```blocks
 serial.writeValue("Celsius", input.temperature())
@@ -55,14 +64,9 @@ In the starting of the code the title is displayed, radio group 99 is setup, and
 In the forever loop the temperature is collected from the micro:bit sensor and stored in the ``temperature`` variable. The temperature is displayed on the LED display. A radio signal is sent to all micro:bit radios in group `99`. The program pauses for 1000 milliseconds and then loops again.
 
 ```blocks
-// Temperature Radio Sender 
-// by C Lyman
-// January 2018
-temperature = 0
-basic.showString("TEMPERATURE RADIO REMOTE")
-radio.setGroup(99)
 let temperature = 0
-// Forever Loop event
+basic.showString("TEMPERATURE REMOTE")
+radio.setGroup(99)
 basic.forever(() => {
     temperature = input.temperature()
     basic.showNumber(temperature)
@@ -71,49 +75,35 @@ basic.forever(() => {
 })
 ```
 
-Shared "Temperature Radio Sender" program: https://makecode.micro:bit.org/_DLmi641H5CP0 
-
 #### Radio receiver code
 
 In the starting of the code the title is displayed, radio group 99 is setup, and the initial ``temperature`` variable is set to `0`.
 
 In the radio received event, the temperature is received from sending the micro:bit radio. The received temperature is then displayed on the LED display. This is repeated whenever a radio signal is received.
 
-```typescript
-// Temperature Radio Receiver
-// by C Lyman
-// January 2018
-temperature = 0
-basic.showString("TEMPERATURE RADIO RECEIVER")
-radio.setGroup(99)
+```blocks
 let temperature = 0
-// Radio Packet Received event
-radio.onDataPacketReceived( ({ receivedNumber: temperature }) =>  {
-    basic.showNumber(temperature)
+radio.setGroup(99)
+basic.showString("TEMPERATURE RECEIVER")
+radio.onDataPacketReceived( ({ receivedNumber }) =>  {
+    basic.showNumber(receivedNumber)
 })
 ```
 
-### micro:bit radio receiver code with serial write
+### Radio receiver code with serial write
 
 This code is the same as above but one additional line of code is added to write to the word `"Celisus"` and the temperature to the MakeCode app to the USB serial connection. This is the same as described peviously in [Option 2](#option-2-micro-bit-windows-10-makecode-app-and-a-usb-connection).
 
 
-```typescript
-// Temperature Radio Receiver
-// by C Lyman
-// January 2018
-temperature = 0
-basic.showString("TEMPERATURE RADIO RECEIVER SERIAL")
-radio.setGroup(99)
+```blocks
 let temperature = 0
-// Radio Data Packet Received event
-radio.onDataPacketReceived( ({ receivedNumber: temperature }) =>  {
-    basic.showNumber(temperature)
-    serial.writeValue("Celisus", temperature)
+basic.showString("TEMPERATURE RECEIVER SERIAL")
+radio.setGroup(99)
+radio.onDataPacketReceived( ({ receivedNumber }) =>  {
+    basic.showNumber(receivedNumber)
+    serial.writeValue("Celisus", receivedNumber)
 })
 ```
-
-Shared "Temperature Radio Receiver" program: https://makecode.micro:bit.org/_44HRETXpC2ib
 
 ## Sample Project to Collect Accelerator Data
 
@@ -122,20 +112,11 @@ This sample project demonstrates the coding of the 2 micro:bits to collect data 
 ### "Sender" micro:bit code
 
 Code the first micro:bit using MakeCode for micro:bit. Name the project, "Gravity Sender".
-The ``||basic:on start||`` event will display the title and function of the micro:bit in all caps, `"GRAVITY SENDER"`. Add some comments to the ``||basic:on start||`` event:
-
-* Name of the project
-* Creator
-* Date created
-
-![Show comment block](/static/courses/ucp-science/data-collection/comment-block.jpg)
+The ``||basic:on start||`` event will display the title and function of the micro:bit in all caps, `"GRAVITY SENDER"`.
 
 Set up a radio group using the ``||radio:radio set group||``. Both micro:bits need the same radio group.
 
 ```blocks
-// Gravity Sender
-// by C Lyman
-// Jan 2018
 basic.showString("GRAVITY SENDER")
 radio.setGroup(99)
 ```
@@ -144,12 +125,12 @@ The ``||basic:forever||`` event will constantly monitor the _strength_ of the ac
 Open the pull down menu in the ``||input:acceleration||`` block and and change the ``x`` value to the ``strength`` value. This maximizes the x, y, and z dimensions of the acceleration into one value.
 
 ```blocks
+basic.showString("GRAVITY SENDER")
+radio.setGroup(99)
 basic.forever(() => {
     radio.sendNumber(input.acceleration(Dimension.Strength))
 })
 ```
-
-Shared "Gravity Sender" program: https://makecode.micro:bit.org/_83oRcxDfyPpa 
 
 ### "Receiver" micro:bit code
 
@@ -158,9 +139,6 @@ Using the Windows 10 MakeCode app, setup and code the second micro:bit. This mic
 Name the project, "Gravity Receiver". The ``||basic:on start||`` event will display the title and function of the micro:bit in all caps, `"GRAVITY RECEIVER"`. Add comments to the ``||basic:on start||`` event like before: Name the project, creator, and date created. Set up a radio group using the ``||radio:radio set group||`` block. Both micro:bits need the same radio group.
 
 ```blocks
-// Gravity Receiver
-// by C Lyman
-// Jan 2018
 basic.showString("GRAVITY RECEIVER")
 radio.setGroup(99)
 ```
@@ -170,12 +148,12 @@ When a value is received from the group it is stored in the ``gravity`` variable
 The ``||serial:serial write value||`` sends 2 pieces of data back to the MakeCode app through the USB cable. First it sends a label `"gravity"` and then the value received as gravity from the ``||input:acceleration||`` method from the first micro:bit.
 
 ```blocks
-radio.onDataPacketReceived( ({ receivedNumber: gravity }) =>  {
-    serial.writeValue("gravity", gravity)
+basic.showString("GRAVITY RECEIVER")
+radio.setGroup(99)
+radio.onDataPacketReceived( ({ receivedNumber }) =>  {
+    serial.writeValue("gravity", receivedNumber)
 })
 ```
-
-Shared "Gravity Receiver" program: https://makecode.micro:bit.org/_gXjhkyb3PWzh 
 
 ### Monitoring, downloading, and analyzing the data
 
@@ -191,19 +169,13 @@ The **Download** button in the red highlighted box allows the downloading of abo
 
 ![Graph with download button](/static/courses/ucp-science/data-collection/temperature-graph.jpg)
 
-When the data recorded is downloaded as a CSV spreadsheet file, it is named "data.csv".
+When the data recorded is downloaded as a CSV spreadsheet file, it is named ``"data.csv"``.
 
 #### ~hint
 
-The CSV file usually opens in directly into a spreadsheet but sometimes it doesn’t which makes it hard to find. A search of the C:\ drive might be necessary to find it.
+The CSV file usually opens in directly into a spreadsheet but sometimes it doesn’t which makes it hard to find. A search of the ``C:\`` drive might be necessary to find it.
 
 #### ~
-
-Here is a link to sample downloaded data from the "data.csv" file that's already imported into Google Sheets:
-
-https://docs.google.com/spreadsheets/d/1L_3Gq61UFEEjVZYQk31yTwzrTF3nlv55Ic2CjQdbIW8/edit?usp=sharing
-
-Additional analysis and graphing can be done in a spreadsheet.
 
 <br/>
 
