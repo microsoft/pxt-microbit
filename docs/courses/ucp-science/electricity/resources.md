@@ -1,25 +1,5 @@
 # Resources
 
-## Utah Science with Engineering Education (SEEd)
-
-* [Utah Science Website](https://schools.utah.gov/curr/science)
-* [Utah Grades 6-8 SEEd Standards](https://schools.utah.gov/file/265a0b53-b6a7-48fb-b253-b6a5f38ffe19)
-* [Sixth grade OER Science text](https://eq.uen.org/emedia/items/dae58176-b839-4b26-87e4-09ca5ed98875/1/Grade6RS.pdf)
-* [Seventh grade OER Science text](https://eq.uen.org/emedia/items/afd89ff1-054c-4ac5-a712-67f4c6029644/1/Grade7RS.pdf)
-* [Eighth grade OER Science text](https://eq.uen.org/emedia/items/e5219302-32b9-4c2f-ad65-38f303da6654/1/Grade8RS.pdf)
-
-## NGSS - Utah SEEd
-
-Strand 7.1: Forces are Interactions between Matter
-
-* Standard 7.1.3
-
->Construct a model using observational evidence to describe the nature of fields existing between objects that exert forces on each other even though the objects are not in contact. Emphasize the cause and effect relationship between properties of objects (such as magnets or electrically-charged objects) and the forces they exert.
-
-* Standard 7.1.4
-
->Collect and analyze data to determine the factors that affect the strength of electric and magnetic forces. Examples could include electromagnets, electric motors, or generators. Examples of data could include the effect of the number of turns of wire on the strength of an electromagnet, or of increasing the number or strength of magnets on the speed of an electric motor.
-
 ## CSTA Standards
 
 Computer Science Teachers Association (CSTA) Standards 2017.
@@ -50,6 +30,26 @@ http://www.csteachers.org/page/standards.
 * 13 — Decompose problems and subproblems into parts to facilitate the design, implementation, and review of programs.
 * 17 — Systematically test and refine programs using a range of test cases.
 * 19 — Document programs in order to make them easier to follow, test, and debug.
+
+## Utah Science with Engineering Education (SEEd)
+
+* [Utah Science Website](https://schools.utah.gov/curr/science)
+* [Utah Grades 6-8 SEEd Standards](https://schools.utah.gov/file/265a0b53-b6a7-48fb-b253-b6a5f38ffe19)
+* [Sixth grade OER Science text](https://eq.uen.org/emedia/items/dae58176-b839-4b26-87e4-09ca5ed98875/1/Grade6RS.pdf)
+* [Seventh grade OER Science text](https://eq.uen.org/emedia/items/afd89ff1-054c-4ac5-a712-67f4c6029644/1/Grade7RS.pdf)
+* [Eighth grade OER Science text](https://eq.uen.org/emedia/items/e5219302-32b9-4c2f-ad65-38f303da6654/1/Grade8RS.pdf)
+
+## NGSS - Utah SEEd
+
+Strand 7.1: Forces are Interactions between Matter
+
+* Standard 7.1.3
+
+>Construct a model using observational evidence to describe the nature of fields existing between objects that exert forces on each other even though the objects are not in contact. Emphasize the cause and effect relationship between properties of objects (such as magnets or electrically-charged objects) and the forces they exert.
+
+* Standard 7.1.4
+
+>Collect and analyze data to determine the factors that affect the strength of electric and magnetic forces. Examples could include electromagnets, electric motors, or generators. Examples of data could include the effect of the number of turns of wire on the strength of an electromagnet, or of increasing the number or strength of magnets on the speed of an electric motor.
 
 ## micro:bit
 
