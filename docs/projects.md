@@ -60,6 +60,10 @@ Fun games to build with your @boardname@.
   "name": "Rock Paper Scissors Teams",
   "url": "/projects/rps-teams",
   "imageUrl": "/static/mb/projects/rpsteams.png"
+}, {
+  "name": "Micro:Coin",
+  "url": "/projects/micro-coin",
+  "imageUrl": "/static/mb/projects/micro-coin.png"
 }]
 ```
 
@@ -171,4 +175,5 @@ Fun games to build with your @boardname@.
 [Milk Monster](/projects/milky-monster), [Karel the LED](/projects/karel), [Infection](/projects/infection), [Voting Machine](/projects/voting-machine)
 [Fireflies](/projects/fireflies), [Soil Moisture](/projects/soil-moisture),
 [States Of Matter](/projects/states-of-matter), [Reaction Time](/projects/reaction-time),
-[Rock Paper Scissors Teams](/projects/rps-teams)
+[Rock Paper Scissors Teams](/projects/rps-teams),
+[micro:coin](/projects/micro-coin)

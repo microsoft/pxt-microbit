@@ -27,6 +27,7 @@
     * [Infection](/projects/infection)
     * [Fireflies](/projects/fireflies)
     * [Rock Paper Scissors Teams](/projects/rps-teams)
+    * [micro:coin](/projects/micro-coin)
     * [Inchworm](/projects/inchworm)
     * [Milk Carton Robot](/projects/milk-carton-robot)
     * [Milk monster](/projects/milky-monster)
