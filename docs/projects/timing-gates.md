@@ -68,7 +68,7 @@ Lay the Aluminum foil on the double-sided tape. Press firmly on the tape to get 
 
 ![](/static/mb/projects/timing-gates/stickfoil.jpg "Foil sensor")
 
-Pull off the foil that's not touching the tape strips. That's all the foil in between and around  the tape strips. This clears out the extra foil makes a gap between the foil on the tape strips. Make sure the gap is just enough so that both foil strips don't touch each other.
+Pull off the foil that's not touching the tape strips. That's all the foil in between and around  the tape strips. This clears out the extra foil and makes a gap between the foil on the tape strips. Make sure the gap is just enough so that both foil strips don't touch each other.
 
 ![](/static/mb/projects/timing-gates/spreadfoil.jpg "Foil taped")
 
