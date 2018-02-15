@@ -5,7 +5,11 @@ Have you heard about BitCoin and all those new Crypto currencies? Well micro:bit
 ## How does it work?
 
 Each @boardname@ contains a **coin**, which is made of a **block chain**. To mine new blocks in the coin, the user shakes 
-the @boardname@ and hopes that they will be in luck! The block chain is public and can't be modified so it's ok to share it.
+the @boardname@ and hopes that they will be in luck! Once the block is added, it is broadcasted to the other @microbit@. 
+The block is public and can't be modified so it's ok to share it. Other @boardname@ the block, validate the transaction and update their block chain as needed.
+
+Pressing ``A`` shows the number of block you added to the chain, that's your score.
+Pressing ``B`` shows you the length of the chain.
 
 ## ~hint
 
@@ -37,11 +41,6 @@ JavaScript only! This program uses features that won't work in blocks...
 * micro:coin, A minimalistic blockchain for micro:bit
 * 
 * DISCLAIMER: this is just an example.
-*
-*
-* References:
-* https://medium.com/@lhartikk/a-blockchain-in-200-lines-of-code-963cc1cc0e54
-* https://medium.com/crypto-currently/lets-build-the-tiniest-blockchain-e70965a248b
 *
 */
 
@@ -332,7 +331,7 @@ input.onGesture(Gesture.Shake, () => {
     led.stopAnimation()
     basic.clearScreen()
     basic.pause(200) // display a short pause
-    if (Math.random(3) == 0) { // 30% change to mine
+    if (Math.random(3) == 0) { // 30% chances to add a transaction
         // gold!!!
         me.addBlock();
         basic.showIcon(IconNames.Diamond);
@@ -369,6 +368,12 @@ input.onButtonPressed(Button.AB, () => {
 broadcastQueryChain();
 basic.showString("A=SCORE B=CHAIN SHAKE=MINE", 100)
 ```
+
+## References
+
+* https://medium.com/@lhartikk/a-blockchain-in-200-lines-of-code-963cc1cc0e54
+* https://medium.com/crypto-currently/lets-build-the-tiniest-blockchain-e70965a248b
+* https://medium.com/@micheledaliessi/how-does-the-blockchain-work-98c8cd01d2ae
 
 
 ```package
