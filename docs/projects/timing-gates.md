@@ -8,16 +8,16 @@ This project explains the principles of timing gates using household materials.
 
 ## Timing gates
 
-The two gates are connected to the @boardname@ and can detect a car passing through.
+Two gates are connected to the @boardname@ so it can detect a car passing through them.
 
 ![](/static/mb/projects/timing-gates/sketchgates.jpg "Sketch of the gates")
 
-As the car passes through the gate ``0``, it sends an event to the @boardname@ through the [on pin pressed](/reference/input/on-pin-pressed) block.
+As the car passes through the gate ``0``, it sends an event to the @boardname@ through the [``||pins:on pin pressed||``](/reference/input/on-pin-pressed) block.
 The @boardname@ records the time in a variable ``t0``.
 
 ![](/static/mb/projects/timing-gates/sketchgate1.jpg "Sketch first gate")
 
-As the car passes through the gate ``1``, it sends an event to the @boardname@ through the [on pin pressed](/reference/input/on-pin-pressed) block.
+As the car passes through the gate ``1``, it sends an event to the @boardname@ through the [``||pins:on pin pressed||``](/reference/input/on-pin-pressed) block.
 The @boardname@ records the time in a variable ``t1``.
 
 ![](/static/mb/projects/timing-gates/sketchgate2.jpg "Sketch first gate")
@@ -31,7 +31,7 @@ By dividing the distance between the gates by the duration, we get the speed of 
 ## Materials
 
 * Carboard
-* Aluminum fail
+* Aluminum foil
 * Double-side tape (carpet tape)
 * 4 crocodile clips
 * A @boardname@ board and USB cable
@@ -68,7 +68,7 @@ Lay the Aluminum foil on the double-sided tape. Press firmly on the tape to get 
 
 ![](/static/mb/projects/timing-gates/stickfoil.jpg "Foil sensor")
 
-Strip the out foil around and between the tape strips. Make sure both foil strips don't touch each other.
+Pull off the foil that's not touching the tape strips. That's all the foil in between and around  the tape strips. This clears out the extra foil makes a gap between the foil on the tape strips. Make sure the gap is just enough so that both foil strips don't touch each other.
 
 ![](/static/mb/projects/timing-gates/spreadfoil.jpg "Foil taped")
 
@@ -87,9 +87,9 @@ The gate is ready to use! Your circuit should look like the picture below:
 
 ## Detecting the car with code
 
-The @boardname@ provides an event [on pin pressed](/reference/input/on-pin-pressed) 
+The @boardname@ provides an event [``||pins:on pin pressed||``](/reference/input/on-pin-pressed) 
 that is raised when a circuit between ``GND`` and a pin is detected. The circuit conductor could be a wire or even your body!
-We will attach a foil to the bottom of the car. When it passes over the gate, it connect both foil strips, close the circuit and trigger the event. 
+We will attach a foil to the bottom of the car. When it passes over the gate, it connects both foil strips, closes the circuit and triggers the event. 
 
 Open the [code editor](/) and start a new project and add the following blocks. Notice that we are using pin ``P0`` here. 
 
@@ -112,7 +112,7 @@ input.onPinPressed(TouchPin.P0, () => {
 })
 ```
 
-Testing the code with our finger, we see a LED column turn on when pressing both strips.
+Testing the code with our finger, we see a LED column turn on when pressing on both strips.
 
 https://youtu.be/zi_-NAmdDpY
 
@@ -129,8 +129,7 @@ https://youtu.be/M3DIUvDPlIA
 
 ## ~hint
 
-It does not work always! Sometimes the foil does not touch long enough both strip to be detected. This is due to the poor quality of our sensor.
-To fix this, you would have to consider using better sensors based on IR or Hall effect.
+It doesn't always work! Why? Sometimes the foil doesn't touch both strips for long enough time to be detected. This is due to the poor quality of our sensor. To fix this, you would need to use  better a sensor, maybe an IR detector or a Hall effect sensor.
 
 ## ~
 
@@ -146,7 +145,7 @@ Connect the crocodile plugs to the ``GND`` and ``P1`` pins on the @boardname@.
 
 ## Detecting the second gate
 
-Since the second gate is connected to pin ``P1``, we add a second [on pin pressed](/reference/input/on-pin-pressed) event
+Since the second gate is connected to pin ``P1``, we add a second [``||pins:on pin pressed||``](/reference/input/on-pin-pressed) event
 that display 2 columns of LEDs.
 
 ```blocks
@@ -224,7 +223,7 @@ https://youtu.be/piyym_ux1EM
 
 ## Computing velocity
 
-Measure the distance between the gates and apply Newton's laws to compute the velocity of the car.
+Measure the distance between the gates and apply Newton's laws to compute the velocity (how fast it's going) of the car.
 
     v = d / t
 
