@@ -285,6 +285,11 @@ namespace pxt.editor {
                 log("reset")
                 return wrap.cortexM.reset(true)
             })
+            .then(() => wrap.cortexM.memory.readBlock(0x10001014, 1, pageSize))
+            .then(v => {
+                if (HF2.read32(v, 0) != 0x3C000)
+                    U.userError(U.lf("Please flash any MakeCode hex file using drag and drop. Flashing from app will work afterwards."))
+            })
             .then(() => getFlashChecksumsAsync(wrap))
             .then(buf => {
                 checksums = buf
