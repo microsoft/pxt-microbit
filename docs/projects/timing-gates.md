@@ -58,7 +58,7 @@ basic.showNumber(0)
 
 ## Building the gate
 
-The sensor is made by tapping two strips of fail on the cardboard as close as possible.
+The sensor is made by tapping two strips of foil on the cardboard as close as possible.
 
 Add two strips of double-sided tape on the cardboard. Remove the protective film.
 
