@@ -24,7 +24,7 @@ The micro:bit has these features:
 * Wireless Communication, via Radio and Bluetooth
 * USB interface
 
-Read about what the micro:bit can do at the [micro:bit features](http://@boardname@.org/guide/features/) page.
+Read about what the micro:bit can do at the [micro:bit features](http://microbit.org/guide/features/) page.
 
 ## Prior knowledge
 
@@ -34,7 +34,7 @@ Students need:
 * some knowledge file management skills in Windows.
 * to know how to download a program and copy it to a micro:bit.
 
-See [Using a micro:bit in 5 easy steps](http://@boardname@.org/guide/quick/) for a quick introduction to using the micro:bit.
+See [Using a micro:bit in 5 easy steps](http://microbit.org/guide/quick/) for a quick introduction to using the micro:bit.
 
 ## Student outcomes
 

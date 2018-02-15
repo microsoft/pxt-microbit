@@ -14,7 +14,7 @@ This is a new course, so we're adding new lessons. All lessons will be available
 
 The lesson series includes:
  
-* [micro:bit Data Collection Methods](/courses/ucp-science/data-collection)
+* [Data Collection Methods](/courses/ucp-science/data-collection)
 * Population Trait Data Counter
 * Temperature Data
 * Soil Moisture Tester
