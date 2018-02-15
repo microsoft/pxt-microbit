@@ -4,13 +4,14 @@ Have you heard about BitCoin and all those new Crypto currencies? Well micro:bit
 
 ## How does it work?
 
-Each @boardname@ contains a **coin**, which is made of a **block chain**. To mine new blocks in the coin, the user should shake 
-the @boardname@ and hope to be lucky! The block chain is public and cannot be modified so it's ok to share it.
+Each @boardname@ contains a **coin**, which is made of a **block chain**. To mine new blocks in the coin, the user shakes 
+the @boardname@ and hopes that they will be in luck! The block chain is public and can't be modified so it's ok to share it.
 
-When a new block is found, it is added to the coin and broadcasted to the other @boardname@.
+When a new block is found, it's added to the coin and broadcasted to the other @boardname@.
 When a block is received, the current chain is updated and so on.
 
-Each block is tagged with the device serial number so your score is the number of block successfully added to the chain.
+Each block is tagged with the device serial number so your score is the number of blocks successfully added to the chain.
+
 Happy mining!
 
 ## Full source code
@@ -63,7 +64,7 @@ class Block {
     hash: number; // uint8
 
     /**
-     * Constructs the block and computes the hash
+     * Construct the block and computes the hash
      */
     constructor(
         index: number,
@@ -78,7 +79,7 @@ class Block {
     }
 
     /**
-     * Computes the hash of the current block
+     * Compute the hash of the current block
      */
     computeHash() {
         let s = "" + this.index + this.timestamp + this.data + this.previousHash;
@@ -93,21 +94,21 @@ class Block {
     }
 
     /**
-     * Creates the next block with the given data
+     * Create the next block with the given data
      */
     next(data: number) {
         return new Block(this.index + 1, input.runningTime(), data, this.hash);
     }
 
     /**
-     * Renders the block as a string
+     * Render the block as a string
      */
     toString() {
         return `block ${this.index} ${this.timestamp} ${this.data} ${this.hash}`;
     }
 
     /**
-     * Sends the block over radio
+     * Send the block over radio
      */
     broadcast() {
         serial.writeLine(`broadcast ${this}`);
@@ -125,7 +126,7 @@ class Block {
     }
 
     /**
-     * Tries to read the block from the buffer. If anything is wrong, returns undefined.
+     * Try to read the block from the buffer. If anything is wrong, return undefined.
      */
     static receive(buf: Buffer): Block {
         // check the message type
@@ -170,7 +171,7 @@ class Coin {
     }
 
     /**
-     * Grabs the last block in the chain
+     * Grab the last block in the chain
      */
     lastBlock() {
         return this.chain[this.chain.length - 1];
@@ -220,7 +221,7 @@ class Coin {
     }
 
     /**
-     * Inserts a block received through radio
+     * Insert a block received over the radio
      */
     insert(block: Block) {
         this.chain[block.index] = block;
@@ -274,7 +275,7 @@ function peer(id: number): Coin {
 }
 
 /**
- * Settings the radio receiver
+ * Settings for the radio receiver
  */
 radio.setGroup(42);
 radio.setTransmitSerialNumber(true);
@@ -342,7 +343,7 @@ input.onButtonPressed(Button.A, () => {
     basic.showNumber(score);
 })
 
-// show block chain size
+// show the block chain size
 input.onButtonPressed(Button.B, () => {
     led.stopAnimation()
     basic.showNumber(me.chain.length - 1);
