@@ -358,3 +358,8 @@ input.onButtonPressed(Button.AB, () => {
 broadcastQueryChain();
 basic.showString("A=SCORE B=CHAIN SHAKE=MINE", 100)
 ```
+
+
+```package
+radio
+```
