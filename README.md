@@ -9,7 +9,7 @@ PXT ([Microsoft Programming Experience Toolkit](https://github.com/Microsoft/pxt
 
 ## Issue tracking
 
-All issue tracking for this repo happens at https://github.com/Microsoft/pxt, see you there!
+Please add an issue if you discover an (unreported) bug.
 
 ## Local server
 
