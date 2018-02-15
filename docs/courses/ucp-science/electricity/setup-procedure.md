@@ -44,14 +44,8 @@ This project will use a micro:bit to read the voltage of an old battery to see i
 
 1. Name the project, “Battery Tester”.
 2. The ``||basic:on start||`` event will display the title and purpose of the micro:bit in all caps, `"BATTERY TESTER"`. The text is put in the ``||basic:show string||`` block (The title is put in the ``||basic:on start||`` event so when the micro:bit is started up it will show what it is programmed to do. It is done in all CAPS because it is easier to read as it is displayed in the LED display).
-3. Add comments to the ``||basic:on start||`` event: Name the project, creator, and date created.
-
-![Add comments to the on start block](/static/courses/ucp-science/electricity/add-comments.gif)
 
 ```blocks
-// Battery tester
-// C Lyman
-// Nov 2017
 basic.showString("BATTERY TESTER");
 ```
 
@@ -70,18 +64,18 @@ input.onButtonPressed(Button.A, () => {
 ### on Button “B” Pressed event
 
 1. The code for on button **B** pressed is designed to return a converted value for the battery’s voltage in millivolts (1.5 volt = 1500 millivolts).
-2. The beginning of the first statement a variable “voltage” is created and given a value of the reading from the analog reading of pin **0**. The number is then multiplied by 1000 and divided by 340.
-3. If 3 volts gives a reading of about 1023 then 1 volt should read around 340. (340 = 1024 / 3). Using this ratio and multiplying the number by 1000 should convert the number to millivolts (micro:bits only do integer math so the voltage is multiplied by 1000 before doing the division by 340).
+2. The beginning of the first statement a variable ``reading`` is created and given a value of the reading from the analog reading of pin **0**. The ``reading`` variable is then multiplied by 1000 and divided by 340 and stored in ``voltage``.
+3. If 3 volts gives a reading of about 1023 then 1 volt should read around 340 (340 = 1024 / 3). Using this ratio and multiplying the number by 1000 should convert the number to millivolts (micro:bits only do integer math so the voltage is multiplied by 1000 before doing the division by 340).
 
 ```block
-// Convert analog reading to millivolts
 input.onButtonPressed(Button.B, () => {
-   let voltage = pins.analogReadPin(AnalogPin.P0)
-   voltage = voltage * 1000 / 340
+   let reading = pins.analogReadPin(AnalogPin.P0)
+   let voltage = reading * 1000 / 340
    basic.showNumber(voltage)
 })
 ```
-#### Go to the code
+
+#### Go to the JavaScript
 
 4. Switching to JavaScript instead of working in the block environment makes it easier to do the math. Once the math is done in JavaScript it can be switched back to blocks. 
 5. The last line displays the value converted millivolts on the LED display.
@@ -89,13 +83,11 @@ input.onButtonPressed(Button.B, () => {
 ```typescript
 // Convert analog reading to millivolts
 input.onButtonPressed(Button.B, () => {
-   let voltage = pins.analogReadPin(AnalogPin.P0)
-   voltage = voltage * 1000 / 340
+   let reading = pins.analogReadPin(AnalogPin.P0)
+   let voltage = reading * 1000 / 340
    basic.showNumber(voltage)
 })
 ```
-
-Shared "Battery Tester" program: https://makecode.microbit.org/_LMwfCCgmVfiP
 
 ## Extensions
 

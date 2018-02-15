@@ -1,5 +1,7 @@
 # Electricity -- Battery tester
 
+![micro:bit battery tester](/static/courses/ucp-science/electricity/battery-tester.jpg)
+
 This lesson observes the force of electricity. The charge in several batteries is measured by the micro:bit to see how much electric force is present in each one. The results are recorded to analyze the condition of each battery. As an application of the experiment, batteries in poor condition (mostly discharged) can be noted and properly disposed of.
 
 ## Contents
