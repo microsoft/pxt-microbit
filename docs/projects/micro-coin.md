@@ -1,6 +1,10 @@
 # micro:coin
 
+## ~ avatar
+
 Have you heard about BitCoin and all those new Crypto currencies? Well micro:bit has **micro:coin** now! 
+
+## ~
 
 ## How does it work?
 
@@ -11,30 +15,23 @@ The block is public and can't be modified so it's ok to share it. Other @boardna
 Pressing ``A`` shows the number of block you added to the chain, that's your score.
 Pressing ``B`` shows you the length of the chain.
 
-## ~hint
+Happy mining!
 
-**Coins, blocks, chains**
+## Coins, blocks, chains
 
 In the world of crypto currency, a _coin_ is a list of _blocks_ that record transfers (transactions) of the coin. A block might contain information like the time it was created (mined) and who mined it. The most important part of the block is it's _hash_. This is a special number made from the information in the last block of the block list combined with the hash number of previous block in the list. The new block contains information for the current transaction and this new hash number. The new block is added to the list of previous blocks. This list is then transmitted to the crypto currency network.
 
 The block list sent to the network is called a _blockchain_. Other currency miners see it and try to calculate again the same hash number found in the last block of the chain. By doing this, they are verifying that the block is correct and the transaction was valid. Crypto currency systems reward miners for doing this by adding some currency to their accounts.
 
+## ~ hint
+
+Build yourself a [@boardname@ wallet](/projects/wallet) to hold your coins!
+
 ## ~
-
-When a new block is found, it's added to the coin and broadcasted to the other @boardname@.
-When a block is received, the current chain is updated and so on.
-
-Each block is tagged with the device serial number so your score is the number of blocks you successfully added to the chain.
-
-Happy mining!
 
 ## Full source code
 
-## ~ hint
-
-JavaScript only! This program uses features that won't work in blocks...
-
-## ~
+**JavaScript only!** This program uses features that won't work in blocks...
 
 ```typescript
 /*
