@@ -2,6 +2,16 @@
 
 Have you heard about BitCoin and all those new Crypto currencies? Well micro:bit has **micro:coin** now! 
 
+## How does it work?
+
+Each @boardname@ contains a **coin**, which is made of a **block chain**. To mine new blocks in the coin, the user should shake 
+the @boardname@ and hope to be lucky! The block chain is public and cannot be modified so it's ok to share it.
+
+When a new block is found, it is added to the coin and broadcasted to the other @boardname@.
+When a block is received, the current chain is updated and so on.
+
+Each block is tagged with the device serial number so your score is the number of block successfully added to the chain.
+Happy mining!
 
 ## Full source code
 
