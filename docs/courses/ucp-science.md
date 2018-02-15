@@ -8,7 +8,7 @@ These lessons guide the student in hands-on, practical measurement activities al
 
 ### ~hint
 
-This is a new course, so we're adding new lessons. All lessons will be available here shortly.
+This is a new course, so we're adding new lessons. All lessons will be available here shortly. These lessons require [Windows 10 MakeCode for micro:bit app](https://www.microsoft.com/store/productId/9PJC7SV48LCX)
 
 ### ~
 
