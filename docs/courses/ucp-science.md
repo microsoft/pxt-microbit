@@ -20,7 +20,7 @@ The lesson series includes:
 * Soil Moisture Tester
 * Body Electrical & Waves
 * Magnetic Forces
-* Electricity - Battery Tester
+* [Electricity - Battery Tester](/courses/ucp-science/electricity)
  
 The [micro:bit Science Experiments](https://sites.google.com/view/utahcodingproject/csta/microbit-science-experiments) lesson series is generously provided by the [Utah Coding Project](https://sites.google.com/view/utahcodingproject/home) and is developed by [Carl Lyman](mailto:utahcoding@outlook.com).
  

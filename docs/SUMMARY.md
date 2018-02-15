@@ -135,7 +135,10 @@
             * [Overview](/courses/ucp-science/data-collection/overview)
             * [Setup and procedure](/courses/ucp-science/data-collection/setup-procedure)
             * [Resources](/courses/ucp-science/data-collection/resources)
-
+        * [Electricity](/courses/ucp-science/electricity)
+            * [Overview](/courses/ucp-science/electricity/overview)
+            * [Setup and procedure](/courses/ucp-science/electricity/setup-procedure)
+            * [Resources](/courses/ucp-science/electricity/resources)
 
 ## #reference
 
