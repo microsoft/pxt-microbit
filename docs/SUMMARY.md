@@ -139,6 +139,10 @@
             * [Overview](/courses/ucp-science/electricity/overview)
             * [Setup and procedure](/courses/ucp-science/electricity/setup-procedure)
             * [Resources](/courses/ucp-science/electricity/resources)
+        * [Temperature](/courses/ucp-science/temperature)
+            * [Overview](/courses/ucp-science/temperature/overview)
+            * [Setup and procedure](/courses/ucp-science/temperature/setup-procedure)
+            * [Resources](/courses/ucp-science/temperature/resources)
 
 ## #reference
 
