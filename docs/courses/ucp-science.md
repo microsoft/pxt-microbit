@@ -18,6 +18,7 @@ The lesson series includes:
 * Population Trait Data Counter
 * Temperature Data
 * Soil Moisture Tester
+* [Gravity, Motion and Waves](/courses/ucp-science/gravity)
 * Body Electrical & Waves
 * Magnetic Forces
 * [Electricity - Battery Tester](/courses/ucp-science/electricity)

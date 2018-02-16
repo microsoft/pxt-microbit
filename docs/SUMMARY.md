@@ -139,6 +139,10 @@
             * [Overview](/courses/ucp-science/electricity/overview)
             * [Setup and procedure](/courses/ucp-science/electricity/setup-procedure)
             * [Resources](/courses/ucp-science/electricity/resources)
+        * [Gravity, Motion and Waves](/courses/ucp-science/gravity)
+            * [Overview](/courses/ucp-science/gravity/overview)
+            * [Setup and procedure](/courses/ucp-science/gravity/setup-procedure)
+            * [Resources](/courses/ucp-science/gravity/resources)
 
 ## #reference
 
