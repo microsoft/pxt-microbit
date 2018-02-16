@@ -13,10 +13,10 @@ Structured courses for teaching science and technology in the classroom.
   "url":"/courses/csintro",
   "imageUrl": "/static/courses/csintro.jpg"
 }, {
-  "name": "micro:bit Science Experiments",
+  "name": "Science Experiments",
   "description": "Science experiment lessons with measurements and data analysis activites",
   "url":"/courses/ucp-science",
-  "imageUrl": "/static/courses/plonk.jpg"
+  "imageUrl": "/static/courses/ucp-science.jpg"
 }]
 ```
 
