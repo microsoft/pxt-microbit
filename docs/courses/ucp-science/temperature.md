@@ -1,14 +1,8 @@
 # Temperature
 
-```sim
-basic.forever(() => {
-led.plotBarGraph(
-	input.temperature(), 50
-	)
-})
-```
+![Outdoor thermometer](/static/courses/ucp-science/temperature/heat-of-day.jpg)
 
-This lesson give students real world experience with coding, collecting temperature data, analyzing data, and reporting results using MakeCode’s block programming and a microbit with its sensors.
+This lesson give students real world experience with coding, collecting temperature data, analyzing data, and reporting results using MakeCode’s block programming and a @boardname@ with its sensors.
 
 ## Contents
 
@@ -20,4 +14,4 @@ This lesson give students real world experience with coding, collecting temperat
 
 | | | |
 |-|-|-|
-| Adapted from "[Temperature](https://drive.google.com/open?id=1X6FeANka2qcMC2ZFQgSSxEoHxsQc--6a0Pk9xxMOwE8)" by [C Lyman](http://utahcoding.org) | | [![CC BY-NC-SA](https://licensebuttons.net/l/by-nc-sa/4.0/80x15.png)](https://creativecommons.org/licenses/by-nc-sa/4.0/) |
+| Adapted from "[Temperature Data](https://drive.google.com/open?id=1X6FeANka2qcMC2ZFQgSSxEoHxsQc--6a0Pk9xxMOwE8)" by [C Lyman](http://utahcoding.org) | | [![CC BY-NC-SA](https://licensebuttons.net/l/by-nc-sa/4.0/80x15.png)](https://creativecommons.org/licenses/by-nc-sa/4.0/) |
