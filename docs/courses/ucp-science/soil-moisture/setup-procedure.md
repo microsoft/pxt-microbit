@@ -3,7 +3,7 @@
 ## Setup
 
 1. Plan and design the experiments.
-2. Plan and design data collection documents. Here's a sample [data collection sheet](https://drive.google.com/open?id=1FD-aW1TOFSn6oGgd3N-QoP-EM2WXOiOBI2aDho1kGZE).
+2. Plan and design data collection documents.
 3. Program the @boardname@s.
 4. Experiment with different data collection scenarios.
 5. Add enhancements to the program and project.
