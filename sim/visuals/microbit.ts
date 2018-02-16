@@ -396,6 +396,7 @@ namespace pxsim.visuals {
                     const transfrom = imgbr > 0 ? imgbr / 255 * 0.4 + 0.6 : 0;
                     sel.style.opacity = (opacity / 255) + "";
                     if (transfrom > 0) {
+                        (sel.style as any).transformBox = 'fill-box';
                         sel.style.transformOrigin = '50% 50%';
                         sel.style.transform = `scale(${transfrom})`;
                     }
