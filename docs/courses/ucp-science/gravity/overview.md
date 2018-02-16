@@ -8,7 +8,7 @@ Develop and use a model to describe the role of gravity and inertia in orbital m
 in our solar system. As you read, focus on systems, an organized group of related objects. In this
 section, it is important to examine how the objects in our solar system are affected by gravity and inertia. Most of the objects that are part of our solar system are constantly orbiting the Sun, the star of our solar system. Mass is a measure of the amount of matter in an object. Everything that has mass also has gravity. Gravity is the attraction of one particle or body to another. You have gravity. Your pencil has gravity. Larger masses have a stronger gravitational force, or the measurement of the pull of gravity, than smaller masses. 
 
-![Issac Newton under an apple tree](/static/courses/ucp-science/gravity/plonk.jpg)
+![Force arrow pushing down on the earth](/static/courses/ucp-science/gravity/push-down.jpg)
 
 The greater the mass of an object, the greater the gravitational pull it has on other objects ([ck12.org - Sixth Grade Science, Gravity and Inertia, p 26](https://eq.uen.org/emedia/items/dae58176-b839-4b26-87e4-09ca5ed98875/1/Grade6RS.pdf)).
 
