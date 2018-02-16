@@ -3,7 +3,7 @@
 
 ![earthquake data](/static/courses/ucp-science/gravity/earthquake.png)
 
-Give students real world experience with coding, collecting data, analyzing data, and reporting results using [MakeCode for micro:bit Windows App](https://www.microsoft.com/store/productId/9PJC7SV48LCX) and a microbit with its sensors.
+Gravity is the attraction of one particle or body to another. Larger masses have a stronger gravitational force, or the measurement of the pull of gravity, than smaller masses. The @boardname@ can sense acceleration and can measure the force of motion. This lesson measures forces of motion with one @boardname@ and sends the data to a recording @boardname@. The experiment provides a basis for further force measurement activities.
 
 ## Contents
 
