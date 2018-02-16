@@ -15,11 +15,12 @@ Give students real world experience with coding, collecting data, analyzing data
 
 ## Prior Knowledge
 
-Students need to have a basic knowledge of how to code using block style programming (micro:bit using the Windows 10 MakeCode app) and download a program to a micro:bit.
+Students need to have a basic knowledge of how to code using block style programming (micro:bit using the Windows 10 MakeCode app) and download a program to a @boardname@.
 
 ## Student Outcomes
 
 Students will:
+
 * Create experiments to collect data using micro:bits and the pins to measure electrical voltage. 
 * Setup different experiments to observe the electricity, voltage, and other electrical effects.
 * Code the micro:bits to collect data.
