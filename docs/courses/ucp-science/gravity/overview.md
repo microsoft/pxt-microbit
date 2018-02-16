@@ -24,6 +24,7 @@ Students need to have a basic knowledge of how to code using block style program
 ## Student Outcomes
 
 Students will:
+
 * create experiments to collect data using microbits and the acceleration sensor on them. 
 * setup different experiments to observe the gravity effect.
 * code the microbits to collect data remotely over the microbit radios.
@@ -41,4 +42,4 @@ Students will:
 
 | | | |
 |-|-|-|
-| Adapted from "[Electricity - Battery Tester](https://drive.google.com/open?id=15Xry9jFsIzHHG7RpaIomLodl9pBjTiKDvtjkd227b7Y)" by [C Lyman](http://utahcoding.org) | | [![CC BY-NC-SA](https://licensebuttons.net/l/by-nc-sa/4.0/80x15.png)](https://creativecommons.org/licenses/by-nc-sa/4.0/) |
+| Adapted from "[Gravity, Motion, and Waves](https://drive.google.com/open?id=1Z8S-W3n1jX6drC8ALj8Wh1Rjc0CyP0Afs3acnIjDYes)" by [C Lyman](http://utahcoding.org) | | [![CC BY-NC-SA](https://licensebuttons.net/l/by-nc-sa/4.0/80x15.png)](https://creativecommons.org/licenses/by-nc-sa/4.0/) |

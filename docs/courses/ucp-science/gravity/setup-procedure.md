@@ -27,7 +27,7 @@ radio.setGroup(99)
 
 6. The “forever” event will constantly monitor the “strength” of the acceleration and send the value to any other @boardname@s that might be receiving radio signals in the same radio group.
 7. Open the pull down menu in the acceleration block and and change the “x” value to the “strength” value. This maximizes the x, y, and z dimensions of the acceleration into 1 value.
-8. Add a ``led.toggle`` block to indicate that data is coming out
+8. Add a ``||led:toggle||`` block to indicate that data is coming out
 
 ```blocks 
 basic.showString("GRAVITY SENDER")
@@ -39,6 +39,7 @@ basic.forever(() => {
 ```
 
 ### “Receiver” @boardname@ code
+
 1. Using the [Windows 10 MakeCode app](https://www.microsoft.com/store/productId/9PJC7SV48LCX) setup and code the second @boardname@.
 2. This @boardname@ will remain connected to the computer through the USB cable and the Windows 10 MakeCode app to monitor the data being received.
 3. Name the project, “Gravity Receiver”.
@@ -96,42 +97,18 @@ Sound causes vibrations which can be detected with the Microbit accelerator. Con
 
 ![Sound vibrations](/static/courses/ucp-science/gravity/soundvibrations.png)
 
-#### Standards
-
-* Strand 8.2: Energy is Stored and Transferred in Physical Systems
-Objects can store and transfer energy within systems. Energy can be transferred between objects, which involves changes in the object’s energy. There is a direct relationship between an object’s energy, mass, and velocity. Energy can travel in waves and may be harnessed to transmit information.
-* Standard 8.2.4
-Use computational thinking to describe a simple model for waves that shows the pattern of wave amplitude being related to wave energy. Emphasize describing waves with both quantitative and qualitative thinking. Examples could include using graphs, charts, computer simulations, or physical models to demonstrate amplitude and energy correlation.
-* Standard 8.2.5
-Develop and use a model to describe the structure of waves and how they are reflected, absorbed, or transmitted through various materials. Emphasize both light and mechanical waves. Examples could include drawings, simulations, and written descriptions of light waves through a prism; mechanical waves through gas vs. liquids vs. solids; or sound waves through different mediums.
-
-### Earthquake Detector. 
+### Earthquake Detector
 
 Earthquakes cause vibrations which can be detected with the Microbit accelerator. By placing the Gravity Sending” sending @boardname@ on a flat surface and having it “feel” minor changes in acceleration it can detect earthquakes or other vibrations in the earth. Connect 2 @boardname@s using radio signals. Data Collection - Option 3. The “Gravity Sender” @boardname@ can be placed on or near a speaker. It will send a signal to the “Gravity Receiver” @boardname@ which can be connected to the Windows 10 MakeCode app. When the “Gravity Receiver” @boardname@ receives a gravity number it is sent to the monitoring data collection using the command “serial write value (“gravity”, gravity)”. The movement of the object connected to the Earth can be observed in the “Show data Device”. Using a conditional statement that detects changes in the received gravity could be implemented to play “music” sound as an alarm when changes in movement are detected.
 
 ![Earthquake vibrations](/static/courses/ucp-science/gravity/earthquake.png)
 
-### Standards
-
-* Strand 7.2: Changes to Earth Over Time 
-Earth’s processes are dynamic and interactive, and are the result of energy flowing and matter cycling within and among Earth’s systems. Energy from the sun and Earth’s internal heat are the main sources driving these processes. Plate tectonics is a unifying theory that explains crustal movements of Earth’s surface, how and where different rocks form, the occurrence of earthquakes and volcanoes, and the distribution of fossil plants and animals.
-* Standard 7.2.3
-Ask questions to identify constraints of specific geologic hazards and evaluate competing design solutions for maintaining the stability of human-engineered structures, such as homes, roads, and bridges. Examples of geologic hazards could include earthquakes, landslides, or floods.
-* Standard 7.2.5
-Ask questions and analyze and interpret data about the patterns between plate tectonics and:
-(1) The occurrence of earthquakes and volcanoes…
-
 ### Skate Park Data or Pinewood Derby. 
 
 Use the @boardname@s to record data from a skater at a skate park or acceleration down a ramp like a Pinewood Derby car. 
-
-### Standards
-
-* Standard 8.2.1
-Use computational thinking to analyze data about the relationship between the mass and speed of objects and the relative amount of kinetic energy of the objects. Emphasis should be on the quantity of mass and relative speed to the observable effects of the kinetic energy. Examples could include a full cart vs. an empty cart or rolling spheres with different masses down a ramp to measure the effects on stationary masses. 
 
 <br/>
 
 | | | |
 |-|-|-|
-| Adapted from "[Electricity - Battery Tester](https://drive.google.com/open?id=15Xry9jFsIzHHG7RpaIomLodl9pBjTiKDvtjkd227b7Y)" by [C Lyman](http://utahcoding.org) | | [![CC BY-NC-SA](https://licensebuttons.net/l/by-nc-sa/4.0/80x15.png)](https://creativecommons.org/licenses/by-nc-sa/4.0/) |
+| Adapted from "[Gravity, Motion, and Waves](https://drive.google.com/open?id=1Z8S-W3n1jX6drC8ALj8Wh1Rjc0CyP0Afs3acnIjDYes)" by [C Lyman](http://utahcoding.org) | | [![CC BY-NC-SA](https://licensebuttons.net/l/by-nc-sa/4.0/80x15.png)](https://creativecommons.org/licenses/by-nc-sa/4.0/) |
