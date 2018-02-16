@@ -15,7 +15,7 @@ This is a new course, so we're adding new lessons. All lessons will be available
 The lesson series includes:
  
 * [Data Collection Methods](/courses/ucp-science/data-collection)
-* Population Trait Data Counter
+* [Population Trait Data Counter](/courses/ucp-science/population)
 * Temperature Data
 * Soil Moisture Tester
 * Body Electrical & Waves
