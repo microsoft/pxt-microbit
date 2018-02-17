@@ -22,7 +22,7 @@ This project will use a @boardname@ to collect data using the voltage that can b
 
 ### on Start event code
 
-1. Open [MakeCode](@homerurl@).
+1. Open [MakeCode](@homeurl@).
 2. Change the name of the project from “Untitled” to "Soil Moisture Tester".
 3. Place the show string block in the on start block and put the title ``"SOIL MOISTURE TESTER"`` in the quotes. 
 4. Check the display in the Simulator.
