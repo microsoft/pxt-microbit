@@ -16,7 +16,7 @@ To enable data collection in the experiments, the lessons require use of the **[
 
 ## Lesson series
 
-### ~ hint
+### ~hint
 
 **Download it**
 
