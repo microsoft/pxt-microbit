@@ -44,13 +44,6 @@
     * [Setup and procedure](/courses/ucp-science/body-electrical/setup-procedure)
     * [Resources](/courses/ucp-science/body-electrical/resources)
 
-## Magnetic Forces
-
-* [Magnetic Forces](/courses/ucp-science/magnetism)
-    * [Overview](/courses/ucp-science/magnetism/overview)
-    * [Setup and procedure](/courses/ucp-science/magnetism/setup-procedure)
-    * [Resources](/courses/ucp-science/magnetism/resources)
-
 ## Electicity - Battery tester
 
 * [Electricity](/courses/ucp-science/electricity)
