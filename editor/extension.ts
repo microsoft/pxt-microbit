@@ -279,6 +279,7 @@ namespace pxt.editor {
 
         let checksums: Uint8Array
 
+        pxt.tickEvent("hid.flash.start");
         return initAsync()
             .then(w => {
                 wrap = w
@@ -287,8 +288,10 @@ namespace pxt.editor {
             })
             .then(() => wrap.cortexM.memory.readBlock(0x10001014, 1, pageSize))
             .then(v => {
-                if (HF2.read32(v, 0) != 0x3C000)
+                if (HF2.read32(v, 0) != 0x3C000) {
+                    pxt.tickEvent("hid.flash.uicrfail");
                     U.userError(U.lf("Please flash any MakeCode hex file using drag and drop. Flashing from app will work afterwards."))
+                }
             })
             .then(() => getFlashChecksumsAsync(wrap))
             .then(buf => {
@@ -349,11 +352,13 @@ namespace pxt.editor {
                     })
                     .then(() => {
                         log("flash done")
+                        pxt.tickEvent("hid.flash.done");
                         return wrap.cortexM.reset(false)
                     })
             })
             .catch(e => {
                 if (e.type === "devicenotfound" && d.reportDeviceNotFoundAsync) {
+                    pxt.tickEvent("hid.flash.devicenotfound");
                     return d.reportDeviceNotFoundAsync("/device/windows-app/troubleshoot", resp);
                 } else {
                     return saveHexAsync()
