@@ -408,6 +408,7 @@
   "pins.spiPins": "Sets the MOSI, MISO, SCK pins used by the SPI instance",
   "pins.spiWrite": "Write to the SPI slave and return the response",
   "pins.spiWrite|param|value": "Data to be sent to the SPI slave",
+  "pins.ws2812SendBuffer": "Sends an encoded color buffer to a strip of\nWS2812 color LEDs.",
   "serial": "Reading and writing data over a serial connection.",
   "serial.delimiters": "Returns the delimiter corresponding string",
   "serial.onDataReceived": "Registers an event to be fired when one of the delimiter is matched.",

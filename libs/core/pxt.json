@@ -32,6 +32,7 @@
         "serial.cpp",
         "serial.ts",
         "buffer.cpp",
+        "ws2812SendBuffer.asm",
         "pxtparts.json",
         "parts/speaker.svg",
         "parts/headphone.svg",
