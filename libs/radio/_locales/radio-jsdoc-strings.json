@@ -1,4 +1,6 @@
 {
+  "pins": "Control currents in Pins for analog/digital signals, servos, i2c, ...",
+  "pins.ws2812SendBuffer": "Sends an encoded color buffer to a strip of\r\nWS2812 color LEDs.",
   "radio": "Communicate data using radio packets",
   "radio.Packet.receivedBuffer": "The buffer payload if a buffer was sent in this packet\nor the empty buffer",
   "radio.Packet.receivedNumber": "The number payload if a number was sent in this packet (via ``sendNumber()`` or ``sendValue()``)\nor 0 if this packet did not contain a number.",

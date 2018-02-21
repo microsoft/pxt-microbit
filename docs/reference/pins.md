@@ -53,3 +53,7 @@ pins.ws2812SendBuffer(null, DigitalPin.P0);
 [digitalReadPin](/reference/pins/digital-read-pin), [digitalWritePin](/reference/pins/digital-write-pin), [analogReadPin](/reference/pins/analog-read-pin), [analogWritePin](/reference/pins/analog-write-pin), [analogSetPeriod](/reference/pins/analog-set-period), [map](/reference/pins/map), [onPulsed](/reference/pins/on-pulsed), [pulseDuration](/reference/pins/pulse-duration), [pulseIn](/reference/pins/pulse-in), [servoWritePin](/reference/pins/servo-write-pin), [servoSetPulse](/reference/pins/servo-set-pulse), [i2cReadNumber](/reference/pins/i2c-read-number), [i2cWriteNumber](/reference/pins/i2c-write-number), [setPull](/reference/pins/set-pull), [analogPitch](/reference/pins/analog-pitch), [analogSetPitchPin](/reference/pins/analog-set-pitch-pin), [spiWrite](/reference/pins/spi-write),
 [spiPins](/reference/pins/spi-pins),[spiFormat](/reference/pins/spi-format),[spiFrequency](/reference/pins/spi-frequency),
 [ws2812SendBuffer](/reference/pins/ws2812-send-buffer)
+
+```package
+radio
+```

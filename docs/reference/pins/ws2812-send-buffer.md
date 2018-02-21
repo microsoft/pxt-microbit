@@ -16,3 +16,7 @@ For implementation details, see the [pxt-neopixel](https://github.com/microsoft/
 ## See also
 
 [pxt-neopixel](https://github.com/microsoft/pxt-neopixel)
+
+```package
+radio
+```
