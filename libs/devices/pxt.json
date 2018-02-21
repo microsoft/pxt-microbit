@@ -1,18 +1,12 @@
 {
     "name": "devices",
-    "description": "Camera, remote control and other Bluetooth services",
+    "description": "BETA -  Camera, remote control and other Bluetooth services. App required.",
     "files": [
         "README.md",
         "enums.d.ts",
         "shims.d.ts",
         "devices.cpp",
-        "devices.ts",
-        "_locales/fr/devices-jsdoc-strings.json",
-        "_locales/no/devices-strings.json",
-        "_locales/ja/devices-strings.json",
-        "_locales/ja/devices-jsdoc-strings.json",
-        "_locales/nl/devices-strings.json",
-        "_locales/nl/devices-jsdoc-strings.json"
+        "devices.ts"
     ],
     "public": true,
     "dependencies": {

@@ -1,5 +1,0 @@
-{
-  "bluetooth.setTransmitPower|block": "bluetooth puissance de transmission %power",
-  "bluetooth.startUartService|block": "bluetooth service uart",
-  "{id:category}Bluetooth": "Bluetooth"
-}

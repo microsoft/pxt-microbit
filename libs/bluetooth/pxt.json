@@ -6,13 +6,7 @@
         "enums.d.ts",
         "shims.d.ts",
         "bluetooth.ts",
-        "bluetooth.cpp",
-        "_locales/de/bluetooth-jsdoc-strings.json",
-        "_locales/no/bluetooth-strings.json",
-        "_locales/nl/bluetooth-strings.json",
-        "_locales/fr/bluetooth-strings.json",
-        "_locales/nl/bluetooth-jsdoc-strings.json",
-        "_locales/fr/bluetooth-jsdoc-strings.json"
+        "bluetooth.cpp"
     ],
     "public": true,
     "dependencies": {
