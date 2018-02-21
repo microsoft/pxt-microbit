@@ -1,7 +1,0 @@
-{
-  "bluetooth.onBluetoothConnected|param|body": "Code, der ausgeführt wird, wenn eine Bluetooth-Verbindung aufgebaut wurde",
-  "bluetooth.uartWriteNumber": "Gibt einen numerischen Wert an die serielle",
-  "bluetooth.uartWriteValue": "Schreibt ein ``Namen: Wert`` Wertepaar auf die serielle Schnittstelle.",
-  "bluetooth.uartWriteValue|param|name": "Name des Wertestreams, z.B.: x",
-  "bluetooth.uartWriteValue|param|value": "Schreiben"
-}
