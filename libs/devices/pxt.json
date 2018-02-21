@@ -1,6 +1,6 @@
 {
     "name": "devices",
-    "description": "Camera, remote control and other Bluetooth services",
+    "description": "Camera, remote control and other Bluetooth services. App required.",
     "files": [
         "README.md",
         "enums.d.ts",
