@@ -12,7 +12,13 @@ namespace serial {
     //% help=serial/write-line blockGap=8
     //% blockId=serial_writeline block="serial|write line %text"
     export function writeLine(text: string): void {
-        writeString(text + "\r\n");
+        let txt = text + "\r\n";
+        writeString(txt);
+        // pad data to the 32 byte boundary
+        // to ensure apps receive the packet
+        let r = txt.length % 32;
+        for(let i = 0; i < r; ++i)
+            writeString('\0');
     }
 
     /**
@@ -34,7 +40,7 @@ namespace serial {
     //% help=serial/write-value
     //% blockId=serial_writevalue block="serial|write value %name|= %value"
     export function writeValue(name: string, value: number): void {
-        writeString(name + ":" + value + "\r\n");
+        writeLine(name + ":" + value);
     }
 
     /**
