@@ -12,13 +12,14 @@ namespace serial {
     //% help=serial/write-line blockGap=8
     //% blockId=serial_writeline block="serial|write line %text"
     export function writeLine(text: string): void {
-        let txt = text + "\r\n";
-        writeString(txt);
+        if (!text) text = "";
         // pad data to the 32 byte boundary
         // to ensure apps receive the packet
-        let r = txt.length % 32;
-        for(let i = 0; i < r; ++i)
-            writeString('\0');
+        let r = (32 - (text.length + 2) % 32) % 32;
+        serial.writeString(text);
+        for (let i = 0; i < r; ++i)
+            serial.writeString(" ");
+        serial.writeString("\r\n");
     }
 
     /**
