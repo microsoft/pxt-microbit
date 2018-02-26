@@ -116,18 +116,21 @@ namespace pxt.editor {
             })
     }
 
-    function initAsync() {
-        let canHID = false
+    function canHID(): boolean {
+        let r = false
         if (U.isNodeJS) {
-            canHID = true
+            r = true
         } else {
             const forceHexDownload = /forceHexDownload/i.test(window.location.href);
             const isUwp = !!(window as any).Windows;
             if (Cloud.isLocalHost() && Cloud.localToken && !forceHexDownload || isUwp)
-                canHID = true
+                r = true
         }
+        return r;
+    }
 
-        if (canHID) {
+    function initAsync() {
+        if (canHID()) {
             return dapAsync();
         } else {
             return Promise.reject(new Error("no HID"))
@@ -401,7 +404,9 @@ namespace pxt.editor {
                         .then(text => project.overrideTypescriptFile(text))
             }]
         };
-        pxt.commands.deployCoreAsync = deployCoreAsync;
+
+        if (canHID())
+            pxt.commands.deployCoreAsync = deployCoreAsync;
         return Promise.resolve<pxt.editor.ExtensionResult>(res);
     }
 
