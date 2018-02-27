@@ -10,6 +10,11 @@ Make a @boardname@ wallet with this guided tutorial!
 
 ![wallet image](/static/mb/projects/wallet/wallet.jpg)
 
+## Activities
+
+* [Make](/projects/wallet/make)  
+* [Code](/projects/wallet/code)
+
 ## ~button /projects/wallet/make
 
 Let's get started!

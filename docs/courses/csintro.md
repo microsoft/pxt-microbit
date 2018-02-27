@@ -16,7 +16,7 @@ The entire course is also available as a download. Choose any of these formats:
 |||
 |-|-|
 | [![](/static/courses/csintro/icons/html-24x24.png)](/--docs#book:/courses/csintro/SUMMARY) | [- **HTML** - The entire course in a single HTML page that you can print to PDF or paper](/--docs#book:/courses/csintro/SUMMARY) |
-| [![](/static/courses/csintro/icons/microsoft-onenote-24x24.png)](https://1drv.ms/o/s!AqsgsTyHBmRBgQvFaUaeANNHbxpC) | [- **OneNote** - Intro to CS with MakeCode for micro:bit](https://1drv.ms/o/s!AqsgsTyHBmRBgQvFaUaeANNHbxpC) |
+| [![](/static/courses/csintro/icons/microsoft-onenote-24x24.png)](https://aka.ms/MakeCodeforMicroBitNotebook) | [- **OneNote** - Intro to CS with MakeCode for micro:bit](https://aka.ms/MakeCodeforMicroBitNotebook) |
 | [![](/static/courses/csintro/icons/adobe-pdf-file-icon-24x24.png)](https://1drv.ms/b/s!AqsgsTyHBmRBgQ1Fjzm5y5wKG75M) | [- **PDF** - Intro to CS with MakeCode for micro:bit](https://1drv.ms/b/s!AqsgsTyHBmRBgQ1Fjzm5y5wKG75M) |
 | [![](/static/courses/csintro/icons/apple-itunes-ibook-24x24.png)](https://itunes.apple.com/us/book/making-with-micro-bit/id1255260221?mt=11) | [- **iBooks** - Making with micro:bit](https://itunes.apple.com/us/book/making-with-micro-bit/id1255260221?mt=11) |
 ### ~
