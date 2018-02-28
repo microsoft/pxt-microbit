@@ -99,5 +99,9 @@
   "name": "Kittenbot RobotBit",
   "url":"/pkg/kittenbot/pxt-robotbit",
   "cardType": "package"
+  },{
+  "name": "iBIT",
+  "url":"/pkg/emwta/pxt-iBit",
+  "cardType": "package"
 }]
 ```
