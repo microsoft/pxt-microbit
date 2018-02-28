@@ -1,4 +1,5 @@
 {
+  "pins|block": "pins",
   "radio.onDataPacketReceived|block": "on radio received",
   "radio.onDataReceived|block": "radio on data received",
   "radio.receiveNumber|block": "radio receive number",
@@ -13,5 +14,6 @@
   "radio.writeReceivedPacketToSerial|block": "radio write received packet to serial",
   "radio.writeValueToSerial|block": "radio write value to serial",
   "radio|block": "radio",
+  "{id:category}Pins": "Pins",
   "{id:category}Radio": "Radio"
 }

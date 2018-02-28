@@ -6,7 +6,9 @@
         "shims.d.ts",
         "enums.d.ts",
         "radio.cpp",
-        "radio.ts"
+        "radio.ts",
+        "pins.ts",
+        "ws2812SendBuffer.asm"
     ],
     "public": true,
     "dependencies": {
@@ -20,6 +22,5 @@
                 }
             }
         }
-    },
-    "installedVersion": "rlfgis"
+    }
 }
