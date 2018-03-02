@@ -6,11 +6,11 @@ Have you heard about BitCoin and all those new Crypto currencies? Well micro:bit
 
 ## ~
 
-## How does it work?
+## How does a @boardname@ make coins?
 
-Each @boardname@ contains a **block chain**, a sequence of **blocks**, that is public and cannot be modified. Each block represents a **coin**. To mine new coins, the user shakes 
+Each @boardname@ contains a **block chain**, a sequence of **blocks**, that is public and can't be modified. Each block represents a **coin**. To mine new coins, the user shakes 
 the @boardname@ and, if they are in luck, their coin added to the chain as a new block! 
-Once the block is added, it is broadcasted to the other @boardname@ (the block chain is public and can't be modified so it's ok to share it). Other @boardname@ receive the block, validate the transaction and update their block chain as needed.
+Once the block is added, it is broadcasted to the other @boardname@ (the block chain is public and can't be modified so it's ok to share it). Other @boardname@s receive the block, validate the transaction and update their block chain as needed.
 
 Pressing ``A`` shows the number of block you added to the chain, that's your score.
 Pressing ``B`` shows you the length of the chain.
@@ -69,19 +69,17 @@ input.onButtonPressed(Button.B, () => {
 basic.showString("A=COINS B=CHAIN SHAKE=MINE")
 ```
 
-## How does it work?
+## How does the blockchain code work?
 
-The [radio-blockchain](https://makecode.microbit.org/pkg/microsoft/pxt-radio-blockchain) uses
-radio to transmit blocks between @boardname@. You read it all by reading the JavaScript sources at https://github.com/microsoft/pxt-radio-blockchain or the code below.
+The [radio-blockchain](https://makecode.microbit.org/pkg/microsoft/pxt-radio-blockchain) package uses radio to transmit blocks between @boardname@s. You can see how this package works by reading the JavaScript sources at https://github.com/microsoft/pxt-radio-blockchain. To go right to the blockchain code, see this file:
 
-[main.ts](https://github.com/Microsoft/pxt-radio-blockchain/blob/master/main.ts) contains the full JavaScript source of the blockhain. Have a good read!
+[main.ts](https://github.com/Microsoft/pxt-radio-blockchain/blob/master/main.ts) - contains the complete JavaScript source for the blockhain. Have a good read!
 
 ## References
 
-* https://medium.com/@lhartikk/a-blockchain-in-200-lines-of-code-963cc1cc0e54
-* https://medium.com/crypto-currently/lets-build-the-tiniest-blockchain-e70965a248b
-* https://medium.com/@micheledaliessi/how-does-the-blockchain-work-98c8cd01d2ae
-
+* ["A blockchain in 200 lines of code"](https://medium.com/@lhartikk/a-blockchain-in-200-lines-of-code-963cc1cc0e54). _medium.com_.
+* ["Let’s Build the Tiniest Blockchain"](https://medium.com/crypto-currently/lets-build-the-tiniest-blockchain-e70965a248b). _medium.com_.
+* ["How does the blockchain work?"](https://medium.com/@micheledaliessi/how-does-the-blockchain-work-98c8cd01d2ae). _medium.com_.
 
 ```package
 radio
