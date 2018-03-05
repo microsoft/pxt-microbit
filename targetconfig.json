@@ -16,7 +16,7 @@
             "sparkfun/pxt-moto-bit",
             "sparkfun/pxt-weather-bit",
             "minodekit/pxt-minode",
-            "LaboratoryForPlayfulComputation/pxt-blockytalkyBLE",
+            "LaboratoryForPlayfulComputation/pxt-BlockyTalkyBLE",
             "mbitfun/pxt-katakana",
             "jdarling/pxt-pca9685",
             "MUSELAB/pxt-wifi-shield",
