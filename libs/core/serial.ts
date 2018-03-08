@@ -36,7 +36,7 @@ namespace serial {
      * Prints an array of numeric values to the serial as CSV
      */
     //% help=serial-write-numbers
-    //% weight=87 blockGap=8
+    //% weight=86
     //% blockId=serial_writenumbers block="serial|write numbers %values"
     export function writeNumbers(values: number[]): void {
         if (!values) return;

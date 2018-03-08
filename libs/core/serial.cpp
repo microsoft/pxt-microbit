@@ -101,7 +101,7 @@ namespace serial {
      * Sends a piece of text through Serial connection.
      */
     //% help=serial/write-string
-    //% weight=87
+    //% weight=87 blockGap=8
     //% blockId=serial_writestring block="serial|write string %text"
     void writeString(StringData *text) {
       if (!text) return;
