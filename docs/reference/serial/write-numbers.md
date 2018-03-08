@@ -25,9 +25,9 @@ basic.forever(() => {
 
 
 ```blocks
-serial.writeLine("temp,light");
+serial.writeLine("temp,light")
 basic.forever(() => {
-    serial.writeNumber([input.temperature(), input.lightLevel()]);
+    serial.writeNumbers([input.temperature(), input.lightLevel()])
 })
 ```
 
