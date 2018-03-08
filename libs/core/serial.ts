@@ -33,6 +33,21 @@ namespace serial {
     }
 
     /**
+     * Prints an array of numeric values to the serial as CSV
+     */
+    //% help=serial-write-numbers
+    //% weight=87 blockGap=8
+    //% blockId=serial_writenumbers block="serial|write numbers %values"
+    export function writeNumbers(values: number[]): void {
+        if (!values) return;
+        for(let i = 0; i < values.length; ++i) {
+            if (i > 0) writeString(",");
+            writeNumber(values[i]);
+        }
+        writeLine("")
+    }
+
+    /**
      * Writes a ``name: value`` pair line to the serial.
      * @param name name of the value stream, eg: x
      * @param value to write
