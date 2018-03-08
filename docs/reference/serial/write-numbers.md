@@ -16,7 +16,7 @@ This program repeatedly writes a 3-number array to the serial port.
 
 ```blocks
 basic.forever(() => {
-    serial.writeNumber([1, 2, 3]);
+    serial.writeNumbers([1, 2, 3]);
     basic.pause(5000);
 });
 ```
