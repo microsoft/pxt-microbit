@@ -20,7 +20,7 @@
     //% parts="ledmatrix"
     export function plotBarGraph(value: number, high: number): void {
         let now = input.runningTime();
-        serial.writeString(value.toString() + "\r\n");
+        serial.writeLine(value.toString());
         value = Math.abs(value);
 
         if (high != 0) barGraphHigh = high;

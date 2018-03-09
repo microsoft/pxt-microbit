@@ -56,6 +56,12 @@ radio.onDataPacketReceived(({ signal, receivedNumber }) => {
 })
 ```
 
+## Troubleshooting
+
+The on radio data event can only be created once, due to the hardware restrictions.
+
+The radio set group might need to be set, synchronized , before the radio events will function.
+
 ## See also
 
 [send number](/reference/radio/send-number),

@@ -404,7 +404,7 @@ declare namespace control {
     function raiseEvent(src: number, value: number, mode?: EventCreationMode): void;
 
     /**
-     * Raises an event in the event bus.
+     * Registers an event handler.
      */
     //% weight=20 blockGap=8 blockId="control_on_event" block="on event|from %src=control_event_source_id|with value %value=control_event_value_id"
     //% help=control/on-event
@@ -800,7 +800,7 @@ declare namespace serial {
      * Sends a piece of text through Serial connection.
      */
     //% help=serial/write-string
-    //% weight=87
+    //% weight=87 blockGap=8
     //% blockId=serial_writestring block="serial|write string %text" shim=serial::writeString
     function writeString(text: string): void;
 

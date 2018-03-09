@@ -343,6 +343,7 @@
   "serial.redirect|block": "serial|redirect to|TX %tx|RX %rx|at baud rate %rate",
   "serial.writeBuffer|block": "serial|write buffer %buffer",
   "serial.writeLine|block": "serial|write line %text",
+  "serial.writeNumbers|block": "serial|write numbers %values",
   "serial.writeNumber|block": "serial|write number %value",
   "serial.writeString|block": "serial|write string %text",
   "serial.writeValue|block": "serial|write value %name|= %value",

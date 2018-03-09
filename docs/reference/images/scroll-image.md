@@ -11,14 +11,11 @@ item.scrollImage(5, 200);
 ## Parameters
 
 * a [number](/types/number) that means
-  how many LEDs to scroll at a time, from right to left or
-  left to right. If you use a positive number like `2`, the image
-  will scroll from the right side of the screen to the left.
-  If you use a negative number like `-2`, the image will scroll
-  in the other direction. If you use `5` or `-5`, the image
-  will scroll one **frame** at a time. (A frame is a part of the
-  image. It is a square with five LEDs on a side). This is
-  useful for **animation**.
+  how many LEDs to scroll at a time from right to left.
+  You must use a positive number like `2`.
+  If you use `5`, the image will scroll one **frame** at a time.
+  (A frame is a part of the image. It is a square with five LEDs
+  on a side). This is useful for **animation**.
 
 * a [number](/types/number) that means
   how many milliseconds to wait before scrolling the amount that
