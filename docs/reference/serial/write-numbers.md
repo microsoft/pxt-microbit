@@ -10,7 +10,7 @@ Instead of writing a single number at a time using [write number](/reference/ser
 
 You can write the numbers `0` through `5` together and they will appear as one line of serial output:
 
-``0,2,3,4,5``
+``0,1,2,3,4,5``
 
 This makes a line of CSV data where the commas between the numbers are the separators for each value.
 
