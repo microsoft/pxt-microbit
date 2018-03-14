@@ -332,11 +332,11 @@
 
 * [Hardware](/device)
     * [Data Analysis](/device/data-analysis)
+        * [Plotting with LEDs](/device/data-analysis/led-plotting)
         * [Viewing Data](/device/data-analysis/viewing)
         * [Writing Data](/device/data-analysis/writing)
         * [Generating Data](/device/data-analysis/generating)
         * [Analyzing Data](/device/data-analysis/analyze)
-    * [Data logging](/device/data-logging)
     * [Error codes](/device/error-codes)
     * [Foil circuits](/device/foil-circuits)
     * [MES events](/device/mes-events)

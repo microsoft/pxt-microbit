@@ -8,6 +8,7 @@ The Data Viewer in the MakeCode editor allows you to stream and log data from yo
 
 These topics describe how to analyze your data using MakeCode with the @boardname@:
 
+* [Plotting with LEDs](./data-analysis/led-plotting)
 * [Viewing your data](./data-analysis/viewing)
 * [Writing data](./data-analysis/writing)
 * [Generating data](./data-analysis/generating)

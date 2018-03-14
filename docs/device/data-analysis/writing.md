@@ -157,21 +157,4 @@ The console output shows the different name value pairs too:
 
 ![Two values in console output](/static/mb/device/data-analysis/two-value-console.jpg)
 
-## Plot values on the LEDs
 
-To quickly see and record your data values, use the ``||led:plot bar graph||`` block. It will both plot a value on the LEDs and write a number to console.
-
-```blocks
-input.onButtonPressed(Button.B, () => {
-    for (let i = 0; i <= 25 - 1; i++) {
-        if (i % 2 > 0) {
-            led.plotBarGraph(0, 0)
-        } else {
-            led.plotBarGraph(i, 24)
-        }
-        basic.pause(300)
-    }
-})
-```
-
-A number of LEDs will light up to show how much the value is related to the _high_ number in the second arguement.
