@@ -57,11 +57,11 @@
   "cardType": "package"
 }, {
   "name": "ssd1306 OLED",
-  "url":"/pkg/Tinkertanker/pxt-ssd1306-microbit",
+  "url":"/pkg/Tinkertanker/pxt-oled-ssd1306",
   "cardType": "package"
 }, {
   "name": "ky040 rotary",
-  "url":"/pkg/Tinkertanker/pxt-ky040-microbit",
+  "url":"/pkg/Tinkertanker/pxt-rotary-encoder-ky040",
   "cardType": "package"
 }, {
   "name": "GY521",
