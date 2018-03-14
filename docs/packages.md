@@ -12,6 +12,10 @@
   "url":"/pkg/microsoft/pxt-neopixel",
   "cardType": "package"
 },{
+  "name": "micro:turtle",
+  "url":"/pkg/microsoft/pxt-microturtle",
+  "cardType": "package"
+},{
   "name": "MAX6675",
   "url":"/pkg/microsoft/pxt-max6675",
   "cardType": "package"
