@@ -331,6 +331,11 @@
 ## #other
 
 * [Hardware](/device)
+    * [Data Analysis](/device/data-analysis)
+        * [Viewing Data](/device/data-analysis/viewing)
+        * [Writing Data](/device/data-analysis/writing)
+        * [Generating Data](/device/data-analysis/generating)
+        * [Analyzing Data](/device/data-analysis/analyze)
     * [Data logging](/device/data-logging)
     * [Error codes](/device/error-codes)
     * [Foil circuits](/device/foil-circuits)
