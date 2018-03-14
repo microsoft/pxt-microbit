@@ -62,10 +62,11 @@ function show() {
 //Core function
 function gameOfLife() {
     let result: boolean[] = [];
+    let count = 0;
 
     for (let x = 0; x < 5; x++) {
         for (let y = 0; y < 5; y++) {
-            let count = 0;
+            count = 0;
 
             //Count the live cells in the next row
             if ((x + 1) < 5) {
