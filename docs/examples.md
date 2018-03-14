@@ -28,6 +28,12 @@ Here are some fun programs for your @boardname@!
   "description": "Simulation in LEDs. Use button A for next stage. Button B for reset.",
   "url":"/examples/gameofLife",
   "cardType": "example"
+},
+{
+  "name": "Pi Monte Carlo",
+  "description": "Approximate the number Pi",
+  "url": "/examples/pi",
+  "cardType": "example"
 }
 ]
 ```
