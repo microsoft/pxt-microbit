@@ -155,8 +155,8 @@ namespace serial {
     //% rx.fieldOptions.tooltips="false"
     //% blockGap=8
     void redirect(SerialPin tx, SerialPin rx, BaudRate rate) {
-      MicroBitPin* txp = getPin(tx); if (!tx) return;
-      MicroBitPin* rxp = getPin(rx); if (!rx) return;
+      MicroBitPin* txp = getPin(tx); if (!txp) return;
+      MicroBitPin* rxp = getPin(rx); if (!rxp) return;
 
       uBit.serial.redirect(txp->name, rxp->name);
       uBit.serial.baud((int)rate);
