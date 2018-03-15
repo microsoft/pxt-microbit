@@ -32,7 +32,7 @@ Here are some fun programs for your @boardname@!
 {
   "name": "Pi Monte Carlo",
   "description": "Approximate the number Pi",
-  "url": "/examples/pi",
+  "url": "/examples/pi-montecarlo",
   "cardType": "example"
 }
 ]
