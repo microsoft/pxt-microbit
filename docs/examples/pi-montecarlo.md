@@ -8,7 +8,7 @@ Ok, let's pretend that a circle fits inside a square where the edge of the circl
 
 ### Circle and square
 
-An intersting relationship between the circle and the square is that the area of the circle divided by the area of the square is:
+An interesting relationship between the circle and the square is that the area of the circle divided by the area of the square is:
 
 ``area ratio = ((pi * r) ** 2) / ((pi * r * 2) ** 2) = pi / 4``
 
