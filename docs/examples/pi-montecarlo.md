@@ -35,7 +35,7 @@ What if we had a lot of really small dots that we could fill into the circle and
 
 If we count the number of dots placed in both the circle and the square, we could find the ``area ratio`` between the two shapes. And, in the equation shown above, we can discover ``pi`` if we have this ratio. The ``area ratio`` is:
 
-``area ratio = (dots in circle) / ((dots in circle) + (dots in square))``
+``area ratio = (dots in circle) / ((dots in circle) + (dots only in square))``
 
 Of course, we can't completely fill the area of both shapes with dots but we could get enough of them in there to give a useful ratio between the circle and the square.
 
