@@ -18,6 +18,7 @@ clients/**/obj/**
 electron-out
 hexcache
 build
+crowdinstats.csv
 
 *.user
 *.sw?

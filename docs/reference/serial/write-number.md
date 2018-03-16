@@ -10,13 +10,13 @@ serial.writeNumber(0);
 
 * `value` is the [number](/types/number) to write to the serial port
 
-## Example: one through ten
+## Example: one two three
 
-This program repeatedly writes a 10-digit number to the serial port.
+This program repeatedly writes a 3-digit number to the serial port.
 
 ```blocks
 basic.forever(() => {
-    serial.writeNumber(1234567890);
+    serial.writeNumber(123);
     basic.pause(5000);
 });
 ```
@@ -37,5 +37,6 @@ basic.forever(() => {
 
 [serial](/device/serial),
 [serial write line](/reference/serial/write-line),
-[serial write value](/reference/serial/write-value)
+[serial write value](/reference/serial/write-value),
+[serial write numbers](/reference/serial/write-numbers)
 

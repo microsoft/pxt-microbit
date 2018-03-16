@@ -315,19 +315,6 @@
 ## #packages
 
 * [Packages](/packages)
-    * [NeoPixel](/pkg/microsoft/pxt-neopixel)
-    * [File System](/pkg/microsoft/pxt-filesystem)
-    * [Sonar](/pkg/microsoft/pxt-sonar)
-    * [Bluetooth Temperature Sensor](/pkg/microsoft/pxt-bluetooth-temperature-sensor)
-    * [MAX6675](/pkg/microsoft/pxt-max6675)
-    * [Bluetooth MAX6675](/pkg/microsoft/pxt-bluetooth-max6675)
-    * [MIDI](/pkg/microsoft/pxt-midi)
-    * [Bluetooth MIDI](/pkg/microsoft/pxt-bluetooth-midi)
-    * [Code Dojo Olney](/pkg/CoderDojoOlney/pxt-olney)
-    * [UCL Junk Robot](/pkg/chevyng/pxt-ucl-junkrobot)
-    * [SRS BitBot](/pkg/srs/pxt-bitbot)
-    * [SRS BitBot](/pkg/srs/pxt-bitbot)
-    * [BlockyTalkyBLE](/pkg/LaboratoryForPlayfulComputation/pxt-blockytalkybluetooth/)
 
 ## #types
 
@@ -344,7 +331,12 @@
 ## #other
 
 * [Hardware](/device)
-    * [Data logging](/device/data-logging)
+    * [Data Analysis](/device/data-analysis)
+        * [Plotting with LEDs](/device/data-analysis/led-plotting)
+        * [Viewing Data](/device/data-analysis/viewing)
+        * [Writing Data](/device/data-analysis/writing)
+        * [Generating Data](/device/data-analysis/generating)
+        * [Analyzing Data](/device/data-analysis/analyze)
     * [Error codes](/device/error-codes)
     * [Foil circuits](/device/foil-circuits)
     * [MES events](/device/mes-events)

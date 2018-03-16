@@ -98,7 +98,7 @@ You can attach an external device such as a motor to these and power it using th
 
 ## Serial Communication
 
-The micro:bit can send an receive data via [serial communication](/device/serial). The serial data can be transfered via USB or BLE.
+The micro:bit can send and receive data via [serial communication](/device/serial). The serial data can be transfered via USB or BLE.
 
 ## Bluetooth Low Energy (BLE) Antenna
 
@@ -111,4 +111,4 @@ control the micro:bit or the micro:bit can control another BLE device.
 ## Technical Information
 
 The micro:bit has been designed to be a bare-board micro controller for use by children aged 11-12. 
-More information is available at the [Microbit Foundation web site](https://microbit.org/guide/.
+More information is available at the [Microbit Foundation web site](https://microbit.org/guide/).
