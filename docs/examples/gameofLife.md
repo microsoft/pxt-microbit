@@ -6,7 +6,7 @@ The [Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life) simula
 
 The rules for life in the grid are:
 
-1. A living cell with less than two cells next to it will die. This is underpopulation, no social support.
+1. A living cell with less than two live cells next to it will die. This is underpopulation, no social support.
 2. A living cell with two or three live cells next to it continues to live. This is a healthy population.
 3. A living cell with more than three live cells next to it will die. This is over overpopulation, scarce resources.
 4. A dead cell with three live cells next to it turns into a living cell. This is reproduction.
