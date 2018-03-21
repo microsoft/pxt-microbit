@@ -7,7 +7,7 @@ Here are some fun programs for your @boardname@!
 ```codecard
 [{
   "name": "Blinky",
-  "description": "A blinking LED",
+  "description": "A blinking pattern of LEDs",
   "url":"/examples/blinky",
   "cardType": "example"
 },
@@ -25,7 +25,7 @@ Here are some fun programs for your @boardname@!
 },
 {
   "name": "Game of Life",
-  "description": "Simulation in LEDs. Use button A for next stage. Button B for reset.",
+  "description": "A Game of Life simulation in LEDs",
   "url":"/examples/gameofLife",
   "cardType": "example"
 },
@@ -48,27 +48,27 @@ Here are some fun programs for your @boardname@!
   "cardType": "example"
 },{
   "name": "Plot Acceleration",
-  "description": "chart acceleration on the LED screen",
+  "description": "Chart acceleration on the LED screen",
   "url":"/examples/plot-acceleration",
   "cardType": "example"
 }, {
   "name": "Plot Light Level",
-  "description": "chart light level on the LED screen",
+  "description": "Chart light level on the LED screen",
   "url":"/examples/plot-light-level",
   "cardType": "example"
 }, {
   "name": "Plot Analog Pin",
-  "description": "chart analog input on the LED screen",
+  "description": "Chart analog input on the LED screen",
   "url":"/examples/plot-analog-pin",
   "cardType": "example"
 }, {
   "name": "Stop Watch",
-  "description": "easy time tracking",
+  "description": "Easily track time",
   "url":"/examples/stop-watch",
   "cardType": "example"
 }, {
   "name": "Radio Dashboard",
-  "description": "dashboard for radio clients",
+  "description": "A dashboard for radio clients",
   "url":"/examples/radio-dashboard",
   "cardType": "example"
 }]
@@ -79,7 +79,7 @@ Here are some fun programs for your @boardname@!
 ```codecard
 [{
   "name": "Servo Calibrator",
-  "description": "calibrates a servo",
+  "description": "Calibrate a servo",
   "url":"/examples/servo-calibrator",
   "cardType": "example"
 }]
@@ -90,17 +90,17 @@ Here are some fun programs for your @boardname@!
 ```codecard
 [{		
   "name": "Turtle Square",
-  "description": "move in a square",
+  "description": "Move in a square",
   "url":"/examples/turtle-square",
   "cardType": "example"
 }, {
   "name": "Turtle Spiral",
-  "description": "move in a spiral",
+  "description": "Move in a spiral",
   "url":"/examples/turtle-spiral",
   "cardType": "example"
 }, {
   "name": "Turtle Scanner",
-  "description": "scans the screen down",
+  "description": "Scan down the screen",
   "url":"/examples/turtle-scanner",
   "cardType": "example"
 }]
