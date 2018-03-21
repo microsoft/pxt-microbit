@@ -78,6 +78,26 @@ namespace pxt.editor {
         }
     }
 
+    let packetIoPromise: Promise<pxt.HF2.PacketIO>;
+    function initPacketIOAsync(): Promise<pxt.HF2.PacketIO> {
+        if (!packetIoPromise) {
+            packetIoPromise = pxt.HF2.mkPacketIOAsync()
+                .catch(err => {
+                    packetIoPromise = null;
+                    return Promise.reject(err);
+                });
+            return packetIoPromise;
+        } else {
+            let packetIo: pxt.HF2.PacketIO;
+            return packetIoPromise
+                .then((io) => {
+                    packetIo = io;
+                    return io.reconnectAsync();
+                })
+                .then(() => packetIo);
+        }
+    }
+
     let previousDapWrapper: DAPWrapper;
     function dapAsync() {
         if (previousDapWrapper)
@@ -92,7 +112,7 @@ namespace pxt.editor {
                 }
                 return Promise.resolve();
             })
-            .then(() => pxt.HF2.mkPacketIOAsync())
+            .then(() => initPacketIOAsync())
             .then(h => {
                 let w = new DAPWrapper(h)
                 previousDapWrapper = w;
@@ -101,22 +121,23 @@ namespace pxt.editor {
             })
     }
 
-    function initAsync() {
-        let canHID = false
-
-        if (pxt.usb.isEnabled)
-            canHID = true
-
-        if (U.isNodeJS) {
-            canHID = true
+    function canHID(): boolean {
+        let r = false
+        if (pxt.usb.isEnabled) {
+            r = true
+        } else if (U.isNodeJS) {
+            r = true
         } else {
             const forceHexDownload = /forceHexDownload/i.test(window.location.href);
             const isUwp = !!(window as any).Windows;
             if (Cloud.isLocalHost() && Cloud.localToken && !forceHexDownload || isUwp)
-                canHID = true
+                r = true
         }
+        return r;
+    }
 
-        if (canHID) {
+    function initAsync() {
+        if (canHID()) {
             return dapAsync();
         } else {
             return Promise.reject(new Error("no HID"))
@@ -268,6 +289,7 @@ namespace pxt.editor {
 
         let checksums: Uint8Array
 
+        pxt.tickEvent("hid.flash.start");
         return initAsync()
             .then(w => {
                 wrap = w
@@ -278,6 +300,13 @@ namespace pxt.editor {
                         return wrap.reconnectAsync(false)
                             .then(() => wrap.cortexM.reset(true))
                     })
+            })
+            .then(() => wrap.cortexM.memory.readBlock(0x10001014, 1, pageSize))
+            .then(v => {
+                if (HF2.read32(v, 0) != 0x3C000) {
+                    pxt.tickEvent("hid.flash.uicrfail");
+                    U.userError(U.lf("Please flash any MakeCode hex file using drag and drop. Flashing from app will work afterwards."))
+                }
             })
             .then(() => getFlashChecksumsAsync(wrap))
             .then(buf => {
@@ -338,12 +367,14 @@ namespace pxt.editor {
                     })
                     .then(() => {
                         log("flash done")
+                        pxt.tickEvent("hid.flash.done");
                         return wrap.cortexM.reset(false)
                     })
             })
             .catch(e => {
                 if (e.type === "devicenotfound" && d.reportDeviceNotFoundAsync) {
-                    return d.reportDeviceNotFoundAsync("/device/windows-app/troubleshoot");
+                    pxt.tickEvent("hid.flash.devicenotfound");
+                    return d.reportDeviceNotFoundAsync("/device/windows-app/troubleshoot", resp);
                 } else {
                     return saveHexAsync()
                 }
@@ -393,7 +424,8 @@ namespace pxt.editor {
             subclassCode: 0x03
         }])
 
-        pxt.commands.deployCoreAsync = deployCoreAsync;
+        if (canHID())
+            pxt.commands.deployCoreAsync = deployCoreAsync;
         return Promise.resolve<pxt.editor.ExtensionResult>(res);
     }
 

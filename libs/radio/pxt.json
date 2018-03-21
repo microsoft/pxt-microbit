@@ -6,19 +6,7 @@
         "shims.d.ts",
         "enums.d.ts",
         "radio.cpp",
-        "radio.ts",
-        "_locales/de/radio-strings.json",
-        "_locales/de/radio-jsdoc-strings.json",
-        "_locales/si-LK/radio-strings.json",
-        "_locales/sv-SE/radio-strings.json",
-        "_locales/no/radio-strings.json",
-        "_locales/si-LK/radio-jsdoc-strings.json",
-        "_locales/no/radio-jsdoc-strings.json",
-        "_locales/ja/radio-strings.json",
-        "_locales/ja/radio-jsdoc-strings.json",
-        "_locales/nl/radio-strings.json",
-        "_locales/fr/radio-strings.json",
-        "_locales/nl/radio-jsdoc-strings.json"
+        "radio.ts"
     ],
     "public": true,
     "dependencies": {

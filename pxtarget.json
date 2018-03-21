@@ -235,7 +235,6 @@
         "privacyUrl": "https://makecode.com/privacy",
         "termsOfUseUrl": "https://makecode.com/termsofuse",
         "githubUrl": "https://github.com/Microsoft/pxt-microbit",
-        "legacyDomain": "pxt.microbit.org",
         "galleries": {
             "Projects": "projects",
             "Examples": "examples"

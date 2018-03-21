@@ -2,6 +2,12 @@
 
 Control a phone with the @boardname@ via Bluetooth.
 
+## ~ hint
+
+**App required** You must use one of the [micro:bit apps](https://microbit.org/guide/mobile/) to use this functionality.
+
+## ~
+
 ```cards
 devices.tellCameraTo(MesCameraEvent.TakePhoto);
 devices.tellRemoteControlTo(MesRemoteControlEvent.play);

@@ -1,5 +1,0 @@
-{
-  "bluetooth.advertiseUidBuffer|param|power": "niveau de puissance enter 0 et 7, eg: 7",
-  "bluetooth.advertiseUid|param|power": "niveau de puissance enter 0 et 7, eg: 7",
-  "bluetooth.advertiseUrl|param|power": "niveau de puissance enter 0 et 7, eg: 7"
-}

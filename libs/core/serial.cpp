@@ -62,7 +62,7 @@ namespace serial {
     // note that at least one // followed by % is needed per declaration!
 
     /**
-     * Reads a line of text from the serial port and returns the buffer when the delimiter is met.
+     * Read a line of text from the serial port and return the buffer when the delimiter is met.
      * @param delimiter text delimiter that separates each text chunk
      */
     //% help=serial/read-until
@@ -73,7 +73,7 @@ namespace serial {
     }
 
     /**
-    * Reads the buffered received data as a string
+    * Read the buffered received data as a string
     */
     //% help=serial/read-string
     //% blockId=serial_read_buffer block="serial|read string"
@@ -85,7 +85,7 @@ namespace serial {
     }
 
     /**
-    * Registers an event to be fired when one of the delimiter is matched.
+    * Register an event to be fired when one of the delimiter is matched.
     * @param delimiters the characters to match received characters against.
     */
     //% help=serial/on-data-received
@@ -98,10 +98,10 @@ namespace serial {
     }
 
     /**
-     * Sends a piece of text through Serial connection.
+     * Send a piece of text through the serial connection.
      */
     //% help=serial/write-string
-    //% weight=87
+    //% weight=87 blockGap=8
     //% blockId=serial_writestring block="serial|write string %text"
     void writeString(StringData *text) {
       if (!text) return;
@@ -110,7 +110,7 @@ namespace serial {
     }
 
     /**
-    * Sends a buffer through Serial connection
+    * Send a buffer through serial connection
     */
     //% blockId=serial_writebuffer block="serial|write buffer %buffer"
     //% help=serial/write-buffer advanced=true weight=6
@@ -155,8 +155,8 @@ namespace serial {
     //% rx.fieldOptions.tooltips="false"
     //% blockGap=8
     void redirect(SerialPin tx, SerialPin rx, BaudRate rate) {
-      MicroBitPin* txp = getPin(tx); if (!tx) return;
-      MicroBitPin* rxp = getPin(rx); if (!rx) return;
+      MicroBitPin* txp = getPin(tx); if (!txp) return;
+      MicroBitPin* rxp = getPin(rx); if (!rxp) return;
 
       uBit.serial.redirect(txp->name, rxp->name);
       uBit.serial.baud((int)rate);
