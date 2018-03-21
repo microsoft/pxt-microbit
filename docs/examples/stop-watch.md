@@ -1,6 +1,6 @@
 # Stop watch
 
-Press ``A`` to start the counter and 
+Press ``A`` to start the counter. Press ``A`` again to stop and display the count. 
 
 ```blocks
 let msec = 0
