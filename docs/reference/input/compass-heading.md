@@ -2,7 +2,7 @@
 
 Find which direction on a compass the @boardname@ is facing.
 
-The @boardname@ measures the **compass heading** from `0` to `360`
+The @boardname@ measures the **compass heading** from `0` to `359`
 degrees with its **magnetometer** chip. Different numbers mean north,
 east, south, and west.
 
@@ -12,7 +12,7 @@ input.compassHeading();
 
 ## Returns
 
-* a [number](/types/number) from `0` to `360` degrees, which means the compass heading. If the compass isn't ready, it returns `-1003`.
+* a [number](/types/number) from `0` to `359` degrees, which means the compass heading. If the compass isn't ready, it returns `-1003`.
 
 ## Example
 
@@ -43,11 +43,11 @@ basic.forever(() => {
     if (degrees < 45) {
         basic.showArrow(ArrowNames.North)
     } else if (degrees < 135) {
-        basic.showArrow(ArrowNames.West)
+        basic.showArrow(ArrowNames.East)
     } else if (degrees < 225) {
         basic.showArrow(ArrowNames.South)
     } else if (degrees < 315) {
-        basic.showArrow(ArrowNames.East)
+        basic.showArrow(ArrowNames.West)
     } else {
         basic.showArrow(ArrowNames.North)
     }

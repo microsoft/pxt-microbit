@@ -15,18 +15,19 @@ The following example constantly checks the
 and updates the screen with the direction.
 
 ```blocks
+let degrees = 0
 basic.forever(() => {
-    let heading = input.compassHeading()
-    if (heading < 45) {
+    degrees = input.compassHeading()
+    if (degrees < 45) {
         basic.showString("N")
-    } else if (heading < 135) {
-        basic.showString("E")
-    }
-    else if (heading < 225) {
-        basic.showString("S")
-    }
-    else {
+    } else if (degrees < 135) {
         basic.showString("W")
+    } else if (degrees < 225) {
+        basic.showString("S")
+    } else if (degrees < 315) {
+        basic.showString("E")
+    } else {
+        basic.showString("N")
     }
 })
 ```
