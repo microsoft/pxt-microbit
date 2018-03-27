@@ -10,7 +10,7 @@ radio.writeReceivedPacketToSerial();
 
 ## Data received format
 
-The format for received data printed to serial is as follows:
+The format for received data when these send functions are used:
 
 - [send number](/reference/radio/send-number): ```{v:ValueSent,t:MicrobitTimeAlive,s:SerialNumber}```
 - [send value](/reference/radio/send-value): ```{v:ValueSent,t:MicrobitTimeAlive,s:SerialNumber,n:"Name"}```
@@ -22,15 +22,19 @@ The serial number value sent in the packet is set to `0` unless transmission of 
 
 ### ~
 
-## Examples
+## Example
 
 When ```radio``` data is received (after pressing the ``A`` button on
-the second @boardname@), this program sends temperature data to
-serial.
+the second @boardname@), this program sends temperature data to the 
+serial port.
 
 ```blocks
 input.onButtonPressed(Button.A, () => {
     radio.sendNumber(input.temperature());
+    radio.sendValue("temperature", input.temperature());
+    radio.sendString("It's warm now");
+
+
 });
 radio.onDataPacketReceived(() => {
     radio.writeReceivedPacketToSerial();
@@ -38,8 +42,10 @@ radio.onDataPacketReceived(() => {
 ```
 Sample output to serial when ``A`` button pressed:
 
-```Text
-{v:27,t:323,s:0}
+```json
+{"t":323,"s":0,"v":27}
+{"t":325,"s":0,"n":"temperature","v":27}
+{"t":326,"s":0,"n":"It's warm now"}
 ```
 
 ## See also
