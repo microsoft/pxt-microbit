@@ -16,6 +16,12 @@ The format for received data printed to serial is as follows:
 - [send value](/reference/radio/send-value): ```{v:ValueSent,t:MicrobitTimeAlive,s:SerialNumber,n:"Name"}```
 - [send string](/reference/radio/send-string): ```{t:MicrobitTimeAlive,s:SerialNumber,n:"Text"}```
 
+### ~hint
+
+The serial number value sent in the packet is set to `0` unless transmission of the serial number is enabled with ``||radio:radio set transmit serial number||``.
+
+### ~
+
 ## Examples
 
 When ```radio``` data is received (after pressing the ``A`` button on
@@ -41,7 +47,8 @@ Sample output to serial when ``A`` button pressed:
 [send number](/reference/radio/send-number),
 [send value](/reference/radio/send-value),
 [send string](/reference/radio/send-string),
-[on data packet received](/reference/radio/on-data-packet-received)
+[on data packet received](/reference/radio/on-data-packet-received),
+[set transmit serial number](/reference/radio/set-transmit-serial-number)
 
 ```package
 radio

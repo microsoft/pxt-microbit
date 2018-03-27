@@ -8,7 +8,7 @@ radio.setTransmitSerialNumber(true);
 
 ## Parameters
 
-* ``transmit`` is a [boolean](/types/boolean) that represents whether the serial number needs to be transmitted.
+* ``transmit`` is a [boolean](/types/boolean) that, when ``true``, means that the board serial number is included in each transmitted packet. If ``false``, the serial number value is set to `0`.
 
 ## Example
 

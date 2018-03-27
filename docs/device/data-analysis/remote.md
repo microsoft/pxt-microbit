@@ -1,6 +1,6 @@
 # Remote data collection
 
-If you have more than one @boardname@ you can setup one of them to receive data sent by radio from another @boardname@. A remote @boardname@ can take measurements and send them to a board that's connected by USB to a computer. The @boardname@ connected to the computer is the data recorder and writes the recieved data to the serial port.
+If you have more than one @boardname@ you can setup one of them to receive data sent by radio from other @boardname@s. Remote @boardname@s can take measurements and send them to a board that's connected by USB to a computer. The @boardname@ connected to the computer is the data recorder and writes the recieved data to the serial port.
 
 ![Remote micro:bit sending](/static/mb/device/data-analysis/radio-zap.jpg)
 
@@ -26,7 +26,7 @@ radio.onDataPacketReceived( ({ receivedNumber }) =>  {
 
 ## Remote sender @boardname@
 
-The remote @boardname@ reads its measurement values and sends them to the same radio group as the receiver.
+A remote @boardname@ reads its measurement values and sends them to the same radio group as the receiver.
 
 ```block
 radio.setGroup(99)
@@ -88,42 +88,71 @@ You could add another receiver @boardname@ and set it to a different radio group
 
 A different solution from using more than one radio group is to still have just one receiver on one group but make the different stations send identifiers with their values.
 
-This is done with ``||radio:radio send value||`` by adding an identifer to the ``name`` for the ``value``. You can make a good identifier from the ``||control:device name||`` or ``||control:device serial number||`` values. You can put the identifier in as a _prefix_ to the name for the value:
+This is done with ``||radio:radio set transmit serial number||`` which tells the radio to add the board's serial number to the packet it sends. The serial number is included with the ``name`` and ``value`` so the receiver can know what station it comes from.
 
 ```block
-let temperature = 0
-let id = control.deviceName()
-radio.sendValue(id + "_temperature", temperature)
+radio.setTransmitSerialNumber(true)
 ```
 
 The sender's program with the identifier added:
 
 ```blocks
 let temperature = 0
-let id = control.deviceName()
 radio.setGroup(99)
+radio.setTransmitSerialNumber(true)
 basic.forever(() => {
     temperature = input.temperature()
     basic.showNumber(temperature)
-    radio.sendValue(id + "_temperature", temperature)
+    radio.sendValue("temperature", temperature)
     basic.pause(60000)
 })
 ```
 
-This way messages from each sending station are recorded as unique values by the receiving program.
+The program on the receiver board can use the serial number to make a name value pair that the [Data Viewer](./writing#name-value-pairs) can recognize:
 
-### ~hint
+```blocks
+radio.setGroup(99)
+radio.onDataPacketReceived(({ serial: id, receivedString: name, receivedNumber: value }) => {
+    basic.showString(name + ":")
+    basic.showNumber(value)
+    serial.writeValue(id + "_" + name, value)
+})
+```
 
-**Packet flooding**
+The serial number, ``id``, is used as a _prefix_ for the ``name`` to identify which station the ``value`` came from.
 
-If there are too many remote stations (@boardname@s) sending data to one receiver, the receiving @boardname@ might not be able to process all the packets it receives. This floods the receiver with too many messages so that it has to reject them until it has time to handle any new ones.
+### Extended data recording
 
-### ~
+If you're recording data to save on a computer for analysis or other uses outside of the MakeCode editor, you can use the ``||radio:radio write received packet to serial||`` block to format it for you. This function will format the data from the received packet into a [JSON](https://en.wikipedia.org/wiki/JSON) string and write it to the serial port, all in one operation. It's used just like this:
+
+```blocks
+radio.onDataPacketReceived(() => {
+    radio.writeReceivedPacketToSerial();
+});
+```
+
+The output to the serial port is a line of text with these name value pairs:
+
+* **t** - time: the time when the packet was sent
+* **s** - serial: the serial number of the board that sent the packet (if enabled)
+* **n** - name: the name for the data value from the string part of the packet
+* **v** - value: the data from the number part of the packet
+
+It's sent in this format to the serial port:
+
+```json
+{"t":3504,"s":1951284846,"n":"temperature","v":19} 
+{"t":3823,"s":1951284846,"n":"temperature","v":20} 
+{"t":4143,"s":1951284846,"n":"temperature","v":20} 
+{"t":4463,"s":1951284846,"n":"temperature","v":18} 
+{"t":4781,"s":1951284846,"n":"temperature","v":21} 
+{"t":5102,"s":1951284846,"n":"temperature","v":17} 
+```
 
 ## See also
 
 [radio](/reference/radio), [serial write value](/reference/serial/write-value),
-[device name](/reference/control/device-name)
+[write received packet to serial](/reference/radio/write-received-packet-to-serial)
 
 ```package
 radio
