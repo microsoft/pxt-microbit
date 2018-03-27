@@ -13,3 +13,4 @@ These topics describe how to analyze your data using MakeCode with the @boardnam
 * [Writing data](./data-analysis/writing)
 * [Generating data](./data-analysis/generating)
 * [Analyze](./data-analysis/analyze)
+* [Remote data collection](./data-analysis/remote)
