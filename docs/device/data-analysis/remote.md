@@ -78,7 +78,7 @@ The receiver program uses just one ``||radio:on radio received||`` event to reco
 
 ## Multiple remote stations
 
-For more complex data recording situations, you might need to measure sensor values from multpile locations at the same time. This means that there is more than one remote @boardname@ (station) measuring data.
+For more complex data recording situations, you might need to measure sensor values from multiple locations at the same time. This means that there is more than one remote @boardname@ (station) measuring data.
 
 ### Separate radio groups
 
@@ -122,7 +122,8 @@ If there are too many remote stations (@boardname@s) sending data to one receive
 
 ## See also
 
-[radio](/reference/radio), [serial write value](/reference/serial/write-value)
+[radio](/reference/radio), [serial write value](/reference/serial/write-value),
+[device name](/reference/control/device-name)
 
 ```package
 radio
