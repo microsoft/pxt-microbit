@@ -110,7 +110,7 @@ basic.forever(() => {
 })
 ```
 
-This way, messages from each sending station are recorded as unique values by the receiving program.
+This way messages from each sending station are recorded as unique values by the receiving program.
 
 ### ~hint
 
@@ -119,6 +119,10 @@ This way, messages from each sending station are recorded as unique values by th
 If there are too many remote stations (@boardname@s) sending data to one receiver, the receiving @boardname@ might not be able to process all the packets it receives. This floods the receiver with too many messages so that it has to reject them until it has time to handle any new ones.
 
 ### ~
+
+## See also
+
+[radio](/reference/radio), [serial write value](/reference/serial/write-value)
 
 ```package
 radio
