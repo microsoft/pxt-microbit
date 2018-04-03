@@ -107,5 +107,9 @@
   "name": "Kittenbot RobotBit",
   "url":"/pkg/kittenbot/pxt-robotbit",
   "cardType": "package"
+  }, {
+  "name": "LINE BLE beacon",
+  "url":"/pkg/pizayanz/pxt-linebeacon",
+  "cardType": "package"
 }]
 ```
