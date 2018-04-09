@@ -21,7 +21,8 @@
             "jdarling/pxt-pca9685",
             "MUSELAB/pxt-wifi-shield",
             "kittenbot/pxt-robotbit",
-            "pizayanz/pxt-linebeacon"
+            "pizayanz/pxt-linebeacon",
+            "sunfounder/pxt-sloth"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel"

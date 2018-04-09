@@ -111,5 +111,9 @@
   "name": "LINE BLE beacon",
   "url":"/pkg/pizayanz/pxt-linebeacon",
   "cardType": "package"
+  }, {
+  "name": "Sunfounder Sloth",
+  "url":"/pkg/sunfounder/pxt-sloth",
+  "cardType": "package"
 }]
 ```
