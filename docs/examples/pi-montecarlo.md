@@ -4,13 +4,13 @@ Approximate the value of **pi** using your @boardname@!
 
 ## Thinking about it...
 
-Ok, let's pretend that a circle fits inside a square where the edge of the circle touches the sides of the square. If we say that the radius, called ``r``, of circle is `1` then the length of each side of the square is `2`, or ``2 * r``. The area of the circle is ``(pi * r) ** 2`` and the area of the square then is ``(pi *  r * 2) ** 2``. We don't know what ``pi`` is so we can arrange a relationship between the area of the circle and the area of the square to solve for the value of ``pi``.
+Ok, let's pretend that a circle fits inside a square where the edge of the circle touches the sides of the square. If we say that the radius, called ``r``, of circle is `1` then the length of each side of the square is `2`, or ``2 * r``. The area of the circle is ``pi * (r ** 2)`` and the area of the square then is ``(r * 2) ** 2``. We don't know what ``pi`` is so we can arrange a relationship between the area of the circle and the area of the square to solve for the value of ``pi``.
 
 ### Circle and square
 
 An interesting relationship between the circle and the square is that the area of the circle divided by the area of the square is:
 
-``area ratio = ((pi * r) ** 2) / ((pi * r * 2) ** 2) = pi / 4``
+``area ratio = (pi * (r ** 2)) / ((r * 2) ** 2) = pi / 4``
 
 Well, we can see that if we knew the area of both the circle and the square we could find out what the value of ``pi`` is! It's simply this:
 
@@ -41,7 +41,7 @@ Of course, we can't completely fill the area of both shapes with dots but we cou
 
 ### Making and counting dots
 
-To make the "dots" we can randomly make a value and see if it would fit as a coordinate with in the shape we're trying to fill. If it fits, increase the count of dots and try to make more for some amount of time. The more dots created, the better the accuracy of our value for ``area ratio``.
+To make the "dots" we can randomly make a value and see if it would fit as a coordinate within the shape we're trying to fill. If it fits, increase the count of dots and try to make more for some amount of time. The more dots created, the better the accuracy of our value for ``area ratio``.
 
 ### Monte Carlo method
 

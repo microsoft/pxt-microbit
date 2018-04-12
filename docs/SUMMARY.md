@@ -337,6 +337,7 @@
         * [Writing Data](/device/data-analysis/writing)
         * [Generating Data](/device/data-analysis/generating)
         * [Analyzing Data](/device/data-analysis/analyze)
+        * [Remote Data](/device/data-analysis/remote)
     * [Error codes](/device/error-codes)
     * [Foil circuits](/device/foil-circuits)
     * [MES events](/device/mes-events)

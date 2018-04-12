@@ -20,7 +20,9 @@
             "mbitfun/pxt-katakana",
             "jdarling/pxt-pca9685",
             "MUSELAB/pxt-wifi-shield",
-            "kittenbot/pxt-robotbit"
+            "kittenbot/pxt-robotbit",
+            "pizayanz/pxt-linebeacon",
+            "sunfounder/pxt-sloth"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel"

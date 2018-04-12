@@ -57,8 +57,7 @@ namespace pxt.editor {
             }
 
             function writeAsync(data: ArrayBuffer) {
-                h.sendPacketAsync(new Uint8Array(data));
-                return Promise.resolve();
+                return h.sendPacketAsync(new Uint8Array(data));
             }
 
             function readAsync() {
@@ -67,7 +66,11 @@ namespace pxt.editor {
         }
 
         reconnectAsync(first: boolean) {
-            return this.cortexM.init();
+            if (!first)
+                return this.packetIo.reconnectAsync()
+                    .then(() => this.cortexM.init())
+            else
+                return this.cortexM.init();
         }
 
         disconnectAsync() {
@@ -97,6 +100,8 @@ namespace pxt.editor {
 
     let previousDapWrapper: DAPWrapper;
     function dapAsync() {
+        if (previousDapWrapper)
+            return Promise.resolve(previousDapWrapper)
         return Promise.resolve()
             .then(() => {
                 if (previousDapWrapper) {
@@ -118,7 +123,9 @@ namespace pxt.editor {
 
     function canHID(): boolean {
         let r = false
-        if (U.isNodeJS) {
+        if (pxt.usb.isEnabled) {
+            r = true
+        } else if (U.isNodeJS) {
             r = true
         } else {
             const forceHexDownload = /forceHexDownload/i.test(window.location.href);
@@ -288,6 +295,11 @@ namespace pxt.editor {
                 wrap = w
                 log("reset")
                 return wrap.cortexM.reset(true)
+                    .catch(e => {
+                        log("trying re-connect")
+                        return wrap.reconnectAsync(false)
+                            .then(() => wrap.cortexM.reset(true))
+                    })
             })
             .then(() => wrap.cortexM.memory.readBlock(0x10001014, 1, pageSize))
             .then(v => {
@@ -404,6 +416,13 @@ namespace pxt.editor {
                         .then(text => project.overrideTypescriptFile(text))
             }]
         };
+
+        pxt.usb.setFilters([{
+            vendorId: 0x0D28,
+            productId: 0x0204,
+            classCode: 0xff,
+            subclassCode: 0x03
+        }])
 
         if (canHID())
             pxt.commands.deployCoreAsync = deployCoreAsync;

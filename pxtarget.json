@@ -31,7 +31,8 @@
         "flashUsableEnd": 245760,
         "flashEnd": 245760,
         "flashCodeAlign": 1024,
-        "upgrades": [{
+        "upgrades": [
+            {
                 "type": "package",
                 "map": {
                     "microbit": "core",
@@ -209,7 +210,14 @@
         "useEditor": true,
         "editorTheme": {
             "graphBackground": "#d9d9d9",
-            "lineColors": ["#6633cc", "#3891A6", "#3454D1", "#EF767A", "#F46197", "#107C10"]
+            "lineColors": [
+                "#6633cc",
+                "#3891A6",
+                "#3454D1",
+                "#EF767A",
+                "#F46197",
+                "#107C10"
+            ]
         },
         "chromeExtension": "hjcflblhjoglmjjkecamiegdigfkgeni",
         "vendorId": "0x0d28",
@@ -249,7 +257,8 @@
         "appStoreID": "1092687276",
         "mobileSafariDownloadProtocol": "microbithex://?data",
         "extendEditor": true,
-        "docMenu": [{
+        "docMenu": [
+            {
                 "name": "Support",
                 "path": "https://support.microbit.org/"
             },
@@ -285,7 +294,8 @@
         ],
         "hasReferenceDocs": true,
         "usbDocs": "/device/usb",
-        "usbHelp": [{
+        "usbHelp": [
+            {
                 "name": "connection",
                 "os": "*",
                 "browser": "*",
@@ -360,6 +370,32 @@
         },
         "highContrast": true,
         "selectLanguage": true,
+        "availableLocales": [
+            "en",
+            "ar",
+            "cs",
+            "da",
+            "de",
+            "el",
+            "es-ES",
+            "fi",
+            "fr",
+            "hu",
+            "it",
+            "ja",
+            "ko",
+            "nl",
+            "no",
+            "pt-BR",
+            "pt-PT",
+            "ru",
+            "si-LK",
+            "sv-SE",
+            "tr",
+            "uk",
+            "zh-CN",
+            "zh-TW"
+        ],
         "monacoColors": {
             "editor.background": "#ecf0f1"
         }

@@ -32,9 +32,9 @@ This program shows `1` if `P0` is pressed, and `0` if `P0` is not pressed:
 ```blocks
 basic.forever(() => {
     if (input.pinIsPressed(TouchPin.P0)) {
-        basic.showNumber(1, 150)
+        basic.showNumber(1)
     } else {
-        basic.showNumber(0, 150)
+        basic.showNumber(0)
     }
 })
 ```

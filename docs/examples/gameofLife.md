@@ -1,4 +1,21 @@
-# Game of Life simulation in LEDs
+# Game of Life
+
+The [Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life) simulates life in a grid world (a two-dimensional block of cells). The cells in the grid have a state of "alive" or "dead". The game starts with a population of cells placed in a certain pattern on the grid. A simulation is run, and based on some simple rules for life and death, cells continue to live, die off, or reproduce.
+
+## Rules for Life
+
+The rules for life in the grid are:
+
+1. A living cell with less than two live cells next to it will die. This is underpopulation, no social support.
+2. A living cell with two or three live cells next to it continues to live. This is a healthy population.
+3. A living cell with more than three live cells next to it will die. This is over overpopulation, scarce resources.
+4. A dead cell with three live cells next to it turns into a living cell. This is reproduction.
+
+Depending on the pattern of living cells at the start of the game, some population simulations may survive longer than others.
+
+## Game of Life simulation in LEDs
+
+A simulation of life in the LED matrix. Use button ``A`` for the next stage of life and button ``B`` to reset.
 
 ```blocks
 //https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life

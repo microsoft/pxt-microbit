@@ -157,4 +157,31 @@ The console output shows the different name value pairs too:
 
 ![Two values in console output](/static/mb/device/data-analysis/two-value-console.jpg)
 
+### Writing subvalues
 
+Similar to number arrays, different name value pairs are shown on one chart by using _subvalues_. You make a subvalue by combining a first-level name and a second-level name with a `'.'`:
+
+``"firstLevel.secondLevel"``
+
+The first-level name is value name for the chart. The second-level name is the name for the actual value displayed.
+
+If you want to show all three values of acceleration on a single chart, then use each axis as a second-level (subvalue) name, ``"acceleration.x"``.
+
+```block
+serial.writeValue("acceleration.x", input.acceleration(Dimension.X))
+```
+
+To show the values for each axis together:
+
+```blocks
+basic.forever(() => {
+    serial.writeValue("acceleration.x", input.acceleration(Dimension.X))
+    serial.writeValue("acceleration.y", input.acceleration(Dimension.Y))
+    serial.writeValue("acceleration.z", input.acceleration(Dimension.Z))
+    basic.pause(500)
+}) 
+```
+
+Each subvalue ``'x'``, ``'y'``, and ``'z'`` is displayed on the chart named ``"acceleration"`` in the Data Viewer.
+
+![Three subvalues of acceleration in one chart](/static/mb/device/data-analysis/combined-values.jpg)
