@@ -25,7 +25,7 @@ Now, let’s look at our micro:bit:
 
 ![micro:bit hardware](/static/courses/csintro/algorithms/microbit-hardware.png)
 
-* Use the diagram here as a visual aid: http://microbit.org/hardware/ 
+* Use the [features page on the microbit website](http://microbit.org/guide/features/) as a visual aid
 * Can you find the Processor?
 * How much memory does the micro:bit have? 16K, which is smaller than many files on your computer!
 * Can you locate the following Inputs?  Buttons (on board), Pins (at base), Accelerometer / Compass.
