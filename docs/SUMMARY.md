@@ -13,6 +13,7 @@
     * [Rock paper scissors](/projects/rock-paper-scissors)
     * [Magic button trick](/projects/magic-button-trick)
     * [Coin Flipper](/projects/coin-flipper)
+    * [Salute!](/projects/salute)
     * [Hack your headphones](/projects/hack-your-headphones)
     * [Banana keyboard](/projects/banana-keyboard)
     * [Guitar](/projects/guitar)

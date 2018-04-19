@@ -35,6 +35,10 @@ Fun games to build with your @boardname@.
   "name": "Magic Button Trick",
   "url":"/projects/magic-button-trick",
   "imageUrl":"/static/mb/projects/magic-button-trick.png"
+}, {
+  "name": "Salute!",
+  "url":"/projects/salute",
+  "imageUrl":"/static/mb/projects/salute.png"
 }]
 ```
 
