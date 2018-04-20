@@ -4,6 +4,7 @@
 
 ## Goals for this activity
 
+* This a group activity for either a classroom or just friends gathered together.
 * Decompose the steps needed to code and play the **Salute!** math game using @boardname@s.
 * Create a program to display a random number, in an appropriate range, on the LED Matrix of a @boardname@ and correctly install the program on a @boardname@.
 * Optionally, create a program to keep score in the game using a @boardname@ and correctly install the program on a @boardname@.
