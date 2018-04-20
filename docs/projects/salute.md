@@ -126,3 +126,5 @@ Also, watch this video to see how the game is played:
 
 https://www.youtube.com/watch?v=DJBMbSUGZsc
 How to Play Salute!
+
+This game project was kindly contributed by [Vicky Sedgwick](https://about.me/vicky.sedgwick).
