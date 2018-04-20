@@ -92,8 +92,7 @@ input.onGesture(Gesture.LogoDown, () => {
 
 Before the game starts, decide how many rounds will be played or for how long rounds will be played. Also, decide how a tie is determined: will both players get a point or will neither player get a point.
 
-1. Player 1 and 2 will sit or stand facing one another with their @boardname@s on their forehead so they can see the LED matrix on the other player’s @boardname@. Players should not be able to see the LED matrix on their own @boardname@
-NOTE: It’s fun to create a band of some kind that will hold the @boardname@ on the forehead and have the action which selects the number be something to do with movement of the head.
+1. Player 1 and 2 will sit or stand facing one another with their @boardname@s on their forehead so they can see the LED matrix on the other player’s @boardname@. Players should not be able to see the LED matrix on their own @boardname@. **NOTE:** It’s fun to create a band of some kind that will hold the @boardname@ on the forehead and have the action which selects the number be something to do with movement of the head.
 
 2. Player number 3 will sit or stand so they can see the @boardname@s of both Player 1 and Player 2.
 
