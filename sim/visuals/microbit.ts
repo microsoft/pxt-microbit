@@ -11,6 +11,9 @@ namespace pxsim.visuals {
             -webkit-filter: grayscale(1);
             filter: grayscale(1);
         }
+        .sim-button-group {
+            cursor: pointer;
+        }
         .sim-button {
             pointer-events: none;
         }
