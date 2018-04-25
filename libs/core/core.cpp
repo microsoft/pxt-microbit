@@ -165,6 +165,38 @@ namespace Math_ {
     {
       return ::sqrt(x);
     }
+
+    // TODO: update signature when enabling FP
+    //%
+    int floor(int x){
+      return x;
+    }
+
+    //%
+    int ceil(int x){
+      return x;
+    }
+
+    //%
+    int trunc(int x){
+      return x;
+    }
+
+    //%
+    int round(int x){
+      return x;
+    }
+
+    //%
+    int imul(int x, int y) {
+        return x * y;
+    }
+
+    //%
+    int idiv(int x, int y) {
+        return x / y;
+    }
+
 }
 
 namespace Array_ {
