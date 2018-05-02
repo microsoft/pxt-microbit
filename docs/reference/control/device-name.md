@@ -1,6 +1,6 @@
 # Device Name
 
-Gets a friendly name for the device derived from the its serial number.
+Make a friendly name for the device based on its serial number.
 
 ```sig
 control.deviceName();
