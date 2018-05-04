@@ -23,7 +23,10 @@
             "kittenbot/pxt-robotbit",
             "pizayanz/pxt-linebeacon",
             "sunfounder/pxt-sloth",
-            "4tronix/BitBot"
+            "4tronix/BitBot",
+            "pimoroni/pxt-scrollbit",
+            "emwta/pxt-iBit"
+
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel"

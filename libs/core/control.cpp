@@ -286,7 +286,7 @@ namespace control {
     }
 
     /**
-     * Gets a friendly name for the device derived from the its serial number
+     * Make a friendly name for the device based on its serial number
      */
     //% blockId="control_device_name" block="device name" weight=10 blockGap=8
     //% advanced=true
