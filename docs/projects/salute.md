@@ -126,4 +126,4 @@ Also, watch this video to see how the game is played:
 https://www.youtube.com/watch?v=DJBMbSUGZsc
 How to Play Salute!
 
-This math game project was kindly contributed by [Vicky Sedgwick](https://about.me/vicky.sedgwick).
+This math game project was kindly contributed by [Vicky Sedgwick](https://about.me/vicky.sedgwick). It's based on the original game concept created by [Todd Lash](https://twitter.com/Todd_Lash).
