@@ -35,12 +35,14 @@ namespace radio {
 
     export enum PacketProperty {
         //% blockIdentity=radio._packetProperty
-        time,
+        //% block="time"
+        Time,
         //% block="serial number"
         //% blockIdentity=radio._packetProperty
-        serialNumber,
+        SerialNumber,
         //% blockIdentity=radio._packetProperty
-        signal
+        //% block="signal strength"
+        SignalStrength
     }
 
     /**
@@ -76,10 +78,10 @@ namespace radio {
         onDataReceived(() => {
             receiveNumber();
             const packet = new Packet();
-            packet.receivedNumber = receivedNumber();
             packet.time = receivedTime();
             packet.serial = receivedSerial();
             packet.signal = receivedSignalStrength();
+            packet.receivedNumber = receivedNumber();
             lastPacket = packet;
             cb(packet.receivedNumber);
         });
@@ -94,10 +96,10 @@ namespace radio {
         onDataReceived(() => {
             receiveNumber();
             const packet = new Packet();
-            packet.receivedNumber = receivedNumber();
             packet.time = receivedTime();
             packet.serial = receivedSerial();
             packet.signal = receivedSignalStrength();
+            packet.receivedNumber = receivedNumber();
             packet.receivedString = receivedString();
             lastPacket = packet;
             cb(packet.receivedString, packet.receivedNumber)
@@ -131,12 +133,10 @@ namespace radio {
         onDataReceived(() => {
             receiveNumber();
             const packet = new Packet();
-            packet.receivedNumber = receivedNumber();
             packet.time = receivedTime();
             packet.serial = receivedSerial();
-            packet.receivedString = receivedString();
-            packet.receivedBuffer = receivedBuffer();
             packet.signal = receivedSignalStrength();
+            packet.receivedBuffer = receivedBuffer();
             lastPacket = packet;
             cb(packet.receivedBuffer)
         });
@@ -152,9 +152,9 @@ namespace radio {
     export function getReceivedPacketProperty(type: number) {
         if (lastPacket) {
             switch(type) {
-                case PacketProperty.time: return lastPacket.time;
-                case PacketProperty.serialNumber: return lastPacket.serial;
-                case PacketProperty.signal: return lastPacket.signal;
+                case PacketProperty.Time: return lastPacket.time;
+                case PacketProperty.SerialNumber: return lastPacket.serial;
+                case PacketProperty.SignalStrength: return lastPacket.signal;
             }
         }
         return 0;
