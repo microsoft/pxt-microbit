@@ -32,50 +32,55 @@
         "flashEnd": 245760,
         "flashCodeAlign": 1024,
         "floatingPoint": true,
-        "upgrades": [
-            {
-                "type": "package",
-                "map": {
-                    "microbit": "core",
-                    "microbit-bluetooth": "bluetooth",
-                    "microbit-radio": "radio",
-                    "microbit-devices": "devices",
-                    "microbit-led": "",
-                    "microbit-music": "",
-                    "microbit-game": "",
-                    "microbit-pins": "",
-                    "microbit-serial": ""
+        "patches": {
+            "0.0.0 - 1.0.0": [
+                {
+                    "type": "package",
+                    "map": {
+                        "microbit": "core",
+                        "microbit-bluetooth": "bluetooth",
+                        "microbit-radio": "radio",
+                        "microbit-devices": "devices",
+                        "microbit-led": "",
+                        "microbit-music": "",
+                        "microbit-game": "",
+                        "microbit-pins": "",
+                        "microbit-serial": ""
+                    }
+                },
+                {
+                    "type": "missingPackage",
+                    "map": {
+                        "radio\\s*\\.": "radio",
+                        "bluetooth\\s*\\.": "bluetooth",
+                        "devices\\s*\\.": "devices"
+                    }
+                },
+                {
+                    "type": "api",
+                    "map": {
+                        "bluetooth\\s*\\.uartRead\\s*\\((.*?)\\)": "bluetooth.uartReadUntil($1)",
+                        "bluetooth\\s*\\.uartWrite\\s*\\((.*?)\\)": "bluetooth.uartWriteUntil($1)",
+                        "input\\s*\\.calibrate\\s*\\(": "input.calibrateCompass(",
+                        "radio\\s*\\.onDataPacketReceived\\(\\s*\\(\\{\\s*receivedNumber\\s*\\}\\)\\s*=>\\s*\\{": "radio.onReceivedNumber(function (receivedNumber) {",
+                        "radio\\s*\\.onDataPacketReceived\\(\\s*\\(\\{\\s*receivedString: name, receivedNumber: value\\s*\\}\\)\\s*=>\\s*\\{": "radio.onReceivedValue(function (name, value) {",
+                        "radio\\s*\\.onDataPacketReceived\\(\\s*\\(\\{\\s*receivedString\\s*\\}\\)\\s*=>\\s*\\{": "radio.onReceivedString(function (receivedString) {"
+                    }
+                },
+                {
+                    "type": "blockId",
+                    "map": {
+                        "device_get_acceleration": "device_acceleration"
+                    }
+                },
+                {
+                    "type": "blockValue",
+                    "map": {
+                        "device_print_message.message": "text"
+                    }
                 }
-            },
-            {
-                "type": "missingPackage",
-                "map": {
-                    "radio\\s*\\.": "radio",
-                    "bluetooth\\s*\\.": "bluetooth",
-                    "devices\\s*\\.": "devices"
-                }
-            },
-            {
-                "type": "api",
-                "map": {
-                    "bluetooth\\s*\\.uartRead\\s*\\((.*?)\\)": "bluetooth.uartReadUntil($1)",
-                    "bluetooth\\s*\\.uartWrite\\s*\\((.*?)\\)": "bluetooth.uartWriteUntil($1)",
-                    "input\\s*\\.calibrate\\s*\\(": "input.calibrateCompass("
-                }
-            },
-            {
-                "type": "blockId",
-                "map": {
-                    "device_get_acceleration": "device_acceleration"
-                }
-            },
-            {
-                "type": "blockValue",
-                "map": {
-                    "device_print_message.message": "text"
-                }
-            }
-        ],
+            ]
+        },
         "hidSelectors": [
             {
                 "usagePage": "0xFF00",
