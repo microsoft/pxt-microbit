@@ -127,6 +127,10 @@
   "name": "Pimoroni Scrollbit",
   "url":"/pkg/pimoroni/pxt-scrollbit",
   "cardType": "package"
+  }, {
+  "name": "SBRICK",
+  "url":"/pkg/vengit/pxt-sbrick",
+  "cardType": "package"
 }]
 
 ```
