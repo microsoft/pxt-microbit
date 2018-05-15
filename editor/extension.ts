@@ -383,6 +383,70 @@ namespace pxt.editor {
             })
     }
 
+    /**
+     *       <block type="device_show_leds">
+        <field name="LED00">FALSE</field>
+        <field name="LED10">FALSE</field>
+        <field name="LED20">FALSE</field>
+        <field name="LED30">FALSE</field>
+        <field name="LED40">FALSE</field>
+        <field name="LED01">FALSE</field>
+        <field name="LED11">FALSE</field>
+        <field name="LED21">FALSE</field>
+        <field name="LED31">TRUE</field>
+        <field name="LED41">FALSE</field>
+        <field name="LED02">FALSE</field>
+        <field name="LED12">FALSE</field>
+        <field name="LED22">FALSE</field>
+        <field name="LED32">FALSE</field>
+        <field name="LED42">FALSE</field>
+        <field name="LED03">FALSE</field>
+        <field name="LED13">TRUE</field>
+        <field name="LED23">FALSE</field>
+        <field name="LED33">FALSE</field>
+        <field name="LED43">FALSE</field>
+        <field name="LED04">FALSE</field>
+        <field name="LED14">FALSE</field>
+        <field name="LED24">FALSE</field>
+        <field name="LED34">FALSE</field>
+        <field name="LED44">FALSE</field>
+      </block>
+
+      to
+    <block type="device_show_leds">
+        <field name="LEDS">`
+        # # # # # 
+        . . . . # 
+        . . . . . 
+        . . . . # 
+        . . . . #
+        `
+        </field>
+      </block>
+     */
+
+    function patchShowLEDs(pkgTargetVersion: string, dom: Element) {
+        const nodes = U.toArray(dom.querySelectorAll("block[type=device_show_leds]"))
+            .concat(U.toArray(dom.querySelectorAll("block[type=device_build_image]")))
+            .concat(U.toArray(dom.querySelectorAll("block[type=device_build_big_image]")))
+        nodes.forEach(node => {
+                const leds: string[][] = [[],[],[],[],[]];
+                U.toArray(node.querySelectorAll("field[name^=LED]"))
+                    .forEach(lednode =>{
+                        let n = lednode.getAttribute("name");
+                        let col = parseInt(n[3]);
+                        let row = parseInt(n[4]);
+                        leds[row][col] = lednode.innerHTML == "TRUE" ? "#" : ".";
+                    });                    
+                node.innerHTML = "";
+                const f = node.ownerDocument.createElement("field");
+                f.setAttribute("name", "LEDS");
+                const s = '`\n' + leds.map(row => row.join('')).join('\n') + '\n`';
+                f.appendChild(node.ownerDocument.createTextNode(s));
+                node.appendChild(f);
+            });
+    }
+
     initExtensionsAsync = function (opts: pxt.editor.ExtensionOptions): Promise<pxt.editor.ExtensionResult> {
         pxt.debug('loading microbit target extensions...')
 
@@ -418,6 +482,8 @@ namespace pxt.editor {
 
         if (canHID())
             pxt.commands.deployCoreAsync = deployCoreAsync;
+
+        res.blocklyPatch = patchShowLEDs;
         return Promise.resolve<pxt.editor.ExtensionResult>(res);
     }
 
