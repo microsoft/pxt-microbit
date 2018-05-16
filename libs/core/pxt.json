@@ -18,6 +18,7 @@
         "images.cpp",
         "basic.cpp",
         "icons.ts",
+        "icons.jres",
         "input.cpp",
         "input.ts",
         "control.ts",

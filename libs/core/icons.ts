@@ -27,124 +27,124 @@ THE SOFTWARE.
 
 enum IconNames {
     //% block="heart"
-    //% blockImage=1
+    //% jres=icons.heart
     Heart = 0,
     //% block="small heart"
-    //% blockImage=1
+    //% jres=icons.smallheart
     SmallHeart,
     //% block="yes"
-    //% blockImage=1
+    //% jres=icons.yes
     Yes,
     //% block="no"
-    //% blockImage=1
+    //% jres=icons.no
     No,
     //% block="happy"
-    //% blockImage=1
+    //% jres=icons.happy
     Happy,
     //% block="sad"
-    //% blockImage=1
+    //% jres=icons.sad
     Sad,
     //% block="confused"
-    //% blockImage=1
+    //% jres=icons.confused
     Confused,
     //% block="angry"
-    //% blockImage=1
+    //% jres=icons.angry
     Angry,
     //% block="asleep"
-    //% blockImage=1
+    //% jres=icons.asleep
     Asleep,
     //% block="surprised"
-    //% blockImage=1
+    //% jres=icons.surprised
     Surprised,
     //% block="silly"
-    //% blockImage=1
+    //% jres=icons.silly
     Silly,
     //% block="fabulous"
-    //% blockImage=1
+    //% jres=icons.fabulous
     Fabulous,
     //% block="meh"
-    //% blockImage=1
+    //% jres=icons.meh
     Meh,
     //% block="t-shirt"
-    //% blockImage=1
+    //% jres=icons.tshirt
     TShirt,
     //% block="roller skate"
-    //% blockImage=1
+    //% jres=icons.rollerskate
     Rollerskate,
     //% block="duck"
-    //% blockImage=1
+    //% jres=icons.duck
     Duck,
     //% block="house"
-    //% blockImage=1
+    //% jres=icons.house
     House,
     //% block="tortoise"
-    //% blockImage=1
+    //% jres=icons.tortoise
     Tortoise,
     //% block="butterfly"
-    //% blockImage=1
+    //% jres=icons.butterfly
     Butterfly,
     //% block="stick figure"
-    //% blockImage=1
+    //% jres=icons.stickfigure
     StickFigure,
     //% block="ghost"
-    //% blockImage=1
+    //% jres=icons.ghost
     Ghost,
     //% block="sword"
-    //% blockImage=1
+    //% jres=icons.sword
     Sword,
     //% block="giraffe"
-    //% blockImage=1
+    //% jres=icons.giraffe
     Giraffe,
     //% block="skull"
-    //% blockImage=1
+    //% jres=icons.skull
     Skull,
     //% block="umbrella"
-    //% blockImage=1
+    //% jres=icons.umbrella
     Umbrella,
     //% block="snake"
-    //% blockImage=1
+    //% jres=icons.snake
     Snake,
     //% block="rabbit"
-    //% blockImage=1
+    //% jres=icons.rabbit
     Rabbit,
     //% block="cow"
-    //% blockImage=1
+    //% jres=icons.cow
     Cow,
     //% block="quarter note"
-    //% blockImage=1
+    //% jres=icons.quarternote
     QuarterNote,
     //% block="eigth note"
-    //% blockImage=1
+    //% jres=icons.eigthnote
     EigthNote,
     //% block="pitchfork"
-    //% blockImage=1
+    //% jres=icons.pitchfork
     Pitchfork,
     //% block="target"
-    //% blockImage=1
+    //% jres=icons.target
     Target,
     //% block="triangle"
-    //% blockImage=1
+    //% jres=icons.triangle
     Triangle,
     //% block="left triangle"
-    //% blockImage=1
+    //% jres=icons.lefttriangle
     LeftTriangle,
     //% block="chess board"
-    //% blockImage=1
+    //% jres=icons.chessboard
     Chessboard,
     //% block="diamond"
-    //% blockImage=1
+    //% jres=icons.diamond
     Diamond,
     //% block="small diamond"
-    //% blockImage=1
+    //% jres=icons.smalldiamond
     SmallDiamond,
     //% block="square"
-    //% blockImage=1
+    //% jres=icons.square
     Square,
     //% block="small square"
-    //% blockImage=1
+    //% jres=icons.smallsquare
     SmallSquare,
     //% block="scissors"
-    //% blockImage=1
+    //% jres=icons.scissors
     Scissors
 }
 
