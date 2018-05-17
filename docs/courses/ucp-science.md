@@ -37,7 +37,6 @@ The lesson series includes:
 * [Soil Moisture Tester](/courses/ucp-science/soil-moisture)
 * [Gravity, Motion and Waves](/courses/ucp-science/gravity)
 * [Body Electrical & Waves](/courses/ucp-science/body-electrical)
-* Magnetic Forces - Coming soon...
 * [Electricity - Battery Tester](/courses/ucp-science/electricity)
  
 The [Science Experiments](https://sites.google.com/view/utahcodingproject/csta/microbit-science-experiments) lesson series is generously provided by the [Utah Coding Project](https://sites.google.com/view/utahcodingproject/home) and is developed by [Carl Lyman](mailto:utahcoding@outlook.com).
