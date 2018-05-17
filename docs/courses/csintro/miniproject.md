@@ -2,7 +2,7 @@
 
 ![Ideas](/static/courses/csintro/miniproject/problem-solving.png)
 
-In this unit, we will be reviewing the concepts we covered in the previous weeks, and providing some ideas for an independent “mini-project” students can focus on in the next several classes. We will also introduce a framework for keeping students accountable to the work they are doing individually and in groups, and providing a rubric for assessment of the development process, as well as the finished product.
+ 이번 단원에서 우리는 지난 주에 다룬 개념을 복습하고, 학생들이 다음 몇 주동안 집중할 수 있는 개별적인 "미니-프로젝트"에 대한 몇 가지 아이디어들을 제공할 것입니다. 또한 학생들이 개별적으로 그리고 그룹으로 작업하는 것에 대해 책임을 지도록 하는 프레임워크를 소개하고, 개발 프로세스 평가를 위한 채점 기준표와  완제품을 제공합니다.
 
 It is important to allow students to practice accounting for the work they are doing on a short “mini-project” like this, so that when they move on to an independent project spanning multiple weeks, it will be easier for you to keep track of what everybody is doing.
 
