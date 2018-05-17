@@ -31,8 +31,6 @@
     "docs/static/*.png",
     "docs/static/icons/favicon.ico"
   ],
-  "main": "built/pxtrequire.js",
-  "typings": "built/pxtrequire.d.ts",
   "devDependencies": {
     "typescript": "2.6.1",
     "less": "2.7.3",
@@ -43,6 +41,7 @@
     "@types/node": "8.0.53"
   },
   "dependencies": {
+    "pxt-common-packages": "0.22.11",
     "pxt-core": "3.14.9"
   }
 }
