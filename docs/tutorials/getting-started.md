@@ -58,7 +58,7 @@ on the screen.
 
 ```block
 input.onGesture(Gesture.Shake, () => {
-    basic.showNumber(Math.random(7))
+    basic.showNumber(Math.randomInt(7))
 })
 ```
 

@@ -7,13 +7,13 @@ This is the answer key for the [truth or dare quiz](/lessons/truth-or-dare/quiz)
 ## 1. Write the code that will randomly return 0 through 3  and stores the value inside a local variable called 'random'.
 
 ```blocks
-let random = Math.random(4)
+let random = Math.randomInt(4)
 ```
 
 ## 2. Write an if statement that will display the message "TRUTH" on the @boardname@  if the local variable 'random' equals 0. 
 
 ```blocks
-let random = Math.random(4)
+let random = Math.randomInt(4)
 if (random == 0) {
     basic.showString("TRUTH", 150)
 }

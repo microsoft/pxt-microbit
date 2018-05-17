@@ -193,8 +193,8 @@ while (true) {
     }
     if (hero.isTouching(food)) {
         game.addScore(1);
-        food.set(LedSpriteProperty.X, Math.random(5));
-        food.set(LedSpriteProperty.Y, Math.random(5));
+        food.set(LedSpriteProperty.X, Math.randomInt(5));
+        food.set(LedSpriteProperty.Y, Math.randomInt(5));
     }
 
 }
@@ -241,8 +241,8 @@ while (true) {
     }
     if (hero.isTouching(food)) {
         game.addScore(1);
-        food.set(LedSpriteProperty.X, Math.random(5));
-        food.set(LedSpriteProperty.Y, Math.random(5));
+        food.set(LedSpriteProperty.X, Math.randomInt(5));
+        food.set(LedSpriteProperty.Y, Math.randomInt(5));
         if (food.get(LedSpriteProperty.X) < 2 && food.get(LedSpriteProperty.Y) < 2) {
             ghost.set(LedSpriteProperty.X, 4);
             ghost.set(LedSpriteProperty.Y, 4);

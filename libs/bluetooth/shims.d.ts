@@ -98,7 +98,7 @@ declare namespace bluetooth {
     //% blockId=eddystone_advertise_url block="bluetooth advertise url %url|with power %power|connectable %connectable"
     //% parts=bluetooth weight=11 blockGap=8
     //% help=bluetooth/advertise-url blockExternalInputs=1 shim=bluetooth::advertiseUrl
-    function advertiseUrl(url: string, power: number, connectable: boolean): void;
+    function advertiseUrl(url: string, power: int32, connectable: boolean): void;
 
     /**
      * Advertise an Eddystone UID
@@ -107,7 +107,7 @@ declare namespace bluetooth {
      * @param connectable true to keep bluetooth connectable for other services, false otherwise.
      */
     //% parts=bluetooth weight=12 advanced=true shim=bluetooth::advertiseUidBuffer
-    function advertiseUidBuffer(nsAndInstance: Buffer, power: number, connectable: boolean): void;
+    function advertiseUidBuffer(nsAndInstance: Buffer, power: int32, connectable: boolean): void;
 
     /**
      * Sets the bluetooth transmit power between 0 (minimal) and 7 (maximum).
@@ -115,7 +115,7 @@ declare namespace bluetooth {
      */
     //% parts=bluetooth weight=5 help=bluetooth/set-transmit-power advanced=true
     //% blockId=bluetooth_settransmitpower block="bluetooth set transmit power %power" shim=bluetooth::setTransmitPower
-    function setTransmitPower(power: number): void;
+    function setTransmitPower(power: int32): void;
 
     /**
      * Stops advertising Eddystone end points

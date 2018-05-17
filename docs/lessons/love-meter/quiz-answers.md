@@ -23,7 +23,7 @@ input.onPinPressed(TouchPin.P0, () => {
 ## 3. What does this line of code doing?
 
 ```blocks
-let x = Math.random(9)
+let x = Math.randomInt(9)
 ```
 
 

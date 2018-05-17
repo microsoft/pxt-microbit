@@ -24,7 +24,7 @@ input.onButtonPressed(Button.A, () => {
 })
 basic.forever(() => {
     if (start) {
-        led.toggle(Math.random(5), Math.random(5))
+        led.toggle(Math.randomInt(5), Math.randomInt(5))
     }
 })
 ```

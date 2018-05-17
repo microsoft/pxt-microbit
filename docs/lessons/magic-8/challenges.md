@@ -11,7 +11,7 @@ basic.showString("ASK A QUESTION")
 basic.showNumber(8)
 input.onGesture(Gesture.Shake, () =>  {
     basic.clearScreen()
-    let randomNumber = Math.random(2)
+    let randomNumber = Math.randomInt(2)
     if (randomNumber == 2) {
         basic.showString("YES")
     } else if (randomNumber == 1) {
@@ -35,7 +35,7 @@ basic.showString("ASK A QUESTION")
 basic.showNumber(8)
 input.onGesture(Gesture.Shake, () =>  {
     basic.clearScreen()
-    let randomNumber = Math.random(4)
+    let randomNumber = Math.randomInt(4)
     if (randomNumber == 2) {
         basic.showString("YES")
     } else if (randomNumber == 1) {
@@ -59,7 +59,7 @@ basic.showString("ASK A QUESTION")
 basic.showNumber(8)
 input.onGesture(Gesture.Shake, () => {
     basic.clearScreen()
-    let randomNumber = Math.random(4)
+    let randomNumber = Math.randomInt(4)
     if (randomNumber == 3) {
         basic.showString("TRY AGAIN")
     } else if (randomNumber == 2) {
@@ -82,7 +82,7 @@ basic.showString("ASK A QUESTION")
 basic.showNumber(8)
 input.onGesture(Gesture.Shake, () => {
     basic.clearScreen()
-    let randomNumber = Math.random(4)
+    let randomNumber = Math.randomInt(4)
     if (randomNumber == 4) {
         basic.showString("DEFINATELY")
     } else if (randomNumber == 3) {

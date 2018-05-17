@@ -1,6 +1,6 @@
 {
   "name": "pxt-microbit",
-  "version": "0.14.37",
+  "version": "1.1.14",
   "description": "micro:bit target for Microsoft MakeCode (PXT)",
   "keywords": [
     "JavaScript",
@@ -32,13 +32,15 @@
     "docs/static/icons/favicon.ico"
   ],
   "devDependencies": {
-    "typescript": "^1.8.7",
-    "rtlcss": "^2.1.2",
-    "autoprefixer": "^6.7.6",
+    "typescript": "2.6.1",
     "less": "2.7.3",
-    "semantic-ui-less": "2.2.14"
+    "semantic-ui-less": "2.2.14",
+    "@types/bluebird": "2.0.33",
+    "@types/jquery": "3.2.16",
+    "@types/marked": "0.3.0",
+    "@types/node": "8.0.53"
   },
   "dependencies": {
-    "pxt-core": "0.19.7"
+    "pxt-core": "3.14.9"
   }
 }

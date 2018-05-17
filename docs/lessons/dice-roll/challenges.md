@@ -8,7 +8,7 @@ Complete the following [guided tutorial](/lessons/dice-roll/activity), your code
 
 ```blocks 
 input.onGesture(Gesture.Shake, () => {
-    let roll = Math.random(6);
+    let roll = Math.randomInt(6);
     if (roll == 5) {
         basic.showLeds(`
 . # . # .
@@ -67,7 +67,7 @@ Modify the line of code with `pick random` so that only number 1-4 can appear on
 
 ```blocks 
 input.onGesture(Gesture.Shake, () => {
-    let roll = Math.random(4);
+    let roll = Math.randomInt(4);
     if (roll == 5) {
         basic.showLeds(`
 . # . # .
@@ -125,7 +125,7 @@ Let's make a trick dice! Modify the line of code with `pick random` so that only
 
 ```blocks 
 input.onGesture(Gesture.Shake, () => {
-    let roll = Math.random(4) + 2;
+    let roll = Math.randomInt(4) + 2;
     if (roll == 5) {
         basic.showLeds(`
 . # . # .

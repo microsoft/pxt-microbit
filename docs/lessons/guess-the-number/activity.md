@@ -21,7 +21,7 @@ Create a local variable of type number `x` and set it to a random number using `
 
 ```blocks
 input.onButtonPressed(Button.A, () => {
-    let x = Math.random(10)
+    let x = Math.randomInt(10)
 })
 
 ```
@@ -31,7 +31,7 @@ Show the random number on the screen.
 
 ```blocks
 input.onButtonPressed(Button.A, () => {
-    let x = Math.random(10)
+    let x = Math.randomInt(10)
     basic.showNumber(x)
 })
 

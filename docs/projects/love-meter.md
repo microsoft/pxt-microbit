@@ -18,7 +18,7 @@ show a random number from 0 to 100 when pin ``P0`` is pressed.
 
 ```blocks
 input.onPinPressed(TouchPin.P0, () => {
-    basic.showNumber(Math.random(101));
+    basic.showNumber(Math.randomInt(101));
 });
 ```
 
@@ -29,7 +29,7 @@ Show ``"LOVE METER"`` on the screen when the @boardname@ starts.
 ```blocks
 basic.showString("LOVE METER");
 input.onPinPressed(TouchPin.P0, () => {
-    basic.showNumber(Math.random(101));
+    basic.showNumber(Math.randomInt(101));
 });
 ```
 

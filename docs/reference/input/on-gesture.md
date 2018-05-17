@@ -19,7 +19,7 @@ This program shows a number from `0` to `9` when you shake the @boardname@.
 
 ```blocks
 input.onGesture(Gesture.Shake,() => {
-    let x = Math.random(10)
+    let x = Math.randomInt(10)
     basic.showNumber(x, 100)
 })
 ```

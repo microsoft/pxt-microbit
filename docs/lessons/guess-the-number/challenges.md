@@ -8,7 +8,7 @@ Complete the following [guided tutorial](/lessons/guess-the-number/activity), an
 
 ```blocks
 input.onButtonPressed(Button.A, () => {
-    let x = Math.random(9)
+    let x = Math.randomInt(9)
     basic.showNumber(x)
 })
 ```
@@ -19,7 +19,7 @@ When button `B` is pressed, we want to clear the screen. This will make it so us
 
 ```blocks
 input.onButtonPressed(Button.A, () => {
-    let x = Math.random(9)
+    let x = Math.randomInt(9)
     basic.showNumber(x)
 })
 input.onButtonPressed(Button.B, () => {

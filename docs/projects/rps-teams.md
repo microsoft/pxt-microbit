@@ -26,7 +26,7 @@ Let's start out with the code from the original game. The basic version picks on
 ```blocks
 let tool = 0
 input.onGesture(Gesture.Shake, () => {
-    tool = Math.random(3)
+    tool = Math.randomInt(3)
     if (tool == 0) {
         basic.showIcon(IconNames.SmallSquare)
     } else if (tool == 1) {
@@ -44,7 +44,7 @@ input.onGesture(Gesture.Shake, () => {
 ```blocks
 let tool = 0
 input.onGesture(Gesture.Shake, () => {
-    tool = Math.random(3)
+    tool = Math.randomInt(3)
 })
 
 basic.forever(() => {
@@ -67,7 +67,7 @@ We also set the radio group and send the device serial number (a number that uni
 ```blocks
 let tool = 0
 input.onGesture(Gesture.Shake, () => {
-    tool = Math.random(3)
+    tool = Math.randomInt(3)
 })
 
 basic.forever(() => {
@@ -154,7 +154,7 @@ What if some of the other players leave the game? They would stop broadcasting t
 ```block
 input.onGesture(Gesture.Shake, () => {
     let players: number[] = [0]
-    let tool = Math.random(3)
+    let tool = Math.randomInt(3)
 })
 ```
 
@@ -185,7 +185,7 @@ let match = false
 let players: number[] = []
 input.onGesture(Gesture.Shake, () => {
     players = [0]
-    tool = Math.random(3)
+    tool = Math.randomInt(3)
 })
 radio.onDataPacketReceived( ({ receivedNumber, serial: serialNumber }) =>  {
     match = tool == receivedNumber

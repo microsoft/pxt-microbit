@@ -19,7 +19,7 @@ Answer the questions below while completing the activity. Pay attention to the d
 ## 3. Describe what this line of code does?
 
 ```blocks
-let x = Math.random(9)
+let x = Math.randomInt(9)
 ```
 
 

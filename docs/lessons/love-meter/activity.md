@@ -23,7 +23,7 @@ We are going to create a meter that displays a random number from *0* to *10*. W
 
 ```blocks
 input.onPinPressed(TouchPin.P0, () => {
-    let x = Math.random(10)
+    let x = Math.randomInt(10)
 })
 
 ```
@@ -33,7 +33,7 @@ Finally, let's show that number on the @boardname@. You are registering an event
 
 ```blocks
 input.onPinPressed(TouchPin.P0, () => {
-    let x = Math.random(10)
+    let x = Math.randomInt(10)
     basic.showNumber(x)
 })
 

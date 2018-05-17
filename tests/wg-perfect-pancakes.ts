@@ -54,7 +54,7 @@ function runGameOnce() {
         }
         // Run code appropriate to the present state of the game
         if (state == "NEWSIDE") {
-            target_time = 5 + Math.random(5)
+            target_time = 5 + Math.randomInt(5)
             state = "COOKING"
             startTimer()
         } else if (state == "COOKING") {

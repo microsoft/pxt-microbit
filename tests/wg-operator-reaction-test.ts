@@ -75,8 +75,8 @@ function alertnessTest() {
     // Run 10 random cognition response tests
     for (let i = 0; i < 9; i++) {
         // Choose random delay and random outcome
-        let delay = Math.random(5) + 5
-        let outcome = Math.random(2)
+        let delay = Math.randomInt(5) + 5
+        let outcome = Math.randomInt(2)
         // Draw moving dots on screen until delay expires
         basic.clearScreen()
         for (let j = 0; j < delay; j++) {

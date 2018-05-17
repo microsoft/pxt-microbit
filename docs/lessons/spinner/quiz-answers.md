@@ -15,7 +15,7 @@ Answer the questions while completing the tutorial. Pay attention to the dialogu
 <br/>
 
 ```blocks
-let randomArrow = Math.random(4)
+let randomArrow = Math.randomInt(4)
 ```
 
 ## 2. Write the if statement that will display this down arrow from your code. Hint- This occurs if the local variable 'random arrow' returns 1. 
@@ -25,7 +25,7 @@ let randomArrow = Math.random(4)
 <br/>
 
 ```blocks
-let randomArrow = Math.random(4);
+let randomArrow = Math.randomInt(4);
 if (randomArrow == 1) {
     basic.showLeds(`
 . . # . .
@@ -44,7 +44,7 @@ if (randomArrow == 1) {
 <br />
 
 ```blocks
-let randomArrow = Math.random(4);
+let randomArrow = Math.randomInt(4);
 if (randomArrow == 2) {
     basic.showLeds(`
 . . # . .

@@ -15,7 +15,7 @@ pins.analogPitch(440, 300)
 ## Example
 
 ```blocks
-pins.analogSetPitchPin("P0")
+pins.analogSetPitchPin(AnalogPin.P0);
 let frequency1 = 440
 let duration = 1000
 pins.analogSetPitchPin(AnalogPin.P1);

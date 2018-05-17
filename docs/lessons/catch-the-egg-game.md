@@ -29,7 +29,7 @@ basic.pause(300);
 input.acceleration(Dimension.X);
 Math.min(0,0);
 Math.max(0,1);
-Math.random(5);
+Math.randomInt(5);
 game.addScore(1);
 game.score();
 game.removeLife(1);

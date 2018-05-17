@@ -8,7 +8,7 @@ You should work on these challenges after the following the [love meter activity
 
 ```blocks
 input.onPinPressed(TouchPin.P0, () => {
-    let x = Math.random(10)
+    let x = Math.randomInt(10)
     basic.showNumber(x)
 })
 
@@ -21,7 +21,7 @@ Add a pause of 3000 milliseconds (3 seconds) after showing the number so that th
 
 ```blocks
 input.onPinPressed(TouchPin.P0, () => {
-    let x = Math.random(10)
+    let x = Math.randomInt(10)
     basic.showNumber(x)
     basic.pause(3000)
 })
@@ -34,7 +34,7 @@ If the rating **x** is between *0* and *3* (strictly less than *4*), display the
 
 ```blocks
 input.onPinPressed(TouchPin.P0, () => {
-    let x = Math.random(10)
+    let x = Math.randomInt(10)
     basic.showNumber(x)
     basic.pause(3000)
     if (x < 4) {
@@ -49,7 +49,7 @@ input.onPinPressed(TouchPin.P0, () => {
 
 ```blocks
 input.onPinPressed(TouchPin.P0, () => {
-    let x = Math.random(10)
+    let x = Math.randomInt(10)
     basic.showNumber(x)
     basic.pause(3000)
     if (x < 4) {

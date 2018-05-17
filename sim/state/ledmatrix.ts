@@ -28,7 +28,7 @@ namespace pxsim {
             this.data = data;
         }
         public print() {
-            // console.debug(`Image id:${this.id} refs:${this.refcnt} size:${this.width}x${Image.height}`)
+            console.debug(`Image id:${this.id} refs:${this.refcnt} size:${this.width}x${Image.height}`)
         }
         public get(x: number, y: number): number {
             if (x < 0 || x >= this.width || y < 0 || y >= 5) return 0;
@@ -66,7 +66,7 @@ namespace pxsim {
 
     export function createInternalImage(width: number): Image {
         let img = createImage(width)
-        pxsim.noLeakTracking(img)
+        pxsim.runtime.unregisterLiveObject(img, true)
         return img
     }
 

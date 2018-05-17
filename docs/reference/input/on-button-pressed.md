@@ -32,7 +32,7 @@ This example shows a number from 1 to 6 when you press the `B` button.
 
 ```blocks
 input.onButtonPressed(Button.B, () => {
-    let dice = Math.random(6) + 1
+    let dice = Math.randomInt(6) + 1
     basic.showNumber(dice)
 })
 ```

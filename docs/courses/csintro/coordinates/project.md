@@ -150,7 +150,7 @@ basic.forever(() => {
    } else {
        game.addScore(1)
        ball.set(LedSpriteProperty.Y, 0)
-       ball.set(LedSpriteProperty.X, Math.random(5))
+       ball.set(LedSpriteProperty.X, Math.randomInt(5))
    }
 })
 input.onButtonPressed(Button.A, () => {
@@ -163,7 +163,7 @@ input.onButtonPressed(Button.B, () => {
        dodger.change(LedSpriteProperty.X, 1)
    }
 })
-ball = game.createSprite(Math.random(5), 0)
+ball = game.createSprite(Math.randomInt(5), 0)
 dodger = game.createSprite(2, 4)
 game.setScore(0)
 ```
@@ -182,7 +182,7 @@ basic.forever(() => {
    } else {
        game.addScore(1)
        ball.set(LedSpriteProperty.Y, 0)
-       ball.set(LedSpriteProperty.X, Math.random(5))
+       ball.set(LedSpriteProperty.X, Math.randomInt(5))
    }
 })
 input.onButtonPressed(Button.A, () => {
@@ -195,7 +195,7 @@ input.onButtonPressed(Button.B, () => {
        dodger.change(LedSpriteProperty.X, 1)
    }
 })
-ball = game.createSprite(Math.random(5), 0)
+ball = game.createSprite(Math.randomInt(5), 0)
 dodger = game.createSprite(2, 4)
 game.setScore(0)
 ```

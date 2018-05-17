@@ -172,7 +172,7 @@ namespace music {
 
     /**
      * Plays a tone through pin ``P0`` for the given duration.
-     * @param frequency pitch of the tone to play in Hertz (Hz)
+     * @param frequency pitch of the tone to play in Hertz (Hz), eg: Note.C
      * @param ms tone duration in milliseconds (ms)
      */
     //% help=music/play-tone weight=90
@@ -186,7 +186,7 @@ namespace music {
 
     /**
      * Plays a tone through pin ``P0``.
-     * @param frequency pitch of the tone to play in Hertz (Hz)
+     * @param frequency pitch of the tone to play in Hertz (Hz), eg: Note.C
      */
     //% help=music/ring-tone weight=80
     //% blockId=device_ring block="ring tone (Hz)|%note=device_note" blockGap=8
@@ -214,8 +214,9 @@ namespace music {
      */
     //% weight=50 help=music/note-frequency
     //% blockId=device_note block="%note"
-    //% shim=TD_ID
+    //% shim=TD_ID color="#FFFFFF" colorSecondary="#FFFFFF"
     //% note.fieldEditor="note" note.defl="262"
+    //% note.fieldOptions.decompileLiterals=true
     //% useEnumVal=1
     export function noteFrequency(name: Note): number {
         return name;
@@ -300,14 +301,14 @@ namespace music {
      */
     //% blockId=melody_on_event block="music on %value"
     //% help=music/on-event weight=59
-    export function onEvent(value: MusicEvent, handler: Action) {
+    export function onEvent(value: MusicEvent, handler: () => void) {
         control.onEvent(MICROBIT_MELODY_ID, value, handler);
     }
 
     /**
      * Starts playing a melody.
      * Notes are expressed as a string of characters with this format: NOTE[octave][:duration]
-     * @param melodyArray the melody array to play, eg: ['g5:1']
+     * @param melodyArray the melody array to play, eg: Melodies.Dadadadum
      * @param options melody options, once / forever, in the foreground / background
      */
     //% help=music/begin-melody weight=60 blockGap=8

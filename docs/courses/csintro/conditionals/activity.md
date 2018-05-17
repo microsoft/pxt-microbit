@@ -34,7 +34,7 @@ Here's an example mod:
 ```blocks
 let hand = 0
 input.onGesture(Gesture.Shake, () => {
-    hand = Math.random(3)
+    hand = Math.randomInt(3)
     if (hand == 0) {
         basic.showLeds(`
             # # # # #

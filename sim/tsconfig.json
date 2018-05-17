@@ -7,6 +7,9 @@
         "out": "../built/sim.js",
         "rootDir": ".",
         "newLine": "LF",
-        "sourceMap": false
+        "sourceMap": false,
+        "lib": ["dom", "dom.iterable", "scripthost", "es6"],
+        "types": ["jquery", "bluebird"],
+        "typeRoots": ["../node_modules/@types"]
     }
 }

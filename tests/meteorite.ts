@@ -38,9 +38,9 @@ input.onButtonPressed(Button.B, () => {
         led.plot(twoX, twoY)
     }
 })
-meteoriteOneX = Math.random(5)
+meteoriteOneX = Math.randomInt(5)
 meteoriteOneY = 0
-meteoriteTwoX = Math.random(5)
+meteoriteTwoX = Math.randomInt(5)
 meteoriteTwoY = -3
 basic.pause(1000)
 for (let i = 0; i < 3; i++) {
@@ -84,7 +84,7 @@ basic.forever(() => {
         }
     }
     while (Math.abs(meteoriteTwoX - meteoriteOneX) < 1) {
-        meteoriteOneX = Math.random(5)
+        meteoriteOneX = Math.randomInt(5)
     }
     meteoriteOneY = 0
     counter = counter + 1
@@ -133,9 +133,9 @@ basic.forever(() => {
         }
     }
 
-    meteoriteTwoX = Math.random(5)
+    meteoriteTwoX = Math.randomInt(5)
     while (Math.abs(meteoriteTwoX - meteoriteOneX) < 1) {
-        meteoriteTwoX = Math.random(5)
+        meteoriteTwoX = Math.randomInt(5)
     }
     meteoriteTwoY = 0
     counter = counter + 1

@@ -99,52 +99,39 @@ Copy this code into the JavaScript editor and then download it to the board.
 /**
  * Karel the LED
  */
-basic.forever(() => {
-    if (board.isKarelActive) {
-        led.toggle(board.karelX, board.karelY)
-        basic.pause(500)
-    }
-})
-input.onButtonPressed(Button.A, () => {
-    board.pressedA();
-    updateLeds();
-})
-input.onButtonPressed(Button.B, () => {
+input.onButtonPressed(Button.B, function () {
     board.pressedB();
-    updateLeds();
+updateLeds()
 })
-input.onGesture(Gesture.Shake, () => {
+input.onGesture(Gesture.Shake, function () {
     board.shake();
-    updateLeds();
-})
-input.onButtonPressed(Button.AB, () => {
-    board.pressedAB();
-    updateLeds();
+updateLeds()
 })
 function updateLeds() {
-    for (let j = 0; j < 5; j++) {
-        for (let k = 0; k < 5; k++) {
+    for (let j = 0; j <= 5 - 1; j++) {
+        for (let k = 0; k <= 5 - 1; k++) {
             if (board.ledState[j][k]) {
-                led.plot(k, j);
+                led.plot(k, j)
             } else {
-                led.unplot(k, j);
+                led.unplot(k, j)
             }
         }
     }
 }
-const board = new Board();
-enum Direction {
-    UP = 0,
-    LEFT,
-    DOWN,
-    RIGHT
-}
+input.onButtonPressed(Button.A, function () {
+    board.pressedA();
+updateLeds()
+})
+input.onButtonPressed(Button.AB, function () {
+    board.pressedAB();
+updateLeds()
+})
 class Board {
     public isKarelActive: boolean;
     public karelX: number;
     public karelY: number;
 
-    public ledState: Array < Array < boolean >>;
+    public ledState: Array<Array<boolean>>;
     private karelDirection: Direction;
 
     constructor() {
@@ -152,7 +139,7 @@ class Board {
         this.karelX = 2;
         this.karelY = 2;
         this.karelDirection = Direction.UP;
-        this.ledState =[];
+        this.ledState = [];
         for (let i = 0; i < 5; i++) {
             this.ledState.push([false, false, false, false, false]);
         }
@@ -212,6 +199,19 @@ class Board {
         this.isKarelActive = !this.isKarelActive;
     }
 }
+const board = new Board();
+enum Direction {
+    UP = 0,
+    LEFT,
+    DOWN,
+    RIGHT
+}
+basic.forever(function () {
+    if (board.isKarelActive) {
+        led.toggle(board.karelX, board.karelY)
+        basic.pause(500)
+    }
+})
 ```
 
 ## About the authors

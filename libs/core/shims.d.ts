@@ -32,7 +32,7 @@ declare interface Image {
      */
     //% help=images/plot-image
     //% parts="ledmatrix" xOffset.defl=0 shim=ImageMethods::plotImage
-    plotImage(xOffset?: number): void;
+    plotImage(xOffset?: int32): void;
 
     /**
      * Shows an frame from the image at offset ``x offset``.
@@ -41,7 +41,7 @@ declare interface Image {
     //% help=images/show-image weight=80 blockNamespace=images
     //% blockId=device_show_image_offset block="show image %sprite|at offset %offset" blockGap=8
     //% parts="ledmatrix" async interval.defl=400 shim=ImageMethods::showImage
-    showImage(xOffset: number, interval?: number): void;
+    showImage(xOffset: int32, interval?: int32): void;
 
     /**
      * Draws the ``index``-th frame of the image on the screen.
@@ -49,7 +49,7 @@ declare interface Image {
      */
     //% help=images/plot-frame weight=80
     //% parts="ledmatrix" shim=ImageMethods::plotFrame
-    plotFrame(xOffset: number): void;
+    plotFrame(xOffset: int32): void;
 
     /**
      * Scrolls an image .
@@ -59,7 +59,7 @@ declare interface Image {
     //% help=images/scroll-image weight=79 async blockNamespace=images
     //% blockId=device_scroll_image block="scroll image %sprite|with offset %frameoffset|and interval (ms) %delay" blockGap=8
     //% parts="ledmatrix" shim=ImageMethods::scrollImage
-    scrollImage(frameOffset: number, interval: number): void;
+    scrollImage(frameOffset: int32, interval: int32): void;
 
     /**
      * Sets all pixels off.
@@ -73,26 +73,26 @@ declare interface Image {
      */
     //%
     //% parts="ledmatrix" shim=ImageMethods::setPixelBrightness
-    setPixelBrightness(x: number, y: number, value: number): void;
+    setPixelBrightness(x: int32, y: int32, value: int32): void;
 
     /**
      * Gets the pixel brightness ([0..255]) at a given position
      */
     //%
     //% parts="ledmatrix" shim=ImageMethods::pixelBrightness
-    pixelBrightness(x: number, y: number): number;
+    pixelBrightness(x: int32, y: int32): int32;
 
     /**
      * Gets the width in columns
      */
     //% help=functions/width shim=ImageMethods::width
-    width(): number;
+    width(): int32;
 
     /**
      * Gets the height in rows (always 5)
      */
     //% shim=ImageMethods::height
-    height(): number;
+    height(): int32;
 
     /**
      * Set a pixel state at position ``(x,y)``
@@ -102,7 +102,7 @@ declare interface Image {
      */
     //% help=images/set-pixel
     //% parts="ledmatrix" shim=ImageMethods::setPixel
-    setPixel(x: number, y: number, value: boolean): void;
+    setPixel(x: int32, y: int32, value: boolean): void;
 
     /**
      * Get the pixel state at position ``(x,y)``
@@ -111,7 +111,7 @@ declare interface Image {
      */
     //% help=images/pixel
     //% parts="ledmatrix" shim=ImageMethods::pixel
-    pixel(x: number, y: number): boolean;
+    pixel(x: int32, y: int32): boolean;
 
     /**
      * Shows a particular frame of the image strip.
@@ -119,7 +119,7 @@ declare interface Image {
      */
     //% weight=70 help=images/show-frame
     //% parts="ledmatrix" interval.defl=400 shim=ImageMethods::showFrame
-    showFrame(frame: number, interval?: number): void;
+    showFrame(frame: int32, interval?: int32): void;
 }
 
 
@@ -138,7 +138,7 @@ declare namespace basic {
     //% blockId=device_show_number block="show|number %number" blockGap=8
     //% async
     //% parts="ledmatrix" interval.defl=150 shim=basic::showNumber
-    function showNumber(value: number, interval?: number): void;
+    function showNumber(value: int32, interval?: int32): void;
 
     /**
      * Draws an image on the LED screen.
@@ -151,7 +151,7 @@ declare namespace basic {
     //% blockId=device_show_leds
     //% block="show leds" icon="\uf00a"
     //% parts="ledmatrix" interval.defl=400 shim=basic::showLeds
-    function showLeds(leds: string, interval?: number): void;
+    function showLeds(leds: string, interval?: int32): void;
 
     /**
      * Display text on the display, one character at a time. If the string fits on the screen (i.e. is one letter), does not scroll.
@@ -164,7 +164,7 @@ declare namespace basic {
     //% async
     //% blockId=device_print_message
     //% parts="ledmatrix" interval.defl=150 shim=basic::showString
-    function showString(text: string, interval?: number): void;
+    function showString(text: string, interval?: int32): void;
 
     /**
      * Turn off all LEDs
@@ -182,7 +182,7 @@ declare namespace basic {
      */
     //% help=basic/show-animation imageLiteral=1 async
     //% parts="ledmatrix" interval.defl=400 shim=basic::showAnimation
-    function showAnimation(leds: string, interval?: number): void;
+    function showAnimation(leds: string, interval?: int32): void;
 
     /**
      * Draws an image on the LED screen.
@@ -207,7 +207,7 @@ declare namespace basic {
     //% help=basic/pause weight=54
     //% async block="pause (ms) %pause"
     //% blockId=device_pause icon="\uf110" shim=basic::pause
-    function pause(ms: number): void;
+    function pause(ms: int32): void;
 }
 
 
@@ -282,7 +282,7 @@ declare namespace input {
     //% help=input/acceleration weight=58
     //% blockId=device_acceleration block="acceleration (mg)|%NAME" blockGap=8
     //% parts="accelerometer" shim=input::acceleration
-    function acceleration(dimension: Dimension): number;
+    function acceleration(dimension: Dimension): int32;
 
     /**
      * Reads the light level applied to the LED screen in a range from ``0`` (dark) to ``255`` bright.
@@ -290,7 +290,7 @@ declare namespace input {
     //% help=input/light-level weight=57
     //% blockId=device_get_light_level block="light level" blockGap=8
     //% parts="ledmatrix" shim=input::lightLevel
-    function lightLevel(): number;
+    function lightLevel(): int32;
 
     /**
      * Get the current compass heading in degrees.
@@ -299,7 +299,7 @@ declare namespace input {
     //% weight=56
     //% blockId=device_heading block="compass heading (°)" blockGap=8
     //% parts="compass" shim=input::compassHeading
-    function compassHeading(): number;
+    function compassHeading(): int32;
 
     /**
      * Gets the temperature in Celsius degrees (°C).
@@ -308,7 +308,7 @@ declare namespace input {
     //% help=input/temperature
     //% blockId=device_temperature block="temperature (°C)" blockGap=8
     //% parts="thermometer" shim=input::temperature
-    function temperature(): number;
+    function temperature(): int32;
 
     /**
      * The pitch or roll of the device, rotation along the ``x-axis`` or ``y-axis``, in degrees.
@@ -317,7 +317,7 @@ declare namespace input {
     //% help=input/rotation weight=52
     //% blockId=device_get_rotation block="rotation (°)|%NAME" blockGap=8
     //% parts="accelerometer" advanced=true shim=input::rotation
-    function rotation(kind: Rotation): number;
+    function rotation(kind: Rotation): int32;
 
     /**
      * Get the magnetic force value in ``micro-Teslas`` (``µT``). This function is not supported in the simulator.
@@ -327,7 +327,7 @@ declare namespace input {
     //% blockId=device_get_magnetic_force block="magnetic force (µT)|%NAME" blockGap=8
     //% parts="compass"
     //% advanced=true shim=input::magneticForce
-    function magneticForce(dimension: Dimension): number;
+    function magneticForce(dimension: Dimension): int32;
 
     /**
      * Gets the number of milliseconds elapsed since power on.
@@ -335,7 +335,7 @@ declare namespace input {
     //% help=input/running-time weight=50 blockGap=8
     //% blockId=device_get_running_time block="running time (ms)"
     //% advanced=true shim=input::runningTime
-    function runningTime(): number;
+    function runningTime(): int32;
 
     /**
      * Gets the number of microseconds elapsed since power on.
@@ -343,7 +343,7 @@ declare namespace input {
     //% help=input/running-time-micros weight=49
     //% blockId=device_get_running_time_micros block="running time (micros)"
     //% advanced=true shim=input::runningTimeMicros
-    function runningTimeMicros(): number;
+    function runningTimeMicros(): int32;
 
     /**
      * Obsolete, compass calibration is automatic.
@@ -390,7 +390,7 @@ declare namespace control {
      */
     //% help=control/wait-micros weight=29
     //% blockId="control_wait_us" block="wait (µs)%micros" shim=control::waitMicros
-    function waitMicros(micros: number): void;
+    function waitMicros(micros: int32): void;
 
     /**
      * Raises an event in the event bus.
@@ -401,7 +401,7 @@ declare namespace control {
     //% weight=21 blockGap=12 blockId="control_raise_event" block="raise event|from source %src=control_event_source_id|with value %value=control_event_value_id" blockExternalInputs=1
     //% help=control/raise-event
     //% mode.defl=1 shim=control::raiseEvent
-    function raiseEvent(src: number, value: number, mode?: EventCreationMode): void;
+    function raiseEvent(src: int32, value: int32, mode?: EventCreationMode): void;
 
     /**
      * Registers an event handler.
@@ -409,7 +409,7 @@ declare namespace control {
     //% weight=20 blockGap=8 blockId="control_on_event" block="on event|from %src=control_event_source_id|with value %value=control_event_value_id"
     //% help=control/on-event
     //% blockExternalInputs=1 shim=control::onEvent
-    function onEvent(src: number, value: number, handler: () => void): void;
+    function onEvent(src: int32, value: int32, handler: () => void): void;
 
     /**
      * Gets the value of the last event executed on the bus
@@ -417,7 +417,7 @@ declare namespace control {
     //% blockId=control_event_value" block="event value"
     //% help=control/event-value
     //% weight=18 shim=control::eventValue
-    function eventValue(): number;
+    function eventValue(): int32;
 
     /**
      * Gets the timestamp of the last event executed on the bus
@@ -425,7 +425,7 @@ declare namespace control {
     //% blockId=control_event_timestamp" block="event timestamp"
     //% help=control/event-timestamp
     //% weight=19 blockGap=8 shim=control::eventTimestamp
-    function eventTimestamp(): number;
+    function eventTimestamp(): int32;
 
     /**
      * Make a friendly name for the device based on its serial number
@@ -439,7 +439,7 @@ declare namespace control {
      */
     //% blockId="control_device_serial_number" block="device serial number" weight=9
     //% advanced=true shim=control::deviceSerialNumber
-    function deviceSerialNumber(): number;
+    function deviceSerialNumber(): int32;
 }
 
 
@@ -456,7 +456,7 @@ declare namespace led {
     //% blockId=device_plot block="plot|x %x|y %y" blockGap=8
     //% parts="ledmatrix"
     //% x.min=0 x.max=4 y.min=0 y.max=4 shim=led::plot
-    function plot(x: number, y: number): void;
+    function plot(x: int32, y: int32): void;
 
     /**
      * Turn on the specified LED with specific brightness using x, y coordinates (x is horizontal, y is vertical). (0,0) is upper left.
@@ -469,7 +469,7 @@ declare namespace led {
     //% parts="ledmatrix"
     //% x.min=0 x.max=4 y.min=0 y.max=4 brightness.min=0 brightness.max=255
     //% advanced=true shim=led::plotBrightness
-    function plotBrightness(x: number, y: number, brightness: number): void;
+    function plotBrightness(x: int32, y: int32, brightness: int32): void;
 
     /**
      * Turn off the specified LED using x, y coordinates (x is horizontal, y is vertical). (0,0) is upper left.
@@ -480,7 +480,7 @@ declare namespace led {
     //% blockId=device_unplot block="unplot|x %x|y %y" blockGap=8
     //% parts="ledmatrix"
     //% x.min=0 x.max=4 y.min=0 y.max=4 shim=led::unplot
-    function unplot(x: number, y: number): void;
+    function unplot(x: int32, y: int32): void;
 
     /**
      * Get the on/off state of the specified LED using x, y coordinates. (0,0) is upper left.
@@ -491,7 +491,7 @@ declare namespace led {
     //% blockId=device_point block="point|x %x|y %y"
     //% parts="ledmatrix"
     //% x.min=0 x.max=4 y.min=0 y.max=4 shim=led::point
-    function point(x: number, y: number): boolean;
+    function point(x: int32, y: int32): boolean;
 
     /**
      * Get the screen brightness from 0 (off) to 255 (full bright).
@@ -500,7 +500,7 @@ declare namespace led {
     //% blockId=device_get_brightness block="brightness" blockGap=8
     //% parts="ledmatrix"
     //% advanced=true shim=led::brightness
-    function brightness(): number;
+    function brightness(): int32;
 
     /**
      * Set the screen brightness from 0 (off) to 255 (full bright).
@@ -511,7 +511,7 @@ declare namespace led {
     //% parts="ledmatrix"
     //% advanced=true
     //% value.min=0 value.max=255 shim=led::setBrightness
-    function setBrightness(value: number): void;
+    function setBrightness(value: int32): void;
 
     /**
      * Cancels the current animation and clears other pending animations.
@@ -560,7 +560,7 @@ declare namespace pins {
     //% blockId=device_get_digital_pin block="digital read|pin %name" blockGap=8
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     //% name.fieldOptions.tooltips="false" name.fieldOptions.width="300" shim=pins::digitalReadPin
-    function digitalReadPin(name: DigitalPin): number;
+    function digitalReadPin(name: DigitalPin): int32;
 
     /**
      * Set a pin or connector value to either 0 or 1.
@@ -572,7 +572,7 @@ declare namespace pins {
     //% value.min=0 value.max=1
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     //% name.fieldOptions.tooltips="false" name.fieldOptions.width="300" shim=pins::digitalWritePin
-    function digitalWritePin(name: DigitalPin, value: number): void;
+    function digitalWritePin(name: DigitalPin, value: int32): void;
 
     /**
      * Read the connector value as analog, that is, as a value comprised between 0 and 1023.
@@ -582,7 +582,7 @@ declare namespace pins {
     //% blockId=device_get_analog_pin block="analog read|pin %name" blockGap="8"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     //% name.fieldOptions.tooltips="false" shim=pins::analogReadPin
-    function analogReadPin(name: AnalogPin): number;
+    function analogReadPin(name: AnalogPin): int32;
 
     /**
      * Set the connector value as analog. Value must be comprised between 0 and 1023.
@@ -594,7 +594,7 @@ declare namespace pins {
     //% value.min=0 value.max=1023
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     //% name.fieldOptions.tooltips="false" shim=pins::analogWritePin
-    function analogWritePin(name: AnalogPin, value: number): void;
+    function analogWritePin(name: AnalogPin, value: int32): void;
 
     /**
      * Configures the Pulse-width modulation (PWM) of the analog output to the given value in **microseconds** or `1/1000` milliseconds.
@@ -606,7 +606,7 @@ declare namespace pins {
     //% blockId=device_set_analog_period block="analog set period|pin %pin|to (µs)%micros"
     //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=4
     //% pin.fieldOptions.tooltips="false" shim=pins::analogSetPeriod
-    function analogSetPeriod(name: AnalogPin, micros: number): void;
+    function analogSetPeriod(name: AnalogPin, micros: int32): void;
 
     /**
      * Configures this pin to a digital input, and generates events where the timestamp is the duration that this pin was either ``high`` or ``low``.
@@ -625,7 +625,7 @@ declare namespace pins {
     //% help=pins/pulse-duration advanced=true
     //% blockId=pins_pulse_duration block="pulse duration (µs)"
     //% weight=21 blockGap=8 shim=pins::pulseDuration
-    function pulseDuration(): number;
+    function pulseDuration(): int32;
 
     /**
      * Returns the duration of a pulse in microseconds
@@ -638,7 +638,7 @@ declare namespace pins {
     //% help=pins/pulse-in
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     //% name.fieldOptions.tooltips="false" name.fieldOptions.width="300" maxDuration.defl=2000000 shim=pins::pulseIn
-    function pulseIn(name: DigitalPin, value: PulseValue, maxDuration?: number): number;
+    function pulseIn(name: DigitalPin, value: PulseValue, maxDuration?: int32): int32;
 
     /**
      * Writes a value to the servo, controlling the shaft accordingly. On a standard servo, this will set the angle of the shaft (in degrees), moving the shaft to that orientation. On a continuous rotation servo, this will set the speed of the servo (with ``0`` being full-speed in one direction, ``180`` being full speed in the other, and a value near ``90`` being no movement).
@@ -651,7 +651,7 @@ declare namespace pins {
     //% value.min=0 value.max=180
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     //% name.fieldOptions.tooltips="false" shim=pins::servoWritePin
-    function servoWritePin(name: AnalogPin, value: number): void;
+    function servoWritePin(name: AnalogPin, value: int32): void;
 
     /**
      * Configures this IO pin as an analog/pwm output, configures the period to be 20 ms, and sets the pulse width, based on the value it is given **microseconds** or `1/1000` milliseconds.
@@ -662,7 +662,7 @@ declare namespace pins {
     //% blockId=device_set_servo_pulse block="servo set pulse|pin %value|to (µs) %micros"
     //% value.fieldEditor="gridpicker" value.fieldOptions.columns=4
     //% value.fieldOptions.tooltips="false" shim=pins::servoSetPulse
-    function servoSetPulse(name: AnalogPin, micros: number): void;
+    function servoSetPulse(name: AnalogPin, micros: int32): void;
 
     /**
      * Sets the pin used when using `analog pitch` or music.
@@ -681,7 +681,7 @@ declare namespace pins {
      */
     //% blockId=device_analog_pitch block="analog pitch %frequency|for (ms) %ms"
     //% help=pins/analog-pitch weight=4 async advanced=true blockGap=8 shim=pins::analogPitch
-    function analogPitch(frequency: number, ms: number): void;
+    function analogPitch(frequency: int32, ms: int32): void;
 
     /**
      * Configures the pull of this pin.
@@ -711,19 +711,19 @@ declare namespace pins {
      * @param size number of bytes in the buffer
      */
     //% shim=pins::createBuffer
-    function createBuffer(size: number): Buffer;
+    function createBuffer(size: int32): Buffer;
 
     /**
      * Read `size` bytes from a 7-bit I2C `address`.
      */
     //% repeat.defl=0 shim=pins::i2cReadBuffer
-    function i2cReadBuffer(address: number, size: number, repeat?: boolean): Buffer;
+    function i2cReadBuffer(address: int32, size: int32, repeat?: boolean): Buffer;
 
     /**
      * Write bytes to a 7-bit I2C `address`.
      */
     //% repeat.defl=0 shim=pins::i2cWriteBuffer
-    function i2cWriteBuffer(address: number, buf: Buffer, repeat?: boolean): void;
+    function i2cWriteBuffer(address: int32, buf: Buffer, repeat?: boolean): void;
 
     /**
      * Write to the SPI slave and return the response
@@ -731,7 +731,7 @@ declare namespace pins {
      */
     //% help=pins/spi-write weight=5 advanced=true
     //% blockId=spi_write block="spi write %value" shim=pins::spiWrite
-    function spiWrite(value: number): number;
+    function spiWrite(value: int32): int32;
 
     /**
      * Sets the SPI frequency
@@ -739,7 +739,7 @@ declare namespace pins {
      */
     //% help=pins/spi-frequency weight=4 advanced=true
     //% blockId=spi_frequency block="spi frequency %frequency" shim=pins::spiFrequency
-    function spiFrequency(frequency: number): void;
+    function spiFrequency(frequency: int32): void;
 
     /**
      * Sets the SPI bits and mode
@@ -748,7 +748,7 @@ declare namespace pins {
      */
     //% help=pins/spi-format weight=3 advanced=true
     //% blockId=spi_format block="spi format|bits %bits|mode %mode" shim=pins::spiFormat
-    function spiFormat(bits: number, mode: number): void;
+    function spiFormat(bits: int32, mode: int32): void;
 
     /**
      * Sets the MOSI, MISO, SCK pins used by the SPI instance
@@ -817,7 +817,7 @@ declare namespace serial {
      */
     //% blockId=serial_readbuffer block="serial|read buffer %length"
     //% help=serial/read-buffer advanced=true weight=5 shim=serial::readBuffer
-    function readBuffer(length: number): Buffer;
+    function readBuffer(length: int32): Buffer;
 
     /**
      * Set the serial input and output to use pins instead of the USB connection.
@@ -852,29 +852,29 @@ declare interface Buffer {
      * Write a number in specified format in the buffer.
      */
     //% shim=BufferMethods::setNumber
-    setNumber(format: NumberFormat, offset: number, value: number): void;
+    setNumber(format: NumberFormat, offset: int32, value: int32): void;
 
     /**
      * Read a number in specified format from the buffer.
      */
     //% shim=BufferMethods::getNumber
-    getNumber(format: NumberFormat, offset: number): number;
+    getNumber(format: NumberFormat, offset: int32): int32;
 
     /** Returns the length of a Buffer object. */
     //% property shim=BufferMethods::length
-    length: number;
+    length: int32;
 
     /**
      * Fill (a fragment) of the buffer with given value.
      */
     //% offset.defl=0 length.defl=-1 shim=BufferMethods::fill
-    fill(value: number, offset?: number, length?: number): void;
+    fill(value: int32, offset?: int32, length?: int32): void;
 
     /**
      * Return a copy of a fragment of a buffer.
      */
     //% offset.defl=0 length.defl=-1 shim=BufferMethods::slice
-    slice(offset?: number, length?: number): Buffer;
+    slice(offset?: int32, length?: int32): Buffer;
 
     /**
      * Shift buffer left in place, with zero padding.
@@ -883,7 +883,7 @@ declare interface Buffer {
      * @param length number of elements in buffer. If negative, length is set as the buffer length minus start. eg: -1
      */
     //% start.defl=0 length.defl=-1 shim=BufferMethods::shift
-    shift(offset: number, start?: number, length?: number): void;
+    shift(offset: int32, start?: int32, length?: int32): void;
 
     /**
      * Rotate buffer left in place.
@@ -892,13 +892,13 @@ declare interface Buffer {
      * @param length number of elements in buffer. If negative, length is set as the buffer length minus start. eg: -1
      */
     //% start.defl=0 length.defl=-1 shim=BufferMethods::rotate
-    rotate(offset: number, start?: number, length?: number): void;
+    rotate(offset: int32, start?: int32, length?: int32): void;
 
     /**
      * Write contents of `src` at `dstOffset` in current buffer.
      */
     //% shim=BufferMethods::write
-    write(dstOffset: number, src: Buffer): void;
+    write(dstOffset: int32, src: Buffer): void;
 }
 
 // Auto-generated. Do not edit. Really.

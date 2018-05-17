@@ -31,50 +31,56 @@
         "flashUsableEnd": 245760,
         "flashEnd": 245760,
         "flashCodeAlign": 1024,
-        "upgrades": [
-            {
-                "type": "package",
-                "map": {
-                    "microbit": "core",
-                    "microbit-bluetooth": "bluetooth",
-                    "microbit-radio": "radio",
-                    "microbit-devices": "devices",
-                    "microbit-led": "",
-                    "microbit-music": "",
-                    "microbit-game": "",
-                    "microbit-pins": "",
-                    "microbit-serial": ""
+        "floatingPoint": true,
+        "patches": {
+            "0.0.0 - 1.0.0": [
+                {
+                    "type": "package",
+                    "map": {
+                        "microbit": "core",
+                        "microbit-bluetooth": "bluetooth",
+                        "microbit-radio": "radio",
+                        "microbit-devices": "devices",
+                        "microbit-led": "",
+                        "microbit-music": "",
+                        "microbit-game": "",
+                        "microbit-pins": "",
+                        "microbit-serial": ""
+                    }
+                },
+                {
+                    "type": "missingPackage",
+                    "map": {
+                        "radio\\s*\\.": "radio",
+                        "bluetooth\\s*\\.": "bluetooth",
+                        "devices\\s*\\.": "devices"
+                    }
+                },
+                {
+                    "type": "api",
+                    "map": {
+                        "bluetooth\\s*\\.uartRead\\s*\\((.*?)\\)": "bluetooth.uartReadUntil($1)",
+                        "bluetooth\\s*\\.uartWrite\\s*\\((.*?)\\)": "bluetooth.uartWriteUntil($1)",
+                        "input\\s*\\.calibrate\\s*\\(": "input.calibrateCompass(",
+                        "radio\\s*\\.onDataPacketReceived\\(\\s*\\(\\{\\s*receivedNumber\\s*\\}\\)\\s*=>\\s*\\{": "radio.onReceivedNumber(function (receivedNumber) {",
+                        "radio\\s*\\.onDataPacketReceived\\(\\s*\\(\\{\\s*receivedString: name, receivedNumber: value\\s*\\}\\)\\s*=>\\s*\\{": "radio.onReceivedValue(function (name, value) {",
+                        "radio\\s*\\.onDataPacketReceived\\(\\s*\\(\\{\\s*receivedString\\s*\\}\\)\\s*=>\\s*\\{": "radio.onReceivedString(function (receivedString) {"
+                    }
+                },
+                {
+                    "type": "blockId",
+                    "map": {
+                        "device_get_acceleration": "device_acceleration"
+                    }
+                },
+                {
+                    "type": "blockValue",
+                    "map": {
+                        "device_print_message.message": "text"
+                    }
                 }
-            },
-            {
-                "type": "missingPackage",
-                "map": {
-                    "radio\\s*\\.": "radio",
-                    "bluetooth\\s*\\.": "bluetooth",
-                    "devices\\s*\\.": "devices"
-                }
-            },
-            {
-                "type": "api",
-                "map": {
-                    "bluetooth\\s*\\.uartRead\\s*\\((.*?)\\)": "bluetooth.uartReadUntil($1)",
-                    "bluetooth\\s*\\.uartWrite\\s*\\((.*?)\\)": "bluetooth.uartWriteUntil($1)",
-                    "input\\s*\\.calibrate\\s*\\(": "input.calibrateCompass("
-                }
-            },
-            {
-                "type": "blockId",
-                "map": {
-                    "device_get_acceleration": "device_acceleration"
-                }
-            },
-            {
-                "type": "blockValue",
-                "map": {
-                    "device_print_message.message": "text"
-                }
-            }
-        ],
+            ]
+        },
         "hidSelectors": [
             {
                 "usagePage": "0xFF00",
@@ -224,6 +230,7 @@
         "productId": "0x0204",
         "rawHID": true
     },
+    "ignoreDocsErrors": true,
     "appTheme": {
         "accentColor": "#5C005C",
         "logoUrl": "https://microbit.org/code/",
@@ -237,19 +244,13 @@
         "organizationUrl": "https://makecode.com/",
         "organizationLogo": "./static/Microsoft-logo_rgb_c-gray-square.png",
         "organizationWideLogo": "./static/Microsoft-logo_rgb_c-white.png",
+        "homeScreenHero": "./static/hero.png",
         "homeUrl": "https://makecode.microbit.org/",
         "embedUrl": "https://makecode.microbit.org/",
         "shareUrl": "https://makecode.microbit.org/",
         "privacyUrl": "https://makecode.com/privacy",
         "termsOfUseUrl": "https://makecode.com/termsofuse",
         "githubUrl": "https://github.com/Microsoft/pxt-microbit",
-        "galleries": {
-            "Projects": "projects",
-            "Examples": "examples"
-        },
-        "projectGallery": "projects",
-        "exampleGallery": "examples",
-        "crowdinProject": "kindscript",
         "boardName": "micro:bit",
         "driveDisplayName": "MICROBIT",
         "sideDoc": "tutorials/getting-started",
@@ -257,6 +258,7 @@
         "appStoreID": "1092687276",
         "mobileSafariDownloadProtocol": "microbithex://?data",
         "extendEditor": true,
+        "extendFieldEditors": true,
         "docMenu": [
             {
                 "name": "Support",

@@ -16,7 +16,7 @@
      * @param high maximum value. If 0, maximum value adjusted automatically, eg: 0
      */
     //% help=led/plot-bar-graph weight=20
-    //% blockId=device_plot_bar_graph block="plot bar graph of %value |up to %high" icon="\uf080" blockExternalInputs=true
+    //% blockId=device_plot_bar_graph block="plot bar graph of %value up to %high" icon="\uf080" blockExternalInputs=true
     //% parts="ledmatrix"
     export function plotBarGraph(value: number, high: number): void {
         let now = input.runningTime();

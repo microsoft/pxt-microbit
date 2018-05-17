@@ -1,0 +1,47 @@
+
+/*******************************
+        Blockly toolbox
+*******************************/
+
+div.blocklyTreeRow {
+    box-shadow: inset 0 -1px 0 0 #ecf0f1;
+
+    margin-bottom: 0px !important;
+
+    -webkit-transition-property: background-color; /* Safari */
+    -webkit-transition-duration: 1s; /* Safari */
+    transition-property: background-color;
+    transition-duration: 1s;
+}
+
+/* Blockly toolbox font size same as the page font */
+span.blocklyTreeLabel {
+    font-family: @pageFont !important;
+    font-weight: 200;
+}
+
+.blocklyToolboxDiv, .monacoToolboxDiv {
+    background-color: white !important;
+    border-left: 1px solid #ecf0f1 !important;
+    box-shadow: 4px 0px 2px -4px rgba(0,0,0,0.12), 4px 0px 2px -4px rgba(0,0,0,0.24);
+}
+
+/* Mobile */
+@media only screen and (max-width: @largestMobileScreen) {
+    .blocklyToolboxDiv, .monacoToolboxDiv {
+        border-left: 0 !important;
+    }
+    div.blocklyTreeRoot {
+        padding: 0;
+    }
+}
+
+/* Tablet */
+@media only screen and (min-width: @tabletBreakpoint) and (max-width: @largestTabletScreen) {
+    .blocklyToolboxDiv, .monacoToolboxDiv {
+        border-left: 0 !important;
+    }
+    div.blocklyTreeRoot {
+        padding: 0;
+    }
+}

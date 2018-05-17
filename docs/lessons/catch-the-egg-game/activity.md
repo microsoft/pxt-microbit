@@ -19,7 +19,7 @@ basic.forever(() => {
     led.plot(basketX, 4)
     if (eggY > 4) {
         eggY = -1
-        eggX = Math.random(5)
+        eggX = Math.randomInt(5)
     }
     basic.pause(300)
 })
@@ -50,7 +50,7 @@ basic.forever(() => {
     led.plot(basketX1, 4)
     if (eggY1 > 4) {
         eggY1 = -1
-        eggX1 = Math.random(5)
+        eggX1 = Math.randomInt(5)
     }
     if (eggY1 == 4) {
         if (basketX1 == eggX1) {
@@ -89,7 +89,7 @@ basic.forever(() => {
     led.plot(basketX2, 4)
     if (eggY2 > 4) {
         eggY2 = -1
-        eggX2 = Math.random(5)
+        eggX2 = Math.randomInt(5)
     }
     if (eggY2 == 4) {
         if (basketX2 == eggX2) {
@@ -126,7 +126,7 @@ basic.forever(() => {
     led.plot(basketX3, 4)
     if (eggY3 > 4) {
         eggY3 = -1
-        eggX3 = Math.random(5)
+        eggX3 = Math.randomInt(5)
     }
     if (eggY3 == 4) {
         if (basketX3 == eggX3) {

@@ -22,7 +22,7 @@ rock, paper, and scissors are the tools you use to challenge your friends!)
 ```blocks
 let tool = 0;
 input.onGesture(Gesture.Shake, () => {
-    tool = Math.random(3)
+    tool = Math.randomInt(3)
 })
 
 ```
@@ -37,7 +37,7 @@ check whether ``tool`` is equal to ``0``.
 ```blocks
 let tool = 0;
 input.onGesture(Gesture.Shake, () => {
-    let tool = Math.random(3)
+    let tool = Math.randomInt(3)
     if (tool == 0) {
     }
 })
@@ -51,7 +51,7 @@ picture of a piece of paper.
 ```blocks
 let tool = 0;
 input.onGesture(Gesture.Shake, () => {
-    let tool = Math.random(3)
+    let tool = Math.randomInt(3)
     if (tool == 0) {
         basic.showLeds(`
             # # # # #
@@ -74,7 +74,7 @@ Click on the gearwheel icon to open up the ``if`` editor; then drag and drop an 
 ```blocks
 let tool = 0;
 input.onGesture(Gesture.Shake, () => {
-    let tool = Math.random(3)
+    let tool = Math.randomInt(3)
     if (tool == 0) {
         basic.showLeds(`
             # # # # #
@@ -95,7 +95,7 @@ Place a ``||basic:show leds||`` block under the else if and draw a **rock** imag
 ```blocks
 let tool = 0;
 input.onGesture(Gesture.Shake, () => {
-    let tool = Math.random(3)
+    let tool = Math.randomInt(3)
     if (tool == 0) {
         basic.showLeds(`
             # # # # #
@@ -126,7 +126,7 @@ That's why you can use an ``else`` instead of an ``else if``.
 ```blocks
 let tool = 0;
 input.onGesture(Gesture.Shake, () => {
-    let tool = Math.random(3)
+    let tool = Math.randomInt(3)
     if (tool == 0) {
         basic.showLeds(`
             # # # # #
