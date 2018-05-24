@@ -73,7 +73,7 @@
   "cardType": "package"
 }, {
   "name": "Sparkfun Gamer:bit",
-  "url":"pkg/sparkfun/pxt-gamer-bit",
+  "url":"/pkg/sparkfun/pxt-gamer-bit",
   "cardType": "package"
 }, {
   "name": "Sparkfun Moto:bit",
@@ -81,7 +81,7 @@
   "cardType": "package"
 }, {
   "name": "Sparkfun Weather:bit",
-  "url":"/pkg/sparkfun/pxt-moto-bit",
+  "url":"/pkg/sparkfun/pxt-weather-bit",
   "cardType": "package"
 }, {
   "name": "Minode Kit",
