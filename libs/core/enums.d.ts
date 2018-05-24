@@ -69,56 +69,67 @@ declare namespace basic {
      * Raised when shaken
      */
     //% block=shake
+    //% jres=gestures.shake
     Shake = 11,  // MICROBIT_ACCELEROMETER_EVT_SHAKE
     /**
      * Raised when the logo is upward and the screen is vertical
      */
     //% block="logo up"
+    //% jres=gestures.tiltforward
     LogoUp = 1,  // MICROBIT_ACCELEROMETER_EVT_TILT_UP
     /**
      * Raised when the logo is downward and the screen is vertical
      */
     //% block="logo down"
+    //% jres=gestures.tiltbackwards
     LogoDown = 2,  // MICROBIT_ACCELEROMETER_EVT_TILT_DOWN
     /**
      * Raised when the screen is pointing down and the board is horizontal
      */
     //% block="screen up"
+    //% jres=gestures.frontsideup
     ScreenUp = 5,  // MICROBIT_ACCELEROMETER_EVT_FACE_UP
     /**
      * Raised when the screen is pointing up and the board is horizontal
      */
     //% block="screen down"
+    //% jres=gestures.backsideup
     ScreenDown = 6,  // MICROBIT_ACCELEROMETER_EVT_FACE_DOWN
     /**
      * Raised when the screen is pointing left
      */
     //% block="tilt left"
+    //% jres=gestures.tiltleft
     TiltLeft = 3,  // MICROBIT_ACCELEROMETER_EVT_TILT_LEFT
     /**
      * Raised when the screen is pointing right
      */
     //% block="tilt right"
+    //% jres=gestures.tiltright
     TiltRight = 4,  // MICROBIT_ACCELEROMETER_EVT_TILT_RIGHT
     /**
      * Raised when the board is falling!
      */
     //% block="free fall"
+    //% jres=gestures.freefall
     FreeFall = 7,  // MICROBIT_ACCELEROMETER_EVT_FREEFALL
     /**
      * Raised when a 3G shock is detected
      */
     //% block="3g"
+    //% jres=gestures.impact3g
     ThreeG = 8,  // MICROBIT_ACCELEROMETER_EVT_3G
     /**
      * Raised when a 6G shock is detected
      */
     //% block="6g"
+    //% jres=gestures.impact6g
     SixG = 9,  // MICROBIT_ACCELEROMETER_EVT_6G
     /**
      * Raised when a 8G shock is detected
      */
     //% block="8g"
+    //% jres=gestures.impact8g
     EightG = 10,  // MICROBIT_ACCELEROMETER_EVT_8G
     }
 

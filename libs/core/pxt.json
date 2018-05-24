@@ -21,6 +21,7 @@
         "icons.jres",
         "input.cpp",
         "input.ts",
+        "gestures.jres",
         "control.ts",
         "control.cpp",
         "game.ts",
