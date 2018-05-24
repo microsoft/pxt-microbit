@@ -8,6 +8,7 @@
         "bluetooth.ts",
         "bluetooth.cpp"
     ],
+    "icon": "./static/packages/bluetooth/icon.png",
     "public": true,
     "dependencies": {
         "core": "file:../core"
