@@ -3,6 +3,7 @@
 ## Package Gallery #gallery
 
 ## Robotics
+
 ```codecard
 [{
   "name": "4tronix BitBot",
@@ -24,13 +25,14 @@
   "name": "Kittenbot RobotBit",
   "url":"/pkg/kittenbot/pxt-robotbit",
   "cardType": "package"
-{, {
+}, {
   "name": "inex iBit",
   "url":"/pkg/emwta/pxt-iBit",
   "cardType": "package"
 }]
 ```
 ## Gaming
+
 ```codecard
 [{
   "name": "Sparkfun Gamer:bit",
@@ -39,6 +41,7 @@
 }]
 ```
 ## STEM
+
 ```codecard
 [{  
   "name": "micro:turtle",
@@ -52,7 +55,7 @@
   "name": "NeoPixel",
   "url":"/pkg/microsoft/pxt-neopixel",
   "cardType": "package"
-{, {
+}, {
   "name": "Sparkfun Moto:bit",
   "url":"/pkg/sparkfun/pxt-moto-bit",
   "cardType": "package"
