@@ -15,7 +15,13 @@
   "name": "micro:turtle",
   "url":"/pkg/microsoft/pxt-microturtle",
   "cardType": "package"
-},{
+}]
+```
+## Some other stuff
+```codecard
+[{
+
+  },{
   "name": "MAX6675",
   "url":"/pkg/microsoft/pxt-max6675",
   "cardType": "package"
