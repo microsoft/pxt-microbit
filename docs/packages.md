@@ -2,6 +2,8 @@
 
 ## Package Gallery #gallery
 
+Check out [microbit.org](http://microbit.org/resellers/) for more information on these accessories and where to buy them. 
+
 ## Robotics
 
 ```codecard
@@ -48,10 +50,6 @@
   "url":"/pkg/microsoft/pxt-microturtle",
   "cardType": "package"
 }, {
-  "name": "WS2812B",
-  "url": "/pkg/microsoft/pxt-ws2812b",
-  "cardType": "package"
-}, {
   "name": "NeoPixel",
   "url":"/pkg/microsoft/pxt-neopixel",
   "cardType": "package"
@@ -71,6 +69,10 @@
   "name": "Grove inventor kit",
   "url":"/pkg/Seeed-Studio/pxt-grove",
   "cardType": "package"
+}, {
+    "name": "WS2812B",
+    "url": "/pkg/microsoft/pxt-ws2812b",
+    "cardType": "package"
 }]
 ```
 ## Sensing & Individual Components
