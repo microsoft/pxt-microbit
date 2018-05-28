@@ -6,6 +6,11 @@
 #include "ManagedString.h"
 #include "ManagedType.h"
 
-#define DMESG(...) do{}while(0)
+namespace pxt {
+void debuglog(const char *format, ...);
+}
+
+
+#define DMESG NOLOG
 
 #endif

@@ -1,4 +1,5 @@
 #include "pxt.h"
+#include <stdarg.h>
 
 PXT_ABI(__aeabi_dadd)
 PXT_ABI(__aeabi_dcmplt)
@@ -129,4 +130,105 @@ unsigned afterProgramPage() {
 int current_time_ms() {
     return system_timer_current_time();
 }
+
+static void logwriten(const char *msg, int l)
+{
+    uBit.serial.send((uint8_t*)msg, l);
+}
+
+static void logwrite(const char *msg)
+{
+    logwriten(msg, strlen(msg));
+}
+
+
+static void writeNum(char *buf, uint32_t n, bool full)
+{
+    int i = 0;
+    int sh = 28;
+    while (sh >= 0)
+    {
+        int d = (n >> sh) & 0xf;
+        if (full || d || sh == 0 || i)
+        {
+            buf[i++] = d > 9 ? 'A' + d - 10 : '0' + d;
+        }
+        sh -= 4;
+    }
+    buf[i] = 0;
+}
+
+static void logwritenum(uint32_t n, bool full, bool hex)
+{
+    char buff[20];
+
+    if (hex)
+    {
+        writeNum(buff, n, full);
+        logwrite("0x");
+    }
+    else
+    {
+        itoa(n, buff);
+    }
+
+    logwrite(buff);
+}
+
+void vdebuglog(const char *format, va_list ap)
+{
+    const char *end = format;
+
+    while (*end)
+    {
+        if (*end++ == '%')
+        {
+            logwriten(format, end - format - 1);
+            uint32_t val = va_arg(ap, uint32_t);
+            switch (*end++)
+            {
+            case 'c':
+                logwriten((const char *)&val, 1);
+                break;
+            case 'd':
+                logwritenum(val, false, false);
+                break;
+            case 'x':
+                logwritenum(val, false, true);
+                break;
+            case 'p':
+            case 'X':
+                logwritenum(val, true, true);
+                break;
+            case 's':
+                logwrite((char *)(void *)val);
+                break;
+            case '%':
+                logwrite("%");
+                break;
+            default:
+                logwrite("???");
+                break;
+            }
+            format = end;
+        }
+    }
+    logwriten(format, end - format);
+    logwrite("\n");
+}
+
+void debuglog(const char *format, ...)
+{
+    va_list arg;
+    va_start(arg, format);
+    vdebuglog(format, arg);
+    va_end(arg);
+}
+
+
+
+
 } // namespace pxt
+
+
+
