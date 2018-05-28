@@ -9,6 +9,8 @@ PXT_ABI(__aeabi_dmul)
 
 extern "C" void target_panic(int error_code)
 {
+    // wait for serial to flush
+    wait_us(300000);
     microbit_panic(error_code);
 }
 
