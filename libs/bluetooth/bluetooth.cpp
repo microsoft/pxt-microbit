@@ -162,7 +162,7 @@ namespace bluetooth {
 
         power = min(MICROBIT_BLE_POWER_LEVELS-1, max(0, power));
         int8_t level = CALIBRATED_POWERS[power];
-        uBit.bleManager.advertiseEddystoneUid(buf->data, buf->data + 10, level, connectable);
+        uBit.bleManager.advertiseEddystoneUid((const char*)buf->data, (const char*)buf->data + 10, level, connectable);
     }
 
     /**
