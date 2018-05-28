@@ -4,6 +4,10 @@
 
 using namespace std;
 
+
+#define p10(v) __builtin_powi(10, v)
+
+
 namespace pxt {
 
 static HandlerBinding *handlerBindings;
@@ -233,7 +237,7 @@ double mystrtod(const char *p, char **endp) {
     if (*p) {
         p++;
         int pw = strtol(p, endp, 10);
-        v *= ::pow(10, pw);
+        v *= p10(pw);
     }
 
     return v;
@@ -596,11 +600,11 @@ void mycvt(double d, char *buf) {
 
     if (0.000001 <= d && d < 1e21) {
         if (pw > 0) {
-            d /= ::pow(10, pw);
+            d /= p10(pw);
             beforeDot = 1 + pw;
         }
     } else {
-        d /= ::pow(10, pw);
+        d /= p10(pw);
         e = pw;
     }
 
@@ -674,7 +678,13 @@ String toString(TValue v) {
 namespace Math_ {
 //%
 TNumber pow(TNumber x, TNumber y) {
-    return fromDouble(::pow(toDouble(x), toDouble(y)));
+    // regular pow() from math.h is 4k of code
+    return fromDouble(__builtin_powi(toDouble(x), toInt(y)));
+}
+
+//%
+TNumber atan2(TNumber y, TNumber x) {
+    return fromDouble(::atan2(toDouble(y), toDouble(y)));
 }
 
 double randomDouble() {
@@ -718,6 +728,12 @@ TNumber randomRange(TNumber min, TNumber max) {
 }
 
 #define SINGLE(op) return fromDouble(::op(toDouble(x)));
+
+//%
+TNumber log(TNumber x){SINGLE(log)}
+
+//%
+TNumber log10(TNumber x){SINGLE(log10)}
 
 //%
 TNumber sqrt(TNumber x){SINGLE(sqrt)}
