@@ -627,10 +627,8 @@ enum class ValType {
 ValType valType(TValue v);
 } // namespace pxt
 
-// The initial six bytes of the strings (@PXT@:) are rewritten
-// to the proper ref-count and vtable pointer
 #define PXT_DEF_STRING(name, val)                                                                  \
-    static const char name[] __attribute__((aligned(4))) = "@PXT@:" val;
+    static const char name[] __attribute__((aligned(4))) = "\xff\xff\x01\x00" val;
 
 using namespace pxt;
 

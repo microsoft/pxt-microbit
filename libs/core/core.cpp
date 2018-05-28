@@ -99,8 +99,8 @@ unsigned getRandom(unsigned max) {
             r = ((((r >> 31) ^ (r >> 6) ^ (r >> 4) ^ (r >> 2) ^ (r >> 1) ^ r) & 1) << 31) |
                 (r >> 1);
 
-            random_value = r;   
-            
+            random_value = r;
+
             result = ((result << 1) | (r & 0x00000001));
         } while (m >>= 1);
     } while (result > (unsigned)max);
@@ -108,16 +108,16 @@ unsigned getRandom(unsigned max) {
     return result;
 }
 
-PXT_DEF_STRING(sTrue, "true")
-PXT_DEF_STRING(sFalse, "false")
-PXT_DEF_STRING(sUndefined, "undefined")
-PXT_DEF_STRING(sNull, "null")
-PXT_DEF_STRING(sObject, "[Object]")
-PXT_DEF_STRING(sFunction, "[Function]")
-PXT_DEF_STRING(sNaN, "NaN")
-PXT_DEF_STRING(sInf, "Infinity")
-PXT_DEF_STRING(sMInf, "-Infinity")
-}
+PXT_DEF_STRING(sTrue, "\x04\x00true")
+PXT_DEF_STRING(sFalse, "\x05\x00false")
+PXT_DEF_STRING(sUndefined, "\x09\x00undefined")
+PXT_DEF_STRING(sNull, "\x04\x00null")
+PXT_DEF_STRING(sObject, "\x08\x00[Object]")
+PXT_DEF_STRING(sFunction, "\x0A\x00[Function]")
+PXT_DEF_STRING(sNaN, "\x03\x00NaN")
+PXT_DEF_STRING(sInf, "\x08\x00Infinity")
+PXT_DEF_STRING(sMInf, "\x09\x00-Infinity")
+} // namespace pxt
 
 #ifndef X86_64
 
@@ -213,14 +213,14 @@ String substr(String s, int start, int length) {
     length = min(length, s->length - start);
     return mkString(s->data + start, length);
 }
-}
+} // namespace String_
 
 namespace Boolean_ {
 //%
 bool bang(int v) {
     return v == 0;
 }
-}
+} // namespace Boolean_
 
 namespace pxt {
 
@@ -360,7 +360,7 @@ bool switch_eq(TValue a, TValue b) {
     return false;
 }
 
-}
+} // namespace pxt
 
 namespace langsupp {
 //%
@@ -382,7 +382,7 @@ TValue ptrneq(TValue a, TValue b) {
 TValue ptrneqq(TValue a, TValue b) {
     return !eqq_bool(a, b) ? TAG_TRUE : TAG_FALSE;
 }
-}
+} // namespace langsupp
 
 #define NUMOP(op) return fromDouble(toDouble(a) op toDouble(b));
 #define BITOP(op) return fromInt(toInt(a) op toInt(b));
@@ -475,7 +475,7 @@ TNumber eors(TNumber a, TNumber b){BITOP (^)}
 TNumber orrs(TNumber a, TNumber b){BITOP(|)}
 
 //%
-TNumber bnot(TNumber a){
+TNumber bnot(TNumber a) {
     return fromInt(~toInt(a));
 }
 
@@ -574,7 +574,7 @@ String toString(TValue v) {
         return (String)(void *)sObject;
     }
 }
-}
+} // namespace numops
 
 namespace Math_ {
 //%
@@ -679,7 +679,7 @@ int imul(int x, int y) {
 int idiv(int x, int y) {
     return x / y;
 }
-}
+} // namespace Math_
 
 namespace Array_ {
 //%
@@ -728,7 +728,7 @@ int indexOf(RefCollection *c, TValue x, int start) {
 bool removeElement(RefCollection *c, TValue x) {
     return c->removeElement(x);
 }
-}
+} // namespace Array_
 
 namespace pxt {
 //%
@@ -741,14 +741,16 @@ unsigned programSize() {
 
 //%
 int getConfig(int key, int defl) {
-    int *cfgData = *(int**)&bytecode[18];
+    int *cfgData = *(int **)&bytecode[18];
     for (int i = 0;; i += 2) {
-        if (cfgData[i] == key) return cfgData[i + 1];
-        if (cfgData[i] == 0) return defl;
+        if (cfgData[i] == key)
+            return cfgData[i + 1];
+        if (cfgData[i] == 0)
+            return defl;
     }
 }
 
-}
+} // namespace pxt
 
 namespace pxtrt {
 //%
@@ -906,7 +908,7 @@ void *getGlobalsPtr() {
 void runtimeWarning(String s) {
     // noop for now
 }
-}
+} // namespace pxtrt
 #endif
 
 namespace pxt {
@@ -941,12 +943,12 @@ ValType valType(TValue v) {
     }
 }
 
-PXT_DEF_STRING(sObjectTp, "object")
-PXT_DEF_STRING(sBooleanTp, "boolean")
-PXT_DEF_STRING(sStringTp, "string")
-PXT_DEF_STRING(sNumberTp, "number")
-PXT_DEF_STRING(sFunctionTp, "function")
-PXT_DEF_STRING(sUndefinedTp, "undefined")
+PXT_DEF_STRING(sObjectTp, "\x06\x00object")
+PXT_DEF_STRING(sBooleanTp, "\x07\x00boolean")
+PXT_DEF_STRING(sStringTp, "\x06\x00string")
+PXT_DEF_STRING(sNumberTp, "\x06\x00number")
+PXT_DEF_STRING(sFunctionTp, "\x08\x00function")
+PXT_DEF_STRING(sUndefinedTp, "\x09\x00undefined")
 
 //%
 String typeOf(TValue v) {
@@ -983,11 +985,11 @@ void anyPrint(TValue v) {
             DMESG("[Native %p]", v);
         }
     } else {
-        #ifndef X86_64
+#ifndef X86_64
         String s = numops::toString(v);
         DMESG("[%s %p = %s]", pxt::typeOf(v)->data, v, s->data);
         decr((TValue)s);
-        #endif
+#endif
     }
 }
 
@@ -998,7 +1000,8 @@ void dtorDoNothing() {}
                          0,                                                                        \
                          0,                                                                        \
                          {                                                                         \
-                             (void *)&dtorDoNothing, (void *)&anyPrint,                            \
+                             (void *)&dtorDoNothing,                                               \
+                             (void *)&anyPrint,                                                    \
                          }};
 PRIM_VTABLE(string_vt, 0)
 PRIM_VTABLE(image_vt, 0)
@@ -1024,4 +1027,4 @@ VTable *getVTable(RefObject *r) {
         target_panic(100);
     return (VTable *)primVtables[r->vtable];
 }
-}
+} // namespace pxt
