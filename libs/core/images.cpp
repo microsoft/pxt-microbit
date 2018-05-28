@@ -22,13 +22,6 @@ void RefMImage::makeWritable() {
     }
 }
 
-void RefMImage::clone() {
-    auto r = new (::operator new(sizeof(*this) + img.width * img.height)) RefMImage();
-    memcpy(&r->img, &img, sizeof(img) + img.width * img.height);
-    r->img.refCount = 0xffff;
-    return r;
-}
-
 /**
  * Creation, manipulation and display of LED images.
  */
@@ -41,8 +34,8 @@ namespace images {
 //% weight=75 help=images/create-image
 //% blockId=device_build_image block="create image"
 //% parts="ledmatrix"
-Image createImage(ImageLiteral leds) {
-    return new RefMImage((ImageData *)ptrOfLiteral(leds));
+Image createImage(ImageLiteral_ leds) {
+    return new RefMImage(imageBytes(leds));
 }
 
 /**
@@ -51,7 +44,7 @@ Image createImage(ImageLiteral leds) {
 //% weight=74 help=images/create-big-image
 //% blockId=device_build_big_image block="create big image" imageLiteral=2
 //% parts="ledmatrix"
-Image createBigImage(ImageLiteral leds) {
+Image createBigImage(ImageLiteral_ leds) {
     return createImage(leds);
 }
 } // namespace images
@@ -128,7 +121,7 @@ void setPixelBrightness(Image i, int x, int y, int value) {
 //%
 //% parts="ledmatrix"
 int pixelBrightness(Image i, int x, int y) {
-    int pix = MicroBitImage(i).getPixelValue(x, y);
+    int pix = MicroBitImage(i->img).getPixelValue(x, y);
     if (pix < 0)
         return 0;
     return pix;

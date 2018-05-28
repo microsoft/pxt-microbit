@@ -1,9 +1,5 @@
 #include "pxt.h"
 
-void initRuntime() {
-    // repeat error 4 times and restart as needed
-    microbit_panic_timeout(4);
-}
 
 /**
  * Provides access to basic micro:bit functionality.
@@ -42,8 +38,8 @@ namespace basic {
     //% blockId=device_show_leds
     //% block="show leds" icon="\uf00a"
     //% parts="ledmatrix"
-    void showLeds(ImageLiteral leds, int interval = 400) {
-      uBit.display.print(MicroBitImage(((ImageData*)ptrOfLiteral(leds)), 0, 0, 0, interval);
+    void showLeds(ImageLiteral_ leds, int interval = 400) {
+      uBit.display.print(MicroBitImage(imageBytes(leds)), 0, 0, 0, interval);
     }
 
     /**
@@ -65,8 +61,7 @@ namespace basic {
         uBit.display.clear();
         fiber_sleep(interval * 5);
       } else if (l > 1) {
-        ManagedString s(text->data, text->length);
-        uBit.display.scroll(s, interval);
+        uBit.display.scroll(MSTR(text), interval);
       } else {
         uBit.display.print(text->data[0], interval * 5);
       }
@@ -90,7 +85,7 @@ namespace basic {
      */
     //% help=basic/show-animation imageLiteral=1 async
     //% parts="ledmatrix"
-    void showAnimation(ImageLiteral leds, int interval = 400) {
+    void showAnimation(ImageLiteral_ leds, int interval = 400) {
       uBit.display.animate(MicroBitImage(imageBytes(leds)), interval, 5, 0, 0);
     }
 
@@ -100,16 +95,9 @@ namespace basic {
      */
     //% help=basic/plot-leds weight=80
     //% parts="ledmatrix"
-    void plotLeds(ImageLiteral leds) {
+    void plotLeds(ImageLiteral_ leds) {
       MicroBitImage i(imageBytes(leds));
       uBit.display.print(i, 0, 0, 0, 0);
-    }
-
-    void forever_stub(void *a) {
-      while (true) {
-        runAction0((Action)a);
-        fiber_sleep(20);
-      }
     }
 
     /**
@@ -119,10 +107,7 @@ namespace basic {
     //% help=basic/forever weight=55 blockGap=8 blockAllowMultiple=1 afterOnStart=true
     //% blockId=device_forever block="forever" icon="\uf01e"
     void forever(Action a) {
-      if (a != 0) {
-        incr(a);
-        create_fiber(forever_stub, (void*)a);
-      }
+      runForever(a);
     }
 
     /**

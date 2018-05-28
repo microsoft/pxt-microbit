@@ -15,6 +15,7 @@
         "core.cpp",
         "pxt-helpers.ts",
         "helpers.ts",
+        "codal.cpp",
         "images.cpp",
         "basic.cpp",
         "icons.ts",

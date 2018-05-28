@@ -139,7 +139,10 @@ namespace led {
     //% help=led/screenshot
     //% parts="ledmatrix"
     Image screenshot() {
-      return uBit.display.screenShot().leakData();
+        auto d = uBit.display.screenShot().leakData();
+        auto r = new RefMImage(d);
+        d->decr();
+        return r;
         /*
         let Image img;
         img = image.createImage("");

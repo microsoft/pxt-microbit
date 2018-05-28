@@ -79,25 +79,25 @@ namespace radio {
     }
 
     uint8_t copyStringValue(uint8_t* buf, String data, uint8_t maxLength) {
-        uint8_t len = min(maxLength, data->length);
+        uint8_t len = min_(maxLength, data->length);
 
         // One byte for length of the string
         buf[0] = len;
 
         if (len > 0) {
-            memcpy(buf + 1, s->data, len);
+            memcpy(buf + 1, data->data, len);
         }
         return len + 1;
     }
 
     String getStringValue(uint8_t* buf, uint8_t maxLength) {
         // First byte is the string length
-        uint8_t len = min(maxLength, buf[0]);
-        return mkString(buf + 1, len);
+        uint8_t len = min_(maxLength, buf[0]);
+        return mkString((char*)buf + 1, len);
     }
 
     uint8_t copyBufferValue(uint8_t* buf, Buffer data, uint8_t maxLength) {
-        uint8_t len = min(maxLength, data->length);
+        uint8_t len = min_(maxLength, data->length);
 
         // One byte for length of the buffer
         buf[0] = len;
@@ -107,9 +107,9 @@ namespace radio {
         return len + 1;
     }    
 
-    BufferData* getBufferValue(uint8_t* buf, uint8_t maxLength) {
+    Buffer getBufferValue(uint8_t* buf, uint8_t maxLength) {
         // First byte is the buffer length
-        uint8_t len = min(maxLength, buf[0]);
+        uint8_t len = min_(maxLength, buf[0]);
         // skip first byte
         return mkBuffer(buf + 1, len);
     }
@@ -123,7 +123,7 @@ namespace radio {
         uBit.serial.send(s);
         if ((tp == PACKET_TYPE_STRING || tp == PACKET_TYPE_VALUE) && NULL != m) {
             uBit.serial.send(",\"n\":\"");
-            uBit.serial.send(m->data, m->length);
+            uBit.serial.send((uint8_t*)m->data, m->length);
             uBit.serial.send("\"");
         }
         if (tp == PACKET_TYPE_BUFFER && NULL != b) {
@@ -185,7 +185,7 @@ namespace radio {
             serial = s;
             value = v;
             decrRC(msg);
-            decr(bufMsg);
+            decrRC(bufMsg);
             msg = m;
             bufMsg = b;
         }
@@ -226,7 +226,6 @@ namespace radio {
     void sendValue(String name, int value) {
         if (radioEnable() != MICROBIT_OK) return;
 
-        ManagedString n(name);
         uint8_t buf[32];
         memset(buf, 0, 32);
 
