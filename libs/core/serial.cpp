@@ -68,8 +68,8 @@ namespace serial {
     //% help=serial/read-until
     //% blockId=serial_read_until block="serial|read until %delimiter=serial_delimiter_conv"
     //% weight=19
-    StringData* readUntil(StringData* delimiter) {
-      return uBit.serial.readUntil(ManagedString(delimiter)).leakData();
+    String readUntil(String delimiter) {
+      return PSTR(uBit.serial.readUntil(MSTR(delimiter)));
     }
 
     /**
@@ -78,10 +78,10 @@ namespace serial {
     //% help=serial/read-string
     //% blockId=serial_read_buffer block="serial|read string"
     //% weight=18
-    StringData* readString() {
+    String readString() {
       int n = uBit.serial.getRxBufferSize();
-      if (n == 0) return ManagedString("").leakData();
-      return ManagedString(uBit.serial.read(n, MicroBitSerialMode::ASYNC)).leakData();
+      if (n == 0) return mkString("", 0);
+      return PSTR(uBit.serial.read(n, MicroBitSerialMode::ASYNC));
     }
 
     /**
@@ -90,8 +90,8 @@ namespace serial {
     */
     //% help=serial/on-data-received
     //% weight=18 blockId=serial_on_data_received block="serial|on data received %delimiters=serial_delimiter_conv"
-    void onDataReceived(StringData* delimiters, Action body) {
-      uBit.serial.eventOn(ManagedString(delimiters));
+    void onDataReceived(String delimiters, Action body) {
+      uBit.serial.eventOn(MSTR(delimiters));
       registerWithDal(MICROBIT_ID_SERIAL, MICROBIT_SERIAL_EVT_DELIM_MATCH, body);
       // lazy initialization of serial buffers
       uBit.serial.read(MicroBitSerialMode::ASYNC);
@@ -103,10 +103,10 @@ namespace serial {
     //% help=serial/write-string
     //% weight=87 blockGap=8
     //% blockId=serial_writestring block="serial|write string %text"
-    void writeString(StringData *text) {
+    void writeString(String text) {
       if (!text) return;
 
-      uBit.serial.send(ManagedString(text));
+      uBit.serial.send(MSTR(text));
     }
 
     /**
@@ -117,8 +117,7 @@ namespace serial {
     void writeBuffer(Buffer buffer) {
       if (!buffer) return;
 
-      ManagedBuffer buf(buffer);
-      uBit.serial.send(buf.getBytes(), buf.length());
+      uBit.serial.send(buffer->data, buffer->length);
     }
 
     /**
@@ -131,12 +130,15 @@ namespace serial {
       if (length <= 0)
         length = MICROBIT_SERIAL_READ_BUFFER_LENGTH;
         
-      ManagedBuffer buf(length);
-      int read = uBit.serial.read(buf.getBytes(), buf.length());
-      if (read != buf.length())
-        buf = buf.slice(read);
+      auto buf = mkBuffer(NULL, length);
+      int read = uBit.serial.read(buf->data, buf->length);
+      if (read != length) {
+        auto prev = buf;
+        buf = mkBuffer(buf->data, read);
+        decrRC(prev);
+      }
 
-      return buf.leakData();
+      return buf;
     }
 
     /**

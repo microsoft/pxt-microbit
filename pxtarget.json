@@ -32,6 +32,7 @@
         "flashEnd": 245760,
         "flashCodeAlign": 1024,
         "floatingPoint": true,
+        "taggedInts": true,
         "patches": {
             "0.0.0 - 1.0.0": [
                 {

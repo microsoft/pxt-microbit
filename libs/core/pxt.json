@@ -4,10 +4,10 @@
     "installedVersion": "tsmdvf",
     "files": [
         "README.md",
-        "ManagedBuffer.cpp",
-        "ManagedBuffer.h",
         "pxt.cpp",
         "pxt.h",
+        "pxtbase.h",
+        "pxtcore.h",
         "dal.d.ts",
         "enums.d.ts",
         "shims.d.ts",

@@ -290,8 +290,8 @@ namespace control {
      */
     //% blockId="control_device_name" block="device name" weight=10 blockGap=8
     //% advanced=true
-    StringData* deviceName() {
-        return ManagedString(microbit_friendly_name()).leakData();
+    String deviceName() {
+        return mkString(microbit_friendly_name(), -1);
     }
 
     /**

@@ -87,15 +87,15 @@ namespace bluetooth {
     }
     
     //%
-    void uartWriteString(StringData *data) {
+    void uartWriteString(String data) {
         startUartService();
-    	uart->send(ManagedString(data));
+    	uart->send(MSTR(data));
     }    
 
     //%
-    StringData* uartReadUntil(StringData *del) {
+    String uartReadUntil(String del) {
         startUartService();
-        return uart->readUntil(ManagedString(del)).leakData();
+        return PSTR(uart->readUntil(MSTR(del)));
     }    
 
     /**
@@ -104,9 +104,9 @@ namespace bluetooth {
     */
     //% help=bluetooth/on-uart-data-received
     //% weight=18 blockId=bluetooth_on_data_received block="bluetooth|on data received %delimiters=serial_delimiter_conv"
-    void onUartDataReceived(StringData* delimiters, Action body) {
+    void onUartDataReceived(String delimiters, Action body) {
       startUartService();
-      uart->eventOn(ManagedString(delimiters));
+      uart->eventOn(MSTR(delimiters));
       registerWithDal(MICROBIT_ID_BLE_UART, MICROBIT_UART_S_EVT_DELIM_MATCH, body);
     }
 
@@ -142,10 +142,10 @@ namespace bluetooth {
     //% blockId=eddystone_advertise_url block="bluetooth advertise url %url|with power %power|connectable %connectable"
     //% parts=bluetooth weight=11 blockGap=8
     //% help=bluetooth/advertise-url blockExternalInputs=1
-    void advertiseUrl(StringData* url, int power, bool connectable) {
+    void advertiseUrl(String url, int power, bool connectable) {
         power = min(MICROBIT_BLE_POWER_LEVELS-1, max(0, power));
         int8_t level = CALIBRATED_POWERS[power];
-        uBit.bleManager.advertiseEddystoneUrl(ManagedString(url), level, connectable);
+        uBit.bleManager.advertiseEddystoneUrl(MSTR(url), level, connectable);
         uBit.bleManager.setTransmitPower(power);
     }
 
@@ -157,14 +157,12 @@ namespace bluetooth {
     */
     //% parts=bluetooth weight=12 advanced=true
     void advertiseUidBuffer(Buffer nsAndInstance, int power, bool connectable) {
-        ManagedBuffer buf(nsAndInstance);
-        if (buf.length() != 16) return;
+        auto buf = nsAndInstance;
+        if (buf->length != 16) return;
 
         power = min(MICROBIT_BLE_POWER_LEVELS-1, max(0, power));
         int8_t level = CALIBRATED_POWERS[power];
-        uint8_t uidNs[10]; buf.readBytes(uidNs, 0, 10);
-        uint8_t uidInst[6]; buf.readBytes(uidInst, 10, 6);
-        uBit.bleManager.advertiseEddystoneUid((const char*)uidNs, (const char*)uidInst, level, connectable);
+        uBit.bleManager.advertiseEddystoneUid(buf->data, buf->data + 10, level, connectable);
     }
 
     /**

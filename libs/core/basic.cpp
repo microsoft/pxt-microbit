@@ -1,5 +1,9 @@
 #include "pxt.h"
 
+void initRuntime() {
+    // repeat error 4 times and restart as needed
+    microbit_panic_timeout(4);
+}
 
 /**
  * Provides access to basic micro:bit functionality.
@@ -39,7 +43,7 @@ namespace basic {
     //% block="show leds" icon="\uf00a"
     //% parts="ledmatrix"
     void showLeds(ImageLiteral leds, int interval = 400) {
-      uBit.display.print(MicroBitImage(imageBytes(leds)), 0, 0, 0, interval);
+      uBit.display.print(MicroBitImage(((ImageData*)ptrOfLiteral(leds)), 0, 0, 0, interval);
     }
 
     /**
@@ -53,18 +57,18 @@ namespace basic {
     //% async
     //% blockId=device_print_message
     //% parts="ledmatrix"
-    void showString(StringData *text, int interval = 150) {
+    void showString(String text, int interval = 150) {
       if (interval <= 0)
         interval = 1;
-      ManagedString s(text);
-      int l = s.length();
+      int l = text ? text->length : 0;
       if (l == 0) {
         uBit.display.clear();
         fiber_sleep(interval * 5);
       } else if (l > 1) {
+        ManagedString s(text->data, text->length);
         uBit.display.scroll(s, interval);
       } else {
-        uBit.display.print(s.charAt(0), interval * 5);
+        uBit.display.print(text->data[0], interval * 5);
       }
     }
 
