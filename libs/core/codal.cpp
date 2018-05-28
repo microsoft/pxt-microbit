@@ -35,6 +35,8 @@ struct FreeList {
 
 static void initCodal() {
 
+    uBit.init();
+
     // repeat error 4 times and restart as needed
     microbit_panic_timeout(4);
 }
