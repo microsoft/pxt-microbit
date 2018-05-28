@@ -57,8 +57,9 @@ declare interface Image {
      * @param interval time between each animation step in milli seconds, eg: 200
      */
     //% help=images/scroll-image weight=79 async blockNamespace=images
-    //% blockId=device_scroll_image block="scroll image %sprite|with offset %frameoffset|and interval (ms) %delay" blockGap=8
-    //% parts="ledmatrix" shim=ImageMethods::scrollImage
+    //% blockId=device_scroll_image
+    //% block="scroll image %sprite|with offset %frameoffset|and interval (ms) %delay"
+    //% blockGap=8 parts="ledmatrix" shim=ImageMethods::scrollImage
     scrollImage(frameOffset: int32, interval: int32): void;
 
     /**
@@ -852,13 +853,13 @@ declare interface Buffer {
      * Write a number in specified format in the buffer.
      */
     //% shim=BufferMethods::setNumber
-    setNumber(format: NumberFormat, offset: int32, value: int32): void;
+    setNumber(format: NumberFormat, offset: int32, value: number): void;
 
     /**
      * Read a number in specified format from the buffer.
      */
     //% shim=BufferMethods::getNumber
-    getNumber(format: NumberFormat, offset: int32): int32;
+    getNumber(format: NumberFormat, offset: int32): number;
 
     /** Returns the length of a Buffer object. */
     //% property shim=BufferMethods::length
@@ -880,16 +881,24 @@ declare interface Buffer {
      * Shift buffer left in place, with zero padding.
      * @param offset number of bytes to shift; use negative value to shift right
      * @param start start offset in buffer. Default is 0.
-     * @param length number of elements in buffer. If negative, length is set as the buffer length minus start. eg: -1
+     * @param length number of elements in buffer. If negative, length is set as the buffer length minus
+     * start. eg: -1
      */
     //% start.defl=0 length.defl=-1 shim=BufferMethods::shift
     shift(offset: int32, start?: int32, length?: int32): void;
 
     /**
+     * Convert a buffer to its hexadecimal representation.
+     */
+    //% shim=BufferMethods::toHex
+    toHex(): string;
+
+    /**
      * Rotate buffer left in place.
      * @param offset number of bytes to shift; use negative value to shift right
      * @param start start offset in buffer. Default is 0.
-     * @param length number of elements in buffer. If negative, length is set as the buffer length minus start. eg: -1
+     * @param length number of elements in buffer. If negative, length is set as the buffer length minus
+     * start. eg: -1
      */
     //% start.defl=0 length.defl=-1 shim=BufferMethods::rotate
     rotate(offset: int32, start?: int32, length?: int32): void;
@@ -899,6 +908,15 @@ declare interface Buffer {
      */
     //% shim=BufferMethods::write
     write(dstOffset: int32, src: Buffer): void;
+}
+declare namespace control {
+
+    /**
+     * Create a new zero-initialized buffer.
+     * @param size number of bytes in the buffer
+     */
+    //% shim=control::createBuffer
+    function createBuffer(size: int32): Buffer;
 }
 
 // Auto-generated. Do not edit. Really.
