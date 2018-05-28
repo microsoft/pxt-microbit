@@ -582,11 +582,6 @@ TNumber pow(TNumber x, TNumber y) {
     return fromDouble(::pow(toDouble(x), toDouble(y)));
 }
 
-//%
-TNumber atan2(TNumber y, TNumber x) {
-    return fromDouble(::atan2(toDouble(y), toDouble(y)));
-}
-
 double randomDouble() {
     return getRandom(UINT_MAX) / ((double)UINT_MAX + 1) +
            getRandom(0xffffff) / ((double)UINT_MAX * 0xffffff);
