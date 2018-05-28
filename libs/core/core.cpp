@@ -190,11 +190,60 @@ int length(String s) {
     return s->length;
 }
 
+#define isspace(c) ((c) == ' ')
+
+double mystrtod(const char *p, char **endp) {
+    while (isspace(*p))
+        p++;
+    double m = 1;
+    double v = 0;
+    int dot = 0;
+    if (*p == '+')
+        p++;
+    if (*p == '-') {
+        m = -1;
+        p++;
+    }
+    if (*p == '0' && (p[1] | 0x20) == 'x') {
+        return m * strtol(p, endp, 16);
+    }
+    while (*p) {
+        int c = *p - '0';
+        if (0 <= c && c <= 9) {
+            v *= 10;
+            v += c;
+            if (dot)
+                m /= 10;
+        } else if (!dot && *p == '.') {
+            dot = 1;
+        } else if (*p == 'e' || *p == 'E') {
+            break;
+        } else {
+            while (isspace(*p))
+                p++;
+            if (*p)
+                return NAN;
+            break;
+        }
+        p++;
+    }
+
+    v *= m;
+
+    if (*p) {
+        p++;
+        int pw = strtol(p, endp, 10);
+        v *= ::pow(10, pw);
+    }
+
+    return v;
+}
+
 //%
 TNumber toNumber(String s) {
     // JSCHECK
     char *endptr;
-    double v = strtod(s->data, &endptr);
+    double v = mystrtod(s->data, &endptr);
     if (endptr != s->data + s->length)
         v = NAN;
     else if (v == 0.0 || v == -0.0)
@@ -529,8 +578,59 @@ TNumber neqq(TNumber a, TNumber b) {
     return !pxt::eqq_bool(a, b) ? TAG_TRUE : TAG_FALSE;
 }
 
-asm(".global _printf_float");
-extern "C" char *gcvt(double d, int ndigit, char *buf);
+void mycvt(double d, char *buf) {
+    if (d < 0) {
+        *buf++ = '-';
+        d = -d;
+    }
+
+    if (!d) {
+        *buf++ = '0';
+        *buf++ = 0;
+        return;
+    }
+
+    int pw = (int)log10(d);
+    int e = 1;
+    int beforeDot = 1;
+
+    if (0.000001 <= d && d < 1e21) {
+        if (pw > 0) {
+            d /= ::pow(10, pw);
+            beforeDot = 1 + pw;
+        }
+    } else {
+        d /= ::pow(10, pw);
+        e = pw;
+    }
+
+    int sig = 0;
+    while (sig < 17 || beforeDot > 0) {
+        //printf("%f sig=%d bd=%d\n", d, sig, beforeDot);
+        int c = (int)d;
+        *buf++ = '0' + c;
+        d = (d - c) * 10;
+        if (--beforeDot == 0)
+            *buf++ = '.';
+        if (sig || c)
+            sig++;
+    }
+
+    buf--;
+    while (*buf == '0')
+        buf--;
+    if (*buf == '.')
+        buf--;
+    buf++;
+    
+    if (e != 1) {
+        *buf++ = 'e';
+        itoa(e, buf);
+    } else {
+        *buf = 0;
+    }
+}
+
 
 //%
 String toString(TValue v) {
@@ -550,10 +650,6 @@ String toString(TValue v) {
     } else if (t == ValType::Number) {
         char buf[64];
 
-        // if (isNumber(v)) {
-        //    int x = numValue(v);
-        //    itoa(x, buf);
-        //} else {
         double x = toDouble(v);
 
         if (isnan(x))
@@ -564,8 +660,7 @@ String toString(TValue v) {
             else
                 return (String)(void *)sInf;
         }
-        gcvt(x, 16, buf);
-        //}
+        mycvt(x, buf);
 
         return mkString(buf);
     } else if (t == ValType::Function) {
