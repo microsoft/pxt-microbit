@@ -5,14 +5,6 @@
 
 #pragma GCC diagnostic ignored "-Wunused-parameter"
 
-#include "MicroBit.h"
-#include "MicroBitImage.h"
-#include "ManagedString.h"
-#include "ManagedType.h"
-
-#define printf(...) uBit.serial.printf(__VA_ARGS__)
-// #define printf(...)
-
 #include "pxtbase.h"
 
 namespace pxt {
