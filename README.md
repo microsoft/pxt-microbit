@@ -17,10 +17,10 @@ The local server lets you to run the editor and serve the documentation from you
 
 ### Setup   
 This section explains how to setup your development environment for pxt-microbit, whether that be to run a copy locally or to make source changes.    
-Note that pxt-microbit can not be run without its main depandancy, [pxt](https://github.com/Microsoft/pxt). Below explains how to setup both.      
+Note that pxt-microbit can not be run without its main dependancy, [pxt](https://github.com/Microsoft/pxt). Below explains how to setup both.      
 
 The following commands perform a one-time setup after synching the repo on your machine.
-* Note for any editing of the .cpp files, Yotta must be installed. Do do so, follow the instructions on [their site](http://docs.yottabuild.org/).
+* Note for any editing of the `.cpp` files, Yotta must be installed. To do so, follow the instructions on [their site](http://docs.yottabuild.org/).
 * Install node.js 8.9.4 or higher.
 * Install requirements for [pxt](https://github.com/Microsoft/pxt). Note the v0 branch must be used for pxt-microbit (add ``sudo`` for Mac/Linux shells).
 ```
