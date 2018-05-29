@@ -59,56 +59,67 @@ enum class Gesture {
      * Raised when shaken
      */
     //% block=shake
+    //% jres=gestures.shake
     Shake = MICROBIT_ACCELEROMETER_EVT_SHAKE,
     /**
      * Raised when the logo is upward and the screen is vertical
      */
     //% block="logo up"
+    //% jres=gestures.tiltforward
     LogoUp = MICROBIT_ACCELEROMETER_EVT_TILT_UP,
     /**
      * Raised when the logo is downward and the screen is vertical
      */
     //% block="logo down"
+    //% jres=gestures.tiltbackwards
     LogoDown = MICROBIT_ACCELEROMETER_EVT_TILT_DOWN,
     /**
      * Raised when the screen is pointing down and the board is horizontal
      */
     //% block="screen up"
+    //% jres=gestures.frontsideup
     ScreenUp = MICROBIT_ACCELEROMETER_EVT_FACE_UP,
     /**
      * Raised when the screen is pointing up and the board is horizontal
      */
     //% block="screen down"
+    //% jres=gestures.backsideup
     ScreenDown = MICROBIT_ACCELEROMETER_EVT_FACE_DOWN,
     /**
      * Raised when the screen is pointing left
      */
     //% block="tilt left"
+    //% jres=gestures.tiltleft
     TiltLeft = MICROBIT_ACCELEROMETER_EVT_TILT_LEFT,
     /**
      * Raised when the screen is pointing right
      */
     //% block="tilt right"
+    //% jres=gestures.tiltright
     TiltRight = MICROBIT_ACCELEROMETER_EVT_TILT_RIGHT,
     /**
      * Raised when the board is falling!
      */
     //% block="free fall"
+    //% jres=gestures.freefall
     FreeFall = MICROBIT_ACCELEROMETER_EVT_FREEFALL,
     /**
     * Raised when a 3G shock is detected
     */
     //% block="3g"
+    //% jres=gestures.impact3g
     ThreeG = MICROBIT_ACCELEROMETER_EVT_3G,
     /**
     * Raised when a 6G shock is detected
     */
     //% block="6g"
+    //% jres=gestures.impact6g
     SixG = MICROBIT_ACCELEROMETER_EVT_6G,
     /**
     * Raised when a 8G shock is detected
     */
     //% block="8g"
+    //% jres=gestures.impact8g
     EightG = MICROBIT_ACCELEROMETER_EVT_8G
 };
 
@@ -169,7 +180,7 @@ namespace input {
     //% help=input/on-gesture weight=84 blockGap=8
     //% blockId=device_gesture_event block="on |%NAME"
     //% parts="accelerometer"
-    //% NAME.fieldEditor="gridpicker" NAME.fieldOptions.columns=4
+    //% NAME.fieldEditor="gestures" NAME.fieldOptions.columns=4
     void onGesture(Gesture gesture, Action body) {
         int gi = (int)gesture;
         if (gi == MICROBIT_ACCELEROMETER_EVT_3G && uBit.accelerometer.getRange() < 3)

@@ -109,6 +109,7 @@
         "streams": false,
         "aspectRatio": 1.22,
         "parts": true,
+        "instructions": true,
         "partsAspectRatio": 0.69,
         "boardDefinition": {
             "visual": "microbit",
@@ -254,7 +255,6 @@
         "githubUrl": "https://github.com/Microsoft/pxt-microbit",
         "boardName": "micro:bit",
         "driveDisplayName": "MICROBIT",
-        "sideDoc": "tutorials/getting-started",
         "feedbackUrl": "https://www.research.net/r/MCmicro",
         "appStoreID": "1092687276",
         "mobileSafariDownloadProtocol": "microbithex://?data",
@@ -372,6 +372,7 @@
             }
         },
         "highContrast": true,
+        "greenScreen": true,
         "selectLanguage": true,
         "availableLocales": [
             "en",

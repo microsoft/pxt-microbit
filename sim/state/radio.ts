@@ -67,7 +67,7 @@ namespace pxsim {
 
         broadcast(msg: number, groupId: number) {
             Runtime.postMessage(<SimulatorEventBusMessage>{
-                type: "eventbus",
+                type: "event",
                 id: DAL.MES_BROADCAST_GENERAL_ID,
                 eventid: msg,
                 power: this.power,

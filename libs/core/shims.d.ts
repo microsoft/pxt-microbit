@@ -234,7 +234,7 @@ declare namespace input {
     //% help=input/on-gesture weight=84 blockGap=8
     //% blockId=device_gesture_event block="on |%NAME"
     //% parts="accelerometer"
-    //% NAME.fieldEditor="gridpicker" NAME.fieldOptions.columns=4 shim=input::onGesture
+    //% NAME.fieldEditor="gestures" NAME.fieldOptions.columns=4 shim=input::onGesture
     function onGesture(gesture: Gesture, body: () => void): void;
 
     /**

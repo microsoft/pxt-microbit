@@ -181,6 +181,7 @@ namespace basic {
     //% help=basic/show-icon
     //% icon.fieldEditor="imagedropdown"
     //% icon.fieldOptions.columns="5"
+    //% icon.fieldOptions.width="380"
     export function showIcon(icon: IconNames, interval = 600) {
         let res = images.iconImage(icon)
         res.showImage(0, interval)
