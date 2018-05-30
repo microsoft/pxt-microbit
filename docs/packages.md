@@ -73,9 +73,9 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
     "name": "WS2812B",
     "url": "/pkg/microsoft/pxt-ws2812b",
     "cardType": "package"
-} , {
+}, {
     "name": "Pimoroni Envirobit",
-    "url": "pkg/pimoroni/pxt-envirobit"
+    "url": "pkg/pimoroni/pxt-envirobit",
     "cardType": "package"
 }]
 ```
