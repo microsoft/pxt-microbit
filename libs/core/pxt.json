@@ -18,6 +18,7 @@
         "codal.cpp",
         "images.cpp",
         "basic.cpp",
+        "basic.ts",
         "icons.ts",
         "icons.jres",
         "input.cpp",
