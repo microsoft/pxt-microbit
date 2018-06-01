@@ -754,12 +754,12 @@ TNumber round(TNumber x) {
 
 //%
 int imul(int x, int y) {
-    return x * y;
+    return x * y | 0;
 }
 
 //%
 int idiv(int x, int y) {
-    return x / y;
+    return x / y | 0;
 }
 } // namespace Math_
 
