@@ -1,7 +1,5 @@
 # LED screen
 
-The micro:bit LED screen 
-
 ```sim
     basic.showLeds(`
         # . # . #
@@ -12,7 +10,7 @@ The micro:bit LED screen
         `);
 ```
 
-The micro:bit LED screen consists of 25 red LED lights arranged in a 5X5 grid (5 LEDs across by 5 LEDs down).
+The micro:bit LED screen has 25 red LED lights arranged in a 5X5 grid (5 LEDs across by 5 LEDs down).
 In the screen above, we created a checkerboard pattern using the LEDs.
 
 ## Which LED?
@@ -35,7 +33,7 @@ Here are the x, y coordinates for the LEDs in the 5X5 grid:
 
 `(0,4)` `(1,4)` `(2,4)` `(3,4)` `(4,4)`
 
-The x, y coordinates for the LED in the centre of the grid are `(2,2)`. Starting from `(0,0)` count over 2 columns and then down 2 rows.
+The x, y coordinates for the LED in the center of the grid are `(2,2)`. Starting from `(0,0)` count over 2 columns and then down 2 rows.
 
 ## Check your understanding
 
@@ -71,11 +69,11 @@ if(led.point(0,0)) {
 
 ## Display images, strings and numbers
 
-Instead of turning individual LEDs on or off, as above, you can display an [image](/reference/images/image) directly to the screen or show text/numbers on screen using the [show number](/reference/basic/show-number)/[show string](/reference/basic/show-string) function.
+Instead of turning individual LEDs on or off, as above, you can display an [image](/reference/images/image) directly to the screen or show text and numbers on screen using the [show number](/reference/basic/show-number) and [show string](/reference/basic/show-string) functions.
 
 ## The display buffer
 
-The micro:bit runtime keeps an in-memory representation of the state of all 25 LEDS. This state is known as the "display buffer" and controls which LEDS are on and which are off. The plot/unplot/point functions access the display buffer directly. On the other hand, the functions that show an image, number or string overwrite the buffer completely. To illustrate, first try running this code sequence
+The micro:bit runtime keeps a representation of the state of all 25 LEDS in memory. This state is known as the "display buffer" and controls which LEDs are on and which are off. The plot, unplot, and point functions access the display buffer directly. On the other hand, the functions that show an image, number, or string overwrite the buffer completely. To illustrate this, first try running this code sequence
 
 ```blocks
 basic.showString("d")
@@ -86,15 +84,14 @@ You will see the letter "d" displayed as well as the LED in position `0,0` lit u
 
 ```blocks
 led.plot(0, 0)
-basic.showString("d", 150)
+basic.showString("d")
 ```
 
 You will not see the LED at position `0,0` lit up because the `show string` function overwrites the whole display buffer.
 
-
 ## Pins: P3, P4, P6, P7, P9, P10
 
-These pins are coupled to the LED matrix display, and also it’s associated ambient light sensing mode.
+These pins are coupled to the LED matrix display and also to the display's associated ambient light sensing mode.
 To disable the display driver feature (which will automatically disable the light sensing feature) use the function [led.enable](/reference/led/enable). 
 
 More information at http://tech.microbit.org/hardware/edgeconnector_ds/ .
