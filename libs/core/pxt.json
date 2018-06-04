@@ -8,6 +8,7 @@
         "pxt.h",
         "pxtbase.h",
         "pxtcore.h",
+        "math.ts",
         "dal.d.ts",
         "enums.d.ts",
         "shims.d.ts",

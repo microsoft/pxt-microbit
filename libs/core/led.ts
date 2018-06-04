@@ -19,19 +19,28 @@
     //% blockId=device_plot_bar_graph block="plot bar graph of %value up to %high" icon="\uf080" blockExternalInputs=true
     //% parts="ledmatrix"
     export function plotBarGraph(value: number, high: number): void {
-        let now = input.runningTime();
+        const now = input.runningTime();
         serial.writeLine(value.toString());
         value = Math.abs(value);
 
-        if (high != 0) barGraphHigh = high;
-        else if (value > barGraphHigh || now - barGraphHighLast > 10000) {
+        // auto-scale "high" is not provided
+        if (high <= 0) {
+            barGraphHigh = high;
+        } else if (value > barGraphHigh || now - barGraphHighLast > 10000) {
             barGraphHigh = value;
             barGraphHighLast = now;
         }
 
-        barGraphHigh = Math.max(barGraphHigh, 16);
+        // normalize lack of data to 0..1 
+        if (barGraphHigh < 16 * Number.EPSILON)
+            barGraphHigh = 1;        
 
-        let v = (value * 15) / barGraphHigh;
+        // normalize value to 0..1
+        const v = value / barGraphHigh;
+        const dv = 1 / 16;
+        serial.writeValue("m", barGraphHigh)
+        serial.writeValue("v", v)
+        serial.writeValue("dv", dv)
         let k = 0;
         for (let y = 4; y >= 0; --y) {
             for (let x = 0; x < 3; ++x) {
@@ -42,7 +51,7 @@
                     plot(2 - x, y);
                     plot(2 + x, y);
                 }
-                ++k;
+                k += dv;
             }
         }
     }
