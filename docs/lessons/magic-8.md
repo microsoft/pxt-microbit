@@ -22,7 +22,7 @@ Learn how to creating **conditionals**, `if condition do` to conditionally run c
 
 ```cards
 if (true) {}
-Math.random(3)
+Math.randomRange(0, 3)
 input.onGesture(Gesture.Shake, () => {})
 basic.showNumber(7)
 basic.clearScreen()

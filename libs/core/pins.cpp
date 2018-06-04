@@ -84,6 +84,9 @@ enum class PinEventType {
     None = MICROBIT_PIN_EVENT_NONE
 };
 
+
+namespace pxt
+{
 MicroBitPin *getPin(int id) {
     switch (id) {
         case MICROBIT_ID_IO_P0: return &uBit.io.P0;
@@ -109,6 +112,7 @@ MicroBitPin *getPin(int id) {
     }
 }
 
+} // pxt
 
 namespace pins {
     #define PINOP(op) \
@@ -359,7 +363,7 @@ namespace pins {
     //%
     Buffer createBuffer(int size)
     {
-        return ManagedBuffer(size).leakData();
+        return mkBuffer(NULL, size);
     }
 
     /**
@@ -369,7 +373,7 @@ namespace pins {
     Buffer i2cReadBuffer(int address, int size, bool repeat = false)
     {
       Buffer buf = createBuffer(size);
-      uBit.i2c.read(address << 1, (char*)buf->payload, size, repeat);
+      uBit.i2c.read(address << 1, (char*)buf->data, size, repeat);
       return buf;
     }
 
@@ -379,7 +383,7 @@ namespace pins {
     //%
     void i2cWriteBuffer(int address, Buffer buf, bool repeat = false)
     {
-      uBit.i2c.write(address << 1, (char*)buf->payload, buf->length, repeat);
+      uBit.i2c.write(address << 1, (char*)buf->data, buf->length, repeat);
     }
 
     SPI* spi = NULL;

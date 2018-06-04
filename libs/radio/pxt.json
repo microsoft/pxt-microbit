@@ -8,6 +8,7 @@
         "radio.cpp",
         "radio.ts"
     ],
+    "icon": "./static/packages/radio/icon.png",
     "public": true,
     "dependencies": {
         "core": "file:../core"

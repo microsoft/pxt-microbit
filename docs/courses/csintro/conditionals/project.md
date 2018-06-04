@@ -59,7 +59,7 @@ input.onButtonPressed(Button.B, () => {
     basic.showNumber(p2)
 })
 input.onGesture(Gesture.Shake, () => {
-    if (Math.random(p1 + p2 - 1 + 1) + 1 <= p1) {
+    if (Math.randomRange(0, p1 + p2 - 1 + 1) + 1 <= p1) {
         basic.showString("A")
     } else {
         basic.showString("B")
@@ -118,10 +118,10 @@ let previous_roll = 0
 input.onButtonPressed(Button.AB, () => {
     previous_roll = 0
     if (4 <= previous_roll) {
-        yes_or_no = Math.random(8)
+        yes_or_no = Math.randomRange(0, 8)
     }
     if (4 > previous_roll) {
-        yes_or_no = Math.random(5)
+        yes_or_no = Math.randomRange(0, 5)
     }
     if (2 < yes_or_no) {
         basic.showString("YES")
@@ -132,7 +132,7 @@ input.onButtonPressed(Button.AB, () => {
     }
 })
 input.onGesture(Gesture.Shake, () => {
-    current_roll = Math.random(6)
+    current_roll = Math.randomRange(0, 6)
     basic.showNumber(current_roll + 1)
     basic.pause(5000)
     basic.clearScreen()

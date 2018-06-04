@@ -25,7 +25,7 @@ Answer the questions while completing the tutorial. Pay attention to the dialogu
 ## 4. Draw the area that could be lit based on the code below. Explain why you chose to draw that number.
 
 ```blocks
-let randomNumber = Math.random(10)
+let randomNumber = Math.randomRange(0, 10)
 basic.showNumber(randomNumber, 150)
 ```
 

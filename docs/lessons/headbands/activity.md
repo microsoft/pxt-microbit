@@ -12,7 +12,7 @@ coll.push("night")
 coll.push("cat")
 coll.push("cow")
 input.onLogoUp(() => {
-    let index = Math.random(coll.length)
+    let index = Math.randomRange(0, coll.length)
     let word = coll[index]
     basic.showString(word, 150)
 })
@@ -34,7 +34,7 @@ coll.push("night")
 coll.push("cat")
 coll.push("cow")
 input.onLogoUp(() => {
-    let index = Math.random(coll.length)
+    let index = Math.randomRange(0, coll.length)
     let word = coll[index]
     basic.showString(word, 150)
 })
@@ -64,7 +64,7 @@ coll.push("sun")
 coll.push("car") 
 coll.push("ant") 
 input.onLogoUp(() => {
-    let index = Math.random(coll.length)
+    let index = Math.randomRange(0, coll.length)
     let word = coll[index]
     basic.showString(word, 150)
 })

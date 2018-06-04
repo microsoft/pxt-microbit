@@ -197,7 +197,7 @@ function playLevel(level1: number) {
         led.plot(2 * i, 2)
     }
     basic.pause(1000)
-    correctBall = Math.random(3)
+    correctBall = Math.randomInt(3)
     revealBall(correctBall)
     basic.pause(1000)
     let swaps = 5 + 10 * level1
@@ -209,17 +209,17 @@ function playLevel(level1: number) {
         swapSpeed = 20
     }
     for (let i1 = 0; i1 < swaps; i1++) {
-        let swapType = Math.random(3)
-        let not = Math.random(3)
+        let swapType = Math.randomInt(3)
+        let not = Math.randomInt(3)
         if (swapType < 2) {
-            let swapOrientation = Math.random(2)
+            let swapOrientation = Math.randomInt(2)
             if (swapOrientation == 0) {
                 swapCups((not + 1) % 3, (not + 2) % 3, swapSpeed)
             } else {
                 swapCups((not + 2) % 3, (not + 1) % 3, swapSpeed)
             }
         } else {
-            let swapOrientation1 = Math.random(2)
+            let swapOrientation1 = Math.randomInt(2)
             if (swapOrientation1 == 0) {
                 swapFake((not + 1) % 3, (not + 2) % 3, swapSpeed)
             } else {

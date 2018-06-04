@@ -16,7 +16,7 @@ basic.showLeds(`
     . . # . .
     `)
 input.onButtonPressed(Button.A, () => {
-    let random = Math.random(2)
+    let random = Math.randomRange(0, 2)
     if (random == 0) {
         basic.showString("TRUTH")
     } else {
@@ -45,7 +45,7 @@ basic.showLeds(`
     . . # . .
     `)
 input.onButtonPressed(Button.A, () => {
-    let random = Math.random(3)
+    let random = Math.randomRange(0, 3)
     if (random == 0) {
         basic.showString("TRUTH")
     } else {
@@ -75,7 +75,7 @@ basic.showLeds(`
     . . # . .
     `)
 input.onButtonPressed(Button.A, () => {
-    let random = Math.random(2)
+    let random = Math.randomRange(0, 2)
     if (random == 1) {
         basic.showString("TRUTH")
     } else if (random == 0) {

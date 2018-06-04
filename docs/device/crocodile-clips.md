@@ -39,7 +39,7 @@ the @boardname@ will return a random Number between 0 and the parameter limit.
 
 ```blocks
 input.onPinPressed(TouchPin.P0, () => {
-    basic.showNumber(Math.random(10))
+    basic.showNumber(Math.randomRange(0, 10))
 })
 ```
 

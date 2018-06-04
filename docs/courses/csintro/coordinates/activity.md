@@ -96,7 +96,7 @@ Steps:
 input.onButtonPressed(Button.A, () => {
    basic.clearScreen()
    for (let index = 0; index <= 4; index++) {
-       led.plot(index, Math.random(5))
+       led.plot(index, Math.randomRange(0, 5))
    }
 })
 ```
@@ -117,7 +117,7 @@ Here is the complete program:
 input.onButtonPressed(Button.A, () => {
    basic.clearScreen()
    for (let index = 0; index <= 4; index++) {
-       led.plot(index, Math.random(5))
+       led.plot(index, Math.randomRange(0, 5))
    }
 })
 input.onButtonPressed(Button.B, () => {

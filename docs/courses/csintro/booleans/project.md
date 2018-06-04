@@ -196,7 +196,7 @@ let player1Turn = false
 let spin = 0
 let delay = 0
 input.onGesture(Gesture.Shake, () => {
-    if (player1Turn == true && Math.random(4) < 3) {
+    if (player1Turn == true && Math.randomRange(0, 4) < 3) {
         basic.clearScreen()
         delay = 0
         while (delay < 500) {
@@ -241,7 +241,7 @@ input.onGesture(Gesture.Shake, () => {
     } else if (player1Turn) {
         basic.showString("Crash!")
         player1Turn = false
-    } else if (Math.random(4) < 3) {
+    } else if (Math.randomRange(0, 4) < 3) {
         basic.clearScreen()
         delay = 0
         while (delay < 500) {
@@ -305,7 +305,7 @@ Here is a portion of the board game's code. A boolean variable is used to determ
 ```blocks
 let player1Turn = false;
 input.onGesture(Gesture.Shake, () => {
-    if (player1Turn == true && Math.random(4) < 3) {
+    if (player1Turn == true && Math.randomRange(0, 4) < 3) {
 
     }
 })

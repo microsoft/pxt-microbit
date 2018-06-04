@@ -68,6 +68,16 @@
 @blocklyToolboxColor: rgba(0, 0, 0, 0.05);
 @trashIconColor: @primaryColor;
 
+
+/*-------------------
+   Flyout
+--------------------*/
+
+@flyoutLabelColor: white;
+@blocklyFlyoutColor: #4b4949;
+@blocklyFlyoutColorOpacity: 1.0;
+@monacoFlyoutColor: @blocklyFlyoutColor;
+
 /*-------------------
    Serial
 --------------------*/

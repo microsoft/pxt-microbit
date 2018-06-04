@@ -16,7 +16,7 @@ Connect a USB cable to the @boardname@ and click ``|Download|``. Save the progra
 
 Well, the text stopped. Place the ``||basic:show string||`` block in the ``||input:on button pressed||`` slot to scroll your name when button **A** is pressed.
 
-```block
+```blocks
 input.onButtonPressed(Button.A, () => {
     basic.showString("Micro!")
 });
@@ -34,7 +34,7 @@ Place some blocks to display a smiley when button **B** is pressed.
 
 Use the dropdown to find ``B``!
 
-```block
+```blocks
 input.onButtonPressed(Button.B, () => {
     basic.showLeds(`
     # # . # #
@@ -56,9 +56,9 @@ in an ``||input:on shake||`` slot to build a dice.
 When the @boardname@ is shaken, a random number between ``0`` and ``6`` is displayed
 on the screen.
 
-```block
+```blocks
 input.onGesture(Gesture.Shake, () => {
-    basic.showNumber(Math.random(7))
+    basic.showNumber(Math.randomRange(0, 7))
 })
 ```
 

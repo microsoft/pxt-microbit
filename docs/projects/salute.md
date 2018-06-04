@@ -38,7 +38,7 @@ Choose a random number between 0 and 9.
 ```blocks
 let randomNbr = 0
 input.onGesture(Gesture.ScreenUp, () => {
-    randomNbr = Math.random(10)
+    randomNbr = Math.randomRange(0, 10)
     basic.showNumber(randomNbr)
 })
 ```
@@ -50,7 +50,7 @@ let randomNbr = 0
 input.onGesture(Gesture.ScreenUp, () => {
     randomNbr = 0
     while (randomNbr < 1) {
-        randomNbr = Math.random(10)
+        randomNbr = Math.randomRange(0, 10)
     }
     basic.showNumber(randomNbr)
 })

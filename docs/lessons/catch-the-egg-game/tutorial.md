@@ -22,7 +22,7 @@ basic.forever(() => {
     led.plot(basketX, 4)
     if (eggY > 4) {
         eggY = -1
-        eggX = Math.random(5)
+        eggX = Math.randomRange(0, 5)
     }
     basic.pause(300)
 })

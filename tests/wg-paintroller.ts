@@ -54,7 +54,7 @@ function playOneGame(): number {
                 . . . . .   . # # # .   . . # . .   . . # . .   . . # . .   . . # . .   . . # . .   . # # # .   . . . . .   . . . . .
                 . # # # .   . . # . .   . . # . .   . . # . .   . . # . .   . . # . .   . . # . .   . . # . .   . # # # .   . . . . .
                 `, 50)
-            let pos = Math.random(5)
+            let pos = Math.randomInt(5)
             if (xdir) {
                 if (!canvas.pixel(pos, y)) {
                     canvas.setPixel(pos, y, true)
@@ -70,9 +70,9 @@ function playOneGame(): number {
             xdir = !xdir
             bearing = input.compassHeading()
             if (xdir) {
-                x = Math.random(5)
+                x = Math.randomInt(5)
             } else {
-                y = Math.random(5)
+                y = Math.randomInt(5)
             }
         } else {
             basic.pause(100)

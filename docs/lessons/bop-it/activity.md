@@ -42,7 +42,7 @@ Change the global variable `action` to `math->random(4)` so that we can add a ne
 ```typescript
 let action  = 0;
 export function newAction() {
-    action = Math.random(4)
+    action = Math.randomRange(0, 4)
     if (action == 0) {
         basic.showString("PUSH A", 150) // ***
     }

@@ -257,7 +257,7 @@ input.onButtonPressed(Button.AB, () => {
     // launch game
     if (state == GameState.Pairing) {
         // pick 1 player and infect him
-        patientZero = players[Math.random(players.length)];
+        patientZero = players[Math.randomRange(0, players.length)];
         while (patientZero.health == HealthState.Healthy) {
             radio.sendValue("infect", patientZero.id);
             basic.pause(100);
@@ -333,7 +333,7 @@ radio.onDataPacketReceived(({ time, receivedNumber, receivedString, signal, seri
                 if (health == HealthState.Healthy && receivedString == "transmit") {
                     serial.writeLine(`signal: ${signal}`);
                     if (signal > RSSI &&
-                        Math.random(100) > TRANSMISSIONPROB) {
+                        Math.randomRange(0, 100) > TRANSMISSIONPROB) {
                         infectedBy = receivedNumber;
                         infectedTime = input.runningTime();
                         health = HealthState.Incubating;

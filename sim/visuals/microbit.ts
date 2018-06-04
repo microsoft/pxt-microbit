@@ -384,7 +384,7 @@ namespace pxsim.visuals {
 
             if (state.ledMatrixState.disabled) {
                 this.leds.forEach((led, i) => {
-                    const sel = (<SVGStylable><any>led)
+                    const sel = (<SVGStyleElement><any>led)
                     sel.style.opacity = "0";
                 })
             } else {
@@ -392,7 +392,7 @@ namespace pxsim.visuals {
                 const img = state.ledMatrixState.image;
                 const br = state.ledMatrixState.brigthness != undefined ? state.ledMatrixState.brigthness : 255;
                 this.leds.forEach((led, i) => {
-                    const sel = (<SVGStylable><any>led)
+                    const sel = (<SVGStyleElement><any>led)
                     let imgbr = bw ? (img.data[i] > 0 ? br : 0) : img.data[i];
                     // correct brightness
                     const opacity = imgbr > 0 ? imgbr / 255 * 155 + 100 : 0;
@@ -423,10 +423,10 @@ namespace pxsim.visuals {
                 this.shakeButton = svg.child(this.g, "circle", { cx: 380, cy: 100, r: 16.5, class: "sim-shake" }) as SVGCircleElement;
                 accessibility.makeFocusable(this.shakeButton);
                 svg.fill(this.shakeButton, this.props.theme.virtualButtonUp)
-                this.shakeButton.addEventListener(pointerEvents.down, ev => {
+                pointerEvents.down.forEach(evid => this.shakeButton.addEventListener(evid, ev => {
                     let state = this.board;
                     svg.fill(this.shakeButton, this.props.theme.buttonDown);
-                })
+                }));
                 this.shakeButton.addEventListener(pointerEvents.leave, ev => {
                     let state = this.board;
                     svg.fill(this.shakeButton, this.props.theme.virtualButtonUp);
@@ -958,11 +958,11 @@ namespace pxsim.visuals {
                     });
             })
             this.pins.slice(0, 3).forEach((btn, index) => {
-                btn.addEventListener(pointerEvents.down, ev => {
+                pointerEvents.down.forEach(evid => btn.addEventListener(evid, ev => {
                     let state = this.board;
                     state.edgeConnectorState.pins[index].touched = true;
                     this.updatePin(state.edgeConnectorState.pins[index], index);
-                })
+                }));
                 btn.addEventListener(pointerEvents.leave, ev => {
                     let state = this.board;
                     state.edgeConnectorState.pins[index].touched = false;
@@ -985,11 +985,11 @@ namespace pxsim.visuals {
             let bpState = this.board.buttonPairState;
             let stateButtons = [bpState.aBtn, bpState.bBtn, bpState.abBtn];
             this.buttonsOuter.slice(0, 2).forEach((btn, index) => {
-                btn.addEventListener(pointerEvents.down, ev => {
+                pointerEvents.down.forEach(evid => btn.addEventListener(evid, ev => {
                     let state = this.board;
                     stateButtons[index].pressed = true;
                     svg.fill(this.buttons[index], this.props.theme.buttonDown);
-                })
+                }));
                 btn.addEventListener(pointerEvents.leave, ev => {
                     let state = this.board;
                     stateButtons[index].pressed = false;
@@ -1007,7 +1007,7 @@ namespace pxsim.visuals {
                     this.board.bus.queue(stateButtons[index].id, DAL.MICROBIT_BUTTON_EVT_CLICK);
                 });
             })
-            this.buttonsOuter[2].addEventListener(pointerEvents.down, ev => {
+            pointerEvents.down.forEach(evid => this.buttonsOuter[2].addEventListener(evid, ev => {
                 let state = this.board;
                 stateButtons[0].pressed = true;
                 stateButtons[1].pressed = true;
@@ -1015,7 +1015,7 @@ namespace pxsim.visuals {
                 svg.fill(this.buttons[0], this.props.theme.buttonDown);
                 svg.fill(this.buttons[1], this.props.theme.buttonDown);
                 svg.fill(this.buttons[2], this.props.theme.buttonDown);
-            })
+            }));
             this.buttonsOuter[2].addEventListener(pointerEvents.leave, ev => {
                 let state = this.board;
                 stateButtons[0].pressed = false;

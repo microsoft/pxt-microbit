@@ -156,7 +156,7 @@ function surgery(): number {
                 `, 150)
             state = "SHOCKED"
         } else if (state == "SHOCKED") {
-            let recover = Math.random(100)
+            let recover = Math.randomInt(100)
             if (recover >= recoveryProbability) {
                 state = "RECOVERED"
             } else {

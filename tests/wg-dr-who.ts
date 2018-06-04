@@ -127,7 +127,7 @@ function playCybermen(): number {
         } else {
             cybermanLineupCount = 0
             // Move Cyberman closer to player, slowly
-            if (Math.random(100) < cybermanMoveXProbability) {
+            if (Math.randomInt(100) < cybermanMoveXProbability) {
                 if (cybermanX > playerX) {
                     cybermanX = cybermanX - 1
                 } else if (cybermanX < playerX) {
@@ -170,7 +170,7 @@ function playDalek(): number {
         if (tilt > 2) {
             // Moving up, slowly
             if (userY < 4) {
-                if (Math.random(100) < userMoveSensitivity) {
+                if (Math.randomInt(100) < userMoveSensitivity) {
                     userY = userY + 1
                     redraw = true
                 }
@@ -178,7 +178,7 @@ function playDalek(): number {
         } else if (tilt < 2) {
             // Moving down (slowly)
             if (userY > 0) {
-                if (Math.random(100) < userMoveSensitivity) {
+                if (Math.randomInt(100) < userMoveSensitivity) {
                     userY = userY - 1
                     redraw = true
                 }
@@ -186,24 +186,24 @@ function playDalek(): number {
         }
         // Move the Dalek to line up with user
         if (dalekY < userY) {
-            if (Math.random(100) < dalekMoveSensitivity) {
+            if (Math.randomInt(100) < dalekMoveSensitivity) {
                 dalekY = dalekY + 1
                 redraw = true
             }
         } else if (dalekY > userY) {
-            if (Math.random(100) < dalekMoveSensitivity) {
+            if (Math.randomInt(100) < dalekMoveSensitivity) {
                 dalekY = dalekY - 1
                 redraw = true
             }
         } else {
             // Dalek lines up
-            if (Math.random(100) < dalekShootChance) {
+            if (Math.randomInt(100) < dalekShootChance) {
                 // Shoot a raygun at the user
                 for (let i = 0; i < 3; i++) {
                     led.plot(i + 1, dalekY)
                     basic.pause(100)
                 }
-                if (Math.random(100) < dalekHitChance) {
+                if (Math.randomInt(100) < dalekHitChance) {
                     // User has been hit, game over
                     break
                 }
@@ -332,7 +332,7 @@ function playJudoonLanguage(): number {
         . # # # .   # # # . .   # . # . #   # # # # #   # . . . #
         `)
     let pages = "029 041 167 208 283"
-    let actualAnswer = Math.random(5)
+    let actualAnswer = Math.randomInt(5)
     let pos = 0
     let redraw = true
     while (gameTime < maxGameTime) {

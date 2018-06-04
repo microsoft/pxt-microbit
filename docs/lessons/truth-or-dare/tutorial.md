@@ -27,7 +27,7 @@ basic.showLeds(`
     . . # . .
     `)
 input.onButtonPressed(Button.A, () => {
-    let random = Math.random(2)
+    let random = Math.randomRange(0, 2)
     if (random == 0) {
         basic.showString("TRUTH")
     } else {
@@ -53,7 +53,7 @@ basic.showLeds(`
     . . # . .
     . . # . .
     `);
-Math.random(2);
+Math.randomRange(0, 2);
 basic.showString("TRUTH");
 if (true) {} else {}
 "TRUTH";

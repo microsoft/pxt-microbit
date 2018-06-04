@@ -52,7 +52,7 @@ let eggX = 2
 let eggY = 0
 if (eggY > 4) {
     eggY = -1
-    eggX = Math.random(5)
+    eggX = Math.randomRange(0, 5)
 }
 ```
 

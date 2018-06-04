@@ -8,7 +8,7 @@ namespace input {
      * @param body TODO
      */
     //% help=input/on-screen-up
-    export function onScreenUp(body: Action): void {
+    export function onScreenUp(body: () => void): void {
         onGesture(Gesture.ScreenUp, body);
     }
 
@@ -17,7 +17,7 @@ namespace input {
      * @param body TODO
      */
     //% help=input/on-screen-down
-    export function onScreenDown(body: Action): void {
+    export function onScreenDown(body: () => void): void {
         onGesture(Gesture.ScreenDown, body);
     }
 
@@ -26,7 +26,7 @@ namespace input {
      * @param body TODO
      */
     //% help=input/on-shake
-    export function onShake(body: Action): void {
+    export function onShake(body: () => void): void {
         onGesture(Gesture.Shake, body);
     }
 
@@ -35,7 +35,7 @@ namespace input {
      * @param body TODO
      */
     //% help=input/on-logo-up
-    export function onLogoUp(body: Action): void {
+    export function onLogoUp(body: () => void): void {
         onGesture(Gesture.LogoUp, body);
     }
 
@@ -44,7 +44,7 @@ namespace input {
      * @param body TODO
      */
     //% help=input/on-logo-down
-    export function onLogoDown(body: Action): void {
+    export function onLogoDown(body: () => void): void {
         onGesture(Gesture.LogoDown, body);
     }
 

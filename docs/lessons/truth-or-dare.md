@@ -32,7 +32,7 @@ basic.showLeds(`
     `)
 input.onButtonPressed(Button.A, () => {})
 let x = 0
-Math.random(3)
+Math.randomRange(0, 3)
 if (true) {}
 basic.showString("Hello!")
 ```

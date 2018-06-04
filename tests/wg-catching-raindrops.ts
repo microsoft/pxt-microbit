@@ -64,7 +64,7 @@ function playGame(): number {
     while (true) {
         if (state == "NEWDROP") {
             // create a new drop at a random position
-            dropX = Math.random(5)
+            dropX = Math.randomInt(5)
             dropY = 0
             state = "RAINING"
         } else if (state == "RAINING") {

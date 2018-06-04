@@ -21,7 +21,7 @@ We are creating a forever loop to constantly display the appropriate brightness 
 <br/>
 
 ```blocks
-let acceleration = input.acceleration("y")
+let acceleration = input.acceleration(Dimension.Y)
 ```
 
 ## 3. After storing the acceleration in a variable, write the code to take the absolute value of the acceleration, and store this value inside 'acceleration'.

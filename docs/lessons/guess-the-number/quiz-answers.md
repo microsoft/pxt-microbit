@@ -24,14 +24,14 @@ input.onButtonPressed(Button.A, () => {
 
 
 ```blocks
-let randomNumber = Math.random(10)
+let randomNumber = Math.randomRange(0, 10)
 ```
 
 ## 4. 
 If the rectangle below represents the @boardname@, shade the areas that will be displayed. Explain why that particular area is shaded.
 
 ```blocks
-let randomNumber = Math.random(10)
+let randomNumber = Math.randomRange(0, 10)
 ```
 
 

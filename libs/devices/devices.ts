@@ -37,7 +37,7 @@ namespace devices {
      */
     //% help=devices/on-notified weight=26
     //% blockId=devices_device_info_event block="on notified|%event" icon="\uf10a"
-    export function onNotified(event: MesDeviceInfo, body: Action) {
+    export function onNotified(event: MesDeviceInfo, body: () => void) {
         control.onEvent(DAL.MES_DEVICE_INFO_ID, event, body);
     }
 
@@ -49,7 +49,7 @@ namespace devices {
     //% help=devices/on-gamepad-button weight=40
     //% weight=25
     //% blockId=devices_gamepad_event block="on gamepad button|%NAME" icon="\uf11b"
-    export function onGamepadButton(name: MesDpadButtonInfo, body: Action) {
+    export function onGamepadButton(name: MesDpadButtonInfo, body: () => void) {
         control.onEvent(DAL.MES_DPAD_CONTROLLER_ID, name, body);
     }
 }

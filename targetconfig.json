@@ -59,5 +59,10 @@
         "uk",
         "zh-CN",
         "zh-TW"
-    ]
+    ],
+    "galleries": {
+        "Tutorials": "tutorials",
+        "Projects": "projects",
+        "Examples": "examples"
+    }
 }

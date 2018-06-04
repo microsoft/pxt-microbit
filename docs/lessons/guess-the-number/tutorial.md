@@ -16,7 +16,7 @@ The blocks have been shuffled! Put them back together so that...
 
 ```shuffle
 input.onButtonPressed(Button.A, () => {
-    let x = Math.random(10)
+    let x = Math.randomRange(0, 10)
     basic.showNumber(x)
 })
 ```

@@ -108,7 +108,6 @@ In the ``||radio:on radio received||`` event, the temperature is received from s
 let temperature = 0
 basic.showString("TEMPERATURE RADIO RECEIVER")
 radio.setGroup(99)
-let temperature = 0
 radio.onDataPacketReceived( ({ receivedNumber: temperature }) =>  {
     basic.showNumber(temperature)
 })

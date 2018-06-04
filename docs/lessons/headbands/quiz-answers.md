@@ -76,7 +76,7 @@ coll.push("cow")
 
 ```blocks
 let coll: string[] = []
-let index = Math.random(coll.length)
+let index = Math.randomRange(0, coll.length)
 let word = coll[index]
 ```
 

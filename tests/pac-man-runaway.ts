@@ -25,7 +25,7 @@ class Entity {
         } else if (this.x == 4) {
             return - 1
         } else {
-            return Math.random(2) * 2 - 1
+            return Math.randomInt(2) * 2 - 1
         }
     }
 
@@ -35,7 +35,7 @@ class Entity {
         } else if (this.y == 4) {
             return - 1
         } else {
-            return Math.random(2) * 2 - 1
+            return Math.randomInt(2) * 2 - 1
         }
     }
 
@@ -162,7 +162,7 @@ function logic() {
         m.dirX = m.towardsX(person)
         m.dirY = m.towardsY(person)
         if (m.dirX != 0 && m.dirY != 0) {
-            let x = Math.random(2)
+            let x = Math.randomInt(2)
             if (x == 1) {
                 m.dirX = 0
             } else {
@@ -224,7 +224,7 @@ function resetState() {
     for (let i = 0; i < totalMonsters; i++) {
         let busy = busyPos[i]
         let m = monsters[i]
-        m.x = (busy.x + Math.random(3)) - 1
-        m.y = (busy.y + Math.random(3)) - 1
+        m.x = (busy.x + Math.randomInt(3)) - 1
+        m.y = (busy.y + Math.randomInt(3)) - 1
     }
 }

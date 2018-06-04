@@ -62,7 +62,7 @@ let column = 0
 let index = 0
 input.onButtonPressed(Button.AB, () => {
     for (let index = 0; index <= 4; index++) {
-        list[index] = Math.random(5) + 1
+        list[index] = Math.randomRange(0, 5) + 1
     }
 })
 input.onButtonPressed(Button.B, () => {
@@ -142,7 +142,7 @@ input.onButtonPressed(Button.B, () => {
 })
 input.onButtonPressed(Button.AB, () => {
     for (let index = 0; index <= 4; index++) {
-        list[index] = Math.random(5) + 1
+        list[index] = Math.randomRange(0, 5) + 1
     }
 })
 input.onButtonPressed(Button.A, () => {
@@ -223,7 +223,7 @@ input.onButtonPressed(Button.A, () => {
 })
 input.onButtonPressed(Button.AB, () => {
     for (let index = 0; index <= 4; index++) {
-        list[index] = Math.random(5) + 1
+        list[index] = Math.randomRange(0, 5) + 1
     }
 })
 input.onButtonPressed(Button.B, () => {
