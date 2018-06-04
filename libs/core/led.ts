@@ -38,9 +38,6 @@
         // normalize value to 0..1
         const v = value / barGraphHigh;
         const dv = 1 / 16;
-        serial.writeValue("m", barGraphHigh)
-        serial.writeValue("v", v)
-        serial.writeValue("dv", dv)
         let k = 0;
         for (let y = 4; y >= 0; --y) {
             for (let x = 0; x < 3; ++x) {
