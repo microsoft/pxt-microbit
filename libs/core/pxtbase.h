@@ -7,6 +7,11 @@
 #pragma GCC diagnostic ignored "-Wformat"
 #pragma GCC diagnostic ignored "-Warray-bounds"
 
+// cross version compatible way of access data field
+#ifndef PXT_BUFFER_DATA
+#define PXT_BUFFER_DATA(buffer) buffer->data
+#endif
+
 // needed for gcc6; not sure why
 #undef min
 #undef max
