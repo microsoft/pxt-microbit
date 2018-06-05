@@ -10,6 +10,6 @@ namespace basic {
     //% async
     //% parts="ledmatrix" interval.defl=150
     export function showNumber(value: number, interval?: number) {
-        showString(value.toString(), interval);
+        showString(Math.roundWithPrecision(value, 2), interval);
     }
 }
