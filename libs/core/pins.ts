@@ -61,8 +61,137 @@ namespace pins {
         }
         return 0;
     }
+
+    export function createBufferFromArray(bytes: number[]) {
+        let buf = createBuffer(bytes.length)
+        for (let i = 0; i < bytes.length; ++i)
+            buf[i] = bytes[i]
+        return buf
+    }
+
+    function getFormat(pychar: string, isBig: boolean) {
+        switch (pychar) {
+            case 'B':
+                return NumberFormat.UInt8LE
+            case 'b':
+                return NumberFormat.Int8LE
+            case 'H':
+                return isBig ? NumberFormat.UInt16BE : NumberFormat.UInt16LE
+            case 'h':
+                return isBig ? NumberFormat.Int16BE : NumberFormat.Int16LE
+            //case 'I':
+            //case 'L':
+            //    return isBig ? NumberFormat.UInt32BE : NumberFormat.UInt32LE
+            case 'i':
+            case 'l':
+                return isBig ? NumberFormat.Int32BE : NumberFormat.Int32LE
+            //case 'f':
+            //    return isBig ? NumberFormat.Float32BE : NumberFormat.Float32LE
+            //case 'd':
+            //    return isBig ? NumberFormat.Float64BE : NumberFormat.Float64LE
+            default:
+                return null as NumberFormat
+        }
+    }
+
+    function packUnpackCore(format: string, nums: number[], buf: Buffer, isPack: boolean, off = 0) {
+        let isBig = false
+        let idx = 0
+        for (let i = 0; i < format.length; ++i) {
+            switch (format[i]) {
+                case ' ':
+                case '<':
+                case '=':
+                    isBig = false
+                    break
+                case '>':
+                case '!':
+                    isBig = true
+                    break
+                case 'x':
+                    off++
+                    break
+                default:
+                    let fmt = getFormat(format[i], isBig)
+                    if (fmt === null) {
+                        control.fail("Not supported format character: " + format[i])
+                    } else {
+                        if (buf) {
+                            if (isPack)
+                                buf.setNumber(fmt, off, nums[idx++])
+                            else
+                                nums.push(buf.getNumber(fmt, off))
+                        }
+
+                        off += pins.sizeOf(fmt)
+                    }
+                    break
+            }
+        }
+        return off
+    }
+
+    export function packedSize(format: string) {
+        return packUnpackCore(format, null, null, true)
+    }
+
+    export function packBuffer(format: string, nums: number[]) {
+        let buf = createBuffer(packedSize(format))
+        packUnpackCore(format, nums, buf, true)
+        return buf
+    }
+
+    export function packIntoBuffer(format: string, buf: Buffer, offset: number, nums: number[]) {
+        packUnpackCore(format, nums, buf, true, offset)
+    }
+
+    export function unpackBuffer(format: string, buf: Buffer, offset = 0) {
+        let res: number[] = []
+        packUnpackCore(format, res, buf, false, offset)
+        return res
+    }
+
+    export class I2CDevice {
+        public address: number;
+        private _hasError: boolean;
+        constructor(address: number) {
+            this.address = address
+        }
+        public readInto(buf: Buffer, repeat = false, start = 0, end: number = null) {
+            if (end === null)
+                end = buf.length
+            if (start >= end)
+                return
+            let res = i2cReadBuffer(this.address, end - start, repeat)
+            if (!res) {
+                this._hasError = true
+                return
+            }
+            buf.write(start, res)
+        }
+        public write(buf: Buffer, repeat = false) {
+            let res = i2cWriteBuffer(this.address, buf, repeat)
+            if (res) {
+                this._hasError = true
+            }
+        }
+        public begin(): I2CDevice {
+            this._hasError = false;
+            return this;
+        }
+        public end() {
+        }
+        public ok() {
+            return !this._hasError
+        }
+    }
 }
 
+namespace Math {
+    export function map(value: number, fromLow: number, fromHigh: number, toLow: number, toHigh: number): number {
+        return ((value - fromLow) * (toHigh - toLow)) / (fromHigh - fromLow) + toLow;
+    }
+}
 
 interface Buffer {
     [index: number]: number;
