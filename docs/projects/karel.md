@@ -11,7 +11,7 @@ Help Karel make LED art!
 ![](/static/mb/projects/karel/hi.png "Hi")
 
 The goal of this activity is to download the JavaScript code given below onto a @boardname@.
-Then USE the program to introduce new students to the @boardname@.
+Then use the program to introduce new students to the @boardname@.
 Students will not do the coding this time. They will be the users who get familiar with the board.
 
 ## How to play
@@ -94,6 +94,8 @@ Thanks for playing with Karel the LED!
 ## Coding Karel the LED
 
 Copy this code into the JavaScript editor and then download it to the board.
+
+**Note:** For this project you need to manually copy the code and insert it into the JavaScript view of the editor.
 
 ```typescript
 /**

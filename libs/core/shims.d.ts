@@ -723,7 +723,7 @@ declare namespace pins {
      * Write bytes to a 7-bit I2C `address`.
      */
     //% repeat.defl=0 shim=pins::i2cWriteBuffer
-    function i2cWriteBuffer(address: number, buf: Buffer, repeat?: boolean): void;
+    function i2cWriteBuffer(address: number, buf: Buffer, repeat?: boolean): number;
 
     /**
      * Write to the SPI slave and return the response
