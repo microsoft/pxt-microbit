@@ -82,14 +82,18 @@ basic.forever(() => {
 })
 ```
 
-When a firefly receives a radio packet, it increments its clock by one:
+When a firefly receives a radio packet
+**and** it is not sending packet
+, it increments its clock by one:
 
 ```block
 // the clock ticker
 let clock = 0
 radio.onReceivedNumber(function (receivedNumber) {
     // advance clock to catch up neighbors
-    clock += 1
+    if (clock < 8) {
+        clock += 1
+    }
 })
 ```
 
