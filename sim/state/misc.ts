@@ -66,15 +66,13 @@ namespace pxsim.control {
         board().bus.queue(id, evid)
     }
 
-    // TODO: (microbit master)
-    // export function eventTimestamp() {
-    //     return board().bus.getLastEventTime()
-    // }
+    export function eventTimestamp() {
+        return board().bus.getLastEventTime()
+    }
 
-    // TODO: (microbit master)
-    // export function eventValue() {
-    //     return board().bus.getLastEventValue()
-    // }
+    export function eventValue() {
+        return board().bus.getLastEventValue()
+    }
 }
 
 namespace pxsim.pxtcore {
@@ -88,10 +86,9 @@ namespace pxsim.input {
         return runtime.runningTime();
     }
 
-    // TODO: (microbit master)
-    // export function runningTimeMicros(): number {
-    //     return runtime.runningTimeUs();
-    // }
+    export function runningTimeMicros(): number {
+        return runtime.runningTimeUs();
+    }
 
     export function calibrateCompass() {
         // device calibrates...
