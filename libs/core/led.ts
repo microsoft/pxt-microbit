@@ -24,7 +24,7 @@
         value = Math.abs(value);
 
         // auto-scale "high" is not provided
-        if (high <= 0) {
+        if (high > 0) {
             barGraphHigh = high;
         } else if (value > barGraphHigh || now - barGraphHighLast > 10000) {
             barGraphHigh = value;
