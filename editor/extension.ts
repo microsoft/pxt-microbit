@@ -433,7 +433,11 @@ namespace pxt.editor {
         const nodes = U.toArray(dom.querySelectorAll("block[type=device_show_leds]"))
             .concat(U.toArray(dom.querySelectorAll("block[type=device_build_image]")))
             .concat(U.toArray(dom.querySelectorAll("block[type=device_build_big_image]")))
-        nodes.forEach(node => {
+        nodes.forEach(node => {            
+            // don't rewrite if already upgraded, eg. field LEDS already present
+            if (U.toArray(node.children).filter(child => child.tagName == "field" && "LEDS" == child.getAttribute("name"))[0])
+                return;
+            // read LEDxx value and assmebly into a new field
             const leds: string[][] = [[], [], [], [], []];
             U.toArray(node.children)
                 .filter(child => child.tagName == "field" && /^LED\d+$/.test(child.getAttribute("name")))
