@@ -48,13 +48,11 @@ input.onButtonPressed(Button.B, () => {
 
 ## Step 6
 
-Place the ``||basic:show number||`` and ``||Math:pick random||`` blocks
-in an ``||input:on shake||`` slot to build a dice.
+Place the ``||basic:show number||`` and ``||Math:pick random||`` blocks in an ``||input:on shake||`` slot to build a dice.
 
 ###   
 
-When the @boardname@ is shaken, a random number between ``0`` and ``6`` is displayed
-on the screen.
+When the @boardname@ is shaken, a random number between ``0`` and ``6`` is displayed on the screen.
 
 ```blocks
 input.onGesture(Gesture.Shake, () => {
