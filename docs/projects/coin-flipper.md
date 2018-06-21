@@ -2,8 +2,7 @@
 
 ## Step 1
 
-Place a ``||input:on button pressed||`` block to run code 
-when button **A** is pressed.
+Place a ``||input:on button pressed||`` block to run code when button **A** is pressed.
 
 ```blocks
 input.onButtonPressed(Button.A, () => {

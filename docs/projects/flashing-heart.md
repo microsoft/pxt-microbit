@@ -2,8 +2,7 @@
 
 ## Step 1
 
-Place the ``||basic:show leds||`` block in the ``||basic:on start||`` block 
-and draw a heart.
+Place the ``||basic:show leds||`` block in the ``||basic:on start||`` block and draw a heart.
 
 ```blocks
 basic.showLeds(`
