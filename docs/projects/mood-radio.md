@@ -63,6 +63,10 @@ radio.onDataPacketReceived( ({ receivedNumber }) =>  {
 
 That's it. Download your code in multiple @boardname@ and try it out!
 
+## Challenges
+
+Try adding a new code and use the **shake** event to send it.
+
 ## Full sources
 
 ```blocks
