@@ -2,6 +2,12 @@
 
 ## @description The famous "Hot Potato" game revisit for @boardname@
 
+## ~ avatar
+
+Don't keep the potato too long or you might loose the game!
+
+## ~
+
 ![A teleporting potato](/static/mb/projects/tele-potato.png)
 
 Do you know the "Hot Potato" game? You usually toss around a potato with a timer

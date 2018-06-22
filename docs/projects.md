@@ -45,6 +45,10 @@ Fun games to build with your @boardname@.
 ## Multiplayer Games
 ```codecard
 [{
+  "name": "Mood Radio",
+  "url": "/projects/mood-radio",
+  "imageUrl": "/static/mb/projects/mood-radio.png"
+}, {
   "name": "Tele-potato",
   "url": "/projects/tele-potato",
   "imageUrl": "/static/mb/projects/tele-potato.png"
