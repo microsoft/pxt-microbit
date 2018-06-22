@@ -43,12 +43,12 @@ radio.setGroup(1)
 ### Starting the game
 
 To start the game, we handle the ``A+B`` button and assign a positive number to the **potato** variable.
-To make the game less predictable, we use the random block to generate a value between 20 and 40.
+To make the game less predictable, we use the random block to generate a value between 10 and 40.
 
 ```blocks
 let potato = 0
 input.onButtonPressed(Button.AB, () => {
-    potato = 20 + Math.random(21)
+    potato = 10 + Math.random(21)
 })
 ```
 
@@ -121,7 +121,7 @@ input.onGesture(Gesture.Shake, () => {
     }
 })
 input.onButtonPressed(Button.AB, () => {
-    potato = 20 + Math.random(21)
+    potato = 10 + Math.random(21)
 })
 radio.setGroup(1)
 potato = -1
