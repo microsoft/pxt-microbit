@@ -18,6 +18,7 @@ we assume that **0** means "smiley".
 ```blocks
 input.onButtonPressed(Button.A, () => {
     radio.sendNumber(0)
+    basic.showIcon(IconNames.Happy)
 })
 ```
 
@@ -43,6 +44,7 @@ Then we can add a ``B`` button event that sends that code.
 ```blocks
 input.onButtonPressed(Button.B, () => {
     radio.sendNumber(1)
+    basic.showIcon(IconNames.Sad)
 })
 ```
 
