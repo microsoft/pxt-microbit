@@ -23,6 +23,7 @@
     * [Plant Watering](/projects/plant-watering)
     * [Reaction Time](/projects/reaction-time)
     * [States of Matter](/projects/states-of-matter)
+    * [Tele-Potato](/projects/tele-potato)
     * [Hot Or Cold](/projects/hot-or-cold)
     * [Voting Machine](/projects/voting-machine)
     * [Infection](/projects/infection)

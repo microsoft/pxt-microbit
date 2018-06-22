@@ -45,6 +45,10 @@ Fun games to build with your @boardname@.
 ## Multiplayer Games
 ```codecard
 [{
+  "name": "Tele-potato",
+  "url": "/projects/tele-potato",
+  "imageUrl": "/static/mb/projects/tele-potato.png"
+}, {
   "name": "Fireflies",
   "url": "/projects/fireflies",
   "imageUrl": "/static/mb/projects/fireflies.png"
