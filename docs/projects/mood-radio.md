@@ -72,6 +72,11 @@ Try adding a new code and use the **shake** event to send it.
 ```blocks
 input.onButtonPressed(Button.A, () => {
     radio.sendNumber(0)
+    basic.showIcon(IconNames.Happy)
+})
+input.onButtonPressed(Button.B, () => {
+    radio.sendNumber(1)
+    basic.showIcon(IconNames.Sad)
 })
 radio.onDataPacketReceived( ({ receivedNumber }) =>  {
     if (receivedNumber == 0) {
@@ -80,8 +85,5 @@ radio.onDataPacketReceived( ({ receivedNumber }) =>  {
     if (receivedNumber == 1) {
         basic.showIcon(IconNames.Sad)
     }
-})
-input.onButtonPressed(Button.B, () => {
-    radio.sendNumber(1)
 })
 ```
