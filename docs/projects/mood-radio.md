@@ -4,16 +4,15 @@
 
 ![@boardname@ sending moods around](/static/mb/projects/mood-radio.png)
 
-This project uses the [radio](/reference/radio) to share your mood with other @boardname@.
-When you press ``A``, you friends will see a **smilley**. When you press ``B``, they will see a **frownie**.
+This project uses the [radio](/reference/radio) to share your mood with other @boardname@s.
+When you press ``A``, your friends will see a **smiley** face. When you press ``B``, they will see a **frowny** face.
 
 ## Sending a smiley
 
 The @boardname@ can't understand mood but it is pretty good with numbers. In fact, it can send numbers
-between @boardname@ using the radio antenna, just like phones.
+between @boardname@s using the radio antenna, just like a phone can send text messages.
 
-Let's add blocks that send a number when button ``A`` is pressed. In our "code", 
-we assume that **0** means "smiley".
+Let's add blocks that send a number when button ``A`` is pressed. We assume that `0` is the "mood code" to send for **smiley**.
 
 ```blocks
 input.onButtonPressed(Button.A, () => {
@@ -24,9 +23,9 @@ input.onButtonPressed(Button.A, () => {
 
 ## Receiving a smiley
 
-We add a ``radio on received`` block that will run code whenever a new message code in.
-The ``receivedNumber`` variable contain the numeric value that was sent. Since we've decided that
-**0** was **smiley**, we add a conditional **if** statement to show this icon.
+We add a ``||radio:on radio received||`` block that will run code whenever a new "mood" message comes in.
+The ``receivedNumber`` variable contains the numeric value that was sent. Since we've decided that
+`0` is **smiley**, we add a conditional ``||logic:if then||`` statement to show this icon.
 
 ```blocks
 radio.onDataPacketReceived( ({ receivedNumber }) =>  {
@@ -36,10 +35,9 @@ radio.onDataPacketReceived( ({ receivedNumber }) =>  {
 })
 ```
 
-## Sending a frowney
+## Sending a frowny
 
-Adding another code in our messaging app is very similar. We decide that **1** means **forwnie**.
-Then we can add a ``B`` button event that sends that code.
+Adding another mood to our messaging app done in a similar way. We decide that the "mood code" of `1` means **frowny**. We can add a ``B`` button event that sends that code.
 
 ```blocks
 input.onButtonPressed(Button.B, () => {
@@ -48,7 +46,7 @@ input.onButtonPressed(Button.B, () => {
 })
 ```
 
-If the ``on radio received`` block, we add an conditional **if** statement to handle the new code.
+If the ``||radio:on radio received||`` block, we add another conditional ``||logic:if then||`` statement to handle the **frowny** "mood code".
 
 ```blocks
 radio.onDataPacketReceived( ({ receivedNumber }) =>  {
@@ -61,11 +59,11 @@ radio.onDataPacketReceived( ({ receivedNumber }) =>  {
 })
 ```
 
-That's it. Download your code in multiple @boardname@ and try it out!
+That's it. Download your code to multiple @boardname@s and try it out!
 
 ## Challenges
 
-Try adding a new code and use the **shake** event to send it.
+Try adding a new code and use the ``||input:on shake||`` event to send it.
 
 ## Full sources
 
