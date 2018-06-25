@@ -4,14 +4,14 @@
 
 ## ~ avatar
 
-Don't keep the potato too long or you might loose the game!
+Don't keep the potato too long or you might lose the game!
 
 ## ~
 
 ![A teleporting potato](/static/mb/projects/tele-potato.png)
 
 Do you know the "Hot Potato" game? You toss around a potato while a timer counts down
-and the person holding it when the timer is up looses... It's super fun.
+and the person holding it when the timer is up loses... It's super fun.
 
 In this project, we'll build a similar kind of game but instead we'll use a **virtual potato** and the @boardname@ radio.
 
