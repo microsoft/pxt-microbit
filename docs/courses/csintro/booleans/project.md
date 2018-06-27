@@ -296,9 +296,7 @@ spin = 0
 player1Turn = true
 ```
 
-
-This is an example of a board game in which the micro:bit displays an arrow pointing in a random direction. The paper legend indicates different actions the player must take. 
-
+This is an example of a board game in which the micro:bit displays an arrow pointing in a random direction. The paper legend indicates different actions the player must take.
 
 Here is a portion of the board game's code. A boolean variable is used to determine whose turn it is. If player1Turn is false, then it's player 2's turn. A random number is generated to show the arrow seventy-five percent of the time (for values of 0, 1, or 2).
 
@@ -310,6 +308,7 @@ input.onGesture(Gesture.Shake, () => {
     }
 })
 ```
+
 ## Reflection
 
 Have students write a reflection of about 150–300 words, addressing the following points:

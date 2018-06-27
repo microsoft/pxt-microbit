@@ -1,7 +1,7 @@
 # Activity: Animation and patterns
 
-Guide the students to create programs using coordinates and LEDs. Each of these short exercises demonstrates how to use coordinates to control the LEDs. These programs can then be modified and used in the students’ more complex projects. 
- 
+Guide the students to create programs using coordinates and LEDs. Each of these short exercises demonstrates how to use coordinates to control the LEDs. These programs can then be modified and used in the students’ more complex projects.
+
 * Smile animation - A short exercise in plotting and toggling LEDs to create a simple animation.
 * Random Patterns generator - A short exercise using a loop to generate random LED patterns and then checking the status of a specific LED.
 * Brightness - A short exercise in using the brightness settings for the micro:bit LEDs.
@@ -50,10 +50,10 @@ led.plot(3, 3)
 
 Now we can code for the 4 LEDs that change back and forth, on and off, as we switch from one face to the other and back again over and over.
 
-* From the LED Toolbox drawer, drag out 4 'toggle x y' blocks. 
-* Replace the default values with the correct (x,y) coordinates. 
+* From the LED Toolbox drawer, drag out 4 'toggle x y' blocks.
+* Replace the default values with the correct (x,y) coordinates.
 The 'toggle x y' block will change the status of an LED from on to off or off to on.
-* Place these 4 'toggle x y' blocks in a 'forever' block. 
+* Place these 4 'toggle x y' blocks in a 'forever' block.
 * Place the two 'toggle x y' blocks that create the smile first, followed by the two 'toggle x y' blocks for the non-smile.
 * You may notice that the toggling happens too quickly. Let’s slow it down a bit by placing a 'pause' block between the two pairs of 'toggle x y' blocks.  Set the pause value to 250 milliseconds.
 
@@ -76,13 +76,15 @@ led.plot(3, 3)
 ```
 
 ## Mod this!
-* Add a third image to the animation, perhaps a frown face. 
+
+* Add a third image to the animation, perhaps a frown face.
 * Make your own custom animation! What LEDs stay the same and which need to be toggled?
- 
+
 ## Random patterns generator
+
 A short exercise using a loop to generate random LED patterns and then checking the status of a specific LED.
 Pseudocode:
-* On button A pressed we’ll use a loop to turn on a random set of LED lights on our micro:bit. 
+* On button A pressed we’ll use a loop to turn on a random set of LED lights on our micro:bit.
 * Our display will have one LED lit for each column or x coordinate value from 0 through 4.
 Steps:
 * From the Input Toolbox drawer, select the 'on button pressed' block
@@ -102,7 +104,7 @@ input.onButtonPressed(Button.A, () => {
 ```
  
 Check the on/off state of an LED
-* On button B pressed we’ll use an 'if...then...else' block from the Logic Toolbox drawer
+* On button B pressed we’ll use an 'if...then...else' block from the Logic Toolbox drawer.
 * From the LED Toolbox drawer, drop a 'point x y' block into the 'if' condition to check the current on/off state of a specific LED.
 
 >* If the LED is currently on, the point x y block will return true. 
@@ -130,11 +132,13 @@ input.onButtonPressed(Button.B, () => {
 ```
 
 ### Try it out!
+
 * Download the program to your micro:bit
 * Press button A to create a random pattern
 * Press button B to check and display the status of the specific LED
- 
+
 ## Brightness
+
 A short exercise in using the brightness settings for the micro:bit LEDs.  Important to note - the brightness level of the micro:bit simulator LEDs will NOT appear to change! You must run your program on the actual micro:bit to see the different brightness levels.
 
 We will check on, and numerically display the brightness level with our program, so we can verify with the simulator that it is working.
@@ -169,7 +173,7 @@ input.onButtonPressed(Button.B, () => {
    led.setBrightness(led.brightness() + 25)
 })
 ```
- 
+
 Since we cannot see if our program is working in the simulator, let’s add a check into our code.
 
 * On button A+B pressed, we’ll clear the screen and get and display the current brightness level as a number.

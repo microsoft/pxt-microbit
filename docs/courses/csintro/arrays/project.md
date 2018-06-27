@@ -1,7 +1,7 @@
 # Project: Musical instrument
 
 This is a project in which students are challenged to create a musical instrument that uses arrays to store sequences of notes. The array of notes can be played when an input occurs, such as one of the buttons being pressed, or if one or more of the pins is activated.
- 
+
 Ideally, the micro:bit should be mounted in some kind of housing, perhaps a guitar shape or a music box.  Start by looking at different kinds of musical instruments to get a sense of what kind of shape you might want to build around your micro:bit.
 
 ![micro:bit guitar](/static/courses/csintro/arrays/microbit-guitar.png)
@@ -48,7 +48,7 @@ input.onButtonPressed(Button.B, () => {
 
 ## Using arrays with musical notes
 You can create an array of notes by attaching Music blocks to an array.  Musical notes are described in words (e.g., Middle C, High C) but they are actually numbers.  You can do Math operations on those numbers to change the pitch of your song.
- 
+
 Here is an example of how to create an array with musical notes.  Button A plays every note in the array.  Button B plays the notes at twice the frequency (but doesn't alter the original notes.)
 
 ```blocks
@@ -81,9 +81,10 @@ input.onButtonPressed(Button.AB, () => {
 ```
 
 ## Reflection
+
 Have students write a reflection of about 150–300 words, addressing the following points:
 
-* Explain how you decided on your musical instrument. What brainstorming ideas did you come up with? 
+* Explain how you decided on your musical instrument. What brainstorming ideas did you come up with?
 * What properties does it share with a real musical instrument? What is unique?
 * Describe the type of array you used (Numbers, Strings, or Notes) and how it functions in your project.
 * What was something that was surprising to you about the process of creating this program?

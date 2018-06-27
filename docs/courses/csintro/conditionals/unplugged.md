@@ -34,13 +34,16 @@ After the students get the idea of the game, allow them to make up and call out 
 They will need to be observant, as a conditional that moves them forward, will also move their competition forward!
 
 ## Tips
+
 * SAFETY FIRST! Students, especially younger ones, can get quite silly with this and while it is meant to be fun and even funny, safety first!
 * Student conditionals need to apply to at least two people in the class.
 
 ## Reflections
+
 How did they do?  Were there any ‘run-time errors’? Did a student miss a conditional being met or fail to correctly carry out the THEN or ELSE action?  Were there some conditions that could be evaluated as something other than True or False (maybe, sometimes)?
 
-## Extensions/Variations 
+## Extensions/Variations
+
 * Add AND, OR, AND/OR statements to the conditionals.
 >Example: If you have brown hair AND brown eyes, then...
 * Create nested IF’s

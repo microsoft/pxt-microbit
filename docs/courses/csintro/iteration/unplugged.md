@@ -3,9 +3,11 @@
 ![Chair with Pseudocode on the board.](/static/courses/csintro/iteration/chair-pseudo.png)
 
 ## Objective
+
 To reinforce the concept of iteration by having students act out the repeated steps of an algorithm in real life.
 
 ## Overview
+
 Students will give the teacher instructions to do a simple activity, then look for places where using iteration could shorten their code and make it more efficient.
 
 ## Process
@@ -39,6 +41,7 @@ The ‘repeat’ command creates a loop. The code within the loop gets repeated 
 This is a great opportunity to have the students think of the benefits of having fewer lines of code. _Some possible reasons: Less typing, saves time, fewer chances of making a mistake, easier to read the code, fewer lines of code to debug..._
 
 ## Notes
+
 * Depending on the particular class, you can make this exercise more challenging, by requiring the students to be more specific in their instructions. 
 
 **Example:** Step forward 14 inches (you can have students actually measure the exact distance), turn left 90 degrees...

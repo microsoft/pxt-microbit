@@ -22,10 +22,10 @@ Note: For older students, you can have them add the ELSE portion of a conditiona
 Example:
 * IF it is snowing, THEN wear boots, ELSE wear shoes.
 
-The ELSE portion makes sure that a different action is performed in either case. Without the ELSE action, your students might be barefoot! 
+The ELSE portion makes sure that a different action is performed in either case. Without the ELSE action, your students might be barefoot!
 
 ![If-Then workflow](/static/courses/csintro/conditionals/flowchart.PNG)
 
-Tell the students that they will be acting out some conditionals as though the whole class is a computer program for a game. Each student will perform a described action if the indicated condition is met. 
+Tell the students that they will be acting out some conditionals as though the whole class is a computer program for a game. Each student will perform a described action if the indicated condition is met.
 
 **Note:** This activity can be done as a whole class or in smaller groups or as a pencil and paper activity.
