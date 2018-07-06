@@ -56,7 +56,7 @@ To make the game less predictable, we use the ``||math:pick random||`` block to 
 ```blocks
 let potato = 0
 input.onButtonPressed(Button.AB, () => {
-    potato = 10 + Math.random(21)
+    potato = Math.randomRange(10, 20)
 })
 ```
 
@@ -82,7 +82,7 @@ The **receivedNumber** represents the potato and is stored in the **potato** var
 
 ```blocks
 let potato = 0
-radio.onDataPacketReceived( ({ receivedNumber }) =>  {
+radio.onReceivedNumber(function (receivedNumber) {
     potato = receivedNumber
 })
 ```
@@ -119,7 +119,7 @@ Get two or more @boardname@s and download the code to them. One player starts th
 
 ```blocks
 let potato = 0
-radio.onDataPacketReceived( ({ receivedNumber }) =>  {
+radio.onReceivedNumber(function (receivedNumber) {
     potato = receivedNumber
 })
 input.onGesture(Gesture.Shake, () => {
@@ -129,7 +129,7 @@ input.onGesture(Gesture.Shake, () => {
     }
 })
 input.onButtonPressed(Button.AB, () => {
-    potato = 10 + Math.random(21)
+    potato = Math.randomRange(10, 20)
 })
 radio.setGroup(1)
 potato = -1
