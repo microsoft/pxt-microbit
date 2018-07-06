@@ -1,4 +1,4 @@
-# Set Transmit Serial Number
+# set Transmit Serial Number
 
 Make the ``radio`` packet embed the board serial number with each packet of data.
 
@@ -20,7 +20,7 @@ radio.setTransmitSerialNumber(true);
 
 ## See also
 
-[on data packet received](/reference/radio/on-data-packet-received),
+[get received packet property](/reference/radio/get-received-packet-property),
 [send number](/reference/radio/send-number),
 [send value](/reference/radio/send-value),
 [send string](/reference/radio/send-string)

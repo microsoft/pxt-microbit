@@ -1,7 +1,6 @@
-# Set Transmit Power
+# set Transmit Power
 
-Make the ``radio`` signal of the @boardname@ stronger or weaker.
-It can be as weak as `0` and as strong as `7`.
+Make the ``radio`` signal of the @boardname@ stronger or weaker. It can be as weak as `0` and as strong as `7`.
 
 The scientific name for the strength of the ``radio`` signal is
 **dBm**, or **decibel-milliwatts**. A signal strength of `0`
@@ -20,8 +19,7 @@ can reach as far as 70 meters (about 230 feet).
 
 ## Parameters
 
-* ``power`` is a [number](/types/number) between ``0`` and ``7`` that
-means how strong the signal is.
+* ``power`` is a [number](/types/number) between ``0`` and ``7`` that means how strong the signal is.
 
 ## Simulator
 
@@ -37,7 +35,7 @@ radio.setTransmitPower(7)
 
 ## See also
 
-[on data packet received](/reference/radio/on-data-packet-received),
+[get received packet property](/reference/radio/get-received-packet-property),
 [send number](/reference/radio/send-number),
 [send value](/reference/radio/send-value),
 [send string](/reference/radio/send-string)

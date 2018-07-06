@@ -1,4 +1,4 @@
-# Send Value
+# send Value
 
 Send a [string]() and [number]() together by ``radio`` to other @boardname@s.
 The maximum [string]() length is 12 characters.
@@ -31,15 +31,16 @@ Then it shows them on the LED screen.
 
 ```blocks
 radio.setGroup(99)
-radio.onDataPacketReceived(({ receivedString, receivedNumber }) => {
-	basic.showString(receivedString);
-    basic.showNumber(receivedNumber);
+radio.onReceivedValue(function (name, value) {
+radio.onDataPacketReceived(({ name, value }) => {
+	basic.showString(name);
+    basic.showNumber(value);
 });
 ```
 
 ## See also
 
-[on data packet received](/reference/radio/on-data-packet-received)
+[on received value](/reference/radio/on-received-value)
 
 ```package
 radio

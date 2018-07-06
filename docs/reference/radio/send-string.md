@@ -1,4 +1,4 @@
-# Send String
+# send String
 
 Sends a string to other @boardname@s in the area connected by radio. The
 maximum string length is 19 characters.
@@ -23,10 +23,9 @@ input.onButtonPressed(Button.A, () => {
     radio.sendString("Codeword: TRIMARAN")
     basic.showString("SENT");
 })
-
-radio.onDataPacketReceived(({ receivedString }) => {
+radio.onReceivedString(function (receivedString) {
     basic.showString(receivedString);
-});
+})
 ```
 
 ## ~hint
@@ -37,7 +36,7 @@ A radio that can both transmit and receive is called a _transceiver_.
 
 ## See also
 
-[on data packet received](/reference/radio/on-data-packet-received)
+[on received string](/reference/radio/on-received-string)
 
 ```package
 radio

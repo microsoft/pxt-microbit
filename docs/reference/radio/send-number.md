@@ -1,4 +1,4 @@
-# Send Number
+# send Number
 
 Broadcast a [number](/types/number) to other @boardname@s connected via ``radio``.
 
@@ -8,7 +8,7 @@ radio.sendNumber(0);
 
 ## Parameters
 
-* ``value`` - a [number](/types/number) to send.
+* **value**: a [number](/types/number) to send.
 
 
 ## Example: Broadcasting acceleration
@@ -27,7 +27,7 @@ input.onButtonPressed(Button.A, () => {
 
 This example broadcasts the level of the light around it.
 You can do some interesting things with it if you use it along with the
-[on data packet received](/reference/radio/on-data-packet-received) example.
+[on received number](/reference/radio/on-received-number) example.
 
 ```blocks
 radio.setGroup(99)
@@ -39,7 +39,7 @@ basic.forever(() => {
 
 ## See also
 
-[on data packet received](/reference/radio/on-data-packet-received)
+[on received number](/reference/radio/on-received-number)
 
 ```package
 radio

@@ -1,4 +1,4 @@
-# Set Group
+# set Group
 
 Make a program have the group ID you tell it for sending and receiving
 with ``radio``.  A group is like a cable channel (a @boardname@ can only
@@ -16,7 +16,7 @@ radio.setGroup(0);
 
 ## Parameters
 
-* ``id`` is a [number](/types/number) from ``0`` to ``255``.
+* **id**: a [number](/types/number) from ``0`` to ``255``.
 
 ## Simulator
 
@@ -32,7 +32,9 @@ radio.setGroup(128)
 
 ## See also
 
-[on data packet received](/reference/radio/on-data-packet-received),
+[on received number](/reference/radio/on-received-number),
+[on received string](/reference/radio/on-received-string),
+[on received value](/reference/radio/on-received-value),
 [send number](/reference/radio/send-number),
 [send value](/reference/radio/send-value),
 [send string](/reference/radio/send-string)
