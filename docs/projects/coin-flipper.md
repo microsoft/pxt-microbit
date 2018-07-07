@@ -1,8 +1,10 @@
 # Coin Flipper
 
+Let's create a coin flipping program to simulate a real coin toss. We'll use icon images to represent a ``heads`` or ``tails`` result.
+
 ## Step 1
 
-Place a ``||input:on button pressed||`` block to run code when button **A** is pressed.
+Get an ``||input:on button A pressed||`` block from the ``||input:Input||`` drawer in the toolbox. The coin flip code we add will run when button **A** is pressed.
 
 ```blocks
 input.onButtonPressed(Button.A, () => {
@@ -11,21 +13,21 @@ input.onButtonPressed(Button.A, () => {
 
 ## Step 2
 
-Place a **if** block and check the value returned by the ``||Math:pick random true or false||`` block.
+Grab an ``||logic:if else||`` block and set it inside ``||input:on button A pressed||``. Put a ``||Math:pick random true or false||`` into the ``||logic:if||`` as its condition.
 
-``||Math:pick random true or false||`` returns ``true`` or ``false`` randomly.
+The ``||Math:pick random true or false||`` returns a random ``true`` or ``false`` value which we use to determine a ``heads`` or ``tails`` result for a coin toss.
 
 ```blocks
 input.onButtonPressed(Button.A, () => {
     if (Math.randomBoolean()) {
     } else {
     }
-});
+})
 ```
 
 ## Step 3
 
-Place a ``||basic:show icon||`` block under the **if** and pick one of the images.
+Now, put a ``||basic:show icon||`` block inside both the ``||logic:if||`` and the ``||logic:else||``. Pick images to mean ``heads`` and ``tails``.
 
 ```blocks
 input.onButtonPressed(Button.A, () => {
@@ -34,16 +36,16 @@ input.onButtonPressed(Button.A, () => {
     } else {
         basic.showIcon(IconNames.Square)
     }
-});
+})
 ```
 
 ## Step 4
 
-Click ``|Download|`` to transfer your code in your @boardname@ and press button **A** to try it out.
+Click ``|Download|`` to transfer your code into your @boardname@. Press button **A** to "toss a coin" and see the result.
 
 ## Step 5
 
-Place multiple ``||basic:show icon||`` blocks before the **if** to create a coin flipping animation.
+You can animate the coin toss to add the feeling of suspense. Place different ``||basic:show icon||`` blocks before the ``||logic:if||`` to show that the coin is flipping before the result appears.
 
 ```blocks
 input.onButtonPressed(Button.A, () => {
@@ -61,4 +63,4 @@ input.onButtonPressed(Button.A, () => {
 
 ## Step 6
 
-Click ``|Download|`` to transfer your code in your @boardname@ and press button **A** to try it out!
+Click ``|Download|`` to transfer your code to your @boardname@ again and press button **A** for a flip!
