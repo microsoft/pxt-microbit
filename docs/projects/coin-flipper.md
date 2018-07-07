@@ -63,4 +63,4 @@ input.onButtonPressed(Button.A, () => {
 
 ## Step 6
 
-Click ``|Download|`` to transfer your code to your @boardname@ again and press button **A** for a flip!
+Click ``|Download|`` to transfer your code to your @boardname@ again and press button **A** for a flip. Test your luck and guess ``heads`` or ``tails`` before the toss is over!
