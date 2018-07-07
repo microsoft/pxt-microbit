@@ -41,7 +41,7 @@ basic.showLeds(`
 
 Move the blocks inside the ``||basic:forever||`` to repeat the animation.
 
-```block
+```blocks
 basic.forever(() => {
     basic.showLeds(`
         . # . # .
