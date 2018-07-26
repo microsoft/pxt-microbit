@@ -415,10 +415,10 @@ namespace pxt.editor {
       to
     <block type="device_show_leds">
         <field name="LEDS">`
-        # # # # # 
-        . . . . # 
-        . . . . . 
-        . . . . # 
+        # # # # #
+        . . . . #
+        . . . . .
+        . . . . #
         . . . . #
         `
         </field>
@@ -433,7 +433,7 @@ namespace pxt.editor {
         const nodes = U.toArray(dom.querySelectorAll("block[type=device_show_leds]"))
             .concat(U.toArray(dom.querySelectorAll("block[type=device_build_image]")))
             .concat(U.toArray(dom.querySelectorAll("block[type=device_build_big_image]")))
-        nodes.forEach(node => {            
+        nodes.forEach(node => {
             // don't rewrite if already upgraded, eg. field LEDS already present
             if (U.toArray(node.children).filter(child => child.tagName == "field" && "LEDS" == child.getAttribute("name"))[0])
                 return;
@@ -502,26 +502,40 @@ namespace pxt.editor {
                 const mutation = node.querySelector("mutation");
                 if (!mutation) return;
                 const renameMap = JSON.parse(node.getAttribute("renamemap") || "{}");
-                switch (mutation.getAttribute("callbackproperties")) {
-                    case "receivedNumber":
-                        node.setAttribute("type", "radio_on_number");
-                        node.removeChild(node.querySelector("field[name=receivedNumber]"));
-                        addField(node, renameMap, "receivedNumber");
-                        break;
-                    case "receivedString,receivedNumber":
+                const props = mutation.getAttribute("callbackproperties");
+
+                if (props) {
+                    const parts = props.split(",");
+
+                    // It's tempting to generate radio_on_number if parts.length === 0 but
+                    // that would create a variable named "receivedNumber" and possibly shadow
+                    // an existing variable in the user's program. It's safer to stick to the
+                    // old block.
+                    if (parts.length === 1) {
+                        if (parts[0] === "receivedNumber") {
+                            node.setAttribute("type", "radio_on_number");
+                            node.removeChild(node.querySelector("field[name=receivedNumber]"));
+                            addField(node, renameMap, "receivedNumber");
+                        }
+                        else if (parts[0] === "receivedString") {
+                            node.setAttribute("type", "radio_on_string");
+                            node.removeChild(node.querySelector("field[name=receivedString]"));
+                            addField(node, renameMap, "receivedString");
+                        }
+                        else {
+                            return;
+                        }
+                        node.removeChild(mutation);
+                    }
+                    else if (parts.length === 2 && parts.indexOf("receivedNumber") !== -1 && parts.indexOf("receivedString") !== -1) {
                         node.setAttribute("type", "radio_on_value");
                         node.removeChild(node.querySelector("field[name=receivedNumber]"));
                         node.removeChild(node.querySelector("field[name=receivedString]"));
                         addField(node, renameMap, "name");
                         addField(node, renameMap, "value");
-                        break;
-                    case "receivedString":
-                        node.setAttribute("type", "radio_on_string");
-                        node.removeChild(node.querySelector("field[name=receivedString]"));
-                        addField(node, renameMap, "receivedString");
-                        break;
+                        node.removeChild(mutation);
+                    }
                 }
-                node.removeChild(mutation);
             })
     }
 
