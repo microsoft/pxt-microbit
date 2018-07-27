@@ -40,18 +40,20 @@ namespace pxt.editor {
             this.packetIo = h;
             let pbuf = new U.PromiseBuffer<Uint8Array>();
 
+            /*
             let sendMany = (cmds: Uint8Array[]) => {
                 return h.talksAsync(cmds.map(c => ({ cmd: 0, data: c })));
             }
 
             if (!h.talksAsync)
                 sendMany = null;
+            */
 
             let dev = new DapJS.DAP({
                 write: writeAsync,
                 close: this.disconnectAsync,
                 read: readAsync,
-                sendMany: sendMany
+                //sendMany: sendMany
             });
             this.cmsisdap = (dev as any).dap;
             this.cortexM = new DapJS.CortexM(dev);
