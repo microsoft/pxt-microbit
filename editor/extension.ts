@@ -32,6 +32,8 @@ namespace pxt.editor {
     class DAPWrapper {
         cortexM: DapJS.CortexM
         packetIo: HF2.PacketIO;
+        cmsisdap: any;
+        flashing = true;
 
         constructor(h: HF2.PacketIO) {
             this.packetIo = h;
@@ -50,6 +52,7 @@ namespace pxt.editor {
                 read: readAsync,
                 sendMany: sendMany
             });
+            this.cmsisdap = (dev as any).dap;
             this.cortexM = new DapJS.CortexM(dev);
 
             h.onData = buf => {
@@ -63,11 +66,43 @@ namespace pxt.editor {
             function readAsync() {
                 return pbuf.shiftAsync();
             }
+
+            const readSerial = () => {
+                if (this.flashing) {
+                    setTimeout(readSerial, 300)
+                    return
+                }
+
+                this.cmsisdap.cmdNums(0x83, [])
+                    .then((r: number[]) => {
+                        const len = r[1]
+                        let str = ""
+                        for (let i = 2; i < len + 2; ++i) {
+                            str += String.fromCharCode(r[i])
+                        }
+                        if (str.length > 0) {
+                            U.nextTick(readSerial)
+                            window.postMessage({
+                                type: 'serial',
+                                id: 'n/a', // TODO
+                                data: str
+                            }, "*")                
+                            // console.log("SERIAL: " + str)
+                        } else
+                            setTimeout(readSerial, 50)
+                    }, (err: any) => {
+                        setTimeout(readSerial, 1000)
+                    })
+            }
+
+            readSerial()
         }
 
         reconnectAsync(first: boolean) {
             if (!first)
                 return this.packetIo.reconnectAsync()
+                    // configure serial at 115200
+                    .then(() => this.cmsisdap.cmdNums(0x82, [0x00, 0xC2, 0x01, 0x00]))
                     .then(() => this.cortexM.init())
             else
                 return this.cortexM.init();
@@ -117,7 +152,9 @@ namespace pxt.editor {
                 let w = new DAPWrapper(h)
                 previousDapWrapper = w;
                 return w.reconnectAsync(true)
-                    .then(() => w)
+                    .then(() => {
+                        return w
+                    })
             })
     }
 
@@ -290,7 +327,15 @@ namespace pxt.editor {
         let checksums: Uint8Array
 
         pxt.tickEvent("hid.flash.start");
-        return initAsync()
+        return Promise.resolve()
+            .then(() => {
+                if (previousDapWrapper) {
+                    previousDapWrapper.flashing = true
+                    return Promise.delay(100)
+                }
+                return Promise.resolve()
+            })
+            .then(initAsync)
             .then(w => {
                 wrap = w
                 log("reset")
@@ -370,6 +415,9 @@ namespace pxt.editor {
                         pxt.tickEvent("hid.flash.done");
                         return wrap.cortexM.reset(false)
                     })
+                    .then(() => {
+                        wrap.flashing = false;
+                    })
             })
             .catch(e => {
                 // TODO: (microbit master)
@@ -433,7 +481,7 @@ namespace pxt.editor {
         const nodes = U.toArray(dom.querySelectorAll("block[type=device_show_leds]"))
             .concat(U.toArray(dom.querySelectorAll("block[type=device_build_image]")))
             .concat(U.toArray(dom.querySelectorAll("block[type=device_build_big_image]")))
-        nodes.forEach(node => {            
+        nodes.forEach(node => {
             // don't rewrite if already upgraded, eg. field LEDS already present
             if (U.toArray(node.children).filter(child => child.tagName == "field" && "LEDS" == child.getAttribute("name"))[0])
                 return;
@@ -529,7 +577,7 @@ namespace pxt.editor {
         pxt.debug('loading microbit target extensions...')
 
         if (!Math.imul)
-            Math.imul = function(a, b) {
+            Math.imul = function (a, b) {
                 const ah = (a >>> 16) & 0xffff;
                 const al = a & 0xffff;
                 const bh = (b >>> 16) & 0xffff;

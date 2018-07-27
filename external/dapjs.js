@@ -2397,7 +2397,7 @@ var CMSISDAP = (function () {
                             case 6 /* DAP_TRANSFER_BLOCK */:
                                 break;
                             default:
-                                if (buf[1] !== 0) {
+                                if (op < 0x80 && buf[1] !== 0) {
                                     throw new Error("Bad status for " + op + " -> " + buf[1]);
                                 }
                         }
