@@ -34,6 +34,7 @@ namespace pxt.editor {
         packetIo: HF2.PacketIO;
         cmsisdap: any;
         flashing = true;
+        private useSerial = true;
 
         constructor(h: HF2.PacketIO) {
             this.packetIo = h;
@@ -68,6 +69,10 @@ namespace pxt.editor {
             }
 
             const readSerial = () => {
+                if (!this.useSerial) {
+                    return
+                }
+
                 if (this.flashing) {
                     setTimeout(readSerial, 300)
                     return
@@ -86,7 +91,7 @@ namespace pxt.editor {
                                 type: 'serial',
                                 id: 'n/a', // TODO
                                 data: str
-                            }, "*")                
+                            }, "*")
                             // console.log("SERIAL: " + str)
                         } else
                             setTimeout(readSerial, 50)
@@ -103,6 +108,7 @@ namespace pxt.editor {
                 return this.packetIo.reconnectAsync()
                     // configure serial at 115200
                     .then(() => this.cmsisdap.cmdNums(0x82, [0x00, 0xC2, 0x01, 0x00]))
+                    .then(() => {}, err => { this.useSerial = false })
                     .then(() => this.cortexM.init())
             else
                 return this.cortexM.init();
