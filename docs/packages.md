@@ -45,7 +45,7 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
 ## STEM
 
 ```codecard
-[{  
+[{
   "name": "micro:turtle",
   "url":"/pkg/microsoft/pxt-microturtle",
   "cardType": "package"
@@ -78,7 +78,7 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
     "url": "pkg/pimoroni/pxt-envirobit",
     "cardType": "package"
 }, {
-    "name": "Makerbit",
+    "name": "MakerBit",
     "url": "pkg/1010Technologies/pxt-makerbit",
     "cardType": "package"
 }]
