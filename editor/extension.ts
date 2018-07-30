@@ -598,20 +598,23 @@ namespace pxt.editor {
         // device_random now refers to randomRange() so we need to add the missing lower bound argument
         U.toArray(dom.querySelectorAll("block[type=device_random]"))
             .forEach(node => {
-                const min = node.querySelector("value[name=min]");
-                if (!min || min.parentElement !== node) {
-                    const v = node.ownerDocument.createElement("value");
-                    const s = node.ownerDocument.createElement("shadow");
-                    const f = node.ownerDocument.createElement("field");
-
-                    v.setAttribute("name", "min");
-                    v.appendChild(s);
-                    s.setAttribute("type", "math_number");
-                    s.appendChild(f);
-                    f.setAttribute("name", "NUM");
-                    f.textContent = "0";
-                    node.appendChild(v);
+                for (let i = 0; i < node.children.length; i++) {
+                    const child = node.children.item(i);
+                    if (child.tagName === "value" && child.getAttribute("name") === "min") {
+                        return;
+                    }
                 }
+                const v = node.ownerDocument.createElement("value");
+                const s = node.ownerDocument.createElement("shadow");
+                const f = node.ownerDocument.createElement("field");
+
+                v.setAttribute("name", "min");
+                v.appendChild(s);
+                s.setAttribute("type", "math_number");
+                s.appendChild(f);
+                f.setAttribute("name", "NUM");
+                f.textContent = "0";
+                node.appendChild(v);
             });
     }
 
