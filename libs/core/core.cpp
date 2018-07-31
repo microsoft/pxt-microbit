@@ -4,9 +4,7 @@
 
 using namespace std;
 
-
 #define p10(v) __builtin_powi(10, v)
-
 
 namespace pxt {
 
@@ -610,7 +608,7 @@ void mycvt(double d, char *buf) {
 
     int sig = 0;
     while (sig < 17 || beforeDot > 0) {
-        //printf("%f sig=%d bd=%d\n", d, sig, beforeDot);
+        // printf("%f sig=%d bd=%d\n", d, sig, beforeDot);
         int c = (int)d;
         *buf++ = '0' + c;
         d = (d - c) * 10;
@@ -626,7 +624,7 @@ void mycvt(double d, char *buf) {
     if (*buf == '.')
         buf--;
     buf++;
-    
+
     if (e != 1) {
         *buf++ = 'e';
         itoa(e, buf);
@@ -634,7 +632,6 @@ void mycvt(double d, char *buf) {
         *buf = 0;
     }
 }
-
 
 //%
 String toString(TValue v) {
@@ -653,6 +650,11 @@ String toString(TValue v) {
         return (String)(void *)incr(v);
     } else if (t == ValType::Number) {
         char buf[64];
+
+        if (isNumber(v)) {
+            itoa(numValue(v), buf);
+            return mkString(buf);
+        }
 
         double x = toDouble(v);
 
