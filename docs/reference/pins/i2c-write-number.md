@@ -25,7 +25,7 @@ This function needs real hardware to work with. It's not supported in the simula
 Send the value `2055` to the 7-bit I2C address as a 32-bit number. The `32`, big-endian, and integer chosen for the format.
 
 ```blocks
-pins.i2cWriteNumber(32, 2055, NumberFormat.Int32BE);
+pins.i2cWriteNumber(32, 2055, NumberFormat.Int32BE, false);
 ```
 
 ## See also
