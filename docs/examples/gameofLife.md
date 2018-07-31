@@ -119,10 +119,10 @@ function gameOfLife() {
                 count++;
             }
 
-            // Toggle live\dead cells based on the count.
+            // Toggle live / dead cells based on the neighbour count.
             // Any live cell with fewer than two live neighbours dies, as if caused by underpopulation.
             // Any live cell with two or three live neighbours lives on to the next generation.
-            // Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction            
+            // Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.
             // Any live cell with more than three live neighbours dies, as if by overpopulation.
             switch (count) {
                 case 0: setState(result, x, y, false); break;
