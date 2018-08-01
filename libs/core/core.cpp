@@ -239,6 +239,9 @@ double mystrtod(const char *p, char **endp) {
         int pw = strtol(p, endp, 10);
         v *= p10(pw);
     }
+    else {
+        *endp = (char *) p;
+    }
 
     return v;
 }
@@ -626,7 +629,7 @@ void mycvt(double d, char *buf) {
     if (*buf == '.')
         buf--;
     buf++;
-    
+
     if (e != 1) {
         *buf++ = 'e';
         itoa(e, buf);
