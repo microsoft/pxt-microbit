@@ -25,7 +25,10 @@ namespace pxt {
 MicroBit uBit;
 MicroBitEvent lastEvent;
 
-void platform_init() {}
+void platform_init() {
+    microbit_seed_random();
+    seedRandom(microbit_random(0x7fffffff));
+}
 
 void platform_init();
 void usb_init();
