@@ -28,7 +28,8 @@
             "emwta/pxt-iBit",
             "vengit/pxt-sbrick",
             "pimoroni/pxt-envirobit",
-            "Annikken/pxt-Andee"
+            "Annikken/pxt-Andee",
+            "1010Technologies/pxt-makerbit"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel"
@@ -60,5 +61,6 @@
         "uk",
         "zh-CN",
         "zh-TW"
-    ]
+    ],
+    "newEditorLink" :  "https://makecode.microbit.org/beta"
 }

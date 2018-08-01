@@ -19,7 +19,7 @@ check how the @boardname@ is moving.
 
 ## Returns
 
-* a [number](/types/number) that means how much the microbit is tilted in the direction you say, from `-180` to `180` degrees
+* a [number](/types/number) that means how much the microbit is tilted in the direction you say; for `Rotation.Pitch` from `-90` to `90` degrees and for `Rotation.Roll` from `-180` to `180` degrees.
 
 ## Example: @boardname@ leveler
 
