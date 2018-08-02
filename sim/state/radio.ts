@@ -24,7 +24,7 @@ namespace pxsim {
             const b = board();
             Runtime.postMessage(<SimulatorRadioPacketMessage>{
                 type: "radiopacket",
-                rssi: 70, // Not yet supported
+                rssi: -42, // -42 is the strongest signal
                 serial: b.radioState.bus.transmitSerialNumber ? pxsim.control.deviceSerialNumber() : 0,
                 time: new Date().getTime(),
                 payload
@@ -149,7 +149,7 @@ namespace pxsim.radio {
 
     export function sendBuffer(buf: RefBuffer): void {
         if (!buf) return;
-        
+
         const data = buf.data.slice(0, 18);
         board().radioState.bus.datagram.send({
             type: PacketPayloadType.STRING,
