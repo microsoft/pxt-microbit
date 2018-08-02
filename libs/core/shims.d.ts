@@ -153,7 +153,8 @@ declare namespace basic {
     //% block="show|string %text"
     //% async
     //% blockId=device_print_message
-    //% parts="ledmatrix" interval.defl=150 shim=basic::showString
+    //% parts="ledmatrix"
+    //% text.shadowOptions.toString=true interval.defl=150 shim=basic::showString
     function showString(text: string, interval?: int32): void;
 
     /**
@@ -791,7 +792,8 @@ declare namespace serial {
      */
     //% help=serial/write-string
     //% weight=87 blockGap=8
-    //% blockId=serial_writestring block="serial|write string %text" shim=serial::writeString
+    //% blockId=serial_writestring block="serial|write string %text"
+    //% text.shadowOptions.toString=true shim=serial::writeString
     function writeString(text: string): void;
 
     /**

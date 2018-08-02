@@ -5,12 +5,13 @@
 //% advanced=true
 namespace serial {
     /**
-     * Print a line of text to the serial port  
+     * Print a line of text to the serial port
      * @param value to send over serial
      */
     //% weight=90
     //% help=serial/write-line blockGap=8
     //% blockId=serial_writeline block="serial|write line %text"
+    //% text.shadowOptions.toString=true
     export function writeLine(text: string): void {
         if (!text) text = "";
         // pad data to the 32 byte boundary
@@ -77,7 +78,7 @@ namespace serial {
     export function delimiters(del: Delimiters): string {
         // even though it might not look like, this is more
         // (memory) efficient than the C++ implementation, because the
-        // strings are statically allocated and take no RAM 
+        // strings are statically allocated and take no RAM
         switch (del) {
             case Delimiters.NewLine: return "\n"
             case Delimiters.Comma: return ","

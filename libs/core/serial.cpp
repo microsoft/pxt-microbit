@@ -103,6 +103,7 @@ namespace serial {
     //% help=serial/write-string
     //% weight=87 blockGap=8
     //% blockId=serial_writestring block="serial|write string %text"
+    //% text.shadowOptions.toString=true
     void writeString(String text) {
       if (!text) return;
 
@@ -129,7 +130,7 @@ namespace serial {
     Buffer readBuffer(int length) {
       if (length <= 0)
         length = MICROBIT_SERIAL_READ_BUFFER_LENGTH;
-        
+
       auto buf = mkBuffer(NULL, length);
       int read = uBit.serial.read(buf->data, buf->length);
       if (read != length) {
@@ -168,7 +169,7 @@ namespace serial {
     * Direct the serial input and output to use the USB connection.
     */
     //% weight=9 help=serial/redirect-to-usb
-    //% blockId=serial_redirect_to_usb block="serial|redirect to USB"    
+    //% blockId=serial_redirect_to_usb block="serial|redirect to USB"
     void redirectToUSB() {
       uBit.serial.redirect(USBTX, USBRX);
       uBit.serial.baud(115200);

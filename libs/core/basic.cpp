@@ -33,6 +33,7 @@ namespace basic {
     //% async
     //% blockId=device_print_message
     //% parts="ledmatrix"
+    //% text.shadowOptions.toString=true
     void showString(String text, int interval = 150) {
       if (interval <= 0)
         interval = 1;

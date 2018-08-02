@@ -105,7 +105,7 @@ namespace radio {
             memcpy(buf + 1, data->data, len);
         }
         return len + 1;
-    }    
+    }
 
     Buffer getBufferValue(uint8_t* buf, uint8_t maxLength) {
         // First byte is the buffer length
@@ -244,6 +244,7 @@ namespace radio {
     //% help=radio/send-string
     //% weight=58
     //% blockId=radio_datagram_send_string block="radio send string %msg"
+    //% msg.shadowOptions.toString=true
     void sendString(String msg) {
         if (radioEnable() != MICROBIT_OK || NULL == msg) return;
 

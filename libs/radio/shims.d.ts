@@ -30,7 +30,8 @@ declare namespace radio {
      */
     //% help=radio/send-string
     //% weight=58
-    //% blockId=radio_datagram_send_string block="radio send string %msg" shim=radio::sendString
+    //% blockId=radio_datagram_send_string block="radio send string %msg"
+    //% msg.shadowOptions.toString=true shim=radio::sendString
     function sendString(msg: string): void;
 
     /**
