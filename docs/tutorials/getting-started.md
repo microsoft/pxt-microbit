@@ -30,7 +30,7 @@ Click ``|Download|`` to save and transfer your code again, then press button **A
 
 Place some blocks to display a smiley when button **B** is pressed.
 
-###   
+###
 
 Use the dropdown to find ``B``!
 
@@ -48,15 +48,15 @@ input.onButtonPressed(Button.B, () => {
 
 ## Step 6
 
-Place the ``||basic:show number||`` and ``||Math:pick random||`` blocks in an ``||input:on shake||`` slot to build a dice.
+Place the ``||basic:show number||`` and ``||Math:pick random||`` blocks in an ``||input:on shake||`` slot to build a dice. A typical dice can show values from 1 to 6, so don't forget to adjust the minimum and maximum values in your code!
 
-###   
+###
 
-When the @boardname@ is shaken, a random number between ``0`` and ``6`` is displayed on the screen.
+When the @boardname@ is shaken, a random number between ``1`` and ``6`` is displayed on the screen.
 
 ```blocks
 input.onGesture(Gesture.Shake, () => {
-    basic.showNumber(Math.randomRange(0, 7))
+    basic.showNumber(Math.randomRange(1, 6))
 })
 ```
 

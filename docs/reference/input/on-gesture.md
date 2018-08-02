@@ -15,12 +15,12 @@ input.onGesture(Gesture.Shake,() => {
 
 ## Example: random number
 
-This program shows a number from `0` to `9` when you shake the @boardname@.
+This program shows a number from `2` to `9` when you shake the @boardname@.
 
 ```blocks
 input.onGesture(Gesture.Shake,() => {
-    let x = Math.randomRange(0, 10)
-    basic.showNumber(x, 100)
+    let x = Math.randomRange(2, 9)
+    basic.showNumber(x)
 })
 ```
 
