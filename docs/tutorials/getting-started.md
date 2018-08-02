@@ -48,7 +48,7 @@ input.onButtonPressed(Button.B, () => {
 
 ## Step 6
 
-Place the ``||basic:show number||`` and ``||Math:pick random||`` blocks in an ``||input:on shake||`` slot to build a dice. A typical dice can show values from 1 to 6, so don't forget to adjust the minimum and maximum values in your code!
+Place the ``||basic:show number||`` and ``||Math:pick random||`` blocks in an ``||input:on shake||`` slot to build a dice. A typical dice can show values from 1 to 6, so don't forget don't forget to choose the right minimum and maximum values!
 
 ###
 
