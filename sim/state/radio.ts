@@ -6,6 +6,11 @@ namespace pxsim {
         time: number;
     }
 
+    // Extends interface in pxt-core
+    export interface SimulatorRadioPacketPayload {
+        bufferData?: Uint8Array;
+    }
+
     export class RadioDatagram {
         datagram: PacketBuffer[] = [];
         lastReceived: PacketBuffer = RadioDatagram.defaultPacket();
@@ -24,7 +29,7 @@ namespace pxsim {
             const b = board();
             Runtime.postMessage(<SimulatorRadioPacketMessage>{
                 type: "radiopacket",
-                rssi: 70, // Not yet supported
+                rssi: -42, // -42 is the strongest signal
                 serial: b.radioState.bus.transmitSerialNumber ? pxsim.control.deviceSerialNumber() : 0,
                 time: new Date().getTime(),
                 payload
@@ -149,13 +154,12 @@ namespace pxsim.radio {
 
     export function sendBuffer(buf: RefBuffer): void {
         if (!buf) return;
-        
+
         const data = buf.data.slice(0, 18);
         board().radioState.bus.datagram.send({
             type: PacketPayloadType.STRING,
             groupId: board().radioState.groupId,
-            // TODO: (microbit master)
-            //bufferData: data
+            bufferData: data
         });
     }
 
@@ -212,10 +216,9 @@ namespace pxsim.radio {
         return initString(board().radioState.bus.datagram.lastReceived.payload.stringData || "");
     }
 
-    // TODO: (microbit master)
-    // export function receivedBuffer(): RefBuffer {
-    //     return new RefBuffer(board().radioState.bus.datagram.lastReceived.payload.bufferData || new Uint8Array(0))
-    // }
+    export function receivedBuffer(): RefBuffer {
+        return new RefBuffer(board().radioState.bus.datagram.lastReceived.payload.bufferData || new Uint8Array(0))
+    }
 
     export function receivedTime(): number {
         return board().radioState.bus.datagram.lastReceived.time;

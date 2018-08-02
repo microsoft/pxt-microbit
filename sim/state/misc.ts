@@ -35,6 +35,10 @@ namespace pxsim.basic {
 namespace pxsim.control {
     export var inBackground = thread.runInBackground;
 
+    export function createBuffer(sz: number) {
+        return pxsim.BufferMethods.createBuffer(sz)
+    }
+
     export function reset() {
         U.userError("reset not implemented in simulator yet")
     }

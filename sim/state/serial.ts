@@ -57,4 +57,8 @@ namespace pxsim.serial {
     export function redirectToUSB() {
         // TODO
     }
+
+    export function readBuffer(length: number) {
+        return pins.createBuffer(length);
+    }
 }
