@@ -689,7 +689,7 @@ TNumber pow(TNumber x, TNumber y) {
 
 //%
 TNumber atan2(TNumber y, TNumber x) {
-    return fromDouble(::atan2(toDouble(y), toDouble(y)));
+    return fromDouble(::atan2(toDouble(y), toDouble(x)));
 }
 
 double randomDouble() {
