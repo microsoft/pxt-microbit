@@ -42,7 +42,7 @@ Fun games to build with your @boardname@.
 },{
   "name": "Flappy bird",
   "url":"/projects/flappy-bird",
-  "imageUrl":"/static/mb/projects/salute.png"
+  "imageUrl":"/static/mb/projects/flappy-bird.png"
 }]
 ```
 
