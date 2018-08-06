@@ -1,8 +1,8 @@
-# Flappy bird 
+# Crashy Bird 
 
 ## ~avatar avatar
 
-All the fun from the Flappy Bird game is coming to the @boardname@
+All the fun from the Flappy Bird game is coming to the @boardname@ as Crashy Bird!
 
 ## ~
 
@@ -264,7 +264,7 @@ basic.forever(() => {
 
 Here are some additional features you can add to the game:
 
-1. Count and show the Flappy Bird game score.
+1. Count and show the Crashy Bird game score.
 2. Make the obstacles move faster every time an obstacle is passed.
 
 ## About the authors
