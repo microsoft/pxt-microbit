@@ -153,7 +153,7 @@
   "basic.showAnimation": "Shows a sequence of LED screens as an animation.",
   "basic.showAnimation|param|interval": "time in milliseconds between each redraw",
   "basic.showAnimation|param|leds": "pattern of LEDs to turn on/off",
-  "basic.showArrow": "Shows an arrow on screent",
+  "basic.showArrow": "Draws an arrow on the LED screen",
   "basic.showArrow|param|direction": "the direction of the arrow",
   "basic.showArrow|param|interval": "the amount of time (milliseconds) to show the icon. Default is 600.",
   "basic.showIcon": "Draws the selected icon on the LED screen",

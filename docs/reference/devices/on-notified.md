@@ -1,4 +1,4 @@
-# On Signal Strength Changed
+# On Notified
 
 Register code to run when the signal strength of the paired device changes.
 
@@ -7,8 +7,6 @@ Register code to run when the signal strength of the paired device changes.
 **App required** You must use one of the [micro:bit apps](https://microbit.org/guide/mobile/) to use this functionality.
 
 ## ~
-
-
 
 ```sig
 devices.onNotified(MesDeviceInfo.IncomingCall, () => {})
