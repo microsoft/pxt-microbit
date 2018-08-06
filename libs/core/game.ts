@@ -537,7 +537,7 @@ namespace game {
          */
         //% parts="ledmatrix"
         public setDirection(degrees: number): void {
-            this._dir = ((degrees / 45) % 8) * 45;
+            this._dir = (Math.floor(degrees / 45) % 8) * 45;
             if (this._dir <= -180) {
                 this._dir = this._dir + 360;
             } else if (this._dir > 180) {
@@ -717,7 +717,6 @@ namespace game {
          * @param this TODO
          */
         public blink(): number {
-            let r: number;
             return this._blink;
         }
 
@@ -728,7 +727,7 @@ namespace game {
             if (ps._brightness > 0) {
                 let r = 0;
                 if (ps._blink > 0) {
-                    r = (now / ps._blink) % 2;
+                    r = Math.floor(now / ps._blink) % 2;
                 }
                 if (r == 0) {
                     _img.setPixelBrightness(ps._x, ps._y, _img.pixelBrightness(ps._x, ps._y) + ps._brightness);
@@ -766,7 +765,7 @@ namespace game {
         }
         // ensure greyscale mode
         const dm = led.displayMode();
-        if (dm != DisplayMode.Greyscale)            
+        if (dm != DisplayMode.Greyscale)
             led.setDisplayMode(DisplayMode.Greyscale);
         // render sprites
         const now = input.runningTime();
