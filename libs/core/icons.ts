@@ -182,6 +182,7 @@ namespace basic {
     //% icon.fieldEditor="imagedropdown"
     //% icon.fieldOptions.columns="5"
     //% icon.fieldOptions.width="380"
+    //% icon.fieldOptions.maxRows=4
     export function showIcon(icon: IconNames, interval = 600) {
         let res = images.iconImage(icon)
         res.showImage(0, interval)
@@ -213,49 +214,49 @@ namespace images {
     export function arrowImage(i: ArrowNames): Image {
         switch (i) {
             // compass directions
-            case ArrowNames.North: return images.createImage(`    
+            case ArrowNames.North: return images.createImage(`
                                         . . # . .
                                         . # # # .
                                         # . # . #
                                         . . # . .
                                         . . # . .`);
-            case ArrowNames.NorthEast: return images.createImage(` 
+            case ArrowNames.NorthEast: return images.createImage(`
                                         . . # # #
                                         . . . # #
                                         . . # . #
                                         . # . . .
                                         # . . . .`);
-            case ArrowNames.East: return images.createImage(` 
+            case ArrowNames.East: return images.createImage(`
                                         . . # . .
                                         . . . # .
                                         # # # # #
                                         . . . # .
                                         . . # . .`);
-            case ArrowNames.SouthEast: return images.createImage(` 
+            case ArrowNames.SouthEast: return images.createImage(`
                                         # . . . .
                                         . # . . .
                                         . . # . #
                                         . . . # #
                                         . . # # #`);
-            case ArrowNames.South: return images.createImage(` 
+            case ArrowNames.South: return images.createImage(`
                                         . . # . .
                                         . . # . .
                                         # . # . #
                                         . # # # .
                                         . . # . .`);
-            case ArrowNames.SouthWest: return images.createImage(` 
+            case ArrowNames.SouthWest: return images.createImage(`
                                         . . . . #
                                         . . . # .
                                         # . # . .
                                         # # . . .
                                         # # # . .`);
-            case ArrowNames.West: return images.createImage(` 
+            case ArrowNames.West: return images.createImage(`
                                         . . # . .
                                         . # . . .
                                         # # # # #
                                         . # . . .
                                         . . # . .`);
-            case ArrowNames.NorthWest: return images.createImage(` 
+            case ArrowNames.NorthWest: return images.createImage(`
                                         # # # . .
                                         # # . . .
                                         # . # . .
@@ -275,7 +276,9 @@ namespace images {
     //% help=images/icon-image
     //% blockId=builtin_image block="icon image %i"
     //% i.fieldEditor="imagedropdown"
-    //% i.fieldOptions.width="400" i.fieldOptions.columns="5"
+    //% i.fieldOptions.columns="5"
+    //% i.fieldOptions.width="380"
+    //% i.fieldOptions.maxRows=4
     export function iconImage(i: IconNames): Image {
         switch (i) {
             case IconNames.Heart: return images.createImage(`
