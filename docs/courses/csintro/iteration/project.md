@@ -35,7 +35,7 @@ This project uses the micro:bit light sensor to display a happy face when it is 
 
 Have students write a reflection of about 150–300 words, addressing the following points:
 * Explain how you decided on your particular "loopy" idea. What brainstorming ideas did you come up with?
-* What type of loop did you use? For, While, or Repeat 
+* What type of loop did you use? For, While, or Repeat
 * What was something that was surprising to you about the process of creating this program?
 * Describe a difficult point in the process of designing this program, and explain how you resolved it.
 * What feedback did your beta testers give you? How did that help you improve your loop demo?
@@ -66,6 +66,7 @@ Have students write a reflection of about 150–300 words, addressing the follow
 **1 =** None of the required elements are used.
 
 ### micro:bit program
+
 **4 =** micro:bit program:<br/>
 `*` Uses loops in a way that is integral to the program<br/>
 `*` Compiles and runs as intended<br/>
@@ -75,6 +76,7 @@ Have students write a reflection of about 150–300 words, addressing the follow
 **1 =** micro:bit program lacks 3 or more of the required elements.
 
 ### Collaboration reflection
+
 **4 =** Reflection piece includes:<br/>
 `*` Brainstorming ideas<br/>
 `*` Construction<br/>

@@ -2,7 +2,7 @@
 
 Teachers want their students to collaborate on projects but they also want to be able to hold them accountable for getting their work done. Many teachers struggle with assessing exactly how much each individual contributed to a group project, as well as making sure that everyone does his or her “fair share”.
 
-The Mini-Project (and the Final Project) are not group projects. Students are asked to propose their own independent project and are expected to get it done. But they are not on their own in this process! We build in frequent opportunities for students to collaborate and share the collective knowledge of the class as they go. We ask them to be “collaboratively independent.”
+The Mini-Project (and the Final Project) are not group projects. Students are asked to propose their own independent project and are expected to get it done. But they are not on their own in this process! We build in frequent opportunities for students to collaborate and share the collective knowledge of the class as they go. We ask them to be “collaboratively independent”.
 
 Here is how we structure our classes: 
 
@@ -12,7 +12,7 @@ For groups of 15 or so, have students each **_briefly_** (no more than 30 second
 * One-line description of project
 * Their progress so far
 * Something they are going to work on figuring out today
-	
+
 It is important that everyone else is listening to each project and volunteering their help or solutions if they are figuring out the same thing or if they have solved that problem in a previous class.
 
 >Example:
@@ -28,9 +28,11 @@ It’s important to hear from everybody but it shouldn’t take more than five o
 ![Quick progress report](/static/courses/csintro/miniproject/quick-progress-report.png)
 
 ## During class
+
 This is a time to circulate and check in with students individually, starting with those students who seem to still be stuck from last time. For the most part, students should be working on their projects in small groups, helping each other wherever and whenever possible.
 
 ## End of class
+
 About ten minutes before the end of class, you can have students do a “work-in-progress” report. Gather the students together and have them move from table to table while each student presents one thing that he or she figured out during the class. This is really an informal presentation, and it is understood that it is not finished at all; it is still a “work in progress.” But everyone needs to show something, and the entire group needs to move as one throughout the classroom, almost like physicians making rounds in a hospital. This is an important way to spread ideas throughout the classroom, and to “cross-pollinate” with helpful tips and techniques.
 
 Work-in-progress reports should be short, no more than twenty or thirty seconds. If you have a large class, you might divide the class into several large groups and have them present to each other. 

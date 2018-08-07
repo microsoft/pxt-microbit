@@ -4,11 +4,11 @@ Computer programs process information.  Some of the information that is input, s
 
 Ask the students to think of some pieces of information in their daily life that are **constants** and others that are **variables**.
 
-* What pieces of information have values that don’t change during the course of a single day (constants)? 
-* What pieces of information have values that do change during the course of a single day (variables)
+* What pieces of information have values that don’t change during the course of a single day (constants)?
+* What pieces of information have values that do change during the course of a single day (variables)?
 Constants and variables can be numbers and/or text.
 
-## Examples 
+## Examples
 
 In one school day...
 

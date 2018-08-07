@@ -3,6 +3,7 @@
 Use what you now know about LEDs, coordinates, and brightness to create your own project: a screensaver, or a game. You should find a way to use coordinates in your program. Even better, use variables to store and update your coordinates.
 
 ## Screensavers
+
 One type of project is a screensaver. A long time ago, computers and televisions used cathode ray tube (CRT)screens for displays. The glass screen of the display was coated on the back with phosphor, a substance that glows when painted with electrons from an electron gun at the other end of the tube. When the same area of the screen was painted (excited) over and over again by the stream of electrons, that part of the screen would sometimes "freeze" with the same image, burned into the phosphor for good. This was called "burn-in".
 
 Normally, if a show was running, or if someone was actively using the computer, the display changed often enough that burn-in wasn’t a problem. Programmers learned to create a demo screen with an animation that would run whenever the screen was idle. Today, nearly all computers and television sets use LCD displays, which are not affected by burn-in. But you can still find a screen saver in nearly every computer's Settings panel, as an opportunity to show off some neat graphics or animation.
@@ -209,7 +210,7 @@ Have students write a reflection of about 150–300 words, addressing the follow
 * Describe something in your project that you are proud of.
 * Describe a difficult point in the process of designing this program, and explain how you resolved it.
 * What feedback did your beta testers give you? How did that help you improve your design?
- 
+
 ## Assessment
 
 **Competency scores**: 4, 3, 2, 1

@@ -2,10 +2,10 @@
 
 ![Board game example](/static/courses/csintro/conditionals/cover.jpg)
 
-This lesson introduces the Logic blocks such as 'If...then' and 'If...then...else'.
-Students practice skills of creativity, problem-solving, and collaboration.
+This lesson introduces the Logic blocks such as 'If...then' and 'If...then...else'. Students practice skills of creativity, problem-solving, and collaboration.
 
 ## Lesson objectives
+
 Students will...
 
 * Understand what conditional statements are, and why and when to use them in a program.

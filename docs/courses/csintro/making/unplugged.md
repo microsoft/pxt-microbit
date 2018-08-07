@@ -2,7 +2,7 @@
 
 ![Design thinking](/static/courses/csintro/making/design-thinking.png)
 
-**Objective:** To introduce a process of design that starts with talking to one another. Whatever you build with code should serve a purpose or fill a need. Sometimes what you build will make the world more beautiful, or help somebody else. Our design process, based on a process called design thinking, can give students a specific framework for thinking purposefully about design. 
+**Objective:** To introduce a process of design that starts with talking to one another. Whatever you build with code should serve a purpose or fill a need. Sometimes what you build will make the world more beautiful, or help somebody else. Our design process, based on a process called design thinking, can give students a specific framework for thinking purposefully about design.
 
 **Overview:** In this activity, students will interview each other about their ideal pet. They should take notes.
 The first step in coding by design involves understanding someone else’s need. Then, you can create prototypes that get you closer and closer to the best solution.
@@ -18,7 +18,7 @@ Pair students up with each other. One is Student A, the other is Student B. The 
 * What do you like about your pet? What do you dislike?
 * Is there anything you wish your pet could do? Why?
 * Tell me about your ideal pet.
-	
+
 **5 minutes:** Student B interviews Student A, as above.
 
 The goal is to find out more about your partner by asking questions. Try to ask “Why?” as much as possible. Your partner will tell you about his or her ideal pet, but you are really finding out more about your partner’s likes and dislikes. When we design, we create real things for real people. So we need to start with understanding them first.

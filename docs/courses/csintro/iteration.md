@@ -11,7 +11,7 @@ Students will...
 * Understand looping as a form of iteration
 * Learn how and when to use the Looping blocks ‘repeat’, ‘while’, and ‘for’
 * Apply the above knowledge and skills to create a unique program that uses iteration and looping as an integral part of the program
-	
+
 ## Lesson structure
 
 * Introduction: Lather. Rinse. Repeat.

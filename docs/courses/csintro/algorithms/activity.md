@@ -5,6 +5,7 @@ The micro:bit itself is considered hardware.  It is a physical piece of technolo
 In this activity, we will discover how to use the micro:bit buttons as input devices, and write code that will make something happen on the screen as output. We will also learn about pseudocode, the MakeCode tool, event handlers, and commenting code.
 
 ## Pseudocode
+
 What do you want your program to do?
 The first step in writing a computer program is to create a plan for what you want your program to do. Write out a detailed step-by-step plan for your program. Your plan should include what type of information your program will receive, how this input will be processed, what output your program will create and how the output will be recorded or presented. Your writing does not need to be written in complete sentences, nor include actual code. This kind of detailed writing is known as pseudocode. Pseudocode is like a detailed outline or rough draft of your program. Pseudocode is a mix of natural language and code.
 
@@ -14,9 +15,11 @@ For the program we will write, the pseudocode might look like this:
 * Whenever the user presses button B, display a sad face.
 	
 ## Microsoft MakeCode
+
 Now that you have a plan for your program, in the form of pseudocode, let's start creating the real program.  In a browser window, open the Microsoft MakeCode for micro:bit tool (https://makecode.microbit.org). The MakeCode tool is called an IDE (Integrated Development Environment), and is a software application that contains everything a programmer needs to create, compile, run, test, and even debug a program.
 
 ## Tour of Microsoft MakeCode
+
 * Simulator - on the left side of the screen, you will see a virtual micro:bit that will show what your program will look like running on a micro:bit. This is helpful for debugging, and instant feedback on program execution.
 * Toolbox - in the middle of the screen, there are a number of different categories, each containing a number of blocks that can be dragged into the programming workspace on the right. 
 * Workspace - on the right side of the screen is the Programming Workspace where you will create your program.  Programs are constructed by snapping blocks together in this area.
@@ -24,6 +27,7 @@ Now that you have a plan for your program, in the form of pseudocode, let's star
 ![IDE tour](/static/courses/csintro/algorithms/ide-tour.png)
 
 ## Event handlers
+
 When you start a new project, there will be two blue blocks, ‘on start’ and ‘forever’ already in the coding workspace. These two blocks are event handlers.
 
 In programming, an event is an action done by the user, such as pressing a key or clicking a mouse button.  An event handler is a routine that responds to an event.  A programmer can write code telling the computer what to do when an event occurs.
@@ -75,6 +79,7 @@ On the bottom left of the application window, to the right of the Download butto
 Important: Whenever you write a significant piece of code or just every few minutes, you should save your code. Giving your code a meaningful name will help you find it faster from a list of programs and will let others know what your program does.
 
 ## More event handlers
+
 Now to make our program a bit more interesting by adding two more event handlers.
 
 * From the Input menu, drag two ‘on button A pressed’ blocks to the coding window.
@@ -94,6 +99,7 @@ input.onButtonPressed(Button.B, () => {
 ```
 
 ## Show LEDs
+
 Now we can use our LED lights to display different images depending on what button the user presses.
 * From the Basic menu, drag two ‘show leds’ blocks to the coding workspace
 * Place one ‘show leds’ block into the ‘on button A pressed’ event handler and the second ‘show leds’ block into the ‘on button B pressed’ event handler.
@@ -142,6 +148,7 @@ input.onButtonPressed(Button.B, () => {
 ```
 
 ## Test your program!
+
 Remember, MakeCode automatically compiles and runs your program, so all you need to do now is press button A and then button B in the simulator to see the output produced by your code. 
 
 * Feel free to play around with turning LEDs on or off in the ‘show leds’ blocks until you get the images you want. 
@@ -169,6 +176,7 @@ basic.forever(() => {
 ```
 
 ## Commenting your code
+
 It is good practice to add comments to your code. Comments can be useful in a number of ways. Comments can help you remember what a certain block of code does and/or why you chose to program something the way you did. Comments also help others reading your code to understand these same things.
 
 To comment a block of code:
@@ -193,6 +201,7 @@ Notes
 ```typescript
 // Display a happy face when button A is pressed.
 ```
+
 ## Cleaning up!
 
 Clean up your coding workspace before you do a final save! What does this mean?
@@ -201,6 +210,7 @@ Clean up your coding workspace before you do a final save! What does this mean?
 * Remove (delete) any other blocks that you may have dragged into the coding workspace as you were experimenting and building your program.
 	
 ## Save and download
+
 Now that your code is running just fine in the simulator, is commented, and your coding window is ‘clean’, save your program, download it to your micro:bit, and enjoy!
 
 Here is the complete program:
