@@ -247,14 +247,15 @@ namespace pxsim.basic {
         if (s.length == 0) {
             clearScreen();
             pause(interval * 5);
+        } else if (s.length > 1) {
+            ImageMethods.scrollImage(createImageFromString(s + " "), 1, interval);
         } else {
-            if (s.length == 1) showLeds(createImageFromString(s), 0);
-            else ImageMethods.scrollImage(createImageFromString(s + " "), 1, interval);
+            showLeds(createImageFromString(s), interval * 5);
         }
     }
 
-    export function showLeds(leds: Image, delay: number): void {
-        showAnimation(leds, delay);
+    export function showLeds(leds: Image, interval: number): void {
+        showAnimation(leds, interval);
     }
 
     export function clearScreen() {
@@ -281,7 +282,7 @@ namespace pxsim.led {
         const state = board().ledMatrixState;
         brightness = Math.max(0, Math.min(0xff, brightness));
         if (brightness != 0 && brightness != 0xff && state.displayMode != DisplayMode.greyscale)
-                state.displayMode = DisplayMode.greyscale;
+            state.displayMode = DisplayMode.greyscale;
         state.image.set(x, y, brightness);
         runtime.queueDisplayUpdate()
     }
