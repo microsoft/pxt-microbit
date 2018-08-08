@@ -44,8 +44,7 @@ namespace basic {
       } else if (l > 1) {
         uBit.display.scroll(MSTR(text), interval);
       } else {
-        uBit.display.print(text->data[0], interval * 5);
-        fiber_sleep(interval * 5); // TODO remove when display.print() honors the interval arg
+        uBit.display.printChar(text->data[0], interval * 5);
       }
     }
 
