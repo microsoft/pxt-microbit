@@ -45,6 +45,7 @@ namespace basic {
         uBit.display.scroll(MSTR(text), interval);
       } else {
         uBit.display.print(text->data[0], interval * 5);
+        fiber_sleep(interval * 5); // TODO remove when display.print() honors the interval arg
       }
     }
 
