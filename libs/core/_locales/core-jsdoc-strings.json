@@ -380,7 +380,7 @@
   "music.changeTempoBy": "Change the tempo by the specified amount",
   "music.changeTempoBy|param|bpm": "The change in beats per minute to the tempo, eg: 20",
   "music.noteFrequency": "Gets the frequency of a note.",
-  "music.noteFrequency|param|name": "the note name, eg: Note.C",
+  "music.noteFrequency|param|name": "the note name",
   "music.onEvent": "Registers code to run on various melody events",
   "music.playTone": "Plays a tone through pin ``P0`` for the given duration.",
   "music.playTone|param|frequency": "pitch of the tone to play in Hertz (Hz), eg: Note.C",

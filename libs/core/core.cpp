@@ -741,6 +741,48 @@ TNumber log(TNumber x){SINGLE(log)}
 TNumber log10(TNumber x){SINGLE(log10)}
 
 //%
+TNumber log2(TNumber x){SINGLE(log2)}
+
+//%
+TNumber exp(TNumber x){SINGLE(exp)}
+
+//%
+TNumber tan(TNumber x){SINGLE(tan)}
+
+//%
+TNumber tanh(TNumber x){SINGLE(tanh)}
+
+//%
+TNumber sin(TNumber x){SINGLE(sin)}
+
+//%
+TNumber sinh(TNumber x){SINGLE(sinh)}
+
+//%
+TNumber cos(TNumber x){SINGLE(cos)}
+
+//%
+TNumber cosh(TNumber x){SINGLE(cosh)}
+
+//%
+TNumber atan(TNumber x){SINGLE(atan)}
+
+//%
+TNumber atanh(TNumber x){SINGLE(atanh)}
+
+//%
+TNumber asin(TNumber x){SINGLE(asin)}
+
+//%
+TNumber asinh(TNumber x){SINGLE(asinh)}
+
+//%
+TNumber acos(TNumber x){SINGLE(acos)}
+
+//%
+TNumber acosh(TNumber x){SINGLE(acosh)}
+
+//%
 TNumber sqrt(TNumber x){SINGLE(sqrt)}
 
 //%

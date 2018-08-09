@@ -302,7 +302,7 @@
   "music.beginMelody|block": "start melody %melody=device_builtin_melody| repeating %options",
   "music.builtInMelody|block": "%melody",
   "music.changeTempoBy|block": "change tempo by (bpm)|%value",
-  "music.noteFrequency|block": "%note",
+  "music.noteFrequency|block": "%name",
   "music.onEvent|block": "music on %value",
   "music.playTone|block": "play|tone %note=device_note|for %duration=device_beat",
   "music.rest|block": "rest(ms)|%duration=device_beat",
