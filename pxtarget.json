@@ -400,6 +400,7 @@
         ],
         "monacoColors": {
             "editor.background": "#ecf0f1"
-        }
+        },
+        "allowPackageExtensions": true
     }
 }
