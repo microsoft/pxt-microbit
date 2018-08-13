@@ -29,7 +29,8 @@
             "vengit/pxt-sbrick",
             "pimoroni/pxt-envirobit",
             "Annikken/pxt-Andee",
-            "1010Technologies/pxt-makerbit"
+            "1010Technologies/pxt-makerbit",
+            "pimoroni/automationbit"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel"

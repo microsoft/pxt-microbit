@@ -163,7 +163,11 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
   "name": "SBRICK",
   "url":"/pkg/vengit/pxt-sbrick",
   "cardType": "package"
-  }, {
+}, {
+  "name": "Pimoroni Automationbit",
+  "url":"/pkg/pimoroni/pxt-automationbit",
+  "cardType": "package"
+}, {
   "name": "Annikken Andee",
   "url":"/pkg/Annikken/pxt-Andee",
   "cardType": "package"
