@@ -16,11 +16,7 @@ basic.showLeds(`
 
 ## Step 2
 
-Click ``|Download|`` to transfer your code in your @boardname@!
-
-## Step 3
-
-Place another ``||basic:show leds||`` block under the heart to make it blink.
+Place another ``||basic:show leds||`` block under the heart to make it blink. Check in the simulator to see the blinking heart.
 
 ```blocks
 basic.showLeds(`
@@ -37,7 +33,7 @@ basic.showLeds(`
     . . # . .`);
 ```
 
-## Step 4
+## Step 3
 
 Move the blocks inside the ``||basic:forever||`` to repeat the animation.
 
@@ -59,11 +55,7 @@ basic.forever(() => {
 })
 ```
 
-## Step 5
-
-Click ``|Download|`` to transfer your code in your @boardname@ and watch the hearts flash!
-
-## Step 6
+## Step 4
 
 Place more ``||basic:show leds||`` blocks to create your own animation.
 
@@ -91,6 +83,6 @@ basic.forever(() => {
 })
 ```
 
-## Step 7
+## Step 5
 
-Click ``|Download|`` to transfer your code in your @boardname@!
+If you have a @boardname@ connected, click ``|Download|`` to transfer your code and watch the hearts flash!

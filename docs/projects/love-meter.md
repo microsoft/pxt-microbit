@@ -10,9 +10,10 @@ Let's build a **LOVE METER** machine. Place a ``||input:on pin pressed||`` block
 input.onPinPressed(TouchPin.P0, () => {
 });
 ```
+
 ## Step 2
 
-Using ``||basic:show number||`` and ``||Math:pick random||`` blocks, show a random number from 0 to 100 when pin ``P0`` is pressed.
+Using ``||basic:show number||`` and ``||Math:pick random||`` blocks, show a random number from 0 to 100 when pin ``P0`` is pressed. Click on pin **0** in the simulator and see which number is chosen.
 
 ```blocks
 input.onPinPressed(TouchPin.P0, () => {
@@ -33,4 +34,4 @@ input.onPinPressed(TouchPin.P0, () => {
 
 ## Step 4
 
-Click ``|Download|`` to transfer your code in your @boardname@. Hold the ``GND`` pin with other hand and press pin ``P0`` with the other hand to trigger this code.
+Click ``|Download|`` to transfer your code in your @boardname@. Hold the **GND** pin with other hand and press pin **0** with the other hand to trigger this code.

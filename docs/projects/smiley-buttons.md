@@ -11,7 +11,7 @@ input.onButtonPressed(Button.A, () => {
 
 ## Step 2
 
-Place a ``||basic:show leds||`` block inside ``||input:on button pressed||`` to display a smiley on the screen.
+Place a ``||basic:show leds||`` block inside ``||input:on button pressed||`` to display a smiley on the screen. Press the **A** button in the simulator to see the smiley.
 
 ```blocks
 input.onButtonPressed(Button.A, () => { 
@@ -27,10 +27,6 @@ input.onButtonPressed(Button.A, () => {
 
 ## Step 3
 
-Click ``|Download|`` to transfer your code in your @boardname@ and try pressing button **A**.
-
-## Step 4
-
 Add ``||input:on button pressed||`` and ``||basic:show leds||`` blocks to display a frowney when button **B** is pressed.
 
 ```blocks
@@ -45,13 +41,9 @@ input.onButtonPressed(Button.B, () => {
 });
 ```
 
-## Step 5
+## Step 4
 
-Click ``|Download|`` to transfer your code in your @boardname@ and try pressing button A or B.
-
-## Step 6
-
-Add a secret mode where ``A`` and ``B`` are pressed together. In that case, add multiple ``||basic:show leds||`` blocks to create an animation...
+Add a secret mode that happens when **A** and **B** are pressed together. In that case, add multiple ``||basic:show leds||`` blocks to create an animation...
 
 ```blocks
 input.onButtonPressed(Button.AB, () => {
@@ -72,8 +64,15 @@ input.onButtonPressed(Button.AB, () => {
 })
 ```
 
+## Step 5
+
+If you have a @boardname@, connect it to USB and click ``|Download|`` to transfer your code. Press button **A** on your @boardname@. Try button **B** and then **A** and **B** together.
+
+## Step 6
+
+Click ``|Download|`` to transfer your code in your @boardname@ and try pressing button A or B.
+
 ## Step 7
 
-Click ``|Download|`` to transfer your code in your @boardname@ 
-and show it off to your friends!
+Nice! Now go and show it off to your friends!
 

@@ -4,7 +4,7 @@ Let's create a coin flipping program to simulate a real coin toss. We'll use ico
 
 ## Step 1
 
-Get an ``||input:on button A pressed||`` block from the ``||input:Input||`` drawer in the toolbox. The coin flip code we add will run when button **A** is pressed.
+Get an ``||input:on button A pressed||`` block from the ``||input:Input||`` drawer in the toolbox. The coin flip code we add later will run when button **A** is pressed.
 
 ```blocks
 input.onButtonPressed(Button.A, () => {
@@ -27,7 +27,7 @@ input.onButtonPressed(Button.A, () => {
 
 ## Step 3
 
-Now, put a ``||basic:show icon||`` block inside both the ``||logic:if||`` and the ``||logic:else||``. Pick images to mean ``heads`` and ``tails``.
+Now, put a ``||basic:show icon||`` block inside both the ``||logic:if||`` and the ``||logic:else||``. Pick images to mean ``heads`` and ``tails``. Press button **A** in the simulator to try our coin toss code.
 
 ```blocks
 input.onButtonPressed(Button.A, () => {
@@ -38,10 +38,6 @@ input.onButtonPressed(Button.A, () => {
     }
 })
 ```
-
-## Step 4
-
-Click ``|Download|`` to transfer your code into your @boardname@. Press button **A** to "toss a coin" and see the result.
 
 ## Step 5
 
@@ -63,4 +59,4 @@ input.onButtonPressed(Button.A, () => {
 
 ## Step 6
 
-Click ``|Download|`` to transfer your code to your @boardname@ again and press button **A** for a flip. Test your luck and guess ``heads`` or ``tails`` before the toss is over!
+If your have a @boardname@, connect it to USB and click ``|Download|`` to transfer your code. Press button **A** for a flip. Test your luck and guess ``heads`` or ``tails`` before the toss is over!
