@@ -30,7 +30,8 @@
             "pimoroni/pxt-envirobit",
             "Annikken/pxt-Andee",
             "1010Technologies/pxt-makerbit",
-            "pimoroni/automationbit"
+            "pimoroni/automationbit",
+            "k8robotics/pxt-k8"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel"

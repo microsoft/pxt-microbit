@@ -31,6 +31,10 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
   "name": "inex iBit",
   "url":"/pkg/emwta/pxt-iBit",
   "cardType": "package"
+}, {
+  "name": "k8 robotics kit",
+  "url":"/pkg/k8robotics/pxt-k8",
+  "cardType": "package"
 }]
 ```
 ## Gaming
