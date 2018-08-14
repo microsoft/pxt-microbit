@@ -158,7 +158,7 @@ enum class MesDpadButtonInfo {
     _4Up = MES_DPAD_BUTTON_4_UP,
 };
 
-//% color=#B4009E weight=99 icon="\uf192"
+//% color=#B4009E weight=111 icon="\uf192"
 namespace input {
     /**
      * Do something when a button (A, B or both A+B) is pushed down and released again.
@@ -372,8 +372,8 @@ namespace input {
      */
     //% help=input/calibrate-compass advanced=true
     //% blockId="input_compass_calibrate" block="calibrate compass"
-    void calibrateCompass() { 
-        uBit.compass.calibrate();        
+    void calibrateCompass() {
+        uBit.compass.calibrate();
     }
 
     /**

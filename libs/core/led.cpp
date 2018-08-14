@@ -8,7 +8,7 @@ enum class DisplayMode_ {
     // TODO DISPLAY_MODE_BLACK_AND_WHITE_LIGHT_SENSE
 };
 
-//% color=#5C2D91 weight=97 icon="\uf205"
+//% color=#5C2D91 weight=101 icon="\uf205"
 namespace led {
 
     /**

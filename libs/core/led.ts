@@ -1,7 +1,7 @@
 /**
  * Control of the LED screen.
  */
-//% color=#5C2D91 weight=97 icon="\uf205"
+//% color=#5C2D91 weight=101 icon="\uf205"
     namespace led {
 
     // what's the current high value
@@ -31,9 +31,9 @@
             barGraphHighLast = now;
         }
 
-        // normalize lack of data to 0..1 
+        // normalize lack of data to 0..1
         if (barGraphHigh < 16 * Number.EPSILON)
-            barGraphHigh = 1;        
+            barGraphHigh = 1;
 
         // normalize value to 0..1
         const v = value / barGraphHigh;

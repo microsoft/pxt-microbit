@@ -4,7 +4,7 @@
 /**
  * Provides access to basic micro:bit functionality.
  */
-//% color=#0078D7 weight=100 icon="\uf00a"
+//% color=#0078D7 weight=116 icon="\uf00a"
 namespace basic {
 
     /**
