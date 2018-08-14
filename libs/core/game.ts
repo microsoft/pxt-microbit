@@ -687,7 +687,7 @@ namespace game {
          * @param this sprite to delete
          */
         //% weight=59 help=game/delete
-        //% blockId="game_delete_sprite" block="delete %this"
+        //% blockId="game_delete_sprite" block="delete %this(sprite)"
         public delete(): void {
             this._enabled = false;
             if (_sprites.removeElement(this))

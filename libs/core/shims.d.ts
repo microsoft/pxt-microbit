@@ -39,7 +39,7 @@ declare interface Image {
      * @param xOffset column index to start displaying the image
      */
     //% help=images/show-image weight=80 blockNamespace=images
-    //% blockId=device_show_image_offset block="show image %sprite|at offset %offset" blockGap=8
+    //% blockId=device_show_image_offset block="show image %sprite(myImage)|at offset %offset" blockGap=8
     //% parts="ledmatrix" async interval.defl=400 shim=ImageMethods::showImage
     showImage(xOffset: int32, interval?: int32): void;
 
@@ -58,7 +58,7 @@ declare interface Image {
      */
     //% help=images/scroll-image weight=79 async blockNamespace=images
     //% blockId=device_scroll_image
-    //% block="scroll image %sprite|with offset %frameoffset|and interval (ms) %delay"
+    //% block="scroll image %sprite(myImage)|with offset %frameoffset|and interval (ms) %delay"
     //% blockGap=8 parts="ledmatrix" shim=ImageMethods::scrollImage
     scrollImage(frameOffset: int32, interval: int32): void;
 

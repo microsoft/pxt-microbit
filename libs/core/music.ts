@@ -308,7 +308,7 @@ namespace music {
     /**
      * Starts playing a melody.
      * Notes are expressed as a string of characters with this format: NOTE[octave][:duration]
-     * @param melodyArray the melody array to play, eg: Melodies.Dadadadum
+     * @param melodyArray the melody array to play
      * @param options melody options, once / forever, in the foreground / background
      */
     //% help=music/begin-melody weight=60 blockGap=8

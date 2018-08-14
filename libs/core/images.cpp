@@ -64,7 +64,7 @@ void plotImage(Image i, int xOffset = 0) {
  * @param xOffset column index to start displaying the image
  */
 //% help=images/show-image weight=80 blockNamespace=images
-//% blockId=device_show_image_offset block="show image %sprite|at offset %offset" blockGap=8
+//% blockId=device_show_image_offset block="show image %sprite(myImage)|at offset %offset" blockGap=8
 //% parts="ledmatrix" async
 void showImage(Image sprite, int xOffset, int interval = 400) {
     uBit.display.print(MicroBitImage(sprite->img), -xOffset, 0, 0, interval);
@@ -88,7 +88,7 @@ void plotFrame(Image i, int xOffset) {
  */
 //% help=images/scroll-image weight=79 async blockNamespace=images
 //% blockId=device_scroll_image
-//% block="scroll image %sprite|with offset %frameoffset|and interval (ms) %delay"
+//% block="scroll image %sprite(myImage)|with offset %frameoffset|and interval (ms) %delay"
 //% blockGap=8 parts="ledmatrix"
 void scrollImage(Image id, int frameOffset, int interval) {
     MicroBitImage i(id->img);
