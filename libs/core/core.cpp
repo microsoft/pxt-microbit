@@ -750,6 +750,15 @@ TNumber sin(TNumber x){SINGLE(sin)}
 TNumber cos(TNumber x){SINGLE(cos)}
 
 //%
+TNumber atan(TNumber x){SINGLE(atan)}
+
+//%
+TNumber asin(TNumber x){SINGLE(asin)}
+
+//%
+TNumber acos(TNumber x){SINGLE(acos)}
+
+//%
 TNumber sqrt(TNumber x){SINGLE(sqrt)}
 
 //%
