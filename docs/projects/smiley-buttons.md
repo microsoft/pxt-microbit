@@ -70,9 +70,5 @@ If you have a @boardname@, connect it to USB and click ``|Download|`` to transfe
 
 ## Step 6
 
-Click ``|Download|`` to transfer your code in your @boardname@ and try pressing button A or B.
-
-## Step 7
-
 Nice! Now go and show it off to your friends!
 

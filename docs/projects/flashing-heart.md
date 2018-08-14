@@ -16,7 +16,7 @@ basic.showLeds(`
 
 ## Step 2
 
-Place another ``||basic:show leds||`` block under the heart to make it blink. Check in the simulator to see the blinking heart.
+Place another ``||basic:show leds||`` block under the heart to make it blink. Check in the simulator to see the heart blink.
 
 ```blocks
 basic.showLeds(`

@@ -10,7 +10,7 @@ basic.showString("Micro!")
 
 ## Step 2
 
-Well, the text stopped. Place the ``||basic:show string||`` block in the ``||input:on button pressed||`` slot to scroll your name when button **A** is pressed.
+Well, the text stopped scrolling. Place the ``||basic:show string||`` block in the ``||input:on button pressed||`` slot to scroll your name when button **A** is pressed.
 
 ```blocks
 input.onButtonPressed(Button.A, () => {
@@ -38,9 +38,17 @@ input.onButtonPressed(Button.B, () => {
 
 ## Step 4
 
-Place the ``||basic:show number||`` and ``||Math:pick random||`` blocks in an ``||input:on shake||`` slot to build a dice. A typical dice can show values from 1 to 6, so don't forget to choose the right minimum and maximum values!
+Place the ``||basic:show number||`` and ``||Math:pick random||`` blocks in an ``||input:on shake||`` block to build a dice.
 
-When the @boardname@ is shaken, a random number between ``1`` and ``6`` is displayed on the screen.
+```blocks
+input.onGesture(Gesture.Shake, () => {
+    basic.showNumber(Math.randomRange(0, 10))
+})
+```
+
+## Step 5
+
+A typical dice shows values from `1` to `6`. So, in ``||Math:pick random||``, don't forget to choose the right minimum and maximum values!
 
 ```blocks
 input.onGesture(Gesture.Shake, () => {
@@ -48,14 +56,14 @@ input.onGesture(Gesture.Shake, () => {
 })
 ```
 
-## Step 5
+## Step 6
 
 If you have a @boardname@, connect a USB cable it and click ``|Download|``. Save the program to the **@drivename@** drive. This transfers your code to the @boardname@!
 
-## Step 6
+## Step 7
 
 On the @boardname@, press button **A** to scroll your text. Press button **B** to show a smiley. Shake the @boardname@ and see which number is chosen.
 
-## Step 7
+## Step 8
 
 Well done! You've completed your first Microsoft MakeCode activity.
