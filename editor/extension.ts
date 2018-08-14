@@ -425,7 +425,29 @@ namespace pxt.editor {
         }])
 
         if (canHID())
-            pxt.commands.deployCoreAsync = deployCoreAsync;
+            pxt.commands.deployCoreAsync = (r: pxtc.CompileResult, d: pxt.commands.DeployOptions): Promise<void> => {
+                return deployCoreAsync(r)
+                    .timeout(18000)
+                    .catch((e) => {
+                        return previousDapWrapper.reconnectAsync(true)
+                            .catch((e) => {
+                                // Best effort disconnect; at this point we don't even know the state of the device
+                                pxt.reportException(e);
+                            })
+                            .then(() => {
+                                return r.confirmAsync({
+                                    header: pxtc.Util.lf("Something went wrong..."),
+                                    body: pxtc.Util.lf("Flashing your {0} took too long. Please disconnect your {0} from your computer and try reconnecting it.", pxt.appTarget.appTheme.boardName || pxtc.Util.lf("device")),
+                                    disagreeLbl: pxtc.Util.lf("Ok"),
+                                    hideAgree: true
+                                });
+                            })
+                            .then(() => {
+                                return pxt.commands.saveOnlyAsync(r);
+                            });
+                    });
+            }
+
         return Promise.resolve<pxt.editor.ExtensionResult>(res);
     }
 
