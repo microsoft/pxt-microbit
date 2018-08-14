@@ -4,7 +4,7 @@ Let's create a coin flipping program to simulate a real coin toss. We'll use ico
 
 ## Step 1
 
-Get an ``||input:on button A pressed||`` block from the ``||input:Input||`` drawer in the toolbox. We'll our coin flipping code in here.
+Get an ``||input:on button A pressed||`` block from the ``||input:Input||`` drawer in the toolbox. We'll put our coin flipping code in here.
 
 ```blocks
 input.onButtonPressed(Button.A, () => {
