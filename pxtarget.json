@@ -110,7 +110,6 @@
         "streams": false,
         "aspectRatio": 1.22,
         "parts": true,
-        "instructions": true,
         "partsAspectRatio": 0.69,
         "boardDefinition": {
             "visual": "microbit",
