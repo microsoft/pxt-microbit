@@ -58,7 +58,7 @@ input.onGesture(Gesture.Shake, () => {
 
 ## Step 6
 
-If you have a @boardname@, connect a USB cable it and click ``|Download|``. Save the program to the **@drivename@** drive. This transfers your code to the @boardname@!
+If you have a @boardname@, connect a USB cable to it and click ``|Download|``. Save the program to the **@drivename@** drive. This transfers your code to the @boardname@!
 
 ## Step 7
 
