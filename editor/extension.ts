@@ -71,7 +71,7 @@ namespace pxt.editor {
                                 id: 'n/a', // TODO
                                 data: str
                             }, "*")
-                            console.log("SERIAL: " + str)
+                            // console.log("SERIAL: " + str)
                         } else
                             setTimeout(readSerial, 50)
                     }, (err: any) => {
