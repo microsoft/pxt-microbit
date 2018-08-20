@@ -34,41 +34,18 @@ namespace pxt.editor {
         packetIo: HF2.PacketIO;
         cmsisdap: any;
         flashing = true;
+        pbuf = new U.PromiseBuffer<Uint8Array>();
         private useSerial = true;
 
         constructor(h: HF2.PacketIO) {
             this.packetIo = h;
-            let pbuf = new U.PromiseBuffer<Uint8Array>();
-
-            /*
-            let sendMany = (cmds: Uint8Array[]) => {
-                return h.talksAsync(cmds.map(c => ({ cmd: 0, data: c })));
-            }
-
-            if (!h.talksAsync)
-                sendMany = null;
-            */
-
-            let dev = new DapJS.DAP({
-                write: writeAsync,
-                close: this.disconnectAsync,
-                read: readAsync,
-                //sendMany: sendMany
-            });
-            this.cmsisdap = (dev as any).dap;
-            this.cortexM = new DapJS.CortexM(dev);
 
             h.onData = buf => {
-                pbuf.push(buf);
+                // console.log("RD: " + pxt.Util.toHex(buf))
+                this.pbuf.push(buf);
             }
 
-            function writeAsync(data: ArrayBuffer) {
-                return h.sendPacketAsync(new Uint8Array(data));
-            }
-
-            function readAsync() {
-                return pbuf.shiftAsync();
-            }
+            this.allocDAP()
 
             const readSerial = () => {
                 if (!this.useSerial) {
@@ -94,7 +71,7 @@ namespace pxt.editor {
                                 id: 'n/a', // TODO
                                 data: str
                             }, "*")
-                            // console.log("SERIAL: " + str)
+                            console.log("SERIAL: " + str)
                         } else
                             setTimeout(readSerial, 50)
                     }, (err: any) => {
@@ -105,15 +82,50 @@ namespace pxt.editor {
             readSerial()
         }
 
+        private allocDAP() {
+            /*
+            let sendMany = (cmds: Uint8Array[]) => {
+                return h.talksAsync(cmds.map(c => ({ cmd: 0, data: c })));
+            }
+
+            if (!h.talksAsync)
+                sendMany = null;
+            */
+
+            let dev = new DapJS.DAP({
+                write: writeAsync,
+                close: this.disconnectAsync,
+                read: readAsync,
+                //sendMany: sendMany
+            });
+            this.cmsisdap = (dev as any).dap;
+            this.cortexM = new DapJS.CortexM(dev);
+
+            let h = this.packetIo
+            let pbuf = this.pbuf
+
+            function writeAsync(data: ArrayBuffer) {
+                // console.log("WR: " + pxt.Util.toHex(new Uint8Array(data)));
+                return h.sendPacketAsync(new Uint8Array(data));
+            }
+
+            function readAsync() {
+                return pbuf.shiftAsync();
+            }
+        }
+
         reconnectAsync(first: boolean) {
+            // configure serial at 115200
             if (!first)
                 return this.packetIo.reconnectAsync()
-                    // configure serial at 115200
-                    .then(() => this.cmsisdap.cmdNums(0x82, [0x00, 0xC2, 0x01, 0x00]))
-                    .then(() => {}, err => { this.useSerial = false })
+                    .then(() => this.allocDAP())
                     .then(() => this.cortexM.init())
+                    .then(() => this.cmsisdap.cmdNums(0x82, [0x00, 0xC2, 0x01, 0x00]))
+                    .then(() => { }, err => { this.useSerial = false })
             else
-                return this.cortexM.init();
+                return this.cortexM.init()
+                    .then(() => this.cmsisdap.cmdNums(0x82, [0x00, 0xC2, 0x01, 0x00]))
+                    .then(() => { }, err => { this.useSerial = false })
         }
 
         disconnectAsync() {
@@ -347,7 +359,8 @@ namespace pxt.editor {
             .then(w => {
                 wrap = w
                 log("reset")
-                return wrap.cortexM.reset(true)
+                return wrap.cortexM.init()
+                    .then(() => wrap.cortexM.reset(true))
                     .catch(e => {
                         log("trying re-connect")
                         return wrap.reconnectAsync(false)
@@ -618,7 +631,7 @@ namespace pxt.editor {
             </value>
         </block>
         */
-       U.toArray(dom.querySelectorAll("block[type=math_arithmetic]"))
+        U.toArray(dom.querySelectorAll("block[type=math_arithmetic]"))
             .forEach(node => {
                 const op = getField(node, "OP");
                 if (!op || op.textContent.trim() !== "DIVIDE") return;
