@@ -35,6 +35,10 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
   "name": "k8 robotics kit",
   "url":"/pkg/k8robotics/pxt-k8",
   "cardType": "package"
+}, {
+  "name": "Gigglebot",
+  "url":"/pkg/dexterind/pxt-giggle",
+  "cardType": "package"
 }]
 ```
 ## Gaming

@@ -31,7 +31,8 @@
             "Annikken/pxt-Andee",
             "1010Technologies/pxt-makerbit",
             "pimoroni/automationbit",
-            "k8robotics/pxt-k8"
+            "k8robotics/pxt-k8",
+            "dexterind/pxt-giggle"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel"
