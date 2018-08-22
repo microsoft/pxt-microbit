@@ -27,8 +27,12 @@
             "pimoroni/pxt-scrollbit",
             "emwta/pxt-iBit",
             "vengit/pxt-sbrick",
-            "Annikken/pxt-Andee"
-
+            "pimoroni/pxt-envirobit",
+            "Annikken/pxt-Andee",
+            "1010Technologies/pxt-makerbit",
+            "pimoroni/pxt-automationbit",
+            "k8robotics/pxt-k8",
+            "dexterind/pxt-giggle"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel"
