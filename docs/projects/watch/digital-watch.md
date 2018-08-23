@@ -1,4 +1,4 @@
-# Digital watch
+# Digital Watch
 
 ### ~avatar avatar
 

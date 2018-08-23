@@ -1,4 +1,4 @@
-# Banana keyboard
+# Banana Keyboard
 
 ## @description A beginner maker activity, building a piano from bananas.
 

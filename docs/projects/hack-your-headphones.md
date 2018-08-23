@@ -1,4 +1,4 @@
-# Hack your headphones 
+# Hack Your Headphones 
 
 ## @description An intermediate maker activity, making a @boardname@ music player using headphones
 

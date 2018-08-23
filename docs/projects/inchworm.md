@@ -1,4 +1,3 @@
-
 # Inchworm
 
 ## @description A inchworm-like robot built with the @boardname@
