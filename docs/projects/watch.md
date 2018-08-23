@@ -1,4 +1,4 @@
-# the watch
+# The Watch
 
 ## ~avatar
 

@@ -1,4 +1,4 @@
-# Love meter
+# Love Meter
 
 Make a love meter, how sweet! The @boardname@ is feeling the love, then sometimes not so much!
 

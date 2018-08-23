@@ -1,4 +1,4 @@
-# Getting started
+# Getting Started
 
 ## Step 1
 

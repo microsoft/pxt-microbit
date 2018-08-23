@@ -1,4 +1,4 @@
-# Magic button trick 
+# Magic Button Trick 
 
 ## ~avatar avatar
 
