@@ -2,7 +2,7 @@
 
 Many thanks to the following individuals who helped to make this guide possible.
 
-Thank you to the many students who contributed their energy, creativity, and passion to bring so many of these wonderful examples to life. 
+Thank you to the many students who contributed their energy, creativity, and passion to bring so many of these wonderful examples to life.
 
 Thank you to Microsoft and to the Micro:bit Foundation for their support of our work. Thank you, as well, to George Saltsman of Lamar University for his original encouragement and support of this project.
 

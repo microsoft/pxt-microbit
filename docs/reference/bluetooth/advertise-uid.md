@@ -1,4 +1,4 @@
-# Avertise UID
+# Advertise UID
 
 Advertises a UID via the Eddystone protocol over Bluetooth.
 

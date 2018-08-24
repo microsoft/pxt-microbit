@@ -1,4 +1,4 @@
-# Countdown timer
+# Countdown Timer
 
 ### ~avatar avatar
 

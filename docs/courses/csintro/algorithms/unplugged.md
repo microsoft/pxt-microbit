@@ -39,6 +39,7 @@ Input (x)	Processing =>	Output (y)
 ```
 
 ## Unplugged: What's your function?
+
 For this activity, the students can work in pairs, Player A and Player B. The pairs will take turns being the function machine for their partner who will be providing input to be processed.
 
 Direct the students how you would like them to record their work. 
@@ -47,6 +48,7 @@ On paper, they can keep track of inputs and outputs in a table (see example abov
 With index cards, Player A can write each input on one side of an index card, hand the card to Player B, who then writes the corresponding output on the other side of the card.
 
 ### To begin:
+
 * Player B decides on a mathematical function or bit of processing* that will be done on whatever input she receives from Player A. 
 * Player B should write down the function or bit of processing and set it aside, out of sight of Player A.
 * Player A then gives Player B a number to process.
@@ -57,7 +59,8 @@ With index cards, Player A can write each input on one side of an index card, ha
 * The goal is for Player A to figure out what function or bit of processing Player B is using in the fewest number of rounds of input/output possible.
 * After each student has had at least one chance to be the function machine, play more rounds as time permits.
 
-### Notes: 
+### Notes:
+
 * The difficulty level of the possible functions should be determined by the teacher and shared with the students ahead of playing. Alternately, the teacher can provide function cards that are handed out at random to be used by the players, rather than the players creating their own.
 * The player providing the input should not just guess what the function is. She should be able to explain why she thinks her input resulted in the given output.
 * Examples of ‘easier’ functions: 
@@ -71,27 +74,32 @@ With index cards, Player A can write each input on one side of an index card, ha
 > * [ ] Return 20% of the input
 
 ## Unplugged: Crazy Conditionals
+
 This is a fun, interactive exercise to introduce conditionals and event handlers as computer processing.  Read through the entire activity and adjust as needed for your class and classroom.
  
-### Preparation: 
+### Preparation:
+
 * Print & cut into strips with one conditional on each strip
 * Note that some of the same conditionals can be given to multiple students, while other conditionals are to be given to just one student.
 * Except for the first ‘BEGIN’ conditional, hand out the conditionals PRINT SIDE DOWN. 
 * Besides the ‘BEGIN’ and ‘STOP’ conditional, give at least two other conditionals to each student. A lesson from this is that it is challenging for a student to keep track of a lot of different conditionals, though not so for a computer! : )
  
-### Notes: 
+### Notes:
+
 * Some of the same conditionals can be given to multiple students, while other conditionals are to be given to just one student.
 * Technically these conditionals are all event handlers because the students are simply waiting for a specific event to trigger them into action.
 * Unless instructed otherwise, students do not speak or make noise during this activity.
 
-### Extensions/Variations: 
+### Extensions/Variations:
+
 * Add AND, OR, AND/OR statements to the conditionals.
 * Create nested IF’s
 * Let students create the IF’s
 * Relate this activity to a system and have the students create the conditionals that would end in a product of some kind or the completion of some task.
- 
-Give these 2 conditionals to all students. 
-* These 2 conditionals will be triggered only once. 
+
+Give these 2 conditionals to all students.
+
+* These 2 conditionals will be triggered only once.
 * These conditionals start and stop this activity.
 * Give the first ‘BEGIN’ conditional to the students PRINT SIDE UP.
  
@@ -104,6 +112,7 @@ Give these 2 conditionals to all students.
 =================================================================
 
 Give these 6 conditionals to multiple students.
+
 * These 6 conditionals may be triggered more than once.
 * Walk around the classroom during the activity to trigger some of these conditionals.
 
@@ -127,7 +136,8 @@ Give these 6 conditionals to multiple students.
  
 =================================================================
 
-Give one student each of the following 7 conditionals. 
+Give one student each of the following 7 conditionals.
+
 * These 7 conditionals will be triggered only once and set in motion the spelling of STOP on the whiteboard.
  
 **IF** the teacher picks up a book,<br/>

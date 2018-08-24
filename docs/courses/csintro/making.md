@@ -6,7 +6,8 @@ on incorporating the physical micro:bit into a basic making activity.
 
 ![micro:bit board](/static/courses/csintro/making/microbit-board.png)
 
-## Lesson objectives 
+## Lesson objectives
+
 Students will...
 
 * Exercise creativity and resourcefulness by coming up with ideas for using simple household materials to accommodate the micro:bit’s size and weight in many different ways.
@@ -14,7 +15,7 @@ Students will...
 * Learn how to download programs and move them to the micro:bit file to run on the micro:bit.
 * Use the design thinking process to develop an understanding for a problem or user need.
 * Apply their understanding in a creative way by making a “micro:pet” creature. 
-	
+
 ## Lesson plan
 
 * [**Introduction**: The micro:bit is for making](/courses/csintro/making/introduction)

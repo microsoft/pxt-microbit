@@ -1,4 +1,4 @@
-# The watch - Make
+# The Watch - Make
 
 ## @description Maker Project for Watch
 

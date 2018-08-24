@@ -1,4 +1,4 @@
-# Timing gates
+# Timing Gates
 
 ## ~avatar
 

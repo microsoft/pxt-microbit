@@ -188,7 +188,7 @@ namespace basic {
     }
 
     /**
-     * Shows an arrow on screent
+     * Draws an arrow on the LED screen
      * @param direction the direction of the arrow
      * @param interval the amount of time (milliseconds) to show the icon. Default is 600.
      */
@@ -213,49 +213,49 @@ namespace images {
     export function arrowImage(i: ArrowNames): Image {
         switch (i) {
             // compass directions
-            case ArrowNames.North: return images.createImage(`    
+            case ArrowNames.North: return images.createImage(`
                                         . . # . .
                                         . # # # .
                                         # . # . #
                                         . . # . .
                                         . . # . .`);
-            case ArrowNames.NorthEast: return images.createImage(` 
+            case ArrowNames.NorthEast: return images.createImage(`
                                         . . # # #
                                         . . . # #
                                         . . # . #
                                         . # . . .
                                         # . . . .`);
-            case ArrowNames.East: return images.createImage(` 
+            case ArrowNames.East: return images.createImage(`
                                         . . # . .
                                         . . . # .
                                         # # # # #
                                         . . . # .
                                         . . # . .`);
-            case ArrowNames.SouthEast: return images.createImage(` 
+            case ArrowNames.SouthEast: return images.createImage(`
                                         # . . . .
                                         . # . . .
                                         . . # . #
                                         . . . # #
                                         . . # # #`);
-            case ArrowNames.South: return images.createImage(` 
+            case ArrowNames.South: return images.createImage(`
                                         . . # . .
                                         . . # . .
                                         # . # . #
                                         . # # # .
                                         . . # . .`);
-            case ArrowNames.SouthWest: return images.createImage(` 
+            case ArrowNames.SouthWest: return images.createImage(`
                                         . . . . #
                                         . . . # .
                                         # . # . .
                                         # # . . .
                                         # # # . .`);
-            case ArrowNames.West: return images.createImage(` 
+            case ArrowNames.West: return images.createImage(`
                                         . . # . .
                                         . # . . .
                                         # # # # #
                                         . # . . .
                                         . . # . .`);
-            case ArrowNames.NorthWest: return images.createImage(` 
+            case ArrowNames.NorthWest: return images.createImage(`
                                         # # # . .
                                         # # . . .
                                         # . # . .

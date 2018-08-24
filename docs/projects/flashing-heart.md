@@ -17,7 +17,7 @@ basic.showLeds(`
 
 ## Step 2
 
-Click ``|Download|`` to transfer your code in your @boardname@!
+Click ``|Download|`` to transfer your code into your @boardname@!
 
 ## Step 3
 

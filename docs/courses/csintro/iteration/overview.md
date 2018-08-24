@@ -1,11 +1,12 @@
 # Introduction
 
-In computer programming, iteration is the repetition of a sequence of code. A loop is a form of iteration. A loop repeats code until a certain condition is met. 
+In computer programming, iteration is the repetition of a sequence of code. A loop is a form of iteration. A loop repeats code until a certain condition is met.
 
 ## Questions for the students:
+
 * Do you use shampoo to wash your hair? _Most will say ‘Yes’_.
 * Have you ever read the instructions on a bottle of shampoo? _Most will say ‘No’_.
-	
+
 Most of us have never read the instructions on a bottle of shampoo, because we already know how to use shampoo.
 
 What algorithm could you write for shampooing your hair?
@@ -29,6 +30,7 @@ DBwebsolutions.com
 What other common activities involve repetitive actions? _Examples: Singing (choruses repeat), dancing, school cheers, walking and running, exercise routines..._
 
 ## Optional
+
 Share with your students the history of ‘Lather, Rinse, Repeat.’
 
 Lather, Rinse, Repeat: Hygiene Tip or Marketing Ploy

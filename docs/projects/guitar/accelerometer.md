@@ -1,4 +1,4 @@
-# Accelerometer Beat control
+# Accelerometer Beat Control
 
 ## @description @boardname@ guitar: using accelerometer to control tempo
 

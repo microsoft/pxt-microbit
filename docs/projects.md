@@ -39,6 +39,10 @@ Fun games to build with your @boardname@.
   "name": "Salute!",
   "url":"/projects/salute",
   "imageUrl":"/static/mb/projects/salute.png"
+},{
+  "name": "Crashy bird",
+  "url":"/projects/crashy-bird",
+  "imageUrl":"/static/mb/projects/crashy-bird.png"
 }]
 ```
 

@@ -6,12 +6,12 @@ Create an array of words that can be used as part of a charades-type game.
 This activity is based on a very popular phone app invented by Ellen DeGeneres (https://bits.blogs.nytimes.com/2013/05/03/ellen-degeneres-iphone-game/).
 
 ![Heads up game](/static/courses/csintro/arrays/headband-charades.png)
-	
+
 * Create a new variable and give it a name like arrayWords.
-* Insert a 'set' variable block into the 'on start' block. 
+* Insert a 'set' variable block into the 'on start' block.
 * Change the default variable name to this new variable name.
 * From the Array Toolbox drawer, drag a 'create array' block to the coding workspace.
-* Attach this array block to the end of the 'set' variable block. 
+* Attach this array block to the end of the 'set' variable block.
 
 ```blocks
 let arrayWords = ["", ""]
@@ -29,6 +29,7 @@ Notice that the array comes with 2 string blocks. We’ll want more for our char
 ```blocks
 let arrayWords = ["", "", "", "", "", "", ""]
 ```
+
 * Fill each string with one word. Choose words that will be fun for a game of charades. Example:
 
 ```blocks	
@@ -58,7 +59,7 @@ input.onGesture(Gesture.ScreenUp, () => {
 ```blocks
 let index = 0
 let arrayWords: string[] = []
-		 
+
 arrayWords = ["cat", "guitar", "flashlight", "cupcake", "tree", "frisbee"]
 index = 0
 basic.showLeds(`
@@ -89,11 +90,12 @@ input.onGesture(Gesture.ScreenDown, () => {
     index += 1
 })
 ```
+
 We have a limited number of elements in our array, so to avoid an error, we need to check and make sure we are not already at the end of the array before we change the index.
- 
+
 * Under the Arrays Toolbox drawer, drag out a 'length of' block. The 'length of' block returns the number of items (elements) in an array. For our array, the length of block will return the value 6.
 * But because computer programmers start counting at zero, the index of the final (6th) element is 5. 
- 
+
 Some pseudocode for our algorithm logic:
 * When the player places the micro:bit screen down:
 >Check the current value of the index.
@@ -142,6 +144,7 @@ input.onGesture(Gesture.ScreenDown, () => {
 ```
 
 ## Game Play
+
 There are different ways you can play charades with our program.  Here is one way you can play with a group of friends.
 
 * With the micro:bit on and held so Player A cannot see the screen, another player starts the program to see the first word. 
@@ -150,6 +153,7 @@ There are different ways you can play charades with our program.  Here is one wa
 * When ready for the next word, a player turns the micro:bit screen up. Play continues until all the words in the array have been used.
  
 ## Mod this!
+
 * Add a headband to hold the micro:bit on the Players' foreheads (using cardboard, paper, rubber bands, etc.)
 * Add a way to keep score
 * Keep track of the number of correct guesses and passes

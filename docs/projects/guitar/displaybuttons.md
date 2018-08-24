@@ -1,4 +1,5 @@
-# Buttons, Display & Sound
+# Buttons, Display and Sound
+
 ## @description @boardname@ guitar: using buttons with display and sound
 
 ## ~avatar avatar
