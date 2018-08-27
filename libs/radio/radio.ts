@@ -74,6 +74,7 @@ namespace radio {
      */
     //% help=radio/on-received-number blockHandlerKey="radioreceived"
     //% blockId=radio_on_number block="on radio received" blockGap=8
+    //% useLoc="radio.onDataPacketReceived"
     export function onReceivedNumber(cb: (receivedNumber: number) => void) {
         onDataReceived(() => {
             receiveNumber();
@@ -92,6 +93,7 @@ namespace radio {
      */
     //% help=radio/on-received-value blockHandlerKey="radioreceived"
     //% blockId=radio_on_value block="on radio received" blockGap=8
+    //% useLoc="radio.onDataPacketReceived"
     export function onReceivedValue(cb: (name: string, value: number) => void) {
         onDataReceived(() => {
             receiveNumber();
@@ -111,6 +113,7 @@ namespace radio {
      */
     //% help=radio/on-received-string blockHandlerKey="radioreceived"
     //% blockId=radio_on_string block="on radio received" blockGap=8
+    //% useLoc="radio.onDataPacketReceived"
     export function onReceivedString(cb: (receivedString: string) => void) {
         onDataReceived(() => {
             receiveNumber();
@@ -129,6 +132,7 @@ namespace radio {
      */
     //% help=radio/on-received-buffer blockHandlerKey="radioreceived" blockHidden=1
     //% blockId=radio_on_buffer block="on radio received" blockGap=8
+    //% useLoc="radio.onDataPacketReceived"
     export function onReceivedBuffer(cb: (buffer: Buffer) => void) {
         onDataReceived(() => {
             receiveNumber();

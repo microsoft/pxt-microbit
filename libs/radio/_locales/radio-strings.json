@@ -4,10 +4,15 @@
   "radio.PacketProperty.Time|block": "time",
   "radio._packetProperty|block": "%note",
   "radio.getReceivedPacketProperty|block": "received packet %type=radio_packet_property",
+  "radio.onDataPacketReceived|block": "on radio received",
+  "radio.onDataReceived|block": "radio on data received",
   "radio.onReceivedBuffer|block": "on radio received",
   "radio.onReceivedNumber|block": "on radio received",
   "radio.onReceivedString|block": "on radio received",
   "radio.onReceivedValue|block": "on radio received",
+  "radio.receiveNumber|block": "radio receive number",
+  "radio.receiveString|block": "radio receive string",
+  "radio.receivedSignalStrength|block": "radio received signal strength",
   "radio.sendNumber|block": "radio send number %value",
   "radio.sendString|block": "radio send string %msg",
   "radio.sendValue|block": "radio send|value %name|= %value",
@@ -15,6 +20,7 @@
   "radio.setTransmitPower|block": "radio set transmit power %power",
   "radio.setTransmitSerialNumber|block": "radio set transmit serial number %transmit",
   "radio.writeReceivedPacketToSerial|block": "radio write received packet to serial",
+  "radio.writeValueToSerial|block": "radio write value to serial",
   "radio|block": "radio",
   "{id:category}Radio": "Radio"
 }
