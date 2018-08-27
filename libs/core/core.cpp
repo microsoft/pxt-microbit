@@ -772,7 +772,9 @@ TNumber trunc(TNumber x){SINGLE(trunc)}
 
 //%
 TNumber round(TNumber x) {
-    SINGLE(round)
+    // In C++, round(-1.5) == -2, while in JS, round(-1.5) == -1. Align to the JS convention for consistency between
+    // simulator and device. The following does rounding with ties (x.5) going towards positive infinity.
+    return fromDouble(::floor(toDouble(x) + 0.5));
 }
 
 //%
