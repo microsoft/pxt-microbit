@@ -1,8 +1,7 @@
 # micro:bit target for PXT
-* This README is for pxt-microbit 1.x, which is [currently in beta](https://makecode.com/blog/microbit/v1-beta)
+*This README is for pxt-microbit v1.x, which is [currently in beta](https://makecode.com/blog/microbit/v1-beta).*
 
-This target allows you to program a [BBC micro:bit](https://microbit.org/) using 
-PXT ([Microsoft Programming Experience Toolkit](https://github.com/Microsoft/pxt)).
+pxt-microbit is a [Microsoft Programming Experience Toolkit (PXT)](https://github.com/Microsoft/pxt) target allows you to program a [BBC micro:bit](https://microbit.org/). pxt-microbit v1.x requires pxt v3.x, which is currently in the [master branch of pxt](https://github.com/Microsoft/pxt/tree/master).
 
 * [Try it live](https://makecode.microbit.org/beta)
 
@@ -16,9 +15,9 @@ Please add an issue if you discover an (unreported) bug.
 
 The local server lets you to run the editor and serve the documentation from your own computer.
 
-### Setup   
-This section explains how to setup your development environment for pxt-microbit, whether that be to run a copy locally or to make source changes.
-Note that pxt-microbit cannot be run without its main dependency, [pxt](https://github.com/Microsoft/pxt). pxt-microbit 1.x requires pxt 3.x, which is currently the master branch. Below explains how to setup both.
+### Setup
+
+This section explains how to setup your development environment for pxt and pxt-microbit, whether that be to run a copy locally or to make source changes.
 
 1. Install [Node.js](https://nodejs.org/) 8.9.4 or higher.
 2. Install [Yotta](http://docs.yottabuild.org/) if you are going to edit any `.cpp` files.
@@ -32,7 +31,7 @@ cd pxt
 npm install
 cd ..
 ```
-5. Clone this repository and switch it to the `v1` branch.
+5. Clone the `v1` branch of this repository.
 ```
 git clone https://github.com/microsoft/pxt-microbit --branch v1
 cd pxt-microbit
