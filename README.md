@@ -1,4 +1,4 @@
-# micro:bit target for PXT
+ micro:bit target for PXT
 
 [![Build Status](https://travis-ci.org/Microsoft/pxt-microbit.svg?branch=v1)](https://travis-ci.org/Microsoft/pxt-microbit)
 
@@ -25,9 +25,10 @@ The local server lets you to run the editor and serve the documentation from you
 git clone https://github.com/microsoft/pxt
 cd pxt
 ```
-4. Install the pxt dependencies.
+4. Install the dependencies of pxt and build it
 ```
 npm install
+npm run build
 cd ..
 ```
 5. Clone the `v1` branch of this repository.
