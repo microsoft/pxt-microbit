@@ -20,7 +20,7 @@ The local server lets you to run the editor and serve the documentation from you
 
 1. Install [Node.js](https://nodejs.org/) 8.9.4 or higher.
 2. Install [Yotta](http://docs.yottabuild.org/) if you are going to edit any `.cpp` files.
-3. Clone the pxt repository. Refer to [GitHub Help: Cloning a repository](https://help.github.com/articles/cloning-a-repository/) for further information about cloning a repository.
+3. Clone the pxt repository.
 ```
 git clone https://github.com/microsoft/pxt
 cd pxt
