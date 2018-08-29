@@ -59,21 +59,21 @@ Note the above command assumes the folder structure of
 
 ### Running
 
-Run this command from inside pxt-microbit to open a local web server (add `sudo` for Mac/Linux shells)
+Run this command from inside pxt-microbit to open a local web server
 ```
-pxt serve --cloud
+pxt serve
 ```
 If the local server opens in the wrong browser, make sure to copy the URL containing the local token. 
 Otherwise, the editor will not be able to load the projects.
 
-If you need to modify the `.cpp` files (and have installed yotta), enable yotta compilation by removing the `--cloud` flag (add `sudo` for Mac/Linux shells):
+If you need to modify the `.cpp` files (and have installed yotta), enable yotta compilation using the `--localbuild` flag:
 ```
-pxt serve
+pxt serve --localbuild
 ```
 
 ### Updates
 
-To update your PXT version and make sure you're running the latest tools, run (add `sudo` for Mac/Linux shells):
+To update your PXT version and make sure you're running the latest tools, run:
 ```
 pxt update
 ```
