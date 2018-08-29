@@ -1,9 +1,10 @@
 # micro:bit target for PXT
+* This README is for pxt-microbit 1.x, which is [currently in beta](https://makecode.com/blog/microbit/v1-beta)
 
 This target allows you to program a [BBC micro:bit](https://microbit.org/) using 
 PXT ([Microsoft Programming Experience Toolkit](https://github.com/Microsoft/pxt)).
 
-* [Try it live](https://makecode.microbit.org)
+* [Try it live](https://makecode.microbit.org/beta)
 
 [![Build Status](https://travis-ci.org/Microsoft/pxt-microbit.svg?branch=master)](https://travis-ci.org/Microsoft/pxt-microbit)
 
@@ -16,49 +17,36 @@ Please add an issue if you discover an (unreported) bug.
 The local server lets you to run the editor and serve the documentation from your own computer.
 
 ### Setup   
-This section explains how to setup your development environment for pxt-microbit, whether that be to run a copy locally or to make source changes.    
-Note that pxt-microbit can not be run without its main dependancy, [pxt](https://github.com/Microsoft/pxt). Below explains how to setup both.      
+This section explains how to setup your development environment for pxt-microbit, whether that be to run a copy locally or to make source changes.
+Note that pxt-microbit cannot be run without its main dependency, [pxt](https://github.com/Microsoft/pxt). pxt-microbit 1.x requires pxt 3.x, which is currently the master branch. Below explains how to setup both.
 
-The following commands perform a one-time setup after synching the repo on your machine.
-* Note for any editing of the `.cpp` files, Yotta must be installed. To do so, follow the instructions on [their site](http://docs.yottabuild.org/).
-* Install node.js 8.9.4 or higher.
-* Install requirements for [pxt](https://github.com/Microsoft/pxt). Note the v0 branch must be used for pxt-microbit (add ``sudo`` for Mac/Linux shells).
-```
-npm install -g jake
-npm install -g typings
-```
-
-* [Clone the pxt repository](https://help.github.com/articles/cloning-a-repository/) and set it to the v0 branch.
+1. Install [Node.js](https://nodejs.org/) 8.9.4 or higher.
+2. Install [Yotta](http://docs.yottabuild.org/) if you are going to edit any `.cpp` files.
+3. Clone the pxt repository. Refer to [GitHub Help: Cloning a repository](https://help.github.com/articles/cloning-a-repository/) for further information about cloning a repository.
 ```
 git clone https://github.com/microsoft/pxt
 cd pxt
-git checkout v0
 ```
-
-* Install the pxt dependencies.
+4. Install the pxt dependencies.
 ```
 npm install
-typings install
-jake
-cd ../
+cd ..
 ```
-
-* [Clone this repo](https://help.github.com/articles/cloning-a-repository/) to your computer.
+5. Clone this repository and switch it to the `v1` branch.
 ```
-git clone https://github.com/microsoft/pxt-microbit
+git clone https://github.com/microsoft/pxt-microbit --branch v1
 cd pxt-microbit
 ```
-* install the PXT command line (add ``sudo`` for Mac/Linux shells).
+6. Install the PXT command line (add `sudo` for Mac/Linux shells).
 ```
 npm install -g pxt
 ```
-* install the dependencies
+7. Install the pxt-microbit dependencies.
 ```
 npm install
 
 ```
-
-* Link pxt-microbit back to base pxt repo.
+8. Link pxt-microbit back to base pxt repo (add `sudo` for Mac/Linux shells).
 ```
 npm link ../pxt
 ```
@@ -73,21 +61,21 @@ Note the above command assumes the folder structure of
 
 ### Running
 
-Run this command from inside pxt-microbit to open a local web server (add ``sudo`` for Mac/Linux shells)
+Run this command from inside pxt-microbit to open a local web server (add `sudo` for Mac/Linux shells)
 ```
 pxt serve --cloud
 ```
 If the local server opens in the wrong browser, make sure to copy the URL containing the local token. 
 Otherwise, the editor will not be able to load the projects.
 
-If you need modify the `.cpp` files (and have installed yotta), enable yotta compilation by removing the ```--cloud``` flag (add ``sudo`` for Mac/Linux shells):
+If you need to modify the `.cpp` files (and have installed yotta), enable yotta compilation by removing the `--cloud` flag (add `sudo` for Mac/Linux shells):
 ```
 pxt serve
 ```
 
 ### Updates
 
-To update your PXT version and make sure you're running the latest tools, run (add ``sudo`` for Mac/Linux shells):
+To update your PXT version and make sure you're running the latest tools, run (add `sudo` for Mac/Linux shells):
 ```
 pxt update
 ```
