@@ -500,7 +500,6 @@ namespace pxt.editor {
 
         // showleds
         const nodes = U.toArray(dom.querySelectorAll("block[type=device_show_leds]"))
-            .concat(U.toArray(dom.querySelectorAll("shadow[type=device_show_leds]")))
             .concat(U.toArray(dom.querySelectorAll("block[type=device_build_image]")))
             .concat(U.toArray(dom.querySelectorAll("shadow[type=device_build_image]")))
             .concat(U.toArray(dom.querySelectorAll("block[type=device_build_big_image]")))
