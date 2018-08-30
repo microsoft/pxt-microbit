@@ -1,4 +1,4 @@
- micro:bit target for PXT
+# micro:bit target for PXT
 
 [![Build Status](https://travis-ci.org/Microsoft/pxt-microbit.svg?branch=v1)](https://travis-ci.org/Microsoft/pxt-microbit)
 
