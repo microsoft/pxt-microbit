@@ -14,7 +14,7 @@
     * [Magic Button Trick](/projects/magic-button-trick)
     * [Coin Flipper](/projects/coin-flipper)
     * [Salute!](/projects/salute)
-    * [Crashy Bird](/projects/crashy-birds)
+    * [Crashy Bird](/projects/crashy-bird)
     * [Hack Your Headphones](/projects/hack-your-headphones)
     * [Banana Keyboard](/projects/banana-keyboard)
     * [Guitar](/projects/guitar)
