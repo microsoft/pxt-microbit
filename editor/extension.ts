@@ -663,8 +663,22 @@ namespace pxt.editor {
 
                 const b = getValue(node, "B");
                 if (b) b.setAttribute("name", "ARG1");
-            })
+            });
 
+        // device_set_digital_pin
+        U.toArray(dom.querySelectorAll("block[type=device_set_digital_pin]"))
+            .forEach(node => {
+                // Change the name of the NUM field to SLIDER
+                const valueNode = getValue(node, "value");
+                const shadowNode = U.toArray(valueNode.children).filter((n) => n.nodeName === "shadow")[0];
+                const numField = getField(shadowNode, "NUM");
+                const val = (numField as any).innerText as string;
+                shadowNode.removeChild(shadowNode.querySelector("field[name=NUM]"));
+                const f = shadowNode.ownerDocument.createElement("field");
+                f.setAttribute("name", "SLIDER");
+                f.textContent = val;
+                shadowNode.appendChild(f);
+            });
     }
 
     initExtensionsAsync = function (opts: pxt.editor.ExtensionOptions): Promise<pxt.editor.ExtensionResult> {
