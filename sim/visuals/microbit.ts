@@ -162,6 +162,9 @@ namespace pxsim.visuals {
         }
     `;
     const MB_HIGHCONTRAST = `
+svg.sim {
+    border: solid white;
+}
 .sim-led {
     stroke: red;
 }
