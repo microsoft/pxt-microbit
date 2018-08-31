@@ -134,7 +134,7 @@ namespace pxsim.ImageMethods {
         let cb = getResume();
         let first = true;
 
-        clampPixelBrightness(leds);
+        leds = clampPixelBrightness(leds);
         board().ledMatrixState.animationQ.enqueue({
             interval,
             frame: () => {
@@ -152,7 +152,7 @@ namespace pxsim.ImageMethods {
     export function plotImage(leds: Image, offset: number): void {
         pxtrt.nullCheck(leds)
 
-        clampPixelBrightness(leds);
+        leds = clampPixelBrightness(leds);
         board().ledMatrixState.animationQ.enqueue({
             interval: 0,
             frame: () => {
@@ -213,7 +213,7 @@ namespace pxsim.ImageMethods {
         let off = stride > 0 ? 0 : leds.width - 1;
         let display = board().ledMatrixState.image;
 
-        clampPixelBrightness(leds);
+        leds = clampPixelBrightness(leds);
         board().ledMatrixState.animationQ.enqueue({
             interval: interval,
             frame: () => {
@@ -234,17 +234,19 @@ namespace pxsim.ImageMethods {
         })
     }
 
-    function clampPixelBrightness(img: Image) {
+    function clampPixelBrightness(img: Image): Image {
+        const imgCopy = new Image(img.width, img.data);
         if (led.displayMode() === DisplayMode.greyscale) {
             const b = led.brightness();
-            for (let x = 0; x < img.width; ++x) {
+            for (let x = 0; x < imgCopy.width; ++x) {
                 for (let y = 0; y < 5; ++y) {
-                    if (pixelBrightness(img, x, y) > b) {
-                        setPixelBrightness(img, x, y, b);
+                    if (pixelBrightness(imgCopy, x, y) > b) {
+                        setPixelBrightness(imgCopy, x, y, b);
                     }
                 }
             }
         }
+        return imgCopy;
     }
 }
 
@@ -296,7 +298,7 @@ namespace pxsim.led {
 
     export function plotBrightness(x: number, y: number, brightness: number) {
         const state = board().ledMatrixState;
-        brightness = Math.max(0, Math.min(0xff, brightness));
+        brightness = Math.max(0, Math.min(led.brightness(), brightness));
         if (brightness != 0 && brightness != 0xff && state.displayMode != DisplayMode.greyscale)
             state.displayMode = DisplayMode.greyscale;
         state.image.set(x, y, brightness);
