@@ -1,7 +1,7 @@
 {
     "name": "core",
     "description": "The microbit core library",
-    "installedVersion": "tsmdvf",
+    "additionalFilePath": "../../node_modules/pxt-common-packages/libs/base",
     "files": [
         "README.md",
         "pxt.cpp",
