@@ -235,18 +235,19 @@ namespace pxsim.ImageMethods {
     }
 
     function clampPixelBrightness(img: Image): Image {
-        const imgCopy = new Image(img.width, img.data);
-        if (led.displayMode() === DisplayMode.greyscale) {
+        let res = img;
+        if (led.displayMode() === DisplayMode.greyscale && led.brightness() < 0xff) {
+            res = new Image(img.width, img.data);
             const b = led.brightness();
-            for (let x = 0; x < imgCopy.width; ++x) {
+            for (let x = 0; x < res.width; ++x) {
                 for (let y = 0; y < 5; ++y) {
-                    if (pixelBrightness(imgCopy, x, y) > b) {
-                        setPixelBrightness(imgCopy, x, y, b);
+                    if (pixelBrightness(res, x, y) > b) {
+                        setPixelBrightness(res, x, y, b);
                     }
                 }
             }
         }
-        return imgCopy;
+        return res;
     }
 }
 
