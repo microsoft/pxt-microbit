@@ -2,6 +2,7 @@
 #define __PXT_H
 
 //#define DEBUG_MEMLEAKS 1
+#define MICROBIT_FULL_RANGE_PITCH_CALCULATION 0
 
 #pragma GCC diagnostic ignored "-Wunused-parameter"
 
@@ -63,7 +64,7 @@ namespace pxt {
   int templateHash();
   int programHash();
   uint32_t programSize();
-  uint32_t afterProgramPage();     
+  uint32_t afterProgramPage();
   int getNumGlobals();
   RefRecord* mkClassInstance(int vtableOffset);
 
@@ -169,7 +170,7 @@ namespace pxt {
   };
 
   class Segment {
-  private:    
+  private:
       uint32_t* data;
       uint16_t length;
       uint16_t size;
@@ -177,7 +178,7 @@ namespace pxt {
       static const uint16_t MaxSize = 0xFFFF;
       static const uint32_t DefaultValue = 0x0;
 
-      static uint16_t growthFactor(uint16_t size);      
+      static uint16_t growthFactor(uint16_t size);
       void growByMin(uint16_t minSize);
       void growBy(uint16_t newSize);
       void ensure(uint16_t newSize);
@@ -186,7 +187,7 @@ namespace pxt {
       Segment() : data (nullptr), length(0), size(0) {};
 
       uint32_t get(uint32_t i);
-      void set(uint32_t i, uint32_t value);      
+      void set(uint32_t i, uint32_t value);
 
       uint32_t getLength() { return length;};
       void setLength(uint32_t newLength);
@@ -233,7 +234,7 @@ namespace pxt {
     //removes the element at index i and shifts the other elements left
     uint32_t removeAt(int i);
     //inserts the element at index i and moves the other elements right.
-    void insertAt(int i, uint32_t x); 
+    void insertAt(int i, uint32_t x);
 
     int indexOf(uint32_t x, int start);
     int removeElement(uint32_t x);
@@ -344,7 +345,7 @@ typedef BufferData* Buffer;
 // the hex file and looks for the magic numbers as present here.
 //
 // Then it fetches function pointer addresses from there.
-  
+
 #define PXT_SHIMS_BEGIN \
 namespace pxt { \
   const uint32_t functionsAndBytecode[] __attribute__((aligned(0x20))) = { \
