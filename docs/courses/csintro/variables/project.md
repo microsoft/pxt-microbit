@@ -5,6 +5,7 @@ Their program should keep track of **input** by storing values in variables, and
 Students should also perform mathematical operations on the variables to give useful output.
 
 ## Input
+
 Remind the students of all the different inputs available to them through the micro:bit.
 
 ![micro:bit input list](/static/courses/csintro/variables/input-list.png)
@@ -31,7 +32,7 @@ Using the 'On Shake' block, you can detect when the micro:bit has been shaken an
 
 ### Pedometer
 
-See if you can count your steps while running or doing other physical activities carrying the micro:bit. Where is it best mounted? 
+See if you can count your steps while running or doing other physical activities carrying the micro:bit. Where is it best mounted?
 
 **Extra Mod:** Design a wearable band or holder that can carry the micro:bit securely so it doesn’t slip out during exercise.
 
@@ -80,7 +81,7 @@ Have students write a reflection of about 150–300 words, addressing the follow
 * What was the problem you were trying to solve with this project?
 * What were the Variables that you used to keep track of information?
 * What mathematical operations did you perform on your variables? What information did you provide?
-* Describe what the physical component of your micro:bit project was (e.g., an armband, a wallet, a holder, etc.)
+* Describe what the physical component of your micro:bit project was (e.g., an armband, a wallet, a holder, etc.).
 * How well did your prototype work? What were you happy with? What would you change?
 * What was something that was surprising to you about the process of creating this project?
 * Describe a difficult point in the process of designing this project, and explain how you resolved it.
@@ -103,12 +104,14 @@ Have students write a reflection of about 150–300 words, addressing the follow
 **1 =** None of the variable names clearly describe what information values the variables hold.<br/>
 
 ### Mathematical operations
+
 >**4 =** Uses a mathematical operation on at least two variables in a way that is integral to the program.<br/>
 **3 =** Uses a mathematical operation on at least one variable in a way that is integral to the program.<br/>
 **2 =** Uses a mathematical operation incorrectly or not in a way that is integral to the program.<br/>
 **1 =** No mathematical operations are used.
 
 ### micro:bit program
+
 >**4 =** micro:bit program:<br/>
 ` *` Uses variables in a way that is integral to the program<br/>
 ` *` Uses mathematical operations to add, subtract, multiply, and/or divide variables<br/>

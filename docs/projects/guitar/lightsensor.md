@@ -79,7 +79,7 @@ music.playTone(261, music.beat(BeatFraction.Half))
 ## ~
 
 ## Step 3: Multiply Frequency using Math blocks
- ```blocks
+```blocks
 input.onButtonPressed(Button.A, () => {
     music.playTone(261 * 2, music.beat(BeatFraction.Half))
 })

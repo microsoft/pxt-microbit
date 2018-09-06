@@ -1,4 +1,3 @@
-
 # Light Monster
 
 ## @description A monster made of coffee cup holders that responds to light

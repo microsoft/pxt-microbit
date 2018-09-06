@@ -6,7 +6,7 @@ The mini-project is an opportunity for students to design a project that serves 
 
 * Show what you know
 * Learn something new
-	
+
 Ideally, there should be a maker component to this project.  This is a real world component that works with the code on the micro:bit to do something unique.
 
 Students are asked to each propose an original independent project.  Students are allowed to work on the same idea, but they cannot turn in the same code.  They can, and should work collaboratively, solving the same kinds of problems together, but the projects they turn in should be unique and original.
@@ -34,7 +34,7 @@ We find that a "science fair" type of setup works well here, with students stati
 * Simple Circuits
 * Iteration/Loops
 * Conditional Statements
-	
+
 ## Project ideas
 
 * Make a “New and Improved” Fidget Cube
@@ -73,7 +73,7 @@ This is a prototype of a storybook that could use the micro:bit to display anima
 
 ## Work logs
 
-Because students are working on the projects in class, and much of the benefit comes from working together to solve problems, they should account for the work they are doing by writing a work log. 
+Because students are working on the projects in class, and much of the benefit comes from working together to solve problems, they should account for the work they are doing by writing a work log.
 
 A work log is a short, bullet point list of what they worked on, and how long it took. Stick to the facts. It shouldn’t take more than thirty seconds or so to write up a work log. Students should do one for every class. A shared Microsoft OneNote notebook is a great way to keep a work log that students can update regularly. Alternately, you might use a collaborative shared document, or your classroom management system, or even e-mail.
 
@@ -141,9 +141,9 @@ Sample Reflection (excerpt)
 **3 =** Reflection piece lacks 1 of the required elements.<br/>
 **3 =** Reflection piece lacks 2 of the required elements.<br/>
 **1 =** Reflection piece lacks 3 of the required elements.
- 
+
 ## Notes
 
-We actually split the grading of code between "show what you know" and "show something new." If a student uses variables incorrectly or uses bad variable names, we generally would take off points in both places. Sometimes it is difficult to distinguish between what is old and new if the student's reflection is less than clear; in those cases, we have to use some discretion in terms of where we take points off. Another option would be to break out the Variables category into its own row. 
+We actually split the grading of code between "show what you know" and "show something new." If a student uses variables incorrectly or uses bad variable names, we generally would take off points in both places. Sometimes it is difficult to distinguish between what is old and new if the student's reflection is less than clear; in those cases, we have to use some discretion in terms of where we take points off. Another option would be to break out the Variables category into its own row.
 
 As always, these rubrics are just a starting point and you should certainly feel free to adjust them as appropriate for your own classroom or learning environment.

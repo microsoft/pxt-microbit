@@ -1,10 +1,10 @@
-# Lessons 
+# Lessons
 
 ## @description Lessons to teach computer science and coding.
 
 ## @short Lessons
 
-## ~column 
+## ~column
 
 ## Beginner
 
@@ -12,7 +12,7 @@
 * [Lucky 7](/lessons/lucky-7), show a number on the LED screen with show number
 * [Answering Machine](/lessons/answering-machine), show a text message with show string
 * [Game of Chance](/lessons/game-of-chance), show a text message with game over
-* [Smiley,](/lessons/smiley) smiley and frowney faces that transition on button pressed
+* [Smiley](/lessons/smiley) smiley and frowney faces that transition on button pressed
 * [Magic Logo,](/lessons/magic-logo) show an image on logo up
 * [Snowflake Fall](/lessons/snowflake-fall), repeat a series of images with forever
 * [Screen Wipe](/lessons/screen-wipe), turn off the LEDs with clear screen
@@ -24,7 +24,7 @@
 
 ## ~
 
-## ~column 
+## ~column
 
 ## Intermediate
 
@@ -47,7 +47,7 @@
 
 ## ~
 
-## ~column 
+## ~column
 
 ## Maker
 * [Pogo](/lessons/pogo), create a pogo game to test your jumping abilities

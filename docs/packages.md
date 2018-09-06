@@ -31,6 +31,14 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
   "name": "inex iBit",
   "url":"/pkg/emwta/pxt-iBit",
   "cardType": "package"
+}, {
+  "name": "k8 robotics kit",
+  "url":"/pkg/k8robotics/pxt-k8",
+  "cardType": "package"
+}, {
+  "name": "Gigglebot",
+  "url":"/pkg/dexterind/pxt-giggle",
+  "cardType": "package"
 }]
 ```
 ## Gaming
@@ -120,6 +128,14 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
   "cardType": "package"
 }]
 ```
+## Internet of Things
+```codecard
+[{
+  "name": "DF Robot Obloq",
+  "url":"/pkg/DFRobot/pxt-Obloq",
+  "cardType": "package"
+}]
+```
 ## Other
 ```codecard
 [{
@@ -163,7 +179,11 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
   "name": "SBRICK",
   "url":"/pkg/vengit/pxt-sbrick",
   "cardType": "package"
-  }, {
+}, {
+  "name": "Pimoroni Automationbit",
+  "url":"/pkg/pimoroni/pxt-automationbit",
+  "cardType": "package"
+}, {
   "name": "Annikken Andee",
   "url":"/pkg/Annikken/pxt-Andee",
   "cardType": "package"

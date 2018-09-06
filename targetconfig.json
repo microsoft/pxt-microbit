@@ -29,7 +29,12 @@
             "vengit/pxt-sbrick",
             "pimoroni/pxt-envirobit",
             "Annikken/pxt-Andee",
-            "1010Technologies/pxt-makerbit"
+            "1010Technologies/pxt-makerbit",
+            "DFRobot/pxt-Obloq",
+            "pimoroni/pxt-automationbit",
+            "k8robotics/pxt-k8",
+            "dexterind/pxt-giggle",
+            "dexterind/pxt-gigglebot"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel"

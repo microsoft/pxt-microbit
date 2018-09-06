@@ -1,4 +1,4 @@
-# telegraph activity 
+# Telegraph 
 
 ![](/static/mb/lessons/telegraph-0.png)
 

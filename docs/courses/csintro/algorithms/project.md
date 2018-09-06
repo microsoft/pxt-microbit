@@ -32,7 +32,8 @@ See if you can combine a maker element similar to what you created in Lesson 1 b
 ![](/static/courses/csintro/algorithms/fidget-cube.jpg)
 Sample fidget cube designs
 
-## Project mod 
+## Project mod
+
 * Add more inputs and more outputs - use more than 4 different types of input. Try to use other types of output (other than LEDs) such as sound!
 
 ## Assessment
