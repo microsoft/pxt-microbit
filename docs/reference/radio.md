@@ -6,9 +6,9 @@ Communicate data using radio packets
 radio.sendNumber(0);
 radio.sendValue("name", 0);
 radio.sendString("");
-radio.onDataPacketReceived(({ receivedNumber }) => {
-
-});
+radio.onReceivedNumber(function (receivedNumber) { });
+radio.onReceivedValue(function (name, value) { });
+radio.onReceivedString(function (receivedString) { });
 radio.setGroup(0);
 radio.setTransmitPower(7);
 radio.setTransmitSerialNumber(false);
@@ -26,7 +26,9 @@ radio
 [sendValue](/reference/radio/send-value),
 [sendString](/reference/radio/send-string),
 [sendBuffer](/reference/radio/send-buffer),
-[onDataPacketReceived](/reference/radio/on-data-packet-received),
+[onReceivedNumber](/reference/radio/on-received-number),
+[onReceivedValue](/reference/radio/on-received-value),
+[onReceivedString](/reference/radio/on-received-string),
 [setGroup](/reference/radio/set-group),
 [setTransmitPower](/reference/radio/set-transmit-power),
 [setTransmitSerialNumber](/reference/radio/set-transmit-serial-number),

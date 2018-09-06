@@ -393,6 +393,7 @@
   "music.setTempo": "Sets the tempo to the specified amount",
   "music.setTempo|param|bpm": "The new tempo in beats per minute, eg: 120",
   "music.tempo": "Returns the tempo in beats per minute. Tempo is the speed (bpm = beats per minute) at which notes play. The larger the tempo value, the faster the notes will play.",
+  "parseFloat": "Convert a string to a number.",
   "parseInt": "Convert a string to an integer.",
   "pins": "Control currents in Pins for analog/digital signals, servos, i2c, ...",
   "pins.analogPitch": "Emits a Pulse-width modulation (PWM) signal to the current pitch pin. Use `analog set pitch pin` to define the pitch pin.",
