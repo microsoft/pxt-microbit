@@ -309,7 +309,7 @@ namespace pxt.editor {
         })
     }
 
-    export function deployCoreAsync(resp: pxtc.CompileResult): Promise<void> {
+    export function deployCoreAsync(resp: pxtc.CompileResult, d: pxt.commands.DeployOptions = {}): Promise<void> {
         let saveHexAsync = () => {
             return pxt.commands.saveOnlyAsync(resp)
         }
@@ -350,104 +350,132 @@ namespace pxt.editor {
         return Promise.resolve()
             .then(() => {
                 if (previousDapWrapper) {
-                    previousDapWrapper.flashing = true
-                    return Promise.delay(100)
+                    previousDapWrapper.flashing = true;
+                    return Promise.delay(100);
                 }
-                return Promise.resolve()
+                return Promise.resolve();
             })
             .then(initAsync)
             .then(w => {
                 wrap = w
-                log("reset")
+                log("reset");
                 return wrap.cortexM.init()
                     .then(() => wrap.cortexM.reset(true))
                     .catch(e => {
-                        log("trying re-connect")
+                        log("trying re-connect");
                         return wrap.reconnectAsync(false)
-                            .then(() => wrap.cortexM.reset(true))
-                    })
+                            .then(() => wrap.cortexM.reset(true));
+                    });
             })
             .then(() => wrap.cortexM.memory.readBlock(0x10001014, 1, pageSize))
             .then(v => {
                 if (HF2.read32(v, 0) != 0x3C000) {
-                    pxt.tickEvent("hid.flash.uicrfail");
-                    U.userError(U.lf("Please flash any MakeCode hex file using drag and drop. Flashing from app will work afterwards."))
+                    let uf2 = UF2.newBlockFile();
+                    UF2.writeHex(uf2, resp.outfiles[pxtc.BINARY_HEX].split(/\r?\n/));
+                    let bytes = U.stringToUint8Array(UF2.serializeFile(uf2));
+                    let parsed = UF2.parseFile(bytes);
+                    return wrap.cmsisdap.cmdNums(0x8C /* DAPLinkFlash.WRITE */, parsed)
+                        .then((a: any, b: any) => {
+                            console.log(a);
+                            console.log(b);
+                        }, (e: any) => {
+                            console.log(e);
+                        });
+
+
+                    // pxt.tickEvent("hid.flash.uicrfail");
+                    // const msg = U.lf("Please flash your device using drag and drop. Automatic flashing will work afterwards.");
+
+                    // if (resp.confirmAsync) {
+                    //     return resp.confirmAsync({
+                    //         header: U.lf("We cannot flash your program yet..."),
+                    //         body: msg,
+                    //         disagreeLbl: lf("Ok"),
+                    //         hideAgree: true
+                    //     })
+                    //         .then(() => { });
+                    // }
+
+                    // U.userError(msg);
                 }
-            })
-            .then(() => getFlashChecksumsAsync(wrap))
-            .then(buf => {
-                checksums = buf
-                log("write code")
-                return wrap.cortexM.memory.writeBlock(loadAddr, flashPageBIN)
-            })
-            .then(() => {
-                log("convert")
-                // TODO this is seriously inefficient (130ms on a fast machine)
-                let uf2 = UF2.newBlockFile()
-                UF2.writeHex(uf2, resp.outfiles[pxtc.BINARY_HEX].split(/\r?\n/))
-                let bytes = U.stringToUint8Array(UF2.serializeFile(uf2))
-                let parsed = UF2.parseFile(bytes)
 
-                let aligned = pageAlignBlocks(parsed, pageSize)
-                log(`initial: ${aligned.length} pages`)
-                aligned = onlyChanged(aligned, checksums)
-                log(`incremental: ${aligned.length} pages`)
-
-                return Promise.mapSeries(U.range(aligned.length),
-                    i => {
-                        let b = aligned[i]
-                        if (b.targetAddr >= 0x10000000)
-                            return Promise.resolve()
-
-                        logV("about to write at 0x" + b.targetAddr.toString(16))
-
-                        let writeBl = Promise.resolve()
-
-                        let thisAddr = (i & 1) ? dataAddr : dataAddr + pageSize
-                        let nextAddr = (i & 1) ? dataAddr + pageSize : dataAddr
-
-                        if (i == 0) {
-                            let u32data = new Uint32Array(b.data.length / 4)
-                            for (let i = 0; i < b.data.length; i += 4)
-                                u32data[i >> 2] = HF2.read32(b.data, i)
-                            writeBl = wrap.cortexM.memory.writeBlock(thisAddr, u32data)
-                        }
-
-                        return writeBl
-                            .then(() => runFlash(b, thisAddr))
-                            .then(() => {
-                                let next = aligned[i + 1]
-                                if (!next)
-                                    return Promise.resolve()
-                                logV("write next")
-                                let buf = new Uint32Array(next.data.buffer)
-                                return wrap.cortexM.memory.writeBlock(nextAddr, buf)
-                            })
-                            .then(() => {
-                                logV("wait")
-                                return wrap.cortexM.waitForHalt(500)
-                            })
-                            .then(() => {
-                                logV("done block")
-                            })
+                return getFlashChecksumsAsync(wrap)
+                    .then(buf => {
+                        checksums = buf;
+                        log("write code");
+                        return wrap.cortexM.memory.writeBlock(loadAddr, flashPageBIN);
                     })
                     .then(() => {
-                        log("flash done")
-                        pxt.tickEvent("hid.flash.done");
-                        return wrap.cortexM.reset(false)
+                        log("convert");
+                        // TODO this is seriously inefficient (130ms on a fast machine)
+                        let uf2 = UF2.newBlockFile();
+                        UF2.writeHex(uf2, resp.outfiles[pxtc.BINARY_HEX].split(/\r?\n/));
+                        let bytes = U.stringToUint8Array(UF2.serializeFile(uf2));
+                        let parsed = UF2.parseFile(bytes);
+
+                        let aligned = pageAlignBlocks(parsed, pageSize);
+                        log(`initial: ${aligned.length} pages`);
+                        aligned = onlyChanged(aligned, checksums);
+                        log(`incremental: ${aligned.length} pages`);
+
+                        return Promise.mapSeries(U.range(aligned.length),
+                            i => {
+                                let b = aligned[i];
+                                if (b.targetAddr >= 0x10000000)
+                                    return Promise.resolve();
+
+                                logV("about to write at 0x" + b.targetAddr.toString(16));
+
+                                let writeBl = Promise.resolve();
+
+                                let thisAddr = (i & 1) ? dataAddr : dataAddr + pageSize;
+                                let nextAddr = (i & 1) ? dataAddr + pageSize : dataAddr;
+
+                                if (i == 0) {
+                                    let u32data = new Uint32Array(b.data.length / 4);
+                                    for (let i = 0; i < b.data.length; i += 4)
+                                        u32data[i >> 2] = HF2.read32(b.data, i);
+                                    writeBl = wrap.cortexM.memory.writeBlock(thisAddr, u32data);
+                                }
+
+                                return writeBl
+                                    .then(() => runFlash(b, thisAddr))
+                                    .then(() => {
+                                        let next = aligned[i + 1];
+                                        if (!next)
+                                            return Promise.resolve();
+                                        logV("write next");
+                                        let buf = new Uint32Array(next.data.buffer);
+                                        return wrap.cortexM.memory.writeBlock(nextAddr, buf);
+                                    })
+                                    .then(() => {
+                                        logV("wait");
+                                        return wrap.cortexM.waitForHalt(500);
+                                    })
+                                    .then(() => {
+                                        logV("done block");
+                                    });
+                            })
+                            .then(() => {
+                                log("flash done");
+                                pxt.tickEvent("hid.flash.done");
+                                return wrap.cortexM.reset(false);
+                            })
+                            .then(() => {
+                                wrap.flashing = false;
+                            });
                     })
-                    .then(() => {
-                        wrap.flashing = false;
-                    })
+                    ;
             })
             .catch(e => {
-                // TODO: (microbit master)
-                if (e.type === "devicenotfound") { //&& d.reportDeviceNotFoundAsync) {
+                if (e.type === "devicenotfound" && d.reportDeviceNotFoundAsync) {
                     pxt.tickEvent("hid.flash.devicenotfound");
-                    //return d.reportDeviceNotFoundAsync("/device/windows-app/troubleshoot", resp);
-                    return undefined;
+                    return d.reportDeviceNotFoundAsync("/device/windows-app/troubleshoot", resp);
                 } else {
-                    return saveHexAsync()
+                    if ((e as any).userError && d.reportError) {
+                        d.reportError(e.message);
+                    }
+                    return saveHexAsync();
                 }
             })
     }
@@ -715,9 +743,10 @@ namespace pxt.editor {
         }])
 
         if (canHID())
+            // pxt.commands.deployCoreAsync = deployCoreAsync;
             pxt.commands.deployCoreAsync = (r: pxtc.CompileResult, d: pxt.commands.DeployOptions): Promise<void> => {
                 return deployCoreAsync(r)
-                    .timeout(18000)
+                    .timeout(25000)
                     .catch((e) => {
                         return previousDapWrapper.reconnectAsync(true)
                             .catch((e) => {
