@@ -39,6 +39,11 @@
     "public": true,
     "dependencies": {},
     "yotta": {
+        "config": {
+            "microbit-dal": {
+                "full_range_pitch_calculation": 0
+            }
+        },
         "optionalConfig": {
             "microbit-dal": {
                 "bluetooth": {
@@ -54,8 +59,7 @@
                     "pairing_mode": 1,
                     "whitelist": 1,
                     "security_level": "SECURITY_MODE_ENCRYPTION_NO_MITM"
-                },
-                "full_range_pitch_calculation": 0
+                }
             }
         }
     }
