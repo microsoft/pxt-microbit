@@ -164,7 +164,7 @@ namespace pxsim.visuals {
     const MB_HIGHCONTRAST = `
 path.sim-board {
     stroke: white;
-    stroke-width: 2;
+    stroke-width: 3;
 }
 .sim-led {
     stroke: red;
