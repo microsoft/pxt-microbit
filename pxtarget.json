@@ -201,7 +201,7 @@
         "yottaTarget": "bbc-microbit-classic-gcc",
         "yottaCorePackage": "microbit",
         "githubCorePackage": "lancaster-university/microbit",
-        "gittag": "dal-integration-2",
+        "gittag": "dal-integration-3",
         "serviceId": "microbit"
     },
     "serial": {
