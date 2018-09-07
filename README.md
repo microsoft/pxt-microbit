@@ -44,7 +44,14 @@ typings install
 jake
 cd ../
 ```
+if you find sth error while you execute `npm install ` eg. lack of VCBuild.exe .
+that is because the dependencies denpend on [node-gpy](https://github.com/nodejs/node-gyp) package .
 
+>see [https://github.com/nodejs/node-gyp](https://github.com/nodejs/node-gyp) for detail
+
+>the easy solution is using `npm install --global --production windows-build-tools` from an elevated PowerShell or CMD.exe (run as Administrator).
+
+you can find
 * [Clone this repo](https://help.github.com/articles/cloning-a-repository/) to your computer.
 ```
 git clone https://github.com/microsoft/pxt-microbit
