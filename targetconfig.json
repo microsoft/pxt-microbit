@@ -73,6 +73,7 @@
         "Fashion": "projects/fashion",
         "Music": "projects/music",
         "Toys": "projects/toys",
-        "Science": "projects/science"
+        "Science": "projects/science",
+        "Examples": "examples"
     }
 }
