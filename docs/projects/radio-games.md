@@ -32,9 +32,5 @@ Here are some cool projects that you can build with your @boardname@!
   "name": "Rock Paper Scissors Teams",
   "url": "/projects/rps-teams",
   "imageUrl": "/static/mb/projects/rpsteams.png"
-}, {
-  "name": "Reaction Time",
-  "url":"/projects/reaction-time",
-  "imageUrl":"/static/mb/projects/reaction.jpg"
 }]
 ```
