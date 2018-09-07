@@ -134,6 +134,7 @@ namespace pxsim.ImageMethods {
         let cb = getResume();
         let first = true;
 
+        leds = clampPixelBrightness(leds);
         board().ledMatrixState.animationQ.enqueue({
             interval,
             frame: () => {
@@ -151,6 +152,7 @@ namespace pxsim.ImageMethods {
     export function plotImage(leds: Image, offset: number): void {
         pxtrt.nullCheck(leds)
 
+        leds = clampPixelBrightness(leds);
         board().ledMatrixState.animationQ.enqueue({
             interval: 0,
             frame: () => {
@@ -211,6 +213,7 @@ namespace pxsim.ImageMethods {
         let off = stride > 0 ? 0 : leds.width - 1;
         let display = board().ledMatrixState.image;
 
+        leds = clampPixelBrightness(leds);
         board().ledMatrixState.animationQ.enqueue({
             interval: interval,
             frame: () => {
@@ -229,6 +232,22 @@ namespace pxsim.ImageMethods {
             },
             whenDone: cb
         })
+    }
+
+    function clampPixelBrightness(img: Image): Image {
+        let res = img;
+        if (led.displayMode() === DisplayMode.greyscale && led.brightness() < 0xff) {
+            res = new Image(img.width, img.data);
+            const b = led.brightness();
+            for (let x = 0; x < res.width; ++x) {
+                for (let y = 0; y < 5; ++y) {
+                    if (pixelBrightness(res, x, y) > b) {
+                        setPixelBrightness(res, x, y, b);
+                    }
+                }
+            }
+        }
+        return res;
     }
 }
 
@@ -280,7 +299,7 @@ namespace pxsim.led {
 
     export function plotBrightness(x: number, y: number, brightness: number) {
         const state = board().ledMatrixState;
-        brightness = Math.max(0, Math.min(0xff, brightness));
+        brightness = Math.max(0, Math.min(led.brightness(), brightness));
         if (brightness != 0 && brightness != 0xff && state.displayMode != DisplayMode.greyscale)
             state.displayMode = DisplayMode.greyscale;
         state.image.set(x, y, brightness);

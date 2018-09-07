@@ -310,6 +310,7 @@
   "music.setTempo|block": "set tempo to (bpm)|%value",
   "music.tempo|block": "tempo (bpm)",
   "music|block": "music",
+  "parseFloat|block": "parse to number %text",
   "parseInt|block": "parse to integer %text",
   "pins.analogPitch|block": "analog pitch %frequency|for (ms) %ms",
   "pins.analogReadPin|block": "analog read|pin %name",

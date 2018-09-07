@@ -62,6 +62,13 @@ namespace pxsim.control {
     }
 
     export function onEvent(id: number, evid: number, handler: RefAction) {
+        if (id == DAL.MICROBIT_ID_BUTTON_AB) {
+            const b = board().buttonPairState;
+            if (!b.usesButtonAB) {
+                b.usesButtonAB = true;
+                runtime.queueDisplayUpdate();
+            }
+        }
         pxtcore.registerWithDal(id, evid, handler)
     }
 

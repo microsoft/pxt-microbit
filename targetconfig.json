@@ -32,7 +32,8 @@
             "1010Technologies/pxt-makerbit",
             "pimoroni/pxt-automationbit",
             "k8robotics/pxt-k8",
-            "dexterind/pxt-giggle"
+            "dexterind/pxt-giggle",
+            "dexterind/pxt-gigglebot"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel"
