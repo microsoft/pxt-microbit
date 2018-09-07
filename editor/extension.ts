@@ -284,6 +284,74 @@ namespace pxt.editor {
         return r;
     };
 
+    function fullVendorCommandFlashAsync(resp: pxtc.CompileResult, wrap: DAPWrapper): Promise<void> {
+        const chunkSize = 62;
+        const hex = resp.outfiles[pxtc.BINARY_HEX];
+        let arrayBuffer = U.stringToArrayBuffer16(hex);
+        // const chunks: string[] = [];
+        // const numChunks = Math.ceil(hex.length / chunkSize);
+
+        // for (let i = 0, j = 0; i < numChunks; ++i, j += chunkSize) {
+        //     chunks[i] = hex.substr(j, chunkSize);
+        // }
+
+        // function isBufferBinary(buffer: ArrayBuffer): boolean {
+        //     const bufferString: string = String.fromCharCode.apply(null, new Uint16Array(buffer, 0, 50));
+
+        //     for (let i = 0; i < bufferString.length; i++) {
+        //         const charCode = bufferString.charCodeAt(i);
+        //         // 65533 is a code for unknown character
+        //         // 0-8 are codes for control characters
+        //         if (charCode === 65533 || charCode <= 8) {
+        //             return true;
+        //         }
+        //     }
+        //     return false;
+        // }
+
+        function writeBuffer(buffer: ArrayBuffer, offset: number = 0): Promise<void> {
+            const end = Math.min(buffer.byteLength, offset + chunkSize);
+            const page = buffer.slice(offset, end);
+            const data = new Uint8Array(page.byteLength + 1);
+
+            data.set([page.byteLength]);
+            data.set(new Uint8Array(page), 1);
+            const dataToSend: number[] = Array.prototype.slice.call(data);
+
+            return wrap.cmsisdap.cmdNums(0x8C /* DAPLinkFlash.WRITE */, dataToSend)
+            .then(() => {
+                if (end < buffer.byteLength) {
+                    return writeBuffer(buffer, end);
+                }
+                return Promise.resolve();
+            });
+        }
+
+        // const streamType = isBufferBinary(arrayBuffer) ? 0 : 1;
+        return Promise.resolve()
+            .then(() => {
+                // return wrap.cmsisdap.cmdNums(0x8A /* DAPLinkFlash.OPEN */, [streamType]);
+                return wrap.cmsisdap.cmdNums(0x8A /* DAPLinkFlash.OPEN */, [1]);
+            })
+            .then((a) => {
+                console.log(a);
+                return writeBuffer(arrayBuffer);
+            })
+            .then((a) => {
+                console.log(a);
+                return wrap.cmsisdap.cmdNums(0x8B /* DAPLinkFlash.CLOSE */);
+            })
+            .catch((e) => {
+                console.log(e);
+                return wrap.cmsisdap.cmdNums(0x89 /* DAPLinkFlash.RESET */)
+                    .catch(() => {
+                        // Best effort reset, no-op if there's an error
+                    })
+                    .then(() => {
+                        U.userError(U.lf("Please flash using drag and drop. Automatic flashing will work afterwards."));
+                    })
+            });
+    }
 
     function getFlashChecksumsAsync(wrap: DAPWrapper) {
         log("getting existing flash checksums")
@@ -370,18 +438,7 @@ namespace pxt.editor {
             .then(() => wrap.cortexM.memory.readBlock(0x10001014, 1, pageSize))
             .then(v => {
                 if (HF2.read32(v, 0) != 0x3C000) {
-                    let uf2 = UF2.newBlockFile();
-                    UF2.writeHex(uf2, resp.outfiles[pxtc.BINARY_HEX].split(/\r?\n/));
-                    let bytes = U.stringToUint8Array(UF2.serializeFile(uf2));
-                    let parsed = UF2.parseFile(bytes);
-                    return wrap.cmsisdap.cmdNums(0x8C /* DAPLinkFlash.WRITE */, parsed)
-                        .then((a: any, b: any) => {
-                            console.log(a);
-                            console.log(b);
-                        }, (e: any) => {
-                            console.log(e);
-                        });
-
+                    return fullVendorCommandFlashAsync(resp, wrap);
 
                     // pxt.tickEvent("hid.flash.uicrfail");
                     // const msg = U.lf("Please flash your device using drag and drop. Automatic flashing will work afterwards.");
@@ -464,20 +521,37 @@ namespace pxt.editor {
                             .then(() => {
                                 wrap.flashing = false;
                             });
-                    })
-                    ;
+                    });
             })
+            .timeout(25000, "flashTimeout")
             .catch(e => {
                 if (e.type === "devicenotfound" && d.reportDeviceNotFoundAsync) {
                     pxt.tickEvent("hid.flash.devicenotfound");
                     return d.reportDeviceNotFoundAsync("/device/windows-app/troubleshoot", resp);
+                } else if (e.message === "flashTimeout") {
+                    return previousDapWrapper.reconnectAsync(true)
+                        .catch((e) => {
+                            // Best effort disconnect; at this point we don't even know the state of the device
+                            pxt.reportException(e);
+                        })
+                        .then(() => {
+                            return resp.confirmAsync({
+                                header: lf("Something went wrong..."),
+                                body: lf("Flashing your {0} took too long. Please disconnect your {0} from your computer and try reconnecting it.", pxt.appTarget.appTheme.boardName || lf("device")),
+                                disagreeLbl: lf("Ok"),
+                                hideAgree: true
+                            });
+                        })
+                        .then(() => {
+                            return pxt.commands.saveOnlyAsync(resp);
+                        });
                 } else {
                     if ((e as any).userError && d.reportError) {
                         d.reportError(e.message);
                     }
                     return saveHexAsync();
                 }
-            })
+            });
     }
 
     /**
@@ -743,29 +817,7 @@ namespace pxt.editor {
         }])
 
         if (canHID())
-            // pxt.commands.deployCoreAsync = deployCoreAsync;
-            pxt.commands.deployCoreAsync = (r: pxtc.CompileResult, d: pxt.commands.DeployOptions): Promise<void> => {
-                return deployCoreAsync(r)
-                    .timeout(25000)
-                    .catch((e) => {
-                        return previousDapWrapper.reconnectAsync(true)
-                            .catch((e) => {
-                                // Best effort disconnect; at this point we don't even know the state of the device
-                                pxt.reportException(e);
-                            })
-                            .then(() => {
-                                return r.confirmAsync({
-                                    header: lf("Something went wrong..."),
-                                    body: lf("Flashing your {0} took too long. Please disconnect your {0} from your computer and try reconnecting it.", pxt.appTarget.appTheme.boardName || lf("device")),
-                                    disagreeLbl: lf("Ok"),
-                                    hideAgree: true
-                                });
-                            })
-                            .then(() => {
-                                return pxt.commands.saveOnlyAsync(r);
-                            });
-                    });
-            }
+            pxt.commands.deployCoreAsync = deployCoreAsync;
 
         res.blocklyPatch = patchBlocks;
         return Promise.resolve<pxt.editor.ExtensionResult>(res);
