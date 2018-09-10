@@ -22,14 +22,19 @@ Here are some cool tutorials to get you started with your @boardname@!
   "imageUrl": "/static/mb/projects/a2-buttons.png",
   "cardType": "tutorial"
 }, {
-  "name": "Coin Flipper",
-  "url":"/projects/coin-flipper",
-  "imageUrl": "/static/mb/projects/coin-flipper.png",
+  "name": "Dice",
+  "url":"/projects/dice",
+  "imageUrl": "/static/mb/projects/dice.png",
   "cardType": "tutorial"
 }, {
   "name": "Love Meter",
   "url":"/projects/love-meter",
   "imageUrl":"/static/mb/projects/a3-pins.png",
+  "cardType": "tutorial"
+}, {
+  "name": "Coin Flipper",
+  "url":"/projects/coin-flipper",
+  "imageUrl": "/static/mb/projects/coin-flipper.png",
   "cardType": "tutorial"
 }]
 ```
