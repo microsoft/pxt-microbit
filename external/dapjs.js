@@ -751,7 +751,7 @@ var CortexM = (function () {
                     case 2:
                         _a.sent();
                         _a.label = 3;
-                    case 3: 
+                    case 3:
                     // Run the program and wait for halt
                     return [4 /*yield*/, this.resume()];
                     case 4:
@@ -1239,7 +1239,7 @@ var HWBreakpoint = (function () {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: 
+                    case 0:
                     /* clear hardware breakpoint */
                     return [4 /*yield*/, this.parent.memory.write32(this.regAddr, 0)];
                     case 1:
@@ -1282,7 +1282,7 @@ var SWBreakpoint = (function () {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: 
+                    case 0:
                     /* clear hardware breakpoint */
                     return [4 /*yield*/, this.parent.memory.write16(this.addr, this.instruction)];
                     case 1:
@@ -2388,7 +2388,7 @@ var CMSISDAP = (function () {
                     case 1:
                         buf = _a.sent();
                         if (buf[0] !== op) {
-                            throw new Error("Bad response for " + op + " -> " + buf[0]);
+                            // throw new Error("Bad response for " + op + " -> " + buf[0]);
                         }
                         switch (op) {
                             case 2 /* DAP_CONNECT */:
@@ -2704,7 +2704,7 @@ var FlashTarget = (function (_super) {
                             this.platform.flashAlgo.loadAddress + 1, // lr
                             this.platform.flashAlgo.stackPointer, // sp
                             /* upload? */
-                            false, 
+                            false,
                             /* args */
                             flashAddress, this.platform.flashAlgo.pageSize, bufferAddress)];
                     case 5:

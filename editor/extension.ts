@@ -318,13 +318,14 @@ namespace pxt.editor {
             data.set(new Uint8Array(page), 1);
             const dataToSend: number[] = Array.prototype.slice.call(data);
 
+            console.log(`DataToSend (${(end / buffer.byteLength * 100).toFixed(2)}): ${dataToSend.join(", ")}`);
             return wrap.cmsisdap.cmdNums(0x8C /* DAPLinkFlash.WRITE */, dataToSend)
-            .then(() => {
-                if (end < buffer.byteLength) {
-                    return writeBuffer(buffer, end);
-                }
-                return Promise.resolve();
-            });
+                .then(() => {
+                    if (end < buffer.byteLength) {
+                        return writeBuffer(buffer, end);
+                    }
+                    return Promise.resolve();
+                });
         }
 
         // const streamType = isBufferBinary(arrayBuffer) ? 0 : 1;
@@ -334,18 +335,19 @@ namespace pxt.editor {
                 return wrap.cmsisdap.cmdNums(0x8A /* DAPLinkFlash.OPEN */, [1]);
             })
             .then((a) => {
-                console.log(a);
+                let b = a;
                 return writeBuffer(arrayBuffer);
             })
             .then((a) => {
-                console.log(a);
-                return wrap.cmsisdap.cmdNums(0x8B /* DAPLinkFlash.CLOSE */);
+                let b = a;
+                return wrap.cmsisdap.cmdNums(0x8B /* DAPLinkFlash.CLOSE */, []);
             })
             .catch((e) => {
-                console.log(e);
-                return wrap.cmsisdap.cmdNums(0x89 /* DAPLinkFlash.RESET */)
-                    .catch(() => {
+                let b = e;
+                return wrap.cmsisdap.cmdNums(0x89 /* DAPLinkFlash.RESET */, [])
+                    .catch((e2: any) => {
                         // Best effort reset, no-op if there's an error
+                        let c = e2;
                     })
                     .then(() => {
                         U.userError(U.lf("Please flash using drag and drop. Automatic flashing will work afterwards."));
