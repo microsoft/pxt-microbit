@@ -43,7 +43,14 @@
     ],
     "public": true,
     "dependencies": {},
-    "yotta": {        
+    "yotta": {
+        "config": {
+            "microbit-dal": {
+                "bluetooth": {
+                    "partial_flashing": 1
+                }
+            }
+        },
         "optionalConfig": {
             "microbit-dal": {
                 "bluetooth": {
