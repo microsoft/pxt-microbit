@@ -41,10 +41,7 @@
     "yotta": {
         "config": {
             "microbit-dal": {
-                "full_range_pitch_calculation": 0,
-                "bluetooth": {
-                    "partial_flashing": 1
-                }
+                "full_range_pitch_calculation": 0
             }
         },
         "optionalConfig": {
@@ -61,7 +58,8 @@
                     "open": 0,
                     "pairing_mode": 1,
                     "whitelist": 1,
-                    "security_level": "SECURITY_MODE_ENCRYPTION_NO_MITM"
+                    "security_level": "SECURITY_MODE_ENCRYPTION_NO_MITM",
+                    "partial_flashing": 1
                 }
             }
         }
