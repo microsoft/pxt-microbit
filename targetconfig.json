@@ -68,7 +68,12 @@
     ],
     "galleries": {
         "Tutorials": "tutorials",
-        "Projects": "projects",
+        "Games": "projects/games",
+        "Radio Games": "projects/radio-games",
+        "Fashion": "projects/fashion",
+        "Music": "projects/music",
+        "Toys": "projects/toys",
+        "Science": "projects/science",
         "Examples": "examples"
     }
 }

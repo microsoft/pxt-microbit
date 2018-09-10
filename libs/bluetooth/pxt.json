@@ -20,53 +20,7 @@
                     "enabled": 1
                 }
             }
-        },
-        "optionalConfig": {
-            "microbit-dal": {
-                "gatt_table_size": "0x700"
-            }
-        },
-        "userConfigs": [
-            {
-                "description": "No Pairing Required: Anyone can connect via Bluetooth.",
-                "config": {
-                    "microbit-dal": {
-                        "bluetooth": {
-                            "open": 1,
-                            "pairing_mode": 0,
-                            "whitelist": 0,
-                            "security_level": null
-                        }
-                    }
-                }
-            },
-            {
-                "description": "JustWorks pairing (default): Pairing is automatic once the pairing is initiated.",
-                "config": {
-                    "microbit-dal": {
-                        "bluetooth": {
-                            "open": null,
-                            "pairing_mode": null,
-                            "whitelist": null,
-                            "security_level": null
-                        }
-                    }
-                }
-            },
-            {
-                "description": "Passkey pairing: Pairing requires 6 digit key to pair.",
-                "config": {
-                    "microbit-dal": {
-                        "bluetooth": {
-                            "open": 0,
-                            "pairing_mode": 1,
-                            "whitelist": 1,
-                            "security_level": "SECURITY_MODE_ENCRYPTION_WITH_MITM"
-                        }
-                    }
-                }
-            }
-        ]
+        }
     },
     "installedVersion": "vzlhfd"
 }
