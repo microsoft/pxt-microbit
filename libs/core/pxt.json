@@ -41,7 +41,10 @@
     "yotta": {
         "config": {
             "microbit-dal": {
-                "full_range_pitch_calculation": 0
+                "full_range_pitch_calculation": 0,
+                "bluetooth": {
+                    "partial_flashing": 1
+                }
             }
         },
         "optionalConfig": {
