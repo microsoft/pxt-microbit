@@ -2388,7 +2388,7 @@ var CMSISDAP = (function () {
                     case 1:
                         buf = _a.sent();
                         if (buf[0] !== op) {
-                            // throw new Error("Bad response for " + op + " -> " + buf[0]);
+                            throw new Error("Bad response for " + op + " -> " + buf[0]);
                         }
                         switch (op) {
                             case 2 /* DAP_CONNECT */:
