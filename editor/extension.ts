@@ -790,7 +790,7 @@ namespace pxt.editor {
         // Data URIs cannot be used for navigation, for scripting, or to populate frame or iframe elements"
         const downloadAgain = !pxt.BrowserUtils.isIE() && !pxt.BrowserUtils.isEdge();
         const docUrl = pxt.appTarget.appTheme.usbDocs;
-        const saveAs = pxt.BrowserUtils.hasSaveAs();
+        const columns = canWebusb ? "eleven" : "sixteen";
 
         const htmlBody = `
         <div class="ui grid stackable">
@@ -802,7 +802,7 @@ namespace pxt.editor {
                 </div>
                 <a href="/troubleshoot" target="_blank">${lf("Check your firmware version here and update if needed")}</a>
             </div>` : ''}
-            <div class="column eleven wide">
+            <div class="column ${columns} wide">
                 <div class="ui grid">
                     <div class="row">
                         <div class="column">
