@@ -739,6 +739,7 @@ namespace pxt.editor {
             }
 
         res.blocklyPatch = patchBlocks;
+        res.showUploadInstructionsAsync = showUploadInstructionsAsync;
         return Promise.resolve<pxt.editor.ExtensionResult>(res);
     }
 
@@ -771,5 +772,99 @@ namespace pxt.editor {
 
         s.appendChild(f);
         valueNode.appendChild(s);
+    }
+
+    function showUploadInstructionsAsync(fn: string, url: string, confirmAsync: (options: any) => Promise<number>) {
+        let resolve: (thenableOrResult?: void | PromiseLike<void>) => void;
+        let reject: (error: any) => void;
+        const deferred = new Promise<void>((res, rej) => {
+            resolve = res;
+            reject = rej;
+        });
+        const boardName = pxt.appTarget.appTheme.boardName || "???";
+        const boardDriveName = pxt.appTarget.appTheme.driveDisplayName || pxt.appTarget.compile.driveName || "???";
+        const canWebusb = pxt.usb.isEnabled;
+
+        // https://msdn.microsoft.com/en-us/library/cc848897.aspx
+        // "For security reasons, data URIs are restricted to downloaded resources. 
+        // Data URIs cannot be used for navigation, for scripting, or to populate frame or iframe elements"
+        const downloadAgain = !pxt.BrowserUtils.isIE() && !pxt.BrowserUtils.isEdge();
+        const docUrl = pxt.appTarget.appTheme.usbDocs;
+        const saveAs = pxt.BrowserUtils.hasSaveAs();
+
+        const htmlBody = `
+        <div class="ui grid stackable">
+            ${canWebusb ? `<div class="column five wide" style="background-color: #E2E2E2;">
+                <div class="ui header">${lf("One click download?")}</div>
+                <strong style="font-size:small">${lf("You must have version 0248 or above of the firmware")}</strong>
+                <div style="justify-content: center;display: flex;padding: 1rem;">
+                    <img class="ui image" src="./static/download/firmware.png" style="height:100px;" />
+                </div>
+                <a href="/troubleshoot" target="_blank">${lf("Check your firmware version here and update if needed")}</a>
+            </div>` : ''}
+            <div class="column eleven wide">
+                <div class="ui grid">
+                    <div class="row">
+                        <div class="column">
+                            <div class="ui two column grid padded">
+                                <div class="column">
+                                    <div class="ui">
+                                        <div class="image">
+                                            <img class="ui medium rounded image" src="./static/download/connect.png" style="margin-bottom:1rem;" />
+                                        </div>
+                                        <div class="content">
+                                            <div class="description">
+                                                <span class="ui yellow circular label">1</span>
+                                                <strong>${lf("Connect the micro:bit to your computer with a USB cable")}</strong>
+                                                <br />
+                                                <span style="font-size:small">${lf("Use the miniUSB port on the top of the micro:bit Brick")}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="column">
+                                    <div class="ui">
+                                        <div class="image">
+                                            <img class="ui medium rounded image" src="./static/download/transfer.png" style="margin-bottom:1rem;" />
+                                        </div>
+                                        <div class="content">
+                                            <div class="description">
+                                                <span class="ui yellow circular label">2</span>
+                                                <strong>${lf("Move the .hex file to the micro:bit")}</strong>
+                                                <br />
+                                                <span style="font-size:small">${lf("Locate the downloaded .hex file and drag it to the MICROBIT drive")}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>`;
+
+        return confirmAsync({
+            header: lf("Download to your micro:bit"),
+            htmlBody,
+            hasCloseIcon: true,
+            hideCancel: true,
+            hideAgree: false,
+            agreeLbl: lf("I got it"),
+            className: 'downloaddialog',
+            buttons: [downloadAgain ? {
+                label: fn,
+                icon: "download",
+                className: "lightgrey focused",
+                url,
+                fileName: fn
+            } : undefined, docUrl ? {
+                label: lf("Help"),
+                icon: "help",
+                className: "lightgrey",
+                url: docUrl
+            } : undefined]
+            //timeout: 20000
+        }).then(() => { });
     }
 }
