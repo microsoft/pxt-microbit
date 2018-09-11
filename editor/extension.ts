@@ -788,7 +788,7 @@ namespace pxt.editor {
         // https://msdn.microsoft.com/en-us/library/cc848897.aspx
         // "For security reasons, data URIs are restricted to downloaded resources. 
         // Data URIs cannot be used for navigation, for scripting, or to populate frame or iframe elements"
-        const downloadAgain = !pxt.BrowserUtils.isIE() && !pxt.BrowserUtils.isEdge();
+        const downloadAgain = false // !pxt.BrowserUtils.isIE() && !pxt.BrowserUtils.isEdge();
         const docUrl = pxt.appTarget.appTheme.usbDocs;
         const columns = canWebusb ? "eleven" : "sixteen";
 
@@ -796,11 +796,11 @@ namespace pxt.editor {
         <div class="ui grid stackable">
             ${canWebusb ? `<div class="column five wide" style="background-color: #E2E2E2;">
                 <div class="ui header">${lf("One click download?")}</div>
-                <strong style="font-size:small">${lf("You must have version 0248 or above of the firmware")}</strong>
+                <strong style="font-size:small">${lf("Pair your device to get instant download.")}</strong>
                 <div style="justify-content: center;display: flex;padding: 1rem;">
                     <img class="ui image" src="./static/download/firmware.png" style="height:100px;" />
                 </div>
-                <a href="/troubleshoot" target="_blank">${lf("Check your firmware version here and update if needed")}</a>
+                <a href="https://support.microbit.org/support/solutions/articles/19000084059-beta-testing-web-usb" target="_blank">${lf("Check your firmware version here and update if needed")}</a>
             </div>` : ''}
             <div class="column ${columns} wide">
                 <div class="ui grid">
@@ -814,7 +814,7 @@ namespace pxt.editor {
                                         </div>
                                         <div class="content">
                                             <div class="description">
-                                                <span class="ui yellow circular label">1</span>
+                                                <span class="ui purple circular label">1</span>
                                                 <strong>${lf("Connect the micro:bit to your computer with a USB cable")}</strong>
                                                 <br />
                                                 <span style="font-size:small">${lf("Use the miniUSB port on the top of the micro:bit Brick")}</span>
@@ -829,7 +829,7 @@ namespace pxt.editor {
                                         </div>
                                         <div class="content">
                                             <div class="description">
-                                                <span class="ui yellow circular label">2</span>
+                                                <span class="ui purple circular label">2</span>
                                                 <strong>${lf("Move the .hex file to the micro:bit")}</strong>
                                                 <br />
                                                 <span style="font-size:small">${lf("Locate the downloaded .hex file and drag it to the MICROBIT drive")}</span>
@@ -858,6 +858,13 @@ namespace pxt.editor {
                 className: "lightgrey focused",
                 url,
                 fileName: fn
+            } : undefined, canWebusb ? {
+                label: lf("Pair device"),
+                icon: "usb",
+                className: "lightgrey focused",
+                onclick: () => {
+                    pxt.usb.pairAsync().done();
+                }
             } : undefined, docUrl ? {
                 label: lf("Help"),
                 icon: "help",
