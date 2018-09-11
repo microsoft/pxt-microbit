@@ -1,5 +1,17 @@
 # Turtle Scanner
 
+## Setting up your project
+
+This project uses an **microturtle** Extension. You'll need to add it to your project to make it work.
+
+* create a new project
+* click on the gearwheel menu and click **Extensions**
+* select the **microturtle** extension
+
+After the project reloads, you should see the **turtle** category in the blocks.
+
+## Code
+
 The turtle scans the display over and over again.
 
 ```blocks

@@ -36,7 +36,8 @@
             "dexterind/pxt-gigglebot"
         ],
         "preferredRepos": [
-            "Microsoft/pxt-neopixel"
+            "Microsoft/pxt-neopixel",
+            "Microsoft/pxt-microturtle"
         ]
     },
     "languages": [
@@ -74,6 +75,7 @@
         "Music": "projects/music",
         "Toys": "projects/toys",
         "Science": "projects/science",
+        "Turtle": "projects/turtle",
         "Examples": "examples"
     }
 }
