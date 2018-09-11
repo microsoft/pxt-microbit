@@ -331,6 +331,7 @@ namespace pxt.editor {
     function quickHidFlashAsync(resp: pxtc.CompileResult, wrap: DAPWrapper): Promise<void> {
         let logV = (msg: string) => { }
         //let logV = log
+        let aborted = false;
 
         const runFlash = (b: UF2.Block, dataAddr: number) => {
             const cmd = wrap.cortexM.prepareCommand();
@@ -378,6 +379,7 @@ namespace pxt.editor {
 
                 return Promise.mapSeries(U.range(aligned.length),
                     i => {
+                        if (aborted) return Promise.resolve();
                         let b = aligned[i];
                         if (b.targetAddr >= 0x10000000)
                             return Promise.resolve();
@@ -423,7 +425,11 @@ namespace pxt.editor {
                         wrap.flashing = false;
                     });
             })
-            .timeout(25000, timeoutMessage);
+            .timeout(25000, timeoutMessage)
+            .catch((e) => {
+                aborted = true;
+                return Promise.reject(e);
+            });
     }
 
     function getFlashChecksumsAsync(wrap: DAPWrapper) {
