@@ -11,6 +11,11 @@
   "name": "Watch",
   "url":"/projects/watch",
   "imageUrl":"/static/mb/projects/a10-watch.png"
+}, {
+  "name": "Stop Watch",
+  "description": "Easily track time",
+  "url": "/projects/stop-watch",
+  "imageUrl":"/static/mb/projects/stop-watch.png"
 }]
 ```
 

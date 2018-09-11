@@ -54,11 +54,6 @@ Here are some fun programs for your @boardname@!
   "url": "/examples/plot-analog-pin",
   "cardType": "example"
 }, {
-  "name": "Stop Watch",
-  "description": "Easily track time",
-  "url": "/examples/stop-watch",
-  "cardType": "example"
-}, {
   "name": "Radio Dashboard",
   "description": "A dashboard for radio clients",
   "url": "/examples/radio-dashboard",
