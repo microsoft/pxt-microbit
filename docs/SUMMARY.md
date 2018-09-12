@@ -41,6 +41,7 @@
     * [Karel](/projects/karel)
     * [Stop Watch](/projects/stopwatch)
     * [Name Tag](/projects/name-tag)
+    * [Step counter](/projects/step-counter)
 
 ## #examples
 
