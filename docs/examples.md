@@ -44,16 +44,6 @@ Here are some fun programs for your @boardname@!
   "url": "/examples/plot-acceleration",
   "cardType": "example"
 }, {
-  "name": "Plot Light Level",
-  "description": "Chart light level on the LED screen",
-  "url": "/examples/plot-light-level",
-  "cardType": "example"
-}, {
-  "name": "Plot Analog Pin",
-  "description": "Chart analog input on the LED screen",
-  "url": "/examples/plot-analog-pin",
-  "cardType": "example"
-}, {
   "name": "Radio Dashboard",
   "description": "A dashboard for radio clients",
   "url": "/examples/radio-dashboard",

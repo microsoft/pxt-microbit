@@ -42,6 +42,9 @@
     * [Stop Watch](/projects/stopwatch)
     * [Name Tag](/projects/name-tag)
     * [Step counter](/projects/step-counter)
+    * [Servo calibrator](/projects/servo-calibrator)
+    * [Analog Pin Calibrator](/projects/analog-pin-calibrator)
+    * [Light level calibrator](/projects/light-level-calibrator)
 
 ## #examples
 
