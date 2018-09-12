@@ -17,6 +17,12 @@
   "url": "/projects/stopwatch",
   "imageUrl":"/static/mb/projects/stopwatch.png",
   "cardType": "side"
+}, {
+  "name": "Step counter",
+  "description": "Count your steps",
+  "url": "/projects/step-counter",
+  "imageUrl":"/static/mb/projects/step-counter.png",
+  "cardType": "side"
 }]
 ```
 
