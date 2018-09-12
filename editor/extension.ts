@@ -775,12 +775,6 @@ namespace pxt.editor {
     }
 
     function showUploadInstructionsAsync(fn: string, url: string, confirmAsync: (options: any) => Promise<number>) {
-        let resolve: (thenableOrResult?: void | PromiseLike<void>) => void;
-        let reject: (error: any) => void;
-        const deferred = new Promise<void>((res, rej) => {
-            resolve = res;
-            reject = rej;
-        });
         const boardName = pxt.appTarget.appTheme.boardName || "???";
         const boardDriveName = pxt.appTarget.appTheme.driveDisplayName || pxt.appTarget.compile.driveName || "???";
         const canWebusb = pxt.usb.isEnabled;
@@ -796,7 +790,7 @@ namespace pxt.editor {
         <div class="ui grid stackable">
             ${canWebusb ? `<div class="column five wide" style="background-color: #E2E2E2;">
                 <div class="ui header">${lf("One click download?")}</div>
-                <strong style="font-size:small">${lf("Pair your device to get instant download.")}</strong>
+                <strong style="font-size:small">${lf("Pair your device to download instantly.")}</strong>
                 <div style="justify-content: center;display: flex;padding: 1rem;">
                     <img class="ui image" src="./static/download/firmware.png" style="height:100px;" />
                 </div>
@@ -815,9 +809,9 @@ namespace pxt.editor {
                                         <div class="content">
                                             <div class="description">
                                                 <span class="ui purple circular label">1</span>
-                                                <strong>${lf("Connect the micro:bit to your computer with a USB cable")}</strong>
+                                                <strong>${lf("Connect the {0} to your computer with a USB cable", boardName)}</strong>
                                                 <br />
-                                                <span style="font-size:small">${lf("Use the miniUSB port on the top of the micro:bit Brick")}</span>
+                                                <span style="font-size:small">${lf("Use the microUSB port on the top of the {0}", boardName)}</span>
                                             </div>
                                         </div>
                                     </div>
@@ -830,9 +824,9 @@ namespace pxt.editor {
                                         <div class="content">
                                             <div class="description">
                                                 <span class="ui purple circular label">2</span>
-                                                <strong>${lf("Move the .hex file to the micro:bit")}</strong>
+                                                <strong>${lf("Move the .hex file to the {0}", boardName)}</strong>
                                                 <br />
-                                                <span style="font-size:small">${lf("Locate the downloaded .hex file and drag it to the MICROBIT drive")}</span>
+                                                <span style="font-size:small">${lf("Locate the downloaded .hex file and drag it to the {0} drive", boardDriveName)}</span>
                                             </div>
                                         </div>
                                     </div>
