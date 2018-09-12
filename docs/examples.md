@@ -60,14 +60,3 @@ Here are some fun programs for your @boardname@!
   "cardType": "example"
 }]
 ```
-
-## Actuators
-
-```codecard
-[{
-  "name": "Servo Calibrator",
-  "description": "Calibrate a servo",
-  "url": "/examples/servo-calibrator",
-  "cardType": "example"
-}]
-```

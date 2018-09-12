@@ -1,15 +1,15 @@
-# Plot Analog Pin
+# Light level Calibrator
 
-Use this program to graph the analog value on pin ``P0``, ``P1`` or ``P2``.
+Use this program to graph the light level.
 Press ``A`` to scroll the value on the screen.
 
 ```blocks
 let reading = 0
 basic.forever(() => {
-    reading = pins.analogReadPin(AnalogPin.P0)
+    reading = input.lightLevel()
     led.plotBarGraph(
         reading,
-        1023
+        255
     )
     if (input.buttonIsPressed(Button.A)) {
         basic.showNumber(reading)
