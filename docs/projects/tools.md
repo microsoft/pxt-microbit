@@ -23,3 +23,15 @@
   "cardType": "side"
 }]
 ```
+
+## Streaming
+
+```codecard
+[{
+  "name": "Radio Bridge",
+  "description": "Send radio messages to editor",
+  "url": "/projects/radio-bridge",
+  "imageUrl": "/static/mb/projects/radio-bridge.png",
+  "cardType": "example"
+}]
+```

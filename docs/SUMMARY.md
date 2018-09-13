@@ -45,6 +45,7 @@
     * [Servo calibrator](/projects/servo-calibrator)
     * [Analog Pin Tester](/projects/analog-pin-tester)
     * [Light Level Meter](/projects/light-level-meter)
+    * [Radio bridge](/projects/radio-bridge)
 
 ## #examples
 
