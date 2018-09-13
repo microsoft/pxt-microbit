@@ -90,7 +90,8 @@
                 "vid": "0x0d28",
                 "pid": "0x0204"
             }
-        ]
+        ],
+        "webUSB": true
     },
     "runtime": {
         "mathBlocks": true,

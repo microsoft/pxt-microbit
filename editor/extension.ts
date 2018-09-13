@@ -437,7 +437,7 @@ namespace pxt.editor {
         let wrap: DAPWrapper
         log("init")
 
-        d.showNotification(U.lf("Flashing device..."));
+        d.showNotification(U.lf("Downloading..."));
         pxt.tickEvent("hid.flash.start");
         return Promise.resolve()
             .then(() => {
@@ -481,7 +481,7 @@ namespace pxt.editor {
                         .then(() => {
                             return resp.confirmAsync({
                                 header: lf("Something went wrong..."),
-                                body: lf("Flashing your {0} took too long. Please disconnect your {0} from your computer and reconnect it, then flash using drag and drop.", pxt.appTarget.appTheme.boardName || lf("device")),
+                                body: lf("One-click download took too long. Please disconnect your {0} from your computer and reconnect it, then manually download your program using drag and drop.", pxt.appTarget.appTheme.boardName || lf("device")),
                                 disagreeLbl: lf("Ok"),
                                 hideAgree: true
                             });
@@ -495,8 +495,8 @@ namespace pxt.editor {
                 } else {
                     pxt.tickEvent("hid.flash.unknownerror");
                     return resp.confirmAsync({
-                        header: U.lf("We cannot flash your program..."),
-                        body: U.lf("Please flash your device using drag and drop this time. Automatic flashing might work afterwards."),
+                        header: U.lf("Something went wrong..."),
+                        body: U.lf("Please manually download your program to your device using drag and drop. One-click download might work afterwards."),
                         disagreeLbl: lf("Ok"),
                         hideAgree: true
                     })
@@ -531,17 +531,9 @@ namespace pxt.editor {
         })
     }
 
-    let didUserDisableWebUsb = false;
     export function deployCoreAsync(resp: pxtc.CompileResult, d: pxt.commands.DeployOptions = {}): Promise<void> {
         const saveHexAsync = () => {
             return pxt.commands.saveOnlyAsync(resp);
-        };
-        const pairAndFlashAsync = () => {
-            return pxt.usb.pairAsync()
-                .then(() => flashAsync(resp, d))
-                .catch((e) => {
-                    d.reportError(U.lf("No USB device paired"));
-                });
         };
         return Promise.resolve()
             .then(() => {
@@ -550,34 +542,18 @@ namespace pxt.editor {
                     // Go straight to flashing
                     return flashAsync(resp, d);
                 }
-
-                const skipWebUsb = !pxt.usb.isAvailable || didUserDisableWebUsb;
-                if (skipWebUsb) {
+                if (!pxt.usb.isAvailable) {
                     return saveHexAsync();
                 }
                 return pxt.usb.isPairedAsync()
                     .then((isPaired) => {
                         if (isPaired) {
-                            // Go straight to flashing
+                            // Already paired from earlier in the session or from previous session
                             return flashAsync(resp, d);
                         }
 
                         // No device paired, prompt user
-                        return webUsbDialogAsync(resp.confirmAsync)
-                            .then((res) => {
-                                switch (res) {
-                                    case 0: // Pair device
-                                        pxt.tickEvent("hid.flash.pairandflash");
-                                        return pairAndFlashAsync();
-                                    case 1: // Don't enable one-click
-                                        pxt.tickEvent("hid.flash.oneclickdisabled");
-                                        didUserDisableWebUsb = true;
-                                        return saveHexAsync();
-                                    default:
-                                        // Unknown state
-                                        return Promise.resolve();
-                                }
-                            });
+                        return saveHexAsync();
                     });
             })
     }
@@ -849,6 +825,7 @@ namespace pxt.editor {
 
         res.blocklyPatch = patchBlocks;
         res.showUploadInstructionsAsync = showUploadInstructionsAsync;
+        res.webUsbPairDialogAsync = webUsbPairDialogAsync;
         return Promise.resolve<pxt.editor.ExtensionResult>(res);
     }
 
@@ -883,11 +860,11 @@ namespace pxt.editor {
         valueNode.appendChild(s);
     }
 
-    function webUsbDialogAsync(confirmAsync: (options: any) => Promise<number>): Promise<number> {
+    function webUsbPairDialogAsync(confirmAsync: (options: any) => Promise<number>): Promise<number> {
         const boardName = pxt.appTarget.appTheme.boardName || "???";
         const htmlBody = `
         <div class="ui grid stackable">
-            <div class="column five wide" style="background-color: #E2E2E2;">
+            <div class="column five wide" style="background-color: #FFFFCE;">
                 <div class="ui header">${lf("New to one-click download?")}</div>
                 <strong style="font-size:small">${lf("You must have version 0248 or above of the firmware")}</strong>
                 <div style="justify-content: center;display: flex;padding: 1rem;">
@@ -925,14 +902,7 @@ namespace pxt.editor {
                                                 <span class="ui purple circular label">2</span>
                                                 <strong>${lf("Pair your {0}", boardName)}</strong>
                                                 <br />
-                                                <span style="font-size:small">${lf("Click 'Pair device' below and select the following from the list:")}</span>
-                                                <br />
-                                                <strong style="font-size:small">BBC micro:bit CMSIS-DAP</strong>
-                                                <br />
-                                                <br />
-                                                <span style="font-size:small">${lf("It can also show up as the following name:")}</span>
-                                                <br />
-                                                <span style="font-size:small">DAPLink CMSIS-DAP</span>
+                                                <span style="font-size:small">${lf("Click 'Pair device' below and select <strong>BBC micro:bit CMSIS-DAP</strong> or <strong>DAPLink CMSIS-DAP</strong> from the list")}</span>
                                             </div>
                                         </div>
                                     </div>
@@ -944,17 +914,26 @@ namespace pxt.editor {
             </div>
         </div>`;
 
+        const buttons: any[] = [];
+        const docUrl = pxt.appTarget.appTheme.usbDocs;
+        if (docUrl) {
+            buttons.push({
+                label: lf("Help"),
+                icon: "help",
+                className: "lightgrey",
+                url: `${docUrl}/one-click-download`
+            });
+        }
+
         return confirmAsync({
             header: lf("One-click download"),
             htmlBody,
-            hasCloseIcon: false,
-            agreeLbl: lf("Don't enable one-click"),
-            agreeClass: "lightgrey",
-            agreeIcon: "cancel",
-            disagreeLbl: lf("Pair device"),
-            disagreeClass: "green focused",
-            disagreeIcon: "usb",
-            className: 'downloaddialog'
+            hasCloseIcon: true,
+            agreeLbl: lf("Pair device"),
+            agreeIcon: "usb",
+            hideCancel: true,
+            className: 'downloaddialog',
+            buttons
         });
     }
 
