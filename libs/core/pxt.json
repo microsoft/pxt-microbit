@@ -59,7 +59,6 @@
                     "pairing_mode": 1,
                     "whitelist": 1,
                     "security_level": "SECURITY_MODE_ENCRYPTION_NO_MITM",
-                    "gatt_table_size": "0x700",
                     "partial_flashing": 1
                 }
             }

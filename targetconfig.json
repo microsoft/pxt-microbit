@@ -75,6 +75,7 @@
         "Music": "projects/music",
         "Toys": "projects/toys",
         "Science": "projects/science",
+        "Tools": "projects/tools",
         "Turtle": "projects/turtle",
         "Examples": "examples"
     }

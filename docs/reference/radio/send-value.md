@@ -32,7 +32,6 @@ Then it shows them on the LED screen.
 ```blocks
 radio.setGroup(99)
 radio.onReceivedValue(function (name, value) {
-radio.onDataPacketReceived(({ name, value }) => {
 	basic.showString(name);
     basic.showNumber(value);
 });
