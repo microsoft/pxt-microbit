@@ -27,9 +27,9 @@ This is the _rough_ outline of the code:
 
 >When a user presses **A**, we start by determining which state we're in.
 
->If the watch is stopped, (``start time`` is 0 and this means we're in **state 1**), we start the counter and store the current time. The watch now goes from **state 1** to **state 2**.
+>If the watch is stopped, (``start_time`` is `0` and this means we're in **state 1**), we start the counter and store the current time. The watch now goes from **state 1** to **state 2**.
 
->If the watch is running (``start time`` is not 0 and this means we're in **state 2**), we calculate the time duration and reset ``start time`` to 0. The watch goes back from **state 2** to **state 1**.
+>If the watch is running (``start_time`` is not `0` and this means we're in **state 2**), we calculate the time duration and reset ``start_time`` to `0`. The watch goes back from **state 2** to **state 1**.
 
 The ``||input:running time||`` block returns the number of **milli**-seconds elapsed since the @boardname@ was turned on. To compute the duration in seconds, we use the following formula:
 
