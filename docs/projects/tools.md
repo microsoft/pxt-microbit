@@ -4,16 +4,16 @@
 
 ```codecard
 [{
-  "name": "Light Level Calibrator",
-  "description": "Calibrate light input",
-  "url": "/projects/light-level-calibrator",
-  "imageUrl": "/static/mb/projects/light-level-calibrator.png",
+  "name": "Light Level Meter",
+  "description": "Measure light input",
+  "url": "/projects/light-level-meter",
+  "imageUrl": "/static/mb/projects/light-level-meter.png",
   "cardType": "side"
 }, {
-  "name": "Analog Pin Calibrator",
-  "description": "Calibrate analog input",
-  "url": "/projects/analog-pin-calibrator",
-  "imageUrl": "/static/mb/projects/analog-pin-calibrator.png",
+  "name": "Analog Pin Tester",
+  "description": "Test analog input",
+  "url": "/projects/analog-pin-tester",
+  "imageUrl": "/static/mb/projects/analog-pin-tester.png",
   "cardType": "side"
 }, {
   "name": "Servo Calibrator",

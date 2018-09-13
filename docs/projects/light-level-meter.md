@@ -1,4 +1,4 @@
-# Light level Calibrator
+# Light Level Meter
 
 Use this program to graph the light level.
 Press ``A`` to scroll the value on the screen.

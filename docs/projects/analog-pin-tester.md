@@ -1,4 +1,4 @@
-# Analog Pin Calibrator
+# Analog Pin Tester
 
 Use this program to graph the analog values that are read from pin ``P0``.
 Press ``A`` to scroll the value on the screen.
