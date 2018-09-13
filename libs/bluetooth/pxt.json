@@ -16,6 +16,7 @@
     "yotta": {
         "config": {
             "microbit-dal": {
+                "stack_size": 1536,
                 "bluetooth": {
                     "enabled": 1
                 }
