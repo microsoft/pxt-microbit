@@ -865,7 +865,7 @@ namespace pxt.editor {
         const htmlBody = `
         <div class="ui grid stackable">
             <div class="column five wide" style="background-color: #FFFFCE;">
-                <div class="ui header">${lf("New to one-click download?")}</div>
+                <div class="ui header">${lf("First time here?")}</div>
                 <strong style="font-size:small">${lf("You must have version 0248 or above of the firmware")}</strong>
                 <div style="justify-content: center;display: flex;padding: 1rem;">
                     <img class="ui image" src="./static/download/firmware.png" style="height:100px;" />
@@ -926,7 +926,7 @@ namespace pxt.editor {
         }
 
         return confirmAsync({
-            header: lf("One-click download"),
+            header: lf("Pair device for one-click downloads"),
             htmlBody,
             hasCloseIcon: true,
             agreeLbl: lf("Pair device"),
