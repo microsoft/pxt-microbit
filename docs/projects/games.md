@@ -23,6 +23,11 @@ Fun games to build with your @boardname@.
   "description": "Make a reaction time experiment that responds to your body's conductivity!",
   "imageUrl":"/static/mb/projects/reaction.jpg"
 }, {
+  "name": "Snap the dot",
+  "url": "/projects/snap-the-dot",
+  "description": "Use the game blocks to create a skill game",
+  "imageUrl": "/static/mb/projects/snap-the-dot.png"
+}, {
   "name": "Salute!",
   "url":"/projects/salute",
   "description": "Using simple math, try to guess the other player's micro:bit card.",
