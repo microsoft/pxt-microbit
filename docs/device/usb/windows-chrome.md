@@ -1,5 +1,13 @@
 # Uploading from Chrome for Windows
 
+## ~ hint
+
+Starting with Chrome 65 on Windows 10, 
+you can use **WebUSB** to download with one-click.
+[Learn more about WebUSB...](/device/usb/webusb).
+
+## ~
+
 While you're writing and testing your programs, you'll mostly be [running them
 in the simulator](/device/simulator), but once you've finished your program you
 can **compile** it and run it on your micro:bit.

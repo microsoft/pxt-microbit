@@ -1013,12 +1013,11 @@ namespace pxt.editor {
         }
 
         return confirmAsync({
-            header: lf("Download to your micro:bit"),
+            header: lf("Download to your {0}", pxt.appTarget.appTheme.boardName),
             htmlBody,
             hasCloseIcon: true,
             hideCancel: true,
-            hideAgree: false,
-            agreeLbl: lf("I got it"),
+            hideAgree: true,
             className: 'downloaddialog',
             buttons
             //timeout: 20000

@@ -7,8 +7,6 @@ It allows for a **one-click download** without installing any additional app or 
 
 * Chrome 65+ for Android, Chrome OS, Linux, macOS and Windows 10.
 
-Source: https://caniuse.com/#feat=webusb
-
 ## Upgrade your Firmware
 
 Make sure that your @boardname@ is running version **0248** or above of the firmware. Upgrading is as easy as dragging a file and it takes a few seconds to get it done.
