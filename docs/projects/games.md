@@ -26,7 +26,8 @@ Fun games to build with your @boardname@.
   "name": "Snap the dot",
   "url": "/projects/snap-the-dot",
   "description": "Use the game blocks to create a skill game",
-  "imageUrl": "/static/mb/projects/snap-the-dot.png"
+  "imageUrl": "/static/mb/projects/snap-the-dot.png",
+  "cardType": "tutorial"
 }, {
   "name": "Salute!",
   "url":"/projects/salute",
