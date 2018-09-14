@@ -1,7 +1,7 @@
 # WebUSB
 
 WebUSB is an emerging web standard that allows to access USB devices from web pages.
-It allows for a **one-click download** without installing any additional app or software! It also allows to receive data from the @boarname@.
+It allows for a **one-click download** without installing any additional app or software! It also allows to receive data from the @boardname@.
 
 ## Support
 
