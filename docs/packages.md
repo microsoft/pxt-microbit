@@ -126,6 +126,10 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
   "name": "PCA9685 LED controller",
   "url":"/pkg/jdarling/pxt-pca9685",
   "cardType": "package"
+}, {
+    "name": "Imagimaker Magisheild",
+    "url":"/pkg/Imagimaker/pxt-imagimaker",
+    "cardType": "package"
 }]
 ```
 ## Internet of Things
