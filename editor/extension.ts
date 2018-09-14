@@ -542,7 +542,7 @@ namespace pxt.editor {
                     // Go straight to flashing
                     return flashAsync(resp, d);
                 }
-                if (!pxt.usb.isAvailable) {
+                if (!pxt.usb.isEnabled) {
                     return saveHexAsync();
                 }
                 return pxt.usb.isPairedAsync()
