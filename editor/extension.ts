@@ -921,7 +921,7 @@ namespace pxt.editor {
                 label: lf("Help"),
                 icon: "help",
                 className: "lightgrey",
-                url: `${docUrl}/one-click-download`
+                url: `${docUrl}/webusb`
             });
         }
 

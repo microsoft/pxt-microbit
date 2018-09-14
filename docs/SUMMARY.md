@@ -352,6 +352,7 @@
     * [Serial](/device/serial)
     * [Servo](/device/servo)
     * [Simulator](/device/simulator)
-    * [Usb](/device/usb)
+    * [USB](/device/usb)
+    * [WebUSB](/device/usb/webusb)
     * [Flashing via HID (CMSIS-DAP)](/hidflash)
 
