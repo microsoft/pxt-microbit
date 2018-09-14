@@ -27,7 +27,7 @@ input.onButtonPressed(Button.A, () => {
 
 ## Step 3
 
-Add ``||input:on button pressed||`` and ``||basic:show leds||`` blocks to display a frowney when button **B** is pressed.
+Add ``||input:on button pressed||`` and ``||basic:show leds||`` blocks to display a frowny when button **B** is pressed.
 
 ```blocks
 input.onButtonPressed(Button.B, () => { 
@@ -43,7 +43,7 @@ input.onButtonPressed(Button.B, () => {
 
 ## Step 4
 
-Add a secret mode that happens when **A** and **B** are pressed together. In that case, add multiple ``||basic:show leds||`` blocks to create an animation...
+Add a secret mode that happens when **A** and **B** are pressed together. For this case, add multiple ``||basic:show leds||`` blocks to create an animation.
 
 ```blocks
 input.onButtonPressed(Button.AB, () => {

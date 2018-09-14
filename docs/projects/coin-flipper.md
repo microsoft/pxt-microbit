@@ -41,7 +41,7 @@ input.onButtonPressed(Button.A, () => {
 
 ## Step 4
 
-Press button **A** in the simulator to try our coin toss code.
+Press button **A** in the simulator to try the coin toss code.
 
 ## Step 5
 
@@ -63,7 +63,7 @@ input.onButtonPressed(Button.A, () => {
 
 ## Step 6
 
-If your have a @boardname@, connect it to USB and click ``|Download|`` to transfer your code.
+If you have a @boardname@, connect it to USB and click ``|Download|`` to transfer your code.
 
 ## Step 7
 

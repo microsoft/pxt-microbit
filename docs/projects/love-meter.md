@@ -4,7 +4,7 @@ Make a love meter, how sweet! The @boardname@ is feeling the love, then sometime
 
 ## Step 1
 
-Let's build a **LOVE METER** machine. Place a ``||input:on pin pressed||`` block to run code when pin **0** is pressed. Use ``P0`` from the list of pin inputs.
+Let's build a **LOVE METER** machine. Place an ``||input:on pin pressed||`` block to run code when pin **0** is pressed. Use ``P0`` from the list of pin inputs.
 
 ```blocks
 input.onPinPressed(TouchPin.P0, () => {
@@ -13,7 +13,7 @@ input.onPinPressed(TouchPin.P0, () => {
 
 ## Step 2
 
-Using ``||basic:show number||`` and ``||Math:pick random||`` blocks, show a random number from 0 to 100 when pin **0** is pressed.
+Using ``||basic:show number||`` and ``||Math:pick random||`` blocks, show a random number from `0` to `100` when pin **0** is pressed.
 
 ```blocks
 input.onPinPressed(TouchPin.P0, () => {
