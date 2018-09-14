@@ -979,7 +979,7 @@ namespace pxt.editor {
                                                 <span class="ui purple circular label">2</span>
                                                 <strong>${lf("Move the .hex file to the {0}", boardName)}</strong>
                                                 <br />
-                                                <span style="font-size:small">${lf("Locate the downloaded .hex file and drag it to the {0} drive", boardDriveName)}</span>
+                                                <span style="font-size:small">${lf("Locate the downloaded .hex file and drag it to the <strong>{0}</strong> drive", boardDriveName)}</span>
                                             </div>
                                         </div>
                                     </div>
