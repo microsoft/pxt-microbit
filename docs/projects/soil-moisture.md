@@ -1,6 +1,5 @@
 # Soil Moisture
 
-
 ## ~avatar avatar
 
 Track the soil moisture of your plants!

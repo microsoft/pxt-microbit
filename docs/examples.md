@@ -42,7 +42,7 @@ Here are some fun programs for your @boardname@!
 
 ```codecard
 [{
-  "name": "Egg & Spoon race",
+  "name": "Egg & Spoon Race",
   "description": "Balance a micro:bit like an egg and spoon race",
   "url":"/examples/egg-and-spoon",
   "cardType": "example"
@@ -88,7 +88,7 @@ Here are some fun programs for your @boardname@!
 ## Turtle graphics
 
 ```codecard
-[{		
+[{
   "name": "Turtle Square",
   "description": "Move in a square",
   "url":"/examples/turtle-square",

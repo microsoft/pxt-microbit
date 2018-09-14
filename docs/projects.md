@@ -40,7 +40,7 @@ Fun games to build with your @boardname@.
   "url":"/projects/salute",
   "imageUrl":"/static/mb/projects/salute.png"
 },{
-  "name": "Crashy bird",
+  "name": "Crashy Bird",
   "url":"/projects/crashy-bird",
   "imageUrl":"/static/mb/projects/crashy-bird.png"
 }]
@@ -65,7 +65,7 @@ Fun games to build with your @boardname@.
   "url": "/projects/infection",
   "imageUrl": "/static/mb/projects/infection.png"
 }, {
-  "name": "Hot Or Cold",
+  "name": "Hot or Cold",
   "url": "/projects/hot-or-cold",
   "imageUrl": "/static/mb/projects/hot-or-cold.jpg"
 }, {
@@ -87,11 +87,11 @@ Fun games to build with your @boardname@.
 
 ```codecard
 [{
-  "name": "Hack your headphones",
+  "name": "Hack Your Headphones",
   "url":"/projects/hack-your-headphones",
   "imageUrl":"/static/mb/projects/a6-music.png"
 }, {
-  "name": "Banana keyboard",
+  "name": "Banana Keyboard",
   "url":"/projects/banana-keyboard",
   "imageUrl":"/static/mb/projects/a7-conductive.png"
 }, {
@@ -131,11 +131,11 @@ Fun games to build with your @boardname@.
   "url":"/projects/milky-monster",
   "imageUrl":"/static/mb/projects/milky-monster.jpg"
 }, {
-  "name": "Railway crossing",
+  "name": "Railway Crossing",
   "url":"/projects/railway-crossing",
   "imageUrl":"/static/mb/projects/railway-crossing.png"
 },{
-  "name": "Kitronik RC car hack",
+  "name": "Kitronik RC Car Hack",
   "url": "/projects/rc-car",
   "imageUrl":"/static/mb/projects/rc-car.jpg"
 }]
@@ -145,7 +145,7 @@ Fun games to build with your @boardname@.
 
 ```codecard
 [{
-  "name": "Timing gates",
+  "name": "Timing Gates",
   "url":"/projects/timing-gates",
   "imageUrl":"/static/mb/projects/timegate.jpg"
 },{

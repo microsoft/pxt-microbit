@@ -1,4 +1,5 @@
 # Code
+
 ## @description code to make the Reaction Time interactive
 
 This lesson uses the @boardname@ to measure a student's reaction time in completing a circuit path on a cardboard pad. The student's reaction time is measured in both a distracted and an undistracted environment.

@@ -1,11 +1,13 @@
 # micro:bit target for PXT
 
+[![Build Status](https://travis-ci.org/Microsoft/pxt-microbit.svg?branch=master)](https://travis-ci.org/Microsoft/pxt-microbit)
+
+*This branch contains the latest development of the current production version (v0.x). If you are interested in the coming version, v1, which is [currently in beta](https://makecode.com/blog/microbit/v1-beta), please go to the [v1 branch](https://github.com/Microsoft/pxt-microbit/tree/v1).*
+
 This target allows you to program a [BBC micro:bit](https://microbit.org/) using 
 PXT ([Microsoft Programming Experience Toolkit](https://github.com/Microsoft/pxt)).
 
 * [Try it live](https://makecode.microbit.org)
-
-[![Build Status](https://travis-ci.org/Microsoft/pxt-microbit.svg?branch=master)](https://travis-ci.org/Microsoft/pxt-microbit)
 
 ## Issue tracking
 
