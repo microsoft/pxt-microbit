@@ -944,7 +944,7 @@ namespace pxt.editor {
         // https://msdn.microsoft.com/en-us/library/cc848897.aspx
         // "For security reasons, data URIs are restricted to downloaded resources.
         // Data URIs cannot be used for navigation, for scripting, or to populate frame or iframe elements"
-        const downloadAgain = false // !pxt.BrowserUtils.isIE() && !pxt.BrowserUtils.isEdge();
+        const downloadAgain = !pxt.BrowserUtils.isIE() && !pxt.BrowserUtils.isEdge();
         const docUrl = pxt.appTarget.appTheme.usbDocs;
 
         const htmlBody = `
