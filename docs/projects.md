@@ -170,7 +170,8 @@ Fun games to build with your @boardname@.
 [{
   "name": "Compass",
   "url":"/projects/compass",
-  "imageUrl":"/static/mb/projects/a5-compass.png"
+  "imageUrl":"/static/mb/projects/a5-compass.png",
+  "cardType": "side"
 },{
   "name": "Telegraph",
   "url":"/projects/telegraph",

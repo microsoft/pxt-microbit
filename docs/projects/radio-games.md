@@ -9,12 +9,14 @@ Here are some cool projects that you can build with your @boardname@!
   "name": "Mood Radio",
   "url": "/projects/mood-radio",
   "description": "Send a mood message to your friends",
-  "imageUrl": "/static/mb/projects/mood-radio.png"
+  "imageUrl": "/static/mb/projects/mood-radio.png",
+  "cardType": "side"
 }, {
   "name": "Tele-potato",
   "url": "/projects/tele-potato",
   "description": "Play a radio version of the hot potato game",
-  "imageUrl": "/static/mb/projects/tele-potato.png"
+  "imageUrl": "/static/mb/projects/tele-potato.png",
+  "cardType": "side"
 }, {
   "name": "Fireflies",
   "url": "/projects/fireflies",
