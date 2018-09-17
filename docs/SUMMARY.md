@@ -39,7 +39,7 @@
     * [Telegraph](/projects/telegraph)
     * [Railway Crossing](/projects/railway-crossing)
     * [Karel](/projects/karel)
-    * [Stop Watch](/projects/stopwatch)
+    * [Stopwatch](/projects/stopwatch)
     * [Name Tag](/projects/name-tag)
     * [Step counter](/projects/step-counter)
     * [Servo calibrator](/projects/servo-calibrator)

@@ -14,7 +14,7 @@
   "description": "Keep up with the times using your fancy micro:bit watch",
   "imageUrl":"/static/mb/projects/a10-watch.png"
 }, {
-  "name": "Stop Watch",
+  "name": "Stopwatch",
   "description": "How time passes, keep track of how much",
   "url": "/projects/stopwatch",
   "imageUrl":"/static/mb/projects/stopwatch.png",
