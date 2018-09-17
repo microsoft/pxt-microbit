@@ -22,6 +22,16 @@ The steps here show how to build a two liter soda bottle rocket. The @boardname@
 
 In order to launch the rocket, you need to deliver compressed air to the rocket. There are several ways to make the rocket launcher. Here are some instructions and videos describing ways to do this.
 
+#### ~ hint
+
+**Caution!**
+
+The bottle rocket is launched when enough pressure builds up to push it off the launcher base. You don't always know when exaclty enough pressure exists to push the rocket up. To avoid being hit by the rocket, don't stand too close (you and anyone watching, and especially, don't stand directly over the rocket!) to it while you're adding pressure to the launcher.
+
+It may launch with enough force to hurt you if you're hit by it!
+
+#### ~ 
+
 * [Air Command Water Rocket instructions](http://www.aircommandrockets.com/rocket_launcher.htm) (shows a variety of instructions)
 * [How To Build The Simplest Water Bottle Rocket Launcher](https://www.youtube.com/watch?v=gyOzvqmUs4c)
 * [Making a Water Bottle Rocket Launcher](https://www.youtube.com/watch?v=gDN9lxgzPlo)
