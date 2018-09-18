@@ -164,6 +164,11 @@
             * [Overview](/courses/ucp-science/electricity/overview)
             * [Setup and procedure](/courses/ucp-science/electricity/setup-procedure)
             * [Resources](/courses/ucp-science/electricity/resources)
+        * [Rocket Acceleration](/courses/ucp-science/rocket-acceleration)
+            * [Overview](/courses/ucp-science/rocket-acceleration/overview)
+            * [Build](/courses/ucp-science/rocket-acceleration/build)
+            * [Setup and procedure](/courses/ucp-science/rocket-acceleration/setup-procedure)
+            * [Resources](/courses/ucp-science/rocket-acceleration/resources)
 
 ## #reference
 

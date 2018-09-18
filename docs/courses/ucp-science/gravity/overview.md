@@ -29,7 +29,7 @@ Students will:
 * Code the @boardname@s to collect data remotely over the @boardname@ radios.
 * Analyze the data collected.
 
-### Materials Needed
+## Materials Needed
 
 * 2 @boardname@s with batteries connected
 
