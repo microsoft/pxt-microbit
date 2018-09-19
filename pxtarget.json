@@ -371,7 +371,7 @@
             }
         },
         "highContrast": true,
-        "greenScreen": false,
+        "greenScreen": true,
         "selectLanguage": true,
         "availableLocales": [
             "en",
