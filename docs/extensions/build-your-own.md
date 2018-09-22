@@ -10,4 +10,4 @@ You publish a extension on GitHub and request **[approval](./approval)** for it 
 
 ## How do I start building a extension?
 
-Go to the MakeCode extension documentation and see the [getting started](https://makecode.com/extensions/getting-started) page.
+Go to the MakeCode extension documentation and see the [getting started](https://makecode.com/packages/getting-started) page.
