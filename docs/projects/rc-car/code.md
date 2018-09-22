@@ -1,15 +1,15 @@
 # Code
 
-## Step 1: Add the Kitronik package
+## Step 1: Add the Kitronik extension
 
-Kitronik has a package with blocks that program their motor driver. We need to add it to our project.
+Kitronik has an extension with blocks that program their motor driver. We need to add it to our project.
 
 * Click on **Advanced**
-* Click **Add Package**
+* Click **Extensions**
 * Type ``kitronik``, press **Enter**
-* Select the **kitronik-motor-driver** package
+* Select the **kitronik-motor-driver** extension
 
-After the package is loaded, you should see a new **Kitronik** category in the toolbox.
+After the extension is loaded, you should see a new **Kitronik** category in the toolbox.
 
 ## Step 2: Round and round we go!
 

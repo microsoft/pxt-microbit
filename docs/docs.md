@@ -28,6 +28,6 @@
 ## Developers
 
 * [Command Line Interface](/cli)
-* Learn about [packages](/packages)
+* Learn about [extensions](/extensions)
 * [Flashing via HID (CMSIS-DAP)](/hidflash)
 
