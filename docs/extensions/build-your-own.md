@@ -6,7 +6,7 @@ Only extensions on the 'approved extension list' are available to users directly
 
 ## Publishing extensions
 
-You publish a extension on GitHub and request **[approval](./approval)** for it if necessary.
+You publish an extension on GitHub and request **[approval](./approval)** for it if necessary.
 
 ## How do I start building a extension?
 
