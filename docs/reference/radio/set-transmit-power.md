@@ -1,6 +1,6 @@
 # set Transmit Power
 
-Make the ``radio`` signal of the @boardname@ stronger or weaker. It can be as weak as `0` and as strong as `7`.
+Make the ``radio`` signal of the @boardname@ stronger or weaker. It can be as weak as `0` and as strong as `7`. Default is ``6``.
 
 The scientific name for the strength of the ``radio`` signal is
 **dBm**, or **decibel-milliwatts**. A signal strength of `0`
