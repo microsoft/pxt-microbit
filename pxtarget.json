@@ -107,7 +107,6 @@
     },
     "simulator": {
         "autoRun": true,
-        "enableTrace": true,
         "streams": false,
         "aspectRatio": 1.22,
         "parts": true,
@@ -268,10 +267,12 @@
         "mobileSafariDownloadProtocol": "microbithex://?data",
         "extendEditor": true,
         "extendFieldEditors": true,
+        "enableTrace": true,
         "experiments": [
             "greenScreen",
             "print",
-            "allowPackageExtensions"
+            "allowPackageExtensions",
+            "instructions"
         ],
         "docMenu": [
             {
