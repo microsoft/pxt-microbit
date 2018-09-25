@@ -272,7 +272,8 @@
             "greenScreen",
             "print",
             "allowPackageExtensions",
-            "instructions"
+            "instructions",
+            "debugger"
         ],
         "docMenu": [
             {
