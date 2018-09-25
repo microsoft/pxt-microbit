@@ -37,6 +37,14 @@ namespace pxsim.serial {
         // TODO
     }
 
+    export function readBuffer(length: number): RefBuffer {
+        // TODO
+        if (length <= 0) {
+            length = 64;
+        }
+        return new RefBuffer(new Uint8Array(length));
+    }
+
     export function readUntil(del: string): string {
         return readString();
     }
