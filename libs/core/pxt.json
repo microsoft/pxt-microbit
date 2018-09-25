@@ -4,6 +4,7 @@
     "additionalFilePath": "../../node_modules/pxt-common-packages/libs/base",
     "files": [
         "README.md",
+        "platform.h",
         "pxt.cpp",
         "pxt.h",
         "pxtbase.h",

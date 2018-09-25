@@ -53,6 +53,7 @@ namespace radio {
         }
         if (!radioEnabled) {
             uBit.radio.setGroup(pxt::programHash());
+            uBit.radio.setTransmitPower(6); // start with high power by default
             radioEnabled = true;
         }
         return r;

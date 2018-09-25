@@ -60,6 +60,7 @@ namespace pxsim {
 
         constructor(private runtime: Runtime) {
             this.datagram = new RadioDatagram(runtime);
+            this.power = 6; // default value
         }
 
         setTransmitPower(power: number) {
