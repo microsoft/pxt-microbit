@@ -950,7 +950,7 @@ namespace pxt.editor {
 
         const body =
             userDownload
-                ? `<div>${lf("Click 'Download' to open the {0} app.", boardName)}</div>`
+                ? lf("Click 'Download' to open the {0} app.", pxt.appTarget.appTheme.boardName || "")
                 : undefined;
         const htmlBody = !userDownload ?
             `<div class="ui grid stackable">
