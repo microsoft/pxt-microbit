@@ -1,6 +1,10 @@
 # Troubleshooting downloads with WebUSB
 
-This is a troubleshooting to use [WebUSB](/usb/webusb).
+### ~ avatar
+
+Having issues pairing your @boardname@ with [WebUSB](/usb/webusb)? Let's try to figure out why!
+
+### ~
 
 ## Step 1: Check your cable
 
