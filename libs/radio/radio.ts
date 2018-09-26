@@ -73,7 +73,7 @@ namespace radio {
      * Registers code to run when the radio receives a number.
      */
     //% help=radio/on-received-number blockHandlerKey="radioreceived"
-    //% blockId=radio_on_number block="on radio received" blockGap=8
+    //% blockId=radio_on_number block="on radio received" blockGap=16
     //% useLoc="radio.onDataPacketReceived"
     export function onReceivedNumber(cb: (receivedNumber: number) => void) {
         onDataReceived(() => {
@@ -92,7 +92,7 @@ namespace radio {
      * Registers code to run when the radio receives a key value pair.
      */
     //% help=radio/on-received-value blockHandlerKey="radioreceived"
-    //% blockId=radio_on_value block="on radio received" blockGap=8
+    //% blockId=radio_on_value block="on radio received" blockGap=16
     //% useLoc="radio.onDataPacketReceived"
     export function onReceivedValue(cb: (name: string, value: number) => void) {
         onDataReceived(() => {
@@ -112,7 +112,7 @@ namespace radio {
      * Registers code to run when the radio receives a string.
      */
     //% help=radio/on-received-string blockHandlerKey="radioreceived"
-    //% blockId=radio_on_string block="on radio received" blockGap=8
+    //% blockId=radio_on_string block="on radio received" blockGap=16
     //% useLoc="radio.onDataPacketReceived"
     export function onReceivedString(cb: (receivedString: string) => void) {
         onDataReceived(() => {
@@ -131,7 +131,7 @@ namespace radio {
      * Registers code to run when the radio receives a buffer.
      */
     //% help=radio/on-received-buffer blockHandlerKey="radioreceived" blockHidden=1
-    //% blockId=radio_on_buffer block="on radio received" blockGap=8
+    //% blockId=radio_on_buffer block="on radio received" blockGap=16
     //% useLoc="radio.onDataPacketReceived"
     export function onReceivedBuffer(cb: (buffer: Buffer) => void) {
         onDataReceived(() => {
@@ -152,7 +152,7 @@ namespace radio {
      * @param type the type of property to retrieve from the last packet
      */
     //% help=radio/get-received-packet-property advanced=true
-    //% blockId=radio_received_packet_property block="received packet %type=radio_packet_property" blockGap=8
+    //% blockId=radio_received_packet_property block="received packet %type=radio_packet_property" blockGap=16
     export function getReceivedPacketProperty(type: number) {
         if (lastPacket) {
             switch(type) {

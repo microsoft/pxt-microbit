@@ -300,7 +300,7 @@ namespace music {
      * Registers code to run on various melody events
      */
     //% blockId=melody_on_event block="music on %value"
-    //% help=music/on-event weight=59
+    //% help=music/on-event weight=59 blockGap=32
     export function onEvent(value: MusicEvent, handler: () => void) {
         control.onEvent(MICROBIT_MELODY_ID, value, handler);
     }
@@ -311,7 +311,7 @@ namespace music {
      * @param melodyArray the melody array to play
      * @param options melody options, once / forever, in the foreground / background
      */
-    //% help=music/begin-melody weight=60 blockGap=8
+    //% help=music/begin-melody weight=60 blockGap=16
     //% blockId=device_start_melody block="start melody %melody=device_builtin_melody| repeating %options"
     //% parts="headphone"
     export function beginMelody(melodyArray: string[], options: MelodyOptions = 1) {

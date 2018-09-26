@@ -149,7 +149,7 @@ declare namespace basic {
      * @param interval how fast to shift characters; eg: 150, 100, 200, -100
      */
     //% help=basic/show-string
-    //% weight=87 blockGap=8
+    //% weight=87 blockGap=16
     //% block="show|string %text"
     //% async
     //% blockId=device_print_message
@@ -187,7 +187,7 @@ declare namespace basic {
      * Repeats the code forever in the background. On each iteration, allows other codes to run.
      * @param body code to execute
      */
-    //% help=basic/forever weight=55 blockGap=8 blockAllowMultiple=1 afterOnStart=true
+    //% help=basic/forever weight=55 blockGap=16 blockAllowMultiple=1 afterOnStart=true
     //% blockId=device_forever block="forever" icon="\uf01e" shim=basic::forever
     function forever(a: () => void): void;
 
@@ -196,7 +196,7 @@ declare namespace basic {
      * @param ms how long to pause for, eg: 100, 200, 500, 1000, 2000
      */
     //% help=basic/pause weight=54
-    //% async block="pause (ms) %pause"
+    //% async block="pause (ms) %pause" blockGap=16
     //% blockId=device_pause icon="\uf110" shim=basic::pause
     function pause(ms: int32): void;
 }
@@ -211,7 +211,7 @@ declare namespace input {
      * @param button the button that needs to be pressed
      * @param body code to run when event is raised
      */
-    //% help=input/on-button-pressed weight=85 blockGap=8
+    //% help=input/on-button-pressed weight=85 blockGap=16
     //% blockId=device_button_event block="on button|%NAME|pressed"
     //% parts="buttonpair" shim=input::onButtonPressed
     function onButtonPressed(button: Button, body: () => void): void;
@@ -221,7 +221,7 @@ declare namespace input {
      * @param gesture the type of gesture to track, eg: Gesture.Shake
      * @param body code to run when gesture is raised
      */
-    //% help=input/on-gesture weight=84 blockGap=8
+    //% help=input/on-gesture weight=84 blockGap=16
     //% blockId=device_gesture_event block="on |%NAME"
     //% parts="accelerometer"
     //% NAME.fieldEditor="gestures" NAME.fieldOptions.columns=4 shim=input::onGesture
@@ -232,7 +232,7 @@ declare namespace input {
      * @param name the pin that needs to be pressed, eg: TouchPin.P0
      * @param body the code to run when the pin is pressed
      */
-    //% help=input/on-pin-pressed weight=83
+    //% help=input/on-pin-pressed weight=83 blockGap=32
     //% blockId=device_pin_event block="on pin %name|pressed" shim=input::onPinPressed
     function onPinPressed(name: TouchPin, body: () => void): void;
 
@@ -241,7 +241,7 @@ declare namespace input {
      * @param name the pin that needs to be released, eg: TouchPin.P0
      * @param body the code to run when the pin is released
      */
-    //% help=input/on-pin-released weight=6 blockGap=8
+    //% help=input/on-pin-released weight=6 blockGap=16
     //% blockId=device_pin_released block="on pin %NAME|released"
     //% advanced=true shim=input::onPinReleased
     function onPinReleased(name: TouchPin, body: () => void): void;
@@ -323,7 +323,7 @@ declare namespace input {
     /**
      * Gets the number of milliseconds elapsed since power on.
      */
-    //% help=input/running-time weight=50 blockGap=8
+    //% help=input/running-time weight=50 blockGap=16
     //% blockId=device_get_running_time block="running time (ms)"
     //% advanced=true shim=input::runningTime
     function runningTime(): int32;
@@ -604,7 +604,7 @@ declare namespace pins {
      * @param name digital pin to register to, eg: DigitalPin.P0
      * @param pulse the value of the pulse, eg: PulseValue.High
      */
-    //% help=pins/on-pulsed weight=22 blockGap=8 advanced=true
+    //% help=pins/on-pulsed weight=22 blockGap=16 advanced=true
     //% blockId=pins_on_pulsed block="on|pin %pin|pulsed %pulse"
     //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=4
     //% pin.fieldOptions.tooltips="false" pin.fieldOptions.width="300" shim=pins::onPulsed

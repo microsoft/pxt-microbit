@@ -28,7 +28,7 @@ namespace basic {
      * @param interval how fast to shift characters; eg: 150, 100, 200, -100
      */
     //% help=basic/show-string
-    //% weight=87 blockGap=8
+    //% weight=87 blockGap=16
     //% block="show|string %text"
     //% async
     //% blockId=device_print_message
@@ -85,7 +85,7 @@ namespace basic {
      * Repeats the code forever in the background. On each iteration, allows other codes to run.
      * @param body code to execute
      */
-    //% help=basic/forever weight=55 blockGap=8 blockAllowMultiple=1 afterOnStart=true
+    //% help=basic/forever weight=55 blockGap=16 blockAllowMultiple=1 afterOnStart=true
     //% blockId=device_forever block="forever" icon="\uf01e"
     void forever(Action a) {
       runForever(a);
@@ -96,7 +96,7 @@ namespace basic {
      * @param ms how long to pause for, eg: 100, 200, 500, 1000, 2000
      */
     //% help=basic/pause weight=54
-    //% async block="pause (ms) %pause"
+    //% async block="pause (ms) %pause" blockGap=16
     //% blockId=device_pause icon="\uf110"
     void pause(int ms) {
       fiber_sleep(ms);

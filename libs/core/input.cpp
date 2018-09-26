@@ -165,7 +165,7 @@ namespace input {
      * @param button the button that needs to be pressed
      * @param body code to run when event is raised
      */
-    //% help=input/on-button-pressed weight=85 blockGap=8
+    //% help=input/on-button-pressed weight=85 blockGap=16
     //% blockId=device_button_event block="on button|%NAME|pressed"
     //% parts="buttonpair"
     void onButtonPressed(Button button, Action body) {
@@ -177,7 +177,7 @@ namespace input {
      * @param gesture the type of gesture to track, eg: Gesture.Shake
      * @param body code to run when gesture is raised
      */
-    //% help=input/on-gesture weight=84 blockGap=8
+    //% help=input/on-gesture weight=84 blockGap=16
     //% blockId=device_gesture_event block="on |%NAME"
     //% parts="accelerometer"
     //% NAME.fieldEditor="gestures" NAME.fieldOptions.columns=4
@@ -195,7 +195,7 @@ namespace input {
      * @param name the pin that needs to be pressed, eg: TouchPin.P0
      * @param body the code to run when the pin is pressed
      */
-    //% help=input/on-pin-pressed weight=83
+    //% help=input/on-pin-pressed weight=83 blockGap=32
     //% blockId=device_pin_event block="on pin %name|pressed"
     void onPinPressed(TouchPin name, Action body) {
         auto pin = getPin((int)name);
@@ -211,7 +211,7 @@ namespace input {
      * @param name the pin that needs to be released, eg: TouchPin.P0
      * @param body the code to run when the pin is released
      */
-    //% help=input/on-pin-released weight=6 blockGap=8
+    //% help=input/on-pin-released weight=6 blockGap=16
     //% blockId=device_pin_released block="on pin %NAME|released"
     //% advanced=true
     void onPinReleased(TouchPin name, Action body) {
@@ -350,7 +350,7 @@ namespace input {
     /**
      * Gets the number of milliseconds elapsed since power on.
      */
-    //% help=input/running-time weight=50 blockGap=8
+    //% help=input/running-time weight=50 blockGap=16
     //% blockId=device_get_running_time block="running time (ms)"
     //% advanced=true
     int runningTime() {
