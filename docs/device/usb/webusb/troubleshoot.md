@@ -35,10 +35,11 @@ If the version is **0250** or higher, **you have the right firmware**. You can c
 
 1. Put your @boardname@ into **MAINTENANCE Mode**. To do this, unplug the USB cable from the @boardname@ and then re-connect the USB cable while you hold down the reset button. Once you insert the cable, you can release the reset button. You should now see a **MAINTENANCE** drive instead of the **MICROBIT** drive like before. Also, a yellow LED light will stay on next to the reset button.
 ![MAINTENANCE gesture](/static/mb/device/maintenance.gif)
-2. **[Download the firmware .hex file](https://support.microbit.org/helpdesk/attachments/19008095092)**
-3. Drag and drop that file onto the **MAINTENANCE** drive.
-4. The yellow LED will flash while the `HEX` file is copying. When the copy finishes, the LED will go off and the @boardname@ resets. The **MAINTENANCE** drive now changes back to **MICROBIT**.
-5. The upgrade is complete! You can open the **DETAILS.TXT** file to check and see that the firmware version changed to the match the version of the `HEX` file you copied.
+2. **[Download the firmware ZIP file](https://github.com/ARMmbed/DAPLink/releases/download/v0250/0250_release_package_682d8303.zip)**
+3. Find the **0250_kl26z_microbit_0x8000.hex** in the downloaded zip file **0250_release_package_682d8303.zip**
+4. Drag and drop that file onto the **MAINTENANCE** drive.
+5. The yellow LED will flash while the `HEX` file is copying. When the copy finishes, the LED will go off and the @boardname@ resets. The **MAINTENANCE** drive now changes back to **MICROBIT**.
+6. The upgrade is complete! You can open the **DETAILS.TXT** file to check and see that the firmware version changed to the match the version of the `HEX` file you copied.
 
 ### ~hint
 
