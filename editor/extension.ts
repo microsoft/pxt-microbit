@@ -1000,9 +1000,9 @@ namespace pxt.editor {
 
         if (downloadAgain) {
             buttons.push({
-                label: fn,
+                label: userDownload ? lf("Download") : fn,
                 icon: "download",
-                className: "lightgrey focused",
+                class: `${userDownload ? "primary" : "lightgrey"}`,
                 url,
                 fileName: fn
             });
