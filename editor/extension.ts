@@ -952,7 +952,7 @@ namespace pxt.editor {
             userDownload
                 ? `<div>${lf("Click 'Download' to open the {0} app.", boardName)}</div>`
                 : undefined;
-        const htmlBody = userDownload ?
+        const htmlBody = !userDownload ?
             `<div class="ui grid stackable">
             <div class="column sixteen wide">
                 <div class="ui grid">
