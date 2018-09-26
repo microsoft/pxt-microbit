@@ -41,7 +41,7 @@
     "@types/node": "8.0.53"
   },
   "dependencies": {
-    "pxt-common-packages": "0.23.56",
-    "pxt-core": "4.0.8"
+    "pxt-common-packages": "0.23.57",
+    "pxt-core": "4.1.3"
   }
 }
