@@ -90,10 +90,9 @@ When code is compiled to ARM machine code, the calls to JavaScript micro:bit fun
 
 Looking to use @homeurl@ in your favorite editor? Install the [command line tools](/cli) and get rolling!
 
-## [Packages](/packages)
+## [Extensions](/extensions)
 
-Create, edit and distribute your own blocks and JavaScript using [packages](/packages). Packages are hosted on GitHub and may be written
-using C++, JavaScript and/or ARM thumb.
+Create, edit and distribute your own blocks and JavaScript using [extensions](/extensions). Extensions are hosted on GitHub and may be written using C++, JavaScript and/or ARM thumb.
 
 ## [Open Source](/open-source)
 

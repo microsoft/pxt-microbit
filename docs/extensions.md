@@ -1,6 +1,6 @@
 # @extends
 
-## Package Gallery #gallery
+## Extension Gallery #gallery
 
 Check out [microbit.org](http://microbit.org/resellers/) for more information on these accessories and where to buy them.
 

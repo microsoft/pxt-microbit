@@ -325,7 +325,7 @@
 
 ## #packages
 
-* [Packages](/packages)
+* [Extensions](/Extensions)
 
 ## #types
 
@@ -360,5 +360,6 @@
     * [Simulator](/device/simulator)
     * [USB](/device/usb)
     * [WebUSB](/device/usb/webusb)
+        * [WebUSB Troubleshoot](/device/usb/webusb/troubleshoot)
     * [Flashing via HID (CMSIS-DAP)](/hidflash)
 

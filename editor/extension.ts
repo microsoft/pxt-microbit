@@ -867,11 +867,11 @@ namespace pxt.editor {
         <div class="ui grid stackable">
             <div class="column five wide" style="background-color: #FFFFCE;">
                 <div class="ui header">${lf("First time here?")}</div>
-                <strong style="font-size:small">${lf("You must have version 0248 or above of the firmware")}</strong>
+                <strong style="font-size:small">${lf("You must have version 0250 or above of the firmware")}</strong>
                 <div style="justify-content: center;display: flex;padding: 1rem;">
                     <img class="ui image" src="./static/download/firmware.png" style="height:100px;" />
                 </div>
-                <a href="${docUrl}/webusbfirmware" target="_blank">${lf("Check your firmware version here and update if needed")}</a>
+                <a href="${docUrl}/webusb/troubleshoot" target="_blank">${lf("Check your firmware version here and update if needed")}</a>
             </div>
             <div class="column eleven wide">
                 <div class="ui grid">
@@ -938,17 +938,22 @@ namespace pxt.editor {
     }
 
     function showUploadInstructionsAsync(fn: string, url: string, confirmAsync: (options: any) => Promise<number>) {
-        const boardName = pxt.appTarget.appTheme.boardName || "???";
-        const boardDriveName = pxt.appTarget.appTheme.driveDisplayName || pxt.appTarget.compile.driveName || "???";
+        const boardName = Util.htmlEscape(pxt.appTarget.appTheme.boardName || "???");
+        const boardDriveName = Util.htmlEscape(pxt.appTarget.appTheme.driveDisplayName || pxt.appTarget.compile.driveName || "???");
 
         // https://msdn.microsoft.com/en-us/library/cc848897.aspx
         // "For security reasons, data URIs are restricted to downloaded resources.
         // Data URIs cannot be used for navigation, for scripting, or to populate frame or iframe elements"
+        const userDownload = pxt.BrowserUtils.isBrowserDownloadWithinUserContext();
         const downloadAgain = !pxt.BrowserUtils.isIE() && !pxt.BrowserUtils.isEdge();
         const docUrl = pxt.appTarget.appTheme.usbDocs;
 
-        const htmlBody = `
-        <div class="ui grid stackable">
+        const body =
+            userDownload
+                ? lf("Click 'Download' to open the {0} app.", pxt.appTarget.appTheme.boardName || "")
+                : undefined;
+        const htmlBody = !userDownload ?
+            `<div class="ui grid stackable">
             <div class="column sixteen wide">
                 <div class="ui grid">
                     <div class="row">
@@ -989,15 +994,15 @@ namespace pxt.editor {
                     </div>
                 </div>
             </div>
-        </div>`;
+        </div>` : undefined;
 
         const buttons: any[] = [];
 
         if (downloadAgain) {
             buttons.push({
-                label: fn,
+                label: userDownload ? lf("Download") : fn,
                 icon: "download",
-                className: "lightgrey focused",
+                class: `${userDownload ? "primary" : "lightgrey"}`,
                 url,
                 fileName: fn
             });
@@ -1014,6 +1019,7 @@ namespace pxt.editor {
 
         return confirmAsync({
             header: lf("Download to your {0}", pxt.appTarget.appTheme.boardName),
+            body,
             htmlBody,
             hasCloseIcon: true,
             hideCancel: true,
