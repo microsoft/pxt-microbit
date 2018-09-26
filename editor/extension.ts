@@ -938,17 +938,22 @@ namespace pxt.editor {
     }
 
     function showUploadInstructionsAsync(fn: string, url: string, confirmAsync: (options: any) => Promise<number>) {
-        const boardName = pxt.appTarget.appTheme.boardName || "???";
-        const boardDriveName = pxt.appTarget.appTheme.driveDisplayName || pxt.appTarget.compile.driveName || "???";
+        const boardName = Util.htmlEscape(pxt.appTarget.appTheme.boardName || "???");
+        const boardDriveName = Util.htmlEscape(pxt.appTarget.appTheme.driveDisplayName || pxt.appTarget.compile.driveName || "???");
 
         // https://msdn.microsoft.com/en-us/library/cc848897.aspx
         // "For security reasons, data URIs are restricted to downloaded resources.
         // Data URIs cannot be used for navigation, for scripting, or to populate frame or iframe elements"
+        const userDownload = pxt.BrowserUtils.isBrowserDownloadWithinUserContext();
         const downloadAgain = !pxt.BrowserUtils.isIE() && !pxt.BrowserUtils.isEdge();
         const docUrl = pxt.appTarget.appTheme.usbDocs;
 
-        const htmlBody = `
-        <div class="ui grid stackable">
+        const body =
+            userDownload
+                ? `<div>${lf("Click 'Download' to open the {0} app.", boardName)}</div>`
+                : undefined;
+        const htmlBody = userDownload ?
+            `<div class="ui grid stackable">
             <div class="column sixteen wide">
                 <div class="ui grid">
                     <div class="row">
@@ -989,7 +994,7 @@ namespace pxt.editor {
                     </div>
                 </div>
             </div>
-        </div>`;
+        </div>` : undefined;
 
         const buttons: any[] = [];
 
@@ -1014,6 +1019,7 @@ namespace pxt.editor {
 
         return confirmAsync({
             header: lf("Download to your {0}", pxt.appTarget.appTheme.boardName),
+            body,
             htmlBody,
             hasCloseIcon: true,
             hideCancel: true,
