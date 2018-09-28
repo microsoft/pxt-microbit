@@ -10,4 +10,4 @@ You publish a package on GitHub and request **[approval](./approval)** for it if
 
 ## How do I start building a package?
 
-Go to the MakeCode package documentation and see the [getting started](https://makecode.com/packages/getting-started) page.
+Go to the MakeCode package documentation and see the [getting started](https://makecode.com/extensions/getting-started) page.
