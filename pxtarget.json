@@ -101,7 +101,7 @@
         "textBlocks": true,
         "listsBlocks": true,
         "functionBlocks": true,
-        "onStartColor": "#0078D7",
+        "onStartColor": "#1E90FF",
         "onStartNamespace": "basic",
         "onStartWeight": 54
     },
@@ -376,6 +376,16 @@
                 "colour": "rgba(189, 195, 199, 0.30)",
                 "snap": false
             }
+        },
+        "blockColors": {
+            "logic": "#00A4A6",
+            "loops": "#00AA00",
+            "math": "#9400D3",
+            "variables": "#DC143C",
+            "text": "#B8860B",
+            "advanced": "#00272B",
+            "functions": "#3455DB",
+            "arrays": "#E65722"
         },
         "highContrast": true,
         "greenScreen": false,

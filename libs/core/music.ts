@@ -163,7 +163,7 @@ enum MusicEvent {
 /**
  * Generation of music tones.
  */
-//% color=#D83B01 weight=106 icon="\uf025"
+//% color=#E63022 weight=106 icon="\uf025"
 namespace music {
     let beatsPerMinute: number = 120;
     let freqTable: number[] = [];

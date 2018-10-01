@@ -4,7 +4,7 @@
     /**
      * Creation, manipulation and display of LED images.
      */
-    //% color=#5C2D91 weight=31 icon="\uf03e"
+    //% color=#7600A8 weight=31 icon="\uf03e"
     //% advanced=true
 declare namespace images {
 
@@ -127,7 +127,7 @@ declare interface Image {
     /**
      * Provides access to basic micro:bit functionality.
      */
-    //% color=#0078D7 weight=116 icon="\uf00a"
+    //% color=#1E90FF weight=116 icon="\uf00a"
 declare namespace basic {
 
     /**
@@ -203,7 +203,7 @@ declare namespace basic {
 
 
 
-    //% color=#B4009E weight=111 icon="\uf192"
+    //% color=#D400D4 weight=111 icon="\uf192"
 declare namespace input {
 
     /**
@@ -435,7 +435,7 @@ declare namespace control {
 
 
 
-    //% color=#5C2D91 weight=101 icon="\uf205"
+    //% color=#7600A8 weight=101 icon="\uf205"
 declare namespace led {
 
     /**

@@ -1,7 +1,7 @@
 /**
  * Support for additional Bluetooth services.
  */
-//% color=#0082FB weight=96 icon="\uf294"
+//% color=#007EF4 weight=96 icon="\uf294"
 namespace bluetooth {
     /**
     *  Writes to the Bluetooth UART service buffer. From there the data is transmitted over Bluetooth to a connected device.

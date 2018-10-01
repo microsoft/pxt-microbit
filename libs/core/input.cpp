@@ -158,7 +158,7 @@ enum class MesDpadButtonInfo {
     _4Up = MES_DPAD_BUTTON_4_UP,
 };
 
-//% color=#B4009E weight=111 icon="\uf192"
+//% color=#D400D4 weight=111 icon="\uf192"
 namespace input {
     /**
      * Do something when a button (A, B or both A+B) is pushed down and released again.
