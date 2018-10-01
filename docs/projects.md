@@ -8,7 +8,7 @@ Here are some cool projects that you can build with your @boardname@!
 [{
   "name": "Tutorials",
   "url": "/tutorials",
-  "imageUrl": "/static/mb/projects/a4-motion.png"
+  "imageUrl": "/static/mb/projects/a1-display.png"
 }, {
   "name": "Games",
   "url":"/projects/games",
@@ -16,7 +16,7 @@ Here are some cool projects that you can build with your @boardname@!
 }, {
   "name": "Radio Games",
   "url":"/projects/radio-games",
-  "imageUrl":"/static/mb/projects/mood-radio.png"
+  "imageUrl":"/static/mb/projects/fireflies.png"
 }, {
   "name": "Fashion",
   "url":"/projects/fashion",
@@ -40,7 +40,7 @@ Here are some cool projects that you can build with your @boardname@!
 }, {
   "name": "Turtle",
   "url": "/projects/turtle",
-  "imageUrl":"/static/mb/projects/turtle-square.png",
+  "imageUrl":"/static/mb/projects/turtle-square.png"
 }]
 ```
 
