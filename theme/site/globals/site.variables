@@ -77,6 +77,7 @@
 @blocklyFlyoutColor: #4b4949;
 @blocklyFlyoutColorOpacity: 1.0;
 @monacoFlyoutColor: @blocklyFlyoutColor;
+@blocklyFlyoutButtonColor: @secondaryColor;
 
 /*-------------------
    Serial
