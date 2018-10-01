@@ -127,7 +127,7 @@ you'll get an explanation for what's wrong... that might sound even more confusi
 This is OK, simply use **Undo** to trace back your changes until you are back to code that does not have any errors.
 
 * Click the **Undo** button (bottom toolbar) until your code is correct again. 
-* If you go too far in undoing, click **Redo** to bring the code back.
+* If you go too far in undoing, click **Redo** to bring the previous code back.
 
 ## Step 5 Dragging code from the toolbox
 
