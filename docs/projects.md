@@ -41,6 +41,9 @@ Here are some cool projects that you can build with your @boardname@!
   "name": "Turtle",
   "url": "/projects/turtle",
   "imageUrl":"/static/mb/projects/turtle-square.png"
+}, {
+  "name": "Blocks-to-JavaScript",
+  "url": "/projects/blocks-to-javascript"
 }]
 ```
 
@@ -54,4 +57,5 @@ Here are some cool projects that you can build with your @boardname@!
 [Toys](/projects/toys),
 [Science](/projects/science),
 [Tools](/projects/tools),
-[Turtle](/projects/turtle)
+[Turtle](/projects/turtle),
+[Blocks To JavaScript](/projects/blocks-to-javascript)
