@@ -137,6 +137,8 @@
             * [Project](/courses/csintro/finalproject/project)
             * [Examples](/courses/csintro/finalproject/examples)
             * [Standards](/courses/csintro/finalproject/standards)
+    * [Blocks to JavaScript](/courses/blocks-to-javascript)
+            * [Hello JavaScript](/courses/blocks-to-javascript/hello-javascript)
     * [Science experiments](/courses/ucp-science)
         * [Data collection](/courses/ucp-science/data-collection)
             * [Overview](/courses/ucp-science/data-collection/overview)

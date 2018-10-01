@@ -1,4 +1,4 @@
-# Beating Heart
+# JavaScript Heart
 
 ## ~ avatar
 
