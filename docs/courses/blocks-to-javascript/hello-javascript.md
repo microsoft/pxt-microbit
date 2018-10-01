@@ -1,4 +1,4 @@
-# JavaScript Heart
+# Hello JavaScript
 
 ## ~ avatar
 
