@@ -60,11 +60,12 @@ basic.forever(function () {
 Although it looks really different, the JavaScript code (text) has the same meaning as your blocks. Let's add comments in the code to explain what it does. Comments are lines that start with ``//``.
 
 ```typescript
-// this is the "forever" block. It grabs the function and runs it in a loop.
+// this is the "forever" block.
+// It grabs the function and runs it in a loop.
 basic.forever(function () {
-    // this is the "show leds" block. It reads the text (. # . ...) to figure out which LED is on.
+    // this is the "show leds" block. 
+    // It reads the text (. # . ...) to figure out which LED is on.
     // . means off and # means on
-    // Note how the text starts and ends with a backtick ` character...
     basic.showLeds(`
         . # . # .
         # # # # #
@@ -73,7 +74,7 @@ basic.forever(function () {
         . . # . .
         `)
     // this is the second "show leds" block. 
-    // Since all LEDs are off, it only contains . characters.
+    // all LEDs are off so it only contains . characters.
     basic.showLeds(`
         . . . . .
         . . . . .
@@ -81,7 +82,7 @@ basic.forever(function () {
         . . . . .
         . . . . .
         `)
-// Every open bracket { or parenthesis ( needs to be closed by } or )... more about this later
+// Every open bracket { or parenthesis ( needs to be closed
 })
 ```
 
@@ -111,19 +112,22 @@ basic.forever(function () {
 
 ## Step 4 "I broke my code!"
 
-Javascript can be very picky with the syntax of your code. A single misplaced letter and it will refuse to run again. It is quite normal to make tons of mistakes! Let's see how you can handle most situations with a magical trick: **Undo**.
+Javascript can be very picky with the syntax of your code. A single misplaced letter and it will refuse to run again. **It is quite normal to make tons of mistakes!** Let's see how you can handle most situations with a magical trick: **Undo**.
 
-Let's brake the code by adding  some random text in the editor. 
+Let's brake the code by adding  some random text in the editor. After a few seconds, you should see squiggles show up under the code,
+just like you do a typo when writing a message.
 
-```typescript-ignore
-ABRACADABRA // not really somethign JavaScript understands...
-basic.forever(function () {
-```
+![JavaScript with squiggles](/static/mb/blocks2js/squiggles.png)
 
-After a few seconds, you should see squiggles show up under the code. This is the code editor telling you that a syntax error has creeped in into your code. Sometimes, the explanation may sound cryptic and you won't know what to do. This is OK, simply use **Undo** to trace back your changes until you are back to code that does not have errors.
+The code editor really needs this error fixed before it can run your code. If you hover over the squiggle with your mouse, 
+you'll get an explanation... that might sound even more confusing! 
+
+![JavaScript with squiggles and message](/static/mb/blocks2js/squigglesmessage.png)
+
+This is OK, simply use **Undo** to trace back your changes until you are back to code that does not have errors.
 
 * Click the **Undo** button (bottom toolbar) until your code is correct again. 
-* If you go too far in time, click **Redo**
+* If you go too far in undoing, click **Redo**
 
 ## Step 5 Dragging code from the toolbox
 
