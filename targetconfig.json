@@ -78,6 +78,7 @@
         "Science": "projects/science",
         "Tools": "projects/tools",
         "Turtle": "projects/turtle",
+        "Blocks To JavaScript": "projects/blocks-to-javascript",
         "Examples": "examples"
     }
 }
