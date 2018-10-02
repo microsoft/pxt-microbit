@@ -615,6 +615,7 @@ namespace pxt {
     // ---------------------------------------------------------------------------
 
     map<pair<int, int>, Action> handlersMap;
+    map<pair<int, int>, Action> handlersMapAny;
 
     MicroBitEvent lastEvent;
 
@@ -622,26 +623,33 @@ namespace pxt {
     // for a given event, then [handlersMap] contains a valid entry for that
     // event.
     void dispatchEvent(MicroBitEvent e) {
-
       lastEvent = e;
-
       Action curr = handlersMap[{ e.source, e.value }];
       if (curr)
         runAction1(curr, e.value);
+    }
 
-      curr = handlersMap[{ e.source, MICROBIT_EVT_ANY }];
+    // We have the invariant that if [dispatchEventAny] is registered against the DAL
+    // for a given event, then [handlersMapAny] contains a valid entry for that
+    // event.
+    void dispatchEventAny(MicroBitEvent e) {
+      lastEvent = e;
+      Action curr = handlersMapAny[{ e.source, MICROBIT_EVT_ANY }];
       if (curr)
         runAction1(curr, e.value);
     }
 
     void registerWithDal(int id, int event, Action a) {
-      Action prev = handlersMap[{ id, event }];
+      map<pair<int, int>, Action>& handlers = event == MICROBIT_EVT_ANY ? handlersMapAny : handlersMap;
+      void (*dispatch)(MicroBitEvent) = event == MICROBIT_EVT_ANY ? dispatchEventAny : dispatchEvent;
+
+      Action prev = handlers[{ id, event }];
       if (prev)
         decr(prev);
       else
-        uBit.messageBus.listen(id, event, dispatchEvent);
+        uBit.messageBus.listen(id, event, dispatch);
       incr(a);
-      handlersMap[{ id, event }] = a;
+      handlers[{ id, event }] = a;
     }
 
     void fiberDone(void *a)
