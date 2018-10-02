@@ -302,4 +302,12 @@ namespace control {
     int deviceSerialNumber() {
         return microbit_serial_number();
     }
+
+    /**
+    * Internal function to support the simulator
+    */
+    //%
+    void sendMidiMessage(Buffer buffer, int offset) {
+        // this is a stub to support the simulator
+    }
 }

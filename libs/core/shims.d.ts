@@ -431,6 +431,12 @@ declare namespace control {
     //% blockId="control_device_serial_number" block="device serial number" weight=9
     //% advanced=true shim=control::deviceSerialNumber
     function deviceSerialNumber(): int32;
+
+    /**
+     * Internal function to support the simulator
+     */
+    //% shim=control::sendMidiMessage
+    function sendMidiMessage(buffer: Buffer, offset: int32): void;
 }
 
 
