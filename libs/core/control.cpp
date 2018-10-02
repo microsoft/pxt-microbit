@@ -304,10 +304,11 @@ namespace control {
     }
 
     /**
-    * Internal function to support the simulator
+    * Informs simulator/runtime of a MIDI message
+    * Internal function to support the simulator.
     */
-    //% part=midioutput
-    void sendMidiMessage(Buffer buffer) {
+    //% part=midioutput block
+    void __midiSend(Buffer buffer) {
         // this is a stub to support the simulator
     }
 }

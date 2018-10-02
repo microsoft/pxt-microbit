@@ -433,10 +433,11 @@ declare namespace control {
     function deviceSerialNumber(): int32;
 
     /**
-     * Internal function to support the simulator
+     * Informs simulator/runtime of a MIDI message
+     * Internal function to support the simulator.
      */
-    //% part=midioutput shim=control::sendMidiMessage
-    function sendMidiMessage(buffer: Buffer): void;
+    //% part=midioutput block shim=control::__midiSend
+    function __midiSend(buffer: Buffer): void;
 }
 
 

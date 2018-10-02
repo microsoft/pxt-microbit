@@ -1,7 +1,7 @@
 namespace pxsim.control {
-    export function sendMidiMessage(data: RefBuffer, offset: number) {
+    export function __midiSend(data: RefBuffer) {
         const b = board();
-        pxsim.AudioContextManager.sendMidiMessageAsync(data, offset)
+        pxsim.AudioContextManager.sendMidiMessageAsync(data)
             .done();
     }
 }
