@@ -1,6 +1,7 @@
 namespace pxsim.control {
-    export function sendMidiMessageAsync(data: RefBuffer, offset: number): Promise<void> {
+    export function sendMidiMessage(data: RefBuffer, offset: number) {
         const b = board();
-        return pxsim.AudioContextManager.sendMidiMessageAsync(data, offset);
+        pxsim.AudioContextManager.sendMidiMessageAsync(data, offset)
+            .done();
     }
 }
