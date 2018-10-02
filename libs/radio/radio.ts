@@ -1,7 +1,7 @@
 /**
  * Communicate data using radio packets
  */
-//% color=#F62459 weight=96 icon="\uf012"
+//% color=#E3008C weight=96 icon="\uf012"
 namespace radio {
     export class Packet {
         /**

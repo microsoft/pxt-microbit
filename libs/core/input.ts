@@ -1,7 +1,7 @@
 /**
  * Events and data from sensors
  */
-//% color=#B4009E weight=111 icon="\uf192"
+//% color=#D400D4 weight=111 icon="\uf192"
 namespace input {
     /**
      * Attaches code to run when the screen is facing up.

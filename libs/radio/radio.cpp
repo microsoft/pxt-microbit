@@ -27,7 +27,7 @@ using namespace pxt;
 // payload: buffer length (9), buffer (10 ... 28)
 #define PACKET_TYPE_BUFFER 3
 
-//% color=270 weight=96 icon="\uf012"
+//% color=#E3008C weight=96 icon="\uf012"
 namespace radio {
 
     // -------------------------------------------------------------------------
