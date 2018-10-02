@@ -1,4 +1,4 @@
-# Analog Set Pitch Pin
+# analog Set Pitch Pin
 
 Specify which [pin](/device/pins) (P0, P1, P2) is used to generate tones.
 
@@ -8,7 +8,7 @@ pins.analogSetPitchPin(AnalogPin.P0)
 
 ## Parameters
 
-* `name` - [String](/types/string); the  pin name ("P0", "P1", or "P2")
+* `name` - [String](/types/string); the  pin name ("P0", "P1", or "P2").
 
 ## Example
 

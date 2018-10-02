@@ -1,4 +1,4 @@
-# Set Events
+# set Events
 
 Configure the type of events emitted by a given pin.
 

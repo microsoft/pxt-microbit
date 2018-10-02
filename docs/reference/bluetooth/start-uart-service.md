@@ -1,4 +1,4 @@
-# Bluetooth UART Service 
+# start UART Service 
 
 ## ~hint
 ![](/static/bluetooth/Bluetooth_SIG.png)

@@ -1,6 +1,6 @@
-# Event Timestamp
+# event Timestamp
 
-Get the timestamp of the last event executed on the bus
+Get the timestamp of the last event executed on the bus.
 
 ```sig
 control.eventTimestamp();

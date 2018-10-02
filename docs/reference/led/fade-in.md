@@ -1,4 +1,4 @@
-# Fade in
+# fade In
 
 Gradually increase the [LED screen](/device/screen) brightness until the LED lights are at full brightness.
 

@@ -1,4 +1,4 @@
-# Change Tempo By
+# change Tempo By
 
 Makes the [tempo](/reference/music/tempo) (speed of a piece of music)
 faster or slower by the amount you say.

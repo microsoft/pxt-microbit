@@ -1,4 +1,4 @@
-# Serial Write Numbers
+# write Numbers
 
 Write an array of numbers to the [serial](/device/serial) port.
 

@@ -1,6 +1,6 @@
-# SPI Format
+# spi Format
 
-Sets the SPI format
+Sets the SPI format.
 
 ```sig
 pins.spiFormat(8, 3);
@@ -9,7 +9,7 @@ pins.spiFormat(8, 3);
 ## Parameters
 
 * ``bits``, 
-* ``mode``,
+* ``mode``
 
 ## See also
 

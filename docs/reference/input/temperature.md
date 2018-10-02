@@ -1,4 +1,4 @@
-# Temperature
+# temperature
 
 Find the temperature where you are. The temperature is measured in Celsius (metric).
 The @boardname@ can find the temperature nearby by checking how hot its computer chips are.

@@ -1,4 +1,4 @@
-# Event Value
+# event Value
 
 Get the value of the last event executed on the bus.
 

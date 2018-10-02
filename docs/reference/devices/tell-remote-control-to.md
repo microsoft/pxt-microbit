@@ -1,4 +1,4 @@
-# tell remote control to
+# tell Remote Control To
 
 Control the presentation of media content available on a remote device using the `tell remote control` to function.
 
@@ -15,7 +15,7 @@ devices.tellRemoteControlTo(MesRemoteControlEvent.play)
 
 ## Parameters
 
-* event - an event identifier
+* event - an event identifier.
 
 ## Event values
 

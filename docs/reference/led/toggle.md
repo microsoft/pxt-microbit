@@ -1,4 +1,4 @@
-# Toggle
+# toggle
 
 Toggle a LED light on the [LED screen](/device/screen), meaning to turn it on  (off) if it is off (on). Specify which LED using x, y coordinates.
 
@@ -8,8 +8,8 @@ led.toggle(0,0)
 
 ## Parameters
 
-* x - [Number](/types/number); the *x coordinate* or horizontal position (0, 1, 2, 3, 4)
-* y - [Number](/types/number); the *y coordinate* or vertical position (0, 1, 2, 3, 4)
+* x - [Number](/types/number); the *x coordinate* or horizontal position (0, 1, 2, 3, 4).
+* y - [Number](/types/number); the *y coordinate* or vertical position (0, 1, 2, 3, 4).
 
 If a parameter is [out of bounds](/reference/out-of-bounds) (a value other than 0-4), then this function will do nothing.
 

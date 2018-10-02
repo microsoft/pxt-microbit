@@ -1,4 +1,4 @@
-# Event Source ID
+# event Source ID
 
 Return a code representing the origin of the event on the bus (button, pin, radio, and so on).
 

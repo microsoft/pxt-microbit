@@ -9,7 +9,7 @@ item.delete();
 
 ### Parameters
 
-* the **sprite** you want to delete from the game
+* the **sprite** you want to delete from the game.
 
 ### Example
 

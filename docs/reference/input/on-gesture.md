@@ -1,4 +1,4 @@
-# On Gesture
+# on Gesture
 
 Start an [event handler](/reference/event-handler) (part of the
 program that will run when something happens) This handler works when

@@ -1,4 +1,4 @@
-# I2C Read Number
+# i2c Read Number
 
 Read one number from an I2C address using a specified number format.
 

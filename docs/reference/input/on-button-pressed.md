@@ -1,4 +1,4 @@
-# On Button Pressed
+# on Button Pressed
 
 Start an [event handler](/reference/event-handler) (part of the program that will run when something happens, like when a button is pressed). 
 This handler works when button `A` or `B` is pressed, or `A` and `B` together.

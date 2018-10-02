@@ -1,4 +1,4 @@
-# On Pin Released
+# on Pin Released
 
 Start an [event handler](/reference/event-handler) (part of the
 program that will run when something happens, like when a button is

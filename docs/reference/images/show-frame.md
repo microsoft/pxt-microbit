@@ -1,4 +1,4 @@
-# Show Frame
+# show Frame
 
 The show frame function.
 

@@ -1,6 +1,6 @@
-# Beat
+# beat
 
-Returns the duration of a beat in milli-seconds
+Returns the duration of a beat in milli-seconds.
 
 ## Simulator
 
@@ -12,7 +12,7 @@ music.beat(BeatFraction.Whole)
 
 ## Parameters
 
-* ``BeatFraction`` means fraction of a beat (BeatFraction.Whole, BeatFraction.Sixteenth etc) 
+* ``BeatFraction`` means fraction of a beat (BeatFraction.Whole, BeatFraction.Sixteenth etc).
 
 ## Returns
 

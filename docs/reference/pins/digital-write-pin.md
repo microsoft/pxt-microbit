@@ -1,4 +1,4 @@
-# Digital Write Pin
+# digital Write Pin
 
 Write a **digital** (`0` or `1`) signal to a [pin](/device/pins) on
 the @boardname@ board.
@@ -16,8 +16,8 @@ Please read the [page about pins](/device/pins) carefully.
 
 ## Parameters
 
-* ``name`` is a [string](/types/string) that stores the name of the pin (``P0``, ``P1``, or ``P2``, up through ``P20``)
-* ``value`` is a [number](/types/number) that can be either `0` or `1`
+* ``name`` is a [string](/types/string) that stores the name of the pin (``P0``, ``P1``, or ``P2``, up through ``P20``).
+* ``value`` is a [number](/types/number) that can be either `0` or `1`.
 
 ## Example: football score keeper
 

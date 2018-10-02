@@ -1,4 +1,4 @@
-# Event Value ID
+# event Value ID
 
 Return a code representing the type of the event (button click, device gesture, and so on). 
 

@@ -1,4 +1,4 @@
-# Send Buffer
+# send Buffer
 
 Sends a buffer to other @boardname@s in the area connected by radio. The
 maximum buffer length is 19 bytes.

@@ -1,4 +1,4 @@
-# Analog Read Pin
+# analog Read Pin
 
 Read an **analog** signal (`0` through `1023`) from the
 [pin](/device/pins) you say.
@@ -10,11 +10,11 @@ pins.analogReadPin(AnalogPin.P0)
 ## Parameters
 
 * ``name`` is a [string](/types/string) with the name of the pin
-  you say (`P0` through `P4`, or `P10`)
+  you say (`P0` through `P4`, or `P10`).
 
 ## Returns
 
-* a [number](/types/number) from `0` through `1023`
+* a [number](/types/number) from `0` through `1023`.
 
 This program reads pin `P1` and shows the number
 on the LED screen.

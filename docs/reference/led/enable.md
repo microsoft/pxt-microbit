@@ -1,6 +1,6 @@
-# Enable
+# enable
 
-Turns the LED screen on and off
+Turns the LED screen on and off.
 
 ```sig
 led.enable(false);
@@ -8,7 +8,7 @@ led.enable(false);
 
 ## Parameters
 
-* ``on`` is a [boolean](/types/boolean) that defines the on/off state of the screen
+* ``on`` is a [boolean](/types/boolean) that defines the on/off state of the screen.
 
 ## Example: Turning off the screen
 

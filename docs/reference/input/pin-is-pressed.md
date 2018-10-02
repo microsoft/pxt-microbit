@@ -1,4 +1,4 @@
-# Pin Is Pressed
+# pin Is Pressed
 
 Find whether the pin you say is pressed or not pressed.
 
@@ -19,11 +19,11 @@ instead of the USB cable.
 
 ## Parameters
 
-* a [string](/types/string) that holds the pin name (**P0**, **P1**, or **P2**)
+* a [string](/types/string) that holds the pin name (**P0**, **P1**, or **P2**).
 
 ## returns
 
-* a [boolean](/blocks/logic/boolean) that means whether the pin you say is pressed (`true` or `false`)
+* a [boolean](/blocks/logic/boolean) that means whether the pin you say is pressed (`true` or `false`).
 
 ## Example
 

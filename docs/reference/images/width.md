@@ -1,4 +1,4 @@
-# Width
+# width
 
 The width function.
 

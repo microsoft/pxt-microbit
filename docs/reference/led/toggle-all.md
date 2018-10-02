@@ -1,4 +1,4 @@
-# Toggle All
+# toggle All
 
 Toggle all the 25 LEDs on the [LED screen](/device/screen) - if an LED is on before the function is called, it will be off after; if an LED is off before the function is called, it will be on after.
 

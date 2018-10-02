@@ -1,4 +1,4 @@
-# Compass Heading
+# compass Heading
 
 Find which direction on a compass the @boardname@ is facing.
 

@@ -1,4 +1,4 @@
-# Show LEDs
+# show LEDs
 
 Shows a picture on the [LED screen](/device/screen).
 

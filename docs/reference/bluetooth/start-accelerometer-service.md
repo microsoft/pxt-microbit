@@ -1,4 +1,4 @@
-# Bluetooth Accelerometer Service 
+# start Accelerometer Service 
 
 ## ~hint
 ![](/static/bluetooth/Bluetooth_SIG.png)

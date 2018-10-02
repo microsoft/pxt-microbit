@@ -1,4 +1,4 @@
-# Set Brightness
+# set Brightness
 
 Make the [LED screen](/device/screen) as bright as you say when it is
 turned on.

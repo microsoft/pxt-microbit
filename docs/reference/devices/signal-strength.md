@@ -1,4 +1,4 @@
-# Signal Strength
+# signal Strength
 
 Returns the signal strength reported by the paired device from ``0`` (no signal) to ``4`` (full strength).
 

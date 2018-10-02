@@ -1,4 +1,4 @@
-# Show String
+# show String
 
 Show a sting on the [LED screen](/device/screen). It will slide left if it is bigger than the screen.
 

@@ -1,4 +1,4 @@
-# On Gamepad Button
+# on Gamepad Button
 
 Register code to run when the @boardname@ receives a command from the paired gamepad.
 

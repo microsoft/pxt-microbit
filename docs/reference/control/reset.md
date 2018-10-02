@@ -1,4 +1,4 @@
-# Reset
+# reset
 
 Reset the @boardname@ and start the program again.
 

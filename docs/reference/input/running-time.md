@@ -1,4 +1,4 @@
-# Running Time
+# running Time
 
 Find how long it has been since the program started in milli-seconds.
 
@@ -8,8 +8,7 @@ input.runningTime();
 
 ## Returns
 
-* the [Number](/types/number) of milliseconds since the program started.
-(One second is 1000 milliseconds.)
+* the [Number](/types/number) of milliseconds since the program started (One second is 1000 milliseconds).
 
 ## Example: elapsed time
 

@@ -1,4 +1,4 @@
-# Scroll Image
+# scroll Image
 
 Scroll (slide) an [image](/reference/images/image) (picture) from one
 side to the other of the [LED screen](/device/screen).

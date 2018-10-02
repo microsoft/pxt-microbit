@@ -1,4 +1,4 @@
-# Play Tone
+# play Tone
 
 Play a musical tone through pin ``P0`` of the @boardname@ for as long as you say.
 
@@ -15,7 +15,7 @@ music.playTone(440, 120)
 ## Parameters
 
 * ``frequency`` is the [number](/types/number) of Hertz (how high or low the tone is).
-* ``ms`` is the [number](/types/number) of milliseconds that the tone lasts
+* ``ms`` is the [number](/types/number) of milliseconds that the tone lasts.
 
 ## Example
 

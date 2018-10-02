@@ -1,4 +1,4 @@
-# Analog Pitch
+# analog Pitch
 
 Emits a Pulse With Modulation (PWM) signal to the pin ``P0``.
 Use [analog set pitch pin](/reference/pins/analog-set-pitch-pin) to set the current pitch pin.

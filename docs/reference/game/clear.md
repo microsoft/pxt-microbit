@@ -1,4 +1,4 @@
-# Clear
+# clear
 
 The clear function for images.
 

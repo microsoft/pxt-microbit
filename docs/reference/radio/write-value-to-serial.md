@@ -1,4 +1,4 @@
-# Write Value To Serial
+# write Value To Serial
 
 > Note: This API has been deprecated! Use [write received packet to serial](/reference/radio/write-received-packet-to-serial) instead.
 

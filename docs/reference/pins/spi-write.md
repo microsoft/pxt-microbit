@@ -1,4 +1,4 @@
-# SPI Write
+# spi Write
 
 Write to the SPI Slave and return the response.
 
@@ -8,11 +8,11 @@ pins.spiWrite(0);
 
 ## Parameters
 
-* ``value``: value	Data to be sent to the SPI slave
+* ``value``: value	Data to be sent to the SPI slave.
 
 ## Returns
 
-* a [number](/types/number) Response from the SPI slave
+* a [number](/types/number) Response from the SPI slave.
 
 ## See also
 

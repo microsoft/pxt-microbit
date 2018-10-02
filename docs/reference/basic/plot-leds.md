@@ -1,4 +1,4 @@
-# Plot LEDs
+# plot LEDs
 
 Display an [Image](/reference/images/image) on the @boardname@'s [LED screen](/device/screen). NOTE: `basic -> plot image` has been replaced by `basic -> show leds`.
 

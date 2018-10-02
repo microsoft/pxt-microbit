@@ -1,4 +1,4 @@
-# Received Signal Strength
+# received Signal Strength
 
 > Note: This API has been deprecated! Use [on data packet received](/reference/radio/on-data-packet-received) instead.
 

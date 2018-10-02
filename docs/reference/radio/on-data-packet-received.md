@@ -1,4 +1,4 @@
-# On Data Packet Received
+# on Data Packet Received
 
 Run part of a program when the @boardname@ receives a
 [number](/types/number) or [string](/types/string) over ``radio``.
@@ -17,8 +17,8 @@ To add or remove the parts of the packet from the block, try clicking the blue g
 ## Callback Parameters
 
 * ``packet`` - the [packet](/reference/radio/packet) that was received by the radio. The packet has the following properties:
-  * `receivedNumber` - The [number](/types/number) that was sent in this packet or `0` if this packet did not contain a number. See [send number](/reference/radio/send-number) and [send value](/reference/radio/send-value)
-  * `receivedString` - The [string](/types/string) that was sent in this packet or the empty string if this packet did not contain a string. See [send string](/reference/radio/send-string) and [send value](/reference/radio/send-value)
+  * `receivedNumber` - The [number](/types/number) that was sent in this packet or `0` if this packet did not contain a number. See [send number](/reference/radio/send-number) and [send value](/reference/radio/send-value).
+  * `receivedString` - The [string](/types/string) that was sent in this packet or the empty string if this packet did not contain a string. See [send string](/reference/radio/send-string) and [send value](/reference/radio/send-value).
   * `time` - The system time of the @boardname@ that sent this packet at the time the packet was sent.
   * `serial` - The serial number of the @boardname@ that sent this packet or `0` if the @boardname@ did not include its serial number.
   * `signal` - How strong the radio signal is from `-128` (weak) to `-42` (strong).

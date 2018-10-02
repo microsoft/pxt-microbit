@@ -1,4 +1,4 @@
-# Plot Frame
+# plot Frame
 
 The plot frame function.
 

@@ -1,4 +1,4 @@
-# Set Accelerometer Range
+# set Accelerometer Range
 
 Set up the part of the @boardname@ that measures
 [acceleration](/reference/input/acceleration) (how much the microbit

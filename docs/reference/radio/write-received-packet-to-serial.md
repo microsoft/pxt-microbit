@@ -1,4 +1,4 @@
-# Write Received Packet To Serial
+# write Received Packet To Serial
 
 Writes the last packet received by the ``radio`` to serial in JSON format.
 Should be called within a callback to

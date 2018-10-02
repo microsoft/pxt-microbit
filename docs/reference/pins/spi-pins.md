@@ -1,6 +1,6 @@
-# SPI Pins
+# spi Pins
 
-Sets the SPI MOSI, MISO and SCK pins
+Sets the SPI MOSI, MISO and SCK pins.
 
 ```sig
 pins.spiPins(DigitalPin.P0, DigitalPin.P1, DigitalPin.P2);
@@ -8,9 +8,9 @@ pins.spiPins(DigitalPin.P0, DigitalPin.P1, DigitalPin.P2);
 
 ## Parameters
 
-* ``MOSI``, the ``MOSI`` pin
-* ``MISO``, the ``MISO`` pin
-* ``SCK``, the ``SCK`` pin
+* ``MOSI``, the ``MOSI`` pin.
+* ``MISO``, the ``MISO`` pin.
+* ``SCK``, the ``SCK`` pin.
 
 ## See also
 

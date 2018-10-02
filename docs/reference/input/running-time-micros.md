@@ -1,4 +1,4 @@
-# Running Time Micros
+# running Time Micros
 
 Find how long it has been since the program started in micro-seconds.
 

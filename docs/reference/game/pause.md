@@ -1,4 +1,4 @@
-# Pause
+# pause
 
 Pauses the game rendering engine to allow other animations on the screen.
 

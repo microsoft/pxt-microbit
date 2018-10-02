@@ -1,4 +1,4 @@
-# Device Serial Number
+# device Serial Number
 
 Derive a unique, consistent serial number of this device from internal data.
 

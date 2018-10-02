@@ -1,4 +1,4 @@
-# Set Score
+# set Score
 
 Sets the current score.
 

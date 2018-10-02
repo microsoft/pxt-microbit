@@ -1,4 +1,4 @@
-# Serial Write String
+# write String
 
 Write a string to the [serial](/device/serial) port,
 without starting a new line afterward.
@@ -9,7 +9,7 @@ serial.writeString("");
 
 ## Parameters
 
-* `text` is the [string](/types/string) to write to the serial port
+* `text` is the [string](/types/string) to write to the serial port.
 
 ## Example: simple serial
 

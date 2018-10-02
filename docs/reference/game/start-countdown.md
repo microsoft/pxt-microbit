@@ -1,4 +1,4 @@
-# Start Countdown
+# start Countdown
 
 Start counting down time from the number of milliseconds you say.
 

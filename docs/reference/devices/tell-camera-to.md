@@ -1,4 +1,4 @@
-# tell camera to
+# tell Camera To
 
 Access the photo/video-taking functionality of a remote device using the ``tell camera to`` function.
 
@@ -15,7 +15,7 @@ devices.tellCameraTo(MesCameraEvent.TakePhoto)
 
 ## Parameters
 
-* event - an event identifier
+* event - an event identifier.
 
 ## Examples
 

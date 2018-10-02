@@ -1,4 +1,4 @@
-# Servo Set Pulse
+# servo Set Pulse
 
 Configure the specified pin as analog output, set the period to 20
 ms, and set the pulse width to the specified value.
@@ -9,7 +9,7 @@ pins.servoSetPulse(AnalogPin.P1, 1500)
 
 ## Parameters
 
-* ``name``: a [string](/types/string) that specifies the pin to configure (`P0` through `P4`, or `P10`)
+* ``name``: a [string](/types/string) that specifies the pin to configure (`P0` through `P4`, or `P10`).
 * ``micros``: a [number](/types/number) that specifies the analog period in microseconds.
 
 ## Example

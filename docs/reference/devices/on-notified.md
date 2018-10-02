@@ -1,4 +1,4 @@
-# On Signal Strength Changed
+# on Notified
 
 Register code to run when the signal strength of the paired device changes.
 

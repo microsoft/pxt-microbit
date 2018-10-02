@@ -1,4 +1,4 @@
-# Magnetic Force
+# magnetic Force
 
 Find the amount of magnetic force (the strength of a magnet) in the direction you say.
 
@@ -18,11 +18,11 @@ The @boardname@ measures magnetic force with **microteslas**.
 * ``dimension`` means which direction the @boardname@ should measure
   magnetic force in: either `Dimension.X` (the left-right direction),
   `Dimension.Y` (the forward/backward direction), or `Dimension.Z`
-  (the up/down direction)
+  (the up/down direction).
 
 ## Returns
 
-* a [number](/types/number) of microteslas that means the strength of the magnet
+* a [number](/types/number) of microteslas that means the strength of the magnet.
 
 ## Example: metal detector
 

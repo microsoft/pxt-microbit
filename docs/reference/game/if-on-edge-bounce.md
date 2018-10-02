@@ -1,4 +1,4 @@
-# If On Edge, Bounce
+# if On Edge Bounce
 
 Make a [sprite](/reference/game/create-sprite) on the edge of the
 [LED screen](/device/screen) bounce away.

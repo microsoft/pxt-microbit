@@ -1,4 +1,4 @@
-# Run In Background
+# in Background
 
 Run part of a program while the rest of it is doing something else.
 

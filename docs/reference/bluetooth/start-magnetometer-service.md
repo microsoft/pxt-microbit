@@ -1,4 +1,4 @@
-# Bluetooth Magnetometer Service 
+# start Magnetometer Service 
 
 ## ~hint
 ![](/static/bluetooth/Bluetooth_SIG.png)

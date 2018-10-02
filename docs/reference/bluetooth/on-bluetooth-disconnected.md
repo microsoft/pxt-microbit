@@ -1,4 +1,4 @@
-# On Bluetooth Disconnected 
+# on Bluetooth Disconnected 
 
 ## ~hint
 ![](/static/bluetooth/Bluetooth_SIG.png)

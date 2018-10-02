@@ -1,4 +1,4 @@
-# Forever
+# forever
 
 Keep running part of a program 
 [in the background](/reference/control/in-background).

@@ -1,4 +1,4 @@
-# Stop Animation
+# stop Animation
 
 Stop the animation that is playing and any animations that are waiting to
 play.

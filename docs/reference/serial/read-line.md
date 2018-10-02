@@ -1,4 +1,4 @@
-# Serial Read Line
+# read Line
 
 Read a line of text from the serial port.
 
@@ -16,7 +16,7 @@ character.  If your terminal software does not terminate lines with
 
 ## Returns
 
-* a [string](/types/string) containing input from the serial port, such as a response typed by a user
+* a [string](/types/string) containing input from the serial port, such as a response typed by a user.
 
 ## Example
 

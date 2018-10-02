@@ -1,4 +1,4 @@
-# Plot Brightness
+# plot Brightness
 
 Turn on a LED light with a specific brightness on the [LED screen](/device/screen).
 

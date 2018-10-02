@@ -1,4 +1,4 @@
-# Game Over
+# game Over
 
 End the game and show the score.
 

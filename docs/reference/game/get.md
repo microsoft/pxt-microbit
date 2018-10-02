@@ -1,4 +1,4 @@
-# Get Sprite Property
+# get
 
 Find something out about a [sprite](/reference/game/create-sprite).
 
@@ -9,13 +9,13 @@ item.get(LedSpriteProperty.X);
 
 ## Parameters
 
-* the **sprite** you want to know something about
-* the kind of [number](/types/number) you want to know about the sprite, like
-    * ``x``, how far up or down the sprite is on the screen (`0`-`4`)
-    * ``y``, how far left or right the sprite is on the screen (`0`-`4`)
-    * ``direction``, which way the sprite is pointing (this works the same way as the [turn](/reference/game/turn) function)
-    * ``brightness``, how bright the LED sprite is (this works the same way as the [brightness](/reference/led/brightness) function)
-    * ``blink``, how fast the sprite is blinking (the bigger the number is, the faster the sprite is blinking)
+* the **sprite** you want to know something about.
+* the kind of [number](/types/number) you want to know about the sprite, like:
+    * ``x``, how far up or down the sprite is on the screen (`0`-`4`).
+    * ``y``, how far left or right the sprite is on the screen (`0`-`4`).
+    * ``direction``, which way the sprite is pointing (this works the same way as the [turn](/reference/game/turn) function).
+    * ``brightness``, how bright the LED sprite is (this works the same way as the [brightness](/reference/led/brightness) function).
+    * ``blink``, how fast the sprite is blinking (the bigger the number is, the faster the sprite is blinking).
 
 ## Returns
 

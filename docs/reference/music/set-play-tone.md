@@ -1,4 +1,4 @@
-# Set Play Tone
+# set Play Tone
 
 Replaces the implementation of the [music play tone](/reference/music/play-tone).
 

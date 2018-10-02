@@ -12,7 +12,7 @@ The default connection for the serial port is over a USB cable. You can have the
 * **tx**: the transmit [pin](/device/pins) to send serial data on.
 * **rx**: the receive [pin](/device/pins) to receive serial data on.
 * **rate**: the baud rate for transmitting and receiving data. Baud rates you can choose from are:
->`300`, `1200`, `2400`, `4800`, `9600`, `14400`, `19200,`, `28800`, `31250`, `38400`, `57600`, or `115200`
+>`300`, `1200`, `2400`, `4800`, `9600`, `14400`, `19200,`, `28800`, `31250`, `38400`, `57600`, or `115200`.
 
 ## ~hint
 **Baud rate**

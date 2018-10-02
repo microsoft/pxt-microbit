@@ -1,4 +1,4 @@
-# Resume
+# resume
 
 Resumes the game rendering engine after a pause.
 

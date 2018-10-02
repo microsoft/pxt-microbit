@@ -1,4 +1,4 @@
-# Begin Melody
+# begin Melody
 
 Begin playing a musical melody through pin ``P0`` of the @boardname@.
 

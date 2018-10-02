@@ -1,4 +1,4 @@
-# Set Pull
+# set Pull
 
 Configure the electrical pull of the specified pin.
 
@@ -18,8 +18,8 @@ The pull-up and -down resistors are about 13kOhm.
 
 ## Parameters
 
-* ``name``: The @boardname@ hardware pin to configure (``P0``-``P20``)
-* ``pull``: The pull to which to set the pin (**down**, **up**, or **none**)
+* ``name``: The @boardname@ hardware pin to configure (``P0``-``P20``).
+* ``pull``: The pull to which to set the pin (**down**, **up**, or **none**).
 
 ## Example
 

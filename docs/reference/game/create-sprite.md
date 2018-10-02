@@ -1,4 +1,4 @@
-# Create Sprite
+# create Sprite
 
 Create a new LED sprite pointing to the right.
 

@@ -1,4 +1,4 @@
-# Bluetooth Temperature Service 
+# start Temperature Service 
 
 ## ~hint
 ![](/static/bluetooth/Bluetooth_SIG.png)

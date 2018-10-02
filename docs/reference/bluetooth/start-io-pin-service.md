@@ -1,4 +1,4 @@
-# Bluetooth IO Pin Service 
+# start IO Pin Service 
 
 ## ~hint
 ![](/static/bluetooth/Bluetooth_SIG.png)

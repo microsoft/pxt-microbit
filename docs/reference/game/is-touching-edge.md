@@ -1,4 +1,4 @@
-# Touching Edge
+# is Touching Edge
 
 Find whether the sprite is touching the edge of the [LED screen](/device/screen).
 
@@ -12,11 +12,11 @@ item.isTouchingEdge();
 
 ## Parameters
 
-* a **sprite** that might be touching the edge of the screen
+* a **sprite** that might be touching the edge of the screen.
 
 ## Returns
 
-`true` if the sprite is touching the edge of the screen
+`true` if the sprite is touching the edge of the screen.
 
 ## Example
 

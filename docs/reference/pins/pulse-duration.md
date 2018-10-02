@@ -1,4 +1,4 @@
-# Pulse Duration
+# pulse Duration
 
 Gets the duration of the last pulse in microseconds.
 

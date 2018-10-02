@@ -1,4 +1,4 @@
-# Move
+# move
 
 Move the sprite the number of LEDs you say.
 
@@ -9,7 +9,7 @@ item.move(1);
 
 ## Parameters
 
-* a [number](/types/number) that means how many LEDs the sprite should move
+* a [number](/types/number) that means how many LEDs the sprite should move.
 
 ## Example
 

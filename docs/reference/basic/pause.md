@@ -1,4 +1,4 @@
-# Pause
+# pause
 
 Pause the program for the number of milliseconds you say. 
 You can use this function to slow your program down.

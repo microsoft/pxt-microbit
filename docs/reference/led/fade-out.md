@@ -1,4 +1,4 @@
-# Fade out
+# fade Out
 
 Gradually decrease the [LED screen](/device/screen) brightness until the LED lights are turned off.
 

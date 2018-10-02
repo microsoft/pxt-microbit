@@ -1,4 +1,4 @@
-# Show Icon
+# show Icon
 
 Shows the selected icon on the LED screen
 

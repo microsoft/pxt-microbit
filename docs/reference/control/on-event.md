@@ -1,4 +1,4 @@
-# On Event
+# on Event
 
 Raise an event in the event bus.
 

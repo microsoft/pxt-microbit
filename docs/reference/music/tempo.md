@@ -1,4 +1,4 @@
-# Tempo
+# tempo
 
 Finds the tempo (speed of a piece of music).
 

@@ -1,4 +1,4 @@
-# Ring Tone
+# ring Tone
 
 Play a musical tone through pin `P0` with the pitch as high or low as you say.
 The tone will keep playing until you tell it not to.

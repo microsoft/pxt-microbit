@@ -1,4 +1,4 @@
-# Acceleration
+# acceleration
 
 Get the acceleration value (milli g-force) in one of three dimensions, or the combined force in all directions (x, y, and z).
 

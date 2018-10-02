@@ -1,4 +1,4 @@
-# Plot Image
+# plot Image
 
 The plot image function.
 

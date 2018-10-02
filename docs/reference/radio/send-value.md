@@ -9,8 +9,8 @@ radio.sendValue("name", 0);
 
 ## Parameters
 
-* ``name`` is a [string](/types/string) to send by radio
-* ``value`` a [number](/types/number) to send by radio
+* ``name`` is a [string](/types/string) to send by radio.
+* ``value`` a [number](/types/number) to send by radio.
 
 ## Example: Broadcasting acceleration
 

@@ -1,4 +1,4 @@
-# Create Image
+# create Image
 
 Make an [image](/reference/images/image) (picture) for the @boardname@
 [LED screen](/device/screen).

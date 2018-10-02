@@ -1,4 +1,4 @@
-# Bluetooth Set Transmit Power
+# set Transmit Power
 
 ## ~hint
 ![](/static/bluetooth/Bluetooth_SIG.png)

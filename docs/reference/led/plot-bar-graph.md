@@ -1,4 +1,4 @@
-# Plot Bar Graph
+# plot Bar Graph
 
 Displays a bar graph of the numbers you say.
 A bar graph is a kind of chart that shows numbers as lines with different lengths.

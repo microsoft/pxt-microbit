@@ -1,4 +1,4 @@
-# WaitMicros
+# wait Micros
 
 Blocks the current fiber for the given amount of micro-seconds.
 

@@ -1,4 +1,4 @@
-# On Pin Pressed
+# on Pin Pressed
 
 Start an [event handler](/reference/event-handler) (part of the
 program that will run when something happens, like when a button is
@@ -27,7 +27,7 @@ instead of the USB cable.
 
 ## Parameters
 
-* ``name`` means the pin that is being pressed, either `P0`, `P1`, or `P2`
+* ``name`` means the pin that is being pressed, either `P0`, `P1`, or `P2`.
 
 ## Example: pin pressed counter
 

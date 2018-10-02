@@ -1,4 +1,4 @@
-# Change Score By
+# add Score
 
 Add the amount you say to the score for the game.
 

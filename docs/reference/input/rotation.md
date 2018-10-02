@@ -1,4 +1,4 @@
-# Rotation
+# rotation
 
 Find how much the @boardname@ is tilted in different directions.
 
@@ -15,7 +15,7 @@ check how the @boardname@ is moving.
 
 ## Parameters
 
-* ``kind`` means which direction you are checking: `Rotation.Pitch` (up and down) or `Rotation.Roll` (left and right)
+* ``kind`` means which direction you are checking: `Rotation.Pitch` (up and down) or `Rotation.Roll` (left and right).
 
 ## Returns
 

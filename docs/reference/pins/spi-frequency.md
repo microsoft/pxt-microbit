@@ -1,4 +1,4 @@
-# SPI Frequency
+# spi Frequency
 
 Set the SPI clock frequency.
 

@@ -1,4 +1,4 @@
-# Point
+# point
 
 Find whether the LED you say on the 
 [LED screen](/device/screen) is on or off.
@@ -11,9 +11,9 @@ led.point(0,0);
 
 * ``x`` is a [number](/types/number) that means the
   horizontal spot on the LED screen (from left to right: 0, 1, 2, 3,
-  or 4)
+  or 4).
 * ``y`` is a [number](/types/number) that means the vertical
-  spot on the LED screen (from top to bottom: 0, 1, 2, 3, or 4)
+  spot on the LED screen (from top to bottom: 0, 1, 2, 3, or 4).
 
 If a parameter is [out of bounds](/reference/out-of-bounds) (a value
 other than 0 to 4), this function will return `false`.

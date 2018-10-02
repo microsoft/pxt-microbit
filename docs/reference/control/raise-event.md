@@ -1,4 +1,4 @@
-# Raise Event
+# raise Event
 
 Raise an event in the event bus.
 

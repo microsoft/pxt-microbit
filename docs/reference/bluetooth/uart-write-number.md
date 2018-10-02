@@ -1,4 +1,4 @@
-# UART Write Number
+# uart Write Number
 
 ## ~hint
 ![](/static/bluetooth/Bluetooth_SIG.png)

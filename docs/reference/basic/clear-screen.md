@@ -1,4 +1,4 @@
-# Clear Screen
+# clear Screen
 
 Turn off all the LED lights on the [LED screen](/device/screen).
 

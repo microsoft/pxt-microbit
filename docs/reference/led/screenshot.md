@@ -1,4 +1,4 @@
-# Screenshot
+# screenshot
 
 Make an [Image](/reference/images/image) out of the current state of the [LED screen](/device/screen).
 

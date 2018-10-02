@@ -1,4 +1,4 @@
-# On Event
+# on Event
 
 Raises events for melodies or music events.
 

@@ -1,4 +1,4 @@
-# Rest
+# rest
 
 Rest (play no sound) through pin `PO` for the amount of time you say.
 

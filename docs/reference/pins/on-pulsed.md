@@ -1,4 +1,4 @@
-# On Pulsed
+# on Pulsed
 
 Configure the specified pin for digital input, and then
 execute the associated code block whenever the pin
@@ -10,8 +10,8 @@ pins.onPulsed(DigitalPin.P0, PulseValue.High, () => { });
 
 ## Parameters
 
-* ``name``: The @boardname@ hardware pin to configure (``P0`` through ``P20``)
-* ``pulse``: Which state will cause the associated block to execute (**High** or **Low**)
+* ``name``: The @boardname@ hardware pin to configure (``P0`` through ``P20``).
+* ``pulse``: Which state will cause the associated block to execute (**High** or **Low**).
 
 ## Example
 

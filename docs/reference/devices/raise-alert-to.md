@@ -1,4 +1,4 @@
-# raise alert to
+# raise Alert To
 
 Raise an alert on a remote device.
 
@@ -16,7 +16,7 @@ devices.raiseAlertTo(MesAlertEvent.Vibrate)
 
 ## Parameters
 
-* event - an event identifier
+* event - an event identifier.
 
 ## Examples
 

@@ -1,4 +1,4 @@
-# Pulse In
+# pulse In
 
 Returns the duration of a pulse (high or low) from a [pin](/device/pins) on
 the @boardname@ board in microseconds.
@@ -16,9 +16,9 @@ Please read the [page about pins](/device/pins) carefully.
 
 ## Parameters
 
-* ``name`` is a [string](/types/string) that stores the name of the pin (``P0``, ``P1``, or ``P2``, up through ``P20``)
-* ``value`` is the value of the pulse, ``high`` or ``low``
-* ``maxDuration``, maximum duration in micro-seconds. If no pulse is received 
+* ``name`` is a [string](/types/string) that stores the name of the pin (``P0``, ``P1``, or ``P2``, up through ``P20``).
+* ``value`` is the value of the pulse, ``high`` or ``low``.
+* ``maxDuration``, maximum duration in micro-seconds. If no pulse is received.
 
 ## Returns
 

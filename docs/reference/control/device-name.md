@@ -1,4 +1,4 @@
-# Device Name
+# device Name
 
 Make a friendly name for the device based on its serial number.
 

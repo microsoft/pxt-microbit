@@ -1,4 +1,4 @@
-# Bluetooth On UART Data Received
+# on UART Data Received
 
 Registers an event to be fired when one of the delimiter is matched.
 

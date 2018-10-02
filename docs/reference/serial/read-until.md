@@ -1,4 +1,4 @@
-# Serial Read Until
+# read Until
 
 Read a text from the serial port until a delimiter is found.
 
@@ -8,7 +8,7 @@ serial.readUntil(",");
 
 ## Returns
 
-* a [string](/types/string) containing input from the serial port, such as a response typed by a user
+* a [string](/types/string) containing input from the serial port, such as a response typed by a user.
 
 ## Example
 

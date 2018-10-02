@@ -1,4 +1,4 @@
-# Serial Read String
+# read String
 
 Read the buffered serial data as a string.
 

@@ -1,4 +1,4 @@
-# Score
+# score
 
 Find the number of points scored in your game.
 

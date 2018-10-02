@@ -1,4 +1,4 @@
-# Receive Number
+# receive Number
 
 > Note: This API has been deprecated! Use [on data packet received](/reference/radio/on-data-packet-received) instead.
 

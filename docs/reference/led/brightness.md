@@ -1,4 +1,4 @@
-# Brightness
+# brightness
 
 Find how bright the [LED screen](/device/screen) is _when it is turned on_.
 

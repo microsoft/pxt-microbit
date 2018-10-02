@@ -1,4 +1,4 @@
-# Touching
+# is Touching
 
 Find whether the sprite is touching another sprite you say.
 
@@ -11,8 +11,8 @@ item.isTouching(null);
 
 ## Parameters
 
-* a **sprite** you are checking
-* another **sprite** that might be touching the one you are checking
+* a **sprite** you are checking.
+* another **sprite** that might be touching the one you are checking.
 
 ## Returns
 

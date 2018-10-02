@@ -1,4 +1,4 @@
-# Servo Write Pin
+# servo Write Pin
 
 Write a value to the servo on the specified [pin](/device/pins)
 and control the shaft.
@@ -14,8 +14,8 @@ pins.servoWritePin(AnalogPin.P0, 180)
 
 ## Parameters
 
-* ``name``: a [string](/types/string) that specifies the pin name (`P0` through `P4`, or `P10`)
-* ``value``: a [number](/types/number) from `0` through `180`
+* ``name``: a [string](/types/string) that specifies the pin name (`P0` through `P4`, or `P10`).
+* ``value``: a [number](/types/number) from `0` through `180`.
 
 ## Examples
 

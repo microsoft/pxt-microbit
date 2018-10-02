@@ -1,4 +1,4 @@
-# Create Big Image
+# create Big Image
 
 Make a big [image](/reference/images/image) (picture) for the @boardname@
 [LED screen](/device/screen). The big image made of two squares.

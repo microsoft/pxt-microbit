@@ -1,4 +1,4 @@
-# Analog Write Pin
+# analog Write Pin
 
 Write an **analog** signal (`0` through `1023`) to the
 [pin](/device/pins) you say.
@@ -9,8 +9,8 @@ pins.analogWritePin(AnalogPin.P0, 400)
 
 ## Parameters
 
-* ``name`` is a [string](/types/string) that is the pin name you say (`P0` through `P4`, or `P10`)
-* ``value`` is a [number](/types/number) from `0` through `1023`
+* ``name`` is a [string](/types/string) that is the pin name you say (`P0` through `P4`, or `P10`).
+* ``value`` is a [number](/types/number) from `0` through `1023`.
 
 ## Example
 

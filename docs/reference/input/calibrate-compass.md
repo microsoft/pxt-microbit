@@ -1,4 +1,4 @@
-# Calibrate Compass
+# calibrate Compass
 
 Runs the compass calibration sequence.
 

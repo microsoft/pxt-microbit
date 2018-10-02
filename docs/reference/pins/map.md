@@ -1,4 +1,4 @@
-# Map
+# map
 
 Remaps the specified value from one range to another. This function
 maps the value of ``from low`` to the value of ``to low``, the value
@@ -16,11 +16,11 @@ pins.map(0, 0, 4, 0, 1023);
 
 ## Parameters
 
-* ``value``: a [number](/types/number) that specifies the value to map
-* ``fromLow``: a [number](/types/number)  that specifies the lower bound of the origin interval
-* ``fromHigh``: a [number](/types/number)  that specifies the upper bound of the origin interval
-* ``toLow``: a [number](/types/number)  that specifies the lower bound of the target interval
-* ``toHigh``: a [number](/types/number)  that specifies the upper bound of the target interval
+* ``value``: a [number](/types/number) that specifies the value to map.
+* ``fromLow``: a [number](/types/number)  that specifies the lower bound of the origin interval.
+* ``fromHigh``: a [number](/types/number)  that specifies the upper bound of the origin interval.
+* ``toLow``: a [number](/types/number)  that specifies the lower bound of the target interval.
+* ``toHigh``: a [number](/types/number)  that specifies the upper bound of the target interval.
 
 ## Example
 

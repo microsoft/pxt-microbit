@@ -1,4 +1,4 @@
-# Set Tempo 
+# set Tempo 
 
 Makes the tempo (speed of a piece of music) as fast or slow as you say.
 

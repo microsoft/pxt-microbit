@@ -1,4 +1,4 @@
-# Button Is Pressed
+# button Is Pressed
 
 Check whether a button is pressed right now. The @boardname@ has two buttons: button `A` and button `B`.
 

@@ -1,4 +1,4 @@
-# Avertise Url
+# advertise Url
 
 Advertises a URL via the Eddystone protocol over Bluetooth.
 

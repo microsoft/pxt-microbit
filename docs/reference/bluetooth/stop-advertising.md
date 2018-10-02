@@ -1,4 +1,4 @@
-# Stop Advertising
+# stop Advertising
 
 Stops advertising URL via the Eddystone protocol over Bluetooth.
 

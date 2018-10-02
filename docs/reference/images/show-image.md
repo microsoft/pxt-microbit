@@ -1,4 +1,4 @@
-# Show Image
+# show Image
 
 Show an [image](/reference/images/image) (picture) on the
 [LED screen](/device/screen).  After the @boardname@ shows an image, it
