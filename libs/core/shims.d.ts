@@ -435,8 +435,8 @@ declare namespace control {
     /**
      * Internal function to support the simulator
      */
-    //% shim=control::sendMidiMessage
-    function sendMidiMessage(buffer: Buffer, offset: int32): void;
+    //% part=midioutput shim=control::sendMidiMessage
+    function sendMidiMessage(buffer: Buffer): void;
 }
 
 

@@ -306,8 +306,8 @@ namespace control {
     /**
     * Internal function to support the simulator
     */
-    //%
-    void sendMidiMessage(Buffer buffer, int offset) {
+    //% part=midioutput
+    void sendMidiMessage(Buffer buffer) {
         // this is a stub to support the simulator
     }
 }
