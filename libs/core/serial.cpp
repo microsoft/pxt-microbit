@@ -69,7 +69,7 @@ namespace serial {
     //% blockId=serial_read_until block="serial|read until %delimiter=serial_delimiter_conv"
     //% weight=19
     StringData* readUntil(StringData* delimiter) {
-      return uBit.serial.readUntil(ManagedString(delimiter)).leakData();
+      return uBit.serial.readUntil(ManagedString(delimiter), MicroBitSerialMode::SYNC_SLEEP).leakData();
     }
 
     /**
@@ -106,7 +106,7 @@ namespace serial {
     void writeString(StringData *text) {
       if (!text) return;
 
-      uBit.serial.send(ManagedString(text));
+      uBit.serial.send(ManagedString(text), MicroBitSerialMode::SYNC_SPINWAIT);
     }
 
     /**
@@ -118,7 +118,7 @@ namespace serial {
       if (!buffer) return;
 
       ManagedBuffer buf(buffer);
-      uBit.serial.send(buf.getBytes(), buf.length());
+      uBit.serial.send(buf.getBytes(), buf.length(), MicroBitSerialMode::SYNC_SPINWAIT);
     }
 
     /**
@@ -130,9 +130,9 @@ namespace serial {
     Buffer readBuffer(int length) {
       if (length <= 0)
         length = MICROBIT_SERIAL_READ_BUFFER_LENGTH;
-        
+
       ManagedBuffer buf(length);
-      int read = uBit.serial.read(buf.getBytes(), buf.length());
+      int read = uBit.serial.read(buf.getBytes(), buf.length(), MicroBitSerialMode::SYNC_SLEEP);
       if (read != buf.length())
         buf = buf.slice(read);
 
@@ -166,7 +166,7 @@ namespace serial {
     * Direct the serial input and output to use the USB connection.
     */
     //% weight=9 help=serial/redirect-to-usb
-    //% blockId=serial_redirect_to_usb block="serial|redirect to USB"    
+    //% blockId=serial_redirect_to_usb block="serial|redirect to USB"
     void redirectToUSB() {
       uBit.serial.redirect(USBTX, USBRX);
       uBit.serial.baud(115200);
