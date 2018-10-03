@@ -48,6 +48,11 @@ Fun project courses - make and experiment while learning about science and progr
 
 ```codecard
 [{
+  "name": "Blocks to JavaScript",
+  "description": "Learn to code using JavaScript",
+  "url": "/courses/blocks-to-javascript",
+  "imageUrl": "/static/courses/blocks-to-javascript.png"
+}, {
   "name": "SparkFun Inventor's Kit",
   "description": "Your map for navigating the waters of beginning embedded electronics, robotics and citizen science using the micro:bit.",
   "url": "https://learn.sparkfun.com/tutorials/sparkfun-inventors-kit-for-microbit-experiment-guide/introduction-to-the-sparkfun-inventors-kit-for-microbit",
