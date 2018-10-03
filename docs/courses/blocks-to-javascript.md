@@ -29,5 +29,5 @@ Are you ready to try JavaScript to write your code?
 
 ## See Also
 
-[Hello JavaScript](/courses/blocks-to-javascript/hello-javascript)
+[Hello JavaScript](/courses/blocks-to-javascript/hello-javascript), 
 [Starter Blocks](/courses/blocks-to-javascript/starter-blocks)
