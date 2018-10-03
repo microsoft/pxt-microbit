@@ -53,4 +53,14 @@ namespace control {
      */
     //% shim=pxtrt::runtimeWarning
     export function runtimeWarning(message: string) { }
+
+    
+    /**
+     * Informs simulator/runtime of a MIDI message
+     * Internal function to support the simulator.
+     */
+    //% part=midioutput
+    export function __midiSend(buffer: Buffer): void {
+        // implemented in v1
+    }
 }
