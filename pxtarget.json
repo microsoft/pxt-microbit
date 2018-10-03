@@ -388,7 +388,7 @@
             "arrays": "#E65722"
         },
         "highContrast": true,
-        "greenScreen": false,
+        "greenScreen": true,
         "selectLanguage": true,
         "availableLocales": [
             "en",
