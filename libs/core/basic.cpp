@@ -98,6 +98,7 @@ namespace basic {
     //% help=basic/pause weight=54
     //% async block="pause (ms) %pause" blockGap=16
     //% blockId=device_pause icon="\uf110"
+    //% pause.shadow=timePicker
     void pause(int ms) {
       fiber_sleep(ms);
     }

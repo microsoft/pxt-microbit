@@ -197,7 +197,8 @@ declare namespace basic {
      */
     //% help=basic/pause weight=54
     //% async block="pause (ms) %pause" blockGap=16
-    //% blockId=device_pause icon="\uf110" shim=basic::pause
+    //% blockId=device_pause icon="\uf110"
+    //% pause.shadow=timePicker shim=basic::pause
     function pause(ms: int32): void;
 }
 
