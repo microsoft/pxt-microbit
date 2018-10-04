@@ -1,0 +1,5 @@
+{
+  "servos.Servo.run": "Set the throttle on a continuous servo",
+  "servos.Servo.run|param|speed": "the throttle of the motor from -100% to 100%",
+  "servos.Servo.setAngle": "set the servo angle"
+}

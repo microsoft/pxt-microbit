@@ -9,7 +9,8 @@
         "libs/core",
         "libs/radio",
         "libs/devices",
-        "libs/bluetooth"
+        "libs/bluetooth",
+        "libs/servo"
     ],
     "cloud": {
         "workspace": false,
