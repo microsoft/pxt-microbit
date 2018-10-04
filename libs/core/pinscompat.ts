@@ -1,4 +1,3 @@
-//% noRefCounting fixedInstances
 const enum PinEvent {
     //% block="pulse high"
     PulseHigh = DAL.MICROBIT_PIN_EVT_PULSE_HI,  // DEVICE_PIN_EVT_PULSE_HI
@@ -10,6 +9,7 @@ const enum PinEvent {
     Fall = DAL.MICROBIT_PIN_EVT_FALL,  // DEVICE_PIN_EVT_FALL
 }
 
+//% noRefCounting fixedInstances
 interface DigitalInOutPin {
     digitalRead(): boolean;
 
@@ -24,17 +24,21 @@ interface DigitalInOutPin {
     setPull(pull: PinPullMode): void;
 }
 
+//% noRefCounting fixedInstances
 interface AnalogInPin extends DigitalInOutPin {
     analogRead(): number;
 }
 
+//% noRefCounting fixedInstances
 interface AnalogOutPin extends DigitalInOutPin {
     analogWrite(value: number): void;
 }
 
+//% noRefCounting fixedInstances
 interface AnalogInOutPin extends AnalogInPin, AnalogOutPin {
 }
 
+//% noRefCounting fixedInstances
 interface PwmOnlyPin extends DigitalInOutPin, AnalogOutPin {
     //% parts=microservo trackArgs=0
     analogSetPeriod(period: number): void;
@@ -46,6 +50,7 @@ interface PwmOnlyPin extends DigitalInOutPin, AnalogOutPin {
     servoSetPulse(duration: number): void;
 }
 
+//% noRefCounting fixedInstances
 interface PwmPin extends PwmOnlyPin, DigitalInOutPin, AnalogInPin {
 }
 
