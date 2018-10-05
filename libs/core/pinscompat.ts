@@ -132,4 +132,100 @@ namespace pins {
      */
     //% fixedInstance whenUsed
     export const P2: PwmPin = new MicrobitPin(DigitalPin.P2);
+
+    /**
+     * Pin P3
+     */
+    //% fixedInstance whenUsed
+    export const P3: AnalogInPin = new MicrobitPin(DigitalPin.P3);
+
+    /**
+     * Pin P4
+     */
+    //% fixedInstance whenUsed
+    export const P4: AnalogInPin = new MicrobitPin(DigitalPin.P4);
+
+    /**
+     * Pin P5
+     */
+    //% fixedInstance whenUsed
+    export const P5: DigitalInOutPin = new MicrobitPin(DigitalPin.P5);
+
+    /**
+     * Pin P6
+     */
+    //% fixedInstance whenUsed
+    export const P6: DigitalInOutPin = new MicrobitPin(DigitalPin.P6);
+
+    /**
+     * Pin P7
+     */
+    //% fixedInstance whenUsed
+    export const P7: DigitalInOutPin = new MicrobitPin(DigitalPin.P7);
+
+    /**
+     * Pin P8
+     */
+    //% fixedInstance whenUsed
+    export const P8: DigitalInOutPin = new MicrobitPin(DigitalPin.P8);
+
+    /**
+     * Pin P9
+     */
+    //% fixedInstance whenUsed
+    export const P9: DigitalInOutPin = new MicrobitPin(DigitalPin.P9);
+
+    /**
+     * Pin P10
+     */
+    //% fixedInstance whenUsed
+    export const P10: AnalogInPin = new MicrobitPin(DigitalPin.P10);
+
+    /**
+     * Pin P3
+     */
+    //% fixedInstance whenUsed
+    export const P11: DigitalInOutPin = new MicrobitPin(DigitalPin.P11);
+
+    /**
+     * Pin P12
+     */
+    //% fixedInstance whenUsed
+    export const P12: DigitalInOutPin = new MicrobitPin(DigitalPin.P12);
+
+    /**
+     * Pin P13
+     */
+    //% fixedInstance whenUsed
+    export const P13: DigitalInOutPin = new MicrobitPin(DigitalPin.P13);
+
+    /**
+     * Pin P14
+     */
+    //% fixedInstance whenUsed
+    export const P14: DigitalInOutPin = new MicrobitPin(DigitalPin.P14);
+
+    /**
+     * Pin P15
+     */
+    //% fixedInstance whenUsed
+    export const P15: DigitalInOutPin = new MicrobitPin(DigitalPin.P15);
+
+    /**
+     * Pin P16
+     */
+    //% fixedInstance whenUsed
+    export const P16: DigitalInOutPin = new MicrobitPin(DigitalPin.P16);
+
+    /**
+     * Pin P19
+     */
+    //% fixedInstance whenUsed
+    export const P19: DigitalInOutPin = new MicrobitPin(DigitalPin.P19);
+
+    /**
+     * Pin P19
+     */
+    //% fixedInstance whenUsed
+    export const P20: DigitalInOutPin = new MicrobitPin(DigitalPin.P20);
 }
