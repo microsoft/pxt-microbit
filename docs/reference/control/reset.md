@@ -9,12 +9,6 @@ control.reset()
 ```
 ## ~hint
 
-**Simulator**
-
-The **reset** function works only on a real @boardname@ and not in the simulator.
-
-## ~
-
 ## Example
 
 This program will count as high as you like when you press button `A`.

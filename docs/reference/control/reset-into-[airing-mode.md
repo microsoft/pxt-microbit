@@ -7,12 +7,6 @@ control.resetIntoPairingMode()
 ```
 ## ~hint
 
-**Simulator**
-
-The **reset** function works only on a real @boardname@ and not in the simulator.
-
-## ~
-
 ## Example
 
 This program will enter pairing mode when AB buttons are pressed.
