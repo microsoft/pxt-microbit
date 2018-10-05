@@ -117,7 +117,7 @@ namespace bluetooth {
         int bytes = uart->rxBufferedSize();
         auto buffer = mkBuffer(NULL, bytes);
         int read = uart->read(buffer->data, buffer->length);
-        if (read != buffer->length) {
+        if (read >= 0 && read < buffer->length) {
             auto tmp = mkBuffer(buffer->data, read); 
             decrRC(buffer); 
             buffer = tmp;
