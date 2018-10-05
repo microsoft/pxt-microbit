@@ -73,7 +73,10 @@ namespace pxsim.control {
     }
 
     export function raiseEvent(id: number, evid: number, mode: number) {
-        // TODO mode?
+        if (id == DAL.MICROBIT_ID_PARTIAL_FLASHING &&
+            evid == DAL.MICROBIT_RESET_INTO_PAIRING)
+            reset();
+            
         board().bus.queue(id, evid)
     }
 
