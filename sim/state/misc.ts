@@ -40,7 +40,8 @@ namespace pxsim.control {
     }
 
     export function reset() {
-        U.userError("reset not implemented in simulator yet")
+        const cb = getResume();
+        pxsim.runtime.restart();
     }
 
     export function waitMicros(micros: number) {
