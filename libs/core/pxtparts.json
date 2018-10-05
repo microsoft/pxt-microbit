@@ -114,57 +114,7 @@
         "instantiations": [
             {
                 "kind": "function",
-                "fullyQualifiedName": "pins.servoWritePin",
-                "argumentRoles": [
-                    {
-                        "pinInstantiationIdx": 0,
-                        "partParameter": "name"
-                    }
-                ]
-            },
-            {
-                "kind": "function",
-                "fullyQualifiedName": "PwmOnlyPin.servoWrite",
-                "argumentRoles": [
-                    {
-                        "pinInstantiationIdx": 0,
-                        "partParameter": "name"
-                    }
-                ]
-            },
-            {
-                "kind": "function",
-                "fullyQualifiedName": "PwmOnlyPin.servoSetPulse",
-                "argumentRoles": [
-                    {
-                        "pinInstantiationIdx": 0,
-                        "partParameter": "name"
-                    }
-                ]
-            },
-            {
-                "kind": "function",
-                "fullyQualifiedName": "servos.Servo.setAngle",
-                "argumentRoles": [
-                    {
-                        "pinInstantiationIdx": 0,
-                        "partParameter": "name"
-                    }
-                ]
-            },
-            {
-                "kind": "function",
-                "fullyQualifiedName": "servos.Servo.run",
-                "argumentRoles": [
-                    {
-                        "pinInstantiationIdx": 0,
-                        "partParameter": "name"
-                    }
-                ]
-            },
-            {
-                "kind": "function",
-                "fullyQualifiedName": "servos.Servo.setPulse",
+                "fullyQualifiedName": "pins.servoWritePin,pins.servoSetPulse,PwmOnlyPin.servoWrite,PwmOnlyPin.servoSetPulse,servos.Servo.setAngle,servos.Servo.run,servos.Servo.setPulse",
                 "argumentRoles": [
                     {
                         "pinInstantiationIdx": 0,
