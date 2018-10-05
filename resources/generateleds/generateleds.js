@@ -261,21 +261,26 @@ Object.keys(icons).forEach(icon => {
     var svg = `<svg xmlns="http://www.w3.org/2000/svg" height="200" width="200">`;
     const width = 200;
     const height = 200;
+    //svg += '<rect width="100%" height="100%" fill="#176CBF"/>';
     for (var i = 0; i < 5; i++) {
         for (j = 0; j < 5; j++) {
             const hexItemVal = hexLiteral[(i * 5) + j] ? hexLiteral[(i * 5) + j] == '#' : false;
             const x = j * (width / 5);
             const y = i * (height / 5);
-            svg += `<rect y="0" x="0" width="25" height="25" rx="5" transform="translate(${x},${y})"
-                style="${hexItemVal ? 'fill:#fff;' : 'fill: #4DA1E3;'}"/>\n`; //#006CC2
+            svg += `<rect y="5" x="5" width="30" height="30" rx="5" transform="translate(${x},${y})"
+                style="${hexItemVal ? 'fill:#fff;' : 'fill: #4BA6FF;'}"/>\n`; //#006CC2
         }
     }
     svg += `</svg>`;
     const svgPath = path.join(svgdir, icon + ".svg");
-    fs.writeFile(svgPath, svg, { encoding: 'utf8', flag: 'w' })
+    fs.writeFile(svgPath, svg, { encoding: 'utf8', flag: 'w' }, function(err, result) {
+        if (err) console.log("error writing to file");
+    });
 
     const sourceBuffer = Buffer.from(svg, 'utf8');
     svg2png(sourceBuffer, { width: 200, height: 200 })
-        .then(buffer => fs.writeFile(path.join(outputdir, icon + "-icon.png"), buffer, { encoding: 'utf8', flag: 'w' }))
+        .then(buffer => fs.writeFile(path.join(outputdir, icon + "-icon.png"), buffer, { encoding: 'utf8', flag: 'w' }, function (err, result) {
+            if (err) console.log("error writing to file");
+        }))
         .catch(e => console.error(e));
 });
