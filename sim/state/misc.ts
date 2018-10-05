@@ -40,7 +40,7 @@ namespace pxsim.control {
     }
 
     export function reset() {
-        U.userError("reset not implemented in simulator yet")
+        pxsim.runtime.restart();
     }
 
     export function waitMicros(micros: number) {
@@ -74,8 +74,10 @@ namespace pxsim.control {
 
     export function raiseEvent(id: number, evid: number, mode: number) {
         if (id == DAL.MICROBIT_ID_PARTIAL_FLASHING &&
-            evid == DAL.MICROBIT_RESET_INTO_PAIRING)
-            board().restart();            
+            evid == DAL.MICROBIT_RESET_INTO_PAIRING) {
+            pxsim.runtime.restart();
+            return;
+        }
         board().bus.queue(id, evid)
     }
 
