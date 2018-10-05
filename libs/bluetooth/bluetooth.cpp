@@ -116,8 +116,9 @@ namespace bluetooth {
         startUartService();
         int bytes = uart->rxBufferedSize();
         auto buffer = mkBuffer(NULL, bytes);
-        uart->read(buffer->data, buffer->length);
-        // todo: handler read return value
+        int read = uart->read(buffer->data, buffer->length);
+        if (read != buffer->length)
+            buffer = mkBuffer(buffer->data, read);
         return buffer;
     }
 
