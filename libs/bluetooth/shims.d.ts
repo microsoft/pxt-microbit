@@ -64,6 +64,18 @@ declare namespace bluetooth {
     function startUartService(): void;
 
     /**
+     * Sends a buffer of data via Bluetooth UART
+     */
+    //% shim=bluetooth::uartWriteBuffer
+    function uartWriteBuffer(buffer: Buffer): void;
+
+    /**
+     * Reads buffered UART data into a buffer
+     */
+    //% shim=bluetooth::uartReadBuffer
+    function uartReadBuffer(): Buffer;
+
+    /**
      * Registers an event to be fired when one of the delimiter is matched.
      * @param delimiters the characters to match received characters against.
      */
