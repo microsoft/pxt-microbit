@@ -10,7 +10,8 @@
         "libs/radio",
         "libs/devices",
         "libs/bluetooth",
-        "libs/servo"
+        "libs/servo",
+        "libs/radio-broadcast"
     ],
     "cloud": {
         "workspace": false,
