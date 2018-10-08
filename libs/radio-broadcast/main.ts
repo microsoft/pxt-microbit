@@ -22,8 +22,8 @@ namespace radio {
     }
 
     class Listener {
-        public msg: number; 
-        public cb: () => void; 
+        public msg: number;
+        public cb: () => void;
     }
 
     let messageListeners: Listener[] = undefined;
@@ -36,18 +36,11 @@ namespace radio {
     //% msg.shadow=radioMessageCode draggableParameters
     //% weight=199
     export function onMessageReceived(msg: number, handler: () => void) {
-        if (!messageListeners) {
-            // register handler if needed
-            radio.onReceivedNumber(msg => {
-                messageListeners
-                    .filter(listener => listener.msg == msg)
-                    .forEach(listener => listener.cb());
-            })
+        // store handler
+        if (!messageListeners)
             messageListeners = [];
-        }
-
         let l: Listener;
-        for(let i = 0; i < messageListeners.length; ++i) {
+        for (let i = 0; i < messageListeners.length; ++i) {
             if (messageListeners[i].msg == msg) {
                 l = messageListeners[i];
                 break;
@@ -56,8 +49,15 @@ namespace radio {
         if (!l) {
             l = new Listener();
             l.msg = msg;
-            messageListeners.push(l);    
+            messageListeners.push(l);
         }
         l.cb = handler;
+
+        // register handler
+        radio.onReceivedNumber(msg => {
+            messageListeners
+                .filter(listener => listener.msg == msg)
+                .forEach(listener => listener.cb());
+        })
     }
 }
