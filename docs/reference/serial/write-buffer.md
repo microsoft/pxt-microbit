@@ -1,4 +1,4 @@
-# wite Buffer
+# write Buffer
 
 Write a buffer to the [serial](/device/serial) port.
 
