@@ -17,6 +17,7 @@ namespace radio {
     //% msg.shadow=radioMessageCode draggableParameters
     //% weight=200
     //% blockGap=8
+    //% help=radio/send-message
     export function sendMessage(msg: number): void {
         radio.sendNumber(msg);
     }
@@ -35,7 +36,8 @@ namespace radio {
     //% blockId=radioOnMessageReceived block="on radio $msg received"
     //% msg.shadow=radioMessageCode draggableParameters
     //% weight=199
-    export function onMessageReceived(msg: number, handler: () => void) {
+    //% help=radio/on-received-message
+    export function onReceivedMessage(msg: number, handler: () => void) {
         // store handler
         if (!messageListeners)
             messageListeners = [];
