@@ -10,6 +10,7 @@
   "radio.onReceivedNumber|block": "on radio received",
   "radio.onReceivedString|block": "on radio received",
   "radio.onReceivedValue|block": "on radio received",
+  "radio.raiseEvent|block": "radio raise event ",
   "radio.receiveNumber|block": "radio receive number",
   "radio.receiveString|block": "radio receive string",
   "radio.receivedSignalStrength|block": "radio received signal strength",

@@ -8,7 +8,8 @@ declare namespace radio {
     /**
      * Sends an event over radio to neigboring devices
      */
-    //% advanced=true blockHidden=1
+    //% blockId=radioRaiseEvent block="radio raise event "
+    //% advanced=true
     //% weight=1
     //% help=radio/raise-event shim=radio::raiseEvent
     function raiseEvent(src: int32, value: int32): void;

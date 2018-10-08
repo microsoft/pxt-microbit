@@ -62,7 +62,9 @@ namespace radio {
     /**
     * Sends an event over radio to neigboring devices
     */
-    //% advanced=true blockHidden=1
+    //% blockId=radioRaiseEvent block="radio raise event|from source %src=control_event_source_id|with value %value=control_event_value_id" 
+    //% blockExternalInputs=1
+    //% advanced=true
     //% weight=1
     //% help=radio/raise-event
     void raiseEvent(int src, int value) {
