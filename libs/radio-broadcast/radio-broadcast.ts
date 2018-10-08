@@ -19,7 +19,8 @@ namespace radio {
     //% blockGap=8
     //% help=radio/send-message
     export function sendMessage(msg: number): void {
-        radio.raiseEvent(DAL.MES_BROADCAST_GENERAL_ID, msg);
+        // 0 is MICROBIT_EVT_ANY, shifting by 1
+        radio.raiseEvent(DAL.MES_BROADCAST_GENERAL_ID, msg + 1);
     }
 
     /**
@@ -32,6 +33,6 @@ namespace radio {
     //% weight=199
     //% help=radio/on-received-message
     export function onReceivedMessage(msg: number, handler: () => void) {
-        control.onEvent(DAL.MES_BROADCAST_GENERAL_ID, msg, handler);
+        control.onEvent(DAL.MES_BROADCAST_GENERAL_ID, msg + 1, handler);
     }
 }

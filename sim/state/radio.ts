@@ -78,7 +78,7 @@ namespace pxsim {
 
         raiseEvent(id: number, eventid: number) {
             Runtime.postMessage(<SimulatorEventBusMessage>{
-                type: "event",
+                type: "eventbus",
                 id,
                 eventid,
                 power: this.power,

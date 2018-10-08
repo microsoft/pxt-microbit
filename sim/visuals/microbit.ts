@@ -854,6 +854,9 @@ path.sim-board {
                 switch (msg.type || "") {
                     case "serial": this.flashSystemLed(); break;
                     case "radiopacket": this.flashAntenna(); break;
+                    case "eventbus":
+                        if ((<pxsim.SimulatorEventBusMessage>msg).id == DAL.MES_BROADCAST_GENERAL_ID)
+                            this.flashAntenna(); break;
                 }
             }
             let tiltDecayer = 0;
