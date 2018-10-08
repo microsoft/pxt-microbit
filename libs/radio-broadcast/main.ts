@@ -13,7 +13,7 @@ namespace radio {
      * Broadcasts a message over radio
      * @param msg 
      */
-    //% blockId=radioBroadcastMessage block="radio broadcast $msg"
+    //% blockId=radioBroadcastMessage block="radio send $msg"
     //% msg.shadow=radioMessageCode draggableParameters
     //% weight=200
     //% blockGap=8
