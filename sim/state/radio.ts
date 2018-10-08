@@ -30,7 +30,7 @@ namespace pxsim {
             Runtime.postMessage(<SimulatorRadioPacketMessage>{
                 type: "radiopacket",
                 rssi: -42, // -42 is the strongest signal
-                serial: b.radioState.bus.transmitSerialNumber ? pxsim.control.deviceSerialNumber() : 0,
+                serial: b.radioState.transmitSerialNumber ? pxsim.control.deviceSerialNumber() : 0,
                 time: new Date().getTime(),
                 payload
             })
