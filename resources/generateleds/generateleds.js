@@ -268,7 +268,8 @@ Object.keys(icons).forEach(icon => {
             const x = j * (width / 5);
             const y = i * (height / 5);
             svg += `<rect y="5" x="5" width="30" height="30" rx="5" transform="translate(${x},${y})"
-                style="${hexItemVal ? 'fill:#fff;' : 'fill: #4BA6FF;'}"/>\n`; //#006CC2
+                fill="${hexItemVal ? '#fff' : '#000'}"
+                fill-opacity="${hexItemVal ? '1.0' : '0.2'}"/>\n`; //#006CC2
         }
     }
     svg += `</svg>`;

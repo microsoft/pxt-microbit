@@ -1,51 +1,76 @@
 <svg xmlns="http://www.w3.org/2000/svg" height="200" width="200"><rect y="5" x="5" width="30" height="30" rx="5" transform="translate(0,0)"
-                style="fill: #4BA6FF;"/>
+                fill="#000"
+                fill-opacity="0.2"/>
 <rect y="5" x="5" width="30" height="30" rx="5" transform="translate(40,0)"
-                style="fill:#fff;"/>
+                fill="#fff"
+                fill-opacity="1.0"/>
 <rect y="5" x="5" width="30" height="30" rx="5" transform="translate(80,0)"
-                style="fill: #4BA6FF;"/>
+                fill="#000"
+                fill-opacity="0.2"/>
 <rect y="5" x="5" width="30" height="30" rx="5" transform="translate(120,0)"
-                style="fill:#fff;"/>
+                fill="#fff"
+                fill-opacity="1.0"/>
 <rect y="5" x="5" width="30" height="30" rx="5" transform="translate(160,0)"
-                style="fill: #4BA6FF;"/>
+                fill="#000"
+                fill-opacity="0.2"/>
 <rect y="5" x="5" width="30" height="30" rx="5" transform="translate(0,40)"
-                style="fill:#fff;"/>
+                fill="#fff"
+                fill-opacity="1.0"/>
 <rect y="5" x="5" width="30" height="30" rx="5" transform="translate(40,40)"
-                style="fill:#fff;"/>
+                fill="#fff"
+                fill-opacity="1.0"/>
 <rect y="5" x="5" width="30" height="30" rx="5" transform="translate(80,40)"
-                style="fill:#fff;"/>
+                fill="#fff"
+                fill-opacity="1.0"/>
 <rect y="5" x="5" width="30" height="30" rx="5" transform="translate(120,40)"
-                style="fill:#fff;"/>
+                fill="#fff"
+                fill-opacity="1.0"/>
 <rect y="5" x="5" width="30" height="30" rx="5" transform="translate(160,40)"
-                style="fill:#fff;"/>
+                fill="#fff"
+                fill-opacity="1.0"/>
 <rect y="5" x="5" width="30" height="30" rx="5" transform="translate(0,80)"
-                style="fill:#fff;"/>
+                fill="#fff"
+                fill-opacity="1.0"/>
 <rect y="5" x="5" width="30" height="30" rx="5" transform="translate(40,80)"
-                style="fill:#fff;"/>
+                fill="#fff"
+                fill-opacity="1.0"/>
 <rect y="5" x="5" width="30" height="30" rx="5" transform="translate(80,80)"
-                style="fill:#fff;"/>
+                fill="#fff"
+                fill-opacity="1.0"/>
 <rect y="5" x="5" width="30" height="30" rx="5" transform="translate(120,80)"
-                style="fill:#fff;"/>
+                fill="#fff"
+                fill-opacity="1.0"/>
 <rect y="5" x="5" width="30" height="30" rx="5" transform="translate(160,80)"
-                style="fill:#fff;"/>
+                fill="#fff"
+                fill-opacity="1.0"/>
 <rect y="5" x="5" width="30" height="30" rx="5" transform="translate(0,120)"
-                style="fill: #4BA6FF;"/>
+                fill="#000"
+                fill-opacity="0.2"/>
 <rect y="5" x="5" width="30" height="30" rx="5" transform="translate(40,120)"
-                style="fill:#fff;"/>
+                fill="#fff"
+                fill-opacity="1.0"/>
 <rect y="5" x="5" width="30" height="30" rx="5" transform="translate(80,120)"
-                style="fill:#fff;"/>
+                fill="#fff"
+                fill-opacity="1.0"/>
 <rect y="5" x="5" width="30" height="30" rx="5" transform="translate(120,120)"
-                style="fill:#fff;"/>
+                fill="#fff"
+                fill-opacity="1.0"/>
 <rect y="5" x="5" width="30" height="30" rx="5" transform="translate(160,120)"
-                style="fill: #4BA6FF;"/>
+                fill="#000"
+                fill-opacity="0.2"/>
 <rect y="5" x="5" width="30" height="30" rx="5" transform="translate(0,160)"
-                style="fill: #4BA6FF;"/>
+                fill="#000"
+                fill-opacity="0.2"/>
 <rect y="5" x="5" width="30" height="30" rx="5" transform="translate(40,160)"
-                style="fill: #4BA6FF;"/>
+                fill="#000"
+                fill-opacity="0.2"/>
 <rect y="5" x="5" width="30" height="30" rx="5" transform="translate(80,160)"
-                style="fill:#fff;"/>
+                fill="#fff"
+                fill-opacity="1.0"/>
 <rect y="5" x="5" width="30" height="30" rx="5" transform="translate(120,160)"
-                style="fill: #4BA6FF;"/>
+                fill="#000"
+                fill-opacity="0.2"/>
 <rect y="5" x="5" width="30" height="30" rx="5" transform="translate(160,160)"
-                style="fill: #4BA6FF;"/>
+                fill="#000"
+                fill-opacity="0.2"/>
 </svg>
