@@ -2,7 +2,7 @@
     "name": "radio-broadcast",
     "files": [
         "pxt.json",
-        "main.ts"
+        "radio-broadcast.ts"
     ],
     "dependencies": {
         "core": "file:../core",

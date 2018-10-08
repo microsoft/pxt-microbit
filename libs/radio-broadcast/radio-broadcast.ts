@@ -19,15 +19,9 @@ namespace radio {
     //% blockGap=8
     //% help=radio/send-message
     export function sendMessage(msg: number): void {
-        radio.sendNumber(msg);
+        radio.raiseEvent(DAL.MES_BROADCAST_GENERAL_ID, msg);
     }
 
-    class Listener {
-        public msg: number;
-        public cb: () => void;
-    }
-
-    let messageListeners: Listener[] = undefined;
     /**
      * Registers code to run for a particular message
      * @param msg 
@@ -38,28 +32,6 @@ namespace radio {
     //% weight=199
     //% help=radio/on-received-message
     export function onReceivedMessage(msg: number, handler: () => void) {
-        // store handler
-        if (!messageListeners)
-            messageListeners = [];
-        let l: Listener;
-        for (let i = 0; i < messageListeners.length; ++i) {
-            if (messageListeners[i].msg == msg) {
-                l = messageListeners[i];
-                break;
-            }
-        }
-        if (!l) {
-            l = new Listener();
-            l.msg = msg;
-            messageListeners.push(l);
-        }
-        l.cb = handler;
-
-        // register handler
-        radio.onReceivedNumber(msg => {
-            messageListeners
-                .filter(listener => listener.msg == msg)
-                .forEach(listener => listener.cb());
-        })
+        control.onEvent(DAL.MES_BROADCAST_GENERAL_ID, msg, handler);
     }
 }

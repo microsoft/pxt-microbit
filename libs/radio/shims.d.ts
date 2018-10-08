@@ -6,6 +6,13 @@
 declare namespace radio {
 
     /**
+     * Sends an event over radio to neigboring devices
+     */
+    //% advanced=true blockHidden=1
+    //% weight=1 shim=radio::raiseEvent
+    function raiseEvent(src: int32, value: int32): void;
+
+    /**
      * Broadcasts a number over radio to any connected micro:bit in the group.
      */
     //% help=radio/send-number
