@@ -14,6 +14,7 @@ radio.setTransmitPower(7);
 radio.setTransmitSerialNumber(false);
 radio.writeReceivedPacketToSerial();
 radio.sendBuffer(null);
+radio.raiseEvent(0, 0);
 ```
 
 ```package
@@ -32,4 +33,5 @@ radio
 [setGroup](/reference/radio/set-group),
 [setTransmitPower](/reference/radio/set-transmit-power),
 [setTransmitSerialNumber](/reference/radio/set-transmit-serial-number),
-[writeReceivedPacketToSerial](/reference/radio/write-received-packet-to-serial)
+[writeReceivedPacketToSerial](/reference/radio/write-received-packet-to-serial),
+[raiseEvent](/reference/radio/raise-event)

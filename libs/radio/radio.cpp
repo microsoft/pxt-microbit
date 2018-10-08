@@ -64,6 +64,7 @@ namespace radio {
     */
     //% advanced=true blockHidden=1
     //% weight=1
+    //% help=radio/raise-event
     void raiseEvent(int src, int value) {
         if (radioEnable() != MICROBIT_OK) return;
         uBit.radio.event.eventReceived(MicroBitEvent(src, value, CREATE_ONLY));
