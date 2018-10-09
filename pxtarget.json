@@ -278,6 +278,7 @@
             "debugger",
             "bluetoothUartConsole"
         ],
+        "bluetoothUartNamePrefix": "BBC micro:bit",
         "docMenu": [
             {
                 "name": "Support",
