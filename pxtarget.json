@@ -275,7 +275,8 @@
             "print",
             "allowPackageExtensions",
             "instructions",
-            "debugger"
+            "debugger",
+            "bluetoothUartConsole"
         ],
         "docMenu": [
             {
