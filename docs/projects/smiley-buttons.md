@@ -1,5 +1,11 @@
 # Smiley Buttons
 
+## Introduction @unplugged
+
+Code the buttons on the @boardname@ to show that it's happy or sad.
+
+![Pressing the A and B buttons](/static/mb/projects/smiley-buttons/smiley-buttons.gif)
+
 ## Step 1 @fullscreen
 
 Place a ``||input:on button pressed||`` block to run code when button **A** is pressed.

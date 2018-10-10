@@ -1,6 +1,10 @@
 # Coin Flipper
 
+## Introduction @unplugged
+
 Let's create a coin flipping program to simulate a real coin toss. We'll use icon images to represent a ``heads`` or ``tails`` result.
+
+![Simulating coin toss](/static/mb/projects/coin-flipper/coin-flipper.gif)
 
 ## Step 1
 
