@@ -23,7 +23,7 @@ namespace pxsim {
             return this.value > 100 ? 1 : 0;
         }
 
-        digitalWritePin(value: number) {
+        digitalWritePin(value: number) {            
             this.mode = PinFlags.Digital | PinFlags.Output;
             this.value = value > 0 ? 200 : 0;
             runtime.queueDisplayUpdate();
@@ -39,18 +39,21 @@ namespace pxsim {
         }
 
         analogWritePin(value: number) {
+            value = value >> 0;
             this.mode = PinFlags.Analog | PinFlags.Output;
             this.value = Math.max(0, Math.min(1023, value));
             runtime.queueDisplayUpdate();
         }
 
         analogSetPeriod(micros: number) {
+            micros = micros >> 0;
             this.mode = PinFlags.Analog | PinFlags.Output;
             this.period = micros;
             runtime.queueDisplayUpdate();
         }
 
         servoWritePin(value: number) {
+            value = value >> 0;
             this.analogSetPeriod(20000);
             this.servoAngle = Math.max(0, Math.min(180, value));
             runtime.queueDisplayUpdate();
