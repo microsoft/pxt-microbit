@@ -4,7 +4,7 @@
 /**
  * Radio monitoring dashboard
  * 
- * Each radio client is represented by a dot on the screen. 
+ * Each radio client is represented by a dot on the screen.
  * Once a client is registered, it will stay at the same pixel location
  * forever.
  * 
@@ -31,16 +31,16 @@ const clients: Client[] = [];
 
 /* lazy allocate sprite */
 function getClient(id: number): Client {
-    // needs an id to track radio client identity
+    // needs an id to track radio client's identity
     if (!id)
         return undefined;
 
-    // look for cache clients
+    // look for cached clients
     for (const client of clients)
         if (client.id == id)
             return client;
     const n = clients.length;
-    if (n == 24) // out of pixels 
+    if (n == 24) // out of pixels
         return undefined;
     const client: Client = {
         id: id,
