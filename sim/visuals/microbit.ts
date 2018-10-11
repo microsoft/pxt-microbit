@@ -274,7 +274,6 @@ path.sim-board {
     export interface IBoardProps {
         runtime?: pxsim.Runtime;
         theme?: IBoardTheme;
-        disableTilt?: boolean;
         wireframe?: boolean;
     }
 
@@ -695,7 +694,6 @@ path.sim-board {
         }
 
         private updateTilt() {
-            if (this.props.disableTilt) return;
             const state = this.board;
             if (!state || !state.accelerometerState.accelerometer.isActive) return;
 
