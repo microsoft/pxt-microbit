@@ -531,31 +531,26 @@ namespace pxt.editor {
         })
     }
 
-    export function deployCoreAsync(resp: pxtc.CompileResult, d: pxt.commands.DeployOptions = {}): Promise<void> {
-        const saveHexAsync = () => {
-            return pxt.commands.saveOnlyAsync(resp);
-        };
-        return Promise.resolve()
-            .then(() => {
-                const isUwp = !!(window as any).Windows;
-                if (isUwp) {
-                    // Go straight to flashing
+    function uwpDeployCoreAsync(resp: pxtc.CompileResult, d: pxt.commands.DeployOptions = {}): Promise<void> {
+        // Go straight to flashing
+        return flashAsync(resp, d);
+    }
+
+    function deployCoreAsync(resp: pxtc.CompileResult, d: pxt.commands.DeployOptions = {}): Promise<void> {
+        return pxt.usb.isPairedAsync()
+            .then(isPaired => {
+                if (isPaired) {
+                    // Already paired from earlier in the session or from previous session
                     return flashAsync(resp, d);
                 }
-                if (!pxt.usb.isEnabled) {
-                    return saveHexAsync();
-                }
-                return pxt.usb.isPairedAsync()
-                    .then((isPaired) => {
-                        if (isPaired) {
-                            // Already paired from earlier in the session or from previous session
-                            return flashAsync(resp, d);
-                        }
 
-                        // No device paired, prompt user
-                        return saveHexAsync();
-                    });
-            })
+                // try bluetooth if device is paired
+                if (pxt.webBluetooth.isPaired())
+                    return pxt.webBluetooth.flashAsync(resp, d);
+
+                // No device paired, prompt user
+                return pxt.commands.saveOnlyAsync(resp);
+            });
     }
 
     /**
@@ -820,7 +815,10 @@ namespace pxt.editor {
             subclassCode: 0x03
         }])
 
-        if (canHID())
+        const isUwp = !!(window as any).Windows;
+        if (isUwp)
+            pxt.commands.deployCoreAsync = uwpDeployCoreAsync;
+        else if (canHID() || pxt.webBluetooth.isEnabled)
             pxt.commands.deployCoreAsync = deployCoreAsync;
 
         res.blocklyPatch = patchBlocks;
