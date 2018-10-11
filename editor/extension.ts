@@ -546,7 +546,8 @@ namespace pxt.editor {
 
                 // try bluetooth if device is paired
                 if (pxt.webBluetooth.isPaired())
-                    return pxt.webBluetooth.flashAsync(resp, d);
+                    return pxt.webBluetooth.flashAsync(resp, d)
+                        .catch(e => pxt.commands.saveOnlyAsync(resp));
 
                 // No device paired, prompt user
                 return pxt.commands.saveOnlyAsync(resp);
