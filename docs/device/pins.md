@@ -41,7 +41,7 @@ Unlike the three large pins that are dedicated to being used for external connec
 
 * **pin 3**: GPIO shared with LED Col 1 of the LED screen; can be used for ADC and digital I/O when the LED screen is turned off.
 * **pin 4**: GPIO shared with LED Col 2 of the LED screen; can be used for ADC and digital I/O when the LED screen is turned off.
-* **pin 5**: GPIO shared with Button A. This lets you trigger or detect a button "A" click externally. This pin has a pull-up resistor, which means that by default it is at voltage of 3V. To replace button A on the micro:bit with an external button, connect one end of the external button to pin 4 and the other end to GND. When the button is pressed, the voltage on pin 4 is pulled down to 0, which generates a button click event.
+* **pin 5**: GPIO shared with Button A. This lets you trigger or detect a button "A" click externally. This pin has a pull-up resistor, which means that by default it is at voltage of 3V. To replace button A on the micro:bit with an external button, connect one end of the external button to pin 5 and the other end to GND. When the button is pressed, the voltage on pin 5 is pulled down to 0, which generates a button click event.
 * **pin 6**: GPIO shared with LED Col 9 of the LED screen;  can be used for digital I/O when the LED screen is turned off.
 * **pin 7**: GPIO shared with LED Col 8 of the LED screen; can be used for digital I/O when the LED screen is turned off.
 * **pin 8**: Dedicated GPIO, for sending and sensing digital signals.
