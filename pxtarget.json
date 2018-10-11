@@ -429,6 +429,9 @@
         },
         "browserDbPrefixes": {
             "1": "v1"
+        },
+        "editorVersionPaths": {
+            "0": "v0"
         }
     }
 }
