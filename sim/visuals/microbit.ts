@@ -305,6 +305,9 @@ path.sim-board {
         private thermometerText: SVGTextElement;
         private shakeButton: SVGCircleElement;
         private shakeText: SVGTextElement;
+        private accTextX: SVGTextElement;
+        private accTextY: SVGTextElement;
+        private accTextZ: SVGTextElement;
         public board: pxsim.DalBoard;
         private pinNmToCoord: Map<Coord> = {};
 
@@ -706,6 +709,7 @@ path.sim-board {
 
             const x = state.accelerometerState.accelerometer.getX();
             const y = -state.accelerometerState.accelerometer.getY();
+            const z = state.accelerometerState.accelerometer.getZ();
             const af = 8 / 1023;
             const s = 1 - Math.min(0.1, Math.pow(Math.max(Math.abs(x), Math.abs(y)) / 1023, 2) / 35);
 
@@ -714,6 +718,19 @@ path.sim-board {
             el.style.transform = `perspective(30em) rotateX(${y * af}deg) rotateY(${x * af}deg) scale(${s}, ${s})`
             el.style.perspectiveOrigin = "50% 50% 50%";
             el.style.perspective = "30em";
+
+            // update text
+            if (!this.accTextX) {
+                this.accTextX = svg.child(this.g, "text", { x: 365, y: 260, class: "sim-text" }) as SVGTextElement;
+                this.accTextX.textContent = "";
+                this.accTextY = svg.child(this.g, "text", { x: 365, y: 285, class: "sim-text" }) as SVGTextElement;
+                this.accTextY.textContent = "";
+                this.accTextZ = svg.child(this.g, "text", { x: 365, y: 310, class: "sim-text" }) as SVGTextElement;
+                this.accTextZ.textContent = "";
+            }
+            this.accTextX.textContent = `ax:${x}`;
+            this.accTextY.textContent = `ay:${-y}`;
+            this.accTextZ.textContent = `az:${z}`;
         }
 
         private buildDom() {
