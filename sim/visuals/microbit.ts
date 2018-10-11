@@ -693,6 +693,13 @@ path.sim-board {
             accessibility.setLiveContent(lv.toString());
         }
 
+        findParentElement() {
+            let el = this.element;
+            while (el.parentNode && el.parentNode.nodeName == "svg")
+                el = el.parentNode as SVGSVGElement;
+            return el;
+        }
+
         private updateTilt() {
             const state = this.board;
             if (!state || !state.accelerometerState.accelerometer.isActive) return;
@@ -702,9 +709,11 @@ path.sim-board {
             const af = 8 / 1023;
             const s = 1 - Math.min(0.1, Math.pow(Math.max(Math.abs(x), Math.abs(y)) / 1023, 2) / 35);
 
-            this.element.style.transform = `perspective(30em) rotateX(${y * af}deg) rotateY(${x * af}deg) scale(${s}, ${s})`
-            this.element.style.perspectiveOrigin = "50% 50% 50%";
-            this.element.style.perspective = "30em";
+            // fix top parent and apply style to it
+            const el = this.findParentElement();
+            el.style.transform = `perspective(30em) rotateX(${y * af}deg) rotateY(${x * af}deg) scale(${s}, ${s})`
+            el.style.perspectiveOrigin = "50% 50% 50%";
+            el.style.perspective = "30em";
         }
 
         private buildDom() {
@@ -727,13 +736,13 @@ path.sim-board {
 
             // filters
             let ledglow = svg.child(this.defs, "filter", { id: "ledglow", x: "-75%", y: "-75%", width: "300%", height: "300%" });
-            svg.child(ledglow, "feMorphology", { operator: "dilate", radius: "4", in: "SourceAlpha", result: "thicken"});
-            svg.child(ledglow, "feGaussianBlur", { stdDeviation: "5", in: "thicken", result: "blurred"});
-            svg.child(ledglow, "feFlood", { "flood-color": "rgb(255, 17, 77)", result: "glowColor"});
-            svg.child(ledglow, "feComposite", { in: "glowColor", in2: "blurred", operator: "in", result: "ledglow_colored"});
+            svg.child(ledglow, "feMorphology", { operator: "dilate", radius: "4", in: "SourceAlpha", result: "thicken" });
+            svg.child(ledglow, "feGaussianBlur", { stdDeviation: "5", in: "thicken", result: "blurred" });
+            svg.child(ledglow, "feFlood", { "flood-color": "rgb(255, 17, 77)", result: "glowColor" });
+            svg.child(ledglow, "feComposite", { in: "glowColor", in2: "blurred", operator: "in", result: "ledglow_colored" });
             let ledglowMerge = svg.child(ledglow, "feMerge", {});
-            svg.child(ledglowMerge, "feMergeNode", { in: "ledglow_colored"});
-            svg.child(ledglowMerge, "feMergeNode", { in: "SourceGraphic"});
+            svg.child(ledglowMerge, "feMergeNode", { in: "ledglow_colored" });
+            svg.child(ledglowMerge, "feMergeNode", { in: "SourceGraphic" });
 
             let glow = svg.child(this.defs, "filter", { id: "filterglow", x: "-5%", y: "-5%", width: "120%", height: "120%" });
             svg.child(glow, "feGaussianBlur", { stdDeviation: "5", result: "glow" });
