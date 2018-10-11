@@ -774,9 +774,6 @@ namespace game {
             _sprites[i]._plot(now);
         }
         _img.plotImage(0);
-        // restore previous display mode
-        if (dm != DisplayMode.Greyscale)
-            led.setDisplayMode(dm);
     }
 
     /**
