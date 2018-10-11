@@ -236,7 +236,6 @@
                 "#107C10"
             ]
         },
-        "chromeExtension": "hjcflblhjoglmjjkecamiegdigfkgeni",
         "vendorId": "0x0d28",
         "productId": "0x0204",
         "rawHID": true
@@ -429,6 +428,9 @@
         },
         "browserDbPrefixes": {
             "1": "v1"
+        },
+        "editorVersionPaths": {
+            "0": "v0"
         }
     }
 }

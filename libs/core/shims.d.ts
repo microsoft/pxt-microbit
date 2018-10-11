@@ -526,7 +526,8 @@ declare namespace led {
      * @param mode mode the display mode in which the screen operates
      */
     //% weight=1 help=led/set-display-mode
-    //% parts="ledmatrix" advanced=true shim=led::setDisplayMode
+    //% parts="ledmatrix" advanced=true weight=1
+    //% blockId="led_set_display_mode" block="set display mode $mode" shim=led::setDisplayMode
     function setDisplayMode(mode: DisplayMode): void;
 
     /**

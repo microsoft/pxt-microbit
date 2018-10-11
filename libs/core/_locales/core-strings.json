@@ -300,6 +300,7 @@
   "led.plot|block": "plot|x %x|y %y",
   "led.point|block": "point|x %x|y %y",
   "led.setBrightness|block": "set brightness %value",
+  "led.setDisplayMode|block": "set display mode $mode",
   "led.stopAnimation|block": "stop animation",
   "led.toggle|block": "toggle|x %x|y %y",
   "led.unplot|block": "unplot|x %x|y %y",

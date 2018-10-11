@@ -274,7 +274,6 @@ path.sim-board {
     export interface IBoardProps {
         runtime?: pxsim.Runtime;
         theme?: IBoardTheme;
-        disableTilt?: boolean;
         wireframe?: boolean;
     }
 
@@ -306,6 +305,9 @@ path.sim-board {
         private thermometerText: SVGTextElement;
         private shakeButton: SVGCircleElement;
         private shakeText: SVGTextElement;
+        private accTextX: SVGTextElement;
+        private accTextY: SVGTextElement;
+        private accTextZ: SVGTextElement;
         public board: pxsim.DalBoard;
         private pinNmToCoord: Map<Coord> = {};
 
@@ -694,19 +696,52 @@ path.sim-board {
             accessibility.setLiveContent(lv.toString());
         }
 
+        findParentElement() {
+            let el = this.element;
+            while (el.parentNode && el.parentNode.nodeName == "svg")
+                el = el.parentNode as SVGSVGElement;
+            return el;
+        }
+
         private updateTilt() {
-            if (this.props.disableTilt) return;
             const state = this.board;
             if (!state || !state.accelerometerState.accelerometer.isActive) return;
 
-            const x = state.accelerometerState.accelerometer.getX();
-            const y = -state.accelerometerState.accelerometer.getY();
+            const acc = state.accelerometerState.accelerometer;
+            const x = acc.getX();
+            const y = -acc.getY();
+            const z = acc.getZ();
             const af = 8 / 1023;
             const s = 1 - Math.min(0.1, Math.pow(Math.max(Math.abs(x), Math.abs(y)) / 1023, 2) / 35);
 
-            this.element.style.transform = `perspective(30em) rotateX(${y * af}deg) rotateY(${x * af}deg) scale(${s}, ${s})`
-            this.element.style.perspectiveOrigin = "50% 50% 50%";
-            this.element.style.perspective = "30em";
+            // fix top parent and apply style to it
+            const el = this.findParentElement();
+            el.style.transform = `perspective(30em) rotateX(${y * af}deg) rotateY(${x * af}deg) scale(${s}, ${s})`
+            el.style.perspectiveOrigin = "50% 50% 50%";
+            el.style.perspective = "30em";
+
+            // update text
+            if (acc.flags & AccelerometerFlag.X) {
+                if (!this.accTextX) {
+                    this.accTextX = svg.child(this.g, "text", { x: 365, y: 260, class: "sim-text" }) as SVGTextElement;
+                    this.accTextX.textContent = "";
+                }
+                this.accTextX.textContent = `ax:${x}`;
+            }
+            if (acc.flags & AccelerometerFlag.Y) {
+                if (!this.accTextY) {
+                    this.accTextY = svg.child(this.g, "text", { x: 365, y: 285, class: "sim-text" }) as SVGTextElement;
+                    this.accTextY.textContent = "";
+                }
+                this.accTextY.textContent = `ay:${-y}`;
+            }
+            if (acc.flags & AccelerometerFlag.Z) {
+                if (!this.accTextZ) {
+                    this.accTextZ = svg.child(this.g, "text", { x: 365, y: 310, class: "sim-text" }) as SVGTextElement;
+                    this.accTextZ.textContent = "";
+                }
+                this.accTextZ.textContent = `az:${z}`;
+            }
         }
 
         private buildDom() {
@@ -729,13 +764,13 @@ path.sim-board {
 
             // filters
             let ledglow = svg.child(this.defs, "filter", { id: "ledglow", x: "-75%", y: "-75%", width: "300%", height: "300%" });
-            svg.child(ledglow, "feMorphology", { operator: "dilate", radius: "4", in: "SourceAlpha", result: "thicken"});
-            svg.child(ledglow, "feGaussianBlur", { stdDeviation: "5", in: "thicken", result: "blurred"});
-            svg.child(ledglow, "feFlood", { "flood-color": "rgb(255, 17, 77)", result: "glowColor"});
-            svg.child(ledglow, "feComposite", { in: "glowColor", in2: "blurred", operator: "in", result: "ledglow_colored"});
+            svg.child(ledglow, "feMorphology", { operator: "dilate", radius: "4", in: "SourceAlpha", result: "thicken" });
+            svg.child(ledglow, "feGaussianBlur", { stdDeviation: "5", in: "thicken", result: "blurred" });
+            svg.child(ledglow, "feFlood", { "flood-color": "rgb(255, 17, 77)", result: "glowColor" });
+            svg.child(ledglow, "feComposite", { in: "glowColor", in2: "blurred", operator: "in", result: "ledglow_colored" });
             let ledglowMerge = svg.child(ledglow, "feMerge", {});
-            svg.child(ledglowMerge, "feMergeNode", { in: "ledglow_colored"});
-            svg.child(ledglowMerge, "feMergeNode", { in: "SourceGraphic"});
+            svg.child(ledglowMerge, "feMergeNode", { in: "ledglow_colored" });
+            svg.child(ledglowMerge, "feMergeNode", { in: "SourceGraphic" });
 
             let glow = svg.child(this.defs, "filter", { id: "filterglow", x: "-5%", y: "-5%", width: "120%", height: "120%" });
             svg.child(glow, "feGaussianBlur", { stdDeviation: "5", result: "glow" });

@@ -110,7 +110,8 @@ namespace led {
      * @param mode mode the display mode in which the screen operates
      */
     //% weight=1 help=led/set-display-mode
-    //% parts="ledmatrix" advanced=true
+    //% parts="ledmatrix" advanced=true weight=1
+    //% blockId="led_set_display_mode" block="set display mode $mode"
     void setDisplayMode(DisplayMode_ mode) {
         uBit.display.setDisplayMode((DisplayMode)mode);
     }
