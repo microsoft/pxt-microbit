@@ -707,9 +707,10 @@ path.sim-board {
             const state = this.board;
             if (!state || !state.accelerometerState.accelerometer.isActive) return;
 
-            const x = state.accelerometerState.accelerometer.getX();
-            const y = -state.accelerometerState.accelerometer.getY();
-            const z = state.accelerometerState.accelerometer.getZ();
+            const acc = state.accelerometerState.accelerometer;
+            const x = acc.getX();
+            const y = -acc.getY();
+            const z = acc.getZ();
             const af = 8 / 1023;
             const s = 1 - Math.min(0.1, Math.pow(Math.max(Math.abs(x), Math.abs(y)) / 1023, 2) / 35);
 
@@ -720,17 +721,27 @@ path.sim-board {
             el.style.perspective = "30em";
 
             // update text
-            if (!this.accTextX) {
-                this.accTextX = svg.child(this.g, "text", { x: 365, y: 260, class: "sim-text" }) as SVGTextElement;
-                this.accTextX.textContent = "";
-                this.accTextY = svg.child(this.g, "text", { x: 365, y: 285, class: "sim-text" }) as SVGTextElement;
-                this.accTextY.textContent = "";
-                this.accTextZ = svg.child(this.g, "text", { x: 365, y: 310, class: "sim-text" }) as SVGTextElement;
-                this.accTextZ.textContent = "";
+            if (acc.flags & AccelerometerFlag.X) {
+                if (!this.accTextX) {
+                    this.accTextX = svg.child(this.g, "text", { x: 365, y: 260, class: "sim-text" }) as SVGTextElement;
+                    this.accTextX.textContent = "";
+                }
+                this.accTextX.textContent = `ax:${x}`;
             }
-            this.accTextX.textContent = `ax:${x}`;
-            this.accTextY.textContent = `ay:${-y}`;
-            this.accTextZ.textContent = `az:${z}`;
+            if (acc.flags & AccelerometerFlag.Y) {
+                if (!this.accTextY) {
+                    this.accTextY = svg.child(this.g, "text", { x: 365, y: 285, class: "sim-text" }) as SVGTextElement;
+                    this.accTextY.textContent = "";
+                }
+                this.accTextY.textContent = `ay:${-y}`;
+            }
+            if (acc.flags & AccelerometerFlag.Z) {
+                if (!this.accTextZ) {
+                    this.accTextZ = svg.child(this.g, "text", { x: 365, y: 310, class: "sim-text" }) as SVGTextElement;
+                    this.accTextZ.textContent = "";
+                }
+                this.accTextZ.textContent = `az:${z}`;
+            }
         }
 
         private buildDom() {

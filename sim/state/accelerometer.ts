@@ -13,12 +13,19 @@ namespace pxsim.input {
     export function acceleration(dimension: number): number {
         let b = board().accelerometerState;
         let acc = b.accelerometer;
-        acc.activate();
         switch (dimension) {
-            case 0: return acc.getX();
-            case 1: return acc.getY();
-            case 2: return acc.getZ();
-            default: return Math.floor(Math.sqrt(acc.instantaneousAccelerationSquared()));
+            case 0: 
+                acc.activate(AccelerometerFlag.X);
+                return acc.getX();
+            case 1: 
+                acc.activate(AccelerometerFlag.Y);
+                return acc.getY();
+            case 2:             
+                acc.activate(AccelerometerFlag.Z);
+                return acc.getZ();
+            default: 
+                acc.activate();            
+                return Math.floor(Math.sqrt(acc.instantaneousAccelerationSquared()));
         }
     }
 
@@ -99,6 +106,12 @@ namespace pxsim {
         NORTH_EAST_DOWN
     }
 
+    export enum AccelerometerFlag {
+        X = 1,
+        Y = 2,
+        Z = 4
+    }
+
     export class Accelerometer {
         private sigma: number = 0;              // the number of ticks that the instantaneous gesture has been stable.
         private lastGesture: number = 0;       // the last, stable gesture recorded.
@@ -110,6 +123,7 @@ namespace pxsim {
         private id: number;
         public isActive = false;
         public sampleRange = 2;
+        public flags: AccelerometerFlag = 0;
 
         constructor(public runtime: Runtime) {
             this.id = DAL.MICROBIT_ID_ACCELEROMETER;
@@ -120,11 +134,13 @@ namespace pxsim {
             this.sampleRange = Math.max(1, Math.min(8, range));
         }
 
-        public activate() {
+        public activate(flags?: AccelerometerFlag) {
             if (!this.isActive) {
                 this.isActive = true;
                 this.runtime.queueDisplayUpdate();
             }
+            if (flags)
+                this.flags |= flags;
         }
 
         /**
@@ -383,7 +399,7 @@ namespace pxsim {
         useShake = false;
 
         constructor(runtime: Runtime) {
-           this.accelerometer = new Accelerometer(runtime);
+            this.accelerometer = new Accelerometer(runtime);
         }
     }
 }
