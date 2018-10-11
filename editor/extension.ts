@@ -819,7 +819,7 @@ namespace pxt.editor {
         const isUwp = !!(window as any).Windows;
         if (isUwp)
             pxt.commands.deployCoreAsync = uwpDeployCoreAsync;
-        else if (canHID() || pxt.webBluetooth.isEnabled)
+        else if (canHID() || pxt.webBluetooth.hasPartialFlash())
             pxt.commands.deployCoreAsync = deployCoreAsync;
 
         res.blocklyPatch = patchBlocks;
