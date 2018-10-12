@@ -72,7 +72,7 @@
                     "microbit-dal": {
                         "bluetooth": {
                             "open": 1,
-                            "pairing_mode": 0,
+                            "pairing_mode": null,
                             "whitelist": 0,
                             "security_level": null
                         }
