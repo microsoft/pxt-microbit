@@ -275,12 +275,12 @@
             "allowPackageExtensions",
             "instructions",
             "debugger",
-            "bluetoothUartConsole"
+            "bluetoothUartConsole",
+            "bluetoothPartialFlashing"
         ],
         "bluetoothUartFilters": [{
             "namePrefix": "BBC micro:bit"
         }],
-        "bluetoothPartialFlashing": true,
         "docMenu": [
             {
                 "name": "Support",
