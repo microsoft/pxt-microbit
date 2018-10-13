@@ -467,6 +467,7 @@ declare namespace led {
     //% blockId=device_plot_brightness block="plot|x %x|y %y|brightness %brightness" blockGap=8
     //% parts="ledmatrix"
     //% x.min=0 x.max=4 y.min=0 y.max=4 brightness.min=0 brightness.max=255
+    //% x.fieldOptions.precision=1 y.fieldOptions.precision=1
     //% advanced=true shim=led::plotBrightness
     function plotBrightness(x: int32, y: int32, brightness: int32): void;
 
@@ -478,7 +479,8 @@ declare namespace led {
     //% help=led/unplot weight=77
     //% blockId=device_unplot block="unplot|x %x|y %y" blockGap=8
     //% parts="ledmatrix"
-    //% x.min=0 x.max=4 y.min=0 y.max=4 shim=led::unplot
+    //% x.min=0 x.max=4 y.min=0 y.max=4
+    //% x.fieldOptions.precision=1 y.fieldOptions.precision=1 shim=led::unplot
     function unplot(x: int32, y: int32): void;
 
     /**
@@ -489,7 +491,8 @@ declare namespace led {
     //% help=led/point weight=76
     //% blockId=device_point block="point|x %x|y %y"
     //% parts="ledmatrix"
-    //% x.min=0 x.max=4 y.min=0 y.max=4 shim=led::point
+    //% x.min=0 x.max=4 y.min=0 y.max=4
+    //% x.fieldOptions.precision=1 y.fieldOptions.precision=1 shim=led::point
     function point(x: int32, y: int32): boolean;
 
     /**

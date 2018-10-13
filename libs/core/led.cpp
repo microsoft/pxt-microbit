@@ -20,6 +20,7 @@ namespace led {
     //% blockId=device_plot block="plot|x %x|y %y" blockGap=8
     //% parts="ledmatrix"
     //% x.min=0 x.max=4 y.min=0 y.max=4
+    //% x.fieldOptions.precision=1 y.fieldOptions.precision=1
     void plot(int x, int y) {
       uBit.display.image.setPixelValue(x, y, 0xff);
     }
@@ -34,6 +35,7 @@ namespace led {
     //% blockId=device_plot_brightness block="plot|x %x|y %y|brightness %brightness" blockGap=8
     //% parts="ledmatrix"
     //% x.min=0 x.max=4 y.min=0 y.max=4 brightness.min=0 brightness.max=255
+    //% x.fieldOptions.precision=1 y.fieldOptions.precision=1
     //% advanced=true
     void plotBrightness(int x, int y, int brightness) {
         brightness = max(0, min(0xff, brightness));
@@ -52,6 +54,7 @@ namespace led {
     //% blockId=device_unplot block="unplot|x %x|y %y" blockGap=8
     //% parts="ledmatrix"
     //% x.min=0 x.max=4 y.min=0 y.max=4
+    //% x.fieldOptions.precision=1 y.fieldOptions.precision=1
     void unplot(int x, int y) {
       uBit.display.image.setPixelValue(x, y, 0);
     }
@@ -65,6 +68,7 @@ namespace led {
     //% blockId=device_point block="point|x %x|y %y"
     //% parts="ledmatrix"
     //% x.min=0 x.max=4 y.min=0 y.max=4
+    //% x.fieldOptions.precision=1 y.fieldOptions.precision=1
     bool point(int x, int y) {
       int pix = uBit.display.image.getPixelValue(x, y);
       return pix > 0;
