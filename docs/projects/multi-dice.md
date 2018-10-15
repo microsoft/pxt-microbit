@@ -4,13 +4,13 @@
 
 ![Multiple @boardname@ throwing a dice](/static/mb/projects/multi-dice.png)
 
-This tutorial builds a multi-player dice game using the **radio**. The **radio** blocks let you send wireless messages between @boardnam@.
+Build a multi-player dice game using the **radio**. The **radio** blocks let you send wireless messages between a @boardnam@ and another @boardname@.
 
-In this game, you shake to throw the dice and send the result to the other @boardname@. If you receive a dice cast equal or greater than yours, you lose.
+In this game, you shake to "throw the dice" and send the result to the other @boardname@. If you receive a result of a dice throw equal or greater than yours, you lose.
 
 ## Dice game @fullscreen
 
-Let's start by rebuilding a **dice** application. If you are unsure about the details, try the **dice tutorial** again.
+Let's start by rebuilding the **dice** game. If you are unsure about the details, try the **dice** tutorial again.
 
 ```blocks
 input.onGesture(Gesture.Shake, function () {
@@ -20,10 +20,10 @@ input.onGesture(Gesture.Shake, function () {
 
 ## Dice variable @fullscreen
 
-We need to store the dice cast into a variable. A **variable** is like a place in the @boardname@ memory where save information, like numbers.
+We need to store the result of the dice cast in a variable. A **variable** is like a place in the memory of the @boardname@ where you save information, like numbers.
 
 * Go to the **Variables** toolbox and click ``||Make a Variable||`` to create a new variable. We will call it **dice**. 
-* Add a ``||set dice to||`` block and drag the ``||pick random||`` into it
+* Add a ``||set dice to||`` block and drag the ``||pick random||`` into it.
 * Drag a ``||dice||`` from the **Variables** toolbox into the ``||basic:show number||`` block.
 
 ```blocks
@@ -36,7 +36,7 @@ input.onGesture(Gesture.Shake, function () {
 
 ## Send the dice @fullscreen
 
-Add a ``||radio:send number||`` and a ``||dice||`` to send the value stored in the ``dice`` variable via radio.
+Put in a ``||radio:send number||`` and a ``||dice||`` to send the value stored in the ``dice`` variable via radio.
 
 ```blocks
 let dice = 0
@@ -49,7 +49,7 @@ input.onGesture(Gesture.Shake, function () {
 
 ## Receive the dice @fullscreen
 
-Add a ``||radio:on received number||`` event block. This event runs when a radio message from another @boardname@ has arrived. The ``receivedNumber`` value is the value of the dice in this game.
+Go get an ``||radio:on received number||`` event block. This event runs when a radio message from another @boardname@ arrives. The ``receivedNumber`` value is the value of the dice in this game.
 
 ```blocks
 radio.onReceivedNumber(function (receivedNumber) {
@@ -59,7 +59,7 @@ radio.onReceivedNumber(function (receivedNumber) {
 ## Check your cast @fullscreen
 
 Add a ``||logic:if||`` block to test if ``receivedNumber`` is greater or equal to ``dice``. 
-If so, you lost and display a sad face on the screen.
+If is, you lost so display a sad face on the screen.
 
 ```blocks
 let dice = 0;
@@ -74,7 +74,7 @@ radio.onReceivedNumber(function (receivedNumber) {
 
 Try pressing **SHAKE** in the simulator and see that a second @boardname@ appears. You can play the game on both virtual boards.
 
-If you have 2 or more @boardname@, download your code and try to play the game with your friends!
+If you have more than one @boardname@, download your code onto each one and try playing the game with your friends!
 
 ```blocks
 let dice = 0
