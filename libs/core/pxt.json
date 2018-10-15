@@ -59,7 +59,7 @@
                     "eddystone_uid": 1,
                     "open": 1,
                     "pairing_mode": 1,
-                    "whitelist": 1,
+                    "whitelist": 0,
                     "security_level": "SECURITY_MODE_ENCRYPTION_NO_MITM",
                     "partial_flashing": 1
                 }
@@ -72,8 +72,7 @@
                     "microbit-dal": {
                         "bluetooth": {
                             "open": null,
-                            "pairing_mode": null,
-                            "whitelist": 0,
+                            "whitelist": null,
                             "security_level": null
                         }
                     }
@@ -85,8 +84,7 @@
                     "microbit-dal": {
                         "bluetooth": {
                             "open": 0,
-                            "pairing_mode": null,
-                            "whitelist": null,
+                            "whitelist": 1,
                             "security_level": null
                         }
                     }
@@ -98,7 +96,6 @@
                     "microbit-dal": {
                         "bluetooth": {
                             "open": 0,
-                            "pairing_mode": null,
                             "whitelist": 1,
                             "security_level": "SECURITY_MODE_ENCRYPTION_WITH_MITM"
                         }
