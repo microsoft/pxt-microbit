@@ -11,13 +11,9 @@ Use the **radio** to send and receive messages with other @boardname@.
 Use ``||input:on button pressed||`` to send a text message over radio with ``||radio:send string||``.
 Every @boardname@ nearby will receive this message.
 
-You can also add the ``||basic:show icon||`` and ``||basic:clear screen||`` blocks to show a simple animation when the message is sent.
-
 ```blocks
 input.onButtonPressed(Button.A, () => {
     radio.sendString("Yo");
-    basic.showIcon(IconNames.Chessboard)
-    basic.clearScreen();
 });
 ```
 
@@ -48,8 +44,6 @@ Press button **A** on the simulator, you will notice that a second @boardname@ a
 ```blocks
 input.onButtonPressed(Button.A, () => {
     radio.sendString("Yo");
-    basic.showIcon(IconNames.Chessboard)
-    basic.clearScreen();
 });
 radio.onReceivedString(function (receivedString) {
     basic.showString(receivedString);
@@ -65,9 +59,6 @@ If you two @boardname@s, download the program to each one. Press button **A** on
 Use the ``||radio:set group||`` block to assign a **group** number to your program. You will only receive messages from @boardname@s within the same group. Use this to avoid receiving messages from every @boardname@ that is transmitting.
 
 ```blocks
-/**
-* Pick a unique group in your classroom!
-*/
 radio.setGroup(123)
 ```
 
