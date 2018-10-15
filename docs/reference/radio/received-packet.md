@@ -37,3 +37,7 @@ radio.onReceivedNumber(function (receivedNumber) {
 ## See also
 
 [set transmit serial number](/reference/radio/set-transmit-serial-number)
+
+```package
+radio
+```
