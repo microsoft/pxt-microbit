@@ -11,7 +11,7 @@ let group = 0
 /**
  * Send all received packets to serial output
  */
-radio.onDataPacketReceived(function () {
+radio.onDataPacketReceived(function (receivedNumber) {
     radio.writeReceivedPacketToSerial()
     led.toggle(Math.randomRange(0, 4), Math.randomRange(0, 4))
 })
