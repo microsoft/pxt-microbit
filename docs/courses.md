@@ -58,11 +58,6 @@ Fun project courses - make and experiment while learning about science and progr
   "url": "https://learn.sparkfun.com/tutorials/sparkfun-inventors-kit-for-microbit-experiment-guide/introduction-to-the-sparkfun-inventors-kit-for-microbit",
   "imageUrl": "/static/courses/sparkfun-inventors-kit.png"
 }, {
-  "name": "Kitronik University",
-  "description": "Kits, projects and tutorials",
-  "url": "https://www.kitronik.co.uk/blog/bbc-microbit-kitronik-university/",
-  "imageUrl": "https://www.kitronik.co.uk/wp/wp-content/uploads/2015/03/2150_KIT01_banner-kitronikuniversity_002_v1.png"
-}, {
   "name": "Kitronik Inventor Kit",
   "description": "11 experiments based on the Kitronik Inventor Kit",
   "url": "https://www.kitronik.co.uk/blog/inventors-kit-experiment-1-help",
