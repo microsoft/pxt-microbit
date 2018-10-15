@@ -74,5 +74,5 @@ input.onButtonPressed(Button.A, function() {
 ```
 
 ```package
-microturtle=github:Microsoft/pxt-microturtle#master
+microturtle=github:Microsoft/pxt-microturtle#v0.0.9
 ```
