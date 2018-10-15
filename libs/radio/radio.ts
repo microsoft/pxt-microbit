@@ -134,7 +134,7 @@ namespace radio {
     //% help=radio/on-received-buffer blockHandlerKey="radioreceived" blockHidden=1
     //% blockId=radio_on_buffer block="on radio received" blockGap=16
     //% useLoc="radio.onDataPacketReceived"
-    export function onReceivedBuffer(cb: (buffer: Buffer) => void) {
+    export function onReceivedBuffer(cb: (receivedBuffer: Buffer) => void) {
         onDataReceived(() => {
             receiveNumber();
             const packet = new Packet();
