@@ -350,7 +350,7 @@ namespace input {
     /**
      * Gets the number of milliseconds elapsed since power on.
      */
-    //% help=input/running-time weight=50 blockGap=16
+    //% help=input/running-time weight=50 blockGap=8
     //% blockId=device_get_running_time block="running time (ms)"
     //% advanced=true
     int runningTime() {
@@ -372,6 +372,7 @@ namespace input {
      */
     //% help=input/calibrate-compass advanced=true
     //% blockId="input_compass_calibrate" block="calibrate compass"
+    //% weight=45
     void calibrateCompass() {
         uBit.compass.calibrate();
     }
