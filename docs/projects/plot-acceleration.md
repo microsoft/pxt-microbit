@@ -16,6 +16,10 @@ basic.forever(() => {
 })
 ```
 
+## Console
+
+Click on the ``||Show Console||`` button to see a time chart of the value passed in the block.
+
 ## Maximum value
 
 If you specify the maximum value, the block can do a better job at displaying the data. 
