@@ -14,11 +14,11 @@ The receiving @boardname@ sets a radio group number on which to listen for incom
 radio.setGroup(99)
 ```
 
-The receiver then waits to receive a packet (radio message) from the sender which contains the data to record. This happens inside an ``||radio:on radio received||`` block. If the sending @boardname@ is measuring temperature at a remote location (somewhere else in the room maybe), the receiver will write the value received as a temperature measurement to the serial port.
+The receiver then waits to receive a packet (radio message) from the sender which contains the data to record. This happens inside an ``||radio:on received number||`` block. If the sending @boardname@ is measuring temperature at a remote location (somewhere else in the room maybe), the receiver will write the value received as a temperature measurement to the serial port.
 
 ```blocks
 radio.setGroup(99)
-radio.onDataPacketReceived( ({ receivedNumber }) =>  {
+radio.onReceivedNumber(function (receivedNumber) {
     basic.showNumber(receivedNumber)
     serial.writeValue("TempCelsius", receivedNumber)
 })
@@ -74,7 +74,7 @@ radio.onDataPacketReceived(({ receivedString: name, receivedNumber: value }) => 
 })
 ```
 
-The receiver program uses just one ``||radio:on radio received||`` event to record the values. The ``name`` and the ``value`` are parameters for the event block so both temperature and light values are received here.
+The receiver program uses just one ``||radio:on received number||`` event to record the values. The ``name`` and the ``value`` are parameters for the event block so both temperature and light values are received here.
 
 ## Multiple remote stations
 
@@ -126,7 +126,7 @@ The serial number, ``id``, is used as a _prefix_ for the ``name`` to identify wh
 If you're recording data to save on a computer for analysis or other uses outside of the MakeCode editor, you can use the ``||radio:radio write received packet to serial||`` block to format it for you. This function will format the data from the received packet into a [JSON](https://en.wikipedia.org/wiki/JSON) string and write it to the serial port, all in one operation. It's used just like this:
 
 ```blocks
-radio.onDataPacketReceived(() => {
+radio.onReceivedNumber(function (receivedNumber) {
     radio.writeReceivedPacketToSerial();
 });
 ```

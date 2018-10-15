@@ -120,7 +120,7 @@ input.onButtonPressed(Button.AB, () => {
     let jumps = 0
     basic.showNumber(jumps)
 })
-radio.onDataPacketReceived(({ receivedNumber }) => {
+radio.onReceivedNumber(function (receivedNumber) {
     basic.showNumber(receivedNumber)
 })
 
@@ -151,7 +151,7 @@ input.onButtonPressed(Button.AB, () => {
     let jumps = 0
     basic.showNumber(jumps)
 })
-radio.onDataPacketReceived(({ receivedNumber }) => {
+radio.onReceivedNumber(function (receivedNumber) {
     basic.showNumber(receivedNumber)
     led.stopAnimation()
 })

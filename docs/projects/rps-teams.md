@@ -97,7 +97,7 @@ let players: number[] = [0]
 
 ## Step 4: Receiving a message (part 1)
 
-In an ``||radio:on radio received||`` event, we receive the status from another @boardname@. Click on the **gearwheel** to add the ``serial`` parameter as we will need it to identify who sent that packet.
+In an ``||radio:on received number||`` event, we receive the status from another @boardname@. Click on the **gearwheel** to add the ``serial`` parameter as we will need it to identify who sent that packet.
 
 We compute three values from the data received:
 

@@ -27,7 +27,7 @@ Second micro:bit that plays the notes
 
 ```blocks
 let sound = 0
-radio.onDataPacketReceived( ({ receivedNumber }) =>  {
+radio.onReceivedNumber(function (receivedNumber) {
     if (receivedNumber == 0) {
         sound = 349
         music.playTone(sound, music.beat(BeatFraction.Half))

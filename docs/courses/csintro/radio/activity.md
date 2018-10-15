@@ -47,7 +47,7 @@ input.onButtonPressed(Button.A, () => {
     radio.sendString("Marco")
 })
 
-radio.onDataPacketReceived(({ receivedString }) => {
+radio.onReceivedNumber(function (receivedString) {
     basic.showString(receivedString)
 })
 input.onButtonPressed(Button.B, () => {
@@ -69,7 +69,7 @@ input.onButtonPressed(Button.A, () => {
     radio.sendString("Marco")
     music.playTone(131, music.beat(BeatFraction.Whole))
 })
-    radio.onDataPacketReceived( ({ receivedString }) => {
+    radio.onReceivedNumber(function (receivedString) {
     basic.showString(receivedString)
 })
 input.onButtonPressed(Button.B, () => {
@@ -134,7 +134,7 @@ In order to know whether to display a dot, a dash, or a space/stop image, we nee
 * Leave the righthand side default value of zero in the 0=0 block. 
 
 ```blocks
-radio.onDataPacketReceived( ({ receivedNumber }) => {
+radio.onReceivedNumber(function (receivedNumber) {
     if (receivedNumber == 0) {
 
     }
@@ -145,7 +145,7 @@ radio.onDataPacketReceived( ({ receivedNumber }) => {
 * Create an image to represent a dot.
 
 ```blocks
-radio.onDataPacketReceived( ({ receivedNumber }) => {
+radio.onReceivedNumber(function (receivedNumber) {
     if (receivedNumber == 0) {
         basic.showLeds(`
             . . . . .
@@ -168,7 +168,7 @@ Challenge question: How can we fix this?
 * Add a 'pause' block and a 'clear screen' block after the 'show leds' block
 
 ```blocks
-radio.onDataPacketReceived( ({ receivedNumber }) => {
+radio.onReceivedNumber(function (receivedNumber) {
     if (receivedNumber == 0) {
         basic.showLeds(`
             . . . . .
@@ -198,7 +198,7 @@ Now each time the sender presses button A, you see a dot appear.
 
 ```blocks
 
-radio.onDataPacketReceived( ({ receivedNumber }) =>  {
+radio.onReceivedNumber(function (receivedNumber) {
     if (receivedNumber == 0) {
         basic.showLeds(`
             . . . . .
@@ -282,7 +282,7 @@ input.onButtonPressed(Button.B, () => {
 input.onButtonPressed(Button.AB, () => {
     radio.sendNumber(2)
 })
-radio.onDataPacketReceived(({ receivedNumber }) => {
+radio.onReceivedNumber(function (receivedNumber) {
     if (receivedNumber == 0) {
         basic.showLeds(`
             . . . . .

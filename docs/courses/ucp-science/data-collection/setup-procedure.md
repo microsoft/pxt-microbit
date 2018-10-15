@@ -85,7 +85,7 @@ In the radio received event, the temperature is received from sending the micro:
 let temperature = 0
 radio.setGroup(99)
 basic.showString("TEMPERATURE RECEIVER")
-radio.onDataPacketReceived( ({ receivedNumber }) =>  {
+radio.onReceivedNumber(function (receivedNumber) {
     basic.showNumber(receivedNumber)
 })
 ```
@@ -99,7 +99,7 @@ This code is the same as above but one additional line of code is added to write
 let temperature = 0
 basic.showString("TEMPERATURE RECEIVER SERIAL")
 radio.setGroup(99)
-radio.onDataPacketReceived( ({ receivedNumber }) =>  {
+radio.onReceivedNumber(function (receivedNumber) {
     basic.showNumber(receivedNumber)
     serial.writeValue("Celisus", receivedNumber)
 })
@@ -143,14 +143,14 @@ basic.showString("GRAVITY RECEIVER")
 radio.setGroup(99)
 ```
 
-The ``||radio:on radio received||`` event will constantly monitor radio signals from the radio group.
+The ``||radio:on received number||`` event will constantly monitor radio signals from the radio group.
 When a value is received from the group it is stored in the ``gravity`` variable.
 The ``||serial:serial write value||`` sends 2 pieces of data back to the MakeCode app through the USB cable. First it sends a label `"gravity"` and then the value received as gravity from the ``||input:acceleration||`` method from the first micro:bit.
 
 ```blocks
 basic.showString("GRAVITY RECEIVER")
 radio.setGroup(99)
-radio.onDataPacketReceived( ({ receivedNumber }) =>  {
+radio.onReceivedNumber(function (receivedNumber) {
     serial.writeValue("gravity", receivedNumber)
 })
 ```

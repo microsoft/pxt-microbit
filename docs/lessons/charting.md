@@ -22,7 +22,7 @@ Learn the functions of **on data received**, **send number** and **receive numbe
 input.acceleration(Dimension.X)
 led.plotBarGraph(0, 1023)
 basic.showNumber(0)
-radio.onDataPacketReceived(() => {})
+radio.onReceivedNumber(function (receivedNumber) {})
 radio.sendNumber(0)
 ```
 
