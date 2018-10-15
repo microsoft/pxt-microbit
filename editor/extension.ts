@@ -786,6 +786,20 @@ namespace pxt.editor {
     initExtensionsAsync = function (opts: pxt.editor.ExtensionOptions): Promise<pxt.editor.ExtensionResult> {
         pxt.debug('loading microbit target extensions...')
 
+        function cantImportAsync(project: pxt.editor.IProjectView) {
+            // this feature is support in v0 only
+            return project.showModalDialogAsync({
+                header: lf("Can't import microbit.co.uk scripts..."),
+                body: lf("Importing microbit.co.uk programs is not supported in this editor anymore. Please open this script in the https://makecode.microbit.org/v0 editor."),
+                buttons: [
+                    {
+                        label: lf("Go to the old editor"),
+                        url: `https://makecode.microbit.org/v0`
+                    }
+                ]
+            }).then(() => project.openHome())
+        }
+
         if (!Math.imul)
             Math.imul = function (a, b) {
                 const ah = (a >>> 16) & 0xffff;
@@ -801,80 +815,74 @@ namespace pxt.editor {
             hexFileImporters: [{
                 id: "blockly",
                 canImport: data => data.meta.cloudId == "microbit.co.uk" && data.meta.editor == "blockly",
-                importAsync: (project, data) => project.createProjectAsync({
-                    filesOverride: {
-                        "main.blocks": data.source
-                    }, name: data.meta.name
-                })
+                importAsync: (project, data) => {
+                    pxt.tickEvent('import.legacyblocks.redirect');
+                    return cantImportAsync(project);
+                }
             }, {
                 id: "td",
                 canImport: data => data.meta.cloudId == "microbit.co.uk" && data.meta.editor == "touchdevelop",
                 importAsync: (project, data) => {
-                    cpp.unpackSourceFromHexAsync
-                    // this feature is support in v0 only
-                    return project.showModalDialogAsync({
-                        header: lf("Can't import TouchDevelop scripts..."),
-                        body: lf("Importing of TouchDevelop programs is supported in this editor anymore. Please open this script in https://makecode.microsoft.com/v0."),
-                        copyable: `https://makecode.microbit.org/v0`
-                    })
+                    pxt.tickEvent('import.legacytd.redirect');
+                    return cantImportAsync(project);
                 }
             }]
-    };
+        };
 
-    pxt.usb.setFilters([{
-        vendorId: 0x0D28,
-        productId: 0x0204,
-        classCode: 0xff,
-        subclassCode: 0x03
-    }])
+        pxt.usb.setFilters([{
+            vendorId: 0x0D28,
+            productId: 0x0204,
+            classCode: 0xff,
+            subclassCode: 0x03
+        }])
 
-    const isUwp = !!(window as any).Windows;
-    if (isUwp)
-        pxt.commands.deployCoreAsync = uwpDeployCoreAsync;
-    else if (canHID() || pxt.webBluetooth.hasPartialFlash())
-        pxt.commands.deployCoreAsync = deployCoreAsync;
+        const isUwp = !!(window as any).Windows;
+        if (isUwp)
+            pxt.commands.deployCoreAsync = uwpDeployCoreAsync;
+        else if (canHID() || pxt.webBluetooth.hasPartialFlash())
+            pxt.commands.deployCoreAsync = deployCoreAsync;
 
-    res.blocklyPatch = patchBlocks;
-    res.showUploadInstructionsAsync = showUploadInstructionsAsync;
-    res.webUsbPairDialogAsync = webUsbPairDialogAsync;
-    return Promise.resolve<pxt.editor.ExtensionResult>(res);
-}
-
-function getField(parent: Element, name: string) {
-    return getFieldOrValue(parent, name, true);
-}
-
-function getValue(parent: Element, name: string) {
-    return getFieldOrValue(parent, name, false);
-}
-
-function getFieldOrValue(parent: Element, name: string, isField: boolean) {
-    const nodeType = isField ? "field" : "value";
-    for (let i = 0; i < parent.children.length; i++) {
-        const child = parent.children.item(i);
-        if (child.tagName === nodeType && child.getAttribute("name") === name) {
-            return child;
-        }
+        res.blocklyPatch = patchBlocks;
+        res.showUploadInstructionsAsync = showUploadInstructionsAsync;
+        res.webUsbPairDialogAsync = webUsbPairDialogAsync;
+        return Promise.resolve<pxt.editor.ExtensionResult>(res);
     }
-    return undefined;
-}
 
-function addNumberShadow(valueNode: Element) {
-    const s = valueNode.ownerDocument.createElement("shadow");
-    s.setAttribute("type", "math_number");
+    function getField(parent: Element, name: string) {
+        return getFieldOrValue(parent, name, true);
+    }
 
-    const f = valueNode.ownerDocument.createElement("field");
-    f.setAttribute("name", "NUM");
-    f.textContent = "0";
+    function getValue(parent: Element, name: string) {
+        return getFieldOrValue(parent, name, false);
+    }
 
-    s.appendChild(f);
-    valueNode.appendChild(s);
-}
+    function getFieldOrValue(parent: Element, name: string, isField: boolean) {
+        const nodeType = isField ? "field" : "value";
+        for (let i = 0; i < parent.children.length; i++) {
+            const child = parent.children.item(i);
+            if (child.tagName === nodeType && child.getAttribute("name") === name) {
+                return child;
+            }
+        }
+        return undefined;
+    }
 
-function webUsbPairDialogAsync(confirmAsync: (options: any) => Promise<number>): Promise<number> {
-    const boardName = pxt.appTarget.appTheme.boardName || "???";
-    const docUrl = pxt.appTarget.appTheme.usbDocs;
-    const htmlBody = `
+    function addNumberShadow(valueNode: Element) {
+        const s = valueNode.ownerDocument.createElement("shadow");
+        s.setAttribute("type", "math_number");
+
+        const f = valueNode.ownerDocument.createElement("field");
+        f.setAttribute("name", "NUM");
+        f.textContent = "0";
+
+        s.appendChild(f);
+        valueNode.appendChild(s);
+    }
+
+    function webUsbPairDialogAsync(confirmAsync: (options: any) => Promise<number>): Promise<number> {
+        const boardName = pxt.appTarget.appTheme.boardName || "???";
+        const docUrl = pxt.appTarget.appTheme.usbDocs;
+        const htmlBody = `
         <div class="ui grid stackable">
             <div class="column five wide" style="background-color: #FFFFCE;">
                 <div class="ui header">${lf("First time here?")}</div>
@@ -926,45 +934,45 @@ function webUsbPairDialogAsync(confirmAsync: (options: any) => Promise<number>):
             </div>
         </div>`;
 
-    const buttons: any[] = [];
-    if (docUrl) {
-        buttons.push({
-            label: lf("Help"),
-            icon: "help",
-            className: "lightgrey",
-            url: `${docUrl}/webusb`
+        const buttons: any[] = [];
+        if (docUrl) {
+            buttons.push({
+                label: lf("Help"),
+                icon: "help",
+                className: "lightgrey",
+                url: `${docUrl}/webusb`
+            });
+        }
+
+        return confirmAsync({
+            header: lf("Pair device for one-click downloads"),
+            htmlBody,
+            hasCloseIcon: true,
+            agreeLbl: lf("Pair device"),
+            agreeIcon: "usb",
+            hideCancel: true,
+            className: 'downloaddialog',
+            buttons
         });
     }
 
-    return confirmAsync({
-        header: lf("Pair device for one-click downloads"),
-        htmlBody,
-        hasCloseIcon: true,
-        agreeLbl: lf("Pair device"),
-        agreeIcon: "usb",
-        hideCancel: true,
-        className: 'downloaddialog',
-        buttons
-    });
-}
+    function showUploadInstructionsAsync(fn: string, url: string, confirmAsync: (options: any) => Promise<number>) {
+        const boardName = Util.htmlEscape(pxt.appTarget.appTheme.boardName || "???");
+        const boardDriveName = Util.htmlEscape(pxt.appTarget.appTheme.driveDisplayName || pxt.appTarget.compile.driveName || "???");
 
-function showUploadInstructionsAsync(fn: string, url: string, confirmAsync: (options: any) => Promise<number>) {
-    const boardName = Util.htmlEscape(pxt.appTarget.appTheme.boardName || "???");
-    const boardDriveName = Util.htmlEscape(pxt.appTarget.appTheme.driveDisplayName || pxt.appTarget.compile.driveName || "???");
+        // https://msdn.microsoft.com/en-us/library/cc848897.aspx
+        // "For security reasons, data URIs are restricted to downloaded resources.
+        // Data URIs cannot be used for navigation, for scripting, or to populate frame or iframe elements"
+        const userDownload = pxt.BrowserUtils.isBrowserDownloadWithinUserContext();
+        const downloadAgain = !pxt.BrowserUtils.isIE() && !pxt.BrowserUtils.isEdge();
+        const docUrl = pxt.appTarget.appTheme.usbDocs;
 
-    // https://msdn.microsoft.com/en-us/library/cc848897.aspx
-    // "For security reasons, data URIs are restricted to downloaded resources.
-    // Data URIs cannot be used for navigation, for scripting, or to populate frame or iframe elements"
-    const userDownload = pxt.BrowserUtils.isBrowserDownloadWithinUserContext();
-    const downloadAgain = !pxt.BrowserUtils.isIE() && !pxt.BrowserUtils.isEdge();
-    const docUrl = pxt.appTarget.appTheme.usbDocs;
-
-    const body =
-        userDownload
-            ? lf("Click 'Download' to open the {0} app.", pxt.appTarget.appTheme.boardName || "")
-            : undefined;
-    const htmlBody = !userDownload ?
-        `<div class="ui grid stackable">
+        const body =
+            userDownload
+                ? lf("Click 'Download' to open the {0} app.", pxt.appTarget.appTheme.boardName || "")
+                : undefined;
+        const htmlBody = !userDownload ?
+            `<div class="ui grid stackable">
             <div class="column sixteen wide">
                 <div class="ui grid">
                     <div class="row">
@@ -1007,37 +1015,37 @@ function showUploadInstructionsAsync(fn: string, url: string, confirmAsync: (opt
             </div>
         </div>` : undefined;
 
-    const buttons: any[] = [];
+        const buttons: any[] = [];
 
-    if (downloadAgain) {
-        buttons.push({
-            label: userDownload ? lf("Download") : fn,
-            icon: "download",
-            class: `${userDownload ? "primary" : "lightgrey"}`,
-            url,
-            fileName: fn
-        });
+        if (downloadAgain) {
+            buttons.push({
+                label: userDownload ? lf("Download") : fn,
+                icon: "download",
+                class: `${userDownload ? "primary" : "lightgrey"}`,
+                url,
+                fileName: fn
+            });
+        }
+
+        if (docUrl) {
+            buttons.push({
+                label: lf("Help"),
+                icon: "help",
+                className: "lightgrey",
+                url: docUrl
+            });
+        }
+
+        return confirmAsync({
+            header: lf("Download to your {0}", pxt.appTarget.appTheme.boardName),
+            body,
+            htmlBody,
+            hasCloseIcon: true,
+            hideCancel: true,
+            hideAgree: true,
+            className: 'downloaddialog',
+            buttons
+            //timeout: 20000
+        }).then(() => { });
     }
-
-    if (docUrl) {
-        buttons.push({
-            label: lf("Help"),
-            icon: "help",
-            className: "lightgrey",
-            url: docUrl
-        });
-    }
-
-    return confirmAsync({
-        header: lf("Download to your {0}", pxt.appTarget.appTheme.boardName),
-        body,
-        htmlBody,
-        hasCloseIcon: true,
-        hideCancel: true,
-        hideAgree: true,
-        className: 'downloaddialog',
-        buttons
-        //timeout: 20000
-    }).then(() => { });
-}
 }
