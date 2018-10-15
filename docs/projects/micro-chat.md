@@ -11,9 +11,13 @@ Use the **radio** to send and receive messages with other @boardname@.
 Use ``||input:on button pressed||`` to send a number over radio with ``||radio:send string||``.
 All @boardname@ nearby will receive this message.
 
+You can also add ``||basic:show icon||`` and ``||basic:clear screen||`` blocks to show a little animation when the message is sent.
+
 ```blocks
 input.onButtonPressed(Button.A, () => {
     radio.sendString("Yo");
+    basic.showIcon(IconNames.Chessboard)
+    basic.clearScreen();
 });
 ```
 
@@ -44,6 +48,8 @@ Press button **A** on the simulator, you will notice that a second @boardname@ a
 ```blocks
 input.onButtonPressed(Button.A, () => {
     radio.sendString("Yo");
+    basic.showIcon(IconNames.Chessboard)
+    basic.clearScreen();
 });
 radio.onReceivedString(function (receivedString) {
     basic.showString(receivedString);
