@@ -35,14 +35,14 @@ namespace radio {
 
     export enum PacketProperty {
         //% blockIdentity=radio._packetProperty
+        //% block="signal strength"
+        SignalStrength = 2,
+        //% blockIdentity=radio._packetProperty
         //% block="time"
-        Time,
+        Time = 0,
         //% block="serial number"
         //% blockIdentity=radio._packetProperty
-        SerialNumber,
-        //% blockIdentity=radio._packetProperty
-        //% block="signal strength"
-        SignalStrength
+        SerialNumber = 1
     }
 
     /**
@@ -151,9 +151,10 @@ namespace radio {
      * Returns properties of the last radio packet received.
      * @param type the type of property to retrieve from the last packet
      */
-    //% help=radio/get-received-packet-property advanced=true
-    //% blockId=radio_received_packet_property block="received packet %type=radio_packet_property" blockGap=16
-    export function getReceivedPacketProperty(type: number) {
+    //% help=radio/received-packet
+    //% weight=11 blockGap=8
+    //% blockId=radio_received_packet block="received packet %type=radio_packet_property" blockGap=16
+    export function receivedPacket(type: number) {
         if (lastPacket) {
             switch(type) {
                 case PacketProperty.Time: return lastPacket.time;
