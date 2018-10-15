@@ -79,6 +79,7 @@
         "Tools": "projects/tools",
         "Turtle": "projects/turtle",
         "Blocks To JavaScript": "courses/blocks-to-javascript",
-        "Examples": "examples"
+        "Examples": "examples",
+        "Courses": "courses"
     }
 }
