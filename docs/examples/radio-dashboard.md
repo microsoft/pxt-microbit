@@ -52,13 +52,14 @@ function getClient(id: number): Client {
 }
 
 // store data received by clients
-radio.onDataPacketReceived(packet => {
-    const client = getClient(packet.serial);
+radio.onReceivedNumber(function (receivedNumber) {
+    const serialNumber = radio.receivedPackage(RadioPacketProperty.SerialNumber)
+    const client = getClient(serialNumber);
     if (!client)
         return;
 
     client.ping = input.runningTime()
-    client.sprite.setBrightness(Math.max(1, packet.receivedNumber & 0xff));
+    client.sprite.setBrightness(Math.max(1, receivedNumber & 0xff));
 })
 
 // monitor the sprites and start blinking when no packet is received

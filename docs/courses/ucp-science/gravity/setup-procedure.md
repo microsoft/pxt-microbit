@@ -60,8 +60,8 @@ radio.setGroup(99)
 ```blocks
 basic.showString("GRAVITY RECEIVER")
 radio.setGroup(99)
-radio.onDataPacketReceived( ({ receivedNumber: gravity }) =>  {
-    serial.writeValue("gravity", gravity)
+radio.onReceivedNumber(function (receivedNumber) {
+    serial.writeValue("gravity", receivedNumber)
     led.toggle(1, 0)
 })
 ```

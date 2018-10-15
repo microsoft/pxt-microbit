@@ -108,8 +108,8 @@ In the ``||radio:on received number||`` event, the temperature is received from 
 let temperature = 0
 basic.showString("TEMPERATURE RADIO RECEIVER")
 radio.setGroup(99)
-radio.onDataPacketReceived( ({ receivedNumber: temperature }) =>  {
-    basic.showNumber(temperature)
+radio.onReceivedNumber( function(receivedNumber) {
+    basic.showNumber(receivedNumber)
 })
 ```
 
@@ -121,9 +121,9 @@ This code is the same as above but one additional line of code is added to write
 let temperature = 0
 basic.showString("TEMPERATURE RADIO RECEIVER SERIAL")
 radio.setGroup(99)
-radio.onDataPacketReceived( ({ receivedNumber: temperature }) =>  {
-    basic.showNumber(temperature)
-    serial.writeValue("Celisus", temperature)
+radio.onReceivedNumber( function(receivedNumber) {
+    basic.showNumber(receivedNumber)
+    serial.writeValue("Celisus", receivedNumber)
 })
 ```
 

@@ -67,7 +67,7 @@ Here's the program for the receiver to record both temperature and light:
 
 ```blocks
 radio.setGroup(99)
-radio.onDataPacketReceived(({ receivedString: name, receivedNumber: value }) => {
+radio.onReceivedValue(function (name: string, value: number) {
     basic.showString(name + ":")
     basic.showNumber(value)
     serial.writeValue(name, value)
@@ -111,8 +111,10 @@ basic.forever(() => {
 The program on the receiver board can use the serial number to make a name value pair that the [Data Viewer](./writing#name-value-pairs) can recognize:
 
 ```blocks
+let id = 0;
 radio.setGroup(99)
-radio.onDataPacketReceived(({ serial: id, receivedString: name, receivedNumber: value }) => {
+radio.onReceivedValue(function (name: string, value: number) {
+    id = radio.receivedPacket(RadioPacketProperty.SerialNumber)
     basic.showString(name + ":")
     basic.showNumber(value)
     serial.writeValue(id + "_" + name, value)

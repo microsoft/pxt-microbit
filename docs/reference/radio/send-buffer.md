@@ -30,7 +30,7 @@ basic.forever(() => {
     radio.sendBuffer(buf)
 })
 
-radio.onDataPacketReceived(({ receivedBuffer }) => {
+radio.onReceivedBuffer(function (receivedBuffer) {
     // decode data from buffer
     ax = receivedBuffer.getNumber(NumberFormat.Int16LE, 0);
     ay = receivedBuffer.getNumber(NumberFormat.Int16LE, 2);

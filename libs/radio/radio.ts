@@ -1,5 +1,5 @@
 
-export enum RadioPacketProperty {
+enum RadioPacketProperty {
     //% blockIdentity=radio._packetProperty
     //% block="signal strength"
     SignalStrength = 2,
