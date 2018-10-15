@@ -6,6 +6,12 @@ Here are some cool projects that you can build with your @boardname@!
 
 ```codecard
 [{
+  "name": "Multi Dice",
+  "url": "/projects/multi-dice",
+  "description": "Compete with multiple dices",
+  "imageUrl": "/static/mb/projects/multi-dice.png",
+  "cardType": "tutorial"
+}, {
   "name": "Mood Radio",
   "url": "/projects/mood-radio",
   "description": "Send a mood message to your friends",

@@ -1,0 +1,91 @@
+# Multi Dice
+
+## Introduction @unplugged
+
+![Multiple @boardname@ throwing a dice](/static/mb/projects/multi-dice.png)
+
+This tutorial builds a multi-player dice game using the **radio**. The **radio** blocks let you send wireless messages between @boardnam@.
+
+In this game, you shake to throw the dice and send the result to the other @boardname@. If you receive a dice cast equal or greater than yours, you lose.
+
+## Dice game @fullscreen
+
+Let's start by rebuilding a **dice** application. If you are unsure about the details, try the **dice tutorial** again.
+
+```blocks
+input.onGesture(Gesture.Shake, function () {
+    basic.showNumber(Math.randomRange(1, 6))
+})
+```
+
+## Dice variable @fullscreen
+
+We need to store the dice cast into a variable. A **variable** is like a place in the @boardname@ memory where save information, like numbers.
+
+* Go to the **Variables** toolbox and click ``||Make a Variable||`` to create a new variable. We will call it **dice**. 
+* Add a ``||set dice to||`` block and drag the ``||pick random||`` into it
+* Drag a ``||dice||`` from the **Variables** toolbox into the ``||basic:show number||`` block.
+
+```blocks
+let dice = 0
+input.onGesture(Gesture.Shake, function () {
+    dice = Math.randomRange(1, 6)
+    basic.showNumber(dice)
+})
+```
+
+## Send the dice @fullscreen
+
+Add a ``||radio:send number||`` and a ``||dice||`` to send the value stored in the ``dice`` variable via radio.
+
+```blocks
+let dice = 0
+input.onGesture(Gesture.Shake, function () {
+    dice = Math.randomRange(1, 6)
+    basic.showNumber(dice)
+    radio.sendNumber(dice)
+})
+```
+
+## Receive the dice @fullscreen
+
+Add a ``||radio:on received number||`` event block. This event runs when a radio message from another @boardname@ has arrived. The ``receivedNumber`` value is the value of the dice in this game.
+
+```blocks
+radio.onReceivedNumber(function (receivedNumber) {
+})
+```
+
+## Check your cast @fullscreen
+
+Add a ``||logic:if||`` block to test if ``receivedNumber`` is greater or equal to ``dice``. 
+If so, you lost and display a sad face on the screen.
+
+```blocks
+let dice = 0;
+radio.onReceivedNumber(function (receivedNumber) {
+    if (receivedNumber >= dice) {
+        basic.showIcon(IconNames.Sad)
+    }
+})
+```
+
+## Test it! @fullscreen
+
+Try pressing **SHAKE** in the simulator and see that a second @boardname@ appears. You can play the game on both virtual boards.
+
+If you have 2 or more @boardname@, download your code and try to play the game with your friends!
+
+```blocks
+let dice = 0
+input.onGesture(Gesture.Shake, function () {
+    dice = Math.randomRange(1, 6)
+    basic.showNumber(dice)
+    radio.sendNumber(dice)
+})
+radio.onReceivedNumber(function (receivedNumber) {
+    if (receivedNumber >= dice) {
+        basic.showIcon(IconNames.Sad)
+    }
+})
+```
