@@ -50,15 +50,6 @@
 
 ## #examples
 
-* [Examples](/examples)
-    * [Blinky](/examples/blinky)
-    * [Rando](/examples/rando)
-    * [Plot Acceleration](/examples/plot-acceleration)
-    * [Plot Light Level](/examples/plot-light-level)
-    * [Game of Life](/examples/gameofLife)
-    * [Egg and Spoon Race](/examples/egg-and-spoon)
-    * [Radio Dashboard](/examples/radio-dashboard)
-
 ## #courses
 
 * [Courses](/courses)

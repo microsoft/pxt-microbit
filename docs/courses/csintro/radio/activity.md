@@ -46,8 +46,7 @@ Here is the complete Marco Polo program:
 input.onButtonPressed(Button.A, () => {
     radio.sendString("Marco")
 })
-
-radio.onReceivedNumber(function (receivedString) {
+radio.onReceivedString(function (receivedString) {
     basic.showString(receivedString)
 })
 input.onButtonPressed(Button.B, () => {
@@ -69,7 +68,7 @@ input.onButtonPressed(Button.A, () => {
     radio.sendString("Marco")
     music.playTone(131, music.beat(BeatFraction.Whole))
 })
-    radio.onReceivedNumber(function (receivedString) {
+radio.onReceivedString(function (receivedString) {
     basic.showString(receivedString)
 })
 input.onButtonPressed(Button.B, () => {
