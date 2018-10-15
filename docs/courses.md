@@ -56,7 +56,7 @@ Fun project courses - make and experiment while learning about science and progr
   "name": "SparkFun Inventor's Kit",
   "description": "Your map for navigating the waters of beginning embedded electronics, robotics and citizen science using the micro:bit.",
   "url": "https://learn.sparkfun.com/tutorials/sparkfun-inventors-kit-for-microbit-experiment-guide/introduction-to-the-sparkfun-inventors-kit-for-microbit",
-  "imageUrl": "https://cdn.sparkfun.com/r/500-500/assets/parts/1/2/9/4/2/14719-SparkFun_Inventor_s_Kit_Bridge_Pack_for_micro-bit-02.jpg"
+  "imageUrl": "/static/courses/sparkfun-inventors-kit.png"
 }, {
   "name": "Kitronik University",
   "description": "Kits, projects and tutorials",
