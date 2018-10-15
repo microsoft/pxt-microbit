@@ -40,7 +40,7 @@ basic.forever(() => {
 })
 radio.onReceivedNumber(function (receivedNumber) {
     led.plotBarGraph(
-        Math.abs(radio.receivedPacketProperty(RadioPacketProperty.SignalStrength) + 42),
+        Math.abs(radio.receivedPacket(RadioPacketProperty.SignalStrength) + 42),
         128 - 42
     )
 })
