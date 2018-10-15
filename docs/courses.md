@@ -61,7 +61,7 @@ Fun project courses - make and experiment while learning about science and progr
   "name": "Kitronik Inventor Kit",
   "description": "11 experiments based on the Kitronik Inventor Kit",
   "url": "https://www.kitronik.co.uk/blog/inventors-kit-experiment-1-help",
-  "imageUrl": "https://www.kitronik.co.uk/wp/wp-content/uploads/2016/10/inventors-kit-experiment-1-further-help-870.jpg"
+  "imageUrl": "/static/courses/kitronik-inventor-kit.png"
 }, {
   "name": "micro:bit of Things",
   "description": "A hands-on course about the micro:bit and what you can do with it.",
