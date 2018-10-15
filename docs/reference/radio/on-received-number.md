@@ -50,7 +50,7 @@ radio.onReceivedNumber(function (receivedNumber) {
 
 The ``||radio:onReceivedNumber||`` event can only be created once, due to the hardware restrictions.
 
-The radio set group might need to be set, synchronized , before the radio events will function.
+The radio set group might need to be set, synchronized, before the radio events will function.
 
 ## See also
 
