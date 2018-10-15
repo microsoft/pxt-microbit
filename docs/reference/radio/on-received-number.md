@@ -54,7 +54,7 @@ The radio set group might need to be set, synchronized , before the radio events
 
 ## See also
 
-[on received strig](/reference/radio/on-received-string),
+[on received string](/reference/radio/on-received-string),
 [send number](/reference/radio/send-number),
 [send string](/reference/radio/send-string),
 [send value](/reference/radio/send-value),
