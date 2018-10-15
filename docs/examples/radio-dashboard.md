@@ -53,7 +53,7 @@ function getClient(id: number): Client {
 
 // store data received by clients
 radio.onReceivedNumber(function (receivedNumber) {
-    const serialNumber = radio.receivedPackage(RadioPacketProperty.SerialNumber)
+    const serialNumber = radio.receivedPacket(RadioPacketProperty.SerialNumber)
     const client = getClient(serialNumber);
     if (!client)
         return;

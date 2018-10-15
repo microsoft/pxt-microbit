@@ -113,7 +113,7 @@ let tool = 0
 let found = false
 let serialNumber = 0;
 radio.onReceivedNumber(function (receivedNumber) {
-    serialNumber = radio.receivedPackage(RadioPacketProperty.SerialNumber)
+    serialNumber = radio.receivedPacket(RadioPacketProperty.SerialNumber)
     match = tool == receivedNumber
     player_index = players.indexOf(serialNumber)
     found = player_index >= 0
@@ -138,7 +138,7 @@ let found = false
 let temp = 0
 let serialNumber = 0;
 radio.onReceivedNumber(function (receivedNumber) {
-    serialNumber = radio.receivedPackage(RadioPacketProperty.SerialNumber)
+    serialNumber = radio.receivedPacket(RadioPacketProperty.SerialNumber)
     match = tool == receivedNumber
     player_index = players.indexOf(serialNumber)
     found = player_index >= 0
@@ -189,7 +189,7 @@ let match = false
 let players: number[] = []
 let serialNumber = 0;
 radio.onReceivedNumber(function (receivedNumber) {
-    serialNumber = radio.receivedPackage(RadioPacketProperty.SerialNumber)
+    serialNumber = radio.receivedPacket(RadioPacketProperty.SerialNumber)
     match = tool == receivedNumber
     player_index = players.indexOf(serialNumber)
     found = player_index >= 0
