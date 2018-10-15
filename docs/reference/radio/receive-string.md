@@ -1,6 +1,6 @@
 # Receive String
 
-> Note: This API has been deprecated! Use [on data packet received](/reference/radio/on-data-packet-received) instead.
+> Note: This API has been deprecated! Use [on received string](/reference/radio/on-received-string) instead.
 
 Find the next string sent by `radio` from another @boardname@.
 

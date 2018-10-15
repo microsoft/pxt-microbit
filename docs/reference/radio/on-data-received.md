@@ -1,6 +1,6 @@
 # On Data Received
 
-> Note: This API has been deprecated! Use [on data packet received](/reference/radio/on-data-packet-received) instead.
+> Note: This API has been deprecated! Use [on received number](/reference/radio/on-received-number) instead.
 
 Run part of a program when the @boardname@ receives a
 [number](/types/number) or [string](/types/string) over ``radio``.
@@ -28,7 +28,7 @@ radio.onDataReceived(() => {
 
 ## See also
 
-[on data packet received](/reference/radio/on-data-packet-received),
+[on received number](/reference/radio/on-received-number),
 [send number](/reference/radio/send-number), [set group](/reference/radio/set-group)
 
 ```package

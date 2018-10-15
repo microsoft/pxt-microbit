@@ -1,6 +1,6 @@
 # Receive Number
 
-> Note: This API has been deprecated! Use [on data packet received](/reference/radio/on-data-packet-received) instead.
+> Note: This API has been deprecated! Use [on received number](/reference/radio/on-received-number) instead.
 
 Receives the next number sent by a @boardname@ in the same ``radio`` group.
 

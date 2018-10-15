@@ -52,7 +52,7 @@ A radio that can both transmit and receive is called a _transceiver_.
 
 ## See also
 
-[on data packet received](/reference/radio/on-data-packet-received)
+[on received buffer](/reference/radio/on-received-buffer)
 
 ```package
 radio
