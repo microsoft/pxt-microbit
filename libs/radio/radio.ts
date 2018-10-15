@@ -1,3 +1,16 @@
+
+export enum RadioPacketProperty {
+    //% blockIdentity=radio._packetProperty
+    //% block="signal strength"
+    SignalStrength = 2,
+    //% blockIdentity=radio._packetProperty
+    //% block="time"
+    Time = 0,
+    //% block="serial number"
+    //% blockIdentity=radio._packetProperty
+    SerialNumber = 1
+}
+
 /**
  * Communicate data using radio packets
  */
@@ -31,18 +44,6 @@ namespace radio {
          * The received signal strength indicator (RSSI) of the packet.
          */
         public signal: number;
-    }
-
-    export enum PacketProperty {
-        //% blockIdentity=radio._packetProperty
-        //% block="signal strength"
-        SignalStrength = 2,
-        //% blockIdentity=radio._packetProperty
-        //% block="time"
-        Time = 0,
-        //% block="serial number"
-        //% blockIdentity=radio._packetProperty
-        SerialNumber = 1
     }
 
     /**
@@ -157,9 +158,9 @@ namespace radio {
     export function receivedPacket(type: number) {
         if (lastPacket) {
             switch(type) {
-                case PacketProperty.Time: return lastPacket.time;
-                case PacketProperty.SerialNumber: return lastPacket.serial;
-                case PacketProperty.SignalStrength: return lastPacket.signal;
+                case RadioPacketProperty.Time: return lastPacket.time;
+                case RadioPacketProperty.SerialNumber: return lastPacket.serial;
+                case RadioPacketProperty.SignalStrength: return lastPacket.signal;
             }
         }
         return 0;
@@ -171,7 +172,7 @@ namespace radio {
      */
     //% blockId=radio_packet_property block="%note"
     //% shim=TD_ID blockHidden=1
-    export function _packetProperty(type: PacketProperty): number {
+    export function _packetProperty(type: RadioPacketProperty): number {
         return type;
     }
 }

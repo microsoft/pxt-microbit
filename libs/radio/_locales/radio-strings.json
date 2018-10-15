@@ -1,7 +1,4 @@
 {
-  "radio.PacketProperty.SerialNumber|block": "serial number",
-  "radio.PacketProperty.SignalStrength|block": "signal strength",
-  "radio.PacketProperty.Time|block": "time",
   "radio._packetProperty|block": "%note",
   "radio.onDataPacketReceived|block": "on radio received",
   "radio.onDataReceived|block": "radio on data received",
