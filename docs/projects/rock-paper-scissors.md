@@ -67,10 +67,13 @@ the paper drawing.
 
 ## Step 5 @fullscreen
 
-Add an ``else if`` block to the ``if`` block and check whether ``tool``
-is equal to ``1``.
+Click the ``+`` button to add an ``else`` section.
 
-Add a ``||basic:show leds||`` block that shows a rock.
+![Adding an else clause](/static/mb/projects/rock-paper-scissors/ifelse.gif)
+
+## Step 6 @fullscreen
+
+Add a ``||basic:show leds||`` block that shows a scissor.
 
 ```blocks
 let tool = 0;
@@ -84,24 +87,28 @@ input.onGesture(Gesture.Shake, () => {
             # . . . #
             # # # # #
             `)
-    } else if (tool == 1) {
+    } else {
         basic.showLeds(`
-            . . . . .
-            . # # # .
-            . # # # .
-            . # # # .
-            . . . . .
+            # # . . #
+            # # . # .
+            . . # . .
+            # # . # .
+            # # . . #
             `)
     }
 })
 ```
 
-## Step 6 @fullscreen
+## Step 7 @fullscreen
+
+Click the ``+`` button to add an ``else if`` section.
+Since ``tool`` can only be ``0``, ``1`` or ``2``, your code is covering all possible cases!
+
+![Adding an else if clause](/static/mb/projects/rock-paper-scissors/ifelseif.gif)
+
+## Step 8 @fullscreen
 
 Add a ``||basic:show leds||`` block with a picture of scissors to the ``else`` part.
-
-You don't need to check if `tool` is `2` because `2` is the only number left out of `0`, `1`, and `2`.
-That's why you can use an ``else`` instead of an ``else if``.
 
 ```blocks
 let tool = 0;
@@ -136,11 +143,15 @@ input.onGesture(Gesture.Shake, () => {
 
 ```
 
-## Step 7 @fullscreen
+## Step 9 @fullscreen
 
 Click on the **SHAKE** button in the simulator and check each image is showing up.
 
-## Step 8 @fullscreen
+![Shaking a @boardname@ simulator](/static/mb/projects/rock-paper-scissors/rpssim3.gif)
+
+## Step 10 @fullscreen
 
 If you have a @boardname@, click on ``|Download|`` and follow the instruction to get the code
 onto your @boardname@. Your game is ready! Gather your friends and play Rock Paper Scissors!
+
+![A @boardname@ in a hand](/static/mb/projects/rock-paper-scissors/hand.jpg)
