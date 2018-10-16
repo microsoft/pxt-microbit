@@ -47,6 +47,7 @@
     * [Light Level Meter](/projects/light-level-meter)
     * [Radio bridge](/projects/radio-bridge)
     * [Snap the dot](/projects/snap-the-dot)
+    * [Red light green light](/projects/red-light-green-light)
 
 ## #examples
 
