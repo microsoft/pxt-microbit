@@ -191,7 +191,7 @@ basic.forever(function () {
 
 ### Tuning
 
-Does the movement check work? Try changing the ``100`` value to tune the detection sensivity.
+Does the movement check work? Try changing the ``100`` value to tune the detection sensivity. Try ``64``.
 
 ### Improve the game
 
