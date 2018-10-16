@@ -124,7 +124,7 @@ radio.onReceivedNumber(function (receivedNumber) {
 
 ### Display
 
-In a ``||forever||`` loop, we display different icons based on the game state. Use a ``||logic:if||`` and
+In a ``||basic:forever||`` loop, we display different icons based on the game state. Use a ``||logic:if||`` and
 ``||basic:show icon||`` blocks to display the game state.
 
 ```blocks
