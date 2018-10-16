@@ -82,6 +82,12 @@ basic.forever(function () {
 })
 ```
 
+### ~ hint
+
+Make sure to rename this program to ``game master`` or something so that you don't confuse it with the player program!
+
+### ~
+
 ### Improve the game
 
 * Use ``||music:ring tone||`` to play a sound while the game is in ``GREENLIGHT`` mode.
@@ -188,6 +194,13 @@ basic.forever(function () {
     }
 })
 ```
+
+### ~ hint
+
+Make sure to rename this program to ``player`` or something so that you don't confuse it with the game master program!
+
+### ~
+
 
 ### Tuning
 
