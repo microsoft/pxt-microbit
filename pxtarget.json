@@ -240,7 +240,6 @@
         "productId": "0x0204",
         "rawHID": true
     },
-    "ignoreDocsErrors": true,    
     "appTheme": {
         "accentColor": "#5C005C",
         "logoUrl": "https://microbit.org/code/",
