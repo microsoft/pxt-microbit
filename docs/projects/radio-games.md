@@ -29,15 +29,15 @@ Here are some cool projects that you can build with your @boardname@!
   "description": "Simulate fireflies with micro:bits, try it in the dark!",
   "imageUrl": "/static/mb/projects/fireflies.png"
 }, {
-  "name": "Infection",
-  "url": "/projects/infection",
-  "description": "An epidemic has broken out, see who will survive.",
-  "imageUrl": "/static/mb/projects/infection.png"
-}, {
   "name": "Hot or Cold",
   "url": "/projects/hot-or-cold",
   "description": "Find the hidden player by seeing if your close or not.",
   "imageUrl": "/static/mb/projects/hot-or-cold.jpg"
+}, {
+  "name": "Red Light Green Light",
+  "url": "/projects/red-light-green-light",
+  "description": "Play the classic game with your @boardname@.",
+  "imageUrl": "/static/mb/projects/red-light-green-light.png",
 }, {
   "name": "Voting Machine",
   "url": "/projects/voting-machine",
@@ -48,5 +48,10 @@ Here are some cool projects that you can build with your @boardname@!
   "url": "/projects/rps-teams",
   "description": "The Rock-Paper-Scissors game with lots and lots of players.",
   "imageUrl": "/static/mb/projects/rpsteams.png"
+}, {
+  "name": "Infection",
+  "url": "/projects/infection",
+  "description": "An epidemic has broken out, see who will survive.",
+  "imageUrl": "/static/mb/projects/infection.png"
 }]
 ```
