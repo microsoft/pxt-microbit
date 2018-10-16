@@ -1,28 +1,146 @@
-# Rock - Paper - Scissors
+# Rock Paper Scissors
 
-## @description A beginner maker activity, creating the Rock-Paper-Scissors game.
+## Introduction @unplugged
 
-## ~avatar
+![Cartoon of the Rock Paper Scissors game](/static/mb/projects/a4-motion.png)
 
-Make the Rock-Paper-Scissors game on your @boardname@ and challenge your friends.
+Use the accelerometer and the screen to build a **Play Rock Paper Scissors**
+that you can play with your friends!
 
-## ~
+## Step 1 @fullscreen
 
-![Rock Paper Scissors game on wrist](/static/mb/projects/rock-paper-scissors.jpg)
+Add a ``||input:on shake||`` block to run code when when you shake the @boardname@.
 
-## Duration: ~20 minutes.
+```blocks
+input.onGesture(Gesture.Shake, () => {
+    
+})
+```
 
-## Materials
+## Step 2 @fullscreen
 
-* @boardname@, battery holder and 2 AAA batteries
-* Roll of duct tape (maybe 2 rolls if you want another color)
-* Velcro
+Add a ``tool`` variable to store a random number computed with ``||math:pick random||``.
 
-## Activities
+When you shake the @boardname@, it should pick a random number from `0` to `2`
+and store it in the variable `tool`.
 
-* [Make](/projects/rock-paper-scissors/make)  
-* [Code](/projects/rock-paper-scissors/code)
+```blocks
+let tool = 0;
+input.onGesture(Gesture.Shake, () => {
+    tool = Math.randomRange(0, 2)
+})
 
-## ~button /projects/rock-paper-scissors/make
-Let's get started!
-## ~
+```
+
+In a later step, each of the possible numbers (`0`, `1`, or `2`) is matched to its own picture. The picture is shown on the LEDs when its number is picked.
+
+## Step 3 @fullscreen
+
+Place an ``if`` block under the ``||math:pick random||`` and
+check whether ``tool`` is equal to ``0``.
+
+Add a ``||basic:show leds||`` block that shows a
+picture of a piece of paper.
+
+```blocks
+let tool = 0;
+input.onGesture(Gesture.Shake, () => {
+    tool = Math.randomRange(0, 3)
+    if (tool == 0) {
+        basic.showLeds(`
+            # # # # #
+            # . . . #
+            # . . . #
+            # . . . #
+            # # # # #
+            `)
+    }
+})
+```
+
+## Step 4 @fullscreen
+
+Click on the **SHAKE** button in the simulator. If you try enough times, you should see
+the paper drawing.
+
+![Shaking a @boardname@ simulator](/static/mb/projects/rock-paper-scissors/rpsshake.gif)
+
+## Step 5 @fullscreen
+
+Add an ``else if`` block to the ``if`` block and check whether ``tool``
+is equal to ``1``.
+
+Add a ``||basic:show leds||`` block that shows a rock.
+
+```blocks
+let tool = 0;
+input.onGesture(Gesture.Shake, () => {
+    tool = Math.randomRange(0, 3)
+    if (tool == 0) {
+        basic.showLeds(`
+            # # # # #
+            # . . . #
+            # . . . #
+            # . . . #
+            # # # # #
+            `)
+    } else if (tool == 1) {
+        basic.showLeds(`
+            . . . . .
+            . # # # .
+            . # # # .
+            . # # # .
+            . . . . .
+            `)
+    }
+})
+```
+
+## Step 6 @fullscreen
+
+Add a ``||basic:show leds||`` block with a picture of scissors to the ``else`` part.
+
+You don't need to check if `tool` is `2` because `2` is the only number left out of `0`, `1`, and `2`.
+That's why you can use an ``else`` instead of an ``else if``.
+
+```blocks
+let tool = 0;
+input.onGesture(Gesture.Shake, () => {
+    tool = Math.randomRange(0, 3)
+    if (tool == 0) {
+        basic.showLeds(`
+            # # # # #
+            # . . . #
+            # . . . #
+            # . . . #
+            # # # # #
+            `)
+    } else if (tool == 1) {
+        basic.showLeds(`
+            . . . . .
+            . # # # .
+            . # # # .
+            . # # # .
+            . . . . .
+            `)
+    } else {
+        basic.showLeds(`
+            # # . . #
+            # # . # .
+            . . # . .
+            # # . # .
+            # # . . #
+            `)
+    }
+})
+
+```
+
+## Step 7 @fullscreen
+
+Click on the **SHAKE** button in the simulator and check each image is showing up.
+
+## Step 8 @fullscreen
+
+If you have a @boardname@, click on ``|Download|`` and follow the instruction to get the code
+onto your @boardname@. Your game is ready! Gather your friends and play Rock Paper Scissors!
