@@ -209,3 +209,4 @@ Does the movement check work? Try changing the ``100`` value to tune the detecti
 ### Improve the game
 
 * Use ``||music:ring tone||`` to play a tone while in green mode.
+* Use the packet signal strength to detect that you've reached the game master.
