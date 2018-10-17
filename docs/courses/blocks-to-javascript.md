@@ -23,6 +23,13 @@ Are you ready to try JavaScript to write your code?
         "url": "/courses/blocks-to-javascript/starter-blocks",
         "cardType": "side",
         "imageUrl": "/static/courses/blocks-to-javascript/starter-blocks.png"
+    },
+    {
+        "name": "Writing Code",
+        "description": "Writing JavaScript on your own",
+        "url": "/courses/blocks-to-javascript/writing-code",
+        "cardType": "side",
+        "imageUrl": "/static/courses/blocks-to-javascript/writing-code.png"
     }
 ]
 ```
