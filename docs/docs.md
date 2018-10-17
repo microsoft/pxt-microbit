@@ -29,5 +29,5 @@
 
 * [Command Line Interface](/cli)
 * Learn about [extensions](/extensions)
-* [Flashing via HID (CMSIS-DAP)](/hidflash)
+* [Hardware, debugger, ...](/device)
 

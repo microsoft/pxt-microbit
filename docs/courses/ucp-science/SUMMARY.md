@@ -44,7 +44,7 @@
     * [Setup and procedure](/courses/ucp-science/body-electrical/setup-procedure)
     * [Resources](/courses/ucp-science/body-electrical/resources)
 
-## Electicity - Battery tester
+## Electricity - Battery tester
 
 * [Electricity](/courses/ucp-science/electricity)
     * [Overview](/courses/ucp-science/electricity/overview)

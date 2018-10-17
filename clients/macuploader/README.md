@@ -2,8 +2,8 @@
 
 ![](Microbit Uploader/Assets.xcassets/AppIcon.appiconset/icon_256x256.png)
 
-This project is a clone of the [Windows
-uploader](https://makecode.microbit.org/uploader), but for OS X. Once launched,
+This project is a clone of the Windows
+uploader, but for OS X. Once launched,
 the app runs in your menu bar and will automatically deploy any HEX files to
 your `@boardname@`. Like the Windows version, it is compatible with any browser
 that can run @homeurl@.
