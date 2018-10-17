@@ -1,4 +1,6 @@
-# [Reference](/reference)
+# @extends
+
+## APIs #apis
 
 * [Basic](/reference/basic)
     * [show number](/reference/basic/show-number)
