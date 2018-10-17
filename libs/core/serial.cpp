@@ -2,6 +2,9 @@
 
 #define MICROBIT_SERIAL_READ_BUFFER_LENGTH 64
 
+#define MICROBIT_ID_IO_USBTX 1001 // virtual pin needed for serial
+#define MICROBIT_ID_IO_USBRX 1002
+
 enum SerialPin {
     P0 = MICROBIT_ID_IO_P0,
     P1 = MICROBIT_ID_IO_P1,
@@ -11,7 +14,9 @@ enum SerialPin {
     P13 = MICROBIT_ID_IO_P13,
     P14 = MICROBIT_ID_IO_P14,
     P15 = MICROBIT_ID_IO_P15,
-    P16 = MICROBIT_ID_IO_P16
+    P16 = MICROBIT_ID_IO_P16,
+    USB_TX = MICROBIT_ID_IO_USBTX,
+    USB_RX = MICROBIT_ID_IO_USBRX
 };
 
 enum BaudRate {
@@ -142,6 +147,20 @@ namespace serial {
       return buf;
     }
 
+    bool tryResolvePin(SerialPin p, PinName& name) {
+      switch(p) {
+        case SerialPin::USB_TX: name = USBTX; return true;
+        case SerialPin::USB_RX: name = USBRX; return true;
+        default: 
+          auto pin = getPin(p); 
+          if (NULL != pin) {
+            name = pin->name;
+            return true;
+          }
+      }
+      return false;
+    }
+
     /**
     * Set the serial input and output to use pins instead of the USB connection.
     * @param tx the new transmission pin, eg: SerialPin.P0
@@ -158,10 +177,10 @@ namespace serial {
     //% rx.fieldOptions.tooltips="false"
     //% blockGap=8
     void redirect(SerialPin tx, SerialPin rx, BaudRate rate) {
-      MicroBitPin* txp = getPin(tx); if (!txp) return;
-      MicroBitPin* rxp = getPin(rx); if (!rxp) return;
-
-      uBit.serial.redirect(txp->name, rxp->name);
+      PinName txn;
+      PinName rxn;
+      if (tryResolvePin(tx, txn) && tryResolvePin(rx, rxn))
+        uBit.serial.redirect(txn, rxn);
       uBit.serial.baud((int)rate);
     }
 
