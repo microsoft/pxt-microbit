@@ -55,4 +55,6 @@ Pro tip: always look at the first error and fix that one. All the other ones mig
 
 ## Auto-formatting
 
-Does your code look shifted badly or isn't showing the levels properly? Press ``Shift + Alt + F`` to auto-reformat your code and keep it tidy.
+Does your code look shifted badly or isn't showing the levels properly? Press ``Shift + Alt + F`` to auto-format your code and keep it tidy.
+
+![Reformat the code](/static/courses/blocks-to-javascript/jsreformat.gif)
