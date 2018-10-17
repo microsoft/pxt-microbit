@@ -19,32 +19,37 @@ input.onGesture(Gesture.Shake, () => {
 
 ## Step 2 @fullscreen
 
-Add a ``tool`` variable to store a random number computed with ``||math:pick random||``.
+Add a ``hand`` variable 
+and place the ``||variables:set hand to||`` block in the shake event.
 
-When you shake the @boardname@, it should pick a random number from `0` to `2`
-and store it in the variable named ``tool``.
+![A animation that shows how to create a variable](/static/mb/projects/rock-paper-scissors/newvar.gif)
+
+## Step 3 @fullscreen
+
+Add a ``||math:pick random||`` block to pick a random number from `1` to `3` and
+store it in the variable named ``hand``.
 
 ```blocks
-let tool = 0;
+let hand = 0;
 input.onGesture(Gesture.Shake, () => {
-    tool = Math.randomRange(0, 2)
+    hand = Math.randomRange(1, 3)
 })
 
 ```
 
-In a later step, each of the possible numbers (`0`, `1`, or `2`) is matched to its own picture. The picture is shown on the LEDs when its matching number is picked.
+In a later step, each of the possible numbers (`1`, `2`, or `3`) is matched to its own picture. The picture is shown on the LEDs when its matching number is picked.
 
-## Step 3 @fullscreen
+## Step 4 @fullscreen
 
-Place an ``||logic:if||`` block under the ``||math:pick random||`` and check whether ``tool`` is equal to ``0``.
+Place an ``||logic:if||`` block under the ``||math:pick random||`` and check whether ``hand`` is equal to ``1``.
 
-Add a ``||basic:show leds||`` block that shows a picture of a piece of paper. The number `0` will mean paper.
+Add a ``||basic:show leds||`` block that shows a picture of a piece of paper. The number `1` will mean paper.
 
 ```blocks
-let tool = 0;
+let hand = 0;
 input.onGesture(Gesture.Shake, () => {
-    tool = Math.randomRange(0, 2)
-    if (tool == 0) {
+    hand = Math.randomRange(1, 3)
+    if (hand == 1) {
         basic.showLeds(`
             # # # # #
             # . . . #
@@ -56,27 +61,27 @@ input.onGesture(Gesture.Shake, () => {
 })
 ```
 
-## Step 4 @fullscreen
+## Step 5 @fullscreen
 
 Click on the **SHAKE** button in the simulator. If you try enough times, you should see a picture of paper on the screen.
 
 ![Shaking a @boardname@ simulator](/static/mb/projects/rock-paper-scissors/rpsshake.gif)
 
-## Step 5 @fullscreen
+## Step 6 @fullscreen
 
 Click the ``+`` button to add an ``||logic:else||`` section.
 
 ![Adding an else clause](/static/mb/projects/rock-paper-scissors/ifelse.gif)
 
-## Step 6 @fullscreen
+## Step 7 @fullscreen
 
 Add a ``||basic:show leds||`` block inside the ``||logic:else||``. Make a picture of a scissors in the LEDs.
 
 ```blocks
-let tool = 0;
+let hand = 0;
 input.onGesture(Gesture.Shake, () => {
-    tool = Math.randomRange(0, 2)
-    if (tool == 0) {
+    hand = Math.randomRange(1, 3)
+    if (hand == 1) {
         basic.showLeds(`
             # # # # #
             # . . . #
@@ -96,21 +101,21 @@ input.onGesture(Gesture.Shake, () => {
 })
 ```
 
-## Step 7 @fullscreen
+## Step 8 @fullscreen
 
-Click the ``+`` button again to add an ``||logic:else if||`` section. Now, add a conditional block for ``||logic:tool = 1||`` to the condition in ``||logic:else if||``. Since ``tool`` can only be `0`, `1`, or `2`, your code is covering all possible cases!
+Click the ``+`` button again to add an ``||logic:else if||`` section. Now, add a conditional block for ``||logic:hand = 1||`` to the condition in ``||logic:else if||``. Since ``hand`` can only be `1`, `2`, or `3`, your code is covering all possible cases!
 
 ![Adding an else if clause](/static/mb/projects/rock-paper-scissors/ifelseif.gif)
 
-## Step 8 @fullscreen
+## Step 9 @fullscreen
 
 Get one more ``||basic:show leds||`` block and put it in the ``||logic:else if||``. Make a picture of a rock in the LEDs.
 
 ```blocks
-let tool = 0;
+let hand = 0;
 input.onGesture(Gesture.Shake, () => {
-    tool = Math.randomRange(0, 2)
-    if (tool == 0) {
+    hand = Math.randomRange(1, 3)
+    if (hand == 1) {
         basic.showLeds(`
             # # # # #
             # . . . #
@@ -118,7 +123,7 @@ input.onGesture(Gesture.Shake, () => {
             # . . . #
             # # # # #
             `)
-    } else if (tool == 1) {
+    } else if (hand == 2) {
         basic.showLeds(`
             . . . . .
             . # # # .
@@ -138,13 +143,13 @@ input.onGesture(Gesture.Shake, () => {
 })
 ```
 
-## Step 9 @fullscreen
+## Step 10 @fullscreen
 
 Click on the **SHAKE** button in the simulator and check to see that each image is showing up.
 
 ![Shaking a @boardname@ simulator](/static/mb/projects/rock-paper-scissors/rpssim3.gif)
 
-## Step 10 @fullscreen
+## Step 11 @fullscreen
 
 If you have a @boardname@, click on ``|Download|`` and follow the instructions to get the code
 onto your @boardname@. Your game is ready! Gather your friends and play Rock Paper Scissors!
