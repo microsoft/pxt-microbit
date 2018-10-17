@@ -24,7 +24,7 @@ When you see the option for what you were trying to type, press **Enter** to ins
 
 ## Pairing brackets
 
-Brackets and parenthesis always come in pairs, an opening one and a closin one. However, with so many brackets and parenthesis all over the place, it's challenging to match both of them up.
+Brackets and parenthesis always come in pairs, an opening one and a closing one. However, with so many brackets and parenthesis all over the place, it's challenging to match both of them up.
 
 **Place your cursor on a bracket or parenthesis** and the editor will highlight the matching pair! Nice, thanks editor!
 
