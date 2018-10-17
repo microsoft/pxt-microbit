@@ -17,7 +17,7 @@
     * [Salute!](/projects/salute)
     * [Karel](/projects/karel)
 * [Radio Games](/projects/radio-games)
-    * [Multi Dice](/projects/mulit-dice)
+    * [Multi Dice](/projects/multi-dice)
     * [Mood Radio](/projects/mood-radio)
     * [Tele-Potato](/projects/tele-potato)
     * [Fireflies](/projects/fireflies)
