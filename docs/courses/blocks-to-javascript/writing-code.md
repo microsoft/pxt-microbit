@@ -49,7 +49,7 @@ Place your mouse over the squiggle to get a detailled error message to help you 
 
 ### ~ hint
 
-Pro tip: always look at the first error and fix that one. All the other ones might be due to that one.
+**Pro tip**: always look at the first error and fix that one. The other errors could be due to that one.
 
 ### ~
 
