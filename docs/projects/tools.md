@@ -31,7 +31,7 @@
 }]
 ```
 
-## Streaming
+## Communication
 
 ```codecard
 [{
@@ -40,5 +40,9 @@
   "url": "/projects/radio-bridge",
   "imageUrl": "/static/mb/projects/radio-bridge.png",
   "cardType": "example"
+}, {
+  "name": "Telegraph",
+  "description": "Connect two @boardname@ with cables",
+  "url": "/projects/telegraph",
 }]
 ```

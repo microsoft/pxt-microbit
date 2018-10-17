@@ -43,5 +43,11 @@ Here are some cool tutorials to get you started with your @boardname@!
   "description": "Build your own social network made of @boardnames.",
   "imageUrl": "/static/mb/projects/a9-radio.png",
   "cardType": "tutorial"
+}, {
+  "name": "Compass",
+  "url": "/projects/compass",
+  "description": "Build your own compass",
+  "imageUrl": "/static/mb/projects/a5-compass.png",
+  "cardType": "tutorial"
 }]
 ```
