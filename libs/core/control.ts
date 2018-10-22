@@ -41,13 +41,6 @@ namespace control {
         }
     }
 
-    export function fail(message: string) {
-        serial.writeString("Fatal failure: ")
-        serial.writeString(message)
-        serial.writeString("\r\n")
-        panic(108)
-    }
-
     /**
      * Display warning in the simulator.
      */
