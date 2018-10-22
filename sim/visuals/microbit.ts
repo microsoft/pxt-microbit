@@ -721,7 +721,11 @@ path.sim-board {
             el.style.perspective = "30em";
 
             // don't display acc data when AB is on
-            if (!state.buttonPairState.usesButtonAB) {
+            if (state.buttonPairState.usesButtonAB) {
+                if (this.accTextX) this.accTextX.textContent = "";
+                if (this.accTextY) this.accTextY.textContent = "";
+                if (this.accTextZ) this.accTextZ.textContent = "";
+            } else {
                 // update text
                 if (acc.flags & AccelerometerFlag.X) {
                     if (!this.accTextX) {
