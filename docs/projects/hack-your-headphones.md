@@ -30,7 +30,7 @@ Build your own @boardname@ music player using headphones.
 * [Make](/projects/hack-your-headphones/make)
 * [Code](/projects/hack-your-headphones/code)
 
-## ~button /projects/hack-your-headphones/make
+## ~button /v0/projects/hack-your-headphones/make
 
 Let's get started!
 

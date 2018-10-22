@@ -27,7 +27,7 @@ https://youtu.be/doHwknM7HbQ
 * [Make](/projects/reaction-time/make)  
 * [Code](/projects/reaction-time/code)  
 
-## ~button /projects/reaction-time/make
+## ~button /v0/projects/reaction-time/make
 
 Let's get started!
 

@@ -68,7 +68,7 @@ Connect the other end of the **4th** crocodile clip to pin **1** of the second @
 ![](/static/mb/lessons/telegraph-0.png)
 
 
-## ~button /projects/telegraph/code
+## ~button /v0/projects/telegraph/code
 
 NEXT: Code
 

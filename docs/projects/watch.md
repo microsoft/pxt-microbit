@@ -23,7 +23,7 @@ Build your own @boardname@ watch from an old pair of jeans and T-shirt!
 * [Make](/projects/watch/make)  
 * [Code](/projects/watch/code)
 
-## ~button /projects/watch/make
+## ~button /v0/projects/watch/make
 
 Let's get started!
 

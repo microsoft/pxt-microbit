@@ -32,7 +32,7 @@ This is a follow up of the **[soil moisture project](/projects/soil-moisture)**.
 * [Make](/projects/plant-watering/make)  
 * [Code](/projects/plant-watering/code)
 
-## ~button /projects/plant-watering/make
+## ~button /v0/projects/plant-watering/make
 
 Let's get started!
 

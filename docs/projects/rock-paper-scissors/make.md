@@ -34,6 +34,6 @@ Decorate the wrist cuff with stickers, glitter, markers, etc.
 
 ![Rock Paper Scissors game on wrist](/static/mb/projects/rock-paper-scissors.jpg)
 
-## ~button /projects/rock-paper-scissors/code
+## ~button /v0/projects/rock-paper-scissors/code
 NEXT: Code the game!
 ## ~

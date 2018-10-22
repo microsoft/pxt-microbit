@@ -24,6 +24,6 @@ basic.forever(() => {
 })
 ```
 
-## ~button /projects/light-monster/connect
+## ~button /v0/projects/light-monster/connect
 NEXT: Connect
 ## ~

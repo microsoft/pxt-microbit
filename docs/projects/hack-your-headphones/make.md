@@ -46,7 +46,7 @@ Using the 2nd crocodile clip, connect the second end of the crocodile clip onto 
 
 You hacked your headphones!
 
-## ~button /projects/hack-your-headphones/code
+## ~button /v0/projects/hack-your-headphones/code
 
 NEXT: music of light
 

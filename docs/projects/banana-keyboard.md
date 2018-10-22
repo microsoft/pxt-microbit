@@ -24,6 +24,6 @@ Build your own @boardname@ piano using bananas!
 * [Make](/projects/banana-keyboard/make)  
 * [Code](/projects/banana-keyboard/code)
 
-## ~button /projects/banana-keyboard/make
+## ~button /v0/projects/banana-keyboard/make
 Let's get started!
 ## ~

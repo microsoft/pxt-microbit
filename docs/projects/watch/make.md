@@ -150,7 +150,7 @@ Trim any leftover fabric, threads or tape.
 
 Your watch is ready! We'll now add code to the @boardname@ to make it keep time for real!
 
-### ~button /projects/watch/code
+### ~button /v0/projects/watch/code
 
 Let's add some code!
 

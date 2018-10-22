@@ -20,7 +20,7 @@ Track the soil moisture of your plants!
 * [Code](/projects/soil-moisture/code)
 * [Connect](/projects/soil-moisture/connect)
 
-## ~button /projects/soil-moisture/make
+## ~button /v0/projects/soil-moisture/make
 
 Let's get started!
 

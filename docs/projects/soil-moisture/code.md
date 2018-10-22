@@ -87,7 +87,7 @@ basic.forever(() => {
 
 * Using the dry soil and wet soil pots, test that your circuit still works. Remember you'll have to wait up to 10 seconds to see a change!
 
-## ~button /projects/soil-moisture/connect
+## ~button /v0/projects/soil-moisture/connect
 
 Connect
 

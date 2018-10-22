@@ -35,7 +35,7 @@ https://youtu.be/BiZLjugXMbM
 * [Code](/projects/light-monster/code)  
 * [Connect](/projects/light-monster/connect)  
 
-## ~button /projects/light-monster/make
+## ~button /v0/projects/light-monster/make
 
 Let's get started!
 

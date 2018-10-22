@@ -80,6 +80,6 @@ input.onPinPressed(TouchPin.P1, () => {
 
 Grab a the orange with one hand. With the fingers of your other hand, tap the banana to play sound. Your banana keyboard is ready!
 
-## ~button /projects/banana-keyboard/code
+## ~button /v0/projects/banana-keyboard/code
 NEXT: beat box
 ## ~

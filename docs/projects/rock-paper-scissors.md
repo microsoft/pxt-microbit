@@ -23,6 +23,6 @@ Make the Rock-Paper-Scissors game on your @boardname@ and challenge your friends
 * [Make](/projects/rock-paper-scissors/make)  
 * [Code](/projects/rock-paper-scissors/code)
 
-## ~button /projects/rock-paper-scissors/make
+## ~button /v0/projects/rock-paper-scissors/make
 Let's get started!
 ## ~

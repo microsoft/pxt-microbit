@@ -13,7 +13,7 @@ https://youtu.be/DgJ-S0q0EMs
 
 That's it!
 
-## ~button /projects/reaction-time/code
+## ~button /v0/projects/reaction-time/code
 
 Code
 

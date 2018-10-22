@@ -28,7 +28,7 @@ The activity is approx 30-45 min based on familiarity with the coding concepts
 * [Make](/projects/states-of-matter/make)  
 * [Code](/projects/states-of-matter/code)  
 
-## ~button /projects/states-of-matter/make
+## ~button /v0/projects/states-of-matter/make
 
 Let's get started!
 

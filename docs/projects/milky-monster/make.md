@@ -116,6 +116,6 @@ Your milky-monster is ready, it is time to decorate it! Customize the milky mons
 
 ![](/static/mb/projects/milky-monster/monsters.jpg)
 
-## ~button /projects/milky-monster/code
+## ~button /v0/projects/milky-monster/code
 NEXT: Code
 ## ~

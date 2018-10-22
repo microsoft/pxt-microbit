@@ -110,6 +110,6 @@ Cover the LEDs with your hand to vary light detected to control the tone
 ## Good work, this guitar is sounding good!
 **Challenge:** Create a variable for the light level multiplier that you can change using buttons (optional)
 
-## ~button /projects/guitar/accelerometer
+## ~button /v0/projects/guitar/accelerometer
 NEXT: Accelerometer Beat control
 ## ~

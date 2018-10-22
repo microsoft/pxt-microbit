@@ -33,7 +33,7 @@ https://youtu.be/GYmdTFvxz80
 * [Accelerometer Beat control](/projects/guitar/accelerometer)  
 * [Pin Press Switch](/projects/guitar/pinpress)  
 
-## ~button /projects/guitar/make
+## ~button /v0/projects/guitar/make
 
 Let's get started!
 

@@ -46,7 +46,7 @@ https://youtu.be/Ah4fEbJtklU
 * [Code](/projects/milk-carton-robot/code)  
 * [Connect](/projects/milk-carton-robot/connect)  
 
-## ~button /projects/milk-carton-robot/make
+## ~button /v0/projects/milk-carton-robot/make
 
 Let's get started!
 

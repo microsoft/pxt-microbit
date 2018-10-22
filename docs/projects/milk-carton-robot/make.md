@@ -44,6 +44,6 @@ https://youtu.be/pRAC2Ritgtk
 
 Well done! Let's move to programming the @boardname@ to move the mouth.
 
-## ~button /projects/milk-carton-robot/code
+## ~button /v0/projects/milk-carton-robot/code
 NEXT: Code
 ## ~

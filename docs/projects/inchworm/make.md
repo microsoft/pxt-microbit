@@ -83,6 +83,6 @@ Your inchworm is ready!
 
 ![](/static/mb/projects/inchworm/ready.jpg)
 
-## ~button /projects/inchworm/code
+## ~button /v0/projects/inchworm/code
 NEXT: Code
 ## ~

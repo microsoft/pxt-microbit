@@ -36,7 +36,7 @@ https://youtu.be/BiZLjugXMbM
 * [Code](/projects/inchworm/code)  
 * [Connect](/projects/inchworm/connect)  
 
-## ~button /projects/inchworm/make
+## ~button /v0/projects/inchworm/make
 
 Let's get started!
 

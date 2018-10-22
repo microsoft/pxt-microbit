@@ -15,7 +15,7 @@ Make a @boardname@ wallet with this guided tutorial!
 * [Make](/projects/wallet/make)  
 * [Code](/projects/wallet/code)
 
-## ~button /projects/wallet/make
+## ~button /v0/projects/wallet/make
 
 Let's get started!
 

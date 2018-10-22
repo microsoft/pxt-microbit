@@ -177,7 +177,7 @@ If you plan to make an extensive use of your wallet without using the buttons, y
 
 The wallet is ready, we just have to add some code into the @boardname@ to make it alive.
 
-## ~button /projects/wallet/code
+## ~button /v0/projects/wallet/code
 
 Let's add some code!
 

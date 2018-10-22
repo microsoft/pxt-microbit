@@ -29,6 +29,6 @@ You might notice that the inchworm goes really slow or maybe just won't move at 
 
 ## ~
 
-## ~button /projects/inchworm/connect
+## ~button /v0/projects/inchworm/connect
 NEXT: Connect
 ## ~

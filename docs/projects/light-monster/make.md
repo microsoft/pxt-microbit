@@ -22,6 +22,6 @@ Turn some coffee cup holders into a monster that moves to light!
 
 TODO
 
-## ~button /projects/light-monster/code
+## ~button /v0/projects/light-monster/code
 NEXT: Code
 ## ~

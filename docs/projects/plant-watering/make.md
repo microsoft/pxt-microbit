@@ -14,7 +14,7 @@ The final wiring should look like this:
 
 ![Soil moisture meter](/static/mb/projects/plant-watering/make.jpg)
 
-## ~button /projects/plant-watering/code
+## ~button /v0/projects/plant-watering/code
 
 Code
 

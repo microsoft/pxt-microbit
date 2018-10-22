@@ -48,7 +48,7 @@ Ask friends or family members if they have any old RC cars lying around. Scout a
 * [Code](/projects/rc-car/code)
 * [Connect](/projects/rc-car/connect)
 
-### ~button /projects/rc-car/make
+### ~button /v0/projects/rc-car/make
 
 Let's make it!
 

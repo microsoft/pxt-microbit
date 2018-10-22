@@ -175,6 +175,6 @@ From **Music**, drag **play tone *C* for *1* beat** block under the **show leds*
 * [Hack your headphones](/projects/hack-your-headphones)
 
 
-## ~button /projects/guitar/lightsensor
+## ~button /v0/projects/guitar/lightsensor
 NEXT: Light Sensor Tone Control
 ## ~

@@ -67,7 +67,7 @@ Once you've got the body on (the original or a cardboard one), finish it with so
 
 That's it, time to code!
 
-### ~button /projects/rc-car/code
+### ~button /v0/projects/rc-car/code
 
 Code
 

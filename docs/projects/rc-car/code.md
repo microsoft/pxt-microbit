@@ -61,7 +61,7 @@ input.onButtonPressed(Button.A, () => {
 
 Great! The code to drive the car is done! Now let's get another @boardname@ and control the car remotely.
 
-### ~button /projects/rc-car/connect
+### ~button /v0/projects/rc-car/connect
 
 Connect
 

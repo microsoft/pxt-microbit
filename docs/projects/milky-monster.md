@@ -49,7 +49,7 @@ https://youtu.be/egl3fNAYylk
 * [Code](/projects/milky-monster/code)  
 * [Connect](/projects/milky-monster/connect)  
 
-## ~button /projects/milky-monster/make
+## ~button /v0/projects/milky-monster/make
 
 Let's get started!
 

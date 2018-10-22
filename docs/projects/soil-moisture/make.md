@@ -10,7 +10,7 @@ Here's what you need to do to make your soil moisture sensor:
 
 That's it!
 
-## ~button /projects/soil-moisture/code
+## ~button /v0/projects/soil-moisture/code
 
 Code
 
