@@ -6,7 +6,7 @@ Ideally, the micro:bit should be mounted in some kind of housing, perhaps a guit
 
 ![micro:bit guitar](/static/courses/csintro/arrays/microbit-guitar.png)
 
-Here are some examples of guitars that were made out of cardboard and colored, patterned duct tape that you can buy in craft stores. 
+Here are some examples of guitars that were made out of cardboard and colored, patterned duct tape that you can buy in craft stores.
 
 ## Example guitar code
 
@@ -47,9 +47,10 @@ input.onButtonPressed(Button.B, () => {
 ```
 
 ## Using arrays with musical notes
-You can create an array of notes by attaching Music blocks to an array.  Musical notes are described in words (e.g., Middle C, High C) but they are actually numbers.  You can do Math operations on those numbers to change the pitch of your song.
+
+You can create an array of notes by attaching Music blocks to an array. Musical notes are described in words (e.g., Middle C, High C) but they are actually numbers. You can do Math operations on those numbers to change the pitch of your song.
  
-Here is an example of how to create an array with musical notes.  Button A plays every note in the array.  Button B plays the notes at twice the frequency (but doesn't alter the original notes.)
+Here is an example of how to create an array with musical notes.  Button A plays every note in the array.  Button B plays the notes at twice the frequency (but doesn't alter the original notes).
 
 ```blocks
 let list: number[] = []
@@ -81,9 +82,10 @@ input.onButtonPressed(Button.AB, () => {
 ```
 
 ## Reflection
+
 Have students write a reflection of about 150–300 words, addressing the following points:
 
-* Explain how you decided on your musical instrument. What brainstorming ideas did you come up with? 
+* Explain how you decided on your musical instrument. What brainstorming ideas did you come up with?
 * What properties does it share with a real musical instrument? What is unique?
 * Describe the type of array you used (Numbers, Strings, or Notes) and how it functions in your project.
 * What was something that was surprising to you about the process of creating this program?

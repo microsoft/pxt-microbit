@@ -6,12 +6,12 @@ The mini-project is an opportunity for students to design a project that serves 
 
 * Show what you know
 * Learn something new
-	
+
 Ideally, there should be a maker component to this project.  This is a real world component that works with the code on the micro:bit to do something unique.
 
 Students are asked to each propose an original independent project.  Students are allowed to work on the same idea, but they cannot turn in the same code.  They can, and should work collaboratively, solving the same kinds of problems together, but the projects they turn in should be unique and original.
 
-## Showcasing student work 
+## Showcasing student work
 
 Students will be showing their work regularly to each other in informal ways.  Think about also organizing a day or an evening when parents, administrators, or others from the community are invited to come and view the students' projects. 
 
@@ -73,11 +73,12 @@ This is a prototype of a storybook that could use the micro:bit to display anima
 
 ## Work logs
 
-Because students are working on the projects in class, and much of the benefit comes from working together to solve problems, they should account for the work they are doing by writing a work log. 
+Because students are working on the projects in class, and much of the benefit comes from working together to solve problems, they should account for the work they are doing by writing a work log.
 
 A work log is a short, bullet point list of what they worked on, and how long it took. Stick to the facts. It shouldn’t take more than thirty seconds or so to write up a work log. Students should do one for every class. A shared Microsoft OneNote notebook is a great way to keep a work log that students can update regularly. Alternately, you might use a collaborative shared document, or your classroom management system, or even e-mail.
 
 ### Sample Work Log
+
 >**_April 11_**<br/>
 _20 min. Created code that reacts when pins P0 and P1 are pressed._<br/>
 _0 min. Talked with Mr. Kiang about how to attach wires so they won’t fall off_<br/>
@@ -96,7 +97,8 @@ At the end of the week, students should compose a final reflection that summariz
 * What would you do differently next time?
 * If you had another week to work on this project, what might you add or improve?
 
-Sample Reflection (excerpt)
+### Sample Reflection (excerpt)
+
 >_“I spent this week finishing up little details with my program, making it work better and more user friendly. The part that surprised me the most was the little things that kept popping into my head, little suggestions that could potentially be good to add, but might not be necessary or even useful. At the beginning of the assignment, I just added them as quickly as I thought of them, but as the project neared the midpoint and conclusion, I find myself considering if I actually need them (as previous additions have been since quickly deleted). Another thing that I find interesting about this is that it is a rather specialized project. Not many people would use it except for me. However, this is supposed to be easily used by other people, so I have to take them into consideration as I design the project. I also realized that I had, at some point, broken part of my code without realizing it, so I now have to fix part of it. The reason that it is a problem is because I added a lot of code at once without deleting it, which is unfortunate. Next time I will add small amounts of code and test it first.”_
 
 ## Assessment

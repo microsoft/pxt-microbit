@@ -4,8 +4,7 @@ The objective of this activity is to experience creating and working with variab
 
 ![Rock-paper-scissors hands](/static/courses/csintro/variables/rps-sketch.jpg)
 
-Ask students to keep track of their scores on paper. 
-You can also have students play in groups of three with the third student acting as the scorekeeper.
+Ask students to keep track of their scores on paper. You can also have students play in groups of three with the third student acting as the scorekeeper.
 
 Students will keep track of how many times each player wins as well as the number of times the players tie. 
 

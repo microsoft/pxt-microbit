@@ -67,5 +67,3 @@ Programming for Mere Mortals, Vol. 1
 If you have feedback for the Microsoft MakeCode team, you can fill out their survey form here: https://aka.ms/microbitfeedback
 
 The support site for the micro:bit is located here: [https://support.microbit.org](https://support.microbit.org/)
-
-

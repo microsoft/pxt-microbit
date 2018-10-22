@@ -3,6 +3,7 @@
 This lesson introduces a conceptual framework for thinking of a computing device as something that uses code to process one or more inputs and send them to an output(s).
 
 ## Lesson objectives
+
 Students will...
 
 * Understand the four components that make up a computer and their functions.

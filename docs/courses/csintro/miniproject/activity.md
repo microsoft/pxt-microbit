@@ -9,6 +9,7 @@ Here is how we structure our classes:
 ## Beginning of class
 
 For groups of 15 or so, have students each **_briefly_** (no more than 30 seconds or so) report on their progress in front of the group:
+
 * One-line description of project
 * Their progress so far
 * Something they are going to work on figuring out today
@@ -28,11 +29,13 @@ It’s important to hear from everybody but it shouldn’t take more than five o
 ![Quick progress report](/static/courses/csintro/miniproject/quick-progress-report.png)
 
 ## During class
+
 This is a time to circulate and check in with students individually, starting with those students who seem to still be stuck from last time. For the most part, students should be working on their projects in small groups, helping each other wherever and whenever possible.
 
 ## End of class
+
 About ten minutes before the end of class, you can have students do a “work-in-progress” report. Gather the students together and have them move from table to table while each student presents one thing that he or she figured out during the class. This is really an informal presentation, and it is understood that it is not finished at all; it is still a “work in progress.” But everyone needs to show something, and the entire group needs to move as one throughout the classroom, almost like physicians making rounds in a hospital. This is an important way to spread ideas throughout the classroom, and to “cross-pollinate” with helpful tips and techniques.
 
-Work-in-progress reports should be short, no more than twenty or thirty seconds. If you have a large class, you might divide the class into several large groups and have them present to each other. 
+Work-in-progress reports should be short, no more than twenty or thirty seconds. If you have a large class, you might divide the class into several large groups and have them present to each other.
 
 ![Work in progress report](/static/courses/csintro/miniproject/work-in-progress-report.png)

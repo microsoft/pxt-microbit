@@ -3,6 +3,7 @@
 Use what you now know about LEDs, coordinates, and brightness to create your own project: a screensaver, or a game. You should find a way to use coordinates in your program. Even better, use variables to store and update your coordinates.
 
 ## Screensavers
+
 One type of project is a screensaver. A long time ago, computers and televisions used cathode ray tube (CRT)screens for displays. The glass screen of the display was coated on the back with phosphor, a substance that glows when painted with electrons from an electron gun at the other end of the tube. When the same area of the screen was painted (excited) over and over again by the stream of electrons, that part of the screen would sometimes "freeze" with the same image, burned into the phosphor for good. This was called "burn-in".
 
 Normally, if a show was running, or if someone was actively using the computer, the display changed often enough that burn-in wasn’t a problem. Programmers learned to create a demo screen with an animation that would run whenever the screen was idle. Today, nearly all computers and television sets use LCD displays, which are not affected by burn-in. But you can still find a screen saver in nearly every computer's Settings panel, as an opportunity to show off some neat graphics or animation.
@@ -15,7 +16,7 @@ Your task is to create:
 
 * A game that uses sprites to manage the x and y coordinate values of the different objects.
 
-Your project might use variables to store the values of sprites, which are special structures that contain an x and a y coordinate together that describe the sprite's location as one LED on the screen. 
+Your project might use variables to store the values of sprites, which are special structures that contain an x and a y coordinate together that describe the sprite's location as one LED on the screen.
 
 ## Project Ideas
 
@@ -238,5 +239,3 @@ Have students write a reflection of about 150–300 words, addressing the follow
 **3 =** Reflection piece lacks 1 of the required elements.<br/>
 **2 =** Reflection piece lacks 2 of the required elements.<br/>
 **1 =** Reflection piece lacks 3 of the required elements. 
-	 
-	 

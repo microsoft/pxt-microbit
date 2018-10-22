@@ -1,20 +1,22 @@
 # Introduction
 
-In computer programming, iteration is the repetition of a sequence of code. A loop is a form of iteration. A loop repeats code until a certain condition is met. 
+In computer programming, iteration is the repetition of a sequence of code. A loop is a form of iteration. A loop repeats code until a certain condition is met.
 
 ## Questions for the students:
+
 * Do you use shampoo to wash your hair? _Most will say ‘Yes’_.
 * Have you ever read the instructions on a bottle of shampoo? _Most will say ‘No’_.
-	
+
 Most of us have never read the instructions on a bottle of shampoo, because we already know how to use shampoo.
 
 What algorithm could you write for shampooing your hair?
 Example:
+
 1. Wet hair.
 2. Apply shampoo to wet hair
 3. Scrub shampoo into hair
 4. Rinse shampoo out of hair
-		
+
 If you did read the instructions on a bottle of shampoo, you may read similar instructions as the ones you just wrote with one added step at the end. That step is ‘Repeat.’
 How does this one extra step affect the algorithm?
 
@@ -29,6 +31,7 @@ DBwebsolutions.com
 What other common activities involve repetitive actions? _Examples: Singing (choruses repeat), dancing, school cheers, walking and running, exercise routines..._
 
 ## Optional
+
 Share with your students the history of ‘Lather, Rinse, Repeat.’
 
 Lather, Rinse, Repeat: Hygiene Tip or Marketing Ploy
@@ -50,4 +53,3 @@ Getting consumers to wash twice can, of course, increase sales--in ways one migh
 
 From Wikipedia (https://en.wikipedia.org/wiki/Lather,_rinse,_repeat):
 Lather, rinse, repeat (sometimes wash, rinse, repeat) is an idiom roughly quoting the instructions found on many brands of shampoo. It is also used as a humorous way of pointing out that such instructions if taken literally would result in an endless loop of repeating the same steps, at least until one runs out of shampoo. It is also a sarcastic metaphor for following instructions or procedures slavishly without critical thought.
-

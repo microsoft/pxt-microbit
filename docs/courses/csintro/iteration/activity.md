@@ -8,8 +8,9 @@ Microsoft MakeCode has three different loop blocks:
 To start, the students can code the same algorithm they created in the unplugged activity using a loop.
 
 ## ‘Repeat’ block
+
 Code a Sprite to walk a square.  Have students click on the Loops category in the Toolbox, and look at the three choices available.
-	
+
 ![Loops category](/static/courses/csintro/iteration/loops-category.png)
 
 The very first one is the ‘repeat’ block! Have students drag the repeat block to the coding Workspace. They’ll notice that this block takes a **parameter**. 
@@ -55,8 +56,8 @@ item = game.createSprite(0, 0)
 You should now see the sprite appear in the top left of the micro:bit simulator.
 
 * To add more control for when our sprite moves, drag a ‘on button A pressed’ block from the Input menu.
-* Place the ‘repeat’ block into the ‘on button A pressed’ block
-* Place the ‘move by’ block into the ‘repeat’ block
+* Place the ‘repeat’ block into the ‘on button A pressed’ block.
+* Place the ‘move by’ block into the ‘repeat’ block.
 * Place the ‘turn right by’ block into the ‘repeat’ block just under the ‘move by’ block.
 
 ```blocks
@@ -70,11 +71,13 @@ input.onButtonPressed(Button.A, () => {
    }
 })
 ```
+
 Go ahead and run the program. Make the sprite move by pressing button A.
 
 What happened? Did you see the sprite move? No?
 
 ## Slo-Mo
+
 A helpful feature of Microsoft MakeCode is "Slo-Mo", or slow-motion mode.  
 * Click on the snail icon under the micro:bit simulator. 
 This will slow down the execution (running) of the program, and highlight parts of your code so you can see step-by-step, which line of code is being processed.
@@ -121,6 +124,7 @@ The ‘for’ block is useful when you have a variable in your loop that you wan
 Let’s make an led light move across the entire display from left to right, top row to bottom row. 
 
 Our pseudocode for the first row might look like this:
+
 ```
 Turn led x:0, y:0 on
 Pause
@@ -142,6 +146,7 @@ Turn led x:4, y:0 on
 Pause
 Turn led x:4, y:0 off
 ```
+
 That’s a lot of code, most of it repeated. Perfect for a loop.
 
 * What is the only variable that is changing in this pseudocode? _The value of the x coordinate_.
@@ -168,10 +173,10 @@ basic.forever(() => {
 })
 ```
 
-Let’s look at the parameters. 
+Let’s look at the parameters.
 
-* Change the ‘index’ in the ‘for’ block to the ‘xindex’ variable we made. 
-* Change the value of the x coordinates in the plot and unplot blocks to this same variable. 
+* Change the ‘index’ in the ‘for’ block to the ‘xindex’ variable we made.
+* Change the value of the x coordinates in the plot and unplot blocks to this same variable.
 
 ```blocks
 let index = 0
@@ -208,8 +213,8 @@ To do this efficiently, using the fewest lines of code, we can even put a loop i
 * So that we can change the value of the y coordinate, make a new variable, named **yindex**.
 * Drag out another ‘for’ block from the Loops Toolbox drawer.
 * Place this new ‘for’ block around our original ‘for’ block, all within the forever block.
-* Change the ‘index’ in the outer ‘for’ block to the ‘yindex’ variable we made. 
-* Change the value of the y coordinates in the plot and unplot blocks to this same variable. 
+* Change the ‘index’ in the outer ‘for’ block to the ‘yindex’ variable we made.
+* Change the value of the y coordinates in the plot and unplot blocks to this same variable.
 
 ```blocks
 let index = 0
@@ -262,11 +267,13 @@ Have the students use the Slo-Mo mode to watch the program step through the loop
 >_The outer loop loops 5 times altogether, once for every value of the y coordinate from 0 through 4. Each time the outer loop runs, the inner loop runs 5 times, once for every value of the x coordinate from 0 through 4. 5 runs of the outer loop x 5 runs of the inner loop = 25 times the inner loop executes._
 
 ## Mods
+
 * If there is time, let the students experiment with changing the parameters to see how these changes affect their program.
 * What happens if you switch the positions of the nested loops, so the outer loop loops through the xindex values and the inner loop loops through the yindex values?
 * What happens if you remove the ‘unplot’ block and the ‘pause’ block below it?
 	
 ## ‘While’ block: micro:bit alarm!
+
 The while block is useful when you want your program to loop until a certain event happens or a different condition is met.
 
 For example, maybe you want an alarm to sound if someone shakes your micro:bit!

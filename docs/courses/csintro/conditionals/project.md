@@ -2,11 +2,12 @@
 
 ![Close-up of game tokens](/static/courses/csintro/conditionals/game-pieces.jpg)
 
-This is an assignment for students to create a board game. It should take two to three class periods. If your school has a makerspace or an art classroom where students can access materials such as cardboard, poster paints, or markers, you might schedule your classes to work there. 
+This is an assignment for students to create a board game. It should take two to three class periods. If your school has a makerspace or an art classroom where students can access materials such as cardboard, poster paints, or markers, you might schedule your classes to work there.
 
 Once students have finished the first version of their games, schedule time for students to play each other’s games. Ideally, give them some time to give and gather feedback, then revise their games accordingly.
 
 ## Introduction
+
 Many board games use an electronic toy to signal moves, or provide clues. There are some funny examples online if you search for “electronic board game”. Here are some examples:
 
 [Dark Tower](https://youtu.be/cxrY7MWEkwE) (featuring Orson Welles): This is an example of a circular board game in which the pieces start on the edges and move in toward the middle.
@@ -16,6 +17,7 @@ Many board games use an electronic toy to signal moves, or provide clues. There 
 [Stop Thief Electronic Board Game commercial 1979](https://www.youtube.com/watch?v=q3wpPRdDy4E): This board game uses a device to give audio clues that help you to figure out what to do on the game board. It’s a good example of how you might use sound as a clue.
 
 ## Assignment
+
 Students should work in pairs to create an original board game project in which micro:bit is a central feature, and the rules of their board game should use Conditionals.
 
 Students will need to work together to come up with:
@@ -28,6 +30,7 @@ Students will need to work together to come up with:
 The micro:bit needs to work in conjunction with the game board and/or game pieces and should be a central feature of the game. Ideally, it should be more than a simple substitute for a six-sided die.
 
 The micro:bit might:
+
 * Simulate the results of a battle between two pieces
 * Randomly point in a different direction of travel
 * Generate a result based on its current incline
@@ -35,16 +38,15 @@ The micro:bit might:
 * Display a dynamic score
 * ... let your imaginations run wild!
 	
-Ideally, students should be writing their own versions of micro:bit programs to do something original. 
-Here is one simple program to discuss and use as an example:
+Ideally, students should be writing their own versions of micro:bit programs to do something original. Here is one simple program to discuss and use as an example:
 
 ![Close-up of game tokens](/static/courses/csintro/conditionals/battle-pieces.jpg)
 
 ### Battle pieces
 
-In this example, pieces start out at full strength and lose points based on random events on the board. When two pieces meet on the same space, they battle. 
-* Press A to enter the strength of piece A. 
-* Then press B to enter the strength of piece B. 
+In this example, pieces start out at full strength and lose points based on random events on the board. When two pieces meet on the same space, they battle.
+* Press A to enter the strength of piece A.
+* Then press B to enter the strength of piece B.
 * Shake the micro:bit to determine the winner of the battle, which is proportionately random to the strength of each piece.
 
 ```blocks
@@ -70,13 +72,15 @@ input.onGesture(Gesture.Shake, () => {
 ## Beta Testing
 
 Give students a chance to play each other’s games. The following process works well:
-* Have each pair of students set up their own project at their table. 
+
+* Have each pair of students set up their own project at their table.
 * Leave a clipboard or a laptop on the table for taking notes.
 * Rotate the students through each project, moving clockwise around the room:
 >* Play the game (5 min)
 >* Fill out a survey form (5 min)
 
 Sample Survey questions
+
 * How easy was it to figure out what to do?
 * What is something about this project that works really well?
 * What is something that would make this project even better?
@@ -95,6 +99,7 @@ Have students write a reflection of about 150–300 words, addressing the follow
 ## Board game example
 
 Space Race by K. and S.
+
 * How to win:  Starting from Earth, your goal is to progress to Mars.  The first person to reach Mars is the winner.
 * Rules:<br/>
 >**1** - Shake the micro:bit to randomize how far you get to advance.<br/>

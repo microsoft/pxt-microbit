@@ -2,9 +2,10 @@
 
 ![Two-Player Game Example Board](/static/courses/csintro/booleans/two-player.jpg)
 
-This is an assignment for students to come up with a micro:bit program that uses Boolean variables, Boolean operators, and possibly the random function. 
+This is an assignment for students to come up with a micro:bit program that uses Boolean variables, Boolean operators, and possibly the random function.
  
 ## Input
+
 Remind the students of all the different inputs available to them through the micro:bit.
 
 ![micro:bit input list](/static/courses/csintro/variables/input-list.png)
@@ -170,7 +171,7 @@ input.onGesture(Gesture.Shake, () => {
 })
 ```
 
-Button A displays an animation to tell you whether or not you should use sunscreen (on sunny or cloudy days but not at night or indoors.)
+Button A displays an animation to tell you whether or not you should use sunscreen (on sunny or cloudy days but not at night or indoors).
 
 Make a holder that can hold the micro:bit and a bottle of sunscreen.
 
@@ -296,9 +297,7 @@ spin = 0
 player1Turn = true
 ```
 
-
-This is an example of a board game in which the micro:bit displays an arrow pointing in a random direction. The paper legend indicates different actions the player must take. 
-
+This is an example of a board game in which the micro:bit displays an arrow pointing in a random direction. The paper legend indicates different actions the player must take.
 
 Here is a portion of the board game's code. A boolean variable is used to determine whose turn it is. If player1Turn is false, then it's player 2's turn. A random number is generated to show the arrow seventy-five percent of the time (for values of 0, 1, or 2).
 
@@ -310,9 +309,11 @@ input.onGesture(Gesture.Shake, () => {
     }
 })
 ```
+
 ## Reflection
 
 Have students write a reflection of about 150–300 words, addressing the following points:
+
 * How did you incorporate boolean variables into your micro:bit program?
 * How did you incorporate boolean operators into your micro:bit program?
 * Describe something in your project that you are proud of.

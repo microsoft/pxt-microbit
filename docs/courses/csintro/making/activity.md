@@ -10,7 +10,7 @@ For this activity, students will each need a micro:bit, a micro-USB cable, a com
 
 ![micro:bit kit](/static/courses/csintro/making/microbit-kit.jpg)
 
-Open a browser window to [makecode.com](https://makecode.com), and select the micro:bit code editor
+Open a browser window to [makecode.com](https://makecode.com), and select the micro:bit code editor.
 
 ![micro:bit card icon](/static/courses/csintro/making/microbit-card-icon.png)
 
@@ -20,8 +20,7 @@ From the top left corner of the screen, select the **Projects** Menu, and click 
 
 ![Import file](/static/courses/csintro/making/import-file.png)
 
-The program should look like the following in MakeCode. 
-It shows a repeating series of faces:
+The program should look like the following in MakeCode. It shows a repeating series of faces:
 
 ```blocks
 basic.forever(() => {
@@ -35,7 +34,7 @@ basic.forever(() => {
 ## Tour of Microsoft MakeCode
 
 * **Simulator**	 - on the left side of the screen, you will see a virtual micro:bit that will show what your program will look like running on a micro:bit. This is helpful for debugging, and instant feedback on program execution.
-* **Toolbox** - in the middle of the screen, there are a number of different categories, each containing a number of blocks that can be dragged into the programming workspace on the right. 
+* **Toolbox** - in the middle of the screen, there are a number of different categories, each containing a number of blocks that can be dragged into the programming workspace on the right.
 * **Workspace** - on the right side of the screen is the Programming Workspace where you will create your program.  Programs are constructed by snapping blocks together in this area.
 
 ![IDE tour](/static/courses/csintro/making/ide-tour.png)

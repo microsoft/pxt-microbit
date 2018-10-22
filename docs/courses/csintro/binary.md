@@ -2,7 +2,7 @@
 
 ![Binary numbers shown on a monitor](/static/courses/csintro/binary/binary-crt.png)
 
-This lesson presents the concept of binary digits and base-2 notation.  Students will learn how data is stored digitally and how it can be read and accessed.
+This lesson presents the concept of binary digits and base-2 notation. Students will learn how data is stored digitally and how it can be read and accessed.
 
 ## Lesson objectives
 

@@ -16,7 +16,7 @@ Students will...
 * Unplugged Activity: Infection simulation
 * micro:bit Activity: Marco Polo & Morse Code
 * Project: Radio
-* Assessment: Rubric 
+* Assessment: Rubric
 * Standards: Listed
 
 ## Lesson plan

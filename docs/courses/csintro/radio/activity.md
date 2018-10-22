@@ -4,18 +4,20 @@
 
 Guide the students in creating programs that use the radio communication blocks to send and receive data between two micro:bits.
 
-Notes:
-* When using the radio blocks, the micro:bit simulator will show two micro:bits 
+**Notes:**
+
+* When using the radio blocks, the micro:bit simulator will show two micro:bits.
 * In the simulator, a radio transmission icon will appear in the top right corner of the micro:bit. The icon will light up as the micro:bit is transmitting data.
 * In the simulator, all the code in the coding workspace runs on both virtual micro:bits. You should include for how to send data as well as what to do when it receives data.
 
 ## Marco Polo
+
 Send and receive strings between micro:bits.
 On button A pressed, we will send the string Marco and on button B pressed we will send the string Polo.
 
 * When communicating between micro:bits, it is important that the micro:bits involved are all using the same group ID. So, the first thing we will do is set the group ID number.
-* From the Radio menu, drag a 'radio set group' block to the coding workspace and place the block into the on start block. 
-* In the 'radio set group block', leave the default value of 1 for the group ID
+* From the Radio menu, drag a 'radio set group' block to the coding workspace and place the block into the on start block.
+* In the 'radio set group block', leave the default value of 1 for the group ID.
 
 ```blocks
 radio.setGroup(1)
@@ -36,9 +38,10 @@ input.onButtonPressed(Button.B, () => {
     radio.sendString("Polo")
 })
 ```
+
 * To display the data sent between the micro:bits, drag an 'on radio received receivedString' block to the coding workspace
 * From the Basic Toolbox drawer, drag a 'show string' block into the 'on radio received receivedString' block
-* From the Variables Toolbox drawer, drag a 'receivedString' variable block into the default string value of "Hello" in the 'show string' block 
+* From the Variables Toolbox drawer, drag a 'receivedString' variable block into the default string value of "Hello" in the 'show string' block
 
 Here is the complete Marco Polo program:
 
@@ -56,8 +59,9 @@ radio.setGroup(1)
 ```
 
 ## Mods
+
 * Add a 'show leds' block to the 'on start' block. We created an image of the initials MP.
-* From the Music Toolbox drawer, drag 2 'play tone' blocks to the coding workspace.  See [hack your headphones](/projects/hack-your-headphones) for how to connect a speaker or headphones to the micro:bit.
+* From the Music Toolbox drawer, drag 2 'play tone' blocks to the coding workspace. See [hack your headphones](/projects/hack-your-headphones) for how to connect a speaker or headphones to the micro:bit.
 * Drag one of the 'play tone' blocks to the 'on button A pressed' block, and the other one to the 'on button B pressed' block.
 * Change the default value in the 'play tone' block that is inside the 'on button A pressed' block to the value Low C.
 
@@ -93,7 +97,7 @@ Depending on the button pressed, send a different number value between micro:bit
 ![Morse code alphabet](/static/courses/csintro/radio/morse.png)
 
 * Set the group ID number.
-* Add a 'show string' block to the 'on start' block, to identify the program. 
+* Add a 'show string' block to the 'on start' block, to identify the program.
 * We choose to change the default string value of "Hello" to the value "Morse Code"
 
 ```blocks
@@ -101,8 +105,8 @@ radio.setGroup(1)
 basic.showString("Morse Code")
 ```
 
-* Drag 3 'on button pressed' blocks to the coding workspace. 
-* Leave one with the default value A, change the value in the second block to B, and change the value in the third block to A+B. 
+* Drag 3 'on button pressed' blocks to the coding workspace.
+* Leave one with the default value A, change the value in the second block to B, and change the value in the third block to A+B.
 * From the Radio Toolbox drawer, drag 3 'radio send number' blocks to the coding workspace.
 * Place one radio send number block into each of the 'on button pressed' blocks.
 * In the 'on button A pressed' block, leave the default number value of the 'radio send number' block as 0.
@@ -158,6 +162,7 @@ radio.onReceivedNumber(function (receivedNumber) {
 ```
 
 ### Try it!
+
 * Download your program to the micro:bit
 * Press button A on the sending micro:bit
 * Does this cause a dot to be displayed on the receiving micro:bit? 
@@ -181,8 +186,7 @@ radio.onReceivedNumber(function (receivedNumber) {
     }
 })
 ```
-Try running the program again. 
-Now each time the sender presses button A, you see a dot appear.
+Try running the program again. Now each time the sender presses button A, you see a dot appear.
 
 ![micro:bit dot display](/static/courses/csintro/radio/microbit-dot-display.png)
 
@@ -196,7 +200,6 @@ Now each time the sender presses button A, you see a dot appear.
 ### Morse code program
 
 ```blocks
-
 radio.onReceivedNumber(function (receivedNumber) {
     if (receivedNumber == 0) {
         basic.showLeds(`
@@ -246,12 +249,13 @@ basic.showString("Morse Code")
 ```
 
 ### Try it!
+
 * Download your program to the micro:bit
 * Press buttons A, B, and A+B together on the micro:bit
 
 Challenge question: Can our code be made more efficient?
 * Whenever you look over a program and see the same lines of code repeated, there is usually a chance to improve the code making it more efficient by reducing the number of lines of code
-* What lines are repeated in our program?  If...then, pause, clear screen 
+* What lines are repeated in our program? If...then, pause, clear screen
 * Can we edit the code to use only one 'if...then' block, one 'pause' block, and one 'clear screen' block? Yes!
 
 ## Making our code more efficient
@@ -261,10 +265,12 @@ They can do this by clicking on the blue gear-wheel icon in the top left corner 
 
 ![Add else-if to if-then block](/static/courses/csintro/radio/if-then-else-if.png)
 
-A final else
-In a conditional that might receive a number of different values, it is good coding practice to have a catch-all 'else' clause.  In our example, if any number value other than the ones we coded for (0,1, and 2) is received, we can signal the user that an error has occurred by using a 'show icon' block to display an X. 
+### A final else
 
-The pause and clear screen
+In a conditional that might receive a number of different values, it is good coding practice to have a catch-all 'else' clause. In our example, if any number value other than the ones we coded for (0,1, and 2) is received, we can signal the user that an error has occurred by using a 'show icon' block to display an X.
+
+### The pause and clear screen
+
 Rather than repeat these lines of code 3 times, we can move the 'pause' block and the 'clear screen' block outside of the edited 'if...then…else' block.
 
 Now our program runs as we designed it to run and is more efficient, too!

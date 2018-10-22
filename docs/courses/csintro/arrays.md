@@ -5,6 +5,7 @@
 This lesson introduces the fundamental concept of storing and retrieving data in an ordered fashion using Arrays. We'll also look at JavaScript as an alternate way of creating and modifying code. We'll look at the structure of a Melody as a list of notes.
  
 ## Lesson objectives
+
 Students will...
 * Explain the steps they would take to sort a series of numbers.
 * Recognize three common sorting algorithms.
@@ -14,6 +15,7 @@ Students will...
 * Demonstrate understanding and apply skills by creating a musical instrument that uses a micro:bit and a program that correctly and effectively uses Arrays to store data.
  
 ## Lesson structure
+
 * Introduction: Arrays
 * Unplugged Activity: Different sorts of people
 * micro:bit Activity: Headband charades, Starry Starry Night

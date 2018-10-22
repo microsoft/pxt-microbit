@@ -5,18 +5,17 @@
 Guide the students to create a program using Boolean variables and operators.
 We’ll use our pseudocode from the previous activity to code a double coin flipper program.
  
-For the first step, let’s create our variables.
-Make a variable for each of the following:
+For the first step, let’s create our variables. Make a variable for each of the following:
+
 * `CoinAHeads`
 * `CoinBHeads`
 * `PlayerAScore`
 * `PlayerBScore`
  
-Now we need to initialize the variable values.
-Put a 'set' variable block for each of these 4 variables inside the 'on start' block.
+Now we need to initialize the variable values. Put a 'set' variable block for each of these 4 variables inside the 'on start' block.
  
-The initial value of a variable is the value the variable will hold each time the program starts. 
-By default: 
+The initial value of a variable is the value the variable will hold each time the program starts. By default:
+
 * a string variable is initialized to an empty string `""`
 * a number variable is initialized to `0`
 * a Boolean is initialized to `false`
@@ -87,6 +86,7 @@ input.onGesture(Gesture.Shake, () => {
 ```
 
 Now our logic block is ready for the next steps of our pseudocode.
+
 1. Compare the current values of Coin A and Coin B.
 2. If the current true/false values of Coin A and Coin B are the same, add a point to Player A’s score.
 3. Otherwise, if the current true/false values of Coin A and Coin B are different, add a point to Player B’s score.
@@ -191,7 +191,8 @@ input.onGesture(Gesture.Shake, () => {
 })
 ``` 
 
-Try it out!
+### Try it out!
+
 Have the students play a few more rounds of the Double Coin Flip using their new micro:bit Double Coin Flipper!
  
 ## Boolean operator NOT in a Loop
@@ -207,7 +208,6 @@ input.onGesture(Gesture.Shake, () => {
 })
 ```
 
-Do you remember this code from our micro:bit Alarm?
-Can you read this code and tell what it does?
+Do you remember this code from our micro:bit Alarm? Can you read this code and tell what it does?
 
 _If the micro:bit is shaken, the micro:bit will play two tones twice and keep repeating this action until button A is pressed. So, after shaking, as long as ‘is button A pressed?’ is false, the two tone alarm will continue to repeat._

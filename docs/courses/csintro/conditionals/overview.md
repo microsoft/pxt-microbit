@@ -16,7 +16,7 @@ These are all conditionals! Conditionals follow the format of IF this, THEN that
 
 Have the students share a few conditionals from their own lives with the class or within small groups.
 
-Note: For older students, you can have them add the ELSE portion of a conditional.
+**Note:** For older students, you can have them add the ELSE portion of a conditional.
 >**IF** (condition is met), **THEN** (action performed), **ELSE** (different action performed)
 
 Example:
