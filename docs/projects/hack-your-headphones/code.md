@@ -25,8 +25,7 @@ input.onButtonPressed(Button.A, () => {
 });
 ```
 
-We click on the Logic drawer then insert a `if do` that will conditionally run code depending on whether the Boolean condition is true or false. Then insert the variable `light` into the first part of the inequality. The variable "light" will appear in the Variables drawer. Finally, we insert 25. Modify your code so that your code looks like this. If the `light level` is `less than` 25, play `ring tone` `C`. If this conditions is not true, play `ring tone` `A`. 
-
+We click on the Logic drawer then insert a `if do` that will conditionally run code depending on whether the Boolean condition is true or false. Then insert the variable `light` into the first part of the inequality. The variable "light" will appear in the Variables drawer. Finally, we insert 25. Modify your code so that your code looks like this. If the `light level` is `less than` 25, play `ring tone` `C`. If this conditions is not true, play `ring tone` `A`.
 
 ```blocks
 input.onButtonPressed(Button.A, () => {
@@ -40,7 +39,6 @@ input.onButtonPressed(Button.A, () => {
     }
 });
 ```
-
 
 We click on the Logic drawer then insert a `less than` sign into the first `if` conditional that will conditionally run code depending on whether the Boolean condition is true or false. Continue this logic to continue with these conditional statements. Click on the Logic drawer. Then we want to add additional conditional statements by clicking on the gear to the left of the `if`. Add 05  `else if` and 01 `else` inside the `if do` block structure.  If the `light level` is `less than` 50, play `ring tone` ``D``. If the `light level` is `less than` 100, play `ring tone` ``E``. If the `light level` is `less than` 150, play `ring tone` ``F`` If the `light level` is `less than` 180, play `ring tone` ``G``. If these conditions are not true, `ring tone` ``A``.
 

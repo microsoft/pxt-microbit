@@ -1,4 +1,3 @@
-
 # Milk Monster
 
 ## @description A milky-monster like robot built with the @boardname@

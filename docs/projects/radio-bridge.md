@@ -1,4 +1,4 @@
-# Radio bridge
+# Radio Bridge
 
 Transfer the packet data received from the radio to the serial port. Use buttons **A** and **B** to select a radio group number.
 

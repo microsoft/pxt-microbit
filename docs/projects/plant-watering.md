@@ -1,6 +1,5 @@
 # Plant Watering
 
-
 ## ~avatar avatar
 
 Water your plants automatically!
