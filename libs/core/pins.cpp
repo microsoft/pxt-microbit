@@ -381,9 +381,9 @@ namespace pins {
      * Write bytes to a 7-bit I2C `address`.
      */
     //%
-    void i2cWriteBuffer(int address, Buffer buf, bool repeat = false)
+    int void i2cWriteBuffer(int address, Buffer buf, bool repeat = false)
     {
-      uBit.i2c.write(address << 1, (char*)buf->data, buf->length, repeat);
+      return uBit.i2c.write(address << 1, (char*)buf->data, buf->length, repeat);
     }
 
     SPI* spi = NULL;
