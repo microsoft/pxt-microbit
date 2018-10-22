@@ -46,7 +46,12 @@ A message will appear at the bottom of the browser asking what you want to do
 with the file. 
 
 4. Click **Save As**
+
+![Save download file dialog](/static/mb/device/usb/save-as-edge.gif)
+
 5. Save the ``.hex`` file into the **MICROBIT** drive
+
+![Save hex file to MICROBIT drive](/static/mb/device/usb/save-as-windows.png)
 
 ## Step 3: Transfer the file to your micro:bit
 

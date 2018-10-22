@@ -44,7 +44,11 @@ it appears as a new drive under Devices.
 A message will appear at the bottom of the browser asking what you want to do
 with the file. Click **on the arrow next to Save** and click **Save As**
 
-In the save dialog, save the ``.hex`` file to the MICROBIT drive.
+![Save download file dialog](/static/mb/device/usb/save-as-ie.gif)
+
+In the save dialog, save as the ``.hex`` file to the MICROBIT drive.
+
+![Save hex file to MICROBIT drive](/static/mb/device/usb/save-as-windows.png)
 
 ## Step 3: Transfer the file to your micro:bit
 
