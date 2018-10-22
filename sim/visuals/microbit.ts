@@ -720,27 +720,30 @@ path.sim-board {
             el.style.perspectiveOrigin = "50% 50% 50%";
             el.style.perspective = "30em";
 
-            // update text
-            if (acc.flags & AccelerometerFlag.X) {
-                if (!this.accTextX) {
-                    this.accTextX = svg.child(this.g, "text", { x: 365, y: 260, class: "sim-text" }) as SVGTextElement;
-                    this.accTextX.textContent = "";
+            // don't display acc data when AB is on
+            if (!state.buttonPairState.usesButtonAB) {
+                // update text
+                if (acc.flags & AccelerometerFlag.X) {
+                    if (!this.accTextX) {
+                        this.accTextX = svg.child(this.g, "text", { x: 365, y: 260, class: "sim-text" }) as SVGTextElement;
+                        this.accTextX.textContent = "";
+                    }
+                    this.accTextX.textContent = `ax:${x}`;
                 }
-                this.accTextX.textContent = `ax:${x}`;
-            }
-            if (acc.flags & AccelerometerFlag.Y) {
-                if (!this.accTextY) {
-                    this.accTextY = svg.child(this.g, "text", { x: 365, y: 285, class: "sim-text" }) as SVGTextElement;
-                    this.accTextY.textContent = "";
+                if (acc.flags & AccelerometerFlag.Y) {
+                    if (!this.accTextY) {
+                        this.accTextY = svg.child(this.g, "text", { x: 365, y: 285, class: "sim-text" }) as SVGTextElement;
+                        this.accTextY.textContent = "";
+                    }
+                    this.accTextY.textContent = `ay:${-y}`;
                 }
-                this.accTextY.textContent = `ay:${-y}`;
-            }
-            if (acc.flags & AccelerometerFlag.Z) {
-                if (!this.accTextZ) {
-                    this.accTextZ = svg.child(this.g, "text", { x: 365, y: 310, class: "sim-text" }) as SVGTextElement;
-                    this.accTextZ.textContent = "";
+                if (acc.flags & AccelerometerFlag.Z) {
+                    if (!this.accTextZ) {
+                        this.accTextZ = svg.child(this.g, "text", { x: 365, y: 310, class: "sim-text" }) as SVGTextElement;
+                        this.accTextZ.textContent = "";
+                    }
+                    this.accTextZ.textContent = `az:${z}`;
                 }
-                this.accTextZ.textContent = `az:${z}`;
             }
         }
 
