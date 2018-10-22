@@ -45,5 +45,10 @@ Fun games to build with your @boardname@.
   "description": "Karel likes to draw, help Karel make LED art!",
   "url": "/projects/karel",
   "imageUrl": "/static/mb/projects/karel.png"
+}, {
+  "name": "Crashy bird",
+  "description": "Help the flying bird move through the obstacles on the LED screen",
+  "url":"/projects/crashy-bird",
+  "imageUrl":"/static/mb/projects/crashy-bird.png"
 }]
 ```
