@@ -44,7 +44,7 @@ it appears as a new drive under Devices.
 
 ![Save download file dialog](/static/mb/device/usb/save-file-firefox.gif)
 
-A window may appear asking whether you want to save or open the `.hex` file. If it doesn't go click on the downloads icon at the top of the browser.
+A window may appear asking whether you want to save or open the `.hex` file. If it doesn't, go click on the downloads icon at the top of the browser.
 
 ![Save file prompt](/static/mb/device/usb/open-file-firefox.png)
 
