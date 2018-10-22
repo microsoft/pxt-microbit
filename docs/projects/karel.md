@@ -212,5 +212,6 @@ basic.forever(function () {
 
 ## About the authors
 
-This project was contributed by Dr. David Fisher a professor at [Rose-Hulman Institute of Technology](https://www.rose-hulman.edu/academics/faculty/fisher-david-fisherds.html). Dr. Fisher loves educational robotics and runs various outreach programming activities, including a summer camp, called [Connecting with Code](https://connectingwithcode.org), which gives a @boardname@ to each participant. 
-Upgraded to v1 by the MakeCode team.
+This project\*\* was contributed by Dr. David Fisher a professor at [Rose-Hulman Institute of Technology](https://www.rose-hulman.edu/academics/faculty/fisher-david-fisherds.html). Dr. Fisher loves educational robotics and runs various outreach programming activities, including a summer camp, called [Connecting with Code](https://connectingwithcode.org), which gives a @boardname@ to each participant.
+
+\*\* Upgraded to **v1** by the MakeCode team.
