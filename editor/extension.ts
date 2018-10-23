@@ -117,16 +117,18 @@ namespace pxt.editor {
 
         reconnectAsync(first: boolean) {
             // configure serial at 115200
-            if (!first)
-                return this.packetIo.reconnectAsync()
-                    .then(() => this.allocDAP())
-                    .then(() => this.cortexM.init())
-                    .then(() => this.cmsisdap.cmdNums(0x82, [0x00, 0xC2, 0x01, 0x00]))
-                    .then(() => { }, err => { this.useSerial = false })
-            else
-                return this.cortexM.init()
-                    .then(() => this.cmsisdap.cmdNums(0x82, [0x00, 0xC2, 0x01, 0x00]))
-                    .then(() => { }, err => { this.useSerial = false })
+            let p = Promise.resolve();
+            if (!first) {
+                p = this.packetIo.reconnectAsync()
+                    .then(() => this.allocDAP());
+            }
+
+            return p
+                .then(() => this.cortexM.init())
+                .then(() => {
+                    return this.cmsisdap.cmdNums(0x82, [0x00, 0xC2, 0x01, 0x00])
+                        .then(() => { this.useSerial = true }, (err: any) => { this.useSerial = false; });
+                });
         }
 
         disconnectAsync() {
@@ -157,7 +159,8 @@ namespace pxt.editor {
     let previousDapWrapper: DAPWrapper;
     function dapAsync() {
         if (previousDapWrapper)
-            return Promise.resolve(previousDapWrapper)
+            return previousDapWrapper.reconnectAsync(false) // Always fully reconnect to handle device unplugged mid-session
+                .then(() => previousDapWrapper);
         return Promise.resolve()
             .then(() => {
                 if (previousDapWrapper) {
@@ -632,33 +635,33 @@ namespace pxt.editor {
 
         // radio
         /*
-  <block type="radio_on_packet" x="174" y="120">
+    <block type="radio_on_packet" x="174" y="120">
     <mutation callbackproperties="receivedNumber" renamemap="{}"></mutation>
     <field name="receivedNumber">receivedNumber</field>
-  </block>
-  <block type="radio_on_packet" disabled="true" x="127" y="263">
+    </block>
+    <block type="radio_on_packet" disabled="true" x="127" y="263">
     <mutation callbackproperties="receivedString,receivedNumber" renamemap="{&quot;receivedString&quot;:&quot;name&quot;,&quot;receivedNumber&quot;:&quot;value&quot;}"></mutation>
     <field name="receivedString">name</field>
     <field name="receivedNumber">value</field>
-  </block>
-  <block type="radio_on_packet" disabled="true" x="162" y="420">
+    </block>
+    <block type="radio_on_packet" disabled="true" x="162" y="420">
     <mutation callbackproperties="receivedString" renamemap="{}"></mutation>
     <field name="receivedString">receivedString</field>
-  </block>
+    </block>
 
-  converts to
+    converts to
 
     <block type="radio_on_number" x="196" y="208">
     <field name="HANDLER_receivedNumber" id="DCy(W;1)*jLWQUpoy4Mm" variabletype="">receivedNumber</field>
-  </block>
-  <block type="radio_on_value" x="134" y="408">
+    </block>
+    <block type="radio_on_value" x="134" y="408">
     <field name="HANDLER_name" id="*d-Jm^MJXO]Djs(dTR*?" variabletype="">name</field>
     <field name="HANDLER_value" id="A6HQjH[k^X43o3h775+G" variabletype="">value</field>
-  </block>
-  <block type="radio_on_string" x="165" y="583">
+    </block>
+    <block type="radio_on_string" x="165" y="583">
     <field name="HANDLER_receivedString" id="V9KsE!h$(iO?%W:[32CV" variabletype="">receivedString</field>
-  </block>
-  */
+    </block>
+    */
         const varids: pxt.Map<string> = {};
 
         function addField(node: Element, renameMap: pxt.Map<string>, name: string) {
