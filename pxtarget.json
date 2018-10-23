@@ -250,6 +250,7 @@
         "projectGallery": "projects",
         "exampleGallery": "examples",
         "crowdinProject": "kindscript",
+        "crowdinBranch": "v0",
         "boardName": "micro:bit",
         "driveDisplayName": "MICROBIT",
         "sideDoc": "tutorials/getting-started",
