@@ -168,6 +168,7 @@
   "basic.showString|param|interval": "how fast to shift characters; eg: 150, 100, 200, -100",
   "basic.showString|param|text": "the text to scroll on the screen, eg: \"Hello!\"",
   "control": "Runtime and event utilities.",
+  "control.__midiSend": "Informs simulator/runtime of a MIDI message\nInternal function to support the simulator.",
   "control.assert": "If the condition is false, display msg on serial console, and panic with code 098.",
   "control.deviceName": "Make a friendly name for the device based on its serial number",
   "control.deviceSerialNumber": "Derive a unique, consistent serial number of this device from internal data.",
