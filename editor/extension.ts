@@ -635,33 +635,33 @@ namespace pxt.editor {
 
         // radio
         /*
-<block type="radio_on_packet" x="174" y="120">
-<mutation callbackproperties="receivedNumber" renamemap="{}"></mutation>
-<field name="receivedNumber">receivedNumber</field>
-</block>
-<block type="radio_on_packet" disabled="true" x="127" y="263">
-<mutation callbackproperties="receivedString,receivedNumber" renamemap="{&quot;receivedString&quot;:&quot;name&quot;,&quot;receivedNumber&quot;:&quot;value&quot;}"></mutation>
-<field name="receivedString">name</field>
-<field name="receivedNumber">value</field>
-</block>
-<block type="radio_on_packet" disabled="true" x="162" y="420">
-<mutation callbackproperties="receivedString" renamemap="{}"></mutation>
-<field name="receivedString">receivedString</field>
-</block>
+  <block type="radio_on_packet" x="174" y="120">
+    <mutation callbackproperties="receivedNumber" renamemap="{}"></mutation>
+    <field name="receivedNumber">receivedNumber</field>
+  </block>
+  <block type="radio_on_packet" disabled="true" x="127" y="263">
+    <mutation callbackproperties="receivedString,receivedNumber" renamemap="{&quot;receivedString&quot;:&quot;name&quot;,&quot;receivedNumber&quot;:&quot;value&quot;}"></mutation>
+    <field name="receivedString">name</field>
+    <field name="receivedNumber">value</field>
+  </block>
+  <block type="radio_on_packet" disabled="true" x="162" y="420">
+    <mutation callbackproperties="receivedString" renamemap="{}"></mutation>
+    <field name="receivedString">receivedString</field>
+  </block>
 
-converts to
+  converts to
 
-<block type="radio_on_number" x="196" y="208">
-<field name="HANDLER_receivedNumber" id="DCy(W;1)*jLWQUpoy4Mm" variabletype="">receivedNumber</field>
-</block>
-<block type="radio_on_value" x="134" y="408">
-<field name="HANDLER_name" id="*d-Jm^MJXO]Djs(dTR*?" variabletype="">name</field>
-<field name="HANDLER_value" id="A6HQjH[k^X43o3h775+G" variabletype="">value</field>
-</block>
-<block type="radio_on_string" x="165" y="583">
-<field name="HANDLER_receivedString" id="V9KsE!h$(iO?%W:[32CV" variabletype="">receivedString</field>
-</block>
-    */
+  <block type="radio_on_number" x="196" y="208">
+    <field name="HANDLER_receivedNumber" id="DCy(W;1)*jLWQUpoy4Mm" variabletype="">receivedNumber</field>
+  </block>
+  <block type="radio_on_value" x="134" y="408">
+    <field name="HANDLER_name" id="*d-Jm^MJXO]Djs(dTR*?" variabletype="">name</field>
+    <field name="HANDLER_value" id="A6HQjH[k^X43o3h775+G" variabletype="">value</field>
+  </block>
+  <block type="radio_on_string" x="165" y="583">
+    <field name="HANDLER_receivedString" id="V9KsE!h$(iO?%W:[32CV" variabletype="">receivedString</field>
+  </block>
+  */
         const varids: pxt.Map<string> = {};
 
         function addField(node: Element, renameMap: pxt.Map<string>, name: string) {
