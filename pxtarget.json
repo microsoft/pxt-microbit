@@ -63,13 +63,13 @@
                 {
                     "type": "api",
                     "map": {
-                        "bluetooth\\s*\\.uartRead\\s*\\((.*?)\\)": "bluetooth.uartReadUntil($1)",
-                        "bluetooth\\s*\\.uartWrite\\s*\\((.*?)\\)": "bluetooth.uartWriteUntil($1)",
-                        "input\\s*\\.calibrate\\s*\\(": "input.calibrateCompass(",
-                        "radio\\s*\\.onDataPacketReceived\\(\\s*\\(\\{\\s*receivedNumber\\s*\\}\\)\\s*=>\\s*\\{": "radio.onReceivedNumber(function (receivedNumber) {",
-                        "radio\\s*\\.onDataPacketReceived\\(\\s*\\(\\{\\s*receivedString: name, receivedNumber: value\\s*\\}\\)\\s*=>\\s*\\{": "radio.onReceivedValue(function (name, value) {",
-                        "radio\\s*\\.onDataPacketReceived\\(\\s*\\(\\{\\s*receivedString\\s*\\}\\)\\s*=>\\s*\\{": "radio.onReceivedString(function (receivedString) {",
-                        "Math\\s*\\.random\\(\\s*((?:-|\\+)?\\s*(?:(?:\\d+)|(?:0x[0-9a-fA-F]+)))\\s*\\)": "Math.randomRange(0, $1)"
+                        "bluetooth\\s*\\.\\s*uartRead\\s*\\((.*?)\\)": "bluetooth.uartReadUntil($1)",
+                        "bluetooth\\s*\\.\\s*uartWrite\\s*\\((.*?)\\)": "bluetooth.uartWriteUntil($1)",
+                        "input\\s*\\.\\s*calibrate\\s*\\(": "input.calibrateCompass(",
+                        "radio\\s*\\.\\s*onDataPacketReceived\\(\\s*\\(\\{\\s*receivedNumber\\s*\\}\\)\\s*=>\\s*\\{": "radio.onReceivedNumber(function (receivedNumber) {",
+                        "radio\\s*\\.\\s*onDataPacketReceived\\(\\s*\\(\\{\\s*receivedString: name, receivedNumber: value\\s*\\}\\)\\s*=>\\s*\\{": "radio.onReceivedValue(function (name, value) {",
+                        "radio\\s*\\.\\s*onDataPacketReceived\\(\\s*\\(\\{\\s*receivedString\\s*\\}\\)\\s*=>\\s*\\{": "radio.onReceivedString(function (receivedString) {",
+                        "Math\\s*\\.\\s*random\\(": "Math.randomRange(0, "
                     }
                 },
                 {
