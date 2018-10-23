@@ -69,7 +69,7 @@
                         "radio\\s*\\.\\s*onDataPacketReceived\\(\\s*\\(\\{\\s*receivedNumber\\s*\\}\\)\\s*=>\\s*\\{": "radio.onReceivedNumber(function (receivedNumber) {",
                         "radio\\s*\\.\\s*onDataPacketReceived\\(\\s*\\(\\{\\s*receivedString: name, receivedNumber: value\\s*\\}\\)\\s*=>\\s*\\{": "radio.onReceivedValue(function (name, value) {",
                         "radio\\s*\\.\\s*onDataPacketReceived\\(\\s*\\(\\{\\s*receivedString\\s*\\}\\)\\s*=>\\s*\\{": "radio.onReceivedString(function (receivedString) {",
-                        "Math\\s*\\.\\s*random\\(": "Math.randomRange(0, "
+                        "Math\\s*\\.\\s*random\\s*\\(": "Math.randomRange(0, "
                     }
                 },
                 {
