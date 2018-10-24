@@ -39,7 +39,44 @@
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel"
-        ]
+        ],
+        "releases": {
+            "v0": [
+                "dexterind/pxt-gigglebot#v1.0.6",
+                "MUSELAB/pxt-wifi-shield#v1.8.27",
+                "srs/pxt-bitbot#v0.4.1",
+                "pimoroni/pxt-scrollbit#v0.0.3",
+                "laboratoryforplayfulcomputation/pxt-blockytalkyble#v0.0.8",
+                "sparkfun/pxt-weather-bit#v0.0.12",
+                "kittenbot/pxt-robotbit#v0.2.4",
+                "LaboratoryForPlayfulComputation/pxt-BlockyTalkyBLE#v0.0.8",
+                "mbitfun/pxt-katakana#v1.0.16",
+                "sunfounder/pxt-sloth#v1.0.8",
+                "emwta/pxt-iBit#v2.0.1",
+                "1010Technologies/pxt-makerbit#v0.17.0",
+                "kitronikltd/pxt-kitronik-motor-driver#v0.0.6",
+                "pizayanz/pxt-linebeacon#v0.0.1",
+                "chevyng/pxt-ucl-junkrobot#v0.0.12",
+                "microsoft/pxt-midi#v2.1.11",
+                "CoderDojoOlney/pxt-olney#v0.0.9",
+                "dexterind/pxt-giggle#v1.0.6",
+                "tinkertanker/pxt-oled-ssd1306#v1.2.3",
+                "microsoft/pxt-neopixel#v0.6.10",
+                "microsoft/pxt-max6675#v1.0.3",
+                "microsoft/pxt-microturtle#v0.0.9",
+                "minodekit/pxt-minode#v1.0.5",
+                "pimoroni/pxt-envirobit#v0.0.2",
+                "microsoft/pxt-bluetooth-temperature-sensor#v0.0.11",
+                "microsoft/pxt-sonar#v0.0.5",
+                "vengit/pxt-sbrick#v1.0.4",
+                "microsoft/pxt-radio-blockchain#v0.1.4",
+                "seeed-studio/pxt-grove#v0.1.0",
+                "microsoft/pxt-bluetooth-midi#v2.0.13",
+                "pimoroni/pxt-automationbit#v0.0.2",
+                "sparkfun/pxt-gamer-bit#v0.0.6",
+                "kitronikltd/pxt-kitronik-servo-lite#v1.0.5"
+              ]
+        }
     },
     "languages": [
         "en",
@@ -68,5 +105,5 @@
         "zh-CN",
         "zh-TW"
     ],
-    "newEditorLink" :  "https://makecode.microbit.org/beta"
+    "newEditorLink": "https://makecode.microbit.org/beta"
 }
