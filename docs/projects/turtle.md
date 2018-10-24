@@ -7,19 +7,19 @@ Turtle graphics on your @boardname@ screen!
 ```codecard
 [{
   "name": "Square",
-  "description": "Move in a square",
+  "description": "Move the turtle in a square pattern.",
   "url": "/projects/turtle-square",
   "imageUrl":"/static/mb/projects/turtle-square.png",
   "cardType": "tutorial"
 }, {
   "name": "Spiral",
-  "description": "Move in a spiral",
+  "description": "Move the turtle in a spiral.",
   "url": "/projects/turtle-spiral",
   "imageUrl":"/static/mb/projects/turtle-spiral.png",
   "cardType": "side"
 }, {
   "name": "Scanner",
-  "description": "Scan down the screen",
+  "description": "Let the turtle scan across and down the screen.",
   "url": "/projects/turtle-scanner",
   "imageUrl":"/static/mb/projects/turtle-scanner.png",
   "cardType": "side"
