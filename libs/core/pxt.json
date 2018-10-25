@@ -39,6 +39,7 @@
         "serial.cpp",
         "serial.ts",
         "buffer.cpp",
+        "buffer.ts",
         "pxtparts.json",
         "parts/speaker.svg",
         "parts/headphone.svg"
