@@ -415,7 +415,7 @@
   "music.tempo": "Returns the tempo in beats per minute. Tempo is the speed (bpm = beats per minute) at which notes play. The larger the tempo value, the faster the notes will play.",
   "parseFloat": "Convert a string to a number.",
   "parseInt": "Convert a string to an integer.",
-  "pins": "Control currents in Pins for analog/digital signals, servos, i2c, ...\n\nControl currents in Pins for analog/digital signals, servos, i2c, ...",
+  "pins": "Control currents in Pins for analog/digital signals, servos, i2c, ...",
   "pins.P0": "Pin P0",
   "pins.P1": "Pin P1",
   "pins.P10": "Pin P10",
