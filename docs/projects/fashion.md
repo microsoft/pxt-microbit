@@ -25,6 +25,11 @@
   "url": "/projects/step-counter",
   "imageUrl":"/static/mb/projects/step-counter.png",
   "cardType": "side"
+}, {
+  "name": "Duct Tape Watch",
+  "description": "Build a watch from duct tape",
+  "url": "/projects/duct-tape-watch",
+  "imageUrl": "/static/mb/projects/duct-tape-watch.png"
 }]
 ```
 

@@ -41,6 +41,12 @@ namespace control {
         }
     }
 
+    export function fail(message: string) {
+        console.log("Fatal failure: ")
+        console.log(message)
+        panic(108)
+    }
+
     /**
      * Display warning in the simulator.
      */

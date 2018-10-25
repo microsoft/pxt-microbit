@@ -23,12 +23,12 @@ input.onButtonPressed(Button.A, () => {
 
 ## Receiving a smiley
 
-We add a ``||radio:on radio received||`` block that will run code whenever a new "mood" message comes in.
+We add a ``||radio:on received number||`` block that will run code whenever a new "mood" message comes in.
 The ``receivedNumber`` variable contains the numeric value that was sent. Since we've decided that
 `0` is **smiley**, we add a conditional ``||logic:if then||`` statement to show this icon.
 
 ```blocks
-radio.onDataPacketReceived( ({ receivedNumber }) =>  {
+radio.onReceivedNumber(function (receivedNumber) {
     if (receivedNumber == 0) {
         basic.showIcon(IconNames.Happy)
     }
@@ -46,10 +46,10 @@ input.onButtonPressed(Button.B, () => {
 })
 ```
 
-If the ``||radio:on radio received||`` block, we add another conditional ``||logic:if then||`` statement to handle the **frowny** "mood code".
+If the ``||radio:on received number||`` block, we add another conditional ``||logic:if then||`` statement to handle the **frowny** "mood code".
 
 ```blocks
-radio.onDataPacketReceived( ({ receivedNumber }) =>  {
+radio.onReceivedNumber(function (receivedNumber) {
     if (receivedNumber == 0) {
         basic.showIcon(IconNames.Happy)
     }
@@ -76,7 +76,7 @@ input.onButtonPressed(Button.B, () => {
     radio.sendNumber(1)
     basic.showIcon(IconNames.Sad)
 })
-radio.onDataPacketReceived( ({ receivedNumber }) =>  {
+radio.onReceivedNumber(function (receivedNumber) {
     if (receivedNumber == 0) {
         basic.showIcon(IconNames.Happy)
     }

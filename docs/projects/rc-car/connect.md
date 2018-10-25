@@ -7,10 +7,10 @@ https://youtu.be/XXesoUC0XBU
 We can use the radio on the @boardname@ to control the toy car remotely.
 A second @boardname@ will send commands to control the throttle and the steering.
 
-```blocks-ignore
+```blocks
 let steering = 0
 let throttle = 0
-radio.onDataPacketReceived( ({ receivedString: name, receivedNumber: value }) =>  {
+radio.onReceivedValue(function (name: string, value: number) {
     led.toggle(0, 0)
     if (name == "throttle") {
         if (value > 0) {

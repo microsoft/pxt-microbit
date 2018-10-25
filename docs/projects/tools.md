@@ -1,9 +1,16 @@
 # Tools
 
-## Calibration
+## Sensors
 
 ```codecard
-[{
+[
+{
+    "name": "Plot Acceleration",
+    "description": "Use the screen to how the accelerometer works",
+    "url": "/projects/plot-acceleration",
+    "imageUrl": "/static/mb/projects/plot-acceleration.png",
+    "cardType": "side"
+} ,{
   "name": "Light Level Meter",
   "description": "Measure light input",
   "url": "/projects/light-level-meter",

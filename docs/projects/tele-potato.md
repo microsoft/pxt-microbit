@@ -77,7 +77,7 @@ input.onGesture(Gesture.Shake, () => {
 
 ### Receiving the potato
 
-Receiving the potato is done in the [``||radio:on radio received||``](/reference/radio/on-data-packet-received) block.
+Receiving the potato is done in the [``||radio:on received number||``](/reference/radio/on-received-number) block.
 The **receivedNumber** represents the potato and is stored in the **potato** variable.
 
 ```blocks

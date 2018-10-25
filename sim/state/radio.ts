@@ -30,7 +30,7 @@ namespace pxsim {
             Runtime.postMessage(<SimulatorRadioPacketMessage>{
                 type: "radiopacket",
                 rssi: -42, // -42 is the strongest signal
-                serial: b.radioState.bus.transmitSerialNumber ? pxsim.control.deviceSerialNumber() : 0,
+                serial: b.radioState.transmitSerialNumber ? pxsim.control.deviceSerialNumber() : 0,
                 time: new Date().getTime(),
                 payload
             })
@@ -52,15 +52,20 @@ namespace pxsim {
         }
     }
 
-    export class RadioBus {
-        // uint8_t radioDefaultGroup = MICROBIT_RADIO_DEFAULT_GROUP;
+    export class RadioState {
         power = 0;
         transmitSerialNumber = false;
         datagram: RadioDatagram;
+        groupId: number;
 
-        constructor(private runtime: Runtime) {
+        constructor(runtime: Runtime) {
             this.datagram = new RadioDatagram(runtime);
             this.power = 6; // default value
+            this.groupId = 0;
+        }
+
+        public setGroup(id: number) {
+            this.groupId = id & 0xff; // byte only
         }
 
         setTransmitPower(power: number) {
@@ -71,37 +76,19 @@ namespace pxsim {
             this.transmitSerialNumber = !!sn;
         }
 
-        broadcast(msg: number, groupId: number) {
+        raiseEvent(id: number, eventid: number) {
             Runtime.postMessage(<SimulatorEventBusMessage>{
-                type: "event",
-                id: DAL.MES_BROADCAST_GENERAL_ID,
-                eventid: msg,
+                type: "eventbus",
+                id,
+                eventid,
                 power: this.power,
-                group: groupId
+                group: this.groupId
             })
         }
-    }
 
-    export class RadioState {
-        bus: RadioBus;
-        groupId: number;
-
-        constructor(runtime: Runtime) {
-            this.bus = new RadioBus(runtime);
-            this.groupId = 0;
-        }
-
-        public setGroup(id: number) {
-            this.groupId = id & 0xff; // byte only
-        }
-
-        public broadcast(msg: number) {
-            this.bus.broadcast(msg, this.groupId)
-        }
-
-        public receivePacket(packet: SimulatorRadioPacketMessage) {
+        receivePacket(packet: SimulatorRadioPacketMessage) {
             if (this.groupId == packet.payload.groupId)
-                this.bus.datagram.queue(packet)
+                this.datagram.queue(packet)
         }
     }
 }
@@ -114,12 +101,8 @@ namespace pxsim.radio {
         BUFFER = 3
     }
 
-    export function broadcastMessage(msg: number): void {
-        board().radioState.broadcast(msg);
-    }
-
-    export function onBroadcastMessageReceived(msg: number, handler: RefAction): void {
-        pxtcore.registerWithDal(DAL.MES_BROADCAST_GENERAL_ID, msg, handler);
+    export function raiseEvent(id: number, eventid: number): void {
+        board().radioState.raiseEvent(id, eventid);
     }
 
     export function setGroup(id: number): void {
@@ -127,15 +110,15 @@ namespace pxsim.radio {
     }
 
     export function setTransmitPower(power: number): void {
-        board().radioState.bus.setTransmitPower(power);
+        board().radioState.setTransmitPower(power);
     }
 
     export function setTransmitSerialNumber(transmit: boolean): void {
-        board().radioState.bus.setTransmitSerialNumber(transmit);
+        board().radioState.setTransmitSerialNumber(transmit);
     }
 
     export function sendNumber(value: number): void {
-        board().radioState.bus.datagram.send({
+        board().radioState.datagram.send({
             type: PacketPayloadType.NUMBER,
             groupId: board().radioState.groupId,
             numberData: value,
@@ -146,7 +129,7 @@ namespace pxsim.radio {
         if (msg === undefined) return;
 
         msg = msg.substr(0, 19);
-        board().radioState.bus.datagram.send({
+        board().radioState.datagram.send({
             type: PacketPayloadType.STRING,
             groupId: board().radioState.groupId,
             stringData: msg,
@@ -157,7 +140,7 @@ namespace pxsim.radio {
         if (!buf) return;
 
         const data = buf.data.slice(0, 18);
-        board().radioState.bus.datagram.send({
+        board().radioState.datagram.send({
             type: PacketPayloadType.STRING,
             groupId: board().radioState.groupId,
             bufferData: data
@@ -166,19 +149,19 @@ namespace pxsim.radio {
 
     export function writeValueToSerial(): void {
         const b = board();
-        writePacketToSerial(b, b.radioState.bus.datagram.recv())
+        writePacketToSerial(b, b.radioState.datagram.recv())
     }
 
     export function writeReceivedPacketToSerial(): void {
         const b = board();
-        writePacketToSerial(b, b.radioState.bus.datagram.lastReceived);
+        writePacketToSerial(b, b.radioState.datagram.lastReceived);
     }
 
     export function sendValue(name: string, value: number) {
         name = name.substr(0, 12);
         const msg: number[] = [];
         msg.push()
-        board().radioState.bus.datagram.send({
+        board().radioState.datagram.send({
             type: PacketPayloadType.VALUE,
             groupId: board().radioState.groupId,
             stringData: name,
@@ -187,17 +170,17 @@ namespace pxsim.radio {
     }
 
     export function receiveNumber(): number {
-        const packet = board().radioState.bus.datagram.recv();
+        const packet = board().radioState.datagram.recv();
         return receivedNumber();
     }
 
     export function receiveString(): string {
-        const packet = board().radioState.bus.datagram.recv();
+        const packet = board().radioState.datagram.recv();
         return receivedString();
     }
 
     export function receivedSignalStrength(): number {
-        return board().radioState.bus.datagram.lastReceived.rssi;
+        return board().radioState.datagram.lastReceived.rssi;
     }
 
     export function onDataReceived(handler: RefAction): void {
@@ -206,23 +189,23 @@ namespace pxsim.radio {
     }
 
     export function receivedNumber(): number {
-        return board().radioState.bus.datagram.lastReceived.payload.numberData || 0;
+        return board().radioState.datagram.lastReceived.payload.numberData || 0;
     }
 
     export function receivedSerial(): number {
-        return board().radioState.bus.datagram.lastReceived.serial;
+        return board().radioState.datagram.lastReceived.serial;
     }
 
     export function receivedString(): string {
-        return initString(board().radioState.bus.datagram.lastReceived.payload.stringData || "");
+        return initString(board().radioState.datagram.lastReceived.payload.stringData || "");
     }
 
     export function receivedBuffer(): RefBuffer {
-        return new RefBuffer(board().radioState.bus.datagram.lastReceived.payload.bufferData || new Uint8Array(0))
+        return new RefBuffer(board().radioState.datagram.lastReceived.payload.bufferData || new Uint8Array(0))
     }
 
     export function receivedTime(): number {
-        return board().radioState.bus.datagram.lastReceived.time;
+        return board().radioState.datagram.lastReceived.time;
     }
 
     function writePacketToSerial(b: DalBoard, p: PacketBuffer) {

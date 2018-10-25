@@ -36,14 +36,21 @@ it appears as a new drive under Devices.
 
 ## Step 2: Download your program
 
-1. Open your project on @homeurl@
-2. Click **Download**
+1. Open your project on @homeurl@.
+2. Click **Download**.
 3. When prompted, choose to **save** the compiled file onto your computer. The
    prompt will be different depending on which browser you are using, or
-   whether you are using a Windows computer or a Mac
+   whether you are using a Windows computer or a Mac.
 
-A window will appear asking whether you want to save or open the `.hex` file.
-Select **Save As** and save it to the MICROBIT drive.
+![Save download file dialog](/static/mb/device/usb/save-file-firefox.gif)
+
+A window may appear asking whether you want to save or open the `.hex` file. If it doesn't, go click on the downloads icon at the top of the browser.
+
+![Save file prompt](/static/mb/device/usb/open-file-firefox.png)
+
+Click the folder icon and copy the file from the list of downloads to the **MICROBIT** drive.
+
+![Move hex file to MICROBIT drive](/static/mb/device/usb/move-hex-file-firefox.png)
 
 ## Step 3: Transfer the file to your micro:bit
 

@@ -97,7 +97,7 @@ let players: number[] = [0]
 
 ## Step 4: Receiving a message (part 1)
 
-In an ``||radio:on radio received||`` event, we receive the status from another @boardname@. Click on the **gearwheel** to add the ``serial`` parameter as we will need it to identify who sent that packet.
+In an ``||radio:on received number||`` event, we receive the status from another @boardname@. Click on the **gearwheel** to add the ``serial`` parameter as we will need it to identify who sent that packet.
 
 We compute three values from the data received:
 
@@ -111,7 +111,9 @@ let player_index = 0
 let players: number[] = [0]
 let tool = 0
 let found = false
-radio.onDataPacketReceived(({ receivedNumber, serial: serialNumber }) => {
+let serialNumber = 0;
+radio.onReceivedNumber(function (receivedNumber) {
+    serialNumber = radio.receivedPacket(RadioPacketProperty.SerialNumber)
     match = tool == receivedNumber
     player_index = players.indexOf(serialNumber)
     found = player_index >= 0
@@ -134,7 +136,9 @@ let players: number[] = [0]
 let tool = 0
 let found = false
 let temp = 0
-radio.onDataPacketReceived(({ receivedNumber, serial: serialNumber }) => {
+let serialNumber = 0;
+radio.onReceivedNumber(function (receivedNumber) {
+    serialNumber = radio.receivedPacket(RadioPacketProperty.SerialNumber)
     match = tool == receivedNumber
     player_index = players.indexOf(serialNumber)
     found = player_index >= 0
@@ -183,11 +187,9 @@ let player_index = 0
 let tool = 0
 let match = false
 let players: number[] = []
-input.onGesture(Gesture.Shake, () => {
-    players = [0]
-    tool = Math.randomRange(0, 3)
-})
-radio.onDataPacketReceived( ({ receivedNumber, serial: serialNumber }) =>  {
+let serialNumber = 0;
+radio.onReceivedNumber(function (receivedNumber) {
+    serialNumber = radio.receivedPacket(RadioPacketProperty.SerialNumber)
     match = tool == receivedNumber
     player_index = players.indexOf(serialNumber)
     found = player_index >= 0
@@ -197,6 +199,10 @@ radio.onDataPacketReceived( ({ receivedNumber, serial: serialNumber }) =>  {
     if (!(match) && found) {
         temp = players.removeAt(player_index)
     }
+})
+input.onGesture(Gesture.Shake, () => {
+    players = [0]
+    tool = Math.randomRange(0, 3)
 })
 basic.forever(() => {
     radio.sendNumber(tool)

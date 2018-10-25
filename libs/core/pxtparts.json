@@ -1,5 +1,5 @@
-{ 
-     "buttonpair": {
+{
+    "buttonpair": {
         "simulationBehavior": "buttonpair",
         "visual": {
             "builtIn": "buttonpair",
@@ -7,26 +7,66 @@
             "height": 45,
             "pinDistance": 15,
             "pinLocations": [
-                {"x": 0, "y": 0},
-                {"x": 30, "y": 45},
-                {"x": 45, "y": 0},
-                {"x": 75, "y": 45}
+                {
+                    "x": 0,
+                    "y": 0
+                },
+                {
+                    "x": 30,
+                    "y": 45
+                },
+                {
+                    "x": 45,
+                    "y": 0
+                },
+                {
+                    "x": 75,
+                    "y": 45
+                }
             ]
         },
         "numberOfPins": 4,
         "pinDefinitions": [
-            {"target": "P14", "style": "male", "orientation": "-Z"},
-            {"target": "ground", "style": "male", "orientation": "-Z"},
-            {"target": "P15", "style": "male", "orientation": "-Z"},
-            {"target": "ground", "style": "male", "orientation": "-Z"}
+            {
+                "target": "P14",
+                "style": "male",
+                "orientation": "-Z"
+            },
+            {
+                "target": "ground",
+                "style": "male",
+                "orientation": "-Z"
+            },
+            {
+                "target": "P15",
+                "style": "male",
+                "orientation": "-Z"
+            },
+            {
+                "target": "ground",
+                "style": "male",
+                "orientation": "-Z"
+            }
         ],
         "instantiation": {
             "kind": "singleton"
         },
         "assembly": [
-            {"part": true},
-            {"pinIndices": [0, 1]},
-            {"pinIndices": [2, 3]}
+            {
+                "part": true
+            },
+            {
+                "pinIndices": [
+                    0,
+                    1
+                ]
+            },
+            {
+                "pinIndices": [
+                    2,
+                    3
+                ]
+            }
         ]
     },
     "microservo": {
@@ -37,27 +77,65 @@
             "height": 200,
             "pinDistance": 10,
             "pinLocations": [
-                {"x": 30, "y": 5},
-                {"x": 37, "y": 5},
-                {"x": 45, "y": 5}
+                {
+                    "x": 30,
+                    "y": 5
+                },
+                {
+                    "x": 37,
+                    "y": 5
+                },
+                {
+                    "x": 45,
+                    "y": 5
+                }
             ]
         },
         "numberOfPins": 3,
         "pinDefinitions": [
-            {"target": {"pinInstantiationIdx": 0}, "style": "croc", "orientation": "+Z"},
-            {"target": "threeVolt", "style": "croc", "orientation": "+Z"},
-            {"target": "ground", "style": "croc", "orientation": "+Z"}
+            {
+                "target": {
+                    "pinInstantiationIdx": 0
+                },
+                "style": "croc",
+                "orientation": "+Z"
+            },
+            {
+                "target": "threeVolt",
+                "style": "croc",
+                "orientation": "+Z"
+            },
+            {
+                "target": "ground",
+                "style": "croc",
+                "orientation": "+Z"
+            }
         ],
-        "instantiation": {
-            "kind": "function",
-            "fullyQualifiedName": "pins.servoWritePin",
-            "argumentRoles": [
-                {"pinInstantiationIdx": 0, "partParameter": "name"}
-            ]
-        },
+        "instantiations": [
+            {
+                "kind": "function",
+                "fullyQualifiedName": "pins.servoWritePin,pins.servoSetPulse,PwmOnlyPin.servoWrite,PwmOnlyPin.servoSetPulse,servos.Servo.setAngle,servos.Servo.run,servos.Servo.setPulse",
+                "argumentRoles": [
+                    {
+                        "pinInstantiationIdx": 0,
+                        "partParameter": "name"
+                    }
+                ]
+            }
+        ],
         "assembly": [
-            {"part": true, "pinIndices": [2]},
-            {"pinIndices": [0, 1]}
+            {
+                "part": true,
+                "pinIndices": [
+                    2
+                ]
+            },
+            {
+                "pinIndices": [
+                    0,
+                    1
+                ]
+            }
         ]
     },
     "neopixel": {
@@ -68,28 +146,66 @@
             "height": 113,
             "pinDistance": 9,
             "pinLocations": [
-                {"x": 10, "y": 0},
-                {"x": 19, "y": 0},
-                {"x": 28, "y": 0}
+                {
+                    "x": 10,
+                    "y": 0
+                },
+                {
+                    "x": 19,
+                    "y": 0
+                },
+                {
+                    "x": 28,
+                    "y": 0
+                }
             ]
         },
         "numberOfPins": 3,
         "pinDefinitions": [
-            {"target": {"pinInstantiationIdx": 0}, "style": "solder", "orientation": "+Z"},
-            {"target": "threeVolt", "style": "solder", "orientation": "+Z"},
-            {"target": "ground", "style": "solder", "orientation": "+Z"}
+            {
+                "target": {
+                    "pinInstantiationIdx": 0
+                },
+                "style": "solder",
+                "orientation": "+Z"
+            },
+            {
+                "target": "threeVolt",
+                "style": "solder",
+                "orientation": "+Z"
+            },
+            {
+                "target": "ground",
+                "style": "solder",
+                "orientation": "+Z"
+            }
         ],
         "instantiation": {
             "kind": "function",
             "fullyQualifiedName": "neopixel.create",
             "argumentRoles": [
-                {"pinInstantiationIdx": 0, "partParameter": "pin"},
-                {"partParameter": "mode"}
+                {
+                    "pinInstantiationIdx": 0,
+                    "partParameter": "pin"
+                },
+                {
+                    "partParameter": "mode"
+                }
             ]
         },
         "assembly": [
-            {"part": true, "pinIndices": [2]},
-            {"pinIndices": [0, 1]}
+            {
+                "part": true,
+                "pinIndices": [
+                    2
+                ]
+            },
+            {
+                "pinIndices": [
+                    0,
+                    1
+                ]
+            }
         ]
     },
     "ledmatrix": {
@@ -99,37 +215,137 @@
             "height": 105,
             "pinDistance": 15,
             "pinLocations": [
-                {"x": 0, "y": 0},
-                {"x": 15, "y": 0},
-                {"x": 30, "y": 0},
-                {"x": 45, "y": 0},
-                {"x": 105, "y": 105},
-                {"x": 0, "y": 105},
-                {"x": 15, "y": 105},
-                {"x": 30, "y": 105},
-                {"x": 45, "y": 105},
-                {"x": 60, "y": 0}
+                {
+                    "x": 0,
+                    "y": 0
+                },
+                {
+                    "x": 15,
+                    "y": 0
+                },
+                {
+                    "x": 30,
+                    "y": 0
+                },
+                {
+                    "x": 45,
+                    "y": 0
+                },
+                {
+                    "x": 105,
+                    "y": 105
+                },
+                {
+                    "x": 0,
+                    "y": 105
+                },
+                {
+                    "x": 15,
+                    "y": 105
+                },
+                {
+                    "x": 30,
+                    "y": 105
+                },
+                {
+                    "x": 45,
+                    "y": 105
+                },
+                {
+                    "x": 60,
+                    "y": 0
+                }
             ]
         },
         "simulationBehavior": "ledmatrix",
         "numberOfPins": 10,
-        "instantiation": {"kind": "singleton"},
+        "instantiation": {
+            "kind": "singleton"
+        },
         "pinDefinitions": [
-            {"target": "P6", "style": "male", "orientation": "-Z", "colorGroup": 0},
-            {"target": "P7", "style": "male", "orientation": "-Z", "colorGroup": 0},
-            {"target": "P8", "style": "male", "orientation": "-Z", "colorGroup": 0},
-            {"target": "P9", "style": "male", "orientation": "-Z", "colorGroup": 0},
-            {"target": "P10", "style": "male", "orientation": "-Z", "colorGroup": 0},
-            {"target": "P12", "style": "male", "orientation": "-Z", "colorGroup": 1},
-            {"target": "P13", "style": "male", "orientation": "-Z", "colorGroup": 1},
-            {"target": "P16", "style": "male", "orientation": "-Z", "colorGroup": 1},
-            {"target": "P19", "style": "male", "orientation": "-Z", "colorGroup": 1},
-            {"target": "P20", "style": "male", "orientation": "-Z", "colorGroup": 1}
+            {
+                "target": "P6",
+                "style": "male",
+                "orientation": "-Z",
+                "colorGroup": 0
+            },
+            {
+                "target": "P7",
+                "style": "male",
+                "orientation": "-Z",
+                "colorGroup": 0
+            },
+            {
+                "target": "P8",
+                "style": "male",
+                "orientation": "-Z",
+                "colorGroup": 0
+            },
+            {
+                "target": "P9",
+                "style": "male",
+                "orientation": "-Z",
+                "colorGroup": 0
+            },
+            {
+                "target": "P10",
+                "style": "male",
+                "orientation": "-Z",
+                "colorGroup": 0
+            },
+            {
+                "target": "P12",
+                "style": "male",
+                "orientation": "-Z",
+                "colorGroup": 1
+            },
+            {
+                "target": "P13",
+                "style": "male",
+                "orientation": "-Z",
+                "colorGroup": 1
+            },
+            {
+                "target": "P16",
+                "style": "male",
+                "orientation": "-Z",
+                "colorGroup": 1
+            },
+            {
+                "target": "P19",
+                "style": "male",
+                "orientation": "-Z",
+                "colorGroup": 1
+            },
+            {
+                "target": "P20",
+                "style": "male",
+                "orientation": "-Z",
+                "colorGroup": 1
+            }
         ],
         "assembly": [
-            {"part": true},
-            {"pinIndices": [0, 1, 2, 3, 4]},
-            {"pinIndices": [5, 6, 7, 8, 9]}
+            {
+                "part": true
+            },
+            {
+                "pinIndices": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    4
+                ]
+            },
+            {
+                "pinIndices": [
+                    5,
+                    6,
+                    7,
+                    8,
+                    9
+                ]
+            }
         ]
     },
     "headphone": {
@@ -140,18 +356,43 @@
             "height": 180,
             "pinDistance": 20,
             "pinLocations": [
-                {"x": 17, "y": 11},
-                {"x": 55, "y": 50}
+                {
+                    "x": 17,
+                    "y": 11
+                },
+                {
+                    "x": 55,
+                    "y": 50
+                }
             ]
         },
         "pinDefinitions": [
-            {"target": "P0", "style": "croc", "orientation": "Y"},
-            {"target": "ground", "style": "croc", "orientation": "Y"}
+            {
+                "target": "P0",
+                "style": "croc",
+                "orientation": "Y"
+            },
+            {
+                "target": "ground",
+                "style": "croc",
+                "orientation": "Y"
+            }
         ],
-        "instantiation": {"kind": "singleton"},
+        "instantiation": {
+            "kind": "singleton"
+        },
         "assembly": [
-            {"part": true, "pinIndices": [0]},
-            {"pinIndices": [1]}
+            {
+                "part": true,
+                "pinIndices": [
+                    0
+                ]
+            },
+            {
+                "pinIndices": [
+                    1
+                ]
+            }
         ]
     },
     "speaker": {
@@ -162,18 +403,43 @@
             "height": 500,
             "pinDistance": 70,
             "pinLocations": [
-                {"x": 180, "y": 135},
-                {"x": 320, "y": 135}
+                {
+                    "x": 180,
+                    "y": 135
+                },
+                {
+                    "x": 320,
+                    "y": 135
+                }
             ]
         },
         "pinDefinitions": [
-            {"target": "P0", "style": "male", "orientation": "-Z"},
-            {"target": "ground", "style": "male", "orientation": "-Z"}
+            {
+                "target": "P0",
+                "style": "male",
+                "orientation": "-Z"
+            },
+            {
+                "target": "ground",
+                "style": "male",
+                "orientation": "-Z"
+            }
         ],
-        "instantiation": {"kind": "singleton"},
+        "instantiation": {
+            "kind": "singleton"
+        },
         "assembly": [
-            {"part": true, "pinIndices": [0]},
-            {"pinIndices": [1]}
+            {
+                "part": true,
+                "pinIndices": [
+                    0
+                ]
+            },
+            {
+                "pinIndices": [
+                    1
+                ]
+            }
         ]
     }
 }

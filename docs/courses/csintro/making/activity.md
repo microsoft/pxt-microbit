@@ -10,7 +10,7 @@ For this activity, students will each need a micro:bit, a micro-USB cable, a com
 
 ![micro:bit kit](/static/courses/csintro/making/microbit-kit.jpg)
 
-Open a browser window to [makecode.com](http://makecode.com), and select the micro:bit code editor
+Open a browser window to [makecode.com](https://makecode.com), and select the micro:bit code editor
 
 ![micro:bit card icon](/static/courses/csintro/making/microbit-card-icon.png)
 

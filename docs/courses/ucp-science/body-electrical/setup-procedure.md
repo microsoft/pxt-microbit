@@ -89,7 +89,7 @@ basic.forever(() => {
 
 This receiver @boardname@ uses the “on start” event to set up the title on the @boardname@ when started, the radio group, and the ``bodyElectricity`` variable to collect and store the data received.
 
-The ``||radio:on radio received||`` event reads the number value sent from the sending @boardname@. The number is then stored in the ``bodyElectricity`` variable. the electricity on pin **0** and stores it in the variable ``bodyElectricity``. The last line uses the serial write command to send the text `"Body Electricity"` label and the value of ``bodyElectricity`` variable back to the Windows 10 MakeCode app. The data is sampled and send from 10 to 20 times per second.
+The ``||radio:on received number||`` event reads the number value sent from the sending @boardname@. The number is then stored in the ``bodyElectricity`` variable. the electricity on pin **0** and stores it in the variable ``bodyElectricity``. The last line uses the serial write command to send the text `"Body Electricity"` label and the value of ``bodyElectricity`` variable back to the Windows 10 MakeCode app. The data is sampled and send from 10 to 20 times per second.
  
 ```blocks
 // Body Electricity Receiver
@@ -98,7 +98,7 @@ let bodyElectricty = 0
 radio.setGroup(99)
 
 // Radio Receiver event
-radio.onDataPacketReceived( ({ receivedNumber }) =>  {
+radio.onReceivedNumber(function (receivedNumber) {
     bodyElectricty = receivedNumber
     serial.writeValue("Body Electricty", bodyElectricty)
 })

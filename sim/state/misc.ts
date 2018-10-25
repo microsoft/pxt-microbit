@@ -40,7 +40,8 @@ namespace pxsim.control {
     }
 
     export function reset() {
-        U.userError("reset not implemented in simulator yet")
+        const cb = getResume();
+        pxsim.runtime.restart();
     }
 
     export function waitMicros(micros: number) {
@@ -207,6 +208,15 @@ namespace pxsim.bluetooth {
     export function uartWriteString(s: string): void {
         serial.writeString(s)
     }
+
+    export function uartWriteBuffer(b: RefBuffer): void {
+        serial.writeBuffer(b);
+    }
+
+    export function uartReadBuffer(): RefBuffer {
+        return pins.createBuffer(0);        
+    }
+
     export function uartReadUntil(del: string): string {
         return serial.readUntil(del);
     }

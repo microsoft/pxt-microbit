@@ -71,11 +71,11 @@ radio.setGroup(10)
 serial.writeLine("Acceleration")
 ```
 
-The ``||radio:on radio received||`` event reads the number value from the sending @boardname@. The number is then stored in the variable ``receivedNumber``. The last line uses the serial write command to send the text ``"z"`` label and the value of ``receivedNumber`` variable back to the Windows 10 MakeCode app. The data is sampled and send from 10 to 20 times per second.
+The ``||radio:on received number||`` event reads the number value from the sending @boardname@. The number is then stored in the variable ``receivedNumber``. The last line uses the serial write command to send the text ``"z"`` label and the value of ``receivedNumber`` variable back to the Windows 10 MakeCode app. The data is sampled and send from 10 to 20 times per second.
 
 ```blocks
 // onRadio receive & write z value to serial
-radio.onDataPacketReceived(({ receivedNumber }) => {
+radio.onReceivedNumber(function (receivedNumber) {
     serial.writeValue("z", receivedNumber)
 })
 ```

@@ -1,4 +1,3 @@
-
 # Reaction Time
 
 ## @description A reaction time experiment made of cardboard

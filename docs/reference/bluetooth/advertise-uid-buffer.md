@@ -1,4 +1,4 @@
-# advertise UID Buffer
+# advertise Uid Buffer
 
 Advertises a UID via the Eddystone protocol over Bluetooth.
 

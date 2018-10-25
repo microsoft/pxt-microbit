@@ -34,7 +34,7 @@ thing from nearby @boardname@s. It shows these numbers as a
 basic.forever(() => {
     radio.sendNumber(input.acceleration(Dimension.X));
 })
-radio.onDataPacketReceived(({ receivedNumber }) => {
+radio.onReceivedNumber(function (receivedNumber) {
     led.plotBarGraph(receivedNumber, 1023);
 })
 ```

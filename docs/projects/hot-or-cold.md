@@ -55,8 +55,10 @@ The hunter @boardname@ looks for beacons.
 To determine how far away or how close they are, we use the signal strength of each radio packet sent by the beacons. The signal strength ranges from ``-128db`` (weak) to ``-42db`` (very strong). 
 
 ```blocks
-radio.onDataPacketReceived( ({ receivedNumber, signal }) =>  {
-    basic.showNumber(signal)
+let signal = 0;
+radio.onReceivedNumber(function (receivedNumber) {
+    signal = radio.receivedPacket(RadioPacketProperty.SignalStrength)
+    basic.showNumber(signal);
 });
 radio.setGroup(1)
 ```
@@ -84,8 +86,9 @@ Here is an example that uses ``-95`` or less for cold, between ``-95`` and ``-80
 To make the program more responsive, add a ``||led:stop animation||`` to cancel icon animations when a new beacon packet comes in.
 
 ```blocks
-radio.onDataPacketReceived( ({ receivedNumber, signal }) =>  {
-    led.stopAnimation();
+let signal = 0;
+radio.onReceivedNumber(function (receivedNumber) {
+    signal = radio.receivedPacket(RadioPacketProperty.SignalStrength)
     if (signal < -90) {
         basic.showIcon(IconNames.SmallDiamond)
     } else if (signal < -80) {
@@ -121,9 +124,13 @@ To check if an array contains an certain element, we use the ``||arrays:find ind
 
 ```blocks
 let beacons: number[] = [0]
-radio.onDataPacketReceived( ({ receivedNumber, signal, serial }) =>  {
-    if (signal > -50 && beacons.indexOf(serial) < 0) {
-        beacons.push(serial)
+let signal = 0;
+let serialNumber = 0;
+radio.onReceivedNumber(function (receivedNumber) {
+    signal = radio.receivedPacket(RadioPacketProperty.SignalStrength)
+    serialNumber = radio.receivedPacket(RadioPacketProperty.SerialNumber)
+    if (signal > -50 && beacons.indexOf(serialNumber) < 0) {
+        beacons.push(serialNumber)
         game.addScore(1)
         basic.showNumber(game.score())
     }
@@ -146,7 +153,11 @@ The hunter code with all th pieces together looks like this now. Download and tr
 
 ```blocks
 let beacons: number[] = [0];
-radio.onDataPacketReceived( ({ receivedNumber, signal, serial }) =>  {
+let signal = 0;
+let serialNumber = 0;
+radio.onReceivedNumber(function (receivedNumber) {
+    signal = radio.receivedPacket(RadioPacketProperty.SignalStrength)
+    serialNumber = radio.receivedPacket(RadioPacketProperty.SerialNumber)
     led.stopAnimation();
     if (signal < -95) {
         basic.showIcon(IconNames.SmallDiamond)
@@ -154,8 +165,8 @@ radio.onDataPacketReceived( ({ receivedNumber, signal, serial }) =>  {
         basic.showIcon(IconNames.Diamond)
     } else {
         basic.showIcon(IconNames.Square)
-        if (signal > -50 && beacons.indexOf(serial) < 0) {
-            beacons.push(serial)
+        if (signal > -50 && beacons.indexOf(serialNumber) < 0) {
+            beacons.push(serialNumber)
             game.addScore(1)
             basic.showNumber(game.score())
         }

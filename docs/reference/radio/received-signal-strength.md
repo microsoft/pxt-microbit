@@ -7,7 +7,7 @@ Find how strong the ``radio`` signal is, from `-128` to `-42`.
 
 The @boardname@ finds the signal strength by checking how strong it was
 the last time it ran the
-[on data packet received](/reference/radio/on-data-packet-received) function. That means
+[on received number](/reference/radio/on-received-number) function. That means
 it needs to run **receive number** first.
 
 ```sig
@@ -39,7 +39,7 @@ basic.forever(() => {
 
 ## See also
 
-[on data packet received](/reference/radio/on-data-packet-received), [send number](/reference/radio/send-number), [on data received](/reference/radio/on-data-received)
+[on received number](/reference/radio/on-received-number), [send number](/reference/radio/send-number), [on data received](/reference/radio/on-data-received)
 
 ```package
 radio

@@ -519,6 +519,8 @@ declare namespace led {
     P14 = 21,  // MICROBIT_ID_IO_P14
     P15 = 22,  // MICROBIT_ID_IO_P15
     P16 = 23,  // MICROBIT_ID_IO_P16
+    USB_TX = 1001,
+    USB_RX = 1002,
     }
 
 

@@ -117,16 +117,18 @@ namespace pxt.editor {
 
         reconnectAsync(first: boolean) {
             // configure serial at 115200
-            if (!first)
-                return this.packetIo.reconnectAsync()
-                    .then(() => this.allocDAP())
-                    .then(() => this.cortexM.init())
-                    .then(() => this.cmsisdap.cmdNums(0x82, [0x00, 0xC2, 0x01, 0x00]))
-                    .then(() => { }, err => { this.useSerial = false })
-            else
-                return this.cortexM.init()
-                    .then(() => this.cmsisdap.cmdNums(0x82, [0x00, 0xC2, 0x01, 0x00]))
-                    .then(() => { }, err => { this.useSerial = false })
+            let p = Promise.resolve();
+            if (!first) {
+                p = this.packetIo.reconnectAsync()
+                    .then(() => this.allocDAP());
+            }
+
+            return p
+                .then(() => this.cortexM.init())
+                .then(() => {
+                    return this.cmsisdap.cmdNums(0x82, [0x00, 0xC2, 0x01, 0x00])
+                        .then(() => { this.useSerial = true }, (err: any) => { this.useSerial = false; });
+                });
         }
 
         disconnectAsync() {
@@ -157,7 +159,8 @@ namespace pxt.editor {
     let previousDapWrapper: DAPWrapper;
     function dapAsync() {
         if (previousDapWrapper)
-            return Promise.resolve(previousDapWrapper)
+            return previousDapWrapper.reconnectAsync(false) // Always fully reconnect to handle device unplugged mid-session
+                .then(() => previousDapWrapper);
         return Promise.resolve()
             .then(() => {
                 if (previousDapWrapper) {
@@ -531,31 +534,27 @@ namespace pxt.editor {
         })
     }
 
-    export function deployCoreAsync(resp: pxtc.CompileResult, d: pxt.commands.DeployOptions = {}): Promise<void> {
-        const saveHexAsync = () => {
-            return pxt.commands.saveOnlyAsync(resp);
-        };
-        return Promise.resolve()
-            .then(() => {
-                const isUwp = !!(window as any).Windows;
-                if (isUwp) {
-                    // Go straight to flashing
+    function uwpDeployCoreAsync(resp: pxtc.CompileResult, d: pxt.commands.DeployOptions = {}): Promise<void> {
+        // Go straight to flashing
+        return flashAsync(resp, d);
+    }
+
+    function deployCoreAsync(resp: pxtc.CompileResult, d: pxt.commands.DeployOptions = {}): Promise<void> {
+        return pxt.usb.isPairedAsync()
+            .then(isPaired => {
+                if (isPaired) {
+                    // Already paired from earlier in the session or from previous session
                     return flashAsync(resp, d);
                 }
-                if (!pxt.usb.isEnabled) {
-                    return saveHexAsync();
-                }
-                return pxt.usb.isPairedAsync()
-                    .then((isPaired) => {
-                        if (isPaired) {
-                            // Already paired from earlier in the session or from previous session
-                            return flashAsync(resp, d);
-                        }
 
-                        // No device paired, prompt user
-                        return saveHexAsync();
-                    });
-            })
+                // try bluetooth if device is paired
+                if (pxt.webBluetooth.isPaired())
+                    return pxt.webBluetooth.flashAsync(resp, d)
+                        .catch(e => pxt.commands.saveOnlyAsync(resp));
+
+                // No device paired, prompt user
+                return pxt.commands.saveOnlyAsync(resp);
+            });
     }
 
     /**
@@ -652,7 +651,7 @@ namespace pxt.editor {
 
   converts to
 
-    <block type="radio_on_number" x="196" y="208">
+  <block type="radio_on_number" x="196" y="208">
     <field name="HANDLER_receivedNumber" id="DCy(W;1)*jLWQUpoy4Mm" variabletype="">receivedNumber</field>
   </block>
   <block type="radio_on_value" x="134" y="408">
@@ -790,6 +789,20 @@ namespace pxt.editor {
     initExtensionsAsync = function (opts: pxt.editor.ExtensionOptions): Promise<pxt.editor.ExtensionResult> {
         pxt.debug('loading microbit target extensions...')
 
+        function cantImportAsync(project: pxt.editor.IProjectView) {
+            // this feature is support in v0 only
+            return project.showModalDialogAsync({
+                header: lf("Can't import microbit.co.uk scripts..."),
+                body: lf("Importing microbit.co.uk programs is not supported in this editor anymore. Please open this script in the https://makecode.microbit.org/v0 editor."),
+                buttons: [
+                    {
+                        label: lf("Go to the old editor"),
+                        url: `https://makecode.microbit.org/v0`
+                    }
+                ]
+            }).then(() => project.openHome())
+        }
+
         if (!Math.imul)
             Math.imul = function (a, b) {
                 const ah = (a >>> 16) & 0xffff;
@@ -805,11 +818,17 @@ namespace pxt.editor {
             hexFileImporters: [{
                 id: "blockly",
                 canImport: data => data.meta.cloudId == "microbit.co.uk" && data.meta.editor == "blockly",
-                importAsync: (project, data) => project.createProjectAsync({
-                    filesOverride: {
-                        "main.blocks": data.source
-                    }, name: data.meta.name
-                })
+                importAsync: (project, data) => {
+                    pxt.tickEvent('import.legacyblocks.redirect');
+                    return cantImportAsync(project);
+                }
+            }, {
+                id: "td",
+                canImport: data => data.meta.cloudId == "microbit.co.uk" && data.meta.editor == "touchdevelop",
+                importAsync: (project, data) => {
+                    pxt.tickEvent('import.legacytd.redirect');
+                    return cantImportAsync(project);
+                }
             }]
         };
 
@@ -820,7 +839,10 @@ namespace pxt.editor {
             subclassCode: 0x03
         }])
 
-        if (canHID())
+        const isUwp = !!(window as any).Windows;
+        if (isUwp)
+            pxt.commands.deployCoreAsync = uwpDeployCoreAsync;
+        else if (canHID() || pxt.webBluetooth.hasPartialFlash())
             pxt.commands.deployCoreAsync = deployCoreAsync;
 
         res.blocklyPatch = patchBlocks;

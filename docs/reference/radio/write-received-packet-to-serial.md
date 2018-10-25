@@ -36,7 +36,7 @@ input.onButtonPressed(Button.A, () => {
 
 
 });
-radio.onDataPacketReceived(() => {
+radio.onReceivedNumber(function (receivedNumber) {
     radio.writeReceivedPacketToSerial();
 });
 ```

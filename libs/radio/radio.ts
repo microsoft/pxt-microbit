@@ -1,3 +1,16 @@
+
+enum RadioPacketProperty {
+    //% blockIdentity=radio._packetProperty
+    //% block="signal strength"
+    SignalStrength = 2,
+    //% blockIdentity=radio._packetProperty
+    //% block="time"
+    Time = 0,
+    //% block="serial number"
+    //% blockIdentity=radio._packetProperty
+    SerialNumber = 1
+}
+
 /**
  * Communicate data using radio packets
  */
@@ -31,18 +44,6 @@ namespace radio {
          * The received signal strength indicator (RSSI) of the packet.
          */
         public signal: number;
-    }
-
-    export enum PacketProperty {
-        //% blockIdentity=radio._packetProperty
-        //% block="time"
-        Time,
-        //% block="serial number"
-        //% blockIdentity=radio._packetProperty
-        SerialNumber,
-        //% blockIdentity=radio._packetProperty
-        //% block="signal strength"
-        SignalStrength
     }
 
     /**
@@ -133,7 +134,7 @@ namespace radio {
     //% help=radio/on-received-buffer blockHandlerKey="radioreceived" blockHidden=1
     //% blockId=radio_on_buffer block="on radio received" blockGap=16
     //% useLoc="radio.onDataPacketReceived"
-    export function onReceivedBuffer(cb: (buffer: Buffer) => void) {
+    export function onReceivedBuffer(cb: (receivedBuffer: Buffer) => void) {
         onDataReceived(() => {
             receiveNumber();
             const packet = new Packet();
@@ -151,14 +152,15 @@ namespace radio {
      * Returns properties of the last radio packet received.
      * @param type the type of property to retrieve from the last packet
      */
-    //% help=radio/get-received-packet-property advanced=true
-    //% blockId=radio_received_packet_property block="received packet %type=radio_packet_property" blockGap=16
-    export function getReceivedPacketProperty(type: number) {
+    //% help=radio/received-packet
+    //% weight=11 blockGap=8
+    //% blockId=radio_received_packet block="received packet %type=radio_packet_property" blockGap=16
+    export function receivedPacket(type: number) {
         if (lastPacket) {
             switch(type) {
-                case PacketProperty.Time: return lastPacket.time;
-                case PacketProperty.SerialNumber: return lastPacket.serial;
-                case PacketProperty.SignalStrength: return lastPacket.signal;
+                case RadioPacketProperty.Time: return lastPacket.time;
+                case RadioPacketProperty.SerialNumber: return lastPacket.serial;
+                case RadioPacketProperty.SignalStrength: return lastPacket.signal;
             }
         }
         return 0;
@@ -170,7 +172,7 @@ namespace radio {
      */
     //% blockId=radio_packet_property block="%note"
     //% shim=TD_ID blockHidden=1
-    export function _packetProperty(type: PacketProperty): number {
+    export function _packetProperty(type: RadioPacketProperty): number {
         return type;
     }
 }

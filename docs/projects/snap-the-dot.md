@@ -1,4 +1,4 @@
-# Snap the dot
+# Snap the Dot
 
 ## Introduction @unplugged
 

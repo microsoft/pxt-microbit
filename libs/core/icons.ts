@@ -189,7 +189,7 @@ namespace basic {
     }
 
     /**
-     * Shows an arrow on screent
+     * Draws an arrow on the LED screen
      * @param direction the direction of the arrow
      * @param interval the amount of time (milliseconds) to show the icon. Default is 600.
      */

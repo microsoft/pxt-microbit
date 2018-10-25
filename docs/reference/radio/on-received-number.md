@@ -40,7 +40,7 @@ basic.forever(() => {
 })
 radio.onReceivedNumber(function (receivedNumber) {
     led.plotBarGraph(
-        Math.abs(radio.getReceivedPacketProperty(radio.PacketProperty.SignalStrength) + 42),
+        Math.abs(radio.receivedPacket(RadioPacketProperty.SignalStrength) + 42),
         128 - 42
     )
 })
@@ -50,11 +50,11 @@ radio.onReceivedNumber(function (receivedNumber) {
 
 The ``||radio:onReceivedNumber||`` event can only be created once, due to the hardware restrictions.
 
-The radio set group might need to be set, synchronized , before the radio events will function.
+The radio set group might need to be set, synchronized, before the radio events will function.
 
 ## See also
 
-[on received strig](/reference/radio/on-received-string),
+[on received string](/reference/radio/on-received-string),
 [send number](/reference/radio/send-number),
 [send string](/reference/radio/send-string),
 [send value](/reference/radio/send-value),

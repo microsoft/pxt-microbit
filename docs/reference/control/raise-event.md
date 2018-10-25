@@ -8,3 +8,7 @@ control.raiseEvent(control.eventSourceId(EventBusSource.MICROBIT_ID_BUTTON_A), c
 
 **This is an advanced API.**  For more information, see the
 [@boardname@ runtime messageBus documentation](https://lancaster-university.github.io/microbit-docs/ubit/messageBus/)
+
+## See Also
+
+[radio raise event](/reference/radio/raise-event)

@@ -10,7 +10,9 @@ Here are some cool tutorials to get you started with your @boardname@!
   "url":"/projects/flashing-heart",
   "description": "Make an animated flashing heart.",
   "imageUrl": "/static/mb/projects/a1-display.png",
-  "cardType": "tutorial"
+  "cardType": "tutorial",
+  "label": "New? Start Here!",
+  "labelClass": "purple ribbon large"
 }, {
   "name": "Name Tag",
   "description": "Scroll your name on the screen",
@@ -36,10 +38,10 @@ Here are some cool tutorials to get you started with your @boardname@!
   "imageUrl":"/static/mb/projects/a3-pins.png",
   "cardType": "tutorial"
 }, {
-  "name": "Coin Flipper",
-  "url":"/projects/coin-flipper",
-  "description": "Guess the coin toss and see if you're lucky.",
-  "imageUrl": "/static/mb/projects/coin-flipper.png",
+  "name": "Micro Chat",
+  "url":"/projects/micro-chat",
+  "description": "Build your own social network made of micro:bits.",
+  "imageUrl": "/static/mb/projects/a9-radio.png",
   "cardType": "tutorial"
 }]
 ```

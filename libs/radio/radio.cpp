@@ -59,14 +59,17 @@ namespace radio {
         return r;
     }
 
-    void broadcastMessage(int message) {
+    /**
+    * Sends an event over radio to neigboring devices
+    */
+    //% blockId=radioRaiseEvent block="radio raise event|from source %src=control_event_source_id|with value %value=control_event_value_id" 
+    //% blockExternalInputs=1
+    //% advanced=true
+    //% weight=1
+    //% help=radio/raise-event
+    void raiseEvent(int src, int value) {
         if (radioEnable() != MICROBIT_OK) return;
-        uBit.radio.event.eventReceived(MicroBitEvent(MES_BROADCAST_GENERAL_ID, message, CREATE_ONLY));
-    }
-
-    void onBroadcastMessageReceived(int message, Action f) {
-        if (radioEnable() != MICROBIT_OK) return;
-        registerWithDal(MES_BROADCAST_GENERAL_ID, message, f);
+        uBit.radio.event.eventReceived(MicroBitEvent(src, value, CREATE_ONLY));
     }
 
     void setPacketPrefix(uint8_t* buf, int type) {

@@ -1,4 +1,4 @@
-# Servo calibrator
+# Servo Calibrator
 
 Use this program to calibrate the angles of a servo.
 Press ``A`` to reduce the angle by 5 and ``B`` to

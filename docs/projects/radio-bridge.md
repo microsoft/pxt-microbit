@@ -1,4 +1,4 @@
-# Radio bridge
+# Radio Bridge
 
 Transfer the packet data received from the radio to the serial port. Use buttons **A** and **B** to select a radio group number.
 
@@ -11,7 +11,7 @@ let group = 0
 /**
  * Send all received packets to serial output
  */
-radio.onDataPacketReceived(function () {
+radio.onReceivedNumber(function (receivedNumber) {
     radio.writeReceivedPacketToSerial()
     led.toggle(Math.randomRange(0, 4), Math.randomRange(0, 4))
 })

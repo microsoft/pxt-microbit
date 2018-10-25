@@ -22,46 +22,46 @@ devices.tellCameraTo(MesCameraEvent.TakePhoto)
 To tell the connected device to take a picture:
 
 ```blocks
+devices.tellCameraTo(MesCameraEvent.TakePhoto)
+```
+
+To tell the connected device to start recording a video:
+
+```blocks
 devices.tellCameraTo(MesCameraEvent.StartVideoCapture)
 ```
 
-To tell the connected device to start recording a video
+To tell the connected device to stop recording a video:
 
 ```blocks
 devices.tellCameraTo(MesCameraEvent.StopVideoCapture)
 ```
 
-To tell the connected device to stop recording a video
+To tell the connected device to toggle front-rear:
 
 ```blocks
 devices.tellCameraTo(MesCameraEvent.ToggleFrontRear)
 ```
 
-To tell the connected device to toggle front-rear
+To tell the connected device to launch photo mode:
 
 ```blocks
 devices.tellCameraTo(MesCameraEvent.LaunchPhotoMode)
 ```
 
-To tell the connected device to launch photo mode
-
-```blocks
-devices.tellCameraTo(MesCameraEvent.LaunchPhotoMode)
-```
-
-To tell the connected device to launch video mode
+To tell the connected device to launch video mode:
 
 ```blocks
 devices.tellCameraTo(MesCameraEvent.LaunchVideoMode)
 ```
 
-To tell the connected device to stop photo mode
+To tell the connected device to stop photo mode:
 
 ```blocks
 devices.tellCameraTo(MesCameraEvent.StopPhotoMode)
 ```
 
-To tell the connected device to stop video mode
+To tell the connected device to stop video mode:
 
 ```blocks
 devices.tellCameraTo(MesCameraEvent.StopVideoMode)

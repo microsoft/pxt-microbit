@@ -98,6 +98,39 @@ namespace bluetooth {
         return PSTR(uart->readUntil(MSTR(del)));
     }    
 
+
+    /**
+    * Sends a buffer of data via Bluetooth UART
+    */
+    //%
+    void uartWriteBuffer(Buffer buffer) {
+        startUartService();
+        uart->send(buffer->data, buffer->length);
+    }
+
+    /**
+    * Reads buffered UART data into a buffer
+    */
+    //%
+    Buffer uartReadBuffer() {
+        startUartService();
+        int bytes = uart->rxBufferedSize();
+        auto buffer = mkBuffer(NULL, bytes);
+        int read = uart->read(buffer->data, buffer->length);
+        // read failed
+        if (read < 0) {
+            decrRC(buffer);
+            return mkBuffer(NULL, 0);
+        }
+        // could not fill the buffer
+        if (read != buffer->length) {
+            auto tmp = mkBuffer(buffer->data, read); 
+            decrRC(buffer); 
+            buffer = tmp;
+        }
+        return buffer;
+    }
+
     /**
     * Registers an event to be fired when one of the delimiter is matched.
     * @param delimiters the characters to match received characters against.

@@ -21,7 +21,7 @@ Learn how to **show LEDs** to turn on a LED light pattern on the LED screen. We 
 basic.forever(() => {});
 radio.sendNumber(0);
 input.acceleration(Dimension.Strength)
-radio.onDataPacketReceived(() => {});
+radio.onReceivedNumber(function (receivedNumber) {});
 led.plotBarGraph(0, 0);
 ```
 

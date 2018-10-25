@@ -1,0 +1,10 @@
+{
+  "servos.P0|block": "servo P0",
+  "servos.P1|block": "servo P1",
+  "servos.P2|block": "servo P2",
+  "servos.Servo.run|block": "continuous %servo run at %speed=speedPicker \\%",
+  "servos.Servo.setAngle|block": "set %servo angle to %degrees=protractorPicker °",
+  "servos.Servo.setPulse|block": "set %servo pulse to %micros μs",
+  "{id:category}Servos": "Servos",
+  "{id:group}Servos": "Servos"
+}

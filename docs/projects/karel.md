@@ -11,7 +11,7 @@ Help Karel make LED art!
 ![](/static/mb/projects/karel/hi.png "Hi")
 
 The goal of this activity is to download the JavaScript code given below onto a @boardname@.
-Then USE the program to introduce new students to the @boardname@.
+Then use the program to introduce new students to the @boardname@.
 Students will not do the coding this time. They will be the users who get familiar with the board.
 
 ## How to play
@@ -95,43 +95,15 @@ Thanks for playing with Karel the LED!
 
 Copy this code into the JavaScript editor and then download it to the board.
 
+**Note:** For this project you need to manually copy the code and insert it into the JavaScript view of the editor.
+
 ```typescript
-/**
- * Karel the LED
- */
-input.onButtonPressed(Button.B, function () {
-    board.pressedB();
-updateLeds()
-})
-input.onGesture(Gesture.Shake, function () {
-    board.shake();
-updateLeds()
-})
-function updateLeds() {
-    for (let j = 0; j <= 5 - 1; j++) {
-        for (let k = 0; k <= 5 - 1; k++) {
-            if (board.ledState[j][k]) {
-                led.plot(k, j)
-            } else {
-                led.unplot(k, j)
-            }
-        }
-    }
-}
-input.onButtonPressed(Button.A, function () {
-    board.pressedA();
-updateLeds()
-})
-input.onButtonPressed(Button.AB, function () {
-    board.pressedAB();
-updateLeds()
-})
 class Board {
     public isKarelActive: boolean;
     public karelX: number;
     public karelY: number;
 
-    public ledState: Array<Array<boolean>>;
+    public ledState: Image;
     private karelDirection: Direction;
 
     constructor() {
@@ -139,10 +111,13 @@ class Board {
         this.karelX = 2;
         this.karelY = 2;
         this.karelDirection = Direction.UP;
-        this.ledState = [];
-        for (let i = 0; i < 5; i++) {
-            this.ledState.push([false, false, false, false, false]);
-        }
+        this.ledState = images.createImage(`
+            . . . . .
+            . . . . .
+            . . . . .
+            . . . . .
+            . . . . .
+            `);
     }
 
     pressedA() {
@@ -156,7 +131,7 @@ class Board {
         if (!this.isKarelActive) {
             return;
         }
-        this.ledState[this.karelY][this.karelX] = true;
+        this.ledState.setPixel(this.karelX, this.karelY, true);
         this.moveKarel()
     }
 
@@ -198,6 +173,10 @@ class Board {
     pressedAB() {
         this.isKarelActive = !this.isKarelActive;
     }
+
+    update() {
+        this.ledState.showImage(0);
+    }
 }
 const board = new Board();
 enum Direction {
@@ -206,6 +185,23 @@ enum Direction {
     DOWN,
     RIGHT
 }
+input.onButtonPressed(Button.B, function () {
+    board.pressedB();
+    board.update();
+})
+input.onGesture(Gesture.Shake, function () {
+    board.shake();
+    board.update();
+})
+
+input.onButtonPressed(Button.A, function () {
+    board.pressedA();
+    board.update();
+})
+input.onButtonPressed(Button.AB, function () {
+    board.pressedAB();
+    board.update();
+})
 basic.forever(function () {
     if (board.isKarelActive) {
         led.toggle(board.karelX, board.karelY)
@@ -216,4 +212,6 @@ basic.forever(function () {
 
 ## About the authors
 
-This project was contributed by Dr. David Fisher a professor at [Rose-Hulman Institute of Technology](https://www.rose-hulman.edu/academics/faculty/fisher-david-fisherds.html). Dr. Fisher loves educational robotics and runs various outreach programming activities, including a summer camp, called [Connecting with Code](https://connectingwithcode.org), which gives a @boardname@ to each participant.  
+This project\*\* was contributed by Dr. David Fisher a professor at [Rose-Hulman Institute of Technology](https://www.rose-hulman.edu/academics/faculty/fisher-david-fisherds.html). Dr. Fisher loves educational robotics and runs various outreach programming activities, including a summer camp, called [Connecting with Code](https://connectingwithcode.org), which gives a @boardname@ to each participant.
+
+\*\* Upgraded to **v1** by the MakeCode team.

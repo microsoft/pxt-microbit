@@ -52,7 +52,7 @@ radio.setGroup(99)
 
 #### Code the receive event
 
-7. The ``||radio:on radio received||`` event will constantly monitor radio signals from the radio group.
+7. The ``||radio:on received number||`` event will constantly monitor radio signals from the radio group.
 8. When a value is received from the group it is stored in the ``gravity`` variable.
 9. The ``||serial:serial write Value||`` sends 2 pieces of data back to the MakeCode app through the USB cable. First it sends a label `"gravity"` and then the value received as gravity from the acceleration method from the first @boardname@. 
 10. Add a ``||led:toggle||`` to indicate that it's receiving data. Change ``x`` to `1` so that another LED blinks.
@@ -60,8 +60,8 @@ radio.setGroup(99)
 ```blocks
 basic.showString("GRAVITY RECEIVER")
 radio.setGroup(99)
-radio.onDataPacketReceived( ({ receivedNumber: gravity }) =>  {
-    serial.writeValue("gravity", gravity)
+radio.onReceivedNumber(function (receivedNumber) {
+    serial.writeValue("gravity", receivedNumber)
     led.toggle(1, 0)
 })
 ```

@@ -28,7 +28,7 @@ We want to register code to run when a packet is received over radio. We can imp
 basic.forever(() => {
     radio.sendNumber(input.acceleration(Dimension.X))
 })
-radio.onDataPacketReceived(() => {
+radio.onReceivedNumber(function (receivedNumber) {
 
 })
 ```
@@ -39,7 +39,7 @@ Finally, we want to chart the acceleration. So we must first implement `plot bar
 basic.forever(() => {
     radio.sendNumber(input.acceleration(Dimension.X))
 })
-radio.onDataPacketReceived(({ receivedNumber }) => {
+radio.onReceivedNumber(function (receivedNumber) {
     led.plotBarGraph(receivedNumber, 1023)
 })
 

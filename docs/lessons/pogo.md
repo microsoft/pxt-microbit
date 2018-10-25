@@ -31,7 +31,7 @@ basic.showLeds(`
     `)
 basic.clearScreen()
 if (true) {}
-radio.onDataPacketReceived(() => { })
+radio.onReceivedNumber(function (receivedNumber) { })
 ```
 ## Objectives
 

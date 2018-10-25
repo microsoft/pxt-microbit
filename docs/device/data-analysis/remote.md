@@ -14,11 +14,11 @@ The receiving @boardname@ sets a radio group number on which to listen for incom
 radio.setGroup(99)
 ```
 
-The receiver then waits to receive a packet (radio message) from the sender which contains the data to record. This happens inside an ``||radio:on radio received||`` block. If the sending @boardname@ is measuring temperature at a remote location (somewhere else in the room maybe), the receiver will write the value received as a temperature measurement to the serial port.
+The receiver then waits to receive a packet (radio message) from the sender which contains the data to record. This happens inside an ``||radio:on received number||`` block. If the sending @boardname@ is measuring temperature at a remote location (somewhere else in the room maybe), the receiver will write the value received as a temperature measurement to the serial port.
 
 ```blocks
 radio.setGroup(99)
-radio.onDataPacketReceived( ({ receivedNumber }) =>  {
+radio.onReceivedNumber(function (receivedNumber) {
     basic.showNumber(receivedNumber)
     serial.writeValue("TempCelsius", receivedNumber)
 })
@@ -67,14 +67,14 @@ Here's the program for the receiver to record both temperature and light:
 
 ```blocks
 radio.setGroup(99)
-radio.onDataPacketReceived(({ receivedString: name, receivedNumber: value }) => {
+radio.onReceivedValue(function (name: string, value: number) {
     basic.showString(name + ":")
     basic.showNumber(value)
     serial.writeValue(name, value)
 })
 ```
 
-The receiver program uses just one ``||radio:on radio received||`` event to record the values. The ``name`` and the ``value`` are parameters for the event block so both temperature and light values are received here.
+The receiver program uses just one ``||radio:on received number||`` event to record the values. The ``name`` and the ``value`` are parameters for the event block so both temperature and light values are received here.
 
 ## Multiple remote stations
 
@@ -111,8 +111,10 @@ basic.forever(() => {
 The program on the receiver board can use the serial number to make a name value pair that the [Data Viewer](./writing#name-value-pairs) can recognize:
 
 ```blocks
+let id = 0;
 radio.setGroup(99)
-radio.onDataPacketReceived(({ serial: id, receivedString: name, receivedNumber: value }) => {
+radio.onReceivedValue(function (name: string, value: number) {
+    id = radio.receivedPacket(RadioPacketProperty.SerialNumber)
     basic.showString(name + ":")
     basic.showNumber(value)
     serial.writeValue(id + "_" + name, value)
@@ -126,7 +128,7 @@ The serial number, ``id``, is used as a _prefix_ for the ``name`` to identify wh
 If you're recording data to save on a computer for analysis or other uses outside of the MakeCode editor, you can use the ``||radio:radio write received packet to serial||`` block to format it for you. This function will format the data from the received packet into a [JSON](https://en.wikipedia.org/wiki/JSON) string and write it to the serial port, all in one operation. It's used just like this:
 
 ```blocks
-radio.onDataPacketReceived(() => {
+radio.onReceivedNumber(function (receivedNumber) {
     radio.writeReceivedPacketToSerial();
 });
 ```

@@ -31,30 +31,38 @@ npm install
 npm run build
 cd ..
 ```
-5. Clone the `v1` branch of this repository.
+5. Clone the pxt-common-packages repository
+```
+git clone https://github.com/microsoft/pxt-common-packages
+cd pxt-common-packages
+npm install
+cd ..
+```
+6. Clone the `v1` branch of this repository.
 ```
 git clone https://github.com/microsoft/pxt-microbit --branch v1
 cd pxt-microbit
 ```
-6. Install the PXT command line (add `sudo` for Mac/Linux shells).
+7. Install the PXT command line (add `sudo` for Mac/Linux shells).
 ```
 npm install -g pxt
 ```
-7. Install the pxt-microbit dependencies.
+8. Install the pxt-microbit dependencies.
 ```
 npm install
 ```
 8. Link pxt-microbit back to base pxt repo (add `sudo` for Mac/Linux shells).
 ```
 npm link ../pxt
+npm link ../pxt-common-packages
 ```
 Note the above command assumes the folder structure of   
 ```
        makecode
           |
-  -----------------
-  |               |
- pxt        pxt-microbit
+  ----------------------------------
+  |       |                        |
+ pxt      pxt-common-packages  pxt-microbit
  ```
 
 ### Running
@@ -73,17 +81,13 @@ pxt serve --localbuild
 
 ### Updates
 
-To update your PXT version and make sure you're running the latest tools, run:
-```
-pxt update
-```
-
-More instructions are at https://github.com/Microsoft/pxt#running-a-target-from-localhost
+Make sure to pull changes from all repos regularly. More instructions are at https://github.com/Microsoft/pxt#running-a-target-from-localhost
 
 ## Repos 
 
 The pxt-microbit target depends on several other repos. The main ones are:
 - https://github.com/Microsoft/pxt, the PXT framework
+- https://github.com/Microsoft/pxt-commmon-packages, common APIs accross various MakeCode editors
 - https://github.com/lancaster-university/microbit, basic wrapper around the DAL
 - https://github.com/lancaster-university/microbit-dal
 

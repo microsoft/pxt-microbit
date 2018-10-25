@@ -197,7 +197,8 @@ declare namespace basic {
      */
     //% help=basic/pause weight=54
     //% async block="pause (ms) %pause" blockGap=16
-    //% blockId=device_pause icon="\uf110" shim=basic::pause
+    //% blockId=device_pause icon="\uf110"
+    //% pause.shadow=timePicker shim=basic::pause
     function pause(ms: int32): void;
 }
 
@@ -323,7 +324,7 @@ declare namespace input {
     /**
      * Gets the number of milliseconds elapsed since power on.
      */
-    //% help=input/running-time weight=50 blockGap=16
+    //% help=input/running-time weight=50 blockGap=8
     //% blockId=device_get_running_time block="running time (ms)"
     //% advanced=true shim=input::runningTime
     function runningTime(): int32;
@@ -340,7 +341,8 @@ declare namespace input {
      * Obsolete, compass calibration is automatic.
      */
     //% help=input/calibrate-compass advanced=true
-    //% blockId="input_compass_calibrate" block="calibrate compass" shim=input::calibrateCompass
+    //% blockId="input_compass_calibrate" block="calibrate compass"
+    //% weight=45 shim=input::calibrateCompass
     function calibrateCompass(): void;
 
     /**
@@ -431,6 +433,13 @@ declare namespace control {
     //% blockId="control_device_serial_number" block="device serial number" weight=9
     //% advanced=true shim=control::deviceSerialNumber
     function deviceSerialNumber(): int32;
+
+    /**
+     * Informs simulator/runtime of a MIDI message
+     * Internal function to support the simulator.
+     */
+    //% part=midioutput blockHidden=1 shim=control::__midiSend
+    function __midiSend(buffer: Buffer): void;
 }
 
 
@@ -446,7 +455,8 @@ declare namespace led {
     //% help=led/plot weight=78
     //% blockId=device_plot block="plot|x %x|y %y" blockGap=8
     //% parts="ledmatrix"
-    //% x.min=0 x.max=4 y.min=0 y.max=4 shim=led::plot
+    //% x.min=0 x.max=4 y.min=0 y.max=4
+    //% x.fieldOptions.precision=1 y.fieldOptions.precision=1 shim=led::plot
     function plot(x: int32, y: int32): void;
 
     /**
@@ -459,6 +469,7 @@ declare namespace led {
     //% blockId=device_plot_brightness block="plot|x %x|y %y|brightness %brightness" blockGap=8
     //% parts="ledmatrix"
     //% x.min=0 x.max=4 y.min=0 y.max=4 brightness.min=0 brightness.max=255
+    //% x.fieldOptions.precision=1 y.fieldOptions.precision=1
     //% advanced=true shim=led::plotBrightness
     function plotBrightness(x: int32, y: int32, brightness: int32): void;
 
@@ -470,7 +481,8 @@ declare namespace led {
     //% help=led/unplot weight=77
     //% blockId=device_unplot block="unplot|x %x|y %y" blockGap=8
     //% parts="ledmatrix"
-    //% x.min=0 x.max=4 y.min=0 y.max=4 shim=led::unplot
+    //% x.min=0 x.max=4 y.min=0 y.max=4
+    //% x.fieldOptions.precision=1 y.fieldOptions.precision=1 shim=led::unplot
     function unplot(x: int32, y: int32): void;
 
     /**
@@ -481,7 +493,8 @@ declare namespace led {
     //% help=led/point weight=76
     //% blockId=device_point block="point|x %x|y %y"
     //% parts="ledmatrix"
-    //% x.min=0 x.max=4 y.min=0 y.max=4 shim=led::point
+    //% x.min=0 x.max=4 y.min=0 y.max=4
+    //% x.fieldOptions.precision=1 y.fieldOptions.precision=1 shim=led::point
     function point(x: int32, y: int32): boolean;
 
     /**
@@ -518,7 +531,8 @@ declare namespace led {
      * @param mode mode the display mode in which the screen operates
      */
     //% weight=1 help=led/set-display-mode
-    //% parts="ledmatrix" advanced=true shim=led::setDisplayMode
+    //% parts="ledmatrix" advanced=true weight=1
+    //% blockId="led_set_display_mode" block="set display mode $mode" shim=led::setDisplayMode
     function setDisplayMode(mode: DisplayMode): void;
 
     /**
@@ -550,7 +564,7 @@ declare namespace pins {
     //% help=pins/digital-read-pin weight=30
     //% blockId=device_get_digital_pin block="digital read|pin %name" blockGap=8
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-    //% name.fieldOptions.tooltips="false" name.fieldOptions.width="300" shim=pins::digitalReadPin
+    //% name.fieldOptions.tooltips="false" name.fieldOptions.width="250" shim=pins::digitalReadPin
     function digitalReadPin(name: DigitalPin): int32;
 
     /**
@@ -562,7 +576,7 @@ declare namespace pins {
     //% blockId=device_set_digital_pin block="digital write|pin %name|to %value"
     //% value.min=0 value.max=1
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-    //% name.fieldOptions.tooltips="false" name.fieldOptions.width="300" shim=pins::digitalWritePin
+    //% name.fieldOptions.tooltips="false" name.fieldOptions.width="250" shim=pins::digitalWritePin
     function digitalWritePin(name: DigitalPin, value: int32): void;
 
     /**
@@ -572,7 +586,7 @@ declare namespace pins {
     //% help=pins/analog-read-pin weight=25
     //% blockId=device_get_analog_pin block="analog read|pin %name" blockGap="8"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-    //% name.fieldOptions.tooltips="false" shim=pins::analogReadPin
+    //% name.fieldOptions.tooltips="false" name.fieldOptions.width="250" shim=pins::analogReadPin
     function analogReadPin(name: AnalogPin): int32;
 
     /**
@@ -584,7 +598,7 @@ declare namespace pins {
     //% blockId=device_set_analog_pin block="analog write|pin %name|to %value" blockGap=8
     //% value.min=0 value.max=1023
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-    //% name.fieldOptions.tooltips="false" shim=pins::analogWritePin
+    //% name.fieldOptions.tooltips="false" name.fieldOptions.width="250" shim=pins::analogWritePin
     function analogWritePin(name: AnalogPin, value: int32): void;
 
     /**
@@ -607,7 +621,7 @@ declare namespace pins {
     //% help=pins/on-pulsed weight=22 blockGap=16 advanced=true
     //% blockId=pins_on_pulsed block="on|pin %pin|pulsed %pulse"
     //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=4
-    //% pin.fieldOptions.tooltips="false" pin.fieldOptions.width="300" shim=pins::onPulsed
+    //% pin.fieldOptions.tooltips="false" pin.fieldOptions.width="250" shim=pins::onPulsed
     function onPulsed(name: DigitalPin, pulse: PulseValue, body: () => void): void;
 
     /**
@@ -628,7 +642,7 @@ declare namespace pins {
     //% weight=20 advanced=true
     //% help=pins/pulse-in
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-    //% name.fieldOptions.tooltips="false" name.fieldOptions.width="300" maxDuration.defl=2000000 shim=pins::pulseIn
+    //% name.fieldOptions.tooltips="false" name.fieldOptions.width="250" maxDuration.defl=2000000 shim=pins::pulseIn
     function pulseIn(name: DigitalPin, value: PulseValue, maxDuration?: int32): int32;
 
     /**
@@ -641,7 +655,7 @@ declare namespace pins {
     //% parts=microservo trackArgs=0
     //% value.min=0 value.max=180
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-    //% name.fieldOptions.tooltips="false" shim=pins::servoWritePin
+    //% name.fieldOptions.tooltips="false" name.fieldOptions.width="250" shim=pins::servoWritePin
     function servoWritePin(name: AnalogPin, value: int32): void;
 
     /**
@@ -652,7 +666,7 @@ declare namespace pins {
     //% help=pins/servo-set-pulse weight=19
     //% blockId=device_set_servo_pulse block="servo set pulse|pin %value|to (µs) %micros"
     //% value.fieldEditor="gridpicker" value.fieldOptions.columns=4
-    //% value.fieldOptions.tooltips="false" shim=pins::servoSetPulse
+    //% value.fieldOptions.tooltips="false" value.fieldOptions.width="250" shim=pins::servoSetPulse
     function servoSetPulse(name: AnalogPin, micros: int32): void;
 
     /**
@@ -662,7 +676,7 @@ declare namespace pins {
     //% blockId=device_analog_set_pitch_pin block="analog set pitch pin %name"
     //% help=pins/analog-set-pitch-pin weight=3 advanced=true
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-    //% name.fieldOptions.tooltips="false" shim=pins::analogSetPitchPin
+    //% name.fieldOptions.tooltips="false" name.fieldOptions.width="250" shim=pins::analogSetPitchPin
     function analogSetPitchPin(name: AnalogPin): void;
 
     /**
@@ -682,7 +696,7 @@ declare namespace pins {
     //% help=pins/set-pull weight=3 advanced=true
     //% blockId=device_set_pull block="set pull|pin %pin|to %pull"
     //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=4
-    //% pin.fieldOptions.tooltips="false" pin.fieldOptions.width="300" shim=pins::setPull
+    //% pin.fieldOptions.tooltips="false" pin.fieldOptions.width="250" shim=pins::setPull
     function setPull(name: DigitalPin, pull: PinPullMode): void;
 
     /**
@@ -694,7 +708,7 @@ declare namespace pins {
     //% help=pins/set-events weight=4 advanced=true
     //% blockId=device_set_pin_events block="set pin %pin|to emit %type|events"
     //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=4
-    //% pin.fieldOptions.tooltips="false" pin.fieldOptions.width="300" shim=pins::setEvents
+    //% pin.fieldOptions.tooltips="false" pin.fieldOptions.width="250" shim=pins::setEvents
     function setEvents(name: DigitalPin, type: PinEventType): void;
 
     /**
@@ -714,7 +728,7 @@ declare namespace pins {
      * Write bytes to a 7-bit I2C `address`.
      */
     //% repeat.defl=0 shim=pins::i2cWriteBuffer
-    function i2cWriteBuffer(address: int32, buf: Buffer, repeat?: boolean): void;
+    function i2cWriteBuffer(address: int32, buf: Buffer, repeat?: boolean): int32;
 
     /**
      * Write to the SPI slave and return the response
@@ -748,11 +762,11 @@ declare namespace pins {
     //% help=pins/spi-pins weight=2 advanced=true
     //% blockId=spi_pins block="spi set pins|MOSI %mosi|MISO %miso|SCK %sck"
     //% mosi.fieldEditor="gridpicker" mosi.fieldOptions.columns=4
-    //% mosi.fieldOptions.tooltips="false" mosi.fieldOptions.width="300"
+    //% mosi.fieldOptions.tooltips="false" mosi.fieldOptions.width="250"
     //% miso.fieldEditor="gridpicker" miso.fieldOptions.columns=4
-    //% miso.fieldOptions.tooltips="false" miso.fieldOptions.width="300"
+    //% miso.fieldOptions.tooltips="false" miso.fieldOptions.width="250"
     //% sck.fieldEditor="gridpicker" sck.fieldOptions.columns=4
-    //% sck.fieldOptions.tooltips="false" sck.fieldOptions.width="300" shim=pins::spiPins
+    //% sck.fieldOptions.tooltips="false" sck.fieldOptions.width="250" shim=pins::spiPins
     function spiPins(mosi: DigitalPin, miso: DigitalPin, sck: DigitalPin): void;
 }
 

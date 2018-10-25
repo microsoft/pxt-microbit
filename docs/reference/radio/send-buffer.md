@@ -30,7 +30,7 @@ basic.forever(() => {
     radio.sendBuffer(buf)
 })
 
-radio.onDataPacketReceived(({ receivedBuffer }) => {
+radio.onReceivedBuffer(function (receivedBuffer) {
     // decode data from buffer
     ax = receivedBuffer.getNumber(NumberFormat.Int16LE, 0);
     ay = receivedBuffer.getNumber(NumberFormat.Int16LE, 2);
@@ -52,7 +52,7 @@ A radio that can both transmit and receive is called a _transceiver_.
 
 ## See also
 
-[on data packet received](/reference/radio/on-data-packet-received)
+[on received buffer](/reference/radio/on-received-buffer)
 
 ```package
 radio

@@ -1,4 +1,4 @@
-# Step counter
+# Step Counter
 
 ![A @boardname@ attached on a foot](/static/mb/projects/step-counter.png)
 

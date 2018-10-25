@@ -102,14 +102,14 @@ basic.forever(() => {
 
 In the starting of the code the title is displayed, radio group `99` is setup, and the initial ``temperature`` variable is set to `0`.
 
-In the ``||radio:on radio received||`` event, the temperature is received from sending the @boardname@ radio. The receive temperature is then displayed on the LED display. This is repeated whenever a radio signal is received.
+In the ``||radio:on received number||`` event, the temperature is received from sending the @boardname@ radio. The receive temperature is then displayed on the LED display. This is repeated whenever a radio signal is received.
 
 ```blocks
 let temperature = 0
 basic.showString("TEMPERATURE RADIO RECEIVER")
 radio.setGroup(99)
-radio.onDataPacketReceived( ({ receivedNumber: temperature }) =>  {
-    basic.showNumber(temperature)
+radio.onReceivedNumber( function(receivedNumber) {
+    basic.showNumber(receivedNumber)
 })
 ```
 
@@ -121,9 +121,9 @@ This code is the same as above but one additional line of code is added to write
 let temperature = 0
 basic.showString("TEMPERATURE RADIO RECEIVER SERIAL")
 radio.setGroup(99)
-radio.onDataPacketReceived( ({ receivedNumber: temperature }) =>  {
-    basic.showNumber(temperature)
-    serial.writeValue("Celisus", temperature)
+radio.onReceivedNumber( function(receivedNumber) {
+    basic.showNumber(receivedNumber)
+    serial.writeValue("Celisus", receivedNumber)
 })
 ```
 

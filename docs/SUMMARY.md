@@ -47,17 +47,9 @@
     * [Light Level Meter](/projects/light-level-meter)
     * [Radio bridge](/projects/radio-bridge)
     * [Snap the dot](/projects/snap-the-dot)
+    * [Red light green light](/projects/red-light-green-light)
 
 ## #examples
-
-* [Examples](/examples)
-    * [Blinky](/examples/blinky)
-    * [Rando](/examples/rando)
-    * [Plot Acceleration](/examples/plot-acceleration)
-    * [Plot Light Level](/examples/plot-light-level)
-    * [Game of Life](/examples/gameofLife)
-    * [Egg and Spoon Race](/examples/egg-and-spoon)
-    * [Radio Dashboard](/examples/radio-dashboard)
 
 ## #courses
 
@@ -223,10 +215,14 @@
         * [send number](/reference/radio/send-number)
         * [send value](/reference/radio/send-value)
         * [send string](/reference/radio/send-string)
-        * [on data packet received](/reference/radio/on-data-packet-received)
+        * [on received number](/reference/radio/on-received-number)
+        * [on received string](/reference/radio/on-received-string)
+        * [on received buffer](/reference/radio/on-received-buffer)
+        * [received packet](/reference/radio/received-packet)
         * [set group](/reference/radio/set-group)
         * [set transmit power](/reference/radio/set-transmit-power)
         * [set transmit serial number](/reference/radio/set-transmit-serial-number)
+        * [on data packet received](/reference/radio/on-data-packet-received)
         * [write received packet to serial](/reference/radio/write-received-packet-to-serial)
     * [Game](/reference/game)
         * [create sprite](/reference/game/create-sprite)
@@ -327,7 +323,7 @@
 
 ## #packages
 
-* [Extensions](/Extensions)
+* [Extensions](/extensions)
 
 ## #types
 

@@ -78,7 +78,7 @@ Your finished code will look like this:
 basic.forever(() => {
     radio.sendNumber(input.acceleration(Dimension.Strength) - 1023);
 });
-radio.onDataPacketReceived(() => {
+radio.onReceivedNumber(function (receivedNumber) {
 });
 
 ```
@@ -92,7 +92,7 @@ Your finished code will look like this:
 basic.forever(() => {
     radio.sendNumber(input.acceleration(Dimension.Strength) - 1023);
 });
-radio.onDataPacketReceived(({ receivedNumber }) => {
+radio.onReceivedNumber(function (receivedNumber) {
     led.plotBarGraph(receivedNumber, 0);
 });
 ```

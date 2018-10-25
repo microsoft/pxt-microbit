@@ -8,8 +8,6 @@ Register code to run when the signal strength of the paired device changes.
 
 ## ~
 
-
-
 ```sig
 devices.onNotified(MesDeviceInfo.IncomingCall, () => {})
 ```

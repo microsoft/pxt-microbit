@@ -2,12 +2,11 @@
 
 ## Introduction @unplugged
 
-Imagine that a virtual turtle, as big as an LED, that you can control it with commands.
-In this tutorial, you will learn to use the turtle and draw a square.
+Imagine that there's a virtual turtle, as small as an LED, that you can control with commands. In this tutorial, you will learn to use the turtle and draw a square.
 
 ## Moving the turtle @fullscreen
 
-The turtle starts in the center of the screen facing up. Place a ``||turtle:forward||`` block to make it move up.
+The turtle starts in the center of the screen heading upward. Place a ``||turtle:forward||`` block to make it move up.
 
 ```blocks
 turtle.forward(1)
@@ -25,10 +24,9 @@ turtle.forward(1)
 
 ## Drawing a square
 
-If you add enough ``||turtle:turnRight||`` and ``||turtle:forward||`` block, the turtle 
-will eventually draw a square. 
+If you add enough ``||turtle:turnRight||`` and ``||turtle:forward||`` blocks, the turtle will eventually draw a square. 
 
-You can move the blocks in a ``||input:on button pressed||`` to easily run the code again.
+You can move the blocks into a ``||input:on button pressed||`` to easily run the code again.
 
 ```blocks
 input.onButtonPressed(Button.A, function() {
@@ -43,10 +41,9 @@ input.onButtonPressed(Button.A, function() {
 })
 ```
 
-## "For" is for repetition
+## "for" is for repetition
 
-Have you notice the repetition pattern in the blocks needed to draw a square?
-Try to use a ``for`` loop to achieve the same effect.
+Did you notice the pattern of repeated blocks needed to draw a square? Try using a ``for`` loop to achieve the same effect.
 
 ```blocks
 input.onButtonPressed(Button.A, function() {
@@ -57,11 +54,9 @@ input.onButtonPressed(Button.A, function() {
 })
 ```
 
-
 ## Leaving a trail
 
-The turtle holds a pen that turns on LEDs. If you add the ``||turtle:pen||`` block,
-it will leave a trail as it moves.
+The turtle holds a **pen** that can turn on LEDs. If you add the ``||turtle:pen||`` block, it will leave a trail as the turtle moves.
 
 ```blocks
 input.onButtonPressed(Button.A, function() {
@@ -74,5 +69,5 @@ input.onButtonPressed(Button.A, function() {
 ```
 
 ```package
-microturtle=github:Microsoft/pxt-microturtle#master
+microturtle=github:Microsoft/pxt-microturtle#v0.0.9
 ```

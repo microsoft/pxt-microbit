@@ -102,15 +102,15 @@ namespace pxsim {
 
             switch (msg.type || "") {
                 case "eventbus":
-                    let ev = <SimulatorEventBusMessage>msg;
+                    const ev = <SimulatorEventBusMessage>msg;
                     this.bus.queue(ev.id, ev.eventid, ev.value);
                     break;
                 case "serial":
-                    let data = (<SimulatorSerialMessage>msg).data || "";
+                    const data = (<SimulatorSerialMessage>msg).data || "";
                     this.serialState.receiveData(data);
                     break;
                 case "radiopacket":
-                    let packet = <SimulatorRadioPacketMessage>msg;
+                    const packet = <SimulatorRadioPacketMessage>msg;
                     this.radioState.receivePacket(packet);
                     break;
             }

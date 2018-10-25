@@ -21,7 +21,7 @@ input.onButtonPressed(Button.A, () => {
     music.playTone(440, 120)
     led.toggle(0, 0)
 })
-radio.onDataPacketReceived( ({ receivedNumber }) =>  {
+radio.onReceivedNumber(function (receivedNumber) {
     const freq = receivedNumber >> 16;
     const duration = receivedNumber & 0xffff;
     music.playTone(freq, duration);

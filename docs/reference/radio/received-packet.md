@@ -1,9 +1,9 @@
-# get Received Packet Property
+# Received Packet Property
 
 Get one of the properties from the last received radio packet.
 
 ```sig
-radio.getReceivedPacketProperty(radio.PacketProperty.SignalStrength)
+radio.receivedPacket(RadioPacketProperty.SignalStrength)
 ```
 
 ## Parameters
@@ -28,7 +28,7 @@ basic.forever(() => {
 })
 radio.onReceivedNumber(function (receivedNumber) {
     led.plotBarGraph(
-        Math.abs(radio.getReceivedPacketProperty(radio.PacketProperty.SignalStrength) + 42),
+        Math.abs(radio.receivedPacket(RadioPacketProperty.SignalStrength) + 42),
         128 - 42
     )
 })
@@ -37,3 +37,7 @@ radio.onReceivedNumber(function (receivedNumber) {
 ## See also
 
 [set transmit serial number](/reference/radio/set-transmit-serial-number)
+
+```package
+radio
+```

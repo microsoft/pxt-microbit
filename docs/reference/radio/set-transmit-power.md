@@ -35,7 +35,7 @@ radio.setTransmitPower(7)
 
 ## See also
 
-[get received packet property](/reference/radio/get-received-packet-property),
+[received packet](/reference/radio/received-packet),
 [send number](/reference/radio/send-number),
 [send value](/reference/radio/send-value),
 [send string](/reference/radio/send-string)

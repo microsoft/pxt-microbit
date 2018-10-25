@@ -9,7 +9,9 @@
         "libs/core",
         "libs/radio",
         "libs/devices",
-        "libs/bluetooth"
+        "libs/bluetooth",
+        "libs/servo",
+        "libs/radio-broadcast"
     ],
     "cloud": {
         "workspace": false,
@@ -61,12 +63,13 @@
                 {
                     "type": "api",
                     "map": {
-                        "bluetooth\\s*\\.uartRead\\s*\\((.*?)\\)": "bluetooth.uartReadUntil($1)",
-                        "bluetooth\\s*\\.uartWrite\\s*\\((.*?)\\)": "bluetooth.uartWriteUntil($1)",
-                        "input\\s*\\.calibrate\\s*\\(": "input.calibrateCompass(",
-                        "radio\\s*\\.onDataPacketReceived\\(\\s*\\(\\{\\s*receivedNumber\\s*\\}\\)\\s*=>\\s*\\{": "radio.onReceivedNumber(function (receivedNumber) {",
-                        "radio\\s*\\.onDataPacketReceived\\(\\s*\\(\\{\\s*receivedString: name, receivedNumber: value\\s*\\}\\)\\s*=>\\s*\\{": "radio.onReceivedValue(function (name, value) {",
-                        "radio\\s*\\.onDataPacketReceived\\(\\s*\\(\\{\\s*receivedString\\s*\\}\\)\\s*=>\\s*\\{": "radio.onReceivedString(function (receivedString) {"
+                        "bluetooth\\s*\\.\\s*uartRead\\s*\\((.*?)\\)": "bluetooth.uartReadUntil($1)",
+                        "bluetooth\\s*\\.\\s*uartWrite\\s*\\((.*?)\\)": "bluetooth.uartWriteUntil($1)",
+                        "input\\s*\\.\\s*calibrate\\s*\\(": "input.calibrateCompass(",
+                        "radio\\s*\\.\\s*onDataPacketReceived\\(\\s*\\(\\{\\s*receivedNumber\\s*\\}\\)\\s*=>\\s*\\{": "radio.onReceivedNumber(function (receivedNumber) {",
+                        "radio\\s*\\.\\s*onDataPacketReceived\\(\\s*\\(\\{\\s*receivedString: name, receivedNumber: value\\s*\\}\\)\\s*=>\\s*\\{": "radio.onReceivedValue(function (name, value) {",
+                        "radio\\s*\\.\\s*onDataPacketReceived\\(\\s*\\(\\{\\s*receivedString\\s*\\}\\)\\s*=>\\s*\\{": "radio.onReceivedString(function (receivedString) {",
+                        "Math\\s*\\.\\s*random\\s*\\(": "Math.randomRange(0, "
                     }
                 },
                 {
@@ -234,12 +237,10 @@
                 "#107C10"
             ]
         },
-        "chromeExtension": "hjcflblhjoglmjjkecamiegdigfkgeni",
         "vendorId": "0x0d28",
         "productId": "0x0204",
         "rawHID": true
     },
-    "ignoreDocsErrors": true,
     "appTheme": {
         "accentColor": "#5C005C",
         "logoUrl": "https://microbit.org/code/",
@@ -265,16 +266,23 @@
         "feedbackUrl": "https://www.research.net/r/MCmicro",
         "appStoreID": "1092687276",
         "mobileSafariDownloadProtocol": "microbithex://?data",
+        "crowdinProject": "kindscript",
         "extendEditor": true,
         "extendFieldEditors": true,
         "enableTrace": true,
+        "ignoreDocsErrors": true,
         "experiments": [
             "greenScreen",
             "print",
             "allowPackageExtensions",
             "instructions",
-            "debugger"
+            "debugger",
+            "bluetoothUartConsole",
+            "bluetoothPartialFlashing"
         ],
+        "bluetoothUartFilters": [{
+            "namePrefix": "BBC micro:bit"
+        }],
         "docMenu": [
             {
                 "name": "Support",
@@ -423,6 +431,9 @@
         },
         "browserDbPrefixes": {
             "1": "v1"
+        },
+        "editorVersionPaths": {
+            "0": "v0"
         }
     }
 }

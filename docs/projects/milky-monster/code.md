@@ -73,7 +73,7 @@ basic.forever(() => {
 })
 ```
 
-## Step 6: Ready!
+## Step 7: Ready!
 
 Your Milky Monster is ready!
 
