@@ -149,7 +149,7 @@ namespace radio {
             uBit.serial.send(iv);
         } else if (tp == PACKET_TYPE_DOUBLE || tp == PACKET_TYPE_DOUBLE_VALUE) {
             uBit.serial.send(",\"v\":");
-            uBit.serial.send(toString(fromDouble(dv)));
+            uBit.serial.send(numops::toString(fromDouble(dv)));
         }
         uBit.serial.send("}\r\n");
     }
