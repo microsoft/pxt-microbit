@@ -81,7 +81,7 @@ declare namespace radio {
     //% weight=46
     //% blockId=radio_datagram_receive block="radio receive number" blockGap=8
     //% deprecated=true shim=radio::receiveNumber
-    function receiveNumber(): int32;
+    function receiveNumber(): number;
 
     /**
      * Registers code to run when a packet is received over radio.
@@ -150,7 +150,7 @@ declare namespace radio {
      * contain a number.
      */
     //% help=radio/received-number shim=radio::receivedNumber
-    function receivedNumber(): int32;
+    function receivedNumber(): number;
 
     /**
      * Returns the serial number of the sender micro:bit from the last packet taken

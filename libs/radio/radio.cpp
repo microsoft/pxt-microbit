@@ -149,7 +149,7 @@ namespace radio {
             uBit.serial.send(iv);
         } else if (tp == PACKET_TYPE_DOUBLE || tp == PACKET_TYPE_DOUBLE_VALUE) {
             uBit.serial.send(",\"v\":");
-            uBit.serial.send(dv);
+            uBit.serial.send(toString(fromDouble(dv)));
         }
         uBit.serial.send("}\r\n");
     }
@@ -186,7 +186,7 @@ namespace radio {
             case PACKET_TYPE_DOUBLE_VALUE:
                 memcpy(&dv, buf + PACKET_PREFIX_LENGTH, sizeof(double));
                 if (tp == PACKET_TYPE_DOUBLE_VALUE) {
-                    m = getStringValue(buf + VALUE_DOUBLE_PACKET_NAME_LEN_OFFSET, MAX_FIELD_NAME_LENGTH);
+                    m = getStringValue(buf + DOUBLE_VALUE_PACKET_NAME_LEN_OFFSET, MAX_FIELD_NAME_LENGTH);
                 }
                 break;
             case PACKET_TYPE_NUMBER:
@@ -345,7 +345,16 @@ namespace radio {
     //% advanced=true
     void writeReceivedPacketToSerial() {
         if (radioEnable() != MICROBIT_OK) return;
-        writePacketAsJSON(type, value, (int) serial, (int) time, msg, bufMsg);
+        writePacketAsJSON(type, ivalue, dvalue, (int) serial, (int) time, msg, bufMsg);
+    }
+
+    TNumber readNumber() {
+        if (type == PACKET_TYPE_NUMBER || type == PACKET_TYPE_VALUE)
+            return fromInt(ivalue);
+        else if (type == PACKET_TYPE_DOUBLE || type == PACKET_TYPE_DOUBLE_VALUE)
+            return fromDouble(dvalue);
+        else 
+            return fromInt(0);
     }
 
     /**
@@ -356,11 +365,11 @@ namespace radio {
     //% weight=46
     //% blockId=radio_datagram_receive block="radio receive number" blockGap=8
     //% deprecated=true
-    int receiveNumber()
+    TNumber receiveNumber()
     {
         if (radioEnable() != MICROBIT_OK) return 0;
         receivePacket(false);
-        return value;
+        return readNumber();
     }
 
     /**
@@ -374,7 +383,7 @@ namespace radio {
         if (radioEnable() != MICROBIT_OK) return;
         registerWithDal(MICROBIT_ID_RADIO, MICROBIT_RADIO_EVT_DATAGRAM, body);
         // make sure the receive buffer has a free spot
-        receiveNumber();
+        receivePacket(false);
     }
 
 
@@ -452,9 +461,9 @@ namespace radio {
      * contain a number.
      */
     //% help=radio/received-number
-    int receivedNumber() {
+    TNumber receivedNumber() {
         if (radioEnable() != MICROBIT_OK) return 0;
-        return value;
+        return readNumber();
     }
 
     /**
