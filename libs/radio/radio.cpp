@@ -3,6 +3,7 @@
 using namespace pxt;
 
 #define MAX_FIELD_NAME_LENGTH 12
+#define MAX_FIELD_DOUBLE_NAME_LENGTH 8
 #define MAX_PAYLOAD_LENGTH 20
 #define PACKET_PREFIX_LENGTH 9
 #define VALUE_PACKET_NAME_LEN_OFFSET 13
@@ -189,7 +190,7 @@ namespace radio {
             case PACKET_TYPE_DOUBLE_VALUE:
                 memcpy(&dv, buf + PACKET_PREFIX_LENGTH, sizeof(double));
                 if (tp == PACKET_TYPE_DOUBLE_VALUE) {
-                    m = getStringValue(buf + DOUBLE_VALUE_PACKET_NAME_LEN_OFFSET, MAX_FIELD_NAME_LENGTH);
+                    m = getStringValue(buf + DOUBLE_VALUE_PACKET_NAME_LEN_OFFSET, MAX_FIELD_DOUBLE_NAME_LENGTH);
                 }
                 break;
             case PACKET_TYPE_NUMBER:
@@ -274,7 +275,7 @@ namespace radio {
             setPacketPrefix(buf, PACKET_TYPE_VALUE);
             memcpy(buf + PACKET_PREFIX_LENGTH, &iv, sizeof(int));
 
-            int stringLen = copyStringValue(buf + VALUE_PACKET_NAME_LEN_OFFSET, name, MAX_FIELD_NAME_LENGTH);
+            int stringLen = copyStringValue(buf + VALUE_PACKET_NAME_LEN_OFFSET, name, MAX_FIELD_DOUBLE_NAME_LENGTH);
             uBit.radio.datagram.send(buf, VALUE_PACKET_NAME_LEN_OFFSET + stringLen);
         } else {
             setPacketPrefix(buf, PACKET_TYPE_DOUBLE_VALUE);
