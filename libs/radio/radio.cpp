@@ -241,7 +241,7 @@ namespace radio {
         int iv = toInt(value);
         double dv = toDouble(value);
         if (iv == dv) {
-            uint8_t length = PACKET_PREFIX_LENGTH + sizeof(uint32_t);
+            uint8_t length = PACKET_PREFIX_LENGTH + sizeof(int);
             uint8_t buf[length];
             memset(buf, 0, length);
             setPacketPrefix(buf, PACKET_TYPE_NUMBER);
