@@ -14,7 +14,7 @@ A packet that was received by the radio.
 
 This section documents the data layout of the packet if you need to interpret the data outside of MakeCode.
 
-    Packet Spec:
+    Packet byte layout
     | 0              | 1 ... 4       | 5 ... 8           | 9 ... 28
     ----------------------------------------------------------------
     | packet type    | system time   | serial number     | payload
