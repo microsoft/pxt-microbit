@@ -6,6 +6,7 @@ using namespace pxt;
 #define MAX_PAYLOAD_LENGTH 20
 #define PACKET_PREFIX_LENGTH 9
 #define VALUE_PACKET_NAME_LEN_OFFSET 13
+#define DOUBLE_VALUE_PACKET_NAME_LEN_OFFSET 17
 
 
 // Packet Spec:
@@ -27,6 +28,12 @@ using namespace pxt;
 // payload: buffer length (9), buffer (10 ... 28)
 #define PACKET_TYPE_BUFFER 3
 
+// payload: number (9 ... 16)
+#define PACKET_TYPE_DOUBLE 4
+
+// payload: number (9 ... 16), name length (17), name (18 ... 26)
+#define PACKET_TYPE_DOUBLE_VALUE 5
+
 //% color=#E3008C weight=96 icon="\uf012"
 namespace radio {
 
@@ -41,7 +48,8 @@ namespace radio {
     uint8_t type;
     uint32_t time;
     uint32_t serial;
-    int value;
+    int ivalue;
+    double dvalue;
     String msg; // may be NULL before first packet
     Buffer bufMsg; // may be NULL before first packet
 
@@ -118,7 +126,7 @@ namespace radio {
         return mkBuffer(buf + 1, len);
     }
 
-    void writePacketAsJSON(uint8_t tp, int v, int s, int t, String m, Buffer b) {
+    void writePacketAsJSON(uint8_t tp, int iv, double dv, int s, int t, String m, Buffer b) {
         // Convert the packet to JSON and send over serial
         uBit.serial.send("{");
         uBit.serial.send("\"t\":");
@@ -138,7 +146,10 @@ namespace radio {
         }
         if (tp == PACKET_TYPE_NUMBER || tp == PACKET_TYPE_VALUE) {
             uBit.serial.send(",\"v\":");
-            uBit.serial.send(v);
+            uBit.serial.send(iv);
+        } else if (tp == PACKET_TYPE_DOUBLE || tp == PACKET_TYPE_DOUBLE_VALUE) {
+            uBit.serial.send(",\"v\":");
+            uBit.serial.send(dv);
         }
         uBit.serial.send("}\r\n");
     }
@@ -155,7 +166,8 @@ namespace radio {
         uint8_t tp;
         int t;
         int s;
-        int v = 0;
+        int iv = 0;
+        double dv = 0;
         String m = NULL;
         Buffer b = NULL;
 
@@ -163,17 +175,29 @@ namespace radio {
         memcpy(&t, buf + 1, 4);
         memcpy(&s, buf + 5, 4);
 
-        if (tp == PACKET_TYPE_STRING) {
-            m = getStringValue(buf + PACKET_PREFIX_LENGTH, MAX_PAYLOAD_LENGTH - 1);
-        }
-        else if (tp == PACKET_TYPE_BUFFER) {
-            b = getBufferValue(buf + PACKET_PREFIX_LENGTH, MAX_PAYLOAD_LENGTH - 1);
-        }
-        else {
-            memcpy(&v, buf + 9, 4);
-            if (tp == PACKET_TYPE_VALUE) {
-                m = getStringValue(buf + VALUE_PACKET_NAME_LEN_OFFSET, MAX_FIELD_NAME_LENGTH);
-            }
+        switch(tp) {
+            case PACKET_TYPE_STRING:
+                m = getStringValue(buf + PACKET_PREFIX_LENGTH, MAX_PAYLOAD_LENGTH - 1);
+                break;
+            case PACKET_TYPE_BUFFER:
+                b = getBufferValue(buf + PACKET_PREFIX_LENGTH, MAX_PAYLOAD_LENGTH - 1);
+                break;
+            case PACKET_TYPE_DOUBLE:
+            case PACKET_TYPE_DOUBLE_VALUE:
+                memcpy(&dv, buf + PACKET_PREFIX_LENGTH, sizeof(double));
+                if (tp == PACKET_TYPE_DOUBLE_VALUE) {
+                    m = getStringValue(buf + VALUE_DOUBLE_PACKET_NAME_LEN_OFFSET, MAX_FIELD_NAME_LENGTH);
+                }
+                break;
+            case PACKET_TYPE_NUMBER:
+            case PACKET_TYPE_VALUE:
+                memcpy(&iv, buf + PACKET_PREFIX_LENGTH, sizeof(int));
+                if (tp == PACKET_TYPE_VALUE) {
+                    m = getStringValue(buf + VALUE_PACKET_NAME_LEN_OFFSET, MAX_FIELD_NAME_LENGTH);
+                }
+                break;
+            default: // unknown packet
+                return;
         }
 
         if (NULL == m)
@@ -187,14 +211,15 @@ namespace radio {
             type = tp;
             time = t;
             serial = s;
-            value = v;
+            ivalue = iv;
+            dvalue = dv;
             decrRC(msg);
             decrRC(bufMsg);
             msg = m;
             bufMsg = b;
         }
         else {
-            writePacketAsJSON(tp, v, s, t, m, b);
+            writePacketAsJSON(tp, iv, dv, s, t, m, b);
             decrRC(m);
             decrRC(b);
         }
@@ -206,14 +231,21 @@ namespace radio {
     //% help=radio/send-number
     //% weight=60
     //% blockId=radio_datagram_send block="radio send number %value" blockGap=8
-    void sendNumber(int value) {
+    void sendNumber(TNumber value) {
         if (radioEnable() != MICROBIT_OK) return;
         uint8_t length = PACKET_PREFIX_LENGTH + sizeof(uint32_t);
         uint8_t buf[length];
         memset(buf, 0, length);
 
-        setPacketPrefix(buf, PACKET_TYPE_NUMBER);
-        memcpy(buf + PACKET_PREFIX_LENGTH, &value, 4);
+        int iv = toInt(value);
+        double dv = toDouble(value);
+        if (iv == dv) {
+            setPacketPrefix(buf, PACKET_TYPE_NUMBER);
+            memcpy(buf + PACKET_PREFIX_LENGTH, &iv, sizeof(int));
+        } else {
+            setPacketPrefix(buf, PACKET_TYPE_DOUBLE);
+            memcpy(buf + PACKET_PREFIX_LENGTH, &dv, sizeof(double));
+        }
 
         uBit.radio.datagram.send(buf, length);
     }
@@ -227,18 +259,27 @@ namespace radio {
     //% help=radio/send-value
     //% weight=59
     //% blockId=radio_datagram_send_value block="radio send|value %name|= %value" blockGap=8
-    void sendValue(String name, int value) {
+    void sendValue(String name, TNumber value) {
         if (radioEnable() != MICROBIT_OK) return;
 
         uint8_t buf[32];
         memset(buf, 0, 32);
 
-        setPacketPrefix(buf, PACKET_TYPE_VALUE);
-        memcpy(buf + PACKET_PREFIX_LENGTH, &value, 4);
+        int iv = toInt(value);
+        double dv = toDouble(value);
+        if (iv == dv) {
+            setPacketPrefix(buf, PACKET_TYPE_VALUE);
+            memcpy(buf + PACKET_PREFIX_LENGTH, &iv, sizeof(int));
 
-        int stringLen = copyStringValue(buf + VALUE_PACKET_NAME_LEN_OFFSET, name, MAX_FIELD_NAME_LENGTH);
+            int stringLen = copyStringValue(buf + VALUE_PACKET_NAME_LEN_OFFSET, name, MAX_FIELD_NAME_LENGTH);
+            uBit.radio.datagram.send(buf, VALUE_PACKET_NAME_LEN_OFFSET + stringLen);
+        } else {
+            setPacketPrefix(buf, PACKET_TYPE_DOUBLE_VALUE);
+            memcpy(buf + PACKET_PREFIX_LENGTH, &dv, sizeof(double));
 
-        uBit.radio.datagram.send(buf, VALUE_PACKET_NAME_LEN_OFFSET + stringLen);
+            int stringLen = copyStringValue(buf + DOUBLE_VALUE_PACKET_NAME_LEN_OFFSET, name, MAX_FIELD_NAME_LENGTH);
+            uBit.radio.datagram.send(buf, DOUBLE_VALUE_PACKET_NAME_LEN_OFFSET + stringLen);
+        }
     }
 
     /**

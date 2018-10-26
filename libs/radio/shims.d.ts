@@ -21,7 +21,7 @@ declare namespace radio {
     //% help=radio/send-number
     //% weight=60
     //% blockId=radio_datagram_send block="radio send number %value" blockGap=8 shim=radio::sendNumber
-    function sendNumber(value: int32): void;
+    function sendNumber(value: number): void;
 
     /**
      * Broadcasts a name / value pair along with the device serial number
@@ -32,7 +32,7 @@ declare namespace radio {
     //% help=radio/send-value
     //% weight=59
     //% blockId=radio_datagram_send_value block="radio send|value %name|= %value" blockGap=8 shim=radio::sendValue
-    function sendValue(name: string, value: int32): void;
+    function sendValue(name: string, value: number): void;
 
     /**
      * Broadcasts a string along with the device serial number
