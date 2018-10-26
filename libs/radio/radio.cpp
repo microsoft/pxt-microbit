@@ -237,21 +237,24 @@ namespace radio {
     //% blockId=radio_datagram_send block="radio send number %value" blockGap=8
     void sendNumber(TNumber value) {
         if (radioEnable() != MICROBIT_OK) return;
-        uint8_t length = PACKET_PREFIX_LENGTH + sizeof(uint32_t);
-        uint8_t buf[length];
-        memset(buf, 0, length);
 
         int iv = toInt(value);
         double dv = toDouble(value);
         if (iv == dv) {
+            uint8_t length = PACKET_PREFIX_LENGTH + sizeof(uint32_t);
+            uint8_t buf[length];
+            memset(buf, 0, length);
             setPacketPrefix(buf, PACKET_TYPE_NUMBER);
             memcpy(buf + PACKET_PREFIX_LENGTH, &iv, sizeof(int));
+            uBit.radio.datagram.send(buf, length);
         } else {
+            uint8_t length = PACKET_PREFIX_LENGTH + sizeof(double);
+            uint8_t buf[length];
+            memset(buf, 0, length);
             setPacketPrefix(buf, PACKET_TYPE_DOUBLE);
             memcpy(buf + PACKET_PREFIX_LENGTH, &dv, sizeof(double));
+            uBit.radio.datagram.send(buf, length);
         }
-
-        uBit.radio.datagram.send(buf, length);
     }
 
     /**
