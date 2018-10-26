@@ -18,7 +18,7 @@ basic.pause(300)
 basic.showString("Super Coder")
 ```
 
-If you want to display your name from multiple places in your program, you need to repeat these three blocks at each place. This example displays your name two times by using the same three lines of code twice:
+If you want to display your name from multiple places in your program, you need to repeat these three blocks at each place. This example displays your name two times by using the same three blocks of code twice:
 
 ```blocks
 // Countdown to show my name
@@ -66,7 +66,7 @@ showMyName()
 
 In JavaScript, a function uses the ``function`` statement, it has a name, like **showMyName**, and the code for showing your name is inside brackets `{` and `}`. Code that is put inside the function, between the brackets, is called the _body_ of the function. To use the function, you _call_ it. This means that you use the function name at some place in the program to actually run the code inside the function.
 
-Here, the program to display your name twice now uses the **showMyName** function instead of repeating the three lines of display code:
+Here, the program to display your name twice now uses the **showMyName** function instead of repeating the same three blocks of display code:
 
 ```blocks
 // A function to show my name
