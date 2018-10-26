@@ -49,6 +49,11 @@ Here are some cool projects that you can build with your @boardname@!
   "description": "The Rock-Paper-Scissors game with lots and lots of players.",
   "imageUrl": "/static/mb/projects/rpsteams.png"
 }, {
+  "name": "Micro:Coin",
+  "url": "/projects/micro-coin",
+  "description": "A block-chain for micro:bit",
+  "imageUrl": "/static/mb/projects/micro-coin.png"
+}, {
   "name": "Infection",
   "url": "/projects/infection",
   "description": "An epidemic has broken out, see who will survive.",
