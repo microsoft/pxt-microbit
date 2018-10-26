@@ -30,11 +30,20 @@ Are you ready to try JavaScript to write your code?
         "url": "/courses/blocks-to-javascript/writing-code",
         "cardType": "side",
         "imageUrl": "/static/courses/blocks-to-javascript/writing-code.png"
+    },
+    {
+        "name": "Writing Functions",
+        "description": "Writing reusable functions in JavaScript",
+        "url": "/courses/blocks-to-javascript/writing-functions",
+        "cardType": "side",
+        "imageUrl": "/static/courses/blocks-to-javascript/writing-code.png"
     }
 ]
 ```
 
 ## See Also
 
-[Hello JavaScript](/courses/blocks-to-javascript/hello-javascript), 
-[Starter Blocks](/courses/blocks-to-javascript/starter-blocks)
+[Hello JavaScript](/courses/blocks-to-javascript/hello-javascript),
+[Starter Blocks](/courses/blocks-to-javascript/starter-blocks),
+[Writing Code](/courses/blocks-to-javascript/writing-code),
+[Writing Functions](/courses/blocks-to-javascript/writing-functions)
