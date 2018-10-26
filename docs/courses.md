@@ -17,6 +17,11 @@ Structured courses for teaching science and technology in the classroom.
   "description": "Science experiment lessons with measurements and data analysis activites",
   "url":"/courses/ucp-science",
   "imageUrl": "/static/courses/ucp-science.jpg"
+}, {
+  "name": "Learn All About micro:bit",
+  "description": "Projects and integration notes for a student-led workshop from the Beacon Hill School",
+  "url": "https://goo.gl/XTPYpP",
+  "imageUrl": "/static/courses/beaconhill.jpg"
 }]
 ```
 
