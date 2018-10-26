@@ -248,4 +248,4 @@ function seriesSum(n: number) {
 }
 ```
 
-If a program wasn't using a function to calculate the series sum and you wanted to make this change, you would need to find every place in the program that had this `for` loop. That really increases both the work you have to do and the chances of making errors in your code. By using a function, a code change is just in one place and the rest of your program doesn't need to be changed. That helps limit where any new errors or strange behaviors might happen. 
+If a program wasn't using a function to calculate the series sum and you wanted to make this change, you would need to find every place in the program that had this `for` loop. That really increases both the work you have to do and the chances of making errors in your code. By using a function, a code change is just in one place and the rest of your program doesn't need to be changed. That helps limit where any new errors or strange behaviors might happen.
