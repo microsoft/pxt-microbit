@@ -20,7 +20,7 @@ This section documents the data layout of the packet if you need to interpret th
     | packet type    | system time   | serial number     | payload
 
 * Serial number defaults to 0 unless enabled by user
-* system time is milli seconds since started, it will wrap around after a month or so
+* system time is milli-seconds since started, it will wrap around after a month or so
 
 ### Packet types
 
