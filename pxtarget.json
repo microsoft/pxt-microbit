@@ -263,7 +263,6 @@
         "githubUrl": "https://github.com/Microsoft/pxt-microbit",
         "boardName": "micro:bit",
         "driveDisplayName": "MICROBIT",
-        "feedbackUrl": "https://www.research.net/r/MCmicro",
         "appStoreID": "1092687276",
         "mobileSafariDownloadProtocol": "microbithex://?data",
         "crowdinProject": "kindscript",
