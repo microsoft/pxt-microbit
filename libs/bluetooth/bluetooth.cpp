@@ -1,6 +1,7 @@
 #include "pxt.h"
 #include "MESEvents.h"
 #include "MicroBitUARTService.h"
+#include "BLEHF2Service.h"
 
 using namespace pxt;
 
@@ -10,6 +11,7 @@ using namespace pxt;
 //% color=#0082FB weight=96 icon="\uf294"
 namespace bluetooth {
     MicroBitUARTService *uart = NULL;
+    BLEHF2Service* pHF2 = NULL;
 
     /**
     *  Starts the Bluetooth accelerometer service

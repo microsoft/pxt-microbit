@@ -6,7 +6,9 @@
         "enums.d.ts",
         "shims.d.ts",
         "bluetooth.ts",
-        "bluetooth.cpp"
+        "bluetooth.cpp",
+        "BLEHF2Service.h",
+        "BLEHF2Service.cpp"
     ],
     "icon": "./static/packages/bluetooth/icon.png",
     "public": true,
