@@ -9,12 +9,12 @@
 
 #define HF2_ID 9501
 
-#define BLEHF2_STDOUT 0x80
-#define BLEHF2_STDERR 0xC0
+#define BLEHF2_FLAG_SERIAL_OUT 0x80
+#define BLEHF2_FLAG_SERIAL_ERR 0xC0
 #define BLEHF2_DATA_LENGTH 19
 
 // UUIDs for our service and characteristics
-extern const uint8_t  BLEHF2UUID[];
+extern const uint8_t  BLEHF2ServiceUUID[];
 extern const uint8_t  BLEHF2TxCharacteristicUUID[];
 
 struct BLEHF2Packet {
@@ -34,9 +34,9 @@ class BLEHF2Service
     BLEHF2Service(BLEDevice &_ble);
 
     /**
-    * Sends a key value pair
+    * Sends text
     */
-    void sendLog(Buffer value);
+    void sendSerial(const char *data, int len, bool isError); 
 
     private:
 

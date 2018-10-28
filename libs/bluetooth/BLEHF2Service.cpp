@@ -16,8 +16,8 @@ BLEHF2Service::BLEHF2Service(BLEDevice &_ble) :
     txCharacteristic.requireSecurity(SecurityManager::MICROBIT_BLE_SECURITY_LEVEL);
 
     // setup GATT table
-    GattCharacteristic *characteristics[] = {&txCharacteristic, &rxCharacteristic};
-    GattService service(HF2ServiceUUID, characteristics, sizeof(characteristics) / sizeof(GattCharacteristic *));
+    GattCharacteristic *characteristics[] = {&txCharacteristic};
+    GattService service(BLEHF2ServiceUUID, characteristics, sizeof(characteristics) / sizeof(GattCharacteristic *));
     ble.addService(service);
 
     // retreive handles
@@ -27,14 +27,14 @@ BLEHF2Service::BLEHF2Service(BLEDevice &_ble) :
     ble.gattServer().write(txCharacteristicHandle,(uint8_t *)&txCharacteristicMessage, sizeof(txCharacteristicMessage));
 }
 
-void BLEHF2Service::sendLog(Buffer value) {
+void BLEHF2Service::sendSerial(const char *data, int len, bool isError) {
     if (ble.getGapState().connected)
     {
-        auto sent = 0;
-        while(sent < value->length) {
-            uint32_t n = min(BLEHF2_DATA_LENGTH, value->length - sent);
-            txCharacteristicMessage.command = HF2_STDOUT | n;
-            memcpy(&txCharacteristicMessage.value, PXT_BUFFER_DATA(value) + sent, n);
+        int32_t sent = 0;
+        while(sent < len) {
+            int32_t n = min(BLEHF2_DATA_LENGTH, len - sent);
+            txCharacteristicMessage.command = (isError ? BLEHF2_FLAG_SERIAL_OUT : BLEHF2_FLAG_SERIAL_ERR) | n;
+            memcpy(&txCharacteristicMessage.data, data + sent, n);
             ble.gattServer().notify(txCharacteristicHandle,(uint8_t *)&txCharacteristicMessage, sizeof(txCharacteristicMessage));
             sent += n;
         }
