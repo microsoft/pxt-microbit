@@ -28,6 +28,12 @@ namespace pxsim {
     }
 }
 
+namespace pxsim.control {
+    export function __log(s: string) {
+        board().writeSerial(s + "\r\n");
+    }
+}
+
 namespace pxsim.serial {
     export function writeString(s: string) {
         board().writeSerial(s);
