@@ -29,6 +29,7 @@
         "gestures.jres",
         "control.ts",
         "control.cpp",
+        "console.ts",
         "game.ts",
         "led.cpp",
         "led.ts",

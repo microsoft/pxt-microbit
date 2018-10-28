@@ -311,4 +311,13 @@ namespace control {
     void __midiSend(Buffer buffer) {
         // this is a stub to support the simulator
     }
+
+    /**
+    *
+    */
+    //%
+    void __log(String text) {
+        if (NULL == text) return;
+        pxt::sendSerial(text->data, text->length);
+    }
 }
