@@ -440,6 +440,12 @@ declare namespace control {
      */
     //% part=midioutput blockHidden=1 shim=control::__midiSend
     function __midiSend(buffer: Buffer): void;
+
+    /**
+     *
+     */
+    //% shim=control::__log
+    function __log(text: string): void;
 }
 
 
