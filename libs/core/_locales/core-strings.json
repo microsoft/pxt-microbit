@@ -240,8 +240,6 @@
   "basic.showNumber|block": "show|number %number",
   "basic.showString|block": "show|string %text",
   "basic|block": "basic",
-  "console.logValue|block": "console|log value %name|= %value",
-  "console.log|block": "console|log %text",
   "console|block": "console",
   "control.deviceName|block": "device name",
   "control.deviceSerialNumber|block": "device serial number",
