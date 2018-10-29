@@ -13,6 +13,13 @@ namespace bluetooth {
     MicroBitUARTService *uart = NULL;
     BLEHF2Service* pHF2 = NULL;
 
+    //%
+    void __log(String msg) {
+        if (NULL == pHF2)
+            pHF2 = new BLEHF2Service(*uBit.ble);
+        pHF2->sendSerial(msg->data, msg->length, false);
+    }
+
     /**
     *  Starts the Bluetooth accelerometer service
     */
