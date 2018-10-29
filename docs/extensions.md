@@ -39,6 +39,10 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
   "name": "Gigglebot",
   "url":"/pkg/dexterind/pxt-giggle",
   "cardType": "package"
+}, {
+  "name": "Robobit",
+  "url":"/pkg/4tronix/Robobit",
+  "cardType": "package"
 }]
 ```
 

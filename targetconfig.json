@@ -36,7 +36,8 @@
             "dexterind/pxt-gigglebot",
             "Imagimaker/pxt-imagimaker",
             "sparkfun/pxt-gator-light",
-            "sparkfun/pxt-gator-temp"
+            "sparkfun/pxt-gator-temp",
+            "4tronix/Robobit"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",
