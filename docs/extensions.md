@@ -39,6 +39,10 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
   "name": "Gigglebot",
   "url":"/pkg/dexterind/pxt-giggle",
   "cardType": "package"
+}, {
+  "name": "Robobit",
+  "url":"/pkg/4tronix/Robobit",
+  "cardType": "package"
 }]
 ```
 
@@ -132,6 +136,14 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
 }, {
     "name": "Imagimaker Magisheild",
     "url":"/pkg/Imagimaker/pxt-imagimaker",
+    "cardType": "package"
+}, {
+    "name": "gator:light Light sensor",
+    "url":"/pkg/sparkfun/pxt-gator-light",
+    "cardType": "package"
+}, {
+    "name": "gator:temp Temperature Sensor",
+    "url":"/pkg/sparkfun/pxt-gator-temp",
     "cardType": "package"
 }]
 ```
