@@ -153,7 +153,7 @@ namespace radio {
             TNumber td = fromDouble(dv);
             String sd = numops::toString(td);
             uBit.serial.send((uint8_t*)sd->data, sd->length);
-            decr(td);
+            decrRC(sd);
         }
         uBit.serial.send("}\r\n");
     }
