@@ -20,7 +20,7 @@
     //% parts="ledmatrix"
     export function plotBarGraph(value: number, high: number): void {
         const now = input.runningTime();
-        serial.writeLine(value.toString());
+        console.logValue("", value);
         value = Math.abs(value);
 
         // auto-scale "high" is not provided

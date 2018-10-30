@@ -46,7 +46,7 @@ namespace console {
     //%
     export function addListener(listener: (text: string) => void) {
         if (!listener) return;
-        if (!listener)
+        if (!listeners)
             listeners = [];
         listeners.push(listener);
     }
