@@ -8,7 +8,7 @@ Tell everyone who you are. Show you name on the LEDs.
 
 ## Step 1 @fullscreen
 
-Place the ``||basic:show string||`` block in the ``||basic:forever||`` block. Change the text to your name.
+Place the ``||basic:show string||`` block in the ``||basic:forever||`` block to repeat it. Change the text to your name.
 
 ```blocks
 basic.forever(() => {
