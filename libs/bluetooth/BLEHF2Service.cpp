@@ -7,7 +7,7 @@ BLEHF2Service::BLEHF2Service(BLEDevice &_ble) :
         ble(_ble)
 {
     GattCharacteristic  txCharacteristic(BLEHF2TxCharacteristicUUID, (uint8_t *)&txCharacteristicMessage, 0,
-    sizeof(txCharacteristicMessage), GattCharacteristic::BLE_GATT_CHAR_PROPERTIES_READ | GattCharacteristic::BLE_GATT_CHAR_PROPERTIES_NOTIFY);
+    sizeof(txCharacteristicMessage), GattCharacteristic::BLE_GATT_CHAR_PROPERTIES_NOTIFY);
 
     // Initialise our characteristic values.
     memset(&txCharacteristicMessage, 0, sizeof(txCharacteristicMessage));
