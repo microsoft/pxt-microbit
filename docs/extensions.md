@@ -43,6 +43,10 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
   "name": "Robobit",
   "url":"/pkg/4tronix/Robobit",
   "cardType": "package"
+}, {
+  "name": "Pi Supply Bit Buggy",
+  "url":"/pkg/PiSupply/pxt-bitbuggy",
+  "cardType": "package"
 }]
 ```
 
@@ -145,6 +149,15 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
     "name": "gator:temp Temperature Sensor",
     "url":"/pkg/sparkfun/pxt-gator-temp",
     "cardType": "package"
+}]
+```
+
+## IoT
+```codecard
+[{
+  "name": "Pi Supply Lora Node",
+  "url":"/pkg/PiSupply/pxt-iot-lora-node",
+  "cardType": "package"
 }]
 ```
 
