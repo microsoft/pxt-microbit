@@ -14,9 +14,9 @@ Open a browser window to [makecode.com](https://makecode.com), and select the mi
 
 ![micro:bit card icon](/static/courses/csintro/making/microbit-card-icon.png)
 
-From the top left corner of the screen, select the **Projects** Menu, and click on **Import File**.  Select the file that you saved on your computer in the previous step.
+At  the right of **My Projects** on the home screen, click on the **Import** button and then click on **Import File** in the import dialog.  Select the file that you saved on your computer in the previous step
 
-![Projects folder](/static/courses/csintro/making/projects-folder.png)
+![Import button](/static/courses/csintro/making/import-button.png)
 
 ![Import file](/static/courses/csintro/making/import-file.png)
 
