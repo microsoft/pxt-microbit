@@ -1,8 +1,18 @@
+/// <reference no-default-lib="true"/>
 /**
  * Support for additional Bluetooth services.
  */
 //% color=#007EF4 weight=96 icon="\uf294"
 namespace bluetooth {
+    /**
+     * Internal use
+     */
+    //% shim=bluetooth::__log
+    export function __log(msg: string) {
+        return;
+    }
+    console.addListener(function (msg) { __log(msg) });
+
     /**
     *  Writes to the Bluetooth UART service buffer. From there the data is transmitted over Bluetooth to a connected device.
     */

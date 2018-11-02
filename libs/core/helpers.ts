@@ -1,10 +1,3 @@
-namespace console {
-    export function log(msg: string) {
-        serial.writeString(msg);
-        serial.writeString("\r\n");
-    }
-}
-
 namespace Math {
     /**
      * Generates a `true` or `false` value randomly, just like flipping a coin.

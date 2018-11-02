@@ -8,80 +8,37 @@ Learn how to use the LEDs and make a flashing heart!
 
 ## Step 1 @fullscreen
 
-Place the ``||basic:show leds||`` block in the ``||basic:on start||`` block and draw a heart.
+Place the ``||basic:show leds||`` block in the ``||basic:forever||`` block and draw a heart.
 
 ![An animation that shows how to drag a block and paint a heart](/static/mb/projects/flashing-heart/showleds.gif)
 
 ## Step 2 @fullscreen
 
-Place another ``||basic:show leds||`` block under the heart to make it blink. Check in the simulator to see the heart blink.
+Place another ``||basic:show leds||`` block. You can leave it blank and draw what you want.
 
 ```blocks
-basic.showLeds(`
-    . # . # .
-    # # # # #
-    # # # # #
-    . # # # .
-    . . # . .`);
-basic.showLeds(`
-    . . . . .
-    . . . . .
-    . . . . .
-    . . . . .
-    . . . . .`);
-```
-
-## Step 3 @fullscreen
-
-But we only see the heart blink once. To have it continue to blink, move the blocks inside the ``||basic:forever||`` to make the animation repeat.
-
-```blocks
-basic.forever(() => {
+basic.forever(function() {
     basic.showLeds(`
         . # . # .
         # # # # #
         # # # # #
         . # # # .
-        . . # . .`
-        );
-    basic.showLeds(`
-        . . . . .
-        . . . . .
-        . . . . .
-        . . . . .
-        . . . . .`
-        );
-})
-```
-
-## Step 4 @fullscreen
-
-Now let's get fancy and place more ``||basic:show leds||`` blocks to create your own animation.
-
-```blocks
-basic.forever(() => {
-    basic.showLeds(`
-        . # . # .
-        # # # # #
-        # # # # #
-        . # # # .
-        . . # . .`
-        );
-    basic.showLeds(`
-        . # . # .
-        # . # . #
-        # . . . #
-        . # . # .
         . . # . .`);
     basic.showLeds(`
         . . . . .
-        . # . # .
-        . # # # .
-        . . # . .
+        . . . . .
+        . . . . .
+        . . . . .
         . . . . .`);
 })
 ```
 
-## Step 5 @fullscreen
+## Step 3 @fullscreen
+
+Look at the virtual @boardname@, you should see the heart and your drawing blink on the screen.
+
+![Heart shape in the LEDs](/static/mb/projects/flashing-heart/show-leds.gif)
+
+## Step 4 @fullscreen
 
 If you have a @boardname@ connected, click ``|Download|`` to transfer your code and watch the hearts flash!

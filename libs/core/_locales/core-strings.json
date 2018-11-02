@@ -240,6 +240,7 @@
   "basic.showNumber|block": "show|number %number",
   "basic.showString|block": "show|string %text",
   "basic|block": "basic",
+  "console|block": "console",
   "control.deviceName|block": "device name",
   "control.deviceSerialNumber|block": "device serial number",
   "control.eventSourceId|block": "%id",
