@@ -7,7 +7,7 @@ The blocks have been shuffled! Put them back together so that...
 * a basket LED is on the bottom row and can be moved by using the accelerometer `X` data.
 * if the egg LED reaches the last row, reset the egg position to the first row.
 
-```shuffle
+```blocks
 let basketX = 2
 let eggX = 2
 let eggY = 0

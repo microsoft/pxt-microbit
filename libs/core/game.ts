@@ -168,9 +168,10 @@ namespace game {
 
     /**
      * Sets the current life value
-     * @param value TODO
+     * @param value current life value
      */
-    //% weight=10
+    //% weight=10 help=game/set-life
+    //% blockId=game_set_life block="set life %value" blockGap=8
     export function setLife(value: number): void {
         _life = Math.max(0, value);
         if (_life <= 0) {
@@ -179,10 +180,11 @@ namespace game {
     }
 
     /**
-     * Adds life points to the current life
-     * @param lives TODO
+     * Add life points to the current life amount
+     * @param lives amount of lives to add
      */
-    //% weight=10
+    //% weight=10 help=game/add-life
+    //% blockId=game_add_life block="add life %lives" blockGap=8
     export function addLife(lives: number): void {
         setLife(_life + lives);
     }
@@ -200,11 +202,12 @@ namespace game {
     }
 
     /**
-     * Removes some life
-     * @param life TODO
+     * Remove some life
+     * @param life amount of life to remove
      */
-    //% weight=10
+    //% weight=10 help=game/remove-life
     //% parts="ledmatrix"
+    //% blockId=game_remove_life block="remove life %life" blockGap=8
     export function removeLife(life: number): void {
         setLife(_life - life);
         if (!_paused)
