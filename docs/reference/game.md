@@ -32,6 +32,14 @@ game.score();
 game.setScore(0);
 ```
 
+## Life
+
+```cards
+game.setLife(0)
+game.addLife(0)
+game.removeLife(0)
+```
+
 ## Game control
 
 ```cards
@@ -47,5 +55,6 @@ game.resume();
 [ifOnEdgeBounce](/reference/game/if-on-edge-bounce), [get](/reference/game/get), [set](/reference/game/set),
 [change](/reference/game/change), [is touching](/reference/game/is-touching) [is touching edge](/reference/game/is-touching-edge),
 [add score](/reference/game/add-score), [score](/reference/game/score), [set score](/reference/game/set-score),
+[set life](/reference/game/set-life), [add life](/reference/game/add-life), [remove life](/reference/game/remove-life),
 [start countdown](/reference/game/start-countdown), [game over](/reference/game/game-over),
 [pause](/reference/game/pause), [resume](/reference/game/resume)
