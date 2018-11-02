@@ -26,10 +26,10 @@ Let's start out with the code from the original game. The basic version picks on
 ```blocks
 let tool = 0
 input.onGesture(Gesture.Shake, () => {
-    tool = Math.randomRange(0, 3)
-    if (tool == 0) {
+    tool = Math.randomRange(1, 3)
+    if (tool == 1) {
         basic.showIcon(IconNames.SmallSquare)
-    } else if (tool == 1) {
+    } else if (tool == 2) {
         basic.showIcon(IconNames.Square)
     } else {
         basic.showIcon(IconNames.Scissors)
