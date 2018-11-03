@@ -48,7 +48,7 @@ From the Input menu, drag 3 of the ‘on button A pressed’ event handlers to y
 
 Leave one block with ‘A’. Use the drop-down menu in the block to choose ‘B’ for the second block and ‘A+B’ for the third block.
 
-From the Variables menu, drag 3 of the ‘change item by 1’ blocks to your Programming Workspace.
+From the Variables menu, drag 3 of the ‘change PlayersTie by 1’ blocks to your Programming Workspace.
 
 ![Change variable](/static/courses/csintro/variables/change-variable.png)
 
