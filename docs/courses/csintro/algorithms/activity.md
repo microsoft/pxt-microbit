@@ -32,7 +32,7 @@ One fun unplugged activity you can do with kids to reinforce the idea of an acti
 
 Notes:
 
-* Tooltips - Hover over any block until a hand icon appears and a small text box will pop up telling you what that block does. You can try this now with the ‘on start’ and ‘forever’ blocks. Notice that it also shows you the equivalent code in JavaScript. 
+* Tooltips - Hover over any block until a hand icon appears and a small text box will pop up telling you what that block does. You can try this now with the ‘on start’ and ‘forever’ blocks.
 	
 >![Blocks tooltips](/static/courses/csintro/algorithms/blocks-tooltips.png)
 
