@@ -10,7 +10,7 @@ This activity is based on a very popular phone app invented by Ellen DeGeneres (
 * Create a new variable and give it a name like arrayWords.
 * Insert a 'set' variable block into the 'on start' block. 
 * Change the default variable name to this new variable name.
-* From the Array Toolbox drawer, drag a 'create array' block to the coding workspace.
+* From the Array Toolbox drawer, drag an 'array of' block to the coding workspace.
 * Attach this array block to the end of the 'set' variable block. 
 
 ```blocks
@@ -19,12 +19,9 @@ let arrayWords = ["", ""]
 
 Notice that the array comes with 2 string blocks. We’ll want more for our charades game.
 
-* Click on the blue gear-wheel icon in the top left corner of the 'create array' block.
-* From the pop up window, add as many values (elements) as you'd like to the array block by dragging the value block from the left side of the window to the array block on the right side of the window.
+* Click on the **(+)** symbol at the end of the 'array of' block.
+* Add as many values (elements) as you'd like to the array block by continuing to click on the **(+)**.
 * For now, we’ll add 4 more values for a total of 6 values.
-
-![Add values to array](/static/courses/csintro/arrays/array-add-value.png)
-* Drag 4 string blocks from the Text Toolbox drawer, and place them in the empty array slots.
 
 ```blocks
 let arrayWords = ["", "", "", "", "", "", ""]
@@ -215,18 +212,16 @@ Note that to keep things simple we don’t check for duplicates, so it’s possi
 
 Next, let’s create an array with five numbers in it. We will loop through the array and create five separate constellations, using the numbers in the array to represent the number of stars in each of the five constellations.
 
-To create an array, you need to set the value of a variable to the array.
+To create an array, you need to set the value of a variable to the array. The Arrays Toolbox has one already made for us.
 
-* From the Variables Toolbox drawer, drag out the ‘set item’ block and attach a ‘create array with number’ block to it.
-* Then click on the blue Gear icon and add four more values to the block, for a total of five.
+* From the Arrays Toolbox drawer, drag out the 'set list to' block that's attached to the ‘array of’ block containing numbers.
+* Then click on the **(+)** symbol to add more values to the block, for a total of five.
 
-![Gear icon on array block](/static/courses/csintro/arrays/gear-values.png)
-
-You can put the Gear view away by clicking on the Gear again. You can drag additional numbers out of the Math category and snap them to the open slots in the Create array with block. Go ahead and change them to some random values, then attach the whole thing to the ‘on start’ event handler block.
+You can drag additional numbers out of the Math category and snap them to the open slots in the Create array with block. Go ahead and change them to some random values, then attach the whole thing to the ‘on start’ event handler block.
 
 Now, when the micro:bit starts, it will create an array with those five values. Let’s create the constellations when the A button is pressed. Looking at our loop, instead of repeating 0 to 4 times, we actually want to use the value from the array to figure out how many stars to create.
 
-* Drag the ‘get value from list’ block from the Arrays Toolbox drawer and replace the 4 with that block.
+* Drag the ‘list get value at’ block from the Arrays Toolbox drawer and replace the 4 with that block.
 
 You should see that there are more stars printed now, although there is an extra star; if the first value in the array is 5, you will actually see 6 stars because the loop runs when index is 0.
 
@@ -267,9 +262,8 @@ list = [5, 2, 1, 3, 4]
 Traversing an array means proceeding through the elements of the array in sequence. Note that there is a special loop in the Loops Toolbox drawer called ‘for element value of list’. This loop automatically takes each element of your array in turn and copies it into a variable called value.
 
 ```block
-for (let index = 0; index <= 4; index++){
-
-}
+let list: number[] = []
+for (let value of list) {}
 ```
 
 The following code is useful for printing out the values of the elements in your array:

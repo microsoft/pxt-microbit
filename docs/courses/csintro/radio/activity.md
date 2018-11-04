@@ -257,7 +257,7 @@ Challenge question: Can our code be made more efficient?
 ## Making our code more efficient
 
 Remind students that they can edit the 'if...then' block, adding as many 'else if' conditions as needed. 
-They can do this by clicking on the blue gear-wheel icon in the top left corner of the 'if...then' block.
+They can do this by clicking on the **(+)** or **(-)** symbols on the 'if...then' block.
 
 ![Add else-if to if-then block](/static/courses/csintro/radio/if-then-else-if.png)
 
