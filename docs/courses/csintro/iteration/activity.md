@@ -30,7 +30,18 @@ To create a **sprite** that will walk a square:
 * They now have these blocks in their coding workspace.  
 * For this project, they can delete the default ‘forever’ block.
 
-![Game sprite blocks](/static/courses/csintro/iteration/game-sprite.png)
+```block
+let sprite: game.LedSprite = null
+sprite = game.createSprite(2, 2)
+```
+```block
+let sprite: game.LedSprite = null
+sprite.move(1)
+```
+```block
+let sprite: game.LedSprite = null
+sprite.turn(Direction.Right, 45)
+```
 
 Time to fix those default parameter values!
 * We want our sprite to start in the top left corner of the micro:bit screen, so change the parameters for both **x** and **y** to zero.
@@ -39,17 +50,28 @@ Time to fix those default parameter values!
 
 Your blocks now look like this:
 
-![Game sprite blocks params](/static/courses/csintro/iteration/sprite-params.png)
+```block
+let sprite: game.LedSprite = null
+sprite = game.createSprite(0, 0)
+```
+```block
+let sprite: game.LedSprite = null
+sprite.move(4)
+```
+```block
+let sprite: game.LedSprite = null
+sprite.turn(Direction.Right, 90)
+```
 
 Notice that the blocks are all grayed out. That’s because we have not yet attached them to any event handlers.
 
-* On start, we want the sprite to appear. To make this happen, go to the Variables menu and drag a ‘set item to’ block to the coding window.
-* Place the ‘set item block’ into the ‘on start’ block.
-* Attach the ‘create sprite’ block to the ‘set item’ block
+* On start, we want the sprite to appear. To make this happen, go to the Variables menu, create a new variable called 'sprite', and drag a ‘set sprite to’ block to the coding window.
+* Place the ‘set sprite block’ into the ‘on start’ block.
+* Attach the ‘create sprite’ block to the ‘set sprite’ block
 
 ```blocks
-let item: game.LedSprite = null
-item = game.createSprite(0, 0)
+let sprite: game.LedSprite = null
+sprite = game.createSprite(0, 0)
 ```
 
 You should now see the sprite appear in the top left of the micro:bit simulator.
@@ -60,13 +82,13 @@ You should now see the sprite appear in the top left of the micro:bit simulator.
 * Place the ‘turn right by’ block into the ‘repeat’ block just under the ‘move by’ block.
 
 ```blocks
-let item: game.LedSprite = null
-item = game.createSprite(0, 0)
+let sprite: game.LedSprite = null
+sprite = game.createSprite(0, 0)
 
 input.onButtonPressed(Button.A, () => {
    for (let i = 0; i < 4; i++) {
-       item.move(4)
-       item.turn(Direction.Right, 90)
+       sprite.move(4)
+       sprite.turn(Direction.Right, 90)
    }
 })
 ```
@@ -97,15 +119,15 @@ So, the code is running and the sprite is moving! Sometimes we forget just how f
 Your final program should look like this:
 
 ```blocks
-let item: game.LedSprite = null
+let sprite: game.LedSprite = null
 input.onButtonPressed(Button.A, () => {
    for (let i = 0; i < 4; i++) {
-       item.move(4)
-       item.turn(Direction.Right, 90)
+       sprite.move(4)
+       sprite.turn(Direction.Right, 90)
        basic.pause(100)
    }
 })
-item = game.createSprite(0, 0)
+sprite = game.createSprite(0, 0)
 ```
 
 Run your program again. Now we can see the sprite move. It still moves pretty quickly, but at least we can see it move.
