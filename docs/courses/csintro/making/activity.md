@@ -40,6 +40,17 @@ basic.forever(() => {
 
 ![IDE tour](/static/courses/csintro/making/ide-tour.png)
 
+The features highlighted here are:
+
+1. Go to the **Home Screen** to start a new project or open an existing project
+2. **Simulator** shows what your program will look like when running on a @boardname@
+3. **Hide** or **Show** the simulator pane
+4. Program in either **Blocks** or **JavaScript**
+5. Programming **Workspace** where you will build you program
+6. Blocks **Toolbox**
+7. **Download** your program to the @boardname@
+8. Name your project and **Save** it on your computer
+
 The color of the blocks identifies their category. All of the blocks that make up the program above come from the **Basic** Toolbox category, which is light blue.
 
 ## Downloading a MakeCode program to the micro:bit

@@ -23,6 +23,17 @@ Now that you have a plan for your program, in the form of pseudocode, let's star
 
 ![IDE tour](/static/courses/csintro/algorithms/ide-tour.png)
 
+The features highlighted here are:
+
+1. Go to the **Home Screen** to start a new project or open an existing project
+2. **Simulator** shows what your program will look like when running on a @boardname@
+3. **Hide** or **Show** the simulator pane
+4. Program in either **Blocks** or **JavaScript**
+5. Programming **Workspace** where you will build you program
+6. Blocks **Toolbox**
+7. **Download** your program to the @boardname@
+8. Name your project and **Save** it on your computer
+
 ## Event handlers
 When you start a new project, there will be two blue blocks, ‘on start’ and ‘forever’ already in the coding workspace. These two blocks are event handlers.
 
