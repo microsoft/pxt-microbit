@@ -56,7 +56,7 @@ Once you've updated the firmware, Windows will detect the updated device and ins
 
 ## Step 5: drag and drop a fresh .hex file
 
-If you have used different editors with this board, it might require to be reseted by dragging a ``.hex`` into the drive. Click on the **Download** icon below the blocks and drag&drop the file into the @drivename@ drive.
+If you have used different editors with this board, it may need to be reset to a known-good state by dragging a simple ``.hex`` into the drive. Click on the **Download** icon below the blocks and drag&drop the file into the @drivename@ drive.
 
 ```blocks
 basic.forever(() => {
