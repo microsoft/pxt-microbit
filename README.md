@@ -4,7 +4,7 @@
 
 *This README is for pxt-microbit v1.x, which is [currently in beta](https://makecode.com/blog/microbit/v1-beta).*
 
-pxt-microbit is a [Microsoft Programming Experience Toolkit (PXT)](https://github.com/Microsoft/pxt) target that allows you to program a [BBC micro:bit](https://microbit.org/). pxt-microbit v1.x requires pxt v3.x, which is currently in the [master branch of pxt](https://github.com/Microsoft/pxt/tree/master).
+pxt-microbit is a [Microsoft Programming Experience Toolkit (PXT)](https://github.com/Microsoft/pxt) target that allows you to program a [BBC micro:bit](https://microbit.org/). pxt-microbit v1.x requires pxt v4.x, which is currently in the [master branch of pxt](https://github.com/Microsoft/pxt/tree/master).
 
 * [Try it live](https://makecode.microbit.org/beta)
 
