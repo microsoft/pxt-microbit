@@ -38,7 +38,12 @@
             "Imagimaker/pxt-imagimaker",
             "sparkfun/pxt-gator-light",
             "sparkfun/pxt-gator-temp",
-            "4tronix/Robobit"
+            "4tronix/Robobit",
+            "alsrobot-microbit-makecode-packages/ALSRobotJoyBit",
+            "alsrobot-microbit-makecode-packages/ALSRobotKeyboard",
+            "alsrobot-microbit-makecode-packages/ALSRobotElectromagnet",
+            "alsrobot-microbit-makecode-packages/CooCoo",
+            "alsrobot-microbit-makecode-packages/CruiseBit"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",
