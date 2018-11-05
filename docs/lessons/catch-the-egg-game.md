@@ -9,7 +9,7 @@ Variables
 ## Quick Links
 
 * [activity](/lessons/catch-the-egg-game/activity)
-* [tutorial](/lessons/catch-the-egg-game/tutorial)
+* [challenge](/lessons/catch-the-egg-game/challenge)
 * [quiz](/lessons/catch-the-egg-game/quiz)
 * [quiz answers](/lessons/catch-the-egg-game/quiz-answers)
 
@@ -29,7 +29,7 @@ basic.pause(300);
 input.acceleration(Dimension.X);
 Math.min(0,0);
 Math.max(0,1);
-Math.randomRange(0, 5);
+Math.randomRange(0, 4);
 game.addScore(1);
 game.score();
 game.removeLife(1);
