@@ -9,6 +9,7 @@ pins.i2cWriteBuffer(0, null, false);
 A device connected to the I2C pins on the @boardname@ at the address is selected to write data to. If the device is ready to take in your data, some or all of the data in your buffer is written to it.
 
 ### ~hint
+
 **Simulator**
 
 This function needs real hardware to work with. It's not supported in the simulator.
@@ -19,7 +20,13 @@ This function needs real hardware to work with. It's not supported in the simula
 
 * **address**: the 7-bit I2C address to read the data from.
 * **buffer**: a [buffer](/types/buffer) that contains the data to write to the device at the I2C address.
-* **repeated**: if `true`, a [repeated start condition](http://www.i2c-bus.org/repeated-start-condition/) is set to help make sure the data is written to the device with out an interruption. If set to `false` (the default), the data is written without setting a start condition more than once.
+* **repeated**: if `true`, don't send a stop condition after the write. Otherwise, a stop condition is sent when `false` (the default).
+
+### ~ hint
+
+A [repeated start condition](http://www.i2c-bus.org/repeated-start-condition/) is set to help make sure that when you want to write data miltiple times from the device at once, it can happen without interruption. A start conditon is sent (if **repeated** is `true`) each time a buffer is written without a matching stop condition. When the last buffer is written, the stop conditon can be sent by setting **repeated** to `false`. For single writes, don't use **repeated** or set it to `false`.
+
+### ~
 
 ## Example
 
