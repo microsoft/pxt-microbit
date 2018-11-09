@@ -16,20 +16,20 @@ Answer the questions while completing the tutorial. Pay attention to the dialogu
 
 <br/>
 
-## 2. Write the line of code that will display the string "puppy" using "coll".
+## 2. Write the line of code that will display the string "puppy" using `coll`.
 
 ```blocks
-let coll = (<string[]>[])
+let coll: string[] = []
 coll.push("puppy")
 coll.push("clock")
 ```
 
 <br/>
 
-## 3. Write the line of code that will display the string "cat" using "coll".
+## 3. Write the line of code that will display the string "cat" using `coll`.
 
 ```blocks
-let coll = (<string[]>[])
+let coll: string[] = []
 coll.push("puppy")
 coll.push("clock")
 coll.push("cat")

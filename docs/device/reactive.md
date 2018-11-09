@@ -46,15 +46,16 @@ As we’ll soon see, there are other choices for how the sequences can be ordere
 
 The micro:bit’s *scheduler* provides the capability to concurrently execute different code sequences, relieving us of a lot of low-level programming.   In fact, scheduling is so useful that it is a part of every *operating system*!
 
-The first job of the scheduler is to allow multiple *subprograms* to be queued up for later execution . For our purposes, a subprogram is just a statement or sequence of statements in the context of a larger program. Consider the Touch Develop program below for counting button presses.
+The first job of the scheduler is to allow multiple *subprograms* to be queued up for later execution. For our purposes, a subprogram is just a statement or sequence of statements in the context of a larger program. Consider the program below for counting button presses.
 
 ```blocks
 let count = 0
+count = 0
 input.onButtonPressed(Button.A, () => {
     count++;
 })
 basic.forever(() => {
-    basic.showNumber(count, 150)
+    basic.showNumber(count)
 })
 ```
 
@@ -75,13 +76,13 @@ input.onButtonPressed(Button.A, () => {
 })
 ```
 
-The third statement queues a `forever` loop for later execution by the scheduler; the body of this loop (between the do/end keywords) displays the current value of global variable `count` on the LED screen. The third statement
+The third statement queues a `forever` loop for later execution by the scheduler; the body of this loop (between the do/end keywords) displays the current value of global variable `count` on the LED screen.
 
 ```blocks
 let count = 0
 // ...
 basic.forever(() => {
-    basic.showNumber(count, 150)
+    basic.showNumber(count)
 })
 ```
 
@@ -92,7 +93,7 @@ The second job of the scheduler is to periodically interrupt execution to read (
 
 ## Cooperative passing of control
 
-How does the forever loop get to start execution? Furthermore, once the forever loop is running, how does any other subprogram (like the event handler that increments the count) ever get a chance to execute?
+How does the `forever` loop get to start execution? Furthermore, once the `forever` loop is running, how does any other subprogram (like the event handler that increments the count) ever get a chance to execute?
 
 The answer is “cooperation” and “passing”.  Think of a football team doing a drill – there is one ball and each footballer gets to dribble the ball for a certain number of touches, after which they pass to another footballer. A footballer who never passes prevents all other footballers from dribbling.  A cooperative footballer always passes to some other footballer after taking a few touches.
 
@@ -113,7 +114,7 @@ function forever(body: () => void) {
 }
 ```
 
-The `forever` loop actually is a function that takes a subprogram (an *Action* in Touch Develop) as a parameter. The function uses the ``||control:in background||`` function of the micro:bit runtime to queue a `while true` loop for execution by the scheduler. The while loop has two statements. The first statement runs the subprogram represented by the `body` parameter. The second statement passes control to the scheduler (requesting to “sleep” for 20 milliseconds).
+The `forever` loop actually is a function that takes a subprogram as a parameter. The function uses the `control.inBackground` function of the micro:bit runtime to queue a `while true` loop for execution by the scheduler. The while loop has two statements. The first statement runs the subprogram represented by the `body` parameter. The second statement passes control to the scheduler (requesting to “sleep” for 20 milliseconds).
 
 Though the `while true` loop will repeatedly execute the body subprogram, between each execution of the body it will permit the scheduler to execute other subprograms.  If the while loop did not contain the call to `pause`, then once control passed into the while loop, it would never pass back to the scheduler and no other subprogram would be able to execute (unless the body subprogram contained a call to `pause` itself).
 
@@ -127,13 +128,13 @@ The property of such round-robin scheduling is that under the assumption that ev
 
 ## Putting it all together
 
-Let’s go back to the `count button presses` function and revisit its execution based on what we have learned about the micro:bit scheduler. As detailed before, the function executes three steps to: (1) set up the event handler for each press of button A; (2) queue the forever loop to the run queue; (3) initialize the global variable `count` to zero.
+Let’s go back to the `count button presses` program and revisit its execution based on what we have learned about the micro:bit scheduler. As detailed before, the function executes three steps to: (1) set up the event handler for each press of button A; (2) queue the forever loop to the run queue; (3) initialize the global variable `count` to zero.
 
-The function then ends execution and control passes back to the scheduler.  Let’s assume the user has not pressed any buttons . The scheduler finds the `forever` loop in the run queue and passes control to it.  The loop first calls `basic.showNumber(0,150)`.  In the diagram below, we use “Show 0” to refer to the execution of this function:
+The function then ends execution and control passes back to the scheduler.  Let’s assume the user has not pressed any buttons . The scheduler finds the `forever` loop in the run queue and passes control to it. The loop first calls `basic.showNumber(0)`.  In the diagram below, we use “Show 0” to refer to the execution of this function:
 
 ![](/static/mb/device/reactive-3.png)
 
-While "Show 0" (the blue sequence) is running, periodic interrupts by the scheduler (every 6 milliseconds) poll for button presses and queue an event handler for each press of button A.  Let’s say that one button press takes place during this time, as shown above. This will cause an event handler (labelled “inc”) to be queued for later execution by the scheduler. Once the "Show 0" has completed, the loop then calls `basic.pause(20)` to put the forever loop to sleep for 20 milliseconds and give the scheduler an opportunity to run any newly queued event handler. Control passes to the “inc” event handler which will increment the global variable `count` from 0 to 1 and then complete, returning control to the scheduler.  At some point, the `forever` loop moves from the sleep queue to the run queue; the `forever` loop then will resume and call `basic.showNumber(1,150)`.
+While "Show 0" (the blue sequence) is running, periodic interrupts by the scheduler (every 6 milliseconds) poll for button presses and queue an event handler for each press of button A. Let’s say that one button press takes place during this time, as shown above. This will cause an event handler (labelled “inc”) to be queued for later execution by the scheduler. Once the "Show 0" has completed, the loop then calls `basic.pause(20)` to put the forever loop to sleep for 20 milliseconds and give the scheduler an opportunity to run any newly queued event handler. Control passes to the “inc” event handler which will increment the global variable `count` from 0 to 1 and then complete, returning control to the scheduler. At some point, the `forever` loop moves from the sleep queue to the run queue; the `forever` loop then will resume and call `basic.showNumber(1)`.
 
 ## Final thoughts
 
@@ -148,7 +149,7 @@ function countButtonPressesWithReset() {
         count = count + 1
     })
     basic.forever(() => {
-        basic.showNumber(count, 150)
+        basic.showNumber(count)
     })
     input.onButtonPressed(Button.B, () => {
         count = 0

@@ -26,7 +26,7 @@ Answer the questions while completing the tutorial. Pay attention to the dialogu
 
 ```blocks
 let randomNumber = Math.randomRange(0, 10)
-basic.showNumber(randomNumber, 150)
+basic.showNumber(randomNumber)
 ```
 
 ![](/static/mb/empty-microbit.png)

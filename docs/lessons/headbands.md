@@ -12,14 +12,13 @@ Collection
 * [quiz](/lessons/headbands/quiz)
 * [quiz answers](/lessons/headbands/quiz-answers)
 
-
 ## Class
 
 Year 7
 
 ## Prior learning/place of lesson in scheme of work
 
-Learn how to create a charades game with **Arrays**, ``||arrays:create of||`` , to store and retrieve data . We will be learning how to create a charades game using global variables, collection of string, add, Boolean, on logo down, on logo up, forever loop, if statements, running time as well as simple commands, such as show string and show number.
+Learn how to create a charades game using **[arrays](/types/array)** to store and retrieve data. We'll  learn how to create a charades game using global variables, a collection of strings, math add, Boolean, on logo down, on logo up, forever loop, if statements, running time as well as simple commands, such as show string and show number.
 
 ## What the teacher needs to know
 
@@ -117,4 +116,3 @@ Computational Thinking Concept: AB = Abstraction; DE = Decomposition; AL = Algor
 ## Intended follow on
 
 Publish script to the classroom.
-

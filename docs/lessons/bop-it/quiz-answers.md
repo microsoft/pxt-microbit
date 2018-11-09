@@ -21,7 +21,7 @@ let action = Math.randomRange(0, 3)
 ```blocks
 let action = Math.randomRange(0, 3)
 if (action == 0) {
-    basic.showString("PUSH A", 150)
+    basic.showString("PUSH A")
 }
 ```
 
@@ -41,7 +41,7 @@ input.onButtonPressed(Button.A, () => {
 ```blocks
 let action = Math.randomRange(0, 3)
 if (action == 1) {
-    basic.showString("LOGO DOWN", 150)
+    basic.showString("LOGO DOWN")
 }
 ```
 
@@ -61,7 +61,7 @@ input.onGesture(Gesture.LogoDown, function () {
 ```blocks
 let action = Math.randomRange(0, 3)
 if (action == 2) {
-    basic.showString("SHAKE", 150)
+    basic.showString("SHAKE")
 }
 ```
 

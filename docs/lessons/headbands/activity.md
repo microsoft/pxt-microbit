@@ -14,9 +14,9 @@ coll.push("cow")
 input.onGesture(Gesture.LogoUp, function () {
     let index = Math.randomRange(0, coll.length)
     let word = coll[index]
-    basic.showString(word, 150)
+    basic.showString(word)
 })
-input.onScreenDown(() => {
+input.onGesture(Gesture.ScreenDown, function () {
     game.addScore(1)
 })
 game.startCountdown(30000)
@@ -36,9 +36,9 @@ coll.push("cow")
 input.onGesture(Gesture.LogoUp, function () {
     let index = Math.randomRange(0, coll.length)
     let word = coll[index]
-    basic.showString(word, 150)
+    basic.showString(word)
 })
-input.onScreenDown(() => {
+input.onGesture(Gesture.ScreenDown, function () {
     game.addScore(1)
 })
 
@@ -66,9 +66,9 @@ coll.push("ant")
 input.onGesture(Gesture.LogoUp, function () {
     let index = Math.randomRange(0, coll.length)
     let word = coll[index]
-    basic.showString(word, 150)
+    basic.showString(word)
 })
-input.onScreenDown(() => {
+input.onGesture(Gesture.ScreenDown, function () {
     game.addScore(1)
 })
 game.startCountdown(30000)
