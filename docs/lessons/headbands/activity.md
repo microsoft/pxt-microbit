@@ -78,13 +78,9 @@ game.startCountdown(30000)
 
 ## Challenge 3
 
-Remove a life using `game->remove life` when the screen is down using the `input->on screen down` event.
+Remove a life using ``||game.remove life||`` when the screen is down using the ``||input:on screen down||`` event.
 
-## Challenge 4
-
-The collection has a function `random` that returns a random element. Update your code to use this function instead of using `math->random`.
-
-## Challenge 5!
+## Challenge 4!
 
 Play the game and try guessing all these words in less than 2 minutes!
 

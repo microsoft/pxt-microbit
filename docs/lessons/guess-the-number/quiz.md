@@ -10,7 +10,7 @@ Use this activity document to guide your work in the [guess the number tutorial]
 
 Answer the questions while completing the tutorial. Pay attention to the dialogues!
 
-## 1. Describe what "input -> on button pressed" does?
+## 1. Describe what ``||input:on button pressed||`` does?
 
 <br />
 
