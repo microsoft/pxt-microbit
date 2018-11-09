@@ -21,8 +21,8 @@ Learn how to plot image **on logo up**, `on logo up` to run code when the @board
 
 ## Documentation
 ```cards
-input.onLogoUp(() => {})
-input.onLogoDown(() => {})
+input.onGesture(Gesture.LogoUp() => {})
+input.onGesture(Gesture.LogoDown() => {})
 basic.showLeds(`
     . . . . .
     . . . . .

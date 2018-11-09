@@ -11,7 +11,7 @@ coll.push("clock")
 coll.push("night")
 coll.push("cat")
 coll.push("cow")
-input.onLogoUp(() => {
+input.onGesture(Gesture.LogoUp() => {
     let index = Math.randomRange(0, coll.length)
     let word = coll[index]
     basic.showString(word, 150)
@@ -33,7 +33,7 @@ coll.push("clock")
 coll.push("night")
 coll.push("cat")
 coll.push("cow")
-input.onLogoUp(() => {
+input.onGesture(Gesture.LogoUp() => {
     let index = Math.randomRange(0, coll.length)
     let word = coll[index]
     basic.showString(word, 150)
@@ -49,7 +49,7 @@ game.startCountdown(60000)
 
 ## Challenge 2
 
-Now let's add 5 more words to our list of charade words. Right above the the line `word:=coll->at(index)` add 5 lines that say `coll->add("")`. In this example, we will add the words **bicycle, telephone, sun, car, and ant** but you can add whatever words you like.
+Now let's add 5 more words to our list of charade words. Right above the the line ``||arrays:get value at index||`` add 5 lines that say ``||arrays:coll add value to end||``. In this example, we will add the words **bicycle, telephone, sun, car, and ant** but you can add whatever words you like.
 
 ```blocks
 let coll: string[] = []
@@ -63,7 +63,7 @@ coll.push("telephone")
 coll.push("sun") 
 coll.push("car") 
 coll.push("ant") 
-input.onLogoUp(() => {
+input.onGesture(Gesture.LogoUp() => {
     let index = Math.randomRange(0, coll.length)
     let word = coll[index]
     basic.showString(word, 150)

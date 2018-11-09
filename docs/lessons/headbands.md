@@ -19,7 +19,7 @@ Year 7
 
 ## Prior learning/place of lesson in scheme of work
 
-Learn how to create a charades game with **collections**, ` create -> Collection of` , to store and retrieve data . We will be learning how to create a charades game using global variables, collection of string, add, Boolean, on logo down, on logo up, forever loop, if statements, running time as well as simple commands, such as show string and show number.
+Learn how to create a charades game with **Arrays**, ``||arrays:create of||`` , to store and retrieve data . We will be learning how to create a charades game using global variables, collection of string, add, Boolean, on logo down, on logo up, forever loop, if statements, running time as well as simple commands, such as show string and show number.
 
 ## What the teacher needs to know
 
