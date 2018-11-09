@@ -24,7 +24,7 @@ coll.push("puppy")
 coll.push("clock")
 ```
 
-Write the line of code that will display the string "puppy" using `data->coll`.
+Write the line of code that will display the string "puppy" using ``coll``.
 
 <br/>
 
@@ -42,7 +42,7 @@ coll.push("clock")
 coll.push("cat")
 ```
 
-Write the line of code that will display the string "cat" using `data->coll`.
+Write the line of code that will display the string "cat" using ``coll``.
 
 <br/>
 
@@ -57,7 +57,7 @@ basic.showString(coll[2], 150)
 let coll: string[] = []
 ```
 
-Write the five (5) lines of code that will add the following five words to `data->coll`: puppy, clock, night, cat, cow.
+Write the five (5) lines of code that will add the following five words to ``coll``: puppy, clock, night, cat, cow.
 
 <br/>
 

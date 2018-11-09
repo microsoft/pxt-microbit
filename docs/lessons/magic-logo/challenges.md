@@ -7,7 +7,7 @@ Coding challenges for magic logo.
 Complete the [magic logo](/lessons/magic-logo/activity) activity and your code will look like this:
 
 ```blocks
-input.onGesture(Gesture.LogoUp() => {
+input.onGesture(Gesture.LogoUp, function () {
     basic.showLeds(`
         . . # . .
         . # # # .
@@ -25,7 +25,7 @@ input.onGesture(Gesture.LogoUp() => {
 How about when the logo is down? We should display an arrow pointing downward!
 
 ```blocks
-input.onGesture(Gesture.LogoUp() => {
+input.onGesture(Gesture.LogoUp, function () {
     basic.showLeds(`
         . . # . .
         . # # # .
@@ -34,7 +34,7 @@ input.onGesture(Gesture.LogoUp() => {
         . . # . .
         `)
 })
-input.onGesture(Gesture.LogoDown() => {
+input.onGesture(Gesture.LogoDown, function () {
     basic.showLeds(`
         . . # . .
         . . # . .

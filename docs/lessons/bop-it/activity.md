@@ -15,7 +15,7 @@ input.onButtonPressed(Button.A, () => {
         newAction();
     }
 })
-input.onGesture(Gesture.LogoDown() => {
+input.onGesture(Gesture.LogoDown, function () {
     if (action == 1) {
         game.addScore(1);
         newAction();

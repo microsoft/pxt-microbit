@@ -11,7 +11,7 @@ coll.push("clock")
 coll.push("night")
 coll.push("cat")
 coll.push("cow")
-input.onGesture(Gesture.LogoUp() => {
+input.onGesture(Gesture.LogoUp, function () {
     let index = Math.randomRange(0, coll.length)
     let word = coll[index]
     basic.showString(word, 150)
@@ -33,7 +33,7 @@ coll.push("clock")
 coll.push("night")
 coll.push("cat")
 coll.push("cow")
-input.onGesture(Gesture.LogoUp() => {
+input.onGesture(Gesture.LogoUp, function () {
     let index = Math.randomRange(0, coll.length)
     let word = coll[index]
     basic.showString(word, 150)
@@ -63,7 +63,7 @@ coll.push("telephone")
 coll.push("sun") 
 coll.push("car") 
 coll.push("ant") 
-input.onGesture(Gesture.LogoUp() => {
+input.onGesture(Gesture.LogoUp, function () {
     let index = Math.randomRange(0, coll.length)
     let word = coll[index]
     basic.showString(word, 150)
