@@ -23,9 +23,9 @@ Learn how to create a charades game with **collections**, ` create -> Collection
 
 ## What the teacher needs to know
 
-* Algorithm: An unambiguous set of rules or a precise step-bystep guide to solve a problem or achieve a particular objective.
+* Algorithm: An unambiguous set of rules or a precise step-by-step guide to solve a problem or achieve a particular objective.
 * Command: An instruction for the computer to execute, written in a particular programming language.
-* Data: A structured set of numbers, possibly representing digitised text, images, sound or video, which can be processed or transmitted by a computer, also used for numerical (quantitative) information.
+* Data: A structured set of numbers, possibly representing digitized text, images, sound or video, which can be processed or transmitted by a computer, also used for numerical (quantitative) information.
 * Decomposing: The process through which problems or systems are broken down into their component parts, each of which may then be considered separately.
 * Input: Data provided to a computer system, such as via a keyboard, mouse, microphone, camera or physical sensors.
 * Output: The information produced by a computer system for its user, typically on a screen, through speakers or on a printer, but possibly through the control of motors in physical systems.

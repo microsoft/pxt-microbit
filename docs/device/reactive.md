@@ -113,7 +113,7 @@ function forever(body: () => void) {
 }
 ```
 
-The `forever` loop actually is a function that takes a subprogram (an *Action* in Touch Develop) as a parameter. The function uses the `control -> in background` function of the micro:bit runtime to queue a `while true` loop for execution by the scheduler. The while loop has two statements. The first statement runs the subprogram represented by the `body` parameter. The second statement passes control to the scheduler (requesting to “sleep” for 20 milliseconds).
+The `forever` loop actually is a function that takes a subprogram (an *Action* in Touch Develop) as a parameter. The function uses the ``||control:in background||`` function of the micro:bit runtime to queue a `while true` loop for execution by the scheduler. The while loop has two statements. The first statement runs the subprogram represented by the `body` parameter. The second statement passes control to the scheduler (requesting to “sleep” for 20 milliseconds).
 
 Though the `while true` loop will repeatedly execute the body subprogram, between each execution of the body it will permit the scheduler to execute other subprograms.  If the while loop did not contain the call to `pause`, then once control passed into the while loop, it would never pass back to the scheduler and no other subprogram would be able to execute (unless the body subprogram contained a call to `pause` itself).
 
@@ -129,11 +129,11 @@ The property of such round-robin scheduling is that under the assumption that ev
 
 Let’s go back to the `count button presses` function and revisit its execution based on what we have learned about the micro:bit scheduler. As detailed before, the function executes three steps to: (1) set up the event handler for each press of button A; (2) queue the forever loop to the run queue; (3) initialize the global variable `count` to zero.
 
-The function then ends execution and control passes back to the scheduler.  Let’s assume the user has not pressed any buttons . The scheduler finds the `forever` loop in the run queue and passes control to it.  The loop first calls `basic -> show number(0,150)`.  In the diagram below, we use “Show 0” to refer to the execution of this function:
+The function then ends execution and control passes back to the scheduler.  Let’s assume the user has not pressed any buttons . The scheduler finds the `forever` loop in the run queue and passes control to it.  The loop first calls `basic.showNumber(0,150)`.  In the diagram below, we use “Show 0” to refer to the execution of this function:
 
 ![](/static/mb/device/reactive-3.png)
 
-While "Show 0" (the blue sequence) is running, periodic interrupts by the scheduler (every 6 milliseconds) poll for button presses and queue an event handler for each press of button A.  Let’s say that one button press takes place during this time, as shown above. This will cause an event handler (labelled “inc”) to be queued for later execution by the scheduler. Once the "Show 0" has completed, the loop then calls `basic -> pause(20)` to put the forever loop to sleep for 20 milliseconds and give the scheduler an opportunity to run any newly queued event handler. Control passes to the “inc” event handler which will increment the global variable `count` from 0 to 1 and then complete, returning control to the scheduler.  At some point, the `forever` loop moves from the sleep queue to the run queue; the `forever` loop then will resume and call `basic -> show number(1,150)`.
+While "Show 0" (the blue sequence) is running, periodic interrupts by the scheduler (every 6 milliseconds) poll for button presses and queue an event handler for each press of button A.  Let’s say that one button press takes place during this time, as shown above. This will cause an event handler (labelled “inc”) to be queued for later execution by the scheduler. Once the "Show 0" has completed, the loop then calls `basic.pause(20)` to put the forever loop to sleep for 20 milliseconds and give the scheduler an opportunity to run any newly queued event handler. Control passes to the “inc” event handler which will increment the global variable `count` from 0 to 1 and then complete, returning control to the scheduler.  At some point, the `forever` loop moves from the sleep queue to the run queue; the `forever` loop then will resume and call `basic.showNumber(1,150)`.
 
 ## Final thoughts
 

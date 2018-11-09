@@ -40,12 +40,10 @@ while (count > 0) {
 
 ## Challenge 2
 
-Inside of the while loop, let's add `pause->(1000)` so that we have a pause between each number as it's counting down. Also, let's show `count`!
-
-
+Inside of the while loop, let's add ``||basic:pause(1000)||`` so that we have a pause between each number as it's counting down. Also, let's show `count`!
 
 ```blocks
- let count = 0;
+let count = 0;
 while (count < 10) {
     basic.pause(100);
     basic.showNumber(count);

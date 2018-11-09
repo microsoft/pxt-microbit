@@ -24,7 +24,7 @@ game.startCountdown(30000)
 
 ## Challenge 1
 
-Let's add more words for the player to act out! But first, we need to increase the time in one round to give the player more time get through all the words. Let's change the `game->start countdown` statement.
+Let's add more words for the player to act out! But first, we need to increase the time in one round to give the player more time get through all the words. Let's change the ``||game:start countdown||`` statement.
 
 ```blocks
 let coll: string[] = []
