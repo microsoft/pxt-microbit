@@ -1,0 +1,115 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <variables></variables>
+  <block type="pxt-on-start" x="20" y="20">
+    <statement name="HANDLER">
+      <block type="device_plot">
+        <value name="x">
+              <shadow type="math_number">
+                <field name="NUM">5</field>
+              </shadow>
+        </value>
+        <value name="y">
+              <shadow type="math_number">
+                <field name="NUM">5</field>
+              </shadow>
+        </value>
+        <next>
+          <block type="device_unplot">
+            <value name="x">
+              <shadow type="math_number">
+                <field name="NUM">5</field>
+              </shadow>
+            </value>
+            <value name="y">
+              <shadow type="math_number">
+                <field name="NUM">5</field>
+              </shadow>
+            </value>
+            <next>
+              <block type="device_led_toggle">
+                <value name="x">
+              <shadow type="math_number">
+                <field name="NUM">5</field>
+              </shadow>
+                </value>
+                <value name="y">
+              <shadow type="math_number">
+                <field name="NUM">5</field>
+              </shadow>
+                </value>
+                <next>
+                  <block type="device_plot_bar_graph">
+                    <value name="value">
+                      <shadow type="math_number">
+                        <field name="NUM">0</field>
+                      </shadow>
+                    </value>
+                    <value name="high">
+                      <shadow type="math_number">
+                        <field name="NUM">0</field>
+                      </shadow>
+                    </value>
+                    <next>
+                      <block type="device_plot_brightness">
+                        <value name="x">
+               <shadow type="math_number">
+                <field name="NUM">5</field>
+              </shadow>
+                        </value>
+                        <value name="y">
+              <shadow type="math_number">
+                <field name="NUM">5</field>
+              </shadow>
+                          <block type="device_get_brightness"></block>
+                        </value>
+                        <value name="brightness">
+              <shadow type="math_number">
+                <field name="NUM">5</field>
+              </shadow>
+                        </value>
+                        <next>
+                          <block type="device_set_brightness">
+                            <value name="value">
+              <shadow type="math_number">
+                <field name="NUM">5</field>
+              </shadow>
+                            </value>
+                            <next>
+                              <block type="device_stop_animation">
+                                <next>
+                                  <block type="device_led_enable">
+                                    <value name="on">
+                                      <shadow type="logic_boolean" id="F!|?!lo8YkE4p2I@MDy?">
+                                        <field name="BOOL">FALSE</field>
+                                      </shadow>
+                                      <block type="device_point">
+                                        <value name="x">
+              <shadow type="math_number">
+                <field name="NUM">5</field>
+              </shadow>
+                                        </value>
+                                        <value name="y">
+              <shadow type="math_number">
+                <field name="NUM">5</field>
+              </shadow>
+                                        </value>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

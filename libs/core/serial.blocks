@@ -1,0 +1,94 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <variables>
+    <variable type="" id="3ch~y{k6dWI;q}kA]3pa">item</variable>
+  </variables>
+  <block type="serial_on_data_received" x="79" y="287">
+    <value name="delimiters">
+      <shadow type="serial_delimiter_conv" id="Rgi{j+glSZt}8nIn!+08">
+        <field name="del">Delimiters.Colon</field>
+      </shadow>
+      <block type="serial_read_buffer"></block>
+    </value>
+    <statement name="HANDLER">
+      <block type="serial_writeline">
+        <value name="text">
+          <shadow type="text" id="re1R]taer}HU[ed30FDZ">
+            <field name="TEXT"></field>
+          </shadow>
+          <block type="serial_read_line"></block>
+        </value>
+        <next>
+          <block type="serial_writenumber">
+            <value name="value">
+              <shadow type="math_number">
+                <field name="NUM">0</field>
+              </shadow>
+            </value>
+            <next>
+              <block type="serial_writevalue">
+                <value name="name">
+                  <shadow type="text" id="Y9NXoV7DPB{.(T=w:ei^">
+                    <field name="TEXT">x</field>
+                  </shadow>
+                  <block type="serial_read_until">
+                    <value name="delimiter">
+                      <shadow type="serial_delimiter_conv">
+                        <field name="del">Delimiters.Colon</field>
+                      </shadow>
+                    </value>
+                  </block>
+                </value>
+                <value name="value">
+                  <shadow type="math_number">
+                    <field name="NUM">0</field>
+                  </shadow>
+                </value>
+                <next>
+                  <block type="serial_writestring">
+                    <value name="text">
+                      <shadow type="text">
+                        <field name="TEXT"></field>
+                      </shadow>
+                    </value>
+                    <next>
+                      <block type="serial_writenumbers">
+                        <value name="values">
+                          <block type="variables_get">
+                            <field name="VAR" id="3ch~y{k6dWI;q}kA]3pa" variabletype="">item</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="serial_redirect">
+                            <field name="tx">SerialPin.P12</field>
+                            <field name="rx">SerialPin.P13</field>
+                            <field name="rate">BaudRate.BaudRate28800</field>
+                            <next>
+                              <block type="serial_writebuffer">
+                                <value name="buffer">
+                                  <block type="serial_readbuffer">
+                                    <value name="length">
+                                      <shadow type="math_number">
+                                        <field name="NUM">64</field>
+                                      </shadow>
+                                    </value>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="serial_redirect_to_usb"></block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

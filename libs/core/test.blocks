@@ -1,0 +1,677 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <variables>
+    <variable type="" id="2w47B[B-y%SK,+8+DQGz">booltest</variable>
+    <variable type="" id="Uv6@%!N7Ts}XI7t+j[zB">myImage</variable>
+    <variable type="" id="7BPQp@}m*I210zEM4S=3">strtest</variable>
+  </variables>
+  <block type="pxt-on-start" x="481" y="68">
+    <statement name="HANDLER">
+      <block type="device_show_number">
+        <value name="number">
+          <shadow type="math_number" id=")RB0,?b3RM|TO|?[ZPG6">
+            <field name="NUM">123</field>
+          </shadow>
+          <block type="control_event_value&quot;"></block>
+        </value>
+        <next>
+          <block type="device_show_leds">
+            <field name="LEDS">`
+        # . . # .
+        # . . # .
+        . # . . .
+        . # # . .
+        . . . . .
+        `
+            </field>
+            <next>
+              <block type="basic_show_icon">
+                <field name="i">IconNames.Heart</field>
+                <next>
+                  <block type="device_pause">
+                    <value name="pause">
+                      <shadow type="timePicker">
+                        <field name="ms">500</field>
+                      </shadow>
+                    </value>
+                    <next>
+                      <block type="device_clear_display">
+                        <next>
+                          <block type="basic_show_arrow">
+                            <value name="i">
+                              <shadow type="device_arrow">
+                                <field name="arrow">ArrowNames.SouthEast</field>
+                              </shadow>
+                            </value>
+                            <next>
+                              <block type="device_show_image_offset">
+                                <value name="sprite">
+                                  <block type="variables_get">
+                                    <field name="VAR" id="Uv6@%!N7Ts}XI7t+j[zB" variabletype="">myImage</field>
+                                  </block>
+                                </value>
+                                <value name="offset">
+                                  <shadow type="math_number">
+                                    <field name="NUM">0</field>
+                                  </shadow>
+                                </value>
+                                <next>
+                                  <block type="device_scroll_image">
+                                    <value name="sprite">
+                                      <block type="variables_get">
+                                        <field name="VAR" id="Uv6@%!N7Ts}XI7t+j[zB" variabletype="">myImage</field>
+                                      </block>
+                                    </value>
+                                    <value name="frameoffset">
+                                      <shadow type="math_number" id="xu?]Tdz!8RfpHlMjG)~B">
+                                        <field name="NUM">1</field>
+                                      </shadow>
+                                      <block type="control_device_serial_number"></block>
+                                    </value>
+                                    <value name="delay">
+                                      <shadow type="math_number">
+                                        <field name="NUM">200</field>
+                                      </shadow>
+                                    </value>
+                                    <next>
+                                      <block type="variables_set">
+                                        <field name="VAR" id="7BPQp@}m*I210zEM4S=3" variabletype="">strtest</field>
+                                        <value name="VALUE">
+                                          <shadow type="math_number" id="W]w@ImzxKDQ=.w+$$f4a">
+                                            <field name="NUM">0</field>
+                                          </shadow>
+                                          <block type="serial_read_until">
+                                            <value name="delimiter">
+                                              <shadow type="serial_delimiter_conv">
+                                                <field name="del">Delimiters.Hash</field>
+                                              </shadow>
+                                            </value>
+                                          </block>
+                                        </value>
+                                        <next>
+                                          <block type="variables_set">
+                                            <field name="VAR" id="7BPQp@}m*I210zEM4S=3" variabletype="">strtest</field>
+                                            <value name="VALUE">
+                                              <shadow type="math_number" id="W]w@ImzxKDQ=.w+$$f4a">
+                                                <field name="NUM">0</field>
+                                              </shadow>
+                                              <block type="serial_read_buffer"></block>
+                                            </value>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="device_pin_event" x="2407" y="0">
+    <field name="name">TouchPin.P2</field>
+    <statement name="HANDLER">
+      <block type="device_led_toggle">
+        <value name="x">
+          <shadow type="math_number_minmax">
+            <mutation min="0" max="4" label="X" precision="1"></mutation>
+            <field name="SLIDER">1</field>
+          </shadow>
+        </value>
+        <value name="y">
+          <shadow type="math_number_minmax">
+            <mutation min="0" max="4" label="Y" precision="1"></mutation>
+            <field name="SLIDER">2</field>
+          </shadow>
+        </value>
+        <next>
+          <block type="device_plot_bar_graph">
+            <value name="value">
+              <shadow type="math_number">
+                <field name="NUM">5</field>
+              </shadow>
+            </value>
+            <value name="high">
+              <shadow type="math_number">
+                <field name="NUM">45</field>
+              </shadow>
+            </value>
+            <next>
+              <block type="led_set_display_mode">
+                <field name="mode">DisplayMode.Greyscale</field>
+                <next>
+                  <block type="device_set_analog_pin">
+                    <field name="name">AnalogPin.P4</field>
+                    <value name="value">
+                      <shadow type="math_number_minmax" id=",:%8N*FL3wa-zFQ[+^$9">
+                        <mutation min="0" max="1023" label="Value"></mutation>
+                        <field name="SLIDER">1023</field>
+                      </shadow>
+                      <block type="device_get_analog_pin">
+                        <field name="name">AnalogPin.P13</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="device_set_digital_pin">
+                        <field name="name">DigitalPin.P10</field>
+                        <value name="value">
+                          <shadow type="math_number_minmax" id="W~pvdj%jFEj?EHmT{81Z">
+                            <mutation min="0" max="1" label="Value"></mutation>
+                            <field name="SLIDER">0</field>
+                          </shadow>
+                          <block type="device_get_digital_pin">
+                            <field name="name">DigitalPin.P15</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="device_set_analog_period">
+                            <field name="pin">AnalogPin.P9</field>
+                            <value name="micros">
+                              <shadow type="math_number" id="4a@.1MdG`n=p;34mQOpC">
+                                <field name="NUM">1234</field>
+                              </shadow>
+                              <block type="pin_map">
+                                <value name="value">
+                                  <shadow type="math_number" id="lTWI!)d`ZkwvZW))3X(F">
+                                    <field name="NUM">0</field>
+                                  </shadow>
+                                  <block type="device_temperature"></block>
+                                </value>
+                                <value name="fromLow">
+                                  <shadow type="math_number" id="2n.VJ_pD7wFdcjM:FToF">
+                                    <field name="NUM">0</field>
+                                  </shadow>
+                                  <block type="device_heading"></block>
+                                </value>
+                                <value name="fromHigh">
+                                  <shadow type="math_number" id="-c^:x{=$`RLP5RW9}{6a">
+                                    <field name="NUM">1023</field>
+                                  </shadow>
+                                  <block type="device_get_rotation">
+                                    <field name="NAME">Rotation.Roll</field>
+                                  </block>
+                                </value>
+                                <value name="toLow">
+                                  <shadow type="math_number" id="#1@Uxq:nFqe!(pHawH9H">
+                                    <field name="NUM">0</field>
+                                  </shadow>
+                                  <block type="device_get_magnetic_force">
+                                    <field name="NAME">Dimension.Y</field>
+                                  </block>
+                                </value>
+                                <value name="toHigh">
+                                  <shadow type="math_number" id="?%tD/NB|a$cg#TU0/C02">
+                                    <field name="NUM">4</field>
+                                  </shadow>
+                                  <block type="device_get_running_time"></block>
+                                </value>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="device_set_servo_pin">
+                                <field name="name">AnalogPin.P20</field>
+                                <value name="value">
+                                  <shadow type="math_number_minmax" id="xC9lYf`{!gA-A8R+#~L.">
+                                    <mutation min="0" max="180" label="Value"></mutation>
+                                    <field name="SLIDER">180</field>
+                                  </shadow>
+                                  <block type="device_acceleration">
+                                    <field name="NAME">Dimension.Z</field>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="device_set_servo_pulse">
+                                    <field name="value">AnalogPin.P14</field>
+                                    <value name="micros">
+                                      <shadow type="math_number" id="@*C3kzJkeeUQ@s$N5?K}">
+                                        <field name="NUM">1500</field>
+                                      </shadow>
+                                      <block type="device_get_light_level"></block>
+                                    </value>
+                                    <next>
+                                      <block type="device_play_note">
+                                        <value name="note">
+                                          <shadow type="device_note">
+                                            <field name="note">220</field>
+                                          </shadow>
+                                        </value>
+                                        <value name="duration">
+                                          <shadow type="device_beat">
+                                            <field name="fraction">BeatFraction.Sixteenth</field>
+                                          </shadow>
+                                        </value>
+                                        <next>
+                                          <block type="device_ring">
+                                            <value name="note">
+                                              <shadow type="device_note">
+                                                <field name="note">659</field>
+                                              </shadow>
+                                            </value>
+                                            <next>
+                                              <block type="device_rest">
+                                                <value name="duration">
+                                                  <shadow type="device_beat">
+                                                    <field name="fraction">BeatFraction.Double</field>
+                                                  </shadow>
+                                                </value>
+                                                <next>
+                                                  <block type="device_start_melody">
+                                                    <field name="options">MelodyOptions.ForeverInBackground</field>
+                                                    <value name="melody">
+                                                      <shadow type="device_builtin_melody">
+                                                        <field name="melody">Melodies.Ringtone</field>
+                                                      </shadow>
+                                                    </value>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="device_gesture_event" x="1570" y="56">
+    <field name="NAME">Gesture.TiltLeft</field>
+    <statement name="HANDLER">
+      <block type="device_unplot">
+        <value name="x">
+          <shadow type="math_number_minmax" id="|}V%t{K/j77J}J54FX]r">
+            <mutation min="0" max="4" label="X" precision="1"></mutation>
+            <field name="SLIDER">1</field>
+          </shadow>
+          <block type="control_event_value_id">
+            <field name="id">EventBusValue.MICROBIT_PIN_EVT_PULSE_HI</field>
+          </block>
+        </value>
+        <value name="y">
+          <shadow type="math_number_minmax">
+            <mutation min="0" max="4" label="Y" precision="1"></mutation>
+            <field name="SLIDER">2</field>
+          </shadow>
+        </value>
+        <next>
+          <block type="serial_writebuffer">
+            <value name="buffer">
+              <shadow type="serial_readbuffer">
+                <value name="length">
+                  <shadow type="math_number">
+                    <field name="NUM">64</field>
+                  </shadow>
+                </value>
+              </shadow>
+            </value>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="device_forever" x="1172" y="242">
+    <statement name="HANDLER">
+      <block type="variables_set">
+        <field name="VAR" id="2w47B[B-y%SK,+8+DQGz" variabletype="">booltest</field>
+        <value name="VALUE">
+          <shadow type="math_number" id="RP?w4vFS1wB4I0nNyldb">
+            <field name="NUM">0</field>
+          </shadow>
+          <block type="device_get_button2">
+            <field name="NAME">Button.B</field>
+          </block>
+        </value>
+        <next>
+          <block type="variables_set">
+            <field name="VAR" id="2w47B[B-y%SK,+8+DQGz" variabletype="">booltest</field>
+            <value name="VALUE">
+              <shadow type="math_number" id="RP?w4vFS1wB4I0nNyldb">
+                <field name="NUM">0</field>
+              </shadow>
+              <block type="device_pin_is_pressed">
+                <field name="NAME">TouchPin.P2</field>
+              </block>
+            </value>
+            <next>
+              <block type="variables_set">
+                <field name="VAR" id="2w47B[B-y%SK,+8+DQGz" variabletype="">booltest</field>
+                <value name="VALUE">
+                  <shadow type="math_number" id="RP?w4vFS1wB4I0nNyldb">
+                    <field name="NUM">0</field>
+                  </shadow>
+                  <block type="device_point">
+                    <value name="x">
+                      <shadow type="math_number_minmax">
+                        <mutation min="0" max="4" label="X" precision="1"></mutation>
+                        <field name="SLIDER">3</field>
+                      </shadow>
+                    </value>
+                    <value name="y">
+                      <shadow type="math_number_minmax">
+                        <mutation min="0" max="4" label="Y" precision="1"></mutation>
+                        <field name="SLIDER">4</field>
+                      </shadow>
+                    </value>
+                  </block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="device_button_event" x="1294" y="513">
+    <field name="NAME">Button.AB</field>
+    <statement name="HANDLER">
+      <block type="device_plot">
+        <value name="x">
+          <shadow type="math_number_minmax" id="Z[BsF}r)3:FoNWE|X5}s">
+            <mutation min="0" max="4" label="X" precision="1"></mutation>
+            <field name="SLIDER">1</field>
+          </shadow>
+          <block type="device_beat">
+            <field name="fraction">BeatFraction.Sixteenth</field>
+          </block>
+        </value>
+        <value name="y">
+          <shadow type="math_number_minmax">
+            <mutation min="0" max="4" label="Y" precision="1"></mutation>
+            <field name="SLIDER">2</field>
+          </shadow>
+        </value>
+        <next>
+          <block type="device_plot_brightness">
+            <value name="x">
+              <shadow type="math_number_minmax" id="2we6or2Y|vhAl!^BAYtl">
+                <mutation min="0" max="4" label="X" precision="1"></mutation>
+                <field name="SLIDER">3</field>
+              </shadow>
+              <block type="device_tempo"></block>
+            </value>
+            <value name="y">
+              <shadow type="math_number_minmax">
+                <mutation min="0" max="4" label="Y" precision="1"></mutation>
+                <field name="SLIDER">5</field>
+              </shadow>
+            </value>
+            <value name="brightness">
+              <shadow type="math_number_minmax" id="IjJTgf5z!,K`qd`~pCB3">
+                <mutation min="0" max="255" label="Brightness"></mutation>
+                <field name="SLIDER">255</field>
+              </shadow>
+              <block type="device_get_brightness"></block>
+            </value>
+            <next>
+              <block type="device_set_brightness">
+                <value name="value">
+                  <shadow type="math_number_minmax" id="WAUzdT@1z{%:UNn!_dU(">
+                    <mutation min="0" max="255" label="Value"></mutation>
+                    <field name="SLIDER">255</field>
+                  </shadow>
+                  <block type="device_note">
+                    <field name="note">440</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="device_stop_animation">
+                    <next>
+                      <block type="device_led_enable">
+                        <value name="on">
+                          <shadow type="logic_boolean">
+                            <field name="BOOL">TRUE</field>
+                          </shadow>
+                        </value>
+                        <next>
+                          <block type="input_compass_calibrate"></block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="control_in_background" x="0" y="635">
+    <statement name="HANDLER">
+      <block type="control_wait_us">
+        <value name="micros">
+          <shadow type="math_number" id="^!;AKS(vo=ly}ykm1~Z|">
+            <field name="NUM">4</field>
+          </shadow>
+          <block type="control_event_timestamp&quot;"></block>
+        </value>
+        <next>
+          <block type="control_raise_event">
+            <value name="src">
+              <shadow type="control_event_source_id">
+                <field name="id">EventBusSource.MICROBIT_ID_IO_P0</field>
+              </shadow>
+            </value>
+            <value name="value">
+              <shadow type="control_event_value_id">
+                <field name="id">EventBusValue.MES_ALERT_EVT_ALARM1</field>
+              </shadow>
+            </value>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="device_pin_released" x="942" y="723">
+    <field name="NAME">TouchPin.P2</field>
+    <statement name="HANDLER">
+      <block type="device_set_accelerometer_range">
+        <field name="range">AcceleratorRange.EightG</field>
+      </block>
+    </statement>
+  </block>
+  <block type="serial_on_data_received" x="419" y="933">
+    <value name="delimiters">
+      <shadow type="serial_delimiter_conv">
+        <field name="del">Delimiters.Colon</field>
+      </shadow>
+    </value>
+    <statement name="HANDLER">
+      <block type="serial_redirect">
+        <field name="tx">SerialPin.P12</field>
+        <field name="rx">SerialPin.P14</field>
+        <field name="rate">BaudRate.BaudRate19200</field>
+        <next>
+          <block type="serial_redirect_to_usb"></block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="pins_on_pulsed" x="1538" y="929">
+    <field name="pin">DigitalPin.P10</field>
+    <field name="pulse">PulseValue.Low</field>
+    <statement name="HANDLER">
+      <block type="i2c_writenumber">
+        <field name="format">NumberFormat.UInt8BE</field>
+        <value name="address">
+          <shadow type="math_number">
+            <field name="NUM">0</field>
+          </shadow>
+        </value>
+        <value name="value">
+          <shadow type="math_number">
+            <field name="NUM">0</field>
+          </shadow>
+        </value>
+        <value name="repeat">
+          <shadow type="logic_boolean">
+            <field name="BOOL">FALSE</field>
+          </shadow>
+        </value>
+        <next>
+          <block type="device_analog_pitch">
+            <value name="frequency">
+              <shadow type="math_number">
+                <field name="NUM">0</field>
+              </shadow>
+            </value>
+            <value name="ms">
+              <shadow type="math_number">
+                <field name="NUM">0</field>
+              </shadow>
+            </value>
+            <next>
+              <block type="device_set_pin_events">
+                <field name="pin">DigitalPin.P0</field>
+                <field name="type">PinEventType.Touch</field>
+                <next>
+                  <block type="spi_frequency">
+                    <value name="frequency">
+                      <shadow type="math_number">
+                        <field name="NUM">1000000</field>
+                      </shadow>
+                    </value>
+                    <next>
+                      <block type="device_analog_set_pitch_pin">
+                        <field name="name">AnalogPin.P2</field>
+                        <next>
+                          <block type="device_set_pull">
+                            <field name="pin">DigitalPin.P2</field>
+                            <field name="pull">PinPullMode.PullDown</field>
+                            <next>
+                              <block type="spi_format">
+                                <value name="bits">
+                                  <shadow type="math_number">
+                                    <field name="NUM">8</field>
+                                  </shadow>
+                                </value>
+                                <value name="mode">
+                                  <shadow type="math_number">
+                                    <field name="NUM">3</field>
+                                  </shadow>
+                                </value>
+                                <next>
+                                  <block type="spi_pins">
+                                    <field name="mosi">DigitalPin.P9</field>
+                                    <field name="miso">DigitalPin.P14</field>
+                                    <field name="sck">DigitalPin.P16</field>
+                                    <next>
+                                      <block type="control_reset"></block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="melody_on_event" x="859" y="1002">
+    <field name="value">MusicEvent.BackgroundMelodyNotePlayed</field>
+    <statement name="HANDLER">
+      <block type="device_change_tempo">
+        <value name="value">
+          <shadow type="math_number">
+            <field name="NUM">123</field>
+          </shadow>
+        </value>
+        <next>
+          <block type="device_set_tempo">
+            <value name="value">
+              <shadow type="math_number_minmax">
+                <mutation min="4" max="400" label="Bpm"></mutation>
+                <field name="SLIDER">12312312</field>
+              </shadow>
+            </value>
+            <next>
+              <block type="serial_writeline">
+                <value name="text">
+                  <shadow type="text" id="SYl:x9lxu0KI{YcmomQz">
+                    <field name="TEXT"></field>
+                  </shadow>
+                  <block type="serial_read_line"></block>
+                </value>
+                <next>
+                  <block type="serial_writenumber">
+                    <value name="value">
+                      <shadow type="math_number">
+                        <field name="NUM">0</field>
+                      </shadow>
+                    </value>
+                    <next>
+                      <block type="serial_writevalue">
+                        <value name="name">
+                          <shadow type="text">
+                            <field name="TEXT">x</field>
+                          </shadow>
+                        </value>
+                        <value name="value">
+                          <shadow type="math_number">
+                            <field name="NUM">0</field>
+                          </shadow>
+                        </value>
+                        <next>
+                          <block type="serial_writestring">
+                            <value name="text">
+                              <shadow type="text" id="_gp`6rz8ZI+em9ILvR~6">
+                                <field name="TEXT"></field>
+                              </shadow>
+                              <block type="control_device_name"></block>
+                            </value>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="control_on_event" x="24" y="1406">
+    <value name="src">
+      <shadow type="control_event_source_id">
+        <field name="id">EventBusSource.MICROBIT_ID_IO_P1</field>
+      </shadow>
+    </value>
+    <value name="value">
+      <shadow type="control_event_value_id">
+        <field name="id">EventBusValue.MES_ALERT_EVT_ALARM2</field>
+      </shadow>
+    </value>
+  </block>
+</xml>

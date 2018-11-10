@@ -1,0 +1,95 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <variables>
+    <variable type="" id="I3xB5Q]ehg#-~(sq{[|E">item</variable>
+  </variables>
+  <block type="melody_on_event" x="-27" y="128">
+    <field name="value">MusicEvent.BackgroundMelodyStarted</field>
+    <statement name="HANDLER">
+      <block type="device_play_note">
+        <value name="note">
+          <shadow type="device_note">
+            <field name="note">175</field>
+          </shadow>
+        </value>
+        <value name="duration">
+          <shadow type="device_beat">
+            <field name="fraction">BeatFraction.Sixteenth</field>
+          </shadow>
+        </value>
+        <next>
+          <block type="device_ring">
+            <value name="note">
+              <shadow type="device_note">
+                <field name="note">147</field>
+              </shadow>
+            </value>
+            <next>
+              <block type="device_rest">
+                <value name="duration">
+                  <shadow type="device_beat">
+                    <field name="fraction">BeatFraction.Sixteenth</field>
+                  </shadow>
+                </value>
+                <next>
+                  <block type="variables_set">
+                    <field name="VAR" id="I3xB5Q]ehg#-~(sq{[|E" variabletype="">item</field>
+                    <value name="VALUE">
+                      <shadow type="math_number" id="8/Ht9pG0DuL-0~sPe},^">
+                        <field name="NUM">0</field>
+                      </shadow>
+                      <block type="device_note">
+                        <field name="note">466</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="variables_set">
+                        <field name="VAR" id="I3xB5Q]ehg#-~(sq{[|E" variabletype="">item</field>
+                        <value name="VALUE">
+                          <shadow type="math_number" id="8/Ht9pG0DuL-0~sPe},^">
+                            <field name="NUM">0</field>
+                          </shadow>
+                          <block type="device_beat">
+                            <field name="fraction">BeatFraction.Sixteenth</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="variables_set">
+                            <field name="VAR" id="I3xB5Q]ehg#-~(sq{[|E" variabletype="">item</field>
+                            <value name="VALUE">
+                              <shadow type="math_number" id="8/Ht9pG0DuL-0~sPe},^">
+                                <field name="NUM">0</field>
+                              </shadow>
+                              <block type="device_tempo"></block>
+                            </value>
+                            <next>
+                              <block type="device_change_tempo">
+                                <value name="value">
+                                  <shadow type="math_number">
+                                    <field name="NUM">1242</field>
+                                  </shadow>
+                                </value>
+                                <next>
+                                  <block type="device_set_tempo">
+                                    <value name="value">
+              <shadow type="math_number">
+                <field name="NUM">5</field>
+              </shadow>
+                                    </value>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>
