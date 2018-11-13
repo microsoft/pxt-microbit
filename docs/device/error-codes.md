@@ -10,8 +10,8 @@ Below is a list of error numbers and what they mean:
 * **40** (`MICROBIT_NULL_DEREFERENCE `): there was a NULL dereference, the @boardname@ tried to manage a invalid object pointer.
 * **42** (`MICROBIT_SYSTEM_ERROR`): there's an error condition in the @boardname@ system software.
 * **43** (`MICROBIT_NO_RADIO`): the @boardname@ can't enable the radio.
-* **50** An error occurred with the micro:bit's accelerometer component.
-* **51** An error occurred with the micro:bit's magnetometer component.
+* **50** (`MICROBIT_HARDWARE_UNAVAILABLE_ACC`): an error occurred with the micro:bit's accelerometer component.
+* **51** (`MICROBIT_HARDWARE_UNAVAILABLE_MAG`): an error occurred with the micro:bit's magnetometer component.
 * **98** (`MICROBIT_ASSERTION_FAILED`): assertion failed, the condition in an [assert](/reference/control/assert) was false.
 
 ```sim
