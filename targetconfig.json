@@ -43,7 +43,8 @@
             "alsrobot-microbit-makecode-packages/ALSRobotKeyboard",
             "alsrobot-microbit-makecode-packages/ALSRobotElectromagnet",
             "alsrobot-microbit-makecode-packages/CooCoo",
-            "alsrobot-microbit-makecode-packages/CruiseBit"
+            "alsrobot-microbit-makecode-packages/CruiseBit",
+            "BirdBrainTechnologies/pxt-hummingbird-bit"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",

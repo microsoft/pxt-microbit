@@ -55,6 +55,10 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
   "name": "ALS Robot CruiseBit",
   "url":"/pkg/alsrobot-microbit-makecode-packages/CruiseBit",
   "cardType": "package"
+}, {
+  "name": "Hummingbird Bit",
+  "url":"/pkg/BirdBrainTechnologies/pxt-hummingbird-bit",
+  "cardType": "package"
 
 }]
 ```
