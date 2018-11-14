@@ -774,14 +774,17 @@ namespace pxt.editor {
                 if (b) b.setAttribute("name", "ARG1");
             });
 
-        // math_number_minmax
-        U.toArray(dom.querySelectorAll("block[type=math_number_minmax]"))
-            .concat(U.toArray(dom.querySelectorAll("shadow[type=math_number_minmax]")))
+        renameField(dom, "math_number_minmax", "NUM", "SLIDER");
+        renameField(dom, "device_note", "note", "name");
+    }
+
+    function renameField(dom: Element, blockType: string, oldName: string, newName: string) {
+        U.toArray(dom.querySelectorAll(`block[type=${blockType}]`))
+            .concat(U.toArray(dom.querySelectorAll(`shadow[type=${blockType}]`)))
             .forEach(node => {
-                // Change the name of the NUM field to SLIDER
-                const numField = getField(node, "NUM");
-                if (numField) {
-                    numField.setAttribute("name", "SLIDER");
+                const thefield = getField(node, oldName);
+                if (thefield) {
+                    thefield.setAttribute("name", newName);
                 }
             });
     }

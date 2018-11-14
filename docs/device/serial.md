@@ -28,10 +28,7 @@ Unfortunately, using the serial library requires quite a bit of a setup.
 
 **Windows earlier than 10**
 
-If you are running a Windows version earlier than 10, you must install a device driver 
-(for the computer to recognize the serial interface of the micro:bit).
-
-* Follow the instructions at https://docs.mbed.com/docs/mbed-os-handbook/en/latest/getting_started/what_need/ to install the device driver.
+If you are running a Windows version earlier than 10, you must [install a device driver](https://os.mbed.com/docs/latest/tutorials/windows-serial-driver.html) (for the computer to recognize the serial interface of the micro:bit).
 
 ## ~
 Also, if you don't see the serial port as one of your computer's devices, you might need to [update the firmware](/device/firmware) on the @boardname@. Find the device name for the attached serial port in the following instructions for your operating system.

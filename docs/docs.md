@@ -1,4 +1,4 @@
-# v1 Documentation
+# Documentation
 
 ## @description Links to the documentation, reference and projects.
 

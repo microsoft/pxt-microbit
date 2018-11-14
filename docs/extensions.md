@@ -47,6 +47,19 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
   "name": "Pi Supply Bit Buggy",
   "url":"/pkg/PiSupply/pxt-bitbuggy",
   "cardType": "package"
+}, {
+  "name": "ALS Robot Coo Coo",
+  "url":"/pkg/alsrobot-microbit-makecode-packages/CooCoo",
+  "cardType": "package"
+}, {
+  "name": "ALS Robot CruiseBit",
+  "url":"/pkg/alsrobot-microbit-makecode-packages/CruiseBit",
+  "cardType": "package"
+}, {
+  "name": "Hummingbird Bit",
+  "url":"/pkg/BirdBrainTechnologies/pxt-hummingbird-bit",
+  "cardType": "package"
+
 }]
 ```
 
@@ -149,6 +162,10 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
     "name": "gator:temp Temperature Sensor",
     "url":"/pkg/sparkfun/pxt-gator-temp",
     "cardType": "package"
+}, {
+    "name": "ALS Robot Electromagnet",
+    "url":"/pkg/alsrobot-microbit-makecode-packages/ALSRobotElectromagnet",
+    "cardType": "package"
 }]
 ```
 
@@ -216,6 +233,14 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
 }, {
   "name": "Annikken Andee",
   "url":"/pkg/Annikken/pxt-Andee",
+  "cardType": "package"
+}, {
+  "name": "ALS Robot Keyboard",
+  "url":"/pkg/alsrobot-microbit-makecode-packages/ALSRobotKeyboard",
+  "cardType": "package"
+}, {
+  "name": "ALS Robot Keyboard",
+  "url":"/pkg/alsrobot-microbit-makecode-packages/ALSRobotJoyBit",
   "cardType": "package"
 }]
 ```

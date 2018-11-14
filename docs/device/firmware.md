@@ -8,4 +8,4 @@ Changes to the firmware don't happen very often. You probably don't need to upda
 
 ## Getting a firmware update
 
-Instructions for updating the firmware are shown on the **[firmware upgrade](https://support.microbit.org/support/solutions/articles/19000019131-how-to-upgrade-the-firmware-on-the-micro-bit)** support page at microbit.org.
+Instructions for updating the firmware are shown on the **[firmware upgrade](https://microbit.org/guide/firmware/)** support page at microbit.org.

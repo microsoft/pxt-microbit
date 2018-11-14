@@ -12,20 +12,19 @@ Collection
 * [quiz](/lessons/headbands/quiz)
 * [quiz answers](/lessons/headbands/quiz-answers)
 
-
 ## Class
 
 Year 7
 
 ## Prior learning/place of lesson in scheme of work
 
-Learn how to create a charades game with **collections**, ` create -> Collection of` , to store and retrieve data . We will be learning how to create a charades game using global variables, collection of string, add, Boolean, on logo down, on logo up, forever loop, if statements, running time as well as simple commands, such as show string and show number.
+Learn how to create a charades game using **[arrays](/types/array)** to store and retrieve data. We'll  learn how to create a charades game using global variables, a collection of strings, math add, Boolean, on logo down, on logo up, forever loop, if statements, running time as well as simple commands, such as show string and show number.
 
 ## What the teacher needs to know
 
-* Algorithm: An unambiguous set of rules or a precise step-bystep guide to solve a problem or achieve a particular objective.
+* Algorithm: An unambiguous set of rules or a precise step-by-step guide to solve a problem or achieve a particular objective.
 * Command: An instruction for the computer to execute, written in a particular programming language.
-* Data: A structured set of numbers, possibly representing digitised text, images, sound or video, which can be processed or transmitted by a computer, also used for numerical (quantitative) information.
+* Data: A structured set of numbers, possibly representing digitized text, images, sound or video, which can be processed or transmitted by a computer, also used for numerical (quantitative) information.
 * Decomposing: The process through which problems or systems are broken down into their component parts, each of which may then be considered separately.
 * Input: Data provided to a computer system, such as via a keyboard, mouse, microphone, camera or physical sensors.
 * Output: The information produced by a computer system for its user, typically on a screen, through speakers or on a printer, but possibly through the control of motors in physical systems.
@@ -117,4 +116,3 @@ Computational Thinking Concept: AB = Abstraction; DE = Decomposition; AL = Algor
 ## Intended follow on
 
 Publish script to the classroom.
-

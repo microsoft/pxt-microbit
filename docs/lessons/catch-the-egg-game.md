@@ -15,9 +15,11 @@ Variables
 
 ## Prior learning/place of lesson in scheme of work
 
-Learn how to create a catch the egg game game with **plot**, `led->plot` , **unplot**, `led->unplot`, and **acceleration**  `input -> acceleration` to turn on and off LED lights on the LED screen. We will be learning how to create a catch the egg game app using global variables, forever loop, local variable, input acceleration, math min, math max, math random, math mod, if (conditionals), game library as well as simple commands, such as led plot, led unplot, and pause.
+Learn how to create a catch the egg game game with ``||led:plot||`` , ``||led:unplot||``, and  ``||input:acceleration||`` to turn on and off LED lights on the screen.
 
 ## Documentation
+
+The blocks used in this lesson:
 
 ```cards
 let x = 2;

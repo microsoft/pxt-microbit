@@ -54,12 +54,12 @@ If you want to know more about connecting the board, MAINTENANCE Mode, and upgra
 
 Once you've updated the firmware, Windows will detect the updated device and install the drivers necessary to enable communication with the @boardname@. This step happens in the background and may take a minute or two.
 
-## Step 5: drag and drop a fresh .hex file
+## Step 5: Drag and drop a fresh .hex file
 
-If you have used different editors with this board, it might require to be reseted by dragging a ``.hex`` into the drive. Click on the **Download** icon below the blocks and drag&drop the file into the @drivename@ drive.
+If different editors were used with this board, it may need a reset to bring it back to a known-good state. Do this by dragging a ``.hex`` file containing a simple program onto the drive. You can use the one here. Click on the **Download** icon below the blocks, then drag and drop the file onto the @drivename@ drive.
 
 ```blocks
-basic.forever(() => {
+basic.forever(function() {
     basic.showString("OK")
 })
 ```

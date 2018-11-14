@@ -61,7 +61,7 @@ Notes:
 
 Looking at our pseudocode, we want to make sure to start a program with a clear screen.
 
-* We can do this by going to the Basic menu -> More and choosing a ‘clear screen’ block.
+* We can do this by going to the **Basic** toolbox category and under **...more**, choose a ``||basic:clear screen||`` block.
 
 >![Clear screen block](/static/courses/csintro/algorithms/clear-screen-block.png)
 

@@ -8,7 +8,7 @@ show an image that points up when the logo is up.
 
 Use the hints from the [magic logo activity](/lessons/magic-logo/activity) to answer this quiz!
 
-## 1. Define what `input->on logo up` does
+## 1. Define what ``||input:on logo up||`` does
 
 <br/>
 

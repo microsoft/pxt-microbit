@@ -17,12 +17,12 @@ On Logo Up
 
 ## Prior learning/place of lesson in scheme of work
 
-Learn how to plot image **on logo up**, `on logo up` to run code when the @boardname@ screen is facing up and vertically orientated. We will be learning how to plot an image with the logo up, basic show LEDs, and logo down.
+Learn how to plot an image using ``||input:on logo up||`` to run code when the @boardname@ screen is facing up and vertically orientated. We will be learning how to plot an image with the logo up, basic show LEDs, and logo down.
 
 ## Documentation
 ```cards
-input.onLogoUp(() => {})
-input.onLogoDown(() => {})
+input.onGesture(Gesture.LogoUp, function () {})
+input.onGesture(Gesture.LogoDown, function () {})
 basic.showLeds(`
     . . . . .
     . . . . .
