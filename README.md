@@ -85,7 +85,7 @@ Make sure to pull changes from all repos regularly. More instructions are at htt
 
 The pxt-microbit target depends on several other repos. The main ones are:
 - https://github.com/Microsoft/pxt, the PXT framework
-- https://github.com/Microsoft/pxt-commmon-packages, common APIs accross various MakeCode editors
+- https://github.com/Microsoft/pxt-common-packages, common APIs accross various MakeCode editors
 - https://github.com/lancaster-university/microbit, basic wrapper around the DAL
 - https://github.com/lancaster-university/microbit-dal
 
