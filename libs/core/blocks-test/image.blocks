@@ -1,0 +1,46 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <variables>
+    <variable type="" id="tgDN]qF_Ah1Z*?=|+?^Y">item</variable>
+  </variables>
+  <block type="pxt-on-start" x="-29" y="116">
+    <statement name="HANDLER">
+      <block type="device_show_image_offset">
+        <value name="sprite">
+          <block type="builtin_image">
+            <field name="i">IconNames.Heart</field>
+          </block>
+        </value>
+        <value name="offset">
+          <shadow type="math_number" id="KX(1%=^vQUd=Q`UHhD*n">
+            <field name="NUM">0</field>
+          </shadow>
+          <block type="device_arrow">
+            <field name="arrow">ArrowNames.South</field>
+          </block>
+        </value>
+        <next>
+          <block type="device_scroll_image">
+            <value name="sprite">
+              <block type="builtin_arrow_image">
+                <field name="i">ArrowNames.SouthWest</field>
+              </block>
+            </value>
+            <value name="frameoffset">
+              <shadow type="math_number">
+                <field name="NUM">1</field>
+              </shadow>
+            </value>
+            <value name="delay">
+              <shadow type="math_number">
+                <field name="NUM">200</field>
+              </shadow>
+            </value>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="variables_get" disabled="true" x="145" y="168">
+    <field name="VAR" id="tgDN]qF_Ah1Z*?=|+?^Y" variabletype="">item</field>
+  </block>
+</xml>

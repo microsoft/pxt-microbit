@@ -11,12 +11,12 @@ coll.push("clock")
 coll.push("night")
 coll.push("cat")
 coll.push("cow")
-input.onLogoUp(() => {
+input.onGesture(Gesture.LogoUp, function () {
     let index = Math.randomRange(0, coll.length)
     let word = coll[index]
-    basic.showString(word, 150)
+    basic.showString(word)
 })
-input.onScreenDown(() => {
+input.onGesture(Gesture.ScreenDown, function () {
     game.addScore(1)
 })
 game.startCountdown(30000)
@@ -24,7 +24,7 @@ game.startCountdown(30000)
 
 ## Challenge 1
 
-Let's add more words for the player to act out! But first, we need to increase the time in one round to give the player more time get through all the words. Let's change the `game->start countdown` statement.
+Let's add more words for the player to act out! But first, we need to increase the time in one round to give the player more time get through all the words. Let's change the ``||game:start countdown||`` statement.
 
 ```blocks
 let coll: string[] = []
@@ -33,12 +33,12 @@ coll.push("clock")
 coll.push("night")
 coll.push("cat")
 coll.push("cow")
-input.onLogoUp(() => {
+input.onGesture(Gesture.LogoUp, function () {
     let index = Math.randomRange(0, coll.length)
     let word = coll[index]
-    basic.showString(word, 150)
+    basic.showString(word)
 })
-input.onScreenDown(() => {
+input.onGesture(Gesture.ScreenDown, function () {
     game.addScore(1)
 })
 
@@ -49,7 +49,7 @@ game.startCountdown(60000)
 
 ## Challenge 2
 
-Now let's add 5 more words to our list of charade words. Right above the the line `word:=coll->at(index)` add 5 lines that say `coll->add("")`. In this example, we will add the words **bicycle, telephone, sun, car, and ant** but you can add whatever words you like.
+Now let's add 5 more words to our list of charade words. Right above the the line ``||arrays:get value at index||`` add 5 lines that say ``||arrays:coll add value to end||``. In this example, we will add the words **bicycle, telephone, sun, car, and ant** but you can add whatever words you like.
 
 ```blocks
 let coll: string[] = []
@@ -63,12 +63,12 @@ coll.push("telephone")
 coll.push("sun") 
 coll.push("car") 
 coll.push("ant") 
-input.onLogoUp(() => {
+input.onGesture(Gesture.LogoUp, function () {
     let index = Math.randomRange(0, coll.length)
     let word = coll[index]
-    basic.showString(word, 150)
+    basic.showString(word)
 })
-input.onScreenDown(() => {
+input.onGesture(Gesture.ScreenDown, function () {
     game.addScore(1)
 })
 game.startCountdown(30000)
@@ -78,13 +78,9 @@ game.startCountdown(30000)
 
 ## Challenge 3
 
-Remove a life using `game->remove life` when the screen is down using the `input->on screen down` event.
+Remove a life using ``||game.remove life||`` when the screen is down using the ``||input:on screen down||`` event.
 
-## Challenge 4
-
-The collection has a function `random` that returns a random element. Update your code to use this function instead of using `math->random`.
-
-## Challenge 5!
+## Challenge 4!
 
 Play the game and try guessing all these words in less than 2 minutes!
 

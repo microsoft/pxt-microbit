@@ -15,7 +15,7 @@ input.onButtonPressed(Button.A, () => {
         newAction();
     }
 })
-input.onLogoDown(() => {
+input.onGesture(Gesture.LogoDown, function () {
     if (action == 1) {
         game.addScore(1);
         newAction();
@@ -36,13 +36,13 @@ input.onButtonPressed(Button.B, () => {
 
 ## Challenge 1
 
-Now let's add some more types of instructions for the player to follow. Let's add `PRESS PIN 0`. 
-Change the global variable `action` to `math->random(4)` so that we can add a new **IF** statement that checks if `action=3`. If it does, display instructions to press pin 0.
+Now let's add some more types of instructions for the player to follow. Let's add `"PRESS PIN 0"`. 
+Change the global variable `action` to `math.randomRange(0, 3)` so that we can add a new **IF** statement that checks if `action == 3`. If it does, display instructions to press pin 0.
 
 ```typescript
 let action  = 0;
 export function newAction() {
-    action = Math.randomRange(0, 4)
+    action = Math.randomRange(0, 3)
     if (action == 0) {
         basic.showString("PUSH A", 150) // ***
     }
@@ -60,7 +60,7 @@ export function newAction() {
 
 ## Challenge 2
 
-Now let's implement `PRESS PIN 0` in the main. Create a condition of `input->on pin pressed("P0")` that will add one to the score and calls the method `new action`.
+Now let's implement `PRESS PIN 0` in the main. Create a condition in an `input.onPinPressed` event that, whet pin `P0` is pressed, will add one to the score and then calls the `newAction` function.
 
 ```typescript
 let action  = 0;

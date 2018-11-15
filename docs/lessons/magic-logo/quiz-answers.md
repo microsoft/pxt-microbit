@@ -28,7 +28,7 @@ The `logo up` event is raised when...
 <br/>
 
 ```blocks
-input.onLogoUp(() => {
+input.onGesture(Gesture.LogoUp, function () {
 })
 ```
 
@@ -43,7 +43,7 @@ input.onLogoUp(() => {
 <br/>
 
 ```blocks
-input.onLogoDown(() => {
+input.onGesture(Gesture.LogoDown, function () {
     basic.showLeds(`
 . . # . .
 . . # . .

@@ -24,13 +24,13 @@ coll.push("puppy")
 coll.push("clock")
 ```
 
-Write the line of code that will display the string "puppy" using `data->coll`.
+Write the line of code that will display the string "puppy" using ``||variables:coll||``.
 
 <br/>
 
 ```blocks
 let coll: string[] = []
-basic.showString(coll[0], 150)
+basic.showString(coll[0])
 ```
 
 ## 3. Consider the following lines of code.
@@ -42,13 +42,13 @@ coll.push("clock")
 coll.push("cat")
 ```
 
-Write the line of code that will display the string "cat" using `data->coll`.
+Write the line of code that will display the string "cat" using ``||variables:coll||``.
 
 <br/>
 
 ```blocks
 let coll: string[] = []
-basic.showString(coll[2], 150)
+basic.showString(coll[2])
 ```
 
 ## 4. Consider the following line of code.
@@ -57,7 +57,7 @@ basic.showString(coll[2], 150)
 let coll: string[] = []
 ```
 
-Write the five (5) lines of code that will add the following five words to `data->coll`: puppy, clock, night, cat, cow.
+Write the five (5) lines of code that will add the following five words to ``||variables:coll||``: `"puppy"`, `"clock"`, `"night"`, `"cat"`, and `"cow"`.
 
 <br/>
 
@@ -79,4 +79,3 @@ let coll: string[] = []
 let index = Math.randomRange(0, coll.length)
 let word = coll[index]
 ```
-

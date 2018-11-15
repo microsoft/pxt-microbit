@@ -1,12 +1,10 @@
 # micro:bit target for PXT
 
-[![Build Status](https://travis-ci.org/Microsoft/pxt-microbit.svg?branch=v1)](https://travis-ci.org/Microsoft/pxt-microbit)
-
-*This README is for pxt-microbit v1.x, which is [currently in beta](https://makecode.com/blog/microbit/v1-beta).*
+[![Build Status](https://travis-ci.org/Microsoft/pxt-microbit.svg?branch=master)](https://travis-ci.org/Microsoft/pxt-microbit)
 
 pxt-microbit is a [Microsoft Programming Experience Toolkit (PXT)](https://github.com/Microsoft/pxt) target that allows you to program a [BBC micro:bit](https://microbit.org/). pxt-microbit v1.x requires pxt v4.x, which is currently in the [master branch of pxt](https://github.com/Microsoft/pxt/tree/master).
 
-* [Try it live](https://makecode.microbit.org/beta)
+* [Try it live](https://makecode.microbit.org/)
 
 ## Issue tracking
 
@@ -38,9 +36,9 @@ cd pxt-common-packages
 npm install
 cd ..
 ```
-6. Clone the `v1` branch of this repository.
+6. Clone the `master` branch of this repository.
 ```
-git clone https://github.com/microsoft/pxt-microbit --branch v1
+git clone https://github.com/microsoft/pxt-microbit --branch master
 cd pxt-microbit
 ```
 7. Install the PXT command line (add `sudo` for Mac/Linux shells).
@@ -87,7 +85,7 @@ Make sure to pull changes from all repos regularly. More instructions are at htt
 
 The pxt-microbit target depends on several other repos. The main ones are:
 - https://github.com/Microsoft/pxt, the PXT framework
-- https://github.com/Microsoft/pxt-commmon-packages, common APIs accross various MakeCode editors
+- https://github.com/Microsoft/pxt-common-packages, common APIs accross various MakeCode editors
 - https://github.com/lancaster-university/microbit, basic wrapper around the DAL
 - https://github.com/lancaster-university/microbit-dal
 

@@ -21,7 +21,7 @@ let action = Math.randomRange(0, 3)
 ```blocks
 let action = Math.randomRange(0, 3)
 if (action == 0) {
-    basic.showString("PUSH A", 150)
+    basic.showString("PUSH A")
 }
 ```
 
@@ -41,14 +41,14 @@ input.onButtonPressed(Button.A, () => {
 ```blocks
 let action = Math.randomRange(0, 3)
 if (action == 1) {
-    basic.showString("LOGO DOWN", 150)
+    basic.showString("LOGO DOWN")
 }
 ```
 
 ## 5. Write the code that increments the score if the @boardname@ logo is tilted down when the global variable called 'action' is equal to 1
 
 ```blocks
-input.onLogoDown(() => {
+input.onGesture(Gesture.LogoDown, function () {
     let action = Math.randomRange(0, 3)
     if (action == 1) {
         game.addScore(1)
@@ -61,14 +61,14 @@ input.onLogoDown(() => {
 ```blocks
 let action = Math.randomRange(0, 3)
 if (action == 2) {
-    basic.showString("SHAKE", 150)
+    basic.showString("SHAKE")
 }
 ```
 
 ## 7. Write the code that increments the score if the @boardname@ is shaken when the global variable called 'action' is equal to 2
 
 ```blocks
-input.onLogoDown(() => {
+input.onGesture(Gesture.LogoDown, function () {
     let action = Math.randomRange(0, 3)
     if (action == 1) {
         game.addScore(1)

@@ -16,20 +16,20 @@ Answer the questions while completing the tutorial. Pay attention to the dialogu
 
 <br/>
 
-## 2. Write the line of code that will display the string "puppy" using "data->coll".
+## 2. Write the line of code that will display the string "puppy" using `coll`.
 
 ```blocks
-let coll = (<string[]>[])
+let coll: string[] = []
 coll.push("puppy")
 coll.push("clock")
 ```
 
 <br/>
 
-## 3. Write the line of code that will display the string "cat" using `"data->coll".
+## 3. Write the line of code that will display the string "cat" using `coll`.
 
 ```blocks
-let coll = (<string[]>[])
+let coll: string[] = []
 coll.push("puppy")
 coll.push("clock")
 coll.push("cat")
@@ -37,7 +37,7 @@ coll.push("cat")
 
 <br/>
 
-## 4. Write the five (5) lines of code that will add the following five words to `data->coll`: puppy, clock, night, cat, cow.
+## 4. Write the five (5) lines of code that will add the following five words to `coll`: puppy, clock, night, cat, cow.
 
 ```typescript
 let coll : string[] = [];

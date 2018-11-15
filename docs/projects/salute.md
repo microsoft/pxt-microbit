@@ -79,7 +79,7 @@ input.onButtonPressed(Button.AB, () => {
     }
     basic.showNumber(Math.max(player1Score, player2Score))
 })
-input.onGesture(Gesture.LogoDown, () => {
+input.onGesture(Gesture.LogoDown, function () {
     player2Score = 0
     player1Score = 0
     basic.showString("Reset")

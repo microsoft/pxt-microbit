@@ -1,0 +1,66 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <variables>
+    <variable type="" id="tgDN]qF_Ah1Z*?=|+?^Y">item</variable>
+  </variables>
+  <block type="control_in_background" x="-13" y="175">
+    <statement name="HANDLER">
+      <block type="control_reset">
+        <next>
+          <block type="control_wait_us">
+            <value name="micros">
+              <shadow type="math_number" id="w]G5E,EGl+SOB?91N4SV">
+                <field name="NUM">4</field>
+              </shadow>
+              <block type="control_event_timestamp&quot;"></block>
+            </value>
+            <next>
+              <block type="control_raise_event">
+                <value name="src">
+                  <shadow type="control_event_source_id" id="~$#[A%Y{}%ZvxA7_z/6+">
+                    <field name="id">EventBusSource.MICROBIT_ID_BUTTON_A</field>
+                  </shadow>
+                  <block type="control_event_value&quot;"></block>
+                </value>
+                <value name="value">
+                  <shadow type="control_event_value_id" id="=OWyqW(E=RBE^i;;QC0$">
+                    <field name="id">EventBusValue.MICROBIT_EVT_ANY</field>
+                  </shadow>
+                  <block type="control_device_serial_number"></block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="control_on_event" x="-58" y="393">
+    <value name="src">
+      <shadow type="control_event_source_id" id="o,i-zrB1+%JG/,EC.6zB">
+        <field name="id">EventBusSource.MICROBIT_ID_BUTTON_A</field>
+      </shadow>
+      <block type="control_event_value_id">
+        <field name="id">EventBusValue.MES_DPAD_BUTTON_C_UP</field>
+      </block>
+    </value>
+    <value name="value">
+      <shadow type="control_event_value_id" id="n2s(-M;{|izma6OZGq:F">
+        <field name="id">EventBusValue.MICROBIT_EVT_ANY</field>
+      </shadow>
+      <block type="control_event_value_id">
+        <field name="id">EventBusValue.MES_REMOTE_CONTROL_EVT_PLAY</field>
+      </block>
+    </value>
+    <statement name="HANDLER">
+      <block type="variables_set">
+        <field name="VAR" id="tgDN]qF_Ah1Z*?=|+?^Y" variabletype="">item</field>
+        <value name="VALUE">
+          <shadow type="math_number" id="$3|;#yTHhAwO-r1Bsk:B">
+            <field name="NUM">0</field>
+          </shadow>
+          <block type="control_device_name"></block>
+        </value>
+      </block>
+    </statement>
+  </block>
+</xml>

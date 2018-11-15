@@ -1,0 +1,210 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <variables></variables>
+  <block type="pins_on_pulsed" x="-157" y="130">
+    <field name="pin">DigitalPin.P5</field>
+    <field name="pulse">PulseValue.Low</field>
+    <statement name="HANDLER">
+      <block type="device_set_analog_pin">
+        <field name="name">AnalogPin.P9</field>
+        <value name="value">
+              <shadow type="math_number">
+                <field name="NUM">5</field>
+              </shadow>
+        </value>
+        <next>
+          <block type="device_set_analog_period">
+            <field name="pin">AnalogPin.P10</field>
+            <value name="micros">
+              <shadow type="math_number">
+                <field name="NUM">20000</field>
+              </shadow>
+            </value>
+            <next>
+              <block type="device_set_digital_pin">
+                <field name="name">DigitalPin.P6</field>
+                <value name="value">
+              <shadow type="math_number">
+                <field name="NUM">5</field>
+              </shadow>
+                </value>
+                <next>
+                  <block type="device_set_servo_pin">
+                    <field name="name">AnalogPin.P13</field>
+                    <value name="value">
+              <shadow type="math_number">
+                <field name="NUM">5</field>
+              </shadow>
+                    </value>
+                    <next>
+                      <block type="device_set_servo_pulse">
+                        <field name="value">AnalogPin.P8</field>
+                        <value name="micros">
+                          <shadow type="math_number" id="Hx4bpmg|8KSH=b_`+XtP">
+                            <field name="NUM">1500</field>
+                          </shadow>
+                          <block type="math_map">
+                            <value name="value">
+                              <shadow type="math_number" id="J%8`=~h4-?O{fY59%(_{">
+                                <field name="NUM">0</field>
+                              </shadow>
+                              <block type="pins_i2c_readnumber">
+                                <field name="format">NumberFormat.Int8BE</field>
+                                <value name="address">
+                                  <shadow type="math_number">
+                                    <field name="NUM">0</field>
+                                  </shadow>
+                                </value>
+                                <value name="repeat">
+                                  <shadow type="logic_boolean">
+                                    <field name="BOOL">FALSE</field>
+                                  </shadow>
+                                </value>
+                              </block>
+                            </value>
+                            <value name="fromLow">
+                              <shadow type="math_number" id="kp(!mScnCVWI/1_X|ar#">
+                                <field name="NUM">0</field>
+                              </shadow>
+                              <block type="pins_pulse_in">
+                                <field name="name">DigitalPin.P9</field>
+                                <field name="value">PulseValue.Low</field>
+                              </block>
+                            </value>
+                            <value name="fromHigh">
+                              <shadow type="math_number" id="]@F=`[ZuxAk,=05Yyn[{">
+                                <field name="NUM">1023</field>
+                              </shadow>
+                              <block type="pins_pulse_duration"></block>
+                            </value>
+                            <value name="toLow">
+                              <shadow type="math_number" id="sJDL?hoabUE)cDdBJWO=">
+                                <field name="NUM">0</field>
+                              </shadow>
+                              <block type="spi_write">
+                                <value name="value">
+                                  <shadow type="math_number">
+                                    <field name="NUM">0</field>
+                                  </shadow>
+                                </value>
+                              </block>
+                            </value>
+                            <value name="toHigh">
+                              <shadow type="math_number">
+                                <field name="NUM">4</field>
+                              </shadow>
+                            </value>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="i2c_writenumber">
+                            <field name="format">NumberFormat.Int16BE</field>
+                            <value name="address">
+                              <shadow type="math_number" id="RjJ{^G_#*rwUqER:]i-L">
+                                <field name="NUM">0</field>
+                              </shadow>
+                              <block type="device_get_digital_pin">
+                                <field name="name">DigitalPin.P9</field>
+                              </block>
+                            </value>
+                            <value name="value">
+                              <shadow type="math_number" id="CCl{zdVU/!(bR}aUfG,G">
+                                <field name="NUM">0</field>
+                              </shadow>
+                              <block type="device_get_analog_pin">
+                                <field name="name">AnalogPin.P9</field>
+                              </block>
+                            </value>
+                            <value name="repeat">
+                              <shadow type="logic_boolean">
+                                <field name="BOOL">FALSE</field>
+                              </shadow>
+                            </value>
+                            <next>
+                              <block type="spi_pins">
+                                <field name="mosi">DigitalPin.P11</field>
+                                <field name="miso">DigitalPin.P9</field>
+                                <field name="sck">DigitalPin.P10</field>
+                                <next>
+                                  <block type="device_set_pull">
+                                    <field name="pin">DigitalPin.P9</field>
+                                    <field name="pull">PinPullMode.PullDown</field>
+                                    <next>
+                                      <block type="device_analog_pitch">
+                                        <value name="frequency">
+                                          <shadow type="math_number">
+                                            <field name="NUM">0</field>
+                                          </shadow>
+                                        </value>
+                                        <value name="ms">
+                                          <shadow type="math_number">
+                                            <field name="NUM">0</field>
+                                          </shadow>
+                                        </value>
+                                        <next>
+                                          <block type="device_set_pin_events">
+                                            <field name="pin">DigitalPin.P8</field>
+                                            <field name="type">PinEventType.Touch</field>
+                                            <next>
+                                              <block type="device_analog_set_pitch_pin">
+                                                <field name="name">AnalogPin.P9</field>
+                                                <next>
+                                                  <block type="spi_format">
+                                                    <value name="bits">
+                                                      <shadow type="math_number">
+                                                        <field name="NUM">8</field>
+                                                      </shadow>
+                                                    </value>
+                                                    <value name="mode">
+                                                      <shadow type="math_number">
+                                                        <field name="NUM">3</field>
+                                                      </shadow>
+                                                    </value>
+                                                    <next>
+                                                      <block type="spi_format">
+                                                        <value name="bits">
+                                                          <shadow type="math_number">
+                                                            <field name="NUM">8</field>
+                                                          </shadow>
+                                                        </value>
+                                                        <value name="mode">
+                                                          <shadow type="math_number">
+                                                            <field name="NUM">3</field>
+                                                          </shadow>
+                                                        </value>
+                                                        <next>
+                                                          <block type="spi_frequency">
+                                                            <value name="frequency">
+                                                              <shadow type="math_number">
+                                                                <field name="NUM">1000000</field>
+                                                              </shadow>
+                                                            </value>
+                                                          </block>
+                                                        </next>
+                                                      </block>
+                                                    </next>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

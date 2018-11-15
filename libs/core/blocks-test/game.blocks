@@ -1,0 +1,183 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <variables>
+    <variable type="" id="B{fp`0m8viO6.2a3):}D">item</variable>
+    <variable type="" id=")IrU.C_Qui4E3llvPl7H">gdfgsdfg</variable>
+  </variables>
+  <block type="pxt-on-start" x="246" y="25">
+    <statement name="HANDLER">
+      <block type="game_delete_sprite">
+        <value name="this">
+          <block type="game_create_sprite">
+            <value name="x">
+              <shadow type="math_number">
+                <field name="NUM">2</field>
+              </shadow>
+            </value>
+            <value name="y">
+              <shadow type="math_number">
+                <field name="NUM">2</field>
+              </shadow>
+            </value>
+          </block>
+        </value>
+        <next>
+          <block type="game_move_sprite">
+            <value name="sprite">
+              <block type="variables_get">
+                <field name="VAR" id="B{fp`0m8viO6.2a3):}D" variabletype="">item</field>
+              </block>
+            </value>
+            <value name="leds">
+              <shadow type="math_number">
+                <field name="NUM">1</field>
+              </shadow>
+            </value>
+            <next>
+              <block type="game_turn_sprite">
+                <field name="direction">Direction.Right</field>
+                <value name="sprite">
+                  <block type="variables_get">
+                    <field name="VAR" id="B{fp`0m8viO6.2a3):}D" variabletype="">item</field>
+                  </block>
+                </value>
+                <value name="degrees">
+                  <shadow type="math_number">
+                    <field name="NUM">45</field>
+                  </shadow>
+                </value>
+                <next>
+                  <block type="game_sprite_change_xy">
+                    <field name="property">LedSpriteProperty.X</field>
+                    <value name="sprite">
+                      <block type="variables_get">
+                        <field name="VAR" id="B{fp`0m8viO6.2a3):}D" variabletype="">item</field>
+                      </block>
+                    </value>
+                    <value name="value">
+                      <shadow type="math_number">
+                        <field name="NUM">1</field>
+                      </shadow>
+                    </value>
+                    <next>
+                      <block type="game_sprite_set_property">
+                        <field name="property">LedSpriteProperty.X</field>
+                        <value name="sprite">
+                          <block type="variables_get">
+                            <field name="VAR" id="B{fp`0m8viO6.2a3):}D" variabletype="">item</field>
+                          </block>
+                        </value>
+                        <value name="value">
+                          <shadow type="math_number" id="sRSKKdl8vYSc1rPg4mA2">
+                            <field name="NUM">0</field>
+                          </shadow>
+                          <block type="game_sprite_property">
+                            <field name="property">LedSpriteProperty.X</field>
+                            <value name="sprite">
+                              <block type="variables_get">
+                                <field name="VAR" id="B{fp`0m8viO6.2a3):}D" variabletype="">item</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="variables_set">
+                            <field name="VAR" id=")IrU.C_Qui4E3llvPl7H" variabletype="">gdfgsdfg</field>
+                            <value name="VALUE">
+                              <shadow type="math_number" id="}{^7O7X5I9`!f`OhoEk1">
+                                <field name="NUM">0</field>
+                              </shadow>
+                              <block type="game_sprite_touching_sprite">
+                                <value name="sprite">
+                                  <block type="variables_get">
+                                    <field name="VAR" id="B{fp`0m8viO6.2a3):}D" variabletype="">item</field>
+                                  </block>
+                                </value>
+                                <value name="other">
+                                  <block type="variables_get">
+                                    <field name="VAR" id="B{fp`0m8viO6.2a3):}D" variabletype="">item</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="variables_set">
+                                <field name="VAR" id=")IrU.C_Qui4E3llvPl7H" variabletype="">gdfgsdfg</field>
+                                <value name="VALUE">
+                                  <shadow type="math_number" id="}{^7O7X5I9`!f`OhoEk1">
+                                    <field name="NUM">0</field>
+                                  </shadow>
+                                  <block type="game_sprite_touching_edge">
+                                    <value name="sprite">
+                                      <block type="variables_get">
+                                        <field name="VAR" id="B{fp`0m8viO6.2a3):}D" variabletype="">item</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="game_sprite_bounce">
+                                    <value name="sprite">
+                                      <block type="variables_get">
+                                        <field name="VAR" id="B{fp`0m8viO6.2a3):}D" variabletype="">item</field>
+                                      </block>
+                                    </value>
+                                    <next>
+                                      <block type="game_add_score">
+                                        <value name="points">
+                                          <shadow type="math_number" id="Z8k_T^n:89Tv{RiBQP!$">
+                                            <field name="NUM">1</field>
+                                          </shadow>
+                                          <block type="game_score"></block>
+                                        </value>
+                                        <next>
+                                          <block type="game_set_score">
+                                            <value name="points">
+                                              <shadow type="math_number">
+                                                <field name="NUM">0</field>
+                                              </shadow>
+                                            </value>
+                                            <next>
+                                              <block type="game_start_countdown">
+                                                <value name="duration">
+                                                  <shadow type="math_number">
+                                                    <field name="NUM">10000</field>
+                                                  </shadow>
+                                                </value>
+                                                <next>
+                                                  <block type="game_game_over"></block>
+                                                </next>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="variables_set" disabled="true" x="-76" y="44">
+    <field name="VAR" id="B{fp`0m8viO6.2a3):}D" variabletype="">item</field>
+    <value name="VALUE">
+      <shadow type="math_number">
+        <field name="NUM">0</field>
+      </shadow>
+    </value>
+  </block>
+  <block type="variables_get" disabled="true" x="-92" y="111">
+    <field name="VAR" id="B{fp`0m8viO6.2a3):}D" variabletype="">item</field>
+  </block>
+</xml>
