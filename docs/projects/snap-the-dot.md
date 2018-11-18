@@ -70,7 +70,7 @@ basic.forever(function () {
 
 Finally, pull out an ``||game:add score||`` and a ``||game:game over||`` block to handle both success (sprite in the center) and failure (sprite not in the center).
 
- ```blocks
+```blocks
 let sprite: game.LedSprite = null
 input.onButtonPressed(Button.A, function () {
     if (sprite.get(LedSpriteProperty.X) == 2) {
