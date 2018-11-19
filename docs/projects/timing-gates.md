@@ -30,7 +30,7 @@ By dividing the distance between the gates by the duration, we get the speed of 
 
 ## Materials
 
-* Carboard
+* Cardboard
 * Aluminum foil
 * Double-side tape (carpet tape)
 * 4 crocodile clips
