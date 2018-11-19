@@ -28,7 +28,7 @@ basic.forever(() => {
 
 ## Plot range
 
-A number of LEDs will light up to show how much the value is related to the _high_ number in the second arguement. The high number sets the _range_ of values to show. If the high number is set to `16` and you want to plot the value of `8`, then that value is half of the range.
+A number of LEDs will light up to show how much the value is related to the _high_ number in the second argument. The high number sets the _range_ of values to show. If the high number is set to `16` and you want to plot the value of `8`, then that value is half of the range.
 
 ```block
 led.plotBarGraph(8, 16)
@@ -60,7 +60,7 @@ for (let i = 0; i < values.length; i++) {
 
 ## Recording plotted values
 
-The ``||led:plot bar graph||`` also sends the number value it's plotting to the console. You can see the output in the Data Viewer. It charts the values and they appear as indivdual numbers in console.
+The ``||led:plot bar graph||`` also sends the number value it's plotting to the console. You can see the output in the Data Viewer. It charts the values and they appear as individual numbers in console.
 
 ```blocks
 input.onButtonPressed(Button.B, () => {
