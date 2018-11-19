@@ -59,7 +59,7 @@ basic.forever(() => {
 ```
 **Create the code** that measures the change in the Y axis acceleration as a graph on the LEDs  
   
-**Dowload the code** to the @boardname@ 
+**Download the code** to the @boardname@ 
   
 **Test the movements that move the graph from 1 to 5 bars on the LEDs** 
 
