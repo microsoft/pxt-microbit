@@ -96,7 +96,7 @@ You see that we used, or called, the function **showMyName** two times and didn'
 
 You can see that a function is really useful when you want to reuse some code, especially if it's a lot of code! But wait, functions are even more powerful when you can send them some information to work with!
 
-The **showMyName** function would really be awesome if it could display anyone's name. So, how can we make it do that? Well, let's use a _parameter_. A parameter is like a variable but it's a special varialble only for the function. It allows your program to send, or _pass_, a value to the function. Just like a variable, the parameter has a [type](/types) for the value passed in it. To use a parmeter with a function, we need to work with its code in the JavaScript editor since using a parameter makes the function too complex to be a block.
+The **showMyName** function would really be awesome if it could display anyone's name. So, how can we make it do that? Well, let's use a _parameter_. A parameter is like a variable but it's a special variable only for the function. It allows your program to send, or _pass_, a value to the function. Just like a variable, the parameter has a [type](/types) for the value passed in it. To use a parmeter with a function, we need to work with its code in the JavaScript editor since using a parameter makes the function too complex to be a block.
 
 Go over to the JavaScript editor and change the function's name from **showMyName** to just **showName**. Give it a parameter to display anyone's name by inserting ``name: string`` in between the `(` `)` after the function name.
 
