@@ -53,7 +53,7 @@ Gently fold the sheet in half.
 
 ![](/static/mb/projects/wallet/hole1.jpg)
 
-Gently foldy the other way.
+Gently fold the other way.
 
 ![](/static/mb/projects/wallet/hole2.jpg)
 
