@@ -20,7 +20,7 @@ https://youtu.be/Ah4fEbJtklU
 ## Recycled
 
 * 1 Milk Carton **without a screwable cap**
-* 2 Coffee stiring wood sticks
+* 2 Coffee stirring wood sticks
 * 2 Straws
 * 2 clothespin (optional, can be replaced by glue)
 
