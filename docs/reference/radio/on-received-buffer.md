@@ -14,7 +14,7 @@ The data contained in **receivedBuffer** is put there as a data [type](/types). 
 
 ## Example: Remote level
 
-Two @boardname@s work like remote levels. They lie flat and detect any change in the horizontal position of the plane that they sit in. Each board sends its level measurements to the other. Each level measurment is shown on the screen.
+Two @boardname@s work like remote levels. They lie flat and detect any change in the horizontal position of the plane that they sit in. Each board sends its level measurements to the other. Each level measurement is shown on the screen.
 
 ```typescript
 let ax = 0;
