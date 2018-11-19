@@ -1,6 +1,6 @@
 # Salute!
 
-**Salute!** is a simple math game where players select a number card from a deck (without looking at it) and hold it to their forehead as in a "salute". Another player decides whether to make a sum or product of the two cards and then annouces the result. Based on the card held by the opposing player and the result announced, each player tries to figure out what card they are holding.
+**Salute!** is a simple math game where players select a number card from a deck (without looking at it) and hold it to their forehead as in a "salute". Another player decides whether to make a sum or product of the two cards and then announces the result. Based on the card held by the opposing player and the result announced, each player tries to figure out what card they are holding.
 
 ## Goals for this activity
 
