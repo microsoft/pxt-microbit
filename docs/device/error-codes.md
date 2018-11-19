@@ -6,7 +6,7 @@ Below is a list of error numbers and what they mean:
 
 * **10** (`MICROBIT_I2C_LOCKUP`): the @boardname@'s I2C bus is not working
 * **20** (`MICROBIT_OOM`): there is no free memory on the @boardname@
-* **30** (`MICORBIT_HEAP_ERROR`): a problem in the heap space.
+* **30** (`MICROBIT_HEAP_ERROR`): a problem in the heap space.
 * **40** (`MICROBIT_NULL_DEREFERENCE `): there was a NULL dereference, the @boardname@ tried to manage a invalid object pointer.
 * **42** (`MICROBIT_SYSTEM_ERROR`): there's an error condition in the @boardname@ system software.
 * **43** (`MICROBIT_NO_RADIO`): the @boardname@ can't enable the radio.
