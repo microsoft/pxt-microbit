@@ -53,7 +53,7 @@ This time both values are shown on the same chart. We used ``||serial:serial wri
 
 ## Raw data
 
-The data in the console window appears exacly like it's written by your program. The data your program writes is called "raw" data. The Data Viewer reads the data and "cooks" it by deciding how to display it in a way that's useful to you.
+The data in the console window appears exactly like it's written by your program. The data your program writes is called "raw" data. The Data Viewer reads the data and "cooks" it by deciding how to display it in a way that's useful to you.
 
 You can select and copy the raw data from the console and paste it into another program if you want to work with it outside of the MakeCode editor. Also, there is a copy button next to the console window that let's you easily copy the raw data with one click.
 
@@ -93,7 +93,7 @@ time (source1)	x	time (source1)	y
 
 The first line says what character is used as the value separator. Characters other than a comma can be used as separators. The Data Viewer choose to use a `TAB` character. The next line contains the headings for the values. These are the names of each value when name value pairs are written to the console. Also, a time value (timestamp) is included for each value. The timestamp is the amount of time since the start of the program when the value was written.
 
-The remaining lines contain the data values and their timestamps. Each line has one occurance of each value. So, for the example data above, each new `x` and `y` value is put together on the same line.
+The remaining lines contain the data values and their timestamps. Each line has one occurrence of each value. So, for the example data above, each new `x` and `y` value is put together on the same line.
 
 ### Loading into a spreadsheet
 
