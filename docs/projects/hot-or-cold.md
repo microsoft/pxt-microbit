@@ -81,7 +81,7 @@ The hunter's screen will display:
 
 Use the ``signal`` values collected in the previous step to determine when to show each icon.
 
-Here is an example that uses ``-95`` or less for cold, between ``-95`` and ``-80`` for warm, and ``-80`` or above for hot. You can change these values to account for your room setup or conditions of your hidding place.
+Here is an example that uses ``-95`` or less for cold, between ``-95`` and ``-80`` for warm, and ``-80`` or above for hot. You can change these values to account for your room setup or conditions of your hiding place.
 
 To make the program more responsive, add a ``||led:stop animation||`` to cancel icon animations when a new beacon packet comes in.
 
