@@ -10,7 +10,7 @@ It is common when reporting or recording data to use a _Name Value Pair_ (NVP). 
 
 ``temperature:-15``
 
-Associating a name with a value helps to identify related data when different data sources are recorded. For example, if you're reporting both temperature and light intensity, the _name:value_ format helps spreadsheets or other data analysis programs distingush between them and group the same types of values together properly. Reporting two data sources might look like this in the output:
+Associating a name with a value helps to identify related data when different data sources are recorded. For example, if you're reporting both temperature and light intensity, the _name:value_ format helps spreadsheets or other data analysis programs distinguish between them and group the same types of values together properly. Reporting two data sources might look like this in the output:
 
 ```
 temperature:-15
