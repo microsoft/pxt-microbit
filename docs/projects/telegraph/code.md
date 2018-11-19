@@ -24,7 +24,7 @@ led.plot(2, 2)
 ## Step 3
 
 Now that we know how to send the signal, we only want to do it while the button **A** is pressed. 
-Pick an ``||logic:if then else||`` block from the **Logic** drawer (you'll leave the ``||logic:else||`` part empty for now). Add a check for when button **A** is pressed. Get an ``||inpu:on button pressed||`` from the **Input** drawer and move the blocks from the previous step into ``||logic:then||`` part of the ``||logic:if then else||``:
+Pick an ``||logic:if then else||`` block from the **Logic** drawer (you'll leave the ``||logic:else||`` part empty for now). Add a check for when button **A** is pressed. Get an ``||input:on button pressed||`` from the **Input** drawer and move the blocks from the previous step into ``||logic:then||`` part of the ``||logic:if then else||``:
 
 ```blocks
 if (input.buttonIsPressed(Button.A)) {
