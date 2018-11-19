@@ -1,6 +1,6 @@
 # Remote data collection
 
-If you have more than one @boardname@ you can setup one of them to receive data sent by radio from other @boardname@s. Remote @boardname@s can take measurements and send them to a board that's connected by USB to a computer. The @boardname@ connected to the computer is the data recorder and writes the recieved data to the serial port.
+If you have more than one @boardname@ you can setup one of them to receive data sent by radio from other @boardname@s. Remote @boardname@s can take measurements and send them to a board that's connected by USB to a computer. The @boardname@ connected to the computer is the data recorder and writes the received data to the serial port.
 
 ![Remote micro:bit sending](/static/mb/device/data-analysis/radio-zap.jpg)
 
@@ -31,7 +31,7 @@ A remote @boardname@ reads its measurement values and sends them to the same rad
 ```block
 radio.setGroup(99)
 ```
-A typical measurment progam might read a sensor value continously. Depending on how much the values change, the meaurement program could contain the read operation in a loop with a delay interval. In the example here, the delay is one minute between each read of a temperature value. The value is sent on the current radio group with ``||radio:radio send number||``.
+A typical measurement program might read a sensor value continuously. Depending on how much the values change, the measurement program could contain the read operation in a loop with a delay interval. In the example here, the delay is one minute between each read of a temperature value. The value is sent on the current radio group with ``||radio:radio send number||``.
 
 ```blocks
 let temperature = 0
