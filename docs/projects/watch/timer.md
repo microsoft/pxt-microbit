@@ -28,8 +28,8 @@ We'll use button `A` to add `10` seconds to our time count. The time count of `s
 
 1. In **Input**, find an ``||input:on button pressed||`` an put it somewhere on the workspace.
 2. Get an ``||logic:if then||`` block from **Logic** and put it in the ``||input:on button pressed||``.
-3. From the same **Logic** category, get a ``||logic:0 < 0||`` and relpace the `false` condition with it.
-4. Change the left `0` in the condtion to the `seconds` variable. Change `0` on the right to `50`. This limits time to just one minute.
+3. From the same **Logic** category, get a ``||logic:0 < 0||`` and replace the `false` condition with it.
+4. Change the left `0` in the condition to the `seconds` variable. Change `0` on the right to `50`. This limits time to just one minute.
 5. In the ``||logic:then||`` section, put a ``||variables:change by||`` there. Select the `seconds` variable name from the dropdown and change the `0` on the right to `10`.
 6. Add a ``||basic:show number||`` below the ``||variables:change by||``. Change the value to the `seconds` variable. Then, put a ``||basic:clear screen||`` under that.
 
@@ -50,8 +50,8 @@ Now, we'll use the `B` button to add just `1` second the time count. The time co
 
 1. In **Input**, find an ``||input:on button pressed||`` an put it somewhere on the workspace.
 2. Get an ``||logic:if then||`` block from **Logic** and put it in the ``||input:on button pressed||``.
-3. From the same **Logic** category, get a ``||logic:0 < 0||`` and relpace the `false` condition with it.
-4. Change the left `0` in the condtion to the `seconds` variable. Change `0` on the right to `60`. Again, this limits the time to just one minute.
+3. From the same **Logic** category, get a ``||logic:0 < 0||`` and replace the `false` condition with it.
+4. Change the left `0` in the condition to the `seconds` variable. Change `0` on the right to `60`. Again, this limits the time to just one minute.
 5. In the ``||logic:then||`` section, put a ``||variables:change by||`` there. Select the `seconds` variable name from the dropdown.
 6. Add a ``||basic:show number||`` below the ``||variables:change by||``. Change the value to the `seconds` variable. Then, put a ``||basic:clear screen||`` under that.
 
