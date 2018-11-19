@@ -206,7 +206,7 @@ Make sure to rename this program to ``player`` or something like that so you don
 
 ### Tuning
 
-Does the movement check work? Try changing the ``100`` value to tune the detection sensivity. Try ``64`` maybe.
+Does the movement check work? Try changing the ``100`` value to tune the detection sensitivity. Try ``64`` maybe.
 
 ### Improve the game
 
