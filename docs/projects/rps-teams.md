@@ -11,7 +11,7 @@ https://youtu.be/8ztOmdZi5Pw
 Playing rock paper scissors is usually a two player game... but it will work with many more players too!
 When playing with more than two players, it becomes a team game: all players shake at the same time, 
 then the amount of **rocks**, **paper**, and **scissors** is tallied between all the players. 
-Teams are formed automatcally based on which tool is chosen by shaking the @boardname@. The team with the most players after the shake wins the game.
+Teams are formed automatically based on which tool is chosen by shaking the @boardname@. The team with the most players after the shake wins the game.
 
 Starting with the [basic version of the RPS game](/projects/rock-paper-scissors), we are going
 to change the code so that the @boardname@ counts and displays the number of players on a team.
@@ -151,7 +151,7 @@ radio.onReceivedNumber(function (receivedNumber) {
 })
 ```
 
-## Step 6: Reseting the team
+## Step 6: Resetting the team
 
 What if some of the other players leave the game? They would stop broadcasting their status but would still stay in our list of players. To avoid this problem, we reset the ``players`` array each time we shake:
 
