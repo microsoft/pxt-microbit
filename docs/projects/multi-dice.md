@@ -4,7 +4,7 @@
 
 ![Multiple @boardname@ throwing a dice](/static/mb/projects/multi-dice.png)
 
-Build a multi-player dice game using the **radio**. The **radio** blocks let you send wireless messages between a @boardnam@ and another @boardname@.
+Build a multi-player dice game using the **radio**. The **radio** blocks let you send wireless messages between a @boardname@ and another @boardname@.
 
 In this game, you shake to "throw the dice" and send the result to the other @boardname@. If you receive a result of a dice throw equal or greater than yours, you lose.
 
