@@ -139,7 +139,7 @@ start = 0
 
 ## Step 6: Plot LED on X, Y coordinates randomly 
 
-The reaction time will begin if no false start is detected (pin **P0** pressed at the wrong time). When the reaction time starts, a LED is randomly plotted at some the x and y coordinate on the display. Add in the blocks contatined in the ``||logic:if then||`` that show the reaction time:
+The reaction time will begin if no false start is detected (pin **P0** pressed at the wrong time). When the reaction time starts, a LED is randomly plotted at some the x and y coordinate on the display. Add in the blocks contained in the ``||logic:if then||`` that show the reaction time:
 
 ```blocks
 let start = 0
