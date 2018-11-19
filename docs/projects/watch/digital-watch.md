@@ -14,7 +14,7 @@ We need to make some variables to keep track of the time and for a few other thi
 2. Ok, in **Variables** click on `Make a Variable`. Name the variable as `hours`. Drag out a ``||variables:set to||`` block and change the name with the dropdown to `hours`. Place the variable into the ``||basic:on start||`` block.
 3. Repeat this 4 more times to make variables named `minutes`, `time`, `adjust`, and `ampm`.
 4. Now, for the ``||variables:set to||`` block for `time`, go to **Text** and drag a `" "` in and replace the `0`.
-5. For the `ampm` variable, change the `0` there to a `false` from the **Logic** catagory. 
+5. For the `ampm` variable, change the `0` there to a `false` from the **Logic** category. 
 
 ```blocks
 let hours = 0
@@ -28,7 +28,7 @@ let ampm = false
 
 So, let's try showing the time on the display. We aren't keeping time yet but we'll just see if we can make our watch show something.
 
-1. Get in the **Input** catagory and pull out an ``||input:on shake||``. We'll have our watch show the time when it's shaken.
+1. Get in the **Input** category and pull out an ``||input:on shake||``. We'll have our watch show the time when it's shaken.
 2. Get another ``||variables:set to||`` and put it into the ``||input:on shake||``. Change the name to `time`.
 3. Replace the `0` with a ``||text:join||`` from **Text**. Get another ``||text:join||`` and put it into the second slot of the first ``||text:join||`` you pulled out.
 4. Change the `" "` in the first ``||text:join||`` to the `hours` variable. Change the text in the first slot of the second ``||text:join||`` to `":"`. And, change the last slot in the second ``||text:join||`` to the `minutes` variable.
@@ -52,8 +52,8 @@ Let's make a way to set the hours for the watch.
 
 1. In **Input**, find an ``||input:on button pressed||`` an put it somewhere on the workspace.
 2. Get an ``||logic:if then else||`` block from **Logic** and put it in the ``||input:on button pressed||``.
-3. From the same **Logic** category, get a ``||logic:0 < 0||`` and relpace the `false` condition with it.
-4. Change the left `0` in the condtion to the `hours` variable. Change `0` on the right to `23`. This limits our hour count to 23 hours.
+3. From the same **Logic** category, get a ``||logic:0 < 0||`` and replace the `false` condition with it.
+4. Change the left `0` in the condition to the `hours` variable. Change `0` on the right to `23`. This limits our hour count to 23 hours.
 5. In the ``||logic:then||`` section, put a ``||variables:change by||`` there. Select the `hours` variable name from the dropdown.
 6. In the ``||logic:else||`` section, put a ``||variables:set to||`` there. Select the `hours` variable name from the dropdown and leave the `0`.
 
