@@ -70,7 +70,7 @@ The formats for numbers stored on the @boardname@ are:
 
 #### ~ hint
 
-The one byte formats really don't have endianness because there is no ordering needed for just one byte. They are given format types though so that they are consistant with the multi-byte formats. So, there is no difference between `Int8LE` and `Int8BE`, or `UInt8LE` and `UInt8BE`.
+The one byte formats really don't have endianness because there is no ordering needed for just one byte. They are given format types though so that they are consistent with the multi-byte formats. So, there is no difference between `Int8LE` and `Int8BE`, or `UInt8LE` and `UInt8BE`.
 
 #### ~
 
