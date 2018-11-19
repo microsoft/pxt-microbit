@@ -211,7 +211,7 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
   "url":"/pkg/mbitfun/pxt-katakana",
   "cardType": "package"
 }, {
-  "name": "Muselab WiFi IoT Sheild",
+  "name": "Muselab WiFi IoT Shield",
   "url":"/pkg/MUSELAB/pxt-wifi-shield",
   "cardType": "package"
 },  {
