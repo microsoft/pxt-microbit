@@ -7,7 +7,7 @@ For another device like a smartphone to use any of the Bluetooth "services" whic
 
 ## ~
 
-The Bluetooth IO pin service makes it possible for another device such as a smartphone to communicate with other electronic 'things' connected to a @boardname@'s edge connector. You could for example, use your smartphone to switch on or off a light which is connected to the @boardname@ or your smartphone could receive data collected from a sensor connected to the @boardname@. In fact you could do both of these things at the same time since the Bluetooth IO pin service lets you interact with multiple 'pins' on the edge conector in different ways all at the same time. 
+The Bluetooth IO pin service makes it possible for another device such as a smartphone to communicate with other electronic 'things' connected to a @boardname@'s edge connector. You could for example, use your smartphone to switch on or off a light which is connected to the @boardname@ or your smartphone could receive data collected from a sensor connected to the @boardname@. In fact you could do both of these things at the same time since the Bluetooth IO pin service lets you interact with multiple 'pins' on the edge connector in different ways all at the same time. 
 
 No additional code is needed on the @boardname@ to use the Bluetooth IO pin service from another device. 
 
