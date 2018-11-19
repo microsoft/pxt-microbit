@@ -13,7 +13,7 @@ Turn some coffee cup holders into a monster that moves to light!
 ## Materials
 
 * 3 coffee cup holders (hot cup sleeves)
-* 2 ood coffee strirer sticks
+* 2 wood coffee stirrer sticks
 * scissors
 * glue gun or tape
 * 1 paper clip
