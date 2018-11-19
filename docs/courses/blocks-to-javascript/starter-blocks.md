@@ -44,7 +44,7 @@ input.onButtonPressed(Button.A, function () {
 
 Do you want to go back to editing with blocks again? MakeCode can convert your JavaScript code back into blocks.
 
-* Replace a few dots `.` with hashmarks `#`.
+* Replace a few dots `.` with hash marks `#`.
 
 ```typescript
 input.onButtonPressed(Button.A, function () {
