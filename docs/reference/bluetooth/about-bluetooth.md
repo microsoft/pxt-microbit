@@ -73,10 +73,10 @@ Full documentation for the @boardname@ Bluetooth profile as used by this applica
 The @boardname@'s accelerometer (motion detector), magnetometer (digital compass), two buttons on the front, LED Display, IO pins on the edge connector, internal message bus and internal temperature sensor are all exposed as Services so that applications can exploit these features of the device. In addition: 
 
 * the Bluetooth SIG defined Device Information Service is included to allow applications to obtain information such as firmware version details over Bluetooth
-* there's a Device Firmware Update (DFU) service which allows new @boardname@ code to be flahsed to the device over Bluetooth instead of over USB
+* there's a Device Firmware Update (DFU) service which allows new @boardname@ code to be flashed to the device over Bluetooth instead of over USB
 * there's a UART service which allows arbitrary data to be exchanged with the @boardname@ in a way resembling traditional serial communications.
 
-Everything you can do with the @boardname@ over Bluetooth is achieved through read, write and notify operations. Not all characteristics support all three so check the profile documentation. Often there are Characteristics whose purpose is to allow you to write configuration values which control other behviours. Technically these are called Control Points. For example you can specify the frequency with which accelerometer data is sampled before it is transmitted as a Notification message to your application.
+Everything you can do with the @boardname@ over Bluetooth is achieved through read, write and notify operations. Not all characteristics support all three so check the profile documentation. Often there are Characteristics whose purpose is to allow you to write configuration values which control other behaviours. Technically these are called Control Points. For example you can specify the frequency with which accelerometer data is sampled before it is transmitted as a Notification message to your application.
 
 ## Want to Know More?
 
