@@ -61,7 +61,7 @@ We want our soil probes to work for a long time and to save our battery power, s
 
 * Our circuit connects directly to the **3V** pin so it is always using electricity. Instead, 
 we will connect it to **P1** and turn that pin **high** only while the measurement is taken.
-This saves electricty and also avoids corrosion of the probes.
+This saves electricity and also avoids corrosion of the probes.
 * We will also lower the brightness of the screen to lower the energy consumption from the LEDs.
 * Soil moisture changes very slowly so we don't need to measure it all the time!!! Let's add a **sleep** of 5 seconds in the loop as well.
 
