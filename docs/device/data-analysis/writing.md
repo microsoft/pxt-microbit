@@ -62,7 +62,7 @@ serial.writeNumber(2)
 serial.writeNumber(3)
 ```
 
-The numbers don't show up as single values because they appear in the output as a string: `"123"`. Also, the string doesn't form a complete line so it doesn't show up in the console window either. You could add a blank line to the numbers alreay written. If you did this, you would have just one value charted which is `123`:
+The numbers don't show up as single values because they appear in the output as a string: `"123"`. Also, the string doesn't form a complete line so it doesn't show up in the console window either. You could add a blank line to the numbers already written. If you did this, you would have just one value charted which is `123`:
 
 ```block
 serial.writeNumber(1)
