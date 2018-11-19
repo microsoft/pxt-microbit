@@ -58,7 +58,7 @@ Sometimes you need to have your program tell what type of numbers it will store 
 The formats for numbers stored on the @boardname@ are:
 
 * `Int8LE`: one byte, signed, little endian 
-* `UInt8LE`: one byte, unsigned, litte endian
+* `UInt8LE`: one byte, unsigned, little endian
 * `Int8BE`: one byte, signed, big endian
 * `UInt8BE`: one byte, unsigned, big endian
 * `Int16LE`: two bytes, signed, little endian
