@@ -17,7 +17,7 @@ https://youtu.be/BiZLjugXMbM
 ## Materials
 
 * 3 Coffee cup holders (hot cup sleeves)
-* 2 Wood coffee strirer sticks
+* 2 Wood coffee stirrer sticks
 * Glue gun
 * Scissors that can cut cardboard
 * 1 @boardname@, battery holder and 2 AAA batteries
