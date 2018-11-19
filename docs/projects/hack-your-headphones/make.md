@@ -2,7 +2,7 @@
 
 ## ~avatar avatar
 
-Did you know you could attach your headhpones to the @boardname@ to generate sounds?
+Did you know you could attach your headphones to the @boardname@ to generate sounds?
 
 ## ~
 
