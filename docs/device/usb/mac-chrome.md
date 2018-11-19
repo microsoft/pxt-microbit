@@ -26,7 +26,7 @@ First, connect the micro:bit:
 
 2. Connect the other end of the USB cable to a USB port on your computer.
 
-Your computer should recognise your micro:bit as a new drive. On computers
+Your computer should recognize your micro:bit as a new drive. On computers
 running Windows, `MICROBIT` appears as a drive under Devices and drives. On a Mac
 it appears as a new drive under Devices.
 
