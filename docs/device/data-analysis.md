@@ -1,6 +1,6 @@
 # Data Analysis
 
-In addition to learning programming, the @boardname@ is a fantastic tool for observing and measuring things that happen in the natural world. The sciences rely on methods of observation, information gathering, and analysis. Using the @boardname@ with MakeCode, you can use the sensors and inputs to measure and capture physical events that occur. Meausrement data can then be sent for recording by other devices like another @boardname@ or a personal computer.
+In addition to learning programming, the @boardname@ is a fantastic tool for observing and measuring things that happen in the natural world. The sciences rely on methods of observation, information gathering, and analysis. Using the @boardname@ with MakeCode, you can use the sensors and inputs to measure and capture physical events that occur. Measurement data can then be sent for recording by other devices like another @boardname@ or a personal computer.
 
 ![Data graph logo](/static/mb/device/data-analysis/data-analysis.jpg)
 
