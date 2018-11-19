@@ -37,7 +37,7 @@ Send the value `2055` to the 7-bit I2C address as a 32-bit number. The `32`, big
 pins.i2cWriteNumber(32, 2055, NumberFormat.Int32BE, false);
 ```
 
-### Reapeted writes
+### Repeated writes
 
 Send three byte values to a device at address `33`.
 
