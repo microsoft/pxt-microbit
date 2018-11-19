@@ -116,7 +116,7 @@ Information about the current status of the device
 * `MES_DEVICE_INCOMING_CALL`: Currently receiving an incoming call
 * `MES_DEVICE_INCOMING_MESSAGE`: A message was received (SMS or other messaging app)
 
-### Game pad contoller
+### Game pad controller
 
 Button events from a paired game pad.
 
