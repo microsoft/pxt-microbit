@@ -14,7 +14,7 @@ Structured courses for teaching science and technology in the classroom.
   "imageUrl": "/static/courses/csintro.jpg"
 }, {
   "name": "Science Experiments",
-  "description": "Science experiment lessons with measurements and data analysis activites",
+  "description": "Science experiment lessons with measurements and data analysis activities",
   "url":"/courses/ucp-science",
   "imageUrl": "/static/courses/ucp-science.jpg"
 }, {
