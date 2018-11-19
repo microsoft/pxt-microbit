@@ -16,7 +16,7 @@ Just like the blocks toolbox, you can drag and drop snippets of JavaScript. It's
 
 ## Suggestions and auto-completion
 
-When you start typing, you will quickly notice a menu of suggestions poping up right under the cursor. The editor is giving you possible snippets of code based on what you've just written (this is something that professional developer uses every day!).
+When you start typing, you will quickly notice a menu of suggestions popping up right under the cursor. The editor is giving you possible snippets of code based on what you've just written (this is something that professional developer uses every day!).
 
 When you see the option for what you were trying to type, press **Enter** to insert it... rather than typing it entirely.
 
@@ -43,7 +43,7 @@ Check the **indentation lines** to find your way back to the higher code "levels
 
 When the editor detects a syntax error, it puts red squiggles where it thinks the error is.
 
-Place your mouse over the squiggle to get a detailled error message to help you fix the problem.
+Place your mouse over the squiggle to get a detailed error message to help you fix the problem.
 
 ![A squiggle message](/static/courses/blocks-to-javascript/jssquiggles.gif)
 
