@@ -3,8 +3,8 @@
 The large holes at the bottom of the board are designed to attach alligator/crocodile clips 
 to create electrical circuit with other components.
 
-If you do not have crocodile clips at hand, dyou can use wires or even Aluminium foil to acheive the same result.
-We will show you how to connect the @boardname@ to headphones using Alumunium foil and tape.
+If you do not have crocodile clips at hand, you can use wires or even Aluminium foil to achieve the same result.
+We will show you how to connect the @boardname@ to headphones using Aluminium foil and tape.
 
 https://youtu.be/mhXYyPuvpz0
 
@@ -21,7 +21,7 @@ Tape the @boardname@ and battery pack to the card board. Make sure to remove the
 
 ![](/static/mb/device/croc-clips/microbitattached.jpg)
 
-Cut the thinest strip of foil possible and roll it into a cable. You can also try to fold, whatever works for you.
+Cut the thinnest strip of foil possible and roll it into a cable. You can also try to fold, whatever works for you.
 Build two of those wires.
 
 ![](/static/mb/device/croc-clips/foilcut.jpg)
