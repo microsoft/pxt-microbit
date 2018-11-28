@@ -271,7 +271,6 @@
         "enableTrace": true,
         "ignoreDocsErrors": true,
         "experiments": [
-            "print",
             "allowPackageExtensions",
             "instructions",
             "debugger",
@@ -395,6 +394,7 @@
         },
         "highContrast": true,
         "greenScreen": true,
+        "print": true,
         "selectLanguage": true,
         "availableLocales": [
             "en",
