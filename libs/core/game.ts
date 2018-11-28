@@ -252,7 +252,8 @@ namespace game {
     /**
      * Gets a value indicating if the game is still running. Returns `false` if game over.
      */
-    //% weight=10
+    //% weight=5 help=game/isrunning
+    //% blockId=game_isrunning block="is running?" blockGap=8
     export function isRunning(): boolean {
         let running: boolean;
         return !_isGameOver;
@@ -272,6 +273,8 @@ namespace game {
     /**
      * Indicates if the game is display the game over sequence.
      */
+    //% weight=7 help=game/isgameover
+    //% blockId=game_isgameover block="is game over?" blockGap=8
     export function isGameOver(): boolean {
         return _isGameOver;
     }
@@ -279,7 +282,8 @@ namespace game {
     /**
      * Indicates if the game rendering is paused to allow other animations
      */
-    //%
+    //% weight=6 help=game/ispaused
+    //% blockId=game_ispaused block="is paused?" blockGap=8
     export function isPaused(): boolean {
         return _paused;
     }
