@@ -271,7 +271,6 @@
         "enableTrace": true,
         "ignoreDocsErrors": true,
         "experiments": [
-            "greenScreen",
             "print",
             "allowPackageExtensions",
             "instructions",
@@ -395,7 +394,7 @@
             "arrays": "#E65722"
         },
         "highContrast": true,
-        "greenScreen": false,
+        "greenScreen": true,
         "selectLanguage": true,
         "availableLocales": [
             "en",
