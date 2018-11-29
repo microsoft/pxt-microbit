@@ -1,5 +1,6 @@
 {
     "name": "radio-broadcast",
+    "description": "Adds new blocks for message communication in the radio category",
     "files": [
         "pxt.json",
         "radio-broadcast.ts"
