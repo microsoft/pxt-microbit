@@ -88,7 +88,7 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
 ```codecard
 [{
   "name": "Kitronik :GAME ZIP64",
-  "url":"http:s//pkg/sparkfun/pxt-gamer-bit",
+  "url":"https://github.com/KitronikLtd/pxt-kitronik-zip-64",
   "cardType": "package"
 },
 {
@@ -98,7 +98,7 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
 },
 {
   "name": "Sparkfun Gamer:bit",
-  "url":"/KitronikLtd/pxt-kitronik-zip-64",
+  "url":"/pkg/sparkfun/pxt-gamer-bit",
   "cardType": "package"
 }]
 ```
