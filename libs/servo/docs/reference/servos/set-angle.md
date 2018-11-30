@@ -16,7 +16,7 @@ An easier way to run a continuous rotation servo is to just use the [run](/refer
 
 ## Parameters
 
-* **value**: a [number](types/number) for shaft angle or servo speed, depends on your servo type:
+* **degrees**: a [number](types/number) for shaft angle or servo speed, depends on your servo type:
 > * _regular servo_: the number of degrees of angle to turn the shaft.
 
 >> * `90` is the neutral, or center, position.
