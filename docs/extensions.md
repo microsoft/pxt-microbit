@@ -9,22 +9,22 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
 ```codecard
 [{
   "name": "Kitronik :MOVE mini",
-  "url":"https://github.com/KitronikLtd/pxt-kitronik-servo-lite",
+  "url":"/pkg/KitronikLtd/pxt-kitronik-servo-lite",
   "cardType": "package"
 },
 {
   "name": "Kitronik Integrated Robotics Board",
-  "url":"https://github.com/KitronikLtd/pxt-kitronik-robotics-board",
+  "url":"/pkg/KitronikLtd/pxt-kitronik-robotics-board",
   "cardType": "package"
 },
 {
   "name": "Kitronik Motor Driver Board",
-  "url":"https://github.com/KitronikLtd/pxt-kitronik-motor-driver",
+  "url":"/pkg/KitronikLtd/pxt-kitronik-motor-driver",
   "cardType": "package"
 },
 {
   "name": "Kitronik 16 Servo Board",
-  "url":"https://github.com/KitronikLtd/pxt-kitronik-i2c-16-servo",
+  "url":"/pkg/KitronikLtd/pxt-kitronik-i2c-16-servo",
   "cardType": "package"
 },
 {
@@ -88,12 +88,12 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
 ```codecard
 [{
   "name": "Kitronik :GAME ZIP64",
-  "url":"https://github.com/KitronikLtd/pxt-kitronik-zip-64",
+  "url":"/pkg/KitronikLtd/pxt-kitronik-zip-64",
   "cardType": "package"
 },
 {
   "name": "Kitronik :GAME Controller",
-  "url":"https://github.com/KitronikLtd/pxt-kitronik-game-controller",
+  "url":"/pkg/KitronikLtd/pxt-kitronik-game-controller",
   "cardType": "package"
 },
 {
@@ -108,32 +108,32 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
 ```codecard
 [{
   "name": "Kitronik Realtime Clock",
-  "url":"https://github.com/KitronikLtd/pxt-kitronik-rtc",
+  "url":"/pkg/KitronikLtd/pxt-kitronik-rtc",
   "cardType": "package"
 },
 {
   "name": "Kitronik Klimate Board",
-  "url":"https://github.com/KitronikLtd/pxt-kitronik-klimate",
+  "url":"/pkg/KitronikLtd/pxt-kitronik-klimate",
   "cardType": "package"
 },
 {
   "name": "Kitronik Klef Piano",
-  "url":"https://github.com/KitronikLtd/pxt-kitronik-klef-piano",
+  "url":"/pkg/KitronikLtd/pxt-kitronik-klef-piano",
   "cardType": "package"
 },
 {
   "name": "Kitronik Stop:Bit",
-  "url":"https://github.com/KitronikLtd/pxt-kitronik-stopbit",
+  "url":"/pkg/KitronikLtd/pxt-kitronik-stopbit",
   "cardType": "package"
 },
 {
   "name": "Kitronik Lamp:Bit",
-  "url":"https://github.com/KitronikLtd/pxt-kitronik-lampbit",
+  "url":"/pkg/KitronikLtd/pxt-kitronik-lampbit",
   "cardType": "package"
 },
 {
   "name": "Kitronik Access:Bit",
-  "url":"https://github.com/KitronikLtd/pxt-kitronik-accessbit",
+  "url":"/pkg/KitronikLtd/pxt-kitronik-accessbit",
   "cardType": "package"
 },
 {
