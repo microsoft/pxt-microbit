@@ -2,9 +2,11 @@
 
 ## Introduction @unplugged
 
-Learn how to use the LEDs and make a flashing heart!
+Learn how to use the LEDs and make a flashing heart! 
+(Want to learn how lights work? [Watch this video](https://youtu.be/qqBmvHD5bCw)).
 
-[![What is an LED image](/static/mb/projects/flashing-heart/yt.jpg)](https://youtu.be/qqBmvHD5bCw)
+
+![Heart shape in the LEDs](/static/mb/projects/flashing-heart/show-leds.gif)
 
 ## Step 1 @fullscreen
 
