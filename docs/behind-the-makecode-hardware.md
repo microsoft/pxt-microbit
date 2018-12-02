@@ -8,19 +8,19 @@
 [
     {
         "name": "LEDs",
-        "description": "A fun video to learn how lights work",
+        "description": "See how these amazing little devices create light in this fun and illuminating video.",
         "youTubeId": "qqBmvHD5bCw",
         "imageUrl": "/static/mb/behindhardware/leds.jpg"
     },
     {
         "name": "Buttons",
-        "description": "A fun video to learn how buttons work",
+        "description": "Buttons let your fingers talk to the hardware, see how they work in this video.",
         "youTubeId": "t_Qujjd_38o",
         "imageUrl": "/static/mb/behindhardware/buttons.jpg"
     },
     {
         "name": "Accelerometer",
-        "description": "A fun video to learn how the accelerometer detect motion",
+        "description": "Find out how the accelerometer detects motion in this fun video.",
         "youTubeId": "byngcwjO51U",
         "imageUrl": "/static/mb/behindhardware/accelerometer.jpg"
     }
