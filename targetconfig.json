@@ -105,7 +105,8 @@
         "Tools": "projects/tools",
         "Turtle": "projects/turtle",
         "Blocks To JavaScript": "courses/blocks-to-javascript",
-        "Courses": "courses"
+        "Courses": "courses",
+        "Behind the MakeCode Hardware": "behind-the-makecode-hardware"
     },
     "electronManifest": {
         "latest": "v1.2.7"
