@@ -4,7 +4,7 @@
 
 Code the buttons on the @boardname@ to show that it's happy or sad.
 
-![Pressing the A and B buttons](/static/mb/projects/smiley-buttons/smiley-buttons.gif)
+[![What is a button](/static/mb/projects/smiley-buttons/yt.jpg)](https://youtu.be/t_Qujjd_38o)
 
 ## Step 1 @fullscreen
 
