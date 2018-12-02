@@ -10,6 +10,7 @@ Here are some cool tutorials to get you started with your @boardname@!
   "url":"/projects/flashing-heart",
   "description": "Make an animated flashing heart.",
   "imageUrl": "/static/mb/projects/a1-display.png",
+  "largeImageUrl": "/static/mb/projects/flashing-heart/sim.gif",
   "cardType": "tutorial",
   "label": "New? Start Here!",
   "labelClass": "purple ribbon large"
@@ -24,6 +25,7 @@ Here are some cool tutorials to get you started with your @boardname@!
   "url":"/projects/smiley-buttons",
   "description": "Show different smiley images by pressing the buttons.",
   "imageUrl": "/static/mb/projects/a2-buttons.png",
+  "largeImageUrl": "/static/mb/projects/smiley-buttons/sim.gif",
   "cardType": "tutorial"
 }, {
   "name": "Dice",
