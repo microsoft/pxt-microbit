@@ -6,7 +6,7 @@ Learn how to use the LEDs and make a flashing heart!
 (Want to learn how lights work? [Watch this video](https://youtu.be/qqBmvHD5bCw)).
 
 
-![Heart shape in the LEDs](/static/mb/projects/flashing-heart/show-leds.gif)
+![Heart shape in the LEDs](/static/mb/projects/flashing-heart/sim.gif)
 
 ## Step 1 @fullscreen
 
