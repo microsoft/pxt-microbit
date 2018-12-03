@@ -255,7 +255,7 @@ namespace game {
     //% weight=5 help=game/is-running
     //% blockId=game_isrunning block="is running" blockGap=8
     export function isRunning(): boolean {
-        return !_isGameOver && !_paused && (_img != undefined);
+        return !_isGameOver && !_paused && !!_img;
     }
 
     /**
