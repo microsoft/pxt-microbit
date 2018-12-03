@@ -60,5 +60,5 @@ music.beginMelody(['g4:1', 'c5', 'e', 'g:2', 'e:1', 'g:3'], MelodyOptions.Foreve
 [tempo](/reference/music/tempo), [set tempo](/reference/music/set-tempo),
 [change tempo by](/reference/music/change-tempo-by)
 
-[Making Melodies](/reference/music/making/melodies)
+[Making Melodies](/reference/music/making-melodies)
 
