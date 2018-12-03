@@ -618,7 +618,7 @@ namespace game {
          * @param other TODO
          */
         //% weight=20 help=game/is-touching
-        //% blockId=game_sprite_touching_sprite block="%sprite|touching %other|?" blockGap=8
+        //% blockId=game_sprite_touching_sprite block="is %sprite|touching %other" blockGap=8
         public isTouching(other: LedSprite): boolean {
             return this._enabled && other._enabled && this._x == other._x && this._y == other._y;
         }
@@ -628,7 +628,7 @@ namespace game {
          * @param this TODO
          */
         //% weight=19 help=game/is-touching-edge
-        //% blockId=game_sprite_touching_edge block="%sprite|touching edge?" blockGap=8
+        //% blockId=game_sprite_touching_edge block="is %sprite|touching edge" blockGap=8
         public isTouchingEdge(): boolean {
             return this._x == 0 || this._x == 4 || this._y == 0 || this._y == 4;
         }
