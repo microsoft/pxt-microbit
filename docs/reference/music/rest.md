@@ -2,13 +2,15 @@
 
 Rest (play no sound) through pin `PO` for the amount of time you say.
 
-## Simulator
-
-This function only works on the @boardname@ and in some browsers.
-
 ```sig
 music.rest(400)
 ```
+
+### ~ hint
+
+**Simulator**: This function only works on the @boardname@ and in some browsers.
+
+## ~
 
 ## Parameters
 

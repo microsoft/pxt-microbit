@@ -3,13 +3,15 @@
 Makes the [tempo](/reference/music/tempo) (speed of a piece of music)
 faster or slower by the amount you say.
 
-## Simulator
-
-This function only works on the @boardname@ and in some browsers.
-
 ```sig
 music.changeTempoBy(20)
 ```
+
+## ~ hint
+
+**Simulator**: This function only works on the @boardname@ and in some browsers.
+
+## ~
 
 ## Parameters
 

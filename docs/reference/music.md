@@ -19,6 +19,6 @@ music.setTempo(120);
 
 [playTone](/reference/music/play-tone), [ringTone](/reference/music/ring-tone), [rest](/reference/music/rest),
 [beginMelody](/reference/music/begin-melody), 
-[stop melody](/reference/music/stop-melody),
+[stopMelody](/reference/music/stop-melody),
 [onEvent](/reference/music/on-event),
 [beat](/reference/music/beat), [tempo](/reference/music/tempo), [changeTempoBy](/reference/music/change-tempo-by), [setTempo](/reference/music/set-tempo),
