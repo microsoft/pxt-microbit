@@ -6,9 +6,11 @@ Returns the duration of a beat in milli-seconds
 music.beat(BeatFraction.Whole)
 ```
 
-## Simulator
+## ~ hint
 
-This function only works on the @boardname@ and in some browsers.
+**Simulator**: This function only works on the @boardname@ and in some browsers.
+
+## ~
 
 ## Parameters
 
