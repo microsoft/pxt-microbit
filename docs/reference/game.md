@@ -47,6 +47,9 @@ game.startCountdown(10000);
 game.gameOver();
 game.pause();
 game.resume();
+game.isGameOver()
+game.isRunning();
+game.isPaused();
 ```
 
 ## See also
@@ -57,4 +60,5 @@ game.resume();
 [add score](/reference/game/add-score), [score](/reference/game/score), [set score](/reference/game/set-score),
 [set life](/reference/game/set-life), [add life](/reference/game/add-life), [remove life](/reference/game/remove-life),
 [start countdown](/reference/game/start-countdown), [game over](/reference/game/game-over),
-[pause](/reference/game/pause), [resume](/reference/game/resume)
+[pause](/reference/game/pause), [resume](/reference/game/resume),
+[is game over](/reference/game/is-game-over,) [is running](/reference/game/is-running), [is paused](/reference/game/is-paused)
