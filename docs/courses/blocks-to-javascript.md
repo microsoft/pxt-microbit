@@ -32,6 +32,13 @@ Are you ready to try JavaScript to write your code?
         "imageUrl": "/static/courses/blocks-to-javascript/writing-code.png"
     },
     {
+        "name": "Conditional Loops",
+        "description": "Work with your conditional loop blocks in JavaScript",
+        "url": "/courses/blocks-to-javascript/conditional-loops",
+        "cardType": "side",
+        "imageUrl": "/static/courses/blocks-to-javascript/conditional-loops.png"
+    },
+    {
         "name": "Writing Functions",
         "description": "Writing reusable functions in JavaScript",
         "url": "/courses/blocks-to-javascript/writing-functions",
@@ -46,4 +53,5 @@ Are you ready to try JavaScript to write your code?
 [Hello JavaScript](/courses/blocks-to-javascript/hello-javascript),
 [Starter Blocks](/courses/blocks-to-javascript/starter-blocks),
 [Writing Code](/courses/blocks-to-javascript/writing-code),
+[Conditional Loops](/courses/blocks-to-javascript/conditional-loops),
 [Writing Functions](/courses/blocks-to-javascript/writing-functions)
