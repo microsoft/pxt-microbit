@@ -5,7 +5,7 @@
             "microbit-foundation",
             "KitronikLtd",
             "tinkertanker",
-            "Seeed-Studio",
+            "Seeed-Studio"
         ],
         "approvedRepos": [
             "CoderDojoOlney/pxt-olney",
