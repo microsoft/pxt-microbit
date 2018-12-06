@@ -6,7 +6,6 @@
             "KitronikLtd",
             "tinkertanker",
             "Seeed-Studio",
-            "PiSupply"
         ],
         "approvedRepos": [
             "CoderDojoOlney/pxt-olney",
@@ -60,7 +59,12 @@
             "makecode-extensions/NTC",
             "makecode-extensions/DS1302",
             "makecode-extensions/LiBat",
-            "BirdBrainTechnologies/pxt-hummingbird-bit"
+            "BirdBrainTechnologies/pxt-hummingbird-bit",
+            "PiSupply/pxt-iot-lora-node",
+            "PiSupply/pxt-tinker-kit",
+            "PiSupply/pxt-bitbuggy",
+            "PiSupply/pxt-oled-ssd1306"
+
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",
