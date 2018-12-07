@@ -97,7 +97,7 @@ let players: number[] = [0]
 
 ## Step 4: Receiving a message (part 1)
 
-In an ``||radio:on received number||`` event, we receive the status from another @boardname@. Click on the **gearwheel** to add the ``serial`` parameter as we will need it to identify who sent that packet.
+In an ``||radio:on radio received||`` event, we receive the status from another @boardname@. We use the ``receivedNumber`` value which comes directly from this block. This tells us which tool was chosen. There's other information available from the packet received when the ``||radio:on radio received||`` event happens. From the packet, we also want to use the serial number of the @boardname@ that sent the tool message.
 
 We compute three values from the data received:
 
