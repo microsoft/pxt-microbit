@@ -49,3 +49,17 @@ input.onButtonPressed(Button.A, () => {
 music.setTempo(100)
 music.beginMelody(music.builtInMelody(Melodies.Ringtone), MelodyOptions.ForeverInBackground)
 ```
+
+## Background melody
+
+The events related to background melody get triggered by a melody that is played inside a run in background block.
+
+```
+control.inBackground(function () {
+    basic.pause(Math.randomRange(0, 5000))
+    music.beginMelody(music.builtInMelody(Melodies.Entertainer), MelodyOptions.Once)
+})
+music.onEvent(MusicEvent.BackgroundMelodyStarted, function () {
+    basic.showIcon(IconNames.EigthNote)
+})
+```
