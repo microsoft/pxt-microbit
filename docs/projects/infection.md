@@ -107,6 +107,7 @@ const TRANSMISSIONPROB = 40; // % probability to transfer disease
 enum GameState {
     Stopped,
     Pairing,
+    Infecting,
     Running,
     Over
 }
@@ -191,6 +192,7 @@ function gameFace() {
             else
                 basic.showIcon(paired ? GameIcons.Paired : GameIcons.Pairing, 1);
             break;
+        case GameState.Infecting:
         case GameState.Running:
             switch (health) {
                 case HealthState.Dead:
@@ -257,18 +259,11 @@ input.onButtonPressed(Button.AB, () => {
     // launch game
     if (state == GameState.Pairing) {
         // pick 1 player and infect him
-        patientZero = players[Math.randomRange(0, players.length)];
-        while (patientZero.health == HealthState.Healthy) {
-            radio.sendValue("infect", patientZero.id);
-            basic.pause(100);
-        }
-
-        // all ready
-        state = GameState.Running;
+        patientZero = players[Math.randomRange(0, players.length - 1)];
+        // infecting message needs to be confirmed by 
+        // the player
+        state = GameState.Infecting;
         serial.writeLine(`game started ${players.length} players`);
-
-        // show startup
-        basic.showIcon(GameIcons.Dead);
     } // end game 
     else if (state == GameState.Running) {
         gameOver();
@@ -360,6 +355,17 @@ basic.forever(() => {
                 serial.writeLine(`pairing ${players.length} players`);
                 basic.pause(500);
                 break;
+            case GameState.Infecting:
+                if (patientZero.health == HealthState.Healthy) {
+                    radio.sendValue("infect", patientZero.id);
+                    basic.pause(100);
+                } else {
+                    serial.writeLine(`patient ${patientZero.id} infected`);
+                    // show startup
+                    basic.showIcon(GameIcons.Dead);
+                    state = GameState.Running;
+                }
+                break;
             case GameState.Running:
                 for (const p of players) {
                     radio.sendValue("h" + p.id, p.health);
@@ -379,6 +385,9 @@ basic.forever(() => {
                     radio.sendValue("pair", control.deviceSerialNumber());
                 else if (infectedBy > -1)
                     radio.sendValue("health", health);
+                break;
+            case GameState.Infecting:
+                radio.sendValue("health", health);
                 break;
             case GameState.Running:
                 // update health status
