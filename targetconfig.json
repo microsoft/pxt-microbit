@@ -63,7 +63,8 @@
             "PiSupply/pxt-iot-lora-node",
             "PiSupply/pxt-tinker-kit",
             "PiSupply/pxt-bitbuggy",
-            "PiSupply/pxt-oled-ssd1306"
+            "PiSupply/pxt-oled-ssd1306",
+            "pimoroni/pxt-touchbit"
 
         ],
         "preferredRepos": [
