@@ -100,6 +100,7 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
   "name": "Sparkfun Gamer:bit",
   "url":"/pkg/sparkfun/pxt-gamer-bit",
   "cardType": "package"
+},
 {
   "name": "Pimoroni touch:bit",
   "url":"/pkg/pimoroni/pxt-touchbit",
