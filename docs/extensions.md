@@ -241,12 +241,8 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
 ## Other
 
 ```codecard
-[
-  {
-  "name": "File System",
-  "url":"/pkg/microsoft/pxt-filesystem",
-  "cardType": "package"
-}, {
+[ 
+ {
   "name": "Code Dojo Olney",
   "url":"/pkg/CoderDojoOlney/pxt-olney",
   "cardType": "package"
