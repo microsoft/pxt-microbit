@@ -299,7 +299,7 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
   "url":"/pkg/alsrobot-microbit-makecode-packages/ALSRobotKeyboard",
   "cardType": "package"
 }, {
-  "name": "ALS Robot Keyboard",
+  "name": "ALS Robot JoyBit",
   "url":"/pkg/alsrobot-microbit-makecode-packages/ALSRobotJoyBit",
   "cardType": "package"
 }]
