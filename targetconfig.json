@@ -64,7 +64,9 @@
             "PiSupply/pxt-tinker-kit",
             "PiSupply/pxt-bitbuggy",
             "PiSupply/pxt-oled-ssd1306",
-            "pimoroni/pxt-touchbit"
+            "pimoroni/pxt-touchbit",
+            "4tronix/cubebit",
+            "4tronix/BitCommander"
 
         ],
         "preferredRepos": [

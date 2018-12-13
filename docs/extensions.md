@@ -102,6 +102,11 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
   "cardType": "package"
 },
 {
+  "name": "4tronix BitCommander",
+  "url":"/pkg/4tronix/BitCommander",
+  "cardType": "package"
+},
+{
   "name": "Pimoroni touch:bit",
   "url":"/pkg/pimoroni/pxt-touchbit",
   "cardType": "package"
@@ -275,7 +280,11 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
   "name": "Muselab WiFi IoT Shield",
   "url":"/pkg/MUSELAB/pxt-wifi-shield",
   "cardType": "package"
-},  {
+}, {
+  "name": "4tronix Cube:Bit",
+  "url":"/pkg/4tronix/cubebit",
+  "cardType": "package"
+}, {
   "name": "LINE BLE beacon",
   "url":"/pkg/pizayanz/pxt-linebeacon",
   "cardType": "package"
