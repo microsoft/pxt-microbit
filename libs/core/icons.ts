@@ -171,7 +171,7 @@ namespace basic {
 
     /**
      * Draws the selected icon on the LED screen
-     * @param icon the predifined icon id
+     * @param icon the predefined icon id
      * @param interval the amount of time (milliseconds) to show the icon. Default is 600.
      */
     //% weight=90 blockGap=8
