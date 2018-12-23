@@ -312,5 +312,9 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
   "name": "ALS Robot JoyBit",
   "url":"/pkg/alsrobot-microbit-makecode-packages/ALSRobotJoyBit",
   "cardType": "package"
+}, {
+  "name": "51bit ColorBit",
+  "url":"/pkg/51bit/ColorBit",
+  "cardType": "package"
 }]
 ```
