@@ -19,16 +19,13 @@ check how the @boardname@ is moving.
 
 ## Returns
 
-* a [number](/types/number) that means how much the microbit is tilted in the direction you say; for `Rotation.Pitch` from `-90` to `90` degrees and for `Rotation.Roll` from `-180` to `180` degrees.
+* a [number](/types/number) that means how much the @boardname@ is tilted in the direction you ask for. This is a value in degrees between `-180` to `180` in either the `Rotation.Pitch` or the `Rotation.Roll` direction of rotation.
 
 ## Example: @boardname@ leveler
 
-This program helps you move the @boardname@ until it is level.  When
-it is level, the @boardname@ shows a smiley.
+This program helps you move the @boardname@ until it is level. When it is level, the @boardname@ shows a smiley.
 
-If you are running this program in a browser, you can tilt the
-@boardname@ with your mouse.
-
+If you are running this program in a browser, you can tilt the @boardname@ with your mouse.
 
 ```blocks
 let pitch = 0;
