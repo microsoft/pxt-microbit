@@ -1,8 +1,7 @@
 # Error codes
 
-Your @boardname@ may encounter a situation that prevents it from running your code. When this happens, a frowny face will appear on your @boardname@ screen (see picture) followed by an error number. These are called _panic_ codes.
+Your @boardname@ may encounter a situation that prevents it from running your code. When this happens, a frowny face will appear on your @boardname@ screen (see picture) followed by an error number. These are called _panic_ codes. For a full list of  these codes, what they mean and what you can do to resolve them visit the [micro:bit guide to error codes](https://microbit.org/guide/hardware/error-codes/).
 
-Below is a list of error numbers and what they mean:
 
 * **10** (`MICROBIT_I2C_LOCKUP`): the @boardname@'s I2C bus is not working
 * **20** (`MICROBIT_OOM`): there is no free memory on the @boardname@
@@ -26,5 +25,4 @@ basic.showLeds(`
 
 ## See also
 
-[Support](https://microbit.org/guide/hardware/error-codes/),
 [panic](/reference/control/panic), [assert](/reference/control/assert),
