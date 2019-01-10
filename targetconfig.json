@@ -102,7 +102,8 @@
             "PiSupply/pxt-oled-ssd1306",
             "pimoroni/pxt-touchbit",
             "4tronix/cubebit",
-            "4tronix/BitCommander"
+            "4tronix/BitCommander",
+            "51bit/ColorBit",
 
         ],
         "preferredRepos": [
