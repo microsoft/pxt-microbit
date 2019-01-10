@@ -103,7 +103,7 @@
             "pimoroni/pxt-touchbit",
             "4tronix/cubebit",
             "4tronix/BitCommander",
-            "51bit/ColorBit",
+            "51bit/ColorBit"
 
         ],
         "preferredRepos": [
