@@ -103,7 +103,8 @@
             "pimoroni/pxt-touchbit",
             "4tronix/cubebit",
             "4tronix/BitCommander",
-            "alankrantas/pxt-MAX7219_8x8"
+            "alankrantas/pxt-MAX7219_8x8",
+            "ReRoKit/pxt-reromicro"
 
         ],
         "preferredRepos": [
