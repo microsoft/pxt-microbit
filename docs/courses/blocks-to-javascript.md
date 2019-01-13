@@ -32,6 +32,13 @@ Are you ready to try JavaScript to write your code?
         "imageUrl": "/static/courses/blocks-to-javascript/writing-code.png"
     },
     {
+        "name": "Complex Conditionals",
+        "description": "Use more complex conditionals in JavaScript",
+        "url": "/courses/blocks-to-javascript/complex-conditionals",
+        "cardType": "side",
+        "imageUrl": "/static/courses/blocks-to-javascript/conditionals.png"
+    },
+    {
         "name": "Conditional Loops",
         "description": "Work with your conditional loop blocks in JavaScript",
         "url": "/courses/blocks-to-javascript/conditional-loops",
