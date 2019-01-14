@@ -317,6 +317,10 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
   "url":"/pkg/alsrobot-microbit-makecode-packages/ALSRobotJoyBit",
   "cardType": "package"
 }, {
+  "name": "51bit ColorBit",
+  "url":"/pkg/51bit/ColorBit",
+  "cardType": "package"
+}, {
   "name": "MAX7219 8x8",
   "url":"/pkg/alankrantas/pxt-MAX7219_8x8",
   "cardType": "package"
