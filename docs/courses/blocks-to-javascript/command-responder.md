@@ -139,7 +139,7 @@ radio.setGroup(1)
 radio.sendString("temp")
 ```
 
-Download and try both the ``||logic:if then||`` and the ``switch`` statement versions of the program to each @boardname@. See if each version works the same.
+Download and try both the ``||logic:if then||`` and the ``switch`` statement versions of the program on each @boardname@. See if each version works the same.
 
 ```package
 radio
