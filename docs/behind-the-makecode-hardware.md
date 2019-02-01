@@ -23,6 +23,18 @@
         "description": "Find out how the accelerometer detects motion in this fun video.",
         "youTubeId": "byngcwjO51U",
         "imageUrl": "/static/mb/behindhardware/accelerometer.jpg"
+    },
+    {
+        "name": "Light Sensor",
+        "description": "Your micro:bit can see the light, find out how it does it in this video.",
+        "youTubeId": "TKhCr-dQMB",
+        "imageUrl": "/static/mb/behindhardware/light-sensor.jpg"
+    },
+    {
+        "name": "Temperature Sensor",
+        "description": "One of the cool features on your board is the temperature sensor, how does it feel the heat?",
+        "youTubeId": "_T4N8O9xsMA",
+        "imageUrl": "/static/mb/behindhardware/temperature-sensor.jpg"
     }
 ]
 ```
