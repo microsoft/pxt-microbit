@@ -63,13 +63,6 @@ Click on the **SHAKE** button in the simulator. If you try enough times, you sho
 
 ![Shaking a @boardname@ simulator](/static/mb/projects/rock-paper-scissors/rpsshake.gif)
 
-```blocks
-let hand = 0;
-input.onGesture(Gesture.Shake, () => {
-    hand = Math.randomRange(1, 3)
-})
-```
-
 ## Step 6 @fullscreen
 
 Click the **(+)** button to add an ``||logic:else||`` section.
