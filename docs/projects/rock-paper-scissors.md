@@ -31,7 +31,6 @@ let hand = 0;
 input.onGesture(Gesture.Shake, () => {
     hand = Math.randomRange(1, 3)
 })
-
 ```
 
 In a later step, each of the possible numbers (`1`, `2`, or `3`) is matched to its own picture. The picture is shown on the LEDs when its matching number is picked.
@@ -42,11 +41,35 @@ Place an ``||logic:if||`` block under the ``||math:pick random||`` and check whe
 
 ![How to drag an if statement](/static/mb/projects/rock-paper-scissors/if.gif)
 
+```blocks
+let hand = 0;
+input.onGesture(Gesture.Shake, () => {
+    hand = Math.randomRange(1, 3)
+    if (hand == 1) {
+        basic.showLeds(`
+            # # # # #
+            # . . . #
+            # . . . #
+            # . . . #
+            # # # # #
+            `)
+    }
+})
+```
+
 ## Step 5 @fullscreen
 
 Click on the **SHAKE** button in the simulator. If you try enough times, you should see a picture of paper on the screen.
 
 ![Shaking a @boardname@ simulator](/static/mb/projects/rock-paper-scissors/rpsshake.gif)
+
+```blocks
+let hand = 0;
+input.onGesture(Gesture.Shake, () => {
+    hand = Math.randomRange(1, 3)
+})
+
+```
 
 ## Step 6 @fullscreen
 
@@ -54,6 +77,29 @@ Click the ``+`` button to add an ``||logic:else||`` section.
 
 ![Adding an else clause](/static/mb/projects/rock-paper-scissors/ifelse.gif)
 
+```blocks
+let hand = 0;
+input.onGesture(Gesture.Shake, () => {
+    hand = Math.randomRange(1, 3)
+    if (hand == 1) {
+        basic.showLeds(`
+            # # # # #
+            # . . . #
+            # . . . #
+            # . . . #
+            # # # # #
+            `)
+    } else {
+        basic.showLeds(`
+            # # . . #
+            # # . # .
+            . . # . .
+            # # . # .
+            # # . . #
+            `)
+    }
+})
+```
 ## Step 7 @fullscreen
 
 Add a ``||basic:show leds||`` block inside the ``||logic:else||``. Make a picture of a scissors in the LEDs.
