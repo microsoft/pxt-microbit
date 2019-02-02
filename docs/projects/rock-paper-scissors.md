@@ -68,12 +68,11 @@ let hand = 0;
 input.onGesture(Gesture.Shake, () => {
     hand = Math.randomRange(1, 3)
 })
-
 ```
 
 ## Step 6 @fullscreen
 
-Click the ``+`` button to add an ``||logic:else||`` section.
+Click the **(+)** button to add an ``||logic:else||`` section.
 
 ![Adding an else clause](/static/mb/projects/rock-paper-scissors/ifelse.gif)
 
@@ -90,16 +89,11 @@ input.onGesture(Gesture.Shake, () => {
             # # # # #
             `)
     } else {
-        basic.showLeds(`
-            # # . . #
-            # # . # .
-            . . # . .
-            # # . # .
-            # # . . #
-            `)
+ 
     }
 })
 ```
+
 ## Step 7 @fullscreen
 
 Add a ``||basic:show leds||`` block inside the ``||logic:else||``. Make a picture of a scissors in the LEDs.
