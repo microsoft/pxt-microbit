@@ -43,6 +43,12 @@ basic.forever(() => {
 })
 ```
 
+## ~ hint
+
+Learn more about how light level is detected in this [light sensor](https://www.youtube.com/watch?v=TKhCr-dQMBY) video.
+
+## ~
+
 ## See also
 
 [acceleration](/reference/input/acceleration), [compass-heading](/reference/input/compass-heading)

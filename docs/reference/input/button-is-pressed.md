@@ -33,6 +33,12 @@ basic.forever(() => {
 })
 ```
 
+## ~ hint
+
+Find out how buttons provide input to the @boardname@ in this [video](https://www.youtube.com/watch?v=t_Qujjd_38o).
+
+## ~
+
 ## See also
 
 [on button pressed](/reference/input/on-button-pressed), [if](/blocks/logic/if), [forever](/reference/basic/forever)

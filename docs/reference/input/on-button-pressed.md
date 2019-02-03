@@ -12,6 +12,12 @@ on the @boardname@.
 input.onButtonPressed(Button.A, () => {})
 ```
 
+## ~ hint
+
+Find out how buttons provide input to the @boardname@ in this [video](https://www.youtube.com/watch?v=t_Qujjd_38o).
+
+## ~
+
 ## Example: count button clicks
 
 This example counts how many times you press the `A` button. 

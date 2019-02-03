@@ -18,6 +18,13 @@ Because the @boardname@ does not usually get very hot, the temperature of the CP
 is usually close to the temperature of wherever you are.
 The @boardname@ might warm up a little if you make it work hard, though!
 
+### ~ hint
+
+Learn more about how the @boardname@ can detect hot or cold in this [temperature sensing](https://www.youtube.com/watch?v=_T4N8O9xsMA) video.
+
+### ~
+
+
 ## Example: @boardname@ thermometer
 
 The following example uses `temperature` and `show number` to show the temperature of the room.

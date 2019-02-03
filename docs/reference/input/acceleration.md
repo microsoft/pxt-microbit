@@ -13,6 +13,8 @@ input.acceleration(Dimension.X);
 You measure acceleration with the **milli-g**, which is 1/1000 of a **g**.
 A **g** is as much acceleration as you get from Earth's gravity.
 
+Watch this [video](https://www.youtube.com/watch?v=byngcwjO51U) to learn how the accelerometer works.
+
 ## ~
 
 ## Parameters
