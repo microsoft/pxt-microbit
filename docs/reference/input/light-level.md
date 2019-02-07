@@ -14,6 +14,10 @@ has to be turned on first.
 input.lightLevel();
 ```
 
+Learn more about how light level is detected in this light sensor video:
+
+https://www.youtube.com/watch?v=TKhCr-dQMBY.
+
 ## Returns
 
 * a [Number](/types/number) that means a light level from ``0`` (dark) to ``255`` (bright).
@@ -42,12 +46,6 @@ basic.forever(() => {
     led.plotBarGraph(input.lightLevel(), 255)
 })
 ```
-
-## ~ hint
-
-Learn more about how light level is detected in this [light sensor](https://www.youtube.com/watch?v=TKhCr-dQMBY) video.
-
-## ~
 
 ## See also
 
