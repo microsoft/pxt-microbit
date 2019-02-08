@@ -74,8 +74,3 @@
   * [micro:bit of Things](https://sites.google.com/view/microbitofthings)
   * [A-Z Robotics](https://tinkerspark.teachable.com/)
 * [Behind the MakeCode Hardware](behind-the-makecode-hardware)
-  * [LEDs](undefined)
-  * [Buttons](undefined)
-  * [Accelerometer](undefined)
-  * [Light Sensor](undefined)
-  * [Temperature Sensor](undefined)
