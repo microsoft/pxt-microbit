@@ -318,6 +318,10 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
   "url":"/pkg/Annikken/pxt-Andee",
   "cardType": "package"
 }, {
+  "name": "Proportional Font",
+  "url":"/pkg/lwchkg/pxt-proportional-font",
+  "cardType": "package"
+}, {
   "name": "ALS Robot Keyboard",
   "url":"/pkg/alsrobot-microbit-makecode-packages/ALSRobotKeyboard",
   "cardType": "package"

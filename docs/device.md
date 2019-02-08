@@ -20,6 +20,11 @@ They can be set to on/off and the brightness can be controlled.
 The yellow light on the back of the micro:bit is the status LED.
 It flashes yellow when the system wants to tell the user that something has happened.
 
+See how the @boardname@ shows numbers, text, and displays images by watching this video about LEDs:
+
+https://www.youtube.com/watch?v=qqBmvHD5bCw
+
+
 ## Buttons
 
 Buttons A and B are a form of input.  When you press a button, it completes an electrical circuit. 
@@ -28,6 +33,10 @@ to act on these events.
 
 Button R on the back of the micro:bit is a system button. It has different uses. 
 When you have downloaded and run your code onto your micro:bit, press Button R to restart and run your program from the beginning.
+
+Find out how buttons provide input to the @boardname@ in this video:
+
+https://www.youtube.com/watch?v=t_Qujjd_38o
 
 ## USB connection
 
@@ -62,6 +71,10 @@ There is an accelerometer on your micro:bit which detects changes in the micro:b
 It converts analogue information into digital form that can be used in micro:bit programs. 
 Output is in milli-g. The device will also detect a small number of standard actions e.g. shake, tilt and free-fall.
 
+Watch this video to learn how the accelerometer works:
+
+https://www.youtube.com/watch?v=byngcwjO51U
+
 ## Pins
 
 The [pins](/device/pins) can be a form of electrical input or output. 
@@ -70,6 +83,18 @@ There are labels for the input/output pins ``P0``, ``P1``, ``P2``, which you can
 ## Light level
 
 The screen can also be used a light level sensor (it's a really cool trick).
+
+Learn more about how light level is detected in this light sensor video:
+
+https://www.youtube.com/watch?v=TKhCr-dQMBY
+
+## Temperature
+
+Temperatrue is measured on the @boardname@ by detecting how hot its physical CPU material is. Since it operates nearly as cool as the air around it, the temperature it measures for itself is a good approximation for the ambient temperature (the temperature near and around it).
+
+See how the @boardname@ can detect hot or cold in this temperature sensing video:
+
+https://www.youtube.com/watch?v=_T4N8O9xsMA
 
 ## Runtime
 

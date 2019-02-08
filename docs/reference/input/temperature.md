@@ -9,7 +9,7 @@ input.temperature();
 
 ## Returns
 
-* a [Number](/types/number) that means the Celsius temperature.
+* a [number](/types/number) that is the temperature in degrees Celsius.
 
 ## How does it work?
 
@@ -17,6 +17,11 @@ The @boardname@ checks how hot its CPU (main computer chip) is.
 Because the @boardname@ does not usually get very hot, the temperature of the CPU
 is usually close to the temperature of wherever you are.
 The @boardname@ might warm up a little if you make it work hard, though!
+
+Learn more about how the @boardname@ can detect hot or cold in this video:
+
+https://www.youtube.com/watch?v=_T4N8O9xsMA
+
 
 ## Example: @boardname@ thermometer
 
