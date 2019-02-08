@@ -13,13 +13,13 @@ The arrow points in the direction of the arrow name you choose, like `North`.
 * **i**: the arrow name to make an arrow [image](/reference/images/image) for. You can make an arrow image that points in one of these directions:
 
 >* `North`
-* `NorthEast`
-* `East`
-* `SouthEast`
-* `South`
-* `SouthWest`
-* `West`
-* `NorthWest`
+>* `NorthEast`
+>* `East`
+>* `SouthEast`
+>* `South`
+>* `SouthWest`
+>* `West`
+>* `NorthWest`
 
 ## Example
 
