@@ -9,7 +9,9 @@ input.rotation(Rotation.Roll);
 ## ~hint
 
 The @boardname@ has a part called the **accelerometer** that can
-check how the @boardname@ is moving.
+check how the @boardname@ is moving. Watch this video to learn how the accelerometer works:
+
+https://www.youtube.com/watch?v=byngcwjO51U
 
 ## ~
 

@@ -15,6 +15,10 @@ A **g** is as much acceleration as you get from Earth's gravity.
 
 ## ~
 
+Watch this video to learn how the accelerometer on the @boardname@ works:
+
+https://www.youtube.com/watch?v=byngcwjO51U
+
 ## Parameters
 
 * **dimension**: the direction you are checking for acceleration, or the total strength of force.
