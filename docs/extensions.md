@@ -335,7 +335,7 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
   "cardType": "package"
 }, {
   "name": "Kitronik Zip Tile",
-  "url":"/pkg/pxt-kitronik-zip-tile",
+  "url":"/pkg/KitronikLtd/pxt-kitronik-zip-tile",
   "cardType": "package"
 }, {
   "name": "MAX7219 8x8",
