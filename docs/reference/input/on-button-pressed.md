@@ -15,6 +15,7 @@ input.onButtonPressed(Button.A, () => {})
 Find out how buttons provide input to the @boardname@ in this video:
 
 https://www.youtube.com/watch?v=t_Qujjd_38o
+See how the @boardname@ shows numbers, text, and displays images by watching this video about [LEDs](https://www.youtube.com/watch?v=qqBmvHD5bCw).
 
 ## Example: count button clicks
 

@@ -152,6 +152,14 @@ input.onButtonPressed(Button.B, () => {
 })
 ```
 
+### ~ hint
+
+Did you ever wonder how those LEDs turn on and make light? Well, watch this video and find out!
+
+https://www.youtube.com/watch?v=qqBmvHD5bCw
+
+### ~
+
 ## Test your program!
 Remember, MakeCode automatically compiles and runs your program, so all you need to do now is press button A and then button B in the simulator to see the output produced by your code. 
 

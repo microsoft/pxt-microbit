@@ -96,6 +96,14 @@ input.onButtonPressed(Button.AB, () => {
 })
 ```
 
+### ~ hint
+
+Buttons are on all kinds of electronic devices that we use. Did ever wonder how they actually work to signal an input event?
+
+https://www.youtube.com/watch?v=t_Qujjd_38o
+
+### ~
+
 Let’s work on what to do when button A is pressed. 
 * Button A represents a binary “1”. Our first task is to join a “1” to the existing string variable called binary.
 * From the Text Toolbox drawer (under the Advanced menu), drag the 'join' block to your programming workspace

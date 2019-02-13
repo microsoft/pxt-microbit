@@ -200,6 +200,14 @@ PlayerBWins = 0
 PlayersTie = 0
 ```
 
+### ~ hint
+
+Buttons have been used as human input devices since computers first existed. Watch this video and see how they let tell the @boardname@ to do something.
+
+https://www.youtube.com/watch?v=t_Qujjd_38o
+
+### ~
+
 ## Try it out!
 Download the Scorekeeper program to the micro:bit, and have the students play one last round of Rock Paper Scissors using their micro:bits to act as the Scorekeeper!
 

@@ -67,6 +67,14 @@ input.onGesture(Gesture.Shake, () => {
 })
 ```
 
+### ~ hint
+
+The @boardname@ uses its accelerometer to detect when you're shaking it. How does an accelerometer actually work?
+
+https://www.youtube.com/watch?v=byngcwjO51U
+
+### ~
+
 ## Beta Testing
 
 Give students a chance to play each other’s games. The following process works well:

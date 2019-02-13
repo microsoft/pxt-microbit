@@ -75,6 +75,14 @@ led.plot(2, 3)
 led.plot(3, 3)
 ```
 
+### ~ hint
+
+LEDs are amazing little devices. If you haven't seen this video about how they work, take a few minutes to learn more about them.
+
+https://www.youtube.com/watch?v=qqBmvHD5bCw
+
+### ~
+
 ## Mod this!
 * Add a third image to the animation, perhaps a frown face. 
 * Make your own custom animation! What LEDs stay the same and which need to be toggled?

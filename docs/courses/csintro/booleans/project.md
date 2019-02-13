@@ -179,7 +179,16 @@ This example uses boolean operations because both light level AND temperature mu
 ```block
 if (128 > input.lightLevel() && 0 < input.lightLevel() && input.temperature() > 22) {}
 ```
- 
+### ~ hint
+
+The @boardname@ uses some clever tricks to measure both light and temperature. Want to see how it can measure the light level and temprature? Watch these videos to learn how it does it.
+
+https://www.youtube.com/watch?v=TKhCr-dQMBY
+<br/>
+https://www.youtube.com/watch?v=_T4N8O9xsMA
+
+### ~
+
 ### Two-player game
 
 Create a game in which two players take turns on the same micro:bit. You can use a boolean variable called PlayerATurn to keep track of whose turn it is.
