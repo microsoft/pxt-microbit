@@ -1,6 +1,18 @@
-# Received Signal Strength
+# received Signal Strength
 
-> Note: This API has been deprecated! Use [on data packet received](/reference/radio/on-data-packet-received) instead.
+Find how strong the radio signal is.
+
+```sig
+radio.receivedSignalStrength();
+```
+
+## ~ hint
+
+**Deprecated**
+
+This API has been deprecated! Use [received packet](/reference/radio/received-packet) instead.
+
+## ~
 
 Find how strong the ``radio`` signal is, from `-128` to `-42`.
 (`-128` means a weak signal and `-42` means a strong one.)
@@ -10,9 +22,7 @@ the last time it ran the
 [on received number](/reference/radio/on-received-number) function. That means
 it needs to run **receive number** first.
 
-```sig
-radio.receivedSignalStrength();
-```
+
 
 ## Returns
 

@@ -1,12 +1,18 @@
-# Write Value To Serial
+# write Value To Serial
 
-> Note: This API has been deprecated! Use [write received packet to serial](/reference/radio/write-received-packet-to-serial) instead.
-
-Writes the data received by ``radio`` to serial in JSON format.
+Write the data received by radio to serial in JSON format.
 
 ```sig
 radio.writeValueToSerial();
 ```
+
+## ~ hint
+
+**Deprecated**
+
+This API has been deprecated! Use [write received packet to serial](/reference/radio/write-received-packet-to-serial) instead.
+
+## ~
 
 ## Data received format
 

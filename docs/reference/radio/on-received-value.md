@@ -38,6 +38,7 @@ The radio set group might need to be set, synchronized , before the radio events
 ## See also
 
 [on received number](/reference/radio/on-received-number),
+[received packet](/reference/radio/received-packet),
 [send number](/reference/radio/send-number),
 [send string](/reference/radio/send-string),
 [send value](/reference/radio/send-value),

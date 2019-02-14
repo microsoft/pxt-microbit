@@ -1,12 +1,18 @@
-# Receive Number
+# receive Number
 
-> Note: This API has been deprecated! Use [on received number](/reference/radio/on-received-number) instead.
-
-Receives the next number sent by a @boardname@ in the same ``radio`` group.
+Receive the next number sent by a @boardname@ in the same ``radio`` group.
 
 ```sig
 radio.receiveNumber();
 ```
+
+## ~ hint
+
+**Deprecated**
+
+This API has been deprecated! Use [on received number](/reference/radio/on-received-number) instead.
+
+## ~
 
 ## Returns
 

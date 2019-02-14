@@ -1,10 +1,12 @@
-# Received Packet Property
+# received Packet
 
 Get one of the properties from the last received radio packet.
 
 ```sig
 radio.receivedPacket(RadioPacketProperty.SignalStrength)
 ```
+
+In addition to a [number](types/number), [string](/types/string), or name-value pair, the packet received also contains other information about the transmission of the packet. You can get this additional information by selecting a property from the packet.
 
 ## Parameters
 
@@ -15,7 +17,10 @@ radio.receivedPacket(RadioPacketProperty.SignalStrength)
 
 ## Returns
 
-* a [number](/types/number) that is the property selected in the **type** parameter.
+* a [number](/types/number) that is the property selected in the **type** parameter:
+>* ``signal strength``: the value ranges from `-128` to `-42` (`-128` means a weak signal and `-42` means a strong one.)
+>* ``serial number``: the value is the serial number of the board sending the packet.
+>* ``time``: the value is the system time, in microseconds, of the sender at the time when the packet was sent.
 
 ## Example
 

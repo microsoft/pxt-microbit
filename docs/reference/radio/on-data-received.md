@@ -1,10 +1,19 @@
-# On Data Received
-
-> Note: This API has been deprecated! Use [on received number](/reference/radio/on-received-number) instead.
+# on Data Received
 
 Run part of a program when the @boardname@ receives a
-[number](/types/number) or [string](/types/string) over ``radio``.
+[number](/types/number) or [string](/types/string) over radio.
 
+```sig
+radio.onDataReceived(() => { });
+```
+
+## ~ hint
+
+**Deprecated**
+
+This API has been deprecated! Use [on received number](/reference/radio/on-received-number) instead.
+
+## ~
 
 ```sig
 radio.onDataReceived(() => { });

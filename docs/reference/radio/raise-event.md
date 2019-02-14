@@ -1,4 +1,4 @@
-# Raise Event
+# raise Event
 
 Sends an event over radio to be raised in the event bus of other @boardname@. 
 

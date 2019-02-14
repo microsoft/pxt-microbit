@@ -1,7 +1,13 @@
 # set Group
 
 Make a program have the group ID you tell it for sending and receiving
-with ``radio``.  A group is like a cable channel (a @boardname@ can only
+with radio.
+
+```sig
+radio.setGroup(0);
+```
+
+A group is like a cable channel (a @boardname@ can only
 send or receive in one group at a time). A group ID is like the cable
 channel number.
 
@@ -9,10 +15,6 @@ If you do not tell your program which group ID to use with this
 function, it will figure out its own group ID by itself.  If you load
 the very same program onto two different @boardname@s, they will be able
 to talk to each other because they will have the same group ID.
-
-```sig
-radio.setGroup(0);
-```
 
 ## Parameters
 
