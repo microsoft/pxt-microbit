@@ -8,11 +8,11 @@ This course takes approximately 14 weeks to complete, spending about 1 week on e
 
 ![micro:bit man](/static/courses/csintro-educator.jpg)
 
-The educator edition is available as a set of resource materials for course introduction, student assessment, and individual lesson units. The course material is provided as single complete download or the guides and lesson units can be downloaded individually.
+The **Educator edition** is available as a set of resource materials for teaching the course in the classroom. The course materials contain the overview guides, assessment and standards guides, and the individual lesson units. The course material is provided as single complete download or the guides and lesson units can be downloaded individually.
 
 ## Complete course pack
 
-The entire set of course materials is provided as one complete package, get it here:
+The entire set of course materials is bundled together to download as one complete package, get it here:
 
 ### ~button /courses/csintro-educator
 
@@ -26,23 +26,23 @@ Any of the individual course material items are also available as a separate dow
 
 ### Course overview
 
-* [Course overview guide](/https://onedrive.live.com/view.aspx?cid=cd2e5904969cf22d&page=view&resid=CD2E5904969CF22D!219&parId=CD2E5904969CF22D!214&authkey=!AI5-TNis0k4nZFo&app=Word)
-* [Curriculum overview](https://onedrive.live.com/view.aspx?cid=cd2e5904969cf22d&page=view&resid=CD2E5904969CF22D!218&parId=CD2E5904969CF22D!214&authkey=!AI5-TNis0k4nZFo&app=Word)
-* [Educator preperation video](https://onedrive.live.com/?authkey=%21AI5%2DTNis0k4nZFo&cid=CD2E5904969CF22D&id=CD2E5904969CF22D%21220&parId=CD2E5904969CF22D%21214&o=OneUp)
+* [Course overview guide](#)
+* [Curriculum overview](#)
+* [Educator preperation video](#)
 
 ### Standards and assessments
 
-* [Assessment guide](https://onedrive.live.com/view.aspx?cid=cd2e5904969cf22d&page=view&resid=CD2E5904969CF22D!221&parId=CD2E5904969CF22D!215&authkey=!AI5-TNis0k4nZFo&app=Word)
-* [Standards alignment guide](https://onedrive.live.com/view.aspx?cid=cd2e5904969cf22d&page=view&resid=CD2E5904969CF22D!222&parId=CD2E5904969CF22D!215&authkey=!AI5-TNis0k4nZFo&app=Word)
+* [Assessment guide](#)
+* [Standards alignment guide](#)
 
 ### Unit materials
 
 #### Unit 1 - Making
 
-* [Classroom presentation](https://onedrive.live.com/view.aspx?cid=cd2e5904969cf22d&page=view&resid=CD2E5904969CF22D!250&parId=CD2E5904969CF22D!236&authkey=!AI5-TNis0k4nZFo&app=PowerPoint)
-* [Educator Guide](https://onedrive.live.com/view.aspx?cid=cd2e5904969cf22d&page=view&resid=CD2E5904969CF22D!248&parId=CD2E5904969CF22D!236&authkey=!AI5-TNis0k4nZFo&app=Word)
-* [Student workbook](https://onedrive.live.com/view.aspx?cid=cd2e5904969cf22d&page=view&resid=CD2E5904969CF22D!249&parId=CD2E5904969CF22D!236&authkey=!AI5-TNis0k4nZFo&app=Word)
-* [Quick start video](https://onedrive.live.com/?authkey=%21AI5%2DTNis0k4nZFo&cid=CD2E5904969CF22D&id=CD2E5904969CF22D%21251&parId=CD2E5904969CF22D%21236&o=OneUp)
+* [Classroom presentation](#)
+* [Educator Guide](#)
+* [Student workbook](#)
+* [Quick start video](#)
 
 #### Unit 2 - Algorithms
 
