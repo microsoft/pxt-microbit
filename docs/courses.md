@@ -2,17 +2,30 @@
 
 A collection of courses and tutorials built for the @boardname@.
 
+## Intro to Computer Science
+
+MakeCode's course for learning Computer Science with the micro:bit. This is a 14 week computer science course for middle school grades 6-8.
+
+```codecard
+[{
+  "name": "Intro to CS - Online",
+  "description": "Online edition of the Intro to Computer Science course",
+  "url":"/courses/csintro",
+  "imageUrl": "/static/courses/csintro.jpg"
+}, {
+  "name": "Intro to CS - Classroom",
+  "description": "Educator edition of the Intro to Computer Science course for the classroom, including complete downloadable materials",
+  "url":"/courses/csintro-educator",
+  "imageUrl": "/static/courses/csintro-educator.jpg"
+}]
+```
+
 ## Classroom
 
 Structured courses for teaching science and technology in the classroom.
 
 ```codecard
 [{
-  "name": "Intro to CS",
-  "description": "14 week computer science course for middle school grades 6-8",
-  "url":"/courses/csintro",
-  "imageUrl": "/static/courses/csintro.jpg"
-}, {
   "name": "Science Experiments",
   "description": "Science experiment lessons with measurements and data analysis activities",
   "url":"/courses/ucp-science",
