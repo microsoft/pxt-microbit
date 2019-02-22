@@ -191,7 +191,7 @@ namespace pxt.editor {
         } else {
             const forceHexDownload = /forceHexDownload/i.test(window.location.href);
             const isUwp = !!(window as any).Windows;
-            if (Cloud.isLocalHost() && Cloud.localToken && !forceHexDownload || isUwp)
+            if (BrowserUtils.isLocalHost() && Cloud.localToken && !forceHexDownload || isUwp)
                 r = true
         }
         return r;

@@ -1,7 +1,6 @@
 #include "pxt.h"
 
-PXT_VTABLE_BEGIN(RefMImage, 0, 0)
-PXT_VTABLE_END
+PXT_VTABLE(RefMImage)
 
 RefMImage::RefMImage(ImageData *d) : PXT_VTABLE_INIT(RefMImage), img(d) {
     img->incr();
@@ -20,6 +19,12 @@ void RefMImage::makeWritable() {
         MicroBitImage i(img);
         img = i.clone().leakData();
     }
+}
+
+void RefMImage::scan(RefMImage *t) {}
+
+unsigned RefMImage::gcsize(RefMImage *t) {
+    return (sizeof(*t) + 3) >> 2;
 }
 
 /**
@@ -64,8 +69,8 @@ void plotImage(Image i, int xOffset = 0) {
  * @param xOffset column index to start displaying the image
  */
 //% help=images/show-image weight=80 blockNamespace=images
-//% blockId=device_show_image_offset block="show image %sprite(myImage)|at offset %offset" blockGap=8
-//% parts="ledmatrix" async
+//% blockId=device_show_image_offset block="show image %sprite(myImage)|at offset %offset"
+//% blockGap=8 parts="ledmatrix" async
 void showImage(Image sprite, int xOffset, int interval = 400) {
     uBit.display.print(MicroBitImage(sprite->img), -xOffset, 0, 0, interval);
 }

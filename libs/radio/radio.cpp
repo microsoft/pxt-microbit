@@ -92,13 +92,13 @@ namespace radio {
     }
 
     uint8_t copyStringValue(uint8_t* buf, String data, uint8_t maxLength) {
-        uint8_t len = min_(maxLength, data->length);
+        uint8_t len = min_(maxLength, data->getUTF8Size());
 
         // One byte for length of the string
         buf[0] = len;
 
         if (len > 0) {
-            memcpy(buf + 1, data->data, len);
+            memcpy(buf + 1, data->getUTF8Data(), len);
         }
         return len + 1;
     }
@@ -136,7 +136,7 @@ namespace radio {
         uBit.serial.send(s);
         if ((tp == PACKET_TYPE_STRING || tp == PACKET_TYPE_VALUE) && NULL != m) {
             uBit.serial.send(",\"n\":\"");
-            uBit.serial.send((uint8_t*)m->data, m->length);
+            uBit.serial.send((uint8_t*)m->getUTF8Data(), m->getUTF8Size());
             uBit.serial.send("\"");
         }
         if (tp == PACKET_TYPE_BUFFER && NULL != b) {
@@ -152,7 +152,7 @@ namespace radio {
             uBit.serial.send(",\"v\":");
             TNumber td = fromDouble(dv);
             String sd = numops::toString(td);
-            uBit.serial.send((uint8_t*)sd->data, sd->length);
+            uBit.serial.send((uint8_t*)sd->getUTF8Data(), sd->getUTF8Size());
             decrRC(sd);
         }
         uBit.serial.send("}\r\n");

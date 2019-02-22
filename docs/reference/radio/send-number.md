@@ -11,7 +11,9 @@ radio.sendNumber(0);
 * **value**: a [number](/types/number) to send.
 
 
-## Example: Broadcasting acceleration
+## Examples
+
+### Broadcasting acceleration
 
 This example broadcasts the value of your @boardname@'s ``acceleration``
 in the `x` direction (left and right) to other @boardname@s.  This kind
@@ -23,7 +25,7 @@ input.onButtonPressed(Button.A, () => {
 })
 ```
 
-## Light level sender
+### Light level sender
 
 This example broadcasts the level of the light around it.
 You can do some interesting things with it if you use it along with the

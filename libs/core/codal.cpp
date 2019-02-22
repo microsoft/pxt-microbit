@@ -8,15 +8,13 @@ PXT_ABI(__aeabi_dsub)
 PXT_ABI(__aeabi_ddiv)
 PXT_ABI(__aeabi_dmul)
 
-extern "C" void target_panic(int error_code)
-{
+extern "C" void target_panic(int error_code) {
     // wait for serial to flush
     wait_us(300000);
     microbit_panic(error_code);
 }
 
-extern "C" void target_reset()
-{
+extern "C" void target_reset() {
     microbit_reset();
 }
 
@@ -76,6 +74,7 @@ void registerWithDal(int id, int event, Action a, int flags) {
 
 void fiberDone(void *a) {
     decr((Action)a);
+    unregisterGCPtr((Action)a);
     release_fiber();
 }
 
@@ -101,6 +100,7 @@ void forever_stub(void *a) {
 void runForever(Action a) {
     if (a != 0) {
         incr(a);
+        registerGCPtr(a);
         create_fiber(forever_stub, (void *)a);
     }
 }
@@ -108,6 +108,7 @@ void runForever(Action a) {
 void runInParallel(Action a) {
     if (a != 0) {
         incr(a);
+        registerGCPtr(a);
         create_fiber((void (*)(void *))runAction0, (void *)a, fiberDone);
     }
 }
@@ -129,31 +130,24 @@ unsigned afterProgramPage() {
     return ptr;
 }
 
-
 int current_time_ms() {
     return system_timer_current_time();
 }
 
-static void logwriten(const char *msg, int l)
-{
-    uBit.serial.send((uint8_t*)msg, l);
+static void logwriten(const char *msg, int l) {
+    uBit.serial.send((uint8_t *)msg, l);
 }
 
-static void logwrite(const char *msg)
-{
+static void logwrite(const char *msg) {
     logwriten(msg, strlen(msg));
 }
 
-
-static void writeNum(char *buf, uint32_t n, bool full)
-{
+static void writeNum(char *buf, uint32_t n, bool full) {
     int i = 0;
     int sh = 28;
-    while (sh >= 0)
-    {
+    while (sh >= 0) {
         int d = (n >> sh) & 0xf;
-        if (full || d || sh == 0 || i)
-        {
+        if (full || d || sh == 0 || i) {
             buf[i++] = d > 9 ? 'A' + d - 10 : '0' + d;
         }
         sh -= 4;
@@ -161,35 +155,27 @@ static void writeNum(char *buf, uint32_t n, bool full)
     buf[i] = 0;
 }
 
-static void logwritenum(uint32_t n, bool full, bool hex)
-{
+static void logwritenum(uint32_t n, bool full, bool hex) {
     char buff[20];
 
-    if (hex)
-    {
+    if (hex) {
         writeNum(buff, n, full);
         logwrite("0x");
-    }
-    else
-    {
+    } else {
         itoa(n, buff);
     }
 
     logwrite(buff);
 }
 
-void vdebuglog(const char *format, va_list ap)
-{
+void vdebuglog(const char *format, va_list ap) {
     const char *end = format;
 
-    while (*end)
-    {
-        if (*end++ == '%')
-        {
+    while (*end) {
+        if (*end++ == '%') {
             logwriten(format, end - format - 1);
             uint32_t val = va_arg(ap, uint32_t);
-            switch (*end++)
-            {
+            switch (*end++) {
             case 'c':
                 logwriten((const char *)&val, 1);
                 break;
@@ -220,8 +206,7 @@ void vdebuglog(const char *format, va_list ap)
     logwrite("\n");
 }
 
-void debuglog(const char *format, ...)
-{
+void debuglog(const char *format, ...) {
     va_list arg;
     va_start(arg, format);
     vdebuglog(format, arg);
@@ -232,7 +217,57 @@ void sendSerial(const char *data, int len) {
     logwriten(data, len);
 }
 
+#ifdef PXT_GC
+ThreadContext *getThreadContext() {
+    if (!currentFiber)
+        return NULL;
+    return (ThreadContext *)currentFiber->user_data;
+}
+
+void setThreadContext(ThreadContext *ctx) {
+    currentFiber->user_data = ctx;
+}
+
+static void *threadAddressFor(Fiber *fib, void *sp) {
+    if (fib == currentFiber)
+        return sp;
+    return (uint8_t *)sp + ((uint8_t *)fib->stack_top - (uint8_t *)fib->tcb.stack_base);
+}
+
+void gcProcessStacks(int flags) {
+    // check scheduler is initialized
+    if (!currentFiber) {
+        // make sure we allocate something to at least initalize the memory allocator
+        void * volatile p = xmalloc(1);
+        xfree(p);
+        return;
+    }
+
+    int numFibers = list_fibers(NULL);
+    Fiber **fibers = (Fiber **)xmalloc(sizeof(Fiber *) * numFibers);
+    int num2 = list_fibers(fibers);
+    if (numFibers != num2)
+        oops(12);
+    int cnt = 0;
+
+    for (int i = 0; i < numFibers; ++i) {
+        auto fib = fibers[i];
+        auto ctx = (ThreadContext *)fib->user_data;
+        if (!ctx)
+            continue;
+        for (auto seg = &ctx->stack; seg; seg = seg->next) {
+            auto ptr = (TValue *)threadAddressFor(fib, seg->top);
+            auto end = (TValue *)threadAddressFor(fib, seg->bottom);
+            if (flags & 2)
+                DMESG("RS%d:%p/%d", cnt++, ptr, end - ptr);
+            // VLOG("mark: %p - %p", ptr, end);
+            while (ptr < end) {
+                gcProcess(*ptr++);
+            }
+        }
+    }
+    xfree(fibers);
+}
+#endif
+
 } // namespace pxt
-
-
-

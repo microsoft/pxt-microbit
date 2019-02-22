@@ -22,13 +22,8 @@
     }
 
 
-    declare const enum ValType {
-    Undefined = 0,
-    Boolean = 1,
-    Number = 2,
-    String = 3,
-    Object = 4,
-    Function = 5,
+    declare const enum PerfCounters {
+    GC = 0,
     }
 declare namespace images {
 }

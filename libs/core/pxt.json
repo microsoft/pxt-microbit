@@ -18,6 +18,8 @@
         "pxt-helpers.ts",
         "helpers.ts",
         "pinscompat.ts",
+        "configkeys.h",
+        "gc.cpp",
         "codal.cpp",
         "images.cpp",
         "basic.cpp",
@@ -50,6 +52,7 @@
     "yotta": {
         "optionalConfig": {
             "microbit-dal": {
+                "fiber_user_data": 1,
                 "bluetooth": {
                     "private_addressing": 0,
                     "advertising_timeout": 0,

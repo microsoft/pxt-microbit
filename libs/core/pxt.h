@@ -17,9 +17,11 @@ class RefMImage : public RefObject {
     void makeWritable();
     static void destroy(RefMImage *map);
     static void print(RefMImage *map);
+    static void scan(RefMImage *t);
+    static unsigned gcsize(RefMImage *t);
 };
 
-#define MSTR(s) ManagedString((s)->data, (s)->length)
+#define MSTR(s) ManagedString((s)->getUTF8Data(), (s)->getUTF8Size())
 
 static inline String PSTR(ManagedString s) {
     return mkString(s.toCharArray(), s.length());
@@ -28,7 +30,7 @@ static inline String PSTR(ManagedString s) {
 typedef uint32_t ImageLiteral_;
 
 static inline ImageData *imageBytes(ImageLiteral_ lit) {
-    return (ImageData*)ptrOfLiteral(lit);
+    return (ImageData *)lit;
 }
 
 typedef RefMImage *Image;
@@ -39,16 +41,20 @@ extern MicroBitEvent lastEvent;
 MicroBitPin *getPin(int id);
 
 static inline int min_(int a, int b) {
-    if (a < b) return a;
-    else return b;
+    if (a < b)
+        return a;
+    else
+        return b;
 }
 
 static inline int max_(int a, int b) {
-    if (a > b) return a;
-    else return b;
+    if (a > b)
+        return a;
+    else
+        return b;
 }
 
-}
+} // namespace pxt
 
 using namespace pxt;
 

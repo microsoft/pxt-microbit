@@ -1,12 +1,13 @@
-# Write Received Packet To Serial
+# write Received Packet To Serial
 
 Writes the last packet received by the ``radio`` to serial in JSON format.
-Should be called within a callback to
-[on data packet received](/reference/radio/on-data-packet-received).
 
 ```sig
 radio.writeReceivedPacketToSerial();
 ```
+
+This should be called within a callback to
+[on data packet received](/reference/radio/on-data-packet-received).
 
 ## Data received format
 

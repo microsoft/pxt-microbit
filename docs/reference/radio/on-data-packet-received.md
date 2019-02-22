@@ -1,12 +1,23 @@
 # On Data Packet Received
 
 Run part of a program when the @boardname@ receives a
-[number](/types/number) or [string](/types/string) over ``radio``.
-
+[number](/types/number) or [string](/types/string) over radio.
 
 ```sig
 radio.onDataPacketReceived(({receivedNumber, receivedString, time, serial, signal}) => { });
 ```
+
+## ~ hint
+
+**Deprecated**
+
+This API has been deprecated!
+
+* To receive a [string](/types/string) use [on received string](/reference/radio/on-received-string) instead.
+* To receive a [number](/types/number) use [on received number](/reference/radio/on-received-number) instead.
+* To receive a name-value pair use [on received value](/reference/radio/on-received-value) instead.
+
+## ~
 
 ## ~hint
 

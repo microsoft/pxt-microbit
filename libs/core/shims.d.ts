@@ -39,8 +39,8 @@ declare interface Image {
      * @param xOffset column index to start displaying the image
      */
     //% help=images/show-image weight=80 blockNamespace=images
-    //% blockId=device_show_image_offset block="show image %sprite(myImage)|at offset %offset" blockGap=8
-    //% parts="ledmatrix" async interval.defl=400 shim=ImageMethods::showImage
+    //% blockId=device_show_image_offset block="show image %sprite(myImage)|at offset %offset"
+    //% blockGap=8 parts="ledmatrix" async interval.defl=400 shim=ImageMethods::showImage
     showImage(xOffset: int32, interval?: int32): void;
 
     /**
@@ -899,6 +899,12 @@ declare interface Buffer {
     shift(offset: int32, start?: int32, length?: int32): void;
 
     /**
+     * Convert a buffer to string assuming UTF8 encoding
+     */
+    //% shim=BufferMethods::toString
+    toString(): string;
+
+    /**
      * Convert a buffer to its hexadecimal representation.
      */
     //% shim=BufferMethods::toHex
@@ -928,6 +934,13 @@ declare namespace control {
      */
     //% shim=control::createBuffer
     function createBuffer(size: int32): Buffer;
+
+    /**
+     * Create a new buffer with UTF8-encoded string
+     * @param str the string to put in the buffer
+     */
+    //% shim=control::createBufferFromUTF8
+    function createBufferFromUTF8(str: string): Buffer;
 }
 
 // Auto-generated. Do not edit. Really.

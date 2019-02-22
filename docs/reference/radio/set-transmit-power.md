@@ -1,15 +1,17 @@
 # set Transmit Power
 
-Make the ``radio`` signal of the @boardname@ stronger or weaker. It can be as weak as `0` and as strong as `7`. Default is ``6``.
+Make the ``radio`` signal of the @boardname@ stronger or weaker.
+
+```sig
+radio.setTransmitPower(7);
+```
+
+The signal can be as weak as `0` and as strong as `7`. Default is ``6``.
 
 The scientific name for the strength of the ``radio`` signal is
 **dBm**, or **decibel-milliwatts**. A signal strength of `0`
 can be measured as -30 dBm, and a strength of `7` can be
 measured as +4 dBm.
-
-```sig
-radio.setTransmitPower(7);
-```
 
 ## Range
 

@@ -8,7 +8,7 @@
       <block type="device_play_note">
         <value name="note">
           <shadow type="device_note">
-            <field name="note">175</field>
+            <field name="name">175</field>
           </shadow>
         </value>
         <value name="duration">
@@ -20,7 +20,7 @@
           <block type="device_ring">
             <value name="note">
               <shadow type="device_note">
-                <field name="note">147</field>
+                <field name="name">147</field>
               </shadow>
             </value>
             <next>
@@ -38,7 +38,7 @@
                         <field name="NUM">0</field>
                       </shadow>
                       <block type="device_note">
-                        <field name="note">466</field>
+                        <field name="name">466</field>
                       </block>
                     </value>
                     <next>

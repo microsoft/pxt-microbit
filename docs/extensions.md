@@ -83,7 +83,10 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
   "name": "Hummingbird Bit",
   "url":"/pkg/BirdBrainTechnologies/pxt-hummingbird-bit",
   "cardType": "package"
-
+}, {
+  "name": "Inex iKB-1 controller board",
+  "url":"/pkg/jcubuntu/pxt-iKB1",
+  "cardType": "package"
 }]
 ```
 

@@ -1,6 +1,6 @@
 {
   "name": "pxt-microbit",
-  "version": "1.2.18",
+  "version": "1.2.19",
   "description": "micro:bit target for Microsoft MakeCode (PXT)",
   "keywords": [
     "JavaScript",
@@ -42,7 +42,7 @@
     "@types/web-bluetooth": "0.0.4"
   },
   "dependencies": {
-    "pxt-common-packages": "0.25.10",
-    "pxt-core": "4.4.10"
+    "pxt-common-packages": "6.3.3",
+    "pxt-core": "5.5.13"
   }
 }
