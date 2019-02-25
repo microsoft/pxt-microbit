@@ -22,7 +22,7 @@ MakeCode's course for learning Computer Science with the micro:bit. This is a 14
 
 ## Classroom
 
-Courses contributed by educators to teach science and technology in the classroom.
+Courses contributed by educators to teach computing, science, and technology in the classroom.
 
 ```codecard
 [{
