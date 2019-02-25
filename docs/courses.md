@@ -22,7 +22,7 @@ MakeCode's course for learning Computer Science with the micro:bit. This is a 14
 
 ## Classroom
 
-Structured courses for teaching science and technology in the classroom.
+Courses contributed by educators to teach science and technology in the classroom.
 
 ```codecard
 [{
@@ -35,6 +35,11 @@ Structured courses for teaching science and technology in the classroom.
   "description": "Projects and integration notes for a student-led workshop from the Beacon Hill School",
   "url": "https://goo.gl/XTPYpP",
   "imageUrl": "/static/courses/beaconhill.jpg"
+}, {
+  "name": "Coding and Innovation",
+  "description": "An 8 week \"Coding and Innovation using micro:bits\" computer science course.",
+  "url": "https://sites.google.com/view/utahcodingproject/microbits/coding-innovation",
+  "imageUrl": "/static/courses/coding-innovation.jpg"
 }]
 ```
 
