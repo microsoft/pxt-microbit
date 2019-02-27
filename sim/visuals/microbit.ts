@@ -17,7 +17,9 @@ namespace pxsim.visuals {
         .sim-button {
             pointer-events: none;
         }
-
+        .sim-board {
+            fill: #000;
+        }
         .sim-button-outer:hover {
             stroke:grey;
             stroke-width: 3px;
@@ -761,6 +763,7 @@ path.sim-board {
                 "y": "0px",
                 "width": MB_WIDTH + "px",
                 "height": MB_HEIGHT + "px",
+                "fill": "rgba(0,0,0,0)"
             });
             this.style = <SVGStyleElement>svg.child(this.element, "style", {});
             this.style.textContent = MB_STYLE + (this.props.theme.highContrast ? MB_HIGHCONTRAST : "");
