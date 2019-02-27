@@ -283,7 +283,9 @@
             "instructions",
             "debugger",
             "bluetoothUartConsole",
-            "bluetoothPartialFlashing"
+            "bluetoothPartialFlashing",
+            "simScreenshot",
+            "simGif"
         ],
         "bluetoothUartFilters": [{
             "namePrefix": "BBC micro:bit"
@@ -442,8 +444,6 @@
             "0": "v0"
         },
         "scriptManager": true,
-        "simScreenshot": true,
-        "simGif": true,
         "simGifTransparent": "rgba(0,0,0,0)"
     }
 }
