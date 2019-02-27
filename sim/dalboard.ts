@@ -148,8 +148,8 @@ namespace pxsim {
             return Promise.resolve();
         }
 
-        screenshot(): string {
-            return svg.toDataUri(new XMLSerializer().serializeToString(this.view));
+        screenshotAsync(): Promise<ImageData> {
+            return pxsim.svg.screenshotAsync(this.view);
         }
     }
 

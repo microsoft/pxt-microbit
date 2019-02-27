@@ -440,6 +440,7 @@
         "editorVersionPaths": {
             "0": "v0"
         },
-        "scriptManager": true
+        "scriptManager": true,
+        "simScreenshot": true
     }
 }
