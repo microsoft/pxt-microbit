@@ -243,14 +243,14 @@ path.sim-board {
     export var themes: IBoardTheme[] = ["#3ADCFE", "#FFD43A", "#3AFFB3", "#FF3A54"].map(accent => {
         return {
             accent: accent,
-            display: "#000",
+            display: "#111",
             pin: "#D4AF37",
             pinTouched: "#FFA500",
             pinActive: "#FF5500",
             ledOn: "#ff7f7f",
             ledOff: "#202020",
             buttonOuter: "#979797",
-            buttonUp: "#000",
+            buttonUp: "#111",
             buttonDown: "#FFA500",
             virtualButtonOuter: "#333",
             virtualButtonUp: "#fff",
