@@ -1,21 +1,21 @@
 namespace pxsim.input {
-    export function onGesture(gesture: number, handler: RefAction) {
+    function accForGesture(gesture: number) {
         let b = board().accelerometerState;
         b.accelerometer.activate();
         if (gesture == 11 && !b.useShake) { // SHAKE
             b.useShake = true;
             runtime.queueDisplayUpdate();
         }
+        return b;
+    }
+
+    export function onGesture(gesture: number, handler: RefAction) {
+        const b = accForGesture(gesture);
         pxtcore.registerWithDal(DAL.MICROBIT_ID_GESTURE, gesture, handler);
     }
 
     export function isGesture(gesture: number): boolean {
-        let b = board().accelerometerState;
-        b.accelerometer.activate();
-        if (gesture == 11 && !b.useShake) { // SHAKE
-            b.useShake = true;
-            runtime.queueDisplayUpdate();
-        }
+        const b = accForGesture(gesture);
         return b.accelerometer.getGesture() == gesture;
     }
 
@@ -23,17 +23,17 @@ namespace pxsim.input {
         let b = board().accelerometerState;
         let acc = b.accelerometer;
         switch (dimension) {
-            case 0: 
+            case 0:
                 acc.activate(AccelerometerFlag.X);
                 return acc.getX();
-            case 1: 
+            case 1:
                 acc.activate(AccelerometerFlag.Y);
                 return acc.getY();
-            case 2:             
+            case 2:
                 acc.activate(AccelerometerFlag.Z);
                 return acc.getZ();
-            default: 
-                acc.activate();            
+            default:
+                acc.activate();
                 return Math.floor(Math.sqrt(acc.instantaneousAccelerationSquared()));
         }
     }
