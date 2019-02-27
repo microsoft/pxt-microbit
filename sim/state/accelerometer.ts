@@ -10,6 +10,12 @@ namespace pxsim.input {
         pxtcore.registerWithDal(DAL.MICROBIT_ID_GESTURE, gesture, handler);
     }
 
+    export function isGesture(gesture: number): boolean {
+        let b = board().accelerometerState;
+        b.accelerometer.activate();
+        return b.accelerometer.getGesture() == gesture;
+    }
+
     export function acceleration(dimension: number): number {
         let b = board().accelerometerState;
         let acc = b.accelerometer;
@@ -376,6 +382,10 @@ namespace pxsim {
         getRollRadians(): number {
             this.recalculatePitchRoll();
             return this.roll;
+        }
+
+        getGesture(): number {
+            return this.lastGesture;
         }
 
         /**
