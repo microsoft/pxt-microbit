@@ -17,6 +17,7 @@
         "workspace": false,
         "packages": true,
         "sharing": true,
+        "thumbnails": true,
         "publishing": true,
         "importing": true,
         "preferredPackages": [

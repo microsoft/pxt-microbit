@@ -17,6 +17,7 @@ namespace pxsim {
         fileSystem: FileSystemState;
 
         // visual
+        viewHost: visuals.BoardHost;
         view: SVGElement;
 
         constructor() {
@@ -136,20 +137,20 @@ namespace pxsim {
                 maxHeight: "100%",
                 highContrast: msg.highContrast
             };
-            const viewHost = new visuals.BoardHost(pxsim.visuals.mkBoardView({
+            this.viewHost = new visuals.BoardHost(pxsim.visuals.mkBoardView({
                 visual: boardDef.visual,
                 boardDef: boardDef,
                 highContrast: msg.highContrast
             }), opts);
 
             document.body.innerHTML = ""; // clear children
-            document.body.appendChild(this.view = viewHost.getView());
+            document.body.appendChild(this.view = this.viewHost.getView());
 
             return Promise.resolve();
         }
 
         screenshotAsync(): Promise<ImageData> {
-            return pxsim.svg.screenshotAsync(this.view);
+            return this.viewHost.screenshotAsync();
         }
     }
 
