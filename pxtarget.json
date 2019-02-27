@@ -442,6 +442,8 @@
             "0": "v0"
         },
         "scriptManager": true,
-        "simScreenshot": true
+        "simScreenshot": true,
+        "simGif": true,
+        "simGifTransparent": "#00ff00"
     }
 }

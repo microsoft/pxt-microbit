@@ -120,8 +120,6 @@ namespace pxsim {
         initAsync(msg: SimulatorRunMessage): Promise<void> {
             super.initAsync(msg);
 
-            const options = (msg.options || {}) as RuntimeOptions;
-
             const boardDef = msg.boardDefinition;
             const cmpsList = msg.parts;
             const cmpDefs = msg.partDefinitions || {};
