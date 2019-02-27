@@ -2,8 +2,7 @@ namespace pxsim.input {
     export function onGesture(gesture: number, handler: RefAction) {
         let b = board().accelerometerState;
         b.accelerometer.activate();
-
-        if (gesture == 11 && !b.useShake) { // SAKE
+        if (gesture == 11 && !b.useShake) { // SHAKE
             b.useShake = true;
             runtime.queueDisplayUpdate();
         }
@@ -13,6 +12,10 @@ namespace pxsim.input {
     export function isGesture(gesture: number): boolean {
         let b = board().accelerometerState;
         b.accelerometer.activate();
+        if (gesture == 11 && !b.useShake) { // SHAKE
+            b.useShake = true;
+            runtime.queueDisplayUpdate();
+        }
         return b.accelerometer.getGesture() == gesture;
     }
 
