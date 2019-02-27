@@ -200,7 +200,7 @@ namespace input {
     //% gesture.fieldEditor="gestures" gesture.fieldOptions.columns=4
     bool isGesture(Gesture gesture) {
         int gi = (int)gesture;
-        return uBit.acceleration.getGesture() == gi;
+        return uBit.accelerometer.getGesture() == gi;
     }
 
      /**
