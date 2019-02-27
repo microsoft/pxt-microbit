@@ -444,6 +444,6 @@
         "scriptManager": true,
         "simScreenshot": true,
         "simGif": true,
-        "simGifTransparent": "#00ff00"
+        "simGifTransparent": "rgba(0,0,0,0)"
     }
 }
