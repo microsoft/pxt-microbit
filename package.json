@@ -43,6 +43,6 @@
   },
   "dependencies": {
     "pxt-common-packages": "6.4.5",
-    "pxt-core": "5.5.13"
+    "pxt-core": "5.5.15"
   }
 }
