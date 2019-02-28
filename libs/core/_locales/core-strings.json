@@ -379,6 +379,8 @@
   "{id:category}Console": "Console",
   "{id:category}Control": "Control",
   "{id:category}DigitalInOutPin": "DigitalInOutPin",
+  "{id:category}Fx": "Fx",
+  "{id:category}Fx8": "Fx8",
   "{id:category}Game": "Game",
   "{id:category}Helpers": "Helpers",
   "{id:category}Image": "Image",
