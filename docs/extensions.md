@@ -89,7 +89,7 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
   "cardType": "package"
 }, {
   "name": "Kitronik ACCESS:bit",
-  "url":"/pkg/pxt-kitronik-accessbit",
+  "url":"/pkg/KitronikLtd/pxt-kitronik-accessbit",
   "cardType": "package"
 }]
 ```
