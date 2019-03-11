@@ -86,3 +86,5 @@
   * [Accelerometer](https://youtu.be/byngcwjO51U)
   * [Light Sensor](https://youtu.be/TKhCr-dQMBY)
   * [Temperature Sensor](https://youtu.be/_T4N8O9xsMA)
+  * [Pin Pressed](https://youtu.be/GEpZrvbsO7o)
+  * [Radio](https://youtu.be/Re3H2ISfQE8)

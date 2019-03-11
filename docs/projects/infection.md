@@ -51,6 +51,15 @@ Icons used in the game:
 * Incubating: `IconNames.Confused`
 * Healthy: `IconNames.Happy`
 
+## ~ hint
+
+Take a look at this video to see how the @boardname@ uses radio to spread "disease"
+in this game:
+
+https://www.youtube.com/watch?v=Re3H2ISfQE8
+
+## ~
+
 ## Project share
 
 ### ~ hint

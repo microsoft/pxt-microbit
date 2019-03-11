@@ -11,6 +11,13 @@ radio.sendString("Hello!")
 
 * **msg**: a [string](/types/string) to send by radio.
 
+## ~ hint
+
+Watch this video to see how the radio hardware works on the @boardname@:
+
+https://www.youtube.com/watch?v=Re3H2ISfQE8
+
+## ~
 
 ## Example: Two-way radio
 

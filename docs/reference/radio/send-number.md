@@ -10,6 +10,13 @@ radio.sendNumber(0);
 
 * **value**: a [number](/types/number) to send.
 
+## ~ hint
+
+Watch this video to see how the radio hardware works on the @boardname@:
+
+https://www.youtube.com/watch?v=Re3H2ISfQE8
+
+## ~
 
 ## Examples
 

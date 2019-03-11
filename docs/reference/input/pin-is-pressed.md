@@ -25,6 +25,12 @@ instead of the USB cable.
 
 * a [boolean](/blocks/logic/boolean) that means whether the pin you say is pressed (`true` or `false`)
 
+## Pin presses in action
+
+See how the @boardname@ detects a press at a pin or on something connected to a pin in this video:
+
+https://www.youtube.com/watch?v=GEpZrvbsO7o
+
 ## Example
 
 This program shows `1` if `P0` is pressed, and `0` if `P0` is not pressed:

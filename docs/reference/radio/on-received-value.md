@@ -11,6 +11,14 @@ radio.onReceivedValue(function (name, value) {})
 * **name**: a [string](/types/string) that is a name for the value received.
 * **value**: a [number](/types/number) that is the value received.
 
+## ~ hint
+
+Watch this video to see how the radio hardware works on the @boardname@:
+
+https://www.youtube.com/watch?v=Re3H2ISfQE8
+
+## ~
+
 ## Example
 
 This program keeps sending numbers that say how fast the @boardname@ is
