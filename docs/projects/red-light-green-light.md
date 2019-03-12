@@ -154,13 +154,13 @@ moving = | acc strength - 1000 | > 1000
 
 Now that we know the math for it, we can turn this into code.
 
-```block
+```blocks
 let REDLIGHT = 0
 let state = 0
 let GREENLIGHT = 0
 let moving = false
 if (state == REDLIGHT) {
-    moving = Math.abs(input.acceleration(Dimension.Strength) - 1000) > 100
+    moving = Math.abs(input.acceleration(Dimension.Strength) - 1000) > 1000
     if (moving) {
         game.gameOver()
     }
@@ -189,7 +189,7 @@ basic.forever(function () {
         basic.showIcon(IconNames.No)
     }
     if (state == REDLIGHT) {
-        moving = Math.abs(input.acceleration(Dimension.Strength) - 1000) > 100
+        moving = Math.abs(input.acceleration(Dimension.Strength) - 1000) > 1000
         if (state == REDLIGHT && moving) {
             game.gameOver()
         }
