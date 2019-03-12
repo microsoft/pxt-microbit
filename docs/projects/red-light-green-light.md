@@ -149,7 +149,7 @@ At all times, gravity is applied to the @boardname@, so the acceleration strengt
 If the acceleration strength is far from that value, say ``1100`` or ``900``, we can assume that the player is moving. To compute this we use the formula:
 
 ```
-moving = | acc strength - 1000 | > 1000
+moving = | acc strength - 1000 | > 100
 ```
 
 Now that we know the math for it, we can turn this into code.
@@ -160,7 +160,7 @@ let state = 0
 let GREENLIGHT = 0
 let moving = false
 if (state == REDLIGHT) {
-    moving = Math.abs(input.acceleration(Dimension.Strength) - 1000) > 1000
+    moving = Math.abs(input.acceleration(Dimension.Strength) - 1000) > 100
     if (moving) {
         game.gameOver()
     }
@@ -189,7 +189,7 @@ basic.forever(function () {
         basic.showIcon(IconNames.No)
     }
     if (state == REDLIGHT) {
-        moving = Math.abs(input.acceleration(Dimension.Strength) - 1000) > 1000
+        moving = Math.abs(input.acceleration(Dimension.Strength) - 1000) > 100
         if (state == REDLIGHT && moving) {
             game.gameOver()
         }
