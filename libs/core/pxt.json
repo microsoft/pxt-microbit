@@ -47,6 +47,7 @@
         "advmath.cpp",
         "trig.cpp",
         "fixed.ts",
+        "templates.ts",
         "parts/speaker.svg",
         "parts/headphone.svg"
     ],

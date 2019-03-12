@@ -4,9 +4,11 @@
   "servos.Servo.run": "Set the throttle on a continuous servo",
   "servos.Servo.run|param|speed": "the throttle of the motor from -100% to 100%",
   "servos.Servo.setAngle": "Set the servo angle",
-  "servos.Servo.setRange": "Configure the range support by the servo between 0 and 180",
+  "servos.Servo.setPulse": "Set the pulse width to the servo in microseconds",
+  "servos.Servo.setPulse|param|micros": "the width of the pulse in microseconds",
+  "servos.Servo.setRange": "Set the possible rotation range angles for the servo between 0 and 180",
   "servos.Servo.setRange|param|maxAngle": "the maximum angle from 90 to 180",
   "servos.Servo.setRange|param|minAngle": "the minimum angle from 0 to 90",
-  "servos.Servo.setStopOnNeutral": "Sets a mode where the servo is stopped when the angle is neutral (0%).",
-  "servos.Servo.setStopOnNeutral|param|on": "true to enable this mode"
+  "servos.Servo.setStopOnNeutral": "Set a servo stop mode so it will stop when the rotation angle is in the neutral position, 90 degrees.",
+  "servos.Servo.stop": "Stop sending commands to the servo so that its rotation will stop at the current position."
 }
