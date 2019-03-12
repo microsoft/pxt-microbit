@@ -91,6 +91,10 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
   "name": "MakerBit motor controller",
   "url":"/pkg/1010Technologies/pxt-makerbit-motor",
   "cardType": "package"
+}, {
+  "name": "Kitronik ACCESS:bit",
+  "url":"/pkg/KitronikLtd/pxt-kitronik-accessbit",
+  "cardType": "package"
 }]
 ```
 

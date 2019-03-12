@@ -17,6 +17,7 @@
         "workspace": false,
         "packages": true,
         "sharing": true,
+        "thumbnails": true,
         "publishing": true,
         "importing": true,
         "preferredPackages": [
@@ -97,7 +98,8 @@
                 "pid": "0x0204"
             }
         ],
-        "webUSB": true
+        "webUSB": true,
+        "useNewFunctions": true
     },
     "runtime": {
         "mathBlocks": true,
@@ -107,6 +109,9 @@
         "textBlocks": true,
         "listsBlocks": true,
         "functionBlocks": true,
+        "functionsOptions": {
+            "useNewFunctions": true
+        },
         "onStartColor": "#1E90FF",
         "onStartNamespace": "basic",
         "onStartWeight": 54
@@ -278,7 +283,9 @@
             "instructions",
             "debugger",
             "bluetoothUartConsole",
-            "bluetoothPartialFlashing"
+            "bluetoothPartialFlashing",
+            "simScreenshot",
+            "simGif"
         ],
         "bluetoothUartFilters": [{
             "namePrefix": "BBC micro:bit"
@@ -435,6 +442,8 @@
         },
         "editorVersionPaths": {
             "0": "v0"
-        }
+        },
+        "scriptManager": true,
+        "simGifTransparent": "rgba(0,0,0,0)"
     }
 }

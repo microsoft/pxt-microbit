@@ -17,7 +17,9 @@ namespace pxsim.visuals {
         .sim-button {
             pointer-events: none;
         }
-
+        .sim-board, .sim-display, sim-button {
+            fill: #111;
+        }
         .sim-button-outer:hover {
             stroke:grey;
             stroke-width: 3px;
@@ -241,14 +243,14 @@ path.sim-board {
     export var themes: IBoardTheme[] = ["#3ADCFE", "#FFD43A", "#3AFFB3", "#FF3A54"].map(accent => {
         return {
             accent: accent,
-            display: "#000",
+            display: "#111",
             pin: "#D4AF37",
             pinTouched: "#FFA500",
             pinActive: "#FF5500",
             ledOn: "#ff7f7f",
             ledOff: "#202020",
             buttonOuter: "#979797",
-            buttonUp: "#000",
+            buttonUp: "#111",
             buttonDown: "#FFA500",
             virtualButtonOuter: "#333",
             virtualButtonUp: "#fff",
@@ -761,6 +763,7 @@ path.sim-board {
                 "y": "0px",
                 "width": MB_WIDTH + "px",
                 "height": MB_HEIGHT + "px",
+                "fill": "rgba(0,0,0,0)"
             });
             this.style = <SVGStyleElement>svg.child(this.element, "style", {});
             this.style.textContent = MB_STYLE + (this.props.theme.highContrast ? MB_HIGHCONTRAST : "");
@@ -785,10 +788,12 @@ path.sim-board {
             for (let i = 0; i < 3; ++i) svg.child(merge, "feMergeNode", { in: "glow" })
 
             // outline
-            svg.path(this.g, "sim-board", "M498,31.9C498,14.3,483.7,0,466.1,0H31.9C14.3,0,0,14.3,0,31.9v342.2C0,391.7,14.3,406,31.9,406h434.2c17.6,0,31.9-14.3,31.9-31.9V31.9z M14.3,206.7c-2.7,0-4.8-2.2-4.8-4.8c0-2.7,2.2-4.8,4.8-4.8c2.7,0,4.8,2.2,4.8,4.8C19.2,204.6,17,206.7,14.3,206.7z M486.2,206.7c-2.7,0-4.8-2.2-4.8-4.8c0-2.72.2-4.8,4.8-4.8c2.7,0,4.8,2.2,4.8,4.8C491,204.6,488.8,206.7,486.2,206.7z");
+            const pkg = svg.path(this.g, "sim-board", "M498,31.9C498,14.3,483.7,0,466.1,0H31.9C14.3,0,0,14.3,0,31.9v342.2C0,391.7,14.3,406,31.9,406h434.2c17.6,0,31.9-14.3,31.9-31.9V31.9z M14.3,206.7c-2.7,0-4.8-2.2-4.8-4.8c0-2.7,2.2-4.8,4.8-4.8c2.7,0,4.8,2.2,4.8,4.8C19.2,204.6,17,206.7,14.3,206.7z M486.2,206.7c-2.7,0-4.8-2.2-4.8-4.8c0-2.72.2-4.8,4.8-4.8c2.7,0,4.8,2.2,4.8,4.8C491,204.6,488.8,206.7,486.2,206.7z");
+            svg.hydrate(pkg, { fill: "#111" });
 
             // script background
             this.display = svg.path(this.g, "sim-display", "M333.8,310.3H165.9c-8.3,0-15-6.7-15-15V127.5c0-8.3,6.7-15,15-15h167.8c8.3,0,15,6.7,15,15v167.8C348.8,303.6,342.1,310.3,333.8,310.3z");
+            svg.hydrate(this.display, { fill: "#111" });
 
             this.logos = [];
             this.logos.push(svg.child(this.g, "polygon", { class: "sim-theme", points: "115,56.7 173.1,0 115,0" }));
@@ -876,6 +881,7 @@ path.sim-board {
             this.buttons.push(svg.child(this.g, "circle", { class: "sim-button", cx: 446, cy: 278, r: 16.5 }));
             (<any>this.buttonsOuter[2]).style.visibility = "hidden";
             (<any>this.buttons[2]).style.visibility = "hidden";
+            this.buttons.forEach(btn => svg.hydrate(btn, { fill: "#111" }));
 
             svg.path(this.g, "sim-label", "M35.7,376.4c0-2.8,2.1-5.1,5.5-5.1c3.3,0,5.5,2.4,5.5,5.1v4.7c0,2.8-2.2,5.1-5.5,5.1c-3.3,0-5.5-2.4-5.5-5.1V376.4zM43.3,376.4c0-1.3-0.8-2.3-2.2-2.3c-1.3,0-2.1,1.1-2.1,2.3v4.7c0,1.2,0.8,2.3,2.1,2.3c1.3,0,2.2-1.1,2.2-2.3V376.4z");
             svg.path(this.g, "sim-label", "M136.2,374.1c2.8,0,3.4-0.8,3.4-2.5h2.9v14.3h-3.4v-9.5h-3V374.1z");

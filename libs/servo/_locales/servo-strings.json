@@ -5,7 +5,11 @@
   "servos.Servo.run|block": "continuous %servo run at %speed=speedPicker \\%",
   "servos.Servo.setAngle|block": "set %servo angle to %degrees=protractorPicker °",
   "servos.Servo.setPulse|block": "set %servo pulse to %micros μs",
+  "servos.Servo.setRange|block": "set %servo range from %minAngle to %maxAngle",
+  "servos.Servo.setStopOnNeutral|block": "set %servo stop on neutral %on",
   "servos.Servo.stop|block": "stop %servo",
   "{id:category}Servos": "Servos",
-  "{id:group}Servos": "Servos"
+  "{id:group}Configuration": "Configuration",
+  "{id:group}Continuous": "Continuous",
+  "{id:group}Positional": "Positional"
 }

@@ -44,6 +44,9 @@
         "buffer.cpp",
         "buffer.ts",
         "pxtparts.json",
+        "advmath.cpp",
+        "trig.cpp",
+        "fixed.ts",
         "parts/speaker.svg",
         "parts/headphone.svg"
     ],

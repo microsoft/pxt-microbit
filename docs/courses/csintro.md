@@ -20,6 +20,11 @@ The entire course is also available as a download or as a book. Choose any of th
 | [![](/static/courses/csintro/icons/adobe-pdf-file-icon-24x24.png)](https://1drv.ms/b/s!AqsgsTyHBmRBgQ1Fjzm5y5wKG75M) | [- **PDF** - Intro to CS with MakeCode for micro:bit](https://1drv.ms/b/s!AqsgsTyHBmRBgQ1Fjzm5y5wKG75M) |
 | [![](/static/courses/csintro/icons/apple-itunes-ibook-24x24.png)](https://itunes.apple.com/us/book/making-with-micro-bit/id1255260221?mt=11) | [- **iBooks** - Making with micro:bit](https://itunes.apple.com/us/book/making-with-micro-bit/id1255260221?mt=11) |
 | [![](/static/courses/csintro/icons/paperback-book-24x24.png)](http://www.lulu.com/shop/mary-douglas-kiang/making-with-makecode-microbit/paperback/product-23457217.html) | [- **Paperback** - Making with MakeCode and Micro:bit](http://www.lulu.com/shop/mary-douglas-kiang/making-with-makecode-microbit/paperback/product-23457217.html) |
+
+**Educators**: For educators, there's an separate edition of this course containing downloadable materials for teaching the course in a classroom setting:
+
+* **[Intro to Computer Science - Educator edition](/courses/csintro-educator)**
+
 ### ~
 
 ### Lesson structure

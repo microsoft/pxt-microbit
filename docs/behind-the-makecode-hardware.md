@@ -35,6 +35,18 @@
         "description": "One of the cool features on your board is the temperature sensor, how does it feel the heat?",
         "youTubeId": "_T4N8O9xsMA",
         "imageUrl": "/static/mb/behindhardware/temperature-sensor.jpg"
+    },
+    {
+        "name": "Pin Pressed",
+        "description": "Touching the pins works like a button, is that magic or what?",
+        "youTubeId": "GEpZrvbsO7o",
+        "imageUrl": "/static/mb/behindhardware/pin-pressed.jpg"
+    },
+    {
+        "name": "Radio",
+        "description": "Your board can communticate by radio, how does it do that?",
+        "youTubeId": "Re3H2ISfQE8",
+        "imageUrl": "/static/mb/behindhardware/radio.jpg"
     }
 ]
 ```

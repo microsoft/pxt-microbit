@@ -29,6 +29,12 @@ instead of the USB cable.
 
 * ``name`` means the pin that is being pressed, either `P0`, `P1`, or `P2`
 
+## Pin presses in action
+
+See how the @boardname@ detects a press at a pin or on something connected to a pin in this video:
+
+https://www.youtube.com/watch?v=GEpZrvbsO7o
+
 ## Example: pin pressed counter
 
 This program counts how many times you press the `P0` pin. 
@@ -36,10 +42,10 @@ Every time you press the pin, the program shows the number of times on the scree
 
 ```blocks
 let count = 0
-basic.showNumber(count, 100)
+basic.showNumber(count)
 input.onPinPressed(TouchPin.P0, () => {
     count = count + 1
-    basic.showNumber(count, 100)
+    basic.showNumber(count)
 })
 ```
 

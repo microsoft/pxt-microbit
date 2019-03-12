@@ -17,6 +17,7 @@ namespace pxsim {
         fileSystem: FileSystemState;
 
         // visual
+        viewHost: visuals.BoardHost;
         view: SVGElement;
 
         constructor() {
@@ -119,8 +120,6 @@ namespace pxsim {
         initAsync(msg: SimulatorRunMessage): Promise<void> {
             super.initAsync(msg);
 
-            const options = (msg.options || {}) as RuntimeOptions;
-
             const boardDef = msg.boardDefinition;
             const cmpsList = msg.parts;
             const cmpDefs = msg.partDefinitions || {};
@@ -136,20 +135,20 @@ namespace pxsim {
                 maxHeight: "100%",
                 highContrast: msg.highContrast
             };
-            const viewHost = new visuals.BoardHost(pxsim.visuals.mkBoardView({
+            this.viewHost = new visuals.BoardHost(pxsim.visuals.mkBoardView({
                 visual: boardDef.visual,
                 boardDef: boardDef,
                 highContrast: msg.highContrast
             }), opts);
 
             document.body.innerHTML = ""; // clear children
-            document.body.appendChild(this.view = viewHost.getView());
+            document.body.appendChild(this.view = this.viewHost.getView());
 
             return Promise.resolve();
         }
 
-        screenshot(): string {
-            return svg.toDataUri(new XMLSerializer().serializeToString(this.view));
+        screenshotAsync(): Promise<ImageData> {
+            return this.viewHost.screenshotAsync();
         }
     }
 

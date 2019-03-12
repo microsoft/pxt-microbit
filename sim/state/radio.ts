@@ -29,6 +29,7 @@ namespace pxsim {
             const b = board();
             Runtime.postMessage(<SimulatorRadioPacketMessage>{
                 type: "radiopacket",
+                broadcast: true,
                 rssi: -42, // -42 is the strongest signal
                 serial: b.radioState.transmitSerialNumber ? pxsim.control.deviceSerialNumber() : 0,
                 time: new Date().getTime(),
