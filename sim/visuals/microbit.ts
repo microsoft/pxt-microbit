@@ -140,6 +140,9 @@ namespace pxsim.visuals {
             stroke: none;
             fill: #777;
         }
+        .sim-label, .sim-button-label {
+            fill: #000;
+        }
         .sim-wireframe .sim-board {
             stroke-width: 2px;
         }
