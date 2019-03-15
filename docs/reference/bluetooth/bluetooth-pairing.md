@@ -10,6 +10,11 @@ If you need additional help in pairing your @boardname@ to another device, see t
 
 * [Pairing and Flashing](https://support.microbit.org/a/solutions/articles/19000051025)
 * [Paring Modes](https://support.microbit.org/a/solutions/articles/19000080745)
+* [Troubleshooting Guide](https://support.microbit.org/a/solutions/articles/19000069393)
+
+
+## Apps
+
 
 ## See also
 
