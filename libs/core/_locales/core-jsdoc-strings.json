@@ -328,6 +328,7 @@
   "game.startCountdown": "Shows an animation, then starts a game countdown timer, which causes Game Over when it reaches 0",
   "game.startCountdown|param|ms": "countdown duration in milliseconds, eg: 10000",
   "game.startStopwatch": "Starts a stopwatch timer. `current time` will return the elapsed time.",
+  "hex": "Tagged hex literal converter",
   "images": "Creation, manipulation and display of LED images.",
   "images.createBigImage": "Creates an image with 2 frames.",
   "images.createImage": "Creates an image that fits on the LED screen.",
