@@ -1,4 +1,4 @@
-const enum PinEvent {
+enum PinEvent {
     //% block="pulse high"
     PulseHigh = DAL.MICROBIT_PIN_EVT_PULSE_HI,  // DEVICE_PIN_EVT_PULSE_HI
     //% block="pulse low"
