@@ -8,7 +8,7 @@ This course takes approximately 14 weeks to complete, spending about 1 week on e
 
 ![CSIntro banner image](/static/courses/csintro-educator/csintro-educator.jpg)
 
-The **Educator edition** is available as a set of resource materials for teaching the course in the classroom. The course materials contain the overview guides, assessment and standards guides, and the individual lesson units. The course material is provided as single complete download or the guides and lesson units can be downloaded individually.
+The **Educator edition** is available as a set of resource materials for teaching the course in the classroom. The course materials contain the overview guides, assessment and standards guides, and the individual lesson units. The course material is provided as single complete download or the guides and lesson units can be downloaded individually. Take a look at this brief **[preview](/courses/csintro-educator/preview)** of what's included in the materials.
 
 ## Complete course pack
 
@@ -57,6 +57,7 @@ Any of the individual course material items are also available as a separate dow
 #### [Unit 4 - Conditionals](https://1drv.ms/f/s!AqsgsTyHBmRBhCEhD98j9NcTVsYj)
 
 * [Classroom presentation](https://onedrive.live.com/view.aspx?cid=416406873cb120ab&page=view&resid=416406873CB120AB!568&parId=416406873CB120AB!545&authkey=!ACEP3yP01xNWxiM&app=PowerPoint)
+* [Educator Guide](https://onedrive.live.com/view.aspx?cid=416406873cb120ab&page=view&resid=416406873CB120AB!566&parId=416406873CB120AB!545&authkey=!ACEP3yP01xNWxiM&app=Word)
 * [Student workbook](https://onedrive.live.com/view.aspx?cid=416406873cb120ab&page=view&resid=416406873CB120AB!567&parId=416406873CB120AB!545&authkey=!ACEP3yP01xNWxiM&app=Word)
 * [Quick start video](https://onedrive.live.com/?authkey=%21ACEP3yP01xNWxiM&cid=416406873CB120AB&id=416406873CB120AB%21569&parId=416406873CB120AB%21545&o=OneUp)
 
