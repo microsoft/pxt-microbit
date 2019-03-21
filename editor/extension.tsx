@@ -897,7 +897,7 @@ function webUsbPairDialogAsync(confirmAsync: (options: any) => Promise<number>):
                 <div className="image">
                     <img className="ui image" src="./static/download/firmware.png" />
                 </div>
-                <a href="${docUrl}/webusb/troubleshoot" target="_blank">{lf("Check your firmware version here and update if needed")}</a>
+                <a href={`${docUrl}/webusb/troubleshoot`} target="_blank">{lf("Check your firmware version here and update if needed")}</a>
             </div>
             <div className="column eleven wide instructions">
                 <div className="ui grid">
@@ -929,7 +929,7 @@ function webUsbPairDialogAsync(confirmAsync: (options: any) => Promise<number>):
                                                 <span className="ui purple circular label">2</span>
                                                 <strong>{lf("Pair your {0}", boardName)}</strong>
                                                 <br />
-                                                <span className="ui small">{lf("Click 'Pair device' below and select BBC micro:bit CMSIS-DAP</strong> or DAPLink CMSIS-DAP from the list")}</span>
+                                                <span className="ui small">{lf("Click 'Pair device' below and select BBC micro:bit CMSIS-DAP or DAPLink CMSIS-DAP from the list")}</span>
                                             </div>
                                         </div>
                                     </div>
@@ -964,8 +964,8 @@ function webUsbPairDialogAsync(confirmAsync: (options: any) => Promise<number>):
 }
 
 function showUploadInstructionsAsync(fn: string, url: string, confirmAsync: (options: any) => Promise<number>) {
-    const boardName = pxt.Util.htmlEscape(pxt.appTarget.appTheme.boardName || "???");
-    const boardDriveName = pxt.Util.htmlEscape(pxt.appTarget.appTheme.driveDisplayName || pxt.appTarget.compile.driveName || "???");
+    const boardName = pxt.appTarget.appTheme.boardName || "???";
+    const boardDriveName = pxt.appTarget.appTheme.driveDisplayName || pxt.appTarget.compile.driveName || "???";
 
     // https://msdn.microsoft.com/en-us/library/cc848897.aspx
     // "For security reasons, data URIs are restricted to downloaded resources.
