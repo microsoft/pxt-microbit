@@ -5,6 +5,11 @@
 //% advanced=true
 namespace serial {
     /**
+     * The string used to mark a new line, default is \r\n
+     */
+    export let NEW_LINE = "\r\n";
+
+    /**
      * Print a line of text to the serial port
      * @param value to send over serial
      */
@@ -20,7 +25,7 @@ namespace serial {
         serial.writeString(text);
         for (let i = 0; i < r; ++i)
             serial.writeString(" ");
-        serial.writeString("\r\n");
+        serial.writeString(NEW_LINE);
     }
 
     /**
@@ -57,7 +62,7 @@ namespace serial {
     //% help=serial/write-value
     //% blockId=serial_writevalue block="serial|write value %name|= %value"
     export function writeValue(name: string, value: number): void {
-        writeLine(name + ":" + value);
+        writeLine((name ? name + ":" : "") + value);
     }
 
     /**
