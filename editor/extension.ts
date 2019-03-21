@@ -849,8 +849,8 @@ namespace pxt.editor {
             pxt.commands.deployCoreAsync = deployCoreAsync;
 
         res.blocklyPatch = patchBlocks;
-        res.showUploadInstructionsAsync = showUploadInstructionsAsync;
-        res.webUsbPairDialogAsync = webUsbPairDialogAsync;
+        res.showUploadInstructionsAsync = pxt.editor.microbit.showUploadInstructionsAsync;
+        res.webUsbPairDialogAsync = pxt.editor.microbit.webUsbPairDialogAsync;
         return Promise.resolve<pxt.editor.ExtensionResult>(res);
     }
 
