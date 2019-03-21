@@ -929,7 +929,7 @@ function webUsbPairDialogAsync(confirmAsync: (options: any) => Promise<number>):
                                                 <span className="ui purple circular label">2</span>
                                                 <strong>{lf("Pair your {0}", boardName)}</strong>
                                                 <br />
-                                                <span className="ui small">{lf("Click 'Pair device' below and select <strong>BBC micro:bit CMSIS-DAP</strong> or <strong>DAPLink CMSIS-DAP</strong> from the list")}</span>
+                                                <span className="ui small">{lf("Click 'Pair device' below and select BBC micro:bit CMSIS-DAP</strong> or DAPLink CMSIS-DAP from the list")}</span>
                                             </div>
                                         </div>
                                     </div>
@@ -1010,7 +1010,7 @@ function showUploadInstructionsAsync(fn: string, url: string, confirmAsync: (opt
                                                 <span className="ui purple circular label">2</span>
                                                 <strong>{lf("Move the .hex file to the {0}", boardName)}</strong>
                                                 <br />
-                                                <span className="ui small">{lf("Locate the downloaded .hex file and drag it to the <strong>{0}</strong> drive", boardDriveName)}</span>
+                                                <span className="ui small">{lf("Locate the downloaded .hex file and drag it to the {0} drive", boardDriveName)}</span>
                                             </div>
                                         </div>
                                     </div>
