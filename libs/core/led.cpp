@@ -145,7 +145,7 @@ namespace led {
     //% parts="ledmatrix"
     Image screenshot() {
         auto d = uBit.display.screenShot().leakData();
-        auto r = new RefMImage(d);
+        auto r = NEW_GC(RefMImage, d);
         d->decr();
         return r;
         /*

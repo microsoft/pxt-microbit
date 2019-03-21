@@ -40,7 +40,7 @@ namespace images {
 //% blockId=device_build_image block="create image"
 //% parts="ledmatrix"
 Image createImage(ImageLiteral_ leds) {
-    return new RefMImage(imageBytes(leds));
+    return NEW_GC(RefMImage, imageBytes(leds));
 }
 
 /**
