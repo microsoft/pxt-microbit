@@ -191,4 +191,21 @@ namespace serial {
       uBit.serial.redirect(USBTX, USBRX);
       uBit.serial.baud(115200);
     }
+
+    /**
+    * Sets the size of the RX buffer in bytes
+    */
+    //%
+    void setRxBufferSize(uint8_t size) {
+      uBit.serial.setRxBufferSize(size);
+    }
+
+    /**
+    * Sets the size of the TX buffer in bytes
+    */
+    //%
+    void setTxBufferSize(uint8_t size) {
+      uBit.serial.setTxBufferSize(size);
+    }
+
 }
