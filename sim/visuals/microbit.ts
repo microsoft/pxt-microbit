@@ -433,10 +433,10 @@ path.sim-board {
                 this.shakeButton.addEventListener(pointerEvents.up, ev => {
                     let state = this.board;
                     svg.fill(this.shakeButton, this.props.theme.virtualButtonUp);
-                    this.board.bus.queue(DAL.MICROBIT_ID_GESTURE, 11); // GESTURE_SHAKE
+                    this.board.accelerometerState.shake();
                 })
                 accessibility.enableKeyboardInteraction(this.shakeButton, undefined, () => {
-                    this.board.bus.queue(DAL.MICROBIT_ID_GESTURE, 11);
+                    this.board.accelerometerState.shake();
                 });
                 accessibility.setAria(this.shakeButton, "button", "Shake the board");
                 this.shakeText = svg.child(this.g, "text", { x: 400, y: 110, class: "sim-text" }) as SVGTextElement;

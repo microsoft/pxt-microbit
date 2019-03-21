@@ -1,30 +1,39 @@
 namespace pxsim.input {
-    export function onGesture(gesture: number, handler: RefAction) {
+    function accForGesture(gesture: number) {
         let b = board().accelerometerState;
         b.accelerometer.activate();
-
-        if (gesture == 11 && !b.useShake) { // SAKE
+        if (gesture == 11 && !b.useShake) { // SHAKE
             b.useShake = true;
             runtime.queueDisplayUpdate();
         }
+        return b;
+    }
+
+    export function onGesture(gesture: number, handler: RefAction) {
+        const b = accForGesture(gesture);
         pxtcore.registerWithDal(DAL.MICROBIT_ID_GESTURE, gesture, handler);
+    }
+
+    export function isGesture(gesture: number): boolean {
+        const b = accForGesture(gesture);
+        return b.accelerometer.getGesture() == gesture;
     }
 
     export function acceleration(dimension: number): number {
         let b = board().accelerometerState;
         let acc = b.accelerometer;
         switch (dimension) {
-            case 0: 
+            case 0:
                 acc.activate(AccelerometerFlag.X);
                 return acc.getX();
-            case 1: 
+            case 1:
                 acc.activate(AccelerometerFlag.Y);
                 return acc.getY();
-            case 2:             
+            case 2:
                 acc.activate(AccelerometerFlag.Z);
                 return acc.getZ();
-            default: 
-                acc.activate();            
+            default:
+                acc.activate();
                 return Math.floor(Math.sqrt(acc.instantaneousAccelerationSquared()));
         }
     }
@@ -249,7 +258,10 @@ namespace pxsim {
         updateGesture() {
             // Determine what it looks like we're doing based on the latest sample...
             let g = this.instantaneousPosture();
+            this.setGesture(g);
+        }
 
+        private setGesture(g: number) {
             // Perform some low pass filtering to reduce jitter from any detected effects
             if (g == this.currentGesture) {
                 if (this.sigma < DAL.MICROBIT_ACCELEROMETER_GESTURE_DAMPING)
@@ -265,6 +277,11 @@ namespace pxsim {
                 this.lastGesture = this.currentGesture;
                 board().bus.queue(DAL.MICROBIT_ID_GESTURE, this.lastGesture);
             }
+        }
+
+        forceGesture(g: number) {
+            this.sigma = DAL.MICROBIT_ACCELEROMETER_GESTURE_DAMPING + 1;
+            this.setGesture(g);
         }
 
         /**
@@ -378,6 +395,10 @@ namespace pxsim {
             return this.roll;
         }
 
+        getGesture(): number {
+            return this.lastGesture;
+        }
+
         /**
          * Recalculate roll and pitch values for the current sample.
          * We only do this at most once per sample, as the necessary trigonemteric functions are rather
@@ -400,6 +421,10 @@ namespace pxsim {
 
         constructor(runtime: Runtime) {
             this.accelerometer = new Accelerometer(runtime);
+        }
+
+        shake() {
+            this.accelerometer.forceGesture(DAL.MICROBIT_ACCELEROMETER_EVT_SHAKE); // SHAKE == 11
         }
     }
 }

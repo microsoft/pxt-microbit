@@ -88,6 +88,10 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
   "url":"/pkg/jcubuntu/pxt-iKB1",
   "cardType": "package"
 }, {
+  "name": "MakerBit motor controller",
+  "url":"/pkg/1010Technologies/pxt-makerbit-motor",
+  "cardType": "package"
+}, {
   "name": "Kitronik ACCESS:bit",
   "url":"/pkg/KitronikLtd/pxt-kitronik-accessbit",
   "cardType": "package"
@@ -217,6 +221,10 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
   "url":"/pkg/microsoft/pxt-sonar",
   "cardType": "package"
 }, {
+  "name": "Non-blocking Ultrasonic Sensing",
+  "url":"/pkg/1010Technologies/pxt-makerbit-ultrasonic",
+  "cardType": "package"
+}, {
   "name": "Bluetooth Temperature Sensor",
   "url":"/pkg/microsoft/pxt-bluetooth-temperature-sensor",
   "cardType": "package"
@@ -256,10 +264,23 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
     "name": "ALS Robot Electromagnet",
     "url":"/pkg/alsrobot-microbit-makecode-packages/ALSRobotElectromagnet",
     "cardType": "package"
+}, {
+    "name": "MakerBit Touch MPR121",
+    "url": "/pkg/1010Technologies/pxt-makerbit-touch",
+    "cardType": "package"
+}, {
+    "name": "Keyestudio Infrared Receiver",
+    "url": "/pkg/1010Technologies/pxt-makerbit-ir-receiver",
+    "cardType": "package"
+}, {
+    "name": "I2C LCD 1602 Display",
+    "url": "/pkg/1010Technologies/pxt-makerbit-ir-lcd1602",
+    "cardType": "package"
 }]
 ```
 
 ## IoT
+
 ```codecard
 [{
   "name": "Pi Supply Lora Node",
@@ -271,7 +292,7 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
 ## Other
 
 ```codecard
-[ 
+[
  {
   "name": "Code Dojo Olney",
   "url":"/pkg/CoderDojoOlney/pxt-olney",
@@ -348,5 +369,9 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
   "name": "MAX7219 8x8",
   "url":"/pkg/alankrantas/pxt-MAX7219_8x8",
   "cardType": "package"
+}, {
+    "name": "Catalex Serial MP3 Player v1.0",
+    "url": "/pkg/1010Technologies/pxt-makerbit-mp3",
+    "cardType": "package"
 }]
 ```

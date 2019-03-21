@@ -190,6 +190,19 @@ namespace input {
         registerWithDal(MICROBIT_ID_GESTURE, gi, body);
     }
 
+    /**
+    * Tests if a gesture is currently detected.
+     * @param gesture the type of gesture to detect, eg: Gesture.Shake
+    */
+    //% help=input/is-gesture weight=10 blockGap=8
+    //% blockId=deviceisgesture block="is %gesture gesture"
+    //% parts="accelerometer"
+    //% gesture.fieldEditor="gestures" gesture.fieldOptions.columns=4
+    bool isGesture(Gesture gesture) {
+        int gi = (int)gesture;
+        return uBit.accelerometer.getGesture() == gi;
+    }
+
      /**
      * Do something when a pin is touched and released again (while also touching the GND pin).
      * @param name the pin that needs to be pressed, eg: TouchPin.P0

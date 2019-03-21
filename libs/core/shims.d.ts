@@ -229,6 +229,16 @@ declare namespace input {
     function onGesture(gesture: Gesture, body: () => void): void;
 
     /**
+     * Tests if a gesture is currently detected.
+     * @param gesture the type of gesture to detect, eg: Gesture.Shake
+     */
+    //% help=input/is-gesture weight=10 blockGap=8
+    //% blockId=deviceisgesture block="is %gesture gesture"
+    //% parts="accelerometer"
+    //% gesture.fieldEditor="gestures" gesture.fieldOptions.columns=4 shim=input::isGesture
+    function isGesture(gesture: Gesture): boolean;
+
+    /**
      * Do something when a pin is touched and released again (while also touching the GND pin).
      * @param name the pin that needs to be pressed, eg: TouchPin.P0
      * @param body the code to run when the pin is pressed
