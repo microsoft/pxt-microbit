@@ -194,20 +194,18 @@ namespace serial {
 
     /**
     * Sets the size of the RX buffer in bytes
-    * @param size length of the rx buffer in bytes
+    * @param size length of the rx buffer in bytes, eg: 32
     */
     //% help=serial/set-rx-buffer-size
-    //% size.defl=64
     void setRxBufferSize(uint8_t size) {
       uBit.serial.setRxBufferSize(size);
     }
 
     /**
     * Sets the size of the TX buffer in bytes
-    * @param size length of the tx buffer in bytes
+    * @param size length of the tx buffer in bytes, eg: 32
     */
     //% help=serial/set-tx-buffer-size
-    //% size.defl=64
     void setTxBufferSize(uint8_t size) {
       uBit.serial.setTxBufferSize(size);
     }
