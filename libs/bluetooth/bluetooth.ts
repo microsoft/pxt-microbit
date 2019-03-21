@@ -20,8 +20,7 @@ namespace bluetooth {
     //% blockId=bluetooth_uart_write block="bluetooth uart|write string %data" blockGap=8
     //% parts="bluetooth" shim=bluetooth::uartWriteString advanced=true
     export function uartWriteString(data: string): void {
-        // dummy implementation for simulator
-        console.log("UART Write: " + data)
+        console.log(data)
     }
 
     /**
