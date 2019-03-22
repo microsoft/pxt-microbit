@@ -10,7 +10,7 @@ The life count in the game is increased by the number of lives you say.
 
 ## Parameters
 
-* **life**: a [number](/types/number) to remove from the count.
+* **life**: a [number](/types/number) to add to the life count.
 
 ## Example #example
 
