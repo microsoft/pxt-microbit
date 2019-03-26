@@ -160,7 +160,7 @@ namespace pxsim.radio {
     }
 
     export function sendValue(name: string, value: number) {
-        name = name.substr(0, 12);
+        name = name.substr(0, 8);
         const msg: number[] = [];
         msg.push()
         board().radioState.datagram.send({

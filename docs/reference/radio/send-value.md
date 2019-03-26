@@ -1,7 +1,7 @@
 # send Value
 
 Send a [string]() and [number]() together by ``radio`` to other @boardname@s.
-The maximum [string]() length is 12 characters.
+The maximum [string]() length is 8 characters.
 
 ```sig
 radio.sendValue("name", 0);
