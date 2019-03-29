@@ -58,5 +58,10 @@ Here are some cool projects that you can build with your @boardname@!
   "url": "/projects/infection",
   "description": "An epidemic has broken out, see who will survive.",
   "imageUrl": "/static/mb/projects/infection.png"
+}, {
+  "name": "Best Friends",
+  "url": "/projects/best-friends",
+  "description": "Your best friend is out there, play this game and go find them.",
+  "imageUrl": "/static/mb/projects/best-friends.png"
 }]
 ```
