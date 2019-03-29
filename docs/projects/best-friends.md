@@ -41,14 +41,37 @@ basic.showLeds(`
 When receiving a `1` number, show a Smiley Face (friends).
 
 ```sim
-basic.showIcon(IconNames.Happy)
+basic.forever(function () {
+    basic.showLeds(`
+        . # . . .
+        # # # . .
+        # # # . .
+        . # # . .
+        . . # . .
+        `)
+    basic.pause(1000)
+    basic.showIcon(IconNames.Happy)
+    basic.pause(500)
+})
 ```
 
 When receiving a `2` number, show a Heart (best friends).
 
 ```sim
-basic.showIcon(IconNames.Heart)
+basic.forever(function () {
+    basic.showLeds(`
+        . # . . .
+        # # # . .
+        # # # . .
+        . # # . .
+        . . # . .
+        `)
+    basic.pause(1000)
+    basic.showIcon(IconNames.Heart)
+    basic.pause(500)
+})
 ```
+
 ## Code the game
 
 ### Set group and power
