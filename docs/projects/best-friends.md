@@ -175,19 +175,20 @@ radio.onReceivedNumber(function (receivedNumber) {
     } else {
 
     }
-}
+})
 ```
 
 You don't need the final ``||logic:else||`` section so click the **(-)** at the side of the last ``||logic:else||`` to hide it.
 
 ```blocks
+
 radio.onReceivedNumber(function (receivedNumber) {
     if (receivedNumber == 1) {
         basic.showIcon(IconNames.Happy)
     } else if (receivedNumber == 2) {
         basic.showIcon(IconNames.Heart)
     }
-}
+})
 ```
 
 ### We're friends!
