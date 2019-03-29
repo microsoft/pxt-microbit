@@ -193,3 +193,7 @@ radio.onReceivedNumber(function (receivedNumber) {
 ### We're friends!
 
 Your game is ready! Now go find your friend. Do you want to be a friend or best friends?
+
+```package
+radio
+```
