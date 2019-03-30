@@ -4,7 +4,7 @@
 
 ## ~ avatar
 
-Your best friend is out there. Go and find them!
+You have a friend out there. Send out messages to find your best friend!
 
 ## ~
 
