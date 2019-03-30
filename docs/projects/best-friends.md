@@ -26,21 +26,12 @@ Your radio group number is what will help you find your new friend. They will ha
 
 When you press **A**, the program sends a number  `1` and when you press **B**, it sends a `2`. You must also be able to receive messages from your friend by following these display clues:
 
-At the beginning, show a half heart.
+* At the beginning, show a half heart.
+* When receiving a `1` number, show a Smiley Face (friends).
+* When receiving a `2` number, show a Heart (best friends).
 
 ```sim
-basic.showLeds(`
-    . # . . .
-    # # # . .
-    # # # . .
-    . # # . .
-    . . # . .
-    `)
-```
-
-When receiving a `1` number, show a Smiley Face (friends).
-
-```sim
+let toggleIcon = false
 basic.forever(function () {
     basic.showLeds(`
         . # . . .
@@ -50,24 +41,12 @@ basic.forever(function () {
         . . # . .
         `)
     basic.pause(1000)
-    basic.showIcon(IconNames.Happy)
-    basic.pause(500)
-})
-```
-
-When receiving a `2` number, show a Heart (best friends).
-
-```sim
-basic.forever(function () {
-    basic.showLeds(`
-        . # . . .
-        # # # . .
-        # # # . .
-        . # # . .
-        . . # . .
-        `)
-    basic.pause(1000)
-    basic.showIcon(IconNames.Heart)
+    if (toggleIcon) {
+        basic.showIcon(IconNames.Heart)
+    } else {
+        basic.showIcon(IconNames.Happy)
+    }
+    toggleIcon = !(toggleIcon)
     basic.pause(500)
 })
 ```
