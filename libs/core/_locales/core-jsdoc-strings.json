@@ -521,6 +521,7 @@
   "pins.spiWrite": "Write to the SPI slave and return the response",
   "pins.spiWrite|param|value": "Data to be sent to the SPI slave",
   "serial": "Reading and writing data over a serial connection.",
+  "serial.NEW_LINE": "The string used to mark a new line, default is \\r\\n",
   "serial.delimiters": "Return the corresponding delimiter string",
   "serial.onDataReceived": "Register an event to be fired when one of the delimiter is matched.",
   "serial.onDataReceived|param|delimiters": "the characters to match received characters against.",
@@ -546,5 +547,7 @@
   "serial.writeString": "Send a piece of text through the serial connection.",
   "serial.writeValue": "Write a name:value pair as a line to the serial port.",
   "serial.writeValue|param|name": "name of the value stream, eg: x",
-  "serial.writeValue|param|value": "to write"
+  "serial.writeValue|param|value": "to write",
+  "toString": "Convert any value to a string",
+  "toString|param|value": "value to be converted to a string"
 }

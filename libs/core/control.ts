@@ -53,3 +53,14 @@ namespace control {
     //% shim=pxtrt::runtimeWarning
     export function runtimeWarning(message: string) { }
 }
+
+/**
+ * Convert any value to a string
+ * @param value value to be converted to a string
+ */
+//% help=text/to-string weight=1
+//% block="convert $value=variables_get(myValue) to string"
+//% blockId=variable_to_string blockNamespace="text"
+function toString(value: any): string {
+    return "" + value;
+}
