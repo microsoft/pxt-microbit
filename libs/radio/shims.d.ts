@@ -27,7 +27,7 @@ declare namespace radio {
      * Broadcasts a name / value pair along with the device serial number
      * and running time to any connected micro:bit in the group.
      * @param name the field name (max 12 characters), eg: "name"
-     * @param value the numberic value
+     * @param value the numeric value
      */
     //% help=radio/send-value
     //% weight=59

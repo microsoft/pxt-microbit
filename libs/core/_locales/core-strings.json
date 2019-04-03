@@ -213,6 +213,7 @@
   "Note.GSharp4|block": "G#4",
   "Note.GSharp5|block": "G#5",
   "Note.GSharp|block": "G#",
+  "Number|block": "Number",
   "Object|block": "Object",
   "PinEvent.Fall|block": "fall",
   "PinEvent.PulseHigh|block": "pulse high",
