@@ -549,5 +549,7 @@
   "serial.writeString": "Send a piece of text through the serial connection.",
   "serial.writeValue": "Write a name:value pair as a line to the serial port.",
   "serial.writeValue|param|name": "name of the value stream, eg: x",
-  "serial.writeValue|param|value": "to write"
+  "serial.writeValue|param|value": "to write",
+  "toString": "Convert any value to a string",
+  "toString|param|value": "value to be converted to a string"
 }
