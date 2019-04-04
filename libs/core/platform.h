@@ -3,7 +3,7 @@
 
 // cross version compatible way of access data field
 #ifndef PXT_BUFFER_DATA
-#define PXT_BUFFER_DATA(buffer) buffer->data
+#define PXT_BUFFER_DATA(buffer) buffer->getUTF8Data()
 #endif
 
 #ifndef PXT_CREATE_BUFFER
