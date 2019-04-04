@@ -150,9 +150,9 @@ int height(Image i) {
 
 /**
  * Set a pixel state at position ``(x,y)``
- * @param x TODO
- * @param y TODO
- * @param value TODO
+ * @param x pixel column
+ * @param y pixel row
+ * @param value pixel state
  */
 //% help=images/set-pixel
 //% parts="ledmatrix"
@@ -162,8 +162,8 @@ void setPixel(Image i, int x, int y, bool value) {
 
 /**
  * Get the pixel state at position ``(x,y)``
- * @param x TODO
- * @param y TODO
+ * @param x pixel column
+ * @param y pixel row
  */
 //% help=images/pixel
 //% parts="ledmatrix"
@@ -172,8 +172,8 @@ bool pixel(Image i, int x, int y) {
 }
 
 /**
- * Shows a particular frame of the image strip.
- * @param frame TODO
+ * Show a particular frame of the image strip.
+ * @param frame image frame to show
  */
 //% weight=70 help=images/show-frame
 //% parts="ledmatrix"

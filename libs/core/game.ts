@@ -402,7 +402,7 @@ namespace game {
 
         /**
          * If touching the edge of the stage and facing towards it, then turn away.
-         * @param this TODO
+         * @param this the sprite to check for bounce
          */
         //% weight=18 help=game/if-on-edge-bounce
         //% blockId=game_sprite_bounce block="%sprite|if on edge, bounce"
@@ -454,7 +454,7 @@ namespace game {
 
         /**
          * Turn the sprite
-         * @param this TODO
+         * @param this the sprite to trun
          * @param direction left or right
          * @param degrees angle in degrees to turn, eg: 45, 90, 180, 135
          */
@@ -469,7 +469,7 @@ namespace game {
 
         /**
          * Turn to the right (clockwise)
-         * @param this TODO
+         * @param this the sprite to turn
          * @param degrees TODO
          */
         public turnRight(degrees: number): void {
@@ -478,7 +478,7 @@ namespace game {
 
         /**
          * Turn to the left (counter-clockwise)
-         * @param this TODO
+         * @param this the sprite to turn
          * @param degrees TODO
          */
         public turnLeft(degrees: number): void {
@@ -538,8 +538,8 @@ namespace game {
 
         /**
          * Set the direction of the current sprite, rounded to the nearest multiple of 45
-         * @param this TODO
-         * @param degrees TODO
+         * @param this the sprite to set direction for
+         * @param degrees new direction in degrees
          */
         //% parts="ledmatrix"
         public setDirection(degrees: number): void {
@@ -614,8 +614,8 @@ namespace game {
 
         /**
          * Reports true if sprite has the same position as specified sprite
-         * @param this TODO
-         * @param other TODO
+         * @param this the sprite to check overlap or touch
+         * @param other the other sprite to check overlap or touch
          */
         //% weight=20 help=game/is-touching
         //% blockId=game_sprite_touching_sprite block="is %sprite|touching %other" blockGap=8
@@ -625,7 +625,7 @@ namespace game {
 
         /**
          * Reports true if sprite is touching an edge
-         * @param this TODO
+         * @param this the sprite to check for an edge contact
          */
         //% weight=19 help=game/is-touching-edge
         //% blockId=game_sprite_touching_edge block="is %sprite|touching edge" blockGap=8
