@@ -110,7 +110,14 @@
         "listsBlocks": true,
         "functionBlocks": true,
         "functionsOptions": {
-            "useNewFunctions": true
+            "useNewFunctions": true,
+            "extraFunctionEditorTypes": [
+                {
+                    "typeName": "game.LedSprite",
+                    "icon": "send",
+                    "defaultName": "sprite"
+                }
+            ]
         },
         "onStartColor": "#1E90FF",
         "onStartNamespace": "basic",
@@ -287,9 +294,11 @@
             "simScreenshot",
             "simGif"
         ],
-        "bluetoothUartFilters": [{
-            "namePrefix": "BBC micro:bit"
-        }],
+        "bluetoothUartFilters": [
+            {
+                "namePrefix": "BBC micro:bit"
+            }
+        ],
         "docMenu": [
             {
                 "name": "Support",
