@@ -471,22 +471,22 @@ function flashAsync(resp: pxtc.CompileResult, d: pxt.commands.DeployOptions = {}
             return quickHidFlashAsync(resp, wrap);
         })
         .catch(e => {
+            pxt.log(`flash error: ${e.type}`);
             if (e.type === "devicenotfound" && d.reportDeviceNotFoundAsync) {
                 pxt.tickEvent("hid.flash.devicenotfound");
                 return d.reportDeviceNotFoundAsync("/device/windows-app/troubleshoot", resp);
             } else if (e.message === timeoutMessage) {
                 pxt.tickEvent("hid.flash.timeout");
                 return previousDapWrapper.reconnectAsync(true)
-                    .catch((e) => {
+                    .catch((e) => { })
+                    .then(() => {
                         // Best effort disconnect; at this point we don't even know the state of the device
                         pxt.reportException(e);
-                    })
-                    .then(() => {
                         return resp.confirmAsync({
                             header: lf("Something went wrong..."),
                             body: lf("One-click download took too long. Please disconnect your {0} from your computer and reconnect it, then manually download your program using drag and drop.", pxt.appTarget.appTheme.boardName || lf("device")),
                             disagreeLbl: lf("Ok"),
-                            hideAgree: true
+                            hideAgree: true,
                         });
                     })
                     .then(() => {
