@@ -21,8 +21,8 @@
 #endif
 
 // cross version compatible way of accessing string length
-#ifndef PXT_STRING_LENGTH
-#define PXT_STRING_LENGTH(str) str->getLength()
+#ifndef PXT_STRING_DATA_LENGTH
+#define PXT_STRING_DATA_LENGTH(str) str->getUTF8Size()
 #endif
 
 #define PXT_POWI 1
