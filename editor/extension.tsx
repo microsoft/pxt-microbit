@@ -485,7 +485,8 @@ function flashAsync(resp: pxtc.CompileResult, d: pxt.commands.DeployOptions = {}
                         return resp.confirmAsync({
                             header: lf("Something went wrong..."),
                             body: lf("One-click download took too long. Please disconnect your {0} from your computer and reconnect it, then manually download your program using drag and drop.", pxt.appTarget.appTheme.boardName || lf("device")),
-                            agreeLbl: lf("Ok")
+                            agreeLbl: lf("Ok"),
+                            hideCancel: true
                         });
                     })
                     .then(() => {
@@ -500,7 +501,8 @@ function flashAsync(resp: pxtc.CompileResult, d: pxt.commands.DeployOptions = {}
                 return resp.confirmAsync({
                     header: pxt.U.lf("Something went wrong..."),
                     body: pxt.U.lf("Please manually download your program to your device using drag and drop. One-click download might work afterwards."),
-                    agreeLbl: lf("Ok")
+                    agreeLbl: lf("Ok"),
+                    hideCancel: true
                 })
                     .then(() => {
                         return pxt.commands.saveOnlyAsync(resp);
