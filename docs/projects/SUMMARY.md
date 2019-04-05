@@ -27,6 +27,7 @@
   * [Rock Paper Scissors Teams](/projects/rps-teams)
   * [Micro:Coin](/projects/micro-coin)
   * [Infection](/projects/infection)
+  * [Best Friends](/projects/best-friends)
 * [Fashion](/projects/fashion)
   * [Duct Tape Wallet](/projects/wallet)
   * [Watch](/projects/watch)

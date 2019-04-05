@@ -3,6 +3,7 @@
 /// <reference path="../node_modules/pxt-core/built/pxtcompiler.d.ts" />
 /// <reference path="../node_modules/pxt-core/built/pxtlib.d.ts" />
 /// <reference path="../node_modules/pxt-core/built/pxteditor.d.ts" />
+/// <reference path="dapjs.d.ts" />
 import * as React from "react";
 
 const imul = (Math as any).imul;
@@ -471,22 +472,22 @@ function flashAsync(resp: pxtc.CompileResult, d: pxt.commands.DeployOptions = {}
             return quickHidFlashAsync(resp, wrap);
         })
         .catch(e => {
+            pxt.log(`flash error: ${e.type}`);
             if (e.type === "devicenotfound" && d.reportDeviceNotFoundAsync) {
                 pxt.tickEvent("hid.flash.devicenotfound");
                 return d.reportDeviceNotFoundAsync("/device/windows-app/troubleshoot", resp);
             } else if (e.message === timeoutMessage) {
                 pxt.tickEvent("hid.flash.timeout");
                 return previousDapWrapper.reconnectAsync(true)
-                    .catch((e) => {
+                    .catch((e) => { })
+                    .then(() => {
                         // Best effort disconnect; at this point we don't even know the state of the device
                         pxt.reportException(e);
-                    })
-                    .then(() => {
                         return resp.confirmAsync({
                             header: lf("Something went wrong..."),
                             body: lf("One-click download took too long. Please disconnect your {0} from your computer and reconnect it, then manually download your program using drag and drop.", pxt.appTarget.appTheme.boardName || lf("device")),
-                            disagreeLbl: lf("Ok"),
-                            hideAgree: true
+                            agreeLbl: lf("Ok"),
+                            hideCancel: true
                         });
                     })
                     .then(() => {
@@ -497,11 +498,12 @@ function flashAsync(resp: pxtc.CompileResult, d: pxt.commands.DeployOptions = {}
                 return Promise.resolve();
             } else {
                 pxt.tickEvent("hid.flash.unknownerror");
+                pxt.reportException(e);
                 return resp.confirmAsync({
                     header: pxt.U.lf("Something went wrong..."),
                     body: pxt.U.lf("Please manually download your program to your device using drag and drop. One-click download might work afterwards."),
-                    disagreeLbl: lf("Ok"),
-                    hideAgree: true
+                    agreeLbl: lf("Ok"),
+                    hideCancel: true
                 })
                     .then(() => {
                         return pxt.commands.saveOnlyAsync(resp);

@@ -13,6 +13,5 @@
         "newLine": "LF",
         "sourceMap": false,
         "jsx": "react"
-    },
-    "prepend": ["../external/dapjs.js"]
+    }
 }

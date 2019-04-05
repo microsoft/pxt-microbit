@@ -55,8 +55,8 @@
 
     /**
      * Toggles a particular pixel
-     * @param x TODO
-     * @param y TODO
+     * @param x pixel column
+     * @param y pixel row
      */
     //% help=led/toggle weight=77
     //% blockId=device_led_toggle block="toggle|x %x|y %y" icon="\uf204" blockGap=8
@@ -99,7 +99,7 @@
 
     /**
      * Fades in the screen display.
-     * @param ms TODO
+     * @param ms fade time in milleseconds
      */
     //% help=led/fade-in
     //% parts="ledmatrix"
@@ -122,7 +122,7 @@
 
     /**
      * Fades out the screen brightness.
-     * @param ms TODO
+     * @param ms fade time in milliseconds
      */
     //% help=led/fade-out
     //% parts="ledmatrix"

@@ -276,7 +276,7 @@ namespace input {
 
     /**
      * Get the acceleration value in milli-gravitys (when the board is laying flat with the screen up, x=0, y=0 and z=-1024)
-     * @param dimension TODO
+     * @param dimension x, y, or z dimension, eg: Dimension.X
      */
     //% help=input/acceleration weight=58
     //% blockId=device_acceleration block="acceleration (mg)|%NAME" blockGap=8
@@ -326,7 +326,7 @@ namespace input {
 
     /**
      * The pitch or roll of the device, rotation along the ``x-axis`` or ``y-axis``, in degrees.
-     * @param kind TODO
+     * @param kind pitch or roll
      */
     //% help=input/rotation weight=52
     //% blockId=device_get_rotation block="rotation (°)|%NAME" blockGap=8
@@ -341,7 +341,7 @@ namespace input {
 
     /**
      * Get the magnetic force value in ``micro-Teslas`` (``µT``). This function is not supported in the simulator.
-     * @param dimension TODO
+     * @param dimension the x, y, or z dimension, eg: Dimension.X
      */
     //% help=input/magnetic-force weight=51
     //% blockId=device_get_magnetic_force block="magnetic force (µT)|%NAME" blockGap=8

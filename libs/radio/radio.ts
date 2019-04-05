@@ -74,8 +74,8 @@ namespace radio {
      * Registers code to run when the radio receives a number.
      */
     //% help=radio/on-received-number blockHandlerKey="radioreceived"
-    //% blockId=radio_on_number block="on radio received" blockGap=16
-    //% useLoc="radio.onDataPacketReceived"
+    //% blockId=radio_on_number_drag block="on radio received" blockGap=16
+    //% useLoc="radio.onDataPacketReceived" draggableParameters=reporter
     export function onReceivedNumber(cb: (receivedNumber: number) => void) {
         onDataReceived(() => {
             receiveNumber();
@@ -93,8 +93,8 @@ namespace radio {
      * Registers code to run when the radio receives a key value pair.
      */
     //% help=radio/on-received-value blockHandlerKey="radioreceived"
-    //% blockId=radio_on_value block="on radio received" blockGap=16
-    //% useLoc="radio.onDataPacketReceived"
+    //% blockId=radio_on_value_drag block="on radio received" blockGap=16
+    //% useLoc="radio.onDataPacketReceived" draggableParameters=reporter
     export function onReceivedValue(cb: (name: string, value: number) => void) {
         onDataReceived(() => {
             receiveNumber();
@@ -113,8 +113,8 @@ namespace radio {
      * Registers code to run when the radio receives a string.
      */
     //% help=radio/on-received-string blockHandlerKey="radioreceived"
-    //% blockId=radio_on_string block="on radio received" blockGap=16
-    //% useLoc="radio.onDataPacketReceived"
+    //% blockId=radio_on_string_drag block="on radio received" blockGap=16
+    //% useLoc="radio.onDataPacketReceived" draggableParameters=reporter
     export function onReceivedString(cb: (receivedString: string) => void) {
         onDataReceived(() => {
             receiveNumber();
@@ -132,8 +132,8 @@ namespace radio {
      * Registers code to run when the radio receives a buffer.
      */
     //% help=radio/on-received-buffer blockHandlerKey="radioreceived" blockHidden=1
-    //% blockId=radio_on_buffer block="on radio received" blockGap=16
-    //% useLoc="radio.onDataPacketReceived"
+    //% blockId=radio_on_buffer_drag block="on radio received" blockGap=16
+    //% useLoc="radio.onDataPacketReceived" draggableParameters=reporter
     export function onReceivedBuffer(cb: (receivedBuffer: Buffer) => void) {
         onDataReceived(() => {
             receiveNumber();
@@ -145,6 +145,50 @@ namespace radio {
             lastPacket = packet;
             cb(packet.receivedBuffer)
         });
+    }
+
+    /**
+     * Registers code to run when the radio receives a number. Deprecated, use
+     * onReceivedNumber instead.
+     */
+    //% help=radio/on-received-number blockHandlerKey="radioreceived"
+    //% blockId=radio_on_number block="on radio received" blockGap=16
+    //% useLoc="radio.onDataPacketReceived" deprecated=1
+    export function onReceivedNumberDeprecated(cb: (receivedNumber: number) => void) {
+        onReceivedNumber(cb);
+    }
+
+    /**
+     * Registers code to run when the radio receives a key value pair. Deprecated, use
+     * onReceivedValue instead.
+     */
+    //% help=radio/on-received-value blockHandlerKey="radioreceived"
+    //% blockId=radio_on_value block="on radio received" blockGap=16
+    //% useLoc="radio.onDataPacketReceived" deprecated=1
+    export function onReceivedValueDeprecated(cb: (name: string, value: number) => void) {
+        onReceivedValue(cb);
+    }
+
+    /**
+     * Registers code to run when the radio receives a string. Deprecated, use
+     * onReceivedString instead.
+     */
+    //% help=radio/on-received-string blockHandlerKey="radioreceived"
+    //% blockId=radio_on_string block="on radio received" blockGap=16
+    //% useLoc="radio.onDataPacketReceived" deprecated=1
+    export function onReceivedStringDeprecated(cb: (receivedString: string) => void) {
+        onReceivedString(cb);
+    }
+
+    /**
+     * Registers code to run when the radio receives a buffer. Deprecated, use
+     * onReceivedBuffer instead.
+     */
+    //% help=radio/on-received-buffer blockHandlerKey="radioreceived" blockHidden=1
+    //% blockId=radio_on_buffer block="on radio received" blockGap=16
+    //% useLoc="radio.onDataPacketReceived" deprecated=1
+    export function onReceivedBufferDeprecated(cb: (receivedBuffer: Buffer) => void) {
+        onReceivedBuffer(cb);
     }
 
     let lastPacket: Packet;
