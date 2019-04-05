@@ -114,6 +114,7 @@
             "extraFunctionEditorTypes": [
                 {
                     "typeName": "game.LedSprite",
+                    "label": "LedSprite",
                     "icon": "send",
                     "defaultName": "sprite"
                 }
