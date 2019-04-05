@@ -58,9 +58,9 @@ namespace control {
  * Convert any value to text
  * @param value value to be converted to text
  */
-//% help=text/to-text weight=1
+//% help=text/convert-to-text weight=1
 //% block="convert $value=math_number to text"
 //% blockId=variable_to_text blockNamespace="text"
-function toText(value: any): string {
+function convertToText(value: any): string {
     return "" + value;
 }
