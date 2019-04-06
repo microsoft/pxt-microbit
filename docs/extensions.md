@@ -206,6 +206,10 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
     "name": "MakerBit",
     "url": "/pkg/1010Technologies/pxt-makerbit",
     "cardType": "package"
+}, {
+    "name": "MakerBit Pins",
+    "url": "/pkg/1010Technologies/pxt-makerbit-pins",
+    "cardType": "package"
 }]
 ```
 

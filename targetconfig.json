@@ -72,6 +72,7 @@
             "1010Technologies/pxt-makerbit-lcd1602",
             "1010Technologies/pxt-makerbit-ir-receiver",
             "1010Technologies/pxt-makerbit-touch",
+            "1010Technologies/pxt-makerbit-pins",
             "pimoroni/pxt-automationbit",
             "k8robotics/pxt-k8",
             "dexterind/pxt-giggle",
