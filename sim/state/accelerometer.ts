@@ -273,7 +273,7 @@ namespace pxsim {
             }
 
             // If we've reached threshold, update our record and raise the relevant event...
-            if (this.currentGesture != this.lastGesture && (this.sigma >= DAL.MICROBIT_ACCELEROMETER_GESTURE_DAMPING || force)) {
+            if (force || (this.currentGesture != this.lastGesture && this.sigma >= DAL.MICROBIT_ACCELEROMETER_GESTURE_DAMPING)) {
                 this.lastGesture = this.currentGesture;
                 board().bus.queue(DAL.MICROBIT_ID_GESTURE, this.lastGesture);
             }
