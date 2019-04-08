@@ -280,8 +280,7 @@ namespace pxsim {
         }
 
         forceGesture(g: number) {
-            this.sigma = DAL.MICROBIT_ACCELEROMETER_GESTURE_DAMPING + 1;
-            this.setGesture(g, true);
+            this.setGesture(g, /* force */ true);
         }
 
         /**
