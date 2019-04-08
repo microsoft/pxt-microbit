@@ -261,7 +261,7 @@ namespace pxsim {
             this.setGesture(g);
         }
 
-        private setGesture(g: number) {
+        private setGesture(g: number, force?: boolean) {
             // Perform some low pass filtering to reduce jitter from any detected effects
             if (g == this.currentGesture) {
                 if (this.sigma < DAL.MICROBIT_ACCELEROMETER_GESTURE_DAMPING)
@@ -273,7 +273,7 @@ namespace pxsim {
             }
 
             // If we've reached threshold, update our record and raise the relevant event...
-            if (this.currentGesture != this.lastGesture && this.sigma >= DAL.MICROBIT_ACCELEROMETER_GESTURE_DAMPING) {
+            if (this.currentGesture != this.lastGesture && (this.sigma >= DAL.MICROBIT_ACCELEROMETER_GESTURE_DAMPING || force)) {
                 this.lastGesture = this.currentGesture;
                 board().bus.queue(DAL.MICROBIT_ID_GESTURE, this.lastGesture);
             }
@@ -281,7 +281,7 @@ namespace pxsim {
 
         forceGesture(g: number) {
             this.sigma = DAL.MICROBIT_ACCELEROMETER_GESTURE_DAMPING + 1;
-            this.setGesture(g);
+            this.setGesture(g, true);
         }
 
         /**
