@@ -1,7 +1,7 @@
-# to string
+# convert to text
 
 Converts a value into a text representation.
 
 ```sig
-toString(123)
+convertToText(123)
 ```
