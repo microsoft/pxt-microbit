@@ -13,7 +13,7 @@ A bar graph is a kind of chart that shows numbers as lines with different length
 * **value**: a [number](/types/number) that is the value of what you
   are measuring or trying to show. For example, if you are measuring
   the temperature of ice with the @boardname@, ``value`` might be `0`
-  because the temperature might be 0 degrees centigrade.
+  if the temperature is 0 degrees Celsius.
 * **high**: a [number](/types/number) that is the highest
   possible number (maximumu) that the **value** parameter can be. The lines in the bar graph will reach their highest point when **value** reaches this number. If **high** is `0`, then the largest value recently plotted is used as the maximum.
 
