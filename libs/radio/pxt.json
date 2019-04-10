@@ -6,7 +6,8 @@
         "shims.d.ts",
         "enums.d.ts",
         "radio.cpp",
-        "radio.ts"
+        "radio.ts",
+        "deprecated.ts"
     ],
     "icon": "./static/packages/radio/icon.png",
     "public": true,

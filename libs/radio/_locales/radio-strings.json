@@ -2,15 +2,6 @@
   "RadioPacketProperty.SerialNumber|block": "serial number",
   "RadioPacketProperty.SignalStrength|block": "signal strength",
   "RadioPacketProperty.Time|block": "time",
-  "newradio.receiveNumber|block": "radio receive number",
-  "newradio.receiveString|block": "radio receive string",
-  "newradio.sendNumber|block": "radio send number %value",
-  "newradio.sendString|block": "radio send string %msg",
-  "newradio.sendValue|block": "radio send|value %name|= %value",
-  "newradio.setTransmitSerialNumber|block": "radio set transmit serial number %transmit",
-  "newradio.writeReceivedPacketToSerial|block": "radio write received packet to serial",
-  "newradio.writeValueToSerial|block": "radio write value to serial",
-  "newradio|block": "newradio",
   "radio._packetProperty|block": "%note",
   "radio.onDataPacketReceived|block": "on radio received",
   "radio.onDataReceived|block": "radio on data received",
@@ -36,6 +27,5 @@
   "radio.writeReceivedPacketToSerial|block": "radio write received packet to serial",
   "radio.writeValueToSerial|block": "radio write value to serial",
   "radio|block": "radio",
-  "{id:category}Newradio": "Newradio",
   "{id:category}Radio": "Radio"
 }

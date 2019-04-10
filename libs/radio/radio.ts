@@ -11,65 +11,79 @@ enum RadioPacketProperty {
     SerialNumber = 1
 }
 
-
-
 /**
  * Communicate data using radio packets
  */
 //% color=#E3008C weight=96 icon="\uf012"
 namespace radio {
-    export class Packet {
-        /**
-         * The number payload if a number was sent in this packet (via ``sendNumber()`` or ``sendValue()``)
-         * or 0 if this packet did not contain a number.
-         */
-        public receivedNumber: number;
-        /**
-         * The string payload if a string was sent in this packet (via ``sendString()`` or ``sendValue()``)
-         * or the empty string if this packet did not contain a string.
-         */
-        public receivedString: string;
-        /**
-         * The buffer payload if a buffer was sent in this packet
-         * or the empty buffer
-         */
-        public receivedBuffer: Buffer;
-        /**
-         * The system time of the sender of the packet at the time the packet was sent.
-         */
-        public time: number;
-        /**
-         * The serial number of the sender of the packet or 0 if the sender did not sent their serial number.
-         */
-        public serial: number;
-        /**
-         * The received signal strength indicator (RSSI) of the packet.
-         */
-        public signal: number;
+    const MAX_FIELD_NAME_LENGTH = 12;
+    const MAX_FIELD_DOUBLE_NAME_LENGTH = 8;
+    const MAX_PAYLOAD_LENGTH = 20;
+    const PACKET_PREFIX_LENGTH = 9;
+    const VALUE_PACKET_NAME_LEN_OFFSET = 13;
+    const DOUBLE_VALUE_PACKET_NAME_LEN_OFFSET = 17;
+
+    // Packet Spec:
+    // | 0              | 1 ... 4       | 5 ... 8           | 9 ... 28
+    // ----------------------------------------------------------------
+    // | packet type    | system time   | serial number     | payload
+    //
+    // Serial number defaults to 0 unless enabled by user
+
+    // payload: number (9 ... 12)
+    const PACKET_TYPE_NUMBER = 0;
+    // payload: number (9 ... 12), name length (13), name (14 ... 26)
+    const PACKET_TYPE_VALUE = 1;
+    // payload: string length (9), string (10 ... 28)
+    const PACKET_TYPE_STRING = 2;
+    // payload: buffer length (9), buffer (10 ... 28)
+    const PACKET_TYPE_BUFFER = 3;
+    // payload: number (9 ... 16)
+    const PACKET_TYPE_DOUBLE = 4;
+    // payload: number (9 ... 16), name length (17), name (18 ... 26)
+    const PACKET_TYPE_DOUBLE_VALUE = 5;
+
+    interface RadioCallbacks {
+        numberListeners?: ((receivedNumber: number) => void)[];
+        valueListeners?: ((name: string, value: number) => void)[];
+        stringListeners?: ((value: string) => void)[];
+        bufferListeners?: ((msg: Buffer) => void)[];
     }
 
-    /**
-     * Registers code to run when the radio receives a packet. Also takes the
-     * received packet from the radio queue.
-     */
-    //% help=radio/on-data-packet-received blockHandlerKey="radioreceived" deprecated=true
-    //% mutate=objectdestructuring
-    //% mutateText=Packet
-    //% mutateDefaults="receivedNumber;receivedString:name,receivedNumber:value;receivedString"
-    //% blockId=radio_on_packet block="on radio received" blockGap=8
-    export function onDataPacketReceived(cb: (packet: Packet) => void) {
+    let transmittingSerial: boolean;
+    let listeners: RadioCallbacks;
+
+    export let lastPacket: RadioPacket;
+
+    function init() {
+        if (listeners) return;
+        listeners = {};
+
         onDataReceived(() => {
-            receiveNumber();
-            const packet = new Packet();
-            packet.receivedNumber = receivedNumber();
-            packet.time = receivedTime();
-            packet.serial = receivedSerial();
-            packet.receivedString = receivedString();
-            packet.receivedBuffer = receivedBuffer();
-            packet.signal = receivedSignalStrength();
-            lastPacket = packet;
-            cb(packet)
-        });
+            lastPacket = RadioPacket.getPacket(takePacket());
+            lastPacket.signal = receivedSignalStrength();
+
+            switch (lastPacket.packetType) {
+                case PACKET_TYPE_NUMBER:
+                case PACKET_TYPE_DOUBLE:
+                    if (listeners.numberListeners) listeners.numberListeners.forEach(cb =>
+                        cb(lastPacket.numberPayload));
+                    break;
+                case PACKET_TYPE_VALUE:
+                case PACKET_TYPE_DOUBLE_VALUE:
+                    if (listeners.valueListeners) listeners.valueListeners.forEach(cb =>
+                        cb(lastPacket.stringPayload, lastPacket.numberPayload));
+                    break;
+                case PACKET_TYPE_BUFFER:
+                    if (listeners.bufferListeners) listeners.bufferListeners.forEach(cb =>
+                        cb(lastPacket.bufferPayload));
+                    break;
+                case PACKET_TYPE_STRING:
+                    if (listeners.bufferListeners) listeners.stringListeners.forEach(cb =>
+                        cb(lastPacket.stringPayload));
+                    break;
+            }
+        })
     }
 
     /**
@@ -79,16 +93,9 @@ namespace radio {
     //% blockId=radio_on_number_drag block="on radio received" blockGap=16
     //% useLoc="radio.onDataPacketReceived" draggableParameters=reporter
     export function onReceivedNumber(cb: (receivedNumber: number) => void) {
-        onDataReceived(() => {
-            receiveNumber();
-            const packet = new Packet();
-            packet.time = receivedTime();
-            packet.serial = receivedSerial();
-            packet.signal = receivedSignalStrength();
-            packet.receivedNumber = receivedNumber();
-            lastPacket = packet;
-            cb(packet.receivedNumber);
-        });
+        init();
+        if (!listeners.numberListeners) listeners.numberListeners = [];
+        listeners.numberListeners.push(cb);
     }
 
     /**
@@ -98,17 +105,9 @@ namespace radio {
     //% blockId=radio_on_value_drag block="on radio received" blockGap=16
     //% useLoc="radio.onDataPacketReceived" draggableParameters=reporter
     export function onReceivedValue(cb: (name: string, value: number) => void) {
-        onDataReceived(() => {
-            receiveNumber();
-            const packet = new Packet();
-            packet.time = receivedTime();
-            packet.serial = receivedSerial();
-            packet.signal = receivedSignalStrength();
-            packet.receivedNumber = receivedNumber();
-            packet.receivedString = receivedString();
-            lastPacket = packet;
-            cb(packet.receivedString, packet.receivedNumber)
-        });
+        init();
+        if (!listeners.valueListeners) listeners.valueListeners = [];
+        listeners.valueListeners.push(cb);
     }
 
     /**
@@ -118,16 +117,9 @@ namespace radio {
     //% blockId=radio_on_string_drag block="on radio received" blockGap=16
     //% useLoc="radio.onDataPacketReceived" draggableParameters=reporter
     export function onReceivedString(cb: (receivedString: string) => void) {
-        onDataReceived(() => {
-            receiveNumber();
-            const packet = new Packet();
-            packet.time = receivedTime();
-            packet.serial = receivedSerial();
-            packet.signal = receivedSignalStrength();
-            packet.receivedString = receivedString();
-            lastPacket = packet;
-            cb(packet.receivedString);
-        });
+        init();
+        if (!listeners.stringListeners) listeners.stringListeners = [];
+        listeners.stringListeners.push(cb);
     }
 
     /**
@@ -137,63 +129,11 @@ namespace radio {
     //% blockId=radio_on_buffer_drag block="on radio received" blockGap=16
     //% useLoc="radio.onDataPacketReceived" draggableParameters=reporter
     export function onReceivedBuffer(cb: (receivedBuffer: Buffer) => void) {
-        onDataReceived(() => {
-            receiveNumber();
-            const packet = new Packet();
-            packet.time = receivedTime();
-            packet.serial = receivedSerial();
-            packet.signal = receivedSignalStrength();
-            packet.receivedBuffer = receivedBuffer();
-            lastPacket = packet;
-            cb(packet.receivedBuffer)
-        });
+        init();
+        if (!listeners.bufferListeners) listeners.bufferListeners = [];
+        listeners.bufferListeners.push(cb);
     }
 
-    /**
-     * Registers code to run when the radio receives a number. Deprecated, use
-     * onReceivedNumber instead.
-     */
-    //% help=radio/on-received-number blockHandlerKey="radioreceived"
-    //% blockId=radio_on_number block="on radio received" blockGap=16
-    //% useLoc="radio.onDataPacketReceived" deprecated=1
-    export function onReceivedNumberDeprecated(cb: (receivedNumber: number) => void) {
-        onReceivedNumber(cb);
-    }
-
-    /**
-     * Registers code to run when the radio receives a key value pair. Deprecated, use
-     * onReceivedValue instead.
-     */
-    //% help=radio/on-received-value blockHandlerKey="radioreceived"
-    //% blockId=radio_on_value block="on radio received" blockGap=16
-    //% useLoc="radio.onDataPacketReceived" deprecated=1
-    export function onReceivedValueDeprecated(cb: (name: string, value: number) => void) {
-        onReceivedValue(cb);
-    }
-
-    /**
-     * Registers code to run when the radio receives a string. Deprecated, use
-     * onReceivedString instead.
-     */
-    //% help=radio/on-received-string blockHandlerKey="radioreceived"
-    //% blockId=radio_on_string block="on radio received" blockGap=16
-    //% useLoc="radio.onDataPacketReceived" deprecated=1
-    export function onReceivedStringDeprecated(cb: (receivedString: string) => void) {
-        onReceivedString(cb);
-    }
-
-    /**
-     * Registers code to run when the radio receives a buffer. Deprecated, use
-     * onReceivedBuffer instead.
-     */
-    //% help=radio/on-received-buffer blockHandlerKey="radioreceived" blockHidden=1
-    //% blockId=radio_on_buffer block="on radio received" blockGap=16
-    //% useLoc="radio.onDataPacketReceived" deprecated=1
-    export function onReceivedBufferDeprecated(cb: (receivedBuffer: Buffer) => void) {
-        onReceivedBuffer(cb);
-    }
-
-    let lastPacket: Packet;
     /**
      * Returns properties of the last radio packet received.
      * @param type the type of property to retrieve from the last packet
@@ -221,31 +161,6 @@ namespace radio {
     export function _packetProperty(type: RadioPacketProperty): number {
         return type;
     }
-}
-
-
-namespace newradio {
-    let transmittingSerial = false;
-
-    const MAX_FIELD_NAME_LENGTH = 12;
-    const MAX_FIELD_DOUBLE_NAME_LENGTH = 8;
-    const MAX_PAYLOAD_LENGTH = 20;
-    const PACKET_PREFIX_LENGTH = 9;
-    const VALUE_PACKET_NAME_LEN_OFFSET = 13;
-    const DOUBLE_VALUE_PACKET_NAME_LEN_OFFSET = 17;
-
-    // payload: number (9 ... 12)
-    const PACKET_TYPE_NUMBER = 0;
-    // payload: number (9 ... 12), name length (13), name (14 ... 26)
-    const PACKET_TYPE_VALUE = 1;
-    // payload: string length (9), string (10 ... 28)
-    const PACKET_TYPE_STRING = 2;
-    // payload: buffer length (9), buffer (10 ... 28)
-    const PACKET_TYPE_BUFFER = 3;
-    // payload: number (9 ... 16)
-    const PACKET_TYPE_DOUBLE = 4;
-    // payload: number (9 ... 16), name length (17), name (18 ... 26)
-    const PACKET_TYPE_DOUBLE_VALUE = 5;
 
     export class RadioPacket {
         public static getPacket(data: Buffer) {
@@ -259,8 +174,10 @@ namespace newradio {
         }
 
         private constructor(public readonly data?: Buffer) {
-            if (!data) this.data = control.createBuffer(28);
+            if (!data) this.data = control.createBuffer(32);
         }
+
+        public signal: number;
 
         get packetType() {
             return this.data[0];
@@ -290,10 +207,9 @@ namespace newradio {
         set stringPayload(val: string) {
             const offset = getStringOffset(this.packetType) as number;
             if (offset) {
-                const buf = control.createBufferFromUTF8(val);
-                const len = Math.min(buf.length, getMaxStringLength(this.packetType));
-                this.data[offset] = len;
-                this.data.write(offset + 1, buf.slice(0, len));
+                const buf = control.createBufferFromUTF8(truncateString(val, getMaxStringLength(this.packetType)));
+                this.data[offset] = buf.length;
+                this.data.write(offset + 1, buf);
             }
         }
 
@@ -415,20 +331,9 @@ namespace newradio {
     //% weight=57
     //% advanced=true
     export function sendBuffer(msg: Buffer) {
-        // TODO
-    }
-
-    /**
-    * Reads the next packet from the radio queue and and writes it to serial
-    * as JSON.
-    */
-    //% help=radio/write-value-to-serial
-    //% weight=3
-    //% blockId=radio_write_value_serial block="radio write value to serial"
-    //% deprecated=true
-    export function writeValueToSerial() {
-        const p = RadioPacket.getPacket(radio.takePacket());
-        writeToSerial(p);
+        const packet = RadioPacket.mkPacket(PACKET_TYPE_BUFFER);
+        packet.bufferPayload = msg;
+        sendPacket(packet);
     }
 
     /**
@@ -440,31 +345,7 @@ namespace newradio {
     //% blockId=radio_write_packet_serial block="radio write received packet to serial"
     //% advanced=true
     export function writeReceivedPacketToSerial() {
-        // TODO
-    }
-
-    /**
-     * Reads the next packet from the radio queue and returns the packet's number
-     * payload or 0 if the packet did not contain a number.
-     */
-    //% help=radio/receive-number
-    //% weight=46
-    //% blockId=radio_datagram_receive block="radio receive number" blockGap=8
-    //% deprecated=true
-    export function receiveNumber() {
-        // TODO
-    }
-
-    /**
-     * Reads the next packet from the radio queue and returns the packet's string
-     * payload or the empty string if the packet did not contain a string.
-     */
-    //% blockId=radio_datagram_receive_string block="radio receive string" blockGap=8
-    //% weight=44
-    //% help=radio/receive-string
-    //% deprecated=true
-    export function receiveString() {
-        // TODO
+        if (lastPacket) writeToSerial(lastPacket)
     }
 
     /**
@@ -479,64 +360,7 @@ namespace newradio {
         transmittingSerial = transmit;
     }
 
-    /**
-     * Returns the number payload from the last packet taken from the radio queue
-     * (via ``receiveNumber``, ``receiveString``, etc) or 0 if that packet did not
-     * contain a number.
-     */
-    //% help=radio/received-number
-    export function receivedNumber() {
-        // TODO
-    }
-
-    /**
-     * Returns the serial number of the sender micro:bit from the last packet taken
-     * from the radio queue (via ``receiveNumber``, ``receiveString``, etc) or 0 if
-     * that packet did not send a serial number.
-     */
-    //% help=radio/received-serial
-    export function receivedSerial() {
-        // TODO
-    }
-
-    /**
-     * Returns the string payload from the last packet taken from the radio queue
-     * (via ``receiveNumber``, ``receiveString``, etc) or the empty string if that
-     * packet did not contain a string.
-     */
-    //% help=radio/received-string
-    export function receivedString() {
-        // TODO
-    }
-
-    /**
-     * Returns the buffer payload from the last packet taken from the radio queue
-     * (via ``receiveNumber``, ``receiveString``, etc) or the empty string if that
-     * packet did not contain a string.
-     */
-    //% help=radio/received-buffer
-    export function receivedBuffer() {
-        // TODO
-    }
-
-    /**
-     * Returns the system time of the sender micro:bit at the moment when it sent the
-     * last packet taken from the radio queue (via ``receiveNumber``,
-     * ``receiveString``, etc).
-     */
-    //% help=radio/received-time
-    export function receivedTime() {
-        // TODO
-    }
-
-
-    function sendPacket(packet: RadioPacket) {
-        packet.time = input.runningTime();
-        packet.serial = transmittingSerial ? control.deviceSerialNumber() : 0;
-        radio.sendRawPacket(packet.data);
-    }
-
-    function writeToSerial(packet: RadioPacket) {
+    export function writeToSerial(packet: RadioPacket) {
         serial.writeString("{");
         serial.writeString("\"t\":");
         serial.writeString("" + packet.time);
@@ -562,6 +386,24 @@ namespace newradio {
         serial.writeString("}\r\n");
     }
 
+    function sendPacket(packet: RadioPacket) {
+        packet.time = input.runningTime();
+        packet.serial = transmittingSerial ? control.deviceSerialNumber() : 0;
+        radio.sendRawPacket(packet.data);
+    }
+
+    function truncateString(str: string, bytes: number) {
+        str = str.substr(0, bytes);
+        let buff = control.createBufferFromUTF8(str);
+
+        while (buff.length > bytes) {
+            str = str.substr(0, str.length - 1);
+            buff = control.createBufferFromUTF8(str);
+        }
+
+        return str;
+    }
+
     function getStringOffset(packetType: number) {
         switch (packetType) {
             case PACKET_TYPE_STRING:
@@ -578,14 +420,12 @@ namespace newradio {
     function getMaxStringLength(packetType: number) {
         switch (packetType) {
             case PACKET_TYPE_STRING:
-                return MAX_PAYLOAD_LENGTH - 1;
+                return MAX_PAYLOAD_LENGTH - 2;
             case PACKET_TYPE_VALUE:
-                return MAX_FIELD_NAME_LENGTH;
             case PACKET_TYPE_DOUBLE_VALUE:
                 return MAX_FIELD_DOUBLE_NAME_LENGTH;
             default:
                 return undefined;
         }
     }
-
 }
