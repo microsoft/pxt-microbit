@@ -8,6 +8,14 @@ A _note_ is a tone that is recognized as part of music. A note has a name like '
 
 On your @boardname@, a note is played on the speaker by sending a signal to a it with a certain _frequency_ called [Hertz](http://wikipedia.org/Hertz). Frequency is how fast something vibrates during one second. If you ring a bell that was made to play an '**A**' note, the bell will vibrate at 440 Hertz (440 times per second). So, notes are just certain frequencies that have special names.
 
+## ~ hint
+
+Watch this video to see how speakers and headphones make sound when connected to your @boardname@.
+
+https://www.youtube.com/watch?v=cxfPNc4Wefo
+
+### ~
+
 In history, music came from tones that seemed nice to hear. The tones were played on wood, strings, metal, and skins. These tones were given names and they became what we know today as musical notes. Notes were named so we could write them down and remember how to play them again later.
 
 ## How are notes named?

@@ -46,6 +46,13 @@ Using the 2nd crocodile clip, connect the second end of the crocodile clip onto 
 
 You hacked your headphones!
 
+## Step 6
+
+Watch this video to see how speakers and headphones make sound when connected to your @boardname@.
+
+https://www.youtube.com/watch?v=cxfPNc4Wefo
+<br/>
+
 ## ~button /projects/hack-your-headphones/code
 
 NEXT: music of light
