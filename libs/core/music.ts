@@ -175,7 +175,13 @@ enum MusicEvent {
 //% color=#E63022 weight=106 icon="\uf025"
 namespace music {
     let beatsPerMinute: number = 120;
-    let freqTable: number[] = [];
+     //% whenUsed
+     const freqs = hex`
+        1f00210023002500270029002c002e003100340037003a003e004100450049004e00520057005c00620068006e00
+        75007b0083008b0093009c00a500af00b900c400d000dc00e900f70006011501260137014a015d01720188019f01
+        b801d201ee010b022a024b026e029302ba02e40210033f037003a403dc03170455049704dd0427057505c8052006
+        7d06e0064907b8072d08a9082d09b9094d0aea0a900b400cfa0cc00d910e6f0f5a1053115b1272139a14d4152017
+        8018f519801b231dde1e`;
     let _playTone: (frequency: number, duration: number) => void;
     const MICROBIT_MELODY_ID = 2000;
 
@@ -233,7 +239,6 @@ namespace music {
 
     function init() {
         if (beatsPerMinute <= 0) beatsPerMinute = 120;
-        if (freqTable.length == 0) freqTable = [31, 33, 35, 37, 39, 41, 44, 46, 49, 52, 55, 58, 62, 65, 69, 73, 78, 82, 87, 92, 98, 104, 110, 117, 123, 131, 139, 147, 156, 165, 175, 185, 196, 208, 220, 233, 247, 262, 277, 294, 311, 330, 349, 370, 392, 415, 440, 466, 494, 523, 554, 587, 622, 659, 698, 740, 784, 831, 880, 932, 988, 1047, 1109, 1175, 1245, 1319, 1397, 1480, 1568, 1661, 1760, 1865, 1976, 2093, 2217, 2349, 2489, 2637, 2794, 2960, 3136, 3322, 3520, 3729, 3951, 4186]
     }
 
     /**
@@ -244,14 +249,14 @@ namespace music {
     export function beat(fraction?: BeatFraction): number {
         init();
         if (fraction == null) fraction = BeatFraction.Whole;
-        let beat = 60000 / beatsPerMinute;
+        let beat = Math.idiv(60000, beatsPerMinute);
         switch (fraction) {
-            case BeatFraction.Half: return beat / 2;
-            case BeatFraction.Quarter: return beat / 4;
-            case BeatFraction.Eighth: return beat / 8;
-            case BeatFraction.Sixteenth: return beat / 16;
-            case BeatFraction.Double: return beat * 2;
-            case BeatFraction.Breve: return beat * 4;
+            case BeatFraction.Half: return beat >> 1;
+            case BeatFraction.Quarter: return beat >> 2;
+            case BeatFraction.Eighth: return beat >> 3;
+            case BeatFraction.Sixteenth: return beat >> 4;
+            case BeatFraction.Double: return beat << 1;
+            case BeatFraction.Breve: return beat << 2;
             default: return beat;
         }
     }
@@ -413,12 +418,12 @@ namespace music {
         if (!parsingOctave) {
             currentDuration = parseInt(currNote.substr(beatPos + 1, currNote.length - beatPos));
         }
-        let beat = (60000 / beatsPerMinute) / 4;
+        let beat = Math.idiv(60000, beatsPerMinute) >> 2;
         if (isrest) {
             music.rest(currentDuration * beat)
         } else {
             let keyNumber = note + (12 * (currentOctave - 1));
-            let frequency = keyNumber >= 0 && keyNumber < freqTable.length ? freqTable[keyNumber] : 0;
+            let frequency = freqs.getNumber(NumberFormat.UInt16LE, keyNumber * 2) || 0;
             music.playTone(frequency, currentDuration * beat);
         }
         melody.currentDuration = currentDuration;
