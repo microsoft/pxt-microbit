@@ -60,7 +60,7 @@ namespace radio {
         listeners = {};
 
         onDataReceived(() => {
-            lastPacket = RadioPacket.getPacket(_takePacket());
+            lastPacket = RadioPacket.getPacket(readRawPacket());
             lastPacket.signal = receivedSignalStrength();
 
             switch (lastPacket.packetType) {
@@ -389,7 +389,7 @@ namespace radio {
     function sendPacket(packet: RadioPacket) {
         packet.time = input.runningTime();
         packet.serial = transmittingSerial ? control.deviceSerialNumber() : 0;
-        radio._sendRawPacket(packet.data);
+        radio.sendRawPacket(packet.data);
     }
 
     function truncateString(str: string, bytes: number) {

@@ -54,9 +54,6 @@ function initSender() {
     rand.reset();
     basic.clearScreen();
 
-    // %ed%90%b5%ed%b8%9a%e6%bc%8d%e8%8e%86%e4%87%83%e9%93%a1
-    // %ED%90%B5%EF%BF%BD%E6%BC%8D%E8%8E%86%E4%87%83%E9%93%A1
-
     // Send loop
     control.inBackground(function () {
         while (true) {

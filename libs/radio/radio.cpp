@@ -39,23 +39,19 @@ namespace radio {
      * Takes the next packet from the radio queue and returns its contents in a Buffer
      */
     //% help=radio/received-packet
-    Buffer _takePacket() {
+    Buffer readRawPacket() {
         if (radioEnable() != MICROBIT_OK) return mkBuffer(NULL, 0);
         packet = uBit.radio.datagram.recv();
-        return mkBuffer(packet.getBytes(), 32);
+        return mkBuffer(packet.getBytes(), packet.length());
     }
 
     /**
      * Sends a raw packet through the radio
      */
     //% advanced=true
-    void _sendRawPacket(Buffer msg) {
+    void sendRawPacket(Buffer msg) {
         if (radioEnable() != MICROBIT_OK || NULL == msg) return;
-
-        uint8_t buf[msg->length];
-        memcpy(buf, msg->data, msg->length);
-
-        uBit.radio.datagram.send(buf, msg->length);
+        uBit.radio.datagram.send(msg->data, msg->length);
     }
 
     /**
@@ -68,7 +64,7 @@ namespace radio {
     void onDataReceived(Action body) {
         if (radioEnable() != MICROBIT_OK) return;
         registerWithDal(MICROBIT_ID_RADIO, MICROBIT_RADIO_EVT_DATAGRAM, body);
-        _takePacket();
+        readRawPacket();
     }
 
     /**

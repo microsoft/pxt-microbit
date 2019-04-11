@@ -18,14 +18,14 @@ declare namespace radio {
     /**
      * Takes the next packet from the radio queue and returns its contents in a Buffer
      */
-    //% help=radio/received-packet shim=radio::_takePacket
-    function _takePacket(): Buffer;
+    //% help=radio/received-packet shim=radio::readRawPacket
+    function readRawPacket(): Buffer;
 
     /**
      * Sends a raw packet through the radio
      */
-    //% advanced=true shim=radio::_sendRawPacket
-    function _sendRawPacket(msg: Buffer): void;
+    //% advanced=true shim=radio::sendRawPacket
+    function sendRawPacket(msg: Buffer): void;
 
     /**
      * Registers code to run when a packet is received over radio.
