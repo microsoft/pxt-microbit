@@ -89,7 +89,7 @@ namespace radio {
     /**
      * Registers code to run when the radio receives a number.
      */
-    //% help=radio/on-received-number blockHandlerKey="radioreceived"
+    //% help=radio/on-received-number
     //% blockId=radio_on_number_drag block="on radio received" blockGap=16
     //% useLoc="radio.onDataPacketReceived" draggableParameters=reporter
     export function onReceivedNumber(cb: (receivedNumber: number) => void) {
@@ -101,7 +101,7 @@ namespace radio {
     /**
      * Registers code to run when the radio receives a key value pair.
      */
-    //% help=radio/on-received-value blockHandlerKey="radioreceived"
+    //% help=radio/on-received-value
     //% blockId=radio_on_value_drag block="on radio received" blockGap=16
     //% useLoc="radio.onDataPacketReceived" draggableParameters=reporter
     export function onReceivedValue(cb: (name: string, value: number) => void) {
@@ -113,7 +113,7 @@ namespace radio {
     /**
      * Registers code to run when the radio receives a string.
      */
-    //% help=radio/on-received-string blockHandlerKey="radioreceived"
+    //% help=radio/on-received-string
     //% blockId=radio_on_string_drag block="on radio received" blockGap=16
     //% useLoc="radio.onDataPacketReceived" draggableParameters=reporter
     export function onReceivedString(cb: (receivedString: string) => void) {
@@ -125,7 +125,7 @@ namespace radio {
     /**
      * Registers code to run when the radio receives a buffer.
      */
-    //% help=radio/on-received-buffer blockHandlerKey="radioreceived" blockHidden=1
+    //% help=radio/on-received-buffer blockHidden=1
     //% blockId=radio_on_buffer_drag block="on radio received" blockGap=16
     //% useLoc="radio.onDataPacketReceived" draggableParameters=reporter
     export function onReceivedBuffer(cb: (receivedBuffer: Buffer) => void) {
