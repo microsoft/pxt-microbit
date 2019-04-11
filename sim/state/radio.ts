@@ -108,7 +108,7 @@ namespace pxsim.radio {
         board().radioState.setTransmitPower(power);
     }
 
-    export function sendRawPacket(buf: RefBuffer) {
+    export function _sendRawPacket(buf: RefBuffer) {
         board().radioState.datagram.send({
             type: 0,
             groupId: board().radioState.groupId,
@@ -116,7 +116,7 @@ namespace pxsim.radio {
         });
     }
 
-    export function takePacket() {
+    export function _takePacket() {
         const packet = board().radioState.datagram.recv();
         return new RefBuffer(packet.payload.bufferData)
     }
@@ -127,6 +127,6 @@ namespace pxsim.radio {
 
     export function onDataReceived(handler: RefAction): void {
         pxtcore.registerWithDal(DAL.MICROBIT_ID_RADIO, DAL.MICROBIT_RADIO_EVT_DATAGRAM, handler);
-        takePacket();
+        _takePacket();
     }
 }

@@ -39,7 +39,7 @@ namespace radio {
      * Takes the next packet from the radio queue and returns its contents in a Buffer
      */
     //% help=radio/received-packet
-    Buffer takePacket() {
+    Buffer _takePacket() {
         if (radioEnable() != MICROBIT_OK) return mkBuffer(NULL, 0);
         packet = uBit.radio.datagram.recv();
         return mkBuffer(packet.getBytes(), 32);
@@ -49,7 +49,7 @@ namespace radio {
      * Sends a raw packet through the radio
      */
     //% advanced=true
-    void sendRawPacket(Buffer msg) {
+    void _sendRawPacket(Buffer msg) {
         if (radioEnable() != MICROBIT_OK || NULL == msg) return;
 
         uint8_t buf[msg->length];
@@ -68,7 +68,7 @@ namespace radio {
     void onDataReceived(Action body) {
         if (radioEnable() != MICROBIT_OK) return;
         registerWithDal(MICROBIT_ID_RADIO, MICROBIT_RADIO_EVT_DATAGRAM, body);
-        takePacket();
+        _takePacket();
     }
 
     /**

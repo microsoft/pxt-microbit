@@ -106,7 +106,7 @@ namespace radio {
     //% blockId=radio_write_value_serial block="radio write value to serial"
     //% deprecated=true
     export function writeValueToSerial() {
-        const p = RadioPacket.getPacket(radio.takePacket());
+        const p = RadioPacket.getPacket(radio._takePacket());
         writeToSerial(p);
     }
 
@@ -169,7 +169,7 @@ namespace radio {
     //% blockId=radio_datagram_receive block="radio receive number" blockGap=8
     //% deprecated=true
     export function receiveNumber(): number {
-        lastPacket = RadioPacket.getPacket(takePacket());
+        lastPacket = RadioPacket.getPacket(_takePacket());
         return receivedNumber();
     }
 
@@ -182,7 +182,7 @@ namespace radio {
     //% help=radio/receive-string
     //% deprecated=true
     export function receiveString(): string {
-        lastPacket = RadioPacket.getPacket(takePacket());
+        lastPacket = RadioPacket.getPacket(_takePacket());
         return receivedString();
     }
 }
