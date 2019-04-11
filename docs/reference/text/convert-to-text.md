@@ -1,6 +1,6 @@
 # convert to text
 
-Change a [number](/types/number) or a [boolean](/types/boolean) value into a text [string](/types/string).
+Change the value of any [type](/types) into a text [string](/types/string).
 
 ```sig
 convertToText(123)
@@ -8,7 +8,7 @@ convertToText(123)
 
 ## Parameters
 
-* **value**: a [number](/types/number) or [boolean](/types/boolean) value to convert to a [string](/types/string).
+* **value**: a value of some [type](/types) to convert to a [string](/types/string).
 
 ## Returns
 
