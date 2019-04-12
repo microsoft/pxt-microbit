@@ -16,7 +16,11 @@ enum RadioPacketProperty {
  */
 //% color=#E3008C weight=96 icon="\uf012"
 namespace radio {
-    const MAX_FIELD_NAME_LENGTH = 12;
+    export const MAKECODE_RADIO_EVT_NUMBER = 10;
+    export const MAKECODE_RADIO_EVT_STRING = 11;
+    export const MAKECODE_RADIO_EVT_BUFFER = 12;
+    export const MAKECODE_RADIO_EVT_VALUE = 13;
+
     const MAX_FIELD_DOUBLE_NAME_LENGTH = 8;
     const MAX_PAYLOAD_LENGTH = 20;
     const PACKET_PREFIX_LENGTH = 9;
@@ -43,21 +47,14 @@ namespace radio {
     // payload: number (9 ... 16), name length (17), name (18 ... 26)
     const PACKET_TYPE_DOUBLE_VALUE = 5;
 
-    interface RadioCallbacks {
-        numberListeners?: ((receivedNumber: number) => void)[];
-        valueListeners?: ((name: string, value: number) => void)[];
-        stringListeners?: ((value: string) => void)[];
-        bufferListeners?: ((msg: Buffer) => void)[];
-    }
-
     let transmittingSerial: boolean;
-    let listeners: RadioCallbacks;
+    let initialized = false;
 
     export let lastPacket: RadioPacket;
 
     function init() {
-        if (listeners) return;
-        listeners = {};
+        if (initialized) return;
+        initialized = true;
 
         onDataReceived(() => {
             lastPacket = RadioPacket.getPacket(readRawPacket());
@@ -66,21 +63,17 @@ namespace radio {
             switch (lastPacket.packetType) {
                 case PACKET_TYPE_NUMBER:
                 case PACKET_TYPE_DOUBLE:
-                    if (listeners.numberListeners) listeners.numberListeners.forEach(cb =>
-                        cb(lastPacket.numberPayload));
+                    control.raiseEvent(DAL.MICROBIT_ID_RADIO, MAKECODE_RADIO_EVT_NUMBER);
                     break;
                 case PACKET_TYPE_VALUE:
                 case PACKET_TYPE_DOUBLE_VALUE:
-                    if (listeners.valueListeners) listeners.valueListeners.forEach(cb =>
-                        cb(lastPacket.stringPayload, lastPacket.numberPayload));
+                    control.raiseEvent(DAL.MICROBIT_ID_RADIO, MAKECODE_RADIO_EVT_VALUE);
                     break;
                 case PACKET_TYPE_BUFFER:
-                    if (listeners.bufferListeners) listeners.bufferListeners.forEach(cb =>
-                        cb(lastPacket.bufferPayload));
+                    control.raiseEvent(DAL.MICROBIT_ID_RADIO, MAKECODE_RADIO_EVT_BUFFER);
                     break;
                 case PACKET_TYPE_STRING:
-                    if (listeners.bufferListeners) listeners.stringListeners.forEach(cb =>
-                        cb(lastPacket.stringPayload));
+                    control.raiseEvent(DAL.MICROBIT_ID_RADIO, MAKECODE_RADIO_EVT_STRING);
                     break;
             }
         })
@@ -94,8 +87,9 @@ namespace radio {
     //% useLoc="radio.onDataPacketReceived" draggableParameters=reporter
     export function onReceivedNumber(cb: (receivedNumber: number) => void) {
         init();
-        if (!listeners.numberListeners) listeners.numberListeners = [];
-        listeners.numberListeners.push(cb);
+        control.onEvent(DAL.MICROBIT_ID_RADIO, MAKECODE_RADIO_EVT_NUMBER, () => {
+            cb(lastPacket.numberPayload);
+        });
     }
 
     /**
@@ -106,8 +100,9 @@ namespace radio {
     //% useLoc="radio.onDataPacketReceived" draggableParameters=reporter
     export function onReceivedValue(cb: (name: string, value: number) => void) {
         init();
-        if (!listeners.valueListeners) listeners.valueListeners = [];
-        listeners.valueListeners.push(cb);
+        control.onEvent(DAL.MICROBIT_ID_RADIO, MAKECODE_RADIO_EVT_VALUE, () => {
+            cb(lastPacket.stringPayload, lastPacket.numberPayload);
+        });
     }
 
     /**
@@ -118,8 +113,9 @@ namespace radio {
     //% useLoc="radio.onDataPacketReceived" draggableParameters=reporter
     export function onReceivedString(cb: (receivedString: string) => void) {
         init();
-        if (!listeners.stringListeners) listeners.stringListeners = [];
-        listeners.stringListeners.push(cb);
+        control.onEvent(DAL.MICROBIT_ID_RADIO, MAKECODE_RADIO_EVT_STRING, () => {
+            cb(lastPacket.stringPayload);
+        });
     }
 
     /**
@@ -130,8 +126,9 @@ namespace radio {
     //% useLoc="radio.onDataPacketReceived" draggableParameters=reporter
     export function onReceivedBuffer(cb: (receivedBuffer: Buffer) => void) {
         init();
-        if (!listeners.bufferListeners) listeners.bufferListeners = [];
-        listeners.bufferListeners.push(cb);
+        control.onEvent(DAL.MICROBIT_ID_RADIO, MAKECODE_RADIO_EVT_BUFFER, () => {
+            cb(lastPacket.bufferPayload);
+        });
     }
 
     /**
