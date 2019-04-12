@@ -909,8 +909,13 @@ path.sim-board {
                 }
 
                 const bbox = this.element.getBoundingClientRect();
-                const ax = (ev.clientX - bbox.width / 2) / (bbox.width / 3);
-                const ay = (ev.clientY - bbox.height / 2) / (bbox.height / 3);
+
+                // ev.clientX and ev.clientY are not defined on mobile iOS
+                const xPos = ev.clientX != null ? ev.clientX : ev.pageX;
+                const yPos = ev.clientY != null ? ev.clientY : ev.pageY;
+
+                const ax = (xPos - bbox.width / 2) / (bbox.width / 3);
+                const ay = (yPos - bbox.height / 2) / (bbox.height / 3);
 
                 const x = - Math.max(- 1023, Math.min(1023, Math.floor(ax * 1023)));
                 const y = - Math.max(- 1023, Math.min(1023, Math.floor(ay * 1023)));

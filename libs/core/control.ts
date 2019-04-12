@@ -55,12 +55,12 @@ namespace control {
 }
 
 /**
- * Convert any value to a string
- * @param value value to be converted to a string
+ * Convert any value to text
+ * @param value value to be converted to text
  */
-//% help=text/to-string weight=1
-//% block="convert $value=variables_get(myValue) to string"
-//% blockId=variable_to_string blockNamespace="text"
-function toString(value: any): string {
+//% help=text/convert-to-text weight=1
+//% block="convert $value=math_number to text"
+//% blockId=variable_to_text blockNamespace="text"
+function convertToText(value: any): string {
     return "" + value;
 }

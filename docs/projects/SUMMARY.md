@@ -89,3 +89,5 @@
   * [Temperature Sensor](https://youtu.be/_T4N8O9xsMA)
   * [Pin Pressed](https://youtu.be/GEpZrvbsO7o)
   * [Radio](https://youtu.be/Re3H2ISfQE8)
+  * [Servo Motor](https://youtu.be/okxooamdAP4)
+  * [Speakers](https://youtu.be/cxfPNc4Wefo)

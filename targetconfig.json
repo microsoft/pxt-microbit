@@ -118,9 +118,9 @@
             "KitronikLtd/pxt-kitronik-zip-tile",
             "lwchkg/pxt-proportional-font",
             "jcubuntu/pxt-iKB1",
-            "KitronikLtd/pxt-kitronik-accessbit"
-
-
+            "KitronikLtd/pxt-kitronik-accessbit",
+            "kaku111/pxt-tobbieII",
+            "alankrantas/pxt-DHT11_DHT22"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",

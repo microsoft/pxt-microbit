@@ -258,30 +258,30 @@ namespace pxsim {
         updateGesture() {
             // Determine what it looks like we're doing based on the latest sample...
             let g = this.instantaneousPosture();
-            this.setGesture(g);
-        }
 
-        private setGesture(g: number) {
             // Perform some low pass filtering to reduce jitter from any detected effects
-            if (g == this.currentGesture) {
-                if (this.sigma < DAL.MICROBIT_ACCELEROMETER_GESTURE_DAMPING)
-                    this.sigma++;
-            }
-            else {
+            if (g != this.currentGesture) {
                 this.currentGesture = g;
                 this.sigma = 0;
+            } else if (this.sigma < DAL.MICROBIT_ACCELEROMETER_GESTURE_DAMPING) {
+                ++this.sigma;
             }
 
-            // If we've reached threshold, update our record and raise the relevant event...
-            if (this.currentGesture != this.lastGesture && this.sigma >= DAL.MICROBIT_ACCELEROMETER_GESTURE_DAMPING) {
+            if (this.sigma >= DAL.MICROBIT_ACCELEROMETER_GESTURE_DAMPING) {
+                this.enqueueCurrentGesture();
+            }
+        }
+
+        forceGesture(gesture: number) {
+            this.currentGesture = gesture;
+            this.enqueueCurrentGesture();
+        }
+
+        private enqueueCurrentGesture() {
+            if (this.currentGesture != this.lastGesture) {
                 this.lastGesture = this.currentGesture;
                 board().bus.queue(DAL.MICROBIT_ID_GESTURE, this.lastGesture);
             }
-        }
-
-        forceGesture(g: number) {
-            this.sigma = DAL.MICROBIT_ACCELEROMETER_GESTURE_DAMPING + 1;
-            this.setGesture(g);
         }
 
         /**
