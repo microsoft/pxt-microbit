@@ -69,7 +69,7 @@ As a result, it will not convert back to blocks.
 
 ### ~
 
-https://makecode.microbit.org/_gymCJCWPbiDu
+https://makecode.microbit.org/_5dfL87Wa11so
 
 ## JavaScript code
 
@@ -250,6 +250,10 @@ function gameFace() {
     }
 }
 
+function numberFromField(receivedString: string): number {
+    return parseInt(receivedString.substr(4, receivedString.length - 4));
+}
+
 // master button controller
 input.onButtonPressed(Button.AB, () => {
     // register as master
@@ -313,23 +317,22 @@ radio.onDataPacketReceived(({ time, receivedNumber, receivedString, signal, seri
             health = HealthState.Incubating;
             serial.writeLine(`infected ${control.deviceSerialNumber()}`);
         }
-        if (receivedString == "h" + control.deviceSerialNumber().toString() &&
-            health < receivedNumber) {
-            health = receivedNumber;
+        if (receivedString.substr(0, 4) == "heal" &&
+            receivedNumber == control.deviceSerialNumber() &&
+            health < numberFromField(receivedString)) {
+            health = numberFromField(receivedString);
         }
         switch (state) {
             case GameState.Pairing:
                 // medium range in pairing mode
                 if (!paired &&
-                    receivedString == "paired"
+                    receivedString.substr(0, 4) == "icon"
                     && receivedNumber == control.deviceSerialNumber()) {
                     // paired!
                     serial.writeLine(`player paired ==> ${control.deviceSerialNumber()}`)
+                    playerIcon = numberFromField(receivedString);
                     paired = true;
                     return;
-                }
-                else if (paired && receivedString == "i" + control.deviceSerialNumber().toString()) {
-                    playerIcon = receivedNumber;
                 }
                 break;
             case GameState.Running:
@@ -358,8 +361,7 @@ basic.forever(() => {
             case GameState.Pairing:
                 // tell each player they are registered
                 for (const p of players) {
-                    radio.sendValue("paired", p.id);
-                    radio.sendValue("i" + p.id, p.icon);
+                    radio.sendValue("icon" + p.icon, p.id);
                 }
                 serial.writeLine(`pairing ${players.length} players`);
                 basic.pause(500);
@@ -377,7 +379,7 @@ basic.forever(() => {
                 break;
             case GameState.Running:
                 for (const p of players) {
-                    radio.sendValue("h" + p.id, p.health);
+                    radio.sendValue("heal" + p.health, p.id);
                 }
                 break;
             case GameState.Over:
