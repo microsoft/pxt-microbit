@@ -510,7 +510,7 @@ basic.forever(() => {
     }
 })
 
-basic.showIcon(GameIcons.Pairing)  
+basic.showIcon(GameIcons.Pairing)
 ```
 
 ```package
