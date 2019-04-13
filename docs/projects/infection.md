@@ -147,52 +147,48 @@ const GameIcons = {
 
 class Message {
 
-    static decrypt(input: Buffer): Message {
-        if (input.length != 13) {
-            return null;
-        }
-        return new Message(input.getNumber(NumberFormat.Int8LE, 0),
-            input.getNumber(NumberFormat.Int32LE, 1),
-            input.getNumber(NumberFormat.Int32LE, 5),
-            input.getNumber(NumberFormat.Int32LE, 9));
+    private _data: Buffer;
+
+    constructor(input?: Buffer) {
+        this._data = input || control.createBuffer(13);
     }
 
-    private data: Buffer;
+    get kind(): number {
+        return this._data.getNumber(NumberFormat.Int8LE, 0);
+    }
 
-    constructor(kind: number, serialNumberFrom: number,
-        value?: number, serialNumberTo?: number) {
-        this.data = control.createBuffer(13);
-        // 1 byte for kind
-        this.data.setNumber(NumberFormat.Int8LE, 0, kind);
-        // 4 bytes for from
-        this.data.setNumber(NumberFormat.Int32LE, 1, serialNumberFrom);
-        // 4 bytes for value
-        this.data.setNumber(NumberFormat.Int32LE, 5, value);
-        // 4 bytes for to
-        this.data.setNumber(NumberFormat.Int32LE, 9, serialNumberTo);
+    set kind(x: number) {
+        this._data.setNumber(NumberFormat.Int8LE, 0, x);
+    }
+
+    get fromSerialNumber(): number {
+        return this._data.getNumber(NumberFormat.Int32LE, 1);
+    }
+
+    set fromSerialNumber(x: number) {
+        this._data.setNumber(NumberFormat.Int32LE, 1, x);
+    }
+
+    get value(): number {
+        return this._data.getNumber(NumberFormat.Int32LE, 5);
+    }
+
+    set value(x: number) {
+        this._data.setNumber(NumberFormat.Int32LE, 5, x);
+    }
+
+    get toSerialNumber(): number {
+        return this._data.getNumber(NumberFormat.Int32LE, 9);
+    }
+
+    set toSerialNumber(x: number) {
+        this._data.setNumber(NumberFormat.Int32LE, 9, x);
     }
 
     send() {
-        radio.sendBuffer(this.data);
-        basic.pause(250)
+        radio.sendBuffer(this._data);
+        basic.pause(250);
     }
-
-    get kind() {
-        return this.data.getNumber(NumberFormat.Int8LE, 0);
-    }
-
-    get fromSerialNumber() {
-        return this.data.getNumber(NumberFormat.Int32LE, 1);
-    }
-
-    get value() {
-        return this.data.getNumber(NumberFormat.Int32LE, 5);
-    }
-
-    get toSerialNumber() {
-        return this.data.getNumber(NumberFormat.Int32LE, 9);
-    }
-
 }
 
 const playerIcons = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -339,7 +335,7 @@ input.onButtonPressed(Button.AB, () => {
 
 radio.setGroup(42);
 radio.onReceivedBuffer(function (receivedBuffer: Buffer) {
-    const incomingMessage = Message.decrypt(receivedBuffer);
+    const incomingMessage = new Message(receivedBuffer);
     const signal = radio.receivedPacket(RadioPacketProperty.SignalStrength);
     if (master) {
         switch (incomingMessage.kind) {
@@ -423,10 +419,10 @@ basic.forever(() => {
             case GameState.Pairing:
                 // tell each player they are registered
                 for (const p of players) {
-                    message = new Message(MessageKind.PairConfirmation,
-                        control.deviceSerialNumber(),
-                        p.icon,
-                        p.id);
+                    message = new Message();
+                    message.kind = MessageKind.PairConfirmation;
+                    message.value = p.icon;
+                    message.toSerialNumber = p.id;
                     message.send();
                 }
                 serial.writeLine(`pairing ${players.length} players`);
@@ -434,10 +430,9 @@ basic.forever(() => {
                 break;
             case GameState.Infecting:
                 if (patientZero.health == HealthState.Healthy) {
-                    message = new Message(MessageKind.InitialInfect,
-                        control.deviceSerialNumber(),
-                        0,
-                        patientZero.id);
+                    message = new Message();
+                    message.kind = MessageKind.InitialInfect;
+                    message.toSerialNumber = patientZero.id;
                     message.send();
                     basic.pause(100);
                 } else {
@@ -449,10 +444,10 @@ basic.forever(() => {
                 break;
             case GameState.Running:
                 for (const p of players) {
-                    message = new Message(MessageKind.HealthSet,
-                        control.deviceSerialNumber(),
-                        p.health,
-                        p.id);
+                    message = new Message();
+                    message.kind = MessageKind.HealthSet;
+                    message.value = p.health;
+                    message.toSerialNumber = p.id;
                     message.send();
                 }
                 break;
@@ -461,29 +456,32 @@ basic.forever(() => {
                     patientZero.show();
                 break;
         }
-        message = new Message(MessageKind.GameState,
-            control.deviceSerialNumber(),
-            state);
+        message = new Message()
+        message.kind = MessageKind.GameState;
+        message.value = state;
         message.send();
     } else { // player loop
         switch (state) {
             case GameState.Pairing:
                 // broadcast player id
                 if (playerIcon < 0) {
-                    message = new Message(MessageKind.PairRequest,
-                        control.deviceSerialNumber())
+                    message = new Message();
+                    message.kind = MessageKind.PairRequest;
+                    message.fromSerialNumber = control.deviceSerialNumber();
                     message.send();
                 } else if (infectedBy > -1) {
-                    message = new Message(MessageKind.HealthValue,
-                        control.deviceSerialNumber(),
-                        health);
+                    message = new Message();
+                    message.kind = MessageKind.HealthValue;
+                    message.fromSerialNumber = control.deviceSerialNumber();
+                    message.value = health;
                     message.send();
                 }
                 break;
             case GameState.Infecting:
-                message = new Message(MessageKind.HealthValue,
-                    control.deviceSerialNumber(),
-                    health);
+                message = new Message();
+                message.kind = MessageKind.HealthValue;
+                message.fromSerialNumber = control.deviceSerialNumber();
+                message.value = health;
                 message.send();
                 break;
             case GameState.Running:
@@ -494,14 +492,16 @@ basic.forever(() => {
                     health = HealthState.Sick;
                 // transmit disease
                 if (health == HealthState.Incubating || health == HealthState.Sick) {
-                    message = new Message(MessageKind.TransmitVirus,
-                        control.deviceSerialNumber(),
-                        playerIcon);
+                    message = new Message();
+                    message.kind = MessageKind.TransmitVirus;
+                    message.fromSerialNumber = control.deviceSerialNumber();
+                    message.value = playerIcon;
                     message.send();
                 }
-                message = new Message(MessageKind.HealthValue,
-                    control.deviceSerialNumber(),
-                    health);
+                message = new Message();
+                message.kind = MessageKind.HealthValue;
+                message.fromSerialNumber = control.deviceSerialNumber();
+                message.value = health;
                 message.send();
                 break;
         }
