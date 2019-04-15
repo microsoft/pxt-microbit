@@ -1,93 +1,93 @@
-# Make
+# Maken
 
-## Materials
+## Materiaal
 
-* @boardname@, battery holder and 2 AAA batteries
-* Banana
-* Orange
-* 4 Crocodile clips
+* @boardname@, batterijhouder en 2 AAA batterijen
+* Banaan
+* Sinaasappel
+* 4 krokodilklemmen
 
-## Steps
+## Stappen
 
-### ``|Step 1|`` - Connect the ground lead
+### ``|Stap 1|`` - Aardkabel aansluiten
 
 ![](/static/mb/lessons/banana-keyboard-1.png)
 
-Using the **1st** crocodile clip, connect the end of the crocodile clip onto **GND** pin of the @boardname@.
+Pak de **1ste** krokodillenklem en sluit een kant aan op de **GND** aansluitpen van de @boardname@.
 
-### ``|Step 2|`` - Connect the sound lead
+### ``|Stap 2|`` - Geluidskabel aansluiten
 
 ![](/static/mb/lessons/banana-keyboard-2.png)
 
 ![](/static/mb/lessons/banana-keyboard-3.png)
 
-Using the **2nd** crocodile clip, connect the end of the crocodile clip onto pin **0** of the @boardname@.
+Pak de **2de** krokodilklem en sluit een kant aan op de **0** aansluitpen van de @boardname@.
 
-### ``|Step 3|`` - Connect the headphone to ground
+### ``|Stap 3|`` - Verbind de koptelefoon met aarde
 
 ![](/static/mb/lessons/banana-keyboard-4.png)
 
-Using the **1st** crocodile clip, connect the second end of the crocodile clip onto based of the headphone jack.
+Pak de **1ste** krokodilklem en sluit de nog niet gebruikte kant aan op de basis van de stekker van de koptelefoon.
 
-### ``|Step 4|`` - Connect the headphone sound contact
+### ``|Stap 4|`` - Sluit de koptelefoon aan
 
 ![](/static/mb/lessons/banana-keyboard-5.png)
 
 ![](/static/mb/lessons/banana-keyboard-6.png)
 
-Using the **2nd** crocodile clip, connect the second end of the crocodile clip onto tip of the headphone jack.
+Pak de **2de** krokodilklem en sluit de nog niet gebruikte kant aan op het uiteinde van de stekker van de koptelefoon.
 
-### ``|Step 5|`` - Connect a fruit lead
+### ``|Stap 5|`` - De sinaasappel aansluiten
 
 ![](/static/mb/lessons/banana-keyboard-7.png)
 
-Using the **3rd** crocodile clip, connect the end of the crocodile clip onto the **1st** crocodile clip already clipped onto **GND**.
+Pad de **3e** krokodilklem en sluit een kant aan op de **1ste** krokodillenklem, al aangesloten op **GND**.
 
-### ``|Step 6|`` - Connect the orange to ground
+### ``|Stap 6|`` - Verbind de sinaasappel
 
 ![](/static/mb/lessons/banana-keyboard-8.png)
 
 ![](/static/mb/lessons/banana-keyboard-9.png)
 
-Using the **3rd** crocodile clip, connect the unattached end of the crocodile clip onto the orange.
+Pak de **3e** krokodilklem en sluit de nog niet gebruikte kant aan op de sinaasappel.
 
-### ``|Step 7|`` - Connect a second fruit lead
+### ``|Stap 7|`` - De banaan aansluiten
 
 ![](/static/mb/lessons/banana-keyboard-10.png)
 
-Using the **4th** crocodile clip, connect the end of the crocodile clip onto pin **1** on the @boardname@.
+Pak de **4e** krokodilklem en sluit een kant aan op de **1** aansluitpen van de @boardname@.
 
-### ``|Step 8|`` - Connect the banana
+### ``|Stap 8|`` - Verbind de banaan
 
 ![](/static/mb/lessons/banana-keyboard-11.png)
 
-Using the **4th** crocodile clip, connect the unattached end of the crocodile clip onto the banana.
+Pak de **4e** krokodilklem en sluit de nog niet gebruikte kant aan op de banaan.
 
-### ``|Step 9|`` - Complete banana keyboard
+### ``|Stap 9|`` - Bananen toetsenbord gereed
 
 ![](/static/mb/lessons/banana-keyboard-12.png)
 
-Your banana keyboard is ready!
+Jouw bananen toetsenbord is klaar!
 
-### ``|Step 10|`` - Test the keyboard
+### ``|Stap 10|`` - Test het toetsenbord
 
-Connect your @boardname@ to your computer using your USB cable and run this script:
+Verbind jouw @boardname@ via een USB-kabel met de computer en voer dit script uit:
 ```blocks
 input.onPinPressed(TouchPin.P1, () => {
     music.playTone(music.noteFrequency(Note.C), music.beat(BeatFraction.Quarter));
 });
 ```
 
-#### ~hint
+#### ~tip
 
-How is touching a piece fruit detected by the @boardname@? Find out in this video:
+Wil je weten hoe het werkt? Bekijk deze video:
 
 https://www.youtube.com/watch?v=GEpZrvbsO7o
 
 #### ~
 
-Grab a the orange with one hand. With the fingers of your other hand, tap the banana to play sound. Your banana keyboard is ready!
+Pak de sinaasappel in een hand. Tik met de vingers van je andere hand op de banaan. Jouw bananen toetsenbord is klaar!
 
 ## ~button /projects/banana-keyboard/code
-NEXT: beat box
+VOLGENDE: beat box
 ## ~
