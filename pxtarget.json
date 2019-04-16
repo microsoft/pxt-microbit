@@ -293,7 +293,8 @@
             "bluetoothUartConsole",
             "bluetoothPartialFlashing",
             "simScreenshot",
-            "simGif"
+            "simGif",
+            "qrCode"
         ],
         "bluetoothUartFilters": [
             {
