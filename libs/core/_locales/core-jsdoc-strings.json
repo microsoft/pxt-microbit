@@ -248,6 +248,8 @@
   "control.runtimeWarning": "Display warning in the simulator.",
   "control.waitMicros": "Blocks the current fiber for the given microseconds",
   "control.waitMicros|param|micros": "number of micro-seconds to wait. eg: 4",
+  "convertToText": "Convert any value to text",
+  "convertToText|param|value": "value to be converted to text",
   "game": "A single-LED sprite game engine",
   "game.LedSprite": "A game sprite rendered as a single LED",
   "game.LedSprite.blink": "Reports the ``blink`` duration of a sprite",
@@ -549,7 +551,5 @@
   "serial.writeString": "Send a piece of text through the serial connection.",
   "serial.writeValue": "Write a name:value pair as a line to the serial port.",
   "serial.writeValue|param|name": "name of the value stream, eg: x",
-  "serial.writeValue|param|value": "to write",
-  "toString": "Convert any value to a string",
-  "toString|param|value": "value to be converted to a string"
+  "serial.writeValue|param|value": "to write"
 }
