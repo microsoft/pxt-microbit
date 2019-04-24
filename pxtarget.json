@@ -290,6 +290,7 @@
             "allowPackageExtensions",
             "instructions",
             "debugger",
+            "debugExtensionCode",
             "bluetoothUartConsole",
             "bluetoothPartialFlashing",
             "simScreenshot",
