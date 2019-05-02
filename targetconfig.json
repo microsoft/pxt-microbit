@@ -122,7 +122,8 @@
             "KitronikLtd/pxt-kitronik-accessbit",
             "kaku111/pxt-tobbieII",
             "alankrantas/pxt-DHT11_DHT22",
-            "cgs-matthew-pham/pxt-hitechnic-irseeker-v2"
+            "cgs-matthew-pham/pxt-hitechnic-irseeker-v2",
+            "letstalkscience/pxt-cozir"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",

@@ -221,6 +221,10 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
 
 ```codecard
 [{
+ "name": "Let's Talk Science COZIR sensor",
+  "url":"/pkg/letstalkscience/pxt-cozir",
+  "cardType": "package"
+}, {
   "name": "MAX6675",
   "url":"/pkg/microsoft/pxt-max6675",
   "cardType": "package"
