@@ -133,8 +133,7 @@
             "4tronix/BitBot",
             "kitronikltd/pxt-kitronik-servo-lite",
             "kitronikltd/pxt-kitronik-motor-driver",
-            "Tinkertanker/pxt-ringbitcar",
-            "Tinkertanker/pxt-iot-environment-kit"
+            "Tinkertanker/pxt-ringbitcar"
         ]
     },
     "languages": [
