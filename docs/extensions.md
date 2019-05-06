@@ -249,6 +249,10 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
   "url":"/pkg/Tinkertanker/pxt-rotary-encoder-ky040",
   "cardType": "package"
 }, {
+  "name": "Hitechnic IRSeeker",
+  "url":"/pkg/cgs-matthew-pham/pxt-hitechnic-irseeker-v2",
+  "cardType": "package"
+}, {
   "name": "GY521",
   "url":"/pkg/PaulDFoster/pxt-microbit-GY521",
   "cardType": "package"
