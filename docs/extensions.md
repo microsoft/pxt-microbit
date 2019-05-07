@@ -92,7 +92,7 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
   "url":"/pkg/1010Technologies/pxt-makerbit-motor",
   "cardType": "package"
 }, {
-  "name": "Prokit Tobbie II",
+  "name": "Tobbie II",
   "url":"/pkg/kaku111/pxt-tobbieII",
   "cardType": "package"
 }, {
