@@ -123,7 +123,9 @@
             "kaku111/pxt-tobbieII",
             "alankrantas/pxt-DHT11_DHT22",
             "cgs-matthew-pham/pxt-hitechnic-irseeker-v2",
-            "letstalkscience/pxt-cozir"
+            "letstalkscience/pxt-cozir",
+            "e-radionicacom/pxt-wifi",
+            "monkmakes/pxt-sensor"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",
@@ -134,8 +136,7 @@
             "4tronix/BitBot",
             "kitronikltd/pxt-kitronik-servo-lite",
             "kitronikltd/pxt-kitronik-motor-driver",
-            "Tinkertanker/pxt-ringbitcar",
-            "Tinkertanker/pxt-iot-environment-kit"
+            "Tinkertanker/pxt-ringbitcar"
         ]
     },
     "languages": [

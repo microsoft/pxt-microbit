@@ -281,6 +281,10 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
     "url":"/pkg/sparkfun/pxt-gator-temp",
     "cardType": "package"
 }, {
+    "name": "MonkMakes Sensor",
+    "url":"/pkg/monkmakes/pxt-sensor",
+    "cardType": "package"
+}, {
     "name": "ALS Robot Electromagnet",
     "url":"/pkg/alsrobot-microbit-makecode-packages/ALSRobotElectromagnet",
     "cardType": "package"
@@ -305,6 +309,10 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
 [{
   "name": "Pi Supply Lora Node",
   "url":"/pkg/PiSupply/pxt-iot-lora-node",
+  "cardType": "package"
+}, {
+  "name": "WiFi:Bit",
+  "url":"/pkg/e-radionicacom/pxt-wifi",
   "cardType": "package"
 }]
 ```
