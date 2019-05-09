@@ -96,12 +96,16 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
   "url":"/pkg/1010Technologies/pxt-makerbit-motor",
   "cardType": "package"
 }, {
-  "name": "Prokit Tobbie II",
+  "name": "Tobbie II",
   "url":"/pkg/kaku111/pxt-tobbieII",
   "cardType": "package"
 }, {
   "name": "Kitronik ACCESS:bit",
   "url":"/pkg/KitronikLtd/pxt-kitronik-accessbit",
+  "cardType": "package"
+}, {
+  "name": "TCEA Nexus:bit",
+  "url":"/pkg/alankrantas/pxt-Nexusbit",
   "cardType": "package"
 }]
 ```
@@ -225,6 +229,10 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
 
 ```codecard
 [{
+ "name": "Let's Talk Science COZIR sensor",
+  "url":"/pkg/letstalkscience/pxt-cozir",
+  "cardType": "package"
+}, {
   "name": "MAX6675",
   "url":"/pkg/microsoft/pxt-max6675",
   "cardType": "package"
@@ -253,6 +261,10 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
   "url":"/pkg/Tinkertanker/pxt-rotary-encoder-ky040",
   "cardType": "package"
 }, {
+  "name": "Hitechnic IRSeeker",
+  "url":"/pkg/cgs-matthew-pham/pxt-hitechnic-irseeker-v2",
+  "cardType": "package"
+}, {
   "name": "GY521",
   "url":"/pkg/PaulDFoster/pxt-microbit-GY521",
   "cardType": "package"
@@ -275,6 +287,10 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
 }, {
     "name": "gator:temp Temperature Sensor",
     "url":"/pkg/sparkfun/pxt-gator-temp",
+    "cardType": "package"
+}, {
+    "name": "MonkMakes Sensor",
+    "url":"/pkg/monkmakes/pxt-sensor",
     "cardType": "package"
 }, {
     "name": "ALS Robot Electromagnet",
@@ -301,6 +317,10 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
 [{
   "name": "Pi Supply Lora Node",
   "url":"/pkg/PiSupply/pxt-iot-lora-node",
+  "cardType": "package"
+}, {
+  "name": "WiFi:Bit",
+  "url":"/pkg/e-radionicacom/pxt-wifi",
   "cardType": "package"
 }]
 ```

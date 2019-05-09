@@ -1,6 +1,6 @@
 # micro:bit target for PXT
 
-[![Build Status](https://travis-ci.org/Microsoft/pxt-microbit.svg?branch=master)](https://travis-ci.org/Microsoft/pxt-microbit)
+[![Build Status](https://travis-ci.org/microsoft/pxt-microbit.svg?branch=master)](https://travis-ci.org/microsoft/pxt-microbit)
 
 pxt-microbit is a [Microsoft Programming Experience Toolkit (PXT)](https://github.com/Microsoft/pxt) target that allows you to program a [BBC micro:bit](https://microbit.org/). 
 * pxt-microbit ``v1.*`` requires pxt v4.x, which is currently in the [master branch of pxt](https://github.com/Microsoft/pxt/tree/master).
@@ -119,3 +119,7 @@ See the [MakeCode blog](https://makecode.com/blog).
 ## Code of Conduct
 
 This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
+
+## Trademarks
+
+MICROSOFT, the Microsoft Logo, and MAKECODE are registered trademarks of Microsoft Corporation. They can only be used for the purposes described in and in accordance with Microsoft’s Trademark and Brand guidelines published at https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks/usage/general.aspx. If the use is not covered in Microsoft’s published guidelines or you are not sure, please consult your legal counsel or MakeCode team (makecode@microsoft.com).
