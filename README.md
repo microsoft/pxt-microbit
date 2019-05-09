@@ -1,6 +1,6 @@
 # micro:bit target for PXT
 
-[![Build Status](https://travis-ci.org/Microsoft/pxt-microbit.svg?branch=master)](https://travis-ci.org/Microsoft/pxt-microbit)
+[![Build Status](https://travis-ci.org/microsoft/pxt-microbit.svg?branch=master)](https://travis-ci.org/microsoft/pxt-microbit)
 
 pxt-microbit is a [Microsoft Programming Experience Toolkit (PXT)](https://github.com/Microsoft/pxt) target that allows you to program a [BBC micro:bit](https://microbit.org/). 
 * pxt-microbit ``v1.*`` requires pxt v4.x, which is currently in the [master branch of pxt](https://github.com/Microsoft/pxt/tree/master).
