@@ -124,7 +124,8 @@
             "alankrantas/pxt-DHT11_DHT22",
             "cgs-matthew-pham/pxt-hitechnic-irseeker-v2",
             "e-radionicacom/pxt-wifi",
-            "monkmakes/pxt-sensor"
+            "monkmakes/pxt-sensor",
+            "alankrantas/pxt-Nexusbit"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",

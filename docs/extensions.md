@@ -99,6 +99,10 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
   "name": "Kitronik ACCESS:bit",
   "url":"/pkg/KitronikLtd/pxt-kitronik-accessbit",
   "cardType": "package"
+}, {
+  "name": "TCEA Nexus:bit",
+  "url":"/pkg/alankrantas/pxt-Nexusbit",
+  "cardType": "package"
 }]
 ```
 
