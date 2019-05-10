@@ -49,7 +49,7 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
   "cardType": "package"
 }, {
   "name": "Elecfreaks Cutebot",
-  "url":"/pkg/lionyhw/pxt-cutebot",
+  "url":"/pkg/elecfreaks/pxt-cutebot",
   "cardType": "package"
 }, {
   "name": "Kittenbot RobotBit",
