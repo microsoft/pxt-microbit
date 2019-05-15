@@ -407,7 +407,7 @@ namespace music {
                 case 'f': case 'F': note = 6; break;
                 case 'g': case 'G': note = 8; break;
                 case 'a': case 'A': note = 10; break;
-                case 'b': case 'B': note = 12; break;
+                case 'B': note = 12; break;
                 case 'r': case 'R': isrest = true; break;
                 case '#': note++; break;
                 case 'b': note--; break;
