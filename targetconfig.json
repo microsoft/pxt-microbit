@@ -128,7 +128,8 @@
             "e-radionicacom/pxt-wifi",
             "monkmakes/pxt-sensor",
             "alankrantas/pxt-Nexusbit",
-            "elecfreaks/pxt-cutebot"
+            "elecfreaks/pxt-cutebot",
+            "KitronikLtd/pxt-kitronik-fischertechnik"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",
