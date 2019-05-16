@@ -71,7 +71,7 @@ basic.forever(function () {
 
 The two ``||input:button is pressed||`` blocks are connected with an ``||logic:or||`` in the ``||logic:if then||`` conditional to make the check to see if one of the two buttons is currently pressed.
 
-Looking at the condition inside the ``if`` statement in JavaScript editor, we see that the two conditions are connected with the OR (``||``) operator which makes the condition `true` if either button is pressed. So, the conditons work in _parallel_.
+Looking at the condition inside the ``if`` statement in JavaScript editor, we see that the two conditions are connected with the OR (``||``) operator which makes the condition `true` if either button is pressed. So, the conditions work in _parallel_.
 
 ```typescript
 if (input.buttonIsPressed(Button.A) || input.buttonIsPressed(Button.B)) {

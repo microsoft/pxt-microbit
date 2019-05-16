@@ -24,7 +24,7 @@ Any of the individual course material items are also available as a separate dow
 
 * [Course overview guide](https://onedrive.live.com/view.aspx?cid=416406873cb120ab&page=view&resid=416406873CB120AB!525&parId=416406873CB120AB!520&authkey=!ALunv1kXkaA0RLg&app=Word)
 * [Curriculum overview](https://onedrive.live.com/?authkey=%21ALunv1kXkaA0RLg&cid=416406873CB120AB&id=416406873CB120AB%21524&parId=416406873CB120AB%21520&o=OneUp)
-* [Educator preperation video](https://onedrive.live.com/?authkey=%21ALunv1kXkaA0RLg&cid=416406873CB120AB&id=416406873CB120AB%21526&parId=416406873CB120AB%21520&o=OneUp)
+* [Educator preparation video](https://onedrive.live.com/?authkey=%21ALunv1kXkaA0RLg&cid=416406873CB120AB&id=416406873CB120AB%21526&parId=416406873CB120AB%21520&o=OneUp)
 
 ### [Standards and assessments](https://onedrive.live.com/?authkey=%21ALunv1kXkaA0RLg&id=416406873CB120AB%21521&cid=416406873CB120AB)
 
