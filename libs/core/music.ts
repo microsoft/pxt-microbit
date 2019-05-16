@@ -397,22 +397,23 @@ namespace music {
         let isrest: boolean = false;
         let beatPos: number;
         let parsingOctave: boolean = true;
+        let prevNote: boolean = false;
 
         for (let pos = 0; pos < currNote.length; pos++) {
             let noteChar = currNote.charAt(pos);
             switch (noteChar) {
-                case 'c': case 'C': note = 1; break;
-                case 'd': case 'D': note = 3; break;
-                case 'e': case 'E': note = 5; break;
-                case 'f': case 'F': note = 6; break;
-                case 'g': case 'G': note = 8; break;
-                case 'a': case 'A': note = 10; break;
-                case 'B': note = 12; break;
-                case 'r': case 'R': isrest = true; break;
-                case '#': note++; break;
-                case 'b': note--; break;
-                case ':': parsingOctave = false; beatPos = pos; break;
-                default: if (parsingOctave) currentOctave = parseInt(noteChar);
+                case 'c': case 'C': note = 1; prevNote = true; break;
+                case 'd': case 'D': note = 3; prevNote = true; break;
+                case 'e': case 'E': note = 5; prevNote = true; break;
+                case 'f': case 'F': note = 6; prevNote = true; break;
+                case 'g': case 'G': note = 8; prevNote = true; break;
+                case 'a': case 'A': note = 10; prevNote = true; break;
+                case 'B': note = 12; prevNote = true; break;
+                case 'r': case 'R': isrest = true; prevNote = false; break;
+                case '#': note++; prevNote = false; break;
+                case 'b': if (prevNote) note--; else { note = 12; prevNote = true; } break;
+                case ':': parsingOctave = false; beatPos = pos; prevNote = false; break;
+                default: prevNote = false; if (parsingOctave) currentOctave = parseInt(noteChar);
             }
         }
         if (!parsingOctave) {
