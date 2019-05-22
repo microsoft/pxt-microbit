@@ -129,7 +129,8 @@
             "monkmakes/pxt-sensor",
             "alankrantas/pxt-Nexusbit",
             "elecfreaks/pxt-cutebot",
-            "KitronikLtd/pxt-kitronik-fischertechnik"
+            "KitronikLtd/pxt-kitronik-fischertechnik",
+            "alankrantas/pxt-ESP8266_ThingSpeak"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",

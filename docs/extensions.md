@@ -330,6 +330,10 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
   "name": "WiFi:Bit",
   "url":"/pkg/e-radionicacom/pxt-wifi",
   "cardType": "package"
+}, {
+  "name": "ESP8266 and ThingSpeak",
+  "url":"/pkg/alankrantas/pxt-ESP8266_ThingSpeak",
+  "cardType": "package"
 }]
 ```
 
