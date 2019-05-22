@@ -417,5 +417,9 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
     "name": "Catalex Serial MP3 Player v1.0",
     "url": "/pkg/1010Technologies/pxt-makerbit-mp3",
     "cardType": "package"
+}, {
+    "name": "Keigan Motor",
+    "url": "/pkg/keigan-motor/pxt-KeiganMotor",
+    "cardType": "package"
 }]
 ```

@@ -129,7 +129,8 @@
             "monkmakes/pxt-sensor",
             "alankrantas/pxt-Nexusbit",
             "elecfreaks/pxt-cutebot",
-            "KitronikLtd/pxt-kitronik-fischertechnik"
+            "KitronikLtd/pxt-kitronik-fischertechnik",
+            "keigan-motor/pxt-KeiganMotor"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",
