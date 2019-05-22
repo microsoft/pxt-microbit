@@ -115,6 +115,10 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
   "name": "TCEA Nexus:bit",
   "url":"/pkg/alankrantas/pxt-Nexusbit",
   "cardType": "package"
+}, {
+  "name": "Kitronik Klip Motor",
+  "url":"/pkg/KitronikLtd/pxt-kitronik-klip-motor",
+  "cardType": "package"
 }]
 ```
 
