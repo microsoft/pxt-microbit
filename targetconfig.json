@@ -130,7 +130,7 @@
             "alankrantas/pxt-Nexusbit",
             "elecfreaks/pxt-cutebot",
             "KitronikLtd/pxt-kitronik-fischertechnik",
-            "keigan-motor/pxt-KeiganMotor"
+            "keigan-motor/pxt-KeiganMotor",
             "alankrantas/pxt-ESP8266_ThingSpeak"
         ],
         "preferredRepos": [
