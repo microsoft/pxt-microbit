@@ -131,6 +131,7 @@
             "elecfreaks/pxt-cutebot",
             "KitronikLtd/pxt-kitronik-fischertechnik",
             "keigan-motor/pxt-KeiganMotor",
+            "KitronikLtd/pxt-kitronik-klip-motor",
             "alankrantas/pxt-ESP8266_ThingSpeak"
         ],
         "preferredRepos": [
