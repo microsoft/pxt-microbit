@@ -131,6 +131,7 @@
             "elecfreaks/pxt-cutebot",
             "KitronikLtd/pxt-kitronik-fischertechnik",
             "keigan-motor/pxt-KeiganMotor"
+            "alankrantas/pxt-ESP8266_ThingSpeak"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",
