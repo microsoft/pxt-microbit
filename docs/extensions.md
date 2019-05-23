@@ -76,7 +76,7 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
   "url":"/pkg/4tronix/Robobit",
   "cardType": "package"
 }, {
-  "name": "Pi Supply Bit Buggy",
+  "name": "Pi Supply Bit:Buggy",
   "url":"/pkg/PiSupply/pxt-bitbuggy",
   "cardType": "package"
 }, {
@@ -234,6 +234,11 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
     "name": "MakerBit Pins",
     "url": "/pkg/1010Technologies/pxt-makerbit-pins",
     "cardType": "package"
+},
+{
+   "name": "Pi Supply tinker:kit",
+   "url": "/pkg/PiSupply/pxt-tinker-kit",
+   "cardType": "package"
 }]
 ```
 
@@ -333,6 +338,10 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
 }, {
   "name": "WiFi:Bit",
   "url":"/pkg/e-radionicacom/pxt-wifi",
+  "cardType": "package"
+}, {
+  "name": "ESP8266 and ThingSpeak",
+  "url":"/pkg/alankrantas/pxt-ESP8266_ThingSpeak",
   "cardType": "package"
 }]
 ```
