@@ -116,7 +116,7 @@ radio.onReceivedNumber(function (receivedNumber) {
 })
 ```
 
-Go to ``||variables:Variables||`` and get the ``||variables:receivedNumber||`` variable and put it in first slot of the ``||logic:0 = 0||``. Change the `0` in the second slot to `1`.
+Pull the ``||variables:receivedNumber||`` variable down from the ``||radio:radio on received receivedNumber||`` and put it in first slot of the ``||logic:0 = 0||``. Change the `0` in the second slot to `1`.
 
 
 ```blocks

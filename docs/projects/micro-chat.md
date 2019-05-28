@@ -28,8 +28,7 @@ radio.onReceivedString(function (receivedString) {
 
 ## Displaying text @fullscreen
 
-Add a ``||basic:show string||`` to display the string on the screen. You will find the ``receivedString`` variable
-under **Variables** in the toolbox.
+Add a ``||basic:show string||`` to display the string on the screen. Pull the ``||variables:receivedString||`` out of ``||radio:on received string||`` and put it into ``||basic:show string||``.
 
 ```blocks
 radio.onReceivedString(function (receivedString) {
