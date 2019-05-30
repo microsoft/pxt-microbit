@@ -2,7 +2,7 @@
 
 ## Setting up your project
 
-This project uses an **microturtle** Extension. You'll need to add it to your project to make it work.
+This project uses the **microturtle** Extension. You'll need to add it to your project to make it work.
 
 * create a new project
 * click on the gearwheel menu and click **Extensions**
