@@ -3,7 +3,7 @@
 Write a buffer to the [serial](/device/serial) port.
 
 ```sig
-serial.writeBuffer(pins.createBuffer(0));
+serial.writeBuffer(serial.readBuffer(64))
 ```
 
 You place your data characters into an existing buffer. All of the data, the length of the buffer, is written to the serial port.
