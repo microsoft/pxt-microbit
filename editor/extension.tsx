@@ -541,7 +541,8 @@ function uwpDeployCoreAsync(resp: pxtc.CompileResult, d: pxt.commands.DeployOpti
     return flashAsync(resp, d);
 }
 
-function deployCoreAsync(resp: pxtc.CompileResult, d: pxt.commands.DeployOptions = {}): Promise<void> {
+function deployAsync(resp: pxtc.CompileResult, d: pxt.commands.DeployOptions = {}): Promise<void> {
+    console.log("microbit deployAsync")
     return pxt.usb.isPairedAsync()
         .then(isPaired => {
             if (isPaired) {
@@ -847,9 +848,9 @@ pxt.editor.initExtensionsAsync = function (opts: pxt.editor.ExtensionOptions): P
 
     const isUwp = !!(window as any).Windows;
     if (isUwp)
-        pxt.commands.deployCoreAsync = uwpDeployCoreAsync;
+        pxt.commands.deployAsync.target = uwpDeployCoreAsync;
     else if (canHID() || pxt.webBluetooth.hasPartialFlash())
-        pxt.commands.deployCoreAsync = deployCoreAsync;
+        pxt.commands.deployAsync.target = deployAsync;
 
     res.blocklyPatch = patchBlocks;
     res.showUploadInstructionsAsync = showUploadInstructionsAsync;
