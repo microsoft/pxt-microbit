@@ -210,6 +210,8 @@ enum EventFlags {
     QueueIfBusy = MESSAGE_BUS_LISTENER_QUEUE_IF_BUSY,
     //%
     DropIfBusy = MESSAGE_BUS_LISTENER_DROP_IF_BUSY,
+    //%
+    Reentrant = MESSAGE_BUS_LISTENER_REENTRANT
 };
 
 //% weight=1 color="#333333"
