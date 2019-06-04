@@ -17,6 +17,10 @@ game.createSprite(2, 2);
 
 `0` and `4` mean the edges of the screen, and `2` means in the middle.
 
+## Returns
+
+* a new **LedSprite** at the location you say.
+
 ## ~ hint
 
 Once the game engine is started, it will render the sprites to the screen and potentially override any kind of animation you are trying to show.

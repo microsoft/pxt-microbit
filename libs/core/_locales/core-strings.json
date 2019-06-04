@@ -233,6 +233,7 @@
   "String.charAt|block": "char from %this=text|at %pos",
   "String.compare|block": "compare %this=text| to %that",
   "String.fromCharCode|block": "text from char code %code",
+  "String.isEmpty|block": "%this=text| is empty",
   "String.length|block": "length of %VALUE",
   "String.substr|block": "substring of %this=text|from %start|of length %length",
   "String|block": "String",
