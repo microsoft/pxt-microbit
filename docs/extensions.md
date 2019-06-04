@@ -434,5 +434,9 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
     "name": "Keigan Motor",
     "url": "/pkg/keigan-motor/pxt-KeiganMotor",
     "cardType": "package"
+}, {
+    "name": "Kitronik :VIEW text32",
+    "url": "/pkg/KitronikLtd/pxt-kitronik-viewtext32",
+    "cardType": "package"
 }]
 ```
