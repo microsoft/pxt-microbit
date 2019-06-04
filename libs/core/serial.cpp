@@ -39,9 +39,7 @@ enum BaudRate {
   //% block=2400
   BaudRate2400 = 2400,
   //% block=1200
-  BaudRate1200 = 1200,
-  //% block=300
-  BaudRate300 = 300
+  BaudRate1200 = 1200
 };
 
 enum Delimiters {
