@@ -4,14 +4,12 @@
 
 This project is an opportunity for students to create a micro:pet for the animal they designed to sense and respond to danger. 
 
-##The Problem
-Zoologists have just heard about a new animal species on a remote island. They
-have very little information about the animal, and they have not yet been able to
-determine how the animal senses and responds to danger. They do know that
-animals use specialized sense receptors to sense danger and different methods to
-respond to danger. One example of how animals respond to danger are squids squirt ink to disorient the predator. 
+## The Problem
+Zoologists have just discovered a new species! They
+have very little time to observe the animal, and they have not yet been able to
+determine how the animal hunts or senses and responds to danger. You just learned that animals use specialized sense receptors to sense danger and respond to danger. Can you think of an animal and its response? 
 
-##Your Challenge
+## Your Challenge
 
 Build a micro:pet that:
 * Has a way of sensing and responding to danger
@@ -23,12 +21,6 @@ Your design should use whatever materials are available to support the micro:bit
 
 Some photos of sample micro:pets below!
 
-## Ideas for Mods
-
-* Find a way to make part of the animal move.
-* Give your animal a natural habitat.
-* Create a way to carry your animal.
-* Create an animal that reacts when you pet it or move it (find a way to detect when the micro:bit is moved or when its position changes in a certain way.)
 
 ## Reflection
 * Describe a difficult point in the process of designing the micro:pet, and explain how you resolved it.
