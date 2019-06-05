@@ -88,6 +88,14 @@
                         "device_print_message.message": "text"
                     }
                 }
+            ],
+            "0.0.0 - 1.4.12": [
+                {
+                    "type": "api",
+                    "map": {
+                        "DisplayMode\\s*\\.\\s*BackAndWhite": "DisplayMode.BlackAndWhite"
+                    }
+                }
             ]
         },
         "hidSelectors": [
