@@ -12,7 +12,7 @@ led.plotBrightness(0, 0, 255)
 led.setBrightness(255);
 led.stopAnimation();
 led.plotBarGraph(0, 0);
-led.setDisplayMode(DisplayMode.BackAndWhite);
+led.setDisplayMode(DisplayMode.BlackAndWhite);
 led.enable(false)
 ```
 

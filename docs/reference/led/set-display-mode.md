@@ -18,7 +18,7 @@ to have some amount of brightness to represent the grey value of real color. The
 Set the display mode to `black and white`.
 
 ```blocks
-led.setDisplayMode(DisplayMode.BackAndWhite)
+led.setDisplayMode(DisplayMode.BlackAndWhite)
 ```
 
 ## See also
