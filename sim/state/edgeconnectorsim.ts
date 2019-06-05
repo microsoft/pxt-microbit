@@ -31,6 +31,7 @@ namespace pxsim {
 
         setPull(pull: number) {
             this.pull = pull;
+            this.value = pull > 0 ? 1023 : 0;
         }
 
         analogReadPin(): number {
