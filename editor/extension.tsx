@@ -848,7 +848,7 @@ pxt.editor.initExtensionsAsync = function (opts: pxt.editor.ExtensionOptions): P
     const isUwp = !!(window as any).Windows;
     if (isUwp)
         pxt.commands.deployCoreAsync = uwpDeployCoreAsync;
-    else if (canHID() || pxt.webBluetooth.hasPartialFlash())
+    else if ((canHID() || pxt.webBluetooth.hasPartialFlash()) && !pxt.BrowserUtils.isPxtElectron())
         pxt.commands.deployCoreAsync = deployCoreAsync;
 
     res.blocklyPatch = patchBlocks;
