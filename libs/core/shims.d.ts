@@ -411,8 +411,8 @@ declare namespace control {
      */
     //% weight=20 blockGap=8 blockId="control_on_event" block="on event|from %src=control_event_source_id|with value %value=control_event_value_id"
     //% help=control/on-event
-    //% blockExternalInputs=1 shim=control::onEvent
-    function onEvent(src: int32, value: int32, handler: () => void): void;
+    //% blockExternalInputs=1 flags.defl=0 shim=control::onEvent
+    function onEvent(src: int32, value: int32, handler: () => void, flags?: int32): void;
 
     /**
      * Gets the value of the last event executed on the bus

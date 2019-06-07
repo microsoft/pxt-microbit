@@ -400,6 +400,16 @@ declare namespace input {
     //% blockIdentity="control.eventValueId"
     MES_REMOTE_CONTROL_EVT_VOLUMEUP = 8,  // MES_REMOTE_CONTROL_EVT_VOLUMEUP
     }
+
+
+    declare const enum EventFlags {
+    //%
+    QueueIfBusy = 16,  // MESSAGE_BUS_LISTENER_QUEUE_IF_BUSY
+    //%
+    DropIfBusy = 32,  // MESSAGE_BUS_LISTENER_DROP_IF_BUSY
+    //%
+    Reentrant = 8,  // MESSAGE_BUS_LISTENER_REENTRANT
+    }
 declare namespace control {
 }
 
