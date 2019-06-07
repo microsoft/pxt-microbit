@@ -5,18 +5,16 @@ Find whether the sprite is touching another sprite you say.
 Sprites are touching if they share the same LED.
 
 ```sig
-let item: game.LedSprite = null;
-item.isTouching(null);
+game.createSprite(0, 2).isTouching(null);
 ```
 
 ## Parameters
 
-* a **sprite** you are checking
-* another **sprite** that might be touching the one you are checking
+* another **sprite** that might be touching the one you are checking.
 
 ## Returns
 
-`true` if the two sprites are touching.
+* `true` if the two sprites are touching.
 
 ## Example
 

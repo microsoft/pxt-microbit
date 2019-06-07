@@ -458,6 +458,7 @@
         "scriptManager": true,
         "simGifTransparent": "rgba(0,0,0,0)",
         "simGifMaxFrames": 44,
-        "simScreenshotMaxUriLength": 300000
+        "simScreenshotMaxUriLength": 300000,
+        "importExtensionFiles": true
     }
 }

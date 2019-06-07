@@ -1,21 +1,19 @@
-# change Sprite Property
+# change (Sprite Property)
 
 Change the kind of [number](/types/number) you say for a [sprite](/reference/game/create-sprite).
 
 ```sig
-let item: game.LedSprite = null;
-item.change(LedSpriteProperty.X, 0);
+game.createSprite(0,0).change(LedSpriteProperty.X, 0);
 ```
 
 ## Parameters
 
-* the **sprite** you want to change
-* the kind of [number](/types/number) you want to change for the sprite, like
-    * ``x``, how far up or down the sprite is on the screen (`0`-`4`)
-    * ``y``, how far left or right the sprite is on the screen (`0`-`4`)
-    * ``direction``, which way the sprite is pointing (this works the same way as the [turn](/reference/game/turn) function)
-    * ``brightness``, how bright the LED sprite is (this works the same way as the [brightness](/reference/led/brightness) function)
-    * ``blink``, how fast the sprite is blinking (the bigger the number is, the faster the sprite is blinking)
+* **property**: the property of the **Sprite** you want to change, like:
+>* ``x`` - how far up or down the sprite is on the screen (`0`-`4`)
+>* ``y`` - how far left or right the sprite is on the screen (`0`-`4`)
+>* ``direction`` - which way the sprite is pointing (this works the same way as the [turn](/reference/game/turn) function)
+>* ``brightness`` - how bright the LED sprite is (this works the same way as the [brightness](/reference/led/brightness) function)
+>* ``blink`` -  how fast the sprite is blinking (the bigger the number is, the faster the sprite is blinking)
 
 ## Example
 

@@ -233,7 +233,7 @@
         * [delete](/reference/game/delete)
         * [move](/reference/game/move)
         * [turn](/reference/game/turn)
-        * [in on edge bounce](/reference/game/if-on-edge-bounce)
+        * [if on edge bounce](/reference/game/if-on-edge-bounce)
         * [get](/reference/game/get)
         * [set](/reference/game/set)
         * [change](/reference/game/change)

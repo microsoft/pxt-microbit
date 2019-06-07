@@ -4,8 +4,7 @@ Make a [sprite](/reference/game/create-sprite) on the edge of the
 [LED screen](/device/screen) bounce away.
 
 ```sig
-let item = game.createSprite(0, 2);
-item.ifOnEdgeBounce();
+game.createSprite(0, 2).ifOnEdgeBounce();
 ```
 
 ## Parameters

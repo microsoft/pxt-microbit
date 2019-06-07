@@ -6,17 +6,16 @@ Sprites are touching the edge if they overlap with an LED on the edge
 of the screen.
 
 ```sig
-let item: game.LedSprite = null;
-item.isTouchingEdge();
+game.createSprite(0, 2).isTouchingEdge();
 ```
 
 ## Parameters
 
-* a **sprite** that might be touching the edge of the screen
+* a **sprite** that might be touching the edge of the screen.
 
 ## Returns
 
-`true` if the sprite is touching the edge of the screen
+* `true` if the sprite is touching the edge of the screen.
 
 ## Example
 
