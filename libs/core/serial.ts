@@ -8,7 +8,7 @@ namespace serial {
      * The string used to mark a new line, default is \r\n
      */
     export let NEW_LINE = "\r\n";
-    let newLinePadding = 32;
+    let writeLinePadding = 32;
 
     /**
      * Print a line of text to the serial port
@@ -23,8 +23,8 @@ namespace serial {
         serial.writeString(text);
         // pad data to the 32 byte boundary
         // to ensure apps receive the packet
-        if (newLinePadding > 0) {
-            let r = (newLinePadding - (text.length + NEW_LINE.length) % newLinePadding) % newLinePadding;
+        if (writeLinePadding > 0) {
+            let r = (writeLinePadding - (text.length + NEW_LINE.length) % writeLinePadding) % writeLinePadding;
             for (let i = 0; i < r; ++i)
                 serial.writeString(" ");
         }
@@ -32,17 +32,17 @@ namespace serial {
     }
 
     /**
-     * Sets the padding length for lines sent over serial.
+     * Sets the padding length for lines sent with "write line".
      * @param length the number of bytes alignment, eg: 0
      *
      */
     //% weight=1
-    //% help=serial/set-new-line-padding
-    //% blockId=serialSetNewLinePadding block="serial set new line padding to $length"
+    //% help=serial/set-write-line-padding
+    //% blockId=serialWriteNewLinePadding block="serial set write line padding to $length"
     //% advanced=true
     //% length.min=0 length.max=128
-    export function setNewLinePadding(length: number) {
-        newLinePadding = length | 0;
+    export function setWriteLinePadding(length: number) {
+        writeLinePadding = length | 0;
     }
 
     /**
