@@ -3,13 +3,12 @@
 Move the sprite the number of LEDs you say.
 
 ```sig
-let item: game.LedSprite = null;
-item.move(1);
+game.createSprite(0, 2).move(1);
 ```
 
 ## Parameters
 
-* a [number](/types/number) that means how many LEDs the sprite should move
+* **leds**: a [number](/types/number) that means how many LEDs the sprite should move.
 
 ## Example
 
