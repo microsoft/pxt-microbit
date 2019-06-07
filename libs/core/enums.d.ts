@@ -407,6 +407,8 @@ declare namespace control {
     declare const enum DisplayMode {
     //% block="black and white"
     BlackAndWhite = 0,  // DISPLAY_MODE_BLACK_AND_WHITE
+    //% blockHidden=true
+    BackAndWhite = 0,  // DISPLAY_MODE_BLACK_AND_WHITE
     //% block="greyscale"
     Greyscale = 1,  // DISPLAY_MODE_GREYSCALE
     // TODO DISPLAY_MODE_BLACK_AND_WHITE_LIGHT_SENSE
