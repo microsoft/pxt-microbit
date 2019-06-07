@@ -869,7 +869,7 @@ declare namespace serial {
      * Sets the size of the RX buffer in bytes
      * @param size length of the rx buffer in bytes, eg: 32
      */
-    //% help=reference/serial/set-rx-buffer-size
+    //% help=serial/set-rx-buffer-size
     //% blockId=serialSetRxBufferSize block="serial set rx buffer size to $size"
     //% advanced=true shim=serial::setRxBufferSize
     function setRxBufferSize(size: uint8): void;
@@ -878,7 +878,7 @@ declare namespace serial {
      * Sets the size of the TX buffer in bytes
      * @param size length of the tx buffer in bytes, eg: 32
      */
-    //% help=reference/serial/set-tx-buffer-size
+    //% help=serial/set-tx-buffer-size
     //% blockId=serialSetTxBufferSize block="serial set tx buffer size to $size"
     //% advanced=true shim=serial::setTxBufferSize
     function setTxBufferSize(size: uint8): void;
