@@ -371,10 +371,10 @@ namespace music {
     //% blockId=device_stop_melody block="stop melody $options"
     //% parts="headphone"
     export function stopMelody(options: MelodyStopOptions) {
-        if (options & MelodyStopOptions.Foreground)
-            beginMelody([], MelodyOptions.Once);
         if (options & MelodyStopOptions.Background)
             beginMelody([], MelodyOptions.OnceInBackground);
+        if (options & MelodyStopOptions.Foreground)
+            beginMelody([], MelodyOptions.Once);
     }
 
     /**
