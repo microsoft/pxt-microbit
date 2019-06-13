@@ -367,6 +367,7 @@
   "serial.redirect|block": "serial|redirect to|TX %tx|RX %rx|at baud rate %rate",
   "serial.setRxBufferSize|block": "serial set rx buffer size to $size",
   "serial.setTxBufferSize|block": "serial set tx buffer size to $size",
+  "serial.setWriteLinePadding|block": "serial set write line padding to $length",
   "serial.writeBuffer|block": "serial|write buffer %buffer=serial_readbuffer",
   "serial.writeLine|block": "serial|write line %text",
   "serial.writeNumbers|block": "serial|write numbers %values",
