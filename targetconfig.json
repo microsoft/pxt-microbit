@@ -101,7 +101,6 @@
             "makecode-extensions/TM1650",
             "makecode-extensions/NTC",
             "makecode-extensions/DS1302",
-            "makecode-extensions/LiBat",
             "BirdBrainTechnologies/pxt-hummingbird-bit",
             "PiSupply/pxt-iot-lora-node",
             "PiSupply/pxt-tinker-kit",
