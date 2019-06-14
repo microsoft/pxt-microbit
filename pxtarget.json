@@ -458,7 +458,8 @@
             "editor.background": "#ecf0f1"
         },
         "browserDbPrefixes": {
-            "1": "v1"
+            "1": "v1",
+            "2": "v2"
         },
         "editorVersionPaths": {
             "0": "v0"
