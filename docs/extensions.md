@@ -44,12 +44,16 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
   "url":"/pkg/ReRoKit/pxt-reromicro",
   "cardType": "package"
 }, {
+  "name": "PLEN bit",
+  "url":"/pkg/plenprojectcompany/pxt-PLENbit",
+  "cardType": "package"
+}, {
   "name": "UCL Junk Robot",
   "url":"/pkg/chevyng/pxt-ucl-junkrobot",
   "cardType": "package"
 }, {
   "name": "Elecfreaks Cutebot",
-  "url":"/pkg/lionyhw/pxt-cutebot",
+  "url":"/pkg/elecfreaks/pxt-cutebot",
   "cardType": "package"
 }, {
   "name": "Kittenbot RobotBit",
@@ -64,6 +68,10 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
   "url":"/pkg/k8robotics/pxt-k8",
   "cardType": "package"
 }, {
+  "name": "Freenove Micro:Rover",
+  "url":"/pkg/Freenove/Makecode-Extension-Rover",
+  "cardType": "package"
+}, {
   "name": "Gigglebot",
   "url":"/pkg/dexterind/pxt-giggle",
   "cardType": "package"
@@ -72,7 +80,7 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
   "url":"/pkg/4tronix/Robobit",
   "cardType": "package"
 }, {
-  "name": "Pi Supply Bit Buggy",
+  "name": "Pi Supply Bit:Buggy",
   "url":"/pkg/PiSupply/pxt-bitbuggy",
   "cardType": "package"
 }, {
@@ -104,8 +112,16 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
   "url":"/pkg/KitronikLtd/pxt-kitronik-accessbit",
   "cardType": "package"
 }, {
+  "name": "Kitronik Fischertechnik interface",
+  "url":"/pkg/KitronikLtd/pxt-kitronik-fischertechnik",
+  "cardType": "package"
+}, {
   "name": "TCEA Nexus:bit",
   "url":"/pkg/alankrantas/pxt-Nexusbit",
+  "cardType": "package"
+}, {
+  "name": "Kitronik Klip Motor",
+  "url":"/pkg/KitronikLtd/pxt-kitronik-klip-motor",
   "cardType": "package"
 }]
 ```
@@ -222,6 +238,11 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
     "name": "MakerBit Pins",
     "url": "/pkg/1010Technologies/pxt-makerbit-pins",
     "cardType": "package"
+},
+{
+   "name": "Pi Supply tinker:kit",
+   "url": "/pkg/PiSupply/pxt-tinker-kit",
+   "cardType": "package"
 }]
 ```
 
@@ -322,6 +343,10 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
   "name": "WiFi:Bit",
   "url":"/pkg/e-radionicacom/pxt-wifi",
   "cardType": "package"
+}, {
+  "name": "ESP8266 and ThingSpeak",
+  "url":"/pkg/alankrantas/pxt-ESP8266_ThingSpeak",
+  "cardType": "package"
 }]
 ```
 
@@ -408,6 +433,10 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
 }, {
     "name": "Catalex Serial MP3 Player v1.0",
     "url": "/pkg/1010Technologies/pxt-makerbit-mp3",
+    "cardType": "package"
+}, {
+    "name": "Keigan Motor",
+    "url": "/pkg/keigan-motor/pxt-KeiganMotor",
     "cardType": "package"
 }]
 ```

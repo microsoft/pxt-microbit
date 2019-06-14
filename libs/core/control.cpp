@@ -205,6 +205,15 @@ enum EventBusValue {
     MES_REMOTE_CONTROL_EVT_VOLUMEUP_ = MES_REMOTE_CONTROL_EVT_VOLUMEUP,
 };
 
+enum EventFlags {
+    //%
+    QueueIfBusy = MESSAGE_BUS_LISTENER_QUEUE_IF_BUSY,
+    //%
+    DropIfBusy = MESSAGE_BUS_LISTENER_DROP_IF_BUSY,
+    //%
+    Reentrant = MESSAGE_BUS_LISTENER_REENTRANT
+};
+
 //% weight=1 color="#333333"
 //% advanced=true
 namespace control {
@@ -261,8 +270,9 @@ namespace control {
     //% weight=20 blockGap=8 blockId="control_on_event" block="on event|from %src=control_event_source_id|with value %value=control_event_value_id"
     //% help=control/on-event
     //% blockExternalInputs=1
-    void onEvent(int src, int value, Action handler) {
-        registerWithDal(src, value, handler);
+    void onEvent(int src, int value, Action handler, int flags = 0) {
+        if (!flags) flags = EventFlags::QueueIfBusy;
+        registerWithDal(src, value, handler, (int)flags);
     }
 
     /**

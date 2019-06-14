@@ -123,11 +123,17 @@
             "kaku111/pxt-tobbieII",
             "alankrantas/pxt-DHT11_DHT22",
             "cgs-matthew-pham/pxt-hitechnic-irseeker-v2",
+            "Freenove/Makecode-Extension-Rover",
             "letstalkscience/pxt-cozir",
             "e-radionicacom/pxt-wifi",
             "monkmakes/pxt-sensor",
             "alankrantas/pxt-Nexusbit",
-            "lionyhw/pxt-cutebot"
+            "elecfreaks/pxt-cutebot",
+            "KitronikLtd/pxt-kitronik-fischertechnik",
+            "keigan-motor/pxt-KeiganMotor",
+            "KitronikLtd/pxt-kitronik-klip-motor",
+            "alankrantas/pxt-ESP8266_ThingSpeak",
+            "plenprojectcompany/pxt-PLENbit"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",

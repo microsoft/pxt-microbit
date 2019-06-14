@@ -8,6 +8,7 @@ namespace serial {
      * The string used to mark a new line, default is \r\n
      */
     export let NEW_LINE = "\r\n";
+    let writeLinePadding = 32;
 
     /**
      * Print a line of text to the serial port
@@ -19,13 +20,29 @@ namespace serial {
     //% text.shadowOptions.toString=true
     export function writeLine(text: string): void {
         if (!text) text = "";
+        serial.writeString(text);
         // pad data to the 32 byte boundary
         // to ensure apps receive the packet
-        let r = (32 - (text.length + 2) % 32) % 32;
-        serial.writeString(text);
-        for (let i = 0; i < r; ++i)
-            serial.writeString(" ");
+        if (writeLinePadding > 0) {
+            let r = (writeLinePadding - (text.length + NEW_LINE.length) % writeLinePadding) % writeLinePadding;
+            for (let i = 0; i < r; ++i)
+                serial.writeString(" ");
+        }
         serial.writeString(NEW_LINE);
+    }
+
+    /**
+     * Sets the padding length for lines sent with "write line".
+     * @param length the number of bytes alignment, eg: 0
+     *
+     */
+    //% weight=1
+    //% help=serial/set-write-line-padding
+    //% blockId=serialWriteNewLinePadding block="serial set write line padding to $length"
+    //% advanced=true
+    //% length.min=0 length.max=128
+    export function setWriteLinePadding(length: number) {
+        writeLinePadding = length | 0;
     }
 
     /**
@@ -46,7 +63,7 @@ namespace serial {
     //% blockId=serial_writenumbers block="serial|write numbers %values"
     export function writeNumbers(values: number[]): void {
         if (!values) return;
-        for(let i = 0; i < values.length; ++i) {
+        for (let i = 0; i < values.length; ++i) {
             if (i > 0) writeString(",");
             writeNumber(values[i]);
         }

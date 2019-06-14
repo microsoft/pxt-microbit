@@ -1,25 +1,23 @@
-# Get Sprite Property
+# get (Sprite Property)
 
 Find something out about a [sprite](/reference/game/create-sprite).
 
 ```sig
-let item: game.LedSprite = null;
-item.get(LedSpriteProperty.X);
+game.createSprite(0,0).get(LedSpriteProperty.X);
 ```
 
 ## Parameters
 
-* the **sprite** you want to know something about
-* the kind of [number](/types/number) you want to know about the sprite, like
-    * ``x``, how far up or down the sprite is on the screen (`0`-`4`)
-    * ``y``, how far left or right the sprite is on the screen (`0`-`4`)
-    * ``direction``, which way the sprite is pointing (this works the same way as the [turn](/reference/game/turn) function)
-    * ``brightness``, how bright the LED sprite is (this works the same way as the [brightness](/reference/led/brightness) function)
-    * ``blink``, how fast the sprite is blinking (the bigger the number is, the faster the sprite is blinking)
+* **property**: the property of the **Sprite** you want to know about, like:
+>* ``x`` - how far up or down the sprite is on the screen (`0`-`4`)
+>* ``y`` - how far left or right the sprite is on the screen (`0`-`4`)
+>* ``direction`` - which way the sprite is pointing (this works the same way as the [turn](/reference/game/turn) function)
+>* ``brightness`` - how bright the LED sprite is (this works the same way as the [brightness](/reference/led/brightness) function)
+>* ``blink`` - how fast the sprite is blinking (the bigger the number is, the faster the sprite is blinking)
 
 ## Returns
 
-The [number](/types/number) you asked for.
+* a [number](/types/number) value of the property you asked for.
 
 ## Example
 

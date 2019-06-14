@@ -3,10 +3,6 @@
 Run part of a program when the @boardname@ receives a
 [number](/types/number) or [string](/types/string) over radio.
 
-```sig
-radio.onDataPacketReceived(({receivedNumber, receivedString, time, serial, signal}) => { });
-```
-
 ## ~ hint
 
 **Deprecated**
@@ -33,39 +29,6 @@ To add or remove the parts of the packet from the block, try clicking the blue g
   * `time` - The system time of the @boardname@ that sent this packet at the time the packet was sent.
   * `serial` - The serial number of the @boardname@ that sent this packet or `0` if the @boardname@ did not include its serial number.
   * `signal` - How strong the radio signal is from `-128` (weak) to `-42` (strong).
-
-## Example
-
-This program keeps sending numbers that says how fast the @boardname@ is
-slowing down or speeding up.  It also receives numbers for the same
-thing from nearby @boardname@s. It shows these numbers as a
-[bar graph](/reference/led/plot-bar-graph).
-
-```blocks
-basic.forever(() => {
-    radio.sendNumber(input.acceleration(Dimension.X));
-})
-radio.onReceivedNumber(function (receivedNumber) {
-    led.plotBarGraph(receivedNumber, 1023);
-})
-```
-
-## Example
-
-This program uses the signal strength from received packets to graph the
-approximate distance between two @boardname@s.
-
-```blocks
-basic.forever(() => {
-    radio.sendNumber(0)
-})
-radio.onDataPacketReceived(({ signal, receivedNumber }) => {
-    led.plotBarGraph(
-        Math.abs(signal + 42),
-        128 - 42
-    )
-})
-```
 
 ## Troubleshooting
 

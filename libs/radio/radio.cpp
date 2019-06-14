@@ -86,7 +86,7 @@ namespace radio {
      * @param id the group id between ``0`` and ``255``, eg: 1
      */
     //% help=radio/set-group
-    //% weight=10 blockGap=8
+    //% weight=100
     //% blockId=radio_set_group block="radio set group %ID"
     //% id.min=0 id.max=255
     void setGroup(int id) {
