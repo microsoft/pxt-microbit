@@ -310,6 +310,22 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
     "url":"/pkg/sparkfun/pxt-gator-temp",
     "cardType": "package"
 }, {
+    "name": "gator:microphone Microphone",
+    "url":"/pkg/sparkfun/pxt-gator-microphone",
+    "cardType": "package"
+}, {
+    "name": "gator:soil Soil Sensor",
+    "url":"/pkg/sparkfun/pxt-gator-soil",
+    "cardType": "package"
+}, {
+    "name": "gator:temp Particle Sensor",
+    "url":"/pkg/sparkfun/pxt-gator-particle",
+    "cardType": "package"
+}, {
+    "name": "gator:temp Environment Sensor",
+    "url":"/pkg/sparkfun/pxt-gator-environment",
+    "cardType": "package"
+}, {
     "name": "MonkMakes Sensor",
     "url":"/pkg/monkmakes/pxt-sensor",
     "cardType": "package"

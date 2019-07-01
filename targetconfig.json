@@ -132,7 +132,12 @@
             "keigan-motor/pxt-KeiganMotor",
             "KitronikLtd/pxt-kitronik-klip-motor",
             "alankrantas/pxt-ESP8266_ThingSpeak",
-            "plenprojectcompany/pxt-PLENbit"
+            "plenprojectcompany/pxt-PLENbit",
+            "sparkfun/pxt-gator-particle",
+            "sparkfun/pxt-gator-environment",
+            "sparkfun/pxt-gator-soil",
+            "sparkfun/pxt-gator-microphone"
+
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",
