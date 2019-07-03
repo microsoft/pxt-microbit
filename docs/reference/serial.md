@@ -19,7 +19,7 @@ serial.onDataReceived(",", () => {})
 ```cards
 serial.redirect(SerialPin.P0, SerialPin.P0, BaudRate.BaudRate115200);
 serial.redirectToUSB();
-serial.writeBuffer(pins.createBuffer(0));
+serial.writeBuffer(serial.readBuffer(64));
 serial.readBuffer(64);
 serial.setRxBufferSize(64);
 serial.setTxBufferSize(64);

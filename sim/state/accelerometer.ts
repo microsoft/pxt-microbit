@@ -267,7 +267,7 @@ namespace pxsim {
                 ++this.sigma;
             }
 
-            if (this.sigma >= DAL.MICROBIT_ACCELEROMETER_GESTURE_DAMPING) {
+            if (this.currentGesture !== this.lastGesture && this.sigma >= DAL.MICROBIT_ACCELEROMETER_GESTURE_DAMPING) {
                 this.enqueueCurrentGesture();
             }
         }
@@ -278,10 +278,8 @@ namespace pxsim {
         }
 
         private enqueueCurrentGesture() {
-            if (this.currentGesture != this.lastGesture) {
-                this.lastGesture = this.currentGesture;
-                board().bus.queue(DAL.MICROBIT_ID_GESTURE, this.lastGesture);
-            }
+            this.lastGesture = this.currentGesture;
+            board().bus.queue(DAL.MICROBIT_ID_GESTURE, this.lastGesture);
         }
 
         /**

@@ -38,7 +38,7 @@ basic.forever(function () {
 
 ### Red light, green light
 
-Use the ``||radio:on button pressed||`` block to run code when button ``A`` and ``B`` are pressed.
+Use the ``||input:on button pressed||`` block to run code when button ``A`` and ``B`` are pressed.
 When ``A`` is pressed, the game goes into ``GREENLIGHT`` mode. When ``B`` is pressed, the game
 goes into ``REDLIGHT`` mode. We also use ``||basic:show icon||`` to display the current game state.
 

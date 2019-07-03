@@ -2,6 +2,8 @@
 
 enum class DisplayMode_ {
     //% block="black and white"
+    BlackAndWhite = DISPLAY_MODE_BLACK_AND_WHITE,
+    //% blockHidden=true
     BackAndWhite = DISPLAY_MODE_BLACK_AND_WHITE,
     //% block="greyscale"
     Greyscale = DISPLAY_MODE_GREYSCALE,

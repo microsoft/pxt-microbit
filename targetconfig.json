@@ -101,7 +101,6 @@
             "makecode-extensions/TM1650",
             "makecode-extensions/NTC",
             "makecode-extensions/DS1302",
-            "makecode-extensions/LiBat",
             "BirdBrainTechnologies/pxt-hummingbird-bit",
             "PiSupply/pxt-iot-lora-node",
             "PiSupply/pxt-tinker-kit",
@@ -134,6 +133,7 @@
             "KitronikLtd/pxt-kitronik-klip-motor",
             "alankrantas/pxt-ESP8266_ThingSpeak",
             "KitronikLtd/pxt-kitronik-viewtext32"
+            "plenprojectcompany/pxt-PLENbit"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",
@@ -189,6 +189,6 @@
         "Behind the MakeCode Hardware": "behind-the-makecode-hardware"
     },
     "electronManifest": {
-        "latest": "v1.2.13"
+        "latest": "v2.0.3"
     }
 }

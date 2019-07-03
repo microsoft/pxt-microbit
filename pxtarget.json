@@ -88,6 +88,14 @@
                         "device_print_message.message": "text"
                     }
                 }
+            ],
+            "0.0.0 - 1.4.12": [
+                {
+                    "type": "api",
+                    "map": {
+                        "DisplayMode\\s*\\.\\s*BackAndWhite": "DisplayMode.BlackAndWhite"
+                    }
+                }
             ]
         },
         "hidSelectors": [
@@ -450,7 +458,8 @@
             "editor.background": "#ecf0f1"
         },
         "browserDbPrefixes": {
-            "1": "v1"
+            "1": "v1",
+            "2": "v2"
         },
         "editorVersionPaths": {
             "0": "v0"
@@ -458,6 +467,7 @@
         "scriptManager": true,
         "simGifTransparent": "rgba(0,0,0,0)",
         "simGifMaxFrames": 44,
-        "simScreenshotMaxUriLength": 300000
+        "simScreenshotMaxUriLength": 300000,
+        "importExtensionFiles": true
     }
 }

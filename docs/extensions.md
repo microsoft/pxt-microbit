@@ -44,6 +44,10 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
   "url":"/pkg/ReRoKit/pxt-reromicro",
   "cardType": "package"
 }, {
+  "name": "PLEN bit",
+  "url":"/pkg/plenprojectcompany/pxt-PLENbit",
+  "cardType": "package"
+}, {
   "name": "UCL Junk Robot",
   "url":"/pkg/chevyng/pxt-ucl-junkrobot",
   "cardType": "package"

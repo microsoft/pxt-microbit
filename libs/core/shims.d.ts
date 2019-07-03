@@ -411,8 +411,8 @@ declare namespace control {
      */
     //% weight=20 blockGap=8 blockId="control_on_event" block="on event|from %src=control_event_source_id|with value %value=control_event_value_id"
     //% help=control/on-event
-    //% blockExternalInputs=1 shim=control::onEvent
-    function onEvent(src: int32, value: int32, handler: () => void): void;
+    //% blockExternalInputs=1 flags.defl=0 shim=control::onEvent
+    function onEvent(src: int32, value: int32, handler: () => void, flags?: int32): void;
 
     /**
      * Gets the value of the last event executed on the bus
@@ -869,14 +869,18 @@ declare namespace serial {
      * Sets the size of the RX buffer in bytes
      * @param size length of the rx buffer in bytes, eg: 32
      */
-    //% help=serial/set-rx-buffer-size shim=serial::setRxBufferSize
+    //% help=serial/set-rx-buffer-size
+    //% blockId=serialSetRxBufferSize block="serial set rx buffer size to $size"
+    //% advanced=true shim=serial::setRxBufferSize
     function setRxBufferSize(size: uint8): void;
 
     /**
      * Sets the size of the TX buffer in bytes
      * @param size length of the tx buffer in bytes, eg: 32
      */
-    //% help=serial/set-tx-buffer-size shim=serial::setTxBufferSize
+    //% help=serial/set-tx-buffer-size
+    //% blockId=serialSetTxBufferSize block="serial set tx buffer size to $size"
+    //% advanced=true shim=serial::setTxBufferSize
     function setTxBufferSize(size: uint8): void;
 }
 
@@ -884,6 +888,18 @@ declare namespace serial {
 
     //% indexerGet=BufferMethods::getByte indexerSet=BufferMethods::setByte
 declare interface Buffer {
+    /**
+     * Reads an unsigned byte at a particular location
+     */
+    //% shim=BufferMethods::getUint8
+    getUint8(off: int32): int32;
+
+    /**
+     * Writes an unsigned byte at a particular location
+     */
+    //% shim=BufferMethods::setUint8
+    setUint8(off: int32, v: int32): void;
+
     /**
      * Write a number in specified format in the buffer.
      */

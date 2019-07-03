@@ -9,7 +9,7 @@ Follow the [Bluetooth Pairing Guide](https://microbit.org/guide/mobile/) to pair
 If you need additional help in pairing your @boardname@ to another device, see these guides also:
 
 * [Pairing and Flashing](https://support.microbit.org/a/solutions/articles/19000051025)
-* [Paring Modes](https://support.microbit.org/a/solutions/articles/19000080745)
+* [Pairing Modes](https://support.microbit.org/a/solutions/articles/19000080745)
 * [Troubleshooting Guide](https://support.microbit.org/a/solutions/articles/19000069393)
 
 
