@@ -132,7 +132,8 @@
             "keigan-motor/pxt-KeiganMotor",
             "KitronikLtd/pxt-kitronik-klip-motor",
             "alankrantas/pxt-ESP8266_ThingSpeak",
-            "plenprojectcompany/pxt-PLENbit"
+            "plenprojectcompany/pxt-PLENbit",
+            "4tronix/MiniBit"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",
