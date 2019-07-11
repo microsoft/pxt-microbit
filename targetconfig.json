@@ -13,7 +13,6 @@
             "Microsoft/pxt-bluetooth-max6675",
             "Microsoft/pxt-filesystem",
             "Microsoft/pxt-ws2812b",
-            "microbit-foundation/mock-iot-api",
             "KitronikLtd/pxt-kitronik-servo-lite",
             "KitronikLtd/pxt-kitronik-motor-driver",
             "KitronikLtd/pxt-kitronik-I2C-16-servo",
