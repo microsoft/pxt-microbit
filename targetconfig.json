@@ -13,7 +13,6 @@
             "Microsoft/pxt-bluetooth-max6675",
             "Microsoft/pxt-filesystem",
             "Microsoft/pxt-ws2812b",
-            "microbit-foundation/mock-iot-api",
             "KitronikLtd/pxt-kitronik-servo-lite",
             "KitronikLtd/pxt-kitronik-motor-driver",
             "KitronikLtd/pxt-kitronik-I2C-16-servo",
@@ -132,8 +131,9 @@
             "keigan-motor/pxt-KeiganMotor",
             "KitronikLtd/pxt-kitronik-klip-motor",
             "alankrantas/pxt-ESP8266_ThingSpeak",
-            "KitronikLtd/pxt-kitronik-viewtext32"
-            "plenprojectcompany/pxt-PLENbit"
+            "KitronikLtd/pxt-kitronik-viewtext32",
+            "plenprojectcompany/pxt-PLENbit",
+            "4tronix/MiniBit"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",

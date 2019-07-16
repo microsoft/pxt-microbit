@@ -36,14 +36,14 @@ This example shows a number from 1 to 6 when you press the `B` button.
 
 ```blocks
 input.onButtonPressed(Button.B, () => {
-    let dice = Math.randomRange(0, 6) + 1
+    let dice = Math.randomRange(0, 5) + 1
     basic.showNumber(dice)
 })
 ```
 
 ## ~hint
 
-This program adds a `1` to `random(6)` so the numbers on the dice will come out right.
+This program adds a `1` to `random(5)` so the numbers on the dice will come out right.
 Otherwise, sometimes they would show a `0`.
 
 ## ~
