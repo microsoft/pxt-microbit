@@ -31,6 +31,11 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
   "name": "4tronix BitBot",
   "url":"/pkg/4tronix/BitBot",
   "cardType": "package"
+},
+{
+  "name": "4tronix MiniBit",
+  "url":"/pkg/4tronix/MiniBit",
+  "cardType": "package"
 }, {
   "name": "SRS BitBot",
   "url":"/pkg/srs/pxt-bitbot",

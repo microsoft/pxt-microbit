@@ -18,14 +18,18 @@ extern "C" void target_reset() {
     microbit_reset();
 }
 
+uint32_t device_heap_size(uint8_t heap_index); // defined in microbit-dal
+
 namespace pxt {
 
 MicroBit uBit;
 MicroBitEvent lastEvent;
 
 void platform_init() {
-    microbit_seed_random();
+    microbit_seed_random();    
     seedRandom(microbit_random(0x7fffffff));
+    if (device_heap_size(1))
+        gcPreAllocateBlock(device_heap_size(1) - 4);
 }
 
 void platform_init();
