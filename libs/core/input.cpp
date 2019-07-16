@@ -348,7 +348,7 @@ namespace input {
     //% parts="compass"
     //% advanced=true
     int magneticForce(Dimension dimension) {
-      if (!uBit.compass.isCalibrated())
+      if (dimension != Dimension::Strength && !uBit.compass.isCalibrated())
         uBit.compass.calibrate();
 
       switch (dimension) {
