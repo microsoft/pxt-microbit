@@ -133,6 +133,7 @@
             "alankrantas/pxt-ESP8266_ThingSpeak",
             "plenprojectcompany/pxt-PLENbit",
             "4tronix/MiniBit",
+            "elecfreaks/pxt-wukong",
             "sparkfun/pxt-gator-particle",
             "sparkfun/pxt-gator-environment",
             "sparkfun/pxt-gator-soil",
