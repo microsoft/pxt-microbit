@@ -63,6 +63,11 @@ Tutorials, lessons, and mini-courses about programming and computing.
   "description": "YouTube video tutorials produced by the SparkFun team!",
   "url": "https://youtu.be/kaNtg1HGXbY?list=PLBcrWxTa5CS0mWJrytvii8aG5KUqMXvSk",
   "imageUrl": "https://i.ytimg.com/vi/kaNtg1HGXbY/hqdefault.jpg"
+}, {
+  "name": "Logic Lab",
+  "description": "Learn the basics of logic and conditional expressions.",
+  "url":"/courses/logic-lab",
+  "imageUrl":"/static/courses/logic-lab.png"
 }]
 ```
 
