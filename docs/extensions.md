@@ -121,8 +121,8 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
   "url":"/pkg/KitronikLtd/pxt-kitronik-fischertechnik",
   "cardType": "package"
 }, {
-  "name": "TCEA Nexus:bit",
-  "url":"/pkg/alankrantas/pxt-Nexusbit",
+  "name": "TCEA Nexus:bit and Nexusbot",
+  "url":"/pkg/beyond-coding-tw/pxt-nexusbot",
   "cardType": "package"
 }, {
   "name": "Kitronik Klip Motor",
