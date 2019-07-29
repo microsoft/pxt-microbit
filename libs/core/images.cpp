@@ -1,6 +1,6 @@
 #include "pxt.h"
 
-PXT_VTABLE(RefMImage)
+PXT_VTABLE(RefMImage, ValType::Object)
 
 RefMImage::RefMImage(ImageData *d) : PXT_VTABLE_INIT(RefMImage), img(d) {
     img->incr();
