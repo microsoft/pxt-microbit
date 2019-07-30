@@ -50,6 +50,7 @@
             "sparkfun/pxt-gamer-bit",
             "sparkfun/pxt-moto-bit",
             "sparkfun/pxt-weather-bit",
+            "sparkfun/pxt-gator-environment",
             "minodekit/pxt-minode",
             "LaboratoryForPlayfulComputation/pxt-BlockyTalkyBLE",
             "mbitfun/pxt-katakana",
