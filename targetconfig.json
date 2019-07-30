@@ -135,7 +135,6 @@
             "4tronix/MiniBit",
             "elecfreaks/pxt-wukong",
             "sparkfun/pxt-gator-particle",
-            "sparkfun/pxt-gator-environment",
             "sparkfun/pxt-gator-soil",
             "sparkfun/pxt-gator-microphone"
         ],

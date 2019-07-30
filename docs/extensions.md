@@ -330,10 +330,6 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
     "url":"/pkg/sparkfun/pxt-gator-particle",
     "cardType": "package"
 }, {
-    "name": "gator:temp Environment Sensor",
-    "url":"/pkg/sparkfun/pxt-gator-environment",
-    "cardType": "package"
-}, {
     "name": "MonkMakes Sensor",
     "url":"/pkg/monkmakes/pxt-sensor",
     "cardType": "package"
