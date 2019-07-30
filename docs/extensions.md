@@ -337,6 +337,10 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
     "name": "I2C LCD 1602 Display",
     "url": "/pkg/1010Technologies/pxt-makerbit-ir-lcd1602",
     "cardType": "package"
+}, {
+    "name": "BMP280 Barrometer",
+    "url": "/pkg/rebeccaclavier/pxt-bmp280",
+    "cardType": "package"
 }]
 ```
 

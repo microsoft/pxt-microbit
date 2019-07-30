@@ -134,7 +134,8 @@
             "KitronikLtd/pxt-kitronik-viewtext32",
             "plenprojectcompany/pxt-PLENbit",
             "4tronix/MiniBit",
-            "elecfreaks/pxt-wukong"
+            "elecfreaks/pxt-wukong",
+            "rebeccaclavier/pxt-bmp280"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",
