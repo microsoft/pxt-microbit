@@ -16,13 +16,13 @@ Your @boardname@ may encounter a situation that prevents it from running your co
 
 ## Garbage collector errors
 
-* **840**: Allocation pointer is null or invalid
-* **841**: Garbage work queue error
-* **843**: VTable entry is not free
-* **844**: GC allocation failed for requested number of bytes
-* **846**: Invalid allocation thread
-* **848**: Allocation pointer beyond allocation header
-* **849**: Allocation pointer is null
+* **840**: Allocation pointer is null or invalid.
+* **841**: Garbage collection work queue error.
+* **843**: VTable entry is not free.
+* **844**: GC allocation failed for requested number of bytes.
+* **846**: Invalid allocation thread.
+* **848**: Allocation pointer beyond allocation header.
+* **849**: Allocation pointer is null.
 
 ```sim
 basic.showLeds(`
