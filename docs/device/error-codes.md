@@ -34,7 +34,7 @@ The @boardname@ system errors range between **01** - **99**. For a full list of 
 
 ## Memery errors
 
-Memory error codes range from **800** - **899**.
+Memory error codes range from **800** - **909**.
 
 ### ~alert
 
