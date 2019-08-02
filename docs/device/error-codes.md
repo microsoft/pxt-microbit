@@ -32,7 +32,7 @@ The @boardname@ system errors range between **01** - **99**. For a full list of 
 * **90** (`MICROBIT_HARDWARE_CONFIGURATION_ERROR`): actual board hardware doesn't match the configuration description
 * **98** (`MICROBIT_ASSERTION_FAILED`): assertion failed, the condition in an [assert](/reference/control/assert) was false
 
-## Memery errors
+## Memory errors
 
 Memory error codes range from **800** - **909**.
 
