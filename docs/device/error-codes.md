@@ -40,7 +40,7 @@ Memory error codes range from **800** - **909**.
 
 #### Report errors!
 
-If you ever see an error within the range of **800** - **899**, please report an issue at [GitHub](https://github.com/microsoft/pxt-microbit/issues) or on the [support](https://support.microbit.org/) page.
+If you ever see an error within the range of **800** - **909**, please report an issue at [GitHub](https://github.com/microsoft/pxt-microbit/issues) or on the [support](https://support.microbit.org/) page.
 
 ### ~
 
