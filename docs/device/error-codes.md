@@ -56,8 +56,6 @@ Error codes generated from the garbage collector.
 * **848**: Allocation pointer beyond allocation header
 * **849**: Allocation pointer is null
 
-## JavaScript runtime codes
-
 ### Program access errors
 
 * **901** (`PANIC_INVALID_BINARY_HEADER`): the type header for the object is not valid
@@ -68,6 +66,8 @@ Error codes generated from the garbage collector.
 * **906** (`PANIC_INTERNAL_ERROR`): an internal resource error
 * **907** (`PANIC_NO_SUCH_CONFIG`): the specified device resource is not present
 * **909** (`PANIC_INVALID_ARGUMENT`): the argument value is out of range or the type or format is invalid
+
+## JavaScript runtime codes
 
 ### Invalid cast codes
 
