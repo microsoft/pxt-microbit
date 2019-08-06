@@ -208,8 +208,8 @@ Our logic gate script is a bit different this time. To simplify forming the expr
 let A = false
 let B = false
 basic.forever(function () {
-    A = pins.digitalReadPin(DigitalPin.P0)
-    B = pins.digitalReadPin(DigitalPin.P1)
+    A = pins.digitalReadPin(DigitalPin.P0) > 0
+    B = pins.digitalReadPin(DigitalPin.P1) > 0
     if (!(A) && B || A && !(B)) {
         pins.digitalWritePin(DigitalPin.P2, 1)
         basic.showString("T")
