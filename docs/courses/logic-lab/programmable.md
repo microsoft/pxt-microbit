@@ -91,23 +91,23 @@ You can program your board to have multiple logic gates that operate on the two 
 The combined logic for our multiple gate PLD is programmed like this:
 
 ```blocks
-let A = 0
-let B = 0
+let A = false
+let B = false
 basic.forever(function () {
-    A = pins.digitalReadPin(DigitalPin.P0)
-    B = pins.digitalReadPin(DigitalPin.P1)
+    A = pins.digitalReadPin(DigitalPin.P0) > 0
+    B = pins.digitalReadPin(DigitalPin.P1) > 0
 
-    if (A > 0) {
+    if (A) {
         pins.digitalWritePin(DigitalPin.P2, 0)
     } else {
         pins.digitalWritePin(DigitalPin.P2, 1)
     }
-    if ((A > 0) || B > 0) {
+    if (A || B) {
         pins.digitalWritePin(DigitalPin.P3, 1)
     } else {
         pins.digitalWritePin(DigitalPin.P3, 0)
     }
-    if ((A > 0) && B > 0) {
+    if (A && B) {
         pins.digitalWritePin(DigitalPin.P4, 1)
     } else {
         pins.digitalWritePin(DigitalPin.P4, 0)
