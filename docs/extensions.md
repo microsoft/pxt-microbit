@@ -341,6 +341,10 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
     "name": "BMP280 Barrometer",
     "url": "/pkg/rebeccaclavier/pxt-bmp280",
     "cardType": "package"
+}, {
+    "name": "OLED 128x64",
+    "url": "/pkg/makecode-extensions/OLED12864_I2C_V2",
+    "cardType": "package"
 }]
 ```
 
