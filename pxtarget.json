@@ -15,15 +15,15 @@
     ],
     "cloud": {
         "workspace": false,
-        "packages": true,
-        "sharing": true,
-        "thumbnails": true,
-        "publishing": true,
-        "importing": true,
+        "packages": false,
+        "sharing": false,
+        "thumbnails": false,
+        "publishing": false,
+        "importing": false,
         "preferredPackages": [
             "Microsoft/pxt-neopixel"
         ],
-        "githubPackages": true
+        "githubPackages": false
     },
     "compile": {
         "isNative": false,
@@ -266,6 +266,7 @@
         "rawHID": true
     },
     "appTheme": {
+        "allowParentController": true,
         "accentColor": "#5C005C",
         "logoUrl": "https://microbit.org/code/",
         "logo": "./static/logo.portrait.white.svg",
@@ -274,17 +275,17 @@
         "footerLogo": "./static/logo.portrait.black.svg",
         "cardLogo": "./static/icons/apple-touch-icon.png",
         "appLogo": "./static/icons/apple-touch-icon.png",
-        "organization": "Microsoft MakeCode",
-        "organizationUrl": "https://makecode.com/",
-        "organizationLogo": "./static/Microsoft-logo_rgb_c-gray-square.png",
-        "organizationWideLogo": "./static/Microsoft-logo_rgb_c-white.png",
+        "organization": "Grok Learning",
+        "organizationUrl": "https://groklearning.com/",
+        "organizationLogo": "./static/logo-detail-white.svg",
+        "organizationWideLogo": "./static/logo-full-white.svg",
         "homeScreenHero": "./static/hero.png",
-        "homeUrl": "https://makecode.microbit.org/",
-        "embedUrl": "https://makecode.microbit.org/",
-        "shareUrl": "https://makecode.microbit.org/",
-        "privacyUrl": "https://makecode.com/privacy",
-        "termsOfUseUrl": "https://makecode.com/termsofuse",
-        "githubUrl": "https://github.com/Microsoft/pxt-microbit",
+        "homeUrl": "https://groklearning.com/",
+        "embedUrl": "https://groklearning.com/",
+        "shareUrl": "https://groklearning.com/",
+        "privacyUrl": "https://groklearning.com/policies/privacy/",
+        "termsOfUseUrl": "https://groklearning.com/policies/terms/",
+        "githubUrl": "https://github.com/groklearning/pxt-microbit-grok",
         "boardName": "micro:bit",
         "driveDisplayName": "MICROBIT",
         "appStoreID": "1092687276",
@@ -295,6 +296,7 @@
         "enableTrace": true,
         "ignoreDocsErrors": true,
         "experiments": [
+            "python",
             "allowPackageExtensions",
             "instructions",
             "debugger",

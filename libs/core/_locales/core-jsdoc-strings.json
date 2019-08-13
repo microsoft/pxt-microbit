@@ -198,6 +198,7 @@
   "String.substr": "Return a substring of the current string.",
   "String.substr|param|length": "number of characters to extract",
   "String.substr|param|start": "first character index; can be negative from counting from the end, eg:0",
+  "String.toLowerCase": "Converts the string to lower case characters.",
   "String@type": "Combine, split, and search text strings.",
   "StringMap": "A dictionary from string key to string values",
   "basic": "Provides access to basic micro:bit functionality.",
