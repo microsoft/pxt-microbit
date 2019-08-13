@@ -341,6 +341,10 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
     "name": "BMP280 Barrometer",
     "url": "/pkg/rebeccaclavier/pxt-bmp280",
     "cardType": "package"
+}, {
+    "name": "LIS2MDL magnetic sensor",
+    "url": "/pkg/makecode-extensions/LIS2MDL",
+    "cardType": "package"
 }]
 ```
 
