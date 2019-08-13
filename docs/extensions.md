@@ -341,6 +341,10 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
     "name": "BMP280 Barrometer",
     "url": "/pkg/rebeccaclavier/pxt-bmp280",
     "cardType": "package"
+}, {
+    "name": "HTS221 Humidity and temperature",
+    "url": "/pkg/makecode-extensions/HTS221",
+    "cardType": "package"
 }]
 ```
 
