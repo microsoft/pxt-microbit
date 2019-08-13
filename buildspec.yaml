@@ -1,0 +1,25 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-version:
+      nodejs: 10
+
+  pre_build:
+    commands:
+      - npm install
+
+  build:
+    commands:
+      # Unclear if npm install above is enough.
+      # May need to have docker...
+      # No asset hashes here. MS works by having hashed subdirs (may need to use route arg?)
+      # Build output has suggestive 'cdnUrl'
+      - node node_modules/pxt-core/built/pxt.js staticpkg -m
+      # It might be cute to put the following in post_build, but unfortunately you have
+      # to check for a successful build in that case... (CODEBUILD_BUILD_SUCCEEDING)
+      - BRANCH="$(git branch -a --contains HEAD | grep -vF -e '(no branch)' -e 'origin' | head -1 | sed 's/^..//')"
+      - echo On branch "$BRANCH"...
+      - if [ "$BRANCH" = develop -o "$BRANCH" = master ]; then deploy=true; else deploy=false; fi
+      - if $deploy; then aws s3 sync build "s3://$S3_BUCKET_NAME"; fi
+      - if $deploy; then aws cloudfront create-invalidation --distribution-id "$CLOUDFRONT_DISTRIBUTION_ID" --paths /index.html; fi
