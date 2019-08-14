@@ -220,6 +220,10 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
   "url":"/pkg/minodekit/pxt-minode",
   "cardType": "package"
 }, {
+  "name": "XinaBox SW01 Advanced Weather Sensor",
+  "url":"/pkg/xinabox/pxt-SW01",
+  "cardType": "package"
+}, {
   "name": "Grove inventor kit",
   "url":"/pkg/Seeed-Studio/pxt-grove",
   "cardType": "package"
