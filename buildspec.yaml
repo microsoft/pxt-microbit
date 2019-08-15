@@ -23,3 +23,8 @@ phases:
       - if [ "$BRANCH" = develop -o "$BRANCH" = master ]; then deploy=true; else deploy=false; fi
       - if $deploy; then aws s3 sync build "s3://$S3_BUCKET_NAME"; fi
       - if $deploy; then aws cloudfront create-invalidation --distribution-id "$CLOUDFRONT_DISTRIBUTION_ID" --paths /index.html; fi
+
+cache:
+  paths:
+    - node_modules/**/*
+
