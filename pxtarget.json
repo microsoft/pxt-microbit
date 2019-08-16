@@ -296,7 +296,6 @@
         "enableTrace": true,
         "ignoreDocsErrors": true,
         "experiments": [
-            "python",
             "allowPackageExtensions",
             "instructions",
             "debugger",
@@ -466,6 +465,7 @@
         "editorVersionPaths": {
             "0": "v0"
         },
+        "python": true,
         "scriptManager": true,
         "simGifTransparent": "rgba(0,0,0,0)",
         "simGifMaxFrames": 44,
