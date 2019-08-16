@@ -166,6 +166,26 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
 }]
 ```
 
+## Display
+
+```codecard
+[{
+  "name": "XinaBox OD01 Display",
+  "url":"/pkg/inabox/pxt-OD01",
+  "cardType": "package"
+},
+{
+  "name": "ssd1306 OLED",
+  "url":"/pkg/Tinkertanker/pxt-oled-ssd1306",
+  "cardType": "package"
+},
+{
+  "name": "I2C LCD 1602 Display",
+  "url": "/pkg/1010Technologies/pxt-makerbit-ir-lcd1602",
+  "cardType": "package"
+}]
+```
+
 ## STEM
 
 ```codecard
@@ -282,10 +302,6 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
   "url":"/pkg/microsoft/pxt-bluetooth-max6675",
   "cardType": "package"
 }, {
-  "name": "ssd1306 OLED",
-  "url":"/pkg/Tinkertanker/pxt-oled-ssd1306",
-  "cardType": "package"
-}, {
   "name": "ky040 rotary",
   "url":"/pkg/Tinkertanker/pxt-rotary-encoder-ky040",
   "cardType": "package"
@@ -332,10 +348,6 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
 }, {
     "name": "Keyestudio Infrared Receiver",
     "url": "/pkg/1010Technologies/pxt-makerbit-ir-receiver",
-    "cardType": "package"
-}, {
-    "name": "I2C LCD 1602 Display",
-    "url": "/pkg/1010Technologies/pxt-makerbit-ir-lcd1602",
     "cardType": "package"
 }, {
     "name": "BMP280 Barrometer",

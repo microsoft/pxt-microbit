@@ -135,7 +135,8 @@
             "plenprojectcompany/pxt-PLENbit",
             "4tronix/MiniBit",
             "elecfreaks/pxt-wukong",
-            "rebeccaclavier/pxt-bmp280"
+            "rebeccaclavier/pxt-bmp280",
+            "xinabox/pxt-OD01"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",
