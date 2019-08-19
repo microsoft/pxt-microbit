@@ -132,7 +132,7 @@ namespace pxsim.visuals {
             }
 
             //show the canvas if it's hidden
-            svg.removeClass(this.background, "hidden");
+            U.removeClass(this.background, "hidden");
 
             //resize if necessary
             let [first, last] = [this.pixels[0], this.pixels[this.pixels.length - 1]]

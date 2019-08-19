@@ -121,8 +121,8 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
   "url":"/pkg/KitronikLtd/pxt-kitronik-fischertechnik",
   "cardType": "package"
 }, {
-  "name": "TCEA Nexus:bit",
-  "url":"/pkg/alankrantas/pxt-Nexusbit",
+  "name": "TCEA Nexus:bit and Nexusbot",
+  "url":"/pkg/beyond-coding-tw/pxt-nexusbot",
   "cardType": "package"
 }, {
   "name": "Kitronik Klip Motor",
@@ -349,6 +349,10 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
     "name": "I2C LCD 1602 Display",
     "url": "/pkg/1010Technologies/pxt-makerbit-ir-lcd1602",
     "cardType": "package"
+}, {
+    "name": "BMP280 Barrometer",
+    "url": "/pkg/rebeccaclavier/pxt-bmp280",
+    "cardType": "package"
 }]
 ```
 
@@ -457,6 +461,10 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
 }, {
     "name": "Keigan Motor",
     "url": "/pkg/keigan-motor/pxt-KeiganMotor",
+    "cardType": "package"
+}, {
+    "name": "Kitronik :VIEW text32",
+    "url": "/pkg/KitronikLtd/pxt-kitronik-viewtext32",
     "cardType": "package"
 }]
 ```

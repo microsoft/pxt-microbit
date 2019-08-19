@@ -125,18 +125,21 @@
             "letstalkscience/pxt-cozir",
             "e-radionicacom/pxt-wifi",
             "monkmakes/pxt-sensor",
-            "alankrantas/pxt-Nexusbit",
+            "beyond-coding-tw/pxt-nexusbot",
             "elecfreaks/pxt-cutebot",
             "KitronikLtd/pxt-kitronik-fischertechnik",
             "keigan-motor/pxt-KeiganMotor",
             "KitronikLtd/pxt-kitronik-klip-motor",
             "alankrantas/pxt-ESP8266_ThingSpeak",
+            "KitronikLtd/pxt-kitronik-viewtext32",
             "plenprojectcompany/pxt-PLENbit",
             "4tronix/MiniBit",
             "elecfreaks/pxt-wukong",
             "sparkfun/pxt-gator-particle",
             "sparkfun/pxt-gator-soil",
-            "sparkfun/pxt-gator-microphone"
+            "sparkfun/pxt-gator-microphone",
+            "rebeccaclavier/pxt-bmp280"
+
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",

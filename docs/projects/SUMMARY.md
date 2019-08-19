@@ -76,6 +76,7 @@
   * [Discover JavaScript Blocks](https://microbit.org/en/2017-03-07-javascript-block-resources/)
   * [Networking with the micro:bit](https://microbit.nominetresearch.uk/networking-book/)
   * [SparkFun Videos](https://youtu.be/kaNtg1HGXbY?list=PLBcrWxTa5CS0mWJrytvii8aG5KUqMXvSk)
+  * [Logic Lab](/courses/logic-lab)
   * [Blocks to JavaScript](/courses/blocks-to-javascript)
   * [SparkFun Inventor's Kit](https://learn.sparkfun.com/tutorials/sparkfun-inventors-kit-for-microbit-experiment-guide/introduction-to-the-sparkfun-inventors-kit-for-microbit)
   * [Kitronik Inventor Kit](https://www.kitronik.co.uk/blog/inventors-kit-experiment-1-help)

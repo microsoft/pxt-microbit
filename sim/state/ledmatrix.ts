@@ -28,7 +28,7 @@ namespace pxsim {
             this.data = data;
         }
         public print() {
-            console.debug(`Image id:${this.id} refs:${this.refcnt} size:${this.width}x${Image.height}`)
+            console.debug(`Image id:${this.id} size:${this.width}x${Image.height}`)
         }
         public get(x: number, y: number): number {
             x = x >> 0;
@@ -76,7 +76,6 @@ namespace pxsim {
     export function createInternalImage(width: number): Image {
         width = width >> 0;
         let img = createImage(width)
-        pxsim.runtime.unregisterLiveObject(img, true)
         return img
     }
 

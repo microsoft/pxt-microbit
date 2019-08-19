@@ -308,7 +308,7 @@ path.sim-board {
             this.recordPinCoords();
             this.buildDom();
             if (props && props.wireframe)
-                svg.addClass(this.element, "sim-wireframe");
+                U.addClass(this.element, "sim-wireframe");
 
             if (props && props.theme)
                 this.updateTheme();
@@ -412,8 +412,8 @@ path.sim-board {
             this.updateButtonAB();
             this.updateGestures();
 
-            if (!runtime || runtime.dead) svg.addClass(this.element, "grayscale");
-            else svg.removeClass(this.element, "grayscale");
+            if (!runtime || runtime.dead) U.addClass(this.element, "grayscale");
+            else U.removeClass(this.element, "grayscale");
         }
 
         private updateGestures() {
@@ -970,7 +970,7 @@ path.sim-board {
                         let state = this.board;
                         let pin = state.edgeConnectorState.pins[index];
                         let svgpin = this.pins[index];
-                        svg.addClass(svgpin, "touched");
+                        U.addClass(svgpin, "touched");
                         if (pin.mode & PinFlags.Input) {
                             let cursor = svg.cursorPoint(pt, this.element, ev);
                             let v = (400 - cursor.y) / 40 * 1023
@@ -983,7 +983,7 @@ path.sim-board {
                         let state = this.board;
                         let pin = state.edgeConnectorState.pins[index];
                         let svgpin = this.pins[index];
-                        svg.removeClass(svgpin, "touched");
+                        U.removeClass(svgpin, "touched");
                         this.updatePin(pin, index);
                         return false;
                     },
