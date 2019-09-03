@@ -909,7 +909,7 @@ function webUsbPairDialogAsync(confirmAsync: (options: any) => Promise<number>):
                                 <div className="column">
                                     <div className="ui">
                                         <div className="image">
-                                            <img alt={lf("Comic connecting microbit to computer")} className="ui medium rounded image" src="./static/download/connect.png" />
+                                            <img alt={lf("Comic connecting micro:bit to computer")} className="ui medium rounded image" src="./static/download/connect.png" />
                                         </div>
                                         <div className="content">
                                             <div className="description">
@@ -924,7 +924,7 @@ function webUsbPairDialogAsync(confirmAsync: (options: any) => Promise<number>):
                                 <div className="column">
                                     <div className="ui">
                                         <div className="image">
-                                            <img alt={lf("Comic moving hex file to micro:bit")} className="ui medium rounded image" src="./static/download/pair.png" />
+                                            <img alt={lf("Comic of successful micro:bit connection")} className="ui medium rounded image" src="./static/download/pair.png" />
                                         </div>
                                         <div className="content">
                                             <div className="description">
@@ -990,7 +990,7 @@ function showUploadInstructionsAsync(fn: string, url: string, confirmAsync: (opt
                                 <div className="column">
                                     <div className="ui">
                                         <div className="image">
-                                            <img alt={lf("Comic rainbow updating micro:bit firmware")} className="ui medium rounded image" src="./static/download/connect.png" />
+                                            <img alt={lf("Comic connecting micro:bit to computer")} className="ui medium rounded image" src="./static/download/connect.png" />
                                         </div>
                                         <div className="content">
                                             <div className="description">
