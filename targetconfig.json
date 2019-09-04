@@ -136,7 +136,8 @@
             "4tronix/MiniBit",
             "elecfreaks/pxt-wukong",
             "rebeccaclavier/pxt-bmp280",
-            "xinabox/pxt-SW01"
+            "xinabox/pxt-SW01",
+            "makecode-extensions/HTS221"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",
