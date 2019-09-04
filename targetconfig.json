@@ -136,7 +136,7 @@
             "4tronix/MiniBit",
             "elecfreaks/pxt-wukong",
             "rebeccaclavier/pxt-bmp280",
-            "xinabox/pxt-OD01"
+            "xinabox/pxt-OD01",
             "makecode-extensions/HTS221"
         ],
         "preferredRepos": [
