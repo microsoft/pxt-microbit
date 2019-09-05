@@ -136,7 +136,8 @@
             "4tronix/MiniBit",
             "elecfreaks/pxt-wukong",
             "rebeccaclavier/pxt-bmp280",
-            "makecode-extensions/HTS221"
+            "makecode-extensions/HTS221",
+            "51bit/dfplayermini"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",

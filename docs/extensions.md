@@ -439,6 +439,10 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
   "url":"/pkg/51bit/ColorBit",
   "cardType": "package"
 }, {
+  "name": "51bit DFPlayer mini",
+  "url":"/pkg/51bit/dfplayermini",
+  "cardType": "package"
+}, {
   "name": "Kitronik Zip Tile",
   "url":"/pkg/KitronikLtd/pxt-kitronik-zip-tile",
   "cardType": "package"
