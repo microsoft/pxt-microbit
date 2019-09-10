@@ -137,6 +137,10 @@
             "elecfreaks/pxt-wukong",
             "rebeccaclavier/pxt-bmp280",
             "makecode-extensions/STTS751",
+            "makecode-extensions/LSM6DSO",
+            "makecode-extensions/LPS22",
+            "makecode-extensions/LIS2DW12",
+            "makecode-extensions/LIS2MDL",
             "makecode-extensions/HTS221"
         ],
         "preferredRepos": [
