@@ -897,7 +897,7 @@ function webUsbPairDialogAsync(confirmAsync: (options: any) => Promise<number>):
                 <div className="ui header">{lf("First time here?")}</div>
                 <strong className="ui small">{lf("You must have version 0249 or above of the firmware")}</strong>
                 <div className="image">
-                    <img className="ui image" src="./static/download/firmware.png" />
+                    <img alt={lf("Comic rainbow updating micro:bit firmware")} className="ui image" src="./static/download/firmware.png" />
                 </div>
                 <a href={`${docUrl}/webusb/troubleshoot`} target="_blank">{lf("Check your firmware version here and update if needed")}</a>
             </div>
@@ -909,7 +909,7 @@ function webUsbPairDialogAsync(confirmAsync: (options: any) => Promise<number>):
                                 <div className="column">
                                     <div className="ui">
                                         <div className="image">
-                                            <img className="ui medium rounded image" src="./static/download/connect.png" />
+                                            <img alt={lf("Comic connecting micro:bit to computer")} className="ui medium rounded image" src="./static/download/connect.png" />
                                         </div>
                                         <div className="content">
                                             <div className="description">
@@ -924,7 +924,7 @@ function webUsbPairDialogAsync(confirmAsync: (options: any) => Promise<number>):
                                 <div className="column">
                                     <div className="ui">
                                         <div className="image">
-                                            <img className="ui medium rounded image" src="./static/download/pair.png" />
+                                            <img alt={lf("Comic of successful micro:bit connection")} className="ui medium rounded image" src="./static/download/pair.png" />
                                         </div>
                                         <div className="content">
                                             <div className="description">
@@ -990,7 +990,7 @@ function showUploadInstructionsAsync(fn: string, url: string, confirmAsync: (opt
                                 <div className="column">
                                     <div className="ui">
                                         <div className="image">
-                                            <img className="ui medium rounded image" src="./static/download/connect.png" />
+                                            <img alt={lf("Comic connecting micro:bit to computer")} className="ui medium rounded image" src="./static/download/connect.png" />
                                         </div>
                                         <div className="content">
                                             <div className="description">
@@ -1005,7 +1005,7 @@ function showUploadInstructionsAsync(fn: string, url: string, confirmAsync: (opt
                                 <div className="column">
                                     <div className="ui">
                                         <div className="image">
-                                            <img className="ui medium rounded image" src="./static/download/transfer.png" />
+                                            <img alt={lf("Comic moving hex file to micro:bit")} className="ui medium rounded image" src="./static/download/transfer.png" />
                                         </div>
                                         <div className="content">
                                             <div className="description">

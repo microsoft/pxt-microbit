@@ -345,6 +345,10 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
     "name": "STTS751 temperature Sensor",
     "url": "/pkg/makecode-extensions/STTS751",
     "cardType": "package"
+}, {
+    "name": "HTS221 Humidity and temperature",
+    "url": "/pkg/makecode-extensions/HTS221",
+    "cardType": "package"
 }]
 ```
 
