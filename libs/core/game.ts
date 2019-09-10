@@ -210,7 +210,8 @@ namespace game {
     //% blockId=game_remove_life block="remove life %life" blockGap=8
     export function removeLife(life: number): void {
         setLife(_life - life);
-        if (!_paused)
+        if (!_paused && !_backgroundAnimation) {
+            _backgroundAnimation = true;
             control.inBackground(() => {
                 led.stopAnimation();
                 basic.showAnimation(`1 0 0 0 1 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0
@@ -218,7 +219,9 @@ namespace game {
 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0
 0 1 0 1 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0
 1 0 0 0 1 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0`, 40);
+                _backgroundAnimation = false;
             });
+        }
     }
 
     /**
