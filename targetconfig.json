@@ -136,7 +136,8 @@
             "4tronix/MiniBit",
             "elecfreaks/pxt-wukong",
             "rebeccaclavier/pxt-bmp280",
-            "makecode-extensions/LIS2MDL"
+            "makecode-extensions/LIS2MDL",
+            "makecode-extensions/HTS221"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",

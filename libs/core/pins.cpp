@@ -18,7 +18,9 @@ enum class DigitalPin {
     P14 = MICROBIT_ID_IO_P14,
     P15 = MICROBIT_ID_IO_P15,
     P16 = MICROBIT_ID_IO_P16,
+    //% blockHidden=1
     P19 = MICROBIT_ID_IO_P19,
+    //% blockHidden=1
     P20 = MICROBIT_ID_IO_P20,
 };
 
@@ -52,8 +54,10 @@ enum class AnalogPin {
     //% block="P16 (write only)"
     P16 = MICROBIT_ID_IO_P16,
     //% block="P19 (write only)"
+    //% blockHidden=1
     P19 = MICROBIT_ID_IO_P19,
     //% block="P20 (write only)"
+    //% blockHidden=1
     P20 = MICROBIT_ID_IO_P20
 };
 
