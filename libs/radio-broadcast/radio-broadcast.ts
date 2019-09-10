@@ -5,6 +5,7 @@ namespace radio {
     //% blockHidden=1 shim=ENUM_GET
     //% blockId=radioMessageCode block="$msg" enumInitialMembers="message1"
     //% enumName=RadioMessage enumMemberName=msg enumPromptHint="e.g. Start, Stop, Jump..."
+    //% enumIsHash=1
     export function __message(msg: number): number {
         return msg;
     }

@@ -199,6 +199,8 @@ namespace input {
     //% parts="accelerometer"
     //% gesture.fieldEditor="gestures" gesture.fieldOptions.columns=4
     bool isGesture(Gesture gesture) {
+        // turn on acceleration
+        uBit.accelerometer.getX();
         int gi = (int)gesture;
         return uBit.accelerometer.getGesture() == gi;
     }
