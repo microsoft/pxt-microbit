@@ -345,6 +345,18 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
     "name": "LSM6DSO Accelerometer/Gyroscope",
     "url": "/pkg/makecode-extensions/LSM6DSO",
     "cardType": "package"
+}, {    
+    "name": "LPS22 Pressure",
+    "url": "/pkg/makecode-extensions/LPS22",
+    "cardType": "package"
+}, {
+    "name": "LIS2DW12 motion sensor",
+    "url": "/pkg/makecode-extensions/LIS2DW12",
+    "cardType": "package"
+}, {    
+    "name": "LIS2MDL magnetic sensor",
+    "url": "/pkg/makecode-extensions/LIS2MDL",
+    "cardType": "package"
 }, {
     "name": "HTS221 Humidity and temperature",
     "url": "/pkg/makecode-extensions/HTS221",
