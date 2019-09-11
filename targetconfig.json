@@ -137,7 +137,12 @@
             "elecfreaks/pxt-wukong",
             "rebeccaclavier/pxt-bmp280",
             "makecode-extensions/HTS221",
-            "51bit/dfplayermini"
+            "51bit/dfplayermini",
+            "makecode-extensions/LSM6DSO",
+            "makecode-extensions/LPS22",
+            "makecode-extensions/LIS2DW12",
+            "makecode-extensions/LIS2MDL",
+            "makecode-extensions/HTS221"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",
