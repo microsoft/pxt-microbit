@@ -391,6 +391,10 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
   "url":"/pkg/CoderDojoOlney/pxt-olney",
   "cardType": "package"
 }, {
+  "name": "Inventura textbook",
+  "url":"/pkg/assirati/pxt-inventura",
+  "cardType": "package"
+}, {
   "name": "File System",
   "url":"/pkg/microsoft/pxt-filesystem",
   "cardType": "package"
