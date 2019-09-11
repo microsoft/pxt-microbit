@@ -15,8 +15,13 @@ The following lists provide a guide to which translation files and folders relat
 ### Editor
 
 Files related to the editor:
-* [strings.json](https://crowdin.com/project/kindscript/32/en-en) - Strings common and shared by all MakeCode editors
-* [target-strings.json](https://crowdin.com/project/kindscript/1922/en-en) - Strings custom to the @boardname@ editor interface
+* [strings.json](https://crowdin.com/translate/kindscript/32/en-en) - Strings common and shared by all MakeCode editors
+
+![strings.json file in Crowdin UI](/static/mb/translate/stringsfile.png)
+
+* [target-strings.json](https://crowdin.com/translate/kindscript/1922/en-en) - Strings custom to the @boardname@ editor interface
+
+![target-strings.json file in Crowdin UI](/static/mb/translate/targetstringsfile.png)
 
 This is an example of the editor with it's interface elements localized:
 
@@ -36,6 +41,8 @@ This is an example of the editor with it's interface elements localized:
 * [servo-strings.json](https://crowdin.com/translate/kindscript/5034/en-ens) - Display text for the [servo](/reference/servos) blocks
 * [bluetooth-jsdoc-strings.json](https://crowdin.com/translate/kindscript/60/en-en) - Description text for code elements of the [bluetooth](/reference/bluetooth) blocks
 * [bluetooth-strings.json](https://crowdin.com/translate/kindscript/59/en-en) - Display text for the [bluetooth](/reference/bluetooth) blocks
+
+![screenshot of library file in Crowdin UI](/static/mb/translate/libsfiles.png)
 
 Here are some translated blocks:
 

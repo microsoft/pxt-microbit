@@ -162,7 +162,7 @@ input.onPinPressed(TouchPin.P0, () => {
         running = true
         led.stopAnimation()
         basic.clearScreen()
-        led.plot(Math.randomRange(0, 5), Math.randomRange(0, 5))
+        led.plot(Math.randomRange(0, 4), Math.randomRange(0, 4))
     }
 })
 running = false
@@ -221,7 +221,7 @@ input.onPinPressed(TouchPin.P0, () => {
         running = true
         led.stopAnimation()
         basic.clearScreen()
-        led.plot(Math.randomRange(0, 5), Math.randomRange(0, 5))
+        led.plot(Math.randomRange(0, 4), Math.randomRange(0, 4))
     }
 })
 running = false
@@ -254,7 +254,7 @@ input.onPinPressed(TouchPin.P0, () => {
         running = true
         led.stopAnimation()
         basic.clearScreen()
-        led.plot(Math.randomRange(0, 5), Math.randomRange(0, 5))
+        led.plot(Math.randomRange(0, 4), Math.randomRange(0, 4))
     }
 })
 input.onPinPressed(TouchPin.P1, () => {
