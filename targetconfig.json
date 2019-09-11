@@ -50,6 +50,7 @@
             "sparkfun/pxt-gamer-bit",
             "sparkfun/pxt-moto-bit",
             "sparkfun/pxt-weather-bit",
+            "sparkfun/pxt-gator-environment",
             "minodekit/pxt-minode",
             "LaboratoryForPlayfulComputation/pxt-BlockyTalkyBLE",
             "mbitfun/pxt-katakana",
@@ -138,11 +139,13 @@
             "rebeccaclavier/pxt-bmp280",
             "makecode-extensions/HTS221",
             "51bit/dfplayermini",
+            "makecode-extensions/STTS751",
             "makecode-extensions/LSM6DSO",
             "makecode-extensions/LPS22",
             "makecode-extensions/LIS2DW12",
             "makecode-extensions/LIS2MDL",
-            "makecode-extensions/HTS221"
+            "makecode-extensions/HTS221",
+            "assirati/pxt-inventura"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",

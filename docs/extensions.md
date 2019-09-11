@@ -216,6 +216,10 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
   "url":"/pkg/sparkfun/pxt-weather-bit",
   "cardType": "package"
 }, {
+  "name": "Sparkfun gator:environment",
+  "url":"/pkg/sparkfun/pxt-gator-environment",
+  "cardType": "package"
+}, {
   "name": "Minode Kit",
   "url":"/pkg/minodekit/pxt-minode",
   "cardType": "package"
@@ -342,6 +346,10 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
     "url": "/pkg/rebeccaclavier/pxt-bmp280",
     "cardType": "package"
 }, {
+    "name": "STTS751 temperature Sensor",
+    "url": "/pkg/makecode-extensions/STTS751",
+    "cardType": "package"
+}, {    
     "name": "LSM6DSO Accelerometer/Gyroscope",
     "url": "/pkg/makecode-extensions/LSM6DSO",
     "cardType": "package"
@@ -389,6 +397,10 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
  {
   "name": "Code Dojo Olney",
   "url":"/pkg/CoderDojoOlney/pxt-olney",
+  "cardType": "package"
+}, {
+  "name": "Inventura textbook",
+  "url":"/pkg/assirati/pxt-inventura",
   "cardType": "package"
 }, {
   "name": "File System",
