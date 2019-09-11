@@ -216,6 +216,10 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
   "url":"/pkg/sparkfun/pxt-weather-bit",
   "cardType": "package"
 }, {
+  "name": "Sparkfun gator:environment",
+  "url":"/pkg/sparkfun/pxt-gator-environment",
+  "cardType": "package"
+}, {
   "name": "Minode Kit",
   "url":"/pkg/minodekit/pxt-minode",
   "cardType": "package"
@@ -344,6 +348,30 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
 }, {
     "name": "OLED 128x64",
     "url": "/pkg/makecode-extensions/OLED12864_I2C_V2",
+    "cardType": "package"
+}, {    
+    "name": "STTS751 temperature Sensor",
+    "url": "/pkg/makecode-extensions/STTS751",
+    "cardType": "package"
+}, {    
+    "name": "LSM6DSO Accelerometer/Gyroscope",
+    "url": "/pkg/makecode-extensions/LSM6DSO",
+    "cardType": "package"
+}, {    
+    "name": "LPS22 Pressure",
+    "url": "/pkg/makecode-extensions/LPS22",
+    "cardType": "package"
+}, {
+    "name": "LIS2DW12 motion sensor",
+    "url": "/pkg/makecode-extensions/LIS2DW12",
+    "cardType": "package"
+}, {    
+    "name": "LIS2MDL magnetic sensor",
+    "url": "/pkg/makecode-extensions/LIS2MDL",
+    "cardType": "package"
+}, {
+    "name": "HTS221 Humidity and temperature",
+    "url": "/pkg/makecode-extensions/HTS221",
     "cardType": "package"
 }]
 ```
