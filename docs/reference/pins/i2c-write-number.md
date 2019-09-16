@@ -21,7 +21,13 @@ pins.i2cWriteNumber(0, 0, NumberFormat.Int8LE, true);
 
 ### ~ hint
 
+#### Repeated start
+
 A [repeated start condition](http://www.i2c-bus.org/repeated-start-condition/) is set to help make sure that when you want to write multiple numbers from the device at one time, it can happen without interruption. A start conditon is sent (if **repeated** is `true`) each time a number is written without a matching stop condition. When the last number is written, the stop conditon can be sent by setting **repeated** to `false`. For single writes, don't use **repeated** or set it to `false`.
+
+#### Reserved addresses
+
+Some sensors on your @boardname@ use the same I2C bus that is connected to the pins that you program. This means that you should be careful to **NOT** use an address for your device that is the same as the any of the ones used by the sensors on the board. Check the [I2C sensor addresses](https://tech.microbit.org/hardware/i2c/) list before you assign one to your device. This will help you keep the addresses separate.
 
 ### ~
 
