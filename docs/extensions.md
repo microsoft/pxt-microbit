@@ -171,7 +171,7 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
 ```codecard
 [{
   "name": "XinaBox OD01 Display",
-  "url":"/pkg/inabox/pxt-OD01",
+  "url":"/pkg/xinabox/pxt-OD01",
   "cardType": "package"
 },
 {
