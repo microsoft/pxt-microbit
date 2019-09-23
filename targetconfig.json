@@ -201,6 +201,7 @@
         "Turtle": "projects/turtle",
         "Blocks To JavaScript": "courses/blocks-to-javascript",
         "Courses": "courses",
+        "Coding Cards": "coding-cards",
         "Behind the MakeCode Hardware": "behind-the-makecode-hardware"
     },
     "electronManifest": {
