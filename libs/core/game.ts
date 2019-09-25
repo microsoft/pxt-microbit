@@ -695,12 +695,21 @@ namespace game {
          * Deletes the sprite from the game engine. The sprite will no longer appear on the screen or interact with other sprites.
          * @param this sprite to delete
          */
-        //% weight=59 help=game/delete
+        //% weight=59 blockGap=8 help=game/delete
         //% blockId="game_delete_sprite" block="delete %this(sprite)"
         public delete(): void {
             this._enabled = false;
             if (_sprites.removeElement(this))
                 plot();
+        }
+
+        /**
+         * Reports whether the sprite has been deleted from the game engine.
+         */
+        //% weight=58 help=game/is-deleted
+        //% blockId="game_sprite_is_deleted" block="is %sprite|deleted"
+        public isDeleted(): boolean {
+            return !this._enabled;
         }
 
         /**

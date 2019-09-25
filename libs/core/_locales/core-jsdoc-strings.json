@@ -281,6 +281,7 @@
   "game.LedSprite.goTo|param|x": "TODO",
   "game.LedSprite.goTo|param|y": "TODO",
   "game.LedSprite.ifOnEdgeBounce": "If touching the edge of the stage and facing towards it, then turn away.",
+  "game.LedSprite.isDeleted": "Reports whether the sprite has been deleted from the game engine.",
   "game.LedSprite.isTouching": "Reports true if sprite has the same position as specified sprite",
   "game.LedSprite.isTouchingEdge": "Reports true if sprite is touching an edge",
   "game.LedSprite.isTouching|param|other": "the other sprite to check overlap or touch",
