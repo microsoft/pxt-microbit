@@ -141,7 +141,7 @@
             "sparkfun/pxt-gator-microphone",
             "rebeccaclavier/pxt-bmp280",
             "xinabox/pxt-SW01",
-            "makecode-extensions/HTS221",
+            "xinabox/pxt-OD01",
             "51bit/dfplayermini",
             "makecode-extensions/STTS751",
             "makecode-extensions/LSM6DSO",
@@ -202,7 +202,8 @@
         "Turtle": "projects/turtle",
         "Blocks To JavaScript": "courses/blocks-to-javascript",
         "Courses": "courses",
-        "Behind the MakeCode Hardware": "behind-the-makecode-hardware"
+        "Behind the MakeCode Hardware": "behind-the-makecode-hardware",
+        "Coding Cards": "coding-cards"
     },
     "electronManifest": {
         "latest": "v2.0.3"

@@ -36,8 +36,8 @@ It works but your servo might be trying to move too much. Let's calibrate it.
 
 ## Step 3: calibrate the servo
 
-Download the [servo calibration program](/examples/servo-calibrator) to determine 
-to opening and closing angles of the servo for your robot.
+Download the [servo calibration program](/projects/servo-calibrator) to determine 
+the opening and closing angles of the servo for your robot.
 
 https://youtu.be/lZxWC82HDn0
 

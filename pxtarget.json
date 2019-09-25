@@ -303,7 +303,8 @@
             "bluetoothPartialFlashing",
             "simScreenshot",
             "simGif",
-            "qrCode"
+            "qrCode",
+            "githubBlocksDiff"
         ],
         "bluetoothUartFilters": [
             {

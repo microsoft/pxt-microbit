@@ -22,7 +22,17 @@ A device connected to the I2C pins on the @boardname@ at the address is selected
 
 ### ~ hint
 
+#### Repeated start
+
 A [repeated start condition](http://www.i2c-bus.org/repeated-start-condition/) is set to help make sure that when you want to read data miltiple times from the device at once, it can happen without interruption. A start conditon is sent (if **repeated** is `true`) each time a buffer is read without a matching stop condition. When the last buffer is read, the stop conditon can be sent by setting **repeated** to `false`. For single reads, don't use **repeated** or set it to `false`.
+
+#### Reserved addresses
+
+Some sensors on your @boardname@ use the same I2C bus that is connected to the pins that you program. This means that you should be careful to **NOT** use an address for your device that is the same as the any of the ones used by the sensors on the board. Check the [I2C sensor addresses](https://tech.microbit.org/hardware/i2c/) list before you assign one to your device. This will help you keep the addresses separate.
+
+#### Bus address format
+
+The @boardname@ uses 7-bit values to address the devices connected on the I2C bus. Before an address is transmitted, it is adjusted temporarily to an 8-bit value so that the valid address bits are sent properly. This means that the value of an 8-bit address present on the bus will appear as twice that of what you specified. This is fine though, since the device you are addressing will decode it to match the address you gave. If your device address is specified as an 8-bit address, you will need to use an address that is half that value when you read to or write from it.
 
 ### ~
 
