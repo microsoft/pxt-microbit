@@ -633,7 +633,7 @@ namespace game {
         //% weight=19 help=game/is-touching-edge
         //% blockId=game_sprite_touching_edge block="is %sprite|touching edge" blockGap=8
         public isTouchingEdge(): boolean {
-            return this._x == 0 || this._x == 4 || this._y == 0 || this._y == 4;
+            return this._enabled && (this._x == 0 || this._x == 4 || this._y == 0 || this._y == 4);
         }
 
         /**
