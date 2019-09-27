@@ -1,0 +1,21 @@
+{
+  "BitKit": "Extension blocks",
+  "BitKit.getColor": "获取识色循迹传感器读取到的RGB颜色值",
+  "BitKit.onColor": "当识色循迹传感器检测到特定颜色时，执行操作",
+  "BitKit.onColor|param|event": "type of color to detect",
+  "BitKit.onColor|param|handler": "code to run",
+  "BitKit.onLinePosition": "当识色循迹传感器检测到线的位置时，执行操作",
+  "BitKit.onLinePosition|param|event": "type of liner to detect",
+  "BitKit.onLinePosition|param|handler": "code to run",
+  "BitKit.setMotormoduleAction": "设置小车底盘以指定速度运动",
+  "BitKit.setMotormoduleAction|param|direction": "the direction that want to set.",
+  "BitKit.setMotormoduleAction|param|speed": "the speed that want to run.",
+  "BitKit.setMotormoduleSpeed": "设置小车底盘左右轮的速度",
+  "BitKit.setMotormoduleSpeed|param|left": "the left speed you want to run.",
+  "BitKit.setMotormoduleSpeed|param|right": "the right speed you want to run.",
+  "BitKit.stopMotormodule": "将小车底盘的速度设置为零",
+  "BitKit.wasColorTriggered": "获取识色循迹传感器检测黑线的状态",
+  "BitKit.wasColorTriggered|param|event": "of color device",
+  "BitKit.wasLinePositionTriggered": "获取识色循迹传感器检测颜色状态",
+  "BitKit.wasLinePositionTriggered|param|event": "of liner device"
+}

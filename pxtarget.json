@@ -11,11 +11,12 @@
         "libs/devices",
         "libs/bluetooth",
         "libs/servo",
-        "libs/radio-broadcast"
+        "libs/radio-broadcast",
+        "libs/pxt-grove-zero-for-microbit"
     ],
     "cloud": {
         "workspace": false,
-        "packages": false,
+        "packages": true,
         "sharing": false,
         "thumbnails": false,
         "publishing": false,
