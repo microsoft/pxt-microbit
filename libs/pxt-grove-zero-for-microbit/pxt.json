@@ -4,7 +4,7 @@
     "description": "The Grove Zero Bit Kit micro:Car extension for micro:bit",
     "license": "MIT",
     "dependencies": {
-        "core": "*"
+        "core": "file:../core"
     },
     "files": [
         "README.md",
