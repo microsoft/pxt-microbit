@@ -149,7 +149,8 @@
             "makecode-extensions/LIS2DW12",
             "makecode-extensions/LIS2MDL",
             "makecode-extensions/HTS221",
-            "assirati/pxt-inventura"
+            "assirati/pxt-inventura",
+            "Veilkrand/pxt-RobotCar"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",

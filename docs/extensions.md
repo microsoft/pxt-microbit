@@ -128,6 +128,10 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
   "name": "Kitronik Klip Motor",
   "url":"/pkg/KitronikLtd/pxt-kitronik-klip-motor",
   "cardType": "package"
+}, {
+  "name": "Keyestudio Robot Car",
+  "url":"/pkg/Veilkrand/pxt-RobotCar",
+  "cardType": "package"  
 }]
 ```
 
