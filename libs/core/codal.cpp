@@ -28,6 +28,9 @@ MicroBitEvent lastEvent;
 void platform_init() {
     microbit_seed_random();    
     seedRandom(microbit_random(0x7fffffff));
+}
+
+void initMicrobitGC() {
     if (device_heap_size(1) > NON_GC_HEAP_RESERVATION + 4)
         gcPreAllocateBlock(device_heap_size(1) - NON_GC_HEAP_RESERVATION);
 }

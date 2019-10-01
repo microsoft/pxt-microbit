@@ -54,11 +54,21 @@ static inline int max_(int a, int b) {
         return b;
 }
 
+void initMicrobitGC();
+
 } // namespace pxt
 
 using namespace pxt;
 
 #define DEVICE_EVT_ANY 0
+
+#undef PXT_MAIN
+#define PXT_MAIN                                                                                   \
+    int main() {                                                                                   \
+        pxt::initMicrobitGC();                                                                     \
+        pxt::start();                                                                              \
+        return 0;                                                                                  \
+    }
 
 #endif
 
