@@ -266,6 +266,7 @@
   "game.LedSprite.delete|block": "delete %this(sprite)",
   "game.LedSprite.get|block": "%sprite|%property",
   "game.LedSprite.ifOnEdgeBounce|block": "%sprite|if on edge, bounce",
+  "game.LedSprite.isDeleted|block": "is %sprite|deleted",
   "game.LedSprite.isTouchingEdge|block": "is %sprite|touching edge",
   "game.LedSprite.isTouching|block": "is %sprite|touching %other",
   "game.LedSprite.move|block": "%sprite|move by %leds",

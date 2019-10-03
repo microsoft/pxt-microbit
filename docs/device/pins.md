@@ -23,6 +23,7 @@ The other two large pins (3V and GND) are very different!
 ## ~hint 
 
 Watch out! The pins labelled 3V and GND relate to the power supply of the board, and they should NEVER be connected together.
+For details on the power, current and voltage limitations of the board, see [Power Supply](https://tech.microbit.org/hardware/powersupply/)
 
 ## ~
 

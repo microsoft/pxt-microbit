@@ -62,6 +62,11 @@
         "name": "Behind the MakeCode Hardware",
         "url": "/behind-the-makecode-hardware",
         "imageUrl": "/static/mb/behindhardware/leds.jpg"
+    },
+    {
+        "name": "Coding Cards",
+        "url": "/coding-cards",
+        "imageUrl": "/static/coding-cards/balance-card.jpg"
     }
 ]
 ```
@@ -79,5 +84,6 @@
 [Turtle](/projects/turtle),
 [Blocks To JavaScript](/courses/blocks-to-javascript),
 [Courses](/courses),
-[Behind the MakeCode Hardware](/behind-the-makecode-hardware)
+[Behind the MakeCode Hardware](/behind-the-makecode-hardware),
+[Coding Cards](/coding-cards)
 

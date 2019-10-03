@@ -210,7 +210,8 @@ namespace game {
     //% blockId=game_remove_life block="remove life %life" blockGap=8
     export function removeLife(life: number): void {
         setLife(_life - life);
-        if (!_paused)
+        if (!_paused && !_backgroundAnimation) {
+            _backgroundAnimation = true;
             control.inBackground(() => {
                 led.stopAnimation();
                 basic.showAnimation(`1 0 0 0 1 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0
@@ -218,7 +219,9 @@ namespace game {
 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0
 0 1 0 1 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0
 1 0 0 0 1 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0`, 40);
+                _backgroundAnimation = false;
             });
+        }
     }
 
     /**
@@ -630,7 +633,7 @@ namespace game {
         //% weight=19 help=game/is-touching-edge
         //% blockId=game_sprite_touching_edge block="is %sprite|touching edge" blockGap=8
         public isTouchingEdge(): boolean {
-            return this._x == 0 || this._x == 4 || this._y == 0 || this._y == 4;
+            return this._enabled && (this._x == 0 || this._x == 4 || this._y == 0 || this._y == 4);
         }
 
         /**
@@ -692,12 +695,21 @@ namespace game {
          * Deletes the sprite from the game engine. The sprite will no longer appear on the screen or interact with other sprites.
          * @param this sprite to delete
          */
-        //% weight=59 help=game/delete
+        //% weight=59 blockGap=8 help=game/delete
         //% blockId="game_delete_sprite" block="delete %this(sprite)"
         public delete(): void {
             this._enabled = false;
             if (_sprites.removeElement(this))
                 plot();
+        }
+
+        /**
+         * Reports whether the sprite has been deleted from the game engine.
+         */
+        //% weight=58 help=game/is-deleted
+        //% blockId="game_sprite_is_deleted" block="is %sprite|deleted"
+        public isDeleted(): boolean {
+            return !this._enabled;
         }
 
         /**

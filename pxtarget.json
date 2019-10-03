@@ -305,7 +305,8 @@
             "bluetoothPartialFlashing",
             "simScreenshot",
             "simGif",
-            "qrCode"
+            "qrCode",
+            "githubBlocksDiff"
         ],
         "bluetoothUartFilters": [
             {
@@ -467,6 +468,7 @@
             "0": "v0"
         },
         "python": true,
+        "showProjectSettings": true,
         "scriptManager": true,
         "simGifTransparent": "rgba(0,0,0,0)",
         "simGifMaxFrames": 44,

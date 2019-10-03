@@ -128,6 +128,10 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
   "name": "Kitronik Klip Motor",
   "url":"/pkg/KitronikLtd/pxt-kitronik-klip-motor",
   "cardType": "package"
+}, {
+  "name": "Keyestudio Robot Car",
+  "url":"/pkg/Veilkrand/pxt-RobotCar",
+  "cardType": "package"  
 }]
 ```
 
@@ -162,6 +166,26 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
 {
   "name": "Pimoroni touch:bit",
   "url":"/pkg/pimoroni/pxt-touchbit",
+  "cardType": "package"
+}]
+```
+
+## Display
+
+```codecard
+[{
+  "name": "XinaBox OD01 Display",
+  "url":"/pkg/xinabox/pxt-OD01",
+  "cardType": "package"
+},
+{
+  "name": "ssd1306 OLED",
+  "url":"/pkg/Tinkertanker/pxt-oled-ssd1306",
+  "cardType": "package"
+},
+{
+  "name": "I2C LCD 1602 Display",
+  "url": "/pkg/1010Technologies/pxt-makerbit-ir-lcd1602",
   "cardType": "package"
 }]
 ```
@@ -216,8 +240,16 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
   "url":"/pkg/sparkfun/pxt-weather-bit",
   "cardType": "package"
 }, {
+  "name": "Sparkfun gator:environment",
+  "url":"/pkg/sparkfun/pxt-gator-environment",
+  "cardType": "package"
+}, {
   "name": "Minode Kit",
   "url":"/pkg/minodekit/pxt-minode",
+  "cardType": "package"
+}, {
+  "name": "XinaBox SW01 Advanced Weather Sensor",
+  "url":"/pkg/xinabox/pxt-SW01",
   "cardType": "package"
 }, {
   "name": "Grove inventor kit",
@@ -282,10 +314,6 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
   "url":"/pkg/microsoft/pxt-bluetooth-max6675",
   "cardType": "package"
 }, {
-  "name": "ssd1306 OLED",
-  "url":"/pkg/Tinkertanker/pxt-oled-ssd1306",
-  "cardType": "package"
-}, {
   "name": "ky040 rotary",
   "url":"/pkg/Tinkertanker/pxt-rotary-encoder-ky040",
   "cardType": "package"
@@ -318,6 +346,18 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
     "url":"/pkg/sparkfun/pxt-gator-temp",
     "cardType": "package"
 }, {
+    "name": "gator:microphone Microphone",
+    "url":"/pkg/sparkfun/pxt-gator-microphone",
+    "cardType": "package"
+}, {
+    "name": "gator:soil Soil Sensor",
+    "url":"/pkg/sparkfun/pxt-gator-soil",
+    "cardType": "package"
+}, {
+    "name": "gator:temp Particle Sensor",
+    "url":"/pkg/sparkfun/pxt-gator-particle",
+    "cardType": "package"
+}, {
     "name": "MonkMakes Sensor",
     "url":"/pkg/monkmakes/pxt-sensor",
     "cardType": "package"
@@ -334,12 +374,32 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
     "url": "/pkg/1010Technologies/pxt-makerbit-ir-receiver",
     "cardType": "package"
 }, {
-    "name": "I2C LCD 1602 Display",
-    "url": "/pkg/1010Technologies/pxt-makerbit-ir-lcd1602",
-    "cardType": "package"
-}, {
     "name": "BMP280 Barrometer",
     "url": "/pkg/rebeccaclavier/pxt-bmp280",
+    "cardType": "package"
+}, {
+    "name": "STTS751 temperature Sensor",
+    "url": "/pkg/makecode-extensions/STTS751",
+    "cardType": "package"
+}, {    
+    "name": "LSM6DSO Accelerometer/Gyroscope",
+    "url": "/pkg/makecode-extensions/LSM6DSO",
+    "cardType": "package"
+}, {    
+    "name": "LPS22 Pressure",
+    "url": "/pkg/makecode-extensions/LPS22",
+    "cardType": "package"
+}, {
+    "name": "LIS2DW12 motion sensor",
+    "url": "/pkg/makecode-extensions/LIS2DW12",
+    "cardType": "package"
+}, {    
+    "name": "LIS2MDL magnetic sensor",
+    "url": "/pkg/makecode-extensions/LIS2MDL",
+    "cardType": "package"
+}, {
+    "name": "HTS221 Humidity and temperature",
+    "url": "/pkg/makecode-extensions/HTS221",
     "cardType": "package"
 }]
 ```
@@ -369,6 +429,10 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
  {
   "name": "Code Dojo Olney",
   "url":"/pkg/CoderDojoOlney/pxt-olney",
+  "cardType": "package"
+}, {
+  "name": "Inventura textbook",
+  "url":"/pkg/assirati/pxt-inventura",
   "cardType": "package"
 }, {
   "name": "File System",
@@ -433,6 +497,10 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
 }, {
   "name": "51bit ColorBit",
   "url":"/pkg/51bit/ColorBit",
+  "cardType": "package"
+}, {
+  "name": "51bit DFPlayer mini",
+  "url":"/pkg/51bit/dfplayermini",
   "cardType": "package"
 }, {
   "name": "Kitronik Zip Tile",

@@ -259,7 +259,7 @@ path.sim-board {
             theme.ledOn = "#0000bb";
             theme.display = "#ffffff";
             theme.pin = "#D4AF37";
-            theme.accent = "#273EE2";
+            theme.accent = "#FFD43A";
         }
         return theme;
     }

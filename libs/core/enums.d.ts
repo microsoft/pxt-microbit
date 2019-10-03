@@ -445,7 +445,9 @@ declare namespace led {
     P14 = 21,  // MICROBIT_ID_IO_P14
     P15 = 22,  // MICROBIT_ID_IO_P15
     P16 = 23,  // MICROBIT_ID_IO_P16
+    //% blockHidden=1
     P19 = 24,  // MICROBIT_ID_IO_P19
+    //% blockHidden=1
     P20 = 25,  // MICROBIT_ID_IO_P20
     }
 
@@ -480,8 +482,10 @@ declare namespace led {
     //% block="P16 (write only)"
     P16 = 23,  // MICROBIT_ID_IO_P16
     //% block="P19 (write only)"
+    //% blockHidden=1
     P19 = 24,  // MICROBIT_ID_IO_P19
     //% block="P20 (write only)"
+    //% blockHidden=1
     P20 = 25,  // MICROBIT_ID_IO_P20
     }
 
