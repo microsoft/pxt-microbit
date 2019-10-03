@@ -1,3 +1,10 @@
 /*******************************
          Site Overrides
 *******************************/
+
+.ui.red.button {
+    background: darken(@red, 20%);
+    &:hover, &:focus {
+        background: darken(@red, 30%);
+    }
+}
