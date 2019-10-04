@@ -17,6 +17,9 @@ phases:
       # Build output has suggestive 'cdnUrl'
       # https://makecode.com/cli/staticpkg
       - node node_modules/pxt-core/built/pxt.js staticpkg -m
+      # staticpkg seems to get confused about some things - should fix upstream
+      # (also docs have broken /cdn location)
+      - cd built/packaged && ln -s docs/static
       # It might be cute to put the following in post_build, but unfortunately you have
       # to check for a successful build in that case... (CODEBUILD_BUILD_SUCCEEDING)
       - BRANCH="$(git branch -a --contains HEAD | grep -vF -e '(no branch)' -e 'origin' | head -1 | sed 's/^..//')"
