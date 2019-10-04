@@ -11,18 +11,17 @@ phases:
 
   build:
     commands:
-      # Unclear if npm install above is enough.
-      # May need to have docker...
-      # No asset hashes here. MS works by having hashed subdirs (may need to use route arg?)
-      # Build output has suggestive 'cdnUrl'
+      # Not sure how to get staticpkg to tell me what it's hash is, so we'll do it this way.
+      - DEPLOY_HASH="$(git rev-parse HEAD)"
       # https://makecode.com/cli/staticpkg
-      - node node_modules/pxt-core/built/pxt.js staticpkg -m
+      - node node_modules/pxt-core/built/pxt.js staticpkg -m -r "$DEPLOY_HASH"
       # It might be cute to put the following in post_build, but unfortunately you have
       # to check for a successful build in that case... (CODEBUILD_BUILD_SUCCEEDING)
       - BRANCH="$(git branch -a --contains HEAD | grep -vF -e '(no branch)' -e 'origin' | head -1 | sed 's/^..//')"
       - echo On branch "$BRANCH"...
       - if [ "$BRANCH" = develop -o "$BRANCH" = master ]; then deploy=true; else deploy=false; fi
-      - if $deploy; then aws s3 sync built/packaged "s3://$S3_BUCKET_NAME"; fi
+      - if $deploy; then aws s3 sync built/packaged/$DEPLOY_HASH "s3://$S3_BUCKET_NAME/$DEPLOY_HASH"; fi
+      - if $deploy; then aws s3api put-object --bucket pxtmicrobit.dev.comp.gl --key index.html --website-redirect-location "/$DEPLOY_HASH/index.html?controller=1"; fi
       - if $deploy; then aws cloudfront create-invalidation --distribution-id "$CLOUDFRONT_DISTRIBUTION_ID" --paths /index.html; fi
 
 # If you have local_cache on, it seems to do some symlink-y stuff here, and tsc seems to get grumpy
