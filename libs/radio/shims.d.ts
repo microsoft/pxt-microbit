@@ -24,7 +24,8 @@ declare namespace radio {
     /**
      * Sends a raw packet through the radio
      */
-    //% advanced=true shim=radio::sendRawPacket
+    //% advanced=true
+    //% async shim=radio::sendRawPacket
     function sendRawPacket(msg: Buffer): void;
 
     /**
