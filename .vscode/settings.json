@@ -14,7 +14,7 @@
         "**/yotta_modules/**": true,
         "**/yotta_targets": true,
         "**/pxt_modules/**": true
-    },    
+    },
     "tslint.enable": true,
     "tslint.rulesDirectory": "node_modules/tslint-microsoft-contrib",
     "typescript.tsdk": "./node_modules/typescript/lib"
