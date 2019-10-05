@@ -48,7 +48,7 @@ namespace pxsim {
                 rssi: -1,
                 serial: 0,
                 time: 0,
-                payload: { type: -1, groupId: 0 }
+                payload: { type: -1, groupId: 0, bufferData: new Uint8Array(0) }
             };
         }
     }
@@ -109,11 +109,13 @@ namespace pxsim.radio {
     }
 
     export function sendRawPacket(buf: RefBuffer) {
+        let cb = getResume();
         board().radioState.datagram.send({
             type: 0,
             groupId: board().radioState.groupId,
             bufferData: buf.data
         });
+        setTimeout(cb, 1);
     }
 
     export function readRawPacket() {
