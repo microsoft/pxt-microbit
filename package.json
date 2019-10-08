@@ -35,7 +35,7 @@
     "typescript": "2.6.1",
     "less": "2.7.3",
     "semantic-ui-less": "2.2.14",
-    "react": "16.3.1",
+    "react": "16.8.3",
     "@types/react": "16.0.25",
     "@types/react-dom": "16.0.3",
     "@types/bluebird": "2.0.33",
