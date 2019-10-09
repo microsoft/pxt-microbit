@@ -1,5 +1,4 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
-  <variables></variables>
   <block type="pins_on_pulsed" x="-157" y="130">
     <field name="pin">DigitalPin.P5</field>
     <field name="pulse">PulseValue.Low</field>
