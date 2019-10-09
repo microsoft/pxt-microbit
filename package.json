@@ -45,7 +45,7 @@
     "@types/web-bluetooth": "0.0.4"
   },
   "dependencies": {
-    "pxt-common-packages": "6.16.6",
-    "pxt-core": "5.24.13"
+    "pxt-common-packages": "6.16.7",
+    "pxt-core": "5.25.6"
   }
 }
