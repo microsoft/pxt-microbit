@@ -1,0 +1,21 @@
+{
+  "BitKit": "Extension blocks",
+  "BitKit.getColor": "Get the color value from the color sensor in R:G:B.",
+  "BitKit.onColor": "Do something when the color sensor detects a specific color.",
+  "BitKit.onColor|param|event": "type of color to detect",
+  "BitKit.onColor|param|handler": "code to run",
+  "BitKit.onLinePosition": "Do something when the line follower recognized the position of the line underneath.",
+  "BitKit.onLinePosition|param|event": "type of liner to detect",
+  "BitKit.onLinePosition|param|handler": "code to run",
+  "BitKit.setMotormoduleAction": "Set the actions and the moving speed of motormodule.",
+  "BitKit.setMotormoduleAction|param|direction": "the direction that want to set.",
+  "BitKit.setMotormoduleAction|param|speed": "the speed that want to run.",
+  "BitKit.setMotormoduleSpeed": "Set the speed of motors on motormodule.",
+  "BitKit.setMotormoduleSpeed|param|left": "the left speed you want to run.",
+  "BitKit.setMotormoduleSpeed|param|right": "the right speed you want to run.",
+  "BitKit.stopMotormodule": "Stop the motormodule.",
+  "BitKit.wasColorTriggered": "See if the color sensor detected a specific color.",
+  "BitKit.wasColorTriggered|param|event": "of color device",
+  "BitKit.wasLinePositionTriggered": "See if the line follower recognized the position of the line underneath.",
+  "BitKit.wasLinePositionTriggered|param|event": "of liner device"
+}
