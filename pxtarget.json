@@ -21,9 +21,7 @@
         "thumbnails": false,
         "publishing": false,
         "importing": false,
-        "preferredPackages": [
-            "Microsoft/pxt-neopixel"
-        ],
+        "preferredPackages": [],
         "githubPackages": false
     },
     "compile": {
