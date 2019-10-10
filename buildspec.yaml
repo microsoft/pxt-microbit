@@ -17,11 +17,11 @@ phases:
       - node node_modules/pxt-core/built/pxt.js staticpkg -m -r "$DEPLOY_HASH"
       # staticpkg seems to get confused about some things - should fix upstream
       # (also docs have broken /cdn location)
-      - cd "built/packaged/$DEPLOY_HASH" && ln -s docs/static
+      - cd "built/packaged/$DEPLOY_HASH" && ln -s docs/static && cd -
       # It might be cute to put the following in post_build, but unfortunately you have
       # to check for a successful build in that case... (CODEBUILD_BUILD_SUCCEEDING)
       - BRANCH="$(git branch -a --contains HEAD | grep -vF -e '(no branch)' -e 'origin' | head -1 | sed 's/^..//')"
-      - echo On branch "$BRANCH"...
+      - echo On branch "$BRANCH" (commit/deploy_hash "$DEPLOY_HASH")...
       - if [ "$BRANCH" = develop -o "$BRANCH" = master ]; then deploy=true; else deploy=false; fi
       - if $deploy; then aws s3 sync built/packaged/$DEPLOY_HASH "s3://$S3_BUCKET_NAME/$DEPLOY_HASH"; fi
       - if $deploy; then aws s3api put-object --bucket "$S3_BUCKET_NAME" --key index.html --website-redirect-location "/$DEPLOY_HASH/index.html?controller=1"; fi
