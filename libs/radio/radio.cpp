@@ -41,11 +41,8 @@ namespace radio {
     //% help=radio/received-packet
     Buffer readRawPacket() {
         if (radioEnable() != MICROBIT_OK) return mkBuffer(NULL, 0);
-        uint8_t buf[32];
-        int size = uBit.radio.datagram.recv(buf, sizeof(buf));
-        if (size <= 0)
-            return mkBuffer(NULL, 0);
-        return mkBuffer(buf, size);
+        packet = uBit.radio.datagram.recv();
+        return mkBuffer(packet.getBytes(), packet.length());
     }
 
     /**
