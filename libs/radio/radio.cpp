@@ -6,7 +6,6 @@ using namespace pxt;
 namespace radio {
 
     bool radioEnabled = false;
-    PacketBuffer packet;
 
     int radioEnable() {
         int r = uBit.radio.enable();
@@ -81,8 +80,8 @@ namespace radio {
     //% blockId=radio_datagram_rssi block="radio received signal strength"
     //% deprecated=true
     int receivedSignalStrength() {
-        if (radioEnable() != MICROBIT_OK || packet == NULL) return 0;
-        return packet.getRSSI();
+        if (radioEnable() != MICROBIT_OK) return 0;
+        return uBit.radio.getRSSI();
     }
 
     /**
