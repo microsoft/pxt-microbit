@@ -33,7 +33,7 @@
 }, {
   "name": "Name badge",
   "description": "Make stylish name badge to let everyone know who you are",
-  "url": "/projects/name-bagde",
+  "url": "/projects/name-badge",
   "imageUrl": "/static/mb/projects/name-badge.png"
 }]
 ```
