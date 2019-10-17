@@ -31,6 +31,7 @@ namespace radio {
     //% help=radio/raise-event
     void raiseEvent(int src, int value) {
         if (radioEnable() != MICROBIT_OK) return;
+
         uBit.radio.event.eventReceived(MicroBitEvent(src, value, CREATE_ONLY));
     }
 
@@ -58,6 +59,7 @@ namespace radio {
     //% async
     void sendRawPacket(Buffer msg) {
         if (radioEnable() != MICROBIT_OK || NULL == msg) return;
+
         uBit.radio.datagram.send(msg->data, msg->length - sizeof(int));
     }
 
@@ -70,6 +72,7 @@ namespace radio {
     //% deprecated=true
     void onDataReceived(Action body) {
         if (radioEnable() != MICROBIT_OK) return;
+
         registerWithDal(MICROBIT_ID_RADIO, MICROBIT_RADIO_EVT_DATAGRAM, body);
     }
 
@@ -83,6 +86,7 @@ namespace radio {
     //% id.min=0 id.max=255
     void setGroup(int id) {
         if (radioEnable() != MICROBIT_OK) return;
+
         uBit.radio.setGroup(id);
     }
 
@@ -97,6 +101,7 @@ namespace radio {
     //% advanced=true
     void setTransmitPower(int power) {
         if (radioEnable() != MICROBIT_OK) return;
+
         uBit.radio.setTransmitPower(power);
     }
 }
