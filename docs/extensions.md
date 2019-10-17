@@ -37,10 +37,6 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
   "url":"/pkg/4tronix/MiniBit",
   "cardType": "package"
 }, {
-  "name": "SRS BitBot",
-  "url":"/pkg/srs/pxt-bitbot",
-  "cardType": "package"
-}, {
   "name": "Sunfounder Sloth",
   "url":"/pkg/sunfounder/pxt-sloth",
   "cardType": "package"
