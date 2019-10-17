@@ -49,7 +49,7 @@ namespace radio {
         uint8_t buf[MICROBIT_RADIO_MAX_PACKET_SIZE + sizeof(int)]; // packet length + rssi
         memcpy(buf, p.getBytes(), 0); // data
         memcpy(buf + MICROBIT_RADIO_MAX_PACKET_SIZE, &rssi, sizeof(int)); // RSSi - assumes Int32LE layout
-        return mkBuffer(buf, size);
+        return mkBuffer(buf, sizeof(buf));
     }
 
     /**
