@@ -55,36 +55,37 @@ namespace radio {
     function init() {
         if (initialized) return;
         initialized = true;
+        onDataReceived(handleDataReceived);
+    }
 
-        onDataReceived(() => {
-            let buffer: Buffer = readRawPacket();
-            while (buffer && buffer.length) {
-                lastPacket = RadioPacket.getPacket(buffer);
-                switch (lastPacket.packetType) {
-                    case PACKET_TYPE_NUMBER:
-                    case PACKET_TYPE_DOUBLE:
-                        if (onReceivedNumberHandler)
-                            onReceivedNumberHandler(lastPacket.numberPayload);
-                        break;
-                    case PACKET_TYPE_VALUE:
-                    case PACKET_TYPE_DOUBLE_VALUE:
-                        if (onReceivedValueHandler)
-                            onReceivedValueHandler(lastPacket.stringPayload, lastPacket.numberPayload);
-                        break;
-                    case PACKET_TYPE_BUFFER:
-                        if (onReceivedBufferHandler)
-                            onReceivedBufferHandler(lastPacket.bufferPayload);
-                        break;
-                    case PACKET_TYPE_STRING:
-                        if (onReceivedStringHandler)
-                            onReceivedStringHandler(lastPacket.stringPayload);
-                        break;
-                }
+    function handleDataReceived() {
+        let buffer: Buffer = readRawPacket();
+        while (buffer && buffer.length) {
+            lastPacket = RadioPacket.getPacket(buffer);
+            switch (lastPacket.packetType) {
+                case PACKET_TYPE_NUMBER:
+                case PACKET_TYPE_DOUBLE:
+                    if (onReceivedNumberHandler)
+                        onReceivedNumberHandler(lastPacket.numberPayload);
+                    break;
+                case PACKET_TYPE_VALUE:
+                case PACKET_TYPE_DOUBLE_VALUE:
+                    if (onReceivedValueHandler)
+                        onReceivedValueHandler(lastPacket.stringPayload, lastPacket.numberPayload);
+                    break;
+                case PACKET_TYPE_BUFFER:
+                    if (onReceivedBufferHandler)
+                        onReceivedBufferHandler(lastPacket.bufferPayload);
+                    break;
+                case PACKET_TYPE_STRING:
+                    if (onReceivedStringHandler)
+                        onReceivedStringHandler(lastPacket.stringPayload);
+                    break;
+            }
 
                 // read next packet if any
                 buffer = readRawPacket();
-            }
-        })
+        }
     }
 
     /**
