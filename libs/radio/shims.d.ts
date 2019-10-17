@@ -38,14 +38,12 @@ declare namespace radio {
     function onDataReceived(body: () => void): void;
 
     /**
-     * Gets the received signal strength indicator (RSSI) from the last packet taken
-     * from the radio queue (via ``receiveNumber``, ``receiveString``, etc). Not supported in simulator.
-     * namespace=radio
+     * This function is not supported anymore.
      */
     //% help=radio/received-signal-strength
     //% weight=40
     //% blockId=radio_datagram_rssi block="radio received signal strength"
-    //% deprecated=true shim=radio::receivedSignalStrength
+    //% deprecated=true blockHidden=true shim=radio::receivedSignalStrength
     function receivedSignalStrength(): int32;
 
     /**
