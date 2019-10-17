@@ -35,9 +35,9 @@ namespace radio {
     }
 
     /**
-     * Takes the next packet from the radio queue and returns its contents in a Buffer
+     * Takes the next packet from the radio queue and returns its contents + RSSI in a Buffer
      */
-    //% help=radio/received-packet
+    //%
     Buffer readRawPacket() {
         if (radioEnable() != MICROBIT_OK) return mkBuffer(NULL, 0);
 
