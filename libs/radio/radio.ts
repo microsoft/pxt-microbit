@@ -361,12 +361,12 @@ namespace radio {
     }
 
     /**
-     * This function is not supported anymore.
+     * Gets the received signal strength indicator (RSSI) from the last packet taken
+     * from the radio queue (via ``receiveNumber``, ``receiveString``, etc). Not supported in simulator.
      */
     //% help=radio/received-signal-strength
     //% weight=40
     //% blockId=radio_datagram_rssi block="radio received signal strength"
-    //% deprecated=true blockHidden=true
     export function receivedSignalStrength(): number {
         return lastPacket ? lastPacket.signal : 0;
     }
