@@ -72,7 +72,7 @@ namespace radio {
                             onReceivedValueHandler(lastPacket.stringPayload, lastPacket.numberPayload);
                         break;
                     case PACKET_TYPE_BUFFER:
-                        if(onReceivedBufferHandler)
+                        if (onReceivedBufferHandler)
                             onReceivedBufferHandler(lastPacket.bufferPayload);
                         break;
                     case PACKET_TYPE_STRING:
@@ -358,6 +358,17 @@ namespace radio {
     //% advanced=true
     export function setTransmitSerialNumber(transmit: boolean) {
         transmittingSerial = transmit;
+    }
+
+    /**
+     * This function is not supported anymore.
+     */
+    //% help=radio/received-signal-strength
+    //% weight=40
+    //% blockId=radio_datagram_rssi block="radio received signal strength"
+    //% deprecated=true blockHidden=true
+    export function receivedSignalStrength(): number {
+        return lastPacket ? lastPacket.signal : 0;
     }
 
     export function writeToSerial(packet: RadioPacket) {

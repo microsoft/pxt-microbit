@@ -35,7 +35,7 @@ namespace radio {
     }
 
     /**
-     * Takes the next packet from the radio queue and returns its contents + RSSI in a Buffer
+     * Internal use only. Takes the next packet from the radio queue and returns its contents + RSSI in a Buffer
      */
     //%
     Buffer readRawPacket() {
@@ -53,13 +53,12 @@ namespace radio {
     }
 
     /**
-     * Sends a raw packet through the radio
+     * Internal use only. Sends a raw packet through the radio (assumes RSSI appened to packet)
      */
-    //% advanced=true
     //% async
     void sendRawPacket(Buffer msg) {
         if (radioEnable() != MICROBIT_OK || NULL == msg) return;
-        uBit.radio.datagram.send(msg->data, msg->length);
+        uBit.radio.datagram.send(msg->data, msg->length - sizeof(int));
     }
 
     /**
@@ -72,19 +71,6 @@ namespace radio {
     void onDataReceived(Action body) {
         if (radioEnable() != MICROBIT_OK) return;
         registerWithDal(MICROBIT_ID_RADIO, MICROBIT_RADIO_EVT_DATAGRAM, body);
-        readRawPacket();
-    }
-
-    /**
-     * This function is not supported anymore.
-     */
-    //% help=radio/received-signal-strength
-    //% weight=40
-    //% blockId=radio_datagram_rssi block="radio received signal strength"
-    //% deprecated=true blockHidden=true
-    int receivedSignalStrength() {
-        if (radioEnable() != MICROBIT_OK) return 0;
-        return uBit.radio.getRSSI();
     }
 
     /**
