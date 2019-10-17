@@ -16,15 +16,14 @@ declare namespace radio {
     function raiseEvent(src: int32, value: int32): void;
 
     /**
-     * Takes the next packet from the radio queue and returns its contents in a Buffer
+     * Internal use only. Takes the next packet from the radio queue and returns its contents + RSSI in a Buffer
      */
-    //% help=radio/received-packet shim=radio::readRawPacket
+    //% shim=radio::readRawPacket
     function readRawPacket(): Buffer;
 
     /**
-     * Sends a raw packet through the radio
+     * Internal use only. Sends a raw packet through the radio (assumes RSSI appened to packet)
      */
-    //% advanced=true
     //% async shim=radio::sendRawPacket
     function sendRawPacket(msg: Buffer): void;
 
@@ -36,15 +35,6 @@ declare namespace radio {
     //% blockId=radio_datagram_received_event block="radio on data received" blockGap=8
     //% deprecated=true shim=radio::onDataReceived
     function onDataReceived(body: () => void): void;
-
-    /**
-     * This function is not supported anymore.
-     */
-    //% help=radio/received-signal-strength
-    //% weight=40
-    //% blockId=radio_datagram_rssi block="radio received signal strength"
-    //% deprecated=true blockHidden=true shim=radio::receivedSignalStrength
-    function receivedSignalStrength(): int32;
 
     /**
      * Sets the group id for radio communications. A micro:bit can only listen to one group ID at any time.

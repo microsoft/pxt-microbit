@@ -367,6 +367,7 @@ namespace radio {
     //% help=radio/received-signal-strength
     //% weight=40
     //% blockId=radio_datagram_rssi block="radio received signal strength"
+    //% deprecated=true blockHidden=true
     export function receivedSignalStrength(): number {
         return lastPacket ? lastPacket.signal : 0;
     }
