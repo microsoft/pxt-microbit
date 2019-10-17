@@ -40,10 +40,15 @@ namespace radio {
     //% help=radio/received-packet
     Buffer readRawPacket() {
         if (radioEnable() != MICROBIT_OK) return mkBuffer(NULL, 0);
-        uint8_t buf[32];
-        int size = uBit.radio.datagram.recv(buf, sizeof(buf));
-        if (size <= 0)
+
+        PacketBuffer p = uBit.radio.datagram.recv();
+        if (p == PacketBuffer::EmptyPacket)
             return mkBuffer(NULL, 0);
+
+        int rssi = p.getRSSI();
+        uint8_t buf[MICROBIT_RADIO_MAX_PACKET_SIZE + sizeof(int)]; // packet length + rssi
+        memcpy(buf, p.getBytes(), 0); // data
+        memcpy(buf + MICROBIT_RADIO_MAX_PACKET_SIZE, &rssi, sizeof(int)); // RSSi - assumes Int32LE layout
         return mkBuffer(buf, size);
     }
 
@@ -71,14 +76,12 @@ namespace radio {
     }
 
     /**
-     * Gets the received signal strength indicator (RSSI) from the last packet taken
-     * from the radio queue (via ``receiveNumber``, ``receiveString``, etc). Not supported in simulator.
-     * namespace=radio
+     * This function is not supported anymore.
      */
     //% help=radio/received-signal-strength
     //% weight=40
     //% blockId=radio_datagram_rssi block="radio received signal strength"
-    //% deprecated=true
+    //% deprecated=true blockHidden=true
     int receivedSignalStrength() {
         if (radioEnable() != MICROBIT_OK) return 0;
         return uBit.radio.getRSSI();

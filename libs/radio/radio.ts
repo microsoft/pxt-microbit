@@ -60,7 +60,6 @@ namespace radio {
             let buffer: Buffer = readRawPacket();
             while (buffer && buffer.length) {
                 lastPacket = RadioPacket.getPacket(buffer);
-                lastPacket.signal = receivedSignalStrength();
                 switch (lastPacket.packetType) {
                     case PACKET_TYPE_NUMBER:
                     case PACKET_TYPE_DOUBLE:
@@ -162,6 +161,7 @@ namespace radio {
 
     export class RadioPacket {
         public static getPacket(data: Buffer) {
+            // last 4 bytes is RSSi
             return new RadioPacket(data);
         }
 
@@ -172,10 +172,12 @@ namespace radio {
         }
 
         private constructor(public readonly data?: Buffer) {
-            if (!data) this.data = control.createBuffer(32);
+            if (!data) this.data = control.createBuffer(DAL.MICROBIT_RADIO_MAX_PACKET_SIZE + 4);
         }
 
-        public signal: number;
+        get signal() {
+            return this.data.getNumber(NumberFormat.Int32LE, this.data.length - 4);
+        }
 
         get packetType() {
             return this.data[0];
