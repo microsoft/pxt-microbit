@@ -61,7 +61,8 @@ namespace radio {
     void sendRawPacket(Buffer msg) {
         if (radioEnable() != MICROBIT_OK || NULL == msg) return;
 
-        uBit.radio.datagram.send(msg->data, msg->length - sizeof(int));
+        // don't send RSSI data; and make sure no buffer underflow
+        uBit.radio.datagram.send(msg->data, Math.max(0, msg->length - sizeof(int)));
     }
 
     /**
