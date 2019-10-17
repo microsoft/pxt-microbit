@@ -48,7 +48,8 @@ namespace radio {
 
         int rssi = p.getRSSI();
         uint8_t buf[MICROBIT_RADIO_MAX_PACKET_SIZE + sizeof(int)]; // packet length + rssi
-        memcpy(buf, p.getBytes(), 0); // data
+        memset(buf, 0, sizeof(buf));
+        memcpy(buf, p.getBytes(), p.length()); // data
         memcpy(buf + MICROBIT_RADIO_MAX_PACKET_SIZE, &rssi, sizeof(int)); // RSSi - assumes Int32LE layout
         return mkBuffer(buf, sizeof(buf));
     }
