@@ -75,7 +75,7 @@ namespace radio {
         if (radioEnable() != MICROBIT_OK) return;
 
         registerWithDal(MICROBIT_ID_RADIO, MICROBIT_RADIO_EVT_DATAGRAM, body);
-        readRawPacket(); // wake up read code
+        uBit.radio.datagram.recv(); // wake up read code
     }
 
     /**
