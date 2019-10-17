@@ -32,7 +32,6 @@
     "docs/static/icons/favicon.ico"
   ],
   "devDependencies": {
-    "typescript": "2.6.1",
     "less": "2.7.3",
     "semantic-ui-less": "2.2.14",
     "react": "16.8.3",
@@ -46,6 +45,6 @@
   },
   "dependencies": {
     "pxt-common-packages": "6.16.11",
-    "pxt-core": "5.26.1"
+    "pxt-core": "5.26.2"
   }
 }
