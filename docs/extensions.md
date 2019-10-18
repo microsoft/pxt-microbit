@@ -33,6 +33,11 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
   "cardType": "package"
 },
 {
+  "name": "4tronix Drive:Bit",
+  "url":"/pkg/4tronix/DriveBit",
+  "cardType": "package"
+},
+{
   "name": "4tronix MiniBit",
   "url":"/pkg/4tronix/MiniBit",
   "cardType": "package"
