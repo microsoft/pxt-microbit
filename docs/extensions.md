@@ -402,6 +402,10 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
     "name": "HTS221 Humidity and temperature",
     "url": "/pkg/makecode-extensions/HTS221",
     "cardType": "package"
+}, {    
+    "name": "Tinkertanker 28BYJ-48 steppermotor",
+    "url": "/pkg/Tinkertanker/pxt-stepper-motor",
+    "cardType": "package"
 }]
 ```
 
