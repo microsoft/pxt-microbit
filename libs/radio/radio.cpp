@@ -62,7 +62,9 @@ namespace radio {
         if (radioEnable() != MICROBIT_OK || NULL == msg) return;
 
         // don't send RSSI data; and make sure no buffer underflow
-        uBit.radio.datagram.send(msg->data, __max(0, msg->length - sizeof(int)));
+        int len = msg->length - sizeof(int);
+        if (len > 0)
+            uBit.radio.datagram.send(msg->data, len);
     }
 
     /**
