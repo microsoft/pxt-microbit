@@ -150,7 +150,8 @@
             "makecode-extensions/HTS221",
             "assirati/pxt-inventura",
             "Veilkrand/pxt-RobotCar",
-            "4tronix/DriveBit"
+            "4tronix/DriveBit",
+            "Freenove/Makecode-Extension-Starter-Kit"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",

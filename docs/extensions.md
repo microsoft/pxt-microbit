@@ -289,6 +289,10 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
    "name": "Pi Supply tinker:kit",
    "url": "/pkg/PiSupply/pxt-tinker-kit",
    "cardType": "package"
+}, {
+   "name": "Freenove Starter Kit",
+   "url": "/pkg/Freenove/Makecode-Extension-Starter-Kit",
+   "cardType": "package"
 }]
 ```
 
