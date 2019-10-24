@@ -106,6 +106,7 @@ namespace radio {
     //% advanced=true
     void setTransmitPower(int power) {
         if (radioEnable() != MICROBIT_OK) return;
+
         uBit.radio.setTransmitPower(power);
     }
 
