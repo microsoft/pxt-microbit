@@ -72,6 +72,7 @@ namespace pxsim {
         }
 
         setTransmitPower(power: number) {
+            power = power | 0;
             this.power = Math.max(0, Math.min(7, power));
         }
 
@@ -80,6 +81,8 @@ namespace pxsim {
         }
 
         setFrequencyBand(band: number) {
+            band = band | 0;
+            if (band < 0 || band > 83) return;
             this.band = band;
         }
 
