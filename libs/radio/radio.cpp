@@ -106,7 +106,20 @@ namespace radio {
     //% advanced=true
     void setTransmitPower(int power) {
         if (radioEnable() != MICROBIT_OK) return;
-
         uBit.radio.setTransmitPower(power);
+    }
+
+    /**
+    * Change the transmission and reception band of the radio to the given channel
+    * @param band a frequency band in the range 0 - 83. Each step is 1MHz wide, based at 2400MHz.
+    **/
+    //% help=radio/set-frequency-band
+    //% weight=8 blockGap=8
+    //% blockId=radio_set_frequency_band block="radio set frequency band %band"
+    //% band.min=0 band.max=83
+    //% advanced=true
+    void setFrequencyBand(int band) {
+        if (radioEnable() != MICROBIT_OK) return;
+        uBit.radio.setFrequencyBand(band);
     }
 }

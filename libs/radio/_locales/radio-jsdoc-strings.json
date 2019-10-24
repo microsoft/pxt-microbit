@@ -37,6 +37,8 @@
   "radio.sendValue": "Broadcasts a name / value pair along with the device serial number\nand running time to any connected micro:bit in the group. The name can\ninclude no more than 8 characters.",
   "radio.sendValue|param|name": "the field name (max 8 characters), eg: \"name\"",
   "radio.sendValue|param|value": "the numeric value",
+  "radio.setFrequencyBand": "Change the transmission and reception band of the radio to the given channel",
+  "radio.setFrequencyBand|param|band": "a frequency band in the range 0 - 83. Each step is 1MHz wide, based at 2400MHz.",
   "radio.setGroup": "Sets the group id for radio communications. A micro:bit can only listen to one group ID at any time.",
   "radio.setGroup|param|id": "the group id between ``0`` and ``255``, eg: 1",
   "radio.setTransmitPower": "Change the output power level of the transmitter to the given value.",

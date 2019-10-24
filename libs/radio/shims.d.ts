@@ -56,6 +56,17 @@ declare namespace radio {
     //% power.min=0 power.max=7
     //% advanced=true shim=radio::setTransmitPower
     function setTransmitPower(power: int32): void;
+
+    /**
+     * Change the transmission and reception band of the radio to the given channel
+     * @param band a frequency band in the range 0 - 83. Each step is 1MHz wide, based at 2400MHz.
+     **/
+    //% help=radio/set-frequency-band
+    //% weight=8 blockGap=8
+    //% blockId=radio_set_frequency_band block="radio set frequency band %band"
+    //% band.min=0 band.max=83
+    //% advanced=true shim=radio::setFrequencyBand
+    function setFrequencyBand(band: int32): void;
 }
 
 // Auto-generated. Do not edit. Really.

@@ -58,11 +58,13 @@ namespace pxsim {
         transmitSerialNumber = false;
         datagram: RadioDatagram;
         groupId: number;
+        band: number;
 
         constructor(runtime: Runtime) {
             this.datagram = new RadioDatagram(runtime);
             this.power = 6; // default value
             this.groupId = 0;
+            this.band = 7; // https://github.com/lancaster-university/microbit-dal/blob/master/inc/core/MicroBitConfig.h#L320
         }
 
         public setGroup(id: number) {
@@ -75,6 +77,10 @@ namespace pxsim {
 
         setTransmitSerialNumber(sn: boolean) {
             this.transmitSerialNumber = !!sn;
+        }
+
+        setFrequencyBand(band: number) {
+            this.band = band;
         }
 
         raiseEvent(id: number, eventid: number) {
@@ -106,6 +112,10 @@ namespace pxsim.radio {
 
     export function setTransmitPower(power: number): void {
         board().radioState.setTransmitPower(power);
+    }
+
+    export function setFrequencyBand(band: number) { 
+        board().radioState.setFrequencyBand(band);
     }
 
     export function sendRawPacket(buf: RefBuffer) {
