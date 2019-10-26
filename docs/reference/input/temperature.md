@@ -38,12 +38,12 @@ basic.forever(() => {
 This program measures the temperature using Fahrenheit degrees.
 Fahrenheit is a way of measuring temperature that is commonly used in the United States.
 To make a Celsius temperature into a Fahrenheit one, multiply the Celsius temperature by
-``18``, divide by ``10`` and add ``32``.
+``1.8`` and add ``32``.
 
 ```blocks
 basic.forever(() => {
     let c = input.temperature()
-    let f = (c * 18) / 10 + 32
+    let f = (1.8 * c) + 32
     basic.showNumber(f)
 })
 ```
