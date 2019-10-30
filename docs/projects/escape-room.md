@@ -1,6 +1,6 @@
 # Escape Room
 
-Project used to create escape room experiences.
+Projects used to create escape room experiences.
 
 ## Radio
 
@@ -15,4 +15,4 @@ Project used to create escape room experiences.
 
 ## Acknowledgments
 
-Escape room ideas from great discussion with [Pauline Maas](https://twitter.com/4pip) and [Peter Heldens](https://twitter.com/PeterHeldens) from https://microbit101.nl/.
+Escape room ideas are gathered from a great discussion with [Pauline Maas](https://twitter.com/4pip) and [Peter Heldens](https://twitter.com/PeterHeldens) at https://microbit101.nl/.
