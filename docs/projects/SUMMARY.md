@@ -45,6 +45,7 @@
   * [Milky Monster](/projects/milky-monster)
   * [Railway Crossing](/projects/railway-crossing)
   * [Kitronik RC Car Hack](/projects/rc-car)
+  * [Rotary Dial Radio](/projects/rotary-dial-radio)
 * [Science](/projects/science)
   * [Timing Gates](/projects/timing-gates)
   * [Soil Moisture](/projects/soil-moisture)
