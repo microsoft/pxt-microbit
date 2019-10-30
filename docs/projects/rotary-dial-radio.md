@@ -60,7 +60,7 @@ basic.forever(function () {
 
 Try moving the dial slowing, click and click and you should see the pulses, e.g. the signal going high and low. If you don't see anything, keep trying other cables. Be patient, don't give up.
 
-![Scoping the phone](/static/mb/projects/rotary-dial-radio/tone.mp4)
+https://youtu.be/po9o77IEDaI
 
 ## Detecting the pulses
 
@@ -152,7 +152,7 @@ basic.forever(function () {
 
 Improving the program is left as a challenge (treasure hunt). The following program was the result of the initial investigation; it waits 3 seconds between digits to send the entire number over radio and use the screen to display how many digits have been entered. This is just an example, you can come up with your own twist on this too!
 
-![Dialing the micro:bit phone](/static/mb/projects/rotary-dial-radio/dial.mp4)
+https://youtu.be/gW6rLH7qH5Q
 
 ```blocks
 pins.onPulsed(DigitalPin.P0, PulseValue.High, function () {
