@@ -25,7 +25,7 @@ If you skim through the WikiPedia on "rotary dial phones", you'll quickly learn 
 
 ## Digging into the phone
 
-Fortunately for us, the bottom of the phone is easily removed by pressing lever. It reveals the internals of the phone. One can see the two massive bells to ring the phone and some other transistors and circuitery. 
+Fortunately for us, the bottom of the phone is easily removed by pressing lever. It reveals the internals of the phone. One can see the two massive bells to ring the phone and some other capacitors and circuitery. 
 
 ![Inside of a rotary phone](/static/mb/projects/rotary-dial-radio/guts.jpg)
 
