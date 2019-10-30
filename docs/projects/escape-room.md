@@ -2,17 +2,6 @@
 
 Project used to create escape room experiences.
 
-## Locks
-
-```codecard
-[{
-  "name": "Button combo lock",
-  "url":"/projects/button-combo-lock",
-  "description": "Enter the correct button combo to see the number lock",
-  "imageUrl":"/static/mb/projects/button-combo-lock.png"
-}, {
-```
-
 ## Radio
 
 ```codecard
