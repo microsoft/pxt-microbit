@@ -21,7 +21,7 @@ The phone below is a Belgium rotary dial phone from 1945. It's heavy and the dia
 
 ![Antique rotary dial phone](/static/mb/projects/rotary-dial-radio/oldphone.jpg)
 
-If you skim through the WikiPedia on "rotary dial phones", you'll quickly learn that they used something called **pulse dialing** (https://en.wikipedia.org/wiki/Pulse_dialing). In a nutshell, the dial sends opens and closes the circuit while it rotates which sends a serie of electrical pulses on the phone line. 1 pulse for number 1, 2 for number 2, and so. 0 would be 10 pulses.
+If you skim through the WikiPedia on "rotary dial phones", you'll quickly learn that they used something called **pulse dialing** (https://en.wikipedia.org/wiki/Pulse_dialing). In a nutshell, the dial sends opens and closes the circuit while it rotates which sends a serie of electrical pulses on the phone line. 1 pulse for number 1, 2 for number 2, and so. (What about 0?)
 
 ## Digging into the phone
 
@@ -62,11 +62,95 @@ Try moving the dial slowing, click and click and you should see the pulses, e.g.
 
 ![Scoping the phone](/static/mb/projects/rotary-dial-radio/tone.mp4)
 
-## Decoding the pulses
+## Detecting the pulses
 
+The @boardname@ can raise an event when an electrical signal on **P0** goes low or high. This is the most important step as it allows us to precisely detect and count pulses. Try the following program with the phone. When you move the dial, you see the first LED turn on and off as the line goes high and low.
 
-## Final program
+```blocks
+pins.onPulsed(DigitalPin.P0, PulseValue.High, function () {
+    led.plot(0, 0)
+})
+pins.onPulsed(DigitalPin.P0, PulseValue.Low, function () {
+    led.unplot(0, 0)
+})
+```
 
+## Counting the pulses
+
+Now that we detect pulses, we can use a variable to count them. In this test program, we increment the **pulseCount** variable by one on each high pulse and we display the number when pressing the **A** button. Try dialing a number; then pressing A.
+
+```blocks
+let pulseCount = 0
+input.onButtonPressed(Button.A, function () {
+    basic.showNumber(pulseCount)
+    pulseCount = 0
+})
+pins.onPulsed(DigitalPin.P0, PulseValue.High, function () {
+    led.plot(0, 0)
+})
+pins.onPulsed(DigitalPin.P0, PulseValue.Low, function () {
+    led.unplot(0, 0)
+    pulseCount += 1
+})
+```
+
+## Digits and Numbers
+
+Our next task is to detect that the pulses of a digit are done and we should record it in the final number. The phone generates a train of pulses (typically 10 per second) per digit; then the user might move the dial back to start the next digit. This leaves a window of time when nothing happens on the line. If our decoder detects that nothing happens on the line for a long time, say 200ms, we assume that the train is done and save the digit.
+
+Instead of using button **A**, we add a **forever** loop that monitors the elapsed time since the last pulse. 
+If we have had a pulse (``pulseCount > 0``) **and** the last pulse was more than 200ms ago, we have a digit and we can send it. 
+
+```blocks
+let pulseCount = 0
+let lastPulseMs = 0
+pins.onPulsed(DigitalPin.P0, PulseValue.High, function () {
+    led.plot(0, 0)
+})
+pins.onPulsed(DigitalPin.P0, PulseValue.Low, function () {
+    led.unplot(0, 0)
+    pulseCount += 1
+    lastPulseMs = input.runningTime()
+})
+basic.forever(function () {
+    if (pulseCount > 0 && lastPulseMs - input.runningTime() > 200) {
+        radio.sendNumber(pulseCount)
+        basic.showNumber(pulseCount)
+        pulseCount = 0
+    }
+})
+```
+
+## What about 0?
+
+Great question! ``0`` is special and represented by 10 pulses so we need to update our decoder to take this into account.
+
+```blocks
+let pulseCount = 0
+let lastPulseMs = 0
+pins.onPulsed(DigitalPin.P0, PulseValue.High, function () {
+    led.plot(0, 0)
+})
+pins.onPulsed(DigitalPin.P0, PulseValue.Low, function () {
+    led.unplot(0, 0)
+    pulseCount += 1
+    lastPulseMs = input.runningTime()
+})
+basic.forever(function () {
+    if (pulseCount > 0 && lastPulseMs - input.runningTime() > 200) {
+        if(pulseCount == 10) {
+            pulseCount = 0
+        }
+        radio.sendNumber(pulseCount)
+        basic.showNumber(pulseCount)
+        pulseCount = 0
+    }
+})
+```
+
+## Numbers and more
+
+Improving the program is left as a challenge (treasure hunt). The following program was the result of the initial investigation; it waits 3 seconds between digits to send the entire number over radio and use the screen to display how many digits have been entered. This is just an example, you can come up with your own twist on this too!
 
 ![Dialing the micro:bit phone](/static/mb/projects/rotary-dial-radio/dial.mp4)
 
