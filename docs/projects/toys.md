@@ -14,6 +14,11 @@
   "description": "Make a robot from a milk carton",
   "imageUrl":"/static/mb/projects/milk-carton-robot.jpg"
 }, {
+  "name": "Robot Unicorn",
+  "url":"/projects/robot-unicorn",
+  "description": "Make a gesture controlled robot unicorn",
+  "imageUrl":"/static/mb/projects/robot-unicorn/robotunicorn.jpg"
+}, {
   "name": "Milky Monster",
   "url":"/projects/milky-monster",
   "description": "Make a funny milky-monster robot!",
