@@ -42,6 +42,7 @@
 * [Toys](/projects/toys)
   * [Inchworm](/projects/inchworm)
   * [Milk Carton Robot](/projects/milk-carton-robot)
+  * [Robot Unicorn](/projects/robot-unicorn)
   * [Milky Monster](/projects/milky-monster)
   * [Railway Crossing](/projects/railway-crossing)
   * [Kitronik RC Car Hack](/projects/rc-car)
