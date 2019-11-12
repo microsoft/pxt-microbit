@@ -46,6 +46,10 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
   "url":"/pkg/sunfounder/pxt-sloth",
   "cardType": "package"
 }, {
+  "name": "Sphero RVR",
+  "url":"/pkg/sphero-inc/sphero-sdk-microbit-makecode",
+  "cardType": "package"
+}, {
   "name": "ReroKit rero:micro",
   "url":"/pkg/ReRoKit/pxt-reromicro",
   "cardType": "package"
