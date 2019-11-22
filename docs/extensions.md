@@ -200,6 +200,11 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
 
 ```codecard
 [{
+  "name": "Inksmith Climate Action Kit",
+  "url":"/pkg/dugbraden/pxt-climate-action-kit",
+  "cardType": "package"
+},
+{
   "name": "Kitronik Realtime Clock",
   "url":"/pkg/KitronikLtd/pxt-kitronik-rtc",
   "cardType": "package"

@@ -151,7 +151,8 @@
             "assirati/pxt-inventura",
             "Veilkrand/pxt-RobotCar",
             "4tronix/DriveBit",
-            "Freenove/Makecode-Extension-Starter-Kit"
+            "Freenove/Makecode-Extension-Starter-Kit",
+            "dugbraden/pxt-climate-action-kit"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",
