@@ -230,6 +230,11 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
   "cardType": "package"
 },
 {
+  "name": "Kitronik Halo HD",
+  "url":"/pkg/KitronikLtd/pxt-kitronik-halohd",
+  "cardType": "package"
+},
+{
   "name": "micro:turtle",
   "url":"/pkg/microsoft/pxt-microturtle",
   "cardType": "package"
