@@ -64,7 +64,7 @@ cd ..
 ```
 6. Clone this repository.
 ```
-git clone https://github.com/microsoft/pxt-microbit-next
+git clone https://github.com/microsoft/pxt-microbit
 cd pxt-microbit
 ```
 7. Install the PXT command line (add `sudo` for Mac/Linux shells).
