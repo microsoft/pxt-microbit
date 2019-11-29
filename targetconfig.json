@@ -154,7 +154,8 @@
             "Freenove/Makecode-Extension-Starter-Kit",
             "EBOTICS/pxt-eboticsMIBO",
             "KitronikLtd/pxt-kitronik-halohd",
-            "dugbraden/pxt-climate-action-kit"
+            "dugbraden/pxt-climate-action-kit",
+            "alsrobot-microbit-makecode-packages/MiniCruise"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",

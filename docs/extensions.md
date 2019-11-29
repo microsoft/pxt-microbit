@@ -50,6 +50,10 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
   "url":"/pkg/EBOTICS/pxt-eboticsMIBO",
   "cardType": "package"
 }, {
+  "name": "ALSRobot MinCruise",
+  "url":"/pkg/alsrobot-microbit-makecode-packages/MiniCruise",
+  "cardType": "package"
+}, {
   "name": "ReroKit rero:micro",
   "url":"/pkg/ReRoKit/pxt-reromicro",
   "cardType": "package"
