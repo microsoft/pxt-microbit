@@ -152,7 +152,8 @@
             "Veilkrand/pxt-RobotCar",
             "4tronix/DriveBit",
             "Freenove/Makecode-Extension-Starter-Kit",
-            "KitronikLtd/pxt-kitronik-halohd"
+            "KitronikLtd/pxt-kitronik-halohd",
+            "dugbraden/pxt-climate-action-kit"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",
