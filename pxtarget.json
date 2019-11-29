@@ -23,7 +23,10 @@
         "preferredPackages": [
             "Microsoft/pxt-neopixel"
         ],
-        "githubPackages": true
+        "githubPackages": true,
+        "cloudProviders": {
+            "github": {}
+        }
     },
     "compile": {
         "isNative": false,
