@@ -46,6 +46,10 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
   "url":"/pkg/sunfounder/pxt-sloth",
   "cardType": "package"
 }, {
+ "name": "EBOTICS MIBO",
+  "url":"/pkg/EBOTICS/pxt-eboticsMIBO",
+  "cardType": "package"
+}, {
   "name": "ReroKit rero:micro",
   "url":"/pkg/ReRoKit/pxt-reromicro",
   "cardType": "package"
@@ -232,6 +236,11 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
 {
   "name": "Kitronik Access:Bit",
   "url":"/pkg/KitronikLtd/pxt-kitronik-accessbit",
+  "cardType": "package"
+},
+{
+  "name": "Kitronik Halo HD",
+  "url":"/pkg/KitronikLtd/pxt-kitronik-halohd",
   "cardType": "package"
 },
 {
