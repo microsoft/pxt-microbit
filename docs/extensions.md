@@ -50,6 +50,10 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
   "url":"/pkg/sphero-inc/sphero-sdk-microbit-makecode",
   "cardType": "package"
 }, {
+ "name": "EBOTICS MIBO",
+  "url":"/pkg/EBOTICS/pxt-eboticsMIBO",
+  "cardType": "package"
+}, {
   "name": "ReroKit rero:micro",
   "url":"/pkg/ReRoKit/pxt-reromicro",
   "cardType": "package"
@@ -204,6 +208,11 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
 
 ```codecard
 [{
+  "name": "Inksmith Climate Action Kit",
+  "url":"/pkg/dugbraden/pxt-climate-action-kit",
+  "cardType": "package"
+},
+{
   "name": "Kitronik Realtime Clock",
   "url":"/pkg/KitronikLtd/pxt-kitronik-rtc",
   "cardType": "package"
@@ -231,6 +240,11 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
 {
   "name": "Kitronik Access:Bit",
   "url":"/pkg/KitronikLtd/pxt-kitronik-accessbit",
+  "cardType": "package"
+},
+{
+  "name": "Kitronik Halo HD",
+  "url":"/pkg/KitronikLtd/pxt-kitronik-halohd",
   "cardType": "package"
 },
 {
@@ -297,6 +311,16 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
    "name": "Freenove Starter Kit",
    "url": "/pkg/Freenove/Makecode-Extension-Starter-Kit",
    "cardType": "package"
+}]
+```
+
+## Wearables
+
+```codecard
+[{
+  "name": "Bright Wearables Bright Board",
+  "url":"/pkg/BrightWearables/pxt-microbit-brightboard",
+  "cardType": "package"
 }]
 ```
 

@@ -124,7 +124,7 @@ You can attach an external device such as a motor to these and power it using th
 
 ## Serial Communication
 
-The micro:bit can send and receive data via [serial communication](/device/serial). The serial data can be transferred via USB or BLE.
+The micro:bit can send and receive data via [serial communication](/device/serial). The serial data can be transferred via [USB](/reference/serial/redirect-to-usb), BLE or [redirected to pins](/reference/serial/redirect) on the edge connector.
 
 ## Bluetooth Low Energy (BLE) Antenna
 

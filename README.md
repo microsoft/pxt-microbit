@@ -80,8 +80,8 @@ This step is only required if you intend to make changes to pxt and/or
 pxt-common-packages repos. If all you want is serve a local Makecode, you can skip
 this step.
 ```
-npm link ../pxt
-npm link ../pxt-common-packages
+pxt link ../pxt
+pxt link ../pxt-common-packages
 ```
 Note the above command assumes the folder structure of   
 ```
@@ -117,6 +117,23 @@ Sometimes, your built folder might be in a bad state, clean it and try again.
 ```
 pxt clean
 ```
+
+
+### Building with CODAL locally
+
+The following commands force a local build using CODAL.
+
+```
+pxt buildtarget --local
+```
+
+To disable docker, run
+
+```
+export PXT_NODOCKER=1
+```
+
+If you are also modifiying CODAL, consider running ``pxt clean`` to ensure the proper branch is picked up.
 
 ### Updates
 

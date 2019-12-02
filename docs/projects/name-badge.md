@@ -95,4 +95,4 @@ Decorate your badge with colored paper, markers, stickers, glitter.
 
 ![Completed name badge](/static/mb/projects/name-badge/picture9.png)
 
-It's now finished! you badge is ready let others know who you are.
+It's now finished! your badge is ready let others know who you are.
