@@ -25,7 +25,8 @@ basic.showIcon(IconNames.Sad)
 
 You can create a beating heart by using the forever block as follows:
 
-```basic.forever(function () {
+```blocks
+basic.forever(function () {
     basic.showIcon(IconNames.Heart)
     basic.showIcon(IconNames.SmallHeart)
 })
@@ -35,19 +36,22 @@ You can create a beating heart by using the forever block as follows:
 
 You could slow down the previous animation by inserting a pause block:
 
-```sig
+```block
 basic.pause(1000)
 ```
-but how would you speed it up? 
-You can change the internal pause default value - called internal - to be smaller than 600 by going to javascript.
 
-This javascript code creates a crazy fast heart beat! Did you know that hamsters had a heart rate this fast? 
+...but how would you speed it up?
 
-```typescript-ignore
+You can change the default pause value, which is set in the ``interval`` parameter, to be smaller than `600` by changing it in the JavaScript editor.
+
+This JavaScript code creates a crazy fast heart beat! Did you know that a hamster's heart beats at a rate this fast? 
+
+```typescript
 basic.forever(function () {
     basic.showIcon(IconNames.Heart, 60)
     basic.showIcon(IconNames.SmallHeart, 60)
-})```
+})
+```
 
 ## See also
 
