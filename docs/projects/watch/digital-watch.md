@@ -248,7 +248,7 @@ input.onGesture(Gesture.Shake, () => {
     }
     time = "" + adjust;
     time = time + ":"
-    if (minutes < 9)
+    if (minutes < 10)
     {
         time = time + "0"
     }
