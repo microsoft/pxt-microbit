@@ -19,7 +19,7 @@ basic.forever(function() {
 
 ## Board system errors
 
-The @boardname@ system errors range between **01** - **99**. For a full list of these codes, what they mean and what you can do to resolve them, visit the [micro:bit guide to error codes](https://microbit.org/guide/hardware/error-codes/).
+The @boardname@ system errors range between **01** - **99**. For a full list of these codes, what they mean and what you can do to resolve them, visit the [micro:bit guide to error codes](https://support.microbit.org/en/support/solutions/articles/19000016969).
 
 * **10** (`MICROBIT_I2C_LOCKUP`): the @boardname@'s I2C bus is not working
 * **20** (`MICROBIT_OOM`): there is no free memory on the @boardname@
