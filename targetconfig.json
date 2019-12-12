@@ -157,7 +157,8 @@
             "EBOTICS/pxt-eboticsMIBO",
             "KitronikLtd/pxt-kitronik-halohd",
             "dugbraden/pxt-climate-action-kit",
-            "alsrobot-microbit-makecode-packages/MiniCruise"
+            "alsrobot-microbit-makecode-packages/MiniCruise",
+            "4tronix/ServoBit"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",
