@@ -56,10 +56,11 @@ basic.forever(() => {
 
 ## Calibration
 
-Every time you start to use the compass (for example, if you have just
-turned the @boardname@ on), the @boardname@ will start to [calibrateCompass](/reference/input/calibrate-compass)
-(adjust itself).  It will ask you to draw a circle by tilting the
-@boardname@.
+Every time you start to use the compass (for example, if you have just turned the @boardname@ on),
+the @boardname@ will start a [calibrate compass](/reference/input/calibrate-compass)
+(adjust itself).
+The [calibration step](https://support.microbit.org/support/solutions/articles/19000008874-calibrating-the-micro-bit-compass)
+will ask you to draw a fill pattern on the screen by tilting the @boardname@.
 
 If you are calibrating or using the compass near metal, it might
 confuse the @boardname@.
@@ -78,4 +79,4 @@ input.onButtonPressed(Button.AB, () => {
 
 ## See also
 
-[acceleration](/reference/input/acceleration), [calibrateCompass](/reference/input/calibrate-compass)
+[acceleration](/reference/input/acceleration), [calibrate compass](/reference/input/calibrate-compass)
