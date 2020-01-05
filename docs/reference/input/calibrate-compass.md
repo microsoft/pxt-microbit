@@ -30,4 +30,4 @@ input.onButtonPressed(Button.AB, () => {
 
 ## See also
 
-[compassHeading](/reference/input/compass-heading)
+[compass heading](/reference/input/compass-heading)
