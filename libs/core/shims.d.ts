@@ -358,6 +358,19 @@ declare namespace input {
 declare namespace control {
 
     /**
+     * Gets the number of milliseconds elapsed since power on.
+     */
+    //% help=control/millis weight=50
+    //% blockId=control_running_time block="millis (ms)" shim=control::millis
+    function millis(): int32;
+
+    /**
+     * Gets current time in microseconds. Overflows every ~18 minutes.
+     */
+    //% shim=control::micros
+    function micros(): int32;
+
+    /**
      * Schedules code that run in the background.
      */
     //% help=control/in-background blockAllowMultiple=1 afterOnStart=true
