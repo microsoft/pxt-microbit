@@ -895,6 +895,12 @@ declare interface Buffer {
     getUint8(off: int32): int32;
 
     /**
+     * Returns false when the buffer can be written to.
+     */
+    //% shim=BufferMethods::isReadOnly
+    isReadOnly(): boolean;
+
+    /**
      * Writes an unsigned byte at a particular location
      */
     //% shim=BufferMethods::setUint8

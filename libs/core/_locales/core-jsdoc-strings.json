@@ -55,6 +55,7 @@
   "Buffer.getNumber": "Read a number in specified format from the buffer.",
   "Buffer.getUint8": "Reads an unsigned byte at a particular location",
   "Buffer.indexOf": "Return position of other buffer in current buffer",
+  "Buffer.isReadOnly": "Returns false when the buffer can be written to.",
   "Buffer.length": "Returns the length of a Buffer object.",
   "Buffer.rotate": "Rotate buffer left in place.\n\n\n\nstart. eg: -1",
   "Buffer.rotate|param|length": "number of elements in buffer. If negative, length is set as the buffer length minus",
