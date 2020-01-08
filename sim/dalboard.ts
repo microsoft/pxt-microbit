@@ -78,7 +78,10 @@ namespace pxsim {
                     "P19": DAL.MICROBIT_ID_IO_P19
                 }
             });
-            this.builtinParts["radio"] = this.radioState = new RadioState(runtime);
+            this.builtinParts["radio"] = this.radioState = new RadioState(runtime, {
+                ID_RADIO: DAL.MICROBIT_ID_RADIO,
+                RADIO_EVT_DATAGRAM: DAL.MICROBIT_RADIO_EVT_DATAGRAM
+            });
             this.builtinParts["accelerometer"] = this.accelerometerState = new AccelerometerState(runtime);
             this.builtinParts["serial"] = this.serialState = new SerialState();
             this.builtinParts["thermometer"] = this.thermometerState = new ThermometerState();
