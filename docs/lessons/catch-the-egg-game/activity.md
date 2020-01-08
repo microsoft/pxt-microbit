@@ -15,7 +15,7 @@ basic.forever(function() {
     led.plot(eggX, eggY)
     basic.pause(300)
     let accX = input.acceleration(Dimension.X)
-    basketX = 2 + Math.min(2, Math.max(-2, accX / 200))
+    basketX = 2 + Math.min(2, Math.max(-2, Math.idiv(accX, 200)))
     led.plot(basketX, 4)
     if (eggY > 4) {
         eggY = -1
@@ -46,7 +46,7 @@ basic.forever(function() {
     led.plot(eggX1, eggY1)
     basic.pause(300)
     let accX = input.acceleration(Dimension.X)
-    basketX1 = 2 + Math.min(2, Math.max(-2, accX / 200))
+    basketX1 = 2 + Math.min(2, Math.max(-2, Math.idiv(accX, 200)))
     led.plot(basketX1, 4)
     if (eggY1 > 4) {
         eggY1 = -1
@@ -85,7 +85,7 @@ basic.forever(function() {
     led.plot(eggX2, eggY2)
     basic.pause(300)
     let accX2 = input.acceleration(Dimension.X)
-    basketX2 = 2 + Math.min(2, Math.max(-2, accX2 / 200))
+    basketX2 = 2 + Math.min(2, Math.max(-2, Math.idiv(accX2, 200)))
     led.plot(basketX2, 4)
     if (eggY2 > 4) {
         eggY2 = -1
@@ -124,7 +124,7 @@ basic.forever(function() {
     led.plot(eggX3, eggY3)
     basic.pause(300)
     let accX3 = input.acceleration(Dimension.X)
-    basketX3 = 2 + Math.min(2, Math.max(-2, accX3 / 200))
+    basketX3 = 2 + Math.min(2, Math.max(-2, Math.idiv(accX3, 200)))
     led.plot(basketX3, 4)
     if (eggY3 > 4) {
         eggY3 = -1
