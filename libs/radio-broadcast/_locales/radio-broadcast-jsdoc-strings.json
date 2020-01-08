@@ -1,6 +1,0 @@
-{
-  "radio": "Communicate data using radio packets",
-  "radio.onReceivedMessage": "Registers code to run for a particular message",
-  "radio.onReceivedMessage|param|msg": "@param handler ",
-  "radio.sendMessage": "Broadcasts a message over radio"
-}
