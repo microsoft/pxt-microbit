@@ -1,0 +1,6 @@
+{
+  "radio.onReceivedMessage|block": "on radio $msg received",
+  "radio.sendMessage|block": "radio send $msg",
+  "radio|block": "radio",
+  "{id:category}Radio": "Radio"
+}
