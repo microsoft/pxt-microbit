@@ -332,22 +332,6 @@ declare namespace input {
     function magneticForce(dimension: Dimension): int32;
 
     /**
-     * Gets the number of milliseconds elapsed since power on.
-     */
-    //% help=input/running-time weight=50 blockGap=8
-    //% blockId=device_get_running_time block="running time (ms)"
-    //% advanced=true shim=input::runningTime
-    function runningTime(): int32;
-
-    /**
-     * Gets the number of microseconds elapsed since power on.
-     */
-    //% help=input/running-time-micros weight=49
-    //% blockId=device_get_running_time_micros block="running time (micros)"
-    //% advanced=true shim=input::runningTimeMicros
-    function runningTimeMicros(): int32;
-
-    /**
      * Obsolete, compass calibration is automatic.
      */
     //% help=input/calibrate-compass advanced=true

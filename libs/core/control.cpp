@@ -224,6 +224,23 @@ namespace control {
     }
 
     /**
+    * Gets the number of milliseconds elapsed since power on.
+    */
+    //% help=control/millis weight=50
+    //% blockId=control_running_time block="millis (ms)"
+    int millis() {
+        return system_timer_current_time();
+    }
+
+    /**
+    * Gets current time in microseconds. Overflows every ~18 minutes.
+    */
+    //%
+    int micros() {
+        return system_timer_current_time_us() & 0x3fffffff;
+    }
+
+    /**
      * Schedules code that run in the background.
      */
     //% help=control/in-background blockAllowMultiple=1 afterOnStart=true
