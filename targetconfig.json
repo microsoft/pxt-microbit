@@ -161,7 +161,8 @@
             "dugbraden/pxt-climate-action-kit",
             "alsrobot-microbit-makecode-packages/MiniCruise",
             "4tronix/ServoBit",
-            "DFRobot/pxt-maqueen"
+            "DFRobot/pxt-maqueen",
+            "DFRobot/pxt-DFRobot-NaturalScience"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",

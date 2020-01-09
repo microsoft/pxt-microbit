@@ -228,6 +228,11 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
   "cardType": "package"
 },
 {
+  "name": "DFRobot Natural Science Board",
+  "url":"/pkg/DFRobot/pxt-DFRobot-NaturalScience",
+  "cardType": "package"
+},
+{
   "name": "Kitronik Realtime Clock",
   "url":"/pkg/KitronikLtd/pxt-kitronik-rtc",
   "cardType": "package"
