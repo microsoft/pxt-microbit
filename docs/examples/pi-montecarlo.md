@@ -50,10 +50,8 @@ This method of filling coordinate points, counting them, and using the differenc
 ## Monte Carlo approximation of _pi_
 
 ```blocks
-let pir = 0
-let pid = 0
+let pi = 0
 let y = 0
-let pin = 0
 let x = 0
 let r2 = 0
 let r = 0
@@ -87,10 +85,7 @@ basic.forever(() => {
     // r * r * pi => inside / n ~= (r*r*pi) / (4*r*r) ~=
     // pi / 4 pi = inside / n * 4
     //
-    pin = inside * 4
-    // only integer arithmetic here...
-    pid = pin / n
-    pir = pin % n
+    pi = (inside * 4) / n
     // show results
     basic.showLeds(`
         # # # # #
@@ -99,6 +94,6 @@ basic.forever(() => {
         . # . # .
         . # . . #
         `)
-    basic.showString(" " + pid + "." + pir)
+    basic.showString(" " + pi)
 })
 ```

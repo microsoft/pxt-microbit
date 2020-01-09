@@ -222,7 +222,6 @@ void sendSerial(const char *data, int len) {
     logwriten(data, len);
 }
 
-#ifdef PXT_GC
 ThreadContext *getThreadContext() {
     if (!currentFiber)
         return NULL;
@@ -273,6 +272,5 @@ void gcProcessStacks(int flags) {
     }
     xfree(fibers);
 }
-#endif
 
 } // namespace pxt
