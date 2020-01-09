@@ -1,7 +1,8 @@
 /// <reference path="../node_modules/pxt-core/built/pxtsim.d.ts"/>
 
 namespace pxsim {
-    export class DalBoard extends CoreBoard {
+    export class DalBoard extends CoreBoard
+        implements RadioBoard {
         // state & update logic for component services
         ledMatrixState: LedMatrixState;
         edgeConnectorState: EdgeConnectorState;
@@ -184,7 +185,7 @@ namespace pxsim {
         pxsim.initCurrentRuntime = initRuntimeWithDalBoard;
     }
 
-    export function board() {
+    export function board(): DalBoard {
         return runtime.board as DalBoard;
     }
 }
