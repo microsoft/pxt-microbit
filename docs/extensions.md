@@ -454,6 +454,10 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
     "name": "HTS221 Humidity and temperature",
     "url": "/pkg/makecode-extensions/HTS221",
     "cardType": "package"
+}, {
+    "name": "Kitronik clip detector",
+    "url": "/pkg/KitronikLtd/pxt-kitronik-clip-detector",
+    "cardType": "package"
 }]
 ```
 
