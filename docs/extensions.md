@@ -472,6 +472,10 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
   "name": "ESP8266 and ThingSpeak",
   "url":"/pkg/alankrantas/pxt-ESP8266_ThingSpeak",
   "cardType": "package"
+}, {
+  "name": "DFRobot microIoT board",
+  "url":"/pkg/DFRobot/pxt-DFRobot-microIoT",
+  "cardType": "package"
 }]
 ```
 
