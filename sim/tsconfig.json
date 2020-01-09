@@ -16,6 +16,6 @@
         "*.ts",
         "state/*.ts",
         "visuals/*.ts",
-        "node_modules/pxt-common-packages/libs/radio/sim/*.ts"
+        "../node_modules/pxt-common-packages/libs/radio/sim/*.ts"
     ]
 }
