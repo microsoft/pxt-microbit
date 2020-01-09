@@ -162,7 +162,8 @@
             "alsrobot-microbit-makecode-packages/MiniCruise",
             "4tronix/ServoBit",
             "DFRobot/pxt-maqueen",
-            "KitronikLtd/pxt-kitronik-clip-detector"
+            "KitronikLtd/pxt-kitronik-clip-detector",
+            "DFRobot/pxt-DFRobot-NaturalScience"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",
