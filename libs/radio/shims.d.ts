@@ -28,12 +28,12 @@ declare namespace radio {
     function sendRawPacket(msg: Buffer): void;
 
     /**
-     * Registers code to run when a packet is received over radio.
+     * Used internally by the library.
      */
     //% help=radio/on-data-received
-    //% weight=50
+    //% weight=0
     //% blockId=radio_datagram_received_event block="radio on data received" blockGap=8
-    //% deprecated=true shim=radio::onDataReceived
+    //% deprecated=true blockHidden=1 shim=radio::onDataReceived
     function onDataReceived(body: () => void): void;
 
     /**
