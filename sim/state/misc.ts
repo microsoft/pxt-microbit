@@ -48,6 +48,15 @@ namespace pxsim.control {
         // TODO
     }
 
+    export function millis(): number {
+        return runtime.runningTime();
+    }
+
+    export function micros(): number {
+        return runtime.runningTimeUs();
+    }
+
+
     export function deviceName(): string {
         let b = board();
         return b && b.id
@@ -94,14 +103,6 @@ namespace pxsim.pxtcore {
 }
 
 namespace pxsim.input {
-    export function runningTime(): number {
-        return runtime.runningTime();
-    }
-
-    export function runningTimeMicros(): number {
-        return runtime.runningTimeUs();
-    }
-
     export function calibrateCompass() {
         // device calibrates...
     }
