@@ -162,7 +162,9 @@
             "alsrobot-microbit-makecode-packages/MiniCruise",
             "4tronix/ServoBit",
             "DFRobot/pxt-maqueen",
-            "mu-opensource/pxt-muvision"
+            "mu-opensource/pxt-muvision",
+            "KitronikLtd/pxt-kitronik-clip-detector",
+            "DFRobot/pxt-DFRobot-NaturalScience"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",
