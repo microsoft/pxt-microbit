@@ -17,7 +17,7 @@
 Watch this video about an experiment using the temperature sensor to see what effect
 a sun shade has on keeping your car cooler.
 
-https://youtu.be/_T4N8O9xsMA
+https://youtu.be/pHDYsy6xyE4
 
 ### ~
 
