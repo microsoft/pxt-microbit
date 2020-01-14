@@ -217,6 +217,7 @@
         "Blocks To JavaScript": "courses/blocks-to-javascript",
         "Courses": "courses",
         "Behind the MakeCode Hardware": "behind-the-makecode-hardware",
+        "Science Experiments": "science-experiments",
         "Coding Cards": "coding-cards"
     },
     "electronManifest": {
