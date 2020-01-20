@@ -10,6 +10,17 @@
 
 >Program the @boardname@s. Experiment with different data collection scenarios. 
 
+### ~ hint
+
+#### Direct sunlight and shade experiment
+
+Watch this video about an experiment using the temperature sensor to see what effect
+a sun shade has on keeping your car cooler.
+
+https://youtu.be/pHDYsy6xyE4
+
+### ~
+
 ## Code
 
 This project will start with one @boardname@ and program it to use the @boardname@’s temperature sensor to collect and display the current temperature in Celsius on the @boardname@’s LED display. The data collected can be recorded manually on a paper with a pencil.

@@ -348,6 +348,10 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
 
 ```codecard
 [{
+  "name": "MU Vision camera",
+  "url":"/pkg/mu-opensource/pxt-muvision",
+  "cardType": "package"
+}, {
  "name": "Let's Talk Science COZIR sensor",
   "url":"/pkg/letstalkscience/pxt-cozir",
   "cardType": "package"

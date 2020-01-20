@@ -163,6 +163,7 @@
             "4tronix/ServoBit",
             "DFRobot/pxt-maqueen",
             "DFRobot/pxt-DFRobot-microIoT",
+            "mu-opensource/pxt-muvision",
             "KitronikLtd/pxt-kitronik-clip-detector",
             "DFRobot/pxt-DFRobot-NaturalScience"
         ],
@@ -218,6 +219,7 @@
         "Blocks To JavaScript": "courses/blocks-to-javascript",
         "Courses": "courses",
         "Behind the MakeCode Hardware": "behind-the-makecode-hardware",
+        "Science Experiments": "science-experiments",
         "Coding Cards": "coding-cards"
     },
     "electronManifest": {

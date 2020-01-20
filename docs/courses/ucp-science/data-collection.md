@@ -4,6 +4,18 @@
 
 This lesson introduces the student to using the @boardname@ to take measurements and report the results. A few brief experiments are presented and data collected from the experiments is graphed in the MakeCode editor. The data is then available to download to a spreadsheet program for further analysis.
 
+## Lesson concept
+
+### ~ hint
+
+#### Data collection overview
+
+See how data is collected from the @boardname@, viewed, and analyzed in this video.
+
+https://youtu.be/tZy9Ev21B4c
+
+### ~
+
 ## Contents
 
 * [Overview](/courses/ucp-science/data-collection/overview)
