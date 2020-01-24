@@ -9,7 +9,7 @@
         "newLine": "LF",
         "sourceMap": false,
         "lib": ["dom", "dom.iterable", "scripthost", "es6"],
-        "types": ["jquery", "bluebird"],
+        "types": ["bluebird"],
         "typeRoots": ["../node_modules/@types"]
     }
 }
