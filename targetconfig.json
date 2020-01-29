@@ -165,7 +165,8 @@
             "DFRobot/pxt-DFRobot-microIoT",
             "mu-opensource/pxt-muvision",
             "KitronikLtd/pxt-kitronik-clip-detector",
-            "DFRobot/pxt-DFRobot-NaturalScience"
+            "DFRobot/pxt-DFRobot-NaturalScience",
+            "daferdur/pxt-myHX711"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",

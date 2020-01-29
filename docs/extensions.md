@@ -368,6 +368,10 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
   "url":"/pkg/1010Technologies/pxt-makerbit-ultrasonic",
   "cardType": "package"
 }, {
+  "name": "HX711 Weight Sensor",
+  "url":"/pkg/daferdur/pxt-myHX711",
+  "cardType": "package"
+}, {
   "name": "Bluetooth Temperature Sensor",
   "url":"/pkg/microsoft/pxt-bluetooth-temperature-sensor",
   "cardType": "package"
