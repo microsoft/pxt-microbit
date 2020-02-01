@@ -228,6 +228,11 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
   "cardType": "package"
 },
 {
+  "name": "DFRobot Natural Science Board",
+  "url":"/pkg/DFRobot/pxt-DFRobot-NaturalScience",
+  "cardType": "package"
+},
+{
   "name": "Kitronik Realtime Clock",
   "url":"/pkg/KitronikLtd/pxt-kitronik-rtc",
   "cardType": "package"
@@ -343,6 +348,10 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
 
 ```codecard
 [{
+  "name": "MU Vision camera",
+  "url":"/pkg/mu-opensource/pxt-muvision",
+  "cardType": "package"
+}, {
  "name": "Let's Talk Science COZIR sensor",
   "url":"/pkg/letstalkscience/pxt-cozir",
   "cardType": "package"
@@ -454,6 +463,10 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
     "name": "HTS221 Humidity and temperature",
     "url": "/pkg/makecode-extensions/HTS221",
     "cardType": "package"
+}, {
+    "name": "Kitronik clip detector",
+    "url": "/pkg/KitronikLtd/pxt-kitronik-clip-detector",
+    "cardType": "package"
 }]
 ```
 
@@ -471,6 +484,10 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
 }, {
   "name": "ESP8266 and ThingSpeak",
   "url":"/pkg/alankrantas/pxt-ESP8266_ThingSpeak",
+  "cardType": "package"
+}, {
+  "name": "DFRobot microIoT board",
+  "url":"/pkg/DFRobot/pxt-DFRobot-microIoT",
   "cardType": "package"
 }]
 ```

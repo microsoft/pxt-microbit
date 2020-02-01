@@ -7,6 +7,16 @@
 3. The **A** and **B** buttons are programmed to display the name of the first trait and the count. Then the name of the second trait and its count. Finally the total number counted on both buttons will be displayed. 
 4. The ``||input:on shake||`` event can be programmed to erase the data and start over.
 
+### ~ hint
+
+#### Population trait experiment example
+
+Watch this video about how to perform a population trait experiment.
+
+https://youtu.be/NNZEMiJHY2o
+
+### ~
+
 ## Code
 
 ### MakeCode Programming Environment

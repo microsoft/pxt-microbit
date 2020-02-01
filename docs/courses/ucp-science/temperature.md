@@ -4,6 +4,19 @@
 
 This lesson give students real world experience with coding, collecting temperature data, analyzing data, and reporting results using MakeCode’s block programming and a @boardname@ with its sensors.
 
+## Lesson concept
+
+### ~ hint
+
+#### Direct sunlight and shade experiment
+
+Watch this video about an experiment using the temperature sensor to see what effect
+a sun shade has on keeping your car cooler.
+
+https://youtu.be/pHDYsy6xyE4
+
+### ~
+
 ## Contents
 
 * [Overview](/courses/ucp-science/temperature/overview)

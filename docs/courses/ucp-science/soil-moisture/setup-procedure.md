@@ -8,6 +8,16 @@
 4. Experiment with different data collection scenarios.
 5. Add enhancements to the program and project.
 
+### ~ hint
+
+#### Soil moisture experiment video
+
+Watch this video about to see how to conduct a soil moisture experiment for plants.
+
+https://youtu.be/n0WRQf11Pzo
+
+### ~
+
 ## Background
 
 This project will use 2 pins on the @boardname@ to measure the voltage between the **3V** pin and the pin **0** as the current travels through the soil. Wires or alligator clips are used to connect to the @boardname@. In the soil nails or larger wires are used as probes in the soil. The nutrients along with the moisture in the soil will allow an electrical current to travel through the soil. The more moisture in the soil the greater the voltage that is measured. Wet soil should have a reading around `1000` on a scale of 0 - 1024. Dry soil will give a reading of around `250`. 

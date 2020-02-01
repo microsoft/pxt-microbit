@@ -161,7 +161,11 @@
             "dugbraden/pxt-climate-action-kit",
             "alsrobot-microbit-makecode-packages/MiniCruise",
             "4tronix/ServoBit",
-            "DFRobot/pxt-maqueen"
+            "DFRobot/pxt-maqueen",
+            "DFRobot/pxt-DFRobot-microIoT",
+            "mu-opensource/pxt-muvision",
+            "KitronikLtd/pxt-kitronik-clip-detector",
+            "DFRobot/pxt-DFRobot-NaturalScience"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",
@@ -175,33 +179,6 @@
             "Tinkertanker/pxt-ringbitcar"
         ]
     },
-    "languages": [
-        "en",
-        "ar",
-        "cs",
-        "da",
-        "de",
-        "el",
-        "es-ES",
-        "fi",
-        "fr",
-        "hu",
-        "it",
-        "ja",
-        "ko",
-        "nl",
-        "no",
-        "pt-BR",
-        "pt-PT",
-        "ru",
-        "si-LK",
-        "sk",
-        "sv-SE",
-        "tr",
-        "uk",
-        "zh-CN",
-        "zh-TW"
-    ],
     "galleries": {
         "Tutorials": "tutorials",
         "Games": "projects/games",
@@ -215,6 +192,7 @@
         "Blocks To JavaScript": "courses/blocks-to-javascript",
         "Courses": "courses",
         "Behind the MakeCode Hardware": "behind-the-makecode-hardware",
+        "Science Experiments": "science-experiments",
         "Coding Cards": "coding-cards"
     },
     "electronManifest": {

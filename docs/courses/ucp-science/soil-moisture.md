@@ -4,6 +4,19 @@
 
 Not only does water flow across the ground and into soil, water also moves through the living organisms. Plants soak up large amounts of water through their roots. The water then moves up the plant and evaporates from the leaves in a process called transpiration. This project uses electricity to measure how dry soil has become because of evaporation and transpiration.
 
+## Lesson concept
+
+### ~ hint
+
+#### Soil moisture experiment video
+
+Watch this video about to see how to conduct a soil moisture experiment for plants.
+
+https://youtu.be/n0WRQf11Pzo
+
+### ~
+
+
 ## Contents
 
 * [Overview](/courses/ucp-science/soil-moisture/overview)

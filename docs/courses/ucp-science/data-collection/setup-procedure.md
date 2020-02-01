@@ -2,7 +2,17 @@
 
 ## micro:bit setup and coding concepts
 
-This document describes different methods using micro:bits to collect and record data for science experiments. There are several ways to collect data from an experiment. The simplest is having the data display on the LED screen and manually record the data on a paper. Data can also be collected using the Window’s 10 MakeCode app. The third way is using 2 micro:bits with one observing the data and then radioing the results to a second micro:bit so it can allow the remote collection of data. 
+This document describes different methods using micro:bits to collect and record data for science experiments. There are several ways to collect data from an experiment. The simplest is having the data display on the LED screen and manually record the data on a paper. Data can also be collected using the Window’s 10 MakeCode app. The third way is using 2 micro:bits with one observing the data and then radioing the results to a second micro:bit so it can allow the remote collection of data.
+
+### ~ hint
+
+#### Data collection overview video
+
+See how data is collected from the @boardname@, viewed, and analyzed in this video.
+
+https://youtu.be/tZy9Ev21B4c
+
+### ~
 
 ## Data collection options
 

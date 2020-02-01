@@ -64,6 +64,11 @@
         "imageUrl": "/static/mb/behindhardware/leds.jpg"
     },
     {
+        "name": "Science Experiments",
+        "url": "/science-experiments",
+        "imageUrl": "/static/mb/science-experiments/data-collection.jpg"
+    },
+    {
         "name": "Coding Cards",
         "url": "/coding-cards",
         "imageUrl": "/static/coding-cards/balance-card.jpg"
@@ -85,5 +90,6 @@
 [Blocks To JavaScript](/courses/blocks-to-javascript),
 [Courses](/courses),
 [Behind the MakeCode Hardware](/behind-the-makecode-hardware),
+[Science Experiments](/science-experiments),
 [Coding Cards](/coding-cards)
 
