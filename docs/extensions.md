@@ -8,6 +8,11 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
 
 ```codecard
 [{
+  "name": "Strawbees Robotic Inventions Kit",
+  "url":"/pkg/strawbees/pxt-robotic-inventions",
+  "cardType": "package"
+},
+{
   "name": "Kitronik :MOVE mini",
   "url":"/pkg/KitronikLtd/pxt-kitronik-servo-lite",
   "cardType": "package"
@@ -366,6 +371,10 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
 }, {
   "name": "Non-blocking Ultrasonic Sensing",
   "url":"/pkg/1010Technologies/pxt-makerbit-ultrasonic",
+  "cardType": "package"
+}, {
+  "name": "HX711 Weight Sensor",
+  "url":"/pkg/daferdur/pxt-myHX711",
   "cardType": "package"
 }, {
   "name": "Bluetooth Temperature Sensor",
