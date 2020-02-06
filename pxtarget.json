@@ -324,14 +324,6 @@
                 "path": "/reference"
             },
             {
-                "name": "Blocks",
-                "path": "/blocks"
-            },
-            {
-                "name": "JavaScript",
-                "path": "/javascript"
-            },
-            {
                 "name": "Hardware",
                 "path": "/device"
             },
