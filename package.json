@@ -32,20 +32,19 @@
     "docs/static/icons/favicon.ico"
   ],
   "devDependencies": {
-    "typescript": "2.6.1",
-    "less": "2.7.3",
-    "semantic-ui-less": "2.2.14",
-    "react": "16.8.3",
-    "@types/react": "16.0.25",
-    "@types/react-dom": "16.0.3",
     "@types/bluebird": "2.0.33",
-    "@types/jquery": "3.2.16",
     "@types/marked": "0.3.0",
     "@types/node": "8.0.53",
-    "@types/web-bluetooth": "0.0.4"
+    "@types/react": "16.0.25",
+    "@types/react-dom": "16.0.3",
+    "@types/web-bluetooth": "0.0.4",
+    "less": "2.7.3",
+    "react": "16.8.3",
+    "semantic-ui-less": "2.2.14",
+    "typescript": "^3.7.5"
   },
   "dependencies": {
     "pxt-common-packages": "6.19.1",
-    "pxt-core": "5.32.19"
+    "pxt-core": "5.34.3"
   }
 }

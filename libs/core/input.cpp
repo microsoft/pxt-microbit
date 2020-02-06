@@ -74,13 +74,13 @@ enum class Gesture {
     //% jres=gestures.tiltbackwards
     LogoDown = MICROBIT_ACCELEROMETER_EVT_TILT_DOWN,
     /**
-     * Raised when the screen is pointing down and the board is horizontal
+     * Raised when the screen is pointing up and the board is horizontal
      */
     //% block="screen up"
     //% jres=gestures.frontsideup
     ScreenUp = MICROBIT_ACCELEROMETER_EVT_FACE_UP,
     /**
-     * Raised when the screen is pointing up and the board is horizontal
+     * Raised when the screen is pointing down and the board is horizontal
      */
     //% block="screen down"
     //% jres=gestures.backsideup

@@ -3,7 +3,8 @@
 [![Build Status](https://travis-ci.org/microsoft/pxt-microbit.svg?branch=master)](https://travis-ci.org/microsoft/pxt-microbit)
 
 pxt-microbit is a [Microsoft Programming Experience Toolkit (PXT)](https://github.com/Microsoft/pxt) target that allows you to program a [BBC micro:bit](https://microbit.org/). 
-* pxt-microbit ``v2.*`` requires pxt v5.x, which is currently in the [master branch of pxt](https://github.com/Microsoft/pxt/tree/master).
+* pxt-microbit **beta**,  ``v2.*`` (>2.0) requires pxt v5.*, which is currently in the [master branch of pxt](https://github.com/Microsoft/pxt/tree/master).
+* pxt-microbit ``v2.0.*``, branch ``stable2.0``, requires [pxt v5.15.\*](https://github.com/microsoft/pxt/tree/stable5.15). It is the servicing branch for live editor.
 * pxt-microbit ``v1.*`` requires pxt v4.4, which is currently in the [stable4.4 branch of pxt](https://github.com/Microsoft/pxt/tree/stable4.4).
 * pxt-microbit ``v0.*`` is in the [v0 branch of this repository](https://github.com/microsoft/pxt-microbit/tree/v0)
 
