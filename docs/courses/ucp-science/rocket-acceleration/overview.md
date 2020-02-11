@@ -8,7 +8,7 @@ The Earth exerts a gravitional force on all objects. A rocket must have a force 
 
 #### Rocket Experiment
 
-Watch a video of the building and launching the rocket.
+Watch a video of building and launching the rocket.
 
 https://youtu.be/m9ntqxh8FvQ
 
