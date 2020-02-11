@@ -467,7 +467,8 @@
         "simGifMaxFrames": 44,
         "simScreenshotMaxUriLength": 300000,
         "importExtensionFiles": true,
-        "githubEditor": true
+        "githubEditor": true,
+        "openProjectNewTab": true
     },
     "queryVariants": {
         "hidemenu": {

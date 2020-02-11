@@ -29,6 +29,30 @@
         "description": "Watch this video to find out how you can create a soil moisture sensor to measure the health of your plants!",
         "youTubeId": "n0WRQf11Pzo",
         "imageUrl": "/static/mb/science-experiments/soil-moisture.jpg"
+    },
+    {
+        "name": "EMG Muscle Sensor",
+        "description": "Monitor the movement of your muscles and measure the signals to them",
+        "youTubeId": "vxlPQZIwYRc",
+        "imageUrl": "/static/mb/science-experiments/emg-muscle-sensor.jpg"
+    },
+    {
+        "name": "Egg Drop",
+        "description": "Can the egg survive a drop, test the drop force on an egg to find out when it might crack",
+        "youTubeId": "tnDJFdC3Nd4",
+        "imageUrl": "/static/mb/science-experiments/egg-drop.jpg"
+    },
+    {
+        "name": "Battery Tester",
+        "description": "See if your batteries still have their voltage with this battery tester",
+        "youTubeId": "gdlc34nhjK4",
+        "imageUrl": "/static/mb/science-experiments/battery-tester.jpg"
+    },
+    {
+        "name": "Rocket Acceleration",
+        "description": "Have a blast building, launching, and tracking your own rocket!",
+        "youTubeId": "m9ntqxh8FvQ",
+        "imageUrl": "/static/mb/science-experiments/rocket-acceleration.jpg"
     }
 ]
 ```

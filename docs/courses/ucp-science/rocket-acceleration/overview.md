@@ -4,6 +4,16 @@
 
 The Earth exerts a gravitional force on all objects. A rocket must have a force greater than gravity to lift off. This force, acceleration, can be measured with a @boardname@ in 3 different directions or as a combined force of all three. A two liter soda bottle rocket can be made and then changes in acceleration can be measured as it lifts off and falls back to the earth.
 
+### ~hint
+
+#### Rocket Experiment
+
+Watch a video of building and launching the rocket.
+
+https://youtu.be/m9ntqxh8FvQ
+
+### ~
+
 ## Project Goal
 
 Give students real world experience with coding, collecting data, analyzing data, and reporting results using MakeCode’s block programming and a @boardname@ with its sensors.(MakeCode.org and @boardname@.org)
