@@ -17,7 +17,7 @@ namespace pxsim {
         mode = PinFlags.Unused;
         pitch = false;
         pull = 0; // PullDown
-        continuous = false;
+        servoContinuous = false;
 
         digitalReadPin(): number {
             this.mode = PinFlags.Digital | PinFlags.Input;
@@ -61,7 +61,7 @@ namespace pxsim {
         }
 
         servoSetContinuous(value: boolean) {
-            this.continuous = !!value;
+            this.servoContinuous = !!value;
         }
 
         servoSetPulse(pinId: number, micros: number) {
