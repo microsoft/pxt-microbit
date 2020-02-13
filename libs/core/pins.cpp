@@ -279,7 +279,7 @@ namespace pins {
     * Specifies that a continuous servo is connected.
     */
     //%
-    void servoSetContinuous(AnalogPin name, boolean value) {
+    void servoSetContinuous(AnalogPin name, bool value) {
         // handled in simulator
     }
 
