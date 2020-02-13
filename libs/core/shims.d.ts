@@ -675,6 +675,12 @@ declare namespace pins {
     function servoWritePin(name: AnalogPin, value: int32): void;
 
     /**
+     * Specifies that a continuous servo is connected.
+     */
+    //% shim=pins::servoSetContinuous
+    function servoSetContinuous(name: AnalogPin, value: boolean): void;
+
+    /**
      * Configure the IO pin as an analog/pwm output and set a pulse width. The period is 20 ms period and the pulse width is set based on the value given in **microseconds** or `1/1000` milliseconds.
      * @param name pin name
      * @param micros pulse duration in micro seconds, eg:1500
