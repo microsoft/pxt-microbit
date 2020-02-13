@@ -81,6 +81,13 @@ namespace pxsim.pins {
         pin.servoAngle = value;
     }
 
+    export function servoSetContinuous(pinId: number, value: boolean) {
+        let pin = getPin(pinId);
+        if (!pin) return;
+
+        pin.servoSetContinuous(value);
+    }
+
     export function servoSetPulse(pinId: number, micros: number) {
         let pin = getPin(pinId);
         if (!pin) return;

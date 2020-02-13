@@ -48,6 +48,9 @@ interface PwmOnlyPin extends DigitalInOutPin, AnalogOutPin {
 
     //% parts=microservo trackArgs=0
     servoSetPulse(duration: number): void;
+
+    //% parts=microservo tracArgs=0
+    servoSetContinuous(value: boolean): void;
 }
 
 //% noRefCounting fixedInstances
@@ -107,6 +110,10 @@ class MicrobitPin implements AnalogInPin, AnalogOutPin, AnalogInOutPin, PwmOnlyP
 
     servoWrite(value: number): void {
         pins.servoWritePin(this.analogId(), value);
+    }
+
+    servoSetContinuous(value: boolean): void {
+        pins.servoSetContinuous(this.analogId(), value);
     }
 
     servoSetPulse(duration: number): void {

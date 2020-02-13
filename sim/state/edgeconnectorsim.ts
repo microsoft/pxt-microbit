@@ -17,6 +17,7 @@ namespace pxsim {
         mode = PinFlags.Unused;
         pitch = false;
         pull = 0; // PullDown
+        continuous = false;
 
         digitalReadPin(): number {
             this.mode = PinFlags.Digital | PinFlags.Input;
@@ -57,6 +58,10 @@ namespace pxsim {
             this.analogSetPeriod(20000);
             this.servoAngle = Math.max(0, Math.min(180, value));
             runtime.queueDisplayUpdate();
+        }
+
+        servoSetContinuous(value: boolean) {
+            this.continuous = !!value;
         }
 
         servoSetPulse(pinId: number, micros: number) {
