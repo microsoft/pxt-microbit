@@ -98,19 +98,6 @@ namespace radio {
     }
 
     /**
-    * Reads the next packet from the radio queue and and writes it to serial
-    * as JSON.
-    */
-    //% help=radio/write-value-to-serial
-    //% weight=3
-    //% blockId=radio_write_value_serial block="radio write value to serial"
-    //% deprecated=true
-    export function writeValueToSerial() {
-        const p = RadioPacket.getPacket(radio.readRawPacket());
-        writeToSerial(p);
-    }
-
-    /**
      * Returns the number payload from the last packet taken from the radio queue
      * (via ``receiveNumber``, ``receiveString``, etc) or 0 if that packet did not
      * contain a number.
@@ -184,5 +171,68 @@ namespace radio {
     export function receiveString(): string {
         lastPacket = RadioPacket.getPacket(readRawPacket());
         return receivedString();
+    }
+
+    /**
+     * Gets the received signal strength indicator (RSSI) from the last packet taken
+     * from the radio queue (via ``receiveNumber``, ``receiveString``, etc). Not supported in simulator.
+     */
+    //% help=radio/received-signal-strength
+    //% weight=40
+    //% blockId=radio_datagram_rssi block="radio received signal strength"
+    //% deprecated=true blockHidden=true
+    export function receivedSignalStrength(): number {
+        return lastPacket ? lastPacket.signal : 0;
+    }
+
+    /**
+    * Reads the next packet from the radio queue and and writes it to serial
+    * as JSON.
+    */
+    //% help=radio/write-value-to-serial
+    //% weight=3
+    //% blockId=radio_write_value_serial block="radio write value to serial"
+    //% deprecated=true
+    export function writeValueToSerial() {
+        const p = RadioPacket.getPacket(radio.readRawPacket());
+        writeToSerial(p);
+    }
+
+    /**
+    * Writes the last received packet to serial as JSON. This should be called
+    * within an ``onDataPacketReceived`` callback.
+    */
+    //% help=radio/write-received-packet-to-serial
+    //% weight=3
+    //% blockId=radio_write_packet_serial block="radio write received packet to serial"
+    //% advanced=true deprecated=true
+    export function writeReceivedPacketToSerial() {
+        if (lastPacket) writeToSerial(lastPacket)
+    }
+
+    function writeToSerial(packet: RadioPacket) {
+        serial.writeString("{");
+        serial.writeString("\"t\":");
+        serial.writeString("" + packet.time);
+        serial.writeString(",\"s\":");
+        serial.writeString("" + packet.serial);
+
+        if (packet.hasString()) {
+            serial.writeString(",\"n\":\"");
+            serial.writeString(packet.stringPayload);
+            serial.writeString("\"");
+        }
+        if (packet.packetType == PACKET_TYPE_BUFFER) {
+            serial.writeString(",\"b\":\"");
+            // TODO: proper base64 encoding
+            serial.writeString(packet.bufferPayload.toString());
+            serial.writeString("\"");
+        }
+        if (packet.hasNumber()) {
+            serial.writeString(",\"v\":");
+            serial.writeString("" + packet.numberPayload);
+        }
+
+        serial.writeString("}\r\n");
     }
 }

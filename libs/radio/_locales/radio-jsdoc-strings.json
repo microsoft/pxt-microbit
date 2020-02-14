@@ -9,7 +9,7 @@
   "radio._packetProperty": "Gets a packet property.",
   "radio._packetProperty|param|type": "the packet property type, eg: PacketProperty.time",
   "radio.onDataPacketReceived": "Deprecated. Use onDataReceived() instead\nRegisters code to run when the radio receives a packet. Also takes the\nreceived packet from the radio queue.",
-  "radio.onDataReceived": "Registers code to run when a packet is received over radio.",
+  "radio.onDataReceived": "Used internally by the library.",
   "radio.onReceivedBuffer": "Registers code to run when the radio receives a buffer.",
   "radio.onReceivedBufferDeprecated": "Registers code to run when the radio receives a buffer. Deprecated, use\nonReceivedBuffer instead.",
   "radio.onReceivedNumber": "Registers code to run when the radio receives a number.",

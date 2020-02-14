@@ -111,7 +111,7 @@ We will call this “passing control of execution” rather than “passing the 
 Let’s take a look at the implementation of the `basic.forever` function to see an example of cooperative scheduling:
 
 ```typescript
-function forever(body: () => void) {
+function forever_(body: () => void) {
     control.inBackground(() => {
         while(true) {
             body()

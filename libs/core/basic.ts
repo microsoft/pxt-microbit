@@ -1,5 +1,5 @@
 namespace basic {
-    
+
     /**
      * Scroll a number on the screen. If the number fits on the screen (i.e. is a single digit), do not scroll.
      * @param interval speed of scroll; eg: 150, 100, 200, -100
@@ -12,4 +12,20 @@ namespace basic {
     export function showNumber(value: number, interval?: number) {
         showString(Math.roundWithPrecision(value, 2).toString(), interval);
     }
+}
+
+/**
+ * Pause for the specified time in milliseconds
+ * @param ms how long to pause for, eg: 100, 200, 500, 1000, 2000
+ */
+function pause(ms: number): void {
+    basic.pause(ms);
+}
+
+/**
+ * Repeats the code forever in the background. On each iteration, allows other codes to run.
+ * @param body code to execute
+ */
+function forever(a: () => void): void {
+    basic.forever(a);
 }

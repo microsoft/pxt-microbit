@@ -1,7 +1,8 @@
 /// <reference path="../node_modules/pxt-core/built/pxtsim.d.ts"/>
 
 namespace pxsim {
-    export class DalBoard extends CoreBoard {
+    export class DalBoard extends CoreBoard
+        implements RadioBoard {
         // state & update logic for component services
         ledMatrixState: LedMatrixState;
         edgeConnectorState: EdgeConnectorState;
@@ -78,7 +79,10 @@ namespace pxsim {
                     "P19": DAL.MICROBIT_ID_IO_P19
                 }
             });
-            this.builtinParts["radio"] = this.radioState = new RadioState(runtime);
+            this.builtinParts["radio"] = this.radioState = new RadioState(runtime, {
+                ID_RADIO: DAL.MICROBIT_ID_RADIO,
+                RADIO_EVT_DATAGRAM: DAL.MICROBIT_RADIO_EVT_DATAGRAM
+            });
             this.builtinParts["accelerometer"] = this.accelerometerState = new AccelerometerState(runtime);
             this.builtinParts["serial"] = this.serialState = new SerialState();
             this.builtinParts["thermometer"] = this.thermometerState = new ThermometerState();
@@ -181,7 +185,7 @@ namespace pxsim {
         pxsim.initCurrentRuntime = initRuntimeWithDalBoard;
     }
 
-    export function board() {
+    export function board(): DalBoard {
         return runtime.board as DalBoard;
     }
 }

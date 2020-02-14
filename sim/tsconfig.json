@@ -11,5 +11,11 @@
         "lib": ["dom", "dom.iterable", "scripthost", "es6"],
         "types": ["bluebird"],
         "typeRoots": ["../node_modules/@types"]
-    }
+    },
+    "include": [
+        "*.ts",
+        "state/*.ts",
+        "visuals/*.ts",
+        "../node_modules/pxt-common-packages/libs/radio/sim/*.ts"
+    ]
 }

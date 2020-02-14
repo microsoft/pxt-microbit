@@ -256,6 +256,7 @@
   "control.eventValueId|block": "%id",
   "control.eventValue|block": "event value",
   "control.inBackground|block": "run in background",
+  "control.millis|block": "millis (ms)",
   "control.onEvent|block": "on event|from %src=control_event_source_id|with value %value=control_event_value_id",
   "control.raiseEvent|block": "raise event|from source %src=control_event_source_id|with value %value=control_event_value_id",
   "control.reset|block": "reset",
