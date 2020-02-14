@@ -70,12 +70,12 @@ namespace pxsim.visuals {
                 // 0 -> -100%, 90 - 0%, 180 - 100%
                 const now = U.now();
                 const dt = Math.min(now - this.lastAngleTime, 50) / 1000;
+                this.currentAngle = this.targetAngle;
                 this.targetAngle += ((servoAngle - 90) / 90) * SPEED * dt;
             } else {
                 this.targetAngle = 180.0 - servoAngle;
             }
-            if (continuous ||
-                this.targetAngle != this.currentAngle)
+            if (this.targetAngle != this.currentAngle)
                 this.renderAngle();
         }
 
