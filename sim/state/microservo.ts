@@ -63,7 +63,7 @@ namespace pxsim.visuals {
         }
         updateState(): void {
             const p = this.state.getPin(this.pin);
-            const continuous = !p.servoContinuous;
+            const continuous = !!p.servoContinuous;
             const servoAngle = p.servoAngle;
             if (continuous) {
                 // for a continuous servo, the angle is interpreted as a rotation speed
