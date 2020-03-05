@@ -19,6 +19,7 @@ electron-out
 hexcache
 build
 crowdinstats.csv
+.DS_Store
 
 *.user
 *.sw?
