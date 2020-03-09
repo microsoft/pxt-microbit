@@ -31,6 +31,10 @@ Students will...
 3. [**Activity**: Animation and patterns](/courses/csintro/coordinates/activity)
 4. [**Project**: Screensaver or game](/courses/csintro/coordinates/project)
 
+## Flipgrid
+
+The [Flipgrid](https://info.flipgrid.com/) topic for the **Coordinates** lesson: https://flipgrid.com/699ca0b7
+
 ## Related standards
 
 [Targeted CSTA standards](/courses/csintro/coordinates/standards)

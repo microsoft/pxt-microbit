@@ -28,6 +28,10 @@ Students will...
 3. [**Activity**: Headband charades](/courses/csintro/arrays/activity)
 4. [**Project**: Musical instrument ](/courses/csintro/arrays/project)
 
+## Flipgrid
+
+The [Flipgrid](https://info.flipgrid.com/) topic for the **Arrays** lesson: https://flipgrid.com/f0f1bbc5
+
 ## Related standards
 
 [Targeted CSTA standards](/courses/csintro/arrays/standards)

@@ -29,6 +29,10 @@ Students will...
 3. [**Activity**: Loops demos](/courses/csintro/iteration/activity)
 4. [**Project**: Get loopy](/courses/csintro/iteration/project)
 
+## Flipgrid
+
+The [Flipgrid](https://info.flipgrid.com/) topic for the **Iteration** lesson: https://flipgrid.com/ee559ab7
+
 ## Related standards
 
 [Targeted CSTA standards](/courses/csintro/iteration/standards)

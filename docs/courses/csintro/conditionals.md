@@ -20,6 +20,10 @@ Students will...
 3. [**Activity**: Rock, paper, scissors](/courses/csintro/conditionals/activity)
 4. [**Project**: Board game](/courses/csintro/conditionals/project)
 
+## Flipgrid
+
+The [Flipgrid](https://info.flipgrid.com/) topic for the **Conditionals** lesson: https://flipgrid.com/f260eda7
+
 ## Related standards
 
 [Targeted CSTA standards](/courses/csintro/conditionals/standards)

@@ -17,6 +17,10 @@ Students will...
 3. [**Activity**: Happy face, sad face](/courses/csintro/algorithms/activity)
 4. [**Project**: Fidget cube](/courses/csintro/algorithms/project)
 
+## Flipgrid
+
+The [Flipgrid](https://info.flipgrid.com/) topic for the **Algorithms** lesson: https://flipgrid.com/31ed5382
+
 ## Related standards
 
 [Targeted CSTA standards](/courses/csintro/algorithms/standards)

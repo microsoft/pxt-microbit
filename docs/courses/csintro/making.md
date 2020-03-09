@@ -22,6 +22,10 @@ Students will...
 * [**Activity**: MakeCode download](/courses/csintro/making/activity)
 * [**Project**: micro:pet (including mods and rubric)](/courses/csintro/making/project)
 
+## Flipgrid
+
+The [Flipgrid](https://info.flipgrid.com/) topic for the **Making** lesson: https://flipgrid.com/5773f935
+
 ## Related standards
 
 [Targeted CSTA standards](/courses/csintro/making/standards)
