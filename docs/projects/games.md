@@ -52,3 +52,7 @@ Fun games to build with your @boardname@.
   "imageUrl":"/static/mb/projects/crashy-bird.png"
 }]
 ```
+
+## Flipgrid
+
+https://flipgrid.com/makecodemicrobit
