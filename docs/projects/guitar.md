@@ -38,3 +38,7 @@ https://youtu.be/GYmdTFvxz80
 Let's get started!
 
 ## ~
+
+## Flipgrid
+
+https://flipgrid.com/a9db68b3
