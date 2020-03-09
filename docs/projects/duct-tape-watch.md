@@ -10,7 +10,7 @@
 
 ## Flipgrid
 
-Share your creation at https://flipgrid.com/d2e9b8bf !
+https://flipgrid.com/d2e9b8bf
 
 ## Steps
 
