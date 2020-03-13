@@ -273,6 +273,11 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
   "cardType": "package"
 },
 {
+  "name": "Make&Learn micro:shield",
+  "url":"/pkg/MakeAndLearn/pxt-microshield",
+  "cardType": "package"
+},
+{
   "name": "micro:turtle",
   "url":"/pkg/microsoft/pxt-microturtle",
   "cardType": "package"

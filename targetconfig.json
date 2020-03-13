@@ -167,7 +167,8 @@
             "KitronikLtd/pxt-kitronik-clip-detector",
             "DFRobot/pxt-DFRobot-NaturalScience",
             "strawbees/pxt-robotic-inventions",
-            "daferdur/pxt-myHX711"
+            "daferdur/pxt-myHX711",
+            "MakeAndLearn/pxt-microshield"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",
