@@ -377,9 +377,8 @@ namespace music {
     //% parts=headphone
     export function playMelody(melody: string, tempo: number) {
         melody = melody || "";
-        tempo = tempo | 0;
+        setTempo(tempo);
         let notes: string[] = melody.split(" ").filter(n => !!n);
-        let formattedMelody: string[] = [];
         let newOctave = false;
 
         // build melody string, replace '-' with 'R' and add tempo
@@ -393,15 +392,9 @@ namespace music {
                 notes[i] += "4";
                 newOctave = false;
             }
-            // add tempo after first note
-            if (i == 0) {
-                formattedMelody.push(notes[i] + "-" + tempo);
-            } else {
-                formattedMelody.push(notes[i]);
-            }
         }
 
-        music.beginMelody(formattedMelody, MelodyOptions.Once)
+        music.beginMelody(notes, MelodyOptions.Once)
     }
 
     /**
