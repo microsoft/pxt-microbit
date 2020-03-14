@@ -250,6 +250,15 @@ namespace control {
     }
 
     /**
+    * Blocks the calling thread until the specified event is raised.
+    */
+    //% help=control/wait-for-event async
+    //% blockId=control_wait_for_event block="wait for event|from %src|with value %value"
+    void waitForEvent(int src, int value) {
+        pxt::waitForEvent(src, value);
+    }
+
+    /**
      * Resets the BBC micro:bit.
      */
     //% weight=30 async help=control/reset blockGap=8

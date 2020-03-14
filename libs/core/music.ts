@@ -174,6 +174,8 @@ enum MusicEvent {
  */
 //% color=#E63022 weight=106 icon="\uf025"
 namespace music {
+    const INTERNAL_MELODY_ENDED = 5;
+
     let beatsPerMinute: number = 120;
      //% whenUsed
      const freqs = hex`
@@ -355,9 +357,12 @@ namespace music {
                         currentBackgroundMelody = null;
                         control.raiseEvent(MICROBIT_MELODY_ID, MusicEvent.MelodyEnded);
                         control.raiseEvent(MICROBIT_MELODY_ID, MusicEvent.BackgroundMelodyResumed);
+                        control.raiseEvent(MICROBIT_MELODY_ID, INTERNAL_MELODY_ENDED);
                     }
                 }
                 control.raiseEvent(MICROBIT_MELODY_ID, currentMelody.background ? MusicEvent.BackgroundMelodyEnded : MusicEvent.MelodyEnded);
+                if (!currentMelody.background)
+                    control.raiseEvent(MICROBIT_MELODY_ID, INTERNAL_MELODY_ENDED);
                 currentMelody = null;
             })
         }
@@ -395,6 +400,7 @@ namespace music {
         }
 
         music.beginMelody(notes, MelodyOptions.Once)
+        control.waitForEvent(MICROBIT_MELODY_ID, INTERNAL_MELODY_ENDED);
     }
 
     /**

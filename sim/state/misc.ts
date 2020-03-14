@@ -47,6 +47,10 @@ namespace pxsim.control {
     export function waitMicros(micros: number) {
         // TODO
     }
+    export function waitForEvent(id: number, evid: number) {
+        const cb = getResume();
+        board().bus.wait(id, evid, cb);
+    }
 
     export function millis(): number {
         return runtime.runningTime();

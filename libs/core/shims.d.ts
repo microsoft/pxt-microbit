@@ -378,6 +378,13 @@ declare namespace control {
     function inBackground(a: () => void): void;
 
     /**
+     * Blocks the calling thread until the specified event is raised.
+     */
+    //% help=control/wait-for-event async
+    //% blockId=control_wait_for_event block="wait for event|from %src|with value %value" shim=control::waitForEvent
+    function waitForEvent(src: int32, value: int32): void;
+
+    /**
      * Resets the BBC micro:bit.
      */
     //% weight=30 async help=control/reset blockGap=8
