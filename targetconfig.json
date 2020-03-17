@@ -196,6 +196,7 @@
         "Courses": "courses",
         "Behind the MakeCode Hardware": "behind-the-makecode-hardware",
         "Science Experiments": "science-experiments",
+        "Live Coding": "live-coding",
         "Coding Cards": "coding-cards"
     },
     "electronManifest": {
