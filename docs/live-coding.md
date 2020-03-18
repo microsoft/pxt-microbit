@@ -25,6 +25,11 @@ Here are some fun programs for your @boardname@!
     "imageUrl": "/static/live-coding/showstring.jpg"
 },
 {
+    "name": "Dice",
+    "description": "Step by steam live coding stream of the Dice tutorial.",
+    "youTubeId": "OmrmjtOm_sQ"
+},
+{
     "name": "Playlist",
     "description": "See all the previous live stream sessions",
     "url": "https://www.youtube.com/watch?v=NvEOKZ8wh9s&list=PLMMBk9hE-SepocOwueEtTDyOPI_TBE9yC",
