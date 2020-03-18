@@ -7,7 +7,7 @@ Here are some fun programs for your @boardname@!
 ```codecard
 [
 {
-    "name": "Scheduled for 9AM PST",
+    "name": "9AM PST/noon EST/4PM GMT",
     "description": "Subscribe and add this stream to your calendar",
     "url": "https://aka.ms/makecodemicrobitstream",
     "imageUrl": "/static/live-coding/live.png"
