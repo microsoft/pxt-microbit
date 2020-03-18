@@ -7,6 +7,12 @@ Here are some videos of live tutorial sessions with the @boardname@!
 ```codecard
 [
 {
+    "name": "9AM PST/noon EST/4PM GMT",
+    "description": "Subscribe and add this stream to your calendar",
+    "url": "https://aka.ms/makecodemicrobitstream",
+    "imageUrl": "/static/live-coding/live.png"
+},
+{
     "name": "Flashing Heart",
     "description": "Demonstrating the Flashing Heart tutorial, live.",
     "youTubeId": "NvEOKZ8wh9s",
@@ -17,6 +23,17 @@ Here are some videos of live tutorial sessions with the @boardname@!
     "description": "A live illustration of the Name tag tutorial",
     "youTubeId": "xpRI5jjQ31E",
     "imageUrl": "/static/live-coding/showstring.jpg"
+},
+{
+    "name": "Dice",
+    "description": "Step by steam live coding stream of the Dice tutorial.",
+    "youTubeId": "OmrmjtOm_sQ"
+},
+{
+    "name": "Playlist",
+    "description": "See all the previous live stream sessions",
+    "url": "https://www.youtube.com/watch?v=NvEOKZ8wh9s&list=PLMMBk9hE-SepocOwueEtTDyOPI_TBE9yC",
+    "imageUrl": "/static/live-coding/playlist.png"
 }
 ]
 ```

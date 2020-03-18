@@ -310,6 +310,10 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
   "url":"/pkg/Seeed-Studio/pxt-grove",
   "cardType": "package"
 }, {
+  "name": "Cytron Edubit",
+  "url":"/pkg/CytronTechnologies/pxt-edubit",
+  "cardType": "package"  
+}, {
     "name": "WS2812B",
     "url": "/pkg/microsoft/pxt-ws2812b",
     "cardType": "package"
