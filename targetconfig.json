@@ -169,7 +169,8 @@
             "strawbees/pxt-robotic-inventions",
             "daferdur/pxt-myHX711",
             "CytronTechnologies/pxt-edubit",
-            "MakeAndLearn/pxt-microshield"
+            "MakeAndLearn/pxt-microshield",
+            "elecfreaks/pxt-TPBot"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",

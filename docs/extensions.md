@@ -53,6 +53,11 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
   "cardType": "package"
 },
 {
+  "name": "Elecfreaks TPBot",
+  "url":"/pkg/elecfreaks/pxt-TPBot",
+  "cardType": "package"
+},
+{
   "name": "DF Robot Maqueen",
   "url":"/pkg/DFRobot/pxt-maqueen",
   "cardType": "package"
