@@ -7,12 +7,6 @@ Here are some videos of live tutorial sessions with the @boardname@!
 ```codecard
 [
 {
-    "name": "9AM PST/noon EST/4PM GMT",
-    "description": "Subscribe and add this stream to your calendar",
-    "url": "https://aka.ms/makecodemicrobitstream",
-    "imageUrl": "/static/live-coding/live.png"
-},
-{
     "name": "Flashing Heart",
     "description": "Demonstrating the Flashing Heart tutorial, live.",
     "youTubeId": "NvEOKZ8wh9s",

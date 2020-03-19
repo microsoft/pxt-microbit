@@ -184,8 +184,8 @@
         ]
     },
     "galleries": {
-        "Live Coding": "live-coding",
         "Tutorials": "tutorials",
+        "Live Coding": "live-coding",
         "Games": "projects/games",
         "Radio Games": "projects/radio-games",
         "Fashion": "projects/fashion",
