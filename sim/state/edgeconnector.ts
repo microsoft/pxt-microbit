@@ -61,7 +61,7 @@ namespace pxsim.pins {
         let pin = getPin(pinId);
         if (!pin) return;
         pin.mode = PinFlags.Analog | PinFlags.Output;
-        pin.value = value ? 1 : 0;
+        pin.value = value | 0;
         runtime.queueDisplayUpdate();
     }
 
