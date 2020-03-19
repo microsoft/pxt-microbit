@@ -3,15 +3,15 @@
 ```codecard
 [
     {
-        "name": "Live Coding",
-        "url": "/live-coding",
-        "imageUrl": "/static/live-coding/live.png"
-    },
-    {
         "name": "Tutorials",
         "url": "/tutorials",
         "imageUrl": "/static/mb/projects/a1-display.png",
         "largeImageUrl": "/static/mb/projects/flashing-heart/sim.gif"
+    },
+    {
+        "name": "Live Coding",
+        "url": "/live-coding",
+        "imageUrl": "/static/live-coding/showleds.jpg"
     },
     {
         "name": "Games",
@@ -83,8 +83,8 @@
 
 ## See Also
 
-[Live Coding](/live-coding),
 [Tutorials](/tutorials),
+[Live Coding](/live-coding),
 [Games](/projects/games),
 [Radio Games](/projects/radio-games),
 [Fashion](/projects/fashion),

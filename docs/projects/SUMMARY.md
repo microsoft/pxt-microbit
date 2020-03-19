@@ -1,11 +1,5 @@
 # Projects
 
-* [Live Coding](/live-coding)
-  * [9AM PST/noon EST/4PM GMT](https://aka.ms/makecodemicrobitstream)
-  * [Flashing Heart](https://youtu.be/NvEOKZ8wh9s)
-  * [Name Tag](https://youtu.be/xpRI5jjQ31E)
-  * [Dice](https://youtu.be/OmrmjtOm_sQ)
-  * [Playlist](https://www.youtube.com/watch?v=NvEOKZ8wh9s&list=PLMMBk9hE-SepocOwueEtTDyOPI_TBE9yC)
 * [Tutorials](/tutorials)
   * [Flashing Heart](/projects/flashing-heart)
   * [Name Tag](/projects/name-tag)
@@ -13,6 +7,11 @@
   * [Dice](/projects/dice)
   * [Love Meter](/projects/love-meter)
   * [Micro Chat](/projects/micro-chat)
+* [Live Coding](/live-coding)
+  * [Flashing Heart](https://youtu.be/NvEOKZ8wh9s)
+  * [Name Tag](https://youtu.be/xpRI5jjQ31E)
+  * [Dice](https://youtu.be/OmrmjtOm_sQ)
+  * [Playlist](https://www.youtube.com/watch?v=NvEOKZ8wh9s&list=PLMMBk9hE-SepocOwueEtTDyOPI_TBE9yC)
 * [Games](/projects/games)
   * [Rock Paper Scissors](/projects/rock-paper-scissors)
   * [Coin Flipper](/projects/coin-flipper)
