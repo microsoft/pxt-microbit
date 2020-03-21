@@ -11,7 +11,7 @@
     {
         "name": "Live Coding",
         "url": "/live-coding",
-        "imageUrl": "/static/live-coding/showleds.jpg"
+        "imageUrl": "/static/live-coding/live.jpg"
     },
     {
         "name": "Games",

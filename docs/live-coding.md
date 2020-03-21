@@ -7,6 +7,12 @@ Here are some videos of live tutorial sessions with the @boardname@!
 ```codecard
 [
 {
+    "name": "9AM PST/noon EST/4PM GMT",
+    "description": "Tag along our live coding sessions. 9AM PST / Noon EST / 4PM GMT",
+    "url": "https://mixer.com/MakeCode",
+    "imageUrl": "/static/live-coding/live.jpg"
+},    
+{
     "name": "Flashing Heart",
     "description": "Demonstrating the Flashing Heart tutorial, live.",
     "youTubeId": "NvEOKZ8wh9s",
