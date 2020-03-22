@@ -74,7 +74,7 @@ basic.forever(function () {
 Finally, pull out an ``||game:add score||`` and a ``||game:game over||`` block to handle both success (sprite in the center) and failure (sprite not in the center).
 
 ```blocks
-let sprite = sprite = game.createSprite(2, 2)
+let sprite = game.createSprite(2, 2)
 input.onButtonPressed(Button.A, function () {
     if (sprite.get(LedSpriteProperty.X) == 2) {
         game.addScore(1)
