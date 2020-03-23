@@ -42,7 +42,8 @@ Here are some cool tutorials to get you started with your @boardname@!
   "url":"/projects/love-meter",
   "description": "Is the micro:bit is feeling the love, see how much!",
   "imageUrl":"/static/mb/projects/a3-pins.png",
-  "cardType": "tutorial"
+  "cardType": "tutorial",
+  "youTubeId": "BgDxz3M7JIM"
 }, {
   "name": "Micro Chat",
   "url":"/projects/micro-chat",

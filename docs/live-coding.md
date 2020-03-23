@@ -26,13 +26,18 @@ Here are some videos of live tutorial sessions with the @boardname@!
 },
 {
     "name": "Smiley Button",
-    "description": "Step by step live coding stream of the Smiley Button tutorial.",
+    "description": "Step by step live coding of the Smiley Button tutorial.",
     "youTubeId": "BgDxz3M7JIM"
 },
 {
     "name": "Dice",
-    "description": "Step by step live coding stream of the Dice tutorial.",
+    "description": "Step by step live coding of the Dice tutorial.",
     "youTubeId": "OmrmjtOm_sQ"
+},
+{
+    "name": "Love Meter",
+    "description": "Steps by step live coding of the Love Meter tutorial",
+    "youTubeId": "BgDxz3M7JIM"
 },
 {
     "name": "Playlist",
