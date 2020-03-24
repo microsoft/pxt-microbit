@@ -401,7 +401,7 @@
             "orgTwitterHandle": "MSMakeCode",
             "hashtags": "MakeCode",
             "discourse": "https://forum.makecode.com/",
-            "discourseCategory": "Arcade"
+            "discourseCategory": "micro:bit"
         },
         "blocklyOptions": {
             "grid": {
