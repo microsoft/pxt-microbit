@@ -32,7 +32,11 @@ namespace pxsim {
 
         setPull(pull: number) {
             this.pull = pull;
-            this.value = pull == PinPullMode.PullDown ? 0 : 1023;
+            switch(pull) {
+                case PinPullMode.PullDown: this.value = 0; break;
+                case PinPullMode.PullUp: this.value = 1023; break;
+                default: this.value = Math_.randomRange(0, 1023); break;
+            }
         }
 
         analogReadPin(): number {
