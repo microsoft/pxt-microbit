@@ -26,7 +26,7 @@ MicroBit uBit;
 MicroBitEvent lastEvent;
 
 void platform_init() {
-    microbit_seed_random();    
+    microbit_seed_random();
     seedRandom(microbit_random(0x7fffffff));
 }
 
@@ -242,11 +242,28 @@ void gcProcessStacks(int flags) {
     // check scheduler is initialized
     if (!currentFiber) {
         // make sure we allocate something to at least initalize the memory allocator
-        void * volatile p = xmalloc(1);
+        void *volatile p = xmalloc(1);
         xfree(p);
         return;
     }
 
+#ifdef MICROBIT_GET_FIBER_LIST_SUPPORTED
+    for (Fiber *fib = get_fiber_list(); fib; fib = fib->next) {
+        auto ctx = (ThreadContext *)fib->user_data;
+        if (!ctx)
+            continue;
+        for (auto seg = &ctx->stack; seg; seg = seg->next) {
+            auto ptr = (TValue *)threadAddressFor(fib, seg->top);
+            auto end = (TValue *)threadAddressFor(fib, seg->bottom);
+            if (flags & 2)
+                DMESG("RS%d:%p/%d", cnt++, ptr, end - ptr);
+            // VLOG("mark: %p - %p", ptr, end);
+            while (ptr < end) {
+                gcProcess(*ptr++);
+            }
+        }
+    }
+#else
     int numFibers = list_fibers(NULL);
     Fiber **fibers = (Fiber **)xmalloc(sizeof(Fiber *) * numFibers);
     int num2 = list_fibers(fibers);
@@ -271,6 +288,7 @@ void gcProcessStacks(int flags) {
         }
     }
     xfree(fibers);
+#endif
 }
 
 } // namespace pxt
