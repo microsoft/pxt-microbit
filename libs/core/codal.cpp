@@ -43,23 +43,22 @@ struct FreeList {
     FreeList *next;
 };
 
-void dispatchBackground(MicroBitEvent e, void* action) {
+void dispatchBackground(MicroBitEvent e, void *action) {
     lastEvent = e;
     auto value = fromInt(e.value);
     runAction1((Action)action, value);
 }
 
-void dispatchForeground(MicroBitEvent e, void* action) {
+void dispatchForeground(MicroBitEvent e, void *action) {
     lastEvent = e;
     auto value = fromInt(e.value);
     runAction1((Action)action, value);
 }
 
 void deleteListener(MicroBitListener *l) {
-    if (l->cb_param == (void (*)(MicroBitEvent, void*))dispatchBackground || 
-        l->cb_param == (void (*)(MicroBitEvent, void*))dispatchForeground)
-    { 
-        decr((Action)(l->cb_arg));    
+    if (l->cb_param == (void (*)(MicroBitEvent, void *))dispatchBackground ||
+        l->cb_param == (void (*)(MicroBitEvent, void *))dispatchForeground) {
+        decr((Action)(l->cb_arg));
         unregisterGCPtr((Action)(l->cb_arg));
     }
 }
@@ -86,13 +85,14 @@ void registerWithDal(int id, int event, Action a, int flags) {
     if (!backgroundHandlerFlag) {
         uBit.messageBus.ignore(id, event, dispatchForeground);
     }
-    uBit.messageBus.listen(id, event, backgroundHandlerFlag ? dispatchBackground : dispatchForeground, a);
+    uBit.messageBus.listen(id, event,
+                           backgroundHandlerFlag ? dispatchBackground : dispatchForeground, a);
     backgroundHandlerFlag = false;
     incr(a);
     registerGCPtr(a);
 }
 
-void unregisterFromDal(void* a) { 
+void unregisterFromDal(void *a) {
     uBit.messageBus.ignore(MICROBIT_EVT_ANY, MICROBIT_EVT_ANY, dispatchBackground, a);
 }
 
