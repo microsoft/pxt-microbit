@@ -300,7 +300,6 @@
         "experiments": [
             "allowPackageExtensions",
             "instructions",
-            "debugger",
             "debugExtensionCode",
             "bluetoothUartConsole",
             "bluetoothPartialFlashing",
@@ -398,6 +397,12 @@
         "coloredToolbox": true,
         "monacoToolbox": true,
         "hasAudio": true,
+        "socialOptions": {
+            "orgTwitterHandle": "MSMakeCode",
+            "hashtags": "MakeCode",
+            "discourse": "https://forum.makecode.com/",
+            "discourseCategory": "micro:bit"
+        },
         "blocklyOptions": {
             "grid": {
                 "spacing": 45,
@@ -462,12 +467,15 @@
         },
         "showProjectSettings": true,
         "scriptManager": true,
+        "debugger": true,
         "simGifTransparent": "rgba(0,0,0,0)",
         "simGifMaxFrames": 44,
         "simScreenshotMaxUriLength": 300000,
         "qrCode": true,
         "importExtensionFiles": true,
+        "nameProjectFirst": true,
         "githubEditor": true,
+        "chooseLanguageRestrictionOnNewProject": true,
         "openProjectNewTab": true,
         "python": true
     },

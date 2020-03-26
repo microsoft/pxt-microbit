@@ -45,6 +45,11 @@ Here are some videos of live tutorial sessions with the @boardname@!
     "youTubeId": "5XqsGROG2fI"
 },
 {
+    "name": "Rock Paper Scissor",
+    "description": "Steps by step live coding of the Rock Paper Scissor tutorial",
+    "youTubeId": "94lLBB3b1kU"
+},
+{
     "name": "Playlist",
     "description": "See all the previous live stream sessions",
     "url": "https://www.youtube.com/watch?v=NvEOKZ8wh9s&list=PLMMBk9hE-SepocOwueEtTDyOPI_TBE9yC",
