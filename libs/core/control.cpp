@@ -360,7 +360,9 @@ namespace control {
     //%
     //% help=control/remove-from-background
     void removeFromBackground(Action handler) {
-        unregisterFromDal((void *)handler);
+        // with handler==NULL would unregister all
+        if (handler)
+            unregisterFromDal((void *)handler);
     }
 
     /**
