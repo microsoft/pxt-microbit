@@ -82,12 +82,13 @@ void setBackgroundHandlerFlag() {
 }
 
 void registerWithDal(int id, int event, Action a, int flags) {
-    if (!backgroundHandlerFlag) {
+    if (backgroundHandlerFlag) {
+        uBit.messageBus.listen(id, event, dispatchBackground, a);
+        backgroundHandlerFlag = false;
+    } else {
         uBit.messageBus.ignore(id, event, dispatchForeground);
+        uBit.messageBus.listen(id, event, dispatchForeground, a);
     }
-    uBit.messageBus.listen(id, event,
-                           backgroundHandlerFlag ? dispatchBackground : dispatchForeground, a);
-    backgroundHandlerFlag = false;
     incr(a);
     registerGCPtr(a);
 }
