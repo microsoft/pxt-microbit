@@ -56,12 +56,12 @@
     "yotta": {
         "config": {
             "microbit-dal": {
+                "fiber_user_data": 1,
                 "message_bus_concurrency_mode": 1
             }
         },
         "optionalConfig": {
             "microbit-dal": {
-                "fiber_user_data": 1,
                 "bluetooth": {
                     "private_addressing": 0,
                     "advertising_timeout": 0,
