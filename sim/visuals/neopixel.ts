@@ -128,11 +128,11 @@ namespace pxsim.visuals {
                     this.canvas.appendChild(pixel.el);
                 }
                 let color = colors[i];
-                pixel.setRgb(color);
+                pixel.setRgb([color[0], color[1], color[2]]);
             }
 
             //show the canvas if it's hidden
-            svg.removeClass(this.background, "hidden");
+            U.removeClass(this.background, "hidden");
 
             //resize if necessary
             let [first, last] = [this.pixels[0], this.pixels[this.pixels.length - 1]]

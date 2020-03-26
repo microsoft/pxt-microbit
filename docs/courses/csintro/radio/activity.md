@@ -38,7 +38,7 @@ input.onButtonPressed(Button.B, () => {
 ```
 * To display the data sent between the micro:bits, drag an 'on radio received receivedString' block to the coding workspace
 * From the Basic Toolbox drawer, drag a 'show string' block into the 'on radio received receivedString' block
-* From the Variables Toolbox drawer, drag a 'receivedString' variable block into the default string value of "Hello" in the 'show string' block 
+* From the 'on radio received receivedString' block, drag the 'receivedString' variable block into the default string value of "Hello" in the 'show string' block 
 
 Here is the complete Marco Polo program:
 
@@ -129,7 +129,7 @@ In order to know whether to display a dot, a dash, or a space/stop image, we nee
 
 * From the Logic Toolbox drawer, drag a 0=0 comparison block into the coding workspace.
 * Replace the default value 'true' of the 'if...then' block with the comparison block.
-* From the Variables Toolbox drawer, drag a 'receivedNumber' variable block into the coding workspace, and drop it into the first slot of the comparison block
+* From the 'on radio received receivedNumber' block, pull down the 'receivedNumber' variable block and drop it into the first slot of the comparison block
 * Leave the righthand side default value of zero in the 0=0 block. 
 
 ```blocks

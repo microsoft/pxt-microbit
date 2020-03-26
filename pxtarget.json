@@ -23,7 +23,10 @@
         "preferredPackages": [
             "Microsoft/pxt-neopixel"
         ],
-        "githubPackages": true
+        "githubPackages": true,
+        "cloudProviders": {
+            "github": {}
+        }
     },
     "compile": {
         "isNative": false,
@@ -88,6 +91,14 @@
                         "device_print_message.message": "text"
                     }
                 }
+            ],
+            "0.0.0 - 1.4.12": [
+                {
+                    "type": "api",
+                    "map": {
+                        "DisplayMode\\s*\\.\\s*BackAndWhite": "DisplayMode.BlackAndWhite"
+                    }
+                }
             ]
         },
         "hidSelectors": [
@@ -110,7 +121,15 @@
         "listsBlocks": true,
         "functionBlocks": true,
         "functionsOptions": {
-            "useNewFunctions": true
+            "useNewFunctions": true,
+            "extraFunctionEditorTypes": [
+                {
+                    "typeName": "game.LedSprite",
+                    "label": "LedSprite",
+                    "icon": "send",
+                    "defaultName": "sprite"
+                }
+            ]
         },
         "onStartColor": "#1E90FF",
         "onStartNamespace": "basic",
@@ -226,7 +245,7 @@
         "yottaTarget": "bbc-microbit-classic-gcc",
         "yottaCorePackage": "microbit",
         "githubCorePackage": "lancaster-university/microbit",
-        "gittag": "pxtgcevents",
+        "gittag": "v2.2.0-rc1",
         "serviceId": "microbit",
         "dockerImage": "pext/yotta:latest"
     },
@@ -251,7 +270,7 @@
     },
     "appTheme": {
         "accentColor": "#5C005C",
-        "logoUrl": "https://microbit.org/code/",
+        "logoUrl": "https://microbit.org/",
         "logo": "./static/logo.portrait.white.svg",
         "docsLogo": "./static/logo.square.white.svg",
         "portraitLogo": "./static/logo.square.white.svg",
@@ -281,15 +300,17 @@
         "experiments": [
             "allowPackageExtensions",
             "instructions",
-            "debugger",
+            "debugExtensionCode",
             "bluetoothUartConsole",
             "bluetoothPartialFlashing",
             "simScreenshot",
             "simGif"
         ],
-        "bluetoothUartFilters": [{
-            "namePrefix": "BBC micro:bit"
-        }],
+        "bluetoothUartFilters": [
+            {
+                "namePrefix": "BBC micro:bit"
+            }
+        ],
         "docMenu": [
             {
                 "name": "Support",
@@ -298,14 +319,6 @@
             {
                 "name": "Reference",
                 "path": "/reference"
-            },
-            {
-                "name": "Blocks",
-                "path": "/blocks"
-            },
-            {
-                "name": "JavaScript",
-                "path": "/javascript"
             },
             {
                 "name": "Hardware",
@@ -384,6 +397,12 @@
         "coloredToolbox": true,
         "monacoToolbox": true,
         "hasAudio": true,
+        "socialOptions": {
+            "orgTwitterHandle": "MSMakeCode",
+            "hashtags": "MakeCode",
+            "discourse": "https://forum.makecode.com/",
+            "discourseCategory": "micro:bit"
+        },
         "blocklyOptions": {
             "grid": {
                 "spacing": 45,
@@ -404,6 +423,7 @@
         },
         "highContrast": true,
         "greenScreen": true,
+        "accessibleBlocks": true,
         "print": true,
         "selectLanguage": true,
         "availableLocales": [
@@ -422,7 +442,8 @@
             "ja",
             "ko",
             "nl",
-            "no",
+            "nb",
+            "pl",
             "pt-BR",
             "pt-PT",
             "ru",
@@ -438,12 +459,32 @@
             "editor.background": "#ecf0f1"
         },
         "browserDbPrefixes": {
-            "1": "v1"
+            "1": "v1",
+            "2": "v2"
         },
         "editorVersionPaths": {
             "0": "v0"
         },
+        "showProjectSettings": true,
         "scriptManager": true,
-        "simGifTransparent": "rgba(0,0,0,0)"
-    }
+        "debugger": true,
+        "simGifTransparent": "rgba(0,0,0,0)",
+        "simGifMaxFrames": 44,
+        "simScreenshotMaxUriLength": 300000,
+        "qrCode": true,
+        "importExtensionFiles": true,
+        "nameProjectFirst": true,
+        "githubEditor": true,
+        "chooseLanguageRestrictionOnNewProject": true,
+        "openProjectNewTab": true,
+        "python": true
+    },
+    "queryVariants": {
+        "hidemenu": {
+            "appTheme": {
+                "hideMenuBar": true
+            }
+        }
+    },
+    "disableDocsUpload": true
 }

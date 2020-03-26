@@ -74,13 +74,13 @@ enum class Gesture {
     //% jres=gestures.tiltbackwards
     LogoDown = MICROBIT_ACCELEROMETER_EVT_TILT_DOWN,
     /**
-     * Raised when the screen is pointing down and the board is horizontal
+     * Raised when the screen is pointing up and the board is horizontal
      */
     //% block="screen up"
     //% jres=gestures.frontsideup
     ScreenUp = MICROBIT_ACCELEROMETER_EVT_FACE_UP,
     /**
-     * Raised when the screen is pointing up and the board is horizontal
+     * Raised when the screen is pointing down and the board is horizontal
      */
     //% block="screen down"
     //% jres=gestures.backsideup
@@ -190,6 +190,21 @@ namespace input {
         registerWithDal(MICROBIT_ID_GESTURE, gi, body);
     }
 
+    /**
+    * Tests if a gesture is currently detected.
+     * @param gesture the type of gesture to detect, eg: Gesture.Shake
+    */
+    //% help=input/is-gesture weight=10 blockGap=8
+    //% blockId=deviceisgesture block="is %gesture gesture"
+    //% parts="accelerometer"
+    //% gesture.fieldEditor="gestures" gesture.fieldOptions.columns=4
+    bool isGesture(Gesture gesture) {
+        // turn on acceleration
+        uBit.accelerometer.getX();
+        int gi = (int)gesture;
+        return uBit.accelerometer.getGesture() == gi;
+    }
+
      /**
      * Do something when a pin is touched and released again (while also touching the GND pin).
      * @param name the pin that needs to be pressed, eg: TouchPin.P0
@@ -263,7 +278,7 @@ namespace input {
 
     /**
      * Get the acceleration value in milli-gravitys (when the board is laying flat with the screen up, x=0, y=0 and z=-1024)
-     * @param dimension TODO
+     * @param dimension x, y, or z dimension, eg: Dimension.X
      */
     //% help=input/acceleration weight=58
     //% blockId=device_acceleration block="acceleration (mg)|%NAME" blockGap=8
@@ -313,7 +328,7 @@ namespace input {
 
     /**
      * The pitch or roll of the device, rotation along the ``x-axis`` or ``y-axis``, in degrees.
-     * @param kind TODO
+     * @param kind pitch or roll
      */
     //% help=input/rotation weight=52
     //% blockId=device_get_rotation block="rotation (°)|%NAME" blockGap=8
@@ -328,7 +343,7 @@ namespace input {
 
     /**
      * Get the magnetic force value in ``micro-Teslas`` (``µT``). This function is not supported in the simulator.
-     * @param dimension TODO
+     * @param dimension the x, y, or z dimension, eg: Dimension.X
      */
     //% help=input/magnetic-force weight=51
     //% blockId=device_get_magnetic_force block="magnetic force (µT)|%NAME" blockGap=8
@@ -345,26 +360,6 @@ namespace input {
       case Dimension::Strength: return uBit.compass.getFieldStrength() / 1000;
       }
       return 0;
-    }
-
-    /**
-     * Gets the number of milliseconds elapsed since power on.
-     */
-    //% help=input/running-time weight=50 blockGap=8
-    //% blockId=device_get_running_time block="running time (ms)"
-    //% advanced=true
-    int runningTime() {
-        return system_timer_current_time();
-    }
-
-    /**
-     * Gets the number of microseconds elapsed since power on.
-     */
-    //% help=input/running-time-micros weight=49
-    //% blockId=device_get_running_time_micros block="running time (micros)"
-    //% advanced=true
-    int runningTimeMicros() {
-        return system_timer_current_time_us();
     }
 
     /**

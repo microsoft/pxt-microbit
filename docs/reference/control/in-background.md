@@ -25,7 +25,7 @@ changes what is stored there.
 let num = 0
 control.inBackground(() => {
     while (true) {
-        basic.showNumber(num, 150)
+        basic.showNumber(num)
         basic.pause(100)
     }
 })
@@ -40,7 +40,7 @@ with a ``forever`` loop.
 ```blocks
 let num = 0
 basic.forever(() => {
-    basic.showNumber(num, 150)
+    basic.showNumber(num)
 })
 input.onButtonPressed(Button.A, () => {
     num++;

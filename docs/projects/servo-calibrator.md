@@ -24,3 +24,7 @@ basic.forever(() => {
 })
 pins.servoWritePin(AnalogPin.P0, angle)
 ```
+
+## See also
+
+[Brief Guide to Servos](https://www.kitronik.co.uk/pdf/a-brief-guide-to-servos.pdf)

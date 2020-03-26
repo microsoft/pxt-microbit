@@ -10,6 +10,12 @@ If you are conducting a class or group activity, you should consider preparing a
 
 The @boardname@ provides just enough current to operate the SG90 microservo. This servo requires 3 connections: **GND**, **3V** and a logic **pin**. In this tutorial, we will equip the servo with crocodile clips to make it easier to use. However, you could also use a shield or crocodile clips with a male connector on one end to achieve the same result.
 
+### ~ hint
+
+To better understand how servos work and how they are controlled, take a few minutes to read this [Brief Guide to Servos](https://www.kitronik.co.uk/pdf/a-brief-guide-to-servos.pdf).
+
+### ~
+
 ## The easy way: Alligator/Crocodile Clip to Male Jumpers #hintconnection
 
 The easiest way to connect a servo to the @boardname@ is to use cables with an **Alligator/Crocodile clip** on one end

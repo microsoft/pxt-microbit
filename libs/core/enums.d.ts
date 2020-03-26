@@ -110,13 +110,13 @@ declare namespace basic {
     //% jres=gestures.tiltbackwards
     LogoDown = 2,  // MICROBIT_ACCELEROMETER_EVT_TILT_DOWN
     /**
-     * Raised when the screen is pointing down and the board is horizontal
+     * Raised when the screen is pointing up and the board is horizontal
      */
     //% block="screen up"
     //% jres=gestures.frontsideup
     ScreenUp = 5,  // MICROBIT_ACCELEROMETER_EVT_FACE_UP
     /**
-     * Raised when the screen is pointing up and the board is horizontal
+     * Raised when the screen is pointing down and the board is horizontal
      */
     //% block="screen down"
     //% jres=gestures.backsideup
@@ -400,12 +400,24 @@ declare namespace input {
     //% blockIdentity="control.eventValueId"
     MES_REMOTE_CONTROL_EVT_VOLUMEUP = 8,  // MES_REMOTE_CONTROL_EVT_VOLUMEUP
     }
+
+
+    declare const enum EventFlags {
+    //%
+    QueueIfBusy = 16,  // MESSAGE_BUS_LISTENER_QUEUE_IF_BUSY
+    //%
+    DropIfBusy = 32,  // MESSAGE_BUS_LISTENER_DROP_IF_BUSY
+    //%
+    Reentrant = 8,  // MESSAGE_BUS_LISTENER_REENTRANT
+    }
 declare namespace control {
 }
 
 
     declare const enum DisplayMode {
     //% block="black and white"
+    BlackAndWhite = 0,  // DISPLAY_MODE_BLACK_AND_WHITE
+    //% blockHidden=true
     BackAndWhite = 0,  // DISPLAY_MODE_BLACK_AND_WHITE
     //% block="greyscale"
     Greyscale = 1,  // DISPLAY_MODE_GREYSCALE
@@ -433,7 +445,9 @@ declare namespace led {
     P14 = 21,  // MICROBIT_ID_IO_P14
     P15 = 22,  // MICROBIT_ID_IO_P15
     P16 = 23,  // MICROBIT_ID_IO_P16
+    //% blockHidden=1
     P19 = 24,  // MICROBIT_ID_IO_P19
+    //% blockHidden=1
     P20 = 25,  // MICROBIT_ID_IO_P20
     }
 
@@ -468,8 +482,10 @@ declare namespace led {
     //% block="P16 (write only)"
     P16 = 23,  // MICROBIT_ID_IO_P16
     //% block="P19 (write only)"
+    //% blockHidden=1
     P19 = 24,  // MICROBIT_ID_IO_P19
     //% block="P20 (write only)"
+    //% blockHidden=1
     P20 = 25,  // MICROBIT_ID_IO_P20
     }
 
@@ -542,8 +558,6 @@ declare namespace led {
     BaudRate2400 = 2400,
     //% block=1200
     BaudRate1200 = 1200,
-    //% block=300
-    BaudRate300 = 300,
     }
 
 

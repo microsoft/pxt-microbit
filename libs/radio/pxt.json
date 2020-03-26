@@ -1,18 +1,5 @@
 {
-    "name": "radio",
-    "description": "The radio services",
-    "files": [
-        "README.md",
-        "shims.d.ts",
-        "enums.d.ts",
-        "radio.cpp",
-        "radio.ts"
-    ],
-    "icon": "./static/packages/radio/icon.png",
-    "public": true,
-    "dependencies": {
-        "core": "file:../core"
-    },
+    "additionalFilePath": "../../node_modules/pxt-common-packages/libs/radio",
     "yotta": {
         "config": {
             "microbit-dal": {
@@ -21,6 +8,5 @@
                 }
             }
         }
-    },
-    "installedVersion": "rlfgis"
+    }
 }

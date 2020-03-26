@@ -8,6 +8,10 @@
 * Roll of duct tape (maybe 2 rolls if you want another color)
 * Velcro
 
+## Flipgrid
+
+https://flipgrid.com/30f0429c
+
 ## Steps
 
 ### Step 1 - Cut the pieces of tape

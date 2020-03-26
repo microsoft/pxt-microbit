@@ -24,3 +24,6 @@ input.onGesture(Gesture.Shake,() => {
 })
 ```
 
+## See Also
+
+[is gesture](/reference/input/is-gesture)

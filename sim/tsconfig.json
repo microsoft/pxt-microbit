@@ -9,7 +9,13 @@
         "newLine": "LF",
         "sourceMap": false,
         "lib": ["dom", "dom.iterable", "scripthost", "es6"],
-        "types": ["jquery", "bluebird"],
+        "types": ["bluebird"],
         "typeRoots": ["../node_modules/@types"]
-    }
+    },
+    "include": [
+        "*.ts",
+        "state/*.ts",
+        "visuals/*.ts",
+        "../node_modules/pxt-common-packages/libs/radio/sim/*.ts"
+    ]
 }

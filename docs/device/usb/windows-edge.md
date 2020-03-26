@@ -1,4 +1,4 @@
-# Uploading from Edge on Windows
+# Uploading from Microsoft Edge on Windows
 
 How to compile, transfer, and run a program on your micro:bit on **Microsoft Edge**.
 

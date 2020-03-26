@@ -48,6 +48,7 @@
     * [Radio bridge](/projects/radio-bridge)
     * [Snap the dot](/projects/snap-the-dot)
     * [Red light green light](/projects/red-light-green-light)
+    * [Name Badge](/projects/name-badge)
 
 ## #examples
 
@@ -169,6 +170,12 @@
             * [Build](/courses/ucp-science/rocket-acceleration/build)
             * [Setup and procedure](/courses/ucp-science/rocket-acceleration/setup-procedure)
             * [Resources](/courses/ucp-science/rocket-acceleration/resources)
+    * [Logic Lab](/courses/logic-lab)
+        * [Logic and Expressions](/courses/logic-lab/expressions)
+        * [Boolean Elements](/courses/logic-lab/elements)
+        * [Logic Explorer](/courses/logic-lab/explorer)
+        * [Logic Gates](/courses/logic-lab/logic-gates)
+        * [Programmable Logic](/courses/logic-lab/programmable)
 
 ## #reference
 
@@ -233,7 +240,7 @@
         * [delete](/reference/game/delete)
         * [move](/reference/game/move)
         * [turn](/reference/game/turn)
-        * [in on edge bounce](/reference/game/if-on-edge-bounce)
+        * [if on edge bounce](/reference/game/if-on-edge-bounce)
         * [get](/reference/game/get)
         * [set](/reference/game/set)
         * [change](/reference/game/change)

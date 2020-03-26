@@ -63,7 +63,7 @@ input.onButtonPressed(Button.A, () => {
 input.onButtonPressed(Button.B, () => {
     radio.sendString("B")
 })
-radio.onReceivedNumber(({ receivedString }) => {
+radio.onReceivedNumber((receivedString) => {
     basic.showString(receivedString)
 })
 ```

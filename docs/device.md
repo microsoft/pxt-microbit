@@ -9,7 +9,7 @@
 
 All the bits and pieces that make up the BBC micro:bit
 
-![](/static/mb/device-0.png)
+![micro:bit board layout](/static/mb/device-0.png)
 
 
 ## LED Screen and Status LED
@@ -43,18 +43,19 @@ https://www.youtube.com/watch?v=t_Qujjd_38o
 When you plug in your micro:bit via [USB](/device/usb), it should appear as  a ``MICROBIT`` drive. 
 
 If you accidentally hold down the reset button as you’re plugging in your micro:bit, 
-the micro:bit will appear as a MAINTENANCE drive instead of ``MICROBIT``. This is known as maintenance mode.
+the micro:bit will appear as a ``MAINTENANCE`` drive instead of ``MICROBIT``. This is known as maintenance mode.
 
 To continue programming your micro:bit YOU MUST unplug your USB and reconnect it. Check that the drive now shows as ``MICROBIT``.
 
 ## ~ hint
 
-Use with caution. If you click on the drive while it shows as ``MAINTENANCE``, 
+### Open the version file
+
+Use with caution!
+If you click on the drive while it shows the ``MAINTENANCE`` label, 
 you can see which version of firmware you have running on your micro:bit. 
 Firmware on your micro:bit should be up-to-date already. 
-You can find the version of firmware in the 'version.txt' file on the micro:bit. Further information on the firmware can be found here:
-
-https://developer.mbed.org/platforms/Microbit/#firmware
+You can find the version of firmware in the 'version.txt' file on the micro:bit. See the @boardname@ **[firmware](https://microbit.org/guide/firmware/)** page for more about checking your board's firmware version.
 
 ## ~
 
@@ -123,7 +124,7 @@ You can attach an external device such as a motor to these and power it using th
 
 ## Serial Communication
 
-The micro:bit can send and receive data via [serial communication](/device/serial). The serial data can be transferred via USB or BLE.
+The micro:bit can send and receive data via [serial communication](/device/serial). The serial data can be transferred via [USB](/reference/serial/redirect-to-usb), BLE or [redirected to pins](/reference/serial/redirect) on the edge connector.
 
 ## Bluetooth Low Energy (BLE) Antenna
 

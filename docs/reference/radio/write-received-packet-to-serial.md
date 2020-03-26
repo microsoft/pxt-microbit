@@ -30,22 +30,26 @@ the second @boardname@), this program sends temperature data to the
 serial port.
 
 ```blocks
-input.onButtonPressed(Button.A, () => {
-    radio.sendNumber(input.temperature());
-    radio.sendValue("temperature", input.temperature());
-    radio.sendString("It's warm now");
-
-
-});
+input.onButtonPressed(Button.A, function () {
+    radio.sendNumber(input.temperature())
+    radio.sendValue("temp", input.temperature())
+    radio.sendString("It's warm now")
+})
 radio.onReceivedNumber(function (receivedNumber) {
-    radio.writeReceivedPacketToSerial();
-});
+    radio.writeReceivedPacketToSerial()
+})
+radio.onReceivedValue(function (name, value) {
+    radio.writeReceivedPacketToSerial()
+})
+radio.onReceivedString(function (receivedString) {
+    radio.writeReceivedPacketToSerial()
+})
 ```
 Sample output to serial when ``A`` button pressed:
 
 ```json
 {"t":323,"s":0,"v":27}
-{"t":325,"s":0,"n":"temperature","v":27}
+{"t":325,"s":0,"n":"temp","v":27}
 {"t":326,"s":0,"n":"It's warm now"}
 ```
 

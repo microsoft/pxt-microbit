@@ -4,6 +4,8 @@
  */
 //% color=#007EF4 weight=96 icon="\uf294"
 namespace bluetooth {
+    export let NEW_LINE = "\r\n";
+
     /**
      * Internal use
      */
@@ -20,8 +22,7 @@ namespace bluetooth {
     //% blockId=bluetooth_uart_write block="bluetooth uart|write string %data" blockGap=8
     //% parts="bluetooth" shim=bluetooth::uartWriteString advanced=true
     export function uartWriteString(data: string): void {
-        // dummy implementation for simulator
-        console.log("UART Write: " + data)
+        console.log(data)
     }
 
     /**
@@ -31,7 +32,7 @@ namespace bluetooth {
     //% blockId=bluetooth_uart_line block="bluetooth uart|write line %data" blockGap=8
     //% parts="bluetooth" advanced=true
     export function uartWriteLine(data: string): void {
-        uartWriteString(data + "\r\n");
+        uartWriteString(data + serial.NEW_LINE);
     }
 
     /**
@@ -53,7 +54,7 @@ namespace bluetooth {
     //% help=bluetooth/uart-write-value advanced=true
     //% blockId=bluetooth_uart_writevalue block="bluetooth uart|write value %name|= %value"
     export function uartWriteValue(name: string, value: number): void {
-        uartWriteString(name + ":" + value + "\r\n");
+        uartWriteString((name ? name + ":" : "") + value + NEW_LINE);
     }
 
     /**
@@ -64,7 +65,7 @@ namespace bluetooth {
     //% parts="bluetooth" shim=bluetooth::uartReadUntil advanced=true
     export function uartReadUntil(del: string): string {
         // dummy implementation for simulator
-        return "???"
+        return ""
     }
 
     /**

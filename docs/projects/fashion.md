@@ -30,6 +30,11 @@
   "description": "Build a watch from duct tape",
   "url": "/projects/duct-tape-watch",
   "imageUrl": "/static/mb/projects/duct-tape-watch.png"
+}, {
+  "name": "Name badge",
+  "description": "Make stylish name badge to let everyone know who you are",
+  "url": "/projects/name-badge",
+  "imageUrl": "/static/mb/projects/name-badge.png"
 }]
 ```
 

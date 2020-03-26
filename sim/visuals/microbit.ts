@@ -85,18 +85,6 @@ namespace pxsim.visuals {
         }
 
         /* animations */
-        .sim-theme-glow {
-            animation-name: sim-theme-glow-animation;
-            animation-timing-function: ease-in-out;
-            animation-direction: alternate;
-            animation-iteration-count: infinite;
-            animation-duration: 1.25s;
-        }
-        @keyframes sim-theme-glow-animation {
-            from { opacity: 1; }
-            to   { opacity: 0.75; }
-        }
-
         .sim-flash {
             animation-name: sim-flash-animation;
             animation-duration: 0.1s;
@@ -139,6 +127,9 @@ namespace pxsim.visuals {
         {
             stroke: none;
             fill: #777;
+        }
+        .sim-label, .sim-button-label {
+            fill: #000;
         }
         .sim-wireframe .sim-board {
             stroke-width: 2px;
@@ -268,7 +259,7 @@ path.sim-board {
             theme.ledOn = "#0000bb";
             theme.display = "#ffffff";
             theme.pin = "#D4AF37";
-            theme.accent = "#273EE2";
+            theme.accent = "#FFD43A";
         }
         return theme;
     }
@@ -317,7 +308,7 @@ path.sim-board {
             this.recordPinCoords();
             this.buildDom();
             if (props && props.wireframe)
-                svg.addClass(this.element, "sim-wireframe");
+                U.addClass(this.element, "sim-wireframe");
 
             if (props && props.theme)
                 this.updateTheme();
@@ -421,8 +412,8 @@ path.sim-board {
             this.updateButtonAB();
             this.updateGestures();
 
-            if (!runtime || runtime.dead) svg.addClass(this.element, "grayscale");
-            else svg.removeClass(this.element, "grayscale");
+            if (!runtime || runtime.dead) U.addClass(this.element, "grayscale");
+            else U.removeClass(this.element, "grayscale");
         }
 
         private updateGestures() {
@@ -442,10 +433,10 @@ path.sim-board {
                 this.shakeButton.addEventListener(pointerEvents.up, ev => {
                     let state = this.board;
                     svg.fill(this.shakeButton, this.props.theme.virtualButtonUp);
-                    this.board.bus.queue(DAL.MICROBIT_ID_GESTURE, 11); // GESTURE_SHAKE
+                    this.board.accelerometerState.shake();
                 })
                 accessibility.enableKeyboardInteraction(this.shakeButton, undefined, () => {
-                    this.board.bus.queue(DAL.MICROBIT_ID_GESTURE, 11);
+                    this.board.accelerometerState.shake();
                 });
                 accessibility.setAria(this.shakeButton, "button", "Shake the board");
                 this.shakeText = svg.child(this.g, "text", { x: 400, y: 110, class: "sim-text" }) as SVGTextElement;
@@ -821,9 +812,9 @@ path.sim-board {
             // head
             this.head = <SVGGElement>svg.child(this.g, "g", { class: "sim-head no-drag" });
             svg.child(this.head, "circle", { cx: 258, cy: 75, r: 100, fill: "transparent" })
-            this.logos.push(svg.path(this.head, "sim-theme sim-theme-glow", "M269.9,50.2L269.9,50.2l-39.5,0v0c-14.1,0.1-24.6,10.7-24.6,24.8c0,13.9,10.4,24.4,24.3,24.7v0h39.6c14.2,0,24.8-10.6,24.8-24.7C294.5,61,284,50.3,269.9,50.2 M269.7,89.2L269.7,89.2l-39.3,0c-7.7-0.1-14-6.4-14-14.2c0-7.8,6.4-14.2,14.2-14.2h39.1c7.8,0,14.2,6.4,14.2,14.2C283.9,82.9,277.5,89.2,269.7,89.2"));
-            this.logos.push(svg.path(this.head, "sim-theme sim-theme-glow", "M230.6,69.7c-2.9,0-5.3,2.4-5.3,5.3c0,2.9,2.4,5.3,5.3,5.3c2.9,0,5.3-2.4,5.3-5.3C235.9,72.1,233.5,69.7,230.6,69.7"));
-            this.logos.push(svg.path(this.head, "sim-theme sim-theme-glow", "M269.7,80.3c2.9,0,5.3-2.4,5.3-5.3c0-2.9-2.4-5.3-5.3-5.3c-2.9,0-5.3,2.4-5.3,5.3C264.4,77.9,266.8,80.3,269.7,80.3"));
+            this.logos.push(svg.path(this.head, "sim-theme", "M269.9,50.2L269.9,50.2l-39.5,0v0c-14.1,0.1-24.6,10.7-24.6,24.8c0,13.9,10.4,24.4,24.3,24.7v0h39.6c14.2,0,24.8-10.6,24.8-24.7C294.5,61,284,50.3,269.9,50.2 M269.7,89.2L269.7,89.2l-39.3,0c-7.7-0.1-14-6.4-14-14.2c0-7.8,6.4-14.2,14.2-14.2h39.1c7.8,0,14.2,6.4,14.2,14.2C283.9,82.9,277.5,89.2,269.7,89.2"));
+            this.logos.push(svg.path(this.head, "sim-theme", "M230.6,69.7c-2.9,0-5.3,2.4-5.3,5.3c0,2.9,2.4,5.3,5.3,5.3c2.9,0,5.3-2.4,5.3-5.3C235.9,72.1,233.5,69.7,230.6,69.7"));
+            this.logos.push(svg.path(this.head, "sim-theme", "M269.7,80.3c2.9,0,5.3-2.4,5.3-5.3c0-2.9-2.4-5.3-5.3-5.3c-2.9,0-5.3,2.4-5.3,5.3C264.4,77.9,266.8,80.3,269.7,80.3"));
             this.headText = <SVGTextElement>svg.child(this.g, "text", { x: 310, y: 100, class: "sim-text" })
 
             // https://www.microbit.co.uk/device/pins
@@ -918,8 +909,13 @@ path.sim-board {
                 }
 
                 const bbox = this.element.getBoundingClientRect();
-                const ax = (ev.clientX - bbox.width / 2) / (bbox.width / 3);
-                const ay = (ev.clientY - bbox.height / 2) / (bbox.height / 3);
+
+                // ev.clientX and ev.clientY are not defined on mobile iOS
+                const xPos = ev.clientX != null ? ev.clientX : ev.pageX;
+                const yPos = ev.clientY != null ? ev.clientY : ev.pageY;
+
+                const ax = (xPos - bbox.width / 2) / (bbox.width / 3);
+                const ay = (yPos - bbox.height / 2) / (bbox.height / 3);
 
                 const x = - Math.max(- 1023, Math.min(1023, Math.floor(ax * 1023)));
                 const y = - Math.max(- 1023, Math.min(1023, Math.floor(ay * 1023)));
@@ -974,7 +970,7 @@ path.sim-board {
                         let state = this.board;
                         let pin = state.edgeConnectorState.pins[index];
                         let svgpin = this.pins[index];
-                        svg.addClass(svgpin, "touched");
+                        U.addClass(svgpin, "touched");
                         if (pin.mode & PinFlags.Input) {
                             let cursor = svg.cursorPoint(pt, this.element, ev);
                             let v = (400 - cursor.y) / 40 * 1023
@@ -987,7 +983,7 @@ path.sim-board {
                         let state = this.board;
                         let pin = state.edgeConnectorState.pins[index];
                         let svgpin = this.pins[index];
-                        svg.removeClass(svgpin, "touched");
+                        U.removeClass(svgpin, "touched");
                         this.updatePin(pin, index);
                         return false;
                     },

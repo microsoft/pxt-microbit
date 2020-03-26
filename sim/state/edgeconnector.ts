@@ -47,7 +47,7 @@ namespace pxsim.pins {
     export function setPull(pinId: number, pull: number) {
         let pin = getPin(pinId);
         if (!pin) return;
-        pin.pull = pull;
+        pin.setPull(pull);
     }
 
     export function analogReadPin(pinId: number): number {
@@ -61,7 +61,7 @@ namespace pxsim.pins {
         let pin = getPin(pinId);
         if (!pin) return;
         pin.mode = PinFlags.Analog | PinFlags.Output;
-        pin.value = value ? 1 : 0;
+        pin.value = value | 0;
         runtime.queueDisplayUpdate();
     }
 
@@ -79,6 +79,13 @@ namespace pxsim.pins {
 
         analogSetPeriod(pinId, 20000);
         pin.servoAngle = value;
+    }
+
+    export function servoSetContinuous(pinId: number, value: boolean) {
+        let pin = getPin(pinId);
+        if (!pin) return;
+
+        pin.servoSetContinuous(value);
     }
 
     export function servoSetPulse(pinId: number, micros: number) {

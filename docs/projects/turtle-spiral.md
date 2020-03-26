@@ -2,7 +2,7 @@
 
 ## Setting up your project
 
-This project uses an **microturtle** Extension. You'll need to add it to your project to make it work.
+This project uses the **microturtle** Extension. You'll need to add it to your project to make it work.
 
 * create a new project
 * click on the gearwheel menu and click **Extensions**
@@ -15,15 +15,14 @@ After the project reloads, you should see the **turtle** category in the blocks.
 A turtle that spirals into the center of the display and back out again.
 
 ```blocks
-let index = 0
 turtle.setPosition(0, 0)
 turtle.turnRight()
 basic.forever(() => {
-    for (index = 0; index <= 4; index++) {
+    for (let index = 0; index <= 4; index++) {
         turtle.forward(4 - index)
         turtle.turnRight()
     }
-    for (index = 0; index <= 4; index++) {
+    for (let index = 0; index <= 4; index++) {
         turtle.turnLeft()
         turtle.back(index)
     }

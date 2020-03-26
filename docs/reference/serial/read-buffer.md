@@ -26,7 +26,7 @@ The need to pause for more data is set by the @boardname@ **[serial mode](https:
 
 Read character data from the serial port one row at a time. Write the rows to an LED display connected to the I2C pins.
 
-```blocks
+```typescript
 let rowData: Buffer = null;
 for (let i = 0; i < 24; i++) {
     rowData = serial.readBuffer(80);

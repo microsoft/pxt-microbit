@@ -78,7 +78,15 @@ input.onPinPressed(TouchPin.P1, () => {
 });
 ```
 
-Grab a the orange with one hand. With the fingers of your other hand, tap the banana to play sound. Your banana keyboard is ready!
+#### ~hint
+
+How is touching a piece fruit detected by the @boardname@? Find out in this video:
+
+https://www.youtube.com/watch?v=GEpZrvbsO7o
+
+#### ~
+
+Grab the orange with one hand. With the fingers of your other hand, tap the banana to play sound. Your banana keyboard is ready!
 
 ## ~button /projects/banana-keyboard/code
 NEXT: beat box

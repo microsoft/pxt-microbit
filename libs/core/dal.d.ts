@@ -1,11 +1,11 @@
 // Auto-generated. Do not edit.
 declare const enum DAL {
-    // built/dockeryt/yotta_modules/microbit-dal/inc/bluetooth/ExternalEvents.h
+    // /yotta_modules/microbit-dal/inc/bluetooth/ExternalEvents.h
     MICROBIT_ID_BLE = 1000,
     MICROBIT_ID_BLE_UART = 1200,
     MICROBIT_BLE_EVT_CONNECTED = 1,
     MICROBIT_BLE_EVT_DISCONNECTED = 2,
-    // built/dockeryt/yotta_modules/microbit-dal/inc/bluetooth/MESEvents.h
+    // /yotta_modules/microbit-dal/inc/bluetooth/MESEvents.h
     MES_REMOTE_CONTROL_ID = 1001,
     MES_REMOTE_CONTROL_EVT_PLAY = 1,
     MES_REMOTE_CONTROL_EVT_PAUSE = 2,
@@ -70,7 +70,7 @@ declare const enum DAL {
     MES_DPAD_BUTTON_4_DOWN = 15,
     MES_DPAD_BUTTON_4_UP = 16,
     MES_BROADCAST_GENERAL_ID = 2000,
-    // built/dockeryt/yotta_modules/microbit-dal/inc/bluetooth/MicroBitBLEManager.h
+    // /yotta_modules/microbit-dal/inc/bluetooth/MicroBitBLEManager.h
     MICROBIT_BLE_PAIR_REQUEST = 1,
     MICROBIT_BLE_PAIR_COMPLETE = 2,
     MICROBIT_BLE_PAIR_PASSCODE = 4,
@@ -83,34 +83,34 @@ declare const enum DAL {
     MICROBIT_BLE_STATUS_STORE_SYSATTR = 2,
     MICROBIT_BLE_STATUS_DISCONNECT = 4,
     MICROBIT_BLE_DISCONNECT_AFTER_PAIRING_DELAY = 500,
-    // built/dockeryt/yotta_modules/microbit-dal/inc/bluetooth/MicroBitDFUService.h
+    // /yotta_modules/microbit-dal/inc/bluetooth/MicroBitDFUService.h
     MICROBIT_DFU_OPCODE_START_DFU = 1,
     MICROBIT_DFU_HISTOGRAM_WIDTH = 5,
     MICROBIT_DFU_HISTOGRAM_HEIGHT = 5,
-    // built/dockeryt/yotta_modules/microbit-dal/inc/bluetooth/MicroBitIOPinService.h
+    // /yotta_modules/microbit-dal/inc/bluetooth/MicroBitIOPinService.h
     MICROBIT_IO_PIN_SERVICE_PINCOUNT = 19,
     MICROBIT_IO_PIN_SERVICE_DATA_SIZE = 10,
     MICROBIT_PWM_PIN_SERVICE_DATA_SIZE = 2,
-    // built/dockeryt/yotta_modules/microbit-dal/inc/bluetooth/MicroBitLEDService.h
+    // /yotta_modules/microbit-dal/inc/bluetooth/MicroBitLEDService.h
     MICROBIT_BLE_MAXIMUM_SCROLLTEXT = 20,
-    // built/dockeryt/yotta_modules/microbit-dal/inc/bluetooth/MicroBitMagnetometerService.h
+    // /yotta_modules/microbit-dal/inc/bluetooth/MicroBitMagnetometerService.h
     COMPASS_CALIBRATION_STATUS_UNKNOWN = 0,
     COMPASS_CALIBRATION_REQUESTED = 1,
     COMPASS_CALIBRATION_COMPLETED_OK = 2,
     COMPASS_CALIBRATION_COMPLETED_ERR = 3,
-    // built/dockeryt/yotta_modules/microbit-dal/inc/bluetooth/MicroBitPartialFlashingService.h
+    // /yotta_modules/microbit-dal/inc/bluetooth/MicroBitPartialFlashingService.h
     PARTIAL_FLASHING_VERSION = 1,
     REGION_INFO = 0,
     FLASH_DATA = 1,
     END_OF_TRANSMISSION = 2,
     MICROBIT_STATUS = 238,
     MICROBIT_RESET = 255,
-    // built/dockeryt/yotta_modules/microbit-dal/inc/bluetooth/MicroBitUARTService.h
+    // /yotta_modules/microbit-dal/inc/bluetooth/MicroBitUARTService.h
     MICROBIT_UART_S_DEFAULT_BUF_SIZE = 20,
     MICROBIT_UART_S_EVT_DELIM_MATCH = 1,
     MICROBIT_UART_S_EVT_HEAD_MATCH = 2,
     MICROBIT_UART_S_EVT_RX_FULL = 3,
-    // built/dockeryt/yotta_modules/microbit-dal/inc/core/ErrorNo.h
+    // /yotta_modules/microbit-dal/inc/core/ErrorNo.h
     MICROBIT_OK = 0,
     MICROBIT_INVALID_PARAMETER = -1001,
     MICROBIT_NOT_SUPPORTED = -1002,
@@ -127,68 +127,67 @@ declare const enum DAL {
     MICROBIT_NULL_DEREFERENCE = 40,
     MICROBIT_HARDWARE_UNAVAILABLE_ACC = 50,
     MICROBIT_HARDWARE_UNAVAILABLE_MAG = 51,
-    // built/dockeryt/yotta_modules/microbit-dal/inc/core/MicroBitComponent.h
+    // /yotta_modules/microbit-dal/inc/core/MicroBitComponent.h
     MICROBIT_ID_BUTTON_A = 1,
     MICROBIT_ID_BUTTON_B = 2,
-    MICROBIT_ID_BUTTON_RESET = 3,
-    MICROBIT_ID_ACCELEROMETER = 4,
-    MICROBIT_ID_COMPASS = 5,
-    MICROBIT_ID_DISPLAY = 6,
-    MICROBIT_IO_PINS = 20,
-    MICROBIT_ID_IO_P0 = 7,
-    MICROBIT_ID_IO_P1 = 8,
-    MICROBIT_ID_IO_P2 = 9,
-    MICROBIT_ID_IO_P3 = 10,
-    MICROBIT_ID_IO_P4 = 11,
-    MICROBIT_ID_IO_P5 = 12,
-    MICROBIT_ID_IO_P6 = 13,
-    MICROBIT_ID_IO_P7 = 14,
-    MICROBIT_ID_IO_P8 = 15,
-    MICROBIT_ID_IO_P9 = 16,
-    MICROBIT_ID_IO_P10 = 17,
-    MICROBIT_ID_IO_P11 = 18,
-    MICROBIT_ID_IO_P12 = 19,
-    MICROBIT_ID_IO_P13 = 20,
-    MICROBIT_ID_IO_P14 = 21,
-    MICROBIT_ID_IO_P15 = 22,
-    MICROBIT_ID_IO_P16 = 23,
-    MICROBIT_ID_IO_P19 = 24,
-    MICROBIT_ID_IO_P20 = 25,
-    MICROBIT_ID_BUTTON_AB = 26,
-    MICROBIT_ID_GESTURE = 27,
-    MICROBIT_ID_THERMOMETER = 28,
-    MICROBIT_ID_RADIO = 29,
-    MICROBIT_ID_RADIO_DATA_READY = 30,
-    MICROBIT_ID_MULTIBUTTON_ATTACH = 31,
-    MICROBIT_ID_SERIAL = 32,
-    MICROBIT_ID_IO_INT1 = 33,
-    MICROBIT_ID_IO_INT2 = 34,
-    MICROBIT_ID_IO_INT3 = 35,
-    MICROBIT_ID_PARTIAL_FLASHING = 36,
+    MICROBIT_ID_BUTTON_AB = 3,
+    MICROBIT_ID_BUTTON_RESET = 4,
+    MICROBIT_ID_ACCELEROMETER = 5,
+    MICROBIT_ID_COMPASS = 6,
+    MICROBIT_ID_DISPLAY = 7,
+    MICROBIT_ID_THERMOMETER = 8,
+    MICROBIT_ID_RADIO = 9,
+    MICROBIT_ID_RADIO_DATA_READY = 10,
+    MICROBIT_ID_MULTIBUTTON_ATTACH = 11,
+    MICROBIT_ID_SERIAL = 12,
+    MICROBIT_ID_GESTURE = 13,
+    MICROBIT_ID_IO_P0 = 100,
+    MICROBIT_ID_IO_P1 = 101,
+    MICROBIT_ID_IO_P2 = 102,
+    MICROBIT_ID_IO_P3 = 103,
+    MICROBIT_ID_IO_P4 = 104,
+    MICROBIT_ID_IO_P5 = 105,
+    MICROBIT_ID_IO_P6 = 106,
+    MICROBIT_ID_IO_P7 = 107,
+    MICROBIT_ID_IO_P8 = 108,
+    MICROBIT_ID_IO_P9 = 109,
+    MICROBIT_ID_IO_P10 = 110,
+    MICROBIT_ID_IO_P11 = 111,
+    MICROBIT_ID_IO_P12 = 112,
+    MICROBIT_ID_IO_P13 = 113,
+    MICROBIT_ID_IO_P14 = 114,
+    MICROBIT_ID_IO_P15 = 115,
+    MICROBIT_ID_IO_P16 = 116,
+    MICROBIT_ID_IO_P19 = 119,
+    MICROBIT_ID_IO_P20 = 120,
+    MICROBIT_ID_IO_INT1 = 130,
+    MICROBIT_ID_IO_INT2 = 131,
+    MICROBIT_ID_IO_INT3 = 132,
+    MICROBIT_ID_PARTIAL_FLASHING = 200,
     MICROBIT_ID_MESSAGE_BUS_LISTENER = 1021,
     MICROBIT_ID_NOTIFY_ONE = 1022,
     MICROBIT_ID_NOTIFY = 1023,
     MICROBIT_COMPONENT_RUNNING = 1,
-    // built/dockeryt/yotta_modules/microbit-dal/inc/core/MicroBitDevice.h
+    // /yotta_modules/microbit-dal/inc/core/MicroBitDevice.h
     MICROBIT_NAME_LENGTH = 5,
     MICROBIT_NAME_CODE_LETTERS = 5,
     MICROBIT_PANIC_ERROR_CHARS = 4,
-    // built/dockeryt/yotta_modules/microbit-dal/inc/core/MicroBitFiber.h
+    // /yotta_modules/microbit-dal/inc/core/MicroBitFiber.h
     MICROBIT_SCHEDULER_RUNNING = 1,
     MICROBIT_FIBER_FLAG_FOB = 1,
     MICROBIT_FIBER_FLAG_PARENT = 2,
     MICROBIT_FIBER_FLAG_CHILD = 4,
     MICROBIT_FIBER_FLAG_DO_NOT_PAGE = 8,
-    // built/dockeryt/yotta_modules/microbit-dal/inc/core/MicroBitFont.h
+    // /yotta_modules/microbit-dal/inc/core/MicroBitFont.h
     MICROBIT_FONT_WIDTH = 5,
     MICROBIT_FONT_HEIGHT = 5,
     MICROBIT_FONT_ASCII_START = 32,
     MICROBIT_FONT_ASCII_END = 126,
-    // built/dockeryt/yotta_modules/microbit-dal/inc/core/MicroBitHeapAllocator.h
+    // /yotta_modules/microbit-dal/inc/core/MicroBitHeapAllocator.h
     MICROBIT_MAXIMUM_HEAPS = 2,
     MICROBIT_HEAP_BLOCK_FREE = 2147483648,
     MICROBIT_HEAP_BLOCK_SIZE = 4,
-    // built/dockeryt/yotta_modules/microbit-dal/inc/core/MicroBitListener.h
+    // /yotta_modules/microbit-dal/inc/core/MicroBitListener.h
     MESSAGE_BUS_LISTENER_PARAMETERISED = 1,
     MESSAGE_BUS_LISTENER_METHOD = 2,
     MESSAGE_BUS_LISTENER_BUSY = 4,
@@ -199,13 +198,13 @@ declare const enum DAL {
     MESSAGE_BUS_LISTENER_URGENT = 128,
     MESSAGE_BUS_LISTENER_DELETING = 32768,
     MESSAGE_BUS_LISTENER_IMMEDIATE = 192,
-    // built/dockeryt/yotta_modules/microbit-dal/inc/core/NotifyEvents.h
+    // /yotta_modules/microbit-dal/inc/core/NotifyEvents.h
     MICROBIT_DISPLAY_EVT_FREE = 1,
     MICROBIT_SERIAL_EVT_TX_EMPTY = 2,
     MICROBIT_UART_S_EVT_TX_EMPTY = 3,
-    // built/dockeryt/yotta_modules/microbit-dal/inc/drivers/DynamicPwm.h
+    // /yotta_modules/microbit-dal/inc/drivers/DynamicPwm.h
     MICROBIT_DEFAULT_PWM_PERIOD = 20000,
-    // built/dockeryt/yotta_modules/microbit-dal/inc/drivers/FXOS8700.h
+    // /yotta_modules/microbit-dal/inc/drivers/FXOS8700.h
     FXOS8700_DEFAULT_ADDR = 60,
     FXOS8700_STATUS_REG = 0,
     FXOS8700_OUT_X_MSB = 1,
@@ -323,7 +322,7 @@ declare const enum DAL {
     FXOS8700_A_FFMT_THS_Z_MSB = 119,
     FXOS8700_A_FFMT_THS_Z_LSB = 120,
     FXOS8700_WHOAMI_VAL = 199,
-    // built/dockeryt/yotta_modules/microbit-dal/inc/drivers/LSM303Accelerometer.h
+    // /yotta_modules/microbit-dal/inc/drivers/LSM303Accelerometer.h
     LSM303_A_DEFAULT_ADDR = 50,
     LSM303_STATUS_REG_AUX_A = 7,
     LSM303_OUT_TEMP_L_A = 12,
@@ -364,7 +363,7 @@ declare const enum DAL {
     LSM303_ACT_THS_A = 62,
     LSM303_ACT_DUR_A = 63,
     LSM303_A_WHOAMI_VAL = 51,
-    // built/dockeryt/yotta_modules/microbit-dal/inc/drivers/LSM303Magnetometer.h
+    // /yotta_modules/microbit-dal/inc/drivers/LSM303Magnetometer.h
     LSM303_M_WHOAMI_VAL = 64,
     LSM303_M_DEFAULT_ADDR = 60,
     LSM303_OFFSET_X_REG_L_M = 69,
@@ -388,7 +387,7 @@ declare const enum DAL {
     LSM303_OUTY_H_REG_M = 107,
     LSM303_OUTZ_L_REG_M = 108,
     LSM303_OUTZ_H_REG_M = 109,
-    // built/dockeryt/yotta_modules/microbit-dal/inc/drivers/MAG3110.h
+    // /yotta_modules/microbit-dal/inc/drivers/MAG3110.h
     MAG3110_WHOAMI_VAL = 196,
     MAG3110_DEFAULT_ADDR = 29,
     MAG_DR_STATUS = 0,
@@ -409,7 +408,7 @@ declare const enum DAL {
     MAG_DIE_TEMP = 15,
     MAG_CTRL_REG1 = 16,
     MAG_CTRL_REG2 = 17,
-    // built/dockeryt/yotta_modules/microbit-dal/inc/drivers/MMA8653.h
+    // /yotta_modules/microbit-dal/inc/drivers/MMA8653.h
     MMA8653_DEFAULT_ADDR = 58,
     MMA8653_STATUS = 0,
     MMA8653_OUT_X_MSB = 1,
@@ -421,7 +420,7 @@ declare const enum DAL {
     MMA8653_CTRL_REG4 = 45,
     MMA8653_CTRL_REG5 = 46,
     MMA8653_WHOAMI_VAL = 90,
-    // built/dockeryt/yotta_modules/microbit-dal/inc/drivers/MicroBitAccelerometer.h
+    // /yotta_modules/microbit-dal/inc/drivers/MicroBitAccelerometer.h
     MICROBIT_ACCELEROMETER_IMU_DATA_VALID = 2,
     MICROBIT_ACCEL_ADDED_TO_IDLE = 4,
     MICROBIT_ACCELEROMETER_EVT_DATA_UPDATE = 1,
@@ -448,7 +447,7 @@ declare const enum DAL {
     MICROBIT_ACCELEROMETER_SHAKE_DAMPING = 10,
     MICROBIT_ACCELEROMETER_SHAKE_RTX = 30,
     MICROBIT_ACCELEROMETER_SHAKE_COUNT_THRESHOLD = 4,
-    // built/dockeryt/yotta_modules/microbit-dal/inc/drivers/MicroBitButton.h
+    // /yotta_modules/microbit-dal/inc/drivers/MicroBitButton.h
     MICROBIT_BUTTON_EVT_DOWN = 1,
     MICROBIT_BUTTON_EVT_UP = 2,
     MICROBIT_BUTTON_EVT_CLICK = 3,
@@ -468,7 +467,7 @@ declare const enum DAL {
     MICROBIT_BUTTON_DOUBLE_CLICK_THRESH = 50,
     MICROBIT_BUTTON_SIMPLE_EVENTS = 0,
     MICROBIT_BUTTON_ALL_EVENTS = 1,
-    // built/dockeryt/yotta_modules/microbit-dal/inc/drivers/MicroBitCompass.h
+    // /yotta_modules/microbit-dal/inc/drivers/MicroBitCompass.h
     MICROBIT_COMPASS_STATUS_RUNNING = 1,
     MICROBIT_COMPASS_STATUS_CALIBRATED = 2,
     MICROBIT_COMPASS_STATUS_CALIBRATING = 4,
@@ -477,7 +476,7 @@ declare const enum DAL {
     MICROBIT_COMPASS_EVT_CONFIG_NEEDED = 2,
     MICROBIT_COMPASS_EVT_CALIBRATE = 3,
     MICROBIT_COMPASS_EVT_CALIBRATION_NEEDED = 4,
-    // built/dockeryt/yotta_modules/microbit-dal/inc/drivers/MicroBitDisplay.h
+    // /yotta_modules/microbit-dal/inc/drivers/MicroBitDisplay.h
     MICROBIT_DISPLAY_EVT_ANIMATION_COMPLETE = 1,
     MICROBIT_DISPLAY_EVT_LIGHT_SENSE = 2,
     MICROBIT_DISPLAY_DEFAULT_AUTOCLEAR = 1,
@@ -499,12 +498,12 @@ declare const enum DAL {
     MICROBIT_DISPLAY_ROTATION_90 = 1,
     MICROBIT_DISPLAY_ROTATION_180 = 2,
     MICROBIT_DISPLAY_ROTATION_270 = 3,
-    // built/dockeryt/yotta_modules/microbit-dal/inc/drivers/MicroBitFile.h
+    // /yotta_modules/microbit-dal/inc/drivers/MicroBitFile.h
     READ = 1,
     WRITE = 2,
     READ_AND_WRITE = 3,
     CREATE = 4,
-    // built/dockeryt/yotta_modules/microbit-dal/inc/drivers/MicroBitFileSystem.h
+    // /yotta_modules/microbit-dal/inc/drivers/MicroBitFileSystem.h
     MBFS_FILENAME_LENGTH = 16,
     MB_READ = 1,
     MB_WRITE = 2,
@@ -525,23 +524,26 @@ declare const enum DAL {
     MBFS_BLOCK_TYPE_FILE = 1,
     MBFS_BLOCK_TYPE_DIRECTORY = 2,
     MBFS_BLOCK_TYPE_FILETABLE = 3,
-    // built/dockeryt/yotta_modules/microbit-dal/inc/drivers/MicroBitFlash.h
+    // /yotta_modules/microbit-dal/inc/drivers/MicroBitFlash.h
     PAGE_SIZE = 1024,
-    // built/dockeryt/yotta_modules/microbit-dal/inc/drivers/MicroBitI2C.h
+    // /yotta_modules/microbit-dal/inc/drivers/MicroBitI2C.h
     MICROBIT_I2C_MAX_RETRIES = 9,
-    // built/dockeryt/yotta_modules/microbit-dal/inc/drivers/MicroBitLightSensor.h
+    // /yotta_modules/microbit-dal/inc/drivers/MicroBitLightSensor.h
     MICROBIT_LIGHT_SENSOR_CHAN_NUM = 3,
     MICROBIT_LIGHT_SENSOR_AN_SET_TIME = 4000,
     MICROBIT_LIGHT_SENSOR_TICK_PERIOD = 5,
     MICROBIT_LIGHT_SENSOR_MAX_VALUE = 338,
     MICROBIT_LIGHT_SENSOR_MIN_VALUE = 75,
-    // built/dockeryt/yotta_modules/microbit-dal/inc/drivers/MicroBitMatrixMaps.h
+    // /yotta_modules/microbit-dal/inc/drivers/MicroBitMatrixMaps.h
     NO_CONN = 0,
     MICROBIT_DISPLAY_WIDTH = 5,
     MICROBIT_DISPLAY_HEIGHT = 5,
-    // built/dockeryt/yotta_modules/microbit-dal/inc/drivers/MicroBitMemoryMap.h
+    // /yotta_modules/microbit-dal/inc/drivers/MicroBitMemoryMap.h
     NUMBER_OF_REGIONS = 3,
-    // built/dockeryt/yotta_modules/microbit-dal/inc/drivers/MicroBitMultiButton.h
+    // /yotta_modules/microbit-dal/inc/drivers/MicroBitMessageBus.h
+    MESSAGE_BUS_CONCURRENT_LISTENERS = 0,
+    MESSAGE_BUS_CONCURRENT_EVENTS = 1,
+    // /yotta_modules/microbit-dal/inc/drivers/MicroBitMultiButton.h
     MICROBIT_MULTI_BUTTON_STATE_1 = 1,
     MICROBIT_MULTI_BUTTON_STATE_2 = 2,
     MICROBIT_MULTI_BUTTON_HOLD_TRIGGERED_1 = 4,
@@ -549,7 +551,7 @@ declare const enum DAL {
     MICROBIT_MULTI_BUTTON_SUPRESSED_1 = 16,
     MICROBIT_MULTI_BUTTON_SUPRESSED_2 = 32,
     MICROBIT_MULTI_BUTTON_ATTACHED = 64,
-    // built/dockeryt/yotta_modules/microbit-dal/inc/drivers/MicroBitPin.h
+    // /yotta_modules/microbit-dal/inc/drivers/MicroBitPin.h
     IO_STATUS_DIGITAL_IN = 1,
     IO_STATUS_DIGITAL_OUT = 2,
     IO_STATUS_ANALOG_IN = 4,
@@ -577,23 +579,22 @@ declare const enum DAL {
     PIN_CAPABILITY_ANALOG = 12,
     PIN_CAPABILITY_STANDARD = 11,
     PIN_CAPABILITY_ALL = 15,
-    // built/dockeryt/yotta_modules/microbit-dal/inc/drivers/MicroBitQuadratureDecoder.h
+    // /yotta_modules/microbit-dal/inc/drivers/MicroBitQuadratureDecoder.h
     QDEC_USE_SYSTEM_TICK = 1,
     QDEC_USE_DEBOUNCE = 2,
     QDEC_LED_ACTIVE_LOW = 4,
-    // built/dockeryt/yotta_modules/microbit-dal/inc/drivers/MicroBitRadio.h
+    // /yotta_modules/microbit-dal/inc/drivers/MicroBitRadio.h
     MICROBIT_RADIO_STATUS_INITIALISED = 1,
     MICROBIT_RADIO_BASE_ADDRESS = 1969383796,
     MICROBIT_RADIO_DEFAULT_GROUP = 0,
     MICROBIT_RADIO_DEFAULT_TX_POWER = 6,
-    MICROBIT_RADIO_DEFAULT_FREQUENCY = 7,
     MICROBIT_RADIO_MAX_PACKET_SIZE = 32,
     MICROBIT_RADIO_HEADER_SIZE = 4,
     MICROBIT_RADIO_MAXIMUM_RX_BUFFERS = 4,
     MICROBIT_RADIO_PROTOCOL_DATAGRAM = 1,
     MICROBIT_RADIO_PROTOCOL_EVENTBUS = 2,
     MICROBIT_RADIO_EVT_DATAGRAM = 1,
-    // built/dockeryt/yotta_modules/microbit-dal/inc/drivers/MicroBitSerial.h
+    // /yotta_modules/microbit-dal/inc/drivers/MicroBitSerial.h
     MICROBIT_SERIAL_DEFAULT_BAUD_RATE = 115200,
     MICROBIT_SERIAL_DEFAULT_BUFFER_SIZE = 20,
     MICROBIT_SERIAL_EVT_DELIM_MATCH = 1,
@@ -606,18 +607,18 @@ declare const enum DAL {
     ASYNC = 0,
     SYNC_SPINWAIT = 1,
     SYNC_SLEEP = 2,
-    // built/dockeryt/yotta_modules/microbit-dal/inc/drivers/MicroBitStorage.h
+    // /yotta_modules/microbit-dal/inc/drivers/MicroBitStorage.h
     MICROBIT_STORAGE_MAGIC = 51966,
     MICROBIT_STORAGE_BLOCK_SIZE = 48,
     MICROBIT_STORAGE_KEY_SIZE = 16,
     MICROBIT_STORAGE_STORE_PAGE_OFFSET = 17,
     MICROBIT_STORAGE_SCRATCH_PAGE_OFFSET = 19,
-    // built/dockeryt/yotta_modules/microbit-dal/inc/drivers/MicroBitThermometer.h
+    // /yotta_modules/microbit-dal/inc/drivers/MicroBitThermometer.h
     MICROBIT_THERMOMETER_PERIOD = 1000,
     MAG3110_SAMPLE_RATES = 11,
     MICROBIT_THERMOMETER_EVT_UPDATE = 1,
     MICROBIT_THERMOMETER_ADDED_TO_IDLE = 2,
-    // built/dockeryt/yotta_modules/microbit-dal/inc/types/CoordinateSystem.h
+    // /yotta_modules/microbit-dal/inc/types/CoordinateSystem.h
     COORDINATE_SPACE_ROTATED_0 = 0,
     COORDINATE_SPACE_ROTATED_90 = 1,
     COORDINATE_SPACE_ROTATED_180 = 2,
@@ -626,7 +627,7 @@ declare const enum DAL {
     SIMPLE_CARTESIAN = 1,
     NORTH_EAST_DOWN = 2,
     EAST_NORTH_UP = 3,
-    // built/dockeryt/yotta_modules/microbit-dal/inc/types/MicroBitEvent.h
+    // /yotta_modules/microbit-dal/inc/types/MicroBitEvent.h
     MICROBIT_ID_ANY = 0,
     MICROBIT_EVT_ANY = 0,
     CREATE_ONLY = 0,

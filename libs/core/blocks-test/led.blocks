@@ -1,5 +1,4 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
-  <variables></variables>
   <block type="pxt-on-start" x="20" y="20">
     <statement name="HANDLER">
       <block type="device_plot">

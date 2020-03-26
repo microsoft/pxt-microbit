@@ -63,7 +63,13 @@ https://youtu.be/PAIU-vHqyGU
 **with the other hand alternately touch the 0, 1 and 2 pins**
 
 ## ~hint
+
 **The electric signal traveled from pins, between your hands to `GND` and the @boardname@ detected the electric signal!**
+
+How is the touch dectected? Find out in this video:
+
+https://www.youtube.com/watch?v=GEpZrvbsO7o
+
 ## ~
 
 ## Step 2: Installing conductive foil on the guitar

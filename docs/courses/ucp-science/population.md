@@ -2,6 +2,18 @@
 
 Patterns occur everywhere in nature. Certain characteristics in a populations are called traits. Surveys are used to record and help to understand these traits. In this lesson, the @boardname@ is used as a survey tool to count traits. The @boardname@ saves the counts and reports them on the display when asked.
 
+## Lesson concept
+
+### ~ hint
+
+#### Population trait experiment example
+
+Watch this video about how to perform a population trait experiment.
+
+https://youtu.be/NNZEMiJHY2o
+
+### ~
+
 ## Contents
 
 * [Overview](/courses/ucp-science/population/overview)

@@ -3,11 +3,15 @@
         "target": "es5",
         "noImplicitAny": true,
         "noImplicitReturns": true,
+        "noImplicitThis": true,
         "declaration": true,
-        "out": "../built/editor.js",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "isolatedModules": false,
+        "outDir": "../built/editor",
         "rootDir": ".",
         "newLine": "LF",
-        "sourceMap": false
-    },
-    "prepend": ["../external/dapjs.js"]
+        "sourceMap": false,
+        "jsx": "react"
+    }
 }

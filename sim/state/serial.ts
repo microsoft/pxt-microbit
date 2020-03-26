@@ -64,6 +64,14 @@ namespace pxsim.serial {
         // TODO
     }
 
+    export function setRxBufferSize(size: number) {
+        // TODO
+    }
+
+    export function setTxBufferSize(size: number) {
+        // TODO
+    }
+
     export function readBuffer(length: number) {
         if (length <= 0)
             length = 64;

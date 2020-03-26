@@ -97,9 +97,9 @@ declare interface Image {
 
     /**
      * Set a pixel state at position ``(x,y)``
-     * @param x TODO
-     * @param y TODO
-     * @param value TODO
+     * @param x pixel column
+     * @param y pixel row
+     * @param value pixel state
      */
     //% help=images/set-pixel
     //% parts="ledmatrix" shim=ImageMethods::setPixel
@@ -107,16 +107,16 @@ declare interface Image {
 
     /**
      * Get the pixel state at position ``(x,y)``
-     * @param x TODO
-     * @param y TODO
+     * @param x pixel column
+     * @param y pixel row
      */
     //% help=images/pixel
     //% parts="ledmatrix" shim=ImageMethods::pixel
     pixel(x: int32, y: int32): boolean;
 
     /**
-     * Shows a particular frame of the image strip.
-     * @param frame TODO
+     * Show a particular frame of the image strip.
+     * @param frame image frame to show
      */
     //% weight=70 help=images/show-frame
     //% parts="ledmatrix" interval.defl=400 shim=ImageMethods::showFrame
@@ -229,6 +229,16 @@ declare namespace input {
     function onGesture(gesture: Gesture, body: () => void): void;
 
     /**
+     * Tests if a gesture is currently detected.
+     * @param gesture the type of gesture to detect, eg: Gesture.Shake
+     */
+    //% help=input/is-gesture weight=10 blockGap=8
+    //% blockId=deviceisgesture block="is %gesture gesture"
+    //% parts="accelerometer"
+    //% gesture.fieldEditor="gestures" gesture.fieldOptions.columns=4 shim=input::isGesture
+    function isGesture(gesture: Gesture): boolean;
+
+    /**
      * Do something when a pin is touched and released again (while also touching the GND pin).
      * @param name the pin that needs to be pressed, eg: TouchPin.P0
      * @param body the code to run when the pin is pressed
@@ -269,7 +279,7 @@ declare namespace input {
 
     /**
      * Get the acceleration value in milli-gravitys (when the board is laying flat with the screen up, x=0, y=0 and z=-1024)
-     * @param dimension TODO
+     * @param dimension x, y, or z dimension, eg: Dimension.X
      */
     //% help=input/acceleration weight=58
     //% blockId=device_acceleration block="acceleration (mg)|%NAME" blockGap=8
@@ -304,7 +314,7 @@ declare namespace input {
 
     /**
      * The pitch or roll of the device, rotation along the ``x-axis`` or ``y-axis``, in degrees.
-     * @param kind TODO
+     * @param kind pitch or roll
      */
     //% help=input/rotation weight=52
     //% blockId=device_get_rotation block="rotation (°)|%NAME" blockGap=8
@@ -313,29 +323,13 @@ declare namespace input {
 
     /**
      * Get the magnetic force value in ``micro-Teslas`` (``µT``). This function is not supported in the simulator.
-     * @param dimension TODO
+     * @param dimension the x, y, or z dimension, eg: Dimension.X
      */
     //% help=input/magnetic-force weight=51
     //% blockId=device_get_magnetic_force block="magnetic force (µT)|%NAME" blockGap=8
     //% parts="compass"
     //% advanced=true shim=input::magneticForce
     function magneticForce(dimension: Dimension): int32;
-
-    /**
-     * Gets the number of milliseconds elapsed since power on.
-     */
-    //% help=input/running-time weight=50 blockGap=8
-    //% blockId=device_get_running_time block="running time (ms)"
-    //% advanced=true shim=input::runningTime
-    function runningTime(): int32;
-
-    /**
-     * Gets the number of microseconds elapsed since power on.
-     */
-    //% help=input/running-time-micros weight=49
-    //% blockId=device_get_running_time_micros block="running time (micros)"
-    //% advanced=true shim=input::runningTimeMicros
-    function runningTimeMicros(): int32;
 
     /**
      * Obsolete, compass calibration is automatic.
@@ -364,11 +358,31 @@ declare namespace input {
 declare namespace control {
 
     /**
+     * Gets the number of milliseconds elapsed since power on.
+     */
+    //% help=control/millis weight=50
+    //% blockId=control_running_time block="millis (ms)" shim=control::millis
+    function millis(): int32;
+
+    /**
+     * Gets current time in microseconds. Overflows every ~18 minutes.
+     */
+    //% shim=control::micros
+    function micros(): int32;
+
+    /**
      * Schedules code that run in the background.
      */
     //% help=control/in-background blockAllowMultiple=1 afterOnStart=true
     //% blockId="control_in_background" block="run in background" blockGap=8 shim=control::inBackground
     function inBackground(a: () => void): void;
+
+    /**
+     * Blocks the calling thread until the specified event is raised.
+     */
+    //% help=control/wait-for-event async
+    //% blockId=control_wait_for_event block="wait for event|from %src|with value %value" shim=control::waitForEvent
+    function waitForEvent(src: int32, value: int32): void;
 
     /**
      * Resets the BBC micro:bit.
@@ -401,8 +415,8 @@ declare namespace control {
      */
     //% weight=20 blockGap=8 blockId="control_on_event" block="on event|from %src=control_event_source_id|with value %value=control_event_value_id"
     //% help=control/on-event
-    //% blockExternalInputs=1 shim=control::onEvent
-    function onEvent(src: int32, value: int32, handler: () => void): void;
+    //% blockExternalInputs=1 flags.defl=0 shim=control::onEvent
+    function onEvent(src: int32, value: int32, handler: () => void, flags?: int32): void;
 
     /**
      * Gets the value of the last event executed on the bus
@@ -492,8 +506,8 @@ declare namespace led {
 
     /**
      * Turn off the specified LED using x, y coordinates (x is horizontal, y is vertical). (0,0) is upper left.
-     * @param x TODO
-     * @param y TODO
+     * @param x the horizontal coordinate of the LED
+     * @param y the vertical coordinate of the LED
      */
     //% help=led/unplot weight=77
     //% blockId=device_unplot block="unplot|x %x|y %y" blockGap=8
@@ -504,8 +518,8 @@ declare namespace led {
 
     /**
      * Get the on/off state of the specified LED using x, y coordinates. (0,0) is upper left.
-     * @param x TODO
-     * @param y TODO
+     * @param x the horizontal coordinate of the LED
+     * @param y the vertical coordinate of the LED
      */
     //% help=led/point weight=76
     //% blockId=device_point block="point|x %x|y %y"
@@ -674,6 +688,12 @@ declare namespace pins {
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     //% name.fieldOptions.tooltips="false" name.fieldOptions.width="250" shim=pins::servoWritePin
     function servoWritePin(name: AnalogPin, value: int32): void;
+
+    /**
+     * Specifies that a continuous servo is connected.
+     */
+    //% shim=pins::servoSetContinuous
+    function servoSetContinuous(name: AnalogPin, value: boolean): void;
 
     /**
      * Configure the IO pin as an analog/pwm output and set a pulse width. The period is 20 ms period and the pulse width is set based on the value given in **microseconds** or `1/1000` milliseconds.
@@ -865,12 +885,48 @@ declare namespace serial {
     //% weight=9 help=serial/redirect-to-usb
     //% blockId=serial_redirect_to_usb block="serial|redirect to USB" shim=serial::redirectToUSB
     function redirectToUSB(): void;
+
+    /**
+     * Sets the size of the RX buffer in bytes
+     * @param size length of the rx buffer in bytes, eg: 32
+     */
+    //% help=serial/set-rx-buffer-size
+    //% blockId=serialSetRxBufferSize block="serial set rx buffer size to $size"
+    //% advanced=true shim=serial::setRxBufferSize
+    function setRxBufferSize(size: uint8): void;
+
+    /**
+     * Sets the size of the TX buffer in bytes
+     * @param size length of the tx buffer in bytes, eg: 32
+     */
+    //% help=serial/set-tx-buffer-size
+    //% blockId=serialSetTxBufferSize block="serial set tx buffer size to $size"
+    //% advanced=true shim=serial::setTxBufferSize
+    function setTxBufferSize(size: uint8): void;
 }
 
 
 
     //% indexerGet=BufferMethods::getByte indexerSet=BufferMethods::setByte
 declare interface Buffer {
+    /**
+     * Reads an unsigned byte at a particular location
+     */
+    //% shim=BufferMethods::getUint8
+    getUint8(off: int32): int32;
+
+    /**
+     * Returns false when the buffer can be written to.
+     */
+    //% shim=BufferMethods::isReadOnly
+    isReadOnly(): boolean;
+
+    /**
+     * Writes an unsigned byte at a particular location
+     */
+    //% shim=BufferMethods::setUint8
+    setUint8(off: int32, v: int32): void;
+
     /**
      * Write a number in specified format in the buffer.
      */
@@ -943,14 +999,14 @@ declare namespace control {
      * Create a new zero-initialized buffer.
      * @param size number of bytes in the buffer
      */
-    //% shim=control::createBuffer
+    //% deprecated=1 shim=control::createBuffer
     function createBuffer(size: int32): Buffer;
 
     /**
      * Create a new buffer with UTF8-encoded string
      * @param str the string to put in the buffer
      */
-    //% shim=control::createBufferFromUTF8
+    //% deprecated=1 shim=control::createBufferFromUTF8
     function createBufferFromUTF8(str: string): Buffer;
 }
 

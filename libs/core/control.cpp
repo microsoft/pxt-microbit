@@ -205,6 +205,15 @@ enum EventBusValue {
     MES_REMOTE_CONTROL_EVT_VOLUMEUP_ = MES_REMOTE_CONTROL_EVT_VOLUMEUP,
 };
 
+enum EventFlags {
+    //%
+    QueueIfBusy = MESSAGE_BUS_LISTENER_QUEUE_IF_BUSY,
+    //%
+    DropIfBusy = MESSAGE_BUS_LISTENER_DROP_IF_BUSY,
+    //%
+    Reentrant = MESSAGE_BUS_LISTENER_REENTRANT
+};
+
 //% weight=1 color="#333333"
 //% advanced=true
 namespace control {
@@ -215,12 +224,38 @@ namespace control {
     }
 
     /**
+    * Gets the number of milliseconds elapsed since power on.
+    */
+    //% help=control/millis weight=50
+    //% blockId=control_running_time block="millis (ms)"
+    int millis() {
+        return system_timer_current_time();
+    }
+
+    /**
+    * Gets current time in microseconds. Overflows every ~18 minutes.
+    */
+    //%
+    int micros() {
+        return system_timer_current_time_us() & 0x3fffffff;
+    }
+
+    /**
      * Schedules code that run in the background.
      */
     //% help=control/in-background blockAllowMultiple=1 afterOnStart=true
     //% blockId="control_in_background" block="run in background" blockGap=8
     void inBackground(Action a) {
       runInParallel(a);
+    }
+
+    /**
+    * Blocks the calling thread until the specified event is raised.
+    */
+    //% help=control/wait-for-event async
+    //% blockId=control_wait_for_event block="wait for event|from %src|with value %value"
+    void waitForEvent(int src, int value) {
+        pxt::waitForEvent(src, value);
     }
 
     /**
@@ -261,8 +296,9 @@ namespace control {
     //% weight=20 blockGap=8 blockId="control_on_event" block="on event|from %src=control_event_source_id|with value %value=control_event_value_id"
     //% help=control/on-event
     //% blockExternalInputs=1
-    void onEvent(int src, int value, Action handler) {
-        registerWithDal(src, value, handler);
+    void onEvent(int src, int value, Action handler, int flags = 0) {
+        if (!flags) flags = EventFlags::QueueIfBusy;
+        registerWithDal(src, value, handler, (int)flags);
     }
 
     /**

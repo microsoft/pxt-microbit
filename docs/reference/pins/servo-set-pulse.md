@@ -27,3 +27,6 @@ pins.servoSetPulse(AnalogPin.P0, 1000)
 [analog read pin](/reference/pins/analog-read-pin),
 [digital read pin](/reference/pins/digital-read-pin),
 [digital write pin](/reference/pins/digital-write-pin)
+
+[Brief Guide to Servos](https://www.kitronik.co.uk/pdf/a-brief-guide-to-servos.pdf)
+

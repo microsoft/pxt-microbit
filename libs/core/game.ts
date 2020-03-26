@@ -210,7 +210,8 @@ namespace game {
     //% blockId=game_remove_life block="remove life %life" blockGap=8
     export function removeLife(life: number): void {
         setLife(_life - life);
-        if (!_paused)
+        if (!_paused && !_backgroundAnimation) {
+            _backgroundAnimation = true;
             control.inBackground(() => {
                 led.stopAnimation();
                 basic.showAnimation(`1 0 0 0 1 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0
@@ -218,7 +219,9 @@ namespace game {
 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0
 0 1 0 1 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0
 1 0 0 0 1 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0`, 40);
+                _backgroundAnimation = false;
             });
+        }
     }
 
     /**
@@ -402,7 +405,7 @@ namespace game {
 
         /**
          * If touching the edge of the stage and facing towards it, then turn away.
-         * @param this TODO
+         * @param this the sprite to check for bounce
          */
         //% weight=18 help=game/if-on-edge-bounce
         //% blockId=game_sprite_bounce block="%sprite|if on edge, bounce"
@@ -454,7 +457,7 @@ namespace game {
 
         /**
          * Turn the sprite
-         * @param this TODO
+         * @param this the sprite to trun
          * @param direction left or right
          * @param degrees angle in degrees to turn, eg: 45, 90, 180, 135
          */
@@ -469,7 +472,7 @@ namespace game {
 
         /**
          * Turn to the right (clockwise)
-         * @param this TODO
+         * @param this the sprite to turn
          * @param degrees TODO
          */
         public turnRight(degrees: number): void {
@@ -478,7 +481,7 @@ namespace game {
 
         /**
          * Turn to the left (counter-clockwise)
-         * @param this TODO
+         * @param this the sprite to turn
          * @param degrees TODO
          */
         public turnLeft(degrees: number): void {
@@ -538,8 +541,8 @@ namespace game {
 
         /**
          * Set the direction of the current sprite, rounded to the nearest multiple of 45
-         * @param this TODO
-         * @param degrees TODO
+         * @param this the sprite to set direction for
+         * @param degrees new direction in degrees
          */
         //% parts="ledmatrix"
         public setDirection(degrees: number): void {
@@ -614,8 +617,8 @@ namespace game {
 
         /**
          * Reports true if sprite has the same position as specified sprite
-         * @param this TODO
-         * @param other TODO
+         * @param this the sprite to check overlap or touch
+         * @param other the other sprite to check overlap or touch
          */
         //% weight=20 help=game/is-touching
         //% blockId=game_sprite_touching_sprite block="is %sprite|touching %other" blockGap=8
@@ -625,12 +628,12 @@ namespace game {
 
         /**
          * Reports true if sprite is touching an edge
-         * @param this TODO
+         * @param this the sprite to check for an edge contact
          */
         //% weight=19 help=game/is-touching-edge
         //% blockId=game_sprite_touching_edge block="is %sprite|touching edge" blockGap=8
         public isTouchingEdge(): boolean {
-            return this._x == 0 || this._x == 4 || this._y == 0 || this._y == 4;
+            return this._enabled && (this._x == 0 || this._x == 4 || this._y == 0 || this._y == 4);
         }
 
         /**
@@ -692,12 +695,21 @@ namespace game {
          * Deletes the sprite from the game engine. The sprite will no longer appear on the screen or interact with other sprites.
          * @param this sprite to delete
          */
-        //% weight=59 help=game/delete
+        //% weight=59 blockGap=8 help=game/delete
         //% blockId="game_delete_sprite" block="delete %this(sprite)"
         public delete(): void {
             this._enabled = false;
             if (_sprites.removeElement(this))
                 plot();
+        }
+
+        /**
+         * Reports whether the sprite has been deleted from the game engine.
+         */
+        //% weight=58 help=game/is-deleted
+        //% blockId="game_sprite_is_deleted" block="is %sprite|deleted"
+        public isDeleted(): boolean {
+            return !this._enabled;
         }
 
         /**

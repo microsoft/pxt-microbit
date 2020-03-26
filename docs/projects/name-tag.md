@@ -18,7 +18,7 @@ basic.forever(() => {
 
 ## Step 2 @fullscreen
 
-Look at the simulator and make sure it shows up your name on the screen.
+Look at the simulator and make sure it shows your name on the screen.
 
 ![Name scrolling on the LEDs](/static/mb/projects/name-tag/name-tag.gif)
 

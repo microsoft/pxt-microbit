@@ -39,9 +39,7 @@ enum BaudRate {
   //% block=2400
   BaudRate2400 = 2400,
   //% block=1200
-  BaudRate1200 = 1200,
-  //% block=300
-  BaudRate300 = 300
+  BaudRate1200 = 1200
 };
 
 enum Delimiters {
@@ -190,5 +188,27 @@ namespace serial {
     void redirectToUSB() {
       uBit.serial.redirect(USBTX, USBRX);
       uBit.serial.baud(115200);
+    }
+
+    /**
+    * Sets the size of the RX buffer in bytes
+    * @param size length of the rx buffer in bytes, eg: 32
+    */
+    //% help=serial/set-rx-buffer-size
+    //% blockId=serialSetRxBufferSize block="serial set rx buffer size to $size"
+    //% advanced=true
+    void setRxBufferSize(uint8_t size) {
+      uBit.serial.setRxBufferSize(size);
+    }
+
+    /**
+    * Sets the size of the TX buffer in bytes
+    * @param size length of the tx buffer in bytes, eg: 32
+    */
+    //% help=serial/set-tx-buffer-size
+    //% blockId=serialSetTxBufferSize block="serial set tx buffer size to $size"
+    //% advanced=true
+    void setTxBufferSize(uint8_t size) {
+      uBit.serial.setTxBufferSize(size);
     }
 }

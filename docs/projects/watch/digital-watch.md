@@ -189,8 +189,9 @@ Now, we have to join up the hours and minutes to make text that will display on 
 2. Make 3 copies of this last ``||variables:set to||`` using the **Duplicate** option in the menu when you right click on the block. Put the copies underneath each other so that all 4 are stacked together.
 3. In the first ``||variables:set to||``, replace the second `""` in the ``||text:join||`` with the `adjust` variable.
 4. With the second copy, change the first `""` in the ``||text:join||`` to the variable `time`. Change the second string in the ``||text:join||`` to `":"`.
-5. In the third copy, change the first `""` in the ``||text:join||`` to the variable `time`. Change the second string in the ``||text:join||`` to division operator from **Math**. Set the left `0` to the `minutes` variable and the right `0` to `10`.
-6. In the fourth copy, change the first `""` in the ``||text:join||`` to the variable `time`. Change the second string in the ``||text:join||`` to a ``||Math:remainder of||`` in **Math**. Set the left `0` to the `minutes` variable and the right `0` to `10`.
+5. For the third copy, change the first `""` in the ``||text:join||`` to the variable `time`. Change the second string in the ``||text:join||`` to ``"0"``.
+6. Surround that third copy with an ``||logic:if then||`` block. Put a ``||logic:0 < 0||`` in as the condition for the ``||logic:if then||`` . Pull a ``minutes`` variable in where the first ``0`` is. Change the second ``0`` to be a ``9``.
+7. In the fourth copy, change the first `""` in the ``||text:join||`` to the variable `time`. Change the second string in the ``||text:join||`` to a ``minutes``.
 
 ```blocks
 let minutes = 0;
@@ -211,8 +212,10 @@ input.onGesture(Gesture.Shake, () => {
     }
     time = "" + adjust;
     time = time + ":";
-    time = time + minutes / 10;
-    time = time + minutes % 10;
+    if (minutes < 10) {
+        time = time + "0"
+    }
+    time = time + minutes
 })
 ```
 
@@ -245,8 +248,11 @@ input.onGesture(Gesture.Shake, () => {
     }
     time = "" + adjust;
     time = time + ":"
-    time = time + minutes / 10
-    time = time + minutes % 10
+    if (minutes < 10)
+    {
+        time = time + "0"
+    }
+    time = time + minutes
     if (ampm) {
         if (hours > 11) {
             time = time + "PM"
