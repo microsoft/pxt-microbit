@@ -54,9 +54,13 @@
     "public": true,
     "dependencies": {},
     "yotta": {
+        "config": {
+            "microbit-dal": {
+                "message_bus_concurrency_mode": 1
+            }
+        },
         "optionalConfig": {
             "microbit-dal": {
-                "message_bus_concurrency_mode": 1,
                 "fiber_user_data": 1,
                 "bluetooth": {
                     "private_addressing": 0,
