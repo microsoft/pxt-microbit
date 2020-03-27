@@ -421,6 +421,7 @@
             "functions": "#3455DB",
             "arrays": "#E65722"
         },
+        "blocksCollapsing": true,
         "highContrast": true,
         "greenScreen": true,
         "accessibleBlocks": true,
