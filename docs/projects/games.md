@@ -29,7 +29,7 @@ Fun games to build with your @boardname@.
   "youTubeId": "xLEy1B_gWKY"
 }, {
   "name": "Heads Guess!",
-  "url":"/projects/head-guess",
+  "url":"/projects/heads-guess",
   "description": "Try to guess words with your friends!",
   "imageUrl": "/static/mb/projects/heads-guess.png",
   "cardType": "tutorial"
