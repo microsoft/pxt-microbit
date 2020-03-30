@@ -2,7 +2,7 @@
 
 ## Introduction @unplugged
 
-In this game, you will start a timer and countdown a random number of seconds. When the timer is off, the game is over and whoever holds the potato lost!
+In this game, you will start a timer with a random countdown of a number of seconds. When the timer is off, the game is over and whoever is holding the potato has lost!
 Watch the tutorial on the [MakeCode YouTube channel](https://youtu.be/xLEy1B_gWKY).
 
 ## Step 1
@@ -19,7 +19,7 @@ input.onButtonPressed(Button.A, function () {
 Make a ``||variables:timer||`` variable and ``||variables:set||`` it to 
 a ``||math:random value||`` between ``5`` and ``15``.
 
-The value of ``||variables:timer||`` represents the number of seconds left before the potato sets off.
+The value of ``||variables:timer||`` represents the number of seconds left before someone is caught holding the potato.
 
 ```blocks
 let timer = 0
@@ -96,4 +96,4 @@ input.onButtonPressed(Button.A, function () {
 
 ## Step 6
 
-`|Download|` your code to your @boardname@, tape it to a potato and play with your friends!
+`|Download|` your code to your @boardname@, tape it to a potato and play the game with your friends!
