@@ -21,6 +21,13 @@ Fun games to build with your @boardname@.
   "imageUrl": "/static/mb/projects/coin-flipper.png",
   "cardType": "tutorial"
 }, {
+  "name": "Hot Potato",
+  "url":"/projects/hot-potato",
+  "description": "Toss the @boardname@ around before it sets off.",
+  "imageUrl": "/static/mb/projects/hot-potato.png",
+  "cardType": "tutorial",
+  "youTubeId": "xLEy1B_gWKY"
+}, {
   "name": "Reaction Time",
   "url":"/projects/reaction-time",
   "description": "Make a reaction time experiment that responds to your body's conductivity!",
