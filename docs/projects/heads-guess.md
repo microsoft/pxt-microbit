@@ -1,6 +1,6 @@
 # Heads Guess!
 
-## Introduction
+## Introduction @unplugged
 
 This is a small remake of the famous **Heads Up!** game. The player holds the @boardname@ on the forehead and has 30 seconds to guess words displayed on the screen.
 If the guess is correct, the player tilts the @boardname@ forward; to pass the player tilts it backwards.
@@ -15,7 +15,7 @@ game.startCountdown(30000)
 
 ## Step 2
 
-Create a ``||arrays:list||`` of words to guess. You will find **Arrays** under **Advanced**.
+Create a ``||arrays:text list||`` of words to guess. You will find **Arrays** under **Advanced**.
 
 ```blocks
 game.startCountdown(30000)
@@ -35,7 +35,7 @@ input.onGesture(Gesture.LogoUp, function () {
 
 ## Step 4
 
-The item in a list are numbered ``0`` to ``length - 1``. 
+The item in ``||arrays:text list||`` are numbered ``0`` to ``length - 1``. 
 Add code to pick a ``||math:random||`` index.
 
 ```blocks
