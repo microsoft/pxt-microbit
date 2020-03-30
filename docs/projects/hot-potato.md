@@ -44,7 +44,7 @@ input.onButtonPressed(Button.A, function () {
 
 ## Step 4
 
-Add a loop to repeat code ``||loops:while||``  ``||variables:timer||`` ``||logic:is positive||``. When `timer` is negative, the game is over.
+Put in a loop to repeat code ``||loops:while||``  ``||variables:timer||`` ``||logic:is positive||``. When `timer` is negative, the game is over.
 
 
 ```blocks
@@ -60,7 +60,7 @@ input.onButtonPressed(Button.A, function () {
 
 ## Step 5
 
-Add code in the ``||loops:while||`` loop to ``||variables:decrease||`` the timer ``||basic:every second||``.
+Inside the ``||loops:while||`` loop, add code to ``||variables:decrease||`` the timer ``||basic:every second||``.
 
 ```blocks
 let timer = 0
