@@ -45,7 +45,7 @@ input.onButtonPressed(Button.A, function () {
 
 ## Step 4
 
-Add a loop to repeat code ``||loops:while||`` the timer is positive. When ``||variables:timer||`` ``||logic:is negative||``, the game is over.
+Add a loop to repeat code ``||loops:while||``  ``||variables:timer||`` ``||logic:is positive||``. When `timer` is negative, the game is over.
 
 
 ```blocks
