@@ -2,9 +2,8 @@
 
 ## Introduction @unplugged
 
-Throw the @boardname@ around before the timer goes off!
-
-https://youtu.be/xLEy1B_gWKY
+In this game, you will start a timer and countdown a random number of seconds. When the timer is off, the game is over and whoever holds the potato lost!
+Watch the tutorial on the [MakeCode YouTube channel](https://youtu.be/xLEy1B_gWKY).
 
 ## Step 1
 
