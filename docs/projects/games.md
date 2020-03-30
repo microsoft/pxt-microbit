@@ -23,7 +23,7 @@ Fun games to build with your @boardname@.
 }, {
   "name": "Hot Potato",
   "url":"/projects/hot-potato",
-  "description": "Toss the potato around before it sets off.",
+  "description": "Toss the potato around before time is up and you're caught holding it.",
   "imageUrl": "/static/mb/projects/hot-potato.png",
   "cardType": "tutorial",
   "youTubeId": "xLEy1B_gWKY"
