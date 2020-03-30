@@ -28,6 +28,12 @@ Fun games to build with your @boardname@.
   "cardType": "tutorial",
   "youTubeId": "xLEy1B_gWKY"
 }, {
+  "name": "Heads Guess!",
+  "url":"/projects/head-guess",
+  "description": "Try to guess words with your friends!",
+  "imageUrl": "/static/mb/projects/heads-guess.png",
+  "cardType": "tutorial"
+}, {
   "name": "Reaction Time",
   "url":"/projects/reaction-time",
   "description": "Make a reaction time experiment that responds to your body's conductivity!",
