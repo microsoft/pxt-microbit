@@ -339,15 +339,18 @@
   "music.rest|block": "rest(ms)|%duration=device_beat",
   "music.ringTone|block": "ring tone (Hz)|%note=device_note",
   "music.setTempo|block": "set tempo to (bpm)|%value",
+  "music.setVolume|block": "set volume %volume",
   "music.stopMelody|block": "stop melody $options",
   "music.tempo|block": "tempo (bpm)",
   "music|block": "music",
   "parseFloat|block": "parse to number %text",
   "parseInt|block": "parse to integer %text",
+  "pins.analogPitchVolume|block": "analog pitch volume",
   "pins.analogPitch|block": "analog pitch %frequency|for (ms) %ms",
   "pins.analogReadPin|block": "analog read|pin %name",
   "pins.analogSetPeriod|block": "analog set period|pin %pin|to (µs)%micros",
   "pins.analogSetPitchPin|block": "analog set pitch pin %name",
+  "pins.analogSetPitchVolume|block": "analog set pitch volume $volume",
   "pins.analogWritePin|block": "analog write|pin %name|to %value",
   "pins.digitalReadPin|block": "digital read|pin %name",
   "pins.digitalWritePin|block": "digital write|pin %name|to %value",
@@ -412,5 +415,6 @@
   "{id:category}PwmOnlyPin": "PwmOnlyPin",
   "{id:category}Serial": "Serial",
   "{id:category}String": "String",
-  "{id:category}Text": "Text"
+  "{id:category}Text": "Text",
+  "{id:group}Volume": "Volume"
 }

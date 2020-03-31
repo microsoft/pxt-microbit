@@ -717,6 +717,22 @@ declare namespace pins {
     function analogSetPitchPin(name: AnalogPin): void;
 
     /**
+     * Sets the volume the pitch pin
+     * @param volume the intensity of the sound from 0..255
+     */
+    //% blockId=device_analog_set_pitch_volume block="analog set pitch volume $volume"
+    //% help=pins/analog-set-pitch-volume weight=3 advanced=true
+    //% volume.min=0 volume.max=255 shim=pins::analogSetPitchVolume
+    function analogSetPitchVolume(volume: int32): void;
+
+    /**
+     * Gets the volume the pitch pin from 0..255
+     */
+    //% blockId=device_analog_pitch_volume block="analog pitch volume"
+    //% help=pins/analog-pitch-volume weight=3 advanced=true shim=pins::analogPitchVolume
+    function analogPitchVolume(): int32;
+
+    /**
      * Emit a plse-width modulation (PWM) signal to the current pitch pin. Use `analog set pitch pin` to define the pitch pin.
      * @param frequency frequency to modulate in Hz.
      * @param ms duration of the pitch in milli seconds.

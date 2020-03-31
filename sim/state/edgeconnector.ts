@@ -101,16 +101,28 @@ namespace pxsim.pins {
         pin.pitch = true;
     }
 
+    export function analogSetPitchVolume(volume: number) {
+        const ec = board().edgeConnectorState;
+        ec.pitchVolume = Math.max(0, Math.min(0xff, volume | 0));
+    }
+
+    export function analogPitchVolume() {
+        const ec = board().edgeConnectorState;
+        return ec.pitchVolume;
+    }
+ 
     export function analogPitch(frequency: number, ms: number) {
         // update analog output
-        let pins = board().edgeConnectorState.pins;
-        let pin = pins.filter(pin => !!pin && pin.pitch)[0] || pins[0];
+        const ec = board().edgeConnectorState;
+        const pins = ec.pins;
+        const pin = pins.filter(pin => !!pin && pin.pitch)[0] || pins[0];
+        const pitchVolume = ec.pitchVolume;
         pin.mode = PinFlags.Analog | PinFlags.Output;
-        if (frequency <= 0) {
+        if (frequency <= 0 || pitchVolume <= 0) {
             pin.value = 0;
             pin.period = 0;
         } else {
-            pin.value = 512;
+            pin.value = pitchVolume << 2;
             pin.period = 1000000 / frequency;
         }
         runtime.queueDisplayUpdate();
