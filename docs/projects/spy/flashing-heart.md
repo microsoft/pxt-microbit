@@ -24,7 +24,7 @@ basic.forever(function() {
 
 ## Step 2 @fullscreen
 
-Place another ``||basic:show leds||``. You can leave it blank and draw what you want.
+Place in another ``||basic:show leds||``. You can leave it blank and draw what you want.
 
 ```spy
 basic.forever(function() {

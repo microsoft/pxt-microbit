@@ -29,7 +29,7 @@ input.onButtonPressed(Button.A, () => {
 
 ## Receiving a message
 
-Add an event to run code when a ``||radio:string is received||`` over ``||radio:radio||``. 
+Put in another event to run code when a ``||radio:string is received||`` over ``||radio:radio||``. 
 
 ```blocks
 radio.onReceivedString(function (receivedString) {

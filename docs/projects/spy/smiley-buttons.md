@@ -9,7 +9,7 @@ Code the buttons on the @boardname@ to show that it's happy or sad.
 
 ## Step 1 @fullscreen
 
-Place ``||input:on button pressed||`` to run code when button **A** is pressed.
+Put in an ``||input:on button pressed||`` event to run code when button **A** is pressed.
 
 ```blocks
 input.onButtonPressed(Button.A, () => { 
