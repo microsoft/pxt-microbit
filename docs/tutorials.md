@@ -20,7 +20,7 @@ Here are some cool tutorials to get you started with your @boardname@!
     "editor": "py",
     "cardType": "tutorial"
   }, {
-    "url": "/tutorials/spy/flashing-heart",
+    "url": "/projects/spy/flashing-heart",
     "editor": "js",
     "cardType": "tutorial"
   }]
@@ -36,7 +36,7 @@ Here are some cool tutorials to get you started with your @boardname@!
     "editor": "py",
     "cardType": "tutorial"
   }, {
-    "url": "/tutorials/spy/name-tag",
+    "url": "/projects/spy/name-tag",
     "editor": "js",
     "cardType": "tutorial"
   }]
@@ -53,7 +53,7 @@ Here are some cool tutorials to get you started with your @boardname@!
     "editor": "py",
     "cardType": "tutorial"
   }, {
-    "url": "/tutorials/spy/smiley-buttons",
+    "url": "/projects/spy/smiley-buttons",
     "editor": "js",
     "cardType": "tutorial"
   }]
@@ -69,7 +69,7 @@ Here are some cool tutorials to get you started with your @boardname@!
     "editor": "py",
     "cardType": "tutorial"
   }, {
-    "url": "/tutorials/spy/dice",
+    "url": "/projects/spy/dice",
     "editor": "js",
     "cardType": "tutorial"
   }]
@@ -85,7 +85,7 @@ Here are some cool tutorials to get you started with your @boardname@!
     "editor": "py",
     "cardType": "tutorial"
   }, {
-    "url": "/tutorials/spy/love-meter",
+    "url": "/projects/spy/love-meter",
     "editor": "js",
     "cardType": "tutorial"
   }]
@@ -101,7 +101,7 @@ Here are some cool tutorials to get you started with your @boardname@!
     "editor": "py",
     "cardType": "tutorial"
   }, {
-    "url": "/tutorials/spy/micro-chat",
+    "url": "/projects/spy/micro-chat",
     "editor": "js",
     "cardType": "tutorial"
   }]

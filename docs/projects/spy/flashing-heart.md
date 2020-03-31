@@ -19,6 +19,7 @@ basic.forever(function() {
         # # # # #
         . # # # .
         . . # . .`);
+})
 ```
 
 ## Step 2 @fullscreen
