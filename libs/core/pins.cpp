@@ -345,7 +345,9 @@ namespace pins {
       if (frequency <= 0 || pitchVolume <= 0) {
         pitchPin->setAnalogValue(0);
       } else {
-        pitchPin->setAnalogValue(pitchVolume << 2);
+        // sound coming out of speaker is not linear, try best match
+        int v = 1 << (pitchVolume >> 5);
+        pitchPin->setAnalogValue(v);
         pitchPin->setAnalogPeriodUs(1000000/frequency);
       }
 
