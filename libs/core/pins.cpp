@@ -320,7 +320,7 @@ namespace pins {
     //% help=pins/analog-set-pitch-volume weight=3 advanced=true
     //% volume.min=0 volume.max=255
     void analogSetPitchVolume(int volume) {
-        pitchVolume = max(0, min(0xff, volume | 0);
+        pitchVolume = max(0, min(0xff, volume | 0));
     }
 
     /**
