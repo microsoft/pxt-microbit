@@ -21,7 +21,7 @@ input.onGesture(Gesture.Shake, () => {
 
 ## Step 2
 
-Put code to ``||basic:show a number||`` when ``||input:on shake||`` happens.
+Put code in the event to ``||basic:show a number||`` when ``||input:on shake||`` happens.
 
 ```spy
 input.onGesture(Gesture.Shake, () => {
@@ -31,7 +31,7 @@ input.onGesture(Gesture.Shake, () => {
 
 ## Step 3
 
-Put code to ``||Math:pick a random||`` number and ``||basic:show||`` it on the screen.
+Pick a ``||Math:pick a random||`` number and ``||basic:show||`` it on the screen.
 
 ```spy
 input.onGesture(Gesture.Shake, () => {
