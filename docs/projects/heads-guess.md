@@ -28,7 +28,7 @@ text_list = ["PUPPY", "CLOCK", "NIGHT", "CAT", "COW"]
 Add an event to run code when the @boardname@ ``||input:logo||`` is pointing ``||input:up||``.
 This is the gesture to get a new word.
 
-``` blocks
+```blocks
 input.onGesture(Gesture.LogoUp, function () {
 })
 ```
