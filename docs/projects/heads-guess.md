@@ -36,7 +36,7 @@ input.onGesture(Gesture.LogoUp, function () {
 ## Step 4
 
 The item in ``||arrays:text list||`` are numbered ``0`` to ``length - 1``. 
-Add code to pick a ``||math:random||`` index.
+Add code to pick a ``||math:random||`` ``||variables:index||``.
 
 ```blocks
 let text_list: string[] = []
@@ -50,8 +50,7 @@ input.onGesture(Gesture.LogoUp, function () {
 
 ## Step 5
 
-The item in a list are numbered ``0`` to ``length - 1``. 
-Add code to pick a ``||math:random||`` index.
+Add code to ``||basic:show||`` the value stored at ``||variables:index||`` in  ``||arrays:text list||``.
 
 ```blocks
 let text_list: string[] = []
@@ -75,7 +74,7 @@ input.onGesture(Gesture.ScreenDown, function () {
 
 ## Step 7
 
-Add code to add points to the player score.
+Add code to add points to the ``||game:score||``.
 
 ```blocks
 input.onGesture(Gesture.ScreenDown, function () {
@@ -96,7 +95,7 @@ input.onGesture(Gesture.ScreenUp, function () {
 
 ## Step 9
 
-Add code to remove a life from the player.
+Add code to remove a ``||game:life||`` from the player.
 
 ```blocks
 input.onGesture(Gesture.ScreenUp, function () {
