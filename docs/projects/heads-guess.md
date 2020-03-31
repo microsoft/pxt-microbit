@@ -2,12 +2,12 @@
 
 ## Introduction @unplugged
 
-This is a small remake of the famous **Heads Up!** game. The player holds the @boardname@ on the forehead and has 30 seconds to guess words displayed on the screen.
-If the guess is correct, the player tilts the @boardname@ forward; to pass the player tilts it backwards.
+This is a simple remake of the famous **Heads Up!** game. The player holds the @boardname@ on the forehead and has 30 seconds to guess words displayed on the screen.
+If the guess is correct, the player tilts the @boardname@ forward; to pass, the player tilts it backwards.
 
 ## Step 1
 
-Add code to ``||game:start a countdown||`` of 30 seconds.
+Put in code to ``||game:start a countdown||`` of 30 seconds.
 
 ```blocks
 game.startCountdown(30000)
@@ -35,7 +35,7 @@ input.onGesture(Gesture.LogoUp, function () {
 
 ## Step 4
 
-The item in ``||arrays:text list||`` are numbered ``0`` to ``length - 1``. 
+The items in ``||arrays:text list||`` are numbered ``0`` to ``length - 1``. 
 Add code to pick a ``||math:random||`` ``||variables:index||``.
 
 ```blocks
@@ -44,13 +44,12 @@ let index = 0
 input.onGesture(Gesture.LogoUp, function () {
     // @highlight
     index = Math.randomRange(0, text_list.length - 1)
-    basic.showString(text_list[index])
 })
 ```
 
 ## Step 5
 
-Add code to ``||basic:show||`` the value stored at ``||variables:index||`` in  ``||arrays:text list||``.
+Add code to ``||basic:show||`` the value of the item stored at ``||variables:index||`` in  ``||arrays:text list||``.
 
 ```blocks
 let text_list: string[] = []
@@ -64,8 +63,8 @@ input.onGesture(Gesture.LogoUp, function () {
 
 ## Step 6
 
-Add an event to run code when the @boardname@ ``||input:screen||`` is pointing ``||input:down||``.
-This is the gesture for a successful guess.
+Use an event to run code when the @boardname@ ``||input:screen||`` is pointing ``||input:down||``.
+This is the gesture for a correct guess.
 
 ```blocks
 input.onGesture(Gesture.ScreenDown, function () {
@@ -74,7 +73,7 @@ input.onGesture(Gesture.ScreenDown, function () {
 
 ## Step 7
 
-Add code to add points to the ``||game:score||``.
+Put in code to add points to the ``||game:score||``.
 
 ```blocks
 input.onGesture(Gesture.ScreenDown, function () {
@@ -85,7 +84,7 @@ input.onGesture(Gesture.ScreenDown, function () {
 
 ## Step 8
 
-Add an event to run code when the @boardname@ ``||input:screen||`` is pointing ``||input:up||``.
+Add anonther event to run code when the @boardname@ ``||input:screen||`` is pointing ``||input:up||``.
 This is the gesture for a pass.
 
 ```blocks
@@ -95,7 +94,7 @@ input.onGesture(Gesture.ScreenUp, function () {
 
 ## Step 9
 
-Add code to remove a ``||game:life||`` from the player.
+For the pass gesture, add code to remove a ``||game:life||`` from the player.
 
 ```blocks
 input.onGesture(Gesture.ScreenUp, function () {
