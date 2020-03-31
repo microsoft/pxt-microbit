@@ -14,7 +14,7 @@ We need 3 pieces of code: one to detect a throw (shake), another to pick a rando
 Add an event to run code when a ``||input:shake||`` is detected.
 
 ```spy
-input.onGesture(Gesture.Shake, () => {
+input.onGesture(Gesture.Shake, function() {
 
 })
 ```
@@ -24,7 +24,7 @@ input.onGesture(Gesture.Shake, () => {
 Put code in the event to ``||basic:show a number||`` when ``||input:on shake||`` happens.
 
 ```spy
-input.onGesture(Gesture.Shake, () => {
+input.onGesture(Gesture.Shake, function() {
     basic.showNumber(0)
 })
 ```
@@ -34,7 +34,7 @@ input.onGesture(Gesture.Shake, () => {
 Pick a ``||Math:pick a random||`` number and ``||basic:show||`` it on the screen.
 
 ```spy
-input.onGesture(Gesture.Shake, () => {
+input.onGesture(Gesture.Shake, function() {
     basic.showNumber(Math.randomRange(0, 10))
 })
 ```
@@ -44,7 +44,7 @@ input.onGesture(Gesture.Shake, () => {
 A typical dice shows values from `1` to `6`. Change the minimum and maximum values in ``||Math:pick random||`` to "``1`` to ``6``"!
 
 ```spy
-input.onGesture(Gesture.Shake, () => {
+input.onGesture(Gesture.Shake, function() {
     basic.showNumber(Math.randomRange(1, 6))
 })
 ```

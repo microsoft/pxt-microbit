@@ -11,7 +11,7 @@ Use the **radio** to send and receive messages with other @boardname@.
 Add an event to run code when ``||input:button A is pressed||``.
 
 ```blocks
-input.onButtonPressed(Button.A, () => {
+input.onButtonPressed(Button.A, function() {
 });
 ```
 
@@ -21,7 +21,7 @@ Add code to ``||radio:send a string||`` over ``||radio:radio||`` when ``||input:
 Every @boardname@ nearby will receive this message.
 
 ```blocks
-input.onButtonPressed(Button.A, () => {
+input.onButtonPressed(Button.A, function() {
     // @highlight
     radio.sendString(":)");
 });

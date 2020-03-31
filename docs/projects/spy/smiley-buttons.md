@@ -12,7 +12,7 @@ Code the buttons on the @boardname@ to show that it's happy or sad.
 Put in an ``||input:on button pressed||`` event to run code when button **A** is pressed.
 
 ```blocks
-input.onButtonPressed(Button.A, () => { 
+input.onButtonPressed(Button.A, function() { 
 });
 ```
 
@@ -21,7 +21,7 @@ input.onButtonPressed(Button.A, () => {
 Place ``||basic:show leds||`` inside ``||input:on button pressed||`` to display a **:)** on the screen. Press the **A** button in the simulator to see the smiley.
 
 ```blocks
-input.onButtonPressed(Button.A, () => { 
+input.onButtonPressed(Button.A, function() { 
     basic.showLeds(`
         # # . # #
         # # . # #
@@ -37,7 +37,7 @@ input.onButtonPressed(Button.A, () => {
 Place ``||input:on button pressed||`` and ``||basic:show leds||`` to display a **:(** when button **B** is pressed.
 
 ```blocks
-input.onButtonPressed(Button.B, () => { 
+input.onButtonPressed(Button.B, function() { 
     basic.showLeds(`
         # # . # #
         # # . # #
@@ -53,7 +53,7 @@ input.onButtonPressed(Button.B, () => {
 Add a secret mode that happens when **A** and **B** are pressed together. For this case, add multiple ``||basic:show leds||`` blocks to create an animation.
 
 ```blocks
-input.onButtonPressed(Button.AB, () => {
+input.onButtonPressed(Button.AB, function() {
     basic.showLeds(`
         . . . . .
         # . # . .

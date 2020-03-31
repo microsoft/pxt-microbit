@@ -11,7 +11,7 @@ Tell everyone who you are. Show you name on the LEDs.
 Add an event to repeat code ``||basic:forever||``.
 
 ```blocks
-basic.forever(() => {
+basic.forever(function() {
 });
 ```
 
@@ -20,7 +20,7 @@ basic.forever(() => {
 Place ``||basic:show string||`` in ``||basic:forever||`` to show text in a loop.
 
 ```blocks
-basic.forever(() => {
+basic.forever(function() {
     // @highlight
     basic.showString("MICRO");
 });
@@ -37,7 +37,7 @@ Look at the simulator and make sure it shows your name on the screen.
 Place more ``||basic:show string||`` to create your own story.
 
 ```blocks
-basic.forever(() => {
+basic.forever(function() {
     basic.showString("MICRO");
     // @highlight
     basic.showString("BIT");

@@ -11,7 +11,7 @@ Make a **LOVE METER** machine, how sweet! The @boardname@ is feeling the love, t
 Add an event to run code when ``||input:on pin 0 is pressed||``. Use ``P0`` from the list of pin inputs.
 
 ```blocks
-input.onPinPressed(TouchPin.P0, () => {
+input.onPinPressed(TouchPin.P0, function() {
 });
 ```
 
@@ -20,7 +20,7 @@ input.onPinPressed(TouchPin.P0, () => {
 Add code to ``||basic:show||`` a ``||Math:random number||``between `0` to `100` when pin **0** is pressed.
 
 ```blocks
-input.onPinPressed(TouchPin.P0, () => {
+input.onPinPressed(TouchPin.P0, function() {
     basic.showNumber(Math.randomRange(0, 100));
 });
 ```
@@ -34,7 +34,7 @@ Add code to ``||basic:show||`` ``"LOVE METER"`` on the screen when the @boardnam
 
 ```blocks
 basic.showString("LOVE METER");
-input.onPinPressed(TouchPin.P0, () => {
+input.onPinPressed(TouchPin.P0, function() {
     basic.showNumber(Math.randomRange(0, 100));
 });
 ```
