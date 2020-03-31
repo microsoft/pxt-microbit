@@ -128,7 +128,8 @@ namespace pxsim.pins {
         runtime.queueDisplayUpdate();
 
         let cb = getResume();
-        AudioContextManager.tone(frequency, 1);
+        const v = pitchVolume / 0xff;
+        AudioContextManager.tone(frequency, v);
         if (ms <= 0) cb();
         else {
             setTimeout(() => {
