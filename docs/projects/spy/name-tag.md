@@ -6,11 +6,16 @@ Tell everyone who you are. Show you name on the LEDs.
 
 ![Name scrolling on the LEDs](/static/mb/projects/name-tag/name-tag.gif)
 
-```template
-forever(function() {})
+## Step 1 @fullscreen
+
+Add an event to repeat code ``||basic:forever||``.
+
+```blocks
+basic.forever(() => {
+});
 ```
 
-## Step 1 @fullscreen
+## Step 2
 
 Place ``||basic:show string||`` in ``||basic:forever||`` to show text in a loop.
 
@@ -21,13 +26,13 @@ basic.forever(() => {
 });
 ```
 
-## Step 2 @fullscreen
+## Step 3 @fullscreen
 
 Look at the simulator and make sure it shows your name on the screen.
 
 ![Name scrolling on the LEDs](/static/mb/projects/name-tag/name-tag.gif)
 
-## Step 3
+## Step 4
 
 Place more ``||basic:show string||`` to create your own story.
 
@@ -39,6 +44,6 @@ basic.forever(() => {
 })
 ```
 
-## Step 4 @fullscreen
+## Step 5 @fullscreen
 
 If you have a @boardname@ connected, click ``|Download|`` and transfer your code to the @boardname@!
