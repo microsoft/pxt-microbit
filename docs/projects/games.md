@@ -12,12 +12,26 @@ Fun games to build with your @boardname@.
   "url":"/projects/rock-paper-scissors",
   "description": "Make the Rock-Paper-Scissors game on your micro:bit and challenge your friends.",
   "imageUrl":"/static/mb/projects/a4-motion.png",
-  "cardType": "tutorial"
+  "cardType": "tutorial",
+  "youTubeId": "94lLBB3b1kU"
 }, {
   "name": "Coin Flipper",
   "url":"/projects/coin-flipper",
   "description": "Guess the coin toss and see if you're lucky.",
   "imageUrl": "/static/mb/projects/coin-flipper.png",
+  "cardType": "tutorial"
+}, {
+  "name": "Hot Potato",
+  "url":"/projects/hot-potato",
+  "description": "Toss the potato around before time is up and you're caught holding it.",
+  "imageUrl": "/static/mb/projects/hot-potato.png",
+  "cardType": "tutorial",
+  "youTubeId": "xLEy1B_gWKY"
+}, {
+  "name": "Heads Guess!",
+  "url":"/projects/heads-guess",
+  "description": "Try to guess words with your friends!",
+  "imageUrl": "/static/mb/projects/heads-guess.png",
   "cardType": "tutorial"
 }, {
   "name": "Reaction Time",
@@ -52,3 +66,7 @@ Fun games to build with your @boardname@.
   "imageUrl":"/static/mb/projects/crashy-bird.png"
 }]
 ```
+
+## Flipgrid
+
+https://flipgrid.com/makecodemicrobit

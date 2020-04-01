@@ -53,6 +53,11 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
   "cardType": "package"
 },
 {
+  "name": "Elecfreaks TPBot",
+  "url":"/pkg/elecfreaks/pxt-TPBot",
+  "cardType": "package"
+},
+{
   "name": "DF Robot Maqueen",
   "url":"/pkg/DFRobot/pxt-maqueen",
   "cardType": "package"
@@ -273,6 +278,11 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
   "cardType": "package"
 },
 {
+  "name": "Make&Learn micro:shield",
+  "url":"/pkg/MakeAndLearn/pxt-microshield",
+  "cardType": "package"
+},
+{
   "name": "micro:turtle",
   "url":"/pkg/microsoft/pxt-microturtle",
   "cardType": "package"
@@ -304,6 +314,10 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
   "name": "Grove inventor kit",
   "url":"/pkg/Seeed-Studio/pxt-grove",
   "cardType": "package"
+}, {
+  "name": "Cytron Edubit",
+  "url":"/pkg/CytronTechnologies/pxt-edubit",
+  "cardType": "package"  
 }, {
     "name": "WS2812B",
     "url": "/pkg/microsoft/pxt-ws2812b",

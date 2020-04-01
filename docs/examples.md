@@ -6,11 +6,6 @@ Here are some fun programs for your @boardname@!
 
 ```codecard
 [{
-  "name": "Blinky",
-  "description": "A blinking pattern of LEDs",
-  "url": "/examples/blinky",
-  "cardType": "example"
-}, {
   "name": "Rando",
   "description": "Randomly blinking LEDs",
   "url": "/examples/rando",

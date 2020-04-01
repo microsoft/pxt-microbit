@@ -26,6 +26,10 @@ Students will...
 3. [**Activity**: Marco Polo and Morse code](/courses/csintro/radio/activity)
 4. [**Project**: Radio project](/courses/csintro/radio/project)
 
+## Flipgrid
+
+The [Flipgrid](https://info.flipgrid.com/) topic for the **Radio** lesson: https://flipgrid.com/eb9af729
+
 ## Related standards
 
 [Targeted CSTA standards](/courses/csintro/radio/standards)

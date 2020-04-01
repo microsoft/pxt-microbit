@@ -27,6 +27,10 @@ Students will...
 3. [**Activity**: Binary transmogrifier](/courses/csintro/binary/activity)
 4. [**Project**: Make binary a cash register](/courses/csintro/binary/project)
 
+## Flipgrid
+
+The [Flipgrid](https://info.flipgrid.com/) topic for the **Binary** lesson: https://flipgrid.com/d44cd204
+
 ## Related standards
 
 [Targeted CSTA standards](/courses/csintro/binary/standards)

@@ -37,6 +37,8 @@ typedef RefMImage *Image;
 
 extern MicroBit uBit;
 extern MicroBitEvent lastEvent;
+extern void setBackgroundHandlerFlag();
+extern void unregisterFromDal(void *);
 
 MicroBitPin *getPin(int id);
 

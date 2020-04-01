@@ -3,7 +3,6 @@
 ## Introduction @unplugged
 
 Make a love meter, how sweet! The @boardname@ is feeling the love, then sometimes not so much!
-Tell everyone who you are. Show you name on the LEDs.
 
 ![Love meter banner message](/static/mb/projects/love-meter/love-meter.gif)
 

@@ -29,6 +29,10 @@ Let's get started!
 
 ## ~
 
+## Flipgrid
+
+https://flipgrid.com/0398a822
+
 ## Additional coding activities
 
 * [Countdown timer](/projects/watch/timer)

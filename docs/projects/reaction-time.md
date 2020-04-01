@@ -25,10 +25,14 @@ https://youtu.be/doHwknM7HbQ
 ## Activities
 
 * [Make](/projects/reaction-time/make)  
-* [Code](/projects/reaction-time/code)  
+* [Code](/projects/reaction-time/code)
 
 ## ~button /projects/reaction-time/make
 
 Let's get started!
 
 ## ~
+
+## Flipgrid
+
+https://flipgrid.com/7120893b

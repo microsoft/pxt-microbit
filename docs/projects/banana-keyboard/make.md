@@ -86,7 +86,7 @@ https://www.youtube.com/watch?v=GEpZrvbsO7o
 
 #### ~
 
-Grab a the orange with one hand. With the fingers of your other hand, tap the banana to play sound. Your banana keyboard is ready!
+Grab the orange with one hand. With the fingers of your other hand, tap the banana to play sound. Your banana keyboard is ready!
 
 ## ~button /projects/banana-keyboard/code
 NEXT: beat box

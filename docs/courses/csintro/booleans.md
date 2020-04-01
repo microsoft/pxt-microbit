@@ -26,6 +26,10 @@ Students will...
 3. [**Activity**: Double coin flipper](/courses/csintro/booleans/activity)
 4. [**Project**: Boolean](/courses/csintro/booleans/project)
 
+## Flipgrid
+
+The [Flipgrid](https://info.flipgrid.com/) topic for the **Booleans** lesson: https://flipgrid.com/36e0c7e0
+
 ## Related standards
 
 [Targeted CSTA standards](/courses/csintro/booleans/standards)

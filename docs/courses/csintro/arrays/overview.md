@@ -56,5 +56,4 @@ Once you start saving lots of different values in an array, you will probably wa
 There are some good array sorting videos:
 * Visually displays a number of different types of sorts: https://www.youtube.com/watch?v=kPRA0W1kECg
 * Bubble-sort with Hungarian folk dance: https://youtu.be/lyZQPjUT5B4
-* Select-sort with Gypsy folk dance: https://youtu.be/Ns4TPTC8whw
 * Insert-sort with Romanian folk dance: https://youtu.be/ROalU379l3U

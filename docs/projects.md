@@ -9,6 +9,11 @@
         "largeImageUrl": "/static/mb/projects/flashing-heart/sim.gif"
     },
     {
+        "name": "Live Coding",
+        "url": "/live-coding",
+        "imageUrl": "/static/live-coding/live.png"
+    },
+    {
         "name": "Games",
         "url": "/projects/games",
         "imageUrl": "/static/mb/projects/a4-motion.png"
@@ -79,6 +84,7 @@
 ## See Also
 
 [Tutorials](/tutorials),
+[Live Coding](/live-coding),
 [Games](/projects/games),
 [Radio Games](/projects/radio-games),
 [Fashion](/projects/fashion),

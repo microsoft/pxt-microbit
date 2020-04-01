@@ -245,7 +245,7 @@
         "yottaTarget": "bbc-microbit-classic-gcc",
         "yottaCorePackage": "microbit",
         "githubCorePackage": "lancaster-university/microbit",
-        "gittag": "pxtgc-0",
+        "gittag": "v2.2.0-rc1",
         "serviceId": "microbit",
         "dockerImage": "pext/yotta:latest"
     },
@@ -300,14 +300,11 @@
         "experiments": [
             "allowPackageExtensions",
             "instructions",
-            "debugger",
             "debugExtensionCode",
             "bluetoothUartConsole",
             "bluetoothPartialFlashing",
             "simScreenshot",
-            "simGif",
-            "qrCode",
-            "githubBlocksDiff"
+            "simGif"
         ],
         "bluetoothUartFilters": [
             {
@@ -400,6 +397,12 @@
         "coloredToolbox": true,
         "monacoToolbox": true,
         "hasAudio": true,
+        "socialOptions": {
+            "orgTwitterHandle": "MSMakeCode",
+            "hashtags": "MakeCode",
+            "discourse": "https://forum.makecode.com/",
+            "discourseCategory": "micro:bit"
+        },
         "blocklyOptions": {
             "grid": {
                 "spacing": 45,
@@ -418,8 +421,10 @@
             "functions": "#3455DB",
             "arrays": "#E65722"
         },
+        "blocksCollapsing": true,
         "highContrast": true,
         "greenScreen": true,
+        "accessibleBlocks": true,
         "print": true,
         "selectLanguage": true,
         "availableLocales": [
@@ -463,12 +468,17 @@
         },
         "showProjectSettings": true,
         "scriptManager": true,
+        "debugger": true,
         "simGifTransparent": "rgba(0,0,0,0)",
         "simGifMaxFrames": 44,
         "simScreenshotMaxUriLength": 300000,
+        "qrCode": true,
         "importExtensionFiles": true,
+        "nameProjectFirst": true,
         "githubEditor": true,
-        "openProjectNewTab": true
+        "chooseLanguageRestrictionOnNewProject": true,
+        "openProjectNewTab": true,
+        "python": true
     },
     "queryVariants": {
         "hidemenu": {

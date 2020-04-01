@@ -298,6 +298,7 @@ namespace pins {
 
 
     MicroBitPin* pitchPin = NULL;
+    uint8_t pitchVolume = 64;
 
     /**
      * Set the pin used when using analog pitch or music.
@@ -312,6 +313,26 @@ namespace pins {
     }
 
     /**
+    * Sets the volume on the pitch pin
+    * @param volume the intensity of the sound from 0..255
+    */
+    //% blockId=device_analog_set_pitch_volume block="analog set pitch volume $volume"
+    //% help=pins/analog-set-pitch-volume weight=3 advanced=true
+    //% volume.min=0 volume.max=255
+    void analogSetPitchVolume(int volume) {
+        pitchVolume = max(0, min(0xff, volume));
+    }
+
+    /**
+    * Gets the volume the pitch pin from 0..255
+    */
+    //% blockId=device_analog_pitch_volume block="analog pitch volume"
+    //% help=pins/analog-pitch-volume weight=3 advanced=true
+    int analogPitchVolume() {
+        return pitchVolume;
+    }
+
+    /**
      * Emit a plse-width modulation (PWM) signal to the current pitch pin. Use `analog set pitch pin` to define the pitch pin.
      * @param frequency frequency to modulate in Hz.
      * @param ms duration of the pitch in milli seconds.
@@ -321,10 +342,12 @@ namespace pins {
     void analogPitch(int frequency, int ms) {
       if (pitchPin == NULL)
         analogSetPitchPin(AnalogPin::P0);
-      if (frequency <= 0) {
+      if (frequency <= 0 || pitchVolume <= 0) {
         pitchPin->setAnalogValue(0);
       } else {
-        pitchPin->setAnalogValue(512);
+        // sound coming out of speaker is not linear, try best match
+        int v = 1 << (pitchVolume >> 5);
+        pitchPin->setAnalogValue(v);
         pitchPin->setAnalogPeriodUs(1000000/frequency);
       }
 

@@ -378,6 +378,13 @@ declare namespace control {
     function inBackground(a: () => void): void;
 
     /**
+     * Blocks the calling thread until the specified event is raised.
+     */
+    //% help=control/wait-for-event async
+    //% blockId=control_wait_for_event block="wait for event|from %src|with value %value" shim=control::waitForEvent
+    function waitForEvent(src: int32, value: int32): void;
+
+    /**
      * Resets the BBC micro:bit.
      */
     //% weight=30 async help=control/reset blockGap=8
@@ -447,6 +454,17 @@ declare namespace control {
      */
     //% part=midioutput blockHidden=1 shim=control::__midiSend
     function __midiSend(buffer: Buffer): void;
+
+    /** The next handler to be added will be put in the background, 
+    which supports multiple handlers per event type. */
+    //%
+    //% help=control/next-handler-to-background shim=control::nextHandlerToBackground
+    function nextHandlerToBackground(): void;
+
+    /** Remove a handler from the background for all events */
+    //%
+    //% help=control/remove-from-background shim=control::removeFromBackground
+    function removeFromBackground(handler: () => void): void;
 
     /**
      *
@@ -697,6 +715,22 @@ declare namespace pins {
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     //% name.fieldOptions.tooltips="false" name.fieldOptions.width="250" shim=pins::analogSetPitchPin
     function analogSetPitchPin(name: AnalogPin): void;
+
+    /**
+     * Sets the volume the pitch pin
+     * @param volume the intensity of the sound from 0..255
+     */
+    //% blockId=device_analog_set_pitch_volume block="analog set pitch volume $volume"
+    //% help=pins/analog-set-pitch-volume weight=3 advanced=true
+    //% volume.min=0 volume.max=255 shim=pins::analogSetPitchVolume
+    function analogSetPitchVolume(volume: int32): void;
+
+    /**
+     * Gets the volume the pitch pin from 0..255
+     */
+    //% blockId=device_analog_pitch_volume block="analog pitch volume"
+    //% help=pins/analog-pitch-volume weight=3 advanced=true shim=pins::analogPitchVolume
+    function analogPitchVolume(): int32;
 
     /**
      * Emit a plse-width modulation (PWM) signal to the current pitch pin. Use `analog set pitch pin` to define the pitch pin.
@@ -981,14 +1015,14 @@ declare namespace control {
      * Create a new zero-initialized buffer.
      * @param size number of bytes in the buffer
      */
-    //% shim=control::createBuffer
+    //% deprecated=1 shim=control::createBuffer
     function createBuffer(size: int32): Buffer;
 
     /**
      * Create a new buffer with UTF8-encoded string
      * @param str the string to put in the buffer
      */
-    //% shim=control::createBufferFromUTF8
+    //% deprecated=1 shim=control::createBufferFromUTF8
     function createBufferFromUTF8(str: string): Buffer;
 }
 

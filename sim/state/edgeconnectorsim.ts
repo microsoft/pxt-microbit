@@ -32,6 +32,11 @@ namespace pxsim {
 
         setPull(pull: number) {
             this.pull = pull;
+            switch(pull) {
+                case PinPullMode.PullDown: this.value = 0; break;
+                case PinPullMode.PullUp: this.value = 1023; break;
+                default: this.value = Math_.randomRange(0, 1023); break;
+            }
         }
 
         analogReadPin(): number {
@@ -81,9 +86,11 @@ namespace pxsim {
 
     export class EdgeConnectorState {
         pins: Pin[];
+        pitchVolume: number;
 
         constructor(public props: EdgeConnectorProps) {
             this.pins = props.pins.map(id => id != undefined ? new Pin(id) : null);
+            this.pitchVolume = 64
         }
 
         public getPin(id: number) {

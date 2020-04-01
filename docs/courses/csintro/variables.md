@@ -23,6 +23,10 @@ Students will...
 3. [**Activity**: Make a Game Scorekeeper](/courses/csintro/variables/activity)
 4. [**Project**: Everything Counts](/courses/csintro/variables/project)
 
+## Flipgrid
+
+The [Flipgrid](https://info.flipgrid.com/) topic for the **Variables** lesson: https://flipgrid.com/dc42bdcc
+
 ## Related standards
 
 [Targeted CSTA standards](/courses/csintro/variables/standards)

@@ -250,6 +250,15 @@ namespace control {
     }
 
     /**
+    * Blocks the calling thread until the specified event is raised.
+    */
+    //% help=control/wait-for-event async
+    //% blockId=control_wait_for_event block="wait for event|from %src|with value %value"
+    void waitForEvent(int src, int value) {
+        pxt::waitForEvent(src, value);
+    }
+
+    /**
      * Resets the BBC micro:bit.
      */
     //% weight=30 async help=control/reset blockGap=8
@@ -337,6 +346,23 @@ namespace control {
     //% part=midioutput blockHidden=1
     void __midiSend(Buffer buffer) {
         // this is a stub to support the simulator
+    }
+
+    /** The next handler to be added will be put in the background, 
+        which supports multiple handlers per event type. */
+    //%
+    //% help=control/next-handler-to-background
+    void nextHandlerToBackground() {
+        setBackgroundHandlerFlag();
+    }
+
+    /** Remove a handler from the background for all events */
+    //%
+    //% help=control/remove-from-background
+    void removeFromBackground(Action handler) {
+        // with handler==NULL would unregister all
+        if (handler)
+            unregisterFromDal((void *)handler);
     }
 
     /**

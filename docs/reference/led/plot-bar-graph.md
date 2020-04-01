@@ -17,6 +17,15 @@ A bar graph is a kind of chart that shows numbers as lines with different length
 * **high**: a [number](/types/number) that is the highest
   possible number (maximum) that the **value** parameter can be. The lines in the bar graph will reach their highest point when **value** reaches this number. If **high** is `0`, then the largest value recently plotted is used as the maximum.
 
+### ~hint
+
+#### Serial Output
+
+The ``||led:plot bar graph||`` block also writes the number from **value** to the [serial](/reference/serial) port as a way to help you record
+values.
+
+### ~
+
 ## Example: chart acceleration
 
 Show a bar graph of the [acceleration](/reference/input/acceleration) 
