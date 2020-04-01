@@ -273,7 +273,6 @@
   "control.raiseEvent|param|mode": "optional definition of how the event should be processed after construction (default is CREATE_AND_FIRE).",
   "control.raiseEvent|param|src": "ID of the MicroBit Component that generated the event e.g. MICROBIT_ID_BUTTON_A.",
   "control.raiseEvent|param|value": "Component specific code indicating the cause of the event.",
-  "control.removeFromBackground": "Remove a handler from the background for all events",
   "control.reset": "Resets the BBC micro:bit.",
   "control.runtimeWarning": "Display warning in the simulator.",
   "control.waitForEvent": "Blocks the calling thread until the specified event is raised.",

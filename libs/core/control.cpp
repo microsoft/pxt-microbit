@@ -348,23 +348,6 @@ namespace control {
         // this is a stub to support the simulator
     }
 
-    /** The next handler to be added will be put in the background, 
-        which supports multiple handlers per event type. */
-    //%
-    //% help=control/next-handler-to-background
-    void nextHandlerToBackground() {
-        setBackgroundHandlerFlag();
-    }
-
-    /** Remove a handler from the background for all events */
-    //%
-    //% help=control/remove-from-background
-    void removeFromBackground(Action handler) {
-        // with handler==NULL would unregister all
-        if (handler)
-            unregisterFromDal((void *)handler);
-    }
-
     /**
     *
     */

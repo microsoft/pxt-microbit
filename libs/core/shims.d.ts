@@ -455,17 +455,6 @@ declare namespace control {
     //% part=midioutput blockHidden=1 shim=control::__midiSend
     function __midiSend(buffer: Buffer): void;
 
-    /** The next handler to be added will be put in the background, 
-    which supports multiple handlers per event type. */
-    //%
-    //% help=control/next-handler-to-background shim=control::nextHandlerToBackground
-    function nextHandlerToBackground(): void;
-
-    /** Remove a handler from the background for all events */
-    //%
-    //% help=control/remove-from-background shim=control::removeFromBackground
-    function removeFromBackground(handler: () => void): void;
-
     /**
      *
      */
