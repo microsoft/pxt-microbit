@@ -2,7 +2,10 @@
 
 ## Introduction @unplugged
 
-Is your table flat? Use the @boardname@ as a level! Using the accelerometer data,
+Is your table flat? Use the @boardname@ as a level!
+
+![A level drawing](/static/mb/projects/level.png)
+
 
 ## Step 1
 
