@@ -289,6 +289,7 @@
         "termsOfUseUrl": "https://makecode.com/termsofuse",
         "githubUrl": "https://github.com/Microsoft/pxt-microbit",
         "boardName": "micro:bit",
+        "boardNickname": "micro:bit",
         "driveDisplayName": "MICROBIT",
         "appStoreID": "1092687276",
         "mobileSafariDownloadProtocol": "microbithex://?data",
