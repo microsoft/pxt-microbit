@@ -1,8 +1,8 @@
 # Measuring Distance
 
-Now that we have identified the values needed to calibrate the shoe, we can create the final program that will be running on the runner watch.
+Now that we have identified the values needed to calibrate the shoe, we can create the final program that will be running on the runner's monitoring @boardname@.
 
-When pressing A, the watch starts measuring. When pressing B, the watch displays the distance and time.
+Pressing ``A`` starts measuring on the monitor. Pressing ``B`` shows the distance and time on the monitoring @boardname@ display.
 
 
 ```blocks
