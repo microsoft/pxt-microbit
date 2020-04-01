@@ -8,7 +8,7 @@ Learn how to use the LEDs and make a flashing heart!
 
 ![Heart shape in the LEDs](/static/mb/projects/flashing-heart/sim.gif)
 
-## Step 1
+## Step 1 @fullscreen
 
 Place the ``||basic:show leds||`` block in the ``||basic:forever||`` block and draw a heart.
 
