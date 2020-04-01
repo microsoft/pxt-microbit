@@ -43,9 +43,8 @@ and ``||variables:value||`` time. This is the elapsed millisecond since pressing
 
 ```blocks
 let start = 0;
-let elapsed = 0;
 input.onButtonPressed(Button.B, function () {
-    elapsed = input.runningTime() - start;
+    let elapsed = input.runningTime() - start;
 })
 ```
 
@@ -56,9 +55,8 @@ Use ``||Math:integer division||`` to divide ``||variables:elapsed||`` by ``1000`
 
 ```blocks
 let start = 0;
-let elapsed = 0;
 input.onButtonPressed(Button.B, function () {
-    elapsed = input.runningTime() - start;
+    let elapsed = input.runningTime() - start;
     basic.showNumber(Math.idiv(elapsed, 1000))
 })
 ```
