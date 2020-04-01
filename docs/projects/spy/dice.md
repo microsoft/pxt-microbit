@@ -9,7 +9,7 @@ We need 3 pieces of code: one to detect a throw (shake), another to pick a rando
 
 ![A @boardname@ dice](/static/mb/projects/dice.png)
 
-## Step 1 @fullscreen
+## Step 1
 
 Add an event to run code when a ``||input:shake||`` is detected.
 

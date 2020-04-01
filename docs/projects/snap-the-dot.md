@@ -6,14 +6,14 @@ Snap the dot is a game of skill where the player has to press **A** exactly when
 
 This tutorial shows how to use the game engine.
 
-## Make a sprite variable @fullscreen
+## Make a sprite variable
 
 Create a new variable called `sprite`. Drag a ``||variables:set sprite to||`` into the ``||basic:on start||`` on the workspace. 
 
 ```blocks
 let sprite = 0
 ```
-## Create a sprite @fullscreen
+## Create a sprite
 
 Pull out a ``||game:create sprite||`` block and put it in ``||variables:set sprite to||`` replacing the `0`. A sprite is a single pixel that can move on the screen. It has an ``x`` and ``y`` position along with a direction of motion.
 
@@ -21,7 +21,7 @@ Pull out a ``||game:create sprite||`` block and put it in ``||variables:set spri
 let sprite = game.createSprite(2, 2)
 ```
 
-## Move the dot @fullscreen
+## Move the dot
 
 The sprite starts in the center facing right. Put a ``||game:move||`` block into the ``||basic:forever||`` to make it move. Notice how it moves to the right but does not bounce back.
 
@@ -32,7 +32,7 @@ basic.forever(function () {
 })
 ```
 
-## Bounce @fullscreen
+## Bounce
 
 Grab a ``||game:if on edge, bounce||`` block to make the sprite bounce on the side of the screen. Also, add a ``||basic:pause||`` block to slow down the sprite.
 
@@ -49,7 +49,7 @@ basic.forever(function () {
 
 Use the simulator to find the best speed. If you have a @boardname@, press ``|Download|`` to try it out on the device.
 
-## Button handling @fullscreen
+## Button handling
 
 When **A** is pressed, we test if the sprite is in the center or not.
 

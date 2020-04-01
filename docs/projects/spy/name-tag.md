@@ -6,7 +6,7 @@ Tell everyone who you are. Show you name on the LEDs.
 
 ![Name scrolling on the LEDs](/static/mb/projects/name-tag/name-tag.gif)
 
-## Step 1 @fullscreen
+## Step 1
 
 Add an event to repeat code ``||basic:forever||``.
 
@@ -26,7 +26,7 @@ basic.forever(function() {
 });
 ```
 
-## Step 3 @fullscreen
+## Step 3
 
 Look at the simulator and make sure it shows your name on the screen.
 
@@ -44,6 +44,6 @@ basic.forever(function() {
 })
 ```
 
-## Step 5 @fullscreen
+## Step 5
 
 If you have a @boardname@ connected, click ``|Download|`` and transfer your code to the @boardname@!

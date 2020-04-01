@@ -6,7 +6,7 @@
 
 Use the **radio** to send and receive messages with other @boardname@.
 
-## Handle buttons @fullscreen
+## Handle buttons
 
 Add an event to run code when ``||input:button A is pressed||``.
 
@@ -15,7 +15,7 @@ input.onButtonPressed(Button.A, function() {
 });
 ```
 
-## Sending a message @fullscreen
+## Sending a message
 
 Add code to ``||radio:send a string||`` over ``||radio:radio||`` when ``||input:button A is pressed||``. 
 Every @boardname@ nearby will receive this message.
@@ -47,7 +47,7 @@ radio.onReceivedString(function (receivedString) {
 })
 ```
 
-## Testing in the simulator @fullscreen
+## Testing in the simulator
 
 Press button **A** on the simulator, you will notice that a second @boardname@ appears (if your screen is too small, the simulator might decide not to show it). Try pressing **A** again and notice that the "Yo" message gets displayed on the other @boardname@.
 

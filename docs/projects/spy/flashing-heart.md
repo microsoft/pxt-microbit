@@ -7,7 +7,7 @@ Learn how to use the LEDs and make a flashing heart!
 
 ![Heart shape in the LEDs](/static/mb/projects/flashing-heart/sim.gif)
 
-## Step 1 @fullscreen
+## Step 1
 
 Put a ``||basic:show leds||`` in the ``||basic:forever||`` block and draw a heart.
 
@@ -22,7 +22,7 @@ basic.forever(function() {
 })
 ```
 
-## Step 2 @fullscreen
+## Step 2
 
 Place in another ``||basic:show leds||``. You can leave it blank and draw what you want.
 
@@ -43,12 +43,12 @@ basic.forever(function() {
 })
 ```
 
-## Step 3 @fullscreen
+## Step 3
 
 Look at the virtual @boardname@, you should see the heart and your drawing blink on the screen.
 
 ![Heart shape in the LEDs](/static/mb/projects/flashing-heart/show-leds.gif)
 
-## Step 4 @fullscreen
+## Step 4
 
 If you have a @boardname@ connected, click ``|Download|`` and transfer your code to the @boardname@!

@@ -7,7 +7,7 @@ Code the buttons on the @boardname@ to show that it's happy or sad.
 
 ![Pressing the A and B buttons](/static/mb/projects/smiley-buttons/sim.gif)
 
-## Step 1 @fullscreen
+## Step 1
 
 Place a ``||input:on button pressed||`` block to run code when button **A** is pressed.
 
@@ -16,7 +16,7 @@ input.onButtonPressed(Button.A, () => {
 });
 ```
 
-## Step 2 @fullscreen
+## Step 2
 
 Place a ``||basic:show leds||`` block inside ``||input:on button pressed||`` to display a smiley on the screen. Press the **A** button in the simulator to see the smiley.
 
@@ -32,7 +32,7 @@ input.onButtonPressed(Button.A, () => {
 });
 ```
 
-## Step 3 @fullscreen
+## Step 3
 
 Add ``||input:on button pressed||`` and ``||basic:show leds||`` blocks to display a frowny when button **B** is pressed.
 
@@ -48,7 +48,7 @@ input.onButtonPressed(Button.B, () => {
 });
 ```
 
-## Step 4 @fullscreen
+## Step 4
 
 Add a secret mode that happens when **A** and **B** are pressed together. For this case, add multiple ``||basic:show leds||`` blocks to create an animation.
 

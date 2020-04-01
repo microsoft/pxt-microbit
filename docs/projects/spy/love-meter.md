@@ -6,7 +6,7 @@ Make a **LOVE METER** machine, how sweet! The @boardname@ is feeling the love, t
 
 ![Love meter banner message](/static/mb/projects/love-meter/love-meter.gif)
 
-## Step 1 @fullscreen
+## Step 1
 
 Add an event to run code when ``||input:on pin 0 is pressed||``. Use ``P0`` from the list of pin inputs.
 

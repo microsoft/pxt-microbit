@@ -7,7 +7,7 @@ Let's turn the @boardname@ into a dice!
 
 ![A microbit dice](/static/mb/projects/dice.png)
 
-## Step 1 @fullscreen
+## Step 1
 
 We need 3 pieces of code: one to detect a throw (shake), another to pick a random number, and then one to show the number.
 
@@ -19,7 +19,7 @@ input.onGesture(Gesture.Shake, () => {
 })
 ```
 
-## Step 2 @fullscreen
+## Step 2
 
 Get a ``||basic:show number||`` block and place it inside the ``||input:on shake||`` block to display a number.
 
@@ -29,7 +29,7 @@ input.onGesture(Gesture.Shake, () => {
 })
 ```
 
-## Step 3 @fullscreen
+## Step 3
 
 Put a ``||Math:pick random||`` block in the ``||basic:show number||`` block to pick a random number.
 
@@ -39,7 +39,7 @@ input.onGesture(Gesture.Shake, () => {
 })
 ```
 
-## Step 4 @fullscreen
+## Step 4
 
 A typical dice shows values from `1` to `6`. So, in ``||Math:pick random||``, don't forget to choose the right minimum and maximum values!
 
