@@ -12,6 +12,7 @@
   "cardType": "tutorial"
 }
 ]
+```
 
 ## Sensors
 
