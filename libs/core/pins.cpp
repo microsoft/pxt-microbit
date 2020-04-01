@@ -298,7 +298,7 @@ namespace pins {
 
 
     MicroBitPin* pitchPin = NULL;
-    int pitchVolume = 64;
+    uint8_t pitchVolume = 64;
 
     /**
      * Set the pin used when using analog pitch or music.
