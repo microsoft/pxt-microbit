@@ -13,10 +13,9 @@ Make a variable ``||variables:x||`` and store the ``||input:acceleration x||`` v
 in the ``||basic:forever||`` loop.
 
 ```blocks
-let x = 0;
 basic.forever(function() {
     // @highlight
-    x = input.acceleration(Dimension.X);
+    let x = input.acceleration(Dimension.X);
 })
 ```
 
@@ -25,12 +24,10 @@ basic.forever(function() {
 Make another variable ``||variables:y||`` and store the ``||input:acceleration y||`` value.
 
 ```blocks
-let x = 0;
-let y = 0;
 basic.forever(function() {
-    x = input.acceleration(Dimension.X);
+    let x = input.acceleration(Dimension.X);
     // @highlight
-    y = input.acceleration(Dimension.Y);
+    let y = input.acceleration(Dimension.Y);
 })
 ```
 
@@ -40,11 +37,9 @@ Add a code to test ``||logic:if||`` the ``||Math:absolute value||`` of ``||varia
 If it is true, ``||basic:show an icon||`` that @boardname@ is not flat.
 
 ```blocks
-let x = 0;
-let y = 0;
 basic.forever(function() {
-    x = input.acceleration(Dimension.X);
-    y = input.acceleration(Dimension.Y);
+    let x = input.acceleration(Dimension.X);
+    let y = input.acceleration(Dimension.Y);
     if (Math.abs(x) > 32) {
         // @highlight
         basic.showIcon(IconNames.Sad)        
@@ -60,11 +55,9 @@ Add another test ``||logic:if||`` the ``||Math:absolute value||`` of ``||variabl
 If it is true, ``||basic:show an icon||`` that @boardname@ is not flat.
 
 ```blocks
-let x = 0;
-let y = 0;
 basic.forever(function() {
-    x = input.acceleration(Dimension.X);
-    y = input.acceleration(Dimension.Y);
+    let x = input.acceleration(Dimension.X);
+    let y = input.acceleration(Dimension.Y);
     if (Math.abs(x) > 32) {
         basic.showIcon(IconNames.Sad)        
     } else if (Math.abs(y) > 32) {
@@ -81,11 +74,9 @@ basic.forever(function() {
 The code under the ``||logic:else||`` will run if both acceleration ``x`` and ``y`` are small, which happens when the @boardname@ is laying flat. Add code to ``||basic:show a happy image||``.
 
 ```blocks
-let x = 0;
-let y = 0;
 basic.forever(function() {
-    x = input.acceleration(Dimension.X);
-    y = input.acceleration(Dimension.Y);
+    let x = input.acceleration(Dimension.X);
+    let y = input.acceleration(Dimension.Y);
     if (Math.abs(x) > 32) {
         basic.showIcon(IconNames.Sad)        
     } else if (Math.abs(y) > 32) {
