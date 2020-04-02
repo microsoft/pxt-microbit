@@ -116,13 +116,14 @@ namespace pxsim.pins {
         const ec = board().edgeConnectorState;
         const pins = ec.pins;
         const pin = pins.filter(pin => !!pin && pin.pitch)[0] || pins[0];
-        const pitchVolume = ec.pitchVolume;
+        const pitchVolume = ec.pitchVolume | 0;
         pin.mode = PinFlags.Analog | PinFlags.Output;
         if (frequency <= 0 || pitchVolume <= 0) {
             pin.value = 0;
             pin.period = 0;
         } else {
-            pin.value = pitchVolume << 2;
+            const v = 1 << (pitchVolume >> 5);
+            pin.value = v;
             pin.period = 1000000 / frequency;
         }
         runtime.queueDisplayUpdate();
