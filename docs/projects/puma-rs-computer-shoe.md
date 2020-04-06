@@ -6,7 +6,10 @@ In this project, we will recrate the shoe using a few @boardname@.
 
 ## What is the Puma RS Computer Shoe?
 
-https://youtu.be/iTPBLBGZmV0
+https://youtu.be/JmEQGYT2EFs
+
+* [Long Version Video (4min)](https://youtu.be/iTPBLBGZmV0)
+
 
 ## How did the shoe work?
 
