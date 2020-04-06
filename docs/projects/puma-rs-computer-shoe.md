@@ -53,6 +53,6 @@ For the anniversary of the shoe, Puma refreshed the hardware and reissued a few 
 
 ## Acknoledgements
 
-This activity was developed in collaboration with Charles Johnson, Global Director of Innovation at Puma.
+This activity was developed in collaboration with [Charles Johnson](https://www.linkedin.com/in/thecharliehaus), Global Director of Innovation at Puma.
 
 ![Puma logo](/static/mb/projects/puma-rs-computer-shoe/puma.png)
