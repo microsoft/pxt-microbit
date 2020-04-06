@@ -48,7 +48,7 @@ The project consists of 3 phases that collect data, calibrate, and measure dista
 * [Calibration](/projects/puma-rs-computer-shoe/calibration): analyze the data and identify the stride equation constants
 * [Measuring distance](/projects/puma-rs-computer-shoe/measuring-distance): build the shoe software that computes distance
 
-## The Reissued Modern Shoe
+## The reissued modern shoe
 
 For the 30th anniversary of the shoe, Puma reissued a limited number of RS Computer shoes updated with modern hardware.
 
