@@ -2,7 +2,7 @@
 
 namespace pxsim {
     export class DalBoard extends CoreBoard
-        implements RadioBoard {
+        implements RadioBoard, LightBoard {
         // state & update logic for component services
         ledMatrixState: LedMatrixState;
         edgeConnectorState: EdgeConnectorState;
@@ -13,8 +13,7 @@ namespace pxsim {
         lightSensorState: LightSensorState;
         buttonPairState: ButtonPairState;
         radioState: RadioState;
-        // TODO: not singletons
-        neopixelState: NeoPixelState;
+        lightState: pxt.Map<CommonNeoPixelState>;
         fileSystem: FileSystemState;
 
         // visual
@@ -25,6 +24,7 @@ namespace pxsim {
             super()
 
             // components
+            this.lightState = {};
             this.fileSystem = new FileSystemState();
             this.builtinParts["ledmatrix"] = this.ledMatrixState = new LedMatrixState(runtime);
             this.builtinParts["buttonpair"] = this.buttonPairState = new ButtonPairState({
@@ -88,7 +88,6 @@ namespace pxsim {
             this.builtinParts["thermometer"] = this.thermometerState = new ThermometerState();
             this.builtinParts["lightsensor"] = this.lightSensorState = new LightSensorState();
             this.builtinParts["compass"] = this.compassState = new CompassState();
-            this.builtinParts["neopixel"] = this.neopixelState = new NeoPixelState();
             this.builtinParts["microservo"] = this.edgeConnectorState;
 
             this.builtinVisuals["buttonpair"] = () => new visuals.ButtonPairView();
@@ -149,6 +148,19 @@ namespace pxsim {
             document.body.appendChild(this.view = this.viewHost.getView());
 
             return Promise.resolve();
+        }
+
+        tryGetNeopixelState(pinId: number): CommonNeoPixelState {
+            return this.lightState[pinId];
+        }
+
+        neopixelState(pinId: number): CommonNeoPixelState {
+            if (pinId === undefined) {
+                pinId = DAL.MICROBIT_ID_IO_P0;
+            }
+            let state = this.lightState[pinId];
+            if (!state) state = this.lightState[pinId] = new CommonNeoPixelState();
+            return state;
         }
 
         screenshotAsync(width?: number): Promise<ImageData> {
