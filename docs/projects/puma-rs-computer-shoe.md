@@ -2,22 +2,22 @@
 
 In 1986, Puma and Dr. Cavanagh from the University of Washington released the **RS Computer Shoe**, a computerized shoe that could measure the distance travelled and how many calories the runner had spent.
 
-In this project, we will recrate the shoe using a few @boardname@.
+In this project, we will recreate the shoe using two @boardname@s.
 
 ## What is the Puma RS Computer Shoe?
 
 https://youtu.be/JmEQGYT2EFs
 
-* [Long Version Video (4min)](https://youtu.be/iTPBLBGZmV0)
+* [Longer version of the video (4 min)](https://youtu.be/iTPBLBGZmV0)
 
 
 ## How did the shoe work?
 
-In today's world, one can easily use GPS to measure precisely the distance travelled. Back in the 80's, the engineers had to be more creative. At that time, they were able to build a shoe that could measure running time and steps from foot impact. They could count steps and time - just like in the @boardname@ step counter activity.
+In today's world, one can easily use GPS to measure precisely the distance travelled. Back in the 80's, engineers had to be more creative. At that time, they were able to build a shoe that could measure running time and steps from foot impact. They could count steps and time - just like in the @boardname@ step counter activity.
 
 ### How do you measure distance?
 
-To compute the distance, the engineers relied on the relationship between stride time and running speed (the algorithm is described in [US Patent 4,771,394](/static/mb/projects/puma-rs-computer-shoe/patent.pdf) starting on line 65, column 6). The faster you run, the faster your stride and the less time between foot strikes. The runner had to go through a calibration of the shoe and then it was able to estimate distance **without a GPS!**.
+To compute the distance, the engineers relied on the relationship between stride time and running speed (the algorithm is described in [US Patent 4,771,394](/static/mb/projects/puma-rs-computer-shoe/patent.pdf) starting on line 65, column 6). The faster you run, the faster your stride and the less time between foot strikes. The runner had to go through a calibration of the shoe and then it was able to estimate distance **without a GPS**!
 
 [![Screenshot of the US patent](/static/mb/projects/puma-rs-computer-shoe/uspatent.png)](/static/mb/projects/puma-rs-computer-shoe/patent.pdf)
 
@@ -42,19 +42,19 @@ There are actually many subtleties to this relationship (level of fitness, footw
 
 ## Let's do it
 
-The project is done in 3 phases. 
+The project consists of 3 phases that collect data, calibrate, and measure distance. 
 
 * [Measure the stride](/projects/puma-rs-computer-shoe/measuring-stride): collect data to determine the stride/speed relationship
-* [Calibration](/projects/puma-rs-computer-shoe/calibration): analyse the data and identify the stride equation constants
-* [Measuring distance](projects/puma-rs-computer-shoe/measuring-distance): build the shoe software that computes distance
+* [Calibration](/projects/puma-rs-computer-shoe/calibration): analyze the data and identify the stride equation constants
+* [Measuring distance](/projects/puma-rs-computer-shoe/measuring-distance): build the shoe software that computes distance
 
-## The Modern Shoe
+## The Reissued Modern Shoe
 
-For the anniversary of the shoe, Puma refreshed the hardware and reissued a few RS Computer Shoe.
+For the 30th anniversary of the shoe, Puma reissued a limited number of RS Computer shoes updated with modern hardware.
 
 ![The modern shoe](/static/mb/projects/puma-rs-computer-shoe/packaging.gif)
 
-## Acknoledgements
+## Acknowledgements
 
 This activity was developed in collaboration with [Charles Johnson](https://www.linkedin.com/in/thecharliehaus), Global Director of Innovation at Puma.
 
