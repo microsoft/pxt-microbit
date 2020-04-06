@@ -1,4 +1,6 @@
 /// <reference path="../node_modules/pxt-core/built/pxtsim.d.ts"/>
+/// <reference path="../libs/core/dal.d.ts"/>
+/// <reference path="../libs/core/enums.d.ts"/>
 
 namespace pxsim {
     export class DalBoard extends CoreBoard
@@ -92,12 +94,14 @@ namespace pxsim {
 
             this.builtinVisuals["buttonpair"] = () => new visuals.ButtonPairView();
             this.builtinVisuals["ledmatrix"] = () => new visuals.LedMatrixView();
-            this.builtinVisuals["neopixel"] = () => new visuals.NeoPixelView();
             this.builtinVisuals["microservo"] = () => new visuals.MicroServoView();
+
+            this.builtinParts["neopixel"] = (pin: Pin) => { return this.neopixelState(pin.id); };
+            this.builtinVisuals["neopixel"] = () => new visuals.NeoPixelView(pxsim.parsePinString);
+            this.builtinPartVisuals["neopixel"] = (xy: visuals.Coord) => visuals.mkNeoPixelPart(xy);
 
             this.builtinPartVisuals["buttonpair"] = (xy: visuals.Coord) => visuals.mkBtnSvg(xy);
             this.builtinPartVisuals["ledmatrix"] = (xy: visuals.Coord) => visuals.mkLedMatrixSvg(xy, 8, 8);
-            this.builtinPartVisuals["neopixel"] = (xy: visuals.Coord) => visuals.mkNeoPixelPart(xy);
             this.builtinPartVisuals["microservo"] = (xy: visuals.Coord) => visuals.mkMicroServoPart(xy);
         }
 
@@ -199,5 +203,16 @@ namespace pxsim {
 
     export function board(): DalBoard {
         return runtime.board as DalBoard;
+    }
+
+    export function parsePinString(gpioPin: string): Pin {
+        if (gpioPin == "*")
+            return board().edgeConnectorState.getPin(DAL.MICROBIT_ID_IO_P0);
+
+        const m = /^(Analog|Digital)Pin\.P(\d)+/.exec(gpioPin);
+        if (!m)
+            return undefined;
+        const pinNum = parseInt(m[2]);
+        return board().edgeConnectorState.pins[pinNum]
     }
 }
