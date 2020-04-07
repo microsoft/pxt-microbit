@@ -46,7 +46,7 @@ enum Melodies {
     Birthday,
     //% block="wedding" blockIdentity=music.builtInMelody
     Wedding,
-    //% block="funereal" blockIdentity=music.builtInMelody
+    //% block="funeral" blockIdentity=music.builtInMelody
     Funeral,
     //% block="punchline" blockIdentity=music.builtInMelody
     Punchline,
