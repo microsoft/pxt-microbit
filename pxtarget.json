@@ -299,6 +299,7 @@
         "enableTrace": true,
         "ignoreDocsErrors": true,
         "experiments": [
+            "autoWebUSBDownload",
             "allowPackageExtensions",
             "instructions",
             "accessibleBlocks",
