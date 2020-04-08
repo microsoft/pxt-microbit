@@ -30,7 +30,7 @@ pre-filled measurement data. Replace the **Distance**, **Time**, and **Steps** v
 Add or remove measurement rows depending on how much accuracy you want for your calibration.
 
 To put the template into your spreadsheet program, copy all the rows including the header of the sample template. Open a new worksheet and paste in the rows copied from here. Select the first column of the
-worksheet and use "Text to Columns" to split the date into seperate columns. Set the comma as the delimiter.
+worksheet and use "Text to Columns" to split the data into seperate columns. Set the comma as the delimiter.
 
 ### Sample template
 
