@@ -329,7 +329,7 @@ declare namespace input {
     //% blockId=device_get_magnetic_force block="magnetic force (µT)|%NAME" blockGap=8
     //% parts="compass"
     //% advanced=true shim=input::magneticForce
-    function magneticForce(dimension: Dimension): int32;
+    function magneticForce(dimension: Dimension): number;
 
     /**
      * Obsolete, compass calibration is automatic.
@@ -997,6 +997,12 @@ declare interface Buffer {
      */
     //% shim=BufferMethods::write
     write(dstOffset: int32, src: Buffer): void;
+
+    /**
+     * Compute k-bit FNV-1 non-cryptographic hash of the buffer.
+     */
+    //% shim=BufferMethods::hash
+    hash(bits: int32): uint32;
 }
 declare namespace control {
 

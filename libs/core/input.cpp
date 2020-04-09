@@ -354,12 +354,12 @@ namespace input {
             uBit.compass.calibrate();
         double d = 0;        
         switch (dimension) {
-            case Dimension::X: d = uBit.compass.getX() / 1000.0; break;
-            case Dimension::Y: d = uBit.compass.getY() / 1000.0; break;
-            case Dimension::Z: d = uBit.compass.getZ() / 1000.0; break;
-            case Dimension::Strength: d = uBit.compass.getFieldStrength() / 1000.0;
+            case Dimension::X: d = uBit.compass.getX(); break;
+            case Dimension::Y: d = uBit.compass.getY(); break;
+            case Dimension::Z: d = uBit.compass.getZ(); break;
+            case Dimension::Strength: d = uBit.compass.getFieldStrength() ; break;
         }
-        return fromDouble(d);
+        return fromDouble(d / 1000.0);
     }
 
     /**
