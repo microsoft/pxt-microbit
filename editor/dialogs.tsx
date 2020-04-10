@@ -1,56 +1,62 @@
 import * as React from "react";
 
-export function renderUsbPairDialog(firmwareUrl?: string): JSX.Element {
+export function renderUsbPairDialog(firmwareUrl?: string, failedOnce?: boolean): JSX.Element {
     const boardName = pxt.appTarget.appTheme.boardName || "???";
     const helpUrl = pxt.appTarget.appTheme.usbDocs;
-    return <div className="ui grid stackable">
-        <div className="column five wide firmware">
-            <div className="ui header">{lf("First time here?")}</div>
-            <strong className="ui small">{lf("You must have version 0249 or above of the firmware")}</strong>
-            <div className="image">
-                <img alt={lf("Comic rainbow updating micro:bit firmware")} className="ui image" src="./static/download/firmware.png" />
-            </div>
-            <a href={`${helpUrl}/webusb/troubleshoot`} target="_blank">{lf("Check your firmware version here and update if needed")}</a>
-        </div>
-        <div className="column eleven wide instructions">
-            <div className="ui grid">
-                <div className="row">
+    firmwareUrl = failedOnce && `${helpUrl}/webusb/troubleshoot`; // todo mo
+
+    const instructions = <div className="ui grid">
+        <div className="row">
+            <div className="column">
+                <div className="ui two column grid padded">
                     <div className="column">
-                        <div className="ui two column grid padded">
-                            <div className="column">
-                                <div className="ui">
-                                    <div className="image">
-                                        <img alt={lf("Comic connecting micro:bit to computer")} className="ui medium rounded image" src="./static/download/connect.png" />
-                                    </div>
-                                    <div className="content">
-                                        <div className="description">
-                                            <span className="ui purple circular label">1</span>
-                                            <strong>{lf("Connect the {0} to your computer with a USB cable", boardName)}</strong>
-                                            <br />
-                                            <span className="ui small">{lf("Use the microUSB port on the top of the {0}", boardName)}</span>
-                                        </div>
-                                    </div>
+                        <div className="ui">
+                            <div className="image">
+                                <img alt={lf("Comic connecting micro:bit to computer")} className="ui medium rounded image" src="./static/download/connect.png" />
+                            </div>
+                            <div className="content">
+                                <div className="description">
+                                    <span className="ui purple circular label">1</span>
+                                    <strong>{lf("Connect the {0} to your computer with a USB cable", boardName)}</strong>
+                                    <br />
+                                    <span className="ui small">{lf("Use the microUSB port on the top of the {0}", boardName)}</span>
                                 </div>
                             </div>
-                            <div className="column">
-                                <div className="ui">
-                                    <div className="image">
-                                        <img alt={lf("Comic of successful micro:bit connection")} className="ui medium rounded image" src="./static/download/pair.png" />
-                                    </div>
-                                    <div className="content">
-                                        <div className="description">
-                                            <span className="ui purple circular label">2</span>
-                                            <strong>{lf("Pair your {0}", boardName)}</strong>
-                                            <br />
-                                            <span className="ui small">{lf("Click 'Pair device' below and select BBC micro:bit CMSIS-DAP or DAPLink CMSIS-DAP from the list")}</span>
-                                        </div>
-                                    </div>
+                        </div>
+                    </div>
+                    <div className="column">
+                        <div className="ui">
+                            <div className="image">
+                                <img alt={lf("Comic of successful micro:bit connection")} className="ui medium rounded image" src="./static/download/pair.png" />
+                            </div>
+                            <div className="content">
+                                <div className="description">
+                                    <span className="ui purple circular label">2</span>
+                                    <strong>{lf("Pair your {0}", boardName)}</strong>
+                                    <br />
+                                    <span className="ui small">{lf("Click 'Pair device' below and select BBC micro:bit CMSIS-DAP or DAPLink CMSIS-DAP from the list")}</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>;
+
+    if (!firmwareUrl) return instructions;
+
+    return <div className="ui grid stackable">
+        <div className="column five wide firmware">
+            <div className="ui header">{lf("Update Firmware")}</div>
+            <strong className="ui small">{lf("You must have version 0249 or above of the firmware")}</strong>
+            <div className="image">
+                <img alt={lf("Comic rainbow updating micro:bit firmware")} className="ui image" src="./static/download/firmware.png" />
+            </div>
+            <a href={firmwareUrl} target="_blank" ref="nofollow noopened">{lf("Check your firmware version here and update if needed")}</a>
+        </div>}
+        <div className="column eleven wide instructions">
+            {instructions}
         </div>
     </div>;
 }
