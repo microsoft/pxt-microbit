@@ -1,6 +1,6 @@
 import * as React from "react";
 
-export function renderUsbPairDialog(): JSX.Element {
+export function renderUsbPairDialog(firmwareUrl?: string): JSX.Element {
     const boardName = pxt.appTarget.appTheme.boardName || "???";
     const helpUrl = pxt.appTarget.appTheme.usbDocs;
     return <div className="ui grid stackable">
