@@ -51,6 +51,6 @@ pxt.editor.initExtensionsAsync = function (opts: pxt.editor.ExtensionOptions): P
     res.mkPacketIOWrapper = flash.mkPacketIOWrapper;
     res.blocklyPatch = patch.patchBlocks;
     res.renderBrowserDownloadInstructions = dialogs.renderBrowserDownloadInstructions;
-    res.webUsbPairDialogAsync = dialogs.webUsbPairDialogAsync;
+    res.renderUsbPairDialog = dialogs.renderUsbPairDialog;
     return Promise.resolve<pxt.editor.ExtensionResult>(res);
 }
