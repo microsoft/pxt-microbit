@@ -53,8 +53,8 @@ export function renderUsbPairDialog(firmwareUrl?: string, failedOnce?: boolean):
             <div className="image">
                 <img alt={lf("Comic rainbow updating micro:bit firmware")} className="ui image" src="./static/download/firmware.png" />
             </div>
-            <a href={firmwareUrl} target="_blank" ref="nofollow noopened">{lf("Check your firmware version here and update if needed")}</a>
-        </div>}
+            <a href={firmwareUrl} target="_blank">{lf("Check your firmware version here and update if needed")}</a>
+        </div>
         <div className="column eleven wide instructions">
             {instructions}
         </div>
