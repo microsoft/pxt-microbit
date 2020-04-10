@@ -2,7 +2,7 @@ import * as React from "react";
 
 export function webUsbPairDialogAsync(confirmAsync: (options: any) => Promise<number>): Promise<number> {
     const boardName = pxt.appTarget.appTheme.boardName || "???";
-    const docUrl = pxt.appTarget.appTheme.usbDocs;
+    const helpUrl = pxt.appTarget.appTheme.usbDocs;
     const jsx =
         <div className="ui grid stackable">
             <div className="column five wide firmware">
@@ -11,7 +11,7 @@ export function webUsbPairDialogAsync(confirmAsync: (options: any) => Promise<nu
                 <div className="image">
                     <img alt={lf("Comic rainbow updating micro:bit firmware")} className="ui image" src="./static/download/firmware.png" />
                 </div>
-                <a href={`${docUrl}/webusb/troubleshoot`} target="_blank">{lf("Check your firmware version here and update if needed")}</a>
+                <a href={`${helpUrl}/webusb/troubleshoot`} target="_blank">{lf("Check your firmware version here and update if needed")}</a>
             </div>
             <div className="column eleven wide instructions">
                 <div className="ui grid">
@@ -55,16 +55,6 @@ export function webUsbPairDialogAsync(confirmAsync: (options: any) => Promise<nu
             </div>
         </div>;
 
-    const buttons: any[] = [];
-    if (docUrl) {
-        buttons.push({
-            label: lf("Help"),
-            icon: "help",
-            className: "lightgrey",
-            url: `${docUrl}/webusb`
-        });
-    }
-
     return confirmAsync({
         header: lf("Pair device for one-click downloads"),
         jsx,
@@ -72,8 +62,8 @@ export function webUsbPairDialogAsync(confirmAsync: (options: any) => Promise<nu
         agreeLbl: lf("Pair device"),
         agreeIcon: "usb",
         hideCancel: true,
-        className: 'downloaddialog',
-        buttons
+        helpUrl,
+        className: 'downloaddialog'
     });
 }
 
@@ -86,7 +76,7 @@ export function showUploadInstructionsAsync(fn: string, url: string, confirmAsyn
     // Data URIs cannot be used for navigation, for scripting, or to populate frame or iframe elements"
     const userDownload = pxt.BrowserUtils.isBrowserDownloadWithinUserContext();
     const downloadAgain = !pxt.BrowserUtils.isIE() && !pxt.BrowserUtils.isEdge();
-    const docUrl = pxt.appTarget.appTheme.usbDocs;
+    const helpUrl = pxt.appTarget.appTheme.usbDocs;
 
     const body =
         userDownload
@@ -148,15 +138,6 @@ export function showUploadInstructionsAsync(fn: string, url: string, confirmAsyn
         });
     }
 
-    if (docUrl) {
-        buttons.push({
-            label: lf("Help"),
-            icon: "help",
-            className: "lightgrey",
-            url: docUrl
-        });
-    }
-
     return confirmAsync({
         header: lf("Download to your {0}", pxt.appTarget.appTheme.boardName),
         body,
@@ -165,6 +146,7 @@ export function showUploadInstructionsAsync(fn: string, url: string, confirmAsyn
         hideCancel: true,
         hideAgree: true,
         className: 'downloaddialog',
+        helpUrl,
         buttons
         //timeout: 20000
     }).then(() => { });
