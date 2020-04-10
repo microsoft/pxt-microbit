@@ -47,13 +47,13 @@ export function renderUsbPairDialog(firmwareUrl?: string, failedOnce?: boolean):
     if (!firmwareUrl) return instructions;
 
     return <div className="ui grid stackable">
-        <div className="column five wide firmware">
-            <div className="ui header">{lf("Update Firmware")}</div>
+        <div className="column five wide firmware orange">
+            <div className="ui header inverted">{lf("Update Firmware")}</div>
             <strong className="ui small">{lf("You must have version 0249 or above of the firmware")}</strong>
             <div className="image">
                 <img alt={lf("Comic rainbow updating micro:bit firmware")} className="ui image" src="./static/download/firmware.png" />
             </div>
-            <a href={firmwareUrl} target="_blank">{lf("Check your firmware version here and update if needed")}</a>
+            <a className="ui button" role="button" href={firmwareUrl} target="_blank">{lf("Check firmware")}</a>
         </div>
         <div className="column eleven wide instructions">
             {instructions}
