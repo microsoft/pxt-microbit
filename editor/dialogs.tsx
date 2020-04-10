@@ -67,23 +67,10 @@ export function webUsbPairDialogAsync(confirmAsync: (options: any) => Promise<nu
     });
 }
 
-export function showUploadInstructionsAsync(fn: string, url: string, confirmAsync: (options: any) => Promise<number>) {
-    const boardName = pxt.appTarget.appTheme.boardName || "???";
+export function renderBrowserDownloadInstructions(): JSX.Element {
+    const boardName = pxt.appTarget.appTheme.boardName || lf("device");
     const boardDriveName = pxt.appTarget.appTheme.driveDisplayName || pxt.appTarget.compile.driveName || "???";
-
-    // https://msdn.microsoft.com/en-us/library/cc848897.aspx
-    // "For security reasons, data URIs are restricted to downloaded resources.
-    // Data URIs cannot be used for navigation, for scripting, or to populate frame or iframe elements"
-    const userDownload = pxt.BrowserUtils.isBrowserDownloadWithinUserContext();
-    const downloadAgain = !pxt.BrowserUtils.isIE() && !pxt.BrowserUtils.isEdge();
-    const helpUrl = pxt.appTarget.appTheme.usbDocs;
-
-    const body =
-        userDownload
-            ? lf("Click 'Download' to open the {0} app.", pxt.appTarget.appTheme.boardName || "")
-            : undefined;
-    const jsx = !userDownload ?
-        <div className="ui grid stackable upload">
+    return <div className="ui grid stackable upload">
             <div className="column sixteen wide instructions">
                 <div className="ui grid">
                     <div className="row">
@@ -124,32 +111,7 @@ export function showUploadInstructionsAsync(fn: string, url: string, confirmAsyn
                     </div>
                 </div>
             </div>
-        </div> : undefined;
-
-    const buttons: any[] = [];
-
-    if (downloadAgain) {
-        buttons.push({
-            label: userDownload ? lf("Download") : fn,
-            icon: "download",
-            class: `${userDownload ? "primary" : "lightgrey"}`,
-            url,
-            fileName: fn
-        });
-    }
-
-    return confirmAsync({
-        header: lf("Download to your {0}", pxt.appTarget.appTheme.boardName),
-        body,
-        jsx,
-        hasCloseIcon: true,
-        hideCancel: true,
-        hideAgree: true,
-        className: 'downloaddialog',
-        helpUrl,
-        buttons
-        //timeout: 20000
-    }).then(() => { });
+        </div>;
 }
 
 export function cantImportAsync(project: pxt.editor.IProjectView) {
