@@ -707,6 +707,8 @@ path.sim-board {
             const af = 8 / 1023;
             const s = 1 - Math.min(0.1, Math.pow(Math.max(Math.abs(x), Math.abs(y)) / 1023, 2) / 35);
 
+            acc.updateEnvironmentGlobals();
+
             // fix top parent and apply style to it
             const el = this.findParentElement();
             el.style.transform = `perspective(30em) rotateX(${y * af}deg) rotateY(${x * af}deg) scale(${s}, ${s})`
