@@ -506,6 +506,8 @@ path.sim-board {
                     fill: `url(#${gid})`
                 });
                 this.thermometerText = svg.child(this.g, "text", { class: 'sim-text', x: 58, y: 130 }) as SVGTextElement;
+                if (this.props.runtime)
+                    this.props.runtime.environmentGlobals["temperature"] = state.thermometerState.temperature;
                 this.updateTheme();
 
                 let pt = this.element.createSVGPoint();
@@ -582,6 +584,8 @@ path.sim-board {
             if (txt != this.headText.textContent) {
                 svg.rotateElement(this.head, xc, yc, state.compassState.heading + 180);
                 this.headText.textContent = txt;
+                if (this.props.runtime)
+                    this.props.runtime.environmentGlobals["heading"] = state.compassState.heading;
             }
         }
 
