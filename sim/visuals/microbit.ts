@@ -412,7 +412,7 @@ path.sim-board {
             this.updateButtonAB();
             this.updateGestures();
 
-            if (!runtime || runtime.dead) U.addClass(this.element, "grayscale");
+            if (!this.props.runtime || this.props.runtime.dead) U.addClass(this.element, "grayscale");
             else U.removeClass(this.element, "grayscale");
         }
 
@@ -667,6 +667,8 @@ path.sim-board {
                         }
                     });
                 this.lightLevelText = svg.child(this.g, "text", { x: 85, y: cy + r - 5, text: '', class: 'sim-text' }) as SVGTextElement;
+                if (this.props.runtime)
+                    this.props.runtime.environmentGlobals["light"] = state.lightSensorState.lightLevel;
                 this.updateTheme();
 
                 accessibility.makeFocusable(this.lightLevelButton);
