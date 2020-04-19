@@ -41,21 +41,18 @@ namespace pxsim.input {
 
     export function rotation(kind: number): number {
         const b = board().accelerometerState;
-        b.accelerometer.activate();
         const acc = b.accelerometer;
-        const x = acc.getX(MicroBitCoordinateSystem.NORTH_EAST_DOWN);
-        const y = acc.getY(MicroBitCoordinateSystem.NORTH_EAST_DOWN);
-        const z = acc.getZ(MicroBitCoordinateSystem.NORTH_EAST_DOWN);
-
-        const roll = Math.atan2(y, z);
-        const pitch = Math.atan(-x / (y * Math.sin(roll) + z * Math.cos(roll)));
-
-        let r = 0;
         switch (kind) {
-            case 0: r = pitch; break;
-            case 1: r = roll; break;
+            case 0: {
+                acc.activate(AccelerometerFlag.Pitch);
+                return acc.getPitch(); 
+            }
+            case 1: {
+                acc.activate(AccelerometerFlag.Roll);
+                return acc.getRoll(); 
+            }
+            default: return 0;
         }
-        return Math.floor(r / Math.PI * 180);
     }
 
     export function setAccelerometerRange(range: number) {
@@ -120,7 +117,9 @@ namespace pxsim {
         X = 1,
         Y = 1 << 1,
         Z = 1 << 2,
-        Strength = 1 << 3
+        Strength = 1 << 3,
+        Pitch = 1 << 4,
+        Roll = 1 << 5
     }
 
     export class Accelerometer {
@@ -186,6 +185,10 @@ namespace pxsim {
                     this.runtime.environmentGlobals["acc.z"] = this.sample.z;
                 if (this.flags & AccelerometerFlag.Strength)
                     this.runtime.environmentGlobals["acc.strength"] = Math.sqrt(this.instantaneousAccelerationSquared());
+                if (this.flags & AccelerometerFlag.Pitch)
+                    this.runtime.environmentGlobals["acc.pitch"] = this.getPitch();
+                if (this.flags & AccelerometerFlag.Roll)
+                    this.runtime.environmentGlobals["acc.roll"] = this.getRoll();
             }
         }
 
