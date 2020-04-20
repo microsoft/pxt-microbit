@@ -68,7 +68,7 @@ input.onButtonPressed(Button.B, function () {
 
 ## Step 6
 
-Compute the ``||variables:score||`` of the game as the ``||math:absolute value||`` of the ``||math:difference||`` of ``||variables:elapsed||`` time from 7 seconds, 7000 milli seconds.
+Compute the ``||variables:score||`` of the game as the ``||math:absolute value||`` of the ``||math:difference||`` of ``||variables:elapsed||`` time from 7 seconds, which is 7000 milliseconds.
 
 ```blocks
 let elapsed = 0
