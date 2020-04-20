@@ -178,17 +178,17 @@ namespace pxsim {
             // update debugger
             if (this.isActive) {
                 if (this.flags & AccelerometerFlag.X)
-                    this.runtime.environmentGlobals["acc.x"] = this.sample.x;
+                    this.runtime.environmentGlobals[pxsim.localization.lf("acceleration.x")] = this.sample.x;
                 if (this.flags & AccelerometerFlag.Y)
-                    this.runtime.environmentGlobals["acc.y"] = this.sample.y;
+                    this.runtime.environmentGlobals[pxsim.localization.lf("acceleration.y")] = this.sample.y;
                 if (this.flags & AccelerometerFlag.Z)
-                    this.runtime.environmentGlobals["acc.z"] = this.sample.z;
+                    this.runtime.environmentGlobals[pxsim.localization.lf("acceleration.z")] = this.sample.z;
                 if (this.flags & AccelerometerFlag.Strength)
-                    this.runtime.environmentGlobals["acc.strength"] = Math.sqrt(this.instantaneousAccelerationSquared());
+                    this.runtime.environmentGlobals[pxsim.localization.lf("acceleration.strength")] = Math.sqrt(this.instantaneousAccelerationSquared());
                 if (this.flags & AccelerometerFlag.Pitch)
-                    this.runtime.environmentGlobals["acc.pitch"] = this.getPitch();
+                    this.runtime.environmentGlobals[pxsim.localization.lf("acceleration.pitch")] = this.getPitch();
                 if (this.flags & AccelerometerFlag.Roll)
-                    this.runtime.environmentGlobals["acc.roll"] = this.getRoll();
+                    this.runtime.environmentGlobals[pxsim.localization.lf("acceleration.roll")] = this.getRoll();
             }
         }
 

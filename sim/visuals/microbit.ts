@@ -507,7 +507,7 @@ path.sim-board {
                 });
                 this.thermometerText = svg.child(this.g, "text", { class: 'sim-text', x: 58, y: 130 }) as SVGTextElement;
                 if (this.props.runtime)
-                    this.props.runtime.environmentGlobals["temperature"] = state.thermometerState.temperature;
+                    this.props.runtime.environmentGlobals[pxsim.localization.lf("temperature")] = state.thermometerState.temperature;
                 this.updateTheme();
 
                 let pt = this.element.createSVGPoint();
@@ -585,7 +585,7 @@ path.sim-board {
                 svg.rotateElement(this.head, xc, yc, state.compassState.heading + 180);
                 this.headText.textContent = txt;
                 if (this.props.runtime)
-                    this.props.runtime.environmentGlobals["heading"] = state.compassState.heading;
+                    this.props.runtime.environmentGlobals[pxsim.localization.lf("heading")] = state.compassState.heading;
             }
         }
 
@@ -672,7 +672,7 @@ path.sim-board {
                     });
                 this.lightLevelText = svg.child(this.g, "text", { x: 85, y: cy + r - 5, text: '', class: 'sim-text' }) as SVGTextElement;
                 if (this.props.runtime)
-                    this.props.runtime.environmentGlobals["light"] = state.lightSensorState.lightLevel;
+                    this.props.runtime.environmentGlobals[pxsim.localization.lf("lightLevel")] = state.lightSensorState.lightLevel;
                 this.updateTheme();
 
                 accessibility.makeFocusable(this.lightLevelButton);
