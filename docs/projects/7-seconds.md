@@ -59,6 +59,7 @@ input.onButtonPressed(Button.B, function () {
 Compute the elapsed time as ``||input:running time||`` ``||math:minus||`` ``||variables:start||`` and store it into a new variable ``||variables:elapsed||``.
 
 ```blocks
+let start = 0
 let elapsed = 0
 input.onButtonPressed(Button.B, function () {
     // @highlight
@@ -71,6 +72,7 @@ input.onButtonPressed(Button.B, function () {
 Compute the ``||variables:score||`` of the game as the ``||math:absolute value||`` of the ``||math:difference||`` of ``||variables:elapsed||`` time from 7 seconds, which is 7000 milliseconds.
 
 ```blocks
+let start = 0
 let elapsed = 0
 let score = 0
 input.onButtonPressed(Button.B, function () {
@@ -85,6 +87,7 @@ input.onButtonPressed(Button.B, function () {
 Display the score on the screen and your game is ready!
 
 ```blocks
+let start = 0
 let elapsed = 0
 let score = 0
 input.onButtonPressed(Button.B, function () {
