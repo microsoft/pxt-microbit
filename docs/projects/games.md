@@ -21,6 +21,12 @@ Fun games to build with your @boardname@.
   "imageUrl": "/static/mb/projects/coin-flipper.png",
   "cardType": "tutorial"
 }, {
+  "name": "7 seconds",
+  "url":"/projects/7-seconds",
+  "description": "Press a button after exactly 7 seconds.",
+  "imageUrl": "/static/mb/projects/7-seconds.png",
+  "cardType": "tutorial"
+}, {
   "name": "Hot Potato",
   "url":"/projects/hot-potato",
   "description": "Toss the potato around before time is up and you're caught holding it.",
