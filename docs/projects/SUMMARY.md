@@ -20,6 +20,7 @@
 * [Games](/projects/games)
   * [Rock Paper Scissors](/projects/rock-paper-scissors)
   * [Coin Flipper](/projects/coin-flipper)
+  * [7 seconds](/projects/7-seconds)
   * [Hot Potato](/projects/hot-potato)
   * [Heads Guess!](/projects/heads-guess)
   * [Reaction Time](/projects/reaction-time)

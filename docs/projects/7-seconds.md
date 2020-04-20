@@ -19,7 +19,7 @@ input.onButtonPressed(Button.A, function () {
 ## Step 2
 
 We need to remember the time when the button was pressed so that we can compute the elapsed time later on.
-Add code to store the ``||input:running time||`` in a ``||variables:start|| variable.
+Add code to store the ``||input:running time||`` in a ``||variables:start||`` variable.
 
 ```blocks
 let start = 0
@@ -59,6 +59,7 @@ Compute the elapsed time as ``||input:running time||`` ``||math:minus||`` ``||va
 ```blocks
 let elapsed = 0
 input.onButtonPressed(Button.B, function () {
+    // @highlight
     elapsed = input.runningTime() - start
 })
 ```
@@ -72,6 +73,7 @@ let elapsed = 0
 let score = 0
 input.onButtonPressed(Button.B, function () {
     elapsed = input.runningTime() - start
+    // @highlight
     score = Math.abs(elapsed - 7000)
 })
 ```
@@ -86,6 +88,7 @@ let score = 0
 input.onButtonPressed(Button.B, function () {
     elapsed = input.runningTime() - start
     score = Math.abs(elapsed - 7000)
+    // @highlight
     basic.showNumber(score)
 })
 ```
