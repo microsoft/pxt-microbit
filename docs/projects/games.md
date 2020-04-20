@@ -25,7 +25,8 @@ Fun games to build with your @boardname@.
   "url":"/projects/7-seconds",
   "description": "Press a button after exactly 7 seconds.",
   "imageUrl": "/static/mb/projects/7-seconds.png",
-  "cardType": "tutorial"
+  "cardType": "tutorial",
+  "youTubeId": "LINr5wa4okg"
 }, {
   "name": "Hot Potato",
   "url":"/projects/hot-potato",
