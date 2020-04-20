@@ -19,7 +19,8 @@ Fun games to build with your @boardname@.
   "url":"/projects/coin-flipper",
   "description": "Guess the coin toss and see if you're lucky.",
   "imageUrl": "/static/mb/projects/coin-flipper.png",
-  "cardType": "tutorial"
+  "cardType": "tutorial",
+  "youTubeId": "678ATmGGlvk"
 }, {
   "name": "7 seconds",
   "url":"/projects/7-seconds",
