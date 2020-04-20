@@ -120,6 +120,8 @@
         "textBlocks": true,
         "listsBlocks": true,
         "functionBlocks": true,
+        "breakBlock": true,
+        "continueBlock": true,
         "functionsOptions": {
             "useNewFunctions": true,
             "extraFunctionEditorTypes": [
