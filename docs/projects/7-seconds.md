@@ -4,6 +4,8 @@
 
 The goal of this game is press a button after **exactly** 7 seconds!
 
+![A micro:bit looking at a 7 second stopwatch](/static/mb/projects/7-seconds.png)
+
 This game is inspired from the [flipping panckakes game](https://www.elecfreaks.com/store/blog/post/flipping-pancakes-microbit-game.html).
 
 ## Step 1
