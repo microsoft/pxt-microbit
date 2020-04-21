@@ -514,7 +514,8 @@ declare namespace led {
     //% blockId=device_point_brightness block="point|x %x|y %y brightness"
     //% parts="ledmatrix"
     //% x.min=0 x.max=4 y.min=0 y.max=4
-    //% x.fieldOptions.precision=1 y.fieldOptions.precision=1 shim=led::pointBrightness
+    //% x.fieldOptions.precision=1 y.fieldOptions.precision=1
+    //% advanced=true shim=led::pointBrightness
     function pointBrightness(x: int32, y: int32): int32;
 
     /**

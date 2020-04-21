@@ -71,6 +71,7 @@ namespace led {
     //% parts="ledmatrix"
     //% x.min=0 x.max=4 y.min=0 y.max=4
     //% x.fieldOptions.precision=1 y.fieldOptions.precision=1
+    //% advanced=true
     int pointBrightness(int x, int y) {
       return uBit.display.image.getPixelValue(x, y);
     }
