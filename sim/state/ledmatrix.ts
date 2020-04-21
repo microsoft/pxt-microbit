@@ -330,7 +330,11 @@ namespace pxsim.led {
     }
 
     export function point(x: number, y: number): boolean {
-        return !!board().ledMatrixState.image.get(x, y);
+        return !!pointBrightness(x, y);
+    }
+
+    export function pointBrightness(x: number, y: number): number {
+        return board().ledMatrixState.image.get(x | 0, y | 0);
     }
 
     export function brightness(): number {

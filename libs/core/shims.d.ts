@@ -518,6 +518,18 @@ declare namespace led {
     function point(x: int32, y: int32): boolean;
 
     /**
+     * Get the brightness state of the specified LED using x, y coordinates. (0,0) is upper left.
+     * @param x the horizontal coordinate of the LED
+     * @param y the vertical coordinate of the LED
+     */
+    //% help=led/point-brightness weight=76
+    //% blockId=device_point_brightness block="point|x %x|y %y brightness"
+    //% parts="ledmatrix"
+    //% x.min=0 x.max=4 y.min=0 y.max=4
+    //% x.fieldOptions.precision=1 y.fieldOptions.precision=1 shim=led::pointBrightness
+    function pointBrightness(x: int32, y: int32): int32;
+
+    /**
      * Get the screen brightness from 0 (off) to 255 (full bright).
      */
     //% help=led/brightness weight=60

@@ -319,6 +319,7 @@
   "led.plotBarGraph|block": "plot bar graph of %value up to %high",
   "led.plotBrightness|block": "plot|x %x|y %y|brightness %brightness",
   "led.plot|block": "plot|x %x|y %y",
+  "led.pointBrightness|block": "point|x %x|y %y brightness",
   "led.point|block": "point|x %x|y %y",
   "led.setBrightness|block": "set brightness %value",
   "led.setDisplayMode|block": "set display mode $mode",
