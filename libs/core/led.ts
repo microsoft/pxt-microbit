@@ -2,7 +2,20 @@
  * Control of the LED screen.
  */
 //% color=#5C2D91 weight=101 icon="\uf205"
-    namespace led {
+namespace led {
+    /**
+     * Get the on/off state of the specified LED using x, y coordinates. (0,0) is upper left.
+     * @param x the horizontal coordinate of the LED
+     * @param y the vertical coordinate of the LED
+     */
+    //% help=led/point weight=76
+    //% blockId=device_point block="point|x %x|y %y"
+    //% parts="ledmatrix"
+    //% x.min=0 x.max=4 y.min=0 y.max=4
+    //% x.fieldOptions.precision=1 y.fieldOptions.precision=1
+    export function point(x: number, y: number): boolean {
+        return led.pointBrightness(x, y) > 0;
+    }
 
     // what's the current high value
     let barGraphHigh = 0;

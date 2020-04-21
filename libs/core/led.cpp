@@ -62,21 +62,6 @@ namespace led {
     }
 
     /**
-     * Get the on/off state of the specified LED using x, y coordinates. (0,0) is upper left.
-     * @param x the horizontal coordinate of the LED
-     * @param y the vertical coordinate of the LED
-     */
-    //% help=led/point weight=76
-    //% blockId=device_point block="point|x %x|y %y"
-    //% parts="ledmatrix"
-    //% x.min=0 x.max=4 y.min=0 y.max=4
-    //% x.fieldOptions.precision=1 y.fieldOptions.precision=1
-    bool point(int x, int y) {
-      int pix = uBit.display.image.getPixelValue(x, y);
-      return pix > 0;
-    }
-
-    /**
      * Get the brightness state of the specified LED using x, y coordinates. (0,0) is upper left.
      * @param x the horizontal coordinate of the LED
      * @param y the vertical coordinate of the LED
