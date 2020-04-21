@@ -24,6 +24,7 @@
   * [Hot Potato](/projects/hot-potato)
   * [Heads Guess!](/projects/heads-guess)
   * [Reaction Time](/projects/reaction-time)
+  * [Tug-Of-LED](/projects/tug-of-led)
   * [Magic Button Trick](/projects/magic-button-trick)
   * [Snap the dot](/projects/snap-the-dot)
   * [Salute!](/projects/salute)
