@@ -5,6 +5,8 @@ the relationship between speed and stride. In this experiment, the runner
 needs to run a distance at various speeds with a constant stride.
 On each run, the @boardname@ will measure the running time and the number of foot strikes.
 
+https://youtu.be/hAyxRNvlzRE
+
 ## Find a running track!
 
 Find a location where you can run at least 20m at a constant pace. A good example would be a run between the free-throw areas on a basketball court. It is important that the runner is able to enter, run through, and leave the track at a constant speed.
