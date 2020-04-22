@@ -83,7 +83,7 @@ void showImage(Image sprite, int xOffset, int interval = 400) {
 //% parts="ledmatrix"
 void plotFrame(Image i, int xOffset) {
     // TODO showImage() used in original implementation
-    plotImage(i, xOffset * 5);
+    plotImage(i, xOffset * i->img->height);
 }
 
 /**
@@ -178,6 +178,6 @@ bool pixel(Image i, int x, int y) {
 //% weight=70 help=images/show-frame
 //% parts="ledmatrix"
 void showFrame(Image i, int frame, int interval = 400) {
-    showImage(i, frame * 5, interval);
+    showImage(i, frame * i->img->height, interval);
 }
 } // namespace ImageMethods
