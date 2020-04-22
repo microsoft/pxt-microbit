@@ -86,7 +86,7 @@ namespace pxsim {
     }
 
     export function createImageFromBuffer(data: number[]): Image {
-        return new Image(data.length / 5, data);
+        return new Image((data.length / 5) | 0, data);
     }
 
     export function createImageFromString(text: string): Image {
