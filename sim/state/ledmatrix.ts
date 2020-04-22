@@ -178,7 +178,7 @@ namespace pxsim.ImageMethods {
 
     export function height(leds: Image): number {
         pxtrt.nullCheck(leds)
-        return Image.height;
+        return leds.height;
     }
 
     export function width(leds: Image): number {
@@ -187,11 +187,11 @@ namespace pxsim.ImageMethods {
     }
 
     export function plotFrame(leds: Image, frame: number) {
-        ImageMethods.plotImage(leds, frame * Image.height);
+        ImageMethods.plotImage(leds, frame * leds.height);
     }
 
     export function showFrame(leds: Image, frame: number, interval: number) {
-        ImageMethods.showImage(leds, frame * Image.height, interval);
+        ImageMethods.showImage(leds, frame * leds.height, interval);
     }
 
     export function pixel(leds: Image, x: number, y: number): number {
