@@ -19,16 +19,17 @@ namespace pxsim {
     }
 
     export class Image extends RefObject {
-        public static height: number = 5;
+        public height: number;
         public width: number;
         public data: number[];
         constructor(width: number, data: number[]) {
             super();
             this.width = width;
             this.data = data;
+            this.height = (this.data.length / this.width) | 0;
         }
         public print() {
-            console.debug(`Image id:${this.id} size:${this.width}x${Image.height}`)
+            console.debug(`Image id:${this.id} size:${this.width}x${this.height}`)
         }
         public get(x: number, y: number): number {
             x = x >> 0;
@@ -47,7 +48,7 @@ namespace pxsim {
             length = length >> 0;
             xTargetIndex = xTargetIndex >> 0;
             for (let x = 0; x < length; x++) {
-                for (let y = 0; y < 5; y++) {
+                for (let y = 0; y < this.height; y++) {
                     let value = this.get(xSrcIndex + x, y);
                     target.set(xTargetIndex + x, y, value);
                 }
@@ -56,14 +57,14 @@ namespace pxsim {
         public shiftLeft(cols: number) {
             cols = cols >> 0;
             for (let x = 0; x < this.width; ++x)
-                for (let y = 0; y < 5; ++y)
+                for (let y = 0; y < this.height; ++y)
                     this.set(x, y, x < this.width - cols ? this.get(x + cols, y) : 0);
         }
 
         public shiftRight(cols: number) {
             cols = cols >> 0;
             for (let x = this.width - 1; x >= 0; --x)
-                for (let y = 0; y < 5; ++y)
+                for (let y = 0; y < this.height; ++y)
                     this.set(x, y, x >= cols ? this.get(x - cols, y) : 0);
         }
 
