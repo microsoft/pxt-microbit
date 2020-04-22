@@ -32,21 +32,21 @@ namespace pxsim {
             console.debug(`Image id:${this.id} size:${this.width}x${this.height}`)
         }
         public get(x: number, y: number): number {
-            x = x >> 0;
-            y = y >> 0;
-            if (x < 0 || x >= this.width || y < 0 || y >= 5) return 0;
+            x = x | 0;
+            y = y | 0;
+            if (x < 0 || x >= this.width || y < 0 || y >= this.height) return 0;
             return this.data[y * this.width + x];
         }
         public set(x: number, y: number, v: number) {
-            x = x >> 0;
-            y = y >> 0;
-            if (x < 0 || x >= this.width || y < 0 || y >= 5) return;
+            x = x | 0;
+            y = y | 0;
+            if (x < 0 || x >= this.width || y < 0 || y >= this.height) return;
             this.data[y * this.width + x] = Math.max(0, Math.min(255, v));
         }
         public copyTo(xSrcIndex: number, length: number, target: Image, xTargetIndex: number): void {
-            xSrcIndex = xSrcIndex >> 0;
-            length = length >> 0;
-            xTargetIndex = xTargetIndex >> 0;
+            xSrcIndex = xSrcIndex | 0;
+            length = length | 0;
+            xTargetIndex = xTargetIndex | 0;
             for (let x = 0; x < length; x++) {
                 for (let y = 0; y < this.height; y++) {
                     let value = this.get(xSrcIndex + x, y);
@@ -55,7 +55,7 @@ namespace pxsim {
             }
         }
         public shiftLeft(cols: number) {
-            cols = cols >> 0;
+            cols = cols | 0;
             for (let x = 0; x < this.width; ++x)
                 for (let y = 0; y < this.height; ++y)
                     this.set(x, y, x < this.width - cols ? this.get(x + cols, y) : 0);
