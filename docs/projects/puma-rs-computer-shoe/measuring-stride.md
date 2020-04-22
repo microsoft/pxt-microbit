@@ -30,8 +30,8 @@ The experiment will be operated with 2 @boardname@ that communicate via radio.
 
 ```blocks
 input.onGesture(Gesture.ThreeG, function () {
-    led.toggle(0, 0)
-    radio.sendNumber(0)
+    game.addScore(1)
+    radio.sendNumber(game.score())
 })
 radio.setGroup(1)
 radio.setTransmitPower(7)
@@ -42,36 +42,34 @@ basic.showString("RUNNER")
 
 The operator needs to press button ``A`` when the runner enters the track
 and ``B`` when the runner leaves the track. Then the @boardname@ displays the measurement
-two times.
+in a loop.
 
 ```blocks
 input.onButtonPressed(Button.B, function () {
     recording = false
     time = (input.runningTime() - start) / 1000
-    for (let index = 0; index < 2; index++) {
+    while(true) {
         basic.showString("TIME")
         basic.showNumber(time)
         basic.showString("STEPS")
-        basic.showNumber(steps)
+        basic.showNumber(game.score())
     }
 })
 radio.onReceivedNumber(function (receivedNumber) {
-    led.toggle(0, 0)
     if (recording) {
-        steps += 1
+        game.addScore(1)
     }
 })
 input.onButtonPressed(Button.A, function () {
     start = input.runningTime()
-    steps = 0
+    game.setScore(0)
     recording = true
     basic.showIcon(IconNames.Butterfly)
 })
-let steps = 0
 let start = 0
 let time = 0
 let recording = false
-basic.showString("STOPWATCH")
+basic.showString("OPERATOR")
 radio.setGroup(1)
 ```
 
