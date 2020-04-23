@@ -10,7 +10,7 @@ Live coding of tutorials for MakeCode for micro:bit on https://mixer.com/MakeCod
         "name": "Live Coding",
         "description": "Subscribe to our mixer.com live coding stream.",
         "url": "https://mixer.com/MakeCode",
-        "imageUrl": "/static/live-coding/mixer.png"
+        "imageUrl": "/static/live-coding/live.png"
     },
     {
         "name": "Flashing Heart",
