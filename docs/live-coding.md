@@ -8,127 +8,127 @@ Live coding of tutorials for MakeCode for micro:bit on https://mixer.com/MakeCod
 [
     {
         "name": "Live Coding",
-        "description": "Watch the streams on mixer!",
+        "description": "Subscribe to our mixer.com live coding stream.",
         "url": "https://mixer.com/MakeCode",
         "imageUrl": "/static/live-coding/mixer.png"
     },
     {
         "name": "Flashing Heart",
-        "description": "",
+        "description": "In this video, we'll be going through the Flashing Heart Tutorial - https://makecode",
         "youTubeId": "NvEOKZ8wh9s",
         "imageUrl": "/static/live-coding/NvEOKZ8wh9s.jpg"
     },
     {
         "name": "Name Tag",
-        "description": "",
+        "description": "In this video, we'll be going through the Name Tag tutorial - https://makecode",
         "youTubeId": "xpRI5jjQ31E",
         "imageUrl": "/static/live-coding/xpRI5jjQ31E.jpg"
     },
     {
         "name": "Dice",
-        "description": "",
+        "description": "In this video, we'll be going through the Dice tutorial - https://makecode",
         "youTubeId": "OmrmjtOm_sQ",
         "imageUrl": "/static/live-coding/OmrmjtOm_sQ.jpg"
     },
     {
         "name": "Smiley Buttons",
-        "description": "",
+        "description": "In this video, we'll be going through the Smiley Buttons tutorial - https://makecode",
         "youTubeId": "BgDxz3M7JIM",
         "imageUrl": "/static/live-coding/BgDxz3M7JIM.jpg"
     },
     {
         "name": "Love Meter",
-        "description": "",
+        "description": "In this video, we'll be going through the Love Meter tutorial - https://makecode",
         "youTubeId": "1IYsy0_9n8g",
         "imageUrl": "/static/live-coding/1IYsy0_9n8g.jpg"
     },
     {
         "name": "Micro Chat",
-        "description": "",
+        "description": "In this video, we'll be going through the Micro Chat tutorial - https://makecode",
         "youTubeId": "5XqsGROG2fI",
         "imageUrl": "/static/live-coding/5XqsGROG2fI.jpg"
     },
     {
         "name": "Rock Paper Scissors",
-        "description": "",
+        "description": "In this video, we'll be going through the Rock Paper Scissors tutorial - https://makecode",
         "youTubeId": "94lLBB3b1kU",
         "imageUrl": "/static/live-coding/94lLBB3b1kU.jpg"
     },
     {
         "name": "Multi Dice",
-        "description": "",
+        "description": "In this video, we'll be going through the Multi Dice tutorial - https://makecode",
         "youTubeId": "r-rsS4Pl6YQ",
         "imageUrl": "/static/live-coding/r-rsS4Pl6YQ.jpg"
     },
     {
         "name": "Snap The Dot",
-        "description": "",
+        "description": "In this video, we'll be going through the Snap the Dot tutorial - https://makecode",
         "youTubeId": "ew15T97VrF4",
         "imageUrl": "/static/live-coding/ew15T97VrF4.jpg"
     },
     {
         "name": "Hack Your Headphone",
-        "description": "",
+        "description": "In this video, we will be showing you how to hack your headphones with the micro:bit - https://makecode",
         "youTubeId": "pC02U_YaSMw",
         "imageUrl": "/static/live-coding/pC02U_YaSMw.jpg"
     },
     {
         "name": "Hot Potato",
-        "description": "",
+        "description": "Learn to code with MakeCode and micro:bit",
         "youTubeId": "xLEy1B_gWKY",
         "imageUrl": "/static/live-coding/xLEy1B_gWKY.jpg"
     },
     {
         "name": "Heads Guess!",
-        "description": "",
+        "description": "Learn to code with MakeCode and micro:bit",
         "youTubeId": "WgMj1AT2G38",
         "imageUrl": "/static/live-coding/WgMj1AT2G38.jpg"
     },
     {
         "name": "Flashing Heart",
-        "description": "",
+        "description": "Learn to code with MakeCode and micro:bit",
         "youTubeId": "2Q9mf8a9Bt8",
         "imageUrl": "/static/live-coding/2Q9mf8a9Bt8.jpg"
     },
     {
         "name": "Level",
-        "description": "",
+        "description": "Learn to code with MakeCode and micro:bit",
         "youTubeId": "MLb9qTV5-5w",
         "imageUrl": "/static/live-coding/MLb9qTV5-5w.jpg"
     },
     {
         "name": "Stopwatch",
-        "description": "",
+        "description": "Learn to code with MakeCode and micro:bit",
         "youTubeId": "RFXS871b50I",
         "imageUrl": "/static/live-coding/RFXS871b50I.jpg"
     },
     {
         "name": "Guitar",
-        "description": "",
+        "description": "Learn to code with MakeCode and micro:bit",
         "youTubeId": "dcSIy1dD5Rg",
         "imageUrl": "/static/live-coding/dcSIy1dD5Rg.jpg"
     },
     {
         "name": "Hand Washing Timer",
-        "description": "",
+        "description": "Learn to code with MakeCode and micro:bit",
         "youTubeId": "yFviqqPlWyQ",
         "imageUrl": "/static/live-coding/yFviqqPlWyQ.jpg"
     },
     {
         "name": "Hand Washing Timer",
-        "description": "",
+        "description": "Learn to code with MakeCode and micro:bit",
         "youTubeId": "yFviqqPlWyQ",
         "imageUrl": "/static/live-coding/yFviqqPlWyQ.jpg"
     },
     {
         "name": "Reaction Time Game",
-        "description": "",
+        "description": "Learn to code with MakeCode and micro:bit",
         "youTubeId": "S_hzUenqAM0",
         "imageUrl": "/static/live-coding/S_hzUenqAM0.jpg"
     },
     {
         "name": "Combination Lock",
-        "description": "",
+        "description": "Learn to code with MakeCode and micro:bit",
         "youTubeId": "DRd0jjiSXGM",
         "imageUrl": "/static/live-coding/DRd0jjiSXGM.jpg"
     },
