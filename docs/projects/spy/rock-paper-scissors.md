@@ -8,7 +8,7 @@ Use the accelerometer and the screen to build a **Rock Paper Scissors** game tha
 
 ## Step 1 @fullscreen
 
-Add a ``||input:on shake||`` event to run code when you shake the @boardname@.
+Add an ``||input:on shake||`` event to run code when you shake the @boardname@.
 
 ```spy
 input.onGesture(Gesture.Shake, () => {
