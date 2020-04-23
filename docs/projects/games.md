@@ -14,7 +14,15 @@ Fun games to build with your @boardname@.
   "imageUrl":"/static/mb/projects/a4-motion.png",
   "cardType": "tutorial",
   "youTubeId": "94lLBB3b1kU",
-  "otherActions": []
+  "otherActions": [{
+    "url": "/projects/spy/rock-paper-scissors",
+    "editor": "py",
+    "cardType": "tutorial"
+  }, {
+    "url": "/projects/spy/rock-paper-scissors",
+    "editor": "js",
+    "cardType": "tutorial"
+  }]
 }, {
   "name": "Coin Flipper",
   "url":"/projects/coin-flipper",
