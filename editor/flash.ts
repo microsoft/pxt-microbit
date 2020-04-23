@@ -90,6 +90,8 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
         this.allocDAP();
     }
 
+    icon = "usb";
+
     private startReadSerial() {
         log(`start read serial`)
         const rid = this.readSerialId;
