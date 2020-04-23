@@ -120,13 +120,13 @@ input.onGesture(Gesture.Shake, () => {
 })
 ```
 
-## Step 10 @fullscreen
+## Step 7 @fullscreen
 
 Click on the **SHAKE** button in the simulator and check to see that each image is showing up.
 
 ![Shaking a @boardname@ simulator](/static/mb/projects/rock-paper-scissors/rpssim3.gif)
 
-## Step 11 @fullscreen
+## Step 8 @fullscreen
 
 If you have a @boardname@, click on ``|Download|`` and follow the instructions to get the code
 onto your @boardname@. Your game is ready! Gather your friends and play Rock Paper Scissors!
