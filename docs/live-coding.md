@@ -135,7 +135,7 @@ Live coding of tutorials for MakeCode for micro:bit on https://mixer.com/MakeCod
     {
         "name": "PlayList",
         "description": "See entire playlist on YouTube",
-        "url": "https://www.youtube.com/watch?list=PLMMBk9hE-SepocOwueEtTDyOPI_TBE9yC",
+        "url": "https://www.youtube.com/playlist?list=PLMMBk9hE-SepocOwueEtTDyOPI_TBE9yC",
         "imageUrl": "/static/live-coding/playlist.png"
     }
 ]
@@ -143,5 +143,5 @@ Live coding of tutorials for MakeCode for micro:bit on https://mixer.com/MakeCod
 
 ## See Also
 
-[YouTube Playlist](https://www.youtube.com/watch?list=PLMMBk9hE-SepocOwueEtTDyOPI_TBE9yC)
+[YouTube Playlist](https://www.youtube.com/playlist?list=PLMMBk9hE-SepocOwueEtTDyOPI_TBE9yC)
 
