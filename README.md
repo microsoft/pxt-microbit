@@ -140,6 +140,14 @@ If you are also modifiying CODAL, consider running ``pxt clean`` to ensure the p
 
 Make sure to pull changes from all repos regularly. More instructions are at https://github.com/Microsoft/pxt#running-a-target-from-localhost
 
+## Update playlists in markdown
+
+Get a Google API key and store it in the ``GOOGLE_API_KEY`` environment variables (turn on data from the app).
+
+```
+pxt downloadplaylists
+```
+
 ## Repos 
 
 The pxt-microbit target depends on several other repos. The main ones are:

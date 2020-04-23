@@ -11,7 +11,7 @@
     {
         "name": "Live Coding",
         "url": "/live-coding",
-        "imageUrl": "/static/live-coding/live.png"
+        "imageUrl": "https://i.ytimg.com/vi/NvEOKZ8wh9s/mqdefault.jpg"
     },
     {
         "name": "Games",
