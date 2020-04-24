@@ -3,7 +3,7 @@ name: pxt-testghpkgs
 on:
   push:
   schedule:
-    - cron:  '0 * * * *'
+    - cron:  '0 0 * * *'
 
 jobs:
   build:
@@ -24,6 +24,7 @@ jobs:
         run: |
           sudo npm install -g pxt
           npm install
+          npm install pxt
       - name: pxt testghpkgs
         run: pxt testghpkgs
         env:
