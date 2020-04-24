@@ -46,7 +46,15 @@ Fun games to build with your @boardname@.
   "imageUrl": "/static/mb/projects/7-seconds.png",
   "cardType": "tutorial",
   "youTubeId": "LINr5wa4okg",
-  "otherActions": []
+  "otherActions": [{
+    "url": "/projects/spy/7-seconds",
+    "editor": "py",
+    "cardType": "tutorial"
+  }, {
+    "url": "/projects/spy/7-seconds",
+    "editor": "js",
+    "cardType": "tutorial"
+  }]
 }, {
   "name": "Hot Potato",
   "url":"/projects/hot-potato",
@@ -54,14 +62,30 @@ Fun games to build with your @boardname@.
   "imageUrl": "/static/mb/projects/hot-potato.png",
   "cardType": "tutorial",
   "youTubeId": "xLEy1B_gWKY",
-  "otherActions": []
+  "otherActions": [{
+    "url": "/projects/spy/hot-potato",
+    "editor": "py",
+    "cardType": "tutorial"
+  }, {
+    "url": "/projects/spy/hot-potato",
+    "editor": "js",
+    "cardType": "tutorial"
+  }]
 }, {
   "name": "Heads Guess!",
   "url":"/projects/heads-guess",
   "description": "Try to guess words with your friends!",
   "imageUrl": "/static/mb/projects/heads-guess.png",
   "cardType": "tutorial",
-  "otherActions": []
+  "otherActions": [{
+    "url": "/projects/spy/heads-guess",
+    "editor": "py",
+    "cardType": "tutorial"
+  }, {
+    "url": "/projects/spy/heads-guess",
+    "editor": "js",
+    "cardType": "tutorial"
+  }]
 }, {
   "name": "Reaction Time",
   "url":"/projects/reaction-time",
