@@ -1,5 +1,7 @@
 # Flashing Heart
 
+### @explicitHints true
+
 ## Introduction @unplugged
 
 Learn how to use the LEDs and make a flashing heart! 
@@ -9,16 +11,19 @@ Learn how to use the LEDs and make a flashing heart!
 
 ## Step 1 @fullscreen
 
-Put a ``||basic:forever||`` event to repeat code.
+Put in a ``||basic:forever||`` event to repeat code.
 
 ```spy
 basic.forever(function() {
+
 })
 ```
 
 ## Step 2
 
-Put ``||basic:show leds||`` in the ``||basic:forever||`` and draw a heart.
+Put ``||basic:show leds||`` in the ``||basic:forever||`` loop and draw a heart. An image is drawn
+by placing a `#` for the LED you want to turn on in the 5 rows by 5 columns of periods - `.`. These
+represent each LED on the display.
 
 ```spy
 basic.forever(function() {
@@ -33,7 +38,7 @@ basic.forever(function() {
 
 ## Step 3
 
-Place in another ``||basic:show leds||``. You can leave it blank and draw what you want.
+Put in one more ``||basic:show leds||``. You can either leave it blank or draw in a new image.
 
 ```spy
 basic.forever(function() {

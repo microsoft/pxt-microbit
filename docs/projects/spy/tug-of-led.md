@@ -9,20 +9,19 @@ Instead of a rope, we'll use the LED screen by pulling the LED light through the
 
 ## Step 1
 
-Create a new variable ``||variables:rope||`` and put it in the ``||basic:on start||``. This will
-track the progress of the game. The ``||variables:rope||`` variable will be used as the **x**
-coordinate of the LED to lit so we set it to ``2`` to start.
+Create a new variable ``||variables:rope||`` to track the progress of the game. The ``||variables:rope||``
+variable will be used as the **x** coordinate of the LED to lit so we set it to ``2`` to start.
 
-```blocks
+```spy
 let rope = 2
 ```
 
 ## Step 2
 
-Add a ``||basic:forever||`` loop that turns on the LED at the ``||variables:rope||`` position.
+Add a ``||basic:forever||`` loop that turns on the LED at the position set in ``||variables:rope||``.
 
-```blocks
-let rope = 0
+```spy
+let rope = 2
 basic.forever(function() {
     basic.clearScreen();
     led.plot(rope, 2);
@@ -31,11 +30,11 @@ basic.forever(function() {
 
 ## Step 3
 
-Add an event on ``||input:button A pressed||`` to change the ``||variables:rope||`` value by **-0.1**.
+Add an event for ``||input:button A pressed||`` to change the ``||variables:rope||`` value by **-0.1**.
 The @boardname@ will automatically round the ``||variables:rope||`` value to the nearest LED coordinate.
 
-```blocks
-let rope = 0
+```spy
+let rope = 2
 input.onButtonPressed(Button.A, function () {
     rope += -0.1
 })
@@ -45,8 +44,8 @@ input.onButtonPressed(Button.A, function () {
 
 Add an event on ``||input:button B pressed||`` to change the ``||variables:rope||`` value by **0.1**.
 
-```blocks
-let rope = 0
+```spy
+let rope = 2
 input.onButtonPressed(Button.B, function () {
     rope += 0.1
 })
@@ -57,8 +56,8 @@ input.onButtonPressed(Button.B, function () {
 Back in the ``||basic:forever||``, add code to test ``||logic:if||`` the ``||variables:rope||`` is negative
 then ``||basic:show||``**A WINS** on the screen.
 
-```blocks
-let rope = 0
+```spy
+let rope = 2
 basic.forever(function() {
     basic.clearScreen();
     led.plot(rope, 2);
@@ -71,11 +70,11 @@ basic.forever(function() {
 
 ## Step 6
 
-Add an ``||logic:else if||`` condition to test ``||logic:if||`` the ``||variables:rope||`` is greater than 4
+Add an ``||logic:else if||`` condition to test ``||logic:if||`` the ``||variables:rope||`` is greater than `4`
 then ``||basic:show||``**B WINS** on the screen.
 
-```blocks
-let rope = 0
+```spy
+let rope = 2
 basic.forever(function() {
     basic.clearScreen();
     led.plot(rope, 2);
