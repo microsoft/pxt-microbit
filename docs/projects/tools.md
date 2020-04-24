@@ -18,8 +18,7 @@
     "url": "/projects/spy/stopwatch",
     "editor": "js",
     "cardType": "tutorial"
-  }]
-},
+  }]},
 {
   "name": "Level",
   "description": "Is the table flat?",
