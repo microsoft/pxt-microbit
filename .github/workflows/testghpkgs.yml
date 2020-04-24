@@ -23,8 +23,7 @@ jobs:
           sudo npm install -g pxt
           npm install
       - name: pxt testghpkgs
-        run: |
-          pxt testghpkgs
-        with:
+        run: pxt testghpkgs
+        env:
           PXT_ACCESS_TOKEN: ${{ secrets.PXT_ACCESS_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
