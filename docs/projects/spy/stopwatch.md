@@ -1,5 +1,7 @@
 # Stopwatch
 
+### @explicitHints true
+
 ## Introduction @unplugged
 
 ![A @boardname@ stopwatch toon image](/static/mb/projects/stopwatch.png)
