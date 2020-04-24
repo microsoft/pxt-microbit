@@ -62,14 +62,13 @@ input.onButtonPressed(Button.B, function () {
 ## Step 5
 
 Compute the elapsed time as ``||input:running time||`` ``||math:minus||`` ``||variables:start||`` and
-store it into a new variable called ``||variables:elapsed||``.
+store it in a new local variable (a variable only inside the event) called ``||variables:elapsed||``.
 
 ```spy
 let start = 0
-let elapsed = 0
 input.onButtonPressed(Button.B, function () {
     // @highlight
-    elapsed = input.runningTime() - start
+    let elapsed = input.runningTime() - start
 })
 ```
 
@@ -81,12 +80,10 @@ milliseconds.
 
 ```spy
 let start = 0
-let elapsed = 0
-let score = 0
 input.onButtonPressed(Button.B, function () {
-    elapsed = input.runningTime() - start
+    let elapsed = input.runningTime() - start
     // @highlight
-    score = Math.abs(elapsed - 7000)
+    let score = Math.abs(elapsed - 7000)
 })
 ```
 
@@ -96,11 +93,9 @@ Display the score on the screen and your game is ready!
 
 ```spy
 let start = 0
-let elapsed = 0
-let score = 0
 input.onButtonPressed(Button.B, function () {
-    elapsed = input.runningTime() - start
-    score = Math.abs(elapsed - 7000)
+    let elapsed = input.runningTime() - start
+    let score = Math.abs(elapsed - 7000)
     // @highlight
     basic.showNumber(score)
 })
