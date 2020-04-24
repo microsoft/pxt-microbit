@@ -1,6 +1,7 @@
 name: pxt-testghpkgs
 
 on:
+  push:
   schedule:
     - cron:  '0 * * * *'
 
