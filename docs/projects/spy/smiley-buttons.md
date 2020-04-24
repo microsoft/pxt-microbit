@@ -1,5 +1,7 @@
 # Smiley Buttons
 
+### @explicitHints true
+
 ## Introduction @unplugged
 
 Code the buttons on the @boardname@ to show that it's happy or sad.
@@ -11,16 +13,20 @@ Code the buttons on the @boardname@ to show that it's happy or sad.
 
 Put in an ``||input:on button pressed||`` event to run code when button **A** is pressed.
 
-```blocks
+```spy
 input.onButtonPressed(Button.A, function() { 
 });
 ```
 
 ## Step 2
 
-Place ``||basic:show leds||`` inside ``||input:on button pressed||`` to display a **:)** on the screen. Press the **A** button in the simulator to see the smiley.
+Place ``||basic:show leds||`` inside ``||input:on button pressed||`` to display a **:)** image on
+the screen. An image is drawn by placing a `#` for the LED you want to turn on in the 5 rows by 5
+columns of periods - `.`. These represent each LED on the screen.
 
-```blocks
+Press the **A** button in the simulator to see the smiley.
+
+```spy
 input.onButtonPressed(Button.A, function() { 
     basic.showLeds(`
         # # . # #
@@ -34,9 +40,10 @@ input.onButtonPressed(Button.A, function() {
 
 ## Step 3
 
-Place ``||input:on button pressed||`` and ``||basic:show leds||`` to display a **:(** when button **B** is pressed.
+Use another ``||input:on button pressed||`` with ``||basic:show leds||`` inside to display a **:(** when
+button **B** is pressed.
 
-```blocks
+```spy
 input.onButtonPressed(Button.B, function() { 
     basic.showLeds(`
         # # . # #
@@ -50,9 +57,9 @@ input.onButtonPressed(Button.B, function() {
 
 ## Step 4
 
-Add a secret mode that happens when **A** and **B** are pressed together. For this case, add multiple ``||basic:show leds||`` blocks to create an animation.
+Add a secret mode that happens when **A** and **B** are pressed together. For this case, use ``||basic:show leds||`` multiple times to create an animation.
 
-```blocks
+```spy
 input.onButtonPressed(Button.AB, function() {
     basic.showLeds(`
         . . . . .
