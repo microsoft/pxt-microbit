@@ -24,7 +24,6 @@ jobs:
         run: |
           sudo npm install -g pxt
           npm install
-          npm install pxt
       - name: pxt testghpkgs
         run: pxt testghpkgs
         env:
