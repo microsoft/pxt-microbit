@@ -1,5 +1,7 @@
 # Name Tag
 
+### @explicitHints true
+
 ## Introduction @unplugged
 
 Tell everyone who you are. Show you name on the LEDs.

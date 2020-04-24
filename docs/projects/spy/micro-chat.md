@@ -1,5 +1,7 @@
 # Micro Chat
 
+### @explicitHints true
+
 ## Introduction @unplugged
 
 ![Two @boardname@ connected via radio](/static/mb/projects/a9-radio.png)

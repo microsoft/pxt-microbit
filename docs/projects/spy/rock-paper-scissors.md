@@ -1,5 +1,7 @@
 # Rock Paper Scissors
 
+### @explicitHints true
+
 ## Introduction @unplugged
 
 ![Cartoon of the Rock Paper Scissors game](/static/mb/projects/a4-motion.png)

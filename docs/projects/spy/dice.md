@@ -1,5 +1,7 @@
 # Dice
 
+### @explicitHints true
+
 ## Introduction @unplugged
 
 Let's turn the @boardname@ into a dice!

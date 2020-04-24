@@ -1,5 +1,7 @@
 # Tug-Of-LED
 
+### @explicitHints true
+
 ## Introduction @unplugged
 
 The ``tug-of-LED`` is a virtual variation of the popular **tug of war** rope game.

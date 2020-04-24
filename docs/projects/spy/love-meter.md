@@ -1,5 +1,7 @@
 # Love Meter
 
+### @explicitHints true
+
 ## Introduction @unplugged
 
 Make a **LOVE METER** machine, how sweet! The @boardname@ is feeling the love, then sometimes not so much!

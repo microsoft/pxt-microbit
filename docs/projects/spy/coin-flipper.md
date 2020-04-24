@@ -1,5 +1,7 @@
 # Coin Flipper
 
+### @explicitHints true
+
 ## Introduction @unplugged
 
 Let's create a coin flipping program to simulate a real coin toss. We'll use icon images to represent a ``heads`` or ``tails`` result.
