@@ -10,7 +10,15 @@
   "url": "/projects/stopwatch",
   "imageUrl":"/static/mb/projects/stopwatch.png",
   "cardType": "tutorial",
-  "otherActions": []
+  "otherActions": [{
+    "url": "/projects/spy/stopwatch",
+    "editor": "py",
+    "cardType": "tutorial"
+  }, {
+    "url": "/projects/spy/stopwatch",
+    "editor": "js",
+    "cardType": "tutorial"
+  }]
 },
 {
   "name": "Level",
@@ -18,7 +26,15 @@
   "url": "/projects/level",
   "imageUrl":"/static/mb/projects/level.png",
   "cardType": "tutorial",
-  "otherActions": []
+  "otherActions": [{
+    "url": "/projects/spy/level",
+    "editor": "py",
+    "cardType": "tutorial"
+  }, {
+    "url": "/projects/spy/level",
+    "editor": "js",
+    "cardType": "tutorial"
+  }]
 }
 ]
 ```
