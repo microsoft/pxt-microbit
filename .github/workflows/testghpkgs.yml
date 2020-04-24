@@ -20,7 +20,6 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: npm install
         run: |
-          sudo apt-get install xvfb
           sudo npm install -g pxt
           npm install
       - name: pxt testghpkgs
