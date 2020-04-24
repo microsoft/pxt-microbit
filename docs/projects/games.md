@@ -30,7 +30,15 @@ Fun games to build with your @boardname@.
   "imageUrl": "/static/mb/projects/coin-flipper.png",
   "cardType": "tutorial",
   "youTubeId": "678ATmGGlvk",
-  "otherActions": []
+  "otherActions": [{
+    "url": "/projects/spy/coin-flipper",
+    "editor": "py",
+    "cardType": "tutorial"
+  }, {
+    "url": "/projects/spy/coin-flipper",
+    "editor": "js",
+    "cardType": "tutorial"
+  }]
 }, {
   "name": "7 seconds",
   "url":"/projects/7-seconds",
