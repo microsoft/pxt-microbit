@@ -56,7 +56,7 @@ You can animate the coin toss to add the feeling of suspense. ``||basic:show||``
 icons before the check of the ``||math:random boolean||`` value to show that the
 coin is flipping.
 
-```blocks
+```spy
 input.onButtonPressed(Button.A, () => {
     basic.showIcon(IconNames.Diamond)
     basic.showIcon(IconNames.SmallDiamond)
