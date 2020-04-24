@@ -1,7 +1,8 @@
 name: pxt-testghpkgs
 
 on:
-  pull_request:
+  schedule:
+    - cron:  '0 * * * *'
 
 jobs:
   build:
