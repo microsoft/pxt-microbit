@@ -22,7 +22,7 @@ let rope = 2
 Add a ``||basic:forever||`` loop that turns on the LED at the ``||variables:rope||`` position.
 
 ```blocks
-let rope = 0
+let rope = 2
 basic.forever(function() {
     basic.clearScreen();
     led.plot(rope, 2);
@@ -35,7 +35,7 @@ Add an event on ``||input:button A pressed||`` to change the ``||variables:rope|
 The @boardname@ will automatically round the ``||variables:rope||`` value to the nearest LED coordinate.
 
 ```blocks
-let rope = 0
+let rope = 2
 input.onButtonPressed(Button.A, function () {
     rope += -0.1
 })
@@ -46,7 +46,7 @@ input.onButtonPressed(Button.A, function () {
 Add an event on ``||input:button B pressed||`` to change the ``||variables:rope||`` value by **0.1**.
 
 ```blocks
-let rope = 0
+let rope = 2
 input.onButtonPressed(Button.B, function () {
     rope += 0.1
 })
@@ -58,7 +58,7 @@ Back in the ``||basic:forever||``, add code to test ``||logic:if||`` the ``||var
 then ``||basic:show||``**A WINS** on the screen.
 
 ```blocks
-let rope = 0
+let rope = 2
 basic.forever(function() {
     basic.clearScreen();
     led.plot(rope, 2);
@@ -75,7 +75,7 @@ Add an ``||logic:else if||`` condition to test ``||logic:if||`` the ``||variable
 then ``||basic:show||``**B WINS** on the screen.
 
 ```blocks
-let rope = 0
+let rope = 2
 basic.forever(function() {
     basic.clearScreen();
     led.plot(rope, 2);
