@@ -12,7 +12,7 @@ Tell everyone who you are. Show you name on the LEDs.
 
 Use the ``||basic:forever||`` loop to run some code continuously.
 
-```blocks
+```spy
 basic.forever(function() {
 
 });
@@ -23,7 +23,7 @@ basic.forever(function() {
 Show your name using ``||basic:show string||`` inside the ``||basic:forever||`` loop. Set your
 name as the string value for ``||basic:show string||``.
 
-```blocks
+```spy
 basic.forever(function() {
     // @highlight
     basic.showString("MICRO");
@@ -40,7 +40,7 @@ Look at the simulator and make sure it shows your name on the screen.
 
 Place more ``||basic:show strings||`` to create a longer message.
 
-```blocks
+```spy
 basic.forever(function() {
     basic.showString("MICRO");
     // @highlight

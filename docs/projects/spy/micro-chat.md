@@ -40,7 +40,7 @@ radio.onReceivedString(function (receivedString) {
 
 ## Displaying text
 
-Add code to ``||basic:show||`` the ``||variables:receivedString||``. In blocks, drag out ``||variables:receivedString||`` out of ``||radio:on received string||`` and put it into ``||basic:show string||``.
+Inside the event, add code to ``||basic:show||`` the ``||variables:receivedString||``.
 
 ```spy
 radio.onReceivedString(function (receivedString) {
