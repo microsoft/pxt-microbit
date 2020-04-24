@@ -97,7 +97,15 @@ Fun games to build with your @boardname@.
   "description": "Button smashing rope pulling games using LEDs",
   "imageUrl":"/static/mb/projects/tug-of-led.png",
   "cardType": "tutorial",
-  "otherActions": []
+  "otherActions": [{
+    "url": "/projects/spy/tug-of-led",
+    "editor": "py",
+    "cardType": "tutorial"
+  }, {
+    "url": "/projects/spy/tug-of-led",
+    "editor": "js",
+    "cardType": "tutorial"
+  }]
 }, {
   "name": "Magic Button Trick",
   "url":"/projects/magic-button-trick",
@@ -109,7 +117,15 @@ Fun games to build with your @boardname@.
   "description": "Use the game blocks to create a skill game",
   "imageUrl": "/static/mb/projects/snap-the-dot.png",
   "cardType": "tutorial",
-  "otherActions": []
+  "otherActions": [{
+    "url": "/projects/spy/snap-the-dot",
+    "editor": "py",
+    "cardType": "tutorial"
+  }, {
+    "url": "/projects/spy/snap-the-dot",
+    "editor": "js",
+    "cardType": "tutorial"
+  }]
 }, {
   "name": "Salute!",
   "url":"/projects/salute",
