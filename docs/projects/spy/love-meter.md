@@ -8,31 +8,33 @@ Make a **LOVE METER** machine, how sweet! The @boardname@ is feeling the love, t
 
 ## Step 1
 
-Add an event to run code when ``||input:on pin 0 is pressed||``. Use ``P0`` from the list of pin inputs.
+Add an event to run code when ``||input:pin 0 is pressed||``. Use the ``P0`` touchpin.
 
-```blocks
+```spy
 input.onPinPressed(TouchPin.P0, function() {
 });
 ```
 
 ## Step 2
 
-Add code to ``||basic:show||`` a ``||Math:random number||``between `0` to `100` when pin **0** is pressed.
+Put code into the ``||input:pin 0 is pressed||`` event to ``||basic:show||`` a ``||Math:random number||``
+between `0` to `100` when pin **0** is pressed.
 
-```blocks
+```spy
 input.onPinPressed(TouchPin.P0, function() {
     basic.showNumber(Math.randomRange(0, 100));
 });
 ```
+
 ## Step 3
 
 Click on pin **0** in the simulator and see which number is chosen.
 
 ## Step 4
 
-Add code to ``||basic:show||`` ``"LOVE METER"`` on the screen when the @boardname@ ``||basic:starts||``.
+Insert code to ``||basic:show||`` the ``"LOVE METER"`` message on the screen when the program starts.
 
-```blocks
+```spy
 basic.showString("LOVE METER");
 input.onPinPressed(TouchPin.P0, function() {
     basic.showNumber(Math.randomRange(0, 100));
@@ -41,4 +43,5 @@ input.onPinPressed(TouchPin.P0, function() {
 
 ## Step 5
 
-Click ``|Download|`` to transfer your code in your @boardname@. Hold the **GND** pin with one hand and press pin **0** with the other hand to trigger this code.
+Click ``|Download|`` to transfer your code in your @boardname@. Hold the **GND** pin with one hand
+and press pin **0** with the other hand to trigger this code.

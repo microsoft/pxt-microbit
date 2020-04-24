@@ -11,7 +11,7 @@ We need 3 pieces of code: one to detect a throw (shake), another to pick a rando
 
 ## Step 1
 
-Add an event to run code when a ``||input:shake||`` is detected.
+Add an event to run code when a ``||input:shake gesture||`` is detected.
 
 ```spy
 input.onGesture(Gesture.Shake, function() {
@@ -31,7 +31,7 @@ input.onGesture(Gesture.Shake, function() {
 
 ## Step 3
 
-Pick a ``||Math:pick a random||`` number and ``||basic:show||`` it on the screen.
+Pick a ``||math:pick a random||`` number and ``||basic:show||`` it on the screen.
 
 ```spy
 input.onGesture(Gesture.Shake, function() {
@@ -41,7 +41,7 @@ input.onGesture(Gesture.Shake, function() {
 
 ## Step 4
 
-A typical dice shows values from `1` to `6`. Change the minimum and maximum values in ``||Math:pick random||`` to "``1`` to ``6``"!
+A typical dice shows values from `1` to `6`. Change the minimum and maximum values in ``||math:pick random||`` to ``1`` and ``6``!
 
 ```spy
 input.onGesture(Gesture.Shake, function() {

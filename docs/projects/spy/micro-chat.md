@@ -4,13 +4,13 @@
 
 ![Two @boardname@ connected via radio](/static/mb/projects/a9-radio.png)
 
-Use the **radio** to send and receive messages with other @boardname@.
+Use the **radio** to send and receive messages with another @boardname@.
 
 ## Handle buttons
 
 Add an event to run code when ``||input:button A is pressed||``.
 
-```blocks
+```spy
 input.onButtonPressed(Button.A, function() {
 });
 ```
@@ -20,7 +20,7 @@ input.onButtonPressed(Button.A, function() {
 Add code to ``||radio:send a string||`` over ``||radio:radio||`` when ``||input:button A is pressed||``. 
 Every @boardname@ nearby will receive this message.
 
-```blocks
+```spy
 input.onButtonPressed(Button.A, function() {
     // @highlight
     radio.sendString(":)");
@@ -31,7 +31,7 @@ input.onButtonPressed(Button.A, function() {
 
 Put in another event to run code when a ``||radio:string is received||`` over ``||radio:radio||``. 
 
-```blocks
+```spy
 radio.onReceivedString(function (receivedString) {
 })
 ```
@@ -40,7 +40,7 @@ radio.onReceivedString(function (receivedString) {
 
 Add code to ``||basic:show||`` the ``||variables:receivedString||``. In blocks, drag out ``||variables:receivedString||`` out of ``||radio:on received string||`` and put it into ``||basic:show string||``.
 
-```blocks
+```spy
 radio.onReceivedString(function (receivedString) {
     // @highlight
     basic.showString(receivedString);
@@ -59,7 +59,7 @@ If you two @boardname@s, download the program to each one. Press button **A** on
 
 Add code to ``||radio:set the group||`` number of your program. You will only receive messages from @boardname@s within the same group. Use this to avoid receiving messages from every @boardname@ that is transmitting.
 
-```blocks
+```spy
 radio.setGroup(123)
 ```
 
