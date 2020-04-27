@@ -49,7 +49,7 @@ Live coding of tutorials for MakeCode for micro:bit on https://mixer.com/MakeCod
     },
     {
         "name": "7 second game",
-        "description": "Learn to code with MakeCode and micro:bit. \n* online editor https://makecode.microbit.org\n* setup your code editor and video https://youtu.be/HRtzLjkqIJk\n* questions and feedback https://aka.ms/makecodeliveforum\n* show & tell Flipgrid https://flipgrid.com/e915ed6b\n* live stream: https://mixer.com/MakeCode\n* online learning: https://makecode.com/online-learning",
+        "description": "Learn to code with MakeCode and micro:bit.",
         "youTubeId": "LINr5wa4okg",
         "youTubePlaylistId": "PLMMBk9hE-SepocOwueEtTDyOPI_TBE9yC",
         "imageUrl": "/static/live-coding/LINr5wa4okg.jpg"
@@ -211,7 +211,7 @@ Live coding of tutorials for MakeCode for micro:bit on https://mixer.com/MakeCod
     {
         "name": "PlayList",
         "description": "See entire playlist on YouTube",
-        "url": "https://www.youtube.com/watch?list=PLMMBk9hE-SepocOwueEtTDyOPI_TBE9yC",
+        "url": "https://www.youtube.com/playlist?list=PLMMBk9hE-SepocOwueEtTDyOPI_TBE9yC",
         "imageUrl": "/static/live-coding/playlist.png"
     }
 ]
@@ -219,5 +219,5 @@ Live coding of tutorials for MakeCode for micro:bit on https://mixer.com/MakeCod
 
 ## See Also
 
-[YouTube Playlist](https://www.youtube.com/watch?list=PLMMBk9hE-SepocOwueEtTDyOPI_TBE9yC)
+[YouTube Playlist](https://www.youtube.com/playlist?list=PLMMBk9hE-SepocOwueEtTDyOPI_TBE9yC)
 
