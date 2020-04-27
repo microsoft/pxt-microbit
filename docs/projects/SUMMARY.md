@@ -37,7 +37,7 @@
   * [Dice](https://youtu.be/OmrmjtOm_sQ)
   * [Name Tag](https://youtu.be/xpRI5jjQ31E)
   * [Flashing Heart](https://youtu.be/NvEOKZ8wh9s)
-  * [PlayList](https://www.youtube.com/watch?list=PLMMBk9hE-SepocOwueEtTDyOPI_TBE9yC)
+  * [PlayList](https://www.youtube.com/playlist?list=PLMMBk9hE-SepocOwueEtTDyOPI_TBE9yC)
 * [Games](/projects/games)
   * [Rock Paper Scissors](/projects/rock-paper-scissors)
   * [Coin Flipper](/projects/coin-flipper)
