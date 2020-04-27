@@ -34,6 +34,14 @@
     "editor": "js",
     "cardType": "tutorial"
   }]
+},
+{
+  "name": "Compass",
+  "description": "Where is North?",
+  "url": "/projects/compass",
+  "imageUrl":"/static/mb/projects/a5-compass.png",
+  "cardType": "tutorial",
+  "otherActions": []
 }
 ]
 ```

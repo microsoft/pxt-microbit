@@ -1,28 +1,14 @@
 # Compass
 
-## ~avatar avatar
+## Introduction @unplugged
 
-Welcome! This guided tutorial will show you how to program a script that displays which direction the @boardname@ is pointing. Let's get started!
+This tutorial will show you how to program a script that displays which direction the @boardname@ is pointing. Let's get started!
 
-## ~
-
-![](/static/mb/projects/a5-compass.png)
-
-Display the direction that the @boardname@ is facing using the compass.
+![A cartoon of a compass](/static/mb/projects/a5-compass.png)
 
 ## Step 1
 
-Create a loop that will continuously update the reading of the compass.
-
-```blocks
-basic.forever(() => {
-    
-})
-```
-
-## Step 2
-
-Store the reading of the @boardname@ in a variable called `degrees`.
+Store the ``||input:compass heading||`` of the @boardname@ in a variable called ``||variables:degrees||`` in the ``||basic:forever||`` loop.
 
 ```blocks
 basic.forever(() => {
@@ -30,28 +16,28 @@ basic.forever(() => {
 })
 ```
 
-## Step 3
+## Step 2
 
-If `degrees` is less than `45` or greater than `315`, 
-then the compass heading is mostly pointing toward **North**. Display `N` on the @boardname@.
+``||logic:If||`` ``||variables:degrees||`` is ``||logic:less than||`` `45`, 
+then the compass heading is mostly pointing toward **North**. ``||basic:Show||`` `N` on the @boardname@.
 
 ```blocks
 basic.forever(() => {
     let degrees = input.compassHeading();
-    if (degrees < 45 || degrees > 315) {
+    if (degrees < 45) {
         basic.showString("N");
     }
 });
 ```
 
-## Step 4
+## Step 3
 
-If `degrees` is less than `135`, the @boardname@ is mostly pointing **East**. Display `E` on the @boardname@.
+``||logic:If||`` ``||variables:degrees||`` is less than `135`, the @boardname@ is mostly pointing **East**. ``||basic:Show||`` `E` on the @boardname@.
 
 ```blocks
 basic.forever(() => {
     let degrees = input.compassHeading();
-    if (degrees < 45 || degrees > 315) {
+    if (degrees < 45) {
         basic.showString("N");
     }
     else if (degrees < 135) {
@@ -60,14 +46,18 @@ basic.forever(() => {
 });
 ```
 
+## Step 4
+
+Go to the simulator and rotate the @boardname@ logo to simulate changes in the compass heading.
+
 ## Step 5
 
-If `degrees` is less than `225`, the @boardname@ is mostly pointing **South**. Display `S` on the @boardname@.
+``||logic:If||`` ``||variables:degrees||`` is less than `225`, the @boardname@ is mostly pointing **South**. ``||basic:Show||`` `S` on the @boardname@.
 
 ```blocks
 basic.forever(() => {
     let degrees = input.compassHeading();
-    if (degrees < 45 || degrees > 315) {
+    if (degrees < 45) {
         basic.showString("N");
     }
     else if (degrees < 135) {
@@ -81,12 +71,32 @@ basic.forever(() => {
 
 ## Step 6
 
-If none of these conditions returned true, then the @boardname@ must be pointing **West**. Display `W` on the @boardname@.
+``||logic:If||`` ``||variables:degrees||`` is less than `315`, the @boardname@ is mostly pointing **West**. ``||basic:Show||`` `W` on the @boardname@.
 
 ```blocks
 basic.forever(() => {
     let degrees = input.compassHeading();
-    if (degrees < 45 || degrees > 315) {
+    if (degrees < 45) {
+        basic.showString("N");
+    }
+    else if (degrees < 135) {
+        basic.showString("E")
+    } else if (degrees < 225) {
+        basic.showString("S")
+    } else if (degrees < 315) {
+        basic.showString("W")
+    }
+});
+```
+
+## Step 7
+
+``||logic:If||`` none of these conditions returned true, then the @boardname@ must be pointing **North** again. Display `N` on the @boardname@.
+
+```blocks
+basic.forever(() => {
+    let degrees = input.compassHeading();
+    if (degrees < 45) {
         basic.showString("N");
     }
     else if (degrees < 135) {
@@ -94,9 +104,19 @@ basic.forever(() => {
     }
     else if (degrees < 225) {
         basic.showString("S");
-    }
+    } 
+    else if (degrees < 315) {
+        basic.showString("W")
+    } 
     else {
-        basic.showString("W");
+        basic.showString("N")
     }
 });
 ```
+
+## Step 8 @unplugged
+
+If you have a @boardname@, click `|Download|` and follow the screen instructions. 
+You will have to follow the screen instructions to calibrate your compass.
+
+https://youtu.be/IL5grHtz_MU

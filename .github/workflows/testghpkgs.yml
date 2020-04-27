@@ -23,6 +23,8 @@ jobs:
         run: |
           sudo npm install -g pxt
           npm install
+      - name: pxt buildtarget
+        run: pxt buildtarget
       - name: pxt testghpkgs
         run: pxt testghpkgs
         env:
