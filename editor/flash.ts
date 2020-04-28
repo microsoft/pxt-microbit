@@ -194,7 +194,6 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
             .finally(() => { this.flashing = false })
             .then(() => Promise.delay(100))
             .then(() => this.disconnectAsync())
-            .then(() => this.reconnectAsync())
     }
 
     private fullVendorCommandFlashAsync(resp: pxtc.CompileResult): Promise<void> {
