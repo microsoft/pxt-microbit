@@ -166,17 +166,17 @@
                 "target": {
                     "pinInstantiationIdx": 0
                 },
-                "style": "solder",
+                "style": "croc",
                 "orientation": "+Z"
             },
             {
                 "target": "threeVolt",
-                "style": "solder",
+                "style": "croc",
                 "orientation": "+Z"
             },
             {
                 "target": "ground",
-                "style": "solder",
+                "style": "croc",
                 "orientation": "+Z"
             }
         ],
