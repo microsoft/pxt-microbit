@@ -1,0 +1,6 @@
+{
+  "input": "Events and data from sensors",
+  "input.onLoudSound": "Registers an event that runs when a loud sound is detected",
+  "input.setLoudSoundThreshold": "Sets the minimum threshold for a loud sound",
+  "input.soundLevel": "Reads the loudness through the microphone from 0 (silent) to 255 (loud)"
+}

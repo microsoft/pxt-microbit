@@ -3,6 +3,7 @@
 #define MICROBIT_SERIAL_READ_BUFFER_LENGTH 64
 
 // make sure USB_TX and USB_RX don't overlap with other pin ids
+// also, 1001,1002 need to be kept in sync with getPin() function
 enum SerialPin {
     P0 = MICROBIT_ID_IO_P0,
     P1 = MICROBIT_ID_IO_P1,
@@ -145,12 +146,14 @@ namespace serial {
 
     bool tryResolvePin(SerialPin p, PinName& name) {
       switch(p) {
+#if !MICROBIT_CODAL
         case SerialPin::USB_TX: name = USBTX; return true;
         case SerialPin::USB_RX: name = USBRX; return true;
+#endif
         default: 
           auto pin = getPin(p); 
           if (NULL != pin) {
-            name = pin->name;
+            name = (PinName)pin->name;
             return true;
           }
       }
@@ -173,11 +176,17 @@ namespace serial {
     //% rx.fieldOptions.tooltips="false"
     //% blockGap=8
     void redirect(SerialPin tx, SerialPin rx, BaudRate rate) {
+#if MICROBIT_CODAL
+      if (getPin(tx) && getPin(rx))
+        uBit.serial.redirect(*getPin(tx), *getPin(rx));
+      uBit.serial.setBaud(rate);
+#else
       PinName txn;
       PinName rxn;
       if (tryResolvePin(tx, txn) && tryResolvePin(rx, rxn))
         uBit.serial.redirect(txn, rxn);
       uBit.serial.baud((int)rate);
+#endif
     }
 
     /**
@@ -186,8 +195,13 @@ namespace serial {
     //% weight=9 help=serial/redirect-to-usb
     //% blockId=serial_redirect_to_usb block="serial|redirect to USB"
     void redirectToUSB() {
+#if MICROBIT_CODAL
+      uBit.serial.redirect(uBit.io.usbTx, uBit.io.usbRx);
+      uBit.serial.setBaud(115200);
+#else
       uBit.serial.redirect(USBTX, USBRX);
       uBit.serial.baud(115200);
+#endif
     }
 
     /**

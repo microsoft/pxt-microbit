@@ -11,7 +11,7 @@ void RefMImage::destroy(RefMImage *t) {
 }
 
 void RefMImage::print(RefMImage *t) {
-    DMESG("RefMImage %p r=%d size=%d x %d", t, t->refcnt, img->width, img->height);
+    DMESG("RefMImage %p size=%d x %d", t, t->img->width, t->img->height);
 }
 
 void RefMImage::makeWritable() {

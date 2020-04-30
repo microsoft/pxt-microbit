@@ -4,6 +4,8 @@
   "keywords": [],
   "author": "",
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "microbit-dal": "lancaster-university/microbit-dal#v2.1.1"
+  },
   "bin": "./source"
 }

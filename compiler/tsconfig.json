@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "noImplicitAny": true,
+        "noImplicitReturns": true,
+        "noImplicitThis": true,
+        "declaration": true,
+        "out": "../built/compiler.js",
+        "newLine": "LF",
+        "sourceMap": false
+    }
+}

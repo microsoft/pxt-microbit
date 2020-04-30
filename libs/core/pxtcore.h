@@ -19,6 +19,18 @@ void debuglog(const char *format, ...);
 #define GC_BLOCK_SIZE 256
 #define NON_GC_HEAP_RESERVATION 1024
 
+
+#ifdef CODAL_CONFIG_H
+#define MICROBIT_CODAL 1
+#else
+#define MICROBIT_CODAL 0
+#endif
+
+#if !MICROBIT_CODAL
+#undef DMESG
 #define DMESG NOLOG
+#endif
+
+#undef BYTES_TO_WORDS
 
 #endif

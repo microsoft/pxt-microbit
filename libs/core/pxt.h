@@ -33,6 +33,12 @@ static inline ImageData *imageBytes(ImageLiteral_ lit) {
     return (ImageData *)lit;
 }
 
+#if MICROBIT_CODAL
+// avoid clashes with codal-defined classes
+#define Image MImage
+#define Button MButton
+#endif
+
 typedef RefMImage *Image;
 
 extern MicroBit uBit;

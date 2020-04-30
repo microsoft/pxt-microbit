@@ -13,7 +13,7 @@
         "dal.d.ts",
         "enums.d.ts",
         "shims.d.ts",
-        "pxt-core.d.ts",        
+        "pxt-core.d.ts",
         "core.cpp",
         "pxt-helpers.ts",
         "helpers.ts",
@@ -53,6 +53,31 @@
     ],
     "public": true,
     "dependencies": {},
+    "dalDTS": {
+        "compileServiceVariant": "mbcodal",
+        "includeDirs": [
+            "libraries/codal-core/inc",
+            "libraries/codal-microbit/inc",
+            "libraries/codal-microbit/model",
+            "libraries/codal-microbit/inc/compat",
+            "pxtapp"
+        ],
+        "excludePrefix": [
+            "USB_",
+            "REQUEST_",
+            "LIS3DH_",
+            "FXOS8700_",
+            "MMA8",
+            "LSM303_",
+            "MAG_",
+            "MPU6050_",
+            "REF_TAG_",
+            "HF2_",
+            "PXT_REF_TAG_",
+            "MS_",
+            "SCSI_"
+        ]
+    },
     "yotta": {
         "config": {
             "microbit-dal": {

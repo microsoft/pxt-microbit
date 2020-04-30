@@ -274,7 +274,7 @@ namespace control {
     //% help=control/wait-micros weight=29
     //% blockId="control_wait_us" block="wait (µs)%micros"
     void waitMicros(int micros) {
-        wait_us(micros);
+        sleep_us(micros);
     }
 
     /**
@@ -297,7 +297,7 @@ namespace control {
     //% help=control/on-event
     //% blockExternalInputs=1
     void onEvent(int src, int value, Action handler, int flags = 0) {
-        if (!flags) flags = EventFlags::QueueIfBusy;
+        if (!flags) flags = ::EventFlags::QueueIfBusy;
         registerWithDal(src, value, handler, (int)flags);
     }
 

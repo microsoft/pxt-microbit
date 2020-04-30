@@ -4,7 +4,7 @@
 
 namespace pxsim {
     export class DalBoard extends CoreBoard
-        implements RadioBoard, LightBoard {
+        implements RadioBoard, LightBoard, MicrophoneBoard {
         // state & update logic for component services
         ledMatrixState: LedMatrixState;
         edgeConnectorState: EdgeConnectorState;
@@ -15,6 +15,7 @@ namespace pxsim {
         lightSensorState: LightSensorState;
         buttonPairState: ButtonPairState;
         radioState: RadioState;
+        microphoneState: AnalogSensorState;
         lightState: pxt.Map<CommonNeoPixelState>;
         fileSystem: FileSystemState;
 
@@ -85,6 +86,7 @@ namespace pxsim {
                 ID_RADIO: DAL.MICROBIT_ID_RADIO,
                 RADIO_EVT_DATAGRAM: DAL.MICROBIT_RADIO_EVT_DATAGRAM
             });
+            this.builtinParts["microphone"] = this.microphoneState = new AnalogSensorState(3001 /* DEVICE_ID_MICROPHONE */, 52, 120, 75, 96);
             this.builtinParts["accelerometer"] = this.accelerometerState = new AccelerometerState(runtime);
             this.builtinParts["serial"] = this.serialState = new SerialState();
             this.builtinParts["thermometer"] = this.thermometerState = new ThermometerState();

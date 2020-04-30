@@ -9,14 +9,18 @@ PXT_ABI(__aeabi_ddiv)
 PXT_ABI(__aeabi_dmul)
 
 extern "C" void target_panic(int error_code) {
+#if !MICROBIT_CODAL
     // wait for serial to flush
-    wait_us(300000);
+    sleep_us(300000);
+#endif
     microbit_panic(error_code);
 }
 
+#if !MICROBIT_CODAL
 extern "C" void target_reset() {
     microbit_reset();
 }
+#endif
 
 uint32_t device_heap_size(uint8_t heap_index); // defined in microbit-dal
 
@@ -26,8 +30,10 @@ MicroBit uBit;
 MicroBitEvent lastEvent;
 
 void platform_init() {
-    microbit_seed_random();
-    seedRandom(microbit_random(0x7fffffff));
+    microbit_seed_random();    
+    int seed = microbit_random(0x7fffffff);
+    DMESG("random seed: %d", seed);
+    seedRandom(seed);
 }
 
 void initMicrobitGC() {
@@ -57,7 +63,10 @@ void deleteListener(MicroBitListener *l) {
 }
 
 static void initCodal() {
+    // TODO!!!
+#ifndef MICROBIT_CODAL
     uBit.messageBus.setListenerDeletionCallback(deleteListener);
+#endif
 
     // repeat error 4 times and restart as needed
     microbit_panic_timeout(4);
@@ -91,7 +100,11 @@ void sleep_ms(unsigned ms) {
 }
 
 void sleep_us(uint64_t us) {
+#if MICROBIT_CODAL
+    target_wait_us(us);
+#else
     wait_us(us);
+#endif
 }
 
 void forever_stub(void *a) {
@@ -231,10 +244,15 @@ void setThreadContext(ThreadContext *ctx) {
     currentFiber->user_data = ctx;
 }
 
+#if !MICROBIT_CODAL
+#define tcb_get_stack_base(tcb) (tcb).stack_base
+#endif
+
 static void *threadAddressFor(Fiber *fib, void *sp) {
     if (fib == currentFiber)
         return sp;
-    return (uint8_t *)sp + ((uint8_t *)fib->stack_top - (uint8_t *)fib->tcb.stack_base);
+
+    return (uint8_t *)sp + ((uint8_t *)fib->stack_top - (uint8_t *)tcb_get_stack_base(fib->tcb));
 }
 
 void gcProcessStacks(int flags) {
@@ -278,8 +296,10 @@ void gcProcessStacks(int flags) {
         for (auto seg = &ctx->stack; seg; seg = seg->next) {
             auto ptr = (TValue *)threadAddressFor(fib, seg->top);
             auto end = (TValue *)threadAddressFor(fib, seg->bottom);
-            if (flags & 2)
-                DMESG("RS%d:%p/%d", cnt++, ptr, end - ptr);
+            if (flags & 2) {
+                DMESG("RS%d:%p/%d", cnt, ptr, end - ptr);
+                cnt++;
+            }
             // VLOG("mark: %p - %p", ptr, end);
             while (ptr < end) {
                 gcProcess(*ptr++);

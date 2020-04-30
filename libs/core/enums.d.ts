@@ -510,11 +510,11 @@ declare namespace led {
 
     declare const enum PinEventType {
     //% block="edge"
-    Edge = 1,  // MICROBIT_PIN_EVENT_ON_EDGE
+    Edge = 2,  // MICROBIT_PIN_EVENT_ON_EDGE
     //% block="pulse"
-    Pulse = 2,  // MICROBIT_PIN_EVENT_ON_PULSE
+    Pulse = 3,  // MICROBIT_PIN_EVENT_ON_PULSE
     //% block="touch"
-    Touch = 3,  // MICROBIT_PIN_EVENT_ON_TOUCH
+    Touch = 4,  // MICROBIT_PIN_EVENT_ON_TOUCH
     //% block="none"
     None = 0,  // MICROBIT_PIN_EVENT_NONE
     }

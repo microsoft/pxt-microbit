@@ -16,6 +16,8 @@
         "*.ts",
         "state/*.ts",
         "visuals/*.ts",
+        "../node_modules/pxt-common-packages/libs/core/sim/analogSensor.ts",
+        "../node_modules/pxt-common-packages/libs/microphone/sim/*.ts",
         "../node_modules/pxt-common-packages/libs/core/sim/neopixel.ts",
         "../node_modules/pxt-common-packages/libs/radio/sim/*.ts"
     ]

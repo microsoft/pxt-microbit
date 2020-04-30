@@ -143,6 +143,7 @@ INLINE void murmur3_core_2(const uint8_t *data, uint32_t len, uint32_t *dst) {
   dst[1] = h1;
 }
 
+#if 0
 int Reset_Handler(uint32_t *dst, uint8_t *ptr, uint32_t pageSize,
                   uint32_t numPages) {
   uint32_t crcTable[256];
@@ -165,19 +166,23 @@ int Reset_Handler(uint32_t *dst, uint8_t *ptr, uint32_t pageSize,
 #endif
   return 0;
 }
+#endif
 
-#if 0
-#define PAGE_SIZE 0x400
+#if 1
+#include "nrf.h"
+
 #define SIZE_IN_WORDS (PAGE_SIZE / 4)
 
 #define setConfig(v)                                                           \
   do {                                                                         \
     NRF_NVMC->CONFIG = v;                                                      \
+    __ISB(); __DSB();                                                          \
     while (NRF_NVMC->READY == NVMC_READY_READY_Busy)                           \
       ;                                                                        \
   } while (0)
 
-void overwriteFlashPage(uint32_t *to, uint32_t *from) {
+void Reset_Handler(uint32_t *to, uint32_t *from, uint32_t numWords) {
+#if 0
   int same = 1;
   for (int i = 0; i <= (SIZE_IN_WORDS - 1); i++) {
     if (to[i] != from[i]) {
@@ -187,6 +192,7 @@ void overwriteFlashPage(uint32_t *to, uint32_t *from) {
   }
   if (same)
     return;
+#endif
 
   // Turn on flash erase enable and wait until the NVMC is ready:
   setConfig(NVMC_CONFIG_WEN_Een << NVMC_CONFIG_WEN_Pos);
@@ -202,7 +208,7 @@ void overwriteFlashPage(uint32_t *to, uint32_t *from) {
   // Turn on flash write enable and wait until the NVMC is ready:
   setConfig(NVMC_CONFIG_WEN_Wen << NVMC_CONFIG_WEN_Pos);
 
-  for (int i = 0; i <= (SIZE_IN_WORDS - 1); i++) {
+  for (uint32_t i = 0; i < numWords; i++) {
     *(to + i) = *(from + i);
     while (NRF_NVMC->READY == NVMC_READY_READY_Busy)
       ;
