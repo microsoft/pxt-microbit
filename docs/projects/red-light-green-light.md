@@ -13,7 +13,7 @@ In this remake of the game, we will use a @boardname@, its radio, and the accele
 ### Multi editor
 
 This project uses radio to communicate status to other @boardname@s. It's helpful to know how a second @boardname@ will respond
-when it's send a radio message. You can code and test two radio programs using the multi-editor feature. Open **https://makecode.com/multi** to launch 2 side-by-side micro:bit editors.
+when it's sent a radio message. You can code and test two radio programs using the multi-editor feature. Open **https://makecode.com/multi** to launch 2 side-by-side micro:bit editors.
 
 ### ~
 
