@@ -25,6 +25,7 @@ namespace input {
      * Attaches code to run when the device is shaken.
      * @param body TODO
      */
+    //% deprecated=true
     //% help=input/on-shake
     export function onShake(body: () => void): void {
         onGesture(Gesture.Shake, body);
