@@ -41,7 +41,15 @@
   "url": "/projects/compass",
   "imageUrl":"/static/mb/projects/a5-compass.png",
   "cardType": "tutorial",
-  "otherActions": []
+  "otherActions": [{
+    "url": "/projects/spy/compass",
+    "editor": "py",
+    "cardType": "tutorial"
+  }, {
+    "url": "/projects/spy/compass",
+    "editor": "js",
+    "cardType": "tutorial"
+  }]
 }
 ]
 ```
