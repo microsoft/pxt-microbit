@@ -8,6 +8,14 @@ The player chosen as the current the stoplight says "Green Light!" and turns awa
 
 In this remake of the game, we will use a @boardname@, its radio, and the accelerometer to enforce these rules!
 
+### ~ hint
+
+### Multi editor
+
+Open **https://makecode.com/multi** to launch 2 side-by-side micro:bit editors.
+
+### ~
+
 ## Creating the stoplight
 
 Let's start with the code running on the stoplight's @boardname@. Don't use this code for the other players!
@@ -15,6 +23,7 @@ Let's start with the code running on the stoplight's @boardname@. Don't use this
 ### States
 
 We define two _states_, or game conditions, called ``GREENLIGHT`` and ``REDLIGHT``. A variable named ``state`` will store the current game state. When the stoplight player presses ``A``, the game goes into "green light" mode. When they press ``B``, the state goes into "red light" mode.
+The radio group for all game players is set to ``1``. We will set the same group in the player's code too.
 
 ```blocks
 let REDLIGHT = 0
@@ -22,15 +31,15 @@ let state = 0
 let GREENLIGHT = 0
 GREENLIGHT = 1
 REDLIGHT = 2
+radio.setGroup(1)
 ```
 
 ### Communication
 
-The radio group for all game players is set to ``1``. We will set the same group in the player's code too. The game state is streamed in a ``||basic:forever||`` loop so that players continuously receive it.
+The game state is streamed in a ``||basic:forever||`` loop so that players continuously receive it.
 
 ```blocks
-let state = 0;
-radio.setGroup(1)
+let state = 0
 basic.forever(function () {
     radio.sendNumber(state)
 })
@@ -54,8 +63,6 @@ input.onButtonPressed(Button.B, function () {
     state = REDLIGHT
     basic.showIcon(IconNames.No)
 })
-GREENLIGHT = 1
-REDLIGHT = 2
 ```
 
 ### Stoplight code
@@ -74,6 +81,7 @@ input.onButtonPressed(Button.B, function () {
     state = REDLIGHT
     basic.showIcon(IconNames.No)
 })
+state = 0
 GREENLIGHT = 1
 REDLIGHT = 2
 radio.setGroup(1)
@@ -149,7 +157,7 @@ At all times, gravity is applied to the @boardname@, so the acceleration strengt
 If the acceleration strength is far from that value, say ``1100`` or ``900``, we can assume that the player is moving. To compute this we use the formula:
 
 ```
-moving = | acc strength - 1000 | > 100
+movement = | acc strength - 1000 |
 ```
 
 Now that we know the math for it, we can turn this into code.
@@ -158,13 +166,15 @@ Now that we know the math for it, we can turn this into code.
 let REDLIGHT = 0
 let state = 0
 let GREENLIGHT = 0
-let moving = false
-if (state == REDLIGHT) {
-    moving = Math.abs(input.acceleration(Dimension.Strength) - 1000) > 100
-    if (moving) {
-        game.gameOver()
+let movement = false
+basic.forever(function () {
+    if (state == REDLIGHT) {
+        movement = Math.abs(input.acceleration(Dimension.Strength) - 1000)
+        if (movement > 100) {
+            game.gameOver()
+        }
     }
-}
+})
 ```
 
 ### Player code
@@ -172,7 +182,7 @@ if (state == REDLIGHT) {
 All together, the code for the players is:
 
 ```blocks
-let moving = false
+let movement = false
 let REDLIGHT = 0
 let state = 0
 let GREENLIGHT = 0
@@ -188,9 +198,11 @@ basic.forever(function () {
     } else if (state == REDLIGHT) {
         basic.showIcon(IconNames.No)
     }
+})
+basic.forever(function () {
     if (state == REDLIGHT) {
-        moving = Math.abs(input.acceleration(Dimension.Strength) - 1000) > 100
-        if (state == REDLIGHT && moving) {
+        movement = Math.abs(input.acceleration(Dimension.Strength) - 1000)
+        if (movement) {
             game.gameOver()
         }
     }

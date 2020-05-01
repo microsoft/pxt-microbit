@@ -9,6 +9,8 @@
   * [Micro Chat](/projects/micro-chat)
 * [Live Coding](/live-coding)
   * [Live Coding](https://mixer.com/MakeCode)
+  * [Temperature](https://youtu.be/uv4NtRzMwaA)
+  * [Binary Stopwatch](https://youtu.be/Jm3yxMA1mDo)
   * [Programmable LEDs](https://youtu.be/bV8Co98AYkA)
   * [Compass](https://youtu.be/9IyssvevhJ0)
   * [Hot Or Cold](https://youtu.be/uUeY3dHiXkE)
