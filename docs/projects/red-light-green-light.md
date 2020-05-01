@@ -167,7 +167,7 @@ Now that we know the math for it, we can turn this into code.
 let REDLIGHT = 0
 let state = 0
 let GREENLIGHT = 0
-let movement = false
+let movement = 0
 basic.forever(function () {
     if (state == REDLIGHT) {
         movement = Math.abs(input.acceleration(Dimension.Strength) - 1000)
@@ -183,7 +183,7 @@ basic.forever(function () {
 All together, the code for the players is:
 
 ```blocks
-let movement = false
+let movement = 0
 let REDLIGHT = 0
 let state = 0
 let GREENLIGHT = 0
@@ -203,7 +203,7 @@ basic.forever(function () {
 basic.forever(function () {
     if (state == REDLIGHT) {
         movement = Math.abs(input.acceleration(Dimension.Strength) - 1000)
-        if (movement) {
+        if (movement != 0) {
             game.gameOver()
         }
     }
