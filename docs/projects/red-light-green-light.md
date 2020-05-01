@@ -37,7 +37,7 @@ radio.setGroup(1)
 
 ### Communication
 
-The game state is streamed in a ``||basic:forever||`` loop so that players continuously receive it.
+A ``||basic:forever||`` loop will broadcast the game state so that players continuously receive it.
 
 ```blocks
 let state = 0
