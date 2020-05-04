@@ -527,5 +527,5 @@
             }
         }
     },
-    "disableDocsUpload": true
+    "disableDocsUpload": false
 }
