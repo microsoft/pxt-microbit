@@ -240,6 +240,7 @@ namespace music {
     //% name.fieldOptions.decompileLiterals=true
     //% useEnumVal=1
     //% group="Tone"
+    //% blockGap=8
     export function noteFrequency(name: Note): number {
         return name;
     }
@@ -253,7 +254,8 @@ namespace music {
      */
     //% help=music/beat weight=49
     //% blockId=device_beat block="%fraction|beat"
-    //% group="Tone"
+    //% group="Tempo"
+    //% blockGap=8
     export function beat(fraction?: BeatFraction): number {
         init();
         if (fraction == null) fraction = BeatFraction.Whole;
