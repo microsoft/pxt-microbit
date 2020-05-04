@@ -29,7 +29,10 @@ It's possible that the firmware version on the @boardname@ needs an update. Let'
 2. Open the **DETAILS.TXT** file.<br/>
 ![](/static/mb/device/mb-drive-contents.jpg)<br/>
 3. Look for a line in the file that says the version number. It should say **Version: \.\.\.**
-![](/static/mb/device/details-txt.jpg)<br/>
+![](/static/mb/device/details-txt.jpg)
+ or **Interface Version: \.\.\.**
+ ![](/static/mb/device/details-243.png)
+<br/>
 
 If the version is **0234**, **0241**, **0243** you **NEED** to update the [firmware](/device/firmware) on your @boardname@. Go to **Step 3** and follow the upgrade instructions.
 
