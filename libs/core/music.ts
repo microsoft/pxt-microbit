@@ -178,8 +178,8 @@ namespace music {
     const INTERNAL_MELODY_ENDED = 5;
 
     let beatsPerMinute: number = 120;
-     //% whenUsed
-     const freqs = hex`
+    //% whenUsed
+    const freqs = hex`
         1f00210023002500270029002c002e003100340037003a003e004100450049004e00520057005c00620068006e00
         75007b0083008b0093009c00a500af00b900c400d000dc00e900f70006011501260137014a015d01720188019f01
         b801d201ee010b022a024b026e029302ba02e40210033f037003a403dc03170455049704dd0427057505c8052006
@@ -424,7 +424,7 @@ namespace music {
             }
         }
 
-        music.beginMelody(notes, MelodyOptions.Once)
+        music.startMelody(notes, MelodyOptions.Once)
         control.waitForEvent(MICROBIT_MELODY_ID, INTERNAL_MELODY_ENDED);
     }
 
@@ -456,9 +456,9 @@ namespace music {
     //% group="Melody Advanced"
     export function stopMelody(options: MelodyStopOptions) {
         if (options & MelodyStopOptions.Background)
-            beginMelody([], MelodyOptions.OnceInBackground);
+            startMelody([], MelodyOptions.OnceInBackground);
         if (options & MelodyStopOptions.Foreground)
-            beginMelody([], MelodyOptions.Once);
+            startMelody([], MelodyOptions.Once);
     }
 
     /**
@@ -493,7 +493,7 @@ namespace music {
     //% weight=70
     export function volume(): number {
         return pins.analogPitchVolume();
-    }    
+    }
 
     function playNextNote(melody: Melody): void {
         // cache elements
