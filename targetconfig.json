@@ -171,7 +171,8 @@
             "CytronTechnologies/pxt-edubit",
             "MakeAndLearn/pxt-microshield",
             "4tronix/Orbit",
-            "elecfreaks/pxt-TPBot"
+            "elecfreaks/pxt-TPBot",
+            "longan-link/pxt-longanbit"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",

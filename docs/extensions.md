@@ -355,6 +355,10 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
    "name": "Freenove Starter Kit",
    "url": "/pkg/Freenove/Makecode-Extension-Starter-Kit",
    "cardType": "package"
+}, {
+   "name": "Elite Longanbit",
+   "url": "/pkg/longan-link/pxt-longanbit",
+   "cardType": "package"
 }]
 ```
 
