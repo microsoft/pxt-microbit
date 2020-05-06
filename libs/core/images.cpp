@@ -52,6 +52,18 @@ Image createImage(ImageLiteral_ leds) {
 Image createBigImage(ImageLiteral_ leds) {
     return createImage(leds);
 }
+
+//%
+Buffer charCodeBuffer(int charCode) {
+    if(charCode < MICROBIT_FONT_ASCII_START || charCode > MICROBIT_FONT_ASCII_END)
+        return NULL;
+    auto font = MicroBitFont::getSystemFont();
+    const int offset = (charCode - MICROBIT_FONT_ASCII_START) * 5;;
+    const uint8_t* charBuffer = font.characters + offset;
+    
+    return PXT_CREATE_BUFFER(charBuffer, 5);
+}
+
 } // namespace images
 
 namespace ImageMethods {
