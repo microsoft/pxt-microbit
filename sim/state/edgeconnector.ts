@@ -146,7 +146,7 @@ namespace pxsim.pins {
         }
     }
 
-    export function pushButton(pin: DigitalPin) {
+    export function pushButton(pinId: number) {
         const b = board();
         if (!b) return;
         const ec = b.edgeConnectorState;
