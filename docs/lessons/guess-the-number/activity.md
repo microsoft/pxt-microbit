@@ -1,6 +1,6 @@
 # guess the number activity
 
-Guess the number with math random. 
+Guess the number with math random.
 
 ## ~avatar avatar
 
@@ -21,7 +21,7 @@ Create a local variable of type number `x` and set it to a random number using `
 
 ```blocks
 input.onButtonPressed(Button.A, () => {
-    let x = Math.randomRange(0, 10)
+    let x = randint(0, 10)
 })
 
 ```
@@ -31,7 +31,7 @@ Show the random number on the screen.
 
 ```blocks
 input.onButtonPressed(Button.A, () => {
-    let x = Math.randomRange(0, 10)
+    let x = randint(0, 10)
     basic.showNumber(x)
 })
 

@@ -19,7 +19,7 @@ basic.forever(function() {
     led.plot(basketX, 4)
     if (eggY > 4) {
         eggY = -1
-        eggX = Math.randomRange(0, 4)
+        eggX = randint(0, 4)
     }
     basic.pause(300)
 })
@@ -50,11 +50,11 @@ basic.forever(function() {
     led.plot(basketX1, 4)
     if (eggY1 > 4) {
         eggY1 = -1
-        eggX1 = Math.randomRange(0, 4)
+        eggX1 = randint(0, 4)
     }
     if (eggY1 == 4) {
         if (basketX1 == eggX1) {
-            game.addScore(1) 
+            game.addScore(1)
         } else {
             game.removeLife(1)
         }
@@ -89,7 +89,7 @@ basic.forever(function() {
     led.plot(basketX2, 4)
     if (eggY2 > 4) {
         eggY2 = -1
-        eggX2 = Math.randomRange(0, 4)
+        eggX2 = randint(0, 4)
     }
     if (eggY2 == 4) {
         if (basketX2 == eggX2) {
@@ -128,7 +128,7 @@ basic.forever(function() {
     led.plot(basketX3, 4)
     if (eggY3 > 4) {
         eggY3 = -1
-        eggX3 = Math.randomRange(0, 4)
+        eggX3 = randint(0, 4)
     }
     if (eggY3 == 4) {
         if (basketX3 == eggX3) {
@@ -140,7 +140,7 @@ basic.forever(function() {
             game.removeLife(1)
         }
     }
-    basic.pause(fallingPause1) 
+    basic.pause(fallingPause1)
 })
 ```
 

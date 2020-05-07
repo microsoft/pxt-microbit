@@ -5,7 +5,7 @@
 Sometimes there is code you want to run if two or more conditions are true. The ``||logic:if then||`` block lets you combine conditions with the ``||logic:and||`` and the ``||logic:or||`` blocks. For example, if we want to see if a random number is between `0` and `9`, we can put two conditions in an ``||logic:if then||`` and connect them with an ``||logic:and||``.
 
 ```blocks
-let rando = Math.randomRange(-20, 20)
+let rando = randint(-20, 20)
 if (rando >= 0 && rando < 10) {
     basic.showNumber(rando)
 }
@@ -14,7 +14,7 @@ if (rando >= 0 && rando < 10) {
 This is how to check if a result is within a range of values, in this case it's from `0` to `9`. What if we want to include the values between `15` and `18` too? We just add another range check and connect them with an ``||logic:or||``.
 
 ```blocks
-let rando = Math.randomRange(-20, 20)
+let rando = randint(-20, 20)
 if ((rando >= 0 && rando < 10) || (rando >= 15 && rando < 18)) {
     basic.showNumber(rando)
 }
@@ -23,7 +23,7 @@ if ((rando >= 0 && rando < 10) || (rando >= 15 && rando < 18)) {
 Having all of these conditions in one ``||logic:if then||`` makes a large and complicated block. It can be hard to see how the complete conditional does both of the range checks. At times, it's easier to read the code in the JavaScript editor to better see the order and connections of the conditions.
 
 ```typescript
-let rando = Math.randomRange(-20, 20)
+let rando = randint(-20, 20)
 if ((rando >= 0 && rando < 10) || (rando >= 15 && rando < 18)) {
     basic.showNumber(rando)
 }
@@ -36,7 +36,7 @@ As you can see, reading the code for this conditional is might seem easier in Ja
 If one ``||logic:if then||`` block is placed inside another, then each condition for checking the random number is placed in its own ``||logic:if then||``. This give the same result as before with the two conditions in the ``||logic:if then||``.
 
 ```block
-let rando = Math.randomRange(-20, 20)
+let rando = randint(-20, 20)
 if (rando >= 0) {
     if (rando < 10) {
         basic.showNumber(rando)
@@ -47,7 +47,7 @@ if (rando >= 0) {
 When we switch the editor to JavaScript view, we see that the second ``if ()`` statement is indented and contained inside the `{ }` of the first. This matches the second ``||logic:if then||`` block that fits inside the first one. These are called _nested_ if statements.
 
 ```typescript
-let rando = Math.randomRange(-20, 20)
+let rando = randint(-20, 20)
 if (rando >= 0) {
     if (rando < 10) {
         basic.showNumber(rando)
@@ -138,4 +138,4 @@ To set the variable based on the result of the expression, the value options are
 let heatMessage = input.temperature() < 10 ? "COLD" : "WARM"
 ```
 
-The ``heatMeassage`` variable is set to the string saying ``"COLD"`` if the temperature is less than `10` degrees celsius or to ``"WARM"`` when it's `10` degrees or warmer. 
+The ``heatMeassage`` variable is set to the string saying ``"COLD"`` if the temperature is less than `10` degrees celsius or to ``"WARM"`` when it's `10` degrees or warmer.

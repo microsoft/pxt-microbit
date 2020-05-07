@@ -24,7 +24,7 @@ between `0` to `100` when pin **0** is pressed.
 
 ```spy
 input.onPinPressed(TouchPin.P0, function() {
-    basic.showNumber(Math.randomRange(0, 100));
+    basic.showNumber(randint(0, 100));
 });
 ```
 
@@ -39,7 +39,7 @@ Insert code to ``||basic:show||`` the ``"LOVE METER"`` message on the screen whe
 ```spy
 basic.showString("LOVE METER");
 input.onPinPressed(TouchPin.P0, function() {
-    basic.showNumber(Math.randomRange(0, 100));
+    basic.showNumber(randint(0, 100));
 });
 ```
 

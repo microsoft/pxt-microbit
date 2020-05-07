@@ -42,7 +42,7 @@ Place the ``||basic:show number||`` and ``||Math:pick random||`` blocks in an ``
 
 ```blocks
 input.onGesture(Gesture.Shake, () => {
-    basic.showNumber(Math.randomRange(0, 10))
+    basic.showNumber(randint(0, 10))
 })
 ```
 
@@ -52,7 +52,7 @@ A typical dice shows values from `1` to `6`. So, in ``||Math:pick random||``, do
 
 ```blocks
 input.onGesture(Gesture.Shake, () => {
-    basic.showNumber(Math.randomRange(1, 6))
+    basic.showNumber(randint(1, 6))
 })
 ```
 

@@ -1,6 +1,6 @@
 # magic 8 challenges
 
-Coding challenges for the magic 8 tutorial 
+Coding challenges for the magic 8 tutorial
 
 ## Before we get started
 
@@ -11,7 +11,7 @@ basic.showString("ASK A QUESTION")
 basic.showNumber(8)
 input.onGesture(Gesture.Shake, () =>  {
     basic.clearScreen()
-    let randomNumber = Math.randomRange(0, 2)
+    let randomNumber = randint(0, 2)
     if (randomNumber == 2) {
         basic.showString("YES")
     } else if (randomNumber == 1) {
@@ -35,7 +35,7 @@ basic.showString("ASK A QUESTION")
 basic.showNumber(8)
 input.onGesture(Gesture.Shake, () =>  {
     basic.clearScreen()
-    let randomNumber = Math.randomRange(0, 4)
+    let randomNumber = randint(0, 4)
     if (randomNumber == 2) {
         basic.showString("YES")
     } else if (randomNumber == 1) {
@@ -59,7 +59,7 @@ basic.showString("ASK A QUESTION")
 basic.showNumber(8)
 input.onGesture(Gesture.Shake, () => {
     basic.clearScreen()
-    let randomNumber = Math.randomRange(0, 4)
+    let randomNumber = randint(0, 4)
     if (randomNumber == 3) {
         basic.showString("TRY AGAIN")
     } else if (randomNumber == 2) {
@@ -82,7 +82,7 @@ basic.showString("ASK A QUESTION")
 basic.showNumber(8)
 input.onGesture(Gesture.Shake, () => {
     basic.clearScreen()
-    let randomNumber = Math.randomRange(0, 4)
+    let randomNumber = randint(0, 4)
     if (randomNumber == 4) {
         basic.showString("DEFINATELY")
     } else if (randomNumber == 3) {

@@ -9,13 +9,13 @@ Normally, if a show was running, or if someone was actively using the computer, 
 
 Your task is to create:
 
-* A "screen saver" animation using the plot/unplot blocks. You can fill the screen line by line, pausing between each one, or fill it with a random constellation of stars. 
+* A "screen saver" animation using the plot/unplot blocks. You can fill the screen line by line, pausing between each one, or fill it with a random constellation of stars.
 
 >-- OR --
 
 * A game that uses sprites to manage the x and y coordinate values of the different objects.
 
-Your project might use variables to store the values of sprites, which are special structures that contain an x and a y coordinate together that describe the sprite's location as one LED on the screen. 
+Your project might use variables to store the values of sprites, which are special structures that contain an x and a y coordinate together that describe the sprite's location as one LED on the screen.
 
 ## Project Ideas
 
@@ -150,7 +150,7 @@ basic.forever(() => {
    } else {
        game.addScore(1)
        ball.set(LedSpriteProperty.Y, 0)
-       ball.set(LedSpriteProperty.X, Math.randomRange(0, 5))
+       ball.set(LedSpriteProperty.X, randint(0, 5))
    }
 })
 input.onButtonPressed(Button.A, () => {
@@ -163,7 +163,7 @@ input.onButtonPressed(Button.B, () => {
        dodger.change(LedSpriteProperty.X, 1)
    }
 })
-ball = game.createSprite(Math.randomRange(0, 5), 0)
+ball = game.createSprite(randint(0, 5), 0)
 dodger = game.createSprite(2, 4)
 game.setScore(0)
 ```
@@ -182,7 +182,7 @@ basic.forever(() => {
    } else {
        game.addScore(1)
        ball.set(LedSpriteProperty.Y, 0)
-       ball.set(LedSpriteProperty.X, Math.randomRange(0, 5))
+       ball.set(LedSpriteProperty.X, randint(0, 5))
    }
 })
 input.onButtonPressed(Button.A, () => {
@@ -195,7 +195,7 @@ input.onButtonPressed(Button.B, () => {
        dodger.change(LedSpriteProperty.X, 1)
    }
 })
-ball = game.createSprite(Math.randomRange(0, 5), 0)
+ball = game.createSprite(randint(0, 5), 0)
 dodger = game.createSprite(2, 4)
 game.setScore(0)
 ```
@@ -237,6 +237,6 @@ Have students write a reflection of about 150–300 words, addressing the follow
 **4 =** Reflection piece addresses all prompts.<br/>
 **3 =** Reflection piece lacks 1 of the required elements.<br/>
 **2 =** Reflection piece lacks 2 of the required elements.<br/>
-**1 =** Reflection piece lacks 3 of the required elements. 
+**1 =** Reflection piece lacks 3 of the required elements.
 	 
 	 

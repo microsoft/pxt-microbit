@@ -14,7 +14,7 @@ Let's start by rebuilding the **dice** game. If you are unsure about the details
 
 ```blocks
 input.onGesture(Gesture.Shake, function () {
-    basic.showNumber(Math.randomRange(1, 6))
+    basic.showNumber(randint(1, 6))
 })
 ```
 
@@ -22,14 +22,14 @@ input.onGesture(Gesture.Shake, function () {
 
 We need to store the result of the dice cast in a variable. A **variable** is like a place in the memory of the @boardname@ where you save information, like numbers.
 
-* Go to the **Variables** toolbox and click ``||Make a Variable||`` to create a new variable. We will call it **dice**. 
+* Go to the **Variables** toolbox and click ``||Make a Variable||`` to create a new variable. We will call it **dice**.
 * Add a ``||set dice to||`` block and drag the ``||pick random||`` into it.
 * Drag a ``||dice||`` from the **Variables** toolbox into the ``||basic:show number||`` block.
 
 ```blocks
 let dice = 0
 input.onGesture(Gesture.Shake, function () {
-    dice = Math.randomRange(1, 6)
+    dice = randint(1, 6)
     basic.showNumber(dice)
 })
 ```
@@ -41,7 +41,7 @@ Put in a ``||radio:send number||`` and a ``||dice||`` to send the value stored i
 ```blocks
 let dice = 0
 input.onGesture(Gesture.Shake, function () {
-    dice = Math.randomRange(1, 6)
+    dice = randint(1, 6)
     basic.showNumber(dice)
     radio.sendNumber(dice)
 })
@@ -58,7 +58,7 @@ radio.onReceivedNumber(function (receivedNumber) {
 
 ## Check your cast
 
-Add a ``||logic:if||`` block to test if ``receivedNumber`` is greater or equal to ``dice``. 
+Add a ``||logic:if||`` block to test if ``receivedNumber`` is greater or equal to ``dice``.
 If is, you lost so display a sad face on the screen.
 
 ```blocks
@@ -79,7 +79,7 @@ If you have more than one @boardname@, download your code onto each one and try 
 ```blocks
 let dice = 0
 input.onGesture(Gesture.Shake, function () {
-    dice = Math.randomRange(1, 6)
+    dice = randint(1, 6)
     basic.showNumber(dice)
     radio.sendNumber(dice)
 })

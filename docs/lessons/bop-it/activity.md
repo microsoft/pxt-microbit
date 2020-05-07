@@ -20,29 +20,29 @@ input.onGesture(Gesture.LogoDown, function () {
         game.addScore(1);
         newAction();
     }
-}) 
+})
 input.onGesture(Gesture.Shake, () => {
     if (action == 2) {
         game.addScore(1);
         newAction();
     }
-}) 
+})
 input.onButtonPressed(Button.B, () => {
     basic.showNumber(game.score(), 150);
     basic.pause(2000);
     newAction();
-}) 
+})
 ```
 
 ## Challenge 1
 
-Now let's add some more types of instructions for the player to follow. Let's add `"PRESS PIN 0"`. 
-Change the global variable `action` to `math.randomRange(0, 3)` so that we can add a new **IF** statement that checks if `action == 3`. If it does, display instructions to press pin 0.
+Now let's add some more types of instructions for the player to follow. Let's add `"PRESS PIN 0"`.
+Change the global variable `action` to `randint(0, 3)` so that we can add a new **IF** statement that checks if `action == 3`. If it does, display instructions to press pin 0.
 
 ```typescript
 let action  = 0;
 export function newAction() {
-    action = Math.randomRange(0, 3)
+    action = randint(0, 3)
     if (action == 0) {
         basic.showString("PUSH A", 150) // ***
     }

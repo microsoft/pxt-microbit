@@ -16,7 +16,7 @@ input.onButtonPressed(Button.A, function () {
 
 ## Step 2
 
-Make a ``||variables:timer||`` variable and ``||variables:set||`` it to 
+Make a ``||variables:timer||`` variable and ``||variables:set||`` it to
 a ``||math:random value||`` between ``5`` and ``15``.
 
 The value of ``||variables:timer||`` represents the number of seconds left before someone is caught holding the potato.
@@ -25,7 +25,7 @@ The value of ``||variables:timer||`` represents the number of seconds left befor
 let timer = 0
 input.onButtonPressed(Button.A, function () {
     // @highlight
-    timer = Math.randomRange(5, 15)
+    timer = randint(5, 15)
 })
 ```
 
@@ -36,7 +36,7 @@ Add code to ``||basic:show||`` that the game started.
 ```blocks
 let timer = 0
 input.onButtonPressed(Button.A, function () {
-    timer = Math.randomRange(5, 15)
+    timer = randint(5, 15)
     // @highlight
     basic.showIcon(IconNames.Chessboard)
 })
@@ -50,7 +50,7 @@ Put in a loop to repeat code ``||loops:while||``  ``||variables:timer||`` ``||lo
 ```blocks
 let timer = 0
 input.onButtonPressed(Button.A, function () {
-    timer = Math.randomRange(5, 15)
+    timer = randint(5, 15)
     basic.showIcon(IconNames.Chessboard)
     // @highlight
     while (timer > 0) {
@@ -65,7 +65,7 @@ Inside the ``||loops:while||`` loop, add code to ``||variables:decrease||`` the 
 ```blocks
 let timer = 0
 input.onButtonPressed(Button.A, function () {
-    timer = Math.randomRange(5, 15)
+    timer = randint(5, 15)
     basic.showIcon(IconNames.Chessboard)
     while (timer > 0) {
         // @highlight
@@ -83,7 +83,7 @@ input.onButtonPressed(Button.A, function () {
 ```blocks
 let timer = 0
 input.onButtonPressed(Button.A, function () {
-    timer = Math.randomRange(5, 15)
+    timer = randint(5, 15)
     basic.showIcon(IconNames.Chessboard)
     while (timer > 0) {
         timer += -1

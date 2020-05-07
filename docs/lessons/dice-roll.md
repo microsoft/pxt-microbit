@@ -22,7 +22,7 @@ Learn how to use an if statements to run code run code depending on whether a co
 ```cards
 input.onGesture(Gesture.Shake, () => {})
 let x = 0
-Math.randomRange(0, 3)
+randint(0, 3)
 if (true) {}
 basic.showLeds(`
     . . . . .

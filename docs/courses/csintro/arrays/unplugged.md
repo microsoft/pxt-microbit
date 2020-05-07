@@ -18,8 +18,8 @@ In this activity, you will demonstrate different kinds of sorting methods on you
 * Ask the Sorter to place the students in order by directing them to move, one at a time, to the proper place.
 * Once the students are sorted, ask students the following:
 
->*  How did she sort you into the right order? 
-* Did you see a pattern? 
+>*  How did she sort you into the right order?
+* Did you see a pattern?
 * What did she do?
  
 Try to get students to be as precise as possible in explaining their thinking. Sometimes it helps to put the steps on the board, in an algorithm:
@@ -62,7 +62,7 @@ let column = 0
 let index = 0
 input.onButtonPressed(Button.AB, () => {
     for (let index = 0; index <= 4; index++) {
-        list[index] = Math.randomRange(0, 5) + 1
+        list[index] = randint(0, 5) + 1
     }
 })
 input.onButtonPressed(Button.B, () => {
@@ -142,7 +142,7 @@ input.onButtonPressed(Button.B, () => {
 })
 input.onButtonPressed(Button.AB, () => {
     for (let index = 0; index <= 4; index++) {
-        list[index] = Math.randomRange(0, 5) + 1
+        list[index] = randint(0, 5) + 1
     }
 })
 input.onButtonPressed(Button.A, () => {
@@ -223,7 +223,7 @@ input.onButtonPressed(Button.A, () => {
 })
 input.onButtonPressed(Button.AB, () => {
     for (let index = 0; index <= 4; index++) {
-        list[index] = Math.randomRange(0, 5) + 1
+        list[index] = randint(0, 5) + 1
     }
 })
 input.onButtonPressed(Button.B, () => {

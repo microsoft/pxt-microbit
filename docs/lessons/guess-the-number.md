@@ -24,7 +24,7 @@ Learn how to create numbers randomly by using the input of the @boardname@. We w
 input.onButtonPressed(Button.A, () => {})
 let x = 0
 basic.showNumber(0)
-Math.randomRange(0, 3)
+randint(0, 3)
 basic.clearScreen()
 ```
 

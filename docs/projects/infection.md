@@ -6,7 +6,7 @@ There is a disease outbreak! Will you find patient zero?!?
 
 ## ~
 
-**Infection** is a distributed game which simulates 
+**Infection** is a distributed game which simulates
 the spread of an illness. **The goal is to stop the outbreak before every player dies!**
 
 * **Number of players:** 1 Master and 4, or more, additional players. The Master and all other players need a @boardname@ with battery pack.
@@ -32,16 +32,16 @@ Press `A+B` to enter Master mode (there's only one Master in a game).
 Wait for players to be paired. The number of paired players will display on the screen.
 When paired, a letter appears on the player's screen, this letter is the player's identity.
 
-Once all of your players are registered, press `A+B` to start the infection game. 
+Once all of your players are registered, press `A+B` to start the infection game.
 The game randomly picks a player as **patient zero**.
 
-A player will transmit the disease to another player if close enough (detecting a sufficient `RSSI`), and if a certain probability (`TRANSMISSIONPROB`) of disease transfer is reached. 
-During the incubation phase (`INCUBATION`), the player does not show any sign of illness (happy face). 
+A player will transmit the disease to another player if close enough (detecting a sufficient `RSSI`), and if a certain probability (`TRANSMISSIONPROB`) of disease transfer is reached.
+During the incubation phase (`INCUBATION`), the player does not show any sign of illness (happy face).
 After that phase, the player gets sick and shows a sad face on the screen. After the sick (sad) face, the player dies and a skull shows up.
 
-Once the game is over, the @boardname@ will show the player's id (`A`, `B`, `C`...), health, and 
+Once the game is over, the @boardname@ will show the player's id (`A`, `B`, `C`...), health, and
 the id of the player who infected them. The Master @boardname@ will show the identity of patient zero.
-  
+
 Icons used in the game:
 
 * Pairing: `IconNames.Ghost`
@@ -74,37 +74,37 @@ As a result, it will not convert back to blocks.
 ```typescript
 /**
  * Infection game
- * 
+ *
  * Flash all micro:bits with this script
- * 
+ *
  * Press A+B to enter master mode (1 per game)
  *
  * Wait for players to be paired. The number of paired player will display on screen.
  * An icon will appear on player's screen.
- * 
+ *
  * Press A+B to start the infection game. The master will pick a random
  * player as patient zero.
  *
  * A player will transmit the disease if close enough (RSSI)
- * and with a certain probability (TRANSMISSIONPROB). 
- * During the incudation phase (INCUBATION), the player does not show any sign 
+ * and with a certain probability (TRANSMISSIONPROB).
+ * During the incudation phase (INCUBATION), the player does not show any sign
  * of illness. After that phase, the sad face shows up.
- * 
+ *
  * The game will automatically stop once all players are dead or healthy. The master can
  * also press A+B again to stop the game.
- * 
- * Once the game is over, the micro:bit will show the player id (A,B,C...), health and 
+ *
+ * Once the game is over, the micro:bit will show the player id (A,B,C...), health and
  * who infected him.
- * 
+ *
  * Icons used in the game:
- * 
+ *
  * Pairing: IconNames.Ghost
  * Paired: IconNames.Happy
  * Dead: IconNames.Skull
  * Sick: IconNames.Sad
  * Incubating: IconNames.Confused
  * Healthy: IconNames.Happy
- * 
+ *
  */
 const INCUBATION = 20000; // time before showing symptoms
 const DEATH = 40000; // time before dying off the disease
@@ -322,12 +322,12 @@ input.onButtonPressed(Button.AB, () => {
     // launch game
     if (state == GameState.Pairing) {
         // pick 1 player and infect him
-        patientZero = players[Math.randomRange(0, players.length - 1)];
-        // infecting message needs to be confirmed by 
+        patientZero = players[randint(0, players.length - 1)];
+        // infecting message needs to be confirmed by
         // the player
         state = GameState.Infecting;
         serial.writeLine(`game started ${players.length} players`);
-    } // end game 
+    } // end game
     else if (state == GameState.Running) {
         gameOver();
     }
@@ -394,7 +394,7 @@ radio.onReceivedBuffer(function (receivedBuffer: Buffer) {
                     if (health == HealthState.Healthy) {
                         serial.writeLine(`signal: ${signal}`);
                         if (signal > RSSI &&
-                            Math.randomRange(0, 100) > TRANSMISSIONPROB) {
+                            randint(0, 100) > TRANSMISSIONPROB) {
                             infectedBy = incomingMessage.value;
                             infectedTime = input.runningTime();
                             health = HealthState.Incubating;

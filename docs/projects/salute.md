@@ -38,7 +38,7 @@ Choose a random number between 0 and 9.
 ```blocks
 let randomNbr = 0
 input.onGesture(Gesture.ScreenUp, () => {
-    randomNbr = Math.randomRange(0, 10)
+    randomNbr = randint(0, 10)
     basic.showNumber(randomNbr)
 })
 ```
@@ -50,7 +50,7 @@ let randomNbr = 0
 input.onGesture(Gesture.ScreenUp, () => {
     randomNbr = 0
     while (randomNbr < 1) {
-        randomNbr = Math.randomRange(0, 10)
+        randomNbr = randint(0, 10)
     }
     basic.showNumber(randomNbr)
 })
@@ -104,7 +104,7 @@ Before the game starts, decide how many rounds will be played or for how long ro
 >* Player 2’s @boardname@ is displaying a 6
 >* The player (1 or 2) that correctly says “2 times 6 (or 6 times 2) equals 12” would win the “round”.
 6. Player 3 then adds to the score:
->* If a third @boardname@ was programmed to keep score, Player 3 should press button ``A`` if Player 1 won the round or button ``B`` if Player 2 won the round. 
+>* If a third @boardname@ was programmed to keep score, Player 3 should press button ``A`` if Player 1 won the round or button ``B`` if Player 2 won the round.
 >* If only two @boardname@s are being used, Player 3 should keep score on paper.
 7. At the end of a set of rounds (or end of specified time), the total score for both players should be recorded on paper. If the third @boardname@ was programmed to keep score, Player 3 should display the scores from the @boardname@ and write them down on a score sheet. This sheet would typically have the players names on it, not player numbers since they can switch positions.
 
@@ -115,7 +115,7 @@ If time permits, players should switch positions (e.g., Player 1 becomes Player 
 1. If there are enough people to play in groups of 4, Player 3 would say “Salute!” and the sum or product of the two cards, as usual. Player 4 would be the score keeper and referee on any ties OR have an additional @boardname@ with a number displayed and players need to calculate using all three @boardname@s with numbers displayed.
 2. Older players could create this game for younger ones making sure to use an appropriate number range for the grade level. The older players, or the older and younger players together, could make some kind of headband to hold the @boardname@ on the forehead. The older players would then teach the younger players how the game works.
 3. If only using two @boardname@s and you want to keep score:
-Add the code to keep score to one of the @boardname@s being used and use the ``A`` and ``B`` buttons to keep score on that @boardname@. 
+Add the code to keep score to one of the @boardname@s being used and use the ``A`` and ``B`` buttons to keep score on that @boardname@.
 
 ## References
 

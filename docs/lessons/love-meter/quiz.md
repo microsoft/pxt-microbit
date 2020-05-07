@@ -1,6 +1,6 @@
-# love meter blocks quiz 
+# love meter blocks quiz
 
-Learn how to make a love meter that you can try with someone. 
+Learn how to make a love meter that you can try with someone.
 
 ## Name
 
@@ -19,7 +19,7 @@ Answer the questions below while completing the activity. Pay attention to the d
 ## 3. Describe what this line of code does?
 
 ```blocks
-let x = Math.randomRange(0, 9)
+let x = randint(0, 9)
 ```
 
 
