@@ -355,6 +355,14 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
    "name": "Freenove Starter Kit",
    "url": "/pkg/Freenove/Makecode-Extension-Starter-Kit",
    "cardType": "package"
+}, {
+  "name": "Adafruit Crickit",
+  "url": "/pkg/Adafruit/pxt-crickit",
+  "cardType": "package"
+}, {
+  "name": "Adafruit Seesaw",
+  "url": "/pkg/Adafruit/pxt-seesaw",
+  "cardType": "package"
 }]
 ```
 
