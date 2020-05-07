@@ -521,4 +521,17 @@ namespace pins {
         }
         spi = new SPI(PIN_ARG(mosi), PIN_ARG(miso), PIN_ARG(sck));
     }
+
+    /**
+    * Mounts a push button on the given pin
+    */
+    //% help=pins/push-button advanced=true
+    //% blockId=pinspushbutton
+    void pushButton(DigitalPin pin) {
+#if MICROBIT_CODAL
+        new MicroBitButton(PIN_ARG(pin), PinMode::PullUp)
+#else
+        new MicroBitButton(PIN_ARG(pin), codal::PinMode::PullUp)
+#endif
+    }
 }
