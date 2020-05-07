@@ -357,11 +357,11 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
    "cardType": "package"
 }, {
   "name": "Adafruit Crickit",
-  "url": "/pkg/Adafruit/pxt-crickit",
+  "url": "/pkg/adafruit/pxt-crickit",
   "cardType": "package"
 }, {
   "name": "Adafruit Seesaw",
-  "url": "/pkg/Adafruit/pxt-seesaw",
+  "url": "/pkg/adafruit/pxt-seesaw",
   "cardType": "package"
 }]
 ```
