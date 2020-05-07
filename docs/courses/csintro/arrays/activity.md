@@ -197,15 +197,15 @@ Review the use of the random block in the Math category.
 * Create a block that will plot a single dot at a random location on the screen by choosing a random number from 0 to 4 for the x axis and a random number from 0 to 4 for the y axis.
 
 ```blocks
-led.plot(randint(0, 5), randint(0, 5))
+led.plot(randint(0, 4), randint(0, 4))
 ```
 
 Next, let’s create a loop that will repeat the above code five times, for a constellation with five stars.
 
 ```blocks
 for (let index = 0; index <= 4; index++) {
-    led.plot(randint(0, 5), randint(0, 5))
-    }
+    led.plot(randint(0, 4), randint(0, 4))
+}
 ```
 
 Note that to keep things simple we don’t check for duplicates, so it’s possible you may end up with fewer than five visible stars. That’s okay.
@@ -233,7 +233,7 @@ To fix this, we need to do a little math by subtracting 1 from whatever the valu
 let list = [5, 2, 1, 3, 4]
 
 for (let index = 0; index < list[0] - 1; index++) {
-    led.plot(randint(0, 5), randint(0, 5))
+    led.plot(randint(0, 4), randint(0, 4))
 }
 ```
 
@@ -248,7 +248,7 @@ let list: number[] = []
 input.onButtonPressed(Button.A, () => {
     for (let i = 0; i <= list.length - 1; i++) {
         for (let j = 0; j <= list[i] - 1; j++) {
-            led.plot(randint(0, 5), randint(0, 5))
+            led.plot(randint(0, 4), randint(0, 4))
         }
         basic.pause(1000)
         basic.clearScreen()
