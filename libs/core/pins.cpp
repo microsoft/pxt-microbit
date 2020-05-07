@@ -529,9 +529,9 @@ namespace pins {
     //% blockId=pinspushbutton
     void pushButton(DigitalPin pin) {
 #if MICROBIT_CODAL
-        new MicroBitButton(PIN_ARG(pin), PinMode::PullUp)
+        new codal::Button(PIN_ARG(pin), pin, ACTIVE_LOW, codal::PullMode::Up);
 #else
-        new MicroBitButton(PIN_ARG(pin), codal::PinMode::PullUp)
+        new MicroBitButton(PIN_ARG(pin), PinMode::PullUp);
 #endif
     }
 }
