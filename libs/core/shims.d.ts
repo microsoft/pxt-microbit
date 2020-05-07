@@ -811,6 +811,12 @@ declare namespace pins {
     //% sck.fieldEditor="gridpicker" sck.fieldOptions.columns=4
     //% sck.fieldOptions.tooltips="false" sck.fieldOptions.width="250" shim=pins::spiPins
     function spiPins(mosi: DigitalPin, miso: DigitalPin, sck: DigitalPin): void;
+
+    /**
+    * Mounts a push button on the given pin
+    */
+    //% help=pins/push-button advanced=true shim=pins::pushButton
+    function pushButton(pin: DigitalPin): void;
 }
 
 

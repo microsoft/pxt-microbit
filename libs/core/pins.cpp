@@ -526,7 +526,6 @@ namespace pins {
     * Mounts a push button on the given pin
     */
     //% help=pins/push-button advanced=true
-    //% blockId=pinspushbutton
     void pushButton(DigitalPin pin) {
 #if MICROBIT_CODAL
         new codal::Button(PIN_ARG(pin), pin, ACTIVE_LOW, codal::PullMode::Up);
