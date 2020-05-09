@@ -528,7 +528,7 @@ namespace pins {
     //% help=pins/push-button advanced=true
     void pushButton(DigitalPin pin) {
 #if MICROBIT_CODAL
-        new codal::Button(PIN_ARG(pin), pin, ACTIVE_LOW, codal::PullMode::Up);
+        new MicroBitButton(PIN_ARG(pin), (int)pin, DEVICE_BUTTON_ALL_EVENTS, ACTIVE_LOW, codal::PullMode::Up);
 #else
         new MicroBitButton(PIN_ARG(pin), PinMode::PullUp);
 #endif

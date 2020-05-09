@@ -57,7 +57,11 @@ Image createBigImage(ImageLiteral_ leds) {
 Buffer charCodeBuffer(int charCode) {
     if(charCode < MICROBIT_FONT_ASCII_START || charCode > MICROBIT_FONT_ASCII_END)
         return NULL;
+#if MICROBIT_CODAL
+    auto font = codal::BitmapFont::getSystemFont();
+#else
     auto font = MicroBitFont::getSystemFont();
+#endif
     const int offset = (charCode - MICROBIT_FONT_ASCII_START) * 5;;
     const uint8_t* charBuffer = font.characters + offset;
     
