@@ -13,6 +13,13 @@ Live coding of tutorials for MakeCode for micro:bit on https://mixer.com/MakeCod
         "imageUrl": "/static/live-coding/live.png"
     },
     {
+        "name": "Red Light Green Light",
+        "description": "Red light, green light game with micro:bit",
+        "youTubeId": "Cm22diu8CFA",
+        "youTubePlaylistId": "PLMMBk9hE-SepocOwueEtTDyOPI_TBE9yC",
+        "imageUrl": "/static/live-coding/Cm22diu8CFA.jpg"
+    },
+    {
         "name": "Temperature",
         "description": "Measure temperature with the micro:bit",
         "youTubeId": "uv4NtRzMwaA",

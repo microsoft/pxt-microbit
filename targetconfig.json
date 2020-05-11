@@ -201,7 +201,8 @@
         "Courses": "courses",
         "Behind the MakeCode Hardware": "behind-the-makecode-hardware",
         "Science Experiments": "science-experiments",
-        "Coding Cards": "coding-cards"
+        "Coding Cards": "coding-cards",
+        "Beta Deep Dive": "beta-deep-dive"
     },
     "electronManifest": {
         "latest": "v2.0.3"
