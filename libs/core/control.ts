@@ -4,6 +4,13 @@
 //% weight=1 color="#333333" icon="\uf233"
 //% advanced=true
 namespace control {
+    /**
+     * Run other code in the parallel.
+     */
+    //% hidden=1
+    export function runInParallel(a: () => void) {
+        control.inBackground(a);
+    }
 
     /**
      * Returns the value of a C++ runtime constant
