@@ -33,7 +33,6 @@
         "control.cpp",
         "interval.ts",
         "gcstats.ts",
-        "poll.ts",
         "console.ts",
         "game.ts",
         "led.cpp",

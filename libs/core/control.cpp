@@ -290,15 +290,6 @@ namespace control {
         MicroBitEvent evt(src, value, (MicroBitEventLaunchMode)mode);
     }
 
-
-    /**
-    * Allocates the next user notification event
-    */
-    //% help=control/allocate-notify-event
-    int allocateNotifyEvent() {
-        return pxt::allocateNotifyEvent();
-    }
-
     /**
      * Registers an event handler.
      */
