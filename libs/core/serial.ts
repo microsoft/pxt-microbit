@@ -1,22 +1,22 @@
 const enum Delimiters {
     //% block="new line (\n)"
-    NewLine = 1,
+    NewLine = 10,
     //% block=","
-    Comma = 2,
+    Comma = 44,
     //% block="$"
-    Dollar = 3,
+    Dollar = 36,
     //% block=":"
-    Colon = 4,
+    Colon = 58,
     //% block="."
-    Fullstop = 5,
+    Fullstop = 46,
     //% block="#"
-    Hash = 6,
+    Hash = 35,
     //% block="carriage return (\r)"
-    CarriageReturn = 7,
+    CarriageReturn = 13,
     //% block="|"
-    Pipe = 8,
+    Pipe = 124,
     //% block=";"
-    SemiColon = 9,
+    SemiColon = 59,
 }
 
 /**
@@ -120,20 +120,6 @@ namespace serial {
     //% blockId="serial_delimiter_conv" block="%del"
     //% weight=1 blockHidden=true
     export function delimiters(del: Delimiters): string {
-        // even though it might not look like, this is more
-        // (memory) efficient than the C++ implementation, because the
-        // strings are statically allocated and take no RAM
-        switch (del) {
-            case Delimiters.NewLine: return "\n"
-            case Delimiters.Comma: return ","
-            case Delimiters.Dollar: return "$"
-            case Delimiters.Colon: return ":"
-            case Delimiters.Fullstop: return "."
-            case Delimiters.Hash: return "#"
-            case Delimiters.CarriageReturn: return "\r"
-            case Delimiters.Pipe: return "|"
-            case Delimiters.SemiColon: return ";"
-            default: return "\n"
-        }
+        return String.fromCharCode(del as number);
     }
 }
