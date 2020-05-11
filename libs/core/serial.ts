@@ -16,7 +16,7 @@ const enum Delimiters {
     //% block="|"
     Pipe = 8,
     //% block=";"
-    SemiColumn = 9,
+    SemiColon = 9,
 }
 
 /**
@@ -132,7 +132,7 @@ namespace serial {
             case Delimiters.Hash: return "#"
             case Delimiters.CarriageReturn: return "\r"
             case Delimiters.Pipe: return "|"
-            case Delimiters.SemiColumn: return ";"
+            case Delimiters.SemiColon: return ";"
             default: return "\n"
         }
     }
