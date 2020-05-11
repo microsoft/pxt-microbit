@@ -69,6 +69,8 @@
   "Delimiters.Fullstop|block": ".",
   "Delimiters.Hash|block": "#",
   "Delimiters.NewLine|block": "new line (\n)",
+  "Delimiters.Pipe|block": "|",
+  "Delimiters.SemiColumn|block": ";",
   "Dimension.Strength|block": "strength",
   "Dimension.X|block": "x",
   "Dimension.Y|block": "y",
