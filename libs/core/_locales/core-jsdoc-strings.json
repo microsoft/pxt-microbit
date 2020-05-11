@@ -558,6 +558,7 @@
   "pins.pulseIn": "Return the duration of a pulse at a pin in microseconds.",
   "pins.pulseIn|param|name": "the pin which measures the pulse, eg: DigitalPin.P0",
   "pins.pulseIn|param|value": "the value of the pulse, eg: PulseValue.High",
+  "pins.pushButton": "Mounts a push button on the given pin",
   "pins.servoSetContinuous": "Specifies that a continuous servo is connected.",
   "pins.servoSetPulse": "Configure the IO pin as an analog/pwm output and set a pulse width. The period is 20 ms period and the pulse width is set based on the value given in **microseconds** or `1/1000` milliseconds.",
   "pins.servoSetPulse|param|micros": "pulse duration in micro seconds, eg:1500",
