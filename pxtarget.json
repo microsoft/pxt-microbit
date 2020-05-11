@@ -338,6 +338,7 @@
         "extendFieldEditors": true,
         "enableTrace": true,
         "ignoreDocsErrors": false,
+        "errorList": true,
         "experiments": [
             "autoWebUSBDownload",
             "allowPackageExtensions",
@@ -347,8 +348,7 @@
             "bluetoothUartConsole",
             "bluetoothPartialFlashing",
             "simScreenshot",
-            "simGif",
-            "errorList"
+            "simGif"
         ],
         "bluetoothUartFilters": [
             {
