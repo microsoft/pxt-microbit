@@ -29,6 +29,7 @@ namespace serial {
      * The string used to mark a new line, default is \r\n
      */
     export let NEW_LINE = "\r\n";
+    export let NEW_LINE_DELIMITER: Delimiters = Delimiters.NewLine;
     let writeLinePadding = 32;
 
     /**
@@ -110,7 +111,7 @@ namespace serial {
     //% blockId=serial_read_line block="serial|read line"
     //% weight=20 blockGap=8
     export function readLine(): string {
-        return serial.readUntil(delimiters(Delimiters.NewLine));
+        return serial.readUntil(delimiters(NEW_LINE_DELIMITER));
     }
 
     /**
