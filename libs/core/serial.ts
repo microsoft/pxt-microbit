@@ -102,7 +102,7 @@ namespace serial {
         // (memory) efficient than the C++ implementation, because the
         // strings are statically allocated and take no RAM
         switch (del) {
-            case Delimiters.NewLine: return "\n"
+            case Delimiters.NewLine: return "\r"
             case Delimiters.Comma: return ","
             case Delimiters.Dollar: return "$"
             case Delimiters.Colon: return ":"
