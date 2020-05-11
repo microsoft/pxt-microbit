@@ -1,3 +1,20 @@
+const enum Delimiters {
+    //% block="new line (\n)"
+    NewLine = 1,
+    //% block=","
+    Comma = 2,
+    //% block="$"
+    Dollar = 3,
+    //% block=":"
+    Colon = 4,
+    //% block="."
+    Fullstop = 5,
+    //% block="#"
+    Hash = 6,
+    //% block="carriage return (\r)"
+    CarriageReturn = 7,
+}
+
 /**
  * Reading and writing data over a serial connection.
  */
@@ -102,12 +119,13 @@ namespace serial {
         // (memory) efficient than the C++ implementation, because the
         // strings are statically allocated and take no RAM
         switch (del) {
-            case Delimiters.NewLine: return "\r"
+            case Delimiters.NewLine: return "\n"
             case Delimiters.Comma: return ","
             case Delimiters.Dollar: return "$"
             case Delimiters.Colon: return ":"
             case Delimiters.Fullstop: return "."
             case Delimiters.Hash: return "#"
+            case Delimiters.CarriageReturn: return "\r"
             default: return "\n"
         }
     }

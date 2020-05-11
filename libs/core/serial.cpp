@@ -43,21 +43,6 @@ enum BaudRate {
   BaudRate1200 = 1200
 };
 
-enum Delimiters {
-    //% block="new line"
-    NewLine = 1,
-    //% block=","
-    Comma = 2,
-    //% block="$"
-    Dollar = 3,
-    //% block=":"
-    Colon = 4,
-    //% block="."
-    Fullstop = 5,
-    //% block="#"
-    Hash = 6,
-};
-
 //% weight=2 color=#002050 icon="\uf287"
 //% advanced=true
 namespace serial {
