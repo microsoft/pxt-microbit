@@ -337,7 +337,7 @@
         "extendEditor": true,
         "extendFieldEditors": true,
         "enableTrace": true,
-        "ignoreDocsErrors": true,
+        "ignoreDocsErrors": false,
         "experiments": [
             "autoWebUSBDownload",
             "allowPackageExtensions",
