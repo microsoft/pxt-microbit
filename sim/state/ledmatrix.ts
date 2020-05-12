@@ -340,7 +340,7 @@ namespace pxsim.led {
         x |= 0;
         y |= 0;
         const state = board().ledMatrixState;
-        brightness = brightness | 0;
+        brightness |= 0;
         brightness = Math.max(0, Math.min(led.brightness(), brightness));
         if (brightness != 0 && brightness != 0xff && state.displayMode != DisplayMode.greyscale)
             state.displayMode = DisplayMode.greyscale;
