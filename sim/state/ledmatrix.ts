@@ -286,7 +286,7 @@ namespace pxsim.ImageMethods {
 
 namespace pxsim.basic {
     export function showNumber(x: number, interval: number) {
-        interval = interval >> 0;
+        interval |= 0;
         if (interval <= 0)
             interval = 1;
         let leds = createImageFromString(x.toString());
@@ -295,7 +295,7 @@ namespace pxsim.basic {
     }
 
     export function showString(s: string, interval: number) {
-        interval = interval >> 0;
+        interval |= 0;
         if (interval <= 0)
             interval = 1;
         if (s.length == 0) {
@@ -309,6 +309,7 @@ namespace pxsim.basic {
     }
 
     export function showLeds(leds: Image, interval: number): void {
+        interval |= 0;
         showAnimation(leds, interval);
     }
 
@@ -318,6 +319,7 @@ namespace pxsim.basic {
     }
 
     export function showAnimation(leds: Image, interval: number): void {
+        interval |= 0;
         ImageMethods.scrollImage(leds, 5, interval);
     }
 
@@ -328,13 +330,17 @@ namespace pxsim.basic {
 
 namespace pxsim.led {
     export function plot(x: number, y: number) {
+        x |= 0;
+        y |= 0;
         board().ledMatrixState.image.set(x, y, 0xff);
         runtime.queueDisplayUpdate()
     }
 
     export function plotBrightness(x: number, y: number, brightness: number) {
+        x |= 0;
+        y |= 0;
         const state = board().ledMatrixState;
-        brightness = brightness >> 0;
+        brightness = brightness | 0;
         brightness = Math.max(0, Math.min(led.brightness(), brightness));
         if (brightness != 0 && brightness != 0xff && state.displayMode != DisplayMode.greyscale)
             state.displayMode = DisplayMode.greyscale;
@@ -343,12 +349,16 @@ namespace pxsim.led {
     }
 
     export function unplot(x: number, y: number) {
+        x |= 0;
+        y |= 0;
         board().ledMatrixState.image.set(x, y, 0);
         runtime.queueDisplayUpdate()
     }
 
     export function pointBrightness(x: number, y: number): number {
-        return board().ledMatrixState.image.get(x | 0, y | 0);
+        x |= 0;
+        y |= 0;
+        return board().ledMatrixState.image.get(x, y);
     }
 
     export function brightness(): number {
@@ -356,7 +366,7 @@ namespace pxsim.led {
     }
 
     export function setBrightness(value: number): void {
-        value = value >> 0;
+        value |= 0;
         board().ledMatrixState.brigthness = Math.max(0, Math.min(255, value));
         runtime.queueDisplayUpdate()
     }
