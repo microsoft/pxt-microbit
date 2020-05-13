@@ -46,7 +46,7 @@ Deep dive of the upcoming features of the MakeCode for micro:bit editor. Try the
         "description": "See entire playlist on YouTube",
         "url": "https://www.youtube.com/playlist?list=PLMMBk9hE-SepwjCAK7cY-jvq6KeQKda8x",
         "youTubePlaylistId": "PLMMBk9hE-SepwjCAK7cY-jvq6KeQKda8x",
-        "imageUrl": "/static/beta-deep-dive/playlist.png"
+        "imageUrl": "/static/beta-deep-dive/playlist.jpg"
     }
 ]
 ```
