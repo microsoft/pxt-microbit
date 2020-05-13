@@ -175,6 +175,23 @@ namespace serial {
     }
 
     /**
+    Set the baud rate of the serial port
+    */
+    //% weight=10
+    //% blockId=serial_setbaudrate block="serial|set baud rate %rate"
+    //% blockGap=8 inlineInputMode=inline
+    //% help=serial/set-baud-rate
+    //% group="Configuration" advanced=true
+    void setBaudRate(BaudRate rate) {
+#if MICROBIT_CODAL
+      uBit.serial.setBaud(rate);
+#else
+      uBit.serial.baud((int)rate);
+#endif
+    }
+
+
+    /**
     * Direct the serial input and output to use the USB connection.
     */
     //% weight=9 help=serial/redirect-to-usb

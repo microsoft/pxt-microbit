@@ -84,6 +84,7 @@
   "Buffer.shift|param|start": "start offset in buffer. Default is 0.",
   "Buffer.sizeOfNumberFormat": "Get the size in bytes of specified number format.",
   "Buffer.slice": "Return a copy of a fragment of a buffer.",
+  "Buffer.toArray": "Read contents of buffer as an array in specified format",
   "Buffer.toHex": "Convert a buffer to its hexadecimal representation.",
   "Buffer.toString": "Convert a buffer to string assuming UTF8 encoding",
   "Buffer.unpack": "Reads numbers from the buffer according to the format",

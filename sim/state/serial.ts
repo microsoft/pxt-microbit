@@ -78,4 +78,8 @@ namespace pxsim.serial {
             length = 64;
         return pins.createBuffer(length);
     }
+
+    export function setBaudRate(rate: number) {
+        // TODO
+    }
 }

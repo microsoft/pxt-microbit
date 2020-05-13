@@ -71,6 +71,8 @@
   "Delimiters.NewLine|block": "new line (\n)",
   "Delimiters.Pipe|block": "|",
   "Delimiters.SemiColon|block": ";",
+  "Delimiters.Space|block": "space",
+  "Delimiters.Tab|block": "tab (\t)",
   "Dimension.Strength|block": "strength",
   "Dimension.X|block": "x",
   "Dimension.Y|block": "y",
