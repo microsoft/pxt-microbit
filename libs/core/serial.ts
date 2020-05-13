@@ -13,6 +13,10 @@ const enum Delimiters {
     Hash = 35,
     //% block="carriage return (\r)"
     CarriageReturn = 13,
+    //% block="space"
+    Space = 32,
+    //% block="tab (\t)"
+    Tab = 9,
     //% block="|"
     Pipe = 124,
     //% block=";"
