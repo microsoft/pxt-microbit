@@ -12,8 +12,8 @@ Use ``||input:on button pressed||`` to send a text message over radio with ``||r
 Every @boardname@ nearby will receive this message.
 
 ```blocks
-input.onButtonPressed(Button.A, () => {
-    radio.sendString("Yo");
+input.onButtonPressed(Button.A, function() {
+    radio.sendString(":)");
 });
 ```
 
@@ -38,11 +38,11 @@ radio.onReceivedString(function (receivedString) {
 
 ## Testing in the simulator
 
-Press button **A** on the simulator, you will notice that a second @boardname@ appears (if your screen is too small, the simulator might decide not to show it). Try pressing **A** again and notice that the "Yo" message gets displayed on the other @boardname@.
+Press button **A** on the simulator, you will notice that a second @boardname@ appears (if your screen is too small, the simulator might decide not to show it). Try pressing **A** again and notice that the ":)" message gets displayed on the other @boardname@.
 
 ```blocks
-input.onButtonPressed(Button.A, () => {
-    radio.sendString("Yo");
+input.onButtonPressed(Button.A, function() {
+    radio.sendString(":)");
 });
 radio.onReceivedString(function (receivedString) {
     basic.showString(receivedString);
@@ -60,7 +60,6 @@ Use the ``||radio:set group||`` block to assign a **group** number to your progr
 ```blocks
 radio.setGroup(123)
 ```
-
 
 ```package
 radio
