@@ -51,7 +51,7 @@ radio.onReceivedString(function (receivedString) {
 
 ## Testing in the simulator
 
-Press button **A** on the simulator, you will notice that a second @boardname@ appears (if your screen is too small, the simulator might decide not to show it). Try pressing **A** again and notice that the "Yo" message gets displayed on the other @boardname@.
+Press button **A** on the simulator, you will notice that a second @boardname@ appears (if your screen is too small, the simulator might decide not to show it). Try pressing **A** again and notice that the ":)" message gets displayed on the other @boardname@.
 
 ## Try it for real
 
