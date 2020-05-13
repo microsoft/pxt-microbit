@@ -50,6 +50,8 @@
         "trig.cpp",
         "fixed.ts",
         "templates.ts",
+        "sendbuffer.s",
+        "light.cpp",
         "parts/speaker.svg",
         "parts/headphone.svg"
     ],
