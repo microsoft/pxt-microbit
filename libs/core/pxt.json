@@ -53,6 +53,7 @@
         "parts/speaker.svg",
         "parts/headphone.svg"
     ],
+    "testFiles": [],
     "public": true,
     "dependencies": {},
     "dalDTS": {

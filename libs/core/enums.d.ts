@@ -559,7 +559,6 @@ declare namespace led {
     //% block=1200
     BaudRate1200 = 1200,
     }
-
 declare namespace serial {
 }
 

@@ -474,6 +474,30 @@ namespace pins {
     }
 
     /**
+    * Write to and read from the SPI slave at the same time
+    * @param command Data to be sent to the SPI slave (can be null)
+    * @param response Data received from the SPI slave (can be null)
+    */
+    //% help=pins/spi-transfer argsNullable
+    void spiTransfer(Buffer command, Buffer response) {
+        if (!command && !response)
+            target_panic(PANIC_INVALID_ARGUMENT);
+        if (command && response && command->length != response->length)
+            target_panic(PANIC_INVALID_ARGUMENT);
+        auto p = allocSPI();
+        unsigned len = command ? command->length : response->length;
+#if MICROBIT_CODAL
+        p->transfer(command ? command->data : NULL, command ? len : 0,
+                    response ? response->data : NULL, response ? len : 0);
+#else
+        for (unsigned i = 0; i < len; ++i) {
+            int v = p->write(command ? command->data[i] : 0);
+            if (response) response->data[i] = v;
+        }
+#endif
+    }
+
+    /**
     * Set the SPI frequency
     * @param frequency the clock frequency, eg: 1000000
     */
