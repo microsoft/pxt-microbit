@@ -195,7 +195,8 @@ namespace radio {
     //% deprecated=true
     export function writeValueToSerial() {
         const p = RadioPacket.getPacket(radio.readRawPacket());
-        writeToSerial(p);
+        if(p)
+            writeToSerial(p);
     }
 
     /**
