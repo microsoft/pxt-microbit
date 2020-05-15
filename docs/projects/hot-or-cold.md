@@ -12,7 +12,7 @@ https://youtu.be/nbRfNug-RkY
 
 ## Tutorials
 
-* [Start tutorials](@homeurl@beta---multi#tutorial:/projects/hot-or-cold/beacon:|:tutorial:/projects/hot-or-cold/seekers)
+* [Start tutorials](/multi#tutorial:/projects/hot-or-cold/beacon:|:tutorial:/projects/hot-or-cold/seekers)
 
 You can also do them individually:
 
