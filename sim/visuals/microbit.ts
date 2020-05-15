@@ -618,7 +618,7 @@ path.sim-board {
                     const state = this.board;
                     if (!state) return;
                     const pos = svg.cursorPoint(pt, this.element, ev);
-                    const rs = Math.max(-128, Math.min(-42, (- -138 + (pos.x - ax + wh) / wh * 100) | 0));
+                    const rs = Math.max(-128, Math.min(-42, (-138 + (pos.x - ax + wh) / wh * 100) | 0));
                     this.board.radioState.datagram.rssi = rs;
                     this.updateRSSI();
                 };
@@ -659,9 +659,12 @@ path.sim-board {
                 this.rssi.textContent = "";
             }
 
-            this.rssi.textContent = v.toString();
-            this.antenna.setAttribute("aria-valuenow", this.rssi.textContent);
-            accessibility.setLiveContent(this.rssi.textContent);
+            const vt = v.toString();
+            if (vt !== this.rssi.textContent) {
+                this.rssi.textContent = v.toString();
+                this.antenna.setAttribute("aria-valuenow", this.rssi.textContent);
+                accessibility.setLiveContent(this.rssi.textContent);
+            }
         }
 
         private updatePins() {
