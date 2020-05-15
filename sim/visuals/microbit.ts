@@ -609,9 +609,7 @@ path.sim-board {
                 let dax = 18;
                 let ayt = 10;
                 let ayb = 40;
-                const wh =  dax * 5;
-                this.rssi = svg.child(this.g, "text", { x: ax - 64, y: ayb, class: "sim-text" }) as SVGTextElement;
-                this.rssi.textContent = "";
+                const wh = dax * 5;
                 const antenaBackground = svg.child(this.g, "rect", { x: ax, y: ayt, width: wh, height: ayb - ayt, fill: "transparent" });
                 this.antenna = <SVGPolylineElement>svg.child(this.g, "polyline", { class: "sim-antenna", points: `${ax},${ayb} ${ax},${ayt} ${ax += dax},${ayt} ${ax},${ayb} ${ax += dax},${ayb} ${ax},${ayt} ${ax += dax},${ayt} ${ax},${ayb} ${ax += dax},${ayb} ${ax},${ayt} ${ax += dax},${ayt}` })
 
@@ -624,8 +622,8 @@ path.sim-board {
                     this.board.radioState.datagram.rssi = rs;
                     this.updateRSSI();
                 };
-                svg.buttonEvents(antenaBackground, evh, evh, evh, (ev) => {})
-                svg.buttonEvents(this.antenna, evh, evh, evh, (ev) => {})
+                svg.buttonEvents(antenaBackground, evh, evh, evh, (ev) => { })
+                svg.buttonEvents(this.antenna, evh, evh, evh, (ev) => { })
             }
             let now = Date.now();
             if (now - this.lastAntennaFlash > 200) {
@@ -636,12 +634,22 @@ path.sim-board {
         }
 
         private updateRSSI() {
-            if (!this.rssi) return;
-
             let state = this.board;
             if (!state) return;
             const v = state.radioState.datagram.rssi;
             if (v === undefined) return;
+
+            if (!this.rssi) {
+                let ax = 380;
+                let dax = 18;
+                let ayt = 10;
+                let ayb = 40;
+                const wh = dax * 5;
+                for (let i = 0; i < 4; ++i)
+                    svg.child(this.g, "rect", { x: ax - 90 + i * 6, y: ayt + 28 - i * 4, width: 4, height: 2 + i * 4, fill: "#fff" })
+                this.rssi = svg.child(this.g, "text", { x: ax - 64, y: ayb, class: "sim-text" }) as SVGTextElement;
+                this.rssi.textContent = "";
+            }
 
             this.rssi.textContent = v.toString();
         }
@@ -933,7 +941,7 @@ path.sim-board {
                     case "radiopacket": this.flashAntenna(); break;
                     case "eventbus":
                         if ((<pxsim.SimulatorEventBusMessage>msg).id == DAL.MES_BROADCAST_GENERAL_ID)
-                            this.flashAntenna(); 
+                            this.flashAntenna();
                         break;
                 }
             }
