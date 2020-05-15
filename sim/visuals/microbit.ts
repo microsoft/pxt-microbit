@@ -622,6 +622,7 @@ path.sim-board {
                     const pos = svg.cursorPoint(pt, this.element, ev);
                     const rs = Math.max(-128, Math.min(-42, (- 128 + (pos.x - ax + wh) / wh * 80) | 0));
                     this.board.radioState.datagram.rssi = rs;
+                    this.updateRSSI();
                 };
                 svg.buttonEvents(antenaBackground, evh, evh, evh, (ev) => {})
                 svg.buttonEvents(this.antenna, evh, evh, evh, (ev) => {})
