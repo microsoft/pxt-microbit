@@ -77,6 +77,11 @@
         "name": "Coding Cards",
         "url": "/coding-cards",
         "imageUrl": "/static/coding-cards/balance-card.jpg"
+    },
+    {
+        "name": "Beta Deep Dive",
+        "url": "/beta-deep-dive",
+        "imageUrl": "/static/beta-deep-dive/RpK4Cg42eNk.jpg"
     }
 ]
 ```
@@ -97,5 +102,6 @@
 [Courses](/courses),
 [Behind the MakeCode Hardware](/behind-the-makecode-hardware),
 [Science Experiments](/science-experiments),
-[Coding Cards](/coding-cards)
+[Coding Cards](/coding-cards),
+[Beta Deep Dive](/beta-deep-dive)
 

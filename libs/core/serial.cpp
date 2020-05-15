@@ -43,21 +43,6 @@ enum BaudRate {
   BaudRate1200 = 1200
 };
 
-enum Delimiters {
-    //% block="new line"
-    NewLine = 1,
-    //% block=","
-    Comma = 2,
-    //% block="$"
-    Dollar = 3,
-    //% block=":"
-    Colon = 4,
-    //% block="."
-    Fullstop = 5,
-    //% block="#"
-    Hash = 6,
-};
-
 //% weight=2 color=#002050 icon="\uf287"
 //% advanced=true
 namespace serial {
@@ -188,6 +173,23 @@ namespace serial {
       uBit.serial.baud((int)rate);
 #endif
     }
+
+    /**
+    Set the baud rate of the serial port
+    */
+    //% weight=10
+    //% blockId=serial_setbaudrate block="serial|set baud rate %rate"
+    //% blockGap=8 inlineInputMode=inline
+    //% help=serial/set-baud-rate
+    //% group="Configuration" advanced=true
+    void setBaudRate(BaudRate rate) {
+#if MICROBIT_CODAL
+      uBit.serial.setBaud(rate);
+#else
+      uBit.serial.baud((int)rate);
+#endif
+    }
+
 
     /**
     * Direct the serial input and output to use the USB connection.

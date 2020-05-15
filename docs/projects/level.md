@@ -34,7 +34,7 @@ basic.forever(function() {
 ## Step 3
 
 Add a code to test ``||logic:if||`` the ``||Math:absolute value||`` of ``||variables:x||`` is ``||logic:greater than||`` ``32``. 
-If it is true, ``||basic:show an icon||`` that @boardname@ is not flat.
+If it is true, ``||basic:show an icon||`` to tell you that the @boardname@ is not flat, ``||logic:else||`` show nothing, for now.
 
 ```blocks
 basic.forever(function() {
@@ -51,8 +51,8 @@ basic.forever(function() {
 
 ## Step 4
 
-Add another test ``||logic:if||`` the ``||Math:absolute value||`` of ``||variables:y||`` is ``||logic:greater than||`` ``32``. 
-If it is true, ``||basic:show an icon||`` that @boardname@ is not flat.
+Add an ``||logic:else if||`` to check that the ``||Math:absolute value||`` of ``||variables:y||`` is ``||logic:greater than||`` ``32``. 
+If it is true, ``||basic:show an icon||`` that tells you the @boardname@ is not flat.
 
 ```blocks
 basic.forever(function() {
@@ -83,7 +83,7 @@ basic.forever(function() {
         basic.showIcon(IconNames.Angry)        
     } else {
         // @highlight
-        basic.showIcon(IconNames.Square)        
+        basic.showIcon(IconNames.Happy)        
     }
 })
 ```
@@ -91,5 +91,5 @@ basic.forever(function() {
 ## Step 6
 
 If you have a @boardname@ connected, click ``|Download|`` to transfer your code!
-Try it out on tables in your house!
+Try it out on a table, counter, or window sill in your house!
 

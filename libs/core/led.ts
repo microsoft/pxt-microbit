@@ -155,6 +155,4 @@ namespace led {
         }
         led.setBrightness(0);
     }
-
-
 }
