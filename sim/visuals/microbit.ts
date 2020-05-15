@@ -290,6 +290,7 @@ path.sim-board {
         private leds: SVGElement[];
         private systemLed: SVGCircleElement;
         private antenna: SVGPolylineElement;
+        private rssi: SVGTextElement;
         private lightLevelButton: SVGCircleElement;
         private lightLevelGradient: SVGLinearGradientElement;
         private lightLevelText: SVGTextElement;
@@ -411,6 +412,7 @@ path.sim-board {
             this.updateTemperature();
             this.updateButtonAB();
             this.updateGestures();
+            this.updateRSSI();
 
             if (!this.props.runtime || this.props.runtime.dead) U.addClass(this.element, "grayscale");
             else U.removeClass(this.element, "grayscale");
@@ -607,13 +609,40 @@ path.sim-board {
                 let dax = 18;
                 let ayt = 10;
                 let ayb = 40;
+                const wh =  dax * 5;
+                this.rssi = svg.child(this.g, "text", { x: ax - 64, y: ayb, class: "sim-text" }) as SVGTextElement;
+                this.rssi.textContent = "";
+                const antenaBackground = svg.child(this.g, "rect", { x: ax, y: ayt, width: wh, height: ayb - ayt, fill: "transparent" });
                 this.antenna = <SVGPolylineElement>svg.child(this.g, "polyline", { class: "sim-antenna", points: `${ax},${ayb} ${ax},${ayt} ${ax += dax},${ayt} ${ax},${ayb} ${ax += dax},${ayb} ${ax},${ayt} ${ax += dax},${ayt} ${ax},${ayb} ${ax += dax},${ayb} ${ax},${ayt} ${ax += dax},${ayt}` })
+
+                const pt = this.element.createSVGPoint();
+                const evh = (ev: MouseEvent) => {
+                    const state = this.board;
+                    if (!state) return;
+                    const pos = svg.cursorPoint(pt, this.element, ev);
+                    const rs = Math.max(-128, Math.max(-42, (- 128 + (pos.x - ax + wh) / wh * 80) | 0));
+                    this.board.radioState.datagram.rssi = rs;
+                };
+                svg.buttonEvents(antenaBackground, evh, evh, evh, (ev) => {})
+                svg.buttonEvents(this.antenna, evh, evh, evh, (ev) => {})
             }
             let now = Date.now();
             if (now - this.lastAntennaFlash > 200) {
                 this.lastAntennaFlash = now;
                 svg.animate(this.antenna, 'sim-flash-stroke')
             }
+            this.updateRSSI();
+        }
+
+        private updateRSSI() {
+            if (!this.rssi) return;
+
+            let state = this.board;
+            if (!state) return;
+            const v = state.radioState.datagram.rssi;
+            if (v === undefined) return;
+
+            this.rssi.textContent = v.toString();
         }
 
         private updatePins() {
@@ -903,7 +932,8 @@ path.sim-board {
                     case "radiopacket": this.flashAntenna(); break;
                     case "eventbus":
                         if ((<pxsim.SimulatorEventBusMessage>msg).id == DAL.MES_BROADCAST_GENERAL_ID)
-                            this.flashAntenna(); break;
+                            this.flashAntenna(); 
+                        break;
                 }
             }
             let tiltDecayer = 0;
