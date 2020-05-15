@@ -618,12 +618,20 @@ path.sim-board {
                     const state = this.board;
                     if (!state) return;
                     const pos = svg.cursorPoint(pt, this.element, ev);
-                    const rs = Math.max(-128, Math.min(-42, (- 128 + (pos.x - ax + wh) / wh * 80) | 0));
+                    const rs = Math.max(-128, Math.min(-42, (- -138 + (pos.x - ax + wh) / wh * 100) | 0));
                     this.board.radioState.datagram.rssi = rs;
                     this.updateRSSI();
                 };
                 svg.buttonEvents(antenaBackground, evh, evh, evh, (ev) => { })
                 svg.buttonEvents(this.antenna, evh, evh, evh, (ev) => { })
+
+                accessibility.makeFocusable(this.antenna);
+                accessibility.setAria(this.antenna, "slider", "RSSI");
+                this.antenna.setAttribute("aria-valuemin", "-128");
+                this.antenna.setAttribute("aria-valuemax", "-42");
+                this.antenna.setAttribute("aria-orientation", "horizontal");
+                this.antenna.setAttribute("aria-valuenow", "");
+                accessibility.setLiveContent("");
             }
             let now = Date.now();
             if (now - this.lastAntennaFlash > 200) {
@@ -652,6 +660,8 @@ path.sim-board {
             }
 
             this.rssi.textContent = v.toString();
+            this.antenna.setAttribute("aria-valuenow", this.rssi.textContent);
+            accessibility.setLiveContent(this.rssi.textContent);
         }
 
         private updatePins() {
