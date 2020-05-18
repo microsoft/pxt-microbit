@@ -17,7 +17,7 @@ __attribute__((noinline)) static void neopixel_send_buffer(DevicePin &pin, const
 
 namespace light {
 //%
-void sendNeopixelBuffer(int pin, Buffer buf) {
+void sendNeopixelBuffer(Buffer buf, int pin) {
     if (!buf || !buf->length)
         return;
     neopixel_send_buffer(*pxt::getPin(pin), buf->data, buf->length);
