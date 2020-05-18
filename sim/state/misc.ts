@@ -242,7 +242,7 @@ namespace pxsim.bluetooth {
 }
 
 namespace pxsim.light {
-    export function sendNeopixelBuffer(buffer: RefBuffer, pin: number) {
+    export function sendWS2812Buffer(buffer: RefBuffer, pin: number) {
         pxsim.sendBufferAsm(buffer, pin)
     }
 }
