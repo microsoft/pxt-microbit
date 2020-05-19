@@ -18,7 +18,7 @@
   "description": "Catch your stride and count your steps",
   "url": "/projects/step-counter",
   "imageUrl":"/static/mb/projects/step-counter.png",
-  "cardType": "side"
+  "cardType": "tutorial"
 }, {
   "name": "Duct Tape Watch",
   "description": "Build a watch from duct tape",
