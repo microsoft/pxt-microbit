@@ -172,7 +172,8 @@
             "MakeAndLearn/pxt-microshield",
             "4tronix/Orbit",
             "elecfreaks/pxt-TPBot",
-            "CODOmicrobit/pxt-CODO"
+            "CODOmicrobit/pxt-CODO",
+            "KitronikLtd/pxt-kitronik-move-motor"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",

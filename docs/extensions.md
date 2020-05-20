@@ -8,6 +8,11 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
 
 ```codecard
 [{
+  "name": "Kitronik :MOVE Motor",
+  "url":"/pkg/KitronikLtd/pxt-kitronik-move-motor",
+  "cardType": "package"
+},
+{
   "name": "A4 Technologies CODO",
   "url":"/pkg/CODOmicrobit/pxt-CODO",
   "cardType": "package"
