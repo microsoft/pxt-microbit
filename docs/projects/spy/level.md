@@ -1,5 +1,7 @@
 # Level
 
+### @explicitHints true
+
 ## Introduction @unplugged
 
 Is your table flat? Use the @boardname@ as a level!
