@@ -46,6 +46,7 @@
             "Tinkertanker/pxt-ringbitcar",
             "Tinkertanker/uDriver_PCA9585",
             "Tinkertanker/pxt-alphanumeric-ht16k33",
+            "Tinkertanker/pxt-stepper-motor",
             "CoderDojoOlney/pxt-olney",
             "PaulDFoster/pxt-microbit-GY521",
             "chevyng/pxt-ucl-junkrobot",
