@@ -16,6 +16,11 @@ __attribute__((noinline)) static void neopixel_send_buffer(DevicePin &pin, const
 #endif
 
 namespace light {
+
+/**
+* Sends a color buffer to a light strip
+**/
+//% advanced=true
 //%
 void sendWS2812Buffer(Buffer buf, int pin) {
     if (!buf || !buf->length)
@@ -23,6 +28,10 @@ void sendWS2812Buffer(Buffer buf, int pin) {
     neopixel_send_buffer(*pxt::getPin(pin), buf->data, buf->length);
 }
 
+/**
+* Sets the light mode of a pin
+**/
+//% advanced=true
 //%
 void setMode(int pin, int mode) {
 

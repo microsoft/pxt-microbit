@@ -1047,5 +1047,19 @@ declare namespace control {
     //% deprecated=1 shim=control::createBufferFromUTF8
     function createBufferFromUTF8(str: string): Buffer;
 }
+declare namespace light {
+
+    /**
+     * Sends a color buffer to a light strip
+     **/
+    //% shim=light::sendWS2812Buffer
+    function sendWS2812Buffer(buf: Buffer, pin: int32): void;
+
+    /**
+     * Sets the light mode of a pin
+     **/
+    //% shim=light::setMode
+    function setMode(pin: int32, mode: int32): void;
+}
 
 // Auto-generated. Do not edit. Really.
