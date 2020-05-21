@@ -17,7 +17,6 @@ namespace console {
      */
     //% weight=90
     //% help=console/log blockGap=8
-    //% text.shadowOptions.toString=true
     export function log(text: any): void {
         let stringified = inspect(text);
         // pad text on the 32byte boundar
