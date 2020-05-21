@@ -23,4 +23,9 @@ void sendWS2812Buffer(Buffer buf, int pin) {
     neopixel_send_buffer(*pxt::getPin(pin), buf->data, buf->length);
 }
 
+//%
+void setMode(int pin, int mode) {
+
+}
+
 } // namespace light

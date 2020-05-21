@@ -428,6 +428,7 @@
   "{id:category}Serial": "Serial",
   "{id:category}String": "String",
   "{id:category}Text": "Text",
+  "{id:category}_py": "_py",
   "{id:group}Configuration": "Configuration",
   "{id:group}Melody": "Melody",
   "{id:group}Melody Advanced": "Melody Advanced",
