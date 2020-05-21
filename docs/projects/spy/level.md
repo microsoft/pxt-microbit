@@ -17,7 +17,7 @@ in the ``||basic:forever||`` loop.
 ```spy
 basic.forever(function() {
     // @highlight
-    let x = input.acceleration(Dimension.X);
+    let x = input.acceleration(Dimension.X)
 })
 ```
 
@@ -27,9 +27,9 @@ Make another variable ``||variables:y||`` and store the ``||input:acceleration y
 
 ```spy
 basic.forever(function() {
-    let x = input.acceleration(Dimension.X);
+    let x = input.acceleration(Dimension.X)
     // @highlight
-    let y = input.acceleration(Dimension.Y);
+    let y = input.acceleration(Dimension.Y)
 })
 ```
 
@@ -41,8 +41,8 @@ that the @boardname@ is not flat.
 
 ```spy
 basic.forever(function() {
-    let x = input.acceleration(Dimension.X);
-    let y = input.acceleration(Dimension.Y);
+    let x = input.acceleration(Dimension.X)
+    let y = input.acceleration(Dimension.Y)
     if (Math.abs(x) > 32) {
         // @highlight
         basic.showIcon(IconNames.Sad)        
@@ -60,8 +60,8 @@ the  @boardname@ is very much not flat.
 
 ```spy
 basic.forever(function() {
-    let x = input.acceleration(Dimension.X);
-    let y = input.acceleration(Dimension.Y);
+    let x = input.acceleration(Dimension.X)
+    let y = input.acceleration(Dimension.Y)
     if (Math.abs(x) > 32) {
         basic.showIcon(IconNames.Sad)        
     } else if (Math.abs(y) > 32) {
@@ -81,8 +81,8 @@ are small, which happens when the @boardname@ is laying flat. Add code to
 
 ```spy
 basic.forever(function() {
-    let x = input.acceleration(Dimension.X);
-    let y = input.acceleration(Dimension.Y);
+    let x = input.acceleration(Dimension.X)
+    let y = input.acceleration(Dimension.Y)
     if (Math.abs(x) > 32) {
         basic.showIcon(IconNames.Sad)        
     } else if (Math.abs(y) > 32) {
