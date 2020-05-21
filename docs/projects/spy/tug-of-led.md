@@ -55,7 +55,7 @@ input.onButtonPressed(Button.B, function () {
 
 ## Step 5
 
-Because a button press moves the rope by **0.1** in either direction, plot the ``||math:rounded||`` value of ``||variables:rope||`` instead.
+Because a button press pulls the rope by **0.1** in either direction, plot the ``||math:rounded||`` value of ``||variables:rope||`` to the nearest LED.
 
 ```spy
 let rope = 2
