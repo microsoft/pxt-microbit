@@ -17,6 +17,8 @@
         "core.cpp",
         "pxt-helpers.ts",
         "helpers.ts",
+        "pxt-python.d.ts",
+        "pxt-python-helpers.ts",
         "pinscompat.ts",
         "configkeys.h",
         "gc.cpp",
