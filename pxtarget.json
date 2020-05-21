@@ -45,7 +45,8 @@
         "gc": true,
         "imageRefTag": 9,
         "shimRenames": {
-            "sendBufferAsm": "light::sendWS2812Buffer"
+            "sendBufferAsm": "light::sendWS2812Buffer",
+            "setBufferMode": "light::setMode"
         },
         "patches": {
             "0.0.0 - 1.0.0": [
