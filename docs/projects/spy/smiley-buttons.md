@@ -15,7 +15,7 @@ Put in an ``||input:on button pressed||`` event to run code when button **A** is
 
 ```spy
 input.onButtonPressed(Button.A, function() { 
-});
+})
 ```
 
 ## Step 2
@@ -34,8 +34,8 @@ input.onButtonPressed(Button.A, function() {
         . . . . .
         # . . . #
         . # # # .`
-        );
-});
+        )
+})
 ```
 
 ## Step 3
@@ -51,8 +51,8 @@ input.onButtonPressed(Button.B, function() {
         . . . . .
         . # # # .
         # . . . #`
-        );
-});
+        )
+})
 ```
 
 ## Step 4

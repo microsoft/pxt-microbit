@@ -14,7 +14,7 @@ Add an event to run code when ``||input:button A is pressed||``.
 
 ```spy
 input.onButtonPressed(Button.A, function() {
-});
+})
 ```
 
 ## Sending a message
@@ -25,8 +25,8 @@ Every @boardname@ nearby will receive this message.
 ```spy
 input.onButtonPressed(Button.A, function() {
     // @highlight
-    radio.sendString(":)");
-});
+    radio.sendString(":)")
+})
 ```
 
 ## Receiving a message
@@ -45,7 +45,7 @@ Inside the event, add code to ``||basic:show||`` the ``||variables:receivedStrin
 ```spy
 radio.onReceivedString(function (receivedString) {
     // @highlight
-    basic.showString(receivedString);
+    basic.showString(receivedString)
 })
 ```
 

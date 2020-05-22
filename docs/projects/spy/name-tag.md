@@ -15,7 +15,7 @@ Use the ``||basic:forever||`` loop to run some code continuously.
 ```spy
 basic.forever(function() {
 
-});
+})
 ```
 
 ## Step 2
@@ -26,8 +26,8 @@ name as the string value for ``||basic:show string||``.
 ```spy
 basic.forever(function() {
     // @highlight
-    basic.showString("MICRO");
-});
+    basic.showString("MICRO")
+})
 ```
 
 ## Step 3
@@ -42,9 +42,9 @@ Place more ``||basic:show strings||`` to create a longer message.
 
 ```spy
 basic.forever(function() {
-    basic.showString("MICRO");
+    basic.showString("MICRO")
     // @highlight
-    basic.showString("BIT");
+    basic.showString("BIT")
 })
 ```
 
