@@ -303,7 +303,7 @@ namespace pins {
 
     MicroBitPin* pitchPin = NULL;
     MicroBitPin* pitchPin2 = NULL;
-    uint8_t pitchVolume = 64;
+    uint8_t pitchVolume = 0xff;
 
     /**
      * Set the pin used when using analog pitch or music.
