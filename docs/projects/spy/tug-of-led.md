@@ -74,7 +74,7 @@ then ``||basic:show||``**A WINS** on the screen.
 let rope = 2
 basic.forever(function() {
     basic.clearScreen()
-    led.plot(rope, 2)
+    led.plot(Math.round(rope), 2)
     // @highlight
     if (rope < 0) {
         basic.showString("A WINS")
@@ -91,7 +91,7 @@ then ``||basic:show||``**B WINS** on the screen.
 let rope = 2
 basic.forever(function() {
     basic.clearScreen()
-    led.plot(rope, 2)
+    led.plot(Math.round(rope), 2)
     if (rope < 0) {
         basic.showString("A WINS")
     } else if (rope > 4) {
