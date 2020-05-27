@@ -47,7 +47,7 @@ Add a secret mode that happens when **A** and **B** are pressed together. For th
 ```spy
 input.onButtonPressed(Button.AB, function() {
     basic.showIcon(IconNames.Silly)
-    basic.showIcon(IconNames.Suprised)
+    basic.showIcon(IconNames.Surprised)
 })
 ```
 
