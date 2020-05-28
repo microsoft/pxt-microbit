@@ -20,8 +20,6 @@ basic.forever(() => {
 
 Look at the simulator and make sure it shows your name on the screen.
 
-![Name scrolling on the LEDs](/static/mb/projects/name-tag/name-tag.gif)
-
 ## Step 3
 
 Place more ``||basic:show string||`` blocks to create your own story.

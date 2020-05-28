@@ -52,13 +52,13 @@ The sender code is modified to use a value packet instead of just a number messa
 
 ```blocks
 let temperature = 0
-let light = 0
+let lightLevel = 0
 radio.setGroup(99)
 basic.forever(() => {
     temperature = input.temperature()
     radio.sendValue("temperature", temperature)
-    light = input.lightLevel()
-    radio.sendValue("light", light)
+    lightLevel = input.lightLevel()
+    radio.sendValue("light", lightLevel)
     basic.pause(60000)
 })
 ```

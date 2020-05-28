@@ -45,9 +45,9 @@ and ``||variables:value||`` time. This is the elapsed number of milliseconds sin
 pressing button A.
 
 ```spy
-let start = 0;
+let start = 0
 input.onButtonPressed(Button.B, function () {
-    let elapsed = input.runningTime() - start;
+    let elapsed = input.runningTime() - start
 })
 ```
 
@@ -58,9 +58,9 @@ number of milliseconds ``||variables:elapsed||``. Use ``||Math:integer division|
 divide ``||variables:elapsed||`` by ``1000`` and get seconds.
 
 ```spy
-let start = 0;
+let start = 0
 input.onButtonPressed(Button.B, function () {
-    let elapsed = input.runningTime() - start;
+    let elapsed = input.runningTime() - start
     basic.showNumber(Math.idiv(elapsed, 1000))
 })
 ```

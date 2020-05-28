@@ -45,7 +45,6 @@
         "gc": true,
         "imageRefTag": 9,
         "shimRenames": {
-            "sendBufferAsm": "light::sendWS2812Buffer"
         },
         "patches": {
             "0.0.0 - 1.0.0": [
@@ -509,7 +508,8 @@
         },
         "browserDbPrefixes": {
             "1": "v1",
-            "2": "v2"
+            "2": "v2",
+            "3": "v3"
         },
         "editorVersionPaths": {
             "0": "v0"

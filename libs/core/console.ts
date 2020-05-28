@@ -17,15 +17,15 @@ namespace console {
      */
     //% weight=90
     //% help=console/log blockGap=8
-    //% text.shadowOptions.toString=true
-    export function log(text: string): void {
+    export function log(text: any): void {
+        let stringified = inspect(text);
         // pad text on the 32byte boundar
-        text += "\r\n";
-        control.__log(text);
+        stringified += "\r\n";
+        control.__log(stringified);
         // send to listeners
         if (listeners)
             for (let i = 0; i < listeners.length; ++i)
-                listeners[i](text);
+                listeners[i](stringified);
     }
 
     /**
@@ -35,8 +35,9 @@ namespace console {
      */
     //% weight=88 blockGap=8
     //% help=console/log-value
-    export function logValue(name: string, value: number): void {
-        log(name ? `${name}: ${value}` : `${value}`)
+    export function logValue(name: any, value: number): void {
+        const nameText = inspect(name);
+        log(nameText ? `${nameText}: ${value}` : `${value}`)
     }
 
     /**
@@ -49,5 +50,45 @@ namespace console {
         if (!listeners)
             listeners = [];
         listeners.push(listener);
+    }
+
+    /**
+     * Convert any object or value to a string representation
+     * @param obj value to be converted to a string
+     * @param maxElements [optional] max number values in an object to include in output
+     */
+    export function inspect(obj: any, maxElements = 20): string {
+        if (typeof obj == "string") {
+            return obj;
+        } else if (typeof obj == "number") {
+            return "" + obj;
+        } else if (Array.isArray(obj)) {
+            const asArr = (obj as Array<string>);
+            if (asArr.length <= maxElements) {
+                return asArr.join(",");
+            } else {
+                return `${asArr.slice(0, maxElements).join(",")}...`;
+            }
+        } else {
+            const asString = obj + "";
+            if (asString != "[object Object]"
+                && asString != "[Object]") { // on arcade at least, default toString is [Object] on hardware instead of standard
+                return asString;
+            }
+
+            let keys = Object.keys(obj);
+            const snipped = keys.length > maxElements;
+            if (snipped) {
+                keys = keys.slice(0, maxElements);
+            }
+
+            return `{${
+                keys.reduce(
+                    (prev, currKey) => prev + `\n    ${currKey}: ${obj[currKey]}`,
+                    ""
+                ) + (snipped ? "\n    ..." : "")
+            }
+}`;
+        }
     }
 }

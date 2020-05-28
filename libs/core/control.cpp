@@ -325,6 +325,7 @@ namespace control {
      * Make a friendly name for the device based on its serial number
      */
     //% blockId="control_device_name" block="device name" weight=10 blockGap=8
+    //% help=control/device-name
     //% advanced=true
     String deviceName() {
         return mkString(microbit_friendly_name(), -1);
@@ -334,6 +335,7 @@ namespace control {
     * Derive a unique, consistent serial number of this device from internal data.
     */
     //% blockId="control_device_serial_number" block="device serial number" weight=9
+    //% help=control/device-serial-number
     //% advanced=true
     int deviceSerialNumber() {
         return microbit_serial_number();

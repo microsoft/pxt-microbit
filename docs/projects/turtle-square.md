@@ -47,7 +47,7 @@ Did you notice the pattern of repeated blocks needed to draw a square? Try using
 
 ```blocks
 input.onButtonPressed(Button.A, function() {
-    for(let i = 0; i <=4; ++i) {
+    for(let index = 0; index <= 4; index++) {
         turtle.forward(1)
         turtle.turnRight()
     }
@@ -61,7 +61,7 @@ The turtle holds a **pen** that can turn on LEDs. If you add the ``||turtle:pen|
 ```blocks
 input.onButtonPressed(Button.A, function() {
     turtle.pen(TurtlePenMode.Down)
-    for(let i = 0; i <=4; ++i) {
+    for(let index = 0; index <= 4; index++) {
         turtle.forward(1)
         turtle.turnRight()
     }
