@@ -630,5 +630,9 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
     "name": "Keigan Motor",
     "url": "/pkg/keigan-motor/pxt-KeiganMotor",
     "cardType": "package"
+}, {
+    "name": "Elecfreaks NeZha",
+    "url": "/pkg/elecfreaks/pxt-nezha",
+    "cardType": "package"
 }]
 ```

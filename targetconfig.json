@@ -173,7 +173,8 @@
             "4tronix/Orbit",
             "elecfreaks/pxt-TPBot",
             "CODOmicrobit/pxt-CODO",
-            "KitronikLtd/pxt-kitronik-move-motor"
+            "KitronikLtd/pxt-kitronik-move-motor",
+            "elecfreaks/pxt-nezha"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",
