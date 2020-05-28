@@ -248,6 +248,11 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
 
 ```codecard
 [{
+  "name": "Elecfreaks PlanetX sensor kit",
+  "url":"/pkg/elecfreaks/pxt-PlanetX",
+  "cardType": "package"
+},
+{
   "name": "Inksmith Climate Action Kit",
   "url":"/pkg/dugbraden/pxt-climate-action-kit",
   "cardType": "package"
