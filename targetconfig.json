@@ -174,7 +174,8 @@
             "elecfreaks/pxt-TPBot",
             "CODOmicrobit/pxt-CODO",
             "KitronikLtd/pxt-kitronik-move-motor",
-            "elecfreaks/pxt-PlanetX"
+            "elecfreaks/pxt-PlanetX",
+            "elecfreaks/pxt-nezha"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",
