@@ -245,3 +245,14 @@ namespace pxsim.bluetooth {
     export function setTransmitPower(power: number) { }
 }
 
+namespace pxsim.light {
+    export function sendWS2812Buffer(buffer: RefBuffer, pin: number) {
+        pxsim.sendBufferAsm(buffer, pin)
+    }
+
+    export function setMode(pin: number, mode: number) {
+        const lp = neopixelState(pin);
+        if (!lp) return;
+        lp.mode = mode & 0xff;
+    }
+}

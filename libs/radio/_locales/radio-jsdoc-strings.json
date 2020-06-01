@@ -19,7 +19,7 @@
   "radio.onReceivedValue": "Registers code to run when the radio receives a key value pair.",
   "radio.onReceivedValueDeprecated": "Registers code to run when the radio receives a key value pair. Deprecated, use\nonReceivedValue instead.",
   "radio.raiseEvent": "Sends an event over radio to neigboring devices",
-  "radio.readRawPacket": "Internal use only. Takes the next packet from the radio queue and returns its contents + RSSI in a Buffer",
+  "radio.readRawPacket": "Internal use only. Takes the next packet from the radio queue and returns its contents + RSSI in a Buffer.\n@returns NULL if no packet available",
   "radio.receiveNumber": "Reads the next packet from the radio queue and returns the packet's number\npayload or 0 if the packet did not contain a number.",
   "radio.receiveString": "Reads the next packet from the radio queue and returns the packet's string\npayload or the empty string if the packet did not contain a string.",
   "radio.receivedBuffer": "Returns the buffer payload from the last packet taken from the radio queue\n(via ``receiveNumber``, ``receiveString``, etc) or the empty string if that\npacket did not contain a string.",

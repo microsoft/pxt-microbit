@@ -16,7 +16,8 @@ declare namespace radio {
     function raiseEvent(src: int32, value: int32): void;
 
     /**
-     * Internal use only. Takes the next packet from the radio queue and returns its contents + RSSI in a Buffer
+     * Internal use only. Takes the next packet from the radio queue and returns its contents + RSSI in a Buffer.
+     * @returns NULL if no packet available
      */
     //% shim=radio::readRawPacket
     function readRawPacket(): Buffer;

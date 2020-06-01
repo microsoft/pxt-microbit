@@ -51,7 +51,7 @@ radio.onReceivedString(function (receivedString) {
 
 ## Try it for real
 
-If you two @boardname@s, download the program to each one. Press button **A** on one and see if the other gets a message.
+If you have two @boardname@s, download the program to each one. Press button **A** on one and see if the other gets a message.
 
 ## Groups
 
