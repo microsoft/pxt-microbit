@@ -42,7 +42,9 @@ You can use this block for pretty much any kind of data. Try it out! Plot the ``
 ```blocks
 basic.forever(function() {
     led.plotBarGraph(
-        input.lightLevel())
+        input.lightLevel(),
+        0
+    )
 })
 ```
 
