@@ -543,6 +543,14 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
 }]
 ```
 
+## Machine Learning
+``` codecard
+[{
+  "name": "DFRobot HuskyLens",
+  "url":"/pkg/DFRobot/pxt-DFRobot_HuskyLens",
+  "cardType": "package"
+}]
+
 ## Other
 
 ```codecard
