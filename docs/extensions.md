@@ -2,186 +2,66 @@
 
 ## Extension Gallery #gallery
 
-Check out [microbit.org](http://microbit.org/resellers/) for more information on these accessories and where to buy them.
+Check out [the accessories pages on microbit.org](https://microbit.org/buy/accessories/) for more information on these accessories and where to buy them.
 
-## Robotics
+[Display](#Display)
+
+[Gaming](#Gaming)
+
+[Electronics](#Electronics)
+
+[Individual Sensors/Components](#Indivdidual-Sensors-Components)
+
+[IoT](#IoT)
+
+[Kits](#Kits)
+
+[LEDs and lights](#LEDs-and-lights)
+
+[Machine Learning](#Machine-Learning)
+
+[Robotics](#Robotics)
+
+[Sound](#Sound)
+
+[Wearables](#Wearables)
+
+[Utilities](#Utilities)
+
+
+## Display
 
 ```codecard
 [{
-  "name": "Kitronik :MOVE Motor",
-  "url":"/pkg/KitronikLtd/pxt-kitronik-move-motor",
+    "name": "Kitronik :VIEW text32",
+    "url": "/pkg/KitronikLtd/pxt-kitronik-viewtext32",
+    "cardType": "package"
+}, {
+  "name": "XinaBox OD01 Display",
+  "url":"/pkg/xinabox/pxt-OD01",
   "cardType": "package"
-},
+}, {
+  "name": "ssd1306 OLED",
+  "url":"/pkg/Tinkertanker/pxt-oled-ssd1306",
+  "cardType": "package"
+}, {
+  "name": "I2C LCD 1602 Display",
+  "url": "/pkg/1010Technologies/pxt-makerbit-ir-lcd1602",
+  "cardType": "package"
+}]
+```
+
+## Electronics
+```codecard
 {
-  "name": "A4 Technologies CODO",
-  "url":"/pkg/CODOmicrobit/pxt-CODO",
-  "cardType": "package"
-},
-{
-  "name": "Strawbees Robotic Inventions Kit",
-  "url":"/pkg/strawbees/pxt-robotic-inventions",
-  "cardType": "package"
-},
-{
-  "name": "Kitronik :MOVE mini",
-  "url":"/pkg/KitronikLtd/pxt-kitronik-servo-lite",
-  "cardType": "package"
-},
-{
-  "name": "Kitronik Integrated Robotics Board",
-  "url":"/pkg/KitronikLtd/pxt-kitronik-robotics-board",
-  "cardType": "package"
-},
-{
-  "name": "Kitronik Motor Driver Board",
-  "url":"/pkg/KitronikLtd/pxt-kitronik-motor-driver",
-  "cardType": "package"
-},
-{
-  "name": "Kitronik 16 Servo Board",
-  "url":"/pkg/KitronikLtd/pxt-kitronik-i2c-16-servo",
-  "cardType": "package"
-},
-{
-  "name": "4tronix BitBot",
-  "url":"/pkg/4tronix/BitBot",
-  "cardType": "package"
-},
-{
-  "name": "4tronix Orbit",
-  "url":"/pkg/4tronix/Orbit",
-  "cardType": "package"
-},
-{
-  "name": "4tronix Drive:Bit",
-  "url":"/pkg/4tronix/DriveBit",
-  "cardType": "package"
-},
-{
-  "name": "4tronix Servo:Bit",
-  "url":"/pkg/4tronix/ServoBit",
-  "cardType": "package"
-},
-{
-  "name": "4tronix MiniBit",
-  "url":"/pkg/4tronix/MiniBit",
-  "cardType": "package"
-},
-{
-  "name": "Elecfreaks TPBot",
-  "url":"/pkg/elecfreaks/pxt-TPBot",
-  "cardType": "package"
-},
-{
-  "name": "DF Robot Maqueen",
-  "url":"/pkg/DFRobot/pxt-maqueen",
-  "cardType": "package"
-},
-{
-  "name": "Sunfounder Sloth",
-  "url":"/pkg/sunfounder/pxt-sloth",
+  "name": "Kitronik Stop:Bit",
+  "url":"/pkg/KitronikLtd/pxt-kitronik-stopbit",
   "cardType": "package"
 }, {
-  "name": "Sphero RVR",
-  "url":"/pkg/sphero-inc/sphero-sdk-microbit-makecode",
-  "cardType": "package"
-}, {
- "name": "EBOTICS MIBO",
-  "url":"/pkg/EBOTICS/pxt-eboticsMIBO",
-  "cardType": "package"
-}, {
-  "name": "ALSRobot MinCruise",
-  "url":"/pkg/alsrobot-microbit-makecode-packages/MiniCruise",
-  "cardType": "package"
-}, {
-  "name": "ReroKit rero:micro",
-  "url":"/pkg/ReRoKit/pxt-reromicro",
-  "cardType": "package"
-}, {
-  "name": "PLEN bit",
-  "url":"/pkg/plenprojectcompany/pxt-PLENbit",
-  "cardType": "package"
-}, {
-  "name": "UCL Junk Robot",
-  "url":"/pkg/chevyng/pxt-ucl-junkrobot",
-  "cardType": "package"
-}, {
-  "name": "Elecfreaks Cutebot",
-  "url":"/pkg/elecfreaks/pxt-cutebot",
-  "cardType": "package"
-}, {
-  "name": "Kittenbot RobotBit",
-  "url":"/pkg/kittenbot/pxt-robotbit",
-  "cardType": "package"
-}, {
-  "name": "inex iBit",
-  "url":"/pkg/emwta/pxt-iBit",
-  "cardType": "package"
-}, {
-  "name": "k8 robotics kit",
-  "url":"/pkg/k8robotics/pxt-k8",
-  "cardType": "package"
-}, {
-  "name": "Freenove Micro:Rover",
-  "url":"/pkg/Freenove/Makecode-Extension-Rover",
-  "cardType": "package"
-}, {
-  "name": "Gigglebot",
-  "url":"/pkg/dexterind/pxt-giggle",
-  "cardType": "package"
-}, {
-  "name": "Robobit",
-  "url":"/pkg/4tronix/Robobit",
-  "cardType": "package"
-}, {
-  "name": "Pi Supply Bit:Buggy",
-  "url":"/pkg/PiSupply/pxt-bitbuggy",
-  "cardType": "package"
-}, {
-  "name": "ALS Robot Coo Coo",
-  "url":"/pkg/alsrobot-microbit-makecode-packages/CooCoo",
-  "cardType": "package"
-}, {
-  "name": "ALS Robot CruiseBit",
-  "url":"/pkg/alsrobot-microbit-makecode-packages/CruiseBit",
-  "cardType": "package"
-}, {
-  "name": "Hummingbird Bit",
-  "url":"/pkg/BirdBrainTechnologies/pxt-hummingbird-bit",
-  "cardType": "package"
-}, {
-  "name": "Inex iKB-1 controller board",
-  "url":"/pkg/jcubuntu/pxt-iKB1",
-  "cardType": "package"
-}, {
-  "name": "MakerBit motor controller",
-  "url":"/pkg/1010Technologies/pxt-makerbit-motor",
-  "cardType": "package"
-}, {
-  "name": "Tobbie II",
-  "url":"/pkg/kaku111/pxt-tobbieII",
-  "cardType": "package"
-}, {
-  "name": "Kitronik ACCESS:bit",
+  "name": "Kitronik Access:Bit",
   "url":"/pkg/KitronikLtd/pxt-kitronik-accessbit",
   "cardType": "package"
-}, {
-  "name": "Kitronik Fischertechnik interface",
-  "url":"/pkg/KitronikLtd/pxt-kitronik-fischertechnik",
-  "cardType": "package"
-}, {
-  "name": "TCEA Nexus:bit and Nexusbot",
-  "url":"/pkg/beyond-coding-tw/pxt-nexusbot",
-  "cardType": "package"
-}, {
-  "name": "Kitronik Klip Motor",
-  "url":"/pkg/KitronikLtd/pxt-kitronik-klip-motor",
-  "cardType": "package"
-}, {
-  "name": "Keyestudio Robot Car",
-  "url":"/pkg/Veilkrand/pxt-RobotCar",
-  "cardType": "package"  
-}]
+}
 ```
 
 ## Gaming
@@ -191,218 +71,33 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
   "name": "Kitronik :GAME ZIP64",
   "url":"/pkg/KitronikLtd/pxt-kitronik-zip-64",
   "cardType": "package"
-},
-{
+}, {
   "name": "Kitronik :GAME Controller",
   "url":"/pkg/KitronikLtd/pxt-kitronik-game-controller",
   "cardType": "package"
-},
-{
+}, {
   "name": "Sparkfun Gamer:bit",
   "url":"/pkg/sparkfun/pxt-gamer-bit",
   "cardType": "package"
-},
-{
+}, {
   "name": "4tronix BitCommander",
   "url":"/pkg/4tronix/BitCommander",
   "cardType": "package"
-},
-{
+}, {
   "name": "51bit SFC/NES controller",
   "url":"/pkg/51bit/SFC",
   "cardType": "package"
-},
-{
+}, {
   "name": "Pimoroni touch:bit",
   "url":"/pkg/pimoroni/pxt-touchbit",
   "cardType": "package"
 }]
 ```
 
-## Display
+## Individual Sensors/Components
 
 ```codecard
 [{
-    "name": "Kitronik :VIEW text32",
-    "url": "/pkg/KitronikLtd/pxt-kitronik-viewtext32",
-    "cardType": "package"
-},
-{
-  "name": "XinaBox OD01 Display",
-  "url":"/pkg/xinabox/pxt-OD01",
-  "cardType": "package"
-},
-{
-  "name": "ssd1306 OLED",
-  "url":"/pkg/Tinkertanker/pxt-oled-ssd1306",
-  "cardType": "package"
-},
-{
-  "name": "I2C LCD 1602 Display",
-  "url": "/pkg/1010Technologies/pxt-makerbit-ir-lcd1602",
-  "cardType": "package"
-}]
-```
-
-## STEM
-
-```codecard
-[{
-  "name": "Elecfreaks PlanetX sensor kit",
-  "url":"/pkg/elecfreaks/pxt-PlanetX",
-  "cardType": "package"
-},
-{
-  "name": "Inksmith Climate Action Kit",
-  "url":"/pkg/dugbraden/pxt-climate-action-kit",
-  "cardType": "package"
-},
-{
-  "name": "DFRobot Natural Science Board",
-  "url":"/pkg/DFRobot/pxt-DFRobot-NaturalScience",
-  "cardType": "package"
-},
-{
-  "name": "Kitronik Realtime Clock",
-  "url":"/pkg/KitronikLtd/pxt-kitronik-rtc",
-  "cardType": "package"
-},
-{
-  "name": "Kitronik Klimate Board",
-  "url":"/pkg/KitronikLtd/pxt-kitronik-klimate",
-  "cardType": "package"
-},
-{
-  "name": "Kitronik Klef Piano",
-  "url":"/pkg/KitronikLtd/pxt-kitronik-klef-piano",
-  "cardType": "package"
-},
-{
-  "name": "Kitronik Stop:Bit",
-  "url":"/pkg/KitronikLtd/pxt-kitronik-stopbit",
-  "cardType": "package"
-},
-{
-  "name": "Kitronik Lamp:Bit",
-  "url":"/pkg/KitronikLtd/pxt-kitronik-lampbit",
-  "cardType": "package"
-},
-{
-  "name": "Kitronik Access:Bit",
-  "url":"/pkg/KitronikLtd/pxt-kitronik-accessbit",
-  "cardType": "package"
-},
-{
-  "name": "Kitronik Halo HD",
-  "url":"/pkg/KitronikLtd/pxt-kitronik-halohd",
-  "cardType": "package"
-},
-{
-  "name": "Make&Learn micro:shield",
-  "url":"/pkg/MakeAndLearn/pxt-microshield",
-  "cardType": "package"
-},
-{
-  "name": "micro:turtle",
-  "url":"/pkg/microsoft/pxt-microturtle",
-  "cardType": "package"
-}, {
-  "name": "NeoPixel",
-  "url":"/pkg/microsoft/pxt-neopixel",
-  "cardType": "package"
-}, {
-  "name": "Sparkfun Moto:bit",
-  "url":"/pkg/sparkfun/pxt-moto-bit",
-  "cardType": "package"
-}, {
-  "name": "Sparkfun Weather:bit",
-  "url":"/pkg/sparkfun/pxt-weather-bit",
-  "cardType": "package"
-}, {
-  "name": "Sparkfun gator:environment",
-  "url":"/pkg/sparkfun/pxt-gator-environment",
-  "cardType": "package"
-}, {
-  "name": "Minode Kit",
-  "url":"/pkg/minodekit/pxt-minode",
-  "cardType": "package"
-}, {
-  "name": "XinaBox SW01 Advanced Weather Sensor",
-  "url":"/pkg/xinabox/pxt-SW01",
-  "cardType": "package"
-}, {
-  "name": "Grove inventor kit",
-  "url":"/pkg/Seeed-Studio/pxt-grove",
-  "cardType": "package"
-}, {
-  "name": "Cytron Edubit",
-  "url":"/pkg/CytronTechnologies/pxt-edubit",
-  "cardType": "package"  
-}, {
-    "name": "WS2812B",
-    "url": "/pkg/microsoft/pxt-ws2812b",
-    "cardType": "package"
-}, {
-    "name": "Pimoroni Envirobit",
-    "url": "/pkg/pimoroni/pxt-envirobit",
-    "cardType": "package"
-}, {
-    "name": "51bit Smart Tools",
-    "url": "/pkg/51bit/SmartTools",
-    "cardType": "package"
-}, {
-    "name": "MakerBit",
-    "url": "/pkg/1010Technologies/pxt-makerbit",
-    "cardType": "package"
-}, {
-    "name": "MakerBit Pins",
-    "url": "/pkg/1010Technologies/pxt-makerbit-pins",
-    "cardType": "package"
-}, {
-    "name": "Elecfreaks Wukon",
-    "url": "/pkg/elecfreaks/pxt-wukong",
-    "cardType": "package"
-}, {
-   "name": "Pi Supply tinker:kit",
-   "url": "/pkg/PiSupply/pxt-tinker-kit",
-   "cardType": "package"
-}, {
-   "name": "Freenove Starter Kit",
-   "url": "/pkg/Freenove/Makecode-Extension-Starter-Kit",
-   "cardType": "package"
-}, {
-   "name": "Elite Longanbit",
-   "url": "/pkg/longan-link/pxt-longanbit",
-   "cardType": "package"
-}, {
-  "name": "Adafruit Crickit",
-  "url": "/pkg/adafruit/pxt-crickit",
-  "cardType": "package"
-}, {
-  "name": "Adafruit Seesaw",
-  "url": "/pkg/adafruit/pxt-seesaw",
-  "cardType": "package"
-}]
-```
-
-## Wearables
-
-```codecard
-[{
-  "name": "Bright Wearables Bright Board",
-  "url":"/pkg/BrightWearables/pxt-microbit-brightboard",
-  "cardType": "package"
-}]
-```
-
-## Sensing & Individual Components
-
-```codecard
-[{
-  "name": "MU Vision camera",
-  "url":"/pkg/mu-opensource/pxt-muvision",
-  "cardType": "package"
-}, {
  "name": "Let's Talk Science COZIR sensor",
   "url":"/pkg/letstalkscience/pxt-cozir",
   "cardType": "package"
@@ -540,14 +235,335 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
   "name": "DFRobot microIoT board",
   "url":"/pkg/DFRobot/pxt-DFRobot-microIoT",
   "cardType": "package"
+}, {
+  "name": "Muselab WiFi IoT Shield",
+  "url":"/pkg/MUSELAB/pxt-wifi-shield",
+  "cardType": "package"
 }]
 ```
 
-## Other
+## Kits
+```codecard
+[{
+   "name": "Pi Supply tinker:kit",
+   "url": "/pkg/PiSupply/pxt-tinker-kit",
+   "cardType": "package"
+}, {
+   "name": "Freenove Starter Kit",
+   "url": "/pkg/Freenove/Makecode-Extension-Starter-Kit",
+   "cardType": "package"
+}, {
+  "name": "Elecfreaks PlanetX sensor kit",
+  "url":"/pkg/elecfreaks/pxt-PlanetX",
+  "cardType": "package"
+}, {
+  "name": "Inksmith Climate Action Kit",
+  "url":"/pkg/dugbraden/pxt-climate-action-kit",
+  "cardType": "package"
+}, {
+  "name": "Grove inventor kit",
+  "url":"/pkg/Seeed-Studio/pxt-grove",
+  "cardType": "package"
+}, {
+  "name": "Minode Kit",
+  "url":"/pkg/minodekit/pxt-minode",
+  "cardType": "package"
+}]
+```
+
+## LEDs and lights
+```codecard
+[{
+  "name": "Kitronik Lamp:Bit",
+  "url":"/pkg/KitronikLtd/pxt-kitronik-lampbit",
+  "cardType": "package"
+}, {
+  "name": "Kitronik Halo HD",
+  "url":"/pkg/KitronikLtd/pxt-kitronik-halohd",
+  "cardType": "package"
+}, {
+  "name": "NeoPixel",
+  "url":"/pkg/microsoft/pxt-neopixel",
+  "cardType": "package"
+}, {
+    "name": "WS2812B",
+    "url": "/pkg/microsoft/pxt-ws2812b",
+    "cardType": "package"
+}]
+```
+
+## Machine Learning
+```codecard
+[{
+  "name": "MU Vision camera",
+  "url":"/pkg/mu-opensource/pxt-muvision",
+  "cardType": "package"
+} 
+]
+```
+## Robotics
 
 ```codecard
-[
- {
+[{
+  "name": "Kitronik :MOVE Motor",
+  "url":"/pkg/KitronikLtd/pxt-kitronik-move-motor",
+  "cardType": "package"
+}, {
+  "name": "A4 Technologies CODO",
+  "url":"/pkg/CODOmicrobit/pxt-CODO",
+  "cardType": "package"
+}, {
+  "name": "Strawbees Robotic Inventions Kit",
+  "url":"/pkg/strawbees/pxt-robotic-inventions",
+  "cardType": "package"
+}, {
+  "name": "Kitronik :MOVE mini",
+  "url":"/pkg/KitronikLtd/pxt-kitronik-servo-lite",
+  "cardType": "package"
+}, {
+  "name": "Kitronik Integrated Robotics Board",
+  "url":"/pkg/KitronikLtd/pxt-kitronik-robotics-board",
+  "cardType": "package"
+}, {
+  "name": "Kitronik Motor Driver Board",
+  "url":"/pkg/KitronikLtd/pxt-kitronik-motor-driver",
+  "cardType": "package"
+}, {
+  "name": "Kitronik 16 Servo Board",
+  "url":"/pkg/KitronikLtd/pxt-kitronik-i2c-16-servo",
+  "cardType": "package"
+}, {
+  "name": "4tronix BitBot",
+  "url":"/pkg/4tronix/BitBot",
+  "cardType": "package"
+}, {
+  "name": "4tronix Orbit",
+  "url":"/pkg/4tronix/Orbit",
+  "cardType": "package"
+}, {
+  "name": "4tronix Drive:Bit",
+  "url":"/pkg/4tronix/DriveBit",
+  "cardType": "package"
+}, {
+  "name": "4tronix Servo:Bit",
+  "url":"/pkg/4tronix/ServoBit",
+  "cardType": "package"
+}, {
+  "name": "4tronix MiniBit",
+  "url":"/pkg/4tronix/MiniBit",
+  "cardType": "package"
+}, {
+  "name": "Elecfreaks TPBot",
+  "url":"/pkg/elecfreaks/pxt-TPBot",
+  "cardType": "package"
+}, {
+  "name": "DF Robot Maqueen",
+  "url":"/pkg/DFRobot/pxt-maqueen",
+  "cardType": "package"
+}, {
+  "name": "Sunfounder Sloth",
+  "url":"/pkg/sunfounder/pxt-sloth",
+  "cardType": "package"
+}, {
+  "name": "Sphero RVR",
+  "url":"/pkg/sphero-inc/sphero-sdk-microbit-makecode",
+  "cardType": "package"
+}, {
+  "name": "Sparkfun Moto:bit",
+  "url":"/pkg/sparkfun/pxt-moto-bit",
+  "cardType": "package"
+}, {
+ "name": "EBOTICS MIBO",
+  "url":"/pkg/EBOTICS/pxt-eboticsMIBO",
+  "cardType": "package"
+}, {
+  "name": "ALSRobot MinCruise",
+  "url":"/pkg/alsrobot-microbit-makecode-packages/MiniCruise",
+  "cardType": "package"
+}, {
+  "name": "ReroKit rero:micro",
+  "url":"/pkg/ReRoKit/pxt-reromicro",
+  "cardType": "package"
+}, {
+  "name": "PLEN bit",
+  "url":"/pkg/plenprojectcompany/pxt-PLENbit",
+  "cardType": "package"
+}, {
+  "name": "UCL Junk Robot",
+  "url":"/pkg/chevyng/pxt-ucl-junkrobot",
+  "cardType": "package"
+}, {
+  "name": "Elecfreaks Cutebot",
+  "url":"/pkg/elecfreaks/pxt-cutebot",
+  "cardType": "package"
+}, {
+  "name": "Kittenbot RobotBit",
+  "url":"/pkg/kittenbot/pxt-robotbit",
+  "cardType": "package"
+}, {
+  "name": "inex iBit",
+  "url":"/pkg/emwta/pxt-iBit",
+  "cardType": "package"
+}, {
+  "name": "InkSmith k8 robotics kit",
+  "url":"/pkg/k8robotics/pxt-k8",
+  "cardType": "package"
+}, {
+  "name": "Freenove Micro:Rover",
+  "url":"/pkg/Freenove/Makecode-Extension-Rover",
+  "cardType": "package"
+}, {
+  "name": "Gigglebot",
+  "url":"/pkg/dexterind/pxt-giggle",
+  "cardType": "package"
+}, {
+  "name": "Robobit",
+  "url":"/pkg/4tronix/Robobit",
+  "cardType": "package"
+}, {
+  "name": "Pi Supply Bit:Buggy",
+  "url":"/pkg/PiSupply/pxt-bitbuggy",
+  "cardType": "package"
+}, {
+  "name": "ALS Robot Coo Coo",
+  "url":"/pkg/alsrobot-microbit-makecode-packages/CooCoo",
+  "cardType": "package"
+}, {
+  "name": "ALS Robot CruiseBit",
+  "url":"/pkg/alsrobot-microbit-makecode-packages/CruiseBit",
+  "cardType": "package"
+}, {
+  "name": "Hummingbird Bit",
+  "url":"/pkg/BirdBrainTechnologies/pxt-hummingbird-bit",
+  "cardType": "package"
+}, {
+  "name": "Inex iKB-1 controller board",
+  "url":"/pkg/jcubuntu/pxt-iKB1",
+  "cardType": "package"
+}, {
+  "name": "MakerBit motor controller",
+  "url":"/pkg/1010Technologies/pxt-makerbit-motor",
+  "cardType": "package"
+}, {
+  "name": "Tobbie II",
+  "url":"/pkg/kaku111/pxt-tobbieII",
+  "cardType": "package"
+}, {
+  "name": "Kitronik ACCESS:bit",
+  "url":"/pkg/KitronikLtd/pxt-kitronik-accessbit",
+  "cardType": "package"
+}, {
+  "name": "Kitronik Fischertechnik interface",
+  "url":"/pkg/KitronikLtd/pxt-kitronik-fischertechnik",
+  "cardType": "package"
+}, {
+  "name": "TCEA Nexus:bit and Nexusbot",
+  "url":"/pkg/beyond-coding-tw/pxt-nexusbot",
+  "cardType": "package"
+}, {
+  "name": "Kitronik Klip Motor",
+  "url":"/pkg/KitronikLtd/pxt-kitronik-klip-motor",
+  "cardType": "package"
+}, {
+  "name": "Keyestudio Robot Car",
+  "url":"/pkg/Veilkrand/pxt-RobotCar",
+  "cardType": "package"  
+}]
+```
+
+## Sensing
+
+```codecard
+[{
+  "name": "DFRobot Natural Science Board",
+  "url":"/pkg/DFRobot/pxt-DFRobot-NaturalScience",
+  "cardType": "package"
+}, {
+  "name": "Kitronik Klimate Board",
+  "url":"/pkg/KitronikLtd/pxt-kitronik-klimate",
+  "cardType": "package"
+}, {
+  "name": "Make&Learn micro:shield",
+  "url":"/pkg/MakeAndLearn/pxt-microshield",
+  "cardType": "package"
+}, {
+  "name": "Sparkfun Weather:bit",
+  "url":"/pkg/sparkfun/pxt-weather-bit",
+  "cardType": "package"
+}, {
+  "name": "Sparkfun gator:environment",
+  "url":"/pkg/sparkfun/pxt-gator-environment",
+  "cardType": "package"
+}, {
+  "name": "XinaBox SW01 Advanced Weather Sensor",
+  "url":"/pkg/xinabox/pxt-SW01",
+  "cardType": "package"
+}, {
+  "name": "Cytron Edubit",
+  "url":"/pkg/CytronTechnologies/pxt-edubit",
+  "cardType": "package"  
+}, {
+    "name": "Pimoroni Envirobit",
+    "url": "/pkg/pimoroni/pxt-envirobit",
+    "cardType": "package"
+}, {
+    "name": "51bit Smart Tools",
+    "url": "/pkg/51bit/SmartTools",
+    "cardType": "package"
+}, {
+    "name": "MakerBit",
+    "url": "/pkg/1010Technologies/pxt-makerbit",
+    "cardType": "package"
+}, {
+    "name": "MakerBit Pins",
+    "url": "/pkg/1010Technologies/pxt-makerbit-pins",
+    "cardType": "package"
+}, {
+    "name": "Elecfreaks Wukon",
+    "url": "/pkg/elecfreaks/pxt-wukong",
+    "cardType": "package"
+}, {
+   "name": "Elite Longanbit",
+   "url": "/pkg/longan-link/pxt-longanbit",
+   "cardType": "package"
+}, {
+  "name": "Adafruit Crickit",
+  "url": "/pkg/adafruit/pxt-crickit",
+  "cardType": "package"
+}, {
+  "name": "Adafruit Seesaw",
+  "url": "/pkg/adafruit/pxt-seesaw",
+  "cardType": "package"
+}]
+```
+
+## Sound
+```codecard
+[{
+  "name": "Kitronik Klef Piano",
+  "url":"/pkg/KitronikLtd/pxt-kitronik-klef-piano",
+  "cardType": "package"
+}]
+```
+
+## Wearables
+
+```codecard
+[{
+  "name": "Bright Wearables Bright Board",
+  "url":"/pkg/BrightWearables/pxt-microbit-brightboard",
+  "cardType": "package"
+}]
+```
+
+## Utilities
+
+```codecard
+[{
+  "name": "Kitronik Realtime Clock",
+  "url":"/pkg/KitronikLtd/pxt-kitronik-rtc",
+  "cardType": "package"
+}, {
   "name": "Code Dojo Olney",
   "url":"/pkg/CoderDojoOlney/pxt-olney",
   "cardType": "package"
@@ -558,6 +574,10 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
 }, {
   "name": "File System",
   "url":"/pkg/microsoft/pxt-filesystem",
+  "cardType": "package"
+}, {
+  "name": "micro:turtle",
+  "url":"/pkg/microsoft/pxt-microturtle",
   "cardType": "package"
 }, {
   "name": "MIDI",
@@ -574,10 +594,6 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
 }, {
   "name": "Katakana",
   "url":"/pkg/mbitfun/pxt-katakana",
-  "cardType": "package"
-}, {
-  "name": "Muselab WiFi IoT Shield",
-  "url":"/pkg/MUSELAB/pxt-wifi-shield",
   "cardType": "package"
 }, {
   "name": "4tronix Cube:Bit",
