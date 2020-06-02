@@ -6,7 +6,7 @@ Composing some sound, or maybe some music, is done by putting tones to together,
 
 A _note_ is a tone that is recognized as part of music. A note has a name like '**C**'. A note is played for an amount of time called its _duration_. 
 
-On your @boardname@, a note is played on the speaker by sending a signal to a it with a certain _frequency_ called [Hertz](http://wikipedia.org/Hertz). Frequency is how fast something vibrates during one second. If you ring a bell that was made to play an '**A**' note, the bell will vibrate at 440 Hertz (440 times per second). So, notes are just certain frequencies that have special names.
+On your @boardname@, a note is played on the speaker by sending a signal to it with a certain _frequency_ called [Hertz](http://wikipedia.org/Hertz). Frequency is how fast something vibrates during one second. If you ring a bell that was made to play an '**A**' note, the bell will vibrate at 440 Hertz (440 times per second). So, notes are just certain frequencies that have special names.
 
 ## ~ hint
 
@@ -24,7 +24,7 @@ Basic notes have names that use one of the first nine letters of the alphabet. T
 
 ``|A|``, ``|B|``, ``|C|``, ``|D|``, ``|E|``, ``|F|``, ``|G|``
 
-Ther are other notes named like the basic notes but have extra parts to the name called _sharp_ and _flat_. These other notes are just a bit different from the basic notes and have frequencies a little higher or lower than the basic note. This makes music a little more complicated but much more interesting!
+There are other notes named like the basic notes but have extra parts to the name called _sharp_ and _flat_. These other notes are just a bit different from the basic notes and have frequencies a little higher or lower than the basic note. This makes music a little more complicated but much more interesting!
 
 Some of these other notes look like:
 
