@@ -8,7 +8,9 @@ A _note_ is a tone that is recognized as part of music. A note has a name like '
 
 On your @boardname@, a note is played on the speaker by sending a signal to it with a certain _frequency_ called [Hertz](http://wikipedia.org/Hertz). Frequency is how fast something vibrates during one second. If you ring a bell that was made to play an '**A**' note, the bell will vibrate at 440 Hertz (440 times per second). So, notes are just certain frequencies that have special names.
 
-## ~ hint
+### ~ hint
+
+#### Listen to music with headphones
 
 Watch this video to see how speakers and headphones make sound when connected to your @boardname@.
 
@@ -32,6 +34,14 @@ Some of these other notes look like:
 
 When a small amount music or even a song is written down it is called [sheet music](https://wikipedia.org/wiki/Sheet_music).
 
+### ~ hint
+
+#### Note names in different languages
+
+Many languages other than English use different names for some or all of the musical notes. MakeCode uses English for names in code.
+
+### ~
+
 ## Sounds and music in code
 
 Of course, we can't use written music in our code. We can make music another way. The way to do it is to put names of notes in [strings](/types/string). We make our notes using letters, symbols, and numbers. The notes of a melody are put together in an array like:
@@ -51,13 +61,13 @@ What you see here is not some alien language but a bunch of notes with their dur
 You might notice that the sound string has an ``'R:1'`` in it. The '**R**` means _rest_ and to rest for one beat. A rest is a pause, or a time of silence, in the sound.
 
 
-#### ~ hint
+### ~ hint
 
-**Duration**
+#### Duration
 
 The amount of time a note is played (duration) is measured as _beats_. The standard number _beats per minute_ (bpm) in music is 120 bpm which is one-half of a second of time. A _whole_ note lasts for 4 beats and a _quarter_ note takes just one beat.
 
-#### ~
+### ~
 
 ## Example
 
