@@ -10,7 +10,7 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 
 [Gaming](#gaming)
 
-[Individual Sensors/Components](#individual-sensors-components)
+[Individual sensors](#individual-sensors)
 
 [IoT](#iot)
 
@@ -18,17 +18,17 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 
 [LEDs and lights](#leds-and-lights)
 
-[Machine Learning](#machine-learning)
+[Machine learning](#machine-learning)
 
 [Robotics](#robotics)
 
-[Sensing/Shields](#sensing-shields)
+[Sensor boards](#sensing)
 
 [Sound](#sound)
 
 [Wearables](#wearables)
 
-[Utilities](#utilities)
+
 
 
 ## Display
@@ -104,7 +104,7 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 }]
 ```
 
-## Individual Sensors/Components
+## Individual sensors
 
 ```codecard
 [{
@@ -306,7 +306,7 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 }]
 ```
 
-## Machine Learning
+## Machine learning
 ```codecard
 [{
   "name": "MU Vision camera",
@@ -489,7 +489,7 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 }]
 ```
 
-## Sensing/Shields
+## Sensor boards
 
 ```codecard
 [{
