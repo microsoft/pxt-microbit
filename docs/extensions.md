@@ -4,29 +4,31 @@
 
 Check out [the accessories pages on microbit.org](https://microbit.org/buy/accessories/) for more information on these accessories and where to buy them.
 
-[Display](#Display)
+[Display](#display)
 
-[Gaming](#Gaming)
+[Electronics](#electronics)
 
-[Electronics](#Electronics)
+[Gaming](#gaming)
 
-[Individual Sensors/Components](#Indivdidual-Sensors-Components)
+[Individual Sensors/Components](#individual-sensors-components)
 
-[IoT](#IoT)
+[IoT](#iot)
 
-[Kits](#Kits)
+[Kits](#kits)
 
-[LEDs and lights](#LEDs-and-lights)
+[LEDs and lights](#leds-and-lights)
 
-[Machine Learning](#Machine-Learning)
+[Machine Learning](#machine-learning)
 
-[Robotics](#Robotics)
+[Robotics](#robotics)
 
-[Sound](#Sound)
+[Sensing/Shields](#sensing-shields)
 
-[Wearables](#Wearables)
+[Sound](#sound)
 
-[Utilities](#Utilities)
+[Wearables](#wearables)
+
+[Utilities](#utilities)
 
 
 ## Display
@@ -53,7 +55,7 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 
 ## Electronics
 ```codecard
-{
+[{
   "name": "Kitronik Stop:Bit",
   "url":"/pkg/KitronikLtd/pxt-kitronik-stopbit",
   "cardType": "package"
@@ -61,7 +63,11 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
   "name": "Kitronik Access:Bit",
   "url":"/pkg/KitronikLtd/pxt-kitronik-accessbit",
   "cardType": "package"
-}
+}, {
+  "name": "PCA9685 LED controller",
+  "url":"/pkg/jdarling/pxt-pca9685",
+  "cardType": "package"
+}]
 ```
 
 ## Gaming
@@ -90,6 +96,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 }, {
   "name": "Pimoroni touch:bit",
   "url":"/pkg/pimoroni/pxt-touchbit",
+  "cardType": "package"
+}, {
+  "name": "ALS Robot JoyBit",
+  "url":"/pkg/alsrobot-microbit-makecode-packages/ALSRobotJoyBit",
   "cardType": "package"
 }]
 ```
@@ -133,14 +143,6 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
   "name": "GY521",
   "url":"/pkg/PaulDFoster/pxt-microbit-GY521",
   "cardType": "package"
-}, {
-  "name": "PCA9685 LED controller",
-  "url":"/pkg/jdarling/pxt-pca9685",
-  "cardType": "package"
-}, {
-    "name": "Imagimaker Magisheild",
-    "url":"/pkg/Imagimaker/pxt-imagimaker",
-    "cardType": "package"
 }, {
     "name": "DHT11 & DHT22 Temperature and Humidity",
     "url":"/pkg/alankrantas/pxt-DHT11_DHT22",
@@ -208,10 +210,6 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 }, {
     "name": "HTS221 Humidity and temperature",
     "url": "/pkg/makecode-extensions/HTS221",
-    "cardType": "package"
-}, {
-    "name": "Kitronik clip detector",
-    "url": "/pkg/KitronikLtd/pxt-kitronik-clip-detector",
     "cardType": "package"
 }]
 ```
@@ -289,6 +287,22 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
     "name": "WS2812B",
     "url": "/pkg/microsoft/pxt-ws2812b",
     "cardType": "package"
+}, {
+  "name": "4tronix Cube:Bit",
+  "url":"/pkg/4tronix/cubebit",
+  "cardType": "package"
+}, {
+  "name": "51bit ColorBit",
+  "url":"/pkg/51bit/ColorBit",
+  "cardType": "package"
+}, {
+  "name": "Kitronik Zip Tile",
+  "url":"/pkg/KitronikLtd/pxt-kitronik-zip-tile",
+  "cardType": "package"
+}, {
+  "name": "MAX7219 8x8",
+  "url":"/pkg/alankrantas/pxt-MAX7219_8x8",
+  "cardType": "package"
 }]
 ```
 
@@ -457,6 +471,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
   "url":"/pkg/KitronikLtd/pxt-kitronik-fischertechnik",
   "cardType": "package"
 }, {
+  "name": "Keigan Motor",
+  "url": "/pkg/keigan-motor/pxt-KeiganMotor",
+  "cardType": "package"
+}, {
   "name": "TCEA Nexus:bit and Nexusbot",
   "url":"/pkg/beyond-coding-tw/pxt-nexusbot",
   "cardType": "package"
@@ -471,7 +489,7 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 }]
 ```
 
-## Sensing
+## Sensing/Shields
 
 ```codecard
 [{
@@ -501,31 +519,43 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 }, {
   "name": "Cytron Edubit",
   "url":"/pkg/CytronTechnologies/pxt-edubit",
+  "cardType": "package"
+}, {
+  "name": "Imagimaker Magisheild",
+  "url":"/pkg/Imagimaker/pxt-imagimaker",
+  "cardType": "package"
+}, {
+  "name": "Kitronik clip detector",
+  "url": "/pkg/KitronikLtd/pxt-kitronik-clip-detector",
   "cardType": "package"  
 }, {
-    "name": "Pimoroni Envirobit",
-    "url": "/pkg/pimoroni/pxt-envirobit",
-    "cardType": "package"
+  "name": "Pimoroni Envirobit",
+  "url": "/pkg/pimoroni/pxt-envirobit",
+  "cardType": "package"
 }, {
-    "name": "51bit Smart Tools",
-    "url": "/pkg/51bit/SmartTools",
-    "cardType": "package"
+  "name": "Pimoroni Automationbit",
+  "url":"/pkg/pimoroni/pxt-automationbit",
+  "cardType": "package"
 }, {
-    "name": "MakerBit",
-    "url": "/pkg/1010Technologies/pxt-makerbit",
-    "cardType": "package"
+  "name": "51bit Smart Tools",
+  "url": "/pkg/51bit/SmartTools",
+  "cardType": "package"
 }, {
-    "name": "MakerBit Pins",
-    "url": "/pkg/1010Technologies/pxt-makerbit-pins",
-    "cardType": "package"
+  "name": "MakerBit",
+  "url": "/pkg/1010Technologies/pxt-makerbit",
+  "cardType": "package"
 }, {
-    "name": "Elecfreaks Wukon",
-    "url": "/pkg/elecfreaks/pxt-wukong",
-    "cardType": "package"
+  "name": "MakerBit Pins",
+  "url": "/pkg/1010Technologies/pxt-makerbit-pins",
+  "cardType": "package"
 }, {
-   "name": "Elite Longanbit",
-   "url": "/pkg/longan-link/pxt-longanbit",
-   "cardType": "package"
+  "name": "Elecfreaks Wukon",
+  "url": "/pkg/elecfreaks/pxt-wukong",
+  "cardType": "package"
+}, {
+  "name": "Elite Longanbit",
+  "url": "/pkg/longan-link/pxt-longanbit",
+  "cardType": "package"
 }, {
   "name": "Adafruit Crickit",
   "url": "/pkg/adafruit/pxt-crickit",
@@ -543,6 +573,14 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
   "name": "Kitronik Klef Piano",
   "url":"/pkg/KitronikLtd/pxt-kitronik-klef-piano",
   "cardType": "package"
+}, {
+  "name": "Catalex Serial MP3 Player v1.0",
+  "url": "/pkg/1010Technologies/pxt-makerbit-mp3",
+  "cardType": "package"
+}, {
+  "name": "51bit DFPlayer mini",
+  "url":"/pkg/51bit/dfplayermini",
+  "cardType": "package" 
 }]
 ```
 
@@ -596,10 +634,6 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
   "url":"/pkg/mbitfun/pxt-katakana",
   "cardType": "package"
 }, {
-  "name": "4tronix Cube:Bit",
-  "url":"/pkg/4tronix/cubebit",
-  "cardType": "package"
-}, {
   "name": "LINE BLE beacon",
   "url":"/pkg/pizayanz/pxt-linebeacon",
   "cardType": "package"
@@ -610,10 +644,6 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 }, {
   "name": "SBRICK",
   "url":"/pkg/vengit/pxt-sbrick",
-  "cardType": "package"
-}, {
-  "name": "Pimoroni Automationbit",
-  "url":"/pkg/pimoroni/pxt-automationbit",
   "cardType": "package"
 }, {
   "name": "Annikken Andee",
@@ -627,34 +657,6 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
   "name": "ALS Robot Keyboard",
   "url":"/pkg/alsrobot-microbit-makecode-packages/ALSRobotKeyboard",
   "cardType": "package"
-}, {
-  "name": "ALS Robot JoyBit",
-  "url":"/pkg/alsrobot-microbit-makecode-packages/ALSRobotJoyBit",
-  "cardType": "package"
-}, {
-  "name": "51bit ColorBit",
-  "url":"/pkg/51bit/ColorBit",
-  "cardType": "package"
-}, {
-  "name": "51bit DFPlayer mini",
-  "url":"/pkg/51bit/dfplayermini",
-  "cardType": "package"
-}, {
-  "name": "Kitronik Zip Tile",
-  "url":"/pkg/KitronikLtd/pxt-kitronik-zip-tile",
-  "cardType": "package"
-}, {
-  "name": "MAX7219 8x8",
-  "url":"/pkg/alankrantas/pxt-MAX7219_8x8",
-  "cardType": "package"
-}, {
-    "name": "Catalex Serial MP3 Player v1.0",
-    "url": "/pkg/1010Technologies/pxt-makerbit-mp3",
-    "cardType": "package"
-}, {
-    "name": "Keigan Motor",
-    "url": "/pkg/keigan-motor/pxt-KeiganMotor",
-    "cardType": "package"
 }, {
     "name": "Elecfreaks NeZha",
     "url": "/pkg/elecfreaks/pxt-nezha",
