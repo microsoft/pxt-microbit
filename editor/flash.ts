@@ -394,7 +394,7 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
     }
 }
 
-export function mkPacketIOWrapper(io: pxt.packetio.PacketIO): pxt.packetio.PacketIOWrapper {
+export function mkDAPLinkPacketIOWrapper(io: pxt.packetio.PacketIO): pxt.packetio.PacketIOWrapper {
     pxt.log(`packetio: mk wrapper dap`)
     return new DAPWrapper(io);
 }
