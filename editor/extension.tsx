@@ -3,6 +3,7 @@
 /// <reference path="../node_modules/pxt-core/built/pxtcompiler.d.ts" />
 /// <reference path="../node_modules/pxt-core/built/pxtlib.d.ts" />
 /// <reference path="../node_modules/pxt-core/built/pxteditor.d.ts" />
+/// <reference path="../node_modules/pxt-core/built/pxtwinrt.d.ts" />
 /// <reference path="dapjs.d.ts" />
 import * as dialogs from "./dialogs";
 import * as flash from "./flash";
@@ -48,9 +49,11 @@ pxt.editor.initExtensionsAsync = function (opts: pxt.editor.ExtensionOptions): P
         subclassCode: 0x03
     }])
 
-    res.mkPacketIOWrapper = flash.mkPacketIOWrapper;
     res.blocklyPatch = patch.patchBlocks;
     res.renderBrowserDownloadInstructions = dialogs.renderBrowserDownloadInstructions;
-    res.renderUsbPairDialog = dialogs.renderUsbPairDialog;
+    if (!pxt.winrt.isWinRT()) {
+        res.mkPacketIOWrapper = flash.mkPacketIOWrapper;
+        res.renderUsbPairDialog = dialogs.renderUsbPairDialog;
+    }
     return Promise.resolve<pxt.editor.ExtensionResult>(res);
 }
