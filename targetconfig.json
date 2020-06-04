@@ -176,7 +176,8 @@
             "CODOmicrobit/pxt-CODO",
             "KitronikLtd/pxt-kitronik-move-motor",
             "elecfreaks/pxt-PlanetX",
-            "elecfreaks/pxt-nezha"
+            "elecfreaks/pxt-nezha",
+            "1010Technologies/pxt-makerbit-ir-transmitter"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",

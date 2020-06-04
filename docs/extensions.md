@@ -483,6 +483,10 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
     "url": "/pkg/1010Technologies/pxt-makerbit-touch",
     "cardType": "package"
 }, {
+    "name": "Keyestudio Infrared Transmitter",
+    "url": "/pkg/1010Technologies/pxt-makerbit-ir-transmitter",
+    "cardType": "package"
+}, {
     "name": "Keyestudio Infrared Receiver",
     "url": "/pkg/1010Technologies/pxt-makerbit-ir-receiver",
     "cardType": "package"
