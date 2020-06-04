@@ -180,7 +180,11 @@ Check out [microbit.org](http://microbit.org/resellers/) for more information on
 }, {
   "name": "Keyestudio Robot Car",
   "url":"/pkg/Veilkrand/pxt-RobotCar",
-  "cardType": "package"  
+  "cardType": "package"
+},  {
+  "name": "LEGO Powerfunctions",
+  "url":"/pkg/philipphenkel/pxt-powerfunctions",
+  "cardType": "package"
 }]
 ```
 
