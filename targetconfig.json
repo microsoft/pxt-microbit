@@ -177,6 +177,7 @@
             "KitronikLtd/pxt-kitronik-move-motor",
             "elecfreaks/pxt-PlanetX",
             "elecfreaks/pxt-nezha",
+            "philipphenkel/pxt-powerfunctions",
             "1010Technologies/pxt-makerbit-ir-transmitter"
         ],
         "preferredRepos": [
