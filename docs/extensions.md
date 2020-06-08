@@ -100,7 +100,6 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 
 ## Gaming
 
-Gaming 
 ```codecard
 [{
   "name": "Kitronik :GAME ZIP64",
@@ -270,6 +269,7 @@ Gaming
 ```
 
 ## Kits
+
 ```codecard
 [{
    "name": "Pi Supply tinker:kit",
@@ -299,6 +299,7 @@ Gaming
 ```
 
 ## LEDs and lights
+
 ```codecard
 [{
   "name": "Kitronik Lamp:Bit",
@@ -336,6 +337,7 @@ Gaming
 ```
 
 ## Machine learning
+
 ```codecard
 [{
   "name": "MU Vision camera",
@@ -597,6 +599,7 @@ Gaming
 ```
 
 ## Sound
+
 ```codecard
 [{
   "name": "Kitronik Klef Piano",
