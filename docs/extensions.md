@@ -4,32 +4,59 @@
 
 Check out [the accessories pages on microbit.org](https://microbit.org/buy/accessories/) for more information on these accessories and where to buy them.
 
-[Display](#display)
+### Categories
 
-[Electronics](#electronics)
-
-[Gaming](#gaming)
-
-[Individual sensors](#individual-sensors)
-
-[IoT](#iot)
-
-[Kits](#kits)
-
-[LEDs and lights](#leds-and-lights)
-
-[Machine learning](#machine-learning)
-
-[Robotics](#robotics)
-
-[Sensor boards](#sensing)
-
-[Sound](#sound)
-
-[Wearables](#wearables)
-
-
-
+```codecard
+[{
+    "name": "Display",
+    "url": "/extensions#display",
+    "cardType": "link"
+}, {
+    "name": "Electronics",
+    "url": "/extensions#electronics",
+    "cardType": "link"
+}, {
+    "name": "Gaming",
+    "url": "/extensions#gaming",
+    "cardType": "link"
+}, {
+    "name": "Individual sensors",
+    "url": "/extensions#individual-sensors",
+    "cardType": "link"
+}, {
+    "name": "IoT",
+    "url": "/extensions#iot",
+    "cardType": "link"
+}, {
+    "name": "Kits",
+    "url": "/extensions#kits",
+    "cardType": "link"
+}, {
+    "name": "LEDs and lights",
+    "url": "/extensions#iot",
+    "cardType": "link"
+}, {
+    "name": "Machine learning",
+    "url": "/extensions#kits",
+    "cardType": "link"
+}, {
+    "name": "Robotics",
+    "url": "/extensions#robotics",
+    "cardType": "link"
+}, {
+    "name": "Sensor boards",
+    "url": "/extensions#sensor-boards",
+    "cardType": "link"
+}, {
+    "name": "Sound",
+    "url": "/extensions#sound",
+    "cardType": "link"
+}, {
+    "name": "Wearables",
+    "url": "/extensions#wearables",
+    "cardType": "link"
+}]
+```
 
 ## Display
 
@@ -54,6 +81,7 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 ```
 
 ## Electronics
+
 ```codecard
 [{
   "name": "Kitronik Stop:Bit",
@@ -72,6 +100,7 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 
 ## Gaming
 
+Gaming 
 ```codecard
 [{
   "name": "Kitronik :GAME ZIP64",
