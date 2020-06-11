@@ -197,7 +197,6 @@ namespace basic {
     //% blockId=basic_show_arrow
     //% block="show arrow %i=device_arrow"
     //% parts="ledmatrix"
-    //% advanced=true
     //% help=basic/show-arrow
     export function showArrow(direction: number, interval = 600) {
         let res = images.arrowImage(direction)
