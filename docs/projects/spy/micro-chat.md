@@ -14,7 +14,7 @@ Add an event to run code when ``||input:button A is pressed||``.
 
 ```spy
 input.onButtonPressed(Button.A, function() {
-});
+})
 ```
 
 ## Sending a message
@@ -25,8 +25,8 @@ Every @boardname@ nearby will receive this message.
 ```spy
 input.onButtonPressed(Button.A, function() {
     // @highlight
-    radio.sendString(":)");
-});
+    radio.sendString(":)")
+})
 ```
 
 ## Receiving a message
@@ -45,13 +45,13 @@ Inside the event, add code to ``||basic:show||`` the ``||variables:receivedStrin
 ```spy
 radio.onReceivedString(function (receivedString) {
     // @highlight
-    basic.showString(receivedString);
+    basic.showString(receivedString)
 })
 ```
 
 ## Testing in the simulator
 
-Press button **A** on the simulator, you will notice that a second @boardname@ appears (if your screen is too small, the simulator might decide not to show it). Try pressing **A** again and notice that the "Yo" message gets displayed on the other @boardname@.
+Press button **A** on the simulator, you will notice that a second @boardname@ appears (if your screen is too small, the simulator might decide not to show it). Try pressing **A** again and notice that the ":)" message gets displayed on the other @boardname@.
 
 ## Try it for real
 

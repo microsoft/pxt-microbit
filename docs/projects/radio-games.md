@@ -51,7 +51,7 @@ Here are some cool projects that you can build with your @boardname@!
 }, {
   "name": "Micro:Coin",
   "url": "/projects/micro-coin",
-  "description": "A block-chain for micro:bit",
+  "description": "A blockchain for micro:bit",
   "imageUrl": "/static/mb/projects/micro-coin.png"
 }, {
   "name": "Infection",

@@ -11,7 +11,6 @@
             "microsoft/pxt-midi",
             "microsoft/pxt-radio-blockchain",
             "microsoft/pxt-bluetooth-max6675",
-            "microsoft/pxt-filesystem",
             "microsoft/pxt-ws2812b",
             "microsoft/pxt-apa102",
             "microsoft/pxt-radio-firefly",
@@ -26,6 +25,8 @@
             "KitronikLtd/pxt-kitronik-game-controller",
             "KitronikLtd/pxt-kitronik-robotics-board",
             "KitronikLtd/pxt-kitronik-klef-piano",
+            "adafruit/pxt-crickit",
+            "adafruit/pxt-seesaw",
             "Seeed-Studio/pxt-grove",
             "Seeed-Studio/pxt-grove-zero-for-microbit",
             "Tinkertanker/pxt-ir-receiver",
@@ -122,7 +123,6 @@
             "KitronikLtd/pxt-kitronik-accessbit",
             "kaku111/pxt-tobbieII",
             "alankrantas/pxt-DHT11_DHT22",
-            "cgs-matthew-pham/pxt-hitechnic-irseeker-v2",
             "Freenove/Makecode-Extension-Rover",
             "letstalkscience/pxt-cozir",
             "e-radionicacom/pxt-wifi",
@@ -171,7 +171,14 @@
             "CytronTechnologies/pxt-edubit",
             "MakeAndLearn/pxt-microshield",
             "4tronix/Orbit",
-            "elecfreaks/pxt-TPBot"
+            "elecfreaks/pxt-TPBot",
+            "longan-link/pxt-longanbit",
+            "CODOmicrobit/pxt-CODO",
+            "KitronikLtd/pxt-kitronik-move-motor",
+            "elecfreaks/pxt-PlanetX",
+            "elecfreaks/pxt-nezha",
+            "philipphenkel/pxt-powerfunctions",
+            "1010Technologies/pxt-makerbit-ir-transmitter"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",
@@ -200,7 +207,8 @@
         "Courses": "courses",
         "Behind the MakeCode Hardware": "behind-the-makecode-hardware",
         "Science Experiments": "science-experiments",
-        "Coding Cards": "coding-cards"
+        "Coding Cards": "coding-cards",
+        "Deep Dive": "deep-dive"
     },
     "electronManifest": {
         "latest": "v2.0.3"

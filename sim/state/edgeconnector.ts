@@ -113,7 +113,9 @@ namespace pxsim.pins {
  
     export function analogPitch(frequency: number, ms: number) {
         // update analog output
-        const ec = board().edgeConnectorState;
+        const b = board();
+        if (!b) return;
+        const ec = b.edgeConnectorState;
         const pins = ec.pins;
         const pin = pins.filter(pin => !!pin && pin.pitch)[0] || pins[0];
         const pitchVolume = ec.pitchVolume | 0;
@@ -142,5 +144,12 @@ namespace pxsim.pins {
                 cb()
             }, ms);
         }
+    }
+
+    export function pushButton(pinId: number) {
+        const b = board();
+        if (!b) return;
+        const ec = b.edgeConnectorState;
+        // TODO support buttons here
     }
 }

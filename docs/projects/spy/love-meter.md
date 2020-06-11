@@ -14,7 +14,7 @@ Add an event to run code when ``||input:pin 0 is pressed||``. Use the ``P0`` tou
 
 ```spy
 input.onPinPressed(TouchPin.P0, function() {
-});
+})
 ```
 
 ## Step 2
@@ -37,7 +37,7 @@ Click on pin **0** in the simulator and see which number is chosen.
 Insert code to ``||basic:show||`` the ``"LOVE METER"`` message on the screen when the program starts.
 
 ```spy
-basic.showString("LOVE METER");
+basic.showString("LOVE METER")
 input.onPinPressed(TouchPin.P0, function() {
     basic.showNumber(randint(0, 100));
 });

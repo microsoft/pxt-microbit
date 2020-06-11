@@ -8,9 +8,12 @@ serial.readLine();
 
 ### ~hint
 
-This function expects the line it reads to be terminated with the `\r`
+This function expects the line it reads to be terminated with the `\n`
 character.  If your terminal software does not terminate lines with
-`\r`, this function will probably never return a value.
+`\n`, this function will probably never return a value.
+
+
+You can override the ``serial.NEW_LINE_DELIMITER`` field to change the newline delimiter.
 
 ### ~
 

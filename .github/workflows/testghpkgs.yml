@@ -2,7 +2,7 @@ name: pxt-testghpkgs
 
 on:
   schedule:
-    - cron:  '0 0 * * *'
+    - cron:  '0 0 * * 6'
 
 jobs:
   build:
@@ -39,6 +39,7 @@ jobs:
       - name: pxt testghpkgs
         run: pxt testghpkgs
         env:
+          PXT_FORCE_GITHUB_PROXY: 1
           PXT_ACCESS_TOKEN: ${{ secrets.PXT_ACCESS_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.TRAVIS_GITHUB_ACCESS_TOKEN }}
       - name: upload build log

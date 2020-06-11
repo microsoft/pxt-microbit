@@ -438,6 +438,7 @@ declare namespace control {
      * Make a friendly name for the device based on its serial number
      */
     //% blockId="control_device_name" block="device name" weight=10 blockGap=8
+    //% help=control/device-name
     //% advanced=true shim=control::deviceName
     function deviceName(): string;
 
@@ -445,6 +446,7 @@ declare namespace control {
      * Derive a unique, consistent serial number of this device from internal data.
      */
     //% blockId="control_device_serial_number" block="device serial number" weight=9
+    //% help=control/device-serial-number
     //% advanced=true shim=control::deviceSerialNumber
     function deviceSerialNumber(): int32;
 
@@ -782,6 +784,14 @@ declare namespace pins {
     function spiWrite(value: int32): int32;
 
     /**
+     * Write to and read from the SPI slave at the same time
+     * @param command Data to be sent to the SPI slave (can be null)
+     * @param response Data received from the SPI slave (can be null)
+     */
+    //% help=pins/spi-transfer argsNullable shim=pins::spiTransfer
+    function spiTransfer(command: Buffer, response: Buffer): void;
+
+    /**
      * Set the SPI frequency
      * @param frequency the clock frequency, eg: 1000000
      */
@@ -811,6 +821,12 @@ declare namespace pins {
     //% sck.fieldEditor="gridpicker" sck.fieldOptions.columns=4
     //% sck.fieldOptions.tooltips="false" sck.fieldOptions.width="250" shim=pins::spiPins
     function spiPins(mosi: DigitalPin, miso: DigitalPin, sck: DigitalPin): void;
+
+    /**
+     * Mounts a push button on the given pin
+     */
+    //% help=pins/push-button advanced=true shim=pins::pushButton
+    function pushButton(pin: DigitalPin): void;
 }
 
 
@@ -884,6 +900,16 @@ declare namespace serial {
     //% rx.fieldOptions.tooltips="false"
     //% blockGap=8 shim=serial::redirect
     function redirect(tx: SerialPin, rx: SerialPin, rate: BaudRate): void;
+
+    /**
+    Set the baud rate of the serial port
+     */
+    //% weight=10
+    //% blockId=serial_setbaudrate block="serial|set baud rate %rate"
+    //% blockGap=8 inlineInputMode=inline
+    //% help=serial/set-baud-rate
+    //% group="Configuration" advanced=true shim=serial::setBaudRate
+    function setBaudRate(rate: BaudRate): void;
 
     /**
      * Direct the serial input and output to use the USB connection.
@@ -1020,6 +1046,20 @@ declare namespace control {
      */
     //% deprecated=1 shim=control::createBufferFromUTF8
     function createBufferFromUTF8(str: string): Buffer;
+}
+declare namespace light {
+
+    /**
+     * Sends a color buffer to a light strip
+     **/
+    //% shim=light::sendWS2812Buffer
+    function sendWS2812Buffer(buf: Buffer, pin: int32): void;
+
+    /**
+     * Sets the light mode of a pin
+     **/
+    //% shim=light::setMode
+    function setMode(pin: int32, mode: int32): void;
 }
 
 // Auto-generated. Do not edit. Really.

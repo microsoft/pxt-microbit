@@ -44,6 +44,8 @@
         "utf8": false,
         "gc": true,
         "imageRefTag": 9,
+        "shimRenames": {
+        },
         "patches": {
             "0.0.0 - 1.0.0": [
                 {
@@ -117,7 +119,7 @@
         "yottaTarget": "bbc-microbit-classic-gcc",
         "yottaCorePackage": "microbit",
         "githubCorePackage": "lancaster-university/microbit",
-        "gittag": "v2.2.0-rc5",
+        "gittag": "v2.2.0-rc6",
         "serviceId": "microbit",
         "dockerImage": "pext/yotta:latest"
     },
@@ -140,7 +142,7 @@
                 "codalTarget": {
                     "name": "codal-microbit",
                     "url": "https://github.com/microbit-foundation/codal-microbit",
-                    "branch": "v0.1.0",
+                    "branch": "v0.1.1",
                     "type": "git"
                 },
                 "codalBinary": "MICROBIT",
@@ -337,7 +339,8 @@
         "extendEditor": true,
         "extendFieldEditors": true,
         "enableTrace": true,
-        "ignoreDocsErrors": true,
+        "ignoreDocsErrors": false,
+        "errorList": true,
         "experiments": [
             "autoWebUSBDownload",
             "allowPackageExtensions",
@@ -347,8 +350,7 @@
             "bluetoothUartConsole",
             "bluetoothPartialFlashing",
             "simScreenshot",
-            "simGif",
-            "errorList"
+            "simGif"
         ],
         "bluetoothUartFilters": [
             {
@@ -474,6 +476,7 @@
         "availableLocales": [
             "en",
             "ar",
+            "bg",
             "cs",
             "da",
             "de",
@@ -481,6 +484,7 @@
             "es-ES",
             "fi",
             "fr",
+            "he",
             "hu",
             "is",
             "it",
@@ -506,7 +510,8 @@
         },
         "browserDbPrefixes": {
             "1": "v1",
-            "2": "v2"
+            "2": "v2",
+            "3": "v3"
         },
         "editorVersionPaths": {
             "0": "v0"
@@ -533,5 +538,5 @@
             }
         }
     },
-    "disableDocsUpload": false
+    "uploadDocs": true
 }

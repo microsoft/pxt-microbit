@@ -23,11 +23,11 @@ then the compass heading is mostly pointing toward **North**. ``||basic:Show||``
 
 ```spy
 basic.forever(function() {
-    let degrees = input.compassHeading();
+    let degrees = input.compassHeading()
     if (degrees < 45) {
-        basic.showString("N");
+        basic.showString("N")
     }
-});
+})
 ```
 
 ## Step 3
@@ -36,14 +36,14 @@ basic.forever(function() {
 
 ```spy
 basic.forever(function() {
-    let degrees = input.compassHeading();
+    let degrees = input.compassHeading()
     if (degrees < 45) {
-        basic.showString("N");
+        basic.showString("N")
     }
     else if (degrees < 135) {
-        basic.showString("E");
+        basic.showString("E")
     }
-});
+})
 ```
 
 ## Step 4
@@ -56,17 +56,17 @@ Go to the simulator and rotate the @boardname@ logo to simulate changes in the c
 
 ```spy
 basic.forever(function() {
-    let degrees = input.compassHeading();
+    let degrees = input.compassHeading()
     if (degrees < 45) {
-        basic.showString("N");
+        basic.showString("N")
     }
     else if (degrees < 135) {
-        basic.showString("E");
+        basic.showString("E")
     }
     else if (degrees < 225) {
-        basic.showString("S");
+        basic.showString("S")
     }
-});
+})
 ```
 
 ## Step 6
@@ -75,9 +75,9 @@ basic.forever(function() {
 
 ```spy
 basic.forever(function() {
-    let degrees = input.compassHeading();
+    let degrees = input.compassHeading()
     if (degrees < 45) {
-        basic.showString("N");
+        basic.showString("N")
     }
     else if (degrees < 135) {
         basic.showString("E")
@@ -86,7 +86,7 @@ basic.forever(function() {
     } else if (degrees < 315) {
         basic.showString("W")
     }
-});
+})
 ```
 
 ## Step 7
@@ -95,15 +95,15 @@ basic.forever(function() {
 
 ```spy
 basic.forever(function() {
-    let degrees = input.compassHeading();
+    let degrees = input.compassHeading()
     if (degrees < 45) {
-        basic.showString("N");
+        basic.showString("N")
     }
     else if (degrees < 135) {
-        basic.showString("E");
+        basic.showString("E")
     }
     else if (degrees < 225) {
-        basic.showString("S");
+        basic.showString("S")
     } 
     else if (degrees < 315) {
         basic.showString("W")
@@ -111,7 +111,7 @@ basic.forever(function() {
     else {
         basic.showString("N")
     }
-});
+})
 ```
 
 ## Step 8 @unplugged
