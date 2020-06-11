@@ -13,7 +13,7 @@ let group = 0
  */
 radio.onReceivedNumber(function (receivedNumber) {
     radio.writeReceivedPacketToSerial()
-    led.toggle(Math.randomRange(0, 4), Math.randomRange(0, 4))
+    led.toggle(randint(0, 4), randint(0, 4))
 })
 /**
  * Decrement radio group by 1

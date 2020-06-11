@@ -9,8 +9,8 @@ Massively multi-player rock paper scissors!
 https://youtu.be/8ztOmdZi5Pw
 <br/>
 Playing rock paper scissors is usually a two player game... but it will work with many more players too!
-When playing with more than two players, it becomes a team game: all players shake at the same time, 
-then the amount of **rocks**, **paper**, and **scissors** is tallied between all the players. 
+When playing with more than two players, it becomes a team game: all players shake at the same time,
+then the amount of **rocks**, **paper**, and **scissors** is tallied between all the players.
 Teams are formed automatically based on which tool is chosen by shaking the @boardname@. The team with the most players after the shake wins the game.
 
 Starting with the [basic version of the RPS game](/projects/rock-paper-scissors), we are going
@@ -26,7 +26,7 @@ Let's start out with the code from the original game. The basic version picks on
 ```blocks
 let tool = 0
 input.onGesture(Gesture.Shake, function() {
-    tool = Math.randomRange(0, 2)
+    tool = randint(0, 2)
     if (tool == 0) {
         basic.showIcon(IconNames.SmallSquare)
     } else if (tool == 1) {
@@ -44,7 +44,7 @@ input.onGesture(Gesture.Shake, function() {
 ```blocks
 let tool = 0
 input.onGesture(Gesture.Shake, function() {
-    tool = Math.randomRange(0, 2)
+    tool = randint(0, 2)
 })
 
 basic.forever(function() {
@@ -67,7 +67,7 @@ We also set the radio group and send the device serial number (a number that uni
 ```blocks
 let tool = 0
 input.onGesture(Gesture.Shake, function() {
-    tool = Math.randomRange(0, 2)
+    tool = randint(0, 2)
 })
 
 basic.forever(function() {
@@ -86,7 +86,7 @@ radio.setTransmitSerialNumber(true)
 
 ## Step 3: the team roster
 
-All players are constantly broadcasting to the other players which tool they picked. 
+All players are constantly broadcasting to the other players which tool they picked.
 Let's add the code that receives this status and counts it.
 
 We'll add an **[Array](/types/array)** variable that contains all the players on the same team as the current player. This array, named ``players``, is like your team roster: it contains the list of @boardname@ serial numbers that are using the same tool as you.
@@ -144,7 +144,7 @@ radio.onReceivedNumber(function (receivedNumber) {
     found = player_index >= 0
     if (match && !(found)) {
         players.push(serialNumber)
-    } 
+    }
     if (!(match) && found) {
         temp = players.removeAt(player_index)
     }
@@ -158,7 +158,7 @@ What if some of the other players leave the game? They would stop broadcasting t
 ```block
 input.onGesture(Gesture.Shake, function() {
     let players: number[] = [0]
-    let tool = Math.randomRange(0, 2)
+    let tool = randint(0, 2)
 })
 ```
 
@@ -176,7 +176,7 @@ basic.forever(function() {
 
 ## The final code
 
-Now, it's time to glue together all the pieces of our program. 
+Now, it's time to glue together all the pieces of our program.
 Go carefully through all the steps and assemble the various features. Eventually, it should look
 like the following program here. Download and play it with your friend**ssss**!
 
@@ -202,7 +202,7 @@ radio.onReceivedNumber(function (receivedNumber) {
 })
 input.onGesture(Gesture.Shake, function() {
     players = [0]
-    tool = Math.randomRange(0, 2)
+    tool = randint(0, 2)
 })
 basic.forever(function() {
     radio.sendNumber(tool)

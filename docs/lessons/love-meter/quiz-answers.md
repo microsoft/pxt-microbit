@@ -1,6 +1,6 @@
 # love meter blocks quiz answers
 
-The answers to the love meter quiz. 
+The answers to the love meter quiz.
 
 This is the answer key for the [love meter quiz](/lessons/love-meter/quiz).
 
@@ -16,14 +16,14 @@ Create a condition for `on pin pressed (P0)`.
 
 ```blocks
 input.onPinPressed(TouchPin.P0, () => {
-    
+
 })
 ```
 
 ## 3. What does this line of code doing?
 
 ```blocks
-let x = Math.randomRange(0, 9)
+let x = randint(0, 9)
 ```
 
 

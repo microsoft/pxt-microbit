@@ -24,7 +24,7 @@ Learn how to use the **pin pressed**, `on pin pressed` to run code when the user
 if (true) {}
 input.onPinPressed(TouchPin.P0, () => {})
 let x = 0
-Math.randomRange(0, 3)
+randint(0, 3)
 basic.showNumber(0)
 basic.pause(100)
 ```

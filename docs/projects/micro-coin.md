@@ -2,11 +2,12 @@
 
 ## ~ avatar
 
-Have you heard about BitCoin and all those new Crypto currencies? Well micro:bit has **micro:coin** now! 
+Have you heard about BitCoin and all those new Crypto currencies? Well micro:bit has **micro:coin** now!
 
 ## ~
 
 ## How does a @boardname@ make coins?
+
 
 Each @boardname@ contains a **blockchain**, a sequence of **blocks**, that is public and can't be modified. Each block represents a **coin**. To mine new coins, the user shakes 
 the @boardname@ and, if they are in luck, their coin added to the chain as a new block! 
@@ -42,7 +43,7 @@ input.onGesture(Gesture.Shake, () => {
     led.stopAnimation()
     basic.clearScreen()
     basic.pause(200) // display a short pause
-    if (Math.randomRange(0, 2) == 0) { // 30% chances to add a transaction
+    if (randint(0, 2) == 0) { // 30% chances to add a transaction
         // we found a coin!!!
         blockchain.addBlock(1);
         basic.showIcon(IconNames.Diamond);

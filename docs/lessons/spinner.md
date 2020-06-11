@@ -25,7 +25,7 @@ Learn how to use an if statement to run code run code depending on whether a con
 if (true) {}
 let x = 0
 input.onGesture(Gesture.Shake, () => {})
-Math.randomRange(0, 3)
+randint(0, 3)
 basic.showLeds(`
     . . . . .
     . . . . .

@@ -1,6 +1,6 @@
 # dice roll quiz answers
 
-Create a dice when the @boardname@ is shaken 
+Create a dice when the @boardname@ is shaken
 
 These are the answers to the [dice roll quiz](/lessons/dice-roll/quiz).
 
@@ -9,7 +9,7 @@ These are the answers to the [dice roll quiz](/lessons/dice-roll/quiz).
 <br/>
 
 ```blocks
-let roll = Math.randomRange(0, 6)
+let roll = randint(0, 6)
 ```
 
 ## 2. If the variable "roll" equals 5, write the code that will plot the image below
@@ -19,7 +19,7 @@ let roll = Math.randomRange(0, 6)
 <br/>
 
 ```blocks
-let roll = Math.randomRange(0, 6)
+let roll = randint(0, 6)
 if (roll == 5) {
     basic.showLeds(`
 . # . # .
@@ -39,7 +39,7 @@ if (roll == 5) {
 
 ```blocks
 
-let roll = Math.randomRange(0, 6)
+let roll = randint(0, 6)
 if (roll == 5) {
     basic.showLeds(`
 . # . # .
@@ -68,7 +68,7 @@ Note: students are only required to write the bottom half of this answer, starti
 <br />
 
 ```blocks
-let roll = Math.randomRange(0, 6)
+let roll = randint(0, 6)
 if (roll == 4) {
     basic.showLeds(`
 . . . . .
@@ -97,7 +97,7 @@ Note: students are only required to write the bottom half of this answer, starti
 <br />
 
 ```blocks
-let roll = Math.randomRange(0, 6)
+let roll = randint(0, 6)
 if (roll == 3) {
     basic.showLeds(`
 . . . . .

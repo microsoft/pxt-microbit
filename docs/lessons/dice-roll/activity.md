@@ -13,7 +13,7 @@ Let's create a condition for when the @boardname@ is shaken.
 
 ```blocks
 input.onGesture(Gesture.Shake, () => {
-    
+
 })
 ```
 
@@ -21,7 +21,7 @@ We need to show a random value from 1 to 6 on our dice. So let's make a local va
 
 ```blocks
 input.onGesture(Gesture.Shake, () => {
-    let roll = Math.randomRange(0, 6)
+    let roll = randint(0, 6)
 })
 ```
 
@@ -30,7 +30,7 @@ We need a condition for if **roll** is 5. We will show a `6` if **roll** is 5 be
 
 ```blocks
 input.onGesture(Gesture.Shake, () => {
-    let roll = Math.randomRange(0, 6);
+    let roll = randint(0, 6);
     if (roll == 5) {
         basic.showLeds(`
 . # . # .
@@ -48,7 +48,7 @@ Let's use an `else if` condition for if **roll** is 4. If **roll** is 4 we can s
 
 ```blocks
 input.onGesture(Gesture.Shake, ()=> {
-    let roll = Math.randomRange(0, 6);
+    let roll = randint(0, 6);
     if (roll == 5) {
         basic.showLeds(`
 . # . # .
@@ -75,7 +75,7 @@ Now we need to repeat the same steps for if **roll** is 3. If **roll** is 3 we w
 
 ```blocks
 input.onGesture(Gesture.Shake, () => {
-    let roll = Math.randomRange(0, 6);
+    let roll = randint(0, 6);
     if (roll == 5) {
         basic.showLeds(`
 . # . # .
@@ -106,9 +106,9 @@ input.onGesture(Gesture.Shake, () => {
 
 Let's also repeat these steps to show the 3, 2, and 1 on the dice. We are almost done with our dice!
 
-```blocks 
+```blocks
 input.onGesture(Gesture.Shake, () => {
-    let roll = Math.randomRange(0, 6);
+    let roll = randint(0, 6);
     if (roll == 5) {
         basic.showLeds(`
 . # . # .

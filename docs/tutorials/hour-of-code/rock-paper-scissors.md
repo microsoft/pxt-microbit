@@ -7,7 +7,7 @@ Place a ``||input:on shake||`` block so when you shake the @boardname@, it wil
 
 ```blocks
 input.onGesture(Gesture.Shake, () => {
-    
+
 })
 ```
 
@@ -16,13 +16,13 @@ input.onGesture(Gesture.Shake, () => {
 Add a ``tool`` variable to store a random number computed with ``||math:pick random||``.
 
 When you shake the @boardname@, it should pick a random number from `0` to `2`
-and store it in the variable `tool`. (This variable is named `tool` because 
+and store it in the variable `tool`. (This variable is named `tool` because
 rock, paper, and scissors are the tools you use to challenge your friends!)
 
 ```blocks
 let tool = 0;
 input.onGesture(Gesture.Shake, () => {
-    tool = Math.randomRange(0, 3)
+    tool = randint(0, 3)
 })
 ```
 
@@ -36,7 +36,7 @@ check whether ``tool`` is equal to ``0``.
 ```blocks
 let tool = 0;
 input.onGesture(Gesture.Shake, () => {
-    let tool = Math.randomRange(0, 3)
+    let tool = randint(0, 3)
     if (tool == 0) {
     }
 })
@@ -50,7 +50,7 @@ picture of a piece of paper.
 ```blocks
 let tool = 0;
 input.onGesture(Gesture.Shake, () => {
-    let tool = Math.randomRange(0, 3)
+    let tool = randint(0, 3)
     if (tool == 0) {
         basic.showLeds(`
             # # # # #
@@ -73,7 +73,7 @@ Click on the **(+)** at the bottom of the ``if`` block to add an ``else if`` sec
 ```blocks
 let tool = 0;
 input.onGesture(Gesture.Shake, () => {
-    let tool = Math.randomRange(0, 3)
+    let tool = randint(0, 3)
     if (tool == 0) {
         basic.showLeds(`
             # # # # #
@@ -94,7 +94,7 @@ Place a ``||basic:show leds||`` block under the else if and draw a **rock** imag
 ```blocks
 let tool = 0;
 input.onGesture(Gesture.Shake, () => {
-    let tool = Math.randomRange(0, 3)
+    let tool = randint(0, 3)
     if (tool == 0) {
         basic.showLeds(`
             # # # # #
@@ -125,7 +125,7 @@ That's why you can use an ``else`` instead of an ``else if``.
 ```blocks
 let tool = 0;
 input.onGesture(Gesture.Shake, () => {
-    let tool = Math.randomRange(0, 3)
+    let tool = randint(0, 3)
     if (tool == 0) {
         basic.showLeds(`
             # # # # #

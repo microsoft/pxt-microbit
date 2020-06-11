@@ -56,7 +56,7 @@ The events related to background melody get triggered by a melody that is played
 
 ```
 control.inBackground(function () {
-    basic.pause(Math.randomRange(0, 5000))
+    basic.pause(randint(0, 5000))
     music.beginMelody(music.builtInMelody(Melodies.Entertainer), MelodyOptions.Once)
 })
 music.onEvent(MusicEvent.BackgroundMelodyStarted, function () {

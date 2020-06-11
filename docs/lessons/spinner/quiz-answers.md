@@ -15,17 +15,17 @@ Answer the questions while completing the tutorial. Pay attention to the dialogu
 <br/>
 
 ```blocks
-let randomArrow = Math.randomRange(0, 4)
+let randomArrow = randint(0, 4)
 ```
 
-## 2. Write the if statement that will display this down arrow from your code. Hint- This occurs if the local variable 'random arrow' returns 1. 
+## 2. Write the if statement that will display this down arrow from your code. Hint- This occurs if the local variable 'random arrow' returns 1.
 
 ![](/static/mb/lessons/spinner-0.png)
 
 <br/>
 
 ```blocks
-let randomArrow = Math.randomRange(0, 4);
+let randomArrow = randint(0, 4);
 if (randomArrow == 1) {
     basic.showLeds(`
 . . # . .
@@ -37,14 +37,14 @@ if (randomArrow == 1) {
 }
 ```
 
-## 3. Write the if statement that will display this right arrow. Hint- This occurs if the local variable 'random arrow' returns 2. 
+## 3. Write the if statement that will display this right arrow. Hint- This occurs if the local variable 'random arrow' returns 2.
 
 ![](/static/mb/lessons/spinner-1.png)
 
 <br />
 
 ```blocks
-let randomArrow = Math.randomRange(0, 4);
+let randomArrow = randint(0, 4);
 if (randomArrow == 2) {
     basic.showLeds(`
 . . # . .

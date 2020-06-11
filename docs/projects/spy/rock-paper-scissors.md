@@ -14,7 +14,7 @@ Add an ``||input:on shake||`` event to run code when you shake the @boardname@.
 
 ```spy
 input.onGesture(Gesture.Shake, () => {
-    
+
 })
 ```
 
@@ -27,7 +27,7 @@ on the LEDs.
 ```spy
 let hand = 0
 input.onGesture(Gesture.Shake, () => {
-    hand = Math.randomRange(1, 3)
+    hand = randint(1, 3)
 })
 ```
 
@@ -38,7 +38,7 @@ input.onGesture(Gesture.Shake, () => {
 ```spy
 let hand = 0
 input.onGesture(Gesture.Shake, () => {
-    hand = Math.randomRange(1, 3)
+    hand = randint(1, 3)
     if (hand == 1) {
         basic.showLeds(`
             # # # # #
@@ -65,7 +65,7 @@ Click on the **SHAKE** button in the simulator. If you try enough times, you sho
 ```spy
 let hand = 0
 input.onGesture(Gesture.Shake, () => {
-    hand = Math.randomRange(1, 3)
+    hand = randint(1, 3)
     if (hand == 1) {
         basic.showLeds(`
             # # # # #
@@ -93,7 +93,7 @@ Now, when the ``||math:random||`` number in ``hand`` is `2` we want to ``||basic
 ```spy
 let hand = 0
 input.onGesture(Gesture.Shake, () => {
-    hand = Math.randomRange(1, 3)
+    hand = randint(1, 3)
     if (hand == 1) {
         basic.showLeds(`
             # # # # #

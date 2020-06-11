@@ -1,6 +1,6 @@
 # On Button Pressed
 
-Start an [event handler](/reference/event-handler) (part of the program that will run when something happens, like when a button is pressed). 
+Start an [event handler](/reference/event-handler) (part of the program that will run when something happens, like when a button is pressed).
 This handler works when button `A` or `B` is pressed, or `A` and `B` together.
 When you are using this function in a web browser, click the buttons on the screen instead of the ones
 on the @boardname@.
@@ -18,7 +18,7 @@ https://www.youtube.com/watch?v=t_Qujjd_38o
 
 ## Example: count button clicks
 
-This example counts how many times you press the `A` button. 
+This example counts how many times you press the `A` button.
 Each time you press the button, the [LED screen](/device/screen) shows the `count` variable getting bigger.
 
 ```blocks
@@ -36,7 +36,7 @@ This example shows a number from 1 to 6 when you press the `B` button.
 
 ```blocks
 input.onButtonPressed(Button.B, () => {
-    let dice = Math.randomRange(0, 5) + 1
+    let dice = randint(0, 5) + 1
     basic.showNumber(dice)
 })
 ```

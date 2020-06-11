@@ -24,7 +24,7 @@ basic.forever(function () {
 basketX = 2 + Math.min(2, Math.max(-2, accX / 200))
 if (eggY > 4) {
     eggY = -1
-    eggX = Math.randomRange(0, 4)
+    eggX = randint(0, 4)
 }
-led.plot(basketX, 4) 
+led.plot(basketX, 4)
 ```

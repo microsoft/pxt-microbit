@@ -2,7 +2,7 @@
 
 ![Close-up of game tokens](/static/courses/csintro/conditionals/game-pieces.jpg)
 
-This is an assignment for students to create a board game. It should take two to three class periods. If your school has a makerspace or an art classroom where students can access materials such as cardboard, poster paints, or markers, you might schedule your classes to work there. 
+This is an assignment for students to create a board game. It should take two to three class periods. If your school has a makerspace or an art classroom where students can access materials such as cardboard, poster paints, or markers, you might schedule your classes to work there.
 
 Once students have finished the first version of their games, schedule time for students to play each other’s games. Ideally, give them some time to give and gather feedback, then revise their games accordingly.
 
@@ -24,7 +24,7 @@ Students will need to work together to come up with:
 * A program for the micro:bit
 * Photo documentation of the different game pieces, cards, or other components of the game with the micro:bit included as well as a screenshot of your micro:bit code. Each photo must have a caption that describes what the photo is documenting.
 * Reflection: A text entry describing your team’s game making process and each teammate’s part in the creation of the game from brainstorming ideas, through construction, programming, and beta testing.
-	
+
 The micro:bit needs to work in conjunction with the game board and/or game pieces and should be a central feature of the game. Ideally, it should be more than a simple substitute for a six-sided die.
 
 The micro:bit might:
@@ -34,17 +34,17 @@ The micro:bit might:
 * Point randomly at players and kill them
 * Display a dynamic score
 * ... let your imaginations run wild!
-	
-Ideally, students should be writing their own versions of micro:bit programs to do something original. 
+
+Ideally, students should be writing their own versions of micro:bit programs to do something original.
 Here is one simple program to discuss and use as an example:
 
 ![Close-up of game tokens](/static/courses/csintro/conditionals/battle-pieces.jpg)
 
 ### Battle pieces
 
-In this example, pieces start out at full strength and lose points based on random events on the board. When two pieces meet on the same space, they battle. 
-* Press A to enter the strength of piece A. 
-* Then press B to enter the strength of piece B. 
+In this example, pieces start out at full strength and lose points based on random events on the board. When two pieces meet on the same space, they battle.
+* Press A to enter the strength of piece A.
+* Then press B to enter the strength of piece B.
 * Shake the micro:bit to determine the winner of the battle, which is proportionately random to the strength of each piece.
 
 ```blocks
@@ -59,7 +59,7 @@ input.onButtonPressed(Button.B, () => {
     basic.showNumber(p2)
 })
 input.onGesture(Gesture.Shake, () => {
-    if (Math.randomRange(0, p1 + p2 - 1 + 1) + 1 <= p1) {
+    if (randint(0, p1 + p2 - 1 + 1) + 1 <= p1) {
         basic.showString("A")
     } else {
         basic.showString("B")
@@ -78,7 +78,7 @@ https://www.youtube.com/watch?v=byngcwjO51U
 ## Beta Testing
 
 Give students a chance to play each other’s games. The following process works well:
-* Have each pair of students set up their own project at their table. 
+* Have each pair of students set up their own project at their table.
 * Leave a clipboard or a laptop on the table for taking notes.
 * Rotate the students through each project, moving clockwise around the room:
 >* Play the game (5 min)
@@ -89,7 +89,7 @@ Sample Survey questions
 * What is something about this project that works really well?
 * What is something that would make this project even better?
 * Any other comments or suggestions?
-	
+
 Many online survey tools will allow you to sort the comments by project and share them with project creators so they can make improvements based on that feedback.
 
 ## Reflection
@@ -108,13 +108,13 @@ Space Race by K. and S.
 >**1** - Shake the micro:bit to randomize how far you get to advance.<br/>
 **2** - If you land on a pink square, press “B” on the micro:bit until your previous roll number appears. Then press A and B at the same time to see whether or not you move based upon the number on the square.<br/>
 **3** - Up to four players.
-	
+
 ![Space race game](/static/courses/csintro/conditionals/space-race.jpg)
 Finished game
 
 ![micro:bit holder square](/static/courses/csintro/conditionals/microbit-holder.jpg)
 micro:bit holder
-	
+
 ![Game pieces](/static/courses/csintro/conditionals/game-pieces.jpg)
 Game pieces
 
@@ -126,10 +126,10 @@ let previous_roll = 0
 input.onButtonPressed(Button.AB, () => {
     previous_roll = 0
     if (4 <= previous_roll) {
-        yes_or_no = Math.randomRange(0, 8)
+        yes_or_no = randint(0, 8)
     }
     if (4 > previous_roll) {
-        yes_or_no = Math.randomRange(0, 5)
+        yes_or_no = randint(0, 5)
     }
     if (2 < yes_or_no) {
         basic.showString("YES")
@@ -140,7 +140,7 @@ input.onButtonPressed(Button.AB, () => {
     }
 })
 input.onGesture(Gesture.Shake, () => {
-    current_roll = Math.randomRange(0, 6)
+    current_roll = randint(0, 6)
     basic.showNumber(current_roll + 1)
     basic.pause(5000)
     basic.clearScreen()
@@ -155,7 +155,7 @@ input.onButtonPressed(Button.A, () => {
 })
 basic.showString("SPACE RACE")
 previous_roll = 0
-```	
+```
 
 ## Assessment
 
@@ -188,7 +188,7 @@ previous_roll = 0
 `*` JavaScript includes comments in code<br/>
 **3 =** micro:bit program lacks 1 of the required elements.<br/>
 **2 =** micro:bit program lacks 2 of the required elements.<br/>
-**1 =** micro:bit program lacks 3 of the required elements. 
+**1 =** micro:bit program lacks 3 of the required elements.
 
 ### Photo documentation
 
@@ -205,6 +205,6 @@ previous_roll = 0
 `*` Beta testing<br/>
 **3 =** Reflection piece lacks 1 of the required elements.<br/>
 **2 =** Reflection piece lacks 2 of the required elements.<br/>
-**1 =** Reflection piece lacks 3 of the required elements. 
+**1 =** Reflection piece lacks 3 of the required elements.
 
 
