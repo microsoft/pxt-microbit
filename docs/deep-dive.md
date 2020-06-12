@@ -95,7 +95,7 @@ Deep dive of the features of the MakeCode for micro:bit  2020 editor. Try them o
         "description": "See entire playlist on YouTube",
         "url": "https://www.youtube.com/playlist?list=PLMMBk9hE-SepwjCAK7cY-jvq6KeQKda8x",
         "youTubePlaylistId": "PLMMBk9hE-SepwjCAK7cY-jvq6KeQKda8x",
-        "imageUrl": "/static/deep-dive/playlist.png"
+        "imageUrl": "/static/deep-dive/playlist.jpg"
     }
 ]
 ```
