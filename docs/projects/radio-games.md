@@ -7,7 +7,7 @@ Here are some cool projects that you can build with your @boardname@!
 ```codecard
 [{
   "name": "Multi Editors",
-  "url": "/multi",
+  "url": "/---multi",
   "description": "Edit two radio programs side-by-side!",
   "imageUrl": "/static/mb/projects/multi-dice.png"
 }, {
