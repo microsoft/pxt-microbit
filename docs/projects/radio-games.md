@@ -6,6 +6,11 @@ Here are some cool projects that you can build with your @boardname@!
 
 ```codecard
 [{
+  "name": "Multi Editors",
+  "url": "/---multi",
+  "description": "Edit 2 radio programs side-by-side",
+  "imageUrl": "/static/mb/projects/multi-dice.png",
+}, {
   "name": "Multi Dice",
   "url": "/projects/multi-dice",
   "description": "Compete with multiple dices",
@@ -30,7 +35,7 @@ Here are some cool projects that you can build with your @boardname@!
   "imageUrl": "/static/mb/projects/fireflies.png"
 }, {
   "name": "Hot or Cold",
-  "url": "/projects/hot-or-cold",
+  "url": "/---multi#tutorial:/projects/hot-or-cold/beacon:|:tutorial:/projects/hot-or-cold/seekers",
   "description": "Find the hidden player by seeing if your close or not.",
   "imageUrl": "/static/mb/projects/hot-or-cold.jpg"
 }, {
