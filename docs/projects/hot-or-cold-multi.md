@@ -12,12 +12,12 @@ https://youtu.be/nbRfNug-RkY
 
 ## Tutorials
 
-* [Start tutorials](/multi#tutorial:/projects/hot-or-cold/beacon:|:tutorial:/projects/hot-or-cold/seekers)
+* [Start both tutorials side-by-side](/---multi#tutorial:/projects/hot-or-cold/seekers:|:tutorial:/projects/hot-or-cold/beacon)
 
 You can also do them individually:
 
-* [Beacon](/projects/hot-or-cold/beacon)
 * [Seekers](/projects/hot-or-cold/seekers)
+* [Beacon](/projects/hot-or-cold/beacon)
 
 ## Extra
 

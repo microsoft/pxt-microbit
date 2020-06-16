@@ -21,7 +21,7 @@
     {
         "name": "Radio Games",
         "url": "/projects/radio-games",
-        "imageUrl": "/static/mb/projects/multi-dice.png"
+        "imageUrl": "/static/multi.png"
     },
     {
         "name": "Fashion",
