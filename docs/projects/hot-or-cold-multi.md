@@ -2,11 +2,8 @@
 
 ## @description A Hot-or-Cold treasure hunt game
 
-## ~avatar avatar
-
-Find the hidden @boardname@ before the other players!
-
-## ~
+In the Hot-Or-Cold game, the **seekers** @boardname@ look for @boardname@ **beacons** and display hot or cold hints
+based on the distance.
 
 https://youtu.be/nbRfNug-RkY
 
