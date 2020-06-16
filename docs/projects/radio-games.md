@@ -35,7 +35,7 @@ Here are some cool projects that you can build with your @boardname@!
   "imageUrl": "/static/mb/projects/fireflies.png"
 }, {
   "name": "Hot or Cold",
-  "url": "https://makecode.microbit.org/---multi#tutorial:/projects/hot-or-cold/beacon:|:tutorial:/projects/hot-or-cold/seekers",
+  "url": "/projects/hot-or-cold-multi",
   "description": "Find the hidden player by seeing if your close or not.",
   "imageUrl": "/static/mb/projects/hot-or-cold.jpg"
 }, {
