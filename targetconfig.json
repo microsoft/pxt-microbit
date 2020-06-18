@@ -178,7 +178,8 @@
             "elecfreaks/pxt-PlanetX",
             "elecfreaks/pxt-nezha",
             "philipphenkel/pxt-powerfunctions",
-            "1010Technologies/pxt-makerbit-ir-transmitter"
+            "1010Technologies/pxt-makerbit-ir-transmitter",
+            "bsiever/microbit-pxt-timeanddate"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",

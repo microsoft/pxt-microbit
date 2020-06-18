@@ -630,6 +630,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 
 ```codecard
 [{
+  "name": "Time & Date",
+  "url":"/pkg/bsiever/microbit-pxt-timeanddate",
+  "cardType": "package"
+}, {
   "name": "Kitronik Realtime Clock",
   "url":"/pkg/KitronikLtd/pxt-kitronik-rtc",
   "cardType": "package"
