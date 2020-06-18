@@ -59,17 +59,17 @@
 ```codecard
 [
 {
-    "name": "Plot Acceleration",
-    "description": "Use the screen to how the accelerometer works",
-    "url": "/projects/plot-acceleration",
-    "imageUrl": "/static/mb/projects/plot-acceleration.png",
-    "cardType": "side"
+  "name": "Plot Acceleration",
+  "description": "Use the screen to how the accelerometer works",
+  "url": "/projects/plot-acceleration",
+  "imageUrl": "/static/mb/projects/plot-acceleration.png",
+  "cardType": "tutorial"
 } ,{
   "name": "Light Level Meter",
   "description": "Measure light input",
   "url": "/projects/light-level-meter",
   "imageUrl": "/static/mb/projects/light-level-meter.png",
-  "cardType": "side"
+  "cardType": "tutorial"
 }, {
   "name": "Analog Pin Tester",
   "description": "Test analog input",

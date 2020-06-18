@@ -21,7 +21,7 @@ Instead of passing a real potato around while a real clock counts down, we are g
 
 ![Using radio to send a potato](/static/mb/projects/tele-potato/radio-potato.jpg)
 
-Now, what does it mean to have a number represent a potato? Well, we need to **model** the clock as **a number** being tossed around with the potato. We do this so that we can play the game using the radio. So what is so special about this potato clock? It ticks down the time and when it reaches 0, it rings. 
+Now, what does it mean to have a number represent a potato? Well, we need to **model** the clock as **a number** being tossed around with the potato. We do this so that we can play the game using the radio. So what is so special about this potato clock? It ticks down the time and when it reaches 0, it rings.
 
 To keep track of things, let's have a variable called **potato**:
 
@@ -56,13 +56,13 @@ To make the game less predictable, we use the ``||math:pick random||`` block to 
 ```blocks
 let potato = 0
 input.onButtonPressed(Button.AB, () => {
-    potato = Math.randomRange(10, 20)
+    potato = randint(10, 20)
 })
 ```
 
 ### Sending the potato
 
-Sending the potato is done by shaking the @boardname@. If the **potato** variable is positive, 
+Sending the potato is done by shaking the @boardname@. If the **potato** variable is positive,
 we have the potato and we can send it. After sending it, we set the **potato** variable to `-1` since we don't have it anymore.
 
 ```blocks
@@ -89,7 +89,7 @@ radio.onReceivedNumber(function (receivedNumber) {
 
 ### Ticking the clock
 
-Making the clock tick down is done with a ``||loops:forever||`` loop. 
+Making the clock tick down is done with a ``||loops:forever||`` loop.
 
 * If the **potato** is equal to `0` (``potato == 0``), KABOOM! you lose!
 * If the **potato** variable is negative (``potato < 0``), we don't have the potato so we clear the screen.
@@ -129,7 +129,7 @@ input.onGesture(Gesture.Shake, () => {
     }
 })
 input.onButtonPressed(Button.AB, () => {
-    potato = Math.randomRange(10, 20)
+    potato = randint(10, 20)
 })
 radio.setGroup(1)
 potato = -1

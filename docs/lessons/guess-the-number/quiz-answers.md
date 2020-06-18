@@ -14,7 +14,7 @@ Write the line of code that creates a condition when the @boardname@ button A is
 
 
 ```blocks
-input.onButtonPressed(Button.A, () => {    
+input.onButtonPressed(Button.A, () => {
 })
 ```
 
@@ -24,14 +24,14 @@ input.onButtonPressed(Button.A, () => {
 
 
 ```blocks
-let randomNumber = Math.randomRange(0, 10)
+let randomNumber = randint(0, 10)
 ```
 
-## 4. 
+## 4.
 If the rectangle below represents the @boardname@, shade the areas that will be displayed. Explain why that particular area is shaded.
 
 ```blocks
-let randomNumber = Math.randomRange(0, 10)
+let randomNumber = randint(0, 10)
 ```
 
 

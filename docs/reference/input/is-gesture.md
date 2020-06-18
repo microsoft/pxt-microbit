@@ -17,7 +17,7 @@ This program shows a number from `2` to `9` when you shake the @boardname@.
 ```blocks
 forever(function() {
     if (input.isGesture(Gesture.Shake)) {
-        let x = Math.randomRange(2, 9)
+        let x = randint(2, 9)
         basic.showNumber(x)
     }
 })

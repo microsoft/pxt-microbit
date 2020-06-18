@@ -18,10 +18,10 @@ When you compare two Numbers, you get a Boolean value, such as the comparison `x
 
 ```blocks
 input.onButtonPressed(Button.A, () => {
-    let x = Math.randomRange(0, 5)
+    let x = randint(0, 5)
     if(x < 5) {
     basic.showString("low");
-    } else { 
+    } else {
     basic.showString("high");
     }
 })

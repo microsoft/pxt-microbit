@@ -1,6 +1,6 @@
 # catch the egg game quiz answers
 
-Programming a game of catch the egg using the accelerometer 
+Programming a game of catch the egg using the accelerometer
 
 ## Name
 
@@ -52,7 +52,7 @@ let eggX = 2
 let eggY = 0
 if (eggY > 4) {
     eggY = -1
-    eggX = Math.randomRange(0, 5)
+    eggX = randint(0, 5)
 }
 ```
 

@@ -1,6 +1,6 @@
 # Activity: Animation and patterns
 
-Guide the students to create programs using coordinates and LEDs. Each of these short exercises demonstrates how to use coordinates to control the LEDs. These programs can then be modified and used in the students’ more complex projects. 
+Guide the students to create programs using coordinates and LEDs. Each of these short exercises demonstrates how to use coordinates to control the LEDs. These programs can then be modified and used in the students’ more complex projects.
  
 * Smile animation - A short exercise in plotting and toggling LEDs to create a simple animation.
 * Random Patterns generator - A short exercise using a loop to generate random LED patterns and then checking the status of a specific LED.
@@ -35,7 +35,7 @@ basic.showLeds(`
 
 >* Tip: you can also right-click on a block and select Duplicate to copy blocks
 
-* Have the students compare the two face images and determine which LEDs are on in both images. 
+* Have the students compare the two face images and determine which LEDs are on in both images.
 * Plot these LEDs using the correct (x,y) coordinates.
 * When done, place these 'plot x y' blocks inside an 'on start' block.
 
@@ -50,10 +50,10 @@ led.plot(3, 3)
 
 Now we can code for the 4 LEDs that change back and forth, on and off, as we switch from one face to the other and back again over and over.
 
-* From the LED Toolbox drawer, drag out 4 'toggle x y' blocks. 
-* Replace the default values with the correct (x,y) coordinates. 
+* From the LED Toolbox drawer, drag out 4 'toggle x y' blocks.
+* Replace the default values with the correct (x,y) coordinates.
 The 'toggle x y' block will change the status of an LED from on to off or off to on.
-* Place these 4 'toggle x y' blocks in a 'forever' block. 
+* Place these 4 'toggle x y' blocks in a 'forever' block.
 * Place the two 'toggle x y' blocks that create the smile first, followed by the two 'toggle x y' blocks for the non-smile.
 * You may notice that the toggling happens too quickly. Let’s slow it down a bit by placing a 'pause' block between the two pairs of 'toggle x y' blocks.  Set the pause value to 250 milliseconds.
 
@@ -84,13 +84,13 @@ https://www.youtube.com/watch?v=qqBmvHD5bCw
 ### ~
 
 ## Mod this!
-* Add a third image to the animation, perhaps a frown face. 
+* Add a third image to the animation, perhaps a frown face.
 * Make your own custom animation! What LEDs stay the same and which need to be toggled?
  
 ## Random patterns generator
 A short exercise using a loop to generate random LED patterns and then checking the status of a specific LED.
 Pseudocode:
-* On button A pressed we’ll use a loop to turn on a random set of LED lights on our micro:bit. 
+* On button A pressed we’ll use a loop to turn on a random set of LED lights on our micro:bit.
 * Our display will have one LED lit for each column or x coordinate value from 0 through 4.
 Steps:
 * From the Input Toolbox drawer, select the 'on button pressed' block
@@ -104,7 +104,7 @@ Steps:
 input.onButtonPressed(Button.A, () => {
    basic.clearScreen()
    for (let index = 0; index <= 4; index++) {
-       led.plot(index, Math.randomRange(0, 5))
+       led.plot(index, randint(0, 5))
    }
 })
 ```
@@ -113,8 +113,8 @@ Check the on/off state of an LED
 * On button B pressed we’ll use an 'if...then...else' block from the Logic Toolbox drawer
 * From the LED Toolbox drawer, drop a 'point x y' block into the 'if' condition to check the current on/off state of a specific LED.
 
->* If the LED is currently on, the point x y block will return true. 
-* If the LED is currently off, the point x y block will return false. 
+>* If the LED is currently on, the point x y block will return true.
+* If the LED is currently off, the point x y block will return false.
 
 * For this exercise, we’ll use the two Yes/No built in icons to display the LED’s current status. From the Basic Toolbox drawer, drag 2 'show icon' blocks into each of the 'then' and 'else' clauses.  Select the check mark for Yes, and the X icon for No.
 * For now, we’ll leave the default coordinate values (0,0).  But you can challenge your students to add a loop to test for all coordinates on the micro:bit.
@@ -125,7 +125,7 @@ Here is the complete program:
 input.onButtonPressed(Button.A, () => {
    basic.clearScreen()
    for (let index = 0; index <= 4; index++) {
-       led.plot(index, Math.randomRange(0, 5))
+       led.plot(index, randint(0, 5))
    }
 })
 input.onButtonPressed(Button.B, () => {
@@ -203,4 +203,4 @@ basic.showIcon(IconNames.Heart)
 
 ### Try it out!
 
-What happens if adding 25 or subtracting 25 from the current brightness level would result in a sum or difference outside of the 0 to 255 brightness range? 
+What happens if adding 25 or subtracting 25 from the current brightness level would result in a sum or difference outside of the 0 to 255 brightness range?

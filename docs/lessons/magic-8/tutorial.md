@@ -15,7 +15,7 @@ The blocks have been shuffled! Put them back together so that...
 ```shuffle
 basic.showString("ASK A QUESTION")
 input.onGesture(Gesture.Shake, () =>  {
-    let randomNumber = Math.randomRange(0, 3)
+    let randomNumber = randint(0, 3)
     if (randomNumber == 2) {
         basic.showString("YES")
     } else if (randomNumber == 1) {

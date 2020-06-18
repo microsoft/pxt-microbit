@@ -37,7 +37,7 @@ Pick a ``||math:pick a random||`` number and ``||basic:show||`` it on the screen
 
 ```spy
 input.onGesture(Gesture.Shake, function() {
-    basic.showNumber(Math.randomRange(0, 10))
+    basic.showNumber(randint(0, 10))
 })
 ```
 
@@ -47,7 +47,7 @@ A typical dice shows values from `1` to `6`. Change the minimum and maximum valu
 
 ```spy
 input.onGesture(Gesture.Shake, function() {
-    basic.showNumber(Math.randomRange(1, 6))
+    basic.showNumber(randint(1, 6))
 })
 ```
 

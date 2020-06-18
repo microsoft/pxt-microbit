@@ -12,7 +12,7 @@ Add a ``||input:on shake||`` block to run code when you shake the @boardname@.
 
 ```blocks
 input.onGesture(Gesture.Shake, () => {
-    
+
 })
 ```
 
@@ -29,7 +29,7 @@ Add a ``||math:pick random||`` block to pick a random number from `1` to `3` and
 ```blocks
 let hand = 0;
 input.onGesture(Gesture.Shake, () => {
-    hand = Math.randomRange(1, 3)
+    hand = randint(1, 3)
 })
 ```
 
@@ -44,7 +44,7 @@ Place an ``||logic:if||`` block under the ``||math:pick random||`` and check whe
 ```blocks
 let hand = 0;
 input.onGesture(Gesture.Shake, () => {
-    hand = Math.randomRange(1, 3)
+    hand = randint(1, 3)
     if (hand == 1) {
         basic.showLeds(`
             # # # # #
@@ -72,7 +72,7 @@ Click the **(+)** button to add an ``||logic:else||`` section.
 ```blocks
 let hand = 0;
 input.onGesture(Gesture.Shake, () => {
-    hand = Math.randomRange(1, 3)
+    hand = randint(1, 3)
     if (hand == 1) {
         basic.showLeds(`
             # # # # #
@@ -82,7 +82,7 @@ input.onGesture(Gesture.Shake, () => {
             # # # # #
             `)
     } else {
- 
+
     }
 })
 ```
@@ -94,7 +94,7 @@ Add a ``||basic:show leds||`` block inside the ``||logic:else||``. Make a pictur
 ```blocks
 let hand = 0;
 input.onGesture(Gesture.Shake, () => {
-    hand = Math.randomRange(1, 3)
+    hand = randint(1, 3)
     if (hand == 1) {
         basic.showLeds(`
             # # # # #
@@ -128,7 +128,7 @@ Get one more ``||basic:show leds||`` block and put it in the ``||logic:else if||
 ```blocks
 let hand = 0;
 input.onGesture(Gesture.Shake, () => {
-    hand = Math.randomRange(1, 3)
+    hand = randint(1, 3)
     if (hand == 1) {
         basic.showLeds(`
             # # # # #

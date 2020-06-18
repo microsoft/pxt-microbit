@@ -2,7 +2,7 @@
 
 ![Two-Player Game Example Board](/static/courses/csintro/booleans/two-player.jpg)
 
-This is an assignment for students to come up with a micro:bit program that uses Boolean variables, Boolean operators, and possibly the random function. 
+This is an assignment for students to come up with a micro:bit program that uses Boolean variables, Boolean operators, and possibly the random function.
  
 ## Input
 Remind the students of all the different inputs available to them through the micro:bit.
@@ -205,7 +205,7 @@ let player1Turn = false
 let spin = 0
 let delay = 0
 input.onGesture(Gesture.Shake, () => {
-    if (player1Turn == true && Math.randomRange(0, 4) < 3) {
+    if (player1Turn == true && randint(0, 4) < 3) {
         basic.clearScreen()
         delay = 0
         while (delay < 500) {
@@ -250,7 +250,7 @@ input.onGesture(Gesture.Shake, () => {
     } else if (player1Turn) {
         basic.showString("Crash!")
         player1Turn = false
-    } else if (Math.randomRange(0, 4) < 3) {
+    } else if (randint(0, 4) < 3) {
         basic.clearScreen()
         delay = 0
         while (delay < 500) {
@@ -298,7 +298,7 @@ input.onGesture(Gesture.Shake, () => {
     }
 })
 basic.forever(() => {
-	
+
 })
 delay = 0
 spin = 0
@@ -314,7 +314,7 @@ Here is a portion of the board game's code. A boolean variable is used to determ
 ```blocks
 let player1Turn = false;
 input.onGesture(Gesture.Shake, () => {
-    if (player1Turn == true && Math.randomRange(0, 4) < 3) {
+    if (player1Turn == true && randint(0, 4) < 3) {
 
     }
 })
@@ -353,4 +353,4 @@ Have students write a reflection of about 150–300 words, addressing the follow
 **4 =** Reflection piece addresses all prompts.<br/>
 **3 =** Reflection piece lacks 1 of the required elements.<br/>
 **2 =** Reflection piece lacks 2 of the required elements.<br/>
-**1 =** Reflection piece lacks 3 of the required elements. 
+**1 =** Reflection piece lacks 3 of the required elements.

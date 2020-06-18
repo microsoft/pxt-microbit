@@ -4,6 +4,6 @@ Generate a random coordinate and display it on the LED screen.
 
 ```blocks
 basic.forever(() => {
-    led.toggle(Math.randomRange(0, 4), Math.randomRange(0, 4))
+    led.toggle(randint(0, 4), randint(0, 4))
 })
 ```

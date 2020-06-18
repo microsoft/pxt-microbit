@@ -3,7 +3,8 @@
 ## Introduction @unplugged
 
 In this tutorial, you will create the code for the **beacon**
-in the Hot-Or-Cold game.
+in the Hot-Or-Cold game. The seekers @boardname@ look for @boardname@ beacons and display hot or cold hints
+based on the distance.
 
 ## Setting up the radio group
 

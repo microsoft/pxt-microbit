@@ -38,7 +38,7 @@ input.onGesture(Gesture.LogoUp, function () {
 
 ## Step 4
 
-The items in the ``||arrays:text list||`` are numbered ``0`` to ``length - 1``. 
+The items in the ``||arrays:text list||`` are numbered ``0`` to ``length - 1``.
 Add code to pick a ``||math:random||`` ``||variables:index||``.
 
 ```spy
@@ -46,20 +46,20 @@ let text_list: string[] = []
 let index = 0
 input.onGesture(Gesture.LogoUp, function () {
     // @highlight
-    index = Math.randomRange(0, text_list.length - 1)
+    index = randint(0, text_list.length - 1)
 })
 ```
 
 ## Step 5
 
-Add code to ``||basic:show||`` the value of the item stored at ``||variables:index||`` in 
+Add code to ``||basic:show||`` the value of the item stored at ``||variables:index||`` in
 ``||arrays:text list||``.
 
 ```spy
 let text_list: string[] = []
 let index = 0
 input.onGesture(Gesture.LogoUp, function () {
-    index = Math.randomRange(0, text_list.length - 1)
+    index = randint(0, text_list.length - 1)
     // @highlight
     basic.showString(text_list[index])
 })
@@ -94,7 +94,7 @@ pointing ``||input:up||``. This is the gesture for a pass.
 
 ```spy
 input.onGesture(Gesture.ScreenUp, function () {
-    
+
 })
 ```
 

@@ -21,7 +21,7 @@ Using ``||basic:show number||`` and ``||Math:pick random||`` blocks, show a rand
 
 ```blocks
 input.onPinPressed(TouchPin.P0, () => {
-    basic.showNumber(Math.randomRange(0, 100));
+    basic.showNumber(randint(0, 100));
 });
 ```
 ## Step 3
@@ -35,7 +35,7 @@ Show ``"LOVE METER"`` on the screen when the @boardname@ starts.
 ```blocks
 basic.showString("LOVE METER");
 input.onPinPressed(TouchPin.P0, () => {
-    basic.showNumber(Math.randomRange(0, 100));
+    basic.showNumber(randint(0, 100));
 });
 ```
 
