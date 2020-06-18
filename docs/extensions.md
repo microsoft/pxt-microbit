@@ -517,6 +517,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
   "name": "Keyestudio Robot Car",
   "url":"/pkg/Veilkrand/pxt-RobotCar",
   "cardType": "package"  
+}, {
+  "name": "TinkerTanker Stepper Motor",
+  "url":"/pkg/Tinkertanker/pxt-stepper-motor",
+  "cardType": "package"
 }]
 ```
 
