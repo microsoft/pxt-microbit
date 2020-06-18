@@ -343,13 +343,11 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
   "name": "MU Vision camera",
   "url":"/pkg/mu-opensource/pxt-muvision",
   "cardType": "package"
-},
-{
+}, {
   "name": "DFRobot HuskyLens",
   "url":"/pkg/DFRobot/pxt-DFRobot_HuskyLens",
   "cardType": "package"
-}
-]
+}]
 ```
 ## Robotics
 
