@@ -4,7 +4,7 @@
 
 This lesson uses the @boardname@ to measure a student's reaction time in completing a circuit path on a cardboard pad. The student's reaction time is measured in both a distracted and an undistracted environment.
 
-Connect each piece of foil to the appropriate pin on the @boardname@.  
+Connect each piece of foil to the appropriate pin on the @boardname@.
 
 **Note:** For the experiment we are **not** using the **P2** pin as shown in the video.
 
@@ -20,7 +20,7 @@ In order for **Reaction Time** to track the speed of a a player's reaction, we n
 
 So, our tracking variables do this:
 - the reaction time experiment starts and ends at specific times based on the player's reaction.
-- the code tracks when the experiment is running as well as when the player has a false start.    
+- the code tracks when the experiment is running as well as when the player has a false start.
 
 Add these variables to your code:
 
@@ -47,10 +47,10 @@ let end = 0
 let false_start = false
 let running = false
 input.onPinPressed(TouchPin.P0, () => {
-	
+
 })
 input.onPinPressed(TouchPin.P1, () => {
-	
+
 })
 running = false
 false_start = false
@@ -74,7 +74,7 @@ input.onPinPressed(TouchPin.P0, () => {
     basic.clearScreen()
 })
 input.onPinPressed(TouchPin.P1, () => {
-	
+
 })
 running = false
 false_start = false
@@ -82,7 +82,7 @@ end = 0
 start = 0
 ```
 
-## Step 4: Boolean 
+## Step 4: Boolean
 
 Now we'll set the variables `running` and `false_start` to `false` in the **P0** event.
 
@@ -102,7 +102,7 @@ input.onPinPressed(TouchPin.P0, () => {
     false_start = false
 })
 input.onPinPressed(TouchPin.P1, () => {
-	
+
 })
 running = false
 false_start = false
@@ -110,7 +110,7 @@ end = 0
 start = 0
 ```
 
-## Step 5: Begin reaction time randomly 
+## Step 5: Begin reaction time randomly
 
 Let's add a random starting time after pin **p0** is pressed. Include the ``||math:random||`` block in a ``||basic:pause||`` at the bottom of the event block like this:
 
@@ -126,10 +126,10 @@ input.onPinPressed(TouchPin.P0, () => {
     basic.clearScreen()
     running = false
     false_start = false
-    basic.pause(1000 + Math.randomRange(0, 2000))
+    basic.pause(1000 + randint(0, 2000))
 })
 input.onPinPressed(TouchPin.P1, () => {
-	
+
 })
 running = false
 false_start = false
@@ -137,7 +137,7 @@ end = 0
 start = 0
 ```
 
-## Step 6: Plot LED on X, Y coordinates randomly 
+## Step 6: Plot LED on X, Y coordinates randomly
 
 The reaction time will begin if no false start is detected (pin **P0** pressed at the wrong time). When the reaction time starts, a LED is randomly plotted at some the x and y coordinate on the display. Add in the blocks contained in the ``||logic:if then||`` that show the reaction time:
 
@@ -147,7 +147,7 @@ let end = 0
 let false_start = false
 let running = false
 input.onPinPressed(TouchPin.P1, () => {
-	
+
 })
 input.onPinPressed(TouchPin.P0, () => {
     basic.showNumber(3)
@@ -156,13 +156,13 @@ input.onPinPressed(TouchPin.P0, () => {
     basic.clearScreen()
     running = false
     false_start = false
-    basic.pause(1000 + Math.randomRange(0, 2000))
+    basic.pause(1000 + randint(0, 2000))
     if (!(false_start)) {
         start = input.runningTime()
         running = true
         led.stopAnimation()
         basic.clearScreen()
-        led.plot(Math.randomRange(0, 4), Math.randomRange(0, 4))
+        led.plot(randint(0, 4), randint(0, 4))
     }
 })
 running = false
@@ -171,9 +171,9 @@ end = 0
 start = 0
 ```
 
-## Step 7: Display feedback to reaction 
+## Step 7: Display feedback to reaction
 
-Add some code to detect when the player presses the **GND** foil with one hand and the **P1** pin with the other. This code detects the circuit connection and shuts off the timer. Also, add code to have the @boardname@ read the time in milliseconds from when the timer starts and the circuit is completed. This code also detects if there is a correct reaction or false start if pin **P1** is pressed.  
+Add some code to detect when the player presses the **GND** foil with one hand and the **P1** pin with the other. This code detects the circuit connection and shuts off the timer. Also, add code to have the @boardname@ read the time in milliseconds from when the timer starts and the circuit is completed. This code also detects if there is a correct reaction or false start if pin **P1** is pressed.
 
 Let's display one of two images if pin **P1** is pressed. The first image displays if the player correctly completes the circuit between **GND** and **P1**. This means that a correct reaction occurred to complete the circuit with pin **P1** pressed after the randomly generated LED appears.
 
@@ -215,13 +215,13 @@ input.onPinPressed(TouchPin.P0, () => {
     basic.clearScreen()
     running = false
     false_start = false
-    basic.pause(1000 + Math.randomRange(0, 2000))
+    basic.pause(1000 + randint(0, 2000))
     if (!(false_start)) {
         start = input.runningTime()
         running = true
         led.stopAnimation()
         basic.clearScreen()
-        led.plot(Math.randomRange(0, 4), Math.randomRange(0, 4))
+        led.plot(randint(0, 4), randint(0, 4))
     }
 })
 running = false
@@ -230,9 +230,9 @@ end = 0
 start = 0
 ```
 
-## Extension 
+## Extension
 
-After the students have finished their experiments. Have them play the game with a friend (using the **P2** pin) and have some contests to see who is the quickest on the draw. 
+After the students have finished their experiments. Have them play the game with a friend (using the **P2** pin) and have some contests to see who is the quickest on the draw.
 
 You can find the code for this below:
 
@@ -248,13 +248,13 @@ input.onPinPressed(TouchPin.P0, () => {
     basic.clearScreen()
     running = false
     false_start = false
-    basic.pause(1000 + Math.randomRange(0, 2000))
+    basic.pause(1000 + randint(0, 2000))
     if (!(false_start)) {
         start = input.runningTime()
         running = true
         led.stopAnimation()
         basic.clearScreen()
-        led.plot(Math.randomRange(0, 4), Math.randomRange(0, 4))
+        led.plot(randint(0, 4), randint(0, 4))
     }
 })
 input.onPinPressed(TouchPin.P1, () => {

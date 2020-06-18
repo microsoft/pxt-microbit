@@ -1,6 +1,6 @@
 # Activity: Rock, paper, scissors
 
-For this activity, each student will need a micro:bit. 
+For this activity, each student will need a micro:bit.
 Everyone will create the same program, the classic rock paper scissor game.
 
 ![Rock, paper, scissors](/static/courses/csintro/conditionals/rock-paper-scissors-items.png)
@@ -14,7 +14,7 @@ Everyone will create the same program, the classic rock paper scissor game.
 >Example pseudocode:<br/>
 On button A press: choose random number from 0-2
 If random number = 0, then display rock icon,
-Else if random number = 1, then display paper icon, 
+Else if random number = 1, then display paper icon,
 Else display scissors icon.
 * Point out that because there are only three possibilities, we don’t need to do a separate check to see if random number = 2. So we just use an else.
 
@@ -34,7 +34,7 @@ Here's an example mod:
 ```blocks
 let hand = 0
 input.onGesture(Gesture.Shake, () => {
-    hand = Math.randomRange(0, 3)
+    hand = randint(0, 3)
     if (hand == 0) {
         basic.showLeds(`
             # # # # #

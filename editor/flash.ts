@@ -33,7 +33,7 @@ function log(msg: string) {
     if (!startTime) startTime = now
     now -= startTime
     let ts = ("00000" + now).slice(-5)
-    pxt.log(`dap ${ts}: ${msg}`)
+    pxt.debug(`dap ${ts}: ${msg}`)
 }
 
 
@@ -142,7 +142,7 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
         const h = this.io;
         const pbuf = this.pbuf;
         function writeAsync(data: ArrayBuffer) {
-            // console.log("WR: " + pxt.Util.toHex(new Uint8Array(data)));
+            //console.log("WR: " + pxt.Util.toHex(new Uint8Array(data)));
             return h.sendPacketAsync(new Uint8Array(data));
         }
 
@@ -394,7 +394,7 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
     }
 }
 
-export function mkPacketIOWrapper(io: pxt.packetio.PacketIO): pxt.packetio.PacketIOWrapper {
-    pxt.log(`packetio: mk wrapper dap`)
+export function mkDAPLinkPacketIOWrapper(io: pxt.packetio.PacketIO): pxt.packetio.PacketIOWrapper {
+    pxt.log(`packetio: mk wrapper dap wrapper`)
     return new DAPWrapper(io);
 }

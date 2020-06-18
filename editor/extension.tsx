@@ -48,7 +48,7 @@ pxt.editor.initExtensionsAsync = function (opts: pxt.editor.ExtensionOptions): P
         subclassCode: 0x03
     }])
 
-    res.mkPacketIOWrapper = flash.mkPacketIOWrapper;
+    res.mkPacketIOWrapper = flash.mkDAPLinkPacketIOWrapper;
     res.blocklyPatch = patch.patchBlocks;
     res.renderBrowserDownloadInstructions = dialogs.renderBrowserDownloadInstructions;
     res.renderUsbPairDialog = dialogs.renderUsbPairDialog;

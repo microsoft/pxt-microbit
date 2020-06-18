@@ -29,7 +29,7 @@ is caught holding the potato.
 let timer = 0
 input.onButtonPressed(Button.A, function () {
     // @highlight
-    timer = Math.randomRange(5, 15)
+    timer = randint(5, 15)
 })
 ```
 
@@ -40,7 +40,7 @@ Add code to ``||basic:show an icon||`` to indicate that the game has started.
 ```spy
 let timer = 0
 input.onButtonPressed(Button.A, function () {
-    timer = Math.randomRange(5, 15)
+    timer = randint(5, 15)
     // @highlight
     basic.showIcon(IconNames.Chessboard)
 })
@@ -55,7 +55,7 @@ greater than `0`. When `timer` value becomes `0` or less, the game is over.
 ```spy
 let timer = 0
 input.onButtonPressed(Button.A, function () {
-    timer = Math.randomRange(5, 15)
+    timer = randint(5, 15)
     basic.showIcon(IconNames.Chessboard)
     // @highlight
     while (timer > 0) {
@@ -71,7 +71,7 @@ Inside the ``||loops:while||`` loop, add code to ``||variables:decrease||`` the 
 ```spy
 let timer = 0
 input.onButtonPressed(Button.A, function () {
-    timer = Math.randomRange(5, 15)
+    timer = randint(5, 15)
     basic.showIcon(IconNames.Chessboard)
     while (timer > 0) {
         // @highlight
@@ -89,7 +89,7 @@ input.onButtonPressed(Button.A, function () {
 ```spy
 let timer = 0
 input.onButtonPressed(Button.A, function () {
-    timer = Math.randomRange(5, 15)
+    timer = randint(5, 15)
     basic.showIcon(IconNames.Chessboard)
     while (timer > 0) {
         timer += -1

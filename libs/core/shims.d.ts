@@ -438,6 +438,7 @@ declare namespace control {
      * Make a friendly name for the device based on its serial number
      */
     //% blockId="control_device_name" block="device name" weight=10 blockGap=8
+    //% help=control/device-name
     //% advanced=true shim=control::deviceName
     function deviceName(): string;
 
@@ -445,6 +446,7 @@ declare namespace control {
      * Derive a unique, consistent serial number of this device from internal data.
      */
     //% blockId="control_device_serial_number" block="device serial number" weight=9
+    //% help=control/device-serial-number
     //% advanced=true shim=control::deviceSerialNumber
     function deviceSerialNumber(): int32;
 
@@ -1044,6 +1046,20 @@ declare namespace control {
      */
     //% deprecated=1 shim=control::createBufferFromUTF8
     function createBufferFromUTF8(str: string): Buffer;
+}
+declare namespace light {
+
+    /**
+     * Sends a color buffer to a light strip
+     **/
+    //% shim=light::sendWS2812Buffer
+    function sendWS2812Buffer(buf: Buffer, pin: int32): void;
+
+    /**
+     * Sets the light mode of a pin
+     **/
+    //% shim=light::setMode
+    function setMode(pin: int32, mode: int32): void;
 }
 
 // Auto-generated. Do not edit. Really.

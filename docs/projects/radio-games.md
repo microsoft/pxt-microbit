@@ -6,6 +6,11 @@ Here are some cool projects that you can build with your @boardname@!
 
 ```codecard
 [{
+  "name": "Multi Editors",
+  "url": "https://makecode.microbit.org/---multi",
+  "description": "Edit two radio programs side-by-side!",
+  "imageUrl": "/static/multi.png"
+}, {
   "name": "Multi Dice",
   "url": "/projects/multi-dice",
   "description": "Compete with multiple dices",
@@ -30,7 +35,7 @@ Here are some cool projects that you can build with your @boardname@!
   "imageUrl": "/static/mb/projects/fireflies.png"
 }, {
   "name": "Hot or Cold",
-  "url": "/projects/hot-or-cold",
+  "url": "/projects/hot-or-cold-multi",
   "description": "Find the hidden player by seeing if your close or not.",
   "imageUrl": "/static/mb/projects/hot-or-cold.jpg"
 }, {
@@ -51,7 +56,7 @@ Here are some cool projects that you can build with your @boardname@!
 }, {
   "name": "Micro:Coin",
   "url": "/projects/micro-coin",
-  "description": "A block-chain for micro:bit",
+  "description": "A blockchain for micro:bit",
   "imageUrl": "/static/mb/projects/micro-coin.png"
 }, {
   "name": "Infection",

@@ -90,7 +90,7 @@ namespace pxsim {
 
         constructor(public props: EdgeConnectorProps) {
             this.pins = props.pins.map(id => id != undefined ? new Pin(id) : null);
-            this.pitchVolume = 64
+            this.pitchVolume = 0xff
         }
 
         public getPin(id: number) {

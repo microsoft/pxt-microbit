@@ -2,22 +2,19 @@
 
 ## @description A Hot-or-Cold treasure hunt game
 
-## ~avatar avatar
-
-Find the hidden @boardname@ before the other players!
-
-## ~
+In the Hot-Or-Cold game, the **seekers** @boardname@ look for @boardname@ **beacons** and display hot or cold hints
+based on the distance.
 
 https://youtu.be/nbRfNug-RkY
 
 ## Tutorials
 
-* [Start tutorials](/multi#tutorial:/projects/hot-or-cold/beacon:|:tutorial:/projects/hot-or-cold/seekers)
+* [Start both tutorials side-by-side](/---multi#tutorial:/projects/hot-or-cold/seekers:|:tutorial:/projects/hot-or-cold/beacon)
 
 You can also do them individually:
 
-* [Beacon](/projects/hot-or-cold/beacon)
 * [Seekers](/projects/hot-or-cold/seekers)
+* [Beacon](/projects/hot-or-cold/beacon)
 
 ## Extra
 

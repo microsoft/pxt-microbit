@@ -1,8 +1,9 @@
-# Hot or Cold Seekers
+# Hot or Cold Seeker
 
 ## Introduction @unplugged
 
-The seeker @boardname@ looks for @boardname@ beacons and display hot or cold hints
+In this tutorial, you will create the code for the **seeker**
+in the Hot-Or-Cold game. The seekers @boardname@ look for @boardname@ beacons and display hot or cold hints
 based on the distance.
 
 ## Setting up the radio group

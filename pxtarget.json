@@ -45,7 +45,6 @@
         "gc": true,
         "imageRefTag": 9,
         "shimRenames": {
-            "sendBufferAsm": "light::sendWS2812Buffer"
         },
         "patches": {
             "0.0.0 - 1.0.0": [
@@ -120,7 +119,7 @@
         "yottaTarget": "bbc-microbit-classic-gcc",
         "yottaCorePackage": "microbit",
         "githubCorePackage": "lancaster-university/microbit",
-        "gittag": "v2.2.0-rc5",
+        "gittag": "v2.2.0-rc6",
         "serviceId": "microbit",
         "dockerImage": "pext/yotta:latest"
     },
@@ -477,6 +476,7 @@
         "availableLocales": [
             "en",
             "ar",
+            "bg",
             "cs",
             "da",
             "de",
@@ -484,6 +484,7 @@
             "es-ES",
             "fi",
             "fr",
+            "he",
             "hu",
             "is",
             "it",
@@ -509,7 +510,8 @@
         },
         "browserDbPrefixes": {
             "1": "v1",
-            "2": "v2"
+            "2": "v2",
+            "3": "v3"
         },
         "editorVersionPaths": {
             "0": "v0"

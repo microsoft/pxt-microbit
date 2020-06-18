@@ -4,7 +4,7 @@
 
 Your beginning code should look like this:
 
-```blocks 
+```blocks
 let coll: string[] = []
 coll.push("puppy")
 coll.push("clock")
@@ -12,7 +12,7 @@ coll.push("night")
 coll.push("cat")
 coll.push("cow")
 input.onGesture(Gesture.LogoUp, function () {
-    let index = Math.randomRange(0, coll.length)
+    let index = randint(0, coll.length)
     let word = coll[index]
     basic.showString(word)
 })
@@ -34,7 +34,7 @@ coll.push("night")
 coll.push("cat")
 coll.push("cow")
 input.onGesture(Gesture.LogoUp, function () {
-    let index = Math.randomRange(0, coll.length)
+    let index = randint(0, coll.length)
     let word = coll[index]
     basic.showString(word)
 })
@@ -42,7 +42,7 @@ input.onGesture(Gesture.ScreenDown, function () {
     game.addScore(1)
 })
 
-game.startCountdown(60000) 
+game.startCountdown(60000)
 ```
 
 * Run your code to see if it works as expected
@@ -58,13 +58,13 @@ coll.push("clock")
 coll.push("night")
 coll.push("cat")
 coll.push("cow")
-coll.push("bicycle") 
-coll.push("telephone") 
-coll.push("sun") 
-coll.push("car") 
-coll.push("ant") 
+coll.push("bicycle")
+coll.push("telephone")
+coll.push("sun")
+coll.push("car")
+coll.push("ant")
 input.onGesture(Gesture.LogoUp, function () {
-    let index = Math.randomRange(0, coll.length)
+    let index = randint(0, coll.length)
     let word = coll[index]
     basic.showString(word)
 })

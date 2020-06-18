@@ -73,8 +73,8 @@ basic.forever(() => {
     inside = 0
     for (let i = 0; i < n; i++) {
         // generate a point within the square
-        x = Math.randomRange(0, r + 1)
-        y = Math.randomRange(0, r + 1)
+        x = randint(0, r + 1)
+        y = randint(0, r + 1)
         // test if the point is within the circle
         // sqrt(x**2 + y**2) < r ==> x**2 + y**2 < r**2
         if (x * x + y * y < r2) {

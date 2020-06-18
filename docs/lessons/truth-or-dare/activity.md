@@ -1,6 +1,6 @@
 # truth or dare activity
 
-A multi-player game that forces each player to reveal a secret or something funny. 
+A multi-player game that forces each player to reveal a secret or something funny.
 
 ## ~avatar avatar
 
@@ -34,7 +34,7 @@ basic.showLeds(`
     . . # . .
     `)
 input.onButtonPressed(Button.A, () => {
-    let random = Math.randomRange(0, 2)
+    let random = randint(0, 2)
 })
 ```
 
@@ -49,7 +49,7 @@ basic.showLeds(`
     . . # . .
     `)
 input.onButtonPressed(Button.A, () => {
-    let random = Math.randomRange(0, 2)
+    let random = randint(0, 2)
     if (random == 0) {
         basic.showString("TRUTH")
     } else {
@@ -71,7 +71,7 @@ basic.showLeds(`
     . . # . .
     `)
 input.onButtonPressed(Button.A, () => {
-    let random = Math.randomRange(0, 2)
+    let random = randint(0, 2)
     if (random == 0) {
         basic.showString("TRUTH")
     } else {

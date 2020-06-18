@@ -4,8 +4,8 @@
 
 
 
-The *Truth or dare!* game works as follows: a player spins the @boardname@ on the table. 
-When the @boardname@ stops spinning, the player pointed by the arrow (displayed on screen) must press the button "A" 
+The *Truth or dare!* game works as follows: a player spins the @boardname@ on the table.
+When the @boardname@ stops spinning, the player pointed by the arrow (displayed on screen) must press the button "A"
 to see if she has to provide a *truth* or a *dare*.
 
 ## ~
@@ -27,7 +27,7 @@ basic.showLeds(`
     . . # . .
     `)
 input.onButtonPressed(Button.A, () => {
-    let random = Math.randomRange(0, 2)
+    let random = randint(0, 2)
     if (random == 0) {
         basic.showString("TRUTH")
     } else {
@@ -53,7 +53,7 @@ basic.showLeds(`
     . . # . .
     . . # . .
     `);
-Math.randomRange(0, 2);
+randint(0, 2);
 basic.showString("TRUTH");
 if (true) {} else {}
 "TRUTH";

@@ -21,7 +21,7 @@
     {
         "name": "Radio Games",
         "url": "/projects/radio-games",
-        "imageUrl": "/static/mb/projects/multi-dice.png"
+        "imageUrl": "/static/multi.png"
     },
     {
         "name": "Fashion",
@@ -79,9 +79,9 @@
         "imageUrl": "/static/coding-cards/balance-card.jpg"
     },
     {
-        "name": "Beta Deep Dive",
-        "url": "/beta-deep-dive",
-        "imageUrl": "/static/beta-deep-dive/RpK4Cg42eNk.jpg"
+        "name": "Deep Dive",
+        "url": "/deep-dive",
+        "imageUrl": "/static/deep-dive/RpK4Cg42eNk.jpg"
     }
 ]
 ```
@@ -103,5 +103,5 @@
 [Behind the MakeCode Hardware](/behind-the-makecode-hardware),
 [Science Experiments](/science-experiments),
 [Coding Cards](/coding-cards),
-[Beta Deep Dive](/beta-deep-dive)
+[Deep Dive](/deep-dive)
 

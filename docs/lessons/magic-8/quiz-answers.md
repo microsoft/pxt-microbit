@@ -19,13 +19,13 @@ An if statement will conditionally run code depending on whether or not a condit
 ## 2. Create a Variable called ``x`` and assign it to a random number between 0 and 2.
 
 ```blocks
-let x = Math.randomRange(0, 3)
+let x = randint(0, 3)
 ```
 
 ## 3. Write the 'if statement' to check if ``x`` is equal to 2. Inside the 'if statement', display the string "Yes".
 
 ```blocks
-let x = Math.randomRange(0, 3)
+let x = randint(0, 3)
 if (x == 2) {
     basic.showString("Yes", 150)
 }
@@ -34,7 +34,7 @@ if (x == 2) {
 ## 4. Write the 'if statement' to check if ``x`` is equal to 1. Inside the 'if statement', display the string "No."
 
 ```blocks
-let x = Math.randomRange(0, 3)
+let x = randint(0, 3)
 if (x == 2) {
     basic.showString("Yes", 150)
 } else if (x == 1) {
@@ -45,7 +45,7 @@ if (x == 2) {
 ## 5. Write the code to display the string "I don't know" if the Variable ``x`` is neither 2 nor 1.
 
 ```blocks
-let x = Math.randomRange(0, 3)
+let x = randint(0, 3)
 if (x == 2) {
     basic.showString("Yes", 150)
 } else if (x == 1) {

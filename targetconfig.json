@@ -173,7 +173,14 @@
             "MakeAndLearn/pxt-microshield",
             "4tronix/Orbit",
             "elecfreaks/pxt-TPBot",
-            "CODOmicrobit/pxt-CODO"
+            "longan-link/pxt-longanbit",
+            "CODOmicrobit/pxt-CODO",
+            "KitronikLtd/pxt-kitronik-move-motor",
+            "elecfreaks/pxt-PlanetX",
+            "elecfreaks/pxt-nezha",
+            "philipphenkel/pxt-powerfunctions",
+            "1010Technologies/pxt-makerbit-ir-transmitter",
+            "bsiever/microbit-pxt-timeanddate"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",
@@ -203,7 +210,7 @@
         "Behind the MakeCode Hardware": "behind-the-makecode-hardware",
         "Science Experiments": "science-experiments",
         "Coding Cards": "coding-cards",
-        "Beta Deep Dive": "beta-deep-dive"
+        "Deep Dive": "deep-dive"
     },
     "electronManifest": {
         "latest": "v2.0.3"

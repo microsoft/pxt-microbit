@@ -2,13 +2,14 @@
 
 ## ~ avatar
 
-Have you heard about BitCoin and all those new Crypto currencies? Well micro:bit has **micro:coin** now! 
+Have you heard about BitCoin and all those new Crypto currencies? Well micro:bit has **micro:coin** now!
 
 ## ~
 
 ## How does a @boardname@ make coins?
 
-Each @boardname@ contains a **block chain**, a sequence of **blocks**, that is public and can't be modified. Each block represents a **coin**. To mine new coins, the user shakes 
+
+Each @boardname@ contains a **blockchain**, a sequence of **blocks**, that is public and can't be modified. Each block represents a **coin**. To mine new coins, the user shakes 
 the @boardname@ and, if they are in luck, their coin added to the chain as a new block! 
 Once the block is added, it is broadcasted to the other @boardname@ (the block chain is public and can't be modified so it's ok to share it). Other @boardname@s receive the block, validate the transaction and update their block chain as needed.
 
@@ -19,20 +20,22 @@ Happy mining!
 
 ## Coins, blocks, chains
 
-A _block chain_ is a list of _blocks_ that record transactions of a crypto-currency like BitCoin. A block might contain information like the time it was created (mined) and who mined it. The most important part of the block is it's _hash_. This is a special number made from the information in the last block of the block list combined with the hash number of previous block in the list. The new block contains information for the current transaction and this new hash number. The new block is added to the list of previous blocks. This list is then transmitted to the crypto currency network. It's really hard (like impossible) to tamper or forge a hash which allows the block chain to be transmitted publicly.
+A _blockchain_ is a list of _blocks_ that record transactions of a crypto-currency like BitCoin. A block might contain information like the time it was created (mined) and who mined it. The most important part of the block is it's _hash_. This is a special number made from the information in the last block of the block list combined with the hash number of previous block in the list. The new block contains information for the current transaction and this new hash number. The new block is added to the list of previous blocks. This list is then transmitted to the crypto currency network. It's really hard (like impossible) to tamper or forge a hash which allows the blockchain to be transmitted publicly.
 
-## ~ hint
+### ~ hint
+
+#### Secure your coins
 
 Build yourself a [@boardname@ wallet](/projects/wallet) to hold your coins!
 
-## ~
+### ~
 
 ## Code
 
-The code uses blocks from the [radio-blockchain](https://makecode.microbit.org/pkg/microsoft/pxt-radio-blockchain) package.
+The code uses blocks from the [radio-blockchain](https://makecode.microbit.org/pkg/microsoft/pxt-radio-blockchain) extension. Before you edit the code, add this extension:
 
-* Click on **Advanced**, then **Extensions**
-* search for **blockchain** and add **radio-blockchain**
+1. Click on **Advanced**, then **Extensions**
+2. Search for **blockchain** and add **radio-blockchain**
 
 ```blocks
 // shaking is mining...
@@ -40,7 +43,7 @@ input.onGesture(Gesture.Shake, () => {
     led.stopAnimation()
     basic.clearScreen()
     basic.pause(200) // display a short pause
-    if (Math.randomRange(0, 2) == 0) { // 30% chances to add a transaction
+    if (randint(0, 2) == 0) { // 30% chances to add a transaction
         // we found a coin!!!
         blockchain.addBlock(1);
         basic.showIcon(IconNames.Diamond);

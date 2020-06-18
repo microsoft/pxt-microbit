@@ -14,7 +14,7 @@ Add an ``||input:on shake||`` event to run code when you shake the @boardname@.
 
 ```spy
 input.onGesture(Gesture.Shake, () => {
-    
+
 })
 ```
 
@@ -25,9 +25,9 @@ and store it in a variable named ``hand``. The random numbers are used to select
 on the LEDs.
 
 ```spy
-let hand = 0;
+let hand = 0
 input.onGesture(Gesture.Shake, () => {
-    hand = Math.randomRange(1, 3)
+    hand = randint(1, 3)
 })
 ```
 
@@ -36,9 +36,9 @@ input.onGesture(Gesture.Shake, () => {
 ``||logic:if||`` the ``||math:random||`` number in ``hand`` is `1`, ``||basic:show||`` a picture of a piece of paper on the ``||basic:LEDs||``.
 
 ```spy
-let hand = 0;
+let hand = 0
 input.onGesture(Gesture.Shake, () => {
-    hand = Math.randomRange(1, 3)
+    hand = randint(1, 3)
     if (hand == 1) {
         basic.showLeds(`
             # # # # #
@@ -63,9 +63,9 @@ Click on the **SHAKE** button in the simulator. If you try enough times, you sho
 ``||logic:else||`` so ``||basic:show on the LEDs||`` a picture of some scissors.
 
 ```spy
-let hand = 0;
+let hand = 0
 input.onGesture(Gesture.Shake, () => {
-    hand = Math.randomRange(1, 3)
+    hand = randint(1, 3)
     if (hand == 1) {
         basic.showLeds(`
             # # # # #
@@ -91,9 +91,9 @@ input.onGesture(Gesture.Shake, () => {
 Now, when the ``||math:random||`` number in ``hand`` is `2` we want to ``||basic:show on the LEDs||`` a picture of a rock. Change the way you check the value for ``hand`` so that the picture is a piece of paper ``||logic:if||`` it is `1`, ``||logic:else if||`` it is `2` the picture is a rock, or ``||logic:else||`` the picture is scissors.
 
 ```spy
-let hand = 0;
+let hand = 0
 input.onGesture(Gesture.Shake, () => {
-    hand = Math.randomRange(1, 3)
+    hand = randint(1, 3)
     if (hand == 1) {
         basic.showLeds(`
             # # # # #
