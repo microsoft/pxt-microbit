@@ -10,44 +10,49 @@ Tell everyone who you are. Show you name on the LEDs.
 
 ## Step 1
 
-Use the ``||basic:forever||`` loop to run some code continuously.
+On the screen, ``||basic:show a string||`` saying `"My name is: "`.
 
 ```spy
-basic.forever(function() {
-
-})
+basic.showString("My name is: ")
 ```
 
 ## Step 2
 
-Show your name using ``||basic:show string||`` inside the ``||basic:forever||`` loop. Set your
-name as the string value for ``||basic:show string||``.
+Let everyone know who you are and ``||basic:show a string||`` with your name.
 
 ```spy
-basic.forever(function() {
-    // @highlight
-    basic.showString("MICRO")
-})
+basic.showString("My name is: ")
+basic.showString("Sarah!")
 ```
 
 ## Step 3
 
-Look at the simulator and make sure it shows your name on the screen.
+Tell everyone what your age is. Add a ``||basic:show string||`` for `"My age is "` and then ``||basic:show a number||` for your age.
 
-![Name scrolling on the LEDs](/static/mb/projects/name-tag/name-tag.gif)
+```spy
+basic.showString("My name is: ")
+basic.showString("Sarah!")
+basic.showString("My age is: ")
+basic.showNumber(9)
+```
 
 ## Step 4
+
+Look at the simulator and make sure it shows your name and age on the screen.
+
+## Step 5
 
 Place more ``||basic:show strings||`` to create a longer message.
 
 ```spy
-basic.forever(function() {
-    basic.showString("MICRO")
-    // @highlight
-    basic.showString("BIT")
-})
+basic.showString("My name is: ")
+basic.showString("Sarah!")
+basic.showString("My age is: ")
+basic.showNumber(9)
+basic.showString("Favorite color: ")
+basic.showString("Blue")
 ```
 
-## Step 5
+## Step 6
 
 If you have a @boardname@ connected, click ``|Download|`` and transfer your code to the @boardname@!
