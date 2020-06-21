@@ -520,6 +520,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
   "name": "Keyestudio Robot Car",
   "url":"/pkg/Veilkrand/pxt-RobotCar",
   "cardType": "package"  
+}, {
+  "name": "TinkerTanker Stepper Motor",
+  "url":"/pkg/Tinkertanker/pxt-stepper-motor",
+  "cardType": "package"
 }]
 ```
 
@@ -632,6 +636,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 ## Utilities
 ```codecard
 [{
+  "name": "Time & Date",
+  "url":"/pkg/bsiever/microbit-pxt-timeanddate",
+  "cardType": "package"
+}, {
   "name": "Kitronik Realtime Clock",
   "url":"/pkg/KitronikLtd/pxt-kitronik-rtc",
   "cardType": "package"

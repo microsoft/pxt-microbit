@@ -46,6 +46,7 @@
             "Tinkertanker/pxt-ringbitcar",
             "Tinkertanker/uDriver_PCA9585",
             "Tinkertanker/pxt-alphanumeric-ht16k33",
+            "Tinkertanker/pxt-stepper-motor",
             "CoderDojoOlney/pxt-olney",
             "PaulDFoster/pxt-microbit-GY521",
             "chevyng/pxt-ucl-junkrobot",
@@ -179,7 +180,8 @@
             "elecfreaks/pxt-nezha",
             "philipphenkel/pxt-powerfunctions",
             "1010Technologies/pxt-makerbit-ir-transmitter",
-            "DFRobot/pxt-DFRobot_HuskyLens"
+            "DFRobot/pxt-DFRobot_HuskyLens",
+            "bsiever/microbit-pxt-timeanddate"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",

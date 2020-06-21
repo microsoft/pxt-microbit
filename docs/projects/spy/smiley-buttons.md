@@ -20,61 +20,34 @@ input.onButtonPressed(Button.A, function() {
 
 ## Step 2
 
-Place ``||basic:show leds||`` inside ``||input:on button pressed||`` to display a **:)** image on
-the screen. An image is drawn by placing a `#` for the LED you want to turn on in the 5 rows by 5
-columns of periods - `.`. These represent each LED on the screen.
+Use ``||basic:show icon||`` to display a **Happy** face on the screen.
 
 Press the **A** button in the simulator to see the smiley.
 
 ```spy
 input.onButtonPressed(Button.A, function() { 
-    basic.showLeds(`
-        # # . # #
-        # # . # #
-        . . . . .
-        # . . . #
-        . # # # .`
-        )
+    basic.showIcon(IconNames.Happy)
 })
 ```
 
 ## Step 3
 
-Use another ``||input:on button pressed||`` with ``||basic:show leds||`` inside to display a **:(** when
-button **B** is pressed.
+Use another ``||input:on button pressed||`` with a ``||basic:show icon||`` inside to display a **Sad** face when button **B** is pressed.
 
 ```spy
 input.onButtonPressed(Button.B, function() { 
-    basic.showLeds(`
-        # # . # #
-        # # . # #
-        . . . . .
-        . # # # .
-        # . . . #`
-        )
+    basic.showIcon(IconNames.Sad)
 })
 ```
 
 ## Step 4
 
-Add a secret mode that happens when **A** and **B** are pressed together. For this case, use ``||basic:show leds||`` multiple times to create an animation.
+Add a secret mode that happens when **A** and **B** are pressed together. For this case, use ``||basic:show icon||`` multiple times to create an animation.
 
 ```spy
 input.onButtonPressed(Button.AB, function() {
-    basic.showLeds(`
-        . . . . .
-        # . # . .
-        . . . . .
-        # . . . #
-        . # # # .
-        `)
-    basic.showLeds(`
-        . . . . .
-        . . # . #
-        . . . . .
-        # . . . #
-        . # # # .
-        `)    
+    basic.showIcon(IconNames.Silly)
+    basic.showIcon(IconNames.Surprised)
 })
 ```
 
