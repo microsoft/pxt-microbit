@@ -180,6 +180,7 @@
             "elecfreaks/pxt-nezha",
             "philipphenkel/pxt-powerfunctions",
             "1010Technologies/pxt-makerbit-ir-transmitter",
+            "DFRobot/pxt-DFRobot_HuskyLens",
             "bsiever/microbit-pxt-timeanddate"
         ],
         "preferredRepos": [
