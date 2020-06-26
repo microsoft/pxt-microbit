@@ -353,6 +353,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 
 ```codecard
 [{
+  "name": "DF Robot Maqueen Plus",
+  "url":"/pkg/DFRobot/pxt-DFRobot-Maqueenplus",
+  "cardType": "package"
+}, {
   "name": "Kitronik :MOVE Motor",
   "url":"/pkg/KitronikLtd/pxt-kitronik-move-motor",
   "cardType": "package"
