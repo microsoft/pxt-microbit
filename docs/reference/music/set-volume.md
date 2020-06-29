@@ -28,7 +28,7 @@ music.setVolume(50)
 
 ## See also
 
-[set volume](/reference/music/volume)
+[volume](/reference/music/volume)
 
 ```package
 music
