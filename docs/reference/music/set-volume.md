@@ -6,10 +6,13 @@ Set the volume for the sound synthesizer.
 music.setVolume(128)
 ```
 
-## #simnote
-#### ~hint
-**Simulator**: ``||music:set volume||`` works on the @boardname@. It might not work in the simulator on every browser.
-#### ~
+### ~hint
+
+#### Simulator
+
+``||music:set volume||`` works on the @boardname@. It might not work in the simulator on every browser.
+
+### ~
 
 ## Parameters
 
@@ -22,6 +25,10 @@ Set the synthesizer volume to something quieter.
 ```blocks
 music.setVolume(50)
 ```
+
+## See also
+
+[set volume](/reference/music/volume)
 
 ```package
 music
