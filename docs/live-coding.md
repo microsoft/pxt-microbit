@@ -1,6 +1,6 @@
 # micro:bit live
 
-Live coding of tutorials for MakeCode for micro:bit on https://mixer.com/MakeCode
+Live coding of tutorials for MakeCode for micro:bit on https://www.twitch.tv/msmakecode.
 
 ## Videos
 
@@ -8,8 +8,8 @@ Live coding of tutorials for MakeCode for micro:bit on https://mixer.com/MakeCod
 [
     {
         "name": "Live Coding",
-        "description": "Subscribe to our mixer.com live coding stream.",
-        "url": "https://mixer.com/MakeCode",
+        "description": "Subscribe to our twitch.tv live coding stream.",
+        "url": "https://www.twitch.tv/msmakecode",
         "imageUrl": "/static/live-coding/live.png"
     },
     {
