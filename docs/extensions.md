@@ -358,7 +358,7 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
   "cardType": "package"
 }, {
   "name": "Joy IT Joy Car",
-  "url":"/pkg/DFRobot/joy-it/Joy-Car",
+  "url":"/pkg/joy-it/Joy-Car",
   "cardType": "package"
 }, {
   "name": "Kitronik :MOVE Motor",
