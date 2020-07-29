@@ -532,6 +532,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
   "name": "TinkerTanker Stepper Motor",
   "url":"/pkg/Tinkertanker/pxt-stepper-motor",
   "cardType": "package"
+}, {
+  "name": "YFROBOT VALON-I",
+  "url":"/pkg/YFROBOT-TM/pxt-yfrobot-valon",
+  "cardType": "package"
 }]
 ```
 
