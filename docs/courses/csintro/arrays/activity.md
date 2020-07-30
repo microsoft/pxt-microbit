@@ -10,7 +10,6 @@ This activity is based on a very popular phone app invented by Ellen DeGeneres (
 * From the Arrays Toolbox drawer, drag a 'set text_list to array of' block into the 'on start' block.
 * You can use the variable name of text_list or rename it to something more meaningful like arrayWords.
 
-
 ```blocks
 let arrayWords = ["a", "b", "c"]
 ```
@@ -84,6 +83,7 @@ input.onGesture(Gesture.ScreenDown, () => {
     index += 1
 })
 ```
+
 We have a limited number of elements in our array, so to avoid an error, we need to check and make sure we are not already at the end of the array before we change the index.
  
 * Under the Arrays Toolbox drawer, drag out a 'length of' block. The 'length of' block returns the number of items (elements) in an array. For our array, the length of block will return the value 6.
