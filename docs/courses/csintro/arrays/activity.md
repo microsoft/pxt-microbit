@@ -96,14 +96,15 @@ Some pseudocode for our algorithm logic:
 **Then:** change the value of the index by one,<br/>
 **Else:** indicate that it is the end of the game.
 
-## ~hint
+### ~hint
 
-**Array bounds**
+#### Array bounds
 
 Our array has a length 6, so this will mean that as long as the current value of the index is less than 5, we will change the array by one.
 
 Using ‘less than the length of the array minus one’ instead of the actual numbers for our array makes this code more flexible and easier to maintain. We can easily add more elements to our array and not have to worry about changing numbers elsewhere in the code.
-## ~ 
+
+### ~ 
 
 We can put this all together with an 'if...then...else' block and a 'less than' comparison block from the Logic Toolbox drawer, a subtraction block from the Math Toolbox drawer, and a 'game over' block from the Game Toolbox drawer (located under the Advanced menu).
 
@@ -138,6 +139,7 @@ input.onGesture(Gesture.ScreenDown, () => {
 ```
 
 ## Game Play
+
 There are different ways you can play charades with our program.  Here is one way you can play with a group of friends.
 
 * With the micro:bit on and held so Player A cannot see the screen, another player starts the program to see the first word.
@@ -146,6 +148,7 @@ There are different ways you can play charades with our program.  Here is one wa
 * When ready for the next word, a player turns the micro:bit screen up. Play continues until all the words in the array have been used.
  
 ## Mod this!
+
 * Add a headband to hold the micro:bit on the Players' foreheads (using cardboard, paper, rubber bands, etc.)
 * Add a way to keep score
 * Keep track of the number of correct guesses and passes
