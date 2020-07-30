@@ -7,24 +7,22 @@ This activity is based on a very popular phone app invented by Ellen DeGeneres (
 
 ![Heads up game](/static/courses/csintro/arrays/headband-charades.png)
 
-* Create a new variable and give it a name like arrayWords.
-* Insert a 'set' variable block into the 'on start' block.
-* Change the default variable name to this new variable name.
-* From the Array Toolbox drawer, drag an 'array of' block to the coding workspace.
-* Attach this array block to the end of the 'set' variable block.
+* From the Arrays Toolbox drawer, drag a 'set text_list to array of' block into the 'on start' block.
+* You can use the variable name of text_list or rename it to something more meaningful like arrayWords.
+
 
 ```blocks
-let arrayWords = ["", ""]
+let arrayWords = ["a", "b", "c"]
 ```
 
 Notice that the array comes with 2 string blocks. We’ll want more for our charades game.
 
 * Click on the **(+)** symbol at the end of the 'array of' block.
 * Add as many values (elements) as you'd like to the array block by continuing to click on the **(+)**.
-* For now, we’ll add 4 more values for a total of 6 values.
+* For now, we’ll add 3 more values for a total of 6 values.
 
 ```blocks
-let arrayWords = ["", "", "", "", "", "", ""]
+let arrayWords = ["a", "b", "c", "", "", ""]
 ```
 * Fill each string with one word. Choose words that will be fun for a game of charades. Example:
 
@@ -99,6 +97,7 @@ Some pseudocode for our algorithm logic:
 **Else:** indicate that it is the end of the game.
 
 ## ~hint
+
 **Array bounds**
 
 Our array has a length 6, so this will mean that as long as the current value of the index is less than 5, we will change the array by one.
