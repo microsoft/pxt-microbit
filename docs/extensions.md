@@ -644,6 +644,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 ## Utilities
 ```codecard
 [{
+  "name": "DS3231 Real Time Clock",
+  "url":"/pkg/AlexandreFrolov/DS3231",
+  "cardType": "package"
+}, {
   "name": "Time & Date",
   "url":"/pkg/bsiever/microbit-pxt-timeanddate",
   "cardType": "package"
