@@ -102,6 +102,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 
 ```codecard
 [{
+  "name": "Elecfreaks magic wand",
+  "url":"/pkg/elecfreaks/pxt-magicwand",
+  "cardType": "package"
+}, {
   "name": "Kitronik :GAME ZIP64",
   "url":"/pkg/KitronikLtd/pxt-kitronik-zip-64",
   "cardType": "package"
