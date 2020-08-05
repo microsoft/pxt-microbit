@@ -389,10 +389,14 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
   "url":"/pkg/KitronikLtd/pxt-kitronik-i2c-16-servo",
   "cardType": "package"
 }, {
+  "name": "YFROBOT Valon",
+  "url":"/pkg/YFROBOT-TM/pxt-yfrobot-valon",
+  "cardType": "package"
+}, {
   "name": "4tronix BitBot",
   "url":"/pkg/4tronix/BitBot",
   "cardType": "package"
-}, {
+},{
   "name": "4tronix Orbit",
   "url":"/pkg/4tronix/Orbit",
   "cardType": "package"

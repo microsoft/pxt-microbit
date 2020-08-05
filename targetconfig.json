@@ -183,7 +183,8 @@
             "DFRobot/pxt-DFRobot_HuskyLens",
             "bsiever/microbit-pxt-timeanddate",
             "DFRobot/pxt-DFRobot-Maqueenplus",
-            "joy-it/Joy-Car"
+            "joy-it/Joy-Car",
+            "YFROBOT-TM/pxt-yfrobot-valon"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",
