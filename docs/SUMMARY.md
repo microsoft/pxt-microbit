@@ -374,4 +374,5 @@
     * [WebUSB](/device/usb/webusb)
         * [WebUSB Troubleshoot](/device/usb/webusb/troubleshoot)
     * [Flashing via HID (CMSIS-DAP)](/hidflash)
+* [Blocks Gallery](/block-gallery)
 
