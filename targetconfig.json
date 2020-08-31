@@ -184,7 +184,8 @@
             "bsiever/microbit-pxt-timeanddate",
             "DFRobot/pxt-DFRobot-Maqueenplus",
             "joy-it/Joy-Car",
-            "elecfreaks/pxt-magicwand"
+            "elecfreaks/pxt-magicwand",
+            "YFROBOT-TM/pxt-yfrobot-valon"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",
