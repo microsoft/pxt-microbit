@@ -185,7 +185,8 @@
             "DFRobot/pxt-DFRobot-Maqueenplus",
             "joy-it/Joy-Car",
             "elecfreaks/pxt-magicwand",
-            "YFROBOT-TM/pxt-yfrobot-valon"
+            "YFROBOT-TM/pxt-yfrobot-valon",
+            "KitronikLtd/pxt-kitronik-smart-greenhouse"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",

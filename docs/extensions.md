@@ -555,6 +555,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
   "url":"/pkg/KitronikLtd/pxt-kitronik-klimate",
   "cardType": "package"
 }, {
+  "name": "Kitronik Smart Greenhouse",
+  "url":"/pkg/KitronikLtd/pxt-kitronik-smart-greenhouse",
+  "cardType": "package"
+}, {
   "name": "Make&Learn micro:shield",
   "url":"/pkg/MakeAndLearn/pxt-microshield",
   "cardType": "package"
