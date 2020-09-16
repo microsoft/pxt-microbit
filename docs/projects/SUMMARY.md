@@ -8,7 +8,7 @@
   * [Love Meter](/projects/love-meter)
   * [Micro Chat](/projects/micro-chat)
 * [Live Coding](/live-coding)
-  * [Live Coding](https://mixer.com/MakeCode)
+  * [Live Coding](https://www.twitch.tv/msmakecode)
   * [Red Light Green Light](https://youtu.be/Cm22diu8CFA)
   * [Temperature](https://youtu.be/uv4NtRzMwaA)
   * [Binary Stopwatch](https://youtu.be/Jm3yxMA1mDo)

@@ -102,6 +102,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 
 ```codecard
 [{
+  "name": "Elecfreaks magic wand",
+  "url":"/pkg/elecfreaks/pxt-magicwand",
+  "cardType": "package"
+}, {
   "name": "Kitronik :GAME ZIP64",
   "url":"/pkg/KitronikLtd/pxt-kitronik-zip-64",
   "cardType": "package"
@@ -246,6 +250,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 
 ```codecard
 [{
+  "name": "Hardwario IoT Kit",
+  "url":"/pkg/hardwario/pxt-microbit-hardwario",
+  "cardType": "package"
+}, {
   "name": "Pi Supply Lora Node",
   "url":"/pkg/PiSupply/pxt-iot-lora-node",
   "cardType": "package"
@@ -389,10 +397,14 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
   "url":"/pkg/KitronikLtd/pxt-kitronik-i2c-16-servo",
   "cardType": "package"
 }, {
+  "name": "YFROBOT Valon",
+  "url":"/pkg/YFROBOT-TM/pxt-yfrobot-valon",
+  "cardType": "package"
+}, {
   "name": "4tronix BitBot",
   "url":"/pkg/4tronix/BitBot",
   "cardType": "package"
-}, {
+},{
   "name": "4tronix Orbit",
   "url":"/pkg/4tronix/Orbit",
   "cardType": "package"

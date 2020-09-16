@@ -6,6 +6,12 @@ The MakeCode editor is available as app which you can install on a computer with
 
 ### ~ hint
 
-The [MakeCode Offline App](/offline-app) is currently in development and is made available as a **pre-release** version. 
+The MakeCode Offline App is currently in development and is made available as a **pre-release** version.
+
+### ~
+
+### ~button /offline-app
+
+Download the offline app!
 
 ### ~
