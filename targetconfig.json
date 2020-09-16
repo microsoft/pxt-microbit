@@ -185,7 +185,8 @@
             "DFRobot/pxt-DFRobot-Maqueenplus",
             "joy-it/Joy-Car",
             "elecfreaks/pxt-magicwand",
-            "YFROBOT-TM/pxt-yfrobot-valon"
+            "YFROBOT-TM/pxt-yfrobot-valon",
+            "hardwario/pxt-microbit-hardwario"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",
