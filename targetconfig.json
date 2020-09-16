@@ -186,7 +186,8 @@
             "joy-it/Joy-Car",
             "elecfreaks/pxt-magicwand",
             "YFROBOT-TM/pxt-yfrobot-valon",
-            "KitronikLtd/pxt-kitronik-smart-greenhouse"
+            "KitronikLtd/pxt-kitronik-smart-greenhouse",
+            "hardwario/pxt-microbit-hardwario"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",

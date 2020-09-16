@@ -250,6 +250,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 
 ```codecard
 [{
+  "name": "Hardwario IoT Kit",
+  "url":"/pkg/hardwario/pxt-microbit-hardwario",
+  "cardType": "package"
+}, {
   "name": "Pi Supply Lora Node",
   "url":"/pkg/PiSupply/pxt-iot-lora-node",
   "cardType": "package"
