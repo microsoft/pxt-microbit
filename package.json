@@ -38,6 +38,7 @@
         "@types/react": "16.0.25",
         "@types/react-dom": "16.0.3",
         "@types/web-bluetooth": "0.0.4",
+        "@types/fuse": "2.5.2",
         "less": "2.7.3",
         "react": "16.8.3",
         "semantic-ui-less": "2.2.14",
