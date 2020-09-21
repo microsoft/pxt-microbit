@@ -60,7 +60,7 @@
   * [Mood Radio](/projects/mood-radio)
   * [Tele-potato](/projects/tele-potato)
   * [Fireflies](/projects/fireflies)
-  * [Hot or Cold](/hot-or-cold-multi)
+  * [Hot or Cold](/projects/hot-or-cold-multi)
   * [Red Light Green Light](/projects/red-light-green-light)
   * [Voting Machine](/projects/voting-machine)
   * [Rock Paper Scissors Teams](/projects/rps-teams)

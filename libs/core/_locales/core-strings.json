@@ -354,6 +354,7 @@
   "music.startMelody|block": "start melody %melody=device_builtin_melody| repeating %options",
   "music.stopMelody|block": "stop melody $options",
   "music.tempo|block": "tempo (bpm)",
+  "music.volume|block": "volume",
   "music|block": "music",
   "parseFloat|block": "parse to number %text",
   "parseInt|block": "parse to integer %text",
