@@ -8,6 +8,21 @@ PXT_ABI(__aeabi_dsub)
 PXT_ABI(__aeabi_ddiv)
 PXT_ABI(__aeabi_dmul)
 
+#if MICROBIT_CODAL
+namespace codal {
+int list_fibers(Fiber **dest) {
+    int i = 0;
+    for (Fiber *fib = codal::get_fiber_list(); fib; fib = fib->next) {
+        if (dest)
+            dest[i] = fib;
+        i++;
+    }
+    return i;
+}
+
+} // namespace codal
+#endif
+
 extern "C" void target_panic(int error_code) {
 #if !MICROBIT_CODAL
     // wait for serial to flush
