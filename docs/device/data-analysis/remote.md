@@ -6,7 +6,8 @@ If you have more than one @boardname@ you can setup one of them to receive data 
 
 ## Receiver @boardname@
 
-Connect the @boardname@ to a computer with a USB cable. The data received over radio is sent to the computer with this connection using writes to the serial port. If you have the [Windows 10 MakeCode](https://www.microsoft.com/store/apps/9PJC7SV48LCX) app, you can view the received data with the [Data Viewer](./viewing) in the editor. Otherwise, you need a _serial terminal_ app or some other program that can read from the computer's serial port.
+Connect the @boardname@ to a computer with a USB cable. The data received over radio is sent to the computer with this connection using writes to the serial port.
+You can view the received data with the [Data Viewer](./viewing) in the MakeCode editor (you can also receive and view data with the [Windows 10 MakeCode](https://www.microsoft.com/store/apps/9PJC7SV48LCX) app). Otherwise, you need a _serial terminal_ app or some other program that can read from the computer's serial port.
 
 The receiving @boardname@ sets a radio group number on which to listen for incoming messages.
 
