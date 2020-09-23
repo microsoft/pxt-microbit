@@ -14,7 +14,7 @@
 
 ## Code and data collection
 
-This project will use to microbits to collect and record data using the MakeCode as described in the [Data Collection](/courses/ucp-science/data-collection/setup-procedure) lesson.
+This project will use to microbits to collect and record data using MakeCode as described in the [Data Collection](/courses/ucp-science/data-collection/setup-procedure) lesson.
 
 ## Option 2 — MakeCode and a USB connection
 
