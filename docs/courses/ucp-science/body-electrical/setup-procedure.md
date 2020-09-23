@@ -14,15 +14,15 @@
 
 ## Code and data collection
 
-This project will use to microbits to collect and record data using the Windows 10 MakeCode app  as described in the [Data Collection](/courses/ucp-science/data-collection/setup-procedure) lesson.
+This project will use to microbits to collect and record data using the MakeCode as described in the [Data Collection](/courses/ucp-science/data-collection/setup-procedure) lesson.
 
-## Option 2 — Microbit Windows 10 MakeCode app and a USB connection
+## Option 2 — MakeCode and a USB connection
 
-The Windows 10 MakeCode app allows data to be directly read from the microbit when it is attached using USB cable. Data can be sent from the microbit to the Windows 10 MakeCode app  using serial data connection. The data collected over the serial connection can be graphed and the data can be downloaded. A limit of only about the last 20 seconds of data can be downloaded as a ``"data.csv"`` file. This allows the collection of data in real time. This file can be opened in a spreadsheet for further analysis. Many different kinds of experiments can be performed using this data logging technique. 
+MakeCode allows data to be directly read from the microbit when it is attached using USB cable. Data can be sent from the microbit to the browser using serial data connection over WebUSB. The data collected over the serial connection can be graphed and the data can be downloaded. A limit of only about the last 20 seconds of data can be downloaded as a ``"data.csv"`` file. This allows the collection of data in real time. This file can be opened in a spreadsheet for further analysis. Many different kinds of experiments can be performed using this data logging technique. 
 
 ### on Start event
 
-1. Code the first @boardname@ using Windows 10 MakeCode app for @boardname@.
+1. Code the first @boardname@ using MakeCode for @boardname@.
 2. Name the project, "Body Electricity Sender".
 3. The ``||basic:on start||`` event will display the title and function of the @boardname@ in all caps, ``"BODY ELECTRICAL"``.
 4. Set up a variable ``ekg`` or ``bodyElectricity`` and initialize its starting value to `0`.
@@ -30,7 +30,7 @@ The Windows 10 MakeCode app allows data to be directly read from the microbit wh
 ### forever event
 
 1. Set the ``ekg`` or ``bodyElectricity`` variable to get its value from the “analog read pin (0)”. This detects and electrical current that is sent through the body between the 2 taped wires connected to the body and the microbit. This is an analog reading that gets converted to a digital number between 0 - 1024.
-2. The next line uses a ``||basic:serial write value||`` (``"EKG"`` and the value stored in the ``ekg`` variable) to send the value back to the Windows 10 MakeCode app through the USB connection to the computer and @boardname@.
+2. The next line uses a ``||basic:serial write value||`` (``"EKG"`` and the value stored in the ``ekg`` variable) to send the value back to MakeCode through the USB connection to the computer and @boardname@.
 
 ```blocks 
 // Body Electricity
@@ -64,7 +64,7 @@ Do some more meaurements:
 
 Two @boardname@s can be used to collect and record data using the radio commands. One @boardname@ can be setup remotely and the other @boardname@ can be used to observe the data. The first @boardname@ can send the data it observes to the second @boardname@ for the observer to record. To set up 2 @boardname@s so they can communicate over the radio they need to be on the same radio group. For additional information look at the [Data Collection](/courses/ucp-science/data-collection/setup-procedure) lesson.
 
-By using 2 @boardname@ to collect the data on one and send it to the second @boardname@ which is connect to the Windows 10 MakeCode app using a USB cable the experiment can collect and record data remotely. This would allow the collection of body electrical data while a person is exercising or moving.
+By using 2 @boardname@ to collect the data on one and send it to the second @boardname@ which is connected to MakeCode using a USB cable, the experiment can collect and record data remotely. This would allow the collection of body electrical data while a person is exercising or moving.
 
 ### micro:bit radio sending code
 
@@ -89,7 +89,7 @@ basic.forever(() => {
 
 This receiver @boardname@ uses the “on start” event to set up the title on the @boardname@ when started, the radio group, and the ``bodyElectricity`` variable to collect and store the data received.
 
-The ``||radio:on received number||`` event reads the number value sent from the sending @boardname@. The number is then stored in the ``bodyElectricity`` variable. the electricity on pin **0** and stores it in the variable ``bodyElectricity``. The last line uses the serial write command to send the text `"Body Electricity"` label and the value of ``bodyElectricity`` variable back to the Windows 10 MakeCode app. The data is sampled and send from 10 to 20 times per second.
+The ``||radio:on received number||`` event reads the number value sent from the sending @boardname@. The number is then stored in the ``bodyElectricity`` variable. the electricity on pin **0** and stores it in the variable ``bodyElectricity``. The last line uses the serial write command to send the text `"Body Electricity"` label and the value of ``bodyElectricity`` variable back to MakeCode. The data is sampled and send from 10 to 20 times per second.
  
 ```blocks
 // Body Electricity Receiver

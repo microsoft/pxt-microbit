@@ -50,7 +50,6 @@ Students will:
 ## Materials Needed
 
 * A @boardname@ with a longer USB cable
-* [Windows 10 MakeCode for micro:bit app](https://www.microsoft.com/store/productId/9PJC7SV48LCX)
 * 2 @boardname@s with batteries connected
 * A longer USB @boardname@ cable
 * Spreadsheet program for data analysis

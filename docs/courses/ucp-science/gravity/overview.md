@@ -18,7 +18,7 @@ Give students real world experience with coding, collecting data, analyzing data
 
 ## Prior Knowledge
 
-Students need to have a basic knowledge of how to code using block style programming (@boardname@ using the [Windows 10 MakeCode app](https://www.microsoft.com/store/productId/9PJC7SV48LCX)) and download a program to a @boardname@.
+Students need to have a basic knowledge of how to code using block style programming and download a program to a @boardname@ using MakeCode.
 
 ## Student Outcomes
 
@@ -36,7 +36,6 @@ Students will:
 ![Two micro:bit showing 0 and 6](/static/courses/ucp-science/gravity/06.png)
 
 * A longer USB @boardname@ cable
-* [MakeCode for micro:bit Windows App](https://www.microsoft.com/store/productId/9PJC7SV48LCX)
 * Spreadsheet for data analysis
 * Padding for one @boardname@ for gravity testing
 

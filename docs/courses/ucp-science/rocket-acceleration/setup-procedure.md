@@ -3,7 +3,7 @@
 ## Setup
 
 1. Plan and design the experiments.
-2. Use the radio and the [MakeCode app][makecode-app] for the data collection method. 
+2. Use the radio and MakeCode for the data collection method. 
 3. Plan and design data collection documents.
 4. Program the @boardname@s.
 5. Experiment with different data collection scenarios.
@@ -11,17 +11,17 @@
 
 ## Code and Data Collection
 
-This project will explore 2 different methods of data collection. The first uses a single @boardname@ with the [Windows 10 MakeCode app][makecode-app] to record the data over a serial connection. The second uses the radio on the @boardname@ in the nose cone to transmit the acceleration values back to another @boardname@ connected to the computer to collect and record data using the Windows 10 MakeCode app.
+This project will explore 2 different methods of data collection. The first uses a single @boardname@ with MakeCode to record the data over a serial connection. The second uses the radio on the @boardname@ in the nose cone to transmit the acceleration values back to another @boardname@ connected to the computer to collect and record data using MakeCode.
 
-### Option 1: Windows 10 MakeCode app and a USB connection
+### Option 1: MakeCode and a USB connection
 
-The [Windows 10 MakeCode app][makecode-app] allows data to be directly read from the @boardname@ when it is attached using USB cable. Data can be sent from the @boardname@ to the Windows 10 MakeCode app using a serial data connection. The data collected over the serial connection can be graphed and the data can be downloaded. The data can be downloaded as a _data.csv_ file. This allows the collection of data in real time. This file can be opened in a spreadsheet for further analysis. Many different kinds of experiments can be performed using this data logging technique.
+MakeCode allows data to be directly read from the @boardname@ when it is attached using USB cable. Data can be sent from the @boardname@ to the browser using a serial data connection. The data collected over the serial connection can be graphed and the data can be downloaded. The data can be downloaded as a _data.csv_ file. This allows the collection of data in real time. This file can be opened in a spreadsheet for further analysis. Many different kinds of experiments can be performed using this data logging technique.
 
 ### Option 2: Remote collecting unit sending to receiving unit over radio
 
 Two @boardname@s can be used to collect and record data using the radio commands. One @boardname@ can be setup remotely and the other @boardname@ can be used to observe the data. The first @boardname@ can send the data it observes to the second @boardname@ for the observer to record. Setup 2 @boardname@s so they can communicate over the radio they need to be on the same radio group. For additional information see the [Data Collection](/courses/ucp-science/data-collection) lesson.
 
-Use 2 @boardname@s to collect the data on one and send it to another that is connect to the Windows 10 MakeCode app using a USB cable the experiment to collect and record data remotely. This allows the collection of acceleration data at a distance.
+Use 2 @boardname@s to collect the data on one and send it to another that is connect to MakeCode using a USB cable the experiment to collect and record data remotely. This allows the collection of acceleration data at a distance.
 
 ## Coding the Radios Method
 
@@ -29,7 +29,7 @@ Use 2 @boardname@s to collect the data on one and send it to another that is con
 
 The sender @boardname@ uses the ``||basic:on start||`` event to set up the title on the  @boardname@ when started and the radio group.
 
-1. Code the first @boardname@ using Windows 10 MakeCode app.
+1. Code the first @boardname@ using MakeCode.
 2. Name the project, “Rocket Launch Sender”.
 3. The ``||basic:on start||`` event will display the title and function of the @boardname@ in all caps, “ACCEL Z”.
 4. Add comments to the ``||basic:on start||`` event: name of the project, creator, and date created.
@@ -58,12 +58,12 @@ basic.forever(() => {
 
 This receiver @boardname@ uses the ``||basic:on start||`` event to set up the title on the  @boardname@ when started, the radio group.
 
-1. Code the first @boardname@ using Windows 10 MakeCode app for  @boardname@s.
+1. Code the first @boardname@ using MakeCode for @boardname@s.
 2. Name the project, "Rocket Launch Receiver".
 3. The ``||basic:on start||`` event will display the title and function of the  @boardname@ in all caps, "ACCEL Z RECEIVER".
 4. Add comments to the ``||basic:on start||`` event: Name the project, creator, and date created.
 5. Set up a radio group by giving it a number or channel to work on. (Group 10 is used in this example.)
-6. A ``||serial:serial write line||`` is used to send the text ``"Acceleration"``. This opens up the serial port in the Windows 10 MakeCode app so the purple **Show Data Device** button shows up below the simulator in the MakeCode app. Clicking this button allows the observation and downloading of the collected data.
+6. A ``||serial:serial write line||`` is used to send the text ``"Acceleration"``. This opens up the serial port in MakeCode so the purple **Show Data Device** button shows up below the simulator in MakeCode. Clicking this button allows the observation and downloading of the collected data.
 
 ```blocks
 basic.showString("ACCEL Z RECEIVER")
@@ -71,7 +71,7 @@ radio.setGroup(10)
 serial.writeLine("Acceleration")
 ```
 
-The ``||radio:on received number||`` event reads the number value from the sending @boardname@. The number is then stored in the variable ``receivedNumber``. The last line uses the serial write command to send the text ``"z"`` label and the value of ``receivedNumber`` variable back to the Windows 10 MakeCode app. The data is sampled and send from 10 to 20 times per second.
+The ``||radio:on received number||`` event reads the number value from the sending @boardname@. The number is then stored in the variable ``receivedNumber``. The last line uses the serial write command to send the text ``"z"`` label and the value of ``receivedNumber`` variable back to MakeCode. The data is sampled and send from 10 to 20 times per second.
 
 ```blocks
 // onRadio receive & write z value to serial
@@ -82,7 +82,7 @@ radio.onReceivedNumber(function (receivedNumber) {
 
 ## Data Analysis
 
-Sample Graphed data in the Windows MakeCode app:
+Sample Graphed data in MakeCode:
 
 ![Graphed data in data viewer](/static/courses/ucp-science/rocket-acceleration/graphed-data.jpg)
 
@@ -124,5 +124,3 @@ radio
 | | | |
 |-|-|-|
 | Adapted from "[Rocket Acceleration z Radios](https://drive.google.com/open?id=1IyhCPdYQevKh3kHNgukSxlgdvZIKuzmIBjLSRnFS36o)" by [C Lyman](http://utahcoding.org) | | [![CC BY-NC-SA](https://licensebuttons.net/l/by-nc-sa/4.0/80x15.png)](https://creativecommons.org/licenses/by-nc-sa/4.0/) |
-
-[makecode-app]: https://www.microsoft.com/store/productId/9PJC7SV48LCX

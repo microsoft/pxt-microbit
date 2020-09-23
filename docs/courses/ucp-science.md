@@ -6,14 +6,6 @@ The **Science Experiments** lessons are geared for students in middle school and
  
 These lessons guide the student in hands-on, practical measurement activities along with using the micro:bit to control and record data for the experiments. Each lesson provides an overview of the activity, outlines expected results, explains the setup of the experiment, and the gives a coding activity to measure and collect the data.
 
-### ~hint
-
-**MakeCode app**
-
-To enable data collection in the experiments, the lessons require use of the **[Windows 10 MakeCode for micro:bit](https://www.microsoft.com/store/productId/9PJC7SV48LCX)** app instead of **[MakeCode](@homeurl@)** in the browser.
-
-### ~
-
 ## Lesson series
 
 ### ~hint

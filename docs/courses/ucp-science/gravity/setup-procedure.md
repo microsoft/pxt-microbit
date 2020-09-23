@@ -9,7 +9,7 @@
 
 ## Code
 
-This project will use to @boardname@s to collect and record data using the Windows 10 MakeCode app as described in [Data Collection - Option 3](/courses/ucp-science/data-collection/setup-procedure).
+This project will use to @boardname@s to collect and record data using MakeCode as described in [Data Collection - Option 3](/courses/ucp-science/data-collection/setup-procedure).
 
 ### Sender @boardname@ code
 
@@ -39,8 +39,8 @@ basic.forever(() => {
 
 ### Receiver @boardname@ code
 
-1. Using the [Windows 10 MakeCode app](https://www.microsoft.com/store/productId/9PJC7SV48LCX) setup and code the second @boardname@.
-2. This @boardname@ will remain connected to the computer through the USB cable and the Windows 10 MakeCode app to monitor the data being received.
+1. Using MakeCode setup and code the second @boardname@.
+2. This @boardname@ will remain connected to the computer through the USB cable and MakeCode to monitor the data being received.
 3. Name the project, “Gravity Receiver”.
 4. The ``||basic:on start||`` event will display the title and function of the @boardname@ in all caps, `"GRAVITY RECEIVER"`.
 6. Set up a radio group using the ``||radio:radio set group||``. Both @boardname@s need the same radio group.
@@ -54,7 +54,7 @@ radio.setGroup(99)
 
 7. The ``||radio:on received number||`` event will constantly monitor radio signals from the radio group.
 8. When a value is received from the group it is stored in the ``gravity`` variable.
-9. The ``||serial:serial write Value||`` sends 2 pieces of data back to the MakeCode app through the USB cable. First it sends a label `"gravity"` and then the value received as gravity from the acceleration method from the first @boardname@. 
+9. The ``||serial:serial write Value||`` sends 2 pieces of data back to MakeCode through the USB cable. First it sends a label `"gravity"` and then the value received as gravity from the acceleration method from the first @boardname@. 
 10. Add a ``||led:toggle||`` to indicate that it's receiving data. Change ``x`` to `1` so that another LED blinks.
 
 ```blocks
@@ -68,8 +68,8 @@ radio.onReceivedNumber(function (receivedNumber) {
 
 ## Monitoring the data
 
-1. With the @boardname@ code downloaded from the MakeCode app to the @boardname@ and the USB cable connected it will start receiving data from the first @boardname@.
-2. Under the simulator in the app a purple outlined button shows up “Show data Device”.
+1. With the @boardname@ code downloaded from MakeCode to the @boardname@ and the USB cable connected it will start receiving data from the first @boardname@.
+2. Under the simulator in MakeCode a purple outlined button shows up "Show data Device".
  
 3. By clicking on the **Show data Device** button a window opens up to the right showing values and graph of the gravity data being received (the dips in the graph are 3 tosses of the @boardname@ in the air).
  
@@ -85,7 +85,7 @@ Additional analysis and graphing can be done in a spreadsheet.
 
 ## Data Collection
 
-There are several ways to collect data from an experiment. The simplest is having the data display on the LED screen and manually record the data on a paper. Data can also be collected using the Window’s 10 MakeCode app. The third way is using 2 @boardname@s with one observing the data and then radioing the results to a second @boardname@ can allow the remote collection of data. 
+There are several ways to collect data from an experiment. The simplest is having the data display on the LED screen and manually record the data on a paper. Data can also be collected using MakeCode. The third way is using 2 @boardname@s with one observing the data and then radioing the results to a second @boardname@ can allow the remote collection of data. 
 
 For additional information on data collection, see the [Data Collection](/courses/ucp-science/data-collection) lesson.
 
@@ -93,13 +93,13 @@ For additional information on data collection, see the [Data Collection](/course
 
 ### Sound Wave Sensor
 
-Sound causes vibrations which can be detected with the Microbit accelerator. Connect 2 @boardname@s using radio signals (see [Data Collection - Option 3](/courses/ucp-science/data-collection/setup-procedure)). The “Gravity Sender” @boardname@ can be placed on or near a speaker. It will send a signal to the “Gravity Receiver” @boardname@ which can be connected to the Windows 10 MakeCode app. When the “Gravity Receiver” @boardname@ receives a gravity number it is sent to the monitoring data collection using the method ``serial.writeValue("gravity", gravity)``. The sound can be observed in the **Show data Device**. 
+Sound causes vibrations which can be detected with the Microbit accelerator. Connect 2 @boardname@s using radio signals (see [Data Collection - Option 3](/courses/ucp-science/data-collection/setup-procedure)). The “Gravity Sender” @boardname@ can be placed on or near a speaker. It will send a signal to the “Gravity Receiver” @boardname@ which can be connected to MakeCode. When the “Gravity Receiver” @boardname@ receives a gravity number it is sent to the monitoring data collection using the method ``serial.writeValue("gravity", gravity)``. The sound can be observed in the **Show data Device**. 
 
 ![Sound vibrations](/static/courses/ucp-science/gravity/soundvibrations.png)
 
 ### Earthquake Detector
 
-Earthquakes cause vibrations which can be detected with the Microbit accelerator. By placing the "Gravity Sender" @boardname@ on a flat surface and having it “feel” minor changes in acceleration it can detect earthquakes or other vibrations in the earth. Connect 2 @boardname@s using radio signals (see [Data Collection - Option 3](/courses/ucp-science/data-collection/setup-procedure)). The “Gravity Sender” @boardname@ can be placed on or near a speaker. It will send a signal to the “Gravity Receiver” @boardname@ which can be connected to the Windows 10 MakeCode app. When the “Gravity Receiver” @boardname@ receives a gravity number it is sent to the monitoring data collection using the method ``serial.writeValue("gravity", gravity)``. The movement of the object connected to the Earth can be observed in the **Show data Device**. Using a conditional statement that detects changes in the received gravity could be implemented to play “music” sound as an alarm when changes in movement are detected.
+Earthquakes cause vibrations which can be detected with the Microbit accelerator. By placing the "Gravity Sender" @boardname@ on a flat surface and having it “feel” minor changes in acceleration it can detect earthquakes or other vibrations in the earth. Connect 2 @boardname@s using radio signals (see [Data Collection - Option 3](/courses/ucp-science/data-collection/setup-procedure)). The “Gravity Sender” @boardname@ can be placed on or near a speaker. It will send a signal to the “Gravity Receiver” @boardname@ which can be connected to MakeCode. When the “Gravity Receiver” @boardname@ receives a gravity number it is sent to the monitoring data collection using the method ``serial.writeValue("gravity", gravity)``. The movement of the object connected to the Earth can be observed in the **Show data Device**. Using a conditional statement that detects changes in the received gravity could be implemented to play “music” sound as an alarm when changes in movement are detected.
 
 ![Earthquake vibrations](/static/courses/ucp-science/gravity/earthquake.png)
 

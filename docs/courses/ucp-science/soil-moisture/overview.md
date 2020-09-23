@@ -14,7 +14,7 @@ Give students real world experience with coding, collecting data, analyzing data
 
 ## Prior Knowledge
 
-Students need to have a basic knowledge of how to code using block style programming (micro:bit using the Windows 10 MakeCode app) and download a program to a micro:bit.
+Students need to have a basic knowledge of how to code using block style programming and download a program to a micro:bit using MakeCode.
 
 ## Student Outcomes
 

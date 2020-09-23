@@ -26,7 +26,7 @@ Give students real world experience with coding, collecting temperature data, an
 
 ## Prior Knowledge
 
-Students need to have a basic knowledge of how to code using block style programming ([Microbit using the Windows 10 MakeCode app](https://www.microsoft.com/store/productId/9PJC7SV48LCX))) and download a program to a microbit. 
+Students need to have a basic knowledge of how to code using block style programming and download a program to a micro:bit using MakeCode. 
 
 ## Student Outcomes
 
@@ -41,7 +41,6 @@ Students will:
 
 * 2 microbits with batteries connected
 * A longer USB microbit cable
-* [MakeCode for @boardname@ Windows 10 app](https://www.microsoft.com/store/productId/9PJC7SV48LCX))
 * Spreadsheet for data analysis and a word processor for reporting the findings
 
 <br/>

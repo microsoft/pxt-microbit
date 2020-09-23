@@ -65,13 +65,11 @@ basic.forever(() => {
 
 **Variation:** Instead of using a ``||basic:forever||`` loop, the **A** and **B** buttons could be programmed to display the temperature in either Celsius or Fahrenheit.
 
-### Temperature project 2 - @boardname@ Windows 10 MakeCode app and a USB connection
+### Temperature project 2 - MakeCode and a USB connection
 
-The Windows 10 MakeCode app allows data to directly read serial data from your @boardname@ for data logging and other fun experiments. This allow the collection of data in real time which can be downloaded in a CSV file for additional analysis in a spreadsheet.
+MakeCode allows data to directly read serial data from your @boardname@ for data logging and other fun experiments. This allow the collection of data in real time which can be downloaded in a CSV file for additional analysis in a spreadsheet.
 
-**Get the app:** The Windows 10 MakeCode app can be downloaded here: https://www.microsoft.com/store/apps/9PJC7SV48LCX 
-
-With the program downloaded from the MakeCode app to the @boardname@ and the USB cable left connected and using the ``||serial:serial write value||`` block from the ``|serial:Serial||`` toolbox in the **Advanced** tool section.
+With the program downloaded from MakeCode to the @boardname@ and the USB cable left connected and using the ``||serial:serial write value||`` block from the ``|serial:Serial||`` toolbox in the **Advanced** tool section.
 
 ```blocks
 basic.forever(() => {

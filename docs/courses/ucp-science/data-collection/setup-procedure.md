@@ -2,7 +2,7 @@
 
 ## micro:bit setup and coding concepts
 
-This document describes different methods using micro:bits to collect and record data for science experiments. There are several ways to collect data from an experiment. The simplest is having the data display on the LED screen and manually record the data on a paper. Data can also be collected using the Window’s 10 MakeCode app. The third way is using 2 micro:bits with one observing the data and then radioing the results to a second micro:bit so it can allow the remote collection of data.
+This document describes different methods using micro:bits to collect and record data for science experiments. There are several ways to collect data from an experiment. The simplest is having the data display on the LED screen and manually record the data on a paper. Data can also be collected using MakeCode. The third way is using 2 micro:bits with one observing the data and then radioing the results to a second micro:bit so it can allow the remote collection of data.
 
 ### ~ hint
 
@@ -33,15 +33,12 @@ led.plotBarGraph(
     input.temperature(), 0
     )
 ```
+### Option 2 - MakeCode and a USB connection
 
-### Option 2 - micro:bit Windows 10 MakeCode app and a USB connection
+MakeCode allows data to be directly read from the micro:bit when it is attached using USB cable. Data can be sent from the micro:bit to the browser using serial data connection over WebUSB. The data collected over the serial connection can be graphed and the data can be downloaded. This file can be opened in a spreadsheet for further analysis. Many different kinds of experiments can be performed using this data logging technique.
 
-The Windows 10 MakeCode app allows data to be directly read from the micro:bit when it is attached using USB cable. Data can be sent from the micro:bit to the Windows 10 MakeCode app  using serial data connection. The data collected over the serial connection can be graphed and the data can be downloaded. This file can be opened in a spreadsheet for further analysis. Many different kinds of experiments can be performed using this data logging technique. 
-
-You can download the [Windows 10 MakeCode](https://www.microsoft.com/store/apps/9PJC7SV48LCX) app.
-
-With the program downloaded from the MakeCode app to the micro:bit and the USB cable left connected, the
-``||led:plot bar graph||`` will automatically upload the data to the app.
+With the program downloaded from MakeCode to the micro:bit and the USB cable left connected, the
+``||led:plot bar graph||`` will automatically upload the data to MakeCode.
 
 ```blocks
 led.plotBarGraph(
@@ -102,7 +99,7 @@ radio.onReceivedNumber(function (receivedNumber) {
 
 ### Radio receiver code with serial write
 
-This code is the same as above but one additional line of code is added to write to the word `"Celisus"` and the temperature to the MakeCode app to the USB serial connection. This is the same as described peviously in [Option 2](#option-2-micro-bit-windows-10-makecode-app-and-a-usb-connection).
+This code is the same as above but one additional line of code is added to write to the word `"Celisus"` and the temperature to MakeCode to the USB serial connection. This is the same as described peviously in [Option 2](#option-2-makecode-and-a-usb-connection).
 
 
 ```blocks
@@ -144,7 +141,7 @@ basic.forever(() => {
 
 ### "Receiver" micro:bit code
 
-Using the Windows 10 MakeCode app, setup and code the second micro:bit. This micro:bit will remain connected to the computer through the USB cable and the Windows 10 MakeCode app to monitor the data being received.
+Using the MakeCode, setup and code the second micro:bit. This micro:bit will remain connected to the computer through the USB cable to MakeCode and monitor the data being received.
 
 Name the project, "Gravity Receiver". The ``||basic:on start||`` event will display the title and function of the micro:bit in all caps, `"GRAVITY RECEIVER"`. Add comments to the ``||basic:on start||`` event like before: Name the project, creator, and date created. Set up a radio group using the ``||radio:radio set group||`` block. Both micro:bits need the same radio group.
 
@@ -155,7 +152,7 @@ radio.setGroup(99)
 
 The ``||radio:on received number||`` event will constantly monitor radio signals from the radio group.
 When a value is received from the group it is stored in the ``gravity`` variable.
-The ``||serial:serial write value||`` sends 2 pieces of data back to the MakeCode app through the USB cable. First it sends a label `"gravity"` and then the value received as gravity from the ``||input:acceleration||`` method from the first micro:bit.
+The ``||serial:serial write value||`` sends 2 pieces of data back to MakeCode through the USB cable. First it sends a label `"gravity"` and then the value received as gravity from the ``||input:acceleration||`` method from the first micro:bit.
 
 ```blocks
 basic.showString("GRAVITY RECEIVER")
@@ -167,7 +164,7 @@ radio.onReceivedNumber(function (receivedNumber) {
 
 ### Monitoring, downloading, and analyzing the data
 
-With the micro:bit code downloaded from the MakeCode app to the micro:bit and the USB cable connected it will start receiving data from the first micro:bit. Under the simulator in the app a purple outlined button shows up **Show data Device**.
+With the micro:bit code downloaded from MakeCode to the micro:bit and the USB cable connected it will start receiving data from the first micro:bit. Under the simulator in the MakeCode a purple outlined button shows up **Show data Device**.
 
 ![Show data device button](/static/courses/ucp-science/data-collection/show-data-device.jpg)
 
