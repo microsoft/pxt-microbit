@@ -1,9 +1,11 @@
 const imul = (Math as any).imul;
-const timeoutMessage = "timeout"
-const membase = 0x20000000
-const loadAddr = membase
-const dataAddr = 0x20002000
-const stackAddr = 0x20001000
+const timeoutMessage = "timeout";
+const membase = 0x20000000;
+const loadAddr = membase;
+const dataAddr = 0x20002000;
+const stackAddr = 0x20001000;
+const FULL_FLASH_TIMEOUT = 60000;
+const PARTIAL_FLASH_TIMEOUT = 60000;
 
 const flashPageBIN = new Uint32Array([
     0xbe00be00, // bkpt - LR is set to this
@@ -232,17 +234,23 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
                 log(`close`)
                 return this.cmsisdap.cmdNums(0x8B /* DAPLinkFlash.CLOSE */, []);
             })
-            .timeout(60000, timeoutMessage)
+            .timeout(FULL_FLASH_TIMEOUT, timeoutMessage)
             .catch((e) => {
                 log(`error: abort`)
                 aborted = true;
-                return this.cmsisdap.cmdNums(0x89 /* DAPLinkFlash.RESET */, [])
-                    .catch((e2: any) => {
-                        // Best effort reset, no-op if there's an error
-                    })
-                    .then(() => {
-                        return Promise.reject(e);
-                    });
+                return this.resetAndThrowAsync(e)
+            });
+    }
+
+    private resetAndThrowAsync(e: any) {
+        log(`reset on error`)
+        console.debug(e)
+        return this.cmsisdap.cmdNums(0x89 /* DAPLinkFlash.RESET */, [])
+            .catch((e2: any) => {
+                // Best effort reset, no-op if there's an error
+            })
+            .then(() => {
+                throw e;
             });
     }
 
@@ -343,10 +351,10 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
                         return this.cortexM.reset(false);
                     });
             })
-            .timeout(25000, timeoutMessage)
+            .timeout(PARTIAL_FLASH_TIMEOUT, timeoutMessage)
             .catch((e) => {
                 aborted = true;
-                return Promise.reject(e);
+                return this.resetAndThrowAsync(e);
             });
     }
 
