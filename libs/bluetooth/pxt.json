@@ -15,7 +15,6 @@
     "dependencies": {
         "core": "file:../core"
     },
-    "disablesVariants": ["mbcodal"],
     "yotta": {
         "config": {
             "microbit-dal": {
