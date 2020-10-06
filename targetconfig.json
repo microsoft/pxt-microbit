@@ -204,7 +204,11 @@
     },
     "galleries": {
         "Tutorials": "tutorials",
-        "Live Coding": "live-coding",
+        "Live Coding": {
+            "url": "live-coding",
+            "shuffle": "daily",
+            "youTube": true
+        },
         "Games": "projects/games",
         "Radio Games": "projects/radio-games",
         "Fashion": "projects/fashion",
@@ -215,10 +219,23 @@
         "Turtle": "projects/turtle",
         "Blocks To JavaScript": "courses/blocks-to-javascript",
         "Courses": "courses",
-        "Behind the MakeCode Hardware": "behind-the-makecode-hardware",
-        "Science Experiments": "science-experiments",
+        "Behind the MakeCode Hardware": {
+            "url": "behind-the-makecode-hardware",
+            "youTube": true
+        },
+        "Science Experiments": {
+            "url": "science-experiments",
+            "youTube": true
+        },
+        "Coding for Teachers": {
+            "url": "coding-for-teachers",
+            "youTube": true
+        },
         "Coding Cards": "coding-cards",
-        "Deep Dive": "deep-dive"
+        "Deep Dive": {
+            "url": "deep-dive",
+            "youTube": true
+        }
     },
     "electronManifest": {
         "latest": "v3.0.19"

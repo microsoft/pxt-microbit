@@ -74,6 +74,11 @@
         "imageUrl": "/static/mb/science-experiments/data-collection.jpg"
     },
     {
+        "name": "Coding for Teachers",
+        "url": "/coding-for-teachers",
+        "imageUrl": "/static/coding-for-teachers/hr8O_pslp8Q.jpg"
+    },
+    {
         "name": "Coding Cards",
         "url": "/coding-cards",
         "imageUrl": "/static/coding-cards/balance-card.jpg"
@@ -102,6 +107,7 @@
 [Courses](/courses),
 [Behind the MakeCode Hardware](/behind-the-makecode-hardware),
 [Science Experiments](/science-experiments),
+[Coding for Teachers](/coding-for-teachers),
 [Coding Cards](/coding-cards),
 [Deep Dive](/deep-dive)
 
