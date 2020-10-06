@@ -22,7 +22,7 @@
     },
     {
         "name": "Part 3A - LED lighting",
-        "description": "For part 3 of the micro:bit coding video series. I have divided it into 2 videos because it was getting quite long. This first part goes through basic LED lighting and includes adding external buttons to activate lights.",
+        "description": "Part 3 of the micro:bit coding video series. I have divided it into 2 videos because it was getting quite long. This first part goes through basic LED lighting and includes adding external buttons to activate lights.",
         "youTubeId": "gnSRkUxBV18",
         "youTubePlaylistId": "PLmqeu38gRdJVCMUhgmF8OrjOhYpYtoh9U",
         "imageUrl": "/static/coding-for-teachers/gnSRkUxBV18.jpg"
