@@ -7,12 +7,6 @@ Live coding of tutorials for MakeCode for micro:bit on https://mixer.com/MakeCod
 ```codecard
 [
     {
-        "name": "Live Coding",
-        "description": "Subscribe to our twitch.tv live coding stream.",
-        "url": "https://www.twitch.tv/msmakecode",
-        "imageUrl": "/static/live-coding/live.png"
-    },
-    {
         "name": "Flashing Heart",
         "description": "In this video, we'll be going through the Flashing Heart Tutorial - https://makecode.microbit.org/#tutorial:/projects/flashing-heart.",
         "youTubeId": "NvEOKZ8wh9s",
