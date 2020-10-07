@@ -74,6 +74,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
   "url":"/pkg/Tinkertanker/pxt-oled-ssd1306",
   "cardType": "package"
 }, {
+  "name": "ssd1306 OLED with reset pin",
+  "url":"/pkg/Tinkertanker/pxt-oled-ssd1306",
+  "cardType": "package"
+}, {
   "name": "I2C LCD 1602 Display",
   "url": "/pkg/1010Technologies/pxt-makerbit-ir-lcd1602",
   "cardType": "package"
