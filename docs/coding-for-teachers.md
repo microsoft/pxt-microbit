@@ -1,7 +1,5 @@
 # Coding with micro:bit video series for teachers
 
-
-
 ## Videos
 
 ```codecard
