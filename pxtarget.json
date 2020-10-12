@@ -536,6 +536,11 @@
             "appTheme": {
                 "hideMenuBar": true
             }
+        },
+        "androidapp": {
+            "compile": {
+                "webUSB": false
+            }
         }
     },
     "uploadDocs": true
