@@ -294,9 +294,11 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
             })
             .then(() => {
                 log("convert");
+                const binFile = resp.outfiles[this.binName];
+                if (!binFile)
+                    throw new Error(`unable to find ${this.binName} in outfiles ${Object.keys(resp.outfiles).join(', ')}`);
                 // TODO this is seriously inefficient (130ms on a fast machine)
                 let uf2 = ts.pxtc.UF2.newBlockFile();
-                const binFile = resp.outfiles[this.binName];
                 ts.pxtc.UF2.writeHex(uf2, binFile.split(/\r?\n/));
                 let bytes = pxt.U.stringToUint8Array(ts.pxtc.UF2.serializeFile(uf2));
                 let parsed = ts.pxtc.UF2.parseFile(bytes);

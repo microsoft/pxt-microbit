@@ -45,6 +45,7 @@
         "gc": true,
         "imageRefTag": 9,
         "shimRenames": {
+            "sendBufferAsm": "light::sendWS2812Buffer"
         },
         "patches": {
             "0.0.0 - 1.0.0": [
@@ -127,6 +128,7 @@
         "mbdal",
         "mbcodal"
     ],
+    "alwaysMultiVariant" : true,
     "variants": {
         "mbdal": {
             "compile": {},
@@ -535,6 +537,11 @@
         "hidemenu": {
             "appTheme": {
                 "hideMenuBar": true
+            }
+        },
+        "androidapp": {
+            "compile": {
+                "webUSB": false
             }
         }
     },

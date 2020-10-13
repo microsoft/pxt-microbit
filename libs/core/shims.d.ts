@@ -37,9 +37,11 @@ declare interface Image {
     /**
      * Shows an frame from the image at offset ``x offset``.
      * @param xOffset column index to start displaying the image
+     * @param interval time in milliseconds to pause after drawing
      */
     //% help=images/show-image weight=80 blockNamespace=images
-    //% blockId=device_show_image_offset block="show image %sprite(myImage)|at offset %offset"
+    //% blockId=device_show_image_offset block="show image %sprite(myImage)|at offset %offset ||and interval (ms) %interval"
+    //%
     //% blockGap=8 parts="ledmatrix" async interval.defl=400 shim=ImageMethods::showImage
     showImage(xOffset: int32, interval?: int32): void;
 
