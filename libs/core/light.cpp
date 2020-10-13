@@ -28,6 +28,21 @@ void sendWS2812Buffer(Buffer buf, int pin) {
     neopixel_send_buffer(*pxt::getPin(pin), buf->data, buf->length);
 }
 
+#if MICROBIT_CODAL
+/**
+* Sends a color buffer to a light strip
+**/
+//% advanced=true
+//%
+void sendWS2812BufferWithBrightness(Buffer buf, int pin, int brightness) {
+    if (!buf || !buf->length)
+        return;
+    
+
+    neopixel_send_buffer(*pxt::getPin(pin), buf->data, buf->length);
+}
+#endif
+
 /**
 * Sets the light mode of a pin
 **/
