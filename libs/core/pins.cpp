@@ -304,7 +304,7 @@ namespace pins {
     MicroBitPin* pitchPin = NULL;
     MicroBitPin* pitchPin2 = NULL;
     uint8_t pitchVolume = 0xff;
-    bool analogPlaying = false;
+    bool analogTonePlaying = false;
 
     /**
      * Set the pin used when using analog pitch or music.
@@ -339,7 +339,7 @@ namespace pins {
     void analogSetPitchVolume(int volume) {
         pitchVolume = max(0, min(0xff, volume));
 
-        if (analogPlaying) {
+        if (analogTonePlaying) {
             int v = pitchVolume == 0 ? 0 : 1 << (pitchVolume >> 5);
             if (NULL != pitchPin)
                 pitchPin->setAnalogValue(v);
@@ -373,7 +373,7 @@ namespace pins {
 #endif
         }
         // set pitch
-        analogPlaying = true;
+        analogTonePlaying = true;
         if (NULL != pitchPin)
             pinAnalogSetPitch(pitchPin, frequency, ms);
         if (NULL != pitchPin2)
@@ -385,7 +385,7 @@ namespace pins {
                 pitchPin->setAnalogValue(0);
             if (NULL != pitchPin2)
                 pitchPin2->setAnalogValue(0);
-            analogPlaying = false;
+            analogTonePlaying = false;
             fiber_sleep(5);
         }
     }
