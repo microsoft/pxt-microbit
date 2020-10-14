@@ -340,7 +340,7 @@ namespace pins {
         pitchVolume = max(0, min(0xff, volume));
 
         if (analogPlaying) {
-            int v = 1 << (pitchVolume >> 5);
+            int v = pitchVolume == 0 ? 0 : 1 << (pitchVolume >> 5);
             if (NULL != pitchPin)
                 pitchPin->setAnalogValue(v);
             if (NULL != pitchPin2)
