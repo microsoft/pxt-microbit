@@ -579,6 +579,31 @@ declare namespace led {
     //% parts="ledmatrix" shim=led::screenshot
     function screenshot(): Image;
 }
+declare namespace music {
+
+    /**
+     * Set the default output volume of the sound synthesizer.
+     * @param volume the volume 0...255
+     */
+    //% blockId=synth_set_volume block="set volume %volume"
+    //% parts="speaker"
+    //% volume.min=0 volume.max=255
+    //%
+    //% help=music/set-volume
+    //% weight=70
+    //% group="Volume" volume.defl=127 shim=music::setVolume
+    function setVolume(volume?: int32): void;
+
+    /**
+     * Returns the current output volume of the sound synthesizer.
+     */
+    //% blockId=synth_get_volume block="volume"
+    //% parts="speaker"
+    //% help=music/volume
+    //% weight=69
+    //% group="Volume" shim=music::volume
+    function volume(): int32;
+}
 declare namespace pins {
 
     /**

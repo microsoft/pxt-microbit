@@ -471,33 +471,6 @@ namespace music {
         _playTone = f;
     }
 
-    /**
-     * Set the default output volume of the sound synthesizer.
-     * @param volume the volume 0...255
-     */
-    //% blockId=synth_set_volume block="set volume %volume"
-    //% parts="speaker"
-    //% volume.min=0 volume.max=255
-    //% volume.defl=127
-    //% help=music/set-volume
-    //% weight=70
-    //% group="Volume"
-    export function setVolume(volume: number): void {
-        pins.analogSetPitchVolume(volume);
-    }
-
-    /**
-     * Returns the current output volume of the sound synthesizer.
-     */
-    //% blockId=synth_get_volume block="volume"
-    //% parts="speaker"
-    //% help=music/volume
-    //% weight=69
-    //% group="Volume"
-    export function volume(): number {
-        return pins.analogPitchVolume();
-    }
-
     function playNextNote(melody: Melody): void {
         // cache elements
         let currNote = melody.nextNote();

@@ -1,5 +1,12 @@
 #include "pxt.h"
 
+#if MICROBIT_CODAL
+#include "Pin.h"
+#define PinCompat codal::Pin
+#else
+#define PinCompat MicroBitPin
+#endif
+
 enum class DigitalPin {
     P0 = MICROBIT_ID_IO_P0,
     P1 = MICROBIT_ID_IO_P1,
@@ -301,9 +308,9 @@ namespace pins {
     }
 
 
-    MicroBitPin* pitchPin = NULL;
-    MicroBitPin* pitchPin2 = NULL;
+    PinCompat* pitchPin = NULL;
     uint8_t pitchVolume = 0xff;
+
 
     /**
      * Set the pin used when using analog pitch or music.
@@ -315,10 +322,9 @@ namespace pins {
     //% name.fieldOptions.tooltips="false" name.fieldOptions.width="250"
     void analogSetPitchPin(AnalogPin name) {
         pitchPin = getPin((int)name);
-        pitchPin2 = NULL;
     }
 
-    void pinAnalogSetPitch(MicroBitPin* pin, int frequency, int ms) {
+    void pinAnalogSetPitch(PinCompat* pin, int frequency, int ms) {
       if (frequency <= 0 || pitchVolume == 0) {
         pin->setAnalogValue(0);
       } else {
@@ -358,23 +364,20 @@ namespace pins {
     void analogPitch(int frequency, int ms) {
         // init pins if needed
         if (NULL == pitchPin) {
+#if MICROBIT_CODAL
+            pitchPin = &uBit.audio.virtualOutputPin;
+#else
             pitchPin = getPin((int)AnalogPin::P0);
-#ifdef SOUND_MIRROR_EXTENSION
-            pitchPin2 = &SOUND_MIRROR_EXTENSION;
 #endif           
         }
         // set pitch
         if (NULL != pitchPin)
             pinAnalogSetPitch(pitchPin, frequency, ms);
-        if (NULL != pitchPin2)
-            pinAnalogSetPitch(pitchPin2, frequency, ms);
         // clear pitch
         if (ms > 0) {
             fiber_sleep(ms);
             if (NULL != pitchPin)
                 pitchPin->setAnalogValue(0);
-            if (NULL != pitchPin2)
-                pitchPin2->setAnalogValue(0);
             fiber_sleep(5);
         }
     }

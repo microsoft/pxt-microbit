@@ -39,6 +39,7 @@
         "game.ts",
         "led.cpp",
         "led.ts",
+        "music.cpp",
         "music.ts",
         "melodies.ts",
         "pins.cpp",
