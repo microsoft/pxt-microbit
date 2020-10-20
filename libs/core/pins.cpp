@@ -310,6 +310,7 @@ namespace pins {
 
     PinCompat* pitchPin = NULL;
     uint8_t pitchVolume = 0xff;
+    bool analogTonePlaying = false;
 
 
     /**
@@ -343,6 +344,12 @@ namespace pins {
     //% volume.min=0 volume.max=255
     void analogSetPitchVolume(int volume) {
         pitchVolume = max(0, min(0xff, volume));
+
+        if (analogTonePlaying) {
+            int v = pitchVolume == 0 ? 0 : 1 << (pitchVolume >> 5);
+            if (NULL != pitchPin)
+                pitchPin->setAnalogValue(v);
+        }
     }
 
     /**
@@ -368,9 +375,10 @@ namespace pins {
             pitchPin = &uBit.audio.virtualOutputPin;
 #else
             pitchPin = getPin((int)AnalogPin::P0);
-#endif           
+#endif            
         }
         // set pitch
+        analogTonePlaying = true;
         if (NULL != pitchPin)
             pinAnalogSetPitch(pitchPin, frequency, ms);
         // clear pitch
@@ -378,6 +386,7 @@ namespace pins {
             fiber_sleep(ms);
             if (NULL != pitchPin)
                 pitchPin->setAnalogValue(0);
+            analogTonePlaying = false;
             fiber_sleep(5);
         }
     }
@@ -393,7 +402,7 @@ namespace pins {
     //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=4
     //% pin.fieldOptions.tooltips="false" pin.fieldOptions.width="250"
     void setPull(DigitalPin name, PinPullMode pull) {
-#if MICROBIT_CODAL        
+#if MICROBIT_CODAL
         codal::PullMode m = pull == PinPullMode::PullDown
             ? codal::PullMode::Down
             : pull == PinPullMode::PullUp ? codal::PullMode::Up
@@ -520,7 +529,7 @@ namespace pins {
     //% blockId=spi_format block="spi format|bits %bits|mode %mode"
     void spiFormat(int bits, int mode) {
         auto p = allocSPI();
-        p->format(bits, mode);        
+        p->format(bits, mode);
     }
 
 #if MICROBIT_CODAL
