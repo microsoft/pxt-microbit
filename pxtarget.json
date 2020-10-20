@@ -148,8 +148,8 @@
                     "type": "git"
                 },
                 "codalBinary": "MICROBIT",
-                "githubCorePackage": "microbit-foundation/codal",
-                "gittag": "pxt-wip-build-v0.0.1",
+                "githubCorePackage": "lancaster-university/codal",
+                "gittag": "master",
                 "serviceId": "mbcodal",
                 "dockerImage": "pext/yotta:latest",
                 "yottaConfigCompatibility": true
