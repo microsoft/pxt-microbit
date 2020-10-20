@@ -143,8 +143,8 @@
                 "buildEngine": "codal",
                 "codalTarget": {
                     "name": "codal-microbit",
-                    "url": "https://github.com/microbit-foundation/codal-microbit",
-                    "branch": "v0.2.1",
+                    "url": "https://github.com/lancaster-university/codal-microbit-v2",
+                    "branch": "v0.2.8",
                     "type": "git"
                 },
                 "codalBinary": "MICROBIT",
