@@ -977,7 +977,7 @@ path.sim-board {
             this.domHardwareVersion = this.board.hardwareVersion;
             // v2 skinning
             // display v2 on the corner
-            const v2Text = <SVGTextElement>svg.child(this.g, "text", { x: 450, y: 300, class: "sim-text", title: "v2" })
+            const v2Text = <SVGTextElement>svg.child(this.g, "text", { x: 240, y: 30, class: "sim-text", title: "v2" })
             v2Text.textContent = "v2";
 
             // golden head
