@@ -980,7 +980,7 @@ path.sim-board {
             // head dots
             svg.child(this.g, "circle", { cx: 215, cy: 12, r: 6, fill: "grey" })
             svg.child(this.g, "circle", { cx: 223, cy: 35, r: 4, fill: "grey" })
-            svg.child(this.g, "circle", { cx: 275, cy: 35, r: 4, fill: "grey" })
+            svg.child(this.g, "circle", { cx: 277, cy: 35, r: 4, fill: "grey" })
             svg.child(this.g, "circle", { cx: 285, cy: 12, r: 6, fill: "grey" })
 
             // golden head
