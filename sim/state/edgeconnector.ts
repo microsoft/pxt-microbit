@@ -154,3 +154,11 @@ namespace pxsim.pins {
         // TODO support buttons here
     }
 }
+namespace pxsim.music {
+    export function setVolume(volume: number): void {
+        pxsim.pins.analogSetPitchVolume(volume);
+    }
+    export function volume(): number {
+        return pxsim.pins.analogPitchVolume();
+    }
+}
