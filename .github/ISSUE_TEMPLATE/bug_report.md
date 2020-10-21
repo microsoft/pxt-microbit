@@ -20,6 +20,11 @@ A clear and concise description of what you expected to happen.
 **Screenshots**
 Add screenshots to help explain your problem. You can copy paste the screenshot in the github report. The .gif screen recording is very useful as well. 
 
+**micro:bit version (please complete the following information):**
+
+You can find this information in the lower right hand corner of the back of micro:bit (the side that says BBC micro:bit).
+ - Which version of the micro:bit is this relevant to [ EG V1.3, V1.5, V2.0, or specify it's not hardware related ]
+
 **Desktop (please complete the following information):**
  - OS: [e.g. iOS]
  - Browser [e.g. chrome, safari]
