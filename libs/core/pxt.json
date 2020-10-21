@@ -55,6 +55,7 @@
         "sendbuffer.s",
         "sendbufferbrightness.s",
         "light.cpp",
+        "logo.cpp",
         "parts/speaker.svg",
         "parts/headphone.svg"
     ],
@@ -65,9 +66,9 @@
         "compileServiceVariant": "mbcodal",
         "includeDirs": [
             "libraries/codal-core/inc",
-            "libraries/codal-microbit/inc",
-            "libraries/codal-microbit/model",
-            "libraries/codal-microbit/inc/compat",
+            "libraries/codal-microbit-v2/inc",
+            "libraries/codal-microbit-v2/model",
+            "libraries/codal-microbit-v2/inc/compat",
             "pxtapp"
         ],
         "excludePrefix": [

@@ -1069,5 +1069,27 @@ declare namespace light {
     //% shim=light::setMode
     function setMode(pin: int32, mode: int32): void;
 }
+declare namespace input {
+
+    /**
+     * Do something when the logo is touched and released again.
+     * @param body the code to run when the logo is pressed
+     */
+    //% weight=83 blockGap=32
+    //% blockId=input_logo_event block="on logo pressed"
+    //% group="micro:bit v2"
+    //% parts="logotouch" shim=input::onLogoPressed
+    function onLogoPressed(body: () => void): void;
+
+    /**
+     * Get the logo state (pressed or not).
+     */
+    //% weight=58
+    //% blockId="input_logo_is_pressed" block="logo is pressed"
+    //% blockGap=8
+    //% group="micro:bit v2"
+    //% parts="logotouch" shim=input::logoIsPressed
+    function logoIsPressed(): boolean;
+}
 
 // Auto-generated. Do not edit. Really.

@@ -18,6 +18,7 @@ namespace pxsim {
         microphoneState: AnalogSensorState;
         lightState: pxt.Map<CommonNeoPixelState>;
         fileSystem: FileSystemState;
+        logoTouch: Button;
 
         // visual
         viewHost: visuals.BoardHost;
@@ -96,6 +97,7 @@ namespace pxsim {
             this.builtinParts["lightsensor"] = this.lightSensorState = new LightSensorState();
             this.builtinParts["compass"] = this.compassState = new CompassState();
             this.builtinParts["microservo"] = this.edgeConnectorState;
+            this.builtinParts["logotouch"] = this.logoTouch = new Button(DAL.MICROBIT_ID_LOGO);
 
             this.builtinVisuals["buttonpair"] = () => new visuals.ButtonPairView();
             this.builtinVisuals["ledmatrix"] = () => new visuals.LedMatrixView();
@@ -108,6 +110,13 @@ namespace pxsim {
             this.builtinPartVisuals["buttonpair"] = (xy: visuals.Coord) => visuals.mkBtnSvg(xy);
             this.builtinPartVisuals["ledmatrix"] = (xy: visuals.Coord) => visuals.mkLedMatrixSvg(xy, 8, 8);
             this.builtinPartVisuals["microservo"] = (xy: visuals.Coord) => visuals.mkMicroServoPart(xy);
+        }
+        
+        ensureHardwareVersion(version: number) {
+            if (version > this.hardwareVersion) {
+                this.hardwareVersion = version;
+                this.updateView();
+            }
         }
 
         receiveMessage(msg: SimulatorMessage) {

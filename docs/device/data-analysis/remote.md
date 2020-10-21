@@ -126,22 +126,37 @@ The serial number, ``id``, is used as a _prefix_ for the ``name`` to identify wh
 
 ### Extended data recording
 
-If you're recording data to save on a computer for analysis or other uses outside of the MakeCode editor, you can use the ``||radio:radio write received packet to serial||`` block to format it for you. This function will format the data from the received packet into a [JSON](https://en.wikipedia.org/wiki/JSON) string and write it to the serial port, all in one operation. It's used just like this:
+If you're recording data to save on a computer for analysis or other uses outside of the MakeCode editor, you can create your own custom recording data format to log reported data. One way to do this is by forming a [JSON](https://en.wikipedia.org/wiki/JSON) string with the information related to the data *sample*.
+
+### ~ hint
+
+#### Data samples
+
+A data sample is a snapshot of some input value at a particular moment in time. A sample usually contains several pieces of information such as the value recorded, the time it was recorded, and a name to identify what the value is for.
+
+### ~
+
+As an example, if you know that the remote station is sending you a name-value pair for temperature data, you can report that data in a JSON string like this:
 
 ```blocks
-radio.onReceivedNumber(function (receivedNumber) {
-    radio.writeReceivedPacketToSerial();
-});
+radio.onReceivedValue(function (name, value) {
+    serial.writeString("{")
+    serial.writeString("\"t\":" + radio.receivedPacket(RadioPacketProperty.Time) + ",")
+    serial.writeString("\"s\":" + radio.receivedPacket(RadioPacketProperty.SerialNumber) + ",")
+    serial.writeString("\"n\":\"" + name + "\",")
+    serial.writeString("\"v\":" + value)
+    serial.writeLine("}")
+})
 ```
 
-The output to the serial port is a line of text with these name value pairs:
+The output to the serial port is a line of text with these name-value pairs:
 
 * **t** - time: the time when the packet was sent
 * **s** - serial: the serial number of the board that sent the packet (if enabled)
-* **n** - name: the name for the data value from the string part of the packet
-* **v** - value: the data from the number part of the packet
+* **n** - name: the name for the data value sent in the packet
+* **v** - value: the data value for the number sent in the packet
 
-It's sent in this format to the serial port:
+The JSON formatted in the received event is sent in this format to the serial port:
 
 ```json
 {"t":3504,"s":1951284846,"n":"temperature","v":19} 
@@ -154,8 +169,7 @@ It's sent in this format to the serial port:
 
 ## See also
 
-[radio](/reference/radio), [serial write value](/reference/serial/write-value),
-[write received packet to serial](/reference/radio/write-received-packet-to-serial)
+[radio](/reference/radio), [serial write value](/reference/serial/write-value)
 
 ```package
 radio

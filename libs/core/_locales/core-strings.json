@@ -313,9 +313,11 @@
   "input.compassHeading|block": "compass heading (°)",
   "input.isGesture|block": "is %gesture gesture",
   "input.lightLevel|block": "light level",
+  "input.logoIsPressed|block": "logo is pressed",
   "input.magneticForce|block": "magnetic force (µT)|%NAME",
   "input.onButtonPressed|block": "on button|%NAME|pressed",
   "input.onGesture|block": "on |%NAME",
+  "input.onLogoPressed|block": "on logo pressed",
   "input.onPinPressed|block": "on pin %name|pressed",
   "input.onPinReleased|block": "on pin %NAME|released",
   "input.pinIsPressed|block": "pin %NAME|is pressed",
@@ -442,5 +444,6 @@
   "{id:group}Read": "Read",
   "{id:group}Tempo": "Tempo",
   "{id:group}Tone": "Tone",
-  "{id:group}Volume": "Volume"
+  "{id:group}Volume": "Volume",
+  "{id:group}micro:bit v2": "micro:bit v2"
 }
