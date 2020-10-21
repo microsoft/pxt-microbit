@@ -45,6 +45,7 @@
         "gc": true,
         "imageRefTag": 9,
         "shimRenames": {
+            "sendBufferAsm": "light::sendWS2812Buffer"
         },
         "patches": {
             "0.0.0 - 1.0.0": [
@@ -127,6 +128,7 @@
         "mbdal",
         "mbcodal"
     ],
+    "alwaysMultiVariant" : true,
     "variants": {
         "mbdal": {
             "compile": {},
@@ -140,15 +142,16 @@
             "compileService": {
                 "buildEngine": "codal",
                 "codalTarget": {
-                    "name": "codal-microbit",
-                    "url": "https://github.com/microbit-foundation/codal-microbit",
-                    "branch": "v0.2.1",
+                    "name": "codal-microbit-v2",
+                    "url": "https://github.com/lancaster-university/codal-microbit-v2",
+                    "branch": "v0.2.9",
                     "type": "git"
                 },
                 "codalBinary": "MICROBIT",
-                "githubCorePackage": "microbit-foundation/codal",
-                "gittag": "pxt-wip-build-v0.0.1",
-                "serviceId": "mbcodal",
+                
+                "githubCorePackage": "lancaster-university/microbit-v2-samples",
+                "gittag": "v0.2.10",
+                "serviceId": "mbcodal2",
                 "dockerImage": "pext/yotta:latest",
                 "yottaConfigCompatibility": true
             }
@@ -535,6 +538,11 @@
         "hidemenu": {
             "appTheme": {
                 "hideMenuBar": true
+            }
+        },
+        "androidapp": {
+            "compile": {
+                "webUSB": false
             }
         }
     },

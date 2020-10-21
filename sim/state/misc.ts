@@ -250,6 +250,15 @@ namespace pxsim.light {
         pxsim.sendBufferAsm(buffer, pin)
     }
 
+    export function sendWS2812BufferWithBrightness(buffer: RefBuffer, pin: number, brightness: number) {
+        const clone = new RefBuffer(new Uint8Array(buffer.data))
+        const data = clone.data;
+        for(let i =0; i < data.length; ++i) {
+            data[i] = (data[i] * brightness) >> 8;
+        }
+        pxsim.sendBufferAsm(clone, pin)
+    }
+
     export function setMode(pin: number, mode: number) {
         const lp = neopixelState(pin);
         if (!lp) return;

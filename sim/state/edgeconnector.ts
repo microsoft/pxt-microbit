@@ -3,7 +3,7 @@ namespace pxsim.input {
         let pin = getPin(pinId);
         if (!pin) return;
         pin.isTouched();
-        runtime.queueDisplayUpdate(); 
+        runtime.queueDisplayUpdate();
         pxtcore.registerWithDal(pin.id, DAL.MICROBIT_BUTTON_EVT_CLICK, handler);
     }
 
@@ -11,7 +11,7 @@ namespace pxsim.input {
         let pin = getPin(pinId);
         if (!pin) return;
         pin.isTouched();
-        runtime.queueDisplayUpdate(); 
+        runtime.queueDisplayUpdate();
         pxtcore.registerWithDal(pin.id, DAL.MICROBIT_BUTTON_EVT_UP, handler);
     }
 
@@ -104,13 +104,14 @@ namespace pxsim.pins {
     export function analogSetPitchVolume(volume: number) {
         const ec = board().edgeConnectorState;
         ec.pitchVolume = Math.max(0, Math.min(0xff, volume | 0));
+        AudioContextManager.setCurrentToneGain(ec.pitchVolume / 0xff);
     }
 
     export function analogPitchVolume() {
         const ec = board().edgeConnectorState;
         return ec.pitchVolume;
     }
- 
+
     export function analogPitch(frequency: number, ms: number) {
         // update analog output
         const b = board();

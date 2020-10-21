@@ -37,9 +37,11 @@ declare interface Image {
     /**
      * Shows an frame from the image at offset ``x offset``.
      * @param xOffset column index to start displaying the image
+     * @param interval time in milliseconds to pause after drawing
      */
     //% help=images/show-image weight=80 blockNamespace=images
-    //% blockId=device_show_image_offset block="show image %sprite(myImage)|at offset %offset"
+    //% blockId=device_show_image_offset block="show image %sprite(myImage)|at offset %offset ||and interval (ms) %interval"
+    //%
     //% blockGap=8 parts="ledmatrix" async interval.defl=400 shim=ImageMethods::showImage
     showImage(xOffset: int32, interval?: int32): void;
 
@@ -1051,9 +1053,14 @@ declare namespace light {
     /**
      * Sends a color buffer to a light strip
      **/
-    //% advanced=true
-    //% shim=light::sendWS2812Buffer
+    //% advanced=true shim=light::sendWS2812Buffer
     function sendWS2812Buffer(buf: Buffer, pin: int32): void;
+
+    /**
+     * Sends a color buffer to a light strip
+     **/
+    //% advanced=true shim=light::sendWS2812BufferWithBrightness
+    function sendWS2812BufferWithBrightness(buf: Buffer, pin: int32, brightness: int32): void;
 
     /**
      * Sets the light mode of a pin

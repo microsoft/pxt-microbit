@@ -53,6 +53,7 @@
         "fixed.ts",
         "templates.ts",
         "sendbuffer.s",
+        "sendbufferbrightness.s",
         "light.cpp",
         "parts/speaker.svg",
         "parts/headphone.svg"
