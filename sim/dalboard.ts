@@ -97,7 +97,7 @@ namespace pxsim {
             this.builtinParts["lightsensor"] = this.lightSensorState = new LightSensorState();
             this.builtinParts["compass"] = this.compassState = new CompassState();
             this.builtinParts["microservo"] = this.edgeConnectorState;
-            this.builtinParts["logotouch"] = this.logoTouch = new Button(DAL.ID_PIN_LOGO);
+            this.builtinParts["logotouch"] = this.logoTouch = new Button(DAL.MICROBIT_ID_LOGO);
 
             this.builtinVisuals["buttonpair"] = () => new visuals.ButtonPairView();
             this.builtinVisuals["ledmatrix"] = () => new visuals.LedMatrixView();
@@ -156,11 +156,6 @@ namespace pxsim {
                 maxHeight: "100%",
                 highContrast: msg.highContrast
             };
-            this.viewHost = new visuals.BoardHost(pxsim.visuals.mkBoardView({
-                visual: boardDef.visual,
-                boardDef: boardDef,
-                highContrast: msg.highContrast
-            }), opts);
 
             if (opts.partsList) {
                 const v2 = opts.partsList.indexOf("microphone") > -1
@@ -171,6 +166,12 @@ namespace pxsim {
                     this.hardwareVersion = 2;
                 }
             }
+
+            this.viewHost = new visuals.BoardHost(pxsim.visuals.mkBoardView({
+                visual: boardDef.visual,
+                boardDef: boardDef,
+                highContrast: msg.highContrast
+            }), opts);
 
             document.body.innerHTML = ""; // clear children
             document.body.appendChild(this.view = this.viewHost.getView());

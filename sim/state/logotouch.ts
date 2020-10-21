@@ -7,7 +7,7 @@ namespace pxsim.input {
         b.ensureHardwareVersion(2);
 
         // register handle
-        pxtcore.registerWithDal(DAL.ID_PIN_LOGO, DAL.MICROBIT_BUTTON_EVT_CLICK, handler);
+        pxtcore.registerWithDal(DAL.MICROBIT_ID_LOGO, DAL.MICROBIT_BUTTON_EVT_CLICK, handler);
     }
 
     export function logoIsPressed(): boolean {
