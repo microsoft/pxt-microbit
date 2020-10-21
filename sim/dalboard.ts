@@ -158,7 +158,7 @@ namespace pxsim {
                     || opts.partsList.indexOf("logotouch") > -1
                     || opts.partsList.indexOf("speaker") > -1;
                 if (v2) {
-                    pxt.log(`detected v2 feature`);
+                    console.log(`detected v2 feature`);
                     this.hardwareVersion = 2;
                 }
             }
