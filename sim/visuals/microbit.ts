@@ -1146,7 +1146,7 @@ path.sim-board {
             })
 
             const bpState = this.board.buttonPairState;
-            const stateButtons: Button[] = [bpState.aBtn, bpState.bBtn, bpState.abBtn, this.board.logoTouch];
+            const stateButtons: Button[] = [bpState.aBtn, bpState.bBtn, this.board.logoTouch];
             const elButtonOuters = this.buttonsOuter.slice(0, 2).concat(this.headParts);
             const elButtons = this.buttons.slice(0, 2).concat(this.headParts);
 
@@ -1175,39 +1175,37 @@ path.sim-board {
             })
             // A+B
             pointerEvents.down.forEach(evid => this.buttonsOuter[2].addEventListener(evid, ev => {
-                stateButtons[0].pressed = true;
-                stateButtons[1].pressed = true;
-                stateButtons[2].pressed = true;
+                bpState.aBtn.pressed = true;
+                bpState.bBtn.pressed = true;
+                bpState.abBtn.pressed = true;
                 svg.fill(this.buttons[0], this.props.theme.buttonDown);
                 svg.fill(this.buttons[1], this.props.theme.buttonDown);
                 svg.fill(this.buttons[2], this.props.theme.buttonDown);
-                this.board.bus.queue(stateButtons[2].id, DAL.MICROBIT_BUTTON_EVT_DOWN);
+                this.board.bus.queue(bpState.abBtn.id, DAL.MICROBIT_BUTTON_EVT_DOWN);
             }));
             this.buttonsOuter[2].addEventListener(pointerEvents.leave, ev => {
-                let state = this.board;
-                stateButtons[0].pressed = false;
-                stateButtons[1].pressed = false;
-                stateButtons[2].pressed = false;
+                bpState.aBtn.pressed = false;
+                bpState.bBtn.pressed = false;
+                bpState.abBtn.pressed = false;
                 svg.fill(this.buttons[0], this.props.theme.buttonUp);
                 svg.fill(this.buttons[1], this.props.theme.buttonUp);
                 svg.fill(this.buttons[2], this.props.theme.virtualButtonUp);
             })
             this.buttonsOuter[2].addEventListener(pointerEvents.up, ev => {
-                let state = this.board;
-                stateButtons[0].pressed = false;
-                stateButtons[1].pressed = false;
-                stateButtons[2].pressed = false;
+                bpState.aBtn.pressed = false;
+                bpState.bBtn.pressed = false;
+                bpState.abBtn.pressed = false;
                 svg.fill(this.buttons[0], this.props.theme.buttonUp);
                 svg.fill(this.buttons[1], this.props.theme.buttonUp);
                 svg.fill(this.buttons[2], this.props.theme.virtualButtonUp);
 
-                this.board.bus.queue(stateButtons[2].id, DAL.MICROBIT_BUTTON_EVT_UP);
-                this.board.bus.queue(stateButtons[2].id, DAL.MICROBIT_BUTTON_EVT_CLICK);
+                this.board.bus.queue(bpState.abBtn.id, DAL.MICROBIT_BUTTON_EVT_UP);
+                this.board.bus.queue(bpState.abBtn.id, DAL.MICROBIT_BUTTON_EVT_CLICK);
             })
             accessibility.enableKeyboardInteraction(this.buttonsOuter[2], undefined, () => {
-                this.board.bus.queue(stateButtons[2].id, DAL.MICROBIT_BUTTON_EVT_DOWN);
-                this.board.bus.queue(stateButtons[2].id, DAL.MICROBIT_BUTTON_EVT_UP);
-                this.board.bus.queue(stateButtons[2].id, DAL.MICROBIT_BUTTON_EVT_CLICK);
+                this.board.bus.queue(bpState.abBtn.id, DAL.MICROBIT_BUTTON_EVT_DOWN);
+                this.board.bus.queue(bpState.abBtn.id, DAL.MICROBIT_BUTTON_EVT_UP);
+                this.board.bus.queue(bpState.abBtn.id, DAL.MICROBIT_BUTTON_EVT_CLICK);
             });
         }
     }
