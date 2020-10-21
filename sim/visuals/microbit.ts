@@ -980,12 +980,11 @@ path.sim-board {
             this.v2Circle = <SVGCircleElement>svg.child(this.g, "circle", { r: 20 });
             svg.fill(this.v2Circle, "gold");
             this.v2Text = <SVGTextElement>svg.child(this.g, "text", { class: "sim-text", title: "v2" });
-            this.positionV2Elements();
             this.v2Text.textContent = "v2";
             svg.fill(this.v2Text, "black");
             this.v2Text.style.fontWeight = "700";
 
-            // golden head
+            // golden head and position v2 symbol
             this.updateTheme();
 
             // update pins
