@@ -275,7 +275,7 @@ path.sim-board {
         private style: SVGStyleElement;
         private defs: SVGDefsElement;
         private g: SVGGElement;
-
+        private pkg: SVGPathElement;
         private logos: SVGElement[];
         private head: SVGGElement; private headInitialized = false;
         private heads: SVGElement[];
@@ -857,8 +857,8 @@ path.sim-board {
             for (let i = 0; i < 3; ++i) svg.child(merge, "feMergeNode", { in: "glow" })
 
             // outline
-            const pkg = svg.path(this.g, "sim-board", "M498,31.9C498,14.3,483.7,0,466.1,0H31.9C14.3,0,0,14.3,0,31.9v342.2C0,391.7,14.3,406,31.9,406h434.2c17.6,0,31.9-14.3,31.9-31.9V31.9z M14.3,206.7c-2.7,0-4.8-2.2-4.8-4.8c0-2.7,2.2-4.8,4.8-4.8c2.7,0,4.8,2.2,4.8,4.8C19.2,204.6,17,206.7,14.3,206.7z M486.2,206.7c-2.7,0-4.8-2.2-4.8-4.8c0-2.72.2-4.8,4.8-4.8c2.7,0,4.8,2.2,4.8,4.8C491,204.6,488.8,206.7,486.2,206.7z");
-            svg.hydrate(pkg, { fill: "#111" });
+            this.pkg = svg.path(this.g, "sim-board", "M498,31.9C498,14.3,483.7,0,466.1,0H31.9C14.3,0,0,14.3,0,31.9v342.2C0,391.7,14.3,406,31.9,406h434.2c17.6,0,31.9-14.3,31.9-31.9V31.9z M14.3,206.7c-2.7,0-4.8-2.2-4.8-4.8c0-2.7,2.2-4.8,4.8-4.8c2.7,0,4.8,2.2,4.8,4.8C19.2,204.6,17,206.7,14.3,206.7z M486.2,206.7c-2.7,0-4.8-2.2-4.8-4.8c0-2.72.2-4.8,4.8-4.8c2.7,0,4.8,2.2,4.8,4.8C491,204.6,488.8,206.7,486.2,206.7z");
+            svg.hydrate(this.pkg, { fill: "#111" });
 
             // script background
             this.display = svg.path(this.g, "sim-display", "M333.8,310.3H165.9c-8.3,0-15-6.7-15-15V127.5c0-8.3,6.7-15,15-15h167.8c8.3,0,15,6.7,15,15v167.8C348.8,303.6,342.1,310.3,333.8,310.3z");
@@ -977,12 +977,6 @@ path.sim-board {
             const v2Text = <SVGTextElement>svg.child(this.g, "text", { x: 450, y: 300, class: "sim-text", title: "v2" })
             v2Text.textContent = "v2";
 
-            // head dots
-            svg.child(this.g, "circle", { cx: 215, cy: 12, r: 6, fill: "grey" })
-            svg.child(this.g, "circle", { cx: 223, cy: 35, r: 4, fill: "grey" })
-            svg.child(this.g, "circle", { cx: 277, cy: 35, r: 4, fill: "grey" })
-            svg.child(this.g, "circle", { cx: 285, cy: 12, r: 6, fill: "grey" })
-
             // golden head
             this.updateTheme();
 
@@ -995,6 +989,9 @@ path.sim-board {
             // 3v
             this.pins[this.pins.length - 2].setAttribute("d", "M359.9,317.3c-12.8,0-22.1,10.3-23.1,23.1V406h 7 l 3 -9 l 27 0 l 3 9 h 7v-65.6C383,327.7,372.7,317.3,359.9,317.3z M360,360.1c-10.7,0-19.3-8.6-19.3-19.3c0-10.7,8.6-19.3,19.3-19.3c10.7,0,19.3,8.7,19.3,19.3C379.3,351.5,370.7,360.1,360,360.1z")
             this.pins[this.pins.length - 1].setAttribute("d", "M 458 317.6 c -13 0 -23.6 10.6 -23.6 23.6 c 0 0 0 0.1 0 0.1 h 0 V 406 h 7 l 3 -9 l 27 0 l 3 9 h 1.6 c 2 0 4 -1 5 -3 v -60.7 c 0 -0.4 0 -0.9 0 -1.3 C 481.6 328.1 471 317.6 458 317.6 z M 457.8 360.9 c -10.7 0 -19.3 -8.6 -19.3 -19.3 c 0 -10.7 8.6 -19.3 19.3 -19.3 c 10.7 0 19.3 8.7 19.3 19.3 C 477.1 352.2 468.4 360.9 457.8 360.9 z")
+
+            // outline
+            this.pkg.setAttribute("d", "M 498 31.9 C 498 14.3 483.7 0 466.1 0 H 31.9 C 14.3 0 0 14.3 0 31.9 v 342.2 C 0 391.7 21 405 23 406 l 3 -9 l 30 0 l 3 9 h 7 h 50 h 7 l 3 -9 l 27 0 l 3 9 h 7 h 63 h 7 l 3 -9 l 27 0 l 3 9 h 7 h 64 h 7 l 3 -9 l 27 0 l 3 9 h 7 h 51 h 5 l 3 -9 l 29 0 l 3 9 h 0 c 9 0 23 -17 23 -31 V 31.9 z M 14.3 206.7 c -2.7 0 -4.8 -2.2 -4.8 -4.8 c 0 -2.7 2.2 -4.8 4.8 -4.8 c 2.7 0 4.8 2.2 4.8 4.8 C 19.2 204.6 17 206.7 14.3 206.7 z M 486.2 206.7 c -2.7 0 -4.8 -2.2 -4.8 -4.8 c 0 -2.72 0.2 -4.8 4.8 -4.8 c 2.7 0 4.8 2.2 4.8 4.8 C 491 204.6 488.8 206.7 486.2 206.7 z")
         }
 
         private attachEvents() {
