@@ -312,7 +312,6 @@ namespace pins {
     uint8_t pitchVolume = 0xff;
     bool analogTonePlaying = false;
 
-
     /**
      * Set the pin used when using analog pitch or music.
      * @param name pin to modulate pitch from
