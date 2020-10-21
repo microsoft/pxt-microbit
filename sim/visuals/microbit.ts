@@ -278,6 +278,7 @@ path.sim-board {
 
         private logos: SVGElement[];
         private head: SVGGElement; private headInitialized = false;
+        private heads: SVGElement[];
         private headText: SVGTextElement;
         private display: SVGElement;
         private buttons: SVGElement[];
@@ -364,6 +365,10 @@ path.sim-board {
             svg.fill(this.buttonsOuter[2], theme.virtualButtonOuter);
             svg.fill(this.buttons[2], theme.virtualButtonUp);
             svg.fills(this.logos, theme.accent);
+            if (this.domHardwareVersion > 1)
+                svg.fills(this.heads, "gold");
+            else 
+                svg.fills(this.heads, theme.accent);
             if (this.shakeButton) svg.fill(this.shakeButton, theme.virtualButtonUp);
 
             this.pinGradients.forEach(lg => svg.setGradientColors(lg, theme.pin, theme.pinActive));
@@ -885,9 +890,10 @@ path.sim-board {
             // head
             this.head = <SVGGElement>svg.child(this.g, "g", { class: "sim-head no-drag" });
             svg.child(this.head, "circle", { cx: 258, cy: 75, r: 100, fill: "transparent" })
-            this.logos.push(svg.path(this.head, "sim-theme", "M269.9,50.2L269.9,50.2l-39.5,0v0c-14.1,0.1-24.6,10.7-24.6,24.8c0,13.9,10.4,24.4,24.3,24.7v0h39.6c14.2,0,24.8-10.6,24.8-24.7C294.5,61,284,50.3,269.9,50.2 M269.7,89.2L269.7,89.2l-39.3,0c-7.7-0.1-14-6.4-14-14.2c0-7.8,6.4-14.2,14.2-14.2h39.1c7.8,0,14.2,6.4,14.2,14.2C283.9,82.9,277.5,89.2,269.7,89.2"));
-            this.logos.push(svg.path(this.head, "sim-theme", "M230.6,69.7c-2.9,0-5.3,2.4-5.3,5.3c0,2.9,2.4,5.3,5.3,5.3c2.9,0,5.3-2.4,5.3-5.3C235.9,72.1,233.5,69.7,230.6,69.7"));
-            this.logos.push(svg.path(this.head, "sim-theme", "M269.7,80.3c2.9,0,5.3-2.4,5.3-5.3c0-2.9-2.4-5.3-5.3-5.3c-2.9,0-5.3,2.4-5.3,5.3C264.4,77.9,266.8,80.3,269.7,80.3"));
+            this.heads = []
+            this.heads.push(svg.path(this.head, "sim-theme", "M269.9,50.2L269.9,50.2l-39.5,0v0c-14.1,0.1-24.6,10.7-24.6,24.8c0,13.9,10.4,24.4,24.3,24.7v0h39.6c14.2,0,24.8-10.6,24.8-24.7C294.5,61,284,50.3,269.9,50.2 M269.7,89.2L269.7,89.2l-39.3,0c-7.7-0.1-14-6.4-14-14.2c0-7.8,6.4-14.2,14.2-14.2h39.1c7.8,0,14.2,6.4,14.2,14.2C283.9,82.9,277.5,89.2,269.7,89.2"));
+            this.heads.push(svg.path(this.head, "sim-theme", "M230.6,69.7c-2.9,0-5.3,2.4-5.3,5.3c0,2.9,2.4,5.3,5.3,5.3c2.9,0,5.3-2.4,5.3-5.3C235.9,72.1,233.5,69.7,230.6,69.7"));
+            this.heads.push(svg.path(this.head, "sim-theme", "M269.7,80.3c2.9,0,5.3-2.4,5.3-5.3c0-2.9-2.4-5.3-5.3-5.3c-2.9,0-5.3,2.4-5.3,5.3C264.4,77.9,266.8,80.3,269.7,80.3"));
             this.headText = <SVGTextElement>svg.child(this.g, "text", { x: 310, y: 100, class: "sim-text" })
 
             // https://www.microbit.co.uk/device/pins
@@ -965,10 +971,14 @@ path.sim-board {
             const version = this.board.hardwareVersion;
             if (version === this.domHardwareVersion) return;
 
+            this.domHardwareVersion = this.board.hardwareVersion;
             // v2 skinning
-            // todo support for more than v2
-            const v2Text = <SVGTextElement>svg.child(this.g, "text", { x: 320, y: 90, class: "sim-text" })
+            // display v2 on the corner
+            const v2Text = <SVGTextElement>svg.child(this.g, "text", { x: 450, y: 300, class: "sim-text", title: "v2" })
             v2Text.textContent = "v2";
+
+            // golden head
+            this.updateTheme();
         }
 
         private attachEvents() {

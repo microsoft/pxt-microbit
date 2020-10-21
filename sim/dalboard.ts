@@ -24,7 +24,7 @@ namespace pxsim {
         view: SVGElement;
 
         // board hardware version
-        hardwareVersion = 1;
+        hardwareVersion = 2;
 
         constructor() {
             super()
