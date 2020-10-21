@@ -55,6 +55,7 @@
         "sendbuffer.s",
         "sendbufferbrightness.s",
         "light.cpp",
+        "logo.cpp",
         "parts/speaker.svg",
         "parts/headphone.svg"
     ],
