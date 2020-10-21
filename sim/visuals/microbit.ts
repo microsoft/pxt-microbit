@@ -587,7 +587,7 @@ path.sim-board {
             let state = this.board;
             if (!state || !state.compassState.usesHeading) return;
             if (!this.headInitialized) {
-                let p = this.head.firstChild.nextSibling as SVGPathElement;
+                let p = this.heads[0];
                 p.setAttribute("d", "m269.9,50.134647l0,0l-39.5,0l0,0c-14.1,0.1 -24.6,10.7 -24.6,24.8c0,13.9 10.4,24.4 24.3,24.7l0,0l39.6,0c14.2,0 40.36034,-22.97069 40.36034,-24.85394c0,-1.88326 -26.06034,-24.54606 -40.16034,-24.64606m-0.2,39l0,0l-39.3,0c-7.7,-0.1 -14,-6.4 -14,-14.2c0,-7.8 6.4,-14.2 14.2,-14.2l39.1,0c7.8,0 14.2,6.4 14.2,14.2c0,7.9 -6.4,14.2 -14.2,14.2l0,0l0,0z");
                 this.updateTheme();
                 let pt = this.element.createSVGPoint();
