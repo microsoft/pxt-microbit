@@ -23,6 +23,9 @@ namespace pxsim {
         viewHost: visuals.BoardHost;
         view: SVGElement;
 
+        // board hardware version
+        hardwareVersion = 1;
+
         constructor() {
             super()
 

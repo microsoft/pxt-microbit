@@ -304,6 +304,7 @@ path.sim-board {
         private accTextZ: SVGTextElement;
         public board: pxsim.DalBoard;
         private pinNmToCoord: Map<Coord> = {};
+        private domHardwareVersion = 1;
 
         constructor(public props: IBoardProps) {
             this.recordPinCoords();
@@ -372,16 +373,39 @@ path.sim-board {
         }
 
         public updateState() {
-            let state = this.board;
+            const state = this.board;
             if (!state) return;
-            let theme = this.props.theme;
 
-            let bpState = state.buttonPairState;
-            let buttons = [bpState.aBtn, bpState.bBtn, bpState.abBtn];
+            this.updateHardwareVersion();
+            this.updateButtonPairs();
+            this.updateLEDMatrix();
+            this.updatePins();
+            this.updateTilt();
+            this.updateHeading();
+            this.updateLightLevel();
+            this.updateTemperature();
+            this.updateButtonAB();
+            this.updateGestures();
+            this.updateRSSI();
+
+            if (!this.props.runtime || this.props.runtime.dead)
+                U.addClass(this.element, "grayscale");
+            else
+                U.removeClass(this.element, "grayscale");
+        }
+
+        private updateButtonPairs() {
+            const state = this.board;
+            const theme = this.props.theme;
+            const bpState = state.buttonPairState;
+            const buttons = [bpState.aBtn, bpState.bBtn, bpState.abBtn];
             buttons.forEach((btn, index) => {
                 svg.fill(this.buttons[index], btn.pressed ? theme.buttonDown : theme.buttonUp);
             });
+        }
 
+        private updateLEDMatrix() {
+            const state = this.board;
             if (state.ledMatrixState.disabled) {
                 this.leds.forEach((led, i) => {
                     const sel = (<SVGStyleElement><any>led)
@@ -405,17 +429,6 @@ path.sim-board {
                     }
                 })
             }
-            this.updatePins();
-            this.updateTilt();
-            this.updateHeading();
-            this.updateLightLevel();
-            this.updateTemperature();
-            this.updateButtonAB();
-            this.updateGestures();
-            this.updateRSSI();
-
-            if (!this.props.runtime || this.props.runtime.dead) U.addClass(this.element, "grayscale");
-            else U.removeClass(this.element, "grayscale");
         }
 
         private updateGestures() {
@@ -804,6 +817,7 @@ path.sim-board {
         }
 
         private buildDom() {
+            this.domHardwareVersion = 1;
             this.element = <SVGSVGElement>svg.elt("svg")
             svg.hydrate(this.element, {
                 "version": "1.0",
@@ -945,6 +959,16 @@ path.sim-board {
             svg.path(this.g, "sim-label", "M444.4,378.3h7.4v2.5h-1.5c-0.6,3.3-3,5.5-7.1,5.5c-4.8,0-7.5-3.5-7.5-7.5c0-3.9,2.8-7.5,7.5-7.5c3.8,0,6.4,2.3,6.6,5h-3.5c-0.2-1.1-1.4-2.2-3.1-2.2c-2.7,0-4.1,2.3-4.1,4.7c0,2.5,1.4,4.7,4.4,4.7c2,0,3.2-1.2,3.4-2.7h-2.5V378.3z")
             svg.path(this.g, "sim-label", "M461.4,380.9v-9.3h3.3v14.3h-3.5l-5.2-9.2v9.2h-3.3v-14.3h3.5L461.4,380.9z")
             svg.path(this.g, "sim-label", "M472.7,371.6c4.8,0,7.5,3.5,7.5,7.2s-2.7,7.2-7.5,7.2h-5.3v-14.3H472.7z M470.8,374.4v8.6h1.8c2.7,0,4.2-2.1,4.2-4.3s-1.6-4.3-4.2-4.3H470.8z")
+        }
+
+        private updateHardwareVersion() {
+            const version = this.board.hardwareVersion;
+            if (version === this.domHardwareVersion) return;
+
+            // v2 skinning
+            // todo support for more than v2
+            const v2Text = <SVGTextElement>svg.child(this.g, "text", { x: 320, y: 90, class: "sim-text" })
+            v2Text.textContent = "v2";
         }
 
         private attachEvents() {
