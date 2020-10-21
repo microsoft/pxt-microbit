@@ -1146,7 +1146,7 @@ path.sim-board {
             })
 
             const bpState = this.board.buttonPairState;
-            const stateButtons = [bpState.aBtn, bpState.bBtn, bpState.abBtn, this.board.logoTouch];
+            const stateButtons: Button[] = [bpState.aBtn, bpState.bBtn, bpState.abBtn, this.board.logoTouch];
             const elButtonOuters = this.buttonsOuter.slice(0, 2).concat(this.headParts);
             const elButtons = this.buttons.slice(0, 2).concat(this.headParts);
 
