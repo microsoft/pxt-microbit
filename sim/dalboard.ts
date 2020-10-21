@@ -147,21 +147,22 @@ namespace pxsim {
                 maxHeight: "100%",
                 highContrast: msg.highContrast
             };
-            this.viewHost = new visuals.BoardHost(pxsim.visuals.mkBoardView({
-                visual: boardDef.visual,
-                boardDef: boardDef,
-                highContrast: msg.highContrast
-            }), opts);
 
             if (opts.partsList) {
                 const v2 = opts.partsList.indexOf("microphone") > -1
                     || opts.partsList.indexOf("logotouch") > -1
-                    || opts.partsList.indexOf("speaker") > -1;
+                    || opts.partsList.indexOf("v2") > -1;
                 if (v2) {
                     console.log(`detected v2 feature`);
                     this.hardwareVersion = 2;
                 }
             }
+
+            this.viewHost = new visuals.BoardHost(pxsim.visuals.mkBoardView({
+                visual: boardDef.visual,
+                boardDef: boardDef,
+                highContrast: msg.highContrast
+            }), opts);
 
             document.body.innerHTML = ""; // clear children
             document.body.appendChild(this.view = this.viewHost.getView());
