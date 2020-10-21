@@ -303,6 +303,8 @@ path.sim-board {
         private accTextX: SVGTextElement;
         private accTextY: SVGTextElement;
         private accTextZ: SVGTextElement;
+        private v2Circle: SVGCircleElement
+        private v2Text: SVGTextElement;
         public board: pxsim.DalBoard;
         private pinNmToCoord: Map<Coord> = {};
         private domHardwareVersion = 1;
@@ -367,7 +369,7 @@ path.sim-board {
             svg.fills(this.logos, theme.accent);
             if (this.domHardwareVersion > 1)
                 svg.fills(this.heads, "gold");
-            else 
+            else
                 svg.fills(this.heads, theme.accent);
             if (this.shakeButton) svg.fill(this.shakeButton, theme.virtualButtonUp);
 
@@ -375,6 +377,7 @@ path.sim-board {
             svg.setGradientColors(this.lightLevelGradient, theme.lightLevelOn, theme.lightLevelOff);
 
             svg.setGradientColors(this.thermometerGradient, theme.ledOff, theme.ledOn);
+            this.positionV2Elements();
         }
 
         public updateState() {
@@ -973,9 +976,14 @@ path.sim-board {
 
             this.domHardwareVersion = this.board.hardwareVersion;
             // v2 skinning
-            // display v2 on the corner
-            const v2Text = <SVGTextElement>svg.child(this.g, "text", { x: 450, y: 300, class: "sim-text", title: "v2" })
-            v2Text.textContent = "v2";
+            // display v2 indicator
+            this.v2Circle = <SVGCircleElement>svg.child(this.g, "circle", { r: 20 });
+            svg.fill(this.v2Circle, "gold");
+            this.v2Text = <SVGTextElement>svg.child(this.g, "text", { class: "sim-text", title: "v2" });
+            this.positionV2Elements();
+            this.v2Text.textContent = "v2";
+            svg.fill(this.v2Text, "black");
+            this.v2Text.style.fontWeight = "700";
 
             // golden head
             this.updateTheme();
@@ -992,6 +1000,19 @@ path.sim-board {
 
             // outline
             this.pkg.setAttribute("d", "M 498 31.9 C 498 14.3 483.7 0 466.1 0 H 31.9 C 14.3 0 0 14.3 0 31.9 v 342.2 C 0 391.7 21 405 23 406 l 3 -9 l 30 0 l 3 9 h 7 h 50 h 7 l 3 -9 l 27 0 l 3 9 h 7 h 63 h 7 l 3 -9 l 27 0 l 3 9 h 7 h 64 h 7 l 3 -9 l 27 0 l 3 9 h 7 h 51 h 5 l 3 -9 l 29 0 l 3 9 h 0 c 9 0 23 -17 23 -31 V 31.9 z M 14.3 206.7 c -2.7 0 -4.8 -2.2 -4.8 -4.8 c 0 -2.7 2.2 -4.8 4.8 -4.8 c 2.7 0 4.8 2.2 4.8 4.8 C 19.2 204.6 17 206.7 14.3 206.7 z M 486.2 206.7 c -2.7 0 -4.8 -2.2 -4.8 -4.8 c 0 -2.72 0.2 -4.8 4.8 -4.8 c 2.7 0 4.8 2.2 4.8 4.8 C 491 204.6 488.8 206.7 486.2 206.7 z")
+        }
+
+        private positionV2Elements() {
+            if (this.v2Circle && this.v2Text) {
+                const offsetFromAB = !!this.board?.buttonPairState.usesButtonAB;
+                const x = offsetFromAB ? 385 : 458;
+                const y = offsetFromAB ? 300 : 290;
+
+                this.v2Circle.setAttribute("cx", "" + x);
+                this.v2Circle.setAttribute("cy", "" + y);
+                this.v2Text.setAttribute("x", `${x - 15}`);
+                this.v2Text.setAttribute("y", `${y + 8}`);
+            }
         }
 
         private attachEvents() {
