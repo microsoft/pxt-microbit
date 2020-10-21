@@ -151,7 +151,7 @@ namespace pxsim {
             if (opts.partsList) {
                 const v2 = opts.partsList.indexOf("microphone") > -1
                     || opts.partsList.indexOf("logotouch") > -1
-                    || opts.partsList.indexOf("v2") > -1;
+                    || opts.partsList.indexOf("onboardspeaker") > -1;
                 if (v2) {
                     console.log(`detected v2 feature`);
                     this.hardwareVersion = 2;
