@@ -1,5 +1,9 @@
 #include "pxt.h"
 
+#ifndef MICROBIT_CODAL
+#define MICROBIT_CODAL 121
+#endif
+
 enum class TouchMode {
     //% block="capacitative"
     Capacitative = 1,
