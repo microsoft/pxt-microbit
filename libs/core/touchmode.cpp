@@ -43,7 +43,7 @@ namespace pins {
             ? &uBit.io.logo : getPin((int)name);
         if (pin) {
             pin->isTouched(mode == TouchTargetMode::Capacitative 
-                ? TouchTargetMode::Capacitative : TouchTargetMode::Resistive);
+                ? codal::TouchMode::Capacitative : codal::TouchMode::Resistive);
         }
     #else
         target_panic(PANIC_VARIANT_NOT_SUPPORTED);
