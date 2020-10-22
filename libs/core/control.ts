@@ -105,6 +105,28 @@ namespace control {
      */
     //% shim=pxtrt::runtimeWarning
     export function runtimeWarning(message: string) { }
+
+    //% shim=pxt::programHash
+    export declare function programHash(): number;
+
+    //% shim=pxt::programName
+    export declare function programName(): string;
+
+    /** Returns estimated size of memory in bytes. */
+    //% shim=control::_ramSize
+    export function ramSize() {
+        return 32 * 1024 * 1024;
+    }
+
+    /** Runs the function and returns run time in microseconds. */
+    export function benchmark(f: () => void) {
+        const t0 = micros()
+        f()
+        let t = micros() - t0
+        if (t < 0)
+            t += 0x3fffffff
+        return t
+    }
 }
 
 /**
