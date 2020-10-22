@@ -291,6 +291,7 @@ path.sim-board {
         private pinTexts: SVGTextElement[];
         private ledsOuter: SVGElement[];
         private leds: SVGElement[];
+        private microphoneLed: SVGElement;
         private systemLed: SVGCircleElement;
         private antenna: SVGPolylineElement;
         private rssi: SVGTextElement;
@@ -364,6 +365,8 @@ path.sim-board {
             svg.fill(this.display, theme.display);
             svg.fills(this.leds, theme.ledOn);
             svg.fills(this.ledsOuter, theme.ledOff);
+            if (this.microphoneLed)
+                svg.fills([this.microphoneLed], theme.ledOn);
             svg.fills(this.buttonsOuter.slice(0, 2), theme.buttonOuter);
             svg.fills(this.buttons.slice(0, 2), theme.buttonUp);
             svg.fill(this.buttonsOuter[2], theme.virtualButtonOuter);
@@ -997,10 +1000,8 @@ path.sim-board {
             this.v2Text.style.fontWeight = "700";
 
             // golden head and position v2 symbol
-            const headTitle = pxsim.localization.lf("micro:bit v2 needed to use logo touch")
+            const headTitle = pxsim.localization.lf("logo touch (micro:bit v2 needed)")
             svg.title(this.headParts, headTitle);
-
-            this.updateTheme();
 
             // update pins
             // notch: 46.2 -> h 7 c 0 0 -1 -9 8 -8 l 18 0 c 0 0 9 -1 8 8 h 7
@@ -1016,6 +1017,14 @@ path.sim-board {
             this.pkg.setAttribute("d", "M 498 31.9 C 498 14.3 483.7 0 466.1 0 H 31.9 C 14.3 0 0 14.3 0 31.9 v 342.2 C -1 399 21 405 23 406 c 0 0 -1 -9 8 -8 l 18 0 c 0 0 9 -1 8 8 h 7 h 50 h 7 c 0 0 -1 -9 8 -8 l 18 0 c 0 0 9 -1 8 8 h 7 h 63 h 7 c 0 0 -1 -9 8 -8 l 18 0 c 0 0 9 -1 8 8 h 7 h 64 h 7 c 0 0 -1 -9 8 -8 l 18 0 c 0 0 9 -1 8 8 h 7 h 51 h 5 c 0 0 -1 -9 8 -8 l 18 0 c 0 0 9 -1 8 8 h 0 c 9 0 23 -17 23 -31 V 31.9 z M 14.3 206.7 c -2.7 0 -4.8 -2.2 -4.8 -4.8 c 0 -2.7 2.2 -4.8 4.8 -4.8 c 2.7 0 4.8 2.2 4.8 4.8 C 19.2 204.6 17 206.7 14.3 206.7 z M 486.2 206.7 c -2.7 0 -4.8 -2.2 -4.8 -4.8 c 0 -2.72 0.2 -4.8 4.8 -4.8 c 2.7 0 4.8 2.2 4.8 4.8 C 491 204.6 488.8 206.7 486.2 206.7 z")
 
             // microphone LED
+            const microphoneTitle = pxsim.localization.lf("microphone (microbit:v2 needed)")
+            this.microphoneLed = svg.child(this.g, "rect", { class: "sim-led", x: 350, y: 70, width: 14, height: 24, rx: 3, ry: 3, title: microphoneTitle });
+            svg.filter(this.microphoneLed, `url(#ledglow)`);
+            (this.microphoneLed.style as any).transformBox = 'fill-box';
+            this.microphoneLed.style.transformOrigin = '50% 50%';
+            this.microphoneLed.style.transform = `scale(0.7)`;
+
+            this.updateTheme();
         }
 
         private positionV2Elements() {
