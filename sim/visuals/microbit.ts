@@ -1089,7 +1089,6 @@ path.sim-board {
             // v2 skinning
             // don't use yellow theme
             if (this.props.theme.accent === "#FFD43A") {
-                console.log(`yellow theme detected`)
                 this.props.theme = themes[0];
             }
 
