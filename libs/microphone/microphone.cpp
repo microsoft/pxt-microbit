@@ -8,28 +8,44 @@
 #define MICROPHONE_MIN 52.0f
 #define MICROPHONE_MAX 120.0f
 
+enum class DetectedSound {
+    //% block="loud"
+    Loud = 0,
+    //% block="quiet"
+    Quiet = 1
+};
+
+enum class SoundThreshold {
+    //% block="loud"
+    Loud = 0,
+    //% block="quiet"
+    Quiet = 1
+};
+
 namespace pxt {
 #if MICROBIT_CODAL
     codal::LevelDetectorSPL* getMicrophoneLevel();
-#endif   
+#endif
 }
 
 namespace input {
+
 /**
-* Registers an event that runs when a loud sound is detected
+* Registers an event that runs when a sound is detected
 */
-//% help=input/on-loud-sound
-//% blockId=input_on_loud_sound block="on loud sound"
+//% help=input/on-sound
+//% blockId=input_on_sound block="on %sound sound"
 //% parts="microphone"
 //% weight=88 blockGap=12
 //% group="micro:bit v2"
-void onLoudSound(Action handler) {
+void onSound(DetectedSound sound, Action handler) {
 #if MICROBIT_CODAL
     pxt::getMicrophoneLevel(); // wake up service
-    registerWithDal(DEVICE_ID_MICROPHONE, LEVEL_THRESHOLD_HIGH, handler);
+    const auto thresholdType = sound == DetectedSound::Loud ? LEVEL_THRESHOLD_HIGH : LEVEL_THRESHOLD_LOW;
+    registerWithDal(DEVICE_ID_MICROPHONE, thresholdType, handler);
 #else
     target_panic(PANIC_VARIANT_NOT_SUPPORTED);
-#endif    
+#endif
 }
 
 /**
@@ -51,30 +67,32 @@ int soundLevel() {
 #else
     target_panic(PANIC_VARIANT_NOT_SUPPORTED);
     return 0;
-#endif    
+#endif
 }
 
 /**
-* Sets the minimum threshold for a loud sound
+* Sets the threshold for a sound type.
 */
-//% help=input/set-loud-sound-threshold
-//% blockId=input_set_loud_sound_threshold block="set loud sound threshold %value"
+//% blockId=input_set_sound_threshold block="set %sound sound threshold to %value"
 //% parts="microphone"
-//% value.min=1 value.max=255
+//% threshold.min=0 threshold.max=255 threshold.defl=128
 //% weight=14 blockGap=8
+//% advanced=true
 //% group="micro:bit v2"
-void setLoudSoundThreshold(int value) {
+void setSoundThreshold(SoundThreshold sound, int threshold) {
 #if MICROBIT_CODAL
     auto level = pxt::getMicrophoneLevel();
     if (NULL == level)
         return;
 
-    auto threshold = max(0, min(0xff, value));
+    threshold = max(0, min(0xff, threshold));
     const int scaled = MICROPHONE_MIN + threshold * (MICROPHONE_MAX - MICROPHONE_MIN) / 0xff;
-    level->setHighThreshold(scaled);
+    if (sound == SoundThreshold::Loud)
+        level->setHighThreshold(scaled);
+    else
+        level->setLowThreshold(scaled);
 #else
     target_panic(PANIC_VARIANT_NOT_SUPPORTED);
 #endif
 }
-
 }
