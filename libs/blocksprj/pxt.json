@@ -2,7 +2,8 @@
     "name": "{0} block",
     "dependencies": {
         "core": "file:../core",
-        "radio": "file:../radio"
+        "radio": "file:../radio",
+        "microphone": "file:../microphone"
     },
     "description": "",
     "files": [
