@@ -43,6 +43,7 @@ namespace pxt {
 
 MicroBit uBit;
 MicroBitEvent lastEvent;
+bool serialLoggingDisabled;
 
 void platform_init() {
     microbit_seed_random();    
@@ -167,7 +168,8 @@ int current_time_ms() {
 }
 
 static void logwriten(const char *msg, int l) {
-    uBit.serial.send((uint8_t *)msg, l);
+    if (!serialLoggingDisabled)
+        uBit.serial.send((uint8_t *)msg, l);
 }
 
 static void logwrite(const char *msg) {

@@ -45,6 +45,7 @@ typedef RefMImage *Image;
 
 extern MicroBit uBit;
 extern MicroBitEvent lastEvent;
+extern bool serialLoggingDisabled;
 
 MicroBitPin *getPin(int id);
 
