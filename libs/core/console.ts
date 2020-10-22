@@ -1,15 +1,51 @@
 /// <reference no-default-lib="true"/>
 
+enum ConsolePriority {
+    Debug = 0,
+    Log = 1,
+    Warning = 2,
+    Error = 3,
+    Silent = 4
+}
+
 /**
  * Reading and writing data to the console output.
  */
 //% weight=12 color=#002050 icon="\uf120"
 //% advanced=true
 namespace console {
-    type Listener = (text: string) => void;
+    type Listener = (priority: ConsolePriority, text: string) => void;
 
-    //% whenUsed
-    let listeners: Listener[] = undefined;
+    /**
+     * Minimum priority to send messages to listeners
+     */
+    export let minPriority = ConsolePriority.Log;
+
+    let listeners: Listener[]
+
+    export function add(priority: ConsolePriority, message: any) {
+        if (priority < minPriority) return;
+        let text = inspect(message);
+        // add new line
+        text += "\n";
+        control.__log(text)
+        // send to listeners
+        if (listeners)
+            for (let i = 0; i < listeners.length; ++i)
+                listeners[i](priority, text);
+    }
+
+    export function debug(text: any) {
+        add(ConsolePriority.Debug, text);
+    }
+
+    export function warn(text: any) {
+        add(ConsolePriority.Warning, text);
+    }
+
+    export function error(text: any) {
+        add(ConsolePriority.Error, text);
+    }
 
     /**
      * Write a line of text to the console output.
@@ -17,15 +53,8 @@ namespace console {
      */
     //% weight=90
     //% help=console/log blockGap=8
-    export function log(text: any): void {
-        let stringified = inspect(text);
-        // pad text on the 32byte boundar
-        stringified += "\r\n";
-        control.__log(stringified);
-        // send to listeners
-        if (listeners)
-            for (let i = 0; i < listeners.length; ++i)
-                listeners[i](stringified);
+    export function log(value: any): void {
+        add(ConsolePriority.Log, value);
     }
 
     /**
@@ -35,21 +64,8 @@ namespace console {
      */
     //% weight=88 blockGap=8
     //% help=console/log-value
-    export function logValue(name: any, value: number): void {
-        const nameText = inspect(name);
-        log(nameText ? `${nameText}: ${value}` : `${value}`)
-    }
-
-    /**
-     * Adds a listener for the log messages
-     * @param listener
-     */
-    //%
-    export function addListener(listener: (text: string) => void) {
-        if (!listener) return;
-        if (!listeners)
-            listeners = [];
-        listeners.push(listener);
+    export function logValue(name: any, value: any): void {
+        log(name ? `${inspect(name)}: ${inspect(value)}` : `${inspect(value)}`)
     }
 
     /**
@@ -82,13 +98,35 @@ namespace console {
                 keys = keys.slice(0, maxElements);
             }
 
-            return `{${
-                keys.reduce(
-                    (prev, currKey) => prev + `\n    ${currKey}: ${obj[currKey]}`,
-                    ""
-                ) + (snipped ? "\n    ..." : "")
-            }
+            return `{${keys.reduce(
+                (prev, currKey) => prev + `\n    ${currKey}: ${obj[currKey]}`,
+                ""
+            ) + (snipped ? "\n    ..." : "")
+                }
 }`;
         }
+    }
+
+    /**
+     * Adds a listener for the log messages
+     * @param listener
+     */
+    //%
+    export function addListener(listener: (priority: ConsolePriority, text: string) => void) {
+        if (!listeners) listeners = []
+        if (!listener || listeners.indexOf(listener) > -1) return;
+        listeners.push(listener);
+    }
+
+    /**
+     * Removes a listener
+     * @param listener
+     */
+    //%
+    export function removeListener(listener: (priority: ConsolePriority, text: string) => void) {
+        if (!listener || !listeners) return;
+        const i = listeners.indexOf(listener);
+        if (i > -1)
+            listeners.splice(i, 1);
     }
 }
