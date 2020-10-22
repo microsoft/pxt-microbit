@@ -343,6 +343,15 @@ namespace control {
         return microbit_serial_number();
     }
 
+   /**
+    * Derive a unique, consistent 64-bit serial number of this device from internal data.
+    */
+    //% help=control/device-long-serial-number
+    //% advanced=true
+    Buffer deviceLongSerialNumber() {
+        return mkBuffer((uint8_t*)&NRF_FICR->DEVICEID[0], sizeof(uint64_t));
+    }
+
     /**
     * Informs simulator/runtime of a MIDI message
     * Internal function to support the simulator.

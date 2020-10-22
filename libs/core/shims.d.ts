@@ -452,6 +452,13 @@ declare namespace control {
     function deviceSerialNumber(): int32;
 
     /**
+     * Derive a unique, consistent 64-bit serial number of this device from internal data.
+     */
+    //% help=control/device-long-serial-number
+    //% advanced=true shim=control::deviceLongSerialNumber
+    function deviceLongSerialNumber(): Buffer;
+
+    /**
      * Informs simulator/runtime of a MIDI message
      * Internal function to support the simulator.
      */
