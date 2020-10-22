@@ -1,14 +1,21 @@
 // move to common packages eventually
 namespace pxsim.input {
+    export function soundLevel(): number {
+        const b = microphoneState();
+        if (!b) return 0;
+        b.setUsed();
+        return b.getLevel();
+    }
+
     export function onSound(sound: number, body: RefAction) {
-        let b = microphoneState();
+        const b = microphoneState();
         if (!b) return;
         b.setUsed();
         pxtcore.registerWithDal(b.id, sound, body);
     }
 
     export function setSoundThreshold(sound: number, threshold: number){
-        let b = microphoneState();
+        const b = microphoneState();
         if (!b) return;
         b.setUsed();
         if (sound === 0 /* SoundThreshold.Loud */)

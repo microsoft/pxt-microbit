@@ -90,7 +90,7 @@ namespace pxsim {
                 ID_RADIO: DAL.MICROBIT_ID_RADIO,
                 RADIO_EVT_DATAGRAM: DAL.MICROBIT_RADIO_EVT_DATAGRAM
             });
-            this.builtinParts["microphone"] = this.microphoneState = new AnalogSensorState(3001 /* DEVICE_ID_MICROPHONE */, 52, 120, 75, 96);
+            this.builtinParts["microphone"] = this.microphoneState = new AnalogSensorState(DAL.DEVICE_ID_MICROPHONE, 0, 255, 86, 165);
             this.builtinParts["accelerometer"] = this.accelerometerState = new AccelerometerState(runtime);
             this.builtinParts["serial"] = this.serialState = new SerialState();
             this.builtinParts["thermometer"] = this.thermometerState = new ThermometerState();
