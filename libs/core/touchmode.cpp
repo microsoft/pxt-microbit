@@ -1,6 +1,7 @@
 #include "pxt.h"
 
-#ifndef MICROBIT_CODAL
+#if MICROBIT_CODAL
+#else
 #define MICROBIT_CODAL 121
 #endif
 
@@ -35,6 +36,7 @@ namespace pins {
     //% blockId=device_touch_set_type block="set %name to touch mode %mode"
     //% advanced=true
     //% group="micro:bit v2"
+    //% help=input/touch-set-mode
     void touchSetMode(TouchTarget name, TouchMode mode) {
     #if MICROBIT_CODAL
         const auto pin = name == TouchTarget::LOGO 
