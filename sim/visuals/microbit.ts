@@ -481,8 +481,7 @@ path.sim-board {
         private updateMicrophone() {
             const b = board();
             if (!b 
-                || !b.microphoneState.sensorUsed 
-                || this.microphoneLed)
+                || !b.microphoneState.sensorUsed)
                 return;
 
             if (!this.microphoneLed) {
@@ -656,15 +655,9 @@ path.sim-board {
                         let charCode = (typeof ev.which == "number") ? ev.which : ev.keyCode
                         if (charCode === 40 || charCode === 37) { // Down/Left arrow
                             state.microphoneState.setLevel(state.microphoneState.getLevel() - 1);
-                            if (state.microphoneState.getLevel() < tmin) {
-                                state.microphoneState.setLevel(tmax);
-                            }
                             this.updateMicrophone();
                         } else if (charCode === 38 || charCode === 39) { // Up/Right arrow
                             state.microphoneState.setLevel(state.microphoneState.getLevel() + 1)
-                            if (state.microphoneState.getLevel() > tmax) {
-                                state.microphoneState.setLevel(tmin);
-                            }
                             this.updateMicrophone();
                         }
                     })
@@ -1133,6 +1126,13 @@ path.sim-board {
                 this.v2Circle.setAttribute("cy", "" + y);
                 this.v2Text.setAttribute("x", `${x - 15}`);
                 this.v2Text.setAttribute("y", `${y + 8}`);
+            }
+
+            if (this.soundLevel) {
+                // hide A+B text
+                this.buttonABText.setAttribute("x", "386")
+                this.buttonABText.setAttribute("y", "274")
+                this.buttonABText.style.fontSize = "95%"
             }
         }
 
