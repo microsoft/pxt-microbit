@@ -71,10 +71,7 @@ void setLoudSoundThreshold(int value) {
 
     threshold = max(0, min(0xff, threshold));
     const int scaled = MICROPHONE_MIN + threshold * (MICROPHONE_MAX - MICROPHONE_MIN) / 0xff;
-    if (sound == SoundThreshold::Loud)
-        level->setHighThreshold(scaled);
-    else
-        level->setLowThreshold(scaled);
+    level->setHighThreshold(scaled);
 #else
     target_panic(PANIC_VARIANT_NOT_SUPPORTED);
 #endif
