@@ -285,7 +285,11 @@
                 "speaker",
                 "bluetooth",
                 "thermometer",
-                "compass"
+                "compass",
+
+                "onboardspeaker",
+                "microphone",
+                "logotouch"
             ],
             "pinStyles": {
                 "P0": "croc",

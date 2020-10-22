@@ -111,7 +111,7 @@ namespace pxsim {
             this.builtinPartVisuals["ledmatrix"] = (xy: visuals.Coord) => visuals.mkLedMatrixSvg(xy, 8, 8);
             this.builtinPartVisuals["microservo"] = (xy: visuals.Coord) => visuals.mkMicroServoPart(xy);
         }
-        
+
         ensureHardwareVersion(version: number) {
             if (version > this.hardwareVersion) {
                 this.hardwareVersion = version;
@@ -146,6 +146,16 @@ namespace pxsim {
             const cmpDefs = msg.partDefinitions || {};
             const fnArgs = msg.fnArgs;
 
+            const v2Parts: pxt.Map<boolean> = { "microphone": true, "logotouch": true, "onboardspeaker": true };
+            if (msg.builtinParts) {
+                const v2PartsUsed = msg.builtinParts.filter(k => v2Parts[k])
+                if (v2PartsUsed.length) {
+                    console.log(`detected v2 feature`, v2PartsUsed);
+                    cmpsList.push(...v2PartsUsed);
+                    this.hardwareVersion = 2;
+                }
+            }
+
             const opts: visuals.BoardHostOpts = {
                 state: this,
                 boardDef: boardDef,
@@ -156,15 +166,6 @@ namespace pxsim {
                 maxHeight: "100%",
                 highContrast: msg.highContrast
             };
-
-            const v2Parts: pxt.Map<boolean> = { "microphone": true, "logotouch": true, "onboardspeaker": true };
-            if (opts.partsList) {
-                const v2 = opts.partsList.some(k => v2Parts[k])
-                if (v2) {
-                    console.log(`detected v2 feature`, opts.partsList);
-                    this.hardwareVersion = 2;
-                }
-            }
 
             this.viewHost = new visuals.BoardHost(pxsim.visuals.mkBoardView({
                 visual: boardDef.visual,
