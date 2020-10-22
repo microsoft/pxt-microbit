@@ -563,7 +563,7 @@ declare namespace serial {
 }
 
 
-    declare const enum TouchMode {
+    declare const enum TouchTargetMode {
     //% block="capacitative"
     Capacitative = 1,
     //% block="resistive"

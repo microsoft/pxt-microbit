@@ -1144,7 +1144,7 @@ declare namespace pins {
     //% advanced=true
     //% group="micro:bit v2"
     //% help=input/touch-set-mode shim=pins::touchSetMode
-    function touchSetMode(name: TouchTarget, mode: TouchMode): void;
+    function touchSetMode(name: TouchTarget, mode: TouchTargetMode): void;
 }
 
 // Auto-generated. Do not edit. Really.

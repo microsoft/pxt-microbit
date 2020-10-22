@@ -5,7 +5,7 @@
 #define MICROBIT_CODAL 121
 #endif
 
-enum class TouchMode {
+enum class TouchTargetMode {
     //% block="capacitative"
     Capacitative = 1,
     //% block="resistive"
@@ -37,13 +37,13 @@ namespace pins {
     //% advanced=true
     //% group="micro:bit v2"
     //% help=input/touch-set-mode
-    void touchSetMode(TouchTarget name, TouchMode mode) {
+    void touchSetMode(TouchTarget name, TouchTargetMode mode) {
     #if MICROBIT_CODAL
         const auto pin = name == TouchTarget::LOGO 
             ? &uBit.io.logo : getPin((int)name);
         if (pin) {
-            pin->isTouched(mode == TouchMode::Capacitative 
-                ? TouchMode::Capacitative : TouchMode::Resistive);
+            pin->isTouched(mode == TouchTargetMode::Capacitative 
+                ? TouchTargetMode::Capacitative : TouchTargetMode::Resistive);
         }
     #else
         target_panic(PANIC_VARIANT_NOT_SUPPORTED);
