@@ -69,7 +69,7 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
     private pbuf = new pxt.U.PromiseBuffer<Uint8Array>();
     private pageSize = 1024;
     private numPages = 256;
-    private binName = pxtc.BINARY_HEX;
+    private usesCODAL = false;
 
     constructor(public readonly io: pxt.packetio.PacketIO) {
         this.familyID = 0x0D28; // this is the microbit vendor id, not quite UF2 family id
@@ -153,6 +153,10 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
         }
     }
 
+    get binName() {
+        return (this.usesCODAL ? "mbcodal-" : "") + pxtc.BINARY_HEX;
+    }
+
     reconnectAsync(): Promise<void> {
         log(`reconnect`)
         // configure serial at 115200
@@ -161,7 +165,7 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
             .then(() => this.cortexM.init())
             .then(() => this.cmsisdap.cmdNums(0x80, []))
             .then(r => {
-                this.binName = (r[2] == 57 && r[3] == 57 && r[5] >= 51 ? "mbcodal-" : "") + pxtc.BINARY_HEX
+                this.usesCODAL = r[2] == 57 && r[3] == 57 && r[5] >= 51;
                 log(`bin name: ${this.binName}`)
             })
             .then(() => this.cortexM.memory.readBlock(0x10000010, 2, this.pageSize))
@@ -212,6 +216,7 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
             })
             .then((res) => {
                 const binFile = resp.outfiles[this.binName];
+                log(`bin file ${this.binName}, ${binFile?.length || -1}b`)
                 const hexUint8 = pxt.U.stringToUint8Array(binFile);
                 const hexArray: number[] = Array.prototype.slice.call(hexUint8);
 
@@ -219,6 +224,7 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
                     const end = Math.min(hexArray.length, offset + chunkSize);
                     const nextPage = hexArray.slice(offset, end);
                     nextPage.unshift(nextPage.length);
+                    log(`next page [${offset.toString(16)}, ${end.toString(16)}] (${nextPage.length - end}b left)`)
                     return this.cmsisdap.cmdNums(0x8C /* DAPLinkFlash.WRITE */, nextPage)
                         .then(() => {
                             if (!aborted && end < hexArray.length) {
