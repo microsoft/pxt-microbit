@@ -157,12 +157,11 @@ namespace pxsim {
                 highContrast: msg.highContrast
             };
 
+            const v2Parts: pxt.Map<boolean> = { "microphone": true, "logotouch": true, "onboardspeaker": true };
             if (opts.partsList) {
-                const v2 = opts.partsList.indexOf("microphone") > -1
-                    || opts.partsList.indexOf("logotouch") > -1
-                    || opts.partsList.indexOf("onboardspeaker") > -1;
+                const v2 = opts.partsList.some(k => v2Parts[k])
                 if (v2) {
-                    console.log(`detected v2 feature`);
+                    console.log(`detected v2 feature`, opts.partsList);
                     this.hardwareVersion = 2;
                 }
             }
