@@ -37,3 +37,12 @@ namespace pxsim.input {
         return b.logoTouch.pressed;
     }
 }
+
+namespace pxsim.pins {
+    export function touchSetMode(name: number, mode: number) {
+        const b = board();
+        if (b)
+            b.ensureHardwareVersion(2);
+        // not simulated
+    }
+}

@@ -57,6 +57,7 @@
         "sendbufferbrightness.s",
         "light.cpp",
         "logo.cpp",
+        "touchmode.cpp",
         "parts/speaker.svg",
         "parts/headphone.svg"
     ],

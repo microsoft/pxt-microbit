@@ -1130,5 +1130,20 @@ declare namespace input {
     //% help="input/is-logo-pressed" shim=input::logoIsPressed
     function logoIsPressed(): boolean;
 }
+declare namespace pins {
+
+    /**
+     * Configure the touch detection for the pins and logo.
+     * P0, P1, P2 use resistive touch by default.
+     * The logo uses capacitative touch by default.
+     * @param name target to change the touch mode for
+     * @param mode the touch mode to use
+     */
+    //% weight=60
+    //% blockId=device_touch_set_type block="set %name to touch mode %mode"
+    //% advanced=true
+    //% group="micro:bit v2" shim=pins::touchSetMode
+    function touchSetMode(name: TouchTarget, mode: TouchMode): void;
+}
 
 // Auto-generated. Do not edit. Really.
