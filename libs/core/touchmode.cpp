@@ -2,7 +2,7 @@
 
 #if MICROBIT_CODAL
 #else
-#define MICROBIT_CODAL 121
+#define MICROBIT_ID_LOGO 121
 #endif
 
 enum class TouchTargetMode {
