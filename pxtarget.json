@@ -104,6 +104,14 @@
                         "DisplayMode\\s*\\.\\s*BackAndWhite": "DisplayMode.BlackAndWhite"
                     }
                 }
+            ],
+            "0.0.0 - 3.1.10": [
+                {
+                    "type": "package",
+                    "map": {
+                        "pxt-microbit-v2-extension": "microphone"
+                    }
+                }
             ]
         },
         "hidSelectors": [
