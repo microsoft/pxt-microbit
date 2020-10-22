@@ -12,7 +12,8 @@
         "libs/bluetooth",
         "libs/servo",
         "libs/radio-broadcast",
-        "libs/microphone"
+        "libs/microphone",
+        "libs/settings"
     ],
     "cloud": {
         "workspace": false,

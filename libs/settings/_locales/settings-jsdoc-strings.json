@@ -1,0 +1,16 @@
+{
+  "settings.clear": "Delete all non-system settings.",
+  "settings.deviceSecrets": "Secrets shared by any program on the device",
+  "settings.exists": "Check if a named setting exists.",
+  "settings.list": "Return a list of settings starting with a given prefix.",
+  "settings.programSecrets": "Program secrets",
+  "settings.readBuffer": "Read named setting as a buffer. Returns undefined when setting not found.",
+  "settings.readNumber": "Read named setting as a number.",
+  "settings.readNumberArray": "Read named setting as a number.",
+  "settings.readString": "Read named setting as a string.",
+  "settings.remove": "Remove named setting.",
+  "settings.writeBuffer": "Set named setting to a given buffer.",
+  "settings.writeNumber": "Set named settings to a given number.",
+  "settings.writeNumberArray": "Set named settings to a given array of numbers.",
+  "settings.writeString": "Set named settings to a given string."
+}
