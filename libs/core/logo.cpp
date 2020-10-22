@@ -17,6 +17,22 @@ namespace input {
 #endif
     }
 
+    /**
+     * Do something when the logo is released.
+     * @param body the code to run when the logo is released
+     */
+    //% weight=6 blockGap=16
+    //% blockId=input_logo_released block="on logo released"
+    //% advanced=true
+    //% group="micro:bit v2"
+    //% parts="logotouch"
+    void onLogoReleased(Action body) {
+#if MICROBIT_CODAL
+        registerWithDal(uBit.logo.id, MICROBIT_BUTTON_EVT_UP, body);
+#else
+        target_panic(PANIC_VARIANT_NOT_SUPPORTED);
+#endif
+    }
 
     /**
      * Get the logo state (pressed or not).
