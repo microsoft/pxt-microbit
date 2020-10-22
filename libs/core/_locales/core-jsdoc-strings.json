@@ -414,6 +414,8 @@
   "input.onLogoDown|param|body": "TODO",
   "input.onLogoPressed": "Do something when the logo is touched and released again.",
   "input.onLogoPressed|param|body": "the code to run when the logo is pressed",
+  "input.onLogoReleased": "Do something when the logo is released.",
+  "input.onLogoReleased|param|body": "the code to run when the logo is released",
   "input.onLogoUp": "Attaches code to run when the logo is oriented upwards and the board is vertical.",
   "input.onLogoUp|param|body": "TODO",
   "input.onPinPressed": "Do something when a pin is touched and released again (while also touching the GND pin).",

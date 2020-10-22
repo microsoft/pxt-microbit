@@ -318,6 +318,7 @@
   "input.onButtonPressed|block": "on button|%NAME|pressed",
   "input.onGesture|block": "on |%NAME",
   "input.onLogoPressed|block": "on logo pressed",
+  "input.onLogoReleased|block": "on logo released",
   "input.onPinPressed|block": "on pin %name|pressed",
   "input.onPinReleased|block": "on pin %NAME|released",
   "input.pinIsPressed|block": "pin %NAME|is pressed",

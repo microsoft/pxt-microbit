@@ -9,6 +9,7 @@ namespace input {
     //% blockId=input_logo_event block="on logo pressed"
     //% group="micro:bit v2"
     //% parts="logotouch"
+    //% help="input/on-logo-pressed"
     void onLogoPressed(Action body) {
 #if MICROBIT_CODAL
         registerWithDal(uBit.logo.id, MICROBIT_BUTTON_EVT_CLICK, body);
@@ -26,6 +27,7 @@ namespace input {
     //% advanced=true
     //% group="micro:bit v2"
     //% parts="logotouch"
+    //% help="input/on-logo-released"
     void onLogoReleased(Action body) {
 #if MICROBIT_CODAL
         registerWithDal(uBit.logo.id, MICROBIT_BUTTON_EVT_UP, body);
@@ -42,6 +44,7 @@ namespace input {
     //% blockGap=8
     //% group="micro:bit v2"
     //% parts="logotouch"
+    //% help="input/is-logo-pressed"
     bool logoIsPressed() {
 #if MICROBIT_CODAL
         return uBit.io.logo.isTouched();
