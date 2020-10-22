@@ -69,7 +69,7 @@ void setLoudSoundThreshold(int value) {
     if (NULL == level)
         return;
 
-    threshold = max(0, min(0xff, threshold));
+    auto threshold = max(0, min(0xff, value));
     const int scaled = MICROPHONE_MIN + threshold * (MICROPHONE_MAX - MICROPHONE_MIN) / 0xff;
     level->setHighThreshold(scaled);
 #else
