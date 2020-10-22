@@ -506,6 +506,7 @@ path.sim-board {
                 this.buttonABText = svg.child(this.g, "text", { class: "sim-text", x: 370, y: 272 }) as SVGTextElement;
                 this.buttonABText.textContent = "A+B";
                 this.updateTheme();
+                this.positionV2Elements();
             }
         }
 
@@ -1128,7 +1129,7 @@ path.sim-board {
                 this.v2Text.setAttribute("y", `${y + 8}`);
             }
 
-            if (this.soundLevel) {
+            if (this.soundLevel && this.buttonABText) {
                 // hide A+B text
                 this.buttonABText.setAttribute("x", "386")
                 this.buttonABText.setAttribute("y", "274")
