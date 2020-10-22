@@ -13,7 +13,7 @@ namespace bluetooth {
     export function __log(msg: string) {
         return;
     }
-    console.addListener(function (msg) { __log(msg) });
+    console.addListener(function (_pri, msg) { __log(msg) });
 
     /**
     *  Writes to the Bluetooth UART service buffer. From there the data is transmitted over Bluetooth to a connected device.
