@@ -12,6 +12,11 @@ namespace control {
         control.inBackground(a);
     }
 
+    //% hidden=1 deprecated=1
+    export function runInBackground(a: () => void) {
+        control.inBackground(a);
+    }
+
     /**
      * Returns the value of a C++ runtime constant
      */
