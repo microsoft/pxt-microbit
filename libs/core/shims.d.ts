@@ -1078,8 +1078,21 @@ declare namespace input {
     //% weight=83 blockGap=32
     //% blockId=input_logo_event block="on logo pressed"
     //% group="micro:bit v2"
-    //% parts="logotouch" shim=input::onLogoPressed
+    //% parts="logotouch"
+    //% help="input/on-logo-pressed" shim=input::onLogoPressed
     function onLogoPressed(body: () => void): void;
+
+    /**
+     * Do something when the logo is released.
+     * @param body the code to run when the logo is released
+     */
+    //% weight=6 blockGap=16
+    //% blockId=input_logo_released block="on logo released"
+    //% advanced=true
+    //% group="micro:bit v2"
+    //% parts="logotouch"
+    //% help="input/on-logo-released" shim=input::onLogoReleased
+    function onLogoReleased(body: () => void): void;
 
     /**
      * Get the logo state (pressed or not).
@@ -1088,7 +1101,8 @@ declare namespace input {
     //% blockId="input_logo_is_pressed" block="logo is pressed"
     //% blockGap=8
     //% group="micro:bit v2"
-    //% parts="logotouch" shim=input::logoIsPressed
+    //% parts="logotouch"
+    //% help="input/is-logo-pressed" shim=input::logoIsPressed
     function logoIsPressed(): boolean;
 }
 
