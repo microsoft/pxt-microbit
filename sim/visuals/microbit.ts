@@ -618,8 +618,8 @@ path.sim-board {
             let state = this.board;
             if (!state || !state.microphoneState.sensorUsed) return;
 
-            const tmin = state.microphoneState.min;
-            const tmax = state.microphoneState.max;
+            const tmin = 0 // state.microphoneState.min;
+            const tmax = 255 //state.microphoneState.max;
             if (!this.soundLevel) {
                 const level = state.microphoneState.getLevel();
                 let gid = "gradient-soundlevel";
