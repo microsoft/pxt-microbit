@@ -980,7 +980,7 @@ path.sim-board {
             this.domHardwareVersion = this.board.hardwareVersion;
             // v2 skinning
             // display v2 indicator
-            const title = pxsim.localization.lf("micro:bit v2 needed to run this program")
+            const title = pxsim.localization.lf("micro:bit v2 needed")
             this.v2Circle = <SVGCircleElement>svg.child(this.g, "circle", { r: 20, title: title });
             svg.fill(this.v2Circle, "gold");
             this.v2Text = <SVGTextElement>svg.child(this.g, "text", { class: "sim-text", title: title });
@@ -989,6 +989,9 @@ path.sim-board {
             this.v2Text.style.fontWeight = "700";
 
             // golden head and position v2 symbol
+            const headTitle = pxsim.localization.lf("micro:bit v2 needed to use logo touch")
+            svg.title(this.headParts, headTitle);
+
             this.updateTheme();
 
             // update pins
