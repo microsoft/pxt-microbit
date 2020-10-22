@@ -1088,8 +1088,10 @@ path.sim-board {
             this.domHardwareVersion = this.board.hardwareVersion;
             // v2 skinning
             // don't use yellow theme
-            if (this.props.theme.accent === "#FFD43A")
+            if (this.props.theme.accent === "#FFD43A") {
+                console.log(`yellow theme detected`)
                 this.props.theme = themes[0];
+            }
 
             // display v2 indicator
             const title = pxsim.localization.lf("micro:bit v2 needed")
