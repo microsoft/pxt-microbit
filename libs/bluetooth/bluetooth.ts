@@ -10,10 +10,10 @@ namespace bluetooth {
      * Internal use
      */
     //% shim=bluetooth::__log
-    export function __log(priority: ConsolePriority, msg: string) {
+    export function __log(msg: string) {
         return;
     }
-    console.addListener(function (priority, msg) { __log(priority, msg) });
+    console.addListener(function (msg) { __log(msg) });
 
     /**
     *  Writes to the Bluetooth UART service buffer. From there the data is transmitted over Bluetooth to a connected device.
