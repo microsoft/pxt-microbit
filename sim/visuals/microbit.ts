@@ -82,6 +82,7 @@ namespace pxsim.visuals {
         .sim-thermometer {
             stroke:#aaa;
             stroke-width: 3px;
+            cursor: pointer;
         }
 
         /* animations */
@@ -301,6 +302,9 @@ path.sim-board {
         private thermometerGradient: SVGLinearGradientElement;
         private thermometer: SVGRectElement;
         private thermometerText: SVGTextElement;
+        private soundLevelGradient: SVGLinearGradientElement;
+        private soundLevel: SVGRectElement;
+        private soundLevelText: SVGTextElement;
         private shakeButton: SVGCircleElement;
         private shakeText: SVGTextElement;
         private accTextX: SVGTextElement;
@@ -382,6 +386,7 @@ path.sim-board {
             svg.setGradientColors(this.lightLevelGradient, theme.lightLevelOn, theme.lightLevelOff);
 
             svg.setGradientColors(this.thermometerGradient, theme.ledOff, theme.ledOn);
+            svg.setGradientColors(this.soundLevelGradient, theme.ledOff, theme.ledOn);
             this.positionV2Elements();
         }
 
@@ -480,15 +485,18 @@ path.sim-board {
                 || this.microphoneLed)
                 return;
 
-            // microphone LED
-            const microphoneTitle = pxsim.localization.lf("microphone (microbit:v2 needed)")
-            this.microphoneLed = svg.child(this.g, "rect", { class: "sim-led", x: 350, y: 70, width: 14, height: 24, rx: 3, ry: 3, title: microphoneTitle });
-            svg.filter(this.microphoneLed, `url(#ledglow)`);
-            (this.microphoneLed.style as any).transformBox = 'fill-box';
-            this.microphoneLed.style.transformOrigin = '50% 50%';
-            this.microphoneLed.style.transform = `scale(0.7)`;
+            if (!this.microphoneLed) {
+                // microphone LED
+                const microphoneTitle = pxsim.localization.lf("microphone (microbit:v2 needed)")
+                this.microphoneLed = svg.child(this.g, "rect", { class: "sim-led", x: 350, y: 70, width: 14, height: 24, rx: 3, ry: 3, title: microphoneTitle });
+                svg.filter(this.microphoneLed, `url(#ledglow)`);
+                (this.microphoneLed.style as any).transformBox = 'fill-box';
+                this.microphoneLed.style.transformOrigin = '50% 50%';
+                this.microphoneLed.style.transform = `scale(0.7)`;
 
-            this.updateTheme();
+                this.updateTheme();
+            }
+            this.updateSoundLevel();
         }
 
         private updateButtonAB() {
@@ -589,7 +597,7 @@ path.sim-board {
                     })
 
                 accessibility.makeFocusable(this.thermometer);
-                accessibility.setAria(this.thermometer, "slider", "Thermometer");
+                accessibility.setAria(this.thermometer, "slider", pxsim.localization.lf("Thermometer"));
                 this.thermometer.setAttribute("aria-valuemin", "-5");
                 this.thermometer.setAttribute("aria-valuemax", "50");
                 this.thermometer.setAttribute("aria-orientation", "vertical");
@@ -604,6 +612,80 @@ path.sim-board {
             this.thermometer.setAttribute("aria-valuenow", t.toString());
             this.thermometer.setAttribute("aria-valuetext", t + "°C");
             accessibility.setLiveContent(t + "°C");
+        }
+
+        private updateSoundLevel() {
+            let state = this.board;
+            if (!state || !state.microphoneState.sensorUsed) return;
+
+            let tmin = 52;
+            let tmax = 120;
+            if (!this.soundLevel) {
+                const level = state.microphoneState.getLevel();
+                let gid = "gradient-soundlevel";
+                this.soundLevelGradient = svg.linearGradient(this.defs, gid);
+                this.soundLevel = <SVGRectElement>svg.child(this.g, "rect", {
+                    class: "sim-thermometer no-drag",
+                    x: 360,
+                    y: 110,
+                    width: 20,
+                    height: 160,
+                    rx: 5, ry: 5,
+                    fill: `url(#${gid})`
+                });
+                this.soundLevelText = svg.child(this.g, "text", { class: 'sim-text', x: 370, y: 90 }) as SVGTextElement;
+                if (this.props.runtime)
+                    this.props.runtime.environmentGlobals[pxsim.localization.lf("sound level")] = state.microphoneState.getLevel();
+                this.updateTheme();
+
+                let pt = this.element.createSVGPoint();
+                svg.buttonEvents(this.soundLevel,
+                    // move
+                    (ev) => {
+                        let cur = svg.cursorPoint(pt, this.element, ev);
+                        let t = Math.max(0, Math.min(1, (260 - cur.y) / 140))
+                        state.microphoneState.setLevel(Math.floor(tmin + t * (tmax - tmin)));
+                        this.updateMicrophone();
+                    },
+                    // start
+                    ev => { },
+                    // stop
+                    ev => { },
+                    // keydown
+                    (ev) => {
+                        let charCode = (typeof ev.which == "number") ? ev.which : ev.keyCode
+                        if (charCode === 40 || charCode === 37) { // Down/Left arrow
+                            state.microphoneState.setLevel(state.microphoneState.getLevel() - 1);
+                            if (state.microphoneState.getLevel() < tmin) {
+                                state.microphoneState.setLevel(tmax);
+                            }
+                            this.updateMicrophone();
+                        } else if (charCode === 38 || charCode === 39) { // Up/Right arrow
+                            state.microphoneState.setLevel(state.microphoneState.getLevel() + 1)
+                            if (state.microphoneState.getLevel() > tmax) {
+                                state.microphoneState.setLevel(tmin);
+                            }
+                            this.updateMicrophone();
+                        }
+                    })
+
+                accessibility.makeFocusable(this.soundLevel);
+                accessibility.setAria(this.soundLevel, "slider", pxsim.localization.lf("Sound Level"));
+                this.soundLevel.setAttribute("aria-valuemin", tmin + "");
+                this.soundLevel.setAttribute("aria-valuemax", tmax + "");
+                this.soundLevel.setAttribute("aria-orientation", "vertical");
+                this.soundLevel.setAttribute("aria-valuenow", level + "");
+                this.soundLevel.setAttribute("aria-valuetext", level + "");
+            }
+
+            let t = Math.max(tmin, Math.min(tmax, state.microphoneState.getLevel()))
+            console.log(`sound level ${t}`)
+            let per = Math.floor((state.microphoneState.getLevel() - tmin) / (tmax - tmin) * 100)
+            svg.setGradientValue(this.soundLevelGradient, (100 - per) + "%");
+            this.soundLevelText.textContent = t + "";
+            this.soundLevel.setAttribute("aria-valuenow", t.toString());
+            this.soundLevel.setAttribute("aria-valuetext", t + "");
+            accessibility.setLiveContent(t + "");
         }
 
         private updateHeading() {
