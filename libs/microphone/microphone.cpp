@@ -19,6 +19,7 @@ namespace input {
 //% blockId=input_on_loud_sound block="on loud sound"
 //% parts="microphone"
 //% weight=88 blockGap=12
+//% group="micro:bit v2"
 void onLoudSound(Action handler) {
 #if MICROBIT_CODAL
     pxt::getMicrophoneLevel(); // wake up service
@@ -35,6 +36,7 @@ void onLoudSound(Action handler) {
 //% blockId=device_get_sound_level block="sound level"
 //% parts="microphone"
 //% weight=34 blockGap=8
+//% group="micro:bit v2"
 int soundLevel() {
 #if MICROBIT_CODAL
     auto level = pxt::getMicrophoneLevel();
@@ -56,7 +58,8 @@ int soundLevel() {
 //% blockId=input_set_loud_sound_threshold block="set loud sound threshold %value"
 //% parts="microphone"
 //% value.min=1 value.max=255
-//% group="More" weight=14 blockGap=8
+//% weight=14 blockGap=8
+//% group="micro:bit v2"
 void setLoudSoundThreshold(int value) {
 #if MICROBIT_CODAL
     auto level = pxt::getMicrophoneLevel();
