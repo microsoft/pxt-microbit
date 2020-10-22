@@ -7,7 +7,8 @@ declare namespace input {
     //% help=input/on-loud-sound
     //% blockId=input_on_loud_sound block="on loud sound"
     //% parts="microphone"
-    //% weight=88 blockGap=12 shim=input::onLoudSound
+    //% weight=88 blockGap=12
+    //% group="micro:bit v2" shim=input::onLoudSound
     function onLoudSound(handler: () => void): void;
 
     /**
@@ -16,7 +17,8 @@ declare namespace input {
     //% help=input/sound-level
     //% blockId=device_get_sound_level block="sound level"
     //% parts="microphone"
-    //% weight=34 blockGap=8 shim=input::soundLevel
+    //% weight=34 blockGap=8
+    //% group="micro:bit v2" shim=input::soundLevel
     function soundLevel(): int32;
 
     /**
@@ -26,7 +28,8 @@ declare namespace input {
     //% blockId=input_set_loud_sound_threshold block="set loud sound threshold %value"
     //% parts="microphone"
     //% value.min=1 value.max=255
-    //% group="More" weight=14 blockGap=8 shim=input::setLoudSoundThreshold
+    //% weight=14 blockGap=8
+    //% group="micro:bit v2" shim=input::setLoudSoundThreshold
     function setLoudSoundThreshold(value: int32): void;
 }
 

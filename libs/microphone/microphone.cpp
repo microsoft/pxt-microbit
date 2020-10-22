@@ -1,6 +1,9 @@
 #include "pxt.h"
+
+#if MICROBIT_CODAL
 #include "LevelDetector.h"
 #include "LevelDetectorSPL.h"
+#endif
 
 #define MICROPHONE_MIN 52.0f
 #define MICROPHONE_MAX 120.0f
