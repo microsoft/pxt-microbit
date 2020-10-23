@@ -24,6 +24,7 @@ declare namespace input {
     /**
      * Sets the threshold for a sound type.
      */
+    //% help=input/set-sound-threshold
     //% blockId=input_set_sound_threshold block="set %sound sound threshold to %value"
     //% parts="microphone"
     //% threshold.min=0 threshold.max=255
