@@ -32,7 +32,6 @@ basic.forever(function() {
 ## Step 3
 
 Add an event on ``||input:button A pressed||`` to change the ``||variables:rope||`` value by **-0.1**.
-The @boardname@ will automatically round the ``||variables:rope||`` value to the nearest LED coordinate.
 
 ```blocks
 let rope = 2
@@ -51,17 +50,28 @@ input.onButtonPressed(Button.B, function () {
     rope += 0.1
 })
 ```
-
 ## Step 5
 
+Because a button press pulls the rope by **0.1** in either direction, plot the ``||math:round||`` value of ``||variables:rope||`` to the nearest LED.
+
+```spy
+let rope = 2
+basic.forever(function() {
+    basic.clearScreen()
+    led.plot(Math.round(rope), 2)
+})
+```
+
+## Step 6
+
 Back in the ``||basic:forever||``, add code to test ``||logic:if||`` the ``||variables:rope||`` is negative
-then ``||basic:show||``**A WINS** on the screen.
+then ``||basic:show||`` **A WINS** on the screen.
 
 ```blocks
 let rope = 2
 basic.forever(function() {
     basic.clearScreen();
-    led.plot(rope, 2);
+    led.plot(Math.round(rope), 2);
     // @highlight
     if (rope < 0) {
         basic.showString("A WINS")
@@ -69,16 +79,16 @@ basic.forever(function() {
 })
 ```
 
-## Step 6
+## Step 7
 
 Add an ``||logic:else if||`` condition to test ``||logic:if||`` the ``||variables:rope||`` is greater than 4
-then ``||basic:show||``**B WINS** on the screen.
+then ``||basic:show||`` **B WINS** on the screen.
 
 ```blocks
 let rope = 2
 basic.forever(function() {
     basic.clearScreen();
-    led.plot(rope, 2);
+    led.plot(Math.round(rope), 2);
     if (rope < 0) {
         basic.showString("A WINS")
     } else if (rope > 4) {
@@ -88,6 +98,6 @@ basic.forever(function() {
 })
 ```
 
-## Step 7
+## Step 8
 
 Find a friend and start button smashing!

@@ -33,7 +33,6 @@ basic.forever(function() {
 ## Step 3
 
 Add an event for ``||input:button A pressed||`` to change the ``||variables:rope||`` value by **-0.1**.
-The @boardname@ will automatically round the ``||variables:rope||`` value to the nearest LED coordinate.
 
 ```spy
 let rope = 2
@@ -68,7 +67,7 @@ basic.forever(function() {
 ## Step 6
 
 Back in the ``||basic:forever||``, add code to test ``||logic:if||`` the ``||variables:rope||`` is negative
-then ``||basic:show||``**A WINS** on the screen.
+then ``||basic:show||`` **A WINS** on the screen.
 
 ```spy
 let rope = 2
@@ -85,7 +84,7 @@ basic.forever(function() {
 ## Step 7
 
 Add an ``||logic:else if||`` condition to test ``||logic:if||`` the ``||variables:rope||`` is greater than `4`
-then ``||basic:show||``**B WINS** on the screen.
+then ``||basic:show||`` **B WINS** on the screen.
 
 ```spy
 let rope = 2
