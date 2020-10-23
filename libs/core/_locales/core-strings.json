@@ -360,6 +360,7 @@
   "music.playTone|block": "play|tone %note=device_note|for %duration=device_beat",
   "music.rest|block": "rest(ms)|%duration=device_beat",
   "music.ringTone|block": "ring tone (Hz)|%note=device_note",
+  "music.setOnBoardSpeakerEnabled|block": "set on-board speaker %enabled",
   "music.setTempo|block": "set tempo to (bpm)|%value",
   "music.setVolume|block": "set volume %volume",
   "music.startMelody|block": "start melody %melody=device_builtin_melody| repeating %options",

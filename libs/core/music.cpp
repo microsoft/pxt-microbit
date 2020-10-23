@@ -40,7 +40,7 @@ int volume() {
 }
 
 /**
-* Turn the on-board speaker on or off (micro:bit v2).
+* Turn the on-board speaker on or off.
 * Disabling the speaker resets the analog pitch pin to the default of P0.
 * @param enabled whether the on-board speaker is enabled in addition to the analog pitch PIN
 */
@@ -50,13 +50,15 @@ int volume() {
 //% parts=onboardspeaker
 //% help=input/set-on-board-speaker
 //% enabled.shadow=toggleOnOff
-void setOnBoardSpeaker(bool enabled) {
+void setOnBoardSpeakerEnabled(bool enabled) {
 #if MICROBIT_CODAL
     uBit.audio.setSpeakerEnabled(enabled);
-#endif
+#else
+    // don't crash if user asks to turn it off
     if (enabled) {
         target_panic(PANIC_VARIANT_NOT_SUPPORTED);
     }
+#endif
 }
 
 }

@@ -19,6 +19,7 @@ namespace pxsim {
         lightState: pxt.Map<CommonNeoPixelState>;
         fileSystem: FileSystemState;
         logoTouch: Button;
+        speakerEnabled: boolean = true;
 
         // visual
         viewHost: visuals.BoardHost;
