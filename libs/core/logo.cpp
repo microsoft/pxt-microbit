@@ -44,7 +44,7 @@ namespace input {
     //% blockGap=8
     //% group="micro:bit v2"
     //% parts="logotouch"
-    //% help="input/is-logo-pressed"
+    //% help="input/logo-is-pressed"
     bool logoIsPressed() {
 #if MICROBIT_CODAL
         return uBit.io.logo.isTouched();

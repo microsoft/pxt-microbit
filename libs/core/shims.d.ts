@@ -1159,7 +1159,7 @@ declare namespace input {
     //% blockGap=8
     //% group="micro:bit v2"
     //% parts="logotouch"
-    //% help="input/is-logo-pressed" shim=input::logoIsPressed
+    //% help="input/logo-is-pressed" shim=input::logoIsPressed
     function logoIsPressed(): boolean;
 }
 declare namespace pins {
