@@ -18,4 +18,4 @@ You can also do them individually:
 
 ## Extra
 
-Make the hot-or-cold game multi beacon. [Start activity](/proejcts/hot-or-cold/multi-beacons)
+Make the hot-or-cold game multi beacon. [Start activity](/projects/hot-or-cold/multi-beacons)
