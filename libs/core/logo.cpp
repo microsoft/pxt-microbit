@@ -3,7 +3,7 @@
 /**
  * An action on a touch button
  */
-enum TouchAction {
+enum TouchButtonEvent {
     //% block=pressed
     Pressed = MICROBIT_BUTTON_EVT_CLICK,
     //% block=touch
@@ -24,7 +24,7 @@ namespace input {
     //% group="micro:bit v2"
     //% parts="logotouch"
     //% help="input/on-logo-event"
-    void onLogoEvent(TouchAction action, Action body) {
+    void onLogoEvent(TouchButtonEvent action, Action body) {
 #if MICROBIT_CODAL
         registerWithDal(uBit.logo.id, action, body);
 #else

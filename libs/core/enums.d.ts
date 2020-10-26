@@ -567,7 +567,7 @@ declare namespace serial {
      * An action on a touch button
      */
 
-    declare const enum TouchAction {
+    declare const enum TouchButtonEvent {
     //% block=pressed
     Pressed = 3,  // MICROBIT_BUTTON_EVT_CLICK
     //% block=touch

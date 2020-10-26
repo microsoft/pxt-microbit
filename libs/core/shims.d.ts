@@ -1137,7 +1137,7 @@ declare namespace input {
     //% group="micro:bit v2"
     //% parts="logotouch"
     //% help="input/on-logo-event" shim=input::onLogoEvent
-    function onLogoEvent(action: TouchAction, body: () => void): void;
+    function onLogoEvent(action: TouchButtonEvent, body: () => void): void;
 
     /**
      * Get the logo state (pressed or not).

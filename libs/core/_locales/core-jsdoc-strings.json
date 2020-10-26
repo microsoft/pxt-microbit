@@ -238,7 +238,7 @@
   "String.trim": "Return a substring of the current string with whitespace removed from both ends",
   "String@type": "Combine, split, and search text strings.",
   "StringMap": "A dictionary from string key to string values",
-  "TouchAction": "An action on a touch button",
+  "TouchButtonEvent": "An action on a touch button",
   "_py.range": "Returns a sequence of numbers up to but not including the limit\n\nIf more than one argument is passed, this argument is instead used for the first value in the range",
   "_py.range|param|first": "The value to end the sequence before. This value will not show up in the result.",
   "_py.range|param|step": "The value to increase or decrease by for each step in the range. Must be a nonzero integer",
