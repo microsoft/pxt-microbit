@@ -202,6 +202,7 @@
   "Number.isNaN": "Check if a given value is of type Number and it is a NaN.",
   "Number.toString": "Returns a string representation of a number.",
   "Object.keys": "Return the field names in an object.",
+  "SoundExpression": "A sound expression.",
   "String": "Combine, split, and search text strings.",
   "String.charAt": "Return the character at the specified index.",
   "String.charAt|param|index": "The zero-based index of the desired character.",

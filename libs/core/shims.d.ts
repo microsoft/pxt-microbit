@@ -1178,5 +1178,13 @@ declare namespace pins {
     //% help=input/touch-set-mode shim=pins::touchSetMode
     function touchSetMode(name: TouchTarget, mode: TouchTargetMode): void;
 }
+declare namespace music {
+
+    /**
+     * Internal use only
+     **/
+    //% shim=music::__playSoundExpression
+    function __playSoundExpression(nodes: string, waitTillDone: boolean): void;
+}
 
 // Auto-generated. Do not edit. Really.
