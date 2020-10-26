@@ -12,7 +12,7 @@ enum TouchAction {
     Released = MICROBIT_BUTTON_EVT_UP,
     //% block="long pressed"
     LongPressed = MICROBIT_BUTTON_EVT_LONG_CLICK
-}
+};
 
 namespace input {
     /**
