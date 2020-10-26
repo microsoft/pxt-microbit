@@ -563,6 +563,22 @@ declare namespace serial {
 }
 
 
+    /**
+     * An action on a touch button
+     */
+
+    declare const enum TouchAction {
+    //% block=released
+    Pressed = 3,  // MICROBIT_BUTTON_EVT_CLICK
+    //% block=touch
+    Touch = 1,  // MICROBIT_BUTTON_EVT_DOWN
+    //% block=released
+    Released = 2,  // MICROBIT_BUTTON_EVT_UP
+    //% block="long pressed"
+    LongPressed = 4,  // MICROBIT_BUTTON_EVT_LONG_CLICK
+    }
+
+
     declare const enum TouchTargetMode {
     //% block="capacitative"
     Capacitative = 1,

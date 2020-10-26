@@ -1133,23 +1133,11 @@ declare namespace input {
      * @param body the code to run when the logo is pressed
      */
     //% weight=83 blockGap=32
-    //% blockId=input_logo_event block="on logo pressed"
+    //% blockId=input_logo_event block="on logo $action"
     //% group="micro:bit v2"
     //% parts="logotouch"
-    //% help="input/on-logo-pressed" shim=input::onLogoPressed
-    function onLogoPressed(body: () => void): void;
-
-    /**
-     * Do something when the logo is released.
-     * @param body the code to run when the logo is released
-     */
-    //% weight=6 blockGap=16
-    //% blockId=input_logo_released block="on logo released"
-    //% advanced=true
-    //% group="micro:bit v2"
-    //% parts="logotouch"
-    //% help="input/on-logo-released" shim=input::onLogoReleased
-    function onLogoReleased(body: () => void): void;
+    //% help="input/on-logo-event" shim=input::onLogoEvent
+    function onLogoEvent(action: TouchAction, body: () => void): void;
 
     /**
      * Get the logo state (pressed or not).
