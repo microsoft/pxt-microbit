@@ -1183,7 +1183,7 @@ declare namespace music {
     /**
      * Internal use only
      **/
-    //% shim=music::__playSoundExpression
+    //% async shim=music::__playSoundExpression
     function __playSoundExpression(nodes: string, waitTillDone: boolean): void;
 }
 
