@@ -7,7 +7,7 @@ namespace music {
     //% async
     void __playSoundExpression(String nodes, bool waitTillDone) {
 #if MICROBIT_CODAL
-        if (waillTillDone)
+        if (waitTillDone)
             uBit.audio.soundExpressions.play(MSTR(nodes));
         else
             uBit.audio.soundExpressions.playAsync(MSTR(nodes));
