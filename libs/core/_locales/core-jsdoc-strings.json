@@ -203,6 +203,8 @@
   "Number.toString": "Returns a string representation of a number.",
   "Object.keys": "Return the field names in an object.",
   "SoundExpression": "A sound expression.",
+  "SoundExpression.play": "Starts to play a sound expression.",
+  "SoundExpression.playUntilDone": "Plays a sound expression until finished",
   "String": "Combine, split, and search text strings.",
   "String.charAt": "Return the character at the specified index.",
   "String.charAt|param|index": "The zero-based index of the desired character.",

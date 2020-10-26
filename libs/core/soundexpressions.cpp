@@ -5,7 +5,7 @@ namespace music {
      * Internal use only
      **/
     //%
-    void __playSoundExpression(String nodes, boolean waitTillDone) {
+    void __playSoundExpression(String nodes, bool waitTillDone) {
 #if MICROBIT_CODAL
         if (waillTillDone)
             uBit.audio.soundExpressions.play(nodes);

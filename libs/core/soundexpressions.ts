@@ -2,36 +2,54 @@
  * A sound expression.
  */
 //% fixedInstances
+//% blockNamespace=music
+//% group="micro:bit v2"
 class SoundExpression {
     constructor(private notes: string) {
     }
 
+    /**
+     * Starts to play a sound expression.
+     */
+    //% block="play sound $this"
+    //% weight=80
+    //% gap=8
+    //% group="micro:bit v2"
     play() {
         music.__playSoundExpression(this.notes, false)
     }
 
+    /**
+     * Plays a sound expression until finished
+     */
+    //% block="play sound $this until done"
+    //% weight=81
+    //% gap=8
+    //% group="micro:bit v2"
     playUntilDone() {
         music.__playSoundExpression(this.notes, true)
     }
 }
 
-//% fixedInstance whenUsed block="soundexpression:giggle"
-const giggle = new SoundExpression("giggle");
-//% fixedInstance whenUsed block="soundexpression:happy"
-const happy = new SoundExpression("happy");
-//% fixedInstance whenUsed block="soundexpression:hello"
-const hello = new SoundExpression("hello");
-//% fixedInstance whenUsed block="soundexpression:mysterious"
-const mysterious = new SoundExpression("mysterious");
-//% fixedInstance whenUsed block="soundexpression:sad"
-const sad = new SoundExpression("sad");
-//% fixedInstance whenUsed block="soundexpression:slide"
-const slide = new SoundExpression("slide");
-//% fixedInstance whenUsed block="soundexpression:soaring"
-const soaring = new SoundExpression("soaring");
-//% fixedInstance whenUsed block="soundexpression:spring"
-const spring = new SoundExpression("spring");
-//% fixedInstance whenUsed block="soundexpression:twinkle"
-const twinkle = new SoundExpression("twinkle");
-//% fixedInstance whenUsed block="soundexpression:yawn"
-const yawn = new SoundExpression("yawn");
+namespace soundExpression {
+    //% fixedInstance whenUsed block="{id:soundexpression}giggle"
+    export const giggle = new SoundExpression("giggle");
+    //% fixedInstance whenUsed block="{id:soundexpression}happy"
+    export const happy = new SoundExpression("happy");
+    //% fixedInstance whenUsed block="{id:soundexpression}hello"
+    export const hello = new SoundExpression("hello");
+    //% fixedInstance whenUsed block="{id:soundexpression}mysterious"
+    export const mysterious = new SoundExpression("mysterious");
+    //% fixedInstance whenUsed block="{id:soundexpression}sad"
+    export const sad = new SoundExpression("sad");
+    //% fixedInstance whenUsed block="{id:soundexpression}slide"
+    export const slide = new SoundExpression("slide");
+    //% fixedInstance whenUsed block="{id:soundexpression}soaring"
+    export const soaring = new SoundExpression("soaring");
+    //% fixedInstance whenUsed block="{id:soundexpression}spring"
+    export const spring = new SoundExpression("spring");
+    //% fixedInstance whenUsed block="{id:soundexpression}twinkle"
+    export const twinkle = new SoundExpression("twinkle");
+    //% fixedInstance whenUsed block="{id:soundexpression}yawn"
+    export const yawn = new SoundExpression("yawn");
+}
