@@ -252,7 +252,7 @@
   "String.substr|block": "substring of %this=text|from %start|of length %length",
   "String|block": "String",
   "TouchAction.LongPressed|block": "long pressed",
-  "TouchAction.Pressed|block": "released",
+  "TouchAction.Pressed|block": "pressed",
   "TouchAction.Released|block": "released",
   "TouchAction.Touch|block": "touch",
   "TouchTarget.LOGO|block": "logo",

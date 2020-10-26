@@ -4,7 +4,7 @@
  * An action on a touch button
  */
 enum TouchAction {
-    //% block=released
+    //% block=pressed
     Pressed = MICROBIT_BUTTON_EVT_CLICK,
     //% block=touch
     Touch = MICROBIT_BUTTON_EVT_DOWN,
