@@ -125,19 +125,18 @@ namespace bluetooth {
         startUartService();
         int bytes = uart->rxBufferedSize();
         auto buffer = mkBuffer(NULL, bytes);
+        auto res = buffer;
+        registerGCObj(buffer);
         int read = uart->read(buffer->data, buffer->length);
         // read failed
         if (read < 0) {
-            decrRC(buffer);
-            return mkBuffer(NULL, 0);
+            res = mkBuffer(NULL, 0);
+        } else if (read != buffer->length) {
+            // could not fill the buffer
+            res = mkBuffer(buffer->data, read); 
         }
-        // could not fill the buffer
-        if (read != buffer->length) {
-            auto tmp = mkBuffer(buffer->data, read); 
-            decrRC(buffer); 
-            buffer = tmp;
-        }
-        return buffer;
+        unregisterGCObj(buffer);
+        return res;
     }
 
     /**

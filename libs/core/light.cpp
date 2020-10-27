@@ -9,10 +9,12 @@ neopixel_send_buffer_brigthness(DevicePin &pin, const uint8_t *ptr, int numBytes
         neopixel_send_buffer(pin, ptr, numBytes);
     else {
         auto copy = mkBuffer(NULL, numBytes);
+        registerGCObj(copy);
         for (int i = 0; i < numBytes; ++i) {
             copy->data[i] = (ptr[i] * br) >> 8;
         }
         neopixel_send_buffer(pin, copy->data, copy->length);
+        unregisterGCObj(copy);
     }
 }
 #else
