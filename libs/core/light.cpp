@@ -2,9 +2,15 @@
 
 #if MICROBIT_CODAL
 
-// WS2812B timings, +-0.15uS
-// 0 - 0.40uS hi 0.85uS low
-// 1 - 0.80uS hi 0.45uS low
+// WS2812B timings, datasheet v1
+// 0 - 0.25-0.55us hi 0.70-1.00us low
+// 1 - 0.65-0.95us hi 0.30-0.60us low
+// datasheet v5
+// 0 - 0.22-0.38us hi 0.58-1.00us low
+// 1 - 0.58-1.00us hi 0.58-1.00us low
+
+// 0 - 0.31us / 0.65us
+// 1 - 0.71us / 0.62us
 
 __attribute__((noinline, long_call, section(".data"))) static void
 neopixel_send_buffer(Pin &pin, const uint8_t *ptr, int numBytes) {
@@ -13,16 +19,16 @@ neopixel_send_buffer(Pin &pin, const uint8_t *ptr, int numBytes) {
     auto port = pin.name < 32 ? NRF_P0 : NRF_P1;
     uint32_t PIN = 1 << (pin.name & 31);
 
-    // min. 50uS reset time; give it 100uS
-    system_timer_wait_cycles(100 * 64);
+    // min. 280uS reset time; this is at least cycles x2
+    system_timer_wait_cycles(64 * 140);
 
     uint32_t mask = 0x80;
     int i = 0;
 
     __disable_irq();
     for (;;) {
-        uint32_t d0 = ptr[i] & mask ? 5 : 1;
-        uint32_t d1 = ptr[i] & mask ? 2 : 6;
+        uint32_t d0 = ptr[i] & mask ? 5 : 0;
+        uint32_t d1 = ptr[i] & mask ? 2 : 3;
 
         mask = mask >> 1;
         if (mask == 0) {
@@ -32,7 +38,10 @@ neopixel_send_buffer(Pin &pin, const uint8_t *ptr, int numBytes) {
 
         port->OUTSET = PIN;
 
-        system_timer_wait_cycles(d0);
+        if (d0)
+            system_timer_wait_cycles(d0);
+        else
+            __asm("nop; nop; nop; nop; nop; nop; nop; nop; nop; nop; nop");
 
         port->OUTCLR = PIN;
         system_timer_wait_cycles(d1);
