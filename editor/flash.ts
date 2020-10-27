@@ -4,7 +4,7 @@ const membase = 0x20000000;
 const loadAddr = membase;
 const dataAddr = 0x20002000;
 const stackAddr = 0x20001000;
-const FULL_FLASH_TIMEOUT = 60000;
+const FULL_FLASH_TIMEOUT = 180000;
 const PARTIAL_FLASH_TIMEOUT = 60000;
 
 const flashPageBIN = new Uint32Array([
@@ -219,13 +219,13 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
                 log(`bin file ${this.binName} in ${Object.keys(resp.outfiles).join(', ')}, ${binFile?.length || -1}b`)
                 const hexUint8 = pxt.U.stringToUint8Array(binFile);
                 const hexArray: number[] = Array.prototype.slice.call(hexUint8);
-                log(`hex ${hexUint8?.byteLength || -1}b`)
+                log(`hex ${hexUint8?.byteLength || -1}b, ~${(hexUint8.byteLength / chunkSize) | 0} chunks of ${chunkSize}b`)
 
                 const sendPages = (offset: number = 0): Promise<void> => {
                     const end = Math.min(hexArray.length, offset + chunkSize);
                     const nextPage = hexArray.slice(offset, end);
                     nextPage.unshift(nextPage.length);
-                    log(`next page [${offset.toString(16)}, ${end.toString(16)}] (${nextPage.length - end}b left)`)
+                    log(`next page [${offset.toString(16)}, ${end.toString(16)}] (${hexArray.length - end}kb left)`)
                     return this.cmsisdap.cmdNums(0x8C /* DAPLinkFlash.WRITE */, nextPage)
                         .then(() => {
                             if (!aborted && end < hexArray.length) {
