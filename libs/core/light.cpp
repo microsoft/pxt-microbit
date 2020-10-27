@@ -1,7 +1,47 @@
 #include "pxt.h"
 
 #if MICROBIT_CODAL
-#include "neopixel.h"
+
+// WS2812B timings, +-0.15uS
+// 0 - 0.40uS hi 0.85uS low
+// 1 - 0.80uS hi 0.45uS low
+
+__attribute__((noinline, long_call, section(".data"))) static void
+neopixel_send_buffer(Pin &pin, const uint8_t *ptr, int numBytes) {
+    pin.setDigitalValue(0);
+
+    auto port = pin.name < 32 ? NRF_P0 : NRF_P1;
+    uint32_t PIN = 1 << (pin.name & 31);
+
+    // min. 50uS reset time; give it 100uS
+    system_timer_wait_cycles(100 * 64);
+
+    uint32_t mask = 0x80;
+    int i = 0;
+
+    __disable_irq();
+    for (;;) {
+        uint32_t d0 = ptr[i] & mask ? 5 : 1;
+        uint32_t d1 = ptr[i] & mask ? 2 : 6;
+
+        mask = mask >> 1;
+        if (mask == 0) {
+            mask = 0x80;
+            i++;
+        }
+
+        port->OUTSET = PIN;
+
+        system_timer_wait_cycles(d0);
+
+        port->OUTCLR = PIN;
+        system_timer_wait_cycles(d1);
+
+        if (i >= numBytes)
+            break;
+    }
+    __enable_irq();
+}
 
 __attribute__((noinline)) static void
 neopixel_send_buffer_brigthness(DevicePin &pin, const uint8_t *ptr, int numBytes, int br) {
