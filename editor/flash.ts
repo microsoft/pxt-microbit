@@ -212,6 +212,7 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
         log("full flash")
 
         const chunkSize = 62;
+        let sentPages = 0;
         let aborted = false;
         return Promise.resolve()
             .then(() => {
@@ -228,10 +229,12 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
                     const end = Math.min(hexArray.length, offset + chunkSize);
                     const nextPage = hexArray.slice(offset, end);
                     nextPage.unshift(nextPage.length);
-                    log(`next page [${offset.toString(16)}, ${end.toString(16)}] (${Math.ceil((hexArray.length - end) / 1000)}kb left)`)
+                    if(sentPages % 32 == 0) // reduce logging
+                        log(`next page ${sentPages}: [${offset.toString(16)}, ${end.toString(16)}] (${Math.ceil((hexArray.length - end) / 1000)}kb left)`)
                     return this.cmsisdap.cmdNums(0x8C /* DAPLinkFlash.WRITE */, nextPage)
                         .then(() => {
                             if (!aborted && end < hexArray.length) {
+                                sentPages++;
                                 return sendPages(end);
                             }
                             return Promise.resolve();
