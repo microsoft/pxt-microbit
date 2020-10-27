@@ -29,12 +29,25 @@ To avoid waiting for data, set the length to ``0`` so that buffered data is retu
 Read character data from the serial port one row at a time. Write the rows to an LED display connected to the I2C pins.
 
 ```typescript
-let rowData: Buffer = null;
 for (let i = 0; i < 24; i++) {
-    rowData = serial.readBuffer(80);
+    let rowData = serial.readBuffer(80);
     pins.i2cWriteBuffer(65, rowData, false);
 }
 ```
+
+## Example Async
+
+Read available data and process it as it comes.
+
+```typescript
+basic.forever(function() {
+    let rowData = serial.readBuffer(0);
+    if (rowData.length > 0) {
+        // do something!!!
+    }
+})
+```
+
 
 ## See Also
 
