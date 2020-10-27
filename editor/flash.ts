@@ -70,6 +70,7 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
     private pageSize = 1024;
     private numPages = 256;
     private usesCODAL = false;
+    private forceFullFlash = /webusbfullflash=1/.test(window.location.href);
 
     constructor(public readonly io: pxt.packetio.PacketIO) {
         this.familyID = 0x0D28; // this is the microbit vendor id, not quite UF2 family id
@@ -194,7 +195,9 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
             .then(() => this.cortexM.reset(true))
             .then(() => this.cortexM.memory.readBlock(0x10001014, 1, this.pageSize))
             .then(v => {
-                if ((pxt.HF2.read32(v, 0) & 0xff) != 0) {
+                const uicr = pxt.HF2.read32(v, 0) & 0xff;
+                log(`uicr: ${uicr.toString(16)}`);
+                if (uicr != 0 || this.forceFullFlash) {
                     pxt.tickEvent("hid.flash.uicrfail");
                     return this.fullVendorCommandFlashAsync(resp);
                 }
