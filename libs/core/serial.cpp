@@ -109,17 +109,21 @@ namespace serial {
     }
 
     /**
-    * Read multiple characters from the receive buffer. Pause until enough characters are present.
-    * @param length default buffer length, eg: 64
+    * Read multiple characters from the receive buffer. 
+    * If length is positivie, pauses until enough characters are present.
+    * @param length default buffer length
     */
     //% blockId=serial_readbuffer block="serial|read buffer %length"
     //% help=serial/read-buffer advanced=true weight=5
     Buffer readBuffer(int length) {
-      if (length <= 0)
-        length = MICROBIT_SERIAL_READ_BUFFER_LENGTH;
+      let mode = SYNC_SLEEP;
+      if (length <= 0) {
+        length = uBit.serial.getRxBufferSize();
+        mode = ASYNC;
+      }
 
       auto buf = mkBuffer(NULL, length);
-      int read = uBit.serial.read(buf->data, buf->length);
+      int read = uBit.serial.read(buf->data, buf->length, mode);
       if (read != length) {
         auto prev = buf;
         buf = mkBuffer(buf->data, read);

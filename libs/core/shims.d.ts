@@ -935,8 +935,9 @@ declare namespace serial {
     function writeBuffer(buffer: Buffer): void;
 
     /**
-     * Read multiple characters from the receive buffer. Pause until enough characters are present.
-     * @param length default buffer length, eg: 64
+     * Read multiple characters from the receive buffer. 
+     * If length is positivie, pauses until enough characters are present.
+     * @param length default buffer length
      */
     //% blockId=serial_readbuffer block="serial|read buffer %length"
     //% help=serial/read-buffer advanced=true weight=5 shim=serial::readBuffer

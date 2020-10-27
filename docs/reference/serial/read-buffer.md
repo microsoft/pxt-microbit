@@ -9,6 +9,7 @@ serial.readBuffer(64);
 ## Parameters
 
 * **length**: the [number](/types/number) of characters of serial data to read.
+Use ``0`` to return the available buffered data.
 
 ## Returns
 
@@ -20,7 +21,7 @@ The length is 0 if any error occurs.
 
 If the desired number of characters are available, **readBuffer** returns a buffer with the expected size. If not, the calling fiber (the part of your program calling the **readBuffer** function) sleeps until the desired number of characters are finally read into the buffer.
 
-The need to pause for more data is set by the @boardname@ **[serial mode](https://lancaster-university.github.io/microbit-docs/ubit/serial/#serial-modes)**.
+To avoid waiting for data, set the length to ``0`` so that buffered data is returned immediately.
 ## ~
 
 ## Example
