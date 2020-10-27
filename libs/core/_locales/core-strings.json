@@ -256,7 +256,7 @@
   "TouchButtonEvent.LongPressed|block": "long pressed",
   "TouchButtonEvent.Pressed|block": "pressed",
   "TouchButtonEvent.Released|block": "released",
-  "TouchButtonEvent.Touch|block": "touch",
+  "TouchButtonEvent.Touched|block": "touched",
   "TouchTarget.LOGO|block": "logo",
   "TouchTarget.P0|block": "P0",
   "TouchTarget.P1|block": "P1",
