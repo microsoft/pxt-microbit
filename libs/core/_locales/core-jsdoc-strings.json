@@ -639,7 +639,7 @@
   "serial.delimiters": "Return the corresponding delimiter string",
   "serial.onDataReceived": "Register an event to be fired when one of the delimiter is matched.",
   "serial.onDataReceived|param|delimiters": "the characters to match received characters against.",
-  "serial.readBuffer": "Read multiple characters from the receive buffer. \nIf length is positivie, pauses until enough characters are present.",
+  "serial.readBuffer": "Read multiple characters from the receive buffer. \nIf length is positive, pauses until enough characters are present.",
   "serial.readBuffer|param|length": "default buffer length",
   "serial.readLine": "Read a line of text from the serial port.",
   "serial.readString": "Read the buffered received data as a string",

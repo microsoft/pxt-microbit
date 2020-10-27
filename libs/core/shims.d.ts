@@ -936,7 +936,7 @@ declare namespace serial {
 
     /**
      * Read multiple characters from the receive buffer. 
-     * If length is positivie, pauses until enough characters are present.
+     * If length is positive, pauses until enough characters are present.
      * @param length default buffer length
      */
     //% blockId=serial_readbuffer block="serial|read buffer %length"
