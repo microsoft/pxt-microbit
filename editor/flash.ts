@@ -216,9 +216,10 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
             })
             .then((res) => {
                 const binFile = resp.outfiles[this.binName];
-                log(`bin file ${this.binName}, ${binFile?.length || -1}b`)
+                log(`bin file ${this.binName} in ${Object.keys(resp.outfiles).join(', ')}, ${binFile?.length || -1}b`)
                 const hexUint8 = pxt.U.stringToUint8Array(binFile);
                 const hexArray: number[] = Array.prototype.slice.call(hexUint8);
+                log(`hex ${hexUint8?.byteLength || -1}b`)
 
                 const sendPages = (offset: number = 0): Promise<void> => {
                     const end = Math.min(hexArray.length, offset + chunkSize);
