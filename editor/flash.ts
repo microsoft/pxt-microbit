@@ -225,7 +225,7 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
                     const end = Math.min(hexArray.length, offset + chunkSize);
                     const nextPage = hexArray.slice(offset, end);
                     nextPage.unshift(nextPage.length);
-                    log(`next page [${offset.toString(16)}, ${end.toString(16)}] (${hexArray.length - end}kb left)`)
+                    log(`next page [${offset.toString(16)}, ${end.toString(16)}] (${((hexArray.length - end) / 1000) | 0}b left)`)
                     return this.cmsisdap.cmdNums(0x8C /* DAPLinkFlash.WRITE */, nextPage)
                         .then(() => {
                             if (!aborted && end < hexArray.length) {
