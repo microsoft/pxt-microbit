@@ -263,7 +263,7 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
 
     private quickHidFlashAsync(resp: pxtc.CompileResult): Promise<void> {
         log("quick flash")
-        const logV = pxt.debug;
+        let logV = (msg: string) => { }
         //let logV = log
         let aborted = false;
 
@@ -319,10 +319,12 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
                     i => {
                         if (aborted) return Promise.resolve();
                         let b = aligned[i];
-                        if (b.targetAddr >= 0x10000000)
+                        if (b.targetAddr >= 0x10000000) {
+                            log(`target address ${b.targetAddr.toString(16)} > 0x10000000`)
                             return Promise.resolve();
+                        }
 
-                        logV("about to write at 0x" + b.targetAddr.toString(16));
+                        log("about to write at 0x" + b.targetAddr.toString(16));
 
                         let writeBl = Promise.resolve();
 
