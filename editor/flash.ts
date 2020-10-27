@@ -263,7 +263,7 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
 
     private quickHidFlashAsync(resp: pxtc.CompileResult): Promise<void> {
         log("quick flash")
-        let logV = (msg: string) => { }
+        const logV = pxt.debug;
         //let logV = log
         let aborted = false;
 
