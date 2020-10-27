@@ -123,14 +123,15 @@ namespace serial {
       }
 
       auto buf = mkBuffer(NULL, length);
+      auto res = buf;
+      registerGCObj(buf); // make sure buffer is pinned, while we wait for data
       int read = uBit.serial.read(buf->data, buf->length, mode);
       if (read != length) {
-        auto prev = buf;
-        buf = mkBuffer(buf->data, read);
-        decrRC(prev);
+        res = mkBuffer(buf->data, read);
       }
+      unregisterGCObj(buf);
 
-      return buf;
+      return res;
     }
 
     bool tryResolvePin(SerialPin p, PinName& name) {
