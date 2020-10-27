@@ -116,7 +116,7 @@ namespace serial {
     //% blockId=serial_readbuffer block="serial|read buffer %length"
     //% help=serial/read-buffer advanced=true weight=5
     Buffer readBuffer(int length) {
-      let mode = SYNC_SLEEP;
+      auto mode = SYNC_SLEEP;
       if (length <= 0) {
         length = uBit.serial.getRxBufferSize();
         mode = ASYNC;
