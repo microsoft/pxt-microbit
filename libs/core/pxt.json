@@ -57,6 +57,7 @@
         "fixed.ts",
         "templates.ts",
         "sendbuffer.s",
+        "sendbuffernrf52.s",
         "sendbufferbrightness.s",
         "light.cpp",
         "logo.cpp",

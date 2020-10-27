@@ -1,8 +1,8 @@
 .syntax unified
-.section .text.neopixel_send_buffer_brigthness_core
-.global neopixel_send_buffer_brigthness_core
+.section .text.neopixel_send_buffer_brightness_core
+.global neopixel_send_buffer_brightness_core
 
-neopixel_send_buffer_brigthness_core:
+neopixel_send_buffer_brightness_core:
 
     push {r4,r5,r6,r7,lr}
     

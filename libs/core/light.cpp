@@ -9,63 +9,33 @@
 // 0 - 0.22-0.38us hi 0.58-1.00us low
 // 1 - 0.58-1.00us hi 0.58-1.00us low
 
-// 0 - 0.31us / 0.65us
-// 1 - 0.71us / 0.62us
+// nrf52 asm timings:
+// 0 0.34 - 0.78
+// 1 0.80 - 0.59
 
-__attribute__((noinline, long_call, section(".data"))) static void
-neopixel_send_buffer(Pin &pin, const uint8_t *ptr, int numBytes) {
+extern "C" void __attribute__((long_call, section(".data")))
+neopixel_send_buffer_nrf52(void *port500, uint32_t pinbr, const uint8_t *ptr, int numBytes);
+
+__attribute__((noinline)) static void
+neopixel_send_buffer_brightness(DevicePin &pin, const uint8_t *ptr, int numBytes, uint32_t br) {
+    if (br > 0x100)
+        br = 0x100;
+
     pin.setDigitalValue(0);
+    target_wait_us(300); // initial reset
 
     auto port = pin.name < 32 ? NRF_P0 : NRF_P1;
-    uint32_t PIN = 1 << (pin.name & 31);
-
-    // min. 280uS reset time; this is at least cycles x2
-    system_timer_wait_cycles(64 * 140);
-
-    uint32_t mask = 0x80;
-    int i = 0;
 
     __disable_irq();
-    for (;;) {
-        uint32_t d0 = ptr[i] & mask ? 5 : 0;
-        uint32_t d1 = ptr[i] & mask ? 2 : 3;
-
-        mask = mask >> 1;
-        if (mask == 0) {
-            mask = 0x80;
-            i++;
-        }
-
-        port->OUTSET = PIN;
-
-        if (d0)
-            system_timer_wait_cycles(d0);
-        else
-            __asm("nop; nop; nop; nop; nop; nop; nop; nop; nop; nop; nop");
-
-        port->OUTCLR = PIN;
-        system_timer_wait_cycles(d1);
-
-        if (i >= numBytes)
-            break;
-    }
+    neopixel_send_buffer_nrf52((uint8_t *)(void *)port + 0x500, (pin.name & 31) | (br << 20), ptr,
+                               numBytes);
     __enable_irq();
 }
 
-__attribute__((noinline)) static void
-neopixel_send_buffer_brigthness(DevicePin &pin, const uint8_t *ptr, int numBytes, int br) {
-    if (br == 255)
-        neopixel_send_buffer(pin, ptr, numBytes);
-    else {
-        auto copy = mkBuffer(NULL, numBytes);
-        registerGCObj(copy);
-        for (int i = 0; i < numBytes; ++i) {
-            copy->data[i] = (ptr[i] * br) >> 8;
-        }
-        neopixel_send_buffer(pin, copy->data, copy->length);
-        unregisterGCObj(copy);
-    }
+static void neopixel_send_buffer(DevicePin &pin, const uint8_t *ptr, int numBytes) {
+    neopixel_send_buffer_brightness(pin, ptr, numBytes, 0x100);
 }
+
 #else
 extern "C" void neopixel_send_buffer_core(DevicePin *pin, const uint8_t *ptr, int numBytes);
 __attribute__((noinline)) static void neopixel_send_buffer(DevicePin &pin, const uint8_t *ptr,
@@ -73,20 +43,22 @@ __attribute__((noinline)) static void neopixel_send_buffer(DevicePin &pin, const
 
     // setup pin as digital
     pin.setDigitalValue(0);
+    wait_us(300); // initial reset
     __disable_irq();
     neopixel_send_buffer_core(&pin, ptr, numBytes);
     __enable_irq();
 }
 
-extern "C" void neopixel_send_buffer_brigthness_core(DevicePin *pin, const uint8_t *ptr,
+extern "C" void neopixel_send_buffer_brightness_core(DevicePin *pin, const uint8_t *ptr,
                                                      int numBytes, int br);
 __attribute__((noinline)) static void
-neopixel_send_buffer_brigthness(DevicePin &pin, const uint8_t *ptr, int numBytes, int br) {
+neopixel_send_buffer_brightness(DevicePin &pin, const uint8_t *ptr, int numBytes, int br) {
 
     // setup pin as digital
     pin.setDigitalValue(0);
+    wait_us(300); // initial reset
     __disable_irq();
-    neopixel_send_buffer_brigthness_core(&pin, ptr, numBytes, br);
+    neopixel_send_buffer_brightness_core(&pin, ptr, numBytes, br);
     __enable_irq();
 }
 #endif
@@ -111,7 +83,7 @@ void sendWS2812BufferWithBrightness(Buffer buf, int pin, int brightness) {
     if (!buf || !buf->length)
         return;
 
-    neopixel_send_buffer_brigthness(*pxt::getPin(pin), buf->data, buf->length, brightness);
+    neopixel_send_buffer_brightness(*pxt::getPin(pin), buf->data, buf->length, brightness);
 }
 
 /**
