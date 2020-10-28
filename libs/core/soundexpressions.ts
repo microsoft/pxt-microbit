@@ -14,6 +14,7 @@ class SoundExpression {
     //% block="play sound $this"
     //% weight=80
     //% blockGap=8
+    //% help=music/play
     //% group="micro:bit v2"
     play() {
         music.__playSoundExpression(this.notes, false)
@@ -25,6 +26,7 @@ class SoundExpression {
     //% block="play sound $this until done"
     //% weight=81
     //% blockGap=8
+    //% help=music/play-until-done
     //% group="micro:bit v2"
     playUntilDone() {
         music.__playSoundExpression(this.notes, true)

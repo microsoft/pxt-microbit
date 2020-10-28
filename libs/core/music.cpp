@@ -48,7 +48,7 @@ int volume() {
 //% blockGap=8
 //% group="micro:bit v2"
 //% parts=onboardspeaker
-//% help=input/set-on-board-speaker
+//% help=input/set-on-board-speaker-enabled
 //% enabled.shadow=toggleOnOff
 void setOnBoardSpeakerEnabled(bool enabled) {
 #if MICROBIT_CODAL

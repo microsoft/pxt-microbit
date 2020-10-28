@@ -632,7 +632,7 @@ declare namespace music {
     //% blockGap=8
     //% group="micro:bit v2"
     //% parts=onboardspeaker
-    //% help=input/set-on-board-speaker
+    //% help=input/set-on-board-speaker-enabled
     //% enabled.shadow=toggleOnOff shim=music::setOnBoardSpeakerEnabled
     function setOnBoardSpeakerEnabled(enabled: boolean): void;
 }
@@ -1164,7 +1164,7 @@ declare namespace pins {
     //% blockId=device_touch_set_type block="set %name to touch mode %mode"
     //% advanced=true
     //% group="micro:bit v2"
-    //% help=input/touch-set-mode shim=pins::touchSetMode
+    //% help=pins/touch-set-mode shim=pins::touchSetMode
     function touchSetMode(name: TouchTarget, mode: TouchTargetMode): void;
 }
 declare namespace music {

@@ -3,12 +3,20 @@
 Run some code when the microphone hears a sound.
 
 ```sig
-input.onSound(function () {})
+input.onSound(DetectedSound.Loud, function () {})
 ```
 
 The microphone will detect sounds that are quiet or loud. You can have the microphone detect
 a sound at a certain level and run some code in and event when it hears the sound. There are
 two sound ranges you can detect for: `loud` or `quiet`.
+
+### ~ reminder
+
+#### micro:bit v2 required
+
+This block requires the [micro:bit v2](/device/v2) hardware. If you use this block with a micro:bit v1 board, you will see the **927** error code on the screen.
+
+### ~
 
 ## Parameters
 

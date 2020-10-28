@@ -36,7 +36,7 @@ namespace pins {
     //% blockId=device_touch_set_type block="set %name to touch mode %mode"
     //% advanced=true
     //% group="micro:bit v2"
-    //% help=input/touch-set-mode
+    //% help=pins/touch-set-mode
     void touchSetMode(TouchTarget name, TouchTargetMode mode) {
     #if MICROBIT_CODAL
         const auto pin = name == TouchTarget::LOGO 

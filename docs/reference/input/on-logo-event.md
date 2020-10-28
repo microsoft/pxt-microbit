@@ -6,17 +6,19 @@ Run some code in your program when the @boardname@ logo is pressed, touched or r
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {})
 ```
 
-## ~ reminder
+### ~ reminder
+
+#### micro:bit v2 required
 
 This block requires the [micro:bit v2](/device/v2) hardware. If you use this block with a micro:bit v1 board, you will see the **927** error code on the screen.
 
-## ~
+### ~
 
 The logo on the @boardname@ works just like a touch pin. The logo will detect your touch. You can have code inside an event that will run when the logo is pressed.
 
 ## Parameters
 
-* ``event`` determines whether the logo needs to be ``released``, ``pressed``, ``touched`` or ``long pressed``.
+* **action**: the logo event to run your code for. The events are ``released``, ``pressed``, ``touched`` or ``long pressed``.
 
 ## Example
 
