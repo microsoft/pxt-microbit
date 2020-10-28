@@ -10,6 +10,14 @@ Two common touch sensing methods are capacitive or resisitive. Capacitive touch 
 
 You can choose which method you want a touch target (pins or logo) to use to detect touch.
 
+### ~ reminder
+
+#### micro:bit v2 required
+
+This block requires the [micro:bit v2](/device/v2) hardware. If you use this block with a micro:bit v1 board, you will see the **927** error code on the screen.
+
+### ~
+
 ## Paramters
 
 * **target**: the pin or logo you want to set the touch mode for: ``P0``, ``P1``, ``P2``, or ``logo``.

@@ -8,6 +8,14 @@ soundExpression.giggle.playUntilDone()
 
 A sound expression is a preformatted set of tones that create a certain sound. There are several sounds to choose from. The sound is started and your program waits until the sound stops playing.
 
+### ~ reminder
+
+#### micro:bit v2 required
+
+This block requires the [micro:bit v2](/device/v2) hardware. If you use this block with a micro:bit v1 board, you will see the **927** error code on the screen.
+
+### ~
+
 ## Parameters
 
 In blocks, the sound is selected from the list in the ``||music:play sound until done||`` block.
