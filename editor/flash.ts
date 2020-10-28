@@ -180,7 +180,19 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
             // setting the baud rate on serial resets the cortex, so delay after
             .then(() => this.cmsisdap.cmdNums(0x82, [0x00, 0xC2, 0x01, 0x00]))
             .delay(200)
+            .then(() => this.checkStateAsync())
             .then(() => this.startReadSerial());
+    }
+
+    private async checkStateAsync() {
+        const states = ["reset", "lockup", "sleeping", "halted", "running"]
+        try {
+            const state = await this.cortexM.getState();
+            log(`cortex state: ${states[state]}`)
+        } catch (e) {
+            log(`cortex state failed`)
+            console.debug(e)
+        }
     }
 
     disconnectAsync() {
@@ -207,10 +219,11 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
                 }
                 return this.quickHidFlashAsync(resp);
             })
+            .then(() => this.checkStateAsync())
             .finally(() => { this.flashing = false })
-            // don't disconnect here
-            // the micro:bit will automatically disconnect and reconnect
-            // via the webusb events
+        // don't disconnect here
+        // the micro:bit will automatically disconnect and reconnect
+        // via the webusb events
     }
 
     private fullVendorCommandFlashAsync(resp: pxtc.CompileResult): Promise<void> {
@@ -234,7 +247,7 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
                     const end = Math.min(hexArray.length, offset + chunkSize);
                     const nextPage = hexArray.slice(offset, end);
                     nextPage.unshift(nextPage.length);
-                    if(sentPages % 32 == 0) // reduce logging
+                    if (sentPages % 32 == 0) // reduce logging
                         log(`next page ${sentPages}: [${offset.toString(16)}, ${end.toString(16)}] (${Math.ceil((hexArray.length - end) / 1000)}kb left)`)
                     return this.cmsisdap.cmdNums(0x8C /* DAPLinkFlash.WRITE */, nextPage)
                         .then(() => {
