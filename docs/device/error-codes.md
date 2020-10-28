@@ -66,6 +66,8 @@ Error codes generated from the garbage collector.
 * **906** (`PANIC_INTERNAL_ERROR`): an internal resource error
 * **907** (`PANIC_NO_SUCH_CONFIG`): the specified device resource is not present
 * **909** (`PANIC_INVALID_ARGUMENT`): the argument value is out of range or the type or format is invalid
+* **927** (`PANIC_VARIANT_NOT_SUPPORTED`): using a v2 feature on a v1 board
+
 
 ## JavaScript runtime codes
 
