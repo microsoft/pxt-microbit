@@ -200,7 +200,7 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
             .then(() => this.cortexM.memory.readBlock(0x10001014, 1, this.pageSize))
             .then(v => {
                 const uicr = pxt.HF2.read32(v, 0) & 0xff;
-                log(`uicr: ${uicr.toString(16)}`);
+                log(`uicr: ${uicr.toString(16)} (${pxt.U.toHex(v)})`);
                 if (uicr != 0 || this.forceFullFlash) {
                     pxt.tickEvent("hid.flash.uicrfail");
                     return this.fullVendorCommandFlashAsync(resp);
