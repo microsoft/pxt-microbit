@@ -42,7 +42,7 @@ namespace pins {
         const auto pin = name == TouchTarget::LOGO 
             ? &uBit.io.logo : getPin((int)name);
         if (pin) {
-            pin->isTouched(mode == TouchTargetMode::Capacitative 
+            pin->isTouched(mode == TouchTargetMode::Capacitive 
                 ? codal::TouchMode::Capacitative : codal::TouchMode::Resistive);
         }
     #else
