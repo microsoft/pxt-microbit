@@ -74,9 +74,11 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
 
     constructor(public readonly io: pxt.packetio.PacketIO) {
         this.familyID = 0x0D28; // this is the microbit vendor id, not quite UF2 family id
-        this.io.onDeviceConnectionChanged = (connect) =>
+        this.io.onDeviceConnectionChanged = (connect) => {
+            log(`device connection changed`);
             this.disconnectAsync()
                 .then(() => connect && this.reconnectAsync());
+        }
         this.io.onData = buf => {
             // console.log("RD: " + pxt.Util.toHex(buf))
             this.pbuf.push(buf);
@@ -175,7 +177,9 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
                 this.numPages = pxt.HF2.read32(res, 4)
                 log(`page size ${this.pageSize}, num pages ${this.numPages}`)
             })
+            // setting the baud rate on serial resets the cortex, so delay after
             .then(() => this.cmsisdap.cmdNums(0x82, [0x00, 0xC2, 0x01, 0x00]))
+            .delay(200)
             .then(() => this.startReadSerial());
     }
 
