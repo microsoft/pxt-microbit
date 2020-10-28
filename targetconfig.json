@@ -1,7 +1,6 @@
 {
     "packages": {
         "approvedRepos": [
-            "microbit-foundation/pxt-microbit-v2-extension",
             "microsoft/pxt-neopixel",
             "microsoft/pxt-microturtle",
             "microsoft/pxt-sonar",
