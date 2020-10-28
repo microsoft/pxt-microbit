@@ -261,7 +261,7 @@
   "TouchTarget.P0|block": "P0",
   "TouchTarget.P1|block": "P1",
   "TouchTarget.P2|block": "P2",
-  "TouchTargetMode.Capacitative|block": "capacitative",
+  "TouchTargetMode.Capacitive|block": "capacitive",
   "TouchTargetMode.Resistive|block": "resistive",
   "_py|block": "_py",
   "basic.clearScreen|block": "clear screen",

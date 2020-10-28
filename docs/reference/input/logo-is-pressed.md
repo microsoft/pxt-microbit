@@ -6,6 +6,13 @@ Check if the @boardname@ logo is currently being pressed.
 input.logoIsPressed()
 ```
 
+## ~ reminder
+
+This block requires the [micro:bit v2](/device/v2) hardware. If you use this block with a micro:bit v1 board, you will see the **927** error code on the screen.
+
+## ~
+
+
 The logo on the @boardname@ works just like a touch pin. You can check the whether or not the logo is currently being pressed. You use the [boolean](/types/boolean) value for the status of the logo press to make a logical decision in your program.
 
 ## Returns
@@ -28,6 +35,6 @@ basic.forever(function () {
 
 ## See also
 
-[on logo pressed](/reference/input/on-logo-pressed),
-[on logo released](/reference/input/is-pin-released),
+[micro:bit v2](/device/v2),
+[on logo event](/reference/input/on-logo-event),
 [pin is pressed](/referene/inpu/pin-is-pressed)

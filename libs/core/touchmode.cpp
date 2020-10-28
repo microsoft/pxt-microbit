@@ -6,8 +6,8 @@
 #endif
 
 enum class TouchTargetMode {
-    //% block="capacitative"
-    Capacitative = 1,
+    //% block="capacitive"
+    Capacitive = 1,
     //% block="resistive"
     Resistive = 0
 };
