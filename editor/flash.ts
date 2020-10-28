@@ -294,7 +294,7 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
                 })
                 .then(() => {
                     // starts the program
-                    log(`start cortexm`)
+                    logV(`cortex.debug.enable`)
                     return this.cortexM.debug.enable()
                 })
         }
