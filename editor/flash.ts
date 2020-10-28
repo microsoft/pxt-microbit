@@ -208,8 +208,9 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
                 return this.quickHidFlashAsync(resp);
             })
             .finally(() => { this.flashing = false })
-            .then(() => Promise.delay(100))
-            .then(() => this.disconnectAsync())
+            // don't disconnect here
+            // the micro:bit will automatically disconnect and reconnect
+            // via the webusb events
     }
 
     private fullVendorCommandFlashAsync(resp: pxtc.CompileResult): Promise<void> {
