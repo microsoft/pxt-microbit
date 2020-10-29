@@ -5,7 +5,7 @@ CACHE:
 /cdn/pxtsim.js
 /sim/sim.js
 
-# /sim/sounds/giggle.wav
+/sim/sounds/giggle.wav
 /sim/sounds/happy.wav
 /sim/sounds/hello.wav
 /sim/sounds/mysterious.wav
