@@ -5,5 +5,16 @@ CACHE:
 /cdn/pxtsim.js
 /sim/sim.js
 
+# /sim/sounds/giggle.wav
+/sim/sounds/happy.wav
+/sim/sounds/hello.wav
+/sim/sounds/mysterious.wav
+/sim/sounds/sad.wav
+/sim/sounds/slide.wav
+/sim/sounds/soaring.wav
+/sim/sounds/spring.wav
+/sim/sounds/twinkle.wav
+/sim/sounds/yawn.wav
+
 NETWORK:
 *
