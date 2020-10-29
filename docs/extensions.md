@@ -144,6 +144,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 
 ```codecard
 [{
+ "name": "DS3231",
+  "url":"/pkg/keble6/pxt-DS3231",
+  "cardType": "package"
+}, {
  "name": "Let's Talk Science COZIR sensor",
   "url":"/pkg/letstalkscience/pxt-cozir",
   "cardType": "package"

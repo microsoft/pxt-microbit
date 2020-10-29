@@ -189,7 +189,8 @@
             "YFROBOT-TM/pxt-yfrobot-valon",
             "KitronikLtd/pxt-kitronik-smart-greenhouse",
             "hardwario/pxt-microbit-hardwario",
-            "Schoumi/ssd1306-with-reset"
+            "Schoumi/ssd1306-with-reset",
+            "keble6/pxt-DS3231"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",
