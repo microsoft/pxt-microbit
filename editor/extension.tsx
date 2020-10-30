@@ -45,7 +45,12 @@ pxt.editor.initExtensionsAsync = function (opts: pxt.editor.ExtensionOptions): P
         vendorId: 0x0D28,
         productId: 0x0204,
         classCode: 0xff,
-        subclassCode: 0x03
+        subclassCode: 0x03 // the ctrl pipe endpoint
+    }, {
+        vendorId: 0x0D28,
+        productId: 0x0204,
+        classCode: 0xff,
+        subclassCode: 0x00 // the custom CMSIS2 endpoint
     }])
 
     res.mkPacketIOWrapper = flash.mkDAPLinkPacketIOWrapper;

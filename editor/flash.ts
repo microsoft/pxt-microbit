@@ -67,7 +67,6 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
     private flashing = false;
     private flashAborted = false;
     private readSerialId = 0;
-    private pbuf = new pxt.U.PromiseBuffer<Uint8Array>();
     private pageSize = 1024;
     private numPages = 256;
     private usesCODAL = false;
@@ -79,10 +78,6 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
             log(`device connection changed`);
             this.disconnectAsync()
                 .then(() => connect && this.reconnectAsync());
-        }
-        this.io.onData = buf => {
-            // console.log("RD: " + pxt.Util.toHex(buf))
-            this.pbuf.push(buf);
         }
 
         this.allocDAP();
@@ -146,14 +141,13 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
         this.cortexM = new DapJS.CortexM(this.dap);
 
         const h = this.io;
-        const pbuf = this.pbuf;
         function writeAsync(data: ArrayBuffer) {
             //console.log("WR: " + pxt.Util.toHex(new Uint8Array(data)));
             return h.sendPacketAsync(new Uint8Array(data));
         }
 
         function readAsync() {
-            return pbuf.shiftAsync();
+            return h.recvPacketAsync()
         }
     }
 
@@ -247,23 +241,32 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
                 const binFile = resp.outfiles[this.binName];
                 log(`bin file ${this.binName} in ${Object.keys(resp.outfiles).join(', ')}, ${binFile?.length || -1}b`)
                 const hexUint8 = pxt.U.stringToUint8Array(binFile);
-                const hexArray: number[] = Array.prototype.slice.call(hexUint8);
                 log(`hex ${hexUint8?.byteLength || -1}b, ~${(hexUint8.byteLength / chunkSize) | 0} chunks of ${chunkSize}b`)
 
+                const checkRes = () =>
+                    this.io.recvPacketAsync()
+                        .then(buf => {
+                            if (buf[0] != 0x8C)
+                                throw new Error("invalid vendor flash response: " + buf[0])
+                        })
                 const sendPages = (offset: number = 0): Promise<void> => {
-                    const end = Math.min(hexArray.length, offset + chunkSize);
-                    const nextPage = hexArray.slice(offset, end);
-                    nextPage.unshift(nextPage.length);
-                    if (sentPages % 32 == 0) // reduce logging
-                        log(`next page ${sentPages}: [${offset.toString(16)}, ${end.toString(16)}] (${Math.ceil((hexArray.length - end) / 1000)}kb left)`)
-                    return this.cmsisdap.cmdNums(0x8C /* DAPLinkFlash.WRITE */, nextPage)
+                    const end = Math.min(hexUint8.length, offset + chunkSize);
+                    const nextPageData = hexUint8.slice(offset, end);
+                    const cmdData = new Uint8Array(2 + nextPageData.length)
+                    cmdData[0] = 0x8C /* DAPLinkFlash.WRITE */
+                    cmdData[1] = nextPageData.length
+                    cmdData.set(nextPageData, 2)
+                    if (sentPages % 128 == 0) // reduce logging
+                        log(`next page ${sentPages}: [${offset.toString(16)}, ${end.toString(16)}] (${Math.ceil((hexUint8.length - end) / 1000)}kb left)`)
+                    return this.io.sendPacketAsync(cmdData)
+                        .then(offset != 0 ? checkRes : () => { })
                         .then(() => {
                             this.checkAborted()
-                            if (end < hexArray.length) {
+                            if (end < hexUint8.length) {
                                 sentPages++;
                                 return sendPages(end);
                             }
-                            return Promise.resolve();
+                            return checkRes()
                         });
                 }
 
