@@ -196,6 +196,11 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
         }
     }
 
+    private checkAborted() {
+        if (this.flashAborted)
+            throw new Error(lf("Download cancelled"));
+    }
+
     disconnectAsync() {
         log(`disconnect`)
         this.flashAborted = true;
@@ -253,7 +258,8 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
                         log(`next page ${sentPages}: [${offset.toString(16)}, ${end.toString(16)}] (${Math.ceil((hexArray.length - end) / 1000)}kb left)`)
                     return this.cmsisdap.cmdNums(0x8C /* DAPLinkFlash.WRITE */, nextPage)
                         .then(() => {
-                            if (!this.flashAborted && end < hexArray.length) {
+                            this.checkAborted()
+                            if (end < hexArray.length) {
                                 sentPages++;
                                 return sendPages(end);
                             }
@@ -350,7 +356,7 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
 
                 return Promise.mapSeries(pxt.U.range(aligned.length),
                     i => {
-                        if (this.flashAborted) return Promise.resolve();
+                        this.checkAborted();
                         let b = aligned[i];
                         if (b.targetAddr >= 0x10000000) {
                             log(`target address ${b.targetAddr.toString(16)} > 0x10000000`)
