@@ -158,7 +158,7 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
     }
 
     get binName() {
-        return (this.usesCODAL ? "mbcodal-" : "") + pxtc.BINARY_HEX;
+        return (this.usesCODAL ? "mbcodal-" : "mbdal-") + pxtc.BINARY_HEX;
     }
 
     reconnectAsync(): Promise<void> {
