@@ -167,9 +167,9 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
             .then(() => this.io.reconnectAsync())
             .then(() => this.cortexM.init())
             .then(() => this.cmsisdap.cmdNums(0x80, []))
-            .then(r => {
+            .then((r: Uint8Array) => {
                 this.usesCODAL = r[2] == 57 && r[3] == 57 && r[5] >= 51;
-                log(`bin name: ${this.binName}`)
+                log(`bin name: ${this.binName} ${pxt.U.toHex(r)}`)
             })
             .then(() => this.cortexM.memory.readBlock(0x10000010, 2, this.pageSize))
             .then(res => {
