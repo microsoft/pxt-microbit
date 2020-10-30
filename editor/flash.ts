@@ -65,6 +65,7 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
     private cortexM: DapJS.CortexM
     private cmsisdap: any;
     private flashing = false;
+    private flashAborted = false;
     private readSerialId = 0;
     private pbuf = new pxt.U.PromiseBuffer<Uint8Array>();
     private pageSize = 1024;
@@ -197,6 +198,7 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
 
     disconnectAsync() {
         log(`disconnect`)
+        this.flashAborted = true;
         return this.stopSerialAsync()
             .then(() => this.io.disconnectAsync());
     }
@@ -231,7 +233,7 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
 
         const chunkSize = 62;
         let sentPages = 0;
-        let aborted = false;
+        this.flashAborted = false;
         return Promise.resolve()
             .then(() => {
                 return this.cmsisdap.cmdNums(0x8A /* DAPLinkFlash.OPEN */, [1]);
@@ -251,7 +253,7 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
                         log(`next page ${sentPages}: [${offset.toString(16)}, ${end.toString(16)}] (${Math.ceil((hexArray.length - end) / 1000)}kb left)`)
                     return this.cmsisdap.cmdNums(0x8C /* DAPLinkFlash.WRITE */, nextPage)
                         .then(() => {
-                            if (!aborted && end < hexArray.length) {
+                            if (!this.flashAborted && end < hexArray.length) {
                                 sentPages++;
                                 return sendPages(end);
                             }
@@ -277,7 +279,7 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
             .timeout(FULL_FLASH_TIMEOUT, timeoutMessage)
             .catch((e) => {
                 log(`error: abort`)
-                aborted = true;
+                this.flashAborted = true;
                 return this.resetAndThrowAsync(e)
             });
     }
@@ -296,7 +298,7 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
 
     private quickHidFlashAsync(resp: pxtc.CompileResult): Promise<void> {
         log("quick flash")
-        let aborted = false;
+        this.flashAborted = false;
 
         const runFlash = (b: ts.pxtc.UF2.Block, dataAddr: number) => {
             const cmd = this.cortexM.prepareCommand();
@@ -348,7 +350,7 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
 
                 return Promise.mapSeries(pxt.U.range(aligned.length),
                     i => {
-                        if (aborted) return Promise.resolve();
+                        if (this.flashAborted) return Promise.resolve();
                         let b = aligned[i];
                         if (b.targetAddr >= 0x10000000) {
                             log(`target address ${b.targetAddr.toString(16)} > 0x10000000`)
@@ -395,7 +397,7 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
             })
             .timeout(PARTIAL_FLASH_TIMEOUT, timeoutMessage)
             .catch((e) => {
-                aborted = true;
+                this.flashAborted = true;
                 return this.resetAndThrowAsync(e);
             });
     }
