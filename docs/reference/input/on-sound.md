@@ -38,7 +38,8 @@ input.onSound(DetectedSound.Loud, function () {
 
 # See also #seealso
 
-[sound level](/reference/input/sound-level), [set sound threshold](/reference/input/sound-level)
+[sound level](/reference/input/sound-level),
+[set sound threshold](/reference/input/sound-level)
 
 ```package
 microphone
