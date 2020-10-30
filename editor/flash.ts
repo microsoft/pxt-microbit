@@ -247,10 +247,11 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
         const chunkSize = 62;
         let sentPages = 0;
         return Promise.resolve()
-            .then(() => {
-                return this.cmsisdap.cmdNums(0x8A /* DAPLinkFlash.OPEN */, [1]);
-            })
+            .then(() => this.cmsisdap.cmdNums(0x8A /* DAPLinkFlash.OPEN */, [1]))
             .then((res) => {
+                log(`daplinkflash open: ${pxt.U.toHex(res)}`)
+                if (res[1] !== 0)
+                    throw new Error(lf("Download failed, please try again"));
                 const binFile = resp.outfiles[this.binName];
                 log(`bin file ${this.binName} in ${Object.keys(resp.outfiles).join(', ')}, ${binFile?.length || -1}b`)
                 const hexUint8 = pxt.U.stringToUint8Array(binFile);
@@ -258,6 +259,7 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
                 log(`hex ${hexUint8?.byteLength || -1}b, ~${(hexUint8.byteLength / chunkSize) | 0} chunks of ${chunkSize}b`)
 
                 const sendPages = (offset: number = 0): Promise<void> => {
+                    this.checkAborted()
                     const end = Math.min(hexArray.length, offset + chunkSize);
                     const nextPage = hexArray.slice(offset, end);
                     nextPage.unshift(nextPage.length);
@@ -276,31 +278,35 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
 
                 return sendPages();
             })
-            .then((res) => {
+            .then(() => {
                 log(`close`)
                 return this.cmsisdap.cmdNums(0x8B /* DAPLinkFlash.CLOSE */, []);
             })
             .then(res => {
-                log(`reset `)
-                if (res[1] !== 0)
-                    throw new Error("DAPLink.CLOSE failed");
+                log(`daplinkclose: ${pxt.U.toHex(res)}`)
                 return this.cmsisdap.cmdNums(0x89 /* DAPLinkFlash.RESET */, []);
             })
-            .then(() => {
+            .then((res) => {
+                log(`daplinkreset: ${pxt.U.toHex(res)}`)
                 log(`full flash done`);
             })
             .timeout(FULL_FLASH_TIMEOUT, timeoutMessage)
             .catch((e) => {
                 log(`error: abort`)
                 this.flashAborted = true;
-                return this.resetAndThrowAsync(e)
+                return this.resetAndThrowAsync(e);
             });
     }
 
     private resetAndThrowAsync(e: any) {
         log(`reset on error`)
         console.debug(e)
+        // reset any pending daplink
         return this.cmsisdap.cmdNums(0x89 /* DAPLinkFlash.RESET */, [])
+            .catch((e2: any) => {
+                // Best effort reset, no-op if there's an error
+            })
+            .then(() => this.cortexM.reset(false))
             .catch((e2: any) => {
                 // Best effort reset, no-op if there's an error
             })
