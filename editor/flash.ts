@@ -265,6 +265,10 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
                 log(`close`)
                 return this.cmsisdap.cmdNums(0x8B /* DAPLinkFlash.CLOSE */, []);
             })
+            .then(res => {
+                log(`reset ` + res)
+                return this.cmsisdap.cmdNums(0x89 /* DAPLinkFlash.RESET */, []);
+            })
             .then(() => {
                 log(`full flash done`);
             })
