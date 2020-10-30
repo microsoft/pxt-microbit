@@ -1286,7 +1286,7 @@ path.sim-board {
                     state.edgeConnectorState.pins[index].touched = true;
                     this.updatePin(state.edgeConnectorState.pins[index], index);
                     this.board.bus.queue(state.edgeConnectorState.pins[index].id, DAL.MICROBIT_BUTTON_EVT_DOWN);
-                    pressedTime = runtime?.runningTime()
+                    pressedTime = runtime.runningTime()
                 }));
                 btn.addEventListener(pointerEvents.leave, ev => {
                     let state = this.board;
@@ -1298,7 +1298,7 @@ path.sim-board {
                     state.edgeConnectorState.pins[index].touched = false;
                     this.updatePin(state.edgeConnectorState.pins[index], index);
                     this.board.bus.queue(state.edgeConnectorState.pins[index].id, DAL.MICROBIT_BUTTON_EVT_UP);
-                    const currentTime = runtime?.runningTime()
+                    const currentTime = runtime.runningTime()
                     if (currentTime - pressedTime > DAL.DEVICE_BUTTON_LONG_CLICK_TIME)
                         this.board.bus.queue(state.edgeConnectorState.pins[index].id, DAL.MICROBIT_BUTTON_EVT_LONG_CLICK);
                     else
@@ -1327,7 +1327,7 @@ path.sim-board {
                     stateButtons[index].pressed = true;
                     svg.fill(elButtons[index], this.props.theme.buttonDown);
                     this.board.bus.queue(stateButtons[index].id, DAL.MICROBIT_BUTTON_EVT_DOWN);
-                    pressedTime = runtime?.runningTime()
+                    pressedTime = runtime.runningTime()
                 }));
                 btn.addEventListener(pointerEvents.leave, ev => {
                     stateButtons[index].pressed = false;
@@ -1337,7 +1337,7 @@ path.sim-board {
                     stateButtons[index].pressed = false;
                     svg.fill(elButtons[index], this.props.theme.buttonUp);
                     this.board.bus.queue(stateButtons[index].id, DAL.MICROBIT_BUTTON_EVT_UP);
-                    const currentTime = runtime?.runningTime()
+                    const currentTime = runtime.runningTime()
                     if (currentTime - pressedTime > DAL.DEVICE_BUTTON_LONG_CLICK_TIME)
                         this.board.bus.queue(stateButtons[index].id, DAL.MICROBIT_BUTTON_EVT_LONG_CLICK);
                     else
@@ -1364,7 +1364,7 @@ path.sim-board {
                 svg.fill(this.buttons[1], this.props.theme.buttonDown);
                 svg.fill(this.buttons[2], this.props.theme.buttonDown);
                 this.board.bus.queue(bpState.abBtn.id, DAL.MICROBIT_BUTTON_EVT_DOWN);
-                pressedTime = runtime?.runningTime()
+                pressedTime = runtime.runningTime()
             }));
             this.buttonsOuter[2].addEventListener(pointerEvents.leave, ev => {
                 bpState.aBtn.pressed = false;
@@ -1383,7 +1383,7 @@ path.sim-board {
                 svg.fill(this.buttons[2], this.props.theme.virtualButtonUp);
 
                 this.board.bus.queue(bpState.abBtn.id, DAL.MICROBIT_BUTTON_EVT_UP);
-                const currentTime = runtime?.runningTime()
+                const currentTime = runtime.runningTime()
                 if (currentTime - pressedTime > DAL.DEVICE_BUTTON_LONG_CLICK_TIME)
                     this.board.bus.queue(bpState.abBtn.id, DAL.MICROBIT_BUTTON_EVT_LONG_CLICK);
                 else

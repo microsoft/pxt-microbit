@@ -105,6 +105,10 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
             // done
             this.cmsisdap.cmdNums(0x83, [])
                 .then((r: number[]) => {
+                    if (rid != this.readSerialId) {
+                        log(`stopped serial reader ${rid}`)
+                        return;
+                    }
                     const len = r[1]
                     let str = ""
                     for (let i = 2; i < len + 2; ++i) {
@@ -120,6 +124,10 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
                         setTimeout(readSerial, 50)
                 }, (err: any) => {
                     log(`read error: ` + err.message);
+                    if (rid != this.readSerialId) {
+                        log(`stopped serial reader ${rid}`)
+                        return;
+                    }
                     this.disconnectAsync(); // force disconnect
                 });
         }
@@ -181,15 +189,17 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
             // setting the baud rate on serial resets the cortex, so delay after
             .then(() => this.cmsisdap.cmdNums(0x82, [0x00, 0xC2, 0x01, 0x00]))
             .delay(200)
-            .then(() => this.checkStateAsync())
+            .then(() => this.checkStateAsync(true))
             .then(() => this.startReadSerial());
     }
 
-    private async checkStateAsync() {
+    private async checkStateAsync(resume?: boolean): Promise<void> {
         const states = ["reset", "lockup", "sleeping", "halted", "running"]
         try {
             const state = await this.cortexM.getState();
             log(`cortex state: ${states[state]}`)
+            if (resume && state == DapJS.CoreState.TARGET_HALTED)
+                await this.cortexM.resume();
         } catch (e) {
             log(`cortex state failed`)
             console.debug(e)
@@ -234,7 +244,7 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
                             return this.fullVendorCommandFlashAsync(resp);
                     });
             })
-            .then(() => this.checkStateAsync())
+            .then(() => this.checkStateAsync(true))
             .finally(() => { this.flashing = false })
         // don't disconnect here
         // the micro:bit will automatically disconnect and reconnect
@@ -423,6 +433,7 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
                 pxt.tickEvent("hid.flash.done");
                 return this.cortexM.reset(false);
             })
+            .then(() => this.checkStateAsync())
             .timeout(PARTIAL_FLASH_TIMEOUT, timeoutMessage)
             .catch((e) => {
                 this.flashAborted = true;
