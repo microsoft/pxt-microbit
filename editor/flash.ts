@@ -171,6 +171,8 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
 
     reconnectAsync(): Promise<void> {
         log(`reconnect`)
+        this.flashAborted = false;
+        this.allocDAP(); // clean dap apis
         // configure serial at 115200
         return this.stopSerialAsync()
             .then(() => this.io.reconnectAsync())
@@ -222,6 +224,7 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
         log("reflash")
         startTime = 0
         pxt.tickEvent("hid.flash.start");
+        this.flashAborted = false;
         this.flashing = true;
         return (this.io.isConnected() ? Promise.resolve() : this.io.reconnectAsync())
             .then(() => this.cortexM.init())
