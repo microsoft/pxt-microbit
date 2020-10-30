@@ -67,6 +67,7 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
     private flashing = false;
     private flashAborted = false;
     private readSerialId = 0;
+    private pbuf = new pxt.U.PromiseBuffer<Uint8Array>();
     private pageSize = 1024;
     private numPages = 256;
     private usesCODAL = false;
@@ -78,6 +79,11 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
             log(`device connection changed`);
             this.disconnectAsync()
                 .then(() => connect && this.reconnectAsync());
+        }
+
+        this.io.onData = buf => {
+            // console.log("RD: " + pxt.Util.toHex(buf))
+            this.pbuf.push(buf);
         }
 
         this.allocDAP();
@@ -219,7 +225,10 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
     }
 
     private recvPacketAsync() {
-        return this.io.recvPacketAsync()
+        if (this.io.recvPacketAsync)
+            return this.io.recvPacketAsync()
+        else
+            return this.pbuf.shiftAsync()
     }
 
     private dapCmd(buf: Uint8Array) {
