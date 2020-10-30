@@ -386,7 +386,8 @@ namespace pins {
             if (NULL != pitchPin)
                 pitchPin->setAnalogValue(0);
             analogTonePlaying = false;
-            fiber_sleep(5);
+            // causes issues with v2 DMA.
+            // fiber_sleep(5);
         }
     }
 
