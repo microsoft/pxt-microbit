@@ -389,7 +389,8 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
                 })
         }
 
-        return this.cortexM.memory.writeBlock(loadAddr, flashPageBIN)
+        return this.stopSerialAsync()
+            .then(() => this.cortexM.memory.writeBlock(loadAddr, flashPageBIN))
             .then(() => Promise.mapSeries(pxt.U.range(changed.length),
                 i => {
                     this.checkAborted();
@@ -436,7 +437,8 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
                 pxt.tickEvent("hid.flash.done");
                 return this.cortexM.reset(false);
             })
-            .then(() => this.checkStateAsync())
+            .then(() => this.checkStateAsync(true))
+            .then(() => this.startReadSerial())
             .timeout(PARTIAL_FLASH_TIMEOUT, timeoutMessage)
             .catch((e) => {
                 this.flashAborted = true;
