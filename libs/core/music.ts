@@ -462,6 +462,19 @@ namespace music {
     }
 
     /**
+     * Stop all sounds from playing.
+     */
+    //% help=music/stop-all-sounds
+    //% blockId=music_stop_all_sounds block="stop all sounds"
+    //% weight=10
+    //% group="Sounds"
+    export function stopAllSounds() {
+        playTone(0, 0);
+        play
+    }
+
+
+    /**
      * Sets a custom playTone function for playing melodies
      */
     //% help=music/set-play-tone
