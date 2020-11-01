@@ -52,6 +52,9 @@ namespace pxsim.music {
         }).finally(() => {
             cb();
         })
+    }
 
+    export function __stopSoundExpressions() {
+        AudioContextManager.stopAll();
     }
 }

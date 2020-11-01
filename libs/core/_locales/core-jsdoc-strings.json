@@ -530,6 +530,7 @@
   "music.startMelody": "Starts playing a melody.\nNotes are expressed as a string of characters with this format: NOTE[octave][:duration]",
   "music.startMelody|param|melodyArray": "the melody array to play",
   "music.startMelody|param|options": "melody options, once / forever, in the foreground / background",
+  "music.stopAllSounds": "Stop all sounds from playing.",
   "music.stopMelody": "Stops the melodies",
   "music.stopMelody|param|options": "which melody to stop",
   "music.tempo": "Returns the tempo in beats per minute. Tempo is the speed (bpm = beats per minute) at which notes play. The larger the tempo value, the faster the notes will play.",
