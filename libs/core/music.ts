@@ -470,7 +470,8 @@ namespace music {
     //% group="Sounds"
     export function stopAllSounds() {
         playTone(0, 0);
-        play
+        stopMelody(MelodyStopOptions.All);
+        music.__stopSoundExpression();
     }
 
 
