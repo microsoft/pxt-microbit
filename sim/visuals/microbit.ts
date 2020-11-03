@@ -369,8 +369,10 @@ path.sim-board {
             svg.fill(this.display, theme.display);
             svg.fills(this.leds, theme.ledOn);
             svg.fills(this.ledsOuter, theme.ledOff);
-            if (this.microphoneLed)
+            if (this.microphoneLed && this.board.microphoneState.sensorUsed) {
                 svg.fills([this.microphoneLed], theme.ledOn);
+                svg.filter(this.microphoneLed, `url(#ledglow)`);
+            }
             svg.fills(this.buttonsOuter.slice(0, 2), theme.buttonOuter);
             svg.fills(this.buttons.slice(0, 2), theme.buttonUp);
             svg.fill(this.buttonsOuter[2], theme.virtualButtonOuter);
@@ -484,18 +486,6 @@ path.sim-board {
                 || !b.microphoneState.sensorUsed)
                 return;
 
-            if (!this.microphoneLed) {
-                // microphone LED
-                const microphoneTitle = pxsim.localization.lf("microphone (microbit:v2 needed)")
-                const microg = svg.child(this.g, "g", { transform: "translate(-170, -70)", title: microphoneTitle })
-                this.microphoneLed = svg.path(microg, "sim-led sim-mic", "m 522.82812,137.07227 c -2.19514,0 -3.9746,1.78286 -3.9746,3.97656 v 7.53125 c 0,2.19652 1.77946,3.97461 3.9746,3.97461 2.19286,0 3.97461,-1.77809 3.97461,-3.97461 v -7.53125 c 0,-2.1937 -1.78175,-3.97656 -3.97461,-3.97656 z m -8.72656,12.83007 c 0,4.08499 3.0147,7.25924 6.79688,8.10938 v 2.05273 h -4.36133 v 3.19141 h 12.74023 v -3.19141 h -4.37109 v -2.05273 c 3.78319,-0.84883 6.80664,-4.02344 6.80664,-8.10938 h -2.87695 c 0,3.13321 -2.6989,5.47071 -5.93164,5.47071 -3.23611,0 -5.92578,-2.33818 -5.92578,-5.47071 z");
-                svg.filter(this.microphoneLed, `url(#ledglow)`);
-                (this.microphoneLed.style as any).transformBox = 'fill-box';
-                this.microphoneLed.style.transformOrigin = '50% 50%';
-                this.microphoneLed.style.transform = `scale(0.7)`;
-
-                this.updateTheme();
-            }
             this.updateSoundLevel();
         }
 
@@ -1094,10 +1084,10 @@ path.sim-board {
 
             // display v2 indicator
             const title = pxsim.localization.lf("micro:bit V2 needed")
-            this.v2Circle = <SVGCircleElement>svg.child(this.g, "circle", { r: 20, title: title });
-            svg.fill(this.v2Circle, "gold");
+            this.v2Circle = <SVGCircleElement>svg.child(this.g, "circle", { r: 21, title: title });
+            svg.fill(this.v2Circle, "white");
             this.v2Text = <SVGTextElement>svg.child(this.g, "text", { class: "sim-text", title: title });
-            this.v2Text.textContent = "v2";
+            this.v2Text.textContent = "V2";
             svg.fill(this.v2Text, "black");
             this.v2Text.style.fontWeight = "700";
 
@@ -1118,6 +1108,18 @@ path.sim-board {
             accessibility.makeFocusable(this.headParts);
             accessibility.setAria(this.headParts, "button", headTitle);
 
+            // microphone led
+            const microphoneTitle = pxsim.localization.lf("microphone (microbit:v2 needed)")
+            const microg = svg.child(this.g, "g", { transform: "translate(-170, -70)", title: microphoneTitle })
+            this.microphoneLed = svg.path(microg, "sim-led sim-mic", "m 522.82812,137.07227 c -2.19514,0 -3.9746,1.78286 -3.9746,3.97656 v 7.53125 c 0,2.19652 1.77946,3.97461 3.9746,3.97461 2.19286,0 3.97461,-1.77809 3.97461,-3.97461 v -7.53125 c 0,-2.1937 -1.78175,-3.97656 -3.97461,-3.97656 z m -8.72656,12.83007 c 0,4.08499 3.0147,7.25924 6.79688,8.10938 v 2.05273 h -4.36133 v 3.19141 h 12.74023 v -3.19141 h -4.37109 v -2.05273 c 3.78319,-0.84883 6.80664,-4.02344 6.80664,-8.10938 h -2.87695 c 0,3.13321 -2.6989,5.47071 -5.93164,5.47071 -3.23611,0 -5.92578,-2.33818 -5.92578,-5.47071 z");
+            (this.microphoneLed.style as any).transformBox = 'fill-box';
+            this.microphoneLed.style.transformOrigin = '50% 50%';
+            this.microphoneLed.style.transform = `scale(0.7)`;
+            svg.fills([this.microphoneLed], this.props.theme.ledOff);
+            // ring
+            const microhole = svg.child(this.g, "circle", { cx: 336, cy: 86, r: 3, stroke: "gold", strokeWidth: "1px" })
+            svg.title(microhole, pxsim.localization.lf("microphone (microbit:v2 needed)"))
+            
             this.updateMicrophone();
             this.updateTheme();
         }
