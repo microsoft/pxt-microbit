@@ -8,7 +8,9 @@ input.logoIsPressed()
 
 ## ~ reminder
 
-This block requires the [micro:bit v2](/device/v2) hardware. If you use this block with a micro:bit v1 board, you will see the **927** error code on the screen.
+![works with micro:bit V2 only image](/static/v2/v2-only.png)
+
+This block requires the [micro:bit V2](/device/v2) hardware. If you use this block with a micro:bit v1 board, you will see the **927** error code on the screen.
 
 ## ~
 
@@ -35,6 +37,6 @@ basic.forever(function () {
 
 ## See also
 
-[micro:bit v2](/device/v2),
+[micro:bit V2](/device/v2),
 [on logo event](/reference/input/on-logo-event),
 [pin is pressed](/referene/inpu/pin-is-pressed)

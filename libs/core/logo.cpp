@@ -21,7 +21,7 @@ namespace input {
      */
     //% weight=83 blockGap=32
     //% blockId=input_logo_event block="on logo $action"
-    //% group="micro:bit v2"
+    //% group="micro:bit V2"
     //% parts="logotouch"
     //% help="input/on-logo-event"
     void onLogoEvent(TouchButtonEvent action, Action body) {
@@ -38,7 +38,7 @@ namespace input {
     //% weight=58
     //% blockId="input_logo_is_pressed" block="logo is pressed"
     //% blockGap=8
-    //% group="micro:bit v2"
+    //% group="micro:bit V2"
     //% parts="logotouch"
     //% help="input/logo-is-pressed"
     bool logoIsPressed() {

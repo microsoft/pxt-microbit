@@ -630,7 +630,7 @@ declare namespace music {
      */
     //% blockId=music_set_on_board_speaker_enable block="set on-board speaker %enabled"
     //% blockGap=8
-    //% group="micro:bit v2"
+    //% group="micro:bit V2"
     //% parts=onboardspeaker
     //% help=input/set-on-board-speaker-enabled
     //% enabled.shadow=toggleOnOff shim=music::setOnBoardSpeakerEnabled
@@ -1135,7 +1135,7 @@ declare namespace input {
      */
     //% weight=83 blockGap=32
     //% blockId=input_logo_event block="on logo $action"
-    //% group="micro:bit v2"
+    //% group="micro:bit V2"
     //% parts="logotouch"
     //% help="input/on-logo-event" shim=input::onLogoEvent
     function onLogoEvent(action: TouchButtonEvent, body: () => void): void;
@@ -1146,7 +1146,7 @@ declare namespace input {
     //% weight=58
     //% blockId="input_logo_is_pressed" block="logo is pressed"
     //% blockGap=8
-    //% group="micro:bit v2"
+    //% group="micro:bit V2"
     //% parts="logotouch"
     //% help="input/logo-is-pressed" shim=input::logoIsPressed
     function logoIsPressed(): boolean;
@@ -1163,7 +1163,7 @@ declare namespace pins {
     //% weight=60
     //% blockId=device_touch_set_type block="set %name to touch mode %mode"
     //% advanced=true
-    //% group="micro:bit v2"
+    //% group="micro:bit V2"
     //% help=pins/touch-set-mode shim=pins::touchSetMode
     function touchSetMode(name: TouchTarget, mode: TouchTargetMode): void;
 }

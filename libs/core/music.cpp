@@ -46,7 +46,7 @@ int volume() {
 */
 //% blockId=music_set_on_board_speaker_enable block="set on-board speaker %enabled"
 //% blockGap=8
-//% group="micro:bit v2"
+//% group="micro:bit V2"
 //% parts=onboardspeaker
 //% help=input/set-on-board-speaker-enabled
 //% enabled.shadow=toggleOnOff

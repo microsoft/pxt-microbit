@@ -10,9 +10,9 @@ A sound expression is a preformatted set of tones that create a certain sound. T
 
 ### ~ reminder
 
-![works with micro:bit v2 only image](/static/v2/v2-only.png)
+![works with micro:bit V2 only image](/static/v2/v2-only.png)
 
-This block requires the [micro:bit v2](/device/v2) hardware. If you use this block with a micro:bit v1 board, you will see the **927** error code on the screen.
+This block requires the [micro:bit V2](/device/v2) hardware. If you use this block with a micro:bit v1 board, you will see the **927** error code on the screen.
 
 ### ~
 
