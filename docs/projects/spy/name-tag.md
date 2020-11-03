@@ -27,7 +27,7 @@ basic.showString("Sarah!")
 
 ## Step 3
 
-Tell everyone what your age is. Add a ``||basic:show string||`` for `"My age is "` and then ``||basic:show a number||` for your age.
+Tell everyone what your age is. Add a ``||basic:show string||`` for `"My age is "` and then ``||basic:show a number||`` for your age.
 
 ```spy
 basic.showString("My name is: ")
