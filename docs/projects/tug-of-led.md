@@ -54,7 +54,7 @@ input.onButtonPressed(Button.B, function () {
 
 Because a button press pulls the rope by **0.1** in either direction, plot the ``||math:round||`` value of ``||variables:rope||`` to the nearest LED.
 
-```spy
+```blocks
 let rope = 2
 basic.forever(function() {
     basic.clearScreen()
