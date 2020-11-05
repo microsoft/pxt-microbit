@@ -98,7 +98,8 @@
     "yotta": {
         "config": {
             "microbit-dal": {
-                "fiber_user_data": 1
+                "fiber_user_data": 1,
+                "pxt": 1
             }
         },
         "optionalConfig": {
