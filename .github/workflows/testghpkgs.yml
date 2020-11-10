@@ -12,9 +12,12 @@ jobs:
     strategy:
       matrix:
         node-version: [8.x]
+        branch: [master, stable3.0]
 
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ matrix.branch }}
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
@@ -46,5 +49,5 @@ jobs:
         uses: actions/upload-artifact@v2
         if: ${{ always() }}
         with:
-          name: logs
+          name: logs-${{ matrix.branch }}
           path: temp/ghpkgs/*.txt
