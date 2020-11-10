@@ -10,16 +10,16 @@
 
 enum class DetectedSound {
     //% block="loud"
-    Loud = SENSOR_THRESHOLD_HIGH,
+    Loud = 2,
     //% block="quiet"
-    Quiet = SENSOR_THRESHOLD_LOW
+    Quiet = 1
 };
 
 enum class SoundThreshold {
     //% block="loud"
-    Loud = SENSOR_THRESHOLD_HIGH,
+    Loud = 2,
     //% block="quiet"
-    Quiet = SENSOR_THRESHOLD_LOW
+    Quiet = 1
 };
 
 namespace pxt {

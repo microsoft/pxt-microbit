@@ -18,7 +18,7 @@ namespace pxsim.input {
         const b = microphoneState();
         if (!b) return;
         b.setUsed();
-        if (sound === DAL.SENSOR_THRESHOLD_HIGH /* SoundThreshold.Loud */)
+        if (sound === 2 /* SoundThreshold.Loud */)
             b.setHighThreshold(threshold);
         else
             b.setLowThreshold(threshold);
