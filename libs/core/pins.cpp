@@ -258,7 +258,7 @@ namespace pins {
         // set polarity
         pin->setPolarity(PulseValue::High == value ? 1 : 0);
         // record pulse
-        int period = pin->pulseIn(maxDuration);
+        int period = pin->getPulseUs(maxDuration);
         // timeout
         if (DEVICE_CANCELLED == period)
             return 0;
