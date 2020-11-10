@@ -104,7 +104,7 @@ namespace pxsim.pins {
     export function analogSetPitchVolume(volume: number) {
         const ec = board().edgeConnectorState;
         ec.pitchVolume = Math.max(0, Math.min(0xff, volume | 0));
-        AudioContextManager.setCurrentToneGain(ec.pitchVolume / 0xff);
+        AudioContextManager.setCurrentToneGain((ec.pitchVolume / 0xff) / 10);
     }
 
     export function analogPitchVolume() {
@@ -133,7 +133,7 @@ namespace pxsim.pins {
 
         let cb = getResume();
         const v = pitchVolume / 0xff;
-        AudioContextManager.tone(frequency, v);
+        AudioContextManager.tone(frequency, v / 10);
         if (ms <= 0) cb();
         else {
             setTimeout(() => {
