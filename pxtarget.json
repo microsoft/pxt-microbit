@@ -113,11 +113,11 @@
                     }
                 }
             ],
-            "0.0.0 - 3.0.0": [
+            "0.0.0 - 3.0.18": [
                 {
                     "type": "missingPackage",
                     "map": {
-                        ".": "microphone"
+                        ".*": "microphone"
                     }
                 }
             ]
