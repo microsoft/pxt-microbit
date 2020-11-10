@@ -7,7 +7,7 @@ namespace pxsim.input {
         return b.getLevel();
     }
 
-    export function onSound(sound: number, body: RefAction) {
+    export function onSound(sound: number /* SoundThreshold */, body: RefAction) {
         const b = microphoneState();
         if (!b) return;
         b.setUsed();
@@ -18,7 +18,7 @@ namespace pxsim.input {
         const b = microphoneState();
         if (!b) return;
         b.setUsed();
-        if (sound === 0 /* SoundThreshold.Loud */)
+        if (sound === DAL.SENSOR_THRESHOLD_HIGH /* SoundThreshold.Loud */)
             b.setHighThreshold(threshold);
         else
             b.setLowThreshold(threshold);

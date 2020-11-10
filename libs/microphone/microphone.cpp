@@ -10,16 +10,16 @@
 
 enum class DetectedSound {
     //% block="loud"
-    Loud = 0,
+    Loud = SENSOR_THRESHOLD_HIGH,
     //% block="quiet"
-    Quiet = 1
+    Quiet = SENSOR_THRESHOLD_LOW
 };
 
 enum class SoundThreshold {
     //% block="loud"
-    Loud = 0,
+    Loud = SENSOR_THRESHOLD_HIGH,
     //% block="quiet"
-    Quiet = 1
+    Quiet = SENSOR_THRESHOLD_LOW
 };
 
 namespace pxt {
@@ -88,7 +88,7 @@ void setSoundThreshold(SoundThreshold sound, int threshold) {
 
     threshold = max(0, min(0xff, threshold));
     const int scaled = MICROPHONE_MIN + threshold * (MICROPHONE_MAX - MICROPHONE_MIN) / 0xff;
-    if (sound == SoundThreshold::Loud)
+    if (SoundThreshold::Loud == sound)
         level->setHighThreshold(scaled);
     else
         level->setLowThreshold(scaled);
