@@ -255,16 +255,14 @@ namespace pins {
         if (!pin) return 0;
 
 #if MICROBIT_CODAL
-        PulseIn* pulse = new PulseIn(pin);
         // set polarity
         pin->setPolarity(PulseValue::High == value ? 1 : 0);
         // record pulse
-        int period = pulse->awaitPulse(maxDuration);
-        // clean up, should we keep this around?
-        delete p;        
+        int period = pin->pulseIn(maxDuration);
         // timeout
         if (DEVICE_CANCELLED == period)
             return 0;
+        // success!
         return period;
 #else
         int pulse = value == PulseValue::High ? 1 : 0;
