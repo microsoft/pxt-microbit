@@ -260,9 +260,9 @@ namespace pins {
         pin->setPolarity(PulseValue::High == value ? 1 : 0);
         // record pulse
         int period = pulse->awaitPulse(maxDuration);
-
-        // timeout
+        // clean up, should we keep this around?
         delete p;        
+        // timeout
         if (DEVICE_CANCELLED == period)
             return 0;
         return period;
