@@ -72,13 +72,7 @@ namespace pxsim.visuals {
         pointer-events: none;
         }
 
-        .sim-text-small {
-            font-family:"Lucida Console", Monaco, monospace;
-            font-size:20px;
-            fill:#fff;
-            pointer-events: none;
-        }
-
+        .sim-text-small,
         .sim-text-pin {
         font-family:"Lucida Console", Monaco, monospace;
         font-size:20px;
