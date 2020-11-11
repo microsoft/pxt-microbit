@@ -14,7 +14,6 @@ This block requires the [micro:bit V2](/device/v2) hardware. If you use this blo
 
 ## ~
 
-
 The logo on the @boardname@ works just like a touch pin. You can check the whether or not the logo is currently being pressed. You use the [boolean](/types/boolean) value for the status of the logo press to make a logical decision in your program.
 
 ## Returns
@@ -39,4 +38,5 @@ basic.forever(function () {
 
 [micro:bit V2](/device/v2),
 [on logo event](/reference/input/on-logo-event),
-[pin is pressed](/referene/inpu/pin-is-pressed)
+[pin is pressed](/referene/inpu/pin-is-pressed),
+[touch set mode](/referene/inpu/touch-set-mode)

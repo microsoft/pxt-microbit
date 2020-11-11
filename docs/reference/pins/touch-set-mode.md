@@ -6,7 +6,7 @@ Set the touch mode for a touch pin or touch button.
 pins.touchSetMode(TouchTarget.P0, TouchTargetMode.Capacitive)
 ```
 
-Two common touch sensing methods are capacitive or resisitive. Capacitive touch sensing is when the @boardname@ detects a change in the capacitance of a pin or conductive surface (like the touch logo) as you finger touches or comes very near it. This is similar for resistive sensing except that the change in resistance is measured instead of capacitance.
+Two common touch sensing methods are capacitive or resisitive. Capacitive touch sensing is when the @boardname@ detects a change in the capacitance of a pin or conductive surface (like the touch logo) as you finger touches or comes very near it. Resistive sensing detects a flow of current from the pin that is touched to the **GND** pin. So, your body needs a connection to **GND** (either by touching it or by connecting a wire from it to your clothing) while you touch the input pin to complete a circuit between the two pins. 
 
 You can choose which method you want a touch target (pins or logo) to use to detect touch.
 
@@ -38,3 +38,5 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
 
 [on pin pressed](/reference/input/on-pin-pressed),
 [on logo event](/reference/input/on-logo-event)
+
+[Pin touch on the micro:bit](https://support.microbit.org/support/solutions/articles/19000116318-pin-touch-on-the-micro-bit)

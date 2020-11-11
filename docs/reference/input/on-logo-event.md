@@ -1,6 +1,6 @@
 # on Logo Event
 
-Run some code in your program when the @boardname@ logo is pressed, touched or released.
+Run some code in your program when the @boardname@ logo is pressed, touched, or released.
 
 ```sig
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {})
@@ -34,4 +34,5 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
 
 [micro:bit V2](/device/v2),
 [logo is pressed](/reference/input/logo-is-pressed),
-[on pin pressed](/reference/input/on-logo-released)
+[on pin pressed](/reference/input/on-logo-released),
+[touch set mode](/referene/inpu/touch-set-mode)
