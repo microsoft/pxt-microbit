@@ -9,8 +9,10 @@ pins.touchSetMode(TouchTarget.P0, TouchTargetMode.Capacitive)
 You can choose which method you want a touch target (pins or logo) to use to detect a touch.
 There are two methods used for touch sensing on the @boardname@, capacitive or resistive:
 
-* **Capacitive** touch sensing is when the @boardname@ detects a change in the capacitance of a pin or conductive surface (like the touch logo) as you finger touches or comes very near it.
+* **Capacitive** touch sensing is when the @boardname@ detects a change in the capacitance of a pin or conductive surface (like the touch logo) as you finger touches or comes very near it. 
 * **Resistive** sensing detects a flow of current from the pin that is touched to the **GND** pin. Your body needs a connection to **GND** (either by touching it or by connecting a wire from it to your clothing) while you touch the input pin to complete a circuit between the two pins. 
+
+The default touch mode set for the pins is resistive and the default touch mode for the logo is capacitive.
 
 ### ~ reminder
 
