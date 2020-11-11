@@ -624,17 +624,17 @@ declare namespace music {
     function volume(): int32;
 
     /**
-     * Turn the on-board speaker on or off.
+     * Turn the built-in speaker on or off.
      * Disabling the speaker resets the analog pitch pin to the default of P0.
-     * @param enabled whether the on-board speaker is enabled in addition to the analog pitch PIN
+     * @param enabled whether the built-in speaker is enabled in addition to the analog pitch PIN
      */
-    //% blockId=music_set_on_board_speaker_enable block="set on-board speaker %enabled"
+    //% blockId=music_set_on_board_speaker_enable block="set built-in speaker %enabled"
     //% blockGap=8
     //% group="micro:bit V2"
-    //% parts=onboardspeaker
-    //% help=input/set-on-board-speaker-enabled
-    //% enabled.shadow=toggleOnOff shim=music::setOnBoardSpeakerEnabled
-    function setOnBoardSpeakerEnabled(enabled: boolean): void;
+    //% parts=builtinspeaker
+    //% help=music/set-built-in-speaker-enabled
+    //% enabled.shadow=toggleOnOff shim=music::setBuiltInSpeakerEnabled
+    function setBuiltInSpeakerEnabled(enabled: boolean): void;
 }
 declare namespace pins {
 
@@ -935,7 +935,7 @@ declare namespace serial {
     function writeBuffer(buffer: Buffer): void;
 
     /**
-     * Read multiple characters from the receive buffer. 
+     * Read multiple characters from the receive buffer.
      * If length is positive, pauses until enough characters are present.
      * @param length default buffer length
      */

@@ -1,5 +1,5 @@
 namespace pxsim.music {
-    export function setOnBoardSpeakerEnabled(enabled: boolean) {
+    export function setBuiltInSpeakerEnabled(enabled: boolean) {
         const b = board();
         if (!b) return;
 

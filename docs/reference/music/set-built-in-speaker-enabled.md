@@ -3,10 +3,10 @@
 Enable the speaker on the @boardname@ to play music and sounds.
 
 ```sig
-music.setOnBoardSpeakerEnabled(false)
+music.setBuiltInSpeakerEnabled(false)
 ```
 
-The microbit v2 has a speaker on the board itself. You can enable the onboard speaker to play sounds instead having them an external speaker connected to the pitch pin.
+The microbit v2 has a speaker on the board itself. You can enable the built-in speaker to play sounds instead having them an external speaker connected to the pitch pin.
 
 ### ~ reminder
 
@@ -18,14 +18,14 @@ This block requires the [micro:bit V2](/device/v2) hardware. If you use this blo
 
 ## Parameters
 
-* **enabled**: a [boolean](/types/boolean) value that is ``true`` to enable the onboard speaker, or ``false`` to send sounds to the pitch pin.
+* **enabled**: a [boolean](/types/boolean) value that is ``true`` to enable the built-in speaker, or ``false`` to send sounds to the pitch pin.
 
 ## Example #example
 
-Enable the onboard speaker play sounds.
+Enable the built-in speaker play sounds.
 
 ```blocks
-music.setOnBoardSpeakerEnabled(true)
+music.setBuiltInSpeakerEnabled(true)
 ```
 
 ## See also
