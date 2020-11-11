@@ -482,9 +482,9 @@ path.sim-board {
                 accessibility.enableKeyboardInteraction(this.shakeButton, undefined, () => {
                     this.board.accelerometerState.shake();
                 });
-                accessibility.setAria(this.shakeButton, "button", pxsim.localization.lf("Shake the board"));
+                accessibility.setAria(this.shakeButton, "button", "Shake the board");
                 this.shakeText = svg.child(this.g, "text", { x: 420, y: 122, class: "sim-text-small" }) as SVGTextElement;
-                this.shakeText.textContent = pxsim.localization.lf("SHAKE");
+                this.shakeText.textContent = "SHAKE";
             }
         }
 
