@@ -611,7 +611,8 @@ declare namespace music {
     //%
     //% help=music/set-volume
     //% weight=70
-    //% group="Volume" volume.defl=127 shim=music::setVolume
+    //% group="Volume"
+    //% blockGap=8 volume.defl=127 shim=music::setVolume
     function setVolume(volume?: int32): void;
 
     /**

@@ -289,6 +289,7 @@ namespace music {
     //% help=music/change-tempo-by weight=39
     //% blockId=device_change_tempo block="change tempo by (bpm)|%value" blockGap=8
     //% group="Tempo"
+    //% weight=100
     export function changeTempoBy(bpm: number): void {
         init();
         setTempo(beatsPerMinute + bpm);
@@ -302,6 +303,7 @@ namespace music {
     //% blockId=device_set_tempo block="set tempo to (bpm)|%value"
     //% bpm.min=4 bpm.max=400
     //% group="Tempo"
+    //% weight=99
     export function setTempo(bpm: number): void {
         init();
         if (bpm > 0) {
@@ -462,12 +464,12 @@ namespace music {
     }
 
     /**
-     * Stop all sounds from playing.
+     * Stop all sounds and melodies currently playing.
      */
     //% help=music/stop-all-sounds
     //% blockId=music_stop_all_sounds block="stop all sounds"
     //% weight=10
-    //% group="Sounds"
+    //% group="Melody"
     export function stopAllSounds() {
         rest(0);
         stopMelody(MelodyStopOptions.All);
