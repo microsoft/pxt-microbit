@@ -1,4 +1,4 @@
-# set On Board Speaker Enabled
+# set Built In Speaker Enabled
 
 Enable the speaker on the @boardname@ to play music and sounds.
 
