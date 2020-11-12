@@ -563,6 +563,9 @@
         "androidapp": {
             "compile": {
                 "webUSB": false
+            },
+            "appTheme": {
+                "disableBlobObjectDownload": true
             }
         }
     },
