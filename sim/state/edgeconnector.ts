@@ -94,11 +94,25 @@ namespace pxsim.pins {
         // TODO
     }
 
+    export function setSoundPin(pinId: number) {
+        analogSetPitchPin(pinId);
+    }
+
     export function analogSetPitchPin(pinId: number) {
+        const b = board();
+        if (!b) return;
         let pin = getPin(pinId);
         if (!pin) return;
-        board().edgeConnectorState.pins.filter(p => !!p).forEach(p => p.pitch = false);
+        const ec = b.edgeConnectorState
+        ec.pins.filter(p => !!p).forEach(p => p.pitch = false);
         pin.pitch = true;
+    }
+
+    export function setSoundPinEnabled(enabled: boolean) {
+        const b = board();
+        if (!b) return;
+        const ec = b.edgeConnectorState
+        ec.pitchEnabled = !enabled;
     }
 
     export function analogSetPitchVolume(volume: number) {
@@ -118,29 +132,35 @@ namespace pxsim.pins {
         if (!b) return;
         const ec = b.edgeConnectorState;
         const pins = ec.pins;
-        const pin = pins.filter(pin => !!pin && pin.pitch)[0] || pins[0];
+        const pin = ec.pitchEnabled && (pins.filter(pin => !!pin && pin.pitch)[0] || pins[0]);
         const pitchVolume = ec.pitchVolume | 0;
-        pin.mode = PinFlags.Analog | PinFlags.Output;
-        if (frequency <= 0 || pitchVolume <= 0) {
-            pin.value = 0;
-            pin.period = 0;
-        } else {
-            const v = 1 << (pitchVolume >> 5);
-            pin.value = v;
-            pin.period = 1000000 / frequency;
+        if (pin) {
+            pin.mode = PinFlags.Analog | PinFlags.Output;
+            if (frequency <= 0 || pitchVolume <= 0) {
+                pin.value = 0;
+                pin.period = 0;
+            } else {
+                const v = 1 << (pitchVolume >> 5);
+                pin.value = v;
+                pin.period = 1000000 / frequency;
+            }
+            runtime.queueDisplayUpdate();
         }
-        runtime.queueDisplayUpdate();
 
         let cb = getResume();
-        const v = pitchVolume / 0xff;
-        AudioContextManager.tone(frequency, v / 10);
+        if (pin) {
+            const v = pitchVolume / 0xff;
+            AudioContextManager.tone(frequency, v / 10);
+        }
         if (ms <= 0) cb();
         else {
             setTimeout(() => {
                 AudioContextManager.stop();
-                pin.value = 0;
-                pin.period = 0;
-                pin.mode = PinFlags.Unused;
+                if (pin) {
+                    pin.value = 0;
+                    pin.period = 0;
+                    pin.mode = PinFlags.Unused;
+                }
                 runtime.queueDisplayUpdate();
                 cb()
             }, ms);
