@@ -44,8 +44,8 @@ int volume() {
 
 /**
 * Turn the built-in speaker on or off.
-* Disabling the speaker resets the analog pitch pin to the default of P0.
-* @param enabled whether the built-in speaker is enabled in addition to the analog pitch PIN
+* Disabling the speaker resets the sound pin to the default of P0.
+* @param enabled whether the built-in speaker is enabled in addition to the sound pin
 */
 //% blockId=music_set_built_in_speaker_enable block="set built-in speaker $enabled"
 //% blockGap=8
@@ -65,10 +65,10 @@ void setBuiltInSpeakerEnabled(bool enabled) {
 }
 
 /**
- * Set the pin used when producing sounds.
+ * Set the pin used when producing sounds. Default is P0.
  * @param name pin to modulate pitch from
  */
-//% blockId=device_set_sound_pin block="set sound pin $name"
+//% blockId=music_set_sound_pin block="set sound pin $name"
 //% help=music/set-sound-pin weight=3 advanced=true
 //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
 //% name.fieldOptions.tooltips="false" name.fieldOptions.width="250"
@@ -80,4 +80,27 @@ void setSoundPin(AnalogPin name) {
     // v1 behavior
     analogSetPitchPin(name);
 #endif
+}
+
+/**
+* Turn generating sound through a pin on or off.
+* Disabling the speaker resets the analog pitch pin to the default of P0.
+* @param enabled whether the built-in speaker is enabled in addition to the analog pitch PIN
+*/
+//% blockId=music_set_sound_pin_enabled block="set sound pin $enabled"
+//% blockGap=8
+//% help=music/set-sound-pin-enabled
+//% enabled.shadow=toggleOnOff
+//% group="Volume"
+void setSoundPinEnabled(bool enabled) {
+#if MICROBIT_CODAL
+    uBit.audio.setSpeakerEnabled(enabled);
+#else
+    // don't crash if user asks to turn it off
+    if (enabled) {
+        target_panic(PANIC_VARIANT_NOT_SUPPORTED);
+    }
+#endif
+}
+
 }

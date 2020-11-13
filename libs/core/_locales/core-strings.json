@@ -366,6 +366,7 @@
   "music.rest|block": "rest(ms)|%duration=device_beat",
   "music.ringTone|block": "ring tone (Hz)|%note=device_note",
   "music.setBuiltInSpeakerEnabled|block": "set built-in speaker $enabled",
+  "music.setSoundPinEnabled|block": "set sound pin $enabled",
   "music.setSoundPin|block": "set sound pin $name",
   "music.setTempo|block": "set tempo to (bpm)|%value",
   "music.setVolume|block": "set volume %volume",

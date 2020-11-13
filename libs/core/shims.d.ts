@@ -621,13 +621,14 @@ declare namespace music {
     //% blockId=synth_get_volume block="volume"
     //% help=music/volume
     //% weight=69
-    //% group="Volume" shim=music::volume
+    //% group="Volume"
+    //% blockGap=8 shim=music::volume
     function volume(): int32;
 
     /**
      * Turn the built-in speaker on or off.
-     * Disabling the speaker resets the analog pitch pin to the default of P0.
-     * @param enabled whether the built-in speaker is enabled in addition to the analog pitch PIN
+     * Disabling the speaker resets the sound pin to the default of P0.
+     * @param enabled whether the built-in speaker is enabled in addition to the sound pin
      */
     //% blockId=music_set_built_in_speaker_enable block="set built-in speaker $enabled"
     //% blockGap=8
@@ -638,15 +639,27 @@ declare namespace music {
     function setBuiltInSpeakerEnabled(enabled: boolean): void;
 
     /**
-     * Set the pin used when producing sounds.
+     * Set the pin used when producing sounds. Default is P0.
      * @param name pin to modulate pitch from
      */
-    //% blockId=device_set_sound_pin block="set sound pin $name"
+    //% blockId=music_set_sound_pin block="set sound pin $name"
     //% help=music/set-sound-pin weight=3 advanced=true
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     //% name.fieldOptions.tooltips="false" name.fieldOptions.width="250"
     //% group="Volume" shim=music::setSoundPin
     function setSoundPin(name: AnalogPin): void;
+
+    /**
+     * Turn generating sound through a pin on or off.
+     * Disabling the speaker resets the analog pitch pin to the default of P0.
+     * @param enabled whether the built-in speaker is enabled in addition to the analog pitch PIN
+     */
+    //% blockId=music_set_sound_pin_enabled block="set sound pin $enabled"
+    //% blockGap=8
+    //% help=music/set-sound-pin-enabled
+    //% enabled.shadow=toggleOnOff
+    //% group="Volume" shim=music::setSoundPinEnabled
+    function setSoundPinEnabled(enabled: boolean): void;
 }
 declare namespace pins {
 
