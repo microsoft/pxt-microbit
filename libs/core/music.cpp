@@ -73,33 +73,13 @@ void setBuiltInSpeakerEnabled(bool enabled) {
 //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
 //% name.fieldOptions.tooltips="false" name.fieldOptions.width="250"
 //% group="Volume"
+//% weight=1
 void setSoundPin(AnalogPin name) {
 #if MICROBIT_CODAL
-    uBit.audio.setPin(name);
+    //uBit.audio.setPin(name);
 #else
     // v1 behavior
     analogSetPitchPin(name);
-#endif
-}
-
-/**
-* Turn generating sound through a pin on or off.
-* Disabling the speaker resets the analog pitch pin to the default of P0.
-* @param enabled whether the built-in speaker is enabled in addition to the analog pitch PIN
-*/
-//% blockId=music_set_sound_pin_enabled block="set sound pin $enabled"
-//% blockGap=8
-//% help=music/set-sound-pin-enabled
-//% enabled.shadow=toggleOnOff
-//% group="Volume"
-void setSoundPinEnabled(bool enabled) {
-#if MICROBIT_CODAL
-    uBit.audio.setSpeakerEnabled(enabled);
-#else
-    // don't crash if user asks to turn it off
-    if (enabled) {
-        target_panic(PANIC_VARIANT_NOT_SUPPORTED);
-    }
 #endif
 }
 

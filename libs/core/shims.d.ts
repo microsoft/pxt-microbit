@@ -646,20 +646,9 @@ declare namespace music {
     //% help=music/set-sound-pin weight=3 advanced=true
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     //% name.fieldOptions.tooltips="false" name.fieldOptions.width="250"
-    //% group="Volume" shim=music::setSoundPin
+    //% group="Volume"
+    //% weight=1 shim=music::setSoundPin
     function setSoundPin(name: AnalogPin): void;
-
-    /**
-     * Turn generating sound through a pin on or off.
-     * Disabling the speaker resets the analog pitch pin to the default of P0.
-     * @param enabled whether the built-in speaker is enabled in addition to the analog pitch PIN
-     */
-    //% blockId=music_set_sound_pin_enabled block="set sound pin $enabled"
-    //% blockGap=8
-    //% help=music/set-sound-pin-enabled
-    //% enabled.shadow=toggleOnOff
-    //% group="Volume" shim=music::setSoundPinEnabled
-    function setSoundPinEnabled(enabled: boolean): void;
 }
 declare namespace pins {
 
