@@ -15,7 +15,8 @@ bluetooth.onUartDataReceived(serial.delimiters(Delimiters.NewLine), () => {})
 Read values separated by `,`:
 
 ```blocks
-bluetooth.onUartDataReceived(serial.delimiters(Delimiters.Comma), () => {
+bluetooth.startUartService()
+bluetooth.onUartDataReceived(serial.delimiters(Delimiters.Comma), function () {
     basic.showString(serial.readUntil(serial.delimiters(Delimiters.Comma)))
 })
 ```
