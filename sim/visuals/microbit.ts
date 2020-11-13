@@ -1112,11 +1112,8 @@ path.sim-board {
 
             // microphone led
             const microphoneTitle = pxsim.localization.lf("microphone (microbit:v2 needed)")
-            const microg = svg.child(this.g, "g", { transform: "translate(-170, -70)", title: microphoneTitle })
-            this.microphoneLed = svg.path(microg, "sim-led sim-mic", "m 522.82812,137.07227 c -2.19514,0 -3.9746,1.78286 -3.9746,3.97656 v 7.53125 c 0,2.19652 1.77946,3.97461 3.9746,3.97461 2.19286,0 3.97461,-1.77809 3.97461,-3.97461 v -7.53125 c 0,-2.1937 -1.78175,-3.97656 -3.97461,-3.97656 z m -8.72656,12.83007 c 0,4.08499 3.0147,7.25924 6.79688,8.10938 v 2.05273 h -4.36133 v 3.19141 h 12.74023 v -3.19141 h -4.37109 v -2.05273 c 3.78319,-0.84883 6.80664,-4.02344 6.80664,-8.10938 h -2.87695 c 0,3.13321 -2.6989,5.47071 -5.93164,5.47071 -3.23611,0 -5.92578,-2.33818 -5.92578,-5.47071 z");
-            (this.microphoneLed.style as any).transformBox = 'fill-box';
-            this.microphoneLed.style.transformOrigin = '50% 50%';
-            this.microphoneLed.style.transform = `scale(0.7)`;
+            const microg = svg.child(this.g, "g", { title: microphoneTitle })
+            this.microphoneLed = svg.path(microg, "sim-led sim-mic", "M 352.852 71 C 351.315 71 350.07 72.248 350.07 73.784 V 79.056 C 350.07 80.594 351.316 81.838 352.852 81.838 C 354.387 81.838 355.634 80.593 355.634 79.056 V 73.784 C 355.634 72.248 354.387 71 352.852 71 Z M 346.743 79.981 C 346.743 82.84 348.853 85.062 351.501 85.658 V 87.095 H 348.448 V 89.329 H 357.366 V 87.095 H 354.306 V 85.658 C 356.954 85.064 359.071 82.842 359.071 79.981 H 357.057 C 357.057 82.174 355.168 83.81 352.905 83.81 C 350.64 83.81 348.757 82.173 348.757 79.981 Z");
             svg.fills([this.microphoneLed], this.props.theme.ledOff);
             // ring
             const microhole = svg.child(this.g, "circle", { cx: 336, cy: 86, r: 3, stroke: "gold", strokeWidth: "1px" })
