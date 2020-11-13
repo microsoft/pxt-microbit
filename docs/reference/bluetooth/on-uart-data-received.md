@@ -3,7 +3,7 @@
 Registers an event to be fired when one of the delimiter is matched.
 
 ```sig
-bluetooth.onUartDataReceived(",", () => {})
+bluetooth.onUartDataReceived(serial.delimiters(Delimiters.NewLine), () => {})
 ```
 
 ## Parameters
