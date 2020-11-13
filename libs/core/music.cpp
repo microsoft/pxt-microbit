@@ -33,6 +33,7 @@ void setVolume(int volume) {
 //% help=music/volume
 //% weight=69
 //% group="Volume"
+//% blockGap=8
 int volume() {
 #if MICROBIT_CODAL
     return uBit.audio.getVolume();
