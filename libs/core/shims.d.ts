@@ -629,13 +629,24 @@ declare namespace music {
      * Disabling the speaker resets the analog pitch pin to the default of P0.
      * @param enabled whether the built-in speaker is enabled in addition to the analog pitch PIN
      */
-    //% blockId=music_set_on_board_speaker_enable block="set built-in speaker %enabled"
+    //% blockId=music_set_built_in_speaker_enable block="set built-in speaker $enabled"
     //% blockGap=8
     //% group="micro:bit V2"
     //% parts=builtinspeaker
     //% help=music/set-built-in-speaker-enabled
     //% enabled.shadow=toggleOnOff shim=music::setBuiltInSpeakerEnabled
     function setBuiltInSpeakerEnabled(enabled: boolean): void;
+
+    /**
+     * Set the pin used when producing sounds.
+     * @param name pin to modulate pitch from
+     */
+    //% blockId=device_set_sound_pin block="set sound pin $name"
+    //% help=music/set-sound-pin weight=3 advanced=true
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+    //% name.fieldOptions.tooltips="false" name.fieldOptions.width="250"
+    //% group="Volume" shim=music::setSoundPin
+    function setSoundPin(name: AnalogPin): void;
 }
 declare namespace pins {
 
@@ -764,7 +775,8 @@ declare namespace pins {
     //% blockId=device_analog_set_pitch_pin block="analog set pitch pin %name"
     //% help=pins/analog-set-pitch-pin weight=3 advanced=true
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-    //% name.fieldOptions.tooltips="false" name.fieldOptions.width="250" shim=pins::analogSetPitchPin
+    //% name.fieldOptions.tooltips="false" name.fieldOptions.width="250"
+    //% deprecated shim=pins::analogSetPitchPin
     function analogSetPitchPin(name: AnalogPin): void;
 
     /**
@@ -773,14 +785,16 @@ declare namespace pins {
      */
     //% blockId=device_analog_set_pitch_volume block="analog set pitch volume $volume"
     //% help=pins/analog-set-pitch-volume weight=3 advanced=true
-    //% volume.min=0 volume.max=255 shim=pins::analogSetPitchVolume
+    //% volume.min=0 volume.max=255
+    //% deprecated shim=pins::analogSetPitchVolume
     function analogSetPitchVolume(volume: int32): void;
 
     /**
      * Gets the volume the pitch pin from 0..255
      */
     //% blockId=device_analog_pitch_volume block="analog pitch volume"
-    //% help=pins/analog-pitch-volume weight=3 advanced=true shim=pins::analogPitchVolume
+    //% help=pins/analog-pitch-volume weight=3 advanced=true
+    //% deprecated shim=pins::analogPitchVolume
     function analogPitchVolume(): int32;
 
     /**
@@ -936,7 +950,7 @@ declare namespace serial {
     function writeBuffer(buffer: Buffer): void;
 
     /**
-     * Read multiple characters from the receive buffer.
+     * Read multiple characters from the receive buffer. 
      * If length is positive, pauses until enough characters are present.
      * @param length default buffer length
      */

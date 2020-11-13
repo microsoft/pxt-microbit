@@ -332,6 +332,7 @@ namespace pins {
     //% help=pins/analog-set-pitch-pin weight=3 advanced=true
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     //% name.fieldOptions.tooltips="false" name.fieldOptions.width="250"
+    //% deprecated
     void analogSetPitchPin(AnalogPin name) {
         pitchPin = getPin((int)name);
     }
@@ -353,6 +354,7 @@ namespace pins {
     //% blockId=device_analog_set_pitch_volume block="analog set pitch volume $volume"
     //% help=pins/analog-set-pitch-volume weight=3 advanced=true
     //% volume.min=0 volume.max=255
+    //% deprecated
     void analogSetPitchVolume(int volume) {
         pitchVolume = max(0, min(0xff, volume));
 
@@ -368,6 +370,7 @@ namespace pins {
     */
     //% blockId=device_analog_pitch_volume block="analog pitch volume"
     //% help=pins/analog-pitch-volume weight=3 advanced=true
+    //% deprecated
     int analogPitchVolume() {
         return pitchVolume;
     }

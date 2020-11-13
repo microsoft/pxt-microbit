@@ -3,6 +3,7 @@
 namespace pins {
     void analogSetPitchVolume(int volume);
     int analogPitchVolume();
+    void analogSetPitchPin(AnalogPin name);
 }
 
 namespace music {
@@ -45,7 +46,7 @@ int volume() {
 * Disabling the speaker resets the analog pitch pin to the default of P0.
 * @param enabled whether the built-in speaker is enabled in addition to the analog pitch PIN
 */
-//% blockId=music_set_built_in_speaker_enable block="set built-in speaker %enabled"
+//% blockId=music_set_built_in_speaker_enable block="set built-in speaker $enabled"
 //% blockGap=8
 //% group="micro:bit V2"
 //% parts=builtinspeaker
@@ -62,4 +63,20 @@ void setBuiltInSpeakerEnabled(bool enabled) {
 #endif
 }
 
+/**
+ * Set the pin used when producing sounds.
+ * @param name pin to modulate pitch from
+ */
+//% blockId=device_set_sound_pin block="set sound pin $name"
+//% help=music/set-sound-pin weight=3 advanced=true
+//% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+//% name.fieldOptions.tooltips="false" name.fieldOptions.width="250"
+//% group="Volume"
+void setSoundPin(AnalogPin name) {
+#if MICROBIT_CODAL
+    uBit.audio.setPin(name);
+#else
+    // v1 behavior
+    analogSetPitchPin(name);
+#endif
 }
