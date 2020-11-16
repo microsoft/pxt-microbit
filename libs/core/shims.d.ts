@@ -637,18 +637,6 @@ declare namespace music {
     //% help=music/set-built-in-speaker-enabled
     //% enabled.shadow=toggleOnOff shim=music::setBuiltInSpeakerEnabled
     function setBuiltInSpeakerEnabled(enabled: boolean): void;
-
-    /**
-     * Set the pin used when producing sounds. Default is P0.
-     * @param name pin to modulate pitch from
-     */
-    //% blockId=music_set_sound_pin block="set sound pin $name"
-    //% help=music/set-sound-pin weight=3 advanced=true
-    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-    //% name.fieldOptions.tooltips="false" name.fieldOptions.width="250"
-    //% group="Volume"
-    //% weight=1 shim=music::setSoundPin
-    function setSoundPin(name: AnalogPin): void;
 }
 declare namespace pins {
 
@@ -902,6 +890,21 @@ declare namespace pins {
      */
     //% help=pins/push-button advanced=true shim=pins::pushButton
     function pushButton(pin: DigitalPin): void;
+}
+declare namespace music {
+
+    /**
+     * Set the pin used when producing sounds. Default is P0.
+     * @param name pin to modulate pitch from
+     */
+    //% blockId=music_set_sound_pin block="set sound pin $name"
+    //% help=music/set-sound-pin weight=3
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+    //% name.fieldOptions.tooltips="false" name.fieldOptions.width="250"
+    //% group="Volume"
+    //% weight=1
+    //% group="micro:bit (V2)" shim=music::setSoundPin
+    function setSoundPin(name: AnalogPin): void;
 }
 
 
