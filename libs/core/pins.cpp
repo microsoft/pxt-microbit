@@ -581,3 +581,27 @@ namespace pins {
         new MicroBitButton((PinName)getPin((int)(pin))->name, (int)pin, MICROBIT_BUTTON_ALL_EVENTS, PinMode::PullUp);
     }
 }
+
+namespace music {
+
+    /**
+    * Set the pin used when producing sounds. Default is P0.
+    * @param name pin to modulate pitch from
+    */
+    //% blockId=music_set_sound_pin block="set sound pin $name"
+    //% help=music/set-sound-pin weight=3 advanced=true
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+    //% name.fieldOptions.tooltips="false" name.fieldOptions.width="250"
+    //% group="Volume"
+    //% weight=1
+    void setSoundPin(AnalogPin name) {
+#if MICROBIT_CODAL
+        uBit.audio.setPin(*getPin((int)name));
+        uBit.audio.setPinEnabled(true);
+#else
+        // v1 behavior
+        pins::analogSetPitchPin(name);
+#endif
+    }
+
+}
