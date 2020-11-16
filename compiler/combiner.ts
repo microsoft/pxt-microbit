@@ -11,7 +11,7 @@ namespace ts.pxtc.extension {
 
         let outp = ""
 
-        wrapHex(mbdal, 0x00, [0x99, 0x01, 0xc0, 0xde])
+        wrapHex(mbdal, 0x00, [0x99, 0x00, 0xc0, 0xde])
         wrapHex(mbcodal, 0x0D, [0x99, 0x03, 0xc0, 0xde], true)
 
         outp += ":00000001FF\n"
@@ -50,50 +50,63 @@ namespace ts.pxtc.extension {
         }
 
         function addBlock(blk: string) {
-            if (blk.length > 512) {
-                console.log("TOO big!", blk)
-                U.oops("block too big")
-            }
-            outp += blk + paddingString(512 - blk.length)
+            const leftoff = blk.length & 511
+            outp += blk + paddingString(512 - leftoff)
         }
 
         function wrapHex(inpHex: string, dataType: number, deviceType: number[], keepSrc = false) {
-            let blk = ""
+            let blk =
+                hex2str([0x00, 0x00, 0x04, 0x00, 0x00])
+                + hex2str([0x00, 0x00, 0x0A].concat(deviceType))
             let upperAddr = 0
-            let prevAddr = 0
-            let currAddr = 0
-            for (let line of inpHex.split(/\r?\n/)) {
+            const lines = inpHex.split(/\r?\n/)
+            for (let i = 0; i < lines.length; ++i) {
+                const line = lines[i]
                 if (!line)
                     continue
                 const parsed = ts.pxtc.hexfile.parseHexRecord(line)
+
                 switch (parsed.type) {
                     case 0x00:
-                        currAddr = (upperAddr << 16) | parsed.addr
-                        if ((currAddr >> 10) != (prevAddr >> 10))
-                            flush()
-                        prevAddr = currAddr
-                        addData(hex2str(
-                            [parsed.addr >> 8, parsed.addr & 0xff, dataType]
-                                .concat(parsed.data)))
+                        const parsed2 = parsed.len <= 16 && lines[i + 1] ?
+                            ts.pxtc.hexfile.parseHexRecord(lines[i + 1])
+                            : null
+                        // if this and next line can fit in 32 bytes, concat them
+                        if (parsed2 && parsed2.type == 0x00 &&
+                            parsed2.addr == parsed.addr + parsed.len &&
+                            parsed.len + parsed2.len <= 32) {
+                            parsed.data = parsed.data.concat(parsed2.data)
+                            parsed.len += parsed2.len
+                            i++
+                        }
+                        addData([parsed.addr >> 8, parsed.addr & 0xff, dataType]
+                            .concat(parsed.data))
                         break
+
                     case 0x01:
-                        //addData(hex2str([0x00, 0x00, 0x01]))
                         flush()
                         if (keepSrc) break
                         else return
+
                     case 0x04:
-                        upperAddr = ((parsed.data[0] << 8) | parsed.data[1]) << 16
+                        const newUpper = ((parsed.data[0] << 8) | parsed.data[1]) << 16
+                        if (upperAddr != newUpper) {
+                            upperAddr = newUpper
+                            addData([0, 0, 0x04, parsed.data[0], parsed.data[1]])
+                        }
                         break
+
                     case 0x03:
                     case 0x05:
                         // ignore
                         break
+
                     case 0x0E:
                         // src record
-                        addData(hex2str(
-                            [parsed.addr >> 8, parsed.addr & 0xff, 0x0E]
-                                .concat(parsed.data)))
+                        addData([parsed.addr >> 8, parsed.addr & 0xff, 0x0E]
+                            .concat(parsed.data))
                         break
+
                     default:
                         U.oops(`unknown hex record type: ${line}`)
                         break
@@ -101,13 +114,8 @@ namespace ts.pxtc.extension {
             }
             flush()
 
-            function addData(newData: string) {
-                if (blk.length + newData.length > 512)
-                    flush()
-                if (blk == "") {
-                    blk = hex2str([0x00, 0x00, 0x04, upperAddr >> 24, (upperAddr >> 16) & 0xff])
-                        + hex2str([0x00, 0x00, 0x0A].concat(deviceType))
-                }
+            function addData(bytes: number[]) {
+                const newData = hex2str(bytes)
                 blk += newData
             }
 
