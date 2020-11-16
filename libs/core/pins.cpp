@@ -1,6 +1,7 @@
 #include "pxt.h"
 
 #if MICROBIT_CODAL
+#include "Button.h"
 #include "Pin.h"
 #define PinCompat codal::Pin
 #else
@@ -576,7 +577,7 @@ namespace pins {
     //% help=pins/push-button advanced=true
     void pushButton(DigitalPin pin) {
 #if MICROBIT_CODAL
-        new codal::MicroBitButton(PIN_ARG(pin), (int)pin, MICROBIT_BUTTON_ALL_EVENTS, ACTIVE_LOW, PinMode::PullUp);
+        new MicroBitButton((PinName)getPin((int)(pin))->name, (int)pin, DEVICE_BUTTON_ALL_EVENTS, PinMode::PullUp);
 #else
         new MicroBitButton(PIN_ARG(pin), PinMode::PullUp);
 #endif
