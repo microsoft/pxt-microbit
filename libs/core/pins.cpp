@@ -1,7 +1,6 @@
 #include "pxt.h"
 
 #if MICROBIT_CODAL
-#include "Button.h"
 #include "Pin.h"
 #define PinCompat codal::Pin
 #else
