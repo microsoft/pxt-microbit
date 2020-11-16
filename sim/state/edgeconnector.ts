@@ -94,10 +94,6 @@ namespace pxsim.pins {
         // TODO
     }
 
-    export function setSoundPin(pinId: number) {
-        analogSetPitchPin(pinId);
-    }
-
     export function analogSetPitchPin(pinId: number) {
         const b = board();
         if (!b) return;
@@ -180,5 +176,9 @@ namespace pxsim.music {
     }
     export function volume(): number {
         return pxsim.pins.analogPitchVolume();
+    }
+
+    export function setSoundPin(pinId: number) {
+        pxsim.pins.analogSetPitchPin(pinId);
     }
 }
