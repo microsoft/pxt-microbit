@@ -589,11 +589,12 @@ namespace music {
     * @param name pin to modulate pitch from
     */
     //% blockId=music_set_sound_pin block="set sound pin $name"
-    //% help=music/set-sound-pin weight=3 advanced=true
+    //% help=music/set-sound-pin weight=3
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     //% name.fieldOptions.tooltips="false" name.fieldOptions.width="250"
     //% group="Volume"
     //% weight=1
+    //% group="micro:bit (V2)"
     void setSoundPin(AnalogPin name) {
 #if MICROBIT_CODAL
         uBit.audio.setPin(*getPin((int)name));

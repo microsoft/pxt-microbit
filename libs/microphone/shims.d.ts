@@ -8,7 +8,7 @@ declare namespace input {
     //% blockId=input_on_sound block="on %sound sound"
     //% parts="microphone"
     //% weight=88 blockGap=12
-    //% group="micro:bit V2" shim=input::onSound
+    //% group="micro:bit (V2)" shim=input::onSound
     function onSound(sound: DetectedSound, handler: () => void): void;
 
     /**
@@ -18,7 +18,7 @@ declare namespace input {
     //% blockId=device_get_sound_level block="sound level"
     //% parts="microphone"
     //% weight=34 blockGap=8
-    //% group="micro:bit V2" shim=input::soundLevel
+    //% group="micro:bit (V2)" shim=input::soundLevel
     function soundLevel(): int32;
 
     /**
@@ -30,7 +30,7 @@ declare namespace input {
     //% threshold.min=0 threshold.max=255
     //% weight=14 blockGap=8
     //% advanced=true
-    //% group="micro:bit V2" threshold.defl=128 shim=input::setSoundThreshold
+    //% group="micro:bit (V2)" threshold.defl=128 shim=input::setSoundThreshold
     function setSoundThreshold(sound: SoundThreshold, threshold?: int32): void;
 }
 

@@ -48,7 +48,7 @@ int volume() {
 */
 //% blockId=music_set_built_in_speaker_enable block="set built-in speaker $enabled"
 //% blockGap=8
-//% group="micro:bit V2"
+//% group="micro:bit (V2)"
 //% parts=builtinspeaker
 //% help=music/set-built-in-speaker-enabled
 //% enabled.shadow=toggleOnOff
