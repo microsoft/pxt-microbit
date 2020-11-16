@@ -885,8 +885,10 @@ path.sim-board {
             el.style.perspectiveOrigin = "50% 50% 50%";
             el.style.perspective = "30em";
 
-            // don't display acc data when AB is on
-            if (state.buttonPairState.usesButtonAB) {
+            // don't display acc data when AB is on, v2 is on or soundLevel is on
+            if (state.buttonPairState.usesButtonAB
+                || this.v2Circle
+                || this.soundLevel) {
                 if (this.accTextX) this.accTextX.textContent = "";
                 if (this.accTextY) this.accTextY.textContent = "";
                 if (this.accTextZ) this.accTextZ.textContent = "";
