@@ -629,7 +629,7 @@ declare namespace music {
      * Disabling the speaker resets the analog pitch pin to the default of P0.
      * @param enabled whether the built-in speaker is enabled in addition to the analog pitch PIN
      */
-    //% blockId=music_set_on_board_speaker_enable block="set built-in speaker %enabled"
+    //% blockId=music_set_built_in_speaker_enable block="set built-in speaker %enabled"
     //% blockGap=8
     //% group="micro:bit V2"
     //% parts=builtinspeaker
@@ -936,7 +936,7 @@ declare namespace serial {
     function writeBuffer(buffer: Buffer): void;
 
     /**
-     * Read multiple characters from the receive buffer.
+     * Read multiple characters from the receive buffer. 
      * If length is positive, pauses until enough characters are present.
      * @param length default buffer length
      */
