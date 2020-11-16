@@ -108,7 +108,7 @@ namespace pxsim.pins {
         pin.pitch = true;
     }
 
-    export function setSoundPinEnabled(enabled: boolean) {
+    export function setSoundOutputPinEnabled(enabled: boolean) {
         const b = board();
         if (!b) return;
         const ec = b.edgeConnectorState

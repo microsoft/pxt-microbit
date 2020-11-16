@@ -76,7 +76,8 @@ void setBuiltInSpeakerEnabled(bool enabled) {
 //% weight=1
 void setSoundPin(AnalogPin name) {
 #if MICROBIT_CODAL
-    //uBit.audio.setPin(name);
+    uBit.audio.setPin(getPin(name));
+    uBit.audio.setPinEnabled(true);
 #else
     // v1 behavior
     analogSetPitchPin(name);

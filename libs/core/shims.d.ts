@@ -630,6 +630,15 @@ declare namespace music {
      * Disabling the speaker resets the sound pin to the default of P0.
      * @param enabled whether the built-in speaker is enabled in addition to the sound pin
      */
+    //% blockId=music_set_built_in_speaker_enable block="set built-in speaker $enabled"
+    //% blockGap=8
+    //% group="micro:bit V2"
+    //% parts=builtinspeaker
+    //% help=music/set-built-in-speaker-enabled
+    //% enabled.shadow=toggleOnOff shim=music::setBuiltInSpeakerEnabled
+    function setBuiltInSpeakerEnabled(enabled: boolean): void;
+
+    /**
      * Set the pin used when producing sounds. Default is P0.
      * @param name pin to modulate pitch from
      */
