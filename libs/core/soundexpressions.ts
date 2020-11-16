@@ -3,7 +3,7 @@
  */
 //% fixedInstances
 //% blockNamespace=music
-//% group="micro:bit V2"
+//% group="micro:bit (V2)"
 class SoundExpression {
     constructor(private notes: string) {
     }
@@ -15,7 +15,7 @@ class SoundExpression {
     //% weight=80
     //% blockGap=8
     //% help=music/play
-    //% group="micro:bit V2"
+    //% group="micro:bit (V2)"
     play() {
         music.__playSoundExpression(this.notes, false)
     }
@@ -27,7 +27,7 @@ class SoundExpression {
     //% weight=81
     //% blockGap=8
     //% help=music/play-until-done
-    //% group="micro:bit V2"
+    //% group="micro:bit (V2)"
     playUntilDone() {
         music.__playSoundExpression(this.notes, true)
     }

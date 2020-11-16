@@ -32,6 +32,7 @@ void setVolume(int volume) {
 //% help=music/volume
 //% weight=69
 //% group="Volume"
+//% blockGap=8
 int volume() {
 #if MICROBIT_CODAL
     return uBit.audio.getVolume();
@@ -42,12 +43,12 @@ int volume() {
 
 /**
 * Turn the built-in speaker on or off.
-* Disabling the speaker resets the analog pitch pin to the default of P0.
-* @param enabled whether the built-in speaker is enabled in addition to the analog pitch PIN
+* Disabling the speaker resets the sound pin to the default of P0.
+* @param enabled whether the built-in speaker is enabled in addition to the sound pin
 */
-//% blockId=music_set_built_in_speaker_enable block="set built-in speaker %enabled"
+//% blockId=music_set_built_in_speaker_enable block="set built-in speaker $enabled"
 //% blockGap=8
-//% group="micro:bit V2"
+//% group="micro:bit (V2)"
 //% parts=builtinspeaker
 //% help=music/set-built-in-speaker-enabled
 //% enabled.shadow=toggleOnOff

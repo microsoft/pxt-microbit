@@ -87,6 +87,7 @@ namespace pxsim {
     export class EdgeConnectorState {
         pins: Pin[];
         pitchVolume: number;
+        pitchEnabled = true;
 
         constructor(public props: EdgeConnectorProps) {
             this.pins = props.pins.map(id => id != undefined ? new Pin(id) : null);

@@ -621,17 +621,18 @@ declare namespace music {
     //% blockId=synth_get_volume block="volume"
     //% help=music/volume
     //% weight=69
-    //% group="Volume" shim=music::volume
+    //% group="Volume"
+    //% blockGap=8 shim=music::volume
     function volume(): int32;
 
     /**
      * Turn the built-in speaker on or off.
-     * Disabling the speaker resets the analog pitch pin to the default of P0.
-     * @param enabled whether the built-in speaker is enabled in addition to the analog pitch PIN
+     * Disabling the speaker resets the sound pin to the default of P0.
+     * @param enabled whether the built-in speaker is enabled in addition to the sound pin
      */
-    //% blockId=music_set_built_in_speaker_enable block="set built-in speaker %enabled"
+    //% blockId=music_set_built_in_speaker_enable block="set built-in speaker $enabled"
     //% blockGap=8
-    //% group="micro:bit V2"
+    //% group="micro:bit (V2)"
     //% parts=builtinspeaker
     //% help=music/set-built-in-speaker-enabled
     //% enabled.shadow=toggleOnOff shim=music::setBuiltInSpeakerEnabled
@@ -764,7 +765,8 @@ declare namespace pins {
     //% blockId=device_analog_set_pitch_pin block="analog set pitch pin %name"
     //% help=pins/analog-set-pitch-pin weight=3 advanced=true
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-    //% name.fieldOptions.tooltips="false" name.fieldOptions.width="250" shim=pins::analogSetPitchPin
+    //% name.fieldOptions.tooltips="false" name.fieldOptions.width="250"
+    //% deprecated shim=pins::analogSetPitchPin
     function analogSetPitchPin(name: AnalogPin): void;
 
     /**
@@ -773,14 +775,16 @@ declare namespace pins {
      */
     //% blockId=device_analog_set_pitch_volume block="analog set pitch volume $volume"
     //% help=pins/analog-set-pitch-volume weight=3 advanced=true
-    //% volume.min=0 volume.max=255 shim=pins::analogSetPitchVolume
+    //% volume.min=0 volume.max=255
+    //% deprecated shim=pins::analogSetPitchVolume
     function analogSetPitchVolume(volume: int32): void;
 
     /**
      * Gets the volume the pitch pin from 0..255
      */
     //% blockId=device_analog_pitch_volume block="analog pitch volume"
-    //% help=pins/analog-pitch-volume weight=3 advanced=true shim=pins::analogPitchVolume
+    //% help=pins/analog-pitch-volume weight=3 advanced=true
+    //% deprecated shim=pins::analogPitchVolume
     function analogPitchVolume(): int32;
 
     /**
@@ -886,6 +890,21 @@ declare namespace pins {
      */
     //% help=pins/push-button advanced=true shim=pins::pushButton
     function pushButton(pin: DigitalPin): void;
+}
+declare namespace music {
+
+    /**
+     * Set the pin used when producing sounds. Default is P0.
+     * @param name pin to modulate pitch from
+     */
+    //% blockId=music_set_sound_pin block="set sound pin $name"
+    //% help=music/set-sound-pin weight=3
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+    //% name.fieldOptions.tooltips="false" name.fieldOptions.width="250"
+    //% group="Volume"
+    //% weight=1
+    //% group="micro:bit (V2)" shim=music::setSoundPin
+    function setSoundPin(name: AnalogPin): void;
 }
 
 
@@ -1136,7 +1155,7 @@ declare namespace input {
      */
     //% weight=83 blockGap=32
     //% blockId=input_logo_event block="on logo $action"
-    //% group="micro:bit V2"
+    //% group="micro:bit (V2)"
     //% parts="logotouch"
     //% help="input/on-logo-event" shim=input::onLogoEvent
     function onLogoEvent(action: TouchButtonEvent, body: () => void): void;
@@ -1147,7 +1166,7 @@ declare namespace input {
     //% weight=58
     //% blockId="input_logo_is_pressed" block="logo is pressed"
     //% blockGap=8
-    //% group="micro:bit V2"
+    //% group="micro:bit (V2)"
     //% parts="logotouch"
     //% help="input/logo-is-pressed" shim=input::logoIsPressed
     function logoIsPressed(): boolean;
@@ -1164,7 +1183,7 @@ declare namespace pins {
     //% weight=60
     //% blockId=device_touch_set_type block="set %name to touch mode %mode"
     //% advanced=true
-    //% group="micro:bit V2"
+    //% group="micro:bit (V2)"
     //% help=pins/touch-set-mode shim=pins::touchSetMode
     function touchSetMode(name: TouchTarget, mode: TouchTargetMode): void;
 }
