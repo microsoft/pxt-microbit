@@ -576,10 +576,6 @@ namespace pins {
     */
     //% help=pins/push-button advanced=true
     void pushButton(DigitalPin pin) {
-#if MICROBIT_CODAL
-        new MicroBitButton((PinName)getPin((int)(pin))->name, (int)pin, DEVICE_BUTTON_ALL_EVENTS, PinMode::PullUp);
-#else
-        new MicroBitButton(PIN_ARG(pin), PinMode::PullUp);
-#endif
+        new MicroBitButton((PinName)getPin((int)(pin))->name, (int)pin, MICROBIT_BUTTON_ALL_EVENTS, PinMode::PullUp);
     }
 }
