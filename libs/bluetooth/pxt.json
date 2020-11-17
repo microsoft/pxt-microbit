@@ -28,7 +28,18 @@
                 "stack_size": 1280,
                 "gatt_table_size": "0x700"
             }
-        }
-    },
-    "installedVersion": "vzlhfd"
+        },
+        "userConfigs": [
+            {
+                "description": "Disable Bluetooth Event Service",
+                "config": {
+                    "microbit-dal": {
+                        "bluetooth": {
+                            "event_service": 0
+                        }
+                    }
+                }
+            }
+        ]
+    }
 }
