@@ -11,7 +11,7 @@ namespace ts.pxtc.extension {
 
         let outp = ""
 
-        wrapHex(mbdal, 0x00, [0x99, 0x00, 0xc0, 0xde])
+        wrapHex(mbdal, 0x00, [0x99, 0x01, 0xc0, 0xde])
         wrapHex(mbcodal, 0x0D, [0x99, 0x03, 0xc0, 0xde], true)
 
         outp += ":00000001FF\n"
@@ -68,6 +68,7 @@ namespace ts.pxtc.extension {
 
                 switch (parsed.type) {
                     case 0x00:
+                        /*
                         const parsed2 = parsed.len <= 16 && lines[i + 1] ?
                             ts.pxtc.hexfile.parseHexRecord(lines[i + 1])
                             : null
@@ -79,6 +80,7 @@ namespace ts.pxtc.extension {
                             parsed.len += parsed2.len
                             i++
                         }
+                        */
                         addData([parsed.addr >> 8, parsed.addr & 0xff, dataType]
                             .concat(parsed.data))
                         break
