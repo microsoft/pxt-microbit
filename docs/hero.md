@@ -11,7 +11,7 @@ Here are some cool tutorials to get you started with your @boardname@!
   "url":"/projects/flashing-heart",
   "imageUrl": "/static/mb/projects/a1-display.png",
   "largeImageUrl": "/static/mb/projects/flashing-heart/sim.gif",
-  "label": "New? Start Here!"
+  "label": "Start tutorial!"
 }, {
   "name": "Name Tag",
   "description": "Scroll your name on the screen",
