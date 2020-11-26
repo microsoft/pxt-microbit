@@ -221,11 +221,11 @@
             "alsrobot-microbit-makecode-packages/cruisebit": "dv:mbcodal",
             "tinkertanker/udriver_pca9585": "dv:mbcodal",
             "dfrobot/pxt-dfrobot-naturalscience": "dv:mbcodal",
-            "kitronikltd/pxt-kitronik-zip-tile": "min:0.1.0",
-            "4tronix/bitcommander": "min:1.1.2",
+            "kitronikltd/pxt-kitronik-zip-tile": "min:v0.1.0",
+            "4tronix/bitcommander": "min:1.1.1",
             "tinkertanker/pxt-rotary-encoder-ky040": "dv:mbcodal",
-            "KitronikLtd/pxt-kitronik-zip-64": "min:0.1.0",
-            "KitronikLtd/pxt-kitronik-game-controller": "min:0.0.2",
+            "KitronikLtd/pxt-kitronik-zip-64": "min:v0.1.0",
+            "KitronikLtd/pxt-kitronik-game-controller": "min:v0.0.2",
             "Tinkertanker/pxt-tinkercademy-microbot": "dv:mbcodal",
             "Tinkertanker/pxt-range-vl53l0x": "dv:mbcodal",
             "Imagimaker/pxt-imagimaker": "dv:mbcodal",
@@ -234,8 +234,8 @@
             "sparkfun/pxt-gator-microphone": "dv:mbcodal",
             "rebeccaclavier/pxt-bmp280": "dv:mbcodal",
             "mu-opensource/pxt-muvision": "dv:mbcodal",
-            "elecfreaks/pxt-PlanetX": "min:0.13.1",
-            "bsiever/microbit-pxt-timeanddate": "min:2.0.11"
+            "elecfreaks/pxt-PlanetX": "min:v0.13.1",
+            "bsiever/microbit-pxt-timeanddate": "min:v2.0.11"
         }
     },
     "galleries": {
