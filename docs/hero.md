@@ -7,23 +7,11 @@ Here are some cool tutorials to get you started with your @boardname@!
 ```codecard
 [{
   "name": "Flashing Heart",
-  "url":"/projects/flashing-heart",
   "description": "Make an animated flashing heart.",
+  "url":"/projects/flashing-heart",
   "imageUrl": "/static/mb/projects/a1-display.png",
   "largeImageUrl": "/static/mb/projects/flashing-heart/sim.gif",
-  "cardType": "tutorial",
-  "label": "New? Start Here!",
-  "labelClass": "purple ribbon large",
-  "youTubeId": "NvEOKZ8wh9s",
-  "otherActions": [{
-    "url": "/projects/spy/flashing-heart",
-    "editor": "py",
-    "cardType": "tutorial"
-  }, {
-    "url": "/projects/spy/flashing-heart",
-    "editor": "js",
-    "cardType": "tutorial"
-  }]
+  "label": "New? Start Here!"
 }, {
   "name": "Name Tag",
   "description": "Scroll your name on the screen",
