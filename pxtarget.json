@@ -347,7 +347,7 @@
         "organizationLogo": "./static/Microsoft-logo_rgb_c-gray-square.png",
         "organizationWideLogo": "./static/Microsoft-logo_rgb_c-white.png",
         "homeScreenHero": "./static/hero.png",
-        "homeScreenHeroGallery": "/hero",
+        "homeScreenHeroGallery": "/tutorials",
         "homeUrl": "https://makecode.microbit.org/",
         "embedUrl": "https://makecode.microbit.org/",
         "shareUrl": "https://makecode.microbit.org/",
