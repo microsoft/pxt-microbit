@@ -264,4 +264,10 @@ namespace pxsim.light {
         if (!lp) return;
         lp.mode = mode & 0xff;
     }
+
+    export function setWidth(pin: number, width: number) {
+        const lp = neopixelState(pin);
+        if (!lp) return;
+        lp.width = width;
+    }
 }
