@@ -265,7 +265,7 @@ namespace pxsim.light {
         lp.mode = mode & 0xff;
     }
 
-    export function setWidth(pin: number, width: number) {
+    export function setMatrixWidth(pin: number, width: number) {
         const lp = neopixelState(pin);
         if (!lp) return;
         lp.width = width;

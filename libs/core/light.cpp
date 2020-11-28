@@ -98,6 +98,6 @@ void setMode(int pin, int mode) {}
  **/
 //% advanced=true
 //%
-void setWidth(int pin, int width) {}
+void setMatrixWidth(int pin, int width) {}
 
 } // namespace light
