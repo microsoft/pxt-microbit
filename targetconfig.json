@@ -215,7 +215,7 @@
             "pauldfoster/pxt-microbit-gy521": "dv:mbcodal",
             "pizayanz/pxt-linebeacon": "dv:mbcodal",
             "sparkfun/pxt-gator-environment": "dv:mbcodal",
-            "muselab/pxt-wifi-shield": "dv:mbcodal",
+            "muselab/pxt-wifi-shield": "v1.8.76",
             "tinkertanker/pxt-alphanumeric-ht16k33": "dv:mbcodal",
             "tinkertanker/microdriver_sht2x": "dv:mbcodal",
             "alsrobot-microbit-makecode-packages/cruisebit": "dv:mbcodal",
