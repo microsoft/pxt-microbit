@@ -190,7 +190,8 @@
             "KitronikLtd/pxt-kitronik-smart-greenhouse",
             "hardwario/pxt-microbit-hardwario",
             "Schoumi/ssd1306-with-reset",
-            "keble6/pxt-DS3231"
+            "keble6/pxt-DS3231",
+            "microsoft/ExpressivePixelsMakeCode"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",
