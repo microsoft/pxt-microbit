@@ -20,3 +20,7 @@ bluetooth.onUartDataReceived(serial.delimiters(Delimiters.Comma), function () {
     basic.showString(serial.readUntil(serial.delimiters(Delimiters.Comma)))
 })
 ```
+
+```package
+bluetooth
+```
