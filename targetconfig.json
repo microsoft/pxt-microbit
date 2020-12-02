@@ -204,7 +204,7 @@
             "Tinkertanker/pxt-ringbitcar"
         ],
         "upgrades": {
-            "tinkertanker/pxt-iot-environment-kit": "dv:mbcodal",
+            "tinkertanker/pxt-iot-environment-kit": "min:v4.2.1",
             "microsoft/pxt-bluetooth-midi": "dv:mbcodal",
             "laboratoryforplayfulcomputation/pxt-blockytalkyble": "dv:mbcodal",
             "microsoft/pxt-bluetooth-temperature-sensor": "dv:mbcodal",
