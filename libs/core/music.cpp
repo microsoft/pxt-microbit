@@ -67,7 +67,6 @@ void setBuiltInSpeakerEnabled(bool enabled) {
  * Defines an optional sample level to generate during periods of silence.
  **/
 //% group="micro:bit (V2)"
-//% parts=builtinspeaker
 //% help=music/set-silence-level
 //% level.min=0
 //% level.max=1024
