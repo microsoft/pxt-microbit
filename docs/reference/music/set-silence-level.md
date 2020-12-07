@@ -10,7 +10,7 @@ music.setSilenceLevel(1000)
 
 ![works with micro:bit V2 only image](/static/v2/v2-only.png)
 
-This block requires the [micro:bit V2](/device/v2) hardware. If you use this block with a micro:bit v1 board, you will see the **927** error code on the screen.
+This function requires the [micro:bit V2](/device/v2) hardware. If you use this function with a micro:bit v1 board, you will see the **927** error code on the screen.
 
 ### ~
 
