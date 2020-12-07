@@ -190,7 +190,8 @@
             "KitronikLtd/pxt-kitronik-smart-greenhouse",
             "hardwario/pxt-microbit-hardwario",
             "Schoumi/ssd1306-with-reset",
-            "keble6/pxt-DS3231"
+            "keble6/pxt-DS3231",
+            "microsoft/ExpressivePixelsMakeCode"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",
@@ -204,7 +205,7 @@
             "Tinkertanker/pxt-ringbitcar"
         ],
         "upgrades": {
-            "tinkertanker/pxt-iot-environment-kit": "dv:mbcodal",
+            "tinkertanker/pxt-iot-environment-kit": "min:v4.2.1",
             "microsoft/pxt-bluetooth-midi": "dv:mbcodal",
             "laboratoryforplayfulcomputation/pxt-blockytalkyble": "dv:mbcodal",
             "microsoft/pxt-bluetooth-temperature-sensor": "dv:mbcodal",
@@ -215,17 +216,17 @@
             "pauldfoster/pxt-microbit-gy521": "dv:mbcodal",
             "pizayanz/pxt-linebeacon": "dv:mbcodal",
             "sparkfun/pxt-gator-environment": "dv:mbcodal",
-            "muselab/pxt-wifi-shield": "dv:mbcodal",
+            "muselab/pxt-wifi-shield": "min:v1.8.82",
             "tinkertanker/pxt-alphanumeric-ht16k33": "dv:mbcodal",
             "tinkertanker/microdriver_sht2x": "dv:mbcodal",
             "alsrobot-microbit-makecode-packages/cruisebit": "dv:mbcodal",
             "tinkertanker/udriver_pca9585": "dv:mbcodal",
             "dfrobot/pxt-dfrobot-naturalscience": "dv:mbcodal",
-            "kitronikltd/pxt-kitronik-zip-tile": "dv:mbcodal",
-            "4tronix/bitcommander": "dv:mbcodal",
+            "kitronikltd/pxt-kitronik-zip-tile": "min:v0.1.0",
+            "4tronix/bitcommander": "min:1.1.1",
             "tinkertanker/pxt-rotary-encoder-ky040": "dv:mbcodal",
-            "KitronikLtd/pxt-kitronik-zip-64": "dv:mbcodal",
-            "KitronikLtd/pxt-kitronik-game-controller": "dv:mbcodal",
+            "KitronikLtd/pxt-kitronik-zip-64": "min:v0.1.0",
+            "KitronikLtd/pxt-kitronik-game-controller": "min:v0.0.2",
             "Tinkertanker/pxt-tinkercademy-microbot": "dv:mbcodal",
             "Tinkertanker/pxt-range-vl53l0x": "dv:mbcodal",
             "Imagimaker/pxt-imagimaker": "dv:mbcodal",
@@ -234,8 +235,8 @@
             "sparkfun/pxt-gator-microphone": "dv:mbcodal",
             "rebeccaclavier/pxt-bmp280": "dv:mbcodal",
             "mu-opensource/pxt-muvision": "dv:mbcodal",
-            "elecfreaks/pxt-PlanetX": "dv:mbcodal",
-            "bsiever/microbit-pxt-timeanddate": "dv:mbcodal"
+            "elecfreaks/pxt-PlanetX": "min:v0.13.1",
+            "bsiever/microbit-pxt-timeanddate": "min:v2.0.11"
         }
     },
     "galleries": {

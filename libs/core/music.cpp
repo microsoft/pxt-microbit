@@ -63,4 +63,22 @@ void setBuiltInSpeakerEnabled(bool enabled) {
 #endif
 }
 
+/**
+ * Defines an optional sample level to generate during periods of silence.
+ **/
+//% group="micro:bit (V2)"
+//% help=music/set-silence-level
+//% level.min=0
+//% level.max=1024
+//% level.defl=0
+//% weight=1
+void setSilenceLevel(int level) {
+#if MICROBIT_CODAL
+    uBit.audio.mixer.setSilenceLevel(level);
+#else
+    // this is an optimization
+    // ignore in V1
+#endif
+}
+
 }
