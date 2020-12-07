@@ -16,7 +16,7 @@ This function requires the [micro:bit V2](/device/v2) hardware. If you use this 
 
 Normally the output signal level at the audio pin is `0` when no sounds are playing. This is the silence level and it stays constant since actual tones have varying levels over a period of time. Some devices (headphones, external speakers, etc.) which are sensitive to slight signal changes might play sounds from signal noise encountered along the connection between the audio pin and the audio device. 
 
-To reduce the effect of this signal noise it can be helpful to set an constant signal level for silence that is greater than `0`. This can reduce effect of noise on the "silence" signal to the device that will play sounds.
+To reduce the effect of this signal noise it can be helpful to set an constant signal level for silence that is greater than `0`.
 
 ## Parameters
 
