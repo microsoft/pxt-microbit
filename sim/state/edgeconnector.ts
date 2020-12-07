@@ -177,8 +177,10 @@ namespace pxsim.music {
     export function volume(): number {
         return pxsim.pins.analogPitchVolume();
     }
+}
 
-    export function setSoundPin(pinId: number) {
+namespace pxsim.pins {
+    export function setAudioPin(pinId: number) {
         pxsim.pins.analogSetPitchPin(pinId);
     }
 }

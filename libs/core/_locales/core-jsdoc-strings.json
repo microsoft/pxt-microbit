@@ -523,6 +523,7 @@
   "music.setBuiltInSpeakerEnabled": "Turn the built-in speaker on or off.\nDisabling the speaker resets the sound pin to the default of P0.",
   "music.setBuiltInSpeakerEnabled|param|enabled": "whether the built-in speaker is enabled in addition to the sound pin",
   "music.setPlayTone": "Sets a custom playTone function for playing melodies",
+  "music.setSilenceLevel": "Defines an optional sample level to generate during periods of silence.",
   "music.setTempo": "Sets the tempo to the specified amount",
   "music.setTempo|param|bpm": "The new tempo in beats per minute, eg: 120",
   "music.setVolume": "Set the default output volume of the sound synthesizer.",

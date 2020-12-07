@@ -637,6 +637,18 @@ declare namespace music {
     //% help=music/set-built-in-speaker-enabled
     //% enabled.shadow=toggleOnOff shim=music::setBuiltInSpeakerEnabled
     function setBuiltInSpeakerEnabled(enabled: boolean): void;
+
+    /**
+     * Defines an optional sample level to generate during periods of silence.
+     **/
+    //% group="micro:bit (V2)"
+    //% parts=builtinspeaker
+    //% help=music/set-silence-level
+    //% level.min=0
+    //% level.max=1024
+    //%
+    //% weight=1 level.defl=0 shim=music::setSilenceLevel
+    function setSilenceLevel(level?: int32): void;
 }
 declare namespace pins {
 

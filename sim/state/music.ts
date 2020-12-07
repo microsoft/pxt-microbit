@@ -3,8 +3,12 @@ namespace pxsim.music {
         const b = board();
         if (!b) return;
 
-        // TODO some redering about this
+        // TODO some rendering about this
         b.ensureHardwareVersion(2);
         b.speakerEnabled = !!enabled;
+    }
+
+    export function setSilenceLevel(level: number) { 
+        // ignore in v1,v2
     }
 }
