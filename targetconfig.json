@@ -191,7 +191,8 @@
             "hardwario/pxt-microbit-hardwario",
             "Schoumi/ssd1306-with-reset",
             "keble6/pxt-DS3231",
-            "microsoft/ExpressivePixelsMakeCode"
+            "microsoft/ExpressivePixelsMakeCode",
+            "pimoroni/pxt-inkybit"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",

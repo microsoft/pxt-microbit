@@ -62,6 +62,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 
 ```codecard
 [{
+    "name": "Pimoroni inky:bit",
+    "url": "/pkg/pimoroni/pxt-inkybit",
+    "cardType": "package"
+}, {
     "name": "Kitronik :VIEW text32",
     "url": "/pkg/KitronikLtd/pxt-kitronik-viewtext32",
     "cardType": "package"
