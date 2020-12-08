@@ -2,7 +2,7 @@
 
 # About
 
-## @description A Blocks / Javascript code editor for the micro:bit, a pocket-size computer with 5x5 display, sensors and Bluetooth.
+## @description A Blocks / Javascript / Python code editor for the micro:bit, a pocket-size computer with 5x5 display, sensors and Bluetooth.
 
 The [BBC micro:bit](https://microbit.org) is a [pocket-size computer](/device) with a 5x5 display of 25 LEDs, Bluetooth and sensors that can be programmed by anyone. The BBC micro:bit was made possible by many [partners](https://www.microbit.co.uk/partners).
 
