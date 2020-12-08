@@ -13,7 +13,7 @@ Just like Arduino, the micro:bit can be connected to and interact with sensors, 
 
 ## [Hardware: The Device](/device)
 
-The BBC micro:bit is packaged with sensors, radio and other goodies. Learn about the [hardware components](/device) of the micro:bit to make the most of it!
+The BBC micro:bit is packaged with sensors, radio, microphone and other goodies. Learn about the [hardware components](/device) of the micro:bit to make the most of it!
 
 ## ~ hint
 
