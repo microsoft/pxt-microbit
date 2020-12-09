@@ -155,6 +155,10 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
         log(`reconnect`)
         this.flashAborted = false;
 
+        function stringResponse(buf: Uint8Array) {
+            return pxt.U.uint8ArrayToString(buf.slice(2, 2 + buf[1]))
+        }
+
         await this.stopSerialAsync()
 
         this.allocDAP(); // clean dap apis
@@ -164,13 +168,13 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
         // before calling into dapjs, we use our dapCmdNums() a few times, which which will make sure the responses
         // to commends from previous sessions (if any) are flushed
         const info = await this.dapCmdNums(0x00, 0x04) // info
-        log(`daplink version: ${pxt.U.uint8ArrayToString(info.slice(2, 2 + info[1]))}`)
+        log(`daplink version: ${stringResponse(info)}`)
 
         const r = await this.dapCmdNums(0x80)
         this.usesCODAL = r[2] == 57 && r[3] == 57 && r[5] >= 51;
         if (!this.usesCODAL)
             this.useJACDAC = false;
-        log(`bin name: ${this.binName} ${pxt.U.toHex(r)}`);
+        log(`bin name: ${this.binName} v:${stringResponse(r)}`);
 
         const baud = new Uint8Array(5)
         baud[0] = 0x82 // set baud
