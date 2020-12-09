@@ -160,18 +160,17 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
         this.allocDAP(); // clean dap apis
 
         await this.io.reconnectAsync()
-        await this.cortexM.init()
+
+        // before calling into dapjs, we use our dapCmdNums() a few times, which which will make sure the responses
+        // to commends from previous sessions (if any) are flushed
+        const info = await this.dapCmdNums(0x00, 0x04) // info
+        log(`daplink version: ${pxt.U.uint8ArrayToString(info.slice(2, 2 + info[1]))}`)
 
         const r = await this.dapCmdNums(0x80)
         this.usesCODAL = r[2] == 57 && r[3] == 57 && r[5] >= 51;
         if (!this.usesCODAL)
             this.useJACDAC = false;
         log(`bin name: ${this.binName} ${pxt.U.toHex(r)}`);
-
-        const res = await this.readWords(0x10000010, 2);
-        this.pageSize = res[0]
-        this.numPages = res[1]
-        log(`page size ${this.pageSize}, num pages ${this.numPages}`);
 
         const baud = new Uint8Array(5)
         baud[0] = 0x82 // set baud
@@ -180,8 +179,15 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
         // setting the baud rate on serial may reset NRF (depending on daplink version), so delay after
         await Promise.delay(200);
 
-        await this.checkStateAsync(true);
+        // only init after setting baud rate, in case we got reset
+        await this.cortexM.init()
 
+        const res = await this.readWords(0x10000010, 2);
+        this.pageSize = res[0]
+        this.numPages = res[1]
+        log(`page size ${this.pageSize}, num pages ${this.numPages}`);
+
+        await this.checkStateAsync(true);
         await this.jacdacSetup();
 
         this.startReadSerial();
@@ -258,8 +264,20 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
         return this.io.sendPacketAsync(buf)
             .then(() => this.recvPacketAsync())
             .then(resp => {
-                if (resp[0] != buf[0])
-                    throw new Error(`bad dapCmd response: ${buf[0]} -> ${resp[0]}`)
+                if (resp[0] != buf[0]) {
+                    const msg = `bad dapCmd response: ${buf[0]} -> ${resp[0]}`
+                    // in case we got an invalid response, try to get another response, in case the current
+                    // response is a left-over from previous communications
+                    log(msg + "; retrying")
+                    return this.recvPacketAsync()
+                        .then(resp => {
+                            if (resp[0] == buf[0])
+                                return resp
+                            throw new Error(msg)
+                        }, err => {
+                            throw new Error(msg)
+                        })
+                }
                 return resp
             })
     }
@@ -595,6 +613,7 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
         this.xchgAddr = null
         if (!this.useJACDAC)
             return
+        await Promise.delay(700); // wait for the program to start and setup memory correctly
         const xchg = await this.findJacdacXchgAddr()
         if (xchg == null)
             return
@@ -624,7 +643,7 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
 
         const now = Date.now()
         if (this.lastXchg && now - this.lastXchg > 50) {
-            console.error("slow xchg: " + (now - this.lastXchg) + "ms")
+            log("slow xchg: " + (now - this.lastXchg) + "ms")
         }
         this.lastXchg = now
 
