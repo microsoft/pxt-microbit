@@ -4,7 +4,10 @@
 
 namespace pxsim {
     export class DalBoard extends CoreBoard
-        implements RadioBoard, LightBoard, MicrophoneBoard
+        implements CommonBoard
+        , RadioBoard
+        , LightBoard
+        , MicrophoneBoard
         , ControlMessageBoard {
         // state & update logic for component services
         ledMatrixState: LedMatrixState;
