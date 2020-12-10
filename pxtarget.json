@@ -210,6 +210,12 @@
         "aspectRatio": 1.22,
         "parts": true,
         "partsAspectRatio": 0.69,
+        "messageSimulators": {
+            "jacdac": {
+                "url": "https://microsoft.github.io/jacdac-ts/tools/makecode-sim?webusb=0&parentOrigin=$PARENT_ORIGIN$",
+                "localHostUrl": "http://localhost:8000/tools/makecode-sim?webusb=0&parentOrigin=$PARENT_ORIGIN$"
+            }
+        },
         "boardDefinition": {
             "visual": "microbit",
             "gpioPinBlocks": [
