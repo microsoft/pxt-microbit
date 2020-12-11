@@ -4,4 +4,9 @@ namespace pxsim {
         bus: EventBus;
         edgeConnectorState: EdgeConnectorState;
     }
+
+    export function allocateNotifyEvent(): number {
+        let b = board();
+        return b.bus.nextNotifyEvent++;
+    }
 }
