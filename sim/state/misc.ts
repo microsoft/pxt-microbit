@@ -246,6 +246,7 @@ namespace pxsim.bluetooth {
 }
 
 namespace pxsim.light {
+
     export function sendWS2812Buffer(buffer: RefBuffer, pin: number) {
         pxsim.sendBufferAsm(buffer, pin)
     }
@@ -270,4 +271,5 @@ namespace pxsim.light {
         if (!lp) return;
         lp.width = width;
     }
+
 }
