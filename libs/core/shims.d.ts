@@ -1152,6 +1152,13 @@ declare namespace light {
     //% advanced=true
     //% shim=light::setMode
     function setMode(pin: int32, mode: int32): void;
+
+    /**
+     * Sets the width of neopixel matrix
+     **/
+    //% advanced=true
+    //% shim=light::setMatrixWidth
+    function setMatrixWidth(pin: int32, width: int32): void;
 }
 declare namespace input {
 

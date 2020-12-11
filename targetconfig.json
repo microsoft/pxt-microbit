@@ -214,7 +214,7 @@
             "microsoft/pxt-bluetooth-max6675": "dv:mbcodal",
             "pimoroni/pxt-scrollbit": "dv:mbcodal",
             "pauldfoster/pxt-microbit-gy521": "dv:mbcodal",
-            "pizayanz/pxt-linebeacon": "dv:mbcodal",
+            "pizayanz/pxt-linebeacon": "min:v0.0.14",
             "sparkfun/pxt-gator-environment": "dv:mbcodal",
             "muselab/pxt-wifi-shield": "min:v1.8.82",
             "tinkertanker/pxt-alphanumeric-ht16k33": "dv:mbcodal",

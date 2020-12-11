@@ -246,6 +246,7 @@ namespace pxsim.bluetooth {
 }
 
 namespace pxsim.light {
+
     export function sendWS2812Buffer(buffer: RefBuffer, pin: number) {
         pxsim.sendBufferAsm(buffer, pin)
     }
@@ -264,4 +265,11 @@ namespace pxsim.light {
         if (!lp) return;
         lp.mode = mode & 0xff;
     }
+
+    export function setMatrixWidth(pin: number, width: number) {
+        const lp = neopixelState(pin);
+        if (!lp) return;
+        lp.width = width;
+    }
+
 }

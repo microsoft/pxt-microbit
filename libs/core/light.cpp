@@ -93,4 +93,11 @@ void sendWS2812BufferWithBrightness(Buffer buf, int pin, int brightness) {
 //%
 void setMode(int pin, int mode) {}
 
+/**
+ * Sets the width of neopixel matrix
+ **/
+//% advanced=true
+//%
+void setMatrixWidth(int pin, int width) {}
+
 } // namespace light
