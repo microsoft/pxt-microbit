@@ -98,13 +98,13 @@ void setMode(int pin, int mode) {}
  **/
 
 /**
- * Set the matrix width for neopixel strip (already assigned to a pin). 
+ * Set the matrix width for Neopixel strip (already assigned to a pin).
  * Should be used in conjunction with `set matrix width` from Neopixel package.
- * @param name pin name of Neopixel strip, eg: DigitalPin.P1
+ * @param name pin of Neopixel strip, eg: DigitalPin.P1
  * @param value width of matrix (at least ``2``)
  */
-//% help=pins/neopixel-matrix-width weight=24
-//% blockId=device_neopixel_matrix_width block="neopixel matrix width|pin %name %width" blockGap=8
+//% help=pins/neopixel-matrix-width weight=3
+//% blockId=pin_neopixel_matrix_width block="neopixel matrix width|pin %name %width" blockGap=8
 //% width.min=2
 void setMatrixWidth(int pin, int width) {}
 
