@@ -642,7 +642,6 @@ declare namespace music {
      * Defines an optional sample level to generate during periods of silence.
      **/
     //% group="micro:bit (V2)"
-    //% parts=builtinspeaker
     //% help=music/set-silence-level
     //% level.min=0
     //% level.max=1024
@@ -1153,6 +1152,13 @@ declare namespace light {
     //% advanced=true
     //% shim=light::setMode
     function setMode(pin: int32, mode: int32): void;
+
+    /**
+     * Sets the width of neopixel matrix
+     **/
+    //% advanced=true
+    //% shim=light::setMatrixWidth
+    function setMatrixWidth(pin: int32, width: int32): void;
 }
 declare namespace input {
 

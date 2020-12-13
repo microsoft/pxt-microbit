@@ -191,7 +191,8 @@
             "hardwario/pxt-microbit-hardwario",
             "Schoumi/ssd1306-with-reset",
             "keble6/pxt-DS3231",
-            "microsoft/ExpressivePixelsMakeCode"
+            "microsoft/ExpressivePixelsMakeCode",
+            "MUSELAB/pxt-muselab-oled-v2"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",
@@ -214,7 +215,7 @@
             "microsoft/pxt-bluetooth-max6675": "dv:mbcodal",
             "pimoroni/pxt-scrollbit": "dv:mbcodal",
             "pauldfoster/pxt-microbit-gy521": "dv:mbcodal",
-            "pizayanz/pxt-linebeacon": "dv:mbcodal",
+            "pizayanz/pxt-linebeacon": "min:v0.0.14",
             "sparkfun/pxt-gator-environment": "dv:mbcodal",
             "muselab/pxt-wifi-shield": "min:v1.8.82",
             "tinkertanker/pxt-alphanumeric-ht16k33": "dv:mbcodal",

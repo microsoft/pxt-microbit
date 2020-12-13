@@ -4,7 +4,11 @@
 
 namespace pxsim {
     export class DalBoard extends CoreBoard
-        implements RadioBoard, LightBoard, MicrophoneBoard {
+        implements CommonBoard
+        , RadioBoard
+        , LightBoard
+        , MicrophoneBoard
+        , ControlMessageBoard {
         // state & update logic for component services
         ledMatrixState: LedMatrixState;
         edgeConnectorState: EdgeConnectorState;
@@ -20,6 +24,7 @@ namespace pxsim {
         fileSystem: FileSystemState;
         logoTouch: Button;
         speakerEnabled: boolean = true;
+        controlMessageState: ControlMessageState;
 
         // visual
         viewHost: visuals.BoardHost;
@@ -34,6 +39,7 @@ namespace pxsim {
             // components
             this.lightState = {};
             this.fileSystem = new FileSystemState();
+            this.controlMessageState = new ControlMessageState(this);
             this.builtinParts["ledmatrix"] = this.ledMatrixState = new LedMatrixState(runtime);
             this.builtinParts["buttonpair"] = this.buttonPairState = new ButtonPairState({
                 ID_BUTTON_A: DAL.MICROBIT_ID_BUTTON_A,

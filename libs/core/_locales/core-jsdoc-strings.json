@@ -496,6 +496,7 @@
   "led.unplot|param|y": "the vertical coordinate of the LED",
   "light.sendWS2812Buffer": "Sends a color buffer to a light strip",
   "light.sendWS2812BufferWithBrightness": "Sends a color buffer to a light strip",
+  "light.setMatrixWidth": "Sets the width of neopixel matrix",
   "light.setMode": "Sets the light mode of a pin",
   "msgpack.packNumberArray": "Pack a number array into a buffer.",
   "msgpack.packNumberArray|param|nums": "the numbers to be packed",
