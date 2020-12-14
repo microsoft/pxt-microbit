@@ -229,10 +229,10 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
         this.flashAborted = false;
         this.flashing = true;
         return (this.io.isConnected() ? Promise.resolve() : this.io.reconnectAsync())
+            .then(() => this.stopSerialAsync())
             .then(() => this.cortexM.init())
             .then(() => this.cortexM.reset(true))
             .then(() => this.checkStateAsync())
-            .then(() => this.stopSerialAsync())
             .then(() => this.readUICR())
             .then(uicr => {
                 // shortcut, do a full flash
