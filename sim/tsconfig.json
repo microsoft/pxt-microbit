@@ -16,6 +16,7 @@
         "*.ts",
         "state/*.ts",
         "visuals/*.ts",
+        "../node_modules/pxt-common-packages/libs/base/sim/control.ts",
         "../node_modules/pxt-common-packages/libs/base/sim/controlmessage.ts",
         "../node_modules/pxt-common-packages/libs/core/sim/analogSensor.ts",
         "../node_modules/pxt-common-packages/libs/microphone/sim/state.ts",
