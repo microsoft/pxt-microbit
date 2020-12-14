@@ -469,7 +469,7 @@ declare namespace control {
      *
      */
     //% shim=control::__log
-    function __log(text: string): void;
+    function __log(priority: int32, text: string): void;
 
     /**
      * Allocates the next user notification event
