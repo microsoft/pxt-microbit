@@ -93,13 +93,13 @@ namespace pxsim {
                     "P19": DAL.MICROBIT_ID_IO_P19
                 }
             });
-            this.builtinParts["radio"] = this.radioState = new RadioState(runtime, {
+            this.builtinParts["radio"] = this.radioState = new RadioState(runtime, this, {
                 ID_RADIO: DAL.MICROBIT_ID_RADIO,
                 RADIO_EVT_DATAGRAM: DAL.MICROBIT_RADIO_EVT_DATAGRAM
             });
             this.builtinParts["microphone"] = this.microphoneState = new AnalogSensorState(DAL.DEVICE_ID_MICROPHONE, 0, 255, 86, 165);
             this.builtinParts["accelerometer"] = this.accelerometerState = new AccelerometerState(runtime);
-            this.builtinParts["serial"] = this.serialState = new SerialState();
+            this.builtinParts["serial"] = this.serialState = new SerialState(runtime, this);
             this.builtinParts["thermometer"] = this.thermometerState = new ThermometerState();
             this.builtinParts["lightsensor"] = this.lightSensorState = new LightSensorState();
             this.builtinParts["compass"] = this.compassState = new CompassState();
@@ -126,24 +126,6 @@ namespace pxsim {
             }
         }
 
-        receiveMessage(msg: SimulatorMessage) {
-            if (!runtime || runtime.dead) return;
-
-            switch (msg.type || "") {
-                case "eventbus":
-                    const ev = <SimulatorEventBusMessage>msg;
-                    this.bus.queue(ev.id, ev.eventid, ev.value);
-                    break;
-                case "serial":
-                    const data = (<SimulatorSerialMessage>msg).data || "";
-                    this.serialState.receiveData(data);
-                    break;
-                case "radiopacket":
-                    const packet = <SimulatorRadioPacketMessage>msg;
-                    this.radioState.receivePacket(packet);
-                    break;
-            }
-        }
 
         initAsync(msg: SimulatorRunMessage): Promise<void> {
             super.initAsync(msg);

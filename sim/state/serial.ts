@@ -3,6 +3,17 @@ namespace pxsim {
     export class SerialState {
         serialIn: string[] = [];
 
+        constructor(private readonly runtime: Runtime, private readonly board: BaseBoard) {
+            this.board.addMessageListener(this.handleMessage.bind(this))
+        }
+
+        private handleMessage(msg: SimulatorMessage) {
+            if (msg.type === "seria") {
+                const data = (<SimulatorSerialMessage>msg).data || "";
+                this.receiveData(data);
+            }
+        }
+
         public receiveData(data: string) {
             this.serialIn.push();
         }
