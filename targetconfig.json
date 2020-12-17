@@ -192,7 +192,8 @@
             "Schoumi/ssd1306-with-reset",
             "keble6/pxt-DS3231",
             "microsoft/ExpressivePixelsMakeCode",
-            "MUSELAB/pxt-muselab-oled-v2"
+            "MUSELAB/pxt-muselab-oled-v2",
+            "microsoft/pxt-jacdac"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",
@@ -238,7 +239,10 @@
             "mu-opensource/pxt-muvision": "dv:mbcodal",
             "elecfreaks/pxt-PlanetX": "min:v0.13.1",
             "bsiever/microbit-pxt-timeanddate": "min:v2.0.11"
-        }
+        },
+        "approvedEditorExtensionUrls": [
+            "https://microsoft.github.io/jacdac-ts/tools/makecode-editor-extension"
+        ]
     },
     "galleries": {
         "Tutorials": "tutorials",
