@@ -213,7 +213,7 @@
             "minodekit/pxt-minode": "dv:mbcodal",
             "sparkfun/pxt-gamer-bit": "dv:mbcodal",
             "microsoft/pxt-bluetooth-max6675": "dv:mbcodal",
-            "pimoroni/pxt-scrollbit": "dv:mbcodal",
+            "pimoroni/pxt-scrollbit": "min:v0.0.7",
             "pauldfoster/pxt-microbit-gy521": "dv:mbcodal",
             "pizayanz/pxt-linebeacon": "min:v0.0.14",
             "sparkfun/pxt-gator-environment": "dv:mbcodal",
