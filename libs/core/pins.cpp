@@ -462,10 +462,12 @@ namespace pins {
      * @param name pin of Neopixel strip, eg: DigitalPin.P1
      * @param value width of matrix (at least ``2``)
      */
-    //% help=pins/neopixel-matrix-width weight=3
-    //% blockId=pin_neopixel_matrix_width block="neopixel matrix width|pin %name %width" blockGap=8
-    //% width.min=2
-    void setMatrixWidth(int pin, int width) {}
+    //% help=pins/neopixel-matrix-width weight=3 advanced=true
+    //% blockId=pin_neopixel_matrix_width block="neopixel matrix width|pin %pin %width" blockGap=8
+    //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=4
+    //% pin.fieldOptions.tooltips="false" pin.fieldOptions.width="250"
+    //% width.defl=5 width.min=2
+    void setMatrixWidth(DigitalPin pin, int width) {}
 
 #if MICROBIT_CODAL
 #define BUFFER_TYPE uint8_t*

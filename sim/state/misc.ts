@@ -168,6 +168,12 @@ namespace pxsim.pins {
 
     export function setEvents(name: number, event: number) {
     }
+
+    export function setMatrixWidth(pin: number, width: number) {
+        const lp = neopixelState(pin);
+        if (!lp) return;
+        lp.width = width;
+    }
 }
 
 namespace pxsim.devices {
@@ -264,12 +270,6 @@ namespace pxsim.light {
         const lp = neopixelState(pin);
         if (!lp) return;
         lp.mode = mode & 0xff;
-    }
-
-    export function setMatrixWidth(pin: number, width: number) {
-        const lp = neopixelState(pin);
-        if (!lp) return;
-        lp.width = width;
     }
 
 }
