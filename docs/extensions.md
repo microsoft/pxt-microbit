@@ -103,6 +103,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
   "name": "PCA9685 LED controller",
   "url":"/pkg/jdarling/pxt-pca9685",
   "cardType": "package"
+}, {
+  "name": "Coolguy expansion board",
+  "url":"/pkg/CoolGuy-official/pxt-coolguy",
+  "cardType": "package"
 }]
 ```
 

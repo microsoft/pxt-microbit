@@ -193,7 +193,8 @@
             "keble6/pxt-DS3231",
             "microsoft/ExpressivePixelsMakeCode",
             "MUSELAB/pxt-muselab-oled-v2",
-            "microsoft/pxt-jacdac"
+            "microsoft/pxt-jacdac",
+            "CoolGuy-official/pxt-coolguy"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",
