@@ -11,7 +11,7 @@ pins.setMatrixWidth(Digital.P1, 16)
 ## Parameters
 
 * ``name``: The @boardname@ hardware pin to configure (``P0``-``P20``)
-* ``width``: a [number](/types/number) from `0` through `180`
+* ``width``: a [number](/types/number) (for example, from `2` through `16`)
 
 ## Example
 
