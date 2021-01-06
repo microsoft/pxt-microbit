@@ -35,46 +35,6 @@ namespace pxsim.basic {
 namespace pxsim.control {
     export var inBackground = thread.runInBackground;
 
-    export function createBuffer(sz: number) {
-        return pxsim.BufferMethods.createBuffer(sz)
-    }
-
-    export function reset() {
-        const cb = getResume();
-        pxsim.runtime.restart();
-    }
-
-    export function waitMicros(micros: number) {
-        // TODO
-    }
-    export function waitForEvent(id: number, evid: number) {
-        const cb = getResume();
-        board().bus.wait(id, evid, cb);
-    }
-
-    export function millis(): number {
-        return runtime.runningTime();
-    }
-
-    export function micros(): number {
-        return runtime.runningTimeUs();
-    }
-
-
-    export function deviceName(): string {
-        let b = board();
-        return b && b.id
-            ? b.id.slice(0, 4)
-            : "abcd";
-    }
-
-    export function deviceSerialNumber(): number {
-        let b = board();
-        return parseInt(b && b.id
-            ? b.id.slice(1)
-            : "42");
-    }
-
     export function onEvent(id: number, evid: number, handler: RefAction) {
         if (id == DAL.MICROBIT_ID_BUTTON_AB) {
             const b = board().buttonPairState;
@@ -86,23 +46,12 @@ namespace pxsim.control {
         pxtcore.registerWithDal(id, evid, handler)
     }
 
-    export function raiseEvent(id: number, evid: number, mode: number) {
-        // TODO mode?
-        board().bus.queue(id, evid)
-    }
-
     export function eventTimestamp() {
         return board().bus.getLastEventTime()
     }
 
     export function eventValue() {
         return board().bus.getLastEventValue()
-    }
-}
-
-namespace pxsim.pxtcore {
-    export function registerWithDal(id: number, evid: number, handler: RefAction) {
-        board().bus.listen(id, evid, handler);
     }
 }
 

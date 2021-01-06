@@ -72,6 +72,10 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
     private numPages = 256;
     private usesCODAL = false;
     private forceFullFlash = /webusbfullflash=1/.test(window.location.href);
+    private useJACDAC = true;
+
+    onSerial = (buf: Uint8Array, isStderr: boolean) => { };
+    onCustomEvent = (type: string, payload: Uint8Array) => { };
 
     constructor(public readonly io: pxt.packetio.PacketIO) {
         this.familyID = 0x0D28; // this is the microbit vendor id, not quite UF2 family id
@@ -94,44 +98,33 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
     private startReadSerial() {
         const rid = this.readSerialId;
         log(`start read serial ${rid}`)
-        const readSerial = () => {
-            if (rid != this.readSerialId) {
-                log(`stopped serial reader ${rid}`)
-                return;
-            }
-            if (this.flashing) {
-                setTimeout(readSerial, 500);
-                return;
-            }
-            // done
-            this.dapCmdNums(0x83)
-                .then((r: Uint8Array) => {
-                    if (rid != this.readSerialId) {
-                        log(`stopped serial reader ${rid}`)
-                        return;
-                    }
+        const readSerial = async () => {
+            try {
+                while (true) {
+                    if (rid != this.readSerialId) break
+
+                    const r = await this.dapCmdNums(0x83)
+                    if (rid != this.readSerialId) break
+
                     const len = r[1]
-                    let str = ""
-                    for (let i = 2; i < len + 2; ++i) {
-                        str += String.fromCharCode(r[i])
-                    }
-                    if (str.length > 0) {
-                        pxt.U.nextTick(readSerial)
-                        if (this.onSerial) {
-                            const utf8Str = pxt.U.toUTF8(str);
-                            this.onSerial(pxt.U.stringToUint8Array(utf8Str), false)
-                        }
-                    } else
-                        setTimeout(readSerial, 50)
-                }, (err: any) => {
-                    log(`read error: ` + err.message);
-                    if (rid != this.readSerialId) {
-                        log(`stopped serial reader ${rid}`)
-                        return;
-                    }
+                    const hasData = len > 0
+                    if (hasData && this.onSerial)
+                        this.onSerial(r.slice(2, len + 2), false)
+
+                    await this.jacdacProcess(hasData)
+                }
+
+                log(`stopped serial reader ${rid}`)
+            } catch (err) {
+                log(`read error: ${err.message}`);
+                if (rid != this.readSerialId) {
+                    log(`stopped serial reader ${rid}`)
+                } else {
                     this.disconnectAsync(); // force disconnect
-                });
+                }
+            }
         }
+
         readSerial();
     }
 
@@ -140,8 +133,6 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
         this.readSerialId++;
         return Promise.delay(200);
     }
-
-    onSerial: (buf: Uint8Array, isStderr: boolean) => void;
 
     private allocDAP() {
         log(`alloc dap`);
@@ -160,30 +151,50 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
         return (this.usesCODAL ? "mbcodal-" : "mbdal-") + pxtc.BINARY_HEX;
     }
 
-    reconnectAsync(): Promise<void> {
+    async reconnectAsync(): Promise<void> {
         log(`reconnect`)
         this.flashAborted = false;
+
+        function stringResponse(buf: Uint8Array) {
+            return pxt.U.uint8ArrayToString(buf.slice(2, 2 + buf[1]))
+        }
+
+        await this.stopSerialAsync()
+
         this.allocDAP(); // clean dap apis
-        // configure serial at 115200
-        return this.stopSerialAsync()
-            .then(() => this.io.reconnectAsync())
-            .then(() => this.cortexM.init())
-            .then(() => this.dapCmdNums(0x80))
-            .then((r: Uint8Array) => {
-                this.usesCODAL = r[2] == 57 && r[3] == 57 && r[5] >= 51;
-                log(`bin name: ${this.binName} ${pxt.U.toHex(r)}`)
-            })
-            .then(() => this.cortexM.memory.readBlock(0x10000010, 2, this.pageSize))
-            .then(res => {
-                this.pageSize = pxt.HF2.read32(res, 0)
-                this.numPages = pxt.HF2.read32(res, 4)
-                log(`page size ${this.pageSize}, num pages ${this.numPages}`)
-            })
-            // setting the baud rate on serial resets the cortex, so delay after
-            .then(() => this.dapCmdNums(0x82, 0x00, 0xC2, 0x01, 0x00))
-            .delay(200)
-            .then(() => this.checkStateAsync(true))
-            .then(() => this.startReadSerial());
+
+        await this.io.reconnectAsync()
+
+        // before calling into dapjs, we use our dapCmdNums() a few times, which which will make sure the responses
+        // to commends from previous sessions (if any) are flushed
+        const info = await this.dapCmdNums(0x00, 0x04) // info
+        log(`daplink version: ${stringResponse(info)}`)
+
+        const r = await this.dapCmdNums(0x80)
+        this.usesCODAL = r[2] == 57 && r[3] == 57 && r[5] >= 51;
+        if (!this.usesCODAL)
+            this.useJACDAC = false;
+        log(`bin name: ${this.binName} v:${stringResponse(r)}`);
+
+        const baud = new Uint8Array(5)
+        baud[0] = 0x82 // set baud
+        pxt.HF2.write32(baud, 1, 115200)
+        await this.dapCmd(baud)
+        // setting the baud rate on serial may reset NRF (depending on daplink version), so delay after
+        await Promise.delay(200);
+
+        // only init after setting baud rate, in case we got reset
+        await this.cortexM.init()
+
+        const res = await this.readWords(0x10000010, 2);
+        this.pageSize = res[0]
+        this.numPages = res[1]
+        log(`page size ${this.pageSize}, num pages ${this.numPages}`);
+
+        await this.checkStateAsync(true);
+        await this.jacdacSetup();
+
+        this.startReadSerial();
     }
 
     private async checkStateAsync(resume?: boolean): Promise<void> {
@@ -218,6 +229,7 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
         this.flashAborted = false;
         this.flashing = true;
         return (this.io.isConnected() ? Promise.resolve() : this.io.reconnectAsync())
+            .then(() => this.stopSerialAsync())
             .then(() => this.cortexM.init())
             .then(() => this.cortexM.reset(true))
             .then(() => this.checkStateAsync())
@@ -256,8 +268,20 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
         return this.io.sendPacketAsync(buf)
             .then(() => this.recvPacketAsync())
             .then(resp => {
-                if (resp[0] != buf[0])
-                    throw new Error(`bad dapCmd response: ${buf[0]} -> ${resp[0]}`)
+                if (resp[0] != buf[0]) {
+                    const msg = `bad dapCmd response: ${buf[0]} -> ${resp[0]}`
+                    // in case we got an invalid response, try to get another response, in case the current
+                    // response is a left-over from previous communications
+                    log(msg + "; retrying")
+                    return this.recvPacketAsync()
+                        .then(resp => {
+                            if (resp[0] == buf[0])
+                                return resp
+                            throw new Error(msg)
+                        }, err => {
+                            throw new Error(msg)
+                        })
+                }
                 return resp
             })
     }
@@ -342,10 +366,10 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
     }
 
     private readUICR() {
-        return this.cortexM.memory.readBlock(0x10001014, 1, this.pageSize)
+        return this.readWords(0x10001014, 1)
             .then(v => {
-                const uicr = pxt.HF2.read32(v, 0) & 0xff;
-                log(`uicr: ${uicr.toString(16)} (${pxt.U.toHex(v)})`);
+                const uicr = v[0] & 0xff;
+                log(`uicr: ${uicr.toString(16)} (${v[0].toString(16)})`);
                 return uicr;
             });
     }
@@ -402,7 +426,7 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
                 })
         }
 
-        return this.stopSerialAsync()
+        return Promise.resolve()
             .then(() => this.cortexM.memory.writeBlock(loadAddr, flashPageBIN))
             .then(() => Promise.mapSeries(pxt.U.range(changed.length),
                 i => {
@@ -451,7 +475,6 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
                 return this.cortexM.reset(false);
             })
             .then(() => this.checkStateAsync(true))
-            .then(() => this.startReadSerial())
             .timeout(PARTIAL_FLASH_TIMEOUT, timeoutMessage)
             .catch((e) => {
                 this.flashAborted = true;
@@ -465,6 +488,21 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
         return this.cortexM.runCode(computeChecksums2, loadAddr, loadAddr + 1, 0xffffffff, stackAddr, true,
             dataAddr, 0, this.pageSize, pages)
             .then(() => this.cortexM.memory.readBlock(dataAddr, pages * 2, this.pageSize))
+    }
+
+    private readWords(addr: number, numWords: number) {
+        return this.cortexM.memory.readBlock(addr, numWords, this.pageSize)
+            // assume browser is little-endian
+            .then(u8 => new Uint32Array(u8.buffer))
+    }
+
+    private writeWords(addr: number, buf: Uint32Array) {
+        return this.cortexM.memory.writeBlock(addr, buf)
+    }
+
+    private readBytes(addr: number, numBytes: number) {
+        return this.cortexM.memory.readBlock(addr, (numBytes + 3) >> 2, this.pageSize)
+            .then(u8 => u8.length == numBytes ? u8 : u8.slice(0, numBytes))
     }
 
     static onlyChanged(blocks: ts.pxtc.UF2.Block[], checksums: Uint8Array, pageSize: number) {
@@ -507,6 +545,176 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
         }
         return res
     }
+
+    //
+    // jacdac stuff starts here
+    //
+
+    private irqn: number
+    private xchgAddr: number = null
+    private lastXchg: number
+    private currSend: SendItem
+    private sendQ: SendItem[] = []
+    private lastSend: number
+
+    sendCustomEventAsync(type: string, buf: Uint8Array): Promise<void> {
+        if (type == "jacdac") {
+            if (this.xchgAddr == null)
+                return Promise.resolve()
+            if (buf.length & 3) {
+                const tmp = new Uint8Array((buf.length + 3) & ~3)
+                tmp.set(buf)
+                buf = tmp
+            }
+            return new Promise<void>(resolve => {
+                this.sendQ.push({
+                    buf,
+                    cb: resolve
+                })
+            })
+        }
+        return Promise.reject(new Error("invalid custom event type"))
+    }
+
+    private writeWord(addr: number, val: number) {
+        return this.cortexM.memory.write32(addr, val)
+    }
+
+    private async findJacdacXchgAddr() {
+        const memStart = 0x2000_0000
+        const memStop = memStart + 128 * 1024
+        const checkSize = 1024
+
+        let p0 = 0x20006000
+        let p1 = 0x20006000 + checkSize
+
+        const check = async (addr: number) => {
+            if (addr < memStart)
+                return null
+            if (addr + checkSize > memStop)
+                return null
+            const buf = await this.readWords(addr, checkSize >> 2)
+            for (let i = 0; i < buf.length; ++i) {
+                if (buf[i] == 0x786D444A && buf[i + 1] == 0xB0A6C0E9)
+                    return addr + (i << 2)
+            }
+            return 0
+        }
+
+        while (true) {
+            const a0 = await check(p0)
+            if (a0) return a0
+            const a1 = await check(p1)
+            if (a1) return a1
+            if (a0 === null && a1 === null)
+                return null
+            p0 -= checkSize
+            p1 += checkSize
+        }
+    }
+
+    private async jacdacSetup() {
+        this.xchgAddr = null
+        if (!this.useJACDAC)
+            return
+        await Promise.delay(700); // wait for the program to start and setup memory correctly
+        const xchg = await this.findJacdacXchgAddr()
+        if (xchg == null)
+            return
+        const info = await this.readBytes(xchg, 16)
+        this.irqn = info[8]
+        if (info[12 + 2] != 0xff) {
+            console.error("invalid memory; try power-cycling the micro:bit")
+            return
+        }
+        this.xchgAddr = xchg
+        // clear initial lock
+        await this.writeWord(xchg + 12, 0)
+        log(`jacdac exchange address: 0x${xchg.toString(16)}; irqn=${this.irqn}`)
+    }
+
+    private async triggerIRQ(irqn: number) {
+        const addr = 0xE000E200 + (irqn >> 5) * 4
+        await this.writeWord(addr, 1 << (irqn & 31))
+    }
+
+    private async jacdacProcess(hadSerial: boolean) {
+        if (this.xchgAddr == null) {
+            if (!hadSerial)
+                await this.dapDelay(5000)
+            return
+        }
+
+        const now = Date.now()
+        if (this.lastXchg && now - this.lastXchg > 50) {
+            log("slow xchg: " + (now - this.lastXchg) + "ms")
+        }
+        this.lastXchg = now
+
+        let numev = 0
+        // TODO only read say 32 bytes first, and more if needed
+        let inp = await this.readBytes(this.xchgAddr + 12, 256)
+        if (inp[2]) {
+            await this.writeWord(this.xchgAddr + 12, 0)
+            await this.triggerIRQ(this.irqn)
+            inp = inp.slice(0, inp[2] + 12)
+            this.onCustomEvent("jacdac", inp)
+            numev++
+        }
+
+        let sendFree = false
+        if (this.currSend) {
+            const send = await this.readBytes(this.xchgAddr + 12 + 256, 4)
+            if (!send[2]) {
+                this.currSend.cb()
+                this.currSend = null
+                sendFree = true
+                numev++
+            }
+        }
+
+        if (!this.currSend && this.sendQ.length) {
+            if (!sendFree) {
+                const send = await this.readBytes(this.xchgAddr + 12 + 256, 4)
+                if (!send[2])
+                    sendFree = true
+            }
+            if (sendFree) {
+                this.currSend = this.sendQ.shift()
+                const bbody = this.currSend.buf.slice(4)
+                await this.writeWords(this.xchgAddr + 12 + 256 + 4, new Uint32Array(bbody.buffer))
+                const bhead = this.currSend.buf.slice(0, 4)
+                await this.writeWords(this.xchgAddr + 12 + 256, new Uint32Array(bhead.buffer))
+                await this.triggerIRQ(this.irqn)
+                this.lastSend = Date.now()
+                numev++
+            } else {
+                if (this.lastSend) {
+                    const d = Date.now() - this.lastSend
+                    if (d > 50) {
+                        this.lastSend = 0
+                        console.error("failed to send packet fast enough")
+                    }
+                }
+            }
+        }
+
+        if (numev == 0 && !hadSerial)
+            await this.dapDelay(5000)
+    }
+
+    private dapDelay(micros: number) {
+        if (micros > 0xffff)
+            throw new Error("too large delay")
+        const cmd = new Uint8Array([0x09, 0, 0])
+        pxt.HF2.write16(cmd, 1, micros)
+        return this.dapCmd(cmd)
+    }
+}
+
+interface SendItem {
+    buf: Uint8Array
+    cb: () => void
 }
 
 export function mkDAPLinkPacketIOWrapper(io: pxt.packetio.PacketIO): pxt.packetio.PacketIOWrapper {

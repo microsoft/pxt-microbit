@@ -70,12 +70,16 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
   "url":"/pkg/xinabox/pxt-OD01",
   "cardType": "package"
 }, {
-  "name": "ssd1306 OLED",
+  "name": "Tinkertanker ssd1306 OLED",
   "url":"/pkg/Tinkertanker/pxt-oled-ssd1306",
   "cardType": "package"
 }, {
-  "name": "ssd1306 OLED with reset pin",
+  "name": "Tinkertanker ssd1306 OLED with reset pin",
   "url":"/pkg/Tinkertanker/pxt-oled-ssd1306",
+  "cardType": "package"
+}, {
+  "name": "Muselab ssd1306 OLED",
+  "url":"/pkg/MUSELAB/pxt-muselab-oled-v2",
   "cardType": "package"
 }, {
   "name": "I2C LCD 1602 Display",

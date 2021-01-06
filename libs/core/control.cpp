@@ -365,7 +365,7 @@ namespace control {
     *
     */
     //%
-    void __log(String text) {
+    void __log(int priority, String text) {
         if (NULL == text) return;
         pxt::sendSerial(text->getUTF8Data(), text->getUTF8Size());
     }
