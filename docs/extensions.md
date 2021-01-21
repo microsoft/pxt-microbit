@@ -377,6 +377,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 
 ```codecard
 [{
+  "name": "Bouw je BEP",
+  "url":"/pkg/Bouw-je-BEP/Bouw-je-BEP",
+  "cardType": "package"
+}, {
   "name": "DF Robot Maqueen Plus",
   "url":"/pkg/DFRobot/pxt-DFRobot-Maqueenplus",
   "cardType": "package"

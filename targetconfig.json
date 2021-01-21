@@ -194,7 +194,8 @@
             "microsoft/ExpressivePixelsMakeCode",
             "MUSELAB/pxt-muselab-oled-v2",
             "microsoft/pxt-jacdac",
-            "CoolGuy-official/pxt-coolguy"
+            "CoolGuy-official/pxt-coolguy",
+            "Bouw-je-BEP/Bouw-je-BEP"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",
