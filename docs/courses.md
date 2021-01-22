@@ -49,14 +49,19 @@ Tutorials, lessons, and mini-courses about programming and computing.
 
 ```codecard
 [{
-  "name": "Discover JavaScript Blocks",
-  "description": "11 lessons with five minute plans, teacher notes and program files.",
-  "url":"https://microbit.org/en/2017-03-07-javascript-block-resources/",
-  "imageUrl": "/static/courses/discover-javascript-blocks.png"
+  "name": "First Steps",
+  "description": "Learn how to get the micro:bit working, program its features and create your first projects.",
+  "url": "https://microbit.org/get-started/first-steps/introduction/",
+  "imageUrl": "/static/courses/first-steps.png"
+}, {
+  "name": "Make it: code it",
+  "description": "Quick projects to suit all ages, searchable by computing topic, level, coding language and micro:bit feature.",
+  "url": "https://microbit.org/projects/make-it-code-it/",
+  "imageUrl": "/static/courses/make-it-code-it.png"
 }, {
   "name": "Networking with the micro:bit",
   "description": "A series of activities to teach the basics of computer networks.",
-  "url": "https://microbit.nominetresearch.uk/networking-book/",
+  "url": "https://microbit.org/projects/make-it-code-it/",
   "imageUrl": "/static/courses/networking-book.png"  
 }, {
   "name": "SparkFun Videos",
