@@ -1,4 +1,4 @@
-name: pxt-buildtarget
+name: pxt-buildpush
 
 on: [push]
 
