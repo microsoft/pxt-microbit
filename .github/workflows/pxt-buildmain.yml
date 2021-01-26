@@ -1,11 +1,10 @@
-name: pxt-buildpush
+name: pxt-buildmain
 
 on:
   push:
-    # main/master has its own build that includes the crowdin key
-    branches-ignore:
-      - 'main'
+    branches:
       - 'master'
+      - 'main'
 
 jobs:
   build:
@@ -31,6 +30,7 @@ jobs:
         run: |
           pxt ci
         env:
+          CROWDIN_KEY: ${{ secrets.CROWDIN_KEY }}
           PXT_ACCESS_TOKEN: ${{ secrets.PXT_ACCESS_TOKEN }}
           PXT_RELEASE_REPO: ${{ secrets.PXT_RELEASE_REPO }}
           NPM_ACCESS_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}
