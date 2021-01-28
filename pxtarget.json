@@ -371,9 +371,9 @@
         "enableTrace": true,
         "ignoreDocsErrors": false,
         "errorList": true,
+        "allowPackageExtensions": true,
         "experiments": [
             "autoWebUSBDownload",
-            "allowPackageExtensions",
             "instructions",
             "accessibleBlocks",
             "debugExtensionCode",
