@@ -9,6 +9,7 @@
         "devices.ts"
     ],
     "icon": "./static/packages/devices/icon.png",
+    "hidden": true,
     "public": true,
     "dependencies": {
         "core": "file:../core",
