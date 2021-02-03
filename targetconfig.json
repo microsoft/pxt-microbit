@@ -195,7 +195,8 @@
             "MUSELAB/pxt-muselab-oled-v2",
             "microsoft/pxt-jacdac",
             "CoolGuy-official/pxt-coolguy",
-            "Bouw-je-BEP/Bouw-je-BEP"
+            "Bouw-je-BEP/Bouw-je-BEP",
+            "BirdBrainTechnologies/pxt-finch"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",

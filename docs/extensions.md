@@ -377,6 +377,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 
 ```codecard
 [{
+  "name": "Finch 2.0",
+  "url":"/pkg/BirdBrainTechnologies/pxt-finch",
+  "cardType": "package"
+}, {
   "name": "Bouw je BEP",
   "url":"/pkg/Bouw-je-BEP/Bouw-je-BEP",
   "cardType": "package"
