@@ -81,6 +81,7 @@
   * [Inchworm](/projects/inchworm)
   * [Milk Carton Robot](/projects/milk-carton-robot)
   * [Robot Unicorn](/projects/robot-unicorn)
+  * [Ticklebot](https://www.jasmineflorentine.com/ticklebot)
   * [Milky Monster](/projects/milky-monster)
   * [Railway Crossing](/projects/railway-crossing)
   * [Kitronik RC Car Hack](/projects/rc-car)
