@@ -19,11 +19,17 @@
   "description": "Make a gesture controlled robot unicorn",
   "imageUrl":"/static/mb/projects/robot-unicorn/robotunicorn.jpg"
 }, {
+  "name": "Ticklebot",
+  "url":"https://www.jasmineflorentine.com/ticklebot",
+  "description": "A tickelish robot!",
+  "imageUrl":"/static/mb/projects/ticklebot.jpg"
+}, {
   "name": "Milky Monster",
   "url":"/projects/milky-monster",
   "description": "Make a funny milky-monster robot!",
   "imageUrl":"/static/mb/projects/milky-monster.jpg"
-}]
+}
+]
 ```
 
 ## Reusing toys
