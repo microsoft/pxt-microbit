@@ -296,6 +296,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 
 ```codecard
 [{
+   "name": "PT-BOT PTKidsBIT",
+   "url": "/pkg/iBuilds/pxt-PTKidsBIT",
+   "cardType": "package"
+}, {
    "name": "Pi Supply tinker:kit",
    "url": "/pkg/PiSupply/pxt-tinker-kit",
    "cardType": "package"
