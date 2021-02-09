@@ -196,7 +196,8 @@
             "microsoft/pxt-jacdac",
             "CoolGuy-official/pxt-coolguy",
             "Bouw-je-BEP/Bouw-je-BEP",
-            "BirdBrainTechnologies/pxt-finch"
+            "BirdBrainTechnologies/pxt-finch",
+            "Wappsto/pxt-wappsto"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",
