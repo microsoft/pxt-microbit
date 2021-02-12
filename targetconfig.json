@@ -197,7 +197,8 @@
             "CoolGuy-official/pxt-coolguy",
             "Bouw-je-BEP/Bouw-je-BEP",
             "BirdBrainTechnologies/pxt-finch",
-            "iBuilds/pxt-PTKidsBIT"
+            "iBuilds/pxt-PTKidsBIT",
+            "Wappsto/pxt-wappsto"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",

@@ -266,6 +266,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 
 ```codecard
 [{
+  "name": "Wappsto:bit",
+  "url":"/pkg/Wappsto/pxt-wappsto",
+  "cardType": "package"
+}, {
   "name": "Hardwario IoT Kit",
   "url":"/pkg/hardwario/pxt-microbit-hardwario",
   "cardType": "package"
