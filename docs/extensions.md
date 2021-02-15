@@ -615,6 +615,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
   "url":"/pkg/CytronTechnologies/pxt-edubit",
   "cardType": "package"
 }, {
+  "name": "Cytron Rekabit",
+  "url":"/pkg/CytronTechnologies/pxt-rekabit",
+  "cardType": "package"
+}, {
   "name": "Imagimaker Magisheild",
   "url":"/pkg/Imagimaker/pxt-imagimaker",
   "cardType": "package"

@@ -198,7 +198,8 @@
             "Bouw-je-BEP/Bouw-je-BEP",
             "BirdBrainTechnologies/pxt-finch",
             "iBuilds/pxt-PTKidsBIT",
-            "Wappsto/pxt-wappsto"
+            "Wappsto/pxt-wappsto",
+            "CytronTechnologies/pxt-rekabit"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",
