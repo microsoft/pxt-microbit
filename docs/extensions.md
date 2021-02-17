@@ -545,6 +545,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
   "url":"/pkg/1010Technologies/pxt-makerbit-motor",
   "cardType": "package"
 }, {
+  "name": "mikRobot",
+  "url":"/pkg/KS-Bulme/pxt-mikRobot",
+  "cardType": "package"
+}, {
   "name": "Tobbie II",
   "url":"/pkg/kaku111/pxt-tobbieII",
   "cardType": "package"
