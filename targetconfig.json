@@ -199,7 +199,8 @@
             "BirdBrainTechnologies/pxt-finch",
             "iBuilds/pxt-PTKidsBIT",
             "Wappsto/pxt-wappsto",
-            "KS-Bulme/pxt-mikRobot"
+            "KS-Bulme/pxt-mikRobot",
+            "CytronTechnologies/pxt-rekabit"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",
