@@ -147,11 +147,14 @@ If you are also modifiying CODAL, consider running ``pxt clean`` to ensure the p
 * do `export PXT_FORCE_LOCAL=1 PXT_RUNTIME_DEV=1 PXT_ASMDEBUG=1`; you can add `PXT_NODOCKER=1`; `pxt help` has help on these
 * find project folder under `pxt-microbit/projects`, typically `pxt-microbit/projects/Untitled-42`
 * if you're going to modify `.cpp` files in PXT, replace `"core": "*"` in `pxt.json` with `"core": "file:../../libs/core"`;
-  similarly `"radio": "file:../../libs/radio"`
+  similarly `"radio": "file:../../libs/radio"` and `"microphone": "file:../../libs/microphone"`
 * you can edit `main.ts` to change the PXT side of the program; you can also edit it from the localhost editor;
   note that `Download` in the localhost editor will produce different binary than command line, as it builds in the cloud
   and uses tagged version of CODAL
 * in that folder run `pxt build` - this will clone codal somewhere under `built/` (depends on build engine and docker)
+* there can be an issue with exporting the variables i.e. PXT_FORCE, so including them in the build command can help solve issues `sudo PXT_NODOCKER=1 PXT_ASMDEBUG=1 PXT_RUNTIME_DEV=1 PXT_DEBUG=1 PXT_FORCE_LOCAL=1 PXT_COMPILE_SWITCHES=csv---mbcodal pxt build`
+* if the target is not building, delete files in `hexcache` found in `pxt-microbit/built/hexcache` to force local build
+* the built hex can be found in `pxt-microbit/projects/<your project name>/built` named `binary.hex`
 * similarly, you can run `pxt deploy` (or just `pxt` which is the same) - it will build and copy to `MICROBIT` drive
 * assuming the build folder is under `built/codal`, go to `built/codal/libraries` and run `code *`
 * in git tab, checkout appropriate branches (they are all in detached head state to the way we tag releases)
