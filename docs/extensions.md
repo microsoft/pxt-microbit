@@ -720,10 +720,6 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
   "url":"/pkg/assirati/pxt-inventura",
   "cardType": "package"
 }, {
-  "name": "File System",
-  "url":"/pkg/microsoft/pxt-filesystem",
-  "cardType": "package"
-}, {
   "name": "micro:turtle",
   "url":"/pkg/microsoft/pxt-microturtle",
   "cardType": "package"
