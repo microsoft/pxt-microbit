@@ -55,6 +55,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
     "name": "Wearables",
     "url": "/extensions#wearables",
     "cardType": "link"
+}, {
+    "name": "Utilities",
+    "url": "/extensions#utilities",
+    "cardType": "link"
 }]
 ```
 
