@@ -87,7 +87,7 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
     "cardType": "package"
 }, {
     "name": "I2C LCD 1602 Display",
-    "url": "/pkg/1010Technologies/pxt-makerbit-ir-lcd1602",
+    "url": "/pkg/1010Technologies/pxt-makerbit-lcd1602",
     "cardType": "package"
 }]
 ```
