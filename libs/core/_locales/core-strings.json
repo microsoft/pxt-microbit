@@ -395,6 +395,7 @@
   "pins.servoWritePin|block": "servo write|pin %name|to %value",
   "pins.setAudioPin|block": "set audio pin $name",
   "pins.setEvents|block": "set pin %pin|to emit %type|events",
+  "pins.setMatrixWidth|block": "neopixel matrix width|pin %pin %width",
   "pins.setPull|block": "set pull|pin %pin|to %pull",
   "pins.spiFormat|block": "spi format|bits %bits|mode %mode",
   "pins.spiFrequency|block": "spi frequency %frequency",

@@ -469,7 +469,7 @@ declare namespace control {
      *
      */
     //% shim=control::__log
-    function __log(text: string): void;
+    function __log(priority: int32, text: string): void;
 
     /**
      * Allocates the next user notification event
@@ -642,7 +642,6 @@ declare namespace music {
      * Defines an optional sample level to generate during periods of silence.
      **/
     //% group="micro:bit (V2)"
-    //% parts=builtinspeaker
     //% help=music/set-silence-level
     //% level.min=0
     //% level.max=1024
@@ -836,6 +835,19 @@ declare namespace pins {
      */
     //% shim=pins::createBuffer
     function createBuffer(size: int32): Buffer;
+
+    /**
+     * Set the matrix width for Neopixel strip (already assigned to a pin).
+     * Should be used in conjunction with `set matrix width` from Neopixel package.
+     * @param name pin of Neopixel strip, eg: DigitalPin.P1
+     * @param value width of matrix (at least ``2``)
+     */
+    //% help=pins/neopixel-matrix-width weight=3 advanced=true
+    //% blockId=pin_neopixel_matrix_width block="neopixel matrix width|pin %pin %width" blockGap=8
+    //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=4
+    //% pin.fieldOptions.tooltips="false" pin.fieldOptions.width="250"
+    //% width.min=2 width.defl=5 shim=pins::setMatrixWidth
+    function setMatrixWidth(pin: DigitalPin, width?: int32): void;
 
     /**
      * Read `size` bytes from a 7-bit I2C `address`.

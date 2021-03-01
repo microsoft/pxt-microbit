@@ -192,7 +192,16 @@
             "Schoumi/ssd1306-with-reset",
             "keble6/pxt-DS3231",
             "microsoft/ExpressivePixelsMakeCode",
-            "pimoroni/pxt-inkybit"
+            "pimoroni/pxt-inkybit",
+            "MUSELAB/pxt-muselab-oled-v2",
+            "microsoft/pxt-jacdac",
+            "CoolGuy-official/pxt-coolguy",
+            "Bouw-je-BEP/Bouw-je-BEP",
+            "BirdBrainTechnologies/pxt-finch",
+            "iBuilds/pxt-PTKidsBIT",
+            "Wappsto/pxt-wappsto",
+            "KS-Bulme/pxt-mikRobot",
+            "CytronTechnologies/pxt-rekabit"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",
@@ -213,9 +222,9 @@
             "minodekit/pxt-minode": "dv:mbcodal",
             "sparkfun/pxt-gamer-bit": "dv:mbcodal",
             "microsoft/pxt-bluetooth-max6675": "dv:mbcodal",
-            "pimoroni/pxt-scrollbit": "dv:mbcodal",
+            "pimoroni/pxt-scrollbit": "min:v0.0.7",
             "pauldfoster/pxt-microbit-gy521": "dv:mbcodal",
-            "pizayanz/pxt-linebeacon": "dv:mbcodal",
+            "pizayanz/pxt-linebeacon": "min:v0.0.14",
             "sparkfun/pxt-gator-environment": "dv:mbcodal",
             "muselab/pxt-wifi-shield": "min:v1.8.82",
             "tinkertanker/pxt-alphanumeric-ht16k33": "dv:mbcodal",
@@ -238,7 +247,10 @@
             "mu-opensource/pxt-muvision": "dv:mbcodal",
             "elecfreaks/pxt-PlanetX": "min:v0.13.1",
             "bsiever/microbit-pxt-timeanddate": "min:v2.0.11"
-        }
+        },
+        "approvedEditorExtensionUrls": [
+            "https://microsoft.github.io/jacdac-ts/tools/makecode-editor-extension"
+        ]
     },
     "galleries": {
         "Tutorials": "tutorials",
@@ -276,6 +288,6 @@
         }
     },
     "electronManifest": {
-        "latest": "v3.0.59"
+        "latest": "v3.0.65"
     }
 }

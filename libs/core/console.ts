@@ -28,7 +28,7 @@ namespace console {
         let text = inspect(message);
         // add new line
         text += "\n";
-        control.__log(text)
+        control.__log(priority, text)
         // send to listeners
         if (listeners)
             for (let i = 0; i < listeners.length; ++i)

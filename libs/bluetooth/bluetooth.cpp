@@ -14,7 +14,7 @@ namespace bluetooth {
     BLEHF2Service* pHF2 = NULL;
 
     //%
-    void __log(String msg) {
+    void __log(int priority, String msg) {
         if (NULL == pHF2)
             pHF2 = new BLEHF2Service(*uBit.ble);
         pHF2->sendSerial(msg->getUTF8Data(), msg->getUTF8Size(), false);
