@@ -646,9 +646,9 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
         }
 
         const now = Date.now()
-        if (this.lastXchg && now - this.lastXchg > 50) {
-            log("slow xchg: " + (now - this.lastXchg) + "ms")
-        }
+        //if (this.lastXchg && now - this.lastXchg > 50) {
+            //log("slow xchg: " + (now - this.lastXchg) + "ms")
+        //}
         this.lastXchg = now
 
         let numev = 0
