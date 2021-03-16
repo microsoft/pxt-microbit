@@ -7,6 +7,13 @@
         "declaration": true,
         "out": "../built/compiler.js",
         "newLine": "LF",
-        "sourceMap": false
+        "sourceMap": false,
+        "typeRoots": ["../node_modules/@types"],
+        "lib": [
+            "dom",
+            "dom.iterable",
+            "scripthost",
+            "es2017"
+        ]
     }
 }
