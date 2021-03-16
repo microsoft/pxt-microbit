@@ -5,7 +5,11 @@
         "noImplicitReturns": true,
         "noImplicitThis": true,
         "declaration": true,
-        "out": "../built/compiler.js",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "isolatedModules": false,
+        "outDir": "../built",
+        "rootDir": ".",
         "newLine": "LF",
         "sourceMap": false,
         "typeRoots": ["../node_modules/@types"],
@@ -13,7 +17,8 @@
             "dom",
             "dom.iterable",
             "scripthost",
-            "es2017"
+            "es2017",
+            "ES2018.Promise"
         ]
     }
 }
