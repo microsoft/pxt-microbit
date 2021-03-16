@@ -12,7 +12,6 @@
         "rootDir": ".",
         "newLine": "LF",
         "sourceMap": false,
-        "typeRoots": ["../node_modules/@types"],
         "jsx": "react",
         "lib": [
             "dom",

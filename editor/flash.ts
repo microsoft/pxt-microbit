@@ -131,7 +131,7 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
     private stopSerialAsync() {
         log(`cancelling serial reader ${this.readSerialId}`)
         this.readSerialId++;
-        return Promise.delay(200);
+        return pxt.Util.delay(200);
     }
 
     private allocDAP() {
@@ -181,7 +181,7 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
         pxt.HF2.write32(baud, 1, 115200)
         await this.dapCmd(baud)
         // setting the baud rate on serial may reset NRF (depending on daplink version), so delay after
-        await Promise.delay(200);
+        await pxt.Util.delay(200);
 
         // only init after setting baud rate, in case we got reset
         await this.cortexM.init()
@@ -295,53 +295,55 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
 
         const chunkSize = 62;
         let sentPages = 0;
-        return Promise.resolve()
-            .then(() => this.dapCmdNums(0x8A /* DAPLinkFlash.OPEN */, 1))
-            .then((res) => {
-                log(`daplinkflash open: ${pxt.U.toHex(res)}`)
-                if (res[1] !== 0)
-                    throw new Error(lf("Download failed, please try again"));
-                const binFile = resp.outfiles[this.binName];
-                log(`bin file ${this.binName} in ${Object.keys(resp.outfiles).join(', ')}, ${binFile?.length || -1}b`)
-                const hexUint8 = pxt.U.stringToUint8Array(binFile);
-                log(`hex ${hexUint8?.byteLength || -1}b, ~${(hexUint8.byteLength / chunkSize) | 0} chunks of ${chunkSize}b`)
+        return pxt.Util.promiseTimeout(
+            FULL_FLASH_TIMEOUT,
+            Promise.resolve()
+                .then(() => this.dapCmdNums(0x8A /* DAPLinkFlash.OPEN */, 1))
+                .then((res) => {
+                    log(`daplinkflash open: ${pxt.U.toHex(res)}`)
+                    if (res[1] !== 0)
+                        throw new Error(lf("Download failed, please try again"));
+                    const binFile = resp.outfiles[this.binName];
+                    log(`bin file ${this.binName} in ${Object.keys(resp.outfiles).join(', ')}, ${binFile?.length || -1}b`)
+                    const hexUint8 = pxt.U.stringToUint8Array(binFile);
+                    log(`hex ${hexUint8?.byteLength || -1}b, ~${(hexUint8.byteLength / chunkSize) | 0} chunks of ${chunkSize}b`)
 
-                const sendPages = (offset: number = 0): Promise<void> => {
-                    const end = Math.min(hexUint8.length, offset + chunkSize);
-                    const nextPageData = hexUint8.slice(offset, end);
-                    const cmdData = new Uint8Array(2 + nextPageData.length)
-                    cmdData[0] = 0x8C /* DAPLinkFlash.WRITE */
-                    cmdData[1] = nextPageData.length
-                    cmdData.set(nextPageData, 2)
-                    if (sentPages % 128 == 0) // reduce logging
-                        log(`next page ${sentPages}: [${offset.toString(16)}, ${end.toString(16)}] (${Math.ceil((hexUint8.length - end) / 1000)}kb left)`)
-                    return this.dapCmd(cmdData)
-                        .then(() => {
-                            this.checkAborted()
-                            if (end < hexUint8.length) {
-                                sentPages++;
-                                return sendPages(end);
-                            }
-                            return Promise.resolve()
-                        });
-                }
+                    const sendPages = (offset: number = 0): Promise<void> => {
+                        const end = Math.min(hexUint8.length, offset + chunkSize);
+                        const nextPageData = hexUint8.slice(offset, end);
+                        const cmdData = new Uint8Array(2 + nextPageData.length)
+                        cmdData[0] = 0x8C /* DAPLinkFlash.WRITE */
+                        cmdData[1] = nextPageData.length
+                        cmdData.set(nextPageData, 2)
+                        if (sentPages % 128 == 0) // reduce logging
+                            log(`next page ${sentPages}: [${offset.toString(16)}, ${end.toString(16)}] (${Math.ceil((hexUint8.length - end) / 1000)}kb left)`)
+                        return this.dapCmd(cmdData)
+                            .then(() => {
+                                this.checkAborted()
+                                if (end < hexUint8.length) {
+                                    sentPages++;
+                                    return sendPages(end);
+                                }
+                                return Promise.resolve()
+                            });
+                    }
 
-                return sendPages();
-            })
-            .then(() => {
-                log(`close`)
-                return this.dapCmdNums(0x8B /* DAPLinkFlash.CLOSE */);
-            })
-            .then(res => {
-                log(`daplinkclose: ${pxt.U.toHex(res)}`)
-                return this.dapCmdNums(0x89 /* DAPLinkFlash.RESET */);
-            })
-            .then((res) => {
-                log(`daplinkreset: ${pxt.U.toHex(res)}`)
-                log(`full flash done`);
-            })
-            .timeout(FULL_FLASH_TIMEOUT, timeoutMessage)
-            .catch((e) => {
+                    return sendPages();
+                })
+                .then(() => {
+                    log(`close`)
+                    return this.dapCmdNums(0x8B /* DAPLinkFlash.CLOSE */);
+                })
+                .then(res => {
+                    log(`daplinkclose: ${pxt.U.toHex(res)}`)
+                    return this.dapCmdNums(0x89 /* DAPLinkFlash.RESET */);
+                })
+                .then((res) => {
+                    log(`daplinkreset: ${pxt.U.toHex(res)}`)
+                    log(`full flash done`);
+                }),
+                timeoutMessage
+            ).catch((e) => {
                 log(`error: abort`)
                 this.flashAborted = true;
                 return this.resetAndThrowAsync(e);
@@ -426,57 +428,59 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
                 })
         }
 
-        return Promise.resolve()
-            .then(() => this.cortexM.memory.writeBlock(loadAddr, flashPageBIN))
-            .then(() => Promise.mapSeries(pxt.U.range(changed.length),
-                i => {
-                    this.checkAborted();
-                    let b = changed[i];
-                    if (b.targetAddr >= 0x10000000) {
-                        log(`target address ${b.targetAddr.toString(16)} > 0x10000000`)
-                        return Promise.resolve();
-                    }
+        return pxt.Util.promiseTimeout(
+            PARTIAL_FLASH_TIMEOUT,
+            Promise.resolve()
+                .then(() => this.cortexM.memory.writeBlock(loadAddr, flashPageBIN))
+                .then(() => pxt.Util.promiseMapAllSeries(pxt.U.range(changed.length),
+                    i => {
+                        this.checkAborted();
+                        let b = changed[i];
+                        if (b.targetAddr >= 0x10000000) {
+                            log(`target address ${b.targetAddr.toString(16)} > 0x10000000`)
+                            return Promise.resolve();
+                        }
 
-                    log("about to write at 0x" + b.targetAddr.toString(16));
+                        log("about to write at 0x" + b.targetAddr.toString(16));
 
-                    let writeBl = Promise.resolve();
+                        let writeBl = Promise.resolve();
 
-                    let thisAddr = (i & 1) ? dataAddr : dataAddr + this.pageSize;
-                    let nextAddr = (i & 1) ? dataAddr + this.pageSize : dataAddr;
+                        let thisAddr = (i & 1) ? dataAddr : dataAddr + this.pageSize;
+                        let nextAddr = (i & 1) ? dataAddr + this.pageSize : dataAddr;
 
-                    if (i == 0) {
-                        let u32data = new Uint32Array(b.data.length / 4);
-                        for (let i = 0; i < b.data.length; i += 4)
-                            u32data[i >> 2] = pxt.HF2.read32(b.data, i);
-                        writeBl = this.cortexM.memory.writeBlock(thisAddr, u32data);
-                    }
+                        if (i == 0) {
+                            let u32data = new Uint32Array(b.data.length / 4);
+                            for (let i = 0; i < b.data.length; i += 4)
+                                u32data[i >> 2] = pxt.HF2.read32(b.data, i);
+                            writeBl = this.cortexM.memory.writeBlock(thisAddr, u32data);
+                        }
 
-                    return writeBl
-                        .then(() => runFlash(b, thisAddr))
-                        .then(() => {
-                            let next = changed[i + 1];
-                            if (!next)
-                                return Promise.resolve();
-                            logV("write next");
-                            let buf = new Uint32Array(next.data.buffer);
-                            return this.cortexM.memory.writeBlock(nextAddr, buf);
-                        })
-                        .then(() => {
-                            logV("wait");
-                            return this.cortexM.waitForHalt(500);
-                        })
-                        .then(() => {
-                            logV("done block");
-                        });
-                }))
-            .then(() => {
-                log("quick flash done");
-                pxt.tickEvent("hid.flash.done");
-                return this.cortexM.reset(false);
-            })
-            .then(() => this.checkStateAsync(true))
-            .timeout(PARTIAL_FLASH_TIMEOUT, timeoutMessage)
-            .catch((e) => {
+                        return writeBl
+                            .then(() => runFlash(b, thisAddr))
+                            .then(() => {
+                                let next = changed[i + 1];
+                                if (!next)
+                                    return Promise.resolve();
+                                logV("write next");
+                                let buf = new Uint32Array(next.data.buffer);
+                                return this.cortexM.memory.writeBlock(nextAddr, buf);
+                            })
+                            .then(() => {
+                                logV("wait");
+                                return this.cortexM.waitForHalt(500);
+                            })
+                            .then(() => {
+                                logV("done block");
+                            });
+                    }))
+                .then(() => {
+                    log("quick flash done");
+                    pxt.tickEvent("hid.flash.done");
+                    return this.cortexM.reset(false);
+                })
+                .then(() => this.checkStateAsync(true)),
+                timeoutMessage
+            ).catch((e) => {
                 this.flashAborted = true;
                 return this.resetAndThrowAsync(e);
             });
@@ -617,7 +621,7 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
         this.xchgAddr = null
         if (!this.useJACDAC)
             return
-        await Promise.delay(700); // wait for the program to start and setup memory correctly
+        await pxt.Util.delay(700); // wait for the program to start and setup memory correctly
         const xchg = await this.findJacdacXchgAddr()
         if (xchg == null)
             return
