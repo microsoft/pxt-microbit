@@ -46,10 +46,10 @@ namespace pxsim.music {
                     return pp;
             }
             // don't wait
+            cb();
             return Promise.resolve();
         }).catch((e) => {
             console.log(e)
-        }).finally(() => {
             cb();
         })
     }
