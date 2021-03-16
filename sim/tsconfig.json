@@ -8,7 +8,14 @@
         "rootDir": ".",
         "newLine": "LF",
         "sourceMap": false,
-        "typeRoots": ["../node_modules/@types"]
+        "typeRoots": ["../node_modules/@types"],
+        "lib": [
+            "dom",
+            "dom.iterable",
+            "scripthost",
+            "es2017",
+            "ES2018.Promise"
+        ]
     },
     "include": [
         "*.ts",
