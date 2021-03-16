@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-        "target": "es5",
+        "target": "es2017",
         "noImplicitAny": true,
         "noImplicitReturns": true,
         "declaration": true,
@@ -9,7 +9,6 @@
         "newLine": "LF",
         "sourceMap": false,
         "lib": ["dom", "dom.iterable", "scripthost", "es6"],
-        "types": ["bluebird"],
         "typeRoots": ["../node_modules/@types"]
     },
     "include": [
