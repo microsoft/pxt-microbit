@@ -1168,7 +1168,7 @@ path.sim-board {
         }
 
         private attachAccelerometerEvents() {
-            let tiltDecayer = 0;
+            let tiltDecayer: any =  undefined;
             this.element.addEventListener(pointerEvents.move, (ev: MouseEvent) => {
                 const state = this.board;
                 if (!state.accelerometerState.accelerometer.isActive) return;
