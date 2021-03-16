@@ -13,6 +13,13 @@
         "newLine": "LF",
         "sourceMap": false,
         "typeRoots": ["../node_modules/@types"],
-        "jsx": "react"
+        "jsx": "react",
+        "lib": [
+            "dom",
+            "dom.iterable",
+            "scripthost",
+            "es2017",
+            "ES2018.Promise"
+        ]
     }
 }
