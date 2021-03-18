@@ -109,7 +109,8 @@ declare namespace bluetooth {
      */
     //% blockId=eddystone_advertise_url block="bluetooth advertise url %url|with power %power|connectable %connectable"
     //% parts=bluetooth weight=11 blockGap=8
-    //% help=bluetooth/advertise-url blockExternalInputs=1 shim=bluetooth::advertiseUrl
+    //% help=bluetooth/advertise-url blockExternalInputs=1
+    //% hidden=1 deprecated=1 shim=bluetooth::advertiseUrl
     function advertiseUrl(url: string, power: int32, connectable: boolean): void;
 
     /**
@@ -118,7 +119,7 @@ declare namespace bluetooth {
      * @param power power level between 0 and 7, eg: 7
      * @param connectable true to keep bluetooth connectable for other services, false otherwise.
      */
-    //% parts=bluetooth weight=12 advanced=true shim=bluetooth::advertiseUidBuffer
+    //% parts=bluetooth weight=12 advanced=true deprecated=1 shim=bluetooth::advertiseUidBuffer
     function advertiseUidBuffer(nsAndInstance: Buffer, power: int32, connectable: boolean): void;
 
     /**
@@ -134,7 +135,8 @@ declare namespace bluetooth {
      */
     //% blockId=eddystone_stop_advertising block="bluetooth stop advertising"
     //% parts=bluetooth weight=10
-    //% help=bluetooth/stop-advertising advanced=true shim=bluetooth::stopAdvertising
+    //% help=bluetooth/stop-advertising advanced=true
+    //% hidden=1 deprecated=1 shim=bluetooth::stopAdvertising
     function stopAdvertising(): void;
 }
 

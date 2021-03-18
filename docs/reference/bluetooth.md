@@ -36,6 +36,14 @@ bluetooth.onUartDataReceived(",", () => {})
 
 ## Eddystone
 
+### ~ reminder
+
+#### Deprecated
+
+These blocks are deprecated. The Eddystone beacon format is no longer supported, see [Google Beacon format (Deprecated)](https://developers.google.com/beacons/eddystone).
+
+### ~
+
 ```cards
 bluetooth.advertiseUid(42, 1, 7, true);
 bluetooth.advertiseUrl("https://makecode.microbit.org/", 7, true);

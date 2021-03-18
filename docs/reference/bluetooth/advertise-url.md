@@ -2,6 +2,18 @@
 
 Advertises a URL via the Eddystone protocol over Bluetooth.
 
+```sig
+bluetooth.advertiseUrl("https://makecode.microbit.org/", 7, true);
+```
+
+### ~ reminder
+
+#### Deprecated
+
+This API is deprecated. The Eddystone beacon format is no longer supported, see [Google Beacon format (Deprecated)](https://developers.google.com/beacons/eddystone).
+
+### ~
+
 ## ~hint
 
 ## Eddystone
@@ -16,10 +28,6 @@ iBeacon is Apple's beacon message format. Eddystone comes from Google.
 Read more at https://lancaster-university.github.io/microbit-docs/ble/eddystone/ .
 
 ## ~
-
-```sig
-bluetooth.advertiseUrl("https://makecode.microbit.org/", 7, true);
-```
 
 ## Parameters
 
