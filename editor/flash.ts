@@ -97,6 +97,7 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
 
     private startReadSerial() {
         const rid = this.readSerialId;
+        const startTime = Date.now();
         log(`start read serial ${rid}`)
         const readSerial = async () => {
             try {
@@ -120,7 +121,13 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
                 if (rid != this.readSerialId) {
                     log(`stopped serial reader ${rid}`)
                 } else {
-                    this.disconnectAsync(); // force disconnect
+                    const timeRunning = Date.now() - startTime
+                    await this.disconnectAsync(); // force disconnect
+                    // if we've been running for a while, try reconnecting
+                    if (timeRunning > 1000) {
+                        log(`auto-reconnect`)
+                        await this.reconnectAsync();
+                    }
                 }
             }
         }
@@ -342,12 +349,12 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
                     log(`daplinkreset: ${pxt.U.toHex(res)}`)
                     log(`full flash done`);
                 }),
-                timeoutMessage
-            ).catch((e) => {
-                log(`error: abort`)
-                this.flashAborted = true;
-                return this.resetAndThrowAsync(e);
-            });
+            timeoutMessage
+        ).catch((e) => {
+            log(`error: abort`)
+            this.flashAborted = true;
+            return this.resetAndThrowAsync(e);
+        });
     }
 
     private resetAndThrowAsync(e: any) {
@@ -479,11 +486,11 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
                     return this.cortexM.reset(false);
                 })
                 .then(() => this.checkStateAsync(true)),
-                timeoutMessage
-            ).catch((e) => {
-                this.flashAborted = true;
-                return this.resetAndThrowAsync(e);
-            });
+            timeoutMessage
+        ).catch((e) => {
+            this.flashAborted = true;
+            return this.resetAndThrowAsync(e);
+        });
     }
 
     private getFlashChecksumsAsync() {
