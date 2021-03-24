@@ -109,15 +109,23 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
 
                     const len = r[1]
                     const hasData = len > 0
-                    if (hasData && this.onSerial)
-                        this.onSerial(r.slice(2, len + 2), false)
+                    if (hasData && this.onSerial) {
+                        try {
+                            this.onSerial(r.slice(2, len + 2), false)
+                        }
+                        catch(err) {
+                            log(`read error: ${err.message}`);
+                            console.debug({ err, len, r })
+                        }
+                    }
 
                     await this.jacdacProcess(hasData)
                 }
 
                 log(`stopped serial reader ${rid}`)
             } catch (err) {
-                log(`read error: ${err.message}`);
+                log(`serial error: ${err.message}`);
+                console.debug(err)
                 if (rid != this.readSerialId) {
                     log(`stopped serial reader ${rid}`)
                 } else {
@@ -626,16 +634,21 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
 
     private async jacdacSetup() {
         this.xchgAddr = null
-        if (!this.useJACDAC)
+        if (!this.useJACDAC) {
+            log(`jacdac disabled`)
             return
+        }
         await pxt.Util.delay(700); // wait for the program to start and setup memory correctly
         const xchg = await this.findJacdacXchgAddr()
-        if (xchg == null)
+        if (xchg == null) {
+            log("no jacdac stack found")
             return
+        }
         const info = await this.readBytes(xchg, 16)
         this.irqn = info[8]
         if (info[12 + 2] != 0xff) {
             console.error("invalid memory; try power-cycling the micro:bit")
+            console.debug({ info, xchg })
             return
         }
         this.xchgAddr = xchg
