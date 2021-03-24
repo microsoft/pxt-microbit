@@ -214,7 +214,7 @@
             "jacdac": {
                 "url": "https://microsoft.github.io/jacdac-docs/tools/makecode-sim?webusb=0&parentOrigin=$PARENT_ORIGIN$",
                 "localHostUrl": "http://localhost:8000/tools/makecode-sim?webusb=0&parentOrigin=$PARENT_ORIGIN$",
-                "aspectRatio": "0.89",
+                "aspectRatio": 1.22,
                 "permanent": true
             }
         },
