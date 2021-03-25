@@ -148,7 +148,7 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
             this.pendingSerial = buf.length ? buf : null
             if (this.pendingSerial) {
                 this.lastPendingSerial = Date.now()
-                logV(`pending serial ${this.pendingSerial.length}`)
+                //logV(`pending serial ${this.pendingSerial.length}`)
             }
         } else if (this.pendingSerial) {
             const d = Date.now() - this.lastPendingSerial
