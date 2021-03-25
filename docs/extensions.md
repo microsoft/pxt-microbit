@@ -160,6 +160,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
   "url":"/pkg/bsiever/microbit-dstemp",
   "cardType": "package"
 }, {
+ "name": "DS18B20 two wire",
+  "url":"/pkg/bsiever/microbit-dstemp-2wire",
+  "cardType": "package"
+}, {
  "name": "DS3231",
   "url":"/pkg/keble6/pxt-DS3231",
   "cardType": "package"

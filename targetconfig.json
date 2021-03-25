@@ -202,7 +202,8 @@
             "Wappsto/pxt-wappsto",
             "KS-Bulme/pxt-mikRobot",
             "CytronTechnologies/pxt-rekabit",
-            "bsiever/microbit-dstemp"
+            "bsiever/microbit-dstemp",
+            "bsiever/microbit-dstemp-2wire"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",
