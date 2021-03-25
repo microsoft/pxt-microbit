@@ -305,6 +305,7 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
             .then(() => this.checkStateAsync())
             .then(() => this.readUICR())
             .then(uicr => {
+                pxt.tickEvent("hid.flash.uicr", { uicr });
                 // shortcut, do a full flash
                 if (uicr != 0 || this.forceFullFlash) {
                     pxt.tickEvent("hid.flash.uicrfail");
@@ -313,6 +314,7 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
                 // check flash checksums
                 return this.computeFlashChecksum(resp)
                     .then(chk => {
+                        pxt.tickEvent("hid.flash.checksum", { quick: chk.quick ? 1 : 0, changed: chk.changed ? chk.changed.length : 0 });
                         // let's do a quick flash!
                         if (chk.quick)
                             return this.quickHidFlashAsync(chk.changed);
@@ -321,6 +323,7 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
                     });
             })
             .then(() => this.checkStateAsync(true))
+            .then(() => pxt.tickEvent("hid.flash.success"))
             .finally(() => { this.flashing = false })
         // don't disconnect here
         // the micro:bit will automatically disconnect and reconnect
