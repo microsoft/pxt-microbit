@@ -111,19 +111,18 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
                 // catch encoding bugs
                 this.onSerial(line, false)
             }
-            catch(err) {
+            catch (err) {
                 log(`serial decoding error: ${err.message}`);
-                console.debug({ err, line })
+                console.error({ err, line })
             }
         }
     }
 
     private async readSerial(): Promise<number> {
-        const rid = this.readSerialId;
         let buf = await this.dapCmdNums(0x83)
         const len = buf[1]
         // concat received data with previous data
-        if (rid === this.readSerialId && len) {
+        if (len) {
             buf = buf.slice(2, 2 + len)
             if (this.pendingSerial) buf = bufferConcat(this.pendingSerial, buf)
             let ptr = 0
@@ -139,7 +138,10 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
             }
             buf = buf.slice(ptr)
             this.pendingSerial = buf.length ? buf : null
-            if (this.pendingSerial) this.lastPendingSerial = Date.now()
+            if (this.pendingSerial) {
+                this.lastPendingSerial = Date.now()
+                logV(`pending serial ${this.pendingSerial.length}`)
+            }
         } else if (this.pendingSerial) {
             const d = Date.now() - this.lastPendingSerial
             if (d > 500) {
@@ -147,7 +149,6 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
                 this.pendingSerial = null
             }
         }
-
         return len
     }
 
@@ -159,14 +160,15 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
             try {
                 while (rid === this.readSerialId) {
                     const len = await this.readSerial()
-                    logV(`serial read ${len} bytes`)
                     const hasData = len > 0
+                    if (hasData)
+                        logV(`serial read ${len} bytes`)
                     await this.jacdacProcess(hasData)
                 }
                 log(`stopped serial reader ${rid}`)
             } catch (err) {
                 log(`serial error ${rid}: ${err.message}`);
-                console.debug(err)
+                console.error(err)
                 if (rid != this.readSerialId) {
                     log(`stopped serial reader ${rid}`)
                 } else {
