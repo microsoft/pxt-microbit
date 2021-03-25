@@ -342,7 +342,9 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
             .then(() => this.recvPacketAsync())
             .then(resp => {
                 if (resp[0] != buf[0]) {
+                    pxt.tickEvent('hid.flash.cmderror', { req: buf[0], resp: resp[0] })
                     const msg = `bad dapCmd response: ${buf[0]} -> ${resp[0]}`
+
                     // in case we got an invalid response, try to get another response, in case the current
                     // response is a left-over from previous communications
                     log(msg + "; retrying")
@@ -375,8 +377,10 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
                 .then(() => this.dapCmdNums(0x8A /* DAPLinkFlash.OPEN */, 1))
                 .then((res) => {
                     log(`daplinkflash open: ${pxt.U.toHex(res)}`)
-                    if (res[1] !== 0)
+                    if (res[1] !== 0) {
+                        pxt.tickEvent('hid.flash.full.error.open', { res: res[1] })
                         throw new Error(lf("Download failed, please try again"));
+                    }
                     const binFile = resp.outfiles[this.binName];
                     log(`bin file ${this.binName} in ${Object.keys(resp.outfiles).join(', ')}, ${binFile?.length || -1}b`)
                     const hexUint8 = pxt.U.stringToUint8Array(binFile);
