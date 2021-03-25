@@ -27,4 +27,4 @@ basic.showArrow(ArrowNames.North);
 [showIcon](/reference/basic/show-icon),
 [showLeds](/reference/basic/show-leds), [showString](/reference/basic/show-string), 
 [clearScreen](/reference/basic/clear-screen), [forever](/reference/basic/forever), [pause](/reference/basic/pause), 
-[showArrow](/reference/basic/show-arrow), [showAnimation](/reference/basic/show-animation)
+[showArrow](/reference/basic/show-arrow)
