@@ -59,6 +59,13 @@ function murmur3_core(data: Uint8Array) {
     return [h0, h1]
 }
 
+function bufferConcat(a: Uint8Array, b: Uint8Array) {
+    const r = new Uint8Array(a.length + b.length)
+    r.set(a, 0)
+    r.set(b, a.length)
+    return r
+}
+
 class DAPWrapper implements pxt.packetio.PacketIOWrapper {
     familyID: number;
     private dap: DapJS.DAP;
@@ -95,36 +102,69 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
 
     icon = "usb";
 
+    private pendingSerial: Uint8Array
+    private lastPendingSerial: number
+
+    private processSerial(line: Uint8Array) {
+        if (this.onSerial) {
+            try {
+                // catch encoding bugs
+                this.onSerial(line, false)
+            }
+            catch(err) {
+                log(`serial decoding error: ${err.message}`);
+                console.debug({ err, line })
+            }
+        }
+    }
+
+    private async readSerial(): Promise<number> {
+        const rid = this.readSerialId;
+        let buf = await this.dapCmdNums(0x83)
+        const len = buf[1]
+        // concat received data with previous data
+        if (rid === this.readSerialId && len) {
+            buf = buf.slice(2, 2 + len)
+            if (this.pendingSerial) buf = bufferConcat(this.pendingSerial, buf)
+            let ptr = 0
+            let beg = 0
+            while (ptr < buf.length) {
+                if (buf[ptr] == 10 || buf[ptr] == 13) {
+                    const line = buf.slice(beg, ptr)
+                    if (line.length)
+                        this.processSerial(line);
+                    beg = ptr + 1
+                }
+                ptr++
+            }
+            buf = buf.slice(ptr)
+            this.pendingSerial = buf.length ? buf : null
+            if (this.pendingSerial) this.lastPendingSerial = Date.now()
+        } else if (this.pendingSerial) {
+            const d = Date.now() - this.lastPendingSerial
+            if (d > 500) {
+                this.processSerial(this.pendingSerial)
+                this.pendingSerial = null
+            }
+        }
+
+        return len
+    }
+
     private startReadSerial() {
         const rid = this.readSerialId;
         const startTime = Date.now();
         log(`start read serial ${rid}`)
-        const readSerial = async () => {
+        const readSerialLoop = async () => {
             try {
-                while (true) {
-                    if (rid != this.readSerialId) break
-
-                    const r = await this.dapCmdNums(0x83)
-                    if (rid != this.readSerialId) break
-
-                    const len = r[1]
+                while (rid === this.readSerialId) {
+                    const len = await this.readSerial()
                     const hasData = len > 0
-                    if (hasData && this.onSerial) {
-                        try {
-                            this.onSerial(r.slice(2, len + 2), false)
-                        }
-                        catch(err) {
-                            log(`read error: ${err.message}`);
-                            console.debug({ err, len, r })
-                        }
-                    }
-
                     await this.jacdacProcess(hasData)
                 }
-
                 log(`stopped serial reader ${rid}`)
             } catch (err) {
-                log(`serial error: ${err.message}`);
+                log(`serial error ${rid}: ${err.message}`);
                 console.debug(err)
                 if (rid != this.readSerialId) {
                     log(`stopped serial reader ${rid}`)
@@ -140,7 +180,7 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
             }
         }
 
-        readSerial();
+        readSerialLoop();
     }
 
     private stopSerialAsync() {
