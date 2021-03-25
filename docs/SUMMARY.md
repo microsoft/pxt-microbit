@@ -189,7 +189,6 @@
         * [forever](/reference/basic/forever)
         * [pause](/reference/basic/pause)
         * [show arrow](/reference/basic/show-arrow)
-        * [show animation](/reference/basic/show-animation)
     * [Input](/reference/input)
         * [on button pressed](/reference/input/on-button-pressed)
         * [on gesture](/reference/input/on-gesture)
