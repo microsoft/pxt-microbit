@@ -19,4 +19,4 @@ led.enable(false)
 ## See Also
 
 [plot](/reference/led/plot), [unplot](/reference/led/unplot), [point](/reference/led/point), [brightness](/reference/led/brightness), [setBrightness](/reference/led/set-brightness), [stopAnimation](/reference/led/stop-animation), [plotBarGraph](/reference/led/plot-bar-graph), [toggle](/reference/led/toggle), [setDisplayMode](/reference/led/set-display-mode), [enabled](/reference/led/enable),
-[plotBrightness](/reference/led/plot-brightness),
+[plotBrightness](/reference/led/plot-brightness)
