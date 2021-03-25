@@ -159,6 +159,7 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
             try {
                 while (rid === this.readSerialId) {
                     const len = await this.readSerial()
+                    logV(`serial read ${len} bytes`)
                     const hasData = len > 0
                     await this.jacdacProcess(hasData)
                 }
@@ -675,26 +676,26 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
     private async jacdacSetup() {
         this.xchgAddr = null
         if (!this.useJACDAC) {
-            log(`jacdac disabled`)
+            log(`jacdac: disabled`)
             return
         }
         await pxt.Util.delay(700); // wait for the program to start and setup memory correctly
         const xchg = await this.findJacdacXchgAddr()
         if (xchg == null) {
-            log("no jacdac stack found")
+            log("jacdac: xchg address not found")
             return
         }
         const info = await this.readBytes(xchg, 16)
         this.irqn = info[8]
         if (info[12 + 2] != 0xff) {
-            console.error("invalid memory; try power-cycling the micro:bit")
+            log("jacdac: invalid memory; try power-cycling the micro:bit")
             console.debug({ info, xchg })
             return
         }
         this.xchgAddr = xchg
         // clear initial lock
         await this.writeWord(xchg + 12, 0)
-        log(`jacdac exchange address: 0x${xchg.toString(16)}; irqn=${this.irqn}`)
+        log(`jacdac: exchange address 0x${xchg.toString(16)}; irqn=${this.irqn}`)
     }
 
     private async triggerIRQ(irqn: number) {
