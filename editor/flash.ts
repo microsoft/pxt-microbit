@@ -105,7 +105,7 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
     private pendingSerial: Uint8Array
     private lastPendingSerial: number
 
-    private processSerial(line: Uint8Array) {
+    private processSerialLine(line: Uint8Array) {
         if (this.onSerial) {
             try {
                 // catch encoding bugs
@@ -129,9 +129,9 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
             let beg = 0
             while (ptr < buf.length) {
                 if (buf[ptr] == 10 || buf[ptr] == 13) {
-                    const line = buf.slice(beg, ptr)
+                    const line = buf.slice(beg, ptr + 1)
                     if (line.length)
-                        this.processSerial(line);
+                        this.processSerialLine(line);
                     beg = ptr + 1
                 }
                 ptr++
@@ -145,7 +145,7 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
         } else if (this.pendingSerial) {
             const d = Date.now() - this.lastPendingSerial
             if (d > 500) {
-                this.processSerial(this.pendingSerial)
+                this.processSerialLine(this.pendingSerial)
                 this.pendingSerial = null
             }
         }
@@ -495,11 +495,11 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
                         this.checkAborted();
                         let b = changed[i];
                         if (b.targetAddr >= 0x10000000) {
-                            log(`target address ${b.targetAddr.toString(16)} > 0x10000000`)
-                            return Promise.resolve();
+                            log(`target address 0x${b.targetAddr.toString(16)} > 0x10000000`)
+                            //return Promise.resolve();
                         }
 
-                        log("about to write at 0x" + b.targetAddr.toString(16));
+                        log(`about to write at 0x${b.targetAddr.toString(16)}`);
 
                         let writeBl = Promise.resolve();
 
