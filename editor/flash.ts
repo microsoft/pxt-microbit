@@ -521,7 +521,7 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
                         let b = changed[i];
                         if (b.targetAddr >= 0x10000000) {
                             log(`target address 0x${b.targetAddr.toString(16)} > 0x10000000`)
-                            //return Promise.resolve();
+                            return Promise.resolve();
                         }
 
                         log(`about to write at 0x${b.targetAddr.toString(16)}`);
