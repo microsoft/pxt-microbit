@@ -129,14 +129,19 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
             let beg = 0
             while (ptr < buf.length) {
                 if (buf[ptr] == 10 || buf[ptr] == 13) {
-                    const line = buf.slice(beg, ptr + 1)
+                    ptr++;
+                    // eat \r\n
+                    while(ptr < buf.length && (buf[ptr] == 10 || buf[ptr] == 13))
+                        ptr++;
+                    const line = buf.slice(beg, ptr)
                     if (line.length)
                         this.processSerialLine(line);
-                    beg = ptr + 1
+                    beg = ptr
                 }
-                ptr++
+                else
+                    ptr++
             }
-            buf = buf.slice(ptr)
+            buf = buf.slice(beg)
             this.pendingSerial = buf.length ? buf : null
             if (this.pendingSerial) {
                 this.lastPendingSerial = Date.now()
@@ -161,8 +166,8 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
                 while (rid === this.readSerialId) {
                     const len = await this.readSerial()
                     const hasData = len > 0
-                    if (hasData)
-                        logV(`serial read ${len} bytes`)
+                    //if (hasData)
+                    //    logV(`serial read ${len} bytes`)
                     await this.jacdacProcess(hasData)
                 }
                 log(`stopped serial reader ${rid}`)
