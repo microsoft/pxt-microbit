@@ -29,8 +29,10 @@ Here are instructions for different browsers on Windows and Mac computers. Choos
 * [Chrome](/device/usb/mac-chrome)
 * [Firefox](/device/usb/mac-firefox)
 
-## ~hint
+### ~hint
+
+#### Transfer problems?
 
 Transfer not working? See some [troubleshooting tips](/device/usb/troubleshoot).
 
-## ~
+### ~

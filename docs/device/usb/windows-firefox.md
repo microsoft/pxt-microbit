@@ -18,7 +18,7 @@ You need the following things to transfer and run a script on your micro:bit:
 
 * A-Male to Micro USB cable to connect your computer to your micro:bit. This is
     the same cable that is commonly used to connect a smart phone to a computer.
-* A PC running Windows 7 or later, or a Mac running OS X 10.6 or later
+* A PC running Windows 7 or later.
 
 ## Step 1: Connect your micro:bit to your computer
 
@@ -64,8 +64,10 @@ By copying the script onto the `MICROBIT` drive, you have programmed it into the
 flash memory on the micro:bit, which means even after you unplug the micro:bit,
 your program will still run if the micro:bit is powered by battery.
 
-## ~hint
+### ~hint
+
+#### Transfer problems?
 
 Transfer not working? See some [troubleshooting tips](/device/usb/troubleshoot).
 
-## ~
+### ~
