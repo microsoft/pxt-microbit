@@ -81,13 +81,13 @@ input.onButtonPressed(Button.A, function () {
 ## Grey blocks are a good sign!
 
 If you start to write more complex JavaScript (it's great that you are!), MakeCode might not be able to convert it back to blocks. In that case, you will see _grey blocks_ in your block code. They represent chunks of JavaScript that are too complicated for blocks.
- 
+
 * Go back to **JavaScript** and add a second frame to create animation. This is something you can do in JavaScript but not in blocks.
 
 ```typescript
 input.onButtonPressed(Button.A, function () {
     basic.showLeds(`
-        . . . . .    . . . . . 
+        . . . . .    . . . . .
         . . # . .    . # # # .
         . # # # .    . # # # .
         . . # . .    . # # # .
@@ -98,10 +98,10 @@ input.onButtonPressed(Button.A, function () {
 
 * Go to the **Blocks** editor and you will see a big **grey** block in the button handler. This is because you are creating code too complex for the blocks. Take it as a compliment!
 
-```blocks
+```blocks-ignore
 input.onButtonPressed(Button.A, function () {
     basic.showLeds(`
-        . . . . .    . . . . . 
+        . . . . .    . . . . .
         . . # . .    . # # # .
         . # # # .    . # # # .
         . . # . .    . # # # .

@@ -79,7 +79,7 @@ let count = 0
 } while (count < 5)
 ```
 
-You'll have a squiggle at the end of the line with ``} while (count < 5)`` which means we have invalid code. Don't worry, we'll fix that right now! At the beginning of the loop, insert the word ``do`` just before left brace `{`. The error should go away and the simulator will count from `0` to `4` just like before when the word ``while`` was at the beginning of the loop. 
+You'll have a squiggle at the end of the line with ``} while (count < 5)`` which means we have invalid code. Don't worry, we'll fix that right now! At the beginning of the loop, insert the word ``do`` just before left brace `{`. The error should go away and the simulator will count from `0` to `4` just like before when the word ``while`` was at the beginning of the loop.
 
 ```typescript
 let count = 0
@@ -115,7 +115,7 @@ for (let index = 4; index >= 0; index--) {
 
 You'll now see in the simulator that the value displayed on the screen counts down from `4` to `0`. This form of the **for** loop is too complicatied for blocks so when you switch back to the Blocks editor the entire loop is shown in a grey block.
 
-```block
+```block-ignore
 for (let index = 4; index >= 0; index--) {
     basic.showNumber(index)
     basic.pause(500)
@@ -196,4 +196,4 @@ for (let index = 0; index < 5; index++) {
 }
 ```
 
-Ah! Our original ``||loops:repeat||`` loop changed to a ``||loops:for||`` loop! Why? Well, this is because the code inside the loop used the index from the loop statement. This makes the loop more complex and it's no longer just simply repeating what's inside of it. 
+Ah! Our original ``||loops:repeat||`` loop changed to a ``||loops:for||`` loop! Why? Well, this is because the code inside the loop used the index from the loop statement. This makes the loop more complex and it's no longer just simply repeating what's inside of it.
