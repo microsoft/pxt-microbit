@@ -1,3 +1,5 @@
 /*******************************
     User Variable Overrides
 *******************************/
+@inputBorder: 1px #919197 solid;
+@inputFocusBorderColor: #4F98C9;
