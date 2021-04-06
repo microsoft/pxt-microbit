@@ -83,6 +83,7 @@
   * [Robot Unicorn](/projects/robot-unicorn)
   * [Ticklebot](https://www.jasmineflorentine.com/ticklebot)
   * [Milky Monster](/projects/milky-monster)
+  * [Two Player Maze](https://tinker-club.blogspot.com/p/two-player-maze-game-for-microbit.html)
   * [Railway Crossing](/projects/railway-crossing)
   * [Kitronik RC Car Hack](/projects/rc-car)
   * [Rotary Dial Radio](/projects/rotary-dial-radio)
