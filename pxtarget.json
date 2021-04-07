@@ -305,7 +305,9 @@
 
                 "builtinspeaker",
                 "microphone",
-                "logotouch"
+                "logotouch",
+
+                "v2"
             ],
             "pinStyles": {
                 "P0": "croc",
