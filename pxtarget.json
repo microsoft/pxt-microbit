@@ -376,6 +376,7 @@
         "ignoreDocsErrors": false,
         "errorList": true,
         "allowPackageExtensions": true,
+        "addNewTypeScriptFile": true,
         "experiments": [
             "accessibleBlocks",
             "debugExtensionCode",
