@@ -4,7 +4,6 @@
             "microsoft/pxt-neopixel",
             "microsoft/pxt-microturtle",
             "microsoft/pxt-sonar",
-            "microsoft/pxt-hacking-stem",
             "microsoft/pxt-bluetooth-temperature-sensor",
             "microsoft/pxt-bluetooth-midi",
             "microsoft/pxt-max6675",
