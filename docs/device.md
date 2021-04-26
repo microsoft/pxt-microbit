@@ -91,7 +91,7 @@ https://www.youtube.com/watch?v=TKhCr-dQMBY
 
 ## Temperature
 
-Temperatrue is measured on the @boardname@ by detecting how hot its physical CPU material is. Since it operates nearly as cool as the air around it, the temperature it measures for itself is a good approximation for the ambient temperature (the temperature near and around it).
+Temperature is measured on the @boardname@ by detecting how hot its physical CPU material is. Since it operates nearly as cool as the air around it, the temperature it measures for itself is a good approximation for the ambient temperature (the temperature near and around it).
 
 See how the @boardname@ can detect hot or cold in this temperature sensing video:
 
