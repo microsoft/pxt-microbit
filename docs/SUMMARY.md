@@ -325,14 +325,6 @@
         * [stop advertising](/reference/bluetooth/stop-advertising)
         * [advertise uid](/reference/bluetooth/advertise-uid)
         * [advertise-uid-buffer](/reference/bluetooth/advertise-uid-buffer)
-    * [Devices](/reference/devices)
-        * [tell camera to](/reference/devices/tell-camera-to)
-        * [tell remote control to](/reference/devices/tell-remote-control-to)
-        * [raise alert to](/reference/devices/raise-alert-to)
-        * [on notified](/reference/devices/on-notified)
-        * [on gamepad button](/reference/devices/on-gamepad-button)
-        * [signal strength](/reference/devices/signal-strength)
-        * [on signal strength changed](/reference/devices/on-signal-strength-changed)
 
 ## #packages
 

@@ -33,8 +33,6 @@ This is an example of the editor with it's interface elements localized:
 * [core-strings.json](https://crowdin.com/translate/kindscript/65/en-en) - Display text for the [basic](/reference/basic) and core [blocks](/reference/blocks)
 * [radio-jsdoc-strings.json](https://crowdin.com/translate/kindscript/64/en-en) - Description text for code elements of the [radio](/reference/radio) blocks
 * [radio-strings.json](https://crowdin.com/translate/kindscript/63/en-en) - Display text for the [radio](/reference/radio) blocks
-* [devices-jsdoc-strings.json](https://crowdin.com/translate/kindscript/62/en-en) - Description text for code elements of the [devices](/reference/devices) blocks
-* [devices-strings.json](https://crowdin.com/translate/kindscript/61/en-en) - Display text for the [devices](/reference/devices) blocks
 * [radio-broadcast-jsdoc-strings.json](https://crowdin.com/translate/kindscript/5032/en-en) -  Description text for code elements of the radio broadcast blocks
 * [radio-broadcast-strings.json](https://crowdin.com/translate/kindscript/5030/en-en) - Display text for the radio broadcast blocks
 * [servo-jsdoc-strings.json](https://crowdin.com/translate/kindscript/5036/en-en) - Description text for code elements of the [servo](/reference/servos) blocks
