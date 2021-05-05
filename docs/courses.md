@@ -31,6 +31,11 @@ Courses contributed by educators to teach computing, science, and technology in 
   "url":"/courses/ucp-science",
   "imageUrl": "/static/courses/ucp-science.jpg"
 }, {
+  "name": "Cyber Arcade: Programming and Making with micro:bit",
+  "description": "A fun and creative introduction to computer science and hands-on making for makers in elementary (ages 9–12) and middle (ages 12–14) grade levels with little to no experience in programming and 3D design.",
+  "url":"https://makered.org/resources/cyber-arcade-programming-and-making-with-microbit/",
+  "imageUrl": "/static/courses/maker-ed-cyber-arcade.png"
+}, {
   "name": "Learn All About micro:bit",
   "description": "Projects and integration notes for a student-led workshop from the Beacon Hill School",
   "url": "https://goo.gl/XTPYpP",

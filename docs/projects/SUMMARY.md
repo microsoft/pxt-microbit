@@ -118,6 +118,7 @@
   * [Intro to CS Online](/courses/csintro)
   * [Intro to CS Classroom](/courses/csintro-educator)
   * [Science Experiments](/courses/ucp-science)
+  * [Cyber Arcade: Programming and Making with micro:bit](https://makered.org/resources/cyber-arcade-programming-and-making-with-microbit/)
   * [Learn All About micro:bit](https://goo.gl/XTPYpP)
   * [Coding and Innovation](https://sites.google.com/view/utahcodingproject/microbits/coding-innovation)
   * [First Steps](https://microbit.org/get-started/first-steps/introduction/)
