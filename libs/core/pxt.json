@@ -33,6 +33,8 @@
         "gestures.jres",
         "control.ts",
         "control.cpp",
+        "controlgc.cpp",
+        "perfcounters.ts",
         "interval.ts",
         "gcstats.ts",
         "console.ts",

@@ -366,6 +366,12 @@ declare namespace control {
     function millis(): int32;
 
     /**
+     * Used internally
+     */
+    //% flags.defl=16 shim=control::internalOnEvent
+    function internalOnEvent(src: int32, value: int32, handler: () => void, flags?: int32): void;
+
+    /**
      * Gets current time in microseconds. Overflows every ~18 minutes.
      */
     //% shim=control::micros
@@ -484,6 +490,44 @@ declare namespace control {
     /** Write a message and value (pointer) to DMESG debugging buffer. */
     //% shim=control::dmesgPtr
     function dmesgPtr(str: string, ptr: Object): void;
+}
+declare namespace control {
+
+    /**
+     * Dump internal information about a value.
+     */
+    //% shim=control::dmesgValue
+    function dmesgValue(v: any): void;
+
+    /**
+     * Force GC and dump basic information about heap.
+     */
+    //% shim=control::gc
+    function gc(): void;
+
+    /**
+     * Force GC and halt waiting for debugger to do a full heap dump.
+     */
+    //% shim=control::heapDump
+    function heapDump(): void;
+
+    /**
+     * Set flags used when connecting an external debugger.
+     */
+    //% shim=control::setDebugFlags
+    function setDebugFlags(flags: int32): void;
+
+    /**
+     * Record a heap snapshot to debug memory leaks.
+     */
+    //% shim=control::heapSnapshot
+    function heapSnapshot(): void;
+
+    /**
+     * Return true if profiling is enabled in the current build.
+     */
+    //% shim=control::profilingEnabled
+    function profilingEnabled(): boolean;
 }
 
 
