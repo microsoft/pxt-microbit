@@ -309,7 +309,6 @@
   "control.heapDump": "Force GC and halt waiting for debugger to do a full heap dump.",
   "control.heapSnapshot": "Record a heap snapshot to debug memory leaks.",
   "control.inBackground": "Schedules code that run in the background.",
-  "control.internalOnEvent": "Used internally",
   "control.micros": "Gets current time in microseconds. Overflows every ~18 minutes.",
   "control.millis": "Gets the number of milliseconds elapsed since power on.",
   "control.onEvent": "Registers an event handler.",
