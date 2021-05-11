@@ -1,6 +1,7 @@
 # Hot Potato
 
 ### @explicitHints true
+### @diffs true
 
 ## Introduction @unplugged
 
@@ -28,7 +29,6 @@ is caught holding the potato.
 ```spy
 let timer = 0
 input.onButtonPressed(Button.A, function () {
-    // @highlight
     timer = randint(5, 15)
 })
 ```
@@ -41,7 +41,6 @@ Add code to ``||basic:show an icon||`` to indicate that the game has started.
 let timer = 0
 input.onButtonPressed(Button.A, function () {
     timer = randint(5, 15)
-    // @highlight
     basic.showIcon(IconNames.Chessboard)
 })
 ```
@@ -57,7 +56,6 @@ let timer = 0
 input.onButtonPressed(Button.A, function () {
     timer = randint(5, 15)
     basic.showIcon(IconNames.Chessboard)
-    // @highlight
     while (timer > 0) {
     }
 })
@@ -74,9 +72,7 @@ input.onButtonPressed(Button.A, function () {
     timer = randint(5, 15)
     basic.showIcon(IconNames.Chessboard)
     while (timer > 0) {
-        // @highlight
         timer += -1
-        // @highlight
         basic.pause(1000)
     }
 })
@@ -95,7 +91,6 @@ input.onButtonPressed(Button.A, function () {
         timer += -1
         basic.pause(1000)
     }
-    // @highlight
     basic.showIcon(IconNames.Skull)
 })
 ```
