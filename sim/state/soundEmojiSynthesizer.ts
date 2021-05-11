@@ -54,15 +54,6 @@ namespace pxsim.music {
             this.effectPointer = -1;
 
             this.nextSoundEffect();
-
-
-            const buff = this.pull();
-
-            while (this.effect) {
-                buff.push(...this.pull());
-            }
-
-            return buff;
         }
 
         nextSoundEffect() {

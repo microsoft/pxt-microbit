@@ -1,24 +1,4 @@
 namespace pxsim.music {
-    function loadWavAsync(path: string): Promise<Uint8Array> {
-        return new Promise<Uint8Array>((resolve, reject) => {
-            let httprequest = new XMLHttpRequest();
-            httprequest.responseType = "arraybuffer";
-            httprequest.onreadystatechange = function () {
-                if (httprequest.readyState == XMLHttpRequest.DONE) {
-                    if (httprequest.status == 200) {
-                        const r = httprequest.response;
-                        resolve(new Uint8Array(httprequest.response));
-                    }
-                    else {
-                        reject(httprequest.status);
-                    }
-                }
-            };
-            httprequest.open("GET", path, true);
-            httprequest.send();
-        })
-    }
-    const wavPromises: Map<Promise<Uint8Array>> = {}
     //%
     export function __playSoundExpression(notes: string, waitTillDone: boolean): void {
         const cb = getResume();
@@ -26,64 +6,39 @@ namespace pxsim.music {
         // v2 only...
         b.ensureHardwareVersion(2);
 
-        // load wav file
-        let p: Promise<Uint8Array>;
-        // defined in sim.html
-        const path = (<any>pxsim).soundExpressionFiles[notes];
-        if (path) {
-            p = wavPromises[notes] || (wavPromises[notes] = loadWavAsync(path));
-        } else {
-            playCustomSoundAsync(notes, waitTillDone, cb);
-            return;
-        }
+        notes = builtin.lookupBuiltIn(notes);
 
-        p.then(data => {
-            // failed to load data
-            if (data) {
-                // finally play
-                const buf = new RefBuffer(data);
-                const pp = AudioContextManager.playBufferAsync(buf)
-                if (waitTillDone)
-                    // wait until sound is done
-                    return pp;
+        const soundEffects = parseSoundEffects(notes);
+        const synth = new SoundEmojiSynthesizer(0);
+        synth.play(soundEffects);
+
+        const p = AudioContextManager.playPCMBufferStreamAsync(() => {
+            if (!synth.effect) return undefined;
+
+            const buff = synth.pull();
+            const arr = new Float32Array(buff.length);
+            for (let i = 0; i < buff.length; i++) {
+                // Buffer is (0, 1023) we need to map it to (-1, 1)
+                arr[i] = ((buff[i] - 512) / 512);
             }
-            // don't wait
+            return arr;
+        }, synth.sampleRate, 0.03)
+
+        // const p = AudioContextManager.playPCMBufferAsync(arr, synth.sampleRate);
+
+        if (waitTillDone) {
+            p.then(cb, e => {
+                console.log(e),
+                cb();
+            })
+        }
+        else {
             cb();
-            return Promise.resolve();
-        }).catch((e) => {
-            console.log(e)
-            cb();
-        })
+        }
     }
 
     export function __stopSoundExpressions() {
         AudioContextManager.stopAll();
-    }
-
-    function playCustomSoundAsync(notes: string, waitTillDone: boolean, cb: ResumeFn) {
-        const soundEffects = parseSoundEffects(notes);
-        const synth = new SoundEmojiSynthesizer(0);
-        const buff = synth.play(soundEffects);
-
-        const arr = new Float32Array(buff.length);
-        for (let i = 0; i < buff.length; i++) {
-            // Buffer is (0, 1023) we need to map it to (-1, 1)
-            arr[i] = ((buff[i] - 512) / 512);
-        }
-
-        const p = AudioContextManager.playPCMBufferAsync(arr, synth.sampleRate);
-
-        if (waitTillDone) {
-            return p
-                .then(cb, e => {
-                    console.log(e),
-                    cb();
-                })
-        }
-        else {
-            cb();
-            return Promise.resolve();
-        }
     }
 
     function parseSoundEffects(notes: string) {
@@ -342,6 +297,7 @@ namespace pxsim.music {
                 break;
         }
         return true;
-
     }
+
+
 }
