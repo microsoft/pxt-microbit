@@ -1,4 +1,9 @@
+/**
+ * Adapted from lancaster-university/codal-microbit-v2
+ * https://github.com/lancaster-university/codal-microbit-v2/blob/master/source/SoundEmojiSynthesizer.cpp
+ */
 namespace pxsim.music {
+    // https://github.com/lancaster-university/codal-microbit-v2/blob/master/inc/SoundEmojiSynthesizer.h#L30
     export const EMOJI_SYNTHESIZER_SAMPLE_RATE = 44100;
     export const EMOJI_SYNTHESIZER_TONE_WIDTH_F = 1024;
     export const EMOJI_SYNTHESIZER_TONE_WIDTH = 1024;

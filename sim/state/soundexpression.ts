@@ -24,7 +24,6 @@ namespace pxsim.music {
             return arr;
         }, synth.sampleRate, 0.03)
 
-        // const p = AudioContextManager.playPCMBufferAsync(arr, synth.sampleRate);
 
         if (waitTillDone) {
             p.then(cb, e => {
@@ -41,7 +40,13 @@ namespace pxsim.music {
         AudioContextManager.stopAll();
     }
 
+    /**
+     * Adapted from lancaster-university/codal-microbit-v2
+     * https://github.com/lancaster-university/codal-microbit-v2/blob/master/source/SoundExpressions.cpp
+     */
     function parseSoundEffects(notes: string) {
+        // https://github.com/lancaster-university/codal-microbit-v2/blob/master/source/SoundExpressions.cpp#L57
+
         // 72 characters of sound data comma separated
         const charsPerEffect = 72;
         const effectCount = Math.floor((notes.length + 1) / (charsPerEffect + 1));
@@ -88,48 +93,9 @@ namespace pxsim.music {
         effects: ToneEffect[];
     }
 
-    function random(max: number) {
-        return Math.floor(Math.random() * max);
-    }
-
-    function CLAMP(min: number, value: number, max: number) {
-        return Math.min(max, Math.max(min, value));
-    }
-
-    function applyRandom(value: number, rand: number) {
-        if (value < 0 || rand < 0) {
-            return -1;
-        }
-        const delta = random(rand * 2 + 1) - rand;
-        return Math.abs(value + delta);
-    }
-
-    function blankSoundEffect() {
-        const res: SoundEffect = {
-            frequency: 0,
-            volume: 1,
-            duration: 0,
-            tone: {
-                tonePrint: undefined,
-                parameter: [0]
-            },
-            effects: []
-        };
-
-        for(let i = 0; i < EMOJI_SYNTHESIZER_TONE_EFFECTS; i++) {
-            res.effects.push({
-                effect: undefined,
-                step: 0,
-                steps: 0,
-                parameter: [],
-                parameter_p: []
-            });
-        }
-
-        return res;
-    }
-
     export function parseSoundExpression(soundChars: string, fx: SoundEffect) {
+        // https://github.com/lancaster-university/codal-microbit-v2/blob/master/source/SoundExpressions.cpp#L115
+
         // Encoded as a sequence of zero padded decimal strings.
         // This encoding is worth reconsidering if we can!
         // The ADSR effect (and perhaps others in future) has two parameters which cannot be expressed.
@@ -299,5 +265,44 @@ namespace pxsim.music {
         return true;
     }
 
+    function random(max: number) {
+        return Math.floor(Math.random() * max);
+    }
 
+    function CLAMP(min: number, value: number, max: number) {
+        return Math.min(max, Math.max(min, value));
+    }
+
+    function applyRandom(value: number, rand: number) {
+        if (value < 0 || rand < 0) {
+            return -1;
+        }
+        const delta = random(rand * 2 + 1) - rand;
+        return Math.abs(value + delta);
+    }
+
+    function blankSoundEffect() {
+        const res: SoundEffect = {
+            frequency: 0,
+            volume: 1,
+            duration: 0,
+            tone: {
+                tonePrint: undefined,
+                parameter: [0]
+            },
+            effects: []
+        };
+
+        for(let i = 0; i < EMOJI_SYNTHESIZER_TONE_EFFECTS; i++) {
+            res.effects.push({
+                effect: undefined,
+                step: 0,
+                steps: 0,
+                parameter: [],
+                parameter_p: []
+            });
+        }
+
+        return res;
+    }
 }

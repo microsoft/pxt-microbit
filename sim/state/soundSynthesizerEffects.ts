@@ -1,3 +1,7 @@
+/**
+ * Adapted from lancaster-university/codal-microbit-v2
+ * https://github.com/lancaster-university/codal-microbit-v2/blob/master/source/SoundSynthesizerEffects.cpp
+ */
 namespace pxsim.music.SoundSynthesizerEffects {
     /*
      * Definitions of standard progressions.
