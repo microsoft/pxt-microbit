@@ -6,15 +6,15 @@ Have you ever tried to making beat box sounds based on the light level? Let's tr
 
 ## ~
 
-Let's start by adding a variable where you can store data. Name the variable as ``light`` and ``||variables:set||`` the value of the variable to the  ``||input:light level||`` block from the ``||input:Input||`` drawer. This will get the light level as some value between `0` (dark) and `255` (bright). The light is measured by using various LEDs from the screen. Your code will look like this:
-
+Let's start by playing music when the **A** button is pressed. To do that, register an event handler that will execute whenever you click on the **A** button. Open the ``||input:Input||`` drawer and get out an ``||input:on button A pressed||`` block. Next, add a ``||music:rest||`` to play nothing for `1/16` of a beat.
 
 ```blocks
-let light = input.lightLevel();
+input.onButtonPressed(Button.A, () => {
+    music.rest(music.beat(BeatFraction.Sixteenth));
+});
 ```
 
-We also want to play music when the **A** button is pressed. To do that, register an event handler that will execute whenever you click on the **A** button. Open the ``||input:Input||`` drawer and get out an ``||input:on button A pressed||`` block. Next, add a ``||music:rest||`` to play nothing for `1/16` of a beat. Pull the ``||variables:set light||`` block in there too. Your code should look like this:
-
+We also want to add a variable where you can store data. Name the variable ``light`` and ``||variables:set||`` the value of the variable to the  ``||input:light level||`` block from the ``||input:Input||`` drawer. This will get the light level as some value between `0` (dark) and `255` (bright). The light is measured by using various LEDs from the screen. Your code will look like this:
 
 ```blocks
 input.onButtonPressed(Button.A, () => {

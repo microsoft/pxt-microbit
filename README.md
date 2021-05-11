@@ -179,6 +179,8 @@ Make sure to pull changes from all repos regularly. More instructions are at htt
 
 ## Update playlists in markdown
 
+To add a new playlist, add an entry in ``/playlists.json``, and regenerate the markdown (see paragraph below). You'll now have a new markdown gallery file listing the videos which you can reference in ``/targetconfig.json``.
+
 Get a Google API key and store it in the ``GOOGLE_API_KEY`` environment variables (turn on data from the app).
 
 ```

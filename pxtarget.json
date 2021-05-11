@@ -153,8 +153,9 @@
         },
         "mbcodal": {
             "compile": {
-                "flashUsableEnd": null,
-                "flashEnd": null
+                "flashCodeAlign": 4096,
+                "flashUsableEnd": 487424,
+                "flashEnd": 524288
             },
             "compileService": {
                 "buildEngine": "codal",
@@ -376,6 +377,7 @@
         "ignoreDocsErrors": false,
         "errorList": true,
         "allowPackageExtensions": true,
+        "addNewTypeScriptFile": true,
         "experiments": [
             "accessibleBlocks",
             "debugExtensionCode",

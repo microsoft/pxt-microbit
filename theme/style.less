@@ -46,7 +46,7 @@
 }
 
 .ui.button.exit-tutorial-btn {
-    &:extend(.ui.blue.button all);
+    &:extend(.ui.inverted.button all);
 }
 
 #filelist, #editortools {
@@ -57,13 +57,39 @@
     background: transparent !important;
 }
 
-.ui.home {
+#homescreen .ui.home {
     .getting-started-segment {
         background-position: 50% 25%;
     }
+
     .detailview .actions .card-action {
-        &:first-child .button.approve {
-            background-color: lighten(@primaryColor, 10%);
+        .button.approve {
+            background-color: @mainMenuTutorialBackground;
+        }
+    }
+    .tutorial-progress.orange {
+        background-color: @mainMenuTutorialBackground !important;
+        border-color: @mainMenuTutorialBackground !important;
+    }
+}
+
+#tutorialcard {
+    .ui.button.orange.right.attached {
+        background-color: @mainMenuTutorialBackground;
+        &:focus, &:hover {
+            background-color: darken(@mainMenuTutorialBackground, 20%);
+        }
+    }
+}
+
+#root:not(.hc) .tutorial-menu {
+    .ui.circular.label.selected {
+        background-color: @purple !important;
+        color: #e8e8e8 !important;
+        border: 1px solid #e8e8e8 !important;
+
+        &:focus, &:hover {
+            background-color: darken(@purple, 20%) !important;
         }
     }
 }
@@ -106,15 +132,15 @@
             justify-content: center;
             display: flex;
             padding: 1rem;
-    
+
             img {
-                height:100px;            
+                height:100px;
             }
         }
     }
     .instructions {
         img {
-            margin-bottom:1rem;            
+            margin-bottom:1rem;
         }
     }
 }
