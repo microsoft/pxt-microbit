@@ -128,7 +128,7 @@ namespace pxsim.music {
                 }
 
                 // If we have something to do, ensure our buffers are created.
-                // We defer creation to avoid unecessary heap allocation when genertaing silence.
+                // We defer creation to avoid unnecessary heap allocation when generating silence.
                 if (((this.samplesWritten < this.samplesToWrite) || !(this.status & EMOJI_SYNTHESIZER_STATUS_OUTPUT_SILENCE_AS_EMPTY)) && sample == null) {
                     this.buffer = new Array(this.bufferSize);
                     sample = 0;
