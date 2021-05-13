@@ -1,6 +1,7 @@
 # Hot Potato
 
 ### @explicitHints true
+### @diffs true
 
 ## Introduction @unplugged
 
@@ -28,7 +29,6 @@ is caught holding the potato.
 ```spy
 let timer = 0
 input.onButtonPressed(Button.A, function () {
-    // @highlight
     timer = randint(5, 15)
 })
 ```
@@ -41,65 +41,49 @@ Add code to ``||basic:show an icon||`` to indicate that the game has started.
 let timer = 0
 input.onButtonPressed(Button.A, function () {
     timer = randint(5, 15)
-    // @highlight
     basic.showIcon(IconNames.Chessboard)
 })
 ```
 
 ## Step 4
 
-Put in a ``||loops:while||`` loop to repeat code while the value in ``||variables:timer||`` is
-greater than `0`. When `timer` value becomes `0` or less, the game is over.
-
+Put in a ``||basic:pause||`` to wait the number of seconds set in the variable ``||variables:timer||``. When the ``||basic:pause||`` completes, the game is over.
 
 ```spy
 let timer = 0
 input.onButtonPressed(Button.A, function () {
     timer = randint(5, 15)
     basic.showIcon(IconNames.Chessboard)
-    // @highlight
-    while (timer > 0) {
-    }
+    basic.pause(1000 * timer)
 })
 ```
 
 ## Step 5
 
-Inside the ``||loops:while||`` loop, add code to ``||variables:decrease||`` the timer
-``||basic:every second||``.
+**After** the ``||basic:pause||``, add code to ``||basic:show||`` that the game is over.
 
 ```spy
 let timer = 0
 input.onButtonPressed(Button.A, function () {
     timer = randint(5, 15)
     basic.showIcon(IconNames.Chessboard)
-    while (timer > 0) {
-        // @highlight
-        timer += -1
-        // @highlight
-        basic.pause(1000)
-    }
-})
-```
-
-## Step 5
-
-**After** the ``||loops:while||`` loop is done, add code to ``||basic:show||`` that the game is over.
-
-```spy
-let timer = 0
-input.onButtonPressed(Button.A, function () {
-    timer = randint(5, 15)
-    basic.showIcon(IconNames.Chessboard)
-    while (timer > 0) {
-        timer += -1
-        basic.pause(1000)
-    }
-    // @highlight
+    basic.pause(1000 * timer)
     basic.showIcon(IconNames.Skull)
 })
 ```
 
 ## Step 6
+
+You can simplify your code by replacing ``||variables:timer||`` in the ``||basic:pause||`` with a ``||math:random value||`` between ``5`` and ``15``. Now, delete the other lines using the ``||variables:timer||`` variable.
+
+```spy
+input.onButtonPressed(Button.A, function () {
+    basic.showIcon(IconNames.Chessboard)
+    basic.pause(1000 * randint(5, 15))
+    basic.showIcon(IconNames.Skull)
+})
+```
+
+## Step 7
 
 `|Download|` your code to your @boardname@, tape it to a potato and play the game with your friends!
