@@ -37,6 +37,21 @@ int logData(ManagedString key, ManagedString value) {
 }
 
 /**
+* Inject the given row into the log as text, ignoring key/value pairs.
+**/
+//% help=flashlog/log-string
+//% parts="flashlog"
+//% blockGap=8
+//% group="micro:bit (V2)"
+int logString(ManagedString value) {
+#if MICROBIT_CODAL
+    return uBit.log.logData(key, value);
+#else
+    return DEVICE_NOT_SUPPORTED;
+#endif
+}
+
+/**
 * Complete a row in the log, and pushes to persistent storage.
 **/
 //% help=flashlog/end-row
@@ -48,6 +63,32 @@ int endRow() {
     return uBit.log.endRow();
 #else
     return DEVICE_NOT_SUPPORTED;
+#endif
+}
+
+/**
+* Resets all data stored in persistent storage.
+**/
+//% help=flashlog/clear
+//% parts="flashlog"
+//% blockGap=8
+//% group="micro:bit (V2)"
+void clear() {
+#if MICROBIT_CODAL
+    uBit.log.format();
+#endif
+}
+
+ /**
+* Determines the format of the timestamp data to be added (if any).
+* If requested, time stamps will be automatically added to each row of data
+* as an integer value rounded down to the unit specified.
+* 
+* @param format The format of timestamp to use. 
+*/
+void setTimeStamp(TimeStampFormat format) {
+#if MICROBIT_CODAL
+    return uBit.log.setTimeStamp(format);
 #endif
 }
 
