@@ -52,8 +52,10 @@ int beginRow() {
 //% blockGap=8
 //% group="micro:bit (V2)"
 int logData(String key, String value) {
+    if (NULL == key || NULL == value)
+        return DEVICE_INVALID_PARAMETER;
 #if MICROBIT_CODAL
-    return uBit.log.logData(key, value);
+    return uBit.log.logData(MSTR(key), MSTR(value));
 #else
     return DEVICE_NOT_SUPPORTED;
 #endif
@@ -67,8 +69,10 @@ int logData(String key, String value) {
 //% blockGap=8
 //% group="micro:bit (V2)"
 int logString(String value) {
+    if (NULL == value)
+        return DEVICE_INVALID_PARAMETER;
 #if MICROBIT_CODAL
-    return uBit.log.logString(value);
+    return uBit.log.logString(MSTR(value));
 #else
     return DEVICE_NOT_SUPPORTED;
 #endif
