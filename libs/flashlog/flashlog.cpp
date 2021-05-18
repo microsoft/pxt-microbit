@@ -79,13 +79,17 @@ void clear() {
 #endif
 }
 
- /**
+/**
 * Determines the format of the timestamp data to be added (if any).
 * If requested, time stamps will be automatically added to each row of data
 * as an integer value rounded down to the unit specified.
 * 
 * @param format The format of timestamp to use. 
 */
+//% help=flashlog/set-timestamp
+//% parts="flashlog"
+//% blockGap=8
+//% group="micro:bit (V2)"
 void setTimeStamp(TimeStampFormat format) {
 #if MICROBIT_CODAL
     return uBit.log.setTimeStamp(format);
