@@ -21,7 +21,7 @@ enum class TimeStampFormat
     Hours = 36000,
     //% bock="days"
     Days = 864000
-}
+};
 
 /**
  * Storing structured data in flash.
