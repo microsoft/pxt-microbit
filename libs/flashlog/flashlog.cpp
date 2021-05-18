@@ -52,8 +52,3 @@ int endRow() {
 }
 
 }
-
-#else
-
-
-#endif
