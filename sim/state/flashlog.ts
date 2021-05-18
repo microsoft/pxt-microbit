@@ -9,6 +9,12 @@ namespace pxsim.flashlog {
     let SEPARATOR = ","
     let timestampFormat: number = undefined
 
+    function ensureV2() {
+        const b = board();
+        if (!b) return;
+        b.ensureHardwareVersion(2);
+    }
+
     function commitRow(text: string) {
         if (!runtime) return;
 
@@ -26,6 +32,7 @@ namespace pxsim.flashlog {
     }
 
     export function beginRow(): number {
+        ensureV2()
         if (currentRow)
             return DAL.DEVICE_INVALID_STATE
         currentRow = []
@@ -33,6 +40,7 @@ namespace pxsim.flashlog {
     }
 
     export function logData(key: string, value: string) {
+        ensureV2()
         if (!currentRow)
             return DAL.DEVICE_INVALID_STATE
 
@@ -50,6 +58,7 @@ namespace pxsim.flashlog {
     }
 
     export function endRow(): number {
+        ensureV2()
         if (!currentRow)
             return DAL.DEVICE_INVALID_STATE
         const line = currentRow.join(SEPARATOR)
@@ -59,18 +68,21 @@ namespace pxsim.flashlog {
     }
 
     export function logString(s: string) {
+        ensureV2()
         if (!s) return
 
         commitRow(s)
     }
 
     export function clear() {
+        ensureV2()
         rows = []
         headers = []
         currentRow = undefined;
     }
 
     export function setTimeStamp(format: number) {
+        ensureV2()
         // this option is probably not serialized, needs to move in state
         timestampFormat = format
     }
