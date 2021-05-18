@@ -3,7 +3,9 @@
     "description": "Data logging to flash.",
     "files": [
         "README.md",
-        "flashlog.cpp"
+        "flashlog.cpp",
+        "shims.d.ts",
+        "enums.d.ts"
     ],
     "icon": "./static/packages/datalog/icon.png",
     "public": true,
