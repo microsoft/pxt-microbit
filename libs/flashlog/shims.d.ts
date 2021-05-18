@@ -23,7 +23,7 @@ declare namespace flashlog {
     //% parts="flashlog"
     //% blockGap=8
     //% group="micro:bit (V2)" shim=flashlog::logData
-    function logData(key: ManagedString, value: ManagedString): int32;
+    function logData(key: string, value: string): int32;
 
     /**
      * Inject the given row into the log as text, ignoring key/value pairs.
@@ -32,7 +32,7 @@ declare namespace flashlog {
     //% parts="flashlog"
     //% blockGap=8
     //% group="micro:bit (V2)" shim=flashlog::logString
-    function logString(value: ManagedString): int32;
+    function logString(value: string): int32;
 
     /**
      * Complete a row in the log, and pushes to persistent storage.

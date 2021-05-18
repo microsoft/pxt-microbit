@@ -7,7 +7,6 @@
         "shims.d.ts",
         "enums.d.ts"
     ],
-    "icon": "./static/packages/datalog/icon.png",
     "public": true,
     "disablesVariants": [
         "mbdal"

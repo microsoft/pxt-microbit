@@ -1,4 +1,5 @@
 // Auto-generated. Do not edit.
+declare namespace flashlog {
 
 
     /**
@@ -20,7 +21,6 @@
     //% bock="days"
     Days = 864000,
     }
-declare namespace flashlog {
 }
 
 // Auto-generated. Do not edit. Really.

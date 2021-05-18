@@ -5,6 +5,12 @@
 #endif
 
 /**
+ * Storing structured data in flash.
+ */
+//%
+namespace flashlog {
+
+/**
 * Flash log timestamp format
 **/
 enum class TimeStampFormat
@@ -21,13 +27,7 @@ enum class TimeStampFormat
     Hours = 36000,
     //% bock="days"
     Days = 864000
-};
-
-/**
- * Storing structured data in flash.
- */
-//%
-namespace flashlog {
+};    
 
 /**
 * Creates a new row in the log, ready to be populated by logData()
@@ -51,7 +51,7 @@ int beginRow() {
 //% parts="flashlog"
 //% blockGap=8
 //% group="micro:bit (V2)"
-int logData(ManagedString key, ManagedString value) {
+int logData(String key, String value) {
 #if MICROBIT_CODAL
     return uBit.log.logData(key, value);
 #else
@@ -66,7 +66,7 @@ int logData(ManagedString key, ManagedString value) {
 //% parts="flashlog"
 //% blockGap=8
 //% group="micro:bit (V2)"
-int logString(ManagedString value) {
+int logString(String value) {
 #if MICROBIT_CODAL
     return uBit.log.logString(value);
 #else
@@ -115,7 +115,7 @@ void clear() {
 //% group="micro:bit (V2)"
 void setTimeStamp(TimeStampFormat format) {
 #if MICROBIT_CODAL
-    return uBit.log.setTimeStamp(format);
+    return uBit.log.setTimeStamp((codal::TimeStampFormat)format);
 #endif
 }
 
