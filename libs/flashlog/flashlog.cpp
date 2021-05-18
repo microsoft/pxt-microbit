@@ -9,36 +9,45 @@ namespace flashlog {
 /**
 * Creates a new row in the log, ready to be populated by logData()
 **/
-//%
+//% help=flashlog/begin-row
+//% parts="flashlog"
+//% blockGap=8
+//% group="micro:bit (V2)"
 int beginRow() {
 #if MICROBIT_CODAL
-    return uBit.log.beginRow()
+    return uBit.log.beginRow();
 #else
-    return DEVICE_NOT_SUPPORTED
+    return DEVICE_NOT_SUPPORTED;
 #endif
 }
 
 /**
 * Populates the current row with the given key/value pair.
 **/
-//%
+//% help=flashlog/log-data
+//% parts="flashlog"
+//% blockGap=8
+//% group="micro:bit (V2)"
 int logData(ManagedString key, ManagedString value) {
 #if MICROBIT_CODAL
-    return uBit.log.logData(key, value)
+    return uBit.log.logData(key, value);
 #else
-    return DEVICE_NOT_SUPPORTED
+    return DEVICE_NOT_SUPPORTED;
 #endif
 }
 
 /**
-* Populates the current row with the given key/value pair.
+* Complete a row in the log, and pushes to persistent storage.
 **/
-//%
+//% help=flashlog/end-row
+//% parts="flashlog"
+//% blockGap=8
+//% group="micro:bit (V2)"
 int endRow() {
 #if MICROBIT_CODAL
-    return uBit.log.endRow()
+    return uBit.log.endRow();
 #else
-    return DEVICE_NOT_SUPPORTED
+    return DEVICE_NOT_SUPPORTED;
 #endif
 }
 
