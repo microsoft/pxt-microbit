@@ -7,7 +7,7 @@ to detect the amount of light.
 
 ## Save a reading
 
-Create a variable, ``||variables:reading||``, to set to the current ``||input:light level||`` inside the ``||loops:forever||`` loop.
+Create a variable, ``||variables:reading||``, to set to the current ``||input:light level||`` inside the ``||basic:forever||`` loop.
 
 ```blocks
 let reading = 0

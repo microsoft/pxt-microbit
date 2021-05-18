@@ -49,7 +49,7 @@ Here are some cool tutorials to get you started with your @boardname@!
   "cardType": "tutorial",
   "youTubeId": "BgDxz3M7JIM",
   "otherActions": [{
-    "url": "/projects/spy/smiley-buttons",
+    "url": "/projects/python/smiley-buttons",
     "editor": "py",
     "cardType": "tutorial"
   }, {

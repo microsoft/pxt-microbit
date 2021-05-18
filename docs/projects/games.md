@@ -77,6 +77,7 @@ Fun games to build with your @boardname@.
   "description": "Try to guess words with your friends!",
   "imageUrl": "/static/mb/projects/heads-guess.png",
   "cardType": "tutorial",
+  "youTubeId": "WgMj1AT2G38",
   "otherActions": [{
     "url": "/projects/spy/heads-guess",
     "editor": "py",
@@ -97,6 +98,7 @@ Fun games to build with your @boardname@.
   "description": "Button smashing rope pulling games using LEDs",
   "imageUrl":"/static/mb/projects/tug-of-led.png",
   "cardType": "tutorial",
+  "youTubeId": "oZrvVB4cGWU",
   "otherActions": [{
     "url": "/projects/spy/tug-of-led",
     "editor": "py",
@@ -117,6 +119,7 @@ Fun games to build with your @boardname@.
   "description": "Use the game blocks to create a skill game",
   "imageUrl": "/static/mb/projects/snap-the-dot.png",
   "cardType": "tutorial",
+  "youTubeId": "ew15T97VrF4",
   "otherActions": [{
     "url": "/projects/spy/snap-the-dot",
     "editor": "py",
