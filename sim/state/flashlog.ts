@@ -5,6 +5,20 @@ namespace pxsim.flashlog {
     let currentRow: string[] = undefined
     let SEPARATOR = ","
 
+    function commitRow(row: string) {
+        rows.push(row)
+        // TODO: maybe do something better here
+        // send data to simulator
+        if (runtime) {
+            Runtime.postMessage(<SimulatorSerialMessage>{
+                type: 'serial',
+                data: row,
+                id: runtime.id,
+                sim: true
+            })
+        }
+    }
+
     export function beginRow(): number {
         if (currentRow)
             return DAL.DEVICE_INVALID_STATE
@@ -32,15 +46,16 @@ namespace pxsim.flashlog {
     export function endRow(): number {
         if (!currentRow)
             return DAL.DEVICE_INVALID_STATE
-        rows.push(currentRow.join(SEPARATOR))
+        const line = currentRow.join(SEPARATOR)
         currentRow = undefined
+        commitRow(line)
         return DAL.DEVICE_OK
     }
 
     export function logString(s: string) {
         if (!s) return
 
-        rows.push(s)
+        commitRow(s)
     }
 
     export function clear() {

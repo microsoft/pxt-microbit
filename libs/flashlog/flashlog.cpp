@@ -45,7 +45,7 @@ int logData(ManagedString key, ManagedString value) {
 //% group="micro:bit (V2)"
 int logString(ManagedString value) {
 #if MICROBIT_CODAL
-    return uBit.log.logData(key, value);
+    return uBit.log.logString(value);
 #else
     return DEVICE_NOT_SUPPORTED;
 #endif
