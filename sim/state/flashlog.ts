@@ -12,7 +12,7 @@ namespace pxsim.flashlog {
         if (runtime) {
             Runtime.postMessage(<SimulatorSerialMessage>{
                 type: 'serial',
-                data: row,
+                data: row + '\n',
                 id: runtime.id,
                 sim: true
             })
