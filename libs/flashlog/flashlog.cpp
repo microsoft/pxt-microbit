@@ -4,6 +4,10 @@
 #include "MicroBitLog.h"
 #endif
 
+/**
+ * Storing structured data in flash.
+ */
+//%
 namespace flashlog {
 
 /**
