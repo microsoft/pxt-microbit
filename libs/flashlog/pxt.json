@@ -7,6 +7,9 @@
         "shims.d.ts",
         "enums.d.ts"
     ],
+    "testFiles": [
+        "test.ts"
+    ],
     "public": true,
     "disablesVariants": [
         "mbdal"

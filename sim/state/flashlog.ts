@@ -1,22 +1,28 @@
 namespace pxsim.flashlog {
     // we don't store the flash log in the runtime object, since it's persistent
     let headers: string[] = []
-    let rows: string[] = []
+    let rows: {
+        text: string,
+        timestamp: number
+    }[] = []
     let currentRow: string[] = undefined
     let SEPARATOR = ","
+    let timestampFormat: number = undefined
 
-    function commitRow(row: string) {
-        rows.push(row)
+    function commitRow(text: string) {
+        if (!runtime) return;
+
+        const timestamp = runtime.runningTime()
+        rows.push({ text, timestamp })
         // TODO: maybe do something better here
         // send data to simulator
-        if (runtime) {
-            Runtime.postMessage(<SimulatorSerialMessage>{
-                type: 'serial',
-                data: row + '\n',
-                id: runtime.id,
-                sim: true
-            })
-        }
+        const data = `${text}${timestampFormat ? `${SEPARATOR}${(timestamp / timestampFormat)}` : ""}\n`;
+        Runtime.postMessage(<SimulatorSerialMessage>{
+            type: 'serial',
+            data,
+            id: runtime.id,
+            sim: true
+        })
     }
 
     export function beginRow(): number {
@@ -62,5 +68,10 @@ namespace pxsim.flashlog {
         rows = []
         headers = []
         currentRow = undefined;
+    }
+
+    export function setTimeStamp(format: number) {
+        // this option is probably not serialized, needs to move in state
+        timestampFormat = format
     }
 }

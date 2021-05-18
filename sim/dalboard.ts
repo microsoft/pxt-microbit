@@ -139,6 +139,7 @@ namespace pxsim {
                 "microphone": true, 
                 "logotouch": true, 
                 "builtinspeaker": true,
+                "flashlog": true,
                 "v2": true
             };
             if (msg.builtinParts) {
