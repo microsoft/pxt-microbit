@@ -1,12 +1,7 @@
 // Auto-generated. Do not edit.
-declare namespace flashlog {
 
 
-    /**
-     * Flash log timestamp format
-     **/
-
-    declare const enum TimeStampFormat
+    declare const enum FlashLogTimeStampFormat
     {
     //% block="none"
     None = 0,
@@ -21,6 +16,7 @@ declare namespace flashlog {
     //% bock="days"
     Days = 864000,
     }
+declare namespace flashlog {
 }
 
 // Auto-generated. Do not edit. Really.

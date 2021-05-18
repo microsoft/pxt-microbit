@@ -4,16 +4,7 @@
 #include "MicroBitLog.h"
 #endif
 
-/**
- * Storing structured data in flash.
- */
-//%
-namespace flashlog {
-
-/**
-* Flash log timestamp format
-**/
-enum class TimeStampFormat
+enum class FlashLogTimeStampFormat
 {
     //% block="none"
     None = 0,
@@ -27,7 +18,13 @@ enum class TimeStampFormat
     Hours = 36000,
     //% bock="days"
     Days = 864000
-};    
+};  
+
+/**
+ * Storing structured data in flash.
+ */
+//%
+namespace flashlog {  
 
 /**
 * Creates a new row in the log, ready to be populated by logData()
@@ -117,7 +114,7 @@ void clear() {
 //% parts="flashlog"
 //% blockGap=8
 //% group="micro:bit (V2)"
-void setTimeStamp(TimeStampFormat format) {
+void setTimeStamp(FlashLogTimeStampFormat format) {
 #if MICROBIT_CODAL
     return uBit.log.setTimeStamp((codal::TimeStampFormat)format);
 #endif

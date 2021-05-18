@@ -63,7 +63,7 @@ declare namespace flashlog {
     //% parts="flashlog"
     //% blockGap=8
     //% group="micro:bit (V2)" shim=flashlog::setTimeStamp
-    function setTimeStamp(format: TimeStampFormat): void;
+    function setTimeStamp(format: FlashLogTimeStampFormat): void;
 }
 
 // Auto-generated. Do not edit. Really.
