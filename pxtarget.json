@@ -13,7 +13,8 @@
         "libs/servo",
         "libs/radio-broadcast",
         "libs/microphone",
-        "libs/settings"
+        "libs/settings",
+        "libs/flashlog"
     ],
     "cloud": {
         "workspace": false,

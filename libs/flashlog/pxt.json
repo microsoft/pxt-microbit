@@ -1,0 +1,16 @@
+{
+    "name": "flashlog",
+    "description": "Data logging to flash.",
+    "files": [
+        "README.md",
+        "flashlog.cpp"
+    ],
+    "icon": "./static/packages/datalog/icon.png",
+    "public": true,
+    "disablesVariants": [
+        "mbdal"
+    ],    
+    "dependencies": {
+        "core": "file:../core"
+    }
+}
