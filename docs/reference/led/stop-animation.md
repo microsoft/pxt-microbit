@@ -29,4 +29,4 @@ to go.
 
 ## See Also
 
-[show animation](/reference/basic/show-animation)
+[show leds](/reference/basic/show-leds), [show icon](/reference/basic/show-icon), [plot](/reference/led/plot)
