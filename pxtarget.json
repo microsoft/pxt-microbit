@@ -568,7 +568,25 @@
         "openProjectNewTab": true,
         "python": true,
         "appFlashingTroubleshoot": "/device/windows-app/troubleshoot",
-        "immersiveReader": true
+        "immersiveReader": true,
+        "downloadDialogTheme": {
+            "webUSBDeviceNames": ["BBC micro:bit CMSIS-DAP", "DAPLink CMSIS-DAP"],
+            "minimumFirmwareVersion": "0249",
+            "deviceIcon": "xicon microbit",
+            "deviceSuccessIcon": "xicon microbit-check",
+
+            "downloadMenuHelpURL" : "/device/usb/troubleshoot",
+            "downloadHelpURL" : "/device/usb/troubleshoot",
+            "firmwareHelpURL": "/device/usb/webusb/troubleshoot",
+            "troubleshootWebUSBHelpURL": "/device/usb/webusb/troubleshoot",
+
+            "dragFileImage": "/static/download/transfer.png",
+            "connectDeviceImage": "/static/download/connect.png",
+            "selectDeviceImage": "/static/download/pair.png",
+            "connectionSuccessImage": "/static/download/firmware.png",
+            "checkFirmwareVersionImage": "/static/download/transfer.png",
+            "checkUSBCableImage": "/static/download/connect.png"
+        }
     },
     "queryVariants": {
         "hidemenu": {
