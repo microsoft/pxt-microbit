@@ -364,7 +364,7 @@
             "description": "New? Start here!",
             "cardType": "tutorial"
         },
-        "homeScreenHeroGallery": "/tutorials",
+        "homeScreenHeroGallery": "/hero-banner",
         "homeUrl": "https://makecode.microbit.org/",
         "embedUrl": "https://makecode.microbit.org/",
         "shareUrl": "https://makecode.microbit.org/",
