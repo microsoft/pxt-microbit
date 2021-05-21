@@ -2,7 +2,7 @@
 
 Here are some cool activities to get you started with your @boardname@!
 
-## Basic
+## Intro Content
 
 ### ~ codecard
 * name: Intro to micro:bit
@@ -27,7 +27,3 @@ Here are some cool activities to get you started with your @boardname@!
 * imageUrl: /static/mb/projects/soilmoisture.jpg
 * url: /projects/soil-moisture
 ### ~
-
-
-
-* youTubeId: qqBmvHD5bCw
