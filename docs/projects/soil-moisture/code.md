@@ -47,8 +47,17 @@ basic.forever(() => {
 
 ### Experiment!
 
-* Insert the nails in the dry dirt, press **A** and note the value. You should see a value close to around ``250``for dry dirt.
-* Insert the nails in the wet dirt, press **A** and note the value. You should see a value somewhere near ``1000`` for wet dirt.
+Test and record the **P0** input values for both very dry dirt and for dirt that is wet. This will let you know the what the moisture scale of your meter is. The dry soil will have a low value and the wet soil will have a higher value.
+
+1. Insert the nails in the dry dirt, press **A** and record the value.
+2. Insert the nails in the wet dirt, press **A** and record the value.
+
+Here's an example test table of results for very dry and wet dirt using both versions of the @boardname@:
+
+| Soil | micro:bit V1 | micro:bit V2 |
+|---|---|---|
+| Dry | 250 | 600 |
+| Wet | 1000 | 1000 |
 
 <br/>
 https://youtu.be/S8NppVT_paw
