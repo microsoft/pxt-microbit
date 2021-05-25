@@ -581,8 +581,8 @@
             "deviceIcon": "xicon microbit",
             "deviceSuccessIcon": "xicon microbit-check",
 
-            "downloadMenuHelpURL" : "/device/usb/troubleshoot",
-            "downloadHelpURL" : "/device/usb/troubleshoot",
+            "downloadMenuHelpURL" : "/device/usb",
+            "downloadHelpURL" : "/device/usb",
             "firmwareHelpURL": "/device/usb/webusb/troubleshoot",
             "troubleshootWebUSBHelpURL": "/device/usb/webusb/troubleshoot",
 
