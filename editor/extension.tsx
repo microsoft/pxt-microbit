@@ -24,21 +24,7 @@ pxt.editor.initExtensionsAsync = function (opts: pxt.editor.ExtensionOptions): P
         };
 
     const res: pxt.editor.ExtensionResult = {
-        hexFileImporters: [{
-            id: "blockly",
-            canImport: data => data.meta.cloudId == "microbit.co.uk" && data.meta.editor == "blockly",
-            importAsync: (project, data) => {
-                pxt.tickEvent('import.legacyblocks.redirect');
-                return dialogs.cantImportAsync(project);
-            }
-        }, {
-            id: "td",
-            canImport: data => data.meta.cloudId == "microbit.co.uk" && data.meta.editor == "touchdevelop",
-            importAsync: (project, data) => {
-                pxt.tickEvent('import.legacytd.redirect');
-                return dialogs.cantImportAsync(project);
-            }
-        }]
+        hexFileImporters: []
     };
 
     pxt.usb.setFilters([{
