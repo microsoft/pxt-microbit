@@ -3,6 +3,7 @@
 Support for additional Bluetooth services.
 
 ## ~hint
+
 ![](/static/bluetooth/Bluetooth_SIG.png)
 
 For another device like a smartphone to use any of the Bluetooth "services" which the @boardname@ has, it must first be [paired with the @boardname@](/reference/bluetooth/bluetooth-pairing). Once paired, the other device may connect to the @boardname@ and exchange data relating to many of the @boardname@'s features.
@@ -34,22 +35,6 @@ bluetooth.uartWriteValue("", 0);
 bluetooth.onUartDataReceived(",", () => {})
 ```
 
-## Eddystone
-
-### ~ reminder
-
-#### Deprecated
-
-These blocks are deprecated. The Eddystone beacon format is no longer supported, see [Google Beacon format (Deprecated)](https://developers.google.com/beacons/eddystone).
-
-### ~
-
-```cards
-bluetooth.advertiseUid(42, 1, 7, true);
-bluetooth.advertiseUrl("https://makecode.microbit.org/", 7, true);
-bluetooth.stopAdvertising();
-```
-
 ## Advanced
  
 For more advanced information on the @boardname@ Bluetooth UART service including information on using a smartphone, see the [Lancaster University @boardname@ runtime technical documentation](http://lancaster-university.github.io/microbit-docs/ble/uart-service/)
@@ -64,9 +49,7 @@ For more advanced information on the @boardname@ Bluetooth UART service includin
 [uartWriteNumber](/reference/bluetooth/uart-write-number), 
 [uartWriteValue](/reference/bluetooth/uart-write-value), 
 [onBluetoothConnected](/reference/bluetooth/on-bluetooth-connected), 
-[onBluetoothDisconnected](/reference/bluetooth/on-bluetooth-disconnected),
-[advertiseUrl](/reference/bluetooth/advertise-url),
-[stopAdvertising](/reference/bluetooth/stop-advertising)
+[onBluetoothDisconnected](/reference/bluetooth/on-bluetooth-disconnected)
 
 ```package
 bluetooth
