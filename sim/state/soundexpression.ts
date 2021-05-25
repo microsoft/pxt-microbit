@@ -1,32 +1,35 @@
 namespace pxsim.music {
+    let synth: SoundEmojiSynthesizer;
+    let soundPromise: Promise<void>;
     //%
     export function __playSoundExpression(notes: string, waitTillDone: boolean): void {
         const cb = getResume();
         const b = board();
         // v2 only...
         b.ensureHardwareVersion(2);
+        if (!synth) synth = new SoundEmojiSynthesizer(0);
+        if (!soundPromise) soundPromise = Promise.resolve();
 
-        notes = builtin.lookupBuiltIn(notes);
+        soundPromise = soundPromise.then(() => {
+            notes = builtin.lookupBuiltIn(notes);
+            const soundEffects = parseSoundEffects(notes);
+            synth.play(soundEffects);
 
-        const soundEffects = parseSoundEffects(notes);
-        const synth = new SoundEmojiSynthesizer(0);
-        synth.play(soundEffects);
+            return AudioContextManager.playPCMBufferStreamAsync(() => {
+                if (!synth.effect) return undefined;
 
-        const p = AudioContextManager.playPCMBufferStreamAsync(() => {
-            if (!synth.effect) return undefined;
-
-            const buff = synth.pull();
-            const arr = new Float32Array(buff.length);
-            for (let i = 0; i < buff.length; i++) {
-                // Buffer is (0, 1023) we need to map it to (-1, 1)
-                arr[i] = ((buff[i] - 512) / 512);
-            }
-            return arr;
-        }, synth.sampleRate, 0.03)
-
+                const buff = synth.pull();
+                const arr = new Float32Array(buff.length);
+                for (let i = 0; i < buff.length; i++) {
+                    // Buffer is (0, 1023) we need to map it to (-1, 1)
+                    arr[i] = ((buff[i] - 512) / 512);
+                }
+                return arr;
+            }, synth.sampleRate, 0.03)
+        })
 
         if (waitTillDone) {
-            p.then(cb, e => {
+            soundPromise = soundPromise.then(cb, e => {
                 console.log(e),
                 cb();
             })
