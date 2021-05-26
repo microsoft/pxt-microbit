@@ -214,7 +214,8 @@
             "4tronix/BitBot",
             "kitronikltd/pxt-kitronik-servo-lite",
             "kitronikltd/pxt-kitronik-motor-driver",
-            "Tinkertanker/pxt-ringbitcar"
+            "Tinkertanker/pxt-ringbitcar",
+            "iBuilds/pxt-PTKidsBIT-Robot"
         ],
         "upgrades": {
             "tinkertanker/pxt-iot-environment-kit": "min:v4.2.1",

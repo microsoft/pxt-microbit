@@ -397,6 +397,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 
 ```codecard
 [{
+  "name": "PTKidsBIT",
+  "url":"/pkg/iBuilds/pxt-PTKidsBIT-Robot",
+  "cardType": "package"
+}, {
   "name": "Finch 2.0",
   "url":"/pkg/BirdBrainTechnologies/pxt-finch",
   "cardType": "package"
