@@ -10,6 +10,7 @@
         "BLEHF2Service.h",
         "BLEHF2Service.cpp"
     ],
+    "weight": 10,
     "icon": "./static/packages/bluetooth/icon.png",
     "public": true,
     "dependencies": {
