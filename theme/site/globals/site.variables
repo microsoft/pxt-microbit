@@ -90,4 +90,3 @@
    Tutorial Code Validation
 ----------------------------*/
 @tutorialCodeValidationCorrectBackground: #cd0365;
-@tutorialCodeValidationCorrectTextColor: @white;
