@@ -80,7 +80,18 @@
             background-color: darken(@mainMenuTutorialBackground, 20%);
         }
     }
+
+    .isValidated {
+        background: @tutorialCodeValidationCorrectBackgroundMicrobit;
+        > i, > span, > i.nextbutton {
+            color: @tutorialCodeValidationCorrectTextColorMicrobit !important;
+        }
+        i.large.icon, i.large.icons{
+            font-size: 1.7em;
+        }
+    }
 }
+
 
 #root:not(.hc) .tutorial-menu {
     .ui.circular.label.selected {
@@ -144,3 +155,4 @@
         }
     }
 }
+
