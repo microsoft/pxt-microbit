@@ -89,5 +89,5 @@
 /*---------------------------
    Tutorial Code Validation
 ----------------------------*/
-@tutorialCodeValidationCorrectBackgroundMicrobit: #cd0365;
-@tutorialCodeValidationCorrectTextColorMicrobit: @white;
+@tutorialCodeValidationCorrectBackground: #cd0365;
+@tutorialCodeValidationCorrectTextColor: @white;
