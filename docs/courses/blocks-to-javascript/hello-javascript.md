@@ -165,6 +165,6 @@ basic.forever(function () {
 
 ## ~ avatar
 
-Well done! You've just coded using a "text programming" language! Starting from blocks, you learned to convert them to JavaScript and then modify the code in the blocks as text. Wow, you're a pro now! Go back to [Blocks To JavaScript](/projects/blocks-to-javascript) to continue with another challenge.
+Well done! You've just coded using a "text programming" language! Starting from blocks, you learned to convert them to JavaScript and then modify the code in the blocks as text. Wow, you're a pro now! Go back to [Blocks To JavaScript](/courses/blocks-to-javascript) to continue with another challenge.
 
 ## ~
