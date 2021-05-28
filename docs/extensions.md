@@ -707,6 +707,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 
 ```codecard
 [{
+  "name": "4tronix EggBit",
+  "url":"/pkg/4tronix/EggBit",
+  "cardType": "package"
+}, {
   "name": "Bright Wearables Bright Board",
   "url":"/pkg/BrightWearables/pxt-microbit-brightboard",
   "cardType": "package"
