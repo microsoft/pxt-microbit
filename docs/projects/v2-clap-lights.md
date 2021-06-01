@@ -142,7 +142,7 @@ input.setSoundThreshold(SoundThreshold.Loud, 128)
 
 ## Testing in the simulator
 
-💡 **Let's test what you've created!** 💡
+💡 **Let's test what you've created** 💡
 <br/>
 <br/>
 Check out the simulator!

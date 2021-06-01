@@ -228,7 +228,7 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
 
 ## Testing in the simulator
 
-Let's test what you've created! 👀
+👀 **Let's test what you've created** 👀
 
 ---
 
