@@ -243,6 +243,8 @@ Let's test what you've created! 👀
 &nbsp;&nbsp;&nbsp;&nbsp; **Long press** the logo (count to 3!) to send a dash to your second @boardname@.
 <br/>
 &nbsp;&nbsp; 🎵 Turn up the sound to hear the tone being played! 🎵
+<br/>
+► If you own multiple new @boardname@s, you can download this code and try it out!
 
 ```blocks
 radio.onReceivedNumber(function (receivedNumber) {
