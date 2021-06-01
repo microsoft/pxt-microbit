@@ -6,7 +6,7 @@ The new @boardname@s have a microphone! 🎤 Let's learn how switch your new @bo
 
 ## Setting up the sound input
 
-Let's begin by setting up your workspace! For this program, we want to trigger lights when your @boardname@ with sound hears a noise.
+Let's begin by setting up your workspace! For this program, we want to trigger lights when your @boardname@ hears a noise.
 
 ---
 
@@ -20,7 +20,7 @@ input.onSound(DetectedSound.Loud, function () {
 
 ## Creating a lightsOn variable
 
-Now, let's create a variable that keeps track of if your new @boardname@'s LEDs should be on or off!
+Now, let's create a variable that keeps track of if your new @boardname@'s LEDs should be on or off.
 
 ---
 
@@ -39,7 +39,7 @@ input.onSound(DetectedSound.Loud, function () {
 
 ## Setting the lightsOn variable
 
-The ``lightsOn`` variable is a [__*boolean*__](#boolean "has one of two possible values: true or false") variable. Boolean logic is a fundamental building block of computer hardware and software. This tutorial will provide an example of how useful this kind of variable can be.
+``lightsOn`` is a [__*boolean*__](#boolean "has one of two possible values: true or false") variable. Boolean logic is a fundamental building block of computer hardware and software. This tutorial will provide an example of how useful this kind of variable can be.
 
 ---
 
@@ -47,7 +47,7 @@ The ``lightsOn`` variable is a [__*boolean*__](#boolean "has one of two possible
 <br/>
 ► From ``||variables:Variables||``, locate the ``||variables:lights on||`` variable and put it into the ``||logic:not||`` operator
 <br/>
-&nbsp;&nbsp; 💡 This means that, whenever your @boardname@ hears a loud sound, it will flip the value of your ``lightsOn`` variable from ``true`` to ``false`` or vice versa!
+&nbsp;&nbsp; 💡 This means that, whenever your @boardname@ hears a loud sound, it will flip the value of your ``lightsOn`` variable: from ``true`` to ``false`` or vice versa!
 
 ```blocks
 let lightsOn = false
@@ -58,13 +58,13 @@ input.onSound(DetectedSound.Loud, function () {
 
 ## Displaying LEDs part 1
 
-The next step is to set up an [__*if then else*__](#ifthenelse "runs some code if a boolean condition is true and different code if the condition is false") conditional statement so you can tell your @boardname@ what to do based on if the lights are on or off. 🔆
+The next step is to set up an [__*if then else*__](#ifthenelse "runs some code if a boolean condition is true and different code if the condition is false") conditional statement so you can tell your @boardname@ what to do based on if the lights are on or off 🔆
 
 ---
 
-► Grab an ``||logic:if [true] then...else||`` block and place it at the end of your ``||input:on [loud] sound||`` container.
+► From the ``||logic:Logic||`` category, grab an ``||logic:if [true] then...else||`` block and place it at the end of your ``||input:on [loud] sound||`` container.
 <br/>
-► Look in the ``||variables:Variables||`` category and drag the ``||variables:lightsOn||`` variable to replace the ``||logic:[true]||`` argument in your ``||logic:if [true] then...else||`` block.
+► Look in the ``||variables:Variables||`` category and drag the ``||variables:lightsOn||`` variable to replace the ``||logic:[true]||`` argument in your ``||logic:if then...else||`` block.
 󠀢<br/>
 &nbsp;&nbsp; 💡 Because ``lightsOn`` is a Boolean variable, it can be an argument for an ``if`` statement!
 <br/>
@@ -149,7 +149,7 @@ Check out the simulator!
 <br/>
 ► Click on the pink bar underneath the microphone icon 🎤. Drag it up and down. Every time you drag it above the loud sound threshold that you have set, your LEDs will turn on if they are off and vice versa 💡
 <br/>
-► If you own a new @boardname@, you can download this code onto it and try it out! Play with your sound threshold so that every time you clap, your LEDs will turn on if they are off and vice versa 👏
+► If you own a new @boardname@, you can download this code onto it and try it out! Try to set your sound threshold so that every time you clap, your LEDs will turn on if they are off and vice versa 👏
 
 ```blocks
 let lightsOn = false
