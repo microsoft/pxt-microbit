@@ -585,6 +585,7 @@
             "downloadHelpURL" : "/device/usb",
             "firmwareHelpURL": "/device/usb/webusb/troubleshoot",
             "troubleshootWebUSBHelpURL": "/device/usb/webusb/troubleshoot",
+            "incompatibleHardwareHelpURL": "/device/v2",
 
             "dragFileImage": "/static/download/transfer.png",
             "connectDeviceImage": "/static/download/connect.png",

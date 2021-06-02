@@ -16,6 +16,7 @@ class SoundExpression {
     //% blockGap=8
     //% help=music/play
     //% group="micro:bit (V2)"
+    //% parts=builtinspeaker
     play() {
         music.__playSoundExpression(this.notes, false)
     }
@@ -28,6 +29,7 @@ class SoundExpression {
     //% blockGap=8
     //% help=music/play-until-done
     //% group="micro:bit (V2)"
+    //% parts=builtinspeaker
     playUntilDone() {
         music.__playSoundExpression(this.notes, true)
     }

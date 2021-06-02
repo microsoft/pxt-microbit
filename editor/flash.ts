@@ -218,6 +218,13 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
         return (this.usesCODAL ? "mbcodal-" : "mbdal-") + pxtc.BINARY_HEX;
     }
 
+    unsupportedParts() {
+        if (!this.usesCODAL) {
+            return ["logotouch", "builtinspeaker", "microphone", "flashlog"]
+        }
+        return [];
+    }
+
     async reconnectAsync(): Promise<void> {
         log(`reconnect`)
         this.flashAborted = false;
