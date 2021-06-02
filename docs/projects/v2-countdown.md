@@ -35,7 +35,7 @@ Every time our loop runs, we want to play a tone. 🎵
 <br/>
 &nbsp;&nbsp; 💡 Your simulator might start playing music. You can mute it if distracting.
 <br/>
-► 1 beat is a little long. Set your block to play ``Middle C`` for ``1/4 beat``.
+► 1 beat is a little long. Set your block to play for ``1/4 beat``.
 
 ```blocks
 for (let index = 0; index <= 2; index++) {
@@ -49,7 +49,7 @@ With every tone, we also want to display our countdown. 🔢
 
 ---
 
-► From the ``||basic:Basic||`` category, find the ``||basic:show number [0]||`` block and put it at the end of your loop block.
+► From the ``||basic:Basic||`` category, find the ``||basic:show number [0]||`` block and put it at the end of your loop.
 <br/>
 ► We want the number to change every time the loop runs. Drag the ``||variables:index||`` variable from the ``||loops:for||`` loop and use it as your ``||basic:show number||`` input.
 
@@ -66,7 +66,7 @@ If you take a look at your simulator, you will notice the LEDs flashing 0-1-2. W
 
 ---
 
-► From the ``||math:Math||`` category, find the ``||math:[0] - [0]||`` operation and put it at the end of your loop block.
+► From the ``||math:Math||`` category, find the ``||math:[0] - [0]||`` operation and use it to replace the ``index`` variable in the ``||basic:show number [index]||`` block.
 <br/>
 ► Pick up the displaced ``||variables:index||`` variable and set the subtraction to be ``||math:[3] - [index]||``.
 <br/>
@@ -103,11 +103,13 @@ The last thing we need to do is add a sound for the "GO!" 🕬
 
 ---
 
-► From the ``||music:Music||`` category, grab the ``||music:play tone [Middle C] for [1 beat]||`` block and place it before your ``||basic:show string||`` block.
+► From the ``||music:Music||`` category, grab the ``||music:play tone [Middle C] for [1 beat]||`` block and place it before your ``||basic:show string ["GO!"]||`` block.
 <br/>
 &nbsp;&nbsp; 💡 If you put this after, your @boardname@ will finish showing the string before playing any sound.
 <br/>
 ► Set the tone to be ``Middle G``.
+<br/>
+&nbsp;&nbsp; 💡 ``Middle G`` is also tone ``392``.
 
 ```blocks
 for (let index = 0; index <= 2; index++) {
