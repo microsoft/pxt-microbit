@@ -12,7 +12,9 @@ For this tutorial, we will create a "pet rock" whose mood changes depending on i
 
 ## Cyrus's duck face
 
-Meet your new pet rock, Cyrus. Cyrus likes to make duck faces. Let's set up Cyrus's duck face! 🦆😏
+👋 Meet your new pet rock, Cyrus 👋
+<br/>
+Cyrus likes to make duck faces. Let's set up Cyrus's duck face! 🦆😏
 
 ---
 
@@ -26,7 +28,7 @@ basic.showIcon(IconNames.Surprised)
 
 ## Dizzy Cyrus
 
-Whenever Cyrus is shaked, they get confused and dizzy 😵‍💫
+Whenever Cyrus is shaken, they get confused and dizzy 😵‍💫
 
 ---
 
@@ -35,6 +37,8 @@ Whenever Cyrus is shaked, they get confused and dizzy 😵‍💫
 ► Place a ``||basic:show icon [ ]||`` block into your ``||input:on [shake]||`` container.
 <br/>
 ► Set the icon (Cyrus's face) to confused.
+<br/>
+&nbsp;&nbsp; 💡 In the ``show icon`` dropdown menu options, if you hover over them, you can see what they're called!
 
 ```blocks
 input.onGesture(Gesture.Shake, function () {
@@ -45,7 +49,7 @@ basic.showIcon(IconNames.Surprised)
 
 ## Giggly Cyrus
 
-When Cyrus's logo is pressed, it tickles! 😹
+When Cyrus's logo is pressed, it tickles 😹
 
 ---
 
@@ -75,7 +79,7 @@ Let's add some noises to complement Cyrus's feelings 🎶
 <br/>
 ► Drag another or copy the ``||music:play sound [giggle] until done||`` block and add it to the end of your ``||input:on logo [pressed]||`` container.
 <br/>
-► Set it so Cyrus plays sound ``mysterious`` until done getting shaken. It already makes sense that Cyrus giggles when tickled.
+► Set it so Cyrus plays a ``mysterious`` sound when shaken.
 
 ```blocks
 input.onGesture(Gesture.Shake, function () {
@@ -95,11 +99,14 @@ Right now, Cyrus stays mad even after they are shaken and also continues to be t
 
 ---
 
-► Copy Cyrus's duck face from the ``||basic:on start||`` container.
+► Duplicate Cyrus's duck face ``||basic:show icon||`` block from the ``||basic:on start||`` container.
 <br/>
-► Paste one and attach it to the end of your ``||input:on [shake]||`` container.
+&nbsp;&nbsp; 💡 **Right click > duplicate** to duplicate the duck face.
 <br/>
-► Paste another and attach it to the end of your ``||input:on logo [pressed]||`` container.
+
+► Place your copied duck face into the end of your ``||input:on [shake]||`` container.
+<br/>
+► Duplicate the face again and this time attach it to the end of your ``||input:on logo [pressed]||`` container.
 
 ```blocks
 input.onGesture(Gesture.Shake, function () {
@@ -122,9 +129,7 @@ basic.showIcon(IconNames.Surprised)
 <br/>
 Check out the simulator, and make sure your speakers are on 🔊
 <br/>
-<br/>
 Shake or press Cyrus's logo to see how they interact with you!
-<br/>
 <br/>
 If you own a new @boardname@, you can download this code and try it out 🥳
 
