@@ -5,10 +5,10 @@
 Have you ever had a pet rock? Now, you can have a pet rock that can make noise 🐵🔊
 <br/>
 <br/>
-Let's learn how to code one!
+One of the new @boardname@ features is a capacitive touch sensor (a bit like your phone!). This sensor is the logo button on your @boardname@.
 <br/>
 <br/>
-For this tutorial, we will create a "pet rock" whose mood changes depending on if you shake them or press their logo
+For this tutorial, we will create a "pet rock" whose mood changes depending on if you shake them or press their logo.
 
 ## Cyrus's duck face
 
