@@ -103,7 +103,6 @@ Right now, Cyrus stays mad even after they are shaken and also continues to be t
 <br/>
 &nbsp;&nbsp; 💡 **Right click > duplicate** to duplicate the duck face.
 <br/>
-
 ► Place your copied duck face into the end of your ``||input:on [shake]||`` container.
 <br/>
 ► Duplicate the face again and this time attach it to the end of your ``||input:on logo [pressed]||`` container.
