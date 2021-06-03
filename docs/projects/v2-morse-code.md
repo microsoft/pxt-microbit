@@ -43,7 +43,9 @@ Now, we need to help your @boardname@ distinguish between if it is sending a dot
 <br/>
 ► Set the number to be ``1``.
 <br/>
-► Drag another ``||radio:radio send number [0]||`` block into your ``||input:on logo [pressed]||`` container.
+► Drag another ``||radio:radio send number [0]||`` block and, this time, place it into your ``||input:on logo [pressed]||`` container.
+<br/>
+&nbsp;&nbsp; 💡 We want the two numbers to be different so we can distinguish between them later.
 
 ```blocks
 input.onLogoEvent(TouchButtonEvent.LongPressed, function () {
@@ -108,7 +110,7 @@ The next step is to have your @boardname@ display the symbol it has received. �
 
 ---
 
-► Grab an ``||basic:show leds||`` block and place it in your ``||logic:if then||`` section.
+► We want to display a dash if the logo is pressed. Grab an ``||basic:show leds||`` block and place it in your ``||logic:if then||`` section.
 <br/>
 ► Set the LEDs to be a dot: .
 󠀢<br/>
@@ -150,9 +152,11 @@ The new @boardname@s have built-in speakers! Let's use them to play a sound that
 
 ---
 
-► From the ``||music:Music||`` category, drag a ``||music:play tone [Middle C] for [1 beat]||`` into the end of both the  ``||logic:if then||`` and  ``||logic:else||`` sections.
+► From the ``||music:Music||`` category, drag a ``||music:play tone [Middle C] for [1 beat]||`` into the end of the  ``||logic:if then||`` section.
 <br/>
-► Dots are shorter than dashes! In the ``||logic:if then||`` section, set the tone to play for ``1/4 beat``.
+► Dots are shorter than dashes! Set the tone to play for ``1/4 beat``.
+<br/>
+► Get another ``||music:play tone [Middle C] for [1 beat]||`` and place it at the end of the  ``||logic:else||`` section. You can leave this to be 1 beat.
 
 ```blocks
 radio.onReceivedNumber(function (receivedNumber) {
@@ -186,7 +190,7 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
 
 ## Clearing the screens
 
-As a final step, we want to clear the receiving @boardname@'s LED screens when your messages have finished sending. 🗨️
+As a final step, we want to clear the receiving @boardname@'s LED screens when your messages have finished sending 🗨️
 
 ---
 
