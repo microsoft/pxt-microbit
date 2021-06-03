@@ -156,7 +156,7 @@ The new @boardname@s have built-in speakers! Let's use them to play a sound that
 <br/>
 ► Dots are shorter than dashes! Set the tone to play for ``1/4 beat``.
 <br/>
-► Get another ``||music:play tone [Middle C] for [1 beat]||`` and place it at the end of the  ``||logic:else||`` section. You can leave this to be 1 beat.
+► Get another ``||music:play tone [Middle C] for [1 beat]||`` and place it at the end of the  ``||logic:else||`` section. You can leave this to be 1 beat long.
 
 ```blocks
 radio.onReceivedNumber(function (receivedNumber) {
