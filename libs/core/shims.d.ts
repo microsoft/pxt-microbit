@@ -396,7 +396,7 @@ declare namespace control {
      * Blocks the current fiber for the given microseconds
      * @param micros number of micro-seconds to wait. eg: 4
      */
-    //% help=control/wait-micros weight=29
+    //% help=control/wait-micros weight=29 async
     //% blockId="control_wait_us" block="wait (µs)%micros" shim=control::waitMicros
     function waitMicros(micros: int32): void;
 
@@ -486,12 +486,6 @@ declare namespace control {
     function dmesgPtr(str: string, ptr: Object): void;
 }
 declare namespace control {
-
-    /**
-     * Dump internal information about a value.
-     */
-    //% shim=control::dmesgValue
-    function dmesgValue(v: any): void;
 
     /**
      * Force GC and dump basic information about heap.
@@ -1012,7 +1006,7 @@ declare namespace serial {
     function writeBuffer(buffer: Buffer): void;
 
     /**
-     * Read multiple characters from the receive buffer. 
+     * Read multiple characters from the receive buffer.
      * If length is positive, pauses until enough characters are present.
      * @param length default buffer length
      */
