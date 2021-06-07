@@ -125,10 +125,11 @@ basic.showString("GO!")
 🚦 **Let's test what you've created** 🚦
 <br/>
 <br/>
-Check out the simulator, and make sure your speakers are on 🔊
+Check out the simulator!
 <br/>
+► Make sure your speakers are on 🔊
 <br/>
-If you own a new @boardname@, you can download this code and try it out!
+► If you own a new @boardname@, you can download this code and try it out!
 
 ```blocks
 for (let index = 0; index <= 2; index++) {
