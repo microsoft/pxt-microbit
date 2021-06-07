@@ -13,7 +13,7 @@
     Minutes = 600,
     //% block="hours"
     Hours = 36000,
-    //% bock="days"
+    //% block="days"
     Days = 864000,
     }
 declare namespace flashlog {

@@ -1,0 +1,3 @@
+{
+  "datalogger.includeTimestamp": "onLogFullHandler = () => {\r\nthrow \"Flash memory full; log failed.\";\r\n// ^^ Maybe aka link to microbit support page?\r\n}"
+}

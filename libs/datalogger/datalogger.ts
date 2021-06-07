@@ -50,6 +50,8 @@ namespace datalogger {
     }
 
     export function setColumns(data: string[]): void {
+        // todo: is this just logData with empty for each value?
+
         // need to test if we need to add timestamp col or if that gets added to column writeline automatically
         // flashlog.logString
     }

@@ -16,15 +16,15 @@ enum class FlashLogTimeStampFormat
     Minutes = 600,
     //% block="hours"
     Hours = 36000,
-    //% bock="days"
+    //% block="days"
     Days = 864000
-};  
+};
 
 /**
  * Storing structured data in flash.
  */
 //%
-namespace flashlog {  
+namespace flashlog {
 
 /**
 * Creates a new row in the log, ready to be populated by logData()
@@ -107,8 +107,8 @@ void clear() {
 * Determines the format of the timestamp data to be added (if any).
 * If requested, time stamps will be automatically added to each row of data
 * as an integer value rounded down to the unit specified.
-* 
-* @param format The format of timestamp to use. 
+*
+* @param format The format of timestamp to use.
 */
 //% help=flashlog/set-timestamp
 //% parts="flashlog"

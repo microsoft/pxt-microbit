@@ -1,0 +1,10 @@
+{
+  "datalogger.createCV|block": "column $column value $value",
+  "datalogger.deleteLog|block": "delete log",
+  "datalogger.includeTimestamp|block": "include timestamp $on||format $format",
+  "datalogger.logData|block": "log data $data",
+  "datalogger.mirrorToSerial|block": "mirror data to serial $on",
+  "datalogger.onLogFull|block": "on log full",
+  "datalogger|block": "Data Logger",
+  "{id:category}Datalogger": "Datalogger"
+}
