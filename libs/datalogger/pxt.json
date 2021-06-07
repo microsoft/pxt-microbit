@@ -1,0 +1,15 @@
+{
+    "name": "datalogger",
+    "description": "Data logging to flash memory.",
+    "files": [
+        "datalogger.ts"
+    ],
+    "public": true,
+    "disablesVariants": [
+        "mbdal"
+    ],
+    "dependencies": {
+        "core": "file:../core",
+        "flashlog": "file:../flashlog"
+    }
+}

@@ -10,10 +10,11 @@
     "testFiles": [
         "test.ts"
     ],
+    "searchOnly": true,
     "public": true,
     "disablesVariants": [
         "mbdal"
-    ],    
+    ],
     "dependencies": {
         "core": "file:../core"
     }

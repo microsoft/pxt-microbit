@@ -14,7 +14,8 @@
         "libs/radio-broadcast",
         "libs/microphone",
         "libs/settings",
-        "libs/flashlog"
+        "libs/flashlog",
+        "libs/datalogger"
     ],
     "cloud": {
         "workspace": false,
