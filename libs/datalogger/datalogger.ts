@@ -42,7 +42,7 @@ namespace datalogger {
                 // if so, we'd probably need to either mirror to serial in codal itself
                 // or add a 'read last row' function to codal, to get order correct
                 // and to get the same timestamp.
-                // TODO: probably drop from sim side? or something of the sort.
+                // TODO: probably drop from sim side or move this to cpp?
             }
         }
 
@@ -50,10 +50,9 @@ namespace datalogger {
     }
 
     export function setColumns(data: string[]): void {
-        // todo: is this just logData with empty for each value?
-
-        // need to test if we need to add timestamp col or if that gets added to column writeline automatically
-        // flashlog.logString
+        if (!data)
+            return;
+        logData(data.map(col => createCV(col, "")));
     }
 
     //% block="delete log"
