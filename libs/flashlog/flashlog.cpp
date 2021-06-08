@@ -99,7 +99,7 @@ int endRow() {
 //% group="micro:bit (V2)"
 void clear() {
 #if MICROBIT_CODAL
-    uBit.log.format();
+    uBit.log.clear();
 #endif
 }
 
