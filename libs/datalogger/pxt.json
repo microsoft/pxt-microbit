@@ -1,6 +1,6 @@
 {
     "name": "datalogger",
-    "description": "Data logging to flash memory.",
+    "description": "Data logging to flash memory",
     "files": [
         "datalogger.ts"
     ],
