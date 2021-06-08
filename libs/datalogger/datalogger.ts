@@ -13,7 +13,7 @@ namespace datalogger {
         initialized = true;
 
         // TODO update dal and drop the nums / use the proper enums
-        control.onEvent(/** DAL.MICROBIT_ID_LOG **/ 44, /** DAL.MICROBIT_LOG_EVT_LOG_FULL **/ 1, () => {
+        control.onEvent(DAL.MICROBIT_ID_LOG, DAL.MICROBIT_LOG_EVT_LOG_FULL, () => {
             if (onLogFullHandler) {
                 onLogFullHandler();
             } else {
@@ -66,10 +66,14 @@ namespace datalogger {
         flashlog.endRow();
     }
 
-    export function setColumns(data: string[]): void {
-        if (!data)
+    //% block="set columns $cols"
+    //% blockId=dataloggersetcolumns
+    //% data.shadow=list_create_with
+    //% weight=70
+    export function setColumns(cols: string[]): void {
+        if (!cols)
             return;
-        logData(data.map(col => createCV(col, "")));
+        logData(cols.map(col => createCV(col, "")));
     }
 
     //% block="delete log"

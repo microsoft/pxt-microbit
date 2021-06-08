@@ -5,6 +5,6 @@
   "datalogger.logData|block": "log data $data",
   "datalogger.mirrorToSerial|block": "mirror data to serial $on",
   "datalogger.onLogFull|block": "on log full",
-  "datalogger|block": "Data Logger",
+  "datalogger.setColumns|block": "set columns $cols",
   "{id:category}Datalogger": "Datalogger"
 }
