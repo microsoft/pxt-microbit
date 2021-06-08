@@ -6,7 +6,6 @@
  */
 //% color=#1E90FF weight=116 icon="\uf00a"
 namespace basic {
-
     /**
      * Draws an image on the LED screen.
      * @param leds the pattern of LED to turn on/off
