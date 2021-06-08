@@ -6,6 +6,22 @@ namespace datalogger {
     let _mirrorToSerial = true;
     let _timestampFormat= FlashLogTimeStampFormat.None;
 
+    let initialized = false;
+    function init() {
+        if (initialized)
+            return;
+        initialized = true;
+
+        // TODO update dal and drop the nums / use the proper enums
+        control.onEvent(/** DAL.MICROBIT_ID_LOG **/ 44, /** DAL.MICROBIT_LOG_EVT_LOG_FULL **/ 1, () => {
+            if (onLogFullHandler) {
+                onLogFullHandler();
+            } else {
+                throw "Flash memory full; log failed.";
+            }
+        });
+
+    }
     export class ColumnValue {
         constructor(
             public column: string,
@@ -31,6 +47,7 @@ namespace datalogger {
     export function logData(data: ColumnValue[]): void {
         if (!data || !data.length)
             return;
+        init();
 
         flashlog.beginRow();
 
@@ -68,15 +85,6 @@ namespace datalogger {
     export function onLogFull(handler: () => void): void {
         onLogFullHandler = handler;
     }
-
-    // when api is available in codal
-    /**
-     * onLogFullHandler = () => {
-     *     throw "Flash memory full; log failed.";
-     *     // ^^ Maybe aka link to microbit support page?
-     * }
-     */
-
 
     //% block="include timestamp $on||format $format"
     //% blockId=dataloggertoggleincludetimestamp
