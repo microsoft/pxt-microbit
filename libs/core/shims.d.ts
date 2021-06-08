@@ -488,12 +488,6 @@ declare namespace control {
 declare namespace control {
 
     /**
-     * Dump internal information about a value.
-     */
-    //% shim=control::dmesgValue
-    function dmesgValue(v: any): void;
-
-    /**
      * Force GC and dump basic information about heap.
      */
     //% shim=control::gc

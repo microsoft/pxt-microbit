@@ -298,7 +298,6 @@
   "control.dmesg": "Write a message to DMESG debugging buffer.",
   "control.dmesgPerfCounters": "Dump values of profiling performance counters.",
   "control.dmesgPtr": "Write a message and value (pointer) to DMESG debugging buffer.",
-  "control.dmesgValue": "Dump internal information about a value.",
   "control.enablePerfCounter": "Enable profiling for current function.",
   "control.eventSourceId": "Returns the value of a C++ runtime constant",
   "control.eventTimestamp": "Gets the timestamp of the last event executed on the bus",
