@@ -357,8 +357,8 @@
         "appLogo": "./static/icons/apple-touch-icon.png",
         "organization": "Microsoft MakeCode",
         "organizationUrl": "https://makecode.com/",
-        "organizationLogo": "./static/Microsoft-logo_rgb_c-gray-square.png",
-        "organizationWideLogo": "./static/Microsoft-logo_rgb_c-white.png",
+        "organizationLogo": "./static/Microsoft_logo_rgb_W-white_D-square.png",
+        "organizationWideLogo": "./static/Microsoft_logo_rgb_W-white_D.png",
         "homeScreenHero": {
             "imageUrl": "/static/hero.png",
             "name": "Flashing Heart",
