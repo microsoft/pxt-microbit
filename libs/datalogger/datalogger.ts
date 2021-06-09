@@ -62,15 +62,41 @@ namespace datalogger {
 
         flashlog.beginRow();
 
+        if (_timestampFormat && _mirrorToSerial) {
+            let unit = "";
+            switch(_timestampFormat) {
+                case FlashLogTimeStampFormat.Milliseconds:
+                    unit = "milliseconds"
+                    break;
+                case FlashLogTimeStampFormat.Seconds:
+                    unit = "seconds";
+                    break;
+                case FlashLogTimeStampFormat.Minutes:
+                    unit = "minutes";
+                    break;
+                case FlashLogTimeStampFormat.Hours:
+                    unit = "hours";
+                    break;
+                case FlashLogTimeStampFormat.Days:
+                default:
+                    unit = "days";
+            }
+            // TODO: if we don't move it to CODAL and want the display of the time given
+            // to serial to match the time written to device, there's a semi complicated format conversion
+            // over in MicroBitLog::endRow that would need replicating.
+            // https://github.com/lancaster-university/codal-microbit-v2/blob/master/source/MicroBitLog.cpp#L405
+            const timeUnit = _timestampFormat > 1 ? _timestampFormat * 100 : _timestampFormat;
+            serial.writeLine(`Time (${unit}): ${control.millis() / timeUnit}`)
+        }
+
         for (const cv of data) {
             flashlog.logData(cv.column, "" + cv.value);
-            if (_mirrorToSerial) {
+            if (_mirrorToSerial && cv.value != "") {
                 serial.writeLine(`${cv.column}: ${cv.value}`);
                 // todo: should mirror to serial be in exact same format as row?
                 // if so, we'd probably need to either mirror to serial in codal itself
                 // or add a 'read last row' function to codal, to get order correct
                 // and to get the same timestamp.
-                // TODO: probably drop from sim side or move this to cpp?
             }
         }
 

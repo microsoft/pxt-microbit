@@ -22,13 +22,13 @@ namespace pxsim.flashlog {
         rows.push({ text, timestamp })
         // TODO: maybe do something better here
         // send data to simulator
-        const data = `${text}${timestampFormat ? `${SEPARATOR}${(timestamp / timestampFormat)}` : ""}\n`;
-        Runtime.postMessage(<SimulatorSerialMessage>{
-            type: 'serial',
-            data,
-            id: runtime.id,
-            sim: true
-        })
+        // const data = `${text}${timestampFormat ? `${SEPARATOR}${(timestamp / timestampFormat)}` : ""}\n`;
+        // Runtime.postMessage(<SimulatorSerialMessage>{
+        //     type: 'serial',
+        //     data,
+        //     id: runtime.id,
+        //     sim: true
+        // })
     }
 
     export function beginRow(): number {
