@@ -494,6 +494,12 @@ declare namespace control {
 declare namespace control {
 
     /**
+     * Dump internal information about a value.
+     */
+    //% shim=control::dmesgValue
+    function dmesgValue(v: any): void;
+
+    /**
      * Force GC and dump basic information about heap.
      */
     //% shim=control::gc
@@ -1012,7 +1018,7 @@ declare namespace serial {
     function writeBuffer(buffer: Buffer): void;
 
     /**
-     * Read multiple characters from the receive buffer. 
+     * Read multiple characters from the receive buffer.
      * If length is positive, pauses until enough characters are present.
      * @param length default buffer length
      */
