@@ -334,6 +334,18 @@ namespace control {
     }
 
     /**
+     * Returns the major version of the microbit
+     */
+    //% help=control/hardware-version
+    int hardwareVersion() {
+        #if MICROBIT_CODAL
+            return 2;
+        #else
+            return 1;
+        #endif
+    }
+
+    /**
     * Derive a unique, consistent serial number of this device from internal data.
     */
     //% blockId="control_device_serial_number" block="device serial number" weight=9

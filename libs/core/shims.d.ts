@@ -444,6 +444,12 @@ declare namespace control {
     function deviceName(): string;
 
     /**
+     * Returns the major version of the microbit
+     */
+    //% help=control/hardware-version shim=control::hardwareVersion
+    function hardwareVersion(): int32;
+
+    /**
      * Derive a unique, consistent serial number of this device from internal data.
      */
     //% blockId="control_device_serial_number" block="device serial number" weight=9
@@ -486,12 +492,6 @@ declare namespace control {
     function dmesgPtr(str: string, ptr: Object): void;
 }
 declare namespace control {
-
-    /**
-     * Dump internal information about a value.
-     */
-    //% shim=control::dmesgValue
-    function dmesgValue(v: any): void;
 
     /**
      * Force GC and dump basic information about heap.
