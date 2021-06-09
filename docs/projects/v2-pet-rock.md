@@ -1,6 +1,6 @@
 # Pet Rock
 
-## Introduction @unplugged
+## 1. Introduction @unplugged
 
 Have you ever had a pet rock? Now, you can have a pet rock that can make noise 🐵🔊
 <br/>
@@ -10,7 +10,7 @@ One of the new @boardname@ features is a capacitive touch sensor (a bit like you
 <br/>
 For this tutorial, we will create a "pet rock" whose mood changes depending on if you shake them or press their logo.
 
-## Cyrus's duck face
+## 2. Cyrus's duck face
 
 👋 Meet your new pet rock, Cyrus 👋
 <br/>
@@ -26,7 +26,7 @@ Cyrus likes to make duck faces. Let's set up Cyrus's duck face! 🦆😏
 basic.showIcon(IconNames.Surprised)
 ```
 
-## Dizzy Cyrus
+## 3. Dizzy Cyrus
 
 Whenever Cyrus is shaken, they get confused and dizzy 😵‍💫
 
@@ -34,7 +34,7 @@ Whenever Cyrus is shaken, they get confused and dizzy 😵‍💫
 
 ► From the ``||input:Input||`` category, find the ``||input:on [shake]||`` container and drag it into your workspace.
 <br/>
-► Place a ``||basic:show icon [ ]||`` block into your ``||input:on [shake]||`` container.
+► Look in the ``||basic:Basic||`` category to find another ``||basic:show icon [ ]||`` block and put it into your ``||input:on [shake]||`` container.
 <br/>
 ► Set the icon (Cyrus's face) to confused.
 <br/>
@@ -47,7 +47,7 @@ input.onGesture(Gesture.Shake, function () {
 basic.showIcon(IconNames.Surprised)
 ```
 
-## Giggly Cyrus
+## 4. Giggly Cyrus
 
 When Cyrus's logo is pressed, it tickles 😹
 
@@ -69,17 +69,34 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
 basic.showIcon(IconNames.Surprised)
 ```
 
-## Adding sounds
+## 5. Dizzy sound
 
-Let's add some noises to complement Cyrus's feelings 🎶
+When Cyrus is dizzy, he likes to express himself through sound 🎶
 
 ---
 
 ► From the ``||music:Music||`` category, find the ``||music:play sound [giggle] until done||`` block and add it to the end of your ``||input:on [shake]||`` container.
 <br/>
-► Drag another or copy the ``||music:play sound [giggle] until done||`` block and add it to the end of your ``||input:on logo [pressed]||`` container.
-<br/>
 ► Set it so Cyrus plays a ``mysterious`` sound when shaken.
+
+```blocks
+input.onGesture(Gesture.Shake, function () {
+    basic.showIcon(IconNames.Confused)
+    soundExpression.mysterious.playUntilDone()
+})
+input.onLogoEvent(TouchButtonEvent.Pressed, function () {
+    basic.showIcon(IconNames.Happy)
+})
+basic.showIcon(IconNames.Surprised)
+```
+
+## 6. Tickle sound
+
+When Cyrus is tickled, he giggles 🤣
+
+---
+
+► From the ``||music:Music||`` category, get another ``||music:play sound [giggle] until done||`` block and add it to the end of your ``||input:on logo [pressed]||`` container.
 
 ```blocks
 input.onGesture(Gesture.Shake, function () {
@@ -93,7 +110,7 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
 basic.showIcon(IconNames.Surprised)
 ```
 
-## Cyrus's default face
+## 7. Cyrus's default face
 
 Right now, Cyrus stays mad even after they are shaken and also continues to be tickled even after their logo has been pressed. Let us ensure that Cyrus will always go back to their duck face after being shaken or tickled!
 
@@ -121,7 +138,7 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
 basic.showIcon(IconNames.Surprised)
 ```
 
-## Testing in the simulator
+## 8. Testing in the simulator
 
 🐾 **Let's test what you've created** 🐾
 <br/>
