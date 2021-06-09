@@ -504,6 +504,8 @@
   "light.sendWS2812Buffer": "Sends a color buffer to a light strip",
   "light.sendWS2812BufferWithBrightness": "Sends a color buffer to a light strip",
   "light.setMode": "Sets the light mode of a pin",
+  "loops.everyInterval": "Repeats the code forever in the background.\r\nAfter each iteration, allows other codes to run for a set duration\r\nso that it runs on a timer",
+  "loops.everyInterval|param|interval": "time (in ms) to wait between each iteration of the action.",
   "msgpack.packNumberArray": "Pack a number array into a buffer.",
   "msgpack.packNumberArray|param|nums": "the numbers to be packed",
   "msgpack.unpackNumberArray": "Unpacks a buffer into a number array.",
