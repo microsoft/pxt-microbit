@@ -337,7 +337,7 @@ namespace control {
      * Returns the major version of the microbit
      */
     //% help=control/hardware-version
-    int hardwareVersion() {
+    int _hardwareVersion() {
         #if MICROBIT_CODAL
             return 2;
         #else

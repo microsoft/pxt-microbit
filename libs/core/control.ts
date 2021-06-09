@@ -133,7 +133,7 @@ namespace control {
         return t
     }
 
-    //% shim=control::hardwareVersion
+    //% shim=control::_hardwareVersion
     export function hardwareVersion(): number {
         return 2;
     }
