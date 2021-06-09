@@ -2,7 +2,7 @@
 
 ## Introduction @unplugged
 
-💬 Multiple @boardname@s can communicate with one another! 💬
+💬 Multiple @boardname@s can communicate with one another 💬
 <br/>
 <br/>
 One of the new @boardname@ features is a capacitive touch sensor (a bit like your phone!). This sensor is the logo button on your @boardname@.
