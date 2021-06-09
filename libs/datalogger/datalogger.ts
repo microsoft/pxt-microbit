@@ -26,23 +26,26 @@ namespace datalogger {
 
     }
     export class ColumnValue {
+        public value: string;
         constructor(
             public column: string,
-            public value: number | string
-        ) { }
+            value: any
+        ) {
+            this.value = "" + value;
+        }
     }
 
     /**
      * A column and value to log to flash storage
      * @param column the column to set
-     * @param value the value to set. Can be a string or a number.
+     * @param value the value to set.
      * @returns A new value that can be stored in flash storage using log data
      */
     //% block="column $column value $value"
-    //% value.shadow=text
+    //% value.shadow=math_number
     //% blockId=dataloggercreatecolumnvalue
     //% weight=80
-    export function createCV(column: string, value: number | string): ColumnValue {
+    export function createCV(column: string, value: any): ColumnValue {
         return new ColumnValue(column, value);
     }
 
@@ -90,7 +93,7 @@ namespace datalogger {
         }
 
         for (const cv of data) {
-            flashlog.logData(cv.column, "" + cv.value);
+            flashlog.logData(cv.column, cv.value);
             if (_mirrorToSerial && cv.value != "") {
                 serial.writeLine(`${cv.column}: ${cv.value}`);
                 // todo: should mirror to serial be in exact same format as row?
