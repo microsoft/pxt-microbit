@@ -8,6 +8,7 @@ namespace datalogger {
     let onLogFullHandler: () => void;
     let _mirrorToSerial = true;
     let _timestampFormat= FlashLogTimeStampFormat.Seconds;
+    let _disabled = false;
 
     let initialized = false;
     function init() {
@@ -15,12 +16,12 @@ namespace datalogger {
             return;
         initialized = true;
 
-        // TODO update dal and drop the nums / use the proper enums
         control.onEvent(DAL.MICROBIT_ID_LOG, DAL.MICROBIT_LOG_EVT_LOG_FULL, () => {
+            _disabled = true;
             if (onLogFullHandler) {
                 onLogFullHandler();
             } else {
-                throw "Flash memory full; log failed.";
+                basic.showString("Log Full");
             }
         });
 
@@ -63,8 +64,6 @@ namespace datalogger {
             return;
         init();
 
-        flashlog.beginRow();
-
         if (_timestampFormat && _mirrorToSerial) {
             let unit = "";
             switch(_timestampFormat) {
@@ -93,7 +92,6 @@ namespace datalogger {
         }
 
         for (const cv of data) {
-            flashlog.logData(cv.column, cv.value);
             if (_mirrorToSerial && cv.value != "") {
                 serial.writeLine(`${cv.column}: ${cv.value}`);
                 // todo: should mirror to serial be in exact same format as row?
@@ -103,6 +101,13 @@ namespace datalogger {
             }
         }
 
+        if (_disabled)
+            return;
+
+        flashlog.beginRow();
+        for (const cv of data) {
+            flashlog.logData(cv.column, cv.value);
+        }
         flashlog.endRow();
     }
 
@@ -128,6 +133,7 @@ namespace datalogger {
     //% weight=60
     export function deleteLog(): void {
         flashlog.clear();
+        _disabled = false;
     }
 
     /**
