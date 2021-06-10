@@ -34,7 +34,7 @@ http://www.csteachers.org/page/standards.
 ## Utah Science with Engineering Education (SEEd)
 
 * [Utah Science Website](https://schools.utah.gov/curr/science)
-* [Utah Grades 6-8 SEEd Standards](https://schools.utah.gov/file/265a0b53-b6a7-48fb-b253-b6a5f38ffe19)
+* [Utah Grades 6-8 SEEd Standards](https://schools.utah.gov/File/5ec76f98-0844-4afc-8077-5d9401241e35)
 * [Sixth grade OER Science text](https://eq.uen.org/emedia/items/dae58176-b839-4b26-87e4-09ca5ed98875/1/Grade6RS.pdf)
 * [Seventh grade OER Science text](https://eq.uen.org/emedia/items/afd89ff1-054c-4ac5-a712-67f4c6029644/1/Grade7RS.pdf)
 * [Eighth grade OER Science text](https://eq.uen.org/emedia/items/e5219302-32b9-4c2f-ad65-38f303da6654/1/Grade8RS.pdf)
