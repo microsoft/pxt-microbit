@@ -6,7 +6,7 @@
 
 This project turns the @boardname@ into a simple step counter. A step counter is also known as a pedometer. Each **shake** event increments a **counter** variable. The step count is displayed on the LEDs.
 
-If you built a watch in the [make](/projects/watch/make) portion of the of the [Watch](/projects/watch) project, you can use the code from this project with it too.
+If you built a watch in the [make](https://makecode.microbit.org/projects/watch/make) portion of the of the [Watch](https://makecode.microbit.org/projects/watch) project, you can use the code from this project with it too.
 
 ## A counter
 
