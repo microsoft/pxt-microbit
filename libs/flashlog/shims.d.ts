@@ -50,7 +50,7 @@ declare namespace flashlog {
     //% parts="flashlog"
     //% blockGap=8
     //% group="micro:bit (V2)" shim=flashlog::clear
-    function clear(): void;
+    function clear(fullErase: boolean): void;
 
     /**
      * Determines the format of the timestamp data to be added (if any).

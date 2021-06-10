@@ -97,9 +97,9 @@ int endRow() {
 //% parts="flashlog"
 //% blockGap=8
 //% group="micro:bit (V2)"
-void clear() {
+void clear(bool fullErase) {
 #if MICROBIT_CODAL
-    uBit.log.clear();
+    uBit.log.clear(fullErase);
 #endif
 }
 

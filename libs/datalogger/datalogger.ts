@@ -126,13 +126,16 @@ namespace datalogger {
     }
 
     /**
-     * Delete all existing logs, including column headers
+     * Delete all existing logs, including column headers. By default this only marks the log as
+     * overwriteable / deletable in the future.
+     * @param fullErase optional if set on (true), fully erase log instead of marking as empty. This will take longer but makes sure data will not persist on device.
      */
-    //% block="delete log"
+    //% block="delete log||wipe $fullErase"
+    //% fullErase.shadow=toggleOnOff
     //% blockId=dataloggerdeletelog
     //% weight=60
-    export function deleteLog(): void {
-        flashlog.clear();
+    export function deleteLog(fullErase?: boolean): void {
+        flashlog.clear(fullErase);
         _disabled = false;
     }
 
@@ -150,7 +153,7 @@ namespace datalogger {
     /**
      * Set whether timestamp is included in included when logging data or not.
      * @param on if true timestamp will be included
-     * @param format Format in which to show the timestamp. Setting FlashLogTimeStampFormat.None is equivalent to setting 'on' to false
+     * @param format optional Format in which to show the timestamp. Setting FlashLogTimeStampFormat.None is equivalent to setting 'on' to false
      */
     //% block="include timestamp $on||format $format"
     //% blockId=dataloggertoggleincludetimestamp

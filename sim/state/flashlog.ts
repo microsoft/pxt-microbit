@@ -29,7 +29,7 @@ namespace pxsim.flashlog {
         // TODO: maybe grab exact size that will fail
         if (logSize >= 30000) {
             board().bus.queue(DAL.MICROBIT_ID_LOG, DAL.MICROBIT_LOG_EVT_LOG_FULL);
-            clear();
+            clear(false);
         }
         // Runtime.postMessage(<SimulatorSerialMessage>{
         //     type: 'serial',
@@ -83,7 +83,7 @@ namespace pxsim.flashlog {
         commitRow(s)
     }
 
-    export function clear() {
+    export function clear(fullErase: boolean) {
         ensureV2()
         rows = []
         headers = []
