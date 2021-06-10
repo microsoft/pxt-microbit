@@ -575,6 +575,7 @@
         "python": true,
         "appFlashingTroubleshoot": "/device/windows-app/troubleshoot",
         "immersiveReader": true,
+        "tutorialCodeValidation": true,
         "downloadDialogTheme": {
             "webUSBDeviceNames": ["BBC micro:bit CMSIS-DAP", "DAPLink CMSIS-DAP"],
             "minimumFirmwareVersion": "0249",
