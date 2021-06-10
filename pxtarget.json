@@ -593,7 +593,8 @@
             "connectionSuccessImage": "/static/download/firmware.png",
             "checkFirmwareVersionImage": "/static/download/transfer.png",
             "checkUSBCableImage": "/static/download/connect.png"
-        }
+        },
+        "winAppDeprImage": "/static/winapp.PNG"
     },
     "queryVariants": {
         "hidemenu": {
