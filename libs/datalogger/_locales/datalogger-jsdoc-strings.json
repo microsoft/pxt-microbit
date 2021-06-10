@@ -1,6 +1,6 @@
 {
   "datalogger": "Log data to flash storage",
-  "datalogger.createCV": "A column and value to log to flash storage\r\r\r\n@returns A new value that can be stored in flash storage using log data",
+  "datalogger.createCV": "A column and value to log to flash storage\n\n\n@returns A new value that can be stored in flash storage using log data",
   "datalogger.createCV|param|column": "the column to set",
   "datalogger.createCV|param|value": "the value to set.",
   "datalogger.deleteLog": "Delete all existing logs, including column headers",

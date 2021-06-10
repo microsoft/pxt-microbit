@@ -7,7 +7,7 @@
 namespace datalogger {
     let onLogFullHandler: () => void;
     let _mirrorToSerial = true;
-    let _timestampFormat= FlashLogTimeStampFormat.None;
+    let _timestampFormat= FlashLogTimeStampFormat.Seconds;
 
     let initialized = false;
     function init() {
@@ -149,8 +149,10 @@ namespace datalogger {
     //% block="include timestamp $on||format $format"
     //% blockId=dataloggertoggleincludetimestamp
     //% on.shadow=toggleOnOff
+    //% on.defl=true
+    //% format.defl=FlashLogTimeStampFormat.Seconds
     //% weight=30
-    export function includeTimestamp(on: boolean, format: FlashLogTimeStampFormat = FlashLogTimeStampFormat.Milliseconds): void {
+    export function includeTimestamp(on: boolean, format: FlashLogTimeStampFormat = FlashLogTimeStampFormat.Seconds): void {
         _timestampFormat = !on ? FlashLogTimeStampFormat.None : format;
         flashlog.setTimeStamp(_timestampFormat);
     }
@@ -162,6 +164,7 @@ namespace datalogger {
     //% block="mirror data to serial $on"
     //% blockId=dataloggertogglemirrortoserial
     //% on.shadow=toggleOnOff
+    //% on.defl=true
     //% weight=25
     export function mirrorToSerial(on: boolean): void {
         _mirrorToSerial = !!on;
