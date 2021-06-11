@@ -9,6 +9,8 @@ namespace pxsim.flashlog {
     let SEPARATOR = ","
     let timestampFormat: number = undefined
     let logSize = 0;
+    /** Estimate for flash size; TODO: get exact size, correctly count unicode character > 1 byte **/
+    const logEnd = 60000;
 
     function ensureV2() {
         const b = board();
@@ -26,8 +28,7 @@ namespace pxsim.flashlog {
         const data = `${text}${timestampFormat ? `${SEPARATOR}${(timestamp / timestampFormat)}` : ""}\n`;
         logSize += data.length;
 
-        // TODO: maybe grab exact size that will fail
-        if (logSize >= 30000) {
+        if (logSize >= logEnd) {
             board().bus.queue(DAL.MICROBIT_ID_LOG, DAL.MICROBIT_LOG_EVT_LOG_FULL);
             clear(false);
         }
