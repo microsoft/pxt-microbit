@@ -354,6 +354,7 @@
         * [Remote Data](/device/data-analysis/remote)
     * [Error codes](/device/error-codes)
     * [Foil circuits](/device/foil-circuits)
+    * [Incompatible Hardware](/device/incompatible)
     * [MES events](/device/mes-events)
     * [Pins](/device/pins)
     * [Reactive](/device/reactive)
