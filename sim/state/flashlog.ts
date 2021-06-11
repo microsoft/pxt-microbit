@@ -9,8 +9,8 @@ namespace pxsim.flashlog {
     let SEPARATOR = ","
     let timestampFormat: number = undefined
     let logSize = 0;
-    /** Estimate for flash size; TODO: get exact size, correctly count unicode character > 1 byte **/
-    const logEnd = 60000;
+    /** allocated flash size **/
+    const logEnd = 121852;
 
     function ensureV2() {
         const b = board();
@@ -25,9 +25,12 @@ namespace pxsim.flashlog {
         rows.push({ text, timestamp })
         // TODO: maybe do something better here
         // send data to simulator
-        const data = `${text}${timestampFormat ? `${SEPARATOR}${(timestamp / timestampFormat)}` : ""}\n`;
-        logSize += data.length;
 
+        const timeUnit = timestampFormat > 1 ? timestampFormat * 100 : timestampFormat;
+        const data = `${text}${timeUnit ? `${SEPARATOR}${(timestamp / timeUnit)}` : ""}\n`;
+
+        /** edge 18 does not support text encoder, so fall back to length **/
+        logSize += TextEncoder ? (new TextEncoder().encode(data)).length : data.length;
         if (logSize >= logEnd) {
             board().bus.queue(DAL.MICROBIT_ID_LOG, DAL.MICROBIT_LOG_EVT_LOG_FULL);
             clear(false);
