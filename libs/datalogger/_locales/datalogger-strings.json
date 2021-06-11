@@ -3,11 +3,12 @@
   "datalogger.DeleteType.Full|block": "full",
   "datalogger.createCV|block": "column $column value $value",
   "datalogger.deleteLog|block": "delete log||$deleteType",
-  "datalogger.includeTimestamp|block": "include timestamp $on||format $format",
+  "datalogger.includeTimestamp|block": "set timestamp $format",
   "datalogger.logData|block": "log data $data",
   "datalogger.mirrorToSerial|block": "mirror data to serial $on",
   "datalogger.onLogFull|block": "on log full",
   "datalogger.setColumns|block": "set columns $cols",
   "datalogger|block": "Data Logger",
-  "{id:category}Datalogger": "Datalogger"
+  "{id:category}Datalogger": "Datalogger",
+  "{id:group}micro:bit (v2)": "micro:bit (v2)"
 }

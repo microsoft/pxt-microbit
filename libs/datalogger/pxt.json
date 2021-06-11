@@ -1,6 +1,6 @@
 {
     "name": "datalogger",
-    "description": "Data logging to flash memory",
+    "description": "Data logging to flash memory. micro:bit (v2) only.",
     "files": [
         "datalogger.ts"
     ],
