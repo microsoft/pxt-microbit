@@ -1,6 +1,8 @@
 {
+  "datalogger.DeleteType.Fast|block": "fast",
+  "datalogger.DeleteType.Full|block": "full",
   "datalogger.createCV|block": "column $column value $value",
-  "datalogger.deleteLog|block": "delete log||wipe $fullErase",
+  "datalogger.deleteLog|block": "delete log||$deleteType",
   "datalogger.includeTimestamp|block": "include timestamp $on||format $format",
   "datalogger.logData|block": "log data $data",
   "datalogger.mirrorToSerial|block": "mirror data to serial $on",

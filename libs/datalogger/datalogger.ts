@@ -5,6 +5,13 @@
 //% icon="\uf0ce"
 //% color="#378273"
 namespace datalogger {
+    export enum DeleteType {
+        //% block="fast"
+        Fast,
+        //% block="full"
+        Full
+    }
+
     let onLogFullHandler: () => void;
     let _mirrorToSerial = true;
     let _timestampFormat = FlashLogTimeStampFormat.Seconds;
@@ -130,14 +137,13 @@ namespace datalogger {
     /**
      * Delete all existing logs, including column headers. By default this only marks the log as
      * overwriteable / deletable in the future.
-     * @param fullErase optional if set on (true), fully erase log instead of marking as empty. This will take longer but makes sure data will not persist on device.
+     * @param deleteType optional set whether a deletion will be fast or full
      */
-    //% block="delete log||wipe $fullErase"
-    //% fullErase.shadow=toggleOnOff
+    //% block="delete log||$deleteType"
     //% blockId=dataloggerdeletelog
     //% weight=60
-    export function deleteLog(fullErase?: boolean): void {
-        flashlog.clear(fullErase);
+    export function deleteLog(deleteType?: DeleteType): void {
+        flashlog.clear(deleteType === DeleteType.Full);
         _disabled = false;
     }
 

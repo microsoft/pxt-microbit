@@ -4,7 +4,7 @@
   "datalogger.createCV|param|column": "the column to set",
   "datalogger.createCV|param|value": "the value to set.",
   "datalogger.deleteLog": "Delete all existing logs, including column headers. By default this only marks the log as\noverwriteable / deletable in the future.",
-  "datalogger.deleteLog|param|fullErase": "optional if set on (true), fully erase log instead of marking as empty. This will take longer but makes sure data will not persist on device.",
+  "datalogger.deleteLog|param|deleteType": "optional set whether a deletion will be fast or full",
   "datalogger.includeTimestamp": "Set whether timestamp is included in included when logging data or not.",
   "datalogger.includeTimestamp|param|format": "optional Format in which to show the timestamp. Setting FlashLogTimeStampFormat.None is equivalent to setting 'on' to false",
   "datalogger.includeTimestamp|param|on": "if true timestamp will be included",
