@@ -131,7 +131,10 @@ namespace datalogger {
     export function setColumns(cols: string[]): void {
         if (!cols)
             return;
+        const fmt = _timestampFormat;
+        includeTimestamp(false);
         logData(cols.map(col => createCV(col, "")));
+        includeTimestamp(true, fmt);
     }
 
     /**
