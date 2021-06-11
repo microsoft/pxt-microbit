@@ -7,7 +7,7 @@
 namespace datalogger {
     let onLogFullHandler: () => void;
     let _mirrorToSerial = true;
-    let _timestampFormat= FlashLogTimeStampFormat.Seconds;
+    let _timestampFormat = FlashLogTimeStampFormat.Seconds;
     let _disabled = false;
 
     let initialized = false;
@@ -15,6 +15,8 @@ namespace datalogger {
         if (initialized)
             return;
         initialized = true;
+
+        includeTimestamp(true, _timestampFormat);
 
         control.onEvent(DAL.MICROBIT_ID_LOG, DAL.MICROBIT_LOG_EVT_LOG_FULL, () => {
             _disabled = true;
