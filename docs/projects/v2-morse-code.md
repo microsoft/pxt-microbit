@@ -1,26 +1,30 @@
 # Morse Code
 
-## Introduction @unplugged
+## 1. Introduction @unplugged
 
-💬 Multiple @boardname@s can communicate with one another 💬
+👋🐷 Meet Sky, the pig! Sky can only communicate using [__*morse code*__](#morsecode "an alphabet composed of dots (short signals) and dashes (long signals)").
+<br/>
+Luckily, you can use your new @boardname@ to talk to Sky 🐷👋
 <br/>
 <br/>
-One of the new @boardname@ features is a capacitive touch sensor (a bit like your phone!). This sensor is the logo button on your @boardname@.
+The new @boardname@s have gold logo buttons. This is because the logos are now touch sensors!
 <br/>
 <br/>
-In this tutorial, we will walk through how to use the logo press to send morse code messages between at least two of the new @boardname@s 🥳
+In this tutorial, we will walk through how to use the logo press functionality to send morse code messages between two or more of the new @boardname@s 🥳
 
 _**Note:** Do not worry if you don't own multiple of the new @boardname@s. We will be able to simulate two in this tutorial._
 
-## Setting up the space
+## 2. Setting up the space
 
-Your @boardname@ will need to send different messages depending on if you press or long press the logo. Let's set that up!
+Your @boardname@ will need to send Sky different messages depending on if you press or long press the logo. Let's set that up!
 
 ---
 
 ► From the ``||input:Input||`` category, find the ``||input:on logo [pressed]||`` container and add it to your workspace.
 <br/>
-► Repeat the above step.
+► From the ``||input:Input||`` category, get another ``||input:on logo [pressed]||`` container and add it to your workspace.
+<br/>
+&nbsp;&nbsp; 💡 One of the containers will be greyed out. Let's fix that!
 <br/>
 ► Set the argument for one of your containers to be ``||input:on logo [long pressed]||``.
 
@@ -33,9 +37,11 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
 })
 ```
 
-## Sending a Boolean
+## 3. Sending a Boolean
 
-Now, we need to help your @boardname@ distinguish between if it is sending a dot or a dash.
+Your @boardname@ needs to send a dot on logo press and a dash on logo long press 💬
+<br/>
+To make sure Sky receives the right message, let's send different numbers for each input.
 
 ---
 
@@ -44,8 +50,6 @@ Now, we need to help your @boardname@ distinguish between if it is sending a dot
 ► Set the number to be ``1``.
 <br/>
 ► Drag another ``||radio:radio send number [0]||`` block and, this time, place it into your ``||input:on logo [pressed]||`` container.
-<br/>
-&nbsp;&nbsp; 💡 We want the two numbers to be different so we can distinguish between them later.
 
 ```blocks
 input.onLogoEvent(TouchButtonEvent.LongPressed, function () {
@@ -56,9 +60,9 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
 })
 ```
 
-## Receiving a message
+## 4. Receiving a message
 
-Now, we will need to program your @boardname@ to receive a message that is sent to it.
+Sky needs to be able to receive messages! Let's set that up.
 
 ---
 
@@ -76,17 +80,41 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
 })
 ```
 
-## Setting the display conditional
+## 5. Setting the display conditional
 
-Let us set up an [__*if then else*__](#ifthenelse "runs some code if a boolean condition is true and different code if the condition is false") conditional statement so you can tell your @boardname@ what to do based on if it needs to display a dot or a dash.
+To ensure Sky gets the right message, we will use an [__*if then else*__](#ifthenelse "runs some code if a boolean condition is true and different code if the condition is false") conditional statement. This will let you tell your @boardname@ how and when to display a dot or a dash.
 
 ---
 
 ► Grab an ``||logic:if [true] then...else||`` block and place it in your ``||radio:on radio received [receivedNumber]||`` container.
 <br/>
 ► Look in the ``||logic:Logic||`` category and drag the ``||logic:[0] = [0]||`` conditional to replace the ``||logic:[true]||`` argument in your ``||logic:if [0 = 0] then...else||`` block.
-󠀢<br/>
-► Drag the ``receivedNumber`` input into the first argument in your ``||logic:[receivedNumber] = [0]||`` conditional.
+󠀢
+```blocks
+radio.onReceivedNumber(function (receivedNumber) {
+    if (0 == 0) {
+    	
+    } else {
+    	
+    }
+})
+input.onLogoEvent(TouchButtonEvent.LongPressed, function () {
+    radio.sendNumber(1)
+})
+input.onLogoEvent(TouchButtonEvent.Pressed, function () {
+    radio.sendNumber(0)
+})
+```
+
+## 6. Conditioning on the input
+
+Let's set it so the message Sky receives matches the one you send 🗨️🐖
+
+---
+
+► From your ``||radio:on radio received [receivedNumber]||`` container, click on the ``receivedNumber`` input and drag out a copy.
+<br/>
+► Place the ``receivedNumber`` you just dragged out into your ``||logic:if||`` conditional so it reads ``||logic:if [receivedNumber] = [0] then||``.
 
 ```blocks
 radio.onReceivedNumber(function (receivedNumber) {
@@ -104,9 +132,9 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
 })
 ```
 
-## Displaying a message
+## 7. Displaying a message
 
-The next step is to have your @boardname@ display the symbol it has received. 📃
+At this point, we have sent but not yet displayed messages for Sky to see. The next step is to have your @boardname@ display the symbol it has received. 📃
 
 ---
 
@@ -146,9 +174,9 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
 })
 ```
 
-## Playing a sound
+## 8. Playing a sound
 
-The new @boardname@s have built-in speakers! Let's use them to play a sound that corresponds to the message being sent. 🔊🎵
+The new @boardname@s have built-in speakers! Let's use them to play a sound that corresponds to the message being sent to Sky. 🔊🎵
 
 ---
 
@@ -188,9 +216,9 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
 })
 ```
 
-## Clearing the screens
+## 9. Clearing the screens
 
-As a final step, we want to clear the receiving @boardname@'s LED screens when your messages have finished sending 🗨️
+As a final step, we want to make sure Sky knows when your message ends. We can do this by clearing the receiving @boardname@'s LED screens 🗨️
 
 ---
 
@@ -230,9 +258,9 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
 })
 ```
 
-## Testing in the simulator
+## 10. Testing in the simulator
 
-👀 **Let's test what you've created** 👀
+🐷 **Let's test what you've created** 💬
 
 ---
 
@@ -242,9 +270,9 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
 <br/>
 ► Click or hold the logo again to test your code!
 <br/>
-&nbsp;&nbsp;&nbsp;&nbsp; **Press** the logo to send a dot to your second @boardname@.
+&nbsp;&nbsp;&nbsp;&nbsp; **Press** the logo to send a dot to Sky.
 <br/>
-&nbsp;&nbsp;&nbsp;&nbsp; **Long press** the logo (count to 3!) to send a dash to your second @boardname@.
+&nbsp;&nbsp;&nbsp;&nbsp; **Long press** the logo (count to 3!) to send a dash to Sky.
 <br/>
 &nbsp;&nbsp; 🎵 Turn up the sound to hear the tone being played! 🎵
 <br/>
