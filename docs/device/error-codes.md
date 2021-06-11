@@ -27,7 +27,6 @@ The @boardname@ system errors range between **01** - **99**. For a full list of 
 * **40** (`MICROBIT_NULL_DEREFERENCE `): there was a NULL dereference, the @boardname@ tried to manage a invalid object pointer
 * **42** (`MICROBIT_SYSTEM_ERROR`): there's an error condition in the @boardname@ system software
 * **43** (`MICROBIT_NO_RADIO`): the @boardname@ can't enable the radio
-* **44** (`MICROBIT_LOG_FULL`): The @boardname@ failed to write to datalogger as the log was full
 * **50** (`MICROBIT_HARDWARE_UNAVAILABLE_ACC`): an error occurred with the micro:bit's accelerometer component
 * **51** (`MICROBIT_HARDWARE_UNAVAILABLE_MAG`): an error occurred with the micro:bit's magnetometer component
 * **90** (`MICROBIT_HARDWARE_CONFIGURATION_ERROR`): actual board hardware doesn't match the configuration description
@@ -68,6 +67,7 @@ Error codes generated from the garbage collector.
 * **907** (`PANIC_NO_SUCH_CONFIG`): the specified device resource is not present
 * **909** (`PANIC_INVALID_ARGUMENT`): the argument value is out of range or the type or format is invalid
 * **927** (`PANIC_VARIANT_NOT_SUPPORTED`): using a v2 feature on a v1 board
+* **928** (`MICROBIT_LOG_FULL`): The @boardname@ failed to write to datalogger as the log was full
 
 
 ## JavaScript runtime codes

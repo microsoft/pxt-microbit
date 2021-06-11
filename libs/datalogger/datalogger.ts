@@ -39,7 +39,7 @@ namespace datalogger {
                 `);
                 basic.pause(1000);
                 basic.clearScreen();
-                basic.showString("044");
+                basic.showString("928");
             }
         });
     }
