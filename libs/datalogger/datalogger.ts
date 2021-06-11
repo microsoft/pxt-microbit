@@ -30,11 +30,20 @@ namespace datalogger {
             if (onLogFullHandler) {
                 onLogFullHandler();
             } else {
-                basic.showString("Log Full");
+                basic.showLeds(`
+                    # . . . #
+                    # # . # #
+                    . . . . .
+                    . # # # .
+                    # . . . #
+                `);
+                basic.pause(1000);
+                basic.clearScreen();
+                basic.showString("044");
             }
         });
-
     }
+
     export class ColumnValue {
         public value: string;
         constructor(
