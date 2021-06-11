@@ -216,7 +216,8 @@
             "kitronikltd/pxt-kitronik-motor-driver",
             "Tinkertanker/pxt-ringbitcar",
             "iBuilds/pxt-PTKidsBIT-Robot",
-            "4tronix/EggBit"
+            "4tronix/EggBit",
+            "joy-it/SEN-MPU6050"
         ],
         "upgrades": {
             "tinkertanker/pxt-iot-environment-kit": "min:v4.2.1",

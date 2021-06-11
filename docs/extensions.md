@@ -156,6 +156,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 
 ```codecard
 [{
+ "name": "MPU6050 Gyroscope",
+  "url":"/pkg/joy-it/SEN-MPU6050",
+  "cardType": "package"
+}, {
  "name": "DS18B20",
   "url":"/pkg/bsiever/microbit-dstemp",
   "cardType": "package"
