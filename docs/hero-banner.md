@@ -24,6 +24,6 @@ Here are some cool activities to get you started with your @boardname@!
 ---
 * name: Soil Moisture Project
 * description: Track the soil moisture of your plants!
-* imageUrl: /static/herogallery/intro-to-microbit.png
+* imageUrl: /static/herogallery/soil-moisture.png
 * url: /projects/soil-moisture
 ### ~

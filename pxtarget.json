@@ -361,7 +361,7 @@
         "organizationLogo": "./static/Microsoft_logo_rgb_W-white_D-square.png",
         "organizationWideLogo": "./static/Microsoft_logo_rgb_W-white_D.png",
         "homeScreenHero": {
-            "imageUrl": "/static/hero.png",
+            "imageUrl": "/static/herogallery/hero-banner.png",
             "name": "Flashing Heart",
             "url": "/projects/flashing-heart",
             "description": "New? Start here!",
