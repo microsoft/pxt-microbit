@@ -9,9 +9,6 @@ namespace pxsim.flashlog {
     }
     // we don't store the flash log in the runtime object, since it's persistent
     let headers: string[] = []
-    let rows: {
-        text: string
-    }[] = []
     let currentRow: string[] = undefined
     let SEPARATOR = ","
     let timestampFormat: FlashLogTimeStampFormat = undefined
@@ -21,17 +18,21 @@ namespace pxsim.flashlog {
     /** allocated flash size **/
     const logEnd = 121852;
 
-    function ensureV2() {
+    let lastCode: string;
+    function init() {
         const b = board();
         if (!b) return;
+        if (lastCode != b.runOptions.code) {
+            /** log is cleared on flash, so clear on code changed**/
+            lastCode = b.runOptions.code;
+            erase();
+        }
         b.ensureHardwareVersion(2);
     }
 
     function commitRow(data: string) {
         if (!runtime) return;
         data += "\n";
-
-        rows.push({ text: data })
 
         /** edge 18 does not support text encoder, so fall back to length **/
         logSize += TextEncoder ? (new TextEncoder().encode(data)).length : data.length;
@@ -45,7 +46,7 @@ namespace pxsim.flashlog {
     }
 
     export function beginRow(): number {
-        ensureV2()
+        init()
         if (currentRow)
             return DAL.DEVICE_INVALID_STATE
         currentRow = []
@@ -53,7 +54,7 @@ namespace pxsim.flashlog {
     }
 
     export function logData(key: string, value: string, prepend = false) {
-        ensureV2()
+        init()
         if (!currentRow)
             return DAL.DEVICE_INVALID_STATE
 
@@ -78,7 +79,7 @@ namespace pxsim.flashlog {
     }
 
     export function endRow(): number {
-        ensureV2()
+        init()
         if (!currentRow)
             return DAL.DEVICE_INVALID_STATE
         if (!currentRow.some(el => el !== ""))
@@ -127,27 +128,32 @@ namespace pxsim.flashlog {
     }
 
     export function logString(s: string) {
-        ensureV2()
+        init()
         if (!s) return
 
         commitRow(s)
     }
 
     export function clear(fullErase: boolean) {
-        ensureV2()
-        rows = []
+        init()
+        erase();
+    }
+
+    function erase() {
         headers = []
         logSize = 0;
+        committedCols = 0;
         currentRow = undefined;
     }
 
     export function setTimeStamp(format: FlashLogTimeStampFormat) {
-        ensureV2()
+        init()
         // this option is probably not serialized, needs to move in state
         timestampFormat = format
     }
 
     export function setSerialMirroring(enabled: boolean) {
+        init();
         mirrorToSerial = !!enabled;
     }
 }
