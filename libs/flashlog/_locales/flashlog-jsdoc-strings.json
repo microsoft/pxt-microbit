@@ -5,5 +5,6 @@
   "flashlog.endRow": "Complete a row in the log, and pushes to persistent storage.",
   "flashlog.logData": "Populates the current row with the given key/value pair.",
   "flashlog.logString": "Inject the given row into the log as text, ignoring key/value pairs.",
+  "flashlog.setSerialMirroring": "Defines if data logging should also be streamed over the serial port.\n* @param enable True to enable serial port streaming, false to disable.",
   "flashlog.setTimeStamp": "Determines the format of the timestamp data to be added (if any).\nIf requested, time stamps will be automatically added to each row of data\nas an integer value rounded down to the unit specified.\n* @param format The format of timestamp to use."
 }

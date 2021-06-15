@@ -13,8 +13,6 @@ namespace datalogger {
     }
 
     let onLogFullHandler: () => void;
-    let _mirrorToSerial = true;
-    let _timestampFormat = FlashLogTimeStampFormat.Seconds;
     let _disabled = false;
 
     let initialized = false;
@@ -23,7 +21,8 @@ namespace datalogger {
             return;
         initialized = true;
 
-        includeTimestamp(_timestampFormat);
+        includeTimestamp(FlashLogTimeStampFormat.Seconds);
+        mirrorToSerial(true);
 
         control.onEvent(DAL.MICROBIT_ID_LOG, DAL.MICROBIT_LOG_EVT_LOG_FULL, () => {
             _disabled = true;
@@ -84,43 +83,6 @@ namespace datalogger {
             return;
         init();
 
-        if (_timestampFormat && _mirrorToSerial) {
-            let unit = "";
-            switch(_timestampFormat) {
-                case FlashLogTimeStampFormat.Milliseconds:
-                    unit = "milliseconds"
-                    break;
-                case FlashLogTimeStampFormat.Seconds:
-                    unit = "seconds";
-                    break;
-                case FlashLogTimeStampFormat.Minutes:
-                    unit = "minutes";
-                    break;
-                case FlashLogTimeStampFormat.Hours:
-                    unit = "hours";
-                    break;
-                case FlashLogTimeStampFormat.Days:
-                default:
-                    unit = "days";
-            }
-            // TODO: if we don't move it to CODAL and want the display of the time given
-            // to serial to match the time written to device, there's a semi complicated format conversion
-            // over in MicroBitLog::endRow that would need replicating.
-            // https://github.com/lancaster-university/codal-microbit-v2/blob/master/source/MicroBitLog.cpp#L405
-            const timeUnit = _timestampFormat > 1 ? _timestampFormat * 100 : _timestampFormat;
-            serial.writeLine(`Time (${unit}): ${control.millis() / timeUnit}`)
-        }
-
-        for (const cv of data) {
-            if (_mirrorToSerial && cv.value != "") {
-                serial.writeLine(`${cv.column}: ${cv.value}`);
-                // todo: should mirror to serial be in exact same format as row?
-                // if so, we'd probably need to either mirror to serial in codal itself
-                // or add a 'read last row' function to codal, to get order correct
-                // and to get the same timestamp.
-            }
-        }
-
         if (_disabled)
             return;
 
@@ -143,11 +105,8 @@ namespace datalogger {
     export function setColumns(cols: string[]): void {
         if (!cols)
             return;
-        init();
-        const fmt = _timestampFormat;
-        includeTimestamp(FlashLogTimeStampFormat.None);
+
         logData(cols.map(col => createCV(col, "")));
-        includeTimestamp(fmt);
     }
 
     /**
@@ -189,8 +148,7 @@ namespace datalogger {
     //% weight=30
     export function includeTimestamp(format: FlashLogTimeStampFormat): void {
         init();
-        _timestampFormat = format;
-        flashlog.setTimeStamp(_timestampFormat);
+        flashlog.setTimeStamp(format);
     }
 
     /**
@@ -206,6 +164,6 @@ namespace datalogger {
         // TODO:/note intentionally does not have group, as having the same group for all
         // blocks in a category causes the group to be elided.
         init();
-        _mirrorToSerial = !!on;
+        flashlog.setSerialMirroring(on);
     }
 }

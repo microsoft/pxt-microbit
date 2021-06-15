@@ -64,6 +64,17 @@ declare namespace flashlog {
     //% blockGap=8
     //% group="micro:bit (V2)" shim=flashlog::setTimeStamp
     function setTimeStamp(format: FlashLogTimeStampFormat): void;
+
+    /**
+     * Defines if data logging should also be streamed over the serial port.
+     *
+     * @param enable True to enable serial port streaming, false to disable.
+     */
+    //% help=flashlog/set-serial-mirroring
+    //% parts="flashlog"
+    //% blockGap=8
+    //% group="micro:bit (V2)" shim=flashlog::setSerialMirroring
+    function setSerialMirroring(enable: boolean): void;
 }
 
 // Auto-generated. Do not edit. Really.
