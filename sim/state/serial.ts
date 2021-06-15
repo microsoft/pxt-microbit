@@ -8,7 +8,7 @@ namespace pxsim {
         }
 
         private handleMessage(msg: SimulatorMessage) {
-            if (msg.type === "seria") {
+            if (msg.type === "serial") {
                 const data = (<SimulatorSerialMessage>msg).data || "";
                 this.receiveData(data);
             }
