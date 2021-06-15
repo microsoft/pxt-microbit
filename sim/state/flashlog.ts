@@ -18,13 +18,12 @@ namespace pxsim.flashlog {
     /** allocated flash size **/
     const logEnd = 121852;
 
-    let lastCode: string;
+    let lastRunId: string;
     function init() {
         const b = board();
         if (!b) return;
-        if (lastCode != b.runOptions.code) {
-            /** log is cleared on flash, so clear on code changed**/
-            lastCode = b.runOptions.code;
+        if (b.runOptions.id !== lastRunId) {
+            lastRunId = b.runOptions.id;
             erase();
         }
         b.ensureHardwareVersion(2);
