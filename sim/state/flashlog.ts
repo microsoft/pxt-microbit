@@ -81,7 +81,7 @@ namespace pxsim.flashlog {
         init()
         if (!currentRow)
             return DAL.DEVICE_INVALID_STATE
-        if (!currentRow.some(el => el !== ""))
+        if (!currentRow.some(el => el !== "" && el != undefined))
             return DAL.DEVICE_OK;
 
         if (timestampFormat !== FlashLogTimeStampFormat.None && mirrorToSerial) {
