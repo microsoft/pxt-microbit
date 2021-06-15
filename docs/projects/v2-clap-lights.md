@@ -1,10 +1,10 @@
 # Clap Lights
 
-## Introduction @unplugged
+## 1. Introduction @unplugged
 
 The new @boardname@s have a microphone! 🎤 Let's learn how switch your new @boardname@'s LED lights on and off when you clap 👏 
 
-## Setting up the sound input
+## 2. Setting up the sound input
 
 Let's begin by setting up your workspace! For this program, we want to trigger lights when your @boardname@ hears a noise.
 
@@ -18,7 +18,7 @@ input.onSound(DetectedSound.Loud, function () {
 })
 ```
 
-## Creating a lightsOn variable
+## 3. Creating a lightsOn variable
 
 Now, let's create a variable that keeps track of if your new @boardname@'s LEDs should be on or off.
 
@@ -37,7 +37,7 @@ input.onSound(DetectedSound.Loud, function () {
 })
 ```
 
-## Setting the lightsOn variable
+## 4. Setting the lightsOn variable
 
 ``lightsOn`` is a [__*boolean*__](#boolean "has one of two possible values: true or false") variable. Boolean logic is a fundamental building block of computer hardware and software. This tutorial will provide an example of how useful this kind of variable can be.
 
@@ -56,7 +56,7 @@ input.onSound(DetectedSound.Loud, function () {
 })
 ```
 
-## Displaying LEDs part 1
+## 5. Displaying LEDs part 1
 
 The next step is to set up an [__*if then else*__](#ifthenelse "runs some code if a boolean condition is true and different code if the condition is false") conditional statement so you can tell your @boardname@ what to do based on if the lights are on or off 🔆
 
@@ -81,7 +81,7 @@ input.onSound(DetectedSound.Loud, function () {
 })
 ```
 
-## Displaying LEDs part 2
+## 6. Displaying LEDs part 2
 
 Now, let's set your @boardname@'s display based on your ``||variables:lightsOn||`` variable's value.
 
@@ -111,7 +111,7 @@ input.onSound(DetectedSound.Loud, function () {
 })
 ```
 
-## Set loud sound threshold
+## 7. Set loud sound threshold
 
 Depending on what is happening around you, your @boardname@ might detect some sounds and turn on or off when you don't mean for it to. It is possible that your @boardname@ is hearing sounds that aren't yours! If you need to change how loud your @boardname@ thinks a `loud` sound is, you can set a sound threshold 🔉🔊
 
@@ -140,7 +140,7 @@ input.onSound(DetectedSound.Loud, function () {
 input.setSoundThreshold(SoundThreshold.Loud, 128)
 ```
 
-## Testing in the simulator
+## 8. Testing in the simulator
 
 💡 **Let's test what you've created** 💡
 <br/>

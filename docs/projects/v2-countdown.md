@@ -1,13 +1,13 @@
 # Countdown
 
-## Introduction @unplugged
+## 1. Introduction @unplugged
 
 Have you ever played a racing game? If you have, you may have encountered a countdown consisting of some images and noises that represent a "3...2...1..GO!" sequence. 🚥
 <br/>
 <br/>
 Today, let's recreate this using the new @boardname@'s microphone and LEDs! 🎤 
 
-## Setting up the loop
+## 2. Setting up the loop
 
 Since we need to produce the same sound 3 times, we will be using a [__*for loop*__](#forLoop "a loop that repeats code for a given number of times using an index"). Let's begin by setting that up!
 
@@ -25,7 +25,7 @@ for (let index = 0; index <= 2; index++) {
 }
 ```
 
-## Play music
+## 3. Play music
 
 Every time our loop runs, we want to play a tone. 🎵
 
@@ -43,7 +43,7 @@ for (let index = 0; index <= 2; index++) {
 }
 ```
 
-## Showing a number
+## 4. Showing a number
 
 With every tone, we also want to display our countdown. 🔢
 
@@ -60,7 +60,7 @@ for (let index = 0; index <= 2; index++) {
 }
 ```
 
-## Inverting the number
+## 5. Inverting the number
 
 If you take a look at your simulator, you will notice the LEDs flashing 0-1-2. We want it to say, 3-2-1! Let's learn a trick to invert the numbers.
 
@@ -79,7 +79,7 @@ for (let index = 0; index <= 2; index++) {
 }
 ```
 
-## Printing "GO!"
+## 6. Printing "GO!"
 
 Almost there! We finished the countdown, but now we need to wrap it up with a "GO!"
 
@@ -97,7 +97,7 @@ for (let index = 0; index <= 2; index++) {
 basic.showString("GO!")
 ```
 
-## Adding a "GO!" noise
+## 7. Adding a "GO!" noise
 
 The last thing we need to do is add a sound for the "GO!" 🕬
 

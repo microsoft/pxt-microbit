@@ -120,7 +120,7 @@ As the Haven blows away, random LEDs will move off the board. Let's begin to set
 <br/>
 ► Set it to say ``||variables:set [row] to [0]||``.
 <br/>
-► Go into your ``||variables:Variables||`` category and drag another ``||variables:set [col] to [0]||`` into the end of your ``||logic:if then||`` statement
+► Go into your ``||variables:Variables||`` category and drag another ``||variables:set [col] to [0]||`` block into the end of your ``||logic:if then||`` statement
 
 ```blocks
 let col = 0
