@@ -62,7 +62,7 @@ namespace datalogger {
     //% block="column $column value $value"
     //% value.shadow=math_number
     //% blockId=dataloggercreatecolumnvalue
-    //% group="micro:bit (v2)"
+    //% group="micro:bit (V2)"
     //% weight=80
     export function createCV(column: string, value: any): ColumnValue {
         return new ColumnValue(column, value);
@@ -76,7 +76,7 @@ namespace datalogger {
     //% blockId=dataloggerlogdata
     //% data.shadow=lists_create_with
     //% data.defl=dataloggercreatecolumnvalue
-    //% group="micro:bit (v2)"
+    //% group="micro:bit (V2)"
     //% weight=100
     export function logData(data: ColumnValue[]): void {
         if (!data || !data.length)
@@ -100,7 +100,7 @@ namespace datalogger {
     //% block="set columns $cols"
     //% blockId=dataloggersetcolumns
     //% data.shadow=list_create_with
-    //% group="micro:bit (v2)"
+    //% group="micro:bit (V2)"
     //% weight=70
     export function setColumns(cols: string[]): void {
         if (!cols)
@@ -116,7 +116,7 @@ namespace datalogger {
      */
     //% block="delete log||$deleteType"
     //% blockId=dataloggerdeletelog
-    //% group="micro:bit (v2)"
+    //% group="micro:bit (V2)"
     //% weight=60
     export function deleteLog(deleteType?: DeleteType): void {
         init();
@@ -130,7 +130,7 @@ namespace datalogger {
      */
     //% block="on log full"
     //% blockId="on log full"
-    //% group="micro:bit (v2)"
+    //% group="micro:bit (V2)"
     //% weight=40
     export function onLogFull(handler: () => void): void {
         init();
@@ -144,7 +144,7 @@ namespace datalogger {
     //% block="set timestamp $format"
     //% blockId=dataloggertoggleincludetimestamp
     //% format.defl=FlashLogTimeStampFormat.None
-    //% group="micro:bit (v2)"
+    //% group="micro:bit (V2)"
     //% weight=30
     export function includeTimestamp(format: FlashLogTimeStampFormat): void {
         init();
