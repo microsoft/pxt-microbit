@@ -106,7 +106,7 @@ namespace pxsim.flashlog {
                     break;
             }
 
-            const timestamp = runtime.runningTime()
+            const timestamp = runtime.runningTime();
 
             const timeUnit = timestampFormat > 1 ? timestampFormat * 100 : timestampFormat;
             const timeValue = timestamp / timeUnit;
@@ -116,6 +116,7 @@ namespace pxsim.flashlog {
             logData(`time (${unit})`, "" + timeValue, true /** Prepend before new headers */);
         }
 
+        currentRow.length = headers.length;
         const line = currentRow.join(SEPARATOR);
         if (headers.length !== committedCols) {
             commitRow(headers.join(SEPARATOR))
@@ -123,8 +124,8 @@ namespace pxsim.flashlog {
         }
         currentRow = undefined;
 
-        commitRow(line)
-        return DAL.DEVICE_OK
+        commitRow(line);
+        return DAL.DEVICE_OK;
     }
 
     export function logString(s: string) {
