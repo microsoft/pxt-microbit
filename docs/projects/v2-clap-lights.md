@@ -39,7 +39,7 @@ input.onSound(DetectedSound.Loud, function () {
 
 ## 4. Setting the lightsOn variable
 
-``lightsOn`` is a [__*boolean*__](#boolean "has one of two possible values: true or false") variable. Boolean logic is a fundamental building block of computer hardware and software. This tutorial will provide an example of how useful this kind of variable can be.
+``lightsOn`` is a [__*Boolean*__](#boolean "has one of two possible values: true or false") variable. Boolean logic is a fundamental building block of computer hardware and software. This tutorial will provide an example of how useful this kind of variable can be.
 
 ---
 
@@ -58,7 +58,7 @@ input.onSound(DetectedSound.Loud, function () {
 
 ## 5. Displaying LEDs part 1
 
-The next step is to set up an [__*if then else*__](#ifthenelse "runs some code if a boolean condition is true and different code if the condition is false") conditional statement so you can tell your @boardname@ what to do based on if the lights are on or off 🔆
+The next step is to set up an [__*if then else*__](#ifthenelse "runs some code if a Boolean condition is true and different code if the condition is false") conditional statement so you can tell your @boardname@ what to do based on if the lights are on or off 🔆
 
 ---
 
