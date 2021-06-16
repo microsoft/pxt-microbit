@@ -64,7 +64,7 @@ The next step is to set up an [__*if then else*__](#ifthenelse "runs some code i
 
 ► From the ``||logic:Logic||`` category, grab an ``||logic:if [true] then...else||`` block and place it at the end of your ``||input:on [loud] sound||`` container.
 <br/>
-► Look in the ``||variables:Variables||`` category and drag the ``||variables:lightsOn||`` variable to replace the ``||logic:[true]||`` argument in your ``||logic:if then...else||`` block.
+► Look in the ``||variables:Variables||`` category and drag the ``||variables:lightsOn||`` variable to replace the ``||logic:[true]||`` argument in your ``||logic:if then...else||`` statement.
 󠀢<br/>
 &nbsp;&nbsp; 💡 Because ``lightsOn`` is a Boolean variable, it can be an argument for an ``if`` statement!
 <br/>
