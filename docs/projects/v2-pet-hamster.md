@@ -12,9 +12,9 @@ For this tutorial, we will create a "pet hamster" whose mood changes depending o
 
 ## 2. Cyrus's asleep face
 
-👋🐹 Meet your new pet hamster, Cyrus 🐹👋
+👋 Meet your new pet hamster, Cyrus 🐹
 <br/>
-Cyrus is a very sleepy hamster. In fact, Cyrus is almost always sleeping! 😴
+Cyrus is a very sleepy hamster. In fact, Cyrus is almost always sleeping 😴
 
 ---
 
@@ -145,7 +145,7 @@ basic.showIcon(IconNames.Asleep)
 <br/>
 Check out the simulator, and make sure your speakers are on 🔊
 <br/>
-Shake or press Cyrus's logo to see how they interact with you 🐹
+Shake Cyrus or press their logo to see how they interact with you 🐹
 <br/>
 If you own a new @boardname@, you can download this code and try it out!
 
