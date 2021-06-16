@@ -9,7 +9,7 @@ Today, let's recreate this using the new @boardname@'s microphone and LEDs! 🎤
 
 ## 2. Setting up the loop
 
-Since we need to produce the same sound 3 times, we will be using a [__*for loop*__](#forLoop "a loop that repeats code for a given number of times using an index"). Let's begin by setting that up!
+Since we need to produce the same sound 3 times, we will be using a [__*for loop*__](#forLoop "repeat code for a given number of times using an index"). Let's begin by setting that up!
 
 ---
 
