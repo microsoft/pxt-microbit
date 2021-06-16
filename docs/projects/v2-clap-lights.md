@@ -24,7 +24,7 @@ Now, let's create a variable that keeps track of if your new @boardname@'s LEDs 
 
 ---
 
-► In the ``||variables:Variables||`` category, click on ``Make a Variable...``. From here, you can name your variable.
+► In the ``||variables:Variables||`` category, click on ``Make a Variable...`` and make a variable named ``lightsOn``.
 <br/>
 &nbsp;&nbsp; 💡 We chose to name our variable ``lightsOn`` because it is meant to keep track if the @boardname@'s lights should be on or off.
 <br/>
@@ -89,7 +89,9 @@ Now, let's set your @boardname@'s display based on your ``||variables:lightsOn||
 
 ► We want to turn the lights on if ``lightsOn`` is ``true``. So, from the ``||basic:Basic||`` category, grab a ``||basic:show LEDs||`` block and place it into the ``||logic:if then||`` section.
 <br/>
-► Set the LEDs to a pattern you like! We chose to light up the whole display.
+► Set the LEDs to a pattern you like!
+<br/>
+&nbsp;&nbsp; 💡 Feel free to make your own design 🎨 If you look at the hint, you'll see that we chose to light up the whole display.
 󠀢<br/>
 ► We want to turn off the lights if ``lightsOn`` is ``false``. From the ``||basic:Basic||`` category, find the ``||basic:clear screen||`` block and put it into the ``||logic:else||`` section.
 
@@ -113,13 +115,13 @@ input.onSound(DetectedSound.Loud, function () {
 
 ## 7. Set loud sound threshold
 
-Depending on what is happening around you, your @boardname@ might detect some sounds and turn on or off when you don't mean for it to. It is possible that your @boardname@ is hearing sounds that aren't yours! If you need to change how loud your @boardname@ thinks a `loud` sound is, you can set a sound threshold 🔉🔊
+Depending on what is happening around you, your @boardname@ might detect sounds when you don't want it to. If you need to change how loud your @boardname@ thinks a ``loud`` sound is, you can set a sound threshold 🔉🔊
 
 ---
 
 ► In the ``||input:Input ... more||`` category, find the ``||input:set [loud] sound threshold to [128]||`` block and place it into your ``||basic: on start||`` container.
 <br/>
-&nbsp;&nbsp; 💡 After you test your code (next step), if you need to increase/decrease the threshold at which your @boardname@ detects sound when turning the LEDs on or off, modifying the ``128`` number could help!
+&nbsp;&nbsp; 💡 After you test your code in the next step, you can use this to modify the noise level that triggers your @boardname@'s lights.
 
 ```blocks
 let lightsOn = false
