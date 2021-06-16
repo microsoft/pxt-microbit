@@ -1,20 +1,20 @@
-# Pet Rock
+# Pet Hamster
 
 ## 1. Introduction @unplugged
 
-Have you ever had a pet rock? Now, you can have a pet rock that can make noise ⛰️🔊
+Have you ever had a pet hamster? Now, you can have one in @boardname@ form 🐹
 <br/>
 <br/>
 The new @boardname@s have gold logo buttons. This is because the logos are now touch sensors!
 <br/>
 <br/>
-For this tutorial, we will create a "pet rock" whose mood changes depending on if you shake them or press their logo.
+For this tutorial, we will create a "pet hamster" whose mood changes depending on if you shake them or press their logo.
 
-## 2. Cyrus's duck face
+## 2. Cyrus's asleep face
 
-👋⛰️ Meet your new pet rock, Cyrus ⛰️👋
+👋🐹 Meet your new pet hamster, Cyrus 🐹👋
 <br/>
-Cyrus is a very sleepy rock. In fact, Cyrus is almost always sleeping! 😴
+Cyrus is a very sleepy hamster. In fact, Cyrus is almost always sleeping! 😴
 
 ---
 
@@ -145,9 +145,9 @@ basic.showIcon(IconNames.Asleep)
 <br/>
 Check out the simulator, and make sure your speakers are on 🔊
 <br/>
-Shake or press Cyrus's logo to see how they interact with you!
+Shake or press Cyrus's logo to see how they interact with you 🐹
 <br/>
-If you own a new @boardname@, you can download this code and try it out 🥳
+If you own a new @boardname@, you can download this code and try it out!
 
 ```blocks
 input.onGesture(Gesture.Shake, function () {
