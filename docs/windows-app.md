@@ -4,4 +4,8 @@ The Windows app is being deprecated by June 2022.
 
 ## Moving Projects
 
-To move your projects from the app to the website, you can use the share feature to create a share URL, and import it via URL on the website.
+If you want to keep the projects you saved with the app and use them again in the MakeCode editor on the web, you will need to transfer them.
+
+1. Share the project from the app using the **Share** option.
+2. Copy the shared project URL that the app gives you.
+3. On the MakeCode website homepage, click on **Import** to open the shared project with the URL you just copied.
