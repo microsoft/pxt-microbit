@@ -13,7 +13,7 @@ Since we need to produce the same sound 3 times, we will be using a [__*for loop
 
 ---
 
-► From the ``||loops:Loops||`` category, find the ``||loops:for [index] from 0 to [4]||`` block and add it to your ``||basic:on start||`` container.
+► From the ``||loops:Loops||`` category, find the ``||loops:for [index] from 0 to [4]||`` loop and add it to your ``||basic:on start||`` container.
 <br/>
 ► Set your loop's counter to go to ``2``.
 <br/>
@@ -85,7 +85,7 @@ Almost there! We finished the countdown, but now we need to wrap it up with a "G
 
 ---
 
-► From the ``||basic:Basic||`` category, find the ``||basic:show string ["Hello!"]||`` block and put it at the end of your ``||basic:on start||`` block.
+► From the ``||basic:Basic||`` category, find the ``||basic:show string ["Hello!"]||`` block and put it at the end of your ``||basic:on start||`` container.
 <br/>
 ► Set the string to be ``GO!``
 
