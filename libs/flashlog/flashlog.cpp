@@ -131,8 +131,7 @@ void setTimeStamp(FlashLogTimeStampFormat format) {
 //% group="micro:bit (V2)"
 void setSerialMirroring(bool enable) {
 #if MICROBIT_CODAL
-    // TODO: Uncomment when codal bumped to include this fn
-    // return uBit.log.setSerialMirroring(enable);
+    return uBit.log.setSerialMirroring(enable);
 #endif
 }
 
