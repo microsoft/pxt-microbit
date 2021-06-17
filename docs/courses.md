@@ -66,7 +66,7 @@ Tutorials, lessons, and mini-courses about programming and computing.
 }, {
   "name": "Networking with the micro:bit",
   "description": "A series of activities to teach the basics of computer networks.",
-  "url": "https://microbit.org/projects/make-it-code-it/",
+  "url": "https://microbit.nominetresearch.uk/",
   "imageUrl": "/static/courses/networking-book.png"  
 }, {
   "name": "SparkFun Videos",
