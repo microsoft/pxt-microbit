@@ -133,6 +133,10 @@ namespace control {
         return t
     }
 
+    /**
+     * Given two versions, returns -1 if the first version is less than
+     * the second, 1 if it's greater, and 0 if it's the same.
+     */
     //%
     export function compareVersion(version1: string, version2: string): number {
         let v1Arr = version1.split(".");
