@@ -203,7 +203,10 @@
             "CytronTechnologies/pxt-rekabit",
             "bsiever/microbit-dstemp",
             "bsiever/microbit-dstemp-2wire",
-            "microsoft/pxt-data-streamer"
+            "microsoft/pxt-data-streamer",
+            "iBuilds/pxt-PTKidsBIT-Robot",
+            "4tronix/EggBit",
+            "joy-it/SEN-MPU6050"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",
@@ -214,10 +217,7 @@
             "4tronix/BitBot",
             "kitronikltd/pxt-kitronik-servo-lite",
             "kitronikltd/pxt-kitronik-motor-driver",
-            "Tinkertanker/pxt-ringbitcar",
-            "iBuilds/pxt-PTKidsBIT-Robot",
-            "4tronix/EggBit",
-            "joy-it/SEN-MPU6050"
+            "Tinkertanker/pxt-ringbitcar"
         ],
         "upgrades": {
             "tinkertanker/pxt-iot-environment-kit": "min:v4.2.1",
