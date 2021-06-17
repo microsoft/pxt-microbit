@@ -7,7 +7,7 @@ namespace loops {
      * @param body code to execute
      */
     //% weight=45 blockAllowMultiple=1
-    //% interval.shadow=timePicker
+    //% interval.shadow=longTimePicker
     //% afterOnStart=true
     //% blockId=every_interval block="every $interval ms"
     export function everyInterval(interval: number, a: () => void): void {
@@ -17,5 +17,18 @@ namespace loops {
                 pause(interval);
             }
         });
+    }
+
+    /**
+      * Get the time field editor
+      * @param ms time duration in milliseconds, eg: 500, 1000
+      */
+    //% blockId=longTimePicker block="%ms"
+    //% blockHidden=true shim=TD_ID
+    //% colorSecondary="#FFFFFF"
+    //% ms.fieldEditor="numberdropdown" ms.fieldOptions.decompileLiterals=true
+    //% ms.fieldOptions.data='[["100 ms", 100], ["200 ms", 200], ["500 ms", 500], ["1 second", 1000], ["1 minute", 60000], ["1 hour", 3600000]]'
+    export function __timePicker(ms: number): number {
+        return ms;
     }
 }
