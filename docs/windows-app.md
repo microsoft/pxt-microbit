@@ -1,6 +1,6 @@
 # Windows App Deprecation
 
-The Windows app is being deprecated by June 2022.
+The Windows app is being deprecated by June 2022. Please use your web browser to access the website at https://makecode.microbit.org
 
 ## Moving Projects
 
