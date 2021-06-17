@@ -22,7 +22,7 @@ Your @boardname@ will need to send Sky different messages depending on if you pr
 
 ► From the ``||input:Input||`` category, find the ``||input:on logo [pressed]||`` container and add it to your workspace.
 <br/>
-► From the ``||input:Input||`` category, get another ``||input:on logo [pressed]||`` container and add it to your workspace.
+► Get another ``||input:on logo [pressed]||`` container and add it to your workspace.
 <br/>
 &nbsp;&nbsp; 💡 One of the containers will be greyed out. Let's fix that!
 <br/>
@@ -86,9 +86,11 @@ To ensure Sky gets the right message, we will use an [__*if then else*__](#ifthe
 
 ---
 
-► Grab an ``||logic:if [true] then...else||`` block and place it in your ``||radio:on radio received [receivedNumber]||`` container.
+► From the ``||logic:Logic||`` category, grab an ``||logic:if [true] then...else||`` statement and place it in your ``||radio:on radio received [receivedNumber]||`` container.
 <br/>
-► Look in the ``||logic:Logic||`` category and drag the ``||logic:[0] = [0]||`` conditional to replace the ``||logic:[true]||`` argument in your ``||logic:if [0 = 0] then...else||`` block.
+► Look in the ``||logic:Logic||`` category again and find the ``||logic:[0] = [0]||`` conditional.
+<br/>
+► Drag the ``||logic:[0] = [0]||`` to replace the ``||logic:[true]||`` argument in your ``||logic:if then...else||`` statement.
 󠀢
 ```blocks
 radio.onReceivedNumber(function (receivedNumber) {
@@ -114,7 +116,7 @@ Let's set it so the message Sky receives matches the one you send 🗨️🐖
 
 ► From your ``||radio:on radio received [receivedNumber]||`` container, click on the ``receivedNumber`` input and drag out a copy.
 <br/>
-► Place the ``receivedNumber`` you just dragged out into your ``||logic:if||`` conditional so it reads ``||logic:if [receivedNumber] = [0] then||``.
+► Place that ``receivedNumber`` into your ``||logic:if||`` statement so it reads ``||logic:if [receivedNumber] = [0] then||``.
 
 ```blocks
 radio.onReceivedNumber(function (receivedNumber) {
@@ -138,11 +140,11 @@ At this point, we have sent but not yet displayed messages for Sky to see. The n
 
 ---
 
-► We want to display a dash if the logo is pressed. Grab an ``||basic:show leds||`` block and place it in your ``||logic:if then||`` section.
+► We want to display a dash if the logo is pressed. Grab a ``||basic:show leds||`` block and place it in your ``||logic:if then||`` statement.
 <br/>
 ► Set the LEDs to be a dot: .
 󠀢<br/>
-► We want to display a dash if the logo is long pressed. Get another ``||basic:show leds||`` block and place it in your ``||logic:else||`` section.
+► We want to display a dash if the logo is long pressed. Get another ``||basic:show leds||`` block and place it in your ``||logic:else||`` statement.
 <br/>
 ► Set the new LED block to be a dash: -
 
@@ -180,11 +182,11 @@ The new @boardname@s have built-in speakers! Let's use them to play a sound that
 
 ---
 
-► From the ``||music:Music||`` category, drag a ``||music:play tone [Middle C] for [1 beat]||`` into the end of the  ``||logic:if then||`` section.
+► From the ``||music:Music||`` category, drag a ``||music:play tone [Middle C] for [1 beat]||`` block into the end of your  ``||logic:if then||`` statement.
 <br/>
 ► Dots are shorter than dashes! Set the tone to play for ``1/4 beat``.
 <br/>
-► Get another ``||music:play tone [Middle C] for [1 beat]||`` and place it at the end of the  ``||logic:else||`` section. You can leave this to be 1 beat long.
+► Get another ``||music:play tone [Middle C] for [1 beat]||`` and place it at the end of your  ``||logic:else||`` statement. You can leave this to be 1 beat long.
 
 ```blocks
 radio.onReceivedNumber(function (receivedNumber) {
@@ -222,9 +224,9 @@ As a final step, we want to make sure Sky knows when your message ends. We can d
 
 ---
 
-► From the ``||basic:Basic||`` category, find the ``||basic:clear screen||`` block and drag one into the end of your ``||logic:if then||`` statement.
+► From the ``||basic:Basic||`` category, find the ``||basic:clear screen||`` block and place one at the end of your ``||logic:if then||`` statement.
 <br/>
-► Drag another ``||basic: clear screen||`` block into the end of your ``||logic:else||`` statement.
+► Get another ``||basic: clear screen||`` block and put it at end of your ``||logic:else||`` statement.
 
 ```blocks
 radio.onReceivedNumber(function (receivedNumber) {

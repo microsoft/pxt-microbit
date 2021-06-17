@@ -51,7 +51,7 @@ Since Haven will be blown away, let's set a sound threshold so they can hear you
 
 ---
 
-► From the ``||logic:Logic||`` category, get a ``||logic:[0] [<] [0]||`` comparison and replace the ``[true]`` input for your ``||logic:if then||`` block.
+► From the ``||logic:Logic||`` category, get a ``||logic:[0] [<] [0]||`` comparison and replace the ``||logic:[true]||`` input for your ``||logic:if then||`` block.
 <br/>
 ► Look in the ``||input:Input||`` category and drag a ``||input:sound level||`` into your workspace.
 <br/>
@@ -74,7 +74,7 @@ We want to blow Haven away quickly, so we will be using a [__*repeat loop*__](#r
 
 ---
 
-► From the ``||loops:Loops||`` category, find the ``||loops:repeat [4] times do||`` loop and drag it into your ``||logic:if else||`` statement.
+► From the ``||loops:Loops||`` category, find the ``||loops:repeat [4] times do||`` loop and drag it into your ``||logic:if then||`` statement.
 
 ```blocks
 basic.showIcon(IconNames.Ghost)
@@ -260,9 +260,9 @@ basic.forever(function () {
 <br/>
 Check out the simulator!
 <br/>
-► Click on the pink bar underneath the microphone icon 🎤. Drag it up and down. Every time you drag it above the sound level you chose is one breath.
+► Click on the pink bar underneath the microphone icon 🎤. Drag it above your sound threshold to blow Haven away.
 <br/>
-► If you own a new @boardname@, you can download this code and try it out! Blow into the microphone to shoo Haven away!
+► If you own a new @boardname@, you can download this code and try it out. Blow into the microphone to shoo Haven away 💨
 <br/>
 &nbsp;&nbsp; 💡 Use the reset button on your @boardname@ to bring Haven back 👻
 
