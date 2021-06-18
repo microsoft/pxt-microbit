@@ -592,9 +592,10 @@
             "dragFileImage": "/static/download/transfer.png",
             "connectDeviceImage": "/static/download/connect.png",
             "selectDeviceImage": "/static/download/pair.png",
-            "connectionSuccessImage": "/static/download/firmware.png",
-            "checkFirmwareVersionImage": "/static/download/transfer.png",
-            "checkUSBCableImage": "/static/download/connect.png"
+            "connectionSuccessImage": "/static/download/connected.png",
+            "checkFirmwareVersionImage": "/static/download/firmware.png",
+            "checkUSBCableImage": "/static/download/connect.png",
+            "incompatibleHardwareImage": "/static/download/incompatible.png"
         },
         "winAppDeprImage": "/static/winapp.PNG",
         "showWinAppDeprBanner": false
