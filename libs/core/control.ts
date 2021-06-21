@@ -167,7 +167,7 @@ namespace control {
 
         for (let i = 0; i < v1Arr.length; i++) {
             if (parseInt(v1Arr[i]) != parseInt(v2Arr[i])) {
-                return parseInt(v1Arr[i]) < parseInt(v2Arr[i]) ? -1 : 1;
+                return parseInt(v1Arr[i]) - parseInt(v2Arr[i]);
             }
         }
         return 0;
