@@ -401,6 +401,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 
 ```codecard
 [{
+  "name": "MATRIX Micro",
+  "url":"/pkg/pxt-MatrixMicro",
+  "cardType": "package"
+}, {
   "name": "PTKidsBIT",
   "url":"/pkg/iBuilds/pxt-PTKidsBIT-Robot",
   "cardType": "package"

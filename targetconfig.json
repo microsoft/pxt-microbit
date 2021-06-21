@@ -206,7 +206,8 @@
             "microsoft/pxt-data-streamer",
             "iBuilds/pxt-PTKidsBIT-Robot",
             "4tronix/EggBit",
-            "joy-it/SEN-MPU6050"
+            "joy-it/SEN-MPU6050",
+            "Matrix-Robotics/pxt-MatrixMicro"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",
