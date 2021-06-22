@@ -133,9 +133,49 @@ namespace control {
         return t
     }
 
+    /**
+     * Given two versions, returns -1 if the first version is less than
+     * the second, 1 if it's greater, and 0 if it's the same.
+     */
+    //%
+    export function compareVersion(version1: string, version2: string): number {
+        let v1Arr = version1.split(".");
+        let v2Arr = version2.split(".");
+
+        v1Arr = v1Arr.map((str) => {
+            if (str.includes("x") || str.includes("X")) {
+                return "0"
+            } else {
+                return str;
+            }
+        })
+        v2Arr = v2Arr.map((str) => {
+            if (str.includes("x") || str.includes("X")) {
+                return "0"
+            } else {
+                return str;
+            }
+        })
+
+        for (let i = v1Arr.length; i < Math.max(v1Arr.length, v2Arr.length); i++) {
+            v1Arr.push("0");
+        }
+
+        for (let i = v2Arr.length; i < Math.max(v1Arr.length, v2Arr.length); i++) {
+            v2Arr.push("0");
+        }
+
+        for (let i = 0; i < v1Arr.length; i++) {
+            if (parseInt(v1Arr[i]) != parseInt(v2Arr[i])) {
+                return parseInt(v1Arr[i]) - parseInt(v2Arr[i]);
+            }
+        }
+        return 0;
+    }
+
     //% shim=control::_hardwareVersion
-    export function hardwareVersion(): number {
-        return 2;
+    export function hardwareVersion(): string {
+        return "2.0";
     }
 }
 
