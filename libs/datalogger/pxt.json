@@ -5,6 +5,7 @@
         "datalogger.ts"
     ],
     "public": true,
+    "searchOnly": true,
     "disablesVariants": [
         "mbdal"
     ],
