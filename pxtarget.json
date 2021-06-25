@@ -13,9 +13,7 @@
         "libs/servo",
         "libs/radio-broadcast",
         "libs/microphone",
-        "libs/settings",
-        "libs/flashlog",
-        "libs/datalogger"
+        "libs/settings"
     ],
     "cloud": {
         "workspace": false,
@@ -164,7 +162,7 @@
                 "codalTarget": {
                     "name": "codal-microbit-v2",
                     "url": "https://github.com/lancaster-university/codal-microbit-v2",
-                    "branch": "v0.2.29",
+                    "branch": "v0.2.25",
                     "type": "git"
                 },
                 "codalBinary": "MICROBIT",
