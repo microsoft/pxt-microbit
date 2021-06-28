@@ -5,7 +5,7 @@
 👻 Oh, no! Your new @boardname@ has been infiltrated by a ghost named Haven 👻
 <br/>
 <br/>
-Have no fear - you can get rid if Jasmine with just your voice 🎤
+Have no fear - you can get rid if Haven with just your voice 🎤
 <br/>
 <br/>
 For this tutorial, we will learn how to blow the scary ghost away 🌬️

@@ -1,32 +1,27 @@
-# Morse Code
+# Morse Chat
 
-## 1. Introduction @unplugged
+## 1. Introducing Sky @unplugged
 
 👋🐷 Meet Sky, the pig! Sky can only communicate using [__*morse code*__](#morsecode "an alphabet composed of dots (short signals) and dashes (long signals)").
 <br/>
 Luckily, you can use your new @boardname@ to talk to Sky 🐷👋
-<br/>
-<br/>
-The new @boardname@s have gold logo buttons. This is because the logos are now touch sensors!
-<br/>
-<br/>
-In this tutorial, we will walk through how to use the logo press functionality to send morse code messages between two or more of the new @boardname@s 🥳
 
-_**Note:** Do not worry if you don't own multiple of the new @boardname@s. We will be able to simulate two in this tutorial._
+## 2. Introducing tutorial @unplugged
+In this tutorial, we will walk through how to send morse code messages between two or more of the new @boardname@s 🥳
 
-## 2. Setting up the space
+_**Note:** Don't worry if you don't own multiple @boardname@s. We will be able to simulate two in this tutorial._
 
-Your @boardname@ will need to send Sky different messages depending on if you press or long press the logo. Let's set that up!
+## 3. Setup
 
----
+⚙️ **Communication works best when set up properly** ⚙️
 
-► From the ``||input:Input||`` category, find the ``||input:on logo [pressed]||`` container and add it to your workspace.
-<br/>
-► Get another ``||input:on logo [pressed]||`` container and add it to your workspace.
-<br/>
-&nbsp;&nbsp; 💡 One of the containers will be greyed out. Let's fix that!
-<br/>
-► Set the argument for one of your containers to be ``||input:on logo [long pressed]||``.
+<hr/>
+
+► From the ``||input:Input||`` category in the toolbox, grab an ``||input:on logo [pressed]||`` container and add it to your workspace.
+
+► Get a **second** ``||input:on logo [pressed]||`` container and add it to your workspace.
+
+► On the **greyed-out container**, click on the ``||input:[pressed]||`` **dropdown** and set it to ``||input:on logo [long pressed]||``.
 
 ```blocks
 input.onLogoEvent(TouchButtonEvent.LongPressed, function () {
@@ -37,19 +32,19 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
 })
 ```
 
-## 3. Sending a Boolean
+## 4. Sending different messages
 
-Your @boardname@ needs to send a dot on logo press and a dash on logo long press 💬
-<br/>
-To make sure Sky receives the right message, let's send different numbers for each input.
+💬 **Make sure to send Sky two _different_ messages** 💬
 
----
+<hr/>
 
-► From the ``||radio:Radio||`` category, find the ``||radio:radio send number [0]||`` block and place it into your ``||input:on logo [long pressed]||`` container.
-<br/>
+► From the ``||radio:Radio||`` category, grab a ``||radio:radio send number [0]||`` block.
+
+► Snap it into your ``||input:on logo [long pressed]||`` container.
+
 ► Set the number to be ``1``.
-<br/>
-► Drag another ``||radio:radio send number [0]||`` block and, this time, place it into your ``||input:on logo [pressed]||`` container.
+
+► From the ``||radio:Radio||`` category, get a **second** ``||radio:radio send number [0]||`` block and snap it into your **empty** ``||input:on logo [pressed]||`` container.
 
 ```blocks
 input.onLogoEvent(TouchButtonEvent.LongPressed, function () {
@@ -60,9 +55,9 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
 })
 ```
 
-## 4. Receiving a message
+## 5. Receiving different messages
 
-Sky needs to be able to receive messages! Let's set that up.
+Now that we've set up sending messages, let's make sure Sky can receive them!
 
 ---
 
@@ -80,13 +75,13 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
 })
 ```
 
-## 5. Setting the display conditional
+## 5. Setting up the display conditional
 
-To ensure Sky gets the right message, we will use an [__*if then else*__](#ifthenelse "runs some code if a boolean condition is true and different code if the condition is false") conditional statement. This will let you tell your @boardname@ how and when to display a dot or a dash.
+To ensure Sky gets the right message, we will use an [__*if then else*__](#ifthenelse "runs some code if a boolean condition is true and different code if the condition is false") conditional statement.
 
 ---
 
-► From the ``||logic:Logic||`` category, grab an ``||logic:if [true] then...else||`` statement and place it in your ``||radio:on radio received [receivedNumber]||`` container.
+► From the ``||logic:Logic||`` category, grab an ``||logic:if [true] then...else||`` statement and click it into your ``||radio:on radio received [receivedNumber]||`` container.
 <br/>
 ► Look in the ``||logic:Logic||`` category again and find the ``||logic:[0] = [0]||`` conditional.
 <br/>
