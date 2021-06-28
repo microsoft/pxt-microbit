@@ -195,9 +195,7 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
 
 <hr/>
 
-► From the ``||basic:Basic||`` category, find the ``||basic:clear screen||`` block and place it at the **end** of your ``||logic:if then||`` statement.
-
-► Get **another** ``||basic: clear screen||`` block and snap it at **end** of your ``||logic:else||`` statement.
+► From the ``||basic:Basic||`` category, find the ``||basic:clear screen||`` block and snap it at the **end** of your ``||radio:on radio received [receivedNumber]||`` container.
 
 ```blocks
 radio.onReceivedNumber(function (receivedNumber) {
@@ -210,7 +208,6 @@ radio.onReceivedNumber(function (receivedNumber) {
             . . . . .
             `)
         music.playTone(262, music.beat(BeatFraction.Quarter))
-        basic.clearScreen()
     } else {
         basic.showLeds(`
             . . . . .
@@ -220,8 +217,8 @@ radio.onReceivedNumber(function (receivedNumber) {
             . . . . .
             `)
         music.playTone(262, music.beat(BeatFraction.Whole))
-        basic.clearScreen()
     }
+    basic.clearScreen()
 })
 input.onLogoEvent(TouchButtonEvent.LongPressed, function () {
     radio.sendNumber(1)
@@ -262,7 +259,6 @@ radio.onReceivedNumber(function (receivedNumber) {
             . . . . .
             `)
         music.playTone(262, music.beat(BeatFraction.Quarter))
-        basic.clearScreen()
     } else {
         basic.showLeds(`
             . . . . .
@@ -272,8 +268,8 @@ radio.onReceivedNumber(function (receivedNumber) {
             . . . . .
             `)
         music.playTone(262, music.beat(BeatFraction.Whole))
-        basic.clearScreen()
     }
+    basic.clearScreen()
 })
 input.onLogoEvent(TouchButtonEvent.LongPressed, function () {
     radio.sendNumber(1)
