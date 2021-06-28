@@ -21,7 +21,7 @@ _**Note:** Don't worry if you don't own multiple @boardname@s. We will be able t
 
 ► Get a **second** ``||input:on logo [pressed]||`` container and add it to your workspace.
 
-► On the **greyed-out container**, click on the ``||input:[pressed]||`` **dropdown** and set it to ``||input:on logo [long pressed]||``.
+► On the **greyed-out container**, click on the ``||input:[pressed]||`` **dropdown** and set it to ``||input:[long pressed]||``.
 
 ```blocks
 input.onLogoEvent(TouchButtonEvent.LongPressed, function () {
@@ -40,11 +40,11 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
 
 ► From the ``||radio:Radio||`` category, grab a ``||radio:radio send number [0]||`` block.
 
-► Snap it into your ``||input:on logo [long pressed]||`` container.
+► Snap it into your ``||input:[long pressed]||`` container.
 
 ► Set the number to be ``1``.
 
-► From the ``||radio:Radio||`` category, get a **second** ``||radio:radio send number [0]||`` block and snap it into your **empty** ``||input:on logo [pressed]||`` container.
+► From the ``||radio:Radio||`` category, get **another** ``||radio:radio send number [0]||`` block and snap it into your **empty** ``||input:on logo [pressed]||`` container.
 
 ```blocks
 input.onLogoEvent(TouchButtonEvent.LongPressed, function () {
@@ -57,36 +57,16 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
 
 ## 5. Receiving different messages
 
-Now that we've set up sending messages, let's make sure Sky can receive them!
+To ensure Sky gets the right message, we will use an [__*if then else*__](#ifthenelse "runs some code if a boolean condition is true and different code if the condition is false") conditional statement.
 
----
+<hr/>
 
 ► From the ``||radio:Radio||`` category, find the ``||radio:on radio received [receivedNumber]||`` container and add it to your workspace.
 
-```blocks
-radio.onReceivedNumber(function (receivedNumber) {
-	
-})
-input.onLogoEvent(TouchButtonEvent.LongPressed, function () {
-    radio.sendNumber(1)
-})
-input.onLogoEvent(TouchButtonEvent.Pressed, function () {
-    radio.sendNumber(0)
-})
-```
+► From the ``||logic:Logic||`` category, grab an ``||logic:if [true] then...else||`` statement and snap it into your ``||radio:on radio received [receivedNumber]||`` container.
 
-## 5. Setting up the display conditional
+► Go back to the ``||logic:Logic||`` category, grab the ``||logic:[0] = [0]||``, and click it in to replace the ``||logic:[true]||`` argument in your ``||logic:if then...else||`` statement.
 
-To ensure Sky gets the right message, we will use an [__*if then else*__](#ifthenelse "runs some code if a boolean condition is true and different code if the condition is false") conditional statement.
-
----
-
-► From the ``||logic:Logic||`` category, grab an ``||logic:if [true] then...else||`` statement and click it into your ``||radio:on radio received [receivedNumber]||`` container.
-<br/>
-► Look in the ``||logic:Logic||`` category again and find the ``||logic:[0] = [0]||`` conditional.
-<br/>
-► Drag the ``||logic:[0] = [0]||`` to replace the ``||logic:[true]||`` argument in your ``||logic:if then...else||`` statement.
-󠀢
 ```blocks
 radio.onReceivedNumber(function (receivedNumber) {
     if (0 == 0) {
@@ -105,13 +85,9 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
 
 ## 6. Conditioning on the input
 
-Let's set it so the message Sky receives matches the one you send 🗨️🐖
+► From your ``||radio:on radio received [receivedNumber]||`` container, grab the ``receivedNumber`` input and drag out a **copy**.
 
----
-
-► From your ``||radio:on radio received [receivedNumber]||`` container, click on the ``receivedNumber`` input and drag out a copy.
-<br/>
-► Place that ``receivedNumber`` into your ``||logic:if||`` statement so it reads ``||logic:if [receivedNumber] = [0] then||``.
+► Place the ``receivedNumber`` **copy** into your ``||logic:if||`` statement so it reads ``||logic:if [receivedNumber] = [0] then||``.
 
 ```blocks
 radio.onReceivedNumber(function (receivedNumber) {
@@ -131,17 +107,17 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
 
 ## 7. Displaying a message
 
-At this point, we have sent but not yet displayed messages for Sky to see. The next step is to have your @boardname@ display the symbol it has received. 📃
+📃 **Let's make sure Sky sees your message** 📃
 
----
+<hr/>
 
-► We want to display a dash if the logo is pressed. Grab a ``||basic:show leds||`` block and place it in your ``||logic:if then||`` statement.
-<br/>
+► We want to display a dot if the logo is pressed. From the ``||basic:Basic||`` category, grab a ``||basic:show leds||`` block and snap it into your ``||logic:if then||`` statement.
+
 ► Set the LEDs to be a dot: .
-󠀢<br/>
-► We want to display a dash if the logo is long pressed. Get another ``||basic:show leds||`` block and place it in your ``||logic:else||`` statement.
-<br/>
-► Set the new LED block to be a dash: -
+
+► We want to display a dash if the logo is long pressed. Get **another** ``||basic:show leds||`` block and snap it into your ``||logic:else||`` statement.
+
+► Set the **new** LED block to be a dash: -
 
 ```blocks
 radio.onReceivedNumber(function (receivedNumber) {
@@ -173,15 +149,15 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
 
 ## 8. Playing a sound
 
-The new @boardname@s have built-in speakers! Let's use them to play a sound that corresponds to the message being sent to Sky. 🔊🎵
+🎵 **Adding sound** 🎵
 
----
+<hr/>
 
-► From the ``||music:Music||`` category, drag a ``||music:play tone [Middle C] for [1 beat]||`` block into the end of your  ``||logic:if then||`` statement.
-<br/>
+► From the ``||music:Music||`` category, drag a ``||music:play tone [Middle C] for [1 beat]||`` block into the **end** of your  ``||logic:if then||`` statement.
+
 ► Dots are shorter than dashes! Set the tone to play for ``1/4 beat``.
-<br/>
-► Get another ``||music:play tone [Middle C] for [1 beat]||`` and place it at the end of your  ``||logic:else||`` statement. You can leave this to be 1 beat long.
+
+► From the ``||music:Music||`` category, get **another** ``||music:play tone [Middle C] for [1 beat]||`` and snap it at the **end** of your  ``||logic:else||`` statement.
 
 ```blocks
 radio.onReceivedNumber(function (receivedNumber) {
@@ -215,13 +191,13 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
 
 ## 9. Clearing the screens
 
-As a final step, we want to make sure Sky knows when your message ends. We can do this by clearing the receiving @boardname@'s LED screens 🗨️
+🗨️ **Make sure to clear the screen after messages are sent** 🗨️
 
----
+<hr/>
 
-► From the ``||basic:Basic||`` category, find the ``||basic:clear screen||`` block and place one at the end of your ``||logic:if then||`` statement.
-<br/>
-► Get another ``||basic: clear screen||`` block and put it at end of your ``||logic:else||`` statement.
+► From the ``||basic:Basic||`` category, find the ``||basic:clear screen||`` block and place it at the **end** of your ``||logic:if then||`` statement.
+
+► Get **another** ``||basic: clear screen||`` block and snap it at **end** of your ``||logic:else||`` statement.
 
 ```blocks
 radio.onReceivedNumber(function (receivedNumber) {
@@ -259,21 +235,21 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
 
 🐷 **Let's test what you've created** 💬
 
----
+Remember to turn your sound on!
 
-► Click on the logo in the simulator. You will notice that a second @boardname@ appears.
+<hr/>
+
+► Touch the gold logo (it looks like a pig snout 🐽) on the simulator. You will notice that a second @boardname@ appears.
 <br/>
 &nbsp;&nbsp; 💡 If your screen is too small, the simulator might decide not to show it.
+
+► Touch the 🐽 again to send messages!
 <br/>
-► Click or hold the logo again to test your code!
+&nbsp;&nbsp; **Press** to send a dot.
 <br/>
-&nbsp;&nbsp;&nbsp;&nbsp; **Press** the logo to send a dot to Sky.
-<br/>
-&nbsp;&nbsp;&nbsp;&nbsp; **Long press** the logo (count to 3!) to send a dash to Sky.
-<br/>
-&nbsp;&nbsp; 🎵 Turn up the sound to hear the tone being played! 🎵
-<br/>
-► If you own multiple new @boardname@s, you can download this code and try it out!
+&nbsp;&nbsp; **Long press** (count to 3!) to send a dash.
+
+► If you own multiple @boardname@s with sound, download this code and try it out!
 
 ```blocks
 radio.onReceivedNumber(function (receivedNumber) {
