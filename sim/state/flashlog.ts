@@ -34,7 +34,7 @@ namespace pxsim.flashlog {
         data += "\n";
 
         /** edge 18 does not support text encoder, so fall back to length **/
-        logSize += TextEncoder ? (new TextEncoder().encode(data)).length : data.length;
+        logSize += typeof TextEncoder !== "undefined" ? (new TextEncoder().encode(data)).length : data.length;
         if (logSize >= logEnd) {
             board().bus.queue(DAL.MICROBIT_ID_LOG, DAL.MICROBIT_LOG_EVT_LOG_FULL);
             clear(false);

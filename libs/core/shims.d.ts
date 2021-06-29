@@ -448,7 +448,7 @@ declare namespace control {
      * Returns the major version of the microbit
      */
     //% help=control/hardware-version shim=control::_hardwareVersion
-    function _hardwareVersion(): int32;
+    function _hardwareVersion(): string;
 
     /**
      * Derive a unique, consistent serial number of this device from internal data.
@@ -1013,7 +1013,7 @@ declare namespace serial {
     function writeBuffer(buffer: Buffer): void;
 
     /**
-     * Read multiple characters from the receive buffer.
+     * Read multiple characters from the receive buffer. 
      * If length is positive, pauses until enough characters are present.
      * @param length default buffer length
      */

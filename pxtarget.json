@@ -164,7 +164,7 @@
                 "codalTarget": {
                     "name": "codal-microbit-v2",
                     "url": "https://github.com/lancaster-university/codal-microbit-v2",
-                    "branch": "v0.2.29",
+                    "branch": "v0.2.30",
                     "type": "git"
                 },
                 "codalBinary": "MICROBIT",
@@ -556,7 +556,8 @@
         "browserDbPrefixes": {
             "1": "v1",
             "2": "v2",
-            "3": "v3"
+            "3": "v3",
+            "4": "v4"
         },
         "editorVersionPaths": {
             "0": "v0"

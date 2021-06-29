@@ -14,29 +14,33 @@ namespace pxsim.music {
             notes = builtin.lookupBuiltIn(notes);
             const soundEffects = parseSoundEffects(notes);
             synth.play(soundEffects);
+            let cancelled = false;
 
-            return AudioContextManager.playPCMBufferStreamAsync(() => {
-                if (!synth.effect) return undefined;
+            return Promise.race([
+                delayAsync(synth.totalDuration())
+                    .then(() => {
+                        // If safari didn't allow the sound to play for some reason,
+                        // it will get delayed until the user does something that
+                        // unmutes it. make sure we cancel it so that it doesn't
+                        // play long after it was supposed to
+                        cancelled = true
+                    }),
+                AudioContextManager.playPCMBufferStreamAsync(() => {
+                    if (!synth.effect) return undefined;
 
-                const buff = synth.pull();
-                const arr = new Float32Array(buff.length);
-                for (let i = 0; i < buff.length; i++) {
-                    // Buffer is (0, 1023) we need to map it to (-1, 1)
-                    arr[i] = ((buff[i] - 512) / 512);
-                }
-                return arr;
-            }, synth.sampleRate, 0.03)
-        })
+                    const buff = synth.pull();
+                    const arr = new Float32Array(buff.length);
+                    for (let i = 0; i < buff.length; i++) {
+                        // Buffer is (0, 1023) we need to map it to (-1, 1)
+                        arr[i] = ((buff[i] - 512) / 512);
+                    }
+                    return arr;
+                }, synth.sampleRate, 0.03, () => cancelled)
+            ]);
+        });
 
-        if (waitTillDone) {
-            soundPromise = soundPromise.then(cb, e => {
-                console.log(e),
-                cb();
-            })
-        }
-        else {
-            cb();
-        }
+        if (!waitTillDone) cb();
+        else soundPromise = soundPromise.then(cb);
     }
 
     export function __stopSoundExpressions() {
@@ -307,5 +311,9 @@ namespace pxsim.music {
         }
 
         return res;
+    }
+
+    function delayAsync(millis: number): Promise<void> {
+        return new Promise(resolve => setTimeout(resolve, millis));
     }
 }

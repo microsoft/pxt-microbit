@@ -216,5 +216,13 @@ namespace pxsim.music {
             const seconds = playoutTime / 1000;
             return Math.floor(this.sampleRate * seconds);
         }
+
+        totalDuration() {
+            let duration = 0;
+
+            for (const effect of this.effectBuffer) duration += effect.duration
+
+            return duration;
+        }
     }
 }
