@@ -3,7 +3,7 @@
 ## 1. Introducing Sky @unplugged
 
 👋🐷 Meet Sky, the pig! Sky can only communicate using [__*morse code*__](#morsecode "an alphabet composed of dots (short signals) and dashes (long signals)").
-<br/>
+
 Luckily, you can use your new @boardname@ to talk to Sky 🐷👋
 
 ## 2. Introducing tutorial @unplugged
@@ -153,11 +153,11 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
 
 <hr/>
 
-► From the ``||music:Music||`` category, drag a ``||music:play tone [Middle C] for [1 beat]||`` block into the **end** of your  ``||logic:if then||`` statement.
+► From the ``||music:Music||`` category, drag a ``||music:play tone [Middle C] for [1 beat]||`` block into the **end** of your ``||logic:if then||`` statement.
 
 ► Dots are shorter than dashes! Set the tone to play for ``1/4 beat``.
 
-► From the ``||music:Music||`` category, get **another** ``||music:play tone [Middle C] for [1 beat]||`` and snap it at the **end** of your  ``||logic:else||`` statement.
+► From the ``||music:Music||`` category, get **another** ``||music:play tone [Middle C] for [1 beat]||`` and snap it at the **end** of your ``||logic:else||`` statement.
 
 ```blocks
 radio.onReceivedNumber(function (receivedNumber) {
