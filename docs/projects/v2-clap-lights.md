@@ -151,11 +151,10 @@ input.onSound(DetectedSound.Loud, function () {
 
 Your @boardname@ might detect sounds when you don't want it to. Setting a [__*sound threshold*__](#soundThreshold "a number for how loud a sound needs to be to trigger an event. 0 = silence to 255 = maximum noise") could help 🔉🔊
 
-<hr/>
+---
 
-► In the ``||input:Input||`` category under ``||input:...more||``, find the ``||input:set [loud] sound threshold to [128]||`` block and place it into your empty ``||basic: on start||`` container.
-<br/>
-&nbsp;&nbsp; 💡 Try to change the value of your sound threshold so that every time you clap, your lights will turn on if they are off and vice versa.
+► In the ``||input:Input||`` category under ``||input:...more||``, find the ``||input:set [loud] sound threshold to [128]||`` block and place it into your empty ``||basic: on start||`` container.  
+💡 Try to change the value of your sound threshold so that every time you clap, your lights will turn on if they are off and vice versa.
 
 ```blocks
 // @highlight

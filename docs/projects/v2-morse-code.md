@@ -2,9 +2,9 @@
 
 ## 1. Introducing Sky @unplugged
 
-👋🐷 Meet Sky, the pig! Sky can only communicate using [__*morse code*__](#morsecode "an alphabet composed of dots (short signals) and dashes (long signals)").
+🐷 Meet Sky, the pig! Sky can only communicate using [__*morse code*__](#morsecode "an alphabet composed of dots (short signals) and dashes (long signals)").
 
-Luckily, you can use your new @boardname@ to talk to Sky 🐷👋
+Luckily, you can use your new @boardname@ to talk to Sky 👋
 
 ## 2. Introducing tutorial @unplugged
 In this tutorial, we will walk through how to send morse code messages between two or more of the new @boardname@s 🥳
@@ -15,7 +15,7 @@ _**Note:** Don't worry if you don't own multiple @boardname@s. We will be able t
 
 ⚙️ **Communication works best when set up properly** ⚙️
 
-<hr/>
+---
 
 ► From the ``||input:Input||`` category in the toolbox, grab an ``||input:on logo [pressed]||`` container and add it to your workspace.
 
