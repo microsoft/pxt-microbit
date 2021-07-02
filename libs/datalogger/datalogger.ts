@@ -63,7 +63,7 @@ namespace datalogger {
     //% value.shadow=math_number
     //% blockId=dataloggercreatecolumnvalue
     //% group="micro:bit (V2)"
-    //% weight=80
+    //% weight=80 help=datalogger/create-cv
     export function createCV(column: string, value: any): ColumnValue {
         return new ColumnValue(column, value);
     }
@@ -77,7 +77,7 @@ namespace datalogger {
     //% data.shadow=lists_create_with
     //% data.defl=dataloggercreatecolumnvalue
     //% group="micro:bit (V2)"
-    //% weight=100
+    //% weight=100 help=datalogger/log-data
     export function logData(data: ColumnValue[]): void {
         if (!data || !data.length)
             return;
@@ -101,7 +101,7 @@ namespace datalogger {
     //% blockId=dataloggersetcolumns
     //% data.shadow=list_create_with
     //% group="micro:bit (V2)"
-    //% weight=70
+    //% weight=70 help=datalogger/set-columns
     export function setColumns(cols: string[]): void {
         if (!cols)
             return;
@@ -117,7 +117,7 @@ namespace datalogger {
     //% block="delete log||$deleteType"
     //% blockId=dataloggerdeletelog
     //% group="micro:bit (V2)"
-    //% weight=60
+    //% weight=60 help=datalogger/delete-log
     export function deleteLog(deleteType?: DeleteType): void {
         init();
         flashlog.clear(deleteType === DeleteType.Full);
@@ -131,7 +131,7 @@ namespace datalogger {
     //% block="on log full"
     //% blockId="on log full"
     //% group="micro:bit (V2)"
-    //% weight=40
+    //% weight=40 help=datalogger/on-log-full
     export function onLogFull(handler: () => void): void {
         init();
         onLogFullHandler = handler;
@@ -145,7 +145,7 @@ namespace datalogger {
     //% blockId=dataloggertoggleincludetimestamp
     //% format.defl=FlashLogTimeStampFormat.None
     //% group="micro:bit (V2)"
-    //% weight=30
+    //% weight=30 help=datalogger/include-timestamp
     export function includeTimestamp(format: FlashLogTimeStampFormat): void {
         init();
         flashlog.setTimeStamp(format);
@@ -159,7 +159,7 @@ namespace datalogger {
     //% blockId=dataloggertogglemirrortoserial
     //% on.shadow=toggleOnOff
     //% on.defl=true
-    //% weight=25
+    //% weight=25 help=datalogger/mirror-to-serial
     export function mirrorToSerial(on: boolean): void {
         // TODO:/note intentionally does not have group, as having the same group for all
         // blocks in a category causes the group to be elided.
