@@ -4,7 +4,7 @@
 
 🐷 Meet Sky, the pig! Sky can only communicate using [__*morse code*__](#morsecode "an alphabet composed of dots (short signals) and dashes (long signals)").
 
-Luckily, you can use your new @boardname@ to talk to Sky 👋
+Luckily, you can use your @boardname@ with sound to talk to Sky 👋
 
 ## 2. Setup
 
@@ -14,7 +14,7 @@ Luckily, you can use your new @boardname@ to talk to Sky 👋
 
 ► From the ``||input:Input||`` category in the toolbox, drag an ``||input:on logo [pressed]||`` container into to your workspace.
 
-► From the ``||radio:Radio||`` category, get ``||radio:radio send number [0]||`` and snap it into your **empty** ``||input:on logo [pressed]||`` container.
+► From the ``||radio:Radio||`` category, get ``||radio:radio send number [0]||`` and snap it into your empty ``||input:on logo [pressed]||`` container.
 
 ```blocks
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
@@ -22,7 +22,7 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
 })
 ```
 
-## 3. Sending different messages
+## 3. Sending different messages pt. 1
 
 💬 **Sending Sky two _different_ messages** 💬
 
@@ -31,15 +31,26 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
 ► From ``||input:Input||``, grab **another** ``||input:on logo [pressed]||`` container and add it to your workspace.  
 💡 This container is greyed out because it matches another. Let's change that!
 
-► In the new, **empty** ``||input:on logo [pressed]||`` container , click on the ``||input:pressed||`` **dropdown** and set it to ``||input:long pressed||``.
-
-► From the ``||radio:Radio||`` category, get a ``||radio:radio send number [0]||`` block and snap it into your empty ``||input:on logo [long pressed]||`` container.  
-
-► Set the number to be ``1``.
+► On the greyed-out ``||input:on logo [pressed]||`` container, click on the **``pressed``** dropdown and set it to ``||input:long pressed||``.
 
 ```blocks
 // @highlight
 input.onLogoEvent(TouchButtonEvent.LongPressed, function () {
+})
+input.onLogoEvent(TouchButtonEvent.Pressed, function () {
+    radio.sendNumber(0)
+})
+```
+
+## 4. Sending different messages pt. 2
+
+► From the ``||radio:Radio||`` category, get a ``||radio:radio send number [0]||`` block and snap it into your **empty** ``||input:on logo [long pressed]||`` container.  
+
+► Set the number to be ``1``.
+
+```blocks
+input.onLogoEvent(TouchButtonEvent.LongPressed, function () {
+    // @highlight
     radio.sendNumber(1)
 })
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
@@ -47,7 +58,7 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
 })
 ```
 
-## 4. Receiving different messages
+## 5. Receiving different messages
 
 To ensure Sky gets the right message, we will use an [__*if then / else*__](#ifthenelse "runs some code if a boolean condition is true and different code if the condition is false") conditional statement.
 
@@ -55,7 +66,7 @@ To ensure Sky gets the right message, we will use an [__*if then / else*__](#ift
 
 ► From ``||radio:Radio||``, find the ``||radio:on radio received [receivedNumber]||`` container and add it to your workspace.
 
-► From ``||logic:Logic||``, grab an ``||logic:if <true> then / else||`` statement and snap it into your new ``||radio:on radio received [receivedNumber]||`` container.
+► From ``||logic:Logic||``, grab an ``||logic:if <true> then / else||`` statement and snap it into your **new** ``||radio:on radio received [receivedNumber]||`` container.
 
 ► Go back to the ``||logic:Logic||`` category, grab ``||logic:<[0] [=] [0]>||``, and click it in to **replace** the ``||logic:<true>||`` argument in your ``||logic:if <true> then / else||`` statement.
 
@@ -70,11 +81,11 @@ radio.onReceivedNumber(function (receivedNumber) {
 })
 ```
 
-## 5. Conditioning on the input
+## 6. Conditioning on the input
 
-► From your ``||radio:on radio received [receivedNumber]||`` container, grab the ``||variables:receivedNumber||`` input and drag out a copy.
+► From your ``||radio:on radio received [receivedNumber]||`` container, grab the **``receivedNumber``** input and drag out a copy.
 
-► Use your copy of ``||variables:receivedNumber||`` to replace the ``[0]`` on the **left side** of ``||logic:<[0] [=] [0]>||``.
+► Use your copy of **``receivedNumber``** to replace the ``[0]`` on the **left side** of ``||logic:<[0] [=] [0]>||``.
 
 ```blocks
 radio.onReceivedNumber(function (receivedNumber) {
@@ -87,7 +98,7 @@ radio.onReceivedNumber(function (receivedNumber) {
 })
 ```
 
-## 6. Displaying a message pt. 1
+## 7. Displaying a message pt. 1
 
 📃 **Dashing through the lights** 📃
 
@@ -111,7 +122,7 @@ radio.onReceivedNumber(function (receivedNumber) {
 })
 ```
 
-## 7. Playing a sound pt. 1
+## 8. Playing a sound pt. 1
 
 🎵 **Adding sound** 🎵
 
@@ -136,7 +147,7 @@ radio.onReceivedNumber(function (receivedNumber) {
 })
 ```
 
-## 8. Displaying a message pt. 2
+## 9. Displaying a message pt. 2
 
 ⚫ **Dot dot dot** ⚫
 
@@ -170,7 +181,7 @@ radio.onReceivedNumber(function (receivedNumber) {
 })
 ```
 
-## 9. Playing a sound pt. 2
+## 10. Playing a sound pt. 2
 
 ► From the ``||music:Music||`` category, grab ``||music:play tone [Middle C] for [1 beat]||`` and snap it in at the **end** of the **top container** in your ``||logic:if then / else||`` statement.
 
@@ -201,7 +212,7 @@ radio.onReceivedNumber(function (receivedNumber) {
 })
 ```
 
-## 10. Clearing the screens
+## 11. Clearing the screens
 
 🗨️ **Clear the lights once the messages are sent** 🗨️
 
@@ -235,7 +246,7 @@ radio.onReceivedNumber(function (receivedNumber) {
 })
 ```
 
-## 11. Testing in the simulator
+## 12. Testing in the simulator
 
 🐷 **Test what you've created** 💬
 
@@ -246,7 +257,7 @@ Remember to turn your sound on!
 ► Touch the gold logo at the top of your @boardname@ (it looks like a pig snout 🐽) on the simulator. You'll notice that a second @boardname@ appears.  
 💡 If your screen is too small, you might not be able to see it.
 
-► Touch the 🐽 again to send messages!  
+► Touch the 🐽 again to send messages to Sky 🐖  
 **Press** to send a dot.  
 **Long press** (count to 3!) to send a dash.
 
