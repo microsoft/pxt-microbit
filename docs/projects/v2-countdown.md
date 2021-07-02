@@ -2,10 +2,8 @@
 
 ## 1. Introduction @unplugged
 
-🎇3...  
-🎇2...  
-🎇1...  
-🎆GO!
+🎇3...🎇2...🎇1...  
+🎆GO!🎆
 
 Let's create a musical countdown using the new @boardname@ with sound! 
 
@@ -19,7 +17,7 @@ We'll begin by using a [__*for loop*__](#forLoop "repeat code for a given number
 
 ► From the ``||loops:Loops||`` category in your toolbox, find the ``||loops:for [index] from 0 to [4]||`` loop and add it to your ``||basic:on start||`` container.
 
-► Change your loop to **count** from ``0`` to **``2``**.  
+► Change your loop to count from ``0`` to **``2``**.  
 💡 This means the loop will count 0-1-2 instead of what we want, which is 3-2-1. We will worry about this later!
 
 ```blocks
@@ -38,7 +36,7 @@ for (let index = 0; index <= 2; index++) {
 ► From ``||music:Music||``, grab ``||music:play tone [Middle C] for [1 beat]||`` and snap it into your empty loop.  
 💡 Your simulator might start playing music. You can mute it if distracting.
 
-► 1 beat is a little long. Set your new block to play a tone for **``1/4 beat``**.
+► 1 beat is a little long. Use the **dropdown** to set the tone to play for ``||music:1/4 beat||``.
 
 ```blocks
 for (let index = 0; index <= 2; index++) {
@@ -49,17 +47,17 @@ for (let index = 0; index <= 2; index++) {
 
 ## 4. Showing a number
 
-🔢 **Counting down** 🔢
+✨ **Razzle dazzle down** ✨
 
-With every tone, we also want to display our countdown.
+With every tone, we also want to **display** our countdown.
 
 ---
 
-► From ``||basic:Basic||``, find ``||basic:show number [0]||`` and snap it in at the **bottom** of your loop.
+► From ``||basic:Basic||``, find ``||basic:show number [0]||`` and snap it in at the **bottom** of your ``||loops:for||`` loop.
 
-► **Click and drag out** the **red** ``||variables:index||`` variable from your ``||loops:for [``||variables:index||``] from 0 to [4]||`` loop.
+► From your ``||loops:for [index] from 0 to [2]||`` loop condition, click and drag out the **red** ``||variables:index||`` variable.
 
-► Snap it in to **replace** the ``0`` in ``||basic:show number [0]||``.
+► Use the ``||variables:index||`` that you dragged out to **replace** the ``0`` in ``||basic:show number [0]||``.
 
 ```blocks
 for (let index = 0; index <= 2; index++) {
@@ -71,7 +69,7 @@ for (let index = 0; index <= 2; index++) {
 
 ## 5. Inverting the number
 
-If you take a look at your simulator, you will notice the LEDs flashing 0-1-2. We want it to say, 3-2-1! Let's learn a trick to invert the numbers.
+If you take a look at your simulator, you will notice the LEDs flashing 0-1-2. We want it to say 3-2-1! Let's learn a trick to invert the numbers.
 
 ---
 
@@ -93,11 +91,11 @@ for (let index = 0; index <= 2; index++) {
 
 ## 6. Printing "GO!"
 
-✨ **You had me at "GO!"** ✨
+🏁 **You had me at "GO!"** 🏁
 
 ---
 
-► From ``||basic:Basic||``, grab ``||basic:show string ["Hello!"]||`` and put it at the **bottom** of your ``||basic:on start||`` container.
+► From ``||basic:Basic||``, grab ``||basic:show string ["Hello!"]||`` and put it at the **very bottom** of your ``||basic:on start||`` container.
 
 ► Replace ``Hello!`` with the word ``GO!``
 
@@ -112,14 +110,14 @@ basic.showString("GO!")
 
 ## 7. Adding a "GO!" noise
 
-🕬 **And we're off!** 🏇
+🏇 **And we're off!** 🏇
 
 ---
 
 ► From the ``||music:Music||`` category, grab ``||music:play tone [Middle C] for [1 beat]||`` and place it **above** your ``||basic:show string ["GO!"]||`` block and **below** your ``||loops:for||`` loop.  
 💡 This will let your @boardname@ play the sound and show ``GO!`` at the same time.
 
-► Set the tone to be ``Middle G``.  
+► Set the ``||music:tone||`` to be ``Middle G``.  
 💡 ``Middle G`` is also tone ``392``.
 
 ```blocks
@@ -138,7 +136,7 @@ basic.showString("GO!")
 
 Make sure your speakers are on and check out the simulator!  
 
-If you have a @boardname@ with sound (the one with the **shiny gold** logo at the top), download this code and try it out!
+If you have a @boardname@ with sound (the one with the **shiny gold** logo at the top), no need to plug in an external speaker - just download this code and try it out!
 
 ```blocks
 for (let index = 0; index <= 2; index++) {
