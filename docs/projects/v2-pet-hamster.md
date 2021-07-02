@@ -15,7 +15,7 @@ Cyrus is a very sleepy hamster. In fact, Cyrus is almost always sleeping.
 ► From the ``||basic:Basic||`` category, find ``||basic:show icon [ ]||`` and snap it into your ``||basic:on start||`` container.
 
 ► Set it to show the asleep ``-_-`` face.  
-💡 In the ``show icon`` **dropdown menu** options, you can hover to see what each design is called!
+💡 In the ``show icon`` dropdown menu options, you can hover to see what each design is called!
 
 ```blocks
 basic.showIcon(IconNames.Asleep)
@@ -31,7 +31,7 @@ Pressing Cyrus's logo tickles them!
 
 ► From ``||input:Input||``, find the ``||input:on logo [pressed]||`` container and drag it into your workspace.
 
-► Snap a new ``||basic:show icon [ ]||`` block into your **empty** ``||input:on logo [pressed]||`` container.
+► Go to ``||basic:Basic||`` and grab **another** ``||basic:show icon [ ]||``. Snap it into your **empty** ``||input:on logo [pressed]||`` container.
 
 ► Set the icon (Cyrus's face) to happy ``:)``.
 
@@ -47,7 +47,7 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
 
 ---
 
-► From the ``||music:Music||`` category, get a ``||music:play sound [giggle] until done||`` block and add it to the **bottom** of your ``||input:on logo [pressed]||`` container.
+► From the ``||music:Music||`` category, get a ``||music:play sound [giggle] until done||`` and add it to the **bottom** of your ``||input:on logo [pressed]||`` container.
 
 ```blocks
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
@@ -81,7 +81,7 @@ input.onGesture(Gesture.Shake, function () {
 
 ► From the ``||music:Music||`` category, find the ``||music:play sound [giggle] until done||`` block and add it to the **bottom** of your ``||input:on [shake]||`` container.
 
-► Click on the **dropdown** and set it so Cyrus plays a **``sad``** sound until done.
+► Click on the **dropdown** and set it so Cyrus plays a ``||music:sad||`` sound until done.
 
 ```blocks
 input.onGesture(Gesture.Shake, function () {
