@@ -55,9 +55,9 @@ With every tone, we also want to display our countdown.
 
 ---
 
-► From ``||basic:Basic||``, find the ``||basic:show number [0]||`` block and put it at the **bottom** of your loop.
+► From ``||basic:Basic||``, find ``||basic:show number [0]||`` and snap it in at the **bottom** of your loop.
 
-► **Click and drag out** the **red** ``||variables:index||`` variable from your ``for [``||variables:index||``] from 0 to [4]`` loop.
+► **Click and drag out** the **red** ``||variables:index||`` variable from your ``||loops:for [``||variables:index||``] from 0 to [4]||`` loop.
 
 ► Snap it in to **replace** the ``0`` in ``||basic:show number [0]||``.
 
@@ -75,70 +75,70 @@ If you take a look at your simulator, you will notice the LEDs flashing 0-1-2. W
 
 ---
 
-► From ``||math:Math||``, find the ``||math:[0] - [0]||`` operation and use it to replace the ``index`` variable in the ``||basic:show number [index]||`` block.
+► From the ``||math:Math||`` category, find the ``||math:[0] - [0]||`` operation.
 
-► Pick up the displaced ``||variables:index||`` variable and set the subtraction to be ``||math:[3] - [index]||``.
-<br/>
-&nbsp;&nbsp; 💡 Now, we will see: 3-0 = 3 on the first iteration, 3-1 = 2 on the second, and 3-2 = 1 on the last, which is what we want 🎉
+► Use ``||math:[0] - [0]||`` to **replace** ``||variables:index||`` in your ``||basic:show number [index]||`` block.  
+💡 You should now have a greyed out ``index`` variable in your workspace.
+
+► Pick up the displaced ``||variables:index||`` variable and set the subtraction to read ``||math:[3] - [index]||``.  
+💡 Why does this work? Every time we loop, our ``index`` variable will grow by 1 and our math will output: 3-0 = **3** ➡️ 3-1 = **2** ➡️ 3-2 = **1**!
 
 ```blocks
 for (let index = 0; index <= 2; index++) {
     music.playTone(262, music.beat(BeatFraction.Quarter))
+    // @highlight
     basic.showNumber(3 - index)
 }
 ```
 
 ## 6. Printing "GO!"
 
-Almost there! We finished the countdown, but now we need to wrap it up with a "GO!"
+✨ **You had me at "GO!"** ✨
 
 ---
 
-► From the ``||basic:Basic||`` category, find the ``||basic:show string ["Hello!"]||`` block and put it at the end of your ``||basic:on start||`` container.
-<br/>
-► Set the string to be ``GO!``
+► From ``||basic:Basic||``, grab ``||basic:show string ["Hello!"]||`` and put it at the **bottom** of your ``||basic:on start||`` container.
+
+► Replace ``Hello!`` with the word ``GO!``
 
 ```blocks
 for (let index = 0; index <= 2; index++) {
     music.playTone(262, music.beat(BeatFraction.Quarter))
     basic.showNumber(3 - index)
 }
+// @highlight
 basic.showString("GO!")
 ```
 
 ## 7. Adding a "GO!" noise
 
-The last thing we need to do is add a sound for the "GO!" 🕬
+🕬 **And we're off!** 🏇
 
 ---
 
-► From the ``||music:Music||`` category, grab the ``||music:play tone [Middle C] for [1 beat]||`` block and place it before your ``||basic:show string ["GO!"]||`` block.
-<br/>
-&nbsp;&nbsp; 💡 If you put this after, your @boardname@ will finish showing the string before playing any sound.
-<br/>
-► Set the tone to be ``Middle G``.
-<br/>
-&nbsp;&nbsp; 💡 ``Middle G`` is also tone ``392``.
+► From the ``||music:Music||`` category, grab ``||music:play tone [Middle C] for [1 beat]||`` and place it **above** your ``||basic:show string ["GO!"]||`` block and **below** your ``||loops:for||`` loop.  
+💡 This will let your @boardname@ play the sound and show ``GO!`` at the same time.
+
+► Set the tone to be ``Middle G``.  
+💡 ``Middle G`` is also tone ``392``.
 
 ```blocks
 for (let index = 0; index <= 2; index++) {
     music.playTone(262, music.beat(BeatFraction.Quarter))
     basic.showNumber(3 - index)
 }
+// @highlight
 music.playTone(392, music.beat(BeatFraction.Whole))
 basic.showString("GO!")
 ```
 
 ## 8. Testing in the simulator
 
-🚦 **Let's test what you've created** 🚦
-<br/>
-<br/>
-Check out the simulator!
-<br/>
-► Make sure your speakers are on 🔊
-<br/>
-► If you have a new @boardname@ with sound (the one with the **shiny gold** logo at the top), download this code and try it out!
+🚦 **Test what you've created** 🚦
+
+Make sure your speakers are on and check out the simulator!  
+
+If you have a @boardname@ with sound (the one with the **shiny gold** logo at the top), download this code and try it out!
 
 ```blocks
 for (let index = 0; index <= 2; index++) {
