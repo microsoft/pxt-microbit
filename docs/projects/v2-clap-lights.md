@@ -34,7 +34,7 @@ Let's begin by creating a [__*variable*__](#variable "a holder for information t
 
 🔆 **On or not?** 🌑
 
-In this step, we'll be using an [__*if then / else*__](#ifthenelse "runs some code if a Boolean condition is true and different code if the condition is false") statement to change the ``lightsOn`` variable.
+In this step, we'll be using an [__*if then / else*__](#ifthenelse "runs some code if a Boolean condition is true and different code if the condition is false") statement.
 
 ---
 
@@ -59,10 +59,10 @@ input.onSound(DetectedSound.Loud, function () {
 
 ---
 
-► From ``||basic:Basic||``, grab a ``||basic:show leds||`` block and snap it into the **top container** of your ``||logic:if then / else||`` statement.
+► From ``||basic:Basic||``, grab ``||basic:show leds||`` and snap it into the **top container** of your ``||logic:if then / else||`` statement.
 
 ► Set the lights to a pattern you like!  
-💡 In the hint, we chose to turn on all of the outside lights but feel free to make your own design 🎨
+💡 In the hint, we chose to turn on all of the outside lights. Feel free to make your own design 🎨
 
 ```blocks
 input.onSound(DetectedSound.Loud, function () {
@@ -82,7 +82,7 @@ input.onSound(DetectedSound.Loud, function () {
 
 ## 6. Clearing the screen
 
-► From the ``||basic:Basic||`` category, find ``||basic:clear screen||`` and snap it into the **bottom container** of your ``||logic:if then / else||`` section.  
+► From ``||basic:Basic||``, find ``||basic:clear screen||`` and snap it into the **bottom container** of your ``||logic:if then / else||`` section.  
 💡 This will turn the display off if ``lightsOn`` is **not** ``true``.
 
 ```blocks
@@ -113,7 +113,7 @@ Just like we'd toggle a light switch, each time we clap, we want to **flip** the
 
 ► From ``||variables:Variables||``, locate ``||variables:set [lightsOn] to [0]||`` and snap it in at the **very top** of your ``||input:on [loud] sound||`` container.
 
-► From the ``||logic:Logic||`` category, find the ``||logic:not <>||`` operator and use it to **replace** the **``[0]``** in ``||variables:set [lightsOn] to [0]||``.
+► From the ``||logic:Logic||`` category, find the ``||logic:not <>||`` operator and use it to **replace the ``[0]``** in ``||variables:set [lightsOn] to [0]||``.
 
 ► From ``||variables:Variables||``, grab ``||variables:lightsOn||`` and snap it into the **empty part** of the ``||logic:not <>||`` operator.
 
@@ -153,9 +153,9 @@ Your @boardname@ might detect sounds when you don't want it to. Setting a [__*so
 
 ---
 
-► Click the ``||input:Input||`` category. A new category should show up beneath it called ``||input:...more||``.
+► Click on the ``||input:Input||`` category. A new category should show up beneath it called ``||input:...more||``.
 
-► In ``||input:...more||``, grab ``||input:set [loud] sound threshold to [128]||`` and snap it into your empty ``||basic: on start||`` container.  
+► From ``||input:...more||``, grab ``||input:set [loud] sound threshold to [128]||`` and snap it into your **empty** ``||basic: on start||`` container.  
 💡 Try to change the value of your sound threshold so that every time you clap, your lights will turn on if they are off and vice versa.
 
 ```blocks
