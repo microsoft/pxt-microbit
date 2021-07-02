@@ -40,7 +40,7 @@ In this step, we'll be using an [__*if then / else*__](#ifthenelse "runs some co
 
 ► From the ``||logic:Logic||`` category, grab an ``||logic:if <true> then / else||`` block and snap it into your ``||input:on [loud] sound||`` container.
 
-► Look in the ``||variables:Variables||`` category. Find the new ``||variables:lightsOn||`` variable and snap it in to **replace** the ``||logic:<true>||`` argument in your ``||logic:if <true> then / else||`` statement.
+► Look in the ``||variables:Variables||`` category. Find the new ``||variables:lightsOn||`` variable and snap it in to **replace** the ``||logic:<true>||`` value in your ``||logic:if <true> then / else||`` statement.
 
 ```blocks
 input.onSound(DetectedSound.Loud, function () {
@@ -59,10 +59,10 @@ input.onSound(DetectedSound.Loud, function () {
 
 ---
 
-► From the ``||basic:Basic||`` category, grab a ``||basic:show leds||`` block and snap it into the **top container** of your ``||logic:if then / else||`` statement.
+► From ``||basic:Basic||``, grab a ``||basic:show leds||`` block and snap it into the **top container** of your ``||logic:if then / else||`` statement.
 
 ► Set the lights to a pattern you like!  
-💡 Feel free to make your own design 🎨 In the hint, we chose to turn on all of the outside lights.
+💡 In the hint, we chose to turn on all of the outside lights but feel free to make your own design 🎨
 
 ```blocks
 input.onSound(DetectedSound.Loud, function () {
@@ -82,8 +82,8 @@ input.onSound(DetectedSound.Loud, function () {
 
 ## 6. Clearing the screen
 
-► From the ``||basic:Basic||`` category, find the ``||basic:clear screen||`` block and snap it into the **bottom container** of your ``||logic:if then / else||`` section.  
-💡 This will turn the display off if ``lightsOn`` is not ``true``.
+► From the ``||basic:Basic||`` category, find ``||basic:clear screen||`` and snap it into the **bottom container** of your ``||logic:if then / else||`` section.  
+💡 This will turn the display off if ``lightsOn`` is **not** ``true``.
 
 ```blocks
 let lightsOn = 0
@@ -107,15 +107,15 @@ input.onSound(DetectedSound.Loud, function () {
 
 🎬 **Lights, camera, _action_** ✨
 
-Just like we'd toggle a light switch, each time we clap we want to **flip** the variable ``lightsOn`` to the **opposite** of what it was before.
+Just like we'd toggle a light switch, each time we clap, we want to **flip** the variable ``lightsOn`` to the **opposite** of what it was before.
 
 ---
 
 ► From ``||variables:Variables||``, locate ``||variables:set [lightsOn] to [0]||`` and snap it in at the **very top** of your ``||input:on [loud] sound||`` container.
 
-► From the ``||logic:Logic||`` category, find the ``||logic:not <>||`` operator and use it to **replace** the ``||variables:[0]||`` in ``||variables:set [lightsOn] to [0]||``.
+► From the ``||logic:Logic||`` category, find the ``||logic:not <>||`` operator and use it to **replace** the **``[0]``** in ``||variables:set [lightsOn] to [0]||``.
 
-► From ``||variables:Variables||``, grab ``||variables:lights on||`` and snap it into the **empty part** of the ``||logic:not <>||`` operator.
+► From ``||variables:Variables||``, grab ``||variables:lightsOn||`` and snap it into the **empty part** of the ``||logic:not <>||`` operator.
 
 ```blocks
 let lightsOn = false
@@ -138,7 +138,7 @@ input.onSound(DetectedSound.Loud, function () {
 
 ## 8. Testing in the simulator
 
-💡 **Let's test what you've created** 💡
+💡 **Test what you've created** 💡
 
 ---
 
@@ -153,7 +153,9 @@ Your @boardname@ might detect sounds when you don't want it to. Setting a [__*so
 
 ---
 
-► In the ``||input:Input||`` category under ``||input:...more||``, find the ``||input:set [loud] sound threshold to [128]||`` block and place it into your empty ``||basic: on start||`` container.  
+► Click the ``||input:Input||`` category. A new category should show up beneath it called ``||input:...more||``.
+
+► In ``||input:...more||``, grab ``||input:set [loud] sound threshold to [128]||`` and snap it into your empty ``||basic: on start||`` container.  
 💡 Try to change the value of your sound threshold so that every time you clap, your lights will turn on if they are off and vice versa.
 
 ```blocks
@@ -167,7 +169,7 @@ input.setSoundThreshold(SoundThreshold.Loud, 150)
 
 Don't forget to test your code in the simulator!
 
-If you own a new @boardname@, you can download this code and try it out!
+If you have a new @boardname@ (the one with the **shiny gold** logo at the top), download this code and try it out!
 
 ```blocks
 let lightsOn = false

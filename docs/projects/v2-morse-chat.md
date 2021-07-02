@@ -12,17 +12,13 @@ Luckily, you can use your new @boardname@ to talk to Sky 👋
 
 ---
 
-► From the ``||input:Input||`` category, grab an ``||input:on logo [pressed]||`` container and add it to your workspace.
+► From the ``||input:Input||`` category in the toolbox, drag an ``||input:on logo [pressed]||`` container into to your workspace.
 
-► Click on the ``||input:[pressed]||`` **dropdown** and set it to ``||input:[long pressed]||``.
-
-► From the ``||radio:Radio||`` category, get a ``||radio:radio send number [0]||`` block and snap it into your empty ``||input:on logo [long pressed]||`` container.  
-
-► Set the number to be ``1``.
+► From the ``||radio:Radio||`` category, get ``||radio:radio send number [0]||`` and snap it into your **empty** ``||input:on logo [pressed]||`` container.
 
 ```blocks
-input.onLogoEvent(TouchButtonEvent.LongPressed, function () {
-    radio.sendNumber(1)
+input.onLogoEvent(TouchButtonEvent.Pressed, function () {
+    radio.sendNumber(0)
 })
 ```
 
@@ -32,15 +28,20 @@ input.onLogoEvent(TouchButtonEvent.LongPressed, function () {
 
 ---
 
-► From the ``||input:Input||`` category in the toolbox, drag an ``||input:on logo [pressed]||`` container into to your workspace.
+► From ``||input:Input||``, grab **another** ``||input:on logo [pressed]||`` container and add it to your workspace.  
+💡 This container is greyed out because it matches another. Let's change that!
 
-► From the ``||radio:Radio||`` category, get ``||radio:radio send number [0]||`` and snap it into your **empty** ``||input:on logo [pressed]||`` container.
+► In the new, **empty** ``||input:on logo [pressed]||`` container , click on the ``||input:pressed||`` **dropdown** and set it to ``||input:long pressed||``.
+
+► From the ``||radio:Radio||`` category, get a ``||radio:radio send number [0]||`` block and snap it into your empty ``||input:on logo [long pressed]||`` container.  
+
+► Set the number to be ``1``.
 
 ```blocks
+// @highlight
 input.onLogoEvent(TouchButtonEvent.LongPressed, function () {
     radio.sendNumber(1)
 })
-// @highlight
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
     radio.sendNumber(0)
 })
@@ -48,11 +49,11 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
 
 ## 4. Receiving different messages
 
-To ensure Sky gets the right message, we will use an [__*if then else*__](#ifthenelse "runs some code if a boolean condition is true and different code if the condition is false") conditional statement.
+To ensure Sky gets the right message, we will use an [__*if then / else*__](#ifthenelse "runs some code if a boolean condition is true and different code if the condition is false") conditional statement.
 
 ---
 
-► From ``||radio:Radio||``, find ``||radio:on radio received [receivedNumber]||`` and add it to your workspace.
+► From ``||radio:Radio||``, find the ``||radio:on radio received [receivedNumber]||`` container and add it to your workspace.
 
 ► From ``||logic:Logic||``, grab an ``||logic:if <true> then / else||`` statement and snap it into your new ``||radio:on radio received [receivedNumber]||`` container.
 
@@ -71,9 +72,9 @@ radio.onReceivedNumber(function (receivedNumber) {
 
 ## 5. Conditioning on the input
 
-► From your ``||radio:on radio received [receivedNumber]||`` container, grab the ``receivedNumber`` input and drag out a **copy**.
+► From your ``||radio:on radio received [receivedNumber]||`` container, grab the ``||variables:receivedNumber||`` input and drag out a copy.
 
-► Place the ``receivedNumber`` copy in so your ``||logic:if||`` statement reads ``||logic:if <[receivedNumber] [=] [0]> then||``.
+► Use your copy of ``||variables:receivedNumber||`` to replace the ``[0]`` on the **left side** of ``||logic:<[0] [=] [0]>||``.
 
 ```blocks
 radio.onReceivedNumber(function (receivedNumber) {
@@ -86,48 +87,17 @@ radio.onReceivedNumber(function (receivedNumber) {
 })
 ```
 
-## 6. Displaying a message
+## 6. Displaying a message pt. 1
 
-📃 **Clearing the screen** 📃
+📃 **Dashing through the lights** 📃
 
----
+► We want to display a dash if the logo is long pressed.  From ``||basic:Basic||``, grab ``||basic:show leds||`` and snap it into the empty **bottom container** of your ``||logic:if then / else||`` statement.
 
-► We want to display a dot if the logo is pressed. From ``||basic:Basic||``, grab ``||basic:show leds||`` and snap it into the **top container** of your ``||logic:if then / else||`` statement.
-
-► Set the LEDs to be a dot: .
+► Turn on 3 LEDs in a row to be a dash: -
 
 ```blocks
 radio.onReceivedNumber(function (receivedNumber) {
     if (receivedNumber == 0) {
-        // @highlight
-        basic.showLeds(`
-            . . . . .
-            . . . . .
-            . . # . .
-            . . . . .
-            . . . . .
-            `)
-    } else {
-    }
-})
-```
-
-## 7. Displaying a message pt. 2
-
-► We want to display a dash if the logo is long pressed. Get another ``||basic:show leds||`` and snap it into the empty **bottom container** of your ``||logic:if then / else||`` statement.
-
-► Set the new LED block to be a dash: -
-
-```blocks
-radio.onReceivedNumber(function (receivedNumber) {
-    if (receivedNumber == 0) {
-        basic.showLeds(`
-            . . . . .
-            . . . . .
-            . . # . .
-            . . . . .
-            . . . . .
-            `)
     } else {
         // @highlight
         basic.showLeds(`
@@ -141,13 +111,68 @@ radio.onReceivedNumber(function (receivedNumber) {
 })
 ```
 
-## 8. Playing a sound pt. 1
+## 7. Playing a sound pt. 1
 
 🎵 **Adding sound** 🎵
 
 ---
 
-► From the ``||music:Music||`` category, get ``||music:play tone [Middle C] for [1 beat]||`` and put it into the **bottom** of the **top container** in your ``||logic:if then / else||`` statement.
+► From the ``||music:Music||`` category, grab a ``||music:play tone [Middle C] for [1 beat]||`` block and snap it at the **end** of the **bottom container** in your ``||logic:if then / else||`` statement.
+
+```blocks
+radio.onReceivedNumber(function (receivedNumber) {
+    if (receivedNumber == 0) {
+    } else {
+        basic.showLeds(`
+            . . . . .
+            . . . . .
+            . # # # .
+            . . . . .
+            . . . . .
+            `)
+        // @highlight
+        music.playTone(262, music.beat(BeatFraction.Whole))
+    }
+})
+```
+
+## 8. Displaying a message pt. 2
+
+⚫ **Dot dot dot** ⚫
+
+---
+
+► We want to display a dot if the logo is pressed. From ``||basic:Basic||``, grab another ``||basic:show leds||`` and snap it into the **top container** of your ``||logic:if then / else||`` statement.
+
+► Turn on a single LED to make a dot: .
+
+```blocks
+radio.onReceivedNumber(function (receivedNumber) {
+    if (receivedNumber == 0) {
+        // @highlight
+        basic.showLeds(`
+            . . . . .
+            . . . . .
+            . . # . .
+            . . . . .
+            . . . . .
+            `)
+    } else {
+        basic.showLeds(`
+            . . . . .
+            . . . . .
+            . # # # .
+            . . . . .
+            . . . . .
+            `)
+        music.playTone(262, music.beat(BeatFraction.Whole))
+    }
+})
+```
+
+## 9. Playing a sound pt. 2
+
+► From the ``||music:Music||`` category, grab ``||music:play tone [Middle C] for [1 beat]||`` and snap it in at the **end** of the **top container** in your ``||logic:if then / else||`` statement.
 
 ► Dots are shorter than dashes! Set the tone to play for ``1/4 beat``.
 
@@ -171,34 +196,6 @@ radio.onReceivedNumber(function (receivedNumber) {
             . . . . .
             . . . . .
             `)
-    }
-})
-```
-
-## 9. Playing a sound pt. 2
-
-► Get **another** ``||music:play tone [Middle C] for [1 beat]||`` and snap it at the **bottom** of the **bottom container** in your ``||logic:if then / else||`` statement.
-
-```blocks
-radio.onReceivedNumber(function (receivedNumber) {
-    if (receivedNumber == 0) {
-        basic.showLeds(`
-            . . . . .
-            . . . . .
-            . . # . .
-            . . . . .
-            . . . . .
-            `)
-        music.playTone(262, music.beat(BeatFraction.Quarter))
-    } else {
-        basic.showLeds(`
-            . . . . .
-            . . . . .
-            . # # # .
-            . . . . .
-            . . . . .
-            `)
-        // @highlight
         music.playTone(262, music.beat(BeatFraction.Whole))
     }
 })
@@ -206,11 +203,11 @@ radio.onReceivedNumber(function (receivedNumber) {
 
 ## 10. Clearing the screens
 
-🗨️ **Make sure to clear the screen after messages are sent** 🗨️
+🗨️ **Clear the lights once the messages are sent** 🗨️
 
 ---
 
-► From the ``||basic:Basic||`` category, find ``||basic:clear screen||`` and snap it at the **very bottom** of your ``||radio:on radio received [receivedNumber]||`` container.
+► From ``||basic:Basic||``, find ``||basic:clear screen||`` and snap it in at the **very bottom** of your ``||radio:on radio received [receivedNumber]||`` container.
 
 ```blocks
 radio.onReceivedNumber(function (receivedNumber) {
@@ -240,20 +237,20 @@ radio.onReceivedNumber(function (receivedNumber) {
 
 ## 11. Testing in the simulator
 
-🐷 **Let's test what you've created** 💬
+🐷 **Test what you've created** 💬
 
 Remember to turn your sound on!
 
 ---
 
-► Touch the gold logo (it looks like a pig snout 🐽) on the simulator. You will notice that a second @boardname@ appears.  
-💡 If your screen is too small, the simulator might decide not to show it.
+► Touch the gold logo at the top of your @boardname@ (it looks like a pig snout 🐽) on the simulator. You'll notice that a second @boardname@ appears.  
+💡 If your screen is too small, you might not be able to see it.
 
 ► Touch the 🐽 again to send messages!  
 **Press** to send a dot.  
 **Long press** (count to 3!) to send a dash.
 
-► If you own multiple @boardname@s with sound, download this code and try it out!
+► If you have multiple @boardname@s with sound (they have **shiny gold** logos at the top), download this code and try it out!
 
 ```blocks
 radio.onReceivedNumber(function (receivedNumber) {

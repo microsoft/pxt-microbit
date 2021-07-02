@@ -262,7 +262,7 @@ Check out the simulator!
 <br/>
 ► Click on the pink bar underneath the microphone icon 🎤. Drag it above your sound threshold to blow Haven away.
 <br/>
-► If you own a new @boardname@, you can download this code and try it out. Blow into the microphone to shoo Haven away 💨
+► If you have a new @boardname@ (the one with the **shiny gold** logo at the top), download this code and try it out! Blow into the microphone to shoo Haven away 💨
 <br/>
 &nbsp;&nbsp; 💡 Use the reset button on your @boardname@ to bring Haven back 👻
 
