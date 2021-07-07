@@ -16,7 +16,7 @@ A wild Haven has appeared!
 
 ► From the ``||basic:Basic||`` category, find ``||basic:show icon [ ]||`` and add it to your ``||basic:on start||`` container.
 
-► Set it to show a ghost or another image of your choosing!  
+► Set it to show a ghost.  
 💡 In the ``show icon`` dropdown menu options, you can hover to see what each design is called.
 
 ```blocks
@@ -30,11 +30,10 @@ basic.showIcon(IconNames.Ghost)
 
 ➰ **Looping around** ➰
 
-Since ``||basic:forever||`` has a slight delay in detection, we will be using a [__*repeat loop*__](#repeatLoop "repeat code for a given number of times") to blow Haven away even faster.
-
 ---
 
-► From the ``||loops:Loops||`` category, find the ``||loops:repeat [4] times do||`` loop and snap it into your empty ``||basic:forever||`` container.
+► From the ``||loops:Loops||`` category, find the ``||loops:repeat [4] times do||`` loop and snap it into your empty ``||basic:forever||`` container.  
+💡 Why do we need a [__*repeat loop*__](#repeatLoop "repeat code for a given number of times") when we already have a ``forever`` check? Because ``forever`` has a slight delay!
 
 ```blocks
 basic.forever(function () {
