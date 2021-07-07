@@ -34,7 +34,7 @@ basic.showIcon(IconNames.Ghost)
 
 ---
 
-► From the ``||loops:Loops||`` category, find the ``||loops:repeat [4] times do||`` loop and snap it into your empty ``||basic:forever||`` container.  
+► From the ``||loops:Loops||`` category, find the ``||loops:repeat [4] times do||`` loop and snap it into your empty ``||basic:forever||`` container.   
 💡 Why do we need a [__*repeat loop*__](#repeatLoop "repeat code for a given number of times") when we already have a ``forever`` check? Because ``forever`` has a slight delay!
 
 ```blocks
@@ -127,6 +127,7 @@ To show Haven is blowing away, we want to move a random set of lights sideways.
 💡 We are setting the maximum random value to 4 because the lights on the @boardname@ go from 0, 1, 2, 3, 4 columns and rows.
 
 ```blocks
+let row = 0
 basic.forever(function () {
     for (let index = 0; index < 4; index++) {
         if (input.soundLevel() > 128) {

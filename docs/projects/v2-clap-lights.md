@@ -45,6 +45,7 @@ In this step, we'll be using an [__*if then / else*__](#ifthenelse "runs some co
 ► Look in the ``||variables:Variables||`` category. Find the new ``||variables:lightsOn||`` variable and snap it in to **replace** the ``||logic:<true>||`` value in your ``||logic:if <true> then / else||`` statement.
 
 ```blocks
+let lightsOn = 0
 input.onSound(DetectedSound.Loud, function () {
     // @highlight
     if (lightsOn) {
@@ -67,6 +68,7 @@ input.onSound(DetectedSound.Loud, function () {
 💡 In the hint, we chose to turn on all of the outside lights. Feel free to make your own design 🎨
 
 ```blocks
+let lightsOn = 0
 input.onSound(DetectedSound.Loud, function () {
     if (lightsOn) {
         // @highlight
