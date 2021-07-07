@@ -5,7 +5,9 @@
 🎇3...🎇2...🎇1...  
 🎆GO!🎆
 
-Let's create a musical countdown using the new @boardname@ with sound! 
+Let's create a musical countdown using the new @boardname@ with sound!
+
+![Countdown banner message](/static/mb/projects/countdown.png)
 
 ## 2. Setting up the loop
 

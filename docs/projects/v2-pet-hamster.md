@@ -4,6 +4,8 @@
 
 👋 Meet your new pet hamster, Cyrus 🐹
 
+![Pet hamster banner message](/static/mb/projects/pet-hamster.png)
+
 ## 2. Cyrus's asleep face
 
 😴 **Sleeping on the job** 😴

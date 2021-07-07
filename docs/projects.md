@@ -3,6 +3,12 @@
 ```codecard
 [
     {
+        "name": "New Micro:bit Tutorials",
+        "url": "/v2tutorials",
+        "imageUrl": "/static/mb/projects/a1-display.png",
+        "largeImageUrl": "/static/mb/projects/flashing-heart/sim.gif"
+    },
+    {
         "name": "Tutorials",
         "url": "/tutorials",
         "imageUrl": "/static/mb/projects/a1-display.png",
@@ -93,6 +99,7 @@
 
 ## See Also
 
+[New Micro:bit Tutorials](/v2tutorials),
 [Tutorials](/tutorials),
 [Live Coding](/live-coding),
 [Games](/projects/games),

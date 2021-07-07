@@ -1,5 +1,12 @@
 # Projects
 
+* [New Micro:bit Tutorials](/v2tutorials)
+  * [Flashing Heart](/projects/flashing-heart)
+  * [Name Tag](/projects/name-tag)
+  * [Smiley Buttons](/projects/smiley-buttons)
+  * [Dice](/projects/dice)
+  * [Love Meter](/projects/love-meter)
+  * [Micro Chat](/projects/micro-chat)
 * [Tutorials](/tutorials)
   * [Flashing Heart](/projects/flashing-heart)
   * [Name Tag](/projects/name-tag)

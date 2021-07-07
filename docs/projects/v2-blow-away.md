@@ -6,6 +6,8 @@
 
 For this tutorial, we'll learn how to blow Haven away 🌬️
 
+![Blow away banner message](/static/mb/projects/blow-away.png)
+
 ## 2. Haunted ghost setup
 
 🏚️ **BooOooOoo** 🏚️

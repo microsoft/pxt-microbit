@@ -4,7 +4,9 @@
 
 The new @boardname@s have a microphone to help them detect sound 🎤
 
-Let's learn how to use a clap 👏 to switch your @boardname@'s lights on and off! 
+Let's learn how to use a clap 👏 to switch your @boardname@'s lights on and off!
+
+![Clap lights banner message](/static/mb/projects/clap-lights.png)
 
 ## 2. Setting up the sound input
 

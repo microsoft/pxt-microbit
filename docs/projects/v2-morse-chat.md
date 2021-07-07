@@ -6,6 +6,8 @@
 
 Luckily, you can use your @boardname@ with sound to talk to Sky 👋
 
+![Morse chat banner message](/static/mb/projects/morse-chat.png)
+
 ## 2. Setup
 
 ⚙️ **Communication works best when set up properly** ⚙️
