@@ -1,6 +1,6 @@
 # Projects
 
-Here are some cool tutorials to get you started with your @boardname@!
+Here are some cool tutorials to get you started with your new @boardname@ with sound!
 
 ## Basic
 
@@ -10,9 +10,7 @@ Here are some cool tutorials to get you started with your @boardname@!
   "url":"/projects/v2-pet-hamster",
   "description": "Interact with your very own micro:bit hamster named Cyrus.",
   "imageUrl": "/static/mb/projects/pet-hamster.png",
-  "cardType": "tutorial",
-  "label": "New? Start Here!",
-  "labelClass": "purple ribbon large"
+  "cardType": "tutorial"
 }, {
   "name": "Countdown",
   "url":"/projects/v2-countdown",
