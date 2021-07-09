@@ -18,7 +18,7 @@ A wild Haven has appeared!
 
 ► From the ``||basic:Basic||`` category, find ``||basic:show icon [ ]||`` and add it to your ``||basic:on start||`` container.
 
-► Set it to show a ghost.  
+► Click the heart icon and set it to show a ghost.  
 💡 In the ``show icon`` dropdown menu options, you can hover to see what each design is called.
 
 ```blocks
@@ -34,14 +34,14 @@ basic.showIcon(IconNames.Ghost)
 
 ---
 
-► From the ``||loops:Loops||`` category, find the ``||loops:repeat [4] times do||`` loop and snap it into your empty ``||basic:forever||`` container.   
-💡 Why do we need a [__*repeat loop*__](#repeatLoop "repeat code for a given number of times") when we already have a ``forever`` check? Because ``forever`` has a slight delay!
+► From the ``||loops:Loops||`` category, find the ``||loops:repeat [4] times||`` loop and snap it into your empty ``||basic:forever||`` container.   
+💡 Why do we need a [__*repeat loop*__](#repeatLoop "repeat code for a given number of times") when we already have a ``forever`` container? Because ``forever`` has an embedded delay that we want to avoid!
 
 ```blocks
 basic.forever(function () {
     // @highlight
     for (let index = 0; index < 4; index++) {
-        	
+            
     }
 })
 ```
@@ -50,7 +50,7 @@ basic.forever(function () {
 
 🤔 **Conditioning and comparing** 🤔
 
-Haven hates noise and will blow away if they hear anything. Let's use an [__*if statement*__](#ifstatement "if this condition is met, do something") to check if Haven hears any sounds.
+Haven hates noise and will blow away if things get too loud. Let's use an [__*if statement*__](#ifstatement "if this condition is met, do something") to check for sounds.
 
 ---
 
@@ -67,7 +67,7 @@ basic.forever(function () {
         // @highlight
         if (0 == 0) {
             
-        }	
+        }   
     }
 })
 ```
@@ -76,13 +76,13 @@ basic.forever(function () {
 
 👂 **Haven's ears** 👂
 
-We will be using our own form of a [__*sound threshold*__](#soundThreshold "a number for how loud a sound needs to be to trigger an event. 0 = silence to 255 = maximum noise") to act as Haven's ears.
+We'll be using a [__*sound threshold*__](#soundThreshold "a number for how loud a sound needs to be to trigger an event. 0 = silence to 255 = maximum noise") to act as Haven's ears.
 
 ---
 
-► From the ``||input:Input||`` category, drag ``||input:sound level||`` in to **replace** the **_left_ ``[0]``** of your ``||logic:<[0] [=] [0]>||`` comparison.
+► From the ``||input:Input||`` category, drag ``||input:sound level||`` in to **replace** the **_left_ ``0``** of your ``||logic:<[0] [=] [0]>||`` comparison.
 
-► Using the dropdown in the **middle** of ``||logic:<[sound level] [=] [0]>||``, change the comparison to be **``>``** (greater than).
+► Using the dropdown in the **middle** of ``||logic:[sound level] [=] [0]||``, change the comparison to be **``>``** (greater than).
 
 ► Finally, have the **right side** of the comparison say ``128`` so your full comparison reads: **``sound level > 128``**.  
 💡 This means Haven will hear any sound above ``128``.
@@ -93,7 +93,7 @@ basic.forever(function () {
         // @highlight
         if (input.soundLevel() > 128) {
             
-        }	
+        }   
     }
 })
 ```
@@ -123,8 +123,8 @@ To show Haven is blowing away, we want to move a random set of lights sideways.
 
 ► From the ``||math:Math||`` category, find ``||math:pick random [0] to [10]||`` and snap that in to **replace** the ``[0]`` in your ``||variables:set [row] to [0]||`` block.
 
-► Set it so it picks a random number from ``0`` to **``4``**.  
-💡 We are setting the maximum random value to 4 because the lights on the @boardname@ go from 0, 1, 2, 3, 4 columns and rows.
+► Change the maximum number from ``10`` to **``4``**.  
+💡 We are setting the maximum random value to 4 because the lights on the @boardname@ are numbered 0, 1, 2, 3, and 4 for columns and rows.
 
 ```blocks
 let row = 0
@@ -133,20 +133,20 @@ basic.forever(function () {
         if (input.soundLevel() > 128) {
             // @highlight
             row = randint(0, 4)            
-        }	
+        }   
     }
 })
 ```
 
 ## 8. Displacing LEDs part 2
 
-► Go back into ``||variables:Variables||`` and drag out another ``||variables:set [row] to [0]||``. Place this one at the **bottom** of your ``||logic:if then||`` statement.
+► Go back into ``||variables:Variables||`` and drag out another ``||variables:set [row] to [0]||``. Place this one below the last one (at **the end**) of your `if then` statement.
 
-► Using the **dropdown menu**, set it to read ``||variables:set [col] to [0]||``.
+► Using the **dropdown menu**, set the new block to read ``||variables:set [col] to [0]||``.
 
-► From the ``||math:Math||`` category, grab another ``||math:pick random [0] to [10]||`` and snap that in to **replace** the ``[0]`` in your new ``||variables:set [col] to [0]||`` block.
+► From the ``||math:Math||`` category, grab another ``||math:pick random [0] to [10]||`` and snap that in to **replace** the ``[0]`` in your ``||variables:set [col] to [0]||`` block.
 
-► Set it to also pick a random number from ``0`` to **``4``**.
+► Change the maximum number from ``10`` to **``4``**.  
 
 ```blocks
 let col = 0
@@ -157,7 +157,7 @@ basic.forever(function () {
             row = randint(0, 4)   
             // @highlight
             col = randint(0, 4)         
-        }	
+        }   
     }
 })
 ```
@@ -192,13 +192,13 @@ basic.forever(function () {
 
 ## 10. Unplotting and replotting LEDs
 
-To create the animation effect of Haven blowing away, we will ``unplot``/turn off a light that is on and then ``plot``/turn it on in a different spot.
+To create the animation effect of Haven blowing away, we will turn off (or ``unplot``) a light that is on and then turn it on again (``plot`` it) in a different spot.
 
 ---
 
 ► From ``||led:Led||``, grab ``||led:unplot x [0] y [0]||`` and snap it inside the **empty** ``||logic:if <point x [0] y [0]> then||`` statement.
 
-► Go back to ``||led:Led||`` and take out the ``||led:plot x [0] y [0]||`` block. Snap it in **beneath** the ``||led:unplot x [0] y [0]||`` that you just added.
+► Go back to ``||led:Led||`` and get ``||led:plot x [0] y [0]||``. Snap that in **beneath** the ``||led:unplot x [0] y [0]||`` block that you just added.
 
 ```blocks
 let col = 0
@@ -226,12 +226,12 @@ Notice how you have **three** blocks from the ``||led:Led||`` category. All thre
 
 ---
 
-► From ``||variables:Variables||``, get three copies of ``||variables:col||``, and use them to **replace the _first_ ``0``'s** (the one to the right of ``x`` and the left of ``y``) in the following three blocks:  
+► From ``||variables:Variables||``, get three copies of ``||variables:col||``, and use them to **replace the ``x`` values** in the following three blocks:  
 **_1._** ``||led:point x [0] y [0]||``  
 **_2._** ``||led:unplot x [0] y [0]||``  
 **_3._** ``||led:plot x [0] y [0]||``
 
-► Go into ``||variables:Variables||``, get three copies of ``||variables:row||``, and use them to **replace the _second_ ``0``'s** (the one to the right of ``y``) for **the same three blocks**.
+► Go into ``||variables:Variables||``, get three copies of ``||variables:row||``, and use them to **replace the ``y`` values** in the same three blocks.
 
 ```blocks
 let col = 0
@@ -255,7 +255,7 @@ basic.forever(function () {
 
 ➕ **Math makes the lights go swoosh** ➗
 
-Right now, we are unplotting and replotting in the same spot. What we want to do instead is move the lights we're unplotting just a smidge to the right every time.
+Right now, we are unplotting and replotting in the same spot. What we want to do  is move the lights we're turning back on just a smidge to the right every time until there's nothing left on the grid.
 
 ---
 
