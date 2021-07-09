@@ -185,7 +185,7 @@ basic.forever(function () {
             col = randint(0, 4)         
         }
         // @highlight
-        if (led.point(0, 0)) 
+        if (led.point(0, 0)) { }
     }
 })
 ```
