@@ -3,15 +3,15 @@
 ```codecard
 [
     {
-        "name": "New micro:bit Tutorials",
-        "url": "/v2tutorials",
-        "imageUrl": "/static/mb/projects/pet-hamster.png"
-    },
-    {
         "name": "Tutorials",
         "url": "/tutorials",
         "imageUrl": "/static/mb/projects/a1-display.png",
         "largeImageUrl": "/static/mb/projects/flashing-heart/sim.gif"
+    },
+    {
+        "name": "Tutorials for the new micro:bit",
+        "url": "/v2tutorials",
+        "imageUrl": "/static/mb/projects/pet-hamster.png"
     },
     {
         "name": "Live Coding",
@@ -59,7 +59,7 @@
         "imageUrl": "/static/mb/projects/turtle-square.png"
     },
     {
-        "name": "Blocks To JavaScript",
+        "name": "Blocks to JavaScript",
         "url": "/courses/blocks-to-javascript",
         "imageUrl": "/static/courses/blocks-to-javascript/hello-javascript.png"
     },
@@ -98,8 +98,8 @@
 
 ## See Also
 
-[New micro:bit Tutorials](/v2tutorials),
 [Tutorials](/tutorials),
+[Tutorials for the new micro:bit](/v2tutorials),
 [Live Coding](/live-coding),
 [Games](/projects/games),
 [Radio Games](/projects/radio-games),
@@ -109,7 +109,7 @@
 [Science](/projects/science),
 [Tools](/projects/tools),
 [Turtle](/projects/turtle),
-[Blocks To JavaScript](/courses/blocks-to-javascript),
+[Blocks to JavaScript](/courses/blocks-to-javascript),
 [Courses](/courses),
 [Behind the MakeCode Hardware](/behind-the-makecode-hardware),
 [Science Experiments](/science-experiments),
