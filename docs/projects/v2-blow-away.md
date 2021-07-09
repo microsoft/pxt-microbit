@@ -127,12 +127,13 @@ To show Haven is blowing away, we want to move a random set of lights sideways.
 💡 We are setting the maximum random value to 4 because the lights on the @boardname@ are numbered 0, 1, 2, 3, and 4 for columns and rows.
 
 ```blocks
+let col = 0
 let row = 0
 basic.forever(function () {
     for (let index = 0; index < 4; index++) {
         if (input.soundLevel() > 128) {
             // @highlight
-            row = randint(0, 4)            
+            row = randint(0, 4)    
         }   
     }
 })
