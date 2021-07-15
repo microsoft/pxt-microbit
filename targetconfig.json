@@ -261,6 +261,7 @@
     },
     "galleries": {
         "Tutorials": "tutorials",
+        "Tutorials for the new micro:bit": "v2tutorials",
         "Live Coding": {
             "url": "live-coding",
             "shuffle": "daily",
@@ -274,7 +275,7 @@
         "Science": "projects/science",
         "Tools": "projects/tools",
         "Turtle": "projects/turtle",
-        "Blocks To JavaScript": "courses/blocks-to-javascript",
+        "Blocks to JavaScript": "courses/blocks-to-javascript",
         "Courses": "courses",
         "Behind the MakeCode Hardware": {
             "url": "behind-the-makecode-hardware",
