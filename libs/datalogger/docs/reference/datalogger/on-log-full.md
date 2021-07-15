@@ -5,6 +5,7 @@ Run code in an event when the data log is full.
 ```sig
 datalogger.onLogFull(function() {})
 ```
+
 ## Example
 
 Notify the user when the data log is full. Wait 2 seconds to let them clear the log by pressing the **B** button.
