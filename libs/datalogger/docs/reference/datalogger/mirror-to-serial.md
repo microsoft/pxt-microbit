@@ -10,7 +10,7 @@ By default, the same data that is written to the data log is also sent to the se
 
 ## Parameters
 
-* **on**: a [boolean](types/boolean) that is set to `true` to write a copy of the data log items to the serial output. Otherwise, use `false` to just write to the data items to the log only.
+* **on**: a [boolean](/types/boolean) that is set to `true` to write a copy of the data log items to the serial output. Otherwise, use `false` to just write to the data items to the log only.
 
 ## Example
 

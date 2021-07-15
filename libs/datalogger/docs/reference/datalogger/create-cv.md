@@ -1,12 +1,14 @@
 # create CV
 
-Create a column-value data item to log named data values.
+Create a column-value data log item for a data value.
 
 ```sig
 datalogger.createCV("", 0)
 ```
 
 Data values that are written to the data log are assigned to a _column_ in order to identify what their value is related to. Before logging a data value, it is formatted as a "CV" or "column-value" data item. A column name is attached to a data value this way.
+
+A data log entry is written to the data log as an array of one or more "column-value" data item objects. This function creates the data item for the value you want to include in a log entry.
 
 ## Parameters
 
@@ -53,12 +55,17 @@ datalogger.setColumns([
 "sound",
 "temperature"
 ])
-columns = []
+columns = [
+datalogger.createCV("", 0),
+datalogger.createCV("", 0),
+datalogger.createCV("", 0),
+datalogger.createCV("", 0)
+]
 ```
 
 ## See also
 
-[log Data](/reference/datalogger/log-data)
+[log data](/reference/datalogger/log-data), [set columns](/reference/datalogger/set-columns)
 
 ```package
 datalogger

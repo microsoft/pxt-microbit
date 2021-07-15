@@ -25,6 +25,10 @@ datalogger.onLogFull(function () {
 })
 ```
 
+## See also
+
+[delete log](/reference/datalogger/delete-log)
+
 ```package
 datalogger
 ```
