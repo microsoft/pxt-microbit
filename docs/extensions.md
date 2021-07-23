@@ -62,6 +62,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 
 ```codecard
 [{
+    "name": "Joy-IT RB-TFT1.8",
+    "url": "/pkg/joy-it/pxt-RB-TFT1.8",
+    "cardType": "package"
+}, {
     "name": "Pimoroni inky:bit",
     "url": "/pkg/pimoroni/pxt-inkybit",
     "cardType": "package"
