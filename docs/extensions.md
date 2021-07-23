@@ -388,6 +388,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 
 ```codecard
 [{
+  "name": "Elecfreaks Smart AI Lens ",
+  "url":"/pkg/elecfreaks/pxt-PlanetX-AI",
+  "cardType": "package"
+}, {
   "name": "MU Vision camera",
   "url":"/pkg/mu-opensource/pxt-muvision",
   "cardType": "package"
