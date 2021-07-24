@@ -4,14 +4,13 @@ Projects used to create escape room experiences.
 
 ## Radio
 
-```codecard
-[{
-  "name": "Rotary Dial Radio",
-  "url":"/projects/rotary-dial-radio",
-  "description": "Turn an antique rotary dial phone into a radio transmitter",
-  "imageUrl":"/static/mb/projects/rotary-dial-radio.png"
-}]
-```
+### ~ codecard
+* name: Rotary Dial Radio
+* url: /projects/rotary-dial-radio
+* description: "Turn an antique rotary dial phone into a radio transmitter
+* imageUrl: /static/mb/projects/rotary-dial-radio.png
+---
+### ~
 
 ## Acknowledgments
 
