@@ -20,6 +20,15 @@ to talk to each other because they will have the same group ID.
 
 * **id**: a [number](/types/number) from ``0`` to ``255``.
 
+### ~ reminder
+
+#### Default radio group
+
+The radio group for @boardname@ v2 and later is NOT set by default. To make your program work on
+all versions of the @boardname@, it's best to set a radio group number when your program begins.
+
+### ~
+
 ## Simulator
 
 This function only works on the @boardname@, not in browsers.
