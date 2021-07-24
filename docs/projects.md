@@ -15,7 +15,8 @@
     },
     {
         "name": "Live Coding",
-        "url": "/live-coding"
+        "url": "/live-coding",
+        "imageUrl": "/static/live-coding/NvEOKZ8wh9s.jpg"
     },
     {
         "name": "Games",
@@ -79,7 +80,8 @@
     },
     {
         "name": "Coding for Teachers",
-        "url": "/coding-for-teachers"
+        "url": "/coding-for-teachers",
+        "imageUrl": "/static/coding-for-teachers/hr8O_pslp8Q.jpg"
     },
     {
         "name": "Coding Cards",
@@ -114,4 +116,3 @@
 [Coding for Teachers](/coding-for-teachers),
 [Coding Cards](/coding-cards),
 [Deep Dive](/deep-dive)
-

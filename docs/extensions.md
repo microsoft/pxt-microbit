@@ -2,7 +2,7 @@
 
 ## Extension Gallery #gallery
 
-Check out [the accessories pages on microbit.org](https: //microbit.org/buy/accessories/) for more information on these accessories and where to buy them.
+Check out [the accessories pages on microbit.org](https://microbit.org/buy/accessories/) for more information on these accessories and where to buy them.
 
 ### Categories
 
