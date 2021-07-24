@@ -15,8 +15,7 @@
     },
     {
         "name": "Live Coding",
-        "url": "/live-coding",
-        "imageUrl": "/static/live-coding/NvEOKZ8wh9s.jpg"
+        "url": "/live-coding"
     },
     {
         "name": "Games",
@@ -80,8 +79,7 @@
     },
     {
         "name": "Coding for Teachers",
-        "url": "/coding-for-teachers",
-        "imageUrl": "/static/coding-for-teachers/hr8O_pslp8Q.jpg"
+        "url": "/coding-for-teachers"
     },
     {
         "name": "Coding Cards",
