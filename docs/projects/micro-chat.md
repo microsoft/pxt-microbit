@@ -11,7 +11,7 @@ Use the **radio** to send and receive messages with other @boardname@.
 The first thing you want to do is to put in a ``||radio:set group||``. This will make certain that you and another @boardname@ will receive just the messages assigned to that group instead messages from some other @boardname@ that's not part of your conversation. This like tuning to a particular channel to talk on.
 
 ```blocks
-radio.setGroup(123)
+radio.setGroup(1)
 ```
 
 ## Sending a message
