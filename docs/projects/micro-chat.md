@@ -6,6 +6,14 @@
 
 Use the **radio** to send and receive messages with other @boardname@.
 
+## Set a radio group
+
+First thing you want to do is to ``||radio:set group||`` so that another @boardname@ will receive just your messages instead some other message not meant for it. This like tuning to a particular channel to talk on.
+
+```blocks
+radio.setGroup(14)
+```
+
 ## Sending a message
 
 Use ``||input:on button pressed||`` to send a text message over radio with ``||radio:send string||``.
