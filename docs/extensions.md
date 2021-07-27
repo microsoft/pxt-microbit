@@ -151,6 +151,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 ## Individual sensors
 
 ### ~codecard
+* name: TCS3200 Color sensor
+* url: /pkg/joy-it/pxt-SEN-Color
+* cardType: package
+---
 * name: MPU6050 Gyroscope
 * url: /pkg/joy-it/SEN-MPU6050
 * cardType: package
