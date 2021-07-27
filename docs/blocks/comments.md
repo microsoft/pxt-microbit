@@ -68,9 +68,40 @@ basic.clearScreen()
 
 When a program contains conditionals, loops, or functions, adding comments becomes important to help understand what's happening at those places in your program. The program can take a different path based on a condition, result from a function, or some other action.
 
+### ~ hint
+
+#### Workspace comments
+
+You can add comments an notes about your project with **Workspace Comments**. Just right-click on the Workspace background and choose **Add Comment** to insert your comments for the project.
+
+```block
+/**
+ * This is a workspace comment.
+ * 
+ * Use this space to make comments
+ * 
+ * and notes about your project.
+ */
+// Display a message
+function showMessage () {
+    basic.showString("Workspaces have comments!")
+}
+```
+
+### ~
+
 The following example has a conditional inside a loop to choose one of three different mood values. For each mood, a function will display an icon for it. Each block has a comment that describes what it will do. Take a look at the JavaScript or Python code to see the comments on the code text also.
 
 ```blocks
+/**
+ * The mood icon project.
+ * 
+ * TODO: add more moods
+ * 
+ * 1. Sad
+ * 
+ * 2. Confused
+ */
 // Display an emotion of love
 function heart () {
     basic.showIcon(IconNames.Heart)
