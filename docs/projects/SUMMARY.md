@@ -129,7 +129,7 @@
   * [Coding and Innovation](https://sites.google.com/view/utahcodingproject/microbits/coding-innovation)
   * [First Steps](https://microbit.org/get-started/first-steps/introduction/)
   * [Make it: code it](https://microbit.org/projects/make-it-code-it/)
-  * [Networking with the micro:bit](https://microbit.org/projects/make-it-code-it/)
+  * [Networking with the micro:bit](https://microbit.nominetresearch.uk/)
   * [SparkFun Videos](https://youtu.be/kaNtg1HGXbY?list=PLBcrWxTa5CS0mWJrytvii8aG5KUqMXvSk)
   * [Logic Lab](/courses/logic-lab)
   * [CodeJoy Remote Robotics](https://www.codejoyeducation.com)
