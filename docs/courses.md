@@ -2,6 +2,7 @@
 
 A collection of courses and tutorials built for the @boardname@.
 
+
 ## Intro to Computer Science
 
 MakeCode's course for learning Computer Science with the micro:bit. This is a 14 week computer science course for middle school grades 6-8.
@@ -64,7 +65,7 @@ Tutorials, lessons, and mini-courses about programming and computing.
 * name: Networking with the micro:bit
 * description: A series of activities to teach the basics of computer networks.
 * url: https://microbit.nominetresearch.uk/
-* imageUrl: /static/courses/networking-book.png  
+* imageUrl: /static/courses/networking-book.png
 ---
 * name: SparkFun Videos
 * description: YouTube video tutorials produced by the SparkFun team!

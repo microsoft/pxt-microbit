@@ -6,6 +6,7 @@ Are you ready to try JavaScript to write your code?
 
 ## ~
 
+
 ## Projects
 
 ### ~ codecard
