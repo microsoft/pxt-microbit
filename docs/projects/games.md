@@ -2,7 +2,6 @@
 
 Here are some cool game projects that you can build with your @boardname@!
 
-
 ## Fun games
 
 Fun games to build with your @boardname@.

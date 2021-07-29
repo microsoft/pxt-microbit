@@ -2,7 +2,6 @@
 
 Turtle graphics on your @boardname@ screen!
 
-
 ## Turtle graphics
 
 ### ~ codecard

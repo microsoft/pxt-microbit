@@ -2,7 +2,6 @@
 
 * [Watch Playlist on Youtube](https://www.youtube.com/watch?v=qqBmvHD5bCw&list=PLMMBk9hE-SeqDYtw9pGNPsQ10V_EGMyGe)
 
-
 ## Videos
 
 ### ~ codecard
@@ -48,7 +47,7 @@
 ---
 * name: Speakers
 * description: Find out how speakers make sound and how you can connect them to your board.
-* youTubeId: cxfPNc4Wefo
+* youTubeId: cxfPNc4Wefo 
 * imageUrl: /static/mb/behindhardware/speakers.jpg
 ---
 ### ~
