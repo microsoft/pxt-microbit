@@ -267,7 +267,7 @@
     },
     "galleries": {
         "Tutorials": "tutorials",
-        "Tutorials for the new micro:bit": "v2tutorials",
+        "Tutorials for the new micro:bit (V2)": "v2tutorials",
         "Live Coding": {
             "url": "live-coding",
             "shuffle": "daily",

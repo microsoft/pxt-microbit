@@ -99,7 +99,7 @@
 ## See Also
 
 [Tutorials](/tutorials),
-[Tutorials for the new micro:bit](/v2tutorials),
+[Tutorials for the new micro:bit (V2)](/v2tutorials),
 [Live Coding](/live-coding),
 [Games](/projects/games),
 [Radio Games](/projects/radio-games),
