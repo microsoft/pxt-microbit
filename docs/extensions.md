@@ -60,6 +60,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 ## Display
 
 ### ~codecard
+* name: Kitronik 128x64 Display
+* url: /pkg/KitronikLtd/pxt-kitronik-128x64Display
+* cardType: package
+---
 * name: Pimoroni inky:bit
 * url: /pkg/pimoroni/pxt-inkybit
 * cardType: package
