@@ -409,6 +409,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
   "url":"/pkg/gomakekit/Hoverbit_V2",
   "cardType": "package"
 }, {
+  "name": "Stemhubbit car",
+  "url":"/pkg/stemhub/pxt-Stemhubbit",
+  "cardType": "package"
+}, {
   "name": "MATRIX Micro",
   "url":"/pkg/pxt-MatrixMicro",
   "cardType": "package"
