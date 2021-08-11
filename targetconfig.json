@@ -209,7 +209,8 @@
             "joy-it/SEN-MPU6050",
             "gomakekit/Hoverbit_V2",
             "Matrix-Robotics/pxt-MatrixMicro",
-            "joy-it/pxt-SEN-Color"
+            "joy-it/pxt-SEN-Color",
+            "stemhub/pxt-StemhubCity"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",

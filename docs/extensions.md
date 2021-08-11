@@ -324,6 +324,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
    "url": "/pkg/iBuilds/pxt-PTKidsBIT",
    "cardType": "package"
 }, {
+   "name": "Stemhub City",
+   "url": "/pkg/stemhub/pxt-StemhubCity",
+   "cardType": "package"
+}, {
    "name": "Pi Supply tinker:kit",
    "url": "/pkg/PiSupply/pxt-tinker-kit",
    "cardType": "package"
