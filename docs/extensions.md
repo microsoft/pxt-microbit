@@ -62,6 +62,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 
 ```codecard
 [{
+    "name": "Monk Makes 7-Segment",
+    "url": "/pkg/monkmakes/monkmakes-7-segment",
+    "cardType": "package"
+}, {
     "name": "Pimoroni inky:bit",
     "url": "/pkg/pimoroni/pxt-inkybit",
     "cardType": "package"
