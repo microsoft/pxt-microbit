@@ -62,6 +62,11 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 
 ```codecard
 [{
+    "name": "Kitronik 128x64 Display",
+    "url": "/pkg/KitronikLtd/pxt-kitronik-128x64Display",
+    "cardType": "package"
+}, {
+{
     "name": "Monk Makes 7-Segment",
     "url": "/pkg/monkmakes/monkmakes-7-segment",
     "cardType": "package"
@@ -324,6 +329,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 
 ```codecard
 [{
+   "name": "Kitronik LAB:bit",
+   "url": "/pkg/KitronikLtd/pxt-kitronik-lab-bit",
+   "cardType": "package"
+}, {
    "name": "PT-BOT PTKidsBIT",
    "url": "/pkg/iBuilds/pxt-PTKidsBIT",
    "cardType": "package"
@@ -400,6 +409,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 
 ```codecard
 [{
+  "name": "Elecfreaks Smart AI Lens ",
+  "url":"/pkg/elecfreaks/pxt-PlanetX-AI",
+  "cardType": "package"
+}, {
   "name": "MU Vision camera",
   "url":"/pkg/mu-opensource/pxt-muvision",
   "cardType": "package"
