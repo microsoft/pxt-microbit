@@ -210,7 +210,9 @@
             "gomakekit/Hoverbit_V2",
             "Matrix-Robotics/pxt-MatrixMicro",
             "joy-it/pxt-SEN-Color",
-            "stemhub/pxt-Stemhubbit"
+            "stemhub/pxt-Stemhubbit",
+            "monkmakes/monkmakes-7-segment",
+            "stemhub/pxt-StemhubCity"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",
