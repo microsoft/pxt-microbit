@@ -158,7 +158,7 @@ namespace datalogger {
     //% block="mirror data to serial $on"
     //% blockId=dataloggertogglemirrortoserial
     //% on.shadow=toggleOnOff
-    //% on.defl=true
+    //% on.defl=false
     //% weight=25 help=datalogger/mirror-to-serial
     export function mirrorToSerial(on: boolean): void {
         // TODO:/note intentionally does not have group, as having the same group for all
