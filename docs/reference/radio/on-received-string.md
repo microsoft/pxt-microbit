@@ -23,6 +23,7 @@ https://www.youtube.com/watch?v=Re3H2ISfQE8
 This program continuously sends a cheerful message. It also receives a messages from nearby @boardname@s. It shows these messages on the screen.
 
 ```blocks
+radio.setGroup(1)
 basic.forever(() => {
     radio.sendString("I'm happy");
 })

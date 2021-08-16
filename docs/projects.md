@@ -9,7 +9,7 @@
         "largeImageUrl": "/static/mb/projects/flashing-heart/sim.gif"
     },
     {
-        "name": "Tutorials for the new micro:bit",
+        "name": "Tutorials for the new micro:bit (V2)",
         "url": "/v2tutorials",
         "imageUrl": "/static/mb/projects/pet-hamster.png"
     },
@@ -99,7 +99,7 @@
 ## See Also
 
 [Tutorials](/tutorials),
-[Tutorials for the new micro:bit](/v2tutorials),
+[Tutorials for the new micro:bit (V2)](/v2tutorials),
 [Live Coding](/live-coding),
 [Games](/projects/games),
 [Radio Games](/projects/radio-games),
