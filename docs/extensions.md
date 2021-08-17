@@ -327,8 +327,12 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 
 ## Kits
 
-```codecard
+```codecard 
 [{
+   "name": "KittenBot Powerbrick",
+   "url": "/pkg/KittenBot/pxt-powerbrick",
+   "cardType": "package"
+}, {
    "name": "Kitronik LAB:bit",
    "url": "/pkg/KitronikLtd/pxt-kitronik-lab-bit",
    "cardType": "package"
