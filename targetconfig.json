@@ -13,6 +13,7 @@
             "microsoft/pxt-ws2812b",
             "microsoft/pxt-apa102",
             "microsoft/pxt-radio-firefly",
+            "microsoft/pxt-ml4f",
             "KitronikLtd/pxt-kitronik-servo-lite",
             "KitronikLtd/pxt-kitronik-motor-driver",
             "KitronikLtd/pxt-kitronik-I2C-16-servo",
@@ -270,7 +271,8 @@
             "bsiever/microbit-pxt-timeanddate": "min:v2.0.11"
         },
         "approvedEditorExtensionUrls": [
-            "https://microsoft.github.io/jacdac-docs/tools/makecode-editor-extension"
+            "https://microsoft.github.io/jacdac-docs/tools/makecode-editor-extension",
+            "https://microsoft.github.io/ml4f/"
         ]
     },
     "galleries": {
