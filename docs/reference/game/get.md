@@ -1,6 +1,6 @@
 # get (Sprite Property)
 
-Find something out about a [sprite](/reference/game/create-sprite).
+Get a value for a [sprite](/reference/game/create-sprite) property.
 
 ```sig
 game.createSprite(0,0).get(LedSpriteProperty.X);
@@ -9,11 +9,11 @@ game.createSprite(0,0).get(LedSpriteProperty.X);
 ## Parameters
 
 * **property**: the property of the **Sprite** you want to know about, like:
->* ``x`` - how far up or down the sprite is on the screen (`0`-`4`)
->* ``y`` - how far left or right the sprite is on the screen (`0`-`4`)
->* ``direction`` - which way the sprite is pointing (this works the same way as the [turn](/reference/game/turn) function)
->* ``brightness`` - how bright the LED sprite is (this works the same way as the [brightness](/reference/led/brightness) function)
->* ``blink`` - how fast the sprite is blinking (the bigger the number is, the faster the sprite is blinking)
+>* ``x`` - the horizontal location to set the sprite at on the LED screen (`0`-`4`)
+>* ``y`` - the vertical location to set the sprite at on the LED screen (`0`-`4`)
+>* ``direction`` - the direction in degrees for the sprite to go when the next [move](/reference/game/move) happens. The degree range is from `-180` to `180`.
+>* ``brightness`` - how bright the LED sprite is. Completely dark is `0` and very bright is `255`.
+>* ``blink`` - how fast the sprite is will blink on and off. The blink rate is in milliseconds.
 
 ## Returns
 
