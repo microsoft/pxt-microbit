@@ -3,7 +3,7 @@
 Read the buffered serial data as a string.
 
 ```sig
-serial.readString();
+serial.readString()
 ```
 
 ## Returns
@@ -15,9 +15,9 @@ serial.readString();
 The following program scrolls text on the screen as it arrives from serial.
 
 ```blocks
-basic.forever(() => {
-    basic.showString(serial.readString());
-});
+basic.forever(function() {
+    basic.showString(serial.readString())
+})
 ```
 
 ## See also

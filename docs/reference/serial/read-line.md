@@ -3,13 +3,15 @@
 Read a line of text from the serial port.
 
 ```sig
-serial.readLine();
+serial.readLine()
 ```
 
 ### ~hint
 
+#### Newline characters
+
 This function expects the line it reads to be terminated with the `\n`
-character.  If your terminal software does not terminate lines with
+character. If your terminal software does not terminate lines with
 `\n`, this function will probably never return a value.
 
 
@@ -27,11 +29,11 @@ The following example requests the user's name, then repeats it to greet the use
 
 ```blocks
 basic.forever(() => {
-    serial.writeLine("What is your name?");
+    serial.writeLine("What is your name?")
     let answer = serial.readLine();
-    serial.writeString("Hello,");
-    serial.writeLine(answer);
-});
+    serial.writeString("Hello,")
+    serial.writeLine(answer)
+})
 ```
 
 ## See also

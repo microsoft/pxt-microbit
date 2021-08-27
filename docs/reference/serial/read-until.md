@@ -3,7 +3,7 @@
 Read a text from the serial port until a delimiter is found.
 
 ```sig
-serial.readUntil(",");
+serial.readUntil(",")
 ```
 
 ## Returns
@@ -16,9 +16,9 @@ The following example reads strings separated by commands (``,``).
 
 ```blocks
 basic.forever(() => {
-    let answer = serial.readUntil(",");
-    serial.writeLine(answer);
-});
+    let answer = serial.readUntil(",")
+    serial.writeLine(answer)
+})
 ```
 
 ## See also
