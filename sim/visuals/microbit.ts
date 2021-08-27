@@ -1087,7 +1087,7 @@ path.sim-board {
             }
 
             // display v2 indicator
-            const title = pxsim.localization.lf("micro:bit V2 needed")
+            const title = pxsim.localization.lf("micro:bit v2 needed")
             this.v2Circle = <SVGCircleElement>svg.child(this.g, "circle", { r: 21, title: title });
             svg.fill(this.v2Circle, "white");
             this.v2Text = <SVGTextElement>svg.child(this.g, "text", { class: "sim-text", title: title });
@@ -1108,18 +1108,18 @@ path.sim-board {
             // outline
             this.pkg.setAttribute("d", "M 498 31.9 C 498 14.3 483.7 0 466.1 0 H 31.9 C 14.3 0 0 14.3 0 31.9 v 342.2 C -1 399 21 405 23 406 c 0 0 -1 -9 8 -8 l 18 0 c 0 0 9 -1 8 8 h 7 h 50 h 7 c 0 0 -1 -9 8 -8 l 18 0 c 0 0 9 -1 8 8 h 7 h 63 h 7 c 0 0 -1 -9 8 -8 l 18 0 c 0 0 9 -1 8 8 h 7 h 64 h 7 c 0 0 -1 -9 8 -8 l 18 0 c 0 0 9 -1 8 8 h 7 h 51 h 5 c 0 0 -1 -9 8 -8 l 18 0 c 0 0 9 -1 8 8 h 0 c 9 0 23 -17 23 -31 V 31.9 z M 14.3 206.7 c -2.7 0 -4.8 -2.2 -4.8 -4.8 c 0 -2.7 2.2 -4.8 4.8 -4.8 c 2.7 0 4.8 2.2 4.8 4.8 C 19.2 204.6 17 206.7 14.3 206.7 z M 486.2 206.7 c -2.7 0 -4.8 -2.2 -4.8 -4.8 c 0 -2.72 0.2 -4.8 4.8 -4.8 c 2.7 0 4.8 2.2 4.8 4.8 C 491 204.6 488.8 206.7 486.2 206.7 z")
 
-            const headTitle = pxsim.localization.lf("logo touch (micro:bit V2 needed)")
+            const headTitle = pxsim.localization.lf("logo touch (micro:bit v2 needed)")
             accessibility.makeFocusable(this.headParts);
             accessibility.setAria(this.headParts, "button", headTitle);
 
             // microphone led
-            const microphoneTitle = pxsim.localization.lf("microphone (microbit:v2 needed)")
+            const microphoneTitle = pxsim.localization.lf("microphone (micro:bit v2 needed)")
             const microg = svg.child(this.g, "g", { title: microphoneTitle })
             this.microphoneLed = svg.path(microg, "sim-led sim-mic", "M 352.852 71 C 351.315 71 350.07 72.248 350.07 73.784 V 79.056 C 350.07 80.594 351.316 81.838 352.852 81.838 C 354.387 81.838 355.634 80.593 355.634 79.056 V 73.784 C 355.634 72.248 354.387 71 352.852 71 Z M 346.743 79.981 C 346.743 82.84 348.853 85.062 351.501 85.658 V 87.095 H 348.448 V 89.329 H 357.366 V 87.095 H 354.306 V 85.658 C 356.954 85.064 359.071 82.842 359.071 79.981 H 357.057 C 357.057 82.174 355.168 83.81 352.905 83.81 C 350.64 83.81 348.757 82.173 348.757 79.981 Z");
             svg.fills([this.microphoneLed], this.props.theme.ledOff);
             // ring
             const microhole = svg.child(this.g, "circle", { cx: 336, cy: 86, r: 3, stroke: "gold", strokeWidth: "1px" })
-            svg.title(microhole, pxsim.localization.lf("microphone (microbit:v2 needed)"))
+            svg.title(microhole, pxsim.localization.lf("microphone (micro:bit v2 needed)"))
 
             this.updateMicrophone();
             this.updateTheme();
