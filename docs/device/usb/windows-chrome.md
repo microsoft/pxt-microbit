@@ -1,32 +1,22 @@
-# Uploading from Chrome for Windows
-
-## ~ hint
-
-Starting with Chrome 65 on Windows 10, 
-you can use **WebUSB** to download with one-click.
-[Learn more about WebUSB...](/device/usb/webusb).
-
-## ~
+# Transferring from Chrome for Windows
 
 While you're writing and testing your programs, you'll mostly be [running them
 in the simulator](/device/simulator), but once you've finished your program you
 can **compile** it and run it on your micro:bit.
 
+## Transfer using a WebUSB connection
+
+With Chrome (version 79 and newer), you can transfer your program to the @boardname@ with a single click. If your browser supports WebUSB, you can use the **one-click download** feature to send your programs to the @boardname@. See the [WebUSB](/device/usb/webusb) page to learn how to pair your @boardname@ with a computer and transfer your programs with a single click.
+
+## Downloading your program as file
+
 The basic steps are:
 
-1. Connect your micro:bit to your computer via USB
+1. Connect your @boardname@ to your computer with a USB cable (use an A-Male to Micro USB cable)
 2. Click **Download** and download the `.hex` file
 3. Copy the `.hex` file from your computer onto the micro:bit drive
 
-## Requirements
-
-You need the following things to transfer and run a script on your micro:bit:
-
-* A-Male to Micro USB cable to connect your computer to your micro:bit. This is
-    the same cable that is commonly used to connect a smart phone to a computer.
-* A PC running Windows 7 or later.
-
-## Step 1: Connect your micro:bit to your computer
+### Step 1: Connect your micro:bit to your computer
 
 First, connect the micro:bit:
 
@@ -40,7 +30,7 @@ it appears as a new drive under Devices.
 
 ![](/static/mb/device/usb-windows-device.jpg)
 
-## Step 2 (optional): Configure Chrome to ask where to save the file
+### Step 2 (optional): Configure Chrome to ask where to save the file
 
 You only need to do this once.
 
@@ -49,7 +39,7 @@ You only need to do this once.
 3. Find the **Downloads** settings.
 4. Enable the setting **Ask where to save each file before downloading**.
 
-## Step 3: Download your program
+### Step 3: Download your program
 
 1. Open your project on @homeurl@
 2. Click **Download**
@@ -57,11 +47,11 @@ You only need to do this once.
     so save it into the `MICROBIT` drive.
     Otherwise, continue with one of the options in Step 4 below.
 
-## Step 4: Transfer the file to your micro:bit
+### Step 4: Transfer the file to your micro:bit
 
 If the file was saved onto your computer, you will need to transfer it to the micro:bit.
 
-## Manual transfer
+#### Manual transfer
 
 Your `.hex` file (created in Step 3 above) appears as a download at the bottom of the browser.
 Click on the arrow next to the name of the file and then click **Show in folder**.
@@ -74,7 +64,7 @@ Alternatively, right-click on the hex file, choose **Send to**, and then **MICRO
 
 ![](/static/mb/device/usb-windows-sendto.jpg)
 
-## Step 5: After transferring the file
+### Step 5: After transferring the file
 
 * The LED on the back of your micro:bit flashes during the transfer (which 
     should only take a few seconds).
