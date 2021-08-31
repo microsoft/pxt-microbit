@@ -62,6 +62,14 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 
 ```codecard
 [{
+    "name": "Kitronik 128x64 Display",
+    "url": "/pkg/KitronikLtd/pxt-kitronik-128x64Display",
+    "cardType": "package"
+}, {
+    "name": "Monk Makes 7-Segment",
+    "url": "/pkg/monkmakes/monkmakes-7-segment",
+    "cardType": "package"
+}, {
     "name": "Pimoroni inky:bit",
     "url": "/pkg/pimoroni/pxt-inkybit",
     "cardType": "package"
@@ -156,6 +164,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 
 ```codecard
 [{
+ "name": "TCS3200 Color sensor",
+  "url":"/pkg/joy-it/pxt-SEN-Color",
+  "cardType": "package"
+}, {
  "name": "MPU6050 Gyroscope",
   "url":"/pkg/joy-it/SEN-MPU6050",
   "cardType": "package"
@@ -320,8 +332,20 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 
 ```codecard
 [{
+   "name": "KittenBot Powerbrick",
+   "url": "/pkg/KittenBot/pxt-powerbrick",
+   "cardType": "package"
+}, {
+   "name": "Kitronik LAB:bit",
+   "url": "/pkg/KitronikLtd/pxt-kitronik-lab-bit",
+   "cardType": "package"
+}, {
    "name": "PT-BOT PTKidsBIT",
    "url": "/pkg/iBuilds/pxt-PTKidsBIT",
+   "cardType": "package"
+}, {
+   "name": "Stemhub City",
+   "url": "/pkg/stemhub/pxt-StemhubCity",
    "cardType": "package"
 }, {
    "name": "Pi Supply tinker:kit",
@@ -392,6 +416,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 
 ```codecard
 [{
+  "name": "Elecfreaks Smart AI Lens ",
+  "url":"/pkg/elecfreaks/pxt-PlanetX-AI",
+  "cardType": "package"
+}, {
   "name": "MU Vision camera",
   "url":"/pkg/mu-opensource/pxt-muvision",
   "cardType": "package"
@@ -407,6 +435,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 [{
   "name": "MakeKit Hoverbit",
   "url":"/pkg/gomakekit/Hoverbit_V2",
+  "cardType": "package"
+}, {
+  "name": "Stemhubbit car",
+  "url":"/pkg/stemhub/pxt-Stemhubbit",
   "cardType": "package"
 }, {
   "name": "MATRIX Micro",
