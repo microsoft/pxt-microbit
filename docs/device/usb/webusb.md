@@ -1,6 +1,6 @@
 # WebUSB
 
-[WebUSB](https://wicg.github.io/webusb/) is a recent and developing web standard that allows to access @boardname@ directly from a web page. It allows for a **one-click download** without installing any additional app or software! It also lets you receive data into the web page from the @boardname@.
+[WebUSB](https://wicg.github.io/webusb/) is a recent and developing web standard that allows you to access @boardname@ directly from a web page. It allows for a **one-click download** without installing any additional app or software! It also lets you receive data into the web page from the @boardname@.
 
 ## Support
 
