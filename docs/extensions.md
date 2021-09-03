@@ -328,6 +328,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 
 ```codecard
 [{
+   "name": "KittenBot Sugar",
+   "url": "/pkg/KittenBot/pxt-sugar",
+   "cardType": "package"
+}, {
    "name": "KittenBot Powerbrick",
    "url": "/pkg/KittenBot/pxt-powerbrick",
    "cardType": "package"
