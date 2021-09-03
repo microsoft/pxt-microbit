@@ -415,7 +415,7 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
   "name": "KittenBot KOI AI module ",
   "url":"/pkg/KittenBot/pxt-koi",
   "cardType": "package"
-},{
+}, {
   "name": "Elecfreaks Smart AI Lens ",
   "url":"/pkg/elecfreaks/pxt-PlanetX-AI",
   "cardType": "package"
