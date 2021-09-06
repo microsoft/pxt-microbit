@@ -170,6 +170,177 @@ enum MusicEvent {
 }
 
 /**
+ * Use this file to define custom functions and blocks.
+ * Read more at https://makecode.microbit.org/blocks/custom
+ */
+
+/**
+  * Wave Types
+  */
+ enum WaveType
+ {
+     //% block="Square"
+     SquareWave = 3,
+     //% block="Sine"
+     SineWave = 0,
+     //% block="Sawtooth"
+     SawtoothWave = 1,
+     //% block="Triangle"
+     TriangleWave = 2,
+     //% block="Noise"
+     NoiseWave = 4
+ }
+ 
+ /**
+   * Curve Types
+   */
+ enum CurveType
+ {
+     //% block="Curve"
+     Curve = 2,
+     //% block="No Curve"
+     None = 0,
+     //% block="Linear"
+     Linear = 1,
+     //% block="Exponential Rising"
+     ExpRising = 5,
+     //% block="Exponential Falling"
+     ExpFalling = 6
+ }
+
+ enum Interpolation
+ {
+     //% block="Exponential"
+     Exponential = 2,
+     //% block="Quadratic"
+     Quadratic = 1,
+     //% block="Linear"
+     Linear = 0,
+
+ }
+ 
+ /**
+   * Effect Types
+   */
+ enum EffectType
+ {
+     //% block="NoEffect"
+     None = 0,
+     //% block="Frequency Vibrato"
+     FreqVibrato = 1,
+     //% block="Volume Vibrato"
+     VolumeVibrato = 2,
+     //% block="Warble Interpolation"
+     WarbleInterpolation = 3
+ }
+ 
+
+
+/** Generation of V2 sounds
+ */
+//% color=#FFd23f weight=106 icon="\uf028"
+//% groups='["Sound Output"]
+namespace soundV2 {
+
+    export class Sound{
+ 
+        startFreq : number;
+        endFreq : number;
+        duration : number;
+        curveType : number;
+        waveType : number;
+        effect : number;
+        fxParam : number;
+        fxSteps : number;
+
+        constructor(){
+            this.startFreq = 2000;
+            this.endFreq = 2500;
+            this.duration = 500;
+            this.curveType = 2;
+            this.waveType = 3;
+            this.effect = 0;
+            this.fxParam  = 1500;
+            this.fxSteps = 1500;
+        }
+
+        playSound(){
+            new SoundExpression(this.waveType + "1023" + pad4(this.startFreq) + pad4(this.duration) + pad2(this.curveType) + "440" + pad4(this.endFreq) + "08881023" + "0032" + pad2(this.effect) + "00000024" + "00000000000000000000" + pad4(this.fxParam) + pad4(this.fxSteps)).play();
+        }
+    }
+
+    /**
+     * Padding Funciton from number to 4 byte string
+     */
+    function pad4(num : number){
+        let str = num.toString();
+        while(str.length < 4){str = "0" + str;}
+        return str;
+    }
+
+    /**
+     * Padding Funciton from number to 2 byte string
+     */
+    function pad2(num : number){
+        let str = num.toString();
+        while(str.length < 2){str = "0" + str;}
+        return str;
+    }
+
+    //% block="set built-in speaker %bool"
+    //% subcategory="sound output"
+    //% bool.shadow="toggleOnOff"
+    export function toggleBuiltInSpeaker(bool: boolean)
+        {
+
+        }
+
+
+    //% block="edge connecter sound %bool"
+    //% subcategory="sound output"
+    //% bool.shadow="toggleOnOff"
+    export function edgeConnectorSound(bool: boolean) {
+
+    }
+
+    export class Record {
+
+        //% block="record %sound1 for $duration s"
+        //% duration.min=0.5 duration.max=4 duration.defl=3
+        public record(duration: number) {
+
+        }
+    }
+
+    /** 
+     * Play sound which you create
+     * @param melody - string of up to eight notes [C D E F G A B C5] or rests [-] separated by spaces, which will be played one at a time, ex: "E D G F B A C5 B "
+     * @param tempo - number in beats per minute (bpm), dictating how long each note will play for
+     */
+    //% block="Play sound effect $melody for $duration|(ms), start frequency $freq1 (Hz), end frequency $freq2 (Hz) ||, volume $volume|, wave type $waveType|, interpolation $interpolation" blockId=playSound
+    //% expandableArgumentMode="enabled"
+    //% inlineInputMode=inline
+    //% weight=85 blockGap=8 help=music/play-melody
+    //% melody.shadow="sound_editor"
+    //% duration.min=0 duration.max=3000 duration.defl=1500
+    //% freq1.min=20 freq1.max=1500 freq1.defl=440
+    //% freq2.min=20 freq2.max=1500 freq2.defl=880
+    //% volume.min=1 volume.max=10 volume.defl=2
+     //% waveType.min=0 waveType.max=4 waveType.defl=3
+     //% 
+    //% parts=headphone
+    export function playMelod(melody: string,  duration:number, freq1: number = 440, freq2: number = 880, volume: number=0.2, waveType : WaveType = WaveType.SquareWave, interpolation = Interpolation.Linear) { 
+        let sound = new Sound();
+        sound.startFreq = freq1;
+        sound.endFreq = freq2;
+        sound.duration = duration;
+        sound.waveType = waveType;
+        sound.playSound();
+    }
+}
+
+
+/**
  * Generation of music tones.
  */
 //% color=#E63022 weight=106 icon="\uf025"
@@ -395,7 +566,8 @@ namespace music {
     }
 
 
-    /**
+
+    /** 
      * Play a melody from the melody editor.
      * @param melody - string of up to eight notes [C D E F G A B C5] or rests [-] separated by spaces, which will be played one at a time, ex: "E D G F B A C5 B "
      * @param tempo - number in beats per minute (bpm), dictating how long each note will play for
@@ -445,6 +617,24 @@ namespace music {
     //% shim=TD_ID
     //% group="Melody"
     export function melodyEditor(melody: string): string {
+        return melody;
+    }
+
+    /**
+     * Create a melody with the melody editor.
+     * @param melody
+     */
+    //% block="$melody" blockId=sound_editor
+    //% blockHidden = true
+    //% weight=85 blockGap=8
+    //% duplicateShadowOnDrag
+    //% melody.fieldEditor="sound"
+    //% melody.fieldOptions.decompileLiterals=true
+    //% melody.fieldOptions.decompileIndirectFixedInstances="true"
+    //% melody.fieldOptions.onParentBlock="true"
+    //% shim=TD_ID
+    //% group="Melody"
+    export function soundEditor(melody: string): string {
         return melody;
     }
 
