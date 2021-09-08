@@ -647,6 +647,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 
 ```codecard
 [{
+  "name": "Kitronik Air Quality & Environmental Board",
+  "url":"/pkg/KitronikLtd/pxt-kitronik-air-quality",
+  "cardType": "package"
+}, {
   "name": "DFRobot Natural Science Board",
   "url":"/pkg/DFRobot/pxt-DFRobot-NaturalScience",
   "cardType": "package"
