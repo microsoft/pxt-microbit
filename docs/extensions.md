@@ -126,6 +126,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 
 ```codecard
 [{
+  "name": "Kittenbot JoyFrog",
+  "url":"/pkg/KittenBot/pxt-joyfrog",
+  "cardType": "package"
+}, {
   "name": "Elecfreaks magic wand",
   "url":"/pkg/elecfreaks/pxt-magicwand",
   "cardType": "package"
