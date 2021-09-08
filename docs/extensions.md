@@ -429,6 +429,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 
 ```codecard
 [{
+  "name": "Artec Robokit",
+  "url":"/pkg/artec-kk/pxt-artecrobo-kit",
+  "cardType": "package"
+}, {
   "name": "MakeKit Hoverbit",
   "url":"/pkg/gomakekit/Hoverbit_V2",
   "cardType": "package"
