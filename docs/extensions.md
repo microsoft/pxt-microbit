@@ -764,6 +764,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 ## Utilities
 ```codecard
 [{
+  "name": "micro:bit power saving",
+  "url":"/pkg/microbit-foundation/pxt-microbit-v2-power",
+  "cardType": "package"
+}, {
   "name": "DS3231 Real Time Clock",
   "url":"/pkg/AlexandreFrolov/DS3231",
   "cardType": "package"
