@@ -217,7 +217,8 @@
             "KitronikLtd/pxt-kitronik-128x64Display",
             "monkmakes/monkmakes-7-segment",
             "stemhub/pxt-StemhubCity",
-            "KittenBot/pxt-powerbrick"
+            "KittenBot/pxt-powerbrick",
+            "KidSpark/pxt-sparkbit"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",
