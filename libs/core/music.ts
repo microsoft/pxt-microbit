@@ -180,14 +180,19 @@ enum MusicEvent {
  enum WaveType
  {
      //% block="Square"
+     //% jres=waves.square
      SquareWave = 3,
      //% block="Sine"
+     //% jres=waves.sine
      SineWave = 0,
      //% block="Sawtooth"
+     //% jres=waves.sawtooth
      SawtoothWave = 1,
      //% block="Triangle"
+     //% jres=waves.triangle
      TriangleWave = 2,
      //% block="Noise"
+     //% jres=waves.sine
      NoiseWave = 4
  }
  
@@ -211,9 +216,12 @@ enum MusicEvent {
  enum Interpolation
  {
      //% block="Exponential"
+     //% jres=gestures.exponential
      Exponential = 2,
+     //% jres=gestures.quadratic
      //% block="Quadratic"
      Quadratic = 1,
+     //% jres=gestures.linear
      //% block="Linear"
      Linear = 0,
 
@@ -327,7 +335,6 @@ namespace soundV2 {
     //% freq2.min=20 freq2.max=1500 freq2.defl=880
     //% volume.min=1 volume.max=10 volume.defl=2
      //% waveType.min=0 waveType.max=4 waveType.defl=3
-     //% 
     //% parts=headphone
     export function playMelod(melody: string,  duration:number, freq1: number = 440, freq2: number = 880, volume: number=0.2, waveType : WaveType = WaveType.SquareWave, interpolation = Interpolation.Linear) { 
         let sound = new Sound();
@@ -338,7 +345,6 @@ namespace soundV2 {
         sound.playSound();
     }
 }
-
 
 /**
  * Generation of music tones.
