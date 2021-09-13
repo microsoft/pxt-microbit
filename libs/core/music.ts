@@ -246,7 +246,7 @@ enum MusicEvent {
 
 /** Generation of V2 sounds
  */
-//% color=#FFd23f weight=106 icon="\uf028"
+//% color=#FFd23f weight=106 icon="\uf028" block="Sound (V2)"
 //% groups='["Sound Output"]
 namespace soundV2 {
 
