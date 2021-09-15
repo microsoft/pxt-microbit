@@ -13,6 +13,7 @@
             "microsoft/pxt-ws2812b",
             "microsoft/pxt-apa102",
             "microsoft/pxt-radio-firefly",
+            "microsoft/pxt-ml",
             "KitronikLtd/pxt-kitronik-servo-lite",
             "KitronikLtd/pxt-kitronik-motor-driver",
             "KitronikLtd/pxt-kitronik-I2C-16-servo",
@@ -209,7 +210,17 @@
             "joy-it/SEN-MPU6050",
             "gomakekit/Hoverbit_V2",
             "Matrix-Robotics/pxt-MatrixMicro",
-            "joy-it/pxt-RB-TFT1.8"
+            "joy-it/pxt-RB-TFT1.8",
+            "CytronTechnologies/pxt-esp8266",
+            "elecfreaks/pxt-Dronebit",
+            "elecfreaks/pxt-PlanetX-AI",
+            "joy-it/pxt-SEN-Color",
+            "stemhub/pxt-Stemhubbit",
+            "KitronikLtd/pxt-kitronik-lab-bit",
+            "KitronikLtd/pxt-kitronik-128x64Display",
+            "monkmakes/monkmakes-7-segment",
+            "stemhub/pxt-StemhubCity",
+            "KittenBot/pxt-powerbrick"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",
@@ -263,12 +274,13 @@
             "bsiever/microbit-pxt-timeanddate": "min:v2.0.11"
         },
         "approvedEditorExtensionUrls": [
+            "https://microsoft.github.io/ml4f/",
             "https://microsoft.github.io/jacdac-docs/tools/makecode-editor-extension"
         ]
     },
     "galleries": {
         "Tutorials": "tutorials",
-        "Tutorials for the new micro:bit": "v2tutorials",
+        "Tutorials for the new micro:bit (V2)": "v2tutorials",
         "Live Coding": {
             "url": "live-coding",
             "shuffle": "daily",
@@ -303,6 +315,6 @@
         }
     },
     "electronManifest": {
-        "latest": "v3.0.65"
+        "latest": "v4.0.11"
     }
 }

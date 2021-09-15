@@ -1,6 +1,6 @@
 # Projects
 
-Here are some cool tutorials to get you started with your new @boardname@ with sound!
+Here are some cool tutorials to get you started with your new @boardname@ (V2)!
 
 ## Basic
 

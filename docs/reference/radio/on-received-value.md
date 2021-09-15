@@ -27,6 +27,7 @@ thing from nearby @boardname@s, show the numbers as a
 [bar graph](/reference/led/plot-bar-graph).
 
 ```blocks
+radio.setGroup(1)
 basic.forever(() => {
     radio.sendValue("accel-x", input.acceleration(Dimension.X))
 })

@@ -28,6 +28,7 @@ This program uses the signal strength from received packets to graph the
 approximate distance between two @boardname@s.
 
 ```blocks
+radio.setGroup(1)
 basic.forever(() => {
     radio.sendNumber(0)
 })

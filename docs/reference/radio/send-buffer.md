@@ -19,6 +19,7 @@ If you load this program onto two @boardname@s, each board will send the level i
 ```typescript
 let ax = 0;
 let ay = 0;
+radio.setGroup(6)
 basic.forever(() => {
     ax = input.acceleration(Dimension.X);
     ay = input.acceleration(Dimension.Y);

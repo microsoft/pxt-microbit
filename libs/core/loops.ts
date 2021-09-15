@@ -13,7 +13,7 @@ namespace loops {
     export function everyInterval(interval: number, a: () => void): void {
         control.runInParallel(() => {
             while (true) {
-                a();
+                control.runInParallel(a);
                 pause(interval);
             }
         });
