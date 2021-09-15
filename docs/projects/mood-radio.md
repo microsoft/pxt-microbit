@@ -15,6 +15,7 @@ between @boardname@s using the radio antenna, just like a phone can send text me
 Let's add blocks that send a number when button ``A`` is pressed. We assume that `0` is the "mood code" to send for **smiley**.
 
 ```blocks
+radio.setGroup(1)
 input.onButtonPressed(Button.A, () => {
     radio.sendNumber(0)
     basic.showIcon(IconNames.Happy)
@@ -65,9 +66,10 @@ That's it. Download your code to multiple @boardname@s and try it out!
 
 Try adding a new code and use the ``||input:on shake||`` event to send it.
 
-## Full sources
+## Complete program
 
 ```blocks
+radio.setGroup(1)
 input.onButtonPressed(Button.A, () => {
     radio.sendNumber(0)
     basic.showIcon(IconNames.Happy)

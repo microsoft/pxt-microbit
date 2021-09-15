@@ -6,6 +6,14 @@
 
 Use the **radio** to send and receive messages with other @boardname@.
 
+## Set a radio group
+
+The first thing you want to do is to put in a ``||radio:set group||``. This will make certain that you and another @boardname@ will receive just the messages assigned to that group and not the messages sent from some other @boardname@ that's not part of your conversation. This like tuning to a particular channel to talk on.
+
+```blocks
+radio.setGroup(1)
+```
+
 ## Sending a message
 
 Use ``||input:on button pressed||`` to send a text message over radio with ``||radio:send string||``.
@@ -52,14 +60,6 @@ radio.onReceivedString(function (receivedString) {
 ## Try it for real
 
 If you have two @boardname@s, download the program to each one. Press button **A** on one and see if the other gets a message.
-
-## Groups
-
-Use the ``||radio:set group||`` block to assign a **group** number to your program. You will only receive messages from @boardname@s within the same group. Use this to avoid receiving messages from every @boardname@ that is transmitting.
-
-```blocks
-radio.setGroup(123)
-```
 
 ```package
 radio

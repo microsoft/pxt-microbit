@@ -29,6 +29,7 @@ thing from nearby @boardname@s. It shows these numbers as a
 [bar graph](/reference/led/plot-bar-graph).
 
 ```blocks
+radio.setGroup(1)
 basic.forever(() => {
     radio.sendNumber(input.acceleration(Dimension.X));
 })
@@ -43,6 +44,7 @@ This program uses the signal strength from received packets to graph the
 approximate distance between two @boardname@s.
 
 ```blocks
+radio.setGroup(1)
 basic.forever(() => {
     radio.sendNumber(0)
 })

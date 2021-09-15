@@ -9,6 +9,11 @@
         "largeImageUrl": "/static/mb/projects/flashing-heart/sim.gif"
     },
     {
+        "name": "Tutorials for the new micro:bit (V2)",
+        "url": "/v2tutorials",
+        "imageUrl": "/static/mb/projects/pet-hamster.png"
+    },
+    {
         "name": "Live Coding",
         "url": "/live-coding",
         "imageUrl": "/static/live-coding/NvEOKZ8wh9s.jpg"
@@ -54,7 +59,7 @@
         "imageUrl": "/static/mb/projects/turtle-square.png"
     },
     {
-        "name": "Blocks To JavaScript",
+        "name": "Blocks to JavaScript",
         "url": "/courses/blocks-to-javascript",
         "imageUrl": "/static/courses/blocks-to-javascript/hello-javascript.png"
     },
@@ -94,6 +99,7 @@
 ## See Also
 
 [Tutorials](/tutorials),
+[Tutorials for the new micro:bit (V2)](/v2tutorials),
 [Live Coding](/live-coding),
 [Games](/projects/games),
 [Radio Games](/projects/radio-games),
@@ -103,7 +109,7 @@
 [Science](/projects/science),
 [Tools](/projects/tools),
 [Turtle](/projects/turtle),
-[Blocks To JavaScript](/courses/blocks-to-javascript),
+[Blocks to JavaScript](/courses/blocks-to-javascript),
 [Courses](/courses),
 [Behind the MakeCode Hardware](/behind-the-makecode-hardware),
 [Science Experiments](/science-experiments),

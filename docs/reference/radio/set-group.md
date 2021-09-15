@@ -20,6 +20,14 @@ to talk to each other because they will have the same group ID.
 
 * **id**: a [number](/types/number) from ``0`` to ``255``.
 
+### ~ reminder
+
+#### Default radio group
+
+If you haven't set a radio group for the @boardname@, it will use one selected randomly. If you are transmiting data to a @boardname@ that has a different hardware version from the sending @boardname@, it will select a random default group that is not the same as the other @boardname@. To be certain that your program will send or receive data using the same radio group, you will need to first choose and set a radio group for your program if you want it to work between different versions of the @boardname@.
+
+### ~
+
 ## Simulator
 
 This function only works on the @boardname@, not in browsers.
