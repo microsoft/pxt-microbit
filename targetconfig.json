@@ -211,6 +211,7 @@
             "gomakekit/Hoverbit_V2",
             "Matrix-Robotics/pxt-MatrixMicro",
             "CytronTechnologies/pxt-esp8266",
+            "elecfreaks/pxt-Dronebit",
             "elecfreaks/pxt-PlanetX-AI",
             "joy-it/pxt-SEN-Color",
             "stemhub/pxt-Stemhubbit",
