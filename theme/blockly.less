@@ -42,6 +42,14 @@ text.blocklyText {
     height: 28px!important;
     border-radius: 2px!important;
 }
+.ui-input-volume {
+    width: 76px !important;
+    padding-left: 23px !important;
+    border: none !important;
+    height: 28px!important;
+    border-radius: 2px!important;
+    float: left !important;
+}
 
 .wave-image {
     padding-top: 9px;
@@ -66,9 +74,17 @@ text.blocklyText {
     border-radius: 2px!important;
     margin: 0px !important;
     border: none!important;
-    
-
 }
+.melody-confirm-button:hover {
+    background-color: #fae52d !important;
+    border: 1px solid #c4b108 !important;
+}
+
+.melody-confirm-button:focus {
+    outline: none !important;
+}
+
+
 .sound-button {
     text-align: center;
     display: flex;
@@ -88,7 +104,7 @@ text.blocklyText {
 }
 
 .melody-top-bar-div-parameters {
-    padding: 0.4rem;
+    padding: 0.7rem;
 }
 
 .melody-content-div {
@@ -108,6 +124,27 @@ text.blocklyText {
     background: #008272;
 }
 
+.melody-content-div {
+    max-height: 550px;
+    width: 470px !important;
+    padding: 0px;
+    overflow: hidden;
+}
+
+#volume-button {
+    float: left !important;
+}
+#melody-play-button {
+    height: 28px;
+    width: 200px !important;
+   // display: inline-block;
+    color: white;
+    background-color: #7f8c8d;
+    border: none;
+    border-radius: 2px;
+    -webkit-transition-duration: 0.1s; /* Safari */
+    transition-duration: 0.1s;
+}
 .wave-button {
     text-align: center;
     display: flex;
