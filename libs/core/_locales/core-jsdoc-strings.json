@@ -468,7 +468,7 @@
   "led.displayMode": "Gets the current display mode",
   "led.enable": "Turns on or off the display",
   "led.fadeIn": "Fades in the screen display.",
-  "led.fadeIn|param|ms": "fade time in milleseconds",
+  "led.fadeIn|param|ms": "fade time in milliseconds",
   "led.fadeOut": "Fades out the screen brightness.",
   "led.fadeOut|param|ms": "fade time in milliseconds",
   "led.plot": "Turn on the specified LED using x, y coordinates (x is horizontal, y is vertical). (0,0) is upper left.",
