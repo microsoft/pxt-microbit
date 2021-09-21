@@ -241,7 +241,6 @@ enum MusicEvent {
      //% block="Warble Interpolation"
      WarbleInterpolation = 3
  }
- 
 
 
 /** Generation of V2 sounds
@@ -325,18 +324,18 @@ namespace soundV2 {
      * @param melody - string of up to eight notes [C D E F G A B C5] or rests [-] separated by spaces, which will be played one at a time, ex: "E D G F B A C5 B "
      * @param tempo - number in beats per minute (bpm), dictating how long each note will play for
      */
-    //% block="Play sound effect $melody for $duration|(ms), start frequency $freq1 (Hz), end frequency $freq2 (Hz) ||, volume $volume|, wave type $waveType|, interpolation $interpolation" blockId=playSound
+    //% block="Play sound effect $melody for $duration|(ms), start frequency $freq1 (Hz), end frequency $freq2 (Hz) ||, volume $volume|, wave type $waveType|, interpolation $interpolation, repeat $repeat times" blockId=playSound
     //% expandableArgumentMode="enabled"
-    //% inlineInputMode=inline
     //% weight=85 blockGap=8 help=music/play-melody
     //% melody.shadow="sound_editor"
     //% duration.min=0 duration.max=3000 duration.defl=1500
-    //% freq1.min=20 freq1.max=1500 freq1.defl=440
-    //% freq2.min=20 freq2.max=1500 freq2.defl=880
+    //% freq1.min=20 freq1.max=7000 freq1.defl=440
+    //% freq2.min=20 freq2.max=7000 freq2.defl=880
     //% volume.min=1 volume.max=10 volume.defl=2
+    //% repeat.min=1 repeat.max=10 repeat.defl=1
      //% waveType.min=0 waveType.max=4 waveType.defl=3
     //% parts=headphone
-    export function playMelod(melody: string,  duration:number, freq1: number = 440, freq2: number = 880, volume: number=0.2, waveType : WaveType = WaveType.SquareWave, interpolation = Interpolation.Linear) { 
+    export function playMelod(melody: string,  duration:number, freq1: number = 440, freq2: number = 880, volume: number=0.2, waveType : WaveType = WaveType.SquareWave, interpolation = Interpolation.Linear, repeat: number = 1) { 
         let sound = new Sound();
         sound.startFreq = freq1;
         sound.endFreq = freq2;

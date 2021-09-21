@@ -455,7 +455,7 @@
   "soundExpression.yawn|block": "{id:soundexpression}yawn",
   "soundV2.Record.record|block": "record %sound1 for $duration s",
   "soundV2.edgeConnectorSound|block": "edge connecter sound %bool",
-  "soundV2.playMelod|block": "Play sound effect $melody for $duration|(ms), start frequency $freq1 (Hz), end frequency $freq2 (Hz) ||, volume $volume|, wave type $waveType|, interpolation $interpolation",
+  "soundV2.playMelod|block": "Play sound effect $melody for $duration|(ms), start frequency $freq1 (Hz), end frequency $freq2 (Hz) ||, volume $volume|, wave type $waveType|, interpolation $interpolation, repeat $repeat times",
   "soundV2.toggleBuiltInSpeaker|block": "set built-in speaker %bool",
   "soundV2|block": "Sound (V2)",
   "{id:category}AnalogInPin": "AnalogInPin",
