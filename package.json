@@ -37,14 +37,14 @@
         "@types/react": "16.4.7",
         "@types/react-dom": "16.0.3",
         "@types/web-bluetooth": "0.0.4",
-        "less": "2.7.3",
+        "less": "3.13.1",
         "react": "16.8.3",
         "react-dom": "16.11.0",
-        "semantic-ui-less": "2.2.14",
+        "semantic-ui-less": "2.4.1",
         "typescript": "4.2.3"
     },
     "dependencies": {
-        "pxt-common-packages": "9.0.1",
-        "pxt-core": "7.1.4"
+        "pxt-common-packages": "9.2.7",
+        "pxt-core": "7.2.16"
     }
 }
