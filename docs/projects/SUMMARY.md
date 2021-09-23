@@ -7,7 +7,7 @@
   * [Dice](/projects/dice)
   * [Love Meter](/projects/love-meter)
   * [Micro Chat](/projects/micro-chat)
-* [Tutorials for the new micro:bit (V2)](/v2tutorials)
+* [Tutorials for the new micro:bit (V2)](/tutorials-v2)
   * [Pet Hamster](/projects/v2-pet-hamster)
   * [Countdown](/projects/v2-countdown)
   * [Morse Chat](/projects/v2-morse-chat)
