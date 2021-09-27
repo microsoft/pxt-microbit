@@ -791,7 +791,12 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 
 ## Utilities
 ```codecard
+TeacherPinky/Wait-Until-Blocks
 [{
+  "name": "Wait until...",
+  "url":"/pkg/TeacherPinky/Wait-Until-Blocks",
+  "cardType": "package"
+}, {
   "name": "DS3231 Real Time Clock",
   "url":"/pkg/AlexandreFrolov/DS3231",
   "cardType": "package"

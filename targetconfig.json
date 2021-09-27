@@ -224,7 +224,8 @@
             "KidSpark/pxt-sparkbit",
             "BPI-STEAM/pxt-triodecar",
             "KitronikLtd/pxt-kitronik-air-quality",
-            "artec-kk/pxt-artecrobo-kit"
+            "artec-kk/pxt-artecrobo-kit",
+            "TeacherPinky/Wait-Until-Blocks"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",
