@@ -298,6 +298,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 
 ```codecard
 [{
+  "name": "Kittenbot Wifi",
+  "url":"/pkg/KittenBot/pxt-kittenwifi",
+  "cardType": "package"
+}, {
   "name": "ESP8266 AT",
   "url":"/pkg/CytronTechnologies/pxt-esp8266",
   "cardType": "package"
