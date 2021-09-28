@@ -210,6 +210,9 @@
             "joy-it/SEN-MPU6050",
             "gomakekit/Hoverbit_V2",
             "Matrix-Robotics/pxt-MatrixMicro",
+            "joy-it/pxt-RB-TFT1.8",
+            "CytronTechnologies/pxt-esp8266",
+            "elecfreaks/pxt-Dronebit",
             "elecfreaks/pxt-PlanetX-AI",
             "joy-it/pxt-SEN-Color",
             "stemhub/pxt-Stemhubbit",
@@ -218,7 +221,11 @@
             "monkmakes/monkmakes-7-segment",
             "stemhub/pxt-StemhubCity",
             "KittenBot/pxt-powerbrick",
-            "KittenBot/pxt-koi"
+            "KittenBot/pxt-koi",
+            "KidSpark/pxt-sparkbit",
+            "BPI-STEAM/pxt-triodecar",
+            "KitronikLtd/pxt-kitronik-air-quality",
+            "artec-kk/pxt-artecrobo-kit"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",
