@@ -62,6 +62,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 
 ```codecard
 [{
+    "name": "Joy-IT RB-TFT1.8",
+    "url": "/pkg/joy-it/pxt-RB-TFT1.8",
+    "cardType": "package"
+}, {
     "name": "Kitronik 128x64 Display",
     "url": "/pkg/KitronikLtd/pxt-kitronik-128x64Display",
     "cardType": "package"
@@ -294,6 +298,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 
 ```codecard
 [{
+  "name": "ESP8266 AT",
+  "url":"/pkg/CytronTechnologies/pxt-esp8266",
+  "cardType": "package"
+}, {
   "name": "Wappsto:bit",
   "url":"/pkg/Wappsto/pxt-wappsto",
   "cardType": "package"
@@ -416,6 +424,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 
 ```codecard
 [{
+  "name": "KittenBot KOI AI module ",
+  "url":"/pkg/KittenBot/pxt-koi",
+  "cardType": "package"
+}, {
   "name": "Elecfreaks Smart AI Lens ",
   "url":"/pkg/elecfreaks/pxt-PlanetX-AI",
   "cardType": "package"
@@ -433,6 +445,22 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 
 ```codecard
 [{
+  "name": "Kid Spark Spark:bit",
+  "url":"/pkg/KidSpark/pxt-sparkbit",
+  "cardType": "package"
+}, {
+  "name": "BPI TriodeCar",
+  "url":"/pkg/BPI-STEAM/pxt-triodecar",
+  "cardType": "package"
+}, {
+  "name": "ArtecRobo Kit",
+  "url":"/pkg/artec-kk/pxt-artecrobo-kit",
+  "cardType": "package"
+}, {
+  "name": "Elecfreaks DRONE:BIT",
+  "url":"/pkg/elecfreaks/pxt-Dronebit/",
+  "cardType": "package"
+}, {
   "name": "MakeKit Hoverbit",
   "url":"/pkg/gomakekit/Hoverbit_V2",
   "cardType": "package"
@@ -651,6 +679,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 
 ```codecard
 [{
+  "name": "Kitronik Air Quality & Environmental Board",
+  "url":"/pkg/KitronikLtd/pxt-kitronik-air-quality",
+  "cardType": "package"
+}, {
   "name": "DFRobot Natural Science Board",
   "url":"/pkg/DFRobot/pxt-DFRobot-NaturalScience",
   "cardType": "package"

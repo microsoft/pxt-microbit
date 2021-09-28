@@ -112,7 +112,7 @@ namespace led {
 
     /**
      * Fades in the screen display.
-     * @param ms fade time in milleseconds
+     * @param ms fade time in milliseconds
      */
     //% help=led/fade-in
     //% parts="ledmatrix"
