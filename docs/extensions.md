@@ -130,6 +130,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 
 ```codecard
 [{
+  "name": "Kittenbot JoyFrog",
+  "url":"/pkg/KittenBot/pxt-joyfrog",
+  "cardType": "package"
+}, {
   "name": "Elecfreaks magic wand",
   "url":"/pkg/elecfreaks/pxt-magicwand",
   "cardType": "package"
@@ -298,6 +302,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 
 ```codecard
 [{
+  "name": "Kittenbot Wifi",
+  "url":"/pkg/KittenBot/pxt-kittenwifi",
+  "cardType": "package"
+}, {
   "name": "ESP8266 AT",
   "url":"/pkg/CytronTechnologies/pxt-esp8266",
   "cardType": "package"
@@ -336,6 +344,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 
 ```codecard
 [{
+   "name": "KittenBot Sugar",
+   "url": "/pkg/KittenBot/pxt-sugar",
+   "cardType": "package"
+}, {
    "name": "KittenBot Powerbrick",
    "url": "/pkg/KittenBot/pxt-powerbrick",
    "cardType": "package"
@@ -420,6 +432,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 
 ```codecard
 [{
+  "name": "KittenBot KOI AI module ",
+  "url":"/pkg/KittenBot/pxt-koi",
+  "cardType": "package"
+}, {
   "name": "Elecfreaks Smart AI Lens ",
   "url":"/pkg/elecfreaks/pxt-PlanetX-AI",
   "cardType": "package"
