@@ -224,6 +224,7 @@
             "KidSpark/pxt-sparkbit",
             "BPI-STEAM/pxt-triodecar",
             "KitronikLtd/pxt-kitronik-air-quality",
+            "KitronikLtd/pxt-kitronik-air-quality-v2-only",
             "artec-kk/pxt-artecrobo-kit"
         ],
         "preferredRepos": [
