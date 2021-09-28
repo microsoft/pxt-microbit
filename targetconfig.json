@@ -221,11 +221,15 @@
             "monkmakes/monkmakes-7-segment",
             "stemhub/pxt-StemhubCity",
             "KittenBot/pxt-powerbrick",
+            "KittenBot/pxt-joyfrog",
+            "KittenBot/pxt-sugar",
+            "KittenBot/pxt-koi",
             "KidSpark/pxt-sparkbit",
             "BPI-STEAM/pxt-triodecar",
             "KitronikLtd/pxt-kitronik-air-quality",
             "artec-kk/pxt-artecrobo-kit",
-            "TeacherPinky/Wait-Until-Blocks"
+            "TeacherPinky/Wait-Until-Blocks",
+            "KittenBot/pxt-kittenwifi"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",
