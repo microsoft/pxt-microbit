@@ -10,7 +10,7 @@
     },
     {
         "name": "Tutorials for the new micro:bit (V2)",
-        "url": "/v2tutorials",
+        "url": "/tutorials-v2",
         "imageUrl": "/static/mb/projects/pet-hamster.png"
     },
     {
@@ -99,7 +99,7 @@
 ## See Also
 
 [Tutorials](/tutorials),
-[Tutorials for the new micro:bit (V2)](/v2tutorials),
+[Tutorials for the new micro:bit (V2)](/tutorials-v2),
 [Live Coding](/live-coding),
 [Games](/projects/games),
 [Radio Games](/projects/radio-games),

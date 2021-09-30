@@ -221,6 +221,7 @@
             "monkmakes/monkmakes-7-segment",
             "stemhub/pxt-StemhubCity",
             "KittenBot/pxt-powerbrick",
+            "microbit-foundation/pxt-microbit-v2-power",
             "KittenBot/pxt-joyfrog",
             "KittenBot/pxt-sugar",
             "KittenBot/pxt-koi",
@@ -289,7 +290,7 @@
     },
     "galleries": {
         "Tutorials": "tutorials",
-        "Tutorials for the new micro:bit (V2)": "v2tutorials",
+        "Tutorials for the new micro:bit (V2)": "tutorials-v2",
         "Live Coding": {
             "url": "live-coding",
             "shuffle": "daily",
