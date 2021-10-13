@@ -21,7 +21,7 @@
 
 ## More questions?
 
-* [Frequently Asked Question](/faq)
+* [Frequently Asked Questions](/faq)
 * [Help Translate](/translate)
 * [Embedding project](/share)
 
