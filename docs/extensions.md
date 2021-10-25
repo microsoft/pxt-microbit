@@ -172,6 +172,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 
 ```codecard
 [{
+ "name": "SGBotic Ultimate SR04",
+  "url":"/pkg/SGBotic/pxt-SGBotic-Ultimate-SR04-RGB",
+  "cardType": "package"
+}, {
  "name": "TCS3200 Color sensor",
   "url":"/pkg/joy-it/pxt-SEN-Color",
   "cardType": "package"
