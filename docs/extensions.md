@@ -808,6 +808,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 ## Utilities
 ```codecard
 [{
+  "name": "Kodely dot",
+  "url":"/pkg/Kodely-io/dot",
+  "cardType": "package"
+}, {
   "name": "Wait until...",
   "url":"/pkg/TeacherPinky/Wait-Until-Blocks",
   "cardType": "package"

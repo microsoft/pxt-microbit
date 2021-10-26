@@ -231,7 +231,8 @@
             "KitronikLtd/pxt-kitronik-air-quality-v2-only",
             "artec-kk/pxt-artecrobo-kit",
             "TeacherPinky/Wait-Until-Blocks",
-            "KittenBot/pxt-kittenwifi"
+            "KittenBot/pxt-kittenwifi",
+            "Kodely-io/dot"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",
