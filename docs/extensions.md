@@ -453,6 +453,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 
 ```codecard
 [{
+  "name": "Cytron ZOOM:BIT",
+  "url":"/pkg/CytronTechnologies/pxt-zoombit",
+  "cardType": "package"
+}, {
   "name": "Kid Spark Spark:bit",
   "url":"/pkg/KidSpark/pxt-sparkbit",
   "cardType": "package"
