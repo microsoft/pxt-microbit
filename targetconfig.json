@@ -159,7 +159,7 @@
             "BrightWearables/pxt-microbit-brightboard",
             "EBOTICS/pxt-eboticsMIBO",
             "KitronikLtd/pxt-kitronik-halohd",
-            "dugbraden/pxt-climate-action-kit",
+            "climate-action-kits/pxt-climate-action-kit-land",
             "alsrobot-microbit-makecode-packages/MiniCruise",
             "4tronix/ServoBit",
             "DFRobot/pxt-maqueen",

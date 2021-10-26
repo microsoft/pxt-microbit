@@ -376,8 +376,8 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
   "url":"/pkg/elecfreaks/pxt-PlanetX",
   "cardType": "package"
 }, {
-  "name": "Inksmith Climate Action Kit",
-  "url":"/pkg/dugbraden/pxt-climate-action-kit",
+  "name": "Inksmith Climate Action Kit: Land",
+  "url":"/pkg/climate-action-kits/pxt-climate-action-kit-land",
   "cardType": "package"
 }, {
   "name": "Grove inventor kit",
