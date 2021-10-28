@@ -159,7 +159,7 @@
             "BrightWearables/pxt-microbit-brightboard",
             "EBOTICS/pxt-eboticsMIBO",
             "KitronikLtd/pxt-kitronik-halohd",
-            "dugbraden/pxt-climate-action-kit",
+            "climate-action-kits/pxt-climate-action-kit-land",
             "alsrobot-microbit-makecode-packages/MiniCruise",
             "4tronix/ServoBit",
             "DFRobot/pxt-maqueen",
@@ -232,7 +232,9 @@
             "artec-kk/pxt-artecrobo-kit",
             "TeacherPinky/Wait-Until-Blocks",
             "KittenBot/pxt-kittenwifi",
-            "SGBotic/pxt-SGBotic-Ultimate-SR04-RGB"
+            "SGBotic/pxt-SGBotic-Ultimate-SR04-RGB",
+            "CytronTechnologies/pxt-zoombit",
+            "Kodely-io/dot"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",

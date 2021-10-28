@@ -380,8 +380,8 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
   "url":"/pkg/elecfreaks/pxt-PlanetX",
   "cardType": "package"
 }, {
-  "name": "Inksmith Climate Action Kit",
-  "url":"/pkg/dugbraden/pxt-climate-action-kit",
+  "name": "Inksmith Climate Action Kit: Land",
+  "url":"/pkg/climate-action-kits/pxt-climate-action-kit-land",
   "cardType": "package"
 }, {
   "name": "Grove inventor kit",
@@ -457,6 +457,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 
 ```codecard
 [{
+  "name": "Cytron ZOOM:BIT",
+  "url":"/pkg/CytronTechnologies/pxt-zoombit",
+  "cardType": "package"
+}, {
   "name": "Kid Spark Spark:bit",
   "url":"/pkg/KidSpark/pxt-sparkbit",
   "cardType": "package"
@@ -812,6 +816,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 ## Utilities
 ```codecard
 [{
+  "name": "Kodely dot",
+  "url":"/pkg/Kodely-io/dot",
+  "cardType": "package"
+}, {
   "name": "Wait until...",
   "url":"/pkg/TeacherPinky/Wait-Until-Blocks",
   "cardType": "package"
