@@ -146,7 +146,7 @@ Check out the simulator and make sure your speakers are on 🔊
 
 Play with Cyrus to see how they react 🐹  
 **Click on the SHAKE button** to shake Cyrus.  
-**Touch the gold logo at the top** (it looks like a piggy snout 🐽) to tickle Cyrus.
+**Touch the gold logo at the top** to tickle Cyrus.
 
 If you have a new @boardname@ (the one with the **shiny gold** logo at the top), download this code and try it out!
 

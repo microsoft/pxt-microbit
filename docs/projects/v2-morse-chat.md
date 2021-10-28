@@ -256,10 +256,10 @@ Remember to turn your sound on!
 
 ---
 
-► Touch the gold logo at the top of your @boardname@ (it looks like a pig snout 🐽) on the simulator. You'll notice that a second @boardname@ appears.  
+► Touch the gold **micro:bit logo** at the top of your @boardname@ on the simulator. You'll notice that a second @boardname@ appears.  
 💡 If your screen is too small, you might not be able to see it.
 
-► Touch the 🐽 again to send messages to Sky 🐖  
+► Touch the logo again to send messages to Sky 🐖  
 **Press** to send a dot.  
 **Long press** (count to 3!) to send a dash.
 
