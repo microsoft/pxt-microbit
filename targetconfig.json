@@ -234,7 +234,8 @@
             "KittenBot/pxt-kittenwifi",
             "SGBotic/pxt-SGBotic-Ultimate-SR04-RGB",
             "CytronTechnologies/pxt-zoombit",
-            "Kodely-io/dot"
+            "Kodely-io/dot",
+            "climate-action-kits/pxt-climate-action-kit-energy"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",

@@ -384,6 +384,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
   "url":"/pkg/climate-action-kits/pxt-climate-action-kit-land",
   "cardType": "package"
 }, {
+  "name": "Inksmith Climate Action Kit: Energy",
+  "url":"/pkg/climate-action-kits/pxt-climate-action-kit-land",
+  "cardType": "package"
+}, {
   "name": "Grove inventor kit",
   "url":"/pkg/Seeed-Studio/pxt-grove",
   "cardType": "package"
