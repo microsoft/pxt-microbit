@@ -95,7 +95,7 @@ There are labels for the input/output pins **0**, **1**, **2**, which you can at
 
 ## Microphone
 
-Using the microphone, your programs can detect sounds that are present. You check for load or quiet sounds and find out what their sound level is.
+Using the microphone, your programs can detect sounds that are present. You can check for loud or quiet sounds and find out what their sound level is.
 
 ## Light level
 
