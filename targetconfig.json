@@ -235,7 +235,8 @@
             "SGBotic/pxt-SGBotic-Ultimate-SR04-RGB",
             "CytronTechnologies/pxt-zoombit",
             "Kodely-io/dot",
-            "climate-action-kits/pxt-climate-action-kit-energy"
+            "climate-action-kits/pxt-climate-action-kit-energy",
+            "YahboomTechnology/Tiny-bitLib"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",
