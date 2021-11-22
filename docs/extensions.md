@@ -461,6 +461,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 
 ```codecard
 [{
+  "name": "Kittenbot miniLFR",
+  "url":"/pkg/KittenBot/pxt-minilfr",
+  "cardType": "package"
+}, {
   "name": "Cytron ZOOM:BIT",
   "url":"/pkg/CytronTechnologies/pxt-zoombit",
   "cardType": "package"

@@ -236,7 +236,8 @@
             "CytronTechnologies/pxt-zoombit",
             "Kodely-io/dot",
             "climate-action-kits/pxt-climate-action-kit-energy",
-            "aorczyk/lego-pf-transmitter"
+            "aorczyk/lego-pf-transmitter",
+            "KittenBot/pxt-minilfr"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",
