@@ -820,8 +820,8 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 ## Utilities
 ```codecard
 [{
-  "name": "Kodely dot",
-  "url":"/pkg/Kodely-io/dot",
+  "name": "Lego PF trasmitter",
+  "url":"/pkg/aorczyk/lego-pf-transmitter",
   "cardType": "package"
 }, {
   "name": "Wait until...",
