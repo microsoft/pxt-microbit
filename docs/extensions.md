@@ -707,6 +707,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 
 ```codecard
 [{
+  "name": "PT-BOT KidsBIT",
+  "url":"/pkg/iBuilds/pxt-PTKidsBIT-IoT",
+  "cardType": "package"
+}, {
   "name": "Kitronik Air Quality & Environmental Board",
   "url":"/pkg/KitronikLtd/pxt-kitronik-air-quality",
   "cardType": "package"

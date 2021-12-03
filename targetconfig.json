@@ -237,7 +237,8 @@
             "Kodely-io/dot",
             "climate-action-kits/pxt-climate-action-kit-energy",
             "aorczyk/lego-pf-transmitter",
-            "KittenBot/pxt-minilfr"
+            "KittenBot/pxt-minilfr",
+            "iBuilds/pxt-PTKidsBIT-IoT"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",
