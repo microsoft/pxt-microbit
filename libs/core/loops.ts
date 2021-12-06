@@ -12,9 +12,13 @@ namespace loops {
     //% blockId=every_interval block="every $interval ms"
     export function everyInterval(interval: number, a: () => void): void {
         control.runInParallel(() => {
+            let start = 0;
+            let now = 0;
             while (true) {
-                control.runInParallel(a);
-                pause(interval);
+                start = control.millis();
+                a();
+                now = control.millis();
+                pause(Math.max(0, interval - (now - start)));
             }
         });
     }
