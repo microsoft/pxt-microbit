@@ -146,7 +146,7 @@ let CoinBHeads = false
 let CoinAHeads = false
 input.onButtonPressed(Button.A, () => {
     basic.showString("A:" + PlayerAScore)
-    pause(100)
+    basic.pause(100)
     basic.showString("B:" + PlayerAScore)
 })
 input.onGesture(Gesture.Shake, () => {
