@@ -352,6 +352,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 
 ```codecard
 [{
+   "name": "HacKids hack:bit",
+   "url": "/pkg/HackidsEdu/pxt-hackbit",
+   "cardType": "package"
+}, {
    "name": "KittenBot Sugar",
    "url": "/pkg/KittenBot/pxt-sugar",
    "cardType": "package"
