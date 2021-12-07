@@ -55,6 +55,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
     "name": "Wearables",
     "url": "/extensions#wearables",
     "cardType": "link"
+ }, {
+    "name": "Utilities",
+    "url": "/extensions#utilities",
+    "cardType": "link"
 }]
 ```
 
@@ -465,6 +469,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 
 ```codecard
 [{
+  "name": "Kittenbot miniLFR",
+  "url":"/pkg/KittenBot/pxt-minilfr",
+  "cardType": "package"
+}, {
   "name": "Cytron ZOOM:BIT",
   "url":"/pkg/CytronTechnologies/pxt-zoombit",
   "cardType": "package"
@@ -703,6 +711,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 
 ```codecard
 [{
+  "name": "PT-BOT KidsBIT",
+  "url":"/pkg/iBuilds/pxt-PTKidsBIT-IoT",
+  "cardType": "package"
+}, {
   "name": "Kitronik Air Quality & Environmental Board",
   "url":"/pkg/KitronikLtd/pxt-kitronik-air-quality",
   "cardType": "package"
@@ -824,6 +836,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 ## Utilities
 ```codecard
 [{
+  "name": "Lego PF trasmitter",
+  "url":"/pkg/aorczyk/lego-pf-transmitter",
+  "cardType": "package"
+}, {
   "name": "Kodely dot",
   "url":"/pkg/Kodely-io/dot",
   "cardType": "package"
