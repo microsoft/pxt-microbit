@@ -239,7 +239,8 @@
             "HackidsEdu/pxt-hackbit",
             "aorczyk/lego-pf-transmitter",
             "KittenBot/pxt-minilfr",
-            "iBuilds/pxt-PTKidsBIT-IoT"
+            "iBuilds/pxt-PTKidsBIT-IoT",
+            "KelieLeung/pxt-iClassIoT"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",

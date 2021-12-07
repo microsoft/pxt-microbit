@@ -310,6 +310,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 
 ```codecard
 [{
+  "name": "iClass IoT",
+  "url":"/pkg/KelieLeung/pxt-iClassIoT",
+  "cardType": "package"
+}, {
   "name": "Kittenbot Wifi",
   "url":"/pkg/KittenBot/pxt-kittenwifi",
   "cardType": "package"
