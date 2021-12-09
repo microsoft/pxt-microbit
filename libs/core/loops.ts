@@ -13,12 +13,10 @@ namespace loops {
     export function everyInterval(interval: number, a: () => void): void {
         control.runInParallel(() => {
             let start = 0;
-            let now = 0;
             while (true) {
                 start = control.millis();
                 a();
-                now = control.millis();
-                pause(Math.max(0, interval - (now - start)));
+                pause(Math.max(0, interval - (control.millis() - start)));
             }
         });
     }
