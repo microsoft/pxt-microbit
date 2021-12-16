@@ -26,7 +26,7 @@ In addition to a [number](types/number), [string](/types/string), or name-value 
 
 #### Signal strength and board version
 
-Measurement of the received signal strength is dependent on what version of @boardname@ you have. The @boardname@ boards prior to v2 can typically detect a signal strength up to `-42` dBm. Now, v2 boards will measure a signal strength up to `-28` dBm (typical).
+Measurement of the received signal strength is dependent on what version of @boardname@ you have. The @boardname@ boards prior to v2 can typically measure a signal strength up to `-42` dBm. Now, v2 boards will measure a signal strength up to `-28` dBm (typical).
 
 ### ~
 
