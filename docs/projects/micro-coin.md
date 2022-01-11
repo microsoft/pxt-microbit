@@ -6,27 +6,31 @@ Have you heard about BitCoin and all those new Crypto currencies? Well micro:bit
 
 ## ~
 
+![micro:coin at CoinBank](/static/mb/projects/micro-coin/coinbank.png)
+
 ## How does a @boardname@ make coins?
 
 
-Each @boardname@ contains a **blockchain**, a sequence of **blocks**, that is public and can't be modified. Each block represents a **coin**. To mine new coins, the user shakes 
-the @boardname@ and, if they are in luck, their coin added to the chain as a new block! 
+Each @boardname@ contains a **blockchain**, a sequence of **blocks** (in this case, chunks of information not blocks of a program), that is public and can't be modified. Each block represents a **coin**. The process of making coins is called _mining_. To mine new coins, the user shakes 
+the @boardname@ and, if they are in luck, their coin is added to the chain as a new block! 
 Once the block is added, it is broadcasted to the other @boardname@ (the block chain is public and can't be modified so it's ok to share it). Other @boardname@s receive the block, validate the transaction and update their block chain as needed.
-
-Pressing ``A`` shows the number of block you added to the chain, that's your score.
-Pressing ``B`` shows you the length of the chain.
-
-Happy mining!
 
 ## Coins, blocks, chains
 
 A _blockchain_ is a list of _blocks_ that record transactions of a crypto-currency like BitCoin. A block might contain information like the time it was created (mined) and who mined it. The most important part of the block is it's _hash_. This is a special number made from the information in the last block of the block list combined with the hash number of previous block in the list. The new block contains information for the current transaction and this new hash number. The new block is added to the list of previous blocks. This list is then transmitted to the crypto currency network. It's really hard (like impossible) to tamper or forge a hash which allows the blockchain to be transmitted publicly.
 
+## Start mining
+
+Pressing ``A`` shows the number of blocks you added to the chain, that's your score.
+Pressing ``B`` shows you the length of the chain.
+
+Happy mining!
+
 ### ~ hint
 
 #### Secure your coins
 
-Build yourself a [@boardname@ wallet](/projects/wallet) to hold your coins!
+Keep your coins safe. Build yourself a [@boardname@ wallet](/projects/wallet) to hold your coins!
 
 ### ~
 
