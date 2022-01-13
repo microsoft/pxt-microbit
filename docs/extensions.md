@@ -840,6 +840,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 ## Utilities
 ```codecard
 [{
+  "name": "Lego PF recorder",
+  "url":"/pkg/aorczyk/pf-recorder",
+  "cardType": "package"
+}, {
   "name": "Lego PF transmitter",
   "url":"/pkg/aorczyk/lego-pf-transmitter",
   "cardType": "package"

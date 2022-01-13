@@ -241,7 +241,8 @@
             "KittenBot/pxt-minilfr",
             "iBuilds/pxt-PTKidsBIT-IoT",
             "KelieLeung/pxt-iClassIoT",
-            "aorczyk/lego-pf-receiver"
+            "aorczyk/lego-pf-receiver",
+            "aorczyk/pf-recorder"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",
