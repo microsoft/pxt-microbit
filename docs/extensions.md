@@ -356,6 +356,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 
 ```codecard
 [{
+   "name": "Smarthon Smart City",
+   "url": "/pkg/SMARTHON/pxt-smartcity",
+   "cardType": "package"
+}, {
    "name": "HacKids hack:bit",
    "url": "/pkg/HackidsEdu/pxt-hackbit",
    "cardType": "package"
