@@ -236,7 +236,15 @@
             "CytronTechnologies/pxt-zoombit",
             "Kodely-io/dot",
             "climate-action-kits/pxt-climate-action-kit-energy",
-            "KitronikLtd/pxt-kitronik-simple-servo"
+            "KitronikLtd/pxt-kitronik-simple-servo",
+            "HackidsEdu/pxt-hackbit",
+            "aorczyk/lego-pf-transmitter",
+            "KittenBot/pxt-minilfr",
+            "iBuilds/pxt-PTKidsBIT-IoT",
+            "KelieLeung/pxt-iClassIoT",
+            "aorczyk/lego-pf-receiver",
+            "aorczyk/soroban",
+            "aorczyk/pf-recorder"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",
@@ -285,7 +293,7 @@
             "sparkfun/pxt-gator-particle": "dv:mbcodal",
             "sparkfun/pxt-gator-microphone": "dv:mbcodal",
             "rebeccaclavier/pxt-bmp280": "dv:mbcodal",
-            "mu-opensource/pxt-muvision": "min:v1.2.23",
+            "mu-opensource/pxt-muvision": "min:v1.2.25",
             "elecfreaks/pxt-PlanetX": "min:v0.13.1",
             "bsiever/microbit-pxt-timeanddate": "min:v2.0.11"
         },

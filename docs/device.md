@@ -1,16 +1,24 @@
 # Device
 
+### ~ hint
 
-## ~ hint
+#### Looking to buy a micro:bit?
 
-**Looking to buy a micro:bit?** See the [list of resellers](https://microbit.org/resellers).
+See the [list of resellers](https://microbit.org/resellers).
 
-## ~
+### ~
 
 All the bits and pieces that make up the BBC micro:bit
 
-![micro:bit board layout](/static/mb/device-0.png)
+![micro:bit board layout](/static/mb/device-v2.jpg)
 
+### ~ hint
+
+#### The current version of micro:bit is v2
+
+The version of @boardname@ is now currently at **v2**. See the what's new in MakeCode for programming the [@boardname@ v2](/device/v2).
+
+### ~
 
 ## LED Screen and Status LED
 
@@ -27,16 +35,20 @@ https://www.youtube.com/watch?v=qqBmvHD5bCw
 
 ## Buttons
 
-Buttons A and B are a form of input.  When you press a button, it completes an electrical circuit. 
+Buttons **A** and **B** are a form of input.  When you press a button, it completes an electrical circuit. 
 The micro:bit can detect either of its two buttons being pressed/released and be programmed 
 to act on these events.
 
-Button R on the back of the micro:bit is a system button. It has different uses. 
-When you have downloaded and run your code onto your micro:bit, press Button R to restart and run your program from the beginning.
+Button **R** on the back of the micro:bit is a system button. It has different uses. 
+When you have downloaded and run your code onto your micro:bit, press Button **R** to restart and run your program from the beginning.
 
 Find out how buttons provide input to the @boardname@ in this video:
 
 https://www.youtube.com/watch?v=t_Qujjd_38o
+
+## Touch
+
+Pins **0**, **1**, **2**, and the board **logo** can work as touch buttons when they are programmed for input.
 
 ## USB connection
 
@@ -47,9 +59,9 @@ the micro:bit will appear as a ``MAINTENANCE`` drive instead of ``MICROBIT``. Th
 
 To continue programming your micro:bit YOU MUST unplug your USB and reconnect it. Check that the drive now shows as ``MICROBIT``.
 
-## ~ hint
+### ~ hint
 
-### Open the version file
+#### Open the version file
 
 Use with caution!
 If you click on the drive while it shows the ``MAINTENANCE`` label, 
@@ -57,7 +69,7 @@ you can see which version of firmware you have running on your micro:bit.
 Firmware on your micro:bit should be up-to-date already. 
 You can find the version of firmware in the 'version.txt' file on the micro:bit. See the @boardname@ **[firmware](https://microbit.org/guide/firmware/)** page for more about checking your board's firmware version.
 
-## ~
+### ~
 
 ## Compass
 
@@ -79,7 +91,11 @@ https://www.youtube.com/watch?v=byngcwjO51U
 ## Pins
 
 The [pins](/device/pins) can be a form of electrical input or output. 
-There are labels for the input/output pins ``P0``, ``P1``, ``P2``, which you can attach external sensors to such as thermometers or moisture detectors.
+There are labels for the input/output pins **0**, **1**, **2**, which you can attach external sensors to such as thermometers or moisture detectors.
+
+## Microphone
+
+Using the microphone, your programs can detect sounds that are present. You can check for loud or quiet sounds and find out what their sound level is.
 
 ## Light level
 
@@ -119,7 +135,7 @@ and [click here to read more about the error messages you might get](/device/err
 When your micro:bit is connected to your computer with the micro USB, it doesn’t need another power source.  
 When your micro:bit isn’t connected to your computer, tablet or mobile, you will need 2 x AAA 1.5 V batteries to power it.
 
-The pins labelled 3V and GND are the power supply pins. 
+The pins labelled **3V** and **GND** are the power supply pins. 
 You can attach an external device such as a motor to these and power it using the battery or USB.
 
 ## Serial Communication

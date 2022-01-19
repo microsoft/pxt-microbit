@@ -18,9 +18,17 @@ In addition to a [number](types/number), [string](/types/string), or name-value 
 ## Returns
 
 * a [number](/types/number) that is the property selected in the **type** parameter:
->* ``signal strength``: the value ranges from `-128` to `-42` (`-128` means a weak signal and `-42` means a strong one.)
+>* ``signal strength``: the value ranges from `-128` up to `-28` (`-128` means a weak signal and `-28` means a strong one.)
 >* ``serial number``: the value is the serial number of the board sending the packet.
 >* ``time``: the value is the system time, in microseconds, of the sender at the time when the packet was sent.
+
+### ~ hint
+
+#### Signal strength and board version
+
+Measurement of the received signal strength is dependent on what version of @boardname@ you have. The @boardname@ boards prior to v2 can typically measure a signal strength up to `-42` dBm. Now, v2 boards will measure a signal strength up to `-28` dBm (typical).
+
+### ~
 
 ## Example
 

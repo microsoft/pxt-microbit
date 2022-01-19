@@ -55,6 +55,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
     "name": "Wearables",
     "url": "/extensions#wearables",
     "cardType": "link"
+ }, {
+    "name": "Utilities",
+    "url": "/extensions#utilities",
+    "cardType": "link"
 }]
 ```
 
@@ -306,6 +310,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 
 ```codecard
 [{
+  "name": "iClass IoT",
+  "url":"/pkg/KelieLeung/pxt-iClassIoT",
+  "cardType": "package"
+}, {
   "name": "Kittenbot Wifi",
   "url":"/pkg/KittenBot/pxt-kittenwifi",
   "cardType": "package"
@@ -348,6 +356,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 
 ```codecard
 [{
+   "name": "HacKids hack:bit",
+   "url": "/pkg/HackidsEdu/pxt-hackbit",
+   "cardType": "package"
+}, {
    "name": "KittenBot Sugar",
    "url": "/pkg/KittenBot/pxt-sugar",
    "cardType": "package"
@@ -463,6 +475,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 [{
   "name": "Kitronik :CREATE Simple Servo Control Board",
   "url":"/pkg/KitronikLtd/pxt-kitronik-simple-servo",
+  "cardType": "package"
+}, {
+  "name": "Kittenbot miniLFR",
+  "url":"/pkg/KittenBot/pxt-minilfr",
   "cardType": "package"
 }, {
   "name": "Cytron ZOOM:BIT",
@@ -703,6 +719,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 
 ```codecard
 [{
+  "name": "PT-BOT KidsBIT",
+  "url":"/pkg/iBuilds/pxt-PTKidsBIT-IoT",
+  "cardType": "package"
+}, {
   "name": "Kitronik Air Quality & Environmental Board",
   "url":"/pkg/KitronikLtd/pxt-kitronik-air-quality",
   "cardType": "package"
@@ -824,6 +844,22 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 ## Utilities
 ```codecard
 [{
+  "name": "Soroban abacus",
+  "url":"/pkg/aorczyk/soroban",
+  "cardType": "package"
+}, {  
+  "name": "Lego PF recorder",
+  "url":"/pkg/aorczyk/pf-recorder",
+  "cardType": "package"
+}, {
+  "name": "Lego PF transmitter",
+  "url":"/pkg/aorczyk/lego-pf-transmitter",
+  "cardType": "package"
+}, {
+  "name": "Lego PF receiver",
+  "url":"/pkg/aorczyk/lego-pf-receiver",
+  "cardType": "package"
+}, {
   "name": "Kodely dot",
   "url":"/pkg/Kodely-io/dot",
   "cardType": "package"

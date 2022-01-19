@@ -1,10 +1,16 @@
-# Uploading programs to your @boardname@
+# Transferring programs to your @boardname@
 
-Most of the time you'll be writing and testing your programs in the [simulator](/device/simulator). Once you've finished your program though, you can **compile** it and run it on your @boardname@. Transferring your program to the @boardname@ is as simple as saving a file to a drive on your computer.
+Most of the time you'll be writing and testing your programs in the [simulator](/device/simulator). Once you've finished your program though, you can **compile** it and run it on your @boardname@. Transferring your program to the @boardname@ is as simple as clicking the **Download** button, or by saving a file to a drive on your computer.
 
-When you plug your @boardname@ into USB, a new drive is created with the **@drivename@** label. This is where you'll save your program.
+![micro:bit connected using USB](/static/mb/device/usb-thin.jpg)
 
-![](/static/mb/device/usb-thin.jpg)
+## Transfer using a WebUSB connection
+
+With some newer browsers, you can transfer your program to the @boardname@ with a single click. If your browser supports WebUSB, you can use the **one-click download** feature to send your programs to the @boardname@. See the [WebUSB](/device/usb/webusb) page to learn how to pair your @boardname@ with a computer and transfer your programs with a single click.
+
+## Downloading your program as file
+
+If your browser doesn't support WebUSB or you want to use your computer's file system to transfer your program instead, you can download it to the @boardname@ as a file. When you plug your @boardname@ into USB, a new drive is created with the **@drivename@** label. This is where you'll save your program.
 
 The basic steps are:
 

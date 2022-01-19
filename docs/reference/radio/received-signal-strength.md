@@ -6,28 +6,34 @@ Find how strong the radio signal is.
 radio.receivedSignalStrength();
 ```
 
-## ~ hint
+### ~ hint
 
-**Deprecated**
+#### Deprecated
 
 This API has been deprecated! Use [received packet](/reference/radio/received-packet) instead.
 
-## ~
+### ~
 
-Find how strong the ``radio`` signal is, from `-128` to `-42`.
-(`-128` means a weak signal and `-42` means a strong one.)
+Find how strong the ``radio`` signal is, from `-128` to `-28`.
+(`-128` means a weak signal and `-28` means a strong one.)
 
 The @boardname@ finds the signal strength by checking how strong it was
 the last time it ran the
 [on received number](/reference/radio/on-received-number) function. That means
 it needs to run **receive number** first.
 
-
-
 ## Returns
 
-* a [number](/types/number) between `-128` and `-42` that means
+* a [number](/types/number) between `-128` and `-28` that means
 how strong the signal is.
+
+### ~ hint
+
+#### Signal strength and board version
+
+Measurement of the received signal strength is dependent on what version of @boardname@ you have. The @boardname@ boards prior to v2 can typically measure a signal strength up to `-42` dBm. Now, v2 boards will measure a signal strength up to `-28` dBm (typical).
+
+### ~
 
 ## Simulator
 
@@ -49,7 +55,8 @@ basic.forever(() => {
 
 ## See also
 
-[on received number](/reference/radio/on-received-number), [send number](/reference/radio/send-number), [on data received](/reference/radio/on-data-received)
+[on received number](/reference/radio/on-received-number), [send number](/reference/radio/send-number),
+[on data received](/reference/radio/on-data-received), [received packet](/reference/received-packet)
 
 ```package
 radio

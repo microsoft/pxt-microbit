@@ -1,26 +1,24 @@
-# Uploading from Microsoft Edge on Windows
+# Transferring from Microsoft Edge on Windows
 
-How to compile, transfer, and run a program on your micro:bit on **Microsoft Edge**.
+How to compile, transfer, and run a program on your micro:bit with **Microsoft Edge**.
 
 While you're writing and testing your programs, you'll mostly be [running them
 in the simulator](/device/simulator), but once you've finished your program you
 can **compile** it and run it on your micro:bit.
 
+## Transfer using a WebUSB connection
+
+With Microsoft Edge (version 79 and newer), you can transfer your program to the @boardname@ with a single click. If your browser supports WebUSB, you can use the **one-click download** feature to send your programs to the @boardname@. See the [WebUSB](/device/usb/webusb) page to learn how to pair your @boardname@ with a computer and transfer your programs with a single click.
+
+## Downloading your program as file
+
 The basic steps are:
 
-1. Connect your @boardname@ to your computer via USB
+1. Connect your @boardname@ to your computer with a USB cable (use an A-Male to Micro USB cable)
 2. Click **Download** to download the `.hex` file
 3. Click the **Save As** button in the bottom bar and save the `.hex` file into the MICROBIT drive
 
-## Requirements
-
-You need the following things to transfer and run a script on your micro:bit:
-
-* A-Male to Micro USB cable to connect your computer to your micro:bit. This is
-    the same cable that is commonly used to connect a smart phone to a computer.
-* A PC running Windows 7 or later.
-
-## Step 1: Connect your micro:bit to your computer
+### Step 1: Connect your micro:bit to your computer
 
 First, connect the micro:bit:
 
@@ -34,7 +32,7 @@ it appears as a new drive under Devices.
 
 ![](/static/mb/device/usb-windows-device.jpg)
 
-## Step 2: Download your program
+### Step 2: Download your program
 
 1. Open your project on @homeurl@
 2. Click **Download**

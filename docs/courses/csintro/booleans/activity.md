@@ -145,21 +145,13 @@ let PlayerAScore = 0
 let CoinBHeads = false
 let CoinAHeads = false
 input.onButtonPressed(Button.A, () => {
-    CoinAHeads = Math.randomBoolean()
-    CoinBHeads = Math.randomBoolean()
-    PlayerAScore = 0
-    PlayerBScore = 0
-    basic.showLeds(`
-        . # . . .
-        # # # . .
-        . # . # .
-        . . # # #
-        . . . # .
-        `)
+    basic.showString("A:" + PlayerAScore)
+    basic.pause(100)
+    basic.showString("B:" + PlayerAScore)
 })
 input.onGesture(Gesture.Shake, () => {
-    CoinAHeads = true
-    CoinBHeads = true
+    CoinAHeads = Math.randomBoolean()
+    CoinBHeads = Math.randomBoolean()
     if (CoinAHeads == CoinBHeads) {
         basic.showLeds(`
             . . # . .
