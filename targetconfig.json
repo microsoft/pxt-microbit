@@ -236,13 +236,16 @@
             "CytronTechnologies/pxt-zoombit",
             "Kodely-io/dot",
             "climate-action-kits/pxt-climate-action-kit-energy",
+            "KitronikLtd/pxt-kitronik-simple-servo",
             "HackidsEdu/pxt-hackbit",
             "aorczyk/lego-pf-transmitter",
             "KittenBot/pxt-minilfr",
             "iBuilds/pxt-PTKidsBIT-IoT",
             "KelieLeung/pxt-iClassIoT",
             "aorczyk/lego-pf-receiver",
-            "SMARTHON/pxt-smartcity"
+            "SMARTHON/pxt-smartcity",
+            "aorczyk/soroban",
+            "aorczyk/pf-recorder"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",
