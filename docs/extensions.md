@@ -477,6 +477,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 
 ```codecard
 [{
+  "name": "Robotixlab Theta",
+  "url":"/pkg/4tronix/Theta",
+  "cardType": "package"
+}, {
   "name": "Kitronik :CREATE Simple Servo Control Board",
   "url":"/pkg/KitronikLtd/pxt-kitronik-simple-servo",
   "cardType": "package"

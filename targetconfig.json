@@ -245,7 +245,8 @@
             "aorczyk/lego-pf-receiver",
             "SMARTHON/pxt-smartcity",
             "aorczyk/soroban",
-            "aorczyk/pf-recorder"
+            "aorczyk/pf-recorder",
+            "4tronix/Theta"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",
