@@ -407,7 +407,7 @@ namespace pins {
 
 
     /**
-    * Configure the pull directiion of of a pin.
+    * Configure the pull direction of of a pin.
     * @param name pin to set the pull mode on, eg: DigitalPin.P0
     * @param pull one of the mbed pull configurations, eg: PinPullMode.PullUp
     */
