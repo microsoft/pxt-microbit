@@ -628,7 +628,7 @@
   "pins.setEvents|param|name": "pin to set the event mode on, eg: DigitalPin.P0",
   "pins.setEvents|param|type": "the type of events for this pin to emit, eg: PinEventType.Edge",
   "pins.setMatrixWidth": "Set the matrix width for Neopixel strip (already assigned to a pin).\nShould be used in conjunction with `set matrix width` from Neopixel package.",
-  "pins.setPull": "Configure the pull directiion of of a pin.",
+  "pins.setPull": "Configure the pull direction of of a pin.",
   "pins.setPull|param|name": "pin to set the pull mode on, eg: DigitalPin.P0",
   "pins.setPull|param|pull": "one of the mbed pull configurations, eg: PinPullMode.PullUp",
   "pins.spiFormat": "Set the SPI bits and mode",
