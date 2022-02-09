@@ -285,7 +285,7 @@
             "dfrobot/pxt-dfrobot-naturalscience": "dv:mbcodal",
             "kitronikltd/pxt-kitronik-zip-tile": "min:v0.1.0",
             "4tronix/bitcommander": "min:1.1.1",
-            "tinkertanker/pxt-rotary-encoder-ky040": "min:v1.2.0",
+            "tinkertanker/pxt-rotary-encoder-ky040": "min:v1.2.1",
             "KitronikLtd/pxt-kitronik-zip-64": "min:v0.1.0",
             "KitronikLtd/pxt-kitronik-game-controller": "min:v0.0.2",
             "Tinkertanker/pxt-tinkercademy-microbot": "dv:mbcodal",
