@@ -852,6 +852,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 ## Utilities
 ```codecard
 [{
+  "name": "Bluetooth HID",
+  "url":"/pkg/bsiever/microbit-pxt-blehid",
+  "cardType": "package"
+}, {
   "name": "Soroban abacus",
   "url":"/pkg/aorczyk/soroban",
   "cardType": "package"

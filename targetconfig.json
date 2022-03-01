@@ -246,7 +246,8 @@
             "SMARTHON/pxt-smartcity",
             "aorczyk/soroban",
             "aorczyk/pf-recorder",
-            "4tronix/Theta"
+            "4tronix/Theta",
+            "bsiever/microbit-pxt-blehid"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",
