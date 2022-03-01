@@ -246,7 +246,8 @@
             "SMARTHON/pxt-smartcity",
             "aorczyk/soroban",
             "aorczyk/pf-recorder",
-            "4tronix/Theta"
+            "4tronix/Theta",
+            "DFRobot/pxt-DFRobot_Environment_Science"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",

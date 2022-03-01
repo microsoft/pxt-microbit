@@ -727,6 +727,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 
 ```codecard
 [{
+  "name": "DFRobot Environment Science Board ",
+  "url":"/pkg/DFRobot/pxt-DFRobot_Environment_Science",
+  "cardType": "package"
+}, {
   "name": "PT-BOT KidsBIT",
   "url":"/pkg/iBuilds/pxt-PTKidsBIT-IoT",
   "cardType": "package"
