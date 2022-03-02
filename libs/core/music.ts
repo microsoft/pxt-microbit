@@ -583,7 +583,7 @@ namespace music {
             let octave = 4;
             const note = melody[i] % 12;
             if (melody[i] === 0) {
-                current="r"
+                current = "r"
             }
             else {
                 current = notes.charAt(note);
