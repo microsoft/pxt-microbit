@@ -567,6 +567,8 @@ namespace music {
     }
 
     export function _bufferToMelody(melody: Buffer) {
+        if (!melody) return [];
+
         let currentDuration = 4;
         let currentOctave = -1;
         const out: string[] = [];
