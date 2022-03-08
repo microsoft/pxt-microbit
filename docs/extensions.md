@@ -33,11 +33,11 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
     "cardType": "link"
 }, {
     "name": "LEDs and lights",
-    "url": "/extensions#iot",
+    "url": "/extensions#leds-and-lights",
     "cardType": "link"
 }, {
     "name": "Machine learning",
-    "url": "/extensions#kits",
+    "url": "/extensions#machine-learning",
     "cardType": "link"
 }, {
     "name": "Robotics",
