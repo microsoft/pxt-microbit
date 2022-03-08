@@ -456,11 +456,15 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 
 ```codecard
 [{
-  "name": "KittenBot KOI AI module ",
+  "name": "Kocoafab COCOCAM",
+  "url":"/pkg/ekkai/aicococam",
+  "cardType": "package"
+}, {
+  "name": "KittenBot KOI AI module",
   "url":"/pkg/KittenBot/pxt-koi",
   "cardType": "package"
 }, {
-  "name": "Elecfreaks Smart AI Lens ",
+  "name": "Elecfreaks Smart AI Lens",
   "url":"/pkg/elecfreaks/pxt-PlanetX-AI",
   "cardType": "package"
 }, {

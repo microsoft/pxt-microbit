@@ -247,7 +247,8 @@
             "aorczyk/soroban",
             "aorczyk/pf-recorder",
             "4tronix/Theta",
-            "DFRobot/pxt-DFRobot_Environment_Science"
+            "DFRobot/pxt-DFRobot_Environment_Science",
+            "ekkai/aicococam"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",
