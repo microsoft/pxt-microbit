@@ -486,6 +486,17 @@ namespace music {
         _playTone = f;
     }
 
+    /**
+     * Converts an octave and note offset into a frequency.
+     *
+     * @param octave    The octave of the note (1 - 8)
+     * @param note      The offset of the note within the octave
+     * @returns         A frequency in HZ
+     */
+    export function getFrequencyForNote(octave: number, note: number) {
+        return freqs.getNumber(NumberFormat.UInt16LE, (note + (12 * (octave - 1))) * 2) || 0;
+    }
+
     function playNextNote(melody: Melody): void {
         // cache elements
         let currNote = melody.nextNote();
