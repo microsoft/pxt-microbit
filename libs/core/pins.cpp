@@ -217,10 +217,13 @@ namespace pins {
     * @param name digital pin to register to, eg: DigitalPin.P0
     * @param pulse the value of the pulse, eg: PulseValue.High
     */
-    //% help=pins/on-pulsed weight=22 blockGap=16 advanced=true
+    //% help=pins/on-pulsed advanced=true
     //% blockId=pins_on_pulsed block="on|pin %pin|pulsed %pulse"
     //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=4
     //% pin.fieldOptions.tooltips="false" pin.fieldOptions.width="250"
+    //% group="Pulse"
+    //% weight=25
+    //% blockGap=8
     void onPulsed(DigitalPin name, PulseValue pulse, Action body) {
         MicroBitPin* pin = getPin((int)name);
         if (!pin) return;
@@ -234,7 +237,9 @@ namespace pins {
     */
     //% help=pins/pulse-duration advanced=true
     //% blockId=pins_pulse_duration block="pulse duration (µs)"
-    //% weight=21 blockGap=8
+    //% group="Pulse"
+    //% weight=24
+    //% blockGap=8
     int pulseDuration() {
         return pxt::lastEvent.timestamp;
     }
@@ -246,10 +251,13 @@ namespace pins {
     * @param maximum duration in microseconds
     */
     //% blockId="pins_pulse_in" block="pulse in (µs)|pin %name|pulsed %value"
-    //% weight=20 advanced=true
+    //% advanced=true
     //% help=pins/pulse-in
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     //% name.fieldOptions.tooltips="false" name.fieldOptions.width="250"
+    //% group="Pulse"
+    //% weight=23
+    //% blockGap=8
     int pulseIn(DigitalPin name, PulseValue value, int maxDuration = 2000000) {
         MicroBitPin* pin = getPin((int)name);
         if (!pin) return 0;
@@ -294,6 +302,7 @@ namespace pins {
     //% value.min=0 value.max=180
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     //% name.fieldOptions.tooltips="false" name.fieldOptions.width="250"
+    //% group="Servo"
     void servoWritePin(AnalogPin name, int value) {
         PINOP(setServoValue(value));
     }
@@ -315,6 +324,7 @@ namespace pins {
     //% blockId=device_set_servo_pulse block="servo set pulse|pin %value|to (µs) %micros"
     //% value.fieldEditor="gridpicker" value.fieldOptions.columns=4
     //% value.fieldOptions.tooltips="false" value.fieldOptions.width="250"
+    //% group="Servo"
     void servoSetPulse(AnalogPin name, int micros) {
         PINOP(setServoPulseUs(micros));
     }
@@ -329,9 +339,12 @@ namespace pins {
      * @param name pin to modulate pitch from
      */
     //% blockId=device_analog_set_pitch_pin block="analog set pitch pin %name"
-    //% help=pins/analog-set-pitch-pin weight=3 advanced=true
+    //% help=pins/analog-set-pitch-pin advanced=true
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     //% name.fieldOptions.tooltips="false" name.fieldOptions.width="250"
+    //% group="Pins"
+    //% weight=12
+    //% blockGap=8
     void analogSetPitchPin(AnalogPin name) {
         pitchPin = getPin((int)name);
     }
@@ -380,7 +393,10 @@ namespace pins {
      * @param ms duration of the pitch in milli seconds.
      */
     //% blockId=device_analog_pitch block="analog pitch %frequency|for (ms) %ms"
-    //% help=pins/analog-pitch weight=4 async advanced=true blockGap=8
+    //% help=pins/analog-pitch async advanced=true
+    //% group="Pins"
+    //% weight=14
+    //% blockGap=8
     void analogPitch(int frequency, int ms) {
         // init pins if needed
         if (NULL == pitchPin) {
@@ -411,10 +427,13 @@ namespace pins {
     * @param name pin to set the pull mode on, eg: DigitalPin.P0
     * @param pull one of the mbed pull configurations, eg: PinPullMode.PullUp
     */
-    //% help=pins/set-pull weight=3 advanced=true
+    //% help=pins/set-pull advanced=true
     //% blockId=device_set_pull block="set pull|pin %pin|to %pull"
     //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=4
     //% pin.fieldOptions.tooltips="false" pin.fieldOptions.width="250"
+    //% group="Pins"
+    //% weight=15
+    //% blockGap=8
     void setPull(DigitalPin name, PinPullMode pull) {
 #if MICROBIT_CODAL
         codal::PullMode m = pull == PinPullMode::PullDown
@@ -437,10 +456,13 @@ namespace pins {
     * @param name pin to set the event mode on, eg: DigitalPin.P0
     * @param type the type of events for this pin to emit, eg: PinEventType.Edge
     */
-    //% help=pins/set-events weight=4 advanced=true
+    //% help=pins/set-events advanced=true
     //% blockId=device_set_pin_events block="set pin %pin|to emit %type|events"
     //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=4
     //% pin.fieldOptions.tooltips="false" pin.fieldOptions.width="250"
+    //% group="Pins"
+    //% weight=13
+    //% blockGap=8
     void setEvents(DigitalPin name, PinEventType type) {
         getPin((int)name)->eventOn((int)type);
     }
@@ -462,11 +484,14 @@ namespace pins {
      * @param name pin of Neopixel strip, eg: DigitalPin.P1
      * @param value width of matrix (at least ``2``)
      */
-    //% help=pins/neopixel-matrix-width weight=3 advanced=true
-    //% blockId=pin_neopixel_matrix_width block="neopixel matrix width|pin %pin %width" blockGap=8
+    //% help=pins/neopixel-matrix-width advanced=true
+    //% blockId=pin_neopixel_matrix_width block="neopixel matrix width|pin %pin %width"
     //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=4
     //% pin.fieldOptions.tooltips="false" pin.fieldOptions.width="250"
     //% width.defl=5 width.min=2
+    //% group="Pins"
+    //% weight=11
+    //% blockGap=8
     void setMatrixWidth(DigitalPin pin, int width) {}
 
 #if MICROBIT_CODAL
@@ -506,8 +531,11 @@ namespace pins {
     * Write to the SPI slave and return the response
     * @param value Data to be sent to the SPI slave
     */
-    //% help=pins/spi-write weight=5 advanced=true
+    //% help=pins/spi-write advanced=true
     //% blockId=spi_write block="spi write %value"
+    //% group="SPI"
+    //% blockGap=8
+    //% weight=53
     int spiWrite(int value) {
         auto p = allocSPI();
         return p->write(value);
@@ -541,8 +569,11 @@ namespace pins {
     * Set the SPI frequency
     * @param frequency the clock frequency, eg: 1000000
     */
-    //% help=pins/spi-frequency weight=4 advanced=true
+    //% help=pins/spi-frequency advanced=true
     //% blockId=spi_frequency block="spi frequency %frequency"
+    //% group="SPI"
+    //% blockGap=8
+    //% weight=55
     void spiFrequency(int frequency) {
         auto p = allocSPI();
         p->frequency(frequency);
@@ -553,8 +584,11 @@ namespace pins {
     * @param bits the number of bits, eg: 8
     * @param mode the mode, eg: 3
     */
-    //% help=pins/spi-format weight=3 advanced=true
+    //% help=pins/spi-format advanced=true
     //% blockId=spi_format block="spi format|bits %bits|mode %mode"
+    //% group="SPI"
+    //% blockGap=8
+    //% weight=54
     void spiFormat(int bits, int mode) {
         auto p = allocSPI();
         p->format(bits, mode);
@@ -570,7 +604,7 @@ namespace pins {
     * Set the MOSI, MISO, SCK pins used by the SPI connection
     *
     */
-    //% help=pins/spi-pins weight=2 advanced=true
+    //% help=pins/spi-pins advanced=true
     //% blockId=spi_pins block="spi set pins|MOSI %mosi|MISO %miso|SCK %sck"
     //% mosi.fieldEditor="gridpicker" mosi.fieldOptions.columns=4
     //% mosi.fieldOptions.tooltips="false" mosi.fieldOptions.width="250"
@@ -578,6 +612,9 @@ namespace pins {
     //% miso.fieldOptions.tooltips="false" miso.fieldOptions.width="250"
     //% sck.fieldEditor="gridpicker" sck.fieldOptions.columns=4
     //% sck.fieldOptions.tooltips="false" sck.fieldOptions.width="250"
+    //% group="SPI"
+    //% blockGap=8
+    //% weight=51
     void spiPins(DigitalPin mosi, DigitalPin miso, DigitalPin sck) {
         if (NULL != spi) {
             delete spi;
