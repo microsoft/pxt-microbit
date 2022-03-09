@@ -487,11 +487,12 @@ namespace music {
     }
 
     /**
-     * Converts an octave and note offset into a frequency.
+     * Converts an octave and note offset into an integer frequency.
+     * Returns 0 if the note is out of range.
      *
      * @param octave    The octave of the note (1 - 8)
      * @param note      The offset of the note within the octave
-     * @returns         A frequency in HZ
+     * @returns         A frequency in HZ or 0 if out of range
      */
     export function getFrequencyForNote(octave: number, note: number) {
         return freqs.getNumber(NumberFormat.UInt16LE, (note + (12 * (octave - 1))) * 2) || 0;
@@ -534,9 +535,7 @@ namespace music {
         if (isrest) {
             music.rest(currentDuration * beat)
         } else {
-            let keyNumber = note + (12 * (currentOctave - 1));
-            let frequency = freqs.getNumber(NumberFormat.UInt16LE, keyNumber * 2) || 0;
-            music.playTone(frequency, currentDuration * beat);
+            music.playTone(getFrequencyForNote(note, currentOctave), currentDuration * beat);
         }
         melody.currentDuration = currentDuration;
         melody.currentOctave = currentOctave;
