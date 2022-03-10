@@ -333,6 +333,7 @@ namespace pins {
     PinCompat* pitchPin = NULL;
     uint8_t pitchVolume = 0xff;
     bool analogTonePlaying = false;
+    bool edgeConnectorSoundDisabled = false;
 
     /**
      * Set the pin used when using analog pitch or music.
@@ -372,7 +373,7 @@ namespace pins {
 
         if (analogTonePlaying) {
             int v = pitchVolume == 0 ? 0 : 1 << (pitchVolume >> 5);
-            if (NULL != pitchPin)
+            if (NULL != pitchPin && !edgeConnectorSoundDisabled)
                 pitchPin->setAnalogValue(v);
         }
     }
@@ -404,10 +405,12 @@ namespace pins {
             pitchPin = &uBit.audio.virtualOutputPin;
 #else
             pitchPin = getPin((int)AnalogPin::P0);
-#endif            
+#endif
         }
         // set pitch
         analogTonePlaying = true;
+
+#if MICROBIT_CODAL
         if (NULL != pitchPin)
             pinAnalogSetPitch(pitchPin, frequency, ms);
         // clear pitch
@@ -419,6 +422,19 @@ namespace pins {
             // causes issues with v2 DMA.
             // fiber_sleep(5);
         }
+#else
+        if (NULL != pitchPin && !edgeConnectorSoundDisabled)
+            pinAnalogSetPitch(pitchPin, frequency, ms);
+        // clear pitch
+        if (ms > 0) {
+            fiber_sleep(ms);
+            if (NULL != pitchPin && !edgeConnectorSoundDisabled)
+                pitchPin->setAnalogValue(0);
+            analogTonePlaying = false;
+            // causes issues with v2 DMA.
+            // fiber_sleep(5);
+        }
+#endif
     }
 
 
@@ -636,17 +652,31 @@ namespace pins {
     * @param name pin to modulate pitch from
     */
     //% blockId=pin_set_audio_pin block="set audio pin $name"
-    //% help=pins/set-audio-pin weight=3
+    //% help=pins/set-audio-pin
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     //% name.fieldOptions.tooltips="false" name.fieldOptions.width="250"
     //% weight=1
     void setAudioPin(AnalogPin name) {
 #if MICROBIT_CODAL
         uBit.audio.setPin(*getPin((int)name));
-        uBit.audio.setPinEnabled(true);
+        uBit.audio.setPinEnabled(!edgeConnectorSoundDisabled);
 #else
         // v1 behavior
         pins::analogSetPitchPin(name);
+#endif
+    }
+
+    /**
+    * Sets whether or not audio will be output using a pin on the edge
+    * connector.
+    */
+    //% blockId=pin_set_audio_pin_enabled
+    //% block="set audio pin enabled $enabled"
+    //% weight=0
+    void setAudioPinEnabled(bool enabled) {
+        edgeConnectorSoundDisabled = !enabled;
+#if MICROBIT_CODAL
+        uBit.audio.setPinEnabled(enabled);
 #endif
     }
 }
