@@ -214,7 +214,7 @@ namespace pxsim.pins {
             }
 
             if (!enabled) {
-                const img = document.createElementNS("http://www.w3.org/2000/svg","image") as SVGImageElement;
+                const img = document.createElementNS("http://www.w3.org/2000/svg", "image") as SVGImageElement;
                 img.setAttribute("href", "data:image/svg+xml;utf8," + encodeURIComponent(disabledSVG))
                 img.setAttribute("id", "headphone-disabled");
                 img.style.transform = "scale(1.5) translate(-10px, -10px)";
