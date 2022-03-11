@@ -656,6 +656,7 @@ namespace pins {
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     //% name.fieldOptions.tooltips="false" name.fieldOptions.width="250"
     //% weight=1
+    //% blockGap=8
     void setAudioPin(AnalogPin name) {
 #if MICROBIT_CODAL
         uBit.audio.setPin(*getPin((int)name));
