@@ -25,7 +25,7 @@ namespace led {
     /**
      * Controls where plotbargraph prints to the console
      **/ 
-    let barGraphToConsole = true
+    export let barGraphToConsole = true
 
     /**
      * Displays a vertical bar graph based on the `value` and `high` value.
