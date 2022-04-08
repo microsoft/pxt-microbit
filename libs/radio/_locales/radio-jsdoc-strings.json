@@ -8,6 +8,8 @@
   "radio.Packet.time": "The system time of the sender of the packet at the time the packet was sent.",
   "radio._packetProperty": "Gets a packet property.",
   "radio._packetProperty|param|type": "the packet property type, eg: PacketProperty.time",
+  "radio.off": "Disables the radio for use as a multipoint sender/receiver.\nDisabling radio will help conserve battery power when it is not in use.",
+  "radio.on": "Initialises the radio for use as a multipoint sender/receiver\nOnly useful when the radio.off() is used beforehand.",
   "radio.onDataPacketReceived": "Deprecated. Use onDataReceived() instead\nRegisters code to run when the radio receives a packet. Also takes the\nreceived packet from the radio queue.",
   "radio.onDataReceived": "Used internally by the library.",
   "radio.onReceivedBuffer": "Registers code to run when the radio receives a buffer.",

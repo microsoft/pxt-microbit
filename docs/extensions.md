@@ -33,11 +33,11 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
     "cardType": "link"
 }, {
     "name": "LEDs and lights",
-    "url": "/extensions#iot",
+    "url": "/extensions#leds-and-lights",
     "cardType": "link"
 }, {
     "name": "Machine learning",
-    "url": "/extensions#kits",
+    "url": "/extensions#machine-learning",
     "cardType": "link"
 }, {
     "name": "Robotics",
@@ -456,11 +456,15 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 
 ```codecard
 [{
-  "name": "KittenBot KOI AI module ",
+  "name": "Kocoafab COCOCAM",
+  "url":"/pkg/ekkai/aicococam",
+  "cardType": "package"
+}, {
+  "name": "KittenBot KOI AI module",
   "url":"/pkg/KittenBot/pxt-koi",
   "cardType": "package"
 }, {
-  "name": "Elecfreaks Smart AI Lens ",
+  "name": "Elecfreaks Smart AI Lens",
   "url":"/pkg/elecfreaks/pxt-PlanetX-AI",
   "cardType": "package"
 }, {
@@ -727,6 +731,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 
 ```codecard
 [{
+  "name": "DFRobot Environment Science Board ",
+  "url":"/pkg/DFRobot/pxt-DFRobot_Environment_Science",
+  "cardType": "package"
+}, {
   "name": "PT-BOT KidsBIT",
   "url":"/pkg/iBuilds/pxt-PTKidsBIT-IoT",
   "cardType": "package"

@@ -21,6 +21,11 @@ namespace led {
     let barGraphHigh = 0;
     // when was the current high value recorded
     let barGraphHighLast = 0;
+    
+    /**
+     * Controls where plotbargraph prints to the console
+     **/ 
+    export let barGraphToConsole = true
 
     /**
      * Displays a vertical bar graph based on the `value` and `high` value.
@@ -33,7 +38,8 @@ namespace led {
     //% parts="ledmatrix"
     export function plotBarGraph(value: number, high: number): void {
         const now = input.runningTime();
-        console.logValue("", value);
+        if (barGraphToConsole)
+            console.logValue("", value);
         value = Math.abs(value);
 
         // auto-scale "high" is not provided

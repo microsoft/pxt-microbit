@@ -28,5 +28,8 @@
   "radio.writeReceivedPacketToSerial|block": "radio write received packet to serial",
   "radio.writeValueToSerial|block": "radio write value to serial",
   "radio|block": "radio",
-  "{id:category}Radio": "Radio"
+  "{id:category}Radio": "Radio",
+  "{id:group}Group": "Group",
+  "{id:group}Receive": "Receive",
+  "{id:group}Send": "Send"
 }
