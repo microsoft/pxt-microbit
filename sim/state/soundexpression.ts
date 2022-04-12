@@ -1,319 +1,56 @@
 namespace pxsim.music {
-    let synth: SoundEmojiSynthesizer;
-    let soundPromise: Promise<void>;
     //%
     export function __playSoundExpression(notes: string, waitTillDone: boolean): void {
-        const cb = getResume();
-        const b = board();
-        // v2 only...
-        b.ensureHardwareVersion(2);
-        if (!synth) synth = new SoundEmojiSynthesizer(0);
-        if (!soundPromise) soundPromise = Promise.resolve();
-
-        soundPromise = soundPromise.then(() => {
-            notes = builtin.lookupBuiltIn(notes);
-            const soundEffects = parseSoundEffects(notes);
-            synth.play(soundEffects);
-            let cancelled = false;
-
-            return Promise.race([
-                delayAsync(synth.totalDuration())
-                    .then(() => {
-                        // If safari didn't allow the sound to play for some reason,
-                        // it will get delayed until the user does something that
-                        // unmutes it. make sure we cancel it so that it doesn't
-                        // play long after it was supposed to
-                        cancelled = true
-                    }),
-                AudioContextManager.playPCMBufferStreamAsync(() => {
-                    if (!synth.effect) return undefined;
-
-                    const buff = synth.pull();
-                    const arr = new Float32Array(buff.length);
-                    for (let i = 0; i < buff.length; i++) {
-                        // Buffer is (0, 1023) we need to map it to (-1, 1)
-                        arr[i] = ((buff[i] - 512) / 512);
-                    }
-                    return arr;
-                }, synth.sampleRate, 0.03, () => cancelled)
-            ]);
-        });
-
-        if (!waitTillDone) cb();
-        else soundPromise = soundPromise.then(cb);
+        notes = lookupBuiltIn(notes);
+        pxsim.codal.music.__playSoundExpression(notes, waitTillDone);
     }
 
     export function __stopSoundExpressions() {
         AudioContextManager.stopAll();
     }
 
-    /**
-     * Adapted from lancaster-university/codal-microbit-v2
-     * https://github.com/lancaster-university/codal-microbit-v2/blob/master/source/SoundExpressions.cpp
-     */
-    function parseSoundEffects(notes: string) {
-        // https://github.com/lancaster-university/codal-microbit-v2/blob/master/source/SoundExpressions.cpp#L57
+    const giggle = "giggle";
+    const giggleData = "010230988019008440044008881023001601003300240000000000000000000000000000,110232570087411440044008880352005901003300010000000000000000010000000000,310232729021105440288908880091006300000000240700020000000000003000000000,310232729010205440288908880091006300000000240700020000000000003000000000,310232729011405440288908880091006300000000240700020000000000003000000000";
+    const happy = "happy";
+    const happyData = "010231992066911440044008880262002800001800020500000000000000010000000000,002322129029508440240408880000000400022400110000000000000000007500000000,000002129029509440240408880145000400022400110000000000000000007500000000";
+    const hello = "hello";
+    const helloData = "310230673019702440118708881023012800000000240000000000000000000000000000,300001064001602440098108880000012800000100040000000000000000000000000000,310231064029302440098108881023012800000100040000000000000000000000000000";
+    const mysterious = "mysterious";
+    const mysteriousData = "400002390033100440240408880477000400022400110400000000000000008000000000,405512845385000440044008880000012803010500160000000000000000085000500015";
+    const sad = "sad";
+    const sadData = "310232226070801440162408881023012800000100240000000000000000000000000000,310231623093602440093908880000012800000100240000000000000000000000000000";
+    const slide = "slide";
+    const slideData = "105202325022302440240408881023012801020000110400000000000000010000000000,010232520091002440044008881023012801022400110400000000000000010000000000";
+    const soaring = "soaring";
+    const soaringData = "210234009530905440599908881023002202000400020250000000000000020000000000,402233727273014440044008880000003101024400030000000000000000000000000000";
+    const spring = "spring";
+    const springData = "306590037116312440058708880807003400000000240000000000000000050000000000,010230037116313440058708881023003100000000240000000000000000050000000000";
+    const twinkle = "twinkle";
+    const twinkleData = "010180007672209440075608880855012800000000240000000000000000000000000000";
+    const yawn = "yawn";
+    const yawnData = "200002281133202440150008881023012801024100240400030000000000010000000000,005312520091002440044008880636012801022400110300000000000000010000000000,008220784019008440044008880681001600005500240000000000000000005000000000,004790784019008440044008880298001600000000240000000000000000005000000000,003210784019008440044008880108001600003300080000000000000000005000000000";
 
-        // 72 characters of sound data comma separated
-        const charsPerEffect = 72;
-        const effectCount = Math.floor((notes.length + 1) / (charsPerEffect + 1));
-        const expectedLength = effectCount * (charsPerEffect + 1) - 1;
-        if (notes.length != expectedLength) {
-            return [];
-        }
-
-        const soundEffects: SoundEffect[] = [];
-
-        for (let i = 0; i < effectCount; ++i)  {
-            const start = i * charsPerEffect + i;
-            if (start > 0 && notes[start - 1] != ',') {
-                return [];
-            }
-            const effect = blankSoundEffect();
-            if (!parseSoundExpression(notes.substr(start), effect)) {
-                return [];
-            }
-            soundEffects.push(effect);
-        }
-
-        return soundEffects;
-    }
-
-    export interface TonePrint {
-        tonePrint: (arg: number[], position: number) => number;
-        parameter: number[];
-    }
-
-    export interface ToneEffect {
-        effect: (synth: SoundEmojiSynthesizer, context: ToneEffect) => void;
-        step: number;
-        steps: number;
-        parameter: number[];
-        parameter_p: Progression[];
-    }
-
-    export interface SoundEffect {
-        frequency: number;
-        volume: number;
-        duration: number;
-        tone: TonePrint;
-        effects: ToneEffect[];
-    }
-
-    export function parseSoundExpression(soundChars: string, fx: SoundEffect) {
-        // https://github.com/lancaster-university/codal-microbit-v2/blob/master/source/SoundExpressions.cpp#L115
-
-        // Encoded as a sequence of zero padded decimal strings.
-        // This encoding is worth reconsidering if we can!
-        // The ADSR effect (and perhaps others in future) has two parameters which cannot be expressed.
-
-        // 72 chars total
-        //  [0] 0-4 wave
-        let wave = parseInt(soundChars.substr(0, 1));
-        //  [1] 0000-1023 volume
-        let effectVolume = parseInt(soundChars.substr(1, 4));
-        //  [5] 0000-9999 frequency
-        let frequency = parseInt(soundChars.substr(5, 4));
-        //  [9] 0000-9999 duration
-        let duration = parseInt(soundChars.substr(9, 4));
-        // [13] 00 shape (specific known values)
-        let shape = parseInt(soundChars.substr(13, 2));
-        // [15] XXX unused/bug. This was startFrequency but we use frequency above.
-        // [18] 0000-9999 end frequency
-        let endFrequency = parseInt(soundChars.substr(18, 4));
-        // [22] XXXX unused. This was start volume but we use volume above.
-        // [26] 0000-1023 end volume
-        let endVolume = parseInt(soundChars.substr(26, 4));
-        // [30] 0000-9999 steps
-        let steps = parseInt(soundChars.substr(30, 4));
-        // [34] 00-03 fx choice
-        let fxChoice = parseInt(soundChars.substr(34, 2));
-        // [36] 0000-9999 fxParam
-        let fxParam = parseInt(soundChars.substr(36, 4));
-        // [40] 0000-9999 fxnSteps
-        let fxnSteps = parseInt(soundChars.substr(40, 4));
-
-        // Details that encoded randomness to be applied when frame is used:
-        // Can the randomness cause any parameters to go out of range?
-        // [44] 0000-9999 frequency random
-        frequency = applyRandom(frequency, parseInt(soundChars.substr(44, 4)));
-        // [48] 0000-9999 end frequency random
-        endFrequency = applyRandom(endFrequency, parseInt(soundChars.substr(48, 4)));
-        // [52] 0000-9999 volume random
-        effectVolume = applyRandom(effectVolume, parseInt(soundChars.substr(52, 4)));
-        // [56] 0000-9999 end volume random
-        endVolume = applyRandom(endVolume, parseInt(soundChars.substr(56, 4)));
-        // [60] 0000-9999 duration random
-        duration = applyRandom(duration, parseInt(soundChars.substr(60, 4)));
-        // [64] 0000-9999 fxParamRandom
-        fxParam = applyRandom(fxParam, parseInt(soundChars.substr(64, 4)));
-        // [68] 0000-9999 fxnStepsRandom
-        fxnSteps = applyRandom(fxnSteps, parseInt(soundChars.substr(68, 4)));
-
-        if (frequency == -1 || endFrequency == -1 || effectVolume == -1 || endVolume == -1 || duration == -1 || fxParam == -1 || fxnSteps == -1) {
-            return false;
-        }
-
-        let volumeScaleFactor = 1;
-
-        switch(wave) {
-            case 0:
-                fx.tone.tonePrint = Synthesizer.SineTone;
-                break;
-            case 1:
-                fx.tone.tonePrint = Synthesizer.SawtoothTone;
-                break;
-            case 2:
-                fx.tone.tonePrint = Synthesizer.TriangleTone;
-                break;
-            case 3:
-                fx.tone.tonePrint = Synthesizer.SquareWaveTone;
-                break;
-            case 4:
-                fx.tone.tonePrint = Synthesizer.NoiseTone;
-                break;
-        }
-
-        fx.frequency = frequency;
-        fx.duration = duration;
-
-        fx.effects[0].steps = steps;
-        switch(shape) {
-            case 0:
-                fx.effects[0].effect = SoundSynthesizerEffects.noInterpolation;
-                break;
-            case 1:
-                fx.effects[0].effect = SoundSynthesizerEffects.linearInterpolation;
-                fx.effects[0].parameter[0] = endFrequency;
-                break;
-            case 2:
-                fx.effects[0].effect = SoundSynthesizerEffects.curveInterpolation;
-                fx.effects[0].parameter[0] = endFrequency;
-                break;
-            case 5:
-                fx.effects[0].effect = SoundSynthesizerEffects.exponentialRisingInterpolation;
-                fx.effects[0].parameter[0] = endFrequency;
-                break;
-            case 6:
-                fx.effects[0].effect = SoundSynthesizerEffects.exponentialFallingInterpolation;
-                fx.effects[0].parameter[0] = endFrequency;
-                break;
-            case 8: // various ascending scales - see next switch
-            case 10:
-            case 12:
-            case 14:
-            case 16:
-                fx.effects[0].effect = SoundSynthesizerEffects.appregrioAscending;
-                break;
-            case 9: // various descending scales - see next switch
-            case 11:
-            case 13:
-            case 15:
-            case 17:
-                fx.effects[0].effect = SoundSynthesizerEffects.appregrioDescending;
-                break;
-            case 18:
-                fx.effects[0].effect = SoundSynthesizerEffects.logarithmicInterpolation;
-                break;
-        }
-
-        // Scale
-        switch(shape) {
-            case 8:
-            case 9:
-                fx.effects[0].parameter_p[0] = MusicalProgressions.majorScale;
-                break;
-            case 10:
-            case 11:
-                fx.effects[0].parameter_p[0] = MusicalProgressions.minorScale;
-                break;
-            case 12:
-            case 13:
-                fx.effects[0].parameter_p[0] = MusicalProgressions.diminished;
-                break;
-            case 14:
-            case 15:
-                fx.effects[0].parameter_p[0] = MusicalProgressions.chromatic;
-                break;
-            case 16:
-            case 17:
-                fx.effects[0].parameter_p[0] = MusicalProgressions.wholeTone;
-                break;
-        }
-
-        // Volume envelope
-        let effectVolumeFloat = CLAMP(0, effectVolume, 1023) / 1023.0;
-        let endVolumeFloat = CLAMP(0, endVolume, 1023) / 1023.0;
-        fx.volume = volumeScaleFactor * effectVolumeFloat;
-        fx.effects[1].effect = SoundSynthesizerEffects.volumeRampEffect;
-        fx.effects[1].steps = 36;
-        fx.effects[1].parameter[0] = volumeScaleFactor * endVolumeFloat;
-
-        // Vibrato effect
-        // Steps need to be spread across duration evenly.
-        let normalizedFxnSteps = (fx.duration / 10000) * fxnSteps;
-        switch(fxChoice) {
-            case 1:
-                fx.effects[2].steps = normalizedFxnSteps;
-                fx.effects[2].effect = SoundSynthesizerEffects.frequencyVibratoEffect;
-                fx.effects[2].parameter[0] = fxParam;
-                break;
-            case 2:
-                fx.effects[2].steps = normalizedFxnSteps;
-                fx.effects[2].effect = SoundSynthesizerEffects.volumeVibratoEffect;
-                fx.effects[2].parameter[0] = fxParam;
-                break;
-            case 3:
-                fx.effects[2].steps = normalizedFxnSteps;
-                fx.effects[2].effect = SoundSynthesizerEffects.warbleInterpolation;
-                fx.effects[2].parameter[0] = fxParam;
-                break;
-        }
-        return true;
-    }
-
-    function random(max: number) {
-        return Math.floor(Math.random() * max);
-    }
-
-    function CLAMP(min: number, value: number, max: number) {
-        return Math.min(max, Math.max(min, value));
-    }
-
-    function applyRandom(value: number, rand: number) {
-        if (value < 0 || rand < 0) {
-            return -1;
-        }
-        const delta = random(rand * 2 + 1) - rand;
-        return Math.abs(value + delta);
-    }
-
-    function blankSoundEffect() {
-        const res: SoundEffect = {
-            frequency: 0,
-            volume: 1,
-            duration: 0,
-            tone: {
-                tonePrint: undefined,
-                parameter: [0]
-            },
-            effects: []
-        };
-
-        for(let i = 0; i < EMOJI_SYNTHESIZER_TONE_EFFECTS; i++) {
-            res.effects.push({
-                effect: undefined,
-                step: 0,
-                steps: 0,
-                parameter: [],
-                parameter_p: []
-            });
-        }
-
-        return res;
-    }
-
-    function delayAsync(millis: number): Promise<void> {
-        return new Promise(resolve => setTimeout(resolve, millis));
+    function lookupBuiltIn(sound: string) {
+        if (sound == giggle)
+            return giggleData;
+        if (sound == happy)
+            return happyData;
+        if (sound == hello)
+            return helloData;
+        if (sound == mysterious)
+            return mysteriousData;
+        if (sound == sad)
+            return sadData;
+        if (sound == slide)
+            return slideData;
+        if (sound == soaring)
+            return soaringData;
+        if (sound == spring)
+            return springData;
+        if (sound == twinkle)
+            return twinkleData;
+        if (sound == yawn)
+            return yawnData;
+        return sound;
     }
 }
