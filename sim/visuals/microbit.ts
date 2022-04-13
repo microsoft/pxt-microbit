@@ -688,7 +688,7 @@ path.sim-board {
                     this.head,
                     (ev: MouseEvent) => {
                         let cur = svg.cursorPoint(pt, this.element, ev);
-                        state.compassState.heading = 360 - (Math.floor(Math.atan2(cur.y - yc, cur.x - xc) * 180 / Math.PI) + 90) - 360;
+                        state.compassState.heading = Math.floor(Math.atan2(cur.y - yc, cur.x - xc) * 180 / Math.PI) + 90;
                         if (state.compassState.heading < 0) state.compassState.heading += 360;
                         this.updateHeading();
                     });
@@ -697,7 +697,7 @@ path.sim-board {
 
             let txt = state.compassState.heading.toString() + "°";
             if (txt != this.headText.textContent) {
-                svg.rotateElement(this.head, xc, yc, 360 - state.compassState.heading - 180);
+                svg.rotateElement(this.head, xc, yc, state.compassState.heading - 180);
                 this.headText.textContent = txt;
                 if (this.props.runtime)
                     this.props.runtime.environmentGlobals[pxsim.localization.lf("heading")] = state.compassState.heading;
