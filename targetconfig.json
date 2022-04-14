@@ -302,6 +302,280 @@
         "approvedEditorExtensionUrls": [
             "https://microsoft.github.io/ml4f/",
             "https://microsoft.github.io/jacdac-docs/tools/makecode-editor-extension"
+        ],
+        "extensionsToIgnore": [
+            "microphone"
+        ],
+        "categories": [
+            {
+                "name": "Display",
+                "extensions": [
+                    "joy-it/pxt-RB-TFT1.8",
+                    "KitronikLtd/pxt-kitronik-128x64Display",
+                    "monkmakes/monkmakes-7-segment",
+                    "pimoroni/pxt-inkybit",
+                    "KitronikLtd/pxt-kitronik-viewtext32",
+                    "xinabox/pxt-OD01",
+                    "Tinkertanker/pxt-oled-ssd1306",
+                    "Tinkertanker/pxt-oled-ssd1306",
+                    "MUSELAB/pxt-muselab-oled-v2",
+                    "1010Technologies/pxt-makerbit-ir-lcd1602"
+                ]
+            },
+            {
+                "name": "Electronics",
+                "extensions": [
+                    "KitronikLtd/pxt-kitronik-stopbit",
+                    "KitronikLtd/pxt-kitronik-accessbit",
+                    "jdarling/pxt-pca9685",
+                    "CoolGuy-official/pxt-coolguy"
+                ]
+            },
+            {
+                "name": "Gaming",
+                "extensions": [
+                    "KittenBot/pxt-joyfrog",
+                    "elecfreaks/pxt-magicwand",
+                    "KitronikLtd/pxt-kitronik-zip-64",
+                    "KitronikLtd/pxt-kitronik-game-controller",
+                    "sparkfun/pxt-gamer-bit",
+                    "4tronix/BitCommander",
+                    "51bit/SFC",
+                    "pimoroni/pxt-touchbit",
+                    "alsrobot-microbit-makecode-packages/ALSRobotJoyBit"
+                ]
+            },
+            {
+                "name": "Individual",
+                "extensions": [
+                    "SGBotic/pxt-SGBotic-Ultimate-SR04-RGB",
+                    "joy-it/pxt-SEN-Color",
+                    "joy-it/SEN-MPU6050",
+                    "bsiever/microbit-dstemp",
+                    "bsiever/microbit-dstemp-2wire",
+                    "keble6/pxt-DS3231",
+                    "letstalkscience/pxt-cozir",
+                    "microsoft/pxt-max6675",
+                    "microsoft/pxt-sonar",
+                    "1010Technologies/pxt-makerbit-ultrasonic",
+                    "daferdur/pxt-myHX711",
+                    "microsoft/pxt-bluetooth-temperature-sensor",
+                    "microsoft/pxt-bluetooth-max6675",
+                    "Tinkertanker/pxt-rotary-encoder-ky040",
+                    "PaulDFoster/pxt-microbit-GY521",
+                    "alankrantas/pxt-DHT11_DHT22",
+                    "sparkfun/pxt-gator-light",
+                    "sparkfun/pxt-gator-temp",
+                    "sparkfun/pxt-gator-microphone",
+                    "sparkfun/pxt-gator-soil",
+                    "sparkfun/pxt-gator-particle",
+                    "monkmakes/pxt-sensor",
+                    "alsrobot-microbit-makecode-packages/ALSRobotElectromagnet",
+                    "1010Technologies/pxt-makerbit-touch",
+                    "1010Technologies/pxt-makerbit-ir-receiver",
+                    "rebeccaclavier/pxt-bmp280",
+                    "makecode-extensions/STTS751",
+                    "makecode-extensions/LSM6DSO",
+                    "makecode-extensions/LPS22",
+                    "makecode-extensions/LIS2DW12",
+                    "makecode-extensions/LIS2MDL",
+                    "makecode-extensions/HTS221"
+                ]
+            },
+            {
+                "name": "IoT",
+                "extensions": [
+                    "KelieLeung/pxt-iClassIoT",
+                    "KittenBot/pxt-kittenwifi",
+                    "CytronTechnologies/pxt-esp8266",
+                    "Wappsto/pxt-wappsto",
+                    "hardwario/pxt-microbit-hardwario",
+                    "PiSupply/pxt-iot-lora-node",
+                    "e-radionicacom/pxt-wifi",
+                    "alankrantas/pxt-ESP8266_ThingSpeak",
+                    "DFRobot/pxt-DFRobot-microIoT",
+                    "MUSELAB/pxt-wifi-shield"
+                ]
+            },
+            {
+                "name": "Kits",
+                "extensions": [
+                    "SMARTHON/pxt-smartcity",
+                    "HackidsEdu/pxt-hackbit",
+                    "KittenBot/pxt-sugar",
+                    "KittenBot/pxt-powerbrick",
+                    "KitronikLtd/pxt-kitronik-lab-bit",
+                    "iBuilds/pxt-PTKidsBIT",
+                    "stemhub/pxt-StemhubCity",
+                    "PiSupply/pxt-tinker-kit",
+                    "Freenove/Makecode-Extension-Starter-Kit",
+                    "elecfreaks/pxt-PlanetX",
+                    "climate-action-kits/pxt-climate-action-kit-land",
+                    "climate-action-kits/pxt-climate-action-kit-land",
+                    "Seeed-Studio/pxt-grove",
+                    "minodekit/pxt-minode"
+                ]
+            },
+            {
+                "name": "LEDs",
+                "extensions": [
+                    "KitronikLtd/pxt-kitronik-lampbit",
+                    "KitronikLtd/pxt-kitronik-halohd",
+                    "microsoft/pxt-neopixel",
+                    "microsoft/pxt-ws2812b",
+                    "4tronix/cubebit",
+                    "51bit/ColorBit",
+                    "KitronikLtd/pxt-kitronik-zip-tile",
+                    "alankrantas/pxt-MAX7219_8x8"
+                ]
+            },
+            {
+                "name": "Machine",
+                "extensions": [
+                    "KittenBot/pxt-koi",
+                    "elecfreaks/pxt-PlanetX-AI",
+                    "mu-opensource/pxt-muvision",
+                    "DFRobot/pxt-DFRobot_HuskyLens"
+                ]
+            },
+            {
+                "name": "Robotics",
+                "extensions": [
+                    "4tronix/Theta",
+                    "KitronikLtd/pxt-kitronik-simple-servo",
+                    "KittenBot/pxt-minilfr",
+                    "CytronTechnologies/pxt-zoombit",
+                    "KidSpark/pxt-sparkbit",
+                    "BPI-STEAM/pxt-triodecar",
+                    "artec-kk/pxt-artecrobo-kit",
+                    "elecfreaks/pxt-Dronebit/",
+                    "gomakekit/Hoverbit_V2",
+                    "stemhub/pxt-Stemhubbit",
+                    "pxt-MatrixMicro",
+                    "iBuilds/pxt-PTKidsBIT-Robot",
+                    "BirdBrainTechnologies/pxt-finch",
+                    "Bouw-je-BEP/Bouw-je-BEP",
+                    "DFRobot/pxt-DFRobot-Maqueenplus",
+                    "joy-it/Joy-Car",
+                    "KitronikLtd/pxt-kitronik-move-motor",
+                    "CODOmicrobit/pxt-CODO",
+                    "strawbees/pxt-robotic-inventions",
+                    "KitronikLtd/pxt-kitronik-servo-lite",
+                    "KitronikLtd/pxt-kitronik-robotics-board",
+                    "KitronikLtd/pxt-kitronik-motor-driver",
+                    "KitronikLtd/pxt-kitronik-i2c-16-servo",
+                    "YFROBOT-TM/pxt-yfrobot-valon",
+                    "4tronix/BitBot",
+                    "4tronix/Orbit",
+                    "4tronix/DriveBit",
+                    "4tronix/ServoBit",
+                    "4tronix/MiniBit",
+                    "elecfreaks/pxt-TPBot",
+                    "DFRobot/pxt-maqueen",
+                    "sunfounder/pxt-sloth",
+                    "sphero-inc/sphero-sdk-microbit-makecode",
+                    "sparkfun/pxt-moto-bit",
+                    "EBOTICS/pxt-eboticsMIBO",
+                    "alsrobot-microbit-makecode-packages/MiniCruise",
+                    "ReRoKit/pxt-reromicro",
+                    "plenprojectcompany/pxt-PLENbit",
+                    "chevyng/pxt-ucl-junkrobot",
+                    "elecfreaks/pxt-cutebot",
+                    "kittenbot/pxt-robotbit",
+                    "emwta/pxt-iBit",
+                    "k8robotics/pxt-k8",
+                    "Freenove/Makecode-Extension-Rover",
+                    "dexterind/pxt-giggle",
+                    "4tronix/Robobit",
+                    "PiSupply/pxt-bitbuggy",
+                    "alsrobot-microbit-makecode-packages/CooCoo",
+                    "alsrobot-microbit-makecode-packages/CruiseBit",
+                    "BirdBrainTechnologies/pxt-hummingbird-bit",
+                    "jcubuntu/pxt-iKB1",
+                    "1010Technologies/pxt-makerbit-motor",
+                    "KS-Bulme/pxt-mikRobot",
+                    "kaku111/pxt-tobbieII",
+                    "KitronikLtd/pxt-kitronik-accessbit",
+                    "KitronikLtd/pxt-kitronik-fischertechnik",
+                    "keigan-motor/pxt-KeiganMotor",
+                    "beyond-coding-tw/pxt-nexusbot",
+                    "KitronikLtd/pxt-kitronik-klip-motor",
+                    "Veilkrand/pxt-RobotCar",
+                    "Tinkertanker/pxt-stepper-motor"
+                ]
+            },
+            {
+                "name": "Sensor",
+                "extensions": [
+                    "iBuilds/pxt-PTKidsBIT-IoT",
+                    "KitronikLtd/pxt-kitronik-air-quality",
+                    "DFRobot/pxt-DFRobot-NaturalScience",
+                    "KitronikLtd/pxt-kitronik-klimate",
+                    "KitronikLtd/pxt-kitronik-smart-greenhouse",
+                    "MakeAndLearn/pxt-microshield",
+                    "sparkfun/pxt-weather-bit",
+                    "sparkfun/pxt-gator-environment",
+                    "xinabox/pxt-SW01",
+                    "CytronTechnologies/pxt-edubit",
+                    "CytronTechnologies/pxt-rekabit",
+                    "Imagimaker/pxt-imagimaker",
+                    "KitronikLtd/pxt-kitronik-clip-detector",
+                    "pimoroni/pxt-envirobit",
+                    "pimoroni/pxt-automationbit",
+                    "51bit/SmartTools",
+                    "1010Technologies/pxt-makerbit",
+                    "1010Technologies/pxt-makerbit-pins",
+                    "elecfreaks/pxt-wukong",
+                    "longan-link/pxt-longanbit",
+                    "adafruit/pxt-crickit",
+                    "adafruit/pxt-seesaw"
+                ]
+            },
+            {
+                "name": "Sound",
+                "extensions": [
+                    "KitronikLtd/pxt-kitronik-klef-piano",
+                    "1010Technologies/pxt-makerbit-mp3",
+                    "51bit/dfplayermini"
+                ]
+            },
+            {
+                "name": "Wearables",
+                "extensions": [
+                    "4tronix/EggBit",
+                    "BrightWearables/pxt-microbit-brightboard",
+                    "microsoft/pxt-jacdac"
+                ]
+            },
+            {
+                "name": "Utilities",
+                "extensions": [
+                    "aorczyk/soroban",
+                    "aorczyk/pf-recorder",
+                    "aorczyk/lego-pf-transmitter",
+                    "aorczyk/lego-pf-receiver",
+                    "Kodely-io/dot",
+                    "TeacherPinky/Wait-Until-Blocks",
+                    "microbit-foundation/pxt-microbit-v2-power",
+                    "AlexandreFrolov/DS3231",
+                    "bsiever/microbit-pxt-timeanddate",
+                    "KitronikLtd/pxt-kitronik-rtc",
+                    "CoderDojoOlney/pxt-olney",
+                    "assirati/pxt-inventura",
+                    "microsoft/pxt-microturtle",
+                    "microsoft/pxt-midi",
+                    "microsoft/pxt-bluetooth-midi",
+                    "LaboratoryForPlayfulComputation/pxt-BlockyTalkyBLE",
+                    "mbitfun/pxt-katakana",
+                    "pizayanz/pxt-linebeacon",
+                    "pimoroni/pxt-scrollbit",
+                    "vengit/pxt-sbrick",
+                    "Annikken/pxt-Andee",
+                    "lwchkg/pxt-proportional-font",
+                    "alsrobot-microbit-makecode-packages/ALSRobotKeyboard",
+                    "elecfreaks/pxt-nezha"
+                ]
+            }
         ]
     },
     "galleries": {
