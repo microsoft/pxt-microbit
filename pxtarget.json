@@ -385,6 +385,7 @@
         "enableTrace": true,
         "ignoreDocsErrors": false,
         "errorList": true,
+        "workspaceSearch": true,
         "allowPackageExtensions": true,
         "addNewTypeScriptFile": true,
         "experiments": [
