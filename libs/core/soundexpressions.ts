@@ -288,13 +288,14 @@ namespace soundExpression {
     //% block="play sound $sound"
     //% sound.shadow=soundExpression_createSoundEffect
     //% weight=101
+    //% blockGap=8
     export function playSoundEffect(sound: soundExpression.Sound) {
         soundExpression.playSound(sound);
     }
 
     //% blockId=soundExpression_createSoundEffect
     //% blockNamespace=music
-    //% block="$waveShape|| start frequency $startFrequency end fequency $endFrequency duration $duration start volume $startVolume end volume $endVolume effect $effect interpolation $interpolation"
+    //% block="$waveShape|| start frequency $startFrequency end frequency $endFrequency duration $duration start volume $startVolume end volume $endVolume effect $effect interpolation $interpolation"
     //% waveShape.defl=WaveShape.Sine
     //% waveShape.fieldEditor=soundeffect
     //% startFrequency.defl=2000
