@@ -287,14 +287,14 @@ namespace soundExpression {
     //% blockNamespace=music
     //% block="play sound $sound"
     //% sound.shadow=soundExpression_createSoundEffect
-    //% weight=101
+    //% weight=101 help=music/play-sound-effect
     //% blockGap=8
     export function playSoundEffect(sound: soundExpression.Sound) {
         soundExpression.playSound(sound);
     }
 
     //% blockId=soundExpression_createSoundEffect
-    //% blockNamespace=music
+    //% blockNamespace=music help=music/create-sound-effect
     //% block="$waveShape|| start frequency $startFrequency end frequency $endFrequency duration $duration start volume $startVolume end volume $endVolume effect $effect interpolation $interpolation"
     //% waveShape.defl=WaveShape.Sine
     //% waveShape.fieldEditor=soundeffect
