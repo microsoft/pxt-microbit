@@ -6,7 +6,7 @@ namespace pxsim.music {
     }
 
     export function __stopSoundExpressions() {
-        AudioContextManager.stopAll();
+        pxsim.codal.music.__stopSoundExpressions();
     }
 
     const giggle = "giggle";

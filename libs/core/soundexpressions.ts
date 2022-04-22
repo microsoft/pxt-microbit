@@ -17,6 +17,7 @@ class SoundExpression {
     //% help=music/play
     //% group="micro:bit (V2)"
     //% parts=builtinspeaker
+    //% deprecated=1
     play() {
         music.__playSoundExpression(this.notes, false)
     }
@@ -30,8 +31,13 @@ class SoundExpression {
     //% help=music/play-until-done
     //% group="micro:bit (V2)"
     //% parts=builtinspeaker
+    //% deprecated=1
     playUntilDone() {
         music.__playSoundExpression(this.notes, true)
+    }
+
+    getNotes() {
+        return this.notes;
     }
 }
 
@@ -44,7 +50,6 @@ enum WaveShape {
 }
 
 enum InterpolationCurve {
-    None,
     Linear,
     Curve,
     Logarithmic
@@ -55,6 +60,13 @@ enum SoundExpressionEffect {
     Vibrato = 1,
     Tremolo = 2,
     Warble = 3
+}
+
+enum SoundExpressionPlayMode {
+    //% block="until done"
+    UntilDone,
+    //% block="in background"
+    InBackground
 }
 
 namespace soundExpression {
@@ -282,19 +294,26 @@ namespace soundExpression {
 
         new SoundExpression(src).playUntilDone();
     }
+}
 
+namespace music {
     //% blockId=soundExpression_playSoundEffect
-    //% blockNamespace=music
-    //% block="play sound $sound"
+    //% block="play sound $sound $mode"
     //% sound.shadow=soundExpression_createSoundEffect
-    //% weight=101 help=music/play-sound-effect
+    //% weight=100 help=music/play-sound-effect
     //% blockGap=8
-    export function playSoundEffect(sound: soundExpression.Sound) {
-        soundExpression.playSound(sound);
+    //% group="micro:bit (V2)"
+    export function playSoundEffect(sound: string, mode: SoundExpressionPlayMode) {
+        if (mode === SoundExpressionPlayMode.InBackground) {
+            new SoundExpression(sound).play();
+        }
+        else {
+            new SoundExpression(sound).playUntilDone();
+        }
     }
 
     //% blockId=soundExpression_createSoundEffect
-    //% blockNamespace=music help=music/create-sound-effect
+    //% help=music/create-sound-effect
     //% block="$waveShape|| start frequency $startFrequency end frequency $endFrequency duration $duration start volume $startVolume end volume $endVolume effect $effect interpolation $interpolation"
     //% waveShape.defl=WaveShape.Sine
     //% waveShape.fieldEditor=soundeffect
@@ -307,7 +326,8 @@ namespace soundExpression {
     //% interpolation.defl=InterpolationCurve.Linear
     //% compileHiddenArguments=true
     //% inlineInputMode="variable"
-    export function createSoundEffect(waveShape: WaveShape, startFrequency: number, endFrequency: number, startVolume: number, endVolume: number, duration: number, effect: SoundExpressionEffect, interpolation: InterpolationCurve) {
+    //% group="micro:bit (V2)"
+    export function createSoundEffect(waveShape: WaveShape, startFrequency: number, endFrequency: number, startVolume: number, endVolume: number, duration: number, effect: SoundExpressionEffect, interpolation: InterpolationCurve): string {
         const sound = new soundExpression.Sound();
         sound.wave = waveShape;
         sound.frequency = startFrequency;
@@ -318,10 +338,6 @@ namespace soundExpression {
         sound.fx = effect;
 
         switch (interpolation) {
-            case InterpolationCurve.None:
-                sound.shape = soundExpression.InterpolationEffect.None;
-                sound.steps = 128;
-                break;
             case InterpolationCurve.Linear:
                 sound.shape = soundExpression.InterpolationEffect.Linear;
                 sound.steps = 128;
@@ -351,6 +367,17 @@ namespace soundExpression {
                 break;
         }
 
-        return sound;
+        return sound.src;
+    }
+
+    //% blockId=soundExpression_builtinSoundEffect
+    //% block="$soundExpression"
+    //% blockGap=8
+    //% group="micro:bit (V2)"
+    //% toolboxParent=soundExpression_playSoundEffect
+    //% toolboxParentArgument=sound
+    //% weight=102
+    export function builtinSoundEffect(soundExpression: SoundExpression) {
+        return soundExpression.getNotes();
     }
 }
