@@ -535,7 +535,7 @@ namespace music {
         if (isrest) {
             music.rest(currentDuration * beat)
         } else {
-            music.playTone(getFrequencyForNote(note, currentOctave), currentDuration * beat);
+            music.playTone(getFrequencyForNote(currentOctave, note), currentDuration * beat);
         }
         melody.currentDuration = currentDuration;
         melody.currentOctave = currentOctave;
