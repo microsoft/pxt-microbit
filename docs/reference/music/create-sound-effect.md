@@ -27,7 +27,7 @@ A sound expression is set of parameters that describe a **[Sound](/types/sound)*
 >* `warble`: similar to `vibrato` but with faster variations in the frequency changes.
 * **interpolation**: controls the rate of frequency change in the sound expression.
 >* `linear`: the change in frequency is constant for the duration of the sound.
->* `curve`: the change in freequency is faster at the beginning of the sound and slows toward the end.
+>* `curve`: the change in frequency is faster at the beginning of the sound and slows toward the end.
 >* `logarithmic`: the change in frequency is rapid during the very first part of the sound.
 
 ## Returns
