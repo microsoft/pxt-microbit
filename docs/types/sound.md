@@ -125,7 +125,7 @@ Interpolation is how the sound expression will make the changes in frequency or 
 
 >![Frequency from low to high](/static/types/sound/interp-curve.png)
 
-* **Logrithmic**: The change in frequency is rapid during the very first part of the sound.
+* **Logarithmic**: The change in frequency is rapid during the very first part of the sound.
 
 
 >![Frequency from low to high](/static/types/sound/interp-log.png)
