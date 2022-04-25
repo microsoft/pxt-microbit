@@ -22,7 +22,7 @@ This block requires the [micro:bit V2](/device/v2) hardware. If you use this blo
 
 ## Parameters
 
-* **sound**: a [string]() that is the sound expression for the sound you want to play.
+* **sound**: a [string](/types/string) that is the sound expression for the sound you want to play.
 * **mode**: the play mode for the sound, either `until done` or `background`.
 
 ## Example
