@@ -317,7 +317,8 @@
             "microsoft/pxt-jacdac/weight-scale",
             "microsoft/pxt-jacdac/wifi",
             "microsoft/pxt-jacdac/wind-direction",
-            "microsoft/pxt-jacdac/wind-speed"
+            "microsoft/pxt-jacdac/wind-speed",
+            "plenprojectcompany/pxt-PLENbit_full"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",
@@ -763,7 +764,8 @@
             "bsiever/microbit-pxt-blehid": {},
             "dfrobot/pxt-dfrobot_environment_science": {},
             "ekkai/aicococam": {},
-            "elecfreaks/pxt-xgo": {}
+            "elecfreaks/pxt-xgo": {},
+            "plenprojectcompany/pxt-plenbit_full": { "tags": [ "Robotics" ] }
         },
         "upgrades": {
             "tinkertanker/pxt-iot-environment-kit": "min:v4.2.1",

@@ -633,6 +633,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
   "url":"/pkg/ReRoKit/pxt-reromicro",
   "cardType": "package"
 }, {
+  "name": "PLEN bit full",
+  "url":"/pkg/plenprojectcompany/pxt-PLENbit_full",
+  "cardType": "package"
+}, {
   "name": "PLEN bit",
   "url":"/pkg/plenprojectcompany/pxt-PLENbit",
   "cardType": "package"
