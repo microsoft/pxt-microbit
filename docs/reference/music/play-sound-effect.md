@@ -27,7 +27,7 @@ This block requires the [micro:bit V2](/device/v2) hardware. If you use this blo
 
 ## Example
 
-Play a sound from a sound espression for `1` second.
+Play a sound from a sound expression for `1` second.
 
 ```blocks
 music.playSoundEffect(music.createSoundEffect(WaveShape.Sine, 2000, 0, 1023, 0, 1000, SoundExpressionEffect.None, InterpolationCurve.Linear), SoundExpressionPlayMode.UntilDone)
