@@ -24,4 +24,8 @@ music.volume()
 [stopMelody](/reference/music/stop-melody), [onEvent](/reference/music/on-event),
 [beat](/reference/music/beat), [tempo](/reference/music/tempo),
 [changeTempoBy](/reference/music/change-tempo-by), [setTempo](/reference/music/set-tempo),
-[setVolume](/reference/music/set-volume), [volume](/reference/music/volume)
+[setVolume](/reference/music/set-volume), [volume](/reference/music/volume),
+[play sound effect](/reference/music/play-sound-effect),
+[create sound effect](/reference/music/create-sound-effect),
+[built-in sound effect](/reference/music/builtin-sound-effect)
+
