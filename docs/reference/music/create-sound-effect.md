@@ -17,7 +17,7 @@ A sound expression is set of parameters that describe a **[Sound](/types/sound)*
 >* `square`: square wave shape
 >* `noise`: random noise generated wave shape
 * **startFrequency**: a [number](/types/number) that is the frequency of the waveform when the sound expression starts.
-* **endFrequency**: a [number](/types/number) the freqeunce of the waveform when the sound expression stops.
+* **endFrequency**: a [number](/types/number) that is the frequency of the waveform when the sound expression stops.
 * **startVolume**: a [number](/types/number) the initial volume of the sound expression.
 * **endVolume**: a [number](/types/number) the ending volume of the sound expression.
 * **duration**: a [number](/types/number) the duration in milliseconds of the sound expression.
