@@ -1,6 +1,6 @@
 # Sound
 
-A **Sound** is a data object that is created from a sound expression. A sound expression is group of parameters that define a sound sound, such as wave shape, sound volume, frequency, and duration.
+A **Sound** is a data object that is created from a sound expression. A sound expression is group of parameters that define a sound, such as wave shape, sound volume, frequency, and duration.
 
 A sound is generated from an expression based on a fundamental wave shape, or waveform. To make a sound wave, the sound data must change from a high peak to a low trough over a period of time and repeat. The peaks and troughs are the positive amplitudes and negative amplitudes of the wave across the zero line. The volume controls the amplitude of the wave.
 
