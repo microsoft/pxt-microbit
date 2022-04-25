@@ -8,13 +8,19 @@
         "**/yotta_modules/**": true,
         "**/yotta_targets": true,
         "**/pxt_modules/**": true
-    },    
+    },
     "search.exclude": {
         "**/node_modules": true,
         "**/yotta_modules/**": true,
         "**/yotta_targets": true,
         "**/pxt_modules/**": true
-    },    
+    },
+    "files.associations": {
+        "*.blocks": "html",
+        "*.overrides": "less",
+        "*.variables": "less",
+        "*.jres": "json"
+    },
     "tslint.enable": true,
     "tslint.rulesDirectory": "node_modules/tslint-microsoft-contrib",
     "typescript.tsdk": "./node_modules/typescript/lib"

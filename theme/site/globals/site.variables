@@ -87,6 +87,10 @@
 @serialGraphBackground: #d9d9d9;
 
 /*---------------------------
-   Tutorial Code Validation
+   Tutorial
 ----------------------------*/
 @tutorialCodeValidationCorrectBackground: #cd0365;
+@sidebarPrimaryColor: @primaryColor;
+@sidebarSecondaryColor: @white;
+@sidbarActiveTabIconColor: @primaryColor;
+@tutorialBarBackgroundColor: #ecf0f1;
