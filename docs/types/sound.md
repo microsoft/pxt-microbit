@@ -15,9 +15,8 @@ In code, a **Sound** type is a complex data object that includes data for all th
 Code for creating and playing a sound from a sound expression could look like this:
 
 ```typescript-ignore
-let mySound: soundExpression.Sound = null
-mySound = soundExpression.createSoundEffect(WaveShape.Sine, 2000, 0, 1023, 0, 500, SoundExpressionEffect.None, InterpolationCurve.Linear)
-soundExpression.playSoundEffect(mySound)
+let mySound = music.createSoundEffect(WaveShape.Sine, 2000, 0, 1023, 0, 500, SoundExpressionEffect.None, InterpolationCurve.Linear)
+music.playSoundEffect(mySound, SoundExpressionPlayMode.UntilDone)
 ```
 
 ### ~

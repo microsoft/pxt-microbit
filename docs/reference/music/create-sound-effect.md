@@ -3,7 +3,7 @@
 Create a sound effect from a sound expression.
 
 ```sig
-soundExpression.createSoundEffect(WaveShape.Sine, 2000, 0, 1023, 0, 500, SoundExpressionEffect.None, InterpolationCurve.Linear)
+music.createSoundEffect(WaveShape.Sine, 2000, 0, 1023, 0, 500, SoundExpressionEffect.None, InterpolationCurve.Linear)
 ```
 
 A sound expression is set of parameters that describe a **[Sound](/types/sound)** that will last for some amount of time. These parameters specify a base waveform, frequency range, sound volume, and effects. Sound data is created as a [Sound](/types/sound) object and can then be [played](/reference/music/play-sound-effect) to the speaker, headphones, or at an output pin.
@@ -32,16 +32,15 @@ A sound expression is set of parameters that describe a **[Sound](/types/sound)*
 
 ## Returns
 
-* a [sound](/types/sound) expression with the the desired sound effect parameters.
+* a [sound](/types/sound) expression [string](/types/string) with the the desired sound effect parameters.
 
 ## Example
 
 Create a sound from a sound expression and assign it to a variable. Play the sound after it's created.
 
 ```blocks
-let mySound: soundExpression.Sound = null
-mySound = soundExpression.createSoundEffect(WaveShape.Sine, 2000, 0, 1023, 0, 500, SoundExpressionEffect.None, InterpolationCurve.Linear)
-soundExpression.playSoundEffect(mySound)
+let mySound = music.createSoundEffect(WaveShape.Sine, 2000, 0, 1023, 0, 500, SoundExpressionEffect.None, InterpolationCurve.Linear)
+music.playSoundEffect(mySound, SoundExpressionPlayMode.UntilDone)
 ```
 
 ## See also

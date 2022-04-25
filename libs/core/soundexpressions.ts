@@ -376,7 +376,7 @@ namespace music {
     //% group="micro:bit (V2)"
     //% toolboxParent=soundExpression_playSoundEffect
     //% toolboxParentArgument=sound
-    //% weight=102
+    //% weight=102 help=music/builtin-sound-effect
     export function builtinSoundEffect(soundExpression: SoundExpression) {
         return soundExpression.getNotes();
     }
