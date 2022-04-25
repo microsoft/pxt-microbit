@@ -12,6 +12,14 @@ a sound level number as a _threshold_ (just the right amount of sound) to make t
 [on sound](/reference/input/on-sound) event happen. To set a threshold, you choose the type of sound
 to detect, `loud` or `quiet`, and then the sound level for that type.
 
+### ~ reminder
+
+![works with micro:bit V2 only image](/static/v2/v2-only.png)
+
+This block requires the [micro:bit V2](/device/v2) hardware. If you use this block with a micro:bit v1 board, you will see the **927** error code on the screen.
+
+### ~
+
 ## Parameters
 
 * **sound**: the type of sound to dectect: `loud` or `quiet`.

@@ -1,10 +1,18 @@
 # sound Level
 
-Find out what the the level of sound heard by microphone is.
+Find out what the the level of sound heard by the microphone is.
 
 ```sig
 input.soundLevel()
 ```
+
+### ~ reminder
+
+![works with micro:bit V2 only image](/static/v2/v2-only.png)
+
+This block requires the [micro:bit V2](/device/v2) hardware. If you use this block with a micro:bit v1 board, you will see the **927** error code on the screen.
+
+### ~
 
 ## Returns
 
@@ -26,7 +34,7 @@ basic.forever(function () {
 
 ## See also
 
-[on sound](/reference/input/on-sound), [set sound threshold](/reference/input/sound-level)
+[on sound](/reference/input/on-sound), [set sound threshold](/reference/input/set-sound-threshold)
 
 ```package
 microphone
