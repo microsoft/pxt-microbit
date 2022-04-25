@@ -1,6 +1,6 @@
 # create Sound Effect
 
-Create a sound effect from a sound expression.
+Create a sound expression string for a sound effect.
 
 ```sig
 music.createSoundEffect(WaveShape.Sine, 2000, 0, 1023, 0, 500, SoundExpressionEffect.None, InterpolationCurve.Linear)
@@ -36,7 +36,7 @@ A sound expression is set of parameters that describe a **[Sound](/types/sound)*
 
 ## Example
 
-Create a sound from a sound expression and assign it to a variable. Play the sound after it's created.
+Create a sound expression string and assign it to a variable. Play the sound for the sound expression.
 
 ```blocks
 let mySound = music.createSoundEffect(WaveShape.Sine, 2000, 0, 1023, 0, 500, SoundExpressionEffect.None, InterpolationCurve.Linear)
@@ -45,4 +45,4 @@ music.playSoundEffect(mySound, SoundExpressionPlayMode.UntilDone)
 
 ## See also
 
-[play sound effect](/reference/music/play-sound-effect)
+[play sound effect](/reference/music/play-sound-effect), [built-in sound effect](/reference/music/builtin-sound-effect)

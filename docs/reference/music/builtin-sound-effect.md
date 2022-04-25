@@ -36,4 +36,5 @@ music.playSoundEffect(music.builtinSoundEffect(soundExpression.giggle), SoundExp
 
 ## See also
 
-[play sound effect](/reference/music/play-sound-effect)
+[play sound effect](/reference/music/play-sound-effect),
+[create sound effect](/reference/music/create-sound-effect)
