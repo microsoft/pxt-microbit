@@ -59,7 +59,7 @@ A square wave has both verical rising and falling edges with a flat section on t
 
 ### Noise wave
 
-The noise wave is created using random frequenices and volume. Setting the frequency parameters for the sound expression has no effect on sounds created with the noise wave.
+The noise wave is created using random frequenices and volume. Setting the frequency parameters for the sound expression creates a "tuning" range for the noise sound effect.
 
 ![Noise wave](/static/types/sound/noise-wave.png)
 
