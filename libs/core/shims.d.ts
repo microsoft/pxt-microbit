@@ -670,11 +670,11 @@ declare namespace music {
      * @param enabled whether the built-in speaker is enabled in addition to the sound pin
      */
     //% blockId=music_set_built_in_speaker_enable block="set built-in speaker $enabled"
-    //% blockGap=8
     //% group="micro:bit (V2)"
     //% parts=builtinspeaker
     //% help=music/set-built-in-speaker-enabled
-    //% enabled.shadow=toggleOnOff shim=music::setBuiltInSpeakerEnabled
+    //% enabled.shadow=toggleOnOff
+    //% weight=0 shim=music::setBuiltInSpeakerEnabled
     function setBuiltInSpeakerEnabled(enabled: boolean): void;
 
     /**
