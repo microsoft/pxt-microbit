@@ -481,6 +481,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 
 ```codecard
 [{
+  "name": "Elecfreaks XGO",
+  "url":"/pkg/elecfreaks/pxt-xgo",
+  "cardType": "package"
+}, {
   "name": "Robotixlab Theta",
   "url":"/pkg/4tronix/Theta",
   "cardType": "package"
