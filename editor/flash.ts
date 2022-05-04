@@ -252,15 +252,16 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
 
         pxt.tickEvent("hid.flash.connect", { codal: this.usesCODAL ? 1 : 0, daplink: daplinkVersion, bin: binVersion });
 
+        // set baud rate
         const baud = new Uint8Array(5)
         baud[0] = 0x82 // set baud
         pxt.HF2.write32(baud, 1, 115200)
         await this.dapCmd(baud)
         // setting the baud rate on serial may reset NRF (depending on daplink version), so delay after
         await pxt.Util.delay(200);
-
         // only init after setting baud rate, in case we got reset
         await this.cortexM.init()
+        await this.cortexM.reset(true)
 
         const res = await this.readWords(0x10000010, 2);
         this.pageSize = res[0]
