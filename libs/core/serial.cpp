@@ -209,6 +209,7 @@ namespace serial {
     //% blockId=serial_redirect_to_usb block="serial|redirect to USB"
     void redirectToUSB() {
 #if MICROBIT_CODAL
+      is_redirected = false;
       uBit.serial.redirect(uBit.io.usbTx, uBit.io.usbRx);
       uBit.serial.setBaud(115200);
 #else
