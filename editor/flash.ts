@@ -717,8 +717,17 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
             log(`jacdac: disabled`)
             return
         }
-        await pxt.Util.delay(700); // wait for the program to start and setup memory correctly
-        const xchg = await this.findJacdacXchgAddr()
+        // allow jacdac to boot
+        const now = pxt.U.now()
+        await pxt.Util.delay(1000)
+        let xchgRetry = 0
+        let xchg: number
+        while (xchg == null && xchgRetry++ < 2) {
+            log(`jacdac: finding xchg address (retry ${xchgRetry})`)
+            await pxt.Util.delay(100); // wait for the program to start and setup memory correctly
+            xchg = await this.findJacdacXchgAddr()
+        }
+        log(`jacdac: exchange address 0x${xchg ? xchg.toString(16) : "?"}; ${xchgRetry} retries; ${(pxt.U.now() - now) | 0}ms`)
         if (xchg == null) {
             log("jacdac: xchg address not found")
             pxt.tickEvent("hid.flash.jacdac.error.missingxchg");
