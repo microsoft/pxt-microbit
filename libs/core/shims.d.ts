@@ -1119,6 +1119,10 @@ declare namespace serial {
     //% blockId=serialSetTxBufferSize block="serial set tx buffer size to $size"
     //% advanced=true shim=serial::setTxBufferSize
     function setTxBufferSize(size: uint8): void;
+
+    /** Send DMESG debug buffer over serial. */
+    //% shim=serial::writeDmesg
+    function writeDmesg(): void;
 }
 
 
