@@ -77,10 +77,12 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
     private pbuf = new pxt.U.PromiseBuffer<Uint8Array>();
     private pageSize = 1024;
     private numPages = 256;
+
     private usesCODAL = false;
+    private jacdacInHex = false
     private forceFullFlash = /webusbfullflash=1/.test(window.location.href);
     private get useJACDAC() {
-        return this.usesCODAL;
+        return this.jacdacInHex && this.usesCODAL;
     }
 
     onSerial = (buf: Uint8Array, isStderr: boolean) => { };
@@ -301,9 +303,12 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
     }
 
     reflashAsync(resp: pxtc.CompileResult): Promise<void> {
+        pxt.tickEvent("hid.flash.start");
+
         log("reflash")
         startTime = 0
-        pxt.tickEvent("hid.flash.start");
+        const codalJson = resp.outfiles["codal.json"]
+        this.jacdacInHex = codalJson && !!pxt.Util.jsonTryParse(codalJson)?.definitions?.JACDAC
         this.flashAborted = false;
         this.flashing = true;
         return (this.io.isConnected() ? Promise.resolve() : this.io.reconnectAsync())
