@@ -308,7 +308,8 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
         log("reflash")
         startTime = 0
         const codalJson = resp.outfiles["codal.json"]
-        this.jacdacInHex = codalJson && !!pxt.Util.jsonTryParse(codalJson)?.definitions?.JACDAC
+        // JACDAC_WEBUSB is defined in microsoft/pxt-jacdac/pxt.json
+        this.jacdacInHex = codalJson && !!pxt.Util.jsonTryParse(codalJson)?.definitions?.JACDAC_WEBUSB
         this.flashAborted = false;
         this.flashing = true;
         return (this.io.isConnected() ? Promise.resolve() : this.io.reconnectAsync())
