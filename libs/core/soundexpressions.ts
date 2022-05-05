@@ -300,7 +300,7 @@ namespace music {
     //% blockId=soundExpression_playSoundEffect
     //% block="play sound $sound $mode"
     //% sound.shadow=soundExpression_createSoundEffect
-    //% weight=100
+    //% weight=100 help=music/play-sound-effect
     //% blockGap=8
     //% group="micro:bit (V2)"
     export function playSoundEffect(sound: string, mode: SoundExpressionPlayMode) {
@@ -313,6 +313,7 @@ namespace music {
     }
 
     //% blockId=soundExpression_createSoundEffect
+    //% help=music/create-sound-effect
     //% block="$waveShape|| start frequency $startFrequency end frequency $endFrequency duration $duration start volume $startVolume end volume $endVolume effect $effect interpolation $interpolation"
     //% waveShape.defl=WaveShape.Sine
     //% waveShape.fieldEditor=soundeffect
@@ -375,7 +376,7 @@ namespace music {
     //% group="micro:bit (V2)"
     //% toolboxParent=soundExpression_playSoundEffect
     //% toolboxParentArgument=sound
-    //% weight=102
+    //% weight=102 help=music/builtin-sound-effect
     export function builtinSoundEffect(soundExpression: SoundExpression) {
         return soundExpression.getNotes();
     }

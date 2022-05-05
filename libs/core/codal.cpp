@@ -24,7 +24,11 @@ int list_fibers(Fiber **dest) {
 #endif
 
 extern "C" void target_panic(int error_code) {
-#if !MICROBIT_CODAL
+#if MICROBIT_CODAL
+    target_disable_irq();
+    DMESG("PANIC %d", error_code);
+    pxt::dumpDmesg();
+#else
     // wait for serial to flush
     sleep_us(300000);
 #endif
@@ -46,7 +50,7 @@ MicroBitEvent lastEvent;
 bool serialLoggingDisabled;
 
 void platform_init() {
-    microbit_seed_random();    
+    microbit_seed_random();
     int seed = microbit_random(0x7fffffff);
     DMESG("random seed: %d", seed);
     seedRandom(seed);
@@ -87,8 +91,6 @@ static void initCodal() {
     // repeat error 4 times and restart as needed
     microbit_panic_timeout(4);
 }
-
-void dumpDmesg() {}
 
 // ---------------------------------------------------------------------------
 // An adapter for the API expected by the run-time.

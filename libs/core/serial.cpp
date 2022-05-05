@@ -46,6 +46,10 @@ enum BaudRate {
 //% weight=2 color=#002050 icon="\uf287"
 //% advanced=true
 namespace serial {
+#if MICROBIT_CODAL
+    bool is_redirected;
+#endif
+
     // note that at least one // followed by % is needed per declaration!
 
     /**
@@ -167,8 +171,10 @@ namespace serial {
     //% blockGap=8
     void redirect(SerialPin tx, SerialPin rx, BaudRate rate) {
 #if MICROBIT_CODAL
-      if (getPin(tx) && getPin(rx))
+      if (getPin(tx) && getPin(rx)) {
         uBit.serial.redirect(*getPin(tx), *getPin(rx));
+        is_redirected = 1;
+      }
       uBit.serial.setBaud(rate);
 #else
       PinName txn;
@@ -203,6 +209,7 @@ namespace serial {
     //% blockId=serial_redirect_to_usb block="serial|redirect to USB"
     void redirectToUSB() {
 #if MICROBIT_CODAL
+      is_redirected = false;
       uBit.serial.redirect(uBit.io.usbTx, uBit.io.usbRx);
       uBit.serial.setBaud(115200);
 #else
@@ -232,4 +239,29 @@ namespace serial {
     void setTxBufferSize(uint8_t size) {
       uBit.serial.setTxBufferSize(size);
     }
+
+    /** Send DMESG debug buffer over serial. */
+    //%
+    void writeDmesg() {
+        pxt::dumpDmesg();
+    }
+}
+
+namespace pxt {
+
+static void sendString(const char *c, int len) {
+  while (len--)
+    uBit.serial.putc(*c++);
+}
+
+void dumpDmesg() {
+#if MICROBIT_CODAL
+    if (serial::is_redirected)
+      return;
+    unsigned len = codalLogStore.ptr;
+    codalLogStore.ptr = 0;
+    sendString(codalLogStore.buffer, len);
+#endif
+}
+
 }

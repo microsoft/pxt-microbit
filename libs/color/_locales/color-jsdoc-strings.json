@@ -1,0 +1,23 @@
+{
+  "ColorHues": "Well known color hues",
+  "Colors": "Well known colors",
+  "color": "Color manipulation",
+  "color.ColorBuffer": "A buffer of colors",
+  "color.ColorBuffer.write": "Writes the content of the src color buffer starting at the start dstOffset in the current buffer",
+  "color.ColorBuffer.write|param|dstOffset": "@param src",
+  "color.ColorBufferLayout.ARGB": "32bit RGB color with alpha",
+  "color.ColorBufferLayout.RGB": "24bit RGB color",
+  "color.createBuffer": "Converts an array of colors into a color buffer",
+  "color.fade": "Fade the color by the brightness",
+  "color.fade|param|brightness": "the amount of brightness to apply to the color, eg: 128",
+  "color.fade|param|color": "color to fade",
+  "color.hsv": "Convert an HSV (hue, saturation, value) color to RGB",
+  "color.hsv|param|hue": "value of the hue channel between 0 and 255. eg: 255",
+  "color.hsv|param|sat": "value of the saturation channel between 0 and 255. eg: 255",
+  "color.hsv|param|val": "value of the value channel between 0 and 255. eg: 255",
+  "color.rgb": "Converts red, green, blue channels into a RGB color",
+  "color.rgb|param|blue": "value of the blue channel between 0 and 255. eg: 255",
+  "color.rgb|param|green": "value of the green channel between 0 and 255. eg: 255",
+  "color.rgb|param|red": "value of the red channel between 0 and 255. eg: 255",
+  "color.wellKnown": "Get the RGB value of a known color"
+}

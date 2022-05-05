@@ -681,6 +681,7 @@
   "serial.setWriteLinePadding": "Sets the padding length for lines sent with \"write line\".",
   "serial.setWriteLinePadding|param|length": "the number of bytes alignment, eg: 0",
   "serial.writeBuffer": "Send a buffer through serial connection",
+  "serial.writeDmesg": "Send DMESG debug buffer over serial.",
   "serial.writeLine": "Print a line of text to the serial port",
   "serial.writeNumber": "Print a numeric value to the serial port",
   "serial.writeNumbers": "Print an array of numeric values as CSV to the serial port",

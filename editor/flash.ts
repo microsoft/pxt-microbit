@@ -77,10 +77,12 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
     private pbuf = new pxt.U.PromiseBuffer<Uint8Array>();
     private pageSize = 1024;
     private numPages = 256;
+
     private usesCODAL = false;
+    private jacdacInHex = false
     private forceFullFlash = /webusbfullflash=1/.test(window.location.href);
     private get useJACDAC() {
-        return this.usesCODAL;
+        return this.jacdacInHex && this.usesCODAL;
     }
 
     onSerial = (buf: Uint8Array, isStderr: boolean) => { };
@@ -252,15 +254,16 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
 
         pxt.tickEvent("hid.flash.connect", { codal: this.usesCODAL ? 1 : 0, daplink: daplinkVersion, bin: binVersion });
 
+        // set baud rate
         const baud = new Uint8Array(5)
         baud[0] = 0x82 // set baud
         pxt.HF2.write32(baud, 1, 115200)
         await this.dapCmd(baud)
         // setting the baud rate on serial may reset NRF (depending on daplink version), so delay after
         await pxt.Util.delay(200);
-
         // only init after setting baud rate, in case we got reset
         await this.cortexM.init()
+        await this.cortexM.reset(true)
 
         const res = await this.readWords(0x10000010, 2);
         this.pageSize = res[0]
@@ -300,9 +303,13 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
     }
 
     reflashAsync(resp: pxtc.CompileResult): Promise<void> {
+        pxt.tickEvent("hid.flash.start");
+
         log("reflash")
         startTime = 0
-        pxt.tickEvent("hid.flash.start");
+        const codalJson = resp.outfiles["codal.json"]
+        // JACDAC_WEBUSB is defined in microsoft/pxt-jacdac/pxt.json
+        this.jacdacInHex = codalJson && !!pxt.Util.jsonTryParse(codalJson)?.definitions?.JACDAC_WEBUSB
         this.flashAborted = false;
         this.flashing = true;
         return (this.io.isConnected() ? Promise.resolve() : this.io.reconnectAsync())
@@ -716,8 +723,17 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
             log(`jacdac: disabled`)
             return
         }
-        await pxt.Util.delay(700); // wait for the program to start and setup memory correctly
-        const xchg = await this.findJacdacXchgAddr()
+        // allow jacdac to boot
+        const now = pxt.U.now()
+        await pxt.Util.delay(1000)
+        let xchgRetry = 0
+        let xchg: number
+        while (xchg == null && xchgRetry++ < 2) {
+            log(`jacdac: finding xchg address (retry ${xchgRetry})`)
+            await pxt.Util.delay(100); // wait for the program to start and setup memory correctly
+            xchg = await this.findJacdacXchgAddr()
+        }
+        log(`jacdac: exchange address 0x${xchg ? xchg.toString(16) : "?"}; ${xchgRetry} retries; ${(pxt.U.now() - now) | 0}ms`)
         if (xchg == null) {
             log("jacdac: xchg address not found")
             pxt.tickEvent("hid.flash.jacdac.error.missingxchg");

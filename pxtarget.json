@@ -15,7 +15,8 @@
         "libs/microphone",
         "libs/settings",
         "libs/flashlog",
-        "libs/datalogger"
+        "libs/datalogger",
+        "libs/color"
     ],
     "cloud": {
         "workspace": false,
