@@ -8,7 +8,7 @@ basic.showNumber(2)
 
 ## Parameters
 
-* `value` is a [Number](/types/number). If the number is not single-digit number, it will scroll on the display.
+* `value` is a [Number](/types/number). If the number is not single-digit number, it will scroll on the display. If `value` is `NaN` (not a number), `?` is displayed.
 * `interval` is an optional [Number](/types/number). It means the number of milliseconds before sliding the `value` left by one LED each time. Bigger intervals make the sliding slower.
 
 ## Examples:
