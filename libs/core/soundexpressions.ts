@@ -341,8 +341,8 @@ namespace music {
         sound.wave = waveShape;
         sound.frequency = startFrequency;
         sound.volume = ((startVolume / 255) * 1023) | 0;
-        sound.endFrequency = ((endFrequency / 255) * 1023) | 0;
-        sound.endVolume = endVolume;
+        sound.endFrequency = endFrequency;
+        sound.endVolume = ((endVolume / 255) * 1023) | 0;
         sound.duration = duration;
         sound.fx = effect;
 
