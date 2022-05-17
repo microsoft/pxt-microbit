@@ -67,20 +67,26 @@ cd pxt-common-packages
 npm install
 cd ..
 ```
-6. Clone this repository.
+
+6. Link pxt-common-packages to pxt
+```
+npm link ../pxt
+```
+
+7. Clone this repository.
 ```
 git clone https://github.com/microsoft/pxt-microbit
 cd pxt-microbit
 ```
-7. Install the PXT command line (add `sudo` for Mac/Linux shells).
+8. Install the PXT command line (add `sudo` for Mac/Linux shells).
 ```
 npm install -g pxt
 ```
-8. Install the pxt-microbit dependencies.
+9. Install the pxt-microbit dependencies.
 ```
 npm install
 ```
-8. Link pxt-microbit back to base pxt repo (add `sudo` for Mac/Linux shells). 
+10. Link pxt-microbit back to base pxt repo (add `sudo` for Mac/Linux shells). 
 This step is only required if you intend to make changes to pxt and/or 
 pxt-common-packages repos. If all you want is serve a local Makecode, you can skip
 this step.
