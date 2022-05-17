@@ -85,8 +85,8 @@ This step is only required if you intend to make changes to pxt and/or
 pxt-common-packages repos. If all you want is serve a local Makecode, you can skip
 this step.
 ```
-pxt link ../pxt
-pxt link ../pxt-common-packages
+npm link ../pxt
+npm link ../pxt-common-packages
 ```
 Note the above command assumes the folder structure of   
 ```
