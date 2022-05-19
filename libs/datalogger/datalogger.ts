@@ -43,7 +43,7 @@ namespace datalogger {
         });
     }
 
-    //% blockNamespace=datalogger
+
     export class ColumnValue {
         public value: string;
         constructor(
