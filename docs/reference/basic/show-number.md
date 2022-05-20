@@ -37,6 +37,10 @@ for (let i = 0; i < 6; i++) {
 }
 ```
 
+## Advanced
+
+If `value` is `NaN` (not a number), `?` is displayed.
+
 ## Other show functions
 
 * Use [show string](/reference/basic/show-string) to show a [String](/types/string) with letters on the screen.

@@ -22,7 +22,7 @@ namespace datalogger {
         initialized = true;
 
         includeTimestamp(FlashLogTimeStampFormat.Seconds);
-        mirrorToSerial(true);
+        mirrorToSerial(false);
 
         control.onEvent(DAL.MICROBIT_ID_LOG, DAL.MICROBIT_LOG_EVT_LOG_FULL, () => {
             _disabled = true;

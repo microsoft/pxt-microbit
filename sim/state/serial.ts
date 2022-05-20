@@ -87,4 +87,8 @@ namespace pxsim.serial {
     export function setBaudRate(rate: number) {
         // TODO
     }
+
+    export function writeDmesg() {
+        // TODO
+    }
 }
