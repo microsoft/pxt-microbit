@@ -268,1477 +268,298 @@
             "kitronikltd/pxt-kitronik-motor-driver",
             "tinkertanker/pxt-smarthome"
         ],
-        "preferredRepoLib": [
-            {
-                "slug": "Microsoft/pxt-neopixel",
-                "tags": [
-                    "IoT",
-                    "LEDs"
-                ]
-            },
-            {
-                "slug": "4tronix/BitBot",
-                "tags": [
-                    "Robotics"
-                ]
-            },
-            {
-                "slug": "dfrobot/pxt-maqueen",
-                "tags": [
-                    "Robotics"
-                ]
-            },
-            {
-                "slug": "kittenbot/pxt-robotbit",
-                "tags": [
-                    "Robotics"
-                ]
-            },
-            {
-                "slug": "Microsoft/pxt-sonar",
-                "tags": [
-                    "Individual"
-                ]
-            },
-            {
-                "slug": "Microsoft/pxt-microturtle",
-                "tags": [
-                    "Utilities"
-                ]
-            },
-            {
-                "slug": "Tinkertanker/pxt-tinkercademy-tinker-kit",
-                "tags": []
-            },
-            {
-                "slug": "seeed-studio/pxt-grove",
-                "tags": [
-                    "Kits"
-                ]
-            },
-            {
-                "slug": "elecfreaks/pxt-cutebot",
-                "tags": [
-                    "Robotics"
-                ]
-            },
-            {
-                "slug": "dfrobot/pxt-dfrobot-maqueenplus",
-                "tags": [
-                    "Robotics"
-                ]
-            },
-            {
-                "slug": "tinkertanker/pxt-iot-environment-kit",
-                "tags": []
-            },
-            {
-                "slug": "tinkertanker/pxt-ringbitcar",
-                "tags": []
-            },
-            {
-                "slug": "kitronikltd/pxt-kitronik-servo-lite",
-                "tags": [
-                    "Robotics"
-                ]
-            },
-            {
-                "slug": "kitronikltd/pxt-kitronik-motor-driver",
-                "tags": [
-                    "Robotics"
-                ]
-            },
-            {
-                "slug": "tinkertanker/pxt-smarthome",
-                "tags": []
-            }
-        ],
-        "approvedRepoLib": [
-            {
-                "slug": "microsoft/pxt-neopixel",
-                "tags": [
-                    "IoT",
-                    "LEDs"
-                ]
-            },
-            {
-                "slug": "microsoft/pxt-microturtle",
-                "tags": [
-                    "Utilities"
-                ]
-            },
-            {
-                "slug": "microsoft/pxt-sonar",
-                "tags": [
-                    "Individual"
-                ]
-            },
-            {
-                "slug": "microsoft/pxt-bluetooth-temperature-sensor",
-                "tags": [
-                    "Individual"
-                ]
-            },
-            {
-                "slug": "microsoft/pxt-bluetooth-midi",
-                "tags": [
-                    "Utilities"
-                ]
-            },
-            {
-                "slug": "microsoft/pxt-max6675",
-                "tags": [
-                    "Individual"
-                ]
-            },
-            {
-                "slug": "microsoft/pxt-midi",
-                "tags": [
-                    "Utilities"
-                ]
-            },
-            {
-                "slug": "microsoft/pxt-radio-blockchain",
-                "tags": []
-            },
-            {
-                "slug": "microsoft/pxt-bluetooth-max6675",
-                "tags": [
-                    "Individual"
-                ]
-            },
-            {
-                "slug": "microsoft/pxt-ws2812b",
-                "tags": [
-                    "LEDs"
-                ]
-            },
-            {
-                "slug": "microsoft/pxt-apa102",
-                "tags": []
-            },
-            {
-                "slug": "microsoft/pxt-radio-firefly",
-                "tags": []
-            },
-            {
-                "slug": "microsoft/pxt-ml",
-                "tags": []
-            },
-            {
-                "slug": "KitronikLtd/pxt-kitronik-servo-lite",
-                "tags": [
-                    "Robotics"
-                ]
-            },
-            {
-                "slug": "KitronikLtd/pxt-kitronik-motor-driver",
-                "tags": [
-                    "Robotics"
-                ]
-            },
-            {
-                "slug": "KitronikLtd/pxt-kitronik-I2C-16-servo",
-                "tags": [
-                    "Robotics"
-                ]
-            },
-            {
-                "slug": "KitronikLtd/pxt-kitronik-stopbit",
-                "tags": [
-                    "Electronics"
-                ]
-            },
-            {
-                "slug": "KitronikLtd/pxt-kitronik-lampbit",
-                "tags": [
-                    "LEDs"
-                ]
-            },
-            {
-                "slug": "KitronikLtd/pxt-kitronik-klimate",
-                "tags": [
-                    "Sensor"
-                ]
-            },
-            {
-                "slug": "KitronikLtd/pxt-kitronik-zip-64",
-                "tags": [
-                    "Gaming"
-                ]
-            },
-            {
-                "slug": "KitronikLtd/pxt-kitronik-rtc",
-                "tags": [
-                    "Utilities"
-                ]
-            },
-            {
-                "slug": "KitronikLtd/pxt-kitronik-game-controller",
-                "tags": [
-                    "Gaming"
-                ]
-            },
-            {
-                "slug": "KitronikLtd/pxt-kitronik-robotics-board",
-                "tags": [
-                    "Robotics"
-                ]
-            },
-            {
-                "slug": "KitronikLtd/pxt-kitronik-klef-piano",
-                "tags": [
-                    "Sound"
-                ]
-            },
-            {
-                "slug": "adafruit/pxt-crickit",
-                "tags": [
-                    "Sensor"
-                ]
-            },
-            {
-                "slug": "adafruit/pxt-seesaw",
-                "tags": [
-                    "Sensor"
-                ]
-            },
-            {
-                "slug": "Seeed-Studio/pxt-grove",
-                "tags": [
-                    "Kits"
-                ]
-            },
-            {
-                "slug": "Seeed-Studio/pxt-grove-zero-for-microbit",
-                "tags": []
-            },
-            {
-                "slug": "Tinkertanker/pxt-ir-receiver",
-                "tags": []
-            },
-            {
-                "slug": "Tinkertanker/pxt-iot-environment-kit",
-                "tags": []
-            },
-            {
-                "slug": "Tinkertanker/pxt-motorbit",
-                "tags": []
-            },
-            {
-                "slug": "Tinkertanker/pxt-realtimeclock-ds1307",
-                "tags": []
-            },
-            {
-                "slug": "Tinkertanker/pxt-tinkercademy-tinker-kit",
-                "tags": []
-            },
-            {
-                "slug": "Tinkertanker/pxt-rotary-encoder-ky040",
-                "tags": [
-                    "Individual"
-                ]
-            },
-            {
-                "slug": "Tinkertanker/pxt-tinkercademy-microbot",
-                "tags": []
-            },
-            {
-                "slug": "Tinkertanker/pxt-oled-ssd1306",
-                "tags": [
-                    "Display",
-                    "Display"
-                ]
-            },
-            {
-                "slug": "Tinkertanker/pxt-range-vl53l0x",
-                "tags": []
-            },
-            {
-                "slug": "Tinkertanker/pxt-continuous-servo",
-                "tags": []
-            },
-            {
-                "slug": "Tinkertanker/pxt-joystickbit",
-                "tags": []
-            },
-            {
-                "slug": "Tinkertanker/pxt-robit",
-                "tags": []
-            },
-            {
-                "slug": "Tinkertanker/pxt-smarthome",
-                "tags": []
-            },
-            {
-                "slug": "Tinkertanker/microDriver_SHT2x",
-                "tags": []
-            },
-            {
-                "slug": "Tinkertanker/pxt-ringbitcar",
-                "tags": []
-            },
-            {
-                "slug": "Tinkertanker/uDriver_PCA9585",
-                "tags": []
-            },
-            {
-                "slug": "Tinkertanker/pxt-alphanumeric-ht16k33",
-                "tags": []
-            },
-            {
-                "slug": "Tinkertanker/pxt-stepper-motor",
-                "tags": [
-                    "Robotics"
-                ]
-            },
-            {
-                "slug": "CoderDojoOlney/pxt-olney",
-                "tags": [
-                    "Utilities"
-                ]
-            },
-            {
-                "slug": "PaulDFoster/pxt-microbit-GY521",
-                "tags": [
-                    "Individual"
-                ]
-            },
-            {
-                "slug": "chevyng/pxt-ucl-junkrobot",
-                "tags": [
-                    "Robotics"
-                ]
-            },
-            {
-                "slug": "sparkfun/pxt-gamer-bit",
-                "tags": [
-                    "Gaming"
-                ]
-            },
-            {
-                "slug": "sparkfun/pxt-moto-bit",
-                "tags": [
-                    "Robotics"
-                ]
-            },
-            {
-                "slug": "sparkfun/pxt-weather-bit",
-                "tags": [
-                    "Sensor"
-                ]
-            },
-            {
-                "slug": "sparkfun/pxt-gator-environment",
-                "tags": [
-                    "Sensor"
-                ]
-            },
-            {
-                "slug": "minodekit/pxt-minode",
-                "tags": [
-                    "Kits"
-                ]
-            },
-            {
-                "slug": "LaboratoryForPlayfulComputation/pxt-BlockyTalkyBLE",
-                "tags": [
-                    "Utilities"
-                ]
-            },
-            {
-                "slug": "mbitfun/pxt-katakana",
-                "tags": [
-                    "Utilities"
-                ]
-            },
-            {
-                "slug": "jdarling/pxt-pca9685",
-                "tags": [
-                    "Electronics"
-                ]
-            },
-            {
-                "slug": "MUSELAB/pxt-wifi-shield",
-                "tags": [
-                    "IoT"
-                ]
-            },
-            {
-                "slug": "kittenbot/pxt-robotbit",
-                "tags": [
-                    "Robotics"
-                ]
-            },
-            {
-                "slug": "pizayanz/pxt-linebeacon",
-                "tags": [
-                    "Utilities"
-                ]
-            },
-            {
-                "slug": "sunfounder/pxt-sloth",
-                "tags": [
-                    "Robotics"
-                ]
-            },
-            {
-                "slug": "4tronix/BitBot",
-                "tags": [
-                    "Robotics"
-                ]
-            },
-            {
-                "slug": "pimoroni/pxt-scrollbit",
-                "tags": [
-                    "Utilities"
-                ]
-            },
-            {
-                "slug": "emwta/pxt-iBit",
-                "tags": [
-                    "Robotics"
-                ]
-            },
-            {
-                "slug": "vengit/pxt-sbrick",
-                "tags": [
-                    "Utilities"
-                ]
-            },
-            {
-                "slug": "pimoroni/pxt-envirobit",
-                "tags": [
-                    "Sensor"
-                ]
-            },
-            {
-                "slug": "Annikken/pxt-Andee",
-                "tags": [
-                    "Utilities"
-                ]
-            },
-            {
-                "slug": "1010Technologies/pxt-makerbit",
-                "tags": [
-                    "Sensor"
-                ]
-            },
-            {
-                "slug": "1010Technologies/pxt-makerbit-motor",
-                "tags": [
-                    "Robotics"
-                ]
-            },
-            {
-                "slug": "1010Technologies/pxt-makerbit-mp3",
-                "tags": [
-                    "Sound"
-                ]
-            },
-            {
-                "slug": "1010Technologies/pxt-makerbit-ultrasonic",
-                "tags": [
-                    "Individual"
-                ]
-            },
-            {
-                "slug": "1010Technologies/pxt-makerbit-lcd1602",
-                "tags": []
-            },
-            {
-                "slug": "1010Technologies/pxt-makerbit-ir-receiver",
-                "tags": [
-                    "Individual"
-                ]
-            },
-            {
-                "slug": "1010Technologies/pxt-makerbit-touch",
-                "tags": [
-                    "Individual"
-                ]
-            },
-            {
-                "slug": "1010Technologies/pxt-makerbit-pins",
-                "tags": [
-                    "Sensor"
-                ]
-            },
-            {
-                "slug": "pimoroni/pxt-automationbit",
-                "tags": [
-                    "Sensor"
-                ]
-            },
-            {
-                "slug": "k8robotics/pxt-k8",
-                "tags": [
-                    "Robotics"
-                ]
-            },
-            {
-                "slug": "dexterind/pxt-giggle",
-                "tags": [
-                    "Robotics"
-                ]
-            },
-            {
-                "slug": "dexterind/pxt-gigglebot",
-                "tags": []
-            },
-            {
-                "slug": "Imagimaker/pxt-imagimaker",
-                "tags": [
-                    "Sensor"
-                ]
-            },
-            {
-                "slug": "sparkfun/pxt-gator-light",
-                "tags": [
-                    "Individual"
-                ]
-            },
-            {
-                "slug": "sparkfun/pxt-gator-temp",
-                "tags": [
-                    "Individual"
-                ]
-            },
-            {
-                "slug": "4tronix/Robobit",
-                "tags": [
-                    "Robotics"
-                ]
-            },
-            {
-                "slug": "alsrobot-microbit-makecode-packages/ALSRobotJoyBit",
-                "tags": [
-                    "Gaming"
-                ]
-            },
-            {
-                "slug": "alsrobot-microbit-makecode-packages/ALSRobotKeyboard",
-                "tags": [
-                    "Utilities"
-                ]
-            },
-            {
-                "slug": "alsrobot-microbit-makecode-packages/ALSRobotElectromagnet",
-                "tags": [
-                    "Individual"
-                ]
-            },
-            {
-                "slug": "alsrobot-microbit-makecode-packages/CooCoo",
-                "tags": [
-                    "Robotics"
-                ]
-            },
-            {
-                "slug": "alsrobot-microbit-makecode-packages/CruiseBit",
-                "tags": [
-                    "Robotics"
-                ]
-            },
-            {
-                "slug": "makecode-extensions/i2cLCD1602",
-                "tags": []
-            },
-            {
-                "slug": "makecode-extensions/OLED12864_I2C",
-                "tags": []
-            },
-            {
-                "slug": "makecode-extensions/DS1307",
-                "tags": []
-            },
-            {
-                "slug": "makecode-extensions/ScrollText",
-                "tags": []
-            },
-            {
-                "slug": "makecode-extensions/WhaleySansFont",
-                "tags": []
-            },
-            {
-                "slug": "makecode-extensions/BMP280",
-                "tags": []
-            },
-            {
-                "slug": "makecode-extensions/TM1637",
-                "tags": []
-            },
-            {
-                "slug": "makecode-extensions/BMP180",
-                "tags": []
-            },
-            {
-                "slug": "makecode-extensions/BH1750",
-                "tags": []
-            },
-            {
-                "slug": "makecode-extensions/APDS9930",
-                "tags": []
-            },
-            {
-                "slug": "makecode-extensions/AT24XX",
-                "tags": []
-            },
-            {
-                "slug": "makecode-extensions/BME280",
-                "tags": []
-            },
-            {
-                "slug": "makecode-extensions/TM1650",
-                "tags": []
-            },
-            {
-                "slug": "makecode-extensions/NTC",
-                "tags": []
-            },
-            {
-                "slug": "makecode-extensions/DS1302",
-                "tags": []
-            },
-            {
-                "slug": "BirdBrainTechnologies/pxt-hummingbird-bit",
-                "tags": [
-                    "Robotics"
-                ]
-            },
-            {
-                "slug": "PiSupply/pxt-iot-lora-node",
-                "tags": [
-                    "IoT"
-                ]
-            },
-            {
-                "slug": "PiSupply/pxt-tinker-kit",
-                "tags": [
-                    "Kits"
-                ]
-            },
-            {
-                "slug": "PiSupply/pxt-bitbuggy",
-                "tags": [
-                    "Robotics"
-                ]
-            },
-            {
-                "slug": "PiSupply/pxt-oled-ssd1306",
-                "tags": []
-            },
-            {
-                "slug": "pimoroni/pxt-touchbit",
-                "tags": [
-                    "Gaming"
-                ]
-            },
-            {
-                "slug": "4tronix/cubebit",
-                "tags": [
-                    "LEDs"
-                ]
-            },
-            {
-                "slug": "4tronix/BitCommander",
-                "tags": [
-                    "Gaming"
-                ]
-            },
-            {
-                "slug": "alankrantas/pxt-MAX7219_8x8",
-                "tags": [
-                    "LEDs"
-                ]
-            },
-            {
-                "slug": "ReRoKit/pxt-reromicro",
-                "tags": [
-                    "Robotics"
-                ]
-            },
-            {
-                "slug": "51bit/ColorBit",
-                "tags": [
-                    "LEDs"
-                ]
-            },
-            {
-                "slug": "51bit/SFC",
-                "tags": [
-                    "Gaming"
-                ]
-            },
-            {
-                "slug": "51bit/SmartTools",
-                "tags": [
-                    "Sensor"
-                ]
-            },
-            {
-                "slug": "alankrantas/pxt-MAX7219_8x8",
-                "tags": [
-                    "LEDs"
-                ]
-            },
-            {
-                "slug": "KitronikLtd/pxt-kitronik-zip-tile",
-                "tags": [
-                    "LEDs"
-                ]
-            },
-            {
-                "slug": "lwchkg/pxt-proportional-font",
-                "tags": [
-                    "Utilities"
-                ]
-            },
-            {
-                "slug": "jcubuntu/pxt-iKB1",
-                "tags": [
-                    "Robotics"
-                ]
-            },
-            {
-                "slug": "KitronikLtd/pxt-kitronik-accessbit",
-                "tags": [
-                    "Electronics",
-                    "Robotics"
-                ]
-            },
-            {
-                "slug": "kaku111/pxt-tobbieII",
-                "tags": [
-                    "Robotics"
-                ]
-            },
-            {
-                "slug": "alankrantas/pxt-DHT11_DHT22",
-                "tags": [
-                    "Individual"
-                ]
-            },
-            {
-                "slug": "Freenove/Makecode-Extension-Rover",
-                "tags": [
-                    "Robotics"
-                ]
-            },
-            {
-                "slug": "letstalkscience/pxt-cozir",
-                "tags": [
-                    "Individual"
-                ]
-            },
-            {
-                "slug": "e-radionicacom/pxt-wifi",
-                "tags": [
-                    "IoT"
-                ]
-            },
-            {
-                "slug": "monkmakes/pxt-sensor",
-                "tags": [
-                    "Individual"
-                ]
-            },
-            {
-                "slug": "beyond-coding-tw/pxt-nexusbot",
-                "tags": [
-                    "Robotics"
-                ]
-            },
-            {
-                "slug": "elecfreaks/pxt-cutebot",
-                "tags": [
-                    "Robotics"
-                ]
-            },
-            {
-                "slug": "KitronikLtd/pxt-kitronik-fischertechnik",
-                "tags": [
-                    "Robotics"
-                ]
-            },
-            {
-                "slug": "keigan-motor/pxt-KeiganMotor",
-                "tags": [
-                    "Robotics"
-                ]
-            },
-            {
-                "slug": "KitronikLtd/pxt-kitronik-klip-motor",
-                "tags": [
-                    "Robotics"
-                ]
-            },
-            {
-                "slug": "alankrantas/pxt-ESP8266_ThingSpeak",
-                "tags": [
-                    "IoT"
-                ]
-            },
-            {
-                "slug": "KitronikLtd/pxt-kitronik-viewtext32",
-                "tags": [
-                    "Display"
-                ]
-            },
-            {
-                "slug": "plenprojectcompany/pxt-PLENbit",
-                "tags": [
-                    "Robotics"
-                ]
-            },
-            {
-                "slug": "4tronix/MiniBit",
-                "tags": [
-                    "Robotics"
-                ]
-            },
-            {
-                "slug": "elecfreaks/pxt-wukong",
-                "tags": [
-                    "Sensor"
-                ]
-            },
-            {
-                "slug": "sparkfun/pxt-gator-particle",
-                "tags": [
-                    "Individual"
-                ]
-            },
-            {
-                "slug": "sparkfun/pxt-gator-soil",
-                "tags": [
-                    "Individual"
-                ]
-            },
-            {
-                "slug": "sparkfun/pxt-gator-microphone",
-                "tags": [
-                    "Individual"
-                ]
-            },
-            {
-                "slug": "rebeccaclavier/pxt-bmp280",
-                "tags": [
-                    "Individual"
-                ]
-            },
-            {
-                "slug": "xinabox/pxt-SW01",
-                "tags": [
-                    "Sensor"
-                ]
-            },
-            {
-                "slug": "xinabox/pxt-OD01",
-                "tags": [
-                    "Display"
-                ]
-            },
-            {
-                "slug": "51bit/dfplayermini",
-                "tags": [
-                    "Sound"
-                ]
-            },
-            {
-                "slug": "makecode-extensions/STTS751",
-                "tags": [
-                    "Individual"
-                ]
-            },
-            {
-                "slug": "makecode-extensions/LSM6DSO",
-                "tags": [
-                    "Individual"
-                ]
-            },
-            {
-                "slug": "makecode-extensions/LPS22",
-                "tags": [
-                    "Individual"
-                ]
-            },
-            {
-                "slug": "makecode-extensions/LIS2DW12",
-                "tags": [
-                    "Individual"
-                ]
-            },
-            {
-                "slug": "makecode-extensions/LIS2MDL",
-                "tags": [
-                    "Individual"
-                ]
-            },
-            {
-                "slug": "makecode-extensions/HTS221",
-                "tags": [
-                    "Individual"
-                ]
-            },
-            {
-                "slug": "assirati/pxt-inventura",
-                "tags": [
-                    "Utilities"
-                ]
-            },
-            {
-                "slug": "Veilkrand/pxt-RobotCar",
-                "tags": [
-                    "Robotics"
-                ]
-            },
-            {
-                "slug": "4tronix/DriveBit",
-                "tags": [
-                    "Robotics"
-                ]
-            },
-            {
-                "slug": "Freenove/Makecode-Extension-Starter-Kit",
-                "tags": [
-                    "Kits"
-                ]
-            },
-            {
-                "slug": "sphero-inc/sphero-sdk-microbit-makecode",
-                "tags": [
-                    "Robotics"
-                ]
-            },
-            {
-                "slug": "BrightWearables/pxt-microbit-brightboard",
-                "tags": [
-                    "Wearables"
-                ]
-            },
-            {
-                "slug": "EBOTICS/pxt-eboticsMIBO",
-                "tags": [
-                    "Robotics"
-                ]
-            },
-            {
-                "slug": "KitronikLtd/pxt-kitronik-halohd",
-                "tags": [
-                    "LEDs"
-                ]
-            },
-            {
-                "slug": "climate-action-kits/pxt-climate-action-kit-land",
-                "tags": [
-                    "Kits",
-                    "Kits"
-                ]
-            },
-            {
-                "slug": "alsrobot-microbit-makecode-packages/MiniCruise",
-                "tags": [
-                    "Robotics"
-                ]
-            },
-            {
-                "slug": "4tronix/ServoBit",
-                "tags": [
-                    "Robotics"
-                ]
-            },
-            {
-                "slug": "DFRobot/pxt-maqueen",
-                "tags": [
-                    "Robotics"
-                ]
-            },
-            {
-                "slug": "DFRobot/pxt-DFRobot-microIoT",
-                "tags": [
-                    "IoT"
-                ]
-            },
-            {
-                "slug": "mu-opensource/pxt-muvision",
-                "tags": [
-                    "Machine"
-                ]
-            },
-            {
-                "slug": "KitronikLtd/pxt-kitronik-clip-detector",
-                "tags": [
-                    "Sensor"
-                ]
-            },
-            {
-                "slug": "DFRobot/pxt-DFRobot-NaturalScience",
-                "tags": [
-                    "Sensor"
-                ]
-            },
-            {
-                "slug": "strawbees/pxt-robotic-inventions",
-                "tags": [
-                    "Robotics"
-                ]
-            },
-            {
-                "slug": "daferdur/pxt-myHX711",
-                "tags": [
-                    "Individual"
-                ]
-            },
-            {
-                "slug": "CytronTechnologies/pxt-edubit",
-                "tags": [
-                    "Sensor"
-                ]
-            },
-            {
-                "slug": "MakeAndLearn/pxt-microshield",
-                "tags": [
-                    "Sensor"
-                ]
-            },
-            {
-                "slug": "4tronix/Orbit",
-                "tags": [
-                    "Robotics"
-                ]
-            },
-            {
-                "slug": "elecfreaks/pxt-TPBot",
-                "tags": [
-                    "Robotics"
-                ]
-            },
-            {
-                "slug": "longan-link/pxt-longanbit",
-                "tags": [
-                    "Sensor"
-                ]
-            },
-            {
-                "slug": "CODOmicrobit/pxt-CODO",
-                "tags": [
-                    "Robotics"
-                ]
-            },
-            {
-                "slug": "KitronikLtd/pxt-kitronik-move-motor",
-                "tags": [
-                    "Robotics"
-                ]
-            },
-            {
-                "slug": "elecfreaks/pxt-PlanetX",
-                "tags": [
-                    "Kits"
-                ]
-            },
-            {
-                "slug": "elecfreaks/pxt-nezha",
-                "tags": [
-                    "Utilities"
-                ]
-            },
-            {
-                "slug": "philipphenkel/pxt-powerfunctions",
-                "tags": []
-            },
-            {
-                "slug": "1010Technologies/pxt-makerbit-ir-transmitter",
-                "tags": []
-            },
-            {
-                "slug": "DFRobot/pxt-DFRobot_HuskyLens",
-                "tags": [
-                    "Machine"
-                ]
-            },
-            {
-                "slug": "bsiever/microbit-pxt-timeanddate",
-                "tags": [
-                    "Utilities"
-                ]
-            },
-            {
-                "slug": "DFRobot/pxt-DFRobot-Maqueenplus",
-                "tags": [
-                    "Robotics"
-                ]
-            },
-            {
-                "slug": "joy-it/Joy-Car",
-                "tags": [
-                    "Robotics"
-                ]
-            },
-            {
-                "slug": "AlexandreFrolov/DS3231",
-                "tags": [
-                    "Utilities"
-                ]
-            },
-            {
-                "slug": "elecfreaks/pxt-magicwand",
-                "tags": [
-                    "Gaming"
-                ]
-            },
-            {
-                "slug": "YFROBOT-TM/pxt-yfrobot-valon",
-                "tags": [
-                    "Robotics"
-                ]
-            },
-            {
-                "slug": "KitronikLtd/pxt-kitronik-smart-greenhouse",
-                "tags": [
-                    "Sensor"
-                ]
-            },
-            {
-                "slug": "hardwario/pxt-microbit-hardwario",
-                "tags": [
-                    "IoT"
-                ]
-            },
-            {
-                "slug": "Schoumi/ssd1306-with-reset",
-                "tags": []
-            },
-            {
-                "slug": "keble6/pxt-DS3231",
-                "tags": [
-                    "Individual"
-                ]
-            },
-            {
-                "slug": "microsoft/ExpressivePixelsMakeCode",
-                "tags": []
-            },
-            {
-                "slug": "pimoroni/pxt-inkybit",
-                "tags": [
-                    "Display"
-                ]
-            },
-            {
-                "slug": "MUSELAB/pxt-muselab-oled-v2",
-                "tags": [
-                    "Display"
-                ]
-            },
-            {
-                "slug": "microsoft/pxt-jacdac",
-                "tags": []
-            },
-            {
-                "slug": "CoolGuy-official/pxt-coolguy",
-                "tags": [
-                    "Electronics"
-                ]
-            },
-            {
-                "slug": "Bouw-je-BEP/Bouw-je-BEP",
-                "tags": [
-                    "Robotics"
-                ]
-            },
-            {
-                "slug": "BirdBrainTechnologies/pxt-finch",
-                "tags": [
-                    "Robotics"
-                ]
-            },
-            {
-                "slug": "iBuilds/pxt-PTKidsBIT",
-                "tags": [
-                    "Kits"
-                ]
-            },
-            {
-                "slug": "Wappsto/pxt-wappsto",
-                "tags": [
-                    "IoT"
-                ]
-            },
-            {
-                "slug": "KS-Bulme/pxt-mikRobot",
-                "tags": [
-                    "Robotics"
-                ]
-            },
-            {
-                "slug": "CytronTechnologies/pxt-rekabit",
-                "tags": [
-                    "Sensor"
-                ]
-            },
-            {
-                "slug": "bsiever/microbit-dstemp",
-                "tags": [
-                    "Individual"
-                ]
-            },
-            {
-                "slug": "bsiever/microbit-dstemp-2wire",
-                "tags": [
-                    "Individual"
-                ]
-            },
-            {
-                "slug": "microsoft/pxt-data-streamer",
-                "tags": []
-            },
-            {
-                "slug": "iBuilds/pxt-PTKidsBIT-Robot",
-                "tags": [
-                    "Robotics"
-                ]
-            },
-            {
-                "slug": "4tronix/EggBit",
-                "tags": [
-                    "Wearables"
-                ]
-            },
-            {
-                "slug": "joy-it/SEN-MPU6050",
-                "tags": [
-                    "Individual"
-                ]
-            },
-            {
-                "slug": "gomakekit/Hoverbit_V2",
-                "tags": [
-                    "Robotics"
-                ]
-            },
-            {
-                "slug": "Matrix-Robotics/pxt-MatrixMicro",
-                "tags": []
-            },
-            {
-                "slug": "joy-it/pxt-RB-TFT1.8",
-                "tags": [
-                    "Display"
-                ]
-            },
-            {
-                "slug": "CytronTechnologies/pxt-esp8266",
-                "tags": [
-                    "IoT"
-                ]
-            },
-            {
-                "slug": "elecfreaks/pxt-Dronebit",
-                "tags": []
-            },
-            {
-                "slug": "elecfreaks/pxt-PlanetX-AI",
-                "tags": [
-                    "Machine"
-                ]
-            },
-            {
-                "slug": "joy-it/pxt-SEN-Color",
-                "tags": [
-                    "Individual"
-                ]
-            },
-            {
-                "slug": "stemhub/pxt-Stemhubbit",
-                "tags": [
-                    "Robotics"
-                ]
-            },
-            {
-                "slug": "KitronikLtd/pxt-kitronik-lab-bit",
-                "tags": [
-                    "Kits"
-                ]
-            },
-            {
-                "slug": "KitronikLtd/pxt-kitronik-128x64Display",
-                "tags": [
-                    "Display"
-                ]
-            },
-            {
-                "slug": "monkmakes/monkmakes-7-segment",
-                "tags": [
-                    "Display"
-                ]
-            },
-            {
-                "slug": "stemhub/pxt-StemhubCity",
-                "tags": [
-                    "Kits"
-                ]
-            },
-            {
-                "slug": "KittenBot/pxt-powerbrick",
-                "tags": [
-                    "Kits"
-                ]
-            },
-            {
-                "slug": "microbit-foundation/pxt-microbit-v2-power",
-                "tags": [
-                    "Utilities"
-                ]
-            },
-            {
-                "slug": "KittenBot/pxt-joyfrog",
-                "tags": [
-                    "Gaming"
-                ]
-            },
-            {
-                "slug": "KittenBot/pxt-sugar",
-                "tags": [
-                    "Kits"
-                ]
-            },
-            {
-                "slug": "KittenBot/pxt-koi",
-                "tags": [
-                    "Machine"
-                ]
-            },
-            {
-                "slug": "KidSpark/pxt-sparkbit",
-                "tags": [
-                    "Robotics"
-                ]
-            },
-            {
-                "slug": "BPI-STEAM/pxt-triodecar",
-                "tags": [
-                    "Robotics"
-                ]
-            },
-            {
-                "slug": "KitronikLtd/pxt-kitronik-air-quality",
-                "tags": [
-                    "Sensor"
-                ]
-            },
-            {
-                "slug": "KitronikLtd/pxt-kitronik-air-quality-v2-only",
-                "tags": []
-            },
-            {
-                "slug": "artec-kk/pxt-artecrobo-kit",
-                "tags": [
-                    "Robotics"
-                ]
-            },
-            {
-                "slug": "TeacherPinky/Wait-Until-Blocks",
-                "tags": [
-                    "Utilities"
-                ]
-            },
-            {
-                "slug": "KittenBot/pxt-kittenwifi",
-                "tags": [
-                    "IoT"
-                ]
-            },
-            {
-                "slug": "SGBotic/pxt-SGBotic-Ultimate-SR04-RGB",
-                "tags": [
-                    "Individual"
-                ]
-            },
-            {
-                "slug": "CytronTechnologies/pxt-zoombit",
-                "tags": [
-                    "Robotics"
-                ]
-            },
-            {
-                "slug": "Kodely-io/dot",
-                "tags": [
-                    "Utilities"
-                ]
-            },
-            {
-                "slug": "climate-action-kits/pxt-climate-action-kit-energy",
-                "tags": []
-            },
-            {
-                "slug": "KitronikLtd/pxt-kitronik-simple-servo",
-                "tags": [
-                    "Robotics"
-                ]
-            },
-            {
-                "slug": "HackidsEdu/pxt-hackbit",
-                "tags": [
-                    "Kits"
-                ]
-            },
-            {
-                "slug": "aorczyk/lego-pf-transmitter",
-                "tags": [
-                    "Utilities"
-                ]
-            },
-            {
-                "slug": "KittenBot/pxt-minilfr",
-                "tags": [
-                    "Robotics"
-                ]
-            },
-            {
-                "slug": "iBuilds/pxt-PTKidsBIT-IoT",
-                "tags": [
-                    "Sensor"
-                ]
-            },
-            {
-                "slug": "KelieLeung/pxt-iClassIoT",
-                "tags": [
-                    "IoT"
-                ]
-            },
-            {
-                "slug": "aorczyk/lego-pf-receiver",
-                "tags": [
-                    "Utilities"
-                ]
-            },
-            {
-                "slug": "SMARTHON/pxt-smartcity",
-                "tags": [
-                    "Kits"
-                ]
-            },
-            {
-                "slug": "aorczyk/soroban",
-                "tags": [
-                    "Utilities"
-                ]
-            },
-            {
-                "slug": "aorczyk/pf-recorder",
-                "tags": [
-                    "Utilities"
-                ]
-            },
-            {
-                "slug": "4tronix/Theta",
-                "tags": [
-                    "Robotics"
-                ]
-            }
-        ],
+        "approvedRepoLib": {
+            "microsoft/pxt-neopixel": {
+                "tags": [ "IoT", "LEDS and lights" ],
+                "preferred": true
+            },
+            "microsoft/pxt-microturtle": {
+                "tags": [ "Utilities" ],
+                "preferred": true
+            },
+            "microsoft/pxt-sonar": {
+                "tags": [ "Individual sensors" ],
+                "preferred": true
+            },
+            "microsoft/pxt-bluetooth-temperature-sensor": { "tags": [ "Individual sensors" ] },
+            "microsoft/pxt-bluetooth-midi": { "tags": [ "Utilities" ] },
+            "microsoft/pxt-max6675": { "tags": [ "Individual sensors" ] },
+            "microsoft/pxt-midi": { "tags": [ "Utilities" ] },
+            "microsoft/pxt-radio-blockchain": { "tags": [] },
+            "microsoft/pxt-bluetooth-max6675": { "tags": [ "Individual sensors" ] },
+            "microsoft/pxt-ws2812b": { "tags": [ "LEDS and lights" ] },
+            "microsoft/pxt-apa102": { "tags": [] },
+            "microsoft/pxt-radio-firefly": { "tags": [] },
+            "microsoft/pxt-ml": { "tags": [] },
+            "KitronikLtd/pxt-kitronik-servo-lite": {
+                "tags": [ "Robotics" ],
+                "preferred": true
+            },
+            "KitronikLtd/pxt-kitronik-motor-driver": {
+                "tags": [ "Robotics" ],
+                "preferred": true
+            },
+            "KitronikLtd/pxt-kitronik-I2C-16-servo": { "tags": [ "Robotics" ] },
+            "KitronikLtd/pxt-kitronik-stopbit": { "tags": [ "Electronics" ] },
+            "KitronikLtd/pxt-kitronik-lampbit": { "tags": [ "LEDS and lights" ] },
+            "KitronikLtd/pxt-kitronik-klimate": { "tags": [ "Sensor boards" ] },
+            "KitronikLtd/pxt-kitronik-zip-64": { "tags": [ "Gaming" ] },
+            "KitronikLtd/pxt-kitronik-rtc": { "tags": [ "Utilities" ] },
+            "KitronikLtd/pxt-kitronik-game-controller": { "tags": [ "Gaming" ] },
+            "KitronikLtd/pxt-kitronik-robotics-board": { "tags": [ "Robotics" ] },
+            "KitronikLtd/pxt-kitronik-klef-piano": { "tags": [ "Sound" ] },
+            "adafruit/pxt-crickit": { "tags": [ "Sensor boards" ] },
+            "adafruit/pxt-seesaw": { "tags": [ "Sensor boards" ] },
+            "Seeed-Studio/pxt-grove": {
+                "tags": [ "Kits" ],
+                "preferred": true
+            },
+            "Seeed-Studio/pxt-grove-zero-for-microbit": { "tags": [] },
+            "Tinkertanker/pxt-ir-receiver": { "tags": [] },
+            "Tinkertanker/pxt-iot-environment-kit": {
+                "tags": [],
+                "preferred": true
+            },
+            "Tinkertanker/pxt-motorbit": { "tags": [] },
+            "Tinkertanker/pxt-realtimeclock-ds1307": { "tags": [] },
+            "Tinkertanker/pxt-tinkercademy-tinker-kit": {
+                "tags": [],
+                "preferred": true
+            },
+            "Tinkertanker/pxt-rotary-encoder-ky040": { "tags": [ "Individual sensors" ] },
+            "Tinkertanker/pxt-tinkercademy-microbot": { "tags": [] },
+            "Tinkertanker/pxt-oled-ssd1306": { "tags": [ "Display", "Display" ] },
+            "Tinkertanker/pxt-range-vl53l0x": { "tags": [] },
+            "Tinkertanker/pxt-continuous-servo": { "tags": [] },
+            "Tinkertanker/pxt-joystickbit": { "tags": [] },
+            "Tinkertanker/pxt-robit": { "tags": [] },
+            "Tinkertanker/pxt-smarthome": {
+                "tags": [],
+                "preferred": true
+            },
+            "Tinkertanker/microDriver_SHT2x": { "tags": [] },
+            "Tinkertanker/pxt-ringbitcar": {
+                "tags": [],
+                "preferred": true
+            },
+            "Tinkertanker/uDriver_PCA9585": { "tags": [] },
+            "Tinkertanker/pxt-alphanumeric-ht16k33": { "tags": [] },
+            "Tinkertanker/pxt-stepper-motor": { "tags": [ "Robotics" ] },
+            "CoderDojoOlney/pxt-olney": { "tags": [ "Utilities" ] },
+            "PaulDFoster/pxt-microbit-GY521": { "tags": [ "Individual sensors" ] },
+            "chevyng/pxt-ucl-junkrobot": { "tags": [ "Robotics" ] },
+            "sparkfun/pxt-gamer-bit": { "tags": [ "Gaming" ] },
+            "sparkfun/pxt-moto-bit": { "tags": [ "Robotics" ] },
+            "sparkfun/pxt-weather-bit": { "tags": [ "Sensor boards" ] },
+            "sparkfun/pxt-gator-environment": { "tags": [ "Sensor boards" ] },
+            "minodekit/pxt-minode": { "tags": [ "Kits" ] },
+            "LaboratoryForPlayfulComputation/pxt-BlockyTalkyBLE": { "tags": [ "Utilities" ] },
+            "mbitfun/pxt-katakana": { "tags": [ "Utilities" ] },
+            "jdarling/pxt-pca9685": { "tags": [ "Electronics" ] },
+            "MUSELAB/pxt-wifi-shield": { "tags": [ "IoT" ] },
+            "kittenbot/pxt-robotbit": {
+                "tags": [ "Robotics" ],
+                "preferred": true
+            },
+            "pizayanz/pxt-linebeacon": { "tags": [ "Utilities" ] },
+            "sunfounder/pxt-sloth": { "tags": [ "Robotics" ] },
+            "4tronix/BitBot": {
+                "tags": [ "Robotics" ],
+                "preferred": true
+            },
+            "pimoroni/pxt-scrollbit": { "tags": [ "Utilities" ] },
+            "emwta/pxt-iBit": { "tags": [ "Robotics" ] },
+            "vengit/pxt-sbrick": { "tags": [ "Utilities" ] },
+            "pimoroni/pxt-envirobit": { "tags": [ "Sensor boards" ] },
+            "Annikken/pxt-Andee": { "tags": [ "Utilities" ] },
+            "1010Technologies/pxt-makerbit": { "tags": [ "Sensor boards" ] },
+            "1010Technologies/pxt-makerbit-motor": { "tags": [ "Robotics" ] },
+            "1010Technologies/pxt-makerbit-mp3": { "tags": [ "Sound" ] },
+            "1010Technologies/pxt-makerbit-ultrasonic": { "tags": [ "Individual sensors" ] },
+            "1010Technologies/pxt-makerbit-lcd1602": { "tags": [] },
+            "1010Technologies/pxt-makerbit-ir-receiver": { "tags": [ "Individual sensors" ] },
+            "1010Technologies/pxt-makerbit-touch": { "tags": [ "Individual sensors" ] },
+            "1010Technologies/pxt-makerbit-pins": { "tags": [ "Sensor boards" ] },
+            "pimoroni/pxt-automationbit": { "tags": [ "Sensor boards" ] },
+            "k8robotics/pxt-k8": { "tags": [ "Robotics" ] },
+            "dexterind/pxt-giggle": { "tags": [ "Robotics" ] },
+            "dexterind/pxt-gigglebot": { "tags": [] },
+            "Imagimaker/pxt-imagimaker": { "tags": [ "Sensor boards" ] },
+            "sparkfun/pxt-gator-light": { "tags": [ "Individual sensors" ] },
+            "sparkfun/pxt-gator-temp": { "tags": [ "Individual sensors" ] },
+            "4tronix/Robobit": { "tags": [ "Robotics" ] },
+            "alsrobot-microbit-makecode-packages/ALSRobotJoyBit": { "tags": [ "Gaming" ] },
+            "alsrobot-microbit-makecode-packages/ALSRobotKeyboard": { "tags": [ "Utilities" ] },
+            "alsrobot-microbit-makecode-packages/ALSRobotElectromagnet": { "tags": [ "Individual sensors" ] },
+            "alsrobot-microbit-makecode-packages/CooCoo": { "tags": [ "Robotics" ] },
+            "alsrobot-microbit-makecode-packages/CruiseBit": { "tags": [ "Robotics" ] },
+            "makecode-extensions/i2cLCD1602": { "tags": [] },
+            "makecode-extensions/OLED12864_I2C": { "tags": [] },
+            "makecode-extensions/DS1307": { "tags": [] },
+            "makecode-extensions/ScrollText": { "tags": [] },
+            "makecode-extensions/WhaleySansFont": { "tags": [] },
+            "makecode-extensions/BMP280": { "tags": [] },
+            "makecode-extensions/TM1637": { "tags": [] },
+            "makecode-extensions/BMP180": { "tags": [] },
+            "makecode-extensions/BH1750": { "tags": [] },
+            "makecode-extensions/APDS9930": { "tags": [] },
+            "makecode-extensions/AT24XX": { "tags": [] },
+            "makecode-extensions/BME280": { "tags": [] },
+            "makecode-extensions/TM1650": { "tags": [] },
+            "makecode-extensions/NTC": { "tags": [] },
+            "makecode-extensions/DS1302": { "tags": [] },
+            "BirdBrainTechnologies/pxt-hummingbird-bit": { "tags": [ "Robotics" ] },
+            "PiSupply/pxt-iot-lora-node": { "tags": [ "IoT" ] },
+            "PiSupply/pxt-tinker-kit": { "tags": [ "Kits" ] },
+            "PiSupply/pxt-bitbuggy": { "tags": [ "Robotics" ] },
+            "PiSupply/pxt-oled-ssd1306": { "tags": [] },
+            "pimoroni/pxt-touchbit": { "tags": [ "Gaming" ] },
+            "4tronix/cubebit": { "tags": [ "LEDS and lights" ] },
+            "4tronix/BitCommander": { "tags": [ "Gaming" ] },
+            "alankrantas/pxt-MAX7219_8x8": { "tags": [ "LEDS and lights" ] },
+            "ReRoKit/pxt-reromicro": { "tags": [ "Robotics" ] },
+            "51bit/ColorBit": { "tags": [ "LEDS and lights" ] },
+            "51bit/SFC": { "tags": [ "Gaming" ] },
+            "51bit/SmartTools": { "tags": [ "Sensor boards" ] },
+            "KitronikLtd/pxt-kitronik-zip-tile": { "tags": [ "LEDS and lights" ] },
+            "lwchkg/pxt-proportional-font": { "tags": [ "Utilities" ] },
+            "jcubuntu/pxt-iKB1": { "tags": [ "Robotics" ] },
+            "KitronikLtd/pxt-kitronik-accessbit": { "tags": [ "Electronics", "Robotics" ] },
+            "kaku111/pxt-tobbieII": { "tags": [ "Robotics" ] },
+            "alankrantas/pxt-DHT11_DHT22": { "tags": [ "Individual sensors" ] },
+            "Freenove/Makecode-Extension-Rover": { "tags": [ "Robotics" ] },
+            "letstalkscience/pxt-cozir": { "tags": [ "Individual sensors" ] },
+            "e-radionicacom/pxt-wifi": { "tags": [ "IoT" ] },
+            "monkmakes/pxt-sensor": { "tags": [ "Individual sensors" ] },
+            "beyond-coding-tw/pxt-nexusbot": { "tags": [ "Robotics" ] },
+            "elecfreaks/pxt-cutebot": {
+                "tags": [ "Robotics" ],
+                "preferred": true
+            },
+            "KitronikLtd/pxt-kitronik-fischertechnik": { "tags": [ "Robotics" ] },
+            "keigan-motor/pxt-KeiganMotor": { "tags": [ "Robotics" ] },
+            "KitronikLtd/pxt-kitronik-klip-motor": { "tags": [ "Robotics" ] },
+            "alankrantas/pxt-ESP8266_ThingSpeak": { "tags": [ "IoT" ] },
+            "KitronikLtd/pxt-kitronik-viewtext32": { "tags": [ "Display" ] },
+            "plenprojectcompany/pxt-PLENbit": { "tags": [ "Robotics" ] },
+            "4tronix/MiniBit": { "tags": [ "Robotics" ] },
+            "elecfreaks/pxt-wukong": { "tags": [ "Sensor boards" ] },
+            "sparkfun/pxt-gator-particle": { "tags": [ "Individual sensors" ] },
+            "sparkfun/pxt-gator-soil": { "tags": [ "Individual sensors" ] },
+            "sparkfun/pxt-gator-microphone": { "tags": [ "Individual sensors" ] },
+            "rebeccaclavier/pxt-bmp280": { "tags": [ "Individual sensors" ] },
+            "xinabox/pxt-SW01": { "tags": [ "Sensor boards" ] },
+            "xinabox/pxt-OD01": { "tags": [ "Display" ] },
+            "51bit/dfplayermini": { "tags": [ "Sound" ] },
+            "makecode-extensions/STTS751": { "tags": [ "Individual sensors" ] },
+            "makecode-extensions/LSM6DSO": { "tags": [ "Individual sensors" ] },
+            "makecode-extensions/LPS22": { "tags": [ "Individual sensors" ] },
+            "makecode-extensions/LIS2DW12": { "tags": [ "Individual sensors" ] },
+            "makecode-extensions/LIS2MDL": { "tags": [ "Individual sensors" ] },
+            "makecode-extensions/HTS221": { "tags": [ "Individual sensors" ] },
+            "assirati/pxt-inventura": { "tags": [ "Utilities" ] },
+            "Veilkrand/pxt-RobotCar": { "tags": [ "Robotics" ] },
+            "4tronix/DriveBit": { "tags": [ "Robotics" ] },
+            "Freenove/Makecode-Extension-Starter-Kit": { "tags": [ "Kits" ] },
+            "sphero-inc/sphero-sdk-microbit-makecode": { "tags": [ "Robotics" ] },
+            "BrightWearables/pxt-microbit-brightboard": { "tags": [ "Wearables" ] },
+            "EBOTICS/pxt-eboticsMIBO": { "tags": [ "Robotics" ] },
+            "KitronikLtd/pxt-kitronik-halohd": { "tags": [ "LEDS and lights" ] },
+            "climate-action-kits/pxt-climate-action-kit-land": { "tags": [ "Kits", "Kits" ] },
+            "alsrobot-microbit-makecode-packages/MiniCruise": { "tags": [ "Robotics" ] },
+            "4tronix/ServoBit": { "tags": [ "Robotics" ] },
+            "DFRobot/pxt-maqueen": {
+                "tags": [ "Robotics" ],
+                "preferred": true
+            },
+            "DFRobot/pxt-DFRobot-microIoT": { "tags": [ "IoT" ] },
+            "mu-opensource/pxt-muvision": { "tags": [ "Machine Learning" ] },
+            "KitronikLtd/pxt-kitronik-clip-detector": { "tags": [ "Sensor boards" ] },
+            "DFRobot/pxt-DFRobot-NaturalScience": { "tags": [ "Sensor boards" ] },
+            "strawbees/pxt-robotic-inventions": { "tags": [ "Robotics" ] },
+            "daferdur/pxt-myHX711": { "tags": [ "Individual sensors" ] },
+            "CytronTechnologies/pxt-edubit": { "tags": [ "Sensor boards" ] },
+            "MakeAndLearn/pxt-microshield": { "tags": [ "Sensor boards" ] },
+            "4tronix/Orbit": { "tags": [ "Robotics" ] },
+            "elecfreaks/pxt-TPBot": { "tags": [ "Robotics" ] },
+            "longan-link/pxt-longanbit": { "tags": [ "Sensor boards" ] },
+            "CODOmicrobit/pxt-CODO": { "tags": [ "Robotics" ] },
+            "KitronikLtd/pxt-kitronik-move-motor": { "tags": [ "Robotics" ] },
+            "elecfreaks/pxt-PlanetX": { "tags": [ "Kits" ] },
+            "elecfreaks/pxt-nezha": { "tags": [ "Utilities" ] },
+            "philipphenkel/pxt-powerfunctions": { "tags": [] },
+            "1010Technologies/pxt-makerbit-ir-transmitter": { "tags": [] },
+            "DFRobot/pxt-DFRobot_HuskyLens": { "tags": [ "Machine Learning" ] },
+            "bsiever/microbit-pxt-timeanddate": { "tags": [ "Utilities" ] },
+            "DFRobot/pxt-DFRobot-Maqueenplus": {
+                "tags": [ "Robotics" ],
+                "preferred": true
+            },
+            "joy-it/Joy-Car": { "tags": [ "Robotics" ] },
+            "AlexandreFrolov/DS3231": { "tags": [ "Utilities" ] },
+            "elecfreaks/pxt-magicwand": { "tags": [ "Gaming" ] },
+            "YFROBOT-TM/pxt-yfrobot-valon": { "tags": [ "Robotics" ] },
+            "KitronikLtd/pxt-kitronik-smart-greenhouse": { "tags": [ "Sensor boards" ] },
+            "hardwario/pxt-microbit-hardwario": { "tags": [ "IoT" ] },
+            "Schoumi/ssd1306-with-reset": { "tags": [] },
+            "keble6/pxt-DS3231": { "tags": [ "Individual sensors" ] },
+            "microsoft/ExpressivePixelsMakeCode": { "tags": [] },
+            "pimoroni/pxt-inkybit": { "tags": [ "Display" ] },
+            "MUSELAB/pxt-muselab-oled-v2": { "tags": [ "Display" ] },
+            "microsoft/pxt-jacdac": { "tags": [] },
+            "CoolGuy-official/pxt-coolguy": { "tags": [ "Electronics" ] },
+            "Bouw-je-BEP/Bouw-je-BEP": { "tags": [ "Robotics" ] },
+            "BirdBrainTechnologies/pxt-finch": { "tags": [ "Robotics" ] },
+            "iBuilds/pxt-PTKidsBIT": { "tags": [ "Kits" ] },
+            "Wappsto/pxt-wappsto": { "tags": [ "IoT" ] },
+            "KS-Bulme/pxt-mikRobot": { "tags": [ "Robotics" ] },
+            "CytronTechnologies/pxt-rekabit": { "tags": [ "Sensor boards" ] },
+            "bsiever/microbit-dstemp": { "tags": [ "Individual sensors" ] },
+            "bsiever/microbit-dstemp-2wire": { "tags": [ "Individual sensors" ] },
+            "microsoft/pxt-data-streamer": { "tags": [] },
+            "iBuilds/pxt-PTKidsBIT-Robot": { "tags": [ "Robotics" ] },
+            "4tronix/EggBit": { "tags": [ "Wearables" ] },
+            "joy-it/SEN-MPU6050": { "tags": [ "Individual sensors" ] },
+            "gomakekit/Hoverbit_V2": { "tags": [ "Robotics" ] },
+            "Matrix-Robotics/pxt-MatrixMicro": { "tags": [] },
+            "joy-it/pxt-RB-TFT1.8": { "tags": [ "Display" ] },
+            "CytronTechnologies/pxt-esp8266": { "tags": [ "IoT" ] },
+            "elecfreaks/pxt-Dronebit": { "tags": [] },
+            "elecfreaks/pxt-PlanetX-AI": { "tags": [ "Machine Learning" ] },
+            "joy-it/pxt-SEN-Color": { "tags": [ "Individual sensors" ] },
+            "stemhub/pxt-Stemhubbit": { "tags": [ "Robotics" ] },
+            "KitronikLtd/pxt-kitronik-lab-bit": { "tags": [ "Kits" ] },
+            "KitronikLtd/pxt-kitronik-128x64Display": { "tags": [ "Display" ] },
+            "monkmakes/monkmakes-7-segment": { "tags": [ "Display" ] },
+            "stemhub/pxt-StemhubCity": { "tags": [ "Kits" ] },
+            "KittenBot/pxt-powerbrick": { "tags": [ "Kits" ] },
+            "microbit-foundation/pxt-microbit-v2-power": { "tags": [ "Utilities" ] },
+            "KittenBot/pxt-joyfrog": { "tags": [ "Gaming" ] },
+            "KittenBot/pxt-sugar": { "tags": [ "Kits" ] },
+            "KittenBot/pxt-koi": { "tags": [ "Machine Learning" ] },
+            "KidSpark/pxt-sparkbit": { "tags": [ "Robotics" ] },
+            "BPI-STEAM/pxt-triodecar": { "tags": [ "Robotics" ] },
+            "KitronikLtd/pxt-kitronik-air-quality": { "tags": [ "Sensor boards" ] },
+            "KitronikLtd/pxt-kitronik-air-quality-v2-only": { "tags": [] },
+            "artec-kk/pxt-artecrobo-kit": { "tags": [ "Robotics" ] },
+            "TeacherPinky/Wait-Until-Blocks": { "tags": [ "Utilities" ] },
+            "KittenBot/pxt-kittenwifi": { "tags": [ "IoT" ] },
+            "SGBotic/pxt-SGBotic-Ultimate-SR04-RGB": { "tags": [ "Individual sensors" ] },
+            "CytronTechnologies/pxt-zoombit": { "tags": [ "Robotics" ] },
+            "Kodely-io/dot": { "tags": [ "Utilities" ] },
+            "climate-action-kits/pxt-climate-action-kit-energy": { "tags": [] },
+            "KitronikLtd/pxt-kitronik-simple-servo": { "tags": [ "Robotics" ] },
+            "HackidsEdu/pxt-hackbit": { "tags": [ "Kits" ] },
+            "aorczyk/lego-pf-transmitter": { "tags": [ "Utilities" ] },
+            "KittenBot/pxt-minilfr": { "tags": [ "Robotics" ] },
+            "iBuilds/pxt-PTKidsBIT-IoT": { "tags": [ "Sensor boards" ] },
+            "KelieLeung/pxt-iClassIoT": { "tags": [ "IoT" ] },
+            "aorczyk/lego-pf-receiver": { "tags": [ "Utilities" ] },
+            "SMARTHON/pxt-smartcity": { "tags": [ "Kits" ] },
+            "aorczyk/soroban": { "tags": [ "Utilities" ] },
+            "aorczyk/pf-recorder": { "tags": [ "Utilities" ] },
+            "4tronix/Theta": { "tags": [ "Robotics" ] }
+          },
         "upgrades": {
             "tinkertanker/pxt-iot-environment-kit": "min:v4.2.1",
             "microsoft/pxt-bluetooth-midi": "dv:mbcodal",
