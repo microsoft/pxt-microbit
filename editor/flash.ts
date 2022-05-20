@@ -200,7 +200,7 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
         readSerialLoop();
     }
 
-    private stopConnectionAsync() {
+    private stopReadersAsync() {
         log(`cancelling connection ${this.connectionId}`)
         this.connectionId++;
         return pxt.Util.delay(200);
@@ -237,7 +237,7 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
             return pxt.U.uint8ArrayToString(buf.slice(2, 2 + buf[1]))
         }
 
-        await this.stopConnectionAsync()
+        await this.stopReadersAsync()
 
         this.allocDAP(); // clean dap apis
 
@@ -300,7 +300,7 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
     disconnectAsync() {
         log(`disconnect`)
         this.flashAborted = true;
-        return this.stopConnectionAsync()
+        return this.stopReadersAsync()
             .then(() => this.io.disconnectAsync());
     }
 
@@ -314,7 +314,7 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
         this.jacdacInHex = codalJson && !!pxt.Util.jsonTryParse(codalJson)?.definitions?.JACDAC_WEBUSB
         this.flashAborted = false;
         return (this.io.isConnected() ? Promise.resolve() : this.io.reconnectAsync())
-            .then(() => this.stopConnectionAsync())
+            .then(() => this.stopReadersAsync())
             .then(() => this.cortexM.init())
             .then(() => this.cortexM.reset(true))
             .then(() => this.checkStateAsync())
