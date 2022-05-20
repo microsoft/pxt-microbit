@@ -274,6 +274,7 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
 
         await this.checkStateAsync(true);
         
+        // start jacdac, serial async
         this.startJacdacSetup();
         this.startReadSerial();
     }
@@ -755,6 +756,7 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
                 return
             }
 
+            if(cid != this.connectionId) return; 
             const info = await this.readBytes(xchg, 16)
             if (info[12 + 2] != 0xff) {
                 log("jacdac: invalid memory; try power-cycling the micro:bit")
@@ -765,10 +767,11 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
 
             // make sure connection is not outdated
             if(cid != this.connectionId) return; 
+            // clear initial lock
+            await this.writeWord(xchg + 12, 0)
+            // allow serial thread to use jacdac
             this.irqn = info[8]
             this.xchgAddr = xchg
-            // clear initial lock
-            await this.writeWord(this.xchgAddr + 12, 0)
             log(`jacdac: exchange address 0x${this.xchgAddr.toString(16)}; irqn=${this.irqn}`)
             pxt.tickEvent("hid.flash.jacdac.connected");
         } catch(e) {
