@@ -706,6 +706,7 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
     private async startJacdacSetup(connectionId: number) {
         this.xchgAddr = null
         this.irqn = undefined
+        this.lastXchg = undefined
         if (!this.usesCODAL) {
             log(`jacdac: CODAL disabled`)
             return
