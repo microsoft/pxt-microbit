@@ -24,6 +24,10 @@ for (let i = 0; i < 5; i++) {
 }
 ```
 
+## Advanced
+
+If `ms` is `NaN` (not a number), it will default to `20` ms.
+
 ## See also
 
 [while](/blocks/loops/while), [running time](/reference/input/running-time), [for](/blocks/loops/for)
