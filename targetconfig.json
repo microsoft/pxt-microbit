@@ -639,7 +639,7 @@
             "muselab/pxt-muselab-oled-v2": { "tags": [ "Display" ] },
             "microsoft/pxt-jacdac": {
                 "tags": [ "Kits" ],
-                "upgrades": [ "min:v0.0.7" ]
+                "upgrades": [ "min:v0.10.40" ]
             },
             "microsoft/pxt-jacdac/accelerometer": {},
             "microsoft/pxt-jacdac/acidity": {},
