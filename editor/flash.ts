@@ -165,25 +165,24 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
         return len
     }
 
-    private startReadSerial() {
-        const rid = this.connectionId;
+    private startReadSerial(connectionId: number) {
         const startTime = Date.now();
-        log(`start read serial ${rid}`)
+        log(`start read serial ${connectionId}`)
         const readSerialLoop = async () => {
             try {
-                while (rid === this.connectionId) {
+                while (connectionId === this.connectionId) {
                     const len = await this.readSerial()
                     const hasData = len > 0
                     //if (hasData)
                     //    logV(`serial read ${len} bytes`)
                     await this.jacdacProcess(hasData)
                 }
-                log(`stopped serial reader ${rid}`)
+                log(`stopped serial reader ${connectionId}`)
             } catch (err) {
-                log(`serial error ${rid}: ${err.message}`);
+                log(`serial error ${connectionId}: ${err.message}`);
                 console.error(err)
-                if (rid != this.connectionId) {
-                    log(`stopped serial reader ${rid}`)
+                if (connectionId != this.connectionId) {
+                    log(`stopped serial reader ${connectionId}`)
                 } else {
                     pxt.tickEvent("hid.flash.serial.error");
                     const timeRunning = Date.now() - startTime
@@ -275,8 +274,9 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
         await this.checkStateAsync(true);
         
         // start jacdac, serial async
-        this.startJacdacSetup();
-        this.startReadSerial();
+        const connectionId = this.connectionId
+        this.startJacdacSetup(connectionId)
+            .then(() => this.startReadSerial(connectionId))
     }
 
     private async checkStateAsync(resume?: boolean): Promise<void> {
@@ -703,7 +703,7 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
      * and gracefull cancel as needed
      * @returns 
      */
-    private async startJacdacSetup() {
+    private async startJacdacSetup(connectionId: number) {
         this.xchgAddr = null
         this.irqn = undefined
         if (!this.usesCODAL) {
@@ -715,7 +715,6 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
             return
         }
 
-        const cid = this.connectionId
         try {
             // allow jacdac to boot
             const now = pxt.U.now()
@@ -725,8 +724,8 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
             while (xchg == null && xchgRetry++ < 3) {
                 log(`jacdac: finding xchg address (retry ${xchgRetry})`)
                 await pxt.Util.delay(500); // wait for the program to start and setup memory correctly
-                if(cid != this.connectionId) return; 
-                xchg = await this.findJacdacXchgAddr(cid)
+                if(connectionId != this.connectionId) return; 
+                xchg = await this.findJacdacXchgAddr(connectionId)
             }
             log(`jacdac: exchange address 0x${xchg ? xchg.toString(16) : "?"}; ${xchgRetry} retries; ${(pxt.U.now() - now) | 0}ms`)
             if (xchg == null) {
@@ -736,7 +735,7 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
                 return
             }
 
-            if(cid != this.connectionId) return; 
+            if(connectionId != this.connectionId) return; 
             const info = await this.readBytes(xchg, 16)
             if (info[12 + 2] != 0xff) {
                 log("jacdac: invalid memory; try power-cycling the micro:bit")
@@ -746,7 +745,7 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
             }
 
             // make sure connection is not outdated
-            if(cid != this.connectionId) return; 
+            if(connectionId != this.connectionId) return; 
             // clear initial lock
             await this.writeWord(xchg + 12, 0)
             // allow serial thread to use jacdac
@@ -755,7 +754,7 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
             log(`jacdac: exchange address 0x${this.xchgAddr.toString(16)}; irqn=${this.irqn}`)
             pxt.tickEvent("hid.flash.jacdac.connected");
         } catch(e) {
-            if (cid != this.connectionId) {
+            if (connectionId != this.connectionId) {
                 log(`jacdac: setup aborted`)
                 return;
             } else throw e
