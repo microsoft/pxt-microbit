@@ -42,23 +42,35 @@ class SoundExpression {
 }
 
 enum WaveShape {
+    //% block="sine"
     Sine = 0,
+    //% block="sawtooth"
     Sawtooth = 1,
+    //% block="triangle"
     Triangle = 2,
+    //% block="square"
     Square = 3,
+    //% block="noise"
     Noise = 4
 }
 
 enum InterpolationCurve {
+    //% block="linear"
     Linear,
+    //% block="curve"
     Curve,
+    //% block="logarithmic"
     Logarithmic
 }
 
 enum SoundExpressionEffect {
+    //% block="none"
     None = 0,
+    //% block="vibrato"
     Vibrato = 1,
+    //% block="tremolo"
     Tremolo = 2,
+    //% block="warble"
     Warble = 3
 }
 
