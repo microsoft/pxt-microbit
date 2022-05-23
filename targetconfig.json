@@ -1841,7 +1841,7 @@
             "elecfreaks/pxt-PlanetX": "min:v0.13.1",
             "bsiever/microbit-pxt-timeanddate": "min:v2.0.11",
 
-            "microsoft/pxt-jacdac": "min:v0.10.39"        
+            "microsoft/pxt-jacdac": "min:v0.10.40"        
         },
         "approvedEditorExtensionUrls": [
             "https://microsoft.github.io/ml4f/",
