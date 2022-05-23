@@ -688,32 +688,12 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
     private async findJacdacXchgAddr(cid: number): Promise<number> {
         const memStart = 0x2000_0000
         const memStop = memStart + 128 * 1024
-        const checkSize = 1024
-
-        let p0 = 0x20006000
-        let p1 = 0x20006000 + checkSize
-
-        const check = async (addr: number) => {
-            if (addr < memStart)
-                return null
-            if (addr + checkSize > memStop)
-                return null
-            const buf = await this.readWords(addr, checkSize >> 2)
-            for (let i = 0; i < buf.length; ++i) {
-                if (buf[i] == 0x786D444A && buf[i + 1] == 0xB0A6C0E9)
-                    return addr + (i << 2)
-            }
-            return 0
-        }
-        while (cid == this.connectionId) {
-            const a0 = await check(p0)
-            if (a0) return a0
-            const a1 = await check(p1)
-            if (a1) return a1
-            if (a0 === null && a1 === null)
-                return null
-            p0 -= checkSize
-            p1 += checkSize
+        const addr = (await this.readWords(memStop - 4, 1))[0]
+        if (cid != this.connectionId) return null
+        if (memStart <= addr && addr < memStop) {
+            const buf = await this.readWords(addr, 2)
+            if (buf[0] == 0x786D444A && buf[1] == 0xB0A6C0E9)
+                return addr
         }
         return null
     }
@@ -742,9 +722,9 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
             await pxt.Util.delay(1000)
             let xchgRetry = 0
             let xchg: number
-            while (xchg == null && xchgRetry++ < 2) {
+            while (xchg == null && xchgRetry++ < 3) {
                 log(`jacdac: finding xchg address (retry ${xchgRetry})`)
-                await pxt.Util.delay(100); // wait for the program to start and setup memory correctly
+                await pxt.Util.delay(500); // wait for the program to start and setup memory correctly
                 if(cid != this.connectionId) return; 
                 xchg = await this.findJacdacXchgAddr(cid)
             }
