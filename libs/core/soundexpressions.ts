@@ -324,7 +324,7 @@ namespace music {
      * @param endFrequency for the sound effect waveform
      * @param startVolume of the sound, or starting amplitude
      * @param endVolume of the sound, or ending amplitude
-     * @param duration in milleseconds (ms) that sound will play for
+     * @param duration in milliseconds (ms) that sound will play for
      * @param effect to apply to the waveform or volume
      * @param interpolation for frequency scaling
      */
