@@ -62,11 +62,22 @@ namespace datalogger {
      */
     //% block="column $column value $value"
     //% value.shadow=math_number
+    //% column.shadow=datalogger_columnfield
     //% blockId=dataloggercreatecolumnvalue
     //% group="micro:bit (V2)"
     //% weight=80 help=datalogger/create-cv
     export function createCV(column: string, value: any): ColumnValue {
         return new ColumnValue(column, value);
+    }
+
+    //% block="$column"
+    //% blockId=datalogger_columnfield
+    //% group="micro:bit (V2)"
+    //% blockHidden=true shim=TD_ID
+    //% column.fieldEditor="autocomplete" column.fieldOptions.decompileLiterals=true
+    //% column.fieldOptions.key="dataloggercolumn"
+    export function _columnField(column: string) {
+        return column
     }
 
     /**
@@ -158,6 +169,7 @@ namespace datalogger {
     //% block="set columns $cols"
     //% blockId=dataloggersetcolumns
     //% data.shadow=list_create_with
+    //% data.defl=datalogger_columnfield
     //% group="micro:bit (V2)"
     //% blockHidden=true
     //% weight=70
@@ -186,6 +198,16 @@ namespace datalogger {
     //% inlineInputMode="variable"
     //% group="micro:bit (V2)"
     //% weight=70 help=datalogger/set-column-titles
+    //% col1.shadow=datalogger_columnfield
+    //% col2.shadow=datalogger_columnfield
+    //% col3.shadow=datalogger_columnfield
+    //% col4.shadow=datalogger_columnfield
+    //% col5.shadow=datalogger_columnfield
+    //% col6.shadow=datalogger_columnfield
+    //% col7.shadow=datalogger_columnfield
+    //% col8.shadow=datalogger_columnfield
+    //% col9.shadow=datalogger_columnfield
+    //% col10.shadow=datalogger_columnfield
     export function setColumnTitles(
         col1: string,
         col2?: string,
