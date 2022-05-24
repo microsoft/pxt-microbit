@@ -137,7 +137,7 @@
         "useNewFunctions": true
     },
     "compileService": {
-        "yottaTarget": "bbc-microbit-classic-gcc",
+        "yottaTarget": "bbc-microbit-classic-gcc@https://github.com/lancaster-university/yotta-target-bbc-microbit-classic-gcc",
         "yottaCorePackage": "microbit",
         "githubCorePackage": "lancaster-university/microbit",
         "gittag": "v2.2.0-rc6",
