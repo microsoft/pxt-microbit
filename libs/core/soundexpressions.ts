@@ -364,6 +364,8 @@ namespace music {
     //% interpolation.defl=InterpolationCurve.Linear
     //% compileHiddenArguments=true
     //% inlineInputMode="variable"
+    //% inlineInputModeLimit=3
+    //% expandableArgumentBreaks="3,5"
     //% group="micro:bit (V2)"
     export function createSoundEffect(waveShape: WaveShape, startFrequency: number, endFrequency: number, startVolume: number, endVolume: number, duration: number, effect: SoundExpressionEffect, interpolation: InterpolationCurve): string {
         const sound = new soundExpression.Sound();
