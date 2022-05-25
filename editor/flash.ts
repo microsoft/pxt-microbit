@@ -1,3 +1,5 @@
+import { timeStamp } from "console";
+
 const imul = (Math as any).imul;
 const timeoutMessage = "timeout";
 const membase = 0x20000000;
@@ -67,6 +69,7 @@ function bufferConcat(a: Uint8Array, b: Uint8Array) {
 }
 
 class DAPWrapper implements pxt.packetio.PacketIOWrapper {
+    private initialized = false
     familyID: number;
     private dap: DapJS.DAP;
     private cortexM: DapJS.CortexM
@@ -76,7 +79,7 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
     private pageSize = 1024;
     private numPages = 256;
 
-    private usesCODAL: boolean;
+    private usesCODAL: boolean = undefined;
     // we don't know yet if jacdac was compiled in the hex
     private jacdacInHex: boolean = undefined
     private forceFullFlash = /webusbfullflash=1/.test(window.location.href);
@@ -90,11 +93,11 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
             log(`device connection changed`);
             this.disconnectAsync()
                 .then(() => {
-                    if (!connect) return;
-
                     // we don't know what's being connected
                     this.usesCODAL = undefined
                     this.jacdacInHex = undefined
+
+                    if (!connect) return;
                     this.reconnectAsync()
                 });
         }
@@ -194,6 +197,10 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
                     }
                 }
             }
+            finally {
+                this.pendingSerial = undefined
+                this.lastPendingSerial = undefined
+            }
         }
 
         readSerialLoop();
@@ -218,18 +225,31 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
     }
 
     get binName() {
+        if (this.usesCODAL === undefined)
+            console.warn('try to access codal information before it is computed')
         return (this.usesCODAL ? "mbcodal-" : "mbdal-") + pxtc.BINARY_HEX;
     }
 
     unsupportedParts() {
+        if (this.usesCODAL === undefined)            
+            console.warn('try to access codal information before it is computed')
         if (!this.usesCODAL) {
             return ["logotouch", "builtinspeaker", "microphone", "flashlog"]
         }
         return [];
     }
 
+    isConnected(): boolean {
+        return this.io.isConnected() && this.initialized
+    }
+
+    isConnecting(): boolean {
+        return this.io.isConnecting() || (this.io.isConnected() && !this.initialized)
+    }
+
     async reconnectAsync(): Promise<void> {
         log(`reconnect`)
+        this.initialized = false
         this.flashAborted = false;
 
         function stringResponse(buf: Uint8Array) {
@@ -237,6 +257,7 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
         }
 
         await this.stopReadersAsync()
+        const connectionId = this.connectionId
 
         this.allocDAP(); // clean dap apis
 
@@ -273,10 +294,11 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
 
         await this.checkStateAsync(true);
         
+        await this.initJacdac(connectionId)
+        this.initialized = true
+        
         // start jacdac, serial async
-        const connectionId = this.connectionId
-        this.startJacdacSetup(connectionId)
-            .then(() => this.startReadSerial(connectionId))
+        this.startReadSerial(connectionId)
     }
 
     private async checkStateAsync(resume?: boolean): Promise<void> {
@@ -301,6 +323,7 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
     disconnectAsync() {
         log(`disconnect`)
         this.flashAborted = true;
+        this.initialized = false
         return this.stopReadersAsync()
             .then(() => this.io.disconnectAsync());
     }
@@ -365,8 +388,10 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
                     log(msg + "; retrying")
                     return this.recvPacketAsync()
                         .then(resp => {
-                            if (resp[0] == buf[0])
+                            if (resp[0] == buf[0]) {
+                                log(msg + "; retry success")
                                 return resp
+                            }
                             throw new Error(msg)
                         }, err => {
                             throw new Error(msg)
@@ -699,11 +724,10 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
     }
 
     /**
-     * Start trying to connect to Jacdac in the background
-     * and gracefull cancel as needed
+     * Sniff Jacdac exchange address
      * @returns 
      */
-    private async startJacdacSetup(connectionId: number) {
+    private async initJacdac(connectionId: number) {
         this.xchgAddr = null
         this.irqn = undefined
         this.lastXchg = undefined
@@ -724,7 +748,8 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
             let xchg: number
             while (xchg == null && xchgRetry++ < 3) {
                 log(`jacdac: finding xchg address (retry ${xchgRetry})`)
-                await pxt.Util.delay(500); // wait for the program to start and setup memory correctly
+                if (xchgRetry > 0)
+                    await pxt.Util.delay(500); // wait for the program to start and setup memory correctly
                 if(connectionId != this.connectionId) return; 
                 xchg = await this.findJacdacXchgAddr(connectionId)
             }
