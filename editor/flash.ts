@@ -203,7 +203,13 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
                     // if we've been running for a while, try reconnecting
                     if (timeRunning > 1000) {
                         log(`auto-reconnect`)
-                        await this.reconnectAsync();
+                        try {
+                            await this.reconnectAsync();
+                        } catch (e) {
+                            if (e.type === "devicenotfound")
+                                return
+                            throw e
+                        }
                     }
                 }
             }
