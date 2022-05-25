@@ -6,7 +6,6 @@ const dataAddr = 0x20002000;
 const stackAddr = 0x20001000;
 const FULL_FLASH_TIMEOUT = 100000; // 100s
 const PARTIAL_FLASH_TIMEOUT = 60000; // 60s
-const EMPTY_SERIAL_DELAY_MU = 5000;
 
 const flashPageBIN = new Uint32Array([
     0xbe00be00, // bkpt - LR is set to this
@@ -184,9 +183,11 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
                     else
                         numEv = 0
 
-                    // no data on either side
+                    // no data on either side, wait as little as possible
+                    // the browser will eventually throttle this call
+                    // https://developer.mozilla.org/en-US/docs/Web/API/setTimeout#reasons_for_delays_longer_than_specified
                     if (!numSer && !numEv)
-                        await this.dapDelay(EMPTY_SERIAL_DELAY_MU)
+                        await pxt.U.delay(0)
                 }
                 log(`stopped serial reader ${connectionId}`)
             } catch (err) {
@@ -868,14 +869,6 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
         }
 
         return numev
-    }
-
-    private dapDelay(micros: number) {
-        if (micros > 0xffff)
-            throw new Error("too large delay")
-        const cmd = new Uint8Array([0x09, 0, 0])
-        pxt.HF2.write16(cmd, 1, micros)
-        return this.dapCmd(cmd)
     }
 }
 
