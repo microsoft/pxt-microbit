@@ -8,6 +8,7 @@ const dataAddr = 0x20002000;
 const stackAddr = 0x20001000;
 const FULL_FLASH_TIMEOUT = 100000; // 100s
 const PARTIAL_FLASH_TIMEOUT = 60000; // 60s
+const EMPTY_SERIAL_DELAY_MU = 5000;
 
 const flashPageBIN = new Uint32Array([
     0xbe00be00, // bkpt - LR is set to this
@@ -163,6 +164,7 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
             if (d > 500) {
                 this.processSerialLine(this.pendingSerial)
                 this.pendingSerial = null
+                this.lastPendingSerial = undefined
             }
         }
         return len
@@ -173,12 +175,20 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
         log(`start read serial ${connectionId}`)
         const readSerialLoop = async () => {
             try {
+                let numSer = 0
+                let numEv = 0
                 while (connectionId === this.connectionId) {
-                    const len = await this.readSerial()
-                    const hasData = len > 0
-                    //if (hasData)
-                    //    logV(`serial read ${len} bytes`)
-                    await this.jacdacProcess(hasData)
+                    numSer = await this.readSerial()
+                    // we need to read jacdac in a tight loop
+                    // so we don't miss any event
+                    if (this.xchgAddr)
+                        numEv = await this.jacdacProcess()
+                    else 
+                        numEv = 0
+
+                    // no data on either side
+                    if (!numSer && !numEv)
+                        await this.dapDelay(EMPTY_SERIAL_DELAY_MU)
                 }
                 log(`stopped serial reader ${connectionId}`)
             } catch (err) {
@@ -231,7 +241,7 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
     }
 
     unsupportedParts() {
-        if (this.usesCODAL === undefined)            
+        if (this.usesCODAL === undefined)
             console.warn('try to access codal information before it is computed')
         if (!this.usesCODAL) {
             return ["logotouch", "builtinspeaker", "microphone", "flashlog"]
@@ -263,6 +273,10 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
 
         await this.io.reconnectAsync()
 
+        // halt before reading from dap
+        // to avoid interference from data logger
+        await this.cortexM.halt()
+
         // before calling into dapjs, we use our dapCmdNums() a few times, which which will make sure the responses
         // to commends from previous sessions (if any) are flushed
         const info = await this.dapCmdNums(0x00, 0x04) // info
@@ -292,11 +306,11 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
         this.numPages = res[1]
         log(`page size ${this.pageSize}, num pages ${this.numPages}`);
 
+        // jacdac needs to run to set the xchg address
         await this.checkStateAsync(true);
-        
         await this.initJacdac(connectionId)
+
         this.initialized = true
-        
         // start jacdac, serial async
         this.startReadSerial(connectionId)
     }
@@ -750,7 +764,7 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
                 log(`jacdac: finding xchg address (retry ${xchgRetry})`)
                 if (xchgRetry > 0)
                     await pxt.Util.delay(500); // wait for the program to start and setup memory correctly
-                if(connectionId != this.connectionId) return; 
+                if (connectionId != this.connectionId) return;
                 xchg = await this.findJacdacXchgAddr(connectionId)
             }
             log(`jacdac: exchange address 0x${xchg ? xchg.toString(16) : "?"}; ${xchgRetry} retries; ${(pxt.U.now() - now) | 0}ms`)
@@ -761,7 +775,7 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
                 return
             }
 
-            if(connectionId != this.connectionId) return; 
+            if (connectionId != this.connectionId) return;
             const info = await this.readBytes(xchg, 16)
             if (info[12 + 2] != 0xff) {
                 log("jacdac: invalid memory; try power-cycling the micro:bit")
@@ -771,7 +785,7 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
             }
 
             // make sure connection is not outdated
-            if(connectionId != this.connectionId) return; 
+            if (connectionId != this.connectionId) return;
             // clear initial lock
             await this.writeWord(xchg + 12, 0)
             // allow serial thread to use jacdac
@@ -779,7 +793,7 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
             this.xchgAddr = xchg
             log(`jacdac: exchange address 0x${this.xchgAddr.toString(16)}; irqn=${this.irqn}`)
             pxt.tickEvent("hid.flash.jacdac.connected");
-        } catch(e) {
+        } catch (e) {
             if (connectionId != this.connectionId) {
                 log(`jacdac: setup aborted`)
                 return;
@@ -792,13 +806,7 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
         await this.writeWord(addr, 1 << (this.irqn & 31))
     }
 
-    private async jacdacProcess(hadSerial: boolean) {
-        if (this.xchgAddr == null) {
-            if (!hadSerial)
-                await this.dapDelay(5000)
-            return
-        }
-
+    private async jacdacProcess(): Promise<number> {
         const now = Date.now()
         if (this.lastXchg && now - this.lastXchg > 50) {
             logV("slow xchg: " + (now - this.lastXchg) + "ms")
@@ -853,8 +861,7 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
             }
         }
 
-        if (numev == 0 && !hadSerial)
-            await this.dapDelay(5000)
+        return numev
     }
 
     private dapDelay(micros: number) {
