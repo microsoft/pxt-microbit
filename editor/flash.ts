@@ -1,5 +1,3 @@
-import { timeStamp } from "console";
-
 const imul = (Math as any).imul;
 const timeoutMessage = "timeout";
 const membase = 0x20000000;
