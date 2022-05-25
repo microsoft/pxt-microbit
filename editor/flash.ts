@@ -183,7 +183,7 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
                     // so we don't miss any event
                     if (this.xchgAddr)
                         numEv = await this.jacdacProcess()
-                    else 
+                    else
                         numEv = 0
 
                     // no data on either side
@@ -261,6 +261,7 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
         log(`reconnect`)
         this.initialized = false
         this.flashAborted = false;
+        this.io.onConnectionChanged()
 
         function stringResponse(buf: Uint8Array) {
             return pxt.U.uint8ArrayToString(buf.slice(2, 2 + buf[1]))
@@ -311,6 +312,7 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
         await this.initJacdac(connectionId)
 
         this.initialized = true
+        this.io.onConnectionChanged()
         // start jacdac, serial async
         this.startReadSerial(connectionId)
     }
