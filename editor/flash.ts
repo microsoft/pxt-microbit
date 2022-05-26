@@ -38,6 +38,8 @@ function log(msg: string) {
     pxt.debug(`dap ${ts}: ${msg}`)
 }
 const logV = /webusbdbg=1/.test(window.location.href) ? log : (msg: string) => { }
+const setBaudRateOnConnection = !/webusbbaud=0/.test(window.location.href)
+const resetOnConnection = !/webusbreset=0/.test(window.location.href)
 
 function murmur3_core(data: Uint8Array) {
     let h0 = 0x2F9BE6CC;
@@ -262,6 +264,25 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
         return this.io.isConnecting() || (this.io.isConnected() && !this.initialized)
     }
 
+    private async setBaudRate() {
+        if (!setBaudRateOnConnection) return
+
+        log(`set baud rate to 115200`)
+        const baud = new Uint8Array(5)
+        baud[0] = 0x82 // set baud
+        pxt.HF2.write32(baud, 1, 115200)
+        await this.dapCmd(baud)
+        // setting the baud rate on serial may reset NRF (depending on daplink version), so delay after
+        await pxt.Util.delay(200);
+    }
+
+    private async readPageSize() {
+        const res = await this.readWords(0x10000010, 2);
+        this.pageSize = res[0]
+        this.numPages = res[1]
+        log(`page size ${this.pageSize}, num pages ${this.numPages}`);
+    }
+
     async reconnectAsync(): Promise<void> {
         log(`reconnect`)
         this.initialized = false
@@ -296,22 +317,15 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
 
         pxt.tickEvent("hid.flash.connect", { codal: this.usesCODAL ? 1 : 0, daplink: daplinkVersion, bin: binVersion });
 
-        // set baud rate
-        const baud = new Uint8Array(5)
-        baud[0] = 0x82 // set baud
-        pxt.HF2.write32(baud, 1, 115200)
-        await this.dapCmd(baud)
-        // setting the baud rate on serial may reset NRF (depending on daplink version), so delay after
-        await pxt.Util.delay(200);
+       await this.setBaudRate()
         // only init after setting baud rate, in case we got reset
         await this.cortexM.init()
-        await this.cortexM.reset(true)
+        if (resetOnConnection){
+            log(`reset cortex`)
+            await this.cortexM.reset(true)
+        }
 
-        const res = await this.readWords(0x10000010, 2);
-        this.pageSize = res[0]
-        this.numPages = res[1]
-        log(`page size ${this.pageSize}, num pages ${this.numPages}`);
-
+        await this.readPageSize()
         // jacdac needs to run to set the xchg address
         await this.checkStateAsync(true);
         await this.initJacdac(connectionId)

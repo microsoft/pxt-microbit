@@ -1,6 +1,7 @@
 {
   "datalogger.DeleteType.Fast|block": "fast",
   "datalogger.DeleteType.Full|block": "full",
+  "datalogger._columnField|block": "$column",
   "datalogger.createCV|block": "column $column value $value",
   "datalogger.deleteLog|block": "delete log||$deleteType",
   "datalogger.includeTimestamp|block": "set timestamp $format",
