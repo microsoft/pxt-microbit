@@ -65,12 +65,12 @@ cd ..
 git clone https://github.com/microsoft/pxt-common-packages
 cd pxt-common-packages
 npm install
-cd ..
 ```
 
 6. Link pxt-common-packages to pxt
 ```
 npm link ../pxt
+cd ..
 ```
 
 7. Clone this repository.
