@@ -265,8 +265,6 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
     }
 
     private async setBaudRate() {
-        if (!setBaudRateOnConnection) return
-
         log(`set baud rate to 115200`)
         const baud = new Uint8Array(5)
         baud[0] = 0x82 // set baud
@@ -317,7 +315,8 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
 
         pxt.tickEvent("hid.flash.connect", { codal: this.usesCODAL ? 1 : 0, daplink: daplinkVersion, bin: binVersion });
 
-       await this.setBaudRate()
+        if (setBaudRateOnConnection)
+            await this.setBaudRate()
         // only init after setting baud rate, in case we got reset
         await this.cortexM.init()
         if (resetOnConnection){
