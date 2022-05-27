@@ -22,7 +22,7 @@ namespace datalogger {
         initialized = true;
 
         includeTimestamp(FlashLogTimeStampFormat.Seconds);
-        mirrorToSerial(true);
+        mirrorToSerial(false);
 
         control.onEvent(DAL.MICROBIT_ID_LOG, DAL.MICROBIT_LOG_EVT_LOG_FULL, () => {
             _disabled = true;
@@ -43,6 +43,7 @@ namespace datalogger {
         });
     }
 
+
     export class ColumnValue {
         public value: string;
         constructor(
@@ -61,6 +62,7 @@ namespace datalogger {
      */
     //% block="column $column value $value"
     //% value.shadow=math_number
+    //% column.shadow=datalogger_columnfield
     //% blockId=dataloggercreatecolumnvalue
     //% group="micro:bit (V2)"
     //% weight=80 help=datalogger/create-cv
@@ -68,16 +70,27 @@ namespace datalogger {
         return new ColumnValue(column, value);
     }
 
+    //% block="$column"
+    //% blockId=datalogger_columnfield
+    //% group="micro:bit (V2)"
+    //% blockHidden=true shim=TD_ID
+    //% column.fieldEditor="autocomplete" column.fieldOptions.decompileLiterals=true
+    //% column.fieldOptions.key="dataloggercolumn"
+    export function _columnField(column: string) {
+        return column
+    }
+
     /**
      * Log data to flash storage
      * @param data Array of data to be logged to flash storage
      */
-    //% block="log data $data"
+    //% block="log data array $data"
     //% blockId=dataloggerlogdata
     //% data.shadow=lists_create_with
     //% data.defl=dataloggercreatecolumnvalue
     //% group="micro:bit (V2)"
-    //% weight=100 help=datalogger/log-data
+    //% blockHidden=true
+    //% weight=100
     export function logData(data: ColumnValue[]): void {
         if (!data || !data.length)
             return;
@@ -94,19 +107,124 @@ namespace datalogger {
     }
 
     /**
+     * Log data to flash storage
+     * @param data1 First column and value to be logged
+     * @param data2 [optional] second column and value to be logged
+     * @param data3 [optional] third column and value to be logged
+     * @param data4 [optional] fourth column and value to be logged
+     * @param data5 [optional] fifth column and value to be logged
+     * @param data6 [optional] sixth column and value to be logged
+     * @param data7 [optional] seventh column and value to be logged
+     * @param data8 [optional] eighth column and value to be logged
+     * @param data9 [optional] ninth column and value to be logged
+     * @param data10 [optional] tenth column and value to be logged
+     */
+    //% block="log data $data1||$data2 $data3 $data4 $data5 $data6 $data7 $data8 $data9 $data10"
+    //% blockId=dataloggerlog
+    //% data1.shadow=dataloggercreatecolumnvalue
+    //% data2.shadow=dataloggercreatecolumnvalue
+    //% data3.shadow=dataloggercreatecolumnvalue
+    //% data4.shadow=dataloggercreatecolumnvalue
+    //% data5.shadow=dataloggercreatecolumnvalue
+    //% data6.shadow=dataloggercreatecolumnvalue
+    //% data7.shadow=dataloggercreatecolumnvalue
+    //% data8.shadow=dataloggercreatecolumnvalue
+    //% data9.shadow=dataloggercreatecolumnvalue
+    //% data10.shadow=dataloggercreatecolumnvalue
+    //% inlineInputMode="variable"
+    //% group="micro:bit (V2)"
+    //% weight=100 help=datalogger/log
+    export function log(
+        data1: datalogger.ColumnValue,
+        data2?: datalogger.ColumnValue,
+        data3?: datalogger.ColumnValue,
+        data4?: datalogger.ColumnValue,
+        data5?: datalogger.ColumnValue,
+        data6?: datalogger.ColumnValue,
+        data7?: datalogger.ColumnValue,
+        data8?: datalogger.ColumnValue,
+        data9?: datalogger.ColumnValue,
+        data10?: datalogger.ColumnValue
+    ): void {
+        logData(
+            [
+                data1,
+                data2,
+                data3,
+                data4,
+                data5,
+                data6,
+                data7,
+                data8,
+                data9,
+                data10,
+            ].filter(el => !!el)
+        );
+    }
+
+    /**
      * Set the columns for future data logging
      * @param cols Array of the columns that will be logged.
      */
     //% block="set columns $cols"
     //% blockId=dataloggersetcolumns
     //% data.shadow=list_create_with
+    //% data.defl=datalogger_columnfield
     //% group="micro:bit (V2)"
-    //% weight=70 help=datalogger/set-columns
+    //% blockHidden=true
+    //% weight=70
     export function setColumns(cols: string[]): void {
         if (!cols)
             return;
 
         logData(cols.map(col => createCV(col, "")));
+    }
+
+    /**
+     * Set the columns for future data logging
+     * @param col1 Title for first column to be added
+     * @param col2 Title for second column to be added
+     * @param col3 Title for third column to be added
+     * @param col4 Title for fourth column to be added
+     * @param col5 Title for fifth column to be added
+     * @param col6 Title for sixth column to be added
+     * @param col7 Title for seventh column to be added
+     * @param col8 Title for eighth column to be added
+     * @param col9 Title for ninth column to be added
+     * @param col10 Title for tenth column to be added
+     */
+    //% block="set columns $col1||$col2 $col3 $col4 $col5 $col6 $col7 $col8 $col9 $col10"
+    //% blockId=dataloggersetcolumntitles
+    //% inlineInputMode="variable"
+    //% group="micro:bit (V2)"
+    //% weight=70 help=datalogger/set-column-titles
+    //% col1.shadow=datalogger_columnfield
+    //% col2.shadow=datalogger_columnfield
+    //% col3.shadow=datalogger_columnfield
+    //% col4.shadow=datalogger_columnfield
+    //% col5.shadow=datalogger_columnfield
+    //% col6.shadow=datalogger_columnfield
+    //% col7.shadow=datalogger_columnfield
+    //% col8.shadow=datalogger_columnfield
+    //% col9.shadow=datalogger_columnfield
+    //% col10.shadow=datalogger_columnfield
+    export function setColumnTitles(
+        col1: string,
+        col2?: string,
+        col3?: string,
+        col4?: string,
+        col5?: string,
+        col6?: string,
+        col7?: string,
+        col8?: string,
+        col9?: string,
+        col10?: string
+    ): void {
+        logData(
+            [col1, col2, col3, col4, col5, col6, col7, col8, col9, col10]
+                .filter(el => !!el)
+                .map(col => createCV(col, ""))
+        );
     }
 
     /**

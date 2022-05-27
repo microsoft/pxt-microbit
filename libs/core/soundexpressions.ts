@@ -42,23 +42,35 @@ class SoundExpression {
 }
 
 enum WaveShape {
+    //% block="sine"
     Sine = 0,
+    //% block="sawtooth"
     Sawtooth = 1,
+    //% block="triangle"
     Triangle = 2,
+    //% block="square"
     Square = 3,
+    //% block="noise"
     Noise = 4
 }
 
 enum InterpolationCurve {
+    //% block="linear"
     Linear,
+    //% block="curve"
     Curve,
+    //% block="logarithmic"
     Logarithmic
 }
 
 enum SoundExpressionEffect {
+    //% block="none"
     None = 0,
+    //% block="vibrato"
     Vibrato = 1,
+    //% block="tremolo"
     Tremolo = 2,
+    //% block="warble"
     Warble = 3
 }
 
@@ -297,10 +309,15 @@ namespace soundExpression {
 }
 
 namespace music {
+    /**
+     * Play a sound effect from a sound expression string.
+     * @param sound expression string
+     * @param mode to play until done or in the background
+     */
     //% blockId=soundExpression_playSoundEffect
     //% block="play sound $sound $mode"
     //% sound.shadow=soundExpression_createSoundEffect
-    //% weight=100
+    //% weight=100 help=music/play-sound-effect
     //% blockGap=8
     //% group="micro:bit (V2)"
     export function playSoundEffect(sound: string, mode: SoundExpressionPlayMode) {
@@ -312,27 +329,51 @@ namespace music {
         }
     }
 
+    /**
+     * Create a sound expression from a set of sound effect parameters.
+     * @param waveShape for the sound effect 
+     * @param startFrequency for the sound effect waveform
+     * @param endFrequency for the sound effect waveform
+     * @param startVolume of the sound, or starting amplitude
+     * @param endVolume of the sound, or ending amplitude
+     * @param duration in milliseconds (ms) that sound will play for
+     * @param effect to apply to the waveform or volume
+     * @param interpolation for frequency scaling
+     */
     //% blockId=soundExpression_createSoundEffect
+    //% help=music/create-sound-effect
     //% block="$waveShape|| start frequency $startFrequency end frequency $endFrequency duration $duration start volume $startVolume end volume $endVolume effect $effect interpolation $interpolation"
     //% waveShape.defl=WaveShape.Sine
     //% waveShape.fieldEditor=soundeffect
-    //% startFrequency.defl=2000
+    //% startFrequency.defl=5000
+    //% startFrequency.min=0
+    //% startFrequency.max=5000
     //% endFrequency.defl=0
-    //% startVolume.defl=1023
+    //% endFrequency.min=0
+    //% endFrequency.max=5000
+    //% startVolume.defl=255
+    //% startVolume.min=0
+    //% startVolume.max=255
     //% endVolume.defl=0
+    //% endVolume.min=0
+    //% endVolume.max=255
     //% duration.defl=500
+    //% duration.min=1
+    //% duration.max=9999
     //% effect.defl=SoundExpressionEffect.None
     //% interpolation.defl=InterpolationCurve.Linear
     //% compileHiddenArguments=true
     //% inlineInputMode="variable"
+    //% inlineInputModeLimit=3
+    //% expandableArgumentBreaks="3,5"
     //% group="micro:bit (V2)"
     export function createSoundEffect(waveShape: WaveShape, startFrequency: number, endFrequency: number, startVolume: number, endVolume: number, duration: number, effect: SoundExpressionEffect, interpolation: InterpolationCurve): string {
         const sound = new soundExpression.Sound();
         sound.wave = waveShape;
         sound.frequency = startFrequency;
-        sound.volume = startVolume;
+        sound.volume = ((startVolume / 255) * 1023) | 0;
         sound.endFrequency = endFrequency;
-        sound.endVolume = endVolume;
+        sound.endVolume = ((endVolume / 255) * 1023) | 0;
         sound.duration = duration;
         sound.fx = effect;
 
@@ -369,13 +410,17 @@ namespace music {
         return sound.src;
     }
 
+    /**
+     * Get the sound expression string for a built-in a sound effect.
+     * @param soundExpression for a built-in sound effect
+     */
     //% blockId=soundExpression_builtinSoundEffect
     //% block="$soundExpression"
     //% blockGap=8
     //% group="micro:bit (V2)"
     //% toolboxParent=soundExpression_playSoundEffect
     //% toolboxParentArgument=sound
-    //% weight=102
+    //% weight=102 help=music/builtin-sound-effect
     export function builtinSoundEffect(soundExpression: SoundExpression) {
         return soundExpression.getNotes();
     }

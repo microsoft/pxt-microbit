@@ -396,8 +396,8 @@ namespace music {
 
     /**
      * Play a melody from the melody editor.
-     * @param melody - string of up to eight notes [C D E F G A B C5] or rests [-] separated by spaces, which will be played one at a time, ex: "E D G F B A C5 B "
-     * @param tempo - number in beats per minute (bpm), dictating how long each note will play for
+     * @param melody string of up to eight notes [C D E F G A B C5] or rests [-] separated by spaces, which will be played one at a time, ex: "E D G F B A C5 B "
+     * @param tempo number in beats per minute (bpm), dictating how long each note will play for
      */
     //% block="play melody $melody at tempo $tempo|(bpm)" blockId=playMelody
     //% weight=85 blockGap=8 help=music/play-melody

@@ -76,7 +76,7 @@ input.onButtonPressed(Button.A, function () {
 })
 ```
 
-## Step 5
+## Step 6
 
 **After** the ``||loops:while||`` loop is done, add code to ``||basic:show||`` that the game is over.
 
@@ -94,6 +94,6 @@ input.onButtonPressed(Button.A, function () {
 })
 ```
 
-## Step 6
+## Step 7
 
 `|Download|` your code to your @boardname@, tape it to a potato and play the game with your friends!

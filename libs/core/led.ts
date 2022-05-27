@@ -40,6 +40,10 @@ namespace led {
         const now = input.runningTime();
         if (barGraphToConsole)
             console.logValue("", value);
+        if (isNaN(value)) {
+            basic.clearScreen()
+            return
+        }
         value = Math.abs(value);
 
         // auto-scale "high" is not provided
