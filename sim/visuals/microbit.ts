@@ -140,6 +140,7 @@ namespace pxsim.visuals {
             outline: none;
         }
         *:focus .sim-button-outer,
+        .sim-button-outer.sim-button-group:focus,
         .sim-pin:focus,
         .sim-thermometer:focus,
         .sim-shake:focus,
