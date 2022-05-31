@@ -140,13 +140,16 @@ namespace pxsim.visuals {
             outline: none;
         }
         *:focus .sim-button-outer,
-        .sim-button-outer.sim-button-group:focus,
         .sim-pin:focus,
         .sim-thermometer:focus,
         .sim-shake:focus,
         .sim-light-level-button:focus {
             stroke: #4D90FE;
             stroke-width: 5px !important;
+        }
+        .sim-button-outer.sim-button-group:focus > .sim-button {
+            stroke: #4D90FE;
+            stroke-width: 10px !important;
         }
         .no-drag, .sim-text, .sim-text-small,
         .sim-text-pin {
