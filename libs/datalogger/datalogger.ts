@@ -132,7 +132,7 @@ namespace datalogger {
     //% data9.shadow=dataloggercreatecolumnvalue
     //% data10.shadow=dataloggercreatecolumnvalue
     //% inlineInputMode="variable"
-    //% inlineInputModeLimit=2
+    //% inlineInputModeLimit=1
     //% group="micro:bit (V2)"
     //% weight=100 help=datalogger/log
     export function log(
@@ -197,7 +197,7 @@ namespace datalogger {
     //% block="set columns $col1||$col2 $col3 $col4 $col5 $col6 $col7 $col8 $col9 $col10"
     //% blockId=dataloggersetcolumntitles
     //% inlineInputMode="variable"
-    //% inlineInputModeLimit=2
+    //% inlineInputModeLimit=1
     //% group="micro:bit (V2)"
     //% weight=70 help=datalogger/set-column-titles
     //% col1.shadow=datalogger_columnfield
