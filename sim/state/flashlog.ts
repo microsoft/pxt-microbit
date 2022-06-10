@@ -29,7 +29,7 @@ namespace pxsim.flashlog {
         b.ensureHardwareVersion(2);
     }
 
-    function commitRow(data: string) {
+    function commitRow(data: string, type: "headers" | "row" | "plaintext") {
         if (!runtime) return;
         data += "\n";
 
@@ -42,6 +42,11 @@ namespace pxsim.flashlog {
         if (mirrorToSerial) {
             board().serialState.writeSerial(data);
         }
+
+        if (type !== "plaintext") {
+            board().serialState.writeCsv(data, type);
+        }
+
     }
 
     export function beginRow(): number {
@@ -118,12 +123,12 @@ namespace pxsim.flashlog {
         currentRow.length = headers.length;
         const line = currentRow.join(SEPARATOR);
         if (headers.length !== committedCols) {
-            commitRow(headers.join(SEPARATOR))
+            commitRow(headers.join(SEPARATOR), "headers")
             committedCols = headers.length;
         }
         currentRow = undefined;
 
-        commitRow(line);
+        commitRow(line, "row");
         return DAL.DEVICE_OK;
     }
 
@@ -131,7 +136,7 @@ namespace pxsim.flashlog {
         init()
         if (!s) return
 
-        commitRow(s)
+        commitRow(s, "plaintext")
     }
 
     export function clear(fullErase: boolean) {
