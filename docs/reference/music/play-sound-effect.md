@@ -29,7 +29,7 @@ This block requires the [micro:bit V2](/device/v2) hardware. If you use this blo
 
 ## Examples
 
-### Waveform sound
+### Simple waveform sound
 
 Play the sound effect from a sine wave sound expression for `1` second.
 
@@ -37,9 +37,26 @@ Play the sound effect from a sine wave sound expression for `1` second.
 music.playSoundEffect(music.createSoundEffect(WaveShape.Sine, 2000, 0, 1023, 0, 1000, SoundExpressionEffect.None, InterpolationCurve.Linear), SoundExpressionPlayMode.UntilDone)
 ```
 
+### Complex waveform sound
+
+Play a `triangle` wave sound effect with `vibrato` and a `curve` interpolation.
+
+```typescript
+music.playSoundEffect(music.createSoundEffect(
+    WaveShape.Triangle,
+    1000,
+    2700,
+    255,
+    255,
+    500,
+    SoundExpressionEffect.Vibrato,
+    InterpolationCurve.Curve
+    ), SoundExpressionPlayMode.UntilDone)
+```
+
 ### Built-in sounds
 
-Play a [built-in sound effect](/reference/music/builtin-sound-effect) until it finishes.
+Play the `giggle` [built-in sound effect](/reference/music/builtin-sound-effect) until it finishes.
 
 ```blocks
 music.playSoundEffect(music.builtinSoundEffect(soundExpression.giggle), SoundExpressionPlayMode.UntilDone)
