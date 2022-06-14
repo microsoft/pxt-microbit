@@ -311,8 +311,8 @@ namespace soundExpression {
 namespace music {
     /**
      * Play a sound effect from a sound expression string.
-     * @param sound expression string
-     * @param mode to play until done or in the background
+     * @param sound the sound expression string
+     * @param mode the play mode, play until done or in the background
      */
     //% blockId=soundExpression_playSoundEffect
     //% block="play sound $sound $mode"
@@ -331,14 +331,14 @@ namespace music {
 
     /**
      * Create a sound expression from a set of sound effect parameters.
-     * @param waveShape for the sound effect 
-     * @param startFrequency for the sound effect waveform
-     * @param endFrequency for the sound effect waveform
-     * @param startVolume of the sound, or starting amplitude
-     * @param endVolume of the sound, or ending amplitude
-     * @param duration in milliseconds (ms) that sound will play for
-     * @param effect to apply to the waveform or volume
-     * @param interpolation for frequency scaling
+     * @param waveShape waveform of the sound effect 
+     * @param startFrequency starting frequency for the sound effect waveform
+     * @param endFrequency ending frequency for the sound effect waveform
+     * @param startVolume starting volume of the sound, or starting amplitude
+     * @param endVolume ending volume of the sound, or ending amplitude
+     * @param duration the amount of time in milliseconds (ms) that sound will play for
+     * @param effect the effect to apply to the waveform or volume
+     * @param interpolation interpolation method for frequency scaling
      */
     //% blockId=soundExpression_createSoundEffect
     //% help=music/create-sound-effect
@@ -412,7 +412,7 @@ namespace music {
 
     /**
      * Get the sound expression string for a built-in a sound effect.
-     * @param soundExpression for a built-in sound effect
+     * @param soundExpression a sound expression for a built-in sound effect
      */
     //% blockId=soundExpression_builtinSoundEffect
     //% block="$soundExpression"
