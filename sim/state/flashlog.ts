@@ -89,7 +89,7 @@ namespace pxsim.flashlog {
         if (!currentRow.some(el => el !== "" && el != undefined))
             return DAL.DEVICE_OK;
 
-        if (timestampFormat !== FlashLogTimeStampFormat.None && mirrorToSerial) {
+        if (timestampFormat !== FlashLogTimeStampFormat.None) {
             let unit = "";
             switch(timestampFormat) {
                 case FlashLogTimeStampFormat.Milliseconds:
