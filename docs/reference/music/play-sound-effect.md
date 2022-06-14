@@ -8,6 +8,8 @@ music.playSoundEffect("", SoundExpressionPlayMode.UntilDone)
 
 This will play a **[Sound](/types/sound)** object created from a sound expression. The sound will play for the duration that was set in the sound expression. The sound can play on the speaker or at a pin that is set for sound output.
 
+You can also play [built-in sound effects](/reference/music/builtin-sound-effect) like `giggle`, `happy`, or `twinkle`.
+
 Your program can wait for the sound to finish before it runs its next step. To do this, set the play mode to `until done`. Otherwise, use `background` for the program to continue immediately after the sound starts.
 
 ### ~ reminder
@@ -25,12 +27,23 @@ This block requires the [micro:bit V2](/device/v2) hardware. If you use this blo
 * **sound**: a [string](/types/string) that is the sound expression for the sound you want to play.
 * **mode**: the play mode for the sound, either `until done` or `background`.
 
-## Example
+## Examples
 
-Play a sound from a sound expression for `1` second.
+### Waveform sound
+
+Play the sound effect from a sine wave sound expression for `1` second.
 
 ```blocks
 music.playSoundEffect(music.createSoundEffect(WaveShape.Sine, 2000, 0, 1023, 0, 1000, SoundExpressionEffect.None, InterpolationCurve.Linear), SoundExpressionPlayMode.UntilDone)
+```
+
+### Built-in sounds
+
+Play a [built-in sound effect](/reference/music/builtin-sound-effect) until it finishes.
+
+```blocks
+music.playSoundEffect(music.builtinSoundEffect(soundExpression.giggle), SoundExpressionPlayMode.UntilDone)
+
 ```
 
 ## See also
