@@ -331,7 +331,7 @@ namespace music {
 
     /**
      * Create a sound expression from a set of sound effect parameters.
-     * @param waveShape waveform of the sound effect 
+     * @param waveShape waveform of the sound effect
      * @param startFrequency starting frequency for the sound effect waveform
      * @param endFrequency ending frequency for the sound effect waveform
      * @param startVolume starting volume of the sound, or starting amplitude
@@ -420,7 +420,7 @@ namespace music {
     //% group="micro:bit (V2)"
     //% toolboxParent=soundExpression_playSoundEffect
     //% toolboxParentArgument=sound
-    //% weight=102 help=music/builtin-sound-effect
+    //% weight=98 help=music/builtin-sound-effect
     export function builtinSoundEffect(soundExpression: SoundExpression) {
         return soundExpression.getNotes();
     }
