@@ -563,6 +563,7 @@
         "editorVersionPaths": {
             "0": "v0"
         },
+        "appPathNames": [ "/v4" ],
         "showProjectSettings": true,
         "scriptManager": true,
         "debugger": true,
