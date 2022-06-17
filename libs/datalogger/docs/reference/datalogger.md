@@ -28,13 +28,18 @@ A data item consits of value name, which is it's assigned column too, and the it
 ```blocks
 let item = datalogger.createCV("temperature", input.temperature())
 ```
+The order and the names of the data items are set using column titles.
 
-Data items are logged to storage as a row. Here's an example of logging a row of data.
+```blocks
+datalogger.setColumnTitles("temperature", "acceleration", "light")
+```
+
+Data items are logged to storage as a row. Here's an example of logging a row of data. Each different data value is associated with its colunm before it's logged.
 
 ```blocks
 let temp = datalogger.createCV("temperature", input.temperature())
 let accel = datalogger.createCV("acceleration", input.acceleration(Dimension.X))
-let lite = datalogger.createCV("temperature", input.lightLevel())
+let lite = datalogger.createCV("light", input.lightLevel())
 datalogger.log(temp, accel, lite)
 ```
 
