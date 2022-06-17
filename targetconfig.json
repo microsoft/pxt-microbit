@@ -463,7 +463,7 @@
                 "preferred": true
             },
             "pimoroni/pxt-scrollbit": {
-                "tags": [ "Software" ],
+                "tags": [ "Lights and Display" ],
                 "upgrades": [ "min:v0.0.7" ]
             },
             "emwta/pxt-ibit": { "tags": [ "Robotics" ] },
