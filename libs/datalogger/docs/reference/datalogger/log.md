@@ -12,7 +12,7 @@ A log entry is made up of one or more "column-value" objects inserted into an ar
 
 ## Parameters
 
-* **data1 - data10**: one or more (up tp 10) of "column-value" objects to write to the data log.
+* **data1 - data10**: one or more (up to 10) of "column-value" objects to write to the data log.
 
 ## Example
 
