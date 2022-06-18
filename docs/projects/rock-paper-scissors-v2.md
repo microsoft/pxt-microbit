@@ -2,7 +2,7 @@
 
 ## Introduction @unplugged
 
-![Cartoon of the Rock Paper Scissors game](/static/mb/projects/a4-motion.png)
+![Cartoon of the Rock Paper Scissors game](/static/mb/projects/a4-motion-v2.png)
 
 Build "Rock Paper Scissors" with ADDED BONUS SOUNDS using the **micro:bit V2** buzzer!
 
