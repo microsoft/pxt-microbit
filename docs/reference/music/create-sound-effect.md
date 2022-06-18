@@ -34,12 +34,32 @@ A sound expression is set of parameters that describe a **[Sound](/types/sound)*
 
 * a [sound](/types/sound) expression [string](/types/string) with the the desired sound effect parameters.
 
-## Example
+## Examples
+
+### Sine wave sound
 
 Create a sound expression string and assign it to a variable. Play the sound for the sound expression.
 
 ```blocks
 let mySound = music.createSoundEffect(WaveShape.Sine, 2000, 0, 1023, 0, 500, SoundExpressionEffect.None, InterpolationCurve.Linear)
+music.playSoundEffect(mySound, SoundExpressionPlayMode.UntilDone)
+```
+
+### Complex waveform sound
+
+Create a `triangle` wave sound expression with `vibrato` and a `curve` interpolation. Play the sound until it finishes.
+
+```typescript
+let mySound = music.createSoundEffect(
+    WaveShape.Triangle,
+    1000,
+    2700,
+    255,
+    255,
+    500,
+    SoundExpressionEffect.Vibrato,
+    InterpolationCurve.Curve
+    )
 music.playSoundEffect(mySound, SoundExpressionPlayMode.UntilDone)
 ```
 

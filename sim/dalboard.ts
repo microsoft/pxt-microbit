@@ -135,9 +135,9 @@ namespace pxsim {
             const cmpDefs = msg.partDefinitions || {};
             const fnArgs = msg.fnArgs;
 
-            const v2Parts: pxt.Map<boolean> = { 
-                "microphone": true, 
-                "logotouch": true, 
+            const v2Parts: pxt.Map<boolean> = {
+                "microphone": true,
+                "logotouch": true,
                 "builtinspeaker": true,
                 "flashlog": true,
                 "v2": true
