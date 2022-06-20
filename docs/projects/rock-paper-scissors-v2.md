@@ -4,21 +4,21 @@
 
 ![Cartoon of the Rock Paper Scissors game](/static/mb/projects/a4-motion.png)
 
-Build "Rock Paper Scissors" with ADDED BONUS SOUNDS using the **micro:bit V2** buzzer!
+Build a "Rock Paper Scissors" game with ADDED BONUS SOUNDS using the **micro:bit V2** buzzer!
 
 ## Step 1 @fullscreen
 
 Add an ``||input:on shake||`` block to run code when you shake the @boardname@.
 
 ```blocks
-input.onGesture(Gesture.Shake, () => {
+input.onGesture(Gesture.Shake, function () {
 
 })
 ```
 
 ## Step 2 @fullscreen
 
-Add a ``hand`` variable and place the ``||variables:set hand to||`` block in the shake event.
+Make a new variable called ``hand`` and place the ``||variables:set hand to||`` block in the shake event.
 
 ![A animation that shows how to create a variable](/static/mb/projects/rock-paper-scissors/newvar.gif)
 
@@ -28,7 +28,7 @@ Add a ``||math:pick random||`` block to pick a random number from `1` to `3` and
 
 ```blocks
 let hand = 0;
-input.onGesture(Gesture.Shake, () => {
+input.onGesture(Gesture.Shake, function () {
     hand = randint(1, 3)
 })
 ```
@@ -37,13 +37,13 @@ In a later step, each of the possible numbers (`1`, `2`, or `3`) is matched to i
 
 ## Step 4 @fullscreen
 
-Place an ``||logic:if||`` block under the ``||math:pick random||`` and check whether ``hand`` is equal to ``1``. Add a ``||basic:show leds||`` block that shows a picture of a piece of paper. The number `1` will mean paper.
+Place an ``||logic:if||`` block under the ``||math:pick random||`` and check whether ``hand`` is equal to ``1``. Add a ``||basic:show leds||`` block that shows a picture of a piece of paper. The number `1` is the value for paper.
 
 ![How to drag an if statement](/static/mb/projects/rock-paper-scissors/if.gif)
 
 ```blocks
 let hand = 0;
-input.onGesture(Gesture.Shake, () => {
+input.onGesture(Gesture.Shake, function () {
     hand = randint(1, 3)
     if (hand == 1) {
         basic.showLeds(`
@@ -63,7 +63,7 @@ Place a ``||music:play sound||`` block under ``||basic:show leds||`` and edit it
 
 ```blocks
 let hand = 0;
-input.onGesture(Gesture.Shake, () => {
+input.onGesture(Gesture.Shake, function () {
     hand = randint(1, 3)
     if (hand == 1) {
         basic.showLeds(`
@@ -93,7 +93,7 @@ Click the **(+)** button to add an ``||logic:else||`` section.
 
 ```blocks
 let hand = 0;
-input.onGesture(Gesture.Shake, () => {
+input.onGesture(Gesture.Shake, function () {
     hand = randint(1, 3)
     if (hand == 1) {
         basic.showLeds(`
@@ -116,7 +116,7 @@ Add both a ``||basic:show leds||`` block and a ``||music:play sound||`` block in
 
 ```blocks
 let hand = 0;
-input.onGesture(Gesture.Shake, () => {
+input.onGesture(Gesture.Shake, function () {
     hand = randint(1, 3)
     if (hand == 1) {
         basic.showLeds(`
@@ -142,7 +142,7 @@ input.onGesture(Gesture.Shake, () => {
 
 ## Step 9 @fullscreen
 
-Click the ``+`` button again to add an ``||logic:else if||`` section. Now, add a conditional block for ``||logic:hand = 2||`` to the empty slot in the ``||logic:else if||``. Since ``hand`` can only be `1`, `2`, or `3`, your code is now covering all possible cases!
+Click the **(+)** button again to add an ``||logic:else if||`` section. Now, add a conditional block for ``||logic:hand = 2||`` to the empty slot in the ``||logic:else if||``. Since ``hand`` can only be `1`, `2`, or `3`, your code is now covering all possible cases!
 
 ![Adding an else if clause](/static/mb/projects/rock-paper-scissors/ifelseif.gif)
 
