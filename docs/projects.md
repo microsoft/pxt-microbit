@@ -84,6 +84,11 @@
         "imageUrl": "/static/coding-for-teachers/hr8O_pslp8Q.jpg"
     },
     {
+        "name": "Jacdac",
+        "url": "/jacdac",
+        "imageUrl": "/static/jacdac/getting-started.jpg"
+    },
+    {
         "name": "Coding Cards",
         "url": "/coding-cards",
         "imageUrl": "/static/coding-cards/balance-card.jpg"
@@ -114,6 +119,7 @@
 [Behind the MakeCode Hardware](/behind-the-makecode-hardware),
 [Science Experiments](/science-experiments),
 [Coding for Teachers](/coding-for-teachers),
+[Jacdac](/jacdac),
 [Coding Cards](/coding-cards),
 [Deep Dive](/deep-dive)
 
