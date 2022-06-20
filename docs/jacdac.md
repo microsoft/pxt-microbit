@@ -54,12 +54,6 @@ Connect and Code. Instantly.
         "description": "Create twisted sounds using a magnet",
         "url": "/clients/makecode/projects/magnetic-sound-bender/",
         "imageUrl": "/static/jacdac/magnetic-sound-bender.jpg"
-    },
-    {
-        "name": "Slider Graph",
-        "description": "Visualize the position of a slider using the micro:bit screen.",
-        "url": "/clients/makecode/projects/slider-graph/",
-        "imageUrl": "/static/jacdac/slider-graph.jpg"
     }
 ]
 ```
