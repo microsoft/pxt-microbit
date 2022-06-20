@@ -40,8 +40,8 @@ Connect and Code. Instantly.
     {
         "name": "Rotary Sound Bender",
         "description": "Create twisted sounds using a rotary encoder module.",
-        "url": "/clients/makecode/projects/rotary-encoder-bender/",
-        "imageUrl": "/static/jacdac/rotary-encoder-bender.jpg"
+        "url": "/clients/makecode/projects/rotary-sound-bender/",
+        "imageUrl": "/static/jacdac/rotary-sound-bender.jpg"
     },
     {
         "name": "Sound LED",
