@@ -384,8 +384,8 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
    "url": "/pkg/stemhub/pxt-StemhubCity",
    "cardType": "package"
 }, {
-   "name": "Pi Supply tinker:kit",
-   "url": "/pkg/PiSupply/pxt-tinker-kit",
+   "name": "Tinkercademy Tinker:Kit",
+   "url": "/pkg/Tinkertanker/pxt-tinkercademy-tinker-kit",
    "cardType": "package"
 }, {
    "name": "Freenove Starter Kit",
