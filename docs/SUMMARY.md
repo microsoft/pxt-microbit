@@ -295,6 +295,8 @@
         * [on data received](/reference/serial/on-data-received)
         * [redirect](/reference/serial/redirect)
         * [redirect to usb](/reference/serial/redirect-to-usb)
+        * [set baud rate](/reference/serial/set-baud-rate)
+        * [set write line padding](/reference/serial/set-write-line-padding)
         * [write buffer](/reference/serial/write-buffer)
         * [read buffer](/reference/serial/read-buffer)
     * [Control](/reference/control)
