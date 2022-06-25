@@ -33,14 +33,6 @@ Instead, it will include addtional space characters to make the line length `24`
 
 `Hello Serial!           \r\n`
 
-### ~ hint
-
-#### Serial input buffers
-
-Some devices that you connect a @boardname@ to with the serial port might collect the text you send to them in a buffer before they transfer it to a program that will process it. You can ensure that the connected device will respond to your messege by using padding to make the text you sent transfer out of the input buffer right away. If you know that the device connected to your @boardname@ will release the text in its input buffer when `64` characters are collected, you can set the write line padding length to `64` before you send your message.
-
-### ~
-
 ## Parameters
 
 * **length**: a [number](/types/number) between `0` and `128` that sets the padding length for lines of text written to the serial port. The default padding length is `32`.
