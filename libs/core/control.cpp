@@ -16,7 +16,7 @@ enum class EventCreationMode {
     CreateAndFire = CREATE_AND_FIRE,
 };
 
-const char *MICROBIT_BOARD_VERSION[2] = { "2.0", "2.X" };
+const char *MICROBIT_BOARD_VERSION[3] = { "2.0", "2.2", "2.X" };
 
 // note the trailing '_' in names - otherwise we get conflict with the pre-processor
 // this trailing underscore is removed by enums.d.ts generation process
@@ -349,8 +349,12 @@ namespace control {
                 case 0x9904:
                     versionIdx = 0;
                     break;
-                default:
+                case 0x9905:
+                case 0x9906:
                     versionIdx = 1;
+                    break;
+                default:
+                    versionIdx = 2;
                     break;
             }
             return mkString(MICROBIT_BOARD_VERSION[versionIdx], -1);
