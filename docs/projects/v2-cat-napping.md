@@ -1,6 +1,6 @@
-# Cat Tanning
+# Cat Napping
 
-[comment]: to do
+[comment]: to do list
 [comment]: 2 finalize definition for `extension`
 [comment]: figure out why logic category isn't the right color
 [comment]: figure out how to import data logger into solution
@@ -237,3 +237,7 @@ Double-click on MY_DATA to open it in a web browser and you'll see a table with 
 ## 12. Lychee's preferences
 
 Does your home have a good sunbathing spot for Lychee? Comment on our [forum post](TODO) to let us know the max and min light and temperature levels you recorded!
+
+```package
+datalogger=github:microsoft/pxt-microbit/blob/master/libs/datalogger/
+```
