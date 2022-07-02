@@ -23,7 +23,8 @@ Connect and Code. Instantly.
         "name": "Button smasher",
         "description": "How many times can you smash the button in 10 seconds?",
         "url": "https://microsoft.github.io/jacdac-docs/clients/makecode/projects/button-smasher/",
-        "imageUrl": "/static/jacdac/button-smasher.jpg"
+        "imageUrl": "/static/jacdac/button-smasher.jpg",
+        "youTubeId": "rlK_8oqMAmo"
     },
     {
         "name": "Slider Sound Bender",
