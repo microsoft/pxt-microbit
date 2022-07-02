@@ -1,12 +1,9 @@
 # Cat Napping
 
-[comment]: to do list
 [comment]: 2 finalize definition for `extension`
-[comment]: figure out why logic category isn't the right color
-[comment]: figure out how to import data logger into solution
-[comment]: check all data logger solution options
 [comment]: check all images, including the gif
 [comment]: create a forum discussion for sunbathing spot numbers for the last slide?
+[comment]: staging http://localhost:3232/projects/v2-cat-napping
 
 ## 1. Introduction @unplugged
 
@@ -35,13 +32,13 @@ Lychee loves her sun spots because they provide a nice, sunny and warm place to 
 
 ---
 
-► From the ``||datalogger:Data Logger||`` category, grab a ``||datalogger:set columns [""] +]||`` block and snap it into your ``||basic:on start||`` container.
+► From the ``||datalogger:Data Logger||`` category, grab a ``||datalogger:set columns [""] +||`` block and snap it into your ``||basic:on start||`` container.
 
-► Click on the ``[""]`` entry box and type in **``temperature``**.
+► Click on the ``""`` entry box and type in **``temperature``**.
 
-► Click on the ➕ in the ``||datalogger:set columns ["temperature"] +]||`` block. This should produce a new ``[""]`` entry box.
+► Click on the ➕ in the ``||datalogger:set columns ["temperature"] +]||`` block. This should produce a new ``""`` entry box.
 
-► Click on the new, empty ``||datalogger:[""]||`` entry box and type in **``light``**.
+► Click on the new, empty ``""`` entry box and type in **``light``**.
 
 ```blocks
 datalogger.setColumnTitles(
@@ -60,7 +57,7 @@ In order to get Lychee a good amount of data without running out of memory, we s
 
 ► From the ``||loops:Loops||`` category, grab a ``||loops:every [500] ms||`` container and add it to your workspace.
 
-► Click on the the ``[500]`` dropdown and select ``1 minute``.  
+► Click on the the ``500`` dropdown and select ``1 minute``.  
 💡 1 minute is equivalent to 60000ms, which is what the number will automatically change to.
 
 ```blocks
@@ -96,10 +93,10 @@ loops.everyInterval(60000, function () {
 
 ► From the ``||datalogger:Data Logger||`` category, grab a ``||datalogger:log data [column [""] value [0]] +||`` block and snap it **inside** the ``||logic:if [logging] then||`` statement.
 
-► Click on the ``[""]`` after the word ``column`` and type in ``temperature``.  
+► Click on the ``""`` after the word ``column`` and type in ``temperature``.  
 💡 There will also be an option to autofill ``temperature`` by clicking on it on the dropdown. You can do this as well!
 
-► From the ``||input:Input||`` category, select the ``||input:temperature (°C)||`` parameter and drag it in to **replace** the ``[0]`` parameter after the word ``value``.
+► From the ``||input:Input||`` category, select the ``||input:temperature (°C)||`` parameter and drag it in to **replace** the ``0`` parameter after the word ``value``.
 
 ```blocks
 loops.everyInterval(60000, function () {
@@ -116,9 +113,9 @@ loops.everyInterval(60000, function () {
 
 ► On the right of the ``||input:temperature (°C)||`` input that you just snapped in, there is a ➕ button. Click on it. You should now see a new row that says ``||datalogger:column [""] value [0]||``.
 
-► Click on the empty ``[""]`` after the word ``column`` and type in or click on ``light``.
+► Click on the empty ``""`` after the word ``column`` and type in or click on ``light``.
 
-► From the ``||input:Input||`` category, select the ``||input:light level||`` parameter and drag it in to **replace** the ``[0]`` parameter after the word ``value``.
+► From the ``||input:Input||`` category, select the ``||input:light level||`` parameter and drag it in to **replace** the ``0`` parameter after the word ``value``.
 
 ```blocks
 loops.everyInterval(60000, function () {
@@ -146,7 +143,7 @@ Let's give Lychee some more control over when she wants to start and stop loggin
 
 ► Click on the ``||variables:item||`` dropdown and select ``||variables:logging||``.
 
-► From the ``||logic:Logic||`` category, grab a ``||logic:<not []>||`` argument and snap it in to **replace** the ``[0]`` argument.
+► From the ``||logic:Logic||`` category, grab a ``||logic:<not []>||`` argument and snap it in to **replace** the ``0`` argument.
 
 ► From the ``||variables:Variables||`` category, grab a ``||variables:logging||`` variable and snap it in to **replace** the empty ``||logic:<>||`` in the ``||logic:not <>||`` statement.
 
@@ -202,8 +199,9 @@ To provide more data logging control, let's have the @boardname@ default to not 
 ► From the ``||logic:Logic||`` category, grab a ``||logic:<false>||`` argument and snap it in to **replace** the ``||variables:[0]||`` value in your ``||variables:set [logging] to [0]||`` statement.
 
 ```blocks
-//@highlight
 let logging = false
+//@highlight
+logging = false
 datalogger.setColumnTitles(
     "temperature",
     "light"

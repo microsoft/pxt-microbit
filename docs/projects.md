@@ -69,6 +69,11 @@
         "imageUrl": "/static/courses/csintro.jpg"
     },
     {
+        "name": "Jacdac",
+        "url": "/jacdac",
+        "imageUrl": "/static/jacdac/getting-started.jpg"
+    },
+    {
         "name": "Behind the MakeCode Hardware",
         "url": "/behind-the-makecode-hardware",
         "imageUrl": "/static/mb/behindhardware/leds.jpg"
@@ -82,11 +87,6 @@
         "name": "Coding for Teachers",
         "url": "/coding-for-teachers",
         "imageUrl": "/static/coding-for-teachers/hr8O_pslp8Q.jpg"
-    },
-    {
-        "name": "Jacdac",
-        "url": "/jacdac",
-        "imageUrl": "/static/jacdac/getting-started.jpg"
     },
     {
         "name": "Coding Cards",
@@ -116,10 +116,10 @@
 [Turtle](/projects/turtle),
 [Blocks to JavaScript](/courses/blocks-to-javascript),
 [Courses](/courses),
+[Jacdac](/jacdac),
 [Behind the MakeCode Hardware](/behind-the-makecode-hardware),
 [Science Experiments](/science-experiments),
 [Coding for Teachers](/coding-for-teachers),
-[Jacdac](/jacdac),
 [Coding Cards](/coding-cards),
 [Deep Dive](/deep-dive)
 
