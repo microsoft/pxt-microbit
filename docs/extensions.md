@@ -963,5 +963,9 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
     "name": "Elecfreaks NeZha",
     "url": "/pkg/elecfreaks/pxt-nezha",
     "cardType": "package"
+}, {
+  "name": "Joy-IT ADS1115",
+  "url":"/pkg/joy-it/pxt-ads1115",
+    "cardType": "package"
 }]
 ```
