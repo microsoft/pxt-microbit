@@ -334,6 +334,7 @@
             "tinkertanker/pxt-ringbitcar",
             "kitronikltd/pxt-kitronik-servo-lite",
             "kitronikltd/pxt-kitronik-motor-driver",
+            "joy-it/pxt-ads1115",
             "tinkertanker/pxt-smarthome"
         ],
         "approvedRepoLib": {
