@@ -556,6 +556,9 @@
         "monacoColors": {
             "editor.background": "#ecf0f1"
         },
+        "monacoFieldEditors": [
+            "soundeffect-editor"
+        ],
         "browserDbPrefixes": {
             "1": "v1",
             "2": "v2",
