@@ -1,15 +1,10 @@
 # Cat Napping
 
-[comment]: 2 finalize definition for `extension`
-[comment]: check all images, including the gif
-[comment]: create a forum discussion for sunbathing spot numbers for the last slide?
-[comment]: staging http://localhost:3232/projects/v2-cat-napping
-
 ## 1. Introduction @unplugged
 
 Lychee the cat loves to sunbathe and wants to know if your home has a good sunbathing spot. Are you up for the challenge?
 
-![Cat Tanning banner message, an image of a cat](/static/mb/projects/cat-training/1_lychee.png)
+![Cat Tanning banner message, an image of a cat](/static/mb/projects/cat-napping/1_lychee.png)
 
 ## 2. Importing the Data Logger extension
 
@@ -22,7 +17,7 @@ The micro:bit V2 has the ability to log data. This functionality comes from an [
 ► Click on the **"➕ Extensions"** button on your toolbox.
 ► Find the **"datalogger"** extension and click on it. This should add it to your toolbox.
 
-![Importing the Data Logger extension](/static/mb/projects/cat-training/2_dl-extension.png)
+![Importing the Data Logger extension](/static/mb/projects/cat-napping/2_dl-extension.gif)
 
 ## 3. Setting up data logging columns
 
@@ -226,16 +221,16 @@ You did it! If you have a @boardname@ V2 (the one with the **shiny gold** logo a
 
 Now that you have logged some data, plug your @boardname@ into a laptop or desktop computer. The @boardname@ will appear like a USB drive called MICROBIT. Look in there and you'll see a file called MY_DATA:
 
-![MY_DATA file highlighted in file folder](/static/mb/projects/cat-training/11_mydata.png)
+![MY_DATA file highlighted in file folder](/static/mb/projects/cat-napping/11_mydata.png)
 
 Double-click on MY_DATA to open it in a web browser and you'll see a table with your data:
 
-![MY_DATA file highlighted in file folder](/static/mb/projects/cat-training/11_datafile.png)
+![MY_DATA file highlighted in file folder](/static/mb/projects/cat-napping/11_datafile.png)
 
 ## 12. Lychee's preferences
 
 Does your home have a good sunbathing spot for Lychee? Comment on our [forum post](TODO) to let us know the max and min light and temperature levels you recorded!
 
 ```package
-datalogger=github:microsoft/pxt-microbit/blob/master/libs/datalogger/
+datalogger
 ```
