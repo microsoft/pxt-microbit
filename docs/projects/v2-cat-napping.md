@@ -52,7 +52,7 @@ In order to get Lychee a good amount of data without running out of memory, we s
 
 ► From the ``||loops:Loops||`` category, grab a ``||loops:every [500] ms||`` container and add it to your workspace.
 
-► Click on the the ``500`` dropdown and select ``1 minute``.
+► Click on the the ``500`` dropdown and select ``1 minute``.  
 💡 1 minute is equivalent to 60000ms, which is what the number will automatically change to.
 
 ```blocks
@@ -88,7 +88,7 @@ loops.everyInterval(60000, function () {
 
 ► From the ``||datalogger:Data Logger||`` category, grab a ``||datalogger:log data [column [""] value [0]] +||`` block and snap it **inside** the ``||logic:if [logging] then||`` statement.
 
-► Click on the ``""`` after the word ``column`` and type in ``temperature``.
+► Click on the ``""`` after the word ``column`` and type in ``temperature``.  
 💡 There will also be an option to autofill ``temperature`` by clicking on it on the dropdown. You can do this as well!
 
 ► From the ``||input:Input||`` category, select the ``||input:temperature (°C)||`` parameter and drag it in to **replace** the ``0`` parameter after the word ``value``.
@@ -162,7 +162,7 @@ It would help to know when the @boardname@ is logging data and when it isn't. We
 
 ► From the ``||variables:Variables||`` category, grab a ``||variables:logging||`` variable and snap it in to **replace** the ``||logic:<true>||`` condition in your ``||logic:if then / else||`` statement.
 
-► Let's display an image when the @boardname@ is logging data. From the ``||basic:Basic||`` category, grab a ``||basic:show icon []||`` block and snap it into the empty **top container** of your ``||logic:if then / else||`` statement.
+► Let's display an image when the @boardname@ is logging data. From the ``||basic:Basic||`` category, grab a ``||basic:show icon []||`` block and snap it into the empty **top container** of your ``||logic:if then / else||`` statement.  
 💡 The default icon is a heart. Feel free to change the icon to your preference! It will display whenever your @boardname@ is tracking data.
 
 ► Let's clear the board when the @boardname@ is not logging data. From the ``||basic:Basic||`` category, grab a ``||basic:clear screen||`` block and snap it into the empty **bottom container** of your ``||logic:if then / else||`` statement.
