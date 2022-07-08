@@ -8,8 +8,6 @@ Build a magic trick that uses the @boardname@'s compass to detect a nearby magne
 
 This is a simple magic trick you can perform to amaze your friends! When you move the sticky labels on your @boardname@'s **A** and **B** button, you appear to make the buttons really switch over. To see the trick performed watch the video below.
 
-https://youtu.be/-9KvmPopov8
-
 ## How the trick works
 
 The **magic** here is really in the code. This trick uses a magnet, hidden in your hand, to tell the @boardname@ to swap over the buttons. When the magnet is near the @boardname@, the **A** button starts working like the **B** button and the **B** button starts working like the **A** button. Tricky!
