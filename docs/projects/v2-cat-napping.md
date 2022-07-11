@@ -15,6 +15,7 @@ The micro:bit V2 has the ability to log data. This functionality comes from an [
 ---
 
 ► Click on the **"➕ Extensions"** button on your toolbox.
+
 ► Find the **"datalogger"** extension and click on it. This should add it to your toolbox.
 
 ![Importing the Data Logger extension](/static/mb/projects/cat-napping/2_dl-extension.gif)

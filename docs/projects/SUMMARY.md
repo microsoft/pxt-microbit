@@ -8,6 +8,7 @@
   * [Love Meter](/projects/love-meter)
   * [Micro Chat](/projects/micro-chat)
 * [Tutorials for the new micro:bit (V2)](/tutorials-v2)
+  * [Cat Napping](/projects/v2-cat-napping)
   * [Pet Hamster](/projects/v2-pet-hamster)
   * [Countdown](/projects/v2-countdown)
   * [Morse Chat](/projects/v2-morse-chat)
