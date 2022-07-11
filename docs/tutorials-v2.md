@@ -6,6 +6,12 @@ Here are some cool tutorials to get you started with your new @boardname@ (V2)!
 
 ```codecard
 [{
+  "name": "Cat Napping",
+  "url":"/projects/v2-cat-napping",
+  "description": "Use data logging to help Lychee find sun spots.",
+  "imageUrl": "/static/mb/projects/cat-napping/1_lychee.png",
+  "cardType": "tutorial"
+}, {
   "name": "Pet Hamster",
   "url":"/projects/v2-pet-hamster",
   "description": "Interact with your very own micro:bit hamster named Cyrus.",
