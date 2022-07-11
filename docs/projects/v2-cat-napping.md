@@ -10,7 +10,7 @@ Lychee the cat loves to sunbathe and wants to know if your home has a good sunba
 
 💾 **Data logging** 💾
 
-The micro:bit V2 has the ability to log data. This functionality comes from an [__*extension*__](#extension "functionality that you can add to your existing project"). Let's begin by adding the relevant extension to our workspace.
+The micro:bit V2 has the ability to log data. This functionality comes from an [__*extension*__](#extension "functionality that you can add to your existing project"). We have already added the relevant "data logger" extension to our workspace. In case you want to do it yourself outside of this tutorial, the instructions are below.
 
 ---
 
@@ -32,11 +32,12 @@ Lychee loves her sun spots because they provide a nice, sunny and warm place to 
 
 ► Click on the ``""`` entry box and type in **``temperature``**.
 
-► Click on the ➕ in the ``||datalogger:set columns ["temperature"] +]||`` block. This should produce a new ``""`` entry box.
+► Click on the ➕ in the ``||datalogger:set columns ["temperature"] +||`` block. This should produce a new ``""`` entry box.
 
 ► Click on the new, empty ``""`` entry box and type in **``light``**.
 
 ```blocks
+//@highlight
 datalogger.setColumnTitles(
     "temperature",
     "light"
@@ -97,8 +98,8 @@ loops.everyInterval(60000, function () {
 ```blocks
 loops.everyInterval(60000, function () {
     if (logging) {
+        //@highlight
         datalogger.log(
-            //@highlight
             datalogger.createCV("temperature", input.temperature())
         )
     }
@@ -109,7 +110,7 @@ loops.everyInterval(60000, function () {
 
 ► On the right of the ``||input:temperature (°C)||`` input that you just snapped in, there is a ➕ button. Click on it. You should now see a new row that says ``||datalogger:column [""] value [0]||``.
 
-► Click on the empty ``""`` after the word ``column`` and type in or click on ``light``.
+► Click on the empty ``""`` after the word ``column`` and type in or click on "``light``".
 
 ► From the ``||input:Input||`` category, select the ``||input:light level||`` parameter and drag it in to **replace** the ``0`` parameter after the word ``value``.
 
@@ -135,9 +136,7 @@ Let's give Lychee some more control over when she wants to start and stop loggin
 
 ► From the ``||input:Input||`` category, grab a ``||input:on button [A] pressed||`` container and drag it into your workspace.
 
-► From the ``||variables:Variables||`` category, grab a ``||variables:set [item] to [0]||`` block and snap it inside of your ``||input:on button [A] pressed||`` container.
-
-► Click on the ``||variables:item||`` dropdown and select ``||variables:logging||``.
+► From the ``||variables:Variables||`` category, grab a ``||variables:set [logging] to [0]||`` block and snap it inside of your ``||input:on button [A] pressed||`` container.
 
 ► From the ``||logic:Logic||`` category, grab a ``||logic:<not []>||`` argument and snap it in to **replace** the ``0`` argument.
 
@@ -155,7 +154,7 @@ input.onButtonPressed(Button.A, function () {
 
 👀 **Visual indicators** 👀
 
-It would help to know when the @boardname@ is logging data and when it isn't. We can do this by adding visual or audio indicators. For this step, we will be building out a visual indicator and using an [__*if then / else*__](#ifthenelse "runs some code if a boolean condition is true and different code if the condition is false") statement to toggle the different indicators.
+It would help to know when the @boardname@ is logging data and when it isn't. We can do this by adding visual or auditory indicators. For this step, we will be building out a visual indicator and using an [__*if then / else*__](#ifthenelse "runs some code if a boolean condition is true and different code if the condition is false") statement to toggle it.
 
 ---
 
@@ -188,9 +187,7 @@ To provide more data logging control, let's have the @boardname@ default to not 
 
 ---
 
-► Look in the ``||variables:Variables||`` category and snap the  ``||variables:set [item] to [0]||`` block ino the **top** of the ``||basic:on start||`` container.
-
-► Click on the ``||variables:[item]||`` dropdown and select ``||variables:logging||``.
+► Look in the ``||variables:Variables||`` category and snap the  ``||variables:set [logging] to [0]||`` block ino the **top** of the ``||basic:on start||`` container.
 
 ► From the ``||logic:Logic||`` category, grab a ``||logic:<false>||`` argument and snap it in to **replace** the ``||variables:[0]||`` value in your ``||variables:set [logging] to [0]||`` statement.
 
