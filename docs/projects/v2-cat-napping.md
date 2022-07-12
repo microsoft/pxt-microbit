@@ -2,7 +2,7 @@
 
 ## 1. Introduction @unplugged
 
-Lychee the cat loves to sunbathe and wants to know if your home has a good sunbathing spot. Are you up for the challenge?
+Lychee the cat loves the sun and wants to know if your home has a good sunbathing spot. Are you up for the challenge?
 
 ![Cat Tanning banner message, an image of a cat](/static/mb/projects/cat-napping/1_lychee.png)
 
