@@ -6,21 +6,7 @@ Lychee the cat loves to sunbathe and wants to know if your home has a good sunba
 
 ![Cat Tanning banner message, an image of a cat](/static/mb/projects/cat-napping/1_lychee.png)
 
-## 2. Importing the Data Logger extension
-
-💾 **Data logging** 💾
-
-The micro:bit V2 has the ability to log data. This functionality comes from an [__*extension*__](#extension "functionality that you can add to your existing project"). We have already added the relevant "data logger" extension to our workspace. In case you want to do it yourself outside of this tutorial, the instructions are below.
-
----
-
-► Click on the **"➕ Extensions"** button on your toolbox.
-
-► Find the **"datalogger"** extension and click on it. This should add it to your toolbox.
-
-![Importing the Data Logger extension](/static/mb/projects/cat-napping/2_dl-extension.gif)
-
-## 3. Setting up data logging columns
+## 2. Setting up data logging columns
 
 🌞 **Warm and sunny** 🌞
 
@@ -30,21 +16,21 @@ Lychee loves her sun spots because they provide a nice, sunny and warm place to 
 
 ► From the ``||datalogger:Data Logger||`` category, grab a ``||datalogger:set columns [""] +||`` block and snap it into your ``||basic:on start||`` container.
 
-► Click on the ``""`` entry box and type in **``temperature``**.
+► Click on the ``""`` entry box and type in **``temp``**.
 
-► Click on the ➕ in the ``||datalogger:set columns ["temperature"] +||`` block. This should produce a new ``""`` entry box.
+► Click on the ➕ in the ``||datalogger:set columns ["temp"] +||`` block. This should produce a new ``""`` entry box.
 
 ► Click on the new, empty ``""`` entry box and type in **``light``**.
 
 ```blocks
 //@highlight
 datalogger.setColumnTitles(
-    "temperature",
+    "temp",
     "light"
     )
 ```
 
-## 4. Time interval for data logging
+## 3. Time interval for data logging
 
 📈 **A data point a minute** 📈
 
@@ -54,7 +40,7 @@ In order to get Lychee a good amount of data without running out of memory, we s
 
 ► From the ``||loops:Loops||`` category, grab a ``||loops:every [500] ms||`` container and add it to your workspace.
 
-► Click on the the ``500`` dropdown and select ``1 minute``.  
+► Click on the the ``500`` dropdown and select ``1 minute``. <br />
 💡 1 minute is equivalent to 60000ms, which is what the number will automatically change to.
 
 ```blocks
@@ -62,7 +48,7 @@ loops.everyInterval(60000, function () {
 })
 ```
 
-## 5. Setting up a logging variable
+## 4. Setting up a logging variable
 
 We want to make sure we know when our micro:bit is collecting data. To do this, let's create a [__*variable*__](#variable "a holder for information that may change") and use it with an [__*if then*__](#ifthen "runs some code if a boolean condition is true") statement to keep track of if the @boardname@ is logging data.
 
@@ -82,7 +68,7 @@ loops.everyInterval(60000, function () {
 })
 ```
 
-## 6. Setting up logging pt. 1
+## 5. Setting up logging pt. 1
 
 🏁 **Ready...set...log!** 🏁
 
@@ -90,17 +76,17 @@ loops.everyInterval(60000, function () {
 
 ► From the ``||datalogger:Data Logger||`` category, grab a ``||datalogger:log data [column [""] value [0]] +||`` block and snap it **inside** the ``||logic:if [logging] then||`` statement.
 
-► Click on the ``""`` after the word ``column`` and type in ``temperature``.  
-💡 There will also be an option to autofill ``temperature`` by clicking on it on the dropdown. You can do this as well!
+► Click on the ``""`` after the word ``column`` and type in ``temp``. <br />
+💡 You can also autofill by clicking on ``temp`` in the dropdown.
 
-► From the ``||input:Input||`` category, select the ``||input:temperature (°C)||`` parameter and drag it in to **replace** the ``0`` parameter after the word ``value``.
+► From the ``||input:Input||`` category, select the ``||input:temperature (°C)||`` parameter and drag it in to **replace** the ``0`` after the word ``value``.
 
 ```blocks
 loops.everyInterval(60000, function () {
     if (logging) {
         //@highlight
         datalogger.log(
-            datalogger.createCV("temperature", input.temperature())
+            datalogger.createCV("temp", input.temperature())
         )
     }
 })
@@ -118,7 +104,7 @@ loops.everyInterval(60000, function () {
 loops.everyInterval(60000, function () {
     if (logging) {
         datalogger.log(
-            datalogger.createCV("temperature", input.temperature()),
+            datalogger.createCV("temp", input.temperature()),
             //@highlight
             datalogger.createCV("light", input.lightLevel())
         )
@@ -154,16 +140,16 @@ input.onButtonPressed(Button.A, function () {
 
 👀 **Visual indicators** 👀
 
-It would help to know when the @boardname@ is logging data and when it isn't. We can do this by adding visual or auditory indicators. For this step, we will be building out a visual indicator and using an [__*if then / else*__](#ifthenelse "runs some code if a boolean condition is true and different code if the condition is false") statement to toggle it.
+It would help to know when the @boardname@ is logging data and when it isn't. For this step, we will be building out a visual indicator and using an [__*if then / else*__](#ifthenelse "runs some code if a boolean condition is true and different code if the condition is false") statement to toggle it.
 
 ---
 
 ► From the ``||logic:Logic||`` category, grab an ``||logic:if <true> then / else||`` statement and snap it in at the **bottom** of your ``||input:on button [A] pressed||`` container.
 
-► From the ``||variables:Variables||`` category, grab a ``||variables:logging||`` variable and snap it in to **replace** the ``||logic:<true>||`` condition in your ``||logic:if then / else||`` statement.
+► From ``||variables:Variables||``, grab a ``||variables:logging||`` variable and snap it in to **replace** the ``||logic:<true>||`` condition in your ``||logic:if then / else||`` statement.
 
-► Let's display an image when the @boardname@ is logging data. From the ``||basic:Basic||`` category, grab a ``||basic:show icon []||`` block and snap it into the empty **top container** of your ``||logic:if then / else||`` statement.  
-💡 The default icon is a heart. Feel free to change the icon to your preference! It will display whenever your @boardname@ is tracking data.
+► Let's display an image when the @boardname@ is logging data. From the ``||basic:Basic||`` category, grab a ``||basic:show icon []||`` block and snap it into the empty **top container** of your ``||logic:if then / else||`` statement. <br />
+💡 Feel free to change the icon to your preference! It will display whenever your @boardname@ is tracking data.
 
 ► Let's clear the board when the @boardname@ is not logging data. From the ``||basic:Basic||`` category, grab a ``||basic:clear screen||`` block and snap it into the empty **bottom container** of your ``||logic:if then / else||`` statement.
 
@@ -196,7 +182,7 @@ let logging = false
 //@highlight
 logging = false
 datalogger.setColumnTitles(
-    "temperature",
+    "temp",
     "light"
     )
 ```
