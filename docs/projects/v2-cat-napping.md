@@ -209,7 +209,7 @@ Now that you have logged some data, plug your @boardname@ into a laptop or deskt
 
 Double-click on MY_DATA to open it in a web browser and you'll see a table with your data:
 
-![MY_DATA file highlighted in file folder](/static/mb/projects/cat-napping/11_datafile.png)
+![Image of sample data file](/static/mb/projects/cat-napping/11_datafile.png)
 
 ## 12. Lychee's preferences
 
