@@ -19,7 +19,7 @@ cardboard, scissors, glue, tin foil
 
 headphones, buzzer, or powered speaker
 
-<img src="blob:https://web.whatsapp.com/8e096601-3ec1-4f17-86a4-a09f9a153a96">
+<img src="https://github.com/akshitagupta15june/pxt-microbit/blob/patch-1/docs/projects/Microbit-Electric-Guitar/Images/connect.jpeg">
 
 Project Video: https://youtu.be/Yocsl_80YsY
 
