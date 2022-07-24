@@ -19,6 +19,8 @@ cardboard, scissors, glue, tin foil
 
 headphones, buzzer, or powered speaker
 
+<img src="blob:https://web.whatsapp.com/8e096601-3ec1-4f17-86a4-a09f9a153a96">
+
 Project Video: https://youtu.be/Yocsl_80YsY
 
 
