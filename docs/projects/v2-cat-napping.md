@@ -44,6 +44,7 @@ Let's give Lychee some control over when she wants to start and stop logging dat
 ✋🛑 Take a moment to help Lychee answer the following question: _What is happening every time she presses the A button?_
 
 ```blocks
+let logging = false
 input.onButtonPressed(Button.A, function () {
     logging = !(logging)
 })
@@ -67,6 +68,7 @@ It would help to know when the @boardname@ is logging data and when it isn't. Fo
 💡 In the ``show icon`` dropdown menu options, you can hover to see what each design is called.
 
 ```blocks
+let logging = false
 input.onButtonPressed(Button.A, function () {
     logging = !(logging)
     if (logging) {
@@ -89,6 +91,7 @@ Let's now add an auditory indicator that your @boardname@ is logging data!
 ► Let's clear the board when the @boardname@ is not logging data. From the ``||basic:Basic||`` category, grab a ``||basic:clear screen||`` block and snap it into the empty **bottom container** of your ``||logic:if then / else||`` statement.
 
 ```blocks
+let logging = false
 input.onButtonPressed(Button.A, function () {
     logging = !(logging)
     if (logging) {
@@ -129,6 +132,7 @@ Now, let's use an [__*if then*__](#ifthen "runs some code if a boolean condition
 ► From the ``||variables:Variables||`` category, drag out a ``||variables:logging||`` variable and snap it in to **replace** the ``||logic:<true>||`` argument in the ``||logic:if <true> then||`` statement.
 
 ```blocks
+let logging = false
 loops.everyInterval(60000, function () {
     if (logging) {
     }
@@ -150,6 +154,7 @@ Lychee loves her sun spots because they provide a nice, sunny and warm place to 
 ► From the ``||input:Input||`` category, select the ``||input:temperature (°C)||`` parameter and drag it in to **replace** the ``0`` after the word ``value``.
 
 ```blocks
+let logging = false
 loops.everyInterval(60000, function () {
     if (logging) {
         //@highlight
@@ -169,6 +174,7 @@ loops.everyInterval(60000, function () {
 ► From the ``||input:Input||`` category, select the ``||input:light level||`` parameter and drag it in to **replace** the ``0`` parameter after the word ``value``.
 
 ```blocks
+let logging = false
 loops.everyInterval(60000, function () {
     if (logging) {
         //@highlight
@@ -206,7 +212,7 @@ Double-click on MY_DATA to open it in a web browser and you'll see a table with 
 
 ## 11. Lychee's preferences @unplugged
 
-Does your home have a good sunbathing spot for Lychee? Compare the light and temperature levels you recorded for different areas around your house! The sunniest and warmest spots will likely be her favorite ☀️😻
+Does your home have a good sunbathing spot for Lychee? Compare the light and temperature levels you record for different areas around your house! The sunniest and warmest spots will likely be her favorite ☀️😻
 
 ```package
 datalogger

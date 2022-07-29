@@ -11,7 +11,7 @@
     {
         "name": "Tutorials for the new micro:bit (V2)",
         "url": "/tutorials-v2",
-        "imageUrl": "/static/mb/projects/cat-napping/1_lychee.png"
+        "imageUrl": "/static/mb/projects/pet-hamster.png"
     },
     {
         "name": "Live Coding",
