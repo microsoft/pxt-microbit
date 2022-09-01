@@ -319,7 +319,8 @@
             "microsoft/pxt-jacdac/wind-direction",
             "microsoft/pxt-jacdac/wind-speed",
             "DFRobot/pxt-DFRobot_IoT_Cloud_Kit",
-            "plenprojectcompany/pxt-PLENbit_full"
+            "plenprojectcompany/pxt-PLENbit_full",
+            "bsiever/microbit-pxt-clicks"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",
@@ -767,7 +768,8 @@
             "ekkai/aicococam": {},
             "elecfreaks/pxt-xgo": {},
             "dfrobot/pxt-dfrobot_iot_cloud_kit": { "tags": [ "Networking" ] },
-            "plenprojectcompany/pxt-plenbit_full": { "tags": [ "Robotics" ] }
+            "plenprojectcompany/pxt-plenbit_full": { "tags": [ "Robotics" ] },
+            "bsiever/microbit-pxt-clicks": { "tags": [ "Software" ] }
         },
         "upgrades": {
             "tinkertanker/pxt-iot-environment-kit": "min:v4.2.1",
