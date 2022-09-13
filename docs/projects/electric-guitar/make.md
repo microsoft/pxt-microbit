@@ -30,3 +30,11 @@ Here are two pictures of the finished electric guitar with its connections:
 ![Electric guitar project 1](/static/mb/projects/electric-guitar/guitar-board1.jpg)
 
 ![Electric guitar project 2](/static/mb/projects/electric-guitar/guitar-board2.jpg)
+
+Let's go on to code the guitar!
+
+### ~button /projects/electric-guitar/code
+
+Code
+
+### ~
