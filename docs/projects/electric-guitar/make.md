@@ -23,10 +23,10 @@ https://youtu.be/Yocsl_80YsY
 
 You can connect the electric guitar to some headphones with some crocodile clips you attach to the phone jack.
 
-![Output connections for sound](/docs/static/mb/projects/electric-guitar/connections.jpg)
+![Output connections for sound](/static/mb/projects/electric-guitar/connections.jpg)
 
 Here are two pictures of the finished electric guitar with its connections:
 
-![Electric guitar project 1](/docs/static/mb/projects/electric-guitar/guitar-board1.jpg)
+![Electric guitar project 1](/static/mb/projects/electric-guitar/guitar-board1.jpg)
 
-![Electric guitar project 2](/docs/static/mb/projects/electric-guitar/guitar-board2.jpg)
+![Electric guitar project 2](/static/mb/projects/electric-guitar/guitar-board2.jpg)
