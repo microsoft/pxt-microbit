@@ -20,5 +20,10 @@ Get your headphone and let's do music!
   "url":"/projects/guitar",
   "description": "An awesome cardboard guitar project, get ready to riff!",
   "imageUrl":"/static/mb/projects/guitar.png"
+}, {
+  "name": "Jonny's Bird",
+  "url":"/projects/jonnys-bird",
+  "description": "Shake and tilt to make incredible bird sounds!",
+  "imageUrl":"/static/mb/projects/jonnys-bird.png"
 }]
 ```
