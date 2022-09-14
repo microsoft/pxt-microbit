@@ -310,6 +310,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 
 ```codecard
 [{
+  "name": "DFRobot IoT Cloud Kit",
+  "url":"/pkg/DFRobot/pxt-DFRobot_IoT_Cloud_Kit",
+  "cardType": "package"
+}, {
   "name": "iClass IoT",
   "url":"/pkg/KelieLeung/pxt-iClassIoT",
   "cardType": "package"
@@ -631,6 +635,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 }, {
   "name": "ReroKit rero:micro",
   "url":"/pkg/ReRoKit/pxt-reromicro",
+  "cardType": "package"
+}, {
+  "name": "PLEN bit full",
+  "url":"/pkg/plenprojectcompany/pxt-PLENbit_full",
   "cardType": "package"
 }, {
   "name": "PLEN bit",
