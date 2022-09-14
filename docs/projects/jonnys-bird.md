@@ -17,7 +17,7 @@ basic.forever(function () {
 })
 ```
 
-Pull a ``||math:map from to||`` block into the value slot of the ``||variables:currFreq||``. Use ``||input:acceleration (mg) x||`` as the mapping value, set the `from` value range as `-1024` and `1023`. Set the `to` value range as `0` and `5000`.
+Pull a ``||math:map from to||`` block into the value slot of the ``||variables:set currFreq||``. Use ``||input:acceleration (mg) x||`` as the mapping value, set the `from` value range as `-1024` and `1023`. Set the `to` value range as `0` and `5000`.
 
 ```blocks
 let currfreq = 0
