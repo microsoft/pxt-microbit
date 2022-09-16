@@ -127,7 +127,7 @@ namespace pxsim.pins {
     export function analogPitch(frequency: number, ms: number) {
         // update analog output
         const b = board();
-        if (!b) return;
+        if (!b || isNaN(frequency) || isNaN(ms)) return;
         const ec = b.edgeConnectorState;
         const pins = ec.pins;
         const pin = ec.pitchEnabled && (pins.filter(pin => !!pin && pin.pitch)[0] || pins[0]);
