@@ -20,5 +20,10 @@ Get your headphone and let's do music!
   "url":"/projects/guitar",
   "description": "An awesome cardboard guitar project, get ready to riff!",
   "imageUrl":"/static/mb/projects/guitar.png"
+}, {
+  "name": "Electric Guitar",
+  "url":"/projects/electric-guitar",
+  "description": "Make an electric guitar that you can play real chords with using the micro:bit!",
+  "imageUrl":"/static/mb/projects/electric-guitar.png"
 }]
 ```
