@@ -2,7 +2,7 @@
 
 ## ~avatar avatar
 
-Make an electric guitar that you can play real chords with using amicro:bit.
+Make an electric guitar that you can play real chords with using the micro:bit.
 
 ## ~
 
