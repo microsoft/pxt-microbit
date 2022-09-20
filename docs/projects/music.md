@@ -25,5 +25,10 @@ Get your headphone and let's do music!
   "url":"/projects/jonnys-bird",
   "description": "Shake and tilt to make incredible bird sounds!",
   "imageUrl":"/static/mb/projects/jonnys-bird.png"
+}, {
+  "name": "Electric Guitar",
+  "url":"/projects/electric-guitar",
+  "description": "Make an electric guitar that you can play real chords with using the micro:bit!",
+  "imageUrl":"/static/mb/projects/electric-guitar.png"
 }]
 ```
