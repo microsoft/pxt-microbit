@@ -21,13 +21,13 @@ https://youtu.be/q9-CCeBNZ4Y
 
 Below are some pictures of the components and connections 
 
-![Output connections for sound](/static/mb/projects/electric-guitar/connections.jpg)
+![Components Required](/static/mb/projects/face-touch-alarm/alarm-components.jpg)
 
-Here are two pictures of the finished electric guitar with its connections:
+Here are two pictures of the finished projects with its connections:
 
-![Electric guitar project 1](/static/mb/projects/electric-guitar/guitar-board1.jpg)
+![Face touch alarm project 1](/static/mb/projects/face-touch-alarm/alarm-connection.jpg)
 
-![Electric guitar project 2](/static/mb/projects/electric-guitar/guitar-board2.jpg)
+![Face touch alarm project 2](/static/mb/projects/face-touch-alarm/alarm-connection2.jpg)
 
 Let's go on to code the micro:bit!
 
