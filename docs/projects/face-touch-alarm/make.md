@@ -2,7 +2,7 @@
 
 If you are prone to oily skin, face touching can aggravate the presence of skin oil, To help prevent infections, keep your hands away from your eyes, nose, and mouth so here micro:bit can help a lot.
 
-We will build a "Face Touch Early Warning System" that warns you by showing led signals whenever you bring your hands towards your face.
+We will build a **Face Touch Early Warning System** that warns you by showing led signals whenever you bring your hands towards your face.
 
 ## How it Works?
 
