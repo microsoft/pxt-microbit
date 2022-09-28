@@ -764,7 +764,8 @@
             "bsiever/microbit-pxt-blehid": {},
             "dfrobot/pxt-dfrobot_environment_science": {},
             "ekkai/aicococam": {},
-            "elecfreaks/pxt-xgo": {}
+            "elecfreaks/pxt-xgo": {},
+            "joy-it/pxt-rfid-mfrc522": { "tags": [ "Individual sensors" ] }
         },
         "upgrades": {
             "tinkertanker/pxt-iot-environment-kit": "min:v4.2.1",
