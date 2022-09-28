@@ -303,6 +303,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
     "name": "HTS221 Humidity and temperature",
     "url": "/pkg/makecode-extensions/HTS221",
     "cardType": "package"
+}, {
+    "name": "Joy IT RFID Module MFRC-522",
+    "url": "/pkg/joy-it/pxt-rfid-mfrc522",
+    "cardType": "package"
 }]
 ```
 
@@ -310,6 +314,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 
 ```codecard
 [{
+  "name": "DFRobot IoT Cloud Kit",
+  "url":"/pkg/DFRobot/pxt-DFRobot_IoT_Cloud_Kit",
+  "cardType": "package"
+}, {
   "name": "iClass IoT",
   "url":"/pkg/KelieLeung/pxt-iClassIoT",
   "cardType": "package"
@@ -631,6 +639,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 }, {
   "name": "ReroKit rero:micro",
   "url":"/pkg/ReRoKit/pxt-reromicro",
+  "cardType": "package"
+}, {
+  "name": "PLEN bit full",
+  "url":"/pkg/plenprojectcompany/pxt-PLENbit_full",
   "cardType": "package"
 }, {
   "name": "PLEN bit",

@@ -199,6 +199,7 @@ namespace music {
     //% useEnumVal=1
     //% group="Tone"
     export function playTone(frequency: number, ms: number): void {
+        if (isNaN(frequency) || isNaN(ms)) return;
         if (_playTone) _playTone(frequency, ms);
         else pins.analogPitch(frequency, ms);
     }
@@ -292,6 +293,7 @@ namespace music {
     //% weight=100
     export function changeTempoBy(bpm: number): void {
         init();
+        if (isNaN(bpm)) return;
         setTempo(beatsPerMinute + bpm);
     }
 
@@ -306,6 +308,7 @@ namespace music {
     //% weight=99
     export function setTempo(bpm: number): void {
         init();
+        if (isNaN(bpm)) return;
         if (bpm > 0) {
             beatsPerMinute = Math.max(1, bpm);
         }
