@@ -336,7 +336,6 @@
             "tinkertanker/pxt-ringbitcar",
             "kitronikltd/pxt-kitronik-servo-lite",
             "kitronikltd/pxt-kitronik-motor-driver",
-            "joy-it/pxt-ads1115",
             "tinkertanker/pxt-smarthome"
         ],
         "approvedRepoLib": {
@@ -769,7 +768,8 @@
             "elecfreaks/pxt-xgo": {},
             "joy-it/pxt-rfid-mfrc522": { "tags": [ "Individual sensors" ] },
             "dfrobot/pxt-dfrobot_iot_cloud_kit": { "tags": [ "Networking" ] },
-            "plenprojectcompany/pxt-plenbit_full": { "tags": [ "Robotics" ] }
+            "plenprojectcompany/pxt-plenbit_full": { "tags": [ "Robotics" ] },
+            "joy-it/pxt-ads1115": { "tags": [ "Individual sensors" ] }
         },
         "upgrades": {
             "tinkertanker/pxt-iot-environment-kit": "min:v4.2.1",
