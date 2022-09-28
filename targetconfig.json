@@ -336,7 +336,6 @@
             "tinkertanker/pxt-ringbitcar",
             "kitronikltd/pxt-kitronik-servo-lite",
             "kitronikltd/pxt-kitronik-motor-driver",
-            "joy-it/pxt-rfid-mfrc522",
             "tinkertanker/pxt-smarthome"
         ],
         "approvedRepoLib": {
