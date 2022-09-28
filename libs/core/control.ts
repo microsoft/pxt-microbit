@@ -108,7 +108,6 @@ namespace control {
     let _evSource = 0x8000
     /**
      * Incrementally allocates event source identifiers.
-     * @returns 
      */
     export function allocateEventSource() {
         return ++_evSource

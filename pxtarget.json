@@ -165,7 +165,7 @@
                 "codalTarget": {
                     "name": "codal-microbit-v2",
                     "url": "https://github.com/lancaster-university/codal-microbit-v2",
-                    "branch": "v0.2.38",
+                    "branch": "v0.2.40",
                     "type": "git"
                 },
                 "codalBinary": "MICROBIT",
@@ -523,6 +523,7 @@
             "en",
             "ar",
             "bg",
+            "ca",
             "cs",
             "cy",
             "da",
@@ -556,11 +557,15 @@
         "monacoColors": {
             "editor.background": "#ecf0f1"
         },
+        "monacoFieldEditors": [
+            "soundeffect-editor"
+        ],
         "browserDbPrefixes": {
             "1": "v1",
             "2": "v2",
             "3": "v3",
-            "4": "v4"
+            "4": "v4",
+            "5": "v5"
         },
         "editorVersionPaths": {
             "0": "v0"

@@ -24,6 +24,12 @@ Fun games to build with your @boardname@.
     "cardType": "tutorial"
   }]
 }, {
+  "name": "Rock Paper Scissors V2",
+  "url":"/projects/rock-paper-scissors-v2",
+  "description": "Rock Paper Scissors with Sounds for micro:bit V2!",
+  "imageUrl":"/static/mb/projects/a4-motion-v2.png",
+  "cardType": "tutorial"
+},{
   "name": "Coin Flipper",
   "url":"/projects/coin-flipper",
   "description": "Guess the coin toss and see if you're lucky.",

@@ -36,6 +36,16 @@ namespace pxsim {
                 this.serialOutBuffer = '';
             }
         }
+
+        writeCsv(s: string, type: "headers" | "row") {
+            Runtime.postMessage(<SimulatorSerialMessage>{
+                type: 'serial',
+                data: s,
+                id: runtime.id,
+                csvType: type,
+                sim: true
+            })
+        }
     }
 }
 

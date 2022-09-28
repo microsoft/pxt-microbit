@@ -4,7 +4,7 @@ Registers an event to be fired when one of the delimiter is matched.
 
 
 ```sig
-serial.onDataReceived(",", () => {})
+serial.onDataReceived(",", function() {})
 ```
 
 ## Parameters

@@ -17,6 +17,9 @@ namespace pxsim.visuals {
         .sim-button {
             pointer-events: none;
         }
+        .sim-head .sim-button {
+            pointer-events: unset;
+        }
         .sim-board, .sim-display, sim-button {
             fill: #111;
         }
@@ -384,10 +387,11 @@ path.sim-board {
             svg.fill(this.buttonsOuter[2], theme.virtualButtonOuter);
             svg.fill(this.buttons[2], theme.virtualButtonUp);
             svg.fills(this.logos, theme.accent);
-            if (this.domHardwareVersion > 1)
+            if (this.domHardwareVersion > 1) {
                 svg.fills(this.heads.slice(1), "gold");
-            else
+            } else {
                 svg.fills(this.heads.slice(1), theme.accent);
+            }
             if (this.shakeButton) svg.fill(this.shakeButton, theme.virtualButtonUp);
 
             this.pinGradients.forEach(lg => svg.setGradientColors(lg, theme.pin, theme.pinActive));
@@ -991,7 +995,7 @@ path.sim-board {
             // head
             this.head = <SVGGElement>svg.child(this.g, "g", { class: "sim-head" });
             svg.child(this.head, "circle", { cx: 258, cy: 75, r: 100, fill: "transparent" })
-            this.headParts = <SVGGElement>svg.child(this.head, "g", { class: "sim-button-outer sim-button-group" });
+            this.headParts = <SVGGElement>svg.child(this.head, "g", {});
             this.heads = []
             // background
             this.heads.push(svg.path(this.headParts, "sim-button", "M 269.9 50.2 L 269.9 50.2 l -39.5 0 v 0 c -14.1 0.1 -24.6 10.7 -24.6 24.8 c 0 13.9 10.4 24.4 24.3 24.7 v 0 h 39.6 c 14.2 0 24.8 -10.6 24.8 -24.7 C 294.5 61 284 50.3 269.9 50.2 M 269.7 89.2"));
@@ -1115,6 +1119,8 @@ path.sim-board {
             const headTitle = pxsim.localization.lf("logo touch (micro:bit v2 needed)")
             accessibility.makeFocusable(this.headParts);
             accessibility.setAria(this.headParts, "button", headTitle);
+            this.headParts.setAttribute("class", "sim-button-outer sim-button-group")
+            this.attachButtonEvents(this.board.logoTouch, this.headParts, this.headParts);
 
             // microphone led
             const microphoneTitle = pxsim.localization.lf("microphone (micro:bit v2 needed)")
@@ -1324,44 +1330,49 @@ path.sim-board {
 
         private attachABEvents() {
             const bpState = this.board.buttonPairState;
-            const stateButtons: Button[] = [bpState.aBtn, bpState.bBtn, this.board.logoTouch];
-            const elButtonOuters = this.buttonsOuter.slice(0, 2).concat(this.headParts);
-            const elButtons = this.buttons.slice(0, 2).concat(this.headParts);
+            const stateButtons: Button[] = [bpState.aBtn, bpState.bBtn];
+            const elButtonOuters = this.buttonsOuter.slice(0, 2);
+            const elButtons = this.buttons.slice(0, 2);
 
             elButtonOuters.forEach((btn, index) => {
-                let pressedTime: number;
-                pointerEvents.down.forEach(evid => btn.addEventListener(evid, ev => {
-                    console.log(`down ${stateButtons[index].id}`)
-                    stateButtons[index].pressed = true;
-                    svg.fill(elButtons[index], this.props.theme.buttonDown);
-                    this.board.bus.queue(stateButtons[index].id, DAL.MICROBIT_BUTTON_EVT_DOWN);
-                    pressedTime = runtime.runningTime()
-                }));
-                btn.addEventListener(pointerEvents.leave, ev => {
-                    stateButtons[index].pressed = false;
-                    svg.fill(elButtons[index], this.props.theme.buttonUp);
-                })
-                btn.addEventListener(pointerEvents.up, ev => {
-                    stateButtons[index].pressed = false;
-                    svg.fill(elButtons[index], this.props.theme.buttonUp);
-                    this.board.bus.queue(stateButtons[index].id, DAL.MICROBIT_BUTTON_EVT_UP);
-                    const currentTime = runtime.runningTime()
-                    if (currentTime - pressedTime > DAL.DEVICE_BUTTON_LONG_CLICK_TIME)
-                        this.board.bus.queue(stateButtons[index].id, DAL.MICROBIT_BUTTON_EVT_LONG_CLICK);
-                    else
-                        this.board.bus.queue(stateButtons[index].id, DAL.MICROBIT_BUTTON_EVT_CLICK);
-                    pressedTime = undefined;
-                })
-                accessibility.enableKeyboardInteraction(btn, undefined, () => {
-                    this.board.bus.queue(stateButtons[index].id, DAL.MICROBIT_BUTTON_EVT_DOWN);
-                    this.board.bus.queue(stateButtons[index].id, DAL.MICROBIT_BUTTON_EVT_UP);
-                    this.board.bus.queue(stateButtons[index].id, DAL.MICROBIT_BUTTON_EVT_CLICK);
-                });
+                this.attachButtonEvents(stateButtons[index], btn, elButtons[index]);
+            });
+        }
+
+        attachButtonEvents(stateButton: Button, buttonOuter: SVGElement, elButton: SVGElement) {
+            let pressedTime: number;
+            pointerEvents.down.forEach(evid => buttonOuter.addEventListener(evid, ev => {
+                // console.log(`down ${stateButton.id}`)
+                stateButton.pressed = true;
+                svg.fill(elButton, this.props.theme.buttonDown);
+                this.board.bus.queue(stateButton.id, DAL.MICROBIT_BUTTON_EVT_DOWN);
+                pressedTime = runtime.runningTime()
+            }));
+            buttonOuter.addEventListener(pointerEvents.leave, ev => {
+                stateButton.pressed = false;
+                svg.fill(elButton, this.props.theme.buttonUp);
             })
+            buttonOuter.addEventListener(pointerEvents.up, ev => {
+                stateButton.pressed = false;
+                svg.fill(elButton, this.props.theme.buttonUp);
+                this.board.bus.queue(stateButton.id, DAL.MICROBIT_BUTTON_EVT_UP);
+                const currentTime = runtime.runningTime()
+                if (currentTime - pressedTime > DAL.DEVICE_BUTTON_LONG_CLICK_TIME)
+                    this.board.bus.queue(stateButton.id, DAL.MICROBIT_BUTTON_EVT_LONG_CLICK);
+                else
+                    this.board.bus.queue(stateButton.id, DAL.MICROBIT_BUTTON_EVT_CLICK);
+                pressedTime = undefined;
+            })
+            accessibility.enableKeyboardInteraction(buttonOuter, undefined, () => {
+                this.board.bus.queue(stateButton.id, DAL.MICROBIT_BUTTON_EVT_DOWN);
+                this.board.bus.queue(stateButton.id, DAL.MICROBIT_BUTTON_EVT_UP);
+                this.board.bus.queue(stateButton.id, DAL.MICROBIT_BUTTON_EVT_CLICK);
+            });
         }
 
         private attachAPlusBEvents() {
             const bpState = this.board.buttonPairState;
+
             let pressedTime: number;
             // A+B
             pointerEvents.down.forEach(evid => this.buttonsOuter[2].addEventListener(evid, ev => {

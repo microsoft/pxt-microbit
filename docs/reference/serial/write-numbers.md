@@ -3,7 +3,7 @@
 Write an array of numbers to the [serial](/device/serial) port.
 
 ```sig
-serial.writeNumbers([0, 1, 2]);
+serial.writeNumbers([0, 1, 2])
 ```
 
 Instead of writing a single number at a time using [write number](/reference/serial/write-number), you can write multiple numbers to the serial port at once. They are written as _Comma Separated Values (CSV)_.
@@ -23,17 +23,17 @@ This makes a line of CSV data where the commas between the numbers are the separ
 This program repeatedly writes a 3-number array to the serial port.
 
 ```blocks
-basic.forever(() => {
-    serial.writeNumbers([1, 2, 3]);
-    basic.pause(5000);
-});
+basic.forever(function() {
+    serial.writeNumbers([1, 2, 3])
+    basic.pause(5000)
+})
 ```
 
 ## Example: plot temperature and light
 
 ```blocks
 serial.writeLine("temp,light")
-basic.forever(() => {
+basic.forever(function() {
     serial.writeNumbers([input.temperature(), input.lightLevel()])
 })
 ```
