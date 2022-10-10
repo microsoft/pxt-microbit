@@ -1,15 +1,13 @@
 # MicroCode
 
-Experimental Physical computing.
+[MicroCode](https://aka.ms/m9) is an experimental tile-based language and editor for young coders and coders with disabilities on the BBC micro:bit V2 (V1 not supported), inspired by Kodu Game Lab.
 
 ## Getting started
-
-[MicroCode](https://aka.ms/m9) is an experimental simple, iconic code editor for the micro:bit V2.
 
 ```codecard
 [{
         "name": "Getting Started",
-        "description": "Microsoft MicroCode is a tile-based language and editor for young coders and coders with disabilities on the BBC micro:bit V2 (V1 not supported), inspired by Kodu Game Lab.",
+        "description": "MicroCode is an experimental tile-based language and editor for young coders and coders with disabilities on the BBC micro:bit V2 (V1 not supported), inspired by Kodu Game Lab.",
         "url":"https://microsoft.github.io/microcode",
         "imageUrl": "/static/microcode/home.png"
     },
