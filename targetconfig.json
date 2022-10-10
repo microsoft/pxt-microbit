@@ -832,6 +832,7 @@
         "Blocks to JavaScript": "courses/blocks-to-javascript",
         "Courses": "courses",
         "Jacdac": "jacdac",
+        "MicroCode for the new micro:bit (V2)": "microcode",
         "Behind the MakeCode Hardware": {
             "url": "behind-the-makecode-hardware",
             "youTube": true
