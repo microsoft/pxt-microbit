@@ -770,7 +770,7 @@
             "dfrobot/pxt-dfrobot_iot_cloud_kit": { "tags": [ "Networking" ] },
             "plenprojectcompany/pxt-plenbit_full": { "tags": [ "Robotics" ] },
             "joy-it/pxt-ads1115": { "tags": [ "Individual sensors" ] },
-            "sparkfun/pxt-gator-UV": { "tags": [ "Science" ] }
+            "sparkfun/pxt-gator-uv": { "tags": [ "Science" ] }
         },
         "upgrades": {
             "tinkertanker/pxt-iot-environment-kit": "min:v4.2.1",
