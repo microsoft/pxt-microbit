@@ -767,9 +767,12 @@
             "dfrobot/pxt-dfrobot_environment_science": {},
             "ekkai/aicococam": {},
             "elecfreaks/pxt-xgo": {},
+            "joy-it/pxt-rfid-mfrc522": { "tags": [ "Individual sensors" ] },
             "dfrobot/pxt-dfrobot_iot_cloud_kit": { "tags": [ "Networking" ] },
             "plenprojectcompany/pxt-plenbit_full": { "tags": [ "Robotics" ] },
-            "bsiever/microbit-pxt-clicks": { "tags": [ "Software" ] }
+            "bsiever/microbit-pxt-clicks": { "tags": [ "Software" ] },
+            "joy-it/pxt-ads1115": { "tags": [ "Individual sensors" ] },
+            "bsiever/microbit-pxt-rotate": { "tags": [ "Software" ] }
         },
         "upgrades": {
             "tinkertanker/pxt-iot-environment-kit": "min:v4.2.1",
@@ -832,6 +835,7 @@
         "Blocks to JavaScript": "courses/blocks-to-javascript",
         "Courses": "courses",
         "Jacdac": "jacdac",
+        "MicroCode for the new micro:bit (V2)": "microcode",
         "Behind the MakeCode Hardware": {
             "url": "behind-the-makecode-hardware",
             "youTube": true

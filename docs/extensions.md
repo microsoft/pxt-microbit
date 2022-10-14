@@ -303,6 +303,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
     "name": "HTS221 Humidity and temperature",
     "url": "/pkg/makecode-extensions/HTS221",
     "cardType": "package"
+}, {
+    "name": "Joy IT RFID Module MFRC-522",
+    "url": "/pkg/joy-it/pxt-rfid-mfrc522",
+    "cardType": "package"
 }]
 ```
 
@@ -876,6 +880,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
   "url": "/pkg/bsiever/microbit-pxt-clicks",
   "cardType": "package"
 }, {
+  "name": "Rotate Display",
+  "url":"/pkg/bsiever/microbit-pxt-rotate",
+  "cardType": "package"
+}, {
   "name": "Bluetooth HID",
   "url":"/pkg/bsiever/microbit-pxt-blehid",
   "cardType": "package"
@@ -974,6 +982,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 }, {
     "name": "Elecfreaks NeZha",
     "url": "/pkg/elecfreaks/pxt-nezha",
+    "cardType": "package"
+}, {
+  "name": "Joy-IT ADS1115",
+  "url":"/pkg/joy-it/pxt-ads1115",
     "cardType": "package"
 }]
 ```

@@ -35,4 +35,4 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
 [micro:bit V2](/device/v2),
 [logo is pressed](/reference/input/logo-is-pressed),
 [on pin pressed](/reference/input/on-logo-released),
-[touch set mode](/referene/inpu/touch-set-mode)
+[touch set mode](/reference/pins/touch-set-mode)

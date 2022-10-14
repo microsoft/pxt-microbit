@@ -74,6 +74,11 @@
         "imageUrl": "/static/jacdac/getting-started.jpg"
     },
     {
+        "name": "MicroCode for the new micro:bit (V2)",
+        "url": "/microcode",
+        "imageUrl": "/static/microcode/home.png"
+    },
+    {
         "name": "Behind the MakeCode Hardware",
         "url": "/behind-the-makecode-hardware",
         "imageUrl": "/static/mb/behindhardware/leds.jpg"
@@ -117,6 +122,7 @@
 [Blocks to JavaScript](/courses/blocks-to-javascript),
 [Courses](/courses),
 [Jacdac](/jacdac),
+[MicroCode for the new micro:bit (V2)](/microcode),
 [Behind the MakeCode Hardware](/behind-the-makecode-hardware),
 [Science Experiments](/science-experiments),
 [Coding for Teachers](/coding-for-teachers),
