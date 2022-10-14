@@ -307,6 +307,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
     "name": "Joy IT RFID Module MFRC-522",
     "url": "/pkg/joy-it/pxt-rfid-mfrc522",
     "cardType": "package"
+}, {
+    "name": "gator:RTC Real time clock",
+    "url":"/pkg/sparkfun/pxt-gator-rtc",
+    "cardType": "package"
 }]
 ```
 
