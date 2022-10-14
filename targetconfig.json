@@ -319,8 +319,7 @@
             "microsoft/pxt-jacdac/wind-direction",
             "microsoft/pxt-jacdac/wind-speed",
             "DFRobot/pxt-DFRobot_IoT_Cloud_Kit",
-            "plenprojectcompany/pxt-PLENbit_full",
-            "bsiever/microbit-pxt-clicks"
+            "plenprojectcompany/pxt-PLENbit_full"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",
