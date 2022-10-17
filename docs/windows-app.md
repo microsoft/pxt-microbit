@@ -1,11 +1,18 @@
-# Windows App Deprecation
+# @extends
 
-The Windows app is being deprecated by June 2022. Please use your web browser to access the website at https://makecode.microbit.org
+## #deprecate-note
 
-## Moving Projects
+### ~ alert
 
-If you want to keep the projects you saved with the app and use them again in the MakeCode editor on the web, you will need to transfer them.
+#### Windows app deprecation
 
-1. Share the project from the app using the **Share** option.
-2. Copy the shared project URL that the app gives you.
-3. On the MakeCode website homepage, click on **Import** to open the shared project with the URL you just copied.
+MakeCode Windows app is being deprecated. Support for the Windows app
+will end after June 2022. Please use your web browser to access the MakeCode
+website at https://makecode.microbit.org. As an alternative, you can use the
+[MakeCode Offline App](/offline-app).
+
+### ~
+
+## Offline editing #offline
+
+For offline usage, you have two options. You can use the [MakeCode Offline App](/offline-app) for offline usage, or just use the web-based editor with its [offline](/offline) support.

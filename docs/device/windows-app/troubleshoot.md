@@ -6,6 +6,18 @@ Is the [Windows App](https://www.microsoft.com/store/apps/9pjc7sv48lcx) not down
 
 ### ~
 
+### ~ alert
+
+#### Windows app deprecation
+
+MakeCode Windows app is being deprecated. Support for the Windows app will end after
+June 2022. Please move to using the web-based browser version of MakeCode at
+https://makecode.microbit.org. See the [Windows app](/windows-app) page for more information. 
+
+As an alternative, you can use the [MakeCode Offline App](/offline-app).
+
+### ~
+
 ## Step 1: Check your cable
 
 Make sure that your @boardname@ is connected to your computer with a micro USB cable. You should see a **MICROBIT** drive appear in Windows Explorer when it's connected. 
