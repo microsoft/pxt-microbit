@@ -6,7 +6,7 @@ Set the timestamp format for the data log entries.
 datalogger.includeTimestamp(FlashLogTimeStampFormat.None)
 ```
 
-A timestamp value is included as one of the data items in a log entry. You can choose a which timestamp format you want for your log entries. Time units are from milliseconds to days. If you don't want a timestamp, you use this function to set the timestamp to `none`. If you haven't changed the timestamp format, the default is `milliseconds`.
+A timestamp value is included as one of the data items in a log entry. You can choose which timestamp format you want for your log entries. Time units are from milliseconds to days. If you don't want a timestamp, you use this function to set the timestamp to `none`. If you haven't changed the timestamp format, the default is `milliseconds`.
 
 ## Parameters
 
