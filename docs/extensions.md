@@ -423,6 +423,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
   "name": "Minode Kit",
   "url":"/pkg/minodekit/pxt-minode",
   "cardType": "package"
+}, {
+  "name": "DFRobot Boson Kit",
+  "url":"/pkg/DFRobot/pxt-DFRobot_Boson_Kit",
+  "cardType": "package"
 }]
 ```
 
