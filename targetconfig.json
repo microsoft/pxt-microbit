@@ -773,7 +773,7 @@
             "joy-it/pxt-ads1115": { "tags": [ "Individual sensors" ] },
             "bsiever/microbit-pxt-rotate": { "tags": [ "Software" ] },
             "sparkfun/pxt-gator-uv": { "tags": [ "Science" ] },
-            "dfrobot/pxt-dfrobot_boson_kit": { "tags": [ "Science" ] }
+            "dfrobot/pxt-dfrobot_bosonkit": { "tags": [ "Science" ] }
         },
         "upgrades": {
             "tinkertanker/pxt-iot-environment-kit": "min:v4.2.1",
