@@ -319,7 +319,7 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 ```codecard
 [{
   "name": "DFRobot IoT Cloud Kit",
-  "url":"/pkg/dfrobot/pxt-dfrobot_boson_kit",
+  "url":"/pkg/DFRobot/pxt-DFRobot_IoT_Cloud_Kit",
   "cardType": "package"
 }, {
   "name": "iClass IoT",
