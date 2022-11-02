@@ -425,7 +425,7 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
   "cardType": "package"
 }, {
   "name": "DFRobot Boson Kit",
-  "url":"/pkg/DFRobot/pxt-DFRobot_Boson_Kit",
+  "url":"/pkg/dfrobot/pxt-dfrobot_boson_kit",
   "cardType": "package"
 }]
 ```
