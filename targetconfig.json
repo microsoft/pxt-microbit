@@ -766,11 +766,11 @@
             "dfrobot/pxt-dfrobot_environment_science": {},
             "ekkai/aicococam": {},
             "elecfreaks/pxt-xgo": {},
-            "joy-it/pxt-rfid-mfrc522": { "tags": [ "Individual sensors" ] },
+            "joy-it/pxt-rfid-mfrc522": { "tags": [ "Science" ] },
             "dfrobot/pxt-dfrobot_iot_cloud_kit": { "tags": [ "Networking" ] },
             "plenprojectcompany/pxt-plenbit_full": { "tags": [ "Robotics" ] },
             "bsiever/microbit-pxt-clicks": { "tags": [ "Software" ] },
-            "joy-it/pxt-ads1115": { "tags": [ "Individual sensors" ] },
+            "joy-it/pxt-ads1115": { "tags": [ "Science" ] },
             "bsiever/microbit-pxt-rotate": { "tags": [ "Software" ] },
             "sparkfun/pxt-gator-uv": { "tags": [ "Science" ] },
             "dfrobot/pxt-dfrobot_bosonkit": { "tags": [ "Science" ] }
