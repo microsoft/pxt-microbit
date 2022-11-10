@@ -304,10 +304,6 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
     "url": "/pkg/makecode-extensions/HTS221",
     "cardType": "package"
 }, {
-    "name": "Joy IT RFID Module MFRC-522",
-    "url": "/pkg/joy-it/pxt-rfid-mfrc522",
-    "cardType": "package"
-}, {
     "name": "gator:UV UV Light sensor",
     "url":"/pkg/sparkfun/pxt-gator-UV",
     "cardType": "package"
@@ -755,6 +751,14 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 
 ```codecard
 [{
+    "name": "Joy IT RFID Module MFRC-522",
+    "url": "/pkg/joy-it/pxt-rfid-mfrc522",
+    "cardType": "package"
+}, {
+  "name": "Joy-IT ADS1115",
+  "url":"/pkg/joy-it/pxt-ads1115",
+    "cardType": "package"
+}, {
   "name": "DFRobot Environment Science Board ",
   "url":"/pkg/DFRobot/pxt-DFRobot_Environment_Science",
   "cardType": "package"
@@ -990,10 +994,6 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 }, {
     "name": "Elecfreaks NeZha",
     "url": "/pkg/elecfreaks/pxt-nezha",
-    "cardType": "package"
-}, {
-  "name": "Joy-IT ADS1115",
-  "url":"/pkg/joy-it/pxt-ads1115",
     "cardType": "package"
 }]
 ```
