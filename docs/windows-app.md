@@ -4,8 +4,8 @@ The original MakeCode for micro:bit Windows app has been deprecated. For continu
 
 ## Moving Projects
 
-If you want to keep the projects you saved with the app and use them again in the MakeCode editor on the web, you will need to transfer them.
+If you want to keep the projects you saved with the old app and use them again in the new app, you will need to transfer them.
 
 1. Share the project from the app using the **Share** option.
 2. Copy the shared project URL that the app gives you.
-3. On the MakeCode website homepage, click on **Import** to open the shared project with the URL you just copied.
+3. On the new MakeCode app homepage, click on **Import** to open the shared project with the URL you just copied.
