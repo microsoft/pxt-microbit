@@ -1,6 +1,6 @@
 # Windows App Deprecation
 
-The Windows app is being deprecated by June 2022. Please use your web browser to access the website at https://makecode.microbit.org
+The original MakeCode for micro:bit Windows app has been deprecated. For continued support, please use our new app: https://apps.microsoft.com/store/detail/microsoft-makecode-for-microbit/9NMQDQ2XZKWK
 
 ## Moving Projects
 
