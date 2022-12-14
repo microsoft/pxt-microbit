@@ -1,4 +1,4 @@
-# The Watch
+# The Watch!
 
 ## ~avatar
 
@@ -42,3 +42,4 @@ https://flipgrid.com/0398a822
 
 Artistic design by Melinda Hoeneisen.
 
+## ~Avatar
