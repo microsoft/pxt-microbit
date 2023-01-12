@@ -1,29 +1,47 @@
 # Rest
 
-Rest (play no sound) through pin `PO` for the amount of time you say.
+Play no sound (rest) on the speaker or at a sound pin for the amount of time you say.
 
 ```sig
 music.rest(400)
 ```
 
-### ~ hint
+The duration of the rest is set as a number milliseconds. Instead, it's typical to use a number of beats or a beat fraction for a rest. The ``||music:beat||`` block is used to convert beats to milliseconds. You can also make a custom rest by setting the rest duration to certain amount of milliseconds.
 
-**Simulator**: This function only works on the @boardname@ and in some browsers.
+### ~hint
 
-## ~
+#### Simulator
+
+The ``||music:rest||`` block works on the @boardname@ board. It might not work in the simulator on every browser.
+
+### ~
 
 ## Parameters
 
-* ``ms`` is a [number](/types/number) saying how many
-  milliseconds the @boardname@ should rest. One second is 1000
-  milliseconds.
+* **ms** is the [number](/types/number) of milliseconds for the duration of the rest. A [beat](/reference/music/beat) value is used instead as the block's default rest duration. The number of beats is converted to milliseconds for you.
 
 ## Example
 
+### Middle C loop
+
+Continuously play a `Middle C` tone for `1` beat and rest for `2` beats.
+
 ```blocks
-let frequency = music.noteFrequency(Note.C)
-music.playTone(frequency, 1000)
-music.rest(1000)
+basic.forever(function () {
+    music.playTone(262, music.beat(BeatFraction.Whole))
+    music.rest(music.beat(BeatFraction.Double))
+})
+```
+
+### Custom rest time
+
+Continuously play a `Middle C` note followed by a random rest time.
+
+```blocks
+basic.forever(function () {
+    music.playTone(262, music.beat(BeatFraction.Whole))
+    music.rest(randint(500, 2000))
+})
 ```
 
 ## See also

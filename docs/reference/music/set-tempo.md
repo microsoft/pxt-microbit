@@ -5,11 +5,15 @@ Makes the tempo (speed of a piece of music) as fast or slow as you say.
 ```sig
 music.setTempo(60)
 ```
-## ~ hint
 
-**Simulator**: This function only works on the @boardname@ and in some browsers.
+### ~hint
 
-## ~
+#### Simulator
+
+``||music:set tempo||`` works on the @boardname@. It might not work in the simulator on every browser.
+
+### ~
+
 
 ## Parameters
 
