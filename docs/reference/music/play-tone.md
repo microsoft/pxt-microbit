@@ -30,7 +30,7 @@ The ``||music:play tone||`` block works on the @boardname@ board. It might not w
 Play a `Middle C` for `1 beat`.
 
 ```blocks
-music.playTone(music.noteFrequency(Note.C), music.beat(BeatFraction.Whole)))
+music.playTone(music.noteFrequency(Note.C), music.beat(BeatFraction.Whole))
 ```
 
 ### Custom tone frequency and duration
@@ -46,7 +46,7 @@ music.playTone(250, 1000)
 Use [analogSetPitchPin](/reference/pins/analog-set-pitch-pin) to change the pin used to generate music.
 
 ```blocks
-pins.analogSetPitchPin(AnalogPin.P1);
+pins.analogSetPitchPin(AnalogPin.P1)
 ```
 
 ## See also
