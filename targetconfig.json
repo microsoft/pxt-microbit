@@ -774,7 +774,8 @@
             "bsiever/microbit-pxt-rotate": { "tags": [ "Software" ] },
             "sparkfun/pxt-gator-uv": { "tags": [ "Science" ] },
             "dfrobot/pxt-dfrobot_bosonkit": { "tags": [ "Science" ] },
-            "resolute-support/pxt-apprentice_car": { "tags": [ "Robotics" ] }
+            "resolute-support/pxt-apprentice_car": { "tags": [ "Robotics" ] },
+            "makeandlearn/pxt-didacbot": { "tags": [ "Robotics" ] }
         },
         "upgrades": {
             "tinkertanker/pxt-iot-environment-kit": "min:v4.2.1",

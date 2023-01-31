@@ -493,6 +493,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 
 ```codecard
 [{
+  "name": "MAKE&LEARN Didacbot",
+  "url":"/pkg/MakeAndLearn/pxt-didacbot",
+  "cardType": "package"
+}, {
   "name": "Resolute Apprentice Car",
   "url":"/pkg/resolute-support/pxt-apprentice_Car",
   "cardType": "package"
