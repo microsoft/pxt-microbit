@@ -435,7 +435,7 @@
             "sparkfun/pxt-weather-bit": { "tags": [ "Science" ] },
             "sparkfun/pxt-gator-environment": {
                 "tags": [ "Science" ],
-                "upgrades": [ "dv:mbcodal" ]
+                "upgrades": [ "min:v1.1.2" ]
             },
             "minodekit/pxt-minode": {
                 "tags": [ "Science" ],
