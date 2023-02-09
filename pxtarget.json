@@ -142,7 +142,7 @@
         "githubCorePackage": "lancaster-university/microbit",
         "gittag": "v2.2.0-rc6",
         "serviceId": "microbit",
-        "dockerImage": "pext/yotta:latest"
+        "dockerImage": "pext/yotta:update-yotta3"
     },
     "multiVariants": [
         "mbdal",
@@ -172,7 +172,7 @@
                 "githubCorePackage": "lancaster-university/microbit-v2-samples",
                 "gittag": "v0.2.11",
                 "serviceId": "mbcodal2",
-                "dockerImage": "pext/yotta:latest",
+                "dockerImage": "pext/yotta:update-yotta3",
                 "yottaConfigCompatibility": true
             }
         }
