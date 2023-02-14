@@ -94,3 +94,4 @@
 @sidebarSecondaryColor: @white;
 @sidbarActiveTabIconColor: @primaryColor;
 @tutorialBarBackgroundColor: #ecf0f1;
+@tutorialSimframeMargin: 0.3rem;
