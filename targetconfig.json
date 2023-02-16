@@ -775,7 +775,8 @@
             "sparkfun/pxt-gator-uv": { "tags": [ "Science" ] },
             "dfrobot/pxt-dfrobot_bosonkit": { "tags": [ "Science" ] },
             "resolute-support/pxt-apprentice_car": { "tags": [ "Robotics" ] },
-            "makeandlearn/pxt-didacbot": { "tags": [ "Robotics" ] }
+            "makeandlearn/pxt-didacbot": { "tags": [ "Robotics" ] },
+            "cytrontechnologies/pxt-motionbit": { "tags": [ "Robotics" ] }
         },
         "upgrades": {
             "tinkertanker/pxt-iot-environment-kit": "min:v4.2.1",
