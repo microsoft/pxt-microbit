@@ -608,7 +608,7 @@
         },
         "winAppDeprImage": "/static/winapp.PNG",
         "showWinAppDeprBanner": false,
-        "legacyTutorial": true
+        "legacyTutorial": false
     },
     "queryVariants": {
         "hidemenu": {
