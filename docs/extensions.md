@@ -752,6 +752,11 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
   "name": "TinkerTanker Stepper Motor",
   "url":"/pkg/Tinkertanker/pxt-stepper-motor",
   "cardType": "package"
+},
+{
+    "name": "Emakefun MotorBit",
+    "url": "/pkg/emakefun/pxt-motorbit",
+    "cardType": "package"
 }]
 ```
 
