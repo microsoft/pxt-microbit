@@ -319,7 +319,8 @@
             "microsoft/pxt-jacdac/wind-direction",
             "microsoft/pxt-jacdac/wind-speed",
             "DFRobot/pxt-DFRobot_IoT_Cloud_Kit",
-            "plenprojectcompany/pxt-PLENbit_full"
+            "plenprojectcompany/pxt-PLENbit_full",
+            "emakefun/pxt-motorbit"
         ],
         "preferredRepos": [
             "Microsoft/pxt-neopixel",
@@ -336,7 +337,8 @@
             "tinkertanker/pxt-ringbitcar",
             "kitronikltd/pxt-kitronik-servo-lite",
             "kitronikltd/pxt-kitronik-motor-driver",
-            "tinkertanker/pxt-smarthome"
+            "tinkertanker/pxt-smarthome",
+            "emakefun/pxt-motorbit"
         ],
         "approvedRepoLib": {
             "microsoft/pxt-neopixel": {
@@ -775,7 +777,8 @@
             "sparkfun/pxt-gator-uv": { "tags": [ "Science" ] },
             "dfrobot/pxt-dfrobot_bosonkit": { "tags": [ "Science" ] },
             "resolute-support/pxt-apprentice_car": { "tags": [ "Robotics" ] },
-            "makeandlearn/pxt-didacbot": { "tags": [ "Robotics" ] }
+            "makeandlearn/pxt-didacbot": { "tags": [ "Robotics" ] },
+            "emakefun/pxt-motorbit": { "tags": [ "Robotics" ]}
         },
         "upgrades": {
             "tinkertanker/pxt-iot-environment-kit": "min:v4.2.1",
