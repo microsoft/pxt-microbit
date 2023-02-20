@@ -12,12 +12,12 @@ Two gates are connected to the @boardname@ so it can detect a car passing throug
 
 ![](/static/mb/projects/timing-gates/sketchgates.jpg "Sketch of the gates")
 
-As the car passes through the gate ``0``, it sends an event to the @boardname@ through the [``||pins:on pin pressed||``](/reference/input/on-pin-pressed) block.
+As the car passes through the gate ``0``, it sends an event to the @boardname@ through the [``||input:on pin pressed||``](/reference/input/on-pin-pressed) block.
 The @boardname@ records the time in a variable ``t0``.
 
 ![](/static/mb/projects/timing-gates/sketchgate1.jpg "Sketch first gate")
 
-As the car passes through the gate ``1``, it sends an event to the @boardname@ through the [``||pins:on pin pressed||``](/reference/input/on-pin-pressed) block.
+As the car passes through the gate ``1``, it sends an event to the @boardname@ through the [``||input:on pin pressed||``](/reference/input/on-pin-pressed) block.
 The @boardname@ records the time in a variable ``t1``.
 
 ![](/static/mb/projects/timing-gates/sketchgate2.jpg "Sketch first gate")
@@ -87,7 +87,7 @@ The gate is ready to use! Your circuit should look like the picture below:
 
 ## Detecting the car with code
 
-The @boardname@ provides an event [``||pins:on pin pressed||``](/reference/input/on-pin-pressed) 
+The @boardname@ provides an event [``||input:on pin pressed||``](/reference/input/on-pin-pressed) 
 that is raised when a circuit between ``GND`` and a pin is detected. The circuit conductor could be a wire or even your body!
 We will attach a foil to the bottom of the car. When it passes over the gate, it connects both foil strips, closes the circuit and triggers the event. 
 
@@ -145,7 +145,7 @@ Connect the crocodile plugs to the ``GND`` and ``P1`` pins on the @boardname@.
 
 ## Detecting the second gate
 
-Since the second gate is connected to pin ``P1``, we add a second [``||pins:on pin pressed||``](/reference/input/on-pin-pressed) event
+Since the second gate is connected to pin ``P1``, we add a second [``||input:on pin pressed||``](/reference/input/on-pin-pressed) event
 that display 2 columns of LEDs.
 
 ```blocks

@@ -60,7 +60,7 @@ input.onButtonPressed(Button.A, function () {
 
 ## Step 5
 
-Inside the ``||loops:while||`` loop, add code to ``||variables:decrease||`` the timer ``||basic:every second||``.
+Inside the ``||loops:while||`` loop, add code to ``||variables:decrease||`` the timer ``||loops:every second||``.
 
 ```blocks
 let timer = 0

@@ -73,7 +73,7 @@ Ok, now we'll get the timer going and show how many seconds are left. This will 
 1. Get an ``||input:on shake||`` block and place it in the workspace.
 2. Pull out a ``||loops:while||`` from **Loops**  and put it in the ``||input:on shake||``. Replace the `true` condition with the ``||logic:0 < 0||`` conditon from **Logic**. Make the `<` go to `>`. Change the `0` on the left to the `seconds` variable.
 3. Take out another ``||basic:show number||`` and put it inside the ``||loops:while||``. Change the `0` to the `seconds` variable. Put a ``||basic:pause||`` under that and set the time to `1000` milliseconds. This means our timer will count down by **1000** milliseconds, which is actually one second, each time through the loop.
-4. To change the number of seconds left, get a ``||variables:change by||`` and place it below the ``||loops:pause||``. Find the ``||math:0 - 0||`` block in **Math** and put it in the ``||variables:change by||``. Set the `0` on the right of the minus to be a `1`.
+4. To change the number of seconds left, get a ``||variables:change by||`` and place it below the ``||basic:pause||``. Find the ``||math:0 - 0||`` block in **Math** and put it in the ``||variables:change by||``. Set the `0` on the right of the minus to be a `1`.
 
 ```blocks
 let seconds = 0;
