@@ -355,7 +355,9 @@
                 "tags": [ "Science" ],
                 "upgrades": [ "dv:mbcodal" ]
             },
-            "microsoft/pxt-bluetooth-midi": { },
+            "microsoft/pxt-bluetooth-midi": {
+                "upgrades": [ "dv:mbcodal" ]
+            },
             "microsoft/pxt-max6675": {},
             "microsoft/pxt-midi": {},
             "microsoft/pxt-radio-blockchain": {},
