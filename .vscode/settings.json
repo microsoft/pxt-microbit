@@ -1,6 +1,6 @@
 // Place your settings in this file to overwrite default and user settings.
 {
-    "files.autoSave": "afterDelay",
+    "files.autoSave": "off",
     "files.watcherExclude": {
         "**/.git/objects/**": true,
         "**/built/**": true,
