@@ -38,7 +38,7 @@ enum AudioSampleRateScope {
 }
 
 enum AudioGainEnum {
-    Low,
+    Low = 1,
     Medium,
     High
 }
@@ -177,52 +177,12 @@ namespace codalAudio {
         eraseRecording();
         console.log("after the audio is erased");
         console.log(_memoryFill);
-        recordAudioTS();
+        recordAudioShim();
         __setMode__( AudioRecordingMode.Recording )
     }
 
     //% shim=codalAudio::record
-    function recordAudioTS(): void {
-    }
-
-    /**
-     * Set the sample frequency for recording, playback, or both (default)
-     * 
-     * @param hz The sample frequency, in Hz
-     */
-    //% block="set sample frequency to %hz Hz || for %scope"
-    //% expandableArgumentMode="enabled"
-    //% hz.defl=22000
-    export function setSampleRate(hz: number, scope?: AudioSampleRateScope): void {
-        __init__()
-        switch (scope) {
-            case AudioSampleRateScope.Everything:
-                _recordingFreqHz = hz
-                _playbackFreqHz = hz
-                break
-
-            case AudioSampleRateScope.Playback:
-                _playbackFreqHz = hz
-                break
-
-            case AudioSampleRateScope.Recording:
-                _recordingFreqHz = hz
-                break
-        }
-    }
-
-    /**
-     * Set the microphone gain. High values can cause distortion!
-     * 
-     * @param gain The gain to use.
-     */
-    //% block="set microphone gain to %gain"
-    //% gain.defl=Medium
-    //% shim=codalAudio::setMicrophoneGain
-    export function setMicrophoneGainAudio(gain: AudioGainEnum): void {
-        __init__()
-        _micGain = gain
-        return
+    function recordAudioShim(): void {
     }
 
     /**
@@ -230,7 +190,7 @@ namespace codalAudio {
      * 
      * @param sync If true, block until complete
      */
-    //% block="​start playback"
+    //% block="​play recording"
     export function playAudio(): void {
         __init__()
         _playbackHead = 0
@@ -258,7 +218,6 @@ namespace codalAudio {
     function stopShim(): void {
     }
 
-    //% block="erase recording"
     export function eraseRecording(): void {
         __init__()
         __setMode__(AudioRecordingMode.Stopped)
@@ -272,68 +231,15 @@ namespace codalAudio {
     function eraseShim(): void {
     }
 
-    //% block="microphone gain"
-    export function micGain(): AudioGainEnum {
-        return _micGain
-    }
-
-    //% block="recording frequency"
-    export function recordingHz(): number {
-        __init__()
-        return _recordingFreqHz
-    }
-
-    //% block="playback frequency"
-    export function playbackHz(): number {
-        __init__()
-        return _playbackFreqHz
-    }
-
-    //% block="audio duration at %hz hz"
-    //% shim=codalAudio::audioDiration
-    export function audioDurationAudio(hz?: number): number {
-        __init__()
-        return _memoryFill / hz
-    }
-
-    //% block="audio is playing"
-    //% shim=codalAudio::audioIsPlaying
-    export function audioIsPlayingAudio(): boolean {
-        __init__()
-        return _moduleMode === AudioRecordingMode.Playing
-    }
-
-    //% block="audio is recording"
-    //% shim=codalAudio::audioIsRecording
-    export function audioIsRecordingAudio(): boolean {
-        __init__()
-        return _moduleMode === AudioRecordingMode.Recording
-    }
-
-    //% block="audio is stopped"
-    //% shim=codalAudio::audioIsStopped
-    export function audioIsStoppedAudio(): boolean {
-        __init__()
-        return _moduleMode === AudioRecordingMode.Stopped
-    }
-
-    //% block="audio buffer is full"
-    export function isFull(): boolean {
-        __init__()
-        return _memoryFill >= MAX_SAMPLES
-    }
-
-    //% block="audio buffer is empty"
-    export function isEmpty(): boolean {
+    function isEmpty(): boolean {
         __init__()
         return _memoryFill <= 0
     }
+
 
     //% block="when audio %eventType"
     export function audioEvent(eventType: AudioEvent, handler: () => void): void {
         __init__()
         control.onEvent(AUDIO_EVENT_ID, AUDIO_VALUE_OFFSET+eventType, handler )
     }
-
-
 }

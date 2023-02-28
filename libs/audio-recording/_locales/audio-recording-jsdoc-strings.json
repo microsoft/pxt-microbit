@@ -9,8 +9,6 @@
   "codalAudio.playAudio": "Play any recorded audio\n* @param sync If true, block until complete",
   "codalAudio.record": "Record an audio clip",
   "codalAudio.setMicrophoneGain": "Set amplification of the microphone input",
-  "codalAudio.setMicrophoneGainAudio": "Set the microphone gain. High values can cause distortion!\n* @param gain The gain to use.",
-  "codalAudio.setSampleRate": "Set the sample frequency for recording, playback, or both (default)\n* @param hz The sample frequency, in Hz",
   "codalAudio.startRecording": "Record an audio clip\n* @param sync If true, block until we run out of memory!",
   "codalAudio.stop": "Stop recording"
 }
