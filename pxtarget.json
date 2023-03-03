@@ -607,7 +607,8 @@
             "incompatibleHardwareImage": "/static/download/incompatible.png"
         },
         "winAppDeprImage": "/static/winapp.PNG",
-        "showWinAppDeprBanner": false
+        "showWinAppDeprBanner": false,
+        "topInstructionTutorialLayout": true
     },
     "queryVariants": {
         "hidemenu": {
