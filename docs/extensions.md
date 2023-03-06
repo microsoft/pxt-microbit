@@ -493,6 +493,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 
 ```codecard
 [{
+  "name": "Cytron MOTION:BIT",
+  "url":"/pkg/CytronTechnologies/pxt-motionbit",
+  "cardType": "package"
+}, {
   "name": "MAKE&LEARN Didacbot",
   "url":"/pkg/MakeAndLearn/pxt-didacbot",
   "cardType": "package"
@@ -813,6 +817,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 }, {
   "name": "Cytron Rekabit",
   "url":"/pkg/CytronTechnologies/pxt-rekabit",
+  "cardType": "package"
+}, {
+  "name": "Cytron Rekabit RBT Project Kit",
+  "url":"/pkg/CytronTechnologies/pxt-rekabit-rbt-project-kit",
   "cardType": "package"
 }, {
   "name": "Imagimaker Magisheild",
