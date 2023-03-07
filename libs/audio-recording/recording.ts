@@ -52,8 +52,8 @@ enum AudioRecordingMode {
 /**
  * Functions to operate the v2 on-board microphone and speaker.
  */
-//% weight=5 color=#e26fb4 icon="\uf130" block="V2 Audio" advanced=false
-namespace codalAudio {
+//% weight=5 color=#e26fb4 icon="\uf130" block="Audio" advanced=false
+namespace recordAudio {
 
     // 
     const AUDIO_EVENT_ID: number     = 0xFF000
@@ -83,6 +83,7 @@ namespace codalAudio {
         _recordingFreqHz = 22000
         _playbackFreqHz = 22000
         _micGain = AudioGainEnum.Medium
+        music._onStopSound(stopListening);
 
 
         control.runInBackground( () => {
@@ -114,7 +115,7 @@ namespace codalAudio {
                         break
                     case AudioRecordingMode.Stopped:
                         if (_memoryFill > 0) {
-                            stopShim();
+                            stop();
                         }
                 }
 
@@ -169,7 +170,8 @@ namespace codalAudio {
      * 
      * @param sync If true, block until we run out of memory!
      */
-    //% block="start recording"
+    //% block="record audio"
+    //% weight=60
     export function startRecording(): void {
         __init__()
         console.log("before the audio is erased");
@@ -177,45 +179,41 @@ namespace codalAudio {
         eraseRecording();
         console.log("after the audio is erased");
         console.log(_memoryFill);
-        recordAudioShim();
+        record();
         __setMode__( AudioRecordingMode.Recording )
     }
 
-    //% shim=codalAudio::record
-    function recordAudioShim(): void {
-    }
+
 
     /**
      * Play any recorded audio
      * 
      * @param sync If true, block until complete
      */
-    //% block="​play recording"
+    //% block="​listen to recording"
     export function playAudio(): void {
         __init__()
         _playbackHead = 0
         if( !isEmpty() ) {
             __setMode__(AudioRecordingMode.Playing)
-            playShim();
+            play();
         }
         return
     }
 
-    //% shim=codalAudio::play
-    function playShim(): void {
-    }
-
-    //% block="stop"
-    export function stopAudio(): void {
+    //% block="stop recording"
+    export function stopRecording(): void {
         __init__()
         __setMode__(AudioRecordingMode.Stopped)
         _playbackHead = 0
-        stopShim();
+        stop();
         return
     }
 
-    //% shim=codalAudio::stop
-    function stopShim(): void {
+    //% block="stop listening"
+    //% weight=20
+    export function stopListening(): void {
+        stopRecording();
     }
 
     export function eraseRecording(): void {
@@ -223,12 +221,8 @@ namespace codalAudio {
         __setMode__(AudioRecordingMode.Stopped)
         _playbackHead = 0
         _memoryFill = 0
-        eraseShim();
+        erase();
         return
-    }
-
-    //% shim=codalAudio::erase
-    function eraseShim(): void {
     }
 
     function isEmpty(): boolean {
@@ -238,6 +232,7 @@ namespace codalAudio {
 
 
     //% block="when audio %eventType"
+    //% weight=10
     export function audioEvent(eventType: AudioEvent, handler: () => void): void {
         __init__()
         control.onEvent(AUDIO_EVENT_ID, AUDIO_VALUE_OFFSET+eventType, handler )

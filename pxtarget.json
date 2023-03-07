@@ -6,6 +6,7 @@
     "description": "A Blocks / JavaScript code editor for the micro:bit powered by Microsoft MakeCode.",
     "corepkg": "core",
     "bundleddirs": [
+        "libs/audio-recording",
         "libs/core",
         "libs/radio",
         "libs/devices",
@@ -16,8 +17,7 @@
         "libs/settings",
         "libs/flashlog",
         "libs/datalogger",
-        "libs/color",
-        "libs/audio-recording"
+        "libs/color"
     ],
     "cloud": {
         "workspace": false,

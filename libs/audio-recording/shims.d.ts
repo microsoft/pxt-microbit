@@ -1,58 +1,58 @@
 // Auto-generated. Do not edit.
-declare namespace codalAudio {
+declare namespace recordAudio {
 
     /**
      * Record an audio clip
      */
-    //% shim=codalAudio::record
+    //% promise shim=recordAudio::record
     function record(): void;
 
     /**
      * Play the audio clip that is saved in the buffer
      */
-    //% shim=codalAudio::play
+    //% shim=recordAudio::play
     function play(): void;
 
     /**
      * Stop recording
      */
-    //% shim=codalAudio::stop
+    //% shim=recordAudio::stop
     function stop(): void;
 
     /**
      * Clear the buffer
      */
-    //% shim=codalAudio::erase
+    //% shim=recordAudio::erase
     function erase(): void;
 
     /**
      * Set amplification of the microphone input
      */
-    //% shim=codalAudio::setMicrophoneGain
+    //% shim=recordAudio::setMicrophoneGain
     function setMicrophoneGain(gain: int32): void;
 
     /**
      * Get the how long the recorded audio clip is
      */
-    //% shim=codalAudio::audioDuration
+    //% shim=recordAudio::audioDuration
     function audioDuration(sampleRate: int32): int32;
 
     /**
      * Get whether the playback is active
      */
-    //% shim=codalAudio::audioIsPlaying
+    //% shim=recordAudio::audioIsPlaying
     function audioIsPlaying(): boolean;
 
     /**
      * Get whether the microphone is listening
      */
-    //% shim=codalAudio::audioIsRecording
+    //% shim=recordAudio::audioIsRecording
     function audioIsRecording(): boolean;
 
     /**
      * Gets whether the board is recording or playing back
      */
-    //% shim=codalAudio::audioIsStopped
+    //% shim=recordAudio::audioIsStopped
     function audioIsStopped(): boolean;
 }
 

@@ -178,6 +178,7 @@ namespace music {
     const INTERNAL_MELODY_ENDED = 5;
 
     let beatsPerMinute: number = 120;
+    let stopSoundHandlers: (() => void)[];
     //% whenUsed
     const freqs = hex`
         1f00210023002500270029002c002e003100340037003a003e004100450049004e00520057005c00620068006e00
@@ -465,6 +466,13 @@ namespace music {
             startMelody([], MelodyOptions.Once);
     }
 
+    export function _onStopSound(handler: () => void) {
+        if (!stopSoundHandlers) {
+            stopSoundHandlers = [];
+        }
+        stopSoundHandlers.push(handler);
+    }
+
     /**
      * Stop all sounds and melodies currently playing.
      */
@@ -476,6 +484,11 @@ namespace music {
         rest(0);
         stopMelody(MelodyStopOptions.All);
         music.__stopSoundExpressions();
+        if (stopSoundHandlers) {
+            for (const handler of stopSoundHandlers) {
+                handler()
+            }
+        }
     }
 
 

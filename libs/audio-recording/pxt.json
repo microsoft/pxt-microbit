@@ -1,6 +1,6 @@
 {
     "name": "audio-recording",
-    "description": "Record sound bites. micro:bit (V2) only",
+    "description": "Record sound clips. micro:bit (V2) only",
     "dependencies": {
         "core": "file:../core"
     },

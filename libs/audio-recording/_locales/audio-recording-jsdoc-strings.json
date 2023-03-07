@@ -1,14 +1,14 @@
 {
-  "codalAudio": "Functions to operate the v2 on-board microphone and speaker.",
-  "codalAudio.audioDuration": "Get the how long the recorded audio clip is",
-  "codalAudio.audioIsPlaying": "Get whether the playback is active",
-  "codalAudio.audioIsRecording": "Get whether the microphone is listening",
-  "codalAudio.audioIsStopped": "Gets whether the board is recording or playing back",
-  "codalAudio.erase": "Clear the buffer",
-  "codalAudio.play": "Play the audio clip that is saved in the buffer",
-  "codalAudio.playAudio": "Play any recorded audio\n* @param sync If true, block until complete",
-  "codalAudio.record": "Record an audio clip",
-  "codalAudio.setMicrophoneGain": "Set amplification of the microphone input",
-  "codalAudio.startRecording": "Record an audio clip\n* @param sync If true, block until we run out of memory!",
-  "codalAudio.stop": "Stop recording"
+  "recordAudio": "Functions to operate the v2 on-board microphone and speaker.",
+  "recordAudio.audioDuration": "Get the how long the recorded audio clip is",
+  "recordAudio.audioIsPlaying": "Get whether the playback is active",
+  "recordAudio.audioIsRecording": "Get whether the microphone is listening",
+  "recordAudio.audioIsStopped": "Gets whether the board is recording or playing back",
+  "recordAudio.erase": "Clear the buffer",
+  "recordAudio.play": "Play the audio clip that is saved in the buffer",
+  "recordAudio.playAudio": "Play any recorded audio\n* @param sync If true, block until complete",
+  "recordAudio.record": "Record an audio clip",
+  "recordAudio.setMicrophoneGain": "Set amplification of the microphone input",
+  "recordAudio.startRecording": "Record an audio clip\n* @param sync If true, block until we run out of memory!",
+  "recordAudio.stop": "Stop recording"
 }

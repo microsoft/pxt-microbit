@@ -26,7 +26,7 @@
 
 using namespace pxt;
 
-namespace codalAudio {
+namespace recordAudio {
 
     static StreamRecording * recording = NULL;
 
@@ -60,7 +60,7 @@ namespace codalAudio {
     /**
      * Record an audio clip
      */
-    //%
+    //% promise
     void record() {
         checkEnv();
         enableMic();
