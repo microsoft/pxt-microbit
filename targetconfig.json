@@ -560,7 +560,7 @@
             "elecfreaks/pxt-wukong": { "tags": [ "Science" ] },
             "sparkfun/pxt-gator-particle": {
                 "tags": [ "Science" ],
-                "upgrades": [ "dv:mbcodal" ]
+                "upgrades": [ "min:v1.1.6" ]
             },
             "sparkfun/pxt-gator-soil": { "tags": [ "Science" ] },
             "sparkfun/pxt-gator-microphone": {
