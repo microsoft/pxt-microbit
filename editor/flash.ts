@@ -264,7 +264,19 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
         return this.io.isConnecting() || (this.io.isConnected() && !this.initialized)
     }
 
+    private async getBaudRate() {
+        const readSerialSettings = new Uint8Array([0x81])  // get serial settings
+        const serialSettings = await this.dapCmd(readSerialSettings)
+        const baud = (serialSettings[4] << 24)+ (serialSettings[3] << 16) + (serialSettings[2] << 8) + serialSettings[1]
+        return baud
+    }
+
     private async setBaudRate() {
+        const currentBaudRate = await this.getBaudRate()
+        if (currentBaudRate === 115200) {
+            log(`baud rate already set to 115200`)
+            return
+        }
         log(`set baud rate to 115200`)
         const baud = new Uint8Array(5)
         baud[0] = 0x82 // set baud
