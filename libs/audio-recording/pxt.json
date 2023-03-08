@@ -11,7 +11,7 @@
         "shims.d.ts"
     ],
     "public": true,
-    "icon": "./icon.png",
+    "icon": "./static/packages/audio-recording/icon.png",
     "disablesVariants": [
         "mbdal"
     ]

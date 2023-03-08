@@ -8,6 +8,6 @@
   "recordAudio.startRecording|block": "record audio",
   "recordAudio.stopListening|block": "stop listening",
   "recordAudio.stopRecording|block": "stop recording",
-  "recordAudio|block": "Record Audio",
+  "recordAudio|block": "Audio",
   "{id:category}RecordAudio": "RecordAudio"
 }
