@@ -26,7 +26,7 @@
 
 using namespace pxt;
 
-namespace recordAudio {
+namespace record {
 
     static StreamRecording * recording = NULL;
 
@@ -98,14 +98,14 @@ namespace recordAudio {
     }
 
     /**
-     * Set amplification of the microphone input
+     * Set sensitity of the microphone input
      */
     //%
     void setMicrophoneGain(int gain) {
         switch( gain ) {
-            case 1: uBit.audio.processor->setGain( 0.5 ); break;
-            case 2: uBit.audio.processor->setGain( 0.8 ); break;
-            case 3: uBit.audio.processor->setGain( 1.2 ); break;
+            case 1: uBit.audio.processor->setGain( 0.2 ); break;
+            case 2: uBit.audio.processor->setGain( 0.5 ); break;
+            case 3: uBit.audio.processor->setGain( 1 ); break;
         }
     }
 

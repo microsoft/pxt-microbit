@@ -1,13 +1,8 @@
-// Auto-generated. Do not edit.
-namespace pxsim.recordAudio {
+namespace pxsim.record {
 
     export async function record(): Promise<void> {
         //request permission is asynchronous
         board()
-        const b = microphoneState();
-        if (!b) return;
-        b.setUsed();
-        // pxtcore.registerWithDal(b.id, 2, _handler);
     }
 
     export function play(): void {

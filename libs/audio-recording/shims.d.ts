@@ -1,58 +1,58 @@
 // Auto-generated. Do not edit.
-declare namespace recordAudio {
+declare namespace record {
 
     /**
      * Record an audio clip
      */
-    //% promise shim=recordAudio::record
+    //% promise shim=record::record
     function record(): void;
 
     /**
      * Play the audio clip that is saved in the buffer
      */
-    //% shim=recordAudio::play
+    //% shim=record::play
     function play(): void;
 
     /**
      * Stop recording
      */
-    //% shim=recordAudio::stop
+    //% shim=record::stop
     function stop(): void;
 
     /**
      * Clear the buffer
      */
-    //% shim=recordAudio::erase
+    //% shim=record::erase
     function erase(): void;
 
     /**
-     * Set amplification of the microphone input
+     * Set sensitity of the microphone input
      */
-    //% shim=recordAudio::setMicrophoneGain
+    //% shim=record::setMicrophoneGain
     function setMicrophoneGain(gain: int32): void;
 
     /**
      * Get the how long the recorded audio clip is
      */
-    //% shim=recordAudio::audioDuration
+    //% shim=record::audioDuration
     function audioDuration(sampleRate: int32): int32;
 
     /**
      * Get whether the playback is active
      */
-    //% shim=recordAudio::audioIsPlaying
+    //% shim=record::audioIsPlaying
     function audioIsPlaying(): boolean;
 
     /**
      * Get whether the microphone is listening
      */
-    //% shim=recordAudio::audioIsRecording
+    //% shim=record::audioIsRecording
     function audioIsRecording(): boolean;
 
     /**
      * Gets whether the board is recording or playing back
      */
-    //% shim=recordAudio::audioIsStopped
+    //% shim=record::audioIsStopped
     function audioIsStopped(): boolean;
 }
 

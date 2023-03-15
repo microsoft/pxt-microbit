@@ -31,6 +31,13 @@ enum AudioEvent {
     StoppedRecording
 }
 
+enum StopEvent {
+    //% block="playing"
+    StopPlaying,
+    //% block="recording"
+    StopRecording
+}
+
 enum AudioSampleRateScope {
     Everything,
     Playback,
@@ -49,11 +56,22 @@ enum AudioRecordingMode {
     Playing
 }
 
+enum AudioStatus {
+    //% block="out of space"
+    BufferFull,
+    //% block="playing"
+    Playing,
+    //% block="recording"
+    Recording,
+    //% block="stopped"
+    Stopped
+}
+
 /**
  * Functions to operate the v2 on-board microphone and speaker.
  */
-//% weight=5 color=#e26fb4 icon="\uf130" block="Audio" advanced=false
-namespace recordAudio {
+//% weight=5 color=#e26fb4 icon="\uf130" block="Record" advanced=false
+namespace record {
 
     // 
     const AUDIO_EVENT_ID: number     = 0xFF000
@@ -83,7 +101,7 @@ namespace recordAudio {
         _recordingFreqHz = 22000
         _playbackFreqHz = 22000
         _micGain = AudioGainEnum.Medium
-        music._onStopSound(stopListening);
+        music._onStopSound(stop);
 
 
         control.runInBackground( () => {
@@ -166,19 +184,15 @@ namespace recordAudio {
     }
 
     /**
-     * Record an audio clip
+     * Record an audio clip for a maximum of 3 seconds
      * 
      * @param sync If true, block until we run out of memory!
      */
-    //% block="record audio"
-    //% weight=60
+    //% block="record audio for 3(s)"
+    //% weight=70
     export function startRecording(): void {
         __init__()
-        console.log("before the audio is erased");
-        console.log(_memoryFill);
         eraseRecording();
-        console.log("after the audio is erased");
-        console.log(_memoryFill);
         record();
         __setMode__( AudioRecordingMode.Recording )
     }
@@ -186,11 +200,10 @@ namespace recordAudio {
 
 
     /**
-     * Play any recorded audio
-     * 
-     * @param sync If true, block until complete
+     * Play recorded audio
      */
-    //% block="​listen to recording"
+    //% block="play recording"
+    //% weight=60
     export function playAudio(): void {
         __init__()
         _playbackHead = 0
@@ -201,19 +214,12 @@ namespace recordAudio {
         return
     }
 
-    //% block="stop recording"
-    export function stopRecording(): void {
+    export function stopRecording(stopEvent: StopEvent): void {
         __init__()
         __setMode__(AudioRecordingMode.Stopped)
         _playbackHead = 0
         stop();
         return
-    }
-
-    //% block="stop listening"
-    //% weight=20
-    export function stopListening(): void {
-        stopRecording();
     }
 
     export function eraseRecording(): void {
@@ -225,16 +231,49 @@ namespace recordAudio {
         return
     }
 
-    function isEmpty(): boolean {
-        __init__()
-        return _memoryFill <= 0
-    }
-
-
-    //% block="when audio %eventType"
+    /**
+     * Do something based on what the audio is doing
+     */
+    //% block="on audio %eventType"
     //% weight=10
     export function audioEvent(eventType: AudioEvent, handler: () => void): void {
         __init__()
         control.onEvent(AUDIO_EVENT_ID, AUDIO_VALUE_OFFSET+eventType, handler )
+    }
+
+    /**
+     * Test what the audio is doing
+     */
+    //% block="audio is $status"
+    export function audioStatus(status: AudioStatus): boolean {
+        __init__();
+        switch (status) {
+            case AudioStatus.BufferFull:
+                return _memoryFill >= 0;
+            case AudioStatus.Playing:
+                return _moduleMode === AudioRecordingMode.Playing;
+            case AudioStatus.Recording:
+                return _moduleMode === AudioRecordingMode.Recording;
+            case AudioStatus.Stopped:
+                return _moduleMode === AudioRecordingMode.Stopped;
+        }
+    }
+
+    export function isEmpty(): boolean {
+        __init__()
+        return _memoryFill <= 0
+    }
+
+    /**
+     * Change how sensitive the microphone is. This changes the recording quality!
+     */
+    //% block="set microphone sensitivity to %gain"
+    //% gain.defl=Medium
+    //% weight=40
+    export function setMicGain(gain: AudioGainEnum): void {
+        __init__()
+        _micGain = gain
+        setMicrophoneGain(gain);
+        return
     }
 }
