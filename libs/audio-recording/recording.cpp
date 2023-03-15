@@ -110,7 +110,7 @@ namespace record {
     }
 
     /**
-     * Get the how long the recorded audio clip is
+     * Get how long the recorded audio clip is
      */
     //%
     int audioDuration( int sampleRate ) {
@@ -134,7 +134,7 @@ namespace record {
     }
 
     /**
-     * Gets whether the board is recording or playing back
+     * Get whether the board is recording or playing back
      */
     //%
     bool audioIsStopped() {

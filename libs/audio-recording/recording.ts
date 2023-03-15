@@ -101,7 +101,7 @@ namespace record {
         _recordingFreqHz = 22000
         _playbackFreqHz = 22000
         _micGain = AudioGainEnum.Medium
-        music._onStopSound(stop);
+        music._onStopSound(stopRecording);
 
 
         control.runInBackground( () => {
@@ -120,14 +120,10 @@ namespace record {
                     
                     case AudioRecordingMode.Recording:
                         if (_memoryFill >= MAX_SAMPLES) {
-                            console.log("reached or exceeded max samples");
-                            console.log(_memoryFill);
                             _memoryFill = MAX_SAMPLES
                             __setMode__(AudioRecordingMode.Stopped)
                         }
                         else {
-                            console.log("actively filling the buffer");
-                            console.log(_memoryFill);
                             _memoryFill += _recordingFreqHz / (1000 / INTERVAL_STEP)
                         }
                         break
@@ -185,8 +181,6 @@ namespace record {
 
     /**
      * Record an audio clip for a maximum of 3 seconds
-     * 
-     * @param sync If true, block until we run out of memory!
      */
     //% block="record audio for 3(s)"
     //% weight=70
@@ -214,7 +208,7 @@ namespace record {
         return
     }
 
-    export function stopRecording(stopEvent: StopEvent): void {
+    export function stopRecording(): void {
         __init__()
         __setMode__(AudioRecordingMode.Stopped)
         _playbackHead = 0
@@ -234,7 +228,7 @@ namespace record {
     /**
      * Do something based on what the audio is doing
      */
-    //% block="on audio %eventType"
+    //% block="on audio $eventType"
     //% weight=10
     export function audioEvent(eventType: AudioEvent, handler: () => void): void {
         __init__()
@@ -267,7 +261,7 @@ namespace record {
     /**
      * Change how sensitive the microphone is. This changes the recording quality!
      */
-    //% block="set microphone sensitivity to %gain"
+    //% block="set microphone sensitivity to $gain"
     //% gain.defl=Medium
     //% weight=40
     export function setMicGain(gain: AudioGainEnum): void {

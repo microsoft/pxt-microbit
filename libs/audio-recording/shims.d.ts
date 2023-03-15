@@ -32,7 +32,7 @@ declare namespace record {
     function setMicrophoneGain(gain: int32): void;
 
     /**
-     * Get the how long the recorded audio clip is
+     * Get how long the recorded audio clip is
      */
     //% shim=record::audioDuration
     function audioDuration(sampleRate: int32): int32;
@@ -50,7 +50,7 @@ declare namespace record {
     function audioIsRecording(): boolean;
 
     /**
-     * Gets whether the board is recording or playing back
+     * Get whether the board is recording or playing back
      */
     //% shim=record::audioIsStopped
     function audioIsStopped(): boolean;

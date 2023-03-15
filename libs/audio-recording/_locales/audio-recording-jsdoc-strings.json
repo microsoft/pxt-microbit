@@ -1,10 +1,10 @@
 {
   "record": "Functions to operate the v2 on-board microphone and speaker.",
-  "record.audioDuration": "Get the how long the recorded audio clip is",
+  "record.audioDuration": "Get how long the recorded audio clip is",
   "record.audioEvent": "Do something based on what the audio is doing",
   "record.audioIsPlaying": "Get whether the playback is active",
   "record.audioIsRecording": "Get whether the microphone is listening",
-  "record.audioIsStopped": "Gets whether the board is recording or playing back",
+  "record.audioIsStopped": "Get whether the board is recording or playing back",
   "record.audioStatus": "Test what the audio is doing",
   "record.erase": "Clear the buffer",
   "record.play": "Play the audio clip that is saved in the buffer",
@@ -12,6 +12,6 @@
   "record.record": "Record an audio clip",
   "record.setMicGain": "Change how sensitive the microphone is. This changes the recording quality!",
   "record.setMicrophoneGain": "Set sensitity of the microphone input",
-  "record.startRecording": "Record an audio clip for a maximum of 3 seconds\n* @param sync If true, block until we run out of memory!",
+  "record.startRecording": "Record an audio clip for a maximum of 3 seconds",
   "record.stop": "Stop recording"
 }

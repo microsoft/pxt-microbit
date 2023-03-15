@@ -9,10 +9,10 @@
   "AudioStatus.Stopped|block": "stopped",
   "StopEvent.StopPlaying|block": "playing",
   "StopEvent.StopRecording|block": "recording",
-  "record.audioEvent|block": "on audio %eventType",
+  "record.audioEvent|block": "on audio $eventType",
   "record.audioStatus|block": "audio is $status",
   "record.playAudio|block": "play recording",
-  "record.setMicGain|block": "set microphone sensitivity to %gain",
+  "record.setMicGain|block": "set microphone sensitivity to $gain",
   "record.startRecording|block": "record audio for 3(s)",
   "record|block": "Record",
   "{id:category}Record": "Record"
