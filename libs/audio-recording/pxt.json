@@ -5,13 +5,11 @@
         "core": "file:../core"
     },
     "files": [
-        "README.md",
         "recording.ts",
         "recording.cpp",
         "shims.d.ts"
     ],
     "public": true,
-    "icon": "./static/packages/audio-recording/icon.png",
     "disablesVariants": [
         "mbdal"
     ]
