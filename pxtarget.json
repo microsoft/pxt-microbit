@@ -609,7 +609,8 @@
             "incompatibleHardwareImage": "/static/download/incompatible.png"
         },
         "winAppDeprImage": "/static/winapp.PNG",
-        "showWinAppDeprBanner": false
+        "showWinAppDeprBanner": false,
+        "editorTour": true
     },
     "queryVariants": {
         "hidemenu": {
