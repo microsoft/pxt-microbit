@@ -610,7 +610,7 @@
         },
         "winAppDeprImage": "/static/winapp.PNG",
         "showWinAppDeprBanner": false,
-        "topInstructionTutorialLayout": true
+        "tutorialSimSidebarLayout": true
     },
     "queryVariants": {
         "hidemenu": {
