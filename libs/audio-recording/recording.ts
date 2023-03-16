@@ -31,20 +31,7 @@ enum AudioEvent {
     StoppedRecording
 }
 
-enum StopEvent {
-    //% block="playing"
-    StopPlaying,
-    //% block="recording"
-    StopRecording
-}
-
-enum AudioSampleRateScope {
-    Everything,
-    Playback,
-    Recording
-}
-
-enum AudioGainEnum {
+enum AudioGain {
     Low = 1,
     Medium,
     High
@@ -72,27 +59,26 @@ enum AudioStatus {
  */
 //% weight=5 color=#e26fb4 icon="\uf130" block="Record" advanced=false
 namespace record {
-
     // 
-    const AUDIO_EVENT_ID: number     = 0xFF000
-    const AUDIO_VALUE_OFFSET: number = 0x10
+    const AUDIO_EVENT_ID     = 0xFF000
+    const AUDIO_VALUE_OFFSET = 0x10
 
     // Expressed in samples, as we can have varying recording and playback rates!
-    const MAX_SAMPLES: number = 55000
-    const INTERVAL_STEP: number = 100
+    const MAX_SAMPLES = 55000
+    const INTERVAL_STEP = 100
 
     // Shim state
     let _moduleMode: AudioRecordingMode = AudioRecordingMode.Stopped
-    let _recordingFreqHz: number = 22000
-    let _playbackFreqHz: number  = 22000
-    let _micGain: AudioGainEnum  = AudioGainEnum.Medium
+    let _recordingFreqHz = 22000
+    let _playbackFreqHz  = 22000
+    let _micGain: AudioGain  = AudioGain.Medium
 
     // Track if we have a simulator tick timer to use...
     let _isSetup: boolean   = false
     let _memoryFill: number = 0
     let _playbackHead: number = 0
 
-    function __init__(): void {
+    function _init(): void {
         if( _isSetup )
             return
         _isSetup = true
@@ -100,7 +86,7 @@ namespace record {
         _moduleMode = AudioRecordingMode.Stopped
         _recordingFreqHz = 22000
         _playbackFreqHz = 22000
-        _micGain = AudioGainEnum.Medium
+        _micGain = AudioGain.Medium
         music._onStopSound(stopRecording);
 
 
@@ -111,7 +97,7 @@ namespace record {
                     case AudioRecordingMode.Playing:
                         if (_playbackHead >= _memoryFill) {
                             _playbackHead = 0
-                            __setMode__(AudioRecordingMode.Stopped)
+                            _setMode(AudioRecordingMode.Stopped)
                         }
                         else {
                             _playbackHead += _playbackFreqHz / (1000 / INTERVAL_STEP)
@@ -121,7 +107,7 @@ namespace record {
                     case AudioRecordingMode.Recording:
                         if (_memoryFill >= MAX_SAMPLES) {
                             _memoryFill = MAX_SAMPLES
-                            __setMode__(AudioRecordingMode.Stopped)
+                            _setMode(AudioRecordingMode.Stopped)
                         }
                         else {
                             _memoryFill += _recordingFreqHz / (1000 / INTERVAL_STEP)
@@ -132,30 +118,26 @@ namespace record {
                             stop();
                         }
                 }
-
-                //console.log(`Memory fill: ${_memoryFill}/${MAX_SAMPLES}, Playback: ${_playbackHead}/${_memoryFill} mode = ${_moduleMode}`)
                 basic.pause( INTERVAL_STEP )
             }
-            console.warn( "pxt-codal-audio: Impossible code state! Emergency reset of internal timing loop!" )
-            _isSetup = false
         })
     }
 
-    function __emitEvent__( type: AudioEvent ): void {
+    function emitEvent( type: AudioEvent ): void {
         control.raiseEvent(AUDIO_EVENT_ID, AUDIO_VALUE_OFFSET+type, EventCreationMode.CreateAndFire )
     }
 
-    function __setMode__( mode: AudioRecordingMode ): void {
+    function _setMode( mode: AudioRecordingMode ): void {
         switch( mode ) {
             case AudioRecordingMode.Stopped:
                 if( _moduleMode == AudioRecordingMode.Recording ) {
                     _moduleMode = AudioRecordingMode.Stopped
-                    return __emitEvent__( AudioEvent.StoppedRecording )
+                    return emitEvent( AudioEvent.StoppedRecording )
                 }
                 
                 if( _moduleMode == AudioRecordingMode.Playing ) {
                     _moduleMode = AudioRecordingMode.Stopped
-                    return __emitEvent__( AudioEvent.StoppedPlaying )
+                    return emitEvent( AudioEvent.StoppedPlaying )
                 }
 
                 _moduleMode = AudioRecordingMode.Stopped
@@ -163,19 +145,19 @@ namespace record {
             
             case AudioRecordingMode.Playing:
                 if( _moduleMode !== AudioRecordingMode.Stopped ) {
-                    __setMode__( AudioRecordingMode.Stopped )
+                    _setMode( AudioRecordingMode.Stopped )
                 }
                 
                 _moduleMode = AudioRecordingMode.Playing
-                return __emitEvent__( AudioEvent.StartedPlaying )
+                return emitEvent( AudioEvent.StartedPlaying )
             
             case AudioRecordingMode.Recording:
                 if (_moduleMode !== AudioRecordingMode.Stopped) {
-                    __setMode__(AudioRecordingMode.Stopped)
+                    _setMode(AudioRecordingMode.Stopped)
                 }
 
                 _moduleMode = AudioRecordingMode.Recording
-                return __emitEvent__( AudioEvent.StartedRecording )
+                return emitEvent( AudioEvent.StartedRecording )
         }
     }
 
@@ -185,10 +167,10 @@ namespace record {
     //% block="record audio for 3(s)"
     //% weight=70
     export function startRecording(): void {
-        __init__()
+        _init()
         eraseRecording();
         record();
-        __setMode__( AudioRecordingMode.Recording )
+        _setMode( AudioRecordingMode.Recording )
     }
 
 
@@ -199,26 +181,26 @@ namespace record {
     //% block="play recording"
     //% weight=60
     export function playAudio(): void {
-        __init__()
+        _init()
         _playbackHead = 0
         if( !isEmpty() ) {
-            __setMode__(AudioRecordingMode.Playing)
+            _setMode(AudioRecordingMode.Playing)
             play();
         }
         return
     }
 
     export function stopRecording(): void {
-        __init__()
-        __setMode__(AudioRecordingMode.Stopped)
+        _init()
+        _setMode(AudioRecordingMode.Stopped)
         _playbackHead = 0
         stop();
         return
     }
 
     export function eraseRecording(): void {
-        __init__()
-        __setMode__(AudioRecordingMode.Stopped)
+        _init()
+        _setMode(AudioRecordingMode.Stopped)
         _playbackHead = 0
         _memoryFill = 0
         erase();
@@ -231,7 +213,7 @@ namespace record {
     //% block="on audio $eventType"
     //% weight=10
     export function audioEvent(eventType: AudioEvent, handler: () => void): void {
-        __init__()
+        _init()
         control.onEvent(AUDIO_EVENT_ID, AUDIO_VALUE_OFFSET+eventType, handler )
     }
 
@@ -240,7 +222,7 @@ namespace record {
      */
     //% block="audio is $status"
     export function audioStatus(status: AudioStatus): boolean {
-        __init__();
+        _init();
         switch (status) {
             case AudioStatus.BufferFull:
                 return _memoryFill >= 0;
@@ -254,7 +236,7 @@ namespace record {
     }
 
     export function isEmpty(): boolean {
-        __init__()
+        _init()
         return _memoryFill <= 0
     }
 
@@ -264,8 +246,8 @@ namespace record {
     //% block="set microphone sensitivity to $gain"
     //% gain.defl=Medium
     //% weight=40
-    export function setMicGain(gain: AudioGainEnum): void {
-        __init__()
+    export function setMicGain(gain: AudioGain): void {
+        _init()
         _micGain = gain
         setMicrophoneGain(gain);
         return

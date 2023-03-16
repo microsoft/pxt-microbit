@@ -7,8 +7,6 @@
   "AudioStatus.Playing|block": "playing",
   "AudioStatus.Recording|block": "recording",
   "AudioStatus.Stopped|block": "stopped",
-  "StopEvent.StopPlaying|block": "playing",
-  "StopEvent.StopRecording|block": "recording",
   "record.audioEvent|block": "on audio $eventType",
   "record.audioStatus|block": "audio is $status",
   "record.playAudio|block": "play recording",
