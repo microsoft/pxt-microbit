@@ -28,7 +28,7 @@ using namespace pxt;
 
 namespace record {
 
-    static StreamRecording * recording = NULL;
+    static StreamRecording* recording = NULL;
 
     void enableMic() {
         uBit.audio.activateMic();
@@ -46,7 +46,7 @@ namespace record {
             
             recording = new StreamRecording( *uBit.audio.splitter );
 
-            MixerChannel * channel = uBit.audio.mixer.addChannel( *recording, 22000 );
+            MixerChannel* channel = uBit.audio.mixer.addChannel( *recording, 22000 );
 
             // By connecting to the mic channel, we activate it automatically, so shut it down again.
             disableMic();

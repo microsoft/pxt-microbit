@@ -90,7 +90,7 @@ namespace record {
         music._onStopSound(stopRecording);
 
 
-        control.runInBackground( () => {
+        control.runInParallel( () => {
             while (true) {
 
                 switch (_moduleMode) {
