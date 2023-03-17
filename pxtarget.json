@@ -610,6 +610,7 @@
         },
         "winAppDeprImage": "/static/winapp.PNG",
         "showWinAppDeprBanner": false,
+        "editorTour": true,
         "tutorialSimSidebarLayout": true
     },
     "queryVariants": {
