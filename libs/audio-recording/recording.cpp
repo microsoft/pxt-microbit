@@ -28,116 +28,122 @@ using namespace pxt;
 
 namespace record {
 
-    static StreamRecording* recording = NULL;
+static StreamRecording *recording = NULL;
 
-    void enableMic() {
-        uBit.audio.activateMic();
-        uBit.audio.mic->enable();
-    }
+void enableMic() {
+    uBit.audio.activateMic();
+    uBit.audio.mic->enable();
+}
 
-    void disableMic() {
-        uBit.audio.mic->disable();
-        uBit.audio.deactivateMic();
-    }
+void disableMic() {
+    uBit.audio.mic->disable();
+    uBit.audio.deactivateMic();
+}
 
-    void checkEnv() {
-        if( recording == NULL ) {
-            MicroBitAudio::requestActivation();
-            
-            recording = new StreamRecording( *uBit.audio.splitter );
+void checkEnv() {
+    if (recording == NULL) {
+        MicroBitAudio::requestActivation();
 
-            MixerChannel* channel = uBit.audio.mixer.addChannel( *recording, 22000 );
+        recording = new StreamRecording(*uBit.audio.splitter);
 
-            // By connecting to the mic channel, we activate it automatically, so shut it down again.
-            disableMic();
+        MixerChannel *channel = uBit.audio.mixer.addChannel(*recording, 22000);
 
-            channel->setVolume( 100.0 );
-            uBit.audio.mixer.setVolume( 1000 );
-            uBit.audio.setSpeakerEnabled( true );
-        }
-    }
-
-    /**
-     * Record an audio clip
-     */
-    //% promise
-    void record() {
-        checkEnv();
-        enableMic();
-        recording->record();
-    }
-
-    /**
-     * Play the audio clip that is saved in the buffer
-     */
-    //%
-    void play() {
-        checkEnv();
+        // By connecting to the mic channel, we activate it automatically, so shut it down again.
         disableMic();
-        recording->play();
-    }
 
-    /**
-     * Stop recording
-     */
-    //%
-    void stop() {
-        checkEnv();
-        disableMic();
-        recording->stop();
-    }
-
-    /**
-     * Clear the buffer
-     */
-    //%
-    void erase() {
-        checkEnv();
-        disableMic();
-        recording->erase();
-    }
-
-    /**
-     * Set sensitity of the microphone input
-     */
-    //%
-    void setMicrophoneGain(int gain) {
-        switch( gain ) {
-            case 1: uBit.audio.processor->setGain( 0.2 ); break;
-            case 2: uBit.audio.processor->setGain( 0.5 ); break;
-            case 3: uBit.audio.processor->setGain( 1 ); break;
-        }
-    }
-
-    /**
-     * Get how long the recorded audio clip is
-     */
-    //%
-    int audioDuration( int sampleRate ) {
-        return recording->duration( sampleRate );
-    }
-
-    /**
-     * Get whether the playback is active
-     */
-    //%
-    bool audioIsPlaying() {
-        return recording->isPlaying();
-    }
-
-    /**
-     * Get whether the microphone is listening
-     */
-    //%
-    bool audioIsRecording() {
-        return recording->isRecording();
-    }
-
-    /**
-     * Get whether the board is recording or playing back
-     */
-    //%
-    bool audioIsStopped() {
-        return recording->isStopped();
+        channel->setVolume(100.0);
+        uBit.audio.mixer.setVolume(1000);
+        uBit.audio.setSpeakerEnabled(true);
     }
 }
+
+/**
+ * Record an audio clip
+ */
+//% promise
+void record() {
+    checkEnv();
+    enableMic();
+    recording->record();
+}
+
+/**
+ * Play the audio clip that is saved in the buffer
+ */
+//%
+void play() {
+    checkEnv();
+    disableMic();
+    recording->play();
+}
+
+/**
+ * Stop recording
+ */
+//%
+void stop() {
+    checkEnv();
+    disableMic();
+    recording->stop();
+}
+
+/**
+ * Clear the buffer
+ */
+//%
+void erase() {
+    checkEnv();
+    disableMic();
+    recording->erase();
+}
+
+/**
+ * Set sensitity of the microphone input
+ */
+//%
+void setMicrophoneGain(int gain) {
+    switch (gain) {
+    case 1:
+        uBit.audio.processor->setGain(0.2);
+        break;
+    case 2:
+        uBit.audio.processor->setGain(0.5);
+        break;
+    case 3:
+        uBit.audio.processor->setGain(1);
+        break;
+    }
+}
+
+/**
+ * Get how long the recorded audio clip is
+ */
+//%
+int audioDuration(int sampleRate) {
+    return recording->duration(sampleRate);
+}
+
+/**
+ * Get whether the playback is active
+ */
+//%
+bool audioIsPlaying() {
+    return recording->isPlaying();
+}
+
+/**
+ * Get whether the microphone is listening
+ */
+//%
+bool audioIsRecording() {
+    return recording->isRecording();
+}
+
+/**
+ * Get whether the board is recording or playing back
+ */
+//%
+bool audioIsStopped() {
+    return recording->isStopped();
+}
+} // namespace record

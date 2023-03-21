@@ -20,47 +20,47 @@
     DEALINGS IN THE SOFTWARE.
 */
 
-enum AudioEvent {
-    //% block="Starts Playing"
-    StartedPlaying,
-    //% block="Stops Playing"
-    StoppedPlaying,
-    //% block="Starts Recording"
-    StartedRecording,
-    //% block="Stops Recording"
-    StoppedRecording
-}
-
-enum AudioGain {
-    Low = 1,
-    Medium,
-    High
-}
-
-enum AudioRecordingMode {
-    Stopped,
-    Recording,
-    Playing
-}
-
-enum AudioStatus {
-    //% block="out of space"
-    BufferFull,
-    //% block="playing"
-    Playing,
-    //% block="recording"
-    Recording,
-    //% block="stopped"
-    Stopped
-}
-
 /**
  * Functions to operate the v2 on-board microphone and speaker.
  */
 //% weight=5 color=#e26fb4 icon="\uf130" block="Record" advanced=false
 namespace record {
     // 
-    const AUDIO_EVENT_ID     = 0xFF000
+
+    export enum AudioEvent {
+        //% block="Starts Playing"
+        StartedPlaying,
+        //% block="Stops Playing"
+        StoppedPlaying,
+        //% block="Starts Recording"
+        StartedRecording,
+        //% block="Stops Recording"
+        StoppedRecording
+    }
+
+    export enum AudioGain {
+        Low = 1,
+        Medium,
+        High
+    }
+
+    export enum AudioRecordingMode {
+        Stopped,
+        Recording,
+        Playing
+    }
+
+    export enum AudioStatus {
+        //% block="out of space"
+        BufferFull,
+        //% block="playing"
+        Playing,
+        //% block="recording"
+        Recording,
+        //% block="stopped"
+        Stopped
+    }
+    const AUDIO_EVENT_ID = 0xFF000
     const AUDIO_VALUE_OFFSET = 0x10
 
     // Expressed in samples, as we can have varying recording and playback rates!
@@ -70,16 +70,16 @@ namespace record {
     // Shim state
     let _moduleMode: AudioRecordingMode = AudioRecordingMode.Stopped
     let _recordingFreqHz = 22000
-    let _playbackFreqHz  = 22000
-    let _micGain: AudioGain  = AudioGain.Medium
+    let _playbackFreqHz = 22000
+    let _micGain: AudioGain = AudioGain.Medium
 
     // Track if we have a simulator tick timer to use...
-    let _isSetup: boolean   = false
+    let _isSetup: boolean = false
     let _memoryFill: number = 0
     let _playbackHead: number = 0
 
     function _init(): void {
-        if( _isSetup )
+        if (_isSetup)
             return
         _isSetup = true
 
@@ -90,7 +90,7 @@ namespace record {
         music._onStopSound(stopRecording);
 
 
-        control.runInParallel( () => {
+        control.runInParallel(() => {
             while (true) {
 
                 switch (_moduleMode) {
@@ -103,7 +103,7 @@ namespace record {
                             _playbackHead += _playbackFreqHz / (1000 / INTERVAL_STEP)
                         }
                         break
-                    
+
                     case AudioRecordingMode.Recording:
                         if (_memoryFill >= MAX_SAMPLES) {
                             _memoryFill = MAX_SAMPLES
@@ -118,46 +118,46 @@ namespace record {
                             stop();
                         }
                 }
-                basic.pause( INTERVAL_STEP )
+                basic.pause(INTERVAL_STEP)
             }
         })
     }
 
-    function emitEvent( type: AudioEvent ): void {
-        control.raiseEvent(AUDIO_EVENT_ID, AUDIO_VALUE_OFFSET+type, EventCreationMode.CreateAndFire )
+    function emitEvent(type: AudioEvent): void {
+        control.raiseEvent(AUDIO_EVENT_ID, AUDIO_VALUE_OFFSET + type, EventCreationMode.CreateAndFire)
     }
 
-    function _setMode( mode: AudioRecordingMode ): void {
-        switch( mode ) {
+    function _setMode(mode: AudioRecordingMode): void {
+        switch (mode) {
             case AudioRecordingMode.Stopped:
-                if( _moduleMode == AudioRecordingMode.Recording ) {
+                if (_moduleMode == AudioRecordingMode.Recording) {
                     _moduleMode = AudioRecordingMode.Stopped
-                    return emitEvent( AudioEvent.StoppedRecording )
+                    return emitEvent(AudioEvent.StoppedRecording)
                 }
-                
-                if( _moduleMode == AudioRecordingMode.Playing ) {
+
+                if (_moduleMode == AudioRecordingMode.Playing) {
                     _moduleMode = AudioRecordingMode.Stopped
-                    return emitEvent( AudioEvent.StoppedPlaying )
+                    return emitEvent(AudioEvent.StoppedPlaying)
                 }
 
                 _moduleMode = AudioRecordingMode.Stopped
                 return
-            
+
             case AudioRecordingMode.Playing:
-                if( _moduleMode !== AudioRecordingMode.Stopped ) {
-                    _setMode( AudioRecordingMode.Stopped )
+                if (_moduleMode !== AudioRecordingMode.Stopped) {
+                    _setMode(AudioRecordingMode.Stopped)
                 }
-                
+
                 _moduleMode = AudioRecordingMode.Playing
-                return emitEvent( AudioEvent.StartedPlaying )
-            
+                return emitEvent(AudioEvent.StartedPlaying)
+
             case AudioRecordingMode.Recording:
                 if (_moduleMode !== AudioRecordingMode.Stopped) {
                     _setMode(AudioRecordingMode.Stopped)
                 }
 
                 _moduleMode = AudioRecordingMode.Recording
-                return emitEvent( AudioEvent.StartedRecording )
+                return emitEvent(AudioEvent.StartedRecording)
         }
     }
 
@@ -170,7 +170,7 @@ namespace record {
         _init()
         eraseRecording();
         record();
-        _setMode( AudioRecordingMode.Recording )
+        _setMode(AudioRecordingMode.Recording)
     }
 
 
@@ -183,7 +183,7 @@ namespace record {
     export function playAudio(): void {
         _init()
         _playbackHead = 0
-        if( !isEmpty() ) {
+        if (!isEmpty()) {
             _setMode(AudioRecordingMode.Playing)
             play();
         }
@@ -214,7 +214,7 @@ namespace record {
     //% weight=10
     export function audioEvent(eventType: AudioEvent, handler: () => void): void {
         _init()
-        control.onEvent(AUDIO_EVENT_ID, AUDIO_VALUE_OFFSET+eventType, handler )
+        control.onEvent(AUDIO_EVENT_ID, AUDIO_VALUE_OFFSET + eventType, handler)
     }
 
     /**
