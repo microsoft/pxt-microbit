@@ -167,12 +167,12 @@
                 "codalTarget": {
                     "name": "codal-microbit-v2",
                     "url": "https://github.com/lancaster-university/codal-microbit-v2",
-                    "branch": "v0.2.40",
+                    "branch": "v0.2.50",
                     "type": "git"
                 },
                 "codalBinary": "MICROBIT",
                 "githubCorePackage": "lancaster-university/microbit-v2-samples",
-                "gittag": "v0.2.11",
+                "gittag": "v0.2.12",
                 "serviceId": "mbcodal2",
                 "dockerImage": "pext/yotta:update-yotta3",
                 "yottaConfigCompatibility": true
