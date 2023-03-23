@@ -23,18 +23,18 @@
 /**
  * Functions to operate the v2 on-board microphone and speaker.
  */
-//% weight=5 color=#e26fb4 icon="\uf130" block="Record" advanced=false
+//% weight=5 color=#015f85 icon="\uf130" block="Record" advanced=false
 namespace record {
     // 
 
     export enum AudioEvent {
-        //% block="Starts Playing"
+        //% block="starts playing"
         StartedPlaying,
-        //% block="Stops Playing"
+        //% block="stops playing"
         StoppedPlaying,
-        //% block="Starts Recording"
+        //% block="starts recording"
         StartedRecording,
-        //% block="Stops Recording"
+        //% block="stops recording"
         StoppedRecording
     }
 
@@ -45,20 +45,23 @@ namespace record {
     }
 
     export enum AudioRecordingMode {
+        //% block="stopped"
         Stopped,
+        //% block="recording"
         Recording,
+        //% block="playing"
         Playing
     }
 
     export enum AudioStatus {
-        //% block="out of space"
-        BufferFull,
         //% block="playing"
         Playing,
         //% block="recording"
         Recording,
         //% block="stopped"
-        Stopped
+        Stopped,
+        //% block="full"
+        BufferFull,
     }
     const AUDIO_EVENT_ID = 0xFF000
     const AUDIO_VALUE_OFFSET = 0x10
@@ -164,7 +167,7 @@ namespace record {
     /**
      * Record an audio clip for a maximum of 3 seconds
      */
-    //% block="record audio for 3(s)"
+    //% block="record audio clip"
     //% weight=70
     export function startRecording(): void {
         _init()
@@ -224,14 +227,14 @@ namespace record {
     export function audioStatus(status: AudioStatus): boolean {
         _init();
         switch (status) {
-            case AudioStatus.BufferFull:
-                return _memoryFill >= 0;
             case AudioStatus.Playing:
                 return _moduleMode === AudioRecordingMode.Playing;
             case AudioStatus.Recording:
                 return _moduleMode === AudioRecordingMode.Recording;
             case AudioStatus.Stopped:
                 return _moduleMode === AudioRecordingMode.Stopped;
+            case AudioStatus.BufferFull:
+                return _memoryFill > 0;
         }
     }
 
