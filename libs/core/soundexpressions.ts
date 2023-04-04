@@ -368,46 +368,58 @@ namespace music {
     //% expandableArgumentBreaks="3,5"
     //% group="micro:bit (V2)"
     export function createSoundEffect(waveShape: WaveShape, startFrequency: number, endFrequency: number, startVolume: number, endVolume: number, duration: number, effect: SoundExpressionEffect, interpolation: InterpolationCurve): string {
-        const sound = new soundExpression.Sound();
-        sound.wave = waveShape;
-        sound.frequency = startFrequency;
-        sound.volume = ((startVolume / 255) * 1023) | 0;
-        sound.endFrequency = endFrequency;
-        sound.endVolume = ((endVolume / 255) * 1023) | 0;
-        sound.duration = duration;
-        sound.fx = effect;
+        let src = "000000000000000000000000000000000000000000000000000000000000000000000000";
+        src = setValue(src, 0, Math.constrain(waveShape, 0, 4), 1);
+        src = setValue(src, 1, Math.constrain(((startVolume / 255) * 1023) | 0, 0, 1023), 4);
+        src = setValue(src, 5, startFrequency, 4);
+        src = setValue(src, 9, duration, 4);
+        src = setValue(src, 18, endFrequency, 4);
+        src = setValue(src, 26, Math.constrain(((endVolume / 255) * 1023) | 0, 0, 1023), 4);
+        src = setValue(src, 34, Math.constrain(effect, 0, 3), 2);
+
 
         switch (interpolation) {
             case InterpolationCurve.Linear:
-                sound.shape = soundExpression.InterpolationEffect.Linear;
-                sound.steps = 128;
+                src = setValue(src, 13, soundExpression.InterpolationEffect.Linear, 2);
+                src = setValue(src, 30, 128, 4);
                 break;
             case InterpolationCurve.Curve:
-                sound.shape = soundExpression.InterpolationEffect.Curve;
-                sound.steps = 90;
+                src = setValue(src, 13, soundExpression.InterpolationEffect.Curve, 2);
+                src = setValue(src, 30, 90, 4);
                 break;
             case InterpolationCurve.Logarithmic:
-                sound.shape = soundExpression.InterpolationEffect.Logarithmic;
-                sound.steps = 90;
+                src = setValue(src, 13, soundExpression.InterpolationEffect.Logarithmic, 2);
+                src = setValue(src, 30, 90, 4);
                 break;
         }
 
-        switch (sound.fx) {
+        switch (effect) {
             case SoundExpressionEffect.Vibrato:
-                sound.fxnSteps = 512;
-                sound.fxParam = 2;
+                src = setValue(src, 36, 2, 4);
+                src = setValue(src, 40, 512, 4);
                 break;
             case SoundExpressionEffect.Tremolo:
-                sound.fxnSteps = 900;
-                sound.fxParam = 3;
+                src = setValue(src, 36, 3, 4);
+                src = setValue(src, 40, 900, 4);
                 break;
             case SoundExpressionEffect.Warble:
-                sound.fxnSteps = 700;
-                sound.fxParam = 2;
+                src = setValue(src, 36, 2, 4);
+                src = setValue(src, 40, 700, 4);
                 break;
         }
 
-        return sound.src;
+        return src;
+    }
+
+    function setValue(src: string, offset: number, value: number, length: number) {
+        value = Math.constrain(value | 0, 0, Math.pow(10, length) - 1);
+        return src.substr(0, offset) + formatNumber(value, length) + src.substr(offset + length);
+    }
+
+    function formatNumber(num: number, length: number) {
+        let result = num + "";
+        while (result.length < length) result = "0" + result;
+        return result;
     }
 
     /**
