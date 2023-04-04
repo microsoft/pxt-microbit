@@ -37,4 +37,11 @@ namespace pxsim.record {
     export function audioIsStopped(): boolean {
         return false;
     }
+
+    export function setSampleRate(rate: number): void {
+    }
+
+    export function getSampleRate(): number {
+        return 0;
+    }
 }

@@ -29,6 +29,8 @@ using namespace pxt;
 namespace record {
 
 static StreamRecording *recording = NULL;
+static SplitterChannel *splitterChannel = NULL;
+static MixerChannel *channel = NULL;
 
 void enableMic() {
     uBit.audio.activateMic();
@@ -40,18 +42,23 @@ void disableMic() {
     uBit.audio.deactivateMic();
 }
 
-void checkEnv() {
+
+void checkEnv(int sampleRate = 11000) {
     if (recording == NULL) {
         MicroBitAudio::requestActivation();
 
-        recording = new StreamRecording(*uBit.audio.splitter);
+        if (splitterChannel == NULL)
+            splitterChannel = uBit.audio.splitter->createChannel();
 
-        MixerChannel *channel = uBit.audio.mixer.addChannel(*recording, 22000);
+        recording = new StreamRecording(*splitterChannel);
+
+        if (channel == NULL)
+            channel = uBit.audio.mixer.addChannel(*recording, sampleRate);
 
         // By connecting to the mic channel, we activate it automatically, so shut it down again.
         disableMic();
 
-        channel->setVolume(100.0);
+        channel->setVolume(75.0);
         uBit.audio.mixer.setVolume(1000);
         uBit.audio.setSpeakerEnabled(true);
     }
@@ -146,4 +153,34 @@ bool audioIsRecording() {
 bool audioIsStopped() {
     return recording->isStopped();
 }
+
+/**
+ * Get the sample rate of the splitter channel (audio input)
+ */
+//%
+float getInputSampleRate() {
+    if (splitterChannel == NULL)
+        splitterChannel = uBit.audio.splitter->createChannel();
+    return splitterChannel->getSampleRate();
+}
+
+/**
+ * Change the sample rate of the splitter channel (audio input)
+ */
+//%
+void setInputSampleRate(int sampleRate) {
+        if (splitterChannel == NULL)
+            splitterChannel = uBit.audio.splitter->createChannel();
+        splitterChannel->requestSampleRate(sampleRate);
+}
+
+
+/**
+ * Change the sample rate of the mixer channel (audio input)
+ */
+//%
+void setOutputSampleRate(int sampleRate) {
+    checkEnv(sampleRate);
+}
+
 } // namespace record

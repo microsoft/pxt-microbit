@@ -38,10 +38,16 @@ namespace record {
         StoppedRecording
     }
 
-    export enum AudioGain {
-        Low = 1,
-        Medium,
-        High
+    export enum AudioLevels {
+        low = 1,
+        medium,
+        high
+    }
+
+    export enum AudioSampleRateScope {
+        everything,
+        playback,
+        recording
     }
 
     export enum AudioRecordingMode {
@@ -72,9 +78,9 @@ namespace record {
 
     // Shim state
     let _moduleMode: AudioRecordingMode = AudioRecordingMode.Stopped
-    let _recordingFreqHz = 22000
-    let _playbackFreqHz = 22000
-    let _micGain: AudioGain = AudioGain.Medium
+    let _recordingFreqHz = 11000
+    let _playbackFreqHz = 11000
+    let _micGain: AudioLevels = AudioLevels.low
 
     // Track if we have a simulator tick timer to use...
     let _isSetup: boolean = false
@@ -85,45 +91,35 @@ namespace record {
         if (_isSetup)
             return
         _isSetup = true
-
-        _moduleMode = AudioRecordingMode.Stopped
-        _recordingFreqHz = 22000
-        _playbackFreqHz = 22000
-        _micGain = AudioGain.Medium
+        _micGain = AudioLevels.low
         music._onStopSound(stopRecording);
 
-
-        control.runInParallel(() => {
-            while (true) {
-
-                switch (_moduleMode) {
-                    case AudioRecordingMode.Playing:
-                        if (_playbackHead >= _memoryFill) {
-                            _playbackHead = 0
-                            _setMode(AudioRecordingMode.Stopped)
-                        }
-                        else {
-                            _playbackHead += _playbackFreqHz / (1000 / INTERVAL_STEP)
-                        }
-                        break
-
-                    case AudioRecordingMode.Recording:
-                        if (_memoryFill >= MAX_SAMPLES) {
-                            _memoryFill = MAX_SAMPLES
-                            _setMode(AudioRecordingMode.Stopped)
-                        }
-                        else {
-                            _memoryFill += _recordingFreqHz / (1000 / INTERVAL_STEP)
-                        }
-                        break
-                    case AudioRecordingMode.Stopped:
-                        if (_memoryFill > 0) {
-                            stop();
-                        }
+        switch (_moduleMode) {
+            case AudioRecordingMode.Playing:
+                if (_playbackHead >= _memoryFill) {
+                    _playbackHead = 0
+                    _setMode(AudioRecordingMode.Stopped)
                 }
-                basic.pause(INTERVAL_STEP)
-            }
-        })
+                else {
+                    _playbackHead += _playbackFreqHz / (1000 / INTERVAL_STEP)
+                }
+                break
+
+            case AudioRecordingMode.Recording:
+                // this should be handled in the cpp
+                if (_memoryFill >= MAX_SAMPLES) {
+                    _memoryFill = MAX_SAMPLES
+                    _setMode(AudioRecordingMode.Stopped)
+                }
+                // else {
+                //     _memoryFill += _recordingFreqHz / (1000 / INTERVAL_STEP)
+                // }
+                break
+            case AudioRecordingMode.Stopped:
+                if (_memoryFill > 0) {
+                    stop();
+                }
+        }
     }
 
     function emitEvent(type: AudioEvent): void {
@@ -170,7 +166,7 @@ namespace record {
     //% block="record audio clip"
     //% weight=70
     export function startRecording(): void {
-        _init()
+        // _init()
         eraseRecording();
         record();
         _setMode(AudioRecordingMode.Recording)
@@ -181,20 +177,18 @@ namespace record {
     /**
      * Play recorded audio
      */
-    //% block="play recording"
+    //% block="play audio clip"
     //% weight=60
     export function playAudio(): void {
-        _init()
+        // _init()
         _playbackHead = 0
-        if (!isEmpty()) {
-            _setMode(AudioRecordingMode.Playing)
-            play();
-        }
+        play();
+        _setMode(AudioRecordingMode.Playing)
         return
     }
 
     export function stopRecording(): void {
-        _init()
+        // _init()
         _setMode(AudioRecordingMode.Stopped)
         _playbackHead = 0
         stop();
@@ -202,7 +196,7 @@ namespace record {
     }
 
     export function eraseRecording(): void {
-        _init()
+        // _init()
         _setMode(AudioRecordingMode.Stopped)
         _playbackHead = 0
         _memoryFill = 0
@@ -211,21 +205,11 @@ namespace record {
     }
 
     /**
-     * Do something based on what the audio is doing
-     */
-    //% block="on audio $eventType"
-    //% weight=10
-    export function audioEvent(eventType: AudioEvent, handler: () => void): void {
-        _init()
-        control.onEvent(AUDIO_EVENT_ID, AUDIO_VALUE_OFFSET + eventType, handler)
-    }
-
-    /**
      * Test what the audio is doing
      */
     //% block="audio is $status"
     export function audioStatus(status: AudioStatus): boolean {
-        _init();
+        // _init();
         switch (status) {
             case AudioStatus.Playing:
                 return _moduleMode === AudioRecordingMode.Playing;
@@ -238,21 +222,53 @@ namespace record {
         }
     }
 
-    export function isEmpty(): boolean {
-        _init()
-        return _memoryFill <= 0
-    }
-
     /**
      * Change how sensitive the microphone is. This changes the recording quality!
      */
     //% block="set microphone sensitivity to $gain"
     //% gain.defl=Medium
     //% weight=40
-    export function setMicGain(gain: AudioGain): void {
-        _init()
+    export function setMicGain(gain: AudioLevels): void {
+        // _init()
         _micGain = gain
         setMicrophoneGain(gain);
         return
+    }
+
+    /**
+     * Set the sample frequency for recording, playback, or both (default)
+     * 
+     * @param hz The sample frequency, in Hz
+     */
+    //% block="set sample rate to $hz || for $scope"
+    //% hz.min=1000 hz.max=22000 hz.defl=11000
+    //% expandableArgumentMode="enabled"
+    export function setSampleRate(hz: number, scope?: AudioSampleRateScope): void {
+        // _init()
+        switch (scope) {
+            case AudioSampleRateScope.everything:
+                setInputSampleRate(hz);
+                setOutputSampleRate(hz);
+                break;
+
+            case AudioSampleRateScope.playback:
+                setOutputSampleRate(hz);
+                break;
+
+            case AudioSampleRateScope.recording:
+                setInputSampleRate(hz);
+                break;
+
+            default:
+                setInputSampleRate(hz);
+                setOutputSampleRate(hz);
+                break;
+
+        }
+    }
+
+    //% block="playback sample rate"
+    export function getOutSampleRate(): number {
+        return _playbackFreqHz;
     }
 }

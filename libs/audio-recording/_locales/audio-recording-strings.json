@@ -10,10 +10,11 @@
   "record.AudioStatus.Playing|block": "playing",
   "record.AudioStatus.Recording|block": "recording",
   "record.AudioStatus.Stopped|block": "stopped",
-  "record.audioEvent|block": "on audio $eventType",
   "record.audioStatus|block": "audio is $status",
-  "record.playAudio|block": "play recording",
+  "record.getOutSampleRate|block": "playback sample rate",
+  "record.playAudio|block": "play audio clip",
   "record.setMicGain|block": "set microphone sensitivity to $gain",
+  "record.setSampleRate|block": "set sample rate to $hz || for $scope",
   "record.startRecording|block": "record audio clip",
   "record|block": "Record",
   "{id:category}Record": "Record"
