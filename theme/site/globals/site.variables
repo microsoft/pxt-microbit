@@ -53,6 +53,7 @@
 @simulatorBackground: #FDFDFF;
 @editorToolsBackground: @simulatorBackground;
 @blocklySvgColor: #ecf0f1;
+@cloudCardBackground: lighten(@blue, 9);
 
 /*-------------------
    Side Docs
