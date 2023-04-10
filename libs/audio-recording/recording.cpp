@@ -47,13 +47,11 @@ void checkEnv(int sampleRate = 11000) {
     if (recording == NULL) {
         MicroBitAudio::requestActivation();
 
-        if (splitterChannel == NULL)
-            splitterChannel = uBit.audio.splitter->createChannel();
+        splitterChannel = uBit.audio.splitter->createChannel();
 
         recording = new StreamRecording(*splitterChannel);
 
-        if (channel == NULL)
-            channel = uBit.audio.mixer.addChannel(*recording, sampleRate);
+        channel = uBit.audio.mixer.addChannel(*recording, sampleRate);
 
         // By connecting to the mic channel, we activate it automatically, so shut it down again.
         disableMic();
@@ -111,13 +109,13 @@ void erase() {
 void setMicrophoneGain(int gain) {
     switch (gain) {
     case 1:
-        uBit.audio.processor->setGain(0.1);
+        uBit.audio.processor->setGain(0.079);
         break;
     case 2:
-        uBit.audio.processor->setGain(0.5);
+        uBit.audio.processor->setGain(0.089);
         break;
     case 3:
-        uBit.audio.processor->setGain(1);
+        uBit.audio.processor->setGain(0.1);
         break;
     }
 }
@@ -159,8 +157,7 @@ bool audioIsStopped() {
  */
 //%
 float getInputSampleRate() {
-    if (splitterChannel == NULL)
-        splitterChannel = uBit.audio.splitter->createChannel();
+    checkEnv();
     return splitterChannel->getSampleRate();
 }
 
@@ -169,14 +166,13 @@ float getInputSampleRate() {
  */
 //%
 void setInputSampleRate(int sampleRate) {
-        if (splitterChannel == NULL)
-            splitterChannel = uBit.audio.splitter->createChannel();
-        splitterChannel->requestSampleRate(sampleRate);
+    checkEnv();
+    splitterChannel->requestSampleRate(sampleRate);
 }
 
 
 /**
- * Change the sample rate of the mixer channel (audio input)
+ * Change the sample rate of the mixer channel (audio output)
  */
 //%
 void setOutputSampleRate(int sampleRate) {

@@ -68,7 +68,7 @@ declare namespace record {
     function setInputSampleRate(sampleRate: int32): void;
 
     /**
-     * Change the sample rate of the mixer channel (audio input)
+     * Change the sample rate of the mixer channel (audio output)
      */
     //% shim=record::setOutputSampleRate
     function setOutputSampleRate(sampleRate: int32): void;
