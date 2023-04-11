@@ -17,7 +17,6 @@
   "record.AudioStatus.Recording|block": "recording",
   "record.AudioStatus.Stopped|block": "stopped",
   "record.audioStatus|block": "audio is $status",
-  "record.getOutSampleRate|block": "playback sample rate",
   "record.playAudio|block": "play audio clip",
   "record.setMicGain|block": "set microphone sensitivity to $gain",
   "record.setSampleRate|block": "set sample rate to $hz || for $scope",

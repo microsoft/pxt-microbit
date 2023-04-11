@@ -171,6 +171,7 @@ namespace record {
      * Record an audio clip for a maximum of 3 seconds
      */
     //% block="record audio clip"
+    //% blockId="record_startRecording"
     //% weight=70
     export function startRecording(): void {
         // _init()
@@ -185,6 +186,7 @@ namespace record {
      * Play recorded audio
      */
     //% block="play audio clip"
+    //% blockId="record_playAudio"
     //% weight=60
     export function playAudio(): void {
         // _init()
@@ -215,6 +217,7 @@ namespace record {
      * Test what the audio is doing
      */
     //% block="audio is $status"
+    //% blockId="record_audioStatus"
     export function audioStatus(status: AudioStatus): boolean {
         // _init();
         switch (status) {
@@ -233,7 +236,8 @@ namespace record {
      * Change how sensitive the microphone is. This changes the recording quality!
      */
     //% block="set microphone sensitivity to $gain"
-    //% weight=40
+    //% blockId="record_setMicGain"
+    //% weight=30
     export function setMicGain(gain: AudioLevels): void {
         // _init()
         _micGain = gain
@@ -247,8 +251,10 @@ namespace record {
      * @param hz The sample frequency, in Hz
      */
     //% block="set sample rate to $hz || for $scope"
+    //% blockId="record_setSampleRate"
     //% hz.min=1000 hz.max=22000 hz.defl=11000
     //% expandableArgumentMode="enabled"
+    //% weight=40
     export function setSampleRate(hz: number, scope?: AudioSampleRateScope): void {
         // _init()
         switch (scope) {
@@ -271,10 +277,5 @@ namespace record {
                 break;
 
         }
-    }
-
-    //% block="playback sample rate"
-    export function getOutSampleRate(): number {
-        return _playbackFreqHz;
     }
 }
