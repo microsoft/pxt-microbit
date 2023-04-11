@@ -258,11 +258,6 @@ namespace record {
     export function setSampleRate(hz: number, scope?: AudioSampleRateScope): void {
         // _init()
         switch (scope) {
-            case AudioSampleRateScope.Everything:
-                setInputSampleRate(hz);
-                setOutputSampleRate(hz);
-                break;
-
             case AudioSampleRateScope.Playback:
                 setOutputSampleRate(hz);
                 break;
@@ -270,12 +265,10 @@ namespace record {
             case AudioSampleRateScope.Recording:
                 setInputSampleRate(hz);
                 break;
-
+            case AudioSampleRateScope.Everything:
             default:
-                setInputSampleRate(hz);
-                setOutputSampleRate(hz);
+                setBothSamples(hz);
                 break;
-
         }
     }
 }

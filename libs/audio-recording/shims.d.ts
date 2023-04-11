@@ -56,12 +56,6 @@ declare namespace record {
     function audioIsStopped(): boolean;
 
     /**
-     * Get the sample rate of the splitter channel (audio input)
-     */
-    //% shim=record::getInputSampleRate
-    function getInputSampleRate(): number;
-
-    /**
      * Change the sample rate of the splitter channel (audio input)
      */
     //% shim=record::setInputSampleRate
@@ -72,6 +66,12 @@ declare namespace record {
      */
     //% shim=record::setOutputSampleRate
     function setOutputSampleRate(sampleRate: int32): void;
+
+    /**
+     * Set the sample rate for both input at output
+     */
+    //% shim=record::setBothSamples
+    function setBothSamples(sampleRate: int32): void;
 }
 
 // Auto-generated. Do not edit. Really.

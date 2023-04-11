@@ -153,15 +153,6 @@ bool audioIsStopped() {
 }
 
 /**
- * Get the sample rate of the splitter channel (audio input)
- */
-//%
-float getInputSampleRate() {
-    checkEnv();
-    return splitterChannel->getSampleRate();
-}
-
-/**
  * Change the sample rate of the splitter channel (audio input)
  */
 //%
@@ -177,6 +168,15 @@ void setInputSampleRate(int sampleRate) {
 //%
 void setOutputSampleRate(int sampleRate) {
     checkEnv(sampleRate);
+}
+
+/**
+ * Set the sample rate for both input at output
+*/
+//%
+void setBothSamples(int sampleRate) {
+    checkEnv(sampleRate);
+    splitterChannel->requestSampleRate(sampleRate);
 }
 
 } // namespace record
