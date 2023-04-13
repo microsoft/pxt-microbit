@@ -612,7 +612,8 @@
         "winAppDeprImage": "/static/winapp.PNG",
         "showWinAppDeprBanner": false,
         "editorTour": true,
-        "tutorialSimSidebarLayout": true
+        "tutorialSimSidebarLayout": true,
+        "preferWebUSBDownload": true
     },
     "queryVariants": {
         "hidemenu": {
