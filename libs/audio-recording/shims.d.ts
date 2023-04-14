@@ -2,6 +2,12 @@
 declare namespace record {
 
     /**
+     * Clear the buffer
+     */
+    //% shim=record::erase
+    function erase(): void;
+
+    /**
      * Record an audio clip
      */
     //% promise shim=record::record
@@ -18,12 +24,6 @@ declare namespace record {
      */
     //% shim=record::stop
     function stop(): void;
-
-    /**
-     * Clear the buffer
-     */
-    //% shim=record::erase
-    function erase(): void;
 
     /**
      * Set sensitity of the microphone input

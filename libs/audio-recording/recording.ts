@@ -75,97 +75,8 @@ namespace record {
         //% block="full"
         BufferFull,
     }
-    const AUDIO_EVENT_ID = 0xFF000
-    const AUDIO_VALUE_OFFSET = 0x10
 
-    // Expressed in samples, as we can have varying recording and playback rates!
-    const MAX_SAMPLES = 55000
-    const INTERVAL_STEP = 100
-
-    // Shim state
-    let _moduleMode: AudioRecordingMode = AudioRecordingMode.Stopped
-    let _recordingFreqHz = 11000
-    let _playbackFreqHz = 11000
-    let _micGain: AudioLevels = AudioLevels.Low
-
-    // Track if we have a simulator tick timer to use...
-    let _isSetup: boolean = false
-    let _memoryFill: number = 0
-    let _playbackHead: number = 0
-
-    function _init(): void {
-        if (_isSetup)
-            return
-        _isSetup = true
-        _micGain = AudioLevels.Low
-        music._onStopSound(stopRecording);
-
-        switch (_moduleMode) {
-            case AudioRecordingMode.Playing:
-                if (_playbackHead >= _memoryFill) {
-                    _playbackHead = 0
-                    _setMode(AudioRecordingMode.Stopped)
-                }
-                else {
-                    _playbackHead += _playbackFreqHz / (1000 / INTERVAL_STEP)
-                }
-                break
-
-            case AudioRecordingMode.Recording:
-                // this should be handled in the cpp
-                if (_memoryFill >= MAX_SAMPLES) {
-                    _memoryFill = MAX_SAMPLES
-                    _setMode(AudioRecordingMode.Stopped)
-                }
-                else {
-                    _memoryFill += _recordingFreqHz / (1000 / INTERVAL_STEP)
-                }
-                break
-            case AudioRecordingMode.Stopped:
-                if (_memoryFill > 0) {
-                    stop();
-                }
-        }
-        basic.pause(INTERVAL_STEP);
-    }
-
-    function emitEvent(type: AudioEvent): void {
-        control.raiseEvent(AUDIO_EVENT_ID, AUDIO_VALUE_OFFSET + type, EventCreationMode.CreateAndFire)
-    }
-
-    function _setMode(mode: AudioRecordingMode): void {
-        switch (mode) {
-            case AudioRecordingMode.Stopped:
-                if (_moduleMode == AudioRecordingMode.Recording) {
-                    _moduleMode = AudioRecordingMode.Stopped
-                    return emitEvent(AudioEvent.StoppedRecording)
-                }
-
-                if (_moduleMode == AudioRecordingMode.Playing) {
-                    _moduleMode = AudioRecordingMode.Stopped
-                    return emitEvent(AudioEvent.StoppedPlaying)
-                }
-
-                _moduleMode = AudioRecordingMode.Stopped
-                return
-
-            case AudioRecordingMode.Playing:
-                if (_moduleMode !== AudioRecordingMode.Stopped) {
-                    _setMode(AudioRecordingMode.Stopped)
-                }
-
-                _moduleMode = AudioRecordingMode.Playing
-                return emitEvent(AudioEvent.StartedPlaying)
-
-            case AudioRecordingMode.Recording:
-                if (_moduleMode !== AudioRecordingMode.Stopped) {
-                    _setMode(AudioRecordingMode.Stopped)
-                }
-
-                _moduleMode = AudioRecordingMode.Recording
-                return emitEvent(AudioEvent.StartedRecording)
-        }
-    }
+    let _recordingPresent: boolean = false;
 
     /**
      * Record an audio clip for a maximum of 3 seconds
@@ -174,14 +85,10 @@ namespace record {
     //% blockId="record_startRecording"
     //% weight=70
     export function startRecording(): void {
-        // _init()
         eraseRecording();
-        _setMode(AudioRecordingMode.Recording)
         record();
-        _memoryFill = 1;
+        _recordingPresent = true;
     }
-
-
 
     /**
      * Play recorded audio
@@ -189,27 +96,16 @@ namespace record {
     //% block="play audio clip"
     //% blockId="record_playAudio"
     //% weight=60
+    //% shim=record::play
     export function playAudio(): void {
-        // _init()
-        _playbackHead = 0
-        _setMode(AudioRecordingMode.Playing)
-        play();
-        return
     }
 
+    //% shim=record::stop
     export function stopRecording(): void {
-        // _init()
-        _setMode(AudioRecordingMode.Stopped)
-        _playbackHead = 0
-        stop();
-        return
     }
 
     export function eraseRecording(): void {
-        // _init()
-        _setMode(AudioRecordingMode.Stopped)
-        _playbackHead = 0
-        _memoryFill = 0
+        _recordingPresent = false;
         erase();
         return
     }
@@ -220,7 +116,6 @@ namespace record {
     //% block="audio is $status"
     //% blockId="record_audioStatus"
     export function audioStatus(status: AudioStatus): boolean {
-        // _init();
         switch (status) {
             case AudioStatus.Playing:
                 return audioIsPlaying();
@@ -229,7 +124,7 @@ namespace record {
             case AudioStatus.Stopped:
                 return audioIsStopped();
             case AudioStatus.BufferFull:
-                return _memoryFill > 0;
+                return _recordingPresent;
         }
     }
 
@@ -240,8 +135,6 @@ namespace record {
     //% blockId="record_setMicGain"
     //% weight=30
     export function setMicGain(gain: AudioLevels): void {
-        // _init()
-        _micGain = gain
         setMicrophoneGain(gain);
         return
     }
@@ -257,7 +150,6 @@ namespace record {
     //% expandableArgumentMode="enabled"
     //% weight=40
     export function setSampleRate(hz: number, scope?: AudioSampleRateScope): void {
-        // _init()
         switch (scope) {
             case AudioSampleRateScope.Playback:
                 setOutputSampleRate(hz);
