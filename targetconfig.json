@@ -630,6 +630,9 @@
                 "tags": [ "Robotics" ],
                 "preferred": true
             },
+            "dfrobot/pxt-dfrobot_maqueenplus_v20": {
+                "tags": [ "Robotics" ]
+            },
             "joy-it/joy-car": { "tags": [ "Robotics" ] },
             "alexandrefrolov/ds3231": {},
             "elecfreaks/pxt-magicwand": { "tags": [ "Gaming" ] },
