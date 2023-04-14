@@ -173,6 +173,7 @@ namespace record {
     //% block="record audio clip"
     //% blockId="record_startRecording"
     //% weight=70
+    //% parts="microphone"
     export function startRecording(): void {
         // _init()
         eraseRecording();
@@ -189,6 +190,7 @@ namespace record {
     //% block="play audio clip"
     //% blockId="record_playAudio"
     //% weight=60
+    //% parts="microphone"
     export function playAudio(): void {
         // _init()
         _playbackHead = 0
@@ -219,6 +221,7 @@ namespace record {
      */
     //% block="audio is $status"
     //% blockId="record_audioStatus"
+    //% parts="microphone"
     export function audioStatus(status: AudioStatus): boolean {
         // _init();
         switch (status) {
@@ -238,6 +241,7 @@ namespace record {
      */
     //% block="set microphone sensitivity to $gain"
     //% blockId="record_setMicGain"
+    //% parts="microphone"
     //% weight=30
     export function setMicGain(gain: AudioLevels): void {
         // _init()
@@ -255,6 +259,7 @@ namespace record {
     //% blockId="record_setSampleRate"
     //% hz.min=1000 hz.max=22000 hz.defl=11000
     //% expandableArgumentMode="enabled"
+    //% parts="microphone"
     //% weight=40
     export function setSampleRate(hz: number, scope?: AudioSampleRateScope): void {
         // _init()
