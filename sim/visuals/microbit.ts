@@ -378,7 +378,7 @@ path.sim-board {
             svg.fill(this.display, theme.display);
             svg.fills(this.leds, theme.ledOn);
             svg.fills(this.ledsOuter, theme.ledOff);
-            if (this.microphoneLed && this.board.microphoneState.sensorUsed) {
+            if (this.microphoneLed && (this.board.microphoneState.sensorUsed || this.board.recordingState.currentlyRecording)) {
                 svg.fills([this.microphoneLed], theme.ledOn);
                 svg.filter(this.microphoneLed, `url(#ledglow)`);
             }
@@ -408,6 +408,7 @@ path.sim-board {
 
             this.updateHardwareVersion();
             this.updateMicrophone();
+            this.updateRecordingActive();
             this.updateButtonPairs();
             this.updateLEDMatrix();
             this.updatePins();
@@ -497,6 +498,15 @@ path.sim-board {
                 return;
 
             this.updateSoundLevel();
+        }
+
+        private updateRecordingActive() {
+            const b = board();
+            if (!b
+                || !b.recordingState.currentlyRecording)
+                return;
+
+            this.updateTheme();
         }
 
         private updateButtonAB() {

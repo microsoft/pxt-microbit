@@ -20,6 +20,7 @@ namespace pxsim {
         buttonPairState: ButtonPairState;
         radioState: RadioState;
         microphoneState: AnalogSensorState;
+        recordingState: RecordingState;
         lightState: pxt.Map<CommonNeoPixelState>;
         fileSystem: FileSystemState;
         logoTouch: Button;
@@ -98,6 +99,7 @@ namespace pxsim {
                 RADIO_EVT_DATAGRAM: DAL.MICROBIT_RADIO_EVT_DATAGRAM
             });
             this.builtinParts["microphone"] = this.microphoneState = new AnalogSensorState(DAL.DEVICE_ID_MICROPHONE, 0, 255, 86, 165);
+            this.builtinParts["recording"] = this.recordingState = new RecordingState();
             this.builtinParts["accelerometer"] = this.accelerometerState = new AccelerometerState(runtime);
             this.builtinParts["serial"] = this.serialState = new SerialState(runtime, this);
             this.builtinParts["thermometer"] = this.thermometerState = new ThermometerState();

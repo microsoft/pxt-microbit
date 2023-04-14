@@ -1,8 +1,17 @@
+namespace pxsim  {
+    export class RecordingState {
+        currentlyRecording = false;
+    }
+}
 namespace pxsim.record {
 
     export async function record(): Promise<void> {
         //request permission is asynchronous
-        board()
+        let b = board();
+        if (!b.recordingState.currentlyRecording) {
+            b.recordingState.currentlyRecording = true;
+            runtime.queueDisplayUpdate();
+        }
     }
 
     export function play(): void {
