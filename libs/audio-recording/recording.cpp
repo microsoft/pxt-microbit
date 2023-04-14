@@ -175,7 +175,7 @@ void setOutputSampleRate(int sampleRate) {
 }
 
 /**
- * Set the sample rate for both input at output
+ * Set the sample rate for both input and output
 */
 //%
 void setBothSamples(int sampleRate) {

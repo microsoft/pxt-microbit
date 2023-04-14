@@ -2,12 +2,6 @@
 declare namespace record {
 
     /**
-     * Clear the buffer
-     */
-    //% shim=record::erase
-    function erase(): void;
-
-    /**
      * Record an audio clip
      */
     //% promise shim=record::record
@@ -24,6 +18,12 @@ declare namespace record {
      */
     //% shim=record::stop
     function stop(): void;
+
+    /**
+     * Clear the buffer
+     */
+    //% shim=record::erase
+    function erase(): void;
 
     /**
      * Set sensitity of the microphone input
@@ -68,7 +68,7 @@ declare namespace record {
     function setOutputSampleRate(sampleRate: int32): void;
 
     /**
-     * Set the sample rate for both input at output
+     * Set the sample rate for both input and output
      */
     //% shim=record::setBothSamples
     function setBothSamples(sampleRate: int32): void;
