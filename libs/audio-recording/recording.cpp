@@ -43,8 +43,10 @@ void disableMic() {
 }
 
 
-void checkEnv(int sampleRate = 11000) {
+void checkEnv(int sampleRate = -1) {
     if (recording == NULL) {
+        if (sampleRate == -1)
+            sampleRate = 11000;
         MicroBitAudio::requestActivation();
 
         splitterChannel = uBit.audio.splitter->createChannel();
@@ -59,6 +61,11 @@ void checkEnv(int sampleRate = 11000) {
         channel->setVolume(75.0);
         uBit.audio.mixer.setVolume(1000);
         uBit.audio.setSpeakerEnabled(true);
+    }
+
+    if (recording != NULL && sampleRate != -1) {
+        channel = uBit.audio.mixer.addChannel(*recording, sampleRate);
+        channel->setVolume(75.0);
     }
 }
 

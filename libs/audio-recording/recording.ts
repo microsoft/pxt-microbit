@@ -178,6 +178,7 @@ namespace record {
         eraseRecording();
         _setMode(AudioRecordingMode.Recording)
         record();
+        _memoryFill = 1;
     }
 
 
@@ -222,11 +223,11 @@ namespace record {
         // _init();
         switch (status) {
             case AudioStatus.Playing:
-                return _moduleMode === AudioRecordingMode.Playing;
+                return audioIsPlaying();
             case AudioStatus.Recording:
-                return _moduleMode === AudioRecordingMode.Recording;
+                return audioIsRecording();
             case AudioStatus.Stopped:
-                return _moduleMode === AudioRecordingMode.Stopped;
+                return audioIsStopped();
             case AudioStatus.BufferFull:
                 return _memoryFill > 0;
         }
