@@ -9,7 +9,7 @@
   "record.play": "Play the audio clip that is saved in the buffer",
   "record.playAudio": "Play recorded audio",
   "record.record": "Record an audio clip",
-  "record.setBothSamples": "Set the sample rate for both input at output",
+  "record.setBothSamples": "Set the sample rate for both input and output",
   "record.setInputSampleRate": "Change the sample rate of the splitter channel (audio input)",
   "record.setMicGain": "Change how sensitive the microphone is. This changes the recording quality!",
   "record.setMicrophoneGain": "Set sensitity of the microphone input",

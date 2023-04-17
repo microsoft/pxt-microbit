@@ -569,6 +569,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
   "url":"/pkg/DFRobot/pxt-DFRobot-Maqueenplus",
   "cardType": "package"
 }, {
+  "name": "DF Robot Maqueen Plus V2",
+  "url":"/pkg/DFRobot/pxt-DFRobot_MaqueenPlus_v20",
+  "cardType": "package"
+}, {
   "name": "Joy IT Joy Car",
   "url":"/pkg/joy-it/Joy-Car",
   "cardType": "package"

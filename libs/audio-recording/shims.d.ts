@@ -68,7 +68,7 @@ declare namespace record {
     function setOutputSampleRate(sampleRate: int32): void;
 
     /**
-     * Set the sample rate for both input at output
+     * Set the sample rate for both input and output
      */
     //% shim=record::setBothSamples
     function setBothSamples(sampleRate: int32): void;

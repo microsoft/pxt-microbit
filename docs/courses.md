@@ -112,6 +112,11 @@ Fun project courses - make and experiment while learning about science and progr
   "url":"https://sites.google.com/view/microbitofthings",
   "imageUrl": "/static/courses/microbit-of-things.jpg"
 }, {
+  "name": "ARM University - micro:course",
+  "description": "Introduce learners to the world of making and programming through a series of real-world challenges that feature the micro:bit.",
+  "url": "https://github.com/arm-university/micro-course",
+  "imageUrl": "/static/courses/armu-micro-course.png"
+}, {
   "name": "A-Z Robotics",
   "description": "Absolute beginner's guide to learning coding, electronics and robotics on the micro:bit",
   "url":"https://tinkerspark.teachable.com/",

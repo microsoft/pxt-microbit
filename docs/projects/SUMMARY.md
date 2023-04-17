@@ -141,6 +141,7 @@
   * [SparkFun Inventor's Kit](https://learn.sparkfun.com/tutorials/sparkfun-inventors-kit-for-microbit-experiment-guide/introduction-to-the-sparkfun-inventors-kit-for-microbit)
   * [Kitronik Inventor Kit](https://www.kitronik.co.uk/blog/inventors-kit-experiment-1-help)
   * [micro:bit of Things](https://sites.google.com/view/microbitofthings)
+  * [ARM University - micro:course](https://github.com/arm-university/micro-course)
   * [A-Z Robotics](https://tinkerspark.teachable.com/)
 * [Jacdac](/jacdac)
   * [Getting started](https://microsoft.github.io/jacdac-docs/clients/makecode/)

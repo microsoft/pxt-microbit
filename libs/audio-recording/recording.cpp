@@ -55,9 +55,6 @@ void checkEnv(int sampleRate = -1) {
 
         channel = uBit.audio.mixer.addChannel(*recording, sampleRate);
 
-        // By connecting to the mic channel, we activate it automatically, so shut it down again.
-        disableMic();
-
         channel->setVolume(75.0);
         uBit.audio.mixer.setVolume(1000);
         uBit.audio.setSpeakerEnabled(true);
@@ -116,13 +113,13 @@ void erase() {
 void setMicrophoneGain(int gain) {
     switch (gain) {
     case 1:
-        uBit.audio.processor->setGain(0.079);
+        uBit.audio.processor->setGain(0.079f);
         break;
     case 2:
-        uBit.audio.processor->setGain(0.089);
+        uBit.audio.processor->setGain(0.2f);
         break;
     case 3:
-        uBit.audio.processor->setGain(0.1);
+        uBit.audio.processor->setGain(0.4f);
         break;
     }
 }
@@ -178,7 +175,7 @@ void setOutputSampleRate(int sampleRate) {
 }
 
 /**
- * Set the sample rate for both input at output
+ * Set the sample rate for both input and output
 */
 //%
 void setBothSamples(int sampleRate) {
