@@ -40,6 +40,8 @@ namespace led {
     export function plotBarGraph(value: number, high: number, valueToConsole?: boolean): void {
         if (valueToConsole == undefined){
             valueToConsole = barGraphToConsole;
+        } else {
+            barGraphToConsole = valueToConsole;
         }
         const now = input.runningTime();
         if (valueToConsole)
