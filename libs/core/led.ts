@@ -35,7 +35,7 @@ namespace led {
      * @param valueToConsole if true, prints value to the console
      */
     //% help=led/plot-bar-graph weight=20
-    //% blockId=device_plot_bar_graph block="plot bar graph of %value up to %high|| console log %valueToConsole" icon="\uf080" blockExternalInputs=true
+    //% blockId=device_plot_bar_graph block="plot bar graph of $value up to $high|| console log $valueToConsole" icon="\uf080" blockExternalInputs=true
     //% parts="ledmatrix"
     export function plotBarGraph(value: number, high: number, valueToConsole?: boolean): void {
         if (valueToConsole == undefined){
