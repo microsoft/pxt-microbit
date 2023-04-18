@@ -28,17 +28,6 @@ namespace led {
     export let barGraphToConsole = true
 
     /**
-     * Sets whether the bar graph values print to the console.
-     * @param valueToConsole if true, prints values to the console
-     */
-    //% help=led/set-bar-graph-to-console weight=20
-    //% blockId=device_set_bar_graph_to_console block="log bar graph values to console $valueToConsole" icon="\uf080"
-    //% valueToConsole.shadow=toggleOnOff
-    export function setBarGraphToConsole(valueToConsole: boolean): void {
-        barGraphToConsole = valueToConsole;
-    }
-
-    /**
      * Displays a vertical bar graph based on the `value` and `high` value.
      * If `high` is 0, the chart gets adjusted automatically.
      * @param value current value to plot
