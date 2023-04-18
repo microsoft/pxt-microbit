@@ -114,7 +114,7 @@ Fun project courses - make and experiment while learning about science and progr
 }, {
   "name": "ARM University - micro:course",
   "description": "Introduce learners to the world of making and programming through a series of real-world challenges that feature the micro:bit.",
-  "url": "https://github.com/arm-university/micro-course/blob/main/Markdown%20microcourse%20v2.md",
+  "url": "https://github.com/arm-university/micro-course",
   "imageUrl": "/static/courses/armu-micro-course.png"
 }, {
   "name": "A-Z Robotics",
