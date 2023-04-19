@@ -483,6 +483,7 @@
   "led.plotBarGraph": "Displays a vertical bar graph based on the `value` and `high` value.\nIf `high` is 0, the chart gets adjusted automatically.",
   "led.plotBarGraph|param|high": "maximum value. If 0, maximum value adjusted automatically, eg: 0",
   "led.plotBarGraph|param|value": "current value to plot",
+  "led.plotBarGraph|param|valueToConsole": "if true, prints value to the serial port",
   "led.plotBrightness": "Turn on the specified LED with specific brightness using x, y coordinates (x is horizontal, y is vertical). (0,0) is upper left.",
   "led.plotBrightness|param|brightness": "the brightness from 0 (off) to 255 (bright), eg:255",
   "led.plotBrightness|param|x": "the horizontal coordinate of the LED starting at 0",

@@ -356,7 +356,7 @@
   "input|block": "input",
   "led.brightness|block": "brightness",
   "led.enable|block": "led enable %on",
-  "led.plotBarGraph|block": "plot bar graph of %value up to %high",
+  "led.plotBarGraph|block": "plot bar graph of $value up to $high|| serial write $valueToConsole",
   "led.plotBrightness|block": "plot|x %x|y %y|brightness %brightness",
   "led.plot|block": "plot|x %x|y %y",
   "led.pointBrightness|block": "point|x %x|y %y brightness",
