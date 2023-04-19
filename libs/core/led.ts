@@ -23,11 +23,6 @@ namespace led {
     let barGraphHighLast = 0;
 
     /**
-     * Controls where plotbargraph prints to the console
-     **/
-    export let barGraphToConsole = true
-
-    /**
      * Displays a vertical bar graph based on the `value` and `high` value.
      * If `high` is 0, the chart gets adjusted automatically.
      * @param value current value to plot
@@ -40,7 +35,7 @@ namespace led {
     //% valueToConsole.shadow=toggleOnOff
     export function plotBarGraph(value: number, high: number, valueToConsole?: boolean): void {
         if (valueToConsole == undefined) {
-            valueToConsole = barGraphToConsole;
+            valueToConsole = false;
         }
         const now = input.runningTime();
         if (valueToConsole)
