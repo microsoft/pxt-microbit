@@ -470,6 +470,7 @@
   "input.setAccelerometerRange|param|range": "a value describe the maximum strengh of acceleration measured",
   "input.temperature": "Gets the temperature in Celsius degrees (°C).",
   "led": "Control of the LED screen.",
+  "led.barGraphToConsole": "Controls where plotbargraph prints to the console",
   "led.brightness": "Get the screen brightness from 0 (off) to 255 (full bright).",
   "led.displayMode": "Gets the current display mode",
   "led.enable": "Turns on or off the display",
