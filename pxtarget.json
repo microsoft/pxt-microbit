@@ -611,7 +611,9 @@
         },
         "winAppDeprImage": "/static/winapp.PNG",
         "showWinAppDeprBanner": false,
-        "editorTour": true,
+        "tours": {
+            "editor": "/tours/editor-tour"
+        },
         "tutorialSimSidebarLayout": true,
         "preferWebUSBDownload": true
     },
