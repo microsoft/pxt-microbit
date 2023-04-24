@@ -38,6 +38,7 @@ namespace led {
     //% blockId=device_plot_bar_graph block="plot bar graph of $value up to $high|| serial write $valueToConsole" icon="\uf080" blockExternalInputs=true
     //% parts="ledmatrix"
     //% valueToConsole.shadow=toggleOnOff
+    //% valueToConsole.defl=true
     export function plotBarGraph(value: number, high: number, valueToConsole?: boolean): void {
         if (valueToConsole == undefined) {
             valueToConsole = barGraphToConsole;
