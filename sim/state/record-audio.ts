@@ -4,18 +4,11 @@ namespace pxsim  {
     }
 }
 namespace pxsim.record {
-
-    class AudioRecording {
-        stream: MediaStream;
-    }
-    
-    function init() {
-        
-    }
-
-    function initRecording() {
-        navigator.mediaDevices.getUserMedia({video: false, audio:true});
-    }
+    let stream: MediaStream;
+    let recorder: MediaRecorder;
+    let chunks: Blob[];
+    let audioURL: string;
+    let recording: HTMLAudioElement;
 
     export async function record(): Promise<void> {
         //request permission is asynchronous
@@ -23,40 +16,43 @@ namespace pxsim.record {
         if (!b.recordingState.currentlyRecording) {
             b.recordingState.currentlyRecording = true;
             runtime.queueDisplayUpdate();
-            const context = new AudioContext();
-            const stream = await navigator.mediaDevices.getUserMedia({video: false, audio:true});
-            const source1 = context.createMediaStreamSource(stream);
-            const recorder = new MediaRecorder(stream);
-            recorder.start(1000);
-            let chunks: Blob[] = [];
 
-            recorder.onstop = (e: BlobEvent) => {
-                const audio = document.createElement("audio");
-                const blob = new Blob(chunks, { type: "audio/ogg; codecs=opus" });
-                chunks = []
-                const audioURL = URL.createObjectURL(blob);
-                audio.src = audioURL;
+            if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+                try {
+                    stream = await navigator.mediaDevices.getUserMedia({video: false, audio:true});
+                    recorder = new MediaRecorder(stream);
+                    recorder.start();
+
+                    setTimeout(() => {
+                        recorder.stop();
+                        runtime.queueDisplayUpdate();
+                    }, 4000)
+
+                    recorder.ondataavailable = (e: BlobEvent) => {
+                        chunks.push(e.data);
+                    }
+
+                    recorder.onstop = () => {
+                        const blob = new Blob(chunks, { type: "audio/ogg; codecs=opus" });
+                        audioURL = window.URL.createObjectURL(blob);
+                        recording = new Audio(audioURL);
+                        b.recordingState.currentlyRecording = false;
+                        erase();
+                    }
+                } catch (error) {
+                    console.log("An error occurred, could not get microphone access");
+                }
+
+              } else {
+                console.log("getUserMedia not supported on your browser!");
             }
-            // recorder.stop();
-            recorder.ondataavailable = (e: BlobEvent) => {
-                chunks.push(e.data);
-            }
-            // source1.connect(context.destination);
-
-
-
-            // const buffer = context.createBuffer(1, 22050, 44100);
-            // const source = context.createBufferSource();
-            // source.buffer = buffer;
-            // source.connect(context.destination);
-            // source1.start();
-            // stream.getAudioTracks();
-
         }
     }
 
     export function play(): void {
-
+        if (recording) {
+            recording.play();
+        }
     }
 
     export function stop(): void {
@@ -64,7 +60,7 @@ namespace pxsim.record {
     }
 
     export function erase(): void {
-
+        chunks = [];
     }
 
     export function setMicrophoneGain(gain: number): void {
@@ -79,13 +75,12 @@ namespace pxsim.record {
         return false;
     }
 
-
     export function audioIsRecording(): boolean {
-        return false;
+        return recorder?.state == "recording";
     }
 
     export function audioIsStopped(): boolean {
-        return false;
+        return recorder?.state == "inactive";
     }
 
     export function setSampleRate(rate: number): void {
