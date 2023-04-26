@@ -678,7 +678,13 @@
                         "identity": true,
                         "redirect": true,
                         "order": 2
-                    },
+                    }
+                }
+            }
+        },
+        "clever=1": {
+            "cloud": {
+                "cloudProviders": {
                     "clever": {
                         "id": "clever",
                         "name": "Clever",
