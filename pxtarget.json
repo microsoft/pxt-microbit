@@ -659,7 +659,7 @@
                     "clever": {
                         "id": "clever",
                         "name": "Clever",
-                        "icon": "/static/providers/clever-logo.svg",
+                        "icon": "/static/providers/clever-logo.png",
                         "identity": true,
                         "redirect": true,
                         "order": 3
