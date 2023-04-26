@@ -9,6 +9,7 @@ namespace pxsim.record {
     let chunks: Blob[];
     let audioURL: string;
     let recording: HTMLAudioElement;
+    let audioPlaying: boolean = false;
 
     export async function record(): Promise<void> {
         //request permission is asynchronous
@@ -72,15 +73,24 @@ namespace pxsim.record {
     }
 
     export function audioIsPlaying(): boolean {
-        return false;
+        if (recording) {
+            recording.addEventListener("playing", () => {
+                audioPlaying = true;
+            }, { once: true });
+
+            recording.addEventListener("ended", () => {
+                audioPlaying = false;
+            }, { once: true });
+        }
+        return audioPlaying;
     }
 
     export function audioIsRecording(): boolean {
-        return recorder?.state == "recording";
+        return recorder ? recorder.state == "recording" : false;
     }
 
     export function audioIsStopped(): boolean {
-        return recorder?.state == "inactive";
+        return recorder ? !audioPlaying && recorder.state == "inactive" : true;
     }
 
     export function setSampleRate(rate: number): void {
