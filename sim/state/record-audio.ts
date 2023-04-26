@@ -93,10 +93,15 @@ namespace pxsim.record {
         return recorder ? !audioPlaying && recorder.state == "inactive" : true;
     }
 
-    export function setSampleRate(rate: number): void {
+    export function setInputSampleRate(sampleRate: number): void {
+
     }
 
-    export function getSampleRate(): number {
-        return 0;
+    export function setOutputSampleRate(sampleRate: number): void {
+
+    }
+
+    export function setBothSamples(sampleRate: number): void {
+
     }
 }
