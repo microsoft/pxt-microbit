@@ -506,12 +506,14 @@ path.sim-board {
                 return;
 
             let theme = this.props.theme;
-            if (b.recordingState.currentlyRecording) {
-                svg.fills([this.microphoneLed], theme.ledOn);
-                svg.filter(this.microphoneLed, `url(#ledglow)`);
-            } else {
-                svg.fills([this.microphoneLed], theme.ledOff);
-                svg.filter(this.microphoneLed, `url(#none)`);
+            if (this.microphoneLed) {
+                if (b.recordingState.currentlyRecording) {
+                    svg.fills([this.microphoneLed], theme.ledOn);
+                    svg.filter(this.microphoneLed, `url(#ledglow)`);
+                } else if (!b.microphoneState.sensorUsed) {
+                    svg.fills([this.microphoneLed], theme.ledOff);
+                    svg.filter(this.microphoneLed, `url(#none)`);
+                }
             }
         }
 
