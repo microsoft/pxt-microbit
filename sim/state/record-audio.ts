@@ -20,7 +20,7 @@ namespace pxsim.record {
 
             if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
                 try {
-                    stream = await navigator.mediaDevices.getUserMedia({video: false, audio:true});
+                    stream = await navigator.mediaDevices.getUserMedia({ video: false, audio: true });
                     recorder = new MediaRecorder(stream);
                     recorder.start();
 
