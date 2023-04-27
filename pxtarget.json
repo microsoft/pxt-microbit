@@ -619,7 +619,6 @@
 
             "downloadMenuHelpURL" : "/device/usb",
             "downloadHelpURL" : "/device/usb",
-            "firmwareHelpURL": "/device/usb/webusb/troubleshoot",
             "troubleshootWebUSBHelpURL": "/device/usb/webusb/troubleshoot",
             "incompatibleHardwareHelpURL": "/device/v2",
 
@@ -627,8 +626,6 @@
             "connectDeviceImage": "/static/download/connect-microbit.gif",
             "selectDeviceImage": "/static/download/pair-browser.png",
             "connectionSuccessImage": "/static/download/successfully-paired.png",
-            "checkFirmwareVersionImage": "/static/download/firmware.png",
-            "checkUSBCableImage": "/static/download/connect.png",
             "incompatibleHardwareImage": "/static/download/incompatible.png"
         },
         "winAppDeprImage": "/static/winapp.PNG",
