@@ -44,7 +44,7 @@ namespace pxsim.record {
                     console.log("An error occurred, could not get microphone access");
                 }
 
-              } else {
+            } else {
                 console.log("getUserMedia not supported on your browser!");
             }
         }
