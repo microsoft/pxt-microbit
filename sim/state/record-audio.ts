@@ -14,39 +14,51 @@ namespace pxsim.record {
     export async function record(): Promise<void> {
         //request permission is asynchronous
         let b = board();
-        if (!b.recordingState.currentlyRecording) {
-            b.recordingState.currentlyRecording = true;
-            runtime.queueDisplayUpdate();
+        b.recordingState.currentlyRecording = true;
+        runtime.queueDisplayUpdate();
 
-            if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-                try {
-                    stream = await navigator.mediaDevices.getUserMedia({ video: false, audio: true });
-                    recorder = new MediaRecorder(stream);
-                    recorder.start();
+        if (recorder) {
+            recorder.stop();
+        }
 
-                    setTimeout(() => {
-                        recorder.stop();
-                        runtime.queueDisplayUpdate();
-                    }, 4000)
+        if (audioPlaying) {
+            recording.pause();
+        }
 
-                    recorder.ondataavailable = (e: BlobEvent) => {
-                        chunks.push(e.data);
-                    }
+        if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+            try {
+                stream = await navigator.mediaDevices.getUserMedia({ video: false, audio: true });
+                recorder = new MediaRecorder(stream);
+                recorder.start();
 
-                    recorder.onstop = () => {
-                        const blob = new Blob(chunks, { type: "audio/ogg; codecs=opus" });
-                        audioURL = window.URL.createObjectURL(blob);
-                        recording = new Audio(audioURL);
-                        b.recordingState.currentlyRecording = false;
-                        erase();
-                    }
-                } catch (error) {
-                    console.log("An error occurred, could not get microphone access");
+                setTimeout(() => {
+                    recorder.stop();
+                    runtime.queueDisplayUpdate();
+                }, 4000)
+
+                recorder.ondataavailable = (e: BlobEvent) => {
+                    chunks.push(e.data);
                 }
 
-            } else {
-                console.log("getUserMedia not supported on your browser!");
+                recorder.onstop = () => {
+                    const blob = new Blob(chunks, { type: "audio/ogg; codecs=opus" });
+                    audioURL = window.URL.createObjectURL(blob);
+                    recording = new Audio(audioURL);
+                    b.recordingState.currentlyRecording = false;
+                    recorder = null;
+                    chunks = [];
+                }
+            } catch (error) {
+                console.log("An error occurred, could not get microphone access");
+                if (recorder) {
+                    recorder.stop();
+                }
+                b.recordingState.currentlyRecording = false;
             }
+
+        } else {
+            console.log("getUserMedia not supported on your browser!");
+            b.recordingState.currentlyRecording = false;
         }
     }
 
@@ -62,6 +74,7 @@ namespace pxsim.record {
 
     export function erase(): void {
         chunks = [];
+        recording = null;
     }
 
     export function setMicrophoneGain(gain: number): void {
