@@ -1,42 +1,42 @@
 namespace pxsim  {
     export class RecordingState {
         currentlyRecording = false;
+        stream: MediaStream;
+        recorder: MediaRecorder;
+        chunks: Blob[];
+        audioURL: string;
+        recording: HTMLAudioElement;
+        audioPlaying: boolean = false;
     }
 }
 namespace pxsim.record {
-    let stream: MediaStream;
-    let recorder: MediaRecorder;
-    let chunks: Blob[];
-    let audioURL: string;
-    let recording: HTMLAudioElement;
-    let audioPlaying: boolean = false;
-
     export async function record(): Promise<void> {
         //request permission is asynchronous
         let b = board();
+        let recordingState = b.recordingState;
         if (!b.recordingState.currentlyRecording) {
             b.recordingState.currentlyRecording = true;
             runtime.queueDisplayUpdate();
 
             if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
                 try {
-                    stream = await navigator.mediaDevices.getUserMedia({ video: false, audio: true });
-                    recorder = new MediaRecorder(stream);
-                    recorder.start();
+                    recordingState.stream = await navigator.mediaDevices.getUserMedia({ video: false, audio: true });
+                    recordingState.recorder = new MediaRecorder(recordingState.stream);
+                    recordingState.recorder.start();
 
                     setTimeout(() => {
-                        recorder.stop();
+                        recordingState.recorder.stop();
                         runtime.queueDisplayUpdate();
                     }, 4000)
 
-                    recorder.ondataavailable = (e: BlobEvent) => {
-                        chunks.push(e.data);
+                    recordingState.recorder.ondataavailable = (e: BlobEvent) => {
+                        recordingState.chunks.push(e.data);
                     }
 
-                    recorder.onstop = () => {
-                        const blob = new Blob(chunks, { type: "audio/ogg; codecs=opus" });
-                        audioURL = window.URL.createObjectURL(blob);
-                        recording = new Audio(audioURL);
+                    recordingState.recorder.onstop = () => {
+                        const blob = new Blob(recordingState.chunks, { type: "audio/ogg; codecs=opus" });
+                        recordingState.audioURL = window.URL.createObjectURL(blob);
+                        recordingState.recording = new Audio(recordingState.audioURL);
                         b.recordingState.currentlyRecording = false;
                         erase();
                     }
@@ -51,8 +51,10 @@ namespace pxsim.record {
     }
 
     export function play(): void {
-        if (recording) {
-            recording.play();
+        const b = board();
+        if (!b) return;
+        if (b.recordingState.recording) {
+            b.recordingState.recording.play();
         }
     }
 
@@ -61,7 +63,9 @@ namespace pxsim.record {
     }
 
     export function erase(): void {
-        chunks = [];
+        const b = board();
+        if (!b) return;
+        b.recordingState.chunks = [];
     }
 
     export function setMicrophoneGain(gain: number): void {
@@ -73,24 +77,30 @@ namespace pxsim.record {
     }
 
     export function audioIsPlaying(): boolean {
-        if (recording) {
-            recording.addEventListener("playing", () => {
-                audioPlaying = true;
+        const b = board();
+        if (!b) return false;
+        if (b.recordingState.recording) {
+            b.recordingState.recording.addEventListener("playing", () => {
+                b.recordingState.audioPlaying = true;
             }, { once: true });
 
-            recording.addEventListener("ended", () => {
-                audioPlaying = false;
+            b.recordingState.recording.addEventListener("ended", () => {
+                b.recordingState.audioPlaying = false;
             }, { once: true });
         }
-        return audioPlaying;
+        return b.recordingState.audioPlaying;
     }
 
     export function audioIsRecording(): boolean {
-        return recorder ? recorder.state == "recording" : false;
+        const b = board();
+        if (!b) return false;
+        return b.recordingState.recorder ? b.recordingState.recorder.state == "recording" : false;
     }
 
     export function audioIsStopped(): boolean {
-        return recorder ? !audioPlaying && recorder.state == "inactive" : true;
+        const b = board();
+        if (!b) return false;
+        return b.recordingState.recorder ? !b.recordingState.audioPlaying && b.recordingState.recorder.state == "inactive" : true;
     }
 
     export function setInputSampleRate(sampleRate: number): void {
