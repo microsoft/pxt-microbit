@@ -99,7 +99,7 @@ namespace pxsim.record {
 
     export function audioIsStopped(): boolean {
         const b = board();
-        if (!b) return false;
+        if (!b) return true;
         return b.recordingState.recorder ? !b.recordingState.audioPlaying && b.recordingState.recorder.state == "inactive" : true;
     }
 
