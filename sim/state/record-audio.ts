@@ -24,10 +24,7 @@ namespace pxsim  {
 }
 namespace pxsim.record {
 
-    function stopRecording(): void {
-        const b = board();
-        if (!b) return;
-
+    function stopRecording(b: DalBoard): void {
         b.recordingState.recorder.stop();
         b.recordingState.currentlyRecording = false;
         if (b.recordingState.stream.active) {
@@ -36,7 +33,6 @@ namespace pxsim.record {
                 track.enabled = false;
             });
         }
-
     }
 
     function populateRecording(b: DalBoard) {
@@ -57,10 +53,6 @@ namespace pxsim.record {
             clearTimeout(b.recordingState.recordTimeoutID);
         }
 
-        if (b.recordingState.recording) {
-            restartPlayback();
-        }
-
         if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
             try {
                 b.recordingState.stream = await navigator.mediaDevices.getUserMedia({ video: false, audio: true });
@@ -70,7 +62,7 @@ namespace pxsim.record {
                 runtime.queueDisplayUpdate();
 
                 b.recordingState.recordTimeoutID = setTimeout(() => {
-                    stopRecording();
+                    stopRecording(b);
                     runtime.queueDisplayUpdate();
                 }, 4000)
 
@@ -95,12 +87,12 @@ namespace pxsim.record {
         }
     }
 
-    function restartPlayback() {
+    function stopAudio() {
         const b = board();
         if (!b) return;
         if (b.recordingState.currentlyRecording && b.recordingState.recordTimeoutID) {
             clearTimeout(b.recordingState.recordTimeoutID);
-            stopRecording();
+            stopRecording(b);
         } else if (b.recordingState.recording && b.recordingState.audioPlaying) {
             b.recordingState.recording.pause();
             b.recordingState.recording.currentTime = 0;
@@ -110,7 +102,7 @@ namespace pxsim.record {
     function registerSimStop(b: DalBoard) {
         pxsim.AudioContextManager.onStopAll(() => {
             if (b.recordingState.recording) {
-                restartPlayback();
+                stopAudio();
             }
         })
     }
@@ -119,7 +111,7 @@ namespace pxsim.record {
         const b = board();
         if (!b) return;
         registerSimStop(b);
-        restartPlayback();
+        stopAudio();
         // give a bit of a buffer time to let the recording stop to then be played
         setTimeout(() => {
             if (b.recordingState.recording) {
@@ -129,13 +121,18 @@ namespace pxsim.record {
     }
 
     export function stop(): void {
-        restartPlayback();
+        stopAudio();
     }
 
     export function erase(): void {
         const b = board();
         if (!b) return;
         b.recordingState.chunks = [];
+        if (b.recordingState.audioPlaying) {
+            b.recordingState.recording.pause();
+            b.recordingState.audioPlaying = false;
+            b.recordingState.recording.currentTime = 0;
+        }
         b.recordingState.recording = null;
     }
 
