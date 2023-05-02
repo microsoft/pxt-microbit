@@ -45,6 +45,10 @@ namespace pxsim.record {
                 setTimeout(() => {
                     b.recordingState.recorder.stop();
                     b.recordingState.currentlyRecording = false;
+                    b.recordingState.stream.getAudioTracks().forEach(track => {
+                        track.stop();
+                        track.enabled = false;
+                    })
                     runtime.queueDisplayUpdate();
                 }, 4000)
 
