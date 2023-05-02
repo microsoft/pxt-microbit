@@ -173,7 +173,7 @@ enum MusicEvent {
  * Generation of music tones.
  */
 //% color=#E63022 weight=106 icon="\uf025"
-//% groups='["Melody", "Tone", "Volume", "Tempo", "Melody Advanced"]'
+//% groups='["Sounds", "Songs", "Melody", "Tone", "Volume", "Tempo", "Melody Advanced"]'
 namespace music {
     const INTERNAL_MELODY_ENDED = 5;
 
@@ -195,7 +195,7 @@ namespace music {
      * @param ms tone duration in milliseconds (ms)
      */
     //% help=music/play-tone weight=90
-    //% blockId=device_play_note block="play|tone %note=device_note|for %duration=device_beat" blockGap=8
+    //% blockId=device_play_note block="[old] play|tone %note=device_note|for %duration=device_beat" blockGap=8
     //% parts="headphone"
     //% useEnumVal=1
     //% group="Tone"
@@ -210,7 +210,7 @@ namespace music {
      * @param frequency pitch of the tone to play in Hertz (Hz), eg: Note.C
      */
     //% help=music/ring-tone weight=80
-    //% blockId=device_ring block="ring tone (Hz)|%note=device_note" blockGap=8
+    //% blockId=device_ring block="[old] ring tone (Hz)|%note=device_note" blockGap=8
     //% parts="headphone"
     //% useEnumVal=1
     //% group="Tone"
