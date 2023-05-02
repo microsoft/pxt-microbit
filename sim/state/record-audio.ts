@@ -7,30 +7,57 @@ namespace pxsim  {
         audioURL: string;
         recording: HTMLAudioElement;
         audioPlaying: boolean = false;
+        recordTimeoutID: any;
 
         initListeners = () => {
             if (this.recording) {
-                this.recording.addEventListener("playing", () => {
+                this.recording.addEventListener("play", () => {
                     this.audioPlaying = true;
-                }, { once: true });
+                });
 
                 this.recording.addEventListener("ended", () => {
                     this.audioPlaying = false;
-                }, { once: true });
+                });
             }
         }
     }
 }
 namespace pxsim.record {
+
+    function stopRecording(): void {
+        const b = board();
+        if (!b) return;
+
+        b.recordingState.recorder.stop();
+        b.recordingState.currentlyRecording = false;
+        if (b.recordingState.stream.active) {
+            b.recordingState.stream.getAudioTracks().forEach(track => {
+                track.stop();
+                track.enabled = false;
+            });
+        }
+
+    }
+
+    function populateRecording(b: DalBoard) {
+        const blob = new Blob(b.recordingState.chunks, { type: "audio/ogg; codecs=opus" });
+        b.recordingState.audioURL = window.URL.createObjectURL(blob);
+        b.recordingState.recording = new Audio(b.recordingState.audioURL);
+        b.recordingState.initListeners();
+        b.recordingState.currentlyRecording = false;
+        b.recordingState.recorder = null;
+        b.recordingState.chunks = [];
+    }
+
     export async function record(): Promise<void> {
-        //request permission is asynchronous
         let b = board();
 
         if (b.recordingState.recorder) {
             b.recordingState.recorder.stop();
+            clearTimeout(b.recordingState.recordTimeoutID);
         }
 
-        if (b.recordingState.recording && b.recordingState.audioPlaying) {
+        if (b.recordingState.recording) {
             restartPlayback();
         }
 
@@ -42,13 +69,8 @@ namespace pxsim.record {
                 b.recordingState.currentlyRecording = true;
                 runtime.queueDisplayUpdate();
 
-                setTimeout(() => {
-                    b.recordingState.recorder.stop();
-                    b.recordingState.currentlyRecording = false;
-                    b.recordingState.stream.getAudioTracks().forEach(track => {
-                        track.stop();
-                        track.enabled = false;
-                    })
+                b.recordingState.recordTimeoutID = setTimeout(() => {
+                    stopRecording();
                     runtime.queueDisplayUpdate();
                 }, 4000)
 
@@ -57,13 +79,7 @@ namespace pxsim.record {
                 }
 
                 b.recordingState.recorder.onstop = () => {
-                    const blob = new Blob(b.recordingState.chunks, { type: "audio/ogg; codecs=opus" });
-                    b.recordingState.audioURL = window.URL.createObjectURL(blob);
-                    b.recordingState.recording = new Audio(b.recordingState.audioURL);
-                    b.recordingState.initListeners();
-                    b.recordingState.currentlyRecording = false;
-                    b.recordingState.recorder = null;
-                    b.recordingState.chunks = [];
+                    populateRecording(b);
                 }
             } catch (error) {
                 console.log("An error occurred, could not get microphone access");
@@ -82,21 +98,34 @@ namespace pxsim.record {
     function restartPlayback() {
         const b = board();
         if (!b) return;
-        if (b.recordingState.recording && b.recordingState.audioPlaying) {
-            b.recordingState.recording.currentTime = 0;
+        if (b.recordingState.currentlyRecording && b.recordingState.recordTimeoutID) {
+            clearTimeout(b.recordingState.recordTimeoutID);
+            stopRecording();
+        } else if (b.recordingState.recording && b.recordingState.audioPlaying) {
             b.recordingState.recording.pause();
-            b.recordingState.audioPlaying = false;
+            b.recordingState.recording.currentTime = 0;
         }
+    }
+
+    function registerSimStop(b: DalBoard) {
+        pxsim.AudioContextManager.onStopAll(() => {
+            if (b.recordingState.recording) {
+                restartPlayback();
+            }
+        })
     }
 
     export function play(): void {
         const b = board();
         if (!b) return;
+        registerSimStop(b);
         restartPlayback();
-        if (b.recordingState.recording) {
-            b.recordingState.audioPlaying = true;
-            b.recordingState.recording.play();
-        }
+        // give a bit of a buffer time to let the recording stop to then be played
+        setTimeout(() => {
+            if (b.recordingState.recording) {
+                b.recordingState.recording.play();
+            }
+        }, 100);
     }
 
     export function stop(): void {
