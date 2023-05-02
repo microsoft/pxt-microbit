@@ -7,6 +7,18 @@ namespace pxsim  {
         audioURL: string;
         recording: HTMLAudioElement;
         audioPlaying: boolean = false;
+
+        initListeners = () => {
+            if (this.recording) {
+                this.recording.addEventListener("playing", () => {
+                    this.audioPlaying = true;
+                }, { once: true });
+
+                this.recording.addEventListener("ended", () => {
+                    this.audioPlaying = false;
+                }, { once: true });
+            }
+        }
     }
 }
 namespace pxsim.record {
@@ -18,8 +30,8 @@ namespace pxsim.record {
             b.recordingState.recorder.stop();
         }
 
-        if (b.recordingState.audioPlaying) {
-            b.recordingState.recording.pause();
+        if (b.recordingState.recording && b.recordingState.audioPlaying) {
+            restartPlayback();
         }
 
         if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
@@ -32,6 +44,8 @@ namespace pxsim.record {
 
                 setTimeout(() => {
                     b.recordingState.recorder.stop();
+                    b.recordingState.currentlyRecording = false;
+                    runtime.queueDisplayUpdate();
                 }, 4000)
 
                 b.recordingState.recorder.ondataavailable = (e: BlobEvent) => {
@@ -42,6 +56,7 @@ namespace pxsim.record {
                     const blob = new Blob(b.recordingState.chunks, { type: "audio/ogg; codecs=opus" });
                     b.recordingState.audioURL = window.URL.createObjectURL(blob);
                     b.recordingState.recording = new Audio(b.recordingState.audioURL);
+                    b.recordingState.initListeners();
                     b.recordingState.currentlyRecording = false;
                     b.recordingState.recorder = null;
                     b.recordingState.chunks = [];
@@ -58,19 +73,30 @@ namespace pxsim.record {
             console.log("getUserMedia not supported on your browser!");
             b.recordingState.currentlyRecording = false;
         }
-        runtime.queueDisplayUpdate();
+    }
+
+    function restartPlayback() {
+        const b = board();
+        if (!b) return;
+        if (b.recordingState.recording && b.recordingState.audioPlaying) {
+            b.recordingState.recording.currentTime = 0;
+            b.recordingState.recording.pause();
+            b.recordingState.audioPlaying = false;
+        }
     }
 
     export function play(): void {
         const b = board();
         if (!b) return;
+        restartPlayback();
         if (b.recordingState.recording) {
+            b.recordingState.audioPlaying = true;
             b.recordingState.recording.play();
         }
     }
 
     export function stop(): void {
-
+        restartPlayback();
     }
 
     export function erase(): void {
@@ -91,15 +117,6 @@ namespace pxsim.record {
     export function audioIsPlaying(): boolean {
         const b = board();
         if (!b) return false;
-        if (b.recordingState.recording) {
-            b.recordingState.recording.addEventListener("playing", () => {
-                b.recordingState.audioPlaying = true;
-            }, { once: true });
-
-            b.recordingState.recording.addEventListener("ended", () => {
-                b.recordingState.audioPlaying = false;
-            }, { once: true });
-        }
         return b.recordingState.audioPlaying;
     }
 
@@ -113,7 +130,7 @@ namespace pxsim.record {
         const b = board();
         if (!b) return true;
         const isNotPlaying = !b.recordingState.audioPlaying;
-        const isNotRecording = b.recordingState.recorder ? b.recordingState.recorder.state == "inactive" : true;
+        const isNotRecording = !b.recordingState.currentlyRecording;
         return b.recordingState.recording ? isNotPlaying && isNotRecording : false;
     }
 
