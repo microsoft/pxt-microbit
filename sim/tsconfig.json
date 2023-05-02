@@ -4,7 +4,7 @@
         "noImplicitAny": true,
         "noImplicitReturns": true,
         "declaration": true,
-        "out": "../built/sim.js",
+        "outFile": "../built/sim.js",
         "rootDir": ".",
         "newLine": "LF",
         "moduleResolution": "node",
