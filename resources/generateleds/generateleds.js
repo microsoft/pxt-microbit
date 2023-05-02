@@ -233,7 +233,7 @@ const icons = {
     . . # . .
     # # # . .
     # # # . .`,
-    eigthnote: `
+    eighthnote: `
     . . # . .
     . . # # .
     . . # . #

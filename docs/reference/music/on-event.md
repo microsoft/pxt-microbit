@@ -60,6 +60,6 @@ control.inBackground(function () {
     music.beginMelody(music.builtInMelody(Melodies.Entertainer), MelodyOptions.Once)
 })
 music.onEvent(MusicEvent.BackgroundMelodyStarted, function () {
-    basic.showIcon(IconNames.EigthNote)
+    basic.showIcon(IconNames.EighthNote)
 })
 ```
