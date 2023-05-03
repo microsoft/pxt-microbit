@@ -8,41 +8,7 @@ namespace music {
         LoopingInBackground
     }
 
-    let stateStack: PlayableState[];
-
-    class PlayableState {
-        looping: Playable[];
-        constructor() {
-            this.looping = [];
-        }
-
-        stopLooping() {
-            for (const p of this.looping) {
-                p.stopped = true;
-            }
-            this.looping = [];
-        }
-    }
-
-    function state() {
-        _init();
-        return stateStack[stateStack.length - 1];
-    }
-
-    function _init() {
-        // TODO thsparks : How to make this work in microbit?
-        // if (stateStack) return;
-        // stateStack = [new PlayableState()];
-
-        // game.addScenePushHandler(() => {
-        //     stateStack.push(new PlayableState());
-        // });
-
-        // game.addScenePopHandler(() => {
-        //     stateStack.pop();
-        //     if (stateStack.length === 0) stateStack.push(new PlayableState());
-        // });
-    }
+    let looping: Playable[];
 
     export class Playable {
         stopped: boolean;
@@ -55,7 +21,11 @@ namespace music {
         }
 
         loop() {
-            state().looping.push(this);
+            if(!looping) {
+                looping = [];
+            }
+
+            looping.push(this);
             this.stopped = false;
 
             control.runInParallel(() => {
@@ -87,13 +57,24 @@ namespace music {
         }
     }
 
-    // TODO thsparks - bring back % toPlay.shadow=music_melody_playable
     //% blockId="music_playable_play"
     //% block="[new] play $toPlay $playbackMode"
+    //% toPlay.shadow=music_melody_playable
     //% group="Sounds"
     //% help="music/play"
     export function play(toPlay: Playable, playbackMode: PlaybackMode) {
         toPlay.play(playbackMode);
+    }
+
+    //% blockId="music_melody_playable"
+    //% block="sound $melody"
+    //% toolboxParent=music_playable_play
+    //% toolboxParentArgument=toPlay
+    //% group="Sounds"
+    //% duplicateShadowOnDrag
+    //% blockHidden
+    export function melodyPlayable(melody: string): Playable {
+        return undefined;
     }
 
     /**
@@ -116,6 +97,11 @@ namespace music {
     }
 
     export function _stopPlayables() {
-        state().stopLooping();
+        if(!looping) return;
+
+        for (const p of looping) {
+            p.stopped = true;
+        }
+        looping = undefined;
     }
 }

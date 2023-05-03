@@ -484,6 +484,7 @@ namespace music {
         rest(0);
         stopMelody(MelodyStopOptions.All);
         music.__stopSoundExpressions();
+        _stopPlayables();
         if (stopSoundHandlers) {
             for (const handler of stopSoundHandlers) {
                 handler()
