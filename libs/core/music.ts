@@ -347,7 +347,7 @@ namespace music {
     //% parts="headphone"
     //% group="Melody Advanced"
     export function beginMelody(melodyArray: string[], options: MelodyOptions = 1) {
-        return startMelody(melodyArray, options);
+        return startMelodyInternal(melodyArray, options);
     }
 
     /**
@@ -357,10 +357,36 @@ namespace music {
      * @param options melody options, once / forever, in the foreground / background
      */
     //% help=music/begin-melody weight=60 blockGap=16
-    //% blockId=device_start_melody block="start melody %melody=device_builtin_melody| repeating %options"
+    //% blockId=device_start_melody block="[old] start melody %melody=device_builtin_melody| repeating %options"
     //% parts="headphone"
     //% group="Melody Advanced"
     export function startMelody(melodyArray: string[], options: MelodyOptions = 1) {
+        return startMelodyInternal(melodyArray, options);
+    }
+
+    /**
+     * Play a melody from the melody editor.
+     * @param melody string of up to eight notes [C D E F G A B C5] or rests [-] separated by spaces, which will be played one at a time, ex: "E D G F B A C5 B "
+     * @param tempo number in beats per minute (bpm), dictating how long each note will play for
+     */
+    //% block="[old] play melody $melody at tempo $tempo|(bpm)" blockId=playMelody
+    //% weight=85 blockGap=8 help=music/play-melody
+    //% melody.shadow="melody_editor"
+    //% tempo.min=40 tempo.max=500
+    //% tempo.defl=120
+    //% parts=headphone
+    //% group="Melody"
+    export function playMelody(melody: string, tempo: number) {
+        melody = melody || "";
+        setTempo(tempo);
+        let notes = getMelodyNotes(melody, false);
+
+        music.startMelodyInternal(notes, MelodyOptions.Once)
+        control.waitForEvent(MICROBIT_MELODY_ID, INTERNAL_MELODY_ENDED);
+    }
+
+    // Shared code between begin, start, and play Melody blocks (all deprecated), plus StringPlayable.play (NOT deprecated).
+    export function startMelodyInternal(melodyArray: string[], options: MelodyOptions) {
         init();
         const isBackground = options & (MelodyOptions.OnceInBackground | MelodyOptions.ForeverInBackground);
         if (currentMelody != undefined) {
@@ -397,22 +423,7 @@ namespace music {
         }
     }
 
-
-    /**
-     * Play a melody from the melody editor.
-     * @param melody string of up to eight notes [C D E F G A B C5] or rests [-] separated by spaces, which will be played one at a time, ex: "E D G F B A C5 B "
-     * @param tempo number in beats per minute (bpm), dictating how long each note will play for
-     */
-    //% block="play melody $melody at tempo $tempo|(bpm)" blockId=playMelody
-    //% weight=85 blockGap=8 help=music/play-melody
-    //% melody.shadow="melody_editor"
-    //% tempo.min=40 tempo.max=500
-    //% tempo.defl=120
-    //% parts=headphone
-    //% group="Melody"
-    export function playMelody(melody: string, tempo: number) {
-        melody = melody || "";
-        setTempo(tempo);
+    export function getMelodyNotes(melody: string, repeating: boolean) {
         let notes: string[] = melody.split(" ").filter(n => !!n);
         let newOctave = false;
 
@@ -429,8 +440,13 @@ namespace music {
             }
         }
 
-        music.startMelody(notes, MelodyOptions.Once)
-        control.waitForEvent(MICROBIT_MELODY_ID, INTERNAL_MELODY_ENDED);
+        // Switch back to octave 4 on first note if repeating and final note is octave 5.
+        // Otherwise the higher octave will persist.
+        if(repeating && notes[notes.length - 1] === "C5" && notes[0] != "C5") {
+            notes[0] += "4";
+        }
+
+        return notes;
     }
 
     /**

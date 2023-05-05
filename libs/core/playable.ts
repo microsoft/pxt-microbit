@@ -1,4 +1,7 @@
 namespace music {
+    const MICROBIT_MELODY_ID = 2000;
+    const INTERNAL_MELODY_ENDED = 5;
+
     export enum PlaybackMode {
         //% block="until done"
         UntilDone,
@@ -36,6 +39,32 @@ namespace music {
         }
     }
 
+    export class StringPlayable extends Playable {
+        notesStr: string;
+        tempo: number;
+
+        constructor(melody: string, tempo: number) {
+            super();
+            this.notesStr = melody;
+            this.tempo = tempo;
+        }
+
+        play(playbackMode: PlaybackMode) {
+            const notes = music.getMelodyNotes(this.notesStr, playbackMode === PlaybackMode.LoopingInBackground);
+            music.setTempo(this.tempo);
+            if (playbackMode === PlaybackMode.InBackground) {
+                music.startMelodyInternal(notes, MelodyOptions.OnceInBackground);
+            }
+            else if (playbackMode === PlaybackMode.UntilDone) {
+                music.startMelodyInternal(notes, MelodyOptions.Once);
+                control.waitForEvent(MICROBIT_MELODY_ID, INTERNAL_MELODY_ENDED);
+            }
+            else {
+                music.startMelodyInternal(notes, MelodyOptions.ForeverInBackground);
+            }
+        }
+    }
+
     export class TonePlayable extends Playable {
         constructor(public pitch: number, public duration: number) {
             super();
@@ -59,22 +88,24 @@ namespace music {
 
     //% blockId="music_playable_play"
     //% block="[new] play $toPlay $playbackMode"
-    //% toPlay.shadow=music_melody_playable
+    //% toPlay.shadow=music_string_playable
     //% group="Sounds"
     //% help="music/play"
     export function play(toPlay: Playable, playbackMode: PlaybackMode) {
         toPlay.play(playbackMode);
     }
 
-    //% blockId="music_melody_playable"
-    //% block="sound $melody"
-    //% toolboxParent=music_playable_play
-    //% toolboxParentArgument=toPlay
-    //% group="Sounds"
+    //% blockId="music_string_playable"
+    //% block="[new] melody $melody at tempo $bpm|(bpm)"
+    //% weight=85 blockGap=8
+    //% help=music/melody-editor
+    //% group="Songs"
     //% duplicateShadowOnDrag
-    //% blockHidden
-    export function melodyPlayable(melody: string): Playable {
-        return undefined;
+    //% melody.shadow=melody_editor
+    //% bpm.min=40 bpm.max=500
+    //% bpm.defl=120
+    export function stringPlayable(melody: string, bpm: number): Playable {
+        return new StringPlayable(melody, bpm);
     }
 
     /**
