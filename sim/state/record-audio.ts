@@ -9,15 +9,19 @@ namespace pxsim  {
         audioPlaying: boolean = false;
         recordTimeoutID: any;
 
+        handleAudioPlaying = () => {
+            this.audioPlaying = true;
+        };
+
+        handleAudioStopped = () => {
+            this.audioPlaying = false;
+        };
+
         initListeners = () => {
             if (this.recording) {
-                this.recording.addEventListener("play", () => {
-                    this.audioPlaying = true;
-                });
+                this.recording.addEventListener("play", this.handleAudioPlaying);
 
-                this.recording.addEventListener("ended", () => {
-                    this.audioPlaying = false;
-                });
+                this.recording.addEventListener("ended", this.handleAudioStopped);
             }
         }
     }
@@ -72,6 +76,7 @@ namespace pxsim.record {
 
                 b.recordingState.recorder.onstop = () => {
                     populateRecording(b);
+                    registerSimStop(b);
                 }
             } catch (error) {
                 console.log("An error occurred, could not get microphone access");
@@ -103,6 +108,8 @@ namespace pxsim.record {
         pxsim.AudioContextManager.onStopAll(() => {
             if (b.recordingState.recording) {
                 stopAudio();
+                b.recordingState.recording.removeEventListener("play", b.recordingState.handleAudioPlaying);
+                b.recordingState.recording.removeEventListener("ended", b.recordingState.handleAudioStopped);
             }
         })
     }
@@ -110,7 +117,6 @@ namespace pxsim.record {
     export function play(): void {
         const b = board();
         if (!b) return;
-        registerSimStop(b);
         stopAudio();
         // give a bit of a buffer time to let the recording stop to then be played
         setTimeout(() => {
