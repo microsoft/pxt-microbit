@@ -140,3 +140,9 @@ T | F | F
 To write a Boolean equation for when you feel cold, we find the condtions in the table where ``Q`` is ``true``. Here we see that you will feel cold only in one row, when condition ``A`` is ``true`` and condtion ``B`` is ``false``. The Boolean equation for these conditions is this:
 
 ``A · ~B`` = ``Q``
+
+## ~button /courses/logic-lab/elements
+
+NEXT: Boolean Elements
+
+## ~

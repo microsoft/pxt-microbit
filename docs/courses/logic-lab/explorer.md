@@ -160,3 +160,10 @@ A | B | A ⊕ B
 **false** | **true** |  ``[basic.showIcon(IconNames.TShirt)]``
 **true** | **false** |  ``[basic.showIcon(IconNames.TShirt)]``
 **true** | **true** |  ``[basic.showIcon(IconNames.SmallDiamond)]``
+<br/>
+
+## ~button /courses/logic-lab/logic-gates
+
+NEXT: Logic Gates
+
+## ~

@@ -205,3 +205,10 @@ F | F | F
 T | F | T
 F | T | T
 T | T | F
+<br/>
+
+## ~button /courses/logic-lab/explorer
+
+NEXT: Logic Explorer
+
+## ~

@@ -85,3 +85,9 @@ When this equation is converted to logic gates, there's one fewer gate than in t
 ![Combinatorial XOR second version](/static/courses/logic-lab/logic-gates/combinatorial2-xor.png)
 
 This diagram has less complexity than the first one. Reduction in the number of gates to accomplish the same logical result is one of the primary goals for digital logic design. For electronic devices, this allows more gates to use the limited amount of space on an integrated circuit.
+
+## ~button /courses/logic-lab/programmable
+
+NEXT: Programmable Logic
+
+## ~
