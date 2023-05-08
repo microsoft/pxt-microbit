@@ -315,7 +315,7 @@ namespace music {
      * @param mode the play mode, play until done or in the background
      */
     //% blockId=soundExpression_playSoundEffect
-    //% block="play sound $sound $mode"
+    //% block="[sound expr 1 v2] play sound $sound $mode"
     //% sound.shadow=soundExpression_createSoundEffect
     //% weight=100 help=music/play-sound-effect
     //% blockGap=8
@@ -326,6 +326,22 @@ namespace music {
         }
         else {
             new SoundExpression(sound).playUntilDone();
+        }
+    }
+    
+    export class SoundEffect extends Playable {
+        constructor(private sound: string) {
+            super();
+        }
+
+        play(mode: PlaybackMode) {
+            if (mode === PlaybackMode.InBackground) {
+                new SoundExpression(this.sound).play();
+            } else if(mode === PlaybackMode.UntilDone) {
+                new SoundExpression(this.sound).playUntilDone();
+            } else {
+                this.loop();
+            }
         }
     }
 
@@ -342,7 +358,7 @@ namespace music {
      */
     //% blockId=soundExpression_createSoundEffect
     //% help=music/create-sound-effect
-    //% block="$waveShape|| start frequency $startFrequency end frequency $endFrequency duration $duration start volume $startVolume end volume $endVolume effect $effect interpolation $interpolation"
+    //% block="[updated] $waveShape|| start frequency $startFrequency end frequency $endFrequency duration $duration start volume $startVolume end volume $endVolume effect $effect interpolation $interpolation"
     //% waveShape.defl=WaveShape.Sine
     //% waveShape.fieldEditor=soundeffect
     //% startFrequency.defl=5000
@@ -366,8 +382,10 @@ namespace music {
     //% inlineInputMode="variable"
     //% inlineInputModeLimit=3
     //% expandableArgumentBreaks="3,5"
+    //% toolboxParent=music_playable_play
+    //% toolboxParentArgument=toPlay
     //% group="micro:bit (V2)"
-    export function createSoundEffect(waveShape: WaveShape, startFrequency: number, endFrequency: number, startVolume: number, endVolume: number, duration: number, effect: SoundExpressionEffect, interpolation: InterpolationCurve): string {
+    export function createSoundEffect(waveShape: WaveShape, startFrequency: number, endFrequency: number, startVolume: number, endVolume: number, duration: number, effect: SoundExpressionEffect, interpolation: InterpolationCurve): SoundEffect {
         let src = "000000000000000000000000000000000000000000000000000000000000000000000000";
         src = setValue(src, 0, Math.constrain(waveShape, 0, 4), 1);
         src = setValue(src, 1, Math.constrain(((startVolume / 255) * 1023) | 0, 0, 1023), 4);
@@ -408,7 +426,7 @@ namespace music {
                 break;
         }
 
-        return src;
+        return new SoundEffect(src);
     }
 
     function setValue(src: string, offset: number, value: number, length: number) {
@@ -427,7 +445,7 @@ namespace music {
      * @param soundExpression a sound expression for a built-in sound effect
      */
     //% blockId=soundExpression_builtinSoundEffect
-    //% block="$soundExpression"
+    //% block="[sound expr v2] $soundExpression"
     //% blockGap=8
     //% group="micro:bit (V2)"
     //% toolboxParent=soundExpression_playSoundEffect
