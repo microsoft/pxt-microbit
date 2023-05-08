@@ -69,7 +69,28 @@ enum Melodies {
 }
 
 namespace music {
-    export function getMelody(melody: Melodies): string[] {
+    // TODO thsparks : reduce duplication on these. Perhaps combine into startMelodyInternal?
+    const MICROBIT_MELODY_ID = 2000;
+    const INTERNAL_MELODY_ENDED = 5;
+
+    export class StringArrayPlayable extends Playable {
+        constructor(private notes: string[]) {
+            super();
+        }
+
+        _play(playbackMode: PlaybackMode) {
+            if (playbackMode == PlaybackMode.InBackground) {
+                startMelodyInternal(this.notes, MelodyOptions.OnceInBackground);
+            } else if (playbackMode == PlaybackMode.LoopingInBackground) {
+                startMelodyInternal(this.notes, MelodyOptions.ForeverInBackground);
+            } else {
+                startMelodyInternal(this.notes, MelodyOptions.Once);
+                control.waitForEvent(MICROBIT_MELODY_ID, INTERNAL_MELODY_ENDED);
+            }
+        }
+    }
+
+    export function getMelody(melody: Melodies): StringArrayPlayable {
         return _bufferToMelody(_getMelodyBuffer(melody));
     }
 

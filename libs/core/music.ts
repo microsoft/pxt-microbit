@@ -323,10 +323,11 @@ namespace music {
      * @param name the note name, eg: Note.C
      */
     //% weight=50 help=music/builtin-melody
-    //% blockId=device_builtin_melody block="%melody"
-    //% blockHidden=true
+    //% blockId=device_builtin_melody block="[updated] %melody"
+    //% toolboxParent=music_playable_play
+    //% toolboxParentArgument=toPlay
     //% group="Melody Advanced"
-    export function builtInMelody(melody: Melodies): string[] {
+    export function builtInMelody(melody: Melodies): StringArrayPlayable {
         return getMelody(melody);
     }
 
@@ -609,8 +610,8 @@ namespace music {
         }
     }
 
-    export function _bufferToMelody(melody: Buffer) {
-        if (!melody) return [];
+    export function _bufferToMelody(melody: Buffer): StringArrayPlayable {
+        if (!melody) return new StringArrayPlayable([]);
 
         let currentDuration = 4;
         let currentOctave = -1;
@@ -650,6 +651,6 @@ namespace music {
             out.push(current);
         }
 
-        return out;
+        return new StringArrayPlayable(out);
     }
 }

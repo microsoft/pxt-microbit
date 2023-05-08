@@ -40,13 +40,8 @@ namespace music {
     }
 
     export class StringPlayable extends Playable {
-        notesStr: string;
-        tempo: number;
-
-        constructor(melody: string, tempo: number) {
+        constructor(private notesStr: string, private tempo: number) {
             super();
-            this.notesStr = melody;
-            this.tempo = tempo;
         }
 
         _play(playbackMode: PlaybackMode) {
