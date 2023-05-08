@@ -2,7 +2,7 @@
 
 ![Logic lab header image](/static/courses/logic-lab/logic-lab-header.jpg)
 
-A basic aspect of knowledge and understanding is whether something is true or not. Considering conditions around you and making a conclusion about something being true or false means that you are using logic. Computers and, in fact, all of digital electronics rely on this idea of logic to process information and give results in terms of conditions being true or false. Logic is used almost everywhere in the programs you write in places where you want decide to do one task or another.
+A basic aspect of knowledge and understanding is whether something is true or not. Considering conditions around you and making a conclusion about something being true or false means that you are using logic. Computers and, in fact, all of digital electronics rely on this idea of logic to process information and give results in terms of conditions being either true or false. Logic is used almost everywhere in the programs you write in the places where you want decide to do one task or another.
 
 ## Logic topics
 

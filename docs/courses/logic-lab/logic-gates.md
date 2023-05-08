@@ -2,7 +2,7 @@
 
 ![OR gate symbol](/static/courses/logic-lab/logic-gates/full-adder.png)
 
-In the real world digital devices aren't the abstract logical expressions of Boolean algebra, but they are implementations of these expressions in hardware. The logical expressions are translated into device structures called _logic gates_. A logic gate is both a symbolic representation of a logical operation and, when used in digital electronics, it can is an actual circuit in hardware. A single logic gate is usually made of several transistors an shares space with many others in an integrated circuit.
+In the real world digital devices aren't the abstract logical expressions of Boolean algebra, but they are implementations of these expressions in hardware. The logical expressions are translated into device structures called _logic gates_. A logic gate is both a symbolic representation of a logical operation and, when used in digital electronics, it is an actual circuit in hardware. A single logic gate is usually made of several transistors an shares space with many others in an integrated circuit.
 
 Each of the basic operators we learned about in the [expressions](/courses/logic-lab/expressions) section have a gate symbol. The symbol takes the place of the operator and the variables are the inputs to the gate. The resulting value from the expression equation is the output of the gate. The output of a gate can be a final result or it can be connected as an input to yet another gate.
 
