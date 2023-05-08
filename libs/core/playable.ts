@@ -19,7 +19,7 @@ namespace music {
 
         }
 
-        play(playbackMode: PlaybackMode) {
+        _play(playbackMode: PlaybackMode) {
             // subclass
         }
 
@@ -33,7 +33,7 @@ namespace music {
 
             control.runInParallel(() => {
                 while (!this.stopped) {
-                    this.play(PlaybackMode.UntilDone);
+                    this._play(PlaybackMode.UntilDone);
                 }
             });
         }
@@ -49,7 +49,7 @@ namespace music {
             this.tempo = tempo;
         }
 
-        play(playbackMode: PlaybackMode) {
+        _play(playbackMode: PlaybackMode) {
             const notes = music.getMelodyNotes(this.notesStr, playbackMode === PlaybackMode.LoopingInBackground);
             music.setTempo(this.tempo);
             if (playbackMode === PlaybackMode.InBackground) {
@@ -70,7 +70,7 @@ namespace music {
             super();
         }
 
-        play(playbackMode: PlaybackMode) {
+        _play(playbackMode: PlaybackMode) {
             if (playbackMode === PlaybackMode.InBackground) {
                 control.runInParallel(() => music.playTone(this.pitch, this.duration));
             }
@@ -92,7 +92,7 @@ namespace music {
     //% group="Sounds"
     //% help="music/play"
     export function play(toPlay: Playable, playbackMode: PlaybackMode) {
-        toPlay.play(playbackMode);
+        toPlay._play(playbackMode);
     }
 
     //% blockId="music_string_playable"

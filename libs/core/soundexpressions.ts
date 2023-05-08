@@ -4,8 +4,19 @@
 //% fixedInstances
 //% blockNamespace=music
 //% group="micro:bit (V2)"
-class SoundExpression {
+class SoundExpression extends music.Playable{
     constructor(private notes: string) {
+        super()
+    }
+
+    _play(mode: music.PlaybackMode) {
+        if (mode === music.PlaybackMode.InBackground) {
+            this.play();
+        } else if(mode === music.PlaybackMode.UntilDone) {
+            this.playUntilDone();
+        } else {
+            this.loop();
+        }
     }
 
     /**
@@ -329,22 +340,6 @@ namespace music {
         }
     }
     
-    export class SoundEffect extends Playable {
-        constructor(private sound: string) {
-            super();
-        }
-
-        play(mode: PlaybackMode) {
-            if (mode === PlaybackMode.InBackground) {
-                new SoundExpression(this.sound).play();
-            } else if(mode === PlaybackMode.UntilDone) {
-                new SoundExpression(this.sound).playUntilDone();
-            } else {
-                this.loop();
-            }
-        }
-    }
-
     /**
      * Create a sound expression from a set of sound effect parameters.
      * @param waveShape waveform of the sound effect
@@ -385,7 +380,7 @@ namespace music {
     //% toolboxParent=music_playable_play
     //% toolboxParentArgument=toPlay
     //% group="micro:bit (V2)"
-    export function createSoundEffect(waveShape: WaveShape, startFrequency: number, endFrequency: number, startVolume: number, endVolume: number, duration: number, effect: SoundExpressionEffect, interpolation: InterpolationCurve): SoundEffect {
+    export function createSoundEffect(waveShape: WaveShape, startFrequency: number, endFrequency: number, startVolume: number, endVolume: number, duration: number, effect: SoundExpressionEffect, interpolation: InterpolationCurve): SoundExpression {
         let src = "000000000000000000000000000000000000000000000000000000000000000000000000";
         src = setValue(src, 0, Math.constrain(waveShape, 0, 4), 1);
         src = setValue(src, 1, Math.constrain(((startVolume / 255) * 1023) | 0, 0, 1023), 4);
@@ -426,7 +421,7 @@ namespace music {
                 break;
         }
 
-        return new SoundEffect(src);
+        return new SoundExpression(src);
     }
 
     function setValue(src: string, offset: number, value: number, length: number) {
@@ -445,13 +440,13 @@ namespace music {
      * @param soundExpression a sound expression for a built-in sound effect
      */
     //% blockId=soundExpression_builtinSoundEffect
-    //% block="[sound expr v2] $soundExpression"
+    //% block="[updated] $soundExpression"
     //% blockGap=8
     //% group="micro:bit (V2)"
-    //% toolboxParent=soundExpression_playSoundEffect
-    //% toolboxParentArgument=sound
+    //% toolboxParent=music_playable_play
+    //% toolboxParentArgument=toPlay
     //% weight=98 help=music/builtin-sound-effect
     export function builtinSoundEffect(soundExpression: SoundExpression) {
-        return soundExpression.getNotes();
+        return soundExpression;
     }
 }
