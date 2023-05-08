@@ -173,7 +173,7 @@ enum MusicEvent {
  * Generation of music tones.
  */
 //% color=#E63022 weight=106 icon="\uf025"
-//% groups='["Sounds", "Songs", "Melody", "Tone", "Volume", "Tempo", "Melody Advanced"]'
+//% groups='["Melody", "Tone", "Volume", "Tempo", "Melody Advanced"]'
 namespace music {
     const INTERNAL_MELODY_ENDED = 5;
 
@@ -323,7 +323,7 @@ namespace music {
      * Gets the melody array of a built-in melody.
      * @param name the note name, eg: Note.C
      */
-    //% weight=50 help=music/builtin-melody
+    //% weight=60 help=music/builtin-melody
     //% blockId=device_builtin_melody block="%melody"
     //% toolboxParent=music_playable_play
     //% toolboxParentArgument=toPlay
@@ -499,7 +499,7 @@ namespace music {
     //% help=music/stop-all-sounds
     //% blockId=music_stop_all_sounds block="stop all sounds"
     //% weight=10
-    //% group="Volume"
+    //% group="Melody"
     export function stopAllSounds() {
         rest(0);
         stopMelody(MelodyStopOptions.All);

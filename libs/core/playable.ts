@@ -84,8 +84,9 @@ namespace music {
     //% blockId="music_playable_play"
     //% block="play $toPlay $playbackMode"
     //% toPlay.shadow=music_string_playable
-    //% group="Sounds"
+    //% group="Melody"
     //% help="music/play"
+    //% blockHidden
     export function play(toPlay: Playable, playbackMode: PlaybackMode) {
         toPlay._play(playbackMode);
     }
@@ -94,7 +95,9 @@ namespace music {
     //% block="melody $melody at tempo $bpm|(bpm)"
     //% weight=85 blockGap=8
     //% help=music/melody-editor
-    //% group="Songs"
+    //% group="Melody"
+    //% toolboxParent=music_playable_play
+    //% toolboxParentArgument=toPlay
     //% duplicateShadowOnDrag
     //% melody.shadow=melody_editor
     //% bpm.min=40 bpm.max=500
@@ -113,6 +116,7 @@ namespace music {
     //% toolboxParent=music_playable_play
     //% toolboxParentArgument=toPlay
     //% group="Tone"
+    //% weight=85
     //% duplicateShadowOnDrag
     //% note.shadow=device_note
     //% duration.shadow=device_beat
