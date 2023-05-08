@@ -326,10 +326,11 @@ namespace music {
      * @param mode the play mode, play until done or in the background
      */
     //% blockId=soundExpression_playSoundEffect
-    //% block="[sound expr 1 v2] play sound $sound $mode"
+    //% block="play sound $sound $mode"
     //% sound.shadow=soundExpression_createSoundEffect
     //% weight=100 help=music/play-sound-effect
     //% blockGap=8
+    //% deprecated=1
     //% group="micro:bit (V2)"
     export function playSoundEffect(sound: string, mode: SoundExpressionPlayMode) {
         if (mode === SoundExpressionPlayMode.InBackground) {
@@ -353,7 +354,7 @@ namespace music {
      */
     //% blockId=soundExpression_createSoundEffect
     //% help=music/create-sound-effect
-    //% block="[updated] $waveShape|| start frequency $startFrequency end frequency $endFrequency duration $duration start volume $startVolume end volume $endVolume effect $effect interpolation $interpolation"
+    //% block="$waveShape|| start frequency $startFrequency end frequency $endFrequency duration $duration start volume $startVolume end volume $endVolume effect $effect interpolation $interpolation"
     //% waveShape.defl=WaveShape.Sine
     //% waveShape.fieldEditor=soundeffect
     //% startFrequency.defl=5000
@@ -440,7 +441,7 @@ namespace music {
      * @param soundExpression a sound expression for a built-in sound effect
      */
     //% blockId=soundExpression_builtinSoundEffect
-    //% block="[updated] $soundExpression"
+    //% block="$soundExpression"
     //% blockGap=8
     //% group="micro:bit (V2)"
     //% toolboxParent=music_playable_play

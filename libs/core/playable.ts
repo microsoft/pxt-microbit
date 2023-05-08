@@ -82,7 +82,7 @@ namespace music {
     }
 
     //% blockId="music_playable_play"
-    //% block="[new] play $toPlay $playbackMode"
+    //% block="play $toPlay $playbackMode"
     //% toPlay.shadow=music_string_playable
     //% group="Sounds"
     //% help="music/play"
@@ -91,7 +91,7 @@ namespace music {
     }
 
     //% blockId="music_string_playable"
-    //% block="[new] melody $melody at tempo $bpm|(bpm)"
+    //% block="melody $melody at tempo $bpm|(bpm)"
     //% weight=85 blockGap=8
     //% help=music/melody-editor
     //% group="Songs"
@@ -109,7 +109,7 @@ namespace music {
      * @param ms tone duration in milliseconds (ms)
      */
     //% blockId="music_tone_playable"
-    //% block="[new] tone $note for $duration"
+    //% block="tone $note for $duration"
     //% toolboxParent=music_playable_play
     //% toolboxParentArgument=toPlay
     //% group="Tone"

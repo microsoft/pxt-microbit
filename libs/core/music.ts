@@ -195,10 +195,11 @@ namespace music {
      * @param ms tone duration in milliseconds (ms)
      */
     //% help=music/play-tone weight=90
-    //% blockId=device_play_note block="[old] play|tone %note=device_note|for %duration=device_beat" blockGap=8
+    //% blockId=device_play_note block="play|tone %note=device_note|for %duration=device_beat" blockGap=8
     //% parts="headphone"
     //% useEnumVal=1
     //% group="Tone"
+    //% deprecated=1
     export function playTone(frequency: number, ms: number): void {
         if (isNaN(frequency) || isNaN(ms)) return;
         if (_playTone) _playTone(frequency, ms);
@@ -210,7 +211,7 @@ namespace music {
      * @param frequency pitch of the tone to play in Hertz (Hz), eg: Note.C
      */
     //% help=music/ring-tone weight=80
-    //% blockId=device_ring block="[old] ring tone (Hz)|%note=device_note" blockGap=8
+    //% blockId=device_ring block="ring tone (Hz)|%note=device_note" blockGap=8
     //% parts="headphone"
     //% useEnumVal=1
     //% group="Tone"
@@ -323,7 +324,7 @@ namespace music {
      * @param name the note name, eg: Note.C
      */
     //% weight=50 help=music/builtin-melody
-    //% blockId=device_builtin_melody block="[updated] %melody"
+    //% blockId=device_builtin_melody block="%melody"
     //% toolboxParent=music_playable_play
     //% toolboxParentArgument=toPlay
     //% group="Melody Advanced"
@@ -358,9 +359,10 @@ namespace music {
      * @param options melody options, once / forever, in the foreground / background
      */
     //% help=music/begin-melody weight=60 blockGap=16
-    //% blockId=device_start_melody block="[old] start melody %melody=device_builtin_melody| repeating %options"
+    //% blockId=device_start_melody block="start melody %melody=device_builtin_melody| repeating %options"
     //% parts="headphone"
     //% group="Melody Advanced"
+    //% deprecated=1
     export function startMelody(melodyArray: string[], options: MelodyOptions = 1) {
         return startMelodyInternal(melodyArray, options);
     }
@@ -370,13 +372,14 @@ namespace music {
      * @param melody string of up to eight notes [C D E F G A B C5] or rests [-] separated by spaces, which will be played one at a time, ex: "E D G F B A C5 B "
      * @param tempo number in beats per minute (bpm), dictating how long each note will play for
      */
-    //% block="[old] play melody $melody at tempo $tempo|(bpm)" blockId=playMelody
+    //% block="play melody $melody at tempo $tempo|(bpm)" blockId=playMelody
     //% weight=85 blockGap=8 help=music/play-melody
     //% melody.shadow="melody_editor"
     //% tempo.min=40 tempo.max=500
     //% tempo.defl=120
     //% parts=headphone
     //% group="Melody"
+    //% deprecated=1
     export function playMelody(melody: string, tempo: number) {
         melody = melody || "";
         setTempo(tempo);
