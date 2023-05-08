@@ -61,33 +61,15 @@ export function patchBlocks(pkgTargetVersion: string, dom: Element) {
 
         // Italian translation error
         /*
-        <block type="device_play_note">
-            <value name="note">
-                <shadow type="device_note">
-                    <field name="note">466</field>
-                </shadow>
-            </value>
-            <value name="duration">
-                <shadow type="device_beat">
-                    <field name="fraction">BeatFraction.Whole</field>
-                </shadow>
-            </value>
-        </block>
+        <shadow type="device_note">
+            <field name="note">466</field>
+        </shadow>
 
         converts to
 
-        <block type="device_play_note">
-            <value name="note">
-                <shadow type="device_note">
-                    <field name="name">466</field>
-                </shadow>
-            </value>
-            <value name="duration">
-                <shadow type="device_beat">
-                    <field name="fraction">BeatFraction.Whole</field>
-                </shadow>
-            </value>
-        </block>
+        <shadow type="device_note">
+            <field name="name">466</field>
+        </shadow>
         */
         pxt.U.toArray(dom.querySelectorAll("shadow[type=device_note]>field[name=note]"))
             .forEach(node => node.setAttribute("name", "name"));
