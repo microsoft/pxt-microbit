@@ -16,11 +16,13 @@
   "record.AudioStatus.Playing|block": "playing",
   "record.AudioStatus.Recording|block": "recording",
   "record.AudioStatus.Stopped|block": "stopped",
+  "record.BlockingState.Blocking|block": "until done",
+  "record.BlockingState.Nonblocking|block": "in background",
   "record.audioStatus|block": "audio is $status",
-  "record.playAudio|block": "play audio clip",
+  "record.playAudio|block": "play audio clip $mode",
   "record.setMicGain|block": "set microphone sensitivity to $gain",
   "record.setSampleRate|block": "set sample rate to $hz || for $scope",
-  "record.startRecording|block": "record audio clip",
+  "record.startRecording|block": "record audio clip $mode",
   "record|block": "Record",
   "{id:category}Record": "Record"
 }
