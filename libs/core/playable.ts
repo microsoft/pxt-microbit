@@ -65,9 +65,11 @@ namespace music {
         _play(playbackMode: PlaybackMode) {
             if (playbackMode == PlaybackMode.InBackground) {
                 startMelodyInternal(this.notes, MelodyOptions.OnceInBackground);
-            } else if (playbackMode == PlaybackMode.LoopingInBackground) {
+            }
+            else if (playbackMode == PlaybackMode.LoopingInBackground) {
                 startMelodyInternal(this.notes, MelodyOptions.ForeverInBackground);
-            } else {
+            }
+            else {
                 startMelodyInternal(this.notes, MelodyOptions.Once);
                 waitForMelodyEnd();
             }
