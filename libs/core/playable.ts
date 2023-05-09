@@ -57,6 +57,23 @@ namespace music {
         }
     }
 
+    export class StringArrayPlayable extends Playable {
+        constructor(private notes: string[]) {
+            super();
+        }
+
+        _play(playbackMode: PlaybackMode) {
+            if (playbackMode == PlaybackMode.InBackground) {
+                startMelodyInternal(this.notes, MelodyOptions.OnceInBackground);
+            } else if (playbackMode == PlaybackMode.LoopingInBackground) {
+                startMelodyInternal(this.notes, MelodyOptions.ForeverInBackground);
+            } else {
+                startMelodyInternal(this.notes, MelodyOptions.Once);
+                waitForMelodyEnd();
+            }
+        }
+    }
+
     export class TonePlayable extends Playable {
         constructor(public pitch: number, public duration: number) {
             super();
