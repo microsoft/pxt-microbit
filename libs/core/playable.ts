@@ -1,7 +1,4 @@
 namespace music {
-    const MICROBIT_MELODY_ID = 2000;
-    const INTERNAL_MELODY_ENDED = 5;
-
     export enum PlaybackMode {
         //% block="until done"
         UntilDone,
@@ -52,7 +49,7 @@ namespace music {
             }
             else if (playbackMode === PlaybackMode.UntilDone) {
                 music.startMelodyInternal(notes, MelodyOptions.Once);
-                control.waitForEvent(MICROBIT_MELODY_ID, INTERNAL_MELODY_ENDED);
+                waitForMelodyEnd();
             }
             else {
                 music.startMelodyInternal(notes, MelodyOptions.ForeverInBackground);

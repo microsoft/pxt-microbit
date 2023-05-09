@@ -399,7 +399,7 @@ namespace music {
         let notes = getMelodyNotes(melody, false);
 
         music.startMelodyInternal(notes, MelodyOptions.Once)
-        control.waitForEvent(MICROBIT_MELODY_ID, INTERNAL_MELODY_ENDED);
+        waitForMelodyEnd();
     }
 
     // Shared code between begin, start, and play Melody blocks (all deprecated), plus StringPlayable.play (NOT deprecated).
@@ -438,6 +438,10 @@ namespace music {
                 currentMelody = null;
             })
         }
+    }
+
+    export function waitForMelodyEnd() {
+        control.waitForEvent(MICROBIT_MELODY_ID, INTERNAL_MELODY_ENDED);
     }
 
     export function getMelodyNotes(melody: string, repeating: boolean) {

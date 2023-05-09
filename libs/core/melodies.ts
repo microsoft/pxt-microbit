@@ -69,10 +69,6 @@ enum Melodies {
 }
 
 namespace music {
-    // TODO thsparks : reduce duplication on these. Perhaps combine into startMelodyInternal?
-    const MICROBIT_MELODY_ID = 2000;
-    const INTERNAL_MELODY_ENDED = 5;
-
     export class StringArrayPlayable extends Playable {
         constructor(private notes: string[]) {
             super();
@@ -85,7 +81,7 @@ namespace music {
                 startMelodyInternal(this.notes, MelodyOptions.ForeverInBackground);
             } else {
                 startMelodyInternal(this.notes, MelodyOptions.Once);
-                control.waitForEvent(MICROBIT_MELODY_ID, INTERNAL_MELODY_ENDED);
+                waitForMelodyEnd();
             }
         }
     }
