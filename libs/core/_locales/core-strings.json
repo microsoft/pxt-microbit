@@ -390,7 +390,7 @@
   "music.playSoundEffect|block": "play sound $sound $mode",
   "music.playTone|block": "play|tone %note=device_note|for %duration=device_beat",
   "music.play|block": "play $toPlay $playbackMode",
-  "music.rest|block": "rest(ms)|%duration=device_beat",
+  "music.rest|block": "rest for |%duration=device_beat",
   "music.ringTone|block": "ring tone (Hz)|%note=device_note",
   "music.setBuiltInSpeakerEnabled|block": "set built-in speaker $enabled",
   "music.setTempo|block": "set tempo to (bpm)|%value",
