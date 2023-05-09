@@ -516,7 +516,7 @@ namespace music {
     //% help=music/stop-all-sounds
     //% blockId=music_stop_all_sounds block="stop all sounds"
     //% weight=10
-    //% group="Melody"
+    //% group="Volume"
     export function stopAllSounds() {
         rest(0);
         stopMelody(MelodyStopOptions.All);
