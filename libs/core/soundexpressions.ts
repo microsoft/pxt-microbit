@@ -4,7 +4,7 @@
 //% fixedInstances
 //% blockNamespace=music
 //% group="micro:bit (V2)"
-class SoundExpression extends music.Playable{
+class SoundExpression extends music.Playable {
     constructor(private notes: string) {
         super()
     }
@@ -487,10 +487,26 @@ namespace music {
     //% block="$soundExpression"
     //% blockGap=8
     //% group="micro:bit (V2)"
+    //% toolboxParent=soundExpression_playSoundEffect
+    //% toolboxParentArgument=sound
+    //% weight=98 help=music/builtin-sound-effect
+    //% deprecated=1
+    export function builtinSoundEffect(soundExpression: SoundExpression) {
+        return soundExpression.getNotes();
+    }
+
+    /**
+     * Get the sound expression string for a built-in a sound effect.
+     * @param soundExpression a sound expression for a built-in sound effect
+     */
+    //% blockId=soundExpression_builtinPlayableSoundEffect
+    //% block="$soundExpression"
+    //% blockGap=8
+    //% group="micro:bit (V2)"
     //% toolboxParent=music_playable_play
     //% toolboxParentArgument=toPlay
     //% weight=98 help=music/builtin-sound-effect
-    export function builtinSoundEffect(soundExpression: SoundExpression) {
+    export function builtinPlayableSoundEffect(soundExpression: SoundExpression) {
         return soundExpression;
     }
 }
