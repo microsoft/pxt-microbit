@@ -555,7 +555,7 @@ namespace music {
     /*
      * Converts a simple positive string to an integer.
      * This function exists to avoid using parseInt, which has a large code size.
-     * Since we know the provided string will be a simple number, we can take some shortcuts (saves about 3.4kb).
+     * Since we know the provided string will be a simple number, we can take some shortcuts.
      */
     function parseIntSimple(text: string) {
         let result = 0;
