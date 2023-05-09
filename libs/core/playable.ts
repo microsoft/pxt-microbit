@@ -24,7 +24,7 @@ namespace music {
         }
 
         loop() {
-            if(!looping) {
+            if (!looping) {
                 looping = [];
             }
 
@@ -127,7 +127,7 @@ namespace music {
     }
 
     export function _stopPlayables() {
-        if(!looping) return;
+        if (!looping) return;
 
         for (const p of looping) {
             p.stopped = true;

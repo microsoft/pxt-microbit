@@ -459,7 +459,7 @@ namespace music {
 
         // Switch back to octave 4 on first note if repeating and final note is octave 5.
         // Otherwise the higher octave will persist.
-        if(repeating && notes[notes.length - 1] === "C5" && notes[0] != "C5") {
+        if (repeating && notes[notes.length - 1] === "C5" && notes[0] != "C5") {
             notes[0] += "4";
         }
 

@@ -12,7 +12,7 @@ class SoundExpression extends music.Playable {
     _play(mode: music.PlaybackMode) {
         if (mode === music.PlaybackMode.InBackground) {
             this.play();
-        } else if(mode === music.PlaybackMode.UntilDone) {
+        } else if (mode === music.PlaybackMode.UntilDone) {
             this.playUntilDone();
         } else {
             this.loop();
