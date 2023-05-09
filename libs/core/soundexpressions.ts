@@ -340,7 +340,7 @@ namespace music {
             new SoundExpression(sound).playUntilDone();
         }
     }
-    
+
     /**
      * Create a sound expression from a set of sound effect parameters.
      * @param waveShape waveform of the sound effect
@@ -378,10 +378,9 @@ namespace music {
     //% inlineInputMode="variable"
     //% inlineInputModeLimit=3
     //% expandableArgumentBreaks="3,5"
-    //% toolboxParent=music_playable_play
-    //% toolboxParentArgument=toPlay
     //% group="micro:bit (V2)"
-    export function createSoundEffect(waveShape: WaveShape, startFrequency: number, endFrequency: number, startVolume: number, endVolume: number, duration: number, effect: SoundExpressionEffect, interpolation: InterpolationCurve): SoundExpression {
+    //% deprecated=1
+    export function createSoundEffect(waveShape: WaveShape, startFrequency: number, endFrequency: number, startVolume: number, endVolume: number, duration: number, effect: SoundExpressionEffect, interpolation: InterpolationCurve): string {
         let src = "000000000000000000000000000000000000000000000000000000000000000000000000";
         src = setValue(src, 0, Math.constrain(waveShape, 0, 4), 1);
         src = setValue(src, 1, Math.constrain(((startVolume / 255) * 1023) | 0, 0, 1023), 4);
@@ -422,7 +421,51 @@ namespace music {
                 break;
         }
 
-        return new SoundExpression(src);
+        return src;
+    }
+
+    /**
+     * Create a sound expression from a set of sound effect parameters.
+     * @param waveShape waveform of the sound effect
+     * @param startFrequency starting frequency for the sound effect waveform
+     * @param endFrequency ending frequency for the sound effect waveform
+     * @param startVolume starting volume of the sound, or starting amplitude
+     * @param endVolume ending volume of the sound, or ending amplitude
+     * @param duration the amount of time in milliseconds (ms) that sound will play for
+     * @param effect the effect to apply to the waveform or volume
+     * @param interpolation interpolation method for frequency scaling
+     */
+    //% blockId=soundExpression_createSoundExpression
+    //% help=music/create-sound-effect
+    //% block="$waveShape|| start frequency $startFrequency end frequency $endFrequency duration $duration start volume $startVolume end volume $endVolume effect $effect interpolation $interpolation"
+    //% waveShape.defl=WaveShape.Sine
+    //% waveShape.fieldEditor=soundeffect
+    //% startFrequency.defl=5000
+    //% startFrequency.min=0
+    //% startFrequency.max=5000
+    //% endFrequency.defl=0
+    //% endFrequency.min=0
+    //% endFrequency.max=5000
+    //% startVolume.defl=255
+    //% startVolume.min=0
+    //% startVolume.max=255
+    //% endVolume.defl=0
+    //% endVolume.min=0
+    //% endVolume.max=255
+    //% duration.defl=500
+    //% duration.min=1
+    //% duration.max=9999
+    //% effect.defl=SoundExpressionEffect.None
+    //% interpolation.defl=InterpolationCurve.Linear
+    //% compileHiddenArguments=true
+    //% inlineInputMode="variable"
+    //% inlineInputModeLimit=3
+    //% expandableArgumentBreaks="3,5"
+    //% toolboxParent=music_playable_play
+    //% toolboxParentArgument=toPlay
+    //% group="micro:bit (V2)"
+    export function createSoundExpression(waveShape: WaveShape, startFrequency: number, endFrequency: number, startVolume: number, endVolume: number, duration: number, effect: SoundExpressionEffect, interpolation: InterpolationCurve): SoundExpression {
+        return new SoundExpression(createSoundEffect(waveShape, startFrequency, endFrequency, startVolume, endVolume, duration, effect, interpolation));
     }
 
     function setValue(src: string, offset: number, value: number, length: number) {

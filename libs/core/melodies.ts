@@ -90,7 +90,7 @@ namespace music {
         }
     }
 
-    export function getMelody(melody: Melodies): StringArrayPlayable {
+    export function getMelody(melody: Melodies): string[] {
         return _bufferToMelody(_getMelodyBuffer(melody));
     }
 

@@ -323,13 +323,26 @@ namespace music {
      * Gets the melody array of a built-in melody.
      * @param name the note name, eg: Note.C
      */
-    //% weight=60 help=music/builtin-melody
+    //% weight=50 help=music/builtin-melody
     //% blockId=device_builtin_melody block="%melody"
+    //% blockHidden=true
+    //% group="Melody Advanced"
+    //% deprecated=1
+    export function builtInMelody(melody: Melodies): string[] {
+        return getMelody(melody);
+    }
+
+    /**
+     * Gets the melody array of a built-in melody.
+     * @param name the note name, eg: Note.C
+     */
+    //% weight=60 help=music/builtin-melody
+    //% blockId=device_builtin_melody_playable block="%melody"
     //% toolboxParent=music_playable_play
     //% toolboxParentArgument=toPlay
     //% group="Melody Advanced"
-    export function builtInMelody(melody: Melodies): StringArrayPlayable {
-        return getMelody(melody);
+    export function builtInPlayableMelody(melody: Melodies): StringArrayPlayable {
+        return new StringArrayPlayable(getMelody(melody));
     }
 
     /**
@@ -613,8 +626,8 @@ namespace music {
         }
     }
 
-    export function _bufferToMelody(melody: Buffer): StringArrayPlayable {
-        if (!melody) return new StringArrayPlayable([]);
+    export function _bufferToMelody(melody: Buffer): string[] {
+        if (!melody) [];
 
         let currentDuration = 4;
         let currentOctave = -1;
@@ -654,6 +667,6 @@ namespace music {
             out.push(current);
         }
 
-        return new StringArrayPlayable(out);
+        return out;
     }
 }
