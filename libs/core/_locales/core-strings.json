@@ -378,6 +378,7 @@
   "music.beat|block": "%fraction|beat",
   "music.builtInMelody|block": "%melody",
   "music.builtInPlayableMelody|block": "%melody",
+  "music.builtinPlayableSoundEffect|block": "$soundExpression",
   "music.builtinSoundEffect|block": "$soundExpression",
   "music.changeTempoBy|block": "change tempo by (bpm)|%value",
   "music.createSoundEffect|block": "$waveShape|| start frequency $startFrequency end frequency $endFrequency duration $duration start volume $startVolume end volume $endVolume effect $effect interpolation $interpolation",

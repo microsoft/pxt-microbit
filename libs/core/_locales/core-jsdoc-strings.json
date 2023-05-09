@@ -522,6 +522,8 @@
   "music.beginMelody": "Use startMelody instead",
   "music.builtInMelody": "Gets the melody array of a built-in melody.",
   "music.builtInPlayableMelody": "Gets the melody array of a built-in melody.",
+  "music.builtinPlayableSoundEffect": "Get the sound expression string for a built-in a sound effect.",
+  "music.builtinPlayableSoundEffect|param|soundExpression": "a sound expression for a built-in sound effect",
   "music.builtinSoundEffect": "Get the sound expression string for a built-in a sound effect.",
   "music.builtinSoundEffect|param|soundExpression": "a sound expression for a built-in sound effect",
   "music.changeTempoBy": "Change the tempo by the specified amount",
