@@ -552,6 +552,21 @@ namespace music {
         return freqs.getNumber(NumberFormat.UInt16LE, (note + (12 * (octave - 1))) * 2) || 0;
     }
 
+    /*
+     * Converts a simple positive string to an integer.
+     * This function exists to avoid using parseInt, which has a large code size.
+     * Since we know the provided string will be a simple number, we can take some shortcuts (saves about 3.4kb).
+     */
+    function parseIntSimple(text: string) {
+        let result = 0;
+        for (let i = 0; i < text.length; ++i) {
+            const c = text.charCodeAt(i) - 48;
+            if (c < 0 || c > 9) return NaN;
+            result = result * 10 + c;
+        }
+        return result;
+    }
+
     function playNextNote(melody: Melody): void {
         // cache elements
         let currNote = melody.nextNote();
@@ -579,11 +594,11 @@ namespace music {
                 case '#': note++; prevNote = false; break;
                 case 'b': if (prevNote) note--; else { note = 12; prevNote = true; } break;
                 case ':': parsingOctave = false; beatPos = pos; prevNote = false; break;
-                default: prevNote = false; if (parsingOctave) currentOctave = parseInt(noteChar);
+                default: prevNote = false; if (parsingOctave) currentOctave = parseIntSimple(noteChar);
             }
         }
         if (!parsingOctave) {
-            currentDuration = parseInt(currNote.substr(beatPos + 1, currNote.length - beatPos));
+            currentDuration = parseIntSimple(currNote.substr(beatPos + 1, currNote.length - beatPos));
         }
         let beat = Math.idiv(60000, beatsPerMinute) >> 2;
         if (isrest) {
