@@ -224,7 +224,7 @@ namespace music {
      * @param ms rest duration in milliseconds (ms)
      */
     //% help=music/rest weight=79
-    //% blockId=device_rest block="rest(ms)|%duration=device_beat"
+    //% blockId=device_rest block="rest for |%duration=device_beat"
     //% parts="headphone"
     //% group="Tone"
     export function rest(ms: number): void {
