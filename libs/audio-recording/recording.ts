@@ -136,6 +136,12 @@ namespace record {
         }
     }
 
+    function stopPlayback(): void {
+        if (audioIsPlaying()) {
+            stop();
+        }
+    }
+
     //% shim=record::stop
     export function stopRecording(): void {
     }

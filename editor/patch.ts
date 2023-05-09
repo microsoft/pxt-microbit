@@ -58,6 +58,21 @@ export function patchBlocks(pkgTargetVersion: string, dom: Element) {
         pxt.U.toArray(dom.querySelectorAll("block[type=basic_show_icon]>field[name=i]"))
             .filter(node => node.textContent === "IconNames.EigthNote")
             .forEach(node => node.textContent = "IconNames.EighthNote");
+
+        // Italian translation error
+        /*
+        <shadow type="device_note">
+            <field name="note">466</field>
+        </shadow>
+
+        converts to
+
+        <shadow type="device_note">
+            <field name="name">466</field>
+        </shadow>
+        */
+        pxt.U.toArray(dom.querySelectorAll("shadow[type=device_note]>field[name=note]"))
+            .forEach(node => node.setAttribute("name", "name"));
     }
 
     // is this a old script?
