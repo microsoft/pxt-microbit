@@ -396,7 +396,7 @@ namespace music {
     export function playMelody(melody: string, tempo: number) {
         melody = melody || "";
         setTempo(tempo);
-        let notes = getMelodyNotes(melody, false);
+        let notes = getMelodyNotes(melody);
 
         music.startMelodyInternal(notes, MelodyOptions.Once)
         waitForMelodyEnd();
@@ -444,7 +444,7 @@ namespace music {
         control.waitForEvent(MICROBIT_MELODY_ID, INTERNAL_MELODY_ENDED);
     }
 
-    export function getMelodyNotes(melody: string, repeating: boolean) {
+    export function getMelodyNotes(melody: string) {
         let notes: string[] = melody.split(" ").filter(n => !!n);
         let newOctave = false;
 
@@ -463,7 +463,7 @@ namespace music {
 
         // Switch back to octave 4 on first note if repeating and final note is octave 5.
         // Otherwise the higher octave will persist.
-        if (repeating && notes[notes.length - 1] === "C5" && notes[0] != "C5") {
+        if (notes[notes.length - 1] === "C5" && notes[0] != "C5") {
             notes[0] += "4";
         }
 

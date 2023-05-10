@@ -42,19 +42,17 @@ namespace music {
         }
 
         _play(playbackMode: PlaybackMode) {
-            console.log("Notes: " + this.notes.length); // TODO thsparks - remove.
-            let playNotes = this.notes.length == 1 ? music.getMelodyNotes(this.notes[0], playbackMode === PlaybackMode.LoopingInBackground) : this.notes;
             if(this.tempo) {
                 music.setTempo(this.tempo);
             }
             if (playbackMode == PlaybackMode.InBackground) {
-                startMelodyInternal(playNotes, MelodyOptions.OnceInBackground);
+                startMelodyInternal(this.notes, MelodyOptions.OnceInBackground);
             }
             else if (playbackMode == PlaybackMode.LoopingInBackground) {
-                startMelodyInternal(playNotes, MelodyOptions.ForeverInBackground);
+                startMelodyInternal(this.notes, MelodyOptions.ForeverInBackground);
             }
             else {
-                startMelodyInternal(playNotes, MelodyOptions.Once);
+                startMelodyInternal(this.notes, MelodyOptions.Once);
                 waitForMelodyEnd();
             }
         }
@@ -103,7 +101,7 @@ namespace music {
     //% bpm.min=40 bpm.max=500
     //% bpm.defl=120
     export function stringPlayable(melody: string, bpm: number): Playable {
-        return new StringArrayPlayable([melody], bpm);
+        return new StringArrayPlayable(music.getMelodyNotes(melody), bpm);
     }
 
     /**
