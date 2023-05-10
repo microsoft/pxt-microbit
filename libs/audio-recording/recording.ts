@@ -84,6 +84,9 @@ namespace record {
     }
 
     let _recordingPresent: boolean = false;
+    let _inputSampleRate = 11000;
+    let _sampleRateTrend = (15.584 * (_inputSampleRate ** 2)) - (_inputSampleRate * 416.58) + 5713.6;
+    let _duration = _inputSampleRate > 11000 ? _sampleRateTrend : 5000;
 
     /**
      * Record an audio clip for a maximum of 3 seconds
@@ -93,12 +96,12 @@ namespace record {
     //% weight=70
     //% parts="microphone"
     export function startRecording(mode: BlockingState): void {
+        music._onStopSound(stopPlayback);
         switch (mode) {
             case BlockingState.Blocking: {
-                music._onStopSound(stopPlayback);
                 eraseRecording();
                 record();
-                pause(4000);
+                pause(_duration);
                 _recordingPresent = true;
                 break;
             }
@@ -124,7 +127,7 @@ namespace record {
         switch (mode) {
             case BlockingState.Blocking: {
                 play();
-                pause(4000);
+                pause(_duration);
                 break;
             }
             case BlockingState.Nonblocking: {
@@ -194,17 +197,21 @@ namespace record {
     //% weight=40
     export function setSampleRate(hz: number, scope?: AudioSampleRateScope): void {
         switch (scope) {
-            case AudioSampleRateScope.Playback:
+            case AudioSampleRateScope.Playback: {
                 setOutputSampleRate(hz);
                 break;
-
-            case AudioSampleRateScope.Recording:
+            }
+            case AudioSampleRateScope.Recording: {
+                _inputSampleRate = hz;
                 setInputSampleRate(hz);
                 break;
+            }
             case AudioSampleRateScope.Everything:
-            default:
+            default: {
+                _inputSampleRate = hz;
                 setBothSamples(hz);
                 break;
+            }
         }
     }
 }

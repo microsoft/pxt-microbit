@@ -67,7 +67,7 @@ namespace pxsim.record {
                 b.recordingState.recordTimeoutID = setTimeout(() => {
                     stopRecorder(b);
                     runtime.queueDisplayUpdate();
-                }, 4000)
+                }, 5000)
 
                 b.recordingState.recorder.ondataavailable = (e: BlobEvent) => {
                     b.recordingState.chunks.push(e.data);
