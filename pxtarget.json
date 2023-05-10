@@ -418,8 +418,6 @@
             "debugExtensionCode",
             "bluetoothUartConsole",
             "bluetoothPartialFlashing",
-            "simScreenshot",
-            "simGif",
             "identity",
             "blocksErrorList"
         ],
@@ -538,7 +536,9 @@
         "debugger": true,
         "simGifTransparent": "rgba(0,0,0,0)",
         "simGifMaxFrames": 44,
+        "simScreenshot": true,
         "simScreenshotMaxUriLength": 300000,
+        "simGif": true,
         "qrCode": true,
         "importExtensionFiles": true,
         "nameProjectFirst": true,
