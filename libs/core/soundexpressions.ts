@@ -497,7 +497,7 @@ namespace music {
     }
 
     /**
-     * Get the sound expression string for a built-in a sound effect.
+     * Get the sound expression string for a built-in sound effect.
      * @param soundExpression a sound expression for a built-in sound effect
      */
     //% blockId=soundExpression_builtinPlayableSoundEffect
