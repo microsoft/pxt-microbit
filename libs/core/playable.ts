@@ -36,41 +36,25 @@ namespace music {
         }
     }
 
-    export class StringPlayable extends Playable {
-        constructor(private notesStr: string, private tempo: number) {
-            super();
-        }
-
-        _play(playbackMode: PlaybackMode) {
-            const notes = music.getMelodyNotes(this.notesStr, playbackMode === PlaybackMode.LoopingInBackground);
-            music.setTempo(this.tempo);
-            if (playbackMode === PlaybackMode.InBackground) {
-                music.startMelodyInternal(notes, MelodyOptions.OnceInBackground);
-            }
-            else if (playbackMode === PlaybackMode.UntilDone) {
-                music.startMelodyInternal(notes, MelodyOptions.Once);
-                waitForMelodyEnd();
-            }
-            else {
-                music.startMelodyInternal(notes, MelodyOptions.ForeverInBackground);
-            }
-        }
-    }
-
     export class StringArrayPlayable extends Playable {
-        constructor(private notes: string[]) {
+        constructor(private notes: string[], private tempo: number) {
             super();
         }
 
         _play(playbackMode: PlaybackMode) {
+            console.log("Notes: " + this.notes.length); // TODO thsparks - remove.
+            let playNotes = this.notes.length == 1 ? music.getMelodyNotes(this.notes[0], playbackMode === PlaybackMode.LoopingInBackground) : this.notes;
+            if(this.tempo) {
+                music.setTempo(this.tempo);
+            }
             if (playbackMode == PlaybackMode.InBackground) {
-                startMelodyInternal(this.notes, MelodyOptions.OnceInBackground);
+                startMelodyInternal(playNotes, MelodyOptions.OnceInBackground);
             }
             else if (playbackMode == PlaybackMode.LoopingInBackground) {
-                startMelodyInternal(this.notes, MelodyOptions.ForeverInBackground);
+                startMelodyInternal(playNotes, MelodyOptions.ForeverInBackground);
             }
             else {
-                startMelodyInternal(this.notes, MelodyOptions.Once);
+                startMelodyInternal(playNotes, MelodyOptions.Once);
                 waitForMelodyEnd();
             }
         }
@@ -119,7 +103,7 @@ namespace music {
     //% bpm.min=40 bpm.max=500
     //% bpm.defl=120
     export function stringPlayable(melody: string, bpm: number): Playable {
-        return new StringPlayable(melody, bpm);
+        return new StringArrayPlayable([melody], bpm);
     }
 
     /**

@@ -342,7 +342,7 @@ namespace music {
     //% toolboxParentArgument=toPlay
     //% group="Melody Advanced"
     export function builtInPlayableMelody(melody: Melodies): StringArrayPlayable {
-        return new StringArrayPlayable(getMelody(melody));
+        return new StringArrayPlayable(getMelody(melody), undefined);
     }
 
     /**
