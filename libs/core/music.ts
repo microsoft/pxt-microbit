@@ -340,6 +340,7 @@ namespace music {
     //% blockId=device_builtin_melody_playable block="%melody"
     //% toolboxParent=music_playable_play
     //% toolboxParentArgument=toPlay
+    //% duplicateShadowOnDrag
     //% group="Melody Advanced"
     export function builtInPlayableMelody(melody: Melodies): StringArrayPlayable {
         return new StringArrayPlayable(getMelody(melody), undefined);

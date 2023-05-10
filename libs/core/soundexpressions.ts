@@ -463,6 +463,7 @@ namespace music {
     //% expandableArgumentBreaks="3,5"
     //% toolboxParent=music_playable_play
     //% toolboxParentArgument=toPlay
+    //% duplicateShadowOnDrag
     //% group="micro:bit (V2)"
     export function createSoundExpression(waveShape: WaveShape, startFrequency: number, endFrequency: number, startVolume: number, endVolume: number, duration: number, effect: SoundExpressionEffect, interpolation: InterpolationCurve): SoundExpression {
         return new SoundExpression(createSoundEffect(waveShape, startFrequency, endFrequency, startVolume, endVolume, duration, effect, interpolation));
@@ -505,6 +506,7 @@ namespace music {
     //% group="micro:bit (V2)"
     //% toolboxParent=music_playable_play
     //% toolboxParentArgument=toPlay
+    //% duplicateShadowOnDrag
     //% weight=98 help=music/builtin-sound-effect
     export function builtinPlayableSoundEffect(soundExpression: SoundExpression) {
         return soundExpression;
