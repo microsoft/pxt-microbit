@@ -84,9 +84,14 @@ namespace record {
     }
 
     let _recordingPresent: boolean = false;
-    let _inputSampleRate = 11000;
-    let _sampleRateTrend = (15.584 * (_inputSampleRate ** 2)) - (_inputSampleRate * 416.58) + 5713.6;
-    let _duration = _inputSampleRate > 11000 ? _sampleRateTrend : 5000;
+
+    function audioNotRecording(): boolean {
+        return !audioIsRecording();
+    }
+
+    function audioNotPlaying(): boolean {
+        return !audioIsPlaying();
+    }
 
     /**
      * Record an audio clip for a maximum of 3 seconds
@@ -101,7 +106,7 @@ namespace record {
             case BlockingState.Blocking: {
                 eraseRecording();
                 record();
-                pause(_duration);
+                pauseUntil(audioNotRecording);
                 _recordingPresent = true;
                 break;
             }
@@ -127,7 +132,7 @@ namespace record {
         switch (mode) {
             case BlockingState.Blocking: {
                 play();
-                pause(_duration);
+                pauseUntil(audioNotPlaying);
                 break;
             }
             case BlockingState.Nonblocking: {
@@ -202,13 +207,11 @@ namespace record {
                 break;
             }
             case AudioSampleRateScope.Recording: {
-                _inputSampleRate = hz;
                 setInputSampleRate(hz);
                 break;
             }
             case AudioSampleRateScope.Everything:
             default: {
-                _inputSampleRate = hz;
                 setBothSamples(hz);
                 break;
             }

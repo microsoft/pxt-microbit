@@ -19,8 +19,8 @@ namespace pxsim  {
 
         initListeners = () => {
             if (this.recording) {
-                this.recording.addEventListener("play", this.handleAudioPlaying);
-                this.recording.addEventListener("ended", this.handleAudioStopped);
+                this.recording.addEventListener("play", this.handleAudioPlaying, false);
+                this.recording.addEventListener("ended", this.handleAudioStopped, false);
             }
         }
     }
@@ -77,6 +77,7 @@ namespace pxsim.record {
                     populateRecording(b);
                     registerSimStop(b);
                 }
+
             } catch (error) {
                 console.log("An error occurred, could not get microphone access");
                 if (b.recordingState.recorder) {
@@ -117,12 +118,9 @@ namespace pxsim.record {
         const b = board();
         if (!b) return;
         stopAudio();
-        // give a bit of a buffer time to let the recording stop to then be played
-        setTimeout(() => {
-            if (b.recordingState.recording) {
-                b.recordingState.recording.play();
-            }
-        }, 100);
+        if (b.recordingState.recording) {
+            b.recordingState.recording.play();
+        }
     }
 
     export function stop(): void {
@@ -153,7 +151,7 @@ namespace pxsim.record {
     export function audioIsPlaying(): boolean {
         const b = board();
         if (!b) return false;
-        return b.recordingState.audioPlaying;
+        return b.recordingState.recording ? !b.recordingState.recording.paused : false;
     }
 
     export function audioIsRecording(): boolean {
@@ -165,8 +163,8 @@ namespace pxsim.record {
     export function audioIsStopped(): boolean {
         const b = board();
         if (!b) return true;
-        const isNotPlaying = !b.recordingState.audioPlaying;
-        const isNotRecording = !b.recordingState.currentlyRecording;
+        const isNotPlaying = !audioIsPlaying();
+        const isNotRecording = !audioIsRecording();
         return b.recordingState.recording ? isNotPlaying && isNotRecording : false;
     }
 
