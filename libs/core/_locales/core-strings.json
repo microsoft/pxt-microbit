@@ -377,7 +377,7 @@
   "music.PlaybackMode.UntilDone|block": "until done",
   "music.beat|block": "%fraction|beat",
   "music.builtInMelody|block": "%melody",
-  "music.builtInPlayableMelody|block": "%melody",
+  "music.builtInPlayableMelody|block": "$melody",
   "music.builtinPlayableSoundEffect|block": "$soundExpression",
   "music.builtinSoundEffect|block": "$soundExpression",
   "music.changeTempoBy|block": "change tempo by (bpm)|%value",
