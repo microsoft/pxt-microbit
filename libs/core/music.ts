@@ -554,8 +554,9 @@ namespace music {
 
     /*
      * Converts a simple positive string to an integer.
-     * This function exists to avoid using parseInt, which has a large code size.
-     * Since we know the provided string will be a simple number, we can take some shortcuts.
+     * Pxt-common's parseInt is more robust, but it has a fairly large code size footprint.
+     * When we know the provided string will be a simple number, we can use this instead,
+     * which takes some shortcuts but does not use nearly as much space.
      */
     function parseIntSimple(text: string) {
         let result = 0;
