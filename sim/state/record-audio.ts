@@ -20,7 +20,6 @@ namespace pxsim  {
         initListeners = () => {
             if (this.recording) {
                 this.recording.addEventListener("play", this.handleAudioPlaying);
-
                 this.recording.addEventListener("ended", this.handleAudioStopped);
             }
         }
@@ -28,7 +27,7 @@ namespace pxsim  {
 }
 namespace pxsim.record {
 
-    function stopRecording(b: DalBoard): void {
+    function stopRecorder(b: DalBoard): void {
         b.recordingState.recorder.stop();
         b.recordingState.currentlyRecording = false;
         if (b.recordingState.stream.active) {
@@ -66,7 +65,7 @@ namespace pxsim.record {
                 runtime.queueDisplayUpdate();
 
                 b.recordingState.recordTimeoutID = setTimeout(() => {
-                    stopRecording(b);
+                    stopRecorder(b);
                     runtime.queueDisplayUpdate();
                 }, 4000)
 
@@ -97,7 +96,7 @@ namespace pxsim.record {
         if (!b) return;
         if (b.recordingState.currentlyRecording && b.recordingState.recordTimeoutID) {
             clearTimeout(b.recordingState.recordTimeoutID);
-            stopRecording(b);
+            stopRecorder(b);
         } else if (b.recordingState.recording && b.recordingState.audioPlaying) {
             b.recordingState.recording.pause();
             b.recordingState.recording.currentTime = 0;
@@ -139,6 +138,7 @@ namespace pxsim.record {
             b.recordingState.audioPlaying = false;
             b.recordingState.recording.currentTime = 0;
         }
+        window.URL.revokeObjectURL(b.recordingState.audioURL);
         b.recordingState.recording = null;
     }
 
@@ -159,7 +159,7 @@ namespace pxsim.record {
     export function audioIsRecording(): boolean {
         const b = board();
         if (!b) return false;
-        return b.recordingState.recorder ? b.recordingState.recorder.state == "recording" : false;
+        return b.recordingState.recorder ? b.recordingState.recorder.state === "recording" : false;
     }
 
     export function audioIsStopped(): boolean {

@@ -95,15 +95,15 @@ namespace record {
     export function startRecording(mode: BlockingState): void {
         switch (mode) {
             case BlockingState.Blocking: {
+                music._onStopSound(stopPlayback);
                 eraseRecording();
                 record();
-                while (audioIsRecording()) {
-                    continue;
-                }
+                pause(4000);
                 _recordingPresent = true;
                 break;
             }
             case BlockingState.Nonblocking: {
+                music._onStopSound(stopPlayback);
                 eraseRecording();
                 record();
                 _recordingPresent = true;
@@ -124,9 +124,7 @@ namespace record {
         switch (mode) {
             case BlockingState.Blocking: {
                 play();
-                while (audioIsPlaying()) {
-                    continue;
-                }
+                pause(4000);
                 break;
             }
             case BlockingState.Nonblocking: {
