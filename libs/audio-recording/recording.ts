@@ -102,23 +102,10 @@ namespace record {
     //% parts="microphone"
     export function startRecording(mode: BlockingState): void {
         music._onStopSound(stopPlayback);
-        switch (mode) {
-            case BlockingState.Blocking: {
-                eraseRecording();
-                record();
-                pauseUntil(audioNotRecording);
-                _recordingPresent = true;
-                break;
-            }
-            case BlockingState.Nonblocking: {
-                music._onStopSound(stopPlayback);
-                eraseRecording();
-                record();
-                _recordingPresent = true;
-                break;
-            }
-        }
-
+        eraseRecording();
+        record();
+        if (mode === BlockingState.Blocking) pauseUntil(audioNotRecording);
+        _recordingPresent = true;
     }
 
     /**
@@ -129,17 +116,8 @@ namespace record {
     //% weight=60
     //% parts="microphone"
     export function playAudio(mode: BlockingState): void {
-        switch (mode) {
-            case BlockingState.Blocking: {
-                play();
-                pauseUntil(audioNotPlaying);
-                break;
-            }
-            case BlockingState.Nonblocking: {
-                play();
-                break;
-            }
-        }
+        play();
+        if (mode === BlockingState.Blocking) pauseUntil(audioNotPlaying);
     }
 
     function stopPlayback(): void {
@@ -202,19 +180,16 @@ namespace record {
     //% weight=40
     export function setSampleRate(hz: number, scope?: AudioSampleRateScope): void {
         switch (scope) {
-            case AudioSampleRateScope.Playback: {
+            case AudioSampleRateScope.Playback:
                 setOutputSampleRate(hz);
                 break;
-            }
-            case AudioSampleRateScope.Recording: {
+            case AudioSampleRateScope.Recording:
                 setInputSampleRate(hz);
                 break;
-            }
             case AudioSampleRateScope.Everything:
-            default: {
+            default:
                 setBothSamples(hz);
                 break;
-            }
         }
     }
 }
