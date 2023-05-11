@@ -582,6 +582,8 @@
   "music.stopMelody|param|options": "which melody to stop",
   "music.tempo": "Returns the tempo in beats per minute. Tempo is the speed (bpm = beats per minute) at which notes play. The larger the tempo value, the faster the notes will play.",
   "music.tonePlayable": "Plays a tone through pin ``P0`` for the given duration.",
+  "music.tonePlayable|param|duration": "tone duration in milliseconds (ms)",
+  "music.tonePlayable|param|note": "pitch of the tone to play in Hertz (Hz).",
   "music.volume": "Returns the current output volume of the sound synthesizer.",
   "parseFloat": "Convert a string to a number.",
   "parseInt": "Convert a string to an integer.\n\n\nIf this argument is not supplied, strings with a prefix of '0x' are considered hexadecimal.\nAll other strings are considered decimal.",

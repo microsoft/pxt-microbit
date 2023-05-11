@@ -106,8 +106,8 @@ namespace music {
 
     /**
      * Plays a tone through pin ``P0`` for the given duration.
-     * @param frequency pitch of the tone to play in Hertz (Hz), eg: Note.C
-     * @param ms tone duration in milliseconds (ms)
+     * @param note pitch of the tone to play in Hertz (Hz).
+     * @param duration tone duration in milliseconds (ms)
      */
     //% blockId="music_tone_playable"
     //% block="tone $note for $duration"
