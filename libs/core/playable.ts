@@ -69,9 +69,6 @@ namespace music {
             }
             else if (playbackMode === PlaybackMode.UntilDone) {
                 music.playTone(this.pitch, this.duration);
-                if (this.duration > 2000) {
-                    pause(this.duration);
-                }
             }
             else {
                 this.loop();
