@@ -461,8 +461,8 @@ namespace music {
     //% inlineInputMode="variable"
     //% inlineInputModeLimit=3
     //% expandableArgumentBreaks="3,5"
-    //% toolboxParent=music_playable_play
-    //% toolboxParentArgument=toPlay
+    //% duplicateWithToolboxParent=music_playable_play
+    //% duplicateWithToolboxParentArgument=toPlay
     //% duplicateShadowOnDrag
     //% group="micro:bit (V2)"
     export function createSoundExpression(waveShape: WaveShape, startFrequency: number, endFrequency: number, startVolume: number, endVolume: number, duration: number, effect: SoundExpressionEffect, interpolation: InterpolationCurve): SoundExpression {
