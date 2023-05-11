@@ -99,6 +99,7 @@ namespace pxsim.record {
             clearTimeout(b.recordingState.recordTimeoutID);
             stopRecorder(b);
         } else if (b.recordingState.recording && b.recordingState.audioPlaying) {
+            b.recordingState.handleAudioStopped();
             b.recordingState.recording.pause();
             b.recordingState.recording.currentTime = 0;
         }
@@ -118,9 +119,12 @@ namespace pxsim.record {
         const b = board();
         if (!b) return;
         stopAudio();
-        if (b.recordingState.recording) {
-            b.recordingState.recording.play();
-        }
+        b.recordingState.audioPlaying = true;
+        setTimeout(() => {
+            if (b.recordingState.recording) {
+                b.recordingState.recording.play();
+            }
+        }, 10)
     }
 
     export function stop(): void {
@@ -151,7 +155,7 @@ namespace pxsim.record {
     export function audioIsPlaying(): boolean {
         const b = board();
         if (!b) return false;
-        return b.recordingState.recording ? !b.recordingState.recording.paused : false;
+        return b.recordingState.audioPlaying;
     }
 
     export function audioIsRecording(): boolean {
