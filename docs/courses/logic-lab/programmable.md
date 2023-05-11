@@ -135,9 +135,9 @@ if (pins.digitalReadPin(DigitalPin.P6) > 0) {
 
 You can test different input combinations by connecting the other ends of alligator clip leads on pins **P0** and **P1** to either **GND** or **3V**. The **GND** pin will make a ``false`` input value and **3V** will make a ``true`` input value.
 
-If you have an expansion connector for your @boardname@, you can use the combined logic script and the logic observer code to check each ouptput. Move the other end alligator clip lead connected to the observer pin **P6** to each of the outputs **P2**, **P3**, and **P4** to see the result of the logic operation programmed for those pins.
+If you have an expansion connector for your @boardname@, you can use the combined logic script and the logic observer code to check each ouptput. Move the other end of the alligator clip lead connected to the observer pin **P6** to each of the outputs **P2**, **P3**, and **P4** to see the result of the logic operation programmed for those pins.
 
-If you just have the @boardname@ by itself, you can test each logic function using only the scripts for each logic gate. Just put the script inside a ``||loops:forever||`` and place a ``||basic:show string||`` block with the logic letter after each ``||pins:digital write pin||``.
+If you just have the @boardname@ by itself, you can test each logic function using only the scripts for each logic gate. Just put the script inside a ``||loops:forever||`` loop and place a ``||basic:show string||`` block with the logic letter after each ``||pins:digital write pin||``.
 
 This is the code for the **NOT** gate:
 
@@ -164,7 +164,7 @@ GND | 3V | ``[basic.showString("T")]``
 3V | GND | ``[basic.showString("F")]``
 <br/>
 
-Do test connections for the inputs and check the results for the **OR** and **AND** outputs.
+Do test connections for the inputs, then check and record the results for the **OR** and **AND** outputs.
 
 #### OR truth table
 

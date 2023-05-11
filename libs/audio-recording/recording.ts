@@ -86,6 +86,7 @@ namespace record {
     //% weight=70
     //% parts="microphone"
     export function startRecording(): void {
+        music._onStopSound(stopPlayback);
         eraseRecording();
         record();
         _recordingPresent = true;
@@ -100,6 +101,12 @@ namespace record {
     //% shim=record::play
     //% parts="microphone"
     export function playAudio(): void {
+    }
+
+    function stopPlayback(): void {
+        if (audioIsPlaying()) {
+            stop();
+        }
     }
 
     //% shim=record::stop
