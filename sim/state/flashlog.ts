@@ -149,6 +149,7 @@ namespace pxsim.flashlog {
         logSize = 0;
         committedCols = 0;
         currentRow = undefined;
+        board().serialState.writeCsv("", "clear");
     }
 
     export function setTimeStamp(format: FlashLogTimeStampFormat) {
