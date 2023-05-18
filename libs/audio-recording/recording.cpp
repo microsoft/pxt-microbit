@@ -32,17 +32,6 @@ static StreamRecording *recording = NULL;
 static SplitterChannel *splitterChannel = NULL;
 static MixerChannel *channel = NULL;
 
-void enableMic() {
-    uBit.audio.activateMic();
-    uBit.audio.mic->enable();
-}
-
-void disableMic() {
-    uBit.audio.mic->disable();
-    uBit.audio.deactivateMic();
-}
-
-
 void checkEnv(int sampleRate = -1) {
     if (recording == NULL) {
         if (sampleRate == -1)
@@ -72,7 +61,6 @@ void checkEnv(int sampleRate = -1) {
 //% promise
 void record() {
     checkEnv();
-    enableMic();
     recording->record();
 }
 
@@ -82,7 +70,6 @@ void record() {
 //%
 void play() {
     checkEnv();
-    disableMic();
     recording->play();
 }
 
@@ -92,7 +79,6 @@ void play() {
 //%
 void stop() {
     checkEnv();
-    disableMic();
     recording->stop();
 }
 
@@ -102,7 +88,6 @@ void stop() {
 //%
 void erase() {
     checkEnv();
-    disableMic();
     recording->erase();
 }
 
