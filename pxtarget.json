@@ -189,7 +189,7 @@
                 "codalTarget": {
                     "name": "codal-microbit-v2",
                     "url": "https://github.com/lancaster-university/codal-microbit-v2",
-                    "branch": "v0.2.50",
+                    "branch": "v0.2.53",
                     "type": "git"
                 },
                 "codalBinary": "MICROBIT",
@@ -562,7 +562,7 @@
 
             "dragFileImage": "/static/download/transfer.png",
             "connectDeviceImage": "/static/download/connect-microbit.gif",
-            "selectDeviceImage": "/static/download/pair-browser.png",
+            "selectDeviceImage": "/static/download/selecting-microbit.gif",
             "connectionSuccessImage": "/static/download/successfully-paired.png",
             "incompatibleHardwareImage": "/static/download/incompatible.png"
         },

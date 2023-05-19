@@ -37,7 +37,7 @@ namespace pxsim {
             }
         }
 
-        writeCsv(s: string, type: "headers" | "row") {
+        writeCsv(s: string, type: "headers" | "row" | "clear") {
             Runtime.postMessage(<SimulatorSerialMessage>{
                 type: 'serial',
                 data: s,
