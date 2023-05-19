@@ -258,9 +258,7 @@ void dumpDmesg() {
 #if MICROBIT_CODAL
     if (serial::is_redirected)
       return;
-    unsigned len = codalLogStore.ptr;
-    codalLogStore.ptr = 0;
-    sendString(codalLogStore.buffer, len);
+    microbit_dmesg_flush();
 #endif
 }
 

@@ -562,7 +562,7 @@
 
             "dragFileImage": "/static/download/transfer.png",
             "connectDeviceImage": "/static/download/connect-microbit.gif",
-            "selectDeviceImage": "/static/download/pair-browser.png",
+            "selectDeviceImage": "/static/download/selecting-microbit.gif",
             "connectionSuccessImage": "/static/download/successfully-paired.png",
             "incompatibleHardwareImage": "/static/download/incompatible.png"
         },
