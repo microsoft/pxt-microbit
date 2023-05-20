@@ -61,7 +61,7 @@ void checkEnv(int sampleRate = -1) {
 //% promise
 void record() {
     checkEnv();
-    recording->record();
+    recording->recordAsync();
 }
 
 /**
@@ -70,7 +70,7 @@ void record() {
 //%
 void play() {
     checkEnv();
-    recording->play();
+    recording->playAsync();
 }
 
 /**
