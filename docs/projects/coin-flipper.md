@@ -8,7 +8,7 @@ Let's create a coin flipping program to simulate a real coin toss. We'll use ico
 
 ## Step 1
 
-Let's start with the ``||input:on button A pressed||`` block from the on the Workspace. We'll put our coin flipping code in here.
+Let's start with the ``||input:on button A pressed||`` block on the Workspace. We'll put our coin flipping code in here.
 
 ```blocks
 input.onButtonPressed(Button.A, function() {
