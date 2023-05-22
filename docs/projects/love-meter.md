@@ -20,7 +20,7 @@ input.onPinPressed(TouchPin.P0, function() {
 Using ``||basic:show number||`` and ``||Math:pick random||`` blocks, show a random number from `0` to `100` when pin **0** is pressed.
 
 ```blocks
-input.onPinPressed(TouchPin.P0, functions() {
+input.onPinPressed(TouchPin.P0, function() {
     basic.showNumber(randint(0, 100))
 })
 ```
