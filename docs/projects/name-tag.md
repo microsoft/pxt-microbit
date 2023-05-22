@@ -11,9 +11,9 @@ Tell everyone who you are. Show you name on the LEDs.
 Place the ``||basic:show string||`` block in the ``||basic:forever||`` block to repeat it. Change the text to your name.
 
 ```blocks
-basic.forever(() => {
+basic.forever(function() {
     basic.showString("MICRO");
-});
+})
 ```
 
 ## Step 2
@@ -25,12 +25,16 @@ Look at the simulator and make sure it shows your name on the screen.
 Place more ``||basic:show string||`` blocks to create your own story.
 
 ```blocks
-basic.forever(() => {
-    basic.showString("MICRO");
-    basic.showString("<3<3<3");
+basic.forever(function() {
+    basic.showString("MICRO")
+    basic.showString("<3<3<3")
 })
 ```
 
 ## Step 4
 
 If you have a @boardname@ connected, click ``|Download|`` to transfer your code and watch your name scroll!
+
+```template
+basic.forever(function() {})
+```

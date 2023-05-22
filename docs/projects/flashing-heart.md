@@ -42,3 +42,7 @@ Look at the virtual @boardname@, you should see the heart and your drawing blink
 ## Step 4
 
 If you have a @boardname@ connected, click ``|Download|`` to transfer your code and watch the hearts flash!
+
+```template
+basic.forever(function() {})
+```
