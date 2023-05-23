@@ -572,7 +572,8 @@
             "editor": "/tours/editor-tour"
         },
         "tutorialSimSidebarLayout": true,
-        "preferWebUSBDownload": true
+        "preferWebUSBDownload": true,
+        "hideReplaceMyCode": true
     },
     "queryVariants": {
         "hidemenu": {
@@ -600,6 +601,11 @@
                         "order": 3
                     }
                 }
+            }
+        },
+        "skillsMap=1": {
+            "appTheme": {
+                "hideReplaceMyCode": false
             }
         }
     },

@@ -423,6 +423,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
   "name": "DFRobot Boson Kit",
   "url":"/pkg/dfrobot/pxt-dfrobot_bosonkit",
   "cardType": "package"
+}, {
+  "name": "Joy-IT Joy-Pi Advanced",
+  "url":"/pkg/joy-it/pxt-RB-JoyPi-Advanced",
+  "cardType": "package"
 }]
 ```
 
