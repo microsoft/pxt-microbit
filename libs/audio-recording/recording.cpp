@@ -163,11 +163,7 @@ void setOutputSampleRate(int sampleRate) {
 */
 //%
 void setBothSamples(int sampleRate) {
-    if (recording == NULL) {
-        checkEnv(sampleRate);
-    } else {
-        channel->setSampleRate(sampleRate);
-    }
+    setOutputSampleRate(sampleRate);
     splitterChannel->requestSampleRate(sampleRate);
 }
 
