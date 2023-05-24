@@ -21,13 +21,6 @@ enum class SoundThreshold {
     //% block="quiet"
     Quiet = 1
 };
-
-namespace pxt {
-#if MICROBIT_CODAL
-    codal::LevelDetectorSPL* getMicrophoneLevel();
-#endif
-}
-
 namespace input {
 
 /**
@@ -40,9 +33,9 @@ namespace input {
 //% group="micro:bit (V2)"
 void onSound(DetectedSound sound, Action handler) {
 #if MICROBIT_CODAL
-    pxt::getMicrophoneLevel(); // wake up service
+    uBit.audio.levelSPL->activateForEvents(true);
     const auto thresholdType = sound == DetectedSound::Loud ? LEVEL_THRESHOLD_HIGH : LEVEL_THRESHOLD_LOW;
-    registerWithDal(DEVICE_ID_MICROPHONE, thresholdType, handler);
+    registerWithDal(DEVICE_ID_SYSTEM_LEVEL_DETECTOR, thresholdType, handler);
 #else
     target_panic(PANIC_VARIANT_NOT_SUPPORTED);
 #endif
@@ -58,7 +51,7 @@ void onSound(DetectedSound sound, Action handler) {
 //% group="micro:bit (V2)"
 int soundLevel() {
 #if MICROBIT_CODAL
-    auto level = pxt::getMicrophoneLevel();
+    LevelDetectorSPL* level = uBit.audio.levelSPL;
     if (NULL == level)
         return 0;
     const int micValue = level->getValue();
@@ -82,7 +75,7 @@ int soundLevel() {
 //% group="micro:bit (V2)"
 void setSoundThreshold(SoundThreshold sound, int threshold) {
 #if MICROBIT_CODAL
-    auto level = pxt::getMicrophoneLevel();
+    LevelDetectorSPL* level = uBit.audio.levelSPL;
     if (NULL == level)
         return;
 

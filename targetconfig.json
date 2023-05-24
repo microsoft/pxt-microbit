@@ -782,7 +782,8 @@
             "resolute-support/pxt-apprentice_car": { "tags": [ "Robotics" ] },
             "makeandlearn/pxt-didacbot": { "tags": [ "Robotics" ] },
             "cytrontechnologies/pxt-rekabit-rbt-project-kit": { "tags": [ "Science" ] },
-            "cytrontechnologies/pxt-motionbit": { "tags": [ "Robotics" ] }
+            "cytrontechnologies/pxt-motionbit": { "tags": [ "Robotics" ] },
+            "joy-it/pxt-rb-joypi-advanced": { "tags": [ "Science" ] }
         },
         "upgrades": {
             "tinkertanker/pxt-iot-environment-kit": "min:v4.2.1",

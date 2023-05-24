@@ -242,9 +242,13 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
     }
 
     get binName() {
+        return `${this.devVariant}-${pxtc.BINARY_HEX}`;
+    }
+
+    get devVariant() {
         if (this.usesCODAL === undefined)
             console.warn('try to access codal information before it is computed')
-        return (this.usesCODAL ? "mbcodal-" : "mbdal-") + pxtc.BINARY_HEX;
+        return this.usesCODAL ? "mbcodal" : "mbdal";
     }
 
     unsupportedParts() {
@@ -467,7 +471,7 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
                         pxt.tickEvent('hid.flash.full.error.open', { res: res[1] })
                         throw new Error(lf("Download failed, please try again"));
                     }
-                    const binFile = resp.outfiles[this.binName];
+                    const binFile = this.getBinFile(resp);
                     log(`bin file ${this.binName} in ${Object.keys(resp.outfiles).join(', ')}, ${binFile?.length || -1}b`)
                     const hexUint8 = pxt.U.stringToUint8Array(binFile);
                     log(`hex ${hexUint8?.byteLength || -1}b, ~${(hexUint8.byteLength / chunkSize) | 0} chunks of ${chunkSize}b`)
@@ -543,10 +547,20 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
             });
     }
 
+    private getBinFile(resp: pxtc.CompileResult) {
+        const multiVariantBinFile = resp.outfiles[this.binName];
+        if (multiVariantBinFile)
+            return multiVariantBinFile;
+
+        const dvBin = resp.builtVariants?.find(el => el === this.devVariant) && resp.outfiles[pxtc.BINARY_HEX];
+        if (dvBin)
+            return resp.outfiles[pxtc.BINARY_HEX];
+
+        throw new Error(`unable to find ${this.binName} in outfiles ${Object.keys(resp.outfiles).join(', ')}`);
+    }
+
     private computeFlashChecksum(resp: pxtc.CompileResult) {
-        const binFile = resp.outfiles[this.binName];
-        if (!binFile)
-            throw new Error(`unable to find ${this.binName} in outfiles ${Object.keys(resp.outfiles).join(', ')}`);
+        const binFile = this.getBinFile(resp);
 
         return this.getFlashChecksumsAsync()
             .then(checksums => {

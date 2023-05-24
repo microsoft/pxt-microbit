@@ -189,7 +189,7 @@
                 "codalTarget": {
                     "name": "codal-microbit-v2",
                     "url": "https://github.com/lancaster-university/codal-microbit-v2",
-                    "branch": "v0.2.53",
+                    "branch": "v0.2.54",
                     "type": "git"
                 },
                 "codalBinary": "MICROBIT",
@@ -572,7 +572,8 @@
             "editor": "/tours/editor-tour"
         },
         "tutorialSimSidebarLayout": true,
-        "preferWebUSBDownload": true
+        "preferWebUSBDownload": true,
+        "hideReplaceMyCode": true
     },
     "queryVariants": {
         "hidemenu": {
@@ -600,6 +601,11 @@
                         "order": 3
                     }
                 }
+            }
+        },
+        "skillsMap=1": {
+            "appTheme": {
+                "hideReplaceMyCode": false
             }
         }
     },
