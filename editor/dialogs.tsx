@@ -15,8 +15,16 @@ export function cantImportAsync(project: pxt.editor.IProjectView) {
 }
 
 
-export async function showProgramTooLargeErrorAsync(variants: string[], confirmAsync: (opts: any) => Promise<number>) {
+export async function showProgramTooLargeErrorAsync(variants: string[], confirmAsync: (opts: any) => Promise<number>, saveOnly?: boolean) {
     if (variants.length !== 2) return undefined;
+
+    if (pxt.packetio.isConnected() && pxt.packetio.deviceVariant() === "mbcodal" && !saveOnly) {
+        // connected micro:bit V2 will be flashed; don't give warning dialog
+        return {
+            recompile: true,
+            useVariants: ["mbcodal"]
+        }
+    }
 
     const choice = await confirmAsync({
         header: lf("Oops, there was a problem downloading your code"),
