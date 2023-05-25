@@ -48,11 +48,6 @@ void checkEnv(int sampleRate = -1) {
         uBit.audio.mixer.setVolume(1000);
         uBit.audio.setSpeakerEnabled(true);
     }
-
-    if (recording != NULL && sampleRate != -1) {
-        channel = uBit.audio.mixer.addChannel(*recording, sampleRate);
-        channel->setVolume(75.0);
-    }
 }
 
 /**
@@ -156,7 +151,11 @@ void setInputSampleRate(int sampleRate) {
  */
 //%
 void setOutputSampleRate(int sampleRate) {
-    checkEnv(sampleRate);
+    if (recording == NULL) {
+        checkEnv(sampleRate);
+    } else {
+        channel->setSampleRate(sampleRate);
+    }
 }
 
 /**
@@ -164,7 +163,7 @@ void setOutputSampleRate(int sampleRate) {
 */
 //%
 void setBothSamples(int sampleRate) {
-    checkEnv(sampleRate);
+    setOutputSampleRate(sampleRate);
     splitterChannel->requestSampleRate(sampleRate);
 }
 

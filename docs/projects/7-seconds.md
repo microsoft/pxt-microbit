@@ -10,7 +10,7 @@ This game is inspired from the [flipping panckakes game](https://www.elecfreaks.
 
 ## Step 1
 
-The player starts the timer by pressing button **A**. Add the code to run code when ``||input:button A is pressed||``.
+The player starts the timer by pressing button **A**. We'll run the code run code when ``||input:button A is pressed||``.
 
 ```blocks
 input.onButtonPressed(Button.A, function () {
@@ -96,4 +96,8 @@ input.onButtonPressed(Button.B, function () {
     // @highlight
     basic.showNumber(score)
 })
+```
+
+```template
+input.onButtonPressed(Button.A, function () {})
 ```

@@ -93,3 +93,6 @@ basic.forever(function() {
 If you have a @boardname@ connected, click ``|Download|`` to transfer your code!
 Try it out on a table, counter, or window sill in your house!
 
+```template
+basic.forever(function() {})
+```

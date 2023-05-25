@@ -1,41 +1,26 @@
 # Pet Hamster
 
-## 1. Introduction @unplugged
-
-👋 Meet your new pet hamster, Cyrus 🐹
+## Introduction @unplugged
 
 ![Pet hamster banner message](/static/mb/projects/pet-hamster.png)
 
-## 2. Cyrus's asleep face
-
-😴 **Sleeping on the job** 😴
+## Cyrus's asleep face
 
 Cyrus is a very sleepy hamster. In fact, Cyrus is almost always sleeping.
 
----
-
-► From the ``||basic:Basic||`` category, find ``||basic:show icon [ ]||`` and snap it into your ``||basic:on start||`` container.
-
-► Set it to show the asleep ``-_-`` face.  
+► From the ``||basic:Basic||`` category, find ``||basic:show icon [ ]||`` and snap it into your ``||basic:on start||`` container. Set it to show the asleep ``-_-`` face.  
 💡 In the ``show icon`` dropdown menu options, you can hover to see what each design is called!
 
 ```blocks
 basic.showIcon(IconNames.Asleep)
 ```
 
-## 3. Giggly Cyrus
-
-🤣 **That tickles** 🤣
+## Giggly Cyrus
 
 Pressing Cyrus's logo tickles them!
 
----
-
-► From ``||input:Input||``, find the ``||input:on logo [pressed]||`` container and drag it into your workspace.
-
-► Go to ``||basic:Basic||`` and grab **another** ``||basic:show icon [ ]||``. Snap it into your **empty** ``||input:on logo [pressed]||`` container.
-
-► Set the icon (Cyrus's face) to happy ``:)``.
+► From ``||input:Input||``, find the ``||input:on logo [pressed]||`` container and drag it into your workspace.  
+► Go to ``||basic:Basic||`` and grab **another** ``||basic:show icon [ ]||``. Snap it into your **empty** ``||input:on logo [pressed]||`` container. Set the icon (Cyrus's face) to happy ``:)``.
 
 ```blocks
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
@@ -43,11 +28,7 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
 })
 ```
 
-## 4. Tickle sound
-
-🎶 **The sounds of Cyrus** 🎶
-
----
+## Tickle sound
 
 ► From the ``||music:Music||`` category, get a ``||music:play sound [giggle] until done||`` and add it to the **bottom** of your ``||input:on logo [pressed]||`` container.
 
@@ -59,19 +40,12 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
 })
 ```
 
-## 5. Dizzy Cyrus
-
-😵 **All shaken up** 💫
+## Dizzy Cyrus
 
 Whenever Cyrus is shaken, they get sad 🙁
 
----
-
-► From ``||input:Input||``, find ``||input:on [shake]||`` and drag it into your workspace.
-
-► From the ``||basic:Basic||`` category, grab ``||basic:show icon [ ]||`` and snap it into your **new** ``||input:on [shake]||`` container.
-
-► Set the icon (Cyrus's face) to sad ``:(``.
+► From ``||input:Input||``, find ``||input:on [shake]||`` and drag it into your workspace.  
+► From the ``||basic:Basic||`` category, grab ``||basic:show icon [ ]||`` and snap it into your **new** ``||input:on [shake]||`` container. Set the icon (Cyrus's face) to sad ``:(``.
 
 ```blocks
 input.onGesture(Gesture.Shake, function () {
@@ -79,10 +53,9 @@ input.onGesture(Gesture.Shake, function () {
 })
 ```
 
-## 6. Dizzy sound
+## Dizzy sound
 
-► From the ``||music:Music||`` category, find the ``||music:play sound [giggle] until done||`` block and add it to the **bottom** of your ``||input:on [shake]||`` container.
-
+► From the ``||music:Music||`` category, find the ``||music:play sound [giggle] until done||`` block and add it to the **bottom** of your ``||input:on [shake]||`` container.  
 ► Click on the **dropdown** and set it so Cyrus plays a ``||music:sad||`` sound until done.
 
 ```blocks
@@ -93,16 +66,11 @@ input.onGesture(Gesture.Shake, function () {
 })
 ```
 
-## 7. Cyrus's default face pt. 1
-
-💤 **Back to sleep** 💤
+## Cyrus's default face pt. 1
 
 Let's ensure that Cyrus will always go back to sleep after being shaken or tickled.
 
----
-
-► Right click the ``||basic:show icon[-_-]||`` block in your workspace (inside the ``||basic:on start||`` container) and choose **Duplicate**.
-
+► Right click the ``||basic:show icon[-_-]||`` block in your workspace (inside the ``||basic:on start||`` container) and choose **Duplicate**.  
 ► Snap your copied block in at the **very bottom** of your ``||input:on [shake]||`` container.
 
 ```blocks
@@ -119,7 +87,7 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
 basic.showIcon(IconNames.Asleep)
 ```
 
-## 8. Cyrus's default face pt. 2
+## Cyrus's default face pt. 2
 
 ► Duplicate the ``||basic:show icon[-_-]||`` block again and this time snap it in at the **very bottom** of your ``||input:on logo [pressed]||`` container.
 
@@ -138,9 +106,7 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
 basic.showIcon(IconNames.Asleep)
 ```
 
-## 9. Testing in the simulator
-
-🐾 **Test what you've created** 🐾
+## Testing in the simulator
 
 Check out the simulator and make sure your speakers are on 🔊
 
