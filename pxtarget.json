@@ -539,6 +539,7 @@
         "simScreenshot": true,
         "simScreenshotMaxUriLength": 300000,
         "simGif": true,
+        "simGifWidth": 240,
         "qrCode": true,
         "importExtensionFiles": true,
         "nameProjectFirst": true,
@@ -573,7 +574,8 @@
         },
         "tutorialSimSidebarLayout": true,
         "preferWebUSBDownload": true,
-        "hideReplaceMyCode": true
+        "hideReplaceMyCode": true,
+        "matchWebUSBDeviceInSim": true
     },
     "queryVariants": {
         "hidemenu": {

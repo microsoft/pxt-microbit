@@ -51,3 +51,7 @@ basic.forever(function() {
 ## Download and try
 
 Download the code to your @boardname@ and test the sensors.
+
+```template
+basic.forever(function() {})
+```

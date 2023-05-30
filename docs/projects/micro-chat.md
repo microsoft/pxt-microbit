@@ -21,8 +21,8 @@ Every @boardname@ nearby will receive this message.
 
 ```blocks
 input.onButtonPressed(Button.A, function() {
-    radio.sendString(":)");
-});
+    radio.sendString(":)")
+})
 ```
 
 ## Receiving a message
@@ -51,7 +51,7 @@ Press button **A** on the simulator, you will notice that a second @boardname@ a
 ```blocks
 input.onButtonPressed(Button.A, function() {
     radio.sendString(":)");
-});
+})
 radio.onReceivedString(function (receivedString) {
     basic.showString(receivedString);
 })
@@ -60,6 +60,10 @@ radio.onReceivedString(function (receivedString) {
 ## Try it for real
 
 If you have two @boardname@s, download the program to each one. Press button **A** on one and see if the other gets a message.
+
+```template
+//
+```
 
 ```package
 radio

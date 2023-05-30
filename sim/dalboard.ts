@@ -173,6 +173,9 @@ namespace pxsim {
             document.body.innerHTML = ""; // clear children
             document.body.appendChild(this.view = this.viewHost.getView());
 
+            if (msg.theme === "mbcodal") {
+                this.ensureHardwareVersion(2);
+            }
             return Promise.resolve();
         }
 

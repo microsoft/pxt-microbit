@@ -8,7 +8,7 @@ This project turns the @boardname@ into a simple stopwatch. Pressing **A** start
 
 ## Step 1
 
-Add an event to run code when ``||input:button A is pressed||``.
+Use an event to run code when ``||input:button A is pressed||``.
 
 ```blocks
 input.onButtonPressed(Button.A, function () {
@@ -68,3 +68,7 @@ Try your program in the simulator. Press **A** to start the stopwatch and press 
 ## Step 7
 
 If you have a @boardname@ connected, click ``|Download|`` to transfer your code!
+
+```template
+input.onButtonPressed(Button.A, function () {})
+```

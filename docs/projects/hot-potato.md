@@ -97,3 +97,7 @@ input.onButtonPressed(Button.A, function () {
 ## Step 7
 
 `|Download|` your code to your @boardname@, tape it to a potato and play the game with your friends!
+
+```template
+//
+```

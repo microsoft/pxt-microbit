@@ -8,7 +8,7 @@ Build a "Rock Paper Scissors" game with ADDED BONUS SOUNDS using the **micro:bit
 
 ## Step 1 @fullscreen
 
-Add an ``||input:on shake||`` block to run code when you shake the @boardname@.
+Use the ``||input:on shake||`` block in the Workspace to run code when you shake the @boardname@.
 
 ```blocks
 input.onGesture(Gesture.Shake, function () {
@@ -199,3 +199,7 @@ onto your @boardname@.
 Your game is ready! Gather your friends and play Rock Paper Scissors!
 
 ![A @boardname@ in a hand](/static/mb/projects/rock-paper-scissors/hand.jpg)
+
+```template
+input.onGesture(Gesture.Shake, function() {})
+```

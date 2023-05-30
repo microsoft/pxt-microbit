@@ -4,6 +4,7 @@
     "dependencies": {
         "core": "file:../core"
     },
+    "weight": 10,
     "files": [
         "recording.ts",
         "recording.cpp",
