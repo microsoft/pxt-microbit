@@ -1019,5 +1019,9 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
     "name": "Elecfreaks NeZha",
     "url": "/pkg/elecfreaks/pxt-nezha",
     "cardType": "package"
+}, {
+    "name": "Data Logger Bluetooth Service",
+    "url": "/pkg/bsiever/pxt-blelog",
+    "cardType": "package"
 }]
 ```
