@@ -539,6 +539,7 @@
         "simScreenshot": true,
         "simScreenshotMaxUriLength": 300000,
         "simGif": true,
+        "simGifWidth": 240,
         "qrCode": true,
         "importExtensionFiles": true,
         "nameProjectFirst": true,
