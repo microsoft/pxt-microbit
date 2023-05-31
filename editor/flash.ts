@@ -459,6 +459,7 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
         log("full flash")
         pxt.tickEvent("hid.flash.full.start");
 
+        const start = Date.now();
         const chunkSize = 62;
         let sentPages = 0;
         return pxt.Util.promiseTimeout(
@@ -510,7 +511,7 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
                 })
                 .then((res) => {
                     log(`daplinkreset: ${pxt.U.toHex(res)}`)
-                    log(`full TR flash done after ${Date.now() - start}ms`);
+                    log(`full flash done after ${Date.now() - start}ms`);
                     pxt.tickEvent("hid.flash.full.success");
                 }),
             timeoutMessage
@@ -587,6 +588,7 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
     private quickHidFlashAsync(changed: ts.pxtc.UF2.Block[], progressCallback?: (percentageComplete: number) => void): Promise<void> {
         log("quick flash")
         pxt.tickEvent("hid.flash.quick.start");
+        const start = Date.now();
 
         const runFlash = (b: ts.pxtc.UF2.Block, dataAddr: number) => {
             const cmd = this.cortexM.prepareCommand();
@@ -660,7 +662,7 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
                             });
                     }))
                 .then(() => {
-                    log("quick flash done");
+                    log(`quick flash done after ${Date.now() - start}ms`);
                     return this.cortexM.reset(false);
                 })
                 .then(() => {
