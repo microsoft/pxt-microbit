@@ -507,10 +507,10 @@ path.sim-board {
 
             let theme = this.props.theme;
             if (this.microphoneLed) {
-                if (b.recordingState.currentlyRecording) {
+                if (b.recordingState.currentlyRecording || b.microphoneState.soundLevelRequested) {
                     svg.fills([this.microphoneLed], theme.ledOn);
                     svg.filter(this.microphoneLed, `url(#ledglow)`);
-                } else if (!b.microphoneState.sensorUsed) {
+                } else if (!(b.microphoneState.onSoundRegistered || b.microphoneState.soundLevelRequested)) {
                     svg.fills([this.microphoneLed], theme.ledOff);
                     svg.filter(this.microphoneLed, `url(#none)`);
                 }
