@@ -376,7 +376,11 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
         await this.io.disconnectAsync();
     }
 
+<<<<<<< HEAD
     async reflashAsync(resp: pxtc.CompileResult, progressCallback?: (percentageComplete: number) => void): Promise<void> {
+=======
+    reflashAsync(resp: pxtc.CompileResult, progressCallback?: (percentageComplete: number) => void): Promise<void> {
+>>>>>>> 44344f190d5f30bdfd73cc258f7c207178c5362c
         pxt.tickEvent("hid.flash.start");
 
         log("reflash")
@@ -385,6 +389,7 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
         const codalJson = resp.outfiles["codal.json"]
         this.jacdacInHex = codalJson && !!pxt.Util.jsonTryParse(codalJson)?.definitions?.JACDAC_WEBUSB;
         this.flashAborted = false;
+<<<<<<< HEAD
         if (!this.io.isConnected()) {
             await this.io.reconnectAsync();
         }
@@ -414,6 +419,34 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
 
         await this.checkStateAsync(true);
         pxt.tickEvent("hid.flash.success");
+=======
+        return (this.io.isConnected() ? Promise.resolve() : this.io.reconnectAsync())
+            .then(() => this.stopReadersAsync())
+            .then(() => this.cortexM.init())
+            .then(() => this.cortexM.reset(true))
+            .then(() => this.checkStateAsync())
+            .then(() => this.readUICR())
+            .then(uicr => {
+                pxt.tickEvent("hid.flash.uicr", { uicr });
+                // shortcut, do a full flash
+                if (uicr != 0 || this.forceFullFlash) {
+                    pxt.tickEvent("hid.flash.uicrfail");
+                    return this.fullVendorCommandFlashAsync(resp, progressCallback);
+                }
+                // check flash checksums
+                return this.computeFlashChecksum(resp)
+                    .then(chk => {
+                        pxt.tickEvent("hid.flash.checksum", { quick: chk.quick ? 1 : 0, changed: chk.changed ? chk.changed.length : 0 });
+                        // let's do a quick flash!
+                        if (chk.quick)
+                            return this.quickHidFlashAsync(chk.changed, progressCallback);
+                        else
+                            return this.fullVendorCommandFlashAsync(resp, progressCallback);
+                    });
+            })
+            .then(() => this.checkStateAsync(true))
+            .then(() => pxt.tickEvent("hid.flash.success"))
+>>>>>>> 44344f190d5f30bdfd73cc258f7c207178c5362c
         // don't disconnect here
         // the micro:bit will automatically disconnect and reconnect
         // via the webusb events
@@ -454,10 +487,14 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
         return this.dapCmd(new Uint8Array(nums))
     }
 
+<<<<<<< HEAD
     private async fullVendorCommandFlashAsync(
         resp: pxtc.CompileResult,
         progressCallback?: (percentageComplete: number) => void
     ): Promise<void> {
+=======
+    private fullVendorCommandFlashAsync(resp: pxtc.CompileResult, progressCallback?: (percentageComplete: number) => void): Promise<void> {
+>>>>>>> 44344f190d5f30bdfd73cc258f7c207178c5362c
         log("full flash")
         pxt.tickEvent("hid.flash.full.start");
 
@@ -484,6 +521,7 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
                     while (offset < hexUint8.length) {
                         const end = Math.min(hexUint8.length, offset + chunkSize);
                         const nextPageData = hexUint8.slice(offset, end);
+<<<<<<< HEAD
                         const cmdData = new Uint8Array(2 + nextPageData.length);
                         cmdData[0] = 0x8C; /* DAPLinkFlash.WRITE */
                         cmdData[1] = nextPageData.length;
@@ -503,6 +541,39 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
                     log(`daplinkclose: ${pxt.U.toHex(closeRes)}`);
                     const resetRes = await this.dapCmdNums(0x89 /* DAPLinkFlash.RESET */);
                     log(`daplinkreset: ${pxt.U.toHex(resetRes)}`);
+=======
+                        const cmdData = new Uint8Array(2 + nextPageData.length)
+                        cmdData[0] = 0x8C /* DAPLinkFlash.WRITE */
+                        cmdData[1] = nextPageData.length
+                        cmdData.set(nextPageData, 2)
+                        if (sentPages % 128 == 0) { // reduce logging
+                            progressCallback(offset / hexUint8.length);
+                            log(`next page ${sentPages}: [${offset.toString(16)}, ${end.toString(16)}] (${Math.ceil((hexUint8.length - end) / 1000)}kb left)`)
+                        }
+                        return this.dapCmd(cmdData)
+                            .then(() => {
+                                this.checkAborted()
+                                if (end < hexUint8.length) {
+                                    sentPages++;
+                                    return sendPages(end);
+                                }
+                                return Promise.resolve()
+                            });
+                    }
+
+                    return sendPages();
+                })
+                .then(() => {
+                    log(`close`)
+                    return this.dapCmdNums(0x8B /* DAPLinkFlash.CLOSE */);
+                })
+                .then(res => {
+                    log(`daplinkclose: ${pxt.U.toHex(res)}`)
+                    return this.dapCmdNums(0x89 /* DAPLinkFlash.RESET */);
+                })
+                .then((res) => {
+                    log(`daplinkreset: ${pxt.U.toHex(res)}`)
+>>>>>>> 44344f190d5f30bdfd73cc258f7c207178c5362c
                     log(`full flash done after ${Date.now() - start}ms`);
                     pxt.tickEvent("hid.flash.full.success");
                 })(),
@@ -574,9 +645,14 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
         }
     }
 
+<<<<<<< HEAD
     private async quickHidFlashAsync(changed: ts.pxtc.UF2.Block[], progressCallback?: (percentageComplete: number) => void): Promise<void> {
+=======
+    private quickHidFlashAsync(changed: ts.pxtc.UF2.Block[], progressCallback?: (percentageComplete: number) => void): Promise<void> {
+>>>>>>> 44344f190d5f30bdfd73cc258f7c207178c5362c
         log("quick flash")
         pxt.tickEvent("hid.flash.quick.start");
+        const start = Date.now();
 
         const start = Date.now();
         const runFlash = async (b: ts.pxtc.UF2.Block, dataAddr: number) => {
@@ -609,8 +685,13 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
                     continue;
                 }
 
+<<<<<<< HEAD
                 log(`about to write at 0x${b.targetAddr.toString(16)}`);
                 progressCallback(i / changed.length);
+=======
+                        log(`about to write at 0x${b.targetAddr.toString(16)}`);
+                        progressCallback(i / changed.length)
+>>>>>>> 44344f190d5f30bdfd73cc258f7c207178c5362c
 
                 const thisAddr = (i & 1) ? dataAddr : dataAddr + this.pageSize;
                 const nextAddr = (i & 1) ? dataAddr + this.pageSize : dataAddr;
@@ -634,6 +715,7 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
                 logV("done block");
             }
 
+<<<<<<< HEAD
             log(`quick flash done after ${Date.now() - start}ms`);
             await this.cortexM.reset(false);
             pxt.tickEvent("hid.flash.quick.success");
@@ -647,6 +729,36 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
                 timeoutMessage
             );
         } catch (e) {
+=======
+                        return writeBl
+                            .then(() => runFlash(b, thisAddr))
+                            .then(() => {
+                                let next = changed[i + 1];
+                                if (!next)
+                                    return Promise.resolve();
+                                logV("write next");
+                                let buf = new Uint32Array(next.data.buffer);
+                                return this.cortexM.memory.writeBlock(nextAddr, buf);
+                            })
+                            .then(() => {
+                                logV("wait");
+                                return this.cortexM.waitForHalt(500);
+                            })
+                            .then(() => {
+                                logV("done block");
+                            });
+                    }))
+                .then(() => {
+                    log(`quick flash done after ${Date.now() - start}ms`);
+                    return this.cortexM.reset(false);
+                })
+                .then(() => {
+                    pxt.tickEvent("hid.flash.quick.success");
+                    return this.checkStateAsync(true)
+                }),
+            timeoutMessage
+        ).catch((e) => {
+>>>>>>> 44344f190d5f30bdfd73cc258f7c207178c5362c
             pxt.tickEvent("hid.flash.quick.error");
             this.flashAborted = true;
             return this.resetAndThrowAsync(e);
