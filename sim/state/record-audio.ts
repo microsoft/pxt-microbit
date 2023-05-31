@@ -30,6 +30,7 @@ namespace pxsim.record {
     function stopRecorder(b: DalBoard): void {
         b.recordingState.recorder.stop();
         b.recordingState.currentlyRecording = false;
+        runtime.queueDisplayUpdate();
         if (b.recordingState.stream.active) {
             b.recordingState.stream.getAudioTracks().forEach(track => {
                 track.stop();
@@ -66,7 +67,6 @@ namespace pxsim.record {
 
                 b.recordingState.recordTimeoutID = setTimeout(() => {
                     stopRecorder(b);
-                    runtime.queueDisplayUpdate();
                 }, 5000)
 
                 b.recordingState.recorder.ondataavailable = (e: BlobEvent) => {
