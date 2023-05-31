@@ -39,7 +39,7 @@ If you don't see any devices in the list and @boardname@ has the right firmware 
 
 ![Device list for WebUSB pairing](/static/mb/device/usb/no-pair.jpg)
 
-* When your @boardname@ is connected, you'll see the **Connected to micro:bit** message window. Click on **Done** and you're ready to go! 
+* When your @boardname@ is connected, you'll see the **Connected to micro:bit** message window. Click on **Done** and you're ready to go!
 
 ![Connected message window](/static/mb/device/usb/connected.jpg)
 
@@ -55,7 +55,7 @@ You will need to unpair your device from the editor to disable WebUSB.
 * Uncheck each **BBC micro:bit CMSIS-DAP** or **DAPLink CMSIS-DAP** device
 * Reload the page
 
-![Unpairing from the browser](/static/webusb/unpair.gif)
+![Unpairing from the browser](/static/download/browser-unpair-image.gif)
 
 ## One-click Download
 
