@@ -330,7 +330,7 @@ namespace input {
      * The pitch or roll of the device, rotation along the ``x-axis`` or ``y-axis``, in degrees.
      * @param kind pitch or roll
      */
-    //% help=input/rotation weight=52
+    //% help=input/rotation weight=50
     //% blockId=device_get_rotation block="rotation (°)|%NAME" blockGap=8
     //% parts="accelerometer" advanced=true
     int rotation(Rotation kind) {
@@ -350,8 +350,10 @@ namespace input {
     //% parts="compass"
     //% advanced=true
     TNumber magneticForce(Dimension dimension) {
+        /* https://github.com/microsoft/pxt-microbit/issues/4995
         if (!uBit.compass.isCalibrated())
             uBit.compass.calibrate();
+        */
         double d = 0;        
         switch (dimension) {
             case Dimension::X: d = uBit.compass.getX(); break;
@@ -367,7 +369,7 @@ namespace input {
      */
     //% help=input/calibrate-compass advanced=true
     //% blockId="input_compass_calibrate" block="calibrate compass"
-    //% weight=45
+    //% weight=52
     void calibrateCompass() {
         uBit.compass.calibrate();
     }
