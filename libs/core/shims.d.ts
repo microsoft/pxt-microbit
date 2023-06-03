@@ -678,6 +678,15 @@ declare namespace music {
     function setBuiltInSpeakerEnabled(enabled: boolean): void;
 
     /**
+     * Check whether any sound is being played, no matter the source
+     */
+    //% blockId=music_sound_is_playing block="sound is playing"
+    //% group="Volume"
+    //% help=music/volume
+    //% weight=0 shim=music::isSoundPlaying
+    function isSoundPlaying(): boolean;
+
+    /**
      * Defines an optional sample level to generate during periods of silence.
      **/
     //% group="micro:bit (V2)"

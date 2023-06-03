@@ -549,6 +549,7 @@
   "music.createSoundExpression|param|waveShape": "waveform of the sound effect",
   "music.getFrequencyForNote": "Converts an octave and note offset into an integer frequency.\nReturns 0 if the note is out of range.\n* @param octave    The octave of the note (1 - 8)\n\n@returns         A frequency in HZ or 0 if out of range",
   "music.getFrequencyForNote|param|note": "The offset of the note within the octave",
+  "music.isSoundPlaying": "Check whether any sound is being played, no matter the source",
   "music.melodyEditor": "Create a melody with the melody editor.",
   "music.noteFrequency": "Gets the frequency of a note.",
   "music.noteFrequency|param|name": "the note name",

@@ -383,6 +383,7 @@
   "music.changeTempoBy|block": "change tempo by (bpm)|%value",
   "music.createSoundEffect|block": "$waveShape|| start frequency $startFrequency end frequency $endFrequency duration $duration start volume $startVolume end volume $endVolume effect $effect interpolation $interpolation",
   "music.createSoundExpression|block": "$waveShape|| start frequency $startFrequency end frequency $endFrequency duration $duration start volume $startVolume end volume $endVolume effect $effect interpolation $interpolation",
+  "music.isSoundPlaying|block": "sound is playing",
   "music.melodyEditor|block": "$melody",
   "music.noteFrequency|block": "%name",
   "music.onEvent|block": "music on %value",
