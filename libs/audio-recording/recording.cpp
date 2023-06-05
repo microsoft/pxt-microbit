@@ -93,13 +93,12 @@ void erase() {
 void setMicrophoneGain(int gain) {
     switch (gain) {
     case 1:
-        uBit.audio.processor->setGain(0.079f);
         break;
     case 2:
         uBit.audio.processor->setGain(0.2f);
         break;
     case 3:
-        uBit.audio.processor->setGain(0.4f);
+        uBit.audio.processor->setGain(1.0f);
         break;
     }
 }
