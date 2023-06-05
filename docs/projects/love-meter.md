@@ -21,6 +21,7 @@ Using ``||basic:show number||`` and ``||Math:pick random||`` blocks, show a rand
 
 ```blocks
 input.onPinPressed(TouchPin.P0, function() {
+    //@highlight
     basic.showNumber(randint(0, 100))
 })
 ```
@@ -33,6 +34,7 @@ Click on pin **0** in the simulator and see which number is chosen.
 Show ``"LOVE METER"`` on the screen when the @boardname@ starts.
 
 ```blocks
+//@highlight
 basic.showString("LOVE METER")
 input.onPinPressed(TouchPin.P0, function() {
     basic.showNumber(randint(0, 100))
@@ -42,6 +44,10 @@ input.onPinPressed(TouchPin.P0, function() {
 ## Step 5
 
 Click ``|Download|`` to transfer your code in your @boardname@. Hold the **GND** pin with one hand and press pin **0** with the other hand to trigger this code.
+
+```validation.global
+# BlocksExistValidator
+```
 
 ```template
 input.onPinPressed(TouchPin.P0, function() {})

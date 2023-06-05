@@ -175,7 +175,7 @@ basic.forever(function () {
 })
 ```
 
-## 11. Setting variables
+## Setting variables
 
 Notice how you have **three** blocks from the ``||led:Led||`` category. All three have ``||led:x||`` ``[0]`` and ``||led:y||`` ``[0]`` coordinates. In these **two** steps, we will set it so that every ``||led:x||`` is followed by the ``||variables:col||`` variable and every ``||led:y||`` is followed by the ``||variables:row||`` variable.  
 ► From ``||variables:Variables||``, get three copies of ``||variables:col||``, and use them to **replace the ``x`` values** in the following three blocks:  
@@ -202,7 +202,7 @@ basic.forever(function () {
 })
 ```
 
-## 12. Moving LEDs
+## Moving LEDs
 
 Right now, we are unplotting and replotting in the same spot. What we want to do  is move the lights we're turning back on just a smidge to the right every time until there's nothing left on the grid.
 
@@ -229,7 +229,7 @@ basic.forever(function () {
 })
 ```
 
-## 13. Testing in the simulator
+## Testing in the simulator
 
 Check out the simulator!
 
@@ -254,4 +254,8 @@ basic.forever(function () {
         }
     }
 })
+```
+
+```validation.global
+# BlocksExistValidator
 ```

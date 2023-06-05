@@ -193,6 +193,10 @@ Double-click on MY_DATA to open it in a web browser and you'll see a table with 
 
 Does your home have a good sunbathing spot for Lychee? Compare the light and temperature levels you record for different areas around your house! The sunniest and warmest spots will likely be her favorite ☀️😻
 
+```template
+//
+```
+
 ```package
 datalogger
 ```

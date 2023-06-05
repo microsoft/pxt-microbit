@@ -13,6 +13,7 @@ Let's learn how to use a clap 👏 to switch your @boardname@'s lights on and of
 ► From the ``||input:Input||`` category, find the ``||input:on [loud] sound||`` container and add it to your workspace.
 
 ```blocks
+// @highlight
 input.onSound(DetectedSound.Loud, function () {
 
 })
@@ -158,4 +159,12 @@ input.onSound(DetectedSound.Loud, function () {
     }
 })
 input.setSoundThreshold(SoundThreshold.Loud, 150)
+```
+
+```validation.global
+# BlocksExistValidator
+```
+
+```template
+//
 ```

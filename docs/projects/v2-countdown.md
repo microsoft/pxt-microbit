@@ -117,3 +117,11 @@ for (let index = 0; index <= 2; index++) {
 music.playTone(392, music.beat(BeatFraction.Whole))
 basic.showString("GO!")
 ```
+
+```validation.global
+# BlocksExistValidator
+```
+
+```template
+//
+```

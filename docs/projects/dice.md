@@ -25,6 +25,7 @@ Get a ``||basic:show number||`` block and place it inside the ``||input:on shake
 
 ```blocks
 input.onGesture(Gesture.Shake, function() {
+    //@highlight
     basic.showNumber(0)
 })
 ```
@@ -35,6 +36,7 @@ Put a ``||Math:pick random||`` block in the ``||basic:show number||`` block to p
 
 ```blocks
 input.onGesture(Gesture.Shake, function() {
+    //@highlight
     basic.showNumber(randint(0, 10))
 })
 ```
@@ -45,6 +47,7 @@ A typical dice shows values from `1` to `6`. So, in ``||Math:pick random||``, do
 
 ```blocks
 input.onGesture(Gesture.Shake, function() {
+    //@highlight
     basic.showNumber(randint(1, 6))
 })
 ```
@@ -56,6 +59,10 @@ Use the simulator to try out your code. Does it show the number you expected?
 ## Step 6
 
 If you have a @boardname@ connected, click ``|Download|`` and transfer your code to the @boardname@!
+
+```validation.global
+# BlocksExistValidator
+```
 
 ```template
 input.onGesture(Gesture.Shake, function() {})
