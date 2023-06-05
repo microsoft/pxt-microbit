@@ -565,7 +565,9 @@
             "connectDeviceImage": "/static/download/connect-microbit.gif",
             "selectDeviceImage": "/static/download/selecting-microbit.gif",
             "connectionSuccessImage": "/static/download/successfully-paired.png",
-            "incompatibleHardwareImage": "/static/download/incompatible.png"
+            "incompatibleHardwareImage": "/static/download/incompatible.png",
+            "usbDeviceForgottenImage": "/static/download/device-forgotten.gif",
+            "browserUnpairImage": "/static/download/browser-unpair-image.gif"
         },
         "winAppDeprImage": "/static/winapp.PNG",
         "showWinAppDeprBanner": false,
