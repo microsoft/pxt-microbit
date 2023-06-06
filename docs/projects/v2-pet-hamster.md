@@ -26,6 +26,7 @@ Pressing Cyrus's logo tickles them!
 ```blocks
 //@highlight
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
+    //@highlight
     basic.showIcon(IconNames.Happy)
 })
 ```
@@ -52,6 +53,7 @@ Whenever Cyrus is shaken, they get sad 🙁
 ```blocks
 //@highlight
 input.onGesture(Gesture.Shake, function () {
+    //@highlight
     basic.showIcon(IconNames.Sad)
 })
 ```
