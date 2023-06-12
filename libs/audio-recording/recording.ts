@@ -163,8 +163,17 @@ namespace record {
     //% parts="microphone"
     //% weight=30
     export function setMicGain(gain: AudioLevels): void {
-        setMicrophoneGain(gain);
-        return
+        switch (gain) {
+            case AudioLevels.Low:
+                setMicrophoneGain(0.079);
+                break;
+            case AudioLevels.Medium:
+                setMicrophoneGain(0.2);
+                break;
+            case AudioLevels.High:
+                setMicrophoneGain(1.0);
+                break;
+        }
     }
 
     /**
