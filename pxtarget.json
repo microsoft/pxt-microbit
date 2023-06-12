@@ -578,7 +578,8 @@
         "tutorialSimSidebarLayout": true,
         "preferWebUSBDownload": true,
         "hideReplaceMyCode": true,
-        "matchWebUSBDeviceInSim": true
+        "matchWebUSBDeviceInSim": true,
+        "condenseProfile": true
     },
     "queryVariants": {
         "hidemenu": {
