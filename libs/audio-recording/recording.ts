@@ -72,8 +72,8 @@ namespace record {
         Recording,
         //% block="stopped"
         Stopped,
-        //% block="full"
-        BufferFull,
+        //% block="empty"
+        BufferEmpty,
     }
 
     export enum BlockingState {
@@ -150,8 +150,8 @@ namespace record {
                 return audioIsRecording();
             case AudioStatus.Stopped:
                 return audioIsStopped();
-            case AudioStatus.BufferFull:
-                return _recordingPresent;
+            case AudioStatus.BufferEmpty:
+                return !_recordingPresent;
         }
     }
 
