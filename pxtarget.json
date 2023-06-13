@@ -579,7 +579,8 @@
         "preferWebUSBDownload": true,
         "hideReplaceMyCode": true,
         "matchWebUSBDeviceInSim": true,
-        "condenseProfile": true
+        "condenseProfile": true,
+        "cloudProfileIcon": "/static/profile/microbit-cloud.png"
     },
     "queryVariants": {
         "hidemenu": {
