@@ -72,8 +72,8 @@ namespace record {
         Recording,
         //% block="stopped"
         Stopped,
-        //% block="full"
-        BufferFull,
+        //% block="empty"
+        BufferEmpty,
     }
 
     export enum BlockingState {
@@ -150,8 +150,8 @@ namespace record {
                 return audioIsRecording();
             case AudioStatus.Stopped:
                 return audioIsStopped();
-            case AudioStatus.BufferFull:
-                return _recordingPresent;
+            case AudioStatus.BufferEmpty:
+                return !_recordingPresent;
         }
     }
 
@@ -163,8 +163,17 @@ namespace record {
     //% parts="microphone"
     //% weight=30
     export function setMicGain(gain: AudioLevels): void {
-        setMicrophoneGain(gain);
-        return
+        switch (gain) {
+            case AudioLevels.Low:
+                setMicrophoneGain(0.079);
+                break;
+            case AudioLevels.Medium:
+                setMicrophoneGain(0.2);
+                break;
+            case AudioLevels.High:
+                setMicrophoneGain(1.0);
+                break;
+        }
     }
 
     /**

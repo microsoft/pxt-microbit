@@ -12,7 +12,7 @@
   "record.AudioSampleRateScope.Everything|block": "everything",
   "record.AudioSampleRateScope.Playback|block": "playback",
   "record.AudioSampleRateScope.Recording|block": "recording",
-  "record.AudioStatus.BufferFull|block": "full",
+  "record.AudioStatus.BufferEmpty|block": "empty",
   "record.AudioStatus.Playing|block": "playing",
   "record.AudioStatus.Recording|block": "recording",
   "record.AudioStatus.Stopped|block": "stopped",

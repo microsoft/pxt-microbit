@@ -90,18 +90,8 @@ void erase() {
  * Set sensitity of the microphone input
  */
 //%
-void setMicrophoneGain(int gain) {
-    switch (gain) {
-    case 1:
-        uBit.audio.processor->setGain(0.079f);
-        break;
-    case 2:
-        uBit.audio.processor->setGain(0.2f);
-        break;
-    case 3:
-        uBit.audio.processor->setGain(0.4f);
-        break;
-    }
+void setMicrophoneGain(float gain) {
+    uBit.audio.processor->setGain(gain);
 }
 
 /**
