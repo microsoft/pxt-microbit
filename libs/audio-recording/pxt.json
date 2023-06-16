@@ -2,8 +2,7 @@
     "name": "audio-recording",
     "description": "Record sound clips. micro:bit (V2) only",
     "dependencies": {
-        "core": "file:../core",
-        "microphone": "file:../microphone"
+        "core": "file:../core"
     },
     "weight": 10,
     "files": [
