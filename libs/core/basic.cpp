@@ -60,7 +60,7 @@ namespace basic {
     /**
      * Shows a sequence of LED screens as an animation.
      * @param leds pattern of LEDs to turn on/off
-     * @param interval time in milliseconds between each redraw
+     * @param interval time in milliseconds between each redraw.
      */
     //% help=basic/show-animation imageLiteral=1 async
     //% parts="ledmatrix"
