@@ -307,6 +307,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
     "name": "gator:UV UV Light sensor",
     "url":"/pkg/sparkfun/pxt-gator-UV",
     "cardType": "package"
+}, {
+    "name": "Sensirion SEN55 (Air Quality) Sensor",
+    "url":"/pkg/bsiever/pxt-sen55",
+    "cardType": "package"
 }]
 ```
 
