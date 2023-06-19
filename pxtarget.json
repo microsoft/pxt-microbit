@@ -196,7 +196,7 @@
                 "githubCorePackage": "lancaster-university/microbit-v2-samples",
                 "gittag": "v0.2.12",
                 "serviceId": "mbcodal2",
-                "dockerImage": "pext/yotta:gcc5",
+                "dockerImage": "pext/yotta:latest",
                 "yottaConfigCompatibility": true
             }
         }
