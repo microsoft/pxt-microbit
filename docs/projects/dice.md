@@ -2,12 +2,12 @@
 
 ## Introduction @unplugged
 
-Let's turn the @boardname@ into a dice!
+Let's turn the @boardname@ into dice!
 (Want to learn how the accelerometer works? [Watch this video](https://youtu.be/byngcwjO51U)).
 
 ![A microbit dice](/static/mb/projects/dice.png)
 
-## Step 1
+## {Step 1}
 
 We need 3 pieces of code: one to detect a throw (shake), another to pick a random number, and then one to show the number.
 
