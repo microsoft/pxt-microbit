@@ -784,7 +784,8 @@
             "cytrontechnologies/pxt-rekabit-rbt-project-kit": { "tags": [ "Science" ] },
             "cytrontechnologies/pxt-motionbit": { "tags": [ "Robotics" ] },
             "joy-it/pxt-rb-joypi-advanced": { "tags": [ "Science" ] },
-            "bsiever/pxt-sen55": { "tags": [ "Science" ] }
+            "bsiever/pxt-sen55": { "tags": [ "Science" ] },
+            "climate-action-kits/pxt-fwd-edu": { "tags": [ "Science" ] }
         },
         "upgrades": {
             "tinkertanker/pxt-iot-environment-kit": "min:v4.2.1",

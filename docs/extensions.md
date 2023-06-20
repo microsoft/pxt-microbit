@@ -431,6 +431,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
   "name": "Joy-IT Joy-Pi Advanced",
   "url":"/pkg/joy-it/pxt-RB-JoyPi-Advanced",
   "cardType": "package"
+}, {
+  "name": "FWD Edu Climate Action Kit Gen. 2 Kit",
+  "url":"/pkg/climate-action-kits/pxt-fwd-edu",
+  "cardType": "package"
 }]
 ```
 
