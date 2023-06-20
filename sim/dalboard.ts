@@ -173,6 +173,12 @@ namespace pxsim {
             document.body.innerHTML = ""; // clear children
             document.body.appendChild(this.view = this.viewHost.getView());
 
+            if (shouldShowMute()) {
+                document.body.appendChild(createMuteButton());
+                AudioContextManager.mute(true);
+                setParentMuteState("disabled");
+            }
+
             if (msg.theme === "mbcodal") {
                 this.ensureHardwareVersion(2);
             }
