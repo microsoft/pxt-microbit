@@ -1,6 +1,6 @@
 # Dice
 
-## Introduction @unplugged
+## {Introduction @unplugged}
 
 Let's turn the @boardname@ into dice!
 (Want to learn how the accelerometer works? [Watch this video](https://youtu.be/byngcwjO51U)).
@@ -19,7 +19,7 @@ input.onGesture(Gesture.Shake, function() {
 })
 ```
 
-## Step 2
+## {Step 2}
 
 Get a ``||basic:show number||`` block and place it inside the ``||input:on shake||`` block to display a number.
 
@@ -29,7 +29,7 @@ input.onGesture(Gesture.Shake, function() {
 })
 ```
 
-## Step 3
+## {Step 3}
 
 Put a ``||Math:pick random||`` block in the ``||basic:show number||`` block to pick a random number.
 
@@ -39,7 +39,7 @@ input.onGesture(Gesture.Shake, function() {
 })
 ```
 
-## Step 4
+## {Step 4}
 
 A typical dice shows values from `1` to `6`. So, in ``||Math:pick random||``, don't forget to choose the right minimum and maximum values!
 
@@ -49,11 +49,11 @@ input.onGesture(Gesture.Shake, function() {
 })
 ```
 
-## Step 5
+## {Step 5}
 
 Use the simulator to try out your code. Does it show the number you expected?
 
-## Step 6
+## {Step 6}
 
 If you have a @boardname@ connected, click ``|Download|`` and transfer your code to the @boardname@!
 
