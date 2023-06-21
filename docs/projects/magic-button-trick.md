@@ -96,8 +96,6 @@ input.onButtonPressed(Button.B, () => {
 
 Now you just need to program your own @boardname@ and practice the trick a few times before performing for your friends. Try asking your friends to click the buttons after you have switched the labels and the trick won't work for them because they don't have a hidden magnet in their hand!
 
-Remember, that as we are using @boardname@'s compass, it will need to be [calibrated](https://support.microbit.org/support/solutions/articles/19000008874-calibrating-the-micro-bit-compass-what-does-it-mean-when-the-micro-bit-says-draw-a-circle-or-tilt) each time we flash the program or run it for the first time.
-
 ## About the authors
 
 This project was contributed by Brian and Jasmine Norman, aka [@MicroMonstersUK](https://twitter.com/MicroMonstersUK). You can checkout their [MicroMonsters](https://www.youtube.com/channel/UCK2DviDexh_Er2QYZerZyZQ) tutorials channel on YouTube for more projects.
