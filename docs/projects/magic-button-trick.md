@@ -2,7 +2,7 @@
 
 ## ~avatar avatar
 
-Build a magic trick that uses the @boardname@'s compass to detect a nearby magnet!
+Build a magic trick that uses the @boardname@'s magnetometer to detect a nearby magnet!
 
 ## ~
 
@@ -33,7 +33,7 @@ input.onButtonPressed(Button.B, () => {
 
 ## Step 2: Measuring magnetic force
 
-We will use the @boardname@'s compass to detect the magnet. A compass tells us which direction we are pointing to by detecting the Earth's magnetic field, but it can also detect any other magnet nearby. We will use that to check if our magnet is next to the @boardname@ by using the ``||input:magnetic force||`` block found in the **Input** menu's **... More** section. Since we only want to measure the strength we change the drop down to select `strength`:
+We will use the @boardname@'s magnetometer to detect the magnet. We will use it to check if our magnet is next to the @boardname@ by using the ``||input:magnetic force||`` block found in the **Input** menu's **... More** section. Since we only want to measure the strength we change the drop down to select `strength`:
 
 ```block
 let force = input.magneticForce(Dimension.Strength)
