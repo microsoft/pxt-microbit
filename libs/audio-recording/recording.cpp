@@ -22,17 +22,24 @@
 
 #include "pxt.h"
 #include "MicroBit.h"
+
+#if MICROBIT_CODAL
 #include "StreamRecording.h"
+#endif
 
 using namespace pxt;
 
 namespace record {
 
+#if MICROBIT_CODAL
 static StreamRecording *recording = NULL;
 static SplitterChannel *splitterChannel = NULL;
 static MixerChannel *channel = NULL;
+#endif
+
 
 void checkEnv(int sampleRate = -1) {
+#if MICROBIT_CODAL
     if (recording == NULL) {
         if (sampleRate == -1)
             sampleRate = 11000;
@@ -48,6 +55,7 @@ void checkEnv(int sampleRate = -1) {
         uBit.audio.mixer.setVolume(1000);
         uBit.audio.setSpeakerEnabled(true);
     }
+#endif
 }
 
 /**
@@ -55,8 +63,12 @@ void checkEnv(int sampleRate = -1) {
  */
 //% promise
 void record() {
+#if MICROBIT_CODAL
     checkEnv();
     recording->recordAsync();
+#else
+    target_panic(PANIC_VARIANT_NOT_SUPPORTED);
+#endif
 }
 
 /**
@@ -64,8 +76,12 @@ void record() {
  */
 //%
 void play() {
+#if MICROBIT_CODAL
     checkEnv();
     recording->playAsync();
+#else
+    target_panic(PANIC_VARIANT_NOT_SUPPORTED);
+#endif
 }
 
 /**
@@ -73,8 +89,12 @@ void play() {
  */
 //%
 void stop() {
+#if MICROBIT_CODAL
     checkEnv();
     recording->stop();
+#else
+    target_panic(PANIC_VARIANT_NOT_SUPPORTED);
+#endif
 }
 
 /**
@@ -82,8 +102,10 @@ void stop() {
  */
 //%
 void erase() {
+#if MICROBIT_CODAL
     checkEnv();
     recording->erase();
+#endif
 }
 
 /**
@@ -91,7 +113,9 @@ void erase() {
  */
 //%
 void setMicrophoneGain(float gain) {
+#if MICROBIT_CODAL
     uBit.audio.processor->setGain(gain);
+#endif
 }
 
 /**
@@ -99,7 +123,12 @@ void setMicrophoneGain(float gain) {
  */
 //%
 int audioDuration(int sampleRate) {
+#if MICROBIT_CODAL
     return recording->duration(sampleRate);
+#else
+    target_panic(PANIC_VARIANT_NOT_SUPPORTED);
+    return MICROBIT_NOT_SUPPORTED;
+#endif
 }
 
 /**
@@ -107,7 +136,11 @@ int audioDuration(int sampleRate) {
  */
 //%
 bool audioIsPlaying() {
+#if MICROBIT_CODAL
     return recording->isPlaying();
+#else
+    return false;
+#endif
 }
 
 /**
@@ -115,7 +148,11 @@ bool audioIsPlaying() {
  */
 //%
 bool audioIsRecording() {
+#if MICROBIT_CODAL
     return recording->isRecording();
+#else
+    return false;
+#endif
 }
 
 /**
@@ -123,7 +160,11 @@ bool audioIsRecording() {
  */
 //%
 bool audioIsStopped() {
+#if MICROBIT_CODAL
     return recording->isStopped();
+#else
+    return false;
+#endif
 }
 
 /**
@@ -131,8 +172,12 @@ bool audioIsStopped() {
  */
 //%
 void setInputSampleRate(int sampleRate) {
+#if MICROBIT_CODAL
     checkEnv();
     splitterChannel->requestSampleRate(sampleRate);
+#else
+    target_panic(PANIC_VARIANT_NOT_SUPPORTED);
+#endif
 }
 
 
@@ -141,11 +186,15 @@ void setInputSampleRate(int sampleRate) {
  */
 //%
 void setOutputSampleRate(int sampleRate) {
+#if MICROBIT_CODAL
     if (recording == NULL) {
         checkEnv(sampleRate);
     } else {
         channel->setSampleRate(sampleRate);
     }
+#else
+    target_panic(PANIC_VARIANT_NOT_SUPPORTED);
+#endif
 }
 
 /**
@@ -153,8 +202,12 @@ void setOutputSampleRate(int sampleRate) {
 */
 //%
 void setBothSamples(int sampleRate) {
+#if MICROBIT_CODAL
     setOutputSampleRate(sampleRate);
     splitterChannel->requestSampleRate(sampleRate);
+#else
+    target_panic(PANIC_VARIANT_NOT_SUPPORTED);
+#endif
 }
 
 } // namespace record

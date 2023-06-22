@@ -1,12 +1,12 @@
 # Cat Napping
 
-## Introduction @unplugged
+## {Introduction @unplugged}
 
 Lychee the cat loves the sun and wants to know if your home has a good sunbathing spot. Are you up for the challenge?
 
 ![Cat Tanning banner message, an image of a cat](/static/mb/projects/cat-napping/1_lychee.png)
 
-## Setting logging to false on start
+## {Setting logging to false on start}
 
 First, we want to make sure we know when our micro:bit is collecting data. To do this, let's create a [__*boolean*__](#boolean "something that is only true or false") [__*variable*__](#variable "a holder for information that may change") and use it to track when the @boardname@ is logging data. We'll start with the logging variable set to false.
 
@@ -19,7 +19,7 @@ let logging = false
 logging = false
 ```
 
-## Toggle logging on A press
+## {Toggle logging on A press}
 
 Let's give Lychee some control over when she wants to start and stop logging data on the @boardname@.
 
@@ -35,7 +35,7 @@ input.onButtonPressed(Button.A, function () {
 })
 ```
 
-## Visual logging indicators
+## {Visual logging indicators}
 
 It would help to know when the @boardname@ is logging data and when it isn't. For this step, we will be building out a visual indicator using an [__*if then / else*__](#ifthenelse "runs some code if a boolean condition is true and different code if the condition is false") statement.
 
@@ -52,7 +52,7 @@ input.onButtonPressed(Button.A, function () {
 })
 ```
 
-## Set the indicator icon
+## {Set the indicator icon}
 
 ► Let's display an image when the @boardname@ is logging data. From the ``||basic:Basic||`` category, grab a ``||basic:show icon []||`` block and snap it into the empty **top container** of your ``||logic:if then / else||`` statement.  
 ► Set it to show the "target" icon (it looks like an empty sun - scroll down to find it!).  This will show whenever your @boardname@ is collecting data.  
@@ -69,7 +69,7 @@ input.onButtonPressed(Button.A, function () {
 })
 ```
 
-## Auditory logging indicators
+## {Auditory logging indicators}
 
 Let's now add an auditory indicator that your @boardname@ is logging data!
 
@@ -88,7 +88,7 @@ input.onButtonPressed(Button.A, function () {
 })
 ```
 
-## Logging off indicator
+## {Logging off indicator}
 
 ► Let's clear the board when the @boardname@ is not logging data. From the ``||basic:Basic||`` category, grab a ``||basic:clear screen||`` block and snap it into the empty **bottom container** of your ``||logic:if then / else||`` statement.
 
@@ -105,7 +105,7 @@ input.onButtonPressed(Button.A, function () {
 })
 ```
 
-## Time interval for data logging
+## {Time interval for data logging}
 
 Let's set up the data logging for Lychee! In order to get Lychee a good amount of data without running out of memory, we should collect one data point for her every minute.
 
@@ -118,7 +118,7 @@ loops.everyInterval(60000, function () {
 })
 ```
 
-## Setting up a logging variable
+## {Setting up a logging variable}
 
 Now, let's use an [__*if then*__](#ifthen "runs some code if a boolean condition is true") statement to track when the @boardname@ is logging data.
 
@@ -133,7 +133,7 @@ loops.everyInterval(60000, function () {
 })
 ```
 
-## Setting up logging - Part 1
+## {Setting up logging - Part 1}
 
 Lychee loves her sun spots because they provide a nice, sunny and warm place to nap. So, we'll need to measure the **temperature** and **light** in different places around the house.
 
@@ -153,7 +153,7 @@ loops.everyInterval(60000, function () {
 })
 ```
 
-## Setting up logging - Part 2
+## {Setting up logging - Part 2}
 
 ► On the right of the ``||input:temperature (°C)||`` input that you just snapped in, there is a ➕ button. Click on it. You should now see a new row that says ``||datalogger:column [""] value [0]||``.  
 ► Click on the empty ``""`` after the word ``column`` and type in "``light``".  
@@ -172,14 +172,14 @@ loops.everyInterval(60000, function () {
 })
 ```
 
-## Time to log data! @unplugged
+## {Time to log data! @unplugged}
 
 You did it! If you have a @boardname@ V2 (the one with the **shiny gold** logo at the top), download this code and try it out!
 
 ► Find a sun spot in your house and press the ``A`` button to start logging data - your display should show an icon and play a sound to indicate that you are logging data.  
 ► After some time (we recommend at least an hour), press the ``A`` button again to stop logging data - your display should clear to indicate that you are not logging data.
 
-## Reviewing your data @unplugged
+## {Reviewing your data @unplugged}
 
 Now that you have logged some data, plug your @boardname@ into a laptop or desktop computer. The @boardname@ will appear like a USB drive called MICROBIT. Look in there and you'll see a file called MY_DATA:
 
@@ -189,7 +189,7 @@ Double-click on MY_DATA to open it in a web browser and you'll see a table with 
 
 ![Image of sample data file](/static/mb/projects/cat-napping/11_datafile.png)
 
-## Lychee's preferences @unplugged
+## {Lychee's preferences @unplugged}
 
 Does your home have a good sunbathing spot for Lychee? Compare the light and temperature levels you record for different areas around your house! The sunniest and warmest spots will likely be her favorite ☀️😻
 

@@ -1,6 +1,6 @@
 # Clap Lights
 
-## Introduction @unplugged
+## {Introduction @unplugged}
 
 The new @boardname@s have a microphone to help them detect sound 🎤
 
@@ -8,7 +8,7 @@ Let's learn how to use a clap 👏 to switch your @boardname@'s lights on and of
 
 ![Clap lights banner message](/static/mb/projects/clap-lights.png)
 
-## Setting up the sound input
+## {Setting up the sound input}
 
 ► From the ``||input:Input||`` category, find the ``||input:on [loud] sound||`` container and add it to your workspace.
 
@@ -18,13 +18,13 @@ input.onSound(DetectedSound.Loud, function () {
 })
 ```
 
-## Creating a lightsOn variable
+## {Creating a lightsOn variable}
 
 Let's begin by creating a [__*variable*__](#variable "a holder for information that may change") to keep track of whether the @boardname@'s lights are on or off.
 
 ► In the ``||variables:Variables||`` category, click on ``Make a Variable...`` and make a variable named ``lightsOn``.
 
-## Displaying LEDs part 1
+## {Displaying LEDs part 1}
 
 In this step, we'll be using an [__*if then / else*__](#ifthenelse "runs some code if a Boolean condition is true and different code if the condition is false") statement.
 
@@ -43,7 +43,7 @@ input.onSound(DetectedSound.Loud, function () {
 })
 ```
 
-## Displaying LEDs part 2
+## {Displaying LEDs part 2}
 
 ► From ``||basic:Basic||``, grab ``||basic:show leds||`` and snap it into the **top container** of your ``||logic:if then / else||`` statement.  
 ► Set the lights to a pattern you like!  
@@ -66,7 +66,7 @@ input.onSound(DetectedSound.Loud, function () {
 })
 ```
 
-## Clearing the screen
+## {Clearing the screen}
 
 ► From ``||basic:Basic||``, find ``||basic:clear screen||`` and snap it into the **bottom container** of your ``||logic:if then / else||`` section.  
 💡 This will turn the display off if ``lightsOn`` is **not** ``true``.
@@ -89,7 +89,7 @@ input.onSound(DetectedSound.Loud, function () {
 })
 ```
 
-## Setting the lightsOn variable
+## {Setting the lightsOn variable}
 
 Just like we'd toggle a light switch, each time we clap, we want to **flip** the variable ``lightsOn`` to the **opposite** of what it was before.
 
@@ -116,13 +116,13 @@ input.onSound(DetectedSound.Loud, function () {
 })
 ```
 
-## Testing in the simulator
+## {Testing in the simulator}
 
 ► Check out the simulator!  
 ► Click on the pink slider bar beneath the microphone icon and drag it up and down.  
 💡 Right now, your @boardname@ thinks that anything above 128 is loud. Every time the sound goes > 128, your lights should switch on/off.
 
-## Set loud sound threshold
+## {Set loud sound threshold}
 
 Your @boardname@ might detect sounds when you don't want it to. Setting a [__*sound threshold*__](#soundThreshold "a number for how loud a sound needs to be to trigger an event. 0 = silence to 255 = maximum noise") could help 🔉🔊
 
@@ -135,7 +135,7 @@ Your @boardname@ might detect sounds when you don't want it to. Setting a [__*so
 input.setSoundThreshold(SoundThreshold.Loud, 150)
 ```
 
-## Testing, round 2
+## {Testing, round 2}
 
 Don't forget to test your code in the simulator!
 

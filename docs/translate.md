@@ -26,7 +26,7 @@ There a a few files that are specific to the MakeCode editor itself. These conta
 
 | File | Description |
 | - | - |
-| [strings.json](https://crowdin.com/translate/kindscript/32/en-en) | Common strings that shared by all MakeCode editors<br><br/>**Note**: This file is located at the MakeCode project's root folder<br/>rather than under **microbit** |
+| [strings.json](https://crowdin.com/translate/kindscript/32/en-en) | Common strings that shared by all MakeCode editors. **Note**: This file is located at the MakeCode project's root folder rather than under **microbit** |
 | [target-strings.json](https://crowdin.com/translate/kindscript/1922/en-en) | Strings custom to the @boardname@ editor interface |
 | [sim-strings.json](https://crowdin.com/translate/makecode/1923/en-en) | Strings for the @boardname@ simulator |
 <br/>
@@ -41,8 +41,8 @@ The strings for the programming code blocks all have names in the form of '_name
 
 | File | Description |
 | - | - |
-| [core-jsdoc-strings.json](https://crowdin.com/translate/kindscript/66/en-en) |  Description text for code elements of the [basic](/reference/basic) and core [blocks](/blocks)<br/><br/>**Note**: this file contains strings for the fundamental set of coding<br/>blocks and should be prioritized over the other strings files for blocks |
-| [core-strings.json](https://crowdin.com/translate/kindscript/65/en-en) | Display text for the [basic](/reference/basic) and core [blocks](/reference/blocks)<br/><br/>**Note**: this file contains strings for the fundamental set of coding<br/>blocks and should be prioritized over the other strings files for blocks |
+| [core-jsdoc-strings.json](https://crowdin.com/translate/kindscript/66/en-en) |  Description text for code elements of the [basic](/reference/basic) and core [blocks](/blocks). **Note**: this file contains strings for the fundamental set of coding blocks and should be prioritized over the other strings files for blocks |
+| [core-strings.json](https://crowdin.com/translate/kindscript/65/en-en) | Display text for the [basic](/reference/basic) and core [blocks](/reference/blocks). **Note**: this file contains strings for the fundamental set of coding blocks and should be prioritized over the other strings files for blocks |
 | [radio-jsdoc-strings.json](https://crowdin.com/translate/kindscript/64/en-en) | Description text for code elements of the [radio](/reference/radio) blocks |
 | [radio-strings.json](https://crowdin.com/translate/kindscript/63/en-en) | Display text for the [radio](/reference/radio) blocks |
 | [radio-broadcast-jsdoc-strings.json](https://crowdin.com/translate/kindscript/5032/en-en) |  Description text for code elements of the radio broadcast blocks |
@@ -78,7 +78,7 @@ Document pages contain the text for any markdown page available on the MakeCode 
 | File | Description |
 | - | - |
 | [docs](https://crowdin.com/translate/kindscript/en#/microbit/docs) | Documentation pages for projects, courses, lessons, and code block reference |
-| [libs](https://crowdin.com/translate/kindscript/en#/microbit/libs)  | Documentation pages for code block reference and other information related to <br/> built-in extensions like _servo_ and _datalogger_ |
+| [libs](https://crowdin.com/translate/kindscript/en#/microbit/libs)  | Documentation pages for code block reference and other information related to built-in extensions like _servo_ and _datalogger_ |
 <br/>
 
 Here's an example of a translated document page for a course lesson:

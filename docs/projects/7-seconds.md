@@ -1,6 +1,6 @@
 # 7 seconds game
 
-## Introduction @unplugged
+## {Introduction @unplugged}
 
 The goal of this game is press a button after **exactly** 7 seconds!
 
@@ -8,7 +8,7 @@ The goal of this game is press a button after **exactly** 7 seconds!
 
 This game is inspired from the [flipping panckakes game](https://www.elecfreaks.com/blog/post/flipping-pancakes-microbit-game.html).
 
-## Step 1
+## {Step 1}
 
 The player starts the timer by pressing button **A**. We'll run the code run code when ``||input:button A is pressed||``.
 
@@ -18,7 +18,7 @@ input.onButtonPressed(Button.A, function () {
 })
 ```
 
-## Step 2
+## {Step 2}
 
 We need to remember the time when the button was pressed so that we can compute the elapsed time later on.
 Add code to store the ``||input:running time||`` in a ``||variables:start||`` variable.
@@ -31,7 +31,7 @@ input.onButtonPressed(Button.A, function () {
 })
 ```
 
-## Step 3
+## {Step 3}
 
 Show something on the screen so that the user knows that the timer has started...
 
@@ -44,7 +44,7 @@ input.onButtonPressed(Button.A, function () {
 })
 ```
 
-## Step 4
+## {Step 4}
 
 The player stops the timer by pressing button **B**. Add the code to run code when ``||input:button B is pressed||``.
 
@@ -54,7 +54,7 @@ input.onButtonPressed(Button.B, function () {
 })
 ```
 
-## Step 5
+## {Step 5}
 
 Compute the elapsed time as ``||input:running time||`` ``||math:minus||`` ``||variables:start||`` and store it into a new variable ``||variables:elapsed||``.
 
@@ -67,7 +67,7 @@ input.onButtonPressed(Button.B, function () {
 })
 ```
 
-## Step 6
+## {Step 6}
 
 Compute the ``||variables:score||`` of the game as the ``||math:absolute value||`` of the ``||math:difference||`` of ``||variables:elapsed||`` time from 7 seconds, which is 7000 milliseconds.
 
@@ -82,7 +82,7 @@ input.onButtonPressed(Button.B, function () {
 })
 ```
 
-## Step 7
+## {Step 7}
 
 Display the score on the screen and your game is ready!
 

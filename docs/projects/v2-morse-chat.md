@@ -1,6 +1,6 @@
 # Morse Chat
 
-## Introducing Sky @unplugged
+## {Introducing Sky @unplugged}
 
 🐷 Meet Sky, the pig! Sky can only communicate using [__*morse code*__](#morsecode "an alphabet composed of dots (short signals) and dashes (long signals)").
 
@@ -8,7 +8,7 @@ Luckily, you can use your @boardname@ with sound to talk to Sky 👋
 
 ![Morse chat banner message](/static/mb/projects/morse-chat.png)
 
-## Setup
+## {Setup}
 
 ► From the ``||input:Input||`` category in the toolbox, drag an ``||input:on logo [pressed]||`` container into to your workspace.  
 ► From the ``||radio:Radio||`` category, get ``||radio:radio send number [0]||`` and snap it into your empty ``||input:on logo [pressed]||`` container.
@@ -19,7 +19,7 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
 })
 ```
 
-## Sending different messages pt. 1
+## {Sending different messages pt. 1}
 
 ► From ``||input:Input||``, grab **another** ``||input:on logo [pressed]||`` container and add it to your workspace.  
 💡 This container is greyed out because it matches another. Let's change that!  
@@ -34,7 +34,7 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
 })
 ```
 
-## Sending different messages pt. 2
+## {Sending different messages pt. 2}
 
 ► From the ``||radio:Radio||`` category, get a ``||radio:radio send number [0]||`` block and snap it into your **empty** ``||input:on logo [long pressed]||`` container.  
 ► Set the number to be ``1``.
@@ -49,7 +49,7 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
 })
 ```
 
-## Receiving different messages
+## {Receiving different messages}
 
 To ensure Sky gets the right message, we will use an [__*if then / else*__](#ifthenelse "runs some code if a boolean condition is true and different code if the condition is false") conditional statement.
 
@@ -68,7 +68,7 @@ radio.onReceivedNumber(function (receivedNumber) {
 })
 ```
 
-## Conditioning on the input
+## {Conditioning on the input}
 
 ► From your ``||radio:on radio received [receivedNumber]||`` container, grab the **``receivedNumber``** input and drag out a copy.  
 ► Use your copy of **``receivedNumber``** to replace the ``[0]`` on the **left side** of ``||logic:<[0] [=] [0]>||``.
@@ -84,7 +84,7 @@ radio.onReceivedNumber(function (receivedNumber) {
 })
 ```
 
-## Displaying a message pt. 1
+## {Displaying a message pt. 1}
 
 ► We want to display a dash if the logo is long pressed.  From ``||basic:Basic||``, grab ``||basic:show leds||`` and snap it into the empty **bottom container** of your ``||logic:if then / else||`` statement.  
 ► Turn on 3 LEDs in a row to be a dash: -
@@ -105,7 +105,7 @@ radio.onReceivedNumber(function (receivedNumber) {
 })
 ```
 
-## Playing a sound pt. 1
+## {Playing a sound pt. 1}
 
 ► From the ``||music:Music||`` category, grab a ``||music:play tone [Middle C] for [1 beat]||`` block and snap it at the **end** of the **bottom container** in your ``||logic:if then / else||`` statement.
 
@@ -126,7 +126,7 @@ radio.onReceivedNumber(function (receivedNumber) {
 })
 ```
 
-## Displaying a message pt. 2
+## {Displaying a message pt. 2}
 
 ► We want to display a dot if the logo is pressed. From ``||basic:Basic||``, grab another ``||basic:show leds||`` and snap it into the **top container** of your ``||logic:if then / else||`` statement.  
 ► Turn on a single LED to make a dot: .
@@ -155,7 +155,7 @@ radio.onReceivedNumber(function (receivedNumber) {
 })
 ```
 
-## Playing a sound pt. 2
+## {Playing a sound pt. 2}
 
 ► From the ``||music:Music||`` category, grab ``||music:play tone [Middle C] for [1 beat]||`` and snap it in at the **end** of the **top container** in your ``||logic:if then / else||`` statement.  
 ► Dots are shorter than dashes! Set the tone to play for ``1/4 beat``.
@@ -185,7 +185,7 @@ radio.onReceivedNumber(function (receivedNumber) {
 })
 ```
 
-## Clearing the screens
+## {Clearing the screens}
 
 ► From ``||basic:Basic||``, find ``||basic:clear screen||`` and snap it in at the **very bottom** of your ``||radio:on radio received [receivedNumber]||`` container.
 
@@ -215,7 +215,7 @@ radio.onReceivedNumber(function (receivedNumber) {
 })
 ```
 
-## Testing in the simulator - Connect!
+## {Testing in the simulator - Connect!}
 
 Test what you've created. Remember to turn your sound on!
 
@@ -253,7 +253,7 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
 })
 ```
 
-## Testing in the simulator - Send message
+## {Testing in the simulator - Send message}
 
 ► Touch the logo again to send messages to Sky 🐖  
 **Press** to send a dot.  

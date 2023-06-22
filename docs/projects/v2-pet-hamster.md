@@ -1,10 +1,10 @@
 # Pet Hamster
 
-## Introduction @unplugged
+## {Introduction @unplugged}
 
 ![Pet hamster banner message](/static/mb/projects/pet-hamster.png)
 
-## Cyrus's asleep face
+## {Cyrus's asleep face}
 
 Cyrus is a very sleepy hamster. In fact, Cyrus is almost always sleeping.
 
@@ -15,7 +15,7 @@ Cyrus is a very sleepy hamster. In fact, Cyrus is almost always sleeping.
 basic.showIcon(IconNames.Asleep)
 ```
 
-## Giggly Cyrus
+## {Giggly Cyrus}
 
 Pressing Cyrus's logo tickles them!
 
@@ -28,7 +28,7 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
 })
 ```
 
-## Tickle sound
+## {Tickle sound}
 
 ► From the ``||music:Music||`` category, get a ``||music:play sound [giggle] until done||`` and add it to the **bottom** of your ``||input:on logo [pressed]||`` container.
 
@@ -40,7 +40,7 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
 })
 ```
 
-## Dizzy Cyrus
+## {Dizzy Cyrus}
 
 Whenever Cyrus is shaken, they get sad 🙁
 
@@ -53,7 +53,7 @@ input.onGesture(Gesture.Shake, function () {
 })
 ```
 
-## Dizzy sound
+## {Dizzy sound}
 
 ► From the ``||music:Music||`` category, find the ``||music:play sound [giggle] until done||`` block and add it to the **bottom** of your ``||input:on [shake]||`` container.  
 ► Click on the **dropdown** and set it so Cyrus plays a ``||music:sad||`` sound until done.
@@ -66,7 +66,7 @@ input.onGesture(Gesture.Shake, function () {
 })
 ```
 
-## Cyrus's default face pt. 1
+## {Cyrus's default face pt. 1}
 
 Let's ensure that Cyrus will always go back to sleep after being shaken or tickled.
 
@@ -87,7 +87,7 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
 basic.showIcon(IconNames.Asleep)
 ```
 
-## Cyrus's default face pt. 2
+## {Cyrus's default face pt. 2}
 
 ► Duplicate the ``||basic:show icon[-_-]||`` block again and this time snap it in at the **very bottom** of your ``||input:on logo [pressed]||`` container.
 
@@ -106,7 +106,7 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
 basic.showIcon(IconNames.Asleep)
 ```
 
-## Testing in the simulator
+## {Testing in the simulator}
 
 Check out the simulator and make sure your speakers are on 🔊
 
