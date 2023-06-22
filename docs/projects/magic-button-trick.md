@@ -2,7 +2,7 @@
 
 ## ~avatar avatar
 
-Build a magic trick that uses the @boardname@'s compass to detect a nearby magnet!
+Build a magic trick that uses the @boardname@'s magnetometer to detect a nearby magnet!
 
 ## ~
 
@@ -33,7 +33,7 @@ input.onButtonPressed(Button.B, () => {
 
 ## Step 2: Measuring magnetic force
 
-We will use the @boardname@'s compass to detect the magnet. A compass tells us which direction we are pointing to by detecting the Earth's magnetic field, but it can also detect any other magnet nearby. We will use that to check if our magnet is next to the @boardname@ by using the ``||input:magnetic force||`` block found in the **Input** menu's **... More** section. Since we only want to measure the strength we change the drop down to select `strength`:
+We will use the @boardname@'s magnetometer to detect the magnet. We will use it to check if our magnet is next to the @boardname@ by using the ``||input:magnetic force||`` block found in the **Input** menu's **... More** section. Since we only want to measure the strength we change the drop down to select `strength`:
 
 ```block
 let force = input.magneticForce(Dimension.Strength)
@@ -95,8 +95,6 @@ input.onButtonPressed(Button.B, () => {
 ## Step 6: Practice your technique
 
 Now you just need to program your own @boardname@ and practice the trick a few times before performing for your friends. Try asking your friends to click the buttons after you have switched the labels and the trick won't work for them because they don't have a hidden magnet in their hand!
-
-Remember, that as we are using @boardname@'s compass, it will need to be [calibrated](https://support.microbit.org/support/solutions/articles/19000008874-calibrating-the-micro-bit-compass-what-does-it-mean-when-the-micro-bit-says-draw-a-circle-or-tilt) each time we flash the program or run it for the first time.
 
 ## About the authors
 

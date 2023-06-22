@@ -135,13 +135,13 @@ namespace pxsim.record {
         const b = board();
         if (!b) return;
         b.recordingState.chunks = [];
-        if (b.recordingState.audioPlaying) {
+        if (b.recordingState.recording && b.recordingState.audioPlaying) {
             b.recordingState.recording.pause();
-            b.recordingState.audioPlaying = false;
             b.recordingState.recording.currentTime = 0;
         }
         window.URL.revokeObjectURL(b.recordingState.audioURL);
         b.recordingState.recording = null;
+        b.recordingState.audioPlaying = false;
     }
 
     export function setMicrophoneGain(gain: number): void {

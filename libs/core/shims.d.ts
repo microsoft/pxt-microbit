@@ -134,8 +134,8 @@ declare namespace basic {
 
     /**
      * Draws an image on the LED screen.
-     * @param leds the pattern of LED to turn on/off
-     * @param interval time in milliseconds to pause after drawing
+     * @param leds the pattern of LED to turn on/off.
+     * @param interval time in milliseconds to pause after drawing.
      */
     //% help=basic/show-leds
     //% weight=95 blockGap=8
@@ -170,7 +170,7 @@ declare namespace basic {
     /**
      * Shows a sequence of LED screens as an animation.
      * @param leds pattern of LEDs to turn on/off
-     * @param interval time in milliseconds between each redraw
+     * @param interval time in milliseconds between each redraw.
      */
     //% help=basic/show-animation imageLiteral=1 async
     //% parts="ledmatrix" interval.defl=400 shim=basic::showAnimation
@@ -326,7 +326,7 @@ declare namespace input {
      * Get the magnetic force value in ``micro-Teslas`` (``µT``). This function is not supported in the simulator.
      * @param dimension the x, y, or z dimension, eg: Dimension.X
      */
-    //% help=input/magnetic-force weight=51
+    //% help=input/magnetic-force weight=54
     //% blockId=device_get_magnetic_force block="magnetic force (µT)|%NAME" blockGap=8
     //% parts="compass"
     //% advanced=true shim=input::magneticForce
@@ -337,7 +337,7 @@ declare namespace input {
      */
     //% help=input/calibrate-compass advanced=true
     //% blockId="input_compass_calibrate" block="calibrate compass"
-    //% weight=45 shim=input::calibrateCompass
+    //% weight=55 shim=input::calibrateCompass
     function calibrateCompass(): void;
 
     /**
