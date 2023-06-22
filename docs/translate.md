@@ -28,7 +28,7 @@ There a a few files that are specific to the MakeCode editor itself. These conta
 | - | - |
 | [strings.json](https://crowdin.com/translate/kindscript/32/en-en) | Common strings that shared by all MakeCode editors. **Note**: This file is located at the MakeCode project's root folder rather than under **microbit** |
 | [target-strings.json](https://crowdin.com/translate/kindscript/1922/en-en) | Strings custom to the @boardname@ editor interface |
-| [sim-strings.json](https://crowdin.com/translate/makecode/1923/en-en) | Strings for the @boardname@ simulator | |
+| [sim-strings.json](https://crowdin.com/translate/makecode/1923/en-en) | Strings for the @boardname@ simulator |
 <br/>
 
 This is an example of the editor with it's interface elements localized:
