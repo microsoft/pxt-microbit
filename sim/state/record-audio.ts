@@ -40,7 +40,8 @@ namespace pxsim.record {
     }
 
     function populateRecording(b: DalBoard) {
-        const blob = new Blob(b.recordingState.chunks, { type: "audio/ogg; codecs=opus" });
+        const recordingType = pxsim.isSafari() ? "audio/mp4" : "audio/ogg; codecs=opus";
+        const blob = new Blob(b.recordingState.chunks, { type: recordingType });
         b.recordingState.audioURL = window.URL.createObjectURL(blob);
         b.recordingState.recording = new Audio(b.recordingState.audioURL);
         b.recordingState.initListeners();
