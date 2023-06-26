@@ -28,6 +28,13 @@ namespace pxsim  {
 }
 namespace pxsim.record {
 
+    let _initialized = false;
+    function init() {
+        if (!_initialized) {
+            registerSimStop();
+        }
+    }
+
     function stopRecorder(b: DalBoard): void {
         b.recordingState.recorder.stop();
         b.recordingState.currentlyRecording = false;
@@ -58,6 +65,7 @@ namespace pxsim.record {
 
     export async function record(): Promise<void> {
         let b = board();
+        init();
 
         if (b.recordingState.recorder) {
             b.recordingState.recorder.stop();
@@ -82,7 +90,6 @@ namespace pxsim.record {
 
                 b.recordingState.recorder.onstop = async () => {
                     await populateRecording(b);
-                    registerSimStop(b);
                 }
 
             } catch (error) {
@@ -113,9 +120,10 @@ namespace pxsim.record {
         }
     }
 
-    function registerSimStop(b: DalBoard) {
+    function registerSimStop() {
         pxsim.AudioContextManager.onStopAll(() => {
-            if (b.recordingState.recording) {
+            const b = board();
+            if (b && b.recordingState && b.recordingState.recording) {
                 stopAudio();
                 b.recordingState.recording.removeEventListener("play", b.recordingState.handleAudioPlaying);
                 b.recordingState.recording.removeEventListener("ended", b.recordingState.handleAudioStopped);
@@ -123,27 +131,11 @@ namespace pxsim.record {
         })
     }
 
-    function createPlayPromise(b: DalBoard, recording: HTMLAudioElement): Promise<any> {
-        return new Promise((resolve, reject) => {
-            recording.play()
-            .then((_data) => {
-                resolve(null);
-            })
-            .catch((error) => {
-                // we don't care if a DOMException happens,
-                // just have the user try again
-                if (error instanceof DOMException) {
-                    resolve(null);
-                } else {
-                    reject();
-                }
-            })
-        })
-    }
-
     export function play(): void {
         const b = board();
         if (!b) return;
+        init();
+
         stopAudio();
         b.recordingState.audioPlaying = true;
         setTimeout(async () => {
