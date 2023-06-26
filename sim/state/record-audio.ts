@@ -6,7 +6,6 @@ namespace pxsim  {
         chunks: Blob[];
         audioURL: string;
         recording: HTMLAudioElement;
-        playPromise: Promise<any>;
         audioPlaying: boolean = false;
         recordTimeoutID: any;
         currentlyErasing: boolean;
@@ -147,11 +146,17 @@ namespace pxsim.record {
         if (!b) return;
         stopAudio();
         b.recordingState.audioPlaying = true;
-        setTimeout(() => {
+        setTimeout(async () => {
             if (!b.recordingState.currentlyErasing && b.recordingState.recording) {
-                b.recordingState.playPromise = createPlayPromise(b, b.recordingState.recording);
+                try {
+                    await b.recordingState.recording.play();
+                } catch (e) {
+                    if (!(e instanceof DOMException)) {
+                        throw e;
+                    }
+                }
             } else {
-                    b.recordingState.audioPlaying = false;
+                b.recordingState.audioPlaying = false;
             }
         }, 10)
     }
