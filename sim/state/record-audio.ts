@@ -32,6 +32,7 @@ namespace pxsim.record {
     function init() {
         if (!_initialized) {
             registerSimStop();
+            _initialized = true;
         }
     }
 
