@@ -130,7 +130,7 @@ namespace pxsim.record {
                 b.recordingState.recording.removeEventListener("play", b.recordingState.handleAudioPlaying);
                 b.recordingState.recording.removeEventListener("ended", b.recordingState.handleAudioStopped);
             }
-        })
+        });
     }
 
     export function play(): void {
@@ -143,6 +143,8 @@ namespace pxsim.record {
         setTimeout(async () => {
             if (!b.recordingState.currentlyErasing && b.recordingState.recording) {
                 try {
+                    const volume = AudioContextManager.isMuted() ? 0 : 1;
+                    b.recordingState.recording.volume = volume;
                     await b.recordingState.recording.play();
                 } catch (e) {
                     if (!(e instanceof DOMException)) {
