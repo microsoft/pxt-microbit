@@ -54,6 +54,14 @@
                 "identity": true,
                 "redirect": true,
                 "order": 2
+            },
+            "clever": {
+                "id": "clever",
+                "name": "Clever",
+                "icon": "/static/providers/clever-logo.png",
+                "identity": true,
+                "redirect": true,
+                "order": 3
             }
         }
     },
@@ -594,20 +602,6 @@
             },
             "appTheme": {
                 "disableBlobObjectDownload": true
-            }
-        },
-        "clever=1": {
-            "cloud": {
-                "cloudProviders": {
-                    "clever": {
-                        "id": "clever",
-                        "name": "Clever",
-                        "icon": "/static/providers/clever-logo.png",
-                        "identity": true,
-                        "redirect": true,
-                        "order": 3
-                    }
-                }
             }
         },
         "skillsMap=1": {
