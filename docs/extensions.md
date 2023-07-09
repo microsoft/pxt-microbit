@@ -689,6 +689,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
   "url":"/pkg/elecfreaks/pxt-cutebot",
   "cardType": "package"
 }, {
+  "name": "Elecfreaks Cutebot Pro",
+  "url":"/pkg/elecfreaks/pxt-cutebot-pro",
+  "cardType": "package"
+}, {
   "name": "Kittenbot RobotBit",
   "url":"/pkg/kittenbot/pxt-robotbit",
   "cardType": "package"
