@@ -924,6 +924,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 ## Utilities
 ```codecard
 [{
+  "name": "Morse Code",
+  "url": "/pkg/bsiever/pxt-morse",
+  "cardType": "package"
+}, {
   "name": "Button clicks",
   "url": "/pkg/bsiever/microbit-pxt-clicks",
   "cardType": "package"
