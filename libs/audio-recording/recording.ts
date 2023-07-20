@@ -100,6 +100,7 @@ namespace record {
     //% blockId="record_startRecording"
     //% weight=70
     //% parts="microphone"
+    //% help=record/start-recording
     export function startRecording(mode: BlockingState): void {
         music._onStopSound(stopPlayback);
         eraseRecording();
@@ -115,6 +116,7 @@ namespace record {
     //% blockId="record_playAudio"
     //% weight=60
     //% parts="microphone"
+    //% help=record/play-audio
     export function playAudio(mode: BlockingState): void {
         play();
         if (mode === BlockingState.Blocking) pauseUntil(audioNotPlaying);
@@ -142,6 +144,7 @@ namespace record {
     //% block="audio is $status"
     //% blockId="record_audioStatus"
     //% parts="microphone"
+    //% help=record/audio-status
     export function audioStatus(status: AudioStatus): boolean {
         switch (status) {
             case AudioStatus.Playing:
@@ -162,6 +165,7 @@ namespace record {
     //% blockId="record_setMicGain"
     //% parts="microphone"
     //% weight=30
+    //% help=record/set-mic-gain
     export function setMicGain(gain: AudioLevels): void {
         switch (gain) {
             case AudioLevels.Low:
@@ -187,6 +191,7 @@ namespace record {
     //% expandableArgumentMode="enabled"
     //% parts="microphone"
     //% weight=40
+    //% help=record/set-sample-rate
     export function setSampleRate(hz: number, scope?: AudioSampleRateScope): void {
         switch (scope) {
             case AudioSampleRateScope.Playback:
