@@ -67,12 +67,17 @@ void setBuiltInSpeakerEnabled(bool enabled) {
 * Check whether any sound is being played, no matter the source
 */
 //% blockId=music_sound_is_playing block="sound is playing"
-//% group="Volume"
+//% group="micro:bit (V2)"
 //% help=music/volume
 //% weight=0
 bool isSoundPlaying() {
 #if MICROBIT_CODAL
-    uBit.audio.isPlaying();
+    if (uBit.audio.mixer.getSilenceStartTime() == 0) {
+        return false;
+    } else {
+        return uBit.audio.isPlaying();
+    }
+
 #else
     target_panic(PANIC_VARIANT_NOT_SUPPORTED);
 #endif
