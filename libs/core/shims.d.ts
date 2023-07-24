@@ -681,7 +681,7 @@ declare namespace music {
      * Check whether any sound is being played, no matter the source
      */
     //% blockId=music_sound_is_playing block="sound is playing"
-    //% group="Volume"
+    //% group="micro:bit (V2)"
     //% help=music/volume
     //% weight=0 shim=music::isSoundPlaying
     function isSoundPlaying(): boolean;
