@@ -1,12 +1,12 @@
 # audio Status
 
-Check to see if an audio buffer status is true or not.
+Check to see if a certain audio status is true or not.
 
 ```sig
 record.audioStatus(record.AudioStatus.Playing)
 ```
 
-The audio buffer has several status conditions that you can check. It will return `true` or `false` to tell you if the audio is playing, recording, stopped or the buffer has nothing in it.
+The audio status is related to what operation is happening to the audio [buffer](/types/buffer) at the current moment. The audio buffer has several status conditions that you can check. It will return `true` or `false` to tell you if the audio is playing, recording, stopped, or the buffer has nothing in it.
 
 ## Parameters
 

@@ -12,11 +12,11 @@ When playing back, the sample rate sets the speed at which the sound is taken fr
 
 ## Parameters
 
-* **hz**: the [number](/types/number) of samples per second to record or play back.
+* **hz**: the [number](/types/number) of samples per second for record or playback.
 * **scope**: an optional operation scope for the sample rate.
->* `everything`: (default) both recording and playback are at the same rate.
->* `playback`: audio playback is at this sample rate.
-> * `recording`: audio recording is at this sample rate.
+>* `everything`: (default) set the same sample rate for both recording and playback.
+>* `playback`: set the sample rate only for audio playback.
+> * `recording`: set the sample rate only for audio recording.
 
 ## Example
 
