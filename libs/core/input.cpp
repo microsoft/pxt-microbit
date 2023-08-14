@@ -345,13 +345,15 @@ namespace input {
      * Get the magnetic force value in ``micro-Teslas`` (``µT``). This function is not supported in the simulator.
      * @param dimension the x, y, or z dimension, eg: Dimension.X
      */
-    //% help=input/magnetic-force weight=51
+    //% help=input/magnetic-force weight=54
     //% blockId=device_get_magnetic_force block="magnetic force (µT)|%NAME" blockGap=8
     //% parts="compass"
     //% advanced=true
     TNumber magneticForce(Dimension dimension) {
+        /* https://github.com/microsoft/pxt-microbit/issues/4995
         if (!uBit.compass.isCalibrated())
             uBit.compass.calibrate();
+        */
         double d = 0;        
         switch (dimension) {
             case Dimension::X: d = uBit.compass.getX(); break;
@@ -367,7 +369,7 @@ namespace input {
      */
     //% help=input/calibrate-compass advanced=true
     //% blockId="input_compass_calibrate" block="calibrate compass"
-    //% weight=45
+    //% weight=55
     void calibrateCompass() {
         uBit.compass.calibrate();
     }

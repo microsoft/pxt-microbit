@@ -1,6 +1,6 @@
 # Blow Away
 
-## Introduction pt. 1 @unplugged
+## {Introduction pt. 1 @unplugged}
 
 👻 Oh, no! Your @boardname@ is being haunted by a ghost named Haven 👻
 
@@ -8,7 +8,7 @@ For this tutorial, we'll learn how to blow Haven away 🌬️
 
 ![Blow away banner message](/static/mb/projects/blow-away.png)
 
-## Haunted ghost setup
+## {Haunted ghost setup}
 
 A wild Haven has appeared!
 
@@ -23,7 +23,7 @@ basic.showIcon(IconNames.Ghost)
 
 ---
 
-## Loop setup
+## {Loop setup}
 
 ► From the ``||loops:Loops||`` category, find the ``||loops:repeat [4] times||`` loop and snap it into your empty ``||basic:forever||`` container.   
 💡 Why do we need a [__*repeat loop*__](#repeatLoop "repeat code for a given number of times") when we already have a ``forever`` container? Because ``forever`` has an embedded delay that we want to avoid!
@@ -37,7 +37,7 @@ basic.forever(function () {
 })
 ```
 
-## Conditional setup
+## {Conditional setup}
 
 Haven hates noise and will blow away if things get too loud. Let's use an [__*if statement*__](#ifstatement "if this condition is met, do something") to check for sounds.
 
@@ -57,7 +57,7 @@ basic.forever(function () {
 })
 ```
 
-## Blow sound
+## {Blow sound}
 
 We'll be using a [__*sound threshold*__](#soundThreshold "a number for how loud a sound needs to be to trigger an event. 0 = silence to 255 = maximum noise") to act as Haven's ears.
 
@@ -77,7 +77,7 @@ basic.forever(function () {
 })
 ```
 
-## Making variables
+## {Making variables}
 
 Let's create some [__*variables*__](#variable "a holder for information that may change") to keep track of Haven's movement.
 
@@ -85,7 +85,7 @@ Let's create some [__*variables*__](#variable "a holder for information that may
 💡 ``col`` is short for "column".  
 ►  Make **another** variable and name it ``row``.
 
-## Displacing LEDs part 1
+## {Displacing LEDs part 1}
 
 To show Haven is blowing away, we want to move a random set of lights sideways.
 
@@ -106,7 +106,7 @@ basic.forever(function () {
 })
 ```
 
-## Displacing LEDs part 2
+## {Displacing LEDs part 2}
 
 ► Go back into ``||variables:Variables||`` and drag out another ``||variables:set [row] to [0]||``. Place this one below the last one (at **the end**) of your `if then` statement.  
 ► Using the **dropdown menu**, set the new block to read ``||variables:set [col] to [0]||``.  
@@ -127,7 +127,7 @@ basic.forever(function () {
 })
 ```
 
-## Conditioning on one point
+## {Conditioning on one point}
 
 Time to move some lights around!
 
@@ -150,7 +150,7 @@ basic.forever(function () {
 })
 ```
 
-## Unplotting and replotting LEDs
+## {Unplotting and replotting LEDs}
 
 To create the animation effect of Haven blowing away, we will turn off (or ``unplot``) a light that is on and then turn it on again (``plot`` it) in a different spot.
 
@@ -175,7 +175,7 @@ basic.forever(function () {
 })
 ```
 
-## 11. Setting variables
+## Setting variables
 
 Notice how you have **three** blocks from the ``||led:Led||`` category. All three have ``||led:x||`` ``[0]`` and ``||led:y||`` ``[0]`` coordinates. In these **two** steps, we will set it so that every ``||led:x||`` is followed by the ``||variables:col||`` variable and every ``||led:y||`` is followed by the ``||variables:row||`` variable.  
 ► From ``||variables:Variables||``, get three copies of ``||variables:col||``, and use them to **replace the ``x`` values** in the following three blocks:  
@@ -202,7 +202,7 @@ basic.forever(function () {
 })
 ```
 
-## 12. Moving LEDs
+## {Moving LEDs}
 
 Right now, we are unplotting and replotting in the same spot. What we want to do  is move the lights we're turning back on just a smidge to the right every time until there's nothing left on the grid.
 
@@ -229,7 +229,7 @@ basic.forever(function () {
 })
 ```
 
-## 13. Testing in the simulator
+## {Testing in the simulator}
 
 Check out the simulator!
 
@@ -254,4 +254,8 @@ basic.forever(function () {
         }
     }
 })
+```
+
+```validation.global
+# BlocksExistValidator
 ```

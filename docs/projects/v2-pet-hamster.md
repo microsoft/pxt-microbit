@@ -1,10 +1,10 @@
 # Pet Hamster
 
-## Introduction @unplugged
+## {Introduction @unplugged}
 
 ![Pet hamster banner message](/static/mb/projects/pet-hamster.png)
 
-## Cyrus's asleep face
+## {Cyrus's asleep face}
 
 Cyrus is a very sleepy hamster. In fact, Cyrus is almost always sleeping.
 
@@ -12,10 +12,11 @@ Cyrus is a very sleepy hamster. In fact, Cyrus is almost always sleeping.
 💡 In the ``show icon`` dropdown menu options, you can hover to see what each design is called!
 
 ```blocks
+//@highlight
 basic.showIcon(IconNames.Asleep)
 ```
 
-## Giggly Cyrus
+## {Giggly Cyrus}
 
 Pressing Cyrus's logo tickles them!
 
@@ -23,24 +24,26 @@ Pressing Cyrus's logo tickles them!
 ► Go to ``||basic:Basic||`` and grab **another** ``||basic:show icon [ ]||``. Snap it into your **empty** ``||input:on logo [pressed]||`` container. Set the icon (Cyrus's face) to happy ``:)``.
 
 ```blocks
+//@highlight
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
+    //@highlight
     basic.showIcon(IconNames.Happy)
 })
 ```
 
-## Tickle sound
+## {Tickle sound}
 
 ► From the ``||music:Music||`` category, get a ``||music:play sound [giggle] until done||`` and add it to the **bottom** of your ``||input:on logo [pressed]||`` container.
 
 ```blocks
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
     basic.showIcon(IconNames.Happy)
-    // @highlight
+    //@highlight
     soundExpression.giggle.playUntilDone()
 })
 ```
 
-## Dizzy Cyrus
+## {Dizzy Cyrus}
 
 Whenever Cyrus is shaken, they get sad 🙁
 
@@ -48,12 +51,14 @@ Whenever Cyrus is shaken, they get sad 🙁
 ► From the ``||basic:Basic||`` category, grab ``||basic:show icon [ ]||`` and snap it into your **new** ``||input:on [shake]||`` container. Set the icon (Cyrus's face) to sad ``:(``.
 
 ```blocks
+//@highlight
 input.onGesture(Gesture.Shake, function () {
+    //@highlight
     basic.showIcon(IconNames.Sad)
 })
 ```
 
-## Dizzy sound
+## {Dizzy sound}
 
 ► From the ``||music:Music||`` category, find the ``||music:play sound [giggle] until done||`` block and add it to the **bottom** of your ``||input:on [shake]||`` container.  
 ► Click on the **dropdown** and set it so Cyrus plays a ``||music:sad||`` sound until done.
@@ -61,12 +66,12 @@ input.onGesture(Gesture.Shake, function () {
 ```blocks
 input.onGesture(Gesture.Shake, function () {
     basic.showIcon(IconNames.Sad)
-    // @highlight
+    //@highlight
     soundExpression.sad.playUntilDone()
 })
 ```
 
-## Cyrus's default face pt. 1
+## {Cyrus's default face pt. 1}
 
 Let's ensure that Cyrus will always go back to sleep after being shaken or tickled.
 
@@ -77,7 +82,7 @@ Let's ensure that Cyrus will always go back to sleep after being shaken or tickl
 input.onGesture(Gesture.Shake, function () {
     basic.showIcon(IconNames.Sad)
     soundExpression.sad.playUntilDone()
-    // @highlight
+    //@highlight
     basic.showIcon(IconNames.Asleep)
 })
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
@@ -87,7 +92,7 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
 basic.showIcon(IconNames.Asleep)
 ```
 
-## Cyrus's default face pt. 2
+## {Cyrus's default face pt. 2}
 
 ► Duplicate the ``||basic:show icon[-_-]||`` block again and this time snap it in at the **very bottom** of your ``||input:on logo [pressed]||`` container.
 
@@ -100,13 +105,13 @@ input.onGesture(Gesture.Shake, function () {
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
     basic.showIcon(IconNames.Happy)
     soundExpression.giggle.playUntilDone()
-    // @highlight
+    //@highlight
     basic.showIcon(IconNames.Asleep)
 })
 basic.showIcon(IconNames.Asleep)
 ```
 
-## Testing in the simulator
+## {Testing in the simulator}
 
 Check out the simulator and make sure your speakers are on 🔊
 
@@ -128,4 +133,12 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
     basic.showIcon(IconNames.Asleep)
 })
 basic.showIcon(IconNames.Asleep)
+```
+
+```validation.global
+# BlocksExistValidator
+```
+
+```template
+//
 ```

@@ -29,7 +29,7 @@ declare namespace record {
      * Set sensitity of the microphone input
      */
     //% shim=record::setMicrophoneGain
-    function setMicrophoneGain(gain: int32): void;
+    function setMicrophoneGain(gain: number): void;
 
     /**
      * Get how long the recorded audio clip is

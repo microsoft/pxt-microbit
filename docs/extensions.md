@@ -307,6 +307,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
     "name": "gator:UV UV Light sensor",
     "url":"/pkg/sparkfun/pxt-gator-UV",
     "cardType": "package"
+}, {
+    "name": "Sensirion SEN55 (Air Quality) Sensor",
+    "url":"/pkg/bsiever/pxt-sen55",
+    "cardType": "package"
 }]
 ```
 
@@ -426,6 +430,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 }, {
   "name": "Joy-IT Joy-Pi Advanced",
   "url":"/pkg/joy-it/pxt-RB-JoyPi-Advanced",
+  "cardType": "package"
+}, {
+  "name": "FWD Edu Climate Action Kit Gen. 2 Kit",
+  "url":"/pkg/climate-action-kits/pxt-fwd-edu",
   "cardType": "package"
 }]
 ```
@@ -681,6 +689,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
   "url":"/pkg/elecfreaks/pxt-cutebot",
   "cardType": "package"
 }, {
+  "name": "Elecfreaks Cutebot Pro",
+  "url":"/pkg/elecfreaks/pxt-cutebot-pro",
+  "cardType": "package"
+}, {
   "name": "Kittenbot RobotBit",
   "url":"/pkg/kittenbot/pxt-robotbit",
   "cardType": "package"
@@ -912,6 +924,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 ## Utilities
 ```codecard
 [{
+  "name": "Morse Code",
+  "url": "/pkg/bsiever/pxt-morse",
+  "cardType": "package"
+}, {
   "name": "Button clicks",
   "url": "/pkg/bsiever/microbit-pxt-clicks",
   "cardType": "package"

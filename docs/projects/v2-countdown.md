@@ -1,6 +1,6 @@
 # Countdown
 
-## Introduction @unplugged
+## {Introduction @unplugged}
 
 🎇3...🎇2...🎇1...  
 🎆GO!🎆
@@ -9,7 +9,7 @@ Let's create a musical countdown using the new @boardname@ with sound!
 
 ![Countdown banner message](/static/mb/projects/countdown.png)
 
-## Setting up the loop
+## {Setting up the loop}
 
 We'll begin by using a [__*for loop*__](#forLoop "repeat code for a given number of times using an index") to recreate the same sound 3 times.
 
@@ -24,7 +24,7 @@ for (let index = 0; index <= 2; index++) {
 }
 ```
 
-## Play music
+## {Play music}
 
 ► From ``||music:Music||``, grab ``||music:play tone [Middle C] for [1 beat]||`` and snap it into your empty ``for`` loop.  
 💡 Your simulator might start playing music. You can mute it if distracting.  
@@ -37,7 +37,7 @@ for (let index = 0; index <= 2; index++) {
 }
 ```
 
-## Showing a number
+## {Showing a number}
 
 With every tone, we also want to **display** our countdown.
 
@@ -53,7 +53,7 @@ for (let index = 0; index <= 2; index++) {
 }
 ```
 
-## Inverting the number
+## {Inverting the number}
 
 If you take a look at your simulator, you'll notice the @boardname@ flashing 0-1-2. We want it to say 3-2-1! Let's learn a trick to change that.
 
@@ -72,7 +72,7 @@ for (let index = 0; index <= 2; index++) {
 }
 ```
 
-## Printing "GO!"
+## {Printing "GO!"}
 
 ► From ``||basic:Basic||``, grab ``||basic:show string ["Hello!"]||`` and snap it into the **very bottom** of your ``||basic:on start||`` container.  
 ► Replace ``Hello!`` with the word ``GO!``
@@ -86,7 +86,7 @@ for (let index = 0; index <= 2; index++) {
 basic.showString("GO!")
 ```
 
-## Adding a "GO!" noise
+## {Adding a "GO!" noise}
 
 ► From the ``||music:Music||`` category, grab ``||music:play tone [Middle C] for [1 beat]||`` and place it **above** your ``||basic:show string ["GO!"]||`` block and **below** your ``||loops:for||`` loop.  
 💡 This will let your @boardname@ play the sound and show ``GO!`` at the same time.  
@@ -103,7 +103,7 @@ music.playTone(392, music.beat(BeatFraction.Whole))
 basic.showString("GO!")
 ```
 
-## 8. Testing in the simulator
+## {Testing in the simulator}
 
 Make sure your speakers are on and check out the simulator!  
 
@@ -116,4 +116,12 @@ for (let index = 0; index <= 2; index++) {
 }
 music.playTone(392, music.beat(BeatFraction.Whole))
 basic.showString("GO!")
+```
+
+```validation.global
+# BlocksExistValidator
+```
+
+```template
+//
 ```

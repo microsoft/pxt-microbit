@@ -8,6 +8,7 @@ namespace pxsim  {
         recording: HTMLAudioElement;
         audioPlaying: boolean = false;
         recordTimeoutID: any;
+        currentlyErasing: boolean;
 
         handleAudioPlaying = () => {
             this.audioPlaying = true;
@@ -27,9 +28,18 @@ namespace pxsim  {
 }
 namespace pxsim.record {
 
+    let _initialized = false;
+    function init() {
+        if (!_initialized) {
+            registerSimStop();
+            _initialized = true;
+        }
+    }
+
     function stopRecorder(b: DalBoard): void {
         b.recordingState.recorder.stop();
         b.recordingState.currentlyRecording = false;
+        runtime.queueDisplayUpdate();
         if (b.recordingState.stream.active) {
             b.recordingState.stream.getAudioTracks().forEach(track => {
                 track.stop();
@@ -38,11 +48,18 @@ namespace pxsim.record {
         }
     }
 
-    function populateRecording(b: DalBoard) {
-        const blob = new Blob(b.recordingState.chunks, { type: "audio/ogg; codecs=opus" });
-        b.recordingState.audioURL = window.URL.createObjectURL(blob);
-        b.recordingState.recording = new Audio(b.recordingState.audioURL);
-        b.recordingState.initListeners();
+    async function populateRecording(b: DalBoard) {
+        if (b.recordingState.currentlyErasing) {
+            await erasingAsync(b);
+        }
+        if (b.recordingState.chunks[0].size > 0) {
+            b.recordingState.audioURL = null;
+            const recordingType = pxsim.isSafari() ? "audio/mp4" : "audio/ogg; codecs=opus";
+            const blob = new Blob(b.recordingState.chunks, { type: recordingType });
+            b.recordingState.audioURL = window.URL.createObjectURL(blob);
+            b.recordingState.recording = new Audio(b.recordingState.audioURL);
+            b.recordingState.initListeners();
+        }
         b.recordingState.currentlyRecording = false;
         b.recordingState.recorder = null;
         b.recordingState.chunks = [];
@@ -50,6 +67,7 @@ namespace pxsim.record {
 
     export async function record(): Promise<void> {
         let b = board();
+        init();
 
         if (b.recordingState.recorder) {
             b.recordingState.recorder.stop();
@@ -66,16 +84,14 @@ namespace pxsim.record {
 
                 b.recordingState.recordTimeoutID = setTimeout(() => {
                     stopRecorder(b);
-                    runtime.queueDisplayUpdate();
                 }, 5000)
 
                 b.recordingState.recorder.ondataavailable = (e: BlobEvent) => {
                     b.recordingState.chunks.push(e.data);
                 }
 
-                b.recordingState.recorder.onstop = () => {
-                    populateRecording(b);
-                    registerSimStop(b);
+                b.recordingState.recorder.onstop = async () => {
+                    await populateRecording(b);
                 }
 
             } catch (error) {
@@ -97,32 +113,46 @@ namespace pxsim.record {
         if (!b) return;
         if (b.recordingState.currentlyRecording && b.recordingState.recordTimeoutID) {
             clearTimeout(b.recordingState.recordTimeoutID);
-            stopRecorder(b);
+            if (b.recordingState.recorder) {
+                stopRecorder(b);
+            }
         } else if (b.recordingState.recording && b.recordingState.audioPlaying) {
             b.recordingState.handleAudioStopped();
-            b.recordingState.recording.pause();
-            b.recordingState.recording.currentTime = 0;
+            stopPlayback();
         }
     }
 
-    function registerSimStop(b: DalBoard) {
+    function registerSimStop() {
         pxsim.AudioContextManager.onStopAll(() => {
-            if (b.recordingState.recording) {
+            const b = board();
+            if (b && b.recordingState && b.recordingState.recording) {
                 stopAudio();
                 b.recordingState.recording.removeEventListener("play", b.recordingState.handleAudioPlaying);
                 b.recordingState.recording.removeEventListener("ended", b.recordingState.handleAudioStopped);
             }
-        })
+        });
     }
 
     export function play(): void {
         const b = board();
         if (!b) return;
+        init();
+
         stopAudio();
         b.recordingState.audioPlaying = true;
-        setTimeout(() => {
-            if (b.recordingState.recording) {
-                b.recordingState.recording.play();
+        setTimeout(async () => {
+            if (!b.recordingState.currentlyErasing && b.recordingState.recording) {
+                try {
+                    const volume = AudioContextManager.isMuted() ? 0 : 1;
+                    b.recordingState.recording.volume = volume;
+                    await b.recordingState.recording.play();
+                } catch (e) {
+                    if (!(e instanceof DOMException)) {
+                        throw e;
+                    }
+                }
+            } else {
+                b.recordingState.audioPlaying = false;
             }
         }, 10)
     }
@@ -131,17 +161,35 @@ namespace pxsim.record {
         stopAudio();
     }
 
+    function stopPlayback(): void {
+        const b = board();
+        if (!b) return;
+        b.recordingState.recording.pause();
+        b.recordingState.recording.currentTime = 0;
+        b.recordingState.recording.removeEventListener("play", b.recordingState.handleAudioPlaying);
+        b.recordingState.recording.removeEventListener("ended", b.recordingState.handleAudioStopped);
+    }
+
+    function erasingAsync(b: DalBoard): Promise<any> {
+        return new Promise((resolve, reject) => {
+            if (b.recordingState.recording && b.recordingState.audioPlaying) {
+                stopPlayback();
+            }
+            if (b.recordingState.audioURL) {
+                window.URL.revokeObjectURL(b.recordingState.audioURL);
+                b.recordingState.recording = null;
+            }
+            b.recordingState.audioPlaying = false;
+            resolve(null);
+            b.recordingState.currentlyErasing = false;
+        })
+    }
+
     export function erase(): void {
         const b = board();
         if (!b) return;
         b.recordingState.chunks = [];
-        if (b.recordingState.audioPlaying) {
-            b.recordingState.recording.pause();
-            b.recordingState.audioPlaying = false;
-            b.recordingState.recording.currentTime = 0;
-        }
-        window.URL.revokeObjectURL(b.recordingState.audioURL);
-        b.recordingState.recording = null;
+        b.recordingState.currentlyErasing = true;
     }
 
     export function setMicrophoneGain(gain: number): void {

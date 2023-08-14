@@ -20,10 +20,22 @@
 * highlight: toolbox
 * location: right
 
+## Toolbox
+* title: Toolbox
+* description: Drag out snippets of code from the Toolbox categories into the Workspace.
+* highlight: monaco toolbox
+* location: right
+
 ## Workspace
 * title: Workspace
 * description: Snap blocks of code together to build your program.
 * highlight: workspace
+* location: center
+
+## Workspace
+* title: Workspace
+* description: Write code to build your program.
+* highlight: monaco workspace
 * location: center
 
 ## Share

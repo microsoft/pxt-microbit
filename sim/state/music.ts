@@ -11,4 +11,10 @@ namespace pxsim.music {
     export function setSilenceLevel(level: number) { 
         // ignore in v1,v2
     }
+
+    export function isSoundPlaying(): boolean {
+        const audioActive = pxsim.AudioContextManager.isAudioElementActive();
+        const soundExpressionPlaying = pxsim.codal.music.isSoundExpPlaying();
+        return audioActive || soundExpressionPlaying || pxsim.record.audioIsPlaying();
+    }
 }

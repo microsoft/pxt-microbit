@@ -54,6 +54,14 @@
                 "identity": true,
                 "redirect": true,
                 "order": 2
+            },
+            "clever": {
+                "id": "clever",
+                "name": "Clever",
+                "icon": "/static/providers/clever-logo.png",
+                "identity": true,
+                "redirect": true,
+                "order": 3
             }
         }
     },
@@ -166,7 +174,7 @@
         "githubCorePackage": "lancaster-university/microbit",
         "gittag": "v2.2.0-rc6",
         "serviceId": "microbit",
-        "dockerImage": "pext/yotta:update-yotta3"
+        "dockerImage": "pext/yotta:gcc5"
     },
     "multiVariants": [
         "mbdal",
@@ -189,14 +197,14 @@
                 "codalTarget": {
                     "name": "codal-microbit-v2",
                     "url": "https://github.com/lancaster-university/codal-microbit-v2",
-                    "branch": "v0.2.54",
+                    "branch": "v0.2.57",
                     "type": "git"
                 },
                 "codalBinary": "MICROBIT",
                 "githubCorePackage": "lancaster-university/microbit-v2-samples",
-                "gittag": "v0.2.12",
+                "gittag": "v0.2.13",
                 "serviceId": "mbcodal2",
-                "dockerImage": "pext/yotta:update-yotta3",
+                "dockerImage": "pext/yotta:latest",
                 "yottaConfigCompatibility": true
             }
         }
@@ -526,7 +534,8 @@
             "2": "v2",
             "3": "v3",
             "4": "v4",
-            "5": "v5"
+            "5": "v5",
+            "6": "v6"
         },
         "editorVersionPaths": {
             "0": "v0"
@@ -539,6 +548,7 @@
         "simScreenshot": true,
         "simScreenshotMaxUriLength": 300000,
         "simGif": true,
+        "simGifWidth": 240,
         "qrCode": true,
         "importExtensionFiles": true,
         "nameProjectFirst": true,
@@ -564,7 +574,9 @@
             "connectDeviceImage": "/static/download/connect-microbit.gif",
             "selectDeviceImage": "/static/download/selecting-microbit.gif",
             "connectionSuccessImage": "/static/download/successfully-paired.png",
-            "incompatibleHardwareImage": "/static/download/incompatible.png"
+            "incompatibleHardwareImage": "/static/download/incompatible.png",
+            "usbDeviceForgottenImage": "/static/download/device-forgotten.gif",
+            "browserUnpairImage": "/static/download/browser-unpair-image.gif"
         },
         "winAppDeprImage": "/static/winapp.PNG",
         "showWinAppDeprBanner": false,
@@ -574,7 +586,9 @@
         "tutorialSimSidebarLayout": true,
         "preferWebUSBDownload": true,
         "hideReplaceMyCode": true,
-        "matchWebUSBDeviceInSim": true
+        "matchWebUSBDeviceInSim": true,
+        "condenseProfile": true,
+        "cloudProfileIcon": "/static/profile/microbit-cloud.png"
     },
     "queryVariants": {
         "hidemenu": {
@@ -588,20 +602,6 @@
             },
             "appTheme": {
                 "disableBlobObjectDownload": true
-            }
-        },
-        "clever=1": {
-            "cloud": {
-                "cloudProviders": {
-                    "clever": {
-                        "id": "clever",
-                        "name": "Clever",
-                        "icon": "/static/providers/clever-logo.png",
-                        "identity": true,
-                        "redirect": true,
-                        "order": 3
-                    }
-                }
             }
         },
         "skillsMap=1": {
