@@ -787,7 +787,8 @@
             "joy-it/pxt-rb-joypi-advanced": { "tags": [ "Science" ] },
             "bsiever/pxt-sen55": { "tags": [ "Science" ] },
             "climate-action-kits/pxt-fwd-edu": {},
-            "elecfreaks/pxt-cutebot-pro": { "tags": [ "Robotics" ], "preferred": true }
+            "elecfreaks/pxt-cutebot-pro": { "tags": [ "Robotics" ], "preferred": true },
+            "microbit-foundation/makecode-tutorials": {}
         },
         "upgrades": {
             "tinkertanker/pxt-iot-environment-kit": "min:v4.2.1",
