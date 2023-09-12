@@ -2,57 +2,48 @@
 
 ### @explicitHints true
 
-## Introduction @unplugged
+## Turn your micro:bit into a digital name tag @unplugged
 
-Tell everyone who you are. Show you name on the LEDs.
+See your name in 💡 lights! 💡  Code the micro:bit to scroll your name across the screen.
 
 ![Name scrolling on the LEDs](/static/mb/projects/name-tag/name-tag.gif)
 
-## Step 1
+## {Step 1}
 
-On the screen, ``||basic:show a string||`` saying `"My name is: "`.
+Use the basic ``||basic:show string||`` function to display the text `"My name is: "`. Type the code below, or drag a code snippet from the ``||basic:Basic||`` Toolbox category.
 
 ```spy
 basic.showString("My name is: ")
 ```
 
-## Step 2
+## {Step 2}
 
-Let everyone know who you are and ``||basic:show a string||`` with your name.
-
-```spy
-basic.showString("My name is: ")
-basic.showString("Sarah!")
-```
-
-## Step 3
-
-Tell everyone what your age is. Add a ``||basic:show string||`` for `"My age is "` and then ``||basic:show a number||`` for your age.
+Add another ``||basic:show a string||`` line of code, and type in your first name.
 
 ```spy
 basic.showString("My name is: ")
 basic.showString("Sarah!")
-basic.showString("My age is: ")
-basic.showNumber(9)
 ```
 
-## Step 4
+## {Step 3}
 
-Look at the simulator and make sure it shows your name and age on the screen.
-
-## Step 5
-
-Place more ``||basic:show strings||`` to create a longer message.
+Add another ``||basic:show string||`` line of code, and display the text `"My age is: "`. Then use the basic ``||basic:show number||`` function to display your age.
 
 ```spy
 basic.showString("My name is: ")
 basic.showString("Sarah!")
 basic.showString("My age is: ")
 basic.showNumber(9)
-basic.showString("Favorite color: ")
-basic.showString("Blue")
 ```
 
-## Step 6
+## {Step 4}
 
-If you have a @boardname@ connected, click ``|Download|`` and transfer your code to the @boardname@!
+Look at the @boardname@ simulator on the screen. Do you see your name and age? ⭐ Great job! ⭐ You've turned the micro:bit into a digital name tag!
+
+## {Step 5}
+
+If you have a @boardname@ device, connect it to your computer and click the ``|Download|`` button. Follow the instructions to transfer your code onto the @boardname@ and watch your name and age appear in lights! 
+
+## {Step 6}
+
+Go further - try adding more ``||basic:show string||`` and ``||basic:show number||`` functions to tell people more about yourself (favorite color, lucky number). Learn more about how the @boardname@ lights work by watching [this video](https://youtu.be/qqBmvHD5bCw).
