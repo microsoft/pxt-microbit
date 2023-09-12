@@ -2,26 +2,13 @@
 
 ## {Introduction @unplugged}
 
-Let's turn the @boardname@ into dice!
-(Want to learn how the accelerometer works? [Watch this video](https://youtu.be/byngcwjO51U)).
+Let's create some digital 🎲 dice 🎲 with our micro:bit!
 
 ![A microbit dice](/static/mb/projects/dice.png)
 
 ## {Step 1}
 
-We need 3 pieces of code: one to detect a throw (shake), another to pick a random number, and then one to show the number.
-
-Use the ``||input:on shake||`` block you see in the editor workspace. It runs code when you shake the @boardname@.
-
-```blocks
-input.onGesture(Gesture.Shake, function() {
-
-})
-```
-
-## {Step 2}
-
-Get a ``||basic:show number||`` block and place it inside the ``||input:on shake||`` block to display a number.
+The ``||input:on shake||`` block runs code when you shake 👋 the @boardname@. From the ``||basic:Basic||`` category, get a ``||basic:show number||`` block and place it inside the ``||input:on shake||`` block to display a number.
 
 ```blocks
 input.onGesture(Gesture.Shake, function() {
@@ -30,9 +17,13 @@ input.onGesture(Gesture.Shake, function() {
 })
 ```
 
+## {Step 2}
+
+Press the white **SHAKE** button on the micro:bit on-screen simulator, or move your cursor quickly back and forth over the simulator. Do you see the number 0 appear?  ⭐ Great job! ⭐
+
 ## {Step 3}
 
-Put a ``||Math:pick random||`` block in the ``||basic:show number||`` block to pick a random number.
+But we don't want to show 0 on our dice all the time. From the ``||math:Math||`` Toolbox category, drag a ``||Math:pick random||`` block and drop it into the ``||basic:show number||`` block replacing the **0**.
 
 ```blocks
 input.onGesture(Gesture.Shake, function() {
@@ -43,7 +34,7 @@ input.onGesture(Gesture.Shake, function() {
 
 ## {Step 4}
 
-A typical dice shows values from `1` to `6`. So, in ``||Math:pick random||``, don't forget to choose the right minimum and maximum values!
+A typical dice shows values from 1 to 6 dots. So, in the ``||Math:pick random||`` block, change the minimum value to **1** and the maximum value to **6**.
 
 ```blocks
 input.onGesture(Gesture.Shake, function() {
@@ -54,11 +45,14 @@ input.onGesture(Gesture.Shake, function() {
 
 ## {Step 5}
 
-Use the simulator to try out your code. Does it show the number you expected?
+Press the white **SHAKE** button again on the micro:bit simulator. Do you see random numbers between 1 and 6 appear? ⭐ Great job! ⭐
 
 ## {Step 6}
 
-If you have a @boardname@ connected, click ``|Download|`` and transfer your code to the @boardname@!
+If you have a @boardname@ device, connect it to your computer and click the ``|Download|`` button. Follow the instructions to transfer your code onto the @boardname@. Once your code has been downloaded, attach your micro:bit to a battery pack and use it as digital 🎲 dice for your next boardgame!
+
+## {Step 7}
+Go further - Try adding some Music blocks to make a sound when you shake your dice, or use the micro:bit LED lights to show number values. Want to learn how the micro:bit motion detector or accelerometer works? [Watch this video](https://youtu.be/byngcwjO51U).
 
 ```validation.global
 # BlocksExistValidator
