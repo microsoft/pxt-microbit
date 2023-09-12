@@ -17,7 +17,6 @@ Click on the ``||variables:Variables||`` category in the Toolbox. You'll notice 
 
 ```blocks
 let steps = 0
-steps = 0
 ```
 
 ## {Step 3}
@@ -33,6 +32,7 @@ input.onGesture(Gesture.Shake, function () {})
 Click on the ``||variables:Variables||`` category in the Toolbox. Drag a ``||variables:change steps||`` block into the ``||input:on shake||`` block. Now every time we shake our micro:bit (or take a step), we will add 1 to the value in our ``||variables:steps||`` variable.
 
 ```blocks
+let steps = 0
 input.onGesture(Gesture.Shake, function () {
     steps += 1
 })
@@ -43,6 +43,7 @@ input.onGesture(Gesture.Shake, function () {
 Let's show the number of steps taken. Click on the ``||basic:Basic||`` category in the Toolbox. Drag a ``||basic:show number||`` block into the ``||input:on shake||`` block, underneath the ``||variables:change steps||`` block.
 
 ```blocks
+let steps = 0
 input.onGesture(Gesture.Shake, function () {
     steps += 1
     basic.showNumber(0)
@@ -54,6 +55,7 @@ input.onGesture(Gesture.Shake, function () {
 Click on the ``||variables:Variables||`` category in the Toolbox. Drag a ``||variables:steps||`` block into the ``||basic:show number||`` block, replacing the number **0**.
 
 ```blocks
+let steps = 0
 input.onGesture(Gesture.Shake, function () {
     steps += 1
     basic.showNumber(steps)
@@ -74,7 +76,6 @@ Go further - you may notice the micro:bit can't count as fast you might run. Tha
 
 ```blocks
 let steps = 0
-steps = 0
 input.onGesture(Gesture.Shake, function () {
     steps += 1
     led.stopAnimation()
