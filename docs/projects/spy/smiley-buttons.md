@@ -4,7 +4,7 @@
 
 ## Code a micro:bit emoji! @unplugged
 
-Program the buttons on the @boardname@ to show a Happy 😀 or Sad face 🙁
+Program the buttons on the @boardname@ to show a happy 😀 or sad face 🙁
 
 ![Pressing the A and B buttons](/static/mb/projects/smiley-buttons/sim.gif)
 
@@ -18,7 +18,7 @@ input.onButtonPressed(Button.A, function() {})
 
 ## {Step 2}
 
-Use the basic ``||basic:show icon||`` statement inside the ``||input:on button pressed||`` function display a **Happy** face when button A is pressed.
+Use the basic ``||basic:show icon||`` statement inside the ``||input:on button pressed||`` function display a **Happy** face when button **A** is pressed.
 
 ```spy
 input.onButtonPressed(Button.A, function() { 
@@ -28,11 +28,11 @@ input.onButtonPressed(Button.A, function() {
 
 ## {Step 3}
 
-Run your code in the @boardname@ simulator on the screen, press the **A** button. Do you see a Happy face? ⭐ Great job! ⭐
+Run your code in the @boardname@ simulator on the screen, press the **A** button. Do you see a happy face? ⭐ Great job! ⭐
 
 ## {Step 4}
 
-Write another ``||input:on button pressed||`` function with a ``||basic:show icon||`` inside to display a **Sad** face when button **B** is pressed. Try copying and pasting your existing code, and change A to B and Happy to Sad.
+Write another ``||input:on button pressed||`` function with a ``||basic:show icon||`` inside to display a **Sad** face when button **B** is pressed. Try copying and pasting your existing code, and change **A** to **B** and Happy to Sad.
 
 ```spy
 input.onButtonPressed(Button.B, function() { 
@@ -42,11 +42,11 @@ input.onButtonPressed(Button.B, function() {
 
 ## {Step 5}
 
-Run your code in the @boardname@ simulator on the screen, press the **B** button. Do you see a Sad face? ⭐ Great job! ⭐
+Run your code in the @boardname@ simulator on the screen, press the **B** button. Do you see a sad face? ⭐ Great job! ⭐
 
 ## {Step 6}
 
-If you have a @boardname@ device, connect it to your computer and click the ``|Download|`` button. Follow the instructions to transfer your code onto the @boardname@. Try pressing the A and B buttons on the micro:bit to see your Happy 😀 and Sad 🙁 emojis!
+If you have a @boardname@ device, connect it to your computer and click the ``|Download|`` button. Follow the instructions to transfer your code onto the @boardname@. Try pressing the **A** and **B** buttons on the micro:bit to see your Happy 😀 and Sad 🙁 emojis!
 
 ## {Step 7}
 
