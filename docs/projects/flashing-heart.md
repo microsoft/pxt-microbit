@@ -1,22 +1,22 @@
 # Flashing Heart
 
-## Introduction @unplugged
+## Code a Flashing Heart @unplugged
 
-Learn how to use the LEDs and make a flashing heart! 
-(Want to learn how lights work? [Watch this video](https://youtu.be/qqBmvHD5bCw)).
-
+Code the lights on the micro:bit into a flashing heart animation! 💖
 
 ![Heart shape in the LEDs](/static/mb/projects/flashing-heart/sim.gif)
 
 ## {Step 1 @fullscreen}
 
-Place the ``||basic:show leds||`` block in the ``||basic:forever||`` block and draw a heart.
+Click on the ``||basic:Basic||`` category in the Toolbox. 
+Drag the ``||basic:show leds||`` block into the ``||basic:forever||`` block. 
+Then in the ``||basic:show leds||`` block, click on the squares to draw a heart design.
 
 ![An animation that shows how to drag a block and paint a heart](/static/mb/projects/flashing-heart/showleds.gif)
 
 ## {Step 2}
 
-Place another ``||basic:show leds||`` block. You can leave it blank and draw what you want.
+Drag another ``||basic:show leds||`` block underneath the first.
 
 ```blocks
 basic.forever(function() {
@@ -37,11 +37,15 @@ basic.forever(function() {
 
 ## {Step 3}
 
-Look at the virtual @boardname@, you should see the heart and your drawing blink on the screen.
+Look at the @boardname@ on the screen. Do you see a flashing heart animation? ⭐ Great job! ⭐ 
 
 ## {Step 4}
 
-If you have a @boardname@ connected, click ``|Download|`` to transfer your code and watch the hearts flash!
+If you have a @boardname@ device, connect it to your computer and click the ``|Download|`` button. Follow the instructions to transfer your code onto the @boardname@ and watch the hearts flash! 
+
+## {Step 5}
+
+Go further - try adding more ``||basic:show leds||`` blocks to create a longer animation! Learn more about how the @boardname@ lights work by watching [this video](https://youtu.be/qqBmvHD5bCw).
 
 ```template
 basic.forever(function() {})

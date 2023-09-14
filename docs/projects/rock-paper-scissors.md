@@ -4,27 +4,28 @@
 
 ![Cartoon of the Rock Paper Scissors game](/static/mb/projects/a4-motion.png)
 
-Use the accelerometer and the screen to build a **Rock Paper Scissors** game that you can play with your friends!
+Turn your micro:bit into a **Rock Paper Scissors** game that you can play with your friends!
 
-## {Step 1 @fullscreen}
+## {Step 1}
 
-Let's use a ``||input:on shake||`` block to run code when you shake the @boardname@.
-
-```blocks
-input.onGesture(Gesture.Shake, function() {
-
-})
-```
-
-## {Step 2 @fullscreen}
-
-Add a ``hand`` variable and place the ``||variables:set hand to||`` block in the shake event.
+First we need to make a variable to keep track of whether we have a Rock, Paper or Scissors in our hand. A variable is a container for storing values. Click on the ``||variables:Variables||`` category in the Toolbox. Click on the **Make a Variable** button. Give your new variable the name "hand" and click Ok.
 
 ![A animation that shows how to create a variable](/static/mb/projects/rock-paper-scissors/newvar.gif)
 
-## {Step 3 @fullscreen}
+## {Step 2}
 
-Add a ``||math:pick random||`` block to pick a random number from `1` to `3` and store it in the variable named ``hand``.
+Click on the ``||variables:Variables||`` category in the Toolbox again. You'll notice that there are some new blocks that have appeared. Drag a ``||variables:set hand||`` block into the ``||input:on shake||`` block. We'll start our Rock Paper Scissors game when we shake 👋 our micro:bit.
+
+```blocks
+let hand = 0;
+input.onGesture(Gesture.Shake, function() {
+    hand = 0
+})
+```
+
+## {Step 3}
+
+Click on the ``||math:Math||`` category in the Toolbox. Drag a ``||math:pick random||`` block and drop it into the ``||variables:set hand||`` block replacing the number 0. Now when we shake our micro:bit, the variable hand will contain a random number between 1 and 3.
 
 ```blocks
 let hand = 0;
@@ -33,142 +34,196 @@ input.onGesture(Gesture.Shake, function() {
 })
 ```
 
-In a later step, each of the possible numbers (`1`, `2`, or `3`) is matched to its own picture. The picture is shown on the LEDs when its matching number is picked.
+## {Step 4}
 
-## {Step 4 @fullscreen}
-
-Place an ``||logic:if||`` block under the ``||math:pick random||`` and check whether ``hand`` is equal to ``1``. Add a ``||basic:show leds||`` block that shows a picture of a piece of paper. The number `1` will mean paper.
-
-![How to drag an if statement](/static/mb/projects/rock-paper-scissors/if.gif)
+Click on the ``||logic:Logic||`` category in the Toolbox. Drag the ``||logic:if true then else||`` block out to the workspace and drop it into the ``||input:on shake||`` block under the ``||variables:set hand||`` block.
 
 ```blocks
 let hand = 0;
 input.onGesture(Gesture.Shake, function() {
     hand = randint(1, 3)
-    if (hand == 1) {
-        basic.showLeds(`
-            # # # # #
-            # . . . #
-            # . . . #
-            # . . . #
-            # # # # #
-            `)
-    }
-})
-```
-
-## {Step 5 @fullscreen}
-
-Click on the **SHAKE** button in the simulator. If you try enough times, you should see a picture of paper on the screen.
-
-![Shaking a @boardname@ simulator](/static/mb/projects/rock-paper-scissors/rpsshake.gif)
-
-## {Step 6 @fullscreen}
-
-Click the **(+)** button to add an ``||logic:else||`` section.
-
-![Adding an else clause](/static/mb/projects/rock-paper-scissors/ifelse.gif)
-
-```blocks
-let hand = 0;
-input.onGesture(Gesture.Shake, function() {
-    hand = randint(1, 3)
-    if (hand == 1) {
-        basic.showLeds(`
-            # # # # #
-            # . . . #
-            # . . . #
-            # . . . #
-            # # # # #
-            `)
+    if (true) {
+    	
     } else {
-
+    	
     }
 })
 ```
 
-## {Step 7 @fullscreen}
+## {Step 5}
 
-Add a ``||basic:show leds||`` block inside the ``||logic:else||``. Make a picture of a scissors in the LEDs.
+From the ``||logic:Logic||`` category, drag a ``||logic:0 = 0||`` comparison block and drop it into the ``||logic:if true then else||`` block replacing **true**.
 
 ```blocks
 let hand = 0;
 input.onGesture(Gesture.Shake, function() {
     hand = randint(1, 3)
-    if (hand == 1) {
-        basic.showLeds(`
-            # # # # #
-            # . . . #
-            # . . . #
-            # . . . #
-            # # # # #
-            `)
+    if (0 == 0) {
+    	
     } else {
-        basic.showLeds(`
-            # # . . #
-            # # . # .
-            . . # . .
-            # # . # .
-            # # . . #
-            `)
+    	
     }
 })
 ```
 
-## {Step 8 @fullscreen}
+## {Step 6}
 
-Click the ``+`` button again to add an ``||logic:else if||`` section. Now, add a conditional block for ``||logic:hand = 2||`` to the condition in ``||logic:else if||``. Since ``hand`` can only be `1`, `2`, or `3`, your code is covering all possible cases!
-
-![Adding an else if clause](/static/mb/projects/rock-paper-scissors/ifelseif.gif)
-
-## {Step 9 @fullscreen}
-
-Get one more ``||basic:show leds||`` block and put it in the ``||logic:else if||``. Make a picture of a rock in the LEDs.
+Click on the ``||variables:Variables||`` category in the Toolbox. Drag a ``||variables:hand||`` block out and drop it into the ``||logic:0 = 0||`` comparison block replacing the first **0**.  Click on the second 0 in the comparison block and change to **1**.
 
 ```blocks
 let hand = 0;
 input.onGesture(Gesture.Shake, function() {
     hand = randint(1, 3)
     if (hand == 1) {
-        basic.showLeds(`
-            # # # # #
-            # . . . #
-            # . . . #
-            # . . . #
-            # # # # #
-            `)
+    	
+    } else {
+    	
+    }
+})
+```
+
+## {Step 7}
+
+Click on the ``||basic:Basic||`` category in the Toolbox. Drag a ``||basic:show icon||`` block out and drop it under ``||logic:if hand = 1 then||``. In the ``||basic:show icon||`` block, click on the Heart icon and instead select the small square icon to represent a 💎 Rock.
+
+```blocks
+let hand = 0;
+input.onGesture(Gesture.Shake, function() {
+    hand = randint(1, 3)
+    if (hand == 1) {
+    	basic.showIcon(IconNames.SmallSquare)
+    } else {
+    	
+    }
+})
+```
+
+## {Step 8}
+
+At the bottom of the ``||logic:if then else||`` block, click on the plus **'+'** sign. This will expand the code to include an ``||logic:else if||`` clause.
+
+```blocks
+let hand = 0;
+input.onGesture(Gesture.Shake, function() {
+    hand = randint(1, 3)
+    if (hand == 1) {
+    	basic.showIcon(IconNames.SmallSquare)
+    } else if (false) {
+    	
+    } else {
+    	
+    }
+})
+```
+
+## {Step 9}
+
+From the ``||logic:Logic||`` category, drag a ``||logic:0 = 0||`` comparison block and drop it into the open space next to the ``||logic:else if||`` clause.
+
+```blocks
+let hand = 0;
+input.onGesture(Gesture.Shake, function() {
+    hand = randint(1, 3)
+    if (hand == 1) {
+    	basic.showIcon(IconNames.SmallSquare)
+    } else if (0 == 0) {
+    	
+    } else {
+    	
+    }
+})
+```
+
+## {Step 10}
+
+From the ``||variables:Variables||`` category, drag a ``||variables:hand||`` block and drop it into the ``||logic:0 = 0||`` comparison block replacing the first **0**.  Click on the second 0 in the comparison block and change to **2**.
+
+```blocks
+let hand = 0;
+input.onGesture(Gesture.Shake, function() {
+    hand = randint(1, 3)
+    if (hand == 1) {
+    	basic.showIcon(IconNames.SmallSquare)
     } else if (hand == 2) {
-        basic.showLeds(`
-            . . . . .
-            . # # # .
-            . # # # .
-            . # # # .
-            . . . . .
-            `)
+    	
     } else {
-        basic.showLeds(`
-            # # . . #
-            # # . # .
-            . . # . .
-            # # . # .
-            # # . . #
-            `)
+    	
     }
 })
 ```
 
-## {Step 10 @fullscreen}
+## {Step 11}
 
-Click on the **SHAKE** button in the simulator and check to see that each image is showing up.
+From the ``||basic:Basic||`` category, drag a ``||basic:show icon||`` block out and drop it under ``||logic:else if hand = 2 then||``. In the ``||basic:show icon||`` block, click on the Heart icon and instead select the large square icon to represent 📃 Paper.
+
+```blocks
+let hand = 0;
+input.onGesture(Gesture.Shake, function() {
+    hand = randint(1, 3)
+    if (hand == 1) {
+    	basic.showIcon(IconNames.SmallSquare)
+    } else if (hand == 2) {
+    	basic.showIcon(IconNames.Square)
+    } else {
+    	
+    }
+})
+```
+
+## {Step 12}
+
+Now let's deal with the last condition - if our hand variable isn't holding a 1 (Rock) or a 2 (Paper), then it must be 3 (✀ Scissors)! From the ``||basic:Basic||`` category, drag another ``||basic:show icon||`` block out and drop it into the last opening under the ``||logic:else||``.  In the ``||basic:show icon||`` block, click on the Heart icon and select the Scissors icon.
+
+```blocks
+let hand = 0;
+input.onGesture(Gesture.Shake, function() {
+    hand = randint(1, 3)
+    if (hand == 1) {
+    	basic.showIcon(IconNames.SmallSquare)
+    } else if (hand == 2) {
+    	basic.showIcon(IconNames.Square)
+    } else {
+    	basic.showIcon(IconNames.Scissors)
+    }
+})
+```
+
+## {Step 13}
+
+Let's test your code! Press the white **SHAKE** button on the micro:bit on-screen simulator, or move your cursor quickly back and forth over the simulator. Do you see the icons for rock, paper and scissors randomly appear?  ⭐ Great job! ⭐
 
 ![Shaking a @boardname@ simulator](/static/mb/projects/rock-paper-scissors/rpssim3.gif)
 
-## {Step 11 @fullscreen}
+## {Step 14}
 
-If you have a @boardname@, click on ``|Download|`` and follow the instructions to get the code
-onto your @boardname@. Your game is ready! Gather your friends and play Rock Paper Scissors!
+If you have a @boardname@ device, connect it to your computer and click the ``|Download|`` button. Follow the instructions to transfer your code onto the @boardname@. Once your code has been downloaded, attach your micro:bit to a battery pack and challenge another micro:bit or a human to a game of Rock, Paper, Scissors!
 
 ![A @boardname@ in a hand](/static/mb/projects/rock-paper-scissors/hand.jpg)
+
+## {Step 15}
+
+Go further - Try adding 🎵 Music 🎵 blocks to your Rock Paper Scissors game for different sound effects. Note that some Music blocks may require a micro:bit v2 device to play.
+
+```blocks
+let hand = 0
+input.onGesture(Gesture.Shake, function () {
+    hand = randint(1, 3)
+    if (hand == 1) {
+        basic.showIcon(IconNames.SmallSquare)
+        music.play(music.builtinPlayableSoundEffect(soundExpression.giggle), music.PlaybackMode.UntilDone)
+    } else if (hand == 2) {
+        basic.showIcon(IconNames.Square)
+        music.play(music.tonePlayable(262, music.beat(BeatFraction.Whole)), music.PlaybackMode.UntilDone)
+    } else {
+        basic.showIcon(IconNames.Scissors)
+        music.play(music.createSoundExpression(WaveShape.Square, 1600, 1, 255, 0, 300, SoundExpressionEffect.None, InterpolationCurve.Curve), music.PlaybackMode.UntilDone)
+    }
+})
+```
+
+```blockconfig.global
+randint(1, 3)
+```
 
 ```template
 input.onGesture(Gesture.Shake, function() {})
