@@ -788,7 +788,8 @@
             "bsiever/pxt-sen55": { "tags": [ "Science" ] },
             "climate-action-kits/pxt-fwd-edu": {},
             "elecfreaks/pxt-cutebot-pro": { "tags": [ "Robotics" ], "preferred": true },
-            "microbit-foundation/makecode-tutorials": {}
+            "microbit-foundation/makecode-tutorials": {},
+            "emakefun-makecode-extensions/emakefun_io_extension_board": {}
         },
         "upgrades": {
             "tinkertanker/pxt-iot-environment-kit": "min:v4.2.1",
