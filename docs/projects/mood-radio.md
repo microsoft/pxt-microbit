@@ -47,7 +47,7 @@ input.onButtonPressed(Button.B, () => {
 })
 ```
 
-If the ``||radio:on received number||`` block, we add another conditional ``||logic:if then||`` statement to handle the **frowny** "mood code".
+If the ``||radio:on received number||`` event happens, we add in another conditional ``||logic:if then||`` statement to handle the **frowny** "mood code".
 
 ```blocks
 radio.onReceivedNumber(function (receivedNumber) {

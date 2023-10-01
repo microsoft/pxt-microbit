@@ -72,7 +72,7 @@ Let's test our code! In the micro:bit on-screen simulator, press button **A**. Y
 
 ## {Step 7}
 
-If you have a @boardname@ device, connect it to your computer and click the ``|Download|`` button. Follow the instructions to transfer your code onto the @boardname@.  If you have two micro:bits, download the program to each one. Press button **A** on one and see if the other gets the message!
+If you have a @boardname@ device, connect it to your computer and click the ``|Download|`` button. Follow the instructions to transfer your code onto the @boardname@. If you have two micro:bits, download the program to each one. Press button **A** on one and see if the other gets the message!
 
 ## {Step 8}
 

@@ -17,7 +17,7 @@ game.startCountdown(30000)
 
 ## Step 2
 
-Create an ``||array:array||`` called `text_list` of words to guess. Arrays are also called lists.
+Create an ``||arrays:array||`` called `text_list` of words to guess. Arrays are also called lists.
 
 ```spy
 let text_list: string[] = []

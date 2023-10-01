@@ -19,7 +19,7 @@ input.onPinPressed(TouchPin.P1, () => {
 })
 ```
 
-Now, let's create some notes to play when the banana is pressed. Click on the **Loops** drawer then insert a ``||loops:repeat||`` loop into the ``||input:on pin pressed||`` block. Click on the **Variables** drawer and pull out a ``||variables:change item by||`` block and put it into the loop. Rename the variable to `sound`. Change the value from `1` to `25`. This will increase the variable `sound` from the note frequency of block `Middle A` to `Middle A` plus 25 and so on. Put a ``||variables:set to||`` block for `sound` right after the loop. Set it to `Middle A` a in order to reset the sound after a banana press.
+Now, let's create some notes to play when the banana is pressed. Click on the **Loops** drawer then insert a ``||loops:repeat||`` loop into the ``||input:on pin pressed||`` block. Click on the **Variables** drawer and pull out a ``||variables:change item by||`` block and put it into the loop. Rename the variable to `sound`. Change the value from `1` to `25`. This will increase the variable `sound` from the note frequency of block `Middle A` to `Middle A` plus 25 and so on. Put a ``||variables:set to||`` block for `sound` right after the loop. Set it to `Middle A` in order to reset the sound after a banana press.
 
 ```blocks
 let sound = music.noteFrequency(Note.A);

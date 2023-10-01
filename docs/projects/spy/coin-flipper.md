@@ -35,7 +35,7 @@ input.onButtonPressed(Button.A, () => {
 
 ## Step 3
 
-Now, ``||basic:show an icon||`` for a `skull` ``||logic:if||`` the ``||math:random boolean||`` value is ``true``. This means ``heads``. ``||basic:show and icon||`` of a ``square`` when ``false`` to mean
+Now, ``||basic:show icon||`` for a `skull` ``||logic:if||`` the ``||math:random boolean||`` value is ``true``. This means ``heads``. ``||basic:show icon||`` of a ``square`` when ``false`` to mean
 ``tails``.
 
 ```spy

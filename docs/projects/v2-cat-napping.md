@@ -54,7 +54,7 @@ input.onButtonPressed(Button.A, function () {
 
 ## {Set the indicator icon}
 
-► Let's display an image when the @boardname@ is logging data. From the ``||basic:Basic||`` category, grab a ``||basic:show icon []||`` block and snap it into the empty **top container** of your ``||logic:if then / else||`` statement.  
+► Let's display an image when the @boardname@ is logging data. From the ``||basic:Basic||`` category, grab a ``||basic:show icon [ ]||`` block and snap it into the empty **top container** of your ``||logic:if then / else||`` statement.  
 ► Set it to show the "target" icon (it looks like an empty sun - scroll down to find it!).  This will show whenever your @boardname@ is collecting data.  
 💡 In the ``show icon`` dropdown menu options, you can hover to see what each design is called.
 
