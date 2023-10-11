@@ -359,7 +359,6 @@
     * [Save](/save)    
     * [Sign In](/identity/sign-in)
     * [Cloud Sync](/identity/cloud-sync)
-    * [Home page content](/homepage-content)
 
 * [Hardware](/device)
     * [Data Analysis](/device/data-analysis)
