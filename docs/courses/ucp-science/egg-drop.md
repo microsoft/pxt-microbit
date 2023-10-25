@@ -17,7 +17,4 @@ https://youtu.be/tnDJFdC3Nd4
 * [Resources](/courses/ucp-science/egg-drop/resources)
 
 <br/>
-
-| | | |
-|-|-|-|
-| Adapted from "[Egg Drop Experiment](https://drive.google.com/open?id=1Z8S-W3n1jX6drC8ALj8Wh1Rjc0CyP0Afs3acnIjDYes)" by [C Lyman](http://utahcoding.org) | | [![CC BY-NC-SA](https://licensebuttons.net/l/by-nc-sa/4.0/80x15.png)](https://creativecommons.org/licenses/by-nc-sa/4.0/) |
+Contributed by the [Utah Coding Project](https://sites.google.com/view/utahcodingproject) [![CC BY-NC-SA](https://licensebuttons.net/l/by-nc-sa/4.0/80x15.png)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
