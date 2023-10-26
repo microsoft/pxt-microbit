@@ -2,11 +2,11 @@
 
 ## Science concept
 
-The micro:bit can measure movement through an accelerometer located on the back of the micro:bit – allowing it to detect if you shake, tilt or move the micro:bit in any direction. Many modern electronic devices have accelerometers built-in – including mobile phones, game controllers, and car sensors.
+The micro:bit can measure movement through an accelerometer located on the back of the micro:bit - allowing it to detect if you shake, tilt or move the micro:bit in any direction. Many modern electronic devices have accelerometers built-in - including mobile phones, game controllers, and car sensors.
 
 ![micro:bit accelerometer](/static/courses/ucp-science/spoon-race/microbit-accelerometer.png)
 
-Acceleration is the change in speed over a given amount of time – for example, it may take a sports car 3 seconds to accelerate from 0 to 60 miles-per-hour. The micro:bit can measure acceleration in any direction using a capacitor which stores and measures electrical energy.
+Acceleration is the change in speed over a given amount of time - for example, it may take a sports car 3 seconds to accelerate from 0 to 60 miles-per-hour. The micro:bit can measure acceleration in any direction using a capacitor which stores and measures electrical energy.
 
 The micro:bit measures Acceleration along 3 dimensions:
 
@@ -40,10 +40,10 @@ The objective of the spoon race is to carry an object quickly but with minimal m
 
 Students will:
 
-* Understand what acceleration is, and how accelerometers are used to measure motion
-* Code a micro:bit to measure acceleration values
-* Run a micro:bit spoon race to collect data
-* Analyze the results of the data to determine a winner
+* Understand what acceleration is, and how accelerometers are used to measure motion.
+* Code a micro:bit to measure acceleration values.
+* Run a micro:bit spoon race to collect data.
+* Analyze the results of the data to determine a winner.
 
 ## Materials Needed
 
