@@ -58,3 +58,17 @@
     * [Build](/courses/ucp-science/rocket-acceleration/build)
     * [Setup and procedure](/courses/ucp-science/rocket-acceleration/setup-procedure)
     * [Resources](/courses/ucp-science/rocket-acceleration/resources)
+
+## Egg Drop Experiment
+
+* [Egg Drop](/courses/ucp-science/egg-drop)
+    * [Overview](/courses/ucp-science/egg-drop/overview)
+    * [Setup and procedure](/courses/ucp-science/egg-drop/setup-procedure)
+    * [Resources](/courses/ucp-science/egg-drop/resources)
+
+## Egg and Spoon Race
+
+* [Spoon Race](/courses/ucp-science/spoon-race)
+    * [Overview](/courses/ucp-science/spoon-race/overview)
+    * [Setup and procedure](/courses/ucp-science/spoon-race/setup-procedure)
+    * [Resources](/courses/ucp-science/spoon-race/resources)
