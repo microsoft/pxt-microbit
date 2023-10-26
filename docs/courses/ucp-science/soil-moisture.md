@@ -6,16 +6,11 @@ Not only does water flow across the ground and into soil, water also moves throu
 
 ## Lesson concept
 
-### ~ hint
-
-#### Soil moisture experiment video
+### Soil moisture experiment video
 
 Watch this video about to see how to conduct a soil moisture experiment for plants.
 
 https://youtu.be/n0WRQf11Pzo
-
-### ~
-
 
 ## Contents
 
@@ -24,7 +19,4 @@ https://youtu.be/n0WRQf11Pzo
 * [Resources](/courses/ucp-science/soil-moisture/resources)
 
 <br/>
-
-| | | |
-|-|-|-|
-| Adapted from "[Soil Moisture Tester](https://drive.google.com/open?id=1Rv4oPoxrggbokczbroQUl-10py3_5fQjVxOvwHR_5I4)" by [C Lyman](http://utahcoding.org) | | [![CC BY-NC-SA](https://licensebuttons.net/l/by-nc-sa/4.0/80x15.png)](https://creativecommons.org/licenses/by-nc-sa/4.0/) |
+Adapted from "[Soil Moisture Tester](https://drive.google.com/open?id=1Rv4oPoxrggbokczbroQUl-10py3_5fQjVxOvwHR_5I4)" by [C Lyman](http://utahcoding.org) [![CC BY-NC-SA](https://licensebuttons.net/l/by-nc-sa/4.0/80x15.png)](https://creativecommons.org/licenses/by-nc-sa/4.0/)

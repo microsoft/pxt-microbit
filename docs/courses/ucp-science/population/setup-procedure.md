@@ -113,7 +113,7 @@ input.onGesture(Gesture.Shake, () => {
 
 ### ~hint
 
-**Warning**
+#### Warning
 
 This procedure could be problematic if the @boardname@ is shaken to much while it is used in counting.
 
@@ -123,8 +123,9 @@ This procedure could be problematic if the @boardname@ is shaken to much while i
 
 This project could easily be modified to keep track of scores for 2 different teams. What other ideas can you think of that counters could be used for?
 
-<br/>
+## ~button /courses/ucp-science/population/resources
+NEXT: Resources
+## ~
 
-| | | |
-|-|-|-|
-| Adapted from "[Population Trait Data Counter](https://drive.google.com/open?id=1CC5uhIoZK4Q67vU5Ldwna6GEeZYXNDYzgO8BUUjPuwI)" by [C Lyman](http://utahcoding.org) | | [![CC BY-NC-SA](https://licensebuttons.net/l/by-nc-sa/4.0/80x15.png)](https://creativecommons.org/licenses/by-nc-sa/4.0/) |
+<br/>
+Adapted from "[Population Trait Data Counter](https://drive.google.com/open?id=1CC5uhIoZK4Q67vU5Ldwna6GEeZYXNDYzgO8BUUjPuwI)" by [C Lyman](http://utahcoding.org) [![CC BY-NC-SA](https://licensebuttons.net/l/by-nc-sa/4.0/80x15.png)](https://creativecommons.org/licenses/by-nc-sa/4.0/)

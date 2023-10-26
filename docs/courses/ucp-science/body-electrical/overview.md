@@ -39,8 +39,9 @@ Students will:
 * 2 long (36-48” or 100-130 cm) thin wires for electrical body sensors (wire from an old network cable works quite well).
 * Painters tape to tape the wires to the skin on the body.
 
-<br/>
+## ~button /courses/ucp-science/body-electrical/setup-procedure
+NEXT: Setup an Procedure
+## ~
 
-| | | |
-|-|-|-|
-| Adapted from "[Body Electrical & Waves](https://drive.google.com/open?id=1KofuOt0v1lmQhQyJux1XWDVoCDeslcjDFysjStFmo1w)" by [C Lyman](http://utahcoding.org) | | [![CC BY-NC-SA](https://licensebuttons.net/l/by-nc-sa/4.0/80x15.png)](https://creativecommons.org/licenses/by-nc-sa/4.0/) |
+<br/>
+Adapted from "[Body Electrical & Waves](https://drive.google.com/open?id=1KofuOt0v1lmQhQyJux1XWDVoCDeslcjDFysjStFmo1w)" by [C Lyman](http://utahcoding.org) [![CC BY-NC-SA](https://licensebuttons.net/l/by-nc-sa/4.0/80x15.png)](https://creativecommons.org/licenses/by-nc-sa/4.0/)

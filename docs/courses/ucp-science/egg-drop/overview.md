@@ -43,3 +43,7 @@ Students will:
 * A computer with internet access
 * Crafting materials to use for the egg carrier – these may include cardboard cups/boxes, cotton, plastic bags or bottles, string, straws, popsicle sticks, tissue paper, bubble wrap, glue, tape
 * An uncooked egg
+
+## ~button /courses/ucp-science/egg-drop/setup-procedure
+NEXT: Setup an Procedure
+## ~

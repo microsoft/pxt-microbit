@@ -51,3 +51,7 @@ Students will:
 * A computer with internet access
 * A spoon
 * Optional - tape or empty plastic egg shell to enclose micro:bit during race
+
+## ~button /courses/ucp-science/spoon-race/setup-procedure
+NEXT: Setup an Procedure
+## ~

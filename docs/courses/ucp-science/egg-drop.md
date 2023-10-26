@@ -4,7 +4,7 @@ Learn how to modernize this age-old science experiment using the micro:bit to me
 
 ## Lesson concept
 
-Use the micro:bit to measure force
+### Use the micro:bit to measure force
 
 Watch this short video to see how to use a micro:bit to detect the force from a fall.
 

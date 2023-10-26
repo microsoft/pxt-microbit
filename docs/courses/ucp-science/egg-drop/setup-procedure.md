@@ -88,3 +88,7 @@ Discuss the results of the experiment:
 * Were the micro:bit test results a good indication of whether the egg would break or not?
 * How might you find out exactly how much g-force would need to be exerted to break the egg?
 * Thinking about Newton’s Laws of Motion, what principles can you deduce about how to minimize the force of impact?
+
+## ~button /courses/ucp-science/egg-drop/resources
+NEXT: Resources
+## ~

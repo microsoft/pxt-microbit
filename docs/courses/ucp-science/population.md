@@ -4,15 +4,11 @@ Patterns occur everywhere in nature. Certain characteristics in a populations ar
 
 ## Lesson concept
 
-### ~ hint
-
-#### Population trait experiment example
+### Population trait experiment example
 
 Watch this video about how to perform a population trait experiment.
 
 https://youtu.be/NNZEMiJHY2o
-
-### ~
 
 ## Contents
 
@@ -21,7 +17,4 @@ https://youtu.be/NNZEMiJHY2o
 * [Resources](/courses/ucp-science/population/resources)
 
 <br/>
-
-| | | |
-|-|-|-|
-| Adapted from "[Population Trait Data Counter](https://drive.google.com/open?id=1CC5uhIoZK4Q67vU5Ldwna6GEeZYXNDYzgO8BUUjPuwI)" by [C Lyman](http://utahcoding.org) | | [![CC BY-NC-SA](https://licensebuttons.net/l/by-nc-sa/4.0/80x15.png)](https://creativecommons.org/licenses/by-nc-sa/4.0/) |
+Adapted from "[Population Trait Data Counter](https://drive.google.com/open?id=1CC5uhIoZK4Q67vU5Ldwna6GEeZYXNDYzgO8BUUjPuwI)" by [C Lyman](http://utahcoding.org) [![CC BY-NC-SA](https://licensebuttons.net/l/by-nc-sa/4.0/80x15.png)](https://creativecommons.org/licenses/by-nc-sa/4.0/)

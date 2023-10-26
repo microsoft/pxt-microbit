@@ -225,6 +225,10 @@ Discuss the results of the experiment:
 * What could that indicate?
 * Are there any other ways you might calculate the winning criteria?
 
+## ~button /courses/ucp-science/spoon-race/resources
+NEXT: Resources
+## ~
+
 ```package
 datalogger
 ```
