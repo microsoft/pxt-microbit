@@ -62,9 +62,7 @@ Notice in the micro:bit simulator, you can start to see simulated data. Click th
 
 ![Simulator with logged data](/static/courses/ucp-science/spoon-race/simulator.png)
 
-Now that we are collecting accelerometer data, we need a way to start and stop data collection. To do this, we will use a flag. A flag is a Boolean variable - meaning, that it can only hold true or false.
-
-values. You can think of a flag as a light switch - it is either on or off. Software developers often use feature flags to enable or disable certain features in a product.
+Now that we are collecting accelerometer data, we need a way to start and stop data collection. To do this, we will use a flag. A flag is a Boolean variable - meaning, that it can only hold true or false values. You can think of a flag as a light switch - it is either on or off. Software developers often use feature flags to enable or disable certain features in a product.
 
 * From the ``||input:Input||`` category, drag two ``||input:on button pressed||`` blocks onto the workspace.
 * In one of the ``||input:on button pressed||`` blocks, click on the drop-down menu to change to button B.
