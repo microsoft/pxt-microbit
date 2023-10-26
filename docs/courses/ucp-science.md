@@ -10,7 +10,7 @@ These lessons guide the student in hands-on, practical measurement activities al
 
 ### ~hint
 
-**Download it**
+#### Download it
 
 The entire course is also available as a download. Choose any of these formats:
 
