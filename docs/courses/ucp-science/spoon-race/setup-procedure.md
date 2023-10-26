@@ -98,6 +98,7 @@ input.onButtonPressed(Button.B, function () {
 * From the ``||variables:Variables||`` category, drag a ``||variables:IsLogging||`` block into the ``||logic:if true then||`` block replacing ``||logic:true||``.
 
 ```blocks
+let IsLogging = false
 loops.everyInterval(1000, function () {
     if (IsLogging) {
         datalogger.log(
@@ -118,6 +119,7 @@ Lastly, let’s add a visual indicator that our micro:bit is logging data.
 Note that the default behavior of the data logger is to append data to the data log file until you download a new program to the micro:bit. If you would like to wipe all previous data from the data log file, you can add a ``||datalogger:delete log||`` block. This will delete all existing data from the log each time you press button A to start the data collection.
 
 ```blocks
+let IsLogging = false
 input.onButtonPressed(Button.A, function () {
     datalogger.deleteLog()
     IsLogging = true
