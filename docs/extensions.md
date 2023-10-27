@@ -1035,5 +1035,9 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
     "name": "Elecfreaks NeZha",
     "url": "/pkg/elecfreaks/pxt-nezha",
     "cardType": "package"
+}, {
+  "name": "Emakefun IO Extension Board",
+  "url":"/pkg/emakefun-makecode-extensions/emakefun_io_extension_board",
+  "cardType": "package"
 }]
 ```
