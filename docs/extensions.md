@@ -924,6 +924,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 ## Utilities
 ```codecard
 [{
+  "name": "Meter",
+  "url": "/pkg/GrandpaBond/pxt-meter",
+  "cardType": "package"
+}, {
   "name": "Morse Code",
   "url": "/pkg/bsiever/pxt-morse",
   "cardType": "package"
