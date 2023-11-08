@@ -14,21 +14,8 @@
     },
     "yotta": {
         "config": {
-            "codal": {
-                "MICROBIT_BLE_UTILITY_SERVICE": 1,
-                "MICROBIT_BLE_UTILITY_SERVICE_PAIRING": 1
-            }
-        },
-        "userConfigs": [
-            {
-                "description": "Disable Bluetooth Utility Service",
-                "config": {
-                    "codal": {
-                        "MICROBIT_BLE_UTILITY_SERVICE": 0,
-                        "MICROBIT_BLE_UTILITY_SERVICE_PAIRING": 0
-                    }
-                }
-            }
-        ]
+            "MICROBIT_BLE_UTILITY_SERVICE": 1,
+            "MICROBIT_BLE_UTILITY_SERVICE_PAIRING": 1
+        }
     }
 }
