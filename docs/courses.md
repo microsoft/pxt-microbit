@@ -10,7 +10,7 @@ MakeCode's course for learning Computer Science with the micro:bit. This is a 14
 [{
   "name": "First Lessons",
   "description": "A sequence of lessons from the Micro:bit Educational Foundation that provide a pathway through six projects, ideal for getting started with the micro:bit",
-  "url":" https://microbit.org/teach/lessons/first-lessons-with-makecode-and-the-microbit",
+  "url":"https://microbit.org/teach/lessons/first-lessons-with-makecode-and-the-microbit",
   "imageUrl": "/static/courses/first-lessons.png"
 }]
 ```
