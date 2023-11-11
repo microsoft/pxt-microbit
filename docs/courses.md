@@ -2,6 +2,19 @@
 
 A collection of courses and tutorials built for the @boardname@.
 
+## First lessons with MakeCode and the micro:bit
+
+MakeCode's course for learning Computer Science with the micro:bit. This is a 14 week computer science course for middle school grades 6-8.
+
+```codecard
+[{
+  "name": "First Lessons",
+  "description": "A sequence of lessons from the Micro:bit Educational Foundation that provide a pathway through six projects, ideal for getting started with the micro:bit",
+  "url":" https://microbit.org/teach/lessons/first-lessons-with-makecode-and-the-microbit",
+  "imageUrl": "/static/courses/first-lessons.png"
+}]
+```
+
 ## Intro to Computer Science
 
 MakeCode's course for learning Computer Science with the micro:bit. This is a 14 week computer science course for middle school grades 6-8.

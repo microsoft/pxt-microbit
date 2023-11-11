@@ -125,6 +125,7 @@
   * [Command Responder](/courses/blocks-to-javascript/command-responder)
   * [Writing Functions](/courses/blocks-to-javascript/writing-functions)
 * [Courses](/courses)
+  * [First Lessons]( https://microbit.org/teach/lessons/first-lessons-with-makecode-and-the-microbit)
   * [Intro to CS Online](/courses/csintro)
   * [Intro to CS Classroom](/courses/csintro-educator)
   * [Science Experiments](/courses/ucp-science)
