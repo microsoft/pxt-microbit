@@ -491,7 +491,8 @@
         },
         "approvedEditorExtensionUrls": [
             "https://microsoft.github.io/ml4f/",
-            "https://microsoft.github.io/jacdac-docs/tools/makecode-editor-extension"
+            "https://microsoft.github.io/jacdac-docs/tools/makecode-editor-extension",
+            "https://microsoft.github.io/microbit-robot/"
         ],
         "extensionsToolboxDisallowDelete": [
         ]
