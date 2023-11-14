@@ -452,7 +452,8 @@
             "elecfreaks/pxt-cutebot-pro": { "tags": [ "Robotics" ], "preferred": true },
             "microbit-foundation/makecode-tutorials": {},
             "grandpabond/pxt-meter": { "tags": [ "Software" ] },
-            "microsoft/microbit-robot": { "tags": [ "Robotics" ] }
+            "microsoft/microbit-robot": { "tags": [ "Robotics" ] },
+            "4tronix/mars-rover": { "tags": [ "Robotics" ] }
         },
         "upgrades": {
             "tinkertanker/pxt-iot-environment-kit": "min:v4.2.1",

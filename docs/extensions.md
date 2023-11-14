@@ -505,6 +505,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 
 ```codecard
 [{
+  "name": "4tronix M.A.R.S. Rover",
+  "url":"/pkg/4tronix/mars-rover",
+  "cardType": "package"
+}, {
   "name": "Cytron MOTION:BIT",
   "url":"/pkg/CytronTechnologies/pxt-motionbit",
   "cardType": "package"
