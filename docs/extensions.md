@@ -176,6 +176,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 
 ```codecard
 [{
+ "name": "MonkMakes Plant Monitor",
+  "url":"/pkg/monkmakes/plant-monitor-makecode",
+  "cardType": "package"
+}, {
  "name": "SGBotic Ultimate SR04",
   "url":"/pkg/SGBotic/pxt-SGBotic-Ultimate-SR04-RGB",
   "cardType": "package"
