@@ -450,10 +450,10 @@
             "bsiever/pxt-sen55": { "tags": [ "Science" ] },
             "climate-action-kits/pxt-fwd-edu": {},
             "elecfreaks/pxt-cutebot-pro": { "tags": [ "Robotics" ], "preferred": true },
-            "microbit-foundation/makecode-tutorials": {},
             "grandpabond/pxt-meter": { "tags": [ "Software" ] },
             "microsoft/microbit-robot": { "tags": [ "Robotics" ] },
-            "4tronix/mars-rover": { "tags": [ "Robotics" ] }
+            "4tronix/mars-rover": { "tags": [ "Robotics" ] },
+            "microbit-foundation/makecode-tutorials": { "tutorial" : true }
         },
         "upgrades": {
             "tinkertanker/pxt-iot-environment-kit": "min:v4.2.1",
