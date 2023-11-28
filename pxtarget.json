@@ -255,7 +255,7 @@
             },
             "robot": {
                 "url": "https://microsoft.github.io/microbit-robot/?parentOrigin=$PARENT_ORIGIN$",
-                "localHostUrl": "http://localhost:3000/?parentOrigin=$PARENT_ORIGIN$",
+                "localHostUrl": "http://localhost:3000/microbit-robot/?parentOrigin=$PARENT_ORIGIN$",
                 "aspectRatio": 1.22,
                 "permanent": true
             }
