@@ -61,6 +61,27 @@ Courses contributed by educators to teach computing, science, and technology in 
 }]
 ```
 
+## Mr. Morrison Lessons
+
+```codecard
+[{
+  "name": "micro:bit Starter Lessons",
+  "description": "Learn to create code, make programs to read inputs and write to outputs.",
+  "url": "https://mrmorrison.co.uk/microbit/starter/",
+  "imageUrl": "/static/courses/mr-morrison/starter-lessons.png"
+}, {
+  "name": "micro:bit Beyond Basics",
+  "description": "Take a step past the basics and learn to use logic with inputs and outputs.",
+  "url": "https://mrmorrison.co.uk/microbit/beyondbasics/",
+  "imageUrl": "/static/courses/mr-morrison/beyond-basics.png"
+}, {
+  "name": "micro:bit Data and Sustainability",
+  "description": "Learn to record and analyse data using the micro:bit, then learn to design and build a smart sustainable home.",
+  "url": "https://mrmorrison.co.uk/microbit/datasustainability/",
+  "imageUrl": "/static/courses/mr-morrison/data-sustainability.png"
+}]
+```
+
 ## Computers and programming
 
 Tutorials, lessons, and mini-courses about programming and computing.
