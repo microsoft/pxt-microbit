@@ -63,6 +63,8 @@ Courses contributed by educators to teach computing, science, and technology in 
 
 ## Mr. Morrison Lessons
 
+Lessons aimed at P4-7 (Yr 3-6, aged 7-12) but could be adapted for use with older or younger learners. Regardless of age, if your learners have not used micro:bits before the best place to start is the 'Starter Lessons' followed by the 'Beyond Basics' Lessons.
+
 ```codecard
 [{
   "name": "micro:bit Starter Lessons",
