@@ -4,7 +4,7 @@ A collection of courses and tutorials built for the @boardname@.
 
 ## First lessons with MakeCode and the micro:bit
 
-A sequence of six lessons that direct students through six projects, ideal for getting started with the micro:bit. Students will develop their use of some core computing concepts through coding and making practical projects.
+A sequence of six beginner lessons, ideal for getting started with the micro:bit. Students will learn core computing concepts by making and coding engaging projects.
 
 ```codecard
 [{
