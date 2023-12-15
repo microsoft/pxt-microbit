@@ -932,6 +932,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 ## Utilities
 ```codecard
 [{
+  "name": "FlexFX",
+  "url": "/pkg/GrandpaBond/pxt-flexfx",
+  "cardType": "package"
+}, {
   "name": "Meter",
   "url": "/pkg/GrandpaBond/pxt-meter",
   "cardType": "package"

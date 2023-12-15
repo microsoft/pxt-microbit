@@ -454,7 +454,8 @@
             "grandpabond/pxt-meter": { "tags": [ "Software" ] },
             "microsoft/microbit-robot": { "tags": [ "Robotics" ] },
             "4tronix/mars-rover": { "tags": [ "Robotics" ] },
-            "monkmakes/plant-monitor-makecode": { "tags": [ "Science" ] }
+            "monkmakes/plant-monitor-makecode": { "tags": [ "Science" ] },
+            "grandpabond/pxt-flexfx": { "tags": [ "Software" ] }
         },
         "upgrades": {
             "tinkertanker/pxt-iot-environment-kit": "min:v4.2.1",
