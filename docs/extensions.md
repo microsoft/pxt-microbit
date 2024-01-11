@@ -932,6 +932,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 ## Utilities
 ```codecard
 [{
+  "name": "Faces",
+  "url": "/pkg/GrandpaBond/pxt-faces",
+  "cardType": "package"
+}, {
   "name": "FlexFX",
   "url": "/pkg/GrandpaBond/pxt-flexfx",
   "cardType": "package"
