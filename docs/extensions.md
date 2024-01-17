@@ -940,6 +940,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
   "url": "/pkg/GrandpaBond/pxt-faces",
   "cardType": "package"
 }, {
+  "name": "Makey Makey Code-a-Key",
+  "url": "/pkg/joylabz/code-a-key-extension",
+  "cardType": "package"
+}, {
   "name": "FlexFX",
   "url": "/pkg/GrandpaBond/pxt-flexfx",
   "cardType": "package"
