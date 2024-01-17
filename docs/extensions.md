@@ -509,6 +509,10 @@ Check out [the accessories pages on microbit.org](https://microbit.org/buy/acces
 
 ```codecard
 [{
+  "name": "Roversa",
+  "url":"/pkg/eb8ga/pxt-roversa-2",
+  "cardType": "package"
+}, {
   "name": "4tronix M.A.R.S. Rover",
   "url":"/pkg/4tronix/mars-rover",
   "cardType": "package"
