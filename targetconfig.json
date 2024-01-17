@@ -456,7 +456,8 @@
             "4tronix/mars-rover": { "tags": [ "Robotics" ] },
             "monkmakes/plant-monitor-makecode": { "tags": [ "Science" ] },
             "grandpabond/pxt-flexfx": { "tags": [ "Software" ] },
-            "grandpabond/pxt-faces": { "tags": [ "Software" ] }
+            "grandpabond/pxt-faces": { "tags": [ "Software" ] },
+            "eb8ga/pxt-roversa-2": { "tags": [ "Robotics" ] }
         },
         "upgrades": {
             "tinkertanker/pxt-iot-environment-kit": "min:v4.2.1",
