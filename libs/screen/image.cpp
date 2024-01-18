@@ -13,41 +13,41 @@
 
 namespace pxt {
 
-PXT_VTABLE(RefImage, ValType::Object)
+PXT_VTABLE(RefSImage, ValType::Object)
 
-void RefImage::destroy(RefImage *t) {}
+void RefSImage::destroy(RefSImage *t) {}
 
-void RefImage::print(RefImage *t) {
-    DMESG("RefImage %p size=%d x %d", t, t->width(), t->height());
+void RefSImage::print(RefSImage *t) {
+    DMESG("RefSImage %p size=%d x %d", t, t->width(), t->height());
 }
 
-int RefImage::wordHeight() {
+int RefSImage::wordHeight() {
     if (bpp() == 1)
         oops(20);
     return ((height() * 4 + 31) >> 5);
 }
 
-void RefImage::makeWritable() {
+void RefSImage::makeWritable() {
     ++revision;
     if (buffer->isReadOnly()) {
         buffer = mkBuffer(data(), length());
     }
 }
 
-uint8_t RefImage::fillMask(color c) {
+uint8_t RefSImage::fillMask(color c) {
     return this->bpp() == 1 ? (c & 1) * 0xff : 0x11 * (c & 0xf);
 }
 
-bool RefImage::inRange(int x, int y) {
+bool RefSImage::inRange(int x, int y) {
     return 0 <= x && x < width() && 0 <= y && y < height();
 }
 
-void RefImage::clamp(int *x, int *y) {
+void RefSImage::clamp(int *x, int *y) {
     *x = min(max(*x, 0), width() - 1);
     *y = min(max(*y, 0), height() - 1);
 }
 
-RefImage::RefImage(BoxedBuffer *buf) : PXT_VTABLE_INIT(RefImage), buffer(buf) {
+RefSImage::RefSImage(BoxedBuffer *buf) : PXT_VTABLE_INIT(RefSImage), buffer(buf) {
     revision = 0;
     if (!buf)
         oops(21);
@@ -60,21 +60,21 @@ static inline int byteSize(int w, int h, int bpp) {
         return sizeof(ImageHeader) + (((h * 4 + 31) / 32) * 4) * w;
 }
 
-Image_ allocImage(const uint8_t *data, uint32_t sz) {
+SImage_ allocImage(const uint8_t *data, uint32_t sz) {
     auto buf = mkBuffer(data, sz);
     registerGCObj(buf);
-    Image_ r = NEW_GC(RefImage, buf);
+    SImage_ r = NEW_GC(RefSImage, buf);
     unregisterGCObj(buf);
     return r;
 }
 
-Image_ mkImage(int width, int height, int bpp) {
+SImage_ mkImage(int width, int height, int bpp) {
     if (width < 0 || height < 0 || width > 2000 || height > 2000)
         return NULL;
     if (bpp != 1 && bpp != 4)
         return NULL;
     uint32_t sz = byteSize(width, height, bpp);
-    Image_ r = allocImage(NULL, sz);
+    SImage_ r = allocImage(NULL, sz);
     auto hd = r->header();
     hd->magic = IMAGE_HEADER_MAGIC;
     hd->bpp = bpp;
@@ -122,7 +122,7 @@ namespace ImageMethods {
  * Get the width of the image
  */
 //% property
-int width(Image_ img) {
+int width(SImage_ img) {
     return img->width();
 }
 
@@ -130,7 +130,7 @@ int width(Image_ img) {
  * Get the height of the image
  */
 //% property
-int height(Image_ img) {
+int height(SImage_ img) {
     return img->height();
 }
 
@@ -138,17 +138,17 @@ int height(Image_ img) {
  * True if the image is monochromatic (black and white)
  */
 //% property
-bool isMono(Image_ img) {
+bool isMono(SImage_ img) {
     return img->bpp() == 1;
 }
 
 //% property
-bool isStatic(Image_ img) {
+bool isStatic(SImage_ img) {
     return img->buffer->isReadOnly();
 }
 
 //% property
-bool revision(Image_ img) {
+bool revision(SImage_ img) {
     return img->revision;
 }
 
@@ -157,7 +157,7 @@ bool revision(Image_ img) {
  * bpp.
  */
 //%
-void copyFrom(Image_ img, Image_ from) {
+void copyFrom(SImage_ img, SImage_ from) {
     if (img->width() != from->width() || img->height() != from->height() ||
         img->bpp() != from->bpp())
         return;
@@ -165,7 +165,7 @@ void copyFrom(Image_ img, Image_ from) {
     memcpy(img->pix(), from->pix(), from->pixLength());
 }
 
-static void setCore(Image_ img, int x, int y, int c) {
+static void setCore(SImage_ img, int x, int y, int c) {
     auto ptr = img->pix(x, y);
     if (img->bpp() == 4) {
         if (y & 1)
@@ -181,7 +181,7 @@ static void setCore(Image_ img, int x, int y, int c) {
     }
 }
 
-static int getCore(Image_ img, int x, int y) {
+static int getCore(SImage_ img, int x, int y) {
     auto ptr = img->pix(x, y);
     if (img->bpp() == 4) {
         if (y & 1)
@@ -199,7 +199,7 @@ static int getCore(Image_ img, int x, int y) {
  * Set pixel color
  */
 //%
-void setPixel(Image_ img, int x, int y, int c) {
+void setPixel(SImage_ img, int x, int y, int c) {
     if (!img->inRange(x, y))
         return;
     img->makeWritable();
@@ -210,19 +210,19 @@ void setPixel(Image_ img, int x, int y, int c) {
  * Get a pixel color
  */
 //%
-int getPixel(Image_ img, int x, int y) {
+int getPixel(SImage_ img, int x, int y) {
     if (!img->inRange(x, y))
         return 0;
     return getCore(img, x, y);
 }
 
-void fillRect(Image_ img, int x, int y, int w, int h, int c);
+void fillRect(SImage_ img, int x, int y, int w, int h, int c);
 
 /**
  * Fill entire image with a given color
  */
 //%
-void fill(Image_ img, int c) {
+void fill(SImage_ img, int c) {
     if (c && img->hasPadding()) {
         fillRect(img, 0, 0, img->width(), img->height(), c);
         return;
@@ -235,7 +235,7 @@ void fill(Image_ img, int c) {
  * Copy row(s) of pixel from image to buffer (8 bit per pixel).
  */
 //%
-void getRows(Image_ img, int x, Buffer dst) {
+void getRows(SImage_ img, int x, Buffer dst) {
     if (img->bpp() != 4)
         return;
 
@@ -259,7 +259,7 @@ void getRows(Image_ img, int x, Buffer dst) {
  * Copy row(s) of pixel from buffer to image.
  */
 //%
-void setRows(Image_ img, int x, Buffer src) {
+void setRows(SImage_ img, int x, Buffer src) {
     if (img->bpp() != 4)
         return;
 
@@ -280,7 +280,7 @@ void setRows(Image_ img, int x, Buffer src) {
     }
 }
 
-void fillRect(Image_ img, int x, int y, int w, int h, int c) {
+void fillRect(SImage_ img, int x, int y, int w, int h, int c) {
     if (w == 0 || h == 0 || x >= img->width() || y >= img->height())
         return;
 
@@ -355,11 +355,11 @@ void fillRect(Image_ img, int x, int y, int w, int h, int c) {
 }
 
 //%
-void _fillRect(Image_ img, int xy, int wh, int c) {
+void _fillRect(SImage_ img, int xy, int wh, int c) {
     fillRect(img, XX(xy), YY(xy), XX(wh), YY(wh), c);
 }
 
-void mapRect(Image_ img, int x, int y, int w, int h, Buffer map) {
+void mapRect(SImage_ img, int x, int y, int w, int h, Buffer map) {
     if (w == 0 || h == 0 || x >= img->width() || y >= img->height())
         return;
 
@@ -400,12 +400,12 @@ void mapRect(Image_ img, int x, int y, int w, int h, Buffer map) {
 }
 
 //%
-void _mapRect(Image_ img, int xy, int wh, Buffer c) {
+void _mapRect(SImage_ img, int xy, int wh, Buffer c) {
     mapRect(img, XX(xy), YY(xy), XX(wh), YY(wh), c);
 }
 
 //% argsNullable
-bool equals(Image_ img, Image_ other) {
+bool equals(SImage_ img, SImage_ other) {
     if (!other) {
         return false;
     }
@@ -420,7 +420,7 @@ bool equals(Image_ img, Image_ other) {
  * Return a copy of the current image
  */
 //%
-Image_ clone(Image_ img) {
+SImage_ clone(SImage_ img) {
     auto r = allocImage(img->data(), img->length());
     MEMDBG("mkImageClone: %d X %d => %p", img->width(), img->height(), r);
     return r;
@@ -430,7 +430,7 @@ Image_ clone(Image_ img) {
  * Flips (mirrors) pixels horizontally in the current image
  */
 //%
-void flipX(Image_ img) {
+void flipX(SImage_ img) {
     img->makeWritable();
 
     int bh = img->byteHeight();
@@ -452,7 +452,7 @@ void flipX(Image_ img) {
  * Flips (mirrors) pixels vertically in the current image
  */
 //%
-void flipY(Image_ img) {
+void flipY(SImage_ img) {
     img->makeWritable();
 
     // this is quite slow - for small 16x16 sprite it will take in the order of 1ms
@@ -474,8 +474,8 @@ void flipY(Image_ img) {
  * Returns a transposed image (with X/Y swapped)
  */
 //%
-Image_ transposed(Image_ img) {
-    Image_ r = mkImage(img->height(), img->width(), img->bpp());
+SImage_ transposed(SImage_ img) {
+    SImage_ r = mkImage(img->height(), img->width(), img->bpp());
 
     // this is quite slow
     for (int i = 0; i < img->width(); ++i) {
@@ -487,13 +487,13 @@ Image_ transposed(Image_ img) {
     return r;
 }
 
-void drawImage(Image_ img, Image_ from, int x, int y);
+void drawImage(SImage_ img, SImage_ from, int x, int y);
 
 /**
  * Every pixel in image is moved by (dx,dy)
  */
 //%
-void scroll(Image_ img, int dx, int dy) {
+void scroll(SImage_ img, int dx, int dy) {
     img->makeWritable();
     auto bh = img->byteHeight();
     auto w = img->width();
@@ -527,11 +527,11 @@ const uint8_t nibdouble[] = {0x00, 0x11, 0x22, 0x33, 0x44, 0x55, 0x66, 0x77,
  * Stretches the image horizontally by 100%
  */
 //%
-Image_ doubledX(Image_ img) {
+SImage_ doubledX(SImage_ img) {
     if (img->width() > 126)
         return NULL;
 
-    Image_ r = mkImage(img->width() * 2, img->height(), img->bpp());
+    SImage_ r = mkImage(img->width() * 2, img->height(), img->bpp());
     auto src = img->pix();
     auto dst = r->pix();
     auto w = img->width();
@@ -553,11 +553,11 @@ Image_ doubledX(Image_ img) {
  * Stretches the image vertically by 100%
  */
 //%
-Image_ doubledY(Image_ img) {
+SImage_ doubledY(SImage_ img) {
     if (img->height() > 126)
         return NULL;
 
-    Image_ r = mkImage(img->width(), img->height() * 2, img->bpp());
+    SImage_ r = mkImage(img->width(), img->height() * 2, img->bpp());
     auto src0 = img->pix();
     auto dst = r->pix();
 
@@ -583,7 +583,7 @@ Image_ doubledY(Image_ img) {
  * Replaces one color in an image with another
  */
 //%
-void replace(Image_ img, int from, int to) {
+void replace(SImage_ img, int from, int to) {
     if (img->bpp() != 4)
         return;
     to &= 0xf;
@@ -617,15 +617,15 @@ void replace(Image_ img, int from, int to) {
  * Stretches the image in both directions by 100%
  */
 //%
-Image_ doubled(Image_ img) {
-    Image_ tmp = doubledX(img);
+SImage_ doubled(SImage_ img) {
+    SImage_ tmp = doubledX(img);
     registerGCObj(tmp);
-    Image_ r = doubledY(tmp);
+    SImage_ r = doubledY(tmp);
     unregisterGCObj(tmp);
     return r;
 }
 
-bool drawImageCore(Image_ img, Image_ from, int x, int y, int color) {
+bool drawImageCore(SImage_ img, SImage_ from, int x, int y, int color) {
     auto w = from->width();
     auto h = from->height();
     auto sh = img->height();
@@ -834,7 +834,7 @@ bool drawImageCore(Image_ img, Image_ from, int x, int y, int color) {
  * Draw given image on the current image
  */
 //%
-void drawImage(Image_ img, Image_ from, int x, int y) {
+void drawImage(SImage_ img, SImage_ from, int x, int y) {
     img->makeWritable();
     if (img->bpp() == 4 && from->bpp() == 4) {
         drawImageCore(img, from, x, y, -2);
@@ -848,7 +848,7 @@ void drawImage(Image_ img, Image_ from, int x, int y) {
  * Draw given image with transparent background on the current image
  */
 //%
-void drawTransparentImage(Image_ img, Image_ from, int x, int y) {
+void drawTransparentImage(SImage_ img, SImage_ from, int x, int y) {
     img->makeWritable();
     drawImageCore(img, from, x, y, 0);
 }
@@ -857,11 +857,11 @@ void drawTransparentImage(Image_ img, Image_ from, int x, int y) {
  * Check if the current image "collides" with another
  */
 //%
-bool overlapsWith(Image_ img, Image_ other, int x, int y) {
+bool overlapsWith(SImage_ img, SImage_ other, int x, int y) {
     return drawImageCore(img, other, x, y, -1);
 }
 
-// Image_ format (legacy)
+// SImage_ format (legacy)
 //  byte 0: magic 0xe4 - 4 bit color; 0xe1 is monochromatic
 //  byte 1: width in pixels
 //  byte 2: height in pixels
@@ -869,9 +869,9 @@ bool overlapsWith(Image_ img, Image_ other, int x, int y) {
 //  byte 4...N: data 4 bits per pixels, high order nibble printed first, lines aligned to 32 bit
 //  words byte 4...N: data 1 bit per pixels, high order bit printed first, lines aligned to byte
 
-Image_ convertAndWrap(Buffer buf) {
+SImage_ convertAndWrap(Buffer buf) {
     if (isValidImage(buf))
-        return NEW_GC(RefImage, buf);
+        return NEW_GC(RefSImage, buf);
 
     // What follows in this function is mostly dead code, except if people construct image buffers
     // by hand. Probably safe to remove in a year (middle of 2020) or so. When removing, also remove
@@ -890,13 +890,13 @@ Image_ convertAndWrap(Buffer buf) {
     memcpy(hd->pixels, src + 4, buf->length - 4);
 
     registerGCObj(tmp);
-    auto r = NEW_GC(RefImage, tmp);
+    auto r = NEW_GC(RefSImage, tmp);
     unregisterGCObj(tmp);
     return r;
 }
 
 //%
-void _drawIcon(Image_ img, Buffer icon, int xy, int c) {
+void _drawIcon(SImage_ img, Buffer icon, int xy, int c) {
     img->makeWritable();
 
     auto iconImg = convertAndWrap(icon);
@@ -906,7 +906,7 @@ void _drawIcon(Image_ img, Buffer icon, int xy, int c) {
     drawImageCore(img, iconImg, XX(xy), YY(xy), c);
 }
 
-static void drawLineLow(Image_ img, int x0, int y0, int x1, int y1, int c) {
+static void drawLineLow(SImage_ img, int x0, int y0, int x1, int y1, int c) {
     int dx = x1 - x0;
     int dy = y1 - y0;
     int yi = 1;
@@ -928,7 +928,7 @@ static void drawLineLow(Image_ img, int x0, int y0, int x1, int y1, int c) {
     }
 }
 
-static void drawLineHigh(Image_ img, int x0, int y0, int x1, int y1, int c) {
+static void drawLineHigh(SImage_ img, int x0, int y0, int x1, int y1, int c) {
     int dx = x1 - x0;
     int dy = y1 - y0;
     int xi = 1;
@@ -950,7 +950,7 @@ static void drawLineHigh(Image_ img, int x0, int y0, int x1, int y1, int c) {
     }
 }
 
-void drawLine(Image_ img, int x0, int y0, int x1, int y1, int c) {
+void drawLine(SImage_ img, int x0, int y0, int x1, int y1, int c) {
     if (x1 < x0) {
         drawLine(img, x1, y1, x0, y0, c);
         return;
@@ -1029,11 +1029,11 @@ void drawLine(Image_ img, int x0, int y0, int x1, int y1, int c) {
 }
 
 //%
-void _drawLine(Image_ img, int xy, int wh, int c) {
+void _drawLine(SImage_ img, int xy, int wh, int c) {
     drawLine(img, XX(xy), YY(xy), XX(wh), YY(wh), c);
 }
 
-void blitRow(Image_ img, int x, int y, Image_ from, int fromX, int fromH) {
+void blitRow(SImage_ img, int x, int y, SImage_ from, int fromX, int fromH) {
     if (!img->inRange(x, 0) || !img->inRange(fromX, 0) || fromH <= 0)
         return;
 
@@ -1071,11 +1071,11 @@ void blitRow(Image_ img, int x, int y, Image_ from, int fromX, int fromH) {
 }
 
 //%
-void _blitRow(Image_ img, int xy, Image_ from, int xh) {
+void _blitRow(SImage_ img, int xy, SImage_ from, int xh) {
     blitRow(img, XX(xy), YY(xy), from, XX(xh), YY(xh));
 }
 
-bool blit(Image_ dst, Image_ src, pxt::RefCollection *args) {
+bool blit(SImage_ dst, SImage_ src, pxt::RefCollection *args) {
     int xDst = pxt::toInt(args->getAt(0));
     int yDst = pxt::toInt(args->getAt(1));
     int wDst = pxt::toInt(args->getAt(2));
@@ -1126,11 +1126,11 @@ bool blit(Image_ dst, Image_ src, pxt::RefCollection *args) {
 }
 
 //%
-bool _blit(Image_ img, Image_ src, pxt::RefCollection *args) {
+bool _blit(SImage_ img, SImage_ src, pxt::RefCollection *args) {
     return blit(img, src, args);
 }
 
-void fillCircle(Image_ img, int cx, int cy, int r, int c) {
+void fillCircle(SImage_ img, int cx, int cy, int r, int c) {
     int x = r - 1;
     int y = 0;
     int dx = 1;
@@ -1155,7 +1155,7 @@ void fillCircle(Image_ img, int cx, int cy, int r, int c) {
 }
 
 //%
-void _fillCircle(Image_ img, int cxy, int r, int c) {
+void _fillCircle(SImage_ img, int cxy, int r, int c) {
     fillCircle(img, XX(cxy), YY(cxy), r, c);
 }
 
@@ -1271,7 +1271,7 @@ LineGenState initYRangeGenerator(int16_t X0, int16_t Y0, int16_t X1, int16_t Y1)
 // value range/safety check not included
 // prepare "img->makeWritable();" and "uint8_t f = img->fillMask(c);" outside required.
 // bpp=4 support only right now
-void drawVLineCore(Image_ img, int x, int y, int h, uint8_t f) {
+void drawVLineCore(SImage_ img, int x, int y, int h, uint8_t f) {
     uint8_t *p = img->pix(x, y);
     auto ptr = p;
     unsigned mask = 0x0f;
@@ -1293,7 +1293,7 @@ void drawVLineCore(Image_ img, int x, int y, int h, uint8_t f) {
     }
 }
 
-void drawVLine(Image_ img, int x, int y, int h, int c) {
+void drawVLine(SImage_ img, int x, int y, int h, int c) {
     int H = height(img);
     uint8_t f = img->fillMask(c);
     if (x < 0 || x >= width(img) || y >= H || y + h - 1 < 0)
@@ -1307,7 +1307,7 @@ void drawVLine(Image_ img, int x, int y, int h, int c) {
     drawVLineCore(img, x, y, h, f);
 }
 
-void fillTriangle(Image_ img, int x0, int y0, int x1, int y1, int x2, int y2, int c) {
+void fillTriangle(SImage_ img, int x0, int y0, int x1, int y1, int x2, int y2, int c) {
     if (x1 < x0) {
         swap(x0, x1);
         swap(y0, y1);
@@ -1376,7 +1376,7 @@ void fillTriangle(Image_ img, int x0, int y0, int x1, int y1, int x2, int y2, in
     }
 }
 
-void fillPolygon4(Image_ img, int x0, int y0, int x1, int y1, int x2, int y2, int x3, int y3, int c) {
+void fillPolygon4(SImage_ img, int x0, int y0, int x1, int y1, int x2, int y2, int x3, int y3, int c) {
     LineGenState lines[] = {
         (x0 < x1) ? initYRangeGenerator(x0, y0, x1, y1) : initYRangeGenerator(x1, y1, x0, y0),
         (x1 < x2) ? initYRangeGenerator(x1, y1, x2, y2) : initYRangeGenerator(x2, y2, x1, y1),
@@ -1420,7 +1420,7 @@ void fillPolygon4(Image_ img, int x0, int y0, int x1, int y1, int x2, int y2, in
 }
 
 //%
-void _fillTriangle(Image_ img, pxt::RefCollection *args) {
+void _fillTriangle(SImage_ img, pxt::RefCollection *args) {
     fillTriangle(
         img,
         pxt::toInt(args->getAt(0)),
@@ -1440,7 +1440,7 @@ void _fillTriangle(Image_ img, pxt::RefCollection *args) {
 // Fortunately, no matter what perspective transform is applied, a rectangle/trapezoid will still meet this condition.
 // Ref: https://forum.makecode.com/t/new-3d-engine-help-filling-4-sided-polygons/18641/9
 //%
-void _fillPolygon4(Image_ img, pxt::RefCollection *args) {
+void _fillPolygon4(SImage_ img, pxt::RefCollection *args) {
     fillPolygon4(
         img,
         pxt::toInt(args->getAt(0)),
@@ -1462,8 +1462,8 @@ namespace image {
  * Create new empty (transparent) image
  */
 //%
-Image_ create(int width, int height) {
-    Image_ r = mkImage(width, height, IMAGE_BITS);
+SImage_ create(int width, int height) {
+    SImage_ r = mkImage(width, height, IMAGE_BITS);
     if (r)
         memset(r->pix(), 0, r->pixLength());
     else
@@ -1475,7 +1475,7 @@ Image_ create(int width, int height) {
  * Create new image with given content
  */
 //%
-Image_ ofBuffer(Buffer buf) {
+SImage_ ofBuffer(Buffer buf) {
     return ImageMethods::convertAndWrap(buf);
 }
 
@@ -1487,7 +1487,7 @@ Buffer doubledIcon(Buffer icon) {
     if (!isValidImage(icon))
         return NULL;
 
-    auto r = NEW_GC(RefImage, icon);
+    auto r = NEW_GC(RefSImage, icon);
     registerGCObj(r);
     auto t = ImageMethods::doubled(r);
     unregisterGCObj(r);

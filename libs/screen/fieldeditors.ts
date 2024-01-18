@@ -13,7 +13,7 @@ namespace images {
     //% img.fieldOptions.filter="!tile !dialog !background"
     //% weight=100 group="Create" duplicateShadowOnDrag
     //% help=images/sprite-image
-    export function _spriteImage(img: Image) {
+    export function _spriteImage(img: SImage) {
         return img
     }
 
@@ -27,7 +27,7 @@ namespace images {
     //% img.fieldOptions.filter="background"
     //% weight=100 group="Create"
     //% blockHidden=1 duplicateShadowOnDrag
-    export function _screenImage(img: Image) {
+    export function _screenImage(img: SImage) {
         return img
     }
 
@@ -39,7 +39,7 @@ namespace images {
     //% img.fieldOptions.sizes="10,8;16,16;32,32;48,48;64,64;16,32;32,48;32,8;64,8;20,15;40,15"
     //% weight=100 group="Create"
     //% blockHidden=1 duplicateShadowOnDrag
-    export function _tileMapImage(img: Image) {
+    export function _tileMapImage(img: SImage) {
         return img
     }
 
@@ -52,7 +52,7 @@ namespace images {
     //% img.fieldOptions.filter="tile"
     //% weight=100 group="Create"
     //% blockHidden=1 duplicateShadowOnDrag
-    export function _tileImage(img: Image) {
+    export function _tileImage(img: SImage) {
         return img
     }
 
@@ -62,7 +62,7 @@ namespace images {
     //% tile.fieldOptions.decompileIndirectFixedInstances="true"
     //% weight=10 blockNamespace="scene" group="Tiles"
     //% blockHidden=1 duplicateShadowOnDrag
-    export function _tile(tile: Image) {
+    export function _tile(tile: SImage) {
         return tile
     }
 
@@ -76,7 +76,7 @@ namespace images {
     //% img.fieldOptions.filter="dialog"
     //% weight=100 group="Create"
     //% blockHidden=1 duplicateShadowOnDrag
-    export function _dialogImage(img: Image) {
+    export function _dialogImage(img: SImage) {
         return img
     }
 
@@ -91,7 +91,7 @@ namespace images {
     //% image.fieldOptions.decompileArgumentAsString="true"
     //% weight=0 group="Create"
     //% help=images/image
-    export function _image(image: Image): Image {
+    export function _image(image: SImage): SImage {
         return image;
     }
 

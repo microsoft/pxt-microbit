@@ -1,7 +1,7 @@
 // Auto-generated. Do not edit.
 
 
-declare interface Image {
+declare interface SImage {
     /**
      * Get the width of the image
      */
@@ -25,7 +25,7 @@ declare interface Image {
      * bpp.
      */
     //% shim=ImageMethods::copyFrom
-    copyFrom(from: Image): void;
+    copyFrom(from: SImage): void;
 
     /**
      * Set pixel color
@@ -49,7 +49,7 @@ declare interface Image {
      * Return a copy of the current image
      */
     //% shim=ImageMethods::clone
-    clone(): Image;
+    clone(): SImage;
 
     /**
      * Flips (mirrors) pixels horizontally in the current image
@@ -67,7 +67,7 @@ declare interface Image {
      * Returns a transposed image (with X/Y swapped)
      */
     //% shim=ImageMethods::transposed
-    transposed(): Image;
+    transposed(): SImage;
 
     /**
      * Every pixel in image is moved by (dx,dy)
@@ -79,13 +79,13 @@ declare interface Image {
      * Stretches the image horizontally by 100%
      */
     //% shim=ImageMethods::doubledX
-    doubledX(): Image;
+    doubledX(): SImage;
 
     /**
      * Stretches the image vertically by 100%
      */
     //% shim=ImageMethods::doubledY
-    doubledY(): Image;
+    doubledY(): SImage;
 
     /**
      * Replaces one color in an image with another
@@ -97,25 +97,25 @@ declare interface Image {
      * Stretches the image in both directions by 100%
      */
     //% shim=ImageMethods::doubled
-    doubled(): Image;
+    doubled(): SImage;
 
     /**
      * Draw given image on the current image
      */
     //% shim=ImageMethods::drawImage
-    drawImage(from: Image, x: int32, y: int32): void;
+    drawImage(from: SImage, x: int32, y: int32): void;
 
     /**
      * Draw given image with transparent background on the current image
      */
     //% shim=ImageMethods::drawTransparentImage
-    drawTransparentImage(from: Image, x: int32, y: int32): void;
+    drawTransparentImage(from: SImage, x: int32, y: int32): void;
 
     /**
      * Check if the current image "collides" with another
      */
     //% shim=ImageMethods::overlapsWith
-    overlapsWith(other: Image, x: int32, y: int32): boolean;
+    overlapsWith(other: SImage, x: int32, y: int32): boolean;
 }
 declare namespace image {
 
@@ -123,13 +123,13 @@ declare namespace image {
      * Create new empty (transparent) image
      */
     //% shim=image::create
-    function create(width: int32, height: int32): Image;
+    function create(width: int32, height: int32): SImage;
 
     /**
      * Create new image with given content
      */
     //% shim=image::ofBuffer
-    function ofBuffer(buf: Buffer): Image;
+    function ofBufsimageuf: Buffer): Image;
 
     /**
      * Double the size of an icon
