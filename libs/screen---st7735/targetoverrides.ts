@@ -28,12 +28,12 @@ namespace _screen_internal {
 
     //% shim=TD_ID
     function getScreenWidth(defl: number) {
-        return control.getConfigValue(DAL.CFG_ARCADE_SCREEN_WIDTH, defl)
+        return 160 // control.getConfigValue(DAL.CFG_ARCADE_SCREEN_WIDTH, defl)
     }
 
     //% shim=TD_ID
     function getScreenHeight(defl: number) {
-        return control.getConfigValue(DAL.CFG_ARCADE_SCREEN_HEIGHT, defl)
+        return 120 // control.getConfigValue(DAL.CFG_ARCADE_SCREEN_HEIGHT, defl)
     }
 
     export function createScreen() {
@@ -44,12 +44,12 @@ namespace _screen_internal {
         updateScreenStatusBar(status) // clear the status area
 
         control.__screen.setupUpdate(() => updateScreen(img))
-        control.EventContext.onStats = function (msg: string) {
-            status.fill(0)
-            status.print(msg, 2, 2, 1, image.font5)
-            updateScreenStatusBar(status)
-            updateStats(msg);
-        }
+        // control.EventContext.onStats = function (msg: string) {
+        //     status.fill(0)
+        //     status.print(msg, 2, 2, 1, image.font5)
+        //     updateScreenStatusBar(status)
+        //     updateStats(msg);
+        // }
 
         return img as ScreenImage;
     }
