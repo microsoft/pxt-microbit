@@ -18,7 +18,6 @@
         "libs/datalogger",
         "libs/color",
         "libs/audio-recording",
-        "libs/screen",
         "libs/screen---st7735"
     ],
     "cloud": {
