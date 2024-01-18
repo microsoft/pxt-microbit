@@ -1,0 +1,115 @@
+{
+  "screen": {
+    "simulationBehavior": "screen",
+    "visual": {
+      "builtIn": "screen",
+      "width": 158.43856811523438,
+      "height": 146.8025665283203,
+      "pinDistance": 14.91,
+      "pinLocations": [
+        {
+          "x": 4.227952701380444,
+          "y": 3.1650031792503945
+        },
+        {
+          "x": 18.170226805137037,
+          "y": 3.1650031792503945
+        },
+        {
+          "x": 46.05478386015504,
+          "y": 3.1650031792503945
+        },
+        {
+          "x": 59.99706238766404,
+          "y": 3.1650031792503945
+        },
+        {
+          "x": 73.93934976267785,
+          "y": 3.1650031792503945
+        },
+        {
+          "x": 87.88161944268204,
+          "y": 3.1650031792503945
+        },
+        {
+          "x": 101.82389797019104,
+          "y": 3.1650031792503945
+        },
+        {
+          "x": 32.11250533264604,
+          "y": 3.1650031792503945
+        },
+        {
+          "x": 117.68761950246274,
+          "y": 3.1650031792503945
+        }
+      ]
+    },
+    "numberOfPins": 9,
+    "instantiation": {
+      "kind": "singleton"
+    },
+    "pinDefinitions": [
+      {
+        "target": "ground",
+        "style": "male",
+        "orientation": "-Z"
+      },
+      {
+        "target": "threeVolt",
+        "style": "male",
+        "orientation": "-Z"
+      },
+      {
+        "target": "DISPLAY_DC",
+        "style": "male",
+        "orientation": "-Z"
+      },
+      {
+        "target": "DISPLAY_CS",
+        "style": "male",
+        "orientation": "-Z"
+      },
+      {
+        "target": "DISPLAY_MOSI",
+        "style": "male",
+        "orientation": "-Z"
+      },
+      {
+        "target": "DISPLAY_SCK",
+        "style": "male",
+        "orientation": "-Z"
+      },
+      {
+        "target": "DISPLAY_MISO",
+        "style": "male",
+        "orientation": "-Z"
+      },
+      {
+        "target": "DISPLAY_RST",
+        "style": "male",
+        "orientation": "-Z"
+      },
+      {
+        "target": "threeVolt",
+        "style": "male",
+        "orientation": "-Z"
+      }
+    ],
+    "assembly": [
+      {
+        "pinIndices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ]
+      }
+    ]
+  }
+}

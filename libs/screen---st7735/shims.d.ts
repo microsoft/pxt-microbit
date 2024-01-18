@@ -15,7 +15,7 @@ declare interface Image {
     height: int32;
 
     /**
-     * True if the image is monochromatic (black and white)
+     * True iff the image is monochromatic (black and white)
      */
     //% property shim=ImageMethods::isMono
     isMono: boolean;
@@ -44,18 +44,6 @@ declare interface Image {
      */
     //% shim=ImageMethods::fill
     fill(c: int32): void;
-
-    /**
-     * Copy row(s) of pixel from image to buffer (8 bit per pixel).
-     */
-    //% shim=ImageMethods::getRows
-    getRows(x: int32, dst: Buffer): void;
-
-    /**
-     * Copy row(s) of pixel from buffer to image.
-     */
-    //% shim=ImageMethods::setRows
-    setRows(x: int32, src: Buffer): void;
 
     /**
      * Return a copy of the current image
