@@ -17,7 +17,8 @@
         "libs/flashlog",
         "libs/datalogger",
         "libs/color",
-        "libs/audio-recording"
+        "libs/audio-recording",
+        "libs/screen---st7735"
     ],
     "cloud": {
         "workspace": false,
