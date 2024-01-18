@@ -1,5 +1,5 @@
 //% fixedInstances decompileIndirectFixedInstances
-interface Image {
+interface SImage {
     /**
      * Fill a rectangle
      */
@@ -60,7 +60,7 @@ interface Image {
     //% shim=ImageMethods::clone blockNamespace="images" group="Create"
     //% block="clone %picture=variables_get"
     //% help=images/image/clone
-    clone(): Image;
+    clone(): SImage;
 
     /**
      * Flips (mirrors) pixels horizontally in the current image
@@ -104,7 +104,7 @@ interface Image {
     //% this.defl="picture"
     //% other.shadow=screen_image_picker
     //% help=images/image/equals
-    equals(other: Image): boolean;
+    equals(other: SImage): boolean;
 
     //% shim=ImageMethods::isStatic
     isStatic(): boolean;
@@ -113,9 +113,9 @@ interface Image {
     revision(): number;
 }
 
-declare namespace image {
+declare namespace simage {
     //% blockNamespace="images"
     //% block="create image width %width height %height" group="Create"
     //% help=images/create
-    function create(width: number, height: number): Image;
+    function create(width: number, height: number): SImage;
 }

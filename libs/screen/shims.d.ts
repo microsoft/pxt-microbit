@@ -5,131 +5,131 @@ declare interface SImage {
     /**
      * Get the width of the image
      */
-    //% property shim=ImageMethods::width
+    //% property shim=SImageMethods::width
     width: int32;
 
     /**
      * Get the height of the image
      */
-    //% property shim=ImageMethods::height
+    //% property shim=SImageMethods::height
     height: int32;
 
     /**
      * True if the image is monochromatic (black and white)
      */
-    //% property shim=ImageMethods::isMono
+    //% property shim=SImageMethods::isMono
     isMono: boolean;
 
     /**
      * Sets all pixels in the current image from the other image, which has to be of the same size and
      * bpp.
      */
-    //% shim=ImageMethods::copyFrom
+    //% shim=SImageMethods::copyFrom
     copyFrom(from: SImage): void;
 
     /**
      * Set pixel color
      */
-    //% shim=ImageMethods::setPixel
+    //% shim=SImageMethods::setPixel
     setPixel(x: int32, y: int32, c: int32): void;
 
     /**
      * Get a pixel color
      */
-    //% shim=ImageMethods::getPixel
+    //% shim=SImageMethods::getPixel
     getPixel(x: int32, y: int32): int32;
 
     /**
      * Fill entire image with a given color
      */
-    //% shim=ImageMethods::fill
+    //% shim=SImageMethods::fill
     fill(c: int32): void;
 
     /**
      * Copy row(s) of pixel from image to buffer (8 bit per pixel).
      */
-    //% shim=ImageMethods::getRows
+    //% shim=SImageMethods::getRows
     getRows(x: int32, dst: Buffer): void;
 
     /**
      * Copy row(s) of pixel from buffer to image.
      */
-    //% shim=ImageMethods::setRows
+    //% shim=SImageMethods::setRows
     setRows(x: int32, src: Buffer): void;
 
     /**
      * Return a copy of the current image
      */
-    //% shim=ImageMethods::clone
+    //% shim=SImageMethods::clone
     clone(): SImage;
 
     /**
      * Flips (mirrors) pixels horizontally in the current image
      */
-    //% shim=ImageMethods::flipX
+    //% shim=SImageMethods::flipX
     flipX(): void;
 
     /**
      * Flips (mirrors) pixels vertically in the current image
      */
-    //% shim=ImageMethods::flipY
+    //% shim=SImageMethods::flipY
     flipY(): void;
 
     /**
      * Returns a transposed image (with X/Y swapped)
      */
-    //% shim=ImageMethods::transposed
+    //% shim=SImageMethods::transposed
     transposed(): SImage;
 
     /**
      * Every pixel in image is moved by (dx,dy)
      */
-    //% shim=ImageMethods::scroll
+    //% shim=SImageMethods::scroll
     scroll(dx: int32, dy: int32): void;
 
     /**
      * Stretches the image horizontally by 100%
      */
-    //% shim=ImageMethods::doubledX
+    //% shim=SImageMethods::doubledX
     doubledX(): SImage;
 
     /**
      * Stretches the image vertically by 100%
      */
-    //% shim=ImageMethods::doubledY
+    //% shim=SImageMethods::doubledY
     doubledY(): SImage;
 
     /**
      * Replaces one color in an image with another
      */
-    //% shim=ImageMethods::replace
+    //% shim=SImageMethods::replace
     replace(from: int32, to: int32): void;
 
     /**
      * Stretches the image in both directions by 100%
      */
-    //% shim=ImageMethods::doubled
+    //% shim=SImageMethods::doubled
     doubled(): SImage;
 
     /**
      * Draw given image on the current image
      */
-    //% shim=ImageMethods::drawImage
+    //% shim=SImageMethods::drawImage
     drawImage(from: SImage, x: int32, y: int32): void;
 
     /**
      * Draw given image with transparent background on the current image
      */
-    //% shim=ImageMethods::drawTransparentImage
+    //% shim=SImageMethods::drawTransparentImage
     drawTransparentImage(from: SImage, x: int32, y: int32): void;
 
     /**
      * Check if the current image "collides" with another
      */
-    //% shim=ImageMethods::overlapsWith
+    //% shim=SImageMethods::overlapsWith
     overlapsWith(other: SImage, x: int32, y: int32): boolean;
 }
-declare namespace simage {
+declare namespace image {
 
     /**
      * Create new empty (transparent) image

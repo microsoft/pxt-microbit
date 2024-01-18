@@ -116,7 +116,7 @@ bool isLegacyImage(Buffer buf) {
 
 } // namespace pxt
 
-namespace ImageMethods {
+namespace SImageMethods {
 
 /**
  * Get the width of the image
