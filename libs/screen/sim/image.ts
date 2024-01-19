@@ -1,5 +1,5 @@
 namespace pxsim {
-    export class RefSImage extends RefObject {
+    export class RefImage extends RefObject {
         _width: number;
         _height: number;
         _bpp: number;
@@ -64,34 +64,34 @@ namespace pxsim.ImageMethods {
     export function XX(x: number) { return (x << 16) >> 16 }
     export function YY(x: number) { return x >> 16 }
 
-    export function width(img: RefSImage) { return img._width }
+    export function width(img: RefImage) { return img._width }
 
-    export function height(img: RefSImage) { return img._height }
+    export function height(img: RefImage) { return img._height }
 
-    export function isMono(img: RefSImage) { return img._bpp == 1 }
+    export function isMono(img: RefImage) { return img._bpp == 1 }
 
-    export function isStatic(img: RefSImage) { return img.gcIsStatic() }
+    export function isStatic(img: RefImage) { return img.gcIsStatic() }
 
-    export function revision(img: RefSImage) { return img.revision }
+    export function revision(img: RefImage) { return img.revision }
 
-    export function setPixel(img: RefSImage, x: number, y: number, c: number) {
+    export function setPixel(img: RefImage, x: number, y: number, c: number) {
         img.makeWritable()
         if (img.inRange(x, y))
             img.data[img.pix(x, y)] = img.color(c)
     }
 
-    export function getPixel(img: RefSImage, x: number, y: number) {
+    export function getPixel(img: RefImage, x: number, y: number) {
         if (img.inRange(x, y))
             return img.data[img.pix(x, y)]
         return 0
     }
 
-    export function fill(img: RefSImage, c: number) {
+    export function fill(img: RefImage, c: number) {
         img.makeWritable()
         img.data.fill(img.color(c))
     }
 
-    export function fillRect(img: RefSImage, x: number, y: number, w: number, h: number, c: number) {
+    export function fillRect(img: RefImage, x: number, y: number, w: number, h: number, c: number) {
         if (w == 0 || h == 0 || x >= img._width || y >= img._height || x + w - 1 < 0 || y + h - 1 < 0)
             return;
         img.makeWritable()
@@ -109,11 +109,11 @@ namespace pxsim.ImageMethods {
         }
     }
 
-    export function _fillRect(img: RefSImage, xy: number, wh: number, c: number) {
+    export function _fillRect(img: RefImage, xy: number, wh: number, c: number) {
         fillRect(img, XX(xy), YY(xy), XX(wh), YY(wh), c)
     }
 
-    export function mapRect(img: RefSImage, x: number, y: number, w: number, h: number, c: RefBuffer) {
+    export function mapRect(img: RefImage, x: number, y: number, w: number, h: number, c: RefBuffer) {
         if (c.data.length < 16)
             return
         img.makeWritable()
@@ -133,11 +133,11 @@ namespace pxsim.ImageMethods {
         }
     }
 
-    export function _mapRect(img: RefSImage, xy: number, wh: number, c: RefBuffer) {
+    export function _mapRect(img: RefImage, xy: number, wh: number, c: RefBuffer) {
         mapRect(img, XX(xy), YY(xy), XX(wh), YY(wh), c)
     }
 
-    export function equals(img: RefSImage, other: RefSImage) {
+    export function equals(img: RefImage, other: RefImage) {
         if (!other || img._bpp != other._bpp || img._width != other._width || img._height != other._height) {
             return false;
         }
@@ -152,7 +152,7 @@ namespace pxsim.ImageMethods {
         return true;
     }
 
-    export function getRows(img: RefSImage, x: number, dst: RefBuffer) {
+    export function getRows(img: RefImage, x: number, dst: RefBuffer) {
         x |= 0
         if (!img.inRange(x, 0))
             return
@@ -171,7 +171,7 @@ namespace pxsim.ImageMethods {
         }
     }
 
-    export function setRows(img: RefSImage, x: number, src: RefBuffer) {
+    export function setRows(img: RefImage, x: number, src: RefBuffer) {
         x |= 0
         if (!img.inRange(x, 0))
             return
@@ -190,13 +190,13 @@ namespace pxsim.ImageMethods {
         }
     }
 
-    export function clone(img: RefSImage) {
-        let r = new RefSImage(img._width, img._height, img._bpp)
+    export function clone(img: RefImage) {
+        let r = new RefImage(img._width, img._height, img._bpp)
         r.data.set(img.data)
         return r
     }
 
-    export function flipX(img: RefSImage) {
+    export function flipX(img: RefImage) {
         img.makeWritable()
         const w = img._width
         const h = img._height
@@ -206,7 +206,7 @@ namespace pxsim.ImageMethods {
     }
 
 
-    export function flipY(img: RefSImage) {
+    export function flipY(img: RefImage) {
         img.makeWritable()
         const w = img._width
         const h = img._height
@@ -224,11 +224,11 @@ namespace pxsim.ImageMethods {
         }
     }
 
-    export function transposed(img: RefSImage) {
+    export function transposed(img: RefImage) {
         const w = img._width
         const h = img._height
         const d = img.data
-        const r = new RefSImage(h, w, img._bpp)
+        const r = new RefImage(h, w, img._bpp)
         const n = r.data
         let src = 0
 
@@ -243,14 +243,14 @@ namespace pxsim.ImageMethods {
         return r
     }
 
-    export function copyFrom(img: RefSImage, from: RefSImage) {
+    export function copyFrom(img: RefImage, from: RefImage) {
         if (img._width != from._width || img._height != from._height ||
             img._bpp != from._bpp)
             return;
         img.data.set(from.data)
     }
 
-    export function scroll(img: RefSImage, dx: number, dy: number) {
+    export function scroll(img: RefImage, dx: number, dy: number) {
         img.makeWritable()
         dx |= 0
         dy |= 0
@@ -275,18 +275,18 @@ namespace pxsim.ImageMethods {
         // TODO implement dx
     }
 
-    export function replace(img: RefSImage, from: number, to: number) {
+    export function replace(img: RefImage, from: number, to: number) {
         to &= 0xf;
         const d = img.data
         for (let i = 0; i < d.length; ++i)
             if (d[i] == from) d[i] = to
     }
 
-    export function doubledX(img: RefSImage) {
+    export function doubledX(img: RefImage) {
         const w = img._width
         const h = img._height
         const d = img.data
-        const r = new RefSImage(w * 2, h, img._bpp)
+        const r = new RefImage(w * 2, h, img._bpp)
         const n = r.data
         let dst = 0
 
@@ -299,11 +299,11 @@ namespace pxsim.ImageMethods {
         return r
     }
 
-    export function doubledY(img: RefSImage) {
+    export function doubledY(img: RefImage) {
         const w = img._width
         const h = img._height
         const d = img.data
-        const r = new RefSImage(w, h * 2, img._bpp)
+        const r = new RefImage(w, h * 2, img._bpp)
         const n = r.data
 
         let src = 0
@@ -323,11 +323,11 @@ namespace pxsim.ImageMethods {
     }
 
 
-    export function doubled(img: RefSImage) {
+    export function doubled(img: RefImage) {
         return doubledX(doubledY(img))
     }
 
-    function drawImageCore(img: RefSImage, from: RefSImage, x: number, y: number, clear: boolean, check: boolean) {
+    function drawImageCore(img: RefImage, from: RefImage, x: number, y: number, clear: boolean, check: boolean) {
         x |= 0
         y |= 0
 
@@ -376,19 +376,19 @@ namespace pxsim.ImageMethods {
         return false
     }
 
-    export function drawImage(img: RefSImage, from: RefSImage, x: number, y: number) {
+    export function drawImage(img: RefImage, from: RefImage, x: number, y: number) {
         drawImageCore(img, from, x, y, true, false)
     }
 
-    export function drawTransparentImage(img: RefSImage, from: RefSImage, x: number, y: number) {
+    export function drawTransparentImage(img: RefImage, from: RefImage, x: number, y: number) {
         drawImageCore(img, from, x, y, false, false)
     }
 
-    export function overlapsWith(img: RefSImage, other: RefSImage, x: number, y: number) {
+    export function overlapsWith(img: RefImage, other: RefImage, x: number, y: number) {
         return drawImageCore(img, other, x, y, false, true)
     }
 
-    function drawLineLow(img: RefSImage, x0: number, y0: number, x1: number, y1: number, c: number) {
+    function drawLineLow(img: RefImage, x0: number, y0: number, x1: number, y1: number, c: number) {
         let dx = x1 - x0;
         let dy = y1 - y0;
         let yi = img._width;
@@ -412,7 +412,7 @@ namespace pxsim.ImageMethods {
         }
     }
 
-    function drawLineHigh(img: RefSImage, x0: number, y0: number, x1: number, y1: number, c: number) {
+    function drawLineHigh(img: RefImage, x0: number, y0: number, x1: number, y1: number, c: number) {
         let dx = x1 - x0;
         let dy = y1 - y0;
         let xi = 1;
@@ -436,11 +436,11 @@ namespace pxsim.ImageMethods {
         }
     }
 
-    export function _drawLine(img: RefSImage, xy: number, wh: number, c: number) {
+    export function _drawLine(img: RefImage, xy: number, wh: number, c: number) {
         drawLine(img, XX(xy), YY(xy), XX(wh), YY(wh), c)
     }
 
-    export function drawLine(img: RefSImage, x0: number, y0: number, x1: number, y1: number, c: number) {
+    export function drawLine(img: RefImage, x0: number, y0: number, x1: number, y1: number, c: number) {
         x0 |= 0
         y0 |= 0
         x1 |= 0
@@ -524,7 +524,7 @@ namespace pxsim.ImageMethods {
         }
     }
 
-    export function drawIcon(img: RefSImage, icon: RefBuffer, x: number, y: number, color: number) {
+    export function drawIcon(img: RefImage, icon: RefBuffer, x: number, y: number, color: number) {
         const src: Uint8Array = icon.data
         if (!image.isValidImage(icon))
             return
@@ -581,11 +581,11 @@ namespace pxsim.ImageMethods {
         }
     }
 
-    export function _drawIcon(img: RefSImage, icon: RefBuffer, xy: number, color: number) {
+    export function _drawIcon(img: RefImage, icon: RefBuffer, xy: number, color: number) {
         drawIcon(img, icon, XX(xy), YY(xy), color)
     }
 
-    export function fillCircle(img: RefSImage, cx: number, cy: number, r: number, c: number) {
+    export function fillCircle(img: RefImage, cx: number, cy: number, r: number, c: number) {
         let x = r - 1;
         let y = 0;
         let dx = 1;
@@ -609,7 +609,7 @@ namespace pxsim.ImageMethods {
         }
     }
 
-    export function _fillCircle(img: RefSImage, cxy: number, r: number, c: number) {
+    export function _fillCircle(img: RefImage, cxy: number, r: number, c: number) {
         fillCircle(img, XX(cxy), YY(cxy), r, c);
     }
 
@@ -729,7 +729,7 @@ namespace pxsim.ImageMethods {
         }
     }
 
-    export function fillTriangle(img: RefSImage, x0: number, y0: number, x1: number, y1: number, x2: number, y2: number, c: number) {
+    export function fillTriangle(img: RefImage, x0: number, y0: number, x1: number, y1: number, x2: number, y2: number, c: number) {
         if (x1 < x0) {
             [x1, x0] = [x0, x1];
             [y1, y0] = [y0, y1];
@@ -784,7 +784,7 @@ namespace pxsim.ImageMethods {
         }
     }
 
-    export function _fillTriangle(img: RefSImage, args: RefCollection) {
+    export function _fillTriangle(img: RefImage, args: RefCollection) {
         fillTriangle(
             img,
             args.getAt(0) | 0,
@@ -797,7 +797,7 @@ namespace pxsim.ImageMethods {
         );
     }
 
-    export function fillPolygon4(img: RefSImage, x0: number, y0: number, x1: number, y1: number, x2: number, y2: number, x3: number, y3: number, c: number) {
+    export function fillPolygon4(img: RefImage, x0: number, y0: number, x1: number, y1: number, x2: number, y2: number, x3: number, y3: number, c: number) {
         const lines: LineGenState[]= [
             (x0 < x1) ? initYRangeGenerator(x0, y0, x1, y1) : initYRangeGenerator(x1, y1, x0, y0),
             (x1 < x2) ? initYRangeGenerator(x1, y1, x2, y2) : initYRangeGenerator(x2, y2, x1, y1),
@@ -838,7 +838,7 @@ namespace pxsim.ImageMethods {
         }
     }
 
-    export function _fillPolygon4(img: RefSImage, args: RefCollection) {
+    export function _fillPolygon4(img: RefImage, args: RefCollection) {
         fillPolygon4(
             img,
             args.getAt(0) | 0,
@@ -853,11 +853,11 @@ namespace pxsim.ImageMethods {
         );
     }
 
-    export function _blitRow(img: RefSImage, xy: number, from: RefSImage, xh: number) {
+    export function _blitRow(img: RefImage, xy: number, from: RefImage, xh: number) {
         blitRow(img, XX(xy), YY(xy), from, XX(xh), YY(xh))
     }
 
-    export function blitRow(img: RefSImage, x: number, y: number, from: RefSImage, fromX: number, fromH: number) {
+    export function blitRow(img: RefImage, x: number, y: number, from: RefImage, fromX: number, fromH: number) {
         x |= 0
         y |= 0
         fromX |= 0
@@ -880,11 +880,11 @@ namespace pxsim.ImageMethods {
         }
     }
 
-    export function _blit(img: RefSImage, src: RefSImage, args: RefCollection): boolean {
+    export function _blit(img: RefImage, src: RefImage, args: RefCollection): boolean {
         return blit(img, src, args);
     }
 
-    export function blit(dst: RefSImage, src: RefSImage, args: RefCollection): boolean {
+    export function blit(dst: RefImage, src: RefImage, args: RefCollection): boolean {
         const xDst = args.getAt(0) as number;
         const yDst = args.getAt(1) as number;
         const wDst = args.getAt(2) as number;
@@ -990,10 +990,10 @@ namespace pxsim.image {
         // truncate decimal sizes
         w |= 0
         h |= 0
-        return new RefSImage(w, h, getScreenState().bpp())
+        return new RefImage(w, h, getScreenState().bpp())
     }
 
-    export function ofBuffer(buf: RefBuffer): RefSImage {
+    export function ofBuffer(buf: RefBuffer): RefImage {
         const src: Uint8Array = buf.data
 
         let srcP = 4
@@ -1013,7 +1013,7 @@ namespace pxsim.image {
 
         if (w == 0 || h == 0)
             return null
-        const r = new RefSImage(w, h, bpp)
+        const r = new RefImage(w, h, bpp)
         const dst = r.data
 
         r.isStatic = buf.isStatic
@@ -1053,7 +1053,7 @@ namespace pxsim.image {
         return r
     }
 
-    export function toBuffer(img: RefSImage): RefBuffer {
+    export function toBuffer(img: RefImage): RefBuffer {
         let col = byteHeight(img._height, img._bpp)
         let sz = 8 + img._width * col
         let r = new Uint8Array(sz)
@@ -1106,7 +1106,7 @@ namespace pxsim.image {
 }
 
 namespace pxsim.pxtcore {
-    export function updateScreen(img: RefSImage) {
+    export function updateScreen(img: RefImage) {
         const state = getScreenState();
         if (state)
             state.showImage(img)
@@ -1126,7 +1126,7 @@ namespace pxsim.pxtcore {
         if (state)
             state.setupScreenStatusBar(barHeight);
     }
-    export function updateScreenStatusBar(img: RefSImage) {
+    export function updateScreenStatusBar(img: RefImage) {
         const state = getScreenState();
         if (state)
             state.updateScreenStatusBar(img);

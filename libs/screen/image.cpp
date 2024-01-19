@@ -15,41 +15,41 @@
 
 namespace pxt {
 
-PXT_VTABLE(RefSImage, ValType::Object)
+PXT_VTABLE(RefImage, ValType::Object)
 
-void RefSImage::destroy(RefSImage *t) {}
+void RefImage::destroy(RefImage *t) {}
 
-void RefSImage::print(RefSImage *t) {
-    DMESG("RefSImage %p size=%d x %d", t, t->width(), t->height());
+void RefImage::print(RefImage *t) {
+    DMESG("RefImage %p size=%d x %d", t, t->width(), t->height());
 }
 
-int RefSImage::wordHeight() {
+int RefImage::wordHeight() {
     if (bpp() == 1)
         oops(20);
     return ((height() * 4 + 31) >> 5);
 }
 
-void RefSImage::makeWritable() {
+void RefImage::makeWritable() {
     ++revision;
     if (buffer->isReadOnly()) {
         buffer = mkBuffer(data(), length());
     }
 }
 
-uint8_t RefSImage::fillMask(color c) {
+uint8_t RefImage::fillMask(color c) {
     return this->bpp() == 1 ? (c & 1) * 0xff : 0x11 * (c & 0xf);
 }
 
-bool RefSImage::inRange(int x, int y) {
+bool RefImage::inRange(int x, int y) {
     return 0 <= x && x < width() && 0 <= y && y < height();
 }
 
-void RefSImage::clamp(int *x, int *y) {
+void RefImage::clamp(int *x, int *y) {
     *x = min(max(*x, 0), width() - 1);
     *y = min(max(*y, 0), height() - 1);
 }
 
-RefSImage::RefSImage(BoxedBuffer *buf) : PXT_VTABLE_INIT(RefSImage), buffer(buf) {
+RefImage::RefImage(BoxedBuffer *buf) : PXT_VTABLE_INIT(RefImage), buffer(buf) {
     revision = 0;
     if (!buf)
         oops(21);
@@ -65,7 +65,7 @@ static inline int byteSize(int w, int h, int bpp) {
 SImage_ allocImage(const uint8_t *data, uint32_t sz) {
     auto buf = mkBuffer(data, sz);
     registerGCObj(buf);
-    SImage_ r = NEW_GC(RefSImage, buf);
+    SImage_ r = NEW_GC(RefImage, buf);
     unregisterGCObj(buf);
     return r;
 }
@@ -873,7 +873,7 @@ bool overlapsWith(SImage_ img, SImage_ other, int x, int y) {
 
 SImage_ convertAndWrap(Buffer buf) {
     if (isValidImage(buf))
-        return NEW_GC(RefSImage, buf);
+        return NEW_GC(RefImage, buf);
 
     // What follows in this function is mostly dead code, except if people construct image buffers
     // by hand. Probably safe to remove in a year (middle of 2020) or so. When removing, also remove
@@ -892,7 +892,7 @@ SImage_ convertAndWrap(Buffer buf) {
     memcpy(hd->pixels, src + 4, buf->length - 4);
 
     registerGCObj(tmp);
-    auto r = NEW_GC(RefSImage, tmp);
+    auto r = NEW_GC(RefImage, tmp);
     unregisterGCObj(tmp);
     return r;
 }
@@ -1489,7 +1489,7 @@ Buffer doubledIcon(Buffer icon) {
     if (!isValidImage(icon))
         return NULL;
 
-    auto r = NEW_GC(RefSImage, icon);
+    auto r = NEW_GC(RefImage, icon);
     registerGCObj(r);
     auto t = ImageMethods::doubled(r);
     unregisterGCObj(r);

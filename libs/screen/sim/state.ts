@@ -22,7 +22,7 @@ namespace pxsim {
         height = 0
         screen: Uint32Array
         palette: Uint32Array
-        lastImage: RefSImage
+        lastImage: RefImage
         lastImageFlushTime = 0
         changed = true
         stats: string;
@@ -98,7 +98,7 @@ namespace pxsim {
             }
         }
 
-        showImage(img: RefSImage) {
+        showImage(img: RefImage) {
             runtime.startPerfCounter(0)
             if (!img)
                 img = this.lastImage
@@ -170,7 +170,7 @@ namespace pxsim {
         setupScreenStatusBar(barHeight: number) {
             // TODO
         }
-        updateScreenStatusBar(img: RefSImage) {
+        updateScreenStatusBar(img: RefImage) {
             // TODO
         }
     }
