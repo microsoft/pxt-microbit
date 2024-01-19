@@ -175,7 +175,7 @@
         "githubCorePackage": "lancaster-university/microbit",
         "gittag": "v2.2.0-rc6",
         "serviceId": "microbit",
-        "dockerImage": "pext/yotta:gcc5"
+        "dockerImage": "pxt_microbit_build"
     },
     "multiVariants": [
         "mbdal",

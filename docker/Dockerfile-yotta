@@ -1,0 +1,63 @@
+# Adapted from yotta-docker (https://github.com/ARMmbed/yotta-docker/blob/master/Dockerfile)
+# See ThirdPartyNotices for full license
+
+# ------------------------------------------------------------------------------
+# Pull base image
+FROM ubuntu:bionic
+MAINTAINER Richard Knoll <riknoll@microsoft.com>
+
+# ------------------------------------------------------------------------------
+# Install base
+RUN apt-get -y update && \
+	apt-get -y dist-upgrade && \
+	apt-get -y install curl git wget
+
+# ------------------------------------------------------------------------------
+# Install build tools
+RUN apt-get -y install build-essential cmake ninja-build clang-3.9
+
+# ------------------------------------------------------------------------------
+# Install arm gcc
+
+# For GNU 5: Add i386 architecture (later versions don't need this)
+RUN dpkg --add-architecture i386 && \
+	apt-get update && \
+	apt-get -y upgrade && \
+	apt-get -y dist-upgrade && \
+	apt-get install -y libc6:i386
+
+# ARM GNU Toolchain 5_4-2016q3
+RUN wget -O toolchain.tar.bz2 "https://developer.arm.com/-/media/Files/downloads/gnu-rm/5_4-2016q3/gcc-arm-none-eabi-5_4-2016q3-20160926-linux.tar.bz2?rev=111dee36f88b46728ac648cf41b4d375&revision=111dee36-f88b-4672-8ac6-48cf41b4d375" && \
+	echo f7004b904541c09a8a0a7a52883c9e5b  toolchain.tar.bz2 > /tmp/toolchain.tar.bz2.md5 && md5sum -c /tmp/toolchain.tar.bz2.md5 && rm /tmp/toolchain.tar.bz2.md5 && \
+	tar -xf toolchain.tar.bz2 -C /opt && \
+	rm toolchain.tar.bz2
+ENV PATH=/opt/gcc-arm-none-eabi-5_4-2016q3/bin:$PATH
+
+# ------------------------------------------------------------------------------
+# Install python
+RUN apt-get -y install python python-setuptools python-usb python-pip
+
+# ------------------------------------------------------------------------------
+# Install python build requirements
+RUN apt-get -y install python-dev libffi-dev libssl-dev libxml2-dev
+
+# ------------------------------------------------------------------------------
+# Install yotta
+RUN pip install -U pyopenssl ndg-httpsclient pyasn1 requests pyusb==1.0.0 yotta==0.20.5
+
+# ------------------------------------------------------------------------------
+# Install srecord
+RUN apt-get -y install srecord
+
+
+RUN apt-get install rlwrap
+
+RUN curl https://deb.nodesource.com/node_4.x/pool/main/n/nodejs/nodejs_4.4.3-1nodesource1~trusty1_amd64.deb > node.deb \
+	&& dpkg -i node.deb \
+	&& rm node.deb
+
+RUN curl https://cmake.org/files/v3.8/cmake-3.8.2-Linux-x86_64.tar.gz | (cd /usr; tar zxf - --strip-components=1)
+
+RUN useradd -m build
+
+COPY go.js /home/build
