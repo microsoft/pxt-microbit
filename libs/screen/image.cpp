@@ -1,5 +1,7 @@
 #include "pxt.h"
 
+#define IMAGE_BITS 4
+
 #if IMAGE_BITS == 1
 // OK
 #elif IMAGE_BITS == 4

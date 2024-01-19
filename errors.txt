@@ -2,6 +2,27 @@ es/timer -I/src/yotta_modules/nrf51-sdk/source/nordic_sdk/components/libraries/u
 /src/source/st7735/image.cpp:8:2: error: #error "Invalid IMAGE_BITS"
  #error "Invalid IMAGE_BITS"
   ^
+
+
+ISSUES:
+pxt-common-packages support for RefImage (really RefSImage)
+
+- libs\base\gc.cpp
+
+    void RefImage::scan(RefImage *t) {
+        gcScan((TValue)t->buffer);
+    }
+
+    unsigned RefImage::gcsize(RefImage *t) {
+        return SIZE(0);
+    }
+
+- libs\base\pxtbase.h
+
+    // definition of RefImage
+    // definition of mkImage
+
+
 In file included from /src/source/pxt.h:8:0,
                  from /src/source/st7735/image.cpp:1:
 /src/source/st7735/image.cpp:16:12: error: 'RefSImage' was not declared in this scope
@@ -14,6 +35,8 @@ In file included from /src/source/pxt.h:8:0,
 /src/source/st7735/image.cpp:16:1: note: in expansion of macro 'PXT_VTABLE'
  PXT_VTABLE(RefSImage, ValType::Object)
  ^
+
+
 /src/source/pxtbase.h:1187:64: error: 'RefSImage' is not a member of 'pxt::BuiltInType'
      const VTable name = {sizeof(tp), valtype, VTABLE_MAGIC, 0, BuiltInType::tp,                  
   \
