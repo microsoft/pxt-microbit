@@ -1,5 +1,7 @@
 #include "pxt.h"
 
+typedef RefImage *SImage_;
+
 #define IMAGE_BITS 4
 
 #if IMAGE_BITS == 1

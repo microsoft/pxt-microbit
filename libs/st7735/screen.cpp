@@ -9,6 +9,8 @@
 
 #include "jddisplay.h"
 
+typedef RefImage *SImage_;
+
 namespace pxt {
 
 class WDisplay {
