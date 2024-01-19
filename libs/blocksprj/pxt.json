@@ -3,7 +3,8 @@
     "dependencies": {
         "core": "file:../core",
         "radio": "file:../radio",
-        "microphone": "file:../microphone"
+        "microphone": "file:../microphone",
+        "simage": "file:../st7735"
     },
     "description": "",
     "files": [

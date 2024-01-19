@@ -1,5 +1,5 @@
 {
-    "name": "screen---st7735",
+    "name": "st7735",
     "files": [
         "screen.cpp",
         "panic.cpp",
