@@ -17,12 +17,9 @@
         "imagesoverrides.jres",
         "imagesoverrides.ts",
         "font12.jres",
-        "jdprotocol.h",
         "arcadegamepad.h",
         "indexedscreen.h",
-        "arcadesound.h",
-        "jddisplay.h",
-        "jddisplay.cpp"
+        "arcadesound.h"
     ],
     "dependencies": {
         "core": "file:../core"

@@ -1,9 +1,3 @@
-es/timer -I/src/yotta_modules/nrf51-sdk/source/nordic_sdk/components/libraries/util -I/src/yotta_modules/nrf51-sdk/source/nordic_sdk/components/libraries/fds -I/src/yotta_modules/nrf51-sdk/source/nordic_sdk/components/libraries/fstorage -I/src/yotta_modules/nrf51-sdk/source/nordic_sdk/components/libraries/experimental_section_vars -I/src/yotta_modules/nrf51-sdk/source/nordic_sdk/components/softdevice/common/softdevice_handler -I/src/yotta_modules/nrf51-sdk/source/nordic_sdk/components/softdevice/s130/headers -I/src/yotta_modules/nrf51-sdk/source/nordic_sdk/components/toolchain -I/src/yotta_modules/mbed-classic/targets -I/src/yotta_modules/mbed-classic/targets/cmsis/TARGET_NORDIC -I/src/yotta_modules/mbed-classic/targets/cmsis/TARGET_NORDIC/TARGET_MCU_NRF51822 -I/src/yotta_modules/mbed-classic/targets/cmsis/TARGET_NORDIC/TARGET_MCU_NRF51822/TOOLCHAIN_GCC_ARM -I/src/yotta_modules/mbed-classic/targets/cmsis/TARGET_NORDIC/TARGET_MCU_NRF51822/TOOLCHAIN_GCC_ARM/TARGET_MCU_NRF51_16K_S110 -I/src/yotta_modules/mbed-classic/targets/hal/TARGET_NORDIC -I/src/yotta_modules/mbed-classic/targets/hal/TARGET_NORDIC/TARGET_MCU_NRF51822 -I/src/yotta_modules/mbed-classic/targets/hal/TARGET_NORDIC/TARGET_MCU_NRF51822/Lib -I/src/yotta_modules/mbed-classic/targets/hal/TARGET_NORDIC/TARGET_MCU_NRF51822/Lib/nordic_sdk -I/src/yotta_modules/mbed-classic/targets/hal/TARGET_NORDIC/TARGET_MCU_NRF51822/Lib/nordic_sdk/components -I/src/yotta_modules/mbed-classic/targets/hal/TARGET_NORDIC/TARGET_MCU_NRF51822/Lib/nordic_sdk/components/libraries -I/src/yotta_modules/mbed-classic/targets/hal/TARGET_NORDIC/TARGET_MCU_NRF51822/Lib/nordic_sdk/components/libraries/crc16 -I/src/yotta_modules/mbed-classic/targets/hal/TARGET_NORDIC/TARGET_MCU_NRF51822/Lib/nordic_sdk/components/libraries/scheduler -I/src/yotta_modules/mbed-classic/targets/hal/TARGET_NORDIC/TARGET_MCU_NRF51822/Lib/nordic_sdk/components/libraries/util -I/src/yotta_modules/mbed-classic/targets/hal/TARGET_NORDIC/TARGET_MCU_NRF51822/Lib/s110_nrf51822_8_0_0 -I/src/yotta_modules/mbed-classic/targets/hal/TARGET_NORDIC/TARGET_MCU_NRF51822/Lib/s130_nrf51822_1_0_0 -I/src/yotta_modules/mbed-classic/targets/hal/TARGET_NORDIC/TARGET_MCU_NRF51822/TARGET_NRF51_MICROBIT -I/src/source -fno-exceptions -fno-unwind-tables -ffunction-sections -fdata-sections -Wall -Wextra -fno-rtti -fno-threadsafe-statics -mcpu=cortex-m0 -mthumb -D__thumb2__ -std=c++11 -fwrapv -Os -g -gdwarf-3 -DNDEBUG   -DTOOLCHAIN_GCC -DTOOLCHAIN_GCC_ARM -DMBED_OPERATORS -DNRF51 -DTARGET_NORDIC -DTARGET_M0 -D__MBED__=1 -DMCU_NORDIC_16K -DTARGET_NRF51_MICROBIT -DTARGET_MCU_NORDIC_16K -DTARGET_MCU_NRF51_16K_S110  -DTARGET_NRF_LFCLK_RC -DTARGET_MCU_NORDIC_16K -D__CORTEX_M0 -DARM_MATH_CM0 -include "/src/build/bbc-microbit-classic-gcc/yotta_config.h" -MMD -MT source/CMakeFiles/pxt-microbit-app.dir/src/source/st7735/image.cpp.o -MF source/CMakeFiles/pxt-microbit-app.dir/src/source/st7735/image.cpp.o.d -o source/CMakeFiles/pxt-microbit-app.dir/src/source/st7735/image.cpp.o -c /src/source/st7735/image.cpp
-/src/source/st7735/image.cpp:8:2: error: #error "Invalid IMAGE_BITS"
- #error "Invalid IMAGE_BITS"
-  ^
-
-
 ISSUES:
 pxt-common-packages support for RefImage (really RefSImage)
 
@@ -23,102 +17,8 @@ pxt-common-packages support for RefImage (really RefSImage)
     // definition of mkImage
 
 
-In file included from /src/source/pxt.h:8:0,
-                 from /src/source/st7735/image.cpp:1:
-/src/source/st7735/image.cpp:16:12: error: 'RefSImage' was not declared in this scope
- PXT_VTABLE(RefSImage, ValType::Object)
-            ^
-/src/source/pxtbase.h:1187:33: note: in definition of macro 'DEF_VTABLE'
-     const VTable name = {sizeof(tp), valtype, VTABLE_MAGIC, 0, BuiltInType::tp,                  
-  \
-                                 ^
-/src/source/st7735/image.cpp:16:1: note: in expansion of macro 'PXT_VTABLE'
- PXT_VTABLE(RefSImage, ValType::Object)
- ^
+JACDAC STUFF
 
-
-/src/source/pxtbase.h:1187:64: error: 'RefSImage' is not a member of 'pxt::BuiltInType'
-     const VTable name = {sizeof(tp), valtype, VTABLE_MAGIC, 0, BuiltInType::tp,                  
-  \
-                                                                ^
-/src/source/pxtbase.h:1195:5: note: in expansion of macro 'DEF_VTABLE'
-     DEF_VTABLE(classname##_vtable, classname, valtp, (void *)&classname::destroy,                
-  \
-     ^
-/src/source/st7735/image.cpp:16:1: note: in expansion of macro 'PXT_VTABLE'
- PXT_VTABLE(RefSImage, ValType::Object)
- ^
-/src/source/st7735/image.cpp:16:12: error: 'RefSImage' has not been declared
- PXT_VTABLE(RefSImage, ValType::Object)
-            ^
-/src/source/pxtbase.h:1188:48: note: in definition of macro 'DEF_VTABLE'
-                          0,          0,       {__VA_ARGS__}};
-                                                ^
-/src/source/st7735/image.cpp:16:1: note: in expansion of macro 'PXT_VTABLE'
- PXT_VTABLE(RefSImage, ValType::Object)
- ^
-/src/source/st7735/image.cpp:16:12: error: 'RefSImage' has not been declared
- PXT_VTABLE(RefSImage, ValType::Object)
-            ^
-/src/source/pxtbase.h:1188:48: note: in definition of macro 'DEF_VTABLE'
-                          0,          0,       {__VA_ARGS__}};
-                                                ^
-/src/source/st7735/image.cpp:16:1: note: in expansion of macro 'PXT_VTABLE'
- PXT_VTABLE(RefSImage, ValType::Object)
- ^
-/src/source/st7735/image.cpp:16:12: error: 'RefSImage' has not been declared
- PXT_VTABLE(RefSImage, ValType::Object)
-            ^
-/src/source/pxtbase.h:1188:48: note: in definition of macro 'DEF_VTABLE'
-                          0,          0,       {__VA_ARGS__}};
-                                                ^
-/src/source/st7735/image.cpp:16:1: note: in expansion of macro 'PXT_VTABLE'
- PXT_VTABLE(RefSImage, ValType::Object)
- ^
-/src/source/st7735/image.cpp:16:12: error: 'RefSImage' has not been declared
- PXT_VTABLE(RefSImage, ValType::Object)
-            ^
-/src/source/pxtbase.h:1188:48: note: in definition of macro 'DEF_VTABLE'
-                          0,          0,       {__VA_ARGS__}};
-                                                ^
-/src/source/st7735/image.cpp:16:1: note: in expansion of macro 'PXT_VTABLE'
- PXT_VTABLE(RefSImage, ValType::Object)
- ^
-/src/source/st7735/image.cpp:18:6: error: 'RefSImage' has not been declared
- void RefSImage::destroy(RefSImage *t) {}
-      ^
-/src/source/st7735/image.cpp:18:25: error: variable or field 'destroy' declared void
- void RefSImage::destroy(RefSImage *t) {}
-                         ^
-/src/source/st7735/image.cpp:18:25: error: 'RefSImage' was not declared in this scope
-/src/source/st7735/image.cpp:18:36: error: 't' was not declared in this scope
- void RefSImage::destroy(RefSImage *t) {}
-                                    ^
-/src/source/st7735/image.cpp:20:6: error: 'RefSImage' has not been declared
- void RefSImage::print(RefSImage *t) {
-      ^
-/src/source/st7735/image.cpp:20:23: error: variable or field 'print' declared void
- void RefSImage::print(RefSImage *t) {
-                       ^
-/src/source/st7735/image.cpp:20:23: error: 'RefSImage' was not declared in this scope
-/src/source/st7735/image.cpp:20:34: error: 't' was not declared in this scope
- void RefSImage::print(RefSImage *t) {
-                                  ^
-/src/source/st7735/image.cpp:1549:1: error: expected '}' at end of input
- }
- ^
-In file included from /src/source/pxt.h:8:0,
-                 from /src/source/st7735/image.cpp:1:
-/src/source/st7735/image.cpp:16:12: warning: 'pxt::RefSImage_vtable' defined but not used [-Wunused-variable]
- PXT_VTABLE(RefSImage, ValType::Object)
-            ^
-/src/source/pxtbase.h:1187:18: note: in definition of macro 'DEF_VTABLE'
-     const VTable name = {sizeof(tp), valtype, VTABLE_MAGIC, 0, BuiltInType::tp,                  
-  \
-                  ^
-/src/source/st7735/image.cpp:16:1: note: in expansion of macro 'PXT_VTABLE'
- PXT_VTABLE(RefSImage, ValType::Object)
- ^
 [3/6] Building CXX object source/CMakeFiles/pxt-microbit-app.dir/src/source/st7735/jddisplay.cpp.o
 FAILED: source/CMakeFiles/pxt-microbit-app.dir/src/source/st7735/jddisplay.cpp.o
 /opt/gcc-arm-none-eabi-5_4-2016q3/bin/arm-none-eabi-g++ -DYOTTA_MODULE_NAME=pxt-microbit-app -Dpxt_microbit_app_EXPORTS -Igenerated/include -I/src -I/src/yotta_modules/microbit -I/src/yotta_modules/microbit-dal -I/src/yotta_modules/mbed-classic -I/src/yotta_modules/ble -I/src/yotta_modules/ble-nrf51822 -I/src/yotta_modules/nrf51-sdk -I/src/yotta_modules/microbit/inc -I/src/yotta_modules/microbit-dal/inc/core -I/src/yotta_modules/microbit-dal/inc/types -I/src/yotta_modules/microbit-dal/inc/drivers -I/src/yotta_modules/microbit-dal/inc/bluetooth -I/src/yotta_modules/microbit-dal/inc/platform -I/src/yotta_modules/mbed-classic/api -I/src/yotta_modules/mbed-classic/hal -I/src/yotta_modules/mbed-classic/targets/hal -I/src/yotta_modules/mbed-classic/targets/cmsis -I/src/yotta_modules/ble-nrf51822/source/btle -I/src/yotta_modules/ble-nrf51822/source/btle/custom -I/src/yotta_modules/ble-nrf51822/source/common -I/src/yotta_modules/nrf51-sdk/source/nordic_sdk/components/ble/ble_radio_notification -I/src/yotta_modules/nrf51-sdk/source/nordic_sdk/components/ble/ble_services/ble_dfu -I/src/yotta_modules/nrf51-sdk/source/nordic_sdk/components/ble/common -I/src/yotta_modules/nrf51-sdk/source/nordic_sdk/components/ble/device_manager -I/src/yotta_modules/nrf51-sdk/source/nordic_sdk/components/ble/device_manager/config -I/src/yotta_modules/nrf51-sdk/source/nordic_sdk/components/ble/peer_manager -I/src/yotta_modules/nrf51-sdk/source/nordic_sdk/components/device -I/src/yotta_modules/nrf51-sdk/source/nordic_sdk/components/drivers_nrf/ble_flash -I/src/yotta_modules/nrf51-sdk/source/nordic_sdk/components/drivers_nrf/delay -I/src/yotta_modules/nrf51-sdk/source/nordic_sdk/components/drivers_nrf/hal -I/src/yotta_modules/nrf51-sdk/source/nordic_sdk/components/drivers_nrf/pstorage -I/src/yotta_modules/nrf51-sdk/source/nordic_sdk/components/drivers_nrf/pstorage/config -I/src/yotta_modules/nrf51-sdk/source/nordic_sdk/components/libraries/bootloader_dfu -I/src/yotta_modules/nrf51-sdk/source/nordic_sdk/components/libraries/bootloader_dfu/hci_transport -I/src/yotta_modules/nrf51-sdk/source/nordic_sdk/components/libraries/crc16 -I/src/yotta_modules/nrf51-sdk/source/nordic_sdk/components/libraries/hci -I/src/yotta_modules/nrf51-sdk/source/nordic_sdk/components/libraries/scheduler -I/src/yotta_modules/nrf51-sdk/source/nordic_sdk/components/libraries/timer -I/src/yotta_modules/nrf51-sdk/source/nordic_sdk/components/libraries/util -I/src/yotta_modules/nrf51-sdk/source/nordic_sdk/components/libraries/fds -I/src/yotta_modules/nrf51-sdk/source/nordic_sdk/components/libraries/fstorage -I/src/yotta_modules/nrf51-sdk/source/nordic_sdk/components/libraries/experimental_section_vars -I/src/yotta_modules/nrf51-sdk/source/nordic_sdk/components/softdevice/common/softdevice_handler -I/src/yotta_modules/nrf51-sdk/source/nordic_sdk/components/softdevice/s130/headers -I/src/yotta_modules/nrf51-sdk/source/nordic_sdk/components/toolchain -I/src/yotta_modules/mbed-classic/targets -I/src/yotta_modules/mbed-classic/targets/cmsis/TARGET_NORDIC -I/src/yotta_modules/mbed-classic/targets/cmsis/TARGET_NORDIC/TARGET_MCU_NRF51822 -I/src/yotta_modules/mbed-classic/targets/cmsis/TARGET_NORDIC/TARGET_MCU_NRF51822/TOOLCHAIN_GCC_ARM -I/src/yotta_modules/mbed-classic/targets/cmsis/TARGET_NORDIC/TARGET_MCU_NRF51822/TOOLCHAIN_GCC_ARM/TARGET_MCU_NRF51_16K_S110 -I/src/yotta_modules/mbed-classic/targets/hal/TARGET_NORDIC -I/src/yotta_modules/mbed-classic/targets/hal/TARGET_NORDIC/TARGET_MCU_NRF51822 -I/src/yotta_modules/mbed-classic/targets/hal/TARGET_NORDIC/TARGET_MCU_NRF51822/Lib -I/src/yotta_modules/mbed-classic/targets/hal/TARGET_NORDIC/TARGET_MCU_NRF51822/Lib/nordic_sdk -I/src/yotta_modules/mbed-classic/targets/hal/TARGET_NORDIC/TARGET_MCU_NRF51822/Lib/nordic_sdk/components -I/src/yotta_modules/mbed-classic/targets/hal/TARGET_NORDIC/TARGET_MCU_NRF51822/Lib/nordic_sdk/components/libraries -I/src/yotta_modules/mbed-classic/targets/hal/TARGET_NORDIC/TARGET_MCU_NRF51822/Lib/nordic_sdk/components/libraries/crc16 -I/src/yotta_modules/mbed-classic/targets/hal/TARGET_NORDIC/TARGET_MCU_NRF51822/Lib/nordic_sdk/components/libraries/scheduler -I/src/yotta_modules/mbed-classic/targets/hal/TARGET_NORDIC/TARGET_MCU_NRF51822/Lib/nordic_sdk/components/libraries/util -I/src/yotta_modules/mbed-classic/targets/hal/TARGET_NORDIC/TARGET_MCU_NRF51822/Lib/s110_nrf51822_8_0_0 -I/src/yotta_modules/mbed-classic/targets/hal/TARGET_NORDIC/TARGET_MCU_NRF51822/Lib/s130_nrf51822_1_0_0 -I/src/yotta_modules/mbed-classic/targets/hal/TARGET_NORDIC/TARGET_MCU_NRF51822/TARGET_NRF51_MICROBIT -I/src/source -fno-exceptions -fno-unwind-tables -ffunction-sections -fdata-sections -Wall -Wextra -fno-rtti -fno-threadsafe-statics -mcpu=cortex-m0 -mthumb -D__thumb2__ -std=c++11 -fwrapv -Os -g -gdwarf-3 -DNDEBUG   -DTOOLCHAIN_GCC -DTOOLCHAIN_GCC_ARM -DMBED_OPERATORS -DNRF51 -DTARGET_NORDIC -DTARGET_M0 -D__MBED__=1 -DMCU_NORDIC_16K -DTARGET_NRF51_MICROBIT -DTARGET_MCU_NORDIC_16K -DTARGET_MCU_NRF51_16K_S110  -DTARGET_NRF_LFCLK_RC -DTARGET_MCU_NORDIC_16K -D__CORTEX_M0 -DARM_MATH_CM0 -include "/src/build/bbc-microbit-classic-gcc/yotta_config.h" -MMD -MT source/CMakeFiles/pxt-microbit-app.dir/src/source/st7735/jddisplay.cpp.o -MF source/CMakeFiles/pxt-microbit-app.dir/src/source/st7735/jddisplay.cpp.o.d -o source/CMakeFiles/pxt-microbit-app.dir/src/source/st7735/jddisplay.cpp.o -c /src/source/st7735/jddisplay.cpp
@@ -287,6 +187,9 @@ In file included from /src/source/pointers.cpp:11:0:
 /src/source/st7735/jddisplay.h:48:34: error: 'Pin' has not been declared
      JDDisplay(SPI *spi, Pin *cs, Pin *flow);
                                   ^
+
+TODO: SImage_
+
 /src/source/pointers.cpp:371:32: error: variable or field 'updateScreenStatusBar' declared void   
      void updateScreenStatusBar(SImage_ img);
                                 ^
@@ -701,7 +604,9 @@ In file included from /opt/gcc-arm-none-eabi-5_4-2016q3/arm-none-eabi/include/c+
                   ^
 /src/source/pointers.cpp:778:18: error: 'ofBuffer' is not a member of 'image'
  (uint32_t)(void*)::image::ofBuffer,
-                  ^
+
+TODO: Panic and pins
+
 [5/6] Building CXX object source/CMakeFiles/pxt-microbit-app.dir/src/source/st7735/panic.cpp.o
 FAILED: source/CMakeFiles/pxt-microbit-app.dir/src/source/st7735/panic.cpp.o
 /opt/gcc-arm-none-eabi-5_4-2016q3/bin/arm-none-eabi-g++ -DYOTTA_MODULE_NAME=pxt-microbit-app -Dpxt_microbit_app_EXPORTS -Igenerated/include -I/src -I/src/yotta_modules/microbit -I/src/yotta_modules/microbit-dal -I/src/yotta_modules/mbed-classic -I/src/yotta_modules/ble -I/src/yotta_modules/ble-nrf51822 -I/src/yotta_modules/nrf51-sdk -I/src/yotta_modules/microbit/inc -I/src/yotta_modules/microbit-dal/inc/core -I/src/yotta_modules/microbit-dal/inc/types -I/src/yotta_modules/microbit-dal/inc/drivers -I/src/yotta_modules/microbit-dal/inc/bluetooth -I/src/yotta_modules/microbit-dal/inc/platform -I/src/yotta_modules/mbed-classic/api -I/src/yotta_modules/mbed-classic/hal -I/src/yotta_modules/mbed-classic/targets/hal -I/src/yotta_modules/mbed-classic/targets/cmsis -I/src/yotta_modules/ble-nrf51822/source/btle -I/src/yotta_modules/ble-nrf51822/source/btle/custom -I/src/yotta_modules/ble-nrf51822/source/common -I/src/yotta_modules/nrf51-sdk/source/nordic_sdk/components/ble/ble_radio_notification -I/src/yotta_modules/nrf51-sdk/source/nordic_sdk/components/ble/ble_services/ble_dfu -I/src/yotta_modules/nrf51-sdk/source/nordic_sdk/components/ble/common -I/src/yotta_modules/nrf51-sdk/source/nordic_sdk/components/ble/device_manager -I/src/yotta_modules/nrf51-sdk/source/nordic_sdk/components/ble/device_manager/config -I/src/yotta_modules/nrf51-sdk/source/nordic_sdk/components/ble/peer_manager -I/src/yotta_modules/nrf51-sdk/source/nordic_sdk/components/device -I/src/yotta_modules/nrf51-sdk/source/nordic_sdk/components/drivers_nrf/ble_flash -I/src/yotta_modules/nrf51-sdk/source/nordic_sdk/components/drivers_nrf/delay -I/src/yotta_modules/nrf51-sdk/source/nordic_sdk/components/drivers_nrf/hal -I/src/yotta_modules/nrf51-sdk/source/nordic_sdk/components/drivers_nrf/pstorage -I/src/yotta_modules/nrf51-sdk/source/nordic_sdk/components/drivers_nrf/pstorage/config -I/src/yotta_modules/nrf51-sdk/source/nordic_sdk/components/libraries/bootloader_dfu -I/src/yotta_modules/nrf51-sdk/source/nordic_sdk/components/libraries/bootloader_dfu/hci_transport -I/src/yotta_modules/nrf51-sdk/source/nordic_sdk/components/libraries/crc16 -I/src/yotta_modules/nrf51-sdk/source/nordic_sdk/components/libraries/hci -I/src/yotta_modules/nrf51-sdk/source/nordic_sdk/components/libraries/scheduler -I/src/yotta_modules/nrf51-sdk/source/nordic_sdk/components/libraries/timer -I/src/yotta_modules/nrf51-sdk/source/nordic_sdk/components/libraries/util -I/src/yotta_modules/nrf51-sdk/source/nordic_sdk/components/libraries/fds -I/src/yotta_modules/nrf51-sdk/source/nordic_sdk/components/libraries/fstorage -I/src/yotta_modules/nrf51-sdk/source/nordic_sdk/components/libraries/experimental_section_vars -I/src/yotta_modules/nrf51-sdk/source/nordic_sdk/components/softdevice/common/softdevice_handler -I/src/yotta_modules/nrf51-sdk/source/nordic_sdk/components/softdevice/s130/headers -I/src/yotta_modules/nrf51-sdk/source/nordic_sdk/components/toolchain -I/src/yotta_modules/mbed-classic/targets -I/src/yotta_modules/mbed-classic/targets/cmsis/TARGET_NORDIC -I/src/yotta_modules/mbed-classic/targets/cmsis/TARGET_NORDIC/TARGET_MCU_NRF51822 -I/src/yotta_modules/mbed-classic/targets/cmsis/TARGET_NORDIC/TARGET_MCU_NRF51822/TOOLCHAIN_GCC_ARM -I/src/yotta_modules/mbed-classic/targets/cmsis/TARGET_NORDIC/TARGET_MCU_NRF51822/TOOLCHAIN_GCC_ARM/TARGET_MCU_NRF51_16K_S110 -I/src/yotta_modules/mbed-classic/targets/hal/TARGET_NORDIC -I/src/yotta_modules/mbed-classic/targets/hal/TARGET_NORDIC/TARGET_MCU_NRF51822 -I/src/yotta_modules/mbed-classic/targets/hal/TARGET_NORDIC/TARGET_MCU_NRF51822/Lib -I/src/yotta_modules/mbed-classic/targets/hal/TARGET_NORDIC/TARGET_MCU_NRF51822/Lib/nordic_sdk -I/src/yotta_modules/mbed-classic/targets/hal/TARGET_NORDIC/TARGET_MCU_NRF51822/Lib/nordic_sdk/components -I/src/yotta_modules/mbed-classic/targets/hal/TARGET_NORDIC/TARGET_MCU_NRF51822/Lib/nordic_sdk/components/libraries -I/src/yotta_modules/mbed-classic/targets/hal/TARGET_NORDIC/TARGET_MCU_NRF51822/Lib/nordic_sdk/components/libraries/crc16 -I/src/yotta_modules/mbed-classic/targets/hal/TARGET_NORDIC/TARGET_MCU_NRF51822/Lib/nordic_sdk/components/libraries/scheduler -I/src/yotta_modules/mbed-classic/targets/hal/TARGET_NORDIC/TARGET_MCU_NRF51822/Lib/nordic_sdk/components/libraries/util -I/src/yotta_modules/mbed-classic/targets/hal/TARGET_NORDIC/TARGET_MCU_NRF51822/Lib/s110_nrf51822_8_0_0 -I/src/yotta_modules/mbed-classic/targets/hal/TARGET_NORDIC/TARGET_MCU_NRF51822/Lib/s130_nrf51822_1_0_0 -I/src/yotta_modules/mbed-classic/targets/hal/TARGET_NORDIC/TARGET_MCU_NRF51822/TARGET_NRF51_MICROBIT -I/src/source -fno-exceptions -fno-unwind-tables -ffunction-sections -fdata-sections -Wall -Wextra -fno-rtti -fno-threadsafe-statics -mcpu=cortex-m0 -mthumb -D__thumb2__ -std=c++11 -fwrapv -Os -g -gdwarf-3 -DNDEBUG   -DTOOLCHAIN_GCC -DTOOLCHAIN_GCC_ARM -DMBED_OPERATORS -DNRF51 -DTARGET_NORDIC -DTARGET_M0 -D__MBED__=1 -DMCU_NORDIC_16K -DTARGET_NRF51_MICROBIT -DTARGET_MCU_NORDIC_16K -DTARGET_MCU_NRF51_16K_S110  -DTARGET_NRF_LFCLK_RC -DTARGET_MCU_NORDIC_16K -D__CORTEX_M0 -DARM_MATH_CM0 -include "/src/build/bbc-microbit-classic-gcc/yotta_config.h" -MMD -MT source/CMakeFiles/pxt-microbit-app.dir/src/source/st7735/panic.cpp.o -MF source/CMakeFiles/pxt-microbit-app.dir/src/source/st7735/panic.cpp.o.d -o source/CMakeFiles/pxt-microbit-app.dir/src/source/st7735/panic.cpp.o -c /src/source/st7735/panic.cpp
