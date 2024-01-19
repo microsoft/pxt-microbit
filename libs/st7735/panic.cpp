@@ -42,6 +42,8 @@
 #define MADCTL_BGR 0x08
 #define MADCTL_MH 0x04
 
+typedef MicroBitPin Pin;
+
 namespace _pxt_panic {
 
 // target_panic has been called
