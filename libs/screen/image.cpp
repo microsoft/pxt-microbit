@@ -1459,7 +1459,7 @@ void _fillPolygon4(SImage_ img, pxt::RefCollection *args) {
     );
 }
 
-} // namespace ImageMethods
+} // namespace SImageMethods
 
 namespace image {
 /**
@@ -1480,7 +1480,7 @@ SImage_ create(int width, int height) {
  */
 //%
 SImage_ ofBuffer(Buffer buf) {
-    return ImageMethods::convertAndWrap(buf);
+    return SImageMethods::convertAndWrap(buf);
 }
 
 /**
@@ -1493,7 +1493,7 @@ Buffer doubledIcon(Buffer icon) {
 
     auto r = NEW_GC(RefImage, icon);
     registerGCObj(r);
-    auto t = ImageMethods::doubled(r);
+    auto t = SImageMethods::doubled(r);
     unregisterGCObj(r);
     return t->buffer;
 }
