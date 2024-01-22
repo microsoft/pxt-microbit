@@ -20,6 +20,8 @@
         "arcadegamepad.h",
         "indexedscreen.h",
         "arcadesound.h",
+        "jdprotocol.h",
+        "jddisplay.h",
         "jddisplay.cpp"
     ],
     "dependencies": {
