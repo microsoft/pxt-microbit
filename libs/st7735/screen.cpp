@@ -35,13 +35,13 @@ class WDisplay {
     uint32_t palXOR;
 
     WDisplay() {
-        uint32_t cfg2 = CFG_DISPLAY_CFG2;
+        uint32_t cfg2 = MY_DISPLAY_CFG2;
         int conn = cfg2 >> 24;
 
-        uint32_t cfg0 = CFG_DISPLAY_CFG0;
-        uint32_t frmctr1 = CFG_DISPLAY_CFG1;
+        uint32_t cfg0 = MY_DISPLAY_CFG0;
+        uint32_t frmctr1 = MY_DISPLAY_CFG1;
 
-        int dispTp = CFG_DISPLAY_TYPE;
+        int dispTp = MY_DISPLAY_TYPE;
 
         doubleSize = false;
         smart = NULL;
@@ -120,8 +120,8 @@ class WDisplay {
             lcd->configure(madctl, frmctr1);
         }
 
-        width = CFG_DISPLAY_WIDTH;
-        height = CFG_DISPLAY_HEIGHT;
+        width = MY_DISPLAY_WIDTH;
+        height = MY_DISPLAY_HEIGHT;
         displayHeight = height;
         setAddrMain();
         DMESG("screen: %d x %d, off=%d,%d", width, height, offX, offY);

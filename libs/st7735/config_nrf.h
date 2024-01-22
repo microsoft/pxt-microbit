@@ -1,20 +1,26 @@
-#define CFG_DISPLAY_WIDTH 160
-#define CFG_DISPLAY_HEIGHT = 128
-#define CFG_DISPLAY_TYPE 4242 // smart display
+#define MY_DISPLAY_WIDTH 160
+#define MY_DISPLAY_HEIGHT = 128
+#define MY_DISPLAY_TYPE 4242 // smart display
 
-#define CFG_DISPLAY_CFG0 0x00000080
-#define CFG_DISPLAY_CFG1 0x00000603
-#define CFG_DISPLAY_CFG2 8
+#define MY_DISPLAY_CFG0 0x00000080
+#define MY_DISPLAY_CFG1 0x00000603
+#define MY_DISPLAY_CFG2 8
 
-#define CFG_PIN_DISPLAY_SCK 17 // DAL.P0_17
-#define CFG_PIN_DISPLAY_MOSI 13 // DAL.P0_13
-#define CFG_PIN_DISPLAY_MISO 1 // DAL.P0_1
-#define CFG_PIN_DISPLAY_BL 26 // DAL.P0_26
-#define CFG_PIN_DISPLAY_DC 10 // DAL.P0_10
-#define CFG_PIN_DISPLAY_RST 34 // DAL.P1_2
-#define CDG_PIN_DISPLAY_CS 11 // DAL.P0_11  TODO: check this ???
+#define MY_PIN_DISPLAY_SCK 17 // DAL.P0_17
+#define MY_PIN_DISPLAY_MOSI 13 // DAL.P0_13
+#define MY_PIN_DISPLAY_MISO 1 // DAL.P0_1
+#define MY_PIN_DISPLAY_BL 26 // DAL.P0_26
+#define MY_PIN_DISPLAY_DC 10 // DAL.P0_10
+#define MY_PIN_DISPLAY_RST 34 // DAL.P1_2
+#define MY_PIN_DISPLAY_CS 11 // DAL.P0_11  TODO: check this ???
 
-#define CFG_PIN_LED 13 // DAL.P0_13 TODO
+#define MY_PIN_LED 13 // DAL.P0_13 TODO
+
+// remove the indirection through configuration
+#undef PIN
+#undef LOOKUP_PIN
+#define PIN(name) CFG_PIN_##name
+#define LOOKUP_PIN(name) pxt::lookupPin(PIN(name))
 
 // // there's no UF2 bootloader for 52833 yet, so we specify example configuration here
 // namespace config {

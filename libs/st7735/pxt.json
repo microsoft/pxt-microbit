@@ -1,6 +1,7 @@
 {
     "name": "st7735",
     "files": [
+        "config_nrf.h",
         "screen.cpp",
         "panic.cpp",
         "image.cpp",
@@ -20,8 +21,6 @@
         "arcadegamepad.h",
         "indexedscreen.h",
         "arcadesound.h",
-        "pins.h",
-        "pins.cpp",
         "jdprotocol.h",
         "jddisplay.h",
         "jddisplay.cpp"
