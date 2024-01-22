@@ -1,6 +1,9 @@
 #include "pxt.h"
 
 #include "Pin.h"
+#define PinCompat codal::Pin
+
+#define DEV_NUM_PINS 48
 
 namespace pxt {
 static DevicePin **pinPtrs;

@@ -8,6 +8,7 @@
 #include "arcadesound.h"
 
 #include "Pin.h"
+#define PinCompat codal::Pin
 
 namespace pxt {
 

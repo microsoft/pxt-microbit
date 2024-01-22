@@ -1,5 +1,10 @@
 #include "pxt.h"
 
+#include "Pin.h"
+#define PinCompat codal::Pin
+
+#include "config_nrf.h"
+
 // This adds about 1.2k of binary size, but allows for displaying
 // panic codes regardless of heap state etc. with IRQs disabled.
 
@@ -41,8 +46,6 @@
 #define MADCTL_RGB 0x00
 #define MADCTL_BGR 0x08
 #define MADCTL_MH 0x04
-
-typedef MicroBitPin Pin;
 
 namespace _pxt_panic {
 

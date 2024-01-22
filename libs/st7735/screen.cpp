@@ -9,6 +9,8 @@
 
 #include "jddisplay.h"
 
+#include "config_nrf.h"
+
 typedef RefImage *SImage_;
 
 namespace pxt {
@@ -33,13 +35,13 @@ class WDisplay {
     uint32_t palXOR;
 
     WDisplay() {
-        uint32_t cfg2 = getConfig(CFG_DISPLAY_CFG2, 0x0);
+        uint32_t cfg2 = CFG_DISPLAY_CFG2;
         int conn = cfg2 >> 24;
 
-        uint32_t cfg0 = getConfig(CFG_DISPLAY_CFG0, 0x40);
-        uint32_t frmctr1 = getConfig(CFG_DISPLAY_CFG1, 0x000603);
+        uint32_t cfg0 = CFG_DISPLAY_CFG0;
+        uint32_t frmctr1 = CFG_DISPLAY_CFG1;
 
-        int dispTp = getConfig(CFG_DISPLAY_TYPE, DISPLAY_TYPE_ST7735);
+        int dispTp = CFG_DISPLAY_TYPE;
 
         doubleSize = false;
         smart = NULL;
@@ -118,8 +120,8 @@ class WDisplay {
             lcd->configure(madctl, frmctr1);
         }
 
-        width = getConfig(CFG_DISPLAY_WIDTH, 160);
-        height = getConfig(CFG_DISPLAY_HEIGHT, 128);
+        width = CFG_DISPLAY_WIDTH;
+        height = CFG_DISPLAY_HEIGHT;
         displayHeight = height;
         setAddrMain();
         DMESG("screen: %d x %d, off=%d,%d", width, height, offX, offY);

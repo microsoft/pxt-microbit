@@ -8,8 +8,8 @@
 #define BUTTON_ACTIVE_LOW_PULL_UP (ACTIVE_LOW | 0x20)
 #define BUTTON_ACTIVE_LOW_PULL_NONE (ACTIVE_LOW | 0x30)
 
-#define PIN(name) ((PinName)pxt::getConfig(CFG_PIN_##name, -1))
-#define LOOKUP_PIN(name) pxt::lookupPin(PIN(name))
+// #define PIN(name) ((PinName)pxt::getConfig(CFG_PIN_##name, -1))
+#define LOOKUP_PIN(name) pxt::lookupPin(CFG_PIN_##name)
 
 // these can be overridden in platform.h
 #ifndef CODAL_PIN
