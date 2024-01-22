@@ -20,6 +20,8 @@
   "images._tile|block": "%tile",
   "images|block": "images",
   "image|block": "image",
+  "pins.pulseDuration|block": "pulse duration (µs)",
+  "pins|block": "pins",
   "simage.create|block": "create image width %width height %height",
   "simage.screenImage|block": "screen",
   "simage|block": "simage",
@@ -27,6 +29,7 @@
   "{id:category}Helpers": "Helpers",
   "{id:category}Image": "Image",
   "{id:category}Images": "Images",
+  "{id:category}Pins": "Pins",
   "{id:category}SImage": "SImage",
   "{id:category}Scene": "Scene",
   "{id:category}ScreenImage": "ScreenImage",
@@ -37,6 +40,7 @@
   "{id:group}Compare": "Compare",
   "{id:group}Create": "Create",
   "{id:group}Drawing": "Drawing",
+  "{id:group}Pulse": "Pulse",
   "{id:group}Tiles": "Tiles",
   "{id:group}Transformations": "Transformations"
 }

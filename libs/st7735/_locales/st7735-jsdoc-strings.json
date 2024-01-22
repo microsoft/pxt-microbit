@@ -43,5 +43,10 @@
   "images._image": "An image",
   "images._image|param|image": "the image",
   "img": "Tagged image literal converter",
+  "pins": "Control currents in Pins for analog/digital signals, servos, i2c, ...",
+  "pins.createBuffer": "Create a new zero-initialized buffer.",
+  "pins.createBuffer|param|size": "number of bytes in the buffer",
+  "pins.pinByCfg": "Get a pin by configuration id (DAL.CFG_PIN...)",
+  "pins.pulseDuration": "Get the duration of the last pulse in microseconds. This function should be called from a ``onPulsed`` handler.\n\nGet the duration of the last pulse in microseconds. This function should be called from a\n``onPulsed`` handler.",
   "simage.screenImage": "Get the screen image"
 }

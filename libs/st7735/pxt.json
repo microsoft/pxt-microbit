@@ -20,6 +20,8 @@
         "arcadegamepad.h",
         "indexedscreen.h",
         "arcadesound.h",
+        "pins.h",
+        "pins.cpp",
         "jdprotocol.h",
         "jddisplay.h",
         "jddisplay.cpp"
