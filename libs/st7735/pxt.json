@@ -29,5 +29,8 @@
     "dependencies": {
         "core": "file:../core"
     },
-    "additionalFilePath": "../screen"
+    "additionalFilePath": "../screen",
+    "disablesVariants": [
+        "mbdal"
+    ]
 }

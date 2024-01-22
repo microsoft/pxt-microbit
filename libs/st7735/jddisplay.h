@@ -7,9 +7,7 @@
 #include "indexedscreen.h"
 #include "arcadesound.h"
 
-// #if MICROBIT_CODAL
 #include "Pin.h"
-// #endif
 
 namespace pxt {
 
