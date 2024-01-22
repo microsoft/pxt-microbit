@@ -19,7 +19,8 @@
         "font12.jres",
         "arcadegamepad.h",
         "indexedscreen.h",
-        "arcadesound.h"
+        "arcadesound.h",
+        "jddisplay.cpp"
     ],
     "dependencies": {
         "core": "file:../core"

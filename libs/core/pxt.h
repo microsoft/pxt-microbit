@@ -42,7 +42,6 @@ static inline ImageData *imageBytes(ImageLiteral_ lit) {
 typedef MicroBitPin DevicePin;
 
 typedef RefMImage *Image;
-typedef RefImage *SImage;
 
 extern MicroBit uBit;
 extern MicroBitEvent lastEvent;

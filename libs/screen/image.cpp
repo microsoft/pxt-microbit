@@ -1313,16 +1313,16 @@ void drawVLine(SImage_ img, int x, int y, int h, int c) {
 
 void fillTriangle(SImage_ img, int x0, int y0, int x1, int y1, int x2, int y2, int c) {
     if (x1 < x0) {
-        swap(x0, x1);
-        swap(y0, y1);
+        pxt::swap(x0, x1);
+        pxt::swap(y0, y1);
     }
     if (x2 < x1) {
-        swap(x1, x2);
-        swap(y1, y2);
+        pxt::swap(x1, x2);
+        pxt::swap(y1, y2);
     }
     if (x1 < x0) {
-        swap(x0, x1);
-        swap(y0, y1);
+        pxt::swap(x0, x1);
+        pxt::swap(y0, y1);
     }
 
     LineGenState lines[] = {
