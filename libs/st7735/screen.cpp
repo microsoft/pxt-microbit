@@ -2,10 +2,10 @@
 #include "ST7735.h"
 #include "ILI9341.h"
 
+// #include "Pin.h"
+// #define PinCompat codal::Pin
+
 #include "SPIScreenIO.h"
-#ifdef STM32F4
-#include "FSMCIO.h"
-#endif
 
 #include "jddisplay.h"
 
