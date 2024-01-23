@@ -1,6 +1,7 @@
 {
     "name": "st7735",
     "files": [
+        "spiscreenio.cpp",
         "config_nrf.h",
         "config_nrf.cpp",
         "screen.cpp",
