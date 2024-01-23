@@ -2,8 +2,7 @@
 
 #include "jddisplay.h"
 
-#define PXT_INTERNAL_KEY_UP 2050
-#define PXT_INTERNAL_KEY_DOWN 2051
+#include "config_nrf.h"
 
 #define VLOG NOLOG
 //#define VLOG DMESG
@@ -239,7 +238,7 @@ void JDDisplay::step() {
 
     memset(&sendFrame, 0, JD_SERIAL_FULL_HEADER_SIZE);
     sendFrame.crc = JDSPI_MAGIC;
-    sendFrame.device_identifier = device.getLongSerialNumber();
+    sendFrame.device_identifier = device.getSerialNumber();
 
     if (recvFrame.crc == JDSPI_MAGIC_NOOP) {
         // empty frame, skip
@@ -284,7 +283,7 @@ void JDDisplay::step() {
 
         if (soundServiceNum) {
             // we only need this for sending sound
-            uint32_t now = (uint32_t)(pxt::micros());
+            uint32_t now = (uint32_t)(pxt::current_time_ms());
             if (lastFrameTimestamp) {
                 uint32_t thisFrame = now - lastFrameTimestamp;
                 avgFrameTime = (avgFrameTime * 15 + thisFrame) >> 4;

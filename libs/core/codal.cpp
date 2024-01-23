@@ -56,7 +56,7 @@ void platform_init() {
     seedRandom(seed);
 }
 
-void initMicrobitGC() {
+void initfbitGC() {
     uBit.init();
     if (device_heap_size(1) > NON_GC_HEAP_RESERVATION + 4)
         gcPreAllocateBlock(device_heap_size(1) - NON_GC_HEAP_RESERVATION);

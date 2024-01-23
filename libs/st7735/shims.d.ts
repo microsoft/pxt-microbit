@@ -149,29 +149,5 @@ declare namespace image {
     //% shim=image::doubledIcon
     function doubledIcon(icon: Buffer): Buffer;
 }
-declare namespace pins {
-
-    /**
-     * Get a pin by configuration id (DAL.CFG_PIN...)
-     */
-    //% shim=pins::pinByCfg
-    function pinByCfg(key: int32): DigitalInOutPin;
-
-    /**
-     * Create a new zero-initialized buffer.
-     * @param size number of bytes in the buffer
-     */
-    //% shim=pins::createBuffer
-    function createBuffer(size: int32): Buffer;
-
-    /**
-     * Get the duration of the last pulse in microseconds. This function should be called from a
-     * ``onPulsed`` handler.
-     */
-    //% help=pins/pulse-duration blockGap=8
-    //% blockId=pins_pulse_duration block="pulse duration (µs)"
-    //% weight=19 shim=pins::pulseDuration
-    function pulseDuration(): int32;
-}
 
 // Auto-generated. Do not edit. Really.

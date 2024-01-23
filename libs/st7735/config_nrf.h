@@ -44,6 +44,10 @@
 //#define CODAL_TIMER Timer
 //#define CODAL_SERIAL NRF52Serial
 
+#define PXT_INTERNAL_KEY_UP 2050
+#define PXT_INTERNAL_KEY_DOWN 2051
+#define DEVICE_ID_FIRST_BUTTON 4000
+
 typedef CODAL_PIN DevicePin;
 
 typedef DevicePin *DigitalInOutPin;
