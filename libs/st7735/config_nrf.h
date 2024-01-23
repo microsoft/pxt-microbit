@@ -1,6 +1,5 @@
 #include "NRF52Pin.h"
 #include "NRF52SPI.h"
-#include "MultiButton.h"
 
 #define MY_DISPLAY_WIDTH 160
 #define MY_DISPLAY_HEIGHT 128
@@ -47,14 +46,12 @@
 
 typedef CODAL_PIN DevicePin;
 
-#undef Button               // undo the micro:bit #define
 typedef DevicePin *DigitalInOutPin;
 typedef DevicePin *AnalogInOutPin;
 typedef DevicePin *AnalogInPin;
 typedef DevicePin *AnalogOutPin;
 typedef DevicePin *PwmPin;
 typedef DevicePin *PwmOnlyPin;
-typedef Button *Button_;
 
 namespace pxt {
 DevicePin *getPin(int id);
