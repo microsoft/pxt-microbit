@@ -2,6 +2,7 @@
     "name": "st7735",
     "files": [
         "config_nrf.h",
+        "config_nrf.cpp",
         "screen.cpp",
         "panic.cpp",
         "image.cpp",

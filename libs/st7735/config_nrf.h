@@ -16,11 +16,40 @@
 
 #define MY_PIN_LED 13 // DAL.P0_13 TODO
 
+#define CFG_PIN_NAME_MSK = 65535
+#define DEV_NUM_PINS 48
+#define DEVICE_ID_IO_P0 100
+
 // remove the indirection through configuration
 #undef PIN
 #undef LOOKUP_PIN
 #define PIN(name) CFG_PIN_##name
 #define LOOKUP_PIN(name) pxt::lookupPin(PIN(name))
+
+#define DEV_PWM_PINS 0x0000ffffffffULL // all pins are PWM pins it seems
+#define DEV_AIN_PINS 0x0000f000001fULL
+
+// Codal doesn't yet distinguish between PWM and AIN
+#define DEV_ANALOG_PINS (DEV_PWM_PINS | DEV_AIN_PINS)
+
+#undef IS_ANALOG_PIN
+#define IS_ANALOG_PIN(id) ((DEV_ANALOG_PINS >> (id)) & 1)
+
+typedef CODAL_PIN DevicePin;
+
+typedef DevicePin *DigitalInOutPin;
+typedef DevicePin *AnalogInOutPin;
+typedef DevicePin *AnalogInPin;
+typedef DevicePin *AnalogOutPin;
+typedef DevicePin *PwmPin;
+typedef DevicePin *PwmOnlyPin;
+typedef Button *Button_;
+
+namespace pxt {
+DevicePin *getPin(int id);
+DevicePin *lookupPin(int pinName);
+}
+
 
 // // there's no UF2 bootloader for 52833 yet, so we specify example configuration here
 // namespace config {
