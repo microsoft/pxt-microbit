@@ -6,6 +6,7 @@
 #include "Pin.h"
 #define PinCompat codal::Pin
 
+#undef SPI
 #include "jdprotocol.h"
 #include "arcadegamepad.h"
 #include "indexedscreen.h"
