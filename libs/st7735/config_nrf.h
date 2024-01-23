@@ -54,8 +54,10 @@ typedef DevicePin *PwmPin;
 typedef DevicePin *PwmOnlyPin;
 
 namespace pxt {
-DevicePin *getPin(int id);
-DevicePin *lookupPin(int pinName);
+    DevicePin *getPin(int id);
+    DevicePin *lookupPin(int pinName);
+    uint32_t readButtonMultiplexer(int bits);
+    void disableButtonMultiplexer();
 }
 
 
