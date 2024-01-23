@@ -24,7 +24,8 @@
         "arcadesound.h",
         "jdprotocol.h",
         "jddisplay.h",
-        "jddisplay.cpp"
+        "jddisplay.cpp",
+        "pinsDigital.cpp"
     ],
     "dependencies": {
         "core": "file:../core"
