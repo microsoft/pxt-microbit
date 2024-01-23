@@ -6,6 +6,9 @@
 #include "ST7735.h"
 #include "ILI9341.h"
 
+// this is a hack because someone (don't know where) #defined SPI to be NRF52SPI,
+// which messes with the include file below the #undef
+#undef SPI
 #include "SPIScreenIO.h"
 
 #include "jddisplay.h"
