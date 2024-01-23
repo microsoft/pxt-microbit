@@ -1,65 +1,4 @@
-/home/build/prjclone/pxtapp/pointers.cpp:166:26: error: variable or field 'onButtonPressed' declared void
-     void onButtonPressed(Button button, Action body);
-                          ^~~~~~
-/home/build/prjclone/pxtapp/pointers.cpp:166:26: error: reference to 'Button' is ambiguous
-/home/build/prjclone/pxtapp/pointers.cpp:158:19: note: candidates are: enum Button
-     enum Button : int;
-                   ^~~
-In file included from /home/build/prjclone/libraries/codal-microbit-v2/inc/compat/MicroBitCompat.h:35:0,
-                 from /home/build/prjclone/libraries/codal-microbit-v2/inc/MicroBitConfig.h:6,
-                 from /home/build/prjclone/libraries/codal-microbit-v2/model/MicroBit.h:28,
-                 from /home/build/prjclone/pxtapp/pxtcore.h:4,
-                 from /home/build/prjclone/pxtapp/pxtbase.h:59,
-                 from /home/build/prjclone/pxtapp/pxt.h:8,
-                 from /home/build/prjclone/pxtapp/pointers.cpp:1:
-/home/build/prjclone/libraries/codal-core/inc/drivers/Button.h:41:11: note:                 class codal::Button
-     class Button : public AbstractButton, public PinPeripheral
-           ^~~~~~
-/home/build/prjclone/pxtapp/pointers.cpp:166:48: error: expected primary-expression before 'body'
-     void onButtonPressed(Button button, Action body);
-                                                ^~~~
-/home/build/prjclone/pxtapp/pointers.cpp:171:26: error: reference to 'Button' is ambiguous
-     bool buttonIsPressed(Button button);
-                          ^~~~~~
-/home/build/prjclone/pxtapp/pointers.cpp:158:19: note: candidates are: enum Button
-     enum Button : int;
-                   ^~~
-In file included from /home/build/prjclone/libraries/codal-microbit-v2/inc/compat/MicroBitCompat.h:35:0,
-                 from /home/build/prjclone/libraries/codal-microbit-v2/inc/MicroBitConfig.h:6,
-                 from /home/build/prjclone/libraries/codal-microbit-v2/model/MicroBit.h:28,
-                 from /home/build/prjclone/pxtapp/pxtcore.h:4,
-                 from /home/build/prjclone/pxtapp/pxtbase.h:59,
-                 from /home/build/prjclone/pxtapp/pxt.h:8,
-                 from /home/build/prjclone/pxtapp/pointers.cpp:1:
-/home/build/prjclone/libraries/codal-core/inc/drivers/Button.h:41:11: note:                 class codal::Button
-     class Button : public AbstractButton, public PinPeripheral
-           ^~~~~~
-/home/build/prjclone/pxtapp/pointers.cpp:372:13: error: reference to 'Button' is ambiguous
-     typedef Button *Button_;
-             ^~~~~~
-/home/build/prjclone/pxtapp/pointers.cpp:158:19: note: candidates are: enum Button
-     enum Button : int;
-                   ^~~
-In file included from /home/build/prjclone/libraries/codal-microbit-v2/inc/compat/MicroBitCompat.h:35:0,
-                 from /home/build/prjclone/libraries/codal-microbit-v2/inc/MicroBitConfig.h:6,
-                 from /home/build/prjclone/libraries/codal-microbit-v2/model/MicroBit.h:28,
-                 from /home/build/prjclone/pxtapp/pxtcore.h:4,
-                 from /home/build/prjclone/pxtapp/pxtbase.h:59,
-                 from /home/build/prjclone/pxtapp/pxt.h:8,
-                 from /home/build/prjclone/pxtapp/pointers.cpp:1:
-/home/build/prjclone/libraries/codal-core/inc/drivers/Button.h:41:11: note:                 class codal::Button
-     class Button : public AbstractButton, public PinPeripheral
-           ^~~~~~
-In file included from /home/build/prjclone/pxtapp/pxt.h:8:0,
-                 from /home/build/prjclone/pxtapp/pointers.cpp:1:
-/home/build/prjclone/pxtapp/pointers.cpp:598:11: error: 'onButtonPressed' is not a member of 'input'
- PXT_FNPTR(::input::onButtonPressed),
-           ^
-/home/build/prjclone/pxtapp/pxtbase.h:1215:42: note: in definition of macro 'PXT_FNPTR'
- #define PXT_FNPTR(x) (uintptr_t)(void *)(x)
-                                          ^
-
-
+                                             ^~~~
 /home/build/prjclone/pxtapp/st7735/screen.cpp: In member function 'uint32_t pxt::WDisplay::smartConfigure(uint32_t*, uint32_t*, uint32_t*)':
 /home/build/prjclone/pxtapp/st7735/screen.cpp:151:42: error: 'readButtonMultiplexer' was not declared in this scope
              hc = readButtonMultiplexer(17);
@@ -67,5 +6,3 @@ In file included from /home/build/prjclone/pxtapp/pxt.h:8:0,
 /home/build/prjclone/pxtapp/st7735/screen.cpp:169:38: error: 'disableButtonMultiplexer' was not declared in this scope
              disableButtonMultiplexer();
                                       ^
-make[2]: *** [CMakeFiles/MICROBIT.dir/pxtapp/st7735/screen.cpp.obj] Error 1
-make[1]: *** [CMakeFiles/MICROBIT.dir/all] Error 2
