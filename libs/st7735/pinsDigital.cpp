@@ -5,24 +5,6 @@
 
 #include "config_nrf.h"
 
-enum class PulseValue {
-    High = DEVICE_PIN_EVT_PULSE_HI,
-    Low = DEVICE_PIN_EVT_PULSE_LO
-};
-
-enum class PinEvent {
-    PulseHigh = DEVICE_PIN_EVT_PULSE_HI,
-    PulseLow = DEVICE_PIN_EVT_PULSE_LO,
-    Rise = DEVICE_PIN_EVT_RISE,
-    Fall = DEVICE_PIN_EVT_FALL,
-};
-
-enum class PinPullMode {
-    PullDown = 0,
-    PullUp = 1,
-    PullNone = 2
-};
-
 #ifdef PXT_CODAL
 
 namespace pxt {
