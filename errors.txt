@@ -1,225 +1,141 @@
-[ 32%] Built target codal-core
-[ 45%] Built target codal-nrf52
-[ 67%] Built target codal-microbit-nrf5sdk
-[ 88%] Built target codal-microbit-v2
-[ 88%] Building CXX object CMakeFiles/MICROBIT.dir/pxtapp/pointers.cpp.obj
-[ 88%] Building CXX object CMakeFiles/MICROBIT.dir/pxtapp/st7735/jddisplay.cpp.obj
-[ 88%] Building CXX object CMakeFiles/MICROBIT.dir/pxtapp/st7735/panic.cpp.obj
-[ 88%] Building CXX object CMakeFiles/MICROBIT.dir/pxtapp/st7735/pins.cpp.obj
-[ 88%] Building CXX object CMakeFiles/MICROBIT.dir/pxtapp/st7735/screen.cpp.obj
-/src/pxtapp/st7735/jddisplay.cpp: In member function 'void pxt::JDDisplay::handleIncoming(jd_packet_t*)':
-/src/pxtapp/st7735/jddisplay.cpp:161:52: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
-             soundBufferPending = *(uint32_t *)pkt->data;
-                                                    ^~~~
-/src/pxtapp/st7735/jddisplay.cpp:164:49: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
-             soundSampleRate = *(uint32_t *)pkt->data >> 10;
-                                                 ^~~~
-/src/pxtapp/st7735/jddisplay.cpp:170:46: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
-             screenHeight = *(uint16_t *)pkt->data;
-                                              ^~~~
-/src/pxtapp/st7735/jddisplay.cpp:173:45: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
-             screenWidth = *(uint16_t *)pkt->data;
+/tmp/ccnMgD6c.s: Assembler messages:
+/tmp/ccnMgD6c.s:110: Warning: setting incorrect section attributes for .data.ramfuncs
+/home/build/prjclone/pxtapp/core/serial.cpp:252:13: warning: 'void pxt::sendString(const char*, int)' defined but not used [-Wunused-function]
+ static void sendString(const char *c, int len) {
+             ^~~~~~~~~~
+In file included from /home/build/prjclone/pxtapp/pointers.cpp:7:0:
+/home/build/prjclone/pxtapp/st7735/config_nrf.h:19:0: warning: "CFG_PIN_NAME_MSK" redefined
+ #define CFG_PIN_NAME_MSK = 65535
+ 
+In file included from /home/build/prjclone/pxtapp/pxtbase.h:21:0,
+                 from /home/build/prjclone/pxtapp/pxt.h:8,
+                 from /home/build/prjclone/pxtapp/pointers.cpp:1:
+TypeError: Cannot read properties of null (reading 'length')
+    at compressHex (/home/runner/work/pxt-microbit/pxt-microbit/node_modules/pxt-core/built/pxt.js:105228:37)
+    at /home/runner/work/pxt-microbit/pxt-microbit/node_modules/pxt-core/built/pxt.js:105157:36
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async fillExtInfoAsync (/home/runner/work/pxt-microbit/pxt-microbit/node_modules/pxt-core/built/pxt.js:114031:51)
+    at async MainPackage.getCompileOptionsAsync (/home/runner/work/pxt-microbit/pxt-microbit/node_modules/pxt-core/built/pxt.js:114076:33)
+    at async /home/runner/work/pxt-microbit/pxt-microbit/node_modules/pxt-core/built/pxt.js:162655:19
+    at async /home/runner/work/pxt-microbit/pxt-microbit/node_modules/pxt-core/built/pxt.js:99437:42
+    at async Promise.all (index 0)
+    at async promisePoolAsync (/home/runner/work/pxt-microbit/pxt-microbit/node_modules/pxt-core/built/pxt.js:99443:21)
+    at async buildTargetCoreAsync (/home/runner/work/pxt-microbit/pxt-microbit/node_modules/pxt-core/built/pxt.js:162637:5)
+/home/build/prjclone/pxtapp/configkeys.h:6:0: note: this is the location of the previous definition
+ #define CFG_PIN_NAME_MSK 0x0000ffff
+ 
+/home/build/prjclone/pxtapp/core/sendbufferbrightness.s: Assembler messages:
+/home/build/prjclone/pxtapp/core/sendbufferbrightness.s: Warning: end of file not at end of a line; newline inserted
+In file included from /home/build/prjclone/pxtapp/st7735/panic.cpp:6:0:
+/home/build/prjclone/pxtapp/st7735/config_nrf.h:19:0: warning: "CFG_PIN_NAME_MSK" redefined
+ #define CFG_PIN_NAME_MSK = 65535
+ 
+In file included from /home/build/prjclone/pxtapp/pxtbase.h:21:0,
+                 from /home/build/prjclone/pxtapp/pxt.h:8,
+                 from /home/build/prjclone/pxtapp/st7735/panic.cpp:1:
+/home/build/prjclone/pxtapp/configkeys.h:6:0: note: this is the location of the previous definition
+ #define CFG_PIN_NAME_MSK 0x0000ffff
+ 
+In file included from /home/build/prjclone/pxtapp/st7735/screen.cpp:12:0:
+/home/build/prjclone/pxtapp/st7735/config_nrf.h:19:0: warning: "CFG_PIN_NAME_MSK" redefined
+ #define CFG_PIN_NAME_MSK = 65535
+ 
+In file included from /home/build/prjclone/pxtapp/pxtbase.h:21:0,
+                 from /home/build/prjclone/pxtapp/pxt.h:8,
+                 from /home/build/prjclone/pxtapp/st7735/screen.cpp:1:
+/home/build/prjclone/pxtapp/configkeys.h:6:0: note: this is the location of the previous definition
+ #define CFG_PIN_NAME_MSK 0x0000ffff
+ 
 
-
-                                             ^~~~
-/src/pxtapp/st7735/jddisplay.cpp:209:27: error: 'PXT_INTERNAL_KEY_DOWN' was not declared in this scope
-                     Event(PXT_INTERNAL_KEY_DOWN, i);
-                           ^~~~~~~~~~~~~~~~~~~~~
-/src/pxtapp/st7735/jddisplay.cpp:211:27: error: 'PXT_INTERNAL_KEY_UP' was not declared in this scope
-                     Event(PXT_INTERNAL_KEY_UP, i);
-                           ^~~~~~~~~~~~~~~~~~~
-                           
-/src/pxtapp/st7735/pins.cpp: In function 'pxt::DevicePin* pxt::getPin(int)':
-/src/pxtapp/st7735/pins.cpp:26:41: error: 'IS_ANALOG_PIN' was not declared in this scope
-         bool isAnalog = IS_ANALOG_PIN(id);
-                                         ^
-/src/pxtapp/st7735/pins.cpp: At global scope:
-/src/pxtapp/st7735/pins.cpp:80:1: error: 'DigitalInOutPin' does not name a type
- DigitalInOutPin pinByCfg(int key) {
- ^~~~~~~~~~~~~~~
-make[2]: *** [CMakeFiles/MICROBIT.dir/pxtapp/st7735/jddisplay.cpp.obj] Error 1
-make[2]: *** Waiting for unfinished jobs....
-make[2]: *** [CMakeFiles/MICROBIT.dir/pxtapp/st7735/pins.cpp.obj] Error 1
-In file included from /src/pxtapp/pointers.cpp:11:0:
-/src/pxtapp/st7735/pins.h:16:19: error: 'CODAL_MBED' does not name a type
- #define CODAL_PIN CODAL_MBED::Pin
-                   ^
-/src/pxtapp/st7735/pins.h:35:9: note: in expansion of macro 'CODAL_PIN'
+ 
+In file included from /home/build/prjclone/pxtapp/pointers.cpp:7:0:
+/home/build/prjclone/pxtapp/st7735/config_nrf.h:38:9: error: 'CODAL_PIN' does not name a type
  typedef CODAL_PIN DevicePin;
          ^~~~~~~~~
-In file included from /src/pxtapp/pointers.cpp:1:0:
-/src/pxtapp/pxt.h:39:16: error: 'MButton' does not name a type
+In file included from /home/build/prjclone/pxtapp/pointers.cpp:1:0:
+/home/build/prjclone/pxtapp/pxt.h:39:16: error: 'MButton' does not name a type
  #define Button MButton
                 ^
-/src/pxtapp/st7735/pins.h:43:9: note: in expansion of macro 'Button'
+/home/build/prjclone/pxtapp/st7735/config_nrf.h:46:9: note: in expansion of macro 'Button'
  typedef Button *Button_;
          ^~~~~~
-In file included from /src/pxtapp/pointers.cpp:11:0:
-/src/pxtapp/st7735/pins.h:16:19: error: 'CODAL_MBED' does not name a type
- #define CODAL_PIN CODAL_MBED::Pin
-                   ^
-/src/pxtapp/pointers.cpp:366:13: note: in expansion of macro 'CODAL_PIN'
+/home/build/prjclone/pxtapp/pointers.cpp:365:13: error: 'CODAL_PIN' does not name a type
      typedef CODAL_PIN DevicePin;
              ^~~~~~~~~
 make[2]: *** [CMakeFiles/MICROBIT.dir/pxtapp/pointers.cpp.obj] Error 1
-/src/pxtapp/st7735/panic.cpp: In member function 'void _pxt_panic::ST7735::init()':
-/src/pxtapp/st7735/panic.cpp:6:26: error: 'lookupPin' is not a member of 'pxt'
- #define LOOKUP_PIN(name) pxt::lookupPin(MY_PIN_##name)
-                          ^
-/src/pxtapp/st7735/panic.cpp:198:12: note: in expansion of macro 'LOOKUP_PIN'
-     mosi = LOOKUP_PIN(DISPLAY_MOSI);
-            ^~~~~~~~~~
-/src/pxtapp/st7735/panic.cpp:6:26: error: 'lookupPin' is not a member of 'pxt'
- #define LOOKUP_PIN(name) pxt::lookupPin(MY_PIN_##name)
-                          ^
-/src/pxtapp/st7735/panic.cpp:199:11: note: in expansion of macro 'LOOKUP_PIN'
-     sck = LOOKUP_PIN(DISPLAY_SCK);
-           ^~~~~~~~~~
-/src/pxtapp/st7735/panic.cpp:6:26: error: 'lookupPin' is not a member of 'pxt'
- #define LOOKUP_PIN(name) pxt::lookupPin(MY_PIN_##name)
-                          ^
-/src/pxtapp/st7735/panic.cpp:200:10: note: in expansion of macro 'LOOKUP_PIN'
-     cs = LOOKUP_PIN(DISPLAY_CS);
-          ^~~~~~~~~~
-/src/pxtapp/st7735/panic.cpp:6:26: error: 'lookupPin' is not a member of 'pxt'
- #define LOOKUP_PIN(name) pxt::lookupPin(MY_PIN_##name)
-                          ^
-/src/pxtapp/st7735/panic.cpp:201:10: note: in expansion of macro 'LOOKUP_PIN'
-     dc = LOOKUP_PIN(DISPLAY_DC);
-          ^~~~~~~~~~
-/src/pxtapp/st7735/panic.cpp:6:26: error: 'lookupPin' is not a member of 'pxt'
- #define LOOKUP_PIN(name) pxt::lookupPin(MY_PIN_##name)
-                          ^
-/src/pxtapp/st7735/panic.cpp:202:15: note: in expansion of macro 'LOOKUP_PIN'
-     auto bl = LOOKUP_PIN(DISPLAY_BL);
-               ^~~~~~~~~~
-/src/pxtapp/st7735/panic.cpp:6:26: error: 'lookupPin' is not a member of 'pxt'
- #define LOOKUP_PIN(name) pxt::lookupPin(MY_PIN_##name)
-                          ^
-/src/pxtapp/st7735/panic.cpp:203:16: note: in expansion of macro 'LOOKUP_PIN'
-     auto rst = LOOKUP_PIN(DISPLAY_RST);
-                ^~~~~~~~~~
-/src/pxtapp/st7735/panic.cpp: In function 'void _pxt_panic::drawPanic(int)':
-/src/pxtapp/st7735/panic.cpp:6:26: error: 'lookupPin' is not a member of 'pxt'
- #define LOOKUP_PIN(name) pxt::lookupPin(MY_PIN_##name)
-                          ^
-/src/pxtapp/st7735/panic.cpp:255:10: note: in expansion of macro 'LOOKUP_PIN'
-     if (!LOOKUP_PIN(DISPLAY_MOSI))
-          ^~~~~~~~~~
-/src/pxtapp/st7735/panic.cpp: In function 'void _pxt_panic::target_panic(int)':
-/src/pxtapp/st7735/panic.cpp:6:26: error: 'lookupPin' is not a member of 'pxt'
- #define LOOKUP_PIN(name) pxt::lookupPin(MY_PIN_##name)
-                          ^
-/src/pxtapp/st7735/panic.cpp:300:16: note: in expansion of macro 'LOOKUP_PIN'
-     auto led = LOOKUP_PIN(LED);
-                ^~~~~~~~~~
-make[2]: *** [CMakeFiles/MICROBIT.dir/pxtapp/st7735/panic.cpp.obj] Error 1
-/src/pxtapp/st7735/screen.cpp: In constructor 'pxt::WDisplay::WDisplay()':
-/src/pxtapp/st7735/screen.cpp:49:32: error: 'DISPLAY_MISO' was not declared in this scope
-         auto miso = LOOKUP_PIN(DISPLAY_MISO);
-                                ^~~~~~~~~~~~
-/src/pxtapp/st7735/screen.cpp:49:44: error: 'LOOKUP_PIN' was not declared in this scope
-         auto miso = LOOKUP_PIN(DISPLAY_MISO);
-                                            ^
-/src/pxtapp/st7735/screen.cpp:60:23: error: expected type-specifier before 'CODAL_SPI'
+make[2]: *** Waiting for unfinished jobs....
+/home/build/prjclone/pxtapp/st7735/config_nrf.cpp:6:23: error: 'DEV_NUM_PINS' was not declared in this scope
+ static uint8_t pinPos[DEV_NUM_PINS];
+                       ^~~~~~~~~~~~
+/home/build/prjclone/pxtapp/st7735/config_nrf.cpp: In function 'pxt::DevicePin* pxt::getPin(int)':
+/home/build/prjclone/pxtapp/st7735/config_nrf.cpp:12:15: error: 'DEV_NUM_PINS' was not declared in this scope
+     if (id >= DEV_NUM_PINS)
+               ^~~~~~~~~~~~
+/home/build/prjclone/pxtapp/st7735/config_nrf.cpp:17:15: error: 'pinPos' was not declared in this scope
+     int ptr = pinPos[id];
+               ^~~~~~
+/home/build/prjclone/pxtapp/st7735/config_nrf.cpp:20:41: error: 'IS_ANALOG_PIN' was not declared in this scope
+         bool isAnalog = IS_ANALOG_PIN(id);
+                                         ^
+make[2]: *** [CMakeFiles/MICROBIT.dir/pxtapp/st7735/config_nrf.cpp.obj] Error 1
+/home/build/prjclone/pxtapp/st7735/jddisplay.cpp: In member function 'void pxt::JDDisplay::handleIncoming(jd_packet_t*)':
+/home/build/prjclone/pxtapp/st7735/jddisplay.cpp:161:52: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+             soundBufferPending = *(uint32_t *)pkt->data;
+                                                    ^~~~
+/home/build/prjclone/pxtapp/st7735/jddisplay.cpp:164:49: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+             soundSampleRate = *(uint32_t *)pkt->data >> 10;
+                                                 ^~~~
+/home/build/prjclone/pxtapp/st7735/jddisplay.cpp:170:46: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+             screenHeight = *(uint16_t *)pkt->data;
+                                              ^~~~
+/home/build/prjclone/pxtapp/st7735/jddisplay.cpp:173:45: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+             screenWidth = *(uint16_t *)pkt->data;
+                                             ^~~~
+/home/build/prjclone/pxtapp/st7735/jddisplay.cpp:209:27: error: 'PXT_INTERNAL_KEY_DOWN' was not declared in this scope
+                     Event(PXT_INTERNAL_KEY_DOWN, i);
+                           ^~~~~~~~~~~~~~~~~~~~~
+/home/build/prjclone/pxtapp/st7735/jddisplay.cpp:211:27: error: 'PXT_INTERNAL_KEY_UP' was not declared in this scope
+                     Event(PXT_INTERNAL_KEY_UP, i);
+                           ^~~~~~~~~~~~~~~~~~~
+make[2]: *** [CMakeFiles/MICROBIT.dir/pxtapp/st7735/jddisplay.cpp.obj] Error 1
+In file included from /home/build/prjclone/pxtapp/st7735/panic.cpp:6:0:
+/home/build/prjclone/pxtapp/st7735/config_nrf.h:38:9: error: 'CODAL_PIN' does not name a type
+ typedef CODAL_PIN DevicePin;
+         ^~~~~~~~~
+In file included from /home/build/prjclone/pxtapp/st7735/panic.cpp:1:0:
+/home/build/prjclone/pxtapp/pxt.h:39:16: error: 'MButton' does not name a type
+ #define Button MButton
+                ^
+/home/build/prjclone/pxtapp/st7735/config_nrf.h:46:9: note: in expansion of macro 'Button'
+ typedef Button *Button_;
+         ^~~~~~
+In file included from /home/build/prjclone/pxtapp/st7735/screen.cpp:12:0:
+/home/build/prjclone/pxtapp/st7735/config_nrf.h:38:9: error: 'CODAL_PIN' does not name a type
+ typedef CODAL_PIN DevicePin;
+         ^~~~~~~~~
+In file included from /home/build/prjclone/pxtapp/st7735/screen.cpp:1:0:
+/home/build/prjclone/pxtapp/pxt.h:39:16: error: 'MButton' does not name a type
+ #define Button MButton
+                ^
+/home/build/prjclone/pxtapp/st7735/config_nrf.h:46:9: note: in expansion of macro 'Button'
+ typedef Button *Button_;
+         ^~~~~~
+/home/build/prjclone/pxtapp/st7735/screen.cpp: In constructor 'pxt::WDisplay::WDisplay()':
+/home/build/prjclone/pxtapp/st7735/screen.cpp:60:23: error: expected type-specifier before 'CODAL_SPI'
              spi = new CODAL_SPI(*LOOKUP_PIN(DISPLAY_MOSI), *miso, *LOOKUP_PIN(DISPLAY_SCK));
                        ^~~~~~~~~
-/src/pxtapp/st7735/screen.cpp:74:47: error: 'DISPLAY_CS' was not declared in this scope
-             lcd = new ST7735(*io, *LOOKUP_PIN(DISPLAY_CS), *LOOKUP_PIN(DISPLAY_DC));
-                                               ^~~~~~~~~~
-/src/pxtapp/st7735/screen.cpp:74:72: error: 'DISPLAY_DC' was not declared in this scope
-             lcd = new ST7735(*io, *LOOKUP_PIN(DISPLAY_CS), *LOOKUP_PIN(DISPLAY_DC));
-                                                                        ^~~~~~~~~~
-/src/pxtapp/st7735/screen.cpp:76:48: error: 'DISPLAY_CS' was not declared in this scope
-             lcd = new ILI9341(*io, *LOOKUP_PIN(DISPLAY_CS), *LOOKUP_PIN(DISPLAY_DC));
-                                                ^~~~~~~~~~
-/src/pxtapp/st7735/screen.cpp:76:73: error: 'DISPLAY_DC' was not declared in this scope
-             lcd = new ILI9341(*io, *LOOKUP_PIN(DISPLAY_CS), *LOOKUP_PIN(DISPLAY_DC));
-                                                                         ^~~~~~~~~~
-/src/pxtapp/st7735/screen.cpp:80:51: error: 'DISPLAY_CS' was not declared in this scope
-             smart = new JDDisplay(spi, LOOKUP_PIN(DISPLAY_CS), LOOKUP_PIN(DISPLAY_DC));
-                                                   ^~~~~~~~~~
-/src/pxtapp/st7735/screen.cpp:80:75: error: 'DISPLAY_DC' was not declared in this scope
-             smart = new JDDisplay(spi, LOOKUP_PIN(DISPLAY_CS), LOOKUP_PIN(DISPLAY_DC));
-                                                                           ^~~~~~~~~~
-/src/pxtapp/st7735/screen.cpp:97:34: error: 'DISPLAY_CS' was not declared in this scope
-             auto cs = LOOKUP_PIN(DISPLAY_CS);
-                                  ^~~~~~~~~~
-/src/pxtapp/st7735/screen.cpp:105:31: error: 'DISPLAY_RST' was not declared in this scope
-         auto rst = LOOKUP_PIN(DISPLAY_RST);
-                               ^~~~~~~~~~~
-/src/pxtapp/st7735/screen.cpp:114:34: error: 'DISPLAY_BL' was not declared in this scope
-             auto bl = LOOKUP_PIN(DISPLAY_BL);
-                                  ^~~~~~~~~~
-In file included from /src/pxtapp/st7735/screen.cpp:12:0:
-/src/pxtapp/st7735/config_nrf.h:2:27: error: expected primary-expression before '=' token
+In file included from /home/build/prjclone/pxtapp/st7735/screen.cpp:12:0:
+/home/build/prjclone/pxtapp/st7735/config_nrf.h:2:27: error: expected primary-expression before '=' token
  #define MY_DISPLAY_HEIGHT = 128
                            ^
-/src/pxtapp/st7735/screen.cpp:124:18: note: in expansion of macro 'MY_DISPLAY_HEIGHT'
+/home/build/prjclone/pxtapp/st7735/screen.cpp:124:18: note: in expansion of macro 'MY_DISPLAY_HEIGHT'
          height = MY_DISPLAY_HEIGHT;
                   ^~~~~~~~~~~~~~~~~
-/src/pxtapp/st7735/screen.cpp: In member function 'uint32_t pxt::WDisplay::smartConfigure(uint32_t*, uint32_t*, uint32_t*)':
-/src/pxtapp/st7735/screen.cpp:143:35: error: 'DISPLAY_RST' was not declared in this scope
-             auto rst = LOOKUP_PIN(DISPLAY_RST);
-                                   ^~~~~~~~~~~
-/src/pxtapp/st7735/screen.cpp:143:46: error: 'LOOKUP_PIN' was not declared in this scope
-             auto rst = LOOKUP_PIN(DISPLAY_RST);
-                                              ^
-/src/pxtapp/st7735/screen.cpp:151:42: error: 'readButtonMultiplexer' was not declared in this scope
+make[2]: *** [CMakeFiles/MICROBIT.dir/pxtapp/st7735/panic.cpp.obj] Error 1
+/home/build/prjclone/pxtapp/st7735/screen.cpp: In member function 'uint32_t pxt::WDisplay::smartConfigure(uint32_t*, uint32_t*, uint32_t*)':
+/home/build/prjclone/pxtapp/st7735/screen.cpp:151:42: error: 'readButtonMultiplexer' was not declared in this scope
              hc = readButtonMultiplexer(17);
                                           ^
-/src/pxtapp/st7735/screen.cpp:169:38: error: 'disableButtonMultiplexer' was not declared in this scope
+/home/build/prjclone/pxtapp/st7735/screen.cpp:169:38: error: 'disableButtonMultiplexer' was not declared in this scope
              disableButtonMultiplexer();
                                       ^
-In file included from /src/pxtapp/pxt.h:8:0,
-                 from /src/pxtapp/st7735/screen.cpp:1:
-/src/pxtapp/st7735/screen.cpp: In function 'pxt::WDisplay* pxt::getWDisplay()':
-/src/pxtapp/st7735/screen.cpp:233:28: error: 'DISPLAY_MOSI' was not declared in this scope
- SINGLETON_IF_PIN(WDisplay, DISPLAY_MOSI);
-                            ^
-/src/pxtapp/pxtbase.h:1233:50: note: in definition of macro 'SINGLETON_IF_PIN'
-         if (!JOIN(inst, ClassName) && LOOKUP_PIN(pin))                                             \
-                                                  ^~~
-/src/pxtapp/pxtbase.h:1233:53: error: 'LOOKUP_PIN' was not declared in this scope
-         if (!JOIN(inst, ClassName) && LOOKUP_PIN(pin))                                             \
-                                                     ^
-/src/pxtapp/st7735/screen.cpp:233:1: note: in expansion of macro 'SINGLETON_IF_PIN'
- SINGLETON_IF_PIN(WDisplay, DISPLAY_MOSI);
- ^~~~~~~~~~~~~~~~
-/src/pxtapp/st7735/screen.cpp: In function 'int pxt::setScreenBrightnessSupported()':
-/src/pxtapp/st7735/screen.cpp:241:26: error: 'DISPLAY_BL' was not declared in this scope
-     auto bl = LOOKUP_PIN(DISPLAY_BL);
-                          ^~~~~~~~~~
-/src/pxtapp/st7735/screen.cpp:241:36: error: 'LOOKUP_PIN' was not declared in this scope
-     auto bl = LOOKUP_PIN(DISPLAY_BL);
-                                    ^
-/src/pxtapp/st7735/screen.cpp: In function 'void pxt::setScreenBrightness(int)':
-/src/pxtapp/st7735/screen.cpp:269:26: error: 'DISPLAY_BL' was not declared in this scope
-     auto bl = LOOKUP_PIN(DISPLAY_BL);
-                          ^~~~~~~~~~
-/src/pxtapp/st7735/screen.cpp:269:36: error: 'LOOKUP_PIN' was not declared in this scope
-     auto bl = LOOKUP_PIN(DISPLAY_BL);
-                                    ^
-make[2]: *** [CMakeFiles/MICROBIT.dir/pxtapp/st7735/screen.cpp.obj] Error 1
-make[1]: *** [CMakeFiles/MICROBIT.dir/all] Error 2
-make: *** [all] Error 2
-
-***
-*** Build failed: target build failed: Exit code: 1 from cd built/dockercodal; docker run --rm -v C:\github\pxt\pxt-microbit\libs\blocksprj/built/dockercodal/:/src -w /src -u build pext/yotta:latest python build.py
-Error: Exit code: 1 from cd built/dockercodal; docker run --rm -v C:\github\pxt\pxt-microbit\libs\blocksprj/built/dockercodal/:/src -w /src -u build pext/yotta:latest python build.py
-    at ChildProcess.<anonymous> (C:\github\pxt\pxt-microbit\node_modules\pxt-core\built\nodeutil.js:78:24)
-    at ChildProcess.emit (node:events:514:28)
-    at maybeClose (node:internal/child_process:1105:16)
-    at ChildProcess._handle.onexit (node:internal/child_process:305:5)
-***
-
-Starting server in C:\github\pxt\pxt-microbit
-With pxt core at C:\github\pxt\pxt-microbit\node_modules\pxt-core
-starting local ws server at 3233...
----------------------------------------------
-
-To launch the editor, open this URL:
-http://localhost:3232/#local_token=4f340391-724c-4c54-207c-cc105dda348e&wsport=3233
-
----------------------------------------------
-opening http://localhost:3232/#local_token=4f340391-724c-4c54-207c-cc105dda348e&wsport=3233

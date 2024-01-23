@@ -1,5 +1,7 @@
 #include "pxt.h"
 
+#include "config_nrf.h"
+
 namespace pxt {
 static DevicePin **pinPtrs;
 static uint8_t numPinPtrs;

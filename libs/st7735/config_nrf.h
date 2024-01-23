@@ -1,3 +1,5 @@
+#include "NRF52Pin.h"
+
 #define MY_DISPLAY_WIDTH 160
 #define MY_DISPLAY_HEIGHT = 128
 #define MY_DISPLAY_TYPE 4242 // smart display
@@ -16,7 +18,7 @@
 
 #define MY_PIN_LED 13 // DAL.P0_13 TODO
 
-#define CFG_PIN_NAME_MSK = 65535
+// #define CFG_PIN_NAME_MSK = 65535
 #define DEV_NUM_PINS 48
 #define DEVICE_ID_IO_P0 100
 
@@ -34,6 +36,12 @@
 
 #undef IS_ANALOG_PIN
 #define IS_ANALOG_PIN(id) ((DEV_ANALOG_PINS >> (id)) & 1)
+
+#define CODAL_PIN NRF52Pin
+//#define CODAL_SPI NRF52SPI
+//#define CODAL_I2C NRF52I2C
+//#define CODAL_TIMER Timer
+//#define CODAL_SERIAL NRF52Serial
 
 typedef CODAL_PIN DevicePin;
 
