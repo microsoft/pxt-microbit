@@ -47,6 +47,7 @@
 
 typedef CODAL_PIN DevicePin;
 
+#undef Button               // undo the micro:bit #define
 typedef DevicePin *DigitalInOutPin;
 typedef DevicePin *AnalogInOutPin;
 typedef DevicePin *AnalogInPin;
