@@ -1,7 +1,9 @@
 #include "NRF52Pin.h"
+#include "NRF52SPI.h"
+#include "MultiButton.h"
 
 #define MY_DISPLAY_WIDTH 160
-#define MY_DISPLAY_HEIGHT = 128
+#define MY_DISPLAY_HEIGHT 128
 #define MY_DISPLAY_TYPE 4242 // smart display
 
 #define MY_DISPLAY_CFG0 0x00000080
@@ -38,7 +40,7 @@
 #define IS_ANALOG_PIN(id) ((DEV_ANALOG_PINS >> (id)) & 1)
 
 #define CODAL_PIN NRF52Pin
-//#define CODAL_SPI NRF52SPI
+#define CODAL_SPI NRF52SPI
 //#define CODAL_I2C NRF52I2C
 //#define CODAL_TIMER Timer
 //#define CODAL_SERIAL NRF52Serial

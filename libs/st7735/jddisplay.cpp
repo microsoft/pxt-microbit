@@ -2,6 +2,9 @@
 
 #include "jddisplay.h"
 
+#define PXT_INTERNAL_KEY_UP 2050
+#define PXT_INTERNAL_KEY_DOWN 2051
+
 #define VLOG NOLOG
 //#define VLOG DMESG
 
