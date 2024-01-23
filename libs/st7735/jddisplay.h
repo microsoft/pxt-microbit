@@ -2,13 +2,14 @@
 #define __JDDISPLAY_H
 
 #include "pxt.h"
+
+#include "Pin.h"
+#define PinCompat codal::Pin
+
 #include "jdprotocol.h"
 #include "arcadegamepad.h"
 #include "indexedscreen.h"
 #include "arcadesound.h"
-
-#include "Pin.h"
-#define PinCompat codal::Pin
 
 namespace pxt {
 
