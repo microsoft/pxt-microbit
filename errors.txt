@@ -1,8 +1,38 @@
-                                             ^~~~
-/home/build/prjclone/pxtapp/st7735/screen.cpp: In member function 'uint32_t pxt::WDisplay::smartConfigure(uint32_t*, uint32_t*, uint32_t*)':
-/home/build/prjclone/pxtapp/st7735/screen.cpp:151:42: error: 'readButtonMultiplexer' was not declared in this scope
-             hc = readButtonMultiplexer(17);
-                                          ^
-/home/build/prjclone/pxtapp/st7735/screen.cpp:169:38: error: 'disableButtonMultiplexer' was not declared in this scope
-             disableButtonMultiplexer();
-                                      ^
+Link errors
+
+CMakeFiles/MICROBIT.dir/pxtapp/st7735/config_nrf.cpp.obj: In function `pxt::getPin(int)':
+/home/build/prjclone/pxtapp/st7735/config_nrf.cpp:10: multiple definition of `pxt::getPin(int)'
+CMakeFiles/MICROBIT.dir/pxtapp/core/pins.cpp.obj:/home/build/prjclone/pxtapp/core/pins.cpp:102: first defined here
+
+CMakeFiles/MICROBIT.dir/pxtapp/st7735/panic.cpp.obj: In function `target_panic':
+/home/build/prjclone/pxtapp/st7735/panic.cpp:275: multiple definition of `target_panic'
+CMakeFiles/MICROBIT.dir/pxtapp/core/codal.cpp.obj:/home/build/prjclone/pxtapp/core/codal.cpp:26: first defined here
+
+
+
+CMakeFiles/MICROBIT.dir/pxtapp/st7735/jddisplay.cpp.obj: In function `pxt::JDDisplay::step()':
+   
+   /home/build/prjclone/pxtapp/st7735/jddisplay.cpp:240: undefined reference to `pxt::getLongSerialNumber()'
+   
+   /home/build/prjclone/pxtapp/st7735/jddisplay.cpp:285: undefined reference to `pxt::current_time_us()'
+
+
+
+CMakeFiles/MICROBIT.dir/pxtapp/st7735/screen.cpp.obj: In function `pxt::WDisplay::smartConfigure(unsigned long*, unsigned long*, unsigned long*)':
+   
+   /home/build/prjclone/pxtapp/st7735/screen.cpp:151: undefined reference to `pxt::readButtonMultiplexer(int)'
+
+
+
+CMakeFiles/MICROBIT.dir/pxtapp/st7735/screen.cpp.obj: In function `pxt::WDisplay::WDisplay()':
+
+   /home/build/prjclone/pxtapp/st7735/screen.cpp:61: undefined reference to `codal::SPIScreenIO::SPIScreenIO(codal::NRF52SPI&)'
+
+
+
+CMakeFiles/MICROBIT.dir/pxtapp/st7735/screen.cpp.obj: In function `pxt::WDisplay::smartConfigure(unsigned long*, unsigned long*, unsigned long*)':
+
+   /home/build/prjclone/pxtapp/st7735/screen.cpp:169: undefined reference to `pxt::disableButtonMultiplexer()'
+
+
+

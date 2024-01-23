@@ -272,6 +272,9 @@ static void drawPanic(int code) {
 
 extern "C" __attribute__((weak)) void platform_panic(int statusCode) {}
 
+// is is already defined in pxt-microbit
+
+/*
 extern "C" void target_panic(int statusCode) {
     __disable_irq();      // low-level disable
     target_disable_irq(); // make sure they stay disabled in DMESG()
@@ -336,5 +339,7 @@ extern "C" void target_panic(int statusCode) {
         }
     }
 }
+    */
+
 
 } // namespace _pxt_panic
