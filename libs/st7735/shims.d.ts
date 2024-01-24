@@ -129,24 +129,24 @@ declare interface SImage {
     //% shim=SImageMethods::overlapsWith
     overlapsWith(other: SImage, x: int32, y: int32): boolean;
 }
-declare namespace image {
+declare namespace simage {
 
     /**
      * Create new empty (transparent) image
      */
-    //% shim=image::create
+    //% shim=simage::create
     function create(width: int32, height: int32): SImage;
 
     /**
      * Create new image with given content
      */
-    //% shim=image::ofBuffer
+    //% shim=simage::ofBuffer
     function ofBuffer(buf: Buffer): SImage;
 
     /**
      * Double the size of an icon
      */
-    //% shim=image::doubledIcon
+    //% shim=simage::doubledIcon
     function doubledIcon(icon: Buffer): Buffer;
 }
 

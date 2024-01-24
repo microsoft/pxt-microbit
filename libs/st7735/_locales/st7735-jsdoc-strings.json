@@ -36,12 +36,12 @@
   "ScreenImage.brightness": "Gets current screen backlight brightness (0-100)",
   "ScreenImage.setBrightness": "Sets the screen backlight brightness (10-100)",
   "helpers.imageRotated": "Returns an image rotated by 90, 180, 270 deg clockwise",
-  "image.create": "Create new empty (transparent) image",
-  "image.doubledIcon": "Double the size of an icon",
-  "image.ofBuffer": "Create new image with given content",
   "images": "Creation, manipulation and display of LED images.\n\nImage manipulation blocks",
   "images._image": "An image",
   "images._image|param|image": "the image",
   "img": "Tagged image literal converter",
+  "simage.create": "Create new empty (transparent) image",
+  "simage.doubledIcon": "Double the size of an icon",
+  "simage.ofBuffer": "Create new image with given content",
   "simage.screenImage": "Get the screen image"
 }

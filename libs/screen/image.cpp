@@ -1461,7 +1461,7 @@ void _fillPolygon4(SImage_ img, pxt::RefCollection *args) {
 
 } // namespace SImageMethods
 
-namespace image {
+namespace simage {
 /**
  * Create new empty (transparent) image
  */
