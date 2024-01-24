@@ -14,8 +14,8 @@
 #define MY_PIN_DISPLAY_BL 26 // DAL.P0_26
 #define MY_PIN_DISPLAY_DC 10 // DAL.P0_10
 #define MY_PIN_DISPLAY_RST 34 // DAL.P1_2
-#define MY_PIN_DISPLAY_CS -1 // not connected
-#define MY_PIN_LED -1 // not connected
+#define MY_PIN_DISPLAY_CS 0xff // not connected
+#define MY_PIN_LED 0xff // not connected
 
 // #define CFG_PIN_NAME_MSK = 65535
 #define DEV_NUM_PINS 48
@@ -25,7 +25,7 @@
 #undef PIN
 #undef LOOKUP_PIN
 #define PIN(name) MY_PIN_##name
-#define LOOKUP_PIN(name) pxt::lookupPin(PIN(name))
+#define LOOKUP_PIN(name) pxt::myLookupPin(PIN(name))
 
 #define DEV_PWM_PINS 0x0000ffffffffULL // all pins are PWM pins it seems
 #define DEV_AIN_PINS 0x0000f000001fULL
@@ -56,19 +56,15 @@ typedef DevicePin *PwmPin;
 typedef DevicePin *PwmOnlyPin;
 
 namespace pxt {
-    DevicePin *getPin(int id);
-    DevicePin *lookupPin(int pinName);
+    DevicePin *myGetPin(int id);
+    DevicePin *myLookupPin(int pinName);
     uint32_t readButtonMultiplexer(int bits);
     void disableButtonMultiplexer();
 }
 
-
-// // there's no UF2 bootloader for 52833 yet, so we specify example configuration here
-// namespace config {
 //     export const PIN_BTNMX_LATCH = DAL.P0_9
 //     export const PIN_BTNMX_CLOCK = DAL.P1_0
 //     export const PIN_BTNMX_DATA = DAL.P0_1
-
 //     // pybadge-like layout
 //     export const PIN_BTN_LEFT = 1050
 //     export const PIN_BTN_UP = 1051
@@ -77,11 +73,6 @@ namespace pxt {
 //     export const PIN_BTN_A = 1054
 //     export const PIN_BTN_B = 1055
 //     export const PIN_BTN_MENU = 1056
-
 //     export const PIN_JACK_SND = DAL.P0_0
-
 //     // Jacdac, when jacdaptor is connected, is on the accessibility pin (P12)
 //     export const PIN_JACK_TX = DAL.P0_12
-
-//  
-// }
