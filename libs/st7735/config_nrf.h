@@ -15,9 +15,9 @@
 #define MY_PIN_DISPLAY_BL 26 // DAL.P0_26
 #define MY_PIN_DISPLAY_DC 10 // DAL.P0_10
 #define MY_PIN_DISPLAY_RST 34 // DAL.P1_2
-#define MY_PIN_DISPLAY_CS 11 // DAL.P0_11  TODO: check this ???
+#define MY_PIN_DISPLAY_CS -1 // not connected
 
-#define MY_PIN_LED 13 // DAL.P0_13 TODO
+#define MY_PIN_LED -1 // not connected
 
 // #define CFG_PIN_NAME_MSK = 65535
 #define DEV_NUM_PINS 48
