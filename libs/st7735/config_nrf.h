@@ -4,7 +4,6 @@
 #define MY_DISPLAY_WIDTH 160
 #define MY_DISPLAY_HEIGHT 128
 #define MY_DISPLAY_TYPE 4242 // smart display
-
 #define MY_DISPLAY_CFG0 0x00000080
 #define MY_DISPLAY_CFG1 0x00000603
 #define MY_DISPLAY_CFG2 8
@@ -16,7 +15,6 @@
 #define MY_PIN_DISPLAY_DC 10 // DAL.P0_10
 #define MY_PIN_DISPLAY_RST 34 // DAL.P1_2
 #define MY_PIN_DISPLAY_CS -1 // not connected
-
 #define MY_PIN_LED -1 // not connected
 
 // #define CFG_PIN_NAME_MSK = 65535
@@ -26,7 +24,7 @@
 // remove the indirection through configuration
 #undef PIN
 #undef LOOKUP_PIN
-#define PIN(name) CFG_PIN_##name
+#define PIN(name) MY_PIN_##name
 #define LOOKUP_PIN(name) pxt::lookupPin(PIN(name))
 
 #define DEV_PWM_PINS 0x0000ffffffffULL // all pins are PWM pins it seems

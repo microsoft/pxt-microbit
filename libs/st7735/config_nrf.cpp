@@ -30,7 +30,6 @@ DevicePin *getPin2(int id) {
     return pinPtrs[ptr - 1];
 }
 
-//%
 DevicePin *lookupPin(int pinName) {
     if (pinName < 0 || pinName == 0xff)
         return NULL;
