@@ -8,6 +8,10 @@
 #define MY_DISPLAY_CFG1 0x00000603
 #define MY_DISPLAY_CFG2 8
 
+#define MY_PIN_BTNMX_LATCH 9 // = DAL.P0_9
+#define MY_PIN_BTNMX_CLOCK 32 // = DAL.P1_0
+#define MY_PIN_BTNMX_DATA 1 // = DAL.P0_1
+
 #define MY_PIN_DISPLAY_SCK 17 // DAL.P0_17
 #define MY_PIN_DISPLAY_MOSI 13 // DAL.P0_13
 #define MY_PIN_DISPLAY_MISO 1 // DAL.P0_1
@@ -17,7 +21,8 @@
 #define MY_PIN_DISPLAY_CS 0xff // not connected
 #define MY_PIN_LED 0xff // not connected
 
-// #define CFG_PIN_NAME_MSK = 65535
+// #define CFG_PIN_NAME_MSK 0xffff
+#undef DEV_NUM_PINS
 #define DEV_NUM_PINS 48
 #define DEVICE_ID_IO_P0 100
 
@@ -46,25 +51,21 @@
 #define PXT_INTERNAL_KEY_DOWN 2051
 #define DEVICE_ID_FIRST_BUTTON 4000
 
-typedef CODAL_PIN DevicePin;
-
-typedef DevicePin *DigitalInOutPin;
-typedef DevicePin *AnalogInOutPin;
-typedef DevicePin *AnalogInPin;
-typedef DevicePin *AnalogOutPin;
-typedef DevicePin *PwmPin;
-typedef DevicePin *PwmOnlyPin;
+typedef CODAL_PIN *DigitalInOutPin;
+typedef CODAL_PIN *AnalogInOutPin;
+typedef CODAL_PIN *AnalogInPin;
+typedef CODAL_PIN *AnalogOutPin;
+typedef CODAL_PIN *PwmPin;
+typedef CODAL_PIN *PwmOnlyPin;
 
 namespace pxt {
-    DevicePin *myGetPin(int id);
-    DevicePin *myLookupPin(int pinName);
+    CODAL_PIN *myGetPin(int id);
+    CODAL_PIN *myLookupPin(int pinName);
     uint32_t readButtonMultiplexer(int bits);
     void disableButtonMultiplexer();
 }
 
-//     export const PIN_BTNMX_LATCH = DAL.P0_9
-//     export const PIN_BTNMX_CLOCK = DAL.P1_0
-//     export const PIN_BTNMX_DATA = DAL.P0_1
+
 //     // pybadge-like layout
 //     export const PIN_BTN_LEFT = 1050
 //     export const PIN_BTN_UP = 1051

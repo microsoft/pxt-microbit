@@ -3,26 +3,26 @@
 #include "config_nrf.h"
 
 namespace pxt {
-static DevicePin **pinPtrs;
+static CODAL_PIN **pinPtrs;
 static uint8_t numPinPtrs;
 static uint8_t pinPos[DEV_NUM_PINS];
 
-DevicePin *myGetPin(int id) {
+CODAL_PIN *myGetPin(int id) {
 
     id &= CFG_PIN_NAME_MSK;
 
     if (id >= DEV_NUM_PINS)
-        soft_panic(PANIC_NO_SUCH_PIN);
+        soft_panic(DEV_NUM_PINS);
 
     // we could use lookupComponent() here - it would be slightly slower
 
     int ptr = pinPos[id];
     if (ptr == 0) {
-        pinPtrs = (DevicePin **)realloc(pinPtrs, (numPinPtrs + 1) * sizeof(void *));
+        pinPtrs = (CODAL_PIN **)realloc(pinPtrs, (numPinPtrs + 1) * sizeof(void *));
         bool isAnalog = IS_ANALOG_PIN(id);
         // GCTODO
         pinPtrs[numPinPtrs++] =
-            new DevicePin(DEVICE_ID_IO_P0 + id, (PinName)id,
+            new CODAL_PIN(DEVICE_ID_IO_P0 + id, (PinName)id,
                           isAnalog ? PIN_CAPABILITY_AD : PIN_CAPABILITY_DIGITAL);
         ptr = numPinPtrs;
         pinPos[id] = ptr;
@@ -30,7 +30,7 @@ DevicePin *myGetPin(int id) {
     return pinPtrs[ptr - 1];
 }
 
-DevicePin *myLookupPin(int pinName) {
+CODAL_PIN *myLookupPin(int pinName) {
     if (pinName < 0 || pinName == 0xff)
         return NULL;
     pinName &= CFG_PIN_NAME_MSK;
