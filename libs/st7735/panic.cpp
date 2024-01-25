@@ -216,7 +216,7 @@ void ST7735::init() {
     }
 
     uint32_t cfg0 = MY_DISPLAY_CFG0;
-    uint32_t frmctr1 = MY_CFG_DISPLAY_CFG1;
+    uint32_t frmctr1 = MY_DISPLAY_CFG1;
     auto madctl = cfg0 & 0xff;
 
     sendCmdSeq(initCmds);
