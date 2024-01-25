@@ -14,7 +14,7 @@ codal::CodalDevice device;
 #define ALIGN(x) (((x) + 3) & ~3)
 
 static void jd_panic(void) {
-    target_panic(PANIC_SCREEN_ERROR);
+    target_panic(121);  // PANIC_SCREEN_ERROR
 }
 
 static int jd_shift_frame(jd_frame_t *frame) {
@@ -112,7 +112,7 @@ void JDDisplay::sendDone(Event) {
 void *JDDisplay::queuePkt(uint32_t service_num, uint32_t service_cmd, uint32_t size) {
     void *res = jd_push_in_frame(&sendFrame, service_num, service_cmd, size);
     if (res == NULL)
-        target_panic(PANIC_SCREEN_ERROR);
+        target_panic(122);  // PANIC_SCREEN_ERROR
     return res;
 }
 
@@ -330,11 +330,11 @@ void JDDisplay::step() {
 int JDDisplay::sendIndexedImage(const uint8_t *src, unsigned width, unsigned height,
                                 uint32_t *palette) {
     if (height & 1 || !height || !width)
-        target_panic(PANIC_SCREEN_ERROR);
+        target_panic(123);  // PANIC_SCREEN_ERROR
     if (width != addr.width || height != addr.height)
-        target_panic(PANIC_SCREEN_ERROR);
+        target_panic(124); // PANIC_SCREEN_ERROR
     if (inProgress)
-        target_panic(PANIC_SCREEN_ERROR);
+        target_panic(125); // PANIC_SCREEN_ERROR
 
     if (addr.y && addr.y >= screenHeight)
         return 0; // out of range

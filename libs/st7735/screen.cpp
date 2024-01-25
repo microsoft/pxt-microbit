@@ -68,10 +68,10 @@ class WDisplay {
             io = CODAL_CREATE_PARALLEL_SCREEN_IO(cfg2 & 0xffffff, PIN(DISPLAY_MOSI),
                                                  PIN(DISPLAY_MISO));
 #else
-            target_panic(PANIC_SCREEN_ERROR);
+            target_panic(126);  // PANIC_SCREEN_ERROR
 #endif
         } else {
-            target_panic(PANIC_SCREEN_ERROR);
+            target_panic(127); // PANIC_SCREEN_ERROR
         }
 
         if (dispTp == DISPLAY_TYPE_ST7735)
@@ -83,7 +83,7 @@ class WDisplay {
             lcd = NULL;
             smart = new JDDisplay(spi, LOOKUP_PIN(DISPLAY_CS), LOOKUP_PIN(DISPLAY_DC));
         } else
-            target_panic(PANIC_SCREEN_ERROR);
+            target_panic(128); // PANIC_SCREEN_ERROR
 
         palXOR = (cfg0 & 0x1000000) ? 0xffffff : 0x000000;
         auto madctl = cfg0 & 0xff;
@@ -197,7 +197,7 @@ class WDisplay {
             *cfg0 |= 0x1000000; // inverted colors
             break;
         default:
-            target_panic(PANIC_SCREEN_ERROR);
+            target_panic(129);  // PANIC_SCREEN_ERROR
             break;
         }
 
@@ -293,7 +293,7 @@ void setPalette(Buffer buf) {
         return;
 
     if (48 != buf->length)
-        target_panic(PANIC_SCREEN_ERROR);
+        target_panic(130); // PANIC_SCREEN_ERROR
     for (int i = 0; i < 16; ++i) {
         display->currPalette[i] =
             (buf->data[i * 3] << 16) | (buf->data[i * 3 + 1] << 8) | (buf->data[i * 3 + 2] << 0);
@@ -340,7 +340,7 @@ void updateScreen(SImage_ img) {
     if (img) {
         if (img->bpp() != 4 || img->width() * mult != display->width ||
             img->height() * mult != display->displayHeight)
-            target_panic(PANIC_SCREEN_ERROR);
+            target_panic(131);  // PANIC_SCREEN_ERROR
 
         // DMESG("wait for done");
         display->waitForSendDone();
@@ -366,7 +366,7 @@ void updateScreen(SImage_ img) {
         img = display->lastStatus;
         auto barHeight = display->height - display->displayHeight;
         if (img->bpp() != 4 || barHeight != img->height() || img->width() != display->width)
-            target_panic(PANIC_SCREEN_ERROR);
+            target_panic(132); // PANIC_SCREEN_ERROR
         memcpy(display->screenBuf, img->pix(), img->pixLength());
         display->setAddrStatus();
         display->sendIndexedImage(display->screenBuf, img->width(), img->height(), NULL);
