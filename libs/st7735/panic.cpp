@@ -215,15 +215,15 @@ void ST7735::init() {
         busy_wait_us(20 * 1000);
     }
 
-    uint32_t cfg0 = getConfig(CFG_DISPLAY_CFG0, 0x40);
-    uint32_t frmctr1 = getConfig(CFG_DISPLAY_CFG1, 0x000603);
+    uint32_t cfg0 = MY_DISPLAY_CFG0;
+    uint32_t frmctr1 = MY_CFG_DISPLAY_CFG1;
     auto madctl = cfg0 & 0xff;
 
     sendCmdSeq(initCmds);
     configure(madctl, frmctr1);
 
-    width = getConfig(CFG_DISPLAY_WIDTH, 160);
-    height = getConfig(CFG_DISPLAY_HEIGHT, 128);
+    width = MY_DISPLAY_WIDTH;
+    height = MY_DISPLAY_HEIGHT;
 }
 
 void ST7735::configure(uint8_t madctl, uint32_t frmctr1) {
