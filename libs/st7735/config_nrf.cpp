@@ -12,7 +12,7 @@ CODAL_PIN *myGetPin(int id) {
     id &= CFG_PIN_NAME_MSK;
 
     if (id >= DEV_NUM_PINS)
-        soft_panic(DEV_NUM_PINS);
+        soft_panic(PANIC_NO_SUCH_PIN);
 
     // we could use lookupComponent() here - it would be slightly slower
 
