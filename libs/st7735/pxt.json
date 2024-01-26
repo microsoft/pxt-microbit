@@ -4,7 +4,6 @@
         "config_nrf.h",
         "config_nrf.cpp",
         "screen.cpp",
-        "panic.cpp",
         "image.cpp",
         "image.ts",
         "screenimage.ts",
