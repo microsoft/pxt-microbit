@@ -119,31 +119,31 @@ namespace _helpers_workaround {
 }
 
 namespace helpers {
-    //% shim=ImageMethods::_drawLine
+    //% shim=SImageMethods::_drawLine
     function _drawLine(img: SImage, xy: number, wh: number, c: color): void { }
 
-    //% shim=ImageMethods::_fillRect
+    //% shim=SImageMethods::_fillRect
     function _fillRect(img: SImage, xy: number, wh: number, c: color): void { }
 
-    //% shim=ImageMethods::_mapRect
+    //% shim=SImageMethods::_mapRect
     function _mapRect(img: SImage, xy: number, wh: number, m: Buffer): void { }
 
-    //% shim=ImageMethods::_drawIcon
+    //% shim=SImageMethods::_drawIcon
     function _drawIcon(img: SImage, icon: Buffer, xy: number, c: color): void { }
 
-    //% shim=ImageMethods::_fillCircle
+    //% shim=SImageMethods::_fillCircle
     declare function _fillCircle(img: SImage, cxy: number, r: number, c: color): void;
 
-    //% shim=ImageMethods::_blitRow
+    //% shim=SImageMethods::_blitRow
     declare function _blitRow(img: SImage, xy: number, from: SImage, xh: number): void;
 
-    //% shim=ImageMethods::_blit
+    //% shim=SImageMethods::_blit
     declare function _blit(img: SImage, src: SImage, args: number[]): boolean;
 
-    //% shim=ImageMethods::_fillTriangle
+    //% shim=SImageMethods::_fillTriangle
     declare function _fillTriangle(img: SImage, args: number[]): void;
 
-    //% shim=ImageMethods::_fillPolygon4
+    //% shim=SImageMethods::_fillPolygon4
     declare function _fillPolygon4(img: SImage, args: number[]): void;
 
     function pack(x: number, y: number) {
