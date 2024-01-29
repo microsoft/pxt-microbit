@@ -1,0 +1,17 @@
+{
+    "criteria": [
+        {
+            "id": "0CA34B67-B669-4313-BBFF-19E93AFDF5BE",
+            "use": "show_icon_on_screen",
+            "template": "TEST MICROBIT 1",
+            "docPath": "/teachertool"
+        },
+        {
+            "id": "434229BD-2E7F-4E7F-89D3-E69E5FBD72C9",
+            "use": "block_used_n_times",
+            "template": "TEST MICROBIT 2",
+            "description": "Read input from one or more of the microbit GPIO pins.",
+            "docPath": "/teachertool"
+        }
+    ]
+}

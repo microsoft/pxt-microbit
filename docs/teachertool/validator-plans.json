@@ -1,0 +1,60 @@
+{
+    "validatorPlans": [
+        {
+            ".desc": "Set the LED screen.",
+            "name": "show_icon_on_screen",
+            "threshold": 1,
+            "checks": [
+                {
+                    "validator": "blocksExist",
+                    "blockCounts": {
+                        "basic_show_icon": 1
+                    }
+                }
+            ]
+        },
+        {
+            ".desc": "Read input from a GPIO pin.",
+            "name": "read_gpio_pin",
+            "threshold": 1,
+            "checks": [
+                {
+                    "validator": "blocksExist",
+                    "blockCounts": {
+                        "device_pin_event": 1
+                    }
+                },
+                {
+                    "validator": "blocksExist",
+                    "blockCounts": {
+                        "device_pin_is_pressed": 1
+                    }
+                },
+                {
+                    "validator": "blocksExist",
+                    "blockCounts": {
+                        "device_pin_released": 1
+                    }
+                },
+                {
+                    "validator": "blocksExist",
+                    "blockCounts": {
+                        "device_get_digital_pin": 1
+                    }
+                },
+                {
+                    "validator": "blocksExist",
+                    "blockCounts": {
+                        "device_get_analog_pin": 1
+                    }
+                },
+                {
+                    "validator": "blocksExist",
+                    "blockCounts": {
+                        "pins_on_pulsed": 1
+                    }
+                }
+            ]
+        }
+    ]
+}
