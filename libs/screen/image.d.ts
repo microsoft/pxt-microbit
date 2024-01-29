@@ -33,7 +33,7 @@ interface SImage {
     /**
      * Set pixel color
      */
-    //% shim=ImageMethods::setPixel blockNamespace="images" group="Drawing"
+    //% shim=SImageMethods::setPixel blockNamespace="images" group="Drawing"
     //% block="set %picture=variables_get color at x %x y %y to %c=colorindexpicker"
     //% help=images/image/set-pixel
     setPixel(x: int32, y: int32, c: int32): void;
@@ -41,7 +41,7 @@ interface SImage {
     /**
      * Get a pixel color
      */
-    //% shim=ImageMethods::getPixel blockNamespace="images" group="Drawing"
+    //% shim=SImageMethods::getPixel blockNamespace="images" group="Drawing"
     //% block="%picture=variables_get color at x %x y %y"
     //% help=images/image/get-pixel
     getPixel(x: int32, y: int32): int32;
@@ -49,7 +49,7 @@ interface SImage {
     /**
      * Fill entire image with a given color
      */
-    //% shim=ImageMethods::fill blockNamespace="images" group="Drawing"
+    //% shim=SImageMethods::fill blockNamespace="images" group="Drawing"
     //% block="fill %picture=variables_get with %c=colorindexpicker"
     //% help=images/image/fill
     fill(c: int32): void;
@@ -57,7 +57,7 @@ interface SImage {
     /**
      * Return a copy of the current image
      */
-    //% shim=ImageMethods::clone blockNamespace="images" group="Create"
+    //% shim=SImageMethods::clone blockNamespace="images" group="Create"
     //% block="clone %picture=variables_get"
     //% help=images/image/clone
     clone(): SImage;
@@ -65,7 +65,7 @@ interface SImage {
     /**
      * Flips (mirrors) pixels horizontally in the current image
      */
-    //% shim=ImageMethods::flipX blockNamespace="images" group="Transformations"
+    //% shim=SImageMethods::flipX blockNamespace="images" group="Transformations"
     //% block="flip %picture=variables_get horizontally"
     //% help=images/image/flip-x
     flipX(): void;
@@ -73,7 +73,7 @@ interface SImage {
     /**
      * Flips (mirrors) pixels vertically in the current image
      */
-    //% shim=ImageMethods::flipY blockNamespace="images" group="Transformations"
+    //% shim=SImageMethods::flipY blockNamespace="images" group="Transformations"
     //% block="flip %picture=variables_get vertically"
     //% help=images/image/flip-y
     flipY(): void;
@@ -81,14 +81,14 @@ interface SImage {
     /**
      * Every pixel in image is moved by (dx,dy)
      */
-    //% shim=ImageMethods::scroll blockNamespace="images" group="Transformations"
+    //% shim=SImageMethods::scroll blockNamespace="images" group="Transformations"
     //% help=images/image/scroll
     scroll(dx: int32, dy: int32): void;
 
     /**
      * Replaces one color in an image with another
      */
-    //% shim=ImageMethods::replace blockNamespace="images" group="Transformations"
+    //% shim=SImageMethods::replace blockNamespace="images" group="Transformations"
     //% block="change color in %picture=variables_get from %from=colorindexpicker to %to=colorindexpicker"
     //% help=images/image/replace
     replace(from: int32, to: int32): void;
@@ -97,7 +97,7 @@ interface SImage {
      * Returns true if the provided image is the same as this image,
      * otherwise returns false.
      */
-    //% shim=ImageMethods::equals
+    //% shim=SImageMethods::equals
     //% blockNamespace="images" group="Compare"
     //% block="$this is equal to image $other"
     //% this.shadow=variables_get
@@ -106,10 +106,10 @@ interface SImage {
     //% help=images/image/equals
     equals(other: SImage): boolean;
 
-    //% shim=ImageMethods::isStatic
+    //% shim=SImageMethods::isStatic
     isStatic(): boolean;
 
-    //% shim=ImageMethods::revision
+    //% shim=SImageMethods::revision
     revision(): number;
 }
 

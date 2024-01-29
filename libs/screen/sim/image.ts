@@ -60,7 +60,7 @@ namespace pxsim {
     }
 }
 
-namespace pxsim.ImageMethods {
+namespace pxsim.SImageMethods {
     export function XX(x: number) { return (x << 16) >> 16 }
     export function YY(x: number) { return x >> 16 }
 
@@ -1100,7 +1100,7 @@ namespace pxsim.simage {
         let img = ofBuffer(buf)
         if (!img)
             return null
-        img = ImageMethods.doubled(img)
+        img = SImageMethods.doubled(img)
         return toBuffer(img)
     }
 }
