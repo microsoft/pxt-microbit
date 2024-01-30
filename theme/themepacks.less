@@ -3,46 +3,47 @@
         source vars: pxt/theme/themepacks.less
 ******************************************/
 
-@c0_background: @blue;
-@c0_background_alpha_25: rgba(@c0_background, 0.25);
-@c0_foreground: @white;
-@c0_border: darken(@c0_background, 8%);
+@pxt_headerbar_background: @blue;
+@pxt_headerbar_background_glass: rgba(@pxt_headerbar_background, 0.25);
+@pxt_headerbar_foreground: @white;
+@pxt_headerbar_accent: darken(@pxt_headerbar_background, 8%);
 
-@c1_background: #E4E7F1;
-@c1_background_alpha_25: rgba(@c1_background, 0.25);
-@c1_foreground: #3454D1;
-@c1_border: darken(@c1_background, 8%);
+@pxt_content_background: #E4E7F1;
+@pxt_content_background_glass: rgba(@pxt_content_background, 0.25);
+@pxt_content_foreground: @blue;
+@pxt_content_accent: darken(@pxt_content_background, 8%);
 
-@c2_background: #6633CC;
-@c2_background_alpha_25: rgba(@c2_background, 0.25);
-@c2_foreground: white;
-@c2_border: lighten(@c2_background, 8%);
+@pxt_button_primary_background: @primaryColor;
+@pxt_button_primary_background_glass: rgba(@pxt_button_primary_background, 0.25);
+@pxt_button_primary_foreground: @buttonTextColorDarkBackground;
+@pxt_button_primary_accent: lighten(@pxt_button_primary_background, 8%);
 
-@c3_background: #E4E7F1;
-@c3_background_alpha_25: rgba(@c3_background, 0.25);
-@c3_foreground: black;
-@c3_border: darken(@c3_background, 8%);
+@pxt_button_secondary_background: @secondaryColor;
+@pxt_button_secondary_background_glass: rgba(@pxt_button_primary_background, 0.25);
+@pxt_button_secondary_foreground: @buttonTextColorDarkBackground;
+@pxt_button_secondary_accent: lighten(@pxt_button_secondary_background, 8%);
 
 :root {
+    /// Page
     --pxt-page-font: @pageFont;
-    // color combo 0 (eg: navbar, toolbar button)
-    --pxt-c0-background: @c0_background;
-    --pxt-c0-background-alpha-25: @c0_background_alpha_25;
-    --pxt-c0-foreground: @c0_foreground;
-    --pxt-c0-border: @c0_border;
-    // color combo 1 (eg: main content frame, secondary toolbar)
-    --pxt-c1-background: @c1_background;
-    --pxt-c1-background-alpha-25: @c1_background_alpha_25;
-    --pxt-c1-foreground: @c1_foreground;
-    --pxt-c1-border: @c1_border;
-    // color combo 2 (eg: primary button)
-    --pxt-c2-background: @c2_background;
-    --pxt-c2-background-alpha-25: @c2_background_alpha_25;
-    --pxt-c2-foreground: @c2_foreground;
-    --pxt-c2-border: @c2_border;
-    // color combo 3 (eg: secondary button)
-    --pxt-c3-background: @c3_background;
-    --pxt-c3-background-alpha-25: @c3_background_alpha_25;
-    --pxt-c3-foreground: @c3_foreground;
-    --pxt-c3-border: @c3_border;
+    /// Header bar
+    --pxt-headerbar-background: @pxt_headerbar_background;
+    --pxt-headerbar-background-glass: @pxt_headerbar_background_glass;
+    --pxt-headerbar-foreground: @pxt_headerbar_foreground;
+    --pxt-headerbar-accent: @pxt_headerbar_accent;
+    /// Content area
+    --pxt-content-background: @pxt_content_background;
+    --pxt-content-background-glass: @pxt_content_background_glass;
+    --pxt-content-foreground: @pxt_content_foreground;
+    --pxt-content-accent: @pxt_content_accent;
+    /// Primary button
+    --pxt-button-primary-background: @pxt_button_primary_background;
+    --pxt-button-primary-background-glass: @pxt_button_primary_background_glass;
+    --pxt-button-primary-foreground: @pxt_button_primary_foreground;
+    --pxt-button-primary-accent: @pxt_button_primary_accent;
+    /// Secondary button
+    --pxt-button-secondary-background: @pxt_button_secondary_background;
+    --pxt-button-secondary-background-glass: @pxt_button_secondary_background_glass;
+    --pxt-button-secondary-foreground: @pxt_button_secondary_foreground;
+    --pxt-button-secondary-accent: @pxt_button_secondary_accent;
 }
