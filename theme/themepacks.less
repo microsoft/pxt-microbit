@@ -1,0 +1,48 @@
+/*****************************************
+        Theme overrides
+        source vars: pxt/theme/themepacks.less
+******************************************/
+
+@c0_background: @blue;
+@c0_background_alpha_25: rgba(@c0_background, 0.25);
+@c0_foreground: @white;
+@c0_border: darken(@c0_background, 8%);
+
+@c1_background: #E4E7F1;
+@c1_background_alpha_25: rgba(@c1_background, 0.25);
+@c1_foreground: #3454D1;
+@c1_border: darken(@c1_background, 8%);
+
+@c2_background: #6633CC;
+@c2_background_alpha_25: rgba(@c2_background, 0.25);
+@c2_foreground: white;
+@c2_border: lighten(@c2_background, 8%);
+
+@c3_background: #E4E7F1;
+@c3_background_alpha_25: rgba(@c3_background, 0.25);
+@c3_foreground: black;
+@c3_border: darken(@c3_background, 8%);
+
+:root {
+    --pxt-page-font: @pageFont;
+    // color combo 0 (eg: navbar, toolbar button)
+    --pxt-c0-background: @c0_background;
+    --pxt-c0-background-alpha-25: @c0_background_alpha_25;
+    --pxt-c0-foreground: @c0_foreground;
+    --pxt-c0-border: @c0_border;
+    // color combo 1 (eg: main content frame, secondary toolbar)
+    --pxt-c1-background: @c1_background;
+    --pxt-c1-background-alpha-25: @c1_background_alpha_25;
+    --pxt-c1-foreground: @c1_foreground;
+    --pxt-c1-border: @c1_border;
+    // color combo 2 (eg: primary button)
+    --pxt-c2-background: @c2_background;
+    --pxt-c2-background-alpha-25: @c2_background_alpha_25;
+    --pxt-c2-foreground: @c2_foreground;
+    --pxt-c2-border: @c2_border;
+    // color combo 3 (eg: secondary button)
+    --pxt-c3-background: @c3_background;
+    --pxt-c3-background-alpha-25: @c3_background_alpha_25;
+    --pxt-c3-foreground: @c3_foreground;
+    --pxt-c3-border: @c3_border;
+}
