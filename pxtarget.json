@@ -196,8 +196,8 @@
                 "buildEngine": "codal",
                 "codalTarget": {
                     "name": "codal-microbit-v2",
-                    "url": "https://github.com/tballmsft/codal-microbit-v2",
-                    "branch": "dmesg",
+                    "url": "https://github.com/lancaster-university/codal-microbit-v2",
+                    "branch": "v0.2.63",
                     "type": "git"
                 },
                 "codalBinary": "MICROBIT",
