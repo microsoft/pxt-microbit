@@ -34,8 +34,10 @@ class ButtonMultiplexer : public CodalComponent {
 
         memset(buttonIdPerBit, 0, sizeof(buttonIdPerBit));
 
+
         data.getDigitalValue(PullMode::Down);
         latch.setDigitalValue(1);
+        uBit.i2c.releasePin(clock);
         clock.setDigitalValue(1);
     }
 
