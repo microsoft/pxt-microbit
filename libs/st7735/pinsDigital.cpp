@@ -23,8 +23,9 @@ class ButtonMultiplexer : public CodalComponent {
     bool enabled;
 
     ButtonMultiplexer(uint16_t id)
-        : latch(*LOOKUP_PIN(BTNMX_LATCH)), clock(*LOOKUP_PIN(BTNMX_CLOCK)),
-          data(*LOOKUP_PIN(BTNMX_DATA)) {
+        : latch(uBit.io.P9), 
+          clock(uBit.io.P20),
+          data((uBit.io.P14)) {
         this->id = id;
         this->status |= DEVICE_COMPONENT_STATUS_SYSTEM_TICK;
 
@@ -34,10 +35,9 @@ class ButtonMultiplexer : public CodalComponent {
 
         memset(buttonIdPerBit, 0, sizeof(buttonIdPerBit));
 
-
-        data.getDigitalValue(PullMode::Down);
+        data.setPull(PullMode::Down);
+        data.getDigitalValue();
         latch.setDigitalValue(1);
-        uBit.i2c.releasePin(clock);
         clock.setDigitalValue(1);
     }
 
@@ -65,7 +65,7 @@ class ButtonMultiplexer : public CodalComponent {
         uint32_t state = 0;
         for (int i = 0; i < bits; i++) {
             state <<= 1;
-            if (data.getDigitalValue(PullMode::Down))
+            if (data.getDigitalValue())
                 state |= 1;
 
             clock.setDigitalValue(0);
@@ -113,15 +113,11 @@ ButtonMultiplexer *getMultiplexer() {
 }
 
 uint32_t readButtonMultiplexer(int bits) {
-    if (!LOOKUP_PIN(BTNMX_CLOCK))
-        return 0;
     return getMultiplexer()->readBits(bits);
 }
 
 void disableButtonMultiplexer() {
-    if (LOOKUP_PIN(BTNMX_CLOCK)) {
-        getMultiplexer()->disable();
-    }
+    getMultiplexer()->disable();
 }
 
 }
