@@ -1,6 +1,9 @@
 #include "NRF52Pin.h"
 #include "NRF52SPI.h"
 
+#define CODAL_PIN NRF52Pin
+#define CODAL_SPI NRF52SPI
+
 #define MY_DISPLAY_WIDTH 160
 #define MY_DISPLAY_HEIGHT 128
 #define MY_DISPLAY_TYPE 4242 // smart display
@@ -8,18 +11,18 @@
 #define MY_DISPLAY_CFG1 0x00000603
 #define MY_DISPLAY_CFG2 8
 
-#define MY_PIN_BTNMX_LATCH 9  // DAL.P0_9
-#define MY_PIN_BTNMX_CLOCK 32 // DAL.P1_0
-#define MY_PIN_BTNMX_DATA 1 // DAL.P0_1
+#define MY_PIN_BTNMX_LATCH &uBit.io.P9 // 9  // DAL.P0_9     EC P9
+#define MY_PIN_BTNMX_CLOCK &uBit.io.P20 // 32 // DAL.P1_0     EC P20
+#define MY_PIN_BTNMX_DATA &uBit.io.P14 // 1 // DAL.P0_1       EC P14
 
-#define MY_PIN_DISPLAY_SCK 17 // DAL.P0_17
-#define MY_PIN_DISPLAY_MOSI 13 // DAL.P0_13
-#define MY_PIN_DISPLAY_MISO 1 // DAL.P0_1
-#define MY_PIN_DISPLAY_BL 26 // DAL.P0_26
-#define MY_PIN_DISPLAY_DC 10 // DAL.P0_10
-#define MY_PIN_DISPLAY_RST 34 // DAL.P1_2
-#define MY_PIN_DISPLAY_CS 0xff // not connected
-#define MY_PIN_LED 0xff // not connected
+#define MY_PIN_DISPLAY_SCK &uBit.io.P13 // 17 // DAL.P0_17    EC P13
+#define MY_PIN_DISPLAY_MOSI &uBit.io.P15 // 13 // DAL.P0_13   EC P15
+#define MY_PIN_DISPLAY_MISO &uBit.io.P14 // 1 // DAL.P0_1     EC P14
+#define MY_PIN_DISPLAY_BL &uBit.io.P19 // 26 // DAL.P0_26     EC P19
+#define MY_PIN_DISPLAY_DC &uBit.io.P8 // 10 // DAL.P0_10     EC P8
+#define MY_PIN_DISPLAY_RST &uBit.io.P16  // DAL.P1_2     EC P6
+#define MY_PIN_DISPLAY_CS ((CODAL_PIN*)NULL) // 0xff // not connected
+#define MY_PIN_LED  ((CODAL_PIN*)NULL) // 0xff // not connected
 
 // #define CFG_PIN_NAME_MSK 0xffff
 #undef DEV_NUM_PINS
@@ -30,37 +33,14 @@
 #undef PIN
 #undef LOOKUP_PIN
 #define PIN(name) MY_PIN_##name
-#define LOOKUP_PIN(name) pxt::myLookupPin(PIN(name))
-
-#define DEV_PWM_PINS 0x0000ffffffffULL // all pins are PWM pins it seems
-#define DEV_AIN_PINS 0x0000f000001fULL
-
-// Codal doesn't yet distinguish between PWM and AIN
-#define DEV_ANALOG_PINS (DEV_PWM_PINS | DEV_AIN_PINS)
-
-#undef IS_ANALOG_PIN
-#define IS_ANALOG_PIN(id) ((DEV_ANALOG_PINS >> (id)) & 1)
-
-#define CODAL_PIN NRF52Pin
-#define CODAL_SPI NRF52SPI
-//#define CODAL_I2C NRF52I2C
-//#define CODAL_TIMER Timer
-//#define CODAL_SERIAL NRF52Serial
+#define LOOKUP_PIN(name) PIN(name) // pxt::myLookupPin(PIN(name))
 
 #define PXT_INTERNAL_KEY_UP 2050
 #define PXT_INTERNAL_KEY_DOWN 2051
 #define DEVICE_ID_FIRST_BUTTON 4000
 
-typedef CODAL_PIN *DigitalInOutPin;
-typedef CODAL_PIN *AnalogInOutPin;
-typedef CODAL_PIN *AnalogInPin;
-typedef CODAL_PIN *AnalogOutPin;
-typedef CODAL_PIN *PwmPin;
-typedef CODAL_PIN *PwmOnlyPin;
 
 namespace pxt {
-    CODAL_PIN *myGetPin(int id);
-    CODAL_PIN *myLookupPin(int pinName);
     uint32_t readButtonMultiplexer(int bits);
     void disableButtonMultiplexer();
 }
