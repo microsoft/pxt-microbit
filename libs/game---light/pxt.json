@@ -1,7 +1,27 @@
+
 {
     "hidden": true,
+    "name": "game---light",
+    "description": "Empty game library - beta",
+    "files": [
+        "compat.ts",
+        "console.ts",
+        "constants.ts",
+        "controlleroverrides.ts",
+        "controllerbutton.ts",
+        "controllerbuttons.cpp",
+        "mathUtil.ts",
+        "gameutil.ts",
+        "targetoverrides.cpp",
+        "targetoverrides.ts"
+    ],
+    "public": true,
+    "additionalFilePath": "../game",
+    "dependencies": {
+        "settings": "file:../settings",
+        "screen": "file:../arcadeshield"
+    },
     "disablesVariants": [
         "mbdal"
-    ],
-    "additionalFilePath": "../../node_modules/pxt-common-packages/libs/game---light"
+    ]
 }
