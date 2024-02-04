@@ -4,7 +4,7 @@
         "core": "file:../core",
         "radio": "file:../radio",
         "microphone": "file:../microphone",
-        "st7735": "file:../st7735"
+        "arcadeshield": "file:../arcadeshield"
     },
     "description": "",
     "files": [

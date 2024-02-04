@@ -1,5 +1,5 @@
 {
-    "name": "st7735",
+    "name": "arcadeshield",
     "files": [
         "config_nrf.h",
         "screen.cpp",

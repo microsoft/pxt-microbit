@@ -18,7 +18,7 @@
         "libs/datalogger",
         "libs/color",
         "libs/audio-recording",
-        "libs/st7735"
+        "libs/arcadeshield"
     ],
     "cloud": {
         "workspace": false,
