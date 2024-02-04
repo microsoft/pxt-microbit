@@ -40,7 +40,6 @@ class WDisplay {
 
     WDisplay() {
         uint32_t cfg2 = MY_DISPLAY_CFG2;
-        int conn = cfg2 >> 24;
 
         uint32_t cfg0 = MY_DISPLAY_CFG0;
         uint32_t frmctr1 = MY_DISPLAY_CFG1;
@@ -59,24 +58,12 @@ class WDisplay {
         if (dispTp != DISPLAY_TYPE_SMART)
             miso = NULL; // only JDDisplay needs MISO, otherwise leave free
 
-        SPI *spi = NULL;
-        if (conn == 0) {
-            spi = new CODAL_SPI(*LOOKUP_PIN(DISPLAY_MOSI), *miso, *LOOKUP_PIN(DISPLAY_SCK));
-            io = new SPIScreenIO(*spi);
-        } else if (conn == 1) {
-#ifdef CODAL_CREATE_PARALLEL_SCREEN_IO
-            io = CODAL_CREATE_PARALLEL_SCREEN_IO(cfg2 & 0xffffff, PIN(DISPLAY_MOSI),
-                                                 PIN(DISPLAY_MISO));
-#else
-            target_panic(126);  // PANIC_SCREEN_ERROR
-#endif
-        } else {
-            target_panic(127); // PANIC_SCREEN_ERROR
-        }
+        SPI *spi = new CODAL_SPI(*LOOKUP_PIN(DISPLAY_MOSI), *miso, *LOOKUP_PIN(DISPLAY_SCK));
+        io = new SPIScreenIO(*spi);
 
-        if (dispTp == DISPLAY_TYPE_ST7735)
+        if (dispTp == DISPLAY_TYPE_ST7735) {
             lcd = new ST7735(*io, *LOOKUP_PIN(DISPLAY_CS), *LOOKUP_PIN(DISPLAY_DC));
-        else if (dispTp == DISPLAY_TYPE_ILI9341) {
+        } else if (dispTp == DISPLAY_TYPE_ILI9341) {
             lcd = new ILI9341(*io, *LOOKUP_PIN(DISPLAY_CS), *LOOKUP_PIN(DISPLAY_DC));
             doubleSize = true;
         } else if (dispTp == DISPLAY_TYPE_SMART) {
@@ -98,10 +85,6 @@ class WDisplay {
                 freq = 15;
             spi->setFrequency(freq * 1000000);
             spi->setMode(0);
-            auto cs = LOOKUP_PIN(DISPLAY_CS);
-            if (cs)
-                cs->setDigitalValue(1);
-
             // make sure the SPI peripheral is initialized before toggling reset
             spi->write(0);
         }
@@ -203,7 +186,9 @@ class WDisplay {
 
         DMESG("config type: %d; cfg0=%x cfg1=%x", configId, *cfg0, *cfg1);
 
-        *cfg2 = 32; // Damn the torpedoes! 32MHz
+        // for some reason, setting SPI frequency to 32 doesn't
+        // work with ST77735 in pxt-microbit
+        *cfg2 = 16; // Damn the torpedoes! 32MHz
 
         return DISPLAY_TYPE_ST7735;
     }

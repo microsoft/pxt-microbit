@@ -9,7 +9,7 @@
 #define MY_DISPLAY_TYPE 4242 // smart display
 #define MY_DISPLAY_CFG0 0x00000080
 #define MY_DISPLAY_CFG1 0x00000603
-#define MY_DISPLAY_CFG2 8
+#define MY_DISPLAY_CFG2 32
 
 #define MY_PIN_BTNMX_LATCH &uBit.io.P9 // 9  // DAL.P0_9     EC P9
 #define MY_PIN_BTNMX_CLOCK &uBit.io.P20 // 32 // DAL.P1_0     EC P20
@@ -20,7 +20,7 @@
 #define MY_PIN_DISPLAY_MISO &uBit.io.P14 // 1 // DAL.P0_1     EC P14
 #define MY_PIN_DISPLAY_BL &uBit.io.P19 // 26 // DAL.P0_26     EC P19
 #define MY_PIN_DISPLAY_DC &uBit.io.P8 // 10 // DAL.P0_10     EC P8
-#define MY_PIN_DISPLAY_RST &uBit.io.P16  // DAL.P1_2     EC P6
+#define MY_PIN_DISPLAY_RST &uBit.io.P16  // DAL.P1_2     EC P16
 #define MY_PIN_DISPLAY_CS ((CODAL_PIN*)NULL) // 0xff // not connected
 #define MY_PIN_LED  ((CODAL_PIN*)NULL) // 0xff // not connected
 

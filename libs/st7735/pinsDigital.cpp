@@ -112,6 +112,24 @@ ButtonMultiplexer *getMultiplexer() {
     return btnMultiplexer;
 }
 
+int registerMultiplexedButton(int pin, int buttonId) {
+    if (1050 <= pin && pin < 1058) {
+        pin -= 50;
+        getMultiplexer()->invMask |= 1 << (pin - 1000);
+    }
+    if (1000 <= pin && pin < 1008) {
+        getMultiplexer()->buttonIdPerBit[pin - 1000] = buttonId;
+        return 1;
+    }
+    return 0;
+}
+
+int multiplexedButtonIsPressed(int btnId) {
+    if (btnMultiplexer)
+        return btnMultiplexer->isButtonPressed(btnId) ? 512 : 0;
+    return 0;
+}
+
 uint32_t readButtonMultiplexer(int bits) {
     return getMultiplexer()->readBits(bits);
 }
