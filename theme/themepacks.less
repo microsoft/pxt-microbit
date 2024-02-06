@@ -1,0 +1,51 @@
+/*****************************************
+        Theme overrides
+        source vars: pxt/theme/themepacks.less
+******************************************/
+
+@pxt_headerbar_background: @blue;
+@pxt_headerbar_background_glass: rgba(@pxt_headerbar_background, 0.25);
+@pxt_headerbar_foreground: @white;
+@pxt_headerbar_accent: darken(@pxt_headerbar_background, 8%);
+@pxt_headerbar_accent_smoke: lighten(desaturate(@pxt_headerbar_background, 40%), 18%);
+
+@pxt_content_background: #E4E7F1;
+@pxt_content_background_glass: rgba(@pxt_content_background, 0.25);
+@pxt_content_foreground: @blue;
+@pxt_content_accent: darken(@pxt_content_background, 8%);
+
+@pxt_button_primary_background: @primaryColor;
+@pxt_button_primary_background_glass: rgba(@pxt_button_primary_background, 0.25);
+@pxt_button_primary_foreground: @buttonTextColorDarkBackground;
+@pxt_button_primary_accent: lighten(@pxt_button_primary_background, 8%);
+
+@pxt_button_secondary_background: @secondaryColor;
+@pxt_button_secondary_background_glass: rgba(@pxt_button_primary_background, 0.25);
+@pxt_button_secondary_foreground: @buttonTextColorDarkBackground;
+@pxt_button_secondary_accent: lighten(@pxt_button_secondary_background, 8%);
+
+:root {
+    /// Page
+    --pxt-page-font: @pageFont;
+    /// Header bar
+    --pxt-headerbar-background: @pxt_headerbar_background;
+    --pxt-headerbar-background-glass: @pxt_headerbar_background_glass;
+    --pxt-headerbar-foreground: @pxt_headerbar_foreground;
+    --pxt-headerbar-accent: @pxt_headerbar_accent;
+    --pxt-headerbar-accent-smoke: @pxt_headerbar_accent_smoke;
+    /// Content area
+    --pxt-content-background: @pxt_content_background;
+    --pxt-content-background-glass: @pxt_content_background_glass;
+    --pxt-content-foreground: @pxt_content_foreground;
+    --pxt-content-accent: @pxt_content_accent;
+    /// Primary button
+    --pxt-button-primary-background: @pxt_button_primary_background;
+    --pxt-button-primary-background-glass: @pxt_button_primary_background_glass;
+    --pxt-button-primary-foreground: @pxt_button_primary_foreground;
+    --pxt-button-primary-accent: @pxt_button_primary_accent;
+    /// Secondary button
+    --pxt-button-secondary-background: @pxt_button_secondary_background;
+    --pxt-button-secondary-background-glass: @pxt_button_secondary_background_glass;
+    --pxt-button-secondary-foreground: @pxt_button_secondary_foreground;
+    --pxt-button-secondary-accent: @pxt_button_secondary_accent;
+}

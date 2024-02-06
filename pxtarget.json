@@ -614,6 +614,12 @@
             "appTheme": {
                 "hideReplaceMyCode": false
             }
+        },
+        "teachertool=1": {
+            "appTheme": {
+                "hideMenuBar": true,
+                "workspaceSearch": true
+            }
         }
     },
     "uploadDocs": true

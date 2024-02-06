@@ -10,7 +10,9 @@ The data sent over a SPI connection has a number of _bits_ to represent each val
 
 ### ~ hint
 
-**Simulator**: This function needs real hardware to work with. It's not supported in the simulator.
+#### Simulator
+
+This function needs real hardware to work with. It's not supported in the simulator.
 
 ### ~
 
