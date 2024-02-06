@@ -2,7 +2,7 @@
 /// <reference path="../node_modules/pxt-core/built/pxtblocks.d.ts" />
 /// <reference path="../node_modules/pxt-core/built/pxtcompiler.d.ts" />
 /// <reference path="../node_modules/pxt-core/built/pxtlib.d.ts" />
-/// <reference path="../node_modules/pxt-core/built/pxteditor.d.ts" />
+/// <reference path="../node_modules/pxt-core/localtypings/pxteditor.d.ts" />
 /// <reference path="dapjs.d.ts" />
 import * as dialogs from "./dialogs";
 import * as flash from "./flash";
