@@ -24,6 +24,16 @@
 @pxt_button_secondary_foreground: @buttonTextColorDarkBackground;
 @pxt_button_secondary_accent: lighten(@pxt_button_secondary_background, 8%);
 
+
+@pxt_toast_background_success: lighten(desaturate(#3AFFB3, 40%), 10%);
+@pxt_toast_background_info: lighten(desaturate(#3ADCFF, 40%), 10%);
+@pxt_toast_background_warning: lighten(desaturate(#FFD43A, 40%), 10%);
+@pxt_toast_background_error: lighten(desaturate(#FF3A54, 40%), 10%);
+@pxt_toast_accent_success: darken(@pxt_toast_background_success, 30%);
+@pxt_toast_accent_info: darken(@pxt_toast_background_info, 30%);
+@pxt_toast_accent_warning: darken(@pxt_toast_background_warning, 30%);
+@pxt_toast_accent_error: darken(@pxt_toast_background_error, 20%);
+
 :root {
     /// Page
     --pxt-page-font: @pageFont;
@@ -48,4 +58,13 @@
     --pxt-button-secondary-background-glass: @pxt_button_secondary_background_glass;
     --pxt-button-secondary-foreground: @pxt_button_secondary_foreground;
     --pxt-button-secondary-accent: @pxt_button_secondary_accent;
+    /// Toasts
+    --pxt-toast-background-success: @pxt_toast_background_success;
+    --pxt-toast-background-info: @pxt_toast_background_info;
+    --pxt-toast-background-warning: @pxt_toast_background_warning;
+    --pxt-toast-background-error: @pxt_toast_background_error;
+    --pxt-toast-accent-success: @pxt_toast_accent_success;
+    --pxt-toast-accent-info: @pxt_toast_accent_info;
+    --pxt-toast-accent-warning: @pxt_toast_accent_warning;
+    --pxt-toast-accent-error: @pxt_toast_accent_error;
 }
