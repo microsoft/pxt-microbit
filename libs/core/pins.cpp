@@ -3,6 +3,7 @@
 #if MICROBIT_CODAL
 #include "Pin.h"
 #define PinCompat codal::Pin
+#undef Button               // need to get codal Button back in scope here
 #include "MicroBitButton.h" // this include is missing in MicroBit.h from codal-microbit-v2 when DEVICE_BLE=0
 #else
 #define PinCompat MicroBitPin
