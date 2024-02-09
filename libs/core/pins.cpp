@@ -1,5 +1,7 @@
 #include "pxt.h"
 
+#include "MicroBitButton.h" // this include is missing in MicroBit.h from codal-microbit-v2 when DEVICE_BLE=0
+
 #if MICROBIT_CODAL
 #include "Pin.h"
 #define PinCompat codal::Pin
