@@ -4,11 +4,13 @@
 
 What sort of a *computing system* is the micro:bit?
 
-## ~hint 
+### ~hint 
+
+#### Types of computing systems
 
 There are different types of computing systems, to address different kinds of problems that arise in practice: *transaction processing systems* are used by banks to handle huge numbers of financial transactions by their customers; *distributed systems* make a set of networked computers appear as one big computer (like Google’s search engine); there are also *parallel systems*, such as graphic cards, which perform a huge number of primitive operations simultaneously, using a great number of small processing cores.
 
-## ~
+### ~
 
 The micro:bit is a *reactive system* – it reacts continuously to external events, such as a person pressing the **A** button of the micro:bit or shaking the device. The reaction to an event may be to perform a computation, update variables, and change the display.  After the device reacts to an event, it is ready to react to the next one. If this sounds like a computer game, that’s because most computer games are reactive systems too!
 
