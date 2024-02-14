@@ -123,7 +123,15 @@ function forever_(body: () => void) {
 
 The `forever` loop actually is a function that takes a subprogram (another function) as a parameter. The function uses the `control.inBackground` function of the micro:bit runtime to queue a `while true` loop for execution by the scheduler. The while loop has two statements. The first statement runs the subprogram represented by the `body` parameter. The second statement passes control to the scheduler (requesting to “sleep” for 20 milliseconds).
 
-Though the `while true` loop will repeatedly execute the body subprogram, between each execution of the body it will permit the scheduler to execute other subprograms.  If the while loop did not contain the call to `pause`, then once control passed into the while loop, it would never pass back to the scheduler and no other subprogram would be able to execute (unless the body subprogram contained a call to `pause` itself).
+Though the `while true` loop will repeatedly execute the body subprogram, between each execution of the body it will permit the scheduler to execute other subprograms. If the while loop did not contain the call to `pause`, then once control passed into the while loop, it would never pass back to the scheduler and no other subprogram would be able to execute (unless the body subprogram contained a call to `pause` itself).
+
+### ~hint 
+
+#### Pauses within blocks
+
+Certain blocks may contain a `pause` within their code to allow execution control to return to the scheduler. As an example, when a device is interacting with the code in a block, control can return to the scheduler to allow other subprograms run while that device is taking time to respond.
+
+### ~
 
 ## Round-robin scheduling
 
