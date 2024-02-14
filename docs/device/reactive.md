@@ -50,7 +50,7 @@ The micro:bit’s *scheduler* provides the capability to concurrently execute di
 
 The first job of the scheduler is to allow multiple *subprograms* to be queued up for later execution. For our purposes, a subprogram is just a statement or sequence of statements in the context of a larger program. Consider the program below for counting button presses.
 
-```typescript
+```typescript-ignore
 let count = 0
 
 input.onButtonPressed(Button.A, () => {
@@ -65,14 +65,14 @@ basic.forever(() => {
 The program above contains three statements that execute in order from top to bottom. 
 The first statement initializes the global variable `count` to zero.
 
-```typescript
+```typescript-ignore
 // statement 1
 let count = 0
 ```
 
 The second statement informs the scheduler that on each and every event of the **A** button being pressed, a subprogram (called the event handler) should be queued for execution. The event handler code is contained within the braces `{...}`; it increments the global variable `count` by one.
 
-```typescript
+```typescript-ignore
 // statement 1
 let count = 0
 // statement 2
@@ -83,7 +83,7 @@ input.onButtonPressed(Button.A, () => {
 
 The third statement queues a `forever` loop for later execution by the scheduler; the body of this loop (also inside the braces `{...}`) displays the current value of global variable `count` on the LED screen.
 
-```typescript
+```typescript-ignore
 // statement 1
 let count = 0
 // statement 2
@@ -112,7 +112,7 @@ We will call this "passing control of execution" rather than "passing the ball".
 
 Let’s take a look at the implementation of the `basic.forever` function to see an example of cooperative scheduling:
 
-```typescript
+```typescript-ignore
 function forever_(body: () => void) {
     control.inBackground(() => {
         while(true) {
@@ -164,7 +164,7 @@ Through this example, we have seen that the micro:bit scheduler enables you to c
 
 As a result, you can easily add a new capability to the micro:bit by just adding a new subprogram. For example, if you want to add a reset feature to the counter program, all you need to do is add a new event handler for a press of button **B** that sets the global variable "count" to zero, as shown below:
 
-```typescript
+```typescript-ignore
 let count = 0
 
 input.onButtonPressed(Button.A, () => {
