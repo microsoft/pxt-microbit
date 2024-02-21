@@ -10,7 +10,9 @@ The @boardname@ sets the rate of data transfer and control timing for a SPI conn
 
 ### ~ hint
 
-**Simulator**: This function needs real hardware to work with. It's not supported in the simulator.
+#### Simulator
+
+This function needs real hardware to work with. It's not supported in the simulator.
 
 ### ~
 

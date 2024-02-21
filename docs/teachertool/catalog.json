@@ -1,0 +1,17 @@
+{
+    "criteria": [
+        {
+            "id": "D285D79B-85E5-4C8D-82D2-5A9E35AB1163",
+            "use": "show_icon_on_screen",
+            "template": "Show an icon on the LED screen",
+            "docPath": "/teachertool"
+        },
+        {
+            "id": "C57344FC-B915-4ACB-A070-67F8FFC18B4B",
+            "use": "read_gpio_pin",
+            "template": "Read a GPIO pin",
+            "description": "Read input from one or more of the microbit GPIO pins.",
+            "docPath": "/teachertool"
+        }
+    ]
+}

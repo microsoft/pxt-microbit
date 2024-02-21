@@ -8,7 +8,9 @@ pins.i2cReadNumber(0, NumberFormat.Int8LE, false);
 
 ### ~ hint
 
-**Simulator**: This function needs real hardware to work with. It's not supported in the simulator.
+#### Simulator
+
+This function needs real hardware to work with. It's not supported in the simulator.
 
 ### ~
 
