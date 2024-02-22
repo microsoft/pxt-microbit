@@ -3,6 +3,8 @@
         source vars: pxt/theme/themepacks.less
 ******************************************/
 
+@pxt_page_foreground_light: #767676;
+
 @pxt_headerbar_background: @blue;
 @pxt_headerbar_background_glass: rgba(@pxt_headerbar_background, 0.25);
 @pxt_headerbar_foreground: @white;
@@ -37,6 +39,7 @@
 :root {
     /// Page
     --pxt-page-font: @pageFont;
+    --pxt-page-foreground-light: @pxt_page_foreground_light;
     /// Header bar
     --pxt-headerbar-background: @pxt_headerbar_background;
     --pxt-headerbar-background-glass: @pxt_headerbar_background_glass;
