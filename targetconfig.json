@@ -540,6 +540,22 @@
             "youTube": true
         }
     },
+    "teachertool": {
+        "carousels": [
+            {
+                "title": "Rubrics for Tutorials",
+                "cardsUrl": "teachertool/carousels/rubrics-for-tutorials/cards.json"
+            },
+            {
+                "title": "Rubrics for V2 Tutorials",
+                "cardsUrl": "teachertool/carousels/rubrics-for-tutorials-v2/cards.json"
+            },
+            {
+                "title": "Rubrics for Games",
+                "cardsUrl": "teachertool/carousels/rubrics-for-games/cards.json"
+            }
+        ]
+    },
     "electronManifest": {
         "latest": "v6.0.19"
     }
