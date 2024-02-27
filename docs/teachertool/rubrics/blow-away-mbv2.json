@@ -1,4 +1,57 @@
 {
     "name": "Blow Away",
-    "criteria": []
+    "criteria": [
+        {
+            "catalogCriteriaId": "A4F05FAB-72F2-48F5-8E33-7AE2CBB6CD43",
+            "instanceId": "2H_lA-5kA1bpPhHitt_Gs"
+        },
+        {
+            "catalogCriteriaId": "1B331451-081E-4F26-9CB6-F5A649432BF9",
+            "instanceId": "Bw5GPuGHqfWG14AWmnvaY"
+        },
+        {
+            "catalogCriteriaId": "B835FAA0-8CA6-4E4A-95B4-7FC6D15231BD",
+            "instanceId": "IlpiBn6Tjn0mkjCrVGI0v"
+        },
+        {
+            "catalogCriteriaId": "F82F6BB4-2B1C-4CFF-92BA-65CE63DD6399",
+            "instanceId": "WGLq8LWXIjX_QCFVNqp0k"
+        },
+        {
+            "catalogCriteriaId": "850DBBDE-71BA-48D2-A1E4-7AC19716C976",
+            "instanceId": "rvzANbK3nhtd7dPcVBYF4"
+        },
+        {
+            "catalogCriteriaId": "CCA30B9D-4ED7-4916-94AF-050FC473FAA1",
+            "instanceId": "RMO6vzSM23tAFMI6gXcZ9"
+        },
+        {
+            "catalogCriteriaId": "162222FB-8E2B-4131-9EA3-EC6B83DDAFB2",
+            "instanceId": "rU4BPrH6Nahnv6J39YfMH"
+        },
+        {
+            "catalogCriteriaId": "0B2BC680-D79D-42C8-BA13-B6B189E2BF7D",
+            "instanceId": "5xPrZDcNRg9_uafq1Zx6z"
+        },
+        {
+            "catalogCriteriaId": "01A65046-D4BE-44B6-8273-7A878A71B3D0",
+            "instanceId": "zZ2W7pPE5UPN0iGeXtvf2"
+        },
+        {
+            "catalogCriteriaId": "E3286B6D-5BEB-43EC-B246-C956AAC34C3E",
+            "instanceId": "GYTTG8c1fw0TEp4YqVsQD"
+        },
+        {
+            "catalogCriteriaId": "6BA59761-9464-4C8D-9D8F-E8985273FB92",
+            "instanceId": "EfcUfpne2r6IO1Vu1tzJ3"
+        },
+        {
+            "catalogCriteriaId": "46AFEDA3-35CB-4041-BEC4-53C0D29E57BA",
+            "instanceId": "GgG4fod3VaXUTGYbW7Utj"
+        },
+        {
+            "catalogCriteriaId": "5934E4C6-7AE4-46A4-8F92-99101987D064",
+            "instanceId": "-3sSPpeXd-M2WaHObA1yq"
+        }
+    ]
 }
