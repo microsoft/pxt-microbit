@@ -17,12 +17,14 @@
             "id": "850DBBDE-71BA-48D2-A1E4-7AC19716C976",
             "use": "get_sound_level",
             "template": "Sound level is detected in the program",
+            "hideInCatalog": true,
             "docPath": "/teachertool"
         },
         {
             "id": "F82F6BB4-2B1C-4CFF-92BA-65CE63DD6399",
             "use": "soundlevel_greater_than_check",
             "template": "Check that the sound level is greater than a number",
+            "hideInCatalog": true,
             "docPath": "/teachertool"
         },
         {
@@ -30,18 +32,21 @@
             "use": "soundlevel_gt_condition",
             "template": "If sound level is greater than a number, then two variables are set to random values",
             "description": "In the if chunk of code that checks that sound level is greater than a number, variables 'row' and 'col' are set to random values",
+            "hideInCatalog": true,
             "docPath": "/teachertool"
         },
         {
             "id": "CCA30B9D-4ED7-4916-94AF-050FC473FAA1",
             "use": "col_variable_set_random",
             "template": "Variable named 'col' is set to a random value",
+            "hideInCatalog": true,
             "docPath": "/teachertool"
         },
         {
             "id": "162222FB-8E2B-4131-9EA3-EC6B83DDAFB2",
             "use": "row_variable_set_random",
             "template": "Variable named 'row' is set to a random value",
+            "hideInCatalog": true,
             "docPath": "/teachertool"
         },
         {
@@ -49,6 +54,7 @@
             "use": "point_bool_check",
             "template": "Check that an LED point is lit on the LED screen",
             "description": "At point 'row', 'col' on the LED screen, the LED is lit",
+            "hideInCatalog": true,
             "docPath": "/teachertool"
         },
         {
@@ -56,6 +62,7 @@
             "use": "unplot_vars_used",
             "template": "Unplot a point on the LED screen at 'col', 'row'",
             "description": "The unplot block is used to unset the LED at the position 'col', 'row'",
+            "hideInCatalog": true,
             "docPath": "/teachertool"
         },
         {
@@ -63,6 +70,7 @@
             "use": "col_add_num",
             "template": "Perform addition between the 'col' variable and a number",
             "description": "Arithmetic, paritciularly addition, is performed between the 'col' variable and a number",
+            "hideInCatalog": true,
             "docPath": "/teachertool"
         },
         {
@@ -70,6 +78,7 @@
             "use": "plot_vars_used",
             "template": "Plot a point on the LED screen at position 'col' + 1, 'row'",
             "description": "The plot block sets the LED at the position 'col' + 1, 'row'",
+            "hideInCatalog": true,
             "docPath": "/teachertool"
         },
         {
@@ -77,6 +86,7 @@
             "use": "repeat_loop_nested_conditions",
             "template": "Repeat loop holds all main program logic",
             "description": "Checks that the repeat loop has two if conditions, and everything within those conditions looks as expected",
+            "hideInCatalog": true,
             "docPath": "/teachertool"
         },
         {
@@ -84,6 +94,7 @@
             "use": "forever_nested_repeat_loop",
             "template": "Forever loop nests a repeat loop that holds all main program logic",
             "description": "Checks that the forever loop and all of its children exist within the loop. Essentially checks that the whole program looks as expected",
+            "hideInCatalog": true,
             "docPath": "/teachertool"
         },
         {
@@ -91,6 +102,7 @@
             "use": "show_icon_on_start",
             "template": "Show an icon on the LED screen when the program starts",
             "description": "An icon block is used inside the on start block",
+            "hideInCatalog": true,
             "docPath": "/teachertool"
         },
         {
@@ -98,6 +110,7 @@
             "use": "point_condition",
             "template": "If an LED point is truthy, then uplot that point and plot a new point",
             "description": "In the if chunk of code that checks that an LED point is truthy, a point is unplotted and a new point is plotted",
+            "hideInCatalog": true,
             "docPath": "/teachertool"
         }
     ]
