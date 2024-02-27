@@ -55,6 +55,213 @@
                     }
                 }
             ]
+        },
+        {
+            ".desc": "get sound level",
+            "name": "get_sound_level",
+            "threshold": 1,
+            "checks": [
+                {
+                    "validator": "blocksExist",
+                    "blockCounts": {
+                        "device_get_sound_level": 1
+                    }
+                }
+            ]
+        },
+        {
+            ".desc": "sound level greater than number",
+            "name": "soundlevel_greater_than_check",
+            "threshold": 1,
+            "checks": [
+                {
+                    "validator": "blockFieldValueExists",
+                    "fieldType": "OP",
+                    "fieldValue": "GT",
+                    "blockType": "logic_compare",
+                    "childValidatorPlans": ["get_sound_level", "math_num_exists"]
+                }
+            ]
+        },
+        {
+            ".desc": "variable with name col is set to random number",
+            "name": "col_variable_set_random",
+            "threshold": 1,
+            "checks": [
+                {
+                    "validator": "blockFieldValueExists",
+                    "fieldType": "VAR",
+                    "fieldValue": "col",
+                    "blockType": "variables_set",
+                    "childValidatorPlans": ["device_random_used"]
+                }
+            ]
+        },
+        {
+            ".desc": "variable with name row is set to random number",
+            "name": "row_variable_set_random",
+            "threshold": 1,
+            "checks": [
+                {
+                    "validator": "blockFieldValueExists",
+                    "fieldType": "VAR",
+                    "fieldValue": "row",
+                    "blockType": "variables_set",
+                    "childValidatorPlans": ["device_random_used"]
+                }
+            ]
+        },
+        {
+            ".desc": "variable with name col is accessed //no catalog entry",
+            "name": "col_variable_accessed",
+            "threshold": 1,
+            "checks": [
+                {
+                    "validator": "blockFieldValueExists",
+                    "fieldType": "VAR",
+                    "fieldValue": "col",
+                    "blockType": "variables_get"
+                }
+            ]
+        },
+        {
+            ".desc": "variable with name col is accessed //no catalog entry",
+            "name": "row_variable_accessed",
+            "threshold": 1,
+            "checks": [
+                {
+                    "validator": "blockFieldValueExists",
+                    "fieldType": "VAR",
+                    "fieldValue": "row",
+                    "blockType": "variables_get"
+                }
+            ]
+        },
+        {
+            ".desc": "sound level check in if statement wtih two variables set blocks",
+            "name": "soundlevel_gt_condition",
+            "threshold": 1,
+            "checks": [
+                {
+                    "validator": "blocksExist",
+                    "blockCounts": {
+                        "controls_if": 1
+                    },
+                    "childValidatorPlans": ["soundlevel_greater_than_check", "row_variable_set_random", "col_variable_set_random"]
+                }
+            ]
+        },
+        {
+            ".desc": "point block used for boolean check //no catalog entry",
+            "name": "point_bool_check",
+            "threshold": 1,
+            "checks": [
+                {
+                    "validator": "blocksExist",
+                    "blockCounts": {
+                        "device_point": 1
+                    },
+                    "childValidatorPlans": ["row_variable_accessed", "col_variable_accessed"]
+                }
+            ]
+        },
+        {
+            ".desc": "unplot block filled with row, col variables",
+            "name": "unplot_vars_used",
+            "threshold": 1,
+            "checks": [
+                {
+                    "validator": "blocksExist",
+                    "blockCounts": {
+                        "device_unplot": 1
+                    },
+                    "childValidatorPlans": ["col_variable_accessed", "row_variable_accessed"]
+                }
+            ]
+        },
+        {
+            ".desc": "variable with name col is accessed //no catalog entry",
+            "name": "col_add_num",
+            "threshold": 1,
+            "checks": [
+                {
+                    "validator": "blockFieldValueExists",
+                    "fieldType": "OP",
+                    "fieldValue": "ADD",
+                    "blockType": "math_arithmetic",
+                    "childValidatorPlans": ["col_variable_accessed", "math_num_exists"]
+                }
+            ]
+        },
+        {
+            ".desc": "plot block filled with math add between row, num; and col variables",
+            "name": "plot_vars_used",
+            "threshold": 1,
+            "checks": [
+                {
+                    "validator": "blocksExist",
+                    "blockCounts": {
+                        "device_plot": 1
+                    },
+                    "childValidatorPlans": ["col_add_num", "row_variable_accessed"]
+                }
+            ]
+        },
+        {
+            ".desc": "point block in if statement with unplot, plot in its body",
+            "name": "point_condition",
+            "threshold": 1,
+            "checks": [
+                {
+                    "validator": "blocksExist",
+                    "blockCounts": {
+                        "controls_if": 1
+                    },
+                    "childValidatorPlans": ["point_bool_check" , "unplot_vars_used", "plot_vars_used"]
+                }
+            ]
+        },
+        {
+            ".desc": "repeat loop nests two conditions in its body",
+            "name": "repeat_loop_nested_conditions",
+            "threshold": 1,
+            "checks": [
+                {
+                    "validator": "blocksExist",
+                    "blockCounts": {
+                        "controls_repeat_ext": 1
+                    },
+                    "childValidatorPlans": ["point_condition" , "soundlevel_gt_condition"]
+                }
+            ]
+        },
+        {
+            ".desc": "forever loop nests a repeat loop in its body",
+            "name": "forever_nested_repeat_loop",
+            "threshold": 1,
+            "checks": [
+                {
+                    "validator": "blocksExist",
+                    "blockCounts": {
+                        "device_forever": 1
+                    },
+                    "childValidatorPlans": ["repeat_loop_nested_conditions"]
+                }
+            ]
+        },
+        {
+            ".desc": "show icon on start",
+            "name": "show_icon_on_start",
+            "threshold": 1,
+            "checks": [
+                {
+                    "validator": "blocksExist",
+                    "blockCounts": {
+                        "pxt-on-start": 1
+                    },
+                    "childValidatorPlans": ["show_icon_on_screen"]
+                }
+            ]
         }
     ]
 }

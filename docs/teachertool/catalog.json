@@ -12,6 +12,86 @@
             "template": "Read a GPIO pin",
             "description": "Read input from one or more of the microbit GPIO pins.",
             "docPath": "/teachertool"
+        },
+        {
+            "id": "850DBBDE-71BA-48D2-A1E4-7AC19716C976",
+            "use": "get_sound_level",
+            "template": "Sound level is detected in the program",
+            "docPath": "/teachertool"
+        },
+        {
+            "id": "F82F6BB4-2B1C-4CFF-92BA-65CE63DD6399",
+            "use": "soundlevel_greater_than_check",
+            "template": "Check that the sound level is greater than a number",
+            "docPath": "/teachertool"
+        },
+        {
+            "id": "B835FAA0-8CA6-4E4A-95B4-7FC6D15231BD",
+            "use": "soundlevel_gt_condition",
+            "template": "If sound level is greater than a number, then two variables are set to random values",
+            "docPath": "/teachertool"
+        },
+        {
+            "id": "CCA30B9D-4ED7-4916-94AF-050FC473FAA1",
+            "use": "col_variable_set_random",
+            "template": "Variable named 'col' is set to a random value",
+            "docPath": "/teachertool"
+        },
+        {
+            "id": "162222FB-8E2B-4131-9EA3-EC6B83DDAFB2",
+            "use": "row_variable_set_random",
+            "template": "Variable named 'row' is set to a random value",
+            "docPath": "/teachertool"
+        },
+        {
+            "id": "01A65046-D4BE-44B6-8273-7A878A71B3D0",
+            "use": "point_bool_check",
+            "template": "Check that an LED point is lit on the LED screen",
+            "docPath": "/teachertool"
+        },
+        {
+            "id": "E3286B6D-5BEB-43EC-B246-C956AAC34C3E",
+            "use": "unplot_vars_used",
+            "template": "Unplot a point on the LED screen",
+            "docPath": "/teachertool"
+        },
+        {
+            "id": "46AFEDA3-35CB-4041-BEC4-53C0D29E57BA",
+            "use": "col_add_num",
+            "template": "Perform addition between the col variable and a number",
+            "docPath": "/teachertool"
+        },
+        {
+            "id": "6BA59761-9464-4C8D-9D8F-E8985273FB92",
+            "use": "plot_vars_used",
+            "template": "Plot a point on the LED screen at position col + 1, row",
+            "docPath": "/teachertool"
+        },
+        {
+            "id": "1B331451-081E-4F26-9CB6-F5A649432BF9",
+            "use": "repeat_loop_nested_conditions",
+            "template": "Repeat loop holds all main program logic",
+            "description": "Checks that the repeat loop has two if conditions, and everything within those conditions looks as expected",
+            "docPath": "/teachertool"
+        },
+        {
+            "id": "A4F05FAB-72F2-48F5-8E33-7AE2CBB6CD43",
+            "use": "forever_nested_repeat_loop",
+            "template": "Forever loop nests a repeat loop that holds all main program logic",
+            "description": "Checks that the forever loop and all of its children exist within the loop. Essentially checks that the whole program looks as expected",
+            "docPath": "/teachertool"
+        },
+        {
+            "id": "5934E4C6-7AE4-46A4-8F92-99101987D064",
+            "use": "show_icon_on_start",
+            "template": "Show an icon on the LED screen when the program starts",
+            "docPath": "/teachertool"
+        },
+        {
+            "id": "0B2BC680-D79D-42C8-BA13-B6B189E2BF7D",
+            "use": "point_condition",
+            "template": "If an LED point is truthy, then uplot that point and plot a new point",
+            "docPath": "/teachertool"
         }
     ]
 }
