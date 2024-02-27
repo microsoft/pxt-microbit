@@ -1,0 +1,40 @@
+{
+    "cards": [
+        {
+            "cardType": "rubric-resource",
+            "cardTitle": "Pet Hamster",
+            "imageUrl": "/static/mb/projects/pet-hamster.png",
+            "rubricUrl": "/teachertool/rubrics/pet-hamster-mbv2.json"
+        },
+        {
+            "cardType": "rubric-resource",
+            "cardTitle": "Countdown",
+            "imageUrl": "/static/mb/projects/countdown.png",
+            "rubricUrl": "/teachertool/rubrics/countdown-mbv2.json"
+        },
+        {
+            "cardType": "rubric-resource",
+            "cardTitle": "Morse Chat",
+            "imageUrl": "/static/mb/projects/morse-chat.png",
+            "rubricUrl": "/teachertool/rubrics/morse-chat-mbv2.json"
+        },
+        {
+            "cardType": "rubric-resource",
+            "cardTitle": "Clap Lights",
+            "imageUrl": "/static/mb/projects/clap-lights.png",
+            "rubricUrl": "/teachertool/rubrics/clap-lights-mbv2.json"
+        },
+        {
+            "cardType": "rubric-resource",
+            "cardTitle": "Blow Away",
+            "imageUrl": "/static/mb/projects/blow-away.png",
+            "rubricUrl": "/teachertool/rubrics/blow-away-mbv2.json"
+        },
+        {
+            "cardType": "rubric-resource",
+            "cardTitle": "Cat Napping",
+            "imageUrl": "/static/mb/projects/cat-napping/1_lychee.png",
+            "rubricUrl": "/teachertool/rubrics/cat-naping-mbv2.json"
+        }
+    ]
+}

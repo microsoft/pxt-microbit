@@ -1,0 +1,64 @@
+{
+    "cards": [
+        {
+            "cardType": "rubric-resource",
+            "cardTitle": "Rock Paper Scissors",
+            "imageUrl": "/static/mb/projects/a4-motion.png",
+            "rubricUrl": "/teachertool/rubrics/rock-paper-scissors.json"
+        },
+        {
+            "cardType": "rubric-resource",
+            "cardTitle": "Rock Paper Scissors V2",
+            "imageUrl": "/static/mb/projects/a4-motion-v2.png",
+            "rubricUrl": "/teachertool/rubrics/rock-paper-scissors-mbv2.json"
+        },
+        {
+            "cardType": "rubric-resource",
+            "cardTitle": "Coin Flipper",
+            "imageUrl": "/static/mb/projects/coin-flipper.png",
+            "rubricUrl": "/teachertool/rubrics/coin-flipper.json"
+        },
+        {
+            "cardType": "rubric-resource",
+            "cardTitle": "7 seconds",
+            "imageUrl": "/static/mb/projects/7-seconds.png",
+            "rubricUrl": "/teachertool/rubrics/7-seconds.json"
+        },
+        {
+            "cardType": "rubric-resource",
+            "cardTitle": "Hot Potato",
+            "imageUrl": "/static/mb/projects/hot-potato.png",
+            "rubricUrl": "/teachertool/rubrics/hot-potato.json"
+        },
+        {
+            "cardType": "rubric-resource",
+            "cardTitle": "Heads Guess!",
+            "imageUrl": "/static/mb/projects/heads-guess.png",
+            "rubricUrl": "/teachertool/rubrics/heads-guess.json"
+        },
+        {
+            "cardType": "rubric-resource",
+            "cardTitle": "Reaction Time",
+            "imageUrl": "/static/mb/projects/reaction.jpg",
+            "rubricUrl": "/teachertool/rubrics/reaction-time.json"
+        },
+        {
+            "cardType": "rubric-resource",
+            "cardTitle": "Tug-Of-LED",
+            "imageUrl": "/static/mb/projects/tug-of-led.png",
+            "rubricUrl": "/teachertool/rubrics/tug-of-led.json"
+        },
+        {
+            "cardType": "rubric-resource",
+            "cardTitle": "Magic Button Trick",
+            "imageUrl": "/static/mb/projects/magic-button-trick.png",
+            "rubricUrl": "/teachertool/rubrics/magic-button-trick.json"
+        },
+        {
+            "cardType": "rubric-resource",
+            "cardTitle": "Snap the dot",
+            "imageUrl": "/static/mb/projects/snap-the-dot.png",
+            "rubricUrl": "/teachertool/rubrics/snap-the-dot.json"
+        }
+    ]
+}

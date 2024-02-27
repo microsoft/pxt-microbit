@@ -153,7 +153,7 @@
                     <field name="name">AnalogPin.P4</field>
                     <value name="value">
                       <shadow type="math_number_minmax" id=",:%8N*FL3wa-zFQ[+^$9">
-                        <mutation min="0" max="1023" label="Value"></mutation>
+                        <mutation min="0" max="1023" label="Value" precision="0"></mutation>
                         <field name="SLIDER">1023</field>
                       </shadow>
                       <block type="device_get_analog_pin">
@@ -165,7 +165,7 @@
                         <field name="name">DigitalPin.P10</field>
                         <value name="value">
                           <shadow type="math_number_minmax" id="W~pvdj%jFEj?EHmT{81Z">
-                            <mutation min="0" max="1" label="Value"></mutation>
+                            <mutation min="0" max="1" label="Value" precision="0"></mutation>
                             <field name="SLIDER">0</field>
                           </shadow>
                           <block type="device_get_digital_pin">
@@ -221,7 +221,7 @@
                                 <field name="name">AnalogPin.P20</field>
                                 <value name="value">
                                   <shadow type="math_number_minmax" id="xC9lYf`{!gA-A8R+#~L.">
-                                    <mutation min="0" max="180" label="Value"></mutation>
+                                    <mutation min="0" max="180" label="Value" precision="0"></mutation>
                                     <field name="SLIDER">180</field>
                                   </shadow>
                                   <block type="device_acceleration">
@@ -419,7 +419,7 @@
             </value>
             <value name="brightness">
               <shadow type="math_number_minmax" id="IjJTgf5z!,K`qd`~pCB3">
-                <mutation min="0" max="255" label="Brightness"></mutation>
+                <mutation min="0" max="255" label="Brightness" precision="0"></mutation>
                 <field name="SLIDER">255</field>
               </shadow>
               <block type="device_get_brightness"></block>
@@ -428,7 +428,7 @@
               <block type="device_set_brightness">
                 <value name="value">
                   <shadow type="math_number_minmax" id="WAUzdT@1z{%:UNn!_dU(">
-                    <mutation min="0" max="255" label="Value"></mutation>
+                    <mutation min="0" max="255" label="Value" precision="0"></mutation>
                     <field name="SLIDER">255</field>
                   </shadow>
                   <block type="device_note">
