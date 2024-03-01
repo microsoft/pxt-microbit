@@ -51,7 +51,7 @@
             "docPath": "/teachertool"
         },
         {
-            "id": "",
+            "id": "FD7E03B7-53F2-41B9-93ED-51AEA864468E",
             "use": "conditional_show_icon",
             "template": "Show an icon on display when a condition is met",
             "description": "Show an icon on display when a condition is met",
