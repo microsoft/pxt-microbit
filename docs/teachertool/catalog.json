@@ -44,22 +44,6 @@
             "description": "A 'show' block is called with the received message inside the 'on radio received' event.",
             "hideInCatalog": true,
             "docPath": "/teachertool"
-        },
-        {
-            "id": "2DAFFA26-145E-472D-AA39-F46BA7E78F81",
-            "use": "multiple_send_radio_string_on_button_press",
-            "template": "Bonus: sends additional strings on different button events",
-            "description": "More than one 'on button pressed' event is present and sends a string.",
-            "hideInCatalog": true,
-            "docPath": "/teachertool"
-        },
-        {
-            "id": "1389B52A-F6E8-40B0-9B65-4C0FD221B7AB",
-            "use": "multiple_set_radio_group",
-            "template": "Bonus: Can send secret messages by changing the radio group",
-            "description": "Logic exists to change the radio group beyond the initial value on startup.",
-            "hideInCatalog": true,
-            "docPath": "/teachertool"
         }
     ]
 }

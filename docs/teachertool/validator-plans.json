@@ -70,19 +70,6 @@
             ]
         },
         {
-            ".desc": "Set the radio group.",
-            "name": "multiple_set_radio_group",
-            "threshold": 1,
-            "checks": [
-                {
-                    "validator": "blocksExist",
-                    "blockCounts": {
-                        "radio_set_group": 2
-                    }
-                }
-            ]
-        },
-        {
             ".desc": "Send a string over radio.",
             "name": "send_radio_string",
             "threshold": 1,
@@ -139,20 +126,6 @@
                     "validator": "blocksExist",
                     "blockCounts": {
                         "device_button_event": 1
-                    },
-                    "childValidatorPlans": ["send_radio_string"]
-                }
-            ]
-        },
-        {
-            ".desc": "send radio string in button press event.",
-            "name": "multiple_send_radio_string_on_button_press",
-            "threshold": 1,
-            "checks": [
-                {
-                    "validator": "blocksExist",
-                    "blockCounts": {
-                        "device_button_event": 2
                     },
                     "childValidatorPlans": ["send_radio_string"]
                 }
