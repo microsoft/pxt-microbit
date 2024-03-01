@@ -1,4 +1,21 @@
 {
     "name": "Micro Chat",
-    "criteria": []
+    "criteria": [
+        {
+            "catalogCriteriaId": "18C44CC4-497F-45EC-90FA-CE7DB117AD03",
+            "instanceId": "CFz2K1V77NHTE7covaEnc"
+        },
+        {
+            "catalogCriteriaId": "7ECB3AD5-F1C1-4106-9259-802B2E69A7A2",
+            "instanceId": "Mr99JIKxrlKtBlPq783jV"
+        },
+        {
+            "catalogCriteriaId": "FAA97F77-C9F5-4D58-A3D5-47F965F4B6E2",
+            "instanceId": "5ZeCpcWCAqLHHvoAftA__"
+        },
+        {
+            "catalogCriteriaId": "D249AB3E-2620-4E33-911E-284303455365",
+            "instanceId": "G7AkPpY5L9Ot3-mtcGYwF"
+        }
+    ]
 }
