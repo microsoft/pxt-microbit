@@ -24,7 +24,7 @@
         {
             "id": "7ECB3AD5-F1C1-4106-9259-802B2E69A7A2",
             "use": "send_radio_string_on_button_press",
-            "template": "Sends a radio string in response to a button press",
+            "template": "Sends a radio string when a button is pressed",
             "description": "The 'radio send string' block is called inside a button press event",
             "hideInCatalog": true,
             "docPath": "/teachertool"
@@ -33,14 +33,14 @@
             "id": "FAA97F77-C9F5-4D58-A3D5-47F965F4B6E2",
             "use": "any_on_radio_received",
             "template": "Listens for incoming radio messages",
-            "description": "Any 'on radio received' event (string, number, or name+value) is present.",
+            "description": "Any 'on radio received' event (string, number, or name + value) is present.",
             "hideInCatalog": true,
             "docPath": "/teachertool"
         },
         {
             "id": "D249AB3E-2620-4E33-911E-284303455365",
             "use": "on_radio_received_and_displayed",
-            "template": "Displays received radio message on the screen",
+            "template": "Displays the received radio message on the screen",
             "description": "A 'show' block is called with the received message inside the 'on radio received' event.",
             "hideInCatalog": true,
             "docPath": "/teachertool"
