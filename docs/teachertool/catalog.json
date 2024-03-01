@@ -3,7 +3,7 @@
         {
             "id": "D285D79B-85E5-4C8D-82D2-5A9E35AB1163",
             "use": "show_icon_on_screen",
-            "template": "Show an icon on the LED screen",
+            "template": "Show an icon on the display",
             "docPath": "/teachertool"
         },
         {
@@ -11,6 +11,50 @@
             "use": "read_gpio_pin",
             "template": "Read a GPIO pin",
             "description": "Read input from one or more of the microbit GPIO pins.",
+            "docPath": "/teachertool"
+        },
+        {
+            "id": "7C2F70AB-2A00-4E35-8227-E5756957D7B3",
+            "use": "on_shake_gesture",
+            "template": "Runs code when the micro:bit is shaken",
+            "description": "Runs code when the micro:bit is shaken",
+            "docPath": "/teachertool"
+        },
+        {
+            "id": "7CFD9718-E841-4286-9563-B70D2F22D8D8",
+            "use": "variable_declared_called_hand",
+            "template": "Declares a variable called 'hand'",
+            "description": "Declares a variable called 'hand'",
+            "hideInCatalog": false,
+            "docPath": "/teachertool"
+        },
+        {
+            "id": "67FB5A95-57A8-4496-8865-F682923C36F7",
+            "use": "pick_random_exists",
+            "template": "Utilizes the pick random block",
+            "description": "Utilizes the pick random block",
+            "docPath": "/teachertool"
+        },
+        {
+            "id": "BBD02C45-8515-4936-B99F-8FF29025C333",
+            "use": "conditional_exists",
+            "template": "Utilizes the if/else block",
+            "description": "Utilizes the if/else block",
+            "docPath": "/teachertool"
+        },
+        {
+            "id": "499EEFAB-2487-427E-8081-28EE031C7D17",
+            "use": "hand_equal_to_number",
+            "template": "Checks the value of the variable 'hand'",
+            "description": "Checks the value of the variable 'hand'",
+            "hideInCatalog": false,
+            "docPath": "/teachertool"
+        },
+        {
+            "id": "",
+            "use": "conditional_show_icon",
+            "template": "Show an icon on display when a condition is met",
+            "description": "Show an icon on display when a condition is met",
             "docPath": "/teachertool"
         }
     ]

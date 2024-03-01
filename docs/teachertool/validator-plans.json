@@ -55,6 +55,99 @@
                     }
                 }
             ]
+        },
+        {
+            ".desc:": "on shake gesture",
+            "name": "on_shake_gesture",
+            "threshold": 1,
+            "checks": [
+                {
+                    "validator": "blockFieldValueExists",
+                    "fieldType": "NAME",
+                    "fieldValue": "Gesture.Shake",
+                    "blockType": "device_gesture_event"
+                }
+            ]
+        },
+        {
+            ".desc": "declare a variable with name 'hand'",
+            "name": "variable_declared_called_hand",
+            "threshold": 1,
+            "checks": [
+                {
+                    "validator": "blockFieldValueExists",
+                    "fieldType": "VAR",
+                    "fieldValue": "hand",
+                    "blockType": "variables_set"
+                }
+            ]
+        },
+        {
+            ".desc": "'pick random' block is present",
+            "name": "pick_random_exists",
+            "threshold": 1,
+            "checks": [
+                {
+                    "validator": "blocksExist",
+                    "blockCounts": {
+                        "device_random": 1
+                    }
+                }
+            ]
+        },
+        {
+            ".desc": "'if/else' block is present",
+            "name": "conditional_exists",
+            "threshold": 1,
+            "checks": [
+                {
+                    "validator": "blocksExist",
+                    "blockCounts": {
+                        "controls_if": 1
+                    }
+                }
+            ]
+        },
+        {
+            ".desc": "read value of 'hand' variable",
+            "name": "hand_variable_accessed",
+            "threshold": 1,
+            "checks": [
+                {
+                    "validator": "blockFieldValueExists",
+                    "fieldType": "VAR",
+                    "fieldValue": "hand",
+                    "blockType": "variables_get"
+                }
+            ]
+        },
+        {
+            ".desc": "'hand' equal to number",
+            "name": "hand_equal_to_number",
+            "threshold": 1,
+            "checks": [
+                {
+                    "validator": "blockFieldValueExists",
+                    "fieldType": "OP",
+                    "fieldValue": "EQ",
+                    "blockType": "logic_compare",
+                    "childValidatorPlans": ["hand_variable_accessed"]
+                }
+            ]
+        },
+        {
+            ".desc": "show icon when condition is true",
+            "name": "conditional_show_icon",
+            "threshold": 1,
+            "checks": [
+                {
+                    "validator": "blocksExist",
+                    "blockCounts": {
+                        "controls_if": 1
+                    },
+                    "childValidatorPlans": ["show_icon_on_screen"]
+                }
+            ]
         }
     ]
 }

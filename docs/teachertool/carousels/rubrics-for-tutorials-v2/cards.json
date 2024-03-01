@@ -1,5 +1,7 @@
 {
     "cards": [
+    ],
+    "cards.hidden": [
         {
             "cardType": "rubric-resource",
             "cardTitle": "Pet Hamster",
