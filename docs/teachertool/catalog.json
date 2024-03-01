@@ -17,7 +17,7 @@
             "id": "18C44CC4-497F-45EC-90FA-CE7DB117AD03",
             "use": "set_radio_group_on_start",
             "template": "Sets the radio group on startup",
-            "description": "The 'radio set group' block is called on startup.",
+            "description": "The 'radio set group' block is called in the 'on start' event.",
             "hideInCatalog": true,
             "docPath": "/teachertool"
         },
