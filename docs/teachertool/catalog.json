@@ -12,6 +12,54 @@
             "template": "Read a GPIO pin",
             "description": "Read input from one or more of the microbit GPIO pins.",
             "docPath": "/teachertool"
+        },
+        {
+            "id": "18C44CC4-497F-45EC-90FA-CE7DB117AD03",
+            "use": "set_radio_group_on_start",
+            "template": "Sets the radio group on startup",
+            "description": "The 'radio set group' block is called on startup.",
+            "hideInCatalog": true,
+            "docPath": "/teachertool"
+        },
+        {
+            "id": "7ECB3AD5-F1C1-4106-9259-802B2E69A7A2",
+            "use": "send_radio_string_on_button_press",
+            "template": "Sends a radio string in response to a button press",
+            "description": "The 'radio send string' block is called inside a button press event",
+            "hideInCatalog": true,
+            "docPath": "/teachertool"
+        },
+        {
+            "id": "FAA97F77-C9F5-4D58-A3D5-47F965F4B6E2",
+            "use": "any_on_radio_received",
+            "template": "Listens for incoming radio messages",
+            "description": "Any 'on radio received' event (string, number, or name+value) is present.",
+            "hideInCatalog": true,
+            "docPath": "/teachertool"
+        },
+        {
+            "id": "D249AB3E-2620-4E33-911E-284303455365",
+            "use": "on_radio_received_and_displayed",
+            "template": "Displays received radio message on the screen",
+            "description": "A 'show' block is called with the received message inside the 'on radio received' event.",
+            "hideInCatalog": true,
+            "docPath": "/teachertool"
+        },
+        {
+            "id": "2DAFFA26-145E-472D-AA39-F46BA7E78F81",
+            "use": "multiple_send_radio_string_on_button_press",
+            "template": "Bonus: sends additional strings on different button events",
+            "description": "More than one 'on button pressed' event is present and sends a string.",
+            "hideInCatalog": true,
+            "docPath": "/teachertool"
+        },
+        {
+            "id": "1389B52A-F6E8-40B0-9B65-4C0FD221B7AB",
+            "use": "multiple_set_radio_group",
+            "template": "Bonus: Can send secret messages by changing the radio group",
+            "description": "Logic exists to change the radio group beyond the initial value on startup.",
+            "hideInCatalog": true,
+            "docPath": "/teachertool"
         }
     ]
 }

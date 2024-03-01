@@ -55,6 +55,161 @@
                     }
                 }
             ]
+        },
+        {
+            ".desc": "Set the radio group.",
+            "name": "set_radio_group",
+            "threshold": 1,
+            "checks": [
+                {
+                    "validator": "blocksExist",
+                    "blockCounts": {
+                        "radio_set_group": 1
+                    }
+                }
+            ]
+        },
+        {
+            ".desc": "Set the radio group.",
+            "name": "multiple_set_radio_group",
+            "threshold": 1,
+            "checks": [
+                {
+                    "validator": "blocksExist",
+                    "blockCounts": {
+                        "radio_set_group": 2
+                    }
+                }
+            ]
+        },
+        {
+            ".desc": "Send a string over radio.",
+            "name": "send_radio_string",
+            "threshold": 1,
+            "checks": [
+                {
+                    "validator": "blocksExist",
+                    "blockCounts": {
+                        "radio_datagram_send_string": 1
+                    }
+                }
+            ]
+        },
+        {
+            ".desc": "shows a parameter variable value on the screen",
+            "name": "show_parameter_value_on_screen",
+            "threshold": 1,
+            "checks": [
+                {
+                    "validator": "blocksExist",
+                    "blockCounts": {
+                        "device_print_message": 1
+                    },
+                    "childValidatorPlans": ["parameter_variable_accessed"]
+                },
+                {
+                    "validator": "blocksExist",
+                    "blockCounts": {
+                        "device_show_number": 1
+                    },
+                    "childValidatorPlans": ["numeric_parameter_variable_accessed"]
+                }
+            ]
+        },
+        {
+            ".desc": "set radio group on start",
+            "name": "set_radio_group_on_start",
+            "threshold": 1,
+            "checks": [
+                {
+                    "validator": "blocksExist",
+                    "blockCounts": {
+                        "pxt-on-start": 1
+                    },
+                    "childValidatorPlans": ["set_radio_group"]
+                }
+            ]
+        },
+        {
+            ".desc": "send radio string in button press event.",
+            "name": "send_radio_string_on_button_press",
+            "threshold": 1,
+            "checks": [
+                {
+                    "validator": "blocksExist",
+                    "blockCounts": {
+                        "device_button_event": 1
+                    },
+                    "childValidatorPlans": ["send_radio_string"]
+                }
+            ]
+        },
+        {
+            ".desc": "send radio string in button press event.",
+            "name": "multiple_send_radio_string_on_button_press",
+            "threshold": 1,
+            "checks": [
+                {
+                    "validator": "blocksExist",
+                    "blockCounts": {
+                        "device_button_event": 2
+                    },
+                    "childValidatorPlans": ["send_radio_string"]
+                }
+            ]
+        },
+        {
+            ".desc": "one or more of the possible 'on radio received' blocks are present",
+            "name": "any_on_radio_received",
+            "threshold": 1,
+            "checks": [
+                {
+                    "validator": "blocksExist",
+                    "blockCounts": {
+                        "radio_on_number_drag": 1
+                    }
+                },
+                {
+                    "validator": "blocksExist",
+                    "blockCounts": {
+                        "radio_on_value_drag": 1
+                    }
+                },
+                {
+                    "validator": "blocksExist",
+                    "blockCounts": {
+                        "radio_on_string_drag": 1
+                    }
+                }
+            ]
+        },
+        {
+            ".desc": "one or more of the possible 'on radio received' blocks are present and display the received content on the screen.",
+            "name": "on_radio_received_and_displayed",
+            "threshold": 1,
+            "checks": [
+                {
+                    "validator": "blocksExist",
+                    "blockCounts": {
+                        "radio_on_number_drag": 1
+                    },
+                    "childValidatorPlans": ["show_parameter_value_on_screen"]
+                },
+                {
+                    "validator": "blocksExist",
+                    "blockCounts": {
+                        "radio_on_value_drag": 1
+                    },
+                    "childValidatorPlans": ["show_parameter_value_on_screen"]
+                },
+                {
+                    "validator": "blocksExist",
+                    "blockCounts": {
+                        "radio_on_string_drag": 1
+                    },
+                    "childValidatorPlans": ["show_parameter_value_on_screen"]
+                }
+            ]
         }
     ]
 }
