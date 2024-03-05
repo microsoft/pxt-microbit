@@ -9,7 +9,7 @@
                     "validator": "blocksExist",
                     "blockCounts": [
                         {
-                            "block_id": "basic_show_icon",
+                            "blockId": "basic_show_icon",
                             "count": 1
                         }
                     ]
@@ -25,7 +25,7 @@
                     "validator": "blocksExist",
                     "blockCounts": [
                         {
-                            "block_id": "device_pin_event",
+                            "blockId": "device_pin_event",
                             "count": 1
                         }
                     ]
@@ -34,7 +34,7 @@
                     "validator": "blocksExist",
                     "blockCounts": [
                         {
-                            "block_id": "device_pin_is_pressed",
+                            "blockId": "device_pin_is_pressed",
                             "count": 1
                         }
                     ]
@@ -43,7 +43,7 @@
                     "validator": "blocksExist",
                     "blockCounts": [
                         {
-                            "block_id": "device_pin_released",
+                            "blockId": "device_pin_released",
                             "count": 1
                         }
                     ]
@@ -52,7 +52,7 @@
                     "validator": "blocksExist",
                     "blockCounts": [
                         {
-                            "block_id": "device_get_digital_pin",
+                            "blockId": "device_get_digital_pin",
                             "count": 1
                         }
                     ]
@@ -61,7 +61,7 @@
                     "validator": "blocksExist",
                     "blockCounts": [
                         {
-                            "block_id": "device_get_analog_pin",
+                            "blockId": "device_get_analog_pin",
                             "count": 1
                         }
                     ]
@@ -70,7 +70,7 @@
                     "validator": "blocksExist",
                     "blockCounts": [
                         {
-                            "block_id": "pins_on_pulsed",
+                            "blockId": "pins_on_pulsed",
                             "count": 1
                         }
                     ]
@@ -86,7 +86,7 @@
                     "validator": "blocksExist",
                     "blockCounts": [
                         {
-                            "block_id": "radio_set_group",
+                            "blockId": "radio_set_group",
                             "count": 1
                         }
                     ]
@@ -102,7 +102,7 @@
                     "validator": "blocksExist",
                     "blockCounts": [
                         {
-                            "block_id": "radio_datagram_send_string",
+                            "blockId": "radio_datagram_send_string",
                             "count": 1
                         }
                     ]
@@ -118,7 +118,7 @@
                     "validator": "blocksExist",
                     "blockCounts": [
                         {
-                            "block_id": "device_print_message",
+                            "blockId": "device_print_message",
                             "count": 1
                         }
                     ],
@@ -128,7 +128,7 @@
                     "validator": "blocksExist",
                     "blockCounts": [
                         {
-                            "block_id": "device_show_number",
+                            "blockId": "device_show_number",
                             "count": 1
                         }
                     ],
@@ -145,7 +145,7 @@
                     "validator": "blocksExist",
                     "blockCounts": [
                         {
-                            "block_id": "pxt-on-start",
+                            "blockId": "pxt-on-start",
                             "count": 1
                         }
                     ],
@@ -162,7 +162,7 @@
                     "validator": "blocksExist",
                     "blockCounts": [
                         {
-                            "block_id": "device_button_event",
+                            "blockId": "device_button_event",
                             "count": 1
                         }
                     ],
@@ -179,7 +179,7 @@
                     "validator": "blocksExist",
                     "blockCounts": [
                         {
-                            "block_id": "radio_on_number_drag",
+                            "blockId": "radio_on_number_drag",
                             "count": 1
                         }
                     ]
@@ -188,7 +188,7 @@
                     "validator": "blocksExist",
                     "blockCounts": [
                         {
-                            "block_id": "radio_on_value_drag",
+                            "blockId": "radio_on_value_drag",
                             "count": 1
                         }
                     ]
@@ -197,7 +197,7 @@
                     "validator": "blocksExist",
                     "blockCounts": [
                         {
-                            "block_id": "radio_on_string_drag",
+                            "blockId": "radio_on_string_drag",
                             "count": 1
                         }
                     ]
@@ -213,7 +213,7 @@
                     "validator": "blocksExist",
                     "blockCounts": [
                         {
-                            "block_id": "radio_on_number_drag",
+                            "blockId": "radio_on_number_drag",
                             "count": 1
                         }
                     ],
@@ -223,7 +223,7 @@
                     "validator": "blocksExist",
                     "blockCounts": [
                         {
-                            "block_id": "radio_on_value_drag",
+                            "blockId": "radio_on_value_drag",
                             "count": 1
                         }
                     ],
@@ -233,7 +233,7 @@
                     "validator": "blocksExist",
                     "blockCounts": [
                         {
-                            "block_id": "radio_on_string_drag",
+                            "blockId": "radio_on_string_drag",
                             "count": 1
                         }
                     ],
@@ -276,7 +276,7 @@
                     "validator": "blocksExist",
                     "blockCounts": [
                         {
-                            "block_id": "device_random",
+                            "blockId": "device_random",
                             "count": 1
                         }
                     ]
@@ -292,7 +292,7 @@
                     "validator": "blocksExist",
                     "blockCounts": [
                         {
-                            "block_id": "controls_if",
+                            "blockId": "controls_if",
                             "count": 1
                         }
                     ]
@@ -335,7 +335,7 @@
                     "validator": "blocksExist",
                     "blockCounts": [
                         {
-                            "block_id": "controls_if",
+                            "blockId": "controls_if",
                             "count": 1
                         }
                     ],
