@@ -236,16 +236,28 @@
             ]
         },
         {
-            ".desc": "forever loop nests a repeat loop in its body",
-            "name": "forever_nested_repeat_loop",
+            ".desc": "forever loop is in the program",
+            "name": "forever_used",
             "threshold": 1,
             "checks": [
                 {
                     "validator": "blocksExist",
                     "blockCounts": {
                         "device_forever": 1
-                    },
-                    "childValidatorPlans": ["repeat_loop_nested_conditions"]
+                    }
+                }
+            ]
+        },
+        {
+            ".desc": "repeat loop is in the program",
+            "name": "repeat_loop_used",
+            "threshold": 1,
+            "checks": [
+                {
+                    "validator": "blocksExist",
+                    "blockCounts": {
+                        "controls_repeat_ext": 1
+                    }
                 }
             ]
         },
@@ -254,6 +266,27 @@
             "name": "show_icon_on_start",
             "threshold": 1,
             "checks": [
+                {
+                    "validator": "blocksExist",
+                    "blockCounts": {
+                        "pxt-on-start": 1
+                    },
+                    "childValidatorPlans": ["show_icon_on_screen"]
+                }
+            ]
+        },
+        {
+            ".desc": "checks that the program aligns to the end tutorial program",
+            "name": "blow_away_completeness",
+            "threshold": 2,
+            "checks": [
+                {
+                    "validator": "blocksExist",
+                    "blockCounts": {
+                        "device_forever": 1
+                    },
+                    "childValidatorPlans": ["repeat_loop_nested_conditions"]
+                },
                 {
                     "validator": "blocksExist",
                     "blockCounts": {

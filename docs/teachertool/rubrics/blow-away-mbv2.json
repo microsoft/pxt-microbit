@@ -2,6 +2,14 @@
     "name": "Blow Away",
     "criteria": [
         {
+            "catalogCriteriaId": "ECC79C65-56DC-44A9-98FC-147F5EED87CC",
+            "instanceId": "fggyi4CNUVLjYUPUVwb84"
+        },
+        {
+            "catalogCriteriaId": "5934E4C6-7AE4-46A4-8F92-99101987D064",
+            "instanceId": "-3sSPpeXd-M2WaHObA1yq"
+        },
+        {
             "catalogCriteriaId": "A4F05FAB-72F2-48F5-8E33-7AE2CBB6CD43",
             "instanceId": "2H_lA-5kA1bpPhHitt_Gs"
         },
@@ -48,10 +56,6 @@
         {
             "catalogCriteriaId": "46AFEDA3-35CB-4041-BEC4-53C0D29E57BA",
             "instanceId": "GgG4fod3VaXUTGYbW7Utj"
-        },
-        {
-            "catalogCriteriaId": "5934E4C6-7AE4-46A4-8F92-99101987D064",
-            "instanceId": "-3sSPpeXd-M2WaHObA1yq"
         }
     ]
 }

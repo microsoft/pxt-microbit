@@ -31,7 +31,7 @@
             "id": "B835FAA0-8CA6-4E4A-95B4-7FC6D15231BD",
             "use": "soundlevel_gt_condition",
             "template": "If sound level is greater than a number, then two variables are set to random values",
-            "description": "In the if chunk of code that checks that sound level is greater than a number, variables 'row' and 'col' are set to random values",
+            "description": "In the if that checks sound level is greater than a number, variables 'row' and 'col' are set to random values",
             "hideInCatalog": true,
             "docPath": "/teachertool"
         },
@@ -52,7 +52,7 @@
         {
             "id": "01A65046-D4BE-44B6-8273-7A878A71B3D0",
             "use": "point_bool_check",
-            "template": "Check that an LED point is lit on the LED screen",
+            "template": "Check that a point is lit on the LED screen",
             "description": "At point 'row', 'col' on the LED screen, the LED is lit",
             "hideInCatalog": true,
             "docPath": "/teachertool"
@@ -83,17 +83,17 @@
         },
         {
             "id": "1B331451-081E-4F26-9CB6-F5A649432BF9",
-            "use": "repeat_loop_nested_conditions",
-            "template": "Repeat loop holds all main program logic",
-            "description": "Checks that the repeat loop has two if conditions, and everything within those conditions looks as expected",
+            "use": "repeat_loop_used",
+            "template": "Repeat loop is used",
+            "description": "A repeat loop is found in the program",
             "hideInCatalog": true,
             "docPath": "/teachertool"
         },
         {
             "id": "A4F05FAB-72F2-48F5-8E33-7AE2CBB6CD43",
-            "use": "forever_nested_repeat_loop",
-            "template": "Forever loop nests a repeat loop that holds all main program logic",
-            "description": "Checks that the forever loop and all of its children exist within the loop. Essentially checks that the whole program looks as expected",
+            "use": "forever_used",
+            "template": "Forever loop is used",
+            "description": "A forever loop is found in the program",
             "hideInCatalog": true,
             "docPath": "/teachertool"
         },
@@ -109,8 +109,15 @@
             "id": "0B2BC680-D79D-42C8-BA13-B6B189E2BF7D",
             "use": "point_condition",
             "template": "If an LED point is truthy, then uplot that point and plot a new point",
-            "description": "In the if chunk of code that checks that an LED point is truthy, a point is unplotted and a new point is plotted",
+            "description": "In the if that checks an LED point, that point is unplotted and a new point is plotted",
             "hideInCatalog": true,
+            "docPath": "/teachertool"
+        },
+        {
+            "id": "ECC79C65-56DC-44A9-98FC-147F5EED87CC",
+            "use": "blow_away_completeness",
+            "template": "Project completeness",
+            "description": "The project contains all the required blocks by the end of the tutorial",
             "docPath": "/teachertool"
         }
     ]
