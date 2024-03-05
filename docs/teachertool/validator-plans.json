@@ -112,7 +112,7 @@
             ]
         },
         {
-            ".desc": "variable with name col is accessed //no catalog entry",
+            ".desc": "variable with name col is accessed",
             "name": "col_variable_accessed",
             "threshold": 1,
             "checks": [
@@ -125,7 +125,7 @@
             ]
         },
         {
-            ".desc": "variable with name col is accessed //no catalog entry",
+            ".desc": "variable with name col is accessed",
             "name": "row_variable_accessed",
             "threshold": 1,
             "checks": [
@@ -152,7 +152,7 @@
             ]
         },
         {
-            ".desc": "point block used for boolean check //no catalog entry",
+            ".desc": "point block used for boolean check",
             "name": "point_bool_check",
             "threshold": 1,
             "checks": [
@@ -180,7 +180,7 @@
             ]
         },
         {
-            ".desc": "variable with name col is accessed //no catalog entry",
+            ".desc": "variable with name col is accessed",
             "name": "col_add_num",
             "threshold": 1,
             "checks": [
