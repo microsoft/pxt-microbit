@@ -23,15 +23,15 @@
         {
             "id": "F82F6BB4-2B1C-4CFF-92BA-65CE63DD6399",
             "use": "soundlevel_greater_than_check",
-            "template": "Check that the sound level is greater than a number",
+            "template": "Check that the sound level is greater than some number",
             "hideInCatalog": true,
             "docPath": "/teachertool"
         },
         {
             "id": "B835FAA0-8CA6-4E4A-95B4-7FC6D15231BD",
             "use": "soundlevel_gt_condition",
-            "template": "If sound level is greater than a number, then two variables are set to random values",
-            "description": "In the if that checks sound level is greater than a number, variables 'row' and 'col' are set to random values",
+            "template": "If a detected sound level is greater than some number, then two variables are set to random values",
+            "description": "An if statement checks a detected sound level is greater than a predetermined number. If this is true, variables 'row' and 'col' are set to random values",
             "hideInCatalog": true,
             "docPath": "/teachertool"
         },
@@ -52,24 +52,23 @@
         {
             "id": "01A65046-D4BE-44B6-8273-7A878A71B3D0",
             "use": "point_bool_check",
-            "template": "Check that a point is lit on the LED screen",
-            "description": "At point 'row', 'col' on the LED screen, the LED is lit",
+            "template": "Check that an LED is lit on the screen",
+            "description": "At the spot 'col', 'row' on the LED screen, the LED is on",
             "hideInCatalog": true,
             "docPath": "/teachertool"
         },
         {
             "id": "E3286B6D-5BEB-43EC-B246-C956AAC34C3E",
             "use": "unplot_vars_used",
-            "template": "Unplot a point on the LED screen at 'col', 'row'",
-            "description": "The unplot block is used to unset the LED at the position 'col', 'row'",
+            "template": "Unplot a point on the LED screen at position 'col', 'row'",
+            "description": "Uses the block that turns off an LED",
             "hideInCatalog": true,
             "docPath": "/teachertool"
         },
         {
             "id": "46AFEDA3-35CB-4041-BEC4-53C0D29E57BA",
             "use": "col_add_num",
-            "template": "Perform addition between the 'col' variable and a number",
-            "description": "Arithmetic, paritciularly addition, is performed between the 'col' variable and a number",
+            "template": "Sum the value of the 'col' variable and a given number",
             "hideInCatalog": true,
             "docPath": "/teachertool"
         },
@@ -77,7 +76,7 @@
             "id": "6BA59761-9464-4C8D-9D8F-E8985273FB92",
             "use": "plot_vars_used",
             "template": "Plot a point on the LED screen at position 'col' + 1, 'row'",
-            "description": "The plot block sets the LED at the position 'col' + 1, 'row'",
+            "description": "Uses the block that turns on an LED",
             "hideInCatalog": true,
             "docPath": "/teachertool"
         },
@@ -109,7 +108,7 @@
             "id": "0B2BC680-D79D-42C8-BA13-B6B189E2BF7D",
             "use": "point_condition",
             "template": "If an LED point is truthy, then uplot that point and plot a new point",
-            "description": "In the if that checks an LED point, that point is unplotted and a new point is plotted",
+            "description": "An if statment checks that a specific LED is on/1/true. If this is true, turn that light off and turn on a new light",
             "hideInCatalog": true,
             "docPath": "/teachertool"
         },
