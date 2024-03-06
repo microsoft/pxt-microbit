@@ -350,9 +350,12 @@
             "checks": [
                 {
                     "validator": "blocksExist",
-                    "blockCounts": {
-                        "device_get_sound_level": 1
-                    }
+                    "blockCounts": [
+                        {
+                            "blockId": "device_get_sound_level",
+                            "count": 1
+                        }
+                    ]
                 }
             ]
         },
@@ -431,9 +434,12 @@
             "checks": [
                 {
                     "validator": "blocksExist",
-                    "blockCounts": {
-                        "controls_if": 1
-                    },
+                    "blockCounts": [
+                        {
+                            "blockId": "controls_if",
+                            "count": 1
+                        }
+                    ],
                     "childValidatorPlans": ["soundlevel_greater_than_check", "row_variable_set_random", "col_variable_set_random"]
                 }
             ]
@@ -445,9 +451,12 @@
             "checks": [
                 {
                     "validator": "blocksExist",
-                    "blockCounts": {
-                        "device_point": 1
-                    },
+                    "blockCounts": [
+                        {
+                            "blockId": "device_point",
+                            "count": 1
+                        }
+                    ],
                     "childValidatorPlans": ["row_variable_accessed", "col_variable_accessed"]
                 }
             ]
@@ -459,9 +468,12 @@
             "checks": [
                 {
                     "validator": "blocksExist",
-                    "blockCounts": {
-                        "device_unplot": 1
-                    },
+                    "blockCounts": [
+                        {
+                            "blockId": "device_unplot",
+                            "count": 1
+                        }
+                    ],
                     "childValidatorPlans": ["col_variable_accessed", "row_variable_accessed"]
                 }
             ]
@@ -487,9 +499,12 @@
             "checks": [
                 {
                     "validator": "blocksExist",
-                    "blockCounts": {
-                        "device_plot": 1
-                    },
+                    "blockCounts": [
+                        {
+                            "blockId": "device_plot",
+                            "count": 1
+                        }
+                    ],
                     "childValidatorPlans": ["col_add_num", "row_variable_accessed"]
                 }
             ]
@@ -501,9 +516,12 @@
             "checks": [
                 {
                     "validator": "blocksExist",
-                    "blockCounts": {
-                        "controls_if": 1
-                    },
+                    "blockCounts":[
+                        {
+                            "blockId": "controls_if",
+                            "count": 1
+                        }
+                    ],
                     "childValidatorPlans": ["point_bool_check" , "unplot_vars_used", "plot_vars_used"]
                 }
             ]
@@ -515,9 +533,12 @@
             "checks": [
                 {
                     "validator": "blocksExist",
-                    "blockCounts": {
-                        "controls_repeat_ext": 1
-                    },
+                    "blockCounts": [
+                        {
+                            "blockId": "controls_repeat_ext",
+                            "count": 1
+                        }
+                    ],
                     "childValidatorPlans": ["point_condition" , "soundlevel_gt_condition"]
                 }
             ]
@@ -529,9 +550,12 @@
             "checks": [
                 {
                     "validator": "blocksExist",
-                    "blockCounts": {
-                        "device_forever": 1
-                    }
+                    "blockCounts": [
+                        {
+                            "blockId": "device_forever",
+                            "count": 1
+                        }
+                    ]
                 }
             ]
         },
@@ -542,9 +566,12 @@
             "checks": [
                 {
                     "validator": "blocksExist",
-                    "blockCounts": {
-                        "controls_repeat_ext": 1
-                    }
+                    "blockCounts": [
+                        {
+                            "blockId": "controls_repeat_ext",
+                            "count": 1
+                        }
+                    ]
                 }
             ]
         },
@@ -555,9 +582,12 @@
             "checks": [
                 {
                     "validator": "blocksExist",
-                    "blockCounts": {
-                        "pxt-on-start": 1
-                    },
+                    "blockCounts": [
+                        {
+                            "blockId": "pxt-on-start",
+                            "count": 1
+                        }
+                    ],
                     "childValidatorPlans": ["show_icon_on_screen"]
                 }
             ]
@@ -569,16 +599,22 @@
             "checks": [
                 {
                     "validator": "blocksExist",
-                    "blockCounts": {
-                        "device_forever": 1
-                    },
+                    "blockCounts": [
+                        {
+                            "blockId": "device_forever",
+                            "count": 1
+                        }
+                    ],
                     "childValidatorPlans": ["repeat_loop_nested_conditions"]
                 },
                 {
                     "validator": "blocksExist",
-                    "blockCounts": {
-                        "pxt-on-start": 1
-                    },
+                    "blockCounts": [
+                        {
+                            "blockId": "pxt-on-start",
+                            "count": 1
+                        }
+                    ],
                     "childValidatorPlans": ["show_icon_on_screen"]
                 }
             ]
