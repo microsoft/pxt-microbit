@@ -1,5 +1,11 @@
 {
     "cards": [
+        {
+            "cardType": "rubric-resource",
+            "cardTitle": "Blow Away",
+            "imageUrl": "/static/mb/projects/blow-away.png",
+            "rubricUrl": "/teachertool/rubrics/blow-away-mbv2.json"
+        }
     ],
     "cards.hidden": [
         {
@@ -25,12 +31,6 @@
             "cardTitle": "Clap Lights",
             "imageUrl": "/static/mb/projects/clap-lights.png",
             "rubricUrl": "/teachertool/rubrics/clap-lights-mbv2.json"
-        },
-        {
-            "cardType": "rubric-resource",
-            "cardTitle": "Blow Away",
-            "imageUrl": "/static/mb/projects/blow-away.png",
-            "rubricUrl": "/teachertool/rubrics/blow-away-mbv2.json"
         },
         {
             "cardType": "rubric-resource",
