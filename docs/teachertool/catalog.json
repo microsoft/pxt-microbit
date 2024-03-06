@@ -53,14 +53,14 @@
             "id": "01A65046-D4BE-44B6-8273-7A878A71B3D0",
             "use": "point_bool_check",
             "template": "Check that an LED is lit on the screen",
-            "description": "At the spot 'col', 'row' on the LED screen, the LED is on",
+            "description": "At the spot ('col', 'row') on the LED screen, the LED is on",
             "hideInCatalog": true,
             "docPath": "/teachertool"
         },
         {
             "id": "E3286B6D-5BEB-43EC-B246-C956AAC34C3E",
             "use": "unplot_vars_used",
-            "template": "Unplot a point on the LED screen at position 'col', 'row'",
+            "template": "Unplot a point on the LED screen at position ('col', 'row')",
             "description": "Uses the block that turns off an LED",
             "hideInCatalog": true,
             "docPath": "/teachertool"
@@ -75,7 +75,7 @@
         {
             "id": "6BA59761-9464-4C8D-9D8F-E8985273FB92",
             "use": "plot_vars_used",
-            "template": "Plot a point on the LED screen at position 'col' + 1, 'row'",
+            "template": "Plot a point on the LED screen at position ('col' + 1, 'row')",
             "description": "Uses the block that turns on an LED",
             "hideInCatalog": true,
             "docPath": "/teachertool"
