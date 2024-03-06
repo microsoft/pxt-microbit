@@ -60,8 +60,7 @@
         {
             "id": "E3286B6D-5BEB-43EC-B246-C956AAC34C3E",
             "use": "unplot_vars_used",
-            "template": "Unplot a point on the LED screen at position ('col', 'row')",
-            "description": "Uses the block that turns off an LED",
+            "template": "Turn off an LED at point ('col', 'row')",
             "hideInCatalog": true,
             "docPath": "/teachertool"
         },
@@ -75,8 +74,7 @@
         {
             "id": "6BA59761-9464-4C8D-9D8F-E8985273FB92",
             "use": "plot_vars_used",
-            "template": "Plot a point on the LED screen at position ('col' + 1, 'row')",
-            "description": "Uses the block that turns on an LED",
+            "template": "Turn on an LED at point ('col' + 1, 'row')",
             "hideInCatalog": true,
             "docPath": "/teachertool"
         },
