@@ -180,7 +180,6 @@
             "id": "0B2BC680-D79D-42C8-BA13-B6B189E2BF7D",
             "use": "point_condition",
             "template": "If an LED is on, turn it off and light up a different LED",
-            "description": "An if statement checks that a specific LED is lit, turns that light off, and then turns on a new light",
             "hideInCatalog": true,
             "docPath": "/teachertool"
         },
