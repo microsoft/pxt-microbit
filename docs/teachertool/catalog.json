@@ -106,7 +106,7 @@
             "id": "0B2BC680-D79D-42C8-BA13-B6B189E2BF7D",
             "use": "point_condition",
             "template": "If an LED point is truthy, then uplot that point and plot a new point",
-            "description": "An if statment checks that a specific LED is on/1/true. If this is true, turn that light off and turn on a new light",
+            "description": "An if statment checks that a specific LED is lit, turns that light off, and then turns on a new light",
             "hideInCatalog": true,
             "docPath": "/teachertool"
         },
