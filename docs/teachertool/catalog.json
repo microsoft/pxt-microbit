@@ -114,7 +114,7 @@
             "id": "ECC79C65-56DC-44A9-98FC-147F5EED87CC",
             "use": "blow_away_completeness",
             "template": "Project completeness",
-            "description": "The project contains all the required blocks by the end of the tutorial",
+            "description": "The project contains all the blocks required at the end of the tutorial",
             "docPath": "/teachertool"
         }
     ]
