@@ -3,7 +3,7 @@
         {
             "id": "D285D79B-85E5-4C8D-82D2-5A9E35AB1163",
             "use": "show_icon_on_screen",
-            "template": "Show an icon on the LED screen",
+            "template": "Show an icon on the display",
             "docPath": "/teachertool"
         },
         {
@@ -11,6 +11,82 @@
             "use": "read_gpio_pin",
             "template": "Read a GPIO pin",
             "description": "Read input from one or more of the microbit GPIO pins.",
+            "docPath": "/teachertool"
+        },
+        {
+            "id": "18C44CC4-497F-45EC-90FA-CE7DB117AD03",
+            "use": "set_radio_group_on_start",
+            "template": "Sets the radio group on startup",
+            "description": "The 'radio set group' block is called in the 'on start' event.",
+            "hideInCatalog": true,
+            "docPath": "/teachertool"
+        },
+        {
+            "id": "7ECB3AD5-F1C1-4106-9259-802B2E69A7A2",
+            "use": "send_radio_string_on_button_press",
+            "template": "Sends a radio string when a button is pressed",
+            "description": "The 'radio send string' block is called inside a button press event",
+            "hideInCatalog": true,
+            "docPath": "/teachertool"
+        },
+        {
+            "id": "FAA97F77-C9F5-4D58-A3D5-47F965F4B6E2",
+            "use": "any_on_radio_received",
+            "template": "Listens for incoming radio messages",
+            "description": "Any 'on radio received' event (string, number, or name + value) is present.",
+            "hideInCatalog": true,
+            "docPath": "/teachertool"
+        },
+        {
+            "id": "D249AB3E-2620-4E33-911E-284303455365",
+            "use": "on_radio_received_and_displayed",
+            "template": "Displays the received radio message on the screen",
+            "description": "A 'show' block is called with the received message inside the 'on radio received' event.",
+            "hideInCatalog": true,
+            "docPath": "/teachertool"
+        },
+        {
+            "id": "7C2F70AB-2A00-4E35-8227-E5756957D7B3",
+            "use": "on_shake_gesture",
+            "template": "Runs code when the micro:bit is shaken",
+            "description": "When the user shakes the micro:bit, the code inside this block will run.",
+            "docPath": "/teachertool"
+        },
+        {
+            "id": "7CFD9718-E841-4286-9563-B70D2F22D8D8",
+            "use": "variable_declared_called_hand",
+            "template": "Declares a variable called 'hand'",
+            "description": "The project includes a variable called 'hand'",
+            "hideInCatalog": true,
+            "docPath": "/teachertool"
+        },
+        {
+            "id": "67FB5A95-57A8-4496-8865-F682923C36F7",
+            "use": "pick_random_exists",
+            "template": "Utilizes the pick random block",
+            "description": "The project utilizes the pick random block",
+            "docPath": "/teachertool"
+        },
+        {
+            "id": "BBD02C45-8515-4936-B99F-8FF29025C333",
+            "use": "conditional_exists",
+            "template": "Utilizes the if/else block",
+            "description": "The project includes at least one conditional block",
+            "docPath": "/teachertool"
+        },
+        {
+            "id": "499EEFAB-2487-427E-8081-28EE031C7D17",
+            "use": "hand_equal_to_number",
+            "template": "Checks the value of the variable 'hand'",
+            "description": "The project checks the value of the variable 'hand'",
+            "hideInCatalog": true,
+            "docPath": "/teachertool"
+        },
+        {
+            "id": "FD7E03B7-53F2-41B9-93ED-51AEA864468E",
+            "use": "conditional_show_icon",
+            "template": "Show an icon on display when a condition is met",
+            "description": "The project shows an icon on the display when a condition is met",
             "docPath": "/teachertool"
         },
         {

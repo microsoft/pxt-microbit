@@ -7,9 +7,12 @@
             "checks": [
                 {
                     "validator": "blocksExist",
-                    "blockCounts": {
-                        "basic_show_icon": 1
-                    }
+                    "blockCounts": [
+                        {
+                            "blockId": "basic_show_icon",
+                            "count": 1
+                        }
+                    ]
                 }
             ]
         },
@@ -20,39 +23,323 @@
             "checks": [
                 {
                     "validator": "blocksExist",
-                    "blockCounts": {
-                        "device_pin_event": 1
-                    }
+                    "blockCounts": [
+                        {
+                            "blockId": "device_pin_event",
+                            "count": 1
+                        }
+                    ]
                 },
                 {
                     "validator": "blocksExist",
-                    "blockCounts": {
-                        "device_pin_is_pressed": 1
-                    }
+                    "blockCounts": [
+                        {
+                            "blockId": "device_pin_is_pressed",
+                            "count": 1
+                        }
+                    ]
                 },
                 {
                     "validator": "blocksExist",
-                    "blockCounts": {
-                        "device_pin_released": 1
-                    }
+                    "blockCounts": [
+                        {
+                            "blockId": "device_pin_released",
+                            "count": 1
+                        }
+                    ]
                 },
                 {
                     "validator": "blocksExist",
-                    "blockCounts": {
-                        "device_get_digital_pin": 1
-                    }
+                    "blockCounts": [
+                        {
+                            "blockId": "device_get_digital_pin",
+                            "count": 1
+                        }
+                    ]
                 },
                 {
                     "validator": "blocksExist",
-                    "blockCounts": {
-                        "device_get_analog_pin": 1
-                    }
+                    "blockCounts": [
+                        {
+                            "blockId": "device_get_analog_pin",
+                            "count": 1
+                        }
+                    ]
                 },
                 {
                     "validator": "blocksExist",
-                    "blockCounts": {
-                        "pins_on_pulsed": 1
-                    }
+                    "blockCounts": [
+                        {
+                            "blockId": "pins_on_pulsed",
+                            "count": 1
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            ".desc": "Set the radio group.",
+            "name": "set_radio_group",
+            "threshold": 1,
+            "checks": [
+                {
+                    "validator": "blocksExist",
+                    "blockCounts": [
+                        {
+                            "blockId": "radio_set_group",
+                            "count": 1
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            ".desc": "Send a string over radio.",
+            "name": "send_radio_string",
+            "threshold": 1,
+            "checks": [
+                {
+                    "validator": "blocksExist",
+                    "blockCounts": [
+                        {
+                            "blockId": "radio_datagram_send_string",
+                            "count": 1
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            ".desc": "shows a parameter variable value on the screen",
+            "name": "show_parameter_value_on_screen",
+            "threshold": 1,
+            "checks": [
+                {
+                    "validator": "blocksExist",
+                    "blockCounts": [
+                        {
+                            "blockId": "device_print_message",
+                            "count": 1
+                        }
+                    ],
+                    "childValidatorPlans": ["parameter_variable_accessed"]
+                },
+                {
+                    "validator": "blocksExist",
+                    "blockCounts": [
+                        {
+                            "blockId": "device_show_number",
+                            "count": 1
+                        }
+                    ],
+                    "childValidatorPlans": ["numeric_parameter_variable_accessed"]
+                }
+            ]
+        },
+        {
+            ".desc": "set radio group on start",
+            "name": "set_radio_group_on_start",
+            "threshold": 1,
+            "checks": [
+                {
+                    "validator": "blocksExist",
+                    "blockCounts": [
+                        {
+                            "blockId": "pxt-on-start",
+                            "count": 1
+                        }
+                    ],
+                    "childValidatorPlans": ["set_radio_group"]
+                }
+            ]
+        },
+        {
+            ".desc": "send radio string in button press event.",
+            "name": "send_radio_string_on_button_press",
+            "threshold": 1,
+            "checks": [
+                {
+                    "validator": "blocksExist",
+                    "blockCounts": [
+                        {
+                            "blockId": "device_button_event",
+                            "count": 1
+                        }
+                    ],
+                    "childValidatorPlans": ["send_radio_string"]
+                }
+            ]
+        },
+        {
+            ".desc": "one or more of the possible 'on radio received' blocks are present",
+            "name": "any_on_radio_received",
+            "threshold": 1,
+            "checks": [
+                {
+                    "validator": "blocksExist",
+                    "blockCounts": [
+                        {
+                            "blockId": "radio_on_number_drag",
+                            "count": 1
+                        }
+                    ]
+                },
+                {
+                    "validator": "blocksExist",
+                    "blockCounts": [
+                        {
+                            "blockId": "radio_on_value_drag",
+                            "count": 1
+                        }
+                    ]
+                },
+                {
+                    "validator": "blocksExist",
+                    "blockCounts": [
+                        {
+                            "blockId": "radio_on_string_drag",
+                            "count": 1
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            ".desc": "one or more of the possible 'on radio received' blocks are present and display the received content on the screen.",
+            "name": "on_radio_received_and_displayed",
+            "threshold": 1,
+            "checks": [
+                {
+                    "validator": "blocksExist",
+                    "blockCounts": [
+                        {
+                            "blockId": "radio_on_number_drag",
+                            "count": 1
+                        }
+                    ],
+                    "childValidatorPlans": ["show_parameter_value_on_screen"]
+                },
+                {
+                    "validator": "blocksExist",
+                    "blockCounts": [
+                        {
+                            "blockId": "radio_on_value_drag",
+                            "count": 1
+                        }
+                    ],
+                    "childValidatorPlans": ["show_parameter_value_on_screen"]
+                },
+                {
+                    "validator": "blocksExist",
+                    "blockCounts": [
+                        {
+                            "blockId": "radio_on_string_drag",
+                            "count": 1
+                        }
+                    ],
+                    "childValidatorPlans": ["show_parameter_value_on_screen"]
+                }
+            ]
+        },
+        {
+            ".desc:": "on shake gesture",
+            "name": "on_shake_gesture",
+            "threshold": 1,
+            "checks": [
+                {
+                    "validator": "blockFieldValueExists",
+                    "fieldType": "NAME",
+                    "fieldValue": "Gesture.Shake",
+                    "blockType": "device_gesture_event"
+                }
+            ]
+        },
+        {
+            ".desc": "declare a variable with name 'hand'",
+            "name": "variable_declared_called_hand",
+            "threshold": 1,
+            "checks": [
+                {
+                    "validator": "blockFieldValueExists",
+                    "fieldType": "VAR",
+                    "fieldValue": "hand",
+                    "blockType": "variables_set"
+                }
+            ]
+        },
+        {
+            ".desc": "'pick random' block is present",
+            "name": "pick_random_exists",
+            "threshold": 1,
+            "checks": [
+                {
+                    "validator": "blocksExist",
+                    "blockCounts": [
+                        {
+                            "blockId": "device_random",
+                            "count": 1
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            ".desc": "'if/else' block is present",
+            "name": "conditional_exists",
+            "threshold": 1,
+            "checks": [
+                {
+                    "validator": "blocksExist",
+                    "blockCounts": [
+                        {
+                            "blockId": "controls_if",
+                            "count": 1
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            ".desc": "read value of 'hand' variable",
+            "name": "hand_variable_accessed",
+            "threshold": 1,
+            "checks": [
+                {
+                    "validator": "blockFieldValueExists",
+                    "fieldType": "VAR",
+                    "fieldValue": "hand",
+                    "blockType": "variables_get"
+                }
+            ]
+        },
+        {
+            ".desc": "'hand' equal to number",
+            "name": "hand_equal_to_number",
+            "threshold": 1,
+            "checks": [
+                {
+                    "validator": "blockFieldValueExists",
+                    "fieldType": "OP",
+                    "fieldValue": "EQ",
+                    "blockType": "logic_compare",
+                    "childValidatorPlans": ["hand_variable_accessed"]
+                }
+            ]
+        },
+        {
+            ".desc": "show icon when condition is true",
+            "name": "conditional_show_icon",
+            "threshold": 1,
+            "checks": [
+                {
+                    "validator": "blocksExist",
+                    "blockCounts": [
+                        {
+                            "blockId": "controls_if",
+                            "count": 1
+                        }
+                    ],
+                    "childValidatorPlans": ["show_icon_on_screen"]
                 }
             ]
         },

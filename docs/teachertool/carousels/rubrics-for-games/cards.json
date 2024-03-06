@@ -5,7 +5,9 @@
             "cardTitle": "Rock Paper Scissors",
             "imageUrl": "/static/mb/projects/a4-motion.png",
             "rubricUrl": "/teachertool/rubrics/rock-paper-scissors.json"
-        },
+        }
+    ],
+    "cards.hidden": [
         {
             "cardType": "rubric-resource",
             "cardTitle": "Rock Paper Scissors V2",

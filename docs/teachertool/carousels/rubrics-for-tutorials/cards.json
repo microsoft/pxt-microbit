@@ -2,6 +2,14 @@
     "cards": [
         {
             "cardType": "rubric-resource",
+            "cardTitle": "Micro Chat",
+            "imageUrl": "/static/mb/projects/a9-radio.png",
+            "rubricUrl": "/teachertool/rubrics/micro-chat.json"
+        }
+    ],
+    "cards.hidden": [
+        {
+            "cardType": "rubric-resource",
             "cardTitle": "Flashing Heart",
             "imageUrl": "/static/mb/projects/a1-display.png",
             "rubricUrl": "/teachertool/rubrics/flashing-heart.json"
@@ -29,12 +37,6 @@
             "cardTitle": "Love Meter",
             "imageUrl": "/static/mb/projects/a3-pins.png",
             "rubricUrl": "/teachertool/rubrics/love-meter.json"
-        },
-        {
-            "cardType": "rubric-resource",
-            "cardTitle": "Micro Chat",
-            "imageUrl": "/static/mb/projects/a9-radio.png",
-            "rubricUrl": "/teachertool/rubrics/micro-chat.json"
         }
     ]
 }
