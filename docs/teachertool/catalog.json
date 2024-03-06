@@ -84,7 +84,6 @@
             "id": "1B331451-081E-4F26-9CB6-F5A649432BF9",
             "use": "repeat_loop_used",
             "template": "Repeat loop is used",
-            "description": "A repeat loop is found in the program",
             "hideInCatalog": true,
             "docPath": "/teachertool"
         },
@@ -92,7 +91,6 @@
             "id": "A4F05FAB-72F2-48F5-8E33-7AE2CBB6CD43",
             "use": "forever_used",
             "template": "Forever loop is used",
-            "description": "A forever loop is found in the program",
             "hideInCatalog": true,
             "docPath": "/teachertool"
         },
