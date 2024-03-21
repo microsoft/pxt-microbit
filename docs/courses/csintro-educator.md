@@ -10,6 +10,21 @@ This course takes approximately 14 weeks to complete, spending about 1 week on e
 
 The **Educator edition** is available as a set of resource materials for teaching the course in the classroom. The course materials contain the overview guides, assessment and standards guides, and the individual lesson units. The course material is provided as single complete download or the guides and lesson units can be downloaded individually. Take a look at this brief **[preview](/courses/csintro-educator/preview)** of what's included in the materials.
 
+### ~ reminder
+
+#### **Professional Development Opportunities - 2024**
+
+Douglas and Mary Kiang, the authors of this curriculum, are hosting a 3-webinar series for educators walking through the scope and sequence of the curriculum, and sharing tips and strategies for engaging students in learning to code with MakeCode and the micro:bit. They're also hosting a full-day in-person workshop on July 16th in Las Vegas as part of the [CSTA 2024 Annual Conference](https://conference.csteachers.org/event/f0c0e0a8-5ac1-4333-90c9-2eab9723af76/summary). These are free workshops with limited capacity, so secure your place by registering using the links below:
+
+* **[Webinar 1](https://msit.events.teams.microsoft.com/event/40f9ed5f-8d72-4494-bbe2-42005441f4e6@72f988bf-86f1-41af-91ab-2d7cd011db47)** : 📅 Tuesday April 30, 3 - 4 PM Pacific | 4 - 5 PM Mountain | 5 - 6 PM Central | 6 - 7 PM Eastern
+* **[Webinar 2](https://msit.events.teams.microsoft.com/event/762cfe3c-ef1a-40ec-87fd-73eacc6f1a77@72f988bf-86f1-41af-91ab-2d7cd011db47)** : 📅 Tuesday May 14, 3 - 4 PM Pacific | 4 - 5 PM Mountain | 5 - 6 PM Central | 6 - 7 PM Eastern
+* **[Webinar 3](https://msit.events.teams.microsoft.com/event/52ef14cd-07de-41be-83bc-c664d4a98aa5@72f988bf-86f1-41af-91ab-2d7cd011db47)** : 📅 Tuesday May 28, 3 - 4 PM Pacific | 4 - 5 PM Mountain | 5 - 6 PM Central | 6 - 7 PM Eastern
+* **[CSTA Preconference Workshop \*](https://forms.office.com/r/nMPk28Ymc7)**: 📅 Tuesday July 16, 9 AM - 4 PM
+
+**\* Note**: This in an in-person workshop and you must be registered for the CSTA Conference to attend.
+
+### ~
+
 ## Complete course pack
 
 The entire set of course materials is bundled together to download as one complete package, get it here:
