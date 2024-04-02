@@ -324,6 +324,22 @@ path.sim-board {
         public board: pxsim.DalBoard;
         private pinNmToCoord: Map<Coord> = {};
         private domHardwareVersion = 1;
+        private moveHeadingOnClick = (ev: MouseEvent) => {
+            let pt = this.element.createSVGPoint();
+            let cur = svg.cursorPoint(pt, this.element, ev);
+            const logoBounds = this.head.getBBox();
+            const logoCenterX = logoBounds.x + (logoBounds.width / 2);
+            const logoCenterY = logoBounds.y + (logoBounds.height / 2);
+            const distance = Math.sqrt((((cur.y - logoCenterY) ** 2) + ((cur.x - logoCenterX) ** 2)));
+
+            // 30 and 90 are not precise, just numbers that fit nicely with usage
+            if (distance > 30 && distance < 90) {
+                const state = this.board;
+                state.compassState.heading = Math.floor(Math.atan2(cur.y - logoCenterY, cur.x - logoCenterX) * 180 / Math.PI) + 90;
+                if (state.compassState.heading < 0) state.compassState.heading += 360;
+                this.updateHeading();
+            }
+        }
 
         constructor(public props: IBoardProps) {
             this.recordPinCoords();
@@ -370,6 +386,10 @@ path.sim-board {
                 let x = pinMids[i];
                 this.pinNmToCoord[nm] = [x, pinsY];
             });
+        }
+
+        public removeEventListeners() {
+            document.body.removeEventListener(pointerEvents.down[0], this.moveHeadingOnClick);
         }
 
         private updateTheme() {
@@ -1012,7 +1032,7 @@ path.sim-board {
 
             // head
             this.head = <SVGGElement>svg.child(this.g, "g", { class: "sim-head" });
-            svg.child(this.head, "circle", { cx: 258, cy: 75, r: 100, fill: "transparent" })
+            svg.child(this.head, "ellipse", { cx: 251, cy: 75, rx:75, ry: 35, fill: "transparent" })
             this.headParts = <SVGGElement>svg.child(this.head, "g", {});
             this.heads = []
             // background
@@ -1139,6 +1159,7 @@ path.sim-board {
             accessibility.setAria(this.headParts, "button", headTitle);
             this.headParts.setAttribute("class", "sim-button-outer sim-button-group")
             this.attachButtonEvents(this.board.logoTouch, this.headParts, this.headParts);
+            document.body.addEventListener(pointerEvents.down[0], this.moveHeadingOnClick);
 
             // microphone led
             const microphoneTitle = pxsim.localization.lf("microphone (micro:bit v2 needed)")
