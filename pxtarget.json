@@ -624,5 +624,5 @@
             }
         }
     },
-    "uploadDocs": true
+    "uploadDocs": false
 }
