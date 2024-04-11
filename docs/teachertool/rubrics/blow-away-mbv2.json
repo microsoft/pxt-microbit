@@ -10,20 +10,50 @@
             "instanceId": "-3sSPpeXd-M2WaHObA1yq"
         },
         {
-            "catalogCriteriaId": "A4F05FAB-72F2-48F5-8E33-7AE2CBB6CD43",
-            "instanceId": "2H_lA-5kA1bpPhHitt_Gs"
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "2H_lA-5kA1bpPhHitt_Gs",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "device_forever"
+                },
+                {
+                    "name": "count",
+                    "value": "1"
+                }
+            ]
         },
         {
-            "catalogCriteriaId": "1B331451-081E-4F26-9CB6-F5A649432BF9",
-            "instanceId": "Bw5GPuGHqfWG14AWmnvaY"
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "Bw5GPuGHqfWG14AWmnvaY",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "controls_repeat_ext"
+                },
+                {
+                    "name": "count",
+                    "value": "1"
+                }
+            ]
         },
         {
             "catalogCriteriaId": "B835FAA0-8CA6-4E4A-95B4-7FC6D15231BD",
             "instanceId": "IlpiBn6Tjn0mkjCrVGI0v"
         },
         {
-            "catalogCriteriaId": "850DBBDE-71BA-48D2-A1E4-7AC19716C976",
-            "instanceId": "rvzANbK3nhtd7dPcVBYF4"
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "rvzANbK3nhtd7dPcVBYF4",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "device_get_sound_level"
+                },
+                {
+                    "name": "count",
+                    "value": "1"
+                }
+            ]
         },
         {
             "catalogCriteriaId": "F82F6BB4-2B1C-4CFF-92BA-65CE63DD6399",
