@@ -268,38 +268,6 @@
             ]
         },
         {
-            ".desc": "'pick random' block is present",
-            "name": "pick_random_exists",
-            "threshold": 1,
-            "checks": [
-                {
-                    "validator": "blocksExist",
-                    "blockCounts": [
-                        {
-                            "blockId": "device_random",
-                            "count": 1
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            ".desc": "'if/else' block is present",
-            "name": "conditional_exists",
-            "threshold": 1,
-            "checks": [
-                {
-                    "validator": "blocksExist",
-                    "blockCounts": [
-                        {
-                            "blockId": "controls_if",
-                            "count": 1
-                        }
-                    ]
-                }
-            ]
-        },
-        {
             ".desc": "read value of 'hand' variable",
             "name": "hand_variable_accessed",
             "threshold": 1,

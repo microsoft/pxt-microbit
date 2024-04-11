@@ -62,22 +62,6 @@
             "docPath": "/teachertool"
         },
         {
-            "id": "67FB5A95-57A8-4496-8865-F682923C36F7",
-            "use": "pick_random_exists",
-            "template": "Utilizes the pick random block",
-            "description": "The project utilizes the pick random block",
-            "hideInCatalog": true,
-            "docPath": "/teachertool"
-        },
-        {
-            "id": "BBD02C45-8515-4936-B99F-8FF29025C333",
-            "use": "conditional_exists",
-            "template": "Utilizes the if/else block",
-            "description": "The project includes at least one conditional block",
-            "hideInCatalog": true,
-            "docPath": "/teachertool"
-        },
-        {
             "id": "499EEFAB-2487-427E-8081-28EE031C7D17",
             "use": "hand_equal_to_number",
             "template": "Checks the value of the variable 'hand'",

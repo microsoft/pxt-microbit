@@ -10,12 +10,32 @@
             "instanceId": "FeEhmngBzesVwrOThm8oW"
         },
         {
-            "catalogCriteriaId": "67FB5A95-57A8-4496-8865-F682923C36F7",
-            "instanceId": "qpJlRBbsZYG1q87c2vaV6"
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "qpJlRBbsZYG1q87c2vaV6",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "device_random"
+                },
+                {
+                    "name": "count",
+                    "value": "1"
+                }
+            ]
         },
         {
-            "catalogCriteriaId": "BBD02C45-8515-4936-B99F-8FF29025C333",
-            "instanceId": "EGMmpeasViCQJVazRky7f"
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "EGMmpeasViCQJVazRky7f",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "controls_if"
+                },
+                {
+                    "name": "count",
+                    "value": "1"
+                }
+            ]
         },
         {
             "catalogCriteriaId": "499EEFAB-2487-427E-8081-28EE031C7D17",
