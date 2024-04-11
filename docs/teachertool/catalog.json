@@ -50,6 +50,7 @@
             "use": "on_shake_gesture",
             "template": "Runs code when the micro:bit is shaken",
             "description": "When the user shakes the micro:bit, the code inside this block will run.",
+            "hideInCatalog": true,
             "docPath": "/teachertool"
         },
         {
@@ -65,6 +66,7 @@
             "use": "pick_random_exists",
             "template": "Utilizes the pick random block",
             "description": "The project utilizes the pick random block",
+            "hideInCatalog": true,
             "docPath": "/teachertool"
         },
         {
@@ -72,6 +74,7 @@
             "use": "conditional_exists",
             "template": "Utilizes the if/else block",
             "description": "The project includes at least one conditional block",
+            "hideInCatalog": true,
             "docPath": "/teachertool"
         },
         {
@@ -87,6 +90,7 @@
             "use": "conditional_show_icon",
             "template": "Show an icon on display when a condition is met",
             "description": "The project shows an icon on the display when a condition is met",
+            "hideInCatalog": true,
             "docPath": "/teachertool"
         },
         {
