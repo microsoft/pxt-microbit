@@ -5,14 +5,16 @@
             "use": "output_to_led_display",
             "template": "Outputs to the LED display",
             "description": "Uses at least one block that lights up LEDs",
-            "docPath": "/teachertool"
+            "docPath": "/teachertool",
+            "maxCount": 1
         },
         {
             "id": "C57344FC-B915-4ACB-A070-67F8FFC18B4B",
             "use": "read_gpio_pin",
             "template": "Read a GPIO pin",
             "description": "Read input from one or more of the microbit GPIO pins.",
-            "docPath": "/teachertool"
+            "docPath": "/teachertool",
+            "maxCount": 1
         },
         {
             "id": "18C44CC4-497F-45EC-90FA-CE7DB117AD03",
