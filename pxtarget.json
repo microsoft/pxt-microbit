@@ -596,7 +596,10 @@
         "hideReplaceMyCode": true,
         "matchWebUSBDeviceInSim": true,
         "condenseProfile": true,
-        "cloudProfileIcon": "/static/profile/microbit-cloud.png"
+        "cloudProfileIcon": "/static/profile/microbit-cloud.png",
+        "timeMachine": true,
+        "timeMachineDiffInterval": 600000,
+        "timeMachineSnapshotInterval": 1800000
     },
     "queryVariants": {
         "hidemenu": {

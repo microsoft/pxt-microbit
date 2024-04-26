@@ -747,7 +747,7 @@ declare namespace pins {
      * Configure the pulse-width modulation (PWM) period of the analog output in microseconds.
      * If this pin is not configured as an analog output (using `analog write pin`), the operation has no effect.
      * @param name analog pin to set period to, eg: AnalogPin.P0
-     * @param micros period in micro seconds. eg:20000
+     * @param micros period in microseconds. eg:20000
      */
     //% help=pins/analog-set-period weight=23 blockGap=8
     //% blockId=device_set_analog_period block="analog set period|pin %pin|to (µs)%micros"
@@ -818,7 +818,7 @@ declare namespace pins {
     /**
      * Configure the IO pin as an analog/pwm output and set a pulse width. The period is 20 ms period and the pulse width is set based on the value given in **microseconds** or `1/1000` milliseconds.
      * @param name pin name
-     * @param micros pulse duration in micro seconds, eg:1500
+     * @param micros pulse duration in microseconds, eg:1500
      */
     //% help=pins/servo-set-pulse weight=19
     //% blockId=device_set_servo_pulse block="servo set pulse|pin %value|to (µs) %micros"
@@ -859,9 +859,9 @@ declare namespace pins {
     function analogPitchVolume(): int32;
 
     /**
-     * Emit a plse-width modulation (PWM) signal to the current pitch pin. Use `analog set pitch pin` to define the pitch pin.
+     * Send a pulse-width modulation (PWM) signal to the current pitch pin. Use `analog set pitch pin` to define the pitch pin.
      * @param frequency frequency to modulate in Hz.
-     * @param ms duration of the pitch in milli seconds.
+     * @param ms duration of the pitch in milliseconds.
      */
     //% blockId=device_analog_pitch block="analog pitch %frequency|for (ms) %ms"
     //% help=pins/analog-pitch async advanced=true

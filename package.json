@@ -42,10 +42,10 @@
         "react": "16.8.3",
         "react-dom": "16.11.0",
         "semantic-ui-less": "2.4.1",
-        "typescript": "4.2.3"
+        "typescript": "4.8.3"
     },
     "dependencies": {
         "pxt-common-packages": "12.0.1",
-        "pxt-core": "10.0.18"
+        "pxt-core": "10.0.19"
     }
 }
