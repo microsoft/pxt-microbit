@@ -513,6 +513,10 @@ Many extensions are available to work with interface kits, add-on hardware, or o
 
 ```codecard
 [{
+  "name": "Gcube",
+  "url":"/pkg/roborisen/gcube",
+  "cardType": "package"
+}, {
   "name": "Roversa",
   "url":"/pkg/eb8ga/pxt-roversa-2",
   "cardType": "package"
