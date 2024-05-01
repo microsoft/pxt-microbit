@@ -1,42 +1,42 @@
 {
     "cards": [
         {
-            "cardType": "rubric-resource",
+            "cardType": "checklist-resource",
             "cardTitle": "Blow Away",
             "imageUrl": "/static/mb/projects/blow-away.png",
-            "rubricUrl": "/teachertool/rubrics/blow-away-mbv2.json"
+            "checklistUrl": "/teachertool/checklists/blow-away-mbv2.json"
         }
     ],
     "cards.hidden": [
         {
-            "cardType": "rubric-resource",
+            "cardType": "checklist-resource",
             "cardTitle": "Pet Hamster",
             "imageUrl": "/static/mb/projects/pet-hamster.png",
-            "rubricUrl": "/teachertool/rubrics/pet-hamster-mbv2.json"
+            "checklistUrl": "/teachertool/checklists/pet-hamster-mbv2.json"
         },
         {
-            "cardType": "rubric-resource",
+            "cardType": "checklist-resource",
             "cardTitle": "Countdown",
             "imageUrl": "/static/mb/projects/countdown.png",
-            "rubricUrl": "/teachertool/rubrics/countdown-mbv2.json"
+            "checklistUrl": "/teachertool/checklists/countdown-mbv2.json"
         },
         {
-            "cardType": "rubric-resource",
+            "cardType": "checklist-resource",
             "cardTitle": "Morse Chat",
             "imageUrl": "/static/mb/projects/morse-chat.png",
-            "rubricUrl": "/teachertool/rubrics/morse-chat-mbv2.json"
+            "checklistUrl": "/teachertool/checklists/morse-chat-mbv2.json"
         },
         {
-            "cardType": "rubric-resource",
+            "cardType": "checklist-resource",
             "cardTitle": "Clap Lights",
             "imageUrl": "/static/mb/projects/clap-lights.png",
-            "rubricUrl": "/teachertool/rubrics/clap-lights-mbv2.json"
+            "checklistUrl": "/teachertool/checklists/clap-lights-mbv2.json"
         },
         {
-            "cardType": "rubric-resource",
+            "cardType": "checklist-resource",
             "cardTitle": "Cat Napping",
             "imageUrl": "/static/mb/projects/cat-napping/1_lychee.png",
-            "rubricUrl": "/teachertool/rubrics/cat-naping-mbv2.json"
+            "checklistUrl": "/teachertool/checklists/cat-naping-mbv2.json"
         }
     ]
 }
