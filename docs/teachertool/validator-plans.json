@@ -18,7 +18,7 @@
         },
         {
             ".desc": "Shows something on the LED screen.",
-            "name": "output_to_led_display",
+            "name": "has_output",
             "threshold": 1,
             "checks": [
                 {
@@ -36,67 +36,6 @@
                         "device_scroll_image"
                     ],
                     "count": 1
-                }
-            ]
-        },
-        {
-            ".desc": "Read input from a GPIO pin.",
-            "name": "read_gpio_pin",
-            "threshold": 1,
-            "checks": [
-                {
-                    "validator": "blocksExist",
-                    "blockCounts": [
-                        {
-                            "blockId": "device_pin_event",
-                            "count": 1
-                        }
-                    ]
-                },
-                {
-                    "validator": "blocksExist",
-                    "blockCounts": [
-                        {
-                            "blockId": "device_pin_is_pressed",
-                            "count": 1
-                        }
-                    ]
-                },
-                {
-                    "validator": "blocksExist",
-                    "blockCounts": [
-                        {
-                            "blockId": "device_pin_released",
-                            "count": 1
-                        }
-                    ]
-                },
-                {
-                    "validator": "blocksExist",
-                    "blockCounts": [
-                        {
-                            "blockId": "device_get_digital_pin",
-                            "count": 1
-                        }
-                    ]
-                },
-                {
-                    "validator": "blocksExist",
-                    "blockCounts": [
-                        {
-                            "blockId": "device_get_analog_pin",
-                            "count": 1
-                        }
-                    ]
-                },
-                {
-                    "validator": "blocksExist",
-                    "blockCounts": [
-                        {
-                            "blockId": "pins_on_pulsed",
-                            "count": 1
-                        }
-                    ]
                 }
             ]
         },

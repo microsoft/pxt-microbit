@@ -2,17 +2,9 @@
     "criteria": [
         {
             "id": "D285D79B-85E5-4C8D-82D2-5A9E35AB1163",
-            "use": "output_to_led_display",
-            "template": "Outputs to the LED display",
-            "description": "Uses at least one block that lights up LEDs",
-            "docPath": "/teachertool",
-            "maxCount": 1
-        },
-        {
-            "id": "C57344FC-B915-4ACB-A070-67F8FFC18B4B",
-            "use": "read_gpio_pin",
-            "template": "Read a GPIO pin",
-            "description": "Read input from one or more of the microbit GPIO pins.",
+            "use": "has_output",
+            "template": "Produces output",
+            "description": "Uses at least one block that lights up LEDs or makes sound",
             "docPath": "/teachertool",
             "maxCount": 1
         },
