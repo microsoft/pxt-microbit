@@ -33,9 +33,45 @@
                         "device_plot_bar_graph",
                         "device_plot_brightness",
                         "device_show_image_offset",
-                        "device_scroll_image"
+                        "device_scroll_image",
+
+                        "game_create_sprite",
+                        "game_game_over",
+                        "game_add_score",
+                        "game_remove_life",
+                        "game_start_countdown",
+
+                        "music_playable_play",
+                        "device_ring",
+                        "music_playable_play_default_bkg",
+
+                        "device_set_digital_pin",
+                        "device_set_servo_pin"
                     ],
                     "count": 1
+                },
+                {
+                    "validator": "blocksExist",
+                    "blockCounts": [
+                        {
+                            "blockId": "game_set_life",
+                            "count": 1
+                        }
+                    ],
+                    "childValidatorPlans": ["number_zero"]
+                }
+            ]
+        },
+        {
+            ".desc": "The zero number block is present.",
+            "name": "number_zero",
+            "threshold": 1,
+            "checks": [
+                {
+                    "validator": "blockFieldValueExists",
+                    "fieldType": "NUM",
+                    "fieldValue": 0,
+                    "blockType": "math_number"
                 }
             ]
         },

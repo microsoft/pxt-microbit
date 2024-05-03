@@ -4,7 +4,7 @@
             "id": "D285D79B-85E5-4C8D-82D2-5A9E35AB1163",
             "use": "has_output",
             "template": "Produces output",
-            "description": "Uses at least one block that lights up LEDs or makes sound",
+            "description": "At least one block that lights up LEDs, makes sound, or writes to pins is present.",
             "docPath": "/teachertool",
             "maxCount": 1
         },
