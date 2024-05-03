@@ -41,6 +41,14 @@
             ]
         },
         {
+            "id": "BBB47818-B35F-404C-89A1-D6A594CE9E30",
+            "use": "sends_radio_message",
+            "template": "Sends radio messages",
+            "description": "Radio group is set and at least one block that sends a radio message is present.",
+            "docPath": "/teachertool",
+            "maxCount": 1
+        },
+        {
             "id": "18C44CC4-497F-45EC-90FA-CE7DB117AD03",
             "use": "set_radio_group_on_start",
             "template": "Sets the radio group on startup",

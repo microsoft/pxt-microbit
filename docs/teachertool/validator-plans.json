@@ -109,6 +109,31 @@
             ]
         },
         {
+            ".desc": "Checks that radio group is set and at least one radio send message block is present",
+            "name": "sends_radio_message",
+            "threshold": 2,
+            "checks": [
+                {
+                    "validator": "blocksExist",
+                    "blockCounts": [
+                        {
+                            "blockId": "radio_set_group",
+                            "count": 1
+                        }
+                    ]
+                },
+                {
+                    "validator": "blocksInSetExist",
+                    "blocks": [
+                        "radio_datagram_send",
+                        "radio_datagram_send_value",
+                        "radio_datagram_send_string"
+                    ],
+                    "count": 1
+                }
+            ]
+        },
+        {
             ".desc": "Set the radio group.",
             "name": "set_radio_group",
             "threshold": 1,
