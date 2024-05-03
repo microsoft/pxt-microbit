@@ -19,7 +19,7 @@
         {
             "id": "3F7A9DB3-0B5E-456B-86E7-79573F9F6E53",
             "use": "uses_input",
-            "template": "Responds to input",
+            "template": "Uses input",
             "description": "At least one block that reads or reacts to user input is present.",
             "docPath": "/teachertool",
             "maxCount": 1
