@@ -49,6 +49,14 @@
             "maxCount": 1
         },
         {
+            "id": "8C8792C4-31C4-439D-ACAB-C99C9B8250AD",
+            "use": "receives_radio_message",
+            "template": "Receives radio messages",
+            "description": "Radio group is set and at least one block that listens for radio messages is present.",
+            "docPath": "/teachertool",
+            "maxCount": 1
+        },
+        {
             "id": "18C44CC4-497F-45EC-90FA-CE7DB117AD03",
             "use": "set_radio_group_on_start",
             "template": "Sets the radio group on startup",

@@ -134,6 +134,31 @@
             ]
         },
         {
+            ".desc": "Checks that radio group is set and at least block that listens for radio messages is present. (TODO : Non-Empty Check)",
+            "name": "receives_radio_message",
+            "threshold": 2,
+            "checks": [
+                {
+                    "validator": "blocksExist",
+                    "blockCounts": [
+                        {
+                            "blockId": "radio_set_group",
+                            "count": 1
+                        }
+                    ]
+                },
+                {
+                    "validator": "blocksInSetExist",
+                    "blocks": [
+                        "radio_on_number_drag",
+                        "radio_on_value_drag",
+                        "radio_on_string_drag"
+                    ],
+                    "count": 1
+                }
+            ]
+        },
+        {
             ".desc": "Set the radio group.",
             "name": "set_radio_group",
             "threshold": 1,
