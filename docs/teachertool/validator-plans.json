@@ -89,6 +89,26 @@
             ]
         },
         {
+            ".desc": "Checks for blocks that reference LEDs by their coordinates",
+            "name": "uses_led_coordinates",
+            "threshold": 1,
+            "checks": [
+                {
+                    "validator": "blocksInSetExist",
+                    "blocks": [
+                        "device_plot",
+                        "device_led_toggle",
+                        "device_unplot",
+                        "device_point",
+                        "device_plot_brightness",
+                        "device_point_brightness",
+                        "game_create_sprite"
+                    ],
+                    "count": 0
+                }
+            ]
+        },
+        {
             ".desc": "Set the radio group.",
             "name": "set_radio_group",
             "threshold": 1,

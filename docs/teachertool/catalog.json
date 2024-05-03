@@ -25,6 +25,22 @@
             "maxCount": 1
         },
         {
+            "id": "2CA4A5DA-4690-4514-97F5-2FE145AB3A59",
+            "use": "uses_led_coordinates",
+            "template": "Uses LED coordinates at least ${count} times",
+            "description": "Uses blocks that reference LED coordinates at least the specified number of times.",
+            "docPath": "/teachertool",
+            "maxCount": 1,
+            "params": [
+                {
+                    "name": "count",
+                    "type": "number",
+                    "default": 1,
+                    "paths": ["checks[0].count"]
+                }
+            ]
+        },
+        {
             "id": "18C44CC4-497F-45EC-90FA-CE7DB117AD03",
             "use": "set_radio_group_on_start",
             "template": "Sets the radio group on startup",
