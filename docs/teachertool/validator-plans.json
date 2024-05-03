@@ -63,6 +63,55 @@
             ]
         },
         {
+            ".desc": "Processes input in any form (TODO : Non-Empty Check for event blocks)",
+            "name": "uses_input",
+            "threshold": 1,
+            "checks": [
+                {
+                    "validator": "blocksInSetExist",
+                    "blocks": [
+                        "control_on_event",
+                        "device_button_event",
+                        "device_gesture_event",
+                        "device_pin_event",
+                        "device_pin_released",
+                        "input_logo_event",
+                        "input_on_sound",
+                        "pins_on_pulsed",
+                        "radio_on_number_drag",
+                        "radio_on_string_drag",
+                        "radio_on_value_drag",
+                        "serial_on_data_received",
+
+                        "device_acceleration",
+                        "device_get_analog_pin",
+                        "device_get_button2",
+                        "device_get_digital_pin",
+                        "device_get_light_level",
+                        "device_get_magnetic_force",
+                        "device_get_rotation",
+                        "device_get_running_time",
+                        "device_get_running_time_micros",
+                        "device_get_sound_level",
+                        "device_heading",
+                        "device_pin_is_pressed",
+                        "device_temperature",
+                        "deviceisgesture",
+                        "input_logo_is_pressed",
+                        "music_sound_is_playing",
+                        "pins_i2c_readnumber",
+                        "pins_pulse_duration",
+                        "pins_pulse_in",
+                        "serial_read_buffer",
+                        "serial_read_line",
+                        "serial_read_until",
+                        "serial_readbuffer"
+                    ],
+                    "count": 1
+                }
+            ]
+        },
+        {
             ".desc": "Runs code in response to any event (TODO : Non-Empty Check)",
             "name": "responds_to_events",
             "threshold": 1,
