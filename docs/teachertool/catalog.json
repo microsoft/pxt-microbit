@@ -1,6 +1,22 @@
 {
     "criteria": [
         {
+            "id": "35610CA0-38F8-4CCE-BAB9-99593DB3358A",
+            "use": "responds_to_events",
+            "template": "Responds to at least ${count} events",
+            "description": "At least the specified number of event blocks are present and non-empty.",
+            "docPath": "/teachertool",
+            "maxCount": 1,
+            "params": [
+                {
+                    "name": "count",
+                    "type": "number",
+                    "default": 1,
+                    "paths": ["checks[0].count"]
+                }
+            ]
+        },
+        {
             "id": "D285D79B-85E5-4C8D-82D2-5A9E35AB1163",
             "use": "has_output",
             "template": "Produces output",

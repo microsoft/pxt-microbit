@@ -63,6 +63,32 @@
             ]
         },
         {
+            ".desc": "Runs code in response to any event (TODO : Non-Empty Check)",
+            "name": "responds_to_events",
+            "threshold": 1,
+            "checks": [
+                {
+                    "validator": "blocksInSetExist",
+                    "blocks": [
+                        "control_on_event",
+                        "device_button_event",
+                        "device_gesture_event",
+                        "device_pin_event",
+                        "device_pin_released",
+                        "input_logo_event",
+                        "input_on_sound",
+                        "melody_on_event",
+                        "pins_on_pulsed",
+                        "radio_on_number_drag",
+                        "radio_on_string_drag",
+                        "radio_on_value_drag",
+                        "serial_on_data_received"
+                    ],
+                    "count": 0
+                }
+            ]
+        },
+        {
             ".desc": "The zero number block is present.",
             "name": "number_zero",
             "threshold": 1,
