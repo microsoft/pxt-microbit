@@ -36,7 +36,7 @@
             "id": "2CA4A5DA-4690-4514-97F5-2FE145AB3A59",
             "use": "uses_led_coordinates",
             "template": "Uses LED coordinates at least ${count} times",
-            "description": "Uses blocks that reference LED coordinates at least the specified number of times.",
+            "description": "Uses blocks with LED coordinate inputs at least the specified number of times.",
             "docPath": "/teachertool",
             "maxCount": 1,
             "params": [
