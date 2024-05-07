@@ -7,6 +7,7 @@
             "description": "At least the specified number of event blocks are present.",
             "docPath": "/teachertool",
             "maxCount": 1,
+            "tags": ["Input and Output"],
             "params": [
                 {
                     "name": "count",
@@ -22,7 +23,8 @@
             "template": "Uses input",
             "description": "At least one block that reads or reacts to user input is present.",
             "docPath": "/teachertool",
-            "maxCount": 1
+            "maxCount": 1,
+            "tags": ["Input and Output"]
         },
         {
             "id": "D285D79B-85E5-4C8D-82D2-5A9E35AB1163",
@@ -30,7 +32,8 @@
             "template": "Produces output",
             "description": "At least one block that lights up LEDs, makes sound, or writes to pins is present.",
             "docPath": "/teachertool",
-            "maxCount": 1
+            "maxCount": 1,
+            "tags": ["Input and Output"]
         },
         {
             "id": "2CA4A5DA-4690-4514-97F5-2FE145AB3A59",
@@ -39,6 +42,7 @@
             "description": "Uses blocks with LED coordinate inputs at least the specified number of times.",
             "docPath": "/teachertool",
             "maxCount": 1,
+            "tags": ["Code Elements"],
             "params": [
                 {
                     "name": "count",
@@ -54,7 +58,8 @@
             "template": "Sends radio messages",
             "description": "Radio group is set and at least one block that sends a radio message is present.",
             "docPath": "/teachertool",
-            "maxCount": 1
+            "maxCount": 1,
+            "tags": ["Input and Output"]
         },
         {
             "id": "8C8792C4-31C4-439D-ACAB-C99C9B8250AD",
@@ -62,7 +67,8 @@
             "template": "Receives radio messages",
             "description": "Radio group is set and at least one block that listens for radio messages is present.",
             "docPath": "/teachertool",
-            "maxCount": 1
+            "maxCount": 1,
+            "tags": ["Input and Output"]
         },
         {
             "id": "18C44CC4-497F-45EC-90FA-CE7DB117AD03",
