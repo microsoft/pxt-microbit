@@ -492,6 +492,10 @@ Many extensions are available to work with interface kits, add-on hardware, or o
   "url":"/pkg/ekkai/aicococam",
   "cardType": "package"
 }, {
+  "name": "KittenBot KOI2 AI module",
+  "url":"/pkg/KittenBot/pxt-koi2",
+  "cardType": "package"
+}, {
   "name": "KittenBot KOI AI module",
   "url":"/pkg/KittenBot/pxt-koi",
   "cardType": "package"
