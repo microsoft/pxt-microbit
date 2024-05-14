@@ -407,6 +407,7 @@
             "kittenbot/pxt-joyfrog": { "tags": [ "Gaming" ] },
             "kittenbot/pxt-sugar": { "tags": [ "Science" ] },
             "kittenbot/pxt-koi": { "tags": [ "Science" ] },
+            "kittenbot/pxt-koi2": { "tags": [ "Science" ] },
             "kidspark/pxt-sparkbit": { "tags": [ "Robotics" ] },
             "bpi-steam/pxt-triodecar": { "tags": [ "Robotics" ] },
             "kitronikltd/pxt-kitronik-air-quality": { "tags": [ "Science" ] },
