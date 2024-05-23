@@ -135,4 +135,37 @@ void setSerialMirroring(bool enable) {
 #endif
 }
 
+/**
+* Number of rows currently used by the datalogger, start counting at fromRowIndex
+* Treats the header as the first row
+* @param fromRowIndex 0-based index of start: Default value of 0
+* @returns header + rows
+*/
+//% help=flashlog/get-number-of-rows
+//% parts="flashlog"
+//% blockGap=8
+//% group="micro:bit (V2)"
+int getNumberOfRows(int fromRowIndex = 0) {
+#if MICROBIT_CODAL
+    return uBit.log.getNumberOfRows(fromRowIndex);
+#endif
+}
+
+/**
+* Get all rows seperated by a newline & each column seperated by a comma.
+* Starting at the 0-based index fromRowIndex & counting inclusively until nRows.
+* @param fromRowIndex 0-based index of start
+* @param nRows inclusive count from fromRowIndex
+* @returns String where newlines denote rows & commas denote columns
+*/
+//% help=flashlog/get-rows
+//% parts="flashlog"
+//% blockGap=8
+//% group="micro:bit (V2)"
+String getRows(int fromRowIndex, int nRows) {
+#if MICROBIT_CODAL
+    return PSTR(uBit.log.getRows(fromRowIndex, nRows));
+#endif
+}
+
 }

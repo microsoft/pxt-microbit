@@ -286,4 +286,31 @@ namespace datalogger {
         init();
         flashlog.setSerialMirroring(on);
     }
+
+    /**
+     * Number of rows currently used by the datalogger, start counting at fromRowIndex
+     * Treats the header as the first row
+     * @param fromRowIndex 0-based index of start: Default value of 0
+     * @returns header + rows
+     */
+    //% block="Get the number of rows currently used by the datalogger start count at fromRowIndex"
+    //% blockId=dataloggergetnumberofrows
+    //% weight=25 help=datalogger/get-number-of-rows
+    export function getNumberOfRows(fromRowIndex: number = 0): number {
+        return flashlog.getNumberOfRows(fromRowIndex);
+    }
+
+    /**
+     * Get all rows seperated by a newline & each column seperated by a comma.
+     * Starting at the 0-based index fromRowIndex & counting inclusively until nRows.
+     * @param fromRowIndex 0-based index of start
+     * @param nRows inclusive count from fromRowIndex
+     * @returns String where newlines denote rows & commas denote columns
+     */
+    //% block="Get all rows seperated by a newline & each column seperated by a comma. In the parameters range"
+    //% blockId=dataloggergetrows
+    //% weight=25 help=datalogger/get-rows
+    export function getRows(fromRowIndex: number, nRows: number): string {
+        return flashlog.getRows(fromRowIndex, nRows);
+    }
 }
