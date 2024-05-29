@@ -152,7 +152,7 @@ int getNumberOfRows(int fromRowIndex = 0) {
 }
 
 /**
-* Get all rows seperated by a newline & each column seperated by a comma.
+* Get all rows separated by a newline & each column separated by a comma.
 * Starting at the 0-based index fromRowIndex & counting inclusively until nRows.
 * @param fromRowIndex 0-based index of start
 * @param nRows inclusive count from fromRowIndex
