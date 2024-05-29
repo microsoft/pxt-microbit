@@ -6,6 +6,32 @@
 //% groups='["Pins", "Pulse", "I2C", "SPI", "micro:bit (V2)"]'
 namespace pins {
     /**
+     * Returns the value of a C++ runtime constant
+     */
+    //% help=pins/digital-pin blockGap=8 advanced=true shim=TD_ID
+    //% blockId="digital_pin" block="digital pin %pin"
+    //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=4
+    //% pin.fieldOptions.tooltips="false" pin.fieldOptions.width="250"
+    //% group="Pins"
+    //% weight=17
+    export function digitalPin(pin: DigitalPin): number {
+        return pin;
+    }
+
+    /**
+     * Returns the value of a C++ runtime constant
+     */
+    //% help=pins/analog-pin blockGap=8 advanced=true shim=TD_ID
+    //% blockId="analog_pin" block="analog pin %pin"
+    //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=4
+    //% pin.fieldOptions.tooltips="false" pin.fieldOptions.width="250"
+    //% group="Pins"
+    //% weight=16
+    export function analogPin(pin: AnalogPin): number {
+        return pin;
+    }
+
+    /**
      * Map a number from one range to another. That is, a value of ``from low`` would get mapped to ``to low``, a value of ``from high`` to ``to high``, values in-between to values in-between, etc.
      * @param value value to map in ranges
      * @param fromLow the lower bound of the value's current range

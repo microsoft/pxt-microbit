@@ -10,61 +10,99 @@
 #endif
 
 enum class DigitalPin {
+    //% blockIdentity="pins.digitalPin"
     P0 = MICROBIT_ID_IO_P0,
+    //% blockIdentity="pins.digitalPin"
     P1 = MICROBIT_ID_IO_P1,
+    //% blockIdentity="pins.digitalPin"
     P2 = MICROBIT_ID_IO_P2,
+    //% blockIdentity="pins.digitalPin"
     P3 = MICROBIT_ID_IO_P3,
+    //% blockIdentity="pins.digitalPin"
     P4 = MICROBIT_ID_IO_P4,
+    //% blockIdentity="pins.digitalPin"
     P5 = MICROBIT_ID_IO_P5,
+    //% blockIdentity="pins.digitalPin"
     P6 = MICROBIT_ID_IO_P6,
+    //% blockIdentity="pins.digitalPin"
     P7 = MICROBIT_ID_IO_P7,
+    //% blockIdentity="pins.digitalPin"
     P8 = MICROBIT_ID_IO_P8,
+    //% blockIdentity="pins.digitalPin"
     P9 = MICROBIT_ID_IO_P9,
+    //% blockIdentity="pins.digitalPin"
     P10 = MICROBIT_ID_IO_P10,
+    //% blockIdentity="pins.digitalPin"
     P11 = MICROBIT_ID_IO_P11,
+    //% blockIdentity="pins.digitalPin"
     P12 = MICROBIT_ID_IO_P12,
+    //% blockIdentity="pins.digitalPin"
     P13 = MICROBIT_ID_IO_P13,
+    //% blockIdentity="pins.digitalPin"
     P14 = MICROBIT_ID_IO_P14,
+    //% blockIdentity="pins.digitalPin"
     P15 = MICROBIT_ID_IO_P15,
+    //% blockIdentity="pins.digitalPin"
     P16 = MICROBIT_ID_IO_P16,
+    //% blockIdentity="pins.digitalPin"
     //% blockHidden=1
     P19 = MICROBIT_ID_IO_P19,
+    //% blockIdentity="pins.digitalPin"
     //% blockHidden=1
     P20 = MICROBIT_ID_IO_P20,
 };
 
 enum class AnalogPin {
+    //% blockIdentity="pins.analogPin"
     P0 = MICROBIT_ID_IO_P0,
+    //% blockIdentity="pins.analogPin"
     P1 = MICROBIT_ID_IO_P1,
+    //% blockIdentity="pins.analogPin"
     P2 = MICROBIT_ID_IO_P2,
+    //% blockIdentity="pins.analogPin"
     P3 = MICROBIT_ID_IO_P3,
+    //% blockIdentity="pins.analogPin"
     P4 = MICROBIT_ID_IO_P4,
+    //% blockIdentity="pins.analogPin"
     P10 = MICROBIT_ID_IO_P10,
+    //% blockIdentity="pins.analogPin"
     //% block="P5 (write only)"
     P5 = MICROBIT_ID_IO_P5,
+    //% blockIdentity="pins.analogPin"
     //% block="P6 (write only)"
     P6 = MICROBIT_ID_IO_P6,
+    //% blockIdentity="pins.analogPin"
     //% block="P7 (write only)"
     P7 = MICROBIT_ID_IO_P7,
+    //% blockIdentity="pins.analogPin"
     //% block="P8 (write only)"
     P8 = MICROBIT_ID_IO_P8,
+    //% blockIdentity="pins.analogPin"
     //% block="P9 (write only)"
     P9 = MICROBIT_ID_IO_P9,
+    //% blockIdentity="pins.analogPin"
     //% block="P11 (write only)"
     P11 = MICROBIT_ID_IO_P11,
+    //% blockIdentity="pins.analogPin"
     //% block="P12 (write only)"
     P12 = MICROBIT_ID_IO_P12,
+    //% blockIdentity="pins.analogPin"
     //% block="P13 (write only)"
     P13 = MICROBIT_ID_IO_P13,
+    //% blockIdentity="pins.analogPin"
     //% block="P14 (write only)"
     P14 = MICROBIT_ID_IO_P14,
+    //% blockIdentity="pins.analogPin"
     //% block="P15 (write only)"
     P15 = MICROBIT_ID_IO_P15,
+    //% blockIdentity="pins.analogPin"
     //% block="P16 (write only)"
     P16 = MICROBIT_ID_IO_P16,
+    //% blockIdentity="pins.analogPin"
     //% block="P19 (write only)"
     //% blockHidden=1
     P19 = MICROBIT_ID_IO_P19,
+    //% blockIdentity="pins.analogPin"
     //% block="P20 (write only)"
     //% blockHidden=1
     P20 = MICROBIT_ID_IO_P20
@@ -154,9 +192,8 @@ namespace pins {
      */
     //% help=pins/digital-read-pin weight=30
     //% blockId=device_get_digital_pin block="digital read|pin %name" blockGap=8
-    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-    //% name.fieldOptions.tooltips="false" name.fieldOptions.width="250"
-    int digitalReadPin(DigitalPin name) {
+    //% name.shadow=digital_pin
+    int digitalReadPin(int name) {
         PINREAD(getDigitalValue());
     }
 
@@ -168,9 +205,8 @@ namespace pins {
     //% help=pins/digital-write-pin weight=29
     //% blockId=device_set_digital_pin block="digital write|pin %name|to %value"
     //% value.min=0 value.max=1
-    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-    //% name.fieldOptions.tooltips="false" name.fieldOptions.width="250"
-    void digitalWritePin(DigitalPin name, int value) {
+    //% name.shadow=digital_pin
+    void digitalWritePin(int name, int value) {
         PINOP(setDigitalValue(value));
     }
 
@@ -180,9 +216,8 @@ namespace pins {
      */
     //% help=pins/analog-read-pin weight=25
     //% blockId=device_get_analog_pin block="analog read|pin %name" blockGap="8"
-    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-    //% name.fieldOptions.tooltips="false" name.fieldOptions.width="250"
-    int analogReadPin(AnalogPin name) {
+    //% name.shadow=analog_pin
+    int analogReadPin(int name) {
         PINREAD(getAnalogValue());
     }
 
@@ -194,9 +229,8 @@ namespace pins {
     //% help=pins/analog-write-pin weight=24
     //% blockId=device_set_analog_pin block="analog write|pin %name|to %value" blockGap=8
     //% value.min=0 value.max=1023
-    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-    //% name.fieldOptions.tooltips="false" name.fieldOptions.width="250"
-    void analogWritePin(AnalogPin name, int value) {
+    //% name.shadow=analog_pin
+    void analogWritePin(int name, int value) {
         PINOP(setAnalogValue(value));
     }
 
@@ -208,9 +242,8 @@ namespace pins {
      */
     //% help=pins/analog-set-period weight=23 blockGap=8
     //% blockId=device_set_analog_period block="analog set period|pin %pin|to (µs)%micros"
-    //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=4
-    //% pin.fieldOptions.tooltips="false"
-    void analogSetPeriod(AnalogPin name, int micros) {
+    //% pin.shadow=analog_pin
+    void analogSetPeriod(int name, int micros) {
         PINOP(setAnalogPeriodUs(micros));
     }
 
@@ -221,12 +254,11 @@ namespace pins {
     */
     //% help=pins/on-pulsed advanced=true
     //% blockId=pins_on_pulsed block="on|pin %pin|pulsed %pulse"
-    //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=4
-    //% pin.fieldOptions.tooltips="false" pin.fieldOptions.width="250"
+    //% pin.shadow=digital_pin
     //% group="Pulse"
     //% weight=25
     //% blockGap=8
-    void onPulsed(DigitalPin name, PulseValue pulse, Action body) {
+    void onPulsed(int name, PulseValue pulse, Action body) {
         MicroBitPin* pin = getPin((int)name);
         if (!pin) return;
 
@@ -255,12 +287,11 @@ namespace pins {
     //% blockId="pins_pulse_in" block="pulse in (µs)|pin %name|pulsed %value"
     //% advanced=true
     //% help=pins/pulse-in
-    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-    //% name.fieldOptions.tooltips="false" name.fieldOptions.width="250"
+    //% name.shadow=digital_pin
     //% group="Pulse"
     //% weight=23
     //% blockGap=8
-    int pulseIn(DigitalPin name, PulseValue value, int maxDuration = 2000000) {
+    int pulseIn(int name, PulseValue value, int maxDuration = 2000000) {
         MicroBitPin* pin = getPin((int)name);
         if (!pin) return 0;
 
@@ -302,10 +333,9 @@ namespace pins {
     //% blockId=device_set_servo_pin block="servo write|pin %name|to %value" blockGap=8
     //% parts=microservo trackArgs=0
     //% value.min=0 value.max=180
-    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-    //% name.fieldOptions.tooltips="false" name.fieldOptions.width="250"
+    //% name.shadow=analog_pin
     //% group="Servo"
-    void servoWritePin(AnalogPin name, int value) {
+    void servoWritePin(int name, int value) {
         PINOP(setServoValue(value));
     }
 
@@ -313,7 +343,7 @@ namespace pins {
     * Specifies that a continuous servo is connected.
     */
     //%
-    void servoSetContinuous(AnalogPin name, bool value) {
+    void servoSetContinuous(int name, bool value) {
         // handled in simulator
     }
 
@@ -324,10 +354,9 @@ namespace pins {
      */
     //% help=pins/servo-set-pulse weight=19
     //% blockId=device_set_servo_pulse block="servo set pulse|pin %value|to (µs) %micros"
-    //% value.fieldEditor="gridpicker" value.fieldOptions.columns=4
-    //% value.fieldOptions.tooltips="false" value.fieldOptions.width="250"
+    //% value.shadow=analog_pin
     //% group="Servo"
-    void servoSetPulse(AnalogPin name, int micros) {
+    void servoSetPulse(int name, int micros) {
         PINOP(setServoPulseUs(micros));
     }
 
@@ -343,12 +372,11 @@ namespace pins {
      */
     //% blockId=device_analog_set_pitch_pin block="analog set pitch pin %name"
     //% help=pins/analog-set-pitch-pin advanced=true
-    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-    //% name.fieldOptions.tooltips="false" name.fieldOptions.width="250"
+    //% name.shadow=analog_pin
     //% group="Pins"
     //% weight=12
     //% blockGap=8
-    void analogSetPitchPin(AnalogPin name) {
+    void analogSetPitchPin(int name) {
         pitchPin = getPin((int)name);
     }
 
@@ -447,12 +475,11 @@ namespace pins {
     */
     //% help=pins/set-pull advanced=true
     //% blockId=device_set_pull block="set pull|pin %pin|to %pull"
-    //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=4
-    //% pin.fieldOptions.tooltips="false" pin.fieldOptions.width="250"
+    //% pin.shadow=digital_pin
     //% group="Pins"
     //% weight=15
     //% blockGap=8
-    void setPull(DigitalPin name, PinPullMode pull) {
+    void setPull(int name, PinPullMode pull) {
 #if MICROBIT_CODAL
         codal::PullMode m = pull == PinPullMode::PullDown
             ? codal::PullMode::Down
@@ -476,12 +503,11 @@ namespace pins {
     */
     //% help=pins/set-events advanced=true
     //% blockId=device_set_pin_events block="set pin %pin|to emit %type|events"
-    //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=4
-    //% pin.fieldOptions.tooltips="false" pin.fieldOptions.width="250"
+    //% pin.shadow=digital_pin
     //% group="Pins"
     //% weight=13
     //% blockGap=8
-    void setEvents(DigitalPin name, PinEventType type) {
+    void setEvents(int name, PinEventType type) {
         getPin((int)name)->eventOn((int)type);
     }
 
@@ -504,13 +530,12 @@ namespace pins {
      */
     //% help=pins/neopixel-matrix-width advanced=true
     //% blockId=pin_neopixel_matrix_width block="neopixel matrix width|pin %pin %width"
-    //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=4
-    //% pin.fieldOptions.tooltips="false" pin.fieldOptions.width="250"
+    //% pin.shadow=digital_pin
     //% width.defl=5 width.min=2
     //% group="Pins"
     //% weight=11
     //% blockGap=8
-    void setMatrixWidth(DigitalPin pin, int width) {}
+    void setMatrixWidth(int pin, int width) {}
 
 #if MICROBIT_CODAL
 #define BUFFER_TYPE uint8_t*
@@ -624,16 +649,13 @@ namespace pins {
     */
     //% help=pins/spi-pins advanced=true
     //% blockId=spi_pins block="spi set pins|MOSI %mosi|MISO %miso|SCK %sck"
-    //% mosi.fieldEditor="gridpicker" mosi.fieldOptions.columns=4
-    //% mosi.fieldOptions.tooltips="false" mosi.fieldOptions.width="250"
-    //% miso.fieldEditor="gridpicker" miso.fieldOptions.columns=4
-    //% miso.fieldOptions.tooltips="false" miso.fieldOptions.width="250"
-    //% sck.fieldEditor="gridpicker" sck.fieldOptions.columns=4
-    //% sck.fieldOptions.tooltips="false" sck.fieldOptions.width="250"
+    //% mosi.shadow=digital_pin
+    //% miso.shadow=digital_pin
+    //% sck.shadow=digital_pin
     //% group="SPI"
     //% blockGap=8
     //% weight=51
-    void spiPins(DigitalPin mosi, DigitalPin miso, DigitalPin sck) {
+    void spiPins(int mosi, int miso, int sck) {
         if (NULL != spi) {
             delete spi;
             spi = NULL;
@@ -645,7 +667,7 @@ namespace pins {
     * Mounts a push button on the given pin
     */
     //% help=pins/push-button advanced=true
-    void pushButton(DigitalPin pin) {
+    void pushButton(int pin) {
         new MicroBitButton((PinName)getPin((int)(pin))->name, (int)pin, MICROBIT_BUTTON_ALL_EVENTS, PinMode::PullUp);
     }
 
@@ -655,11 +677,10 @@ namespace pins {
     */
     //% blockId=pin_set_audio_pin block="set audio pin $name"
     //% help=pins/set-audio-pin
-    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-    //% name.fieldOptions.tooltips="false" name.fieldOptions.width="250"
+    //% name.shadow=digital_pin
     //% weight=1
     //% blockGap=8
-    void setAudioPin(AnalogPin name) {
+    void setAudioPin(int name) {
 #if MICROBIT_CODAL
         uBit.audio.setPin(*getPin((int)name));
         uBit.audio.setPinEnabled(!edgeConnectorSoundDisabled);
