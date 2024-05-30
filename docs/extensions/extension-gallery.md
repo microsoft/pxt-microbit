@@ -517,6 +517,10 @@ Many extensions are available to work with interface kits, add-on hardware, or o
 
 ```codecard
 [{
+  "name": "KittenBot TabbyBot",
+  "url":"/pkg/KittenBot/pxt-tabbyrobot",
+  "cardType": "package"
+}, {
   "name": "Gcube",
   "url":"/pkg/roborisen/gcube",
   "cardType": "package"
