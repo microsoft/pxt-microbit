@@ -38,5 +38,5 @@ basic.forever(function () {
 
 [micro:bit V2](/device/v2),
 [on logo event](/reference/input/on-logo-event),
-[pin is pressed](/referene/inpu/pin-is-pressed),
+[pin is pressed](/reference/input/pin-is-pressed),
 [touch set mode](/reference/pins/touch-set-mode)
