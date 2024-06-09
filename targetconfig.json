@@ -459,7 +459,9 @@
             "grandpabond/pxt-flexfx": { "tags": [ "Software" ] },
             "grandpabond/pxt-faces": { "tags": [ "Software" ] },
             "joylabz/code-a-key-extension": {},
-            "eb8ga/pxt-roversa-2": { "tags": [ "Robotics" ] }
+            "eb8ga/pxt-roversa-2": { "tags": [ "Robotics" ] },
+            "roborisen/gcube": { "tags": [ "Robotics" ] },
+            "kittenbot/pxt-tabbyrobot": { "tags": [ "Robotics" ] }
         },
         "upgrades": {
             "tinkertanker/pxt-iot-environment-kit": "min:v4.2.1",
