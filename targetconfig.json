@@ -461,7 +461,8 @@
             "joylabz/code-a-key-extension": {},
             "eb8ga/pxt-roversa-2": { "tags": [ "Robotics" ] },
             "roborisen/gcube": { "tags": [ "Robotics" ] },
-            "kittenbot/pxt-tabbyrobot": { "tags": [ "Robotics" ] }
+            "kittenbot/pxt-tabbyrobot": { "tags": [ "Robotics" ] },
+            "pythom1234/pxt-oled": { "tags": [ "Lights and Display" ] }
         },
         "upgrades": {
             "tinkertanker/pxt-iot-environment-kit": "min:v4.2.1",
