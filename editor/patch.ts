@@ -1,5 +1,96 @@
 export function patchBlocks(pkgTargetVersion: string, dom: Element) {
 
+    if (pxt.semver.majorCmp(pkgTargetVersion || "0.0.0", "7.0.13") <= 0) {
+        // Variable pin param
+        /*
+        <block type="device_get_digital_pin">
+            <field name="name">DigitalPin.P0</field>
+        </block>
+
+        converts to
+
+        <block type="device_get_digital_pin">
+            <value name="name">
+                <shadow type="digital_pin">
+                    <field name="pin">DigitalPin.P0</field>
+                </shadow>
+            </value>
+        </block>
+        */
+        pxt.U.toArray(dom.querySelectorAll("block[type=device_get_digital_pin]"))
+            .concat(pxt.U.toArray(dom.querySelectorAll("shadow[type=device_get_digital_pin]")))
+            .concat(pxt.U.toArray(dom.querySelectorAll("block[type=device_set_digital_pin]")))
+            .concat(pxt.U.toArray(dom.querySelectorAll("block[type=device_get_analog_pin]")))
+            .concat(pxt.U.toArray(dom.querySelectorAll("shadow[type=device_get_analog_pin]")))
+            .concat(pxt.U.toArray(dom.querySelectorAll("block[type=device_set_analog_pin]")))
+            .concat(pxt.U.toArray(dom.querySelectorAll("block[type=device_set_analog_period]")))
+            .concat(pxt.U.toArray(dom.querySelectorAll("block[type=pins_on_pulsed]")))
+            .concat(pxt.U.toArray(dom.querySelectorAll("block[type=pins_pulse_in]")))
+            .concat(pxt.U.toArray(dom.querySelectorAll("shadow[type=pins_pulse_in]")))
+            .concat(pxt.U.toArray(dom.querySelectorAll("block[type=device_set_servo_pin]")))
+            .concat(pxt.U.toArray(dom.querySelectorAll("block[type=device_set_servo_pulse]")))
+            .concat(pxt.U.toArray(dom.querySelectorAll("block[type=device_analog_set_pitch_pin]")))
+            .concat(pxt.U.toArray(dom.querySelectorAll("block[type=device_set_pull]")))
+            .concat(pxt.U.toArray(dom.querySelectorAll("block[type=device_set_pin_events]")))
+            .concat(pxt.U.toArray(dom.querySelectorAll("block[type=pin_neopixel_matrix_width]")))
+            .concat(pxt.U.toArray(dom.querySelectorAll("block[type=spi_pins]")))
+            .concat(pxt.U.toArray(dom.querySelectorAll("block[type=pin_set_audio_pin]")))
+            .forEach(node => {
+                const blockType = node.getAttribute("type");
+                pxt.U.toArray(node.children)
+                    .filter(oldPinNode => {
+                        if (oldPinNode.tagName != "field") return false;
+                        switch (blockType) {
+                            case "device_get_digital_pin":
+                            case "device_set_digital_pin":
+                            case "device_get_analog_pin":
+                            case "device_set_analog_pin":
+                            case "pins_pulse_in":
+                            case "device_set_servo_pin":
+                            case "device_analog_set_pitch_pin":
+                            case "pin_set_audio_pin":
+                                return oldPinNode.getAttribute("name") === "name";
+                            case "device_set_analog_period":
+                            case "pins_on_pulsed":
+                            case "device_set_pull":
+                            case "device_set_pin_events":
+                            case "pin_neopixel_matrix_width":
+                                return oldPinNode.getAttribute("name") === "pin";
+                            case "device_set_servo_pulse":
+                                return oldPinNode.getAttribute("name") === "value";
+                            case "spi_pins":
+                                return ["mosi", "miso", "sck"].includes(oldPinNode.getAttribute("name"));
+                        }
+                        return false;
+                    })
+                    .forEach(oldPinNode => {
+                        const valueNode = node.ownerDocument.createElement("value");
+                        valueNode.setAttribute("name", oldPinNode.getAttribute("name"));
+
+                        const pinShadowNode = node.ownerDocument.createElement("shadow");
+                        let pinBlockType;
+                        switch (oldPinNode.textContent.split(".")[0]) {
+                            case "DigitalPin":
+                                pinBlockType = "digital_pin";
+                                break;
+                            case "AnalogPin":
+                                pinBlockType = "analog_pin";
+                                break;
+                        }
+                        if (!pinBlockType) return;
+                        pinShadowNode.setAttribute("type", pinBlockType);
+
+                        const fieldNode = node.ownerDocument.createElement("field");
+                        fieldNode.setAttribute("name", "pin");
+                        fieldNode.textContent = oldPinNode.textContent;
+
+                        pinShadowNode.appendChild(fieldNode);
+                        valueNode.appendChild(pinShadowNode);
+                        node.replaceChild(valueNode, oldPinNode);
+                    });
+            });
+    }
+
     if (pxt.semver.majorCmp(pkgTargetVersion || "0.0.0", "5.0.12") <= 0) {
         // Eighth note misspelling
         /*
