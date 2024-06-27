@@ -41,6 +41,7 @@ namespace pins {
      */
     //% help=pins/map weight=23
     //% blockId=pin_map block="map %value|from low %fromLow|from high %fromHigh|to low %toLow|to high %toHigh"
+    //% inlineInputMode=inline
     export function map(value: number, fromLow: number, fromHigh: number, toLow: number, toHigh: number): number {
         return ((value - fromLow) * (toHigh - toLow)) / (fromHigh - fromLow) + toLow;
     }
