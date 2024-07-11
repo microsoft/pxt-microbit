@@ -9,7 +9,7 @@ Instead of a rope, we'll use the LED screen by pulling the LED light through the
 
 ![A micro:bit holding a rope](/static/mb/projects/tug-of-led.png)
 
-## Step 1
+## {Step 1}
 
 Create a new variable ``||variables:rope||`` to track the progress of the game. The ``||variables:rope||``
 variable will be used as the **x** coordinate of the LED to lit so we set it to ``2`` to start.
@@ -18,7 +18,7 @@ variable will be used as the **x** coordinate of the LED to lit so we set it to 
 let rope = 2
 ```
 
-## Step 2
+## {Step 2}
 
 Add a ``||basic:forever||`` loop that turns on the LED at the position set in ``||variables:rope||``.
 
@@ -30,7 +30,7 @@ basic.forever(function() {
 })
 ```
 
-## Step 3
+## {Step 3}
 
 Add an event for ``||input:button A pressed||`` to change the ``||variables:rope||`` value by **-0.1**.
 
@@ -41,7 +41,7 @@ input.onButtonPressed(Button.A, function () {
 })
 ```
 
-## Step 4
+## {Step 4}
 
 Add an event on ``||input:button B pressed||`` to change the ``||variables:rope||`` value by **0.1**.
 
@@ -52,7 +52,7 @@ input.onButtonPressed(Button.B, function () {
 })
 ```
 
-## Step 5
+## {Step 5}
 
 Because a button press pulls the rope by **0.1** in either direction, plot the ``||math:rounded||`` value of ``||variables:rope||`` to the nearest LED.
 
@@ -64,7 +64,7 @@ basic.forever(function() {
 })
 ```
 
-## Step 6
+## {Step 6}
 
 Back in the ``||basic:forever||``, add code to test ``||logic:if||`` the ``||variables:rope||`` is negative
 then ``||basic:show||`` **A WINS** on the screen.
@@ -81,7 +81,7 @@ basic.forever(function() {
 })
 ```
 
-## Step 7
+## {Step 7}
 
 Add an ``||logic:else if||`` condition to test ``||logic:if||`` the ``||variables:rope||`` is greater than `4`
 then ``||basic:show||`` **B WINS** on the screen.
@@ -100,6 +100,6 @@ basic.forever(function() {
 })
 ```
 
-## Step 8
+## {Step 8}
 
 Find a friend and start button smashing!
