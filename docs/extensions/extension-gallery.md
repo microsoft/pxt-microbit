@@ -13,55 +13,55 @@ Many extensions are available to work with interface kits, add-on hardware, or o
 ```codecard
 [{
     "name": "Display",
-    "url": "/extensions#display",
+    "url": "/extensions/extension-gallery#display",
     "cardType": "link"
 }, {
     "name": "Electronics",
-    "url": "/extensions#electronics",
+    "url": "/extensions/extension-gallery#electronics",
     "cardType": "link"
 }, {
     "name": "Gaming",
-    "url": "/extensions#gaming",
+    "url": "/extensions/extension-gallery#gaming",
     "cardType": "link"
 }, {
     "name": "Individual sensors",
-    "url": "/extensions#individual-sensors",
+    "url": "/extensions/extension-gallery#individual-sensors",
     "cardType": "link"
 }, {
     "name": "IoT",
-    "url": "/extensions#iot",
+    "url": "/extensions/extension-gallery#iot",
     "cardType": "link"
 }, {
     "name": "Kits",
-    "url": "/extensions#kits",
+    "url": "/extensions/extension-gallery#kits",
     "cardType": "link"
 }, {
     "name": "LEDs and lights",
-    "url": "/extensions#leds-and-lights",
+    "url": "/extensions/extension-gallery#leds-and-lights",
     "cardType": "link"
 }, {
     "name": "Machine learning",
-    "url": "/extensions#machine-learning",
+    "url": "/extensions/extension-gallery#machine-learning",
     "cardType": "link"
 }, {
     "name": "Robotics",
-    "url": "/extensions#robotics",
+    "url": "/extensions/extension-gallery#robotics",
     "cardType": "link"
 }, {
     "name": "Sensor boards",
-    "url": "/extensions#sensor-boards",
+    "url": "/extensions/extension-gallery#sensor-boards",
     "cardType": "link"
 }, {
     "name": "Sound",
-    "url": "/extensions#sound",
+    "url": "/extensions/extension-gallery#sound",
     "cardType": "link"
 }, {
     "name": "Wearables",
-    "url": "/extensions#wearables",
+    "url": "/extensions/extension-gallery#wearables",
     "cardType": "link"
  }, {
     "name": "Utilities",
-    "url": "/extensions#utilities",
+    "url": "/extensions/extension-gallery#utilities",
     "cardType": "link"
 }]
 ```
