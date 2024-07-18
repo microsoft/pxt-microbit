@@ -43,10 +43,9 @@ If `value` is `NaN` (not a number), `?` is displayed.
 
 ## Other show functions
 
-* Use [show string](/reference/basic/show-string) to show a [String](/types/string) with letters on the screen.
-* Use [show animation](/reference/basic/show-animation) to show a group of pictures on the screen, one after another.
+Use [show string](/reference/basic/show-string) to show a [String](/types/string) with letters on the screen.
 
 ## See also
 
-[show string](/reference/basic/show-string), [show animation](/reference/basic/show-animation), [Number](/types/number), [math](/blocks/math)
+[show string](/reference/basic/show-string), [Number](/types/number), [math](/blocks/math)
 
