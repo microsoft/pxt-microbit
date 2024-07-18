@@ -55,7 +55,3 @@ input.on_button_pressed(Button.AB, on_button_pressed_a3)
 ## Step 5
 
 Click ``|Download|`` to transfer your code to your @boardname@ (if you have one). Try buttons **A**, **B** and then **A** and **B** together.
-
-## Step 6
-
-If you have a @boardname@ connected, click ``|Download|`` and transfer your code to the @boardname@!
