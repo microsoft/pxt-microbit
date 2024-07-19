@@ -2,13 +2,13 @@
 
 ### @explicitHints true
 
-## Introduction @unplugged
+## Heads or Tails? @unplugged
 
 Let's create a coin flipping program to simulate a real coin toss. We'll use icon images to represent a ``heads`` or ``tails`` result.
 
 ![Simulating coin toss](/static/mb/projects/coin-flipper/coin-flipper.gif)
 
-## Step 1
+## {Step 1}
 
 Add an event to run code when ``||input:button A pressed||``. We'll put our coin flipping
 code in here.
@@ -18,7 +18,7 @@ input.onButtonPressed(Button.A, () => {
 })
 ```
 
-## Step 2
+## {Step 2}
 
 Inside the event for ``||input:button A pressed||``, put in code to check ``||logic:if||`` a ``||math:random boolean||`` value is `true` or `false`.
 
@@ -33,7 +33,7 @@ input.onButtonPressed(Button.A, () => {
 })
 ```
 
-## Step 3
+## {Step 3}
 
 Now, ``||basic:show icon||`` for a `skull` ``||logic:if||`` the ``||math:random boolean||`` value is ``true``. This means ``heads``. ``||basic:show icon||`` of a ``square`` when ``false`` to mean
 ``tails``.
@@ -48,7 +48,7 @@ input.onButtonPressed(Button.A, () => {
 })
 ```
 
-## Step 4
+## {Step 4}
 
 Press button **A** in the simulator to try the coin toss code.
 
@@ -72,10 +72,10 @@ input.onButtonPressed(Button.A, () => {
 })
 ```
 
-## Step 6
+## {Step 6}
 
 If you have a @boardname@, connect it to USB and click ``|Download|`` to transfer your code.
 
-## Step 7
+## {Step 7}
 
 Press button **A** for a flip. Test your luck and guess ``heads`` or ``tails`` before the toss is over!

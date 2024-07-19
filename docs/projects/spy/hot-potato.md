@@ -3,7 +3,7 @@
 ### @explicitHints true
 ### @diffs true
 
-## Introduction @unplugged
+## Pass off that potato! @unplugged
 
 In this game, you will start a timer with a random countdown of a number of seconds. When the timer is off, the game is over and whoever is holding the potato has lost!
 Watch the tutorial on the [MakeCode YouTube channel](https://youtu.be/xLEy1B_gWKY).
