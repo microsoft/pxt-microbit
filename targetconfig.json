@@ -462,7 +462,8 @@
             "eb8ga/pxt-roversa-2": { "tags": [ "Robotics" ] },
             "roborisen/gcube": { "tags": [ "Robotics" ] },
             "kittenbot/pxt-tabbyrobot": { "tags": [ "Robotics" ] },
-            "pythom1234/pxt-oled": { "tags": [ "Lights and Display" ] }
+            "pythom1234/pxt-oled": { "tags": [ "Lights and Display" ] },
+            "softsmyth/lectrify-b4k": { "tags": [ "Robotics" ] }
         },
         "upgrades": {
             "tinkertanker/pxt-iot-environment-kit": "min:v4.2.1",
