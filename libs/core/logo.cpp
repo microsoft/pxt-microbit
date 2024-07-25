@@ -26,7 +26,7 @@ namespace input {
     //% help="input/on-logo-event"
     void onLogoEvent(TouchButtonEvent action, Action body) {
 #if MICROBIT_CODAL
-        registerWithDal(uBit.logo.id, action, body);
+        registerWithDal(uBit.io.logo.id, action, body);
 #else
         target_panic(PANIC_VARIANT_NOT_SUPPORTED);
 #endif
@@ -43,7 +43,7 @@ namespace input {
     //% help="input/logo-is-pressed"
     bool logoIsPressed() {
 #if MICROBIT_CODAL
-        return uBit.logo.isPressed();
+        return uBit.io.logo.isTouched();
 #else
         target_panic(PANIC_VARIANT_NOT_SUPPORTED);
         return false;
