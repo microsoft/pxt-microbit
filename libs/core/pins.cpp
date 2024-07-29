@@ -252,7 +252,7 @@ namespace pins {
     * @param name digital pin to register to, eg: DigitalPin.P0
     * @param pulse the value of the pulse, eg: PulseValue.High
     */
-    //% help=pins/on-pulsed advanced=true
+    //% help=pins/on-pulsed advanced=true afterOnStart=true
     //% blockId=pins_on_pulsed block="on|pin %pin|pulsed %pulse"
     //% pin.shadow=digital_pin
     //% group="Pulse"

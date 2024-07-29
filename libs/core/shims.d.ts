@@ -416,7 +416,7 @@ declare namespace control {
      * Registers an event handler.
      */
     //% weight=20 blockGap=8 blockId="control_on_event" block="on event|from %src=control_event_source_id|with value %value=control_event_value_id"
-    //% help=control/on-event
+    //% help=control/on-event afterOnStart=true
     //% blockExternalInputs=1 flags.defl=0 shim=control::onEvent
     function onEvent(src: int32, value: int32, handler: () => void, flags?: int32): void;
 
@@ -755,7 +755,7 @@ declare namespace pins {
      * @param name digital pin to register to, eg: DigitalPin.P0
      * @param pulse the value of the pulse, eg: PulseValue.High
      */
-    //% help=pins/on-pulsed advanced=true
+    //% help=pins/on-pulsed advanced=true afterOnStart=true
     //% blockId=pins_on_pulsed block="on|pin %pin|pulsed %pulse"
     //% pin.shadow=digital_pin
     //% group="Pulse"
