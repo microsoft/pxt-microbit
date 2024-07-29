@@ -52,7 +52,7 @@ input.onButtonPressed(Button.A, () => {
 
 Press button **A** in the simulator to try the coin toss code.
 
-## Step 5
+## {Step 5}
 
 You can animate the coin toss to add the feeling of suspense. ``||basic:show||`` different
 icons before the check of the ``||math:random boolean||`` value to show that the
