@@ -192,7 +192,7 @@ namespace pins {
      */
     //% help=pins/digital-read-pin weight=30
     //% blockId=device_get_digital_pin block="digital read|pin %name" blockGap=8
-    //% name.shadow=digital_pin
+    //% name.shadow=shadow_digital_pin
     int digitalReadPin(int name) {
         PINREAD(getDigitalValue());
     }
@@ -205,7 +205,7 @@ namespace pins {
     //% help=pins/digital-write-pin weight=29
     //% blockId=device_set_digital_pin block="digital write|pin %name|to %value"
     //% value.min=0 value.max=1
-    //% name.shadow=digital_pin
+    //% name.shadow=shadow_digital_pin
     void digitalWritePin(int name, int value) {
         PINOP(setDigitalValue(value));
     }
@@ -216,7 +216,7 @@ namespace pins {
      */
     //% help=pins/analog-read-pin weight=25
     //% blockId=device_get_analog_pin block="analog read|pin %name" blockGap="8"
-    //% name.shadow=analog_pin
+    //% name.shadow=shadow_analog_pin
     int analogReadPin(int name) {
         PINREAD(getAnalogValue());
     }
@@ -229,7 +229,7 @@ namespace pins {
     //% help=pins/analog-write-pin weight=24
     //% blockId=device_set_analog_pin block="analog write|pin %name|to %value" blockGap=8
     //% value.min=0 value.max=1023
-    //% name.shadow=analog_pin
+    //% name.shadow=shadow_analog_pin
     void analogWritePin(int name, int value) {
         PINOP(setAnalogValue(value));
     }
@@ -242,7 +242,7 @@ namespace pins {
      */
     //% help=pins/analog-set-period weight=23 blockGap=8
     //% blockId=device_set_analog_period block="analog set period|pin %pin|to (µs)%micros"
-    //% pin.shadow=analog_pin
+    //% pin.shadow=shadow_analog_pin
     void analogSetPeriod(int name, int micros) {
         PINOP(setAnalogPeriodUs(micros));
     }
@@ -254,7 +254,7 @@ namespace pins {
     */
     //% help=pins/on-pulsed advanced=true
     //% blockId=pins_on_pulsed block="on|pin %pin|pulsed %pulse"
-    //% pin.shadow=digital_pin
+    //% pin.shadow=shadow_digital_pin
     //% group="Pulse"
     //% weight=25
     //% blockGap=8
@@ -287,7 +287,7 @@ namespace pins {
     //% blockId="pins_pulse_in" block="pulse in (µs)|pin %name|pulsed %value"
     //% advanced=true
     //% help=pins/pulse-in
-    //% name.shadow=digital_pin
+    //% name.shadow=shadow_digital_pin
     //% group="Pulse"
     //% weight=23
     //% blockGap=8
@@ -333,7 +333,7 @@ namespace pins {
     //% blockId=device_set_servo_pin block="servo write|pin %name|to %value" blockGap=8
     //% parts=microservo trackArgs=0
     //% value.min=0 value.max=180
-    //% name.shadow=analog_pin
+    //% name.shadow=shadow_analog_pin
     //% group="Servo"
     void servoWritePin(int name, int value) {
         PINOP(setServoValue(value));
@@ -354,7 +354,7 @@ namespace pins {
      */
     //% help=pins/servo-set-pulse weight=19
     //% blockId=device_set_servo_pulse block="servo set pulse|pin %value|to (µs) %micros"
-    //% value.shadow=analog_pin
+    //% value.shadow=shadow_analog_pin
     //% group="Servo"
     void servoSetPulse(int name, int micros) {
         PINOP(setServoPulseUs(micros));
@@ -372,7 +372,7 @@ namespace pins {
      */
     //% blockId=device_analog_set_pitch_pin block="analog set pitch pin %name"
     //% help=pins/analog-set-pitch-pin advanced=true
-    //% name.shadow=analog_pin
+    //% name.shadow=shadow_analog_pin
     //% group="Pins"
     //% weight=12
     //% blockGap=8
@@ -475,7 +475,7 @@ namespace pins {
     */
     //% help=pins/set-pull advanced=true
     //% blockId=device_set_pull block="set pull|pin %pin|to %pull"
-    //% pin.shadow=digital_pin
+    //% pin.shadow=shadow_digital_pin
     //% group="Pins"
     //% weight=15
     //% blockGap=8
@@ -503,7 +503,7 @@ namespace pins {
     */
     //% help=pins/set-events advanced=true
     //% blockId=device_set_pin_events block="set pin %pin|to emit %type|events"
-    //% pin.shadow=digital_pin
+    //% pin.shadow=shadow_digital_pin
     //% group="Pins"
     //% weight=13
     //% blockGap=8
@@ -530,7 +530,7 @@ namespace pins {
      */
     //% help=pins/neopixel-matrix-width advanced=true
     //% blockId=pin_neopixel_matrix_width block="neopixel matrix width|pin %pin %width"
-    //% pin.shadow=digital_pin
+    //% pin.shadow=shadow_digital_pin
     //% width.defl=5 width.min=2
     //% group="Pins"
     //% weight=11
@@ -649,9 +649,9 @@ namespace pins {
     */
     //% help=pins/spi-pins advanced=true
     //% blockId=spi_pins block="spi set pins|MOSI %mosi|MISO %miso|SCK %sck"
-    //% mosi.shadow=digital_pin
-    //% miso.shadow=digital_pin
-    //% sck.shadow=digital_pin
+    //% mosi.shadow=shadow_digital_pin
+    //% miso.shadow=shadow_digital_pin
+    //% sck.shadow=shadow_digital_pin
     //% group="SPI"
     //% blockGap=8
     //% weight=51
@@ -677,7 +677,7 @@ namespace pins {
     */
     //% blockId=pin_set_audio_pin block="set audio pin $name"
     //% help=pins/set-audio-pin
-    //% name.shadow=digital_pin
+    //% name.shadow=shadow_digital_pin
     //% weight=1
     //% blockGap=8
     void setAudioPin(int name) {
