@@ -408,16 +408,16 @@ namespace music {
 
         switch (effect) {
             case SoundExpressionEffect.Vibrato:
-                src = setValue(src, 36, 2, 4);
-                src = setValue(src, 40, 512, 4);
+                src = setValue(src, 36, DAL.SFX_DEFAULT_VIBRATO_PARAM, 4);
+                src = setValue(src, 40, DAL.SFX_DEFAULT_VIBRATO_STEPS, 4);
                 break;
             case SoundExpressionEffect.Tremolo:
-                src = setValue(src, 36, 3, 4);
-                src = setValue(src, 40, 900, 4);
+                src = setValue(src, 36, DAL.SFX_DEFAULT_TREMOLO_PARAM, 4);
+                src = setValue(src, 40, DAL.SFX_DEFAULT_TREMOLO_STEPS, 4);
                 break;
             case SoundExpressionEffect.Warble:
-                src = setValue(src, 36, 2, 4);
-                src = setValue(src, 40, 700, 4);
+                src = setValue(src, 36, DAL.SFX_DEFAULT_WARBLE_PARAM, 4);
+                src = setValue(src, 40, DAL.SFX_DEFAULT_WARBLE_STEPS, 4);
                 break;
         }
 
