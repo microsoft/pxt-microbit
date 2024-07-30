@@ -75,6 +75,7 @@
     "public": true,
     "dependencies": {},
     "dalDTS": {
+        "corePackage": ".",
         "compileServiceVariant": "mbcodal",
         "includeDirs": [
             "libraries/codal-core/inc",
