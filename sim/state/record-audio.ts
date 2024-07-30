@@ -177,6 +177,8 @@ namespace pxsim.record {
 
                     const minPlaybackRate = 0.15
 
+                    // 15 is the maximum playback rate that still produced sound in Chrome on Windows.
+                    // In Firefox, it seems like 8 is the max. Higher numbers silently fail.
                     let maxPlaybackRate = 15;
                     if (isFirefox()) {
                         maxPlaybackRate = 8;
