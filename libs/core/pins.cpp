@@ -696,7 +696,7 @@ namespace pins {
     */
     //% blockId=pin_set_audio_pin_enabled
     //% block="set audio pin enabled $enabled"
-    //% weight=0
+    //% weight=0 help=pins/set-audio-pin-enabled
     void setAudioPinEnabled(bool enabled) {
         edgeConnectorSoundDisabled = !enabled;
 #if MICROBIT_CODAL
