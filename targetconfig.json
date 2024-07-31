@@ -205,7 +205,7 @@
             "alankrantas/pxt-dht11_dht22": { "tags": [ "Science" ] },
             "freenove/makecode-extension-rover": { "tags": [ "Robotics" ] },
             "letstalkscience/pxt-cozir": { "tags": [ "Science" ] },
-            "SolderedElectronics/pxt-wifi": { "tags": [ "Networking" ] },
+            "solderedelectronics/pxt-wifi": { "tags": [ "Networking" ] },
             "monkmakes/pxt-sensor": { "tags": [ "Science" ] },
             "beyond-coding-tw/pxt-nexusbot": { "tags": [ "Robotics" ] },
             "elecfreaks/pxt-cutebot": {
