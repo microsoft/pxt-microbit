@@ -359,7 +359,7 @@ Many extensions are available to work with interface kits, add-on hardware, or o
   "cardType": "package"
 }, {
   "name": "WiFi:Bit",
-  "url":"/pkg/e-radionicacom/pxt-wifi",
+  "url":"/pkg/SolderedElectronics/pxt-wifi",
   "cardType": "package"
 }, {
   "name": "ESP8266 and ThingSpeak",
