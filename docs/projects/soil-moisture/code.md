@@ -78,9 +78,10 @@ This saves electricity and also avoids corrosion of the probes.
 led.setBrightness(64)
 let reading = 0
 basic.forever(() => {
-    pins.analogWritePin(AnalogPin.P1, 1023)
+    pins.digitalWritePin(DigitalPin.P1, 1)
+    basic.pause(1)
     reading = pins.analogReadPin(AnalogPin.P0)
-    pins.analogWritePin(AnalogPin.P1, 0)
+    pins.digitalWritePin(DigitalPin.P1, 0)
     led.plotBarGraph(
         reading,
         1023
