@@ -20,7 +20,7 @@ We want to detect when the solid state occurs. On Pin 2 Pressed, you want to rep
 ```blocks
 let temperature = 0
 let atmos_temperature = 0
-input.onPinPressed(TouchPin.P2, () => {
+input.onPinPressed(TouchPin.P2, function () {
     atmos_temperature = 0
     basic.showString("SOLID")
 })
@@ -35,11 +35,11 @@ We want to detect when the liquid state happens. On Pin 1 Pressed, you want to r
 ```blocks
 let temperature = 0
 let atmos_temperature = 0
-input.onPinPressed(TouchPin.P2, () => {
+input.onPinPressed(TouchPin.P2, function () {
     atmos_temperature = 0
     basic.showString("SOLID")
 })
-input.onPinPressed(TouchPin.P1, () => {
+input.onPinPressed(TouchPin.P1, function () {
     atmos_temperature = 80
     basic.showString("LIQUID")
 })
@@ -54,15 +54,15 @@ We want to detect when matter will be a gas. On Pin 0 Pressed, you want to repre
 ```blocks
 let atmos_temperature = 0
 let temperature = 0
-input.onPinPressed(TouchPin.P0, () => {
+input.onPinPressed(TouchPin.P0, function () {
     atmos_temperature = 250
     basic.showString("GAS")
 })
-input.onPinPressed(TouchPin.P2, () => {
+input.onPinPressed(TouchPin.P2, function () {
     atmos_temperature = 0
     basic.showString("SOLID")
 })
-input.onPinPressed(TouchPin.P1, () => {
+input.onPinPressed(TouchPin.P1, function () {
     atmos_temperature = 80
     basic.showString("LIQUID")
 })
@@ -79,19 +79,19 @@ We want to display a change of temperature on shake. When you shake the states o
 ```blocks
 let atmos_temperature = 0
 let temperature = 0
-input.onGesture(Gesture.Shake, () => {
+input.onGesture(Gesture.Shake, function () {
     temperature += 50
     basic.showIcon(IconNames.Triangle)
 })
-input.onPinPressed(TouchPin.P0, () => {
+input.onPinPressed(TouchPin.P0, function () {
     atmos_temperature = 250
     basic.showString("GAS")
 })
-input.onPinPressed(TouchPin.P2, () => {
+input.onPinPressed(TouchPin.P2, function () {
     atmos_temperature = 0
     basic.showString("SOLID")
 })
-input.onPinPressed(TouchPin.P1, () => {
+input.onPinPressed(TouchPin.P1, function () {
     atmos_temperature = 80
     basic.showString("LIQUID")
 })
@@ -117,11 +117,11 @@ The second condition follows this logic:
 ```blocks
 let atmos_temperature = 0
 let temperature = 0
-input.onGesture(Gesture.Shake, () => {
+input.onGesture(Gesture.Shake, function () {
     temperature += 50
     basic.showIcon(IconNames.Triangle)
 })
-basic.forever(() => {
+basic.forever(function () {
     if (temperature < atmos_temperature) {
         temperature += 20
     } else {
@@ -137,15 +137,15 @@ basic.forever(() => {
     basic.clearScreen()
     basic.pause(100)
 })
-input.onPinPressed(TouchPin.P0, () => {
+input.onPinPressed(TouchPin.P0, function () {
     atmos_temperature = 250
     basic.showString("GAS")
 })
-input.onPinPressed(TouchPin.P2, () => {
+input.onPinPressed(TouchPin.P2, function () {
     atmos_temperature = 0
     basic.showString("SOLID")
 })
-input.onPinPressed(TouchPin.P1, () => {
+input.onPinPressed(TouchPin.P1, function () {
     atmos_temperature = 80
     basic.showString("LIQUID")
 })

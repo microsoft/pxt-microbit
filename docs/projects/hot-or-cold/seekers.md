@@ -22,7 +22,7 @@ To determine how far away or how close they are, we use the signal strength of e
 let signal = 0;
 radio.onReceivedNumber(function (receivedNumber) {
     signal = radio.receivedPacket(RadioPacketProperty.SignalStrength)
-    basic.showNumber(signal);
+    basic.showNumber(signal)
 });
 radio.setGroup(1)
 ```
@@ -47,7 +47,7 @@ Here is an example that uses ``-95`` or less for cold, between ``-95`` and ``-80
 ### ~
 
 ```blocks
-let signal = 0;
+let signal = 0
 radio.onReceivedNumber(function (receivedNumber) {
     signal = radio.receivedPacket(RadioPacketProperty.SignalStrength)
     if (signal < -90) {

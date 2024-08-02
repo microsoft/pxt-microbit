@@ -14,7 +14,7 @@ Add an event to run code when ``||input:button A pressed||``. We'll put our coin
 code in here.
 
 ```spy
-input.onButtonPressed(Button.A, () => {
+input.onButtonPressed(Button.A, function () {
 })
 ```
 
@@ -26,7 +26,7 @@ The ``||math:random boolean||`` value is used to determine a ``heads`` or ``tail
 a coin toss.
 
 ```spy
-input.onButtonPressed(Button.A, () => {
+input.onButtonPressed(Button.A, function () {
     if (Math.randomBoolean()) {
     } else {
     }
@@ -39,7 +39,7 @@ Now, ``||basic:show icon||`` for a `skull` ``||logic:if||`` the ``||math:random 
 ``tails``.
 
 ```spy
-input.onButtonPressed(Button.A, () => {
+input.onButtonPressed(Button.A, function () {
     if (Math.randomBoolean()) {
         basic.showIcon(IconNames.Skull)
     } else {
@@ -59,7 +59,7 @@ icons before the check of the ``||math:random boolean||`` value to show that the
 coin is flipping.
 
 ```spy
-input.onButtonPressed(Button.A, () => {
+input.onButtonPressed(Button.A, function () {
     basic.showIcon(IconNames.Diamond)
     basic.showIcon(IconNames.SmallDiamond)
     basic.showIcon(IconNames.Diamond)

@@ -25,10 +25,10 @@ Before creating the code for the game actions, let's first add some controls so 
 ```blocks
 let bird: game.LedSprite = null
 
-input.onButtonPressed(Button.A, () => {
+input.onButtonPressed(Button.A, function () {
     bird.change(LedSpriteProperty.Y, -1)
 })
-input.onButtonPressed(Button.B, () => {
+input.onButtonPressed(Button.B, function () {
     bird.change(LedSpriteProperty.Y, 1)
 })
 ```
@@ -79,11 +79,11 @@ for (let index = 0; index <= 4; index++) {
     }
 }
 
-input.onButtonPressed(Button.A, () => {
+input.onButtonPressed(Button.A, function () {
     bird.change(LedSpriteProperty.Y, -1)
 })
 
-input.onButtonPressed(Button.B, () => {
+input.onButtonPressed(Button.B, function () {
     bird.change(LedSpriteProperty.Y, 1)
 })
 ```
@@ -97,7 +97,7 @@ Right click on the ``||value||`` block and rename it to ``||obstacle||``
 ```blocks
 let obstacles: game.LedSprite[] = []
 
-basic.forever(() => {
+basic.forever(function () {
     for (let obstacle of obstacles) {
         obstacle.change(LedSpriteProperty.X, -1)
     }
@@ -114,7 +114,7 @@ Make obstacles disappear after reaching leftmost corner. Iterate over all obstac
 ```blocks
 let obstacles: game.LedSprite[] = []
 
-basic.forever(() => {
+basic.forever(function () {
     while (obstacles.length > 0 && obstacles[0].get(LedSpriteProperty.X) == 0) {
         obstacles.removeAt(0).delete()
     }
@@ -134,7 +134,7 @@ At the moment, our code generates just one vertical obstacle. We need to put obs
 let emptyObstacleY = 0
 let obstacles: game.LedSprite[] = []
 
-basic.forever(() => {
+basic.forever(function () {
     while (obstacles.length > 0 && obstacles[0].get(LedSpriteProperty.X) == 0) {
         obstacles.removeAt(0).delete()
     }
@@ -159,7 +159,7 @@ let ticks = 0
 let emptyObstacleY = 0
 let obstacles: game.LedSprite[] = []
 
-basic.forever(() => {
+basic.forever(function () {
     while (obstacles.length > 0 && obstacles[0].get(LedSpriteProperty.X) == 0) {
         obstacles.removeAt(0).delete()
     }
@@ -190,7 +190,7 @@ let ticks = 0
 let emptyObstacleY = 0
 let obstacles: game.LedSprite[] = []
 
-basic.forever(() => {
+basic.forever(function () {
     while (obstacles.length > 0 && obstacles[0].get(LedSpriteProperty.X) == 0) {
         obstacles.removeAt(0).delete()
     }
@@ -226,17 +226,17 @@ let emptyObstacleY = 0
 let obstacles: game.LedSprite[] = []
 let index = 0
 let bird: game.LedSprite = null
-input.onButtonPressed(Button.A, () => {
+input.onButtonPressed(Button.A, function () {
     bird.change(LedSpriteProperty.Y, -1)
 })
-input.onButtonPressed(Button.B, () => {
+input.onButtonPressed(Button.B, function () {
     bird.change(LedSpriteProperty.Y, 1)
 })
 index = 0
 obstacles = []
 bird = game.createSprite(0, 2)
 bird.set(LedSpriteProperty.Blink, 300)
-basic.forever(() => {
+basic.forever(function () {
     while (obstacles.length > 0 && obstacles[0].get(LedSpriteProperty.X) == 0) {
         obstacles.removeAt(0).delete()
     }

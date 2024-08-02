@@ -17,7 +17,7 @@ radio.onReceivedNumber(function (receivedNumber: number) {
     pins.servoWritePin(AnalogPin.P0, 180)
     basic.pause(500)
 })
-input.onButtonPressed(Button.A, () => {
+input.onButtonPressed(Button.A, function () {
     radio.sendNumber(0)
 })
 ```

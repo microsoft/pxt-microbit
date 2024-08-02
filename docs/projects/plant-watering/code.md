@@ -30,7 +30,7 @@ radio.setTransmitSerialNumber(true)
 radio.setGroup(4)
 led.setBrightness(64)
 let reading = 0
-basic.forever(() => {
+basic.forever(function () {
     pins.analogWritePin(AnalogPin.P1, 1023)
     reading = pins.analogReadPin(AnalogPin.P0)
     radio.sendNumber(reading / 4);

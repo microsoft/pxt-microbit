@@ -56,7 +56,7 @@ For patterns that you design, decide which LEDs you want to turn on and then mak
 Figure out how to make the first letter of your name with the LEDs.  
 
 ```sim
-basic.forever(() => {
+basic.forever(function () {
     basic.showAnimation(`
     # # # . . # # # . . # # # . . # # # . .
     . . . . . # . . . . # . . . . # . . # .
@@ -75,7 +75,7 @@ basic.forever(() => {
 Make something fun!
 
 ```sim
-basic.forever(() => {
+basic.forever(function () {
     basic.showAnimation(`
     # . . . . # . . . . # . . . . # . . . . # . . . . # . . . .
     . . . . . # . . . . # . . . . # . . . . # . . . # # . # # #
@@ -99,86 +99,86 @@ Copy this code into the JavaScript editor and then download it to the board.
 
 ```typescript
 class Board {
-    public isKarelActive: boolean;
-    public karelX: number;
-    public karelY: number;
+    public isKarelActive: boolean
+    public karelX: number
+    public karelY: number
 
-    public ledState: Image;
-    private karelDirection: Direction;
+    public ledState: Image
+    private karelDirection: Direction
 
     constructor() {
-        this.isKarelActive = true;
-        this.karelX = 2;
-        this.karelY = 2;
-        this.karelDirection = Direction.UP;
+        this.isKarelActive = true
+        this.karelX = 2
+        this.karelY = 2
+        this.karelDirection = Direction.UP
         this.ledState = images.createImage(`
             . . . . .
             . . . . .
             . . . . .
             . . . . .
             . . . . .
-            `);
+            `)
     }
 
     pressedA() {
         if (!this.isKarelActive) {
-            return;
+            return
         }
-        this.karelDirection = (this.karelDirection + 1) % 4;
+        this.karelDirection = (this.karelDirection + 1) % 4
     }
 
     pressedB() {
         if (!this.isKarelActive) {
-            return;
+            return
         }
-        this.ledState.setPixel(this.karelX, this.karelY, true);
+        this.ledState.setPixel(this.karelX, this.karelY, true)
         this.moveKarel()
     }
 
     shake() {
         if (!this.isKarelActive) {
-            return;
+            return
         }
         this.moveKarel()
     }
 
     private moveKarel() {
         if (!this.isKarelActive) {
-            return;
+            return
         }
         switch (this.karelDirection) {
             case Direction.UP:
                 if (this.karelY > 0) {
-                    this.karelY -= 1;
+                    this.karelY -= 1
                 }
-                break;
+                break
             case Direction.LEFT:
                 if (this.karelX > 0) {
-                    this.karelX -= 1;
+                    this.karelX -= 1
                 }
-                break;
+                break
             case Direction.DOWN:
                 if (this.karelY < 4) {
-                    this.karelY += 1;
+                    this.karelY += 1
                 }
-                break;
+                break
             case Direction.RIGHT:
                 if (this.karelX < 4) {
-                    this.karelX += 1;
+                    this.karelX += 1
                 }
-                break;
+                break
         }
     }
 
     pressedAB() {
-        this.isKarelActive = !this.isKarelActive;
+        this.isKarelActive = !this.isKarelActive
     }
 
     update() {
-        this.ledState.showImage(0);
+        this.ledState.showImage(0)
     }
 }
-const board = new Board();
+const board = new Board()
 enum Direction {
     UP = 0,
     LEFT,
@@ -186,21 +186,21 @@ enum Direction {
     RIGHT
 }
 input.onButtonPressed(Button.B, function () {
-    board.pressedB();
-    board.update();
+    board.pressedB()
+    board.update()
 })
 input.onGesture(Gesture.Shake, function () {
-    board.shake();
-    board.update();
+    board.shake()
+    board.update()
 })
 
 input.onButtonPressed(Button.A, function () {
-    board.pressedA();
-    board.update();
+    board.pressedA()
+    board.update()
 })
 input.onButtonPressed(Button.AB, function () {
-    board.pressedAB();
-    board.update();
+    board.pressedAB()
+    board.update()
 })
 basic.forever(function () {
     if (board.isKarelActive) {

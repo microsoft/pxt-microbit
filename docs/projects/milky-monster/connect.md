@@ -12,13 +12,13 @@ You will need a second @boardname@ for this part. By using the radio, we can con
 Download the code below to the @boardname@ that's on the Milky Monster and again to another "controller" @boardname@. Whenever button **A** is pressed, the Milky Monster will move one time.
 
 ```blocks
-radio.onReceivedNumber((receivedNumber) => {
+radio.onReceivedNumber(function(receivedNumber) {
     pins.servoWritePin(AnalogPin.P0, 0)
     basic.pause(500)
     pins.servoWritePin(AnalogPin.P0, 180)
     basic.pause(500)
 })
-input.onButtonPressed(Button.A, () => {
+input.onButtonPressed(Button.A, function () {
     radio.sendNumber(0)
 })
 ```

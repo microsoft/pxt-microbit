@@ -34,7 +34,7 @@ When the clock reaches "noon" (let's pick `8` as noon), we turn on the screen br
 ```block
 // the clock ticker
 let clock = 0
-basic.forever(() => {
+basic.forever(function () {
     // if clock "hits noon", flash the screen
     if (clock >= 8) {
         // flash
@@ -61,7 +61,7 @@ When a firefly flashes, it also sends a number over radio using ``||radio:radio 
 ```block
 // the clock ticker
 let clock = 0
-basic.forever(() => {
+basic.forever(function () {
     // if clock "hits noon", flash the screen
     if (clock >= 8) {
         // notify neighbors
@@ -111,7 +111,7 @@ radio.onReceivedNumber(function (receivedNumber) {
     // advance clock to catch up neighbors
     clock += 1
 })
-basic.forever(() => {
+basic.forever(function () {
     // if clock hits noon, flash the screen
     if (clock >= 8) {
         // notify neighbors

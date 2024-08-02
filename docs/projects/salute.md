@@ -37,7 +37,7 @@ Choose a random number between 0 and 9.
 
 ```blocks
 let randomNbr = 0
-input.onGesture(Gesture.ScreenUp, () => {
+input.onGesture(Gesture.ScreenUp, function () {
     randomNbr = randint(0, 10)
     basic.showNumber(randomNbr)
 })
@@ -47,7 +47,7 @@ Choose a random number between 1 and 9.
 
 ```blocks
 let randomNbr = 0
-input.onGesture(Gesture.ScreenUp, () => {
+input.onGesture(Gesture.ScreenUp, function () {
     randomNbr = 0
     while (randomNbr < 1) {
         randomNbr = randint(0, 10)
@@ -63,13 +63,13 @@ The score keeper program adds one point for a player when button ``A`` or ``B`` 
 ```blocks
 let player1Score = 0
 let player2Score = 0
-input.onButtonPressed(Button.A, () => {
+input.onButtonPressed(Button.A, function () {
     player1Score += 1
 })
-input.onButtonPressed(Button.B, () => {
+input.onButtonPressed(Button.B, function () {
     player2Score += 1
 })
-input.onButtonPressed(Button.AB, () => {
+input.onButtonPressed(Button.AB, function () {
     if (player1Score == player2Score) {
         basic.showString("TIE")
     } else if (player1Score > player2Score) {

@@ -13,7 +13,7 @@ Add code to open the mouth when light is detected.
 We are going to add code to open the mouth proportionally to the amount of light on the @boardname@. The code is in a loop so we'll continually read the light level and map it to an angle using the ``||pins:map||`` function.
 
 ```blocks
-basic.forever(() => {
+basic.forever(function () {
     pins.servoWritePin(AnalogPin.P0, pins.map(
         input.lightLevel(),
         0,

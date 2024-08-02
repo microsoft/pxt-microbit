@@ -18,10 +18,10 @@ https://youtu.be/m-HS8OyS0pw
 
 ## Step 2: code light sensor
 
-Code the lightsensor on the @boardname@ to control the servo.
+Code the light sensor on the @boardname@ to control the servo.
 
 ```blocks
-basic.forever(() => {
+basic.forever(function () {
     led.plotBarGraph(
         input.lightLevel(),
         0
@@ -48,7 +48,7 @@ angle range, ``[closed, opened]`` using ``pins.map``.
 let angle = 0
 let closed = 0
 let opened = 0
-basic.forever(() => {
+basic.forever(function () {
     led.plotBarGraph(
         input.lightLevel(),
         0

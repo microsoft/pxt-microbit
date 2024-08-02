@@ -18,7 +18,7 @@ https://youtu.be/pD6tM1nXCPA
 The first program has the car drive around in a circle for 5 seconds when the user presses the ``A`` button. This is simply done by turning both motor controllers on for 5 seconds.
 
 ```blocks-ignore
-input.onButtonPressed(Button.A, () => {
+input.onButtonPressed(Button.A, function () {
     basic.showIcon(IconNames.Happy)
     kitronik.motorOn(kitronik.Motors.Motor1, kitronik.MotorDirection.Reverse, 100)
     kitronik.motorOn(kitronik.Motors.Motor2, kitronik.MotorDirection.Forward, 100)
@@ -46,7 +46,7 @@ https://youtu.be/agor9wtiAkE
 Instead of stopping after 5 seconds, we reverse the steering motor to turn in the other direction. This will create a figure eight path.
 
 ```blocks-ignore
-input.onButtonPressed(Button.A, () => {
+input.onButtonPressed(Button.A, function () {
     basic.showIcon(IconNames.Happy)
     kitronik.motorOn(kitronik.Motors.Motor1, kitronik.MotorDirection.Reverse, 100)
     kitronik.motorOn(kitronik.Motors.Motor2, kitronik.MotorDirection.Forward, 100)

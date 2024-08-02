@@ -13,7 +13,7 @@ Turn your micro:bit into a **Rock Paper Scissors** game that you can play with y
 We'll start our Rock Paper Scissors game when we shake 👋 our micro:bit. Add an ``||input:on shake||`` function to run code when you shake the @boardname@. Type the code below, or drag a code snippet from the ``||input:Input||`` Toolbox category.
 
 ```spy
-input.onGesture(Gesture.Shake, () => {
+input.onGesture(Gesture.Shake, function () {
 
 })
 ```
@@ -24,7 +24,7 @@ Create a variable named "hand" - this will help us keep track of whether we have
 
 ```spy
 let hand = 0
-input.onGesture(Gesture.Shake, () => {
+input.onGesture(Gesture.Shake, function () {
     hand = randint(1, 3)
 })
 ```
@@ -35,7 +35,7 @@ To check the value of the hand variable, type ``||logic:if hand==1||`` then use 
 
 ```spy
 let hand = 0
-input.onGesture(Gesture.Shake, () => {
+input.onGesture(Gesture.Shake, function () {
     hand = randint(1, 3)
     if (hand == 1) {
         basic.showIcon(IconNames.SmallSquare)
