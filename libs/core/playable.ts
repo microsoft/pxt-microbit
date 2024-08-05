@@ -100,7 +100,7 @@ namespace music {
     //% blockId="music_string_playable"
     //% block="melody $melody at tempo $bpm|(bpm)"
     //% weight=85 blockGap=8
-    //% help=music/melody-editor
+    //% help=music/string-playable
     //% group="Melody"
     //% toolboxParent=music_playable_play
     //% toolboxParentArgument=toPlay
