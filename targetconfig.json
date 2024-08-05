@@ -92,8 +92,7 @@
             },
             "chevyng/pxt-ucl-junkrobot": { "tags": [ "Robotics" ] },
             "sparkfun/pxt-gamer-bit": {
-                "tags": [ "Gaming" ],
-                "upgrades": [ "dv:mbcodal" ]
+                "tags": [ "Gaming" ]
             },
             "sparkfun/pxt-moto-bit": { "tags": [ "Robotics" ] },
             "sparkfun/pxt-weather-bit": { "tags": [ "Science" ] },
