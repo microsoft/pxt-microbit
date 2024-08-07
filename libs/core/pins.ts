@@ -19,6 +19,19 @@ namespace pins {
     }
 
     /**
+     * Shadow block of digital_pin
+     */
+    //% help=pins/digital-pin blockGap=8 advanced=true shim=TD_ID
+    //% blockId="shadow_digital_pin" block="%pin"
+    //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=4
+    //% pin.fieldOptions.tooltips="false" pin.fieldOptions.width="250"
+    //% group="Pins"
+    //% weight=17 blockHidden=true
+    export function shadowDigitalPin(pin: DigitalPin): number {
+        return pin;
+    }
+
+    /**
      * Returns the value of a C++ runtime constant
      */
     //% help=pins/analog-pin blockGap=8 advanced=true shim=TD_ID
@@ -28,6 +41,19 @@ namespace pins {
     //% group="Pins"
     //% weight=16
     export function analogPin(pin: AnalogPin): number {
+        return pin;
+    }
+
+    /**
+     * Shadow block of analog_pin
+     */
+    //% help=pins/analog-pin blockGap=8 advanced=true shim=TD_ID
+    //% blockId="shadow_analog_pin" block="%pin"
+    //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=4
+    //% pin.fieldOptions.tooltips="false" pin.fieldOptions.width="250"
+    //% group="Pins"
+    //% weight=16 blockHidden=true
+    export function shadowAnalogPin(pin: AnalogPin): number {
         return pin;
     }
 
