@@ -299,7 +299,7 @@ namespace control {
      * Registers an event handler.
      */
     //% weight=20 blockGap=8 blockId="control_on_event" block="on event|from %src=control_event_source_id|with value %value=control_event_value_id"
-    //% help=control/on-event
+    //% help=control/on-event afterOnStart=true
     //% blockExternalInputs=1
     void onEvent(int src, int value, Action handler, int flags = 0) {
         if (!flags) flags = ::EventFlags::QueueIfBusy;
