@@ -280,6 +280,7 @@
                 "upgrades": [ "min:v0.13.1" ]
             },
             "elecfreaks/pxt-nezha": { "tags": [ "Robotics" ] },
+            "elecfreaks/pxt-nezha2": { "tags": [ "Robotics" ] },
             "philipphenkel/pxt-powerfunctions": {},
             "1010technologies/pxt-makerbit-ir-transmitter": {},
             "dfrobot/pxt-dfrobot_huskylens": { "tags": [ "Science" ] },
