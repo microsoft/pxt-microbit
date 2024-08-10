@@ -2,9 +2,9 @@
 
 In computer programming, iteration is the repetition of a sequence of code. A loop is a form of iteration. A loop repeats code until a certain condition is met. 
 
-## Questions for the students:
-* Do you use shampoo to wash your hair? _Most will say ‘Yes’_.
-* Have you ever read the instructions on a bottle of shampoo? _Most will say ‘No’_.
+## Questions to think about:
+* Do you use shampoo to wash your hair?
+* Have you ever read the instructions on a bottle of shampoo?
 	
 Most of us have never read the instructions on a bottle of shampoo, because we already know how to use shampoo.
 
@@ -15,7 +15,7 @@ Example:
 3. Scrub shampoo into hair
 4. Rinse shampoo out of hair
 		
-If you did read the instructions on a bottle of shampoo, you may read similar instructions as the ones you just wrote with one added step at the end. That step is ‘Repeat.’
+If you did read the instructions on a bottle of shampoo, you may read similar instructions as the ones you just wrote with one added step at the end: ‘Lather. Rinse. Repeat.’
 How does this one extra step affect the algorithm?
 
 ![Shampoo flowchart](/static/courses/csintro/iteration/shampoo-flowchart.png)
@@ -29,7 +29,7 @@ DBwebsolutions.com
 What other common activities involve repetitive actions? _Examples: Singing (choruses repeat), dancing, school cheers, walking and running, exercise routines..._
 
 ## Optional
-Share with your students the history of ‘Lather, Rinse, Repeat.’
+Read the history of ‘Lather, Rinse, Repeat.’ below.
 
 Lather, Rinse, Repeat: Hygiene Tip or Marketing Ploy
 By Lauren Goldstein
