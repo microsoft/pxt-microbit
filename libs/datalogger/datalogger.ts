@@ -293,9 +293,7 @@ namespace datalogger {
      * @param fromRowIndex 0-based index of start: Default value of 0
      * @returns header + rows
      */
-    //% block="get row count || from index $fromRowIndex"
-    //% blockId=dataloggergetnumberofrows
-    //% weight=25 help=datalogger/get-number-of-rows
+    //%
     export function getNumberOfRows(fromRowIndex: number = 0): number {
         return flashlog.getNumberOfRows(fromRowIndex);
     }
@@ -307,9 +305,7 @@ namespace datalogger {
      * @param nRows inclusive count from fromRowIndex
      * @returns String where newlines denote rows & commas denote columns
      */
-    //% block="get $nRows rows || from index $fromRowIndex"
-    //% blockId=dataloggergetrows
-    //% weight=25 help=datalogger/get-rows
+    //%
     export function getRows(nRows: number, fromRowIndex: number = 0): string {
         return flashlog.getRows(fromRowIndex, nRows);
     }
