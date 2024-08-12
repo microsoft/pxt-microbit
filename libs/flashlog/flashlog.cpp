@@ -148,6 +148,8 @@ void setSerialMirroring(bool enable) {
 int getNumberOfRows(int fromRowIndex = 0) {
 #if MICROBIT_CODAL
     return uBit.log.getNumberOfRows(fromRowIndex);
+#else
+    return DEVICE_NOT_SUPPORTED;
 #endif
 }
 
