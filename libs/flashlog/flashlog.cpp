@@ -141,10 +141,7 @@ void setSerialMirroring(bool enable) {
 * @param fromRowIndex 0-based index of start: Default value of 0
 * @returns header + rows
 */
-//% help=flashlog/get-number-of-rows
-//% parts="flashlog"
-//% blockGap=8
-//% group="micro:bit (V2)"
+//%
 int getNumberOfRows(int fromRowIndex = 0) {
 #if MICROBIT_CODAL
     return uBit.log.getNumberOfRows(fromRowIndex);
@@ -160,13 +157,12 @@ int getNumberOfRows(int fromRowIndex = 0) {
 * @param nRows inclusive count from fromRowIndex
 * @returns String where newlines denote rows & commas denote columns
 */
-//% help=flashlog/get-rows
-//% parts="flashlog"
-//% blockGap=8
-//% group="micro:bit (V2)"
+//%
 String getRows(int fromRowIndex, int nRows) {
 #if MICROBIT_CODAL
     return PSTR(uBit.log.getRows(fromRowIndex, nRows));
+#else
+    return DEVICE_NOT_SUPPORTED;
 #endif
 }
 
