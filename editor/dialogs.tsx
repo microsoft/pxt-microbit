@@ -22,9 +22,9 @@ export async function showProgramTooLargeErrorAsync(variants: string[], confirmA
             header: lf("Oops, there was a problem downloading your code"),
             body: lf("Great coding skills! Unfortunately, your program is too large to fit on a micro:bit V2😢. You can go back and try to make your program smaller, or continue to use the simulator to run your code."),
             bigHelpButton: true,
-            agreeLbl: lf("Go Back"),
-            agreeClass: "positive",
-            agreeIcon: "cancel",
+            hideAgree: true,
+            disagreeLbl: lf("Go Back"),
+            disagreeClass: "positive",
         });
         return undefined
     }
