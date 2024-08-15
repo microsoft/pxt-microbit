@@ -1,12 +1,12 @@
 # Stopwatch
 
-## Introduction @unplugged
+## Time is ticking! @unplugged
 
 ![A @boardname@ stopwatch toon image](/static/mb/projects/stopwatch.png)
 
 This project turns the @boardname@ into a simple stopwatch. Pressing **A** starts the timer. Pressing **B** displays the elapsed seconds.
 
-## Step 1
+## {Step 1}
 
 Use an event to run code when ``||input:button A is pressed||``.
 
@@ -15,7 +15,7 @@ input.onButtonPressed(Button.A, function () {
 })
 ```
 
-## Step 2
+## {Step 2}
 
 Add code to store the current ``||input:running time||``
 in a variable ``||variables:start||``. This is the start time.
@@ -27,7 +27,7 @@ input.onButtonPressed(Button.A, function () {
 })
 ```
 
-## Step 3
+## {Step 3}
 
 Add an event to run code when ``||input:button B is pressed||``.
 
@@ -36,7 +36,7 @@ input.onButtonPressed(Button.B, function () {
 })
 ```
 
-## Step 4
+## {Step 4}
 
 Add code to compute the difference between the ``||input:running time||`` 
 and ``||variables:value||`` time. This is the elapsed millisecond since pressing button A.
@@ -48,7 +48,7 @@ input.onButtonPressed(Button.B, function () {
 })
 ```
 
-## Step 5
+## {Step 5}
 
 Add code to ``||basic:show||`` the number of milliseconds ``||variables:elapsed||``. 
 Use ``||Math:integer division||`` to divide ``||variables:elapsed||`` by ``1000`` and get seconds.
@@ -61,11 +61,11 @@ input.onButtonPressed(Button.B, function () {
 })
 ```
 
-## Step 6
+## {Step 6}
 
 Try your program in the simulator. Press **A** to start the stopwatch and press **B** to get the current elapsed time. You can press **B** multiple times.
 
-## Step 7
+## {Step 7}
 
 If you have a @boardname@ connected, click ``|Download|`` to transfer your code!
 

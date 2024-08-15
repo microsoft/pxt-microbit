@@ -2,12 +2,12 @@
 
 ### @explicitHints true
 
-## Introduction @unplugged
+## Make a Heads Up guessing game! @unplugged
 
 This is a simple remake of the famous **Heads Up!** game. The player holds the @boardname@ on the forehead and has 30 seconds to guess words displayed on the screen.
 If the guess is correct, the player tilts the @boardname@ forward; to pass, the player tilts it backwards.
 
-## Step 1
+## {Step 1}
 
 Put in code to ``||game:start a countdown||`` of 30 seconds.
 
@@ -15,7 +15,7 @@ Put in code to ``||game:start a countdown||`` of 30 seconds.
 game.startCountdown(30000)
 ```
 
-## Step 2
+## {Step 2}
 
 Create an ``||arrays:array||`` called `text_list` of words to guess. Arrays are also called lists.
 
@@ -25,7 +25,7 @@ text_list = ["PUPPY", "CLOCK", "NIGHT"]
 game.startCountdown(30000)
 ```
 
-## Step 3
+## {Step 3}
 
 Add an event to run code when a ``||input:gesture||`` points the @boardname@ ``||input:logo up||``.
 This is the gesture to get a new word.
@@ -36,7 +36,7 @@ input.onGesture(Gesture.LogoUp, function () {
 })
 ```
 
-## Step 4
+## {Step 4}
 
 The items in the ``||arrays:text list||`` are numbered ``0`` to ``length - 1``.
 Add code to pick a ``||math:random||`` ``||variables:index||``.
@@ -50,7 +50,7 @@ input.onGesture(Gesture.LogoUp, function () {
 })
 ```
 
-## Step 5
+## {Step 5}
 
 Add code to ``||basic:show||`` the value of the item stored at ``||variables:index||`` in
 ``||arrays:text list||``.
@@ -65,7 +65,7 @@ input.onGesture(Gesture.LogoUp, function () {
 })
 ```
 
-## Step 6
+## {Step 6}
 
 Use an event to run code when a gesture has the  @boardname@ ``||input:screen||`` is
 pointing ``||input:down||``. This is the gesture for a correct guess.
@@ -76,7 +76,7 @@ input.onGesture(Gesture.ScreenDown, function () {
 })
 ```
 
-## Step 7
+## {Step 7}
 
 Put in code to add points to the ``||game:score||``.
 
@@ -87,7 +87,7 @@ input.onGesture(Gesture.ScreenDown, function () {
 })
 ```
 
-## Step 8
+## {Step 8}
 
 Add anonther event to run code when a gesture has the @boardname@ ``||input:screen||`` is
 pointing ``||input:up||``. This is the gesture for a pass.
@@ -98,7 +98,7 @@ input.onGesture(Gesture.ScreenUp, function () {
 })
 ```
 
-## Step 9
+## {Step 9}
 
 For the pass gesture, add code to remove a ``||game:life||`` from the player.
 

@@ -11,7 +11,7 @@ namespace pins {
     //% help=pins/digital-pin blockGap=8 advanced=true shim=TD_ID
     //% blockId="digital_pin" block="digital pin %pin"
     //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=4
-    //% pin.fieldOptions.tooltips="false" pin.fieldOptions.width="250"
+    //% pin.fieldOptions.tooltips="false"
     //% group="Pins"
     //% weight=17
     export function digitalPin(pin: DigitalPin): number {
@@ -24,7 +24,7 @@ namespace pins {
     //% help=pins/analog-pin blockGap=8 advanced=true shim=TD_ID
     //% blockId="analog_pin" block="analog pin %pin"
     //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=4
-    //% pin.fieldOptions.tooltips="false" pin.fieldOptions.width="250"
+    //% pin.fieldOptions.tooltips="false"
     //% group="Pins"
     //% weight=16
     export function analogPin(pin: AnalogPin): number {

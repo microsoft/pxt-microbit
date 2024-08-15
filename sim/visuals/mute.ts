@@ -60,4 +60,10 @@ namespace pxsim {
         //Checking for iPhone, iPod or iPad as well as Safari in order to detect home screen browsers on iOS
         return !isChrome() && !isEdge() && !!navigator && /(Macintosh|Safari|iPod|iPhone|iPad)/i.test(navigator.userAgent);
     }
+
+    //Safari and WebKit lie about being Firefox
+    export function isFirefox(): boolean {
+        return !isSafari() && !!navigator && (/Firefox/i.test(navigator.userAgent) || /Seamonkey/i.test(navigator.userAgent));
+    }
+
 }

@@ -2,14 +2,14 @@
 
 ### @explicitHints true
 
-## Introduction @unplugged
+## Is it level? @unplugged
 
 Is your table flat? Use the @boardname@ as a level!
 
 ![A level drawing](/static/mb/projects/level.png)
 
 
-## Step 1
+## {Step 1}
 
 Make a variable ``||variables:x||`` and store the ``||input:acceleration x||`` value
 in the ``||basic:forever||`` loop.
@@ -21,7 +21,7 @@ basic.forever(function() {
 })
 ```
 
-## Step 2
+## {Step 2}
 
 Make another variable ``||variables:y||`` and store the ``||input:acceleration y||`` value.
 
@@ -33,7 +33,7 @@ basic.forever(function() {
 })
 ```
 
-## Step 3
+## {Step 3}
 
 Add a code to test ``||logic:if||`` the ``||Math:absolute value||`` of ``||variables:x||`` is ``||logic:greater than||`` ``32``. 
 If it is true, ``||basic:show an icon||`` to tell you that the @boardname@ is not flat, ``||logic:else||`` show nothing, for now.
@@ -51,7 +51,7 @@ basic.forever(function() {
 })
 ```
 
-## Step 4
+## {Step 4}
 
 Add an ``||logic:else if||`` to check that the ``||Math:absolute value||`` of ``||variables:y||`` is ``||logic:greater than||`` ``32``. 
 If it is true, ``||basic:show an icon||`` that tells you the @boardname@ is not flat.
@@ -71,7 +71,7 @@ basic.forever(function() {
 })
 ```
 
-## Step 5
+## {Step 5}
 
 The code under the ``||logic:else||`` will run if both acceleration ``x`` and ``y`` are small, which happens when the @boardname@ is laying flat. Add code to ``||basic:show a happy image||``.
 
@@ -90,7 +90,7 @@ basic.forever(function() {
 })
 ```
 
-## Step 6
+## {Step 6}
 
 If you have a @boardname@ connected, click ``|Download|`` to transfer your code!
 Try it out on a table, counter, or window sill in your house!

@@ -359,7 +359,7 @@ Many extensions are available to work with interface kits, add-on hardware, or o
   "cardType": "package"
 }, {
   "name": "WiFi:Bit",
-  "url":"/pkg/e-radionicacom/pxt-wifi",
+  "url":"/pkg/SolderedElectronics/pxt-wifi",
   "cardType": "package"
 }, {
   "name": "ESP8266 and ThingSpeak",
@@ -521,6 +521,10 @@ Many extensions are available to work with interface kits, add-on hardware, or o
 
 ```codecard
 [{
+  "name": "Lectrify Brick:Bit",
+  "url":"/pkg/softsmyth/lectrify-b4k",
+  "cardType": "package"
+}, {
   "name": "KittenBot TabbyBot",
   "url":"/pkg/KittenBot/pxt-tabbyrobot",
   "cardType": "package"

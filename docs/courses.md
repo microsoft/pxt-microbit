@@ -102,7 +102,7 @@ Tutorials, lessons, and mini-courses about programming and computing.
 }, {
   "name": "Networking with the micro:bit",
   "description": "A series of activities to teach the basics of computer networks.",
-  "url": "https://microbit.nominetresearch.uk/",
+  "url": "https://www.digitaltechnologieshub.edu.au/search/networking-with-the-micro-bit/",
   "imageUrl": "/static/courses/networking-book.png"  
 }, {
   "name": "SparkFun Videos",

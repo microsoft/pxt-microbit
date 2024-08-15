@@ -4,11 +4,18 @@ namespace pxsim  {
         stream: MediaStream;
         recorder: MediaRecorder;
         chunks: Blob[];
+
         audioURL: string;
+        // The inputBitRate when the current audioUrl was recorded
+        audioURLBitRate: number;
+
         recording: HTMLAudioElement;
         audioPlaying: boolean = false;
         recordTimeoutID: any;
         currentlyErasing: boolean;
+
+        inputBitRate = record.defaultBitRate();
+        outputBitRate = record.defaultBitRate();
 
         handleAudioPlaying = () => {
             this.audioPlaying = true;
@@ -27,6 +34,16 @@ namespace pxsim  {
     }
 }
 namespace pxsim.record {
+    // Arbitrarily chosen lower bound. Can't go much lower than this without bugs cropping up
+    const MIN_BIT_RATE = 3000;
+    // This is double the default in chrome (128000)
+    const MAX_BIT_RATE = 256000;
+
+    const MAX_SAMPLE_RATE = 22000;
+    const MIN_SAMPLE_RATE = 1000;
+
+    const MIN_RECORDING_TIME = 3000;
+    const MAX_RECORDING_TIME = 20000;
 
     let _initialized = false;
     function init() {
@@ -37,74 +54,83 @@ namespace pxsim.record {
     }
 
     function stopRecorder(b: DalBoard): void {
-        b.recordingState.recorder.stop();
-        b.recordingState.currentlyRecording = false;
+        const state = b.recordingState;
+        state.recorder.stop();
+        state.currentlyRecording = false;
         runtime.queueDisplayUpdate();
-        if (b.recordingState.stream.active) {
-            b.recordingState.stream.getAudioTracks().forEach(track => {
+        if (state.stream.active) {
+            for (const track of state.stream.getAudioTracks()) {
                 track.stop();
                 track.enabled = false;
-            });
+            }
         }
     }
 
     async function populateRecording(b: DalBoard) {
-        if (b.recordingState.currentlyErasing) {
+        const state = b.recordingState;
+
+        if (state.currentlyErasing) {
             await erasingAsync(b);
         }
-        if (b.recordingState.chunks[0].size > 0) {
-            b.recordingState.audioURL = null;
+        if (state.chunks[0].size > 0) {
+            state.audioURL = null;
             const recordingType = pxsim.isSafari() ? "audio/mp4" : "audio/ogg; codecs=opus";
-            const blob = new Blob(b.recordingState.chunks, { type: recordingType });
-            b.recordingState.audioURL = window.URL.createObjectURL(blob);
-            b.recordingState.recording = new Audio(b.recordingState.audioURL);
-            b.recordingState.initListeners();
+            const blob = new Blob(state.chunks, { type: recordingType });
+            state.audioURL = window.URL.createObjectURL(blob);
+            state.recording = new Audio(state.audioURL);
+            state.initListeners();
         }
-        b.recordingState.currentlyRecording = false;
-        b.recordingState.recorder = null;
-        b.recordingState.chunks = [];
+        state.currentlyRecording = false;
+        state.recorder = null;
+        state.chunks = [];
     }
 
     export async function record(): Promise<void> {
         let b = board();
         init();
 
-        if (b.recordingState.recorder) {
-            b.recordingState.recorder.stop();
-            clearTimeout(b.recordingState.recordTimeoutID);
+        const state = b.recordingState;
+
+        if (state.recorder) {
+            state.recorder.stop();
+            clearTimeout(state.recordTimeoutID);
         }
 
-        if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+        if (navigator.mediaDevices?.getUserMedia) {
             try {
-                b.recordingState.stream = await navigator.mediaDevices.getUserMedia({ video: false, audio: true });
-                b.recordingState.recorder = new MediaRecorder(b.recordingState.stream);
-                b.recordingState.recorder.start();
-                b.recordingState.currentlyRecording = true;
+                state.stream = await navigator.mediaDevices.getUserMedia({ video: false, audio: true });
+                state.recorder = new MediaRecorder(state.stream, { audioBitsPerSecond: state.inputBitRate });
+                state.recorder.start();
+                state.currentlyRecording = true;
                 runtime.queueDisplayUpdate();
+                const recordBitRate = state.inputBitRate;
 
-                b.recordingState.recordTimeoutID = setTimeout(() => {
+                const duration = (1 - ((recordBitRate - MIN_BIT_RATE) / (MAX_BIT_RATE - MIN_BIT_RATE))) * (MAX_RECORDING_TIME - MIN_RECORDING_TIME) + MIN_RECORDING_TIME;
+
+                state.recordTimeoutID = setTimeout(() => {
                     stopRecorder(b);
-                }, 5000)
+                }, duration)
 
-                b.recordingState.recorder.ondataavailable = (e: BlobEvent) => {
-                    b.recordingState.chunks.push(e.data);
+                state.recorder.ondataavailable = (e: BlobEvent) => {
+                    state.chunks.push(e.data);
                 }
 
-                b.recordingState.recorder.onstop = async () => {
+                state.recorder.onstop = async () => {
                     await populateRecording(b);
+                    state.audioURLBitRate = recordBitRate;
                 }
 
             } catch (error) {
                 console.log("An error occurred, could not get microphone access");
-                if (b.recordingState.recorder) {
-                    b.recordingState.recorder.stop();
+                if (state.recorder) {
+                    state.recorder.stop();
                 }
-                b.recordingState.currentlyRecording = false;
+                state.currentlyRecording = false;
             }
 
         } else {
             console.log("getUserMedia not supported on your browser!");
-            b.recordingState.currentlyRecording = false;
+            state.currentlyRecording = false;
         }
     }
 
@@ -139,20 +165,44 @@ namespace pxsim.record {
         init();
 
         stopAudio();
-        b.recordingState.audioPlaying = true;
+
+        const state = b.recordingState;
+
+        state.audioPlaying = true;
         setTimeout(async () => {
-            if (!b.recordingState.currentlyErasing && b.recordingState.recording) {
+            if (!state.currentlyErasing && state.recording) {
                 try {
                     const volume = AudioContextManager.isMuted() ? 0 : 1;
-                    b.recordingState.recording.volume = volume;
-                    await b.recordingState.recording.play();
-                } catch (e) {
+                    state.recording.volume = volume;
+
+                    const minPlaybackRate = 0.15
+
+                    // 15 is the maximum playback rate that still produced sound in Chrome on Windows.
+                    // In Firefox, it seems like 8 is the max. Higher numbers silently fail.
+                    let maxPlaybackRate = 15;
+                    if (isFirefox()) {
+                        maxPlaybackRate = 8;
+                    }
+
+                    const playbackRate = Math.max(minPlaybackRate,
+                        Math.min(
+                            maxPlaybackRate,
+                            bitRateToSampleRate(state.outputBitRate) / bitRateToSampleRate(state.audioURLBitRate)
+                        )
+                    );
+
+                    state.recording.playbackRate = playbackRate;
+                    state.recording.preservesPitch = false;
+                    await state.recording.play();
+                }
+                catch (e) {
                     if (!(e instanceof DOMException)) {
                         throw e;
                     }
                 }
-            } else {
-                b.recordingState.audioPlaying = false;
+            }
+            else {
+                state.audioPlaying = false;
             }
         }, 10)
     }
@@ -221,14 +271,44 @@ namespace pxsim.record {
     }
 
     export function setInputSampleRate(sampleRate: number): void {
+        const b = board();
+        if (!b) return;
 
+        b.recordingState.inputBitRate = sampleRateToBitRate(sampleRate);
     }
 
     export function setOutputSampleRate(sampleRate: number): void {
+        const b = board();
+        if (!b) return;
 
+        b.recordingState.outputBitRate = sampleRateToBitRate(sampleRate);
     }
 
     export function setBothSamples(sampleRate: number): void {
+        setInputSampleRate(sampleRate);
+        setOutputSampleRate(sampleRate);
+    }
 
+    /**
+     * The browser API doesn't allow us to control sample rate directly, but we
+     * can affect it by setting the bit rate. This maps the supported sample rates
+     * into a reasonable range of bit rates.
+     */
+    function sampleRateToBitRate(sampleRate: number) {
+        return mapRange(sampleRate, MIN_SAMPLE_RATE, MAX_SAMPLE_RATE, MIN_BIT_RATE, MAX_BIT_RATE);
+    }
+
+    function bitRateToSampleRate(bitRate: number) {
+        return mapRange(bitRate, MIN_BIT_RATE, MAX_BIT_RATE, MIN_SAMPLE_RATE, MAX_SAMPLE_RATE);
+    }
+
+    function mapRange(value: number, inMin: number, inMax: number, outMin: number, outMax: number) {
+        value = Math.min(Math.max(inMin, value), inMax);
+
+        return ((value - inMin) / (inMax - inMin)) * (outMax - outMin) + outMin;
+    }
+
+    export function defaultBitRate() {
+        return sampleRateToBitRate(11000);
     }
 }

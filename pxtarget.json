@@ -16,6 +16,7 @@
         "libs/settings",
         "libs/flashlog",
         "libs/datalogger",
+        "libs/fonts",
         "libs/color",
         "libs/audio-recording"
     ],
@@ -197,7 +198,7 @@
                 "codalTarget": {
                     "name": "codal-microbit-v2",
                     "url": "https://github.com/lancaster-university/codal-microbit-v2",
-                    "branch": "v0.2.63",
+                    "branch": "v0.2.67",
                     "type": "git"
                 },
                 "codalBinary": "MICROBIT",
@@ -628,5 +629,5 @@
             }
         }
     },
-    "uploadDocs": false
+    "uploadDocs": true
 }

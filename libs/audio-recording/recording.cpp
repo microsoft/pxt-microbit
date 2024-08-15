@@ -38,18 +38,18 @@ static MixerChannel *channel = NULL;
 #endif
 
 
-void checkEnv(int sampleRate = -1) {
+void checkEnv() {
 #if MICROBIT_CODAL
     if (recording == NULL) {
-        if (sampleRate == -1)
-            sampleRate = 11000;
+        int defaultSampleRate = 11000;
         MicroBitAudio::requestActivation();
 
         splitterChannel = uBit.audio.splitter->createChannel();
+        splitterChannel->requestSampleRate( defaultSampleRate );
 
         recording = new StreamRecording(*splitterChannel);
 
-        channel = uBit.audio.mixer.addChannel(*recording, sampleRate);
+        channel = uBit.audio.mixer.addChannel(*recording, defaultSampleRate);
 
         channel->setVolume(75.0);
         uBit.audio.mixer.setVolume(1000);
@@ -187,11 +187,8 @@ void setInputSampleRate(int sampleRate) {
 //%
 void setOutputSampleRate(int sampleRate) {
 #if MICROBIT_CODAL
-    if (recording == NULL) {
-        checkEnv(sampleRate);
-    } else {
-        channel->setSampleRate(sampleRate);
-    }
+    checkEnv();
+    channel->setSampleRate(sampleRate);
 #else
     target_panic(PANIC_VARIANT_NOT_SUPPORTED);
 #endif
