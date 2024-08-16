@@ -17,9 +17,9 @@ We need a variable to keep track of how many motions you make.
 3. Let's show that there are no motions counted yet. Get a ``||basic:show number||`` from **Basic** and put it after the variable. Now, change the `0` to the `motions` variable from the **Variables** category in the toolbox.
 
 ```blocks
-let motions = 0;
-motions = 0;
-basic.showNumber(motions);
+let motions = 0
+motions = 0
+basic.showNumber(motions)
 ```
 
 ## Count your movements
@@ -31,10 +31,10 @@ Ok, now we'll count and show all of your movements.
 3. Grab another ``||basic:show number||`` and put it at the bottom of the ``||input:on shake||``. Find `motions` again back over in **Variables** and replace the `0` with it.
 
 ```blocks
-let motions = 0;
-input.onGesture(Gesture.Shake, () => {
-    motions += 1;
-    basic.showNumber(motions);
+let motions = 0
+input.onGesture(Gesture.Shake, function () {
+    motions += 1
+    basic.showNumber(motions)
 })
 ```
 
@@ -46,10 +46,10 @@ If we want to start over from zero, then we need to have a way to reset the moti
 2. Grab another ``||basic:show number||`` and change the `0` to the a `motions` variable.
 
 ```blocks
-let motions = 0;
-input.onButtonPressed(Button.A, () => {
-    motions = 0;
-    basic.showNumber(motions);
+let motions = 0
+input.onButtonPressed(Button.A, function () {
+    motions = 0
+    basic.showNumber(motions)
 })
 ```
 

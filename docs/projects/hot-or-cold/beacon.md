@@ -21,7 +21,7 @@ radio.setTransmitPower(6)
 The beacon just needs to send a radio message every now and then. So, to pace the transmits and give some visual feedback, we add some ``||basic:show icon||`` blocks to animate the screen.
 
 ```blocks
-basic.forever(() => {
+basic.forever(function () {
     radio.sendNumber(0)
     basic.showIcon(IconNames.Heart)
     basic.showIcon(IconNames.SmallHeart)

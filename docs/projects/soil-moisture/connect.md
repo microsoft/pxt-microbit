@@ -9,16 +9,13 @@ To make it happen, we need to change the program to:
 * send the moisture level **divided by 4** as the dashboard takes values between ``0`` and ``255``.
 
 ```blocks
-radio.setTransmitSerialNumber(true)
-radio.setGroup(4)
 led.setBrightness(64)
 let reading = 0
-basic.forever(() => {
+basic.forever(function () {
     pins.digitalWritePin(DigitalPin.P1, 1)
     basic.pause(1)
     reading = pins.analogReadPin(AnalogPin.P0)
     pins.digitalWritePin(DigitalPin.P1, 0)
-    radio.sendNumber(reading / 4)
     led.plotBarGraph(
         reading,
         1023
@@ -26,7 +23,7 @@ basic.forever(() => {
     if (input.buttonIsPressed(Button.A)) {
         basic.showNumber(reading)
     }
-    basic.pause(5000);
+    basic.pause(5000)
 })
 ```
 

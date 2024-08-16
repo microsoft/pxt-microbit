@@ -11,13 +11,13 @@ Remote control your monster with another @boardname@.
 You will need one more @boardname@ for this part. By using the radio, we can control the monster with another @boardname@. Download the code below to the @boardname@ on the monster and then again onto a "controller" @boardname@. Whenever button **A** is pressed, the monster's mouth moves once.
 
 ```blocks
-radio.onReceivedNumber(({ receivedNumber }) => {
+radio.onReceivedNumber(function(receivedNumber) {
     pins.servoWritePin(AnalogPin.P0, 30)
     basic.pause(500)
     pins.servoWritePin(AnalogPin.P0, 150)
     basic.pause(500)
 })
-input.onButtonPressed(Button.A, () => {
+input.onButtonPressed(Button.A, function () {
     radio.sendNumber(0)
 })
 ```

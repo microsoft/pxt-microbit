@@ -17,7 +17,7 @@ A turtle that spirals into the center of the display and back out again.
 ```blocks
 turtle.setPosition(0, 0)
 turtle.turnRight()
-basic.forever(() => {
+basic.forever(function () {
     for (let index = 0; index <= 4; index++) {
         turtle.forward(4 - index)
         turtle.turnRight()

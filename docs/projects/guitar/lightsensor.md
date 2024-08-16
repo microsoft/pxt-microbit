@@ -33,7 +33,7 @@ The forever loop really does run forever.  The forever loop is useful when there
 ## Blocks
 
 ```cards
-basic.forever(() => {})
+basic.forever(function () {})
 input.lightLevel()
 led.plotBarGraph(0, 255)
 music.playTone(Note.C, music.beat(BeatFraction.Quarter))
@@ -41,7 +41,7 @@ music.playTone(Note.C, music.beat(BeatFraction.Quarter))
 
 ## Step 1: Create a light level detector
 ```blocks
-basic.forever(() => {
+basic.forever(function () {
     led.plotBarGraph(input.lightLevel(), 255)
 })
 ```
@@ -80,7 +80,7 @@ music.playTone(261, music.beat(BeatFraction.Half))
 
 ## Step 3: Multiply Frequency using Math blocks
 ```blocks
-input.onButtonPressed(Button.A, () => {
+input.onButtonPressed(Button.A, function () {
     music.playTone(261 * 2, music.beat(BeatFraction.Half))
 })
 ```
@@ -95,7 +95,7 @@ Create a **play tone** block using a **Math** section, **multiplication** block 
 
 ## Step 4: Control the Frequency with the light input
 ```blocks
-basic.forever(() => {
+basic.forever(function () {
     music.playTone(input.lightLevel() * 25, music.beat(BeatFraction.Quarter))
 })
 ```

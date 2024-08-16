@@ -12,7 +12,7 @@ To measure this, we read the voltage on pin **P0** using ``||pins:analog read pi
 which returns a value between ``0`` (no current) and ``1023`` (maximum current). The value is graph on the screen using ``||led:plot bar graph||``.
 
 ```blocks
-basic.forever(() => {
+basic.forever(function () {
     led.plotBarGraph(
         pins.analogReadPin(AnalogPin.P0),
         1023
@@ -33,7 +33,7 @@ This code needs to go into the ``||basic:forever||`` loop. We've also added the 
 
 ```blocks
 let reading = 0
-basic.forever(() => {
+basic.forever(function () {
     reading = pins.analogReadPin(AnalogPin.P0)
     led.plotBarGraph(
         reading,
@@ -77,7 +77,7 @@ This saves electricity and also avoids corrosion of the probes.
 ```blocks
 led.setBrightness(64)
 let reading = 0
-basic.forever(() => {
+basic.forever(function () {
     pins.digitalWritePin(DigitalPin.P1, 1)
     basic.pause(1)
     reading = pins.analogReadPin(AnalogPin.P0)
