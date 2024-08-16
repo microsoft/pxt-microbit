@@ -113,32 +113,32 @@ User can fill in parameters:
       
 2. User can export a checklist from the vertical "..." menu near the "auto-run" button. This will download a json file.
       
-![image](https://github.com/microsoft/pxt-microbit/assets/69657545/7718d1f3-1f17-4750-851a-41e24021f156)
+![Export checklist](/static/teachertool/export-checklist.png)
 
-![image](https://github.com/microsoft/pxt-microbit/assets/69657545/517838b7-27e9-4f60-bf17-8d720c179537)
+![Checklist download](/static/teachertool/checklist-download.png)
 
 3. User can import a rubric from a file using the same "..." menu, or from the card on the welcome page.
 
 - Rubric file can be selected via "Browse" or dropped directly into the popup
 - Will ask for overwrite confirmation if the user already has an in-progress checklist.
-      
-![image](https://github.com/microsoft/pxt-microbit/assets/69657545/f016b728-9165-4717-a7de-c9e496208602)
 
-![image](https://github.com/microsoft/pxt-microbit/assets/69657545/61c94e3c-d9b2-4dfc-90a2-696139da3e20)
+![Import checklist card](/static/teachertool/import-checklist-card.png)
 
-![image](https://github.com/microsoft/pxt-microbit/assets/69657545/4b33a8cc-0f33-411c-8bf4-144e3d72933d)
+![Import checklist menu](/static/teachertool/import-checklist-menu.png)
 
-![image](https://github.com/microsoft/pxt-microbit/assets/69657545/35a76e51-4600-4c07-a72c-8b631aa7959f)
+![Import checklist drag in](/static/teachertool/import-checklist-dragdrop-1.png)
+
+![Import checklist drop off](/static/teachertool/import-checklist-dragdrop-2.png)
       
 ### Other
 
 - If user refreshes the page (or closes/re-opens the browser), their checklist should be preserved.
 - User can click the print button to create a version of the results with the outcome and feedback visible, but other UI elements hidden (currently broken).
       
-![image](https://github.com/microsoft/pxt-microbit/assets/69657545/ba576cb1-94d3-4f44-b513-b8c389fb9a30)
+![Print button](/static/teachertool/print-button.png)
 
 - The checklist-view/project-view splitter can be resized. It can also be reset to 50/50 split with double-click.
 
-![image](https://github.com/microsoft/pxt-microbit/assets/69657545/7954c412-6e16-4280-b205-f887c0cebbe9)
+![View splitter button](/static/teachertool/view-splitter.png)
 
-![image](https://github.com/microsoft/pxt-microbit/assets/69657545/42194fcc-6413-4b35-8c7b-fcfb506e99da)
+![Split view resize](/static/teachertool/split-resize.png)
