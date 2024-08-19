@@ -76,6 +76,12 @@ namespace music {
         }
     }
 
+    /**
+     * Play a song, melody, or other sound. The music plays until finished or can play as a
+     * background task.
+     * @param toPlay the song or melody to play
+     * @param playbackMode play the song or melody until it's finished or as background task
+     */
     //% blockId="music_playable_play"
     //% block="play $toPlay $playbackMode"
     //% toPlay.shadow=music_string_playable
@@ -97,6 +103,11 @@ namespace music {
         return play(toPlay, playbackMode);
     }
 
+    /**
+     * Play a melody from the melody editor
+     * @param melody string of up to eight notes [C D E F G A B C5] or rests [-] separated by spaces, which will be played one at a time, ex: "E D G F B A C5 B "
+     * @param bpm number in beats per minute dictating how long each note will play
+     */
     //% blockId="music_string_playable"
     //% block="melody $melody at tempo $bpm|(bpm)"
     //% weight=85 blockGap=8
