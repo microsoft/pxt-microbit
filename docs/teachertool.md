@@ -1,4 +1,4 @@
-# Teacher Tool
+# Code Evaluation Tool
 
 ## Overview
 
