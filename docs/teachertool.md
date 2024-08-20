@@ -10,7 +10,7 @@ The [Teacher Tool]( https://microbit.makecode.com/beta--eval) is a mechanism for
 
 #### 1. Creating a new rubric
 
-A user creates a new rubric using the **New Rubric** card (or from the **...** action menu). If there is already an "in progress" checklist, a warning will appear asking if it is okay to overwrite it.
+Create a new checklist using the **New Checklist** card. If there is already an "in progress" checklist, a warning will appear asking if it is okay to overwrite it.
 
 ![New Rubric](/static/teachertool/new-rubric.png)
 
