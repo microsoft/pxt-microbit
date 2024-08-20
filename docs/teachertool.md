@@ -8,13 +8,13 @@ The [Teacher Tool]( https://microbit.makecode.com/beta--eval) is a mechanism for
 
 ### Creating, Editing, and Running a Checklist
 
-#### 1. Creating a new rubric
+#### 1. Creating a new checklist
 
 Create a new checklist using the **New Checklist** card. If there is already an "in progress" checklist, a warning will appear asking if it is okay to overwrite it.
 
-![New Rubric](/static/teachertool/new-rubric.png)
+![New Checklist](/static/teachertool/new-rubric.png)
 
-![New Rubric from menu](/static/teachertool/new-rubric-from-menu.png)
+![New Checklist from menu](/static/teachertool/new-rubric-from-menu.png)
 
 #### 2. Naming a checklist
 
@@ -121,11 +121,11 @@ If auto-run is **enabled**, any rules that enter the "Not started" state due to 
 
 ### Loading/Importing/Exporting Checklists
 
-#### 1. Pre-built Rubrics
+#### 1. Pre-built checklists
 
-There are pre-built rubrics are available from on home page. If a selected checklist is already in-progress, an overwrite confirmation prompt is given.
+There are pre-built checklists are available from on home page. If a selected checklist is already in-progress, an overwrite confirmation prompt is given.
       
-![Pre-built rubrics](/static/teachertool/prebuilt-rubrics.png)
+![Pre-built checklists](/static/teachertool/prebuilt-rubrics.png)
       
 #### 2. Export a checklist
 
@@ -139,13 +139,13 @@ This will download a json file for the checklist.
 
 #### 3. Import a checklist
 
-User can import a rubric from a file using the same "..." menu, or from the card on the welcome page.
+User can import a checklist from a file using the same "..." menu, or from the card on the welcome page.
 
 ![Import checklist card](/static/teachertool/import-checklist-card.png)
 
 ![Import checklist menu](/static/teachertool/import-checklist-menu.png)
 
-Rubric file is selected using "Browse" or dropped directly into the popup. An overwrite confirmation prompted if there is currently an in-progress checklist.
+Checklist file is selected using "Browse" or dropped directly into the popup. An overwrite confirmation prompted if there is currently an in-progress checklist.
 
 ![Import checklist drag in](/static/teachertool/import-checklist-dragdrop-1.png)
 
