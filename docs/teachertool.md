@@ -34,13 +34,23 @@ Some criteria (like `[block] used [count] times`) can be added multiple times, o
 
 #### 4. Fill in Parameters
 
-Parameters for the criteria item are filled in. Here are the parameter types:
+Parameters for the criteria item are filled in for a criteria item.
+
+### ~ tip
+
+#### Parameter types
+
+From a technical perspective, criteria parameters have these types:
 
 - **Numeric** parameters have a small input and only allow number inputs.
 - **String** parameters can have medium and long sized inputs.
 - **Block** parameters should open a block-picker modal.
 - **Empty** parameters appear in an error state until they have values.
-      
+
+### ~
+
+Here a block is selected and used 3 times:
+
 ![Criteria parameters 1](/static/teachertool/parameters-1.png)
 
 Parameter options are displayed and then selected.
