@@ -312,8 +312,8 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
 
         await this.io.reconnectAsync()
 
-        // before calling into dapjs, push through a commands to make sure the responses
-        // to commands from previous sessions (if any) are flushed
+        // before calling into dapjs, push through a few commands to make sure the responses
+        // to commands from previous sessions (if any) are flushed. Count of 5 is arbitrary.
         for (let i = 0; i < 5; i++) {
             try {
                 await this.getDaplinkVersionAsync();
