@@ -312,15 +312,19 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
 
         await this.io.reconnectAsync()
 
+        // before calling into dapjs, we use our dapCmdNums() a few times, which which will make sure the responses
+        // to commends from previous sessions (if any) are flushed
+        for (let i = 0; i < 3; i++) {
+            await this.getDaplinkVersionAsync()
+        }
+
         // halt before reading from dap
         // to avoid interference from data logger
         await this.cortexM.halt()
 
-        // before calling into dapjs, we use our dapCmdNums() a few times, which which will make sure the responses
-        // to commends from previous sessions (if any) are flushed
-        const info = await this.dapCmdNums(0x00, 0x04) // info
-        const daplinkVersion = stringResponse(info)
-        log(`daplink version: ${daplinkVersion}`)
+        const info = await this.getDaplinkVersionAsync(); // info
+        const daplinkVersion = stringResponse(info);
+        log(`daplink version: ${daplinkVersion}`);
 
         const r = await this.dapCmdNums(0x80)
         this.usesCODAL = r[2] == 57 && r[3] == 57 && r[5] >= 51;
@@ -347,6 +351,10 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
         this.io.onConnectionChanged()
         // start jacdac, serial async
         this.startReadSerial(connectionId)
+    }
+
+    private async getDaplinkVersionAsync() {
+        return await this.dapCmdNums(0x00, 0x04);
     }
 
     private async checkStateAsync(resume?: boolean): Promise<void> {
