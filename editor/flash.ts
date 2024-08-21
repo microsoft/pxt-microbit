@@ -314,7 +314,7 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
 
         // before calling into dapjs, push through a commands to make sure the responses
         // to commands from previous sessions (if any) are flushed
-        for (let i = 0; i < 3; i++) {
+        for (let i = 0; i < 5; i++) {
             try {
                 await this.getDaplinkVersionAsync();
             } catch (e) {}
