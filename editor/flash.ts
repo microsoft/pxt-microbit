@@ -312,13 +312,7 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
 
         await this.io.reconnectAsync()
 
-        // before calling into dapjs, push through a few commands to make sure the responses
-        // to commands from previous sessions (if any) are flushed. Count of 5 is arbitrary.
-        for (let i = 0; i < 5; i++) {
-            try {
-                await this.getDaplinkVersionAsync();
-            } catch (e) {}
-        }
+        await this.clearCommandsAsync()
 
         // halt before reading from dap
         // to avoid interference from data logger
@@ -353,6 +347,16 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
         this.io.onConnectionChanged()
         // start jacdac, serial async
         this.startReadSerial(connectionId)
+    }
+
+    private async clearCommandsAsync() {
+        // before calling into dapjs, push through a few commands to make sure the responses
+        // to commands from previous sessions (if any) are flushed. Count of 5 is arbitrary.
+        for (let i = 0; i < 5; i++) {
+            try {
+                await this.getDaplinkVersionAsync();
+            } catch (e) {}
+        }
     }
 
     private async getDaplinkVersionAsync() {
@@ -402,6 +406,7 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
             await this.io.reconnectAsync();
         }
 
+        await this.clearCommandsAsync()
         await this.stopReadersAsync();
         await this.cortexM.init();
         await this.cortexM.reset(true);
