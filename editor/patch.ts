@@ -71,10 +71,10 @@ export function patchBlocks(pkgTargetVersion: string, dom: Element) {
                         let pinBlockType;
                         switch (oldPinNode.textContent.split(".")[0]) {
                             case "DigitalPin":
-                                pinBlockType = "digital_pin";
+                                pinBlockType = "digital_pin_shadow";
                                 break;
                             case "AnalogPin":
-                                pinBlockType = "analog_pin";
+                                pinBlockType = "analog_pin_shadow";
                                 break;
                         }
                         if (!pinBlockType) return;

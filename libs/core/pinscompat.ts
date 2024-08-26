@@ -9,6 +9,21 @@ enum PinEvent {
     Fall = DAL.MICROBIT_PIN_EVT_FALL,  // DEVICE_PIN_EVT_FALL
 }
 
+enum AnalogReadWritePin {
+    //% blockIdentity="pins._analogReadWritePinShadow"
+    P0 = AnalogPin.P0,
+    //% blockIdentity="pins._analogReadWritePinShadow"
+    P1 = AnalogPin.P1,
+    //% blockIdentity="pins._analogReadWritePinShadow"
+    P2 = AnalogPin.P2,
+    //% blockIdentity="pins._analogReadWritePinShadow"
+    P3 = AnalogPin.P3,
+    //% blockIdentity="pins._analogReadWritePinShadow"
+    P4 = AnalogPin.P4,
+    //% blockIdentity="pins._analogReadWritePinShadow"
+    P10 = AnalogPin.P10,
+}
+
 //% noRefCounting fixedInstances
 interface DigitalInOutPin {
     digitalRead(): boolean;
