@@ -261,7 +261,7 @@ namespace pxsim.BitmapMethods {
         if (dx != 0) {
             const img2 = clone(img)
             img.data.fill(0)
-            drawTransparentImage(img, img2, dx, dy)
+            drawTransparentBitmap(img, img2, dx, dy)
         } else if (dy < 0) {
             dy = -dy
             if (dy < img._height)
