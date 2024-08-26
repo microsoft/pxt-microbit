@@ -70,7 +70,7 @@ namespace pxsim.BitmapMethods {
     
     export function width(img: RefImage) { return img._width }
 
-    export function height(img: RefImage) { return img._height }draw
+    export function height(img: RefImage) { return img._height }
 
     export function isMono(img: RefImage) { return img._bpp == 1 }
 
