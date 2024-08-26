@@ -70,7 +70,7 @@ namespace pxsim.BitmapMethods {
     
     export function width(img: RefImage) { return img._width }
 
-    export function height(img: RefImage) { return img._height }
+    export function height(img: RefImage) { return img._height }draw
 
     export function isMono(img: RefImage) { return img._bpp == 1 }
 
@@ -380,11 +380,11 @@ namespace pxsim.BitmapMethods {
         return false
     }
 
-    export function drawImage(img: RefImage, from: RefImage, x: number, y: number) {
+    export function drawBitmap(img: RefImage, from: RefImage, x: number, y: number) {
         drawImageCore(img, from, x, y, true, false)
     }
 
-    export function drawTransparentImage(img: RefImage, from: RefImage, x: number, y: number) {
+    export function drawTransparentBitmap(img: RefImage, from: RefImage, x: number, y: number) {
         drawImageCore(img, from, x, y, false, false)
     }
 
