@@ -17,7 +17,7 @@ namespace pxsim {
         }
 
         scan(mark: (path: string, v: any) => void) { }
-        gcKey() { return "Bitmap" }
+        gcKey() { return "Image" }
         gcSize() { return 4 + (this.data.length + 3 >> 3) }
         gcIsStatic() { return this.isStatic }
 
