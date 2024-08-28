@@ -24,7 +24,7 @@ Sound is played at the built-in speaker or at the selected audio output pin. You
 
 Stop all sounds if any are currently playing.
 
-```typescrip
+```blocks
 if (music.isSoundPlaying()) {
     music.stopAllSounds()
 }
