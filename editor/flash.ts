@@ -406,8 +406,8 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
             await this.io.reconnectAsync();
         }
 
-        await this.clearCommandsAsync()
         await this.stopReadersAsync();
+        await this.clearCommandsAsync()
         await this.cortexM.init();
         await this.cortexM.reset(true);
         await this.checkStateAsync();
