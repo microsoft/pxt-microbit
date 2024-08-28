@@ -33,6 +33,8 @@ namespace pins {
     //% pin.fieldEditor=pinpicker
     //% pin.fieldOptions.columns=4
     //% pin.fieldOptions.tooltips="false"
+    //% group="Pins"
+    //% weight=16
     //% blockGap=8
     //% advanced=true
     export function _analogPin(pin: AnalogPin): number {

@@ -67,9 +67,12 @@ export function patchBlocks(pkgTargetVersion: string, dom: Element) {
                         const valueNode = node.ownerDocument.createElement("value");
                         valueNode.setAttribute("name", oldPinNode.getAttribute("name"));
 
+                        let nodeText = oldPinNode.textContent;
                         const pinShadowNode = node.ownerDocument.createElement("shadow");
+                        const [enumName, pinName] = nodeText.split(".");
+
                         let pinBlockType;
-                        switch (oldPinNode.textContent.split(".")[0]) {
+                        switch (enumName) {
                             case "DigitalPin":
                                 pinBlockType = "digital_pin_shadow";
                                 break;
@@ -78,11 +81,27 @@ export function patchBlocks(pkgTargetVersion: string, dom: Element) {
                                 break;
                         }
                         if (!pinBlockType) return;
+
+                        // If this is one of the read/write pins, narrow to the read write shadow
+                        if (blockType === "device_get_analog_pin") {
+                            switch (pinName) {
+                                case "P0":
+                                case "P1":
+                                case "P2":
+                                case "P3":
+                                case "P4":
+                                case "P10":
+                                    pinBlockType = "analog_read_write_pin_shadow";
+                                    nodeText = `AnalogReadWritePin.${pinName}`;
+                                    break;
+                            }
+                        }
+
                         pinShadowNode.setAttribute("type", pinBlockType);
 
                         const fieldNode = node.ownerDocument.createElement("field");
                         fieldNode.setAttribute("name", "pin");
-                        fieldNode.textContent = oldPinNode.textContent;
+                        fieldNode.textContent = nodeText;
 
                         pinShadowNode.appendChild(fieldNode);
                         valueNode.appendChild(pinShadowNode);
