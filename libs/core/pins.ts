@@ -19,6 +19,7 @@ namespace pins {
     //% weight=17
     //% blockGap=8
     //% advanced=true
+    //% decompilerShadowAlias=digital_pin_shadow
     export function _digitalPin(pin: DigitalPin): number {
         return pin;
     }
@@ -37,6 +38,7 @@ namespace pins {
     //% weight=16
     //% blockGap=8
     //% advanced=true
+    //% decompilerShadowAlias=analog_pin_shadow
     export function _analogPin(pin: AnalogPin): number {
         return pin;
     }
