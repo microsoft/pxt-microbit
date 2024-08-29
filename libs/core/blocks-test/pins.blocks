@@ -1,10 +1,6 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
   <block type="pins_on_pulsed" x="-157" y="130">
-    <value name="pin">
-      <shadow type="digital_pin">
-    <field name="pin">DigitalPin.P5</field>
-      </shadow>
-    </value>
+    <field name="pin">DigitalPin.P10</field>
     <field name="pulse">PulseValue.Low</field>
     <statement name="HANDLER">
       <block type="device_set_analog_pin">

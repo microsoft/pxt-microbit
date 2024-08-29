@@ -538,11 +538,7 @@
     </statement>
   </block>
   <block type="pins_on_pulsed" x="1538" y="929">
-    <value name="pin">
-      <shadow type="digital_pin">
-        <field name="pin">DigitalPin.P10</field>
-      </shadow>
-    </value>
+    <field name="pin">DigitalPin.P10</field>
     <field name="pulse">PulseValue.Low</field>
     <statement name="HANDLER">
       <block type="i2c_writenumber">
