@@ -98,7 +98,7 @@ static void initCodal() {
 
 void registerWithDal(int id, int event, Action a, int flags) {
     uBit.messageBus.ignore(id, event, dispatchForeground);
-    uBit.messageBus.listen(id, event, dispatchForeground, a);
+    uBit.messageBus.listen(id, event, dispatchForeground, a, (uint16_t) flags);
     incr(a);
     registerGCPtr(a);
 }

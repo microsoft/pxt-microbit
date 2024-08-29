@@ -32,7 +32,7 @@ radio.setTransmitPower(6)
 The beacon just needs to send a radio message every now and then. So, to pace the transmits and give some visual feedback, we add some ``||basic:show icon||`` blocks to animate the screen.
 
 ```blocks
-basic.forever(() => {
+basic.forever(function () {
     radio.sendNumber(0)
     basic.showIcon(IconNames.Heart)
     basic.showIcon(IconNames.SmallHeart)
@@ -142,7 +142,7 @@ radio.onReceivedNumber(function (receivedNumber) {
 To see the current score, we add an ``||input:on button pressed||`` that displays the score on the screen when the **A** button is pressed.
 
 ```block
-input.onButtonPressed(Button.A, () => {
+input.onButtonPressed(Button.A, function () {
     basic.showNumber(game.score())
 })
 ``` 
@@ -172,7 +172,7 @@ radio.onReceivedNumber(function (receivedNumber) {
         }
     }
 })
-input.onButtonPressed(Button.A, () => {
+input.onButtonPressed(Button.A, function () {
     basic.showNumber(game.score())
 })
 radio.setGroup(1)

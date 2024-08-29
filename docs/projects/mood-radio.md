@@ -16,7 +16,7 @@ Let's add blocks that send a number when button ``A`` is pressed. We assume that
 
 ```blocks
 radio.setGroup(1)
-input.onButtonPressed(Button.A, () => {
+input.onButtonPressed(Button.A, function () {
     radio.sendNumber(0)
     basic.showIcon(IconNames.Happy)
 })
@@ -41,7 +41,7 @@ radio.onReceivedNumber(function (receivedNumber) {
 Adding another mood to our messaging app done in a similar way. We decide that the "mood code" of `1` means **frowny**. We can add a ``B`` button event that sends that code.
 
 ```blocks
-input.onButtonPressed(Button.B, () => {
+input.onButtonPressed(Button.B, function () {
     radio.sendNumber(1)
     basic.showIcon(IconNames.Sad)
 })
@@ -70,11 +70,11 @@ Try adding a new code and use the ``||input:on shake||`` event to send it.
 
 ```blocks
 radio.setGroup(1)
-input.onButtonPressed(Button.A, () => {
+input.onButtonPressed(Button.A, function () {
     radio.sendNumber(0)
     basic.showIcon(IconNames.Happy)
 })
-input.onButtonPressed(Button.B, () => {
+input.onButtonPressed(Button.B, function () {
     radio.sendNumber(1)
     basic.showIcon(IconNames.Sad)
 })

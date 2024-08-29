@@ -68,7 +68,7 @@ void setBuiltInSpeakerEnabled(bool enabled) {
 */
 //% blockId=music_sound_is_playing block="sound is playing"
 //% group="micro:bit (V2)"
-//% help=music/volume
+//% help=music/is-sound-playing
 //% weight=0
 bool isSoundPlaying() {
 #if MICROBIT_CODAL

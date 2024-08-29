@@ -43,7 +43,7 @@ The code uses blocks from the [radio-blockchain](https://makecode.microbit.org/p
 
 ```blocks
 // shaking is mining...
-input.onGesture(Gesture.Shake, () => {
+input.onGesture(Gesture.Shake, function () {
     led.stopAnimation()
     basic.clearScreen()
     basic.pause(200) // display a short pause
@@ -58,7 +58,7 @@ input.onGesture(Gesture.Shake, () => {
 })
 
 // show my coins
-input.onButtonPressed(Button.A, () => {
+input.onButtonPressed(Button.A, function () {
     led.stopAnimation()
     let coins = blockchain.valuesFrom(blockchain.id()).length;
     basic.showNumber(coins);
@@ -66,7 +66,7 @@ input.onButtonPressed(Button.A, () => {
 })
 
 // show the block chain size
-input.onButtonPressed(Button.B, () => {
+input.onButtonPressed(Button.B, function () {
     led.stopAnimation()
     basic.showNumber(blockchain.length());
     basic.showString("BLOCKS");

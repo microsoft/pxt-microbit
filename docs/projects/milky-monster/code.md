@@ -17,11 +17,11 @@ In order for the Milky Monster to move, the @boardname@ needs to command the ser
 - Press button ``B`` to switch the servo to 0 degrees (to open the mouth of Milky Monster). 
 
 ```blocks
-input.onButtonPressed(Button.A, () => {
+input.onButtonPressed(Button.A, function () {
     pins.servoWritePin(AnalogPin.P0, 180)
     basic.showNumber(180)
 })
-input.onButtonPressed(Button.B, () => {
+input.onButtonPressed(Button.B, function () {
     pins.servoWritePin(AnalogPin.P0, 0)
     basic.showNumber(0)
 })
@@ -64,7 +64,7 @@ https://youtu.be/fAR58GJUZdM
 Code the light sensor on the @boardname@ to control the servo.
 
 ```blocks
-basic.forever(() => {
+basic.forever(function () {
     pins.servoWritePin(AnalogPin.P0, input.lightLevel())
     led.plotBarGraph(
         input.lightLevel(),

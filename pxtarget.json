@@ -197,7 +197,7 @@
                 "codalTarget": {
                     "name": "codal-microbit-v2",
                     "url": "https://github.com/lancaster-university/codal-microbit-v2",
-                    "branch": "v0.2.63",
+                    "branch": "v0.2.67",
                     "type": "git"
                 },
                 "codalBinary": "MICROBIT",
@@ -624,9 +624,10 @@
         "teachertool=1": {
             "appTheme": {
                 "hideMenuBar": true,
-                "workspaceSearch": true
+                "workspaceSearch": true,
+                "noReloadOnUpdate": true
             }
         }
     },
-    "uploadDocs": false
+    "uploadDocs": true
 }

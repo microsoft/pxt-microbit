@@ -53,7 +53,7 @@ acceleration of gravity.
 
 ## Step 1: Graphing acceleration 
 ```blocks
-basic.forever(() => {
+basic.forever(function () {
     led.plotBarGraph(input.acceleration(Dimension.Y), 1023)
 })
 ```
@@ -76,11 +76,11 @@ Try graphing the acceleration along the **X** and **Z** axis. Can you explain th
 ## Step 2: Mapping acceleration to Beat
 **@boardname@ sensors produce signal values between 0 to 1023. The *[map block](/reference/pins/map)* converts the signal to a desired range.**    
 ```blocks
-basic.forever(() => {
+basic.forever(function () {
         music.setTempo(pins.map(Math.abs(input.acceleration(Dimension.Y)),
             0, 1023,
             60, 320))
-         music.playTone(Note.C, music.beat(BeatFraction.Quarter));
+         music.playTone(Note.C, music.beat(BeatFraction.Quarter))
 })
 ```  
 
@@ -94,14 +94,14 @@ basic.forever(() => {
 **Put it all together!**
 
 ```blocks
-basic.forever(() => {
+basic.forever(function () {
         music.setTempo(pins.map(Math.abs(input.acceleration(Dimension.Y)),
             0, 1023,
             60, 320))
         music.playTone(
             input.lightLevel() * 25,
             music.beat(BeatFraction.Quarter)
-        );
+        )
 })
 ```  
 **Combine the code above with the light sensor tone control code from the previous activity**

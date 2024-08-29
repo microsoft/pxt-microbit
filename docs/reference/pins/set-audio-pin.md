@@ -31,4 +31,5 @@ pins.analogPitch(frequency, duration)
 
 ## See also
 
-[@boardname@ pins](/device/pins), [analog set pitch pin](/reference/pins/analog-set-pitch-pin)
+[@boardname@ pins](/device/pins), [set audio pin enabled](/reference/pins/set-audio-pin-enabled),
+[analog set pitch pin](/reference/pins/analog-set-pitch-pin)

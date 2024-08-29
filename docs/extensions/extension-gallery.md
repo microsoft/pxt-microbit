@@ -13,55 +13,55 @@ Many extensions are available to work with interface kits, add-on hardware, or o
 ```codecard
 [{
     "name": "Display",
-    "url": "/extensions#display",
+    "url": "/extensions/extension-gallery#display",
     "cardType": "link"
 }, {
     "name": "Electronics",
-    "url": "/extensions#electronics",
+    "url": "/extensions/extension-gallery#electronics",
     "cardType": "link"
 }, {
     "name": "Gaming",
-    "url": "/extensions#gaming",
+    "url": "/extensions/extension-gallery#gaming",
     "cardType": "link"
 }, {
     "name": "Individual sensors",
-    "url": "/extensions#individual-sensors",
+    "url": "/extensions/extension-gallery#individual-sensors",
     "cardType": "link"
 }, {
     "name": "IoT",
-    "url": "/extensions#iot",
+    "url": "/extensions/extension-gallery#iot",
     "cardType": "link"
 }, {
     "name": "Kits",
-    "url": "/extensions#kits",
+    "url": "/extensions/extension-gallery#kits",
     "cardType": "link"
 }, {
     "name": "LEDs and lights",
-    "url": "/extensions#leds-and-lights",
+    "url": "/extensions/extension-gallery#leds-and-lights",
     "cardType": "link"
 }, {
     "name": "Machine learning",
-    "url": "/extensions#machine-learning",
+    "url": "/extensions/extension-gallery#machine-learning",
     "cardType": "link"
 }, {
     "name": "Robotics",
-    "url": "/extensions#robotics",
+    "url": "/extensions/extension-gallery#robotics",
     "cardType": "link"
 }, {
     "name": "Sensor boards",
-    "url": "/extensions#sensor-boards",
+    "url": "/extensions/extension-gallery#sensor-boards",
     "cardType": "link"
 }, {
     "name": "Sound",
-    "url": "/extensions#sound",
+    "url": "/extensions/extension-gallery#sound",
     "cardType": "link"
 }, {
     "name": "Wearables",
-    "url": "/extensions#wearables",
+    "url": "/extensions/extension-gallery#wearables",
     "cardType": "link"
  }, {
     "name": "Utilities",
-    "url": "/extensions#utilities",
+    "url": "/extensions/extension-gallery#utilities",
     "cardType": "link"
 }]
 ```
@@ -70,6 +70,10 @@ Many extensions are available to work with interface kits, add-on hardware, or o
 
 ```codecard
 [{
+    "name": "Pythom1234 OLED Display SSD1306 128x64",
+    "url": "/pkg/Pythom1234/pxt-oled",
+    "cardType": "package"
+}, {
     "name": "Joy-IT RB-TFT1.8",
     "url": "/pkg/joy-it/pxt-RB-TFT1.8",
     "cardType": "package"
@@ -355,7 +359,7 @@ Many extensions are available to work with interface kits, add-on hardware, or o
   "cardType": "package"
 }, {
   "name": "WiFi:Bit",
-  "url":"/pkg/e-radionicacom/pxt-wifi",
+  "url":"/pkg/SolderedElectronics/pxt-wifi",
   "cardType": "package"
 }, {
   "name": "ESP8266 and ThingSpeak",
@@ -517,6 +521,10 @@ Many extensions are available to work with interface kits, add-on hardware, or o
 
 ```codecard
 [{
+  "name": "Lectrify Brick:Bit",
+  "url":"/pkg/softsmyth/lectrify-b4k",
+  "cardType": "package"
+}, {
   "name": "KittenBot TabbyBot",
   "url":"/pkg/KittenBot/pxt-tabbyrobot",
   "cardType": "package"
@@ -804,6 +812,18 @@ Many extensions are available to work with interface kits, add-on hardware, or o
   "name": "TinkerTanker Stepper Motor",
   "url":"/pkg/Tinkertanker/pxt-stepper-motor",
   "cardType": "package"
+}, {
+  "name": "ALS Robot Keyboard",
+  "url":"/pkg/alsrobot-microbit-makecode-packages/ALSRobotKeyboard",
+  "cardType": "package"
+}, {
+    "name": "Elecfreaks NeZha",
+    "url": "/pkg/elecfreaks/pxt-nezha",
+    "cardType": "package"
+}, {
+    "name": "Elecfreaks NeZha V2",
+    "url": "/pkg/elecfreaks/pxt-nezha2",
+    "cardType": "package"
 }]
 ```
 
@@ -1071,13 +1091,5 @@ Many extensions are available to work with interface kits, add-on hardware, or o
   "name": "Proportional Font",
   "url":"/pkg/lwchkg/pxt-proportional-font",
   "cardType": "package"
-}, {
-  "name": "ALS Robot Keyboard",
-  "url":"/pkg/alsrobot-microbit-makecode-packages/ALSRobotKeyboard",
-  "cardType": "package"
-}, {
-    "name": "Elecfreaks NeZha",
-    "url": "/pkg/elecfreaks/pxt-nezha",
-    "cardType": "package"
 }]
 ```

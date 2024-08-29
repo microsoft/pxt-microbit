@@ -5,7 +5,7 @@ Press ``A`` to scroll the value on the screen.
 
 ```blocks
 let reading = 0
-basic.forever(() => {
+basic.forever(function () {
     reading = pins.analogReadPin(AnalogPin.P0)
     led.plotBarGraph(
         reading,
