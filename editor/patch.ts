@@ -24,7 +24,6 @@ export function patchBlocks(pkgTargetVersion: string, dom: Element) {
             .concat(pxt.U.toArray(dom.querySelectorAll("shadow[type=device_get_analog_pin]")))
             .concat(pxt.U.toArray(dom.querySelectorAll("block[type=device_set_analog_pin]")))
             .concat(pxt.U.toArray(dom.querySelectorAll("block[type=device_set_analog_period]")))
-            .concat(pxt.U.toArray(dom.querySelectorAll("block[type=pins_on_pulsed]")))
             .concat(pxt.U.toArray(dom.querySelectorAll("block[type=pins_pulse_in]")))
             .concat(pxt.U.toArray(dom.querySelectorAll("shadow[type=pins_pulse_in]")))
             .concat(pxt.U.toArray(dom.querySelectorAll("block[type=device_set_servo_pin]")))
@@ -51,7 +50,6 @@ export function patchBlocks(pkgTargetVersion: string, dom: Element) {
                             case "pin_set_audio_pin":
                                 return oldPinNode.getAttribute("name") === "name";
                             case "device_set_analog_period":
-                            case "pins_on_pulsed":
                             case "device_set_pull":
                             case "device_set_pin_events":
                             case "pin_neopixel_matrix_width":

@@ -241,11 +241,12 @@ namespace pins {
     */
     //% help=pins/on-pulsed advanced=true
     //% blockId=pins_on_pulsed block="on|pin %pin|pulsed %pulse"
-    //% pin.shadow=digital_pin_shadow
+    //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=4
+    //% pin.fieldOptions.tooltips="false" pin.fieldOptions.width="250"
     //% group="Pulse"
     //% weight=25
     //% blockGap=8
-    void onPulsed(int name, PulseValue pulse, Action body) {
+    void onPulsed(DigitalPin name, PulseValue pulse, Action body) {
         MicroBitPin* pin = getPin((int)name);
         if (!pin) return;
 

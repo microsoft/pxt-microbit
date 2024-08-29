@@ -682,7 +682,7 @@ declare namespace music {
      */
     //% blockId=music_sound_is_playing block="sound is playing"
     //% group="micro:bit (V2)"
-    //% help=music/volume
+    //% help=music/is-sound-playing
     //% weight=0 shim=music::isSoundPlaying
     function isSoundPlaying(): boolean;
 
@@ -757,11 +757,12 @@ declare namespace pins {
      */
     //% help=pins/on-pulsed advanced=true
     //% blockId=pins_on_pulsed block="on|pin %pin|pulsed %pulse"
-    //% pin.shadow=digital_pin_shadow
+    //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=4
+    //% pin.fieldOptions.tooltips="false" pin.fieldOptions.width="250"
     //% group="Pulse"
     //% weight=25
     //% blockGap=8 shim=pins::onPulsed
-    function onPulsed(name: int32, pulse: PulseValue, body: () => void): void;
+    function onPulsed(name: DigitalPin, pulse: PulseValue, body: () => void): void;
 
     /**
      * Get the duration of the last pulse in microseconds. This function should be called from a ``onPulsed`` handler.
