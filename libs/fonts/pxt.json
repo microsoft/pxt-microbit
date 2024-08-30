@@ -4,7 +4,7 @@
     "files": [
         "font12.jres"
     ],
-    "public": true,
+    "public": false,
     "disablesVariants": [
         "mbdal"
     ],
