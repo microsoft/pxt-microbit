@@ -633,7 +633,8 @@
         "teachertool=1": {
             "appTheme": {
                 "hideMenuBar": true,
-                "workspaceSearch": true
+                "workspaceSearch": true,
+                "noReloadOnUpdate": true
             }
         }
     },

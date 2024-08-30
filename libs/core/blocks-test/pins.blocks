@@ -1,17 +1,13 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
   <block type="pins_on_pulsed" x="-157" y="130">
-    <value name="pin">
-      <block type="digital_pin">
-    <field name="pin">DigitalPin.P5</field>
-      </block>
-    </value>
+    <field name="pin">DigitalPin.P10</field>
     <field name="pulse">PulseValue.Low</field>
     <statement name="HANDLER">
       <block type="device_set_analog_pin">
         <value name="name">
-          <block type="analog_pin">
+          <shadow type="analog_pin">
             <field name="pin">AnalogPin.P9</field>
-          </block>
+          </shadow>
         </value>
         <value name="value">
               <shadow type="math_number">
@@ -21,9 +17,9 @@
         <next>
           <block type="device_set_analog_period">
             <value name="pin">
-              <block type="analog_pin">
+              <shadow type="analog_pin">
             <field name="pin">AnalogPin.P10</field>
-              </block>
+              </shadow>
             </value>
             <value name="micros">
               <shadow type="math_number">
@@ -33,9 +29,9 @@
             <next>
               <block type="device_set_digital_pin">
                 <value name="name">
-                  <block type="digital_pin">
+                  <shadow type="digital_pin">
                     <field name="pin">DigitalPin.P6</field>
-                  </block>
+                  </shadow>
                 </value>
                 <value name="value">
               <shadow type="math_number">
@@ -45,9 +41,9 @@
                 <next>
                   <block type="device_set_servo_pin">
                     <value name="name">
-                      <block type="analog_pin">
+                      <shadow type="analog_pin">
                         <field name="pin">AnalogPin.P13</field>
-                      </block>
+                      </shadow>
                     </value>
                     <value name="value">
               <shadow type="math_number">
@@ -57,9 +53,9 @@
                     <next>
                       <block type="device_set_servo_pulse">
                         <value name="value">
-                          <block type="analog_pin">
+                          <shadow type="analog_pin">
                             <field name="pin">AnalogPin.P8</field>
-                          </block>
+                          </shadow>
                         </value>
                         <value name="micros">
                           <shadow type="math_number" id="Hx4bpmg|8KSH=b_`+XtP">
@@ -90,9 +86,9 @@
                               </shadow>
                               <block type="pins_pulse_in">
                                 <value name="name">
-                                  <block type="digital_pin">
+                                  <shadow type="digital_pin">
                                     <field name="pin">DigitalPin.P9</field>
-                                  </block>
+                                  </shadow>
                                 </value>
                                 <field name="value">PulseValue.Low</field>
                               </block>
@@ -131,9 +127,9 @@
                               </shadow>
                               <block type="device_get_digital_pin">
                                 <value name="name">
-                                  <block type="digital_pin">
+                                  <shadow type="digital_pin">
                                     <field name="pin">DigitalPin.P9</field>
-                                  </block>
+                                  </shadow>
                                 </value>
                               </block>
                             </value>
@@ -143,9 +139,9 @@
                               </shadow>
                               <block type="device_get_analog_pin">
                                 <value name="name">
-                                  <block type="analog_pin">
+                                  <shadow type="analog_pin">
                                     <field name="pin">AnalogPin.P9</field>
-                                  </block>
+                                  </shadow>
                                 </value>
                               </block>
                             </value>
@@ -157,26 +153,26 @@
                             <next>
                               <block type="spi_pins">
                                 <value name="mosi">
-                                  <block type="digital_pin">
+                                  <shadow type="digital_pin">
                                     <field name="pin">DigitalPin.P11</field>
-                                  </block>
+                                  </shadow>
                                 </value>
                                 <value name="miso">
-                                  <block type="digital_pin">
+                                  <shadow type="digital_pin">
                                     <field name="pin">DigitalPin.P9</field>
-                                  </block>
+                                  </shadow>
                                 </value>
                                 <value name="sck">
-                                  <block type="digital_pin">
+                                  <shadow type="digital_pin">
                                     <field name="pin">DigitalPin.P10</field>
-                                  </block>
+                                  </shadow>
                                 </value>
                                 <next>
                                   <block type="device_set_pull">
                                     <value name="pin">
-                                      <block type="digital_pin">
+                                      <shadow type="digital_pin">
                                         <field name="pin">DigitalPin.P9</field>
-                                      </block>
+                                      </shadow>
                                     </value>
                                     <field name="pull">PinPullMode.PullDown</field>
                                     <next>
@@ -194,17 +190,17 @@
                                         <next>
                                           <block type="device_set_pin_events">
                                             <value name="pin">
-                                              <block type="digital_pin">
+                                              <shadow type="digital_pin">
                                                 <field name="pin">DigitalPin.P8</field>
-                                              </block>
+                                              </shadow>
                                             </value>
                                             <field name="type">PinEventType.Touch</field>
                                             <next>
                                               <block type="device_analog_set_pitch_pin">
                                                 <value name="name">
-                                                  <block type="analog_pin">
+                                                  <shadow type="analog_pin">
                                                     <field name="pin">AnalogPin.P9</field>
-                                                  </block>
+                                                  </shadow>
                                                 </value>
                                                 <next>
                                                   <block type="spi_format">

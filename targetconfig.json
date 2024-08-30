@@ -31,7 +31,6 @@
             "microsoft/pxt-apa102": {},
             "microsoft/pxt-radio-firefly": {},
             "microsoft/pxt-ml": {},
-            "microsoft/pxt-arcadeshield": { "tags": [ "Lights and Display" ] },
             "kitronikltd/pxt-kitronik-servo-lite": {
                 "tags": [ "Robotics" ],
                 "preferred": true

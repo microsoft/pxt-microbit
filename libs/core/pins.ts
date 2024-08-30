@@ -8,26 +8,83 @@ namespace pins {
     /**
      * Returns the value of a C++ runtime constant
      */
-    //% help=pins/digital-pin blockGap=8 advanced=true shim=TD_ID
-    //% blockId="digital_pin" block="digital pin %pin"
-    //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=4
+    //% help=pins/digital-pin
+    //% shim=TD_ID
+    //% blockId=digital_pin
+    //% block="digital pin $pin"
+    //% pin.fieldEditor=pinpicker
+    //% pin.fieldOptions.columns=4
     //% pin.fieldOptions.tooltips="false"
     //% group="Pins"
     //% weight=17
-    export function digitalPin(pin: DigitalPin): number {
+    //% blockGap=8
+    //% advanced=true
+    //% decompilerShadowAlias=digital_pin_shadow
+    export function _digitalPin(pin: DigitalPin): number {
         return pin;
     }
 
     /**
      * Returns the value of a C++ runtime constant
      */
-    //% help=pins/analog-pin blockGap=8 advanced=true shim=TD_ID
-    //% blockId="analog_pin" block="analog pin %pin"
-    //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=4
+    //% help=pins/analog-pin
+    //% shim=TD_ID
+    //% blockId=analog_pin
+    //% block="analog pin $pin"
+    //% pin.fieldEditor=pinpicker
+    //% pin.fieldOptions.columns=4
     //% pin.fieldOptions.tooltips="false"
     //% group="Pins"
     //% weight=16
-    export function analogPin(pin: AnalogPin): number {
+    //% blockGap=8
+    //% advanced=true
+    //% decompilerShadowAlias=analog_pin_shadow
+    export function _analogPin(pin: AnalogPin): number {
+        return pin;
+    }
+
+    /**
+     * Returns the value of a C++ runtime constant
+     */
+    //% help=pins/digital-pin
+    //% shim=TD_ID
+    //% blockId=digital_pin_shadow
+    //% block="$pin"
+    //% pin.fieldEditor=pinpicker
+    //% pin.fieldOptions.columns=4
+    //% pin.fieldOptions.tooltips="false"
+    //% blockHidden=1
+    export function _digitalPinShadow(pin: DigitalPin): number {
+        return pin;
+    }
+
+    /**
+     * Returns the value of a C++ runtime constant
+     */
+    //% help=pins/analog-pin
+    //% shim=TD_ID
+    //% blockId=analog_pin_shadow
+    //% block="$pin"
+    //% pin.fieldEditor=pinpicker
+    //% pin.fieldOptions.columns=4
+    //% pin.fieldOptions.tooltips="false"
+    //% blockHidden=1
+    export function _analogPinShadow(pin: AnalogPin): number {
+        return pin;
+    }
+
+    /**
+     * Returns the value of a C++ runtime constant
+     */
+    //% help=pins/analog-pin
+    //% shim=TD_ID
+    //% blockId=analog_read_write_pin_shadow
+    //% block="$pin"
+    //% pin.fieldEditor=pinpicker
+    //% pin.fieldOptions.columns=4
+    //% pin.fieldOptions.tooltips="false"
+    //% blockHidden=1
+    export function _analogReadWritePinShadow(pin: AnalogReadWritePin): number {
         return pin;
     }
 

@@ -682,7 +682,7 @@ declare namespace music {
      */
     //% blockId=music_sound_is_playing block="sound is playing"
     //% group="micro:bit (V2)"
-    //% help=music/volume
+    //% help=music/is-sound-playing
     //% weight=0 shim=music::isSoundPlaying
     function isSoundPlaying(): boolean;
 
@@ -705,7 +705,7 @@ declare namespace pins {
      */
     //% help=pins/digital-read-pin weight=30
     //% blockId=device_get_digital_pin block="digital read|pin %name" blockGap=8
-    //% name.shadow=digital_pin shim=pins::digitalReadPin
+    //% name.shadow=digital_pin_shadow shim=pins::digitalReadPin
     function digitalReadPin(name: int32): int32;
 
     /**
@@ -716,7 +716,7 @@ declare namespace pins {
     //% help=pins/digital-write-pin weight=29
     //% blockId=device_set_digital_pin block="digital write|pin %name|to %value"
     //% value.min=0 value.max=1
-    //% name.shadow=digital_pin shim=pins::digitalWritePin
+    //% name.shadow=digital_pin_shadow shim=pins::digitalWritePin
     function digitalWritePin(name: int32, value: int32): void;
 
     /**
@@ -725,7 +725,7 @@ declare namespace pins {
      */
     //% help=pins/analog-read-pin weight=25
     //% blockId=device_get_analog_pin block="analog read|pin %name" blockGap="8"
-    //% name.shadow=analog_pin shim=pins::analogReadPin
+    //% name.shadow=analog_read_write_pin_shadow shim=pins::analogReadPin
     function analogReadPin(name: int32): int32;
 
     /**
@@ -736,7 +736,7 @@ declare namespace pins {
     //% help=pins/analog-write-pin weight=24
     //% blockId=device_set_analog_pin block="analog write|pin %name|to %value" blockGap=8
     //% value.min=0 value.max=1023
-    //% name.shadow=analog_pin shim=pins::analogWritePin
+    //% name.shadow=analog_pin_shadow shim=pins::analogWritePin
     function analogWritePin(name: int32, value: int32): void;
 
     /**
@@ -747,7 +747,7 @@ declare namespace pins {
      */
     //% help=pins/analog-set-period weight=23 blockGap=8
     //% blockId=device_set_analog_period block="analog set period|pin %pin|to (µs)%micros"
-    //% pin.shadow=analog_pin shim=pins::analogSetPeriod
+    //% pin.shadow=analog_pin_shadow shim=pins::analogSetPeriod
     function analogSetPeriod(name: int32, micros: int32): void;
 
     /**
@@ -757,11 +757,12 @@ declare namespace pins {
      */
     //% help=pins/on-pulsed advanced=true
     //% blockId=pins_on_pulsed block="on|pin %pin|pulsed %pulse"
-    //% pin.shadow=digital_pin
+    //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=4
+    //% pin.fieldOptions.tooltips="false" pin.fieldOptions.width="250"
     //% group="Pulse"
     //% weight=25
     //% blockGap=8 shim=pins::onPulsed
-    function onPulsed(name: int32, pulse: PulseValue, body: () => void): void;
+    function onPulsed(name: DigitalPin, pulse: PulseValue, body: () => void): void;
 
     /**
      * Get the duration of the last pulse in microseconds. This function should be called from a ``onPulsed`` handler.
@@ -782,7 +783,7 @@ declare namespace pins {
     //% blockId="pins_pulse_in" block="pulse in (µs)|pin %name|pulsed %value"
     //% advanced=true
     //% help=pins/pulse-in
-    //% name.shadow=digital_pin
+    //% name.shadow=digital_pin_shadow
     //% group="Pulse"
     //% weight=23
     //% blockGap=8 maxDuration.defl=2000000 shim=pins::pulseIn
@@ -797,7 +798,7 @@ declare namespace pins {
     //% blockId=device_set_servo_pin block="servo write|pin %name|to %value" blockGap=8
     //% parts=microservo trackArgs=0
     //% value.min=0 value.max=180
-    //% name.shadow=analog_pin
+    //% name.shadow=analog_pin_shadow
     //% group="Servo" shim=pins::servoWritePin
     function servoWritePin(name: int32, value: int32): void;
 
@@ -814,7 +815,7 @@ declare namespace pins {
      */
     //% help=pins/servo-set-pulse weight=19
     //% blockId=device_set_servo_pulse block="servo set pulse|pin %value|to (µs) %micros"
-    //% value.shadow=analog_pin
+    //% value.shadow=analog_pin_shadow
     //% group="Servo" shim=pins::servoSetPulse
     function servoSetPulse(name: int32, micros: int32): void;
 
@@ -824,7 +825,7 @@ declare namespace pins {
      */
     //% blockId=device_analog_set_pitch_pin block="analog set pitch pin %name"
     //% help=pins/analog-set-pitch-pin advanced=true
-    //% name.shadow=analog_pin
+    //% name.shadow=analog_pin_shadow
     //% group="Pins"
     //% weight=12
     //% blockGap=8 shim=pins::analogSetPitchPin
@@ -867,7 +868,7 @@ declare namespace pins {
      */
     //% help=pins/set-pull advanced=true
     //% blockId=device_set_pull block="set pull|pin %pin|to %pull"
-    //% pin.shadow=digital_pin
+    //% pin.shadow=digital_pin_shadow
     //% group="Pins"
     //% weight=15
     //% blockGap=8 shim=pins::setPull
@@ -881,7 +882,7 @@ declare namespace pins {
      */
     //% help=pins/set-events advanced=true
     //% blockId=device_set_pin_events block="set pin %pin|to emit %type|events"
-    //% pin.shadow=digital_pin
+    //% pin.shadow=digital_pin_shadow
     //% group="Pins"
     //% weight=13
     //% blockGap=8 shim=pins::setEvents
@@ -902,7 +903,7 @@ declare namespace pins {
      */
     //% help=pins/neopixel-matrix-width advanced=true
     //% blockId=pin_neopixel_matrix_width block="neopixel matrix width|pin %pin %width"
-    //% pin.shadow=digital_pin
+    //% pin.shadow=digital_pin_shadow
     //% width.min=2
     //% group="Pins"
     //% weight=11
@@ -969,9 +970,9 @@ declare namespace pins {
      */
     //% help=pins/spi-pins advanced=true
     //% blockId=spi_pins block="spi set pins|MOSI %mosi|MISO %miso|SCK %sck"
-    //% mosi.shadow=digital_pin
-    //% miso.shadow=digital_pin
-    //% sck.shadow=digital_pin
+    //% mosi.shadow=digital_pin_shadow
+    //% miso.shadow=digital_pin_shadow
+    //% sck.shadow=digital_pin_shadow
     //% group="SPI"
     //% blockGap=8
     //% weight=51 shim=pins::spiPins
@@ -989,7 +990,7 @@ declare namespace pins {
      */
     //% blockId=pin_set_audio_pin block="set audio pin $name"
     //% help=pins/set-audio-pin
-    //% name.shadow=digital_pin
+    //% name.shadow=digital_pin_shadow
     //% weight=1
     //% blockGap=8 shim=pins::setAudioPin
     function setAudioPin(name: int32): void;

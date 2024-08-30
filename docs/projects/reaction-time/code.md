@@ -94,12 +94,12 @@ let end = 0
 let false_start = false
 let running = false
 input.onPinPressed(TouchPin.P0, function () {
+    running = false
+    false_start = false
     basic.showNumber(3)
     basic.showNumber(2)
     basic.showNumber(1)
     basic.clearScreen()
-    running = false
-    false_start = false
 })
 input.onPinPressed(TouchPin.P1, function () {
 
@@ -120,12 +120,12 @@ let end = 0
 let false_start = false
 let running = false
 input.onPinPressed(TouchPin.P0, function () {
+    running = false
+    false_start = false
     basic.showNumber(3)
     basic.showNumber(2)
     basic.showNumber(1)
     basic.clearScreen()
-    running = false
-    false_start = false
     basic.pause(1000 + randint(0, 2000))
 })
 input.onPinPressed(TouchPin.P1, function () {
@@ -150,12 +150,12 @@ input.onPinPressed(TouchPin.P1, function () {
 
 })
 input.onPinPressed(TouchPin.P0, function () {
+    running = false
+    false_start = false
     basic.showNumber(3)
     basic.showNumber(2)
     basic.showNumber(1)
     basic.clearScreen()
-    running = false
-    false_start = false
     basic.pause(1000 + randint(0, 2000))
     if (!(false_start)) {
         start = input.runningTime()
@@ -209,12 +209,12 @@ input.onPinPressed(TouchPin.P1, function () {
     }
 })
 input.onPinPressed(TouchPin.P0, function () {
+    running = false
+    false_start = false
     basic.showNumber(3)
     basic.showNumber(2)
     basic.showNumber(1)
     basic.clearScreen()
-    running = false
-    false_start = false
     basic.pause(1000 + randint(0, 2000))
     if (!(false_start)) {
         start = input.runningTime()
@@ -242,12 +242,12 @@ let end = 0
 let false_start = false
 let running = false
 input.onPinPressed(TouchPin.P0, function () {
+    running = false
+    false_start = false
     basic.showNumber(3)
     basic.showNumber(2)
     basic.showNumber(1)
     basic.clearScreen()
-    running = false
-    false_start = false
     basic.pause(1000 + randint(0, 2000))
     if (!(false_start)) {
         start = input.runningTime()

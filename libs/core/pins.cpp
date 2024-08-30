@@ -10,100 +10,87 @@
 #endif
 
 enum class DigitalPin {
-    //% blockIdentity="pins.digitalPin"
+    //% blockIdentity="pins._digitalPin"
     P0 = MICROBIT_ID_IO_P0,
-    //% blockIdentity="pins.digitalPin"
+    //% blockIdentity="pins._digitalPin"
     P1 = MICROBIT_ID_IO_P1,
-    //% blockIdentity="pins.digitalPin"
+    //% blockIdentity="pins._digitalPin"
     P2 = MICROBIT_ID_IO_P2,
-    //% blockIdentity="pins.digitalPin"
+    //% blockIdentity="pins._digitalPin"
     P3 = MICROBIT_ID_IO_P3,
-    //% blockIdentity="pins.digitalPin"
+    //% blockIdentity="pins._digitalPin"
     P4 = MICROBIT_ID_IO_P4,
-    //% blockIdentity="pins.digitalPin"
+    //% blockIdentity="pins._digitalPin"
     P5 = MICROBIT_ID_IO_P5,
-    //% blockIdentity="pins.digitalPin"
+    //% blockIdentity="pins._digitalPin"
     P6 = MICROBIT_ID_IO_P6,
-    //% blockIdentity="pins.digitalPin"
+    //% blockIdentity="pins._digitalPin"
     P7 = MICROBIT_ID_IO_P7,
-    //% blockIdentity="pins.digitalPin"
+    //% blockIdentity="pins._digitalPin"
     P8 = MICROBIT_ID_IO_P8,
-    //% blockIdentity="pins.digitalPin"
+    //% blockIdentity="pins._digitalPin"
     P9 = MICROBIT_ID_IO_P9,
-    //% blockIdentity="pins.digitalPin"
+    //% blockIdentity="pins._digitalPin"
     P10 = MICROBIT_ID_IO_P10,
-    //% blockIdentity="pins.digitalPin"
+    //% blockIdentity="pins._digitalPin"
     P11 = MICROBIT_ID_IO_P11,
-    //% blockIdentity="pins.digitalPin"
+    //% blockIdentity="pins._digitalPin"
     P12 = MICROBIT_ID_IO_P12,
-    //% blockIdentity="pins.digitalPin"
+    //% blockIdentity="pins._digitalPin"
     P13 = MICROBIT_ID_IO_P13,
-    //% blockIdentity="pins.digitalPin"
+    //% blockIdentity="pins._digitalPin"
     P14 = MICROBIT_ID_IO_P14,
-    //% blockIdentity="pins.digitalPin"
+    //% blockIdentity="pins._digitalPin"
     P15 = MICROBIT_ID_IO_P15,
-    //% blockIdentity="pins.digitalPin"
+    //% blockIdentity="pins._digitalPin"
     P16 = MICROBIT_ID_IO_P16,
-    //% blockIdentity="pins.digitalPin"
+    //% blockIdentity="pins._digitalPin"
     //% blockHidden=1
     P19 = MICROBIT_ID_IO_P19,
-    //% blockIdentity="pins.digitalPin"
+    //% blockIdentity="pins._digitalPin"
     //% blockHidden=1
     P20 = MICROBIT_ID_IO_P20,
 };
 
 enum class AnalogPin {
-    //% blockIdentity="pins.analogPin"
+    //% blockIdentity="pins._analogPin"
     P0 = MICROBIT_ID_IO_P0,
-    //% blockIdentity="pins.analogPin"
+    //% blockIdentity="pins._analogPin"
     P1 = MICROBIT_ID_IO_P1,
-    //% blockIdentity="pins.analogPin"
+    //% blockIdentity="pins._analogPin"
     P2 = MICROBIT_ID_IO_P2,
-    //% blockIdentity="pins.analogPin"
+    //% blockIdentity="pins._analogPin"
     P3 = MICROBIT_ID_IO_P3,
-    //% blockIdentity="pins.analogPin"
+    //% blockIdentity="pins._analogPin"
     P4 = MICROBIT_ID_IO_P4,
-    //% blockIdentity="pins.analogPin"
-    P10 = MICROBIT_ID_IO_P10,
-    //% blockIdentity="pins.analogPin"
-    //% block="P5 (write only)"
+    //% blockIdentity="pins._analogPin"
     P5 = MICROBIT_ID_IO_P5,
-    //% blockIdentity="pins.analogPin"
-    //% block="P6 (write only)"
+    //% blockIdentity="pins._analogPin"
     P6 = MICROBIT_ID_IO_P6,
-    //% blockIdentity="pins.analogPin"
-    //% block="P7 (write only)"
+    //% blockIdentity="pins._analogPin"
     P7 = MICROBIT_ID_IO_P7,
-    //% blockIdentity="pins.analogPin"
-    //% block="P8 (write only)"
+    //% blockIdentity="pins._analogPin"
     P8 = MICROBIT_ID_IO_P8,
-    //% blockIdentity="pins.analogPin"
-    //% block="P9 (write only)"
+    //% blockIdentity="pins._analogPin"
     P9 = MICROBIT_ID_IO_P9,
-    //% blockIdentity="pins.analogPin"
-    //% block="P11 (write only)"
+    //% blockIdentity="pins._analogPin"
+    P10 = MICROBIT_ID_IO_P10,
+    //% blockIdentity="pins._analogPin"
     P11 = MICROBIT_ID_IO_P11,
-    //% blockIdentity="pins.analogPin"
-    //% block="P12 (write only)"
+    //% blockIdentity="pins._analogPin"
     P12 = MICROBIT_ID_IO_P12,
-    //% blockIdentity="pins.analogPin"
-    //% block="P13 (write only)"
+    //% blockIdentity="pins._analogPin"
     P13 = MICROBIT_ID_IO_P13,
-    //% blockIdentity="pins.analogPin"
-    //% block="P14 (write only)"
+    //% blockIdentity="pins._analogPin"
     P14 = MICROBIT_ID_IO_P14,
-    //% blockIdentity="pins.analogPin"
-    //% block="P15 (write only)"
+    //% blockIdentity="pins._analogPin"
     P15 = MICROBIT_ID_IO_P15,
-    //% blockIdentity="pins.analogPin"
-    //% block="P16 (write only)"
+    //% blockIdentity="pins._analogPin"
     P16 = MICROBIT_ID_IO_P16,
-    //% blockIdentity="pins.analogPin"
-    //% block="P19 (write only)"
+    //% blockIdentity="pins._analogPin"
     //% blockHidden=1
     P19 = MICROBIT_ID_IO_P19,
-    //% blockIdentity="pins.analogPin"
-    //% block="P20 (write only)"
+    //% blockIdentity="pins._analogPin"
     //% blockHidden=1
     P20 = MICROBIT_ID_IO_P20
 };
@@ -192,7 +179,7 @@ namespace pins {
      */
     //% help=pins/digital-read-pin weight=30
     //% blockId=device_get_digital_pin block="digital read|pin %name" blockGap=8
-    //% name.shadow=digital_pin
+    //% name.shadow=digital_pin_shadow
     int digitalReadPin(int name) {
         PINREAD(getDigitalValue());
     }
@@ -205,7 +192,7 @@ namespace pins {
     //% help=pins/digital-write-pin weight=29
     //% blockId=device_set_digital_pin block="digital write|pin %name|to %value"
     //% value.min=0 value.max=1
-    //% name.shadow=digital_pin
+    //% name.shadow=digital_pin_shadow
     void digitalWritePin(int name, int value) {
         PINOP(setDigitalValue(value));
     }
@@ -216,7 +203,7 @@ namespace pins {
      */
     //% help=pins/analog-read-pin weight=25
     //% blockId=device_get_analog_pin block="analog read|pin %name" blockGap="8"
-    //% name.shadow=analog_pin
+    //% name.shadow=analog_read_write_pin_shadow
     int analogReadPin(int name) {
         PINREAD(getAnalogValue());
     }
@@ -229,7 +216,7 @@ namespace pins {
     //% help=pins/analog-write-pin weight=24
     //% blockId=device_set_analog_pin block="analog write|pin %name|to %value" blockGap=8
     //% value.min=0 value.max=1023
-    //% name.shadow=analog_pin
+    //% name.shadow=analog_pin_shadow
     void analogWritePin(int name, int value) {
         PINOP(setAnalogValue(value));
     }
@@ -242,7 +229,7 @@ namespace pins {
      */
     //% help=pins/analog-set-period weight=23 blockGap=8
     //% blockId=device_set_analog_period block="analog set period|pin %pin|to (µs)%micros"
-    //% pin.shadow=analog_pin
+    //% pin.shadow=analog_pin_shadow
     void analogSetPeriod(int name, int micros) {
         PINOP(setAnalogPeriodUs(micros));
     }
@@ -254,11 +241,12 @@ namespace pins {
     */
     //% help=pins/on-pulsed advanced=true
     //% blockId=pins_on_pulsed block="on|pin %pin|pulsed %pulse"
-    //% pin.shadow=digital_pin
+    //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=4
+    //% pin.fieldOptions.tooltips="false" pin.fieldOptions.width="250"
     //% group="Pulse"
     //% weight=25
     //% blockGap=8
-    void onPulsed(int name, PulseValue pulse, Action body) {
+    void onPulsed(DigitalPin name, PulseValue pulse, Action body) {
         MicroBitPin* pin = getPin((int)name);
         if (!pin) return;
 
@@ -287,7 +275,7 @@ namespace pins {
     //% blockId="pins_pulse_in" block="pulse in (µs)|pin %name|pulsed %value"
     //% advanced=true
     //% help=pins/pulse-in
-    //% name.shadow=digital_pin
+    //% name.shadow=digital_pin_shadow
     //% group="Pulse"
     //% weight=23
     //% blockGap=8
@@ -333,7 +321,7 @@ namespace pins {
     //% blockId=device_set_servo_pin block="servo write|pin %name|to %value" blockGap=8
     //% parts=microservo trackArgs=0
     //% value.min=0 value.max=180
-    //% name.shadow=analog_pin
+    //% name.shadow=analog_pin_shadow
     //% group="Servo"
     void servoWritePin(int name, int value) {
         PINOP(setServoValue(value));
@@ -354,7 +342,7 @@ namespace pins {
      */
     //% help=pins/servo-set-pulse weight=19
     //% blockId=device_set_servo_pulse block="servo set pulse|pin %value|to (µs) %micros"
-    //% value.shadow=analog_pin
+    //% value.shadow=analog_pin_shadow
     //% group="Servo"
     void servoSetPulse(int name, int micros) {
         PINOP(setServoPulseUs(micros));
@@ -372,7 +360,7 @@ namespace pins {
      */
     //% blockId=device_analog_set_pitch_pin block="analog set pitch pin %name"
     //% help=pins/analog-set-pitch-pin advanced=true
-    //% name.shadow=analog_pin
+    //% name.shadow=analog_pin_shadow
     //% group="Pins"
     //% weight=12
     //% blockGap=8
@@ -475,7 +463,7 @@ namespace pins {
     */
     //% help=pins/set-pull advanced=true
     //% blockId=device_set_pull block="set pull|pin %pin|to %pull"
-    //% pin.shadow=digital_pin
+    //% pin.shadow=digital_pin_shadow
     //% group="Pins"
     //% weight=15
     //% blockGap=8
@@ -503,7 +491,7 @@ namespace pins {
     */
     //% help=pins/set-events advanced=true
     //% blockId=device_set_pin_events block="set pin %pin|to emit %type|events"
-    //% pin.shadow=digital_pin
+    //% pin.shadow=digital_pin_shadow
     //% group="Pins"
     //% weight=13
     //% blockGap=8
@@ -530,7 +518,7 @@ namespace pins {
      */
     //% help=pins/neopixel-matrix-width advanced=true
     //% blockId=pin_neopixel_matrix_width block="neopixel matrix width|pin %pin %width"
-    //% pin.shadow=digital_pin
+    //% pin.shadow=digital_pin_shadow
     //% width.defl=5 width.min=2
     //% group="Pins"
     //% weight=11
@@ -649,9 +637,9 @@ namespace pins {
     */
     //% help=pins/spi-pins advanced=true
     //% blockId=spi_pins block="spi set pins|MOSI %mosi|MISO %miso|SCK %sck"
-    //% mosi.shadow=digital_pin
-    //% miso.shadow=digital_pin
-    //% sck.shadow=digital_pin
+    //% mosi.shadow=digital_pin_shadow
+    //% miso.shadow=digital_pin_shadow
+    //% sck.shadow=digital_pin_shadow
     //% group="SPI"
     //% blockGap=8
     //% weight=51
@@ -677,7 +665,7 @@ namespace pins {
     */
     //% blockId=pin_set_audio_pin block="set audio pin $name"
     //% help=pins/set-audio-pin
-    //% name.shadow=digital_pin
+    //% name.shadow=digital_pin_shadow
     //% weight=1
     //% blockGap=8
     void setAudioPin(int name) {
