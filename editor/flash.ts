@@ -6,6 +6,7 @@ const dataAddr = 0x20002000;
 const stackAddr = 0x20001000;
 const FULL_FLASH_TIMEOUT = 100000; // 100s
 const PARTIAL_FLASH_TIMEOUT = 60000; // 60s
+const RETRY_DAP_CMD_TIMEOUT = 50; // .05s
 
 const flashPageBIN = new Uint32Array([
     0xbe00be00, // bkpt - LR is set to this
@@ -269,7 +270,7 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
     private async getBaudRate() {
         const readSerialSettings = new Uint8Array([0x81])  // get serial settings
         const serialSettings = await this.dapCmd(readSerialSettings)
-        const baud = (serialSettings[4] << 24)+ (serialSettings[3] << 16) + (serialSettings[2] << 8) + serialSettings[1]
+        const baud = (serialSettings[4] << 24) + (serialSettings[3] << 16) + (serialSettings[2] << 8) + serialSettings[1]
         return baud
     }
 
@@ -333,7 +334,7 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
             await this.setBaudRate()
         // only init after setting baud rate, in case we got reset
         await this.cortexM.init()
-        if (resetOnConnection){
+        if (resetOnConnection) {
             log(`reset cortex`)
             await this.cortexM.reset(true)
         }
@@ -355,7 +356,7 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
         for (let i = 0; i < 5; i++) {
             try {
                 await this.getDaplinkVersionAsync();
-            } catch (e) {}
+            } catch (e) { }
         }
     }
 
@@ -437,11 +438,11 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
         // via the webusb events
     }
 
-    private recvPacketAsync() {
+    private recvPacketAsync(timeout?: number) {
         if (this.io.recvPacketAsync)
-            return this.io.recvPacketAsync()
+            return this.io.recvPacketAsync(timeout);
         else
-            return this.pbuf.shiftAsync()
+            return this.pbuf.shiftAsync(timeout);
     }
 
     private async dapCmd(buf: Uint8Array) {
@@ -455,12 +456,14 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
             // response is a left-over from previous communications
             log(msg + "; retrying");
             try {
-                const secondTryResp = await this.recvPacketAsync();
+                // Add in a timeout, as this can stall if device thinks communication is complete.
+                const secondTryResp = await this.recvPacketAsync(RETRY_DAP_CMD_TIMEOUT);
                 if (secondTryResp[0] === buf[0]) {
                     log(msg + "; retry success");
                     return secondTryResp;
                 }
             } catch (e) {
+                pxt.tickEvent('hid.flash.cmderror.retryfailed', { req: buf[0], resp: resp[0] });
                 log(e);
             }
             throw new Error(`retry failed ${msg}`);
