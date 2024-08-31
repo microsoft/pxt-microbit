@@ -463,7 +463,8 @@
             "roborisen/gcube": { "tags": [ "Robotics" ] },
             "kittenbot/pxt-tabbyrobot": { "tags": [ "Robotics" ] },
             "pythom1234/pxt-oled": { "tags": [ "Lights and Display" ] },
-            "softsmyth/lectrify-b4k": { "tags": [ "Robotics" ] }
+            "softsmyth/lectrify-b4k": { "tags": [ "Robotics" ] },
+            "davidnsousa/sonification": { "tags": [ "Software" ] }
         },
         "approvedEditorExtensionUrls": [
             "https://microsoft.github.io/ml4f/",

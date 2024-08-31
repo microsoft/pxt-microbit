@@ -941,6 +941,10 @@ Many extensions are available to work with interface kits, add-on hardware, or o
 
 ```codecard
 [{
+  "name": "Sonification",
+  "url":"/pkg/davidnsousa/sonification",
+  "cardType": "package"
+}, {
   "name": "Kitronik Klef Piano",
   "url":"/pkg/KitronikLtd/pxt-kitronik-klef-piano",
   "cardType": "package"
