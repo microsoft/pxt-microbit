@@ -598,7 +598,7 @@ Many extensions are available to work with interface kits, add-on hardware, or o
   "cardType": "package"
 }, {
   "name": "MATRIX Micro",
-  "url":"/pkg/pxt-MatrixMicro",
+  "url":"/pkg/matrix-robotics/pxt-MatrixMicro",
   "cardType": "package"
 }, {
   "name": "PTKidsBIT",
