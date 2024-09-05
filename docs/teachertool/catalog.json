@@ -3,7 +3,7 @@
         {
             "id": "35610CA0-38F8-4CCE-BAB9-99593DB3358A",
             "use": "responds_to_events",
-            "template": "Responds to at least ${count} different events",
+            "template": "Responds to at least ${count} different event(s)",
             "description": "At least the specified number of event blocks are present.",
             "docPath": "/teachertool",
             "maxCount": 1,
@@ -38,7 +38,7 @@
         {
             "id": "2CA4A5DA-4690-4514-97F5-2FE145AB3A59",
             "use": "uses_led_coordinates",
-            "template": "Uses LED coordinates at least ${count} times",
+            "template": "Uses LED coordinates at least ${count} time(s)",
             "description": "Uses blocks with LED coordinate inputs at least the specified number of times.",
             "docPath": "/teachertool",
             "maxCount": 1,
