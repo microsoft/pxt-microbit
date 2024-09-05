@@ -1,4 +1,75 @@
 {
     "name": "Countdown",
-    "criteria": []
+    "criteria": [
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "QfP2rNybJK3wz-dCkUrRk",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "pxt_controls_for"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "dzj7hJWaibjqvmZ8-OyI2",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "music_tone_playable"
+                },
+                {
+                    "name": "count",
+                    "value": "2"
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "pghLAad8ZFgm7UQGFZ5m9",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "device_show_number"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "upuqZtKii4pmKbRZ62WkC",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "math_arithmetic"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "6YsjtxoGig3BCInRCFToi",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "device_print_message"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        }
+    ]
 }

@@ -1,4 +1,97 @@
 {
     "name": "Morse Chat",
-    "criteria": []
+    "criteria": [
+        {
+            "catalogCriteriaId": "3F7A9DB3-0B5E-456B-86E7-79573F9F6E53",
+            "instanceId": "jJn_1FSlxRedkvdJQaRWW"
+        },
+        {
+            "catalogCriteriaId": "D285D79B-85E5-4C8D-82D2-5A9E35AB1163",
+            "instanceId": "VetUhdvQtTntHAJY0jGhr"
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "P7oPfgmTihchFDNanx34S",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "radio_datagram_send"
+                },
+                {
+                    "name": "count",
+                    "value": "2"
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "uz1IpTd1IJbQnCYu2EjRI",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "radio_on_number_drag"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "3zUpePzYwDc6bEY0VHiCR",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "controls_if"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "RmNrPc3KzodthijpJiThd",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "logic_compare"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "PPffo8cM0QYcG7aLEwv6R",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "device_show_leds"
+                },
+                {
+                    "name": "count",
+                    "value": "2"
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "DuXY4W3BxwHtiwwcpbkCp",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "music_tone_playable"
+                },
+                {
+                    "name": "count",
+                    "value": "2"
+                }
+            ]
+        }
+    ]
 }

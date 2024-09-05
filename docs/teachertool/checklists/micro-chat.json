@@ -2,20 +2,74 @@
     "name": "Micro Chat",
     "criteria": [
         {
-            "catalogCriteriaId": "18C44CC4-497F-45EC-90FA-CE7DB117AD03",
-            "instanceId": "CFz2K1V77NHTE7covaEnc"
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "cFkV7YP3XsbawFHYdLlGY",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "radio_set_group"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
         },
         {
-            "catalogCriteriaId": "7ECB3AD5-F1C1-4106-9259-802B2E69A7A2",
-            "instanceId": "Mr99JIKxrlKtBlPq783jV"
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "OY1LxTejkMnpahS8a74XJ",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "device_button_event"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
         },
         {
-            "catalogCriteriaId": "FAA97F77-C9F5-4D58-A3D5-47F965F4B6E2",
-            "instanceId": "5ZeCpcWCAqLHHvoAftA__"
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "S5bN1NbQUDJG5jbQS3D7t",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "radio_datagram_send_string"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
         },
         {
-            "catalogCriteriaId": "D249AB3E-2620-4E33-911E-284303455365",
-            "instanceId": "G7AkPpY5L9Ot3-mtcGYwF"
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "gUSwg8O8MLqJBw02q0EwV",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "radio_on_string_drag"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "9DzGn5u3E7RxHIFhk-OR9",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "device_print_message"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
         }
     ]
 }

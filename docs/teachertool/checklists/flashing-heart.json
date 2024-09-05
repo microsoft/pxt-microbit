@@ -1,4 +1,33 @@
 {
     "name": "Flashing Heart",
-    "criteria": []
+    "criteria": [
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "pE47UT6Uv4jtezvffy3DZ",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "device_forever"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "Qfpv6fPa0BbQNJ2Hfusgx",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "device_show_leds"
+                },
+                {
+                    "name": "count",
+                    "value": "2"
+                }
+            ]
+        }
+    ]
 }

@@ -1,4 +1,61 @@
 {
     "name": "Tug-Of-LED",
-    "criteria": []
+    "criteria": [
+        {
+            "catalogCriteriaId": "7AE7EA2A-3AC8-42DC-89DB-65E3AE157156",
+            "instanceId": "UIBsdPhCk3Jtp1mqxRoJD",
+            "params": [
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "RJkv2Z1UHxIywKbJPn0Fv",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "device_plot"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "ieltnwSKhrOeJzYl1h-wq",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "controls_if"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "0DFA44C8-3CA5-4C77-946E-AF09F6C03879",
+            "instanceId": "SWX0Rbpw6HNpIzxJAnhuq",
+            "params": [
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "3F7A9DB3-0B5E-456B-86E7-79573F9F6E53",
+            "instanceId": "UvfDgKLia0UO6z2nVytUN"
+        },
+        {
+            "catalogCriteriaId": "D285D79B-85E5-4C8D-82D2-5A9E35AB1163",
+            "instanceId": "dtjisfMGBwQPvu_XB6q3T"
+        }
+    ]
 }

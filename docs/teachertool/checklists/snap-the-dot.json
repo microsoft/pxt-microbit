@@ -1,4 +1,145 @@
 {
-    "name": "Snap the dot",
-    "criteria": []
+    "name": "Snap the Dot",
+    "criteria": [
+        {
+            "catalogCriteriaId": "3F7A9DB3-0B5E-456B-86E7-79573F9F6E53",
+            "instanceId": "_LSvFglEcMuAAz_wDXKlN"
+        },
+        {
+            "catalogCriteriaId": "0DFA44C8-3CA5-4C77-946E-AF09F6C03879",
+            "instanceId": "a5YCJSj6FGuPPppjfBwjY",
+            "params": [
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "Ojp_6jUfPyz9l7xCdOh12",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "game_create_sprite"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "bFMFlKQJ3bi4SggTfPGQ7",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "game_sprite_bounce"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "qY7jey7BPHj6udRnlejRo",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "game_add_score"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "0XWeRkywzGQiHa58Ci2gb",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "game_move_sprite"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "8PNsPCSOWLh43uVMxSBoT",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "game_game_over"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "sH10T9-q1gMulAz9o5_SW",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "game_sprite_property"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "P-ol0aaMNhSiKywKcV4Dh",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "controls_if"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "l4PVdnJlKTJiPNvfoCDmg",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "logic_compare"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "4Vvt2BYF5jTBKy43Vm0wY",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "device_forever"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        }
+    ]
 }

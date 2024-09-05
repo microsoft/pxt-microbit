@@ -1,4 +1,57 @@
 {
     "name": "Love Meter",
-    "criteria": []
+    "criteria": [
+        {
+            "catalogCriteriaId": "35610CA0-38F8-4CCE-BAB9-99593DB3358A",
+            "instanceId": "PV1SB_UrMFZAB9lRjsjaY",
+            "params": [
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "oCAOEeq9SP43nvSj3y2W-",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "device_pin_event"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "bIIoZSN63Nm_QBIViMkix",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "device_random"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "8vyJcx9RWw__JDgrhRr9F",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "device_show_number"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        }
+    ]
 }

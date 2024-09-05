@@ -1,4 +1,47 @@
 {
     "name": "Coin Flipper",
-    "criteria": []
+    "criteria": [
+        {
+            "catalogCriteriaId": "35610CA0-38F8-4CCE-BAB9-99593DB3358A",
+            "instanceId": "OJqELTqpWU2p-GiE9SBrD",
+            "params": [
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "ea1DcsEklzTyYriLiTw5h",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "controls_if"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "4ipvY3gRE6eQ0ygLizvIA",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "logic_random"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "D285D79B-85E5-4C8D-82D2-5A9E35AB1163",
+            "instanceId": "s-kiwMcNWOUMIAh3ydEG7"
+        }
+    ]
 }

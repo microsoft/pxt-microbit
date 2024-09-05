@@ -2,30 +2,88 @@
     "name": "Blow Away",
     "criteria": [
         {
-            "catalogCriteriaId": "ECC79C65-56DC-44A9-98FC-147F5EED87CC",
-            "instanceId": "fggyi4CNUVLjYUPUVwb84"
-        },
-        {
-            "catalogCriteriaId": "5934E4C6-7AE4-46A4-8F92-99101987D064",
-            "instanceId": "-3sSPpeXd-M2WaHObA1yq"
-        },
-        {
             "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
-            "instanceId": "2H_lA-5kA1bpPhHitt_Gs",
+            "instanceId": "Hmf83iLtMk6WMeS1zudeU",
             "params": [
                 {
                     "name": "block",
-                    "value": "device_forever"
+                    "value": "controls_if"
                 },
                 {
                     "name": "count",
-                    "value": "1"
+                    "value": "2"
                 }
             ]
         },
         {
             "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
-            "instanceId": "Bw5GPuGHqfWG14AWmnvaY",
+            "instanceId": "uuvrA6XVfqwhkf1gHWu9n",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "device_plot"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "FZbp2yqQ1SqEUzDhea8_w",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "device_unplot"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "0DFA44C8-3CA5-4C77-946E-AF09F6C03879",
+            "instanceId": "q17cW-cZn2mUApFrzsc06",
+            "params": [
+                {
+                    "name": "count",
+                    "value": "2"
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "ZLZLk3aHNafaf2ug3sVTv",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "device_random"
+                },
+                {
+                    "name": "count",
+                    "value": "2"
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "MslaOemw2r7fVuuLBDtfw",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "basic_show_icon"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "ws49proTisn9q-4RXhSsC",
             "params": [
                 {
                     "name": "block",
@@ -33,59 +91,9 @@
                 },
                 {
                     "name": "count",
-                    "value": "1"
+                    "value": 1
                 }
             ]
-        },
-        {
-            "catalogCriteriaId": "B835FAA0-8CA6-4E4A-95B4-7FC6D15231BD",
-            "instanceId": "IlpiBn6Tjn0mkjCrVGI0v"
-        },
-        {
-            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
-            "instanceId": "rvzANbK3nhtd7dPcVBYF4",
-            "params": [
-                {
-                    "name": "block",
-                    "value": "device_get_sound_level"
-                },
-                {
-                    "name": "count",
-                    "value": "1"
-                }
-            ]
-        },
-        {
-            "catalogCriteriaId": "F82F6BB4-2B1C-4CFF-92BA-65CE63DD6399",
-            "instanceId": "WGLq8LWXIjX_QCFVNqp0k"
-        },
-        {
-            "catalogCriteriaId": "162222FB-8E2B-4131-9EA3-EC6B83DDAFB2",
-            "instanceId": "rU4BPrH6Nahnv6J39YfMH"
-        },
-        {
-            "catalogCriteriaId": "CCA30B9D-4ED7-4916-94AF-050FC473FAA1",
-            "instanceId": "RMO6vzSM23tAFMI6gXcZ9"
-        },
-        {
-            "catalogCriteriaId": "0B2BC680-D79D-42C8-BA13-B6B189E2BF7D",
-            "instanceId": "5xPrZDcNRg9_uafq1Zx6z"
-        },
-        {
-            "catalogCriteriaId": "01A65046-D4BE-44B6-8273-7A878A71B3D0",
-            "instanceId": "zZ2W7pPE5UPN0iGeXtvf2"
-        },
-        {
-            "catalogCriteriaId": "E3286B6D-5BEB-43EC-B246-C956AAC34C3E",
-            "instanceId": "GYTTG8c1fw0TEp4YqVsQD"
-        },
-        {
-            "catalogCriteriaId": "6BA59761-9464-4C8D-9D8F-E8985273FB92",
-            "instanceId": "EfcUfpne2r6IO1Vu1tzJ3"
-        },
-        {
-            "catalogCriteriaId": "46AFEDA3-35CB-4041-BEC4-53C0D29E57BA",
-            "instanceId": "GgG4fod3VaXUTGYbW7Utj"
         }
     ]
 }

@@ -1,4 +1,107 @@
 {
     "name": "Clap Lights",
-    "criteria": []
+    "criteria": [
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "i70kfW9Edf_w4uWQOr4Vj",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "pxt-on-start"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "opfcvo0hPmgZYncOHd-gm",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "input_on_sound"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "3F7A9DB3-0B5E-456B-86E7-79573F9F6E53",
+            "instanceId": "vWaXdWe0VMs1bKIcaypf2"
+        },
+        {
+            "catalogCriteriaId": "D285D79B-85E5-4C8D-82D2-5A9E35AB1163",
+            "instanceId": "12aPxkq3Yef9RswkE98w5"
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "wqVmzKZ9qwQHHbPjQ1m7W",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "controls_if"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "De13zLjU1qYqav2lMEVPr",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "device_show_leds"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "YKWUiU8ya18wEGqtrkgB6",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "device_clear_display"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "0DFA44C8-3CA5-4C77-946E-AF09F6C03879",
+            "instanceId": "X4flMR_NXpX3_m7Rv8NgZ",
+            "params": [
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "uOoaqb6uAXhGw8w61QUQV",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "logic_negate"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        }
+    ]
 }

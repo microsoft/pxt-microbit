@@ -1,4 +1,65 @@
 {
     "name": "Hot Potato",
-    "criteria": []
+    "criteria": [
+        {
+            "catalogCriteriaId": "3F7A9DB3-0B5E-456B-86E7-79573F9F6E53",
+            "instanceId": "Q6R68y1CDXRKwOfgxZK3i"
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "xI_nB059k2rtEFbbY6kNf",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "device_while"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "QbJy_9aFD4qLdzBWzfXVG",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "logic_compare"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "0DFA44C8-3CA5-4C77-946E-AF09F6C03879",
+            "instanceId": "d-YN_K3QPwfDHis7dpWqb",
+            "params": [
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "tgwkiJw-1nCJnDZdRmo4M",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "device_pause"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "D285D79B-85E5-4C8D-82D2-5A9E35AB1163",
+            "instanceId": "JdWIqw1Nd-6-Zpk-wDyT5"
+        }
+    ]
 }

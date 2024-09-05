@@ -2,30 +2,40 @@
     "name": "Rock Paper Scissors",
     "criteria": [
         {
-            "catalogCriteriaId": "7C2F70AB-2A00-4E35-8227-E5756957D7B3",
-            "instanceId": "LHiJqtjcjbUjWieIfdYf4"
+            "catalogCriteriaId": "3F7A9DB3-0B5E-456B-86E7-79573F9F6E53",
+            "instanceId": "rH-U8YN2wFzTf3HWfMT99"
         },
         {
-            "catalogCriteriaId": "7CFD9718-E841-4286-9563-B70D2F22D8D8",
-            "instanceId": "FeEhmngBzesVwrOThm8oW"
+            "catalogCriteriaId": "D285D79B-85E5-4C8D-82D2-5A9E35AB1163",
+            "instanceId": "aZKd2jn07vIvBv5ko9LYS"
         },
         {
-            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
-            "instanceId": "qpJlRBbsZYG1q87c2vaV6",
+            "catalogCriteriaId": "0DFA44C8-3CA5-4C77-946E-AF09F6C03879",
+            "instanceId": "4K8STmyIcdlJ_euu4dK7i",
             "params": [
                 {
-                    "name": "block",
-                    "value": "device_random"
-                },
-                {
                     "name": "count",
-                    "value": "1"
+                    "value": 1
                 }
             ]
         },
         {
             "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
-            "instanceId": "EGMmpeasViCQJVazRky7f",
+            "instanceId": "sIMzMupbeLopUcrF6QfI7",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "device_gesture_event"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "0W_TQ1llic1bxnj3sN-aP",
             "params": [
                 {
                     "name": "block",
@@ -33,21 +43,23 @@
                 },
                 {
                     "name": "count",
-                    "value": "1"
+                    "value": 1
                 }
             ]
         },
         {
-            "catalogCriteriaId": "499EEFAB-2487-427E-8081-28EE031C7D17",
-            "instanceId": "FesOL-XDhyQj3DpiHlOTl"
-        },
-        {
-            "catalogCriteriaId": "D285D79B-85E5-4C8D-82D2-5A9E35AB1163",
-            "instanceId": "xtYopzt3dR9qHotnVAUAf"
-        },
-        {
-            "catalogCriteriaId": "FD7E03B7-53F2-41B9-93ED-51AEA864468E",
-            "instanceId": "x21xe0gt9A7zBISD3a1GL"
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "KSblM-323vr3pKCjeJ-Nt",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "device_random"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
         }
     ]
 }
