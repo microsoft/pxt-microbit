@@ -6,6 +6,7 @@ const dataAddr = 0x20002000;
 const stackAddr = 0x20001000;
 const FULL_FLASH_TIMEOUT = 100000; // 100s
 const PARTIAL_FLASH_TIMEOUT = 60000; // 60s
+const CONNECTION_CHECK_TIMEOUT = 2000; // 2s
 const RETRY_DAP_CMD_TIMEOUT = 50; // .05s
 
 const flashPageBIN = new Uint32Array([
@@ -351,12 +352,20 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
     }
 
     private async clearCommandsAsync() {
-        // before calling into dapjs, push through a few commands to make sure the responses
-        // to commands from previous sessions (if any) are flushed. Count of 5 is arbitrary.
-        for (let i = 0; i < 5; i++) {
-            try {
-                await this.getDaplinkVersionAsync();
-            } catch (e) { }
+        try {
+            await pxt.Util.promiseTimeout(CONNECTION_CHECK_TIMEOUT, (async () => {
+                // before calling into dapjs, push through a few commands to make sure the responses
+                // to commands from previous sessions (if any) are flushed. Count of 5 is arbitrary.
+                for (let i = 0; i < 5; i++) {
+                    try {
+                        await this.getDaplinkVersionAsync();
+                    } catch (e) { }
+                }
+            })());
+        } catch (e) {
+            const errOut = new Error(e);
+            (errOut as any).type = "inittimeout";
+            throw errOut;
         }
     }
 
