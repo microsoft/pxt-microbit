@@ -5,6 +5,12 @@
             "cardTitle": "Blow Away",
             "imageUrl": "/static/mb/projects/blow-away.png",
             "checklistUrl": "/teachertool/checklists/blow-away-mbv2.json"
+        },
+        {
+            "cardType": "checklist-resource",
+            "cardTitle": "Cat Napping",
+            "imageUrl": "/static/mb/projects/cat-napping/1_lychee.png",
+            "checklistUrl": "/teachertool/checklists/cat-naping-mbv2.json"
         }
     ],
     "cards.hidden": [
@@ -31,12 +37,6 @@
             "cardTitle": "Clap Lights",
             "imageUrl": "/static/mb/projects/clap-lights.png",
             "checklistUrl": "/teachertool/checklists/clap-lights-mbv2.json"
-        },
-        {
-            "cardType": "checklist-resource",
-            "cardTitle": "Cat Napping",
-            "imageUrl": "/static/mb/projects/cat-napping/1_lychee.png",
-            "checklistUrl": "/teachertool/checklists/cat-naping-mbv2.json"
         }
     ]
 }

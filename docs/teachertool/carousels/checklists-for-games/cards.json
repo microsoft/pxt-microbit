@@ -5,6 +5,18 @@
             "cardTitle": "Rock Paper Scissors",
             "imageUrl": "/static/mb/projects/a4-motion.png",
             "checklistUrl": "/teachertool/checklists/rock-paper-scissors.json"
+        },
+        {
+            "cardType": "checklist-resource",
+            "cardTitle": "Coin Flipper",
+            "imageUrl": "/static/mb/projects/coin-flipper.png",
+            "checklistUrl": "/teachertool/checklists/coin-flipper.json"
+        },
+        {
+            "cardType": "checklist-resource",
+            "cardTitle": "Hot Potato",
+            "imageUrl": "/static/mb/projects/hot-potato.png",
+            "checklistUrl": "/teachertool/checklists/hot-potato.json"
         }
     ],
     "cards.hidden": [
@@ -16,21 +28,9 @@
         },
         {
             "cardType": "checklist-resource",
-            "cardTitle": "Coin Flipper",
-            "imageUrl": "/static/mb/projects/coin-flipper.png",
-            "checklistUrl": "/teachertool/checklists/coin-flipper.json"
-        },
-        {
-            "cardType": "checklist-resource",
             "cardTitle": "7 seconds",
             "imageUrl": "/static/mb/projects/7-seconds.png",
             "checklistUrl": "/teachertool/checklists/7-seconds.json"
-        },
-        {
-            "cardType": "checklist-resource",
-            "cardTitle": "Hot Potato",
-            "imageUrl": "/static/mb/projects/hot-potato.png",
-            "checklistUrl": "/teachertool/checklists/hot-potato.json"
         },
         {
             "cardType": "checklist-resource",

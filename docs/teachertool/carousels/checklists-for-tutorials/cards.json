@@ -2,18 +2,18 @@
     "cards": [
         {
             "cardType": "checklist-resource",
+            "cardTitle": "Flashing Heart",
+            "imageUrl": "/static/mb/projects/a1-display.png",
+            "checklistUrl": "/teachertool/checklists/flashing-heart.json"
+        },
+        {
+            "cardType": "checklist-resource",
             "cardTitle": "Micro Chat",
             "imageUrl": "/static/mb/projects/a9-radio.png",
             "checklistUrl": "/teachertool/checklists/micro-chat.json"
         }
     ],
     "cards.hidden": [
-        {
-            "cardType": "checklist-resource",
-            "cardTitle": "Flashing Heart",
-            "imageUrl": "/static/mb/projects/a1-display.png",
-            "checklistUrl": "/teachertool/checklists/flashing-heart.json"
-        },
         {
             "cardType": "checklist-resource",
             "cardTitle": "Name Tag",
