@@ -14,6 +14,12 @@
         },
         {
             "cardType": "checklist-resource",
+            "cardTitle": "Smiley Buttons",
+            "imageUrl": "/static/mb/projects/a2-buttons.png",
+            "checklistUrl": "/teachertool/checklists/smiley-buttons.json"
+        },
+        {
+            "cardType": "checklist-resource",
             "cardTitle": "Dice",
             "imageUrl": "/static/mb/projects/dice.png",
             "checklistUrl": "/teachertool/checklists/dice.json"
@@ -31,12 +37,5 @@
             "checklistUrl": "/teachertool/checklists/micro-chat.json"
         }
     ],
-    "cards.hidden": [
-        {
-            "cardType": "checklist-resource",
-            "cardTitle": "Smiley Buttons",
-            "imageUrl": "/static/mb/projects/a2-buttons.png",
-            "checklistUrl": "/teachertool/checklists/smiley-buttons.json"
-        }
-    ]
+    "cards.hidden": []
 }
