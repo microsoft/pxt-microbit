@@ -524,6 +524,10 @@
             {
                 "title": "Checklists for Games",
                 "cardsUrl": "teachertool/carousels/checklists-for-games/cards.json"
+            },
+            {
+                "title": "Checklists for Tools",
+                "cardsUrl": "teachertool/carousels/checklists-for-tools/cards.json"
             }
         ]
     },
