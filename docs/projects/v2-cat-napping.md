@@ -73,8 +73,8 @@ input.onButtonPressed(Button.A, function () {
 
 Let's now add an auditory indicator that your @boardname@ is logging data!
 
-► From the ``||music:Music||`` category, grab a ``||music:play sound [giggle] [until done]||`` block and snap it into the **bottom** of the **top container** of your ``||logic:if then / else||`` statement.  
-► Click on the ``giggle`` dropdown and select ``hello``. Your block should now say ``||music:play melody [nyab] [until done]||``.
+► From the ``||music:Music||`` category, grab a ``||music:play sound [dadadum] [in background]||`` block and snap it into the **bottom** of the **top container** of your ``||logic:if then / else||`` statement.  
+► Click on the ``[dadadum]`` dropdown and select ``nyab``, then set the playback mode to ``||music:[until done]||``. Your block should now say ``||music:play melody [nyab] [until done]||``.
 
 ```blocks
 let logging = false
