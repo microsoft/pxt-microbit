@@ -62,20 +62,6 @@
                     "value": "3"
                 }
             ]
-        },
-        {
-            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
-            "instanceId": "kOY6v6ckJ7xDgoZPs6FPp",
-            "params": [
-                {
-                    "name": "block",
-                    "value": "basic_show_icon"
-                },
-                {
-                    "name": "count",
-                    "value": 1
-                }
-            ]
         }
     ]
 }
