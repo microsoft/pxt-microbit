@@ -26,14 +26,14 @@ for (let index = 0; index <= 2; index++) {
 
 ## {Play music}
 
-► From ``||music:Music||``, grab ``||music:play tone [Middle C] for [1 beat]||`` and snap it into your empty ``for`` loop.  
+► From ``||music:Music||``, grab ``||music:play tone [Middle C] for [1 beat] [until done]||`` and snap it into your empty ``for`` loop.  
 💡 Your simulator might start playing music. You can mute it if distracting.  
 ► 1 beat is a little long. Use the **dropdown** to set the tone to play for ``||music:1/4 beat||``.
 
 ```blocks
 for (let index = 0; index <= 2; index++) {
     // @highlight
-    music.playTone(262, music.beat(BeatFraction.Quarter))
+    music.play(music.tonePlayable(262, music.beat(BeatFraction.Quarter)), music.PlaybackMode.UntilDone)
 }
 ```
 
@@ -47,7 +47,7 @@ With every tone, we also want to **display** our countdown.
 
 ```blocks
 for (let index = 0; index <= 2; index++) {
-    music.playTone(262, music.beat(BeatFraction.Quarter))
+    music.play(music.tonePlayable(262, music.beat(BeatFraction.Quarter)), music.PlaybackMode.UntilDone)
     // @highlight
     basic.showNumber(index)
 }
@@ -66,7 +66,7 @@ If you take a look at your simulator, you'll notice the @boardname@ flashing 0-1
 
 ```blocks
 for (let index = 0; index <= 2; index++) {
-    music.playTone(262, music.beat(BeatFraction.Quarter))
+    music.play(music.tonePlayable(262, music.beat(BeatFraction.Quarter)), music.PlaybackMode.UntilDone)
     // @highlight
     basic.showNumber(3 - index)
 }
@@ -79,7 +79,7 @@ for (let index = 0; index <= 2; index++) {
 
 ```blocks
 for (let index = 0; index <= 2; index++) {
-    music.playTone(262, music.beat(BeatFraction.Quarter))
+    music.play(music.tonePlayable(262, music.beat(BeatFraction.Quarter)), music.PlaybackMode.UntilDone)
     basic.showNumber(3 - index)
 }
 // @highlight
@@ -88,18 +88,18 @@ basic.showString("GO!")
 
 ## {Adding a "GO!" noise}
 
-► From the ``||music:Music||`` category, grab ``||music:play tone [Middle C] for [1 beat]||`` and place it **above** your ``||basic:show string ["GO!"]||`` block and **below** your ``||loops:for||`` loop.  
+► From the ``||music:Music||`` category, grab ``||music:play tone [Middle C] for [1 beat] [until done]||`` and place it **above** your ``||basic:show string ["GO!"]||`` block and **below** your ``||loops:for||`` loop.  
 💡 This will let your @boardname@ play the sound and show ``GO!`` at the same time.  
 ► Set the ``||music:tone||`` to be ``Middle G``.  
 💡 ``Middle G`` is also tone ``392``.
 
 ```blocks
 for (let index = 0; index <= 2; index++) {
-    music.playTone(262, music.beat(BeatFraction.Quarter))
+    music.play(music.tonePlayable(262, music.beat(BeatFraction.Quarter)), music.PlaybackMode.UntilDone)
     basic.showNumber(3 - index)
 }
 // @highlight
-music.playTone(392, music.beat(BeatFraction.Whole))
+music.play(music.tonePlayable(262, music.beat(BeatFraction.Whole)), music.PlaybackMode.UntilDone)
 basic.showString("GO!")
 ```
 
@@ -111,10 +111,10 @@ If you have a @boardname@ with sound (the one with the **shiny gold** logo at th
 
 ```blocks
 for (let index = 0; index <= 2; index++) {
-    music.playTone(262, music.beat(BeatFraction.Quarter))
+    music.play(music.tonePlayable(262, music.beat(BeatFraction.Quarter)), music.PlaybackMode.UntilDone)
     basic.showNumber(3 - index)
 }
-music.playTone(392, music.beat(BeatFraction.Whole))
+music.play(music.tonePlayable(262, music.beat(BeatFraction.Whole)), music.PlaybackMode.UntilDone)
 basic.showString("GO!")
 ```
 
