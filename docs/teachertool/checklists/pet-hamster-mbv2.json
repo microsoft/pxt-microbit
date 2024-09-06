@@ -31,7 +31,7 @@
             "params": [
                 {
                     "name": "block",
-                    "value": "soundExpression_builtinPlayableSoundEffect"
+                    "value": "device_builtin_melody_playable"
                 },
                 {
                     "name": "count",
