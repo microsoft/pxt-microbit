@@ -107,7 +107,7 @@ radio.onReceivedNumber(function (receivedNumber) {
 
 ## {Playing a sound pt. 1}
 
-► From the ``||music:Music||`` category, grab a ``||music:play tone [Middle C] for [1 beat]||`` block and snap it at the **end** of the **bottom container** in your ``||logic:if then / else||`` statement.
+► From the ``||music:Music||`` category, grab a ``||music:play tone [Middle C] for [1 beat] [until done]||`` block and snap it at the **end** of the **bottom container** in your ``||logic:if then / else||`` statement.
 
 ```blocks
 radio.onReceivedNumber(function (receivedNumber) {
@@ -121,7 +121,7 @@ radio.onReceivedNumber(function (receivedNumber) {
             . . . . .
             `)
         // @highlight
-        music.playTone(262, music.beat(BeatFraction.Whole))
+        music.play(music.tonePlayable(262, music.beat(BeatFraction.Whole)), music.PlaybackMode.UntilDone)
     }
 })
 ```
@@ -150,14 +150,14 @@ radio.onReceivedNumber(function (receivedNumber) {
             . . . . .
             . . . . .
             `)
-        music.playTone(262, music.beat(BeatFraction.Whole))
+        music.play(music.tonePlayable(262, music.beat(BeatFraction.Whole)), music.PlaybackMode.UntilDone)
     }
 })
 ```
 
 ## {Playing a sound pt. 2}
 
-► From the ``||music:Music||`` category, grab ``||music:play tone [Middle C] for [1 beat]||`` and snap it in at the **end** of the **top container** in your ``||logic:if then / else||`` statement.  
+► From the ``||music:Music||`` category, grab ``||music:play tone [Middle C] for [1 beat] [until done]||`` and snap it in at the **end** of the **top container** in your ``||logic:if then / else||`` statement.  
 ► Dots are shorter than dashes! Set the tone to play for ``1/4 beat``.
 
 ```blocks
@@ -171,7 +171,7 @@ radio.onReceivedNumber(function (receivedNumber) {
             . . . . .
             `)
         // @highlight
-        music.playTone(262, music.beat(BeatFraction.Quarter))
+        music.play(music.tonePlayable(262, music.beat(BeatFraction.Quarter)), music.PlaybackMode.UntilDone)
     } else {
         basic.showLeds(`
             . . . . .
@@ -180,7 +180,7 @@ radio.onReceivedNumber(function (receivedNumber) {
             . . . . .
             . . . . .
             `)
-        music.playTone(262, music.beat(BeatFraction.Whole))
+        music.play(music.tonePlayable(262, music.beat(BeatFraction.Whole)), music.PlaybackMode.UntilDone)
     }
 })
 ```
@@ -199,7 +199,8 @@ radio.onReceivedNumber(function (receivedNumber) {
             . . . . .
             . . . . .
             `)
-        music.playTone(262, music.beat(BeatFraction.Quarter))
+        music.play(music.tonePlayable(262, music.beat(BeatFraction.Quarter)), music.PlaybackMode.UntilDone)
+
     } else {
         basic.showLeds(`
             . . . . .
@@ -208,7 +209,8 @@ radio.onReceivedNumber(function (receivedNumber) {
             . . . . .
             . . . . .
             `)
-        music.playTone(262, music.beat(BeatFraction.Whole))
+        music.play(music.tonePlayable(262, music.beat(BeatFraction.Whole)), music.PlaybackMode.UntilDone)
+
     }
     // @highlight
     basic.clearScreen()
@@ -232,7 +234,8 @@ radio.onReceivedNumber(function (receivedNumber) {
             . . . . .
             . . . . .
             `)
-        music.playTone(262, music.beat(BeatFraction.Quarter))
+        music.play(music.tonePlayable(262, music.beat(BeatFraction.Quarter)), music.PlaybackMode.UntilDone)
+
     } else {
         basic.showLeds(`
             . . . . .
@@ -241,7 +244,8 @@ radio.onReceivedNumber(function (receivedNumber) {
             . . . . .
             . . . . .
             `)
-        music.playTone(262, music.beat(BeatFraction.Whole))
+        music.play(music.tonePlayable(262, music.beat(BeatFraction.Whole)), music.PlaybackMode.UntilDone)
+
     }
     basic.clearScreen()
 })
@@ -270,7 +274,8 @@ radio.onReceivedNumber(function (receivedNumber) {
             . . . . .
             . . . . .
             `)
-        music.playTone(262, music.beat(BeatFraction.Quarter))
+        music.play(music.tonePlayable(262, music.beat(BeatFraction.Quarter)), music.PlaybackMode.UntilDone)
+
     } else {
         basic.showLeds(`
             . . . . .
@@ -279,7 +284,8 @@ radio.onReceivedNumber(function (receivedNumber) {
             . . . . .
             . . . . .
             `)
-        music.playTone(262, music.beat(BeatFraction.Whole))
+        music.play(music.tonePlayable(262, music.beat(BeatFraction.Whole)), music.PlaybackMode.UntilDone)
+
     }
     basic.clearScreen()
 })

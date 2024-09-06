@@ -33,13 +33,13 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
 
 ## {Tickle sound}
 
-► From the ``||music:Music||`` category, get a ``||music:play sound [giggle] until done||`` and add it to the **bottom** of your ``||input:on logo [pressed]||`` container.
+► From the ``||music:Music||`` category, get a ``||music:play melody [jump up] [in background]||`` and add it to the **bottom** of your ``||input:on logo [pressed]||`` container. Change the playback mode to ``||music:[until done]||``.
 
 ```blocks
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
     basic.showIcon(IconNames.Happy)
     //@highlight
-    soundExpression.giggle.playUntilDone()
+    music.play(music.builtInPlayableMelody(Melodies.JumpUp), music.PlaybackMode.UntilDone)
 })
 ```
 
@@ -60,14 +60,14 @@ input.onGesture(Gesture.Shake, function () {
 
 ## {Dizzy sound}
 
-► From the ``||music:Music||`` category, find the ``||music:play sound [giggle] until done||`` block and add it to the **bottom** of your ``||input:on [shake]||`` container.  
-► Click on the **dropdown** and set it so Cyrus plays a ``||music:sad||`` sound until done.
+► From the ``||music:Music||`` category, find the ``||music:play melody [dadadum] [in background]||`` block and add it to the **bottom** of your ``||input:on [shake]||`` container. Change the playback mode to ``||music:[until done]||``.
+► Click on the **dropdown** and set it so Cyrus plays a sad sound until done.
 
 ```blocks
 input.onGesture(Gesture.Shake, function () {
     basic.showIcon(IconNames.Sad)
     //@highlight
-    soundExpression.sad.playUntilDone()
+    music.play(music.builtInPlayableMelody(Melodies.Wawawawaa), music.PlaybackMode.UntilDone)
 })
 ```
 
@@ -81,13 +81,13 @@ Let's ensure that Cyrus will always go back to sleep after being shaken or tickl
 ```blocks
 input.onGesture(Gesture.Shake, function () {
     basic.showIcon(IconNames.Sad)
-    soundExpression.sad.playUntilDone()
+    music.play(music.builtInPlayableMelody(Melodies.Wawawawaa), music.PlaybackMode.UntilDone)
     //@highlight
     basic.showIcon(IconNames.Asleep)
 })
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
     basic.showIcon(IconNames.Happy)
-    soundExpression.giggle.playUntilDone()
+    music.play(music.builtInPlayableMelody(Melodies.JumpUp), music.PlaybackMode.UntilDone)
 })
 basic.showIcon(IconNames.Asleep)
 ```
@@ -99,12 +99,12 @@ basic.showIcon(IconNames.Asleep)
 ```blocks
 input.onGesture(Gesture.Shake, function () {
     basic.showIcon(IconNames.Sad)
-    soundExpression.sad.playUntilDone()
+    music.play(music.builtInPlayableMelody(Melodies.Wawawawaa), music.PlaybackMode.UntilDone)
     basic.showIcon(IconNames.Asleep)
 })
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
     basic.showIcon(IconNames.Happy)
-    soundExpression.giggle.playUntilDone()
+    music.play(music.builtInPlayableMelody(Melodies.JumpUp), music.PlaybackMode.UntilDone)
     //@highlight
     basic.showIcon(IconNames.Asleep)
 })
@@ -124,12 +124,12 @@ If you have a new @boardname@ (the one with the **shiny gold** logo at the top),
 ```blocks
 input.onGesture(Gesture.Shake, function () {
     basic.showIcon(IconNames.Sad)
-    soundExpression.sad.playUntilDone()
+    music.play(music.builtInPlayableMelody(Melodies.Wawawawaa), music.PlaybackMode.UntilDone)
     basic.showIcon(IconNames.Asleep)
 })
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
     basic.showIcon(IconNames.Happy)
-    soundExpression.giggle.playUntilDone()
+    music.play(music.builtInPlayableMelody(Melodies.JumpUp), music.PlaybackMode.UntilDone)
     basic.showIcon(IconNames.Asleep)
 })
 basic.showIcon(IconNames.Asleep)
