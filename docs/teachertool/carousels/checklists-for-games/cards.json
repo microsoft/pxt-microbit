@@ -26,6 +26,12 @@
         },
         {
             "cardType": "checklist-resource",
+            "cardTitle": "Tug-Of-LED",
+            "imageUrl": "/static/mb/projects/tug-of-led.png",
+            "checklistUrl": "/teachertool/checklists/tug-of-led.json"
+        },
+        {
+            "cardType": "checklist-resource",
             "cardTitle": "Snap the dot",
             "imageUrl": "/static/mb/projects/snap-the-dot.png",
             "checklistUrl": "/teachertool/checklists/snap-the-dot.json"
@@ -49,12 +55,6 @@
             "cardTitle": "Reaction Time",
             "imageUrl": "/static/mb/projects/reaction.jpg",
             "checklistUrl": "/teachertool/checklists/reaction-time.json"
-        },
-        {
-            "cardType": "checklist-resource",
-            "cardTitle": "Tug-Of-LED",
-            "imageUrl": "/static/mb/projects/tug-of-led.png",
-            "checklistUrl": "/teachertool/checklists/tug-of-led.json"
         },
         {
             "cardType": "checklist-resource",
