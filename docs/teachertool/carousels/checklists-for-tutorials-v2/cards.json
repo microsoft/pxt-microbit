@@ -2,20 +2,6 @@
     "cards": [
         {
             "cardType": "checklist-resource",
-            "cardTitle": "Blow Away",
-            "imageUrl": "/static/mb/projects/blow-away.png",
-            "checklistUrl": "/teachertool/checklists/blow-away-mbv2.json"
-        },
-        {
-            "cardType": "checklist-resource",
-            "cardTitle": "Cat Napping",
-            "imageUrl": "/static/mb/projects/cat-napping/1_lychee.png",
-            "checklistUrl": "/teachertool/checklists/cat-naping-mbv2.json"
-        }
-    ],
-    "cards.hidden": [
-        {
-            "cardType": "checklist-resource",
             "cardTitle": "Pet Hamster",
             "imageUrl": "/static/mb/projects/pet-hamster.png",
             "checklistUrl": "/teachertool/checklists/pet-hamster-mbv2.json"
@@ -37,6 +23,19 @@
             "cardTitle": "Clap Lights",
             "imageUrl": "/static/mb/projects/clap-lights.png",
             "checklistUrl": "/teachertool/checklists/clap-lights-mbv2.json"
+        },
+        {
+            "cardType": "checklist-resource",
+            "cardTitle": "Blow Away",
+            "imageUrl": "/static/mb/projects/blow-away.png",
+            "checklistUrl": "/teachertool/checklists/blow-away-mbv2.json"
+        },
+        {
+            "cardType": "checklist-resource",
+            "cardTitle": "Cat Napping",
+            "imageUrl": "/static/mb/projects/cat-napping/1_lychee.png",
+            "checklistUrl": "/teachertool/checklists/cat-naping-mbv2.json"
         }
-    ]
+    ],
+    "cards.hidden": []
 }
