@@ -82,7 +82,7 @@ input.onButtonPressed(Button.A, function () {
     logging = !(logging)
     if (logging) {
         basic.showIcon(IconNames.Target)
-        music.play(music.builtInPlayableMelody(Melodies.Nyan), music.PlaybackMode.UntilDone)
+        music.play(music.builtInPlayableMelody(Melodies.Nyab), music.PlaybackMode.UntilDone)
     } else {
     }
 })
@@ -98,7 +98,7 @@ input.onButtonPressed(Button.A, function () {
     logging = !(logging)
     if (logging) {
         basic.showIcon(IconNames.Target)
-        music.play(music.builtInPlayableMelody(Melodies.Nyan), music.PlaybackMode.UntilDone)
+        music.play(music.builtInPlayableMelody(Melodies.Nyab), music.PlaybackMode.UntilDone)
     } else {
         basic.clearScreen()
     }
