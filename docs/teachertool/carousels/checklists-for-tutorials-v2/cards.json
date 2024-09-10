@@ -34,7 +34,7 @@
             "cardType": "checklist-resource",
             "cardTitle": "Cat Napping",
             "imageUrl": "/static/mb/projects/cat-napping/1_lychee.png",
-            "checklistUrl": "/teachertool/checklists/cat-naping-mbv2.json"
+            "checklistUrl": "/teachertool/checklists/cat-napping-mbv2.json"
         }
     ],
     "cards.hidden": []
