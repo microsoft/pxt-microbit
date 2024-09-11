@@ -590,7 +590,7 @@
 
             "dragFileImage": "/static/download/transfer.png",
             "connectDeviceImage": "/static/download/connect-microbit.gif",
-            "disconnectDeviceImage": "/static/download/device-forgotten.gif",
+            "disconnectDeviceImage": "/static/download/full-reset.gif",
             "selectDeviceImage": "/static/download/selecting-microbit.gif",
             "connectionSuccessImage": "/static/download/successfully-paired.png",
             "incompatibleHardwareImage": "/static/download/incompatible.png",
