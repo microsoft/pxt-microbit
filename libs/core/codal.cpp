@@ -50,7 +50,6 @@ MicroBitEvent lastEvent;
 bool serialLoggingDisabled;
 
 void platform_init() {
-    microbit_seed_random();
     int seed = microbit_random(0x7fffffff);
     DMESG("random seed: %d", seed);
     seedRandom(seed);
