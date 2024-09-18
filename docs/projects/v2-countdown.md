@@ -99,7 +99,7 @@ for (let index = 0; index <= 2; index++) {
     basic.showNumber(3 - index)
 }
 // @highlight
-music.play(music.tonePlayable(262, music.beat(BeatFraction.Whole)), music.PlaybackMode.UntilDone)
+music.play(music.tonePlayable(392, music.beat(BeatFraction.Whole)), music.PlaybackMode.UntilDone)
 basic.showString("GO!")
 ```
 
@@ -114,7 +114,7 @@ for (let index = 0; index <= 2; index++) {
     music.play(music.tonePlayable(262, music.beat(BeatFraction.Quarter)), music.PlaybackMode.UntilDone)
     basic.showNumber(3 - index)
 }
-music.play(music.tonePlayable(262, music.beat(BeatFraction.Whole)), music.PlaybackMode.UntilDone)
+music.play(music.tonePlayable(392, music.beat(BeatFraction.Whole)), music.PlaybackMode.UntilDone)
 basic.showString("GO!")
 ```
 
