@@ -33,7 +33,7 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
 
 ## {Tickle sound}
 
-► From the ``||music:Music||`` category, get a ``||music:play melody [jump up] [in background]||`` and add it to the **bottom** of your ``||input:on logo [pressed]||`` container. Change the playback mode to ``||music:[until done]||``.
+► From the ``||music:Music||`` category, get a ``||music:play [melody jump up] [in background]||`` and add it to the **bottom** of your ``||input:on logo [pressed]||`` container. Change the playback mode to ``||music:[until done]||``.
 
 ```blocks
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
@@ -60,7 +60,7 @@ input.onGesture(Gesture.Shake, function () {
 
 ## {Dizzy sound}
 
-► From the ``||music:Music||`` category, find the ``||music:play melody [dadadum] [in background]||`` block and add it to the **bottom** of your ``||input:on [shake]||`` container. Change the playback mode to ``||music:[until done]||``.
+► From the ``||music:Music||`` category, find the ``||music:play [melody dadadum] [in background]||`` block and add it to the **bottom** of your ``||input:on [shake]||`` container. Change the playback mode to ``||music:[until done]||``.
 ► Click on the **dropdown** and set it so Cyrus plays a sad sound until done.
 
 ```blocks
