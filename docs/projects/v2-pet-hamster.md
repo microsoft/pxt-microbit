@@ -39,7 +39,7 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
     basic.showIcon(IconNames.Happy)
     //@highlight
-    music.play(music.builtInPlayableMelody(Melodies.JumpUp), music.PlaybackMode.UntilDone)
+    music._playDefaultBackground(music.builtInPlayableMelody(Melodies.JumpUp), music.PlaybackMode.UntilDone)
 })
 ```
 
@@ -67,7 +67,7 @@ input.onGesture(Gesture.Shake, function () {
 input.onGesture(Gesture.Shake, function () {
     basic.showIcon(IconNames.Sad)
     //@highlight
-    music.play(music.builtInPlayableMelody(Melodies.Wawawawaa), music.PlaybackMode.UntilDone)
+    music._playDefaultBackground(music.builtInPlayableMelody(Melodies.Wawawawaa), music.PlaybackMode.UntilDone)
 })
 ```
 
@@ -81,13 +81,13 @@ Let's ensure that Cyrus will always go back to sleep after being shaken or tickl
 ```blocks
 input.onGesture(Gesture.Shake, function () {
     basic.showIcon(IconNames.Sad)
-    music.play(music.builtInPlayableMelody(Melodies.Wawawawaa), music.PlaybackMode.UntilDone)
+    music._playDefaultBackground(music.builtInPlayableMelody(Melodies.Wawawawaa), music.PlaybackMode.UntilDone)
     //@highlight
     basic.showIcon(IconNames.Asleep)
 })
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
     basic.showIcon(IconNames.Happy)
-    music.play(music.builtInPlayableMelody(Melodies.JumpUp), music.PlaybackMode.UntilDone)
+    music._playDefaultBackground(music.builtInPlayableMelody(Melodies.JumpUp), music.PlaybackMode.UntilDone)
 })
 basic.showIcon(IconNames.Asleep)
 ```
@@ -99,12 +99,12 @@ basic.showIcon(IconNames.Asleep)
 ```blocks
 input.onGesture(Gesture.Shake, function () {
     basic.showIcon(IconNames.Sad)
-    music.play(music.builtInPlayableMelody(Melodies.Wawawawaa), music.PlaybackMode.UntilDone)
+    music._playDefaultBackground(music.builtInPlayableMelody(Melodies.Wawawawaa), music.PlaybackMode.UntilDone)
     basic.showIcon(IconNames.Asleep)
 })
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
     basic.showIcon(IconNames.Happy)
-    music.play(music.builtInPlayableMelody(Melodies.JumpUp), music.PlaybackMode.UntilDone)
+    music._playDefaultBackground(music.builtInPlayableMelody(Melodies.JumpUp), music.PlaybackMode.UntilDone)
     //@highlight
     basic.showIcon(IconNames.Asleep)
 })
@@ -124,12 +124,12 @@ If you have a new @boardname@ (the one with the **shiny gold** logo at the top),
 ```blocks
 input.onGesture(Gesture.Shake, function () {
     basic.showIcon(IconNames.Sad)
-    music.play(music.builtInPlayableMelody(Melodies.Wawawawaa), music.PlaybackMode.UntilDone)
+    music._playDefaultBackground(music.builtInPlayableMelody(Melodies.Wawawawaa), music.PlaybackMode.UntilDone)
     basic.showIcon(IconNames.Asleep)
 })
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
     basic.showIcon(IconNames.Happy)
-    music.play(music.builtInPlayableMelody(Melodies.JumpUp), music.PlaybackMode.UntilDone)
+    music._playDefaultBackground(music.builtInPlayableMelody(Melodies.JumpUp), music.PlaybackMode.UntilDone)
     basic.showIcon(IconNames.Asleep)
 })
 basic.showIcon(IconNames.Asleep)
