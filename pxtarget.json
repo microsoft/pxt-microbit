@@ -269,6 +269,7 @@
                 "permanent": true
             }
         },
+        "testSimulatorExtensions": {},
         "boardDefinition": {
             "visual": "microbit",
             "gpioPinBlocks": [

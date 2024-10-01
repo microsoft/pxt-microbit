@@ -467,7 +467,7 @@
             "davidnsousa/sonification": { "tags": [ "Software" ] },
             "eanders-ms/simx-sample": {
                 "simx": {
-                    "sha": "611e641a4b80d979235dd9ac267d0a707c129a85",
+                    "sha": "6555401f995fac26ebafbaf1f1b1261ae72a05b3",
                     "devUrl": "http://localhost:5173"
                 }
             }
