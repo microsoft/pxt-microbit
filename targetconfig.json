@@ -465,9 +465,9 @@
             "pythom1234/pxt-oled": { "tags": [ "Lights and Display" ] },
             "softsmyth/lectrify-b4k": { "tags": [ "Robotics" ] },
             "davidnsousa/sonification": { "tags": [ "Software" ] },
-            "eanders-ms/simx-sample": {
+            "microsoft/pxt-simx-sample": {
                 "simx": {
-                    "sha": "6555401f995fac26ebafbaf1f1b1261ae72a05b3",
+                    "sha": "24e0315d3715c2e5ca1acf9947893085459a38e1",
                     "devUrl": "http://localhost:5173"
                 }
             }
