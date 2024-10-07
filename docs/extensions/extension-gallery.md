@@ -976,6 +976,10 @@ Many extensions are available to work with interface kits, add-on hardware, or o
 ## Utilities
 ```codecard
 [{
+  "name": "Hebrew",
+  "url": "/pkg/shahart/heb-microbit",
+  "cardType": "package"
+}, {
   "name": "Faces",
   "url": "/pkg/GrandpaBond/pxt-faces",
   "cardType": "package"

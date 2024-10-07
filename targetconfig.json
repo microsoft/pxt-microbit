@@ -470,7 +470,8 @@
                     "sha": "6555401f995fac26ebafbaf1f1b1261ae72a05b3",
                     "devUrl": "http://localhost:5173"
                 }
-            }
+            },
+            "shahart/heb-microbit": { "tags": [ "Software" ] }
         },
         "approvedEditorExtensionUrls": [
             "https://microsoft.github.io/ml4f/",
