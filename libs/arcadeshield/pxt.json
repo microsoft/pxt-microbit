@@ -24,7 +24,8 @@
     "test": [
         "test.ts"
     ],
-    "public": false,
+    "public": true,
+    "hidden": true,
     "preferredEditor": "tsprj",
     "disablesVariants": [
         "mbdal"
