@@ -1478,7 +1478,9 @@ namespace bitmaps {
 Bitmap_ ofBuffer(Buffer buf) {
     return BitmapMethods::convertAndWrap(buf);
 }
+}
 
+namespace bitmaps {
 /**
  * Create new empty (transparent) bitmap
  */

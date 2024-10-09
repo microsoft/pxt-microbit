@@ -6,7 +6,7 @@ basic.showNumber(present ? 1 : 0)
 // set palette before creating screen, which initializes the display
 __screenhelpers.setPalette(hex`000000ffffffff2121ff93c4ff8135fff609249ca378dc52003fad87f2ff8e2ec4a4839f5c406ce5cdc491463d000000`)
 
-const screen = bitmap.create(
+const screen = bitmaps.create(
     __screenhelpers.displayWidth(),
     __screenhelpers.displayHeight()
 )

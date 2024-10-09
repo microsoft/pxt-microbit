@@ -530,13 +530,13 @@ namespace pxsim.BitmapMethods {
 
     export function drawIcon(img: RefImage, icon: RefBuffer, x: number, y: number, color: number) {
         const src: Uint8Array = icon.data
-        if (!bitmap.isValidImage(icon))
+        if (!bitmaps.isValidImage(icon))
             return
         if (src[1] != 1)
             return // only mono
-        let width = bitmap.bufW(src)
-        let height = bitmap.bufH(src)
-        let byteH = bitmap.byteHeight(height, 1)
+        let width = bitmaps.bufW(src)
+        let height = bitmaps.bufH(src)
+        let byteH = bitmaps.byteHeight(height, 1)
 
         x |= 0
         y |= 0
@@ -940,7 +940,7 @@ namespace pxsim.BitmapMethods {
 }
 
 
-namespace pxsim.bitmap {
+namespace pxsim.bitmaps {
     export function byteHeight(h: number, bpp: number) {
         if (bpp == 1)
             return h * bpp + 7 >> 3
@@ -997,7 +997,6 @@ namespace pxsim.bitmap {
         return new RefImage(w, h, 4)
     }
 
-    // TODO: move to image namespace
     export function ofBuffer(buf: RefBuffer): RefImage {
         const src: Uint8Array = buf.data
 
