@@ -29,7 +29,6 @@ namespace bitmap {
 
 //% snippet='bmp` `'
 //% pySnippet='bmp(""" """)'
-//% fixedInstances
 interface Bitmap {
     /**
      * Draw an icon (monochromatic image) using given color
