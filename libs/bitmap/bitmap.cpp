@@ -1470,7 +1470,7 @@ void _fillPolygon4(Bitmap_ img, pxt::RefCollection *args) {
 
 } // namespace BitmapMethods
 
-namespace bitmap {
+namespace bitmaps {
 /**
  * Create new bitmap with given content
  */
@@ -1478,9 +1478,7 @@ namespace bitmap {
 Bitmap_ ofBuffer(Buffer buf) {
     return BitmapMethods::convertAndWrap(buf);
 }
-}
 
-namespace bitmap {
 /**
  * Create new empty (transparent) bitmap
  */
@@ -1509,7 +1507,7 @@ Buffer doubledIcon(Buffer icon) {
     return t->buffer;
 }
 
-} // namespace bitmap
+} // namespace bitmaps
 
 // This is  6.5x faster than standard on word-aligned copy
 // probably should move to codal

@@ -1,6 +1,6 @@
 type color = number
 
-namespace bitmap {
+namespace bitmaps {
     export function repeatY(count: number, image: Bitmap) {
         let arr = [image]
         while (--count > 0)
