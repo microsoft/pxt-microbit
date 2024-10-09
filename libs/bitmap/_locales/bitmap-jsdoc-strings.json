@@ -31,8 +31,8 @@
   "Bitmap.setRows": "Copy row(s) of pixel from buffer to bitmap.",
   "Bitmap.transposed": "Returns a transposed bitmap (with X/Y swapped)",
   "Bitmap.width": "Get the width of the bitmap",
-  "bitmap.create": "Create new empty (transparent) bitmap",
-  "bitmap.doubledIcon": "Double the size of an icon",
-  "bitmap.ofBuffer": "Create new bitmap with given content",
+  "bitmaps.create": "Create new empty (transparent) bitmap",
+  "bitmaps.doubledIcon": "Double the size of an icon",
+  "bitmaps.ofBuffer": "Create new bitmap with given content",
   "helpers.imageRotated": "Returns an image rotated by 90, 180, 270 deg clockwise"
 }

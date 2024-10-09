@@ -15,7 +15,7 @@ namespace bitmaps {
             w = Math.max(img.width, w)
             h += img.height
         }
-        let r = bitmap.create(w, h)
+        let r = bitmaps.create(w, h)
         let y = 0
         for (let img of images) {
             let x = (w - img.width) >> 1

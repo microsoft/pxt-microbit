@@ -135,24 +135,24 @@ declare interface Bitmap {
     //% shim=BitmapMethods::overlapsWith
     overlapsWith(other: Bitmap, x: int32, y: int32): boolean;
 }
-declare namespace bitmap {
+declare namespace bitmaps {
 
     /**
      * Create new bitmap with given content
      */
-    //% shim=bitmap::ofBuffer
+    //% shim=bitmaps::ofBuffer
     function ofBuffer(buf: Buffer): Bitmap;
 
     /**
      * Create new empty (transparent) bitmap
      */
-    //% shim=bitmap::create
+    //% shim=bitmaps::create
     function create(width: int32, height: int32): Bitmap;
 
     /**
      * Double the size of an icon
      */
-    //% shim=bitmap::doubledIcon
+    //% shim=bitmaps::doubledIcon
     function doubledIcon(icon: Buffer): Buffer;
 }
 
