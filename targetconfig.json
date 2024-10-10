@@ -471,7 +471,14 @@
                     "devUrl": "http://localhost:5173"
                 }
             },
-            "shahart/heb-microbit": { "tags": [ "Software" ] }
+            "shahart/heb-microbit": { "tags": [ "Software" ] },
+            "microbit-foundation/pxt-microbit-ml": { 
+                "simx": {
+                    "sha": "e349a2feaae9f84a24ebd56716209ef74e1758d2",
+                    "devUrl": "http://localhost:5173",
+                    "aspectRatio": 3.45
+                }
+            }
         },
         "approvedEditorExtensionUrls": [
             "https://microsoft.github.io/ml4f/",
