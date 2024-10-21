@@ -70,11 +70,15 @@ input.onGesture(Gesture.Shake, () => {
 ```
 Solution link: [https://makecode.microbit.org/_0fx9hY9EbM5T]()
 
-### ~ Bonus
+### ~ hint
+
+#### Bonus
 
 The micro:bit uses its accelerometer to detect when you're shaking it. How does an accelerometer actually work?
 
 [https://www.youtube.com/watch?v=byngcwjO51U]()
+
+### ~
 
 ### Space Race
 

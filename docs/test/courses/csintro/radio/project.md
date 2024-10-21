@@ -21,13 +21,15 @@ When a key is pressed, it sends a number over the radio to a second micro:bit th
 ![Second micro:bit that plays notes](/static/courses/csintro/radio/microbit-number-two.png)
 Second micro:bit that plays the notes
 
-#### ~ Bonus
+### ~ hint
+
+#### Bonus
 
 This project uses touch pin inputs. See how the micro:bit detects a press at a pin or on something connected to a pin in this video:
 
 https://www.youtube.com/watch?v=GEpZrvbsO7o
 
-#### ~
+### ~
 
 #### 3-Note keyboard program
 
