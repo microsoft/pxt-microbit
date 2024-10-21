@@ -5,7 +5,7 @@
 This lesson introduces the fundamental concept of storing and retrieving data in an ordered fashion using Arrays. We'll also look at JavaScript as an alternate way of creating and modifying code. We'll look at the structure of a Melody as a list of notes.
  
 ## Lesson objectives
-Students will...
+You will...
 * Explain the steps they would take to sort a series of numbers.
 * Recognize three common sorting algorithms.
 * Practice creating Arrays.
@@ -15,7 +15,7 @@ Students will...
  
 ## Lesson structure
 * Introduction: Arrays
-* Unplugged Activity: Different sorts of people
+* Unplugged Activity: Different sorts
 * micro:bit Activity: Headband charades, Starry Starry Night
 * Project: Make a musical instrument
 * Assessment: Rubric 
@@ -24,7 +24,7 @@ Students will...
 ## Lesson plan
 
 1. [**Overview**: Arrays](/test/courses/csintro/arrays/overview)
-2. [**Unplugged**: Different sorts of people](/test/courses/csintro/arrays/unplugged)
+2. [**Unplugged**: Different sorts](/test/courses/csintro/arrays/unplugged)
 3. [**Activity**: Headband charades](/test/courses/csintro/arrays/activity)
 4. [**Project**: Musical instrument ](/test/courses/csintro/arrays/project)
 

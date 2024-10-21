@@ -31,7 +31,7 @@ The features highlighted here are:
 2. **Simulator** shows what your program will look like when running on a @boardname@
 3. **Hide** or **Show** the simulator pane
 4. Program in either **Blocks** or **JavaScript**
-5. Programming **Workspace** where you will build you program
+5. Programming **Workspace** where you will build your program
 6. Blocks **Toolbox**
 7. **Download** your program to the @boardname@
 8. Name your project and **Save** it on your computer
@@ -253,23 +253,23 @@ basic.clearScreen()
 Questions:
 
 1. What is the difference between RAM and hard drive memory?
-    a. RAM is the computer’s short-term memory and the hard drive is where the computer stores its long-term memory.
-    b. The hard drive is where the computer stores its short-term memory and RAM is the computer’s long-term memory.
-    c. RAM is used for programming and the hard drive memory is for storage.
-    d. Hard drive memory is for storing files and RAM is used for processing inputs.
+ - a. RAM is the computer’s short-term memory and the hard drive is where the computer stores its long-term memory.
+ - b. The hard drive is where the computer stores its short-term memory and RAM is the computer’s long-term memory.
+ - c. RAM is used for programming and the hard drive memory is for storage.
+ - d. Hard drive memory is for storing files and RAM is used for processing inputs.
     
 2. What’s an algorithm?
-	a. The word used to describe all computer codes
-	b. Sets of instructions to a computer
-	c. A type of hardware used with micro:bit
-	d. The area of a MakeCode project that shows how a program looks when run on the micro:bit
+ - a. The word used to describe all computer codes
+ - b. Sets of instructions to a computer
+ - c. A type of hardware used with micro:bit
+ - d. The area of a MakeCode project that shows how a program looks when run on the micro:bit
 	
 3. What is an event in programming?
 4. What is an event handler?
 
 Answers:
 
-1. a. RAM is the computer’s short-term memory and the hard drive is where the computer stores its long-term memory.
-2. b. Sets of instructions to a computer
+1. The answer is a: RAM is the computer’s short-term memory and the hard drive is where the computer stores its long-term memory.
+2. The answer is b: Sets of instructions to a computer
 3. An action done by the user, such as pressing a key or clicking a mouse button
 4. A routine that responds to an event

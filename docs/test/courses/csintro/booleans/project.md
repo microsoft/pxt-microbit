@@ -2,21 +2,60 @@
 
 ![Two-Player Game Example Board](/static/courses/csintro/booleans/two-player.jpg)
 
-This is an assignment for students to come up with a micro:bit program that uses Boolean variables, Boolean operators, and possibly the random function.
+In this project, you will come up with a micro:bit program that uses Boolean variables, Boolean operators, and possibly the random function.
  
-## Input
-Remind the students of all the different inputs available to them through the micro:bit.
+## Project Expectations
 
-![micro:bit input list](/static/courses/csintro/variables/input-list.png)
- 
+Follow the design thinking approach and make sure your project meets these specifications:
+
+* More than two Boolean variables are implemented in a meaningful way.
+* The micro:bit program uses Booleans in a way that is integral to the program.
+* The program compiles and runs as intended and includes meaningful comments in code.
+* Provide the written Reflection Diary entry.
+
+## Input
+
+Don't forget to consider all the different inputs available to you through the micro:bit.
+
+**Available inputs:**
+
+* Acceleration
+* Light level
+* Rotation
+* Button is pressed
+* Compass heading
+* Temperature
+* Running time
+* On shake
+* On button pressed
+* On logo down
+* On logo up
+* On pin pressed
+* On screen down
+* On screen up
+* Pin is pressed
+
 ## Project Ideas
+
+Use Boolean variables and/or random values to create:
+
+* A board game, game pieces, and holder for the micro:bit (or improve your board game from Unit 3: Variables)
+
+* A mod of some sort to a current/existing board game
+
+* A micro:bit version of a Magic Eight Ball
+
+## Project Examples
 
 ### Sunscreen Monitor
 
-When you shake the micro:bit, it reports the current temperature in degrees Fahrenheit.  Button B measures the light level and if it is above 70 degrees AND very bright, it will display a sun icon.  If it is above 70 degrees and less bright, it will display a cloudy symbol. If it is dark, it will display a nighttime icon.
+The micro:bit is attached to a bottle of sunscreen and provides information about the temperature and if you need sunscreen:
 
-[**micro:bit Sunscreen Monitor**](https://youtu.be/VmD-dcZZQFc)
-https://youtu.be/VmD-dcZZQFc
+* When you shake the micro:bit, it reports the current temperature in degrees Fahrenheit.
+
+* Button A displays an animation to tell you whether or not you should use sunscreen (on sunny or cloudy days but not at night or indoors).
+
+* Button B measures the light level, and if it is above 70 degrees AND very bright, it will display a sun icon. If it is above 70 degrees and less bright, it will display a cloudy symbol. If it is dark, it will display a nighttime icon. Check it out in action here: [youtu.be/VmD-dcZZQFc](here) (0:18)
 
 #### Sunscreen code
 
@@ -170,33 +209,15 @@ input.onGesture(Gesture.Shake, () => {
 })
 ```
 
-Button A displays an animation to tell you whether or not you should use sunscreen (on sunny or cloudy days but not at night or indoors.)
-
-Make a holder that can hold the micro:bit and a bottle of sunscreen.
-
-This example uses boolean operations because both light level AND temperature must be high in order to trigger the sun icon:
-
-```block
-if (128 > input.lightLevel() && 0 < input.lightLevel() && input.temperature() > 22) {}
-```
-### ~ hint
-
-The @boardname@ uses some clever tricks to measure both light and temperature. Want to see how it can measure the light level and temprature? Watch these videos to learn how it does it.
-
-https://www.youtube.com/watch?v=TKhCr-dQMBY
-<br/>
-https://www.youtube.com/watch?v=_T4N8O9xsMA
-
-### ~
+Solution link: [makecode.microbit.org/_Atd9Wti3MiUj]()
 
 ### Two-player game
 
-Create a game in which two players take turns on the same micro:bit. You can use a boolean variable called PlayerATurn to keep track of whose turn it is.
+This is an example of a board game in which the micro:bit displays an arrow pointing in a random direction. The paper legend indicates different actions the player must take, and it uses a Boolean variable to keep track of whose turn it is.
 
 **Board Game:** Use boolean variables and random values as part of a board game (or improve your Board Game from the Variables lesson). Make the board and pieces and a holder for the micro:bit. Try modding a current board game.
 
 ![Two player game project](/static/courses/csintro/booleans/two-player-game.png)
-Board Game with Arrows
 
 #### Board game arrow code
 
@@ -319,38 +340,15 @@ input.onGesture(Gesture.Shake, () => {
     }
 })
 ```
+
+Solution link: [makecode.microbit.org/_1mY4wq4KPYiq]()
+
 ## Reflection
 
-Have students write a reflection of about 150–300 words, addressing the following points:
+Write a short reflection of about 150–300 words, addressing the following points:
+
 * How did you incorporate boolean variables into your micro:bit program?
 * How did you incorporate boolean operators into your micro:bit program?
 * Describe something in your project that you are proud of.
 * If you had more time to work on this project, describe what you might add or change.
-
-## Assessment
- 
-**Competency scores**: 4, 3, 2, 1
- 
-### Boolean
-
-**4 =** More than 2 Boolean variables are implemented in a meaningful way.<br/>
-**3 =** At least 2 Boolean variables are implemented in a meaningful way.<br/>
-**2 =** At least 1 Boolean variable is implemented in a meaningful way.<br/>
-**1 =** No Boolean variables are implemented.
-			 
-### micro:bit program
-
-**4 =** micro:bit program:<br/>
-`*` Uses Booleans in a way that is integral to the program.<br/>
-`*` Compiles and runs as intended<br/>
-`*` Meaningful comments in code<br/>
-**3 =** micro:bit program lacks 1 of the required element.<br/>
-**2 =** micro:bit program lacks 2 of the required elements.<br/>
-**1 =** micro:bit program lacks all of the required elements.
-
-### Collaboration reflection
-
-**4 =** Reflection piece addresses all prompts.<br/>
-**3 =** Reflection piece lacks 1 of the required elements.<br/>
-**2 =** Reflection piece lacks 2 of the required elements.<br/>
-**1 =** Reflection piece lacks 3 of the required elements.
+* Publish your MakeCode program and include the link.

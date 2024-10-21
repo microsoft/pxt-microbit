@@ -1,16 +1,15 @@
 # Unplugged: Two heads are better than one
 
-Materials: A penny for each student, paper and pencils 
+A penny, paper, and a pencil
 
-Most students have used a penny to decide something. Ask for some examples. 
-Who goes first in a game, to break a tie, to decide which activity to do... 
+Most people have used a penny to decide something. Some examples might include: Who goes first in a game, to break a tie, to decide between two activities... 
 
 A simple penny is the most common binary decision making tool ever! 
-When you flip a coin to decide something there are only two possible outcomes, heads or tails. 
-When you flip a coin the outcome is random. 
 
- 
-What’s a common issue with coin tosses? Students may bring up issues of trust and fairness. Who gets to flip the coin? Who gets to ‘call’ it? What if it’s a ‘faulty’ coin?
+When you flip a coin to decide something there are only two possible outcomes, heads or tails. 
+When you flip a coin, the outcome is random. 
+
+However, a common issue with coin tosses is that of trust and fairness. Who gets to flip the coin? Who gets to ‘call’ it? What if it’s a ‘faulty’ coin?
  
 Here’s a solution... The double coin toss. 
 
@@ -18,7 +17,7 @@ Here’s a solution... The double coin toss.
 
 In a double coin toss, both people have a coin and they flip the coins at the same time. 
 
-Working in pairs, have the students make a table or list of the possible outcomes if each student flipped a coin at the same time.
+Make a table or list of the possible outcomes if each person flipped a coin at the same time. You should end up with something like this:
 
 Example:
  
@@ -38,9 +37,9 @@ There are 4 possible outcomes.
  
 So, if 2 coins are flipped, the chance that the outcomes will be the same (HH/TT) is equal to the chance that the outcomes will be different (HT/TH).  Both outcomes, coins the same/coins are different have a 2 in 4 or 50% chance of occurring.
 
-Therefore, if Person A wins each time the outcomes are the same and Person B wins each time the outcomes are different, both have an equal chance of winning each double coin flip.  With this system, no one person’s outcome, heads or tails, guarantees a win.  If Person A’s coin flips to heads, she would win if Person B also flipped heads, but lose if Person B flipped tails. Students will usually see that this is a fair system.
+Therefore, if Person A wins each time the outcomes are the same and Person B wins each time the outcomes are different, both have an equal chance of winning each double coin flip. With this system, no one person’s outcome, heads or tails, guarantees a win. If Person A’s coin flips to heads, she would win if Person B also flipped heads, but lose if Person B flipped tails.
  
-Let the students experiment with this. Have students flip their coins together, keeping track of the outcomes, perhaps by adding another column to their table.
+Experiment with this and record the results. Flip your coin twice, keeping track of the outcomes, perhaps by adding another column to their table. If there's another person around who can act as the second coin-flipper, that's all the better.
 
 Example:
  
@@ -52,8 +51,6 @@ Example:
     Tails   Heads
     Tails   Tails
 ```
- 
-Just for fun, have them play to a certain total number of rounds.  
 
 So, what does this have to do Boolean variables and operators? Think about how you would code a program a double coin flipper. How would you represent each of the 4 different possible double coin flip outcomes?
 
@@ -66,7 +63,7 @@ We can create a Boolean variable to represent whether an outcome is heads or tai
 
 Note: Tails = False can also be thought of as Tails = not true. 
 
-Have the students copy their Heads/Tails table of possible outcomes, but label the columns "Coin A Heads" and "Coin B Heads" and replace each entry of ‘Heads’ with ‘True’ and ‘Tails’ with ‘False’.  In the study of logic, this is known as a truth table.
+Copy your Heads/Tails table of possible outcomes, but label the columns "Coin A Heads" and "Coin B Heads" and replace each entry of ‘Heads’ with ‘True’ and ‘Tails’ with ‘False’. In the study of logic, this is known as a **truth table.**
 
 We’ll use it to help us pseudocode our program, by adding a third column describing the results of each outcome.
 
@@ -82,16 +79,14 @@ We’ll use it to help us pseudocode our program, by adding a third column descr
 
 Can we make this code more efficient? Can we combine any of these lines? Try using an OR to combine both conditions in which Player A scores a point. Do the same for both conditions in which Player B scores a point. 
 
-Give the students a chance to work this out on their own. 
-
-Combining the conditions in which each player wins, gives us: 
+Combining the conditions in which each player wins gives us: 
 
 * If (Coin A is true AND Coin B is true) OR (Coin A is false AND Coin B is false), add one to Player A score. 
 * If (Coin A is true AND Coin B is false) OR (Coin A is false AND Coin B is true), add one to Player B score. 
 
-Note: Just as you do for math expressions with multiple operators, use parentheses to make it clear how the conditions and statements are grouped together.
+>**Note:** Just as you do for math expressions with multiple operators, use parentheses to make it clear how the conditions and statements are grouped together.
 
-The students are by now familiar with the MakeCode blocks. As they think through their algorithms, they may even have started to visualize the blocks they might use.  Visualizing the blocks as they pseudocode can help them with the logical steps of their program.  It can also help them to visualize and recognize the big picture of their code as well as the details.
+By now, you should be familiar with the MakeCode blocks. As you think through your algorithms, you may even have started to visualize the blocks you might use. Visualizing the blocks as you pseudocode can help with the logical steps of your program. It can also help you to visualize and recognize the big picture of your code as well as the details.
 
 Using blocks to start coding these two conditionals as currently written, might look like this: 
 
@@ -115,7 +110,7 @@ Though this code will work as we want it to, it’s a lot of code. It is good pr
 
 ## Booleans and simplifying code 
 
-A boolean can have only one of two values: True or False. Conditionals like 'if...then' check whether a condition is true. Notice that the default condition for the 'if...then' blocks is true. In other words, the 'if...then' blocks will check to see whether whatever condition you place there is true.
+A boolean can have only one of two values: **True** or **False.** Conditionals like **'if...then'** check whether a condition is true. Notice that the default condition for the **'if...then'** blocks is true. In other words, the **'if...then'** blocks will check to see whether whatever condition you place there is true.
 
 ```block 
 basic.forever(() => { if (true) { } })
@@ -173,9 +168,9 @@ basic.forever(() => {
 
 We use a coin flip to decide things because the result is random, meaning the result happens without any conscious decision or direction. We use dice and game spinners for the same reason. The results are not predetermined or directed in any way.
 
-So, how do we get a random flip in code? Most computer programming languages have a built in function that will select a random number given a range of values. Microsoft MakeCode has a block for this.  And it also has a block for getting a random true or false value.
+So, how do we get a random flip in code? Most computer programming languages have a built in function that will select a random number given a range of values. Microsoft MakeCode has a block for this. And it also has a block for getting a random true or false value.
 
-We will call on this built in function to get a random true or false value for each flip of a coin in the next [activity](/test/courses/csintro/booleans/activity).
+We will call on this built in function to get a random true or false value for each flip of a coin in the next [activity](/courses/csintro/booleans/activity).
 
 Our basic pseudocode for our 'double coin flipper' could look like this: 
 
