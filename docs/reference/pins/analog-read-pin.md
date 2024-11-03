@@ -9,21 +9,23 @@ pins.analogReadPin(AnalogPin.P0)
 
 ## Parameters
 
-* ``name`` is a [string](/types/string) with the name of the pin
-  you say (`P0` through `P4`, or `P10`)
+* **name**: is a [string](/types/string) with the name of the pin
+you say (`P0` through `P4`, or `P10`).
 
 ## Returns
 
 * a [number](/types/number) from `0` through `1023`
 
+## Example
+
 This program reads pin `P1` and shows the number
 on the LED screen.
 
 ```blocks
-basic.forever(() => {
+basic.forever(function() {
     let value = pins.analogReadPin(AnalogPin.P1)
     basic.showNumber(value)
-});
+})
 ```
 
 ### ~hint

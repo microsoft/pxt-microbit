@@ -1,0 +1,67 @@
+{
+    "name": "7 Seconds",
+    "criteria": [
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "4OPG8aTODxTYqdIp9CvVe",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "device_show_number"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "35610CA0-38F8-4CCE-BAB9-99593DB3358A",
+            "instanceId": "ulOP1FcvkDiT7fPZo98Ep",
+            "params": [
+                {
+                    "name": "count",
+                    "value": "2"
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "OaBYXlO_DLTCGQrf6j7wO",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "math_arithmetic"
+                },
+                {
+                    "name": "count",
+                    "value": "2"
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "9TEFyOGOqliVZ-QgO1pUr",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "math_op3"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "0DFA44C8-3CA5-4C77-946E-AF09F6C03879",
+            "instanceId": "FPSLwAHCNnnzPPyxRMbtP",
+            "params": [
+                {
+                    "name": "count",
+                    "value": "3"
+                }
+            ]
+        }
+    ]
+}

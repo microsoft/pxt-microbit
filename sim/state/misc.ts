@@ -35,7 +35,7 @@ namespace pxsim.basic {
 namespace pxsim.control {
     export var inBackground = thread.runInBackground;
 
-    export function onEvent(id: number, evid: number, handler: RefAction) {
+    export function onEvent(id: number, evid: number, handler: RefAction, flags: number) {
         if (id == DAL.MICROBIT_ID_BUTTON_AB) {
             const b = board().buttonPairState;
             if (!b.usesButtonAB) {
@@ -43,7 +43,7 @@ namespace pxsim.control {
                 runtime.queueDisplayUpdate();
             }
         }
-        pxtcore.registerWithDal(id, evid, handler)
+        pxtcore.registerWithDal(id, evid, handler, flags)
     }
 
     export function eventTimestamp() {

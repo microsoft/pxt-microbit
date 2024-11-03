@@ -2,6 +2,19 @@
 
 A collection of courses and tutorials built for the @boardname@.
 
+## First lessons with MakeCode and the micro:bit
+
+A sequence of six beginner lessons, ideal for getting started with the micro:bit. Students will learn core computing concepts by making and coding engaging projects.
+
+```codecard
+[{
+  "name": "First Lessons",
+  "description": "A sequence of lessons from the Micro:bit Educational Foundation that provide a pathway through six projects, ideal for getting started with the micro:bit",
+  "url":"https://microbit.org/teach/lessons/first-lessons-with-makecode-and-the-microbit",
+  "imageUrl": "/static/courses/first-lessons.png"
+}]
+```
+
 ## Intro to Computer Science
 
 MakeCode's course for learning Computer Science with the micro:bit. This is a 14 week computer science course for middle school grades 6-8.
@@ -48,6 +61,29 @@ Courses contributed by educators to teach computing, science, and technology in 
 }]
 ```
 
+## Mr. Morrison Lessons
+
+Lessons aimed at P4-7 (Yr 3-6, aged 7-12) but could be adapted for use with older or younger learners. Regardless of age, if your learners have not used micro:bits before the best place to start is the 'Starter Lessons' followed by the 'Beyond Basics' Lessons.
+
+```codecard
+[{
+  "name": "micro:bit Starter Lessons",
+  "description": "Learn to create code, make programs to read inputs and write to outputs.",
+  "url": "https://mrmorrison.co.uk/microbit/starter/",
+  "imageUrl": "/static/courses/mr-morrison/starter-lessons.png"
+}, {
+  "name": "micro:bit Beyond Basics",
+  "description": "Take a step past the basics and learn to use logic with inputs and outputs.",
+  "url": "https://mrmorrison.co.uk/microbit/beyondbasics/",
+  "imageUrl": "/static/courses/mr-morrison/beyond-basics.png"
+}, {
+  "name": "micro:bit Data and Sustainability",
+  "description": "Learn to record and analyse data using the micro:bit, then learn to design and build a smart sustainable home.",
+  "url": "https://mrmorrison.co.uk/microbit/datasustainability/",
+  "imageUrl": "/static/courses/mr-morrison/data-sustainability.png"
+}]
+```
+
 ## Computers and programming
 
 Tutorials, lessons, and mini-courses about programming and computing.
@@ -66,7 +102,7 @@ Tutorials, lessons, and mini-courses about programming and computing.
 }, {
   "name": "Networking with the micro:bit",
   "description": "A series of activities to teach the basics of computer networks.",
-  "url": "https://microbit.nominetresearch.uk/",
+  "url": "https://www.digitaltechnologieshub.edu.au/search/networking-with-the-micro-bit/",
   "imageUrl": "/static/courses/networking-book.png"  
 }, {
   "name": "SparkFun Videos",

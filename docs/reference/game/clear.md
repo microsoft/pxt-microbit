@@ -35,5 +35,5 @@ input.onButtonPressed(Button.A, () => {
 
 ## See also
 
-[Image](/reference/images/image), [show animation](/reference/basic/show-animation), [show image](/reference/images/show-image), [scroll image](/reference/images/scroll-image), [create image](/reference/images/create-image)
+[Image](/reference/images/image), [show image](/reference/images/show-image), [scroll image](/reference/images/scroll-image), [create image](/reference/images/create-image)
 

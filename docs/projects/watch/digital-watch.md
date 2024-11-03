@@ -39,9 +39,9 @@ So, let's try showing the time on the display. We aren't keeping time yet but we
 let time = ""
 let minutes = 0
 let hours = 0
-input.onGesture(Gesture.Shake, () => {
-    time = hours + (":" + minutes);
-    basic.showString(time);
+input.onGesture(Gesture.Shake, function () {
+    time = hours + (":" + minutes)
+    basic.showString(time)
 })
 ```
 ## Set the time with buttons
@@ -58,12 +58,12 @@ Let's make a way to set the hours for the watch.
 6. In the ``||logic:else||`` section, put a ``||variables:set to||`` there. Select the `hours` variable name from the dropdown and leave the `0`.
 
 ```blocks
-let hours = 0;
-input.onButtonPressed(Button.A, () => {
+let hours = 0
+input.onButtonPressed(Button.A, function () {
     if (hours < 23) {
-        hours += 1;
+        hours += 1
     } else {
-        hours = 0;
+        hours = 0
     }
 })
 ```
@@ -76,12 +76,12 @@ Setting minutes is almost the same as setting hours but with just a few changes.
 3. Change every variable name from `hours` to  `minutes`. Change the `23` in the ``||logic:if||`` condition to ``59``. This is the limit of minutes we count.
 
 ```blocks
-let minutes = 0;
-input.onButtonPressed(Button.B, () => {
+let minutes = 0
+input.onButtonPressed(Button.B, function () {
     if (minutes < 59) {
-        minutes += 1;
+        minutes += 1
     } else {
-        minutes = 0;
+        minutes = 0
     }
 })
 ```
@@ -95,9 +95,9 @@ Time is shown in either 24 hour or 12 hour format. We'll use one more button to 
 3. Pick up a `ampm` from **Variables** and connect it on the right of the ``||logic:not||``. This switches our 24 hour format to 12 hour and back.
 
 ```blocks
-let ampm = false;
-input.onButtonPressed(Button.AB, () => {
-    ampm = !(ampm);
+let ampm = false
+input.onButtonPressed(Button.AB, function () {
+    ampm = !(ampm)
 })
 ```
 
@@ -114,12 +114,12 @@ A watch really has three parts: the display, settings, and timer. We need a way 
 
 ```blocks
 let minutes = 0;
-basic.forever(() => {
+basic.forever(function () {
     basic.pause(60000)
     if (minutes < 59) {
-        minutes += 1;
+        minutes += 1
     } else {
-        minutes = 0;
+        minutes = 0
     }
 })
 ```
@@ -134,7 +134,7 @@ basic.forever(() => {
 ```blocks
 let minutes = 0
 let hours = 0
-basic.forever(() => {
+basic.forever(function () {
     basic.pause(60000)
     if (minutes < 59) {
         minutes += 1
@@ -167,7 +167,7 @@ First, we have to code an adjustment for the hours number when we're using the 1
 let hours = 0;
 let adjust = 0;
 let ampm = false;
-input.onGesture(Gesture.Shake, () => {
+input.onGesture(Gesture.Shake, function () {
     adjust = hours;
     if (ampm) {
         if (hours > 12) {
@@ -194,24 +194,24 @@ Now, we have to join up the hours and minutes to make text that will display on 
 7. In the fourth copy, change the first `""` in the ``||text:join||`` to the variable `time`. Change the second string in the ``||text:join||`` to a ``minutes``.
 
 ```blocks
-let minutes = 0;
-let hours = 0;
-let adjust = 0;
-let time = "";
-let ampm = false;
-input.onGesture(Gesture.Shake, () => {
-    adjust = hours;
+let minutes = 0
+let hours = 0
+let adjust = 0
+let time = ""
+let ampm = false
+input.onGesture(Gesture.Shake, function () {
+    adjust = hours
     if (ampm) {
         if (hours > 12) {
-            adjust = hours - 12;
+            adjust = hours - 12
         } else {
             if (hours == 0) {
-                adjust = 12;
+                adjust = 12
             }
         }
     }
-    time = "" + adjust;
-    time = time + ":";
+    time = "" + adjust
+    time = time + ":"
     if (minutes < 10) {
         time = time + "0"
     }
@@ -230,12 +230,12 @@ Ok, we're getting close to finishing now. Here we need to add the 'AM' or 'PM' i
 5. Finally, at the very bottom of ``||input:on shake||``, go get a ``||basic:show string||`` from **Basic** and put it there. Change the string `"Hello!"` to the `time` variable.
 
 ```blocks
-let minutes = 0;
-let hours = 0;
-let adjust = 0;
-let time = "";
-let ampm = false;
-input.onGesture(Gesture.Shake, () => {
+let minutes = 0
+let hours = 0
+let adjust = 0
+let time = ""
+let ampm = false
+input.onGesture(Gesture.Shake, function () {
     adjust = hours;
     if (ampm) {
         if (hours > 12) {
@@ -246,7 +246,7 @@ input.onGesture(Gesture.Shake, () => {
             }
         }
     }
-    time = "" + adjust;
+    time = "" + adjust
     time = time + ":"
     if (minutes < 10)
     {

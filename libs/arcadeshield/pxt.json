@@ -1,0 +1,39 @@
+{
+    "name": "arcadeshield",
+    "description": "Support for the Arcade Shield. micro:bit (V2) only.",
+    "dependencies": {
+        "core": "file:../core",
+        "bitmap": "file:../bitmap",
+        "fonts": "file:../fonts"
+    },
+    "files": [
+        "config_nrf.h",
+        "arcadegamepad.h",
+        "indexedscreen.h",
+        "arcadesound.h",
+        "jdprotocol.h",
+        "jddisplay.h",
+        "jddisplay.cpp",
+        "pins.cpp",
+        "pinsDigital.cpp",
+        "controllerbuttons.cpp",
+        "screen.cpp",
+        "screenhelpers.d.ts",
+        "shims.d.ts"
+    ],
+    "test": [
+        "test.ts"
+    ],
+    "public": true,
+    "hidden": true,
+    "preferredEditor": "tsprj",
+    "disablesVariants": [
+        "mbdal"
+    ],
+    "yotta": {
+        "config": {
+            "DEVICE_BLE": 0,
+            "DMESG_SERIAL_DEBUG": 1
+        }
+    }
+}

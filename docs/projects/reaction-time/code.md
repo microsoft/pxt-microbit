@@ -46,10 +46,10 @@ let start = 0
 let end = 0
 let false_start = false
 let running = false
-input.onPinPressed(TouchPin.P0, () => {
+input.onPinPressed(TouchPin.P0, function () {
 
 })
-input.onPinPressed(TouchPin.P1, () => {
+input.onPinPressed(TouchPin.P1, function () {
 
 })
 running = false
@@ -67,13 +67,13 @@ let start = 0
 let end = 0
 let false_start = false
 let running = false
-input.onPinPressed(TouchPin.P0, () => {
+input.onPinPressed(TouchPin.P0, function () {
     basic.showNumber(3)
     basic.showNumber(2)
     basic.showNumber(1)
     basic.clearScreen()
 })
-input.onPinPressed(TouchPin.P1, () => {
+input.onPinPressed(TouchPin.P1, function () {
 
 })
 running = false
@@ -93,15 +93,15 @@ let start = 0
 let end = 0
 let false_start = false
 let running = false
-input.onPinPressed(TouchPin.P0, () => {
+input.onPinPressed(TouchPin.P0, function () {
+    running = false
+    false_start = false
     basic.showNumber(3)
     basic.showNumber(2)
     basic.showNumber(1)
     basic.clearScreen()
-    running = false
-    false_start = false
 })
-input.onPinPressed(TouchPin.P1, () => {
+input.onPinPressed(TouchPin.P1, function () {
 
 })
 running = false
@@ -119,16 +119,16 @@ let start = 0
 let end = 0
 let false_start = false
 let running = false
-input.onPinPressed(TouchPin.P0, () => {
+input.onPinPressed(TouchPin.P0, function () {
+    running = false
+    false_start = false
     basic.showNumber(3)
     basic.showNumber(2)
     basic.showNumber(1)
     basic.clearScreen()
-    running = false
-    false_start = false
     basic.pause(1000 + randint(0, 2000))
 })
-input.onPinPressed(TouchPin.P1, () => {
+input.onPinPressed(TouchPin.P1, function () {
 
 })
 running = false
@@ -146,16 +146,16 @@ let start = 0
 let end = 0
 let false_start = false
 let running = false
-input.onPinPressed(TouchPin.P1, () => {
+input.onPinPressed(TouchPin.P1, function () {
 
 })
-input.onPinPressed(TouchPin.P0, () => {
+input.onPinPressed(TouchPin.P0, function () {
+    running = false
+    false_start = false
     basic.showNumber(3)
     basic.showNumber(2)
     basic.showNumber(1)
     basic.clearScreen()
-    running = false
-    false_start = false
     basic.pause(1000 + randint(0, 2000))
     if (!(false_start)) {
         start = input.runningTime()
@@ -184,7 +184,7 @@ let start = 0
 let end = 0
 let false_start = false
 let running = false
-input.onPinPressed(TouchPin.P1, () => {
+input.onPinPressed(TouchPin.P1, function () {
     if (running) {
         running = false
         end = input.runningTime()
@@ -208,13 +208,13 @@ input.onPinPressed(TouchPin.P1, () => {
             `)
     }
 })
-input.onPinPressed(TouchPin.P0, () => {
+input.onPinPressed(TouchPin.P0, function () {
+    running = false
+    false_start = false
     basic.showNumber(3)
     basic.showNumber(2)
     basic.showNumber(1)
     basic.clearScreen()
-    running = false
-    false_start = false
     basic.pause(1000 + randint(0, 2000))
     if (!(false_start)) {
         start = input.runningTime()
@@ -241,13 +241,13 @@ let start = 0
 let end = 0
 let false_start = false
 let running = false
-input.onPinPressed(TouchPin.P0, () => {
+input.onPinPressed(TouchPin.P0, function () {
+    running = false
+    false_start = false
     basic.showNumber(3)
     basic.showNumber(2)
     basic.showNumber(1)
     basic.clearScreen()
-    running = false
-    false_start = false
     basic.pause(1000 + randint(0, 2000))
     if (!(false_start)) {
         start = input.runningTime()
@@ -257,7 +257,7 @@ input.onPinPressed(TouchPin.P0, () => {
         led.plot(randint(0, 4), randint(0, 4))
     }
 })
-input.onPinPressed(TouchPin.P1, () => {
+input.onPinPressed(TouchPin.P1, function () {
     if (running) {
         running = false
         end = input.runningTime()
@@ -281,7 +281,7 @@ input.onPinPressed(TouchPin.P1, () => {
             `)
     }
 })
-input.onPinPressed(TouchPin.P2, () => {
+input.onPinPressed(TouchPin.P2, function () {
     if (running) {
         running = false
         end = input.runningTime()

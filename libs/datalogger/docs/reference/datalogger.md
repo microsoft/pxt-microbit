@@ -23,7 +23,7 @@ A data log will represent a table of information like:
 | 19 | 4 | 98 |
 <br/>
 
-A data item consits of value name, which is it's assigned column too, and the item's value. They are called "column-value" items. Here's how a column-value item is created.
+A data item consists of value name, which is it's assigned column too, and the item's value. They are called "column-value" items. Here's how a column-value item is created.
 
 ```blocks
 let item = datalogger.createCV("temperature", input.temperature())

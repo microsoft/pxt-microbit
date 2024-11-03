@@ -1,0 +1,66 @@
+{
+    "cards": [
+        {
+            "cardType": "checklist-resource",
+            "cardTitle": "Rock Paper Scissors",
+            "imageUrl": "/static/mb/projects/a4-motion.png",
+            "checklistUrl": "/teachertool/checklists/rock-paper-scissors.json"
+        },
+        {
+            "cardType": "checklist-resource",
+            "cardTitle": "Coin Flipper",
+            "imageUrl": "/static/mb/projects/coin-flipper.png",
+            "checklistUrl": "/teachertool/checklists/coin-flipper.json"
+        },
+        {
+            "cardType": "checklist-resource",
+            "cardTitle": "7 seconds",
+            "imageUrl": "/static/mb/projects/7-seconds.png",
+            "checklistUrl": "/teachertool/checklists/7-seconds.json"
+        },
+        {
+            "cardType": "checklist-resource",
+            "cardTitle": "Hot Potato",
+            "imageUrl": "/static/mb/projects/hot-potato.png",
+            "checklistUrl": "/teachertool/checklists/hot-potato.json"
+        },
+        {
+            "cardType": "checklist-resource",
+            "cardTitle": "Tug-Of-LED",
+            "imageUrl": "/static/mb/projects/tug-of-led.png",
+            "checklistUrl": "/teachertool/checklists/tug-of-led.json"
+        },
+        {
+            "cardType": "checklist-resource",
+            "cardTitle": "Snap the dot",
+            "imageUrl": "/static/mb/projects/snap-the-dot.png",
+            "checklistUrl": "/teachertool/checklists/snap-the-dot.json"
+        }
+    ],
+    "cards.hidden": [
+        {
+            "cardType": "checklist-resource",
+            "cardTitle": "Rock Paper Scissors V2",
+            "imageUrl": "/static/mb/projects/a4-motion-v2.png",
+            "checklistUrl": "/teachertool/checklists/rock-paper-scissors-mbv2.json"
+        },
+        {
+            "cardType": "checklist-resource",
+            "cardTitle": "Heads Guess!",
+            "imageUrl": "/static/mb/projects/heads-guess.png",
+            "checklistUrl": "/teachertool/checklists/heads-guess.json"
+        },
+        {
+            "cardType": "checklist-resource",
+            "cardTitle": "Reaction Time",
+            "imageUrl": "/static/mb/projects/reaction.jpg",
+            "checklistUrl": "/teachertool/checklists/reaction-time.json"
+        },
+        {
+            "cardType": "checklist-resource",
+            "cardTitle": "Magic Button Trick",
+            "imageUrl": "/static/mb/projects/magic-button-trick.png",
+            "checklistUrl": "/teachertool/checklists/magic-button-trick.json"
+        }
+    ]
+}

@@ -1,0 +1,43 @@
+{
+    "name": "Pet Hamster",
+    "criteria": [
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "1LJH8pJ3hLXQScO7WwRVM",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "basic_show_icon"
+                },
+                {
+                    "name": "count",
+                    "value": "5"
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "35610CA0-38F8-4CCE-BAB9-99593DB3358A",
+            "instanceId": "9yfrg63Vzgm7p4o3tzLRH",
+            "params": [
+                {
+                    "name": "count",
+                    "value": "2"
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "MJiAdJSgb4uEqDHj1SIGL",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "device_builtin_melody_playable"
+                },
+                {
+                    "name": "count",
+                    "value": "2"
+                }
+            ]
+        }
+    ]
+}

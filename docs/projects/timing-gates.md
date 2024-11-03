@@ -48,11 +48,11 @@ basic.showLeds(`
         . . . . .
         . . . . .
         `)
-input.onPinPressed(TouchPin.P0, () => {})
+input.onPinPressed(TouchPin.P0, function () {})
 let t = 0
 input.runningTime()
 t - 1
-control.eventTimestamp();
+control.eventTimestamp()
 basic.showNumber(0)
 ```
 
@@ -101,7 +101,7 @@ basic.showLeds(`
         . . . . .
         . . . . .
         `)
-input.onPinPressed(TouchPin.P0, () => {
+input.onPinPressed(TouchPin.P0, function () {
     basic.showLeds(`
         # . . . .
         # . . . .
@@ -156,7 +156,7 @@ basic.showLeds(`
         . . . . .
         . . . . .
         `)
-input.onPinPressed(TouchPin.P0, () => {
+input.onPinPressed(TouchPin.P0, function () {
     basic.showLeds(`
         # . . . .
         # . . . .
@@ -165,7 +165,7 @@ input.onPinPressed(TouchPin.P0, () => {
         # . . . .
         `)
 })
-input.onPinPressed(TouchPin.P1, () => {
+input.onPinPressed(TouchPin.P1, function () {
     basic.showLeds(`
         # . . . #
         # . . . #
@@ -186,8 +186,8 @@ We will record the time where each gate is tripped in variables ``t0`` and ``t1`
 We take the different between ``t1`` and ``t0`` to compute the duration between the gates.
 
 ```blocks
-let t0 = 0;
-let t1 = 0;
+let t0 = 0
+let t1 = 0
 basic.showLeds(`
         . . . . .
         . . . . .
@@ -195,8 +195,8 @@ basic.showLeds(`
         . . . . .
         . . . . .
         `)
-input.onPinPressed(TouchPin.P0, () => {
-    t0 = control.eventTimestamp();
+input.onPinPressed(TouchPin.P0, function () {
+    t0 = control.eventTimestamp()
     basic.showLeds(`
         # . . . .
         # . . . .
@@ -205,8 +205,8 @@ input.onPinPressed(TouchPin.P0, () => {
         # . . . .
         `)
 })
-input.onPinPressed(TouchPin.P1, () => {
-    t1 = control.eventTimestamp();
+input.onPinPressed(TouchPin.P1, function () {
+    t1 = control.eventTimestamp()
     basic.showLeds(`
         # . . . #
         # . . . #

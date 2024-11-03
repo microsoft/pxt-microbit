@@ -162,4 +162,12 @@ namespace pxsim.flashlog {
         init();
         mirrorToSerial = !!enabled;
     }
+
+    export function getNumberOfRows(fromRowIndex = 0): number {
+        return 0 // TODO
+    }
+
+    export function getRows(fromRowIndex: number, nRows: number): string {
+        return "" // TODO
+    }
 }

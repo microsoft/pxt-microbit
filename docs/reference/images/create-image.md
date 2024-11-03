@@ -32,7 +32,7 @@ input.onButtonPressed(Button.A, () => {
         # . # . #
         . . # . .
         . . # . .
-        `).showImage(0);
+        `).showImage(0)
 });
 input.onButtonPressed(Button.B, () => {
     images.createImage(`
@@ -41,8 +41,8 @@ input.onButtonPressed(Button.B, () => {
         # . # . #
         . # # # .
         . . # . .
-        `).showImage(0);
-});
+        `).showImage(0)
+})
 ```
 
 ## See also
@@ -50,5 +50,4 @@ input.onButtonPressed(Button.B, () => {
 [image](/reference/images/image),
 [create big image](/reference/images/create-big-image),
 [show image](/reference/images/show-image),
-[scroll image](/reference/images/scroll-image), [show animation](/reference/basic/show-animation)
-
+[scroll image](/reference/images/scroll-image)

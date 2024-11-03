@@ -1,0 +1,82 @@
+/*****************************************
+        Theme overrides
+        source vars: pxt/theme/themepacks.less
+******************************************/
+
+@pxt_page_foreground_light: #767676;
+
+@pxt_headerbar_background: @blue;
+@pxt_headerbar_background_glass: rgba(@pxt_headerbar_background, 0.25);
+@pxt_headerbar_foreground: @white;
+@pxt_headerbar_accent: darken(@pxt_headerbar_background, 8%);
+@pxt_headerbar_accent_smoke: lighten(desaturate(@pxt_headerbar_background, 40%), 18%);
+
+@pxt_content_background: #E4E7F1;
+@pxt_content_background_glass: rgba(@pxt_content_background, 0.25);
+@pxt_content_foreground: @blue;
+@pxt_content_accent: darken(@pxt_content_background, 8%);
+@pxt_content_secondary_foreground: #666666;
+
+@pxt_button_primary_background: @primaryColor;
+@pxt_button_primary_background_glass: rgba(@pxt_button_primary_background, 0.25);
+@pxt_button_primary_foreground: @buttonTextColorDarkBackground;
+@pxt_button_primary_accent: lighten(@pxt_button_primary_background, 8%);
+
+@pxt_button_secondary_background: @secondaryColor;
+@pxt_button_secondary_background_glass: rgba(@pxt_button_primary_background, 0.25);
+@pxt_button_secondary_foreground: @buttonTextColorDarkBackground;
+@pxt_button_secondary_accent: lighten(@pxt_button_secondary_background, 8%);
+
+@pxt_success: #3AFFB3;
+@pxt_info: #3ADCFF;
+@pxt_warning: #FFD43A;
+@pxt_error: #FF3A54;
+@pxt_success_background: lighten(desaturate(@pxt_success, 40%), 10%);
+@pxt_info_background: lighten(desaturate(@pxt_info, 40%), 10%);
+@pxt_warning_background: lighten(desaturate(@pxt_warning, 40%), 10%);
+@pxt_error_background: lighten(desaturate(@pxt_error, 40%), 10%);
+@pxt_success_accent: darken(@pxt_success_background, 30%);
+@pxt_info_accent: darken(@pxt_info_background, 30%);
+@pxt_warning_accent: darken(@pxt_warning_background, 30%);
+@pxt_error_accent: darken(@pxt_error_background, 20%);
+
+:root {
+    /// Page
+    --pxt-page-font: @pageFont;
+    --pxt-page-foreground-light: @pxt_page_foreground_light;
+    /// Header bar
+    --pxt-headerbar-background: @pxt_headerbar_background;
+    --pxt-headerbar-background-glass: @pxt_headerbar_background_glass;
+    --pxt-headerbar-foreground: @pxt_headerbar_foreground;
+    --pxt-headerbar-accent: @pxt_headerbar_accent;
+    --pxt-headerbar-accent-smoke: @pxt_headerbar_accent_smoke;
+    /// Content area
+    --pxt-content-background: @pxt_content_background;
+    --pxt-content-background-glass: @pxt_content_background_glass;
+    --pxt-content-foreground: @pxt_content_foreground;
+    --pxt-content-accent: @pxt_content_accent;
+    --pxt-content-secondary-foreground: @pxt_content_secondary_foreground;
+    /// Primary button
+    --pxt-button-primary-background: @pxt_button_primary_background;
+    --pxt-button-primary-background-glass: @pxt_button_primary_background_glass;
+    --pxt-button-primary-foreground: @pxt_button_primary_foreground;
+    --pxt-button-primary-accent: @pxt_button_primary_accent;
+    /// Secondary button
+    --pxt-button-secondary-background: @pxt_button_secondary_background;
+    --pxt-button-secondary-background-glass: @pxt_button_secondary_background_glass;
+    --pxt-button-secondary-foreground: @pxt_button_secondary_foreground;
+    --pxt-button-secondary-accent: @pxt_button_secondary_accent;
+    /// Status colors
+    --pxt-success: @pxt_success;
+    --pxt-info: @pxt_info;
+    --pxt-warning: @pxt_warning;
+    --pxt-error: @pxt_error;
+    --pxt-success-background: @pxt_success_background;
+    --pxt-info-background: @pxt_info_background;
+    --pxt-warning-background: @pxt_warning_background;
+    --pxt-error-background: @pxt_error_background;
+    --pxt-success-accent: @pxt_success_accent;
+    --pxt-info-accent: @pxt_info_accent;
+    --pxt-warning-accent: @pxt_warning_accent;
+    --pxt-error-accent: @pxt_error_accent;
+}

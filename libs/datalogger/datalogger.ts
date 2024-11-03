@@ -286,4 +286,25 @@ namespace datalogger {
         init();
         flashlog.setSerialMirroring(on);
     }
+
+    /**
+     * Number of rows currently used by the datalogger, start counting at fromRowIndex
+     * Treats the header as the first row
+     * @param fromRowIndex 0-based index of start
+     * @returns header + rows
+     */
+    export function getNumberOfRows(fromRowIndex: number = 0): number {
+        return flashlog.getNumberOfRows(fromRowIndex);
+    }
+
+    /**
+     * Get all rows seperated by a newline & each column seperated by a comma.
+     * Starting at the 0-based index fromRowIndex & counting inclusively until nRows.
+     * @param fromRowIndex 0-based index of start
+     * @param nRows inclusive count from fromRowIndex
+     * @returns String where newlines denote rows & commas denote columns
+     */
+    export function getRows(fromRowIndex: number, nRows: number): string {
+        return flashlog.getRows(fromRowIndex, nRows);
+    }
 }

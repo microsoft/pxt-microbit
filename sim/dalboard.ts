@@ -201,6 +201,11 @@ namespace pxsim {
         screenshotAsync(width?: number): Promise<ImageData> {
             return this.viewHost.screenshotAsync(width);
         }
+
+        kill() {
+            super.kill();
+            this.viewHost.removeEventListeners();
+        }
     }
 
     export function initRuntimeWithDalBoard() {

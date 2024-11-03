@@ -1,0 +1,47 @@
+{
+    "name": "Level",
+    "criteria": [
+        {
+            "catalogCriteriaId": "0DFA44C8-3CA5-4C77-946E-AF09F6C03879",
+            "instanceId": "ZZSKu3-adfTotvajnh_Oq",
+            "params": [
+                {
+                    "name": "count",
+                    "value": "2"
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "D285D79B-85E5-4C8D-82D2-5A9E35AB1163",
+            "instanceId": "h5nxMFMDyip_ILocN9NLF"
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "w6Pqhe1uOUqMUSbtqXsOZ",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "controls_if"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "1dHPqKGOEnofIu22OY3JY",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "logic_compare"
+                },
+                {
+                    "name": "count",
+                    "value": "2"
+                }
+            ]
+        }
+    ]
+}

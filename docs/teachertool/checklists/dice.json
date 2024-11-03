@@ -1,0 +1,47 @@
+{
+    "name": "Dice",
+    "criteria": [
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "KWW_gxy3yvurF6eN9SrBw",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "device_show_number"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "HmHaX65Lecyjy1Xru9KAM",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "device_random"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "owqvpBn_QYkAJGWvzb_gC",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "device_gesture_event"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        }
+    ]
+}

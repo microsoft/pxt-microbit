@@ -9,7 +9,7 @@
 
 @primaryColor: @purple;
 
-@teal: #3891A6;
+@teal: #2C7485;
 @blue: #3454D1;
 @red: #E41B21;
 @pink: #F46197;
@@ -53,7 +53,7 @@
 @simulatorBackground: #FDFDFF;
 @editorToolsBackground: @simulatorBackground;
 @blocklySvgColor: #ecf0f1;
-@cloudCardBackground: lighten(@blue, 9);
+@cloudCardBackground: lighten(@blue, 7);
 
 /*-------------------
    Side Docs

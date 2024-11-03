@@ -28,10 +28,8 @@ basic.showString(s)
 
 ## Other show functions
 
-* Use [show number](/reference/basic/show-number) to show a number on the [LED screen](/device/screen).
-* Use [show animation](/reference/basic/show-animation) to show a group of pictures on the screen, one after another.
+Use [show number](/reference/basic/show-number) to show a number on the [LED screen](/device/screen).
 
 ## See also
 
-[String](/types/string), [show number](/reference/basic/show-number), [show animation](/reference/basic/show-animation)
-
+[String](/types/string), [show number](/reference/basic/show-number)

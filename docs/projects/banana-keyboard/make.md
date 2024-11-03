@@ -73,7 +73,7 @@ Your banana keyboard is ready!
 
 Connect your @boardname@ to your computer using your USB cable and run this script:
 ```blocks
-input.onPinPressed(TouchPin.P1, () => {
+input.onPinPressed(TouchPin.P1, function () {
     music.playTone(music.noteFrequency(Note.C), music.beat(BeatFraction.Quarter));
 });
 ```

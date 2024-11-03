@@ -1,6 +1,7 @@
 /* Import all components */
 @import 'pxtsemantic';
 @import 'pxt';
+@import 'themepacks';
 @import 'blockly-toolbox';
 @import 'themes/default/globals/site.variables';
 @import 'themes/pxt/globals/site.variables';
@@ -75,6 +76,17 @@
         &:focus, &:hover {
             background-color: darken(@mainMenuTutorialBackground, 20%);
         }
+    }
+}
+
+.time-machine-header {
+    background-color: @blue;
+}
+
+.time-machine-preview {
+    // Loading div that appears while projects are importing
+    & > div {
+        background: #e8e8e8
     }
 }
 
