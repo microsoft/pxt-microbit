@@ -4,27 +4,27 @@ Use what you now know about LEDs, coordinates, and brightness to create your own
 
 Your task is to create:
 
-* A “screen saver” animation using the plot/unplot blocks. You can fill the screen line by line, pausing between each one, or fill it with a random constellation of stars.
+* A "screen saver" animation using the plot/unplot blocks. You can fill the screen line by line, pausing between each one, or fill it with a random constellation of stars.
 
 – OR –
 
 * A game that uses sprites to manage the x- and y-coordinate values of the different objects.
 
-Your project might use variables to store the values of sprites, which are special structures that contain an x- and a y-coordinate together that describe the sprite’s location as one LED on the screen.
+Your project might use variables to store the values of sprites, which are special structures that contain an x- and a y-coordinate together that describe the sprite's location as one LED on the screen.
 
 ## Screensavers
-One type of project is a screensaver. A long time ago, computers and televisions used cathode ray tube (CRT) screens for displays. The glass screen of the display was coated on the back with phosphor, a substance that glows when painted with electrons from an electron gun at the other end of the tube. When the same area of the screen was painted (or excited) over and over again by the stream of electrons, that part of the screen would sometimes “freeze” with the same image burned into the phosphor for good. This was called **burn-in.**
+One type of project is a screensaver. A long time ago, computers and televisions used cathode ray tube (CRT) screens for displays. The glass screen of the display was coated on the back with phosphor, a substance that glows when painted with electrons from an electron gun at the other end of the tube. When the same area of the screen was painted (or excited) over and over again by the stream of electrons, that part of the screen would sometimes "freeze" with the same image burned into the phosphor for good. This was called **burn-in.**
 
-Normally, if a show was running or if someone was actively using the computer, the display changed often enough that burn-in wasn’t a problem. Programmers learned to create a demo screen with an animation that would run whenever the screen was idle. Today, nearly all computers and television sets use LCD displays, which are not affected by burn-in. But you can still find a screen saver in nearly every computer’s Settings panel as an opportunity to show off some neat graphics or animation.
+Normally, if a show was running or if someone was actively using the computer, the display changed often enough that burn-in wasn't a problem. Programmers learned to create a demo screen with an animation that would run whenever the screen was idle. Today, nearly all computers and television sets use LCD displays, which are not affected by burn-in. But you can still find a screen saver in nearly every computer's Settings panel as an opportunity to show off some neat graphics or animation.
 
 ## Project Expectations
 
 Make sure your project meets these specifications:
 
-* Uses at least three of the different kinds of ‘plot’, ‘unplot’, ‘toggle’, ‘point x y’ blocks, and uses variables to update the coordinates in some way
+* Uses at least three of the different kinds of 'plot', 'unplot', 'toggle', 'point x y' blocks, and uses variables to update the coordinates in some way
 * Uses plotted LEDs in a meaningful way
 * The program compiles and runs as intended and includes meaningful comments in code
-* Provide the written Journal entry reflection (which we’ll talk about after you complete your project)
+* Provide the written Journal entry reflection (which we'll talk about after you complete your project)
 
 ## Project Ideas
 
@@ -48,7 +48,8 @@ basic.forever(() => {
     }
 })
 ```
-Solution link: [makecode.microbit.org/_97A6Ru6LELcP]()
+
+Solution link: [Fireworks Screen Saver](https://makecode.microbit.org/_97A6Ru6LELcP)
 
 ### Cascade screensaver
 
@@ -125,7 +126,7 @@ basic.forever(() => {
 speed = 10
 ```
 
-Solution link: [makecode.microbit.org/_Y2TU9cgWz07m]()
+Solution link: [Cascade](https://makecode.microbit.org/_Y2TU9cgWz07m)
 
 ### Dodge ball game
 
@@ -192,7 +193,7 @@ ball = game.createSprite(randint(0, 5), 0)
 dodger = game.createSprite(2, 4)
 game.setScore(0)
 ```
-Solution link: [makecode.microbit.org/_E9b733huX2DP]()
+Solution link: [Dodge Ball Game](https://makecode.microbit.org/_E9b733huX2DP)
 
 ## Journal Entry
 

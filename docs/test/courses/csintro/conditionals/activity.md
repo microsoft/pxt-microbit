@@ -22,7 +22,7 @@ You should now have the information you need in order to begin coding a Rock, Pa
 
 Once you've finished, play a few games against your program!
 
-The solution code can be found here: [makecode.microbit.org/_D2DCDoJbEYat]()
+The solution code can be found here: [Rock Paper Scissors](https://makecode.microbit.org/_D2DCDoJbEYat)
 
 ## Ideas for Mods
 

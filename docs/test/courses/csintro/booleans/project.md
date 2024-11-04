@@ -17,7 +17,7 @@ Follow the design thinking approach and make sure your project meets these speci
 
 Don't forget to consider all the different inputs available to you through the micro:bit.
 
-**Available inputs:**
+### Available inputs
 
 * Acceleration
 * Light level
@@ -40,9 +40,7 @@ Don't forget to consider all the different inputs available to you through the m
 Use Boolean variables and/or random values to create:
 
 * A board game, game pieces, and holder for the micro:bit (or improve your board game from Unit 3: Variables)
-
 * A mod of some sort to a current/existing board game
-
 * A micro:bit version of a Magic Eight Ball
 
 ## Project Examples
@@ -52,9 +50,7 @@ Use Boolean variables and/or random values to create:
 The micro:bit is attached to a bottle of sunscreen and provides information about the temperature and if you need sunscreen:
 
 * When you shake the micro:bit, it reports the current temperature in degrees Fahrenheit.
-
 * Button A displays an animation to tell you whether or not you should use sunscreen (on sunny or cloudy days but not at night or indoors).
-
 * Button B measures the light level, and if it is above 70 degrees AND very bright, it will display a sun icon. If it is above 70 degrees and less bright, it will display a cloudy symbol. If it is dark, it will display a nighttime icon. Check it out in action here: [youtu.be/VmD-dcZZQFc](here) (0:18)
 
 #### Sunscreen code
@@ -209,7 +205,7 @@ input.onGesture(Gesture.Shake, () => {
 })
 ```
 
-Solution link: [makecode.microbit.org/_Atd9Wti3MiUj]()
+Solution link: [Sunscreen Monitor](https://makecode.microbit.org/_Atd9Wti3MiUj)
 
 ### Two-player game
 
@@ -326,9 +322,7 @@ spin = 0
 player1Turn = true
 ```
 
-
 This is an example of a board game in which the micro:bit displays an arrow pointing in a random direction. The paper legend indicates different actions the player must take. 
-
 
 Here is a portion of the board game's code. A boolean variable is used to determine whose turn it is. If player1Turn is false, then it's player 2's turn. A random number is generated to show the arrow seventy-five percent of the time (for values of 0, 1, or 2).
 
@@ -341,7 +335,7 @@ input.onGesture(Gesture.Shake, () => {
 })
 ```
 
-Solution link: [makecode.microbit.org/_1mY4wq4KPYiq]()
+Solution link: [Arrows Board Game](https://makecode.microbit.org/_1mY4wq4KPYiq)
 
 ## Reflection
 

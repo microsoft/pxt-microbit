@@ -41,13 +41,13 @@ We already initialized these variables and now need to code to update the values
 * Each time the scorekeeper presses button B, to record a win for Player B, we want to add 1 to the current value of the variable `PlayerBWins`.
 * Each time the scorekeeper presses both button A and button B at the same time to record a tie, we want to add 1 to the current value of the variable `PlayersTie`.
 	
-From the Input menu, drag 3 of the ‘on button A pressed’ event handlers to your Programming Workspace.
+From the Input menu, drag 3 of the 'on button A pressed' event handlers to your Programming Workspace.
 
 ![onButtonPressed A](/static/courses/csintro/variables/on-button-pressed.png)
 
-Leave one block with ‘A’. Use the drop-down menu in the block to choose ‘B’ for the second block and ‘A+B’ for the third block.
+Leave one block with 'A'. Use the drop-down menu in the block to choose 'B' for the second block and 'A+B' for the third block.
 
-From the Variables menu, drag 3 of the ‘change PlayersTie by 1’ blocks to your Programming Workspace.
+From the Variables menu, drag 3 of the 'change PlayersTie by 1' blocks to your Programming Workspace.
 
 ![Change variable](/static/courses/csintro/variables/change-variable.png)
 
@@ -73,15 +73,15 @@ input.onButtonPressed(Button.AB, () => {
 ## User feedback
 Whenever the scorekeeper presses button A, button B, or both buttons together, we will give the user visual feedback acknowledging that the user pressed a button. We can do this by coding our program to display:
 
-* an ‘A’ each time the user presses button A to record a win for Player A, 
-* a ‘B’ for each time the user presses button ‘B’ to record a win for Player B,
-* a ‘T’ for each time the user presses both button A and button B together to record a tie. 
+* an 'A' each time the user presses button A to record a win for Player A, 
+* a 'B' for each time the user presses button 'B' to record a win for Player B,
+* a 'T' for each time the user presses both button A and button B together to record a tie. 
 
-We can display an ‘A’, ‘B’, or ‘T’ using either the ‘show leds’ block or the ‘show string’ block.
+We can display an 'A', 'B', or 'T' using either the 'show leds' block or the 'show string' block.
 
 ![Show LEDs](/static/courses/csintro/variables/show-leds.png)
 
-In this example, we have used the ‘show leds’ block.
+In this example, we have used the 'show leds' block.
 
 ```blocks
 let PlayerAWins = 0
@@ -122,14 +122,14 @@ input.onButtonPressed(Button.AB, () => {
    basic.clearScreen()
 })
 ```
-Notice that we added a ‘clear screen’ block after showing ‘A’, ‘B’, or ‘T’. 
+Notice that we added a 'clear screen' block after showing 'A', 'B', or 'T'. 
 What do you think would happen if we did not clear the screen? Try it.
 
 ## Showing the final values of the variables
 
 To finish our program, we can add code that tells the micro:bit to display the final values of our variables.
-Since we have already used buttons A and B, we can use the ‘on shake’ event handler block to trigger this event. 
-We can use the ‘show string’, ‘show leds’, ‘pause’, and ‘show number’ blocks to display these final values in a clear way.
+Since we have already used buttons A and B, we can use the 'on shake' event handler block to trigger this event. 
+We can use the 'show string', 'show leds', 'pause', and 'show number' blocks to display these final values in a clear way.
 Here is the complete program.
 
 ```blocks
@@ -199,21 +199,23 @@ PlayerBWins = 0
 PlayersTie = 0
 ```
 
-### ~ Hint
+### ~ hint
+
+#### Buttons for input
 
 Buttons have been used as human input devices since computers first existed. Watch this video and see how they let the user tell the micro:bit to do something.
 
-[https://www.youtube.com/watch?v=t_Qujjd_38o](https://www.youtube.com/watch?v=t_Qujjd_38o)
+https://www.youtube.com/watch?v=t_Qujjd_38o
 
 ### ~
 
 ## Try it out!
 Download the Scorekeeper program to the micro:bit, and find someone to play *Rock, Paper, Scissors* with you using your micro:bit to act as the Scorekeeper!
 
-## ‘Adding’ on with mathematical operations
+## 'Adding' on with mathematical operations
 There is more we can do with the input we received using this program. We can use mathematical operations on our variables.
 
-Example: Perhaps you’d like to keep track of, and show the player the total number of ‘rounds’ that were played. To do this, we can add the values stored in the variables we created to keep track of how many times each player won and how many times they tied.
+Example: Perhaps you'd like to keep track of, and show the player the total number of 'rounds' that were played. To do this, we can add the values stored in the variables we created to keep track of how many times each player won and how many times they tied.
 
 In order to do this, we can add the code to our program under the 'on shake' event handler.
 
@@ -247,7 +249,7 @@ What other math operations could provide valuable information from the values st
 
 Examples:
 
-* Calculate and display a player’s wins and/or losses as a percentage of all rounds played.
+* Calculate and display a player's wins and/or losses as a percentage of all rounds played.
 * Calculate a display the number of tied games as a percentage of all rounds played.
 
 ## Knowledge Check
@@ -255,13 +257,11 @@ Examples:
 Questions:
 
 1. What's the difference between a constant and a variable?
-    
 2. Why is it important to name variables in a clear and meaningful way?
-	
 3. **True or false:** You can only use the default variable names provided in the Variables toolbox drawer.
 
 Answers:
 
-1. A constant has a value that doesn’t change. A variable has a value that may change.
+1. A constant has a value that doesn't change. A variable has a value that may change.
 2. Variable names should clearly describe what type of information they hold so they are easily recognizable in the program and you can find problems or bugs easier.
 3. **False.** You can make a variable with any name you want/need for a program with the Make a Variable button.
