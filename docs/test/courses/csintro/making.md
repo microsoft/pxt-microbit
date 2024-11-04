@@ -15,10 +15,10 @@ You will...
 	
 ## Lesson plan
 
-* [**Introduction**: The micro:bit is for making](/test/courses/csintro/making/introduction)
-* [**Activity**: MakeCode download](/test/courses/csintro/making/activity)
-* [**Project**: micro:pet (including mods and rubric)](/test/courses/csintro/making/project)
+* [**Introduction**: The micro:bit is for making](/courses/csintro/making/introduction)
+* [**Activity**: MakeCode download](/courses/csintro/making/activity)
+* [**Project**: micro:pet (including mods and rubric)](/courses/csintro/making/project)
 
 ## Related standards
 
-[Targeted CSTA standards](/test/courses/csintro/making/standards)
+[Targeted CSTA standards](/courses/csintro/making/standards)

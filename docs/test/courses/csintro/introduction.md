@@ -54,7 +54,7 @@ The course takes about 14 weeks to finish, if you are working on it for a few ho
 9. [Bits, bytes, and binary](/test/courses/csintro/binary) 
 10. [Radio](/test/courses/csintro/radio)
 11. [Arrays](/test/courses/csintro/arrays)
-12. [Accekerometer](/test/courses/csintro/accelerometer)
+12. [Accelerometer](/test/courses/csintro/accelerometer)
 13. [Independent final project](/test/courses/csintro/finalproject)
 
 Each lesson is made up of the following parts:

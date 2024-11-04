@@ -29,7 +29,7 @@ Some photos of sample micro:pets below!
 * Create an animal that reacts when you pet it or move it (find a way to detect when the micro:bit is moved or when its position changes in a certain way.)
 
 ## Journal Entry
-After you'cve completed your project, take some time to write in your design journal! You might write about soem of the following:
+After you've completed your project, take some time to write in your design journal! You might write about some of the following:
 
 * What feedback did you get from your partner on your idea? How would you revise your design, if you were to go back and create another version?
 * What was it like to design a pet for someone else? Was it a pet they would have enjoyed? Why or why not? What advice did they give you that might help you redesign?

@@ -7,8 +7,6 @@ Many board games use an electronic toy to signal moves, or provide clues. There 
 
 [Dark Tower](https://youtu.be/cxrY7MWEkwE) (featuring Orson Welles): This is an example of a circular board game in which the pieces start on the edges and move in toward the middle.
 
-[Electronic Dream Phone Board Game Commercial - 1992](https://www.youtube.com/watch?v=pqYsQgDqlmg): This board game is really a logic puzzle. There are printed clues that illustrate relationships and the phone provides clues that help you to narrow down possibilities by a process of elimination.
-
 [Stop Thief Electronic Board Game commercial 1979](https://www.youtube.com/watch?v=q3wpPRdDy4E): This board game uses a device to give audio clues that help you to figure out what to do on the game board. It’s a good example of how you might use sound as a clue.
 
 ## Assignment
@@ -70,15 +68,11 @@ input.onGesture(Gesture.Shake, () => {
 ```
 Solution link: [https://makecode.microbit.org/_0fx9hY9EbM5T]()
 
-### ~ hint
-
-#### Bonus
+### ~ Bonus
 
 The micro:bit uses its accelerometer to detect when you're shaking it. How does an accelerometer actually work?
 
 [https://www.youtube.com/watch?v=byngcwjO51U]()
-
-### ~
 
 ### Space Race
 

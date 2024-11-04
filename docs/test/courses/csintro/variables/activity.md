@@ -71,7 +71,6 @@ input.onButtonPressed(Button.AB, () => {
 })
 ```
 ## User feedback
-
 Whenever the scorekeeper presses button A, button B, or both buttons together, we will give the user visual feedback acknowledging that the user pressed a button. We can do this by coding our program to display:
 
 * an ‘A’ each time the user presses button A to record a win for Player A, 
@@ -200,9 +199,7 @@ PlayerBWins = 0
 PlayersTie = 0
 ```
 
-### ~ hint
-
-#### History of buttons
+### ~ Hint
 
 Buttons have been used as human input devices since computers first existed. Watch this video and see how they let the user tell the micro:bit to do something.
 
@@ -211,11 +208,9 @@ Buttons have been used as human input devices since computers first existed. Wat
 ### ~
 
 ## Try it out!
-
 Download the Scorekeeper program to the micro:bit, and find someone to play *Rock, Paper, Scissors* with you using your micro:bit to act as the Scorekeeper!
 
 ## ‘Adding’ on with mathematical operations
-
 There is more we can do with the input we received using this program. We can use mathematical operations on our variables.
 
 Example: Perhaps you’d like to keep track of, and show the player the total number of ‘rounds’ that were played. To do this, we can add the values stored in the variables we created to keep track of how many times each player won and how many times they tied.
@@ -225,7 +220,7 @@ In order to do this, we can add the code to our program under the 'on shake' eve
 * First, display a string to show the player that the following sum represents the total number of rounds played. 
 * Our program will add the values stored in the variables `PlayerAWins`, `PlayerBWins`, and `PlayersTie` and then display the sum of this mathematical operation.
 * The blocks for the mathematical operations adding, subtracting, multiplying, and dividing are listed in the Math section of the Toolbox. 
-**Note:** Even though there are 4 blocks shown for these 4 operations, you can access any of the four operations from any of the four blocks, and you can also access the exponent operation from these blocks.
+**Note:** Even though there are four blocks shown for these four operations, you can access any of the four operations from any of the four blocks, and you can also access the exponent operation from these blocks.
 	
 ![Adding block](/static/courses/csintro/variables/adding-block.png)
 

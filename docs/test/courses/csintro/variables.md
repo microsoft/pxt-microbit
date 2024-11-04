@@ -18,10 +18,10 @@ You will...
 
 ## Lesson plan
 
-1. [**Overview**: Variables in Daily Life](test/courses/csintro/variables/overview)
-2. [**Activity**: Make a Game Scorekeeper](test/courses/csintro/variables/activity)
-3. [**Project**: Everything Counts](test/courses/csintro/variables/project)
+1. [**Overview**: Variables in Daily Life](/test/courses/csintro/variables/overview)
+2. [**Activity**: Make a Game Scorekeeper](/test/courses/csintro/variables/activity)
+3. [**Project**: Everything Counts](/test/courses/csintro/variables/project)
 
 ## Related standards
 
-[Targeted CSTA standards](test/courses/csintro/variables/standards)
+[Targeted CSTA standards](/test/courses/csintro/variables/standards)

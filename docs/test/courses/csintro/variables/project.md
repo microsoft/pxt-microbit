@@ -30,9 +30,9 @@ You can see the instructions for creating a durable, fashionable wallet or purse
 
 **Extra mod:** Use other inputs to handle cents, and provide a way to display how much money is in the wallet in dollars and cents.
 
-### Umpire’s baseball counter (pitches and strikes)
+### Umpire’s baseball counter (balls and strikes)
 
-In baseball during an at-bat, umpires must keep track of how many pitches have been thrown to each batter. Use Button A to record the number of balls (up to 4) and the number of strikes (up to 3).
+During an at-bat, baseball umpires must keep track of what type of pitches have been thrown to each batter. Use Button A to record the number of balls (up to 4) and the number of strikes (up to 3).
 
 **Extra mod:** Create a way to reset both variables to zero, create a way to see the number of balls and strikes on the screen at the same time.
 

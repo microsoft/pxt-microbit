@@ -12,9 +12,9 @@ Try and think of some pieces of information from your daily life that are consta
 
 In one school day…
 
-* Constants: The day of the week, the year, student’s name, the school’s address, the student’s birthday
+* Constants: The day of the week, the year, your name, your school’s address, your birthday
 
-* Variables: The temperature/weather, the current time, the current class, whether they are standing or sitting…
+* Variables: The temperature/weather, the current time, the current class, whether you are standing or sitting…
 
 Variables hold a specific type of information. The micro:bit’s variables can keep track of **numbers, strings, Booleans, sprites,** and **arrays**. The first time you use a variable, its type is assigned to match whatever it is holding. From that point forward, you can only change the value of that variable to another value of that same type.
 

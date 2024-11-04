@@ -2,9 +2,9 @@
 
 ![micro:bit holder square](/static/courses/csintro/conditionals/microbit-holder.jpg)
 
-In this unit, we will be reviewing the concepts we covered in the previous weeks, and providing some ideas for an independent final project that students can focus on in the next several weeks. We will also provide a rubric for keeping students on task and tracking the learning that they are doing as they work on their projects. This is an expanded version of the process students followed in the [Mini-Project](/test/courses/csintro/miniproject), in Lesson 6. 
+In this unit, we will be reviewing the concepts we covered in the previous weeks, and providing some ideas for an independent final project that you can focus on in the next several weeks. We will also provide a rubric for keeping yourself on task and tracking your learning as you work on your project. This is an expanded version of the process you followed in the [Mini-Project](/test/courses/csintro/miniproject), in Lesson 6. 
 
-Students are asked to create an independent project that demonstrates the use of something they have already learned, something they went out and researched for themselves, something they borrowed from somewhere else (with citations) and something completely original. They are also asked to document their learning process throughout the next couple of weeks using an independent project framework that emphasizes metacognitive development and process-oriented work.
+You now have the opportunity to create an independent project that demonstrates the use of something you have already learned, something you went out and researched for yourself, something you borrowed from somewhere else (with citations) and something completely original. You'll also keep a journal about what you are learning over the next couple of weeks. The final project is a great way to 
 
 ## Lesson plan
 

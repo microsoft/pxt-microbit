@@ -22,10 +22,10 @@ You will...
 
 ## Lesson plan
 
-1. [**Overview**: Radio and communications](/test/courses/csintro/radio/overview)
-2. [**Activity**: Marco Polo and Morse code](/test/courses/csintro/radio/activity)
-3. [**Project**: Radio project](/test/courses/csintro/radio/project)
+1. [**Overview**: Radio and communications](/courses/csintro/radio/overview)
+2. [**Activity**: Marco Polo and Morse code](/courses/csintro/radio/activity)
+3. [**Project**: Radio project](/courses/csintro/radio/project)
 
 ## Related standards
 
-[Targeted CSTA standards](/test/courses/csintro/radio/standards)
+[Targeted CSTA standards](/courses/csintro/radio/standards)
