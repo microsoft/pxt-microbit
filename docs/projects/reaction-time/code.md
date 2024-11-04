@@ -309,7 +309,7 @@ input.onPinPressed(TouchPin.P2, function () {
 
 ## Extending the Extension
 
-One effect of the extension is the false start X showing for the person loosing the game. We can extend the code some more to avoid the X showing up on the person loosing the game. The following example uses a new variable to flag the winner and avoid the X after a winner is crowned.
+One effect of the extension is the **X** for a false start shows for the person loosing the game. We can extend the code some more to avoid the **X** showing up on the person loosing the game. The following example uses a new variable to flag the winner and avoid the **X** after a winner is crowned.
 
 ```blocks
 input.onPinPressed(TouchPin.P0, function () {
