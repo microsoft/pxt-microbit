@@ -9,7 +9,9 @@
         "bitmap.ts",
         "shims.d.ts"
     ],
-    "public": false,
+    "public": true,
+    "hidden": true,
+    "searchOnly": true,
     "preferredEditor": "tsprj",
     "disablesVariants": [
         "mbdal"
