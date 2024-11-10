@@ -17,6 +17,10 @@ namespace control {
         control.inBackground(a);
     }
 
+    //% shim=TD_NOOP
+    export function singleSimulator(): void {
+    }
+
     /**
      * Returns the value of a C++ runtime constant
      */
