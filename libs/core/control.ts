@@ -16,11 +16,12 @@ namespace control {
     export function runInBackground(a: () => void) {
         control.inBackground(a);
     }
+    
     /**
      * Allow only one simulator
      */
-    //% shim=pxt::singleSimulator
-    export function singleSimulator(msg: string) { 
+    //% shim=control::singleSimulator
+    export function singleSimulator() { 
 
     }
 
