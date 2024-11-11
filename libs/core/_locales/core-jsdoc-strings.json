@@ -329,6 +329,7 @@
   "control.runtimeWarning": "Display warning in the simulator.",
   "control.setDebugFlags": "Set flags used when connecting an external debugger.",
   "control.simmessages.onReceived": "Registers the handler for a message on a given channel",
+  "control.singleSimulator": "Allow only one simulator",
   "control.waitForEvent": "Blocks the calling thread until the specified event is raised.",
   "control.waitMicros": "Blocks the current fiber for the given microseconds",
   "control.waitMicros|param|micros": "number of micro-seconds to wait. eg: 4",

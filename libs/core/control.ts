@@ -17,6 +17,9 @@ namespace control {
         control.inBackground(a);
     }
 
+    /**
+     * Allow only one simulator
+     */
     //% shim=TD_NOOP
     export function singleSimulator(): void {
     }
