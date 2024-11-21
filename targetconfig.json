@@ -478,7 +478,8 @@
                     "devUrl": "http://localhost:5173",
                     "aspectRatio": 3.45
                 }
-            }
+            },
+            "kitronikltd/pxt-kitronik-craft-and-code": { "tags": [ "Robotics" ] }
         },
         "approvedEditorExtensionUrls": [
             "https://microsoft.github.io/ml4f/",
