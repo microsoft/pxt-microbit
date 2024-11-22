@@ -481,7 +481,7 @@
             },
             "microbit-apps/pxt-arcadeshield": {
                 "simx": {
-                    "sha": "4055519e34baee00656d83b963dc1ff3a104afa2",
+                    "sha": "98c47e4eaeceeb6bf0e26099743df2fdd2b5dd50",
                     "devUrl": "http://localhost:3000"
                 }
             }
