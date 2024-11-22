@@ -478,6 +478,12 @@
                     "devUrl": "http://localhost:5173",
                     "aspectRatio": 3.45
                 }
+            },
+            "microbit-apps/pxt-arcadeshield": {
+                "simx": {
+                    "sha": "4055519e34baee00656d83b963dc1ff3a104afa2",
+                    "devUrl": "http://localhost:3000"
+                }
             }
         },
         "approvedEditorExtensionUrls": [
