@@ -480,6 +480,7 @@
                 }
             },
             "microbit-apps/pxt-arcadeshield": {
+                "tags": [ "Graphics and Display" ],
                 "simx": {
                     "sha": "5bac5ff5b80621b53b746e4bbe252e406b992bdb",
                     "devUrl": "http://localhost:3000"
