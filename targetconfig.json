@@ -465,13 +465,14 @@
             "pythom1234/pxt-oled": { "tags": [ "Lights and Display" ] },
             "softsmyth/lectrify-b4k": { "tags": [ "Robotics" ] },
             "davidnsousa/sonification": { "tags": [ "Software" ] },
+            "shahart/heb-microbit": { "tags": [ "Software" ] },
+            "kitronikltd/pxt-kitronik-craft-and-code": { "tags": [ "Robotics" ] },
             "microsoft/pxt-simx-sample": {
                 "simx": {
                     "sha": "7301f5900879b85127482d79bab48f03c25690a8",
                     "devUrl": "http://localhost:5173"
                 }
             },
-            "shahart/heb-microbit": { "tags": [ "Software" ] },
             "microbit-foundation/pxt-microbit-ml": { 
                 "simx": {
                     "sha": "e349a2feaae9f84a24ebd56716209ef74e1758d2",
@@ -479,7 +480,12 @@
                     "aspectRatio": 3.45
                 }
             },
-            "kitronikltd/pxt-kitronik-craft-and-code": { "tags": [ "Robotics" ] }
+            "microbit-apps/pxt-arcadeshield": {
+                "simx": {
+                    "sha": "5bac5ff5b80621b53b746e4bbe252e406b992bdb",
+                    "devUrl": "http://localhost:3000"
+                }
+            }
         },
         "approvedEditorExtensionUrls": [
             "https://microsoft.github.io/ml4f/",
