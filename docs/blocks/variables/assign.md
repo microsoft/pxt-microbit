@@ -1,10 +1,33 @@
 # Assignment Operator
 
-Use an equals sign to make a [variable](/blocks/variables/var) store the [number](/types/number) 
-or [string](/types/string) you say.
+Use an equals sign to make a [variable](/blocks/variables/var) store a [number](/types/number), [string](/types/string), or other [type](/types) of value.
 
-When you use the equals sign to store something in a variable, the equals sign is called
+When you use the equals sign (**=**) to store something in a variable, the equals sign is called
 an *assignment operator*, and what you store is called a *value*.
+
+When you work in JavaScript or Python the equals sign is used:
+
+```typescript-ignore
+item = 3
+```
+
+## The 'set' block
+
+In blocks, a variable assignment happens with the ``||variables:set||`` block when you set a value to a [variable](/blocks/variables/var).
+
+```block
+let item = 3
+```
+
+### ~ hint
+
+#### Setting a variable using the Toolbox
+
+In the ``||variables:Variables||`` category of the **Toolbox** you can create or choose a variable to assign:
+
+![Setting a variable to a value](/static/blocks/variables/assign.gif)
+
+### ~
 
 ## Storing numbers in variables
 
