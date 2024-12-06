@@ -467,6 +467,7 @@
             "davidnsousa/sonification": { "tags": [ "Software" ] },
             "shahart/heb-microbit": { "tags": [ "Software" ] },
             "kitronikltd/pxt-kitronik-craft-and-code": { "tags": [ "Robotics" ] },
+            "cytrontechnologies/pxt-sumobit": { "tags": [ "Robotics" ] },
             "microsoft/pxt-simx-sample": {
                 "simx": {
                     "sha": "7301f5900879b85127482d79bab48f03c25690a8",
