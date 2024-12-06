@@ -521,6 +521,10 @@ Many extensions are available to work with interface kits, add-on hardware, or o
 
 ```codecard
 [{
+  "name": "Cytron SUMO:BIT",
+  "url":"/pkg/CytronTechnologies/pxt-sumobit",
+  "cardType": "package"
+}, {
   "name": "Kitronik Craft & Code",
   "url":"/pkg/KitronikLtd/pxt-kitronik-Craft-and-Code",
   "cardType": "package"
