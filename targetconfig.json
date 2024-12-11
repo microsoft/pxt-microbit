@@ -467,6 +467,7 @@
             "davidnsousa/sonification": { "tags": [ "Software" ] },
             "shahart/heb-microbit": { "tags": [ "Software" ] },
             "kitronikltd/pxt-kitronik-craft-and-code": { "tags": [ "Robotics" ] },
+            "cytrontechnologies/pxt-sumobit": { "tags": [ "Robotics" ] },
             "hovavo/pxt-states": { "tags": [ "Software" ] },
             "parallaxinc/cyberbot_makecode": { "tags": [ "Robotics" ] },
             "siyeenove/pxt_mcar": { "tags": [ "Robotics" ] },
