@@ -7,7 +7,7 @@
             "params": [
                 {
                     "name": "question",
-                    "value": "Does this produce different outputs based on the input that was received?"
+                    "value": "Does this produce different outputs based on the radio input that was received?"
                 },
                 {
                     "name": "shareid"
@@ -20,7 +20,7 @@
             "params": [
                 {
                     "name": "question",
-                    "value": "Does this send different messages in response to different events?"
+                    "value": "Does this send different radio messages in response to different events?"
                 },
                 {
                     "name": "shareid"
