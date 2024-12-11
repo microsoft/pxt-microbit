@@ -2,6 +2,19 @@
     "name": "Rock Paper Scissors",
     "criteria": [
         {
+            "catalogCriteriaId": "499F3572-E655-4DEE-953B-5F26BF0191D7",
+            "instanceId": "wmJMUZPlga2343TgkC1mq",
+            "params": [
+                {
+                    "name": "question",
+                    "value": "Does this store a random value in a variable and use it in an if, else if, else statement?"
+                },
+                {
+                    "name": "shareid"
+                }
+            ]
+        },
+        {
             "catalogCriteriaId": "3F7A9DB3-0B5E-456B-86E7-79573F9F6E53",
             "instanceId": "rH-U8YN2wFzTf3HWfMT99"
         },

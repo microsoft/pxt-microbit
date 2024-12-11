@@ -2,6 +2,19 @@
     "name": "Countdown",
     "criteria": [
         {
+            "catalogCriteriaId": "499F3572-E655-4DEE-953B-5F26BF0191D7",
+            "instanceId": "2jWFi2zbqRT4SxUJ7_3la",
+            "params": [
+                {
+                    "name": "question",
+                    "value": "Does this illustrate an understanding of how to use the index in a for loop?"
+                },
+                {
+                    "name": "shareid"
+                }
+            ]
+        },
+        {
             "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
             "instanceId": "QfP2rNybJK3wz-dCkUrRk",
             "params": [

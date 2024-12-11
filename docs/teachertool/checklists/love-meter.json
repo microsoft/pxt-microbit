@@ -2,6 +2,19 @@
     "name": "Love Meter",
     "criteria": [
         {
+            "catalogCriteriaId": "499F3572-E655-4DEE-953B-5F26BF0191D7",
+            "instanceId": "b6f1ZKD6IyhuZPrrO5yhl",
+            "params": [
+                {
+                    "name": "question",
+                    "value": "Does this illustrate an understanding of how to display a random number in response to input?"
+                },
+                {
+                    "name": "shareid"
+                }
+            ]
+        },
+        {
             "catalogCriteriaId": "35610CA0-38F8-4CCE-BAB9-99593DB3358A",
             "instanceId": "PV1SB_UrMFZAB9lRjsjaY",
             "params": [

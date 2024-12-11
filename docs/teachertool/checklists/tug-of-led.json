@@ -2,6 +2,19 @@
     "name": "Tug-Of-LED",
     "criteria": [
         {
+            "catalogCriteriaId": "499F3572-E655-4DEE-953B-5F26BF0191D7",
+            "instanceId": "mmGgCDQulErVZEr5ha3-J",
+            "params": [
+                {
+                    "name": "question",
+                    "value": "Does this illustrate an understanding of how to increment and decrement a variable based on input?"
+                },
+                {
+                    "name": "shareid"
+                }
+            ]
+        },
+        {
             "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
             "instanceId": "RJkv2Z1UHxIywKbJPn0Fv",
             "params": [

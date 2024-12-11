@@ -2,6 +2,19 @@
     "name": "7 Seconds",
     "criteria": [
         {
+            "catalogCriteriaId": "499F3572-E655-4DEE-953B-5F26BF0191D7",
+            "instanceId": "a7QWrsWn0sOe8qIZEtK8p",
+            "params": [
+                {
+                    "name": "question",
+                    "value": "Does this create a game that checks the amount of time between user inputs?"
+                },
+                {
+                    "name": "shareid"
+                }
+            ]
+        },
+        {
             "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
             "instanceId": "4OPG8aTODxTYqdIp9CvVe",
             "params": [

@@ -2,6 +2,19 @@
     "name": "Pet Hamster",
     "criteria": [
         {
+            "catalogCriteriaId": "499F3572-E655-4DEE-953B-5F26BF0191D7",
+            "instanceId": "sZv3ich1UjQIXcCIQoKXt",
+            "params": [
+                {
+                    "name": "question",
+                    "value": "Does this illustrate an understanding of the learning objective: show different outputs based on different inputs?"
+                },
+                {
+                    "name": "shareid"
+                }
+            ]
+        },
+        {
             "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
             "instanceId": "1LJH8pJ3hLXQScO7WwRVM",
             "params": [

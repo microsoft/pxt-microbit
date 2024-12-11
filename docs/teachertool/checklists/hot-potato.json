@@ -2,6 +2,19 @@
     "name": "Hot Potato",
     "criteria": [
         {
+            "catalogCriteriaId": "499F3572-E655-4DEE-953B-5F26BF0191D7",
+            "instanceId": "fnXRgd5KGQWBS_MnWa1uH",
+            "params": [
+                {
+                    "name": "question",
+                    "value": "Does this illustrate an understanding of how to use while loops? "
+                },
+                {
+                    "name": "shareid"
+                }
+            ]
+        },
+        {
             "catalogCriteriaId": "3F7A9DB3-0B5E-456B-86E7-79573F9F6E53",
             "instanceId": "Q6R68y1CDXRKwOfgxZK3i"
         },
