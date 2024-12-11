@@ -2,6 +2,19 @@
     "name": "Level",
     "criteria": [
         {
+            "catalogCriteriaId": "499F3572-E655-4DEE-953B-5F26BF0191D7",
+            "instanceId": "zBovdISYJKVRHRGeI1hiZ",
+            "params": [
+                {
+                    "name": "question",
+                    "value": "Does this illustrate an understanding of how to use conditionals to respond to data from the micro:bit sensors?"
+                },
+                {
+                    "name": "shareid"
+                }
+            ]
+        },
+        {
             "catalogCriteriaId": "0DFA44C8-3CA5-4C77-946E-AF09F6C03879",
             "instanceId": "ZZSKu3-adfTotvajnh_Oq",
             "params": [

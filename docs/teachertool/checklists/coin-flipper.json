@@ -2,6 +2,19 @@
     "name": "Coin Flipper",
     "criteria": [
         {
+            "catalogCriteriaId": "499F3572-E655-4DEE-953B-5F26BF0191D7",
+            "instanceId": "Z3zTdUo6FvGBDSg_d2hRc",
+            "params": [
+                {
+                    "name": "question",
+                    "value": "Does this illustrate an understanding of how to use conditional statements?"
+                },
+                {
+                    "name": "shareid"
+                }
+            ]
+        },
+        {
             "catalogCriteriaId": "35610CA0-38F8-4CCE-BAB9-99593DB3358A",
             "instanceId": "OJqELTqpWU2p-GiE9SBrD",
             "params": [

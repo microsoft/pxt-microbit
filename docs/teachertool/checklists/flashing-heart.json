@@ -2,6 +2,19 @@
     "name": "Flashing Heart",
     "criteria": [
         {
+            "catalogCriteriaId": "499F3572-E655-4DEE-953B-5F26BF0191D7",
+            "instanceId": "VuYiaGq1XnALp52yvG3i-",
+            "params": [
+                {
+                    "name": "question",
+                    "value": "Does this illustrate an understanding of the learning objective: alternate between LED images on the micro:bit display?"
+                },
+                {
+                    "name": "shareid"
+                }
+            ]
+        },
+        {
             "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
             "instanceId": "pE47UT6Uv4jtezvffy3DZ",
             "params": [

@@ -2,6 +2,19 @@
     "name": "Clap Lights",
     "criteria": [
         {
+            "catalogCriteriaId": "499F3572-E655-4DEE-953B-5F26BF0191D7",
+            "instanceId": "6Li5DrIKNCdYyThrnaNn-",
+            "params": [
+                {
+                    "name": "question",
+                    "value": "Does this illustrate mastery of conditionals and variables?"
+                },
+                {
+                    "name": "shareid"
+                }
+            ]
+        },
+        {
             "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
             "instanceId": "i70kfW9Edf_w4uWQOr4Vj",
             "params": [

@@ -2,6 +2,19 @@
     "name": "Smiley Buttons",
     "criteria": [
         {
+            "catalogCriteriaId": "499F3572-E655-4DEE-953B-5F26BF0191D7",
+            "instanceId": "JR66Aahv1mHVPQz6p8bKn",
+            "params": [
+                {
+                    "name": "question",
+                    "value": "Does this produce different outputs based on different events?"
+                },
+                {
+                    "name": "shareid"
+                }
+            ]
+        },
+        {
             "catalogCriteriaId": "35610CA0-38F8-4CCE-BAB9-99593DB3358A",
             "instanceId": "rJ_uRDO6gN8E7Vg33nCfn",
             "params": [

@@ -2,6 +2,32 @@
     "name": "Morse Chat",
     "criteria": [
         {
+            "catalogCriteriaId": "499F3572-E655-4DEE-953B-5F26BF0191D7",
+            "instanceId": "shqa7cklKhTJlAS8QPH1h",
+            "params": [
+                {
+                    "name": "question",
+                    "value": "Does this produce different outputs based on the input that was received?"
+                },
+                {
+                    "name": "shareid"
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "499F3572-E655-4DEE-953B-5F26BF0191D7",
+            "instanceId": "3WfHJ3ZrAfD8pUZgBAOfI",
+            "params": [
+                {
+                    "name": "question",
+                    "value": "Does this send different messages in response to different events?"
+                },
+                {
+                    "name": "shareid"
+                }
+            ]
+        },
+        {
             "catalogCriteriaId": "3F7A9DB3-0B5E-456B-86E7-79573F9F6E53",
             "instanceId": "jJn_1FSlxRedkvdJQaRWW"
         },

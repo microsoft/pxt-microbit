@@ -2,6 +2,19 @@
     "name": "Blow Away",
     "criteria": [
         {
+            "catalogCriteriaId": "499F3572-E655-4DEE-953B-5F26BF0191D7",
+            "instanceId": "FjxF6KNgCdTZtf2vOVF8P",
+            "params": [
+                {
+                    "name": "question",
+                    "value": "Does this illustrate an understanding of how to combine loops, variables, and conditionals to react to specific input?"
+                },
+                {
+                    "name": "shareid"
+                }
+            ]
+        },
+        {
             "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
             "instanceId": "Hmf83iLtMk6WMeS1zudeU",
             "params": [
