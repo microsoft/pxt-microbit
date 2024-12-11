@@ -7,7 +7,7 @@
             "params": [
                 {
                     "name": "question",
-                    "value": "Does this illustrate an understanding of how to use conditionals to respond to data from the micro:bit sensors?"
+                    "value": "Does this illustrate an understanding of how to use conditionals when responding to data from the micro:bit sensors?"
                 },
                 {
                     "name": "shareid"

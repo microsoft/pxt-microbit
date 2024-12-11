@@ -7,7 +7,7 @@
             "params": [
                 {
                     "name": "question",
-                    "value": "Does this illustrate an understanding of how to use while loops? "
+                    "value": "Does this illustrate an understanding of how to use while loops?"
                 },
                 {
                     "name": "shareid"
