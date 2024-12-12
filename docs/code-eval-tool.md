@@ -2,9 +2,9 @@
 
 ## Overview
 
-The [Teacher Tool]( https://microbit.makecode.com/beta--eval) is a mechanism for constructing a checklist of requirements for an assignment and running that list automatically against projects in quick succession. This allows teachers to build a checklist, then easily evaluate any number of projects based on that checklist. Projects are evaluated one at a time, but with auto-run enabled, you can update the loaded project by providing a new share link, at which point the rules will automatically be re-run on the new project.
+The [Code Evaluation Tool]( https://microbit.makecode.com/beta--eval) is a mechanism for constructing a checklist of requirements for an assignment and running that list automatically against projects in quick succession. This allows teachers to build a checklist, then easily evaluate any number of projects based on that checklist. Projects are evaluated one at a time, but with auto-run enabled, you can update the loaded project by providing a new share link, at which point the rules will automatically be re-run on the new project.
 
-## Teacher Tool Features
+## Code Evaluation Tool Features
 
 ### Creating, Editing, and Running a Checklist
 
@@ -12,25 +12,25 @@ The [Teacher Tool]( https://microbit.makecode.com/beta--eval) is a mechanism for
 
 Create a new checklist using the **New Checklist** card. If there is already an "in progress" checklist, a warning will appear asking if it is okay to overwrite it.
 
-![New Checklist](/static/teachertool/new-rubric.png)
+![New Checklist](/static/code-eval-tool/new-rubric.png)
 
-![New Checklist from menu](/static/teachertool/new-rubric-from-menu.png)
+![New Checklist from menu](/static/code-eval-tool/new-rubric-from-menu.png)
 
 #### 2. Naming a checklist
 
 The checklist is given a name.
 
-![Checklist name](/static/teachertool/checklist-name.png)
+![Checklist name](/static/code-eval-tool/checklist-name.png)
 
 #### 3. Add Criteria
 
 One or more **_criteria_** are added from the catalog using the **Add Criteria** button.
       
-![Add Criteria](/static/teachertool/add-criteria.png)
+![Add Criteria](/static/code-eval-tool/add-criteria.png)
 
 Some criteria (like `[block] used [count] times`) can be added multiple times, others (like `Read a GPIO pin` can only be added once).
 
-![Criteria items](/static/teachertool/criteria-items.png)
+![Criteria items](/static/code-eval-tool/criteria-items.png)
 
 #### 4. Fill in Parameters
 
@@ -51,39 +51,39 @@ From a technical perspective, criteria parameters have these types:
 
 Here a block is selected and used 3 times:
 
-![Criteria parameters 1](/static/teachertool/parameters-1.png)
+![Criteria parameters 1](/static/code-eval-tool/parameters-1.png)
 
 Parameter options are displayed and then selected.
 
-![Criteria parameters 2](/static/teachertool/parameters-2.png)
+![Criteria parameters 2](/static/code-eval-tool/parameters-2.png)
       
-![Criteria parameters 3](/static/teachertool/parameters-3.png)
+![Criteria parameters 3](/static/code-eval-tool/parameters-3.png)
 
 #### 5. Remove Criteria
 
 A criteria item is removed using the **trash** button.
 
-![Remove Criteria](/static/teachertool/remove-criteria.png)
+![Remove Criteria](/static/code-eval-tool/remove-criteria.png)
 
 #### 6. Load a project
 
 A project into the project view by pasting in a share link or share ID.
 
-![A loaded project](/static/teachertool/loaded-project.png)
+![A loaded project](/static/code-eval-tool/loaded-project.png)
 
 The project will load in read-only mode with the project title appearing at the top of the project view.
    
-![Project validation](/static/teachertool/validate-me.png)
+![Project validation](/static/code-eval-tool/validate-me.png)
       
 #### 7. Run the checklist
 
 With a project loaded, the checklist can run. The results are shown after clicking the **Run** button.
 
-![Run checklist](/static/teachertool/run-checklist-button.png)
+![Run checklist](/static/code-eval-tool/run-checklist-button.png)
 
 The results view lists each criteria with its outcome.
 
-![Checklist execution](/static/teachertool/checklist-execution.png)
+![Checklist execution](/static/code-eval-tool/checklist-execution.png)
 
 **Note**: the **Run** Button is disabled without loaded project.
 
@@ -93,21 +93,21 @@ The results view lists each criteria with its outcome.
 
 Feedback and notes are added using the **Add Notes** button. The feedback box should resize to fit its content as notes are added. The original feedback remains even if you re-run the rules using the **Run** button.
 
-![Editing results](/static/teachertool/editing-results-1.png)
+![Editing results](/static/code-eval-tool/editing-results-1.png)
 
-![Editing results](/static/teachertool/editing-results-2.png)
+![Editing results](/static/code-eval-tool/editing-results-2.png)
 
-![Editing results](/static/teachertool/editing-results-3.png)
+![Editing results](/static/code-eval-tool/editing-results-3.png)
 
 #### 2. Edit outcomes
 
 An outcome is edited using the provided dropdown.
       
-![Edit outcome](/static/teachertool/edit-outcome-1.png)
+![Edit outcome](/static/code-eval-tool/edit-outcome-1.png)
 
 The new selected outcome.
 
-![Edit outcome](/static/teachertool/edit-outcome-2.png)
+![Edit outcome](/static/code-eval-tool/edit-outcome-2.png)
       
 ### Result Clearing and Auto-Run
 
@@ -115,7 +115,7 @@ The new selected outcome.
 
 Auto-run is toggled either **on** or **off** using the button in the menu.
       
-![Auto-run button](/static/teachertool/autorun-button.png)
+![Auto-run button](/static/code-eval-tool/autorun-button.png)
 
 #### 2. Auto-run disabled
 
@@ -135,31 +135,31 @@ If auto-run is **enabled**, any rules that enter the "Not started" state due to 
 
 There are pre-built checklists are available from on home page. If a selected checklist is already in-progress, an overwrite confirmation prompt is given.
       
-![Pre-built checklists](/static/teachertool/prebuilt-rubrics.png)
+![Pre-built checklists](/static/code-eval-tool/prebuilt-rubrics.png)
       
 #### 2. Export a checklist
 
 A checklist is exported using the vertical "..." menu near the "auto-run" button.
 
-![Export checklist](/static/teachertool/export-checklist.png)
+![Export checklist](/static/code-eval-tool/export-checklist.png)
 
 This will download a json file for the checklist.
 
-![Checklist download](/static/teachertool/checklist-download.png)
+![Checklist download](/static/code-eval-tool/checklist-download.png)
 
 #### 3. Import a checklist
 
 User can import a checklist from a file using the same "..." menu, or from the card on the welcome page.
 
-![Import checklist card](/static/teachertool/import-checklist-card.png)
+![Import checklist card](/static/code-eval-tool/import-checklist-card.png)
 
-![Import checklist menu](/static/teachertool/import-checklist-menu.png)
+![Import checklist menu](/static/code-eval-tool/import-checklist-menu.png)
 
 Checklist file is selected using "Browse" or dropped directly into the popup. An overwrite confirmation prompted if there is currently an in-progress checklist.
 
-![Import checklist drag in](/static/teachertool/import-checklist-dragdrop-1.png)
+![Import checklist drag in](/static/code-eval-tool/import-checklist-dragdrop-1.png)
 
-![Import checklist drop off](/static/teachertool/import-checklist-dragdrop-2.png)
+![Import checklist drop off](/static/code-eval-tool/import-checklist-dragdrop-2.png)
       
 ### Other
 
@@ -167,12 +167,12 @@ If the page is refreshed (or if the browser closes/re-opens), the current checkl
 
 Use the print button to create a version of the results with the outcomes and feedback visible (the other UI elements are hidden).
       
-![Print button](/static/teachertool/print-button.png)
+![Print button](/static/code-eval-tool/print-button.png)
 
 The checklist-view/project-view splitter can be resized. It can also be reset to 50/50 split with double-click.
 
-![View splitter button](/static/teachertool/view-splitter.png)
+![View splitter button](/static/code-eval-tool/view-splitter.png)
 
 Slide the splitter to widen the view of the criteria and results.
 
-![Split view resize](/static/teachertool/split-resize.png)
+![Split view resize](/static/code-eval-tool/split-resize.png)
