@@ -4,7 +4,7 @@
             "cardType": "checklist-resource",
             "cardTitle": "Level",
             "imageUrl": "/static/mb/projects/level.png",
-            "checklistUrl": "/teachertool/checklists/level.json"
+            "checklistUrl": "/code-eval-tool/checklists/level.json"
         }
     ],
     "cards.hidden": []
