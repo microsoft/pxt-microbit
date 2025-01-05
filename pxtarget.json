@@ -18,7 +18,6 @@
         "libs/datalogger",
         "libs/bitmap",
         "libs/fonts",
-        "libs/arcadeshield",
         "libs/color",
         "libs/audio-recording"
     ],
