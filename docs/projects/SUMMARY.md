@@ -152,6 +152,7 @@
   * [Lights and Sounds](https://github.com/microsoft/microbit-robot/blob/main/tutorials/light-and-sound.md)
   * [Line Follower](https://github.com/microsoft/microbit-robot/blob/main/tutorials/line-follower.md)
 * [MakeCode Arcade Shield](/arcadeshield)
+   [Getting Started](https://github.com/microbit-apps/pxt-arcadeshield/blob/main/tutorials/getting-started.md)
 * [Jacdac](/jacdac)
   * [Getting started](https://microsoft.github.io/jacdac-docs/clients/makecode/)
   * [Button smasher](https://microsoft.github.io/jacdac-docs/clients/makecode/projects/button-smasher/)
