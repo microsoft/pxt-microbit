@@ -523,6 +523,7 @@
         "Turtle": "projects/turtle",
         "Blocks to JavaScript": "courses/blocks-to-javascript",
         "Courses": "courses",
+        "Arcade Shield": "arcadeshield",
         "Jacdac": "jacdac",
         "MicroCode for the new micro:bit (V2)": "microcode",
         "Behind the MakeCode Hardware": {

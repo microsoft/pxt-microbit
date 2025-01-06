@@ -1,60 +1,19 @@
-# Jacdac
+# Arcade Shield
 
-Connect and Code. Instantly.
+Extend your micro:bit V2 with a color display and learn about graphics! Simulator support!
 
 ## Getting started
 
-[Jacdac](https://aka.ms/jacdac) is a plug-and-play hardware accessory system that provides simulation and physical device twin in MakeCode.
+These tutorials use the [Arcade Shield extension](https://github.com/microbit-apps/pxt-arcadeshield),
+which has simulator support for the Arcade shield display and controls.
 
 ```codecard
 [{
   "name": "Getting started",
-  "description": "Connect and Code. Instantly in MakeCode.",
-  "url":"https://microsoft.github.io/jacdac-docs/clients/makecode/",
-  "imageUrl": "/static/jacdac/getting-started.jpg"
+  "description": "Start learning about graphics primitives for working with pixels.",
+  "url":"https://github.com/microbit-apps/pxt-arcadeshield/blob/main/tutorials/getting-started.md?raw=true",
+  "imageUrl": "https://github.com/microbit-apps/pxt-arcadeshield/blob/master/assets/newbit-shield.png?raw=true"
 }]
 ```
 
 ## Projects
-
-```codecard
-[
-    {
-        "name": "Button smasher",
-        "description": "How many times can you smash the button in 10 seconds?",
-        "url": "https://microsoft.github.io/jacdac-docs/clients/makecode/projects/button-smasher/",
-        "imageUrl": "/static/jacdac/button-smasher.jpg",
-        "youTubeId": "rlK_8oqMAmo"
-    },
-    {
-        "name": "Slider Sound Bender",
-        "description": "Create twisted sounds using a slider module.",
-        "url": "https://microsoft.github.io/jacdac-docs/clients/makecode/projects/slider-sound-bender/",
-        "imageUrl": "/static/jacdac/slider-sound-bender.jpg"
-    },
-    {
-        "name": "Light Sound Bender",
-        "description": "Create twisted sounds using light levels",
-        "url": "https://microsoft.github.io/jacdac-docs/clients/makecode/projects/light-sound-bender/",
-        "imageUrl": "/static/jacdac/light-sound-bender.jpg"
-    },
-    {
-        "name": "Rotary Sound Bender",
-        "description": "Create twisted sounds using a rotary encoder module.",
-        "url": "https://microsoft.github.io/jacdac-docs/clients/makecode/projects/rotary-sound-bender/",
-        "imageUrl": "/static/jacdac/rotary-sound-bender.jpg"
-    },
-    {
-        "name": "Sound LED",
-        "description": "Show the sound level on a LED ring",
-        "url": "https://microsoft.github.io/jacdac-docs/clients/makecode/projects/sound-led/",
-        "imageUrl": "/static/jacdac/sound-led.jpg"
-    },
-    {
-        "name": "Magnetic Sound Bender",
-        "description": "Create twisted sounds using a magnet",
-        "url": "https://microsoft.github.io/jacdac-docs/clients/makecode/projects/magnetic-sound-bender/",
-        "imageUrl": "/static/jacdac/magnetic-sound-bender.jpg"
-    }
-]
-```
