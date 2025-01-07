@@ -485,7 +485,7 @@
                     "aspectRatio": 3.45
                 }
             },
-            "microbit-apps/arcadeshield": {
+            "microbit-apps/pxt-arcadeshield": {
                 "simx": {
                     "sha": "5bac5ff5b80621b53b746e4bbe252e406b992bdb",
                     "devUrl": "http://localhost:3000"
