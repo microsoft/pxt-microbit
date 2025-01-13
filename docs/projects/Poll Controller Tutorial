@@ -1,0 +1,48 @@
+# Poll Controller   
+
+## Step 1: Setup radio signal
+We want to send a signal from one micro:bit to another using the radio function. 
+Drag ``||radio:radio set group||`` into ``||basic:on start||``.
+Change the radio set group number to 4.
+Delete the ``||basic:forever||`` block by dragging it onto the toolbox on the left side of the workspace until a garbage icon appears.
+
+## Step 2: Identify our micro:bit
+We need to let the receiving micro:bit identify who they are receiving data from.
+Drag ``||radio:radio set transmit serial number||`` into ``||basic:on start||``.
+Ensure it is set to "true".
+    
+## Step 3: Maintain the radio connection
+Now we want the micro:bit to continuously transmit this data to maintain the connection.
+Drag ``||loops:every (500)ms||`` onto the workspace and set it to 5000ms.
+Drag ``||radio:radio send number []||`` into ``||loops:every (5000)ms||`` and set it to 35.
+
+## Step 4: Setup a button
+Now let's setup what our buttons will do.
+Drag ``||input:on button [A] pressed||`` onto the workspace.
+We need the button to trigger a radio signal. 
+Drag ``||radio:radio send string []||`` into ``||input:on button [A] pressed||`` and set it to "A".
+
+## Step 5: Create a led icon
+We want our LED array to reflect our button press. 
+Drag ``||basic:show leds||`` into ``||input:on button [A] pressed||`` under ``||radio:radio send string [A]||``.
+Select the leds you want it to show to represent the letter "A".
+
+## Step 6: Setup the next button
+Now repeat steps 4 and 5, changing ``||input:on button [A] pressed||`` to "B" and ``||basic:show leds||`` to represent the letter "B".
+
+## Step 7: Setup the third button
+Drag ``||input:on logo [pressed]||`` onto the workspace.
+Drag ``||radio:radio send string []||`` into ``||input:on logo [pressed]||`` and set it to "C".
+Drag ``||basic:show leds||`` underneath ``||radio:radio send string [C]||`` and select the leds to represent the letter "C".
+
+## Step 8: Setup the final "button"
+Our final trigger will be a "reset" using the shake function.
+Drag ``||input:on [shake]||`` onto the workspace.
+Drag ``||radio:radio send number []||`` into ``||input:on [shake]||`` and set it to 35.
+Drag ``||radio:radio send string []||`` into ``||input:on [shake]||`` and set it to "D".
+Drag ``||basic:show icon []||`` underneath ``||radio:radio send string [D]||`` and select the icon of your choice.
+
+## Step 9: Finalize
+Connect your micro:bit and click "Download" to install the program.
+
+Go to https://github.com/thr1lls/pxt-microbit/blob/f19750f72bc2abb94eed7d51ba5707aba9cf69bb/docs/projects/Poll%20Radio%20Dashboard for code to setup the receiver micro:bit.
