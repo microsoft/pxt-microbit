@@ -133,7 +133,7 @@ If auto-run is **enabled**, any rules that enter the "Not started" state due to 
 
 #### 1. Pre-built checklists
 
-There are pre-built checklists are available from on home page. If a selected checklist is already in-progress, an overwrite confirmation prompt is given.
+There are pre-built checklists are available on the welcome page. If a selected checklist is already in-progress, an overwrite confirmation prompt is given.
       
 ![Pre-built checklists](/static/teachertool/prebuilt-rubrics.png)
       
