@@ -67,7 +67,7 @@ A criteria item is removed using the **trash** button.
 
 #### 6. Load a project
 
-A project into the project view by pasting in a share link or share ID.
+Load a project into the project view by pasting in a share link or share ID.
 
 ![A loaded project](/static/teachertool/loaded-project.png)
 
