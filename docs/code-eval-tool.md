@@ -2,7 +2,7 @@
 
 ## Overview
 
-The [Code Evaluation Tool]( https://microbit.makecode.com/beta--eval) is a mechanism for constructing a checklist of requirements for an assignment and running that list automatically against projects in quick succession. This allows teachers to build a checklist, then easily evaluate any number of projects based on that checklist. Projects are evaluated one at a time, but with auto-run enabled, you can update the loaded project by providing a new share link, at which point the rules will automatically be re-run on the new project.
+The [Code Evaluation Tool]( https://microbit.makecode.com/--eval) is a mechanism for constructing a checklist of requirements for an assignment and running that list automatically against projects in quick succession. This allows teachers to build a checklist, then easily evaluate any number of projects based on that checklist. Projects are evaluated one at a time, but with auto-run enabled, you can update the loaded project by providing a new share link, at which point the rules will automatically be re-run on the new project.
 
 ## Code Evaluation Tool Features
 
@@ -59,13 +59,17 @@ Parameter options are displayed and then selected.
       
 ![Criteria parameters 3](/static/teachertool/parameters-3.png)
 
-#### 5. Remove Criteria
+#### 5. Ask AI
+
+You can also have an **Ask AI** question as a criteria item in the checklist. You are limited to up to 5 Ask AI questions per checklist.
+
+#### 6. Remove Criteria
 
 A criteria item is removed using the **trash** button.
 
 ![Remove Criteria](/static/teachertool/remove-criteria.png)
 
-#### 6. Load a project
+#### 7. Load a project
 
 Load a project into the project view by pasting in a share link or share ID.
 
@@ -75,7 +79,7 @@ The project will load in read-only mode with the project title appearing at the 
    
 ![Project validation](/static/teachertool/validate-me.png)
       
-#### 7. Run the checklist
+#### 8. Run the checklist
 
 With a project loaded, the checklist can run. The results are shown after clicking the **Run** button.
 
@@ -139,7 +143,7 @@ There are pre-built checklists are available on the welcome page. If a selected 
       
 #### 2. Export a checklist
 
-A checklist is exported using the vertical "..." menu near the "auto-run" button.
+A checklist is exported using the vertical "..." menu near the "auto-run" button. Only the checklist is exported, not the results. For a copy of the results, use [print](#other) function in the Results view.
 
 ![Export checklist](/static/teachertool/export-checklist.png)
 
