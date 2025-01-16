@@ -143,7 +143,7 @@ There are pre-built checklists are available on the welcome page. If a selected 
       
 #### 2. Export a checklist
 
-A checklist is exported using the vertical "..." menu near the "auto-run" button. Only the checklist is exported, not the results. For a copy of the results, use [print](#other) function in the Results view.
+A checklist is exported using the vertical "..." menu near the "auto-run" button. Only the checklist is exported, not the results. For a copy of the results, use the [print](#other) function in the Results view.
 
 ![Export checklist](/static/teachertool/export-checklist.png)
 
