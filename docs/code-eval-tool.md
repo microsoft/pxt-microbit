@@ -63,6 +63,8 @@ Parameter options are displayed and then selected.
 
 You can also have an **Ask AI** question as a criteria item in the checklist. You are limited to up to 5 Ask AI questions per checklist.
 
+![Ask AI criteria](/static/teachertool/ask-ai-criteria.png)
+
 #### 6. Remove Criteria
 
 A criteria item is removed using the **trash** button.
