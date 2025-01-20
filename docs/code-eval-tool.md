@@ -65,6 +65,14 @@ You can also have an **Ask AI** question as a criteria item in the checklist. Yo
 
 ![Ask AI criteria](/static/teachertool/ask-ai-criteria.png)
 
+### ~hint
+
+#### AI usage
+
+The use of AI in criteria items is further explained in the [AI FAQ](/teachertool/ai-faq).
+
+### ~
+
 #### 6. Remove Criteria
 
 A criteria item is removed using the **trash** button.
