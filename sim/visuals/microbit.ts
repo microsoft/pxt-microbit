@@ -315,6 +315,7 @@ path.sim-board {
         private soundLevel: SVGRectElement;
         private soundLevelText: SVGTextElement;
         private shakeButton: SVGCircleElement;
+        private shakeInitialized: boolean = false;
         private shakeText: SVGTextElement;
         private accTextX: SVGTextElement;
         private accTextY: SVGTextElement;
@@ -412,7 +413,7 @@ path.sim-board {
             } else {
                 svg.fills(this.heads.slice(1), theme.accent);
             }
-            if (this.shakeButton) svg.fill(this.shakeButton, theme.virtualButtonUp);
+            if (this.shakeInitialized) svg.fill(this.shakeButton, theme.virtualButtonUp);
 
             this.pinGradients.forEach(lg => svg.setGradientColors(lg, theme.pin, theme.pinActive));
             svg.setGradientColors(this.lightLevelGradient, theme.lightLevelOn, theme.lightLevelOff);
@@ -485,8 +486,9 @@ path.sim-board {
 
         private updateGestures() {
             let state = this.board;
-            if (state.accelerometerState.useShake && !this.shakeButton) {
-                this.shakeButton = svg.child(this.g, "circle", { cx: 404, cy: 115, r: 12, class: "sim-shake" }) as SVGCircleElement;
+            if (state.accelerometerState.useShake && !this.shakeInitialized) {
+                this.shakeInitialized = true;
+                this.shakeButton.style.visibility = "visible";
                 accessibility.makeFocusable(this.shakeButton);
                 svg.fill(this.shakeButton, this.props.theme.virtualButtonUp)
                 pointerEvents.down.forEach(evid => this.shakeButton.addEventListener(evid, ev => {
@@ -1071,6 +1073,14 @@ path.sim-board {
             })
 
             this.pinTexts = [67, 165, 275].map(x => <SVGTextElement>svg.child(this.g, "text", { class: "sim-text-pin", x: x, y: 345 }));
+
+            this.shakeButton = svg.child(this.g, "circle", {
+                cx: 404,
+                cy: 115,
+                r: 12,
+                class: "sim-shake",
+            }) as SVGCircleElement;
+            this.shakeButton.style.visibility = "hidden";
 
             this.buttonsOuter = []; this.buttons = [];
 
