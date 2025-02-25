@@ -222,6 +222,9 @@ path.sim-board {
     ];
     const MB_WIDTH = 500;
     const MB_HEIGHT = 408;
+
+    const LIGHT_LEVEL_BUTTON_POSITION_Y = 50;
+    const LIGHT_LEVEL_BUTTON_RADIUS = 35;
     export interface IBoardTheme {
         highContrast?: boolean;
         accent?: string;
@@ -307,14 +310,18 @@ path.sim-board {
         private rssi: SVGTextElement;
         private lightLevelButton: SVGCircleElement;
         private lightLevelGradient: SVGLinearGradientElement;
+        private lightLevelInittialized = false;
         private lightLevelText: SVGTextElement;
         private thermometerGradient: SVGLinearGradientElement;
         private thermometer: SVGRectElement;
+        private thermometerInitialized = false;
         private thermometerText: SVGTextElement;
         private soundLevelGradient: SVGLinearGradientElement;
         private soundLevel: SVGRectElement;
+        private soundLevelInitialized = false;
         private soundLevelText: SVGTextElement;
         private shakeButton: SVGCircleElement;
+        private shakeInitialized = false;
         private shakeText: SVGTextElement;
         private accTextX: SVGTextElement;
         private accTextY: SVGTextElement;
@@ -412,7 +419,8 @@ path.sim-board {
             } else {
                 svg.fills(this.heads.slice(1), theme.accent);
             }
-            if (this.shakeButton) svg.fill(this.shakeButton, theme.virtualButtonUp);
+
+            svg.fill(this.shakeButton, theme.virtualButtonUp);
 
             this.pinGradients.forEach(lg => svg.setGradientColors(lg, theme.pin, theme.pinActive));
             svg.setGradientColors(this.lightLevelGradient, theme.lightLevelOn, theme.lightLevelOff);
@@ -488,7 +496,7 @@ path.sim-board {
             if (state.accelerometerState.useShake && !this.shakeButton) {
                 this.shakeButton = svg.child(this.g, "circle", { cx: 404, cy: 115, r: 12, class: "sim-shake" }) as SVGCircleElement;
                 accessibility.makeFocusable(this.shakeButton);
-                svg.fill(this.shakeButton, this.props.theme.virtualButtonUp)
+                svg.fill(this.shakeButton, this.props.theme.virtualButtonUp);
                 pointerEvents.down.forEach(evid => this.shakeButton.addEventListener(evid, ev => {
                     let state = this.board;
                     svg.fill(this.shakeButton, this.props.theme.buttonDown);
@@ -496,12 +504,12 @@ path.sim-board {
                 this.shakeButton.addEventListener(pointerEvents.leave, ev => {
                     let state = this.board;
                     svg.fill(this.shakeButton, this.props.theme.virtualButtonUp);
-                })
+                });
                 this.shakeButton.addEventListener(pointerEvents.up, ev => {
                     let state = this.board;
                     svg.fill(this.shakeButton, this.props.theme.virtualButtonUp);
                     this.board.accelerometerState.shake();
-                })
+                });
                 accessibility.enableKeyboardInteraction(this.shakeButton, undefined, () => {
                     this.board.accelerometerState.shake();
                 });
@@ -587,18 +595,9 @@ path.sim-board {
 
             let tmin = -5;
             let tmax = 50;
-            if (!this.thermometer) {
-                let gid = "gradient-thermometer";
-                this.thermometerGradient = svg.linearGradient(this.defs, gid);
-                this.thermometer = <SVGRectElement>svg.child(this.g, "rect", {
-                    class: "sim-thermometer no-drag",
-                    x: 120,
-                    y: 110,
-                    width: 20,
-                    height: 160,
-                    rx: 5, ry: 5,
-                    fill: `url(#${gid})`
-                });
+            if (!this.thermometerInitialized) {
+                this.thermometerInitialized = true;
+                this.thermometer.style.visibility = "visible";
                 this.thermometerText = svg.child(this.g, "text", { class: 'sim-text', x: 58, y: 130 }) as SVGTextElement;
                 if (this.props.runtime)
                     this.props.runtime.environmentGlobals[pxsim.localization.lf("temperature")] = state.thermometerState.temperature;
@@ -659,19 +658,10 @@ path.sim-board {
 
             const tmin = 0 // state.microphoneState.min;
             const tmax = 255 //state.microphoneState.max;
-            if (!this.soundLevel) {
+            if (!this.soundLevelInitialized) {
+                this.soundLevelInitialized = true;
+                this.soundLevel.style.visibility = "visible";
                 const level = state.microphoneState.getLevel();
-                let gid = "gradient-soundlevel";
-                this.soundLevelGradient = svg.linearGradient(this.defs, gid);
-                this.soundLevel = <SVGRectElement>svg.child(this.g, "rect", {
-                    class: "sim-thermometer no-drag",
-                    x: 360,
-                    y: 110,
-                    width: 20,
-                    height: 160,
-                    rx: 5, ry: 5,
-                    fill: `url(#${gid})`
-                });
                 this.soundLevelText = svg.child(this.g, "text", { class: 'sim-text', x: 370, y: 90 }) as SVGTextElement;
                 if (this.props.runtime)
                     this.props.runtime.environmentGlobals[pxsim.localization.lf("sound level")] = state.microphoneState.getLevel();
@@ -837,23 +827,16 @@ path.sim-board {
             let state = this.board;
             if (!state || !state.lightSensorState.usesLightLevel) return;
 
-            if (!this.lightLevelButton) {
-                let gid = "gradient-light-level";
-                this.lightLevelGradient = svg.linearGradient(this.defs, gid)
-                let cy = 50;
-                let r = 35;
-                this.lightLevelButton = svg.child(this.g, "circle", {
-                    cx: `50px`, cy: `${cy}px`, r: `${r}px`,
-                    class: 'sim-light-level-button no-drag',
-                    fill: `url(#${gid})`
-                }) as SVGCircleElement;
+            if (!this.lightLevelInittialized) {
+                this.lightLevelInittialized = true;
+                this.lightLevelButton.style.visibility = "visible";
                 let pt = this.element.createSVGPoint();
                 svg.buttonEvents(this.lightLevelButton,
                     // move
                     (ev) => {
                         let pos = svg.cursorPoint(pt, this.element, ev);
-                        let rs = r / 2;
-                        let level = Math.max(0, Math.min(255, Math.floor((pos.y - (cy - rs)) / (2 * rs) * 255)));
+                        let rs = LIGHT_LEVEL_BUTTON_RADIUS / 2;
+                        let level = Math.max(0, Math.min(255, Math.floor((pos.y - (LIGHT_LEVEL_BUTTON_POSITION_Y - rs)) / (2 * rs) * 255)));
                         if (level != this.board.lightSensorState.lightLevel) {
                             this.board.lightSensorState.lightLevel = level;
                             this.applyLightLevel();
@@ -880,7 +863,7 @@ path.sim-board {
                             this.applyLightLevel();
                         }
                     });
-                this.lightLevelText = svg.child(this.g, "text", { x: 85, y: cy + r - 5, text: '', class: 'sim-text' }) as SVGTextElement;
+                this.lightLevelText = svg.child(this.g, "text", { x: 85, y: LIGHT_LEVEL_BUTTON_POSITION_Y + LIGHT_LEVEL_BUTTON_RADIUS - 5, text: '', class: 'sim-text' }) as SVGTextElement;
                 if (this.props.runtime)
                     this.props.runtime.environmentGlobals[pxsim.localization.lf("lightLevel")] = state.lightSensorState.lightLevel;
                 this.updateTheme();
@@ -966,7 +949,7 @@ path.sim-board {
 
         private buildDom() {
             this.domHardwareVersion = 1;
-            this.element = <SVGSVGElement>svg.elt("svg")
+            this.element = <SVGSVGElement>svg.elt("svg");
             svg.hydrate(this.element, {
                 "version": "1.0",
                 "viewBox": `0 0 ${MB_WIDTH} ${MB_HEIGHT}`,
@@ -997,7 +980,7 @@ path.sim-board {
             let glow = svg.child(this.defs, "filter", { id: "filterglow", x: "-5%", y: "-5%", width: "120%", height: "120%" });
             svg.child(glow, "feGaussianBlur", { stdDeviation: "5", result: "glow" });
             let merge = svg.child(glow, "feMerge", {});
-            for (let i = 0; i < 3; ++i) svg.child(merge, "feMergeNode", { in: "glow" })
+            for (let i = 0; i < 3; ++i) svg.child(merge, "feMergeNode", { in: "glow" });
 
             // outline
             this.pkg = svg.path(this.g, "sim-board", "M498,31.9C498,14.3,483.7,0,466.1,0H31.9C14.3,0,0,14.3,0,31.9v342.2C0,391.7,14.3,406,31.9,406h434.2c17.6,0,31.9-14.3,31.9-31.9V31.9z M14.3,206.7c-2.7,0-4.8-2.2-4.8-4.8c0-2.7,2.2-4.8,4.8-4.8c2.7,0,4.8,2.2,4.8,4.8C19.2,204.6,17,206.7,14.3,206.7z M486.2,206.7c-2.7,0-4.8-2.2-4.8-4.8c0-2.72.2-4.8,4.8-4.8c2.7,0,4.8,2.2,4.8,4.8C491,204.6,488.8,206.7,486.2,206.7z");
@@ -1025,24 +1008,79 @@ path.sim-board {
                     let k = i * 5 + j;
                     this.ledsOuter.push(svg.child(this.g, "rect", { class: "sim-led-back", x: ledleft, y: ledtop, width: 10, height: 20, rx: 2, ry: 2 }));
                     let led = svg.child(this.g, "rect", { class: "sim-led", x: ledleft - 2, y: ledtop - 2, width: 14, height: 24, rx: 3, ry: 3, title: `(${j},${i})` });
-                    svg.filter(led, `url(#ledglow)`)
+                    svg.filter(led, `url(#ledglow)`);
                     this.leds.push(led);
                 }
             }
 
+            // Order of construction affects tab ordering
+            // light level here
+            this.buildLightLevelElement();
+            this.buildHeadElement();
+            this.buildThermometerElement();
+            this.buildSoundLevel();
+            this.buildShakeElement();
+            this.buildButtonElements();
+            this.buildPinElements();
+        }
+
+        private buildSoundLevel() {
+            let gid = "gradient-soundlevel";
+            this.soundLevelGradient = svg.linearGradient(this.defs, gid);
+            this.soundLevel = <SVGRectElement>svg.child(this.g, "rect", {
+                class: "sim-thermometer no-drag",
+                x: 360,
+                y: 110,
+                width: 20,
+                height: 160,
+                rx: 5, ry: 5,
+                fill: `url(#${gid})`
+            });
+            this.soundLevel.style.visibility = "hidden";
+        }
+
+        private buildThermometerElement() {
+            let gid = "gradient-thermometer";
+            this.thermometerGradient = svg.linearGradient(this.defs, gid);
+            this.thermometer = <SVGRectElement>svg.child(this.g, "rect", {
+                class: "sim-thermometer no-drag",
+                x: 120,
+                y: 110,
+                width: 20,
+                height: 160,
+                rx: 5, ry: 5,
+                fill: `url(#${gid})`
+            });
+            this.thermometer.style.visibility = "hidden";
+        }
+
+        private buildLightLevelElement() {
+            let gid = "gradient-light-level";
+            this.lightLevelGradient = svg.linearGradient(this.defs, gid);
+            this.lightLevelButton = svg.child(this.g, "circle", {
+                cx: `50px`, cy: `${LIGHT_LEVEL_BUTTON_POSITION_Y}px`, r: `${LIGHT_LEVEL_BUTTON_RADIUS}px`,
+                class: 'sim-light-level-button no-drag',
+                fill: `url(#${gid})`
+            }) as SVGCircleElement;
+            this.lightLevelButton.style.visibility = "hidden";
+        }
+
+        private buildHeadElement() {
             // head
             this.head = <SVGGElement>svg.child(this.g, "g", { class: "sim-head" });
-            svg.child(this.head, "ellipse", { cx: 251, cy: 75, rx:75, ry: 35, fill: "transparent" })
+            svg.child(this.head, "ellipse", { cx: 251, cy: 75, rx: 75, ry: 35, fill: "transparent" });
             this.headParts = <SVGGElement>svg.child(this.head, "g", {});
-            this.heads = []
+            this.heads = [];
             // background
             this.heads.push(svg.path(this.headParts, "sim-button", "M 269.9 50.2 L 269.9 50.2 l -39.5 0 v 0 c -14.1 0.1 -24.6 10.7 -24.6 24.8 c 0 13.9 10.4 24.4 24.3 24.7 v 0 h 39.6 c 14.2 0 24.8 -10.6 24.8 -24.7 C 294.5 61 284 50.3 269.9 50.2 M 269.7 89.2"));
             // shapes
             this.heads.push(svg.path(this.headParts, "sim-theme", "M269.9,50.2L269.9,50.2l-39.5,0v0c-14.1,0.1-24.6,10.7-24.6,24.8c0,13.9,10.4,24.4,24.3,24.7v0h39.6c14.2,0,24.8-10.6,24.8-24.7C294.5,61,284,50.3,269.9,50.2 M269.7,89.2L269.7,89.2l-39.3,0c-7.7-0.1-14-6.4-14-14.2c0-7.8,6.4-14.2,14.2-14.2h39.1c7.8,0,14.2,6.4,14.2,14.2C283.9,82.9,277.5,89.2,269.7,89.2"));
             this.heads.push(svg.path(this.headParts, "sim-theme", "M230.6,69.7c-2.9,0-5.3,2.4-5.3,5.3c0,2.9,2.4,5.3,5.3,5.3c2.9,0,5.3-2.4,5.3-5.3C235.9,72.1,233.5,69.7,230.6,69.7"));
             this.heads.push(svg.path(this.headParts, "sim-theme", "M269.7,80.3c2.9,0,5.3-2.4,5.3-5.3c0-2.9-2.4-5.3-5.3-5.3c-2.9,0-5.3,2.4-5.3,5.3C264.4,77.9,266.8,80.3,269.7,80.3"));
-            this.headText = <SVGTextElement>svg.child(this.g, "text", { x: 160, y: 60, class: "sim-text" })
+            this.headText = <SVGTextElement>svg.child(this.g, "text", { x: 160, y: 60, class: "sim-text" });
+        }
 
+        private buildPinElements() {
             // https://www.microbit.co.uk/device/pins
             // P0, P1, P2
             this.pins = [
@@ -1056,7 +1094,7 @@ path.sim-board {
 
             pins4onXs.forEach(x => {
                 this.pins.push(svg.child(this.g, "rect", { x: x, y: 356.7, width: 10, height: 50, class: "sim-pin" }));
-            })
+            });
             this.pins.push(svg.path(this.g, "sim-pin", "M483.6,402c8.2-5,14.4-14.4,14.4-25.1v-19.2h-14.4V402z"));
             this.pins.push(svg.path(this.g, "sim-pin", "M359.9,317.3c-12.8,0-22.1,10.3-23.1,23.1V406H383v-65.6C383,327.7,372.7,317.3,359.9,317.3z M360,360.1c-10.7,0-19.3-8.6-19.3-19.3c0-10.7,8.6-19.3,19.3-19.3c10.7,0,19.3,8.7,19.3,19.3C379.3,351.5,370.7,360.1,360,360.1z"));
             this.pins.push(svg.path(this.g, "sim-pin", "M458,317.6c-13,0-23.6,10.6-23.6,23.6c0,0,0,0.1,0,0.1h0V406H469c4.3,0,8.4-1,12.6-2.7v-60.7c0-0.4,0-0.9,0-1.3C481.6,328.1,471,317.6,458,317.6z M457.8,360.9c-10.7,0-19.3-8.6-19.3-19.3c0-10.7,8.6-19.3,19.3-19.3c10.7,0,19.3,8.7,19.3,19.3C477.1,352.2,468.4,360.9,457.8,360.9z"));
@@ -1064,21 +1102,33 @@ path.sim-board {
             this.pins.forEach((p, i) => svg.hydrate(p, { title: pinTitles[i] }));
 
             this.pinGradients = this.pins.map((pin, i) => {
-                let gid = "gradient-pin-" + i
-                let lg = svg.linearGradient(this.defs, gid)
+                let gid = "gradient-pin-" + i;
+                let lg = svg.linearGradient(this.defs, gid);
                 pin.setAttribute("fill", `url(#${gid})`);
                 return lg;
-            })
+            });
 
             this.pinTexts = [67, 165, 275].map(x => <SVGTextElement>svg.child(this.g, "text", { class: "sim-text-pin", x: x, y: 345 }));
+        }
 
+        private buildShakeElement() {
+            this.shakeButton = svg.child(this.g, "circle", {
+                cx: 404,
+                cy: 115,
+                r: 12,
+                class: "sim-shake",
+            }) as SVGCircleElement;
+            this.shakeButton.style.visibility = "hidden";
+        }
+
+        private buildButtonElements() {
             this.buttonsOuter = []; this.buttons = [];
 
             const outerBtn = (left: number, top: number, label: string) => {
                 const btnr = 4;
                 const btnw = 56.2;
                 const btnn = 6;
-                const btnnm = 10
+                const btnnm = 10;
                 let btng = svg.child(this.g, "g", { class: "sim-button-group" });
                 accessibility.makeFocusable(btng);
                 accessibility.setAria(btng, "button", label);
@@ -1111,7 +1161,8 @@ path.sim-board {
             svg.path(this.g, "sim-label", "M368.5,385.9h-3.1l-5.1-14.3h3.5l3.1,10.1l3.1-10.1h3.6L368.5,385.9z")
             svg.path(this.g, "sim-label", "M444.4,378.3h7.4v2.5h-1.5c-0.6,3.3-3,5.5-7.1,5.5c-4.8,0-7.5-3.5-7.5-7.5c0-3.9,2.8-7.5,7.5-7.5c3.8,0,6.4,2.3,6.6,5h-3.5c-0.2-1.1-1.4-2.2-3.1-2.2c-2.7,0-4.1,2.3-4.1,4.7c0,2.5,1.4,4.7,4.4,4.7c2,0,3.2-1.2,3.4-2.7h-2.5V378.3z")
             svg.path(this.g, "sim-label", "M461.4,380.9v-9.3h3.3v14.3h-3.5l-5.2-9.2v9.2h-3.3v-14.3h3.5L461.4,380.9z")
-            svg.path(this.g, "sim-label", "M472.7,371.6c4.8,0,7.5,3.5,7.5,7.2s-2.7,7.2-7.5,7.2h-5.3v-14.3H472.7z M470.8,374.4v8.6h1.8c2.7,0,4.2-2.1,4.2-4.3s-1.6-4.3-4.2-4.3H470.8z")
+            svg.path(this.g, "sim-label", "M472.7,371.6c4.8,0,7.5,3.5,7.5,7.2s-2.7,7.2-7.5,7.2h-5.3v-14.3H472.7z M470.8,374.4v8.6h1.8c2.7,0,4.2-2.1,4.2-4.3s-1.6-4.3-4.2-4.3H470.8z");
+
         }
 
         private updateHardwareVersion() {
