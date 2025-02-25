@@ -1014,7 +1014,6 @@ path.sim-board {
             }
 
             // Order of construction affects tab ordering
-            // light level here
             this.buildLightLevelElement();
             this.buildHeadElement();
             this.buildThermometerElement();
