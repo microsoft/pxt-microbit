@@ -310,7 +310,7 @@ path.sim-board {
         private rssi: SVGTextElement;
         private lightLevelButton: SVGCircleElement;
         private lightLevelGradient: SVGLinearGradientElement;
-        private lightLevelInittialized = false;
+        private lightLevelInitialized = false;
         private lightLevelText: SVGTextElement;
         private thermometerGradient: SVGLinearGradientElement;
         private thermometer: SVGRectElement;
@@ -827,8 +827,8 @@ path.sim-board {
             let state = this.board;
             if (!state || !state.lightSensorState.usesLightLevel) return;
 
-            if (!this.lightLevelInittialized) {
-                this.lightLevelInittialized = true;
+            if (!this.lightLevelInitialized) {
+                this.lightLevelInitialized = true;
                 this.lightLevelButton.style.visibility = "visible";
                 let pt = this.element.createSVGPoint();
                 svg.buttonEvents(this.lightLevelButton,
