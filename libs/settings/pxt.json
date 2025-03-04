@@ -1,7 +1,0 @@
-{
-    "hidden": true,
-    "disablesVariants": [
-        "mbdal"
-    ],
-    "additionalFilePath": "../../node_modules/pxt-common-packages/libs/settings"
-}

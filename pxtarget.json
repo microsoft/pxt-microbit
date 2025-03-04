@@ -13,7 +13,7 @@
         "libs/servo",
         "libs/radio-broadcast",
         "libs/microphone",
-        "libs/settings",
+        "libs/settings8",
         "libs/flashlog",
         "libs/datalogger",
         "libs/bitmap",

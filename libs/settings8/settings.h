@@ -1,0 +1,1 @@
+#define SETTINGS_SIZE (8 * 1024)

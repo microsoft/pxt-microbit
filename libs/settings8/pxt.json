@@ -1,0 +1,26 @@
+{
+    "name": "settings8",
+    "description": "Settings storage in internal flash",
+    "files": [
+        "README.md",
+        "RAFFS.cpp",
+        "RAFFS.h",
+        "Flash.h",
+        "STM32Flash.cpp",
+        "SAMDFlash.cpp",
+        "NRF52Flash.cpp",
+        "RP2040Flash.cpp",
+        "settings.h",
+        "settings.cpp",
+        "settings.ts",
+        "shims.d.ts"
+    ],
+    "hidden": true,
+    "disablesVariants": [
+        "mbdal"
+    ],
+    "dependencies": {
+        "core": "file:../core"
+    },
+     "additionalFilePath": "../../node_modules/pxt-common-packages/libs/settings"
+}
