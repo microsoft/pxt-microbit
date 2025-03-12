@@ -628,12 +628,14 @@ path.sim-board {
                     (ev) => {
                         let charCode = (typeof ev.which == "number") ? ev.which : ev.keyCode
                         if (charCode === 40 || charCode === 37) { // Down/Left arrow
+                            ev.preventDefault();
                             state.thermometerState.temperature--;
                             if (state.thermometerState.temperature < -5) {
                                 state.thermometerState.temperature = 50;
                             }
                             this.updateTemperature();
                         } else if (charCode === 38 || charCode === 39) { // Up/Right arrow
+                            ev.preventDefault();
                             state.thermometerState.temperature++;
                             if (state.thermometerState.temperature > 50) {
                                 state.thermometerState.temperature = -5;
@@ -692,9 +694,11 @@ path.sim-board {
                     (ev) => {
                         let charCode = (typeof ev.which == "number") ? ev.which : ev.keyCode
                         if (charCode === 40 || charCode === 37) { // Down/Left arrow
+                            ev.preventDefault();
                             state.microphoneState.setLevel(state.microphoneState.getLevel() - 1);
                             this.updateMicrophone();
                         } else if (charCode === 38 || charCode === 39) { // Up/Right arrow
+                            ev.preventDefault();
                             state.microphoneState.setLevel(state.microphoneState.getLevel() + 1)
                             this.updateMicrophone();
                         }
@@ -879,12 +883,14 @@ path.sim-board {
                     (ev) => {
                         let charCode = (typeof ev.which == "number") ? ev.which : ev.keyCode
                         if (charCode === 40 || charCode === 37) { // Down/Left arrow
+                            ev.preventDefault();
                             this.board.lightSensorState.lightLevel--;
                             if (this.board.lightSensorState.lightLevel < 0) {
                                 this.board.lightSensorState.lightLevel = 255;
                             }
                             this.applyLightLevel();
                         } else if (charCode === 38 || charCode === 39) { // Up/Right arrow
+                            ev.preventDefault();
                             this.board.lightSensorState.lightLevel++;
                             if (this.board.lightSensorState.lightLevel > 255) {
                                 this.board.lightSensorState.lightLevel = 0;
@@ -1428,12 +1434,14 @@ path.sim-board {
                         let pin = state.edgeConnectorState.pins[index];
 
                         if (charCode === 40 || charCode === 37) { // Down/Left arrow
+                            ev.preventDefault();
                             pin.value -= 10;
                             if (pin.value < 0) {
                                 pin.value = 1023;
                             }
                             this.updatePin(pin, index);
                         } else if (charCode === 38 || charCode === 39) { // Up/Right arrow
+                            ev.preventDefault();
                             pin.value += 10;
                             if (pin.value > 1023) {
                                 pin.value = 0;
