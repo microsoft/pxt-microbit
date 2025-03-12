@@ -500,8 +500,9 @@ path.sim-board {
 
         private updateGestures() {
             let state = this.board;
-            if (state.accelerometerState.useShake && !this.shakeButton) {
-                this.shakeButton = svg.child(this.g, "circle", { cx: 404, cy: 115, r: 12, class: "sim-shake" }) as SVGCircleElement;
+            if (state.accelerometerState.useShake && !this.shakeInitialized) {
+                this.shakeInitialized = true;
+                this.shakeButton.style.visibility = "visible";
                 accessibility.makeFocusable(this.shakeButton);
                 svg.fill(this.shakeButton, this.props.theme.virtualButtonUp);
                 pointerEvents.down.forEach(evid => this.shakeButton.addEventListener(evid, ev => {
