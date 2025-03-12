@@ -143,6 +143,7 @@ namespace pxsim.visuals {
             outline: none;
         }
         *:focus .sim-button-outer,
+        .sim-antenna-outer:focus,
         .sim-pin:focus,
         .sim-thermometer:focus,
         .sim-shake:focus,
@@ -311,7 +312,8 @@ path.sim-board {
         private leds: SVGElement[];
         private microphoneLed: SVGElement;
         private systemLed: SVGCircleElement;
-        private antenna: SVGPolylineElement;
+        private antenna: SVGElement;
+        private antennaInitialized = false;
         private rssi: SVGTextElement;
         private lightLevelButton: SVGCircleElement;
         private lightLevelGradient: SVGLinearGradientElement;
@@ -758,31 +760,52 @@ path.sim-board {
 
         private lastAntennaFlash: number = 0;
         public flashAntenna() {
-            if (!this.antenna) {
+            if (!this.antennaInitialized) {
+                this.antenna.style.visibility = "visible";
+                this.antennaInitialized = true;
                 let ax = 380;
                 let dax = 18;
-                let ayt = 10;
-                let ayb = 40;
+                ax += dax * 5;
                 const wh = dax * 5;
-                const antenaBackground = svg.child(this.g, "rect", { x: ax, y: ayt, width: wh, height: ayb - ayt, fill: "transparent" });
-                this.antenna = <SVGPolylineElement>svg.child(this.g, "polyline", { class: "sim-antenna", points: `${ax},${ayb} ${ax},${ayt} ${ax += dax},${ayt} ${ax},${ayb} ${ax += dax},${ayb} ${ax},${ayt} ${ax += dax},${ayt} ${ax},${ayb} ${ax += dax},${ayb} ${ax},${ayt} ${ax += dax},${ayt}` })
+                const valueMin = -128;
+                const valueMax = -42;
+                const clamp = (val: number) => Math.max(valueMin, Math.min(valueMax, val));
 
                 const pt = this.element.createSVGPoint();
-                const evh = (ev: MouseEvent) => {
+                const mouseEventHandler = (ev: MouseEvent) => {
                     const state = this.board;
                     if (!state) return;
                     const pos = svg.cursorPoint(pt, this.element, ev);
-                    const rs = Math.max(-128, Math.min(-42, (-138 + (pos.x - ax + wh) / wh * 100) | 0));
+                    const rs = clamp((-138 + (pos.x - ax + wh) / wh * 100) | 0);
                     this.board.radioState.datagram.rssi = rs;
                     this.updateRSSI();
                 };
-                svg.buttonEvents(antenaBackground, evh, evh, evh, (ev) => { })
-                svg.buttonEvents(this.antenna, evh, evh, evh, (ev) => { })
+                const keyboardEventHandler = (ev: KeyboardEvent) => {
+                    let rssiVal = 0;
+                    let charCode = (typeof ev.which == "number") ? ev.which : ev.keyCode
+                    if (charCode === 40 || charCode === 37) { // Down/Left arrow
+                        rssiVal = -1;
+                    } else if (charCode === 38 || charCode === 39) { // Up/Right arrow
+                        rssiVal = +1;
+                    }
+                    if (rssiVal !== 0) {
+                        ev.preventDefault();
+
+                        let newRssi = this.board.radioState.datagram.rssi + rssiVal;
+                        newRssi = clamp(newRssi);
+                        this.board.radioState.datagram.rssi = newRssi;
+                        this.updateRSSI();
+                    }
+                };
+
+                svg.buttonEvents(this.antenna.children[0], mouseEventHandler, mouseEventHandler, mouseEventHandler, () => { });
+                svg.buttonEvents(this.antenna.children[1], mouseEventHandler, mouseEventHandler, mouseEventHandler, () => { });
+                this.antenna.addEventListener('keydown', keyboardEventHandler);
 
                 accessibility.makeFocusable(this.antenna);
                 accessibility.setAria(this.antenna, "slider", "RSSI");
-                this.antenna.setAttribute("aria-valuemin", "-128");
-                this.antenna.setAttribute("aria-valuemax", "-42");
+                this.antenna.setAttribute("aria-valuemin", `${valueMin}`);
+                this.antenna.setAttribute("aria-valuemax", `${valueMax}`);
                 this.antenna.setAttribute("aria-orientation", "horizontal");
                 this.antenna.setAttribute("aria-valuenow", "");
                 accessibility.setLiveContent("");
@@ -790,7 +813,7 @@ path.sim-board {
             let now = Date.now();
             if (now - this.lastAntennaFlash > 200) {
                 this.lastAntennaFlash = now;
-                svg.animate(this.antenna, 'sim-flash-stroke')
+                svg.animate(this.antenna.children[1] as SVGElement, 'sim-flash-stroke')
             }
             this.updateRSSI();
         }
@@ -1020,12 +1043,35 @@ path.sim-board {
 
             // Order of construction affects tab ordering
             this.buildLightLevelElement();
+            this.buildAntennaElement();
             this.buildHeadElement();
             this.buildThermometerElement();
             this.buildSoundLevel();
             this.buildShakeElement();
             this.buildButtonElements();
             this.buildPinElements();
+        }
+
+        private buildAntennaElement() {
+            this.antenna = svg.child(this.g, "g", { class: "sim-antenna-outer" });
+
+            let ax = 380;
+            const dax = 18;
+            const ayt = 10;
+            const ayb = 40;
+            const wh = dax * 5;
+            const borderOffset = 3;
+
+            svg.child(this.antenna, "rect", {
+                x: ax - borderOffset,
+                y: ayt - borderOffset,
+                width: wh + 2 * borderOffset,
+                height: ayb - ayt + 2 * borderOffset,
+                fill: "transparent",
+                rx: 2
+            });
+            svg.child(this.antenna, "polyline", { class: "sim-antenna", points: `${ax},${ayb} ${ax},${ayt} ${ax += dax},${ayt} ${ax},${ayb} ${ax += dax},${ayb} ${ax},${ayt} ${ax += dax},${ayt} ${ax},${ayb} ${ax += dax},${ayb} ${ax},${ayt} ${ax += dax},${ayt}` });
+            this.antenna.style.visibility = "hidden";
         }
 
         private buildSoundLevel() {
