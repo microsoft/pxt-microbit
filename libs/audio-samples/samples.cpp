@@ -13,12 +13,11 @@ namespace samples {
  * Set the sample rate
  */
 //%
-int setSampleRate(int sampleRate) {
+void setSampleRate(int sampleRate) {
     #if MICROBIT_CODAL
-        return uBit.audio.sampleSource->setSampleRate(sampleRate);
+        uBit.audio.sampleSource->setSampleRate(sampleRate);
     #else
         target_panic(PANIC_VARIANT_NOT_SUPPORTED);
-        return MICROBIT_NOT_SUPPORTED;
     #endif
 }
 
