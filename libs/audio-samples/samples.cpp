@@ -13,37 +13,34 @@ namespace samples {
  * Set the sample rate
  */
 //%
-void setSampleRate(int sampleRate) {
+void setSampleRate(int src, int sampleRate) {
     #if MICROBIT_CODAL
-        uBit.audio.sampleSource->setSampleRate(sampleRate);
+        if (0 <= src && src <4)
+            uBit.audio.sampleSource[src]->setSampleRate(sampleRate);
+    #else
+        target_panic(PANIC_VARIANT_NOT_SUPPORTED);
+    #endif
+}
+
+bool isValidSample(Buffer buf) {
+    if (!buf)
+        return false;
+
+    // TODO: other checks here
+    return true;
+}
+
+/**
+ * Play a sample
+ */
+//%
+void playAsync(int src, Buffer buf) {
+    #if MICROBIT_CODAL
+        if (0 <= src && src <4 && isValidSample(buf))
+            uBit.audio.sampleSource[src]->playAsync(buf->data, buf->length);
     #else
         target_panic(PANIC_VARIANT_NOT_SUPPORTED);
     #endif
 }
 
 }
-
-/*
-main()
-{
-    uBit.init();
-    uBit.audio.enable();
-   
-    while(1)
-    {
-        uBit.sleep(2000);
-       
-        uBit.audio.sampleSource[0]->setSampleRate(11000);
-        uBit.audio.sampleSource[0]->playAsync(strings9, sizeof(strings9));
-        uBit.audio.sampleSource[1]->setSampleRate(11000);
-        uBit.audio.sampleSource[1]->playAsync(strings9, sizeof(strings9));
-        uBit.audio.sampleSource[2]->setSampleRate(6000);
-        uBit.audio.sampleSource[2]->playAsync(strings9, sizeof(strings9));
-        uBit.audio.sampleSource[3]->setSampleRate(13000);
-        uBit.audio.sampleSource[3]->playAsync(strings9, sizeof(strings9));      
-    }
- 
-    return 0;
-}
-
-*/
