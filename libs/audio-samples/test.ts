@@ -1,5 +1,7 @@
 let strings9 = hex`deadbeef`
 
+music.setVolume(100)
+
 while(1)
 {
 basic.pause(2000)
