@@ -10,5 +10,8 @@
         "samples.cpp",
         "shims.d.ts"
     ],
+    "testFiles": [
+        "test.ts"
+    ],
     "public": true
 }
