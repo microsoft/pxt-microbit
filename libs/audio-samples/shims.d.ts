@@ -2,6 +2,12 @@
 declare namespace samples {
 
     /**
+     * Enable audio
+     */
+    //% shim=samples::enable
+    function enable(): void;
+
+    /**
      * Set the sample rate
      */
     //% shim=samples::setSampleRate

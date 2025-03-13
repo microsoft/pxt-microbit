@@ -10,6 +10,14 @@ using namespace pxt;
 namespace samples {
 
 /**
+ * Enable audio
+ */
+//%
+void enable() {
+    uBit.audio.enable();
+}
+
+/**
  * Set the sample rate
  */
 //%
