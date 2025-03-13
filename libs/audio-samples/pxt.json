@@ -1,0 +1,14 @@
+{
+    "name": "audio-samples",
+    "description": "Play audio samples. micro:bit (V2) only",
+    "dependencies": {
+        "core": "file:../core"
+    },
+    "weight": 10,
+    "files": [
+        "samples.ts",
+        "samples.cpp",
+        "shims.d.ts"
+    ],
+    "public": true
+}
