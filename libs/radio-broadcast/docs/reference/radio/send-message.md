@@ -10,27 +10,27 @@ radio.sendMessage(0);
 
 * **msg**: a coded message.
 
+## Example
 
-## Example: Broadcasting heart or skull
-
-Sends a ``heart`` message when ``A`` is pressed, ``skull`` when ``B`` is pressed. On the side, display heart or skull for the message.
+Send a ``Hello`` message when button ``A`` is pressed, ``Goodbye`` when button ``B`` is pressed. If the messages are received, display either a ``heart`` or a ``scissor`` for the messages.
 
 ```blocks
 enum RadioMessage {
-    heart,
-    skull
+    message1 = 49434,
+    Hello = 49337,
+    Goodbye = 16885
 }
 input.onButtonPressed(Button.A, function () {
-    radio.sendMessage(RadioMessage.heart)
+    radio.sendMessage(RadioMessage.Hello)
 })
-input.onButtonPressed(Button.B, function () {
-    radio.sendMessage(RadioMessage.skull)
-})
-radio.onReceivedMessage(RadioMessage.heart, function () {
+radio.onReceivedMessage(RadioMessage.Hello, function () {
     basic.showIcon(IconNames.Heart)
 })
-radio.onReceivedMessage(RadioMessage.skull, function () {
-    basic.showIcon(IconNames.Skull)
+input.onButtonPressed(Button.B, function () {
+    radio.sendMessage(RadioMessage.Goodbye)
+})
+radio.onReceivedMessage(RadioMessage.Goodbye, function () {
+    basic.showIcon(IconNames.Scissors)
 })
 ```
 
