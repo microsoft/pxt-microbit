@@ -473,6 +473,7 @@
             "siyeenove/pxt_mcar": { "tags": [ "Robotics" ] },
             "elecfreaks/xgo-rider": { "tags": [ "Robotics" ] },
             "dfrobot/pxt-dfrobot_creative-robotics-kit": { "tags": [ "Robotics" ] },
+            "team-bp/pxt-bplab": { "tags": [ "Science" ] },
             "microsoft/pxt-simx-sample": {
                 "simx": {
                     "sha": "7301f5900879b85127482d79bab48f03c25690a8",
