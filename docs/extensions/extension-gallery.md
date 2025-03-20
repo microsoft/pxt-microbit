@@ -380,6 +380,10 @@ Many extensions are available to work with interface kits, add-on hardware, or o
 
 ```codecard
 [{
+   "name": "BP Lab micro:bit Kit",
+   "url": "/pkg/team-bp/pxt-bplab",
+   "cardType": "package"
+}, {
    "name": "Smarthon Smart City",
    "url": "/pkg/SMARTHON/pxt-smartcity",
    "cardType": "package"
