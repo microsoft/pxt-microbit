@@ -190,7 +190,7 @@
         "mbcodal": {
             "compile": {
                 "flashCodeAlign": 4096,
-                "flashUsableEnd": 487424,
+                "flashUsableEnd": 471040,
                 "flashEnd": 524288
             },
             "compileService": {
