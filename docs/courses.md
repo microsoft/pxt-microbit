@@ -116,8 +116,8 @@ Tutorials, lessons, and mini-courses about programming and computing.
   "imageUrl":"/static/courses/logic-lab.png"
 }, {
   "name": "CodeJoy Remote Robotics",
-  "description": "Interactive remote robotics and& coding classes for students and educators",
-  "url": "https://www.codejoyeducation.com",
+  "description": "Interactive remote robotics and coding classes for students and educators",
+  "url": "https://www.codejoy.org",
   "imageUrl": "/static/courses/codejoy.png"
 }]
 ```
