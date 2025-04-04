@@ -78,6 +78,21 @@
         "pxt-link-hover": "#204467",
         "pxt-focus-border": "#0078D4",
 
+        "pxt-success": "#2ECC71",
+        "pxt-pxt-success-foreground": "#000000",
+        "pxt-pxt-success-hover": "#22BE64",
+        "pxt-pxt-success-alpha10": "#2ECC7119",
+
+        "pxt-warning": "#FFD43A",
+        "pxt-warning-foreground": "#000000",
+        "pxt-warning-hover": "#FFCE21",
+        "pxt-warning-alpha10": "#FFD43A19",
+
+        "pxt-error": "#FF3A54",
+        "pxt-error-foreground": "#000000",
+        "pxt-error-hover": "#FF213E",
+        "pxt-error-alpha10": "#FF3A5419",
+
         "pxt-colors-purple-background": "#9932cc",
         "pxt-colors-purple-foreground": "#FFFFFF",
         "pxt-colors-purple-hover": "#7a28a3",
