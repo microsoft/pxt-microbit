@@ -404,6 +404,7 @@
             "stemhub/pxt-stemhubcity": { "tags": [ "Science" ] },
             "kittenbot/pxt-powerbrick": { "tags": [ "Science" ] },
             "microbit-foundation/pxt-microbit-v2-power": { "tags": [ "Software" ] },
+            "microbit-foundation/pxt-sound-level-db": { "tags": [ "Software" ] },
             "kittenbot/pxt-joyfrog": { "tags": [ "Gaming" ] },
             "kittenbot/pxt-sugar": { "tags": [ "Science" ] },
             "kittenbot/pxt-koi": { "tags": [ "Science" ] },
