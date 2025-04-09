@@ -488,8 +488,8 @@
             },
             "microbit-apps/display-shield": {
                 "simx": {
-                    "sha": "0825d56f78528c57af100a96abdfe2162f59945a",
-                    "devUrl": "http://localhost:3000"
+                    "sha": "",
+                    "devUrl": "https://microbit-apps.github.io/display-shield/"
                 }
             }
         },
