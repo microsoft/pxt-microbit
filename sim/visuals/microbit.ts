@@ -1312,6 +1312,7 @@ path.sim-board {
             this.attachPinsTouchEvents();
             this.attachABEvents();
             this.attachAPlusBEvents();
+            this.attachKeyboardEvents();
         }
 
         private attachIFrameEvents() {
@@ -1566,6 +1567,10 @@ path.sim-board {
                 this.board.bus.queue(bpState.abBtn.id, DAL.MICROBIT_BUTTON_EVT_UP);
                 this.board.bus.queue(bpState.abBtn.id, DAL.MICROBIT_BUTTON_EVT_CLICK);
             });
+        }
+
+        private attachKeyboardEvents() {
+            accessibility.postKeyboardEvent();
         }
     }
 }
