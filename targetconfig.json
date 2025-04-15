@@ -494,6 +494,13 @@
                     "sha": "0825d56f78528c57af100a96abdfe2162f59945a",
                     "devUrl": "http://localhost:3000"
                 }
+            },
+            "jacdac/pxt-jacdac": {
+                "simx": {
+                    "index": "tools/makecode-sim",
+                    "sha": "e4cf697882d1e170bdf2f86a56d4f0d50c5b7a3d",
+                    "devUrl": "http://localhost:3000"
+                }
             }
         },
         "approvedEditorExtensionUrls": [
