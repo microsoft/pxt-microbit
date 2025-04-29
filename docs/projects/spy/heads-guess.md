@@ -89,7 +89,7 @@ input.onGesture(Gesture.ScreenDown, function () {
 
 ## {Step 8}
 
-Add anonther event to run code when a gesture has the @boardname@ ``||input:screen||`` is
+Add another event to run code when a gesture has the @boardname@ ``||input:screen||`` is
 pointing ``||input:up||``. This is the gesture for a pass.
 
 ```spy
