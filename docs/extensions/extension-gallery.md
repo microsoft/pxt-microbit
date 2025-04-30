@@ -1076,6 +1076,10 @@ Many extensions are available to work with interface kits, add-on hardware, or o
   "url":"/pkg/microbit-foundation/pxt-microbit-v2-power",
   "cardType": "package"
 }, {
+  "name": "Sound Level in decibels (dB)",
+  "url":"/pkg/microbit-foundation/pxt-sound-level-db",
+  "cardType": "package"
+}, {
   "name": "DS3231 Real Time Clock",
   "url":"/pkg/AlexandreFrolov/DS3231",
   "cardType": "package"
