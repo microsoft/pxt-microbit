@@ -2,13 +2,24 @@
 
 ## {Introducing Sky @unplugged}
 
-🐷 Meet Sky, the pig! Sky can only communicate using [__*morse code*__](#morsecode "an alphabet composed of dots (short signals) and dashes (long signals)").
+🐷 Meet Sky, the pig! Sky can only communicate using __*Morse code*__.
 
 Luckily, you can use your @boardname@ with sound to talk to Sky 👋
 
 ![Morse chat banner message](/static/mb/projects/morse-chat.png)
 
 ## {Setup}
+
+Let's start by making a way to send Morse code messages.
+
+~hint What is Morse code? 🤷🏽
+
+---
+
+Morse code is an alphabet composed of dots (short signals) and dashes (long signals). The message
+"Hi there!" becomes ".... ..  - .... . .-. . -.-.--" in Morse code.
+
+hint~
 
 ► From the ``||input:Input||`` category in the toolbox, drag an ``||input:on logo [pressed]||`` container into to your workspace.  
 ► From the ``||radio:Radio||`` category, get ``||radio:radio send number [0]||`` and snap it into your empty ``||input:on logo [pressed]||`` container.
