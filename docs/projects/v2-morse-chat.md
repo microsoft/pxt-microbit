@@ -17,7 +17,7 @@ Let's start by making a way to send Morse code messages.
 ---
 
 Morse code is an alphabet composed of dots (short signals) and dashes (long signals). The message
-"Hi there!" is ".... ..  - .... . .-. . -.-.--" in Morse code.
+**"Hi there!"** is **".... ..  - .... . .-. . -.-.--"** in Morse code.
 
 hint~
 
