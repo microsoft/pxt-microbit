@@ -308,7 +308,7 @@
             "muselab/pxt-muselab-oled-v2": { "tags": [ "Lights and Display" ] },
             "microsoft/pxt-jacdac": {
                 "tags": [ "Science" ],
-                "upgrades": [ "min:v1.8.13" ]
+                "upgrades": [ "move:github:jacdac/pxt-jacdac#v1.9.35" ]
             },
             "microsoft/pxt-jacdac/accelerometer": {},
             "microsoft/pxt-jacdac/acidity": {},
@@ -496,6 +496,7 @@
                 }
             },
             "jacdac/pxt-jacdac": {
+                "upgrades": ["min:v1.9.35"],
                 "simx": {
                     "sha": "1992ffbd37a7e28604e65cc16efa78a827543199",
                     "devUrl": "https://jacdac.github.io/pxt-jacdac/"
