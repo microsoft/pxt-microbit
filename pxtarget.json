@@ -618,6 +618,11 @@
                 "hideMenuBar": true
             }
         },
+        "hidelanguage": {
+            "appTheme": {
+                "selectLanguage": false
+            }
+        },
         "androidapp": {
             "compile": {
                 "webUSB": false
