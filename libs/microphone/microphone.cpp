@@ -5,9 +5,6 @@
 #include "LevelDetectorSPL.h"
 #endif
 
-#define MICROPHONE_MIN 52.0f
-#define MICROPHONE_MAX 120.0f
-
 enum class DetectedSound {
     //% block="loud"
     Loud = 2,
@@ -51,12 +48,7 @@ void onSound(DetectedSound sound, Action handler) {
 //% group="micro:bit (V2)"
 int soundLevel() {
 #if MICROBIT_CODAL
-    LevelDetectorSPL* level = uBit.audio.levelSPL;
-    if (NULL == level)
-        return 0;
-    const int micValue = level->getValue();
-    const int scaled = max(MICROPHONE_MIN, min(micValue, MICROPHONE_MAX)) - MICROPHONE_MIN;
-    return min(0xff, scaled * 0xff / (MICROPHONE_MAX - MICROPHONE_MIN));
+    return uBit.audio.levelSPL->getValue();
 #else
     target_panic(PANIC_VARIANT_NOT_SUPPORTED);
     return 0;
@@ -78,13 +70,10 @@ void setSoundThreshold(SoundThreshold sound, int threshold) {
     LevelDetectorSPL* level = uBit.audio.levelSPL;
     if (NULL == level)
         return;
-
-    threshold = max(0, min(0xff, threshold));
-    const int scaled = MICROPHONE_MIN + threshold * (MICROPHONE_MAX - MICROPHONE_MIN) / 0xff;
     if (SoundThreshold::Loud == sound)
-        level->setHighThreshold(scaled);
+        level->setHighThreshold(threshold);
     else
-        level->setLowThreshold(scaled);
+        level->setLowThreshold(threshold);
 #else
     target_panic(PANIC_VARIANT_NOT_SUPPORTED);
 #endif
