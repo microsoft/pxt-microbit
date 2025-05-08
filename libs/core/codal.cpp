@@ -85,7 +85,6 @@ static void initCodal() {
     // TODO!!!
 #ifndef MICROBIT_CODAL
     uBit.messageBus.setListenerDeletionCallback(deleteListener);
-    uBit.audio.levelSPL->setUnit(LEVEL_DETECTOR_SPL_8BIT);
 #endif
 
     // repeat error 4 times and restart as needed
