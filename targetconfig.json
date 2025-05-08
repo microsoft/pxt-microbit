@@ -496,7 +496,6 @@
                 }
             },
             "jacdac/pxt-jacdac": {
-                "upgrades": ["min:v1.9.35"],
                 "simx": {
                     "sha": "1992ffbd37a7e28604e65cc16efa78a827543199",
                     "devUrl": "https://jacdac.github.io/pxt-jacdac/"
