@@ -6,13 +6,13 @@ Receive the next number sent by a @boardname@ in the same ``radio`` group.
 radio.receiveNumber();
 ```
 
-## ~ hint
+### ~ alert
 
-**Deprecated**
+#### Deprecated API
 
 This API has been deprecated! Use [on received number](/reference/radio/on-received-number) instead.
 
-## ~
+### ~
 
 ## Returns
 
