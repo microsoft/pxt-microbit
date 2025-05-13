@@ -10,7 +10,9 @@ input.runningTimeMicros()
 
 #### Running time maximum count
 
-The program running time counter can only count up to approximately 17 minutes of time (1,073,741,823 microseconds). After that, the running time will reset to zero and start counting up again. If a program is using the running time counter, it should rely on the counter for only this amount of time or less. Otherwise, the program will need to account for the reset and add the difference to any accumulated time it is counting.
+The program running time counter can only count up to approximately 17 minutes of time (1,073,741,823 microseconds). After that, the running time will reset to zero and start counting up again.
+
+Programs using the time counter should take this reset into account, even if they are only measuring short durations. The counter might reset while the program is running.
 
 ### ~
 
