@@ -16,6 +16,14 @@ namespace control {
     export function runInBackground(a: () => void) {
         control.inBackground(a);
     }
+    
+    /**
+     * Allow only one simulator
+     */
+    //% shim=control::singleSimulator
+    export function singleSimulator() { 
+
+    }
 
     /**
      * Returns the value of a C++ runtime constant

@@ -1,0 +1,8 @@
+{
+  "bitmap|block": "bitmap",
+  "helpers|block": "helpers",
+  "{id:category}Bitmap": "Bitmap",
+  "{id:category}Helpers": "Helpers",
+  "{id:category}ScreenBitmap": "ScreenBitmap",
+  "{id:category}_helpers_workaround": "_helpers_workaround"
+}

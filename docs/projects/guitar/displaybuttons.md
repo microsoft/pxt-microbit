@@ -37,7 +37,7 @@ Headphones
         . # . # .
         . # # # .
         `);
-input.onButtonPressed(Button.A, () => {});
+input.onButtonPressed(Button.A, function () {})
 music.playTone(Note.C, music.beat(BeatFraction.Quarter))
 music.rest(music.beat(BeatFraction.Whole))
 music.beat(BeatFraction.Quarter)
@@ -52,7 +52,7 @@ Open @homeurl@ in your web browser
         . # # # .
         . # . # .
         . # # # .
-        `);
+        `)
 ```
 From **Basics**, drag a **show LEDs** block into the coding area
   * Create a face with LEDs
@@ -63,7 +63,7 @@ Follow the instructions to move the code to your @boardname@.
 
 ## Step 2: Add Smiley LED Button Events
 ```blocks
-input.onButtonPressed(Button.A, () => {
+input.onButtonPressed(Button.A, function () {
     basic.showLeds(`
         . # . # .
         . . . . .
@@ -72,7 +72,7 @@ input.onButtonPressed(Button.A, () => {
         . # # # .
         `)
 })
-input.onButtonPressed(Button.B, () => {
+input.onButtonPressed(Button.B, function () {
     basic.showLeds(`
         . # . # .
         . . . . .
@@ -115,7 +115,7 @@ Connect the headphones with crocodile clips
 The **play tone** block allows a range letter note tones from **C** to **B5**.
 Songs are played using sequences notes.   Like the beginning of a birthday song (C, C, D, C, F, E).
 ```blocks
-input.onButtonPressed(Button.A, () => {
+input.onButtonPressed(Button.A, function () {
     music.playTone(Note.C, music.beat(BeatFraction.Quarter))
     music.rest(music.beat(BeatFraction.Whole))
     music.playTone(Note.C, music.beat(BeatFraction.Quarter))
@@ -133,7 +133,7 @@ input.onButtonPressed(Button.A, () => {
 ## ~
 ## Step 4: Add Tone Playing Events for Buttons A & B
 ```blocks
-input.onButtonPressed(Button.A, () => {
+input.onButtonPressed(Button.A, function () {
     basic.showLeds(`
         . # . # .
         . . . . .
@@ -143,7 +143,7 @@ input.onButtonPressed(Button.A, () => {
         `)
     music.playTone(Note.A, music.beat(BeatFraction.Whole))
 })
-input.onButtonPressed(Button.B, () => {
+input.onButtonPressed(Button.B, function () {
     basic.showLeds(`
         . # . # .
         . . . . .

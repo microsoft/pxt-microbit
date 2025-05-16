@@ -4,6 +4,14 @@
 
 The Earth exerts a gravitational force on all objects. A rocket must have a force greater than gravity to lift off. This force, acceleration, can be measured with a @boardname@ in 3 different directions or as a combined force of all three. A rocket made from a two liter soda bottle is made as a test vehicle to measure changes in acceleration as it lifts off and falls back to the earth.
 
+## Lesson concept
+
+### Use the micro:bit to measure the acceleration of a rocket
+
+Watch this short video to see how to use a micro:bit to record rocket acceleration.
+
+https://youtu.be/m9ntqxh8FvQ
+
 ## Contents
 
 * [Overview](/courses/ucp-science/rocket-acceleration/overview)
@@ -12,7 +20,4 @@ The Earth exerts a gravitational force on all objects. A rocket must have a forc
 * [Resources](/courses/ucp-science/rocket-acceleration/resources)
 
 <br/>
-
-| | | |
-|-|-|-|
-| Adapted from "[Rocket Acceleration z Radios](https://drive.google.com/open?id=1IyhCPdYQevKh3kHNgukSxlgdvZIKuzmIBjLSRnFS36o)" by [C Lyman](http://utahcoding.org) | | [![CC BY-NC-SA](https://licensebuttons.net/l/by-nc-sa/4.0/80x15.png)](https://creativecommons.org/licenses/by-nc-sa/4.0/) |
+Adapted from "[Rocket Acceleration z Radios](https://drive.google.com/open?id=1IyhCPdYQevKh3kHNgukSxlgdvZIKuzmIBjLSRnFS36o)" by [C Lyman](http://utahcoding.org) [![CC BY-NC-SA](https://licensebuttons.net/l/by-nc-sa/4.0/80x15.png)](https://creativecommons.org/licenses/by-nc-sa/4.0/)

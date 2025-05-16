@@ -81,7 +81,4 @@ http://www.csteachers.org/page/standards.
 * [Blog entry on Windows 10 MakeCode app](https://sites.google.com/view/utahcodingproject/blog/2018-jan-makecode-app)
 
 <br/>
-
-| | | |
-|-|-|-|
-| Adapted from "[Body Electrical & Waves](https://drive.google.com/open?id=1KofuOt0v1lmQhQyJux1XWDVoCDeslcjDFysjStFmo1w)" by [C Lyman](http://utahcoding.org) | | [![CC BY-NC-SA](https://licensebuttons.net/l/by-nc-sa/4.0/80x15.png)](https://creativecommons.org/licenses/by-nc-sa/4.0/) |
+Adapted from "[Body Electrical & Waves](https://drive.google.com/open?id=1KofuOt0v1lmQhQyJux1XWDVoCDeslcjDFysjStFmo1w)" by [C Lyman](http://utahcoding.org) [![CC BY-NC-SA](https://licensebuttons.net/l/by-nc-sa/4.0/80x15.png)](https://creativecommons.org/licenses/by-nc-sa/4.0/)

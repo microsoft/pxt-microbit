@@ -68,12 +68,14 @@
         "soundexpressions.ts",
         "soundexpressions.cpp",
         "parts/speaker.svg",
-        "parts/headphone.svg"
+        "parts/headphone.svg",
+        "playable.ts"
     ],
     "testFiles": [],
     "public": true,
     "dependencies": {},
     "dalDTS": {
+        "corePackage": ".",
         "compileServiceVariant": "mbcodal",
         "includeDirs": [
             "libraries/codal-core/inc",

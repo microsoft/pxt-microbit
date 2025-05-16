@@ -22,48 +22,40 @@
 
 #include "pxt.h"
 #include "MicroBit.h"
+
+#if MICROBIT_CODAL
 #include "StreamRecording.h"
+#endif
 
 using namespace pxt;
 
 namespace record {
 
+#if MICROBIT_CODAL
 static StreamRecording *recording = NULL;
 static SplitterChannel *splitterChannel = NULL;
 static MixerChannel *channel = NULL;
-
-void enableMic() {
-    uBit.audio.activateMic();
-    uBit.audio.mic->enable();
-}
-
-void disableMic() {
-    uBit.audio.mic->disable();
-    uBit.audio.deactivateMic();
-}
+#endif
 
 
-void checkEnv(int sampleRate = -1) {
+void checkEnv() {
+#if MICROBIT_CODAL
     if (recording == NULL) {
-        if (sampleRate == -1)
-            sampleRate = 11000;
+        int defaultSampleRate = 11000;
         MicroBitAudio::requestActivation();
 
         splitterChannel = uBit.audio.splitter->createChannel();
+        splitterChannel->requestSampleRate( defaultSampleRate );
 
         recording = new StreamRecording(*splitterChannel);
 
-        channel = uBit.audio.mixer.addChannel(*recording, sampleRate);
+        channel = uBit.audio.mixer.addChannel(*recording, defaultSampleRate);
 
         channel->setVolume(75.0);
         uBit.audio.mixer.setVolume(1000);
         uBit.audio.setSpeakerEnabled(true);
     }
-
-    if (recording != NULL && sampleRate != -1) {
-        channel = uBit.audio.mixer.addChannel(*recording, sampleRate);
-        channel->setVolume(75.0);
-    }
+#endif
 }
 
 /**
@@ -71,9 +63,12 @@ void checkEnv(int sampleRate = -1) {
  */
 //% promise
 void record() {
+#if MICROBIT_CODAL
     checkEnv();
-    enableMic();
-    recording->record();
+    recording->recordAsync();
+#else
+    target_panic(PANIC_VARIANT_NOT_SUPPORTED);
+#endif
 }
 
 /**
@@ -81,9 +76,12 @@ void record() {
  */
 //%
 void play() {
+#if MICROBIT_CODAL
     checkEnv();
-    disableMic();
-    recording->play();
+    recording->playAsync();
+#else
+    target_panic(PANIC_VARIANT_NOT_SUPPORTED);
+#endif
 }
 
 /**
@@ -91,9 +89,12 @@ void play() {
  */
 //%
 void stop() {
+#if MICROBIT_CODAL
     checkEnv();
-    disableMic();
     recording->stop();
+#else
+    target_panic(PANIC_VARIANT_NOT_SUPPORTED);
+#endif
 }
 
 /**
@@ -101,27 +102,20 @@ void stop() {
  */
 //%
 void erase() {
+#if MICROBIT_CODAL
     checkEnv();
-    disableMic();
     recording->erase();
+#endif
 }
 
 /**
  * Set sensitity of the microphone input
  */
 //%
-void setMicrophoneGain(int gain) {
-    switch (gain) {
-    case 1:
-        uBit.audio.processor->setGain(0.079f);
-        break;
-    case 2:
-        uBit.audio.processor->setGain(0.2f);
-        break;
-    case 3:
-        uBit.audio.processor->setGain(0.4f);
-        break;
-    }
+void setMicrophoneGain(float gain) {
+#if MICROBIT_CODAL
+    uBit.audio.processor->setGain(gain);
+#endif
 }
 
 /**
@@ -129,7 +123,12 @@ void setMicrophoneGain(int gain) {
  */
 //%
 int audioDuration(int sampleRate) {
+#if MICROBIT_CODAL
     return recording->duration(sampleRate);
+#else
+    target_panic(PANIC_VARIANT_NOT_SUPPORTED);
+    return MICROBIT_NOT_SUPPORTED;
+#endif
 }
 
 /**
@@ -137,7 +136,11 @@ int audioDuration(int sampleRate) {
  */
 //%
 bool audioIsPlaying() {
+#if MICROBIT_CODAL
     return recording->isPlaying();
+#else
+    return false;
+#endif
 }
 
 /**
@@ -145,7 +148,11 @@ bool audioIsPlaying() {
  */
 //%
 bool audioIsRecording() {
+#if MICROBIT_CODAL
     return recording->isRecording();
+#else
+    return false;
+#endif
 }
 
 /**
@@ -153,7 +160,11 @@ bool audioIsRecording() {
  */
 //%
 bool audioIsStopped() {
+#if MICROBIT_CODAL
     return recording->isStopped();
+#else
+    return false;
+#endif
 }
 
 /**
@@ -161,8 +172,12 @@ bool audioIsStopped() {
  */
 //%
 void setInputSampleRate(int sampleRate) {
+#if MICROBIT_CODAL
     checkEnv();
     splitterChannel->requestSampleRate(sampleRate);
+#else
+    target_panic(PANIC_VARIANT_NOT_SUPPORTED);
+#endif
 }
 
 
@@ -171,7 +186,12 @@ void setInputSampleRate(int sampleRate) {
  */
 //%
 void setOutputSampleRate(int sampleRate) {
-    checkEnv(sampleRate);
+#if MICROBIT_CODAL
+    checkEnv();
+    channel->setSampleRate(sampleRate);
+#else
+    target_panic(PANIC_VARIANT_NOT_SUPPORTED);
+#endif
 }
 
 /**
@@ -179,8 +199,12 @@ void setOutputSampleRate(int sampleRate) {
 */
 //%
 void setBothSamples(int sampleRate) {
-    checkEnv(sampleRate);
+#if MICROBIT_CODAL
+    setOutputSampleRate(sampleRate);
     splitterChannel->requestSampleRate(sampleRate);
+#else
+    target_panic(PANIC_VARIANT_NOT_SUPPORTED);
+#endif
 }
 
 } // namespace record

@@ -33,5 +33,5 @@ img.plotFrame(1)
 
 ## See also
 
-[create image](/reference/images/create-image), [show animation](/reference/basic/show-animation), [image](/reference/images/image), [show image](/reference/images/show-image), [scroll image](/reference/images/scroll-image)
+[create image](/reference/images/create-image), [image](/reference/images/image), [show image](/reference/images/show-image), [scroll image](/reference/images/scroll-image)
 

@@ -46,10 +46,10 @@ let start = 0
 let end = 0
 let false_start = false
 let running = false
-input.onPinPressed(TouchPin.P0, () => {
+input.onPinPressed(TouchPin.P0, function () {
 
 })
-input.onPinPressed(TouchPin.P1, () => {
+input.onPinPressed(TouchPin.P1, function () {
 
 })
 running = false
@@ -67,13 +67,13 @@ let start = 0
 let end = 0
 let false_start = false
 let running = false
-input.onPinPressed(TouchPin.P0, () => {
+input.onPinPressed(TouchPin.P0, function () {
     basic.showNumber(3)
     basic.showNumber(2)
     basic.showNumber(1)
     basic.clearScreen()
 })
-input.onPinPressed(TouchPin.P1, () => {
+input.onPinPressed(TouchPin.P1, function () {
 
 })
 running = false
@@ -93,15 +93,15 @@ let start = 0
 let end = 0
 let false_start = false
 let running = false
-input.onPinPressed(TouchPin.P0, () => {
+input.onPinPressed(TouchPin.P0, function () {
+    running = false
+    false_start = false
     basic.showNumber(3)
     basic.showNumber(2)
     basic.showNumber(1)
     basic.clearScreen()
-    running = false
-    false_start = false
 })
-input.onPinPressed(TouchPin.P1, () => {
+input.onPinPressed(TouchPin.P1, function () {
 
 })
 running = false
@@ -119,16 +119,16 @@ let start = 0
 let end = 0
 let false_start = false
 let running = false
-input.onPinPressed(TouchPin.P0, () => {
+input.onPinPressed(TouchPin.P0, function () {
+    running = false
+    false_start = false
     basic.showNumber(3)
     basic.showNumber(2)
     basic.showNumber(1)
     basic.clearScreen()
-    running = false
-    false_start = false
     basic.pause(1000 + randint(0, 2000))
 })
-input.onPinPressed(TouchPin.P1, () => {
+input.onPinPressed(TouchPin.P1, function () {
 
 })
 running = false
@@ -146,16 +146,16 @@ let start = 0
 let end = 0
 let false_start = false
 let running = false
-input.onPinPressed(TouchPin.P1, () => {
+input.onPinPressed(TouchPin.P1, function () {
 
 })
-input.onPinPressed(TouchPin.P0, () => {
+input.onPinPressed(TouchPin.P0, function () {
+    running = false
+    false_start = false
     basic.showNumber(3)
     basic.showNumber(2)
     basic.showNumber(1)
     basic.clearScreen()
-    running = false
-    false_start = false
     basic.pause(1000 + randint(0, 2000))
     if (!(false_start)) {
         start = input.runningTime()
@@ -184,7 +184,7 @@ let start = 0
 let end = 0
 let false_start = false
 let running = false
-input.onPinPressed(TouchPin.P1, () => {
+input.onPinPressed(TouchPin.P1, function () {
     if (running) {
         running = false
         end = input.runningTime()
@@ -208,13 +208,13 @@ input.onPinPressed(TouchPin.P1, () => {
             `)
     }
 })
-input.onPinPressed(TouchPin.P0, () => {
+input.onPinPressed(TouchPin.P0, function () {
+    running = false
+    false_start = false
     basic.showNumber(3)
     basic.showNumber(2)
     basic.showNumber(1)
     basic.clearScreen()
-    running = false
-    false_start = false
     basic.pause(1000 + randint(0, 2000))
     if (!(false_start)) {
         start = input.runningTime()
@@ -241,13 +241,13 @@ let start = 0
 let end = 0
 let false_start = false
 let running = false
-input.onPinPressed(TouchPin.P0, () => {
+input.onPinPressed(TouchPin.P0, function () {
+    running = false
+    false_start = false
     basic.showNumber(3)
     basic.showNumber(2)
     basic.showNumber(1)
     basic.clearScreen()
-    running = false
-    false_start = false
     basic.pause(1000 + randint(0, 2000))
     if (!(false_start)) {
         start = input.runningTime()
@@ -257,7 +257,7 @@ input.onPinPressed(TouchPin.P0, () => {
         led.plot(randint(0, 4), randint(0, 4))
     }
 })
-input.onPinPressed(TouchPin.P1, () => {
+input.onPinPressed(TouchPin.P1, function () {
     if (running) {
         running = false
         end = input.runningTime()
@@ -281,7 +281,7 @@ input.onPinPressed(TouchPin.P1, () => {
             `)
     }
 })
-input.onPinPressed(TouchPin.P2, () => {
+input.onPinPressed(TouchPin.P2, function () {
     if (running) {
         running = false
         end = input.runningTime()
@@ -305,4 +305,92 @@ input.onPinPressed(TouchPin.P2, () => {
             `)
     }
 })
+```
+
+## Extending the Extension
+
+One effect of the extension is the **X** for a false start shows for the person loosing the game. We can extend the code some more to avoid the **X** showing up on the person loosing the game. The following example uses a new variable to flag the winner and avoid the **X** after a winner is crowned.
+
+```blocks
+input.onPinPressed(TouchPin.P0, function () {
+    running = false
+    false_start = false
+    Winner = 0
+    basic.showNumber(3)
+    basic.showNumber(2)
+    basic.showNumber(1)
+    basic.clearScreen()
+    basic.pause(1000 + randint(0, 2000))
+    if (!(false_start)) {
+        start = input.runningTime()
+        running = true
+        led.stopAnimation()
+        basic.clearScreen()
+        led.plotBrightness(randint(0, 4), randint(0, 4), 255)
+    }
+})
+input.onPinPressed(TouchPin.P2, function () {
+    if (running) {
+        running = false
+        end = input.runningTime()
+        Winner = 2
+        basic.showLeds(`
+            . . . # #
+            . . . # #
+            . . . # #
+            . . . # #
+            . . . # #
+            `)
+        basic.pause(1000)
+        basic.showNumber(end - start)
+    } else if (Winner == 1) {
+    	
+    } else {
+        false_start = true
+        basic.showLeds(`
+            . . . . .
+            . . # . #
+            . . . # .
+            . . # . #
+            . . . . .
+            `)
+    }
+})
+input.onPinPressed(TouchPin.P1, function () {
+    if (running) {
+        running = false
+        end = input.runningTime()
+        Winner = 1
+        basic.showLeds(`
+            # # . . .
+            # # . . .
+            # # . . .
+            # # . . .
+            # # . . .
+            `)
+        basic.pause(1000)
+        basic.showNumber(end - start)
+    } else if (Winner == 2) {
+    	
+    } else {
+        false_start = true
+        basic.showLeds(`
+            . . . . .
+            # . # . .
+            . # . . .
+            # . # . .
+            . . . . .
+            `)
+    }
+})
+let Winner = 0
+let start = 0
+let end = 0
+let false_start = false
+let running = false
+running = false
+false_start = false
+end = 0
+start = 0
+Winner = 0
 ```

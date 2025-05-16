@@ -178,17 +178,20 @@ The **Download** button in the red highlighted box allows the downloading of abo
 
 When the data recorded is downloaded as a CSV spreadsheet file, it is named ``"data.csv"``.
 
-#### ~hint
+### ~hint
+
+#### Where's the CSV?
 
 The CSV file usually opens in directly into a spreadsheet but sometimes it doesn’t which makes it hard to find. A search of the ``C:\`` drive might be necessary to find it.
 
-#### ~
+### ~
+
+## ~button /courses/ucp-science/data-collection/resources
+NEXT: Resources
+## ~
 
 <br/>
-
-| | | |
-|-|-|-|
-| Adapted from "[Microbit Data Collection Methods](https://drive.google.com/open?id=13Mi6caoelyzgch6tUj-wlw0bmgS7ikGEwYR2a37mEww)" by [C Lyman](http://utahcoding.org) | | [![CC BY-NC-SA](https://licensebuttons.net/l/by-nc-sa/4.0/80x15.png)](https://creativecommons.org/licenses/by-nc-sa/4.0/) |
+Adapted from "[Microbit Data Collection Methods](https://drive.google.com/open?id=13Mi6caoelyzgch6tUj-wlw0bmgS7ikGEwYR2a37mEww)" by [C Lyman](http://utahcoding.org) [![CC BY-NC-SA](https://licensebuttons.net/l/by-nc-sa/4.0/80x15.png)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 
 ```package

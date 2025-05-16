@@ -55,7 +55,7 @@ To make the game less predictable, we use the ``||math:pick random||`` block to 
 
 ```blocks
 let potato = 0
-input.onButtonPressed(Button.AB, () => {
+input.onButtonPressed(Button.AB, function () {
     potato = randint(10, 20)
 })
 ```
@@ -67,7 +67,7 @@ we have the potato and we can send it. After sending it, we set the **potato** v
 
 ```blocks
 let potato = 0
-input.onGesture(Gesture.Shake, () => {
+input.onGesture(Gesture.Shake, function () {
     if (potato > 0) {
         radio.sendNumber(potato)
         potato = -1
@@ -97,7 +97,7 @@ Making the clock tick down is done with a ``||loops:forever||`` loop.
 
 ```blocks
 let potato = 0
-basic.forever(() => {
+basic.forever(function () {
     if (potato == 0) {
         basic.showIcon(IconNames.Skull)
     }
@@ -122,18 +122,18 @@ let potato = 0
 radio.onReceivedNumber(function (receivedNumber) {
     potato = receivedNumber
 })
-input.onGesture(Gesture.Shake, () => {
+input.onGesture(Gesture.Shake, function () {
     if (potato > 0) {
         radio.sendNumber(potato)
         potato = -1
     }
 })
-input.onButtonPressed(Button.AB, () => {
+input.onButtonPressed(Button.AB, function () {
     potato = randint(10, 20)
 })
 radio.setGroup(1)
 potato = -1
-basic.forever(() => {
+basic.forever(function () {
     if (potato == 0) {
         basic.showIcon(IconNames.Skull)
     }

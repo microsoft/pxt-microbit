@@ -39,9 +39,10 @@ Students will:
 * A longer USB @boardname@ cable
 * Spreadsheet for data analysis
 
-<br/>
+## ~button /courses/ucp-science/rocket-acceleration/build
+NEXT: Build
+## ~
 
-| | | |
-|-|-|-|
-| Adapted from "[Rocket Acceleration z Radios](https://drive.google.com/open?id=1IyhCPdYQevKh3kHNgukSxlgdvZIKuzmIBjLSRnFS36o)" by [C Lyman](http://utahcoding.org) | | [![CC BY-NC-SA](https://licensebuttons.net/l/by-nc-sa/4.0/80x15.png)](https://creativecommons.org/licenses/by-nc-sa/4.0/) |
+<br/>
+Adapted from "[Rocket Acceleration z Radios](https://drive.google.com/open?id=1IyhCPdYQevKh3kHNgukSxlgdvZIKuzmIBjLSRnFS36o)" by [C Lyman](http://utahcoding.org) [![CC BY-NC-SA](https://licensebuttons.net/l/by-nc-sa/4.0/80x15.png)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 

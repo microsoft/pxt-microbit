@@ -93,4 +93,4 @@ There are some differences in function assignments for the small pins between th
 
 ## Connecting to the small pins
 
-It is recommended that an edge connector designed for the micro:bit be used for connections to the small pins. For available edge connectors, put "edge eonnectors for the micro:bit" into your internet search engine to find an accessory supplier.
+It is recommended that an edge connector designed for the micro:bit be used for connections to the small pins. For available edge connectors, put "edge connectors for the micro:bit" into your internet search engine to find an accessory supplier.

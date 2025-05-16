@@ -4,8 +4,19 @@
 //% fixedInstances
 //% blockNamespace=music
 //% group="micro:bit (V2)"
-class SoundExpression {
+class SoundExpression extends music.Playable {
     constructor(private notes: string) {
+        super()
+    }
+
+    _play(mode: music.PlaybackMode) {
+        if (mode === music.PlaybackMode.InBackground) {
+            this.play();
+        } else if (mode === music.PlaybackMode.UntilDone) {
+            this.playUntilDone();
+        } else {
+            this.loop();
+        }
     }
 
     /**
@@ -319,6 +330,7 @@ namespace music {
     //% sound.shadow=soundExpression_createSoundEffect
     //% weight=100 help=music/play-sound-effect
     //% blockGap=8
+    //% deprecated=1
     //% group="micro:bit (V2)"
     export function playSoundEffect(sound: string, mode: SoundExpressionPlayMode) {
         if (mode === SoundExpressionPlayMode.InBackground) {
@@ -367,6 +379,7 @@ namespace music {
     //% inlineInputModeLimit=3
     //% expandableArgumentBreaks="3,5"
     //% group="micro:bit (V2)"
+    //% deprecated=1
     export function createSoundEffect(waveShape: WaveShape, startFrequency: number, endFrequency: number, startVolume: number, endVolume: number, duration: number, effect: SoundExpressionEffect, interpolation: InterpolationCurve): string {
         let src = "000000000000000000000000000000000000000000000000000000000000000000000000";
         src = setValue(src, 0, Math.constrain(waveShape, 0, 4), 1);
@@ -395,20 +408,65 @@ namespace music {
 
         switch (effect) {
             case SoundExpressionEffect.Vibrato:
-                src = setValue(src, 36, 2, 4);
-                src = setValue(src, 40, 512, 4);
+                src = setValue(src, 36, DAL.SFX_DEFAULT_VIBRATO_PARAM, 4);
+                src = setValue(src, 40, DAL.SFX_DEFAULT_VIBRATO_STEPS, 4);
                 break;
             case SoundExpressionEffect.Tremolo:
-                src = setValue(src, 36, 3, 4);
-                src = setValue(src, 40, 900, 4);
+                src = setValue(src, 36, DAL.SFX_DEFAULT_TREMOLO_PARAM, 4);
+                src = setValue(src, 40, DAL.SFX_DEFAULT_TREMOLO_STEPS, 4);
                 break;
             case SoundExpressionEffect.Warble:
-                src = setValue(src, 36, 2, 4);
-                src = setValue(src, 40, 700, 4);
+                src = setValue(src, 36, DAL.SFX_DEFAULT_WARBLE_PARAM, 4);
+                src = setValue(src, 40, DAL.SFX_DEFAULT_WARBLE_STEPS, 4);
                 break;
         }
 
         return src;
+    }
+
+    /**
+     * Create a sound expression from a set of sound effect parameters.
+     * @param waveShape waveform of the sound effect
+     * @param startFrequency starting frequency for the sound effect waveform
+     * @param endFrequency ending frequency for the sound effect waveform
+     * @param startVolume starting volume of the sound, or starting amplitude
+     * @param endVolume ending volume of the sound, or ending amplitude
+     * @param duration the amount of time in milliseconds (ms) that sound will play for
+     * @param effect the effect to apply to the waveform or volume
+     * @param interpolation interpolation method for frequency scaling
+     */
+    //% blockId=soundExpression_createSoundExpression
+    //% help=music/create-sound-effect
+    //% block="$waveShape|| start frequency $startFrequency end frequency $endFrequency duration $duration start volume $startVolume end volume $endVolume effect $effect interpolation $interpolation"
+    //% waveShape.defl=WaveShape.Sine
+    //% waveShape.fieldEditor=soundeffect
+    //% startFrequency.defl=5000
+    //% startFrequency.min=0
+    //% startFrequency.max=5000
+    //% endFrequency.defl=0
+    //% endFrequency.min=0
+    //% endFrequency.max=5000
+    //% startVolume.defl=255
+    //% startVolume.min=0
+    //% startVolume.max=255
+    //% endVolume.defl=0
+    //% endVolume.min=0
+    //% endVolume.max=255
+    //% duration.defl=500
+    //% duration.min=1
+    //% duration.max=9999
+    //% effect.defl=SoundExpressionEffect.None
+    //% interpolation.defl=InterpolationCurve.Linear
+    //% compileHiddenArguments=true
+    //% inlineInputMode="variable"
+    //% inlineInputModeLimit=3
+    //% expandableArgumentBreaks="3,5"
+    //% duplicateWithToolboxParent=music_playable_play
+    //% duplicateWithToolboxParentArgument=toPlay
+    //% duplicateShadowOnDrag
+    //% group="micro:bit (V2)"
+    export function createSoundExpression(waveShape: WaveShape, startFrequency: number, endFrequency: number, startVolume: number, endVolume: number, duration: number, effect: SoundExpressionEffect, interpolation: InterpolationCurve): SoundExpression {
+        return new SoundExpression(createSoundEffect(waveShape, startFrequency, endFrequency, startVolume, endVolume, duration, effect, interpolation));
     }
 
     function setValue(src: string, offset: number, value: number, length: number) {
@@ -433,7 +491,24 @@ namespace music {
     //% toolboxParent=soundExpression_playSoundEffect
     //% toolboxParentArgument=sound
     //% weight=98 help=music/builtin-sound-effect
+    //% deprecated=1
     export function builtinSoundEffect(soundExpression: SoundExpression) {
         return soundExpression.getNotes();
+    }
+
+    /**
+     * Get the sound expression string for a built-in sound effect.
+     * @param soundExpression a sound expression for a built-in sound effect
+     */
+    //% blockId=soundExpression_builtinPlayableSoundEffect
+    //% block="$soundExpression"
+    //% blockGap=8
+    //% group="micro:bit (V2)"
+    //% toolboxParent=music_playable_play
+    //% toolboxParentArgument=toPlay
+    //% duplicateShadowOnDrag
+    //% weight=98 help=music/builtin-sound-effect
+    export function builtinPlayableSoundEffect(soundExpression: SoundExpression) {
+        return soundExpression;
     }
 }

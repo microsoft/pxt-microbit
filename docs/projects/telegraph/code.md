@@ -54,7 +54,7 @@ Let's wrap it all in a forever loop so this code is running in the background al
 Modify your code to add the blocks below. Download the code onto one of the @boardname@s, press and release button **A** a few times.
 
 ```blocks
-basic.forever(() => {
+basic.forever(function () {
     if (input.buttonIsPressed(Button.A)) {
         pins.digitalWritePin(DigitalPin.P1, 1)
         led.plot(2, 2)
@@ -78,18 +78,18 @@ We'll turn the LED in the bottom right corner (4, 4) on to show that we received
 Make sure your code looks like this:
 
 ```blocks
-basic.forever(() => {
+basic.forever(function () {
     if (input.buttonIsPressed(Button.A)) {
-        pins.digitalWritePin(DigitalPin.P1, 1);
-        led.plot(2, 2);
+        pins.digitalWritePin(DigitalPin.P1, 1)
+        led.plot(2, 2)
     } else {
-        pins.digitalWritePin(DigitalPin.P1, 0);
+        pins.digitalWritePin(DigitalPin.P1, 0)
         basic.clearScreen();
     }
     if (pins.digitalReadPin(DigitalPin.P2) == 1) {
-        led.plot(4, 4);
+        led.plot(4, 4)
     } else {
-        led.unplot(4, 4);
+        led.unplot(4, 4)
     }
 });
 ```

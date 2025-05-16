@@ -346,6 +346,21 @@
 
 ## #other
 
+* [Blocks Gallery](/block-gallery)
+
+## Miscellaneous #misc
+
+* Miscellaneous
+    * [About](/about)
+    * [Support](/support)
+    * [Translate](/translate)
+    * [Sharing projects](/share)
+    * [Offline support](/offline)
+    * [Save](/save)    
+    * [Sign In](/identity/sign-in)
+    * [Cloud Sync](/identity/cloud-sync)
+    * [Home Page Content](/homepage-content)
+
 * [Hardware](/device)
     * [Data Analysis](/device/data-analysis)
         * [Plotting with LEDs](/device/data-analysis/led-plotting)
@@ -368,4 +383,3 @@
     * [WebUSB](/device/usb/webusb)
         * [WebUSB Troubleshoot](/device/usb/webusb/troubleshoot)
     * [Flashing via HID (CMSIS-DAP)](/hidflash)
-* [Blocks Gallery](/block-gallery)

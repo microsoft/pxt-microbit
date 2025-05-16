@@ -1,0 +1,8 @@
+/* Lots of specificity to override another !important rule */
+#simulator #editorSidebar .simtoolbar .ui.icon.tiny.buttons .ui.button.play-button.play .icon.play {
+    color: var(--pxt-colors-green-background) !important;
+}
+
+.theme-preview-microbit-light .theme-preview-sim-button {
+    background-color: var(--pxt-neutral-background2) !important;
+}

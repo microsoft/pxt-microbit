@@ -1,0 +1,42 @@
+{
+    "name": "Smiley Buttons",
+    "criteria": [
+        {
+            "catalogCriteriaId": "499F3572-E655-4DEE-953B-5F26BF0191D7",
+            "instanceId": "JR66Aahv1mHVPQz6p8bKn",
+            "params": [
+                {
+                    "name": "question",
+                    "value": "Does this produce different outputs based on different events?"
+                },
+                {
+                    "name": "shareid"
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "35610CA0-38F8-4CCE-BAB9-99593DB3358A",
+            "instanceId": "rJ_uRDO6gN8E7Vg33nCfn",
+            "params": [
+                {
+                    "name": "count",
+                    "value": "2"
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "8mQaZHHOweaK3fneSKbhw",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "basic_show_icon"
+                },
+                {
+                    "name": "count",
+                    "value": "2"
+                }
+            ]
+        }
+    ]
+}

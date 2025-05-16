@@ -46,11 +46,11 @@ radio.onReceivedBuffer(function (receivedBuffer) {
 ```
 
 
-## ~hint
+### ~hint
 
 A radio that can both transmit and receive is called a _transceiver_.
 
-## ~
+### ~
 
 ## See also
 

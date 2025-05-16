@@ -46,5 +46,4 @@ basic.forever(() => {
 
 ## See also
 
-[show image](/reference/images/show-image), [image](/reference/images/image), [create image](/reference/images/create-image), [show animation](/reference/basic/show-animation)
-
+[show image](/reference/images/show-image), [image](/reference/images/image), [create image](/reference/images/create-image)

@@ -1,0 +1,46 @@
+{
+    "name": "Name Tag",
+    "criteria": [
+        {
+            "catalogCriteriaId": "499F3572-E655-4DEE-953B-5F26BF0191D7",
+            "instanceId": "dJAm80FLeg53FzhYbHnBx",
+            "params": [
+                {
+                    "name": "question",
+                    "value": "Does this illustrate an understanding of how to display text on the screen?"
+                },
+                {
+                    "name": "shareid"
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "vZ-kFpFxkFRLGFVALg4og",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "device_print_message"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "QG1JsccZotdKi2k1slqyW",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "device_forever"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        }
+    ]
+}

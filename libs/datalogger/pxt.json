@@ -11,5 +11,11 @@
     "dependencies": {
         "core": "file:../core",
         "flashlog": "file:../flashlog"
+    },
+    "yotta": {
+        "config": {
+            "MICROBIT_BLE_UTILITY_SERVICE": 1,
+            "MICROBIT_BLE_UTILITY_SERVICE_PAIRING": 1
+        }
     }
 }

@@ -1,8 +1,8 @@
 # Logic and expressions
 
-The use and study of _logic_ involves finding a new fact by analyzing whether some other facts together can prove to be true. Some facts, or conditions, when looked at together may prove another fact to be true, or maybe false.
+The use and study of _logic_ involves finding a new fact by analyzing whether some other facts, when brought together, can prove that fact to be true. Some facts, or conditions, when looked at together may prove another fact to be true, or maybe false.
 
-If the temperature outside is below freezing and you don't have a coat, you will feel cold. If you're not sick, then you will feel well. If you can swim or ride in a boat in water, you will stay afloat. These are statements of fact that result from some condition being true.
+If the temperature outside is below freezing and you don't have a coat, you will feel cold. If you're not sick, then you will feel well. If you can swim or ride in a boat on water, you will stay afloat. These are statements of fact that result from some condition being true.
 
 ## Truth statements
 
@@ -12,7 +12,7 @@ By taking some facts and putting them into a logical form, we can make an arithm
 * **NOT** ``sick`` **=** ``I feel well``
 * ``I can swim`` **OR** ``I'm in a boat`` **=** ``I'm floating``
 
-You see the AND, NOT, and OR in the example word equations? These are our logical _operators_. Every day we make decisions when we think about one or more facts together using these operators. Sometimes, it's necessary for all facts to be true in order for the conclusion to be true. This is the case when the AND operator is used. When analyzing facts with the OR operator, only on fact needs to be true for the conclusion to be true also.
+You see the AND, NOT, and OR in the example word equations? These are our logical _operators_. Every day we make decisions when we think about one or more facts together using these operators. Sometimes, it's necessary for all facts to be true in order for the conclusion to be true. This is the case when the AND operator is used. When analyzing facts with the OR operator, only one fact needs to be true for the conclusion to be true also.
 
 Making a decision may require more than just one or two facts. When this happens, another operator is needed to combine the facts together to make a conclusion. In the last example word equation, you actually might not be floating if just those two condtions are true. To correctly prove that you're actually floating, you need to state that you're in water too.
 
@@ -109,7 +109,7 @@ Because you feel cold only when both conditions are true, the statement becomes 
 
 ``A · B`` = ``Q``
 
-A truth table for the variables in the expression have the same values as the table for the truth statement (``true`` and ``false`` are abbreviated to just ``T`` and ``F``).
+A truth table for the Boolean variables in the expression have the same values as the table for the truth statement (``true`` and ``false`` are abbreviated to just ``T`` and ``F``).
 
 A | B | Q
 -|-|-
@@ -140,3 +140,9 @@ T | F | F
 To write a Boolean equation for when you feel cold, we find the condtions in the table where ``Q`` is ``true``. Here we see that you will feel cold only in one row, when condition ``A`` is ``true`` and condtion ``B`` is ``false``. The Boolean equation for these conditions is this:
 
 ``A · ~B`` = ``Q``
+
+## ~button /courses/logic-lab/elements
+
+NEXT: Boolean Elements
+
+## ~

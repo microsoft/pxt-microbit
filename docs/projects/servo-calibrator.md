@@ -9,17 +9,17 @@ in a loop.
 
 ```blocks
 let angle = 90
-input.onButtonPressed(Button.A, () => {
+input.onButtonPressed(Button.A, function () {
     angle = Math.max(0, angle - 5)
     pins.servoWritePin(AnalogPin.P0, angle)
     led.stopAnimation()
 })
-input.onButtonPressed(Button.B, () => {
+input.onButtonPressed(Button.B, function () {
     angle = Math.min(180, angle + 5)
     pins.servoWritePin(AnalogPin.P0, angle)
     led.stopAnimation()
 })
-basic.forever(() => {
+basic.forever(function () {
     basic.showNumber(angle)    
 })
 pins.servoWritePin(AnalogPin.P0, angle)

@@ -23,12 +23,14 @@ This program finds the compass heading and stores it in the
 let degrees = input.compassHeading()
 ```
 
-## ~hint 
+### ~hint 
 
-When you run a program that uses this function in a browser, click and drag
+#### Compass simulation
+
+When you run a program that in the simulator, click and drag
 the compass needle on the screen to change the compass heading.
 
-## ~
+### ~
 
 ## Example: compass
 
@@ -65,7 +67,9 @@ will ask you to draw a fill pattern on the screen by tilting the @boardname@.
 If you are calibrating or using the compass near metal, it might
 confuse the @boardname@.
 
-## ~ hint
+### ~ hint
+
+#### Make a calibration tool
 
 Keep the calibration handy by running it when the user pressed **A+B**.
 
@@ -75,7 +79,7 @@ input.onButtonPressed(Button.AB, () => {
 })
 ```
 
-## ~
+### ~
 
 ## See also
 

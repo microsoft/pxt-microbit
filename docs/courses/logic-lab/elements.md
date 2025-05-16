@@ -6,7 +6,7 @@ Whether creating equations in Boolean algebra or using them in your programs, yo
 
 Boolean (logical) equations are expressed in a way similar to mathmatical equations. Variables in Boolean expressions though, have only two possible values, ``true`` or ``false``. For an equation using a logical expression, the equivalant sides of the equal sign ,``=``, will be only ``true`` or ``false`` too.
 
-The following list shows the basic notation elements for Boolean expressions.
+The following list shows the basic notation elements for variables and operators in Boolean expressions:
 
 * ``~A``: the inverse (**NOT**) of ``A``, when ``A`` is ``true``, ``~A`` is ``false``
 * ``A + B``: the value of ``A`` **OR** ``B``
@@ -205,3 +205,10 @@ F | F | F
 T | F | T
 F | T | T
 T | T | F
+<br/>
+
+## ~button /courses/logic-lab/explorer
+
+NEXT: Logic Explorer
+
+## ~

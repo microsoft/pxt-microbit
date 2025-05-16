@@ -4,6 +4,14 @@
 
 This lesson observes the force of electricity. The charge in several batteries is measured by the micro:bit to see how much electric force is present in each one. The results are recorded to analyze the condition of each battery. As an application of the experiment, batteries in poor condition (mostly discharged) can be noted and properly disposed of.
 
+## Lesson concept
+
+### Use the micro:bit to measure the charge of a battery
+
+Watch this short video to see how to use a micro:bit to check the remaining charge in a battery.
+
+https://youtu.be/gdlc34nhjK4
+
 ## Contents
 
 * [Overview](/courses/ucp-science/electricity/overview)
@@ -11,7 +19,4 @@ This lesson observes the force of electricity. The charge in several batteries i
 * [Resources](/courses/ucp-science/electricity/resources)
 
 <br/>
-
-| | | |
-|-|-|-|
-| Adapted from "[Electricity - Battery Tester](https://drive.google.com/open?id=15Xry9jFsIzHHG7RpaIomLodl9pBjTiKDvtjkd227b7Y)" by [C Lyman](http://utahcoding.org) | | [![CC BY-NC-SA](https://licensebuttons.net/l/by-nc-sa/4.0/80x15.png)](https://creativecommons.org/licenses/by-nc-sa/4.0/) |
+Adapted from "[Electricity - Battery Tester](https://drive.google.com/open?id=15Xry9jFsIzHHG7RpaIomLodl9pBjTiKDvtjkd227b7Y)" by [C Lyman](http://utahcoding.org) [![CC BY-NC-SA](https://licensebuttons.net/l/by-nc-sa/4.0/80x15.png)](https://creativecommons.org/licenses/by-nc-sa/4.0/)

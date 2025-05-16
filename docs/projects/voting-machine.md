@@ -21,7 +21,7 @@ Assuming button ``A`` is for a NO vote and ``B`` is for YES, the voter program w
 When button ``A`` is pressed, a number ``0`` is sent via radio and the ``X`` symbol is shown on the screen.
 
 ```block
-input.onButtonPressed(Button.A, () => {
+input.onButtonPressed(Button.A, function () {
     radio.sendNumber(0)
     basic.showIcon(IconNames.No)
 })
@@ -32,7 +32,7 @@ input.onButtonPressed(Button.A, () => {
 When button ``B`` is pressed, a number ``255`` is sent via radio and the ``Y`` symbol is shown on the screen.
 
 ```block
-input.onButtonPressed(Button.B, () => {
+input.onButtonPressed(Button.B, function () {
     radio.sendNumber(255)
     basic.showIcon(IconNames.Yes)
 })
@@ -56,11 +56,11 @@ radio.setGroup(4)
 Putting all the parts together, here's the complete voter program:
 
 ```blocks
-input.onButtonPressed(Button.A, () => {
+input.onButtonPressed(Button.A, function () {
     radio.sendNumber(0)
     basic.showIcon(IconNames.No)
 })
-input.onButtonPressed(Button.B, () => {
+input.onButtonPressed(Button.B, function () {
     radio.sendNumber(255)
     basic.showIcon(IconNames.Yes)
 })

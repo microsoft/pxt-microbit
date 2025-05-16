@@ -2,7 +2,7 @@
 
 ## ~avatar avatar
 
-Build a magic trick that uses the @boardname@'s compass to detect a nearby magnet!
+Build a magic trick that uses the @boardname@'s magnetometer to detect a nearby magnet!
 
 ## ~
 
@@ -23,17 +23,17 @@ The only things you need for this trick are your @boardname@ and any magnet that
 Before we code the trick itself, we need to get the buttons working as you would expect them to such that pressing button **A** displays 'A' and pressing button **B** displays 'B':
 
 ```blocks
-input.onButtonPressed(Button.A, () => {
+input.onButtonPressed(Button.A, function () {
     basic.showString("A")
 })
-input.onButtonPressed(Button.B, () => {
+input.onButtonPressed(Button.B, function () {
     basic.showString("B")
 })
 ```
 
 ## Step 2: Measuring magnetic force
 
-We will use the @boardname@'s compass to detect the magnet. A compass tells us which direction we are pointing to by detecting the Earth's magnetic field, but it can also detect any other magnet nearby. We will use that to check if our magnet is next to the @boardname@ by using the ``||input:magnetic force||`` block found in the **Input** menu's **... More** section. Since we only want to measure the strength we change the drop down to select `strength`:
+We will use the @boardname@'s magnetometer to detect the magnet. We will use it to check if our magnet is next to the @boardname@ by using the ``||input:magnetic force||`` block found in the **Input** menu's **... More** section. Since we only want to measure the strength we change the drop down to select `strength`:
 
 ```block
 let force = input.magneticForce(Dimension.Strength)
@@ -48,7 +48,7 @@ If you've ever played with magnets you know they have two ends, often called a N
 So, in the code below, we will check if the absolute value of our magnetic field strength reading is more than `100` and save the result of that check in a new variable called ``isSwitched``:
 
 ```blocks
-let force = Math.abs(input.magneticForce(Dimension.Strength));
+let force = Math.abs(input.magneticForce(Dimension.Strength))
 let isSwitched = force > 100
 ```
 ## Step 4: Running our 'magnet nearby' check all the time
@@ -56,10 +56,10 @@ let isSwitched = force > 100
 At the moment, our code to detect a magnet being nearby will only run once. We need to put it into a ``||basic:forever||`` loop so that it keeps running again and again, checking for the magnet to come near to the @boardname@. We should also make sure ``isSwitched`` is set to `false` when our program starts.
 
 ```blocks
-let force = 0;
-let isSwitched = false;
-basic.forever(() => {
-    force = Math.abs(input.magneticForce(Dimension.Strength));
+let force = 0
+let isSwitched = false
+basic.forever(function () {
+    force = Math.abs(input.magneticForce(Dimension.Strength))
     isSwitched = force > 100
 })
 ```
@@ -69,21 +69,21 @@ basic.forever(() => {
 Now we can check the value of our variable ``isSwitched`` whenever we want and we will know that the magnet is nearby if it's value is `true`. Let's use that to change how the buttons work and complete the code for our trick. We will add an ``||logic:if then else||`` block to each button's code and check if we should swap over what's displayed for each button if ``isSwitched`` is equal to `true`:
 
 ```blocks
-let force = 0;
-let isSwitched = false;
-basic.forever(() => {
-    force = Math.abs(input.magneticForce(Dimension.Strength));
+let force = 0
+let isSwitched = false
+basic.forever(function () {
+    force = Math.abs(input.magneticForce(Dimension.Strength))
     isSwitched = force > 100
 })
 
-input.onButtonPressed(Button.A, () => {
+input.onButtonPressed(Button.A, function () {
     if (isSwitched) {
         basic.showString("B")
     } else {
         basic.showString("A")
     }
 })
-input.onButtonPressed(Button.B, () => {
+input.onButtonPressed(Button.B, function () {
     if (isSwitched) {
         basic.showString("A")
     } else {
@@ -95,8 +95,6 @@ input.onButtonPressed(Button.B, () => {
 ## Step 6: Practice your technique
 
 Now you just need to program your own @boardname@ and practice the trick a few times before performing for your friends. Try asking your friends to click the buttons after you have switched the labels and the trick won't work for them because they don't have a hidden magnet in their hand!
-
-Remember, that as we are using @boardname@'s compass, it will need to be [calibrated](https://support.microbit.org/support/solutions/articles/19000008874-calibrating-the-micro-bit-compass-what-does-it-mean-when-the-micro-bit-says-draw-a-circle-or-tilt) each time we flash the program or run it for the first time.
 
 ## About the authors
 

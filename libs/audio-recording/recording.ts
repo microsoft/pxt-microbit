@@ -72,34 +72,60 @@ namespace record {
         Recording,
         //% block="stopped"
         Stopped,
-        //% block="full"
-        BufferFull,
+        //% block="empty"
+        BufferEmpty,
+    }
+
+    export enum BlockingState {
+        //% block="until done"
+        Blocking,
+        //% block="in background"
+        Nonblocking
     }
 
     let _recordingPresent: boolean = false;
 
+    function audioNotRecording(): boolean {
+        return !audioIsRecording();
+    }
+
+    function audioNotPlaying(): boolean {
+        return !audioIsPlaying();
+    }
+
     /**
      * Record an audio clip for a maximum of 3 seconds
      */
-    //% block="record audio clip"
+    //% block="record audio clip $mode"
     //% blockId="record_startRecording"
     //% weight=70
     //% parts="microphone"
-    export function startRecording(): void {
+    //% help=record/start-recording
+    export function startRecording(mode: BlockingState): void {
+        music._onStopSound(stopPlayback);
         eraseRecording();
         record();
+        if (mode === BlockingState.Blocking) pauseUntil(audioNotRecording);
         _recordingPresent = true;
     }
 
     /**
      * Play recorded audio
      */
-    //% block="play audio clip"
+    //% block="play audio clip $mode"
     //% blockId="record_playAudio"
     //% weight=60
-    //% shim=record::play
     //% parts="microphone"
-    export function playAudio(): void {
+    //% help=record/play-audio
+    export function playAudio(mode: BlockingState): void {
+        play();
+        if (mode === BlockingState.Blocking) pauseUntil(audioNotPlaying);
+    }
+
+    function stopPlayback(): void {
+        if (audioIsPlaying()) {
+            stop();
+        }
     }
 
     //% shim=record::stop
@@ -118,6 +144,7 @@ namespace record {
     //% block="audio is $status"
     //% blockId="record_audioStatus"
     //% parts="microphone"
+    //% help=record/audio-status
     export function audioStatus(status: AudioStatus): boolean {
         switch (status) {
             case AudioStatus.Playing:
@@ -126,8 +153,8 @@ namespace record {
                 return audioIsRecording();
             case AudioStatus.Stopped:
                 return audioIsStopped();
-            case AudioStatus.BufferFull:
-                return _recordingPresent;
+            case AudioStatus.BufferEmpty:
+                return !_recordingPresent;
         }
     }
 
@@ -138,9 +165,19 @@ namespace record {
     //% blockId="record_setMicGain"
     //% parts="microphone"
     //% weight=30
+    //% help=record/set-mic-gain
     export function setMicGain(gain: AudioLevels): void {
-        setMicrophoneGain(gain);
-        return
+        switch (gain) {
+            case AudioLevels.Low:
+                setMicrophoneGain(0.079);
+                break;
+            case AudioLevels.Medium:
+                setMicrophoneGain(0.2);
+                break;
+            case AudioLevels.High:
+                setMicrophoneGain(1.0);
+                break;
+        }
     }
 
     /**
@@ -154,12 +191,12 @@ namespace record {
     //% expandableArgumentMode="enabled"
     //% parts="microphone"
     //% weight=40
+    //% help=record/set-sample-rate
     export function setSampleRate(hz: number, scope?: AudioSampleRateScope): void {
         switch (scope) {
             case AudioSampleRateScope.Playback:
                 setOutputSampleRate(hz);
                 break;
-
             case AudioSampleRateScope.Recording:
                 setInputSampleRate(hz);
                 break;

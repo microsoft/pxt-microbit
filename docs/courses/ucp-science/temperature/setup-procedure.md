@@ -154,11 +154,12 @@ Use a radio connection to collect and record the outside temperature. It could b
 
 Several students could use micorbits to observe the temperature at different elevations where the live at set times to see if there are patterns in temperatures at different elevations or regions.
 
-<br/>
+## ~button /courses/ucp-science/temperature/resources
+NEXT: Resources
+## ~
 
-| | | |
-|-|-|-|
-| Adapted from "[Temperature Data](https://drive.google.com/open?id=1X6FeANka2qcMC2ZFQgSSxEoHxsQc--6a0Pk9xxMOwE8)" by [C Lyman](http://utahcoding.org) | | [![CC BY-NC-SA](https://licensebuttons.net/l/by-nc-sa/4.0/80x15.png)](https://creativecommons.org/licenses/by-nc-sa/4.0/) |
+<br/>
+Adapted from "[Temperature Data](https://drive.google.com/open?id=1X6FeANka2qcMC2ZFQgSSxEoHxsQc--6a0Pk9xxMOwE8)" by [C Lyman](http://utahcoding.org) [![CC BY-NC-SA](https://licensebuttons.net/l/by-nc-sa/4.0/80x15.png)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 ```package
 radio

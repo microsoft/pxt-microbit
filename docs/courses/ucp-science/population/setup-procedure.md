@@ -27,7 +27,7 @@ https://youtu.be/NNZEMiJHY2o
 ### on Start event
 
 1. Name the project, “Population Trait Counter”.
-2. The ``||basic:on Start||`` event will display the title and purpose of the microbit in all caps, “POPULATION TRAIT COUNTER”. The text is put in the ``||basic:show string||`` block (the title is put in the ``||basic:on start||`` event so when the microbit is started up it will show what it is programmed to do. It is done in all CAPS because it is easier to read as it is displayed in the LED display).
+2. The ``||basic:on start||`` event will display the title and purpose of the microbit in all caps, “POPULATION TRAIT COUNTER”. The text is put in the ``||basic:show string||`` block (the title is put in the ``||basic:on start||`` event so when the microbit is started up it will show what it is programmed to do. It is done in all CAPS because it is easier to read as it is displayed in the LED display).
 3. From the ``||variables:Variables||`` toolbox create variables named ``trait1``, ``trait2``, and ``total``. These will be used as counters to keep track of the for each trait counted. Variables are named to describe what they will be storing. Variables are usually named by using lowercase letters and/or digits. If it is a 2 word name, it is usually named using camelCaps (no spaces but a capital where the second word starts. Examples: ``totalCount``, ``randNumber``, etc.)
  
 ```blocks
@@ -113,7 +113,7 @@ input.onGesture(Gesture.Shake, () => {
 
 ### ~hint
 
-**Warning**
+#### Warning
 
 This procedure could be problematic if the @boardname@ is shaken to much while it is used in counting.
 
@@ -123,8 +123,9 @@ This procedure could be problematic if the @boardname@ is shaken to much while i
 
 This project could easily be modified to keep track of scores for 2 different teams. What other ideas can you think of that counters could be used for?
 
-<br/>
+## ~button /courses/ucp-science/population/resources
+NEXT: Resources
+## ~
 
-| | | |
-|-|-|-|
-| Adapted from "[Population Trait Data Counter](https://drive.google.com/open?id=1CC5uhIoZK4Q67vU5Ldwna6GEeZYXNDYzgO8BUUjPuwI)" by [C Lyman](http://utahcoding.org) | | [![CC BY-NC-SA](https://licensebuttons.net/l/by-nc-sa/4.0/80x15.png)](https://creativecommons.org/licenses/by-nc-sa/4.0/) |
+<br/>
+Adapted from "[Population Trait Data Counter](https://drive.google.com/open?id=1CC5uhIoZK4Q67vU5Ldwna6GEeZYXNDYzgO8BUUjPuwI)" by [C Lyman](http://utahcoding.org) [![CC BY-NC-SA](https://licensebuttons.net/l/by-nc-sa/4.0/80x15.png)](https://creativecommons.org/licenses/by-nc-sa/4.0/)

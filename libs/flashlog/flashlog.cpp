@@ -135,4 +135,35 @@ void setSerialMirroring(bool enable) {
 #endif
 }
 
+/**
+* Number of rows currently used by the datalogger, start counting at fromRowIndex
+* Treats the header as the first row
+* @param fromRowIndex 0-based index of start: Default value of 0
+* @returns header + rows
+*/
+//%
+int getNumberOfRows(int fromRowIndex = 0) {
+#if MICROBIT_CODAL
+    return uBit.log.getNumberOfRows(fromRowIndex);
+#else
+    return DEVICE_NOT_SUPPORTED;
+#endif
+}
+
+/**
+* Get all rows separated by a newline & each column separated by a comma.
+* Starting at the 0-based index fromRowIndex & counting inclusively until nRows.
+* @param fromRowIndex 0-based index of start
+* @param nRows inclusive count from fromRowIndex
+* @returns String where newlines denote rows & commas denote columns
+*/
+//%
+String getRows(int fromRowIndex, int nRows) {
+#if MICROBIT_CODAL
+    return PSTR(uBit.log.getRows(fromRowIndex, nRows));
+#else
+    return DEVICE_NOT_SUPPORTED;
+#endif
+}
+
 }

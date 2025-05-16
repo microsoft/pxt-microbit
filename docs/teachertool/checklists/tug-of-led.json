@@ -1,0 +1,98 @@
+{
+    "name": "Tug-Of-LED",
+    "criteria": [
+        {
+            "catalogCriteriaId": "499F3572-E655-4DEE-953B-5F26BF0191D7",
+            "instanceId": "mmGgCDQulErVZEr5ha3-J",
+            "params": [
+                {
+                    "name": "question",
+                    "value": "Does this illustrate an understanding of how to increment and decrement a variable based on input?"
+                },
+                {
+                    "name": "shareid"
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "RJkv2Z1UHxIywKbJPn0Fv",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "device_plot"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "ieltnwSKhrOeJzYl1h-wq",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "controls_if"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "E1cUYkJS2TsLxjSwX3Tqi",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "device_print_message"
+                },
+                {
+                    "name": "count",
+                    "value": "2"
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "HfbLPAgcjK4c0aqCdQg7i",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "math_js_round"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "r4g2OA8m3z8SVmJBmK-MW",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "device_button_event"
+                },
+                {
+                    "name": "count",
+                    "value": "2"
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "0DFA44C8-3CA5-4C77-946E-AF09F6C03879",
+            "instanceId": "HzOiUmWLHvCLtj9wgOqLA",
+            "params": [
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        }
+    ]
+}

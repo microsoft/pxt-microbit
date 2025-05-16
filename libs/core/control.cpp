@@ -271,6 +271,12 @@ namespace control {
       microbit_reset();
     }
 
+
+    
+
+    //%
+    void singleSimulator() { }
+
     /**
     * Blocks the current fiber for the given microseconds
     * @param micros number of micro-seconds to wait. eg: 4
