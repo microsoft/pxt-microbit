@@ -18,7 +18,7 @@ Let's find out what numbers the micro:bit produces when you move it around.
 ⇼ Open the ``||serial:^ Advanced||`` category to show the ``||serial:Serial||`` label.
 
 ⇼ From ``||serial:Serial||``, drag the ``||serial:serial write value ["x"] = [0]||``
-block into the ``||basic:forever||`` loop container.
+block into the ``||basic(noclick):forever||`` loop container.
 
 
 
@@ -52,7 +52,7 @@ with the micro:bit **acceleration** value.
 ---
 
 ⇼ Open the ``||input:Input||`` category and drag ``||input:acceleration (mg) [x]||``
-over to replace "0" in the ``||serial:serial write value ["x"] = [0]||``
+over to replace "0" in the ``||serial(noclick):serial write value ["x"] = [0]||``
 block.
 
 ⇼ Change "x" to "a" (for "acceleration".)
@@ -86,7 +86,7 @@ the micro:bit **acceleration** value.
 ---
 
 ⇼ Open the ``||input:Input||`` category and drag ``||input:acceleration (mg) [x]||``
-over to replace "0" in the ``||serial:serial write value ["x"] = [0]||``
+over to replace "0" in the ``||serial(noclick):serial write value ["x"] = [0]||``
 block.
 
 ⇼ Change "x" to "a" (for "acceleration".)
