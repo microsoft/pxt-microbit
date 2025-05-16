@@ -334,6 +334,10 @@ Many extensions are available to work with interface kits, add-on hardware, or o
 
 ```codecard
 [{
+  "name": "Smarthon IoT:bit",
+  "url":"/pkg/SMARTHON/pxt-iot-bit",
+  "cardType": "package"
+}, {
   "name": "DFRobot IoT Cloud Kit",
   "url":"/pkg/DFRobot/pxt-DFRobot_IoT_Cloud_Kit",
   "cardType": "package"
