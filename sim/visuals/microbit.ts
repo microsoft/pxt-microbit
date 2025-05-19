@@ -143,17 +143,19 @@ namespace pxsim.visuals {
             outline: none;
         }
         *:focus .sim-button-outer,
-        .sim-antenna-outer:focus,
-        .sim-pin:focus,
-        .sim-thermometer:focus,
         .sim-shake:focus,
-        .sim-light-level-button:focus {
-            stroke: #4D90FE;
-            stroke-width: 5px !important;
-        }
+        .sim-thermometer:focus,
+        .sim-light-level-button:focus,
         .sim-button-outer.sim-button-group:focus > .sim-button {
-            stroke: #4D90FE;
-            stroke-width: 10px !important;
+            outline: 6px solid white;
+            outline-offset: 6px;
+        }
+        .sim-antenna-outer:focus {
+            outline: 6px solid white;
+        }
+        .sim-pin:focus { 
+            stroke: white;
+            stroke-width: 5px !important;
         }
         .no-drag, .sim-text, .sim-text-small,
         .sim-text-pin {
