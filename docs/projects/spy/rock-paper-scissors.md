@@ -61,7 +61,7 @@ input.onGesture(Gesture.Shake, function() {
 
 ## {Step 5}
 
-Finally let's deal with the last condition - if our hand variable isn't holding a 1 (Rock) or a 2 (Paper), then it must be 3 (Scissors)! Add an ``||logic:else||`` clause and use the ``||basic:show icon||`` function to show ✀ Scissors.
+Finally let's deal with the last condition - if our hand variable isn't holding a 1 (Rock) or a 2 (Paper), then it must be 3 (Scissors)! Add an ``||logic:else||`` clause and use the ``||basic:show icon||`` function to show ✂️ Scissors.
 
 ```spy
 let hand = 0;
@@ -83,4 +83,4 @@ Let's test your code! Press the white **SHAKE** button on the micro:bit on-scree
 
 ## {Step 7}
 
-If you have a @boardname@ device, connect it to your computer and click the ``|Download|`` button. Follow the instructions to transfer your code onto the @boardname@. Once your code has been downloaded, attach your micro:bit to a battery pack and challenge another micro:bit or a human to a game of 💎 Rock, 📃 Paper, ✀ Scissors!
+If you have a @boardname@ device, connect it to your computer and click the ``|Download|`` button. Follow the instructions to transfer your code onto the @boardname@. Once your code has been downloaded, attach your micro:bit to a battery pack and challenge another micro:bit or a human to a game of 💎 Rock, 📃 Paper, ✂️ Scissors!

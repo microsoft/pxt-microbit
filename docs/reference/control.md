@@ -12,7 +12,6 @@ control.onEvent(0, 0, () => { });
 control.raiseEvent(0, 0);
 control.eventTimestamp();
 control.eventValue();
-control.hardwareVersion();
 ```
 
 ## See Also
