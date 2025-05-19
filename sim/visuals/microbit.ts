@@ -146,7 +146,7 @@ namespace pxsim.visuals {
         .sim-shake:focus,
         .sim-thermometer:focus,
         .sim-light-level-button:focus,
-        .sim-button-outer.sim-button-group:focus > .sim-button {
+        .sim-button-outer.sim-button-group:focus {
             outline: 6px solid white;
             outline-offset: 6px;
         }
