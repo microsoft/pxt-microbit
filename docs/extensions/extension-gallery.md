@@ -142,6 +142,10 @@ Many extensions are available to work with interface kits, add-on hardware, or o
 
 ```codecard
 [{
+  "name": "Coderdojo Controller",
+  "url":"/pkg/jimd80/pxt-coderdojo-controller",
+  "cardType": "package"
+}, {
   "name": "Kittenbot JoyFrog",
   "url":"/pkg/KittenBot/pxt-joyfrog",
   "cardType": "package"
