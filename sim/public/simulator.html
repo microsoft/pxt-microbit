@@ -25,6 +25,7 @@ body {
   right: 10px;
 }
 .safari-mute-button {
+  z-index: 1;
   cursor: pointer;
   position: relative;
   display: inline-block;
@@ -50,6 +51,9 @@ body {
 }
 .safari-mute-button:hover {
   filter: grayscale(.15) brightness(.85) contrast(1.3);
+}
+.safari-mute-button:focus {
+  outline: 3px solid white;
 }
 .safari-mute-button svg {
   width: 24px;
