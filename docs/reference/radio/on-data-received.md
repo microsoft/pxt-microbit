@@ -7,13 +7,13 @@ Run part of a program when the @boardname@ receives a
 radio.onDataReceived(() => { });
 ```
 
-## ~ hint
+### ~ alert
 
-**Deprecated**
+#### Deprecated API
 
 This API has been deprecated! Use [on received number](/reference/radio/on-received-number) instead.
 
-## ~
+### ~
 
 ```sig
 radio.onDataReceived(() => { });

@@ -5,13 +5,13 @@ Find the next string sent by radio from another @boardname@.
 ```sig
 radio.receiveString()
 ```
-## ~ hint
+### ~ alert
 
-**Deprecated**
+#### Deprecated
 
 This API has been deprecated! Use [on received string](/reference/radio/on-received-string) instead.
 
-## ~
+### ~
 
 ## Returns
 

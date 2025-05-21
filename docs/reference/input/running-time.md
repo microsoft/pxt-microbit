@@ -1,9 +1,9 @@
 # Running Time
 
-Find how long it has been since the program started in milli-seconds.
+Find how long a program has run since it was started, in milliseconds.
 
 ```sig
-input.runningTime();
+input.runningTime()
 ```
 
 ## Returns
@@ -13,12 +13,12 @@ input.runningTime();
 
 ## Example: elapsed time
 
-When you press button `B` on the microbit, this
+When you press button `B` on the @boardname@, this
 program finds the number of milliseconds since the program started
 and shows it on the [LED screen](/device/screen).
 
 ```blocks
-input.onButtonPressed(Button.B, () => {
+input.onButtonPressed(Button.B, function() {
     let now = input.runningTime()
     basic.showNumber(now)
 })
@@ -27,5 +27,5 @@ input.onButtonPressed(Button.B, () => {
 
 ## See also
 
-[show number](/reference/basic/show-number), [pause](/reference/basic/pause)
+[show number](/reference/basic/show-number), [pause](/reference/basic/pause), [running time micros](/reference/input/running-time-micros)
 

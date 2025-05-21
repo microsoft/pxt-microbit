@@ -45,7 +45,6 @@ void init() {
 void onSound(DetectedSound sound, Action handler) {
 #if MICROBIT_CODAL
     init();
-    uBit.audio.levelSPL->activateForEvents(true);
     const auto thresholdType = sound == DetectedSound::Loud ? LEVEL_THRESHOLD_HIGH : LEVEL_THRESHOLD_LOW;
     registerWithDal(DEVICE_ID_SYSTEM_LEVEL_DETECTOR, thresholdType, handler);
 #else
