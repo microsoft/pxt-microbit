@@ -33,7 +33,6 @@ namespace input {
 //% group="micro:bit (V2)"
 void onSound(DetectedSound sound, Action handler) {
 #if MICROBIT_CODAL
-    uBit.audio.levelSPL->activateForEvents(true);
     const auto thresholdType = sound == DetectedSound::Loud ? LEVEL_THRESHOLD_HIGH : LEVEL_THRESHOLD_LOW;
     registerWithDal(DEVICE_ID_SYSTEM_LEVEL_DETECTOR, thresholdType, handler);
 #else
