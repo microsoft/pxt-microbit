@@ -45,7 +45,7 @@ void checkEnv() {
         MicroBitAudio::requestActivation();
 
         splitterChannel = uBit.audio.splitter->createChannel();
-        splitterChannel->requestSampleRate( defaultSampleRate );
+        uBit.audio.mic->setSampleRate( defaultSampleRate );
 
         recording = new StreamRecording(*splitterChannel);
 
@@ -172,7 +172,7 @@ bool audioIsStopped() {
 void setInputSampleRate(int sampleRate) {
 #if MICROBIT_CODAL
     checkEnv();
-    splitterChannel->requestSampleRate(sampleRate);
+    uBit.audio.mic->setSampleRate(sampleRate);
 #else
     target_panic(PANIC_VARIANT_NOT_SUPPORTED);
 #endif
@@ -199,7 +199,7 @@ void setOutputSampleRate(int sampleRate) {
 void setBothSamples(int sampleRate) {
 #if MICROBIT_CODAL
     setOutputSampleRate(sampleRate);
-    splitterChannel->requestSampleRate(sampleRate);
+    uBit.audio.mic->setSampleRate(sampleRate);
 #else
     target_panic(PANIC_VARIANT_NOT_SUPPORTED);
 #endif
