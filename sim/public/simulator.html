@@ -25,12 +25,13 @@ body {
   right: 10px;
 }
 .safari-mute-button {
+  z-index: 1;
   cursor: pointer;
   position: relative;
   display: inline-block;
   min-height: 1rem;
   outline: none;
-  border: none;
+  border: 1px solid transparent;
   vertical-align: middle;
   margin: 0;
   padding: 0.75rem;
@@ -50,6 +51,10 @@ body {
 }
 .safari-mute-button:hover {
   filter: grayscale(.15) brightness(.85) contrast(1.3);
+}
+.safari-mute-button:focus {
+  border: 1px solid white;
+  outline: 3px solid #4D90FE;
 }
 .safari-mute-button svg {
   width: 24px;
