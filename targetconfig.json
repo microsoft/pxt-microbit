@@ -616,6 +616,7 @@
         }
     },
     "teachertool": {
+        "showSharePageEvalButton": true,
         "carousels": [
             {
                 "title": "Checklists for Tutorials",
