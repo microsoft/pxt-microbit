@@ -617,6 +617,7 @@
     },
     "teachertool": {
         "showSharePageEvalButton": true,
+        "defaultChecklistUrl": "teachertool/checklists/general-code-quality.json",
         "carousels": [
             {
                 "title": "Checklists for Tutorials",
