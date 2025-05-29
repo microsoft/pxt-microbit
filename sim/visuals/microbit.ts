@@ -143,17 +143,26 @@ namespace pxsim.visuals {
             outline: none;
         }
         *:focus .sim-button-outer,
-        .sim-antenna-outer:focus,
-        .sim-pin:focus,
-        .sim-thermometer:focus,
         .sim-shake:focus,
-        .sim-light-level-button:focus {
-            stroke: #4D90FE;
-            stroke-width: 5px !important;
+        .sim-thermometer:focus {
+            outline: 5px solid white;
+            stroke: black;
+            stroke-width: 10px;
+            paint-order: stroke;
         }
         .sim-button-outer.sim-button-group:focus > .sim-button {
-            stroke: #4D90FE;
-            stroke-width: 10px !important;
+            outline: 5px solid white;
+            stroke: black;
+            stroke-width: 5px;
+            paint-order: stroke;
+        }
+        .sim-light-level-button:focus,
+        .sim-antenna-outer:focus > .sim-antenna {
+            outline: 5px solid white;
+        }
+        .sim-pin:focus { 
+            stroke: white;
+            stroke-width: 5px !important;
         }
         .no-drag, .sim-text, .sim-text-small,
         .sim-text-pin {
@@ -737,12 +746,35 @@ path.sim-board {
                 let pt = this.element.createSVGPoint();
                 svg.buttonEvents(
                     this.head,
+                    // move
                     (ev: MouseEvent) => {
                         let cur = svg.cursorPoint(pt, this.element, ev);
                         state.compassState.heading = Math.floor(Math.atan2(cur.y - yc, cur.x - xc) * 180 / Math.PI) + 90;
                         if (state.compassState.heading < 0) state.compassState.heading += 360;
                         this.updateHeading();
-                    });
+                    },
+                    // start
+                    ev => { },
+                    // stop
+                    ev => { },
+                    // keydown
+                    (ev) => {
+                        let charCode = (typeof ev.which == "number") ? ev.which : ev.keyCode
+                        if (charCode === 40 || charCode === 37) { // Down/Left arrow
+                            ev.preventDefault();
+                            state.compassState.heading--;
+                            if (state.compassState.heading < 0) state.compassState.heading += 360;
+                            if (state.compassState.heading >= 360) state.compassState.heading %= 360;
+                            this.updateHeading();
+                        } else if (charCode === 38 || charCode === 39) { // Up/Right arrow
+                            ev.preventDefault();
+                            state.compassState.heading++;
+                            if (state.compassState.heading < 0) state.compassState.heading += 360;
+                            if (state.compassState.heading >= 360) state.compassState.heading %= 360;
+                            this.updateHeading();
+                        }
+                    }
+                );
                 this.headInitialized = true;
             }
 
@@ -753,6 +785,10 @@ path.sim-board {
                 if (this.props.runtime)
                     this.props.runtime.environmentGlobals[pxsim.localization.lf("heading")] = state.compassState.heading;
             }
+
+            // make sim head focusable when there is a compass
+            this.headParts.setAttribute("class", "sim-button-outer sim-button-group")
+            accessibility.makeFocusable(this.headParts);
         }
 
         private lastFlashTime: number = 0;
@@ -1311,6 +1347,7 @@ path.sim-board {
             this.attachPinsTouchEvents();
             this.attachABEvents();
             this.attachAPlusBEvents();
+            this.attachKeyboardEvents();
         }
 
         private attachIFrameEvents() {
@@ -1565,6 +1602,10 @@ path.sim-board {
                 this.board.bus.queue(bpState.abBtn.id, DAL.MICROBIT_BUTTON_EVT_UP);
                 this.board.bus.queue(bpState.abBtn.id, DAL.MICROBIT_BUTTON_EVT_CLICK);
             });
+        }
+
+        private attachKeyboardEvents() {
+            accessibility.postKeyboardEvent();
         }
     }
 }
