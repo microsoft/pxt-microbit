@@ -430,6 +430,7 @@
         "workspaceSearch": true,
         "allowPackageExtensions": true,
         "addNewTypeScriptFile": true,
+        "aiErrorHelp": true,
         "experiments": [
             "accessibleBlocks",
             "debugExtensionCode",
