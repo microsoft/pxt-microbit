@@ -47,7 +47,7 @@ radio.setGroup(1)
 input.onButtonPressed(Button.A, function() {
     radio.sendString("Micro Chat!")
 })
-radio.onReceivedString(function (receivedString) {
+radio.onReceivedString(function(receivedString: string) {
 })
 ```
 
@@ -60,7 +60,7 @@ radio.setGroup(1)
 input.onButtonPressed(Button.A, function() {
     radio.sendString("Micro Chat!")
 })
-radio.onReceivedString(function (receivedString) {
+radio.onReceivedString(function(receivedString: string) {
     // @highlight
     basic.showString(receivedString)
 })

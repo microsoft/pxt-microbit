@@ -1,17 +1,6 @@
-# on Received Message
+# @extends
 
-Run part of a program when the @boardname@ receives a
-message over ``radio``.
-
-```sig
-radio.onReceivedMessage(0, function() {})
-```
-
-## Parameters
-
-* **msg**: The message to listen for. See [send message](/reference/radio/send-message)
-
-## Example
+## Example #example
 
 Send a ``Hello`` message when button ``A`` is pressed, ``Goodbye`` when button ``B`` is pressed. If the messages are received, display either a ``heart`` or a ``scissor`` for the messages.
 
@@ -33,12 +22,4 @@ input.onButtonPressed(Button.B, function () {
 radio.onReceivedMessage(RadioMessage.Goodbye, function () {
     basic.showIcon(IconNames.Scissors)
 })
-```
-
-## See also
-
-[send message](/reference/radio/send-message),
-
-```package
-radio-broadcast
 ```

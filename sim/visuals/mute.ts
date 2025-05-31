@@ -8,7 +8,7 @@ namespace pxsim {
         const el = document.createElement("div");
         el.setAttribute("id", "safari-mute-button-outer");
         el.innerHTML = `
-            <button class="safari-mute-button">
+            <button class="safari-mute-button" tabindex="1">
                 ${icon}
             </button>
         `;

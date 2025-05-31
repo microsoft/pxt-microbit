@@ -199,7 +199,7 @@
                 "codalTarget": {
                     "name": "codal-microbit-v2",
                     "url": "https://github.com/lancaster-university/codal-microbit-v2",
-                    "branch": "4a5aab37f97c7c5048cb7e317f461391da629cb1",
+                    "branch": "v0.3.0",
                     "type": "git"
                 },
                 "codalBinary": "MICROBIT",
@@ -430,6 +430,7 @@
         "workspaceSearch": true,
         "allowPackageExtensions": true,
         "addNewTypeScriptFile": true,
+        "aiErrorHelp": true,
         "experiments": [
             "accessibleBlocks",
             "debugExtensionCode",
@@ -515,6 +516,7 @@
             "es-ES",
             "fi",
             "fr",
+            "gn",
             "he",
             "hu",
             "is",
@@ -615,6 +617,11 @@
         "hidemenu": {
             "appTheme": {
                 "hideMenuBar": true
+            }
+        },
+        "hidelanguage": {
+            "appTheme": {
+                "selectLanguage": false
             }
         },
         "androidapp": {

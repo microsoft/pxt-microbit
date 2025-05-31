@@ -142,6 +142,10 @@ Many extensions are available to work with interface kits, add-on hardware, or o
 
 ```codecard
 [{
+  "name": "Coderdojo Controller",
+  "url":"/pkg/jimd80/pxt-coderdojo-controller",
+  "cardType": "package"
+}, {
   "name": "Kittenbot JoyFrog",
   "url":"/pkg/KittenBot/pxt-joyfrog",
   "cardType": "package"
@@ -380,6 +384,10 @@ Many extensions are available to work with interface kits, add-on hardware, or o
 
 ```codecard
 [{
+   "name": "BP Lab micro:bit Kit",
+   "url": "/pkg/team-bp/pxt-bplab",
+   "cardType": "package"
+}, {
    "name": "Smarthon Smart City",
    "url": "/pkg/SMARTHON/pxt-smartcity",
    "cardType": "package"
@@ -454,6 +462,10 @@ Many extensions are available to work with interface kits, add-on hardware, or o
 
 ```codecard
 [{
+  "name": "ZHAW Luma Matrix",
+  "url":"/pkg/InES-HPMM/pxt-luma-matrix",
+  "cardType": "package"
+}, {
   "name": "Kitronik Lamp:Bit",
   "url":"/pkg/KitronikLtd/pxt-kitronik-lampbit",
   "cardType": "package"
@@ -1066,6 +1078,10 @@ Many extensions are available to work with interface kits, add-on hardware, or o
 }, {
   "name": "micro:bit power saving",
   "url":"/pkg/microbit-foundation/pxt-microbit-v2-power",
+  "cardType": "package"
+}, {
+  "name": "Sound Level in decibels (dB)",
+  "url":"/pkg/microbit-foundation/pxt-sound-level-db",
   "cardType": "package"
 }, {
   "name": "DS3231 Real Time Clock",

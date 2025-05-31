@@ -15,11 +15,11 @@ game.startCountdown(30000)
 
 ## {Step 2}
 
-Create a ``||arrays:text list||`` of words to guess. You will find **Arrays** under **Advanced**.
+Create a new array of words to guess and name it ``||arrays:wordList||``. You will find **Arrays** under **Advanced**.
 
 ```blocks
-let text_list: string[] = []
-text_list = ["PUPPY", "CLOCK", "NIGHT"]
+let wordList: string[] = []
+wordList = ["PUPPY", "CLOCK", "NIGHT"]
 game.startCountdown(30000)
 ```
 
@@ -35,29 +35,29 @@ input.onGesture(Gesture.LogoUp, function () {
 
 ## {Step 4}
 
-The items in ``||arrays:text list||`` are numbered ``0`` to ``length - 1``.
+The items in ``||arrays:wordList||`` are numbered ``0`` to ``length - 1``.
 Add code to pick a ``||math:random||`` ``||variables:index||``.
 
 ```blocks
-let text_list: string[] = []
+let wordList: string[] = []
 let index = 0
 input.onGesture(Gesture.LogoUp, function () {
     // @highlight
-    index = randint(0, text_list.length - 1)
+    index = randint(0, wordList.length - 1)
 })
 ```
 
 ## {Step 5}
 
-Add code to ``||basic:show||`` the value of the item stored at ``||variables:index||`` in  ``||arrays:text list||``.
+Add code to ``||basic:show||`` the value of the item stored at ``||variables:index||`` in  ``||arrays:wordList||``.
 
 ```blocks
-let text_list: string[] = []
+let wordList: string[] = []
 let index = 0
 input.onGesture(Gesture.LogoUp, function () {
-    index = randint(0, text_list.length - 1)
+    index = randint(0, wordList.length - 1)
     // @highlight
-    basic.showString(text_list[index])
+    basic.showString(wordList[index])
 })
 ```
 
@@ -84,7 +84,7 @@ input.onGesture(Gesture.ScreenDown, function () {
 
 ## {Step 8}
 
-Add anonther event to run code when the @boardname@ ``||input:screen||`` is pointing ``||input:up||``.
+Add another event to run code when the @boardname@ ``||input:screen||`` is pointing ``||input:up||``.
 This is the gesture for a pass.
 
 ```blocks
