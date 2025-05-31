@@ -430,14 +430,18 @@
         "workspaceSearch": true,
         "allowPackageExtensions": true,
         "addNewTypeScriptFile": true,
-        "aiErrorHelp": true,
+        "enabledFeatures": {
+            "blocksErrorList": {},
+            "aiErrorHelp": {
+                "includeRegions": ["US"]
+            }
+        },
         "experiments": [
             "accessibleBlocks",
             "debugExtensionCode",
             "bluetoothUartConsole",
             "bluetoothPartialFlashing",
-            "identity",
-            "blocksErrorList"
+            "identity"
         ],
         "supportedExperiences": [
             "code-eval"
