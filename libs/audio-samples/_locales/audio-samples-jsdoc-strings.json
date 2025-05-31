@@ -1,0 +1,6 @@
+{
+  "samples.disable": "Disable audio",
+  "samples.enable": "Enable audio",
+  "samples.playAsync": "Play a sample",
+  "samples.setSampleRate": "Set the sample rate"
+}
