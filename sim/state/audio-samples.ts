@@ -4,6 +4,10 @@ namespace pxsim.samples {
         // TODO
     }
 
+    export function disable(): void {
+        // TODO
+    }
+
     export function setSampleRate(src: number, sampleRate: number): void {
         // TODO
     }

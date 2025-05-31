@@ -17,6 +17,15 @@ void enable() {
     uBit.audio.enable();
 }
 
+
+/**
+ *  Disable audio
+ */
+//%
+void disable() {
+    uBit.audio.disable();
+}
+
 /**
  * Set the sample rate
  */

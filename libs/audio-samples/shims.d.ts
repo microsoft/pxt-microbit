@@ -8,6 +8,12 @@ declare namespace samples {
     function enable(): void;
 
     /**
+     *  Disable audio
+     */
+    //% shim=samples::disable
+    function disable(): void;
+
+    /**
      * Set the sample rate
      */
     //% shim=samples::setSampleRate
