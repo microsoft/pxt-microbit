@@ -47,4 +47,4 @@ music.play(music.builtInPlayableMelody(Melodies.Blues), music.PlaybackMode.InBac
 
 ## See also
 
-[built-in sound effect](/reference/music/builtin-sound-effect)
+[string playable](/reference/music/string-playable)

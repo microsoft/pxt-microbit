@@ -249,7 +249,7 @@
   "String.isEmpty|block": "%this=text| is empty",
   "String.length|block": "length of %VALUE",
   "String.split|block": "split %this=text|at %separator",
-  "String.substr|block": "substring of %this=text|from %start|of length %length",
+  "String.substr|block": "substring of $this|from $start||of length $length",
   "String|block": "String",
   "TouchButtonEvent.LongPressed|block": "long pressed",
   "TouchButtonEvent.Pressed|block": "pressed",

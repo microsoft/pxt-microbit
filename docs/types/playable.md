@@ -22,6 +22,14 @@ Melodies are a series of notes and a tempo to play them at.
 music.stringPlayable("D F E A E A C B ", 120)
 ```
 
+### Sound Expression
+
+A sound expression is set of parameters that describe a **[sound](/types/sound)** that will last for some amount of time. These parameters specify a base waveform, frequency range, sound volume, and effects.
+
+```block
+music.play(music.createSoundExpression(WaveShape.Sine, 5000, 0, 255, 0, 500, SoundExpressionEffect.None, InterpolationCurve.Linear), music.PlaybackMode.UntilDone)
+```
+
 ## Play the music
 
 In your programs, you can simply use the ``||music:play||`` blocks for each playable object. Like this one for tone:
@@ -47,5 +55,5 @@ for (let someMusic of playables) {
 
 ## See also
 
-[play](/reference/music/play), [tone playable](/reference/music/tone-playable),
-[string playable](/reference/music/string-playable)
+[play](/reference/music/play), [tone playable](/reference/music/tone-playable)
+[string playable](/reference/music/string-playable), [create sound expression](/reference/music/create-sound-expression)

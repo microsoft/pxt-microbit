@@ -15,8 +15,8 @@ In code, a **Sound** type is a complex data object that includes data for all th
 Code for creating and playing a sound from a sound expression could look like this:
 
 ```typescript-ignore
-let mySound = music.createSoundEffect(WaveShape.Sine, 2000, 0, 1023, 0, 500, SoundExpressionEffect.None, InterpolationCurve.Linear)
-music.playSoundEffect(mySound, SoundExpressionPlayMode.UntilDone)
+let mySound = music.createSoundExpression(WaveShape.Sine, 2000, 0, 1023, 0, 500, SoundExpressionEffect.None, InterpolationCurve.Linear)
+music.play(mySound, music.PlaybackMode.UntilDone)
 ```
 
 ### ~
@@ -59,7 +59,7 @@ A square wave has both verical rising and falling edges with a flat section on t
 
 ### Noise wave
 
-The noise wave is created using random frequenices and volume. Setting the frequency parameters for the sound expression creates a "tuning" range for the noise sound effect.
+The noise wave is created using random frequencies and volume. Setting the frequency parameters for the sound expression creates a "tuning" range for the noise sound effect.
 
 ![Noise wave](/static/types/sound/noise-wave.png)
 
@@ -85,9 +85,9 @@ The volume controls the loudness (amplitude) of the sound. The sound can start w
 
 ## Frequency
 
-Frequency is how fast a wave repeats itself from the zero line to its peak down to its trough and back to the zero line. If it does this 1000 times in one second then the frequency has 1000 cycles per second and is measured in units of Hertz (1000 Hz). The frequency of the sound at any point in time is its current _pitch_. Musical notes and parts of speech are different frequecies that last for short periods of time in a sound.
+Frequency is how fast a wave repeats itself from the zero line to its peak down to its trough and back to the zero line. If it does this 1000 times in one second then the frequency has 1000 cycles per second and is measured in units of Hertz (1000 Hz). The frequency of the sound at any point in time is its current _pitch_. Musical notes and parts of speech are different frequencies that last for short periods of time in a sound.
 
-A sound expression has both a starting frequency and an ending frequecy. The frequency can start low and end high, start high and end low, or remain the same for the duration of the sound.
+A sound expression has both a starting frequency and an ending frequency. The frequency can start low and end high, start high and end low, or remain the same for the duration of the sound.
 
 ### High to low
 
@@ -132,5 +132,5 @@ Interpolation is how the sound expression will make the changes in frequency or 
 
 ## See also
 
-[play sound effect](/reference/music/play-sound-effect),
-[create sound effect](/reference/music/create-sound-effect)
+[play](/reference/music/play),
+[create sound expression](/reference/music/create-sound-expression)
