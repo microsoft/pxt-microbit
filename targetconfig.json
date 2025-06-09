@@ -498,8 +498,8 @@
             },
             "jacdac/pxt-jacdac": {
                 "simx": {
-                    "sha": "8eacef2831e621697bdae5963f9046f9bfdae21d",
-                    "devUrl": "https://jacdac.github.io/pxt-jacdac/"
+                    "sha": "",
+                    "devUrl": "https://jacdac.github.io/jacdac-docs/tools/makecode-sim/"
                 }
             },
             "jacdac/pxt-jacdac/accelerometer": {},

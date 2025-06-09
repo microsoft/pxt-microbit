@@ -776,7 +776,7 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
     private lastSend: number
 
     sendCustomEventAsync(type: string, buf: Uint8Array): Promise<void> {
-        if (type == "jacdac") {
+        if (type.includes("jacdac")) {
             if (this.xchgAddr == null)
                 return Promise.resolve()
             if (buf.length & 3) {
@@ -894,7 +894,7 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
             await this.writeWord(this.xchgAddr + 12, 0)
             await this.triggerIRQ()
             inp = inp.slice(0, inp[2] + 12)
-            this.onCustomEvent("jacdac", inp)
+            this.onCustomEvent("jacdac/pxt-jacdac", inp)
             numev++
         }
 
