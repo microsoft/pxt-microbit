@@ -894,7 +894,7 @@ class DAPWrapper implements pxt.packetio.PacketIOWrapper {
             await this.writeWord(this.xchgAddr + 12, 0)
             await this.triggerIRQ()
             inp = inp.slice(0, inp[2] + 12)
-            this.onCustomEvent("jacdac/pxt-jacdac", inp)
+            this.onCustomEvent("jacdac", inp)
             numev++
         }
 
