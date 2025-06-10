@@ -27,35 +27,49 @@
 }
 
 .ui.button.download-button {
-    &:extend(.ui.purple.button all);
+    background-color: var(--pxt-primary-background);
+    color: var(--pxt-primary-foreground);
 }
 
 .ui.button.hw-button {
-    background-color: darken(@purple, 10%);
+    background-color: var(--pxt-primary-accent);
+    color: var(--pxt-primary-foreground);
 }
 
 .docs.inlinebutton.ui.button.download-button:hover {
-    &:extend(.ui.purple.button all);
+    background-color: var(--pxt-primary-background);
+    color: var(--pxt-primary-foreground);
 }
 
 .ui.button.play-button.play-button-full {
-    &:extend(.ui.inverted.button all);
+    &:extend(.ui.inverted.button all); /* TODO : thsparks - check this */
 }
 
 .ui.button.getting-started-btn {
-    &:extend(.ui.orange.button all);
+    &:extend(.ui.orange.button all); /* TODO : thsparks - primary, secondary, etc... or move to overrides */
 }
 
 .ui.button.editortools-btn {
-    &:extend(.ui.blue.button all);
+    &:extend(.ui.blue.button all); /* TODO : thsparks - primary, secondary, etc... or move to overrides */
 }
 
 .ui.button.exit-tutorial-btn {
-    &:extend(.ui.inverted.button all);
+    &:extend(.ui.inverted.button all); /* TODO : thsparks - primary, secondary, etc... or move to overrides */
 }
 
-#filelist, #editortools {
-    background: #fff data-uri("../docs/static/logo_texture.png") 0 0 repeat !important;
+.simtoolbar .ui.button.icon {
+    background-color: var(--pxt-secondary-background);
+    color: var(--pxt-secondary-foreground);
+
+    &:hover {
+        filter: none;
+        background-color: var(--pxt-secondary-background-hover);
+        color: var(--pxt-secondary-foreground-hover);
+    }
+}
+
+#simulator .ui.button.play-button .icon.play {
+    color: var(--pxt-secondary-foreground) !important;
 }
 
 #downloadArea {
