@@ -24,7 +24,7 @@ A sound expression is set of parameters that describe a **[Sound](/types/sound)*
 * **effect**: an effect to add to the waveform. These are:
 >* `tremolo`: add slight changes in volume of the sound expression.
 >* `vibrato`: add slight changes in frequency to the sound expression.
->* `warble`: similar to `vibrato` but with faster variations in the frequency changes.
+>* `warble`: a combination of the `tremolo` and `vibrato` effects.
 * **interpolation**: controls the rate of frequency change in the sound expression.
 >* `linear`: the change in frequency is constant for the duration of the sound.
 >* `curve`: the change in frequency is faster at the beginning of the sound and slows toward the end.
