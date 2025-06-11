@@ -27,7 +27,7 @@
     border-color: var(--pxt-focus-border) !important;
 }
 
-.simframe iframe {
+#root:not(.miniSim, .fullscreensim) .simframe iframe {
     /* Need a slight border around microbit simulator to make it stand out, since it's black on black otherwise */
     border: 2px solid var(--pxt-neutral-alpha50);
     border-radius: 2rem;
