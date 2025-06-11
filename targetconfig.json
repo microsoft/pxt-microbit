@@ -477,6 +477,7 @@
             "ines-hpmm/pxt-luma-matrix": { "tags": [ "Lights and Display" ] },
             "team-bp/pxt-bplab": { "tags": [ "Science" ] },
             "jimd80/pxt-coderdojo-controller": { "tags": [ "Gaming" ] },
+            "forward-education/pxt-solder-3b3l": { "tags": [ "Science" ] },
             "microsoft/pxt-simx-sample": {
                 "simx": {
                     "sha": "7301f5900879b85127482d79bab48f03c25690a8",
