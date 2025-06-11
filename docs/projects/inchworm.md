@@ -41,7 +41,3 @@ https://youtu.be/BiZLjugXMbM
 Let's get started!
 
 ## ~
-
-## Flipgrid
-
-https://flipgrid.com/1b675b12
