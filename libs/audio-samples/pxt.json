@@ -13,5 +13,6 @@
     "testFiles": [
         "test.ts"
     ],
-    "public": true
+    "public": true,
+    "searchOnly": true
 }

@@ -14,7 +14,11 @@ namespace samples {
  */
 //%
 void enable() {
-    uBit.audio.enable();
+    #if MICROBIT_CODAL
+        uBit.audio.enable();
+    #else
+        target_panic(PANIC_VARIANT_NOT_SUPPORTED);
+    #endif
 }
 
 
@@ -23,7 +27,11 @@ void enable() {
  */
 //%
 void disable() {
-    uBit.audio.disable();
+    #if MICROBIT_CODAL
+        uBit.audio.disable();
+    #else
+        target_panic(PANIC_VARIANT_NOT_SUPPORTED);
+    #endif
 }
 
 /**
