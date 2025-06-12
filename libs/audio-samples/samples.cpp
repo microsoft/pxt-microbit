@@ -40,7 +40,7 @@ void disable() {
 //%
 void setSampleRate(int src, int sampleRate) {
     #if MICROBIT_CODAL
-        if (0 <= src && src <4)
+        if (0 <= src && src < 4)
             uBit.audio.sampleSource[src]->setSampleRate(sampleRate);
     #else
         target_panic(PANIC_VARIANT_NOT_SUPPORTED);
