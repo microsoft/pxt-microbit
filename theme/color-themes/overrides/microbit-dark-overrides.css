@@ -42,14 +42,12 @@
     border-color: var(--pxt-focus-border) !important;
 }
 
-#root:not(.miniSim, .fullscreensim) .simframe iframe {
-    /* Need a slight background around microbit simulator to make it stand out, since it's black on black otherwise */
-    border-radius: 2rem;
-    background: var(--pxt-neutral-alpha50);
-    padding: 0.5rem;
+#simulator #editorSidebar.editor-sidebar {
+    /* Need a lighter background for sidebar to make the simulator stand out, since it's black on black otherwise */
+    background-color: var(--pxt-target-background1);
 }
 
-#boardview {
+.fullscreensim #boardview {
     /* Gradient background is a little too intense in dark mode. Use a solid color instead */
     background: var(--pxt-target-background2);
 }
