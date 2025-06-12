@@ -61,7 +61,7 @@ bool isValidSample(Buffer buf) {
 //%
 void playAsync(int src, Buffer buf) {
     #if MICROBIT_CODAL
-        if (0 <= src && src <4 && isValidSample(buf))
+        if (0 <= src && src < 4 && isValidSample(buf))
             uBit.audio.sampleSource[src]->playAsync(buf->data, buf->length);
     #else
         target_panic(PANIC_VARIANT_NOT_SUPPORTED);
