@@ -11,8 +11,23 @@
     color: var(--pxt-target-foreground3);
 }
 
-.pxtToolbox .blocklyTreeIcon,
-.tutorial-container span.docs.inlineblock {
+.pxtToolbox #advanced > .blocklyTreeRow {
+    /* Better contrast for advanced section color */
+    border-color: var(--pxt-neutral-alpha80);
+}
+.pxtToolbox #advanced > .blocklyTreeRow .blocklyTreeIcon {
+    /* Better contrast for advanced section arrow icon */
+    color: var(--pxt-neutral-alpha80);
+}
+
+.pxtToolbox #serial .blocklyTreeIcon,
+.tutorial-container .serial span.docs.inlineblock {
+    /* Better contrast in toolbox & tutorial block colors, but try to preserve some of the icon color */
+    filter: brightness(1.2) saturate(2);
+}
+
+.pxtToolbox #control .blocklyTreeIcon,
+.tutorial-container .control span.docs.inlineblock {
     /* Better contrast in toolbox & tutorial block colors, but try to preserve some of the icon color */
     filter: brightness(1.2) saturate(2);
 }
