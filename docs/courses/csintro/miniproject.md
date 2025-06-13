@@ -2,17 +2,15 @@
 
 ![Ideas](/static/courses/csintro/miniproject/problem-solving.png)
 
-In this unit, we will be reviewing the concepts we covered in the previous weeks, and providing some ideas for an independent “mini-project” students can focus on in the next several classes. We will also introduce a framework for keeping students accountable to the work they are doing individually and in groups, and providing a rubric for assessment of the development process, as well as the finished product.
+In this unit, we’re going to review the stuff we’ve covered over the past few weeks, and give you some ideas for an independent “mini-project” that you’ll work on in the next few sessions. We’ll also show you a framework to help you stay on track with your work and give you some structure to guide your progress.
 
-It is important to allow students to practice accounting for the work they are doing on a short “mini-project” like this, so that when they move on to an independent project spanning multiple weeks, it will be easier for you to keep track of what everybody is doing.
-
-It also reinforces the important idea that how you solve problems is at least as important to learning as whether you solved them at all (or even got the right answer). Programming is a process of patient problem-solving, and finding ways to value, acknowledge, and reward the problem-solving process is an important part of assessment.
+This project is designed to remind you that how you solve problems is just as important as getting the right answer. Programming is all about being patient and working through challenges, and it's really important to recognize and reward the effort and thinking you put into solving problems—not just whether you got it right!
 
 ## Lesson plan
 
 1. [**Review**: Looking back at what we've learned so far](/courses/csintro/miniproject/review)
-3. [**Activity**: Collaboratively independent](/courses/csintro/miniproject/activity)
-4. [**Project**: Mini-project](/courses/csintro/miniproject/project)
+2. [**Project**: Mini-project](/courses/csintro/miniproject/project)
+3. [**Activity**: Collaboratively Independent (Tips for teachers)](/courses/csintro/miniproject/activity)
 
 ## Related standards
 

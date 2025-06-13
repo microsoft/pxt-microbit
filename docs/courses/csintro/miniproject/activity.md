@@ -1,5 +1,8 @@
 # Activity: Collaboratively independent
 
+## Tips for teachers
+These tips are just for teachers who are assigning the mini-project to a classroom of students.
+
 Teachers want their students to collaborate on projects but they also want to be able to hold them accountable for getting their work done. Many teachers struggle with assessing exactly how much each individual contributed to a group project, as well as making sure that everyone does his or her “fair share”.
 
 The Mini-Project (and the Final Project) are not group projects. Students are asked to propose their own independent project and are expected to get it done. But they are not on their own in this process! We build in frequent opportunities for students to collaborate and share the collective knowledge of the class as they go. We ask them to be “collaboratively independent.”

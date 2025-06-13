@@ -4,9 +4,9 @@
 
 **Objective:** Learn how to download programs from the MakeCode tool.
 
-**Overview:** Students will create a simple program in Microsoft MakeCode and download it to their micro:bit using a USB cable.
+**Overview:** You will create a simple program in Microsoft MakeCode and download it to your micro:bit using a USB cable.
 
-For this activity, students will each need a micro:bit, a micro-USB cable, a computer, and a battery pack.
+For this activity, You will need a micro:bit, a micro-USB cable, a computer, and a battery pack.
 
 ![micro:bit kit](/static/courses/csintro/making/microbit-kit.jpg)
 
@@ -26,13 +26,13 @@ basic.forever(() => {
 })
 ```
 
-At the bottom of of the editor, name the project as "Happy Sad Face" and click on the disk icon to save the project.
+At the bottom of of the editor, name the project "Happy Sad Face" and click on the disk icon to save the project.
 
 ![Save file](/static/courses/csintro/making/happy-sad-file.jpg)
 
 Now, click on **Home** to go back to the home screen.
 
-At  the right of **My Projects** on the home screen, click on the **Import** button and then click on **Import File** in the import dialog. Select the file that you just saved to your computer in the previous step.
+At the right of **My Projects** on the home screen, click on the **Import** button and then click on **Import File** in the import dialog. Select the file that you just saved to your computer in the previous step.
 
 ![Import button](/static/courses/csintro/making/import-button.png)
 
@@ -86,6 +86,6 @@ To move the program to your micro:bit, drag the downloaded "microbit-xxxx.hex" f
 
 The micro:bit will hold one program at a time. It is not necessary to delete files off the micro:bit before you copy another onto the micro:bit; a new file will just replace the old one.
 
-For the next project, your students should attach the battery pack (it takes 2 AAA batteries) to the micro:bit using the white connector. That way they can build it into their design without having to connect it to the computer.
+For the next project, attach the battery pack (it takes 2 AAA batteries) to the micro:bit using the white connector. That way you can build it into your design without having to connect it to the computer.
 
 ![Battery pack](/static/courses/csintro/making/battery-pack.jpg)

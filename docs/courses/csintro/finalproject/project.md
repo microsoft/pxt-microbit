@@ -3,6 +3,7 @@
 The final project is a chance for you to use all of the skills you have been learning throughout the semester to create something that is original, and that solves a problem or serves a purpose.
 
 ## Possible ideas
+
 * Create a game
 * Create something that helps somebody by solving a problem
 * Create something beautiful
@@ -11,28 +12,35 @@ The final project is a chance for you to use all of the skills you have been lea
 In addition, your project code must do each of the following things:
 
 ## Show something you already know
+
 You should demonstrate your knowledge of one or more concepts we have covered in these lessons.
 
 ## Show something new
+
 You should demonstrate a technique, efficiency, or block that you went out and learned how to do on your own, either from the documentation, or from another classmate.
 
 ## Incorporate a maker component
+
 You should not create a project that exists solely and independently on the micro:bit. Your project should work together with tangible components such as servos, real buttons, switches, to do something unique.
 
 ## Timeframe
+
 Three weeks of in-class work and activities
 
 Due each week:
+
 * 2–3 work logs
 * 1 Record of Thinking
 
 Due in three weeks:
+
 * Beta testing period
 * Final Narrative
 * Final Project Code
 * Final project showcase and celebration at the end
 
 Assessment:
+
 * 50% Process (initial proposal, work logs, records of thinking, final narrative)
 * 50% Product (project code and maker component)
 
@@ -41,9 +49,11 @@ Teacher Note: This form of assessment places just as much weight on documenting 
 However, you may decide to assign more or less weight to each of these pieces, and you should certainly feel free to scale up or down the documentation piece as appropriate for your classroom, grade level, and teaching priorities.
  
 ## While working on the project
+
 The expectation is that you are working steadily on your independent project for three weeks, testing out ideas, trying things out, getting stuck, and getting yourself unstuck. Because everyone is working on a different project, we can't assign the same homework to everybody so besides the project work itself, you are also responsible for documenting the work you are doing on the project using work logs, and reflecting on the process of your learning in a record of thinking. Here are more details on these.
 
 ## Work logs
+
 A work log is a short, bullet point list of what you worked on, and how long it took. Stick to just the facts. It shouldn’t take more than thirty seconds or so to write up a work log. Students should do one for every class, several times a week. A shared Microsoft OneNote notebook is a great way to keep a work log that students can update regularly. Alternately, you might use a collaborative shared document, or your classroom management system, or even e-mail.
 
 Sample Work Log:
@@ -57,9 +67,11 @@ Sample Work Log:
 **Teacher note:** We generally don't accept late work logs. If a student simply didn't have time to do any work on the project, he should still file a work log, and report that no work got done. Work logs are worth a few points each, so missing one or two isn't a problem, but if it happens a lot it's usually time to do a check-in with that student and see where she is with the project.
 
 ## Record of thinking
+
 A Record of Thinking is like a journal entry (or like the reflection that you did for the mini-project) that tells the story of your learning throughout the past week. Go through your work logs for the week and look at what you did, where you got stuck, and how you figured it out.
 
 Then write a 150- to 300-word Record of Thinking addressing the following:
+
 * Describe something that surprised you this week as you worked on your project.
 * Describe a moment where you go stuck. How did you get unstuck?
 * Did anyone help you this week? Who and how?
@@ -75,6 +87,7 @@ I guess I would choose the word "elated" because that's what I am feeling right 
 Teacher Note: A Record of Thinking is not an expanded work log!  Students will sometimes just write a more detailed list of all of the tasks they completed over the week, and that's not the point of the Record of Thinking.  The Work Logs are to show WHAT you did. The Record of Thinking is to show HOW you learned how to do it. Unlike Work Logs, I will accept late Records of Thinking as long as they come no later than the due date for the next week’s Record of Thinking. It is an important form of documentation of the learning process.
 
 ## Turning in the final project
+
 When you turn in the final project, you should turn in your code, and a final narrative.
 To turn in your code, you can Share the code by clicking the Share button at the top of the MakeCode window (next to Projects).
 
@@ -95,6 +108,7 @@ You have worked for the past three weeks to propose, design, and test an origina
 Please go back and read through all of your Work Logs, Records of Thinking, Beta Testing feedback, and any notes from teacher conferences. 
  
 Then, compose a comprehensive narrative that tells the story of the development of this app, and your progress toward your goals along the way.  How you tell the story is up to you, but you might consider following most, if not all, of the following questions:
+
 * How did you start the process of designing the product/meeting your goals?
 * What did you hope to learn?
 * What challenges did you face? How did you overcome them?
@@ -117,11 +131,13 @@ Sample Final Narrative:
 >_Once I started to get a little more clear on what to do, I was able to get more effective help from my classmates. Specifically, Jordan helped me a lot with figuring out how to get an image to display properly on the screen. He also showed me how to search through the online documentation more effectively. I think if I could do this over again, I would have scheduled more time earlier to meet with Mr. Kiang and/or found a better way to share the different online sites with my table mates because we all found different places to go. I didn’t even find out until the end that you could jump into JavaScript to make changes to the code, and it makes it all with the right blocks when you go back! (Beta Testing notes) That would have saved me a lot of time._
 
 ## Beta testing
+
 Beta testing is an important part of testing the final projects to uncover bugs or design issues that could make the projects difficult to use. One way to test the projects is to ask all students to come in to class on a specific day with the projects ready to test. This is not the final deadline, but projects should be "feature-complete" i.e., all features need to be incorporated into the micro:bit, and the construction of the real world elements of the project need to be done or almost done.
 
 Students can take turns presenting their projects to the entire class, or they can work in pairs to take turns trying their partner's project out and offering feedback. Students who are being critiqued should take beta testing feedback notes and turn them in as part of their final project narrative.
 
 ## Final showcase
+
 Have a celebration of your students' hard work and hold an event at your school for parents, administrators, and other community members to appreciate all of the hard work that went into making each of the final projects.
 
 We have found that a "science fair" format works nicely, with students sitting at tables where they can demonstrate their projects and answer questions. Some schools do a "shark tank" type of event where students take turns "pitching" their project ideas to a panel composed of local software developers, entrepreneurs, and investors. Either way, a little public recognition of all of your students' hard work goes a long way!

@@ -1,28 +1,28 @@
 # Activity: Rock, paper, scissors
 
-For this activity, each student will need a micro:bit.
-Everyone will create the same program, the classic rock paper scissor game.
+In this micro:bit activity, you will create a *Rock, Paper, Scissor* game program with conditionals. In *Unit 3: Variables*, you coded your micro:bit to keep score, and in this unit you will code to play *Rock, Paper, Scissors* with the micro:bit.
 
 ![Rock, paper, scissors](/static/courses/csintro/conditionals/rock-paper-scissors-items.png)
 
-## Introduce activity
+## Introduction
 
-* Have students recall the classic rock paper scissors game.
-* What are the rules of the game? What are the conditionals?
->Example: If Player A gets rock, and Player B gets scissors, Then Player A wins.
-* Have students write the pseudocode for how to play the game on the micro:bit.
+Let's come up with some pseudocode to describe the behavior of the classic *Rock, Paper, Scissors* game. Your code might look something like this:
+
 >Example pseudocode:<br/>
-On button A press: choose random number from 0-2
-If random number = 0, then display rock icon,
-Else if random number = 1, then display paper icon,
-Else display scissors icon.
-* Point out that because there are only three possibilities, we don’t need to do a separate check to see if random number = 2. So we just use an else.
+On shake: choose random number from 0-2
+IF random number = 0, THEN display rock icon,
+ELSE if random number = 1, THEN display paper icon,
+ELSE display scissors icon.
+
+Because there are only three possibilities, we don’t need to do a separate check to see if random number = 2. So, we just use ELSE.
 
 ## micro:bit
 
-* Working from the specifications, have students work in pairs to try to code a Rock Paper Scissors game on their own.
-* If students get stuck, there is a tutorial at [rock, paper, scissors](/projects/rock-paper-scissors) (steps 1 through 4), that leads students step-by-step through the process of coding a working rock paper scissor game for their micro:bit.
-* Let them play the game against their program.
+You should now have the information you need in order to begin coding a Rock, Paper, Scissors game on your own. If you get stuck, or if you would prefer to work along with a tutorial, you can find one here: [rock, paper, scissors](/projects/rock-paper-scissors) (steps 1 through 4)
+
+Once you've finished, play a few games against your program!
+
+The solution code can be found here: [Rock Paper Scissors](https://makecode.microbit.org/_D2DCDoJbEYat)
 
 ## Ideas for Mods
 

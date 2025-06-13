@@ -1,13 +1,26 @@
 # Project: Everything counts
 
-This is an assignment for students to come up with a micro:bit program that counts something. 
-Their program should keep track of **input** by storing values in variables, and provide **output** in some visual and useful way. 
-Students should also perform mathematical operations on the variables to give useful output.
+In this assignment, you'll come up with a micro:bit program that counts something. Your program should keep track of input by storing values in variables and provide output in some visual and useful way. You should also perform mathematical operations on the variables to give useful output.
 
 ## Input
-Remind the students of all the different inputs available to them through the micro:bit.
+Review all the different inputs available to you through the micro:bit.
 
 ![micro:bit input list](/static/courses/csintro/variables/input-list.png)
+
+* Acceleration
+* Light level
+* Button is pressed
+* Compass heading
+* Temperature
+* Running time
+* On shake
+* On button pressed
+* On logo down
+* On logo up
+* One pin pressed
+* On screen down
+* On screen up
+* Pin is pressed
 
 ## Project Ideas
 
@@ -17,9 +30,9 @@ You can see the instructions for creating a durable, fashionable wallet or purse
 
 **Extra mod:** Use other inputs to handle cents, and provide a way to display how much money is in the wallet in dollars and cents.
 
-### Umpire’s baseball counter (pitches and strikes)
+### Umpire’s baseball counter (balls and strikes)
 
-In baseball during an at-bat, umpires must keep track of how many pitches have been thrown to each batter. Use Button A to record the number of balls (up to 4) and the number of strikes (up to 3).
+During an at-bat, baseball umpires must keep track of what type of pitches have been thrown to each batter. Use Button A to record the number of balls (up to 4) and the number of strikes (up to 3).
 
 **Extra mod:** Create a way to reset both variables to zero, create a way to see the number of balls and strikes on the screen at the same time.
 
@@ -75,7 +88,7 @@ basic.forever(() => {
 
 ## Reflection
 
-Have students write a reflection of about 150–300 words, addressing the following points:
+Write a short reflection (150–300 words) about your project, addressing the following points:
 
 * What was the problem you were trying to solve with this project?
 * What were the Variables that you used to keep track of information?
@@ -84,45 +97,5 @@ Have students write a reflection of about 150–300 words, addressing the follow
 * How well did your prototype work? What were you happy with? What would you change?
 * What was something that was surprising to you about the process of creating this project?
 * Describe a difficult point in the process of designing this project, and explain how you resolved it.
-
-## Assessment
-
-**Competency scores**: 4, 3, 2, 1
-
-### Variables
->**4 =** At least 3 different variables are implemented in a meaningful way.<br/>
-**3 =** At least 2 variables are implemented in a meaningful way.<br/>
-**2 =** At least 1 variable is implemented in a meaningful way.<br/>
-**1 =** No variables are implemented.
-
-### Variable names
-
->**4 =** All variable names are unique and clearly describe what information values the variables hold.<br/>
-**3 =** The majority of variable names are unique and clearly describe what information values the variables hold.<br/>
-**2 =** A minority of variable names are unique and clearly describe what information values the variables hold.<br/>
-**1 =** None of the variable names clearly describe what information values the variables hold.<br/>
-
-### Mathematical operations
->**4 =** Uses a mathematical operation on at least two variables in a way that is integral to the program.<br/>
-**3 =** Uses a mathematical operation on at least one variable in a way that is integral to the program.<br/>
-**2 =** Uses a mathematical operation incorrectly or not in a way that is integral to the program.<br/>
-**1 =** No mathematical operations are used.
-
-### micro:bit program
->**4 =** micro:bit program:<br/>
-` *` Uses variables in a way that is integral to the program<br/>
-` *` Uses mathematical operations to add, subtract, multiply, and/or divide variables<br/>
-` *` Compiles and runs as intended<br/>
-` *` Meaningful comments in code<br/>
-**3 =** micro:bit program lacks 1 of the required elements.<br/>
-**2 =** micro:bit program lacks 2 of the required elements.<br/>
-**1 =** micro:bit program lacks 3 or more of the required elements.
-
-### Collaboration reflection
-
->**4 =** Reflection piece addresses all prompts.<br/>
-**3 =** Reflection piece lacks 1 of the required elements.<br/>
-**2 =** Reflection piece lacks 2 of the required elements.<br/>
-**1 =** Reflection piece lacks 3 of the required elements. 
 
 

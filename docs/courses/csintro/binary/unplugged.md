@@ -136,5 +136,3 @@ Next, have the students use the above method in reverse to translate numbers fro
 **Examples:**
 >0 1 0 1 0 (_10_ )<br/>
 1 1 0 1 1 0 (_54_ )
-	
-
