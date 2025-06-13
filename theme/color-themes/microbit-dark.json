@@ -31,7 +31,7 @@
         "pxt-tertiary-foreground-hover": "#ffffff",
         "pxt-tertiary-accent": "#0894ff",
 
-        "pxt-target-background1": "#1F1F1F",
+        "pxt-target-background1": "#2D2D2D",
         "pxt-target-foreground1": "#f3f2f1", 
         "pxt-target-background1-hover": "#2c2c2c",
         "pxt-target-foreground1-hover": "#ffffff",
@@ -43,7 +43,7 @@
         "pxt-target-foreground2-hover": "#ffffff",
         "pxt-target-stencil2": "#323232",
 
-        "pxt-target-background3": "#181818",
+        "pxt-target-background3": "#1F1F1F",
         "pxt-target-foreground3": "#ffffff",
         "pxt-target-background3-hover": "#252525",
         "pxt-target-foreground3-hover": "#ffffff",
