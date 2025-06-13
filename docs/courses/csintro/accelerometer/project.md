@@ -47,7 +47,7 @@ Both can be found in the Coding Cards section on the home page of the [MakeCode 
 
 ### Shake the Bottle
 
-![Shake the Bottle Instructions](/static/courses/csintro/accelerometer/shake.png)
+![Shake the Bottle Instructions](/static/courses/csintro/accelerometer/shake.jpg)
  
 This game is inspired by a game in the Nintendo Switch game 12Switch. Players take turns holding the micro:bit, which is taped to a bottle. They give it a shake and some bubbles show on the screen. They pass it to the next player, who also gives it a shake. At some point, the bottle will pop and the player left holding the bottle loses.
 
@@ -61,7 +61,7 @@ We start with a variable called 'pop' and set its value to 0 at the start. When 
 
 ### Zen
 
-![Shake the Bottle Instructions](/static/courses/csintro/accelerometer/shake.png)
+![Shake the Bottle Instructions](/static/courses/csintro/accelerometer/shake.jpg)
  
 ZEN is a game our students made that was inspired by the Nintendo Switch game 12Switch. The aim of the game is to strike a yoga pose and hold it while keeping the micro:bit completely still. If you wobble, your screen starts to fill up. If it is full, then you are out.
 
