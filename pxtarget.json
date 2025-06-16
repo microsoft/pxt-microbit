@@ -7,6 +7,7 @@
     "corepkg": "core",
     "bundleddirs": [
         "libs/core",
+        "libs/audio-samples",
         "libs/radio",
         "libs/devices",
         "libs/bluetooth",

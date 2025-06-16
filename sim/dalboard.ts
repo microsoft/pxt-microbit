@@ -8,7 +8,8 @@ namespace pxsim {
         , RadioBoard
         , LightBoard
         , MicrophoneBoard
-        , ControlMessageBoard {
+        , ControlMessageBoard
+        , samples.SampleBoard {
         // state & update logic for component services
         ledMatrixState: LedMatrixState;
         edgeConnectorState: EdgeConnectorState;
@@ -26,6 +27,7 @@ namespace pxsim {
         logoTouch: Button;
         speakerEnabled: boolean = true;
         controlMessageState: ControlMessageState;
+        samplesState: samples.SamplesState;
 
         // visual
         viewHost: visuals.BoardHost;
@@ -119,6 +121,8 @@ namespace pxsim {
             this.builtinPartVisuals["buttonpair"] = (xy: visuals.Coord) => visuals.mkBtnSvg(xy);
             this.builtinPartVisuals["ledmatrix"] = (xy: visuals.Coord) => visuals.mkLedMatrixSvg(xy, 8, 8);
             this.builtinPartVisuals["microservo"] = (xy: visuals.Coord) => visuals.mkMicroServoPart(xy);
+
+            this.samplesState = new samples.SamplesState();
         }
 
         ensureHardwareVersion(version: number) {
