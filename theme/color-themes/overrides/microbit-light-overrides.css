@@ -15,6 +15,14 @@
 /*
  * Adjustments to match the original micro:bit theme
  */
+path.blocklyFlyoutBackground {
+    fill: #4b4949 !important;
+}
+
+.monacoFlyout {
+    background: #4b4949 !important;
+}
+
 #simulator .editor-sidebar .filemenu {
     background: var(--pxt-secondary-background);
     color: var(--pxt-secondary-foreground);
