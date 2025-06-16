@@ -31,9 +31,9 @@
         "pxt-tertiary-foreground-hover": "#ffffff",
         "pxt-tertiary-accent": "#0894ff",
 
-        "pxt-target-background1": "#2D2D2D",
+        "pxt-target-background1": "#2d2d2d",
         "pxt-target-foreground1": "#f3f2f1", 
-        "pxt-target-background1-hover": "#2c2c2c",
+        "pxt-target-background1-hover": "#202020",
         "pxt-target-foreground1-hover": "#ffffff",
         "pxt-target-stencil1": "#3b3a39",
 
@@ -61,12 +61,12 @@
         "pxt-neutral-foreground2-hover": "#ffffff",
         "pxt-neutral-stencil2": "#3b3a39",
 
-        "pxt-neutral-background3": "#2d2d2d",
+        "pxt-neutral-background3": "#202020",
         "pxt-neutral-foreground3": "#f3f2f1",
-        "pxt-neutral-background3-hover": "#202020",
+        "pxt-neutral-background3-hover": "#131313",
         "pxt-neutral-foreground3-hover": "#ffffff",
         "pxt-neutral-stencil3": "#070707",
-        "pxt-neutral-background3-alpha90": "#2d2d2de6",
+        "pxt-neutral-background3-alpha90": "#202020e6",
 
         "pxt-neutral-base": "rgba(180, 180, 180, 1)",
         "pxt-neutral-alpha0": "rgba(180, 180, 180, 0)",
