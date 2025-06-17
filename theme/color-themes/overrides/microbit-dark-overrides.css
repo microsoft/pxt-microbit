@@ -1,0 +1,85 @@
+
+#langmodal #availablelocales .langoption .header {
+    /* Better contrast than default, which is purple */
+    color: var(--pxt-neutral-foreground1);
+}
+
+.pxtToolbox span.blocklyTreeLabel,
+.pxtToolbox .blocklyTreeSelected span.blocklyTreeLabel,
+.pxtToolbox .blocklyTreeSelected .blocklyTreeIcon {
+    /* Better contrast in toolbox */
+    color: var(--pxt-target-foreground3);
+}
+
+.pxtToolbox #advanced > .blocklyTreeRow {
+    /* Better contrast for advanced section color */
+    border-color: var(--pxt-neutral-alpha80);
+}
+.pxtToolbox #advanced > .blocklyTreeRow .blocklyTreeIcon {
+    /* Better contrast for advanced section arrow icon */
+    color: var(--pxt-neutral-alpha80);
+}
+
+.pxtToolbox #serial .blocklyTreeIcon,
+.tutorial-container .serial span.docs.inlineblock {
+    /* Better contrast in toolbox & tutorial block colors, but try to preserve some of the icon color */
+    filter: brightness(1.2) saturate(2);
+}
+
+.pxtToolbox #control .blocklyTreeIcon,
+.tutorial-container .control span.docs.inlineblock {
+    /* Better contrast in toolbox & tutorial block colors, but try to preserve some of the icon color */
+    filter: brightness(1.2) saturate(2);
+}
+
+#mainmenu {
+    /* Some parts of the app use the same color as a background. This keeps the menu from blending in */
+    border-bottom: 1px solid var(--pxt-header-stencil);
+}
+
+.projectsdialog .ui.card:hover {
+    /* Neutral and target colors are the same in dark theme, so it helps to have a clearer border when hovering over cards. */
+    border-color: var(--pxt-focus-border) !important;
+}
+
+#simulator #editorSidebar.editor-sidebar {
+    /* Need a lighter background for sidebar to make the simulator stand out, since it's black on black otherwise */
+    background-color: var(--pxt-target-background1);
+}
+
+.fullscreensim #boardview {
+    /* Gradient background is a little too intense in dark mode. Use a solid color instead */
+    background: var(--pxt-target-background2);
+}
+
+/* 
+ * Inverted image colors
+ */
+.barcharticon,
+.blockly-ws-search-next-btn,
+.blockly-ws-search-previous-btn,
+.blockly-ws-search-close-btn {
+    filter: invert(1);
+}
+
+.modals .ui.button.immersive-reader-button,
+#mainmenu .immersive-reader-button.ui.item,
+#simulator .editor-sidebar .immersive-reader-button.ui.item {
+    background-image: url("/static/icons/immersive-reader-light.svg") !important;
+}
+
+.carouselarrow {
+    /* Better contrast, especially against images in carousels */
+    opacity: 0.9;
+}
+
+/* For inverted buttons, it almost always looks better to have the background be dark instead of light (even though non-inverted has a light foreground) */
+button.ui.button.inverted:not(.teaching-bubble-button),
+button.common-button.inverted:not(.teaching-bubble-button) {
+    background-color: var(--pxt-neutral-background2) !important;
+}
+
+button.ui.button.inverted:hover:not(.teaching-bubble-button),
+button.common-button.inverted:hover:not(.teaching-bubble-button) {
+    background-color: var(--pxt-neutral-background2-hover) !important;
+}
