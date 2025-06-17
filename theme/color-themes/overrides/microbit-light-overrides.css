@@ -6,3 +6,47 @@
 .theme-preview-microbit-light .theme-preview-sim-button {
     background-color: var(--pxt-neutral-background2) !important;
 }
+
+#filelist, #editortools {
+    /* Special textured backgrounds, but we only have assets for light theme */
+    background: #fff url("/static/logo_texture.png") 0 0 repeat !important;
+}
+
+/*
+ * Adjustments to match the original micro:bit theme
+ */
+path.blocklyFlyoutBackground {
+    fill: #4b4949 !important;
+}
+
+.monacoFlyout {
+    background: #4b4949 !important;
+}
+
+#simulator .editor-sidebar .filemenu {
+    background: var(--pxt-secondary-background);
+    color: var(--pxt-secondary-foreground);
+}
+
+#simulator .editor-sidebar .filemenu .item:hover, #simulator .editor-sidebar .filemenu .link.item:hover {
+    background: var(--pxt-secondary-background-hover) !important;
+    color: var(--pxt-secondary-foreground-hover) !important;
+}
+
+#simulator .ui.button.play-button .icon.play {
+    color: var(--pxt-colors-green-background) !important;
+}
+
+.simtoolbar .ui.button.icon {
+    background-color: #e0e1e2;
+    color: rgba(0,0,0,.6);
+}
+
+.simtoolbar .ui.button.icon:hover {
+    filter: none;
+    background-color: rgb(224, 225, 226);
+}
+
+#serialPreview .label {
+    border-color: var(--pxt-primary-background);
+}
