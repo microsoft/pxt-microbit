@@ -308,7 +308,8 @@
             "muselab/pxt-muselab-oled-v2": { "tags": [ "Lights and Display" ] },
             "microsoft/pxt-jacdac": {
                 "tags": [ "Science" ],
-                "upgrades": [ "move:jacdac/pxt-jacdac" ]
+                "upgrades": [ "move:jacdac/pxt-jacdac" ],
+                "hidden": true
             },
             "microsoft/pxt-jacdac/accelerometer": {},
             "microsoft/pxt-jacdac/acidity": {},
