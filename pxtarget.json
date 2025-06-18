@@ -7,6 +7,7 @@
     "corepkg": "core",
     "bundleddirs": [
         "libs/core",
+        "libs/audio-samples",
         "libs/radio",
         "libs/devices",
         "libs/bluetooth",
@@ -430,13 +431,18 @@
         "workspaceSearch": true,
         "allowPackageExtensions": true,
         "addNewTypeScriptFile": true,
+        "enabledFeatures": {
+            "blocksErrorList": {},
+            "aiErrorHelp": {
+                "includeRegions": ["US"]
+            }
+        },
         "experiments": [
             "accessibleBlocks",
             "debugExtensionCode",
             "bluetoothUartConsole",
             "bluetoothPartialFlashing",
-            "identity",
-            "blocksErrorList"
+            "identity"
         ],
         "supportedExperiences": [
             "code-eval"

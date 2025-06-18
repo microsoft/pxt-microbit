@@ -350,7 +350,6 @@
             "microsoft/pxt-jacdac/motor": {},
             "microsoft/pxt-jacdac/multitouch": {},
             "microsoft/pxt-jacdac/potentiometer": {},
-            "microsoft/pxt-jacdac/power": {},
             "microsoft/pxt-jacdac/pulse-oximeter": {},
             "microsoft/pxt-jacdac/rain-gauge": {},
             "microsoft/pxt-jacdac/real-time-clock": {},
@@ -477,6 +476,7 @@
             "ines-hpmm/pxt-luma-matrix": { "tags": [ "Lights and Display" ] },
             "team-bp/pxt-bplab": { "tags": [ "Science" ] },
             "jimd80/pxt-coderdojo-controller": { "tags": [ "Gaming" ] },
+            "elecfreaks/pxt-petal": { "tags": [ "Science" ] },
             "microsoft/pxt-simx-sample": {
                 "simx": {
                     "sha": "7301f5900879b85127482d79bab48f03c25690a8",
@@ -498,7 +498,7 @@
             },
             "jacdac/pxt-jacdac": {
                 "simx": {
-                    "sha": "1992ffbd37a7e28604e65cc16efa78a827543199",
+                    "sha": "c286f6312ba29f9acc9a153d7b852f37f31e62e3",
                     "devUrl": "https://jacdac.github.io/pxt-jacdac/"
                 }
             },
@@ -542,7 +542,6 @@
             "jacdac/pxt-jacdac/motor": {},
             "jacdac/pxt-jacdac/multitouch": {},
             "jacdac/pxt-jacdac/potentiometer": {},
-            "jacdac/pxt-jacdac/power": {},
             "jacdac/pxt-jacdac/pulse-oximeter": {},
             "jacdac/pxt-jacdac/rain-gauge": {},
             "jacdac/pxt-jacdac/real-time-clock": {},
@@ -616,6 +615,8 @@
         }
     },
     "teachertool": {
+        "showSharePageEvalButton": true,
+        "defaultChecklistUrl": "teachertool/checklists/general-code-quality.json",
         "carousels": [
             {
                 "title": "Checklists for Tutorials",

@@ -1,6 +1,6 @@
 {
     "name": "pxt-microbit",
-    "version": "7.1.36",
+    "version": "7.1.42",
     "description": "micro:bit target for Microsoft MakeCode (PXT)",
     "keywords": [
         "JavaScript",
@@ -45,21 +45,15 @@
         "typescript": "4.8.3"
     },
     "dependencies": {
-        "pxt-common-packages": "12.3.30",
-        "pxt-core": "11.4.22"
+        "pxt-common-packages": "12.3.31",
+        "pxt-core": "11.4.29"
     },
     "overrides": {
         "@blockly/field-colour": {
-            "blockly": "^12.0.0-beta.4"
+            "blockly": "^12.1.0-beta.0"
         },
         "@blockly/plugin-workspace-search": {
-            "blockly": "^12.0.0-beta.4"
-        },
-        "@blockly/keyboard-navigation": {
-            "blockly": "^12.0.0-beta.4"
+            "blockly": "^12.1.0-beta.0"
         }
-    },
-    "scripts": {
-        "postinstall": "node ./scripts/patchBlocklyFieldColour.js"
     }
 }
