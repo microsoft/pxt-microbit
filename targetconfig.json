@@ -197,6 +197,7 @@
                 "tags": [ "Lights and Display" ],
                 "upgrades": [ "min:v0.1.0" ]
             },
+            "jackr1w/ledmatrixxy": { "tags": [ "Lights and Display" ] },
             "lwchkg/pxt-proportional-font": {},
             "jcubuntu/pxt-ikb1": { "tags": [ "Robotics" ] },
             "kitronikltd/pxt-kitronik-accessbit": { "tags": [ "Robotics" ] },
