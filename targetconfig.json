@@ -350,7 +350,6 @@
             "microsoft/pxt-jacdac/motor": {},
             "microsoft/pxt-jacdac/multitouch": {},
             "microsoft/pxt-jacdac/potentiometer": {},
-            "microsoft/pxt-jacdac/power": {},
             "microsoft/pxt-jacdac/pulse-oximeter": {},
             "microsoft/pxt-jacdac/rain-gauge": {},
             "microsoft/pxt-jacdac/real-time-clock": {},
@@ -477,18 +476,22 @@
             "ines-hpmm/pxt-luma-matrix": { "tags": [ "Lights and Display" ] },
             "team-bp/pxt-bplab": { "tags": [ "Science" ] },
             "jimd80/pxt-coderdojo-controller": { "tags": [ "Gaming" ] },
+            "forward-education/pxt-solar": { "tags": [ "Science" ] },
+            "forward-education/pxt-hydroponics": { "tags": [ "Science" ] },
+            "elecfreaks/pxt-petal": { "tags": [ "Science" ] },
             "microsoft/pxt-simx-sample": {
                 "simx": {
                     "sha": "7301f5900879b85127482d79bab48f03c25690a8",
                     "devUrl": "http://localhost:5173"
                 }
             },
-            "microbit-foundation/pxt-microbit-ml": { 
+            "microbit-foundation/pxt-microbit-ml": {
                 "simx": {
                     "sha": "ba99fd9588e87eb994345d04b596adc51d2d8116",
                     "devUrl": "http://localhost:5173",
                     "aspectRatio": 3.45
-                }
+                },
+                "hidden": true
             },
             "microbit-apps/display-shield": {
                 "simx": {
@@ -542,7 +545,6 @@
             "jacdac/pxt-jacdac/motor": {},
             "jacdac/pxt-jacdac/multitouch": {},
             "jacdac/pxt-jacdac/potentiometer": {},
-            "jacdac/pxt-jacdac/power": {},
             "jacdac/pxt-jacdac/pulse-oximeter": {},
             "jacdac/pxt-jacdac/rain-gauge": {},
             "jacdac/pxt-jacdac/real-time-clock": {},
