@@ -44,4 +44,4 @@ input.onButtonPressed(Button.B, () => {
 [image](/reference/images/image),
 [create image](/reference/images/create-image),
 [create big image](/reference/images/create-big-image),
-[scroll image](/reference/images/scroll-image), [show animation](/reference/basic/show-animation)
+[scroll image](/reference/images/scroll-image)

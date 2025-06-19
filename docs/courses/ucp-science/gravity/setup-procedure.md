@@ -107,11 +107,12 @@ Earthquakes cause vibrations which can be detected with the Microbit accelerator
 
 Use the @boardname@s to record data from a skater at a skate park or acceleration down a ramp like a Pinewood Derby car. 
 
-<br/>
+## ~button /courses/ucp-science/gravity/resources
+NEXT: Resources
+## ~
 
-| | | |
-|-|-|-|
-| Adapted from "[Gravity, Motion, and Waves](https://drive.google.com/open?id=1Z8S-W3n1jX6drC8ALj8Wh1Rjc0CyP0Afs3acnIjDYes)" by [C Lyman](http://utahcoding.org) | | [![CC BY-NC-SA](https://licensebuttons.net/l/by-nc-sa/4.0/80x15.png)](https://creativecommons.org/licenses/by-nc-sa/4.0/) |
+<br/>
+Adapted from "[Gravity, Motion, and Waves](https://drive.google.com/open?id=1Z8S-W3n1jX6drC8ALj8Wh1Rjc0CyP0Afs3acnIjDYes)" by [C Lyman](http://utahcoding.org) [![CC BY-NC-SA](https://licensebuttons.net/l/by-nc-sa/4.0/80x15.png)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 ```package
 radio

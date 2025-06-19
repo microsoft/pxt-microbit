@@ -149,6 +149,7 @@ namespace pxsim.flashlog {
         logSize = 0;
         committedCols = 0;
         currentRow = undefined;
+        board().serialState.writeCsv("", "clear");
     }
 
     export function setTimeStamp(format: FlashLogTimeStampFormat) {
@@ -160,5 +161,13 @@ namespace pxsim.flashlog {
     export function setSerialMirroring(enabled: boolean) {
         init();
         mirrorToSerial = !!enabled;
+    }
+
+    export function getNumberOfRows(fromRowIndex = 0): number {
+        return 0 // TODO
+    }
+
+    export function getRows(fromRowIndex: number, nRows: number): string {
+        return "" // TODO
     }
 }

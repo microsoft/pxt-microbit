@@ -71,7 +71,4 @@ The study of ecosystems includes the interaction of organisms with each other an
 * [Blog entry on Windows 10 MakeCode app](https://sites.google.com/view/utahcodingproject/blog/2018-jan-makecode-app)
 
 <br/>
-
-| | | |
-|-|-|-|
-| Adapted from "[Soil Moisture Tester](https://drive.google.com/open?id=1Rv4oPoxrggbokczbroQUl-10py3_5fQjVxOvwHR_5I4)" by [C Lyman](http://utahcoding.org) | | [![CC BY-NC-SA](https://licensebuttons.net/l/by-nc-sa/4.0/80x15.png)](https://creativecommons.org/licenses/by-nc-sa/4.0/) |
+Adapted from "[Soil Moisture Tester](https://drive.google.com/open?id=1Rv4oPoxrggbokczbroQUl-10py3_5fQjVxOvwHR_5I4)" by [C Lyman](http://utahcoding.org) [![CC BY-NC-SA](https://licensebuttons.net/l/by-nc-sa/4.0/80x15.png)](https://creativecommons.org/licenses/by-nc-sa/4.0/)

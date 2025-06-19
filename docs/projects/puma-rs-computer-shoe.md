@@ -21,7 +21,7 @@ To compute the distance, the engineers relied on the relationship between stride
 
 [![Screenshot of the US patent](/static/mb/projects/puma-rs-computer-shoe/uspatent.png)](/static/mb/projects/puma-rs-computer-shoe/patent.pdf)
 
-Assuming``T`` is the elapsed time, ``S`` is the number of foot strikes
+Assuming ``T`` is the elapsed time, ``S`` is the number of foot strikes
 and ``A``, ``B`` are constants that have been identified in the calibration phase, the 
 speed ``V`` is computed as follows:
 

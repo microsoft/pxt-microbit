@@ -1,16 +1,10 @@
 # Beat
 
-Returns the duration of a beat in milli-seconds
+Returns the duration of a beat in milliseconds
 
 ```sig
 music.beat(BeatFraction.Whole)
 ```
-
-## ~ hint
-
-**Simulator**: This function only works on the @boardname@ and in some browsers.
-
-## ~
 
 ## Parameters
 

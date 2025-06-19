@@ -1,6 +1,6 @@
 {
     "name": "pxt-microbit",
-    "version": "5.1.1",
+    "version": "7.1.44",
     "description": "micro:bit target for Microsoft MakeCode (PXT)",
     "keywords": [
         "JavaScript",
@@ -32,6 +32,7 @@
         "docs/static/icons/favicon.ico"
     ],
     "devDependencies": {
+        "@types/dom-mediacapture-record": "1.0.20",
         "@types/marked": "0.3.0",
         "@types/node": "8.10.66",
         "@types/react": "16.4.7",
@@ -41,10 +42,18 @@
         "react": "16.8.3",
         "react-dom": "16.11.0",
         "semantic-ui-less": "2.4.1",
-        "typescript": "4.2.3"
+        "typescript": "4.8.3"
     },
     "dependencies": {
-        "pxt-common-packages": "10.0.1",
-        "pxt-core": "8.0.2"
+        "pxt-common-packages": "12.3.31",
+        "pxt-core": "11.4.30"
+    },
+    "overrides": {
+        "@blockly/field-colour": {
+            "blockly": "^12.1.0-beta.0"
+        },
+        "@blockly/plugin-workspace-search": {
+            "blockly": "^12.1.0-beta.0"
+        }
     }
 }

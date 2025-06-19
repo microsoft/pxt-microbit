@@ -37,7 +37,7 @@ basic.forever(function() {
 
 ## Other sensors
 
-You can use this block for pretty much any kind of data. Try it out! Plot the ``||input:light level||`` inside the ``||loops:forever||`` instead. Play with the light sensor in the simulator. 
+You can use this block for pretty much any kind of data. Try it out! Plot the ``||input:light level||`` inside the ``||basic:forever||`` instead. Play with the light sensor in the simulator. 
 
 ```blocks
 basic.forever(function() {
@@ -51,3 +51,7 @@ basic.forever(function() {
 ## Download and try
 
 Download the code to your @boardname@ and test the sensors.
+
+```template
+basic.forever(function() {})
+```

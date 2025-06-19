@@ -34,8 +34,9 @@ Students will:
 * Spreadsheet for data analysis
 * Old batteries for testing
 
-<br/>
+## ~button /courses/ucp-science/electricity/setup-procedure
+NEXT: Setup an Procedure
+## ~
 
-| | | |
-|-|-|-|
-| Adapted from "[Electricity - Battery Tester](https://drive.google.com/open?id=15Xry9jFsIzHHG7RpaIomLodl9pBjTiKDvtjkd227b7Y)" by [C Lyman](http://utahcoding.org) | | [![CC BY-NC-SA](https://licensebuttons.net/l/by-nc-sa/4.0/80x15.png)](https://creativecommons.org/licenses/by-nc-sa/4.0/) |
+<br/>
+Adapted from "[Electricity - Battery Tester](https://drive.google.com/open?id=15Xry9jFsIzHHG7RpaIomLodl9pBjTiKDvtjkd227b7Y)" by [C Lyman](http://utahcoding.org) [![CC BY-NC-SA](https://licensebuttons.net/l/by-nc-sa/4.0/80x15.png)](https://creativecommons.org/licenses/by-nc-sa/4.0/)

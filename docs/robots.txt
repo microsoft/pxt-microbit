@@ -1,0 +1,5 @@
+# robots.txt for PXT Micro:Bit
+
+# Disable crawling in /v2 path for micro:bit
+User-agent: *
+Disallow: /v2

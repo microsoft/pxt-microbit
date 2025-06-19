@@ -47,7 +47,7 @@ radio.onReceivedNumber(function (receivedNumber) {
 To see the current score, we add an ``||input:on button pressed||`` that displays the score on the screen when the **A** button is pressed.
 
 ```block
-input.onButtonPressed(Button.A, () => {
+input.onButtonPressed(Button.A, function () {
     basic.showNumber(game.score())
 })
 ``` 
@@ -77,7 +77,7 @@ radio.onReceivedNumber(function (receivedNumber) {
         }
     }
 })
-input.onButtonPressed(Button.A, () => {
+input.onButtonPressed(Button.A, function () {
     basic.showNumber(game.score())
 })
 radio.setGroup(1)

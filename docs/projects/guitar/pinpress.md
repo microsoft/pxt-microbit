@@ -22,9 +22,9 @@ Use pin press to switch guitar play on/off
 
 ```cards
 let on = false
-on;
+on
 if (on) { } else {}
-input.onPinPressed(TouchPin.P1, () => {})
+input.onPinPressed(TouchPin.P1, function () {})
 ```
 
 
@@ -43,13 +43,13 @@ input.onPinPressed(TouchPin.P1, () => {})
 ## Step 1: Pin Press Test
 
 ```blocks
-input.onPinPressed(TouchPin.P0, () => {
+input.onPinPressed(TouchPin.P0, function () {
     basic.showNumber(0)
 })
-input.onPinPressed(TouchPin.P1, () => {
+input.onPinPressed(TouchPin.P1, function () {
     basic.showNumber(1)
 })
-input.onPinPressed(TouchPin.P2, () => {
+input.onPinPressed(TouchPin.P2, function () {
     basic.showNumber(2)
 })
 ```
@@ -88,14 +88,14 @@ https://youtu.be/YkymZGNmkrE
 **between ON and OFF**
 ```blocks
 let on = false
-basic.forever(() => {
+basic.forever(function () {
     if (on == true) {
         basic.showString("ON")
     } else {
         basic.showString("OFF")
     }
 })
-input.onPinPressed(TouchPin.P1, () => {
+input.onPinPressed(TouchPin.P1, function () {
     if (on == true) {
         on = false
     } else {
@@ -110,10 +110,10 @@ input.onPinPressed(TouchPin.P1, () => {
 **Test by touching `P1` to toggle the LED message between ON and OFF**
 
 *Final code*
-TODO: do we want to use `on = !on;` or be more direct in flipping the switch? `on = true; on = false;`
+TODO: do we want to use `on = !on` or be more direct in flipping the switch? `on = true` or `on = false`
 ```blocks
 let on = false
-basic.forever(() => {
+basic.forever(function () {
     if (on) {
         music.setTempo(pins.map(Math.abs(input.acceleration(Dimension.Y)),
             0, 1023,
@@ -121,13 +121,13 @@ basic.forever(() => {
         music.playTone(
             input.lightLevel() * 25,
             music.beat(BeatFraction.Quarter)
-        );
+        )
     } else {
         music.rest(music.beat())
     }
 })
-input.onPinPressed(TouchPin.P1, () => {
-    on = !on;
+input.onPinPressed(TouchPin.P1, function () {
+    on = !on
 })
 ```
 ## Now Play!

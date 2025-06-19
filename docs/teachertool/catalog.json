@@ -1,0 +1,226 @@
+{
+    "criteria": [
+        {
+            "id": "35610CA0-38F8-4CCE-BAB9-99593DB3358A",
+            "use": "responds_to_events",
+            "template": "Responds to at least ${count} different event(s)",
+            "description": "At least the specified number of event blocks are present.",
+            "docPath": "/teachertool",
+            "maxCount": 1,
+            "tags": ["Input and Output"],
+            "params": [
+                {
+                    "name": "count",
+                    "type": "number",
+                    "default": 1,
+                    "paths": ["checks[0].count"]
+                }
+            ]
+        },
+        {
+            "id": "3F7A9DB3-0B5E-456B-86E7-79573F9F6E53",
+            "use": "uses_input",
+            "template": "Uses input",
+            "description": "At least one block that reads or reacts to user input is present.",
+            "docPath": "/teachertool",
+            "maxCount": 1,
+            "tags": ["Input and Output"]
+        },
+        {
+            "id": "D285D79B-85E5-4C8D-82D2-5A9E35AB1163",
+            "use": "has_output",
+            "template": "Produces output",
+            "description": "At least one block that lights up LEDs, makes sound, or writes to pins is present.",
+            "docPath": "/teachertool",
+            "maxCount": 1,
+            "tags": ["Input and Output"]
+        },
+        {
+            "id": "2CA4A5DA-4690-4514-97F5-2FE145AB3A59",
+            "use": "uses_led_coordinates",
+            "template": "Uses LED coordinates at least ${count} time(s)",
+            "description": "Uses blocks with LED coordinate inputs at least the specified number of times.",
+            "docPath": "/teachertool",
+            "maxCount": 1,
+            "tags": ["Code Elements"],
+            "params": [
+                {
+                    "name": "count",
+                    "type": "number",
+                    "default": 1,
+                    "paths": ["checks[0].count"]
+                }
+            ]
+        },
+        {
+            "id": "BBB47818-B35F-404C-89A1-D6A594CE9E30",
+            "use": "sends_radio_message",
+            "template": "Sends radio messages",
+            "description": "Radio group is set and at least one block that sends a radio message is present.",
+            "docPath": "/teachertool",
+            "maxCount": 1,
+            "tags": ["Input and Output"]
+        },
+        {
+            "id": "8C8792C4-31C4-439D-ACAB-C99C9B8250AD",
+            "use": "receives_radio_message",
+            "template": "Receives radio messages",
+            "description": "Radio group is set and at least one block that listens for radio messages is present.",
+            "docPath": "/teachertool",
+            "maxCount": 1,
+            "tags": ["Input and Output"]
+        },
+        {
+            "id": "18C44CC4-497F-45EC-90FA-CE7DB117AD03",
+            "use": "set_radio_group_on_start",
+            "template": "Sets the radio group on startup",
+            "description": "The 'radio set group' block is called in the 'on start' event.",
+            "hideInCatalog": true,
+            "docPath": "/teachertool"
+        },
+        {
+            "id": "7ECB3AD5-F1C1-4106-9259-802B2E69A7A2",
+            "use": "send_radio_string_on_button_press",
+            "template": "Sends a radio string when a button is pressed",
+            "description": "The 'radio send string' block is called inside a button press event",
+            "hideInCatalog": true,
+            "docPath": "/teachertool"
+        },
+        {
+            "id": "FAA97F77-C9F5-4D58-A3D5-47F965F4B6E2",
+            "use": "any_on_radio_received",
+            "template": "Listens for incoming radio messages",
+            "description": "Any 'on radio received' event (string, number, or name + value) is present.",
+            "hideInCatalog": true,
+            "docPath": "/teachertool"
+        },
+        {
+            "id": "D249AB3E-2620-4E33-911E-284303455365",
+            "use": "on_radio_received_and_displayed",
+            "template": "Displays the received radio message on the screen",
+            "description": "A 'show' block is called with the received message inside the 'on radio received' event.",
+            "hideInCatalog": true,
+            "docPath": "/teachertool"
+        },
+        {
+            "id": "7C2F70AB-2A00-4E35-8227-E5756957D7B3",
+            "use": "on_shake_gesture",
+            "template": "Runs code when the micro:bit is shaken",
+            "description": "When the user shakes the micro:bit, the code inside this block will run.",
+            "hideInCatalog": true,
+            "docPath": "/teachertool"
+        },
+        {
+            "id": "7CFD9718-E841-4286-9563-B70D2F22D8D8",
+            "use": "variable_declared_called_hand",
+            "template": "Declares a variable called 'hand'",
+            "description": "The project includes a variable called 'hand'",
+            "hideInCatalog": true,
+            "docPath": "/teachertool"
+        },
+        {
+            "id": "499EEFAB-2487-427E-8081-28EE031C7D17",
+            "use": "hand_equal_to_number",
+            "template": "Checks the value of the variable 'hand'",
+            "description": "The project checks the value of the variable 'hand'",
+            "hideInCatalog": true,
+            "docPath": "/teachertool"
+        },
+        {
+            "id": "FD7E03B7-53F2-41B9-93ED-51AEA864468E",
+            "use": "conditional_show_icon",
+            "template": "Show an icon on display when a condition is met",
+            "description": "The project shows an icon on the display when a condition is met",
+            "hideInCatalog": true,
+            "docPath": "/teachertool"
+        },
+        {
+            "id": "850DBBDE-71BA-48D2-A1E4-7AC19716C976",
+            "use": "get_sound_level",
+            "template": "Sound level is detected in the program",
+            "hideInCatalog": true,
+            "docPath": "/teachertool"
+        },
+        {
+            "id": "F82F6BB4-2B1C-4CFF-92BA-65CE63DD6399",
+            "use": "soundlevel_greater_than_check",
+            "template": "Check that the sound level is greater than some number",
+            "hideInCatalog": true,
+            "docPath": "/teachertool"
+        },
+        {
+            "id": "B835FAA0-8CA6-4E4A-95B4-7FC6D15231BD",
+            "use": "soundlevel_gt_condition",
+            "template": "If a detected sound level is greater than some number, then two variables are set to random values",
+            "description": "An if statement checks a detected sound level is greater than a predetermined number. If this is true, variables 'row' and 'col' are set to random values",
+            "hideInCatalog": true,
+            "docPath": "/teachertool"
+        },
+        {
+            "id": "CCA30B9D-4ED7-4916-94AF-050FC473FAA1",
+            "use": "col_variable_set_random",
+            "template": "Variable named 'col' is set to a random value",
+            "hideInCatalog": true,
+            "docPath": "/teachertool"
+        },
+        {
+            "id": "162222FB-8E2B-4131-9EA3-EC6B83DDAFB2",
+            "use": "row_variable_set_random",
+            "template": "Variable named 'row' is set to a random value",
+            "hideInCatalog": true,
+            "docPath": "/teachertool"
+        },
+        {
+            "id": "01A65046-D4BE-44B6-8273-7A878A71B3D0",
+            "use": "point_bool_check",
+            "template": "Check that an LED is lit on the screen",
+            "description": "At the spot ('col', 'row') on the LED screen, the LED is on",
+            "hideInCatalog": true,
+            "docPath": "/teachertool"
+        },
+        {
+            "id": "E3286B6D-5BEB-43EC-B246-C956AAC34C3E",
+            "use": "unplot_vars_used",
+            "template": "Turn off an LED at point ('col', 'row')",
+            "hideInCatalog": true,
+            "docPath": "/teachertool"
+        },
+        {
+            "id": "46AFEDA3-35CB-4041-BEC4-53C0D29E57BA",
+            "use": "col_add_num",
+            "template": "Sum the value of the 'col' variable and a given number",
+            "hideInCatalog": true,
+            "docPath": "/teachertool"
+        },
+        {
+            "id": "6BA59761-9464-4C8D-9D8F-E8985273FB92",
+            "use": "plot_vars_used",
+            "template": "Turn on an LED at point ('col' + 1, 'row')",
+            "hideInCatalog": true,
+            "docPath": "/teachertool"
+        },
+        {
+            "id": "5934E4C6-7AE4-46A4-8F92-99101987D064",
+            "use": "show_icon_on_start",
+            "template": "Show an icon on the LED screen when the program starts",
+            "description": "An icon block is used inside the on start block",
+            "hideInCatalog": true,
+            "docPath": "/teachertool"
+        },
+        {
+            "id": "0B2BC680-D79D-42C8-BA13-B6B189E2BF7D",
+            "use": "point_condition",
+            "template": "If an LED is on, turn it off and light up a different LED",
+            "hideInCatalog": true,
+            "docPath": "/teachertool"
+        },
+        {
+            "id": "ECC79C65-56DC-44A9-98FC-147F5EED87CC",
+            "use": "blow_away_completeness",
+            "template": "Project completeness",
+            "description": "The project contains all the blocks required at the end of the tutorial",
+            "hideInCatalog": true,
+            "docPath": "/teachertool"
+        }
+    ]
+}

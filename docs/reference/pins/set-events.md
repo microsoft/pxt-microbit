@@ -8,7 +8,9 @@ pins.setEvents(DigitalPin.P0, PinEventType.Edge);
 
 ### ~ hint
 
-**Simulator**: This function needs real hardware to work with. It's not supported in the simulator.
+#### Simulator
+
+This function needs real hardware to work with. It's not supported in the simulator.
 
 ### ~
 

@@ -8,7 +8,8 @@ namespace pxsim {
         , RadioBoard
         , LightBoard
         , MicrophoneBoard
-        , ControlMessageBoard {
+        , ControlMessageBoard
+        , samples.SampleBoard {
         // state & update logic for component services
         ledMatrixState: LedMatrixState;
         edgeConnectorState: EdgeConnectorState;
@@ -19,12 +20,14 @@ namespace pxsim {
         lightSensorState: LightSensorState;
         buttonPairState: ButtonPairState;
         radioState: RadioState;
-        microphoneState: AnalogSensorState;
+        microphoneState: MicrophoneState;
+        recordingState: RecordingState;
         lightState: pxt.Map<CommonNeoPixelState>;
         fileSystem: FileSystemState;
         logoTouch: Button;
         speakerEnabled: boolean = true;
         controlMessageState: ControlMessageState;
+        samplesState: samples.SamplesState;
 
         // visual
         viewHost: visuals.BoardHost;
@@ -97,7 +100,8 @@ namespace pxsim {
                 ID_RADIO: DAL.MICROBIT_ID_RADIO,
                 RADIO_EVT_DATAGRAM: DAL.MICROBIT_RADIO_EVT_DATAGRAM
             });
-            this.builtinParts["microphone"] = this.microphoneState = new AnalogSensorState(DAL.DEVICE_ID_MICROPHONE, 0, 255, 86, 165);
+            this.builtinParts["microphone"] = this.microphoneState = new MicrophoneState(DAL.DEVICE_ID_MICROPHONE, 0, 255, 86, 165);
+            this.builtinParts["recording"] = this.recordingState = new RecordingState();
             this.builtinParts["accelerometer"] = this.accelerometerState = new AccelerometerState(runtime);
             this.builtinParts["serial"] = this.serialState = new SerialState(runtime, this);
             this.builtinParts["thermometer"] = this.thermometerState = new ThermometerState();
@@ -117,6 +121,8 @@ namespace pxsim {
             this.builtinPartVisuals["buttonpair"] = (xy: visuals.Coord) => visuals.mkBtnSvg(xy);
             this.builtinPartVisuals["ledmatrix"] = (xy: visuals.Coord) => visuals.mkLedMatrixSvg(xy, 8, 8);
             this.builtinPartVisuals["microservo"] = (xy: visuals.Coord) => visuals.mkMicroServoPart(xy);
+
+            this.samplesState = new samples.SamplesState();
         }
 
         ensureHardwareVersion(version: number) {
@@ -169,8 +175,16 @@ namespace pxsim {
             }), opts);
 
             document.body.innerHTML = ""; // clear children
+            if (shouldShowMute()) {
+                document.body.appendChild(createMuteButton());
+                AudioContextManager.mute(true);
+                setParentMuteState("disabled");
+            }
             document.body.appendChild(this.view = this.viewHost.getView());
 
+            if (msg.theme === "mbcodal") {
+                this.ensureHardwareVersion(2);
+            }
             return Promise.resolve();
         }
 
@@ -189,6 +203,11 @@ namespace pxsim {
 
         screenshotAsync(width?: number): Promise<ImageData> {
             return this.viewHost.screenshotAsync(width);
+        }
+
+        kill() {
+            super.kill();
+            this.viewHost.removeEventListeners();
         }
     }
 

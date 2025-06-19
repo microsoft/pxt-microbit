@@ -17,3 +17,8 @@ Go to the MakeCode extension documentation and see the [getting started](https:/
 Extensions are also known, and referred to, as _packages_. The term _package_ is currently used in the MakeCode documentation for developing and deploying extensions.
 
 ## ~
+
+
+## See also
+
+[Simulator extensions](./simulator-extensions.md)

@@ -49,4 +49,4 @@ input.onButtonPressed(Button.B, () => {
 [image](/reference/images/image),
 [create image](/reference/images/create-image),
 [show image](/reference/images/show-image),
-[scroll image](/reference/images/scroll-image), [show animation](/reference/basic/show-animation)
+[scroll image](/reference/images/scroll-image)

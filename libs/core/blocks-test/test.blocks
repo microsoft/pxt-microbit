@@ -150,31 +150,51 @@
                 <field name="mode">DisplayMode.Greyscale</field>
                 <next>
                   <block type="device_set_analog_pin">
-                    <field name="name">AnalogPin.P4</field>
+                    <value name="name">
+                      <shadow type="analog_pin">
+                        <field name="pin">AnalogPin.P4</field>
+                      </shadow>
+                    </value>
                     <value name="value">
                       <shadow type="math_number_minmax" id=",:%8N*FL3wa-zFQ[+^$9">
-                        <mutation min="0" max="1023" label="Value"></mutation>
+                        <mutation min="0" max="1023" label="Value" precision="0"></mutation>
                         <field name="SLIDER">1023</field>
                       </shadow>
                       <block type="device_get_analog_pin">
-                        <field name="name">AnalogPin.P13</field>
+                        <value name="name">
+                          <shadow type="analog_pin">
+                            <field name="pin">AnalogPin.P13</field>
+                          </shadow>
+                        </value>
                       </block>
                     </value>
                     <next>
                       <block type="device_set_digital_pin">
-                        <field name="name">DigitalPin.P10</field>
+                        <value name="name">
+                          <shadow type="digital_pin">
+                            <field name="pin">DigitalPin.P10</field>
+                          </shadow>
+                        </value>
                         <value name="value">
                           <shadow type="math_number_minmax" id="W~pvdj%jFEj?EHmT{81Z">
-                            <mutation min="0" max="1" label="Value"></mutation>
+                            <mutation min="0" max="1" label="Value" precision="0"></mutation>
                             <field name="SLIDER">0</field>
                           </shadow>
                           <block type="device_get_digital_pin">
-                            <field name="name">DigitalPin.P15</field>
+                            <value name="name">
+                              <shadow type="digital_pin">
+                                <field name="pin">DigitalPin.P15</field>
+                              </shadow>
+                            </value>
                           </block>
                         </value>
                         <next>
                           <block type="device_set_analog_period">
+                            <value name="pin">
+                              <shadow type="analog_pin">
                             <field name="pin">AnalogPin.P9</field>
+                              </shadow>
+                            </value>
                             <value name="micros">
                               <shadow type="math_number" id="4a@.1MdG`n=p;34mQOpC">
                                 <field name="NUM">1234</field>
@@ -218,10 +238,14 @@
                             </value>
                             <next>
                               <block type="device_set_servo_pin">
-                                <field name="name">AnalogPin.P20</field>
+                                <value name="name">
+                                  <shadow type="analog_pin">
+                                    <field name="pin">AnalogPin.P20</field>
+                                  </shadow>
+                                </value>
                                 <value name="value">
                                   <shadow type="math_number_minmax" id="xC9lYf`{!gA-A8R+#~L.">
-                                    <mutation min="0" max="180" label="Value"></mutation>
+                                    <mutation min="0" max="180" label="Value" precision="0"></mutation>
                                     <field name="SLIDER">180</field>
                                   </shadow>
                                   <block type="device_acceleration">
@@ -230,7 +254,11 @@
                                 </value>
                                 <next>
                                   <block type="device_set_servo_pulse">
-                                    <field name="value">AnalogPin.P14</field>
+                                    <value name="value">
+                                      <shadow type="analog_pin">
+                                        <field name="pin">AnalogPin.P14</field>
+                                      </shadow>
+                                    </value>
                                     <value name="micros">
                                       <shadow type="math_number" id="@*C3kzJkeeUQ@s$N5?K}">
                                         <field name="NUM">1500</field>
@@ -419,7 +447,7 @@
             </value>
             <value name="brightness">
               <shadow type="math_number_minmax" id="IjJTgf5z!,K`qd`~pCB3">
-                <mutation min="0" max="255" label="Brightness"></mutation>
+                <mutation min="0" max="255" label="Brightness" precision="0"></mutation>
                 <field name="SLIDER">255</field>
               </shadow>
               <block type="device_get_brightness"></block>
@@ -428,7 +456,7 @@
               <block type="device_set_brightness">
                 <value name="value">
                   <shadow type="math_number_minmax" id="WAUzdT@1z{%:UNn!_dU(">
-                    <mutation min="0" max="255" label="Value"></mutation>
+                    <mutation min="0" max="255" label="Value" precision="0"></mutation>
                     <field name="SLIDER">255</field>
                   </shadow>
                   <block type="device_note">
@@ -544,7 +572,11 @@
             </value>
             <next>
               <block type="device_set_pin_events">
-                <field name="pin">DigitalPin.P0</field>
+                <value name="pin">
+                  <shadow type="digital_pin">
+                    <field name="pin">DigitalPin.P0</field>
+                  </shadow>
+                </value>
                 <field name="type">PinEventType.Touch</field>
                 <next>
                   <block type="spi_frequency">
@@ -555,10 +587,18 @@
                     </value>
                     <next>
                       <block type="device_analog_set_pitch_pin">
-                        <field name="name">AnalogPin.P2</field>
+                        <value name="name">
+                          <shadow type="analog_pin">
+                            <field name="pin">AnalogPin.P2</field>
+                          </shadow>
+                        </value>
                         <next>
                           <block type="device_set_pull">
-                            <field name="pin">DigitalPin.P2</field>
+                            <value name="pin">
+                              <shadow type="digital_pin">
+                                <field name="pin">DigitalPin.P2</field>
+                              </shadow>
+                            </value>
                             <field name="pull">PinPullMode.PullDown</field>
                             <next>
                               <block type="spi_format">
@@ -574,9 +614,21 @@
                                 </value>
                                 <next>
                                   <block type="spi_pins">
-                                    <field name="mosi">DigitalPin.P9</field>
-                                    <field name="miso">DigitalPin.P14</field>
-                                    <field name="sck">DigitalPin.P16</field>
+                                    <value name="mosi">
+                                      <shadow type="digital_pin">
+                                        <field name="pin">DigitalPin.P9</field>
+                                      </shadow>
+                                    </value>
+                                    <value name="miso">
+                                      <shadow type="digital_pin">
+                                        <field name="pin">DigitalPin.P14</field>
+                                      </shadow>
+                                    </value>
+                                    <value name="sck">
+                                      <shadow type="digital_pin">
+                                        <field name="pin">DigitalPin.P16</field>
+                                      </shadow>
+                                    </value>
                                     <next>
                                       <block type="control_reset"></block>
                                     </next>

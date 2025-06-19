@@ -66,11 +66,13 @@ input.onButtonPressed(Button.A, () => {
 5. Share the project by clicking the **Share** button at the top of the editor window.
 6. Report on the findings from the experiment.
 
-## ~hint
+### ~hint
+
+#### Soil Moisture Project
 
 This experiment is modified from the [Soil Moisture](https://makecode.microbit.org/projects/soil-moisture) project.
 
-## ~
+### ~
 
 ## Data Collection
 
@@ -95,8 +97,9 @@ Display (“DRY”)
 
 Add code that would sound an alarm (play music) if the soil dries out below a certain point. The microbit could be left in a pot of soil with plants. It could be programmed to only sample the moisture every hour or so and then play the alarm when it is dry. This would help conserve the battery on the microbit.
 
-<br/>
+## ~button /courses/ucp-science/soil-moisture/resources
+NEXT: Resources
+## ~
 
-| | | |
-|-|-|-|
-| Adapted from "[Soil Moisture Tester](https://drive.google.com/open?id=1Rv4oPoxrggbokczbroQUl-10py3_5fQjVxOvwHR_5I4)" by [C Lyman](http://utahcoding.org) | | [![CC BY-NC-SA](https://licensebuttons.net/l/by-nc-sa/4.0/80x15.png)](https://creativecommons.org/licenses/by-nc-sa/4.0/) |
+<br/>
+Adapted from "[Soil Moisture Tester](https://drive.google.com/open?id=1Rv4oPoxrggbokczbroQUl-10py3_5fQjVxOvwHR_5I4)" by [C Lyman](http://utahcoding.org) [![CC BY-NC-SA](https://licensebuttons.net/l/by-nc-sa/4.0/80x15.png)](https://creativecommons.org/licenses/by-nc-sa/4.0/)

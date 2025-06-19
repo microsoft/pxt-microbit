@@ -6,6 +6,89 @@
 //% groups='["Pins", "Pulse", "I2C", "SPI", "micro:bit (V2)"]'
 namespace pins {
     /**
+     * Returns the value of a C++ runtime constant
+     */
+    //% help=pins/digital-pin
+    //% shim=TD_ID
+    //% blockId=digital_pin
+    //% block="digital pin $pin"
+    //% pin.fieldEditor=pinpicker
+    //% pin.fieldOptions.columns=4
+    //% pin.fieldOptions.tooltips="false"
+    //% group="Pins"
+    //% weight=17
+    //% blockGap=8
+    //% advanced=true
+    //% decompilerShadowAlias=digital_pin_shadow
+    export function _digitalPin(pin: DigitalPin): number {
+        return pin;
+    }
+
+    /**
+     * Returns the value of a C++ runtime constant
+     */
+    //% help=pins/analog-pin
+    //% shim=TD_ID
+    //% blockId=analog_pin
+    //% block="analog pin $pin"
+    //% pin.fieldEditor=pinpicker
+    //% pin.fieldOptions.columns=4
+    //% pin.fieldOptions.tooltips="false"
+    //% group="Pins"
+    //% weight=16
+    //% blockGap=8
+    //% advanced=true
+    //% decompilerShadowAlias=analog_pin_shadow
+    export function _analogPin(pin: AnalogPin): number {
+        return pin;
+    }
+
+    /**
+     * Returns the value of a C++ runtime constant
+     */
+    //% help=pins/digital-pin
+    //% shim=TD_ID
+    //% blockId=digital_pin_shadow
+    //% block="$pin"
+    //% pin.fieldEditor=pinpicker
+    //% pin.fieldOptions.columns=4
+    //% pin.fieldOptions.tooltips="false"
+    //% blockHidden=1
+    export function _digitalPinShadow(pin: DigitalPin): number {
+        return pin;
+    }
+
+    /**
+     * Returns the value of a C++ runtime constant
+     */
+    //% help=pins/analog-pin
+    //% shim=TD_ID
+    //% blockId=analog_pin_shadow
+    //% block="$pin"
+    //% pin.fieldEditor=pinpicker
+    //% pin.fieldOptions.columns=4
+    //% pin.fieldOptions.tooltips="false"
+    //% blockHidden=1
+    export function _analogPinShadow(pin: AnalogPin): number {
+        return pin;
+    }
+
+    /**
+     * Returns the value of a C++ runtime constant
+     */
+    //% help=pins/analog-pin
+    //% shim=TD_ID
+    //% blockId=analog_read_write_pin_shadow
+    //% block="$pin"
+    //% pin.fieldEditor=pinpicker
+    //% pin.fieldOptions.columns=4
+    //% pin.fieldOptions.tooltips="false"
+    //% blockHidden=1
+    export function _analogReadWritePinShadow(pin: AnalogReadWritePin): number {
+        return pin;
+    }
+
+    /**
      * Map a number from one range to another. That is, a value of ``from low`` would get mapped to ``to low``, a value of ``from high`` to ``to high``, values in-between to values in-between, etc.
      * @param value value to map in ranges
      * @param fromLow the lower bound of the value's current range

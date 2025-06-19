@@ -18,7 +18,7 @@ The turtle scans the display over and over again.
 turtle.setPosition(0, 0)
 turtle.turnRight()
 turtle.setSpeed(20)
-basic.forever(() => {
+basic.forever(function () {
     turtle.forward(4)
     turtle.turnRight()
     turtle.forward(1)

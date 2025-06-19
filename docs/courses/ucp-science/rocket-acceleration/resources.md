@@ -60,7 +60,4 @@ Forces are push or pull interactions between two objects. Changes in motion, bal
 * [Blog entry on Windows 10 MakeCode app](https://sites.google.com/view/utahcodingproject/blog/2018-jan-makecode-app)
 
 <br/>
-
-| | | |
-|-|-|-|
-| Adapted from "[Rocket Acceleration z Radios](https://drive.google.com/open?id=1IyhCPdYQevKh3kHNgukSxlgdvZIKuzmIBjLSRnFS36o)" by [C Lyman](http://utahcoding.org) | | [![CC BY-NC-SA](https://licensebuttons.net/l/by-nc-sa/4.0/80x15.png)](https://creativecommons.org/licenses/by-nc-sa/4.0/) |
+Adapted from "[Rocket Acceleration z Radios](https://drive.google.com/open?id=1IyhCPdYQevKh3kHNgukSxlgdvZIKuzmIBjLSRnFS36o)" by [C Lyman](http://utahcoding.org) [![CC BY-NC-SA](https://licensebuttons.net/l/by-nc-sa/4.0/80x15.png)](https://creativecommons.org/licenses/by-nc-sa/4.0/)

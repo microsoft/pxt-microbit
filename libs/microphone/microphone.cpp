@@ -5,9 +5,6 @@
 #include "LevelDetectorSPL.h"
 #endif
 
-#define MICROPHONE_MIN 52.0f
-#define MICROPHONE_MAX 120.0f
-
 enum class DetectedSound {
     //% block="loud"
     Loud = 2,
@@ -21,14 +18,21 @@ enum class SoundThreshold {
     //% block="quiet"
     Quiet = 1
 };
+namespace input {
 
-namespace pxt {
 #if MICROBIT_CODAL
-    codal::LevelDetectorSPL* getMicrophoneLevel();
-#endif
+bool didInit;
+
+void init() {
+    if (didInit) {
+        return;
+    }
+
+    didInit = true;
+    uBit.audio.levelSPL->setUnit(LEVEL_DETECTOR_SPL_8BIT);
 }
 
-namespace input {
+#endif
 
 /**
 * Registers an event that runs when a sound is detected
@@ -40,9 +44,9 @@ namespace input {
 //% group="micro:bit (V2)"
 void onSound(DetectedSound sound, Action handler) {
 #if MICROBIT_CODAL
-    pxt::getMicrophoneLevel(); // wake up service
+    init();
     const auto thresholdType = sound == DetectedSound::Loud ? LEVEL_THRESHOLD_HIGH : LEVEL_THRESHOLD_LOW;
-    registerWithDal(DEVICE_ID_MICROPHONE, thresholdType, handler);
+    registerWithDal(DEVICE_ID_SYSTEM_LEVEL_DETECTOR, thresholdType, handler);
 #else
     target_panic(PANIC_VARIANT_NOT_SUPPORTED);
 #endif
@@ -58,12 +62,8 @@ void onSound(DetectedSound sound, Action handler) {
 //% group="micro:bit (V2)"
 int soundLevel() {
 #if MICROBIT_CODAL
-    auto level = pxt::getMicrophoneLevel();
-    if (NULL == level)
-        return 0;
-    const int micValue = level->getValue();
-    const int scaled = max(MICROPHONE_MIN, min(micValue, MICROPHONE_MAX)) - MICROPHONE_MIN;
-    return min(0xff, scaled * 0xff / (MICROPHONE_MAX - MICROPHONE_MIN));
+    init();
+    return uBit.audio.levelSPL->getValue();
 #else
     target_panic(PANIC_VARIANT_NOT_SUPPORTED);
     return 0;
@@ -82,16 +82,14 @@ int soundLevel() {
 //% group="micro:bit (V2)"
 void setSoundThreshold(SoundThreshold sound, int threshold) {
 #if MICROBIT_CODAL
-    auto level = pxt::getMicrophoneLevel();
+    init();
+    LevelDetectorSPL* level = uBit.audio.levelSPL;
     if (NULL == level)
         return;
-
-    threshold = max(0, min(0xff, threshold));
-    const int scaled = MICROPHONE_MIN + threshold * (MICROPHONE_MAX - MICROPHONE_MIN) / 0xff;
     if (SoundThreshold::Loud == sound)
-        level->setHighThreshold(scaled);
+        level->setHighThreshold(threshold);
     else
-        level->setLowThreshold(scaled);
+        level->setLowThreshold(threshold);
 #else
     target_panic(PANIC_VARIANT_NOT_SUPPORTED);
 #endif

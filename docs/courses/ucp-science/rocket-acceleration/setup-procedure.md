@@ -115,12 +115,13 @@ Set up the experiment to collect data when a @boardname@ is drown several feet o
 
 Research what acceleration on a skateboard at a skatepark or other types of movement as in a car. What about a ride at an amusement park?
 
+## ~button /courses/ucp-science/rocket-acceleration/resources
+NEXT: Resources
+## ~
+
+<br/>
+Adapted from "[Rocket Acceleration z Radios](https://drive.google.com/open?id=1IyhCPdYQevKh3kHNgukSxlgdvZIKuzmIBjLSRnFS36o)" by [C Lyman](http://utahcoding.org) [![CC BY-NC-SA](https://licensebuttons.net/l/by-nc-sa/4.0/80x15.png)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+
 ```package
 radio
 ```
-
-<br/>
-
-| | | |
-|-|-|-|
-| Adapted from "[Rocket Acceleration z Radios](https://drive.google.com/open?id=1IyhCPdYQevKh3kHNgukSxlgdvZIKuzmIBjLSRnFS36o)" by [C Lyman](http://utahcoding.org) | | [![CC BY-NC-SA](https://licensebuttons.net/l/by-nc-sa/4.0/80x15.png)](https://creativecommons.org/licenses/by-nc-sa/4.0/) |

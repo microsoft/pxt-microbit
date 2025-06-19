@@ -7,6 +7,7 @@
     "corepkg": "core",
     "bundleddirs": [
         "libs/core",
+        "libs/audio-samples",
         "libs/radio",
         "libs/devices",
         "libs/bluetooth",
@@ -16,7 +17,10 @@
         "libs/settings",
         "libs/flashlog",
         "libs/datalogger",
-        "libs/color"
+        "libs/bitmap",
+        "libs/fonts",
+        "libs/color",
+        "libs/audio-recording"
     ],
     "cloud": {
         "workspace": false,
@@ -25,12 +29,43 @@
         "thumbnails": true,
         "publishing": true,
         "importing": true,
+        "showBadges": false,
         "preferredPackages": [
             "Microsoft/pxt-neopixel"
         ],
         "githubPackages": true,
         "cloudProviders": {
-            "github": {}
+            "github": {
+                "id": "github",
+                "name": "GitHub",
+                "icon": "/static/providers/github-mark.png",
+                "identity": false,
+                "order": 3
+            },
+            "microsoft": {
+                "id": "microsoft",
+                "name": "Microsoft",
+                "icon": "/static/providers/microsoft-logo.svg",
+                "identity": true,
+                "redirect": true,
+                "order": 1
+            },
+            "google": {
+                "id": "google",
+                "name": "Google",
+                "icon": "/static/providers/google-logo.svg",
+                "identity": true,
+                "redirect": true,
+                "order": 2
+            },
+            "clever": {
+                "id": "clever",
+                "name": "Clever",
+                "icon": "/static/providers/clever-logo.png",
+                "identity": true,
+                "redirect": true,
+                "order": 3
+            }
         }
     },
     "compile": {
@@ -142,7 +177,7 @@
         "githubCorePackage": "lancaster-university/microbit",
         "gittag": "v2.2.0-rc6",
         "serviceId": "microbit",
-        "dockerImage": "pext/yotta:latest"
+        "dockerImage": "pext/yotta:gcc5"
     },
     "multiVariants": [
         "mbdal",
@@ -157,7 +192,7 @@
         "mbcodal": {
             "compile": {
                 "flashCodeAlign": 4096,
-                "flashUsableEnd": 487424,
+                "flashUsableEnd": 471040,
                 "flashEnd": 524288
             },
             "compileService": {
@@ -165,12 +200,12 @@
                 "codalTarget": {
                     "name": "codal-microbit-v2",
                     "url": "https://github.com/lancaster-university/codal-microbit-v2",
-                    "branch": "v0.2.40",
+                    "branch": "v0.3.0",
                     "type": "git"
                 },
                 "codalBinary": "MICROBIT",
                 "githubCorePackage": "lancaster-university/microbit-v2-samples",
-                "gittag": "v0.2.11",
+                "gittag": "v0.2.13",
                 "serviceId": "mbcodal2",
                 "dockerImage": "pext/yotta:latest",
                 "yottaConfigCompatibility": true
@@ -220,8 +255,15 @@
                 "localHostUrl": "http://localhost:8000/tools/makecode-sim?webusb=0&parentOrigin=$PARENT_ORIGIN$",
                 "aspectRatio": 1.22,
                 "permanent": true
+            },
+            "robot": {
+                "url": "https://microsoft.github.io/microbit-robot/?parentOrigin=$PARENT_ORIGIN$",
+                "localHostUrl": "http://localhost:3000/microbit-robot/?parentOrigin=$PARENT_ORIGIN$",
+                "aspectRatio": 1.22,
+                "permanent": true
             }
         },
+        "testSimulatorExtensions": {},
         "boardDefinition": {
             "visual": "microbit",
             "gpioPinBlocks": [
@@ -337,7 +379,7 @@
             "graphBackground": "#d9d9d9",
             "lineColors": [
                 "#6633cc",
-                "#3891A6",
+                "#2C7485",
                 "#3454D1",
                 "#EF767A",
                 "#F46197",
@@ -389,14 +431,21 @@
         "workspaceSearch": true,
         "allowPackageExtensions": true,
         "addNewTypeScriptFile": true,
+        "enabledFeatures": {
+            "blocksErrorList": {},
+            "aiErrorHelp": {
+                "includeRegions": ["US"]
+            }
+        },
         "experiments": [
             "accessibleBlocks",
             "debugExtensionCode",
             "bluetoothUartConsole",
             "bluetoothPartialFlashing",
-            "simScreenshot",
-            "simGif",
-            "blocksErrorList"
+            "identity"
+        ],
+        "supportedExperiences": [
+            "code-eval"
         ],
         "bluetoothUartFilters": [
             {
@@ -423,68 +472,6 @@
         ],
         "hasReferenceDocs": true,
         "usbDocs": "/device/usb",
-        "usbHelp": [
-            {
-                "name": "connection",
-                "os": "*",
-                "browser": "*",
-                "path": "/static/mb/device/usb-generic.jpg"
-            },
-            {
-                "name": "connection",
-                "os": "mac",
-                "browser": "*",
-                "path": "/static/mb/device/usb-mac.jpg"
-            },
-            {
-                "name": "save",
-                "os": "windows",
-                "browser": "firefox",
-                "path": "/static/mb/device/usb-windows-firefox-1.png"
-            },
-            {
-                "name": "save",
-                "os": "mac",
-                "browser": "firefox",
-                "path": "/static/mb/device/usb-osx-firefox-1.jpg"
-            },
-            {
-                "name": "save",
-                "os": "mac",
-                "browser": "chrome",
-                "path": "/static/mb/device/usb-osx-chrome.png"
-            },
-            {
-                "name": "save",
-                "os": "windows",
-                "browser": "edge",
-                "path": "/static/mb/device/usb-windows-edge-1.png"
-            },
-            {
-                "name": "save",
-                "os": "windows",
-                "browser": "ie",
-                "path": "/static/mb/device/usb-windows-ie11-1.png"
-            },
-            {
-                "name": "save",
-                "os": "windows",
-                "browser": "chrome",
-                "path": "/static/mb/device/usb-windows-chrome.png"
-            },
-            {
-                "name": "copy",
-                "os": "mac",
-                "browser": "*",
-                "path": "/static/mb/device/usb-osx-dnd.png"
-            },
-            {
-                "name": "copy",
-                "os": "windows",
-                "browser": "*",
-                "path": "/static/mb/device/usb-windows-sendto.jpg"
-            }
-        ],
         "hideHomeDetailsVideo": true,
         "invertedMenu": true,
         "coloredToolbox": true,
@@ -514,6 +501,8 @@
             "functions": "#3455DB",
             "arrays": "#E65722"
         },
+        "defaultColorTheme": "microbit-light",
+        "highContrastColorTheme": "pxt-high-contrast",
         "blocksCollapsing": true,
         "highContrast": true,
         "greenScreen": true,
@@ -523,6 +512,7 @@
             "en",
             "ar",
             "bg",
+            "ca",
             "cs",
             "cy",
             "da",
@@ -531,6 +521,7 @@
             "es-ES",
             "fi",
             "fr",
+            "gn",
             "he",
             "hu",
             "is",
@@ -550,6 +541,7 @@
             "sv-SE",
             "tr",
             "uk",
+            "vi",
             "zh-CN",
             "zh-TW"
         ],
@@ -557,14 +549,17 @@
             "editor.background": "#ecf0f1"
         },
         "monacoFieldEditors": [
-            "soundeffect-editor"
+            "soundeffect-editor",
+            "image-editor"
         ],
         "browserDbPrefixes": {
             "1": "v1",
             "2": "v2",
             "3": "v3",
             "4": "v4",
-            "5": "v5"
+            "5": "v5",
+            "6": "v6",
+            "7": "v7"
         },
         "editorVersionPaths": {
             "0": "v0"
@@ -574,7 +569,10 @@
         "debugger": true,
         "simGifTransparent": "rgba(0,0,0,0)",
         "simGifMaxFrames": 44,
+        "simScreenshot": true,
         "simScreenshotMaxUriLength": 300000,
+        "simGif": true,
+        "simGifWidth": 240,
         "qrCode": true,
         "importExtensionFiles": true,
         "nameProjectFirst": true,
@@ -593,26 +591,42 @@
 
             "downloadMenuHelpURL" : "/device/usb",
             "downloadHelpURL" : "/device/usb",
-            "firmwareHelpURL": "/device/usb/webusb/troubleshoot",
             "troubleshootWebUSBHelpURL": "/device/usb/webusb/troubleshoot",
             "incompatibleHardwareHelpURL": "/device/v2",
 
             "dragFileImage": "/static/download/transfer.png",
-            "connectDeviceImage": "/static/download/connect.png",
-            "selectDeviceImage": "/static/download/pair.png",
-            "connectionSuccessImage": "/static/download/connected.png",
-            "checkFirmwareVersionImage": "/static/download/firmware.png",
-            "checkUSBCableImage": "/static/download/connect.png",
-            "incompatibleHardwareImage": "/static/download/incompatible.png"
+            "connectDeviceImage": "/static/download/connect-microbit.gif",
+            "disconnectDeviceImage": "/static/download/full-reset.gif",
+            "selectDeviceImage": "/static/download/selecting-microbit.gif",
+            "connectionSuccessImage": "/static/download/successfully-paired.png",
+            "incompatibleHardwareImage": "/static/download/incompatible.png",
+            "usbDeviceForgottenImage": "/static/download/device-forgotten.gif",
+            "browserUnpairImage": "/static/download/browser-unpair-image.gif"
         },
         "winAppDeprImage": "/static/winapp.PNG",
         "showWinAppDeprBanner": false,
-        "legacyTutorial": true
+        "tours": {
+            "editor": "/tours/editor-tour"
+        },
+        "tutorialSimSidebarLayout": true,
+        "preferWebUSBDownload": true,
+        "hideReplaceMyCode": true,
+        "matchWebUSBDeviceInSim": true,
+        "condenseProfile": true,
+        "cloudProfileIcon": "/static/profile/microbit-cloud.png",
+        "timeMachine": true,
+        "timeMachineDiffInterval": 600000,
+        "timeMachineSnapshotInterval": 1800000
     },
     "queryVariants": {
         "hidemenu": {
             "appTheme": {
                 "hideMenuBar": true
+            }
+        },
+        "hidelanguage": {
+            "appTheme": {
+                "selectLanguage": false
             }
         },
         "androidapp": {
@@ -621,6 +635,18 @@
             },
             "appTheme": {
                 "disableBlobObjectDownload": true
+            }
+        },
+        "skillsMap=1": {
+            "appTheme": {
+                "hideReplaceMyCode": false
+            }
+        },
+        "teachertool=1": {
+            "appTheme": {
+                "hideMenuBar": true,
+                "workspaceSearch": true,
+                "noReloadOnUpdate": true
             }
         }
     },

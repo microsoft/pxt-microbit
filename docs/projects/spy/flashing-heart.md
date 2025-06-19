@@ -2,24 +2,23 @@
 
 ### @explicitHints true
 
-## Introduction @unplugged
+## Code a Flashing Heart @unplugged
 
-Learn how to use the LEDs and make a flashing heart! 
-(Want to learn how lights work? [Watch this video](https://youtu.be/qqBmvHD5bCw)).
+Code the lights on the micro:bit into a flashing heart animation! 💖
 
 ![Heart shape in the LEDs](/static/mb/projects/flashing-heart/sim.gif)
 
-## Step 1 @fullscreen
+## {Step 1 @fullscreen}
 
-Make the screen ``||basic:show an icon||``  of a **Heart**.
+Use the basic ``||basic:show icon||`` function to display the **HEART** icon. Type the code below, or drag a code snippet from the ``||basic:Basic||`` Toolbox category.
 
 ```spy
 basic.showIcon(IconNames.Heart)
 ```
 
-## Step 2
+## {Step 2}
 
-After the icon is displayed, ``||basic:clear screen||`` and  ``||basic:pause||`` for `500` milliseconds.
+Use the ``||basic:clear screen||`` function followed by the ``||basic:pause||`` function to turn off the lights for **500** milliseconds (or half a second).
 
 ```spy
 basic.showIcon(IconNames.Heart)
@@ -27,22 +26,9 @@ basic.clearScreen()
 basic.pause(500)
 ```
 
-## Step 3
+## {Step 3}
 
-Now, copy the code currently have and add it to the end. In the copied code, ``||basic:show an icon||`` of a **SmallHeart**. Your heart will flash from big to small.
-
-```spy
-basic.showIcon(IconNames.Heart)
-basic.clearScreen()
-basic.pause(500)
-basic.showIcon(IconNames.SmallHeart)
-basic.clearScreen()
-basic.pause(500)
-```
-
-## Step 4
-
-Add one more ``||basic:show icon||`` at the end to display another **Heart**.
+Copy the code you've written and paste it at the end. In the copied code, change the ``||basic:Icon Names||`` to a **SMALL HEART**. Run your code in the on-screen micro:bit simulator. Do you see a big and small heart animation?
 
 ```spy
 basic.showIcon(IconNames.Heart)
@@ -51,12 +37,11 @@ basic.pause(500)
 basic.showIcon(IconNames.SmallHeart)
 basic.clearScreen()
 basic.pause(500)
-basic.showIcon(IconNames.Heart)
 ```
 
-## Step 5
+## {Step 4}
 
-Do you want your heart to flash continuously? Remove the last ``||basic:show icon||`` and then put a ``||basic:forever||`` loop around your code.
+Now let's make our hearts flash forever! Put a ``||basic:forever||`` loop around your code.
 
 ```spy
 basic.forever(function() {
@@ -69,6 +54,6 @@ basic.forever(function() {
 })
 ```
 
-## Step 6
+## {Step 5}
 
-If you have a @boardname@ connected, click ``|Download|`` and transfer your code to the @boardname@!
+If you have a @boardname@ device, connect it to your computer and click the ``|Download|`` button. Follow the instructions to transfer your code onto the @boardname@ and watch the hearts flash!  ⭐ Great job! ⭐ 

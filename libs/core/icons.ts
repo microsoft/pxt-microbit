@@ -114,8 +114,12 @@ enum IconNames {
     //% jres=icons.quarternote
     QuarterNote,
     //% block="eigth note"
-    //% jres=icons.eigthnote
+    //% jres=icons.eighthnote
+    //% deprecated=true blockHidden=true
     EigthNote,
+    //% block="eighth note"
+    //% jres=icons.eighthnote
+    EighthNote,
     //% block="pitchfork"
     //% jres=icons.pitchfork
     Pitchfork,
@@ -506,6 +510,12 @@ namespace images {
                                         . . # . .
                                         . . # . .
                                         . . # . .
+                                        # # # . .
+                                        # # # . .`);
+            case IconNames.EighthNote: return images.createImage(`
+                                        . . # . .
+                                        . . # # .
+                                        . . # . #
                                         # # # . .
                                         # # # . .`);
             case IconNames.EigthNote: return images.createImage(`

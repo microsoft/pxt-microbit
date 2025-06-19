@@ -1,0 +1,20 @@
+{
+  "record": "Functions to operate the v2 on-board microphone and speaker.",
+  "record.audioDuration": "Get how long the recorded audio clip is",
+  "record.audioIsPlaying": "Get whether the playback is active",
+  "record.audioIsRecording": "Get whether the microphone is listening",
+  "record.audioIsStopped": "Get whether the board is recording or playing back",
+  "record.audioStatus": "Test what the audio is doing",
+  "record.erase": "Clear the buffer",
+  "record.play": "Play the audio clip that is saved in the buffer",
+  "record.playAudio": "Play recorded audio",
+  "record.record": "Record an audio clip",
+  "record.setBothSamples": "Set the sample rate for both input and output",
+  "record.setInputSampleRate": "Change the sample rate of the splitter channel (audio input)",
+  "record.setMicGain": "Change how sensitive the microphone is. This changes the recording quality!",
+  "record.setMicrophoneGain": "Set sensitity of the microphone input",
+  "record.setOutputSampleRate": "Change the sample rate of the mixer channel (audio output)",
+  "record.setSampleRate": "Set the sample frequency for recording, playback, or both (default)\n* @param hz The sample frequency, in Hz",
+  "record.startRecording": "Record an audio clip for a maximum of 3 seconds",
+  "record.stop": "Stop recording"
+}

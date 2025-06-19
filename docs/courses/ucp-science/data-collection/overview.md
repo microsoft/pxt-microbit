@@ -54,8 +54,9 @@ Students will:
 * A longer USB @boardname@ cable
 * Spreadsheet program for data analysis
 
-<br/>
+## ~button /courses/ucp-science/data-collection/setup-procedure
+NEXT: Setup an Procedure
+## ~
 
-| | | |
-|-|-|-|
-| Adapted from "[Microbit Data Collection Methods](https://drive.google.com/open?id=13Mi6caoelyzgch6tUj-wlw0bmgS7ikGEwYR2a37mEww)" by [C Lyman](http://utahcoding.org) | | [![CC BY-NC-SA](https://licensebuttons.net/l/by-nc-sa/4.0/80x15.png)](https://creativecommons.org/licenses/by-nc-sa/4.0/) |
+<br/>
+Adapted from "[Microbit Data Collection Methods](https://drive.google.com/open?id=13Mi6caoelyzgch6tUj-wlw0bmgS7ikGEwYR2a37mEww)" by [C Lyman](http://utahcoding.org) [![CC BY-NC-SA](https://licensebuttons.net/l/by-nc-sa/4.0/80x15.png)](https://creativecommons.org/licenses/by-nc-sa/4.0/)

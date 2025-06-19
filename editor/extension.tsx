@@ -1,8 +1,7 @@
 /// <reference path="../node_modules/pxt-core/localtypings/pxtarget.d.ts" />
-/// <reference path="../node_modules/pxt-core/built/pxtblocks.d.ts" />
 /// <reference path="../node_modules/pxt-core/built/pxtcompiler.d.ts" />
 /// <reference path="../node_modules/pxt-core/built/pxtlib.d.ts" />
-/// <reference path="../node_modules/pxt-core/built/pxteditor.d.ts" />
+/// <reference path="../node_modules/pxt-core/localtypings/pxteditor.d.ts" />
 /// <reference path="dapjs.d.ts" />
 import * as dialogs from "./dialogs";
 import * as flash from "./flash";
@@ -41,5 +40,6 @@ pxt.editor.initExtensionsAsync = function (opts: pxt.editor.ExtensionOptions): P
 
     res.mkPacketIOWrapper = flash.mkDAPLinkPacketIOWrapper;
     res.blocklyPatch = patch.patchBlocks;
+    res.showProgramTooLargeErrorAsync = dialogs.showProgramTooLargeErrorAsync;
     return Promise.resolve<pxt.editor.ExtensionResult>(res);
 }

@@ -12,13 +12,13 @@ You will need 2 @boardname@ for this part. By using the radio, we can make the M
 Download the code below to the @boardname@ on the Milk Carton Monster and another "controller" @boardname@. Whenever ``A`` is pressed, the Milk Carton Monster will move once.
 
 ```blocks
-radio.onReceivedNumber((receivedNumber) => {
+radio.onReceivedNumber(function(receivedNumber) {
     pins.servoWritePin(AnalogPin.P0, 0)
     basic.pause(500)
     pins.servoWritePin(AnalogPin.P0, 180)
     basic.pause(500)
 })
-input.onButtonPressed(Button.A, () => {
+input.onButtonPressed(Button.A, function () {
     radio.sendNumber(0)
 })
 ```

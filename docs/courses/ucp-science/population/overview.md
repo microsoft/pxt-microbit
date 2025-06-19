@@ -36,8 +36,9 @@ Students will:
 * 1 @boardname@ with battery connected
 * Windows 10 MakeCode app or [MakeCode](@homeurl@) in a browser.
 
-<br/>
+## ~button /courses/ucp-science/population/setup-procedure
+NEXT: Setup an Procedure
+## ~
 
-| | | |
-|-|-|-|
-| Adapted from "[Population Trait Data Counter](https://drive.google.com/open?id=1CC5uhIoZK4Q67vU5Ldwna6GEeZYXNDYzgO8BUUjPuwI)" by [C Lyman](http://utahcoding.org) | | [![CC BY-NC-SA](https://licensebuttons.net/l/by-nc-sa/4.0/80x15.png)](https://creativecommons.org/licenses/by-nc-sa/4.0/) |
+<br/>
+Adapted from "[Population Trait Data Counter](https://drive.google.com/open?id=1CC5uhIoZK4Q67vU5Ldwna6GEeZYXNDYzgO8BUUjPuwI)" by [C Lyman](http://utahcoding.org) [![CC BY-NC-SA](https://licensebuttons.net/l/by-nc-sa/4.0/80x15.png)](https://creativecommons.org/licenses/by-nc-sa/4.0/)

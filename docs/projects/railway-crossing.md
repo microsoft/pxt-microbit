@@ -15,7 +15,7 @@ We are going to use the light sensor to detect if a train is passing. We will do
 Let's first explore how the light sensor works by downloading the following program onto our @boardname@.
 
 ```block
-input.onButtonPressed(Button.A, () => {
+input.onButtonPressed(Button.A, function () {
     basic.showNumber(input.lightLevel())
 })
 ```
@@ -49,7 +49,7 @@ Add the following blocks to your program to make the top-left led indicate if a 
 Replace 40 with your threshold.
 
 ```block
-basic.forever(() => {
+basic.forever(function () {
     if (input.lightLevel() < 40) {
         led.plot(0, 0)
     } else {
@@ -95,7 +95,7 @@ We can turn on one LED by writing a digital 1 to one pin and a digital 0 to the 
 Now use the following program to make the lights blink indefinitely.
 
 ```block
-basic.forever(() => {
+basic.forever(function () {
     pins.digitalWritePin(DigitalPin.P1, 1)
     pins.digitalWritePin(DigitalPin.P2, 0)
     basic.pause(300)
@@ -120,11 +120,11 @@ First of all, remove the forever block from step 5. Then add the following code:
 ```block
 let flashes_remaining = 0
 
-input.onButtonPressed(Button.B, () => {
+input.onButtonPressed(Button.B, function () {
     flashes_remaining = 5
 })
 
-basic.forever(() => {
+basic.forever(function () {
     while (flashes_remaining > 0) {
         pins.digitalWritePin(DigitalPin.P1, 0)
         pins.digitalWritePin(DigitalPin.P2, 1)

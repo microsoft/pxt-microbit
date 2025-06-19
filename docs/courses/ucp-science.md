@@ -10,7 +10,7 @@ These lessons guide the student in hands-on, practical measurement activities al
 
 ### ~hint
 
-**Download it**
+#### Download it
 
 The entire course is also available as a download. Choose any of these formats:
 
@@ -31,6 +31,8 @@ The lesson series includes:
 * [Body Electrical & Waves](/courses/ucp-science/body-electrical)
 * [Electricity - Battery Tester](/courses/ucp-science/electricity)
 * [Rocket Acceleration](/courses/ucp-science/rocket-acceleration)
+* [Egg Drop Experiment](/courses/ucp-science/egg-drop)
+* [Spoon Race](/courses/ucp-science/spoon-race)
  
 The [Science Experiments](https://sites.google.com/view/utahcodingproject/csta/microbit-science-experiments) lesson series is generously provided by the [Utah Coding Project](https://sites.google.com/view/utahcodingproject/home) and is developed by [Carl Lyman](mailto:utahcoding@outlook.com).
  

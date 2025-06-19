@@ -178,6 +178,7 @@ namespace music {
     const INTERNAL_MELODY_ENDED = 5;
 
     let beatsPerMinute: number = 120;
+    let stopSoundHandlers: (() => void)[];
     //% whenUsed
     const freqs = hex`
         1f00210023002500270029002c002e003100340037003a003e004100450049004e00520057005c00620068006e00
@@ -198,7 +199,9 @@ namespace music {
     //% parts="headphone"
     //% useEnumVal=1
     //% group="Tone"
+    //% deprecated=1
     export function playTone(frequency: number, ms: number): void {
+        if (isNaN(frequency) || isNaN(ms)) return;
         if (_playTone) _playTone(frequency, ms);
         else pins.analogPitch(frequency, ms);
     }
@@ -221,7 +224,7 @@ namespace music {
      * @param ms rest duration in milliseconds (ms)
      */
     //% help=music/rest weight=79
-    //% blockId=device_rest block="rest(ms)|%duration=device_beat"
+    //% blockId=device_rest block="rest for |%duration=device_beat"
     //% parts="headphone"
     //% group="Tone"
     export function rest(ms: number): void {
@@ -292,6 +295,7 @@ namespace music {
     //% weight=100
     export function changeTempoBy(bpm: number): void {
         init();
+        if (isNaN(bpm)) return;
         setTempo(beatsPerMinute + bpm);
     }
 
@@ -301,11 +305,12 @@ namespace music {
      */
     //% help=music/set-tempo weight=38
     //% blockId=device_set_tempo block="set tempo to (bpm)|%value"
-    //% bpm.min=4 bpm.max=400
+    //% bpm.min=40 bpm.max=500
     //% group="Tempo"
     //% weight=99
     export function setTempo(bpm: number): void {
         init();
+        if (isNaN(bpm)) return;
         if (bpm > 0) {
             beatsPerMinute = Math.max(1, bpm);
         }
@@ -318,12 +323,27 @@ namespace music {
      * Gets the melody array of a built-in melody.
      * @param name the note name, eg: Note.C
      */
-    //% weight=50 help=music/builtin-melody
+    //% weight=50 help=music/built-in-melody
     //% blockId=device_builtin_melody block="%melody"
     //% blockHidden=true
     //% group="Melody Advanced"
+    //% deprecated=1
     export function builtInMelody(melody: Melodies): string[] {
         return getMelody(melody);
+    }
+
+    /**
+     * Gets the melody array of a built-in melody.
+     * @param melody the melody name
+     */
+    //% weight=60 help=music/built-in-playable-melody
+    //% blockId=device_builtin_melody_playable block="melody $melody"
+    //% toolboxParent=music_playable_play_default_bkg
+    //% toolboxParentArgument=toPlay
+    //% duplicateShadowOnDrag
+    //% group="Melody Advanced"
+    export function builtInPlayableMelody(melody: Melodies): StringArrayPlayable {
+        return new StringArrayPlayable(getMelody(melody), undefined);
     }
 
     /**
@@ -343,7 +363,7 @@ namespace music {
     //% parts="headphone"
     //% group="Melody Advanced"
     export function beginMelody(melodyArray: string[], options: MelodyOptions = 1) {
-        return startMelody(melodyArray, options);
+        return startMelodyInternal(melodyArray, options);
     }
 
     /**
@@ -356,7 +376,35 @@ namespace music {
     //% blockId=device_start_melody block="start melody %melody=device_builtin_melody| repeating %options"
     //% parts="headphone"
     //% group="Melody Advanced"
+    //% deprecated=1
     export function startMelody(melodyArray: string[], options: MelodyOptions = 1) {
+        return startMelodyInternal(melodyArray, options);
+    }
+
+    /**
+     * Play a melody from the melody editor.
+     * @param melody string of up to eight notes [C D E F G A B C5] or rests [-] separated by spaces, which will be played one at a time, ex: "E D G F B A C5 B "
+     * @param tempo number in beats per minute (bpm), dictating how long each note will play for
+     */
+    //% block="play melody $melody at tempo $tempo|(bpm)" blockId=playMelody
+    //% weight=85 blockGap=8 help=music/play-melody
+    //% melody.shadow="melody_editor"
+    //% tempo.min=40 tempo.max=500
+    //% tempo.defl=120
+    //% parts=headphone
+    //% group="Melody"
+    //% deprecated=1
+    export function playMelody(melody: string, tempo: number) {
+        melody = melody || "";
+        setTempo(tempo);
+        let notes = getMelodyNotes(melody);
+
+        music.startMelodyInternal(notes, MelodyOptions.Once)
+        waitForMelodyEnd();
+    }
+
+    // Shared code between begin, start, and play Melody blocks (all deprecated), plus StringPlayable.play (NOT deprecated).
+    export function startMelodyInternal(melodyArray: string[], options: MelodyOptions) {
         init();
         const isBackground = options & (MelodyOptions.OnceInBackground | MelodyOptions.ForeverInBackground);
         if (currentMelody != undefined) {
@@ -393,22 +441,11 @@ namespace music {
         }
     }
 
+    export function waitForMelodyEnd() {
+        control.waitForEvent(MICROBIT_MELODY_ID, INTERNAL_MELODY_ENDED);
+    }
 
-    /**
-     * Play a melody from the melody editor.
-     * @param melody string of up to eight notes [C D E F G A B C5] or rests [-] separated by spaces, which will be played one at a time, ex: "E D G F B A C5 B "
-     * @param tempo number in beats per minute (bpm), dictating how long each note will play for
-     */
-    //% block="play melody $melody at tempo $tempo|(bpm)" blockId=playMelody
-    //% weight=85 blockGap=8 help=music/play-melody
-    //% melody.shadow="melody_editor"
-    //% tempo.min=40 tempo.max=500
-    //% tempo.defl=120
-    //% parts=headphone
-    //% group="Melody"
-    export function playMelody(melody: string, tempo: number) {
-        melody = melody || "";
-        setTempo(tempo);
+    export function getMelodyNotes(melody: string) {
         let notes: string[] = melody.split(" ").filter(n => !!n);
         let newOctave = false;
 
@@ -425,8 +462,13 @@ namespace music {
             }
         }
 
-        music.startMelody(notes, MelodyOptions.Once)
-        control.waitForEvent(MICROBIT_MELODY_ID, INTERNAL_MELODY_ENDED);
+        // Switch back to octave 4 on first note if repeating and final note is octave 5.
+        // Otherwise the higher octave will persist.
+        if (notes[notes.length - 1] === "C5" && notes[0] != "C5") {
+            notes[0] += "4";
+        }
+
+        return notes;
     }
 
     /**
@@ -462,6 +504,13 @@ namespace music {
             startMelody([], MelodyOptions.Once);
     }
 
+    export function _onStopSound(handler: () => void) {
+        if (!stopSoundHandlers) {
+            stopSoundHandlers = [];
+        }
+        stopSoundHandlers.push(handler);
+    }
+
     /**
      * Stop all sounds and melodies currently playing.
      */
@@ -473,6 +522,12 @@ namespace music {
         rest(0);
         stopMelody(MelodyStopOptions.All);
         music.__stopSoundExpressions();
+        _stopPlayables();
+        if (stopSoundHandlers) {
+            for (const handler of stopSoundHandlers) {
+                handler()
+            }
+        }
     }
 
 
@@ -496,6 +551,22 @@ namespace music {
      */
     export function getFrequencyForNote(octave: number, note: number) {
         return freqs.getNumber(NumberFormat.UInt16LE, (note + (12 * (octave - 1))) * 2) || 0;
+    }
+
+    /*
+     * Converts a simple positive string to an integer.
+     * Pxt-common's parseInt is more robust, but it has a fairly large code size footprint.
+     * When we know the provided string will be a simple number, we can use this instead,
+     * which takes some shortcuts but does not use nearly as much space.
+     */
+    function parseIntSimple(text: string) {
+        let result = 0;
+        for (let i = 0; i < text.length; ++i) {
+            const c = text.charCodeAt(i) - 48;
+            if (c < 0 || c > 9) return NaN;
+            result = result * 10 + c;
+        }
+        return result;
     }
 
     function playNextNote(melody: Melody): void {
@@ -525,11 +596,11 @@ namespace music {
                 case '#': note++; prevNote = false; break;
                 case 'b': if (prevNote) note--; else { note = 12; prevNote = true; } break;
                 case ':': parsingOctave = false; beatPos = pos; prevNote = false; break;
-                default: prevNote = false; if (parsingOctave) currentOctave = parseInt(noteChar);
+                default: prevNote = false; if (parsingOctave) currentOctave = parseIntSimple(noteChar);
             }
         }
         if (!parsingOctave) {
-            currentDuration = parseInt(currNote.substr(beatPos + 1, currNote.length - beatPos));
+            currentDuration = parseIntSimple(currNote.substr(beatPos + 1, currNote.length - beatPos));
         }
         let beat = Math.idiv(60000, beatsPerMinute) >> 2;
         if (isrest) {
@@ -599,7 +670,7 @@ namespace music {
                 current = notes.charAt(note);
                 if (current === "#") current = notes.charAt(note - 1) + current
 
-                octave = Math.idiv((melody[i] - 23), 12)
+                octave = Math.idiv((melody[i] - 24), 12)
             }
 
             const duration = melody[i + 1];

@@ -1,6 +1,6 @@
 # Dance to the Beat
 
-## 1. Introduction @unplugged
+## Introduction @unplugged
 
 The new micro:bit has speakers so you can hear sounds without being tied down!
 
@@ -9,14 +9,14 @@ Let's use movement to create an electronic beat of our own.
 ![Dance beat banner message](/static/mb/projects/dance-beat.png)
 
 
-## 2. Add Play Sound Block
+## Add Play Sound Block
 
 To start your electronic beat, you'll want to repeat a sound forever.
 
 ---
 
 ⇼ Open the ``||music:Music||`` category and drag the ``||music:play sound [♫ ∿∿∿∿ +] [until done]||``
-block into the empty ``||basic:forever||`` loop container.
+block into the empty ``||basic(noclick):forever||`` loop container.
 
 
 
@@ -28,7 +28,7 @@ basic.forever(function(){
 
 
 
-## 3. Listen Close
+## Listen Close
 
 When your code runs again, you should hear a short laser/alarm
 sound that repeats over and over forever.
@@ -41,14 +41,14 @@ sound that repeats over and over forever.
 
 
 
-## 4. Make a Change
+## Make a Change
 
 For the sound to change with your speed of movement, we need to put the
 micro:bit **acceleration** value in the sound block.
 
 ---
 
-⇼ On the ``||music:play sound [♫ ∿∿∿ +] [until done]||`` block, click the plus icon (**+**)
+⇼ On the ``||music(noclick):play sound [♫ ∿∿∿ +] [until done]||`` block, click the plus icon (**+**)
 to show the start frequency value of 5000.
 
 ⇼ From the ``||input:Input||`` category, drag the ``||input:acceleration (mg) [x]||``
@@ -63,7 +63,7 @@ basic.forever(function(){
 
 
 
-## 5. Listen Again
+## Listen Again
 
 Run your code again.
 
@@ -74,7 +74,7 @@ You should hear the sound change as the micro:bit moves.
 
 
 
-## 6. Rotation Values
+## Rotation Values
 
 You can make the beat even more fun by changing the end frequency as the micro:bit rotates.
 
@@ -92,7 +92,7 @@ basic.forever(function(){
 
 
 
-## 7. Listen Again
+## Listen Again
 
 Run your code again.
 
@@ -108,7 +108,7 @@ Try moving the micro:bit in different ways. Can you make a fun beat?
 
 
 
-## 8. Customize Your Beat
+## Customize Your Beat
 
 Try changing the **duration** of the beat to something other than **500**. <br/>
 Then, change the dropdown selection inside both the **acceleration** and **rotation**

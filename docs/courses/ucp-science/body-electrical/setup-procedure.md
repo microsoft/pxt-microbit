@@ -122,11 +122,12 @@ Set up the experiment to collect data while someone is exercising.
 
 Research what about EKG and other body electrical signals.
 
-<br/>
+# ~button /courses/ucp-science/body-electrical/resources
+NEXT: Resources
+## ~
 
-| | | |
-|-|-|-|
-| Adapted from "[Body Electrical & Waves](https://drive.google.com/open?id=1KofuOt0v1lmQhQyJux1XWDVoCDeslcjDFysjStFmo1w)" by [C Lyman](http://utahcoding.org) | | [![CC BY-NC-SA](https://licensebuttons.net/l/by-nc-sa/4.0/80x15.png)](https://creativecommons.org/licenses/by-nc-sa/4.0/) |
+<br/>
+Adapted from "[Body Electrical & Waves](https://drive.google.com/open?id=1KofuOt0v1lmQhQyJux1XWDVoCDeslcjDFysjStFmo1w)" by [C Lyman](http://utahcoding.org) [![CC BY-NC-SA](https://licensebuttons.net/l/by-nc-sa/4.0/80x15.png)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 ```package
 radio

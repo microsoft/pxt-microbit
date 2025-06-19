@@ -4,7 +4,7 @@ As a way to see how the basic logical operators work, we'll make a program to te
 
 ## Inputs and output
 
-Make an array called ``||variables:inputs||`` with two values, ``false`` and ``true``, as logical inputs. Add another variable ``||variables:Q||`` to receive the resulting value of a logical expression as output.
+Make an ``||arrays:array||`` called ``||variables:inputs||`` with two values, ``false`` and ``true``, as logical inputs. Add another variable ``||variables:Q||`` to receive the resulting value of a logical expression as output.
 
 ```blocks
 let inputs = [false, true]
@@ -17,7 +17,7 @@ To start with, we'll make a single input test for the variable ``||variables:A||
 
 1. Get a ``||loops:for element||`` loop and put it in the ``||loops:on start||``. Rename the ``||variables:index||`` variable to ``||variables:A||`` and switch the ``||variables:list||`` variable to ``||variables:inputs||``.
 2. Pull a ``||variables:set Q to||`` block into the ``||loops:for element||`` loop and set the value to ``||logic:false||``.
-3. Go find the ``||logic:if then else||`` and put in below the ``||variables:set Q to||``. Pick up a ``||variables:Q||`` in ``||variables:VARIABLE||`` and drop it onto the ``||logic:false||`` to replace it.
+3. Go find the ``||logic:if then else||`` and put in below the ``||variables:set Q to||``. Pick up a ``||variables:Q||`` from the ``||variables:VARIABLES||`` Toolbox drawer and drop it onto the ``||logic:false||`` to replace it.
 4. Move a ``||basic:show icon||`` inside the ``||logic:if then||`` section and change the image to a ``t-shirt``. This is our image for a ``true`` output.
 5. Move a ``||basic:show icon||`` inside the ``||logic:else||`` section and change the image to a ``small diamond``. This is our image for a ``false`` output.
 6. Just below the ``||logic:if then else||``, put in a ``||loops:pause||``, a ``||basic:clear screen||``, and another ``||basic:pause||`` block. Set the time for each ``||basic:pause||`` to ``500``.
@@ -143,7 +143,7 @@ A | B | A · B
 
 ## XOR test
 
-To test XOR, we'll use the XOR expression from [Boolean elements](/courses/logic-lab/elements#xor). Drag and place the ``||logic:LOGIC||`` blocks to make the ``||variables:Q||`` equation to look like this:
+To test XOR, we'll use the XOR expression from [Boolean elements](/courses/logic-lab/elements#xor). Drag and place the ``||logic:LOGIC||`` blocks in to make the ``||variables:Q||`` equation to look like this:
 
 ```block
 let A = false
@@ -160,3 +160,10 @@ A | B | A ⊕ B
 **false** | **true** |  ``[basic.showIcon(IconNames.TShirt)]``
 **true** | **false** |  ``[basic.showIcon(IconNames.TShirt)]``
 **true** | **true** |  ``[basic.showIcon(IconNames.SmallDiamond)]``
+<br/>
+
+## ~button /courses/logic-lab/logic-gates
+
+NEXT: Logic Gates
+
+## ~
