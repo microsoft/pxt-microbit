@@ -13,6 +13,7 @@ namespace pxsim  {
         audioPlaying: boolean = false;
         recordTimeoutID: any;
         currentlyErasing: boolean;
+        recordingSettings: MediaTrackConstraints = { advanced: [{ echoCancellation: true }, { noiseSuppression: true }] };
 
         inputBitRate = record.defaultBitRate();
         outputBitRate = record.defaultBitRate();
@@ -98,7 +99,8 @@ namespace pxsim.record {
 
         if (navigator.mediaDevices?.getUserMedia) {
             try {
-                state.stream = await navigator.mediaDevices.getUserMedia({ video: false, audio: true });
+                console.log("the recording settings are: ", state.recordingSettings);
+                state.stream = await navigator.mediaDevices.getUserMedia({ video: false, audio: state.recordingSettings });
                 state.recorder = new MediaRecorder(state.stream, { audioBitsPerSecond: state.inputBitRate });
                 state.recorder.start();
                 state.currentlyRecording = true;
@@ -243,7 +245,24 @@ namespace pxsim.record {
     }
 
     export function setMicrophoneGain(gain: number): void {
+        const b = board();
+        if (!b) return;
+        if (gain === 1) { // high mic sensitivity
+            console.log("high gain");
+            setRecordSettings(b, false, false);
+        } else if (gain === 0.2) { // mid mic sensitivity
+            console.log("mid gain");
+            setRecordSettings(b, true, false);
+        } else { // any other case, we should use low mic sensitivity. we want best quality to be the default
+            console.log("low gain, default");
+            setRecordSettings(b, true, true);
+        }
+    }
 
+    function setRecordSettings(b: DalBoard, cancelEcho: boolean, suppressNoise: boolean): void {
+        const state = b.recordingState;
+        state.recordingSettings.advanced[0].echoCancellation = cancelEcho;
+        state.recordingSettings.advanced[1].noiseSuppression = suppressNoise;
     }
 
     export function audioDuration(sampleRate: number): number {
