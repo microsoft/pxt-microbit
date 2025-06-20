@@ -2,7 +2,8 @@ namespace pxsim.music {
     //%
     export function __playSoundExpression(notes: string, waitTillDone: boolean): void {
         notes = lookupBuiltIn(notes);
-        pxsim.codal.music.__playSoundExpression(notes, waitTillDone);
+        const volume = pxsim.music.volume() / 0xff;
+        pxsim.codal.music.__playSoundExpression(notes, waitTillDone, volume);
     }
 
     export function __stopSoundExpressions() {

@@ -13,6 +13,7 @@ namespace pxsim  {
         audioPlaying: boolean = false;
         recordTimeoutID: any;
         currentlyErasing: boolean;
+        recordingSettings: MediaTrackConstraints = { advanced: [{ echoCancellation: true }, { noiseSuppression: true }] };
 
         inputBitRate = record.defaultBitRate();
         outputBitRate = record.defaultBitRate();
@@ -98,7 +99,7 @@ namespace pxsim.record {
 
         if (navigator.mediaDevices?.getUserMedia) {
             try {
-                state.stream = await navigator.mediaDevices.getUserMedia({ video: false, audio: true });
+                state.stream = await navigator.mediaDevices.getUserMedia({ video: false, audio: state.recordingSettings });
                 state.recorder = new MediaRecorder(state.stream, { audioBitsPerSecond: state.inputBitRate });
                 state.recorder.start();
                 state.currentlyRecording = true;
@@ -172,7 +173,7 @@ namespace pxsim.record {
         setTimeout(async () => {
             if (!state.currentlyErasing && state.recording) {
                 try {
-                    const volume = AudioContextManager.isMuted() ? 0 : 1;
+                    const volume = Math.round((AudioContextManager.isMuted() ? 0 : music.volume() / 0xff) * 100) / 100;
                     state.recording.volume = volume;
 
                     const minPlaybackRate = 0.15
@@ -243,7 +244,21 @@ namespace pxsim.record {
     }
 
     export function setMicrophoneGain(gain: number): void {
+        const b = board();
+        if (!b) return;
+        if (gain === 1) { // high mic sensitivity
+            setRecordSettings(b, true, false);
+        } else if (gain === 0.2) { // mid mic sensitivity
+            setRecordSettings(b, true, true);
+        } else { // any other case, we should use low mic sensitivity. we want best quality to be the default
+            setRecordSettings(b, false, true);
+        }
+    }
 
+    function setRecordSettings(b: DalBoard, cancelEcho: boolean, suppressNoise: boolean): void {
+        const state = b.recordingState;
+        state.recordingSettings.advanced[0].echoCancellation = cancelEcho;
+        state.recordingSettings.advanced[1].noiseSuppression = suppressNoise;
     }
 
     export function audioDuration(sampleRate: number): number {
