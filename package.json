@@ -46,7 +46,7 @@
     },
     "dependencies": {
         "pxt-common-packages": "12.3.31",
-        "pxt-core": "11.4.30"
+        "pxt-core": "11.4.31"
     },
     "overrides": {
         "@blockly/field-colour": {
