@@ -7,6 +7,7 @@
     "corepkg": "core",
     "bundleddirs": [
         "libs/core",
+        "libs/audio-samples",
         "libs/radio",
         "libs/devices",
         "libs/bluetooth",
@@ -18,7 +19,6 @@
         "libs/datalogger",
         "libs/bitmap",
         "libs/fonts",
-        "libs/arcadeshield",
         "libs/color",
         "libs/audio-recording"
     ],
@@ -192,7 +192,7 @@
         "mbcodal": {
             "compile": {
                 "flashCodeAlign": 4096,
-                "flashUsableEnd": 487424,
+                "flashUsableEnd": 471040,
                 "flashEnd": 524288
             },
             "compileService": {
@@ -200,7 +200,7 @@
                 "codalTarget": {
                     "name": "codal-microbit-v2",
                     "url": "https://github.com/lancaster-university/codal-microbit-v2",
-                    "branch": "v0.2.69",
+                    "branch": "v0.3.0",
                     "type": "git"
                 },
                 "codalBinary": "MICROBIT",
@@ -431,13 +431,21 @@
         "workspaceSearch": true,
         "allowPackageExtensions": true,
         "addNewTypeScriptFile": true,
+        "enabledFeatures": {
+            "blocksErrorList": {},
+            "aiErrorHelp": {
+                "includeRegions": ["US"]
+            }
+        },
         "experiments": [
             "accessibleBlocks",
             "debugExtensionCode",
             "bluetoothUartConsole",
             "bluetoothPartialFlashing",
-            "identity",
-            "blocksErrorList"
+            "identity"
+        ],
+        "supportedExperiences": [
+            "code-eval"
         ],
         "bluetoothUartFilters": [
             {
@@ -493,6 +501,8 @@
             "functions": "#3455DB",
             "arrays": "#E65722"
         },
+        "defaultColorTheme": "microbit-light",
+        "highContrastColorTheme": "pxt-high-contrast",
         "blocksCollapsing": true,
         "highContrast": true,
         "greenScreen": true,
@@ -511,6 +521,7 @@
             "es-ES",
             "fi",
             "fr",
+            "gn",
             "he",
             "hu",
             "is",
@@ -611,6 +622,11 @@
         "hidemenu": {
             "appTheme": {
                 "hideMenuBar": true
+            }
+        },
+        "hidelanguage": {
+            "appTheme": {
+                "selectLanguage": false
             }
         },
         "androidapp": {

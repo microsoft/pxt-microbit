@@ -172,7 +172,7 @@ input.onGesture(Gesture.Shake, function() {
 
 ## {Step 12}
 
-Now let's deal with the last condition - if our hand variable isn't holding a 1 (Rock) or a 2 (Paper), then it must be 3 (✀ Scissors)! From the ``||basic:Basic||`` category, drag another ``||basic:show icon||`` block out and drop it into the last opening under the ``||logic:else||``.  In the ``||basic:show icon||`` block, click on the Heart icon and select the Scissors icon.
+Now let's deal with the last condition - if our hand variable isn't holding a 1 (Rock) or a 2 (Paper), then it must be 3 (✂️ Scissors)! From the ``||basic:Basic||`` category, drag another ``||basic:show icon||`` block out and drop it into the last opening under the ``||logic:else||``.  In the ``||basic:show icon||`` block, click on the Heart icon and select the Scissors icon.
 
 ```blocks
 let hand = 0;

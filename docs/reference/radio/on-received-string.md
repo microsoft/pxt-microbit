@@ -10,13 +10,15 @@ radio.onReceivedString(function (receivedString) {})
 
 * **receivedString**: The [string](/types/string) that was sent in this packet or the empty string if this packet did not contain a string. See [send string](/reference/radio/send-string) and [send value](/reference/radio/send-value)
 
-## ~ hint
+### ~ hint
+
+#### @boardname@ radio
 
 Watch this video to see how the radio hardware works on the @boardname@:
 
 https://www.youtube.com/watch?v=Re3H2ISfQE8
 
-## ~
+### ~
 
 ## Example
 

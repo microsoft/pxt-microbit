@@ -16,7 +16,7 @@ To start your electronic beat, you'll want to repeat a sound forever.
 ---
 
 ⇼ Open the ``||music:Music||`` category and drag the ``||music:play sound [♫ ∿∿∿∿ +] [until done]||``
-block into the empty ``||basic:forever||`` loop container.
+block into the empty ``||basic(noclick):forever||`` loop container.
 
 
 
@@ -48,7 +48,7 @@ micro:bit **acceleration** value in the sound block.
 
 ---
 
-⇼ On the ``||music:play sound [♫ ∿∿∿ +] [until done]||`` block, click the plus icon (**+**)
+⇼ On the ``||music(noclick):play sound [♫ ∿∿∿ +] [until done]||`` block, click the plus icon (**+**)
 to show the start frequency value of 5000.
 
 ⇼ From the ``||input:Input||`` category, drag the ``||input:acceleration (mg) [x]||``

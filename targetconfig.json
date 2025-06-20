@@ -350,7 +350,6 @@
             "microsoft/pxt-jacdac/motor": {},
             "microsoft/pxt-jacdac/multitouch": {},
             "microsoft/pxt-jacdac/potentiometer": {},
-            "microsoft/pxt-jacdac/power": {},
             "microsoft/pxt-jacdac/pulse-oximeter": {},
             "microsoft/pxt-jacdac/rain-gauge": {},
             "microsoft/pxt-jacdac/real-time-clock": {},
@@ -404,6 +403,7 @@
             "stemhub/pxt-stemhubcity": { "tags": [ "Science" ] },
             "kittenbot/pxt-powerbrick": { "tags": [ "Science" ] },
             "microbit-foundation/pxt-microbit-v2-power": { "tags": [ "Software" ] },
+            "microbit-foundation/pxt-sound-level-db": { "tags": [ "Software" ] },
             "kittenbot/pxt-joyfrog": { "tags": [ "Gaming" ] },
             "kittenbot/pxt-sugar": { "tags": [ "Science" ] },
             "kittenbot/pxt-koi": { "tags": [ "Science" ] },
@@ -472,25 +472,105 @@
             "parallaxinc/cyberbot_makecode": { "tags": [ "Robotics" ] },
             "siyeenove/pxt_mcar": { "tags": [ "Robotics" ] },
             "elecfreaks/xgo-rider": { "tags": [ "Robotics" ] },
+            "dfrobot/pxt-dfrobot_creative-robotics-kit": { "tags": [ "Robotics" ] },
+            "ines-hpmm/pxt-luma-matrix": { "tags": [ "Lights and Display" ] },
+            "team-bp/pxt-bplab": { "tags": [ "Science" ] },
+            "jimd80/pxt-coderdojo-controller": { "tags": [ "Gaming" ] },
+            "forward-education/pxt-solar": { "tags": [ "Science" ] },
+            "forward-education/pxt-hydroponics": { "tags": [ "Science" ] },
+            "elecfreaks/pxt-petal": { "tags": [ "Science" ] },
             "microsoft/pxt-simx-sample": {
                 "simx": {
                     "sha": "7301f5900879b85127482d79bab48f03c25690a8",
                     "devUrl": "http://localhost:5173"
                 }
             },
-            "microbit-foundation/pxt-microbit-ml": { 
+            "microbit-foundation/pxt-microbit-ml": {
                 "simx": {
-                    "sha": "e349a2feaae9f84a24ebd56716209ef74e1758d2",
+                    "sha": "ba99fd9588e87eb994345d04b596adc51d2d8116",
                     "devUrl": "http://localhost:5173",
                     "aspectRatio": 3.45
-                }
+                },
+                "hidden": true
             },
-            "microbit-apps/pxt-arcadeshield": {
+            "microbit-apps/display-shield": {
                 "simx": {
-                    "sha": "5bac5ff5b80621b53b746e4bbe252e406b992bdb",
+                    "sha": "0825d56f78528c57af100a96abdfe2162f59945a",
                     "devUrl": "http://localhost:3000"
                 }
-            }
+            },
+            "jacdac/pxt-jacdac": {
+                "simx": {
+                    "sha": "c286f6312ba29f9acc9a153d7b852f37f31e62e3",
+                    "devUrl": "https://jacdac.github.io/pxt-jacdac/"
+                }
+            },
+            "jacdac/pxt-jacdac/accelerometer": {},
+            "jacdac/pxt-jacdac/acidity": {},
+            "jacdac/pxt-jacdac/air-pressure": {},
+            "jacdac/pxt-jacdac/air-quality-index": {},
+            "jacdac/pxt-jacdac/arcade-gamepad": {},
+            "jacdac/pxt-jacdac/azure-iot-hub-health": {},
+            "jacdac/pxt-jacdac/button": {},
+            "jacdac/pxt-jacdac/buzzer": {},
+            "jacdac/pxt-jacdac/character-screen": {},
+            "jacdac/pxt-jacdac/codal-message-bus": {},
+            "jacdac/pxt-jacdac/color": {},
+            "jacdac/pxt-jacdac/compass": {},
+            "jacdac/pxt-jacdac/dc-current-measurement": {},
+            "jacdac/pxt-jacdac/dc-voltage-measurement": {},
+            "jacdac/pxt-jacdac/distance": {},
+            "jacdac/pxt-jacdac/dmx": {},
+            "jacdac/pxt-jacdac/dot-matrix": {},
+            "jacdac/pxt-jacdac/dual-motors": {},
+            "jacdac/pxt-jacdac/e-co2": {},
+            "jacdac/pxt-jacdac/flex": {},
+            "jacdac/pxt-jacdac/gamepad": {},
+            "jacdac/pxt-jacdac/gyroscope": {},
+            "jacdac/pxt-jacdac/heart-rate": {},
+            "jacdac/pxt-jacdac/hid-joystick": {},
+            "jacdac/pxt-jacdac/hid-keyboard": {},
+            "jacdac/pxt-jacdac/hid-mouse": {},
+            "jacdac/pxt-jacdac/humidity": {},
+            "jacdac/pxt-jacdac/illuminance": {},
+            "jacdac/pxt-jacdac/led": {},
+            "jacdac/pxt-jacdac/led-single": {},
+            "jacdac/pxt-jacdac/led-strip": {},
+            "jacdac/pxt-jacdac/light-bulb": {},
+            "jacdac/pxt-jacdac/light-level": {},
+            "jacdac/pxt-jacdac/magnetic-field-level": {},
+            "jacdac/pxt-jacdac/magnetometer": {},
+            "jacdac/pxt-jacdac/model-runner": {},
+            "jacdac/pxt-jacdac/motion": {},
+            "jacdac/pxt-jacdac/motor": {},
+            "jacdac/pxt-jacdac/multitouch": {},
+            "jacdac/pxt-jacdac/potentiometer": {},
+            "jacdac/pxt-jacdac/pulse-oximeter": {},
+            "jacdac/pxt-jacdac/rain-gauge": {},
+            "jacdac/pxt-jacdac/real-time-clock": {},
+            "jacdac/pxt-jacdac/reflected-light": {},
+            "jacdac/pxt-jacdac/relay": {},
+            "jacdac/pxt-jacdac/rng": {},
+            "jacdac/pxt-jacdac/rotary-encoder": {},
+            "jacdac/pxt-jacdac/sensor-aggregator": {},
+            "jacdac/pxt-jacdac/servo": {},
+            "jacdac/pxt-jacdac/seven-segment-display": {},
+            "jacdac/pxt-jacdac/soil-moisture": {},
+            "jacdac/pxt-jacdac/solenoid": {},
+            "jacdac/pxt-jacdac/sound-level": {},
+            "jacdac/pxt-jacdac/speech-synthesis": {},
+            "jacdac/pxt-jacdac/switch": {},
+            "jacdac/pxt-jacdac/tcp": {},
+            "jacdac/pxt-jacdac/temperature": {},
+            "jacdac/pxt-jacdac/traffic-light": {},
+            "jacdac/pxt-jacdac/tvoc": {},
+            "jacdac/pxt-jacdac/uv-index": {},
+            "jacdac/pxt-jacdac/vibration-motor": {},
+            "jacdac/pxt-jacdac/water-level": {},
+            "jacdac/pxt-jacdac/weight-scale": {},
+            "jacdac/pxt-jacdac/wifi": {},
+            "jacdac/pxt-jacdac/wind-direction": {},
+            "jacdac/pxt-jacdac/wind-speed": {}
         },
         "approvedEditorExtensionUrls": [
             "https://microsoft.github.io/ml4f/",
@@ -538,6 +618,8 @@
         }
     },
     "teachertool": {
+        "showSharePageEvalButton": true,
+        "defaultChecklistUrl": "teachertool/checklists/general-code-quality.json",
         "carousels": [
             {
                 "title": "Checklists for Tutorials",
