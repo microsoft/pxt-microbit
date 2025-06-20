@@ -99,7 +99,6 @@ namespace pxsim.record {
 
         if (navigator.mediaDevices?.getUserMedia) {
             try {
-                console.log("the recording settings are: ", state.recordingSettings);
                 state.stream = await navigator.mediaDevices.getUserMedia({ video: false, audio: state.recordingSettings });
                 state.recorder = new MediaRecorder(state.stream, { audioBitsPerSecond: state.inputBitRate });
                 state.recorder.start();
@@ -248,14 +247,11 @@ namespace pxsim.record {
         const b = board();
         if (!b) return;
         if (gain === 1) { // high mic sensitivity
-            console.log("high gain");
-            setRecordSettings(b, false, false);
-        } else if (gain === 0.2) { // mid mic sensitivity
-            console.log("mid gain");
             setRecordSettings(b, true, false);
-        } else { // any other case, we should use low mic sensitivity. we want best quality to be the default
-            console.log("low gain, default");
+        } else if (gain === 0.2) { // mid mic sensitivity
             setRecordSettings(b, true, true);
+        } else { // any other case, we should use low mic sensitivity. we want best quality to be the default
+            setRecordSettings(b, false, true);
         }
     }
 
