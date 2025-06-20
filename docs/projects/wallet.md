@@ -21,10 +21,6 @@ Let's get started!
 
 ## ~
 
-## Flipgrid
-
-https://flipgrid.com/c616f092
-
 ## References
 
 The wallet built in this activity is inspired from the duct tape wallet in 

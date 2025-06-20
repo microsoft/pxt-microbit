@@ -113,7 +113,7 @@ namespace serial {
     }
 
     /**
-    * Read multiple characters from the receive buffer. 
+    * Read multiple characters from the receive buffer.
     * If length is positive, pauses until enough characters are present.
     * @param length default buffer length
     */
@@ -144,8 +144,8 @@ namespace serial {
         case SerialPin::USB_TX: name = USBTX; return true;
         case SerialPin::USB_RX: name = USBRX; return true;
 #endif
-        default: 
-          auto pin = getPin(p); 
+        default:
+          auto pin = getPin(p);
           if (NULL != pin) {
             name = (PinName)pin->name;
             return true;
@@ -183,6 +183,22 @@ namespace serial {
         uBit.serial.redirect(txn, rxn);
       uBit.serial.baud((int)rate);
 #endif
+    }
+
+    //%
+    int redirectWithStatus(SerialPin tx, SerialPin rx) {
+#if MICROBIT_CODAL
+      if (getPin(tx) && getPin(rx)) {
+        is_redirected = 1;
+        return uBit.serial.redirect(*getPin(tx), *getPin(rx));
+      }
+#else
+      PinName txn;
+      PinName rxn;
+      if (tryResolvePin(tx, txn) && tryResolvePin(rx, rxn))
+        return uBit.serial.redirect(txn, rxn);
+#endif
+      return MICROBIT_INVALID_PARAMETER;
     }
 
     /**

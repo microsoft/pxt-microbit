@@ -436,7 +436,7 @@ namespace music {
      * @param interpolation interpolation method for frequency scaling
      */
     //% blockId=soundExpression_createSoundExpression
-    //% help=music/create-sound-effect
+    //% help=music/create-sound-expression
     //% block="$waveShape|| start frequency $startFrequency end frequency $endFrequency duration $duration start volume $startVolume end volume $endVolume effect $effect interpolation $interpolation"
     //% waveShape.defl=WaveShape.Sine
     //% waveShape.fieldEditor=soundeffect
