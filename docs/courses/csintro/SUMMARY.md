@@ -107,6 +107,14 @@
     * [Project](/courses/csintro/radio/project)
     * [Standards](/courses/csintro/radio/standards)
 
+## [Accelerometer](/courses/csintro/accelerometer)
+
+* [Accelerometer](/courses/csintro/accelerometer)
+    * [Overview](/courses/csintro/accelerometer)
+    * [Activity](/courses/csintro/accelerometer)
+    * [Project](/courses/csintro/accelerometer)
+    * [Standards](/courses/csintro/accelerometer)
+
 ## Arrays
 
 * [Arrays](/courses/csintro/arrays)
