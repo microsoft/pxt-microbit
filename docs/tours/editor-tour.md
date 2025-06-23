@@ -52,7 +52,7 @@
 
 ## User Profile
 * title: User Profile
-* description: Come here to manage your user profile or sign-out
+* description: Come here to manage your user profile.
 * highlight: avatar
 * location: above
 
