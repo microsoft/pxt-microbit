@@ -77,8 +77,6 @@ namespace pxsim.record {
             const recordingType = pxsim.isSafari() ? "audio/mp4" : "audio/ogg; codecs=opus";
             const blob = new Blob(state.chunks, { type: recordingType });
             state.audioURL = window.URL.createObjectURL(blob);
-            state.recording = new Audio(state.audioURL);
-            state.initListeners();
         }
         state.currentlyRecording = false;
         state.recorder = null;
@@ -167,6 +165,8 @@ namespace pxsim.record {
         stopAudio();
 
         const state = b.recordingState;
+        state.recording = AudioContextManager.createAudioSourceNode(state.audioURL);
+        state.initListeners();
 
         state.audioPlaying = true;
         setTimeout(async () => {
