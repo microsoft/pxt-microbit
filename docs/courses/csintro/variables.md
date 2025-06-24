@@ -2,11 +2,11 @@
 
 ![Variable value](/static/courses/csintro/variables/cover.jpg)
 
-This lesson introduces the use of variables to store data or the results of mathematical operations.  Students will practice giving variables unique and meaningful names. We will also introduce the basic mathematical operations for adding, subtracting, multiplying, and dividing variables.
+This unit introduces the use of variables to store information. You will practice giving variables unique and meaningful names, and use basic mathematical operations for adding, subtracting, multiplying, and dividing variable values. You'll code a program for the micro:bit that keeps and displays the score of a game of *Rock, Paper Scissors* by using the programmable buttons for input and the LED screen for output. In the final project, you'll code your own unique program using variables, and design and build an object that uses the micro:bit to track score, count steps, turns, or something else.
 
 ## Lesson Objectives 
 
-Students will...
+You will...
 
 * Understand what variables are and why and when to use them in a program.
 * Learn how to create a variable, set the variable to an initial value, and change the value of the variable within a micro:bit program.
@@ -19,13 +19,8 @@ Students will...
 ## Lesson plan
 
 1. [**Overview**: Variables in Daily Life](/courses/csintro/variables/overview)
-2. [**Unplugged**: Rock Paper Scissors](/courses/csintro/variables/unplugged)
-3. [**Activity**: Make a Game Scorekeeper](/courses/csintro/variables/activity)
-4. [**Project**: Everything Counts](/courses/csintro/variables/project)
-
-## Flipgrid
-
-The [Flipgrid](https://info.flipgrid.com/) topic for the **Variables** lesson: https://flipgrid.com/dc42bdcc
+2. [**Activity**: Make a Game Scorekeeper](/courses/csintro/variables/activity)
+3. [**Project**: Everything Counts](/courses/csintro/variables/project)
 
 ## Related standards
 

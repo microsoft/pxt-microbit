@@ -2,11 +2,12 @@
 
 ![Guitar Picture](/static/courses/csintro/iteration/guitar.jpg)
 
-This lesson introduces the concept of looping and iteration. Presents the 'While' block as a combination of an iteration and a conditional statement.
+This unit introduces the concept of iteration—or ways to make things repeat. In MakeCode, this is accomplished with loop blocks. You will learn to code with three types of loop blocks as well as sprite and music blocks. In the project, you'll code your own unique program using loops, variables, and other blocks you've explored and learned. You'll design and build an object that uses sound, display, and motion in some way. To incorporate sound and motion, additional materials such as micro-servo motors (a small motor) and crocodile clips are recommended for Lessons B and C.
 
 ## Lesson objectives
 
-Students will...
+You will...
+
 * Understand the value of iteration in programming
 * Understand looping as a form of iteration
 * Learn how and when to use the Looping blocks ‘repeat’, ‘while’, and ‘for’
@@ -15,23 +16,17 @@ Students will...
 ## Lesson structure
 
 * Introduction: Lather. Rinse. Repeat.
-* Unplugged Activity: Walk a Square pseudocode
 * micro:bit Activities: Code a sprite to walk a Square, travelling light, micro:bit alarm!
 * Project: Get Loopy!
 * Project Mods: Use servo motors to add a motion element to the project
-* Assessment: Rubric 
+* Reflection: Write a short journal entry 
 * Standards: Listed
 
 ## Lesson plan
 
 1. [**Overview**: Iteration and looping](/courses/csintro/iteration/overview)
-2. [**Unplugged**: Walk a square](/courses/csintro/iteration/unplugged)
-3. [**Activity**: Loops demos](/courses/csintro/iteration/activity)
-4. [**Project**: Get loopy](/courses/csintro/iteration/project)
-
-## Flipgrid
-
-The [Flipgrid](https://info.flipgrid.com/) topic for the **Iteration** lesson: https://flipgrid.com/ee559ab7
+2. [**Activity**: Loops demos](/courses/csintro/iteration/activity)
+3. [**Project**: Get loopy](/courses/csintro/iteration/project)
 
 ## Related standards
 

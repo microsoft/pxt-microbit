@@ -334,6 +334,10 @@ Many extensions are available to work with interface kits, add-on hardware, or o
 
 ```codecard
 [{
+  "name": "Smarthon IoT:bit",
+  "url":"/pkg/SMARTHON/pxt-iot-bit",
+  "cardType": "package"
+}, {
   "name": "DFRobot IoT Cloud Kit",
   "url":"/pkg/DFRobot/pxt-DFRobot_IoT_Cloud_Kit",
   "cardType": "package"
@@ -384,6 +388,18 @@ Many extensions are available to work with interface kits, add-on hardware, or o
 
 ```codecard
 [{
+   "name": "FWD Edu Smart Solder Kit",
+   "url": "/pkg/Forward-Education/pxt-solder-3b3l",
+   "cardType": "package"
+}, {   
+   "name": "FWD Edu Smart Solar Kit",
+   "url": "/pkg/Forward-Education/pxt-solar",
+   "cardType": "package"
+}, {
+   "name": "FWD Edu Smart Hydroponics Kit",
+   "url": "/pkg/Forward-Education/pxt-hydroponics",
+   "cardType": "package"
+}, {
    "name": "BP Lab micro:bit Kit",
    "url": "/pkg/team-bp/pxt-bplab",
    "cardType": "package"
@@ -867,6 +883,10 @@ Many extensions are available to work with interface kits, add-on hardware, or o
 
 ```codecard
 [{
+    "name": "Elecfreaks Petal:bit",
+    "url": "/pkg/elecfreaks/pxt-petal",
+    "cardType": "package"
+}, {
     "name": "Joy IT RFID Module MFRC-522",
     "url": "/pkg/joy-it/pxt-rfid-mfrc522",
     "cardType": "package"

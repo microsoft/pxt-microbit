@@ -38,10 +38,6 @@ Each of the 12 lessons is structured in this format:
 * Assessment - A project rubric and guidance for grading the project.
 * Standards - A list of CSTA K-12 Computer Science Standards and/or concepts covered by this lesson.
 
-### Course on Flipgrid
-
-Flipcode for the **Intro to CS** course grid: **[csintromicrobit](https://flipgrid.com/csintromicrobit)**
-
 ## Course contents
 
 * [About](/courses/csintro/about)
@@ -52,14 +48,15 @@ Flipcode for the **Intro to CS** course grid: **[csintromicrobit](https://flipgr
 ### Lessons
 
 1. [Making](/courses/csintro/making)
-2. [Algorithms](/courses/csintro/algorithms) 
-3. [Variables](/courses/csintro/variables) 
+2. [Algorithms](/courses/csintro/algorithms)
+3. [Variables](/courses/csintro/variables)
 4. [Conditionals](/courses/csintro/conditionals)
-5. [Iteration](/courses/csintro/iteration) 
+5. [Iteration](/courses/csintro/iteration)
 6. [Review/Mini-Project](/courses/csintro/miniproject)
 7. [Coordinate grid system](/courses/csintro/coordinates)
 8. [Booleans](/courses/csintro/booleans)
 9. [Bits, bytes, and binary](/courses/csintro/binary)
 10. [Radio](/courses/csintro/radio)
-11. [Arrays](/courses/csintro/arrays)
-12. [Independent final project](/courses/csintro/finalproject) 
+11. [Accelerometer](/courses/csintro/accelerometer)
+12. [Arrays](/courses/csintro/arrays)
+13. [Independent final project](/courses/csintro/finalproject)

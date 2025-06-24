@@ -1,11 +1,11 @@
 # Algorithms
 
-This lesson introduces a conceptual framework for thinking of a computing device as something that uses code to process one or more inputs and send them to an output(s).
+This unit introduces the four main components that make up a computer and the concept of **input** and **output** as it relates to programming the micro:bit. The coding activity starts with an explanation of pseudocode that leads to working with events and event handlers to program your micro:bit to make faces. The project incorporates all the new learning from this unit as you create your own fidget cube that responds to different inputs.
 
 ## Lesson objectives
-Students will...
+You will...
 
-* Understand the four components that make up a computer and their functions.
+* Understand the functions of the four components that make up a computer.
 * Understand that the micro:bit takes input, and after processing the input, produces output.
 * Learn the variety of different types of information the micro:bit takes in as input.
 * Apply this knowledge by creating a micro:bit program that takes input and produces an output.
@@ -13,13 +13,8 @@ Students will...
 ## Lesson plan
 
 1. [**Overview**: What is a computer and micro:bit hardware](/courses/csintro/algorithms/overview)
-2. [**Unplugged**: What's your function?](/courses/csintro/algorithms/unplugged)
-3. [**Activity**: Happy face, sad face](/courses/csintro/algorithms/activity)
-4. [**Project**: Fidget cube](/courses/csintro/algorithms/project)
-
-## Flipgrid
-
-The [Flipgrid](https://info.flipgrid.com/) topic for the **Algorithms** lesson: https://flipgrid.com/31ed5382
+2. [**Activity**: Happy face, sad face](/courses/csintro/algorithms/activity)
+3. [**Project**: Fidget cube](/courses/csintro/algorithms/project)
 
 ## Related standards
 
