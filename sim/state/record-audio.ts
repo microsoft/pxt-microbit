@@ -43,8 +43,8 @@ namespace pxsim.record {
     const MAX_SAMPLE_RATE = 22000;
     const MIN_SAMPLE_RATE = 1000;
 
-    const MIN_RECORDING_TIME = 3000;
-    const MAX_RECORDING_TIME = 20000;
+    const MIN_RECORDING_TIME = 2000;
+    const MAX_RECORDING_TIME = 10000;
 
     let _initialized = false;
     function init() {
