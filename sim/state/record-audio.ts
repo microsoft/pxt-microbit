@@ -8,6 +8,7 @@ namespace pxsim  {
         audioURL: string;
         // The inputBitRate when the current audioUrl was recorded
         audioURLBitRate: number;
+        audioClippingThreshold: number = 0.08;
 
         recording: HTMLAudioElement;
         audioPlaying: boolean = false;
@@ -165,7 +166,7 @@ namespace pxsim.record {
         stopAudio();
 
         const state = b.recordingState;
-        state.recording = AudioContextManager.createAudioSourceNode(state.audioURL);
+        state.recording = AudioContextManager.createAudioSourceNode(state.audioURL, state.audioClippingThreshold);
         state.initListeners();
 
         state.audioPlaying = true;
@@ -243,7 +244,16 @@ namespace pxsim.record {
     }
 
     export function setMicrophoneGain(gain: number): void {
-
+        const b = board();
+        if (!b) return;
+        const tolerance = 0.1 * Number.EPSILON;
+        if (gain - 0.079 < tolerance) { // low mic sensitivity
+            b.recordingState.audioClippingThreshold = 0.08;
+        } else if (gain - 0.2 < tolerance) { // mid mic sensitivity
+            b.recordingState.audioClippingThreshold = 0.03;
+        } else if (gain - 1.0 < tolerance) { // high mic sensitivity
+            b.recordingState.audioClippingThreshold = 0.01;
+        }
     }
 
     export function audioDuration(sampleRate: number): number {
