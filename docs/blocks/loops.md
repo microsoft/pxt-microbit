@@ -12,4 +12,4 @@ loops.everyInterval(500, function () {})
 [while](/blocks/loops/while), 
 [repeat](/blocks/loops/repeat), 
 [for of](/blocks/loops/for-of),
-[every](/reference/loops/every)
+[every](/reference/loops/every-interval)

@@ -44,6 +44,18 @@
 * highlight: share
 * location: below
 
+## Sign-In
+* title: Sign-In
+* description: Sign-in with your Microsoft, Google, or Clever account to save your projects to the cloud.
+* highlight: sign in
+* location: above
+
+## User Profile
+* title: User Profile
+* description: Come here to manage your user profile.
+* highlight: avatar
+* location: above
+
 ## Download
 * title: Download
 * description: Download your program onto the micro:bit.
