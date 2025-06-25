@@ -166,15 +166,14 @@ namespace pxsim.record {
         stopAudio();
 
         const state = b.recordingState;
-        state.recording = AudioContextManager.createAudioSourceNode(state.audioURL, state.audioClippingThreshold);
+        const volume = AudioContextManager.isMuted() ? 0 : Math.round((music.volume() / 0xff) * 100) / 100;
+        state.recording = AudioContextManager.createAudioSourceNode(state.audioURL, state.audioClippingThreshold, volume);
         state.initListeners();
 
         state.audioPlaying = true;
         setTimeout(async () => {
             if (!state.currentlyErasing && state.recording) {
                 try {
-                    const volume = AudioContextManager.isMuted() ? 0 : 1;
-                    state.recording.volume = volume;
 
                     const minPlaybackRate = 0.15
 
