@@ -389,15 +389,15 @@ Many extensions are available to work with interface kits, add-on hardware, or o
 ```codecard
 [{
    "name": "FWD Edu Smart Solder Kit",
-   "url": "/pkg/Forward-Education/pxt-solder-3b3l",
+   "url": "/pkg/Forward-Education/pxt-smart-soldering-3b3l",
    "cardType": "package"
 }, {   
    "name": "FWD Edu Smart Solar Kit",
-   "url": "/pkg/Forward-Education/pxt-solar",
+   "url": "/pkg/Forward-Education/pxt-smart-solar",
    "cardType": "package"
 }, {
    "name": "FWD Edu Smart Hydroponics Kit",
-   "url": "/pkg/Forward-Education/pxt-hydroponics",
+   "url": "/pkg/Forward-Education/pxt-smart-hydroponics",
    "cardType": "package"
 }, {
    "name": "BP Lab micro:bit Kit",
