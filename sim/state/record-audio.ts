@@ -243,6 +243,7 @@ namespace pxsim.record {
     }
 
     export function setMicrophoneGain(gain: number): void {
+
     }
 
     export function audioDuration(sampleRate: number): number {
