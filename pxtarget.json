@@ -442,7 +442,8 @@
             "debugExtensionCode",
             "bluetoothUartConsole",
             "bluetoothPartialFlashing",
-            "identity"
+            "identity",
+            "forceEnableAiErrorHelp"
         ],
         "supportedExperiences": [
             "code-eval"

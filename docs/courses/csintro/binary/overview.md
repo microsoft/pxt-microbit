@@ -1,18 +1,24 @@
 # Introduction
 
-Most everyone who uses a computer has heard the terms, kilobyte (kB), Megabyte (MB), Gigabyte (GB) and even Terabyte (TB), usually when referring to the size of computer files and hard drives as well as download speeds. Bandwidth or connection rates are measured in bits/second. But what is a bit and what is a byte and what do they have to do with computers?
+Most everyone who uses a computer has heard the terms, Kilobyte (KB), Megabyte (MB), Gigabyte (GB) and even Terabyte (TB), usually when referring to the size of computer files and hard drives as well as download speeds. Bandwidth or connection rates are measured in bits/second. But what is a bit and what is a byte, and what do they have to do with computers?
 
-Picture a basic room light. The light is either on or it is off. You control the current state of the light by flipping a switch that has only two settings, down (light off) and up (light on). The earliest computers used a series of mechanical switches to control the flow of electricity through their circuits, turning each one on or off. The on/off states of the circuits was used to represent and even store information. The smallest unit of information, representing the state of one switch, is known as a bit.
+Picture a basic room light. The light is either on or off. You control the current state of the light by flipping a switch that has only two settings, on or off. The earliest computers used a series of mechanical switches to control the flow of electricity through their circuits, turning each one on or off. The on/off states of the circuits were used to represent and even store information. The smallest unit of information, representing the state of one switch, is known as a **bit**.
 
-A bit is a binary digit and has only two possible values, zero or one. The value of the bit represents the current state of a single switch. If the switch is off, then the bit has the value zero. If the switch is on, then the bit has the value one. 
+A bit is a **binary** digit and has only two possible values, zero or one. The value of the bit represents the current state of a single switch. If the switch is off, then the bit has the value zero. If the switch is on, then the bit has the value one.
 
-A bit can only represent two different values, zero or one. To represent larger pieces of information, bits are strung together in sequences of 8 called bytes. 
+A bit can only represent two different values, 0 or 1. To represent larger pieces of information, bits are strung together in sequences of eight called **bytes**.
 
-A byte is a sequence of binary digits made up of 8 bits.
+A byte is a sequence of binary digits made up of eight bits.
 
-A byte can represent any value from 00000000 through 11111111, for a total of 256 different possible values. Each digit in a byte can be thought of as representing an individual switch that is either off (zero) or on (one). 
+A byte can represent any value from 00000000 through 11111111, for a total of 256 different possible values. Each digit in a byte can be thought of as representing an individual switch that is either off (0 or on (1).
 
-Modern computers rely on transistors, which pack millions of tiny switches into a chip smaller than your thumb, but information is still represented in essentially the same way: as a series of ones and zeros. By using binary, computers can represent information simply and efficiently using a system that is very effectively modeled in digital circuitry.
+Modern computers rely on transistors, which pack millions of tiny switches into a chip smaller than your thumb, but information is still represented in essentially the same way: as a series of 1s and 0s. By using **binary**, computers can represent information simply and efficiently using a system that is very effectively modeled in digital circuitry.
+
+In coding:
+
+* The 1s and 0s of bits and bytes can be used to represent letters, numbers, and even different keys on a computer keyboard.
+
+* A bit can be used to hold a Boolean (true/false) value. A value of 0 represents “false” and a value of 1 represents “true.”
 
 ## Review
 
@@ -26,5 +32,4 @@ Modern computers rely on transistors, which pack millions of tiny switches into 
 ## Notes 
 
 * The ones and zeros of bits and bytes can be used to represent letters, numbers, and even different keys on a computer keyboard. 
-* A bit can be used to hold a Boolean (true/false) value.  A value of zero represents ‘false’ and a value of one represents ‘true’.
-	
+* A bit can be used to hold a Boolean (true/false) value. A value of zero represents ‘false’ and a value of one represents ‘true’.
