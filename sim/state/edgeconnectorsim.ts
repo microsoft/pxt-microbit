@@ -38,7 +38,7 @@ namespace pxsim {
                 default: this.value = Math_.randomRange(0, 1023); break;
             }
 
-            // stop continuous servo if movingl; 90 degrees represents a speed of 0
+            // stop continuous servo if moving; 90 degrees represents a speed of 0
             if (this.servoContinuous && pull == PinPullMode.PullNone && this.mode & PinFlags.Digital) {
                 this.servoAngle = 90;
             }
