@@ -476,6 +476,8 @@
             "ines-hpmm/pxt-luma-matrix": { "tags": [ "Lights and Display" ] },
             "team-bp/pxt-bplab": { "tags": [ "Science" ] },
             "jimd80/pxt-coderdojo-controller": { "tags": [ "Gaming" ] },
+            "smarthon/pxt-iot-bit": { "tags": [ "Networking" ] },
+            "forward-education/pxt-solder-3b3l": { "tags": [ "Science" ] },
             "forward-education/pxt-solar": { "tags": [ "Science" ] },
             "forward-education/pxt-hydroponics": { "tags": [ "Science" ] },
             "elecfreaks/pxt-petal": { "tags": [ "Science" ] },
