@@ -2,4 +2,4 @@
     User Variable Overrides
 *******************************/
 
-@backgroundColor: fade(@blue, 40%);
+@backgroundColor: #B4BFED;
