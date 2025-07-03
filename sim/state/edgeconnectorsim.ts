@@ -24,7 +24,7 @@ namespace pxsim {
             return this.value > 100 ? 1 : 0;
         }
 
-        digitalWritePin(value: number) {            
+        digitalWritePin(value: number) {
             this.mode = PinFlags.Digital | PinFlags.Output;
             this.value = value > 0 ? 200 : 0;
             runtime.queueDisplayUpdate();
@@ -36,6 +36,11 @@ namespace pxsim {
                 case PinPullMode.PullDown: this.value = 0; break;
                 case PinPullMode.PullUp: this.value = 1023; break;
                 default: this.value = Math_.randomRange(0, 1023); break;
+            }
+
+            // stop continuous servo if moving; 90 degrees represents a speed of 0
+            if (this.servoContinuous && pull == PinPullMode.PullNone && this.mode & PinFlags.Digital) {
+                this.servoAngle = 90;
             }
         }
 

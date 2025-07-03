@@ -182,6 +182,9 @@ path.sim-board {
 .sim-led {
     stroke: red;
 }
+.sim-led-back {
+    stroke: white;
+}
 *:focus .sim-button-outer,
 .sim-pin:focus,
 .sim-thermometer:focus,
@@ -286,9 +289,8 @@ path.sim-board {
         if (highContrast) {
             theme = JSON.parse(JSON.stringify(theme)) as IBoardTheme;
             theme.highContrast = true;
-            theme.ledOff = "#888";
-            theme.ledOn = "#0000bb";
-            theme.display = "#ffffff";
+            theme.ledOff = "#000000";
+            theme.ledOn = "#FF0000";
             theme.pin = "#D4AF37";
             theme.accent = "#FFD43A";
         }
