@@ -18,9 +18,9 @@ In this course, youâ€™ll be working on projects where you actually build thingsâ
 
 ![micro:bit man](/static/courses/csintro/microbitman.jpg)
 
-* micro:bits may be purchased from these resellers:
+* micro:bits may be purchased from resellers:
 
->   http://microbit.org/resellers (you will need at least 1 micro:bit for this course).  The "micro:bit Go Kit" includes a battery pack and USB cable as well.
+>   https://microbit.org/buy/ (you will need at least 1 micro:bit for this course).  The "BBC micro:bit Go" includes a battery pack and USB cable as well.
 
 * Other optional suggested micro:bit accessories include:
 

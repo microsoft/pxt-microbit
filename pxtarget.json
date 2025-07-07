@@ -468,7 +468,7 @@
             },
             {
                 "name": "Buy",
-                "path": "https://microbit.org/resellers"
+                "path": "https://microbit.org/buy/"
             }
         ],
         "hasReferenceDocs": true,
