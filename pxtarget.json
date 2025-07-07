@@ -432,10 +432,7 @@
         "allowPackageExtensions": true,
         "addNewTypeScriptFile": true,
         "enabledFeatures": {
-            "blocksErrorList": {},
-            "aiErrorHelp": {
-                "includeRegions": ["US"]
-            }
+            "blocksErrorList": {}
         },
         "experiments": [
             "accessibleBlocks",
