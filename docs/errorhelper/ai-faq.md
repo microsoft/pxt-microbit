@@ -8,7 +8,7 @@ The MakeCode Error Helper is an AI-powered tool to help students understand codi
 
 ### 2. What can the MakeCode Error Helper do?
 
-The MakeCode Error Helper sends the student's current code along with the exception details to DeepPrompt (a Microsoft Azure LLM service) along with some contextual prompt information. It returns a detailed analysis that explains the error in student-friendly language.
+The MakeCode Error Helper sends the student's current code along with the exception details to DeepPrompt (a Microsoft Azure LLM service) along with some contextual prompt information. It returns a detailed walkthrough of the error in student-friendly language.
 
 ### 3. What is MakeCode Error Helper's intended use?
 
