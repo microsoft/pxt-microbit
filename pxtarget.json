@@ -200,7 +200,7 @@
                 "codalTarget": {
                     "name": "codal-microbit-v2",
                     "url": "https://github.com/lancaster-university/codal-microbit-v2",
-                    "branch": "v0.3.0",
+                    "branch": "v0.3.1",
                     "type": "git"
                 },
                 "codalBinary": "MICROBIT",
@@ -432,10 +432,7 @@
         "allowPackageExtensions": true,
         "addNewTypeScriptFile": true,
         "enabledFeatures": {
-            "blocksErrorList": {},
-            "aiErrorHelp": {
-                "includeRegions": ["US"]
-            }
+            "blocksErrorList": {}
         },
         "experiments": [
             "accessibleBlocks",
@@ -468,7 +465,7 @@
             },
             {
                 "name": "Buy",
-                "path": "https://microbit.org/resellers"
+                "path": "https://microbit.org/buy/"
             }
         ],
         "hasReferenceDocs": true,

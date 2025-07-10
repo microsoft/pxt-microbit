@@ -4,7 +4,7 @@
 
 #### Looking to buy a micro:bit?
 
-See the [list of resellers](https://microbit.org/resellers).
+See the [list of official products](https://microbit.org/buy/).
 
 ### ~
 
