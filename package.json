@@ -50,10 +50,10 @@
     },
     "overrides": {
         "@blockly/plugin-workspace-search": {
-            "blockly": "12.2.0-beta.0"
+            "blockly": "12.2.0"
         },
         "@blockly/field-grid-dropdown": {
-            "blockly": "12.2.0-beta.0"
+            "blockly": "12.2.0"
         }
     }
 }
