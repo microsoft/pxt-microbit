@@ -73,8 +73,9 @@ Steps:
 This test checks that the Utility Service is available and working on
 the builds of the MakeCode editor under test.
 
-This test should be carried out in the iOS app only,
-as this feature is not available on the Android app.
+This test should be carried out with:
+- Android app
+- iOS app
 
 Steps:
 1. Flash the micro:bit with this MakeCode programme, using any method:
