@@ -33,10 +33,12 @@ Chrome-based browsers and operating systems:
 - Chrome on Linux
 - Chrome on Android
 - Edge on Windows
-- Microsoft MakeCode for micro:bit Windows app
 - MakeCode Offline App for Windows
+    - https://makecode.microbit.org/offline-app
 - MakeCode Offline App for macOS
+    - https://makecode.microbit.org/offline-app
 - MakeCode Windows Store App
+    - https://apps.microsoft.com/detail/9nmqdq2xzkwk
 
 ## Tests to run on all matrix variations
 
