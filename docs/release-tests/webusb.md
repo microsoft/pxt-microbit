@@ -35,10 +35,13 @@ Chrome-based browsers and operating systems:
 - Edge on Windows
 - MakeCode Offline App for Windows
     - https://makecode.microbit.org/offline-app
+    - This app needs to be packaged with the version of MakeCode under test.
 - MakeCode Offline App for macOS
     - https://makecode.microbit.org/offline-app
+    - This app needs to be packaged with the version of MakeCode under test.
 - MakeCode Windows Store App
     - https://apps.microsoft.com/detail/9nmqdq2xzkwk
+    - To load MakeCode beta, type `/@beta` in the extension search box.
 
 ## Tests to run on all matrix variations
 
@@ -46,7 +49,7 @@ The following tests should be carried out with all combinations of the
 micro:bit boards, DAPLink versions, and browsers/apps listed in the
 "Test Matrix" section.
 
-As these tests can be repeated multiple times in the same computer with
+As these tests can be repeated multiple times in the same browser/app with
 different micro:bit boards, when a test step indicates to create a new project,
 it is acceptable to use an existing project created in a previous test run.
 
