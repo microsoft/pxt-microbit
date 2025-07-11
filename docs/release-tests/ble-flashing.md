@@ -22,7 +22,11 @@ Three hex files needed:
 
 Two mobile/tablet devices needed:
 - Android device with the micro:bit app installed.
+    - To load a different MakeCode URL long touch the micro:bit logo in the
+      app main screen and a modal will appear with the option change
 - iOS device with the micro:bit app installed.
+    - To load a different MakeCode URL long press the MakeCode back chevron
+      to choose beta.
 
 ## Test 1: Full flashing with Bluetooth from "Out of Box" and "Meet the micro:bit"
 
@@ -60,7 +64,7 @@ This test should be carried out with:
 
 Steps:
 1. Follow steps from Test 1.
-2. Change the blocks in the MakeCode editor to something different
+2. Change the blocks in the MakeCode editor to do something different
    (e.g. display a different icon/message on the LED matrix).
 3. Click the "Download" button.
 4. Follow the connection instructions to connect the micro:bit via Bluetooth
@@ -87,5 +91,8 @@ Steps:
         )
     })
     ```
-2. Open the micro:bit app and connect to the micro:bit.
-3. TODO: Rest of the instructions will be added soon.
+2. Open the micro:bit app, go to "My Programs".
+3. Tap on the "Fetch MY_DATA (V2 only)" button and follow the instructions
+   to connect the micro:bit via Bluetooth.
+4. Verify that the data a table of Time, X and Y acceleration values
+   is shown in the app.

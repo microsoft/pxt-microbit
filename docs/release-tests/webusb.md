@@ -22,7 +22,7 @@ the latest official release, and the latest beta release.
 | V2.2x | 0257      | nRF52833/820 | Factory & latest official release |
 | V2.2x | 0258-beta | nRF52833/820 | Latest beta release               |
 
-### Test browsers, apps & Operating Systems
+### Test browsers, apps & operating systems
 
 Each WebUSB test should be carried out with the latest version of these
 Chrome-based browsers and operating systems:
@@ -35,22 +35,25 @@ Chrome-based browsers and operating systems:
 - Edge on Windows
 - MakeCode Offline App for Windows
     - https://makecode.microbit.org/offline-app
+    - This app needs to be packaged with the version of MakeCode under test.
 - MakeCode Offline App for macOS
     - https://makecode.microbit.org/offline-app
+    - This app needs to be packaged with the version of MakeCode under test.
 - MakeCode Windows Store App
     - https://apps.microsoft.com/detail/9nmqdq2xzkwk
+    - To load MakeCode beta, type `/@beta` in the extension search box.
 
 ## Tests to run on all matrix variations
 
 The following tests should be carried out with all combinations of the
 micro:bit boards, DAPLink versions, and browsers/apps listed in the
-"Test Matrix" section.
+"Test matrix" section.
 
-As these tests can be repeated multiple times in the same computer with
+As these tests can be repeated multiple times in the same browser/app with
 different micro:bit boards, when a test step indicates to create a new project,
 it is acceptable to use an existing project created in a previous test run.
 
-### Test 1: WebUSB Download
+### Test 1: WebUSB full flash, partial flash, and serial
 
 1. Connect the micro:bit to the computer via USB.
 2. Open the micro:bit MakeCode editor under test in a Chrome-based browser.
@@ -62,35 +65,26 @@ it is acceptable to use an existing project created in a previous test run.
 6. Follow the connection instructions to connect the micro:bit via WebUSB and
    download the programme.
 7. Verify that the programme runs on the micro:bit.
-8. Change the code to display a different icon on the LED matrix.
-9. Click the "Download" button again.
-10. No connection instructions should be show this time and the programme
-    should be downloaded directly to the micro:bit in a shorter amount of time.
-11. Verify the new programme runs on the micro:bit with the new icon.
-
-### Test 2: WebUSB Serial
-
-1. Connect the micro:bit to the computer via USB.
-2. Open the micro:bit MakeCode editor under test in a Chrome-based browser.
-3. Create a new project and add this code
+8. Change the code to this one:
     ```javascript
     basic.forever(function () {
         serial.writeLine("hello")
         basic.pause(1000)
     })
     ```
-5. Click the "Download" button.
-6. Follow the connection instructions to connect the micro:bit via WebUSB and
-   download the programme.
-7. Click on "Show Data Device" button to open the serial console.
-8. Verify that the serial console shows "hello" every second.
+9. Click the "Download" button again.
+10. No connection instructions should be shown this time and the programme
+    should be downloaded directly to the micro:bit in a shorter amount of time.
+11. A "Show Data Device" button should appear, click it to open the serial
+    console.
+12. Verify that the serial console shows "hello" every second.
 
 ## Tests on specific variations
 
-This test should only be carried out with the configuration listed at the
+These tests should only be carried out with the configuration listed at the
 beginning of each test.
 
-### Test 3: WebUSB with incompatible DAPLink
+### Test 2: WebUSB with incompatible DAPLink
 
 The following DAPLink versions are not expected to work with WebUSB, and
 this test is to ensure an error message suggesting a firmware update is shown.
@@ -111,7 +105,7 @@ This test should be carried out with the following DAPLink versions:
 7. Verify that an error message is shown suggesting a firmware update is
    required.
 
-### Test 4: WebUSB within micro:bit classroom
+### Test 3: WebUSB within micro:bit Classroom
 
 This test can be executed only once, using any micro:bit board with any
 DAPLink WebUSB compatible version, using Chrome on Windows.
@@ -130,7 +124,7 @@ the MakeCode editor being embedded in classroom.
    download the programme.
 8. Verify that the programme runs on the micro:bit.
 
-### Test 5: WebUSB within micro:bit CreateAI
+### Test 4: WebUSB within micro:bit CreateAI
 
 This test can be executed only once, using any micro:bit board with any
 DAPLink WebUSB compatible version, using Chrome on Windows.
