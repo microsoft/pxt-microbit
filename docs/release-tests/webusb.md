@@ -46,24 +46,33 @@ The following tests should be carried out with all combinations of the
 micro:bit boards, DAPLink versions, and browsers/apps listed in the
 "Test Matrix" section.
 
+As these tests can be repeated multiple times in the same computer with
+different micro:bit boards, when a test step indicates to create a new project,
+it is acceptable to use an existing project created in a previous test run.
+
 ### Test 1: WebUSB Download
 
 1. Connect the micro:bit to the computer via USB.
 2. Open the micro:bit MakeCode editor under test in a Chrome-based browser.
-3. Create a new project.
-4. Add a block to the project (e.g. something simple to display on the LED
-   matrix).
+3. Create a new project, and add a block to display an icon on the LED matrix.
+4. If the micro:bit was automatically connected via WebUSB, disconnect it from
+   the editor by clicking on the "Disconnect" button in "Download" menu
+   (three dots icon at the right of the "Download" button).
 5. Click the "Download" button.
 6. Follow the connection instructions to connect the micro:bit via WebUSB and
    download the programme.
 7. Verify that the programme runs on the micro:bit.
+8. Change the code to display a different icon on the LED matrix.
+9. Click the "Download" button again.
+10. No connection instructions should be show this time and the programme
+    should be downloaded directly to the micro:bit in a shorter amount of time.
+11. Verify the new programme runs on the micro:bit with the new icon.
 
 ### Test 2: WebUSB Serial
 
 1. Connect the micro:bit to the computer via USB.
 2. Open the micro:bit MakeCode editor under test in a Chrome-based browser.
-3. Create a new project.
-4. Add this code
+3. Create a new project and add this code
     ```javascript
     basic.forever(function () {
         serial.writeLine("hello")
