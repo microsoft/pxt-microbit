@@ -22,7 +22,7 @@ Morse code is an alphabet composed of dots (short signals) and dashes (long sign
 hint~
 
 ■ From the ``||input:Input||`` category in the toolbox, drag an ``||input:on logo [pressed]||`` container into to your workspace.  
-■ From the ``||radio:Radio||`` category, get ``||radio:radio send number [0]||`` and snap it into your empty ``||input(noclick):on logo [pressed]||`` container.
+■ From the ``||radio:Radio||`` category, get ``||radio:radio send number [0]||`` and snap it into your empty ``||input:on logo [pressed]||`` container.
 
 ```blocks
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
