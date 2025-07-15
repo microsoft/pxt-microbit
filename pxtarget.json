@@ -432,10 +432,7 @@
         "allowPackageExtensions": true,
         "addNewTypeScriptFile": true,
         "enabledFeatures": {
-            "blocksErrorList": {},
-            "aiErrorHelp": {
-                "includeRegions": ["US"]
-            }
+            "blocksErrorList": {}
         },
         "experiments": [
             "accessibleBlocks",
@@ -468,7 +465,7 @@
             },
             {
                 "name": "Buy",
-                "path": "https://microbit.org/resellers"
+                "path": "https://microbit.org/buy/"
             }
         ],
         "hasReferenceDocs": true,
@@ -560,7 +557,8 @@
             "4": "v4",
             "5": "v5",
             "6": "v6",
-            "7": "v7"
+            "7": "v7",
+            "8": "v8"
         },
         "editorVersionPaths": {
             "0": "v0"
