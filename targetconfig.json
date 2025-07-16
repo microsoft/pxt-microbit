@@ -620,7 +620,7 @@
         }
     },
     "teachertool": {
-        "showSharePageEvalButton": false,
+        "showSharePageEvalButton": true,
         "defaultChecklistUrl": "teachertool/checklists/general-code-quality.json",
         "carousels": [
             {
