@@ -435,11 +435,9 @@
             "blocksErrorList": {}
         },
         "experiments": [
-            "accessibleBlocks",
             "debugExtensionCode",
             "bluetoothUartConsole",
             "bluetoothPartialFlashing",
-            "identity",
             "forceEnableAiErrorHelp"
         ],
         "supportedExperiences": [
