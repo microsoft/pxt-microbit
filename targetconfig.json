@@ -5,6 +5,13 @@
                 "tags": [ "Lights and Display" ],
                 "preferred": true
             },
+            "microbit-apps/display-shield": {
+                "tags": [ "Lights and Display" ],
+                "simx": {
+                    "sha": "0825d56f78528c57af100a96abdfe2162f59945a",
+                    "devUrl": "http://localhost:3000"
+                }
+            },
             "microsoft/pxt-microturtle": {
                 "tags": [ "Software" ],
                 "preferred": true
@@ -494,13 +501,6 @@
                     "aspectRatio": 3.45
                 },
                 "hidden": true
-            },
-            "microbit-apps/display-shield": {
-                "tags": [ "Lights and Display" ],
-                "simx": {
-                    "sha": "0825d56f78528c57af100a96abdfe2162f59945a",
-                    "devUrl": "http://localhost:3000"
-                }
             },
             "jacdac/pxt-jacdac": {
                 "simx": {
