@@ -432,7 +432,10 @@
         "allowPackageExtensions": true,
         "addNewTypeScriptFile": true,
         "enabledFeatures": {
-            "blocksErrorList": {}
+            "blocksErrorList": {},
+            "aiErrorHelp": {
+                "includeRegions": ["CA"]
+            }
         },
         "experiments": [
             "debugExtensionCode",
