@@ -200,7 +200,7 @@
                 "codalTarget": {
                     "name": "codal-microbit-v2",
                     "url": "https://github.com/lancaster-university/codal-microbit-v2",
-                    "branch": "v0.3.1",
+                    "branch": "v0.3.2",
                     "type": "git"
                 },
                 "codalBinary": "MICROBIT",
@@ -432,14 +432,15 @@
         "allowPackageExtensions": true,
         "addNewTypeScriptFile": true,
         "enabledFeatures": {
-            "blocksErrorList": {}
+            "blocksErrorList": {},
+            "aiErrorHelp": {
+                "includeRegions": ["CA"]
+            }
         },
         "experiments": [
-            "accessibleBlocks",
             "debugExtensionCode",
             "bluetoothUartConsole",
             "bluetoothPartialFlashing",
-            "identity",
             "forceEnableAiErrorHelp"
         ],
         "supportedExperiences": [
@@ -557,7 +558,8 @@
             "4": "v4",
             "5": "v5",
             "6": "v6",
-            "7": "v7"
+            "7": "v7",
+            "8": "v8"
         },
         "editorVersionPaths": {
             "0": "v0"

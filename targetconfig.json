@@ -5,6 +5,13 @@
                 "tags": [ "Lights and Display" ],
                 "preferred": true
             },
+            "microbit-apps/display-shield": {
+                "tags": [ "Lights and Display" ],
+                "simx": {
+                    "sha": "0825d56f78528c57af100a96abdfe2162f59945a",
+                    "devUrl": "http://localhost:3000"
+                }
+            },
             "microsoft/pxt-microturtle": {
                 "tags": [ "Software" ],
                 "preferred": true
@@ -477,9 +484,9 @@
             "team-bp/pxt-bplab": { "tags": [ "Science" ] },
             "jimd80/pxt-coderdojo-controller": { "tags": [ "Gaming" ] },
             "smarthon/pxt-iot-bit": { "tags": [ "Networking" ] },
-            "forward-education/pxt-solder-3b3l": { "tags": [ "Science" ] },
-            "forward-education/pxt-solar": { "tags": [ "Science" ] },
-            "forward-education/pxt-hydroponics": { "tags": [ "Science" ] },
+            "forward-education/pxt-smart-soldering": { "tags": [ "Science" ] },
+            "forward-education/pxt-smart-solar": { "tags": [ "Science" ] },
+            "forward-education/pxt-smart-hydroponics": { "tags": [ "Science" ] },
             "elecfreaks/pxt-petal": { "tags": [ "Science" ] },
             "microsoft/pxt-simx-sample": {
                 "simx": {
@@ -494,12 +501,6 @@
                     "aspectRatio": 3.45
                 },
                 "hidden": true
-            },
-            "microbit-apps/display-shield": {
-                "simx": {
-                    "sha": "0825d56f78528c57af100a96abdfe2162f59945a",
-                    "devUrl": "http://localhost:3000"
-                }
             },
             "jacdac/pxt-jacdac": {
                 "simx": {

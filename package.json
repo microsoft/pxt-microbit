@@ -1,6 +1,6 @@
 {
     "name": "pxt-microbit",
-    "version": "7.1.56",
+    "version": "8.1.0",
     "description": "micro:bit target for Microsoft MakeCode (PXT)",
     "keywords": [
         "JavaScript",
@@ -45,15 +45,9 @@
         "typescript": "4.8.3"
     },
     "dependencies": {
-        "pxt-common-packages": "12.3.31",
-        "pxt-core": "11.4.43"
+        "pxt-common-packages": "13.0.0",
+        "pxt-core": "12.0.1"
     },
     "overrides": {
-        "@blockly/plugin-workspace-search": {
-            "blockly": "12.2.0-beta.0"
-        },
-        "@blockly/field-grid-dropdown": {
-            "blockly": "12.2.0-beta.0"
-        }
     }
 }
