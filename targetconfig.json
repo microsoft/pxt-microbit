@@ -5,6 +5,13 @@
                 "tags": [ "Lights and Display" ],
                 "preferred": true
             },
+            "microbit-apps/display-shield": {
+                "tags": [ "Lights and Display" ],
+                "simx": {
+                    "sha": "0825d56f78528c57af100a96abdfe2162f59945a",
+                    "devUrl": "http://localhost:3000"
+                }
+            },
             "microsoft/pxt-microturtle": {
                 "tags": [ "Software" ],
                 "preferred": true
@@ -489,17 +496,11 @@
             },
             "microbit-foundation/pxt-microbit-ml": {
                 "simx": {
-                    "sha": "ba99fd9588e87eb994345d04b596adc51d2d8116",
+                    "sha": "de376b74f38c8f7d805a0d5704205fffd7453da1",
                     "devUrl": "http://localhost:5173",
                     "aspectRatio": 3.45
                 },
                 "hidden": true
-            },
-            "microbit-apps/display-shield": {
-                "simx": {
-                    "sha": "0825d56f78528c57af100a96abdfe2162f59945a",
-                    "devUrl": "http://localhost:3000"
-                }
             },
             "jacdac/pxt-jacdac": {
                 "simx": {
@@ -620,7 +621,7 @@
         }
     },
     "teachertool": {
-        "showSharePageEvalButton": false,
+        "showSharePageEvalButton": true,
         "defaultChecklistUrl": "teachertool/checklists/general-code-quality.json",
         "carousels": [
             {
