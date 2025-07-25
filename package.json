@@ -46,7 +46,7 @@
     },
     "dependencies": {
         "pxt-common-packages": "13.0.0",
-        "pxt-core": "12.0.9"
+        "pxt-core": "12.0.12"
     },
     "overrides": {}
 }
