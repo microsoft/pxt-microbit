@@ -553,6 +553,10 @@ Many extensions are available to work with interface kits, add-on hardware, or o
 
 ```codecard
 [{
+  "name": "Kitronik Mai-Z the Mouse Bot",
+  "url":"/pkg/KitronikLtd/pxt-kitronik-mai-z",
+  "cardType": "package"
+}, {
   "name": "DFRobot Creative Robotics Kit",
   "url":"/pkg/DFRobot/pxt-DFRobot_creative-robotics-kit",
   "cardType": "package"
