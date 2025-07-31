@@ -261,6 +261,7 @@
             "4tronix/servobit": { "tags": [ "Robotics" ] },
             "dfrobot/pxt-maqueen": {
                 "tags": [ "Robotics" ],
+                "upgrades": [ "min:v1.7.0" ],
                 "preferred": true
             },
             "dfrobot/pxt-dfrobot-microiot": { "tags": [ "Networking" ] },
