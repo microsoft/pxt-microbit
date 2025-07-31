@@ -460,13 +460,13 @@
             "elecfreaks/pxt-cutebot-pro": { "tags": [ "Robotics" ], "preferred": true },
             "microbit-foundation/makecode-tutorials": { "tutorial" : true },
             "grandpabond/pxt-meter": { "tags": [ "Software" ] },
+            "microsoft/microbit-robot": { 
+                "tags": [ "Robotics" ] 
+            }, 
             "4tronix/mars-rover": { "tags": [ "Robotics" ] },
             "monkmakes/plant-monitor-makecode": { "tags": [ "Science" ] },
             "grandpabond/pxt-flexfx": { "tags": [ "Software" ] },
             "grandpabond/pxt-faces": { "tags": [ "Software" ] },
-            "microsoft/microbit-robot": { 
-                "tags": [ "Robotics" ] 
-            },         
             "joylabz/code-a-key-extension": {},
             "eb8ga/pxt-roversa-2": { "tags": [ "Robotics" ] },
             "roborisen/gcube": { "tags": [ "Robotics" ] },
