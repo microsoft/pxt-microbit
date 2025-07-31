@@ -12,9 +12,6 @@
                     "devUrl": "http://localhost:3000"
                 }
             },
-            "microsoft/microbit-robot": { 
-                "tags": [ "Robotics" ] 
-            },
             "microsoft/pxt-microturtle": {
                 "tags": [ "Software" ],
                 "preferred": true
@@ -314,6 +311,9 @@
             "schoumi/ssd1306-with-reset": {},
             "keble6/pxt-ds3231": { "tags": [ "Science" ] },
             "microsoft/expressivepixelsmakecode": {},
+            "microsoft/microbit-robot": { 
+                "tags": [ "Robotics" ] 
+            },        
             "pimoroni/pxt-inkybit": { "tags": [ "Lights and Display" ] },
             "muselab/pxt-muselab-oled-v2": { "tags": [ "Lights and Display" ] },
             "microsoft/pxt-jacdac": {
