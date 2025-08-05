@@ -645,6 +645,6 @@
         ]
     },
     "electronManifest": {
-        "latest": "v8.0.13"
+        "latest": "v8.0.14"
     }
 }
