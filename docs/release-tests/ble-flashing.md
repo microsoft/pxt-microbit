@@ -26,9 +26,11 @@ Two mobile/tablet devices needed:
 - Android device with the micro:bit app installed.
     - To load a custom MakeCode URL long touch the micro:bit logo in the app
       main screen. A modal will appear with the option change the MakeCode URL.
+    - This URL setting will be reset every time the app is quit
 - iOS device with the micro:bit app installed.
-    - To load a different MakeCode URL, long press the MakeCode back chevron
-      to choose beta.
+    - To load a different MakeCode version, long press the MakeCode back
+      chevron to choose beta.
+    - The iOS app can only choose between beta and live.
 
 Two micro:bits needed:
 - micro:bit V1
@@ -57,21 +59,24 @@ A test run for each of these hex files is required:
 Steps:
 1. Connect the micro:bit to the computer via USB.
 2. Copy the hex file under test to the `MICROBIT` USB drive.
-3. Open the micro:bit app and load the MakeCode editor under test.
+3. Remove the previous micro:bit pairing from the iOS or Android device.
+4. Open the micro:bit app and load the MakeCode editor under test.
     - From the front page, select "Create Code"
-4. Create a new MakeCode project with a simple programme (e.g. display
+    - Click on the cog, and the "About" menu entry, check the MakeCode version
+      in this modal
+5. Create a new MakeCode project with a simple programme (e.g. display
    something on the LED matrix).
     - If a programme has already been created from a previous test run,
       it can be reused.
-5. Tap the "Download" button and follow the instructions to connect the
-   micro:bit via Bluetooth and flash the programme.
-6. Verify the programme is running on the micro:bit.
-7. Change the blocks in the MakeCode editor to do something different
+6. Tap the "Download" button and use "My pattern is different" to force pairing,
+   then follow the instruction to flash the programme.
+7. Verify the programme is running on the micro:bit.
+8. Change the blocks in the MakeCode editor to do something different
    (e.g. display a different icon/message on the LED matrix).
-8. Tap the "Download" button and follow the instructions to flash the programme.
-9. Confirm the BLE flashing process was shorter than the initial download from
+9. Tap the "Download" button and follow the instructions to flash the programme.
+10. Confirm the BLE flashing process was shorter than the initial download from
    step 5.
-10. Verify that the new programme is running on the micro:bit.
+11. Verify that the new programme is running on the micro:bit.
 
 ## Test 2: Utility Service
 
