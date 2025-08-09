@@ -50,3 +50,8 @@ path.blocklyFlyoutBackground {
 #serialPreview .label {
     border-color: var(--pxt-primary-background);
 }
+
+.ui.dimmer {
+    /* Matches color specified in dimmer.variables, but with partial transparency */
+    background-color: rgba(52, 84, 209, 0.4) !important;
+}

@@ -22,4 +22,4 @@ Conditional statements tell the computer when to do something. They are used to 
 
 ## Iteration and looping
 
-Portions of your code can be made to run over and over by using a Repeat or a For block loop. This allows you to iterate over several different variables, or items in a group, and do something to each of them. You can also combine a conditional statement and a loop by using a While block, which will repeat until a certain condition becomes true. 
+Portions of your code can be made to run over and over by using a Repeat or a For block loop. This allows you to iterate over several different variables, or items in a group, and do something to each of them. You can also combine a conditional statement and a loop by using a While block, which will repeat until a certain condition becomes true.

@@ -52,8 +52,6 @@ void checkEnv() {
         channel = uBit.audio.mixer.addChannel(*recording, defaultSampleRate);
 
         channel->setVolume(75.0);
-        uBit.audio.mixer.setVolume(1000);
-        uBit.audio.setSpeakerEnabled(true);
     }
 #endif
 }

@@ -8,6 +8,7 @@ namespace pxsim  {
         audioURL: string;
         // The inputBitRate when the current audioUrl was recorded
         audioURLBitRate: number;
+        audioClippingThreshold: number = 0.08;
 
         recording: HTMLAudioElement;
         audioPlaying: boolean = false;
@@ -42,8 +43,8 @@ namespace pxsim.record {
     const MAX_SAMPLE_RATE = 22000;
     const MIN_SAMPLE_RATE = 1000;
 
-    const MIN_RECORDING_TIME = 3000;
-    const MAX_RECORDING_TIME = 20000;
+    const MIN_RECORDING_TIME = 2000;
+    const MAX_RECORDING_TIME = 10000;
 
     let _initialized = false;
     function init() {
@@ -77,8 +78,6 @@ namespace pxsim.record {
             const recordingType = pxsim.isSafari() ? "audio/mp4" : "audio/ogg; codecs=opus";
             const blob = new Blob(state.chunks, { type: recordingType });
             state.audioURL = window.URL.createObjectURL(blob);
-            state.recording = new Audio(state.audioURL);
-            state.initListeners();
         }
         state.currentlyRecording = false;
         state.recorder = null;
@@ -167,13 +166,14 @@ namespace pxsim.record {
         stopAudio();
 
         const state = b.recordingState;
+        const volume = AudioContextManager.isMuted() ? 0 : Math.round((music.volume() / 0xff) * 100) / 100;
+        state.recording = AudioContextManager.createAudioSourceNode(state.audioURL, state.audioClippingThreshold, volume);
+        state.initListeners();
 
         state.audioPlaying = true;
         setTimeout(async () => {
             if (!state.currentlyErasing && state.recording) {
                 try {
-                    const volume = AudioContextManager.isMuted() ? 0 : 1;
-                    state.recording.volume = volume;
 
                     const minPlaybackRate = 0.15
 
@@ -243,7 +243,16 @@ namespace pxsim.record {
     }
 
     export function setMicrophoneGain(gain: number): void {
-
+        const b = board();
+        if (!b) return;
+        const tolerance = 0.1 * Number.EPSILON;
+        if (gain - 0.079 < tolerance) { // low mic sensitivity
+            b.recordingState.audioClippingThreshold = 0.08;
+        } else if (gain - 0.2 < tolerance) { // mid mic sensitivity
+            b.recordingState.audioClippingThreshold = 0.03;
+        } else if (gain - 1.0 < tolerance) { // high mic sensitivity
+            b.recordingState.audioClippingThreshold = 0.01;
+        }
     }
 
     export function audioDuration(sampleRate: number): number {

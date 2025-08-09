@@ -17,7 +17,7 @@ The BBC micro:bit is packaged with sensors, radio, microphone, speaker and other
 
 ## ~ hint
 
-**Looking to buy a micro:bit?** See the [list of resellers](https://microbit.org/resellers).
+**Looking to buy a micro:bit?** See the [list of official products](https://microbit.org/buy/).
 
 ## ~
 
