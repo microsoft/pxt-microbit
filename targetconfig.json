@@ -442,7 +442,7 @@
             "jacdac/pxt-jacdac": {
                 "simx": {
                     "sha": "0cd760f1d1575b8dcd8ec8abcbb780fc10ec6937",
-                    "devUrl": "https://jacdac.github.io/pxt-jacdac/"
+                    "devUrl": "https://jacdac.github.io/jacdac-docs/tools/makecode-sim/"
                 }
             }
         },
