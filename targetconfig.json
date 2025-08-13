@@ -487,6 +487,7 @@
             "forward-education/pxt-smart-soldering": { "tags": [ "Science" ] },
             "forward-education/pxt-smart-solar": { "tags": [ "Science" ] },
             "forward-education/pxt-smart-hydroponics": { "tags": [ "Science" ] },
+            "forward-education/pxt-all-fwd-blocks": { "tags": [ "Science" ] },
             "forward-education/pxt-climate-action": { "tags": [ "Science" ] },
             "elecfreaks/pxt-petal": { "tags": [ "Science" ] },
             "kitronikltd/pxt-kitronik-mai-z": { "tags": [ "Robotics" ] },
