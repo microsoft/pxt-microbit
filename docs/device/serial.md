@@ -49,7 +49,7 @@ Please note that Windows will assign you a different COM port if you plug in ano
 
 ### Windows > Putty
 
-If you prefer another terminal emulator (such as [PuTTY](http://www.putty.org/)), here are some instructions.
+If you prefer another terminal emulator (such as [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/)), here are some instructions.
 
 * Open Windows's [Device Manager](https://windows.microsoft.com/en-us/windows/open-device-manager); expand the section called "Ports (COM & LPT)"; write down the com number for "mbed Serial Port" (e.g. COM14)
 * Open PuTTY; on the main screen, use the following settings: Serial / COM14 / 115200. Replace COM14 with the COM port number you wrote down previously. Feel free to type in a name and hit "Save" to remember this configuration.
