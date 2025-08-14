@@ -400,6 +400,10 @@ Many extensions are available to work with interface kits, add-on hardware, or o
    "url": "/pkg/Forward-Education/pxt-smart-hydroponics",
    "cardType": "package"
 }, {
+   "name": "FWD Edu Smart: All Kits",
+   "url": "/pkg/Forward-Education/pxt-all-fwd-blocks",
+   "cardType": "package"
+}, {
    "name": "BP Lab micro:bit Kit",
    "url": "/pkg/team-bp/pxt-bplab",
    "cardType": "package"
@@ -467,6 +471,10 @@ Many extensions are available to work with interface kits, add-on hardware, or o
   "name": "Joy-IT Joy-Pi Advanced",
   "url":"/pkg/joy-it/pxt-RB-JoyPi-Advanced",
   "cardType": "package"
+}, {
+   "name": "FWD Edu Climate Action Kit",
+   "url": "/pkg/Forward-Education/pxt-climate-action",
+   "cardType": "package"
 }, {
   "name": "FWD Edu Climate Action Kit Gen. 2 Kit",
   "url":"/pkg/climate-action-kits/pxt-fwd-edu",
@@ -549,6 +557,10 @@ Many extensions are available to work with interface kits, add-on hardware, or o
 
 ```codecard
 [{
+  "name": "Kitronik Mai-Z the Mouse Bot",
+  "url":"/pkg/KitronikLtd/pxt-kitronik-mai-z",
+  "cardType": "package"
+}, {
   "name": "DFRobot Creative Robotics Kit",
   "url":"/pkg/DFRobot/pxt-DFRobot_creative-robotics-kit",
   "cardType": "package"
