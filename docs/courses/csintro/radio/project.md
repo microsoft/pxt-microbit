@@ -14,12 +14,12 @@ Create a piece of interactive artwork that receives something as input over the 
 This is a simple three-note keyboard that uses wooden paint stirrers and copper tape to make a connection to each of the three pins on the micro:bit.
 
 ![Keyboard with copper tape](/static/courses/csintro/radio/keyboard-copper-tape.png)
-Keyboard with copper tape connections
+_Keyboard with copper tape connections_
  
 When a key is pressed, it sends a number over the radio to a second micro:bit that plays the appropriate tone. This allows you to use each of the three pins on the first micro:bit to play a different tone.
 
 ![Second micro:bit that plays notes](/static/courses/csintro/radio/microbit-number-two.png)
-Second micro:bit that plays the notes
+_Second micro:bit that plays the notes_
 
 ### ~ hint
 
@@ -102,7 +102,7 @@ Solution link: [makecode.microbit.org/_iXKbWu8f2H60]()
 In this project, the tennis racquets alternate displaying a ball on the micro:bit LED screen.  When you swing the racquet, the ball disappears from one micro:bit display and shows up on the other micro:bit's display.
 
 ![Radio tennis racquets](/static/courses/csintro/radio/radio-tennis-racquets.jpg)
-Radio Tennis racquets (made from cardboard)
+_Radio Tennis racquets (made from cardboard)_
 
 ## Reflection
 

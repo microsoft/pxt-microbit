@@ -40,24 +40,22 @@ After you've completed your project, take some time to write in your design jour
 ## micro:pet Examples
 
 ![A dog micro:pet](/static/courses/csintro/making/micropet-dog.jpg)
-Dog
+_Dog_
 
 https://youtu.be/2ZCDB-a_uRY
-micro:pet Fish Tank 
-
+_micro:pet Fish Tank_
 
 ![A piggy bank micro:pet](/static/courses/csintro/making/micropet-piggy-bank.jpg)
-Pink Piggy
+_Pink Piggy_
 
 ![A ladybug micro:pet](/static/courses/csintro/making/micropet-ladybug.jpg)
-Ladybug
+_Ladybug_
 
 ![A caterpiller micro:pet](/static/courses/csintro/making/micropet-caterpillar.jpg)
-Caterpillar
+_Caterpillar_
 
 ![A fox micro:pet](/static/courses/csintro/making/micropet-fox.jpg)
-Fox
+_Fox_
 
 ![A robot micro:pet](/static/courses/csintro/making/micropet-robot.jpg)
-Robot
-
+_Robot_

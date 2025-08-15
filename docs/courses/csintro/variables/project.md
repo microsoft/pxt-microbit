@@ -55,13 +55,13 @@ Create an adding machine. Use Button A to increment the first number, and Button
 **Extra mod:** Find a way to select and perform other math operations.
 
 ![micro:bit top and spin counter](/static/courses/csintro/variables/microbit-spinner.png)
-Homemade top with micro:bit revolution counter
+_Homemade top with micro:bit revolution counter_
 
 ![Duct tape wallet](/static/courses/csintro/variables/duct-tape-wallet.jpg)
-Duct tape wallet with micro:bit display
+_Duct tape wallet with micro:bit display_
 
 ![Baseball pitch counter](/static/courses/csintro/variables/baseball-counter.jpg)
-Baseball pitch counter
+_Baseball pitch counter_
 
 ## Process
 

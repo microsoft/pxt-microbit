@@ -6,11 +6,9 @@ Fortunately, people use conditionals all the time in their daily lives!
 
 Have you ever heard your parents say:
 
-* “If you clean your room, you can go out with your friends.”
-
-* “If your homework is done, you can play video games.”
-
-* “If you do your chores all week, you get your allowance, else you are grounded.”
+* "If you clean your room, you can go out with your friends."
+* "If your homework is done, you can play video games."
+* "If you do your chores all week, you get your allowance, else you are grounded."
 
 These are all conditionals! Conditionals follow the format of IF this, THEN that.
 
