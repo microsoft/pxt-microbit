@@ -28,7 +28,6 @@ Examples of Booleans in daily life:
 In programming, if you have worked with conditionals or loops, you have already worked with this type of logic, just like we’ve done in previous units (Unit 4: Conditionals and Unit 5: Iteration).
 
 * If a certain condition is true, do this; otherwise (if condition is false), do something else.
-
 * While a certain condition is true, do this.
 
 ## Boolean Operators: AND, OR, and NOT
@@ -44,6 +43,7 @@ These operators can be used in conditionals and loops, like so:
 Let’s look at how each of these work.
 
 ### AND
+
 (Condition A AND Condition B): For this expression to evaluate as true, both conditions in the expression need to be true. So, if both Condition A AND Condition B are true, the expression will evaluate as (or return) true.
 
 ### OR
@@ -55,9 +55,7 @@ Let’s look at how each of these work.
 NOT can be used when checking that a condition is false (or not true). For example:
 
 * (NOT Condition A and Condition B) evaluates as true only if Condition A is false and Condition B is true.
-
 * (Condition A and NOT Condition B) evaluates as true only if Condition A is true and Condition B is false.
-
 * (NOT Condition A and NOT Condition B) evaluates as true only if both Condition A and Condition B are true.
 
 NOT is also useful when using a loop. For example, you can use a NOT to check:
@@ -67,8 +65,10 @@ NOT is also useful when using a loop. For example, you can use a NOT to check:
 >**Note:** “False” can be thought of as equivalent to “NOT true”.
 
 ## Sidebar material
+
 ![George Boole](/static/courses/csintro/booleans/george-boole.jpg)
-Image credit: Wikimedia Commons
+
+_Image credit: Wikimedia Commons_
 
 George Boole (2 November 1815 – 8 December 1864) was an English mathematician, educator, philosopher and **logician**. He worked in the fields of differential equations and algebraic **logic**, and is best known as the author of The Laws of Thought (1854) which contains **Boolean** algebra.
 

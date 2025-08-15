@@ -11,9 +11,9 @@ This activity asks you to carefully consider something that comes naturally to y
 * Mix up the order of the numbered pieces of paper. Then, put them in a line.
 * Place the pieces in numberical order: but you must do this by moving **only one piece of paper at a time** to its proper place.
 * Once the papers have been sorted, ask yourself the following:
-	* How did you sort the papers into the right order?
-	* Did you see a pattern?
-	* What **exactly** did you do?
+>* How did you sort the papers into the right order?
+>* Did you see a pattern?
+>* What **exactly** did you do?
 
 Try to be as precise as possible in explaining their thinking. Sometimes it helps to write the steps down, as an algorithm:
 
@@ -43,11 +43,8 @@ Imagine that we’re sorting a pile of papers alphabetically. We might place the
 Follow these steps to demonstrate a bubble sort:
 
 1. Compare the first two papers. If the piece of paper on the right has a smaller number than the paper on the left, they should swap places.
-
 2. Next, compare the second and third papers. If the paper on the right has a smaller number than the paper on the left, they should swap places.
-
 3. When you reach the end, start at the beginning again.
-
 4. Continue in this way until you make it through the entire row of numbers without swapping any of them.
 
 ![Bubble Sort Animation](/static/courses/csintro/arrays/bubble-sort.gif)
@@ -57,21 +54,15 @@ Follow these steps to demonstrate a bubble sort:
 To code a bubble sort, the pseudocode could look like this:
 
 1. Create a variable called **counter**.
-
 2. Set the counter to **0**.
-
 3. Go through the entire array.
-
 4. If the value you are considering is greater than the value to its right, swap them and add one to counter.
-
 5. Repeat steps 2 through 4 as long as counter is greater than zero.
 
 Following is an example in MakeCode:
 
 * Press B to display the array visually. The length of each vertical bar represents each number in the array from left to right.
-
 * Press A to sort the array using Bubble Sort.
-
 * Press A + B to generate new random numbers for the array.
 
 ```blocks
@@ -133,13 +124,9 @@ counter = 1
 Follow these steps to demonstrate a selection sort:
 
 1. Take the first paper on the left and consider that paper's number the smallest number you have found so far.
-
 2. If the next paper in line has a number that is smaller than that number, make that paper's number your new smallest number and continue in this way until you reach the end of the line of papers.
-
 3. Move the paper with the smallest number all the way to the left.
-
 4. Start over from the second paper in line.
-
 5. Keep going, finding the smallest number each time, and making that paper the rightmost paper in the sorted line of papers.
 
 ![Selection Sort Animation](/static/courses/csintro/arrays/selection-sort.gif)
@@ -149,15 +136,12 @@ Follow these steps to demonstrate a selection sort:
 To code a selection sort, the pseudocode could look like this:
 
 1. Find the smallest unsorted value in the array.
-
 2. Swap that value with the first unsorted value in the array.
-
 3. Repeat steps a and b while the number of unsorted items is greater than zero.
 
 Following is an example in MakeCode:
 
 * The inner loop gets smaller as the sorting algorithm runs because the number of unsorted items decreases as you go.
-
 * The index that the inner loop starts at needs to change as the number of sorted items increases, which is why we have to use a separate counter (item) and compute j every time through the inner loop
 
 ```blocks
@@ -226,9 +210,7 @@ min = 1
 Follow these steps to demonstrate an insertion sort:
 
 1. Take the first paper on the left and consider that paper sorted.
-
 2. Take the next paper and compare its number to the first paper in the sorted section. If its number is greater than the first paper's, then place it to the right of the paper in the sorted section. Otherwise, place it to the left of the paper in the sorted section.
-
 3. Continue down the line, considering each paper in turn and then moving from left to right along the papers in the sorted section until you find the proper place for each paper to go, shifting the other papers to the right to make room.
 
 #### In MakeCode:
@@ -236,9 +218,7 @@ Follow these steps to demonstrate an insertion sort:
 To code an insertion sort, the pseudocode could look like this:
 
 1. For each element in the unsorted section of the list, compare it against each element in the sorted section of the list until you find its proper place.
-
 2. Shift the other elements in the sorted list to the right to make room.
-
 3. Insert the element into its proper place in the sorted list.
 
 Following is an example in MakeCode:
@@ -297,6 +277,7 @@ j = 1
 ```
 
 ## Sidebar
+
 In 2008, Illinois Senator Barack Obama was interviewed by Google’s CEO Eric Schmidt, who asks him a computer science interview question. Watch as the interview doesn’t go exactly as planned…
 
 https://www.youtube.com/watch?v=k4RRi_ntQc8

@@ -8,7 +8,6 @@ This activity is based on a very popular phone app created by the producers of t
 ### Set the arrayWords
 
 * In Microsoft MakeCode, start a new project and name it something like **'charades'**. Either delete the 'forever' block in the coding Workspace or move it to the side, as it's not used in the activity.
-
 * From the Arrays Toolbox drawer, drag a **'set (text list0)'** block onto the Workspace and drop into the **'on start'** block.
 
 ```blocks
@@ -56,11 +55,10 @@ input.onGesture(Gesture.ScreenUp, () => {
 ```
 
 * To start the game with the index at zero, add a 'set' variable block to the 'on start' block.
-
 * Next, add the following:
-	* An image as a placeholder for when the program has started. Since charades is a guessing game, we made one that looks like a question mark (?)
-	* A countdown to the first word using show number blocks and pause blocks
-	* And show the first word in the array
+>* An image as a placeholder for when the program has started. Since charades is a guessing game, we made one that looks like a question mark (?)
+>* A countdown to the first word using show number blocks and pause blocks
+>* And show the first word in the array
 
 ```blocks
 let index = 0
@@ -106,9 +104,9 @@ Some pseudocode for our algorithm logic:
 When the player places the micro:bit screen down:
 
 * Check the current value of the index.
-	* **If** the current value of the index is less than the length of the array minus one (see **array bounds** note),
-	* **Then** change the value of the index by one,
-	* **Else** indicate that it is the end of the game.
+>* **If** the current value of the index is less than the length of the array minus one (see **array bounds** note),
+>* **Then** change the value of the index by one,
+>* **Else** indicate that it is the end of the game.
 
 #### Note: Array bounds
 
@@ -121,14 +119,13 @@ Using **'less than the length of the array minus one'** instead of the actual nu
 * From the Logic Toolbox drawer, drag out an **'if…then…else'** block onto the Workspace and drop it into the **'on screen down'** block.
 * From the Logic Toolbox drawer, drag a **'0<0'** comparison block onto the Workspace and drop it into the **'if…then'** clause replacing the default value of **'true'**.
 * From the Variables Toolbox drawer, drag an **'index'** variable block onto the Workspace and drop it into the **first slot of the comparison block.**
-
 * We need to check that the current index value is less than the length of the array minus one (the last index value).
-	* From the Math Toolbox drawer, drag a **'0-0'** operator block onto the Workspace and drop it into the second slot of the comparison block.
-	* From the Array Toolbox drawer, drag a 'length of array' block onto the Workspace and drop it into the first slot of the **'0-0'** math operator block.
-	* In the **'length of array'** block, use the dropdown menu to select the **'text list'** array.
-	* In the second slot of the math operator block, type 1.
-	* Drag the **'change index'** block from below the **'if…then…else'** block into the 'then' clause.
-	* From the Game Toolbox drawer (under the Advanced Toolbox menu), scroll down to find the **'game over'** block. Drag it onto the Workspace and drop it into the **'else'** clause.
+>* From the Math Toolbox drawer, drag a **'0-0'** operator block onto the Workspace and drop it into the second slot of the comparison block.
+>* From the Array Toolbox drawer, drag a 'length of array' block onto the Workspace and drop it into the first slot of the **'0-0'** math operator block.
+>* In the **'length of array'** block, use the dropdown menu to select the **'text list'** array.
+>* In the second slot of the math operator block, type 1.
+>* Drag the **'change index'** block from below the **'if…then…else'** block into the 'then' clause.
+>* From the Game Toolbox drawer (under the Advanced Toolbox menu), scroll down to find the **'game over'** block. Drag it onto the Workspace and drop it into the **'else'** clause.
 
 ```blocks
 let index = 0
@@ -254,9 +251,7 @@ Next, let's create an array with five numbers in it. We will loop through the ar
 Let's activate our constellations when we press a button.
 
 * From the Inputs Toolbox drawer, drag out an **'on button A pressed'** block onto the Workspace.
-
 * Drag the **'repeat'** loop from the **'on start'** block into the **'on button A pressed'** block. Instead of repeating 4 times, let's use the values from the array to figure out how many stars to plot on our micro:bit.
-
 * From the Arrays Toolbox drawer, drag a **'list get value at'** oval block onto the Workspace and drop into the **'repeat'** loop, replacing the default value of 4. When you type a 0, 1, 2, 3, or 4 into the **'get value'** block, it will plot the number of stars indicated by the value held in the specified array index.
 
 ```block

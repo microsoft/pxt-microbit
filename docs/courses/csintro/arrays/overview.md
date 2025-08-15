@@ -9,9 +9,7 @@ Every rock in the collection needs its own storage space and a unique address so
 As your MakeCode programs get more and more complicated and require more variables to keep track of things, you will want to find a way to store and organize all of your data. MakeCode provides a special category for just this purpose. It’s called an **array**, which is essentially just a list, or collection, of similar things.
 
 * Arrays can store numbers, strings (words), or sprites. They can also store musical notes. But they must store values of a similar type—an array cannot contain both numbers and words.
-
 * Every spot in an array can be identified by its **index**, which is a number that corresponds to its location in the array. The first slot in an array is index 0, just like our rock collection pictured above.
-
 * The length of an array refers to the total number of items in the array, and the index of the last element in an array is always one less than its length (because the array index numbering starts at zero.) So, in the Rock Collection above, the length of the array is 5 (it can hold 5 rocks), and the index of the last element is 4.
  
 In MakeCode, you can create an array by assigning it to a variable. The Array blocks can be found under the Advanced Toolbox menu.

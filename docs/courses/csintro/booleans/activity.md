@@ -8,10 +8,9 @@ The pseudocode:
 
 * Use the random function to get a true/false value for Coin A.
 * Use the random function to get a true/false value for Coin B.
-
 * Compare the current values of Coin A and Coin B.
-	* If the current true/false values of Coin A and Coin B are the same, add a point to Player A's score.
-	* Otherwise, the current true/false values of Coin A and Coin B must be different, so add a point to Player B's score.
+>* If the current true/false values of Coin A and Coin B are the same, add a point to Player A's score.
+>* Otherwise, the current true/false values of Coin A and Coin B must be different, so add a point to Player B's score.
 * When players are done with their double coin flipping, show the final scores for each player.
  
 ## Initialize the Variables
@@ -19,16 +18,15 @@ The pseudocode:
 In Microsoft MakeCode, have students start a new project and name it something like: Double coin flipper. They can leave the 'on start' block in the coding Workspace but can delete the 'forever' loop block.
 
 * For the first step, let's create our variables. From the Variables Toolbox drawer, use the Make a variable button to create each of the following:
-	* CoinAHeads
-	* CoinBHeads
-	* PlayerAScore
-	* PlayerBScore
-
+>* CoinAHeads
+>* CoinBHeads
+>* PlayerAScore
+>* PlayerBScore
 * Now, we need to initialize the variable values. Put four 'set' variable blocks inside the 'on start' block and use the drop-down menu to set the variable for each block to each of the new variables.
 * The initial value of a variable is the value the variable will hold each time the program starts. By default:
-	* a string variable is initialized to an empty string: ""
-	* a number variable is initialized to: 0
-	* a Boolean is initialized to: false
+>* a string variable is initialized to an empty string: ""
+>* a number variable is initialized to: 0
+>* a Boolean is initialized to: false
 
 ```blocks
 let CoinAHeads = false
@@ -51,7 +49,6 @@ Leave the number variables at 0 and initialize the Boolean variables to 'false'.
 Let's use the micro:bit's *accelerometer* to mimic tossing a coin. The accelerometer measures the acceleration of your micro:bit; this component senses when the micro:bit is moved. It can also detect other actions like shake, tilt, and free fall. When the player shakes the micro:bit, we will code the micro:bit to give each of our Boolean variables a random true/false value.
 
 * From the Input Toolbox drawer, drag an **'on shake'** block to the coding Workspace. Drag the two **'Set CoinAHeads'** and **'Set CoinBHeads'** blocks from the **'on start'** block into the **'on shake'** block.
-
 * From the Math Toolbox drawer, drag two 'pick random true or false' blocks to the coding Workspace. Hover over this 'pick random' block and note that its pop-up description mentions coin flipping!
 
 ```blocks	

@@ -15,9 +15,9 @@ You will...
 	
 ## Lesson plan
 
-* [**Introduction**: The micro:bit is for making](/courses/csintro/making/introduction)
-* [**Activity**: MakeCode download](/courses/csintro/making/activity)
-* [**Project**: micro:pet (including mods and rubric)](/courses/csintro/making/project)
+1. [**Introduction**: The micro:bit is for making](/courses/csintro/making/introduction)
+2. [**Activity**: MakeCode download](/courses/csintro/making/activity)
+3. [**Project**: micro:pet (including mods and rubric)](/courses/csintro/making/project)
 
 ## Related standards
 

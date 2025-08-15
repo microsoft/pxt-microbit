@@ -23,8 +23,8 @@ radio.setGroup(1)
 
 * Drag two **'on button pressed'** blocks to the coding Workspace. Leave one with the default value A , and use the dropdown menu to change the other button to B.
 * From the Radio Toolbox drawer, drag two **'radio send string'** blocks to the coding Workspace. Place one **'radio send string'** block into the **'on button A pressed'** block, and the other **'radio send string'** block into the 'on button B pressed' block. Then:
-	* In the **'on button A pressed'** block, change the default empty string value of the **'radio send string'** block by typing the string: Marco
-	* In the **'on button B pressed'** block, change the default empty string value of the **'radio send string'** block by typing the string: Polo
+>* In the **'on button A pressed'** block, change the default empty string value of the **'radio send string'** block by typing the string: Marco
+>* In the **'on button B pressed'** block, change the default empty string value of the **'radio send string'** block by typing the string: Polo
 
 ```blocks
 input.onButtonPressed(Button.A, () => {
@@ -118,11 +118,10 @@ basic.showString("Morse Code")
 ## Code the buttons
 
 * Drag three **'on button pressed'** blocks to the coding workspace. Leave one with the default value A, change the value in the second block to **B**, and change the value in the third block to **A+B**.
-
 * From the Radio Toolbox drawer, drag three **'radio send number'** blocks to the coding workspace and place one **'radio send number'** block into each of the **'on button pressed'** blocks.
-	* In the **'on button A pressed'** block, leave the default number value of the **'radio send number'** block as 0.
-	* In the **'on button B pressed'** block, change the default number value of the **'radio send number'** block to the value 1.
-	* In the **'on button A+B pressed'** block, change the default number value of the **'radio send number'** block to the value 2.
+>* In the **'on button A pressed'** block, leave the default number value of the **'radio send number'** block as 0.
+>* In the **'on button B pressed'** block, change the default number value of the **'radio send number'** block to the value 1.
+>* In the **'on button A+B pressed'** block, change the default number value of the **'radio send number'** block to the value 2.
 
 ```blocks
 input.onButtonPressed(Button.A, () => {
@@ -211,8 +210,8 @@ Now we need to specify what to display if we receive a 1 or 2.
 * Then, drag this new equals comparison block into the 'else if' clause.
 * Change the value in the second slot of the equals comparison block from 0 to 1. We don't have to test **'receivedNumber'** value in the third **'else'** clause—if the value is not 0 or 1, then it must be 2, since there are only three possibilities.
 * From the Basic Toolbox drawer, drag **'show leds'**, **'pause'**, and **'clear screen'** blocks to the **'else if'** and **'else'** clauses. Then, modify the **'show leds'** images displayed:
-	* For the **'else if (receivedNumber=1)'**, show a dash.
-	* For the **'else'** clause (which is when the **'receivedNumber'** variable equals 2), show a full screen of lights.
+>* For the **'else if (receivedNumber=1)'**, show a dash.
+>* For the **'else'** clause (which is when the **'receivedNumber'** variable equals 2), show a full screen of lights.
 
 ## Complete program
 
