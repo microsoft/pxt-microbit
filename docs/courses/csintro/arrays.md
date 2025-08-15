@@ -24,9 +24,8 @@ You will...
 ## Lesson plan
 
 1. [**Overview**: Arrays](/courses/csintro/arrays/overview)
-2. [**Unplugged**: Different sorts](/courses/csintro/arrays/unplugged)
-3. [**Activity**: Headband charades](/courses/csintro/arrays/activity)
-4. [**Project**: Musical instrument ](/courses/csintro/arrays/project)
+2. [**Activity**: Headband charades](/courses/csintro/arrays/activity)
+3. [**Project**: Musical instrument ](/courses/csintro/arrays/project)
 
 ## Related standards
 
