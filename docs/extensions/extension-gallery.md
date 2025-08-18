@@ -400,6 +400,10 @@ Many extensions are available to work with interface kits, add-on hardware, or o
    "url": "/pkg/Forward-Education/pxt-smart-hydroponics",
    "cardType": "package"
 }, {
+   "name": "FWD Edu Smart: All Kits",
+   "url": "/pkg/Forward-Education/pxt-all-fwd-blocks",
+   "cardType": "package"
+}, {
    "name": "BP Lab micro:bit Kit",
    "url": "/pkg/team-bp/pxt-bplab",
    "cardType": "package"
