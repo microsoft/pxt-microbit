@@ -428,7 +428,7 @@
         "enabledFeatures": {
             "blocksErrorList": {},
             "aiErrorHelp": {
-                "includeRegions": ["CA"]
+                "includeRegions": ["CA", "GB", "BR"]
             }
         },
         "experiments": [
