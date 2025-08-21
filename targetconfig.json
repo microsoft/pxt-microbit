@@ -314,9 +314,7 @@
             "pimoroni/pxt-inkybit": { "tags": [ "Lights and Display" ] },
             "muselab/pxt-muselab-oled-v2": { "tags": [ "Lights and Display" ] },
             "microsoft/pxt-jacdac": {
-                "tags": [ "Science" ],
-                "upgrades": [ "move:jacdac/pxt-jacdac" ],
-                "hidden": true
+                "tags": [ "Science" ]
             },
             "coolguy-official/pxt-coolguy": {},
             "bouw-je-bep/bouw-je-bep": { "tags": [ "Robotics" ] },
@@ -448,7 +446,8 @@
             }
         },
         "approvedEditorExtensionUrls": [
-            "https://microsoft.github.io/ml4f/"
+            "https://microsoft.github.io/ml4f/",
+            "https://microsoft.github.io/jacdac-docs/tools/makecode-editor-extension"
         ],
         "extensionsToolboxDisallowDelete": [
         ]

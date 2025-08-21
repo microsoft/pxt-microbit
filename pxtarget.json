@@ -250,6 +250,12 @@
         "parts": true,
         "partsAspectRatio": 0.69,
         "messageSimulators": {
+            "jacdac": {
+                "url": "https://microsoft.github.io/jacdac-docs/tools/makecode-sim?webusb=0&parentOrigin=$PARENT_ORIGIN$",
+                "localHostUrl": "http://localhost:8000/tools/makecode-sim?webusb=0&parentOrigin=$PARENT_ORIGIN$",
+                "aspectRatio": 1.22,
+                "permanent": true
+            },
             "robot": {
                 "url": "https://microsoft.github.io/microbit-robot/?parentOrigin=$PARENT_ORIGIN$",
                 "localHostUrl": "http://localhost:3000/microbit-robot/?parentOrigin=$PARENT_ORIGIN$",
