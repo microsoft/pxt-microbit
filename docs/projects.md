@@ -14,6 +14,16 @@
         "imageUrl": "/static/mb/projects/pet-hamster.png"
     },
     {
+        "name": "Make it: code it",
+        "url": "/microbit-org/make-it-code-it",
+        "imageUrl": "/static/microbit-org/make-it-code-it/dance-steps.png"
+    },
+    {
+        "name": "CreateAI",
+        "url": "/microbit-org/createai",
+        "imageUrl": "/static/microbit-org/createai/storytelling-friend.png"
+    },
+    {
         "name": "Live Coding",
         "url": "/live-coding",
         "imageUrl": "/static/live-coding/NvEOKZ8wh9s.jpg"
@@ -22,6 +32,11 @@
         "name": "Games",
         "url": "/projects/games",
         "imageUrl": "/static/mb/projects/a4-motion.png"
+    },
+    {
+        "name": "Data Logging",
+        "url": "/microbit-org/data-logging",
+        "imageUrl": "/static/microbit-org/data-logging/traffic-survey.png"
     },
     {
         "name": "Radio Games",
@@ -64,9 +79,14 @@
         "imageUrl": "/static/courses/blocks-to-javascript/hello-javascript.png"
     },
     {
+        "name": "First Lessons with MakeCode and the micro:bit",
+        "url": "/microbit-org/first-lessons",
+        "imageUrl": "/static/microbit-org/first-lessons/overview.png"
+    },
+    {
         "name": "Courses",
         "url": "/courses",
-        "imageUrl": "/static/courses/first-lessons.png"
+        "imageUrl": "/static/courses/csintro.jpg"
     },
     {
         "name": "Jacdac",
@@ -79,6 +99,11 @@
         "imageUrl": "/static/microcode/home.png"
     },
     {
+        "name": "Introductory micro:bit Feature Videos",
+        "url": "/microbit-org/feature-videos",
+        "imageUrl": "/static/microbit-org/feature-videos/introduction.png"
+    },
+    {
         "name": "Behind the MakeCode Hardware",
         "url": "/behind-the-makecode-hardware",
         "imageUrl": "/static/mb/behindhardware/leds.jpg"
@@ -87,6 +112,11 @@
         "name": "Science Experiments",
         "url": "/science-experiments",
         "imageUrl": "/static/mb/science-experiments/data-collection.jpg"
+    },
+    {
+        "name": "Educator Professional Development",
+        "url": "/microbit-org/professional-development",
+        "imageUrl": "/static/microbit-org/professional-development/first-lessons.png"
     },
     {
         "name": "Coding for Teachers",
@@ -110,8 +140,11 @@
 
 [Tutorials](/tutorials),
 [Tutorials for the new micro:bit (V2)](/tutorials-v2),
+[Make it: code it](/microbit-org/make-it-code-it),
+[CreateAI](/microbit-org/createai),
 [Live Coding](/live-coding),
 [Games](/projects/games),
+[Data Logging](/microbit-org/data-logging),
 [Radio Games](/projects/radio-games),
 [Fashion](/projects/fashion),
 [Music](/projects/music),
@@ -120,11 +153,14 @@
 [Tools](/projects/tools),
 [Turtle](/projects/turtle),
 [Blocks to JavaScript](/courses/blocks-to-javascript),
+[First Lessons with MakeCode and the micro:bit](/microbit-org/first-lessons),
 [Courses](/courses),
 [Jacdac](/jacdac),
 [MicroCode for the new micro:bit (V2)](/microcode),
+[Introductory micro:bit Feature Videos](/microbit-org/feature-videos),
 [Behind the MakeCode Hardware](/behind-the-makecode-hardware),
 [Science Experiments](/science-experiments),
+[Educator Professional Development](/microbit-org/professional-development),
 [Coding for Teachers](/coding-for-teachers),
 [Coding Cards](/coding-cards),
 [Deep Dive](/deep-dive)
