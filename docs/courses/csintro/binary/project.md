@@ -11,12 +11,12 @@ Materials
 * Duct tape
 
 ![micro:bit cash register](/static/courses/csintro/binary/microbit-cash-register.png)
-Binary micro:bit Cash Register
+_Binary micro:bit Cash Register_
 
 ## Project Example
 
 ![Binary cash register project](/static/courses/csintro/binary/binary-cash-register.jpg)
-An implementation of the Binary Cash Register
+_An implementation of the Binary Cash Register_
 
 This is one possible design for a binary cash register. It uses coins and copper tape on a piece of cardboard. Normally, to indicate “off” or 0, the coins are flipped up. And to indicate “on” or 1, the coin is flipped so it lays flat across both pieces of copper tape, completing the circuit so the micro:bit can detect that that pin has been activated, and calculates and displays the decimal value of the binary number that is indicated by the coins.
 
@@ -33,7 +33,6 @@ Project mod options
 ## Mods for the binary cash register
 
 * Write some code that will display the number in binary when you press the A button.
-
 * Think of a way to create more place values, perhaps by using a second micro:bit and a Radio connection.
 
 ## Optional additional project: Build a binary wristwatch
@@ -41,7 +40,6 @@ Project mod options
 Here's another idea for a project that deals with binary:
 
 * Write a program that will display the correct time (once set) on the micro:bit.
-
 * The three to four numbers displayed will be in binary (not decimal).
 
 ![Binary wrist watch project](/static/courses/csintro/binary/binary-wrist-watch.jpg)

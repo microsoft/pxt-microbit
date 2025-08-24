@@ -70,7 +70,6 @@ Download and run your program on the micro:bit. Now we can see the sprite move. 
 > 
 > Try experimenting with changing the Pause value, the number of times to Repeat, or the number of spaces to move the Sprite to see how these changes affect your program.
 
-
 ## Coding activity 2: Code a traveling light with 'for' loops
 
 Now we'll move on to code with the 'for' loop block. The 'for' block is useful when you have a variable in your loop that you want to change by a fixed amount within a specific range each time through a loop. What does this mean? Let's look at an example.

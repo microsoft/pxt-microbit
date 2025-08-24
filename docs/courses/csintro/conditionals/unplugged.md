@@ -3,14 +3,17 @@
 ![Red and green stoplight](/static/courses/csintro/conditionals/traffic-light.png)
 
 ## Objective
+
 To reinforce the programming of basic conditionals by having students experience conditionals through acting them out in real life.
 
 ## Activity overview
+
 Students will line up at one end of the classroom with the goal of reaching the other side of the classroom. The teacher, and then the students themselves will call out conditionals and all the students will advance or not depending on the specific conditional statement.
 
 **Note:** As the teacher you will need to keep an eye out for any ‘errors’ that occur during the running of the program.
 
 ## Materials
+
 * Pencils and lined paper (if doing this activity seated). Students can advance across the paper instead of the room with one inch line equal to one step.
 
 ## Process
@@ -34,13 +37,16 @@ After the students get the idea of the game, allow them to make up and call out 
 They will need to be observant, as a conditional that moves them forward, will also move their competition forward!
 
 ## Tips
+
 * SAFETY FIRST! Students, especially younger ones, can get quite silly with this and while it is meant to be fun and even funny, safety first!
 * Student conditionals need to apply to at least two people in the class.
 
 ## Reflections
+
 How did they do?  Were there any ‘run-time errors’? Did a student miss a conditional being met or fail to correctly carry out the THEN or ELSE action?  Were there some conditions that could be evaluated as something other than True or False (maybe, sometimes)?
 
 ## Extensions/Variations 
+
 * Add AND, OR, AND/OR statements to the conditionals.
 >Example: If you have brown hair AND brown eyes, then...
 * Create nested IF’s

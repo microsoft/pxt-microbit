@@ -90,13 +90,13 @@ Rules:
 * Up to four players.
 
 ![Space race game](/static/courses/csintro/conditionals/space-race.jpg)
-Finished game
+_Finished game_
 
 ![micro:bit holder square](/static/courses/csintro/conditionals/microbit-holder.jpg)
-micro:bit holder
+_micro:bit holder_
 
 ![Game pieces](/static/courses/csintro/conditionals/game-pieces.jpg)
-Game pieces
+_Game pieces_
 
 ```blocks
 let yes_or_no = 0
@@ -145,5 +145,5 @@ Write a short reflection in your journal (about 150–300 words), addressing the
 * Explain how you decided on your particular board game idea.
 * What was something that was surprising to you about the process of creating this game?
 * Describe a difficult point in the process of designing this game, and explain how you resolved it.
-* If you had other poeple play your game, what feedback did they give you? How did that help you improve your game? What were the Conditionals that you used as part of your game rules?
+* If you had other people play your game, what feedback did they give you? How did that help you improve your game? What were the Conditionals that you used as part of your game rules?
 * Publish your MakeCode program and include the link.

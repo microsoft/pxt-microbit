@@ -9,7 +9,8 @@ This course takes approximately 14 weeks to complete, spending about 1 week on e
 ![Space race image](/static/courses/csintro.jpg)
 
 ### ~ hint
-**Download it**
+
+#### Download it
 
 The entire course is also available as a download or as a book. Choose any of these formats:
 

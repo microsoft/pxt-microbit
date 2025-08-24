@@ -21,7 +21,7 @@ How does this one extra step affect the algorithm?
 In computer programming, this is known as the ‘shampoo algorithm’ and is an example of a loop. It is also an example of an ‘infinite’ or ‘endless’ loop as the algorithm keeps repeating with no condition that ends the looping.
 
 ![Iteration cartoon](/static/courses/csintro/iteration/iteration-cartoon.png)
-DBwebsolutions.com
+_DBwebsolutions.com_
 
 ‘Rinse. Repeat.’ has even become a meme and made its way into modern song lyrics.
 What other common activities involve repetitive actions? _Examples: Singing (choruses repeat), dancing, school cheers, walking and running, exercise routines..._

@@ -30,8 +30,8 @@ Make a fidget cube out of the micro:bit by creating a unique output for each of 
 
 See if you can combine a maker element similar to what you created in Lesson 1 by providing a holder for the micro:bit that holds it securely when you press one of the buttons.
 
-![](/static/courses/csintro/algorithms/fidget-cube.jpg)
-Sample fidget cube designs
+![Fidget cube](/static/courses/csintro/algorithms/fidget-cube.jpg)
+_Sample fidget cube designs_
 
 ## Project mod 
 * Add more inputs and more outputs - use more than 4 different types of input. Try to use other types of output (other than LEDs) such as sound!

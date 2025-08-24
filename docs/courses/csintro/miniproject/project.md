@@ -41,7 +41,7 @@ View projects at the following sites for inspiration:
 ## Examples
 
 ![Toss the ball project](/static/courses/csintro/miniproject/toss-the-ball.jpg)
-Toss the Ball
+_Toss the Ball_
 
 This is a skill game in which an aluminum foil ball is thrown into a plastic cup. Copper tape lining the sides and bottom of the cup completes the circuit when the ball touches it.
 
