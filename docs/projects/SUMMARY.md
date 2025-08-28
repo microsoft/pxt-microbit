@@ -212,7 +212,7 @@
   * [Rocket Acceleration](https://youtu.be/m9ntqxh8FvQ)
 * [Educator Professional Development](/microbit-org/professional-development)
   * [First lessons with MakeCode and the micro:bit](https://microbit.thinkific.com/courses/first-lessons-with-makecode-and-the-micro-bit)
-  * [Gesture and movement](https://microbit.thinkific.com/courses/gesture-and-movement )
+  * [Gesture and movement](https://microbit.thinkific.com/courses/gesture-and-movement)
   * [Science exploration with the micro:bit ](https://microbit.thinkific.com/courses/science-exploration-with-the-micro-bit)
   * [Making and sensing sound](https://microbit.thinkific.com/courses/sensing-and-making-sound)
   * [Introducing loops](https://microbit.thinkific.com/courses/introducing-loops)

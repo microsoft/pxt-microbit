@@ -16,7 +16,7 @@ Professional development courses from the Micro:bit Educational Foundation.
 }, {
   "name": "Gesture and movement",
   "description": "Explores how to use the micro:bit’s accelerometer sensor in code. Using built-in gesture recognition, you’ll make projects that respond when you shake the micro:bit or rotate it in different directions like a phone or tablet screen.",
-  "url": "https://microbit.thinkific.com/courses/gesture-and-movement ",
+  "url": "https://microbit.thinkific.com/courses/gesture-and-movement",
   "imageUrl": "/static/microbit-org/professional-development/gesture-movement.png",
   "label": " ",
   "labelClass": "black microbit-ribbon large",
