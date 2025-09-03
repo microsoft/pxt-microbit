@@ -145,10 +145,8 @@ input.onButtonPressed(Button.A, () => {
 Your button B algorithm is similar, although you will be joining a "0" to the binary variable, and you are just multiplying the decimal variable by 2.
 
 * An alternative to coding the blocks from the Toolbox drawers is to duplicate the entire **'on button A pressed'** set of blocks, then:
-
-	* In the **'join binary 1'** block, change the 1 to **0**.
-	* In the **'set decimal to'** block, select the 'decimal x 2' oval and pull it out of the blocks to "un-nest" it (it will be grayed out). Delete the '0 + 1' oval in the 'set decimal to' block and replace the resulting 0 value with the grayed out **'decimal x 2'** oval block.
-
+>* In the **'join binary 1'** block, change the 1 to **0**.
+>* In the **'set decimal to'** block, select the 'decimal x 2' oval and pull it out of the blocks to "un-nest" it (it will be grayed out). Delete the '0 + 1' oval in the 'set decimal to' block and replace the resulting 0 value with the grayed out **'decimal x 2'** oval block.
 * Again, test this new code in the Simulator to make sure it's working as intended.
 
 ## Code button A+B

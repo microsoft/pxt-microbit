@@ -8,11 +8,12 @@ In this micro:bit activity, you will create a *Rock, Paper, Scissor* game progra
 
 Let's come up with some pseudocode to describe the behavior of the classic *Rock, Paper, Scissors* game. Your code might look something like this:
 
->Example pseudocode:<br/>
-On shake: choose random number from 0-2
-IF random number = 0, THEN display rock icon,
-ELSE if random number = 1, THEN display paper icon,
-ELSE display scissors icon.
+>Example pseudocode:
+
+>On shake: choose random number from 0-2
+>IF random number = 0, THEN display rock icon,
+>ELSE if random number = 1, THEN display paper icon,
+>ELSE display scissors icon.
 
 Because there are only three possibilities, we don’t need to do a separate check to see if random number = 2. So, we just use ELSE.
 

@@ -17,7 +17,6 @@ Modern computers rely on transistors, which pack millions of tiny switches into 
 In coding:
 
 * The 1s and 0s of bits and bytes can be used to represent letters, numbers, and even different keys on a computer keyboard.
-
 * A bit can be used to hold a Boolean (true/false) value. A value of 0 represents “false” and a value of 1 represents “true.”
 
 ## Review
