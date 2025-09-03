@@ -43,7 +43,7 @@ It is important, however, to understand the two major differences between the mi
 ## Sidebar material
 
 ![Rene Descartes](/static/courses/csintro/coordinates/rene-descartes.jpg)
-(image credit: Wikipedia Commons)
+_Image credit: Wikipedia Commons_
 
 René Descartes (1596-1650), was a French philosopher and mathematician who developed the coordinate system we use today. A story goes that while lying in bed, he noticed a fly on the ceiling. In wondering how he could describe the fly’s exact position on the ceiling, he decided to use a corner of the ceiling as a reference point and then describe the fly’s position as a measure of how far away from the reference point one would need to travel horizontally and then vertically to reach the fly. His coordinate system proved useful in many ways including creating an important link between the studies of algebra and geometry. Geometric shapes could now be described by points on a coordinate plane.
 

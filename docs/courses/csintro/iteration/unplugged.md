@@ -3,6 +3,7 @@
 ![Chair with Pseudocode on the board.](/static/courses/csintro/iteration/chair-pseudo.png)
 
 ## Your Task
+
 In this activity, you’ll guide yourself step-by-step through a simple exercise, then figure out how to make your instructions shorter and more efficient by using a loop.
 
 ## WHat You'll Do
@@ -26,6 +27,7 @@ In this activity, you’ll guide yourself step-by-step through a simple exercise
 That's eight lines of instructions for you to follow!
 
 ## Make It More Efficient
+
 Now, look at the instructions you wrote. Do you notice any steps that repeat?
 
 Hint: What actions do you keep doing? (1) Step forward. (2) Turn left. How many times do you repeat these steps? (Answer: Four times).
@@ -35,9 +37,11 @@ Here’s the key: Whenever you see repeated steps, you can use a loop to simplif
 Repeat 4 times: Step forward, Turn left
 
 ## Test the New Instructions
+
 Now, follow your new, shorter set of instructions. Did it work? Great! You’ve just taken eight lines of instructions and turned them into three by using a loop!
 
 ## Why Fewer Instructions Matter
+
 Think about why using fewer instructions can be helpful. Some reasons could be:
 
 * It saves time

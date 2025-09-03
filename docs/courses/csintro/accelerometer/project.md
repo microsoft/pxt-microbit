@@ -57,7 +57,7 @@ There are no extra components needed for this game as it just uses the built-in 
 
 We start with a variable called 'pop' and set its value to 0 at the start. When the first player shakes the micro:bit, it checks if the value of 'pop' is greater than 50. If it is over 50, then it displays an asterisk (*) and the game is over. If it is not over 50, it adds a random amount to 'pop' between 0 and 4 and shows some bubbles on display.
 
-\*Credit: Twitter user [@stulowe80](https://twitter.com/stulowe80)
+_\*Credit: Twitter user [@stulowe80](https://twitter.com/stulowe80)_
 
 ### Zen
 
@@ -72,7 +72,7 @@ There are no extra components needed for this game as it just uses the built-in 
 
 We start by creating a variable called 'wobble' and setting it to 0 at the start. The value of 'wobble' is shown as a bar graph on the display. If 'wobble' becomes greater than 10, it shows an X and that player is out. If the accelerometer detects a tilt to the right or left exceeding 500 or -500, it adds 1 to your 'wobble' value.
 
-\*Credit: Twitter user [@stulowe80](https://twitter.com/stulowe80)
+_\*Credit: Twitter user [@stulowe80](https://twitter.com/stulowe80)_
 
 ## Reflection
 
