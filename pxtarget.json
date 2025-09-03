@@ -602,7 +602,11 @@
         "tours": {
             "editor": "/tours/editor-tour"
         },
-        "tutorialSimSidebarLayout": true,
+        "tutorialSimSidebarLangs": [
+            "blocks",
+            "javascript",
+            "python"
+        ],
         "preferWebUSBDownload": true,
         "hideReplaceMyCode": true,
         "matchWebUSBDeviceInSim": true,
