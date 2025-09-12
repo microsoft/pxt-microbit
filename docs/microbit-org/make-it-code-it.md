@@ -1,4 +1,4 @@
-# Make it: code it
+# Make it: code it Examples
 
 Projects you can try out straight away or code from scratch.
 

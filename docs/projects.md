@@ -14,34 +14,29 @@
         "imageUrl": "/static/mb/projects/pet-hamster.png"
     },
     {
-        "name": "Make it: code it",
-        "url": "/microbit-org/make-it-code-it",
-        "imageUrl": "/static/microbit-org/make-it-code-it/dance-steps.png"
-    },
-    {
-        "name": "CreateAI",
-        "url": "/microbit-org/createai",
-        "imageUrl": "/static/microbit-org/createai/storytelling-friend.png"
-    },
-    {
-        "name": "Live Coding",
-        "url": "/live-coding",
-        "imageUrl": "/static/live-coding/NvEOKZ8wh9s.jpg"
-    },
-    {
         "name": "Games",
         "url": "/projects/games",
         "imageUrl": "/static/mb/projects/a4-motion.png"
     },
     {
-        "name": "Data Logging",
-        "url": "/microbit-org/data-logging",
-        "imageUrl": "/static/microbit-org/data-logging/traffic-survey.png"
+        "name": "Make it: code it Examples",
+        "url": "/microbit-org/make-it-code-it",
+        "imageUrl": "/static/microbit-org/make-it-code-it/dance-steps.png"
     },
     {
         "name": "Radio Games",
         "url": "/projects/radio-games",
         "imageUrl": "/static/multi.png"
+    },
+    {
+        "name": "Data Logging Examples",
+        "url": "/microbit-org/data-logging",
+        "imageUrl": "/static/microbit-org/data-logging/traffic-survey.png"
+    },
+    {
+        "name": "Live Coding",
+        "url": "/live-coding",
+        "imageUrl": "/static/live-coding/NvEOKZ8wh9s.jpg"
     },
     {
         "name": "Fashion",
@@ -82,6 +77,11 @@
         "name": "First Lessons with MakeCode and the micro:bit",
         "url": "/microbit-org/first-lessons",
         "imageUrl": "/static/microbit-org/first-lessons/overview.png"
+    },
+    {
+        "name": "CreateAI",
+        "url": "/microbit-org/createai",
+        "imageUrl": "/static/microbit-org/createai/storytelling-friend.png"
     },
     {
         "name": "Courses",
@@ -140,12 +140,11 @@
 
 [Tutorials](/tutorials),
 [Tutorials for the new micro:bit (V2)](/tutorials-v2),
-[Make it: code it](/microbit-org/make-it-code-it),
-[CreateAI](/microbit-org/createai),
-[Live Coding](/live-coding),
 [Games](/projects/games),
-[Data Logging](/microbit-org/data-logging),
+[Make it: code it Examples](/microbit-org/make-it-code-it),
 [Radio Games](/projects/radio-games),
+[Data Logging Examples](/microbit-org/data-logging),
+[Live Coding](/live-coding),
 [Fashion](/projects/fashion),
 [Music](/projects/music),
 [Toys](/projects/toys),
@@ -154,6 +153,7 @@
 [Turtle](/projects/turtle),
 [Blocks to JavaScript](/courses/blocks-to-javascript),
 [First Lessons with MakeCode and the micro:bit](/microbit-org/first-lessons),
+[CreateAI](/microbit-org/createai),
 [Courses](/courses),
 [Jacdac](/jacdac),
 [MicroCode for the new micro:bit (V2)](/microcode),

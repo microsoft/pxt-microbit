@@ -1,4 +1,4 @@
-# Data Logging
+# Data Logging Examples
 
 Use the micro:bit’s data logging feature in science and other experiments.
 
