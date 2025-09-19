@@ -26,7 +26,7 @@ Any of the individual course material items are also available as a separate dow
 * [Course overview booklet (PDF)](https://onedrive.live.com/?authkey=%21ALunv1kXkaA0RLg&cid=416406873CB120AB&id=416406873CB120AB%213746&parId=416406873CB120AB%21520&o=OneUp)
 * [Curriculum overview guide](https://onedrive.live.com/view.aspx?resid=416406873CB120AB!3749&cid=416406873cb120ab&authkey=!ALunv1kXkaA0RLg&CT=1686690921127&OR=ItemsView)
 * [Curriculum overview guide (PDF)](https://onedrive.live.com/?authkey=%21ALunv1kXkaA0RLg&cid=416406873CB120AB&id=416406873CB120AB%213748&parId=416406873CB120AB%21520&o=OneUp)
-* [Educator preparation video](https://onedrive.live.com/?authkey=%21ALunv1kXkaA0RLg&cid=416406873CB120AB&id=416406873CB120AB%21526&parId=416406873CB120AB%21520&o=OneUp)
+* [Educator preparation video](https://youtu.be/q6x_tj5DazY)
 * [Educator preparation video (PowerPoint)](https://onedrive.live.com/view.aspx?resid=416406873CB120AB!3750&cid=416406873cb120ab&authkey=!ALunv1kXkaA0RLg&CT=1686690587199&OR=ItemsView)
 
 ### [Standards and assessments](https://onedrive.live.com/?authkey=%21ALunv1kXkaA0RLg&id=416406873CB120AB%21521&cid=416406873CB120AB)
@@ -44,7 +44,7 @@ Any of the individual course material items are also available as a separate dow
 * [Classroom presentation](https://onedrive.live.com/view.aspx?cid=416406873cb120ab&page=view&resid=416406873CB120AB!556&parId=416406873CB120AB!542&authkey=!AM4rnlyFUI-sP9Y&app=PowerPoint)
 * [Educator Guide](https://onedrive.live.com/view.aspx?cid=416406873cb120ab&page=view&resid=416406873CB120AB!554&parId=416406873CB120AB!542&authkey=!AM4rnlyFUI-sP9Y&app=Word)
 * [Student workbook](https://onedrive.live.com/view.aspx?cid=416406873cb120ab&page=view&resid=416406873CB120AB!555&parId=416406873CB120AB!542&authkey=!AM4rnlyFUI-sP9Y&app=Word)
-* [Quick start video](https://onedrive.live.com/?authkey=%21AM4rnlyFUI%2DsP9Y&cid=416406873CB120AB&id=416406873CB120AB%21557&parId=416406873CB120AB%21542&o=OneUp)
+* [Quick start video](https://youtu.be/J9aRFvBB7T4)
 * [Quick start video (PowerPoint)](https://onedrive.live.com/view.aspx?resid=416406873CB120AB!3753&cid=416406873cb120ab&authkey=!ALunv1kXkaA0RLg&CT=1686690011517&OR=ItemsView)
 
 #### [Unit 2 - Algorithms](https://1drv.ms/f/s!AqsgsTyHBmRBhB9mHogz24TrrXvd)
@@ -52,7 +52,7 @@ Any of the individual course material items are also available as a separate dow
 * [Classroom presentation](https://onedrive.live.com/view.aspx?cid=416406873cb120ab&page=view&resid=416406873CB120AB!560&parId=416406873CB120AB!543&authkey=!AGYeiDPbhOute90&app=PowerPoint)
 * [Educator Guide](https://onedrive.live.com/view.aspx?cid=416406873cb120ab&page=view&resid=416406873CB120AB!558&parId=416406873CB120AB!543&authkey=!AGYeiDPbhOute90&app=Word)
 * [Student workbook](https://onedrive.live.com/view.aspx?cid=416406873cb120ab&page=view&resid=416406873CB120AB!559&parId=416406873CB120AB!543&authkey=!AGYeiDPbhOute90&app=Word)
-* [Quick start video](https://onedrive.live.com/?authkey=%21AGYeiDPbhOute90&cid=416406873CB120AB&id=416406873CB120AB%21561&parId=416406873CB120AB%21543&o=OneUp)
+* [Quick start video](https://youtu.be/xfQ8f9rpNXo)
 * [Quick start video (PowerPoint)](https://onedrive.live.com/view.aspx?resid=416406873CB120AB!3755&cid=416406873cb120ab&authkey=!ALunv1kXkaA0RLg&CT=1686690051176&OR=ItemsView)
 
 #### [Unit 3 - Variables](https://1drv.ms/f/s!AqsgsTyHBmRBhCA3Amk-zPfMl-7q)
@@ -60,7 +60,7 @@ Any of the individual course material items are also available as a separate dow
 * [Classroom presentation](https://onedrive.live.com/view.aspx?cid=416406873cb120ab&page=view&resid=416406873CB120AB!564&parId=416406873CB120AB!544&authkey=!ADcCaT7M98yX7uo&app=PowerPoint)
 * [Educator Guide](https://onedrive.live.com/view.aspx?cid=416406873cb120ab&page=view&resid=416406873CB120AB!562&parId=416406873CB120AB!544&authkey=!ADcCaT7M98yX7uo&app=Word)
 * [Student workbook](https://onedrive.live.com/view.aspx?cid=416406873cb120ab&page=view&resid=416406873CB120AB!563&parId=416406873CB120AB!544&authkey=!ADcCaT7M98yX7uo&app=Word)
-* [Quick start video](https://onedrive.live.com/?authkey=%21ADcCaT7M98yX7uo&cid=416406873CB120AB&id=416406873CB120AB%21565&parId=416406873CB120AB%21544&o=OneUp)
+* [Quick start video](https://youtu.be/bndvYqROWBI)
 * [Quick start video (PowerPoint)](https://onedrive.live.com/view.aspx?resid=416406873CB120AB!3756&cid=416406873cb120ab&authkey=!ALunv1kXkaA0RLg&CT=1686690101309&OR=ItemsView)
 
 #### [Unit 4 - Conditionals](https://1drv.ms/f/s!AqsgsTyHBmRBhCEhD98j9NcTVsYj)
@@ -68,7 +68,7 @@ Any of the individual course material items are also available as a separate dow
 * [Classroom presentation](https://onedrive.live.com/view.aspx?cid=416406873cb120ab&page=view&resid=416406873CB120AB!568&parId=416406873CB120AB!545&authkey=!ACEP3yP01xNWxiM&app=PowerPoint)
 * [Educator Guide](https://onedrive.live.com/view.aspx?cid=416406873cb120ab&page=view&resid=416406873CB120AB!566&parId=416406873CB120AB!545&authkey=!ACEP3yP01xNWxiM&app=Word)
 * [Student workbook](https://onedrive.live.com/view.aspx?cid=416406873cb120ab&page=view&resid=416406873CB120AB!567&parId=416406873CB120AB!545&authkey=!ACEP3yP01xNWxiM&app=Word)
-* [Quick start video](https://onedrive.live.com/?authkey=%21ACEP3yP01xNWxiM&cid=416406873CB120AB&id=416406873CB120AB%21569&parId=416406873CB120AB%21545&o=OneUp)
+* [Quick start video](https://youtu.be/pQsk4u5oYGU)
 * [Quick start video (PowerPoint)](https://onedrive.live.com/view.aspx?resid=416406873CB120AB!3757&cid=416406873cb120ab&authkey=!ALunv1kXkaA0RLg&CT=1686690162923&OR=ItemsView)
 
 #### [Unit 5 - Iteration](https://1drv.ms/f/s!AqsgsTyHBmRBhCKvf1jSYdQITB2h)
@@ -76,7 +76,7 @@ Any of the individual course material items are also available as a separate dow
 * [Classroom presentation](https://onedrive.live.com/view.aspx?cid=416406873cb120ab&page=view&resid=416406873CB120AB!572&parId=416406873CB120AB!546&authkey=!AK9_WNJh1AhMHaE&app=PowerPoint)
 * [Educator Guide](https://onedrive.live.com/view.aspx?cid=416406873cb120ab&page=view&resid=416406873CB120AB!570&parId=416406873CB120AB!546&authkey=!AK9_WNJh1AhMHaE&app=Word)
 * [Student workbook](https://onedrive.live.com/view.aspx?cid=416406873cb120ab&page=view&resid=416406873CB120AB!571&parId=416406873CB120AB!546&authkey=!AK9_WNJh1AhMHaE&app=Word)
-* [Quick start video](https://onedrive.live.com/?authkey=%21AK9%5FWNJh1AhMHaE&cid=416406873CB120AB&id=416406873CB120AB%21573&parId=416406873CB120AB%21546&o=OneUp)
+* [Quick start video](https://youtu.be/MsidOfiVvyU)
 * [Quick start video (PowerPoint)](https://onedrive.live.com/view.aspx?resid=416406873CB120AB!3758&cid=416406873cb120ab&authkey=!ALunv1kXkaA0RLg&CT=1686690193781&OR=ItemsView)
 
 #### [Unit 6 - Mini Project](https://1drv.ms/f/s!AqsgsTyHBmRBhCNesBFAojwe-bor)
@@ -84,7 +84,7 @@ Any of the individual course material items are also available as a separate dow
 * [Classroom presentation](https://onedrive.live.com/view.aspx?cid=416406873cb120ab&page=view&resid=416406873CB120AB!576&parId=416406873CB120AB!547&authkey=!AF6wEUCiPB75uis&app=PowerPoint)
 * [Educator Guide](https://onedrive.live.com/view.aspx?cid=416406873cb120ab&page=view&resid=416406873CB120AB!574&parId=416406873CB120AB!547&authkey=!AF6wEUCiPB75uis&app=Word)
 * [Student workbook](https://onedrive.live.com/view.aspx?cid=416406873cb120ab&page=view&resid=416406873CB120AB!575&parId=416406873CB120AB!547&authkey=!AF6wEUCiPB75uis&app=Word)
-* [Quick start video](https://onedrive.live.com/?authkey=%21AF6wEUCiPB75uis&cid=416406873CB120AB&id=416406873CB120AB%21577&parId=416406873CB120AB%21547&o=OneUp)
+* [Quick start video](https://youtu.be/s3bN64D_p3Q)
 * [Quick start video (PowerPoint)](https://onedrive.live.com/view.aspx?resid=416406873CB120AB!3759&cid=416406873cb120ab&authkey=!ALunv1kXkaA0RLg&CT=1686690265627&OR=ItemsView)
 
 #### [Unit 7 - Coordinates](https://1drv.ms/f/s!AqsgsTyHBmRBhCTASW4OemOKnMEv)
@@ -92,7 +92,7 @@ Any of the individual course material items are also available as a separate dow
 * [Classroom presentation](https://onedrive.live.com/view.aspx?cid=416406873cb120ab&page=view&resid=416406873CB120AB!580&parId=416406873CB120AB!548&authkey=!AMBJbg56Y4qcwS8&app=PowerPoint)
 * [Educator Guide](https://onedrive.live.com/view.aspx?cid=416406873cb120ab&page=view&resid=416406873CB120AB!578&parId=416406873CB120AB!548&authkey=!AMBJbg56Y4qcwS8&app=Word)
 * [Student workbook](https://onedrive.live.com/view.aspx?cid=416406873cb120ab&page=view&resid=416406873CB120AB!579&parId=416406873CB120AB!548&authkey=!AMBJbg56Y4qcwS8&app=Word)
-* [Quick start video](https://onedrive.live.com/?authkey=%21AMBJbg56Y4qcwS8&cid=416406873CB120AB&id=416406873CB120AB%21581&parId=416406873CB120AB%21548&o=OneUp)
+* [Quick start video](https://youtu.be/FIofhOP8Ftk)
 * [Quick start video (PowerPoint)](https://onedrive.live.com/view.aspx?resid=416406873CB120AB!3760&cid=416406873cb120ab&authkey=!ALunv1kXkaA0RLg&CT=1686690325195&OR=ItemsView)
 
 #### [Unit 8 - Booleans](https://1drv.ms/f/s!AqsgsTyHBmRBhCVCoNzaW1aTHQzm)
@@ -100,7 +100,7 @@ Any of the individual course material items are also available as a separate dow
 * [Classroom presentation](https://onedrive.live.com/view.aspx?cid=416406873cb120ab&page=view&resid=416406873CB120AB!584&parId=416406873CB120AB!549&authkey=!AEKg3NpbVpMdDOY&app=PowerPoint)
 * [Educator Guide](https://onedrive.live.com/view.aspx?cid=416406873cb120ab&page=view&resid=416406873CB120AB!582&parId=416406873CB120AB!549&authkey=!AEKg3NpbVpMdDOY&app=Word)
 * [Student workbook](https://onedrive.live.com/view.aspx?cid=416406873cb120ab&page=view&resid=416406873CB120AB!583&parId=416406873CB120AB!549&authkey=!AEKg3NpbVpMdDOY&app=Word)
-* [Quick start video](https://onedrive.live.com/?authkey=%21AEKg3NpbVpMdDOY&cid=416406873CB120AB&id=416406873CB120AB%21585&parId=416406873CB120AB%21549&o=OneUp)
+* [Quick start video](https://youtu.be/omi1r8rggpE)
 * [Quick start video (PowerPoint)](https://onedrive.live.com/view.aspx?resid=416406873CB120AB!3761&cid=416406873cb120ab&authkey=!ALunv1kXkaA0RLg&CT=1686690357689&OR=ItemsView)
 
 #### [Unit 9 - Binary](https://1drv.ms/f/s!AqsgsTyHBmRBhCaJTPDfFM9PABs1)
@@ -108,7 +108,7 @@ Any of the individual course material items are also available as a separate dow
 * [Classroom presentation](https://onedrive.live.com/view.aspx?cid=416406873cb120ab&page=view&resid=416406873CB120AB!588&parId=416406873CB120AB!550&authkey=!AIlM8N8Uz08AGzU&app=PowerPoint)
 * [Educator Guide](https://onedrive.live.com/view.aspx?cid=416406873cb120ab&page=view&resid=416406873CB120AB!586&parId=416406873CB120AB!550&authkey=!AIlM8N8Uz08AGzU&app=Word)
 * [Student workbook](https://onedrive.live.com/view.aspx?cid=416406873cb120ab&page=view&resid=416406873CB120AB!587&parId=416406873CB120AB!550&authkey=!AIlM8N8Uz08AGzU&app=Word)
-* [Quick start video](https://onedrive.live.com/?authkey=%21AIlM8N8Uz08AGzU&cid=416406873CB120AB&id=416406873CB120AB%21589&parId=416406873CB120AB%21550&o=OneUp)
+* [Quick start video](https://youtu.be/nVUW_yYoTdU)
 * [Quick start video (PowerPoint)](https://onedrive.live.com/view.aspx?resid=416406873CB120AB!3763&cid=416406873cb120ab&authkey=!ALunv1kXkaA0RLg&CT=1686690413779&OR=ItemsView)
 
 #### [Unit 10 - Radio](https://1drv.ms/f/s!AqsgsTyHBmRBhCeq5h3BbHNmCpGA)
@@ -116,7 +116,7 @@ Any of the individual course material items are also available as a separate dow
 * [Classroom presentation](https://onedrive.live.com/view.aspx?cid=416406873cb120ab&page=view&resid=416406873CB120AB!592&parId=416406873CB120AB!551&authkey=!AKrmHcFsc2YKkYA&app=PowerPoint)
 * [Educator Guide](https://onedrive.live.com/view.aspx?cid=416406873cb120ab&page=view&resid=416406873CB120AB!590&parId=416406873CB120AB!551&authkey=!AKrmHcFsc2YKkYA&app=Word)
 * [Student workbook](https://onedrive.live.com/view.aspx?cid=416406873cb120ab&page=view&resid=416406873CB120AB!591&parId=416406873CB120AB!551&authkey=!AKrmHcFsc2YKkYA&app=Word)
-* [Quick start video](https://onedrive.live.com/?authkey=%21AKrmHcFsc2YKkYA&cid=416406873CB120AB&id=416406873CB120AB%21593&parId=416406873CB120AB%21551&o=OneUp)
+* [Quick start video](https://youtu.be/ugLWoNIoGAo)
 * [Quick start video (PowerPoint)](https://onedrive.live.com/view.aspx?resid=416406873CB120AB!3764&cid=416406873cb120ab&authkey=!ALunv1kXkaA0RLg&CT=1686690445091&OR=ItemsView)
 
 #### [Unit 11 - Arrays](https://1drv.ms/f/s!AqsgsTyHBmRBhChTGr9RP7MXejC-)
@@ -124,15 +124,15 @@ Any of the individual course material items are also available as a separate dow
 * [Classroom presentation](https://onedrive.live.com/view.aspx?cid=416406873cb120ab&page=view&resid=416406873CB120AB!596&parId=416406873CB120AB!552&authkey=!AFMav1E_sxd6ML4&app=PowerPoint)
 * [Educator Guide](https://onedrive.live.com/view.aspx?cid=416406873cb120ab&page=view&resid=416406873CB120AB!594&parId=416406873CB120AB!552&authkey=!AFMav1E_sxd6ML4&app=Word)
 * [Student workbook](https://onedrive.live.com/view.aspx?cid=416406873cb120ab&page=view&resid=416406873CB120AB!595&parId=416406873CB120AB!552&authkey=!AFMav1E_sxd6ML4&app=Word)
-* [Quick start video](https://onedrive.live.com/?authkey=%21AFMav1E%5Fsxd6ML4&cid=416406873CB120AB&id=416406873CB120AB%21597&parId=416406873CB120AB%21552&o=OneUp)
+* [Quick start video](https://youtu.be/B1b4IDrk2mM)
 * [Quick start video (PowerPoint)](https://onedrive.live.com/view.aspx?resid=416406873CB120AB!3766&cid=416406873cb120ab&authkey=!ALunv1kXkaA0RLg&CT=1686690475716&OR=ItemsView)
 
-#### [Unit 12 - Accelerometer](https://1drv.ms/f/s!AqsgsTyHBmRBnTe7p79ZF5GgNES4)
+#### [Unit 12 - Accelerometer](https://1drv.ms/f/c/416406873cb120ab/EqsgsTyHBmQggEEqDAAAAAABv8UVYPZfbSfLgXyKwIYi0Q)
 
 * [Classroom presentation](https://onedrive.live.com/view.aspx?resid=416406873CB120AB!3772&cid=416406873cb120ab&authkey=!ALunv1kXkaA0RLg&CT=1686689659525&OR=ItemsView)
 * [Educator Guide](https://onedrive.live.com/view.aspx?resid=416406873CB120AB!3768&cid=416406873cb120ab&authkey=!ALunv1kXkaA0RLg&CT=1686689325290&OR=ItemsView)
 * [Student workbook](https://onedrive.live.com/view.aspx?resid=416406873CB120AB!3770&cid=416406873cb120ab&authkey=!ALunv1kXkaA0RLg&CT=1686689682662&OR=ItemsView)
-* [Quick start video](https://onedrive.live.com/?authkey=%21ALunv1kXkaA0RLg&cid=416406873CB120AB&id=416406873CB120AB%213771&parId=416406873CB120AB%213767&o=OneUp)
+* [Quick start video](https://youtu.be/fuqhcE6gXgI)
 * [Quick start video (PowerPoint)](https://onedrive.live.com/view.aspx?resid=416406873CB120AB!3769&cid=416406873cb120ab&authkey=!ALunv1kXkaA0RLg&CT=1686689610440&OR=ItemsView)
 
 #### [Unit 13 - Final Project](https://1drv.ms/f/s!AqsgsTyHBmRBhCl9zNQJnUEuOSX7)
@@ -140,7 +140,7 @@ Any of the individual course material items are also available as a separate dow
 * [Classroom presentation](https://onedrive.live.com/view.aspx?cid=416406873cb120ab&page=view&resid=416406873CB120AB!600&parId=416406873CB120AB!553&authkey=!AH3M1AmdQS45Jfs&app=PowerPoint)
 * [Educator Guide](https://onedrive.live.com/view.aspx?cid=416406873cb120ab&page=view&resid=416406873CB120AB!598&parId=416406873CB120AB!553&authkey=!AH3M1AmdQS45Jfs&app=Word)
 * [Student workbook](https://onedrive.live.com/view.aspx?cid=416406873cb120ab&page=view&resid=416406873CB120AB!599&parId=416406873CB120AB!553&authkey=!AH3M1AmdQS45Jfs&app=Word)
-* [Quick start video](https://onedrive.live.com/?authkey=%21AH3M1AmdQS45Jfs&cid=416406873CB120AB&id=416406873CB120AB%21601&parId=416406873CB120AB%21553&o=OneUp)
+* [Quick start video](https://youtu.be/4A-npiseXG4)
 * [Quick start video (PowerPoint)](https://onedrive.live.com/view.aspx?resid=416406873CB120AB!3773&cid=416406873cb120ab&authkey=!ALunv1kXkaA0RLg&CT=1686689876705&OR=ItemsView)
 
 ## Localization scripts
