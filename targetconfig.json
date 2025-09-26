@@ -437,7 +437,7 @@
             },
             "microbit-foundation/pxt-microbit-ml": {
                 "simx": {
-                    "sha": "de376b74f38c8f7d805a0d5704205fffd7453da1",
+                    "sha": "6aa7c4dca86f537ad5ece769684886e97626659e",
                     "devUrl": "http://localhost:5173",
                     "aspectRatio": 3.45
                 },
