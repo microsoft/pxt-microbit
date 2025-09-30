@@ -133,6 +133,11 @@ namespace pxsim {
         }
 
 
+        // power consumption
+        powerConsumption(): number {
+            return 0.0
+        }
+        
         initAsync(msg: SimulatorRunMessage): Promise<void> {
             super.initAsync(msg);
 
