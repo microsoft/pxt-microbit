@@ -36,6 +36,8 @@ namespace pxsim {
         // board hardware version
         hardwareVersion = 1;
 
+        yieldCount = 0
+
         constructor() {
             super()
 
@@ -132,10 +134,8 @@ namespace pxsim {
             }
         }
 
-
-        // power consumption
-        powerConsumption(): number {
-            return 0.0
+        onEveryYield() {
+            console.log(`yield count = ${this.yieldCount++}`)  
         }
         
         initAsync(msg: SimulatorRunMessage): Promise<void> {
