@@ -139,7 +139,7 @@ namespace pxsim {
             const data = this.ledMatrixState.image.data
             for (let i = 0; i < data.length; ++i)
                 if (data[i]) count++
-            console.log(`led count = ${count}`)  
+            pxsim.control.__log(1, `leds: ${count}\n`)
         }
         
         initAsync(msg: SimulatorRunMessage): Promise<void> {
