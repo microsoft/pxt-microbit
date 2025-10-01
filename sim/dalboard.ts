@@ -135,7 +135,11 @@ namespace pxsim {
         }
 
         onEveryYield() {
-            console.log(`yield count = ${this.yieldCount++}`)  
+            let count = 0
+            const data = this.ledMatrixState.image.data
+            for (let i = 0; i < data.length; ++i)
+                if (data[i]) count++
+            console.log(`led count = ${count}`)  
         }
         
         initAsync(msg: SimulatorRunMessage): Promise<void> {
