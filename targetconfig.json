@@ -448,6 +448,13 @@
                     "sha": "80d8581b59c501e4cdfaf8ec84e00682264dd9f6",
                     "devUrl": "https://jacdac.github.io/jacdac-docs/tools/makecode-sim/"
                 }
+            },
+            "jacdac/pxt-jacdac-test": {
+                "hidden": true,
+                "simx": {
+                    "sha": "1b14cb42f304cc3112839be913c29d56096f2e61",
+                    "devUrl": "https://jacdac.github.io/pxt-jacdac-test/index.html"
+                }
             }
         },
         "approvedEditorExtensionUrls": [
