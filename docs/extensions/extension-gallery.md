@@ -557,6 +557,10 @@ Many extensions are available to work with interface kits, add-on hardware, or o
 
 ```codecard
 [{
+  "name": "BrailleBot",
+  "url":"/pkg/roborisen/braillebot",
+  "cardType": "package"
+}, {
   "name": "Kitronik Mai-Z the Mouse Bot",
   "url":"/pkg/KitronikLtd/pxt-kitronik-mai-z",
   "cardType": "package"
