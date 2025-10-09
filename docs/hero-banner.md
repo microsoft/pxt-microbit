@@ -26,4 +26,10 @@ Here are some cool activities to get you started with your @boardname@!
 * description: Track the soil moisture of your plants!
 * imageUrl: /static/herogallery/soil-moisture.png
 * url: /projects/soil-moisture
+---
+* name: micro:bit CreateAI
+* description: micro:bit CreateAI
+* imageUrl: /static/herogallery/microbit-createai.png
+* url: https://createai.microbit.org/
+* cardType: link
 ### ~
