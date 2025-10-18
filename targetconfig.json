@@ -429,6 +429,7 @@
             "forward-education/pxt-climate-action": { "tags": [ "Science" ] },
             "elecfreaks/pxt-petal": { "tags": [ "Science" ] },
             "kitronikltd/pxt-kitronik-mai-z": { "tags": [ "Robotics" ] },
+            "smarthon/pxt-smarthome": { "tags": [ "Networking" ] },
             "roborisen/braillebot": { "tags": [ "Robotics" ] },
             "backyardbrains/pxt-spikerbit": { "tags": [ "Science" ] },
             "microsoft/pxt-simx-sample": {
