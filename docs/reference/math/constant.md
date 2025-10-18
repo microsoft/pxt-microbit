@@ -26,7 +26,7 @@ let circle_area = Math.PI * 4**2
 
 ## e
 
-Euler's number (e) which is the base of the natural logrithm and the exponential function.
+Euler's number (e) which is the base of the natural logarithm and the exponential function.
 
 ```block
 Math._constant(Math.E)
@@ -80,7 +80,7 @@ let days = Math.LN10
 
 ## log₂(e)
 
-Convert from a natural logrithm to a base-2 logrithm.
+Convert from a natural logarithm to a base-2 logarithm.
 
 ```block
 Math._constant(Math.LOG2E)
@@ -90,7 +90,7 @@ The log₂(e) constant is equal to ln(e) / ln(2) which is also 1 / ln(2).
 
 ## log₁₀(e)
 
-Convert from a natural logrithm to a base-10 logrithm.
+Convert from a natural logarithm to a base-10 logarithm.
 
 ```block
 Math._constant(Math.LOG10E)
