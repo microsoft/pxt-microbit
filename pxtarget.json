@@ -427,9 +427,7 @@
         "addNewTypeScriptFile": true,
         "enabledFeatures": {
             "blocksErrorList": {},
-            "aiErrorHelp": {
-                "includeRegions": ["CA", "GB", "BR"]
-            }
+            "aiErrorHelp": {}
         },
         "experiments": [
             "debugExtensionCode",

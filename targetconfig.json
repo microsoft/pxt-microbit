@@ -431,6 +431,7 @@
             "kitronikltd/pxt-kitronik-mai-z": { "tags": [ "Robotics" ] },
             "smarthon/pxt-smarthome": { "tags": [ "Networking" ] },
             "roborisen/braillebot": { "tags": [ "Robotics" ] },
+            "backyardbrains/pxt-spikerbit": { "tags": [ "Science" ] },
             "microsoft/pxt-simx-sample": {
                 "simx": {
                     "sha": "7301f5900879b85127482d79bab48f03c25690a8",
@@ -447,7 +448,7 @@
             },
             "jacdac/pxt-jacdac": {
                 "simx": {
-                    "sha": "80d8581b59c501e4cdfaf8ec84e00682264dd9f6",
+                    "sha": "9a567f397293aa27a06eab91910838f62a100753",
                     "devUrl": "https://jacdac.github.io/jacdac-docs/tools/makecode-sim/"
                 }
             },
