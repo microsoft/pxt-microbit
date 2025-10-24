@@ -388,6 +388,10 @@ Many extensions are available to work with interface kits, add-on hardware, or o
 
 ```codecard
 [{
+   "name": "Smarthon Smart Home IoT Maker Kit",
+   "url": "/pkg/SMARTHON/pxt-smarthome",
+   "cardType": "package"
+}, {
    "name": "FWD Edu Smart Solder Kit",
    "url": "/pkg/Forward-Education/pxt-smart-soldering",
    "cardType": "package"
@@ -899,6 +903,10 @@ Many extensions are available to work with interface kits, add-on hardware, or o
 
 ```codecard
 [{
+    "name": "Backyard Brains Spiker:Bit",
+    "url": "/pkg/BackyardBrains/pxt-spikerbit",
+    "cardType": "package"
+}, {
     "name": "Elecfreaks Petal:bit",
     "url": "/pkg/elecfreaks/pxt-petal",
     "cardType": "package"
