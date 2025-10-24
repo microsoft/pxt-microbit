@@ -36,6 +36,8 @@ namespace pxsim {
         // board hardware version
         hardwareVersion = 1;
 
+        yieldCount = 0
+
         constructor() {
             super()
 
@@ -132,7 +134,14 @@ namespace pxsim {
             }
         }
 
-
+        onEveryYield() {
+            let count = 0
+            const data = this.ledMatrixState.image.data
+            for (let i = 0; i < data.length; ++i)
+                if (data[i]) count++
+            pxsim.control.__log(1, `leds: ${count}\n`)
+        }
+        
         initAsync(msg: SimulatorRunMessage): Promise<void> {
             super.initAsync(msg);
 
