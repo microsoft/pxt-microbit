@@ -584,13 +584,15 @@
     "galleries": {
         "Tutorials": "tutorials",
         "Tutorials for the new micro:bit (V2)": "tutorials-v2",
+        "Games": "projects/games",
+        "Make it: code it Examples": "microbit-org/make-it-code-it",
+        "Radio Games": "projects/radio-games",
+        "Data Logging Examples": "microbit-org/data-logging",
         "Live Coding": {
             "url": "live-coding",
             "shuffle": "daily",
             "youTube": true
         },
-        "Games": "projects/games",
-        "Radio Games": "projects/radio-games",
         "Fashion": "projects/fashion",
         "Music": "projects/music",
         "Toys": "projects/toys",
@@ -598,9 +600,12 @@
         "Tools": "projects/tools",
         "Turtle": "projects/turtle",
         "Blocks to JavaScript": "courses/blocks-to-javascript",
+        "First Lessons with MakeCode and the micro:bit": "microbit-org/first-lessons",
+        "CreateAI": "microbit-org/createai",
         "Courses": "courses",
         "Jacdac": "jacdac",
         "MicroCode for the new micro:bit (V2)": "microcode",
+        "Introductory micro:bit Feature Videos": "microbit-org/feature-videos",
         "Behind the MakeCode Hardware": {
             "url": "behind-the-makecode-hardware",
             "youTube": true
@@ -609,6 +614,7 @@
             "url": "science-experiments",
             "youTube": true
         },
+        "Educator Professional Development": "microbit-org/professional-development",
         "Coding for Teachers": {
             "url": "coding-for-teachers",
             "youTube": true
