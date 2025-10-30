@@ -561,6 +561,10 @@ Many extensions are available to work with interface kits, add-on hardware, or o
 
 ```codecard
 [{
+  "name": "Siyeenove mShield",
+  "url":"/pkg/siyeenove/pxt_mshield",
+  "cardType": "package"
+}, {
   "name": "BrailleBot",
   "url":"/pkg/roborisen/braillebot",
   "cardType": "package"
