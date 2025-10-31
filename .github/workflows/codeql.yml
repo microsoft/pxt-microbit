@@ -12,6 +12,8 @@ on:
 
 permissions:
   security-events: write
+  # required to fetch internal or private CodeQL packs
+  packages: read
 
 jobs:
   CodeQL-Build:
@@ -55,3 +57,5 @@ jobs:
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v4
+      with:
+        category: "/language:${{matrix.language}}"
