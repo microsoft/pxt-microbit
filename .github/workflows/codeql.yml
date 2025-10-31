@@ -19,6 +19,11 @@ jobs:
     # CodeQL runs on ubuntu-latest and windows-latest
     runs-on: ubuntu-latest
 
+    strategy:
+      fail-fast: false
+      matrix:
+        language: [ 'javascript', 'cpp' ]
+
     steps:
     - name: Checkout repository
       uses: actions/checkout@main
@@ -27,7 +32,7 @@ jobs:
     - name: Initialize CodeQL
       uses: github/codeql-action/init@v3
       with:
-         languages: [ 'javascript', 'cpp' ]
+         languages: ${{ matrix.language }}
 
     # Autobuild attempts to build any compiled languages  (C/C++, C#, or Java).
     # If this step fails, then you should remove it and run the build manually (see below)
