@@ -12,6 +12,13 @@ on:
 
 jobs:
   analyze:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+        - language: [ 'javascript', 'cpp' ]
+          build-mode: none
+
     name: Analyze (${{ matrix.language }})
 
     # CodeQL runs on ubuntu-latest and windows-latest
@@ -20,14 +27,6 @@ jobs:
       security-events: write
       # required to fetch internal or private CodeQL packs
       packages: read
-
-
-    strategy:
-      fail-fast: false
-      matrix:
-        include:
-        - language: [ 'javascript', 'cpp' ]
-          build-mode: none
 
     steps:
     - name: Checkout repository
