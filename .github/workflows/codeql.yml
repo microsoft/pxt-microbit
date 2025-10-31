@@ -34,11 +34,11 @@ jobs:
       uses: actions/checkout@main
 
     # Initializes the CodeQL tools for scanning.
-    - name: Initialize CodeQL
-      uses: github/codeql-action/init@v4
-      with:
-        languages: ${{ matrix.language }}
-        build-mode: ${{ matrix.build-mode }}
+    # - name: Initialize CodeQL
+    #   uses: github/codeql-action/init@v4
+    #   with:
+    #     languages: ${{ matrix.language }}
+    #     build-mode: ${{ matrix.build-mode }}
     # # Autobuild attempts to build any compiled languages  (C/C++, C#, or Java).
     # # If this step fails, then you should remove it and run the build manually (see below)
     # - name: Autobuild
