@@ -23,6 +23,7 @@ jobs:
       fail-fast: false
       matrix:
         language: [ 'javascript', 'cpp' ]
+        build-mode: none
 
     steps:
     - name: Checkout repository
@@ -33,6 +34,7 @@ jobs:
       uses: github/codeql-action/init@v3
       with:
          languages: ${{ matrix.language }}
+         build-mode: ${{ matrix.build-mode }}
 
     # # Autobuild attempts to build any compiled languages  (C/C++, C#, or Java).
     # # If this step fails, then you should remove it and run the build manually (see below)
