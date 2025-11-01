@@ -77,8 +77,8 @@ Document pages contain the text for any markdown page available on the MakeCode 
 
 | File | Description |
 | - | - |
-| [docs](https://crowdin.com/translate/makecode/en#/microbit/docs) | Documentation pages for projects, courses, lessons, and code block reference |
-| [libs](https://crowdin.com/translate/makecode/en#/microbit/libs)  | Documentation pages for code block reference and other information related to built-in extensions like _servo_ and _datalogger_ |
+| docs | Documentation pages for projects, courses, lessons, and code block reference |
+| libs | Documentation pages for code block reference and other information related to built-in extensions like _servo_ and _datalogger_ |
 <br/>
 
 Here's an example of a translated document page for a course lesson:
