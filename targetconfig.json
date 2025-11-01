@@ -432,6 +432,7 @@
             "smarthon/pxt-smarthome": { "tags": [ "Networking" ] },
             "roborisen/braillebot": { "tags": [ "Robotics" ] },
             "backyardbrains/pxt-spikerbit": { "tags": [ "Science" ] },
+            "siyeenove/pxt_mshield": { "tags": [ "Robotics" ] },
             "microsoft/pxt-simx-sample": {
                 "simx": {
                     "sha": "7301f5900879b85127482d79bab48f03c25690a8",
