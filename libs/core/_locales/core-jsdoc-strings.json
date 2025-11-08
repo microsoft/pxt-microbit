@@ -313,6 +313,7 @@
   "control.gcStats": "Get various statistics about the garbage collector (GC)",
   "control.heapDump": "Force GC and halt waiting for debugger to do a full heap dump.",
   "control.heapSnapshot": "Record a heap snapshot to debug memory leaks.",
+  "control.ignoreEvent": "Unregisters an event handler.",
   "control.inBackground": "Schedules code that run in the background.",
   "control.micros": "Gets current time in microseconds. Overflows every ~18 minutes.",
   "control.millis": "Gets the number of milliseconds elapsed since power on.",

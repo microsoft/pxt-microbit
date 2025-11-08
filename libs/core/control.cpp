@@ -1,6 +1,7 @@
 #include "pxt.h"
 
 extern uint32_t __StackTop;
+extern void unregisterFromDal(int id, int event, Action a);
 
 /**
  * How to create the event.

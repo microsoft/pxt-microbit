@@ -103,7 +103,7 @@ void registerWithDal(int id, int event, Action a, int flags) {
 }
 
 void unregisterFromDal(int id, int event, Action a) {
-    uBit.messageBus.ignore(id, event, dispatchForeground, a);
+    uBit.messageBus.ignore(id, event, dispatchForeground);
     decr(a);
     unregisterGCPtr(a);
 }
