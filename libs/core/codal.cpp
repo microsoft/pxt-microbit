@@ -102,6 +102,12 @@ void registerWithDal(int id, int event, Action a, int flags) {
     registerGCPtr(a);
 }
 
+void unregisterFromDal(int id, int event, Action a) {
+    uBit.messageBus.ignore(id, event, dispatchForeground, a);
+    decr(a);
+    unregisterGCPtr(a);
+}
+
 void fiberDone(void *a) {
     decr((Action)a);
     unregisterGCPtr((Action)a);

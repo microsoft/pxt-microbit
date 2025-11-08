@@ -313,6 +313,14 @@ namespace control {
     }
 
     /**
+     * Unregisters an event handler.
+     */
+    //%
+    void ignoreEvent(int src, int value, Action handler) {
+        unregisterFromDal(src, value, handler);
+    }
+
+    /**
     * Gets the value of the last event executed on the bus
     */
     //% blockId=control_event_value" block="event value"
