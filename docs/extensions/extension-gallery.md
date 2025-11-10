@@ -561,6 +561,10 @@ Many extensions are available to work with interface kits, add-on hardware, or o
 
 ```codecard
 [{
+  "name": "Siyeenove Pybit",
+  "url":"/pkg/siyeenove/pxt_pybit",
+  "cardType": "package"
+}, {
   "name": "Siyeenove mShield",
   "url":"/pkg/siyeenove/pxt_mshield",
   "cardType": "package"
