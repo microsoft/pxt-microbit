@@ -45,8 +45,8 @@
         "typescript": "4.8.3"
     },
     "dependencies": {
-        "pxt-common-packages": "13.0.0",
-        "pxt-core": "12.1.12"
+        "pxt-common-packages": "13.1.2",
+        "pxt-core": "12.2.4"
     },
     "overrides": {}
 }
