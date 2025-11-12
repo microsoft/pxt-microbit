@@ -8,30 +8,42 @@ on:
     branches: [ master ]
   schedule:
     - cron: '0 19 * * 0'
-
-permissions:
-  security-events: write
+  workflow_dispatch:
 
 jobs:
-  CodeQL-Build:
+  analyze:
+    name: Analyze
+
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+        - language: javascript-typescript
+          build-mode: none
+        - language: cpp
+          build-mode: none
 
     # CodeQL runs on ubuntu-latest and windows-latest
     runs-on: ubuntu-latest
+    permissions:
+      security-events: write
+      # required to fetch internal or private CodeQL packs
+      packages: read
 
     steps:
     - name: Checkout repository
       uses: actions/checkout@main
-      
+
     # Initializes the CodeQL tools for scanning.
     - name: Initialize CodeQL
-      uses: github/codeql-action/init@v3
+      uses: github/codeql-action/init@v4
       with:
-         languages: javascript
-
-    # Autobuild attempts to build any compiled languages  (C/C++, C#, or Java).
-    # If this step fails, then you should remove it and run the build manually (see below)
-    - name: Autobuild
-      uses: github/codeql-action/autobuild@v3
+        languages: ${{ matrix.language }}
+        build-mode: ${{ matrix.build-mode }}
+    # # Autobuild attempts to build any compiled languages  (C/C++, C#, or Java).
+    # # If this step fails, then you should remove it and run the build manually (see below)
+    # - name: Autobuild
+    #   uses: github/codeql-action/autobuild@v3
 
     # ℹ️ Command-line programs to run using the OS shell.
     # 📚 https://git.io/JvXDl
@@ -45,4 +57,6 @@ jobs:
     #   make release
 
     - name: Perform CodeQL Analysis
-      uses: github/codeql-action/analyze@v3
+      uses: github/codeql-action/analyze@v4
+      with:
+        category: "/language:${{matrix.language}}"
