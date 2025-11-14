@@ -9,11 +9,11 @@
     ],
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/Microsoft/pxt-microbit.git"
+        "url": "git+https://github.com/microsoft/pxt-microbit.git"
     },
     "author": "",
     "license": "MIT",
-    "homepage": "https://github.com/Microsoft/pxt-microbit#readme",
+    "homepage": "https://github.com/microsoft/pxt-microbit#readme",
     "files": [
         "README.md",
         "pxtarget.json",
