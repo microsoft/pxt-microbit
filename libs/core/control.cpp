@@ -2,6 +2,13 @@
 
 extern uint32_t __StackTop;
 
+namespace pxt {
+
+void rawRegisterWithDal(int id, int event, Action a, int flags);
+void rawUnregisterWithDal(int id, int event);
+
+}
+
 /**
  * How to create the event.
  */
@@ -310,6 +317,23 @@ namespace control {
     void onEvent(int src, int value, Action handler, int flags = 0) {
         if (!flags) flags = ::EventFlags::QueueIfBusy;
         registerWithDal(src, value, handler, (int)flags);
+    }
+
+    /**
+     * Registers an event handler.
+     */
+    //%
+    void rawOnEvent(int src, int value, Action handler, int flags = 0) {
+        if (!flags) flags = ::EventFlags::QueueIfBusy;
+        rawRegisterWithDal(src, value, handler, (int)flags);
+    }
+
+    /**
+     * Unregisters an event handler.
+     */
+    //%
+    void onEvent(int src, int value) {
+        rawUnregisterWithDal(src, value, handler, (int)flags);
     }
 
     /**

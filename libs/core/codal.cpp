@@ -102,6 +102,16 @@ void registerWithDal(int id, int event, Action a, int flags) {
     registerGCPtr(a);
 }
 
+// relies on making sure Action a is kept alive in STS
+void rawRegisterWithDal(int id, int event, Action a, int flags) {
+    uBit.messageBus.listen(id, event, dispatchForeground, a, (uint16_t) flags);
+}
+
+void rawUnregisterWithDal(int id, int event) {
+    uBit.messageBus.ignore(id, event, dispatchForeground);
+}
+
+
 void fiberDone(void *a) {
     decr((Action)a);
     unregisterGCPtr((Action)a);
