@@ -2,13 +2,6 @@
 
 extern uint32_t __StackTop;
 
-namespace pxt {
-
-void rawRegisterWithDal(int id, int event, Action a, int flags);
-void rawUnregisterWithDal(int id, int event);
-
-}
-
 /**
  * How to create the event.
  */
