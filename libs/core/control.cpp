@@ -3,7 +3,7 @@
 extern uint32_t __StackTop;
 
 namespace pxt {
-    extern void unregisterWithDal(int id, int event, Action a);
+    void unregisterWithDal(int id, int event, Action a);
 }
 
 /**
