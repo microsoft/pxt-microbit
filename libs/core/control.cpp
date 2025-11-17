@@ -333,7 +333,7 @@ namespace control {
      */
     //%
     void rawUnregisterEvent(int src, int value) {
-        rawUnregisterWithDal(src, value, handler, (int)flags);
+        rawUnregisterWithDal(src, value);
     }
 
     /**
