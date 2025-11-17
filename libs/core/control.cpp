@@ -332,7 +332,7 @@ namespace control {
      * Unregisters an event handler.
      */
     //%
-    void onEvent(int src, int value) {
+    void rawUnregisterEvent(int src, int value) {
         rawUnregisterWithDal(src, value, handler, (int)flags);
     }
 
