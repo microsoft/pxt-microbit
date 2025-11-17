@@ -2,7 +2,9 @@
 
 extern uint32_t __StackTop;
 
-extern void unregisterWithDal(int id, int event, Action a);
+namespace pxt {
+    extern void unregisterWithDal(int id, int event, Action a);
+}
 
 /**
  * How to create the event.
