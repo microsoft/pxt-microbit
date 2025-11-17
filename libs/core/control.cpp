@@ -2,6 +2,8 @@
 
 extern uint32_t __StackTop;
 
+extern void unregisterWithDal(int id, int event, Action a);
+
 /**
  * How to create the event.
  */
@@ -310,6 +312,14 @@ namespace control {
     void onEvent(int src, int value, Action handler, int flags = 0) {
         if (!flags) flags = ::EventFlags::QueueIfBusy;
         registerWithDal(src, value, handler, (int)flags);
+    }
+
+    /**
+     * Removes an event handler binding.
+     */
+    //%
+    void removeEventBinding(int src, int value, Action handler) {
+        unregisterWithDal(src, value, handler);
     }
 
     /**
