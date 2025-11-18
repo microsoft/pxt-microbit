@@ -46,6 +46,21 @@ namespace pxsim.control {
         pxtcore.registerWithDal(id, evid, handler, flags)
     }
 
+    export function rawOnEvent(id: number, evid: number, handler: RefAction, flags: number) {
+        if (id == DAL.MICROBIT_ID_BUTTON_AB) {
+            const b = board().buttonPairState;
+            if (!b.usesButtonAB) {
+                b.usesButtonAB = true;
+                runtime.queueDisplayUpdate();
+            }
+        }
+        pxtcore.registerWithDal(id, evid, handler, flags)
+    }
+
+    export function rawUnregisterEvent(id: number, evid: number) {
+        // TODO
+    }
+
     export function eventTimestamp() {
         return board().bus.getLastEventTime()
     }
