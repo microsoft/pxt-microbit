@@ -421,6 +421,18 @@ declare namespace control {
     function onEvent(src: int32, value: int32, handler: () => void, flags?: int32): void;
 
     /**
+     * Registers an event handler.
+     */
+    //% flags.defl=0 shim=control::rawOnEvent
+    function rawOnEvent(src: int32, value: int32, handler: () => void, flags?: int32): void;
+
+    /**
+     * Unregisters an event handler.
+     */
+    //% shim=control::rawUnregisterEvent
+    function rawUnregisterEvent(src: int32, value: int32): void;
+
+    /**
      * Gets the value of the last event executed on the bus
      */
     //% blockId=control_event_value" block="event value"

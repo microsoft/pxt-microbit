@@ -324,6 +324,8 @@
   "control.raiseEvent|param|src": "ID of the MicroBit Component that generated the event e.g. MICROBIT_ID_BUTTON_A.",
   "control.raiseEvent|param|value": "Component specific code indicating the cause of the event.",
   "control.ramSize": "Returns estimated size of memory in bytes.",
+  "control.rawOnEvent": "Registers an event handler.",
+  "control.rawUnregisterEvent": "Unregisters an event handler.",
   "control.reset": "Resets the BBC micro:bit.",
   "control.runInParallel": "Run other code in the parallel.",
   "control.runtimeWarning": "Display warning in the simulator.",
