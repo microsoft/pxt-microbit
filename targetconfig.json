@@ -460,7 +460,8 @@
                     "sha": "8bab6a87265dc3e1e008a716a478306964b6d889",
                     "devUrl": "https://jacdac.github.io/pxt-jacdac-test/index.html"
                 }
-            }
+            },
+            "nvmgo/pxt-joystickbitplus": {}
         },
         "approvedEditorExtensionUrls": [
             "https://microsoft.github.io/ml4f/"
