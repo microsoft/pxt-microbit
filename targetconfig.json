@@ -9,7 +9,7 @@
                 "tags": [ "Lights and Display" ],
                 "simx": {
                     "sha": "0825d56f78528c57af100a96abdfe2162f59945a",
-                    "devUrl": "http://localhost:3000"
+                    "devUrl": "http://microbit-apps.github.io/display-shield/"
                 }
             },
             "microsoft/pxt-microturtle": {
