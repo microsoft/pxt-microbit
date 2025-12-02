@@ -134,12 +134,21 @@ namespace pxsim {
             }
         }
 
+        private energyVariables: Variables = {
+            ledCount: 0
+        }
+
+        getVariables() {
+            return this.energyVariables
+        }
+
         onEveryYield() {
             let count = 0
             const data = this.ledMatrixState.image.data
             for (let i = 0; i < data.length; ++i)
                 if (data[i]) count++
-            pxsim.control.__log(1, `leds: ${count}\n`)
+            this.energyVariables.ledCount = count
+            pxsim.control.__log(0,`${this.energyVariables}`)
         }
         
         initAsync(msg: SimulatorRunMessage): Promise<void> {
