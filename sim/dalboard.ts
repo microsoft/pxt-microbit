@@ -138,7 +138,11 @@ namespace pxsim {
             ledCount: 0
         }
 
-        getVariables() {
+        setBoardVariable(name: string, value: number) {
+            this.energyVariables[name] = value
+        }
+
+        getBoardVariables() {
             return this.energyVariables
         }
 
