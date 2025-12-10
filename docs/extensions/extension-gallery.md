@@ -70,6 +70,10 @@ Many extensions are available to work with interface kits, add-on hardware, or o
 
 ```codecard
 [{
+    "name": "TM1638",
+    "url": "/pkg/NathanPervin/pxt-tm1638",
+    "cardType": "package"
+}, {
     "name": "Pythom1234 OLED Display SSD1306 128x64",
     "url": "/pkg/Pythom1234/pxt-oled",
     "cardType": "package"
