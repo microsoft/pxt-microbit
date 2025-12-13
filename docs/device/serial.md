@@ -35,7 +35,7 @@ Also, if you don't see the serial port as one of your computer's devices, you mi
 
 ### Windows > Tera Term
 
-* Install the terminal emulator [Tera Term](https://ttssh2.osdn.jp/index.html.en). At the time of this writing, the latest version is 4.88 and can be downloaded [from here](http://en.osdn.jp/frs/redir.php?m=jaist&f=%2Fttssh2%2F63767%2Fteraterm-4.88.exe). Follow the instructions from the installer.
+* Install the terminal emulator [Tera Term](https://teratermproject.github.io/index-en.html). At the time of this writing, the latest version is 5.5.1 and can be downloaded [from here](https://github.com/TeraTermProject/teraterm/releases/tag/v5.5.1). _(You should probably go [here](https://github.com/TeraTermProject/teraterm/releases/) to find the latest release for when you are looking at this.)_ Scroll down to "installer" section and download the one that is good for you. If you have an ARM chip, click on the one that ends in "arm64.exe". Otherwise, click on the x64 installer and follow the instructions from the installer.
 
 Once both the driver and the terminal emulator are installed, plug in the micro:bit and wait until the device is fully setup. Then, open TeraTerm.
 
