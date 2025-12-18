@@ -46,9 +46,16 @@
     color: var(--pxt-secondary-foreground);
 
     &:hover {
-        filter: none;
         background-color: var(--pxt-secondary-background-hover);
         color: var(--pxt-secondary-foreground-hover);
+    }
+}
+
+.main:not(.hc) {
+    .simtoolbar .ui.button.icon, #editortools .ui.button.editortools-btn {
+        &:hover {
+            filter: none;
+        }
     }
 }
 
