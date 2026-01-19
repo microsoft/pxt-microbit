@@ -27,7 +27,7 @@ namespace console {
         if (priority < minPriority) return;
         let text = inspect(message);
         // add new line
-        text += "\n";
+        text += "\r\n";
         control.__log(priority, text)
         // send to listeners
         if (listeners)
