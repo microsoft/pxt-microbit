@@ -22,7 +22,7 @@ The receiving serial port will see this number as the 3 characters:
 
 * `value` is the [number](/types/number) to write to the serial port
 
-### ~ hint
+### ~ reminder
 
 #### Simulator data log
 

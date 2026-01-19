@@ -7,7 +7,7 @@ without starting a new line afterward.
 serial.writeString("")
 ```
 
-### ~ hint
+### ~ reminder
 
 #### Simulator data log
 
