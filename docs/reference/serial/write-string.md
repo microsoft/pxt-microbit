@@ -17,7 +17,7 @@ When a string is written to the serial port, it's sent immediately over the seri
 
 -- or --
 
-* log data buffer limit is reached (currently set at `256` characters).
+* log data buffer limit is reached (currently set at `255` characters).
 
 If you want to see the string displayed immediately, use a ``||serial:write line||`` with an empty string right after the ``||serial:write string||``.
 
