@@ -26,7 +26,7 @@ namespace pxsim {
         serialOutBuffer: string = "";
         writeSerial(s: string) {
             this.serialOutBuffer += s;
-            //if (/\n/.test(this.serialOutBuffer) || this.serialOutBuffer.length > SERIAL_BUFFER_LENGTH) {
+            if (/\n/.test(this.serialOutBuffer) || this.serialOutBuffer.length > SERIAL_BUFFER_LENGTH) {
                 Runtime.postMessage(<SimulatorSerialMessage>{
                     type: 'serial',
                     data: this.serialOutBuffer,
@@ -34,7 +34,7 @@ namespace pxsim {
                     sim: true
                 })
                 this.serialOutBuffer = '';
-            //}
+            }
         }
 
         writeCsv(s: string, type: "headers" | "row" | "clear") {
