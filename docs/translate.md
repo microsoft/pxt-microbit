@@ -6,13 +6,13 @@
 
 #### Help translate
 
-Looking to help translate the site for **[microbit.org](http://microbit.org)**? Try http://translate.microbit.org/ to help the Microbit Foundation!
+Looking to help translate the site for **[microbit.org](http://microbit.org)**? Try http://translate.microbit.org/ to help the Micro:bit Foundation!
  
 ### ~
 
 ## #target-files
 
-When you select your language from the [MakeCode](https://crowdin.com/project/makecode) project home page, you'll find all of the localization files for MakeCode shown in a folder tree. The strings to translate for the @boardname@ are found in the files under the **microbit** folder for the current language.
+When you select your language from the [MakeCode](https://crowdin.com/project/makecode) project homepage, you'll find all of the localization files for MakeCode shown in a folder tree. The strings to translate for the @boardname@ are found in the files under the **microbit** folder for the current language.
 
 ![microbit strings files](/static/mb/translate/crowdin-folder.png)
 
@@ -22,34 +22,34 @@ The files listed in the following sections provide a guide to how each of the tr
 
 ### Editor
 
-There a a few files that are specific to the MakeCode editor itself. These contain strings for the editor UI and the simulator. They are essential to translate and should be prioritized before the other files.
+There are a few files that are specific to the MakeCode editor itself. These contain strings for the editor UI and the simulator. They are essential to translate and should be prioritized before the other files.
 
 | File | Description |
 | - | - |
-| strings.json | Common strings that shared by all MakeCode editors. **Note**: This file is located at the MakeCode project's root folder rather than under **microbit** |
+| strings.json | Common strings that are shared by all MakeCode editors. **Note**: This file is located at the MakeCode project's root folder rather than under **microbit** |
 | target-strings.json | Strings custom to the @boardname@ editor interface |
 | sim-strings.json | Strings for the @boardname@ simulator |
 <br/>
 
-This is an example of the editor with it's interface elements localized:
+This is an example of the editor with its interface elements localized:
 
 ![Translated editor elements](/static/mb/translate/target-strings.jpg)
 
 ### Blocks
 
-The strings for the programming code blocks all have names in the form of '_name_-strings.json' and '_name_-jsdoc-strings.json'. The _name_ part of the filename often refers to which set of blocks or the extension tht the blocks come from. 
+The strings for the programming code blocks all have names in the form of '_name_-strings.json' and '_name_-jsdoc-strings.json'. The _name_ part of the filename often refers to which set of blocks or the extension that the blocks come from.
 
 | File | Description |
 | - | - |
-| core-jsdoc-strings.json |  Description text for code elements of the [basic](/reference/basic) and core [blocks](/blocks). **Note**: this file contains strings for the fundamental set of coding blocks and should be prioritized over the other strings files for blocks |
+| core-jsdoc-strings.json | Description text for code elements of the [basic](/reference/basic) and core [blocks](/blocks). **Note**: this file contains strings for the fundamental set of coding blocks and should be prioritized over the other strings files for blocks |
 | core-strings.json | Display text for the [basic](/reference/basic) and core [blocks](/reference/blocks). **Note**: this file contains strings for the fundamental set of coding blocks and should be prioritized over the other strings files for blocks |
 | radio-jsdoc-strings.json | Description text for code elements of the [radio](/reference/radio) blocks |
 | radio-strings.json | Display text for the [radio](/reference/radio) blocks |
-| radio-broadcast-jsdoc-strings.json |  Description text for code elements of the radio broadcast blocks |
+| radio-broadcast-jsdoc-strings.json | Description text for code elements of the radio broadcast blocks |
 | radio-broadcast-strings.json | Display text for the radio broadcast blocks |
 | servo-jsdoc-strings.json | Description text for code elements of the [servo](/reference/servos) blocks |
 | servo-strings.json | Display text for the [servo](/reference/servos) blocks |
-| bluetooth-jsdoc-strings.json | Description text for code elements of the [bluetooth](/reference/bluetooth) blocks
+| bluetooth-jsdoc-strings.json | Description text for code elements of the [bluetooth](/reference/bluetooth) blocks |
 | bluetooth-strings.json | Display text for the [bluetooth](/reference/bluetooth) blocks |
 | devices-jsdoc-strings.json | Description text for code elements of the _connected devices_ blocks |
 | devices-strings.json | Display text for the _connected devices_ blocks |
@@ -57,13 +57,13 @@ The strings for the programming code blocks all have names in the form of '_name
 | flashlog-strings.json | Display text for the _flashlog_ blocks |
 | datalogger-jsdoc-strings.json | Description text for code elements of the [datalogger](/reference/datalogger) blocks |
 | datalogger-strings.json | Display text for the [datalogger](/reference/datalogger) blocks |
-| jacdac-jsdoc-strings.json | Description text for code elements of the _jacdac_ blocks
+| jacdac-jsdoc-strings.json | Description text for code elements of the _jacdac_ blocks |
 | jacdac-strings.json | Display text for the _jacdac_ blocks |
-| color-jsdoc-strings.json | Description text for code elements of the _color_ blocks
+| color-jsdoc-strings.json | Description text for code elements of the _color_ blocks |
 | color-strings.json | Display text for the _color_ blocks |
-| microphone-jsdoc-strings.json | Description text for code elements of the _microphone_ blocks
+| microphone-jsdoc-strings.json | Description text for code elements of the _microphone_ blocks |
 | microphone-strings.json | Display text for the _microphone_ blocks |
-| settings-jsdoc-strings.json | Description text for code elements of the _settings_ blocks
+| settings-jsdoc-strings.json | Description text for code elements of the _settings_ blocks |
 | settings-strings.json | Display text for the _settings_ blocks |
 <br/>
 
@@ -73,7 +73,7 @@ Here are some examples of translated blocks:
 
 ### Document pages
 
-Document pages contain the text for any markdown page available on the MakeCode editor site. These include code block reference, projects, tutorials, how to information, etc.
+Document pages contain the text for any markdown page available on the MakeCode editor site. These include code block reference, projects, tutorials, how-to information, etc.
 
 | File | Description |
 | - | - |

@@ -392,6 +392,10 @@ Many extensions are available to work with interface kits, add-on hardware, or o
 
 ```codecard
 [{
+   "name": "FWD Edu Coding For Good Kit",
+   "url": "/pkg/Forward-Education/pxt-coding-for-good",
+   "cardType": "package"
+}, {
    "name": "Smarthon Smart Home IoT Maker Kit",
    "url": "/pkg/SMARTHON/pxt-smarthome",
    "cardType": "package"
