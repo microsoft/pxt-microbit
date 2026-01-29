@@ -36,6 +36,8 @@ namespace pxsim {
         // board hardware version
         hardwareVersion = 1;
 
+        yieldCount = 0
+
         constructor() {
             super()
 
@@ -132,7 +134,27 @@ namespace pxsim {
             }
         }
 
+        private energyVariables: Variables = {
+            ledCount: 0
+        }
 
+        setBoardVariable(name: string, value: number) {
+            this.energyVariables[name] = value
+        }
+
+        getBoardVariables() {
+            return this.energyVariables
+        }
+
+        onEveryYield() {
+            let count = 0
+            const data = this.ledMatrixState.image.data
+            for (let i = 0; i < data.length; ++i)
+                if (data[i]) count++
+            this.energyVariables.ledCount = count
+            pxsim.control.__log(0,`${this.energyVariables}`)
+        }
+        
         initAsync(msg: SimulatorRunMessage): Promise<void> {
             super.initAsync(msg);
 
