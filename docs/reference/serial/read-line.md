@@ -1,4 +1,4 @@
-# Serial Read Line
+# read Line
 
 Read a line of text from the serial port.
 
@@ -13,7 +13,6 @@ serial.readLine()
 This function expects the line it reads to be terminated with the `\n`
 character. If your terminal software does not terminate lines with
 `\n`, this function will probably never return a value.
-
 
 You can override the ``serial.NEW_LINE_DELIMITER`` field to change the newline delimiter.
 
@@ -30,7 +29,7 @@ The following example requests the user's name, then repeats it to greet the use
 ```blocks
 basic.forever(() => {
     serial.writeLine("What is your name?")
-    let answer = serial.readLine();
+    let answer = serial.readLine()
     serial.writeString("Hello,")
     serial.writeLine(answer)
 })
@@ -39,5 +38,5 @@ basic.forever(() => {
 ## See also
 
 [serial](/device/serial),
-[serial write line](/reference/serial/write-line),
-[serial write value](/reference/serial/write-value)
+[write line](/reference/serial/write-line),
+[write value](/reference/serial/write-value)
