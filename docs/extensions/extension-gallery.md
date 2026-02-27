@@ -563,6 +563,10 @@ Many extensions are available to work with interface kits, add-on hardware, or o
   "name": "DFRobot HuskyLens",
   "url":"/pkg/DFRobot/pxt-DFRobot_HuskyLens",
   "cardType": "package"
+}, {
+  "name": "DFRobot HuskyLens 2",
+  "url":"/pkg/DFRobot/pxt-DFRobot_HuskyLensV2",
+  "cardType": "package"
 }]
 ```
 ## Robotics
