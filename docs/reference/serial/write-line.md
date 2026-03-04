@@ -1,4 +1,4 @@
-# Serial Write Line
+# write Line
 
 Write a string to the [serial](/device/serial) port and start a new line of text 
 by writing `\r\n`.
@@ -57,6 +57,6 @@ basic.forever(function() {
 ## See also
 
 [serial](/device/serial),
-[serial write number](/reference/serial/write-number),
-[serial write string](/reference/serial/write-string),
-[serial write value](/reference/serial/write-value)
+[write number](/reference/serial/write-number),
+[write string](/reference/serial/write-string),
+[write value](/reference/serial/write-value)

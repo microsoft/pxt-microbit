@@ -1,4 +1,4 @@
-# Serial Write Numbers
+# write Numbers
 
 Write an array of numbers to the [serial](/device/serial) port.
 
@@ -41,5 +41,5 @@ basic.forever(function() {
 ## See also
 
 [serial](/device/serial),
-[serial write line](/reference/serial/write-line),
-[serial write value](/reference/serial/write-value)
+[write line](/reference/serial/write-line),
+[write value](/reference/serial/write-value)

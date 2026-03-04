@@ -82,10 +82,7 @@ void deleteListener(MicroBitListener *l) {
 }
 
 static void initCodal() {
-    // TODO!!!
-#ifndef MICROBIT_CODAL
     uBit.messageBus.setListenerDeletionCallback(deleteListener);
-#endif
 
     // repeat error 4 times and restart as needed
     microbit_panic_timeout(4);
