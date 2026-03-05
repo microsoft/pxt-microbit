@@ -337,7 +337,7 @@ namespace music {
      * @param melody the melody name
      */
     //% weight=60 help=music/built-in-playable-melody
-    //% blockId=device_builtin_melody_playable block="melody $melody"
+    //% blockId=device_builtin_melody_playable block="melody|$melody"
     //% toolboxParent=music_playable_play_default_bkg
     //% toolboxParentArgument=toPlay
     //% duplicateShadowOnDrag
