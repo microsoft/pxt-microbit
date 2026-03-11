@@ -14,7 +14,8 @@
             "dom.iterable",
             "scripthost",
             "es2017"
-        ]
+        ],
+        "types": []
     },
     "include": [
         "*.ts",
