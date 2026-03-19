@@ -1048,7 +1048,9 @@ path.sim-board {
                 "y": "0px",
                 "width": MB_WIDTH + "px",
                 "height": MB_HEIGHT + "px",
-                "fill": "rgba(0,0,0,0)"
+                "fill": "rgba(0,0,0,0)",
+                // Allows screen reader users to interact with board properly.
+                "role": "application"
             });
             this.style = <SVGStyleElement>svg.child(this.element, "style", {});
             this.style.textContent = MB_STYLE + (this.props.theme.highContrast ? MB_HIGHCONTRAST : "");
