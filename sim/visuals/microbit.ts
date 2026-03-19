@@ -1493,6 +1493,7 @@ path.sim-board {
                         let pin = state.edgeConnectorState.pins[index];
 
                         if ([37, 38, 39, 40].includes(charCode) && !(pin.mode & PinFlags.Input)) {
+                            ev.preventDefault();
                             accessibility.setLiveContent(pxsim.localization.lf("This input is read only"));
                             return;
                         };
