@@ -118,7 +118,7 @@ confuse the @boardname@.
 
 #### Make a calibration tool
 
-Keep the calibration handy by running it when the user pressed **A+B**.
+Keep the calibration current by running it when the user pressed **A+B**.
 
 ```block
 input.onButtonPressed(Button.AB, () => {
