@@ -49,9 +49,17 @@ The degree markings map to directions. Below is a list of directions and their d
 
 </br>
 
-Besides the 4 Cardinal Directions, there are *Intercardinal Directions* like Northeast (shown in the list above). Additionally, there are direction names between the Cardinal and Intercardinal ones. One of these is North-Northeast (NNE) whose degree value is 22.5° and West-Southwest (WSW) at 247.5°.
+Besides the 4 Cardinal Directions, there are *Intercardinal Directions* like Northeast (shown in the list above). Additionally, there are direction names between the Cardinal and Intercardinal ones. One of these is North-Northeast (NNE) whose degree value is 22.5° and another is West-Southwest (WSW) at 247.5°.
 
-### ~hint 
+### ~tip 
+
+#### Running compass programs on the @boardname@
+
+When testing and using your compass programs on the board, hold the @boardname@ face up (logo side up) and the top edge toward the direction to measure (bottom edge connector side is toward your body).
+
+### ~
+
+### ~hint
 
 #### Compass simulation
 
