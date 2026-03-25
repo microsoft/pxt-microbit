@@ -1,4 +1,4 @@
-# Compass Heading
+# compass Heading
 
 Find which direction on a compass the @boardname@ is facing.
 
@@ -55,8 +55,7 @@ Besides the 4 Cardinal Directions, there are *Intercardinal Directions* like Nor
 
 #### Compass simulation
 
-When you run a program that in the simulator, click and rotate
-the compass needle on the screen to change the compass heading.
+When you run a program that has ``||input:compassHeading||`` in the simulator, click and rotate the compass needle on the screen to change the compass heading.
 
 ```sim
 basic.forever(function () {
