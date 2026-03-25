@@ -65,7 +65,7 @@ When testing and using your compass programs on the board, hold the @boardname@ 
 
 #### Compass simulation
 
-When you run a program that has ``||input:compassHeading||`` in the simulator, click and rotate the compass needle on the screen to change the compass heading.
+When you run a program in the simulator that uses ``||input:compassHeading||``, a compass direction needle appears on the screen. Click and rotate the direction needle to change the compass heading.
 
 ```sim
 basic.forever(function () {
