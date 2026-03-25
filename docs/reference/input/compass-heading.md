@@ -18,7 +18,9 @@ input.compassHeading()
 
 In history, a compass was a device that pointed in the direction of the magnetic North Pole. A needle or or a spot on a moving dial was magnetically attracted to the pole. Using a circular card or diagram arranged with direction indications you could align the indicator with the mark that meant "North" and see which direction the heading you wanted was in.
 
-![AI generated old compass](/static/device/compass/compass-antique.png)
+![Modern plastic compass](/static/device/compass/plastic-compass.jpg)</br>
+**Magnetic compass**<br>
+_by Evan Amos, Public Domain_
 
 The compass pointer (needle) is always pointing to magnetic North. The compass dial might not have alignment with the needle. Once the needle is aligned with the dial, the compass will show what the direction is for a heading. The basic 4 compass points are **North (W), East (E), South (S),** and **West (W)**. These are also called the _Four Cardinal Directions_.
 
