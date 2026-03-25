@@ -133,7 +133,7 @@ Your @boardname@ might detect sounds when you don't want it to. Setting a [__*so
 
 ```blocks
 // @highlight
-input.setSoundThreshold(SoundThreshold.Loud, 150)
+input.setSoundThreshold(SoundThreshold.Loud, 128)
 ```
 
 ## {Testing, round 2}
@@ -158,7 +158,7 @@ input.onSound(DetectedSound.Loud, function () {
     	basic.clearScreen()
     }
 })
-input.setSoundThreshold(SoundThreshold.Loud, 150)
+input.setSoundThreshold(SoundThreshold.Loud, 128)
 ```
 
 ```validation.global
