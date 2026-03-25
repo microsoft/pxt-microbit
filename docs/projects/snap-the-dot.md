@@ -64,8 +64,8 @@ input.onButtonPressed(Button.A, function () {
 })
 basic.forever(function () {
     sprite.move(1)
-    basic.pause(100)
     sprite.ifOnEdgeBounce()
+    basic.pause(100)
 })
 ```
 
@@ -84,8 +84,8 @@ input.onButtonPressed(Button.A, function () {
 })
 basic.forever(function () {
     sprite.move(1)
-    basic.pause(100)
     sprite.ifOnEdgeBounce()
+    basic.pause(100)
 })
 ```
 
