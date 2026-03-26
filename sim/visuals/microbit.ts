@@ -237,13 +237,13 @@ path.sim-board {
         { title: "P14, SPI - MISO", ariaLabel: pxsim.localization.lf("Pin 14")},
         { title: "P15, SPI - MOSI", ariaLabel: pxsim.localization.lf("Pin 15")},
         { title: "P16, SPI - Chip Select", ariaLabel: pxsim.localization.lf("Pin 16")},
-        { title: "P17, +3v3", ariaLabel: pxsim.localization.lf("Pin 3v")},
-        { title: "P18, +3v3", ariaLabel: pxsim.localization.lf("Pin 3v")},
+        { title: "P17, +3v3", ariaLabel: pxsim.localization.lf("Pin 3V")},
+        { title: "P18, +3v3", ariaLabel: pxsim.localization.lf("Pin 3V")},
         { title: "P19, I2C - SCL", ariaLabel: pxsim.localization.lf("Pin 19")},
         { title: "P20, I2C - SDA", ariaLabel: pxsim.localization.lf("Pin 20")},
         { title: "GND", ariaLabel: pxsim.localization.lf("Pin GND")},
         { title: "GND", ariaLabel: pxsim.localization.lf("Pin GND")},
-        { title: "+3v3", ariaLabel: pxsim.localization.lf("Pin 3v")},
+        { title: "+3v3", ariaLabel: pxsim.localization.lf("Pin 3V")},
         { title: "GND", ariaLabel: pxsim.localization.lf("Pin GND")},
     ];
     const MB_WIDTH = 500;
