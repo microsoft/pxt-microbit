@@ -555,7 +555,7 @@ path.sim-board {
                         this.board.accelerometerState.shake();
                     }
                 );
-                accessibility.setAria(this.shakeButton, "button", "Shake the board");
+                accessibility.setAria(this.shakeButton, "button", pxsim.localization.lf("Shake"));
                 this.shakeText = svg.child(this.g, "text", { x: 420, y: 122, class: "sim-text-small", "aria-hidden": "true" }) as SVGTextElement;
                 this.shakeText.textContent = "SHAKE";
             }
