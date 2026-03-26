@@ -603,7 +603,7 @@ path.sim-board {
             }
             else if (pin.mode & PinFlags.Digital) {
                 gradientValue = pin.value > 0 ? "0%" : "100%";
-                v = pin.value;
+                v = pin.value > 0 ? 1 : 0;
                 if (text) text.textContent = v.toString();
             }
             else if (pin.mode & PinFlags.Touch) {
@@ -616,24 +616,35 @@ path.sim-board {
                 if (text) text.textContent = "";
             }
             if (gradientValue) svg.setGradientValue(this.pinGradients[index], gradientValue);
-
             if (pin.mode !== PinFlags.Unused) {
                 accessibility.makeFocusable(this.pins[index]);
-                accessibility.setAria(this.pins[index], "slider", this.pins[index].firstChild.textContent);
-                this.pins[index].setAttribute("aria-valuemin", "0");
-                this.pins[index].setAttribute("aria-valuemax", pin.mode & PinFlags.Analog ? "1023" : "1");
-                this.pins[index].setAttribute("aria-orientation", "vertical");
-                this.pins[index].setAttribute("aria-valuenow", v.toString());
-                if (text?.textContent) {
-                    this.pins[index].setAttribute("aria-valuetext", text?.textContent ?? null);
-                } else {
+                if (pin.mode & PinFlags.Touch) {
+                    this.pins[index].setAttribute("role", "button");
+                    this.pins[index].ariaLabel = this.pins[index].firstChild.textContent
+                    this.pins[index].removeAttribute("aria-valuemin");
+                    this.pins[index].removeAttribute("aria-valuemax");
+                    this.pins[index].removeAttribute("aria-orientation");
+                    this.pins[index].removeAttribute("aria-valuenow");
                     this.pins[index].removeAttribute("aria-valuetext");
-                }
-                if (pin.mode & PinFlags.Input) {
                     this.pins[index].removeAttribute("aria-readonly");
                 } else {
-                    this.pins[index].setAttribute("aria-readonly", "true");
-                }
+                    this.pins[index].setAttribute("role", "slider");
+                    this.pins[index].ariaLabel = this.pins[index].firstChild.textContent
+                    this.pins[index].setAttribute("aria-valuemin", "0");
+                    this.pins[index].setAttribute("aria-valuemax", pin.mode & PinFlags.Analog ? "1023" : "1");
+                    this.pins[index].setAttribute("aria-orientation", "vertical");
+                    this.pins[index].setAttribute("aria-valuenow", v.toString());
+                    if (text?.textContent) {
+                        this.pins[index].setAttribute("aria-valuetext", text?.textContent ?? null);
+                    } else {
+                        this.pins[index].removeAttribute("aria-valuetext");
+                    }
+                    if (pin.mode & PinFlags.Input) {
+                        this.pins[index].removeAttribute("aria-readonly");
+                    } else {
+                        this.pins[index].setAttribute("aria-readonly", "true");
+                    }
+                } 
             }
         }
 
