@@ -214,29 +214,37 @@ path.sim-board {
         "P12", "P2", "P13", "P14", "P15", "P16", "P17", "P18", "P19", "P20",
         "GND0", "GND", "+3v3", "GND1"
     ];
-    const pinTitles = [
-        "P0, ANALOG IN",
-        "P1, ANALOG IN",
-        "P2, ANALOG IN",
-        "P3, ANALOG IN, LED Col 1",
-        "P4, ANALOG IN, LED Col 2",
-        "P5, BUTTON A",
-        "P6, LED Col 9",
-        "P7, LED Col 8",
-        "P8",
-        "P9, LED Col 7",
-        "P10, ANALOG IN, LED Col 3",
-        "P11, BUTTON B",
-        "P12, RESERVED ACCESSIBILITY",
-        "P13, SPI - SCK",
-        "P14, SPI - MISO",
-        "P15, SPI - MOSI",
-        "P16, SPI - Chip Select",
-        "P17, +3v3",
-        "P18, +3v3",
-        "P19, I2C - SCL",
-        "P20, I2C - SDA",
-        "GND", "GND", "+3v3", "GND"
+    interface PinTitle {
+        title: string,
+        ariaLabel: string
+    }
+    // title is currently unused.
+    const pinTitles: PinTitle[] = [
+        { title: "P0, ANALOG IN", ariaLabel: pxsim.localization.lf("Pin 0")},
+        { title: "P1, ANALOG IN", ariaLabel: pxsim.localization.lf("Pin 1")},
+        { title: "P2, ANALOG IN", ariaLabel: pxsim.localization.lf("Pin 2")},
+        { title: "P3, ANALOG IN, LED Col 1", ariaLabel: pxsim.localization.lf("Pin 3")},
+        { title: "P4, ANALOG IN, LED Col 2", ariaLabel: pxsim.localization.lf("Pin 4")},
+        { title: "P5, BUTTON A", ariaLabel: pxsim.localization.lf("Pin 5")},
+        { title: "P6, LED Col 9", ariaLabel: pxsim.localization.lf("Pin 6")},
+        { title: "P7, LED Col 8", ariaLabel: pxsim.localization.lf("Pin 7")},
+        { title: "P8", ariaLabel: pxsim.localization.lf("Pin 8")},
+        { title: "P9, LED Col 7", ariaLabel: pxsim.localization.lf("Pin 9")},
+        { title: "P10, ANALOG IN, LED Col 3", ariaLabel: pxsim.localization.lf("Pin 10")},
+        { title: "P11, BUTTON B", ariaLabel: pxsim.localization.lf("Pin 11")},
+        { title: "P12, RESERVED ACCESSIBILITY", ariaLabel: pxsim.localization.lf("Pin 12")},
+        { title: "P13, SPI - SCK", ariaLabel: pxsim.localization.lf("Pin 13")},
+        { title: "P14, SPI - MISO", ariaLabel: pxsim.localization.lf("Pin 14")},
+        { title: "P15, SPI - MOSI", ariaLabel: pxsim.localization.lf("Pin 15")},
+        { title: "P16, SPI - Chip Select", ariaLabel: pxsim.localization.lf("Pin 16")},
+        { title: "P17, +3v3", ariaLabel: pxsim.localization.lf("Pin 3v")},
+        { title: "P18, +3v3", ariaLabel: pxsim.localization.lf("Pin 3v")},
+        { title: "P19, I2C - SCL", ariaLabel: pxsim.localization.lf("Pin 19")},
+        { title: "P20, I2C - SDA", ariaLabel: pxsim.localization.lf("Pin 20")},
+        { title: "GND", ariaLabel: pxsim.localization.lf("Pin GND")},
+        { title: "GND", ariaLabel: pxsim.localization.lf("Pin GND")},
+        { title: "+3v3", ariaLabel: pxsim.localization.lf("Pin 3v")},
+        { title: "GND", ariaLabel: pxsim.localization.lf("Pin GND")},
     ];
     const MB_WIDTH = 500;
     const MB_HEIGHT = 408;
@@ -1233,7 +1241,7 @@ path.sim-board {
             this.pins = pinDrawOrder.reduce((pins, pinName) => {
                 const simPinIndex = pinNames.indexOf(pinName);
                 const newPin = drawList[simPinIndex]();
-                svg.hydrate(newPin, { title: pinTitles[simPinIndex] });
+                svg.hydrate(newPin, { title: pinTitles[simPinIndex].ariaLabel });
                 pins[simPinIndex] = newPin;
                 return pins;
             }, new Array(pinDrawOrder.length));
@@ -1278,7 +1286,6 @@ path.sim-board {
                 let btng = svg.child(this.g, "g", { class: "sim-button-group" });
                 accessibility.makeFocusable(btng);
                 accessibility.setAria(btng, "button", label);
-                btng.setAttribute("aria-pressed", "false");
                 this.buttonsOuter.push(btng);
                 svg.child(btng, "rect", { class: "sim-button-outer", x: left, y: top, rx: btnr, ry: btnr, width: btnw, height: btnw });
                 svg.child(btng, "circle", { class: "sim-button-nut", cx: left + btnnm, cy: top + btnnm, r: btnn });
@@ -1345,7 +1352,6 @@ path.sim-board {
             accessibility.makeFocusable(this.headParts);
             accessibility.setAria(this.headParts, "button", headTitle);
             this.headParts.setAttribute("class", "sim-button-outer sim-button-group")
-            this.headParts.setAttribute("aria-pressed", "false");
             this.attachButtonEvents(this.board.logoTouch, this.headParts, this.headParts);
             document.body.addEventListener(pointerEvents.down[0], this.moveHeadingOnClick);
 
@@ -1601,20 +1607,17 @@ path.sim-board {
             pointerEvents.down.forEach(evid => buttonOuter.addEventListener(evid, ev => {
                 stateButton.pressed = true;
                 this.updateButtonPairs();
-                buttonOuter.setAttribute("aria-pressed", "true");
                 this.board.bus.queue(stateButton.id, DAL.MICROBIT_BUTTON_EVT_DOWN);
                 pressedTime = runtime.runningTime();
             }));
             buttonOuter.addEventListener(pointerEvents.leave, ev => {
                 stateButton.pressed = false;
                 this.updateButtonPairs();
-                buttonOuter.setAttribute("aria-pressed", "false");
                 svg.fill(elButton, this.props.theme.buttonUp);
             })
             buttonOuter.addEventListener(pointerEvents.up, ev => {
                 stateButton.pressed = false;
                 this.updateButtonPairs();
-                buttonOuter.setAttribute("aria-pressed", "false");
                 this.board.bus.queue(stateButton.id, DAL.MICROBIT_BUTTON_EVT_UP);
                 const currentTime = runtime.runningTime()
                 if (currentTime - pressedTime > DAL.DEVICE_BUTTON_LONG_CLICK_TIME)
@@ -1626,13 +1629,11 @@ path.sim-board {
             accessibility.enableKeyboardInteraction(buttonOuter,
                 () => { // keydown
                     stateButton.pressed = true;
-                    buttonOuter.setAttribute("aria-pressed", "true");
                     this.updateButtonPairs();
                     this.board.bus.queue(stateButton.id, DAL.MICROBIT_BUTTON_EVT_DOWN);
                 }, () => { // keyup
                     stateButton.pressed = false;
                     this.updateButtonPairs();
-                    buttonOuter.setAttribute("aria-pressed", "false");
                     this.board.bus.queue(stateButton.id, DAL.MICROBIT_BUTTON_EVT_UP);
                     this.board.bus.queue(stateButton.id, DAL.MICROBIT_BUTTON_EVT_CLICK);
             });
@@ -1648,7 +1649,6 @@ path.sim-board {
                 bpState.bBtn.pressed = true;
                 bpState.abBtn.pressed = true;
                 this.updateButtonPairs();
-                this.buttonsOuter[2].setAttribute("aria-pressed", "true");
                 this.board.bus.queue(bpState.abBtn.id, DAL.MICROBIT_BUTTON_EVT_DOWN);
                 pressedTime = runtime.runningTime()
             }));
@@ -1657,14 +1657,12 @@ path.sim-board {
                 bpState.bBtn.pressed = false;
                 bpState.abBtn.pressed = false;
                 this.updateButtonPairs();
-                this.buttonsOuter[2].setAttribute("aria-pressed", "false");
             })
             this.buttonsOuter[2].addEventListener(pointerEvents.up, ev => {
                 bpState.aBtn.pressed = false;
                 bpState.bBtn.pressed = false;
                 bpState.abBtn.pressed = false;
                 this.updateButtonPairs();
-                this.buttonsOuter[2].setAttribute("aria-pressed", "false");
 
                 this.board.bus.queue(bpState.abBtn.id, DAL.MICROBIT_BUTTON_EVT_UP);
                 const currentTime = runtime.runningTime()
@@ -1681,14 +1679,12 @@ path.sim-board {
                     bpState.bBtn.pressed = true;
                     bpState.abBtn.pressed = true;
                     this.updateButtonPairs();
-                    this.buttonsOuter[2].setAttribute("aria-pressed", "true");
                     this.board.bus.queue(bpState.abBtn.id, DAL.MICROBIT_BUTTON_EVT_DOWN);
                 }, () => { // keyup
                     bpState.aBtn.pressed = false;
                     bpState.bBtn.pressed = false;
                     bpState.abBtn.pressed = false;
                     this.updateButtonPairs();
-                    this.buttonsOuter[2].setAttribute("aria-pressed", "false");
                     this.board.bus.queue(bpState.abBtn.id, DAL.MICROBIT_BUTTON_EVT_UP);
                     this.board.bus.queue(bpState.abBtn.id, DAL.MICROBIT_BUTTON_EVT_CLICK);
             }
