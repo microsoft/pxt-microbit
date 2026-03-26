@@ -68,6 +68,10 @@ input.onButtonPressed(Button.A, function() {
 })
 ```
 
+```blockconfig.global
+for(let index = 0; index <= 3; index++) {}
+```
+
 ```package
 microturtle=github:Microsoft/pxt-microturtle#v0.0.9
 ```
