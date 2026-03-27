@@ -648,7 +648,7 @@ path.sim-board {
                     this.pins[index].setAttribute("aria-orientation", "vertical");
                     this.pins[index].setAttribute("aria-valuenow", v.toString());
                     if (text?.textContent) {
-                        this.pins[index].setAttribute("aria-valuetext", text?.textContent ?? null);
+                        this.pins[index].setAttribute("aria-valuetext", text.textContent);
                     } else {
                         this.pins[index].removeAttribute("aria-valuetext");
                     }
@@ -1479,7 +1479,7 @@ path.sim-board {
                         let state = this.board;
                         let pin = state.edgeConnectorState.pins[index];
                         let svgpin = this.pins[index];
-                        if (pin.mode & PinFlags.Input) {
+                        if (pin.mode & PinFlags.Input && !(pin.mode & PinFlags.Touch)) {
                             let cursor = svg.cursorPoint(pt, this.element, ev);
                             let v = (400 - cursor.y) / 40 * 1023
                             pin.value = Math.max(0, Math.min(1023, Math.floor(v)));
@@ -1492,7 +1492,7 @@ path.sim-board {
                         let pin = state.edgeConnectorState.pins[index];
                         let svgpin = this.pins[index];
                         U.addClass(svgpin, "touched");
-                        if (pin.mode & PinFlags.Input) {
+                        if (pin.mode & PinFlags.Input && !(pin.mode & PinFlags.Touch)) {
                             let cursor = svg.cursorPoint(pt, this.element, ev);
                             let v = (400 - cursor.y) / 40 * 1023
                             pin.value = Math.max(0, Math.min(1023, Math.floor(v)));
@@ -1514,10 +1514,17 @@ path.sim-board {
                         let state = this.board;
                         let pin = state.edgeConnectorState.pins[index];
 
-                        if ([37, 38, 39, 40].includes(charCode) && !(pin.mode & PinFlags.Input)) {
-                            ev.preventDefault();
-                            accessibility.setLiveContent(pxsim.localization.lf("This input is read only"));
-                            return;
+                        if ([37, 38, 39, 40].includes(charCode)) {
+                            if (!(pin.mode & PinFlags.Input)) {
+                                ev.preventDefault();
+                                accessibility.setLiveContent(pxsim.localization.lf("This input is read only"));
+                                return;
+                            }
+                            if (pin.mode & PinFlags.Touch) {
+                                // The pin is in touch mode and has button markup, not a slider.
+                                ev.preventDefault();
+                                return;
+                            }
                         };
 
                         if (charCode === 40 || charCode === 37) { // Down/Left arrow
