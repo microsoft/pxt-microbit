@@ -135,6 +135,7 @@ namespace pxsim.visuals {
         }
         .sim-label, .sim-button-label {
             fill: #000;
+            pointer-events: none;
         }
         .sim-wireframe .sim-board {
             stroke-width: 2px;
@@ -172,6 +173,9 @@ namespace pxsim.visuals {
             -webkit-user-drag: none;
             -webkit-user-select: none;
             -ms-user-select: none;
+        }
+        [focusable=true] {
+            cursor: pointer;
         }
     `;
     const MB_HIGHCONTRAST = `
