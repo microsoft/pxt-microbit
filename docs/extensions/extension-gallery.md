@@ -192,6 +192,10 @@ Many extensions are available to work with interface kits, add-on hardware, or o
 
 ```codecard
 [{
+  "name": "KY-040 Rotary Encoder Plus",
+  "url":"/pkg/steveturbek/pxt-rotary-encoder-KY-040-plus",
+  "cardType": "package"
+}, {
  "name": "MonkMakes Plant Monitor",
   "url":"/pkg/monkmakes/plant-monitor-makecode",
   "cardType": "package"
