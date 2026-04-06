@@ -37,22 +37,33 @@ namespace music {
     }
 
     export class StringArrayPlayable extends Playable {
-        constructor(private notes: string[], private tempo: number) {
+        protected reader: MelodyReader;
+        constructor(notes: string[] | string | Buffer, private tempo: number) {
             super();
+
+            if (typeof notes === "string") {
+                this.reader = new MelodyStringReader(notes);
+            }
+            else if (Array.isArray(notes)) {
+                this.reader = new MelodyArrayReader(notes as string[]);
+            }
+            else {
+                this.reader = new MelodyBufferReader(notes as Buffer);
+            }
         }
 
         _play(playbackMode: PlaybackMode) {
-            if(this.tempo) {
+            if (this.tempo) {
                 music.setTempo(this.tempo);
             }
             if (playbackMode == PlaybackMode.InBackground) {
-                startMelodyInternal(this.notes, MelodyOptions.OnceInBackground);
+                _startMelodyInternal(this.reader, MelodyOptions.OnceInBackground);
             }
             else if (playbackMode == PlaybackMode.LoopingInBackground) {
-                startMelodyInternal(this.notes, MelodyOptions.ForeverInBackground);
+                _startMelodyInternal(this.reader, MelodyOptions.ForeverInBackground);
             }
             else {
-                startMelodyInternal(this.notes, MelodyOptions.Once);
+                _startMelodyInternal(this.reader, MelodyOptions.Once);
                 waitForMelodyEnd();
             }
         }
@@ -120,7 +131,7 @@ namespace music {
     //% bpm.min=40 bpm.max=500
     //% bpm.defl=120
     export function stringPlayable(melody: string, bpm: number): Playable {
-        return new StringArrayPlayable(music.getMelodyNotes(melody), bpm);
+        return new StringArrayPlayable(melody, bpm);
     }
 
     /**

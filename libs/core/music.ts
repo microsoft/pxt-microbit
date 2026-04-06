@@ -316,8 +316,8 @@ namespace music {
         }
     }
 
-    let currentMelody: Melody;
-    let currentBackgroundMelody: Melody;
+    let currentMelody: MelodyReader;
+    let currentBackgroundMelody: MelodyReader;
 
     /**
      * Gets the melody array of a built-in melody.
@@ -397,54 +397,22 @@ namespace music {
     export function playMelody(melody: string, tempo: number) {
         melody = melody || "";
         setTempo(tempo);
-        let notes = getMelodyNotes(melody);
 
-        music.startMelodyInternal(notes, MelodyOptions.Once)
-        waitForMelodyEnd();
+        const playable = new StringArrayPlayable(melody, tempo);
+        playable._play(PlaybackMode.UntilDone);
     }
 
-    // Shared code between begin, start, and play Melody blocks (all deprecated), plus StringPlayable.play (NOT deprecated).
+    // deprecated, use _startMelodyInternal instead
     export function startMelodyInternal(melodyArray: string[], options: MelodyOptions) {
-        init();
-        const isBackground = options & (MelodyOptions.OnceInBackground | MelodyOptions.ForeverInBackground);
-        if (currentMelody != undefined) {
-            if (!isBackground && currentMelody.background) {
-                currentBackgroundMelody = currentMelody;
-                currentMelody = null;
-                control.raiseEvent(MICROBIT_MELODY_ID, MusicEvent.BackgroundMelodyPaused);
-            }
-            if (currentMelody)
-                control.raiseEvent(MICROBIT_MELODY_ID, currentMelody.background | MusicEvent.MelodyEnded);
-            currentMelody = new Melody(melodyArray, options);
-            control.raiseEvent(MICROBIT_MELODY_ID, currentMelody.background | MusicEvent.MelodyStarted);
-        } else {
-            currentMelody = new Melody(melodyArray, options);
-            control.raiseEvent(MICROBIT_MELODY_ID, currentMelody.background | MusicEvent.MelodyStarted);
-            // Only start the fiber once
-            control.inBackground(() => {
-                while (currentMelody.hasNextNote()) {
-                    playNextNote(currentMelody);
-                    if (!currentMelody.hasNextNote() && currentBackgroundMelody) {
-                        // Swap the background melody back
-                        currentMelody = currentBackgroundMelody;
-                        currentBackgroundMelody = null;
-                        control.raiseEvent(MICROBIT_MELODY_ID, MusicEvent.MelodyEnded);
-                        control.raiseEvent(MICROBIT_MELODY_ID, MusicEvent.BackgroundMelodyResumed);
-                        control.raiseEvent(MICROBIT_MELODY_ID, INTERNAL_MELODY_ENDED);
-                    }
-                }
-                control.raiseEvent(MICROBIT_MELODY_ID, currentMelody.background | MusicEvent.MelodyEnded);
-                if (!currentMelody.background)
-                    control.raiseEvent(MICROBIT_MELODY_ID, INTERNAL_MELODY_ENDED);
-                currentMelody = null;
-            })
-        }
+        const reader = new MelodyArrayReader(melodyArray);
+        _startMelodyInternal(reader, options);
     }
 
     export function waitForMelodyEnd() {
         control.waitForEvent(MICROBIT_MELODY_ID, INTERNAL_MELODY_ENDED);
     }
 
+    // deprecated, use StringArrayPlayable instead
     export function getMelodyNotes(melody: string) {
         let notes: string[] = melody.split(" ").filter(n => !!n);
         let newOctave = false;
@@ -550,103 +518,278 @@ namespace music {
      * @returns         A frequency in HZ or 0 if out of range
      */
     export function getFrequencyForNote(octave: number, note: number) {
-        return freqs.getNumber(NumberFormat.UInt16LE, (note + (12 * (octave - 1))) * 2) || 0;
+        const index = (note + (12 * (octave - 1))) << 1;
+
+        if (index >= freqs.length) {
+            return Math.round(440 * Math.pow(2, (((octave + 1) * 12 + note) - 70) / 12));
+        }
+        else {
+            return freqs.getNumber(NumberFormat.UInt16LE, index) || 0;
+        }
     }
 
-    /*
-     * Converts a simple positive string to an integer.
-     * Pxt-common's parseInt is more robust, but it has a fairly large code size footprint.
-     * When we know the provided string will be a simple number, we can use this instead,
-     * which takes some shortcuts but does not use nearly as much space.
-     */
-    function parseIntSimple(text: string) {
-        let result = 0;
-        for (let i = 0; i < text.length; ++i) {
-            const c = text.charCodeAt(i) - 48;
-            if (c < 0 || c > 9) return NaN;
-            result = result * 10 + c;
-        }
-        return result;
-    }
-
-    function playNextNote(melody: Melody): void {
-        // cache elements
-        let currNote = melody.nextNote();
-        let currentPos = melody.currentPos;
-        let currentDuration = melody.currentDuration;
-        let currentOctave = melody.currentOctave;
-
-        let note: number;
-        let isrest: boolean = false;
-        let beatPos: number;
-        let parsingOctave: boolean = true;
-        let prevNote: boolean = false;
-
-        for (let pos = 0; pos < currNote.length; pos++) {
-            let noteChar = currNote.charAt(pos);
-            switch (noteChar) {
-                case 'c': case 'C': note = 1; prevNote = true; break;
-                case 'd': case 'D': note = 3; prevNote = true; break;
-                case 'e': case 'E': note = 5; prevNote = true; break;
-                case 'f': case 'F': note = 6; prevNote = true; break;
-                case 'g': case 'G': note = 8; prevNote = true; break;
-                case 'a': case 'A': note = 10; prevNote = true; break;
-                case 'B': note = 12; prevNote = true; break;
-                case 'r': case 'R': isrest = true; prevNote = false; break;
-                case '#': note++; prevNote = false; break;
-                case 'b': if (prevNote) note--; else { note = 12; prevNote = true; } break;
-                case ':': parsingOctave = false; beatPos = pos; prevNote = false; break;
-                default: prevNote = false; if (parsingOctave) currentOctave = parseIntSimple(noteChar);
-            }
-        }
-        if (!parsingOctave) {
-            currentDuration = parseIntSimple(currNote.substr(beatPos + 1, currNote.length - beatPos));
-        }
+    function playNextNote(melody: MelodyReader): void {
+        melody.readNote();
         let beat = Math.idiv(60000, beatsPerMinute) >> 2;
-        if (isrest) {
-            music.rest(currentDuration * beat)
+        if (melody.currentNote === REST) {
+            music.rest(melody.currentDuration * beat)
         } else {
-            music.playTone(getFrequencyForNote(currentOctave, note), currentDuration * beat);
+            music.playTone(getFrequencyForNote(melody.currentOctave, melody.currentNote), melody.currentDuration * beat);
         }
-        melody.currentDuration = currentDuration;
-        melody.currentOctave = currentOctave;
-        const repeating = melody.repeating && currentPos == melody.melodyArray.length - 1;
-        melody.currentPos = repeating ? 0 : currentPos + 1;
 
         control.raiseEvent(MICROBIT_MELODY_ID, melody.background | MusicEvent.MelodyNotePlayed);
-        if (repeating)
+
+        if (melody.repeating && !melody.hasNextNote()) {
+            melody.reset();
             control.raiseEvent(MICROBIT_MELODY_ID, melody.background | MusicEvent.MelodyRepeated);
-    }
-
-    class Melody {
-        public melodyArray: string[];
-        public currentDuration: number;
-        public currentOctave: number;
-        public currentPos: number;
-        public repeating: boolean;
-
-        // This is bitwise or'd with the events. 0 is not in background, 0xf0 if in background
-        public background: number;
-
-        constructor(melodyArray: string[], options: MelodyOptions) {
-            this.melodyArray = melodyArray;
-            this.repeating = !!(options & (MelodyOptions.Forever | MelodyOptions.ForeverInBackground));
-            this.background = (options & (MelodyOptions.OnceInBackground | MelodyOptions.ForeverInBackground)) ? 0xf0 : 0;
-            this.currentDuration = 4; //Default duration (Crotchet)
-            this.currentOctave = 4; //Middle octave
-            this.currentPos = 0;
-        }
-
-        hasNextNote() {
-            return this.repeating || this.currentPos < this.melodyArray.length;
-        }
-
-        nextNote(): string {
-            const currentNote = this.melodyArray[this.currentPos];
-            return currentNote;
         }
     }
 
+    export class MelodyReader {
+        currentOctave: number;
+        currentNote: number;
+        currentDuration: number;
+        options: MelodyOptions;
+
+        constructor() {
+            this.reset();
+        }
+
+        get background() {
+            return (this.options & (MelodyOptions.OnceInBackground | MelodyOptions.ForeverInBackground)) ? 0xf0 : 0;
+        }
+
+        get repeating() {
+            return !!(this.options & (MelodyOptions.Forever | MelodyOptions.ForeverInBackground));
+        }
+
+        setOptions(options: MelodyOptions) {
+            this.options = options;
+        }
+
+        reset() {
+            this.currentOctave = 4;
+            this.currentNote = 0;
+            this.currentDuration = 4;
+        }
+
+        readNote() { }
+
+        hasNextNote(): boolean {
+            return false;
+        }
+    }
+
+    /**
+     * This is an array that maps letter index to note index in an octave
+     * The note index is the number of semitones above C, so C=0, D=2, ..., B=11
+     *
+     * There are no sharps in this array, only natural notes
+     */
+    //% whenUsed
+    const offsetLookup = hex`090b0002040507`;
+
+    //% whenUsed
+    const REST = -0xffff;
+
+    export class MelodyStringReader extends MelodyReader {
+        melodyStringIndex: number;
+        constructor(public melody: string) {
+            super();
+        }
+
+        reset() {
+            super.reset();
+            this.melodyStringIndex = 0;
+        }
+
+        readNote() {
+            this.eatWhitespace();
+            let note: number = undefined;
+            let modifier = 0;
+
+            while (this.melodyStringIndex < this.melody.length) {
+                const c = this.melody.charCodeAt(this.melodyStringIndex++);
+                if (c == 32 /* space */) {
+                    break;
+                }
+
+                else if (c === 35 /* # */) {
+                    modifier++;
+                }
+                else if (c === 45 /* - */ || c === 114 /* r */ || c === 82 /* R */) {
+                    if (note !== undefined) {
+                        this.melodyStringIndex--;
+                        break;
+                    }
+                    note = -1;
+                }
+                else if (c === 98 /* b */) {
+                    if (note === undefined) {
+                        note = 11;
+                    }
+                    else {
+                        modifier--;
+                    }
+                }
+                else if (c >= 48 && c <= 57) {
+                    // number
+                    if (note === undefined) {
+                        // invalid if we haven't seen a note yet, ignore the number
+                        continue;
+                    }
+                    else {
+                        this.melodyStringIndex--;
+                        this.currentOctave = this.readNumber();
+                    }
+                }
+                else if (c >= 65 && c <= 71) {
+                    // A-G
+                    if (note !== undefined) {
+                        this.melodyStringIndex--;
+                        break;
+                    }
+                    note = offsetLookup[c - 65];
+                }
+                else if (c >= 97 && c <= 103) {
+                    // a-g
+                    if (note !== undefined) {
+                        this.melodyStringIndex--;
+                        break;
+                    }
+                    note = offsetLookup[c - 97];
+                }
+                else if (c === 58 /* : */) {
+                    this.currentDuration = Math.max(1, this.readNumber());
+                    break;
+                }
+            }
+
+            if (note === undefined || note < 0) {
+                // invalid note, treat as rest
+                this.currentNote = REST;
+            }
+            else {
+                this.currentNote = note + modifier;
+            }
+
+            this.eatWhitespace();
+        }
+
+        readNumber() {
+            let result = 0;
+            while (this.melodyStringIndex < this.melody.length) {
+                const c = this.melody.charCodeAt(this.melodyStringIndex);
+                if (c < 48 || c > 57) break;
+                result = result * 10 + (c - 48);
+                this.melodyStringIndex++;
+            }
+            return result;
+        }
+
+        eatWhitespace() {
+            while (this.melodyStringIndex < this.melody.length && this.melody.charAt(this.melodyStringIndex) == " ") {
+                this.melodyStringIndex++;
+            }
+        }
+
+        hasNextNote(): boolean {
+            this.eatWhitespace();
+            return this.melodyStringIndex < this.melody.length;
+        }
+    }
+
+    export class MelodyArrayReader extends MelodyStringReader {
+        protected melodyArrayIndex: number;
+        constructor(private melodyArray: string[]) {
+            super(melodyArray[0]);
+            this.melodyArrayIndex = 0;
+        }
+
+        reset() {
+            super.reset();
+            this.melodyArrayIndex = 0;
+        }
+
+        readNote() {
+            this.melodyStringIndex = 0;
+            this.melody = this.melodyArray[this.melodyArrayIndex];
+            super.readNote();
+
+            // we treat each array entry as a single note, ignore anything after the first note
+            this.melodyArrayIndex++;
+        }
+
+        hasNextNote(): boolean {
+            return this.melodyArrayIndex < this.melodyArray.length;
+        }
+    }
+
+    export class MelodyBufferReader extends MelodyReader {
+        position: number;
+        constructor(private melody: Buffer) {
+            super();
+            this.position = 0;
+        }
+
+        readNote() {
+            const noteNumber = this.melody[this.position];
+            this.currentDuration = this.melody[this.position + 1];
+
+            if (noteNumber === 0) {
+                this.currentNote = REST;
+            }
+            else {
+                this.currentNote = noteNumber % 12;
+                this.currentOctave = Math.idiv((noteNumber - 24), 12);
+            }
+            this.position += 2;
+        }
+
+        hasNextNote(): boolean {
+            return this.position < this.melody.length;
+        }
+    }
+
+    export function _startMelodyInternal(reader: MelodyReader, options: MelodyOptions) {
+        init();
+        const isBackground = options & (MelodyOptions.OnceInBackground | MelodyOptions.ForeverInBackground);
+        reader.setOptions(options);
+        if (currentMelody != undefined) {
+            if (!isBackground && currentMelody.background) {
+                currentBackgroundMelody = currentMelody;
+                currentMelody = null;
+                control.raiseEvent(MICROBIT_MELODY_ID, MusicEvent.BackgroundMelodyPaused);
+            }
+            if (currentMelody)
+                control.raiseEvent(MICROBIT_MELODY_ID, currentMelody.background | MusicEvent.MelodyEnded);
+            currentMelody = reader;
+            control.raiseEvent(MICROBIT_MELODY_ID, currentMelody.background | MusicEvent.MelodyStarted);
+        } else {
+            currentMelody = reader;
+            control.raiseEvent(MICROBIT_MELODY_ID, currentMelody.background | MusicEvent.MelodyStarted);
+            // Only start the fiber once
+            control.inBackground(() => {
+                while (currentMelody.hasNextNote()) {
+                    playNextNote(currentMelody);
+                    if (!currentMelody.hasNextNote() && currentBackgroundMelody) {
+                        // Swap the background melody back
+                        currentMelody = currentBackgroundMelody;
+                        currentBackgroundMelody = null;
+                        control.raiseEvent(MICROBIT_MELODY_ID, MusicEvent.MelodyEnded);
+                        control.raiseEvent(MICROBIT_MELODY_ID, MusicEvent.BackgroundMelodyResumed);
+                        control.raiseEvent(MICROBIT_MELODY_ID, INTERNAL_MELODY_ENDED);
+                    }
+                }
+                control.raiseEvent(MICROBIT_MELODY_ID, currentMelody.background | MusicEvent.MelodyEnded);
+                if (!currentMelody.background)
+                    control.raiseEvent(MICROBIT_MELODY_ID, INTERNAL_MELODY_ENDED);
+                currentMelody = null;
+            });
+        }
+    }
+
+    // deprecated use StringArrayPlayable instead
     export function _bufferToMelody(melody: Buffer) {
         if (!melody) return [];
 
