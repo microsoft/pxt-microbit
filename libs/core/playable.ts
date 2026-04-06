@@ -42,7 +42,7 @@ namespace music {
             super();
 
             if (typeof notes === "string") {
-                this.reader = new MelodyStringReader(notes);
+                this.reader = new MelodyStringReader(notes, true);
             }
             else if (Array.isArray(notes)) {
                 this.reader = new MelodyArrayReader(notes as string[]);

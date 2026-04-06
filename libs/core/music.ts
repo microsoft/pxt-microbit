@@ -594,7 +594,7 @@ namespace music {
 
     export class MelodyStringReader extends MelodyReader {
         melodyStringIndex: number;
-        constructor(public melody: string) {
+        constructor(public melody: string, public resetOctave: boolean) {
             super();
         }
 
@@ -605,6 +605,10 @@ namespace music {
 
         readNote() {
             this.eatWhitespace();
+            if (this.resetOctave) {
+                this.currentOctave = 4;
+            }
+
             let note: number = undefined;
             let modifier = 0;
 
@@ -702,7 +706,7 @@ namespace music {
     export class MelodyArrayReader extends MelodyStringReader {
         protected melodyArrayIndex: number;
         constructor(private melodyArray: string[]) {
-            super(melodyArray[0]);
+            super(melodyArray[0], false);
             this.melodyArrayIndex = 0;
         }
 
