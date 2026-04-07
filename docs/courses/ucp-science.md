@@ -33,7 +33,7 @@ The lesson series includes:
 * [Rocket Acceleration](/courses/ucp-science/rocket-acceleration)
 * [Egg Drop Experiment](/courses/ucp-science/egg-drop)
 * [Spoon Race](/courses/ucp-science/spoon-race)
- 
-The [Science Experiments](https://sites.google.com/view/utahcodingproject/csta/microbit-science-experiments) lesson series is generously provided by the [Utah Coding Project](https://sites.google.com/view/utahcodingproject/home) and is developed by [Carl Lyman](mailto:utahcoding@outlook.com).
+
+The [Science Experiments](https://sites.google.com/view/utahcodingproject/microbits/microbit-science-experiments) lesson series is generously provided by the [Utah Coding Project](https://sites.google.com/view/utahcodingproject/home) and is developed by [Carl Lyman](mailto:utahcoding@outlook.com).
  
 [![CC BY-NC-SA](https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
