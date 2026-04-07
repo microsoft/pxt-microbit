@@ -674,7 +674,8 @@ namespace music {
                 this.currentNote = REST;
             }
             else {
-                this.currentNote = note + modifier;
+                // for whatever reason, we index our notes starting at 1 instead of 0, so add 1 to the note value
+                this.currentNote = note + modifier + 1;
             }
 
             this.eatWhitespace();
