@@ -489,6 +489,8 @@ path.sim-board {
                 U.removeClass(this.element, "grayscale");
 
             if (!initialCall && !this.liveRegionInitialized) {
+                // The iframe document's innerHTML is cleared after mkBoardView is called.
+                // Ensure that the live region is created after this.
                 accessibility.setLiveContent("");
                 this.liveRegionInitialized = true;
             }
