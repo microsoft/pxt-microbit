@@ -577,6 +577,10 @@ Many extensions are available to work with interface kits, add-on hardware, or o
 
 ```codecard
 [{
+  "name": "PyoBot",
+  "url":"/pkg/pyocodingcompany-crypto/pyobot-makecode",
+  "cardType": "package"
+}, {
   "name": "Tobbie-II (Translated)",
   "url":"/pkg/Jim-no-surname-provided/pxt-tobbieII",
   "cardType": "package"
