@@ -793,7 +793,7 @@ path.sim-board {
                     ev => { },
                     // keydown
                     (ev) => {
-                        const value = commonKeyHandler(ev, state.compassState.heading, 0, 360);
+                        const value = commonKeyHandler(ev, state.compassState.heading, 0, 359);
                         if (value !== undefined) {
                             state.compassState.heading = value;
                             this.updateHeading();
