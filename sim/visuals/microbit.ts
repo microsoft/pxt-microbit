@@ -34,13 +34,14 @@ namespace pxsim.visuals {
         .sim-button-nut:hover {
             stroke:1px solid #704A4A;
         }
-        .sim-pin:hover {
+        .sim-pin[focusable=true]:hover {
             stroke:#D4AF37;
             stroke-width:2px;
         }
 
-        .sim-pin-touch.touched {
+        .sim-pin-touch[focusable=true].touched {
             stroke:darkorange !important;
+            stroke-width:5px;
         }
 
         .sim-led-back:hover {
@@ -135,6 +136,7 @@ namespace pxsim.visuals {
         }
         .sim-label, .sim-button-label {
             fill: #000;
+            pointer-events: none;
         }
         .sim-wireframe .sim-board {
             stroke-width: 2px;
@@ -142,25 +144,25 @@ namespace pxsim.visuals {
         *:focus {
             outline: none;
         }
-        *:focus .sim-button-outer,
-        .sim-shake:focus,
-        .sim-thermometer:focus {
+        *:focus-visible .sim-button-outer,
+        .sim-shake:focus-visible,
+        .sim-thermometer:focus-visible {
             outline: 5px solid white;
             stroke: black;
             stroke-width: 10px;
             paint-order: stroke;
         }
-        .sim-button-outer.sim-button-group:focus > .sim-button {
+        .sim-button-outer.sim-button-group:focus-visible > .sim-button {
             outline: 5px solid white;
             stroke: black;
             stroke-width: 5px;
             paint-order: stroke;
         }
-        .sim-light-level-button:focus,
-        .sim-antenna-outer:focus > .sim-antenna {
+        .sim-light-level-button:focus-visible,
+        .sim-antenna-outer:focus-visible > .sim-antenna {
             outline: 5px solid white;
         }
-        .sim-pin:focus { 
+        .sim-pin:focus-visible {
             stroke: white;
             stroke-width: 5px !important;
         }
@@ -172,6 +174,9 @@ namespace pxsim.visuals {
             -webkit-user-drag: none;
             -webkit-user-select: none;
             -ms-user-select: none;
+        }
+        [focusable=true] {
+            cursor: pointer;
         }
     `;
     const MB_HIGHCONTRAST = `
@@ -185,11 +190,11 @@ path.sim-board {
 .sim-led-back {
     stroke: white;
 }
-*:focus .sim-button-outer,
-.sim-pin:focus,
-.sim-thermometer:focus,
-.sim-shake:focus,
-.sim-light-level-button:focus {
+*:focus-visible .sim-button-outer,
+.sim-pin:focus-visible,
+.sim-thermometer:focus-visible,
+.sim-shake:focus-visible,
+.sim-light-level-button:focus-visible {
     stroke: #10C8CD !important;
 }
     `
