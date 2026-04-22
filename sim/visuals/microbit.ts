@@ -214,29 +214,37 @@ path.sim-board {
         "P12", "P2", "P13", "P14", "P15", "P16", "P17", "P18", "P19", "P20",
         "GND0", "GND", "+3v3", "GND1"
     ];
-    const pinTitles = [
-        "P0, ANALOG IN",
-        "P1, ANALOG IN",
-        "P2, ANALOG IN",
-        "P3, ANALOG IN, LED Col 1",
-        "P4, ANALOG IN, LED Col 2",
-        "P5, BUTTON A",
-        "P6, LED Col 9",
-        "P7, LED Col 8",
-        "P8",
-        "P9, LED Col 7",
-        "P10, ANALOG IN, LED Col 3",
-        "P11, BUTTON B",
-        "P12, RESERVED ACCESSIBILITY",
-        "P13, SPI - SCK",
-        "P14, SPI - MISO",
-        "P15, SPI - MOSI",
-        "P16, SPI - Chip Select",
-        "P17, +3v3",
-        "P18, +3v3",
-        "P19, I2C - SCL",
-        "P20, I2C - SDA",
-        "GND", "GND", "+3v3", "GND"
+    interface PinTitle {
+        title: string,
+        ariaLabel: string
+    }
+    // title is currently unused.
+    const pinTitles: PinTitle[] = [
+        { title: "P0, ANALOG IN", ariaLabel: pxsim.localization.lf("Pin 0")},
+        { title: "P1, ANALOG IN", ariaLabel: pxsim.localization.lf("Pin 1")},
+        { title: "P2, ANALOG IN", ariaLabel: pxsim.localization.lf("Pin 2")},
+        { title: "P3, ANALOG IN, LED Col 1", ariaLabel: pxsim.localization.lf("Pin 3")},
+        { title: "P4, ANALOG IN, LED Col 2", ariaLabel: pxsim.localization.lf("Pin 4")},
+        { title: "P5, BUTTON A", ariaLabel: pxsim.localization.lf("Pin 5")},
+        { title: "P6, LED Col 9", ariaLabel: pxsim.localization.lf("Pin 6")},
+        { title: "P7, LED Col 8", ariaLabel: pxsim.localization.lf("Pin 7")},
+        { title: "P8", ariaLabel: pxsim.localization.lf("Pin 8")},
+        { title: "P9, LED Col 7", ariaLabel: pxsim.localization.lf("Pin 9")},
+        { title: "P10, ANALOG IN, LED Col 3", ariaLabel: pxsim.localization.lf("Pin 10")},
+        { title: "P11, BUTTON B", ariaLabel: pxsim.localization.lf("Pin 11")},
+        { title: "P12, RESERVED ACCESSIBILITY", ariaLabel: pxsim.localization.lf("Pin 12")},
+        { title: "P13, SPI - SCK", ariaLabel: pxsim.localization.lf("Pin 13")},
+        { title: "P14, SPI - MISO", ariaLabel: pxsim.localization.lf("Pin 14")},
+        { title: "P15, SPI - MOSI", ariaLabel: pxsim.localization.lf("Pin 15")},
+        { title: "P16, SPI - Chip Select", ariaLabel: pxsim.localization.lf("Pin 16")},
+        { title: "P17, +3v3", ariaLabel: pxsim.localization.lf("Pin 3V")},
+        { title: "P18, +3v3", ariaLabel: pxsim.localization.lf("Pin 3V")},
+        { title: "P19, I2C - SCL", ariaLabel: pxsim.localization.lf("Pin 19")},
+        { title: "P20, I2C - SDA", ariaLabel: pxsim.localization.lf("Pin 20")},
+        { title: "GND", ariaLabel: pxsim.localization.lf("Pin GND")},
+        { title: "GND", ariaLabel: pxsim.localization.lf("Pin GND")},
+        { title: "+3v3", ariaLabel: pxsim.localization.lf("Pin 3V")},
+        { title: "GND", ariaLabel: pxsim.localization.lf("Pin GND")},
     ];
     const MB_WIDTH = 500;
     const MB_HEIGHT = 408;
@@ -541,7 +549,7 @@ path.sim-board {
                         this.board.accelerometerState.shake();
                     }
                 );
-                accessibility.setAria(this.shakeButton, "button", "Shake the board");
+                accessibility.setAria(this.shakeButton, "button", pxsim.localization.lf("Shake"));
                 this.shakeText = svg.child(this.g, "text", { x: 420, y: 122, class: "sim-text-small" }) as SVGTextElement;
                 this.shakeText.textContent = "SHAKE";
             }
@@ -665,7 +673,7 @@ path.sim-board {
                     })
 
                 accessibility.makeFocusable(this.thermometer);
-                accessibility.setAria(this.thermometer, "slider", pxsim.localization.lf("Thermometer"));
+                accessibility.setAria(this.thermometer, "slider", pxsim.localization.lf("Temperature"));
                 this.thermometer.setAttribute("aria-valuemin", "-5");
                 this.thermometer.setAttribute("aria-valuemax", "50");
                 this.thermometer.setAttribute("aria-orientation", "vertical");
@@ -847,7 +855,7 @@ path.sim-board {
                 this.antenna.addEventListener('keydown', keyboardEventHandler);
 
                 accessibility.makeFocusable(this.antenna);
-                accessibility.setAria(this.antenna, "slider", "RSSI");
+                accessibility.setAria(this.antenna, "slider", pxsim.localization.lf("Received Signal Strength Indicator"));;
                 this.antenna.setAttribute("aria-valuemin", `${valueMin}`);
                 this.antenna.setAttribute("aria-valuemax", `${valueMax}`);
                 this.antenna.setAttribute("aria-orientation", "horizontal");
@@ -940,7 +948,7 @@ path.sim-board {
                 this.updateTheme();
 
                 accessibility.makeFocusable(this.lightLevelButton);
-                accessibility.setAria(this.lightLevelButton, "slider", "Light level");
+                accessibility.setAria(this.lightLevelButton, "slider", pxsim.localization.lf("Light level"));
                 this.lightLevelButton.setAttribute("aria-valuemin", "0");
                 this.lightLevelButton.setAttribute("aria-valuemax", "255");
                 this.lightLevelButton.setAttribute("aria-orientation", "vertical");
@@ -1201,7 +1209,7 @@ path.sim-board {
             this.pins = pinDrawOrder.reduce((pins, pinName) => {
                 const simPinIndex = pinNames.indexOf(pinName);
                 const newPin = drawList[simPinIndex]();
-                svg.hydrate(newPin, { title: pinTitles[simPinIndex] });
+                svg.hydrate(newPin, { title: pinTitles[simPinIndex].ariaLabel });
                 pins[simPinIndex] = newPin;
                 return pins;
             }, new Array(pinDrawOrder.length));
