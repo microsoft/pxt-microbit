@@ -190,11 +190,11 @@ path.sim-board {
 .sim-led-back {
     stroke: white;
 }
-*:focus .sim-button-outer,
-.sim-pin:focus,
-.sim-thermometer:focus,
-.sim-shake:focus,
-.sim-light-level-button:focus {
+*:focus-visible .sim-button-outer,
+.sim-pin:focus-visible,
+.sim-thermometer:focus-visible,
+.sim-shake:focus-visible,
+.sim-light-level-button:focus-visible {
     stroke: #10C8CD !important;
 }
     `
