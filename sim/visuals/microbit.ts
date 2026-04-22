@@ -1678,7 +1678,7 @@ path.sim-board {
         if (isHandledKey(key)) {
             if (!(pinMode & PinFlags.Input)) {
                 e.preventDefault();
-                accessibility.setLiveContent(pxsim.localization.lf("This input is read only"));
+                accessibility.setLiveContent(pxsim.localization.lf("This pin is read-only"));
                 return undefined;
             }
             if (pinMode & PinFlags.Touch) {
