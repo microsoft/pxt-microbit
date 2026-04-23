@@ -859,7 +859,7 @@ path.sim-board {
                 this.antenna.setAttribute("aria-valuemin", `${valueMin}`);
                 this.antenna.setAttribute("aria-valuemax", `${valueMax}`);
                 this.antenna.setAttribute("aria-orientation", "horizontal");
-                this.antenna.setAttribute("aria-valuenow", "");
+                this.antenna.setAttribute("aria-valuenow", (this.board.radioState.datagram.rssi ?? -75).toString());
                 accessibility.setLiveContent("");
             }
             let now = Date.now();
