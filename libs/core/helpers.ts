@@ -6,11 +6,7 @@ enum UnitConversion {
     //% block="celsius to fahrenheit"
     CelsiusToFahrenheit,
     //% block="fahrenheit to celsius"
-    FahrenheitToCelsius,
-    //% block="seconds to milliseconds"
-    SecondsToMilliseconds,
-    //% block="milliseconds to seconds"
-    MillisecondsToSeconds
+    FahrenheitToCelsius
 }
 
 namespace Math {
@@ -38,8 +34,6 @@ namespace Math {
             case UnitConversion.RadiansToDegrees: return value * 57.29577951308232;
             case UnitConversion.CelsiusToFahrenheit: return (value * 1.8) + 32;
             case UnitConversion.FahrenheitToCelsius: return (value - 32) * 0.5555555555555556;
-            case UnitConversion.SecondsToMilliseconds: return value * 1000;
-            case UnitConversion.MillisecondsToSeconds: return value / 1000;
         }
         return value;
     }
