@@ -1329,8 +1329,7 @@ path.sim-board {
             this.microphoneLed = svg.path(microg, "sim-led sim-mic", "M 352.852 71 C 351.315 71 350.07 72.248 350.07 73.784 V 79.056 C 350.07 80.594 351.316 81.838 352.852 81.838 C 354.387 81.838 355.634 80.593 355.634 79.056 V 73.784 C 355.634 72.248 354.387 71 352.852 71 Z M 346.743 79.981 C 346.743 82.84 348.853 85.062 351.501 85.658 V 87.095 H 348.448 V 89.329 H 357.366 V 87.095 H 354.306 V 85.658 C 356.954 85.064 359.071 82.842 359.071 79.981 H 357.057 C 357.057 82.174 355.168 83.81 352.905 83.81 C 350.64 83.81 348.757 82.173 348.757 79.981 Z");
             svg.fills([this.microphoneLed], this.props.theme.ledOff);
             // ring
-            const microhole = svg.child(this.g, "circle", { cx: 336, cy: 86, r: 3, stroke: "gold", strokeWidth: "1px" })
-            svg.title(microhole, pxsim.localization.lf("microphone (micro:bit v2 needed)"))
+            svg.child(this.g, "circle", { cx: 336, cy: 86, r: 3, stroke: "gold", strokeWidth: "1px" })
 
             this.updateMicrophone();
             this.updateTheme();
