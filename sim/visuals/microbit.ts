@@ -634,7 +634,8 @@ path.sim-board {
                     this.pins[index].removeAttribute("aria-valuetext");
                     this.pins[index].removeAttribute("aria-readonly");
                 } else  {
-                    accessibility.setAria(this.pins[index], "slider", this.pins[index].firstChild.textContent);
+                    this.pins[index].setAttribute("role", "slider");
+                    this.pins[index].ariaLabel = this.pins[index].firstChild.textContent;
                     this.pins[index].setAttribute("aria-valuemin", "0");
                     this.pins[index].setAttribute("aria-valuemax", pin.mode & PinFlags.Analog ? "1023" : "1");
                     this.pins[index].setAttribute("aria-orientation", "vertical");
