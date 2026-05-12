@@ -83,3 +83,11 @@ button.ui.button.inverted:hover:not(.teaching-bubble-button),
 button.common-button.inverted:hover:not(.teaching-bubble-button) {
     background-color: var(--pxt-neutral-background2-hover) !important;
 }
+
+table.diffview.update {
+    .diff-added {
+        .ch-added {
+            color: var(--pxt-neutral-background1) !important;
+        }
+    }
+}
