@@ -986,9 +986,10 @@ path.sim-board {
             el.style.perspective = "30em";
 
             // don't display acc data when AB is on, v2 is on or soundLevel is on
+            const soundLevelVisible = this.soundLevel.style.visibility == "visible";
             if (state.buttonPairState.usesButtonAB
                 || this.v2Circle
-                || this.soundLevel) {
+                || soundLevelVisible) {
                 if (this.accTextX) this.accTextX.textContent = "";
                 if (this.accTextY) this.accTextY.textContent = "";
                 if (this.accTextZ) this.accTextZ.textContent = "";
