@@ -219,29 +219,37 @@ path.sim-board {
         "P12", "P2", "P13", "P14", "P15", "P16", "P17", "P18", "P19", "P20",
         "GND0", "GND", "+3v3", "GND1"
     ];
-    const pinTitles = [
-        "P0, ANALOG IN",
-        "P1, ANALOG IN",
-        "P2, ANALOG IN",
-        "P3, ANALOG IN, LED Col 1",
-        "P4, ANALOG IN, LED Col 2",
-        "P5, BUTTON A",
-        "P6, LED Col 9",
-        "P7, LED Col 8",
-        "P8",
-        "P9, LED Col 7",
-        "P10, ANALOG IN, LED Col 3",
-        "P11, BUTTON B",
-        "P12, RESERVED ACCESSIBILITY",
-        "P13, SPI - SCK",
-        "P14, SPI - MISO",
-        "P15, SPI - MOSI",
-        "P16, SPI - Chip Select",
-        "P17, +3v3",
-        "P18, +3v3",
-        "P19, I2C - SCL",
-        "P20, I2C - SDA",
-        "GND", "GND", "+3v3", "GND"
+    interface PinTitle {
+        title: string,
+        ariaLabel: string
+    }
+    // title is currently unused.
+    const pinTitles: PinTitle[] = [
+        { title: "P0, ANALOG IN", ariaLabel: pxsim.localization.lf("Pin 0")},
+        { title: "P1, ANALOG IN", ariaLabel: pxsim.localization.lf("Pin 1")},
+        { title: "P2, ANALOG IN", ariaLabel: pxsim.localization.lf("Pin 2")},
+        { title: "P3, ANALOG IN, LED Col 1", ariaLabel: pxsim.localization.lf("Pin 3")},
+        { title: "P4, ANALOG IN, LED Col 2", ariaLabel: pxsim.localization.lf("Pin 4")},
+        { title: "P5, BUTTON A", ariaLabel: pxsim.localization.lf("Pin 5")},
+        { title: "P6, LED Col 9", ariaLabel: pxsim.localization.lf("Pin 6")},
+        { title: "P7, LED Col 8", ariaLabel: pxsim.localization.lf("Pin 7")},
+        { title: "P8", ariaLabel: pxsim.localization.lf("Pin 8")},
+        { title: "P9, LED Col 7", ariaLabel: pxsim.localization.lf("Pin 9")},
+        { title: "P10, ANALOG IN, LED Col 3", ariaLabel: pxsim.localization.lf("Pin 10")},
+        { title: "P11, BUTTON B", ariaLabel: pxsim.localization.lf("Pin 11")},
+        { title: "P12, RESERVED ACCESSIBILITY", ariaLabel: pxsim.localization.lf("Pin 12")},
+        { title: "P13, SPI - SCK", ariaLabel: pxsim.localization.lf("Pin 13")},
+        { title: "P14, SPI - MISO", ariaLabel: pxsim.localization.lf("Pin 14")},
+        { title: "P15, SPI - MOSI", ariaLabel: pxsim.localization.lf("Pin 15")},
+        { title: "P16, SPI - Chip Select", ariaLabel: pxsim.localization.lf("Pin 16")},
+        { title: "P17, +3v3", ariaLabel: pxsim.localization.lf("Pin 3V")},
+        { title: "P18, +3v3", ariaLabel: pxsim.localization.lf("Pin 3V")},
+        { title: "P19, I2C - SCL", ariaLabel: pxsim.localization.lf("Pin 19")},
+        { title: "P20, I2C - SDA", ariaLabel: pxsim.localization.lf("Pin 20")},
+        { title: "GND", ariaLabel: pxsim.localization.lf("Pin GND")},
+        { title: "GND", ariaLabel: pxsim.localization.lf("Pin GND")},
+        { title: "+3v3", ariaLabel: pxsim.localization.lf("Pin 3V")},
+        { title: "GND", ariaLabel: pxsim.localization.lf("Pin GND")},
     ];
     const MB_WIDTH = 500;
     const MB_HEIGHT = 408;
@@ -554,7 +562,7 @@ path.sim-board {
                         this.board.accelerometerState.shake();
                     }
                 );
-                accessibility.setAria(this.shakeButton, "button", "Shake the board");
+                accessibility.setAria(this.shakeButton, "button", pxsim.localization.lf("Shake"));
                 this.shakeText = svg.child(this.g, "text", { x: 420, y: 122, class: "sim-text-small", "aria-hidden": true }) as SVGTextElement;
                 this.shakeText.textContent = "SHAKE";
             }
@@ -602,13 +610,16 @@ path.sim-board {
             if (!pin) return;
             let text = this.pinTexts[index];
             let v = "";
+            let ariaValueNow: number;
             if (pin.mode & PinFlags.Analog) {
                 v = Math.floor(100 - (pin.value || 0) / 1023 * 100) + "%";
                 if (text) text.textContent = (pin.period ? "~" : "") + (pin.value || 0) + "";
+                ariaValueNow = pin.value ?? 0;
             }
             else if (pin.mode & PinFlags.Digital) {
                 v = pin.value > 0 ? "0%" : "100%";
                 if (text) text.textContent = pin.value > 0 ? "1" : "0";
+                ariaValueNow = pin.value > 0 ? 1 : 0;
             }
             else if (pin.mode & PinFlags.Touch) {
                 v = pin.touched ? "0%" : "100%";
@@ -621,11 +632,34 @@ path.sim-board {
 
             if (pin.mode !== PinFlags.Unused) {
                 accessibility.makeFocusable(this.pins[index]);
-                accessibility.setAria(this.pins[index], "slider", this.pins[index].firstChild.textContent);
-                this.pins[index].setAttribute("aria-valuemin", "0");
-                this.pins[index].setAttribute("aria-valuemax", pin.mode & PinFlags.Analog ? "1023" : "100");
-                this.pins[index].setAttribute("aria-orientation", "vertical");
-                this.pins[index].setAttribute("aria-valuenow", text ? text.textContent : v);
+                if (pin.mode & PinFlags.Touch) {
+                    this.pins[index].setAttribute("role", "button");
+                    this.pins[index].ariaLabel = this.pins[index].firstChild.textContent
+                    this.pins[index].removeAttribute("aria-valuemin");
+                    this.pins[index].removeAttribute("aria-valuemax");
+                    this.pins[index].removeAttribute("aria-orientation");
+                    this.pins[index].removeAttribute("aria-valuenow");
+                    this.pins[index].removeAttribute("aria-valuetext");
+                    this.pins[index].removeAttribute("aria-readonly");
+                } else  {
+                    this.pins[index].setAttribute("role", "slider");
+                    this.pins[index].ariaLabel = this.pins[index].firstChild.textContent;
+                    this.pins[index].setAttribute("aria-valuemin", "0");
+                    this.pins[index].setAttribute("aria-valuemax", pin.mode & PinFlags.Analog ? "1023" : "1");
+                    this.pins[index].setAttribute("aria-orientation", "vertical");
+                    this.pins[index].setAttribute("aria-valuenow", ariaValueNow.toString() ?? "");
+                    // Check that the text content isn't just a plain int and only set aria-valuetext if required.
+                    if (text?.textContent && text?.textContent !== parseInt(text?.textContent).toString()) {
+                        this.pins[index].setAttribute("aria-valuetext", text.textContent);
+                    } else {
+                        this.pins[index].removeAttribute("aria-valuetext");
+                    }
+                    if (pin.mode & PinFlags.Input) {
+                        this.pins[index].removeAttribute("aria-readonly");
+                    } else {
+                        this.pins[index].setAttribute("aria-readonly", "true");
+                    }
+                }
             }
         }
 
@@ -666,7 +700,7 @@ path.sim-board {
                     })
 
                 accessibility.makeFocusable(this.thermometer);
-                accessibility.setAria(this.thermometer, "slider", pxsim.localization.lf("Thermometer"));
+                accessibility.setAria(this.thermometer, "slider", pxsim.localization.lf("Temperature"));
                 this.thermometer.setAttribute("aria-valuemin", "-5");
                 this.thermometer.setAttribute("aria-valuemax", "50");
                 this.thermometer.setAttribute("aria-orientation", "vertical");
@@ -827,11 +861,11 @@ path.sim-board {
                 this.antenna.addEventListener('keydown', keyboardEventHandler);
 
                 accessibility.makeFocusable(this.antenna);
-                accessibility.setAria(this.antenna, "slider", "RSSI");
+                accessibility.setAria(this.antenna, "slider", pxsim.localization.lf("Received Signal Strength Indicator"));;
                 this.antenna.setAttribute("aria-valuemin", `${valueMin}`);
                 this.antenna.setAttribute("aria-valuemax", `${valueMax}`);
                 this.antenna.setAttribute("aria-orientation", "horizontal");
-                this.antenna.setAttribute("aria-valuenow", "");
+                this.antenna.setAttribute("aria-valuenow", (this.board.radioState.datagram.rssi ?? -75).toString());
             }
             let now = Date.now();
             if (now - this.lastAntennaFlash > 200) {
@@ -907,7 +941,7 @@ path.sim-board {
                 this.updateTheme();
 
                 accessibility.makeFocusable(this.lightLevelButton);
-                accessibility.setAria(this.lightLevelButton, "slider", "Light level");
+                accessibility.setAria(this.lightLevelButton, "slider", pxsim.localization.lf("Light level"));
                 this.lightLevelButton.setAttribute("aria-valuemin", "0");
                 this.lightLevelButton.setAttribute("aria-valuemax", "255");
                 this.lightLevelButton.setAttribute("aria-orientation", "vertical");
@@ -952,9 +986,10 @@ path.sim-board {
             el.style.perspective = "30em";
 
             // don't display acc data when AB is on, v2 is on or soundLevel is on
+            const soundLevelVisible = this.soundLevel.style.visibility == "visible";
             if (state.buttonPairState.usesButtonAB
                 || this.v2Circle
-                || this.soundLevel) {
+                || soundLevelVisible) {
                 if (this.accTextX) this.accTextX.textContent = "";
                 if (this.accTextY) this.accTextY.textContent = "";
                 if (this.accTextZ) this.accTextZ.textContent = "";
@@ -1169,7 +1204,7 @@ path.sim-board {
             this.pins = pinDrawOrder.reduce((pins, pinName) => {
                 const simPinIndex = pinNames.indexOf(pinName);
                 const newPin = drawList[simPinIndex]();
-                svg.hydrate(newPin, { title: pinTitles[simPinIndex] });
+                svg.hydrate(newPin, { title: pinTitles[simPinIndex].ariaLabel });
                 pins[simPinIndex] = newPin;
                 return pins;
             }, new Array(pinDrawOrder.length));
@@ -1289,8 +1324,7 @@ path.sim-board {
             this.microphoneLed = svg.path(microg, "sim-led sim-mic", "M 352.852 71 C 351.315 71 350.07 72.248 350.07 73.784 V 79.056 C 350.07 80.594 351.316 81.838 352.852 81.838 C 354.387 81.838 355.634 80.593 355.634 79.056 V 73.784 C 355.634 72.248 354.387 71 352.852 71 Z M 346.743 79.981 C 346.743 82.84 348.853 85.062 351.501 85.658 V 87.095 H 348.448 V 89.329 H 357.366 V 87.095 H 354.306 V 85.658 C 356.954 85.064 359.071 82.842 359.071 79.981 H 357.057 C 357.057 82.174 355.168 83.81 352.905 83.81 C 350.64 83.81 348.757 82.173 348.757 79.981 Z");
             svg.fills([this.microphoneLed], this.props.theme.ledOff);
             // ring
-            const microhole = svg.child(this.g, "circle", { cx: 336, cy: 86, r: 3, stroke: "gold", strokeWidth: "1px" })
-            svg.title(microhole, pxsim.localization.lf("microphone (micro:bit v2 needed)"))
+            svg.child(this.g, "circle", { cx: 336, cy: 86, r: 3, stroke: "gold", strokeWidth: "1px" })
 
             this.updateMicrophone();
             this.updateTheme();
@@ -1402,10 +1436,11 @@ path.sim-board {
                         let state = this.board;
                         let pin = state.edgeConnectorState.pins[index];
                         let svgpin = this.pins[index];
-                        if (pin.mode & PinFlags.Input) {
+                        if (pin.mode & PinFlags.Input && !(pin.mode & PinFlags.Touch)) {
                             let cursor = svg.cursorPoint(pt, this.element, ev);
-                            let v = (400 - cursor.y) / 40 * 1023
-                            pin.value = Math.max(0, Math.min(1023, Math.floor(v)));
+                            let maxValue = pin.mode & PinFlags.Analog ? 1023 : 1;
+                            let v = (400 - cursor.y) / 40 * maxValue;
+                            pin.value = Math.max(0, Math.min(maxValue, Math.floor(v)));
                         }
                         this.updatePin(pin, index);
                     },
@@ -1415,10 +1450,11 @@ path.sim-board {
                         let pin = state.edgeConnectorState.pins[index];
                         let svgpin = this.pins[index];
                         U.addClass(svgpin, "touched");
-                        if (pin.mode & PinFlags.Input) {
+                        if (pin.mode & PinFlags.Input && !(pin.mode & PinFlags.Touch)) {
                             let cursor = svg.cursorPoint(pt, this.element, ev);
-                            let v = (400 - cursor.y) / 40 * 1023
-                            pin.value = Math.max(0, Math.min(1023, Math.floor(v)));
+                            let maxValue = pin.mode & PinFlags.Analog ? 1023 : 1;
+                            let v = (400 - cursor.y) / 40 * maxValue;
+                            pin.value = Math.max(0, Math.min(maxValue, Math.floor(v)));
                         }
                         this.updatePin(pin, index);
                     },
@@ -1433,23 +1469,11 @@ path.sim-board {
                     },
                     // keydown
                     (ev: KeyboardEvent) => {
-                        let charCode = (typeof ev.which == "number") ? ev.which : ev.keyCode
-                        let state = this.board;
-                        let pin = state.edgeConnectorState.pins[index];
-
-                        if (charCode === 40 || charCode === 37) { // Down/Left arrow
-                            ev.preventDefault();
-                            pin.value -= 10;
-                            if (pin.value < 0) {
-                                pin.value = 1023;
-                            }
-                            this.updatePin(pin, index);
-                        } else if (charCode === 38 || charCode === 39) { // Up/Right arrow
-                            ev.preventDefault();
-                            pin.value += 10;
-                            if (pin.value > 1023) {
-                                pin.value = 0;
-                            }
+                        const state = this.board;
+                        const pin = state.edgeConnectorState.pins[index];
+                        const value = pinKeyHandler(ev, pin.value, 0, pin.mode & PinFlags.Analog ? 1023 : 1, pin.mode);
+                        if (value !== undefined) {
+                            pin.value = value;
                             this.updatePin(pin, index);
                         }
                     });
@@ -1652,5 +1676,24 @@ path.sim-board {
             }
         }
         return undefined;
+    }
+
+    const pinKeyHandler = (e: KeyboardEvent, currentValue: number, min: number, max: number, pinMode: PinFlags): number | undefined => {
+        const key = e.key;
+        if (isHandledKey(key)) {
+            if (!(pinMode & PinFlags.Input)) {
+                e.preventDefault();
+                accessibility.setLiveContent(pxsim.localization.lf("This pin is read-only"));
+                return undefined;
+            }
+            if (pinMode & PinFlags.Touch) {
+                // The pin is in touch mode and has button markup, not a slider.
+                e.preventDefault();
+                return undefined;
+            }
+        }
+        // The pin value for a digital pin may be higher than 1 depending on how its value was set.
+        const currentValueClamped = Math.min(max, currentValue);
+        return commonKeyHandler(e, currentValueClamped, min, max);
     }
 }
