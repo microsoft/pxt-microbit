@@ -225,31 +225,31 @@ path.sim-board {
     }
     // title is currently unused.
     const pinTitles: PinTitle[] = [
-        { title: "P0, ANALOG IN", ariaLabel: pxsim.localization.lf("Pin 0")},
-        { title: "P1, ANALOG IN", ariaLabel: pxsim.localization.lf("Pin 1")},
-        { title: "P2, ANALOG IN", ariaLabel: pxsim.localization.lf("Pin 2")},
-        { title: "P3, ANALOG IN, LED Col 1", ariaLabel: pxsim.localization.lf("Pin 3")},
-        { title: "P4, ANALOG IN, LED Col 2", ariaLabel: pxsim.localization.lf("Pin 4")},
-        { title: "P5, BUTTON A", ariaLabel: pxsim.localization.lf("Pin 5")},
-        { title: "P6, LED Col 9", ariaLabel: pxsim.localization.lf("Pin 6")},
-        { title: "P7, LED Col 8", ariaLabel: pxsim.localization.lf("Pin 7")},
-        { title: "P8", ariaLabel: pxsim.localization.lf("Pin 8")},
-        { title: "P9, LED Col 7", ariaLabel: pxsim.localization.lf("Pin 9")},
-        { title: "P10, ANALOG IN, LED Col 3", ariaLabel: pxsim.localization.lf("Pin 10")},
-        { title: "P11, BUTTON B", ariaLabel: pxsim.localization.lf("Pin 11")},
-        { title: "P12, RESERVED ACCESSIBILITY", ariaLabel: pxsim.localization.lf("Pin 12")},
-        { title: "P13, SPI - SCK", ariaLabel: pxsim.localization.lf("Pin 13")},
-        { title: "P14, SPI - MISO", ariaLabel: pxsim.localization.lf("Pin 14")},
-        { title: "P15, SPI - MOSI", ariaLabel: pxsim.localization.lf("Pin 15")},
-        { title: "P16, SPI - Chip Select", ariaLabel: pxsim.localization.lf("Pin 16")},
-        { title: "P17, +3v3", ariaLabel: pxsim.localization.lf("Pin 3V")},
-        { title: "P18, +3v3", ariaLabel: pxsim.localization.lf("Pin 3V")},
-        { title: "P19, I2C - SCL", ariaLabel: pxsim.localization.lf("Pin 19")},
-        { title: "P20, I2C - SDA", ariaLabel: pxsim.localization.lf("Pin 20")},
-        { title: "GND", ariaLabel: pxsim.localization.lf("Pin GND")},
-        { title: "GND", ariaLabel: pxsim.localization.lf("Pin GND")},
-        { title: "+3v3", ariaLabel: pxsim.localization.lf("Pin 3V")},
-        { title: "GND", ariaLabel: pxsim.localization.lf("Pin GND")},
+        { title: "P0, ANALOG IN", ariaLabel: pxsim.localization.lf("Pin 0") },
+        { title: "P1, ANALOG IN", ariaLabel: pxsim.localization.lf("Pin 1") },
+        { title: "P2, ANALOG IN", ariaLabel: pxsim.localization.lf("Pin 2") },
+        { title: "P3, ANALOG IN, LED Col 1", ariaLabel: pxsim.localization.lf("Pin 3") },
+        { title: "P4, ANALOG IN, LED Col 2", ariaLabel: pxsim.localization.lf("Pin 4") },
+        { title: "P5, BUTTON A", ariaLabel: pxsim.localization.lf("Pin 5") },
+        { title: "P6, LED Col 9", ariaLabel: pxsim.localization.lf("Pin 6") },
+        { title: "P7, LED Col 8", ariaLabel: pxsim.localization.lf("Pin 7") },
+        { title: "P8", ariaLabel: pxsim.localization.lf("Pin 8") },
+        { title: "P9, LED Col 7", ariaLabel: pxsim.localization.lf("Pin 9") },
+        { title: "P10, ANALOG IN, LED Col 3", ariaLabel: pxsim.localization.lf("Pin 10") },
+        { title: "P11, BUTTON B", ariaLabel: pxsim.localization.lf("Pin 11") },
+        { title: "P12, RESERVED ACCESSIBILITY", ariaLabel: pxsim.localization.lf("Pin 12") },
+        { title: "P13, SPI - SCK", ariaLabel: pxsim.localization.lf("Pin 13") },
+        { title: "P14, SPI - MISO", ariaLabel: pxsim.localization.lf("Pin 14") },
+        { title: "P15, SPI - MOSI", ariaLabel: pxsim.localization.lf("Pin 15") },
+        { title: "P16, SPI - Chip Select", ariaLabel: pxsim.localization.lf("Pin 16") },
+        { title: "P17, +3v3", ariaLabel: pxsim.localization.lf("Pin 3V") },
+        { title: "P18, +3v3", ariaLabel: pxsim.localization.lf("Pin 3V") },
+        { title: "P19, I2C - SCL", ariaLabel: pxsim.localization.lf("Pin 19") },
+        { title: "P20, I2C - SDA", ariaLabel: pxsim.localization.lf("Pin 20") },
+        { title: "GND", ariaLabel: pxsim.localization.lf("Pin GND") },
+        { title: "GND", ariaLabel: pxsim.localization.lf("Pin GND") },
+        { title: "+3v3", ariaLabel: pxsim.localization.lf("Pin 3V") },
+        { title: "GND", ariaLabel: pxsim.localization.lf("Pin GND") },
     ];
     const MB_WIDTH = 500;
     const MB_HEIGHT = 408;
@@ -316,6 +316,12 @@ path.sim-board {
         wireframe?: boolean;
     }
 
+    interface EventBinding {
+        event: string;
+        handler: (ev: Event) => void;
+        element?: Element | Document;
+    }
+
     export class MicrobitBoardSvg implements BoardView {
         public element: SVGSVGElement;
         private liveRegionInitialized = false;
@@ -366,6 +372,7 @@ path.sim-board {
         public board: pxsim.DalBoard;
         private pinNmToCoord: Map<Coord> = {};
         private domHardwareVersion = 1;
+        private bindings: EventBinding[] = [];
         private moveHeadingOnClick = (ev: MouseEvent) => {
             let pt = this.element.createSVGPoint();
             let cur = svg.cursorPoint(pt, this.element, ev);
@@ -431,6 +438,11 @@ path.sim-board {
         }
 
         public removeEventListeners() {
+            for (const binding of this.bindings) {
+                const el = binding.element || document;
+                el.removeEventListener(binding.event, binding.handler);
+            }
+
             document.body.removeEventListener(pointerEvents.down[0], this.moveHeadingOnClick);
         }
 
@@ -641,7 +653,7 @@ path.sim-board {
                     this.pins[index].removeAttribute("aria-valuenow");
                     this.pins[index].removeAttribute("aria-valuetext");
                     this.pins[index].removeAttribute("aria-readonly");
-                } else  {
+                } else {
                     this.pins[index].setAttribute("role", "slider");
                     this.pins[index].ariaLabel = this.pins[index].firstChild.textContent;
                     this.pins[index].setAttribute("aria-valuemin", "0");
@@ -1374,24 +1386,47 @@ path.sim-board {
         }
 
         private attachAccelerometerEvents() {
-            let tiltDecayer: any =  undefined;
-            this.element.addEventListener(pointerEvents.move, (ev: MouseEvent) => {
-                const state = this.board;
-                if (!state.accelerometerState.accelerometer.isActive) return;
+            let tiltDecayer: any = undefined;
+            const state = this.board;
 
-                if (tiltDecayer) {
-                    clearInterval(tiltDecayer);
-                    tiltDecayer = 0;
+            const startTiltDecay = () => {
+                if (!tiltDecayer) {
+                    const doDecay = () => {
+                        let accx = state.accelerometerState.accelerometer.getX(MicroBitCoordinateSystem.RAW);
+                        accx = Math.floor(Math.abs(accx) * 0.85) * (accx > 0 ? 1 : -1);
+                        let accy = state.accelerometerState.accelerometer.getY(MicroBitCoordinateSystem.RAW);
+                        accy = Math.floor(Math.abs(accy) * 0.85) * (accy > 0 ? 1 : -1);
+                        let accz = -Math.sqrt(Math.max(0, 1023 * 1023 - accx * accx - accy * accy));
+                        if (Math.abs(accx) <= 24 && Math.abs(accy) <= 24) {
+                            cancelAnimationFrame(tiltDecayer);
+                            tiltDecayer = 0;
+                            accx = 0;
+                            accy = 0;
+                            accz = -1023;
+                        }
+                        else {
+                            tiltDecayer = requestAnimationFrame(doDecay);
+                        }
+                        state.accelerometerState.accelerometer.update(accx, accy, accz);
+                        this.updateTilt();
+                    }
+                    tiltDecayer = requestAnimationFrame(doDecay)
+                }
+            }
+
+            const handleMove = (xPos: number, yPos: number, boardWidth: number, boardHeight: number) => {
+                if (yPos > boardHeight || xPos < 0 || xPos > boardWidth) {
+                    startTiltDecay();
+                    return;
                 }
 
-                const bbox = this.element.getBoundingClientRect();
+                if (tiltDecayer) {
+                    cancelAnimationFrame(tiltDecayer);
+                    tiltDecayer = undefined;
+                }
 
-                // ev.clientX and ev.clientY are not defined on mobile iOS
-                const xPos = ev.clientX != null ? ev.clientX : ev.pageX;
-                const yPos = ev.clientY != null ? ev.clientY : ev.pageY;
-
-                const ax = (xPos - bbox.width / 2) / (bbox.width / 3);
-                const ay = (yPos - bbox.height / 2) / (bbox.height / 3);
+                const ax = (xPos - boardWidth / 2) / (boardWidth / 3);
+                const ay = (yPos - boardHeight / 2) / (boardHeight / 3);
 
                 const x = - Math.max(- 1023, Math.min(1023, Math.floor(ax * 1023)));
                 const y = - Math.max(- 1023, Math.min(1023, Math.floor(ay * 1023)));
@@ -1400,29 +1435,92 @@ path.sim-board {
 
                 state.accelerometerState.accelerometer.update(x, y, z);
                 this.updateTilt();
+            }
+
+            this.bindEvent(document, pointerEvents.move, (ev: MouseEvent) => {
+                if (!state.accelerometerState.accelerometer.isActive) return;
+
+                const boardElement = this.element as unknown as HTMLElement;
+                const parentSvg = this.findParentElement();
+
+                const xPos = ev.clientX != null ? ev.clientX : ev.pageX;
+                const yPos = ev.clientY != null ? ev.clientY : ev.pageY;
+
+                // The outermost SVG has a transform applied to it to create the tilt
+                // effect. In order to give us a constant bounding box to work with,
+                // we want to calculate the pre-transform bounds of the board element
+                // we can do this by comparing the aspect ratio of the page to the
+                // viewbox of the board SVG, since it should always be maximized within
+                // the page.
+                const pageBounds = document.body.getBoundingClientRect();
+
+                if (parentSvg && parentSvg !== this.element) {
+                    // If we are embedded in another SVG (e.g. the breadboard is present),
+                    // we need to do some extra work to find the bounding box of the board
+                    // element within the parent SVG.
+                    const parentViewBoxWidth = parentSvg.viewBox.baseVal.width;
+                    const parentViewBoxHeight = parentSvg.viewBox.baseVal.height;
+
+                    const aspectRatio = parentViewBoxWidth / parentViewBoxHeight;
+
+                    let parentWidth: number;
+                    let parentHeight: number;
+
+                    if (pageBounds.width / pageBounds.height > aspectRatio) {
+                        parentHeight = pageBounds.height;
+                        parentWidth = parentHeight * aspectRatio;
+                    }
+                    else {
+                        parentWidth = pageBounds.width;
+                        parentHeight = parentWidth / aspectRatio;
+                    }
+
+                    const parentLeft = pageBounds.left + (pageBounds.width - parentWidth) / 2;
+                    const parentTop = pageBounds.top + (pageBounds.height - parentHeight) / 2;
+
+
+                    const boardWidth = parseFloat(boardElement.getAttribute("width")!);
+                    const boardHeight = parseFloat(boardElement.getAttribute("height")!);
+                    const boardLeft = parseFloat(boardElement.getAttribute("x")!);
+                    const boardTop = parseFloat(boardElement.getAttribute("y")!);
+
+                    const boardPixelLeft = parentLeft + (boardLeft / parentViewBoxWidth) * parentWidth;
+                    const boardPixelTop = parentTop + (boardTop / parentViewBoxHeight) * parentHeight;
+
+                    const boardPixelWidth = (boardWidth / parentViewBoxWidth) * parentWidth;
+                    const boardPixelHeight = (boardHeight / parentViewBoxHeight) * parentHeight;
+                    handleMove(xPos - boardPixelLeft, yPos - boardPixelTop, boardPixelWidth, boardPixelHeight);
+                }
+                else {
+                    const boardViewboxWidth = this.element.viewBox.baseVal.width;
+                    const boardViewboxHeight = this.element.viewBox.baseVal.height;
+
+                    const aspectRatio = boardViewboxWidth / boardViewboxHeight;
+
+                    let boardWidth: number;
+                    let boardHeight: number;
+
+                    if (pageBounds.width / pageBounds.height > aspectRatio) {
+                        boardHeight = pageBounds.height;
+                        boardWidth = boardHeight * aspectRatio;
+                    }
+                    else {
+                        boardWidth = pageBounds.width;
+                        boardHeight = boardWidth / aspectRatio;
+                    }
+
+                    const boardLeft = pageBounds.left + (pageBounds.width - boardWidth) / 2;
+                    const boardTop = pageBounds.top + (pageBounds.height - boardHeight) / 2;
+
+                    handleMove(xPos - boardLeft, yPos - boardTop, boardWidth, boardHeight);
+                }
             }, false);
-            this.element.addEventListener(pointerEvents.leave, (ev: MouseEvent) => {
+
+            this.bindEvent(document, pointerEvents.leave, (ev: MouseEvent) => {
                 let state = this.board;
                 if (!state.accelerometerState.accelerometer.isActive) return;
 
-                if (!tiltDecayer) {
-                    tiltDecayer = setInterval(() => {
-                        let accx = state.accelerometerState.accelerometer.getX(MicroBitCoordinateSystem.RAW);
-                        accx = Math.floor(Math.abs(accx) * 0.85) * (accx > 0 ? 1 : -1);
-                        let accy = state.accelerometerState.accelerometer.getY(MicroBitCoordinateSystem.RAW);
-                        accy = Math.floor(Math.abs(accy) * 0.85) * (accy > 0 ? 1 : -1);
-                        let accz = -Math.sqrt(Math.max(0, 1023 * 1023 - accx * accx - accy * accy));
-                        if (Math.abs(accx) <= 24 && Math.abs(accy) <= 24) {
-                            clearInterval(tiltDecayer);
-                            tiltDecayer = 0;
-                            accx = 0;
-                            accy = 0;
-                            accz = -1023;
-                        }
-                        state.accelerometerState.accelerometer.update(accx, accy, accz);
-                        this.updateTilt();
-                    }, 50)
-                }
+                startTiltDecay();
             }, false);
         }
 
@@ -1574,7 +1672,7 @@ path.sim-board {
                     this.updateButtonPairs();
                     this.board.bus.queue(stateButton.id, DAL.MICROBIT_BUTTON_EVT_UP);
                     this.board.bus.queue(stateButton.id, DAL.MICROBIT_BUTTON_EVT_CLICK);
-            });
+                });
         }
 
         private attachAPlusBEvents() {
@@ -1625,12 +1723,17 @@ path.sim-board {
                     this.updateButtonPairs();
                     this.board.bus.queue(bpState.abBtn.id, DAL.MICROBIT_BUTTON_EVT_UP);
                     this.board.bus.queue(bpState.abBtn.id, DAL.MICROBIT_BUTTON_EVT_CLICK);
-            }
+                }
             );
         }
 
         private attachKeyboardEvents() {
             accessibility.postKeyboardEvent();
+        }
+
+        private bindEvent(element: Element | Document, eventName: string, handler: (e: Event) => void, ...rest: any[]) {
+            element.addEventListener(eventName, handler, ...rest);
+            this.bindings.push({ element, event: eventName, handler });
         }
     }
 
@@ -1649,7 +1752,7 @@ path.sim-board {
         if (isHandledKey(key)) {
             e.preventDefault();
         }
-        switch(key) {
+        switch (key) {
             case "ArrowDown":
             case "ArrowLeft": {
                 return Math.max(min, currentValue - 1)
