@@ -33,3 +33,11 @@ text.blocklyText {
     stroke: white;
     stroke-width: 1px;
 }
+
+.blocklyWidgetDiv .blocklyGridPickerScroller.keyboardNavigable:has(:focus-visible) {
+    outline: none;
+
+    .blocklyGridPickerMenu:focus .blocklyGridPickerRow .gridpicker-menuitem.gridpicker-option-focused {
+        outline: 4px solid white;
+    }
+}
