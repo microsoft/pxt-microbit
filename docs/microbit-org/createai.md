@@ -32,7 +32,7 @@ Projects to get learners started quickly with AI and machine learning on the mic
 }, {
   "name": "More about CreateAI",
   "description": "Explore AI on and offscreen with tools, resources and more.",
-  "url": "https://microbit.org/ai/",
+  "url": "https://microbit.org/createai/",
   "imageUrl":"/static/microbit-org/createai/more-about.png",
   "label": " ",
   "labelClass": "black microbit-ribbon large",
