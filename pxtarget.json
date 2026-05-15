@@ -615,6 +615,7 @@
         "timeMachineDiffInterval": 600000,
         "timeMachineSnapshotInterval": 1800000,
         "shareHomepageContent": true,
+        "songEditor": true,
         "blocklyKeyboardControlsByDefault": true
     },
     "queryVariants": {
