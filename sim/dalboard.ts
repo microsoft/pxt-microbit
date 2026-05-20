@@ -36,6 +36,8 @@ namespace pxsim {
         // board hardware version
         hardwareVersion = 1;
 
+        yieldCount = 0
+
         constructor() {
             super()
 
@@ -123,6 +125,14 @@ namespace pxsim {
             this.builtinPartVisuals["microservo"] = (xy: visuals.Coord) => visuals.mkMicroServoPart(xy);
 
             this.samplesState = new samples.SamplesState();
+
+            const computeCount = () => {
+                const cnt = this.energyVariables.ledCountLast100ms = this.getLedCount()
+                if (cnt > 0)
+                    pxsim.control.__log(0,`100ms: led count = ${cnt}\n`)
+                setTimeout(computeCount, 100)
+            }
+            setTimeout(computeCount,100)
         }
 
         ensureHardwareVersion(version: number) {
@@ -132,7 +142,32 @@ namespace pxsim {
             }
         }
 
+        private energyVariables: Variables = {
+            ledCount: 0,
+            ledCountLast100ms: 0
+        }
 
+        setBoardVariable(name: string, value: number) {
+            this.energyVariables[name] = value
+        }
+
+        getBoardVariables() {
+            return this.energyVariables
+        }
+
+
+        getLedCount() {
+            let count = 0
+            const data = this.ledMatrixState.image.data
+            for (let i = 0; i < data.length; ++i)
+                if (data[i]) count++
+            return count
+        }
+        onEveryYield() {
+            this.energyVariables.ledCount = this.getLedCount()
+            pxsim.control.__log(0,`yield: ${this.energyVariables}`)
+        }
+        
         initAsync(msg: SimulatorRunMessage): Promise<void> {
             super.initAsync(msg);
 
