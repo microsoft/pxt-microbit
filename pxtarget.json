@@ -215,6 +215,10 @@
     "runtime": {
         "mathBlocks": true,
         "loopsBlocks": true,
+        "pauseUntilBlock": {
+            "category": "loops",
+            "weight": 25
+        },
         "logicBlocks": true,
         "variablesBlocks": true,
         "textBlocks": true,
