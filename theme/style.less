@@ -72,6 +72,11 @@
     }
 }
 
+/* Prevent project card timestamp from overflowing the card boundary on narrow screens (e.g., iPad portrait) */
+.ui.card.file .meta {
+    overflow: hidden;
+}
+
 #tutorialcard {
     .ui.button.orange.right.attached {
         background-color: @mainMenuTutorialBackground;
