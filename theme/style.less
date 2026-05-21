@@ -72,9 +72,12 @@
     }
 }
 
-/* Prevent project card timestamp from overflowing the card boundary on narrow screens (e.g., iPad portrait) */
-.ui.card.file .meta {
-    overflow: hidden;
+/* Ensure project card timestamp fits within the card on tablet-width screens (e.g., iPad portrait) */
+@media only screen and (max-width: @largestTabletScreen) {
+    .projectsdialog .ui.card.file .meta {
+        font-size: 0.7rem;
+        padding: 0.5rem;
+    }
 }
 
 #tutorialcard {
