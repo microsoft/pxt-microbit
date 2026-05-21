@@ -72,6 +72,14 @@
     }
 }
 
+/* Ensure project card timestamp fits within the card on tablet-width screens (e.g., iPad portrait) */
+@media only screen and (max-width: @largestTabletScreen) {
+    .projectsdialog .ui.card.file .meta {
+        font-size: 0.7rem;
+        padding: 0.5rem;
+    }
+}
+
 #tutorialcard {
     .ui.button.orange.right.attached {
         background-color: @mainMenuTutorialBackground;
