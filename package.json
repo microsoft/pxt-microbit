@@ -48,5 +48,12 @@
         "pxt-common-packages": "13.2.5",
         "pxt-core": "12.3.13"
     },
-    "overrides": {}
+    "overrides": {
+        "@blockly/field-grid-dropdown": {
+            "blockly": "13.0.0-beta.5"
+        },
+        "@blockly/plugin-workspace-search": {
+            "blockly": "13.0.0-beta.5"
+        }
+    }
 }
