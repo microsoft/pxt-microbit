@@ -745,7 +745,7 @@ namespace music {
                 this.currentNote = REST;
             }
             else {
-                this.currentNote = noteNumber % 12;
+                this.currentNote = (noteNumber % 12) + 1;
                 this.currentOctave = Math.idiv((noteNumber - 24), 12);
             }
             this.position += 2;
