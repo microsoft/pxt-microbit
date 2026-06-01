@@ -1096,6 +1096,10 @@ Many extensions are available to work with interface kits, add-on hardware, or o
 ## Utilities
 ```codecard
 [{
+  "name": "My Controller",
+  "url": "/pkg/aorczyk/my-controller",
+  "cardType": "package"
+}, {
   "name": "States",
   "url": "/pkg/hovavo/pxt-states",
   "cardType": "package"

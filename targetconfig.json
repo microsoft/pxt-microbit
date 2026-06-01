@@ -442,6 +442,7 @@
             "jim-no-surname-provided/pxt-tobbieii": { "tags": [ "Robotics" ] },
             "pyocodingcompany-crypto/pyobot-makecode": { "tags": [ "Robotics" ] },
             "kitronikltd/pxt-design-and-automate-accessory-kit": { "tags": [ "Robotics" ] },
+            "aorczyk/my-controller": { "tags": [ "Software" ] },
             "microsoft/pxt-simx-sample": {
                 "simx": {
                     "sha": "7301f5900879b85127482d79bab48f03c25690a8",
