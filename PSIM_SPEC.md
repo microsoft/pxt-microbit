@@ -6,32 +6,33 @@ Micro:bits are meant to move around, inside and outside the classroom. They are 
 
 ## High-level goal
 
-We want to create a new simulator of multiple microbits in a physical environment (PSIM), building off of the PXT framework, which already features a microbit simulator that makes most of the functions of the microbit available to the end user on the left side of the app.  This should help users gain a better understanding of the behavior of their system.
+We want to create a new simulator of multiple microbits in a physical environment (PSIM), building off of the PXT framework (which already features a microbit simulator that makes most of the functions of the microbit available to the end user on the left side of the app).  This should help users gain a better understanding of the behavior of their system.
 
 ## Assumptions
 
-We assume each micro:bit will run the same user program, so micro:bits can be put into different modes by the user using micro:bit buttons (or radio messages) - in the future, one should be able to load different programs into PSIM.
-No micro:bit accessories (for now).
+We assume 
+- each micro:bit will run the same user program, so micro:bits can be put into different modes by the user using micro:bit buttons (or radio messages); in the future, one should be able to load different programs into PSIM.
+- No micro:bit accessories (for now).
 
 ## Launching and basic view
 
 PSIM is launched by a new button in the micro:bit simulator toolbar (simtoolbar.tsx) and takes over the editor (like serialEditor: serial.Editor)
-The physical simulator is populated with a single micro:bit to start, which is running the user's program.  It represents the micro:bits in a plane (2D only). 
+The physical simulator is populated with a single micro:bit to start, which is running the user's program.  It represents the micro:bits in a plane (2D only). Each micro:bit is shown using a small image of micro:bit (shows state of the LED matrix, should reuse the mbit SVG).
 
 ## Micro:bit metadata
 
-Each micro:bit is shown using a small image of micro:bit (shows state of the LED matrix, should reuse the mbit SVG) and has a set of properties, including:
-- Friendly name
+Each simulated micro:bit has a set of properties, including:
+- Friendly name (for referring to it and sending it events)
 - X and Y coordinates in the plane
 - Associated PXT simulator (frame)
 
 ## PSIM features
 
-Toolbar allows you to
+The PSIM toolbar allows you to
 
-- Back out of PSIM, as in the serialeditor
-- Create a new micro:bit, running a new (named) instance of the user's program; per the PXT framework, 
-this sim will have its own iframe, but it should be kept invisible (we need to generalize the sim framework to allow an arbitrary number of sims);
+- back out of PSIM, as in the serialeditor
+- create a new micro:bit, running a new (named) instance of the user's program; 
+per the PXT framework, this sim will have its own iframe
 
 Actions on the canvas:
 
