@@ -24,7 +24,7 @@ The physical simulator is populated with a single micro:bit to start, which is r
 Each simulated micro:bit has a set of properties, including:
 - Friendly name (for referring to it and sending it events)
 - X and Y coordinates in the plane
-- Associated PXT simulator (frame)
+- Associated PXT simulator (iframe)
 
 ## PSIM features
 
@@ -55,10 +55,14 @@ We also want to program how the micro:bits move in space.
 ## Implementation details
 
 - Files to consult
-    - Webapp/src/{app.tsx, sidepanel.tsx}
-    - pxtsim/simdriver.ts
+    - pxt/
+        - webapp/src/{app.tsx, sidepanel.tsx}
+        - pxtsim/simdriver.ts
+    - pxt-common-packages/
+        - lib/radio
+    - pxt-microbit/
 
-- Need to generalize sim framework to allow arbitrary number of micro:bits (not just 2 max, as now)
+- Need to generalize sim framework to allow arbitrary number of micro:bits (not just 2 max, as now) and message to start a new one
 - Need to route PSIM generated events to correct sim
 - PSIM should be added under a feature flag as an experiment (see experiments.ts)
 - The robot sim from Eric Anderson could be a starting point for the 2d physics simulator
