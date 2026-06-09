@@ -62,10 +62,16 @@ We also want to program how the micro:bits move in space.
 - 3. create new PhysicalSimulator (PSIM) class that is an Editor and is launched by a new button in the micro:bit simulator toolbar (simtoolbar.tsx); the button should be disabled once the PhysicalSimulator is live; PSIM should have mapping from friendly names meta data for each simulated micro:bit, which includes the iframe that contains the micro:bit simulator
 - 4. display each microbit using SVG, scaled down - call this the microbit sprite; tag each microbit spriate with its friendly name; allow microbit sprites to be selected and moved around with mouse; on selection of a microbit sprite in the PSIM, bring focus to the corresponding iframe (micro:bit simulator)
 - 5. the PSIM should intercept radio messages sent from the micro:bit simulator iframes and create an animation in the PSIM around the corresponding microbit sprite
+     - this requires quite a bit of new plumbing:
+       - we need to intercept SimulatorBroadcastMessages posted to simdriver by one of the simFrames,
+         identified by srcFrameIndex
+       - instead of passing them down to simFrames, need to pass them up and out to the PSIM, which will then
+         determine which ones to pass back (and who to address them to)
+       - we already have logic for passing message up to parentWindow, but we also pass the same message down
 - 6. We want the PSIM to determine which microbit sprites can "hear" a radio message sent by a microbit, depending on the radio strength of each microbit and the Euclidean distance between microbit sprites in the PSIM; it then will determine which microbit sprites will receive the message and send it to the corresponding simulators
 - 7. Create a test framework that allows us to program against the microbits in the PSIM. This includes APIs for
   - creating a new microbit and naming it (same API as for PSIM toolbar button)
-  - send a CODAL event to the named microbit
+  - send a CODAL event to the named microbit (the EventBus for the particular sim)
   - intercept all microbit outputs (not clear how we do this yet; may need to instrument simulator thunks and send messages out of iframe; could probably use compiler support to do this automagically for everything that has a shim annotation)
 
 ## Implementation details

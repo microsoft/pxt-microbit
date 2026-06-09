@@ -437,7 +437,8 @@
             "debugExtensionCode",
             "bluetoothUartConsole",
             "bluetoothPartialFlashing",
-            "forceEnableAiErrorHelp"
+            "forceEnableAiErrorHelp",
+            "physicalSimualator"
         ],
         "supportedExperiences": [
             "code-eval"
