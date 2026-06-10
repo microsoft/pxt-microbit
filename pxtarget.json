@@ -438,7 +438,7 @@
             "bluetoothUartConsole",
             "bluetoothPartialFlashing",
             "forceEnableAiErrorHelp",
-            "physicalSimualator"
+            "physicalSimulator"
         ],
         "supportedExperiences": [
             "code-eval"
