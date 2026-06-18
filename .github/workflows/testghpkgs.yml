@@ -2,6 +2,11 @@ name: pxt-testghpkgs
 
 on:
   workflow_dispatch:
+    inputs:
+        branch-or-commit:
+          description: Branch or commit to checkout for test
+          required: false
+          default: 'master'
 
 jobs:
   build:
@@ -10,15 +15,14 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [8.x]
-        branch: [stable3.0]
+        node-version: [16.x]
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
         with:
-          ref: ${{ matrix.branch }}
+          ref: ${{ github.event.inputs.branch-or-commit }}
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
       - name: npm install
@@ -28,7 +32,7 @@ jobs:
       - name: pxt buildtarget
         run: pxt buildtarget
       - name: cache build output
-        uses: actions/cache@v1
+        uses: actions/cache@v4
         env:
           cache-name: cache-testghpkgs
         with:
@@ -43,10 +47,10 @@ jobs:
         env:
           PXT_FORCE_GITHUB_PROXY: 1
           PXT_ACCESS_TOKEN: ${{ secrets.PXT_ACCESS_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.TRAVIS_GITHUB_ACCESS_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: upload build log
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         if: ${{ always() }}
         with:
-          name: logs-${{ matrix.branch }}
+          name: logs
           path: temp/ghpkgs/*.txt
