@@ -200,6 +200,7 @@ namespace basic {
     //% weight=50 blockGap=8
     //% blockId=basic_show_arrow
     //% block="show arrow %i=device_arrow"
+    //% direction.label="direction"
     //% parts="ledmatrix"
     //% help=basic/show-arrow
     export function showArrow(direction: number, interval = 600) {

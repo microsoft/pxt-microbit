@@ -44,6 +44,7 @@ namespace game {
      */
     //% weight=60 blockGap=8 help=game/create-sprite
     //% blockId=game_create_sprite block="create sprite at|x: %x|y: %y"
+    //% x.label="x" y.label="y"
     //% parts="ledmatrix"
     export function createSprite(x: number, y: number): LedSprite {
         init();
@@ -66,6 +67,7 @@ namespace game {
      */
     //% weight=10 help=game/add-score
     //% blockId=game_add_score block="change score by|%points" blockGap=8
+    //% points.label="value"
     //% parts="ledmatrix"
     export function addScore(points: number): void {
         setScore(_score + points);
@@ -89,6 +91,7 @@ namespace game {
      */
     //% weight=9 help=game/start-countdown
     //% blockId=game_start_countdown block="start countdown|(ms) %duration" blockGap=8
+    //% ms.label="value"
     //% parts="ledmatrix"
     export function startCountdown(ms: number): void {
         if (checkStart()) {
@@ -153,6 +156,7 @@ namespace game {
      * @param value new score value.
      */
     //% blockId=game_set_score block="set score %points" blockGap=8
+    //% value.label="value"
     //% weight=10 help=game/set-score
     export function setScore(value: number): void {
         _score = Math.max(0, value);
@@ -172,6 +176,7 @@ namespace game {
      */
     //% weight=10 help=game/set-life
     //% blockId=game_set_life block="set life %value" blockGap=8
+    //% value.label="value"
     export function setLife(value: number): void {
         _life = Math.max(0, value);
         if (_life <= 0) {
@@ -185,6 +190,7 @@ namespace game {
      */
     //% weight=10 help=game/add-life
     //% blockId=game_add_life block="add life %lives" blockGap=8
+    //% lives.label="value"
     export function addLife(lives: number): void {
         setLife(_life + lives);
     }
@@ -208,6 +214,7 @@ namespace game {
     //% weight=10 help=game/remove-life
     //% parts="ledmatrix"
     //% blockId=game_remove_life block="remove life %life" blockGap=8
+    //% life.label="value"
     export function removeLife(life: number): void {
         setLife(_life - life);
         if (!_paused && !_backgroundAnimation) {
@@ -360,6 +367,7 @@ namespace game {
          */
         //% weight=50 help=game/move
         //% blockId=game_move_sprite block="%sprite|move by %leds" blockGap=8
+        //% sprite.label="sprite" leds.label="LEDs"
         //% parts="ledmatrix"
         public move(leds: number): void {
             if (this._dir == 0) {
@@ -409,6 +417,7 @@ namespace game {
          */
         //% weight=18 help=game/if-on-edge-bounce
         //% blockId=game_sprite_bounce block="%sprite|if on edge, bounce"
+        //% sprite.label="sprite"
         //% parts="ledmatrix"
         public ifOnEdgeBounce(): void {
             if (this._dir == 0 && this._y == 0) {
@@ -463,6 +472,7 @@ namespace game {
          */
         //% weight=49 help=game/turn
         //% blockId=game_turn_sprite block="%sprite|turn %direction|by (°) %degrees"
+        //% sprite.label="sprite" degrees.label="degrees"
         public turn(direction: Direction, degrees: number) {
             if (direction == Direction.Right)
                 this.setDirection(this._dir + degrees);
@@ -495,6 +505,7 @@ namespace game {
          */
         //% weight=29 help=game/set
         //% blockId=game_sprite_set_property block="%sprite|set %property|to %value" blockGap=8
+        //% sprite.label="sprite" value.label="value"
         public set(property: LedSpriteProperty, value: number) {
             switch (property) {
                 case LedSpriteProperty.X: this.setX(value); break;
@@ -512,6 +523,7 @@ namespace game {
          */
         //% weight=30 help=game/change
         //% blockId=game_sprite_change_xy block="%sprite|change %property|by %value" blockGap=8
+        //% sprite.label="sprite" value.label="value"
         public change(property: LedSpriteProperty, value: number) {
             switch (property) {
                 case LedSpriteProperty.X: this.changeXBy(value); break;
@@ -528,6 +540,7 @@ namespace game {
          */
         //% weight=28 help=game/get
         //% blockId=game_sprite_property block="%sprite|%property"
+        //% sprite.label="sprite"
         public get(property: LedSpriteProperty) {
             switch (property) {
                 case LedSpriteProperty.X: return this.x();
@@ -622,6 +635,7 @@ namespace game {
          */
         //% weight=20 help=game/is-touching
         //% blockId=game_sprite_touching_sprite block="is %sprite|touching %other" blockGap=8
+        //% sprite.label="sprite" other.label="other sprite"
         public isTouching(other: LedSprite): boolean {
             return this._enabled && other._enabled && this._x == other._x && this._y == other._y;
         }
@@ -632,6 +646,7 @@ namespace game {
          */
         //% weight=19 help=game/is-touching-edge
         //% blockId=game_sprite_touching_edge block="is %sprite|touching edge" blockGap=8
+        //% sprite.label="sprite"
         public isTouchingEdge(): boolean {
             return this._enabled && (this._x == 0 || this._x == 4 || this._y == 0 || this._y == 4);
         }
@@ -697,6 +712,7 @@ namespace game {
          */
         //% weight=59 blockGap=8 help=game/delete
         //% blockId="game_delete_sprite" block="delete %this(sprite)"
+        //% this.label="sprite"
         public delete(): void {
             this._enabled = false;
             if (_sprites.removeElement(this))
@@ -708,6 +724,7 @@ namespace game {
          */
         //% weight=58 help=game/is-deleted
         //% blockId="game_sprite_is_deleted" block="is %sprite|deleted"
+        //% sprite.label="sprite"
         public isDeleted(): boolean {
             return !this._enabled;
         }

@@ -98,6 +98,7 @@ namespace pins {
      */
     //% help=pins/map weight=23
     //% blockId=pin_map block="map %value|from low %fromLow|from high %fromHigh|to low %toLow|to high %toHigh"
+    //% value.label="value" fromLow.label="from low" fromHigh.label="from high" toLow.label="to low" toHigh.label="to high"
     export function map(value: number, fromLow: number, fromHigh: number, toLow: number, toHigh: number): number {
         return ((value - fromLow) * (toHigh - toLow)) / (fromHigh - fromLow) + toLow;
     }
@@ -107,6 +108,7 @@ namespace pins {
      */
     //% help=pins/i2c-read-number blockGap=8 advanced=true
     //% blockId=pins_i2c_readnumber block="i2c read number|at address %address|of format %format|repeated %repeat" weight=7
+    //% address.label="address" repeated.label="repeated"
     //% group="I2C"
     //% weight=45
     export function i2cReadNumber(address: number, format: NumberFormat, repeated?: boolean): number {
@@ -119,6 +121,7 @@ namespace pins {
      */
     //% help=pins/i2c-write-number blockGap=8 advanced=true
     //% blockId=i2c_writenumber block="i2c write number|at address %address|with value %value|of format %format|repeated %repeat" weight=6
+    //% address.label="address" value.label="value" repeated.label="repeated"
     //% group="I2C"
     //% weight=44
     export function i2cWriteNumber(address: number, value: number, format: NumberFormat, repeated?: boolean): void {

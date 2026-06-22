@@ -95,6 +95,7 @@ namespace music {
      */
     //% blockId="music_playable_play"
     //% block="play $toPlay $playbackMode"
+    //% toPlay.label="sound"
     //% toPlay.shadow=music_string_playable
     //% group="Melody"
     //% help="music/play"
@@ -105,6 +106,7 @@ namespace music {
 
     //% blockId="music_playable_play_default_bkg"
     //% block="play $toPlay $playbackMode"
+    //% toPlay.label="sound"
     //% toPlay.shadow=music_string_playable
     //% playbackMode.defl=music.PlaybackMode.InBackground
     //% group="Melody"
@@ -121,6 +123,7 @@ namespace music {
      */
     //% blockId="music_string_playable"
     //% block="melody $melody at tempo $bpm|(bpm)"
+    //% melody.label="melody" bpm.label="tempo"
     //% weight=85 blockGap=8
     //% help=music/string-playable
     //% group="Melody"
@@ -141,6 +144,7 @@ namespace music {
      */
     //% blockId="music_tone_playable"
     //% block="tone $note for $duration"
+    //% note.label="note" duration.label="duration"
     //% toolboxParent=music_playable_play
     //% toolboxParentArgument=toPlay
     //% group="Tone"

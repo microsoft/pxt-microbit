@@ -58,6 +58,7 @@ namespace serial {
      */
     //% help=serial/read-until
     //% blockId=serial_read_until block="serial|read until %delimiter=serial_delimiter_conv"
+    //% delimiter.label="delimiter"
     //% weight=19
     String readUntil(String delimiter) {
       return PSTR(uBit.serial.readUntil(MSTR(delimiter)));
@@ -81,6 +82,7 @@ namespace serial {
     */
     //% help=serial/on-data-received
     //% weight=18 blockId=serial_on_data_received block="serial|on data received %delimiters=serial_delimiter_conv"
+    //% delimiters.label="delimiter"
     void onDataReceived(String delimiters, Action body) {
       uBit.serial.eventOn(MSTR(delimiters));
       registerWithDal(MICROBIT_ID_SERIAL, MICROBIT_SERIAL_EVT_DELIM_MATCH, body);
@@ -94,6 +96,7 @@ namespace serial {
     //% help=serial/write-string
     //% weight=87 blockGap=8
     //% blockId=serial_writestring block="serial|write string %text"
+    //% text.label="value"
     //% text.shadowOptions.toString=true
     void writeString(String text) {
       if (!text) return;
@@ -105,6 +108,7 @@ namespace serial {
     * Send a buffer through serial connection
     */
     //% blockId=serial_writebuffer block="serial|write buffer %buffer=serial_readbuffer"
+    //% buffer.label="value"
     //% help=serial/write-buffer advanced=true weight=6
     void writeBuffer(Buffer buffer) {
       if (!buffer) return;
@@ -118,6 +122,7 @@ namespace serial {
     * @param length default buffer length
     */
     //% blockId=serial_readbuffer block="serial|read buffer %length"
+    //% length.label="value"
     //% help=serial/read-buffer advanced=true weight=5
     Buffer readBuffer(int length) {
       auto mode = SYNC_SLEEP;
@@ -240,6 +245,7 @@ namespace serial {
     */
     //% help=serial/set-rx-buffer-size
     //% blockId=serialSetRxBufferSize block="serial set rx buffer size to $size"
+    //% size.label="value"
     //% advanced=true
     void setRxBufferSize(uint8_t size) {
       uBit.serial.setRxBufferSize(size);
@@ -251,6 +257,7 @@ namespace serial {
     */
     //% help=serial/set-tx-buffer-size
     //% blockId=serialSetTxBufferSize block="serial set tx buffer size to $size"
+    //% size.label="value"
     //% advanced=true
     void setTxBufferSize(uint8_t size) {
       uBit.serial.setTxBufferSize(size);

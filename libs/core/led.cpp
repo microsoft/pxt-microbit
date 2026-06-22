@@ -20,6 +20,7 @@ namespace led {
      */
     //% help=led/plot weight=78
     //% blockId=device_plot block="plot|x %x|y %y" blockGap=8
+    //% x.label="x" y.label="y"
     //% parts="ledmatrix"
     //% x.min=0 x.max=4 y.min=0 y.max=4
     //% x.fieldOptions.precision=1 y.fieldOptions.precision=1
@@ -35,6 +36,7 @@ namespace led {
      */
     //% help=led/plot-brightness weight=78
     //% blockId=device_plot_brightness block="plot|x %x|y %y|brightness %brightness" blockGap=8
+    //% x.label="x" y.label="y" brightness.label="brightness"
     //% parts="ledmatrix"
     //% x.min=0 x.max=4 y.min=0 y.max=4 brightness.min=0 brightness.max=255
     //% x.fieldOptions.precision=1 y.fieldOptions.precision=1
@@ -54,6 +56,7 @@ namespace led {
      */
     //% help=led/unplot weight=77
     //% blockId=device_unplot block="unplot|x %x|y %y" blockGap=8
+    //% x.label="x" y.label="y"
     //% parts="ledmatrix"
     //% x.min=0 x.max=4 y.min=0 y.max=4
     //% x.fieldOptions.precision=1 y.fieldOptions.precision=1
@@ -68,6 +71,7 @@ namespace led {
      */
     //% help=led/point-brightness weight=76
     //% blockId=device_point_brightness block="point|x %x|y %y brightness"
+    //% x.label="x" y.label="y"
     //% parts="ledmatrix"
     //% x.min=0 x.max=4 y.min=0 y.max=4
     //% x.fieldOptions.precision=1 y.fieldOptions.precision=1
@@ -93,6 +97,7 @@ namespace led {
      */
     //% help=led/set-brightness weight=59
     //% blockId=device_set_brightness block="set brightness %value"
+    //% value.label="value"
     //% parts="ledmatrix"
     //% advanced=true
     //% value.min=0 value.max=255
@@ -134,6 +139,7 @@ namespace led {
     * Turns on or off the display
     */
     //% help=led/enable blockId=device_led_enable block="led enable %on"
+    //% on.label="value"
     //% advanced=true parts="ledmatrix"
     void enable(bool on) {
         if (on) uBit.display.enable();

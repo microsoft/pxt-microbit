@@ -61,6 +61,7 @@ namespace datalogger {
      * @returns A new value that can be stored in flash storage using log data
      */
     //% block="column $column value $value"
+    //% column.label="column" value.label="value"
     //% value.shadow=math_number
     //% column.shadow=datalogger_columnfield
     //% blockId=dataloggercreatecolumnvalue
@@ -85,6 +86,7 @@ namespace datalogger {
      * @param data Array of data to be logged to flash storage
      */
     //% block="log data array $data"
+    //% data.label="value"
     //% blockId=dataloggerlogdata
     //% data.shadow=lists_create_with
     //% data.defl=dataloggercreatecolumnvalue
@@ -120,6 +122,7 @@ namespace datalogger {
      * @param data10 [optional] tenth column and value to be logged
      */
     //% block="log data $data1||$data2 $data3 $data4 $data5 $data6 $data7 $data8 $data9 $data10"
+    //% data1.label="data 1" data2.label="data 2" data3.label="data 3" data4.label="data 4" data5.label="data 5" data6.label="data 6" data7.label="data 7" data8.label="data 8" data9.label="data 9" data10.label="data 10"
     //% blockId=dataloggerlog
     //% data1.shadow=dataloggercreatecolumnvalue
     //% data2.shadow=dataloggercreatecolumnvalue
@@ -168,6 +171,7 @@ namespace datalogger {
      * @param cols Array of the columns that will be logged.
      */
     //% block="set columns $cols"
+    //% cols.label="value"
     //% blockId=dataloggersetcolumns
     //% data.shadow=list_create_with
     //% data.defl=datalogger_columnfield
@@ -195,6 +199,7 @@ namespace datalogger {
      * @param col10 Title for tenth column to be added
      */
     //% block="set columns $col1||$col2 $col3 $col4 $col5 $col6 $col7 $col8 $col9 $col10"
+    //% col1.label="column 1" col2.label="column 2" col3.label="column 3" col4.label="column 4" col5.label="column 5" col6.label="column 6" col7.label="column 7" col8.label="column 8" col9.label="column 9" col10.label="column 10"
     //% blockId=dataloggersetcolumntitles
     //% inlineInputMode="variable"
     //% inlineInputModeLimit=1
@@ -276,6 +281,7 @@ namespace datalogger {
      * @param on if true, data that is logged will be mirrored to serial
      */
     //% block="mirror data to serial $on"
+    //% on.label="value"
     //% blockId=dataloggertogglemirrortoserial
     //% on.shadow=toggleOnOff
     //% on.defl=false
