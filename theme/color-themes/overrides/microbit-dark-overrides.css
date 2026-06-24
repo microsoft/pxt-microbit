@@ -1,4 +1,9 @@
 
+
+#simulator .editor-sidebar .filemenu {
+    --pxt-focus-border: yellow;
+}
+
 #langmodal #availablelocales .langoption .header {
     /* Better contrast than default, which is purple */
     color: var(--pxt-neutral-foreground1);
@@ -52,7 +57,7 @@
     background: var(--pxt-target-background2);
 }
 
-/* 
+/*
  * Inverted image colors
  */
 .barcharticon,
