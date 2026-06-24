@@ -378,7 +378,7 @@
                 "music.setVolume", "music.ringTone",
                 "radio.sendNumber", "radio.sendValue", "radio.sendString",
                 "radio.setGroup", "radio.setTransmitPower",
-                "pins.digitalWritePin", "pins.analogWritePin",
+                "pins.digitalWritePin", "pins.analogWritePin"
             ]
         }
     },
