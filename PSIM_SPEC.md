@@ -30,7 +30,7 @@ Each micro:bit sprite has a set of properties, including:
 The PSIM toolbar allows you to
 
 - back out of PSIM, as in the serialeditor
-- create a new micro:bit sprite and associated simulator, running a new (named) instance of the user's program; 
+- create a new micro:bit sprite and associapted simulator, running a new (named) instance of the user's program; 
   per the PXT framework, each new microbit simulator is hosted in a new iframe in the side panel
 
 Actions on the canvas:
@@ -45,6 +45,36 @@ The PSIM models the radio transmission of packets from micro:bits (which are mes
 in physical space and determines which micro:bits can hear others (based on signal strength). As a bonus, it show animations 
 of microbits sending/receiving radio packets. Also need to add info from physical space into the radio packet (especially signalstrength). 
 
+## Relevant info on radio
+
+### Make the ``radio`` signal of the @boardname@ stronger or weaker.
+
+```sig
+radio.setTransmitPower(7);
+```
+
+The signal can be as weak as `0` and as strong as `7`. Default is ``6``.
+
+The scientific name for the strength of the ``radio`` signal is
+**dBm**, or **decibel-milliwatts**. A signal strength of `0`
+can be measured as -30 dBm, and a strength of `7` can be
+measured as +4 dBm.
+
+If your @boardname@ is sending with a strength of `7`, and you are in
+an open area without many other computers around, the @boardname@ signal
+can reach as far as 70 meters (about 230 feet).
+
+
+### Get the signal strength of the last received packet.
+
+```
+let ss = radio.receivedPacket(RadioPacketProperty.SignalStrength)
+```
+
+### related work
+
+- https://github.com/behbad/Bluetooth-Low-Energy-5-System-Level-Simulator-BLE5
+
 ## Test drivers for PSIM
 
 We want to be able to code against the named microbits to generate the user-level events (using the CODAL events) as well as to 
@@ -57,30 +87,218 @@ We also want to program how the micro:bits move in space.
 
 ## Work plan
 
-- 1. add feature flag for PSIM (see experiments.ts)
-- 2. update pxt/pxtsim framework to allow an arbitrary number of board sims (not just 2 max, as now) and a message to start a new one
-- 3. create new PhysicalSimulator (PSIM) class that is an Editor and is launched by a new button in the micro:bit simulator toolbar (simtoolbar.tsx); the button should be disabled once the PhysicalSimulator is live; PSIM should have mapping from friendly names meta data for each simulated micro:bit, which includes the iframe that contains the micro:bit simulator
-- 4. display each microbit using SVG, scaled down - call this the microbit sprite; tag each microbit spriate with its friendly name; allow microbit sprites to be selected and moved around with mouse; on selection of a microbit sprite in the PSIM, bring focus to the corresponding iframe (micro:bit simulator)
-- 5. the PSIM should intercept radio messages sent from the micro:bit simulator iframes and create an animation in the PSIM around the corresponding microbit sprite
+- PSIM should have mapping from friendly names meta data for each simulated micro:bit, which includes the id of the 
+    iframe that contains the micro:bit simulator
+- display each microbit using image, scaled down, as part of microbit sprite
+    X tag each microbit sprite with its friendly name
+    X allow microbit sprites to be selected and moved around with mouse
+    - on selection of a microbit sprite in the PSIM, bring focus to the corresponding iframe (micro:bit simulator)
+- deal with updates to relevent mbit state
+    - radio transmit strength (maps to circle around microbit, modelling its transmit range)
+    - LED matrix update
+    - color of the microbit
+    - microbit makes a soiund (animation)
+    - radio send message (anumation)
+- the PSIM should intercept radio messages sent from the micro:bit simulator iframes and create an animation 
+     in the PSIM around the corresponding microbit sprite
      - this requires quite a bit of new plumbing:
-       - we need to intercept SimulatorBroadcastMessages posted to simdriver by one of the simFrames,
-         identified by srcFrameIndex
+       - intercept SimulatorBroadcastMessages posted to simdriver by one of the simFrames, identified by srcFrameIndex
        - instead of passing them down to simFrames, need to pass them up and out to the PSIM, which will then
          determine which ones to pass back (and who to address them to)
        - we already have logic for passing message up to parentWindow, but we also pass the same message down
-- 6. We want the PSIM to determine which microbit sprites can "hear" a radio message sent by a microbit, depending on the radio strength of each microbit and the Euclidean distance between microbit sprites in the PSIM; it then will determine which microbit sprites will receive the message and send it to the corresponding simulators
-- 7. Create a test framework that allows us to program against the microbits in the PSIM. This includes APIs for
+- We want the PSIM to determine which microbit sprites can "hear" a radio message sent by a microbit, 
+     depending on the radio transmit strength of each microbit and the Euclidean distance between microbit sprites 
+     in the PSIM; it then will determine which microbit sprites will receive the message and send it to the 
+     corresponding simulators
+- Create a test framework that allows us to program against the microbits in the PSIM. This includes APIs for
   - creating a new microbit and naming it (same API as for PSIM toolbar button)
   - send a CODAL event to the named microbit (the EventBus for the particular sim)
-  - intercept all microbit outputs (not clear how we do this yet; may need to instrument simulator thunks and send messages out of iframe; could probably use compiler support to do this automagically for everything that has a shim annotation)
+  - intercept all microbit outputs (not clear how we do this yet; may need to instrument 
+    simulator thunks and send messages out of iframe; could probably use compiler support 
+    to do this automagically for everything that has a shim annotation)
+- Allow multiple MakeCode programs to be loaded into the PSIM
 
-## Implementation details
 
-- Files to consult
-    - pxt/
-        - webapp/src/{app.tsx, sidepanel.tsx}
-        - pxtsim/simdriver.ts
-    - pxt-common-packages/
-        - lib/radio
-    - pxt-microbit/
+## Helpful plumbing
 
+- for testing, we need to be able to intercept calls from user code to libraries (ala SLIC?)
+- instrumentation can easily be done in JavaScript for the simulator
+
+### Example
+
+We want to capture the number sent to the display via `basic.showNumber(i)`, where
+the function is declared as follows:
+```
+namespace basic {
+  ...
+  export function showNumber(value: number, interval?: number) { ... }
+  ...
+}
+```
+
+This is supported by the simulator as follows:
+```
+namespace pxsim.basic {
+    export function showNumber(x: number, interval: number) { ... }
+}
+```
+So, there are two ways we could proceed
+- instrument the user code (caller instrumentation) by adding support in the compiler
+- instrument the pxsim code (callee instrumentation) by reflection
+
+### output functions
+
+#### The basic ones dealing with the LED screen
+
+```
+basic.showNumber(0)
+basic.showLeds(`
+    # . . . #
+    . # . # .
+    . . # . .
+    . . . . .
+    . . . . .
+    `)
+basic.showIcon(IconNames.Heart)
+basic.showString("Hello!")
+basic.showArrow(ArrowNames.North)
+basic.clearScreen()
+```
+
+#### plotting to the LED screen
+
+```
+led.plot(0, 0)
+led.toggle(0, 0)
+led.unplot(0, 0)
+led.plotBarGraph(0, 0)
+led.plotBrightness(0, 0, 255)
+led.setBrightness(255)
+led.enable(false)
+led.stopAnimation()
+```
+
+#### speaker
+
+```
+music.stopAllSounds()
+music.setBuiltInSpeakerEnabled(false)
+music.setVolume(127)
+music.ringTone(Note.C)
+```
+
+#### radio
+
+```
+radio.sendNumber(0)
+radio.sendValue("name", 0)
+radio.sendString("")
+radio.setGroup(1)
+radio.setTransmitPower(7)
+radio.setTransmitSerialNumber(true)
+radio.setFrequencyBand(0).  /// ?
+```
+
+### pins
+
+```
+pins.digitalWritePin(DigitalPin.P0, 0)
+pins.analogWritePin(AnalogPin.P0, 1023)
+```
+
+
+## instrumening JavaScript
+
+Got it — you want to instrument JavaScript code using reflection.
+In JavaScript, "reflection" generally refers to using the Reflect API and Proxy objects to inspect and intercept operations at runtime. This is useful for instrumentation — e.g., logging, profiling, or modifying behavior without changing the original code directly.
+Below is a complete, runnable example showing how to instrument method calls and property access using reflection.
+
+Example: Instrumenting with Proxy + Reflect
+Javascript// Instrumentation function that wraps an object
+```
+/**
+ * Wraps all functions in a namespace with instrumentation logic.
+ * @param {object} namespace - The object containing functions to instrument.
+ * @param {function} logger - Optional logger function (default: console.log).
+ * @returns {object} - A new namespace with instrumented functions.
+ */
+function instrumentNamespace(namespace, logger = console.log) {
+    if (typeof namespace !== 'object' || namespace === null) {
+        throw new TypeError('Namespace must be a non-null object');
+    }
+
+    // Create a proxy to intercept function calls
+    return new Proxy(namespace, {
+        get(target, prop, receiver) {
+            const value = Reflect.get(target, prop, receiver);
+
+            // If it's a function, wrap it
+            if (typeof value === 'function') {
+                return function (...args) {
+                    const start = performance.now();
+                    logger(`[CALL] ${String(prop)}(${args.map(a => JSON.stringify(a)).join(', ')})`);
+                    try {
+                        const result = value.apply(this, args);
+                        if (result instanceof Promise) {
+                            // Handle async functions
+                            return result.finally(() => {
+                                const end = performance.now();
+                                logger(`[DONE] ${String(prop)} took ${(end - start).toFixed(2)} ms`);
+                            });
+                        } else {
+                            const end = performance.now();
+                            logger(`[DONE] ${String(prop)} took ${(end - start).toFixed(2)} ms`);
+                            return result;
+                        }
+                    } catch (err) {
+                        logger(`[ERROR] ${String(prop)} threw:`, err);
+                        throw err;
+                    }
+                };
+            }
+
+            // Otherwise, return the value as-is
+            return value;
+        }
+    });
+}
+
+// Example namespace
+const mathUtils = {
+    add(a, b) { return a + b; },
+    multiply(a, b) { return a * b; },
+    async slowAdd(a, b) {
+        return new Promise(resolve => setTimeout(() => resolve(a + b), 500));
+    }
+};
+
+// Instrument the namespace
+const instrumentedMath = instrumentNamespace(mathUtils);
+
+// Test calls
+console.log('Result:', instrumentedMath.add(2, 3));
+console.log('Result:', instrumentedMath.multiply(4, 5));
+
+instrumentedMath.slowAdd(10, 20).then(result => {
+    console.log('Async Result:', result);
+});
+```
+
+How This Works
+
+Proxy intercepts operations on the object.
+Reflect is used to forward the intercepted operation to the original target safely.
+We log each intercepted action — this is the instrumentation.
+This approach works without modifying the original object’s code.
+
+
+Benefits of Using Reflection for Instrumentation
+
+Non-invasive: No need to rewrite the original functions.
+Dynamic: Can be applied at runtime to any object.
+Granular control: Intercept only the operations you care about.
+Safe forwarding: Reflect ensures correct default behavior.
+
+
+If you want, I can also show you how to instrument all functions in a module automatically using reflection so you can profile execution times without touching the original source.
+Do you want me to prepare that advanced version?

@@ -367,6 +367,19 @@
                 80,
                 0
             ]
+        },
+        "instrument": {
+            "callees": [
+                "basic.showNumber", "basic.showString", "basic.showLeds(",
+                "basic.showIcon", "basic.showArrow", "basic.clearScreen",
+                "led.plot", "led.toggle", "led.unplot", "led.plotBarGraph",
+                "led.plotBrightness", "led.setBrightness", "led.enable", "led.stopAnimation",
+                "music.stopAllSounds","music.setBuiltInSpeakerEnabled",
+                "music.setVolume", "music.ringTone",
+                "radio.sendNumber", "radio.sendValue", "radio.sendString",
+                "radio.setGroup", "radio.setTransmitPower",
+                "pins.digitalWritePin", "pins.analogWritePin",
+            ]
         }
     },
     "serial": {
