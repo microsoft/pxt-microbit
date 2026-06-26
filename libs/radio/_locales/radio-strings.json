@@ -31,6 +31,7 @@
   "radio.sendNumber|block": "radio send number %value",
   "radio.sendString|block": "radio send string %msg",
   "radio.sendValue|block": "radio send|value %name|= %value",
+  "radio.sendValue|param|name|defl": "name",
   "radio.setFrequencyBand|block": "radio set frequency band %band",
   "radio.setGroup|block": "radio set group %ID",
   "radio.setTransmitPower|block": "radio set transmit power %power",
