@@ -99,13 +99,13 @@ We also want to program how the micro:bits move in space.
     - color of the microbit
     - microbit makes a soiund (animation)
     - radio send message (anumation)
-- the PSIM should intercept radio messages sent from the micro:bit simulator iframes and create an animation 
+X the PSIM should intercept radio messages sent from the micro:bit simulator iframes and create an animation 
      in the PSIM around the corresponding microbit sprite
-     - this requires quite a bit of new plumbing:
-       - intercept SimulatorBroadcastMessages posted to simdriver by one of the simFrames, identified by srcFrameIndex
-       - instead of passing them down to simFrames, need to pass them up and out to the PSIM, which will then
+     X this requires quite a bit of new plumbing:
+       X intercept SimulatorBroadcastMessages posted to simdriver by one of the simFrames, identified by srcFrameIndex
+       X instead of passing them down to simFrames, need to pass them up and out to the PSIM, which will then
          determine which ones to pass back (and who to address them to)
-       - we already have logic for passing message up to parentWindow, but we also pass the same message down
+       X we already have logic for passing message up to parentWindow, but we also pass the same message down
 - We want the PSIM to determine which microbit sprites can "hear" a radio message sent by a microbit, 
      depending on the radio transmit strength of each microbit and the Euclidean distance between microbit sprites 
      in the PSIM; it then will determine which microbit sprites will receive the message and send it to the 
@@ -113,7 +113,7 @@ We also want to program how the micro:bits move in space.
 - Create a test framework that allows us to program against the microbits in the PSIM. This includes APIs for
   - creating a new microbit and naming it (same API as for PSIM toolbar button)
   - send a CODAL event to the named microbit (the EventBus for the particular sim)
-  - intercept all microbit outputs (not clear how we do this yet; may need to instrument 
+  X intercept all microbit outputs (not clear how we do this yet; may need to instrument 
     simulator thunks and send messages out of iframe; could probably use compiler support 
     to do this automagically for everything that has a shim annotation)
 - Allow multiple MakeCode programs to be loaded into the PSIM
@@ -122,7 +122,7 @@ We also want to program how the micro:bits move in space.
 ## Helpful plumbing
 
 - for testing, we need to be able to intercept calls from user code to libraries (ala SLIC?)
-- instrumentation can easily be done in JavaScript for the simulator
+X instrumentation can easily be done in JavaScript for the simulator
 
 ### Example
 
@@ -205,100 +205,3 @@ radio.setFrequencyBand(0).  /// ?
 pins.digitalWritePin(DigitalPin.P0, 0)
 pins.analogWritePin(AnalogPin.P0, 1023)
 ```
-
-
-## instrumening JavaScript
-
-Got it — you want to instrument JavaScript code using reflection.
-In JavaScript, "reflection" generally refers to using the Reflect API and Proxy objects to inspect and intercept operations at runtime. This is useful for instrumentation — e.g., logging, profiling, or modifying behavior without changing the original code directly.
-Below is a complete, runnable example showing how to instrument method calls and property access using reflection.
-
-Example: Instrumenting with Proxy + Reflect
-Javascript// Instrumentation function that wraps an object
-```
-/**
- * Wraps all functions in a namespace with instrumentation logic.
- * @param {object} namespace - The object containing functions to instrument.
- * @param {function} logger - Optional logger function (default: console.log).
- * @returns {object} - A new namespace with instrumented functions.
- */
-function instrumentNamespace(namespace, logger = console.log) {
-    if (typeof namespace !== 'object' || namespace === null) {
-        throw new TypeError('Namespace must be a non-null object');
-    }
-
-    // Create a proxy to intercept function calls
-    return new Proxy(namespace, {
-        get(target, prop, receiver) {
-            const value = Reflect.get(target, prop, receiver);
-
-            // If it's a function, wrap it
-            if (typeof value === 'function') {
-                return function (...args) {
-                    const start = performance.now();
-                    logger(`[CALL] ${String(prop)}(${args.map(a => JSON.stringify(a)).join(', ')})`);
-                    try {
-                        const result = value.apply(this, args);
-                        if (result instanceof Promise) {
-                            // Handle async functions
-                            return result.finally(() => {
-                                const end = performance.now();
-                                logger(`[DONE] ${String(prop)} took ${(end - start).toFixed(2)} ms`);
-                            });
-                        } else {
-                            const end = performance.now();
-                            logger(`[DONE] ${String(prop)} took ${(end - start).toFixed(2)} ms`);
-                            return result;
-                        }
-                    } catch (err) {
-                        logger(`[ERROR] ${String(prop)} threw:`, err);
-                        throw err;
-                    }
-                };
-            }
-
-            // Otherwise, return the value as-is
-            return value;
-        }
-    });
-}
-
-// Example namespace
-const mathUtils = {
-    add(a, b) { return a + b; },
-    multiply(a, b) { return a * b; },
-    async slowAdd(a, b) {
-        return new Promise(resolve => setTimeout(() => resolve(a + b), 500));
-    }
-};
-
-// Instrument the namespace
-const instrumentedMath = instrumentNamespace(mathUtils);
-
-// Test calls
-console.log('Result:', instrumentedMath.add(2, 3));
-console.log('Result:', instrumentedMath.multiply(4, 5));
-
-instrumentedMath.slowAdd(10, 20).then(result => {
-    console.log('Async Result:', result);
-});
-```
-
-How This Works
-
-Proxy intercepts operations on the object.
-Reflect is used to forward the intercepted operation to the original target safely.
-We log each intercepted action — this is the instrumentation.
-This approach works without modifying the original object’s code.
-
-
-Benefits of Using Reflection for Instrumentation
-
-Non-invasive: No need to rewrite the original functions.
-Dynamic: Can be applied at runtime to any object.
-Granular control: Intercept only the operations you care about.
-Safe forwarding: Reflect ensures correct default behavior.
-
-
-If you want, I can also show you how to instrument all functions in a module automatically using reflection so you can profile execution times without touching the original source.
-Do you want me to prepare that advanced version?
