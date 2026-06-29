@@ -346,6 +346,8 @@ path.sim-board {
         private leds: SVGElement[];
         private microphoneLed: SVGElement;
         private systemLed: SVGCircleElement;
+        private title: string | undefined;
+        private titleElement: SVGTextElement;
         private antenna: SVGElement;
         private antennaInitialized = false;
         private rssi: SVGTextElement;
@@ -840,6 +842,11 @@ path.sim-board {
                 svg.animate(this.systemLed, "sim-flash")
             }
         }
+        
+        public setTitle(title: string) {
+            this.title = title;
+            this.buildTitleElement();
+        }
 
         private lastAntennaFlash: number = 0;
         public flashAntenna() {
@@ -1101,6 +1108,7 @@ path.sim-board {
 
             // Order of construction affects tab ordering
             this.buildLightLevelElement();
+            this.buildTitleElement();
             this.buildAntennaElement();
             this.buildHeadElement();
             this.buildThermometerElement();
@@ -1108,6 +1116,14 @@ path.sim-board {
             this.buildShakeElement();
             this.buildButtonElements();
             this.buildPinElements();
+        }
+
+        // build a name element in the upper left corner of the board
+        private buildTitleElement() {
+            if (!this.titleElement) {
+                this.titleElement = svg.child(this.g, "text", { class: "sim-text", x: 10, y: 30 }) as SVGTextElement;
+            }
+            this.titleElement.textContent = this.title || "";
         }
 
         private buildAntennaElement() {
