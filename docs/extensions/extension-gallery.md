@@ -943,6 +943,10 @@ Many extensions are available to work with interface kits, add-on hardware, or o
 
 ```codecard
 [{
+    "name": "Ceibal Ubit",
+    "url": "/pkg/Forward-Education/pxt-ceibal-ubit",
+    "cardType": "package"
+}, {
     "name": "BestModules BMduino",
     "url": "/pkg/BestModules-Libraries/pxt-bmduino",
     "cardType": "package"
