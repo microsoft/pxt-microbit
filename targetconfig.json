@@ -443,8 +443,10 @@
             "pyocodingcompany-crypto/pyobot-makecode": { "tags": [ "Robotics" ] },
             "kitronikltd/pxt-design-and-automate-accessory-kit": { "tags": [ "Robotics" ] },
             "aorczyk/my-controller": { "tags": [ "Software" ] },
+            "forward-education/pxt-fwd-ubit": {},
             "forward-education/pxt-openscied": { "tags": [ "Science" ] },
             "forward-education/pxt-ceibal-ubit": {},
+            "bsiever/pxt-sen66": { "tags": [ "Science" ] },
             "microsoft/pxt-simx-sample": {
                 "simx": {
                     "sha": "7301f5900879b85127482d79bab48f03c25690a8",
