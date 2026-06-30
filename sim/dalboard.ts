@@ -132,6 +132,9 @@ namespace pxsim {
             }
         }
 
+        setTitle(title: string) {
+            this.viewHost.setTitle(title);
+        }
 
         initAsync(msg: SimulatorRunMessage): Promise<void> {
             super.initAsync(msg);
