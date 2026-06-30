@@ -113,12 +113,16 @@ enum BeatFraction {
     //% block=1
     Whole = 1,
     //% block="1/2"
+    //% ariaLabel="one half"
     Half = 2,
     //% block="1/4"
+    //% ariaLabel="one quarter"
     Quarter = 4,
     //% block="1/8"
+    //% ariaLabel="one eighth"
     Eighth = 8,
     //% block="1/16"
+    //% ariaLabel="one sixteenth"
     Sixteenth = 16,
     //% block="2"
     Double = 32,

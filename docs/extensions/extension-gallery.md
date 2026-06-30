@@ -192,6 +192,10 @@ Many extensions are available to work with interface kits, add-on hardware, or o
 
 ```codecard
 [{
+  "name": "SEN66 Air Quality Sensor",
+  "url":"/pkg/bsiever/pxt-sen66",
+  "cardType": "package"
+}, {
   "name": "KY-040 Rotary Encoder Plus",
   "url":"/pkg/steveturbek/pxt-rotary-encoder-KY-040-plus",
   "cardType": "package"
@@ -396,6 +400,10 @@ Many extensions are available to work with interface kits, add-on hardware, or o
 
 ```codecard
 [{
+   "name": "FWD Edu OpenSciEd Kit",
+   "url": "/pkg/Forward-Education/pxt-openscied",
+   "cardType": "package"
+}, {
    "name": "FWD Edu Coding For Good Kit",
    "url": "/pkg/Forward-Education/pxt-coding-for-good",
    "cardType": "package"
@@ -941,6 +949,10 @@ Many extensions are available to work with interface kits, add-on hardware, or o
 [{
     "name": "FWD Edu UBit",
     "url": "/pkg/Forward-Education/pxt-fwd-ubit",
+    "cardType": "package"
+}, {
+    "name": "Ceibal Ubit",
+    "url": "/pkg/Forward-Education/pxt-ceibal-ubit",
     "cardType": "package"
 }, {
     "name": "BestModules BMduino",
