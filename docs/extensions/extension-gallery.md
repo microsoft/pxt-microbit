@@ -947,6 +947,10 @@ Many extensions are available to work with interface kits, add-on hardware, or o
 
 ```codecard
 [{
+    "name": "FWD Edu UBit",
+    "url": "/pkg/Forward-Education/pxt-fwd-ubit",
+    "cardType": "package"
+}, {
     "name": "Ceibal Ubit",
     "url": "/pkg/Forward-Education/pxt-ceibal-ubit",
     "cardType": "package"
