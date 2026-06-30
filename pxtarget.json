@@ -618,6 +618,7 @@
         "timeMachine": true,
         "timeMachineDiffInterval": 600000,
         "timeMachineSnapshotInterval": 1800000,
+        "showProjectDescription": true,
         "shareHomepageContent": true,
         "songEditor": true,
         "blocklyKeyboardControlsByDefault": true
