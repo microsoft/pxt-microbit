@@ -116,7 +116,7 @@ namespace music {
 
     /**
      * Play a melody from the melody editor
-     * @param melody string of up to eight notes [C D E F G A B C5] or rests [-] separated by spaces, which will be played one at a time, ex: "E D G F B A C5 B "
+     * @param melody string, string array, or Buffer of notes [C D E F G A B C5] or rests [-], ex: "E D G F B A C5 B "
      * @param bpm number in beats per minute dictating how long each note will play
      */
     //% blockId="music_string_playable"
@@ -130,7 +130,7 @@ namespace music {
     //% melody.shadow=melody_editor
     //% bpm.min=40 bpm.max=500
     //% bpm.defl=120
-    export function stringPlayable(melody: string, bpm: number): Playable {
+    export function stringPlayable(melody: string | string[] | Buffer, bpm: number): Playable {
         return new StringArrayPlayable(melody, bpm);
     }
 
