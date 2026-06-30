@@ -492,6 +492,7 @@ path.sim-board {
             this.updateTilt();
             this.updateHeading();
             this.updateLightLevel();
+            this.updateTitleElement()
             this.updateTemperature();
             this.updateButtonAB();
             this.updateGestures();
@@ -1121,9 +1122,13 @@ path.sim-board {
         // build a name element in the upper left corner of the board
         private buildTitleElement() {
             if (!this.titleElement) {
-                this.titleElement = svg.child(this.g, "text", { class: "sim-text", x: 10, y: 30 }) as SVGTextElement;
+                this.titleElement = svg.child(this.g, "text", { class: "sim-text", x: 200, y: 30 }) as SVGTextElement;
             }
             this.titleElement.textContent = this.title || "";
+        }
+
+        private updateTitleElement() {
+            this.buildTitleElement();
         }
 
         private buildAntennaElement() {
