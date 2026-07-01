@@ -2,5 +2,6 @@
     "additionalFilePath": "../../node_modules/pxt-common-packages/libs/microphone",
     "dependencies": {
         "core": "file:../core"
-    }
+    },
+    "searchOnly": true
 }
