@@ -10,6 +10,7 @@ namespace led {
      */
     //% help=led/point weight=76
     //% blockId=device_point block="point|x %x|y %y"
+    //% x.label="x" y.label="y"
     //% parts="ledmatrix"
     //% x.min=0 x.max=4 y.min=0 y.max=4
     //% x.fieldOptions.precision=1 y.fieldOptions.precision=1
@@ -36,6 +37,7 @@ namespace led {
      */
     //% help=led/plot-bar-graph weight=20
     //% blockId=device_plot_bar_graph block="plot bar graph of $value up to $high|| serial write $valueToConsole" icon="\uf080" blockExternalInputs=true
+    //% value.label="value" high.label="maximum" valueToConsole.label="serial write"
     //% parts="ledmatrix"
     //% valueToConsole.shadow=toggleOnOff
     //% valueToConsole.defl=true
@@ -89,6 +91,7 @@ namespace led {
      */
     //% help=led/toggle weight=77
     //% blockId=device_led_toggle block="toggle|x %x|y %y" icon="\uf204" blockGap=8
+    //% x.label="x" y.label="y"
     //% parts="ledmatrix"
     //% x.min=0 x.max=4 y.min=0 y.max=4
     //% x.fieldOptions.precision=1 y.fieldOptions.precision=1

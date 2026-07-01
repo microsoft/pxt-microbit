@@ -145,6 +145,7 @@ namespace bluetooth {
     */
     //% help=bluetooth/on-uart-data-received
     //% weight=18 blockId=bluetooth_on_data_received block="bluetooth|on data received %delimiters=serial_delimiter_conv"
+    //% delimiters.label="delimiter"
     void onUartDataReceived(String delimiters, Action body) {
       startUartService();
       uart->eventOn(MSTR(delimiters));
@@ -181,6 +182,7 @@ namespace bluetooth {
     * @param connectable true to keep bluetooth connectable for other services, false otherwise.
     */
     //% blockId=eddystone_advertise_url block="bluetooth advertise url %url|with power %power|connectable %connectable"
+    //% url.label="url" power.label="power" connectable.label="connectable"
     //% parts=bluetooth weight=11 blockGap=8
     //% help=bluetooth/advertise-url blockExternalInputs=1
     //% hidden=1 deprecated=1
@@ -217,6 +219,7 @@ namespace bluetooth {
     */
     //% parts=bluetooth weight=5 help=bluetooth/set-transmit-power advanced=true
     //% blockId=bluetooth_settransmitpower block="bluetooth set transmit power %power"
+    //% power.label="value"
     void setTransmitPower(int power) {
         uBit.bleManager.setTransmitPower(min(MICROBIT_BLE_POWER_LEVELS-1, max(0, power)));
     }
