@@ -200,6 +200,7 @@ namespace music {
      */
     //% help=music/play-tone weight=90
     //% blockId=device_play_note block="play|tone %note=device_note|for %duration=device_beat" blockGap=8
+    //% frequency.label="note" ms.label="duration"
     //% parts="headphone"
     //% useEnumVal=1
     //% group="Tone"
@@ -216,6 +217,7 @@ namespace music {
      */
     //% help=music/ring-tone weight=80
     //% blockId=device_ring block="ring tone (Hz)|%note=device_note" blockGap=8
+    //% frequency.label="note"
     //% parts="headphone"
     //% useEnumVal=1
     //% group="Tone"
@@ -229,6 +231,7 @@ namespace music {
      */
     //% help=music/rest weight=79
     //% blockId=device_rest block="rest for |%duration=device_beat"
+    //% ms.label="value"
     //% parts="headphone"
     //% group="Tone"
     export function rest(ms: number): void {
@@ -295,6 +298,7 @@ namespace music {
      */
     //% help=music/change-tempo-by weight=39
     //% blockId=device_change_tempo block="change tempo by (bpm)|%value" blockGap=8
+    //% bpm.label="value"
     //% group="Tempo"
     //% weight=100
     export function changeTempoBy(bpm: number): void {
@@ -309,6 +313,7 @@ namespace music {
      */
     //% help=music/set-tempo weight=38
     //% blockId=device_set_tempo block="set tempo to (bpm)|%value"
+    //% bpm.label="value"
     //% bpm.min=40 bpm.max=500
     //% group="Tempo"
     //% weight=99
@@ -378,6 +383,7 @@ namespace music {
      */
     //% help=music/begin-melody weight=60 blockGap=16
     //% blockId=device_start_melody block="start melody %melody=device_builtin_melody| repeating %options"
+    //% melodyArray.label="melody"
     //% parts="headphone"
     //% group="Melody Advanced"
     //% deprecated=1
@@ -391,6 +397,7 @@ namespace music {
      * @param tempo number in beats per minute (bpm), dictating how long each note will play for
      */
     //% block="play melody $melody at tempo $tempo|(bpm)" blockId=playMelody
+    //% melody.label="melody" tempo.label="tempo"
     //% weight=85 blockGap=8 help=music/play-melody
     //% melody.shadow="melody_editor"
     //% tempo.min=40 tempo.max=500

@@ -20,6 +20,7 @@ namespace bluetooth {
     */
     //% help=bluetooth/uart-write-string weight=80
     //% blockId=bluetooth_uart_write block="bluetooth uart|write string %data" blockGap=8
+    //% data.label="value"
     //% parts="bluetooth" shim=bluetooth::uartWriteString advanced=true
     export function uartWriteString(data: string): void {
         console.log(data)
@@ -30,6 +31,7 @@ namespace bluetooth {
     */
     //% help=bluetooth/uart-write-line weight=79
     //% blockId=bluetooth_uart_line block="bluetooth uart|write line %data" blockGap=8
+    //% data.label="value"
     //% parts="bluetooth" advanced=true
     export function uartWriteLine(data: string): void {
         uartWriteString(data + serial.NEW_LINE);
@@ -41,6 +43,7 @@ namespace bluetooth {
     //% help=bluetooth/uart-write-number weight=79
     //% weight=89 blockGap=8 advanced=true
     //% blockId=bluetooth_uart_writenumber block="bluetooth uart|write number %value"
+    //% value.label="value"
     export function uartWriteNumber(value: number): void {
         uartWriteString(value.toString());
     }
@@ -53,6 +56,7 @@ namespace bluetooth {
     //% weight=88 weight=78
     //% help=bluetooth/uart-write-value advanced=true
     //% blockId=bluetooth_uart_writevalue block="bluetooth uart|write value %name|= %value"
+    //% name.label="name" value.label="value"
     export function uartWriteValue(name: string, value: number): void {
         uartWriteString((name ? name + ":" : "") + value + NEW_LINE);
     }
@@ -62,6 +66,7 @@ namespace bluetooth {
      */
     //% help=bluetooth/uart-read-until weight=75
     //% blockId=bluetooth_uart_read block="bluetooth uart|read until %del=serial_delimiter_conv"
+    //% del.label="delimiter"
     //% parts="bluetooth" shim=bluetooth::uartReadUntil advanced=true
     export function uartReadUntil(del: string): string {
         // dummy implementation for simulator
@@ -76,6 +81,7 @@ namespace bluetooth {
     * @param connectable true to keep bluetooth connectable for other services, false otherwise.
     */
     //% blockId=eddystone_advertise_uid block="bluetooth advertise UID|namespace (bytes 6-9)%ns|instance (bytes 2-6)%instance|with power %power|connectable %connectable"
+    //% ns.label="namespace" instance.label="instance" power.label="power" connectable.label="connectable"
     //% parts=bluetooth weight=12 blockGap=8
     //% help=bluetooth/advertise-uid blockExternalInputs=1
     //% hidden=1 deprecated=1

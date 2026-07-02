@@ -201,6 +201,7 @@ namespace control {
  */
 //% help=text/convert-to-text weight=1
 //% block="convert $value=math_number to text"
+//% value.label="value"
 //% blockId=variable_to_text blockNamespace="text"
 function convertToText(value: any): string {
     return "" + value;

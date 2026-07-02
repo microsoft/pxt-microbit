@@ -10,6 +10,7 @@ namespace loops {
     //% interval.shadow=longTimePicker
     //% afterOnStart=true help=loops/every-interval
     //% blockId=every_interval block="every $interval ms"
+    //% interval.label="value"
     export function everyInterval(interval: number, a: () => void): void {
         control.runInParallel(() => {
             let start = 0;

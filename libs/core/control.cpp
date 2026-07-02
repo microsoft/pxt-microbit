@@ -258,6 +258,7 @@ namespace control {
     */
     //% help=control/wait-for-event async
     //% blockId=control_wait_for_event block="wait for event|from %src|with value %value"
+    //% src.label="source" value.label="value"
     void waitForEvent(int src, int value) {
         pxt::waitForEvent(src, value);
     }
@@ -283,6 +284,7 @@ namespace control {
     */
     //% help=control/wait-micros weight=29 async
     //% blockId="control_wait_us" block="wait (µs)%micros"
+    //% micros.label="microseconds"
     //% micros.min=0 micros.max=6000
     void waitMicros(int micros) {
         sleep_us(micros);
@@ -295,6 +297,7 @@ namespace control {
      * @param mode optional definition of how the event should be processed after construction (default is CREATE_AND_FIRE).
      */
     //% weight=21 blockGap=12 blockId="control_raise_event" block="raise event|from source %src=control_event_source_id|with value %value=control_event_value_id" blockExternalInputs=1
+    //% src.label="source" value.label="value"
     //% help=control/raise-event
     //% mode.defl=CREATE_AND_FIRE
     void raiseEvent(int src, int value, EventCreationMode mode) {
@@ -305,6 +308,7 @@ namespace control {
      * Registers an event handler.
      */
     //% weight=20 blockGap=8 blockId="control_on_event" block="on event|from %src=control_event_source_id|with value %value=control_event_value_id"
+    //% src.label="source" value.label="value"
     //% help=control/on-event
     //% blockExternalInputs=1
     void onEvent(int src, int value, Action handler, int flags = 0) {
