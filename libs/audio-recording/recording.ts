@@ -186,6 +186,7 @@ namespace record {
      * @param hz The sample frequency, in Hz
      */
     //% block="set sample rate to $hz || for $scope"
+    //% hz.label="sample rate"
     //% blockId="record_setSampleRate"
     //% hz.min=1000 hz.max=22000 hz.defl=11000
     //% expandableArgumentMode="enabled"

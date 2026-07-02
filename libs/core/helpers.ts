@@ -26,6 +26,7 @@ namespace Math {
      */
     //% blockId=math_convert_unit
     //% block="convert $value|from $type"
+    //% value.label="value"
     //% help=math/convert-unit
     //% weight=0
     export function convert(value: number, type: UnitConversion): number {

@@ -87,6 +87,7 @@ void plotImage(Image i, int xOffset = 0) {
  */
 //% help=images/show-image weight=80 blockNamespace=images
 //% blockId=device_show_image_offset block="show image %sprite(myImage)|at offset %offset ||and interval (ms) %interval"
+//% sprite.label="image" xOffset.label="offset" interval.label="interval"
 //% interval.defl=400
 //% blockGap=8 parts="ledmatrix" async
 void showImage(Image sprite, int xOffset, int interval = 400) {
@@ -112,6 +113,7 @@ void plotFrame(Image i, int xOffset) {
 //% help=images/scroll-image weight=79 async blockNamespace=images
 //% blockId=device_scroll_image
 //% block="scroll image %sprite(myImage)|with offset %frameoffset|and interval (ms) %delay"
+//% id.label="image" frameOffset.label="offset" interval.label="interval"
 //% blockGap=8 parts="ledmatrix"
 void scrollImage(Image id, int frameOffset, int interval) {
     MicroBitImage i(id->img);
