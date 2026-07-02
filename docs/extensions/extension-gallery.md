@@ -552,6 +552,10 @@ Many extensions are available to work with interface kits, add-on hardware, or o
 
 ```codecard
 [{
+  "name": "enorasisCore",
+  "url":"/pkg/skinformatics/enorasisCore-makecode",
+  "cardType": "package"
+}, {
   "name": "Kocoafab COCOCAM",
   "url":"/pkg/ekkai/aicococam",
   "cardType": "package"
