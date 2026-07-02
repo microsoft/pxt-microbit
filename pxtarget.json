@@ -200,7 +200,7 @@
                 "codalTarget": {
                     "name": "codal-microbit-v2",
                     "url": "https://github.com/lancaster-university/codal-microbit-v2",
-                    "branch": "v0.3.4",
+                    "branch": "v0.3.5",
                     "type": "git"
                 },
                 "codalBinary": "MICROBIT",
@@ -215,6 +215,10 @@
     "runtime": {
         "mathBlocks": true,
         "loopsBlocks": true,
+        "pauseUntilBlock": {
+            "category": "loops",
+            "weight": 25
+        },
         "logicBlocks": true,
         "variablesBlocks": true,
         "textBlocks": true,
@@ -519,6 +523,7 @@
             "it",
             "ja",
             "ko",
+            "lo",
             "nl",
             "nb",
             "nn-NO",
@@ -612,7 +617,10 @@
         "cloudProfileIcon": "/static/profile/microbit-cloud.png",
         "timeMachine": true,
         "timeMachineDiffInterval": 600000,
-        "timeMachineSnapshotInterval": 1800000
+        "timeMachineSnapshotInterval": 1800000,
+        "shareHomepageContent": true,
+        "songEditor": true,
+        "blocklyKeyboardControlsByDefault": true
     },
     "queryVariants": {
         "hidemenu": {

@@ -26,16 +26,19 @@ Unfortunately, using the serial library requires quite a bit of a setup.
 
 ### ~ hint
 
-**Windows earlier than 10**
+#### Windows earlier than 10
 
 If you are running a Windows version earlier than 10, you must [install a device driver](https://os.mbed.com/docs/latest/tutorials/windows-serial-driver.html) (for the computer to recognize the serial interface of the micro:bit).
 
-## ~
+### ~
+
 Also, if you don't see the serial port as one of your computer's devices, you might need to [update the firmware](/device/firmware) on the @boardname@. Find the device name for the attached serial port in the following instructions for your operating system.
 
-### Windows > Tera Term
+## Windows
 
-* Install the terminal emulator [Tera Term](https://ttssh2.osdn.jp/index.html.en). At the time of this writing, the latest version is 4.88 and can be downloaded [from here](http://en.osdn.jp/frs/redir.php?m=jaist&f=%2Fttssh2%2F63767%2Fteraterm-4.88.exe). Follow the instructions from the installer.
+### Tera Term
+
+* Install the terminal emulator [Tera Term](https://teratermproject.github.io/index-en.html). The the latest release and can be downloaded [from here](https://github.com/TeraTermProject/teraterm/releases). Scroll down to the "Assets" section and download the release package that is appropriate for your computer. For example, if you have an x64 based processor, click on the one that ends in "x64.exe".
 
 Once both the driver and the terminal emulator are installed, plug in the micro:bit and wait until the device is fully setup. Then, open TeraTerm.
 
@@ -47,7 +50,7 @@ You should be good. Feel free to hit `Setup` > `Save Setup` in the menus to eras
 
 Please note that Windows will assign you a different COM port if you plug in another micro:bit. If you're juggling between micro:bits, you'll have to change the COM port every time.
 
-### Windows > Putty
+### Putty
 
 If you prefer another terminal emulator (such as [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/)), here are some instructions.
 

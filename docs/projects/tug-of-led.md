@@ -19,7 +19,7 @@ let rope = 2
 
 ## {Step 2}
 
-Add a ``||basic:forever||`` loop that turns on the LED at the ``||variables:rope||`` position.
+In the ``||basic:forever||`` loop, put in a ``||basic:clear screen||`` and plot an LED at the ``||variables:rope||`` position.
 
 ```blocks
 let rope = 2

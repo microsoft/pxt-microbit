@@ -9,6 +9,7 @@
         "newLine": "LF",
         "sourceMap": false,
         "allowSyntheticDefaultImports": true,
-        "declaration": true
+        "declaration": true,
+        "types": []
     }
 }

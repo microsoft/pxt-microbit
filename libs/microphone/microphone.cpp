@@ -75,6 +75,7 @@ int soundLevel() {
 */
 //% help=input/set-sound-threshold
 //% blockId=input_set_sound_threshold block="set %sound sound threshold to %value"
+//% threshold.label="threshold"
 //% parts="microphone"
 //% threshold.min=0 threshold.max=255 threshold.defl=128
 //% weight=14 blockGap=8

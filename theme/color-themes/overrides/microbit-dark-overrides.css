@@ -1,4 +1,9 @@
 
+
+#simulator .editor-sidebar .filemenu {
+    --pxt-focus-border: yellow;
+}
+
 #langmodal #availablelocales .langoption .header {
     /* Better contrast than default, which is purple */
     color: var(--pxt-neutral-foreground1);
@@ -52,7 +57,7 @@
     background: var(--pxt-target-background2);
 }
 
-/* 
+/*
  * Inverted image colors
  */
 .barcharticon,
@@ -82,4 +87,8 @@ button.common-button.inverted:not(.teaching-bubble-button) {
 button.ui.button.inverted:hover:not(.teaching-bubble-button),
 button.common-button.inverted:hover:not(.teaching-bubble-button) {
     background-color: var(--pxt-neutral-background2-hover) !important;
+}
+
+table.diffview.update .diff-added .ch-added {
+    color: var(--pxt-neutral-background1) !important;
 }

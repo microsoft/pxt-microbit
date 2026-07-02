@@ -70,6 +70,10 @@ Many extensions are available to work with interface kits, add-on hardware, or o
 
 ```codecard
 [{
+    "name": "TM1638",
+    "url": "/pkg/NathanPervin/pxt-tm1638",
+    "cardType": "package"
+}, {
     "name": "Pythom1234 OLED Display SSD1306 128x64",
     "url": "/pkg/Pythom1234/pxt-oled",
     "cardType": "package"
@@ -188,6 +192,14 @@ Many extensions are available to work with interface kits, add-on hardware, or o
 
 ```codecard
 [{
+  "name": "SEN66 Air Quality Sensor",
+  "url":"/pkg/bsiever/pxt-sen66",
+  "cardType": "package"
+}, {
+  "name": "KY-040 Rotary Encoder Plus",
+  "url":"/pkg/steveturbek/pxt-rotary-encoder-KY-040-plus",
+  "cardType": "package"
+}, {
  "name": "MonkMakes Plant Monitor",
   "url":"/pkg/monkmakes/plant-monitor-makecode",
   "cardType": "package"
@@ -388,6 +400,14 @@ Many extensions are available to work with interface kits, add-on hardware, or o
 
 ```codecard
 [{
+   "name": "FWD Edu OpenSciEd Kit",
+   "url": "/pkg/Forward-Education/pxt-openscied",
+   "cardType": "package"
+}, {
+   "name": "FWD Edu Coding For Good Kit",
+   "url": "/pkg/Forward-Education/pxt-coding-for-good",
+   "cardType": "package"
+}, {
    "name": "Smarthon Smart Home IoT Maker Kit",
    "url": "/pkg/SMARTHON/pxt-smarthome",
    "cardType": "package"
@@ -555,12 +575,28 @@ Many extensions are available to work with interface kits, add-on hardware, or o
   "name": "DFRobot HuskyLens",
   "url":"/pkg/DFRobot/pxt-DFRobot_HuskyLens",
   "cardType": "package"
+}, {
+  "name": "DFRobot HuskyLens 2",
+  "url":"/pkg/DFRobot/pxt-DFRobot_HuskyLensV2",
+  "cardType": "package"
 }]
 ```
 ## Robotics
 
 ```codecard
 [{
+  "name": "Kitronik Design & Automate Accessory Kit",
+  "url":"/pkg/KitronikLtd/pxt-design-and-automate-accessory-kit",
+  "cardType": "package"
+}, {
+  "name": "PyoBot",
+  "url":"/pkg/pyocodingcompany-crypto/pyobot-makecode",
+  "cardType": "package"
+}, {
+  "name": "Tobbie-II (Translated)",
+  "url":"/pkg/Jim-no-surname-provided/pxt-tobbieII",
+  "cardType": "package"
+}, {
   "name": "Siyeenove Pybit",
   "url":"/pkg/siyeenove/pxt_pybit",
   "cardType": "package"
@@ -911,6 +947,18 @@ Many extensions are available to work with interface kits, add-on hardware, or o
 
 ```codecard
 [{
+    "name": "FWD Edu UBit",
+    "url": "/pkg/Forward-Education/pxt-fwd-ubit",
+    "cardType": "package"
+}, {
+    "name": "Ceibal Ubit",
+    "url": "/pkg/Forward-Education/pxt-ceibal-ubit",
+    "cardType": "package"
+}, {
+    "name": "BestModules BMduino",
+    "url": "/pkg/BestModules-Libraries/pxt-bmduino",
+    "cardType": "package"
+}, {
     "name": "Backyard Brains Spiker:Bit",
     "url": "/pkg/BackyardBrains/pxt-spikerbit",
     "cardType": "package"
@@ -1064,6 +1112,10 @@ Many extensions are available to work with interface kits, add-on hardware, or o
 ## Utilities
 ```codecard
 [{
+  "name": "My Controller",
+  "url": "/pkg/aorczyk/my-controller",
+  "cardType": "package"
+}, {
   "name": "States",
   "url": "/pkg/hovavo/pxt-states",
   "cardType": "package"

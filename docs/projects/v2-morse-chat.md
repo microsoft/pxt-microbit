@@ -21,10 +21,12 @@ Morse code is an alphabet composed of dots (short signals) and dashes (long sign
 
 hint~
 
+■ From the ``||radio:Radio||`` category, get a ``||radio:radio set group [1]||`` and drop it into your empty ``||basic:on start||`` container. You can leave the group ID at `1` or change it to something different (the radio group ID is like a channel number to talk on).  
 ■ From the ``||input:Input||`` category in the toolbox, drag an ``||input:on logo [pressed]||`` container into to your workspace.  
 ■ From the ``||radio:Radio||`` category, get ``||radio:radio send number [0]||`` and snap it into your empty ``||input:on logo [pressed]||`` container.
 
 ```blocks
+radio.setGroup(1)
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
     radio.sendNumber(0)
 })
@@ -37,6 +39,7 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
 ■ On the greyed-out ``||input(noclick):on logo [pressed]||`` container, click on the **``pressed``** dropdown and set it to ``||input(noclick):long pressed||``.
 
 ```blocks
+radio.setGroup(1)
 // @highlight
 input.onLogoEvent(TouchButtonEvent.LongPressed, function () {
 })
@@ -51,6 +54,7 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
 ■ Set the number to be ``1``.
 
 ```blocks
+radio.setGroup(1)
 input.onLogoEvent(TouchButtonEvent.LongPressed, function () {
     // @highlight
     radio.sendNumber(1)
@@ -236,6 +240,7 @@ Test what you've created. Remember to turn your sound on!
 💡 If your screen is too small, you might not be able to see it.
 
 ```blocks
+radio.setGroup(1)
 radio.onReceivedNumber(function (receivedNumber) {
     if (receivedNumber == 0) {
         basic.showLeds(`
@@ -276,6 +281,7 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
 ■ If you have multiple @boardname@s with sound (they have **shiny gold** logos at the top), download this code and try it out!
 
 ```blocks
+radio.setGroup(1)
 radio.onReceivedNumber(function (receivedNumber) {
     if (receivedNumber == 0) {
         basic.showLeds(`

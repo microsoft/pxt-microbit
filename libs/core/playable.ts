@@ -37,22 +37,33 @@ namespace music {
     }
 
     export class StringArrayPlayable extends Playable {
-        constructor(private notes: string[], private tempo: number) {
+        protected reader: MelodyReader;
+        constructor(notes: string[] | string | Buffer, private tempo: number) {
             super();
+
+            if (typeof notes === "string") {
+                this.reader = new MelodyStringReader(notes, true);
+            }
+            else if (Array.isArray(notes)) {
+                this.reader = new MelodyArrayReader(notes as string[]);
+            }
+            else {
+                this.reader = new MelodyBufferReader(notes as Buffer);
+            }
         }
 
         _play(playbackMode: PlaybackMode) {
-            if(this.tempo) {
+            if (this.tempo) {
                 music.setTempo(this.tempo);
             }
             if (playbackMode == PlaybackMode.InBackground) {
-                startMelodyInternal(this.notes, MelodyOptions.OnceInBackground);
+                _startMelodyInternal(this.reader, MelodyOptions.OnceInBackground);
             }
             else if (playbackMode == PlaybackMode.LoopingInBackground) {
-                startMelodyInternal(this.notes, MelodyOptions.ForeverInBackground);
+                _startMelodyInternal(this.reader, MelodyOptions.ForeverInBackground);
             }
             else {
-                startMelodyInternal(this.notes, MelodyOptions.Once);
+                _startMelodyInternal(this.reader, MelodyOptions.Once);
                 waitForMelodyEnd();
             }
         }
@@ -84,6 +95,7 @@ namespace music {
      */
     //% blockId="music_playable_play"
     //% block="play $toPlay $playbackMode"
+    //% toPlay.label="sound"
     //% toPlay.shadow=music_string_playable
     //% group="Melody"
     //% help="music/play"
@@ -94,6 +106,7 @@ namespace music {
 
     //% blockId="music_playable_play_default_bkg"
     //% block="play $toPlay $playbackMode"
+    //% toPlay.label="sound"
     //% toPlay.shadow=music_string_playable
     //% playbackMode.defl=music.PlaybackMode.InBackground
     //% group="Melody"
@@ -110,6 +123,7 @@ namespace music {
      */
     //% blockId="music_string_playable"
     //% block="melody $melody at tempo $bpm|(bpm)"
+    //% melody.label="melody" bpm.label="tempo"
     //% weight=85 blockGap=8
     //% help=music/string-playable
     //% group="Melody"
@@ -120,7 +134,7 @@ namespace music {
     //% bpm.min=40 bpm.max=500
     //% bpm.defl=120
     export function stringPlayable(melody: string, bpm: number): Playable {
-        return new StringArrayPlayable(music.getMelodyNotes(melody), bpm);
+        return new StringArrayPlayable(melody, bpm);
     }
 
     /**
@@ -130,6 +144,7 @@ namespace music {
      */
     //% blockId="music_tone_playable"
     //% block="tone $note for $duration"
+    //% note.label="note" duration.label="duration"
     //% toolboxParent=music_playable_play
     //% toolboxParentArgument=toPlay
     //% group="Tone"

@@ -20,7 +20,7 @@ let rope = 2
 
 ## {Step 2}
 
-Add a ``||basic:forever||`` loop that turns on the LED at the position set in ``||variables:rope||``.
+Add a ``||basic:forever||`` loop that will ``||basic:clear screen||`` and turn on the LED at the position set in ``||variables:rope||``.
 
 ```spy
 let rope = 2

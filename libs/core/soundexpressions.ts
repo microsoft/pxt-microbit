@@ -23,6 +23,7 @@ class SoundExpression extends music.Playable {
      * Starts to play a sound expression.
      */
     //% block="play sound $this"
+    //% this.label="sound"
     //% weight=80
     //% blockGap=8
     //% help=music/play
@@ -37,6 +38,7 @@ class SoundExpression extends music.Playable {
      * Plays a sound expression until finished
      */
     //% block="play sound $this until done"
+    //% this.label="sound"
     //% weight=81
     //% blockGap=8
     //% help=music/play-until-done
@@ -327,6 +329,7 @@ namespace music {
      */
     //% blockId=soundExpression_playSoundEffect
     //% block="play sound $sound $mode"
+    //% sound.label="sound"
     //% sound.shadow=soundExpression_createSoundEffect
     //% weight=100 help=music/play-sound-effect
     //% blockGap=8
@@ -355,6 +358,7 @@ namespace music {
     //% blockId=soundExpression_createSoundEffect
     //% help=music/create-sound-effect
     //% block="$waveShape|| start frequency $startFrequency end frequency $endFrequency duration $duration start volume $startVolume end volume $endVolume effect $effect interpolation $interpolation"
+    //% startFrequency.label="start frequency" endFrequency.label="end frequency" duration.label="duration" startVolume.label="start volume" endVolume.label="end volume"
     //% waveShape.defl=WaveShape.Sine
     //% waveShape.fieldEditor=soundeffect
     //% startFrequency.defl=5000
@@ -438,6 +442,7 @@ namespace music {
     //% blockId=soundExpression_createSoundExpression
     //% help=music/create-sound-expression
     //% block="$waveShape|| start frequency $startFrequency end frequency $endFrequency duration $duration start volume $startVolume end volume $endVolume effect $effect interpolation $interpolation"
+    //% startFrequency.label="start frequency" endFrequency.label="end frequency" duration.label="duration" startVolume.label="start volume" endVolume.label="end volume"
     //% waveShape.defl=WaveShape.Sine
     //% waveShape.fieldEditor=soundeffect
     //% startFrequency.defl=5000

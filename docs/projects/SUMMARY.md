@@ -149,7 +149,7 @@
   * [AI storytelling friend](https://microbit.org/projects/make-it-code-it/ai-storytelling-friend/)
   * [Simple AI exercise timer](https://microbit.org/projects/make-it-code-it/simple-ai-exercise-timer/)
   * [AI activity timer](https://microbit.org/projects/make-it-code-it/ai-activity-timer/)
-  * [More about CreateAI](https://microbit.org/ai/)
+  * [More about CreateAI](https://microbit.org/createai/)
 * [Courses](/courses)
   * [Intro to CS Online](/courses/csintro)
   * [Intro to CS Classroom](/courses/csintro-educator)

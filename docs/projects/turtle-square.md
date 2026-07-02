@@ -43,7 +43,7 @@ input.onButtonPressed(Button.A, function() {
 
 ## "for" is for repetition
 
-Did you notice the pattern of repeated blocks needed to draw a square? Try using a ``for`` loop to achieve the same effect.
+Did you notice the pattern of repeated blocks needed to draw a square? Try using a ``for`` loop with an `index` limit of **3** to achieve the same effect.
 
 ```blocks
 input.onButtonPressed(Button.A, function() {
@@ -66,6 +66,10 @@ input.onButtonPressed(Button.A, function() {
         turtle.turnRight()
     }
 })
+```
+
+```blockconfig.global
+for(let index = 0; index <= 3; index++) {}
 ```
 
 ```package

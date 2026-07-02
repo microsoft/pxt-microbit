@@ -1,4 +1,4 @@
-# Serial Read String
+# read String
 
 Read the buffered serial data as a string.
 
@@ -23,5 +23,5 @@ basic.forever(function() {
 ## See also
 
 [serial](/device/serial),
-[serial write line](/reference/serial/write-line),
-[serial write value](/reference/serial/write-value)
+[write line](/reference/serial/write-line),
+[write value](/reference/serial/write-value)

@@ -19,6 +19,7 @@
             "scripthost",
             "es2017",
             "ES2018.Promise"
-        ]
+        ],
+        "types": []
     }
 }

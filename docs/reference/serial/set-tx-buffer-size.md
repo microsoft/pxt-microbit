@@ -8,7 +8,7 @@ serial.setTxBufferSize(10)
 
 ## Parameters
 
-* **size**: desired length of the transmission buffer
+* **size**: desired length of the transmission buffer (maximum 254)
 
 ## Example
 

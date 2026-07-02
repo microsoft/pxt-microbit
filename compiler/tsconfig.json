@@ -12,6 +12,7 @@
         "newLine": "LF",
         "sourceMap": false,
         "typeRoots": ["../node_modules/@types"],
+        "types": [],
         "lib": [
             "dom",
             "dom.iterable",

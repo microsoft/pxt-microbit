@@ -9,7 +9,7 @@
                 "tags": [ "Lights and Display" ],
                 "simx": {
                     "sha": "0825d56f78528c57af100a96abdfe2162f59945a",
-                    "devUrl": "http://localhost:3000"
+                    "devUrl": "http://microbit-apps.github.io/display-shield/"
                 }
             },
             "microsoft/pxt-microturtle": {
@@ -434,6 +434,19 @@
             "backyardbrains/pxt-spikerbit": { "tags": [ "Science" ] },
             "siyeenove/pxt_mshield": { "tags": [ "Robotics" ] },
             "siyeenove/pxt_pybit": { "tags": [ "Robotics" ] },
+            "nathanpervin/pxt-tm1638": { "tags": [ "Lights and Display" ] },
+            "bestmodules-libraries/pxt-bmduino": { "tags": [ "Science" ] },
+            "forward-education/pxt-coding-for-good": { "tags": [ "Science" ] },
+            "dfrobot/pxt-dfrobot_huskylensv2": { "tags": [ "Science" ] },
+            "steveturbek/pxt-rotary-encoder-ky-040-plus": { "tags": [ "Science" ] },
+            "jim-no-surname-provided/pxt-tobbieii": { "tags": [ "Robotics" ] },
+            "pyocodingcompany-crypto/pyobot-makecode": { "tags": [ "Robotics" ] },
+            "kitronikltd/pxt-design-and-automate-accessory-kit": { "tags": [ "Robotics" ] },
+            "aorczyk/my-controller": { "tags": [ "Software" ] },
+            "forward-education/pxt-fwd-ubit": {},
+            "forward-education/pxt-openscied": { "tags": [ "Science" ] },
+            "forward-education/pxt-ceibal-ubit": {},
+            "bsiever/pxt-sen66": { "tags": [ "Science" ] },
             "microsoft/pxt-simx-sample": {
                 "simx": {
                     "sha": "7301f5900879b85127482d79bab48f03c25690a8",
@@ -535,6 +548,6 @@
         ]
     },
     "electronManifest": {
-        "latest": "v8.0.14"
+        "latest": "v8.0.19"
     }
 }

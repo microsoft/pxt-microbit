@@ -8,7 +8,7 @@ serial.setRxBufferSize(10)
 
 ## Parameters
 
-* **size**: desired length of the reception buffer
+* **size**: desired length of the reception buffer (maximum 254)
 
 ## Example
 
