@@ -88,3 +88,8 @@ If you don't want to use WebUSB any longer, you will need to unpair your device 
 3. Reload the MakeCode editor page.
 
 ![Unpairing from the browser](/static/download/browser-unpair-image.gif)
+
+## Hex file download tool
+
+To use WebUSB to download hex files to one or multiple micro:bits without going through MakeCode, you can use this [Hex Download Tool](https://microbit.org/tools/webusb-hex-download-tool) from the Micro:bit Foundation.
+
