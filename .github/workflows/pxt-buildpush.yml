@@ -45,7 +45,7 @@ jobs:
           node-version: 22.x
 
       - name: Update npm
-        run: npm install -g npm@latest
+        run: npm install -g npm@11
 
       - name: npm install
         run: |
@@ -79,7 +79,7 @@ jobs:
           node-version: 22.x
 
       - name: Update npm
-        run: npm install -g npm@latest
+        run: npm install -g npm@11
 
       - name: npm install
         run: |
