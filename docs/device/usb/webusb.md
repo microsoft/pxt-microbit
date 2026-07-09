@@ -91,4 +91,4 @@ If you don't want to use WebUSB any longer, you will need to unpair your device 
 
 ## Hex file download tool
 
-Use The [Hex Download Tool](https://microbit.org/tools/webusb-hex-download-tool) from the Micro:bit Foundation to download hex files with WebUSB to one or more micro:bits  without going through MakeCode.
+Use The [Hex Download Tool](https://microbit.org/tools/webusb-hex-download-tool) from the Micro:bit Foundation to download hex files to one or more micro:bits directly with WebUSB (without going through MakeCode).
