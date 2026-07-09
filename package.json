@@ -50,10 +50,10 @@
     },
     "overrides": {
         "@blockly/field-grid-dropdown": {
-            "blockly": "13.1.0"
+            "blockly": "13.1.1"
         },
         "@blockly/plugin-workspace-search": {
-            "blockly": "13.1.0"
+            "blockly": "13.1.1"
         }
     }
 }
