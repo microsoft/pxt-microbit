@@ -654,5 +654,6 @@
             }
         }
     },
-    "uploadDocs": true
+    "uploadDocs": true,
+    "uploadApiStringsBranchRx": "^(master|v\\d+\\.\\d+\\.\\d+)$"
 }
