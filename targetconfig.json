@@ -448,6 +448,7 @@
             "forward-education/pxt-ceibal-ubit": {},
             "bsiever/pxt-sen66": { "tags": [ "Science" ] },
             "skinformatics/enorasiscore-makecode": { "tags": [ "Science" ] },
+            "pasalt/pxt-neopixel-matrix-extension": { "tags": [ "Lights and Display" ] },
             "microsoft/pxt-simx-sample": {
                 "simx": {
                     "sha": "7301f5900879b85127482d79bab48f03c25690a8",
