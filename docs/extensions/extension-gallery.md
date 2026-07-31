@@ -593,6 +593,10 @@ Many extensions are available to work with interface kits, add-on hardware, or o
 
 ```codecard
 [{
+  "name": "Peanut King Controller",
+  "url":"/pkg/peanut-king-solution/pxt-pks-controller",
+  "cardType": "package"
+}, {
   "name": "Kitronik Design & Automate Accessory Kit",
   "url":"/pkg/KitronikLtd/pxt-design-and-automate-accessory-kit",
   "cardType": "package"
