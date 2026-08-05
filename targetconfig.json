@@ -450,6 +450,7 @@
             "skinformatics/enorasiscore-makecode": { "tags": [ "Science" ] },
             "pasalt/pxt-neopixel-matrix-extension": { "tags": [ "Lights and Display" ] },
             "forward-education/pxt-ai-voice": { "tags": [ "Science" ] },
+            "elecfreaks/pxt-pu-robot": { "tags": [ "Robotics" ] },
             "microsoft/pxt-simx-sample": {
                 "simx": {
                     "sha": "7301f5900879b85127482d79bab48f03c25690a8",
