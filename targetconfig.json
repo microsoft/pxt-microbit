@@ -449,6 +449,7 @@
             "bsiever/pxt-sen66": { "tags": [ "Science" ] },
             "skinformatics/enorasiscore-makecode": { "tags": [ "Science" ] },
             "robotgyms/pxt-robotpu": { "tags": [ "Robotics" ] },
+            "pasalt/pxt-neopixel-matrix-extension": { "tags": [ "Lights and Display" ] },
             "microsoft/pxt-simx-sample": {
                 "simx": {
                     "sha": "7301f5900879b85127482d79bab48f03c25690a8",
@@ -550,6 +551,6 @@
         ]
     },
     "electronManifest": {
-        "latest": "v8.0.19"
+        "latest": "v9.0.8"
     }
 }
