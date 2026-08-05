@@ -449,6 +449,7 @@
             "bsiever/pxt-sen66": { "tags": [ "Science" ] },
             "skinformatics/enorasiscore-makecode": { "tags": [ "Science" ] },
             "pasalt/pxt-neopixel-matrix-extension": { "tags": [ "Lights and Display" ] },
+            "forward-education/pxt-ai-voice": { "tags": [ "Science" ] },
             "elecfreaks/pxt-pu-robot": { "tags": [ "Robotics" ] },
             "microsoft/pxt-simx-sample": {
                 "simx": {
