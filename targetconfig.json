@@ -448,6 +448,7 @@
             "forward-education/pxt-ceibal-ubit": {},
             "bsiever/pxt-sen66": { "tags": [ "Science" ] },
             "skinformatics/enorasiscore-makecode": { "tags": [ "Science" ] },
+            "robotgyms/pxt-robotpu": { "tags": [ "Robotics" ] },
             "pasalt/pxt-neopixel-matrix-extension": { "tags": [ "Lights and Display" ] },
             "forward-education/pxt-ai-voice": { "tags": [ "Science" ] },
             "elecfreaks/pxt-pu-robot": { "tags": [ "Robotics" ] },
