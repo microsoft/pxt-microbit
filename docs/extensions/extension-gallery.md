@@ -601,6 +601,10 @@ Many extensions are available to work with interface kits, add-on hardware, or o
 
 ```codecard
 [{
+  "name": "Peanut King Controller",
+  "url":"/pkg/peanut-king-solution/pxt-pks-controller",
+  "cardType": "package"
+}, {
   "name": "RobotGyms Robot PU Pro",
   "url":"/pkg/robotgyms/pxt-robotpu",
   "cardType": "package"

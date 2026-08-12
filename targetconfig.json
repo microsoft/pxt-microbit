@@ -450,6 +450,7 @@
             "skinformatics/enorasiscore-makecode": { "tags": [ "Science" ] },
             "robotgyms/pxt-robotpu": { "tags": [ "Robotics" ] },
             "pasalt/pxt-neopixel-matrix-extension": { "tags": [ "Lights and Display" ] },
+            "peanut-king-solution/pxt-pks-controller": { "tags": [ "Robotics" ] },
             "forward-education/pxt-ai-vision": { "tags": [ "Science" ] },
             "forward-education/pxt-ai-voice": { "tags": [ "Science" ] },
             "elecfreaks/pxt-pu-robot": { "tags": [ "Robotics" ] },
