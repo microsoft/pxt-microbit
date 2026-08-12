@@ -560,6 +560,10 @@ Many extensions are available to work with interface kits, add-on hardware, or o
   "url":"/pkg/Forward-Education/pxt-ai-vision",
   "cardType": "package"
 }, {
+  "name": "FWD Voice AI Kit",
+  "url":"/pkg/Forward-Education/pxt-ai-voice",
+  "cardType": "package"
+}, {
   "name": "enorasisCore",
   "url":"/pkg/skinformatics/enorasisCore-makecode",
   "cardType": "package"
@@ -597,6 +601,10 @@ Many extensions are available to work with interface kits, add-on hardware, or o
 
 ```codecard
 [{
+  "name": "RobotGyms Robot PU Pro",
+  "url":"/pkg/robotgyms/pxt-robotpu",
+  "cardType": "package"
+}, {
   "name": "Elecfreaks PU Robot",
   "url":"/pkg/elecfreaks/pxt-PU-Robot",
   "cardType": "package"
