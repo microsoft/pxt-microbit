@@ -601,6 +601,10 @@ Many extensions are available to work with interface kits, add-on hardware, or o
 
 ```codecard
 [{
+  "name": "Peanut King micro:bit Shield V2",
+  "url":"/pkg/peanut-king-solution/pxt-pks-shield-v2",
+  "cardType": "package"
+}, {
   "name": "Peanut King Controller",
   "url":"/pkg/peanut-king-solution/pxt-pks-controller",
   "cardType": "package"
