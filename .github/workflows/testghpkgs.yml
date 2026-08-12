@@ -14,11 +14,11 @@ jobs:
         branch: [stable3.0]
 
     steps:
-      - uses: actions/checkout@0717577d45739eb3c851188b29f50ed6c0b2194e # v2.8.0
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           ref: ${{ matrix.branch }}
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@f1f314fca9dfce2769ece7d933488f076716723e # v1.4.6
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
           node-version: ${{ matrix.node-version }}
       - name: npm install
@@ -28,7 +28,7 @@ jobs:
       - name: pxt buildtarget
         run: pxt buildtarget
       - name: cache build output
-        uses: actions/cache@f5ce41475b483ad7581884324a6eca9f48f8dcc7 # v1.2.1
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         env:
           cache-name: cache-testghpkgs
         with:
@@ -45,7 +45,7 @@ jobs:
           PXT_ACCESS_TOKEN: ${{ secrets.PXT_ACCESS_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.TRAVIS_GITHUB_ACCESS_TOKEN }}
       - name: upload build log
-        uses: actions/upload-artifact@82c141cc518b40d92cc801eee768e7aafc9c2fa2 # v2.3.1
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         if: ${{ always() }}
         with:
           name: logs-${{ matrix.branch }}
