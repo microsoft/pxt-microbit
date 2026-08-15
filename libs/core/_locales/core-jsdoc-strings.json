@@ -609,7 +609,7 @@
   "music.stopMelody|param|options": "which melody to stop",
   "music.stringPlayable": "Play a melody from the melody editor",
   "music.stringPlayable|param|bpm": "number in beats per minute dictating how long each note will play",
-  "music.stringPlayable|param|melody": "string of up to eight notes [C D E F G A B C5] or rests [-] separated by spaces, which will be played one at a time, ex: \"E D G F B A C5 B \"",
+  "music.stringPlayable|param|melody": "string, string array, or Buffer of notes [C D E F G A B C5] or rests [-], ex: \"E D G F B A C5 B \"",
   "music.tempo": "Returns the tempo in beats per minute. Tempo is the speed (bpm = beats per minute) at which notes play. The larger the tempo value, the faster the notes will play.",
   "music.tonePlayable": "Plays a tone through pin ``P0`` for the given duration.",
   "music.tonePlayable|param|duration": "tone duration in milliseconds (ms)",
