@@ -66,14 +66,42 @@ Role Manager
 
 ## Plan
 
-- add Jacdac experiment option 
-- add switch to top of left-column when JD packet found over WebUSB
-- change the JD sim to have `sim only` mode
-   - no device twins
-   - adds simulators automatically
-   - no UI for adding simulators/blocks/etc.
+X keep Jacdac buses separate for simulator and devices
+  X when in sim, don't accept packets from physical bus
+  - when in devices, don't accept packets from sims
+X add Jacdac experiment option 
+X add switch to top of left-column
+X switch between "sims" and "twins"
+  X need to revisit the logic here - keep the simdriver intact so 
+    as to keep the jacdac sim live, but turn-off/hide ALL the other sims.
+X when JD packet found over WebUSB, enable switch
+- we want to have all the roles declared at once rather than dealing with
+  them one at a time; for now, use a special EndJDClient() method
+X change the JD sim to have `sim only` mode
+   X no device twins
+   X adds simulators automatically
+   X no UI for adding simulators/blocks/etc.
 - capture the JD configuration after each sim execution
 - change the JD sim to have `twin only` mode
    - no simulators
    - `skeleton` twins for roles that have not been bound
    - overflow section for unbound extra modules
+- what to do about the editor when in device mode?
+   - disable with modal instruction
+   - repurpose?
+NO should we attempt to have microbit in device twin mode?
+   - try to support A/B buttons and LED screen?
+   - this would require extra code on the micro:bit to send events
+     and we would only use it for twinning... sigh...
+   - instead, you can console.log and see it?
+
+ALTERNATIVE UI
+   - add "Jacdac Simulator" and "Jacdac Devices" buttons, like with serial
+   - create a "Jacdac Editor" to use full space of toolbox and code canvas
+   - when in jacdac editor in device mode, disable the microbit sim
+
+BUGS
+   - keep order as created by program, - don't change order unless program changes
+   - cache the roles, so when we switch to deviceMode, we have them in hand
+   X jacdac sims don't all get registered
+   ? too many sims are being created (buttons)
