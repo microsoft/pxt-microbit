@@ -436,7 +436,8 @@
         "experiments": [
             "debugExtensionCode",
             "bluetoothUartConsole",
-            "bluetoothPartialFlashing"
+            "bluetoothPartialFlashing",
+            "jacdacUI"
         ],
         "supportedExperiences": [
             "code-eval"
