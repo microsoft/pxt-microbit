@@ -6,7 +6,7 @@ Change a value for a [sprite](/reference/game/create-sprite) property by some am
 game.createSprite(0,0).change(LedSpriteProperty.X, 0);
 ```
 
-The value of a sprite propery is changed by using either a positive or negative number. Giving `1` will increase a property value by `1` and giving a `-1` will decrease it by `1`.
+The value of a sprite property is changed by using either a positive or negative number. Giving `1` will increase a property value by `1` and giving a `-1` will decrease it by `1`.
 
 ## Parameters
 

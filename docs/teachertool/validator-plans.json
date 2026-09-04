@@ -526,7 +526,7 @@
             ]
         },
         {
-            ".desc": "sound level check in if statement wtih two variables set blocks",
+            ".desc": "sound level check in if statement with two variables set blocks",
             "name": "soundlevel_gt_condition",
             "threshold": 1,
             "checks": [

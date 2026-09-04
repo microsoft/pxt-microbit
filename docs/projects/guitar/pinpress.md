@@ -66,7 +66,7 @@ https://youtu.be/PAIU-vHqyGU
 
 **The electric signal traveled from pins, between your hands to `GND` and the @boardname@ detected the electric signal!**
 
-How is the touch dectected? Find out in this video:
+How is the touch detected? Find out in this video:
 
 https://www.youtube.com/watch?v=GEpZrvbsO7o
 

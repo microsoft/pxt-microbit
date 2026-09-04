@@ -23,7 +23,7 @@ logging = false
 
 Let's give Lychee some control over when she wants to start and stop logging data on the @boardname@.
 
-■ From the ``||input:Input||`` category, grab a ``||input:on button [A] pressed||`` container and drag it into your workspace. Then, grab a ``||variables:set [logging] to [0]||`` block from ``||variables:Varables||`` and snap it inside of your ``||input(noclick):on button [A] pressed||`` container.  
+■ From the ``||input:Input||`` category, grab a ``||input:on button [A] pressed||`` container and drag it into your workspace. Then, grab a ``||variables:set [logging] to [0]||`` block from ``||variables:Variables||`` and snap it inside of your ``||input(noclick):on button [A] pressed||`` container.  
 ■ From the ``||logic:Logic||`` category, grab a ``||logic:<not []>||`` argument and snap it in to **replace** the ``0`` argument. Go back to the ``||variables:Variables||`` category, grab a ``||variables:logging||`` variable and snap it in to **replace** the empty ``||logic(noclick):<>||`` in the ``||logic(noclick):not <>||`` statement.
 
 ✋🛑 Take a moment to help Lychee answer the following question: _What is happening every time she presses the A button?_

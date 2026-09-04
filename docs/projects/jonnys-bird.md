@@ -4,7 +4,7 @@ The ``||music:play sound||`` block lets you create and play complex sounds beyon
 
 ## Use acceleration to set frequency
 
-The acceleration in the `X`and `Y` dimensions are used to set the frequencies of the sound. Make two variables named ``||variables:currFreq||`` and ``||variables:lastFreq||``. One variable will hold the value for the current freqency as an input of accleration in the `X` direction. The other will remember the previous frequency value.
+The acceleration in the `X`and `Y` dimensions are used to set the frequencies of the sound. Make two variables named ``||variables:currFreq||`` and ``||variables:lastFreq||``. One variable will hold the value for the current frequency as an input of acceleration in the `X` direction. The other will remember the previous frequency value.
 
 Get a ``||loops:forever||`` block and pull the ``||variables:set currFreq||`` and ``||variables:set lastFreq||`` blocks into it. Change the value for ``||variables:set lastFreq||`` from `0` to ``||variables:currFreq||``.
 

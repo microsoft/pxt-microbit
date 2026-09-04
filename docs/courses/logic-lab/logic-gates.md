@@ -30,7 +30,7 @@ The AND gate has a flat input side and round output side.
 
 ### Exclusive OR (XOR) gate
 
-The exclusive or gate symbol is just like the OR gate but it has an additonal curved line crossing the inputs.
+The exclusive or gate symbol is just like the OR gate but it has an additional curved line crossing the inputs.
 
 ![XOR gate symbol](/static/courses/logic-lab/logic-gates/xor-gate.png)
 
@@ -56,7 +56,7 @@ T| F | T
 T | T | F
 <br/>
 
-There are two conditions where the result column has ``true`` values. The first conditon is when ``A`` is ``false`` and ``B`` is ``true`` which is expressed as ``~A · B``. The second conditon is when ``A`` is ``true`` and ``B`` is ``false`` which is expressed as ``A · ~B``. Our XOR expression is ``true`` when one of these conditions are ``true`` which is written like:
+There are two conditions where the result column has ``true`` values. The first condition is when ``A`` is ``false`` and ``B`` is ``true`` which is expressed as ``~A · B``. The second condition is when ``A`` is ``true`` and ``B`` is ``false`` which is expressed as ``A · ~B``. Our XOR expression is ``true`` when one of these conditions are ``true`` which is written like:
 
 ``A ⊕ B`` = ``(~A · B) + (A · ~B)``
 
@@ -68,7 +68,7 @@ let B = false
 let Q = (!A && B) || (A && !B)
 ```
 
-Coverting the equation to logic gates makes the following diagram. Notice how each gate "connects" the variables together just like the logic blocks in the code above.
+Converting the equation to logic gates makes the following diagram. Notice how each gate "connects" the variables together just like the logic blocks in the code above.
 
 ![Combinatorial XOR first version](/static/courses/logic-lab/logic-gates/combinatorial1-xor.png)
 
@@ -76,7 +76,7 @@ However, if we take the other two unused conditions from the truth table that ma
 
 ``~(A ⊕ B)`` = ``(~A · ~B) + (A · B)``
 
-To get back to ``A ⊕ B`` we have to negate this negative equation. Then, with the help of [De Morgan's Thereom](/courses/logic-lab/expressions#de-morgan-s-thereom), we get a different equation for XOR but it's still logically equivalent to the original one.
+To get back to ``A ⊕ B`` we have to negate this negative equation. Then, with the help of [De Morgan's Theorem](/courses/logic-lab/expressions#de-morgan-s-thereom), we get a different equation for XOR but it's still logically equivalent to the original one.
 
 ``A ⊕ B`` = ``(A + B) · ~(A · B)``
 

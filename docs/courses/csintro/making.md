@@ -1,6 +1,6 @@
 # Making with micro:bit
 
-This lesson introduces the design thinking process as a way to design something that meets someone else's needs. By focusing on building the micro:bit into a pysical object, you'll gain experience in working with a piece of hardware that has a specific size and weight, and that needs to be supported and held securely.
+This lesson introduces the design thinking process as a way to design something that meets someone else's needs. By focusing on building the micro:bit into a physical object, you'll gain experience in working with a piece of hardware that has a specific size and weight, and that needs to be supported and held securely.
 
 ![micro:bit board](/static/courses/csintro/making/microbit-board.png)
 

@@ -28,7 +28,7 @@ input.onButtonPressed(Button.A, function () {
 })
 ```
 
-You know, of course, that the button press event means that the user has acknowleged your greeting. If you shared your program with someone else though, they might not understand why you wanted to add the button press to the program. 
+You know, of course, that the button press event means that the user has acknowledge your greeting. If you shared your program with someone else though, they might not understand why you wanted to add the button press to the program. 
 
 ## Block comments
 

@@ -45,7 +45,7 @@ radio.onReceivedNumber(function (receivedNumber) {
 
 ```
 ## ~
-Notice that moving the @boardname@ the farthest direction in the x direction will be -1023 on the charting beneath the simulator. The second observation will be that the LEDs will be full brightness on the 2nd @boardname@. There is a single LED turned on with the 1st @boardname@. Additionally, the graphs will reflect 0 acceleation for the 1st @boardname@. In this scenario, if you are adjusting the acceleration in the simualator, you are also changing your chart that will be produced.
+Notice that moving the @boardname@ the farthest direction in the x direction will be -1023 on the charting beneath the simulator. The second observation will be that the LEDs will be full brightness on the 2nd @boardname@. There is a single LED turned on with the 1st @boardname@. Additionally, the graphs will reflect 0 acceleration for the 1st @boardname@. In this scenario, if you are adjusting the acceleration in the simulator, you are also changing your chart that will be produced.
 
 ![](/static/mb/acc.png)
 
@@ -53,7 +53,7 @@ Notice that moving the @boardname@ the farthest direction in the x direction wil
 NOTE: The colors of the charts reflect the color of the @boardname@ simulator. In this instance, the @boardname@s are blue and green. So the colors of the line graphs reflect the colors of the @boardname@
 
  ## ~
-After running this simulation several seconds by moving the @boardname@ side to side in the x direction, you are ready to graph or chart the accceleration of the @boardname@.  We want a printout of our acceleration on Excel. We will graph the fluctuating acceleration of the simulation experiment.
+After running this simulation several seconds by moving the @boardname@ side to side in the x direction, you are ready to graph or chart the acceleration of the @boardname@.  We want a printout of our acceleration on Excel. We will graph the fluctuating acceleration of the simulation experiment.
 
 ![](/static/mb/acc2.png)
 

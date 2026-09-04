@@ -184,7 +184,7 @@ basic.showLeds(`
     `)
 ```
 
-## Everythin Else
+## Everything Else
 
 Here's where you can find all the templates you need to make the Robot Unicorn. 
 

@@ -26,7 +26,7 @@ In order to launch the rocket, you need to deliver compressed air to the rocket.
 
 #### Caution!
 
-The bottle rocket is launched when enough pressure builds up to push it off the launcher base. You don't always know when exaclty enough pressure exists to push the rocket up. To avoid being hit by the rocket, don't stand too close (you and anyone watching, and especially, don't stand directly over the rocket!) to it while you're adding pressure to the launcher.
+The bottle rocket is launched when enough pressure builds up to push it off the launcher base. You don't always know when exactly enough pressure exists to push the rocket up. To avoid being hit by the rocket, don't stand too close (you and anyone watching, and especially, don't stand directly over the rocket!) to it while you're adding pressure to the launcher.
 
 It may launch with enough force to hurt you if you're hit by it!
 

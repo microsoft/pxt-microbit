@@ -11,7 +11,7 @@ Sometimes you need to wait in one part of a program for something to happen some
 ## Parameters
 
 * **condition**: a [boolean](/types/boolean) condition that restarts the program when it becomes ``true``.
-* **timeOut**: an optional paramenter which is a [number](/types/number) of milliseconds to wait for the **condition** to become ``true``. The pause ends when the timeout has elapsed even if **condition** is still ``false``.
+* **timeOut**: an optional parameter which is a [number](/types/number) of milliseconds to wait for the **condition** to become ``true``. The pause ends when the timeout has elapsed even if **condition** is still ``false``.
 
 ### ~hint
 

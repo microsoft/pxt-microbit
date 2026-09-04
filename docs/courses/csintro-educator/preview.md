@@ -1,6 +1,6 @@
 # Educator materials preview
 
-The materials are designed to allow educators to deliver a Computer Science curriculum to students in a structured format that introduces them to new concepts with engaging activites and projects. In addtion to the individual lesson materials, there are course guides, overviews, and assessment guides help the teacher along in presenting the course.
+The materials are designed to allow educators to deliver a Computer Science curriculum to students in a structured format that introduces them to new concepts with engaging activities and projects. In addition to the individual lesson materials, there are course guides, overviews, and assessment guides help the teacher along in presenting the course.
 
 These materials give the teacher who's new to the subject an already prepared lesson series which they can start to teach with right away. For educators that have wanted to introduce a Computer Science course into their classroom but have yet to develop the course material for one, use these materials and start teaching now!
 
@@ -12,13 +12,13 @@ Each lesson has classroom presentation slides that let you introduce students to
 
 ## Educator guides
 
-Every lesson has a complete guide to describe the lesson goals, activities, and indended outcomes.
+Every lesson has a complete guide to describe the lesson goals, activities, and intended outcomes.
 
 ![Example lesson page](/static/courses/csintro-educator/lesson-example.jpg)
 
 ## Student workbook
 
-The student workbook is for the student to follow. It sets the lesson goals and clearly describes the making and coding activites.
+The student workbook is for the student to follow. It sets the lesson goals and clearly describes the making and coding activities.
 
 ![Example student workbook page](/static/courses/csintro-educator/workbook-example.jpg)
 

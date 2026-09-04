@@ -1,4 +1,4 @@
-#  Incompatibile Hardware
+# Incompatible Hardware
 
 A newer version of @boardname@ usually adds hardware features which also bring new support from MakeCode to let you use them in your programs. This might be new blocks (or API's), and parameters to let code your programs for these new features.
 

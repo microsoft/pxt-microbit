@@ -14,7 +14,7 @@ By taking some facts and putting them into a logical form, we can make an arithm
 
 You see the AND, NOT, and OR in the example word equations? These are our logical _operators_. Every day we make decisions when we think about one or more facts together using these operators. Sometimes, it's necessary for all facts to be true in order for the conclusion to be true. This is the case when the AND operator is used. When analyzing facts with the OR operator, only one fact needs to be true for the conclusion to be true also.
 
-Making a decision may require more than just one or two facts. When this happens, another operator is needed to combine the facts together to make a conclusion. In the last example word equation, you actually might not be floating if just those two condtions are true. To correctly prove that you're actually floating, you need to state that you're in water too.
+Making a decision may require more than just one or two facts. When this happens, another operator is needed to combine the facts together to make a conclusion. In the last example word equation, you actually might not be floating if just those two conditions are true. To correctly prove that you're actually floating, you need to state that you're in water too.
 
 * **(**``I can swim`` **OR** ``I'm in a boat``**) AND** ``I'm in water`` **=** ``I'm floating``
 
@@ -76,9 +76,9 @@ The logic equation now doesn't include the result variable ``Q`` but instead the
 
 ### ~ hint
 
-#### De Morgan's Thereom
+#### De Morgan's Theorem
 
-That last equation, ``~(A · B)`` = ``~A + ~B``, demonstrates an inportant property in Boolean algebra. It's called De Morgan's Thereom which says that the inverse (NOT) of a conjunction (AND) is logically equivalent to the disjunction (OR) of two inverses (NOT). Also, the inverse (NOT) of a disjunction (OR) is logically equivalent to the conjunction (AND) of two inverses (NOT).
+That last equation, ``~(A · B)`` = ``~A + ~B``, demonstrates an important property in Boolean algebra. It's called De Morgan's Theorem which says that the inverse (NOT) of a conjunction (AND) is logically equivalent to the disjunction (OR) of two inverses (NOT). Also, the inverse (NOT) of a disjunction (OR) is logically equivalent to the conjunction (AND) of two inverses (NOT).
 
 This easier understood by seeing the Boolean equations for both cases:
 
@@ -92,7 +92,7 @@ This easier understood by seeing the Boolean equations for both cases:
 
 ## Truth tables
 
-A truth table is a way to see all possible condtions for the variables in a logical expression and to chart the results. Using the truth statement about when it's freezing outside and you have no coat, here's the truth table showing the possible conditions and their results:
+A truth table is a way to see all possible conditions for the variables in a logical expression and to chart the results. Using the truth statement about when it's freezing outside and you have no coat, here's the truth table showing the possible conditions and their results:
 
 It's freezing | I have no coat | I feel cold
 -|-|-
@@ -137,7 +137,7 @@ T | F | T
 T | F | F
 <br/>
 
-To write a Boolean equation for when you feel cold, we find the condtions in the table where ``Q`` is ``true``. Here we see that you will feel cold only in one row, when condition ``A`` is ``true`` and condtion ``B`` is ``false``. The Boolean equation for these conditions is this:
+To write a Boolean equation for when you feel cold, we find the conditions in the table where ``Q`` is ``true``. Here we see that you will feel cold only in one row, when condition ``A`` is ``true`` and condition ``B`` is ``false``. The Boolean equation for these conditions is this:
 
 ``A · ~B`` = ``Q``
 

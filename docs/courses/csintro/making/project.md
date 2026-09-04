@@ -51,7 +51,7 @@ _Pink Piggy_
 ![A ladybug micro:pet](/static/courses/csintro/making/micropet-ladybug.jpg)
 _Ladybug_
 
-![A caterpiller micro:pet](/static/courses/csintro/making/micropet-caterpillar.jpg)
+![A caterpillar micro:pet](/static/courses/csintro/making/micropet-caterpillar.jpg)
 _Caterpillar_
 
 ![A fox micro:pet](/static/courses/csintro/making/micropet-fox.jpg)

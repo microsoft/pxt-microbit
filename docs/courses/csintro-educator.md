@@ -32,7 +32,7 @@ Any of the individual course material items are also available as a separate dow
 ### [Standards and assessments](https://onedrive.live.com/?authkey=%21ALunv1kXkaA0RLg&id=416406873CB120AB%21521&cid=416406873CB120AB)
 
 * [Assessment guide](https://onedrive.live.com/view.aspx?cid=416406873cb120ab&page=view&resid=416406873CB120AB!528&parId=416406873CB120AB!521&authkey=!ALunv1kXkaA0RLg&app=Word)
-* [Assesment guide (PDF)](https://onedrive.live.com/?authkey=%21ALunv1kXkaA0RLg&cid=416406873CB120AB&id=416406873CB120AB%213751&parId=416406873CB120AB%21521&o=OneUp)
+* [Assessment guide (PDF)](https://onedrive.live.com/?authkey=%21ALunv1kXkaA0RLg&cid=416406873CB120AB&id=416406873CB120AB%213751&parId=416406873CB120AB%21521&o=OneUp)
 * [Standards alignment guide](https://onedrive.live.com/view.aspx?cid=416406873cb120ab&page=view&resid=416406873CB120AB!527&parId=416406873CB120AB!521&authkey=!ALunv1kXkaA0RLg&app=Word)
 * [Standards alignment guide (PDF)](https://onedrive.live.com/?authkey=%21ALunv1kXkaA0RLg&cid=416406873CB120AB&id=416406873CB120AB%213752&parId=416406873CB120AB%21521&o=OneUp)
 

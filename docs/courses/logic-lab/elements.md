@@ -4,7 +4,7 @@ Whether creating equations in Boolean algebra or using them in your programs, yo
 
 ## Notation
 
-Boolean (logical) equations are expressed in a way similar to mathmatical equations. Variables in Boolean expressions though, have only two possible values, ``true`` or ``false``. For an equation using a logical expression, the equivalant sides of the equal sign ,``=``, will be only ``true`` or ``false`` too.
+Boolean (logical) equations are expressed in a way similar to mathematical equations. Variables in Boolean expressions though, have only two possible values, ``true`` or ``false``. For an equation using a logical expression, the equivalent sides of the equal sign ,``=``, will be only ``true`` or ``false`` too.
 
 The following list shows the basic notation elements for variables and operators in Boolean expressions:
 
@@ -24,7 +24,7 @@ An equation to show logically equivalent expressions (where both sides have the 
 
 ## Logical operators
 
-All Boolean expressions result from a combination of conditions and operators. These operators join individual conditons together and evaluate into a single ``true`` or ``false`` condition. The following are the basic logical operators. Their use in both Boolean algebra and in code is shown along with their truth table.
+All Boolean expressions result from a combination of conditions and operators. These operators join individual conditions together and evaluate into a single ``true`` or ``false`` condition. The following are the basic logical operators. Their use in both Boolean algebra and in code is shown along with their truth table.
 
 ### Identity
 

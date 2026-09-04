@@ -22,7 +22,7 @@ This block requires the [micro:bit V2](/device/v2) hardware. If you use this blo
 
 ### ~
 
-## Paramters
+## Parameters
 
 * **target**: the pin or logo you want to set the touch mode for: ``P0``, ``P1``, ``P2``, or ``logo``.
 * **mode**: the mode to use for touch detection: ``capacitive`` or ``resistive``.

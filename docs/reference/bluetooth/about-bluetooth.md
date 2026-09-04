@@ -20,11 +20,11 @@ The Attribute Table contains something like a series of records of various types
 
 ## Attributes
 
-Services, Characteristics and Descriptors are all types of Attribute. Hence Generic Attribute Profile, Attribute Table and something called the Attribute Protocol. All attributes have a type which is identified by a UUID (Universally Unique Identifer). Some Attributes are defined by the Bluetooth SIG, the technical standards body for Bluetooth and these have UUIDs which are 16 bits in length. Some Attributes are custom designed for a particular device by the product team and these have 128 bit UUIDs. The @boardname@ uses a mixture of 16 bit and 128 bit UUIDs.
+Services, Characteristics and Descriptors are all types of Attribute. Hence Generic Attribute Profile, Attribute Table and something called the Attribute Protocol. All attributes have a type which is identified by a UUID (Universally Unique Identifier). Some Attributes are defined by the Bluetooth SIG, the technical standards body for Bluetooth and these have UUIDs which are 16 bits in length. Some Attributes are custom designed for a particular device by the product team and these have 128 bit UUIDs. The @boardname@ uses a mixture of 16 bit and 128 bit UUIDs.
 
 ## Structure
 
-Services, Characteristics and Descriptors are organised in a hierarchy with Services at the top and Descriptors at the bottom. Services contain one or more Characteristics. A Characteristic owns zero or more Descriptors. Zero because Descriptors are completely optional whereas a Service must contain at least one Characteristic.
+Services, Characteristics and Descriptors are organized in a hierarchy with Services at the top and Descriptors at the bottom. Services contain one or more Characteristics. A Characteristic owns zero or more Descriptors. Zero because Descriptors are completely optional whereas a Service must contain at least one Characteristic.
 
 ![](/static/bluetooth/gatt_hierarchy.png)
   
@@ -48,7 +48,7 @@ Permissions are to do with security and further describe the security conditions
 
 ## Descriptors
 
-Descriptors contain meta data which either augments the details relating to the Characteristic which the Descriptor belongs to or allows the configuration of a behaviour involving that Characteristic. Notification messages are switched on or off using a special descriptor called the Client Characteristic Configuration Descriptor for example.
+Descriptors contain meta data which either augments the details relating to the Characteristic which the Descriptor belongs to or allows the configuration of a behavior involving that Characteristic. Notification messages are switched on or off using a special descriptor called the Client Characteristic Configuration Descriptor for example.
 
 ## Profile
 
@@ -76,7 +76,7 @@ The @boardname@'s accelerometer (motion detector), magnetometer (digital compass
 * there's a Device Firmware Update (DFU) service which allows new @boardname@ code to be flashed to the device over Bluetooth instead of over USB
 * there's a UART service which allows arbitrary data to be exchanged with the @boardname@ in a way resembling traditional serial communications.
 
-Everything you can do with the @boardname@ over Bluetooth is achieved through read, write and notify operations. Not all characteristics support all three so check the profile documentation. Often there are Characteristics whose purpose is to allow you to write configuration values which control other behaviours. Technically these are called Control Points. For example you can specify the frequency with which accelerometer data is sampled before it is transmitted as a Notification message to your application.
+Everything you can do with the @boardname@ over Bluetooth is achieved through read, write and notify operations. Not all characteristics support all three so check the profile documentation. Often there are Characteristics whose purpose is to allow you to write configuration values which control other behaviors. Technically these are called Control Points. For example you can specify the frequency with which accelerometer data is sampled before it is transmitted as a Notification message to your application.
 
 ## Want to Know More?
 

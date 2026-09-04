@@ -38,7 +38,7 @@ radio.onReceivedString(function (receivedString) {
 })
 ```
 
-Find the **(+)** symbol on the ``||logic:if then||`` block and click it 4 times to make **3** ``||logic:else if||`` sections and **1** ``||logic:else||`` section. For each ``||logic:else if||`` condition, copy the condtion from ``||logic:if then||`` and put in the strings for the remaining 3 commands. Also, for each one, set ``response`` to the proper ``||input:Input||`` value. Finally, in the ``||logic:else||`` section, set ``response`` to `0` in case an unknown command is received.
+Find the **(+)** symbol on the ``||logic:if then||`` block and click it 4 times to make **3** ``||logic:else if||`` sections and **1** ``||logic:else||`` section. For each ``||logic:else if||`` condition, copy the condition from ``||logic:if then||`` and put in the strings for the remaining 3 commands. Also, for each one, set ``response`` to the proper ``||input:Input||`` value. Finally, in the ``||logic:else||`` section, set ``response`` to `0` in case an unknown command is received.
 
 ```blocks
 let response = 0

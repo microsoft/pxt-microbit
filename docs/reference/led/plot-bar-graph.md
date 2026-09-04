@@ -32,7 +32,7 @@ Show a bar graph of the [acceleration](/reference/input/acceleration)
 in the `x` direction of the @boardname@.
 The @boardname@'s `x` direction is from left to right (or right to left).
 The faster you move the @boardname@ in this direction,
-the taller the lines in the bar graph will be. The **high** paramter is `1023` which sets the highest possible value of acceleration to show. Also, record the acceleration value by sending it to the serial port.
+the taller the lines in the bar graph will be. The **high** parameter is `1023` which sets the highest possible value of acceleration to show. Also, record the acceleration value by sending it to the serial port.
 
 ```blocks
 basic.forever(() => {

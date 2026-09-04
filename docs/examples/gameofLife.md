@@ -27,7 +27,7 @@ input.onButtonPressed(Button.A, () => {
     show();
 })
 
-//Use button B for reseting to random initial seed state
+//Use button B for resetting to random initial seed state
 input.onButtonPressed(Button.B, () => {
     reset();
     show();
@@ -111,7 +111,7 @@ function gameOfLife() {
                 }
             }
 
-            //Count the live cells in the current row exlcuding the current position.
+            //Count the live cells in the current row excluding the current position.
             if ((y - 1 >= 0) && getState(state, x, y - 1)) {
                 count++;
             }
@@ -119,11 +119,11 @@ function gameOfLife() {
                 count++;
             }
 
-            // Toggle live / dead cells based on the neighbour count.
-            // Any live cell with fewer than two live neighbours dies, as if caused by underpopulation.
-            // Any live cell with two or three live neighbours lives on to the next generation.
-            // Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.
-            // Any live cell with more than three live neighbours dies, as if by overpopulation.
+            // Toggle live / dead cells based on the neighbor count.
+            // Any live cell with fewer than two live neighbors dies, as if caused by underpopulation.
+            // Any live cell with two or three live neighbors lives on to the next generation.
+            // Any dead cell with exactly three live neighbors becomes a live cell, as if by reproduction.
+            // Any live cell with more than three live neighbors dies, as if by overpopulation.
             switch (count) {
                 case 0: setState(result, x, y, false); break;
                 case 1: setState(result, x, y, false); break;

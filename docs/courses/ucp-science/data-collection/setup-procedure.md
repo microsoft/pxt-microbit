@@ -99,7 +99,7 @@ radio.onReceivedNumber(function (receivedNumber) {
 
 ### Radio receiver code with serial write
 
-This code is the same as above but one additional line of code is added to write to the word `"Celisus"` and the temperature to MakeCode to the USB serial connection. This is the same as described peviously in [Option 2](#option-2-makecode-and-a-usb-connection).
+This code is the same as above but one additional line of code is added to write to the word `"Celsius"` and the temperature to MakeCode to the USB serial connection. This is the same as described perviously in [Option 2](#option-2-makecode-and-a-usb-connection).
 
 
 ```blocks
@@ -108,7 +108,7 @@ basic.showString("TEMPERATURE RECEIVER SERIAL")
 radio.setGroup(99)
 radio.onReceivedNumber(function (receivedNumber) {
     basic.showNumber(receivedNumber)
-    serial.writeValue("Celisus", receivedNumber)
+    serial.writeValue("Celsius", receivedNumber)
 })
 ```
 

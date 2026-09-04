@@ -53,7 +53,7 @@ The triangle wave is has symmetrical a rising and a falling edge. It makes the s
 
 ### Square wave
 
-A square wave has both verical rising and falling edges with a flat section on the top and bottom. The flat sections match the volume set for the sound. Square waves are sometimes used to represent digital data and will make an "electronic" sound.
+A square wave has both vertical rising and falling edges with a flat section on the top and bottom. The flat sections match the volume set for the sound. Square waves are sometimes used to represent digital data and will make an "electronic" sound.
 
 ![Square wave](/static/types/sound/square-wave.png)
 

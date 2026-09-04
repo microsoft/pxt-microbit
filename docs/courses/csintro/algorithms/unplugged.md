@@ -1,6 +1,6 @@
 # Unplugged: What's your function & crazy conditionals
 
-This is a classroom activity that teachers might choose to run with a classrom of students.
+This is a classroom activity that teachers might choose to run with a classroom of students.
 
 Materials
 * Pencils

@@ -6,7 +6,7 @@ Work with your conditional loop blocks in JavaScript and make them do more.
 
 ## ~
 
-The conditional loops let you run some part of a program multiples times while some condtion remains true. In MakeCode these conditional loops are in the **[while](/blocks/loops/while)**, **[for](/blocks/loops/for)**, and **[repeat](/blocks/loops/repeat)** blocks:
+The conditional loops let you run some part of a program multiples times while some condition remains true. In MakeCode these conditional loops are in the **[while](/blocks/loops/while)**, **[for](/blocks/loops/for)**, and **[repeat](/blocks/loops/repeat)** blocks:
 
 ```block
 while (true) {}
@@ -43,7 +43,7 @@ One thing you may not have expected is that the ``||loops:repeat||`` block is ac
 
 ## While Loop
 
-The ``||loops:while||`` loop is probably the simplist of the loops. It has just a single condition that, while true, causes the code inside the loop to continue to run. The loop here will show the number in the ``count`` variable on the screen until ``count`` reaches the value of `5`.
+The ``||loops:while||`` loop is probably the simplest of the loops. It has just a single condition that, while true, causes the code inside the loop to continue to run. The loop here will show the number in the ``count`` variable on the screen until ``count`` reaches the value of `5`.
 
 
 ```block
@@ -113,7 +113,7 @@ for (let index = 4; index >= 0; index--) {
 }
 ```
 
-You'll now see in the simulator that the value displayed on the screen counts down from `4` to `0`. This form of the **for** loop is too complicatied for blocks so when you switch back to the Blocks editor the entire loop is shown in a grey block.
+You'll now see in the simulator that the value displayed on the screen counts down from `4` to `0`. This form of the **for** loop is too complicated for blocks so when you switch back to the Blocks editor the entire loop is shown in a grey block.
 
 ```block-ignore
 for (let index = 4; index >= 0; index--) {

@@ -54,7 +54,7 @@ basic.forever(() => {
 })
 ```
 
-### Reciever @boardname@ Code
+### Receiver @boardname@ Code
 
 This receiver @boardname@ uses the ``||basic:on start||`` event to set up the title on the  @boardname@ when started, the radio group.
 
@@ -95,7 +95,7 @@ Try graphing the data in different ways in the spreadsheet.
 
 ## Rocket Launch Video
 
-Watch the demostration [rocket launch](https://drive.google.com/open?id=10h-uL7ajoS4_M7vZWW5LqdqSgt7PCj7Q) video.
+Watch the demonstration [rocket launch](https://drive.google.com/open?id=10h-uL7ajoS4_M7vZWW5LqdqSgt7PCj7Q) video.
 
 ## Questions
 
@@ -113,7 +113,7 @@ Set up the experiment to collect data when a @boardname@ is drown several feet o
 
 ### Develop Other Hypotheses and Experiments
 
-Research what acceleration on a skateboard at a skatepark or other types of movement as in a car. What about a ride at an amusement park?
+Research what acceleration on a skateboard at a skate park or other types of movement as in a car. What about a ride at an amusement park?
 
 ## ~button /courses/ucp-science/rocket-acceleration/resources
 NEXT: Resources

@@ -61,7 +61,7 @@ basic.forever(() => {
 
 ## 6. 
 
-At rest, the @boardname@ is always subject to Earth gravity, whose magnitude is measured around ``1023``. Substract ``1023`` to measure a data close to ``0``. 
+At rest, the @boardname@ is always subject to Earth gravity, whose magnitude is measured around ``1023``. Subtract ``1023`` to measure a data close to ``0``. 
 
 ```blocks
 basic.forever(() => {
@@ -82,7 +82,7 @@ Data Analysis: We now need to use the @boardname@ to Analyze Data and chart for 
 
 ## 7. 
 
-First, notice that moving the @boardname@ in the simulator in any direction, you will change the acceleration value, which is being displayed as the same color as the @boardname@ simulator. Also, notice that by moving the @boardname@ simulator, there is a changing acceleration value. Second, the flat colored horizontal line will start a waving line to display the value of the strength as measured in milli-gravities. Finally, notice that the LED display will fluctate based on the movement of the @boardname@ simulator. 
+First, notice that moving the @boardname@ in the simulator in any direction, you will change the acceleration value, which is being displayed as the same color as the @boardname@ simulator. Also, notice that by moving the @boardname@ simulator, there is a changing acceleration value. Second, the flat colored horizontal line will start a waving line to display the value of the strength as measured in milli-gravities. Finally, notice that the LED display will fluctuate based on the movement of the @boardname@ simulator. 
 
 ![](/static/mb/lessons/analyze20.png)
 
@@ -98,7 +98,7 @@ Click or tap the **Download** button for the seismograph program to run the prog
 
 A black line should appear directly beneath the colored line. The black line measures the @boardname@ acceleration.  And the colored line measures @boardname@ simulator acceleration. 
 
-Run the acceleration experiment by vigarously moving the plate in any direction or move the object below the @boardname@ (such as a table).
+Run the acceleration experiment by vigorously moving the plate in any direction or move the object below the @boardname@ (such as a table).
 
 Every time the @boardname@ moves in any direction,  you generate data points that can be reviewed in Excel later. The more attempts to move the @boardname@, the more data to be reviewed in Excel.  
 
@@ -106,7 +106,7 @@ Every time the @boardname@ moves in any direction,  you generate data points tha
 
 ## 10. 
 
-Please find seismogrph experiment obervations: 
+Please find seismograph experiment observations: 
 
 First, notice that moving the @boardname@ in any direction, you will change the acceleration value, which is being displayed as a milli-gravities value. By moving the @boardname@, there will be a changing acceleration value. 
 
@@ -116,11 +116,11 @@ Second, the horizontal line will move to plot the value of the strength as measu
 
 ![](/static/mb/lessons/seismograph6.png)
 
-Third, notice that the LED display fluctates based on the movement of the @boardname@. 
+Third, notice that the LED display fluctuates based on the movement of the @boardname@. 
 
 ![](/static/mb/lessons/seismograph8.png)
 
-Now we are ready to graph or chart the accceleration of the @boardname@. We want a printout of the @boardname@ acceleration graphed in Excel.
+Now we are ready to graph or chart the acceleration of the @boardname@. We want a printout of the @boardname@ acceleration graphed in Excel.
 
 ## 11. 
 

@@ -2,7 +2,7 @@
 
 Let's add code so that whenever we press or touch the foil chords it will produce sound.
 
-From the [Make](/projects/electric-guitar/make.md) project, we know that whenever user touches the chords, sound will be produced and diffrent chords will produce diffrent sounds.
+From the [Make](/projects/electric-guitar/make.md) project, we know that whenever user touches the chords, sound will be produced and different chords will produce different sounds.
 
 ## Code your electric guitar
 

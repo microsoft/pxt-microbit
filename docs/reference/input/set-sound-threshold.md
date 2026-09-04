@@ -22,7 +22,7 @@ This block requires the [micro:bit V2](/device/v2) hardware. If you use this blo
 
 ## Parameters
 
-* **sound**: the type of sound to dectect: `loud` or `quiet`.
+* **sound**: the type of sound to detect: `loud` or `quiet`.
 * **threshold**: the sound level [number](/types/number) which makes a sound event happen.
 
 ## Example #example

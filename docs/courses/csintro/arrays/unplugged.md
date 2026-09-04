@@ -9,7 +9,7 @@ This activity asks you to carefully consider something that comes naturally to y
 ## Initial Sort
 
 * Mix up the order of the numbered pieces of paper. Then, put them in a line.
-* Place the pieces in numberical order: but you must do this by moving **only one piece of paper at a time** to its proper place.
+* Place the pieces in numerical order: but you must do this by moving **only one piece of paper at a time** to its proper place.
 * Once the papers have been sorted, ask yourself the following:
 >* How did you sort the papers into the right order?
 >* Did you see a pattern?

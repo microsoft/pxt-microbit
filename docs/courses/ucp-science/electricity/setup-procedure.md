@@ -27,7 +27,7 @@ You can tabulate your readings like this:
 
 **4.** Plan and design data collection documents.<br/>
 **5.** Program the micro:bit.<br/>
-**6.** When the battery is connected to the micro:bit. buttton **A** will give a reading. Button **B** will give a reading in millivolts converted from the digital reading on pin **0**.<br/>
+**6.** When the battery is connected to the micro:bit, button **A** will give a reading. Button **B** will give a reading in millivolts converted from the digital reading on pin **0**.<br/>
 **7.** Experiment with different batteries. Use good batteries and some older batteries.<br/>
 **8.** Report on the findings and observations in the experiments.
 

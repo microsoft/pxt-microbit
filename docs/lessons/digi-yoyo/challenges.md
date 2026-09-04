@@ -38,7 +38,7 @@ while (count > 0) {
 
 ## Challenge 2
 
-Inside of the while loop, let's add a ``||basic:pause||`` that waits for one seccond so that we have a pause between each number as it's counting down. Also, let's show ``||variables:count||``!
+Inside of the while loop, let's add a ``||basic:pause||`` that waits for one second so that we have a pause between each number as it's counting down. Also, let's show ``||variables:count||``!
 
 ```blocks
 let count = 0;
