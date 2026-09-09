@@ -6,11 +6,11 @@
         "/overrides/microbit-light-overrides.css"
     ],
     "colors": {
-        "pxt-header-background": "#3454D1",
+        "pxt-header-background": "#D00000",
         "pxt-header-foreground": "#FFFFFF",
-        "pxt-header-background-hover": "#1d3282",
+        "pxt-header-background-hover": "#A60000",
         "pxt-header-foreground-hover": "#FFFFFF",
-        "pxt-header-stencil": "#2742ab",
+        "pxt-header-stencil": "#A60000",
 
         "pxt-primary-background": "#6633cc",
         "pxt-primary-foreground": "#FFFFFF",
