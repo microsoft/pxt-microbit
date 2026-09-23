@@ -1,0 +1,13 @@
+                    "name": "codal-microbit-v2",
+                    "url": "https://github.com/thomasjball/codal-microbit-v2#5c4baa0d12014a5d55045b772a4a236dfae43b7d",
+                    "branch": "5c4baa0d12014a5d55045b772a4a236dfae43b7d",
+                    "type": "git"
+
+
+/Applications/ArmGNUToolchain/14.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/bin/ld: warning: MICROBIT has a LOAD segment with RWX permissions
+/Applications/ArmGNUToolchain/14.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/bin/ld: CMakeFiles/MICROBIT.dir/pxtapp/my-project/usemyadd.cpp.obj: in function `MyStuff::usemyadd(int, int)':
+/Users/tball/github/microsoft/pxt-microbit/libs/liba-extension/built/codal/pxtapp/my-project/usemyadd.cpp:7:(.text._ZN7MyStuff8usemyaddEii+0x0): undefined reference to `myadd(int, int)'
+
+/Applications/ArmGNUToolchain/14.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/bin/ld: (_Z5myaddii): Unknown destination type (ARM/Thumb) in CMakeFiles/MICROBIT.dir/pxtapp/my-project/usemyadd.cpp.obj
+
+/Users/tball/github/microsoft/pxt-microbit/libs/liba-extension/built/codal/pxtapp/my-project/usemyadd.cpp:7:(.text._ZN7MyStuff8usemyaddEii+0x0): dangerous relocation: unsupported relocation

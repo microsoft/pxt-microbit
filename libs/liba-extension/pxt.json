@@ -1,0 +1,27 @@
+{
+    "name": "my-project",
+    "version": "0.0.0",
+    "dependencies": {
+        "core": "file:../core",
+        "microphone": "file:../microphone"
+    },
+    "files": [
+        "main.ts",
+        "myadd.h",
+        "usemyadd.cpp",
+        "myadd.a",
+        "shims.d.ts"
+    ],
+    "testDependencies": {},
+    "supportedTargets": [
+        "microbit"
+    ],
+    "disablesVariants": [
+        "mbdal"
+    ],
+    "yotta": {
+        "config": {
+            "DMESG_SERIAL_DEBUG": 1
+        }
+    }
+}
