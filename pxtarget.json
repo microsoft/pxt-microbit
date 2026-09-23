@@ -199,7 +199,7 @@
                 "codalTarget": {
                     "name": "codal-microbit-v2",
                     "url": "https://github.com/thomasjball/codal-microbit-v2",
-                    "branch": "b4197fb7c02752aab663870d6f0a848669a2c71a",
+                    "branch": "24b60f62fcc0598e81ee28d8b39de50db74d1eb3",
                     "type": "git"
                 },
                 "codalBinary": "MICROBIT",
