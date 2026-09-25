@@ -400,6 +400,10 @@ Many extensions are available to work with interface kits, add-on hardware, or o
 
 ```codecard
 [{
+   "name": "Forward FIFA Kit",
+   "url": "/pkg/Forward-Education/pxt-fwd-fifa",
+   "cardType": "package"
+}, {
    "name": "FWD Edu OpenSciEd Kit",
    "url": "/pkg/Forward-Education/pxt-openscied",
    "cardType": "package"
