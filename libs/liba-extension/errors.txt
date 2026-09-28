@@ -1,0 +1,2 @@
+adding library directory built/codal/pxtapp/built/codal/pxtapp/my-project
+codal.json path: built/codal/pxtapp/codal.json
