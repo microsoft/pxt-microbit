@@ -23,7 +23,7 @@ Recommended kits:
 - [CHARGE Kit](https://forwardedu.com/collections/micro-bits/products/charge-for-micro-bit)
 
 **Technology Requirements:**
-- A desktop, laptop, or Chromebook running Chrome or Edge broswers, with access to the [micro:bit CreateAI](https://createai.microbit.org) website
+- A desktop, laptop, or Chromebook running Chrome or Edge browsers, with access to the [micro:bit CreateAI](https://createai.microbit.org) website
 - Bluetooth enabled on the device for collecting movement data.  Note: if Bluetooth is unavailable, you can use a second micro:bit connected by USB as the radio-link bridge.
 
 **Educator Resources:**
@@ -89,30 +89,30 @@ At a very high level, the term "Artificial Intelligence" (AI) is used to describ
 AI is a field of study in computer science that dates back to the 1950's with the first definition of AI as a computer that could pass the [Turing Test](https://en.wikipedia.org/wiki/Turing_test). This was a test whereby if a computer could carry on a conversation with a human, and be indistinguishable from an actual human, then the machine could indeed "think" and be "artificially intelligent".
 
 ![ ](/static/mb/projects/sports-trainer/turing-test-diagram.png "Diagram of Turing Test")
-_Turing Test_
+<br/>_Turing Test_
 
 Discuss the following questions with the class or with your partner:
 1. What does it mean to 'think' like a human?
 2. What are some of the ways you've seen AI be helpful in your daily life?  What do you use AI tools for?
 3. What are some ways you've seen AI can be harmful?  Or have unintended consequences?
 
-Machine Learning is an area of Artificial Intelligence that focuses on data-driven learning for AI models.  Unlike traditional programming algorithms where you have to give the computer very specific step-by-step instructions to do something; in machine learning, the computer uses data and example patterns to infer what to do.
+Machine Learning is an area of Artificial Intelligence that focuses on data-driven learning for AI models. Unlike traditional programming algorithms where you have to give the computer very specific step-by-step instructions to do something; in machine learning, the computer uses data and example patterns to infer what to do.
 
 Making a Peanut Butter and Jelly Sandwich is the canonical example for rule-based algorithms - which is like a recipe where you have to tell the computer exactly what to do using step-by-step instructions.
 
 ![ ](/static/mb/projects/sports-trainer/pbj-recipe.png "PB&J Algorithm")
-_Peanut Butter and Jelly algorithm_
+<br/>_Peanut Butter and Jelly algorithm_
 
 In Machine Learning, the idea is that instead of a rule-based algorithm, you feed the computer a bunch of data - like different variations of peanut butter and jelly sandwiches, and examples of people making peanut butter and jelly sandwiches.
 And instead of giving the computer explicit instructions, the computer can infer from the data what to do.
 
 ![ ](/static/mb/projects/sports-trainer/pbj-ml.jpg "PB&J Machine Learning")
-_Peanut Butter and Jelly with Machine Learning_
+<br/>_Peanut Butter and Jelly with Machine Learning_
 
 ## Process to create a Machine Learning model
 
 ![ ](/static/mb/projects/sports-trainer/ml-process.png "ML process")
-_Machine Learning Process_
+<br/>_Machine Learning Process_
 
 A machine learning model is the result of training an algorithm on data so it can recognize patterns and then respond to new inputs based on these patterns.
 
@@ -120,13 +120,13 @@ The process for creating a machine learning model starts with determining the ty
 
 The second step is to go out and source the data you need for your model.
 
-The third step is to analyze the data you've collected.  And part of that analysis may require cleaning the data to make sure you have a representative data sample and that there's no bias or bad data that will throw off the model.  And visualizing the data also helps with understanding the data in your sample to make sure you have no outliers or anomalies.
+The third step is to analyze the data you've collected. And part of that analysis may require cleaning the data to make sure you have a representative data sample and that there's no bias or bad data that will throw off the model. And visualizing the data also helps with understanding the data in your sample to make sure you have no outliers or anomalies.
 
 The fourth step is training the model on the data and testing it.  And in this step, you want to make sure the model is behaving the way you expect given the data.  If it's not, then you want to go back and either give it more data, or make sure that the data it's trained on is accurate and representative.
 
 And finally the fifth step is to actually use the model you created to perform a function - like making a 1000 PB&J sandwiches for your friends and neighbors!
 
-A real-world example might be to create an AI driving assistant.  We need to collect data about local traffic maps and weather. Then we need to analyze the data to make sure it's accurate and up-to-date. Then we should train and test our model using this data to make sure the recommendations it gives us are reasonable.  If not, we may need to go back and make sure the data is up-to-date and accurate - because these models are only as good as their data.  And then finally, we can use our AI driving assistant to ask what's the fastest and safest way to get home today, and hopefully it will respond with an optimal route.
+A real-world example might be to create an AI driving assistant.  We need to collect data about local traffic maps and weather. Then we need to analyze the data to make sure it's accurate and up-to-date. Then we should train and test our model using this data to make sure the recommendations it gives us are reasonable. If not, we may need to go back and make sure the data is up-to-date and accurate - because these models are only as good as their data. And then finally, we can use our AI driving assistant to ask what's the fastest and safest way to get home today, and hopefully it will respond with an optimal route.
 
 ## 3. Getting Started with CreateAI
 
@@ -138,7 +138,7 @@ Follow the instructions to get setup with CreateAI:
 5. Using the USB cable, connect your micro:bit to your computer, then click **Next**
 6. Click **Next** again, and then select the BBC micro:bit device in the browser dialog window and click **Connect**
 
-Now your micro:bit is connected to your browser window and the CreateAI data collection file will be copied over.  This allows CreateAI to collect data from your micro:bit.
+Now your micro:bit is connected to your browser window and the CreateAI data collection file will be copied over. This allows CreateAI to collect data from your micro:bit.
 
 Note - if your micro:bit did not connect to your browser window and the data file was not copied over automatically, you can manually drag and drop or copy and paste the _data-collection-program.hex_ file from your downloads folder to the MICROBIT drive on your computer.
 
@@ -164,7 +164,7 @@ The accelerometer, or the motion sensor, on the micro:bit measures acceleration 
 - Z-axis (blue line) measures moving up and down
 
 ![ ](/static/mb/projects/sports-trainer/accelerometer.png "Accelerometer")
-_Accelerometer on the micro:bit_
+<br/>_Accelerometer on the micro:bit_
 
 Try holding your micro:bit in one hand and doing the following:
 
@@ -186,7 +186,7 @@ To start, let's record a baseline gesture so our machine learning model can reco
 This will collect 10 different data samples (1 second each) of the micro:bit being still.  All the lines for the accelerometer values should be flat.
 
 ![ ](/static/mb/projects/sports-trainer/still.png "still")
-_Data samples for when the micro:bit is still_
+<br/>_Data samples for when the micro:bit is still_
 
 ## 6. Collect your sports training data samples
 
@@ -202,7 +202,7 @@ Some examples -
 - Cheer or dance move
 - Soccer kick
 
-Rehearse the movements. Make them distinct, comfortable, and reproducible.  The "athlete" should be doing the sports movement while the "coach" should be operating and monitoring the data collection.  The "athlete" should not move too far away from the computer or you will lose your bluetooth connection.
+Rehearse the movements. Make them distinct, comfortable, and reproducible. The "athlete" should be doing the sports movement while the "coach" should be operating and monitoring the data collection. The "athlete" should not move too far away from the computer or you will lose your bluetooth connection.
 
 For each of the sports movements:
 
@@ -221,7 +221,7 @@ Tips:
 By the end of this step, you should have 3 different sports movements as well as the "still" baseline action.
 
 ![ ](/static/mb/projects/sports-trainer/sports-actions.png "sports actions")
-_Data samples for 3 different sports movements_
+<br/>_Data samples for 3 different sports movements_
 
 ## 5. Train and test the model
 
@@ -237,12 +237,12 @@ In the training screen, test your ML model's accuracy by moving the micro:bit to
 - The **Estimated action** is what the model recognizes as the current movement you are making
 
 ![ ](/static/mb/projects/sports-trainer/training-screen-callouts.png "training screen")
-_User interface elements of the training screen_
+<br/>_User interface elements of the training screen_
 
-1. First, keep the micro:bit still.  Does the model recognize  "still" as the baseline action?  With what percentage of certainty?
+1. First, keep the micro:bit still.  Does the model recognize "still" as the baseline action?  With what percentage of certainty?
 2. Then try a mix of the 3 different sports movements one after the other and record your results in the table below.
 
-The "athelete" should perform the actions while the "coach" records the results. Also be sure to document uncertain or unknown results.
+The "athlete" should perform the actions while the "coach" records the results. Also be sure to document uncertain or unknown results.
 
 | Trial | Intended action | Recognized action or unknown | Recognition point | Percentage Certainty |
 | --- | --- | --- | --- | --- |
@@ -258,7 +258,7 @@ If the ML model is confused, or not recognizing your actions with a high degree 
 
 1. Click the **Edit data samples** button in the top left corner of the screen
 2. Visually inspect the data samples collected for your sports actions and remove any data samples that may be throwing off your model
-3. Record more data samples for the different sports actions.  Try switching the "athlete" and "coach" roles - there may be some differences between how people perform different actions. A model trained only on one person's movement may work less well for someone else.
+3. Record more data samples for the different sports actions. Try switching the "athlete" and "coach" roles - there may be some differences between how people perform different actions. A model trained only on one person's movement may work less well for someone else.
 4. Click on the **Testing model** button to re-train and re-test your model
 
 ## ~tip
@@ -278,7 +278,7 @@ This creates a project containing your model and its generated Machine Learning 
 2. In the MakeCode Toolbox, click on **Extensions** and type in _**thsparks/ai-gesture-extension**_ into the search field
 
 ![ ](/static/mb/projects/sports-trainer/makecode-screen.png "MakeCode")
-_MakeCode project_
+<br/>_MakeCode project_
 
 3. Then click on the _**gesture-extension**_ to add it to your project
 
@@ -414,7 +414,7 @@ Follow the steps below to compete for the best AI sports trainer model!
 
 1. The teacher or class facilitator should have the receiver micro:bit on (either connected to a battery or USB cable)
 2. The teacher should **press button A** on the receiver micro:bit to reset (they will see a check icon appear and hear a beep)
-3. One at a time, each team should send their "athlete" representative to the front of the class to stand next to the teacher's micro:bit.  The athlete should have their micro:bit connected to a battery pack, powered on, and secured to their body.
+3. One at a time, each team should send their "athlete" representative to the front of the class to stand next to the teacher's micro:bit. The athlete should have their micro:bit connected to a battery pack, powered on, and secured to their body.
 4. The athlete should **press button A** to start the timer on their micro:bit (they will see a 3 second countdown along with some sounds)
 5. They have 1 minute to do as many sports movements as possible. Each movement that your ML model recognizes scores a point. The student should see the movement icon appear and a sound play for each correct score. And the teacher should see a + symbol appear on the receiver micro:bit.
 6. After the time is up, the student should see an X appear on their micro:bit along with a sound
@@ -422,7 +422,7 @@ Follow the steps below to compete for the best AI sports trainer model!
 7. The teacher should connect the receiver micro:bit to the computer via a USB cable, open their File Explorer, navigate to the MICROBIT drive, and double click the MY_DATA.HTM file to see the student score.  Note - if the micro:bit is already connected, you many have to disconnect and reconnect to the USB cable to refresh the MY_DATA.HTM file.
 
 ![ ](/static/mb/projects/sports-trainer/my-data.png "micro:bit data log")
-_MY DATA log file_
+<br/>_MY DATA log file_
 
 ## 9. Reflect and extend
 
