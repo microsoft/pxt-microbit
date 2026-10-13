@@ -261,11 +261,13 @@ If the ML model is confused, or not recognizing your actions with a high degree 
 3. Record more data samples for the different sports actions. Try switching the "athlete" and "coach" roles - there may be some differences between how people perform different actions. A model trained only on one person's movement may work less well for someone else.
 4. Click on the **Testing model** button to re-train and re-test your model
 
-## ~tip
+### ~tip
 
-**Educator checkpoint:** walk around the classroom and ask each student if their ML model was confused during testing, and if so, ask them to explain their improvement plan. Ask, "Whose movements are represented by the data? Who might be excluded? How might you make your model more inclusive?"
+#### Educator checkpoint
 
-## ~
+Walk around the classroom and ask each student if their ML model was confused during testing, and if so, ask them to explain their improvement plan. Ask, "Whose movements are represented by the data? Who might be excluded? How might you make your model more inclusive?"
+
+### ~
 
 ## 6. Use your model in a Sports Trainer program
 
