@@ -287,25 +287,9 @@ This creates a project containing your model and its generated Machine Learning 
 You will see a new category appear in your Toolbox called "AI Gestures" that includes a couple blocks which automate the sending of data to a receiver micro:bit.  If you are curious how this extension works, you can look at the custom code [here](https://github.com/thsparks/ai-gesture-extension/blob/master/custom.ts).
 
 4. From the ``||gesture_palooza:AI Gestures||`` Toolbox category, drag out 3 ``||gesture_palooza:send gesture||`` blocks, and drop one each into the ``||ml:on ML start||`` events that represent your sports movements.
-5. In each ``||gesture_palooza:send gesture||`` block, type the name of the action
+5. In each ``||gesture_palooza:send gesture||`` block, type the name of the action.
 
-```blocks
-ml.onStart(ml.event.Still, function () {
-    basic.showIcon(IconNames.SmallDiamond)
-})
-ml.onStart(ml.event.BallToss, function () {
-    basic.showIcon(IconNames.SmallSquare)
-    gesture_palooza.send_gesture("ball toss")
-})
-ml.onStart(ml.event.BallKick, function () {
-    basic.showIcon(IconNames.StickFigure)
-    gesture_palooza.send_gesture("kick")
-})
-ml.onStart(ml.event.Frisbee, function () {
-    basic.showIcon(IconNames.Square)
-    gesture_palooza.send_gesture("frisbee")
-})
-```
+![ ](/static/mb/projects/sports-trainer/add-gesture-blocks.png "AI gesture blocks")
 
 For each correct sports movement our ML model detects, it will send a message to the receiver micro:bit with the name of the movement that it has detected.
 
@@ -316,26 +300,8 @@ Now let's create a 1-minute timer for the AI Sports Trainer competition!
 
 Your full program should look something like this:
 
-```blocks
-input.onButtonPressed(Button.A, function () {
-    gesture_palooza.start_recording()
-})
-ml.onStart(ml.event.Still, function () {
-    basic.showIcon(IconNames.SmallDiamond)
-})
-ml.onStart(ml.event.BallToss, function () {
-    basic.showIcon(IconNames.SmallSquare)
-    gesture_palooza.send_gesture("ball toss")
-})
-ml.onStart(ml.event.BallKick, function () {
-    basic.showIcon(IconNames.StickFigure)
-    gesture_palooza.send_gesture("kick")
-})
-ml.onStart(ml.event.Frisbee, function () {
-    basic.showIcon(IconNames.Square)
-    gesture_palooza.send_gesture("frisbee")
-})
-```
+![ ](/static/mb/projects/sports-trainer/full-program.png "Complete program")
+
 Example program - https://makecode.microbit.org/_H5gU4UL90Vkw
 
 8. Click the purple **Download** button in the bottom left of the screen, and click **Next**
