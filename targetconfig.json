@@ -467,8 +467,7 @@
                     "sha": "08b9e007964a25bb7dfe3f00d7fc2450102f1bfc",
                     "devUrl": "http://localhost:5173",
                     "aspectRatio": 3.45
-                },
-                "hidden": true
+                }
             },
             "jacdac/pxt-jacdac": {
                 "simx": {
