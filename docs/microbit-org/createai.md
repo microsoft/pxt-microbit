@@ -6,6 +6,14 @@ Projects to get learners started quickly with AI and machine learning on the mic
 
 ```codecard
 [{
+  "name": "AI Sports Trainer",
+  "description": "Record your sports movements, train a Machine Learning model, and see how accurate your AI model is at recognizing your movements.",
+  "url": "/projects/sports-trainer",
+  "imageUrl":"/static/mb/projects/sports-trainer/ai-sports-trainer-thumb.png",
+  "label": "Hour of AI",
+  "labelClass": "blue ribbon large",
+  "cardType": "link"
+}, {
   "name": "AI storytelling friend",
   "description": "Use storytelling to introduce AI.",
   "url": "https://microbit.org/projects/make-it-code-it/ai-storytelling-friend/",
