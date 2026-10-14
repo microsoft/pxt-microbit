@@ -205,7 +205,7 @@
                 },
                 "codalBinary": "MICROBIT",
                 "githubCorePackage": "lancaster-university/microbit-v2-samples",
-                "gittag": "v0.2.13",
+                "gittag": "v0.3.0",
                 "serviceId": "mbcodal2",
                 "dockerImage": "pext/yotta:latest",
                 "yottaConfigCompatibility": true
