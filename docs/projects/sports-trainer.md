@@ -24,7 +24,7 @@ Recommended kits:
 
 **Technology Requirements:**
 - A desktop, laptop, or Chromebook running Chrome or Edge browsers, with access to the [micro:bit CreateAI](https://createai.microbit.org) website
-- Bluetooth enabled on the device for collecting movement data.  Note: if Bluetooth is unavailable, you can use a second micro:bit connected by USB as the radio-link bridge.
+- Bluetooth enabled on the device for collecting movement data. Note: if Bluetooth is unavailable, you can use a second micro:bit connected by USB as the radio-link bridge.
 
 **Educator Resources:**
 - [PowerPoint presentation](https://1drv.ms/p/c/416406873cb120ab/IQBmktHOL5rnTqjeGbSfmviTAdZYES48H7bHAHoEwL6gnjI?e=AHm6Kc)
@@ -32,24 +32,24 @@ Recommended kits:
 
 **Learning Outcomes:**
 By the end of this lesson, students will be able to:
-- Understand what Artificial Intelligence refers to
-- Understand at a high level how Machine Learning works and the Machine Learning process
-- Describe what an accelerometer measures
-- Collect accelerometer data with the micro:bit
-- Train, test, and improve a machine learning model
-- Combine learned recognition with explicit rules in a program
-- Understand how ML models are only as good as the data they are trained on
+- Understand what Artificial Intelligence refers to.
+- Understand at a high level how Machine Learning works and the Machine Learning process.
+- Describe what an accelerometer measures.
+- Collect accelerometer data with the micro:bit.
+- Train, test, and improve a machine learning model.
+- Combine learned recognition with explicit rules in a program.
+- Understand how ML models are only as good as the data they are trained on.
 
 ## Educator preparation
 
 **Prior to the lesson:**
-- Read through this lesson guide, review the Educator Resources linked above
-- Decide how to assign student pairs
-  - One student should assume the role of the "**athlete**" who will be wearing the micro:bit sensor and performing the sports movements
-  - One student should assume the role of the "**coach**" who operates the computer and records observations
-  - Encourage students to swap roles midway through
-- Download micro:bit Receiver code (Section 7 below) onto a Teacher micro:bit
-- Download student code (Section 6 below) onto another micro:bit and test interaction
+- Read through this lesson guide, review the Educator Resources linked above.
+- Decide how to assign student pairs:
+  >- One student should assume the role of the "**athlete**" who will be wearing the micro:bit sensor and performing the sports movements
+  >- One student should assume the role of the "**coach**" who operates the computer and records observations.
+  >- Encourage students to swap roles midway through.
+- Download micro:bit Receiver code (Section 7 below) onto a Teacher micro:bit.
+- Download student code (Section 6 below) onto another micro:bit and test interaction.
 
 
 **Pacing:** 
@@ -131,26 +131,26 @@ A real-world example might be to create an AI driving assistant.  We need to col
 ## 3. Getting Started with CreateAI
 
 Follow the instructions to get setup with CreateAI:
-1. Open a browser window to [createai.microbit.org](https://createai.microbit.org)
-2. Click to create a **New project**
-3. Name your project "_Sports Trainer_" and click **Create project**
-4. Click **Connect** and **Next** buttons
-5. Using the USB cable, connect your micro:bit to your computer, then click **Next**
-6. Click **Next** again, and then select the BBC micro:bit device in the browser dialog window and click **Connect**
+1. Open a browser window to [createai.microbit.org](https://createai.microbit.org).
+2. Click to create a **New project**.
+3. Name your project "_Sports Trainer_" and click **Create project**.
+4. Click **Connect** and **Next** buttons.
+5. Using the USB cable, connect your micro:bit to your computer, then click **Next**.
+6. Click **Next** again, and then select the BBC micro:bit device in the browser dialog window and click **Connect**.
 
 Now your micro:bit is connected to your browser window and the CreateAI data collection file will be copied over. This allows CreateAI to collect data from your micro:bit.
 
-Note - if your micro:bit did not connect to your browser window and the data file was not copied over automatically, you can manually drag and drop or copy and paste the _data-collection-program.hex_ file from your downloads folder to the MICROBIT drive on your computer.
+**Note** - if your micro:bit did not connect to your browser window and the data file was not copied over automatically, you can manually drag and drop or copy and paste the _data-collection-program.hex_ file from your downloads folder to the MICROBIT drive on your computer.
 
 ### Bluetooth Connection
 
 To be able to send data from the micro:bit to your computer wirelessly, we need to setup a bluetooth connection.
-1. Disconnect your micro:bit from the USB cable
-2. Connect a battery pack to your micro:bit and make sure the power switch is turned on (if there is a power switch)
-3. Click the **Next** button on your computer screen
+1. Disconnect your micro:bit from the USB cable.
+2. Connect a battery pack to your micro:bit and make sure the power switch is turned on (if there is a power switch).
+3. Click the **Next** button on your computer screen.
 4. Check to make sure the pattern of LED lights on your computer matches what's showing on your micro:bit device. If not, click on the green columns of lights on your computer to match the pattern you see on your micro:bit. 
 5. Then click the **Next** button, and click **Next** again.
-6. In the browser dialog window that opens in the top left corner, select the BBC micro:bit device and click **Pair**
+6. In the browser dialog window that opens in the top left corner, select the BBC micro:bit device and click **Pair**.
 
 Now your micro:bit is connected to your browser window wirelessly through web bluetooth.
 
@@ -177,11 +177,11 @@ Try holding your micro:bit in one hand and doing the following:
 
 To start, let's record a baseline gesture so our machine learning model can recognize when the micro:bit is still.
 
-1. Place the micro:bit on a table or flat surface and don't move it
-2. Type in "_still_" as the name of the action on the CreateAI Data samples page
-3. Choose an icon to display for when the micro:bit is still
-4. Click on the 3 dots at the end of the **Record** button
-5. And select **Record for 10 seconds**
+1. Place the micro:bit on a table or flat surface and don't move it.
+2. Type in "_still_" as the name of the action on the CreateAI Data samples page.
+3. Choose an icon to display for when the micro:bit is still.
+4. Click on the 3 dots at the end of the **Record** button.
+5. And select **Record for 10 seconds**.
 
 This will collect 10 different data samples (1 second each) of the micro:bit being still.  All the lines for the accelerometer values should be flat.
 
@@ -206,16 +206,16 @@ Rehearse the movements. Make them distinct, comfortable, and reproducible. The "
 
 For each of the sports movements:
 
-1. Click on the **Add action** button
-2. Type in a descriptive action label (like "_ball toss_")
-3. Choose a representative icon for the action
-4. **Record** each movement separately, or as 10 samples/seconds in a row
-5. Make sure to record at least 10 data samples
-6. Visually inspect your data samples to ensure they are consistent
+1. Click on the **Add action** button.
+2. Type in a descriptive action label (like "_ball toss_").
+3. Choose a representative icon for the action.
+4. **Record** each movement separately, or as 10 samples/seconds in a row.
+5. Make sure to record at least 10 data samples.
+6. Visually inspect your data samples to ensure they are consistent.
 
 Tips:
-- Remove any accidental data samples - for example, data that was recorded between movements or before the movement started
-- You do not necessarily need to delete a data sample just because it looks slightly different: some variation helps the model handle real life movements
+- Remove any accidental data samples - for example, data that was recorded between movements or before the movement started.
+- You do not necessarily need to delete a data sample just because it looks slightly different: some variation helps the model handle real life movements.
 - More data = more accurate models, record as many samples as you have time for!
 
 By the end of this step, you should have 3 different sports movements as well as the "still" baseline action.
@@ -227,14 +227,14 @@ By the end of this step, you should have 3 different sports movements as well as
 
 Once you have all the data samples collected for your sports movements, the next step is to train your Machine Learning model using this data, so it will be able to recognize these movements in the future.
 
-1. Click on the **Train model** button in the bottom right of the screen
-2. Then click **Start training**
+1. Click on the **Train model** button in the bottom right of the screen.
+2. Then click **Start training**.
 
 In the training screen, test your ML model's accuracy by moving the micro:bit to see if the model can correctly identify which sports movement you are doing.
 
-- The **Certainty** level shows how certain or confident the ML model is that you are doing that movement
+- The **Certainty** level shows how certain or confident the ML model is that you are doing that movement.
 - The **Recognition point** sets the certainty threshold for recognition of an action.  You can set this yourself - the default is 80% recognition. The higher this value, the more exact your gestures must be.
-- The **Estimated action** is what the model recognizes as the current movement you are making
+- The **Estimated action** is what the model recognizes as the current movement you are making.
 
 ![ ](/static/mb/projects/sports-trainer/training-screen-callouts.png "training screen")
 <br/>_User interface elements of the training screen_
@@ -256,10 +256,10 @@ The "athlete" should perform the actions while the "coach" records the results. 
 
 If the ML model is confused, or not recognizing your actions with a high degree of consistency or certainty, then you need to go back a step and edit your data samples.
 
-1. Click the **Edit data samples** button in the top left corner of the screen
-2. Visually inspect the data samples collected for your sports actions and remove any data samples that may be throwing off your model
+1. Click the **Edit data samples** button in the top left corner of the screen.
+2. Visually inspect the data samples collected for your sports actions and remove any data samples that may be throwing off your model.
 3. Record more data samples for the different sports actions. Try switching the "athlete" and "coach" roles - there may be some differences between how people perform different actions. A model trained only on one person's movement may work less well for someone else.
-4. Click on the **Testing model** button to re-train and re-test your model
+4. Click on the **Testing model** button to re-train and re-test your model.
 
 ### ~tip
 
@@ -273,7 +273,7 @@ Walk around the classroom and ask each student if their ML model was confused du
 
 Now let's use our model in a Sports Trainer MakeCode project.
 
-**1.** From the CreateAI trainer screen, click on the **Edit in MakeCode** button
+**1.** From the CreateAI trainer screen, click on the **Edit in MakeCode** button.
 
 This creates a project containing your model and its generated Machine Learning action blocks that will show a different icon when it recognizes the gesture.
 
@@ -282,7 +282,7 @@ This creates a project containing your model and its generated Machine Learning 
 ![ ](/static/mb/projects/sports-trainer/makecode-screen.png "MakeCode")
 <br/>_MakeCode project_
 
-**3.** Then click on the _**gesture-extension**_ to add it to your project
+**3.** Then click on the _**gesture-extension**_ to add it to your project.
 
 You will see a new category appear in your Toolbox called "AI Gestures" that includes a couple blocks which automate the sending of data to a receiver micro:bit.  If you are curious how this extension works, you can look at the custom code [here](https://github.com/thsparks/ai-gesture-extension/blob/master/custom.ts).
 
@@ -296,9 +296,9 @@ For each correct sports movement our ML model detects, it will send a message to
 
 Now let's create a 1-minute timer for the AI Sports Trainer competition!
 
-**6.** From the ``||input:Input||`` Toolbox category, drag out a ``||input:on button A pressed||`` and drop on the Workspace
+**6.** From the ``||input:Input||`` Toolbox category, drag out a ``||input:on button A pressed||`` and drop on the Workspace.
 
-**7.** From the ``||gesture_palooza:AI Gestures||`` Toolbox category, drag a ``||gesture_palooza:start timer||`` block and drop into the ``||input:on button A pressed||`` block
+**7.** From the ``||gesture_palooza:AI Gestures||`` Toolbox category, drag a ``||gesture_palooza:start timer||`` block and drop into the ``||input:on button A pressed||`` block.
 
 Your full program should look something like this:
 
@@ -306,13 +306,13 @@ Your full program should look something like this:
 
 Example program - https://makecode.microbit.org/_H5gU4UL90Vkw
 
-**8.** Click the purple **Download** button in the bottom left of the screen, and click **Next**
+**8.** Click the purple **Download** button in the bottom left of the screen, and click **Next**.
 
-**9.** Select the **Same micro:bit** and click **Next**
+**9.** Select the **Same micro:bit** and click **Next**.
 
-**10.** Using the USB cable, connect your micro:bit to your computer, then click **Next**
+**10.** Using the USB cable, connect your micro:bit to your computer, then click **Next**.
 
-**11.** Click **Next** again, and then select the BBC micro:bit device in the browser dialog window and click **Connect**
+**11.** Click **Next** again, and then select the BBC micro:bit device in the browser dialog window and click **Connect**.
 
 This will download your program to the micro:bit.
 
@@ -381,23 +381,23 @@ input.onButtonPressed(Button.B, function () {
 ```
 https://makecode.microbit.org/_8i7535eWbE7T
 
-## 8. Compete for the best AI sports trainer!
+## 9. Compete for the best AI sports trainer!
 
 Follow the steps below to compete for the best AI sports trainer model!
 
-1. The teacher or class facilitator should have the receiver micro:bit on (either connected to a battery or USB cable)
-2. The teacher should **press button A** on the receiver micro:bit to reset (they will see a check icon appear and hear a beep)
+1. The teacher or class facilitator should have the receiver micro:bit on (either connected to a battery or USB cable).
+2. The teacher should **press button A** on the receiver micro:bit to reset (they will see a check icon appear and hear a beep).
 3. One at a time, each team should send their "athlete" representative to the front of the class to stand next to the teacher's micro:bit. The athlete should have their micro:bit connected to a battery pack, powered on, and secured to their body.
-4. The athlete should **press button A** to start the timer on their micro:bit (they will see a 3 second countdown along with some sounds)
+4. The athlete should **press button A** to start the timer on their micro:bit (they will see a 3 second countdown along with some sounds).
 5. They have 1 minute to do as many sports movements as possible. Each movement that your ML model recognizes scores a point. The student should see the movement icon appear and a sound play for each correct score. And the teacher should see a + symbol appear on the receiver micro:bit.
-6. After the time is up, the student should see an X appear on their micro:bit along with a sound
+6. After the time is up, the student should see an X appear on their micro:bit along with a sound.
 7. The teacher should **press button B** on the receiver micro:bit to tally up the score
-7. The teacher should connect the receiver micro:bit to the computer via a USB cable, open their File Explorer, navigate to the MICROBIT drive, and double click the MY_DATA.HTM file to see the student score.  Note - if the micro:bit is already connected, you many have to disconnect and reconnect to the USB cable to refresh the MY_DATA.HTM file.
+7. The teacher should connect the receiver micro:bit to the computer via a USB cable, open their File Explorer, navigate to the MICROBIT drive, and double click the MY_DATA.HTM file to see the student score. Note - if the micro:bit is already connected, you many have to disconnect and reconnect to the USB cable to refresh the MY_DATA.HTM file.
 
 ![ ](/static/mb/projects/sports-trainer/my-data.png "micro:bit data log")
 <br/>_MY DATA log file_
 
-## 9. Reflect and extend
+## 10. Reflect and extend
 
 Students should with their partners:
 
@@ -409,8 +409,8 @@ Students should with their partners:
 - How might AI gesture recognition models be used in real-life?
 
 Possible extensions: 
-- Use the data logger to record specific X, Y, and Z accelerometer values for each sports movement, and use Microsoft Excel or other spreadsheet software to analyze patterns in the data
-- Use your ML model in a real sports game to see if/how trained movements correlate to actual game outcomes or performance
+- Use the data logger to record specific X, Y, and Z accelerometer values for each sports movement, and use Microsoft Excel or other spreadsheet software to analyze patterns in the data.
+- Use your ML model in a real sports game to see if/how trained movements correlate to actual game outcomes or performance.
 
 ### References
 
