@@ -422,7 +422,5 @@ Possible extensions:
 - [Data logger user guide](https://microbit.org/get-started/user-guide/data-logging/)
 
 ```package
-ml=github:microbit-foundation/pxt-microbit-ml#v1.0.16
-gesture_palooza=github:thsparks/ai-gesture-extension#v0.0.4
 datalogger
 ```
