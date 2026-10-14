@@ -223,7 +223,7 @@ By the end of this step, you should have 3 different sports movements as well as
 ![ ](/static/mb/projects/sports-trainer/sports-actions.png "sports actions")
 <br/>_Data samples for 3 different sports movements_
 
-## 5. Train and test the model
+## 7. Train and test the model
 
 Once you have all the data samples collected for your sports movements, the next step is to train your Machine Learning model using this data, so it will be able to recognize these movements in the future.
 
@@ -269,25 +269,26 @@ Walk around the classroom and ask each student if their ML model was confused du
 
 ### ~
 
-## 6. Use your model in a Sports Trainer program
+## 8. Use your model in a Sports Trainer program
 
 Now let's use our model in a Sports Trainer MakeCode project.
 
-1. From the CreateAI trainer screen, click on the **Edit in MakeCode** button
+**1.** From the CreateAI trainer screen, click on the **Edit in MakeCode** button
 
 This creates a project containing your model and its generated Machine Learning action blocks that will show a different icon when it recognizes the gesture.
 
-2. In the MakeCode Toolbox, click on **Extensions** and type in _**thsparks/ai-gesture-extension**_ into the search field
+**2.** In the MakeCode Toolbox, click on **Extensions** and type in _**thsparks/ai-gesture-extension**_ into the search field
 
 ![ ](/static/mb/projects/sports-trainer/makecode-screen.png "MakeCode")
 <br/>_MakeCode project_
 
-3. Then click on the _**gesture-extension**_ to add it to your project
+**3.** Then click on the _**gesture-extension**_ to add it to your project
 
 You will see a new category appear in your Toolbox called "AI Gestures" that includes a couple blocks which automate the sending of data to a receiver micro:bit.  If you are curious how this extension works, you can look at the custom code [here](https://github.com/thsparks/ai-gesture-extension/blob/master/custom.ts).
 
-4. From the ``||gesture_palooza:AI Gestures||`` Toolbox category, drag out 3 ``||gesture_palooza:send gesture||`` blocks, and drop one each into the ``||ml:on ML start||`` events that represent your sports movements.
-5. In each ``||gesture_palooza:send gesture||`` block, type the name of the action.
+**4.** From the ``||gesture_palooza:AI Gestures||`` Toolbox category, drag out 3 ``||gesture_palooza:send gesture||`` blocks, and drop one each into the ``||ml:on ML start||`` events that represent your sports movements.
+
+**5.** In each ``||gesture_palooza:send gesture||`` block, type the name of the action.
 
 ![ ](/static/mb/projects/sports-trainer/add-gesture-blocks.png "AI gesture blocks")
 
@@ -295,8 +296,9 @@ For each correct sports movement our ML model detects, it will send a message to
 
 Now let's create a 1-minute timer for the AI Sports Trainer competition!
 
-6. From the ``||input:Input||`` Toolbox category, drag out a ``||input:on button A pressed||`` and drop on the Workspace
-7. From the ``||gesture_palooza:AI Gestures||`` Toolbox category, drag a ``||gesture_palooza:start timer||`` block and drop into the ``||input:on button A pressed||`` block
+**6.** From the ``||input:Input||`` Toolbox category, drag out a ``||input:on button A pressed||`` and drop on the Workspace
+
+**7.** From the ``||gesture_palooza:AI Gestures||`` Toolbox category, drag a ``||gesture_palooza:start timer||`` block and drop into the ``||input:on button A pressed||`` block
 
 Your full program should look something like this:
 
@@ -304,10 +306,13 @@ Your full program should look something like this:
 
 Example program - https://makecode.microbit.org/_H5gU4UL90Vkw
 
-8. Click the purple **Download** button in the bottom left of the screen, and click **Next**
-9. Select the **Same micro:bit** and click **Next**
-10. Using the USB cable, connect your micro:bit to your computer, then click **Next**
-11. Click **Next** again, and then select the BBC micro:bit device in the browser dialog window and click **Connect**
+**8.** Click the purple **Download** button in the bottom left of the screen, and click **Next**
+
+**9.** Select the **Same micro:bit** and click **Next**
+
+**10.** Using the USB cable, connect your micro:bit to your computer, then click **Next**
+
+**11.** Click **Next** again, and then select the BBC micro:bit device in the browser dialog window and click **Connect**
 
 This will download your program to the micro:bit.
 
