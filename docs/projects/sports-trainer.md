@@ -316,7 +316,7 @@ Example program - https://makecode.microbit.org/_H5gU4UL90Vkw
 
 This will download your program to the micro:bit.
 
-## 7. Prepare the Receiver micro:bit
+## 9. Prepare the Receiver micro:bit
 
 To conduct the AI Sports Trainer competition, the Teacher or facilitator should download the following program onto their micro:bit.
 
@@ -381,7 +381,7 @@ input.onButtonPressed(Button.B, function () {
 ```
 https://makecode.microbit.org/_8i7535eWbE7T
 
-## 9. Compete for the best AI sports trainer!
+## 10. Compete for the best AI sports trainer!
 
 Follow the steps below to compete for the best AI sports trainer model!
 
@@ -397,7 +397,7 @@ Follow the steps below to compete for the best AI sports trainer model!
 ![ ](/static/mb/projects/sports-trainer/my-data.png "micro:bit data log")
 <br/>_MY DATA log file_
 
-## 10. Reflect and extend
+## 11. Reflect and extend
 
 Students should with their partners:
 
