@@ -62,7 +62,7 @@ By the end of this lesson, students will be able to:
 - Reflection (5)
 
 **Key vocabulary:**
-- **Artificial Intelligence (AI)** - the ability of a computer or robot to think and act like a human
+- **Artificial Intelligence (AI)** - the ability of a computer or robot to appear to think and act like a human
 - **Machine Learning (ML)** - a subset of AI that enables computers to learn from data
 - **ML model** - an algorithm trained on data to recognize patterns and make predictions
 - **Sensor** - a device that can measure environmental data
@@ -414,8 +414,9 @@ Possible extensions:
 
 ### References
 
-- [micro:bit CreateAI user guide](https://microbit.org/get-started/user-guide/microbit-createai/)
 - [micro:bit CreateAI](https://createai.microbit.org/)
+- [micro:bit CreateAI user guide](https://microbit.org/get-started/user-guide/microbit-createai/)
+- [micro:bit CreateAI tablet apps](https://microbit.org/get-started/user-guide/mobile/#micro:bit-createai-app)
 - [MakeCode accelerometer reference](https://makecode.microbit.org/reference/input/acceleration)
 - [MakeCode radio reference](https://makecode.microbit.org/reference/radio)
 - [MakeCode data logger reference](https://makecode.microbit.org/reference/datalogger)
