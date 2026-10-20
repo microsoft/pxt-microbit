@@ -40,6 +40,19 @@ By the end of this lesson, students will be able to:
 - Combine learned recognition with explicit rules in a program.
 - Understand how ML models are only as good as the data they are trained on.
 
+**CSTA Standards Alignment:**
+- MS-ALG-ML-06: Hypothesize how a machine learning model generates classifications or predictions.
+- MS-ALG-ML-07: Investigate ways to improve the accuracy of a machine learning model and reduce bias by refining the quality of examples and nonexamples in the training data.
+- MS-ALG-ML-08: Evaluate the features and limitations of a machine learning model.
+- MS-PRO-TR-19: Use systematic strategies to test, refine, and document changes to a computing technology to meet the intended purpose.
+- MS-DAT-DC-24: Analyze options to address a data quality issue.
+- MS-DAT-DI-25: Use a computational tool to identify relationships among variables in a dataset and make a classification or prediction.
+
+**Suggested curriculum tie-in:**
+- Physical Education
+- Data Science and Math
+- Physics 
+
 ## Educator preparation
 
 **Prior to the lesson:**
@@ -399,7 +412,7 @@ Follow the steps below to compete for the best AI sports trainer model!
 
 ## 11. Reflect and extend
 
-Students should with their partners:
+With their partners or as a class, students can discuss the following questions:
 
 - Which sports movements were the easiest for the ML model to recognize? Why do you think that is?
 - Could high confidence still produce an incorrect prediction?
@@ -412,9 +425,11 @@ Possible extensions:
 - Use the data logger to record specific X, Y, and Z accelerometer values for each sports movement, and use Microsoft Excel or other spreadsheet software to analyze patterns in the data.
 - Use your ML model in a real sports game to see if/how trained movements correlate to actual game outcomes or performance.
 
-### References
+### Additional learning and references
 
 - [micro:bit CreateAI](https://createai.microbit.org/)
+- [micro:bit CreateAI Lessons](https://microbit.org/teach/lessons/?filters=createai)
+- [micro:bit in Sports](https://microbit.org/news/2026-04-14/5-ways-to-use-the-bbc-microbit-in-sport)
 - [micro:bit CreateAI user guide](https://microbit.org/get-started/user-guide/microbit-createai/)
 - [micro:bit CreateAI tablet apps](https://microbit.org/get-started/user-guide/mobile/#micro:bit-createai-app)
 - [MakeCode accelerometer reference](https://makecode.microbit.org/reference/input/acceleration)
