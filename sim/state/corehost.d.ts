@@ -10,6 +10,7 @@ declare const console: {
 
 declare namespace pxsim {
     function board(): DalBoardState;
+    function boardView(): { setAudioPinEnabled(enabled: boolean): void };
     function pause(milliseconds: number): void;
 
     namespace pins {

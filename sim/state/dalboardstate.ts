@@ -7,7 +7,8 @@ namespace pxsim {
         , RadioBoard
         , LightBoard
         , MicrophoneBoard
-        , ControlMessageBoard {
+        , ControlMessageBoard
+        , samples.SampleBoard {
         ledMatrixState: LedMatrixState;
         edgeConnectorState: EdgeConnectorState;
         serialState: SerialState;
@@ -20,6 +21,8 @@ namespace pxsim {
         microphoneState: MicrophoneState;
         lightState: pxt.Map<CommonNeoPixelState>;
         fileSystem: FileSystemState;
+        samplesState: samples.SamplesState;
+        recordingState: RecordingState;
         logoTouch: Button;
         speakerEnabled: boolean = true;
         controlMessageState: ControlMessageState;
@@ -31,6 +34,8 @@ namespace pxsim {
 
             this.lightState = {};
             this.fileSystem = new FileSystemState();
+            this.samplesState = new samples.SamplesState();
+            this.builtinParts["recording"] = this.recordingState = new RecordingState();
             this.controlMessageState = new ControlMessageState(this);
             this.builtinParts["ledmatrix"] = this.ledMatrixState = new LedMatrixState(runtime);
             this.builtinParts["buttonpair"] = this.buttonPairState = new ButtonPairState({
