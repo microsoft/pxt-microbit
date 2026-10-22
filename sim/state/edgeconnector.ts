@@ -199,7 +199,7 @@ namespace pxsim.pins {
     export function setAudioPinEnabled(enabled: boolean) {
         edgeConnectorSoundDisabled = !enabled;
 
-        const headphone = board().viewHost.getView().querySelector("g.sim-headphone-cmp");
+        const headphone = boardView().viewHost.getView().querySelector("g.sim-headphone-cmp");
 
         if (headphone) {
             const existing = headphone.querySelector("#headphone-disabled");

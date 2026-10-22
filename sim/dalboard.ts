@@ -29,10 +29,6 @@ namespace pxsim {
         controlMessageState: ControlMessageState;
         samplesState: samples.SamplesState;
 
-        // visual
-        viewHost: visuals.BoardHost;
-        view: SVGElement;
-
         // board hardware version
         hardwareVersion = 1;
 
@@ -134,8 +130,43 @@ namespace pxsim {
 
 
         initAsync(msg: SimulatorRunMessage): Promise<void> {
-            super.initAsync(msg);
+            return super.initAsync(msg).then(() => boardView().initAsync(msg));
+        }
 
+        screenshotAsync(width?: number): Promise<ImageData> {
+            return boardView().screenshotAsync(width);
+        }
+
+        kill() {
+            super.kill();
+            boardView().kill();
+        }
+
+        tryGetNeopixelState(pinId: number): CommonNeoPixelState {
+            return this.lightState[pinId];
+        }
+
+        neopixelState(pinId: number): CommonNeoPixelState {
+            if (pinId === undefined) {
+                pinId = DAL.MICROBIT_ID_IO_P0;
+            }
+            let state = this.lightState[pinId];
+            if (!state) state = this.lightState[pinId] = new CommonNeoPixelState();
+            return state;
+        }
+    }
+
+    export class DalBoardView {
+        viewHost: visuals.BoardHost;
+        view: SVGElement;
+
+        constructor(private state: DalBoard) { }
+
+        addUpdateSubscriber(subscriber: () => void) {
+            this.state.addUpdateSubscriber(subscriber);
+        }
+
+        initAsync(msg: SimulatorRunMessage): Promise<void> {
             const boardDef = msg.boardDefinition;
             const cmpsList = msg.parts;
             const cmpDefs = msg.partDefinitions || {};
@@ -153,12 +184,12 @@ namespace pxsim {
                 if (v2PartsUsed.length) {
                     console.log(`detected v2 feature`, v2PartsUsed);
                     cmpsList.push(...v2PartsUsed);
-                    this.hardwareVersion = 2;
+                    this.state.hardwareVersion = 2;
                 }
             }
 
             const opts: visuals.BoardHostOpts = {
-                state: this,
+                state: this.state,
                 boardDef: boardDef,
                 partsList: cmpsList,
                 partDefs: cmpDefs,
@@ -180,25 +211,13 @@ namespace pxsim {
                 AudioContextManager.mute(true);
                 setParentMuteState("disabled");
             }
-            document.body.appendChild(this.view = this.viewHost.getView());
+            this.view = this.viewHost.getView();
+            document.body.appendChild(this.view);
 
             if (msg.theme === "mbcodal") {
-                this.ensureHardwareVersion(2);
+                this.state.ensureHardwareVersion(2);
             }
             return Promise.resolve();
-        }
-
-        tryGetNeopixelState(pinId: number): CommonNeoPixelState {
-            return this.lightState[pinId];
-        }
-
-        neopixelState(pinId: number): CommonNeoPixelState {
-            if (pinId === undefined) {
-                pinId = DAL.MICROBIT_ID_IO_P0;
-            }
-            let state = this.lightState[pinId];
-            if (!state) state = this.lightState[pinId] = new CommonNeoPixelState();
-            return state;
         }
 
         screenshotAsync(width?: number): Promise<ImageData> {
@@ -206,14 +225,17 @@ namespace pxsim {
         }
 
         kill() {
-            super.kill();
-            this.viewHost.removeEventListeners();
+            if (this.viewHost)
+                this.viewHost.removeEventListeners();
         }
     }
+
+    let currentBoardView: DalBoardView;
 
     export function initRuntimeWithDalBoard() {
         U.assert(!runtime.board);
         let b = new DalBoard();
+        currentBoardView = new DalBoardView(b);
         runtime.board = b;
         runtime.postError = (e) => {
             led.setBrightness(255);
@@ -242,6 +264,10 @@ namespace pxsim {
 
     export function board(): DalBoard {
         return runtime.board as DalBoard;
+    }
+
+    export function boardView(): DalBoardView {
+        return currentBoardView;
     }
 
     export function parsePinString(gpioPin: string): Pin {
