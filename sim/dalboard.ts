@@ -106,17 +106,7 @@ namespace pxsim {
             this.builtinParts["microservo"] = this.edgeConnectorState;
             this.builtinParts["logotouch"] = this.logoTouch = new Button(DAL.MICROBIT_ID_LOGO);
 
-            this.builtinVisuals["buttonpair"] = () => new visuals.ButtonPairView();
-            this.builtinVisuals["ledmatrix"] = () => new visuals.LedMatrixView();
-            this.builtinVisuals["microservo"] = () => new visuals.MicroServoView();
-
             this.builtinParts["neopixel"] = (pin: Pin) => { return this.neopixelState(pin.id); };
-            this.builtinVisuals["neopixel"] = () => new visuals.NeoPixelView(pxsim.parsePinString);
-            this.builtinPartVisuals["neopixel"] = (xy: visuals.Coord) => visuals.mkNeoPixelPart(xy);
-
-            this.builtinPartVisuals["buttonpair"] = (xy: visuals.Coord) => visuals.mkBtnSvg(xy);
-            this.builtinPartVisuals["ledmatrix"] = (xy: visuals.Coord) => visuals.mkLedMatrixSvg(xy, 8, 8);
-            this.builtinPartVisuals["microservo"] = (xy: visuals.Coord) => visuals.mkMicroServoPart(xy);
 
             this.samplesState = new samples.SamplesState();
         }
@@ -124,23 +114,10 @@ namespace pxsim {
         ensureHardwareVersion(version: number) {
             if (version > this.hardwareVersion) {
                 this.hardwareVersion = version;
-                this.updateView();
+                boardView().updateView();
             }
         }
 
-
-        initAsync(msg: SimulatorRunMessage): Promise<void> {
-            return super.initAsync(msg).then(() => boardView().initAsync(msg));
-        }
-
-        screenshotAsync(width?: number): Promise<ImageData> {
-            return boardView().screenshotAsync(width);
-        }
-
-        kill() {
-            super.kill();
-            boardView().kill();
-        }
 
         tryGetNeopixelState(pinId: number): CommonNeoPixelState {
             return this.lightState[pinId];
@@ -156,14 +133,33 @@ namespace pxsim {
         }
     }
 
-    export class DalBoardView {
+    export class DalBoardView implements BoardView {
         viewHost: visuals.BoardHost;
         view: SVGElement;
+        builtinVisuals: Map<() => any> = {};
+        builtinPartVisuals: Map<(xy: visuals.Coord) => any> = {};
+        private updateSubscribers: (() => void)[] = [];
 
-        constructor(private state: DalBoard) { }
+        constructor(private state: DalBoard) {
+            this.builtinVisuals["buttonpair"] = () => new visuals.ButtonPairView();
+            this.builtinVisuals["ledmatrix"] = () => new visuals.LedMatrixView();
+            this.builtinVisuals["microservo"] = () => new visuals.MicroServoView();
+            this.builtinVisuals["neopixel"] = () => new visuals.NeoPixelView(pxsim.parsePinString);
+
+            this.builtinPartVisuals["neopixel"] = (xy: visuals.Coord) => visuals.mkNeoPixelPart(xy);
+            this.builtinPartVisuals["buttonpair"] = (xy: visuals.Coord) => visuals.mkBtnSvg(xy);
+            this.builtinPartVisuals["ledmatrix"] = (xy: visuals.Coord) => visuals.mkLedMatrixSvg(xy, 8, 8);
+            this.builtinPartVisuals["microservo"] = (xy: visuals.Coord) => visuals.mkMicroServoPart(xy);
+        }
 
         addUpdateSubscriber(subscriber: () => void) {
-            this.state.addUpdateSubscriber(subscriber);
+            this.updateSubscribers.push(subscriber);
+        }
+
+        updateView() {
+            if (this.viewHost)
+                this.viewHost.updateState();
+            this.updateSubscribers.forEach(subscriber => subscriber());
         }
 
         initAsync(msg: SimulatorRunMessage): Promise<void> {
@@ -190,6 +186,7 @@ namespace pxsim {
 
             const opts: visuals.BoardHostOpts = {
                 state: this.state,
+                builtinVisuals: this.builtinVisuals,
                 boardDef: boardDef,
                 partsList: cmpsList,
                 partDefs: cmpDefs,
@@ -225,17 +222,18 @@ namespace pxsim {
         }
 
         kill() {
-            if (this.viewHost)
+            if (this.viewHost) {
                 this.viewHost.removeEventListeners();
+                this.viewHost = undefined;
+            }
+            this.updateSubscribers = [];
         }
     }
-
-    let currentBoardView: DalBoardView;
 
     export function initRuntimeWithDalBoard() {
         U.assert(!runtime.board);
         let b = new DalBoard();
-        currentBoardView = new DalBoardView(b);
+        runtime.boardView = new DalBoardView(b);
         runtime.board = b;
         runtime.postError = (e) => {
             led.setBrightness(255);
@@ -267,7 +265,7 @@ namespace pxsim {
     }
 
     export function boardView(): DalBoardView {
-        return currentBoardView;
+        return runtime.boardView as DalBoardView;
     }
 
     export function parsePinString(gpioPin: string): Pin {
