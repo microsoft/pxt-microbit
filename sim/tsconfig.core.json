@@ -14,8 +14,11 @@
     },
     "files": [
         "../node_modules/pxt-core/built/pxtsimcore.d.ts",
-        "state/corehost.d.ts",
+        "state/hostglobals.d.ts",
         "compat.ts",
+        "state/boardaccess.ts",
+        "state/misc.ts",
+        "../node_modules/pxt-common-packages/libs/base/sim/control.ts",
         "state/dalboardstate.ts",
         "state/edgeconnectorsim.ts",
         "state/ledmatrix.ts",

@@ -2,12 +2,9 @@
 /// <reference path="../libs/core/dal.d.ts"/>
 /// <reference path="../libs/core/enums.d.ts"/>
 /// <reference path="state/dalboardstate.ts"/>
+/// <reference path="state/boardaccess.ts"/>
 
 namespace pxsim {
-    /** Compatibility name for the board; all state now lives in DalBoardState. */
-    export class DalBoard extends DalBoardState {
-    }
-
     const disabledHeadphoneSVG = `
     <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
         <clipPath id="bounds" clipPathUnits="userSpaceOnUse">
@@ -18,7 +15,7 @@ namespace pxsim {
     </svg>
     `
 
-    export class DalBoardView implements BoardView {
+    export class DalBoardView implements DalBoardViewContract {
         viewHost: visuals.BoardHost;
         view: SVGElement;
         builtinVisuals: Map<() => any> = {};
@@ -169,14 +166,6 @@ namespace pxsim {
 
     if (!pxsim.initCurrentRuntime) {
         pxsim.initCurrentRuntime = initRuntimeWithDalBoard;
-    }
-
-    export function board(): DalBoard {
-        return runtime.board as DalBoard;
-    }
-
-    export function boardView(): DalBoardView {
-        return runtime.boardView as DalBoardView;
     }
 
     export function parsePinString(gpioPin: string): Pin {
