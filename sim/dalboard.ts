@@ -4,7 +4,15 @@
 /// <reference path="state/dalboardstate.ts"/>
 
 namespace pxsim {
-    export class DalBoard extends DalBoardState {
+    export class DalBoard extends DalBoardState implements samples.SampleBoard {
+        recordingState: RecordingState;
+        samplesState: samples.SamplesState;
+
+        constructor() {
+            super();
+            this.builtinParts["recording"] = this.recordingState = new RecordingState();
+            this.samplesState = new samples.SamplesState();
+        }
     }
 
     export class DalBoardView implements BoardView {

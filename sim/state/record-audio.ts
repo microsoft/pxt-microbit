@@ -54,7 +54,7 @@ namespace pxsim.record {
         }
     }
 
-    function stopRecorder(b: DalBoardState): void {
+    function stopRecorder(b: DalBoard): void {
         const state = b.recordingState;
         state.recorder.stop();
         state.currentlyRecording = false;
@@ -67,7 +67,7 @@ namespace pxsim.record {
         }
     }
 
-    async function populateRecording(b: DalBoardState) {
+    async function populateRecording(b: DalBoard) {
         const state = b.recordingState;
 
         if (state.currentlyErasing) {
@@ -220,7 +220,7 @@ namespace pxsim.record {
         b.recordingState.recording.removeEventListener("ended", b.recordingState.handleAudioStopped);
     }
 
-    function erasingAsync(b: DalBoardState): Promise<any> {
+    function erasingAsync(b: DalBoard): Promise<any> {
         return new Promise((resolve, reject) => {
             if (b.recordingState.recording && b.recordingState.audioPlaying) {
                 stopPlayback();

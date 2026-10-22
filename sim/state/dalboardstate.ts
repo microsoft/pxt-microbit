@@ -1,4 +1,3 @@
-/// <reference path="../../node_modules/pxt-core/built/pxtsim.d.ts"/>
 /// <reference path="../../libs/core/dal.d.ts"/>
 /// <reference path="../../libs/core/enums.d.ts"/>
 
@@ -8,8 +7,7 @@ namespace pxsim {
         , RadioBoard
         , LightBoard
         , MicrophoneBoard
-        , ControlMessageBoard
-        , samples.SampleBoard {
+        , ControlMessageBoard {
         ledMatrixState: LedMatrixState;
         edgeConnectorState: EdgeConnectorState;
         serialState: SerialState;
@@ -20,13 +18,11 @@ namespace pxsim {
         buttonPairState: ButtonPairState;
         radioState: RadioState;
         microphoneState: MicrophoneState;
-        recordingState: RecordingState;
         lightState: pxt.Map<CommonNeoPixelState>;
         fileSystem: FileSystemState;
         logoTouch: Button;
         speakerEnabled: boolean = true;
         controlMessageState: ControlMessageState;
-        samplesState: samples.SamplesState;
 
         hardwareVersion = 1;
 
@@ -94,7 +90,6 @@ namespace pxsim {
                 RADIO_EVT_DATAGRAM: DAL.MICROBIT_RADIO_EVT_DATAGRAM
             });
             this.builtinParts["microphone"] = this.microphoneState = new MicrophoneState(DAL.DEVICE_ID_MICROPHONE, 0, 255, 86, 165);
-            this.builtinParts["recording"] = this.recordingState = new RecordingState();
             this.builtinParts["accelerometer"] = this.accelerometerState = new AccelerometerState(runtime);
             this.builtinParts["serial"] = this.serialState = new SerialState(runtime, this);
             this.builtinParts["thermometer"] = this.thermometerState = new ThermometerState();
@@ -104,8 +99,6 @@ namespace pxsim {
             this.builtinParts["logotouch"] = this.logoTouch = new Button(DAL.MICROBIT_ID_LOGO);
 
             this.builtinParts["neopixel"] = (pin: Pin) => { return this.neopixelState(pin.id); };
-
-            this.samplesState = new samples.SamplesState();
         }
 
         ensureHardwareVersion(version: number) {

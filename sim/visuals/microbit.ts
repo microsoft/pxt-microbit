@@ -369,7 +369,7 @@ path.sim-board {
         private accTextZ: SVGTextElement;
         private v2Circle: SVGCircleElement
         private v2Text: SVGTextElement;
-        public board: pxsim.DalBoardState;
+        public board: pxsim.DalBoard;
         private pinNmToCoord: Map<Coord> = {};
         private domHardwareVersion = 1;
         private bindings: EventBinding[] = [];
@@ -400,7 +400,7 @@ path.sim-board {
                 this.updateTheme();
 
             if (props && props.runtime) {
-                this.board = this.props.runtime.board as pxsim.DalBoardState;
+                this.board = this.props.runtime.board as pxsim.DalBoard;
                 boardView().addUpdateSubscriber(() => this.updateState());
                 this.updateState(true);
                 this.attachEvents();

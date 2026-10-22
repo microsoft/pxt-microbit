@@ -1,0 +1,33 @@
+{
+    "compilerOptions": {
+        "target": "es2017",
+        "noImplicitAny": true,
+        "noImplicitReturns": true,
+        "moduleResolution": "node",
+        "newLine": "LF",
+        "sourceMap": false,
+        "skipLibCheck": true,
+        "types": [],
+        "lib": [
+            "es2017"
+        ]
+    },
+    "files": [
+        "../node_modules/pxt-core/built/pxtsimcore.d.ts",
+        "state/corehost.d.ts",
+        "compat.ts",
+        "state/dalboardstate.ts",
+        "state/edgeconnectorsim.ts",
+        "state/ledmatrix.ts",
+        "state/bitmap.ts",
+        "state/accelerometer.ts",
+        "state/thermometer.ts",
+        "state/filesystem.ts",
+        "state/serial.ts",
+        "../node_modules/pxt-common-packages/libs/base/sim/controlmessage.ts",
+        "../node_modules/pxt-common-packages/libs/core/sim/neopixelstate.ts",
+        "../node_modules/pxt-common-packages/libs/core/sim/analogSensor.ts",
+        "../node_modules/pxt-common-packages/libs/microphone/sim/state.ts",
+        "../node_modules/pxt-common-packages/libs/radio/sim/state.ts"
+    ]
+}
