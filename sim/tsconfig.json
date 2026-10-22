@@ -31,6 +31,7 @@
         "../node_modules/pxt-common-packages/libs/settings/sim/*.ts"
     ],
     "exclude": [
-        "state/hostglobals.d.ts"
+        "state/hostglobals.d.ts",
+        "state/headless.ts"
     ]
 }
