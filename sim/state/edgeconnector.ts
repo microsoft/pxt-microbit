@@ -116,7 +116,7 @@ namespace pxsim.pins {
     export function analogSetPitchVolume(volume: number) {
         const ec = board().edgeConnectorState;
         ec.pitchVolume = Math.max(0, Math.min(0xff, volume | 0));
-        AudioContextManager.setCurrentToneGain((ec.pitchVolume / 0xff) / 10);
+        audiohost.audio().setToneGain((ec.pitchVolume / 0xff) / 10);
     }
 
     export function analogPitchVolume() {
@@ -148,12 +148,12 @@ namespace pxsim.pins {
         let cb = getResume();
         if (pin) {
             const v = pitchVolume / 0xff;
-            AudioContextManager.tone(frequency, v / 10);
+            audiohost.audio().tone(frequency, v / 10);
         }
         if (ms <= 0) cb();
         else {
             setTimeout(() => {
-                AudioContextManager.stop();
+                audiohost.audio().stop();
                 if (pin && !edgeConnectorSoundDisabled) {
                     pin.value = 0;
                     pin.period = 0;
@@ -186,40 +186,9 @@ namespace pxsim.pins {
         pxsim.pins.analogSetPitchPin(pinId);
     }
 
-    const disabledSVG = `
-    <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
-        <clipPath id="bounds" clipPathUnits="userSpaceOnUse">
-        <circle cx="50" cy="50" r="45" />
-        </clipPath>
-        <circle cx="50" cy="50" r="40" stroke-width="10" stroke="red" fill="none" clip-path="url(#bounds)" />
-        <line x1="100" y1="0" x2="0" y2="100" stroke="red" stroke-width="10" clip-path="url(#bounds)" />
-    </svg>
-    `
-
     export function setAudioPinEnabled(enabled: boolean) {
         edgeConnectorSoundDisabled = !enabled;
 
-        const headphone = board().viewHost.getView().querySelector("g.sim-headphone-cmp");
-
-        if (headphone) {
-            const existing = headphone.querySelector("#headphone-disabled");
-
-            if (existing) {
-                if (enabled) {
-                    existing.remove();
-                }
-                else {
-                    return;
-                }
-            }
-
-            if (!enabled) {
-                const img = document.createElementNS("http://www.w3.org/2000/svg", "image") as SVGImageElement;
-                img.setAttribute("href", "data:image/svg+xml;utf8," + encodeURIComponent(disabledSVG))
-                img.setAttribute("id", "headphone-disabled");
-                img.style.transform = "scale(1.5) translate(-10px, -10px)";
-                headphone.appendChild(img)
-            }
-        }
+        boardView().setAudioPinEnabled(enabled);
     }
 }

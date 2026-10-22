@@ -1,141 +1,50 @@
 /// <reference path="../node_modules/pxt-core/built/pxtsim.d.ts"/>
 /// <reference path="../libs/core/dal.d.ts"/>
 /// <reference path="../libs/core/enums.d.ts"/>
+/// <reference path="state/dalboardstate.ts"/>
+/// <reference path="state/boardaccess.ts"/>
 
 namespace pxsim {
-    export class DalBoard extends CoreBoard
-        implements CommonBoard
-        , RadioBoard
-        , LightBoard
-        , MicrophoneBoard
-        , ControlMessageBoard
-        , samples.SampleBoard {
-        // state & update logic for component services
-        ledMatrixState: LedMatrixState;
-        edgeConnectorState: EdgeConnectorState;
-        serialState: SerialState;
-        accelerometerState: AccelerometerState;
-        compassState: CompassState;
-        thermometerState: ThermometerState;
-        lightSensorState: LightSensorState;
-        buttonPairState: ButtonPairState;
-        radioState: RadioState;
-        microphoneState: MicrophoneState;
-        recordingState: RecordingState;
-        lightState: pxt.Map<CommonNeoPixelState>;
-        fileSystem: FileSystemState;
-        logoTouch: Button;
-        speakerEnabled: boolean = true;
-        controlMessageState: ControlMessageState;
-        samplesState: samples.SamplesState;
+    const disabledHeadphoneSVG = `
+    <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
+        <clipPath id="bounds" clipPathUnits="userSpaceOnUse">
+        <circle cx="50" cy="50" r="45" />
+        </clipPath>
+        <circle cx="50" cy="50" r="40" stroke-width="10" stroke="red" fill="none" clip-path="url(#bounds)" />
+        <line x1="100" y1="0" x2="0" y2="100" stroke="red" stroke-width="10" clip-path="url(#bounds)" />
+    </svg>
+    `
 
-        // visual
+    export class DalBoardView implements DalBoardViewContract {
         viewHost: visuals.BoardHost;
         view: SVGElement;
+        builtinVisuals: Map<() => any> = {};
+        builtinPartVisuals: Map<(xy: visuals.Coord) => any> = {};
+        private updateSubscribers: (() => void)[] = [];
 
-        // board hardware version
-        hardwareVersion = 1;
-
-        constructor() {
-            super()
-
-            // components
-            this.lightState = {};
-            this.fileSystem = new FileSystemState();
-            this.controlMessageState = new ControlMessageState(this);
-            this.builtinParts["ledmatrix"] = this.ledMatrixState = new LedMatrixState(runtime);
-            this.builtinParts["buttonpair"] = this.buttonPairState = new ButtonPairState({
-                ID_BUTTON_A: DAL.MICROBIT_ID_BUTTON_A,
-                ID_BUTTON_B: DAL.MICROBIT_ID_BUTTON_B,
-                ID_BUTTON_AB: DAL.MICROBIT_ID_BUTTON_AB,
-                BUTTON_EVT_UP: DAL.MICROBIT_BUTTON_EVT_UP,
-                BUTTON_EVT_CLICK: DAL.MICROBIT_BUTTON_EVT_CLICK
-            });
-            this.builtinParts["edgeconnector"] = this.edgeConnectorState = new EdgeConnectorState({
-                pins: [
-                    DAL.MICROBIT_ID_IO_P0,
-                    DAL.MICROBIT_ID_IO_P1,
-                    DAL.MICROBIT_ID_IO_P2,
-                    DAL.MICROBIT_ID_IO_P3,
-                    DAL.MICROBIT_ID_IO_P4,
-                    DAL.MICROBIT_ID_IO_P5,
-                    DAL.MICROBIT_ID_IO_P6,
-                    DAL.MICROBIT_ID_IO_P7,
-                    DAL.MICROBIT_ID_IO_P8,
-                    DAL.MICROBIT_ID_IO_P9,
-                    DAL.MICROBIT_ID_IO_P10,
-                    DAL.MICROBIT_ID_IO_P11,
-                    DAL.MICROBIT_ID_IO_P12,
-                    DAL.MICROBIT_ID_IO_P13,
-                    DAL.MICROBIT_ID_IO_P14,
-                    DAL.MICROBIT_ID_IO_P15,
-                    DAL.MICROBIT_ID_IO_P16,
-                    0,
-                    0,
-                    DAL.MICROBIT_ID_IO_P19,
-                    DAL.MICROBIT_ID_IO_P20
-                ],
-                servos: {
-                    "P0": DAL.MICROBIT_ID_IO_P0,
-                    "P1": DAL.MICROBIT_ID_IO_P1,
-                    "P2": DAL.MICROBIT_ID_IO_P2,
-                    "P3": DAL.MICROBIT_ID_IO_P3,
-                    "P4": DAL.MICROBIT_ID_IO_P4,
-                    "P5": DAL.MICROBIT_ID_IO_P5,
-                    "P6": DAL.MICROBIT_ID_IO_P6,
-                    "P7": DAL.MICROBIT_ID_IO_P7,
-                    "P8": DAL.MICROBIT_ID_IO_P8,
-                    "P9": DAL.MICROBIT_ID_IO_P9,
-                    "P10": DAL.MICROBIT_ID_IO_P10,
-                    "P11": DAL.MICROBIT_ID_IO_P11,
-                    "P12": DAL.MICROBIT_ID_IO_P12,
-                    "P13": DAL.MICROBIT_ID_IO_P13,
-                    "P14": DAL.MICROBIT_ID_IO_P14,
-                    "P15": DAL.MICROBIT_ID_IO_P15,
-                    "P16": DAL.MICROBIT_ID_IO_P16,
-                    "P19": DAL.MICROBIT_ID_IO_P19
-                }
-            });
-            this.builtinParts["radio"] = this.radioState = new RadioState(runtime, this, {
-                ID_RADIO: DAL.MICROBIT_ID_RADIO,
-                RADIO_EVT_DATAGRAM: DAL.MICROBIT_RADIO_EVT_DATAGRAM
-            });
-            this.builtinParts["microphone"] = this.microphoneState = new MicrophoneState(DAL.DEVICE_ID_MICROPHONE, 0, 255, 86, 165);
-            this.builtinParts["recording"] = this.recordingState = new RecordingState();
-            this.builtinParts["accelerometer"] = this.accelerometerState = new AccelerometerState(runtime);
-            this.builtinParts["serial"] = this.serialState = new SerialState(runtime, this);
-            this.builtinParts["thermometer"] = this.thermometerState = new ThermometerState();
-            this.builtinParts["lightsensor"] = this.lightSensorState = new LightSensorState();
-            this.builtinParts["compass"] = this.compassState = new CompassState();
-            this.builtinParts["microservo"] = this.edgeConnectorState;
-            this.builtinParts["logotouch"] = this.logoTouch = new Button(DAL.MICROBIT_ID_LOGO);
-
+        constructor(private state: DalBoardState) {
             this.builtinVisuals["buttonpair"] = () => new visuals.ButtonPairView();
             this.builtinVisuals["ledmatrix"] = () => new visuals.LedMatrixView();
             this.builtinVisuals["microservo"] = () => new visuals.MicroServoView();
-
-            this.builtinParts["neopixel"] = (pin: Pin) => { return this.neopixelState(pin.id); };
             this.builtinVisuals["neopixel"] = () => new visuals.NeoPixelView(pxsim.parsePinString);
-            this.builtinPartVisuals["neopixel"] = (xy: visuals.Coord) => visuals.mkNeoPixelPart(xy);
 
+            this.builtinPartVisuals["neopixel"] = (xy: visuals.Coord) => visuals.mkNeoPixelPart(xy);
             this.builtinPartVisuals["buttonpair"] = (xy: visuals.Coord) => visuals.mkBtnSvg(xy);
             this.builtinPartVisuals["ledmatrix"] = (xy: visuals.Coord) => visuals.mkLedMatrixSvg(xy, 8, 8);
             this.builtinPartVisuals["microservo"] = (xy: visuals.Coord) => visuals.mkMicroServoPart(xy);
-
-            this.samplesState = new samples.SamplesState();
         }
 
-        ensureHardwareVersion(version: number) {
-            if (version > this.hardwareVersion) {
-                this.hardwareVersion = version;
-                this.updateView();
-            }
+        addUpdateSubscriber(subscriber: () => void) {
+            this.updateSubscribers.push(subscriber);
         }
 
+        updateView() {
+            if (this.viewHost)
+                this.viewHost.updateState();
+            this.updateSubscribers.forEach(subscriber => subscriber());
+        }
 
         initAsync(msg: SimulatorRunMessage): Promise<void> {
-            super.initAsync(msg);
-
             const boardDef = msg.boardDefinition;
             const cmpsList = msg.parts;
             const cmpDefs = msg.partDefinitions || {};
@@ -153,12 +62,13 @@ namespace pxsim {
                 if (v2PartsUsed.length) {
                     console.log(`detected v2 feature`, v2PartsUsed);
                     cmpsList.push(...v2PartsUsed);
-                    this.hardwareVersion = 2;
+                    this.state.hardwareVersion = 2;
                 }
             }
 
             const opts: visuals.BoardHostOpts = {
-                state: this,
+                state: this.state,
+                builtinVisuals: this.builtinVisuals,
                 boardDef: boardDef,
                 partsList: cmpsList,
                 partDefs: cmpDefs,
@@ -180,40 +90,58 @@ namespace pxsim {
                 AudioContextManager.mute(true);
                 setParentMuteState("disabled");
             }
-            document.body.appendChild(this.view = this.viewHost.getView());
+            this.view = this.viewHost.getView();
+            document.body.appendChild(this.view);
 
             if (msg.theme === "mbcodal") {
-                this.ensureHardwareVersion(2);
+                this.state.ensureHardwareVersion(2);
             }
             return Promise.resolve();
-        }
-
-        tryGetNeopixelState(pinId: number): CommonNeoPixelState {
-            return this.lightState[pinId];
-        }
-
-        neopixelState(pinId: number): CommonNeoPixelState {
-            if (pinId === undefined) {
-                pinId = DAL.MICROBIT_ID_IO_P0;
-            }
-            let state = this.lightState[pinId];
-            if (!state) state = this.lightState[pinId] = new CommonNeoPixelState();
-            return state;
         }
 
         screenshotAsync(width?: number): Promise<ImageData> {
             return this.viewHost.screenshotAsync(width);
         }
 
+        setAudioPinEnabled(enabled: boolean) {
+            if (!this.viewHost) return;
+            const headphone = this.viewHost.getView().querySelector("g.sim-headphone-cmp");
+
+            if (headphone) {
+                const existing = headphone.querySelector("#headphone-disabled");
+
+                if (existing) {
+                    if (enabled) {
+                        existing.remove();
+                    }
+                    else {
+                        return;
+                    }
+                }
+
+                if (!enabled) {
+                    const img = document.createElementNS("http://www.w3.org/2000/svg", "image") as SVGImageElement;
+                    img.setAttribute("href", "data:image/svg+xml;utf8," + encodeURIComponent(disabledHeadphoneSVG))
+                    img.setAttribute("id", "headphone-disabled");
+                    img.style.transform = "scale(1.5) translate(-10px, -10px)";
+                    headphone.appendChild(img)
+                }
+            }
+        }
+
         kill() {
-            super.kill();
-            this.viewHost.removeEventListeners();
+            if (this.viewHost) {
+                this.viewHost.removeEventListeners();
+                this.viewHost = undefined;
+            }
+            this.updateSubscribers = [];
         }
     }
 
     export function initRuntimeWithDalBoard() {
         U.assert(!runtime.board);
         let b = new DalBoard();
+        runtime.boardView = new DalBoardView(b);
         runtime.board = b;
         runtime.postError = (e) => {
             led.setBrightness(255);
@@ -238,10 +166,6 @@ namespace pxsim {
 
     if (!pxsim.initCurrentRuntime) {
         pxsim.initCurrentRuntime = initRuntimeWithDalBoard;
-    }
-
-    export function board(): DalBoard {
-        return runtime.board as DalBoard;
     }
 
     export function parsePinString(gpioPin: string): Pin {
