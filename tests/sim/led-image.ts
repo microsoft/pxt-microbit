@@ -1,6 +1,6 @@
 // @serial: 5 5
-// @serial: 255
-// @serial: 0
+// @serial: true
+// @serial: false
 let img = images.createImage(`
 # . . . .
 . . . . .

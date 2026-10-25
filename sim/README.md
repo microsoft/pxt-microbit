@@ -70,8 +70,8 @@ The simulator is split by location into DOM-free code in `sim/core/` and view co
 
 ### Tests
 
-`tests/sim/` holds headless simulator tests: `buttons.ts`, `led-brightness.ts`, `led-image.ts`,
-`led-serial.ts` and `sensors.ts`. Each is a program with `// @serial: text` expectations. After
+`tests/sim/` holds headless simulator tests: `audio-pin.ts`, `buttons.ts`, `led-brightness.ts`,
+`led-image.ts`, `led-plot.ts` and `sensors.ts`. Each is a program with `// @serial: text` expectations. After
 `pxt buildtarget`, run them with
 
     pxt simtest --base libs/blocksprj tests/sim

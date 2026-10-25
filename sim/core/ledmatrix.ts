@@ -232,9 +232,9 @@ namespace pxsim.ImageMethods {
         ImageMethods.showImage(leds, frame * leds.height, interval);
     }
 
-    export function pixel(leds: Image, x: number, y: number): number {
+    export function pixel(leds: Image, x: number, y: number): boolean {
         pxtrt.nullCheck(leds)
-        return leds.get(x, y);
+        return leds.get(x, y) > 0;
     }
 
     export function setPixel(leds: Image, x: number, y: number, v: number) {
