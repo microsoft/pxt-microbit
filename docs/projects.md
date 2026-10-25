@@ -81,7 +81,7 @@
     {
         "name": "CreateAI",
         "url": "/microbit-org/createai",
-        "imageUrl": "/static/microbit-org/createai/storytelling-friend.png"
+        "imageUrl": "/static/mb/projects/sports-trainer/ai-sports-trainer-thumb.png"
     },
     {
         "name": "Courses",

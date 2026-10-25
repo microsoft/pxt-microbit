@@ -22,6 +22,7 @@
   "record.playAudio|block": "play audio clip $mode",
   "record.setMicGain|block": "set microphone sensitivity to $gain",
   "record.setSampleRate|block": "set sample rate to $hz || for $scope",
+  "record.setSampleRate|param|hz|label": "sample rate",
   "record.startRecording|block": "record audio clip $mode",
   "record|block": "Record",
   "{id:category}Record": "Record"
