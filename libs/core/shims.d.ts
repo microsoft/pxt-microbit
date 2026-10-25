@@ -62,7 +62,7 @@ declare interface Image {
     //% help=images/scroll-image weight=79 async blockNamespace=images
     //% blockId=device_scroll_image
     //% block="scroll image %sprite(myImage)|with offset %frameoffset|and interval (ms) %delay"
-    //% id.label="image" frameOffset.label="offset" interval.label="interval"
+    //% sprite.label="image" frameOffset.label="offset" interval.label="interval"
     //% blockGap=8 parts="ledmatrix" shim=ImageMethods::scrollImage
     scrollImage(frameOffset: int32, interval: int32): void;
 
