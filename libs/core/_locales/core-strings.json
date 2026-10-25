@@ -162,6 +162,7 @@
   "Image.scrollImage|block": "scroll image %sprite(myImage)|with offset %frameoffset|and interval (ms) %delay",
   "Image.scrollImage|param|frameOffset|label": "offset",
   "Image.scrollImage|param|interval|label": "interval",
+  "Image.scrollImage|param|this|label": "image",
   "Image.showImage|block": "show image %sprite(myImage)|at offset %offset ||and interval (ms) %interval",
   "Image.showImage|param|interval|label": "interval",
   "Image.showImage|param|this|label": "image",

@@ -13,7 +13,7 @@ namespace pxsim {
     </svg>
     `
 
-    export class DalBoardView implements DalBoardViewContract {
+    export class DalBoardView implements RuntimeBoardView {
         viewHost: visuals.BoardHost;
         view: SVGElement;
         builtinVisuals: Map<() => any> = {};
@@ -37,9 +37,28 @@ namespace pxsim {
         }
 
         updateView() {
-            if (this.viewHost)
+            if (this.viewHost) {
                 this.viewHost.updateState();
+                this.updateHeadphoneOverlay(!this.state.edgeConnectorState.audioPinDisabled);
+            }
             this.updateSubscribers.forEach(subscriber => subscriber());
+        }
+
+        /** Adds the disabled-headphone image to the headphone part when enabled is false and removes it when true. */
+        private updateHeadphoneOverlay(enabled: boolean) {
+            const headphone = this.viewHost.getView().querySelector("g.sim-headphone-cmp");
+            if (!headphone) return;
+            const existing = headphone.querySelector("#headphone-disabled");
+            if (enabled) {
+                if (existing) existing.remove();
+                return;
+            }
+            if (existing) return;
+            const img = document.createElementNS("http://www.w3.org/2000/svg", "image") as SVGImageElement;
+            img.setAttribute("href", "data:image/svg+xml;utf8," + encodeURIComponent(disabledHeadphoneSVG))
+            img.setAttribute("id", "headphone-disabled");
+            img.style.transform = "scale(1.5) translate(-10px, -10px)";
+            headphone.appendChild(img)
         }
 
         initAsync(msg: SimulatorRunMessage): Promise<void> {
@@ -85,7 +104,7 @@ namespace pxsim {
             document.body.innerHTML = ""; // clear children
             if (shouldShowMute()) {
                 document.body.appendChild(createMuteButton());
-                AudioContextManager.mute(true);
+                audiohost.audio().mute(true);
                 setParentMuteState("disabled");
             }
             this.view = this.viewHost.getView();
@@ -98,33 +117,8 @@ namespace pxsim {
         }
 
         screenshotAsync(width?: number): Promise<ImageData> {
+            if (!this.viewHost) return Promise.resolve(undefined);
             return this.viewHost.screenshotAsync(width);
-        }
-
-        setAudioPinEnabled(enabled: boolean) {
-            if (!this.viewHost) return;
-            const headphone = this.viewHost.getView().querySelector("g.sim-headphone-cmp");
-
-            if (headphone) {
-                const existing = headphone.querySelector("#headphone-disabled");
-
-                if (existing) {
-                    if (enabled) {
-                        existing.remove();
-                    }
-                    else {
-                        return;
-                    }
-                }
-
-                if (!enabled) {
-                    const img = document.createElementNS("http://www.w3.org/2000/svg", "image") as SVGImageElement;
-                    img.setAttribute("href", "data:image/svg+xml;utf8," + encodeURIComponent(disabledHeadphoneSVG))
-                    img.setAttribute("id", "headphone-disabled");
-                    img.style.transform = "scale(1.5) translate(-10px, -10px)";
-                    headphone.appendChild(img)
-                }
-            }
         }
 
         kill() {
@@ -141,25 +135,7 @@ namespace pxsim {
         let b = new DalBoard();
         runtime.boardView = new DalBoardView(b);
         runtime.board = b;
-        runtime.postError = (e) => {
-            led.setBrightness(255);
-            let img = board().ledMatrixState.image;
-            img.clear();
-            img.set(0, 4, 255);
-            img.set(1, 3, 255);
-            img.set(2, 3, 255);
-            img.set(3, 3, 255);
-            img.set(4, 4, 255);
-            img.set(0, 0, 255);
-            img.set(1, 0, 255);
-            img.set(0, 1, 255);
-            img.set(1, 1, 255);
-            img.set(3, 0, 255);
-            img.set(4, 0, 255);
-            img.set(3, 1, 255);
-            img.set(4, 1, 255);
-            runtime.updateDisplay();
-        }
+        runtime.postError = (e) => drawSadFace();
     }
 
     if (!pxsim.initCurrentRuntime) {

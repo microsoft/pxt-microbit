@@ -93,6 +93,8 @@ namespace pxsim {
         pins: Pin[];
         pitchVolume: number;
         pitchEnabled = true;
+        /** True after pins.setAudioPinEnabled(false): tones leave the pins untouched and the view marks the headphone disabled. */
+        audioPinDisabled = false;
 
         constructor(public props: EdgeConnectorProps) {
             this.pins = props.pins.map(id => id != undefined ? new Pin(id) : null);
