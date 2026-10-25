@@ -8,6 +8,7 @@
         "outFile": "../built/simcore.js",
         "sourceMap": false,
         "skipLibCheck": true,
+        "declaration": true,
         "types": [],
         "lib": [
             "es2017"
@@ -24,6 +25,7 @@
         "../node_modules/pxt-common-packages/libs/core/sim/core/analogSensor.ts",
         "../node_modules/pxt-common-packages/libs/core/sim/core/neopixelstate.ts",
         "../node_modules/pxt-common-packages/libs/microphone/sim/core/state.ts",
-        "../node_modules/pxt-common-packages/libs/radio/sim/core/*.ts"
+        "../node_modules/pxt-common-packages/libs/radio/sim/core/*.ts",
+        "../node_modules/pxt-common-packages/libs/settings/sim/core/*.ts"
     ]
 }

@@ -1,5 +1,3 @@
-/// <reference path="../core/record-audio.ts"/>
-
 // Browser (MediaRecorder / getUserMedia) implementation of pxsim.record.RecorderHost.
 namespace pxsim.record {
     class MediaRecorderSession implements RecordingSession {
