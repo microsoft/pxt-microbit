@@ -29,8 +29,6 @@ namespace pxsim {
 }
 
 namespace pxsim.pins {
-    export let edgeConnectorSoundDisabled = false;
-
     export function digitalReadPin(pinId: number): number {
         let pin = getPin(pinId);
         if (!pin) return -1;
@@ -132,7 +130,7 @@ namespace pxsim.pins {
         const pins = ec.pins;
         const pin = ec.pitchEnabled && (pins.filter(pin => !!pin && pin.pitch)[0] || pins[0]);
         const pitchVolume = ec.pitchVolume | 0;
-        if (pin && !edgeConnectorSoundDisabled) {
+        if (pin && !ec.audioPinDisabled) {
             pin.mode = PinFlags.Analog | PinFlags.Output;
             if (frequency <= 0 || pitchVolume <= 0) {
                 pin.value = 0;
@@ -154,7 +152,7 @@ namespace pxsim.pins {
         else {
             setTimeout(() => {
                 audiohost.audio().stop();
-                if (pin && !edgeConnectorSoundDisabled) {
+                if (pin && !ec.audioPinDisabled) {
                     pin.value = 0;
                     pin.period = 0;
                     pin.mode = PinFlags.Unused;
@@ -187,8 +185,7 @@ namespace pxsim.pins {
     }
 
     export function setAudioPinEnabled(enabled: boolean) {
-        edgeConnectorSoundDisabled = !enabled;
-
-        boardView().setAudioPinEnabled(enabled);
+        board().edgeConnectorState.audioPinDisabled = !enabled;
+        runtime.queueDisplayUpdate();
     }
 }

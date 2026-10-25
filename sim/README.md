@@ -207,7 +207,7 @@ off by default in the editor.
 
 ### Observation through a headless board view
 
-- `HeadlessBoardView`, a DOM-free `DalBoardViewContract`, becomes `runtime.boardView` in
+- `HeadlessBoardView`, a DOM-free `RuntimeBoardView`, becomes `runtime.boardView` in
   `initHeadlessDalBoard`. It draws nothing; its `updateView` takes a snapshot of the observable
   state and notifies subscribers, so the runtime's `updateDisplay` (flushed at most once per
   scheduler step) is the change signal and state files need no hooks of their own.

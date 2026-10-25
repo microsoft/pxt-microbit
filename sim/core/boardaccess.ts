@@ -5,18 +5,13 @@ namespace pxsim {
     export class DalBoard extends DalBoardState {
     }
 
-    /** The view operations that DOM-free state code may request. Implemented by DalBoardView. */
-    export interface DalBoardViewContract extends RuntimeBoardView {
-        addUpdateSubscriber(subscriber: () => void): void;
-        setAudioPinEnabled(enabled: boolean): void;
-    }
-
     export function board(): DalBoard {
         return runtime.board as DalBoard;
     }
 
-    export function boardView(): DalBoardViewContract {
-        return runtime.boardView as DalBoardViewContract;
+    /** Returns the runtime's board view, or undefined in a headless run. Call only from view code. */
+    export function boardView(): RuntimeBoardView | undefined {
+        return runtime.boardView;
     }
 
     export function parsePinString(gpioPin: string): Pin {
