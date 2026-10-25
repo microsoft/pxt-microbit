@@ -11,9 +11,10 @@ The simulator is split by location into DOM-free code in `sim/core/` and view co
     light sensor, compass, logo touch, file system, samples, recording, control messages) and
     registers each in `builtinParts`. `ensureHardwareVersion` raises `hardwareVersion` and queues
     a display update; the state never calls the view.
-  - `boardaccess.ts`: `DalBoard` (the board class, an empty subclass of `DalBoardState`),
-    `DalBoardViewContract`, the `board()` and `boardView()` accessors, and `parsePinString`.
-  - `headless.ts`: `initHeadlessDalBoard`, registered as `pxsim.initHeadlessRuntime`.
+  - `boardaccess.ts`: `DalBoard` (the board class, an empty subclass of `DalBoardState`), the
+    `board()` and `boardView()` accessors, and `parsePinString`.
+  - `headless.ts`: `initHeadlessDalBoard`, registered as `pxsim.initHeadlessRuntime` unless one is
+    already set.
   - the peripheral state and shims: `accelerometer.ts`, `buttonpair.ts`, `compass.ts`,
     `edgeconnector.ts`, `edgeconnectorsim.ts`, `ledmatrix.ts`, `lightsensor.ts`, `logotouch.ts`,
     `microphone.ts`, `serial.ts`, `thermometer.ts`, `music.ts`, `soundexpression.ts`,
@@ -48,21 +49,24 @@ The simulator is split by location into DOM-free code in `sim/core/` and view co
 ### Board state and view
 
 - `runtime.board` is the `DalBoard`, read through `board()` by shims and state code.
-  `runtime.boardView` is the `DalBoardView`, read through `boardView()` by view code only.
-- `DalBoardViewContract` extends pxt-core's `RuntimeBoardView` with `setAudioPinEnabled`, the
-  one view operation core code requests (`pins.setAudioPinEnabled` in `edgeconnector.ts`).
-  `boardView()` returns it.
-- `DalBoardView` implements it: it registers the part visuals (`builtinVisuals`,
-  `builtinPartVisuals`), builds a `visuals.BoardHost` over the state in `initAsync` (turning on
-  version 2 when the program uses version 2 parts), adds the mute button on Safari until the
-  user unmutes, renders screenshots
-  through the board host, draws the disabled-headphone overlay for `setAudioPinEnabled`, runs its
-  update subscribers on `updateView`, and releases the board host in `kill`.
-- `initRuntimeWithDalBoard` creates a `DalBoard` and a `DalBoardView` and draws a sad face on a
-  runtime error; it becomes `pxsim.initCurrentRuntime` unless one is already set.
-- `initHeadlessDalBoard` creates a `DalBoard` with no view; a runtime error is reported only
-  through the runtime's error handler. Because `headless.ts` is in `sim/core/`, both
-  `simcore.js` and `sim.js` carry it.
+  `runtime.boardView` is the `DalBoardView`, a pxt-core `RuntimeBoardView`, read by view code
+  only (`boardView()` returns it, or `undefined` in a headless run). Core code never calls the
+  view; it changes state and calls `runtime.queueDisplayUpdate()`.
+- `pins.setAudioPinEnabled` sets `EdgeConnectorState.audioPinDisabled` and queues a display
+  update.
+- `DalBoardView` registers the part visuals (`builtinVisuals`, `builtinPartVisuals`), builds a
+  `visuals.BoardHost` over the state in `initAsync` (turning on version 2 when the program uses
+  version 2 parts), adds the mute button on Safari until the user unmutes, renders screenshots
+  through the board host, draws or removes the disabled-headphone overlay from
+  `audioPinDisabled` and runs its update subscribers on `updateView`, and releases the board host
+  in `kill`.
+- `initRuntimeWithDalBoard` creates a `DalBoard` and a `DalBoardView`; it becomes
+  `pxsim.initCurrentRuntime` unless one is already set.
+- `initHeadlessDalBoard` creates a `DalBoard` with no view; it becomes
+  `pxsim.initHeadlessRuntime` unless one is already set. Because `headless.ts` is in
+  `sim/core/`, both `simcore.js` and `sim.js` carry it.
+- On a runtime error both call `drawSadFace` (`sim/core/ledmatrix.ts`), which draws the sad face
+  into `ledMatrixState`.
 
 ### Tests
 

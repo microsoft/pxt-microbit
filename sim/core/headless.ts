@@ -5,10 +5,10 @@ namespace pxsim {
     export function initHeadlessDalBoard() {
         U.assert(!runtime.board);
         runtime.board = new DalBoard();
-        runtime.postError = (e) => {
-            // there is no display to draw the sad face on; the runtime's error handler reports the error
-        };
+        runtime.postError = (e) => drawSadFace();
     }
 
-    pxsim.initHeadlessRuntime = initHeadlessDalBoard;
+    if (!pxsim.initHeadlessRuntime) {
+        pxsim.initHeadlessRuntime = initHeadlessDalBoard;
+    }
 }
