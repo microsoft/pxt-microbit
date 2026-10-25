@@ -42,18 +42,26 @@ namespace pxsim.record {
         }
     }
 
+    /** Highest playback rate that still produces sound in Firefox; higher rates play silently. */
+    const FIREFOX_MAX_PLAYBACK_RATE = 8;
+
     setRecorderHost({
-        isSupported: () => !!navigator.mediaDevices?.getUserMedia,
+        isSupported: () => hasNavigator() && !!navigator.mediaDevices?.getUserMedia,
         startAsync: async (bitRate, onStopped) => {
             const stream = await navigator.mediaDevices.getUserMedia({ video: false, audio: true });
-            const recorder = new MediaRecorder(stream, { audioBitsPerSecond: bitRate });
-            const session = new MediaRecorderSession(stream, recorder);
-            session.onStopped(onStopped);
-            session.start();
+            let session: MediaRecorderSession;
+            try {
+                session = new MediaRecorderSession(stream, new MediaRecorder(stream, { audioBitsPerSecond: bitRate }));
+                session.onStopped(() => onStopped(session));
+                session.start();
+            } catch (e) {
+                for (const track of stream.getTracks()) track.stop();
+                throw e;
+            }
             return session;
         },
         revokeURL: url => window.URL.revokeObjectURL(url),
-        maxPlaybackRate: () => isFirefox() ? 8 : 15,
+        maxPlaybackRate: () => isFirefox() ? FIREFOX_MAX_PLAYBACK_RATE : DEFAULT_MAX_PLAYBACK_RATE,
         isPlaybackInterruption: e => e instanceof DOMException
     });
 }

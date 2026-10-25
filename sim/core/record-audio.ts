@@ -1,7 +1,7 @@
 namespace pxsim  {
     export class RecordingState {
         currentlyRecording = false;
-        recorder: record.RecordingSession;
+        session: record.RecordingSession;
 
         audioURL: string;
         // The inputBitRate when the current audioUrl was recorded
@@ -10,7 +10,7 @@ namespace pxsim  {
 
         recording: audiohost.AudioElementHandle;
         audioPlaying: boolean = false;
-        recordTimeoutID: any;
+        recordTimeoutID: host.TimerHandle;
         currentlyErasing: boolean;
 
         inputBitRate = record.defaultBitRate();
@@ -45,19 +45,22 @@ namespace pxsim.record {
 
     export interface RecorderHost {
         isSupported(): boolean;
-        /** Starts capturing; onStopped fires once the session has stopped and its data is complete. */
-        startAsync(bitRate: number, onStopped: () => void): Promise<RecordingSession>;
+        /** Starts capturing and resolves to the new session; onStopped is called with that session once it has stopped and its data is complete. */
+        startAsync(bitRate: number, onStopped: (session: RecordingSession) => void): Promise<RecordingSession>;
         revokeURL(url: string): void;
         maxPlaybackRate(): number;
         /** True for expected playback interruptions that should not surface as errors. */
-        isPlaybackInterruption(error: any): boolean;
+        isPlaybackInterruption(error: unknown): boolean;
     }
+
+    /** Default RecorderHost.maxPlaybackRate: the highest playback rate at which recorded audio still produces sound. */
+    export const DEFAULT_MAX_PLAYBACK_RATE = 15;
 
     const unsupportedHost: RecorderHost = {
         isSupported: () => false,
         startAsync: () => Promise.reject(new Error("recording is not supported")),
         revokeURL: () => { },
-        maxPlaybackRate: () => 15,
+        maxPlaybackRate: () => DEFAULT_MAX_PLAYBACK_RATE,
         isPlaybackInterruption: () => false
     };
 
@@ -88,12 +91,12 @@ namespace pxsim.record {
 
     function stopRecorder(b: DalBoardState): void {
         const state = b.recordingState;
-        state.recorder.stop();
+        state.session.stop();
         state.currentlyRecording = false;
         runtime.queueDisplayUpdate();
     }
 
-    async function populateRecording(b: DalBoardState, session: RecordingSession) {
+    async function populateRecording(b: DalBoardState, session: RecordingSession, bitRate: number) {
         const state = b.recordingState;
 
         if (state.currentlyErasing) {
@@ -102,9 +105,12 @@ namespace pxsim.record {
         const url = session.createURL();
         if (url) {
             state.audioURL = url;
+            state.audioURLBitRate = bitRate;
         }
-        state.currentlyRecording = false;
-        state.recorder = null;
+        if (state.session === session) {
+            state.currentlyRecording = false;
+            state.session = null;
+        }
         session.clearData();
     }
 
@@ -114,37 +120,34 @@ namespace pxsim.record {
 
         const state = b.recordingState;
 
-        if (state.recorder) {
-            state.recorder.stop();
-            clearTimeout(state.recordTimeoutID);
+        if (state.session) {
+            state.session.stop();
+            host.timers().clearTimeout(state.recordTimeoutID);
         }
 
         if (recorderHost.isSupported()) {
             try {
                 const recordBitRate = state.inputBitRate;
-                let session: RecordingSession;
-                session = state.recorder = await recorderHost.startAsync(recordBitRate, async () => {
-                    await populateRecording(b, session);
-                    state.audioURLBitRate = recordBitRate;
+                state.session = await recorderHost.startAsync(recordBitRate, stopped => {
+                    populateRecording(b, stopped, recordBitRate).catch(() => {
+                        pxsim.error("An error occurred while saving the recording");
+                    });
                 });
                 state.currentlyRecording = true;
                 runtime.queueDisplayUpdate();
 
                 const duration = (1 - ((recordBitRate - MIN_BIT_RATE) / (MAX_BIT_RATE - MIN_BIT_RATE))) * (MAX_RECORDING_TIME - MIN_RECORDING_TIME) + MIN_RECORDING_TIME;
 
-                state.recordTimeoutID = setTimeout(() => {
+                state.recordTimeoutID = host.timers().setTimeout(() => {
                     stopRecorder(b);
                 }, duration)
             } catch (error) {
-                console.log("An error occurred, could not get microphone access");
-                if (state.recorder) {
-                    state.recorder.stop();
-                }
+                pxsim.error("An error occurred, could not get microphone access");
                 state.currentlyRecording = false;
             }
 
         } else {
-            console.log("getUserMedia not supported on your browser!");
+            pxsim.warn("Audio recording is not supported here");
             state.currentlyRecording = false;
         }
     }
@@ -153,8 +156,8 @@ namespace pxsim.record {
         const b = board();
         if (!b) return;
         if (b.recordingState.currentlyRecording && b.recordingState.recordTimeoutID) {
-            clearTimeout(b.recordingState.recordTimeoutID);
-            if (b.recordingState.recorder) {
+            host.timers().clearTimeout(b.recordingState.recordTimeoutID);
+            if (b.recordingState.session) {
                 stopRecorder(b);
             }
         } else if (b.recordingState.recording && b.recordingState.audioPlaying) {
@@ -187,14 +190,12 @@ namespace pxsim.record {
         state.initListeners();
 
         state.audioPlaying = true;
-        setTimeout(async () => {
+        host.timers().setTimeout(async () => {
             if (!state.currentlyErasing && state.recording) {
                 try {
 
                     const minPlaybackRate = 0.15
 
-                    // 15 is the maximum playback rate that still produced sound in Chrome on Windows.
-                    // In Firefox, it seems like 8 is the max. Higher numbers silently fail.
                     const maxPlaybackRate = recorderHost.maxPlaybackRate();
 
                     const playbackRate = Math.max(minPlaybackRate,
@@ -251,7 +252,7 @@ namespace pxsim.record {
     export function erase(): void {
         const b = board();
         if (!b) return;
-        if (b.recordingState.recorder) b.recordingState.recorder.clearData();
+        if (b.recordingState.session) b.recordingState.session.clearData();
         b.recordingState.currentlyErasing = true;
     }
 
@@ -281,7 +282,7 @@ namespace pxsim.record {
     export function audioIsRecording(): boolean {
         const b = board();
         if (!b) return false;
-        return b.recordingState.recorder ? b.recordingState.recorder.isRecording() : false;
+        return b.recordingState.session ? b.recordingState.session.isRecording() : false;
     }
 
     export function audioIsStopped(): boolean {
