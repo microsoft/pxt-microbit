@@ -1,8 +1,8 @@
-/// <reference path="../node_modules/pxt-core/built/pxtsim.d.ts"/>
-/// <reference path="../libs/core/dal.d.ts"/>
-/// <reference path="../libs/core/enums.d.ts"/>
-/// <reference path="state/dalboardstate.ts"/>
-/// <reference path="state/boardaccess.ts"/>
+/// <reference path="../../node_modules/pxt-core/built/pxtsim.d.ts"/>
+/// <reference path="../../libs/core/dal.d.ts"/>
+/// <reference path="../../libs/core/enums.d.ts"/>
+/// <reference path="../core/dalboardstate.ts"/>
+/// <reference path="../core/boardaccess.ts"/>
 
 namespace pxsim {
     const disabledHeadphoneSVG = `
@@ -166,16 +166,5 @@ namespace pxsim {
 
     if (!pxsim.initCurrentRuntime) {
         pxsim.initCurrentRuntime = initRuntimeWithDalBoard;
-    }
-
-    export function parsePinString(gpioPin: string): Pin {
-        if (gpioPin == "*")
-            return board().edgeConnectorState.getPin(DAL.MICROBIT_ID_IO_P0);
-
-        const m = /^(Analog|Digital)Pin\.P(\d)+/.exec(gpioPin);
-        if (!m)
-            return undefined;
-        const pinNum = parseInt(m[2]);
-        return board().edgeConnectorState.pins[pinNum]
     }
 }

@@ -1,3 +1,5 @@
+/// <reference path="dalboardstate.ts"/>
+
 namespace pxsim {
     /** Compatibility name for the board; all state lives in DalBoardState. */
     export class DalBoard extends DalBoardState {
@@ -15,5 +17,16 @@ namespace pxsim {
 
     export function boardView(): DalBoardViewContract {
         return runtime.boardView as DalBoardViewContract;
+    }
+
+    export function parsePinString(gpioPin: string): Pin {
+        if (gpioPin == "*")
+            return board().edgeConnectorState.getPin(DAL.MICROBIT_ID_IO_P0);
+
+        const m = /^(Analog|Digital)Pin\.P(\d)+/.exec(gpioPin);
+        if (!m)
+            return undefined;
+        const pinNum = parseInt(m[2]);
+        return board().edgeConnectorState.pins[pinNum]
     }
 }
