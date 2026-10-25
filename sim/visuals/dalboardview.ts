@@ -104,7 +104,7 @@ namespace pxsim {
             document.body.innerHTML = ""; // clear children
             if (shouldShowMute()) {
                 document.body.appendChild(createMuteButton());
-                AudioContextManager.mute(true);
+                audiohost.audio().mute(true);
                 setParentMuteState("disabled");
             }
             this.view = this.viewHost.getView();
@@ -117,6 +117,7 @@ namespace pxsim {
         }
 
         screenshotAsync(width?: number): Promise<ImageData> {
+            if (!this.viewHost) return Promise.resolve(undefined);
             return this.viewHost.screenshotAsync(width);
         }
 

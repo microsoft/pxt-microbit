@@ -18,10 +18,10 @@ namespace pxsim {
         if (gpioPin == "*")
             return board().edgeConnectorState.getPin(DAL.MICROBIT_ID_IO_P0);
 
-        const m = /^(Analog|Digital)Pin\.P(\d)+/.exec(gpioPin);
+        const m = /^(Analog|Digital)Pin\.P(\d+)/.exec(gpioPin);
         if (!m)
             return undefined;
-        const pinNum = parseInt(m[2]);
-        return board().edgeConnectorState.pins[pinNum]
+        const pinNum = parseInt(m[2], 10);
+        return board().edgeConnectorState.pins[pinNum];
     }
 }

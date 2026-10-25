@@ -150,7 +150,7 @@ namespace pxsim.pins {
         }
         if (ms <= 0) cb();
         else {
-            setTimeout(() => {
+            host.timers().setTimeout(() => {
                 audiohost.audio().stop();
                 if (pin && !ec.audioPinDisabled) {
                     pin.value = 0;

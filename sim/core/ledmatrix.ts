@@ -29,7 +29,7 @@ namespace pxsim {
             this.height = (this.data.length / this.width) | 0;
         }
         public print() {
-            console.debug(`Image id:${this.id} size:${this.width}x${this.height}`)
+            pxsim.debug(`Image id:${this.id} size:${this.width}x${this.height}`)
         }
         public get(x: number, y: number): number {
             x = x | 0;
