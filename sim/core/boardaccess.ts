@@ -6,7 +6,7 @@ namespace pxsim {
     }
 
     /** The view operations that DOM-free state code may request. Implemented by DalBoardView. */
-    export interface DalBoardViewContract extends BoardView {
+    export interface DalBoardViewContract extends RuntimeBoardView {
         addUpdateSubscriber(subscriber: () => void): void;
         setAudioPinEnabled(enabled: boolean): void;
     }
