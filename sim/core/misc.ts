@@ -18,7 +18,7 @@ namespace pxsim {
     };
 
     export function panic(code: number) {
-        console.log("PANIC:", code)
+        pxsim.error("PANIC:", code)
         throw new Error("PANIC " + code)
     }
 

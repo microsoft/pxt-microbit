@@ -5,7 +5,7 @@ namespace pxsim.samples {
 
     class SampleChannel {
         sampleRate = 11000;
-        protected playing: AudioContextManager.PlaySampleResult;
+        protected playing: audiohost.PlaySampleResult;
 
         constructor(public id: number) {
 
@@ -15,7 +15,7 @@ namespace pxsim.samples {
             if (this.playing) {
                 this.playing.cancel();
             }
-            this.playing = AudioContextManager.startSamplePlayback(sample, BufferMethods.NumberFormat.UInt8LE, 255, this.sampleRate, music.volume() / 0xff);
+            this.playing = audiohost.audio().startSamplePlayback(sample, BufferMethods.NumberFormat.UInt8LE, 255, this.sampleRate, music.volume() / 0xff);
             this.playing.promise.then(() => {
                 this.playing = undefined;
             });

@@ -13,7 +13,7 @@ namespace pxsim.music {
     }
 
     export function isSoundPlaying(): boolean {
-        const audioActive = pxsim.AudioContextManager.isAudioElementActive();
+        const audioActive = audiohost.audio().isAudioElementActive();
         const soundExpressionPlaying = pxsim.codal.music.isSoundExpPlaying();
         return audioActive || soundExpressionPlaying || pxsim.record.audioIsPlaying();
     }
