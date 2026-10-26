@@ -5,7 +5,7 @@
                 "tags": ["Science"]
             },
             "microsoft/pxt-neopixel": {
-                "tags": ["Lights and Display"],
+                "tags": [ "Lights and Display" ],
                 "preferred": true
             },
             "microbit-apps/display-shield": {
