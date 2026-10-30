@@ -631,7 +631,6 @@ path.sim-board {
             else if (pin.mode & PinFlags.Digital) {
                 v = pin.value > 0 ? "0%" : "100%";
                 if (text) text.textContent = pin.value > 0 ? "1" : "0";
-                ariaValueNow = pin.value > 0 ? 1 : 0;
             }
             else if (pin.mode & PinFlags.Touch) {
                 v = pin.touched ? "0%" : "100%";
@@ -653,11 +652,27 @@ path.sim-board {
                     this.pins[index].removeAttribute("aria-valuenow");
                     this.pins[index].removeAttribute("aria-valuetext");
                     this.pins[index].removeAttribute("aria-readonly");
+                    this.pins[index].removeAttribute("aria-checked");
+                } else if (pin.mode & PinFlags.Digital) {
+                    this.pins[index].setAttribute("role", "switch");
+                    this.pins[index].ariaLabel = this.pins[index].firstChild.textContent;
+                    this.pins[index].setAttribute("aria-checked", pin.value > 0 ? "true" : "false");
+                    this.pins[index].removeAttribute("aria-valuemin");
+                    this.pins[index].removeAttribute("aria-valuemax");
+                    this.pins[index].removeAttribute("aria-orientation");
+                    this.pins[index].removeAttribute("aria-valuenow");
+                    this.pins[index].removeAttribute("aria-valuetext");
+                    if (pin.mode & PinFlags.Input) {
+                        this.pins[index].removeAttribute("aria-readonly");
+                    } else {
+                        this.pins[index].setAttribute("aria-readonly", "true");
+                    }
                 } else {
+                    this.pins[index].removeAttribute("aria-checked");
                     this.pins[index].setAttribute("role", "slider");
                     this.pins[index].ariaLabel = this.pins[index].firstChild.textContent;
                     this.pins[index].setAttribute("aria-valuemin", "0");
-                    this.pins[index].setAttribute("aria-valuemax", pin.mode & PinFlags.Analog ? "1023" : "1");
+                    this.pins[index].setAttribute("aria-valuemax", "1023");
                     this.pins[index].setAttribute("aria-orientation", "vertical");
                     this.pins[index].setAttribute("aria-valuenow", ariaValueNow.toString() ?? "");
                     // Check that the text content isn't just a plain int and only set aria-valuetext if required.
@@ -1534,11 +1549,9 @@ path.sim-board {
                         let state = this.board;
                         let pin = state.edgeConnectorState.pins[index];
                         let svgpin = this.pins[index];
-                        if (pin.mode & PinFlags.Input && !(pin.mode & PinFlags.Touch)) {
+                        if (pin.mode & PinFlags.Input && pin.mode & PinFlags.Analog && !(pin.mode & PinFlags.Touch)) {
                             let cursor = svg.cursorPoint(pt, this.element, ev);
-                            let maxValue = pin.mode & PinFlags.Analog ? 1023 : 1;
-                            let v = (400 - cursor.y) / 40 * maxValue;
-                            pin.value = Math.max(0, Math.min(maxValue, Math.floor(v)));
+                            pin.value = analogPinValueFromCursorY(cursor.y);
                         }
                         this.updatePin(pin, index);
                     },
@@ -1548,11 +1561,9 @@ path.sim-board {
                         let pin = state.edgeConnectorState.pins[index];
                         let svgpin = this.pins[index];
                         U.addClass(svgpin, "touched");
-                        if (pin.mode & PinFlags.Input && !(pin.mode & PinFlags.Touch)) {
+                        if (pin.mode & PinFlags.Input && pin.mode & PinFlags.Analog && !(pin.mode & PinFlags.Touch)) {
                             let cursor = svg.cursorPoint(pt, this.element, ev);
-                            let maxValue = pin.mode & PinFlags.Analog ? 1023 : 1;
-                            let v = (400 - cursor.y) / 40 * maxValue;
-                            pin.value = Math.max(0, Math.min(maxValue, Math.floor(v)));
+                            pin.value = analogPinValueFromCursorY(cursor.y);
                         }
                         this.updatePin(pin, index);
                     },
@@ -1575,6 +1586,15 @@ path.sim-board {
                             this.updatePin(pin, index);
                         }
                     });
+                // Toggle on click rather than pointerdown as screen readers in browse mode
+                // activate a switch by dispatching a click.
+                pin.addEventListener("click", () => {
+                    const pin = this.board.edgeConnectorState.pins[index];
+                    if (pin.mode & PinFlags.Digital && pin.mode & PinFlags.Input) {
+                        pin.value = pin.value > 0 ? 0 : 1;
+                        this.updatePin(pin, index);
+                    }
+                });
             })
         }
 
@@ -1781,9 +1801,15 @@ path.sim-board {
         return undefined;
     }
 
+    const analogPinValueFromCursorY = (y: number): number => {
+        const fraction = (400 - y) / 40;
+        return Math.max(0, Math.min(1023, Math.floor(fraction * 1023)));
+    }
+
     const pinKeyHandler = (e: KeyboardEvent, currentValue: number, min: number, max: number, pinMode: PinFlags): number | undefined => {
         const key = e.key;
-        if (isHandledKey(key)) {
+        const isToggleKey = pinMode & PinFlags.Digital && (key === " " || key === "Enter");
+        if (isHandledKey(key) || isToggleKey) {
             if (!(pinMode & PinFlags.Input)) {
                 e.preventDefault();
                 accessibility.setLiveContent(pxsim.localization.lf("This pin is read-only"));
@@ -1794,6 +1820,10 @@ path.sim-board {
                 e.preventDefault();
                 return undefined;
             }
+        }
+        if (isToggleKey) {
+            e.preventDefault();
+            return currentValue > 0 ? 0 : 1;
         }
         // The pin value for a digital pin may be higher than 1 depending on how its value was set.
         const currentValueClamped = Math.min(max, currentValue);
