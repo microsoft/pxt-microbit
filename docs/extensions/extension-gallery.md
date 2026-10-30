@@ -514,6 +514,10 @@ Many extensions are available to work with interface kits, add-on hardware, or o
 
 ```codecard
 [{
+  "name": "SARDU Matrix",
+  "url":"/pkg/DavideCosta-SARDU/pxt-sardu-matrix",
+  "cardType": "package"
+}, {
   "name": "NeoPixel Extended",
   "url":"/pkg/PasAlt/pxt-neopixel-matrix-extension",
   "cardType": "package"
