@@ -1152,6 +1152,10 @@ Many extensions are available to work with interface kits, add-on hardware, or o
 ## Utilities
 ```codecard
 [{
+  "name": "BlueMote",
+  "url": "/pkg/AntonsMindstorms/pxt-bluemote",
+  "cardType": "package"
+}, {
   "name": "My Controller",
   "url": "/pkg/aorczyk/my-controller",
   "cardType": "package"
