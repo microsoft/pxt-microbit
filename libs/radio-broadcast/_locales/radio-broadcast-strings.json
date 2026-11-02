@@ -1,6 +1,8 @@
 {
   "radio.onReceivedMessage|block": "on radio $msg received",
+  "radio.onReceivedMessage|param|msg|label": "message",
   "radio.sendMessage|block": "radio send $msg",
+  "radio.sendMessage|param|msg|label": "message",
   "radio|block": "radio",
   "{id:category}Radio": "Radio",
   "{id:group}Broadcast": "Broadcast"

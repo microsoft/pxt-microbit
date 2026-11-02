@@ -29,7 +29,7 @@ namespace pxsim {
             this.height = (this.data.length / this.width) | 0;
         }
         public print() {
-            console.debug(`Image id:${this.id} size:${this.width}x${this.height}`)
+            pxsim.debug(`Image id:${this.id} size:${this.width}x${this.height}`)
         }
         public get(x: number, y: number): number {
             x = x | 0;
@@ -127,6 +127,27 @@ namespace pxsim {
         }
         return font;
     }
+
+    /** Shows the sad face on the LED matrix at full brightness. */
+    export function drawSadFace() {
+        led.setBrightness(255);
+        let img = board().ledMatrixState.image;
+        img.clear();
+        img.set(0, 4, 255);
+        img.set(1, 3, 255);
+        img.set(2, 3, 255);
+        img.set(3, 3, 255);
+        img.set(4, 4, 255);
+        img.set(0, 0, 255);
+        img.set(1, 0, 255);
+        img.set(0, 1, 255);
+        img.set(1, 1, 255);
+        img.set(3, 0, 255);
+        img.set(4, 0, 255);
+        img.set(3, 1, 255);
+        img.set(4, 1, 255);
+        runtime.updateDisplay();
+    }
 }
 
 namespace pxsim.fonts {
@@ -211,9 +232,9 @@ namespace pxsim.ImageMethods {
         ImageMethods.showImage(leds, frame * leds.height, interval);
     }
 
-    export function pixel(leds: Image, x: number, y: number): number {
+    export function pixel(leds: Image, x: number, y: number): boolean {
         pxtrt.nullCheck(leds)
-        return leds.get(x, y);
+        return leds.get(x, y) > 0;
     }
 
     export function setPixel(leds: Image, x: number, y: number, v: number) {

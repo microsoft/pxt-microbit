@@ -80,7 +80,8 @@ declare namespace bluetooth {
      * @param delimiters the characters to match received characters against.
      */
     //% help=bluetooth/on-uart-data-received
-    //% weight=18 blockId=bluetooth_on_data_received block="bluetooth|on data received %delimiters=serial_delimiter_conv" shim=bluetooth::onUartDataReceived
+    //% weight=18 blockId=bluetooth_on_data_received block="bluetooth|on data received %delimiters=serial_delimiter_conv"
+    //% delimiters.label="delimiter" shim=bluetooth::onUartDataReceived
     function onUartDataReceived(delimiters: string, body: () => void): void;
 
     /**
@@ -108,6 +109,7 @@ declare namespace bluetooth {
      * @param connectable true to keep bluetooth connectable for other services, false otherwise.
      */
     //% blockId=eddystone_advertise_url block="bluetooth advertise url %url|with power %power|connectable %connectable"
+    //% url.label="url" power.label="power" connectable.label="connectable"
     //% parts=bluetooth weight=11 blockGap=8
     //% help=bluetooth/advertise-url blockExternalInputs=1
     //% hidden=1 deprecated=1 shim=bluetooth::advertiseUrl
@@ -127,7 +129,8 @@ declare namespace bluetooth {
      * @param power power level between 0 (minimal) and 7 (maximum), eg: 7.
      */
     //% parts=bluetooth weight=5 help=bluetooth/set-transmit-power advanced=true
-    //% blockId=bluetooth_settransmitpower block="bluetooth set transmit power %power" shim=bluetooth::setTransmitPower
+    //% blockId=bluetooth_settransmitpower block="bluetooth set transmit power %power"
+    //% power.label="value" shim=bluetooth::setTransmitPower
     function setTransmitPower(power: int32): void;
 
     /**

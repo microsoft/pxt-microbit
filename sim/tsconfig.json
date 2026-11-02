@@ -17,16 +17,15 @@
         ],
         "types": []
     },
+    "files": [
+        "../node_modules/pxt-core/built/pxtsim.d.ts",
+        "../built/simcore.d.ts"
+    ],
     "include": [
-        "*.ts",
-        "state/*.ts",
-        "visuals/*.ts",
-        "../node_modules/pxt-common-packages/libs/base/sim/control.ts",
-        "../node_modules/pxt-common-packages/libs/base/sim/controlmessage.ts",
-        "../node_modules/pxt-common-packages/libs/core/sim/analogSensor.ts",
-        "../node_modules/pxt-common-packages/libs/microphone/sim/state.ts",
-        "../node_modules/pxt-common-packages/libs/core/sim/neopixel.ts",
-        "../node_modules/pxt-common-packages/libs/radio/sim/*.ts",
-        "../node_modules/pxt-common-packages/libs/settings/sim/*.ts"
+        "visuals/**/*.ts",
+        "../node_modules/pxt-common-packages/libs/core/sim/neopixel.ts"
+    ],
+    "prepend": [
+        "../built/simcore.js"
     ]
 }

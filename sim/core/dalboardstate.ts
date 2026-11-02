@@ -1,16 +1,14 @@
-/// <reference path="../node_modules/pxt-core/built/pxtsim.d.ts"/>
-/// <reference path="../libs/core/dal.d.ts"/>
-/// <reference path="../libs/core/enums.d.ts"/>
+/// <reference path="../../libs/core/dal.d.ts"/>
+/// <reference path="../../libs/core/enums.d.ts"/>
 
 namespace pxsim {
-    export class DalBoard extends CoreBoard
+    export class DalBoardState extends CoreBoard
         implements CommonBoard
         , RadioBoard
         , LightBoard
         , MicrophoneBoard
         , ControlMessageBoard
         , samples.SampleBoard {
-        // state & update logic for component services
         ledMatrixState: LedMatrixState;
         edgeConnectorState: EdgeConnectorState;
         serialState: SerialState;
@@ -21,27 +19,23 @@ namespace pxsim {
         buttonPairState: ButtonPairState;
         radioState: RadioState;
         microphoneState: MicrophoneState;
-        recordingState: RecordingState;
         lightState: pxt.Map<CommonNeoPixelState>;
         fileSystem: FileSystemState;
+        samplesState: samples.SamplesState;
+        recordingState: RecordingState;
         logoTouch: Button;
         speakerEnabled: boolean = true;
         controlMessageState: ControlMessageState;
-        samplesState: samples.SamplesState;
 
-        // visual
-        viewHost: visuals.BoardHost;
-        view: SVGElement;
-
-        // board hardware version
         hardwareVersion = 1;
 
         constructor() {
             super()
 
-            // components
             this.lightState = {};
             this.fileSystem = new FileSystemState();
+            this.samplesState = new samples.SamplesState();
+            this.builtinParts["recording"] = this.recordingState = new RecordingState();
             this.controlMessageState = new ControlMessageState(this);
             this.builtinParts["ledmatrix"] = this.ledMatrixState = new LedMatrixState(runtime);
             this.builtinParts["buttonpair"] = this.buttonPairState = new ButtonPairState({
@@ -101,7 +95,6 @@ namespace pxsim {
                 RADIO_EVT_DATAGRAM: DAL.MICROBIT_RADIO_EVT_DATAGRAM
             });
             this.builtinParts["microphone"] = this.microphoneState = new MicrophoneState(DAL.DEVICE_ID_MICROPHONE, 0, 255, 86, 165);
-            this.builtinParts["recording"] = this.recordingState = new RecordingState();
             this.builtinParts["accelerometer"] = this.accelerometerState = new AccelerometerState(runtime);
             this.builtinParts["serial"] = this.serialState = new SerialState(runtime, this);
             this.builtinParts["thermometer"] = this.thermometerState = new ThermometerState();
@@ -110,82 +103,14 @@ namespace pxsim {
             this.builtinParts["microservo"] = this.edgeConnectorState;
             this.builtinParts["logotouch"] = this.logoTouch = new Button(DAL.MICROBIT_ID_LOGO);
 
-            this.builtinVisuals["buttonpair"] = () => new visuals.ButtonPairView();
-            this.builtinVisuals["ledmatrix"] = () => new visuals.LedMatrixView();
-            this.builtinVisuals["microservo"] = () => new visuals.MicroServoView();
-
             this.builtinParts["neopixel"] = (pin: Pin) => { return this.neopixelState(pin.id); };
-            this.builtinVisuals["neopixel"] = () => new visuals.NeoPixelView(pxsim.parsePinString);
-            this.builtinPartVisuals["neopixel"] = (xy: visuals.Coord) => visuals.mkNeoPixelPart(xy);
-
-            this.builtinPartVisuals["buttonpair"] = (xy: visuals.Coord) => visuals.mkBtnSvg(xy);
-            this.builtinPartVisuals["ledmatrix"] = (xy: visuals.Coord) => visuals.mkLedMatrixSvg(xy, 8, 8);
-            this.builtinPartVisuals["microservo"] = (xy: visuals.Coord) => visuals.mkMicroServoPart(xy);
-
-            this.samplesState = new samples.SamplesState();
         }
 
         ensureHardwareVersion(version: number) {
             if (version > this.hardwareVersion) {
                 this.hardwareVersion = version;
-                this.updateView();
+                runtime.queueDisplayUpdate();
             }
-        }
-
-
-        initAsync(msg: SimulatorRunMessage): Promise<void> {
-            super.initAsync(msg);
-
-            const boardDef = msg.boardDefinition;
-            const cmpsList = msg.parts;
-            const cmpDefs = msg.partDefinitions || {};
-            const fnArgs = msg.fnArgs;
-
-            const v2Parts: pxt.Map<boolean> = {
-                "microphone": true,
-                "logotouch": true,
-                "builtinspeaker": true,
-                "flashlog": true,
-                "v2": true
-            };
-            if (msg.builtinParts) {
-                const v2PartsUsed = msg.builtinParts.filter(k => v2Parts[k])
-                if (v2PartsUsed.length) {
-                    console.log(`detected v2 feature`, v2PartsUsed);
-                    cmpsList.push(...v2PartsUsed);
-                    this.hardwareVersion = 2;
-                }
-            }
-
-            const opts: visuals.BoardHostOpts = {
-                state: this,
-                boardDef: boardDef,
-                partsList: cmpsList,
-                partDefs: cmpDefs,
-                fnArgs: fnArgs,
-                maxWidth: "100%",
-                maxHeight: "100%",
-                highContrast: msg.highContrast
-            };
-
-            this.viewHost = new visuals.BoardHost(pxsim.visuals.mkBoardView({
-                visual: boardDef.visual,
-                boardDef: boardDef,
-                highContrast: msg.highContrast
-            }), opts);
-
-            document.body.innerHTML = ""; // clear children
-            if (shouldShowMute()) {
-                document.body.appendChild(createMuteButton());
-                AudioContextManager.mute(true);
-                setParentMuteState("disabled");
-            }
-            document.body.appendChild(this.view = this.viewHost.getView());
-
-            if (msg.theme === "mbcodal") {
-                this.ensureHardwareVersion(2);
-            }
-            return Promise.resolve();
         }
 
         tryGetNeopixelState(pinId: number): CommonNeoPixelState {
@@ -200,58 +125,5 @@ namespace pxsim {
             if (!state) state = this.lightState[pinId] = new CommonNeoPixelState();
             return state;
         }
-
-        screenshotAsync(width?: number): Promise<ImageData> {
-            return this.viewHost.screenshotAsync(width);
-        }
-
-        kill() {
-            super.kill();
-            this.viewHost.removeEventListeners();
-        }
-    }
-
-    export function initRuntimeWithDalBoard() {
-        U.assert(!runtime.board);
-        let b = new DalBoard();
-        runtime.board = b;
-        runtime.postError = (e) => {
-            led.setBrightness(255);
-            let img = board().ledMatrixState.image;
-            img.clear();
-            img.set(0, 4, 255);
-            img.set(1, 3, 255);
-            img.set(2, 3, 255);
-            img.set(3, 3, 255);
-            img.set(4, 4, 255);
-            img.set(0, 0, 255);
-            img.set(1, 0, 255);
-            img.set(0, 1, 255);
-            img.set(1, 1, 255);
-            img.set(3, 0, 255);
-            img.set(4, 0, 255);
-            img.set(3, 1, 255);
-            img.set(4, 1, 255);
-            runtime.updateDisplay();
-        }
-    }
-
-    if (!pxsim.initCurrentRuntime) {
-        pxsim.initCurrentRuntime = initRuntimeWithDalBoard;
-    }
-
-    export function board(): DalBoard {
-        return runtime.board as DalBoard;
-    }
-
-    export function parsePinString(gpioPin: string): Pin {
-        if (gpioPin == "*")
-            return board().edgeConnectorState.getPin(DAL.MICROBIT_ID_IO_P0);
-
-        const m = /^(Analog|Digital)Pin\.P(\d)+/.exec(gpioPin);
-        if (!m)
-            return undefined;
-        const pinNum = parseInt(m[2]);
-        return board().edgeConnectorState.pins[pinNum]
     }
 }

@@ -401,7 +401,7 @@ path.sim-board {
 
             if (props && props.runtime) {
                 this.board = this.props.runtime.board as pxsim.DalBoard;
-                this.board.updateSubscribers.push(() => this.updateState());
+                this.props.runtime.boardView.addUpdateSubscriber(() => this.updateState());
                 this.updateState(true);
                 this.attachEvents();
             }

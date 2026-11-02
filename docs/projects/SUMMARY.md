@@ -146,6 +146,7 @@
   * [Nightlight](https://microbit.org/teach/lessons/nightlight/)
   * [Rock, paper, scissors](https://microbit.org/teach/lessons/rock-paper-scissors/)
 * [CreateAI](/microbit-org/createai)
+  * [AI Sports Trainer](/projects/sports-trainer)
   * [AI storytelling friend](https://microbit.org/projects/make-it-code-it/ai-storytelling-friend/)
   * [Simple AI exercise timer](https://microbit.org/projects/make-it-code-it/simple-ai-exercise-timer/)
   * [AI activity timer](https://microbit.org/projects/make-it-code-it/ai-activity-timer/)

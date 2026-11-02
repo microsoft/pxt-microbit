@@ -17,7 +17,7 @@ namespace pxsim {
         button.setAttribute("title", pxsim.localization.lf("Unmute simulator"));
 
         button.addEventListener("click", () => {
-            AudioContextManager.mute(false);
+            audiohost.audio().mute(false);
             setParentMuteState("unmuted");
             button.remove();
             hasUnmuted = true;
