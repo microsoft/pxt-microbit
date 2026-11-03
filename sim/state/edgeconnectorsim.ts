@@ -21,7 +21,7 @@ namespace pxsim {
 
         digitalReadPin(): number {
             this.mode = PinFlags.Digital | PinFlags.Input;
-            return this.value > 100 ? 1 : 0;
+            return this.value > 0 ? 1 : 0;
         }
 
         digitalWritePin(value: number) {
