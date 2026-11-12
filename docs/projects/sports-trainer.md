@@ -1,5 +1,5 @@
 # AI sports trainer
-
+![](https://studio.code.org/api/hour/begin_aisportstrainer.png)
 Can AI help improve how you shoot a basket, throw a baseball, or swing a tennis racquet?
 
 ![ ](/static/mb/projects/sports-trainer/ai-sports-trainer.png "AI sports trainer")
