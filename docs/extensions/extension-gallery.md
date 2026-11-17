@@ -70,6 +70,10 @@ Many extensions are available to work with interface kits, add-on hardware, or o
 
 ```codecard
 [{
+    "name": "Grove LCD RGB Backlight v4.0",
+    "url": "/pkg/ikaros-ch/pxt-grove-lcd-rgb-v4",
+    "cardType": "package"
+}, {
     "name": "TM1638",
     "url": "/pkg/NathanPervin/pxt-tm1638",
     "cardType": "package"
