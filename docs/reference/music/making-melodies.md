@@ -6,7 +6,7 @@ Composing some sound, or maybe some music, is done by putting tones to together,
 
 A _note_ is a tone that is recognized as part of music. A note has a name like '**C**'. A note is played for an amount of time called its _duration_. 
 
-On your @boardname@, a note is played on the speaker by sending a signal to it with a certain _frequency_ called [Hertz](http://wikipedia.org/Hertz). Frequency is how fast something vibrates during one second. If you ring a bell that was made to play an '**A**' note, the bell will vibrate at 440 Hertz (440 times per second). So, notes are just certain frequencies that have special names.
+On your @boardname@, a note is played on the speaker by sending a signal to it with a certain _frequency_ called [Hertz](https://en.wikipedia.org/wiki/Hertz). Frequency is how fast something vibrates during one second. If you ring a bell that was made to play an '**A**' note, the bell will vibrate at 440 Hertz (440 times per second). So, notes are just certain frequencies that have special names (here is a [table of every note's frequency](https://plastic.audio/note-frequencies/)).
 
 ### ~ hint
 
