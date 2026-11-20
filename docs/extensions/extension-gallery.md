@@ -609,6 +609,10 @@ Many extensions are available to work with interface kits, add-on hardware, or o
 
 ```codecard
 [{
+  "name": "DFRobot Building Block Expansion Board",
+  "url":"/pkg/DFRobot/pxt-Building-Block-Expansion-Board-for-microbit-UNIHIKER",
+  "cardType": "package"
+}, {
   "name": "Peanut King micro:bit Shield V2",
   "url":"/pkg/peanut-king-solution/pxt-pks-shield-v2",
   "cardType": "package"
