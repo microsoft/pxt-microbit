@@ -1160,6 +1160,10 @@ Many extensions are available to work with interface kits, add-on hardware, or o
 ## Utilities
 ```codecard
 [{
+  "name": "BlueMote",
+  "url": "/pkg/AntonsMindstorms/pxt-bluemote",
+  "cardType": "package"
+}, {
   "name": "RC Pad",
   "url": "/pkg/ikaros-ch/microbit-rc",
   "cardType": "package"
