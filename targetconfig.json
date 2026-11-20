@@ -404,6 +404,7 @@
             "grandpabond/pxt-flexfx": { "tags": [ "Software" ] },
             "grandpabond/pxt-faces": { "tags": [ "Software" ] },
             "joylabz/code-a-key-extension": {},
+            "roversa-robotics/pxt-roversa-2": { "tags": [ "Robotics" ] },
             "eb8ga/pxt-roversa-2": { "tags": [ "Robotics" ] },
             "roborisen/gcube": { "tags": [ "Robotics" ] },
             "kittenbot/pxt-tabbyrobot": { "tags": [ "Robotics" ] },
@@ -458,6 +459,7 @@
             "forward-education/pxt-fwd-fifa": { "tags": [ "Robotics" ] },
             "davidecosta-sardu/pxt-sardu-matrix": { "tags": [ "Lights and Display" ] },
             "antonsmindstorms/pxt-bluemote": { "tags": [ "Software" ] },
+            "ikaros-ch/microbit-rc": { "tags": [ "Software" ] },
             "microsoft/pxt-simx-sample": {
                 "simx": {
                     "sha": "7301f5900879b85127482d79bab48f03c25690a8",
