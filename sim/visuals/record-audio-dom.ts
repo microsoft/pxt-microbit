@@ -1,4 +1,4 @@
-// Browser (MediaRecorder / getUserMedia) implementation of pxsim.record.RecorderHost.
+// The browser's recorder host. It uses MediaRecorder and getUserMedia.
 namespace pxsim.record {
     class MediaRecorderSession implements RecordingSession {
         private chunks: Blob[] = [];
@@ -42,7 +42,7 @@ namespace pxsim.record {
         }
     }
 
-    /** Highest playback rate that still produces sound in Firefox; higher rates play silently. */
+    /** The fastest playback that still makes sound in Firefox. Faster rates play silently. */
     const FIREFOX_MAX_PLAYBACK_RATE = 8;
 
     setRecorderHost({

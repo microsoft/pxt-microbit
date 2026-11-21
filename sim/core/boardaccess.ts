@@ -1,7 +1,7 @@
 /// <reference path="dalboardstate.ts"/>
 
 namespace pxsim {
-    /** Compatibility name for the board; all state lives in DalBoardState. */
+    /** The micro:bit board. The shims reach it through `board()`. */
     export class DalBoard extends DalBoardState {
     }
 
@@ -9,7 +9,7 @@ namespace pxsim {
         return runtime.board as DalBoard;
     }
 
-    /** Returns the runtime's board view, or undefined in a headless run. Call only from view code. */
+    /** Returns the board view, or undefined in a headless run. */
     export function boardView(): RuntimeBoardView | undefined {
         return runtime.boardView;
     }

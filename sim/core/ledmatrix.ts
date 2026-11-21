@@ -128,7 +128,6 @@ namespace pxsim {
         return font;
     }
 
-    /** Shows the sad face on the LED matrix at full brightness. */
     export function drawSadFace() {
         led.setBrightness(255);
         let img = board().ledMatrixState.image;
