@@ -33,19 +33,24 @@ namespace pxsim  {
     }
 }
 namespace pxsim.record {
-    /** An in-progress or finished capture, owned by the host (browser MediaRecorder, etc.). */
+    /**
+     * One recording, in progress or finished. The host owns it, for example as a
+     * MediaRecorder in the browser.
+     */
     export interface RecordingSession {
         stop(): void;
         isRecording(): boolean;
         /** Returns a playable URL for the captured data, or undefined if nothing was captured. */
         createURL(): string | undefined;
-        /** Drops any captured data. */
         clearData(): void;
     }
 
     export interface RecorderHost {
         isSupported(): boolean;
-        /** Starts capturing and resolves to the new session; onStopped is called with that session once it has stopped and its data is complete. */
+        /**
+         * Starts recording. Resolves to the new session, and calls `onStopped` with it once the
+         * recording stops and its data is complete.
+         */
         startAsync(bitRate: number, onStopped: (session: RecordingSession) => void): Promise<RecordingSession>;
         revokeURL(url: string): void;
         maxPlaybackRate(): number;
@@ -53,7 +58,7 @@ namespace pxsim.record {
         isPlaybackInterruption(error: unknown): boolean;
     }
 
-    /** Default RecorderHost.maxPlaybackRate: the highest playback rate at which recorded audio still produces sound. */
+    /** The default `maxPlaybackRate`: the fastest playback that still makes sound. */
     export const DEFAULT_MAX_PLAYBACK_RATE = 15;
 
     const unsupportedHost: RecorderHost = {

@@ -64,7 +64,6 @@ jobs:
       - name: pxt simtest
         run: |
           pxt simtest --base libs/blocksprj tests/sim
-          pxt simtest --base libs/blocksprj tests/sim --core
 
   buildvtag:
     # This job is a duplicate of pxt-buildvtag.yml's workflow

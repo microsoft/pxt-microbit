@@ -76,7 +76,7 @@ The simulator is split by location into DOM-free code in `sim/core/` and view co
 
     pxt simtest --base libs/blocksprj tests/sim
 
-and add `--core` to run on `pxtsimcore.js` and `built/simcore.js` alone.
+which runs them on `pxtsimcore.js` and `built/simcore.js`, the DOM-free pair.
 
 ## Input API design
 
@@ -94,7 +94,7 @@ A test sends inputs with the enums and types the user program sees, never DAL id
     sim.input.shake()
     sim.input.setTemperature(30)
 
-It runs under `pxt simtest`, with and without `--core`, and can later serve a browser test or a
+It runs under `pxt simtest`, and can later serve a browser test or a
 "simulate inputs" panel.
 
 There are two layers:

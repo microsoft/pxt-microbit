@@ -44,7 +44,7 @@ namespace pxsim {
             this.updateSubscribers.forEach(subscriber => subscriber());
         }
 
-        /** Adds the disabled-headphone image to the headphone part when enabled is false and removes it when true. */
+        /** Shows or hides the disabled-headphone image on the headphone part. */
         private updateHeadphoneOverlay(enabled: boolean) {
             const headphone = this.viewHost.getView().querySelector("g.sim-headphone-cmp");
             if (!headphone) return;
