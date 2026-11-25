@@ -174,6 +174,7 @@ namespace pxsim.bluetooth {
     }
 
     export function uartWriteBuffer(b: RefBuffer): void {
+        BufferMethods.typeCheck(b);
         serial.writeBuffer(b);
     }
 
@@ -203,10 +204,12 @@ namespace pxsim.bluetooth {
 namespace pxsim.light {
 
     export function sendWS2812Buffer(buffer: RefBuffer, pin: number) {
+        BufferMethods.typeCheck(buffer);
         pxsim.sendBufferAsm(buffer, pin)
     }
 
     export function sendWS2812BufferWithBrightness(buffer: RefBuffer, pin: number, brightness: number) {
+        BufferMethods.typeCheck(buffer);
         const clone = new RefBuffer(new Uint8Array(buffer.data))
         const data = clone.data;
         for(let i =0; i < data.length; ++i) {

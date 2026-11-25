@@ -64,38 +64,58 @@ namespace pxsim.BitmapMethods {
     export function XX(x: number) { return (x << 16) >> 16 }
     export function YY(x: number) { return x >> 16 }
 
-    export function __buffer(img: RefImage): RefBuffer { 
+    export function __buffer(img: RefImage): RefBuffer {
+        typeCheck(img);
         return new RefBuffer(img.data)  // no clone for now
     }
-    
-    export function width(img: RefImage) { return img._width }
 
-    export function height(img: RefImage) { return img._height }
+    export function width(img: RefImage) {
+        typeCheck(img);
+        return img._width;
+    }
 
-    export function isMono(img: RefImage) { return img._bpp == 1 }
+    export function height(img: RefImage) {
+        typeCheck(img);
+        return img._height;
+    }
 
-    export function isStatic(img: RefImage) { return img.gcIsStatic() }
+    export function isMono(img: RefImage) {
+        typeCheck(img);
+        return img._bpp == 1;
+    }
 
-    export function revision(img: RefImage) { return img.revision }
+    export function isStatic(img: RefImage) {
+        typeCheck(img);
+        return img.gcIsStatic();
+    }
+
+    export function revision(img: RefImage) {
+        typeCheck(img);
+        return img.revision;
+    }
 
     export function setPixel(img: RefImage, x: number, y: number, c: number) {
+        typeCheck(img);
         img.makeWritable()
         if (img.inRange(x, y))
             img.data[img.pix(x, y)] = img.color(c)
     }
 
     export function getPixel(img: RefImage, x: number, y: number) {
+        typeCheck(img);
         if (img.inRange(x, y))
             return img.data[img.pix(x, y)]
         return 0
     }
 
     export function fill(img: RefImage, c: number) {
+        typeCheck(img);
         img.makeWritable()
         img.data.fill(img.color(c))
     }
 
     export function fillRect(img: RefImage, x: number, y: number, w: number, h: number, c: number) {
+        typeCheck(img);
         if (w == 0 || h == 0 || x >= img._width || y >= img._height || x + w - 1 < 0 || y + h - 1 < 0)
             return;
         img.makeWritable()
@@ -118,6 +138,8 @@ namespace pxsim.BitmapMethods {
     }
 
     export function mapRect(img: RefImage, x: number, y: number, w: number, h: number, c: RefBuffer) {
+        typeCheck(img);
+        BufferMethods.typeCheck(c);
         if (c.data.length < 16)
             return
         img.makeWritable()
@@ -142,6 +164,7 @@ namespace pxsim.BitmapMethods {
     }
 
     export function equals(img: RefImage, other: RefImage) {
+        typeCheck(img);
         if (!other || img._bpp != other._bpp || img._width != other._width || img._height != other._height) {
             return false;
         }
@@ -157,6 +180,8 @@ namespace pxsim.BitmapMethods {
     }
 
     export function getRows(img: RefImage, x: number, dst: RefBuffer) {
+        typeCheck(img);
+        BufferMethods.typeCheck(dst);
         x |= 0
         if (!img.inRange(x, 0))
             return
@@ -176,6 +201,8 @@ namespace pxsim.BitmapMethods {
     }
 
     export function setRows(img: RefImage, x: number, src: RefBuffer) {
+        typeCheck(img);
+        BufferMethods.typeCheck(src);
         x |= 0
         if (!img.inRange(x, 0))
             return
@@ -195,12 +222,14 @@ namespace pxsim.BitmapMethods {
     }
 
     export function clone(img: RefImage) {
+        typeCheck(img);
         let r = new RefImage(img._width, img._height, img._bpp)
         r.data.set(img.data)
         return r
     }
 
     export function flipX(img: RefImage) {
+        typeCheck(img);
         img.makeWritable()
         const w = img._width
         const h = img._height
@@ -211,6 +240,7 @@ namespace pxsim.BitmapMethods {
 
 
     export function flipY(img: RefImage) {
+        typeCheck(img);
         img.makeWritable()
         const w = img._width
         const h = img._height
@@ -229,6 +259,7 @@ namespace pxsim.BitmapMethods {
     }
 
     export function transposed(img: RefImage) {
+        typeCheck(img);
         const w = img._width
         const h = img._height
         const d = img.data
@@ -248,6 +279,8 @@ namespace pxsim.BitmapMethods {
     }
 
     export function copyFrom(img: RefImage, from: RefImage) {
+        typeCheck(img);
+        typeCheck(from);
         if (img._width != from._width || img._height != from._height ||
             img._bpp != from._bpp)
             return;
@@ -255,6 +288,7 @@ namespace pxsim.BitmapMethods {
     }
 
     export function scroll(img: RefImage, dx: number, dy: number) {
+        typeCheck(img);
         img.makeWritable()
         dx |= 0
         dy |= 0
@@ -280,6 +314,7 @@ namespace pxsim.BitmapMethods {
     }
 
     export function replace(img: RefImage, from: number, to: number) {
+        typeCheck(img);
         to &= 0xf;
         const d = img.data
         for (let i = 0; i < d.length; ++i)
@@ -287,6 +322,7 @@ namespace pxsim.BitmapMethods {
     }
 
     export function doubledX(img: RefImage) {
+        typeCheck(img);
         const w = img._width
         const h = img._height
         const d = img.data
@@ -304,6 +340,7 @@ namespace pxsim.BitmapMethods {
     }
 
     export function doubledY(img: RefImage) {
+        typeCheck(img);
         const w = img._width
         const h = img._height
         const d = img.data
@@ -328,10 +365,13 @@ namespace pxsim.BitmapMethods {
 
 
     export function doubled(img: RefImage) {
+        typeCheck(img);
         return doubledX(doubledY(img))
     }
 
     function drawImageCore(img: RefImage, from: RefImage, x: number, y: number, clear: boolean, check: boolean) {
+        typeCheck(img);
+        typeCheck(from);
         x |= 0
         y |= 0
 
@@ -445,6 +485,7 @@ namespace pxsim.BitmapMethods {
     }
 
     export function drawLine(img: RefImage, x0: number, y0: number, x1: number, y1: number, c: number) {
+        typeCheck(img);
         x0 |= 0
         y0 |= 0
         x1 |= 0
@@ -529,6 +570,8 @@ namespace pxsim.BitmapMethods {
     }
 
     export function drawIcon(img: RefImage, icon: RefBuffer, x: number, y: number, color: number) {
+        typeCheck(img);
+        BufferMethods.typeCheck(icon);
         const src: Uint8Array = icon.data
         if (!bitmaps.isValidImage(icon))
             return
@@ -590,6 +633,7 @@ namespace pxsim.BitmapMethods {
     }
 
     export function fillCircle(img: RefImage, cx: number, cy: number, r: number, c: number) {
+        typeCheck(img);
         let x = r - 1;
         let y = 0;
         let dx = 1;
@@ -789,6 +833,8 @@ namespace pxsim.BitmapMethods {
     }
 
     export function _fillTriangle(img: RefImage, args: RefCollection) {
+        typeCheck(img);
+        Array_.typeCheck(args);
         fillTriangle(
             img,
             args.getAt(0) | 0,
@@ -843,6 +889,8 @@ namespace pxsim.BitmapMethods {
     }
 
     export function _fillPolygon4(img: RefImage, args: RefCollection) {
+        typeCheck(img);
+        Array_.typeCheck(args);
         fillPolygon4(
             img,
             args.getAt(0) | 0,
@@ -858,6 +906,8 @@ namespace pxsim.BitmapMethods {
     }
 
     export function _blitRow(img: RefImage, xy: number, from: RefImage, xh: number) {
+        typeCheck(img);
+        typeCheck(from);
         blitRow(img, XX(xy), YY(xy), from, XX(xh), YY(xh))
     }
 
@@ -889,6 +939,9 @@ namespace pxsim.BitmapMethods {
     }
 
     export function blit(dst: RefImage, src: RefImage, args: RefCollection): boolean {
+        typeCheck(dst);
+        typeCheck(src);
+        Array_.typeCheck(args);
         const xDst = args.getAt(0) as number;
         const yDst = args.getAt(1) as number;
         const wDst = args.getAt(2) as number;
@@ -936,6 +989,12 @@ namespace pxsim.BitmapMethods {
             }
         }
         return false;
+    }
+
+    export function typeCheck(v: RefImage) {
+        if (!(v instanceof RefImage)) {
+            throwFailedCastError(v, "Bitmap");
+        }
     }
 }
 
@@ -998,6 +1057,7 @@ namespace pxsim.bitmaps {
     }
 
     export function ofBuffer(buf: RefBuffer): RefImage {
+        BufferMethods.typeCheck(buf);
         const src: Uint8Array = buf.data
 
         let srcP = 4
@@ -1058,6 +1118,7 @@ namespace pxsim.bitmaps {
     }
 
     export function toBuffer(img: RefImage): RefBuffer {
+        BitmapMethods.typeCheck(img);
         let col = byteHeight(img._height, img._bpp)
         let sz = 8 + img._width * col
         let r = new Uint8Array(sz)
@@ -1101,6 +1162,7 @@ namespace pxsim.bitmaps {
     }
 
     export function doubledIcon(buf: RefBuffer): RefBuffer {
+        BufferMethods.typeCheck(buf);
         let img = ofBuffer(buf)
         if (!img)
             return null
